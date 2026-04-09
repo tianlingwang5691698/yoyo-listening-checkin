@@ -8,11 +8,12 @@ cloud.init({
 const db = cloud.database();
 const _ = db.command;
 const CLOUD_ENV_ID = process.env.TCB_ENV || process.env.SCF_NAMESPACE || cloud.DYNAMIC_CURRENT_ENV;
-const CLOUD_ASSET_BASE_URL = 'https://656e-english-6gm2vya9fc58a273-1419984942.tcb.qcloud.la';
+const CLOUD_ASSET_BASE_URL = 'https://796f-youshengenglish-6glk12rd6c6e719b-1419984942.tcb.qcloud.la';
+const CLOUD_BUCKET = '796f-youshengenglish-6glk12rd6c6e719b-1419984942';
 const STORAGE_ROOTS = {
-  peppa: 'audio/Peppa',
-  unlock1: 'audio/Unlock2听力',
-  song: 'audio/Super simple song'
+  peppa: 'A1/Peppa',
+  unlock1: 'A1/Unlock1',
+  song: 'A1/Super simple song'
 };
 const TEMP_URL_TTL = 24 * 60 * 60;
 let runtimeCatalogs = null;
@@ -26,6 +27,14 @@ function buildCloudAssetUrl(cloudPath) {
     return '';
   }
   return `${baseUrl}/${encodeURI(normalizedPath)}`;
+}
+
+function buildCloudFileId(cloudPath) {
+  const normalizedPath = String(cloudPath || '').replace(/^\/+/, '');
+  if (!CLOUD_ENV_ID || !CLOUD_BUCKET || !normalizedPath) {
+    return '';
+  }
+  return `cloud://${CLOUD_ENV_ID}.${CLOUD_BUCKET}/${normalizedPath}`;
 }
 
 const childTemplate = {
@@ -65,7 +74,10 @@ const peppaTasks = [
   category: 'peppa',
   title: item[0],
   subtitle: 'Peppa Pig Season 1',
-  audioUrl: buildCloudAssetUrl(`audio/Peppa/第1季/${item[0]}.mp3`),
+  audioUrl: buildCloudAssetUrl(`A1/Peppa/第1季/${item[0]}.mp3`),
+  audioCloudPath: `A1/Peppa/第1季/${item[0]}.mp3`,
+  audioFileId: buildCloudFileId(`A1/Peppa/第1季/${item[0]}.mp3`),
+  audioSource: 'static-cloud-url',
   repeatTarget: 3,
   durationSec: item[1],
   coverTone: 'sunrise',
@@ -73,7 +85,7 @@ const peppaTasks = [
   textSource: {
     sourceType: 'pdf',
     title: 'Peppa Pig Season 1 Script',
-    filePath: buildCloudAssetUrl('audio/Peppa/第1季/PeppaPig第1季英文剧本台词.pdf')
+    filePath: buildCloudAssetUrl('A1/Peppa/第1季/PeppaPig第1季英文剧本台词.pdf')
   }
 }));
 
@@ -121,7 +133,10 @@ const unlockTasks = unlockAudioFiles.map((item, index) => {
     category: 'unlock1',
     title: item[0],
     subtitle: `Unlock 1 第 ${index + 1} 条`,
-    audioUrl: buildCloudAssetUrl(`audio/Unlock2听力/${item[0]}.mp3`),
+    audioUrl: buildCloudAssetUrl(`A1/Unlock1/${item[0]}.mp3`),
+    audioCloudPath: `A1/Unlock1/${item[0]}.mp3`,
+    audioFileId: buildCloudFileId(`A1/Unlock1/${item[0]}.mp3`),
+    audioSource: 'static-cloud-url',
     repeatTarget: 3,
     durationSec: item[1],
     coverTone: index % 2 === 0 ? 'peach' : 'berry',
@@ -131,7 +146,7 @@ const unlockTasks = unlockAudioFiles.map((item, index) => {
     textSource: {
       sourceType: 'pdf',
       title: 'Unlock 2e Listening and Speaking 1 Scripts',
-      filePath: buildCloudAssetUrl('audio/Unlock2听力/Unlock 2e Listening and Speaking 1 Scripts.pdf')
+      filePath: buildCloudAssetUrl('A1/Unlock1/Unlock 2e Listening and Speaking 1 Scripts.pdf')
     }
   };
 });
@@ -141,8 +156,11 @@ const songPlaceholder = {
   taskId: 'song-pending',
   category: 'song',
   title: '每日歌曲',
-  subtitle: '等待歌曲音频',
+  subtitle: '检查云端歌曲目录',
   audioUrl: '',
+  audioCloudPath: '',
+  audioFileId: '',
+  audioSource: 'none',
   repeatTarget: 3,
   durationSec: 0,
   coverTone: 'mint',
@@ -185,6 +203,17 @@ function getParentFolder(path) {
   const parts = normalizeCloudPath(path).split('/');
   parts.pop();
   return parts.join('/');
+}
+
+function findNearestParentPdf(pdfByFolder, cloudPath) {
+  let folder = getParentFolder(cloudPath);
+  while (folder) {
+    if (pdfByFolder[folder]) {
+      return pdfByFolder[folder];
+    }
+    folder = getParentFolder(folder);
+  }
+  return null;
 }
 
 function getBaseName(path) {
@@ -257,6 +286,7 @@ function buildCloudTask(baseTask, overrides) {
     audioUrl: overrides.audioUrl,
     audioCloudPath: overrides.audioCloudPath,
     audioFileId: overrides.audioFileId,
+    audioSource: overrides.audioSource || (baseTask && baseTask.audioSource) || 'none',
     textSource: overrides.textSource || (baseTask ? baseTask.textSource : null)
   });
 }
@@ -284,9 +314,11 @@ async function buildCloudCatalogFromRoot(category, rootPath, staticItems) {
   return audioFiles.map((file, index) => {
     const audioBaseName = getBaseName(file.cloudPath);
     const matchedStatic = staticLookup[normalizeKey(audioBaseName)] || staticItems[index] || null;
-    const folderPdf = pdfByFolder[getParentFolder(file.cloudPath)] || null;
+    const folderPdf = findNearestParentPdf(pdfByFolder, file.cloudPath);
     const title = matchedStatic ? matchedStatic.title : audioBaseName;
-    const subtitle = matchedStatic ? matchedStatic.subtitle : getParentFolder(file.cloudPath).split('/').pop();
+    const subtitle = matchedStatic
+      ? matchedStatic.subtitle
+      : (getParentFolder(file.cloudPath).split('/').pop() || rootPath.split('/').pop());
     return buildCloudTask(matchedStatic, {
       taskId: matchedStatic ? matchedStatic.taskId : `${category}-${index + 1}`,
       category,
@@ -301,6 +333,7 @@ async function buildCloudCatalogFromRoot(category, rootPath, staticItems) {
       audioUrl: tempUrlMap[file.fileId] || '',
       audioCloudPath: file.cloudPath,
       audioFileId: file.fileId,
+      audioSource: tempUrlMap[file.fileId] ? 'temp-url' : 'none',
       textSource: createCloudTextSource(folderPdf, `${title} Script`)
     });
   });

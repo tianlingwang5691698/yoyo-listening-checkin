@@ -11,6 +11,16 @@ function buildCloudAssetUrl(cloudPath) {
   return `${baseUrl}/${encodeURI(normalizedPath)}`;
 }
 
+function buildCloudFileId(cloudPath) {
+  const envId = String(appConfig.cloudEnvId || '').trim();
+  const bucket = String(appConfig.cloudBucket || '').trim();
+  const normalizedPath = String(cloudPath || '').replace(/^\/+/, '');
+  if (!envId || !bucket || !normalizedPath) {
+    return '';
+  }
+  return `cloud://${envId}.${bucket}/${normalizedPath}`;
+}
+
 const childProfiles = [
   {
     childId: 'child-yoyo',
@@ -34,13 +44,13 @@ const levels = [
 const peppaScriptSource = {
   sourceType: 'pdf',
   title: 'Peppa Pig Season 1 Script',
-  filePath: buildCloudAssetUrl('audio/Peppa/第1季/PeppaPig第1季英文剧本台词.pdf')
+  filePath: buildCloudAssetUrl('A1/Peppa/第1季/PeppaPig第1季英文剧本台词.pdf')
 };
 
 const unlockScriptSource = {
   sourceType: 'pdf',
   title: 'Unlock 2e Listening and Speaking 1 Scripts',
-  filePath: buildCloudAssetUrl('audio/Unlock2听力/Unlock 2e Listening and Speaking 1 Scripts.pdf')
+  filePath: buildCloudAssetUrl('A1/Unlock1/Unlock 2e Listening and Speaking 1 Scripts.pdf')
 };
 
 const transcriptTracks = [...peppaTranscriptTracks, ...unlockTranscriptTracks];
@@ -69,7 +79,10 @@ const peppaTasks = peppaAudioFiles.map(([fileName, durationSec], index) => ({
   category: 'peppa',
   title: fileName.replace(/\.mp3$/i, ''),
   subtitle: 'Peppa Pig Season 1',
-  audioUrl: buildCloudAssetUrl(`audio/Peppa/第1季/${fileName}`),
+  audioUrl: buildCloudAssetUrl(`A1/Peppa/第1季/${fileName}`),
+  audioCloudPath: `A1/Peppa/第1季/${fileName}`,
+  audioFileId: buildCloudFileId(`A1/Peppa/第1季/${fileName}`),
+  audioSource: 'static-cloud-url',
   repeatTarget: 3,
   durationSec,
   coverTone: 'sunrise',
@@ -112,7 +125,10 @@ const unlockTasks = unlockAudioFiles.map(([fileName, durationSec], index) => {
     category: 'unlock1',
     title: fileName.replace(/\.mp3$/i, ''),
     subtitle: `Unlock 1 第 ${index + 1} 条`,
-    audioUrl: buildCloudAssetUrl(`audio/Unlock2听力/${fileName}`),
+    audioUrl: buildCloudAssetUrl(`A1/Unlock1/${fileName}`),
+    audioCloudPath: `A1/Unlock1/${fileName}`,
+    audioFileId: buildCloudFileId(`A1/Unlock1/${fileName}`),
+    audioSource: 'static-cloud-url',
     repeatTarget: 3,
     durationSec,
     coverTone: index % 2 === 0 ? 'peach' : 'berry',
@@ -129,8 +145,11 @@ const songPlaceholder = {
   taskId: 'song-pending',
   category: 'song',
   title: '每日歌曲',
-  subtitle: '等待歌曲音频',
+  subtitle: '检查云端歌曲目录',
   audioUrl: '',
+  audioCloudPath: '',
+  audioFileId: '',
+  audioSource: 'none',
   repeatTarget: 3,
   durationSec: 0,
   coverTone: 'mint',

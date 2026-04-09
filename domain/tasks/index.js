@@ -203,7 +203,7 @@ function createPendingTask(category) {
       audioDisplayName: '',
       audioCompactTitle: '',
       isPendingAsset: true,
-      note: '把歌曲音频放进 assets/audio/songs 后，这里就会开始轮换。',
+      note: '云端歌曲目录扫描到音频后，这里就会开始轮换。',
       currentPass: 1,
       playStepText: '0/3',
       textUnlocked: false,
