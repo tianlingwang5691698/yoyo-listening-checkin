@@ -19,10 +19,40 @@ function formatFallbackReason(error) {
   return String(error);
 }
 
-function buildSyncMeta(mode, error) {
+function buildResourceDebugLines(resourceDebug) {
+  if (!resourceDebug) {
+    return [];
+  }
+  const lines = [];
+  if (resourceDebug.storageScanMode) {
+    lines.push(`资源扫描：${resourceDebug.storageScanMode}`);
+  }
+  if (resourceDebug.unlock1Root || resourceDebug.unlock1AudioCount) {
+    lines.push(`Unlock1：${resourceDebug.unlock1AudioCount || 0} 个音频，目录 ${resourceDebug.unlock1Root || '未识别'}`);
+  }
+  if (resourceDebug.unlock1SamplePath) {
+    lines.push(`Unlock1 样例：${resourceDebug.unlock1SamplePath}`);
+  }
+  if (resourceDebug.songRoot || resourceDebug.songAudioCount) {
+    lines.push(`Song：${resourceDebug.songAudioCount || 0} 个音频，目录 ${resourceDebug.songRoot || '未识别'}`);
+  }
+  if (resourceDebug.songSamplePath) {
+    lines.push(`Song 样例：${resourceDebug.songSamplePath}`);
+  }
+  if (resourceDebug.storageScanError) {
+    lines.push(`扫描告警：${resourceDebug.storageScanError}`);
+  }
+  if (resourceDebug.rawStorageShape) {
+    lines.push(`SDK 字段：${resourceDebug.rawStorageShape}`);
+  }
+  return lines;
+}
+
+function buildSyncMeta(mode, error, resourceDebug) {
   const envId = cloud.getCloudEnvId();
   const reason = mode === 'local' ? formatFallbackReason(error) : '';
   const releaseStage = cloud.getReleaseStage();
+  const resourceLines = buildResourceDebugLines(resourceDebug);
   return {
     syncMode: mode,
     releaseStage,
@@ -33,6 +63,8 @@ function buildSyncMeta(mode, error) {
       envId,
       show: cloud.shouldShowCloudDebug(),
       reason,
+      resourceDebug: resourceDebug || null,
+      resourceLines,
       text: mode === 'cloud'
         ? `云环境已连接：${envId}`
         : `当前使用本地回退，目标云环境：${envId}${reason ? `，失败原因：${reason}` : ''}`
@@ -43,7 +75,7 @@ function buildSyncMeta(mode, error) {
 async function callWithFallback(action, payload, fallback) {
   try {
     const result = await cloud.callYoyo(action, payload);
-    return Object.assign(buildSyncMeta('cloud'), result);
+    return Object.assign(buildSyncMeta('cloud', null, result.resourceDebug), result);
   } catch (error) {
     return Object.assign(buildSyncMeta('local', error), fallback(error));
   }

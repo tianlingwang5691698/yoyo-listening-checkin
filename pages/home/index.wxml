@@ -7,6 +7,11 @@
         <view class="hero-copy">{{child.welcomeLine}}</view>
         <view class="sync-debug {{syncMode === 'cloud' ? 'is-cloud' : 'is-local'}}" wx:if="{{showCloudDebug && syncDebug && syncDebug.show}}">
           {{syncDebug.text}}
+          <block wx:if="{{syncDebug.resourceLines && syncDebug.resourceLines.length}}">
+            <block wx:for="{{syncDebug.resourceLines}}" wx:key="*this">
+              <view class="sync-debug-line">{{item}}</view>
+            </block>
+          </block>
         </view>
       </view>
       <view class="avatar-badge">{{child.avatarText}}</view>

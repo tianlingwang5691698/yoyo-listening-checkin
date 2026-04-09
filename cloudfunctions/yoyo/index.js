@@ -10,15 +10,34 @@ const _ = db.command;
 const CLOUD_ENV_ID = process.env.TCB_ENV || process.env.SCF_NAMESPACE || cloud.DYNAMIC_CURRENT_ENV;
 const CLOUD_ASSET_BASE_URL = 'https://796f-youshengenglish-6glk12rd6c6e719b-1419984942.tcb.qcloud.la';
 const CLOUD_BUCKET = '796f-youshengenglish-6glk12rd6c6e719b-1419984942';
+const UNLOCK1_AUDIO_ROOT = 'A1/Unlock1/Unlock1 听口音频 Class Audio';
+const UNLOCK1_SCRIPT_PATH = `${UNLOCK1_AUDIO_ROOT}/Unlock 2e Listening and Speaking 1 Scripts.pdf`;
 const STORAGE_ROOTS = {
   peppa: 'A1/Peppa',
-  unlock1: 'A1/Unlock1',
-  song: 'A1/Super simple song'
+  unlock1: UNLOCK1_AUDIO_ROOT,
+  song: 'A1/Super simple songs'
 };
+const STORAGE_ROOT_CANDIDATES = {
+  peppa: [STORAGE_ROOTS.peppa],
+  unlock1: [UNLOCK1_AUDIO_ROOT, 'A1/Unlock1'],
+  song: [STORAGE_ROOTS.song, 'A1/Super simple song']
+};
+const REQUIRED_COLLECTIONS = [
+  'families',
+  'familyMembers',
+  'children',
+  'dailyTaskProgress',
+  'dailyCheckins',
+  'dailyReports',
+  'subscriptionPreferences'
+];
 const TEMP_URL_TTL = 24 * 60 * 60;
+const AUDIO_FILE_PATTERN = /\.(mp3|m4a|aac|wav)$/i;
 let runtimeCatalogs = null;
 let runtimeCatalogExpiresAt = 0;
+let runtimeCatalogDebug = null;
 let storageManager = null;
+let storageDebugShapes = {};
 
 function buildCloudAssetUrl(cloudPath) {
   const baseUrl = String(CLOUD_ASSET_BASE_URL || '').replace(/\/+$/, '');
@@ -35,6 +54,53 @@ function buildCloudFileId(cloudPath) {
     return '';
   }
   return `cloud://${CLOUD_ENV_ID}.${CLOUD_BUCKET}/${normalizedPath}`;
+}
+
+function isMissingCollectionError(error) {
+  const message = String((error && (error.errMsg || error.message)) || '');
+  return message.includes('DATABASE_COLLECTION_NOT_EXIST')
+    || message.includes('database collection not exists')
+    || message.includes('collection.get:fail')
+    || message.includes('collection.where:fail')
+    || message.includes('collection.add:fail')
+    || message.includes('collection.doc:fail');
+}
+
+function createMissingCollectionsError(missingCollections) {
+  const missing = missingCollections.filter(Boolean);
+  const message = [
+    `cloud-env-not-ready: 当前云环境 ${CLOUD_ENV_ID || 'unknown'} 缺少数据库集合`,
+    missing.join(', '),
+    '请先在 CloudBase 控制台手动创建这些空集合，再重新部署 yoyo 并刷新首页。'
+  ].join(' | ');
+  const error = new Error(message);
+  error.code = 'cloud-env-not-ready';
+  error.missingCollections = missing;
+  error.envId = CLOUD_ENV_ID || '';
+  return error;
+}
+
+async function checkCollectionReady(collectionName) {
+  try {
+    await db.collection(collectionName).limit(1).get();
+    return true;
+  } catch (error) {
+    if (isMissingCollectionError(error)) {
+      return false;
+    }
+    throw error;
+  }
+}
+
+async function ensureRequiredCollectionsReady() {
+  const results = await Promise.all(REQUIRED_COLLECTIONS.map(async (collectionName) => ({
+    collectionName,
+    ready: await checkCollectionReady(collectionName)
+  })));
+  const missingCollections = results.filter((item) => !item.ready).map((item) => item.collectionName);
+  if (missingCollections.length) {
+    throw createMissingCollectionsError(missingCollections);
+  }
 }
 
 const childTemplate = {
@@ -133,9 +199,9 @@ const unlockTasks = unlockAudioFiles.map((item, index) => {
     category: 'unlock1',
     title: item[0],
     subtitle: `Unlock 1 第 ${index + 1} 条`,
-    audioUrl: buildCloudAssetUrl(`A1/Unlock1/${item[0]}.mp3`),
-    audioCloudPath: `A1/Unlock1/${item[0]}.mp3`,
-    audioFileId: buildCloudFileId(`A1/Unlock1/${item[0]}.mp3`),
+    audioUrl: buildCloudAssetUrl(`${UNLOCK1_AUDIO_ROOT}/${item[0]}.mp3`),
+    audioCloudPath: `${UNLOCK1_AUDIO_ROOT}/${item[0]}.mp3`,
+    audioFileId: buildCloudFileId(`${UNLOCK1_AUDIO_ROOT}/${item[0]}.mp3`),
     audioSource: 'static-cloud-url',
     repeatTarget: 3,
     durationSec: item[1],
@@ -146,7 +212,7 @@ const unlockTasks = unlockAudioFiles.map((item, index) => {
     textSource: {
       sourceType: 'pdf',
       title: 'Unlock 2e Listening and Speaking 1 Scripts',
-      filePath: buildCloudAssetUrl('A1/Unlock1/Unlock 2e Listening and Speaking 1 Scripts.pdf')
+      filePath: buildCloudAssetUrl(UNLOCK1_SCRIPT_PATH)
     }
   };
 });
@@ -183,7 +249,7 @@ function getStorageManager() {
   const secretId = process.env.TENCENTCLOUD_SECRETID || process.env.SECRETID;
   const secretKey = process.env.TENCENTCLOUD_SECRETKEY || process.env.SECRETKEY;
   const token = process.env.TENCENTCLOUD_SESSIONTOKEN || process.env.TOKEN;
-  if (!secretId || !secretKey || !CLOUD_ENV_ID) {
+  if (!CLOUD_ENV_ID) {
     return null;
   }
   storageManager = new CloudBaseManager({
@@ -229,7 +295,7 @@ function buildStaticTaskLookup(items) {
   const map = {};
   items.forEach((item) => {
     map[normalizeKey(item.title)] = item;
-    map[normalizeKey(getBaseName(item.audioUrl))] = item;
+    map[normalizeKey(getBaseName(item.audioCloudPath || item.audioUrl))] = item;
   });
   return map;
 }
@@ -240,33 +306,32 @@ async function listDirectoryFiles(cloudPath) {
     throw new Error('storage-manager-unavailable');
   }
   const storage = manager.storage;
-  const result = await storage.listDirectoryFiles({
-    envId: CLOUD_ENV_ID,
-    cloudPath: normalizeCloudPath(cloudPath)
+  const result = await storage.listDirectoryFiles(normalizeCloudPath(cloudPath));
+  const rawFiles = Array.isArray(result) ? result : ((((result || {}).data || {}).files || []));
+  const normalizedRoot = normalizeCloudPath(cloudPath);
+  const firstItem = rawFiles[0] || null;
+  storageDebugShapes[normalizedRoot] = firstItem ? Object.keys(firstItem).sort() : [];
+  return rawFiles.map((item) => {
+    const normalizedCloudPath = normalizeCloudPath(item.cloud_path || item.cloudPath || item.Key || '');
+    return {
+      cloudPath: normalizedCloudPath,
+      fileId: item.fileid || item.fileID || item.fileId || buildCloudFileId(normalizedCloudPath),
+      size: Number(item.size || item.Size || 0)
+    };
   });
-  return (((result || {}).data || {}).files || []).map((item) => ({
-    cloudPath: item.cloud_path || item.cloudPath || '',
-    fileId: item.fileid || item.fileID || item.fileId || '',
-    size: Number(item.size || 0)
-  }));
 }
 
-async function getTempUrls(fileList) {
-  const validFiles = fileList.filter((item) => item.fileId);
-  if (!validFiles.length) {
-    return {};
+function formatStorageError(error) {
+  if (!error) {
+    return '';
   }
-  const response = await cloud.getTempFileURL({
-    fileList: validFiles.map((item) => ({
-      fileID: item.fileId,
-      maxAge: TEMP_URL_TTL
-    }))
-  });
-  const map = {};
-  ((response || {}).fileList || []).forEach((item) => {
-    map[item.fileID] = item.tempFileURL || '';
-  });
-  return map;
+  if (error.errMsg) {
+    return error.errMsg;
+  }
+  if (error.message) {
+    return error.message;
+  }
+  return String(error);
 }
 
 function createCloudTextSource(pdfFile, titleFallback) {
@@ -300,18 +365,14 @@ function sortFilesByPath(left, right) {
 
 async function buildCloudCatalogFromRoot(category, rootPath, staticItems) {
   const files = await listDirectoryFiles(rootPath);
-  const audioFiles = files.filter((item) => /\.mp3$/i.test(item.cloudPath)).sort(sortFilesByPath);
-  if (!audioFiles.length) {
-    return [];
-  }
+  const audioFiles = files.filter((item) => AUDIO_FILE_PATTERN.test(item.cloudPath)).sort(sortFilesByPath);
   const pdfByFolder = {};
   files.filter((item) => /\.pdf$/i.test(item.cloudPath)).forEach((item) => {
     pdfByFolder[getParentFolder(item.cloudPath)] = item;
   });
-  const tempUrlMap = await getTempUrls(audioFiles);
   const staticLookup = buildStaticTaskLookup(staticItems);
 
-  return audioFiles.map((file, index) => {
+  const tasks = audioFiles.map((file, index) => {
     const audioBaseName = getBaseName(file.cloudPath);
     const matchedStatic = staticLookup[normalizeKey(audioBaseName)] || staticItems[index] || null;
     const folderPdf = findNearestParentPdf(pdfByFolder, file.cloudPath);
@@ -330,13 +391,88 @@ async function buildCloudCatalogFromRoot(category, rootPath, staticItems) {
       transcriptTrackId: matchedStatic ? matchedStatic.transcriptTrackId : null,
       transcriptStatus: matchedStatic ? matchedStatic.transcriptStatus : (folderPdf ? 'pending' : 'none'),
       transcriptBatch: matchedStatic ? matchedStatic.transcriptBatch : null,
-      audioUrl: tempUrlMap[file.fileId] || '',
+      audioUrl: buildCloudAssetUrl(file.cloudPath),
       audioCloudPath: file.cloudPath,
       audioFileId: file.fileId,
-      audioSource: tempUrlMap[file.fileId] ? 'temp-url' : 'none',
+      audioSource: 'static-cloud-url',
       textSource: createCloudTextSource(folderPdf, `${title} Script`)
     });
   });
+  return {
+    tasks,
+    debug: {
+      root: rootPath,
+      audioCount: audioFiles.length,
+      samplePath: audioFiles[0] ? audioFiles[0].cloudPath : '',
+      pdfCount: Object.keys(pdfByFolder).length,
+      rawStorageShape: (storageDebugShapes[normalizeCloudPath(rootPath)] || []).join(','),
+      scanMode: 'manager-scan',
+      scanError: ''
+    }
+  };
+}
+
+async function buildCloudCatalogForCategory(category, staticItems) {
+  const roots = STORAGE_ROOT_CANDIDATES[category] || [STORAGE_ROOTS[category]];
+  const errors = [];
+  const emptyScans = [];
+  for (let index = 0; index < roots.length; index += 1) {
+    const rootPath = roots[index];
+    try {
+      const result = await buildCloudCatalogFromRoot(category, rootPath, staticItems);
+      if (result.tasks.length) {
+        return {
+          tasks: result.tasks,
+          debug: Object.assign({}, result.debug, {
+            selectedRoot: rootPath,
+            rootCandidates: roots
+          })
+        };
+      }
+      emptyScans.push(result.debug);
+    } catch (error) {
+      errors.push(`${rootPath}: ${formatStorageError(error)}`);
+    }
+  }
+  return {
+    tasks: [],
+    debug: {
+      root: roots[0] || '',
+      selectedRoot: roots[0] || '',
+      rootCandidates: roots,
+      audioCount: 0,
+      samplePath: '',
+      pdfCount: 0,
+      rawStorageShape: (storageDebugShapes[normalizeCloudPath(roots[0] || '')] || []).join(','),
+      scanMode: errors.length ? 'static-fallback' : 'manager-scan',
+      scanError: errors.join(' | '),
+      emptyRoots: emptyScans.map((item) => item.root)
+    }
+  };
+}
+
+function summarizeRuntimeCatalogDebug(categoryDebugMap) {
+  const categories = Object.values(categoryDebugMap || {});
+  const unlock1 = categoryDebugMap.unlock1 || {};
+  const song = categoryDebugMap.song || {};
+  const modes = new Set(categories.map((item) => item.scanMode).filter(Boolean));
+  let storageScanMode = 'manager-scan';
+  if (modes.has('static-fallback') && modes.size > 1) {
+    storageScanMode = 'mixed';
+  } else if (modes.has('static-fallback')) {
+    storageScanMode = 'static-fallback';
+  }
+  return {
+    storageScanMode,
+    storageScanError: categories.map((item) => item.scanError).filter(Boolean).join(' | '),
+    rawStorageShape: categories.map((item) => item.rawStorageShape).filter(Boolean).join(' | '),
+    unlock1Root: unlock1.selectedRoot || unlock1.root || '',
+    unlock1AudioCount: unlock1.audioCount || 0,
+    unlock1SamplePath: unlock1.samplePath || '',
+    songRoot: song.selectedRoot || song.root || '',
+    songAudioCount: song.audioCount || 0,
+    songSamplePath: song.samplePath || ''
+  };
 }
 
 async function refreshRuntimeCatalogs(force) {
@@ -345,22 +481,27 @@ async function refreshRuntimeCatalogs(force) {
     return runtimeCatalogs;
   }
   const staticMap = getStaticCatalogMap();
-  try {
-    const [peppaCatalog, unlockCatalog, songCatalog] = await Promise.all([
-      buildCloudCatalogFromRoot('peppa', STORAGE_ROOTS.peppa, staticMap.peppa),
-      buildCloudCatalogFromRoot('unlock1', STORAGE_ROOTS.unlock1, staticMap.unlock1),
-      buildCloudCatalogFromRoot('song', STORAGE_ROOTS.song, staticMap.song)
-    ]);
-    runtimeCatalogs = {
-      peppa: peppaCatalog.length ? peppaCatalog : staticMap.peppa,
-      unlock1: unlockCatalog.length ? unlockCatalog : staticMap.unlock1,
-      song: songCatalog
-    };
-  } catch (error) {
-    runtimeCatalogs = staticMap;
-  }
+  const [peppaCatalog, unlockCatalog, songCatalog] = await Promise.all([
+    buildCloudCatalogForCategory('peppa', staticMap.peppa),
+    buildCloudCatalogForCategory('unlock1', staticMap.unlock1),
+    buildCloudCatalogForCategory('song', staticMap.song)
+  ]);
+  runtimeCatalogs = {
+    peppa: peppaCatalog.tasks.length ? peppaCatalog.tasks : staticMap.peppa,
+    unlock1: unlockCatalog.tasks.length ? unlockCatalog.tasks : staticMap.unlock1,
+    song: songCatalog.tasks
+  };
+  runtimeCatalogDebug = summarizeRuntimeCatalogDebug({
+    peppa: peppaCatalog.debug,
+    unlock1: unlockCatalog.debug,
+    song: songCatalog.debug
+  });
   runtimeCatalogExpiresAt = now + 5 * 60 * 1000;
   return runtimeCatalogs;
+}
+
+function getResourceDebugSnapshot() {
+  return Object.assign({}, runtimeCatalogDebug || summarizeRuntimeCatalogDebug({}));
 }
 
 const CATEGORY_ORDER = ['peppa', 'unlock1', 'song'];
@@ -774,6 +915,7 @@ async function getDashboardData(ctx) {
 
 async function handleAction(event, context) {
   await refreshRuntimeCatalogs(false);
+  await ensureRequiredCollectionsReady();
   const { OPENID } = cloud.getWXContext();
   const ctx = await ensureBootstrap(OPENID);
   const today = new Date().toISOString().slice(0, 10);
@@ -983,4 +1125,12 @@ async function handleAction(event, context) {
   throw new Error(`unsupported action: ${event.action}`);
 }
 
-exports.main = async (event, context) => handleAction(event, context);
+exports.main = async (event, context) => {
+  const result = await handleAction(event, context);
+  if (!result || typeof result !== 'object' || Array.isArray(result)) {
+    return result;
+  }
+  return Object.assign({}, result, {
+    resourceDebug: getResourceDebugSnapshot()
+  });
+};

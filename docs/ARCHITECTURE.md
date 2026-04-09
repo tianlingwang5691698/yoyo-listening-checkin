@@ -68,6 +68,45 @@
 - 首次数据库集合自动写入
 - 云存储目录与命名规则一致性
 
+### 云函数 `cloudfunctions/unlock1-preprocess`
+
+负责：
+
+- 扫描 `Unlock1` 云端音频目录
+- 读取音频时长
+- 过滤 30 秒以内短音频
+- 写入 `unlock1AudioTrainingPool`
+- 预留 transcript 对齐 / 生成动作接口
+
+说明：
+
+- 这条链路独立于 `yoyo`
+- 当前不回写首页任务池
+- 目标是为后续听力训练和 transcript 流程准备稳定素材层
+
+## CloudBase 集合
+
+- `families`
+- `familyMembers`
+- `children`
+- `dailyTaskProgress`
+- `dailyCheckins`
+- `dailyReports`
+- `subscriptionPreferences`
+- `unlock1AudioTrainingPool`
+
+说明：
+
+- 前 7 个集合服务主业务链路
+- `unlock1AudioTrainingPool` 服务 Unlock1 音频预处理链路
+
+## 文档入口
+
+- [README.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/README.md)：仓库总入口
+- [README.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/README.md)：文档导航
+- [CLOUDBASE_SETUP.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/CLOUDBASE_SETUP.md)：云环境与部署
+- [REAL_DEVICE_TEST.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/REAL_DEVICE_TEST.md)：真机测试
+
 ## 正式配置来源
 
 统一只认 [data/app-config.js](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/data/app-config.js)：

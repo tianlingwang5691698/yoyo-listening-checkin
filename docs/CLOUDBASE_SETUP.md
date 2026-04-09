@@ -10,15 +10,15 @@
 ## 正式素材目录
 
 - `A1/Peppa`
-- `A1/Unlock1`
-- `A1/Super simple song`
+- `A1/Unlock1/Unlock1 听口音频 Class Audio`
+- `A1/Super simple songs`
 
 要求：
 
 - `Peppa` 每季独立子目录
 - 音频 `.mp3` 与对应 `.pdf` 尽量放同目录
-- `Unlock1` 音频与脚本 PDF 同目录
-- `Song` 至少有 `.mp3`
+- `Unlock1` 音频与脚本 PDF 当前放在 `Unlock1 听口音频 Class Audio` 子目录
+- `Song` 当前从 `A1/Super simple songs` 递归扫描，至少要有可识别音频
 
 ## 云函数部署步骤
 
@@ -27,7 +27,11 @@
 3. 进入 `cloudfunctions/yoyo`
 4. 安装依赖
 5. 上传并部署 `yoyo`
-6. 在云开发控制台确认数据库集合与云存储目录正常
+6. 进入 `cloudfunctions/unlock1-preprocess`
+7. 安装依赖
+8. 上传并部署 `unlock1-preprocess`
+9. 在云开发控制台先手动创建首版数据库集合
+10. 在云开发控制台确认云存储目录正常
 
 ## 云函数依赖
 
@@ -47,11 +51,37 @@
 - `dailyCheckins`
 - `dailyReports`
 - `subscriptionPreferences`
+- `unlock1AudioTrainingPool`
 
 说明：
 
-- 首次云调用会尝试写入初始化数据
+- 这些集合需要先在 CloudBase 控制台创建为空集合
+- 首次云调用会尝试写入首批初始化业务数据
+- 如果集合没建，首页会在 bootstrap 阶段读取失败并回退本地
 - 真机首次启动后应检查这些集合是否开始出现正式数据
+
+## Unlock1 预处理云函数
+
+- 云函数目录：`cloudfunctions/unlock1-preprocess`
+- 扫描目录：`A1/Unlock1/Unlock1 听口音频 Class Audio`
+- 结果表：`unlock1AudioTrainingPool`
+
+当前支持动作：
+
+- `scanUnlock1Audio`
+- `alignTranscriptWithAudio`（占位）
+- `generateTranscriptFromAudio`（占位）
+
+手动触发示例：
+
+```js
+wx.cloud.callFunction({
+  name: 'unlock1-preprocess',
+  data: {
+    action: 'scanUnlock1Audio'
+  }
+});
+```
 
 ## 部署后立即验证
 

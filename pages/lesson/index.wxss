@@ -91,6 +91,11 @@
   color: #b45e40;
 }
 
+.sync-debug-line {
+  margin-top: 8rpx;
+  word-break: break-all;
+}
+
 .hero-meta {
   position: relative;
   z-index: 1;
@@ -193,15 +198,40 @@
 }
 
 .player-panel {
-  padding: 26rpx;
+  padding: 28rpx;
   border-radius: 30rpx;
   box-shadow: 0 18rpx 42rpx rgba(101, 76, 56, 0.12);
+}
+
+.player-info-block {
+  padding: 22rpx 24rpx;
+  border-radius: 24rpx;
+  background: rgba(255, 255, 255, 0.58);
+}
+
+.player-info-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18rpx;
+}
+
+.player-speed-badge {
+  flex-shrink: 0;
+  padding: 10rpx 16rpx;
+  border-radius: 999rpx;
+  background: rgba(255, 255, 255, 0.82);
+  color: #6d5f54;
+  font-size: 22rpx;
+  font-weight: 800;
 }
 
 .player-main {
   display: flex;
   align-items: center;
-  gap: 18rpx;
+  gap: 20rpx;
+  margin-top: 20rpx;
+  padding: 10rpx 6rpx 0;
 }
 
 .player-toggle {
@@ -232,8 +262,38 @@
   min-width: 0;
 }
 
+.player-main-label {
+  font-size: 24rpx;
+  font-weight: 800;
+  color: #2f241f;
+}
+
+.player-main-copy {
+  margin-top: 8rpx;
+  font-size: 22rpx;
+  line-height: 1.6;
+  color: #8c7e72;
+}
+
 .player-status {
   margin-top: 8rpx;
+  font-size: 22rpx;
+  color: #8c7e72;
+}
+
+.player-progress {
+  margin-top: 20rpx;
+}
+
+.player-progress-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16rpx;
+  margin-bottom: 12rpx;
+}
+
+.player-progress-label {
   font-size: 22rpx;
   color: #8c7e72;
 }
@@ -242,11 +302,7 @@
   flex-shrink: 0;
   font-size: 22rpx;
   font-weight: 700;
-  color: #8c7e72;
-}
-
-.player-progress {
-  margin-top: 20rpx;
+  color: #6d5f54;
 }
 
 .player-progress-track {
@@ -264,8 +320,9 @@
 
 .player-actions {
   display: flex;
-  gap: 14rpx;
-  margin-top: 18rpx;
+  flex-direction: column;
+  gap: 18rpx;
+  margin-top: 22rpx;
 }
 
 .player-action {
@@ -273,7 +330,6 @@
   padding: 18rpx 22rpx;
   border: none;
   line-height: 1;
-  padding: 18rpx 22rpx;
   border-radius: 999rpx;
   text-align: center;
   background: rgba(255, 255, 255, 0.6);
@@ -282,8 +338,26 @@
   font-weight: 800;
 }
 
-.player-action-rate {
-  margin-left: auto;
+.player-action-rewind {
+  width: 100%;
+}
+
+.player-rate-group {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12rpx;
+}
+
+.player-rate-option {
+  width: 100%;
+  min-width: 0;
+  padding: 18rpx 0;
+}
+
+.player-rate-option.is-active-rate {
+  background: linear-gradient(135deg, #ffb07d 0%, #ef7c55 100%);
+  color: #fffaf6;
+  box-shadow: 0 10rpx 24rpx rgba(239, 124, 85, 0.18);
 }
 
 .player-action.is-disabled {

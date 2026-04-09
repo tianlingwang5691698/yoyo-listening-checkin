@@ -1,0 +1,10 @@
+{
+  "name": "unlock1-preprocess-cloud-function",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "@cloudbase/manager-node": "^3.10.1",
+    "music-metadata": "^11.12.3",
+    "wx-server-sdk": "^3.0.1"
+  }
+}

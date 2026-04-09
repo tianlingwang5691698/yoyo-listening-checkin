@@ -17,17 +17,35 @@
 - 云存储访问域名：`https://796f-youshengenglish-6glk12rd6c6e719b-1419984942.tcb.qcloud.la`
 - 正式配置源：[data/app-config.js](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/data/app-config.js)
 
-## 目录结构
+## 仓库导航
+
+### 代码入口
 
 - [app.js](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/app.js) / [app.json](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/app.json)：小程序入口与全局配置
-- [pages](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/pages)：页面层，负责展示与交互
-- [utils/store.js](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/utils/store.js)：页面统一数据入口，负责云端优先与本地 fallback
-- [domain](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/domain)：业务域逻辑
-- [data](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/data)：静态配置、mock 数据、逐句稿数据
-- [cloudfunctions/yoyo](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/cloudfunctions/yoyo)：主云函数，负责云数据库与云存储接线
-- [assets](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/assets)：本地整理素材，不是正式运行时素材来源
-- [scripts](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/scripts)：逐句稿处理与辅助脚本
-- [docs](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs)：仓库说明、云部署、真机测试、提审与合规材料
+- [pages](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/pages)：页面层
+- [utils/store.js](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/utils/store.js)：页面统一数据入口，负责云优先与本地 fallback
+- [domain](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/domain)：业务逻辑分层
+- [data](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/data)：正式配置、mock、逐句稿、静态目录映射
+
+### 云函数
+
+- [cloudfunctions/yoyo](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/cloudfunctions/yoyo)：主云函数，负责家庭、任务、进度、日报、云存储任务扫描
+- [cloudfunctions/unlock1-preprocess](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/cloudfunctions/unlock1-preprocess)：Unlock1 音频预处理云函数，负责扫描、时长提取和训练池写库
+- [cloudfunctions/README.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/cloudfunctions/README.md)：云函数部署、集合和手动触发说明
+
+### 辅助资源
+
+- [assets](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/assets)：本地整理素材，不是正式运行时数据源
+- [scripts](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/scripts)：逐句稿处理、PDF 提取等辅助脚本
+- [docs](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs)：项目文档入口
+
+## 推荐阅读顺序
+
+1. [docs/README.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/README.md)
+2. [docs/ARCHITECTURE.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/ARCHITECTURE.md)
+3. [docs/CLOUDBASE_SETUP.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/CLOUDBASE_SETUP.md)
+4. [docs/REAL_DEVICE_TEST.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/REAL_DEVICE_TEST.md)
+5. [docs/RELEASE_SOP.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/RELEASE_SOP.md)
 
 ## 运行链路
 
@@ -35,25 +53,39 @@
 2. 页面层通过 `utils/store` 统一获取数据
 3. `utils/store` 优先调用 `domain/cloud -> wx.cloud.callFunction -> yoyo`
 4. `yoyo` 云函数读取 CloudBase 数据库和云存储
-5. 只有开发态允许 fallback 到本地数据；真机验收必须看到 `syncMode=cloud`
+5. `unlock1-preprocess` 作为独立预处理链路维护 Unlock1 听力训练池
+6. 只有开发态允许 fallback 到本地数据；真机验收必须看到 `syncMode=cloud`
 
 ## 云存储目录约定
 
 - `A1/Peppa`
-- `A1/Unlock1`
-- `A1/Super simple song`
+- `A1/Unlock1/Unlock1 听口音频 Class Audio`
+- `A1/Super simple songs`
 
 说明：
 
 - `Peppa` 建议按季分子目录，音频与该季 PDF 放在一起
-- `Unlock1` 音频与脚本 PDF 放在同目录
-- `Song` 先放音频；有歌词 PDF 时可放在同目录
+- `Unlock1` 音频与脚本 PDF 当前放在 `Unlock1 听口音频 Class Audio` 子目录
+- `Song` 当前从 `A1/Super simple songs` 递归扫描；有歌词 PDF 可放在同目录
+
+## CloudBase 集合
+
+- `families`
+- `familyMembers`
+- `children`
+- `dailyTaskProgress`
+- `dailyCheckins`
+- `dailyReports`
+- `subscriptionPreferences`
+- `unlock1AudioTrainingPool`
 
 ## 开发与部署
 
+- 文档总入口见 [docs/README.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/README.md)
 - 云环境部署说明见 [docs/CLOUDBASE_SETUP.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/CLOUDBASE_SETUP.md)
 - 真机测试清单见 [docs/REAL_DEVICE_TEST.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/REAL_DEVICE_TEST.md)
 - 真机测试记录模板见 [docs/REAL_DEVICE_TEST_LOG_TEMPLATE.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/REAL_DEVICE_TEST_LOG_TEMPLATE.md)
+- 真机测试记录目录见 [docs/test-runs](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/test-runs)
 - 提审上线流程见 [docs/RELEASE_SOP.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/RELEASE_SOP.md)
 - 提审包收口清单见 [docs/REVIEW_BUILD_CHECKLIST.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/REVIEW_BUILD_CHECKLIST.md)
 - 隐私与提审材料见 [docs/PRIVACY_AND_REVIEW.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/PRIVACY_AND_REVIEW.md)

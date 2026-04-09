@@ -2,6 +2,7 @@ const store = require('../../utils/store');
 const player = require('../../domain/player/index');
 const cloud = require('../../domain/cloud/index');
 const appConfig = require('../../data/app-config');
+const PLAYBACK_RATE_OPTIONS = [0.8, 1.0];
 
 function buildCloudFileId(cloudPath) {
   const normalizedPath = String(cloudPath || '').replace(/^\/+/, '');
@@ -32,6 +33,7 @@ Page({
     syncDebug: null,
     isPlaying: false,
     playbackRate: 1,
+    playbackRateOptions: PLAYBACK_RATE_OPTIONS,
     canRewind: false,
     activeLineId: '',
     activeLineIndex: -1,
@@ -43,6 +45,7 @@ Page({
     audioReady: false,
     audioResolving: false,
     audioError: '',
+    audioErrorDetail: '',
     audioPlaybackMode: 'idle'
   },
   onLoad(query) {
@@ -57,6 +60,7 @@ Page({
         audioReady: true,
         audioResolving: false,
         audioError: '',
+        audioErrorDetail: '',
         audioPlaybackMode: 'ready',
         durationLabel: this.formatTime(Math.floor(durationFromContext || taskDuration))
       });
@@ -79,7 +83,8 @@ Page({
     this.innerAudioContext.onPlay(() => {
       this.setData({
         isPlaying: true,
-        audioError: ''
+        audioError: '',
+        audioErrorDetail: ''
       });
     });
     this.innerAudioContext.onPause(() => {
@@ -94,6 +99,7 @@ Page({
         canRewind: false,
         audioReady: false,
         audioResolving: false,
+        audioErrorDetail: '',
         audioPlaybackMode: 'idle'
       });
     });
@@ -113,7 +119,8 @@ Page({
         isPlaying: false,
         audioReady: false,
         audioResolving: false,
-        audioError: `${error.errCode || ''}`.trim() || 'playback-error',
+        audioError: 'playback-error',
+        audioErrorDetail: `${error.errCode || ''}`.trim(),
         audioPlaybackMode: 'error'
       });
       wx.showToast({
@@ -145,10 +152,12 @@ Page({
       return Object.assign({}, task, {
         audioUrl: '',
         audioFileId: '',
-        audioSource: 'none'
+        audioSource: 'none',
+        audioResolveError: ''
       });
     }
     const audioFileId = task.audioFileId || buildCloudFileId(task.audioCloudPath);
+    let audioResolveError = '';
     if (audioFileId) {
       try {
         const tempUrl = await cloud.getTempFileURL(audioFileId);
@@ -156,16 +165,18 @@ Page({
           return Object.assign({}, task, {
             audioUrl: tempUrl,
             audioFileId,
-            audioSource: 'temp-url'
+            audioSource: 'temp-url',
+            audioResolveError
           });
         }
       } catch (error) {
-        // Fall back to existing URL below.
+        audioResolveError = 'temp-url-failed';
       }
     }
     return Object.assign({}, task, {
       audioFileId,
-      audioSource: task.audioSource || (task.audioUrl ? 'static-cloud-url' : 'none')
+      audioSource: task.audioSource || (task.audioUrl ? 'static-cloud-url' : 'none'),
+      audioResolveError
     });
   },
   downloadAudio(url) {
@@ -194,13 +205,16 @@ Page({
         audioSource: 'none',
         audioReady: false,
         audioResolving: false,
-        audioError: 'missing-audio-url',
+        audioError: resolvedTask && resolvedTask.audioResolveError ? resolvedTask.audioResolveError : 'missing-audio-url',
+        audioErrorDetail: '',
         audioPlaybackMode: 'error'
       }));
       return;
     }
     let playableUrl = resolvedTask.audioUrl;
-    let playbackMode = resolvedTask.audioSource === 'temp-url' ? 'temp-url' : 'static-cloud-url';
+    let playbackMode = resolvedTask.audioSource === 'temp-url'
+      ? 'temp-url'
+      : (resolvedTask.audioResolveError ? 'static-fallback' : 'static-cloud-url');
     try {
       playableUrl = await this.downloadAudio(resolvedTask.audioUrl);
       playbackMode = 'downloaded';
@@ -211,6 +225,7 @@ Page({
           audioReady: false,
           audioResolving: false,
           audioError: 'download-failed',
+          audioErrorDetail: '',
           audioPlaybackMode: 'error'
         }));
         wx.showToast({
@@ -237,6 +252,7 @@ Page({
       audioReady: false,
       audioResolving: true,
       audioError: '',
+      audioErrorDetail: '',
       audioPlaybackMode: playbackMode
     }));
   },
@@ -259,6 +275,7 @@ Page({
       currentTimeMs: 0,
       currentTimeLabel: '00:00',
       progressPercent: 0,
+      playbackRate: 1,
       canRewind: false,
       activeLineId: '',
       activeLineIndex: -1,
@@ -270,6 +287,7 @@ Page({
       audioReady: false,
       audioResolving: false,
       audioError: '',
+      audioErrorDetail: '',
       audioPlaybackMode: 'idle'
     });
     await this.syncPlayer(detail.task);
@@ -380,11 +398,14 @@ Page({
     });
     this.updateTranscriptByTime(nextValue * 1000);
   },
-  togglePlaybackRate() {
+  setPlaybackRate(event) {
     if (!this.innerAudioContext) {
       return;
     }
-    const nextRate = this.data.playbackRate === 1 ? 0.8 : 1;
+    const nextRate = Number(event.currentTarget.dataset.rate);
+    if (!PLAYBACK_RATE_OPTIONS.includes(nextRate)) {
+      return;
+    }
     this.innerAudioContext.playbackRate = nextRate;
     this.setData({
       playbackRate: nextRate
@@ -412,7 +433,8 @@ Page({
       transcriptTrack: detail.transcriptTrack,
       transcriptLines: detail.transcriptTrack ? detail.transcriptTrack.lines : [],
       history: detail.history,
-      audioSource: detail.task && detail.task.audioSource ? detail.task.audioSource : 'none'
+      audioSource: detail.task && detail.task.audioSource ? detail.task.audioSource : 'none',
+      playbackRate: 1
     });
     await this.syncPlayer(detail.task);
     wx.showToast({

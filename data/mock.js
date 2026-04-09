@@ -47,10 +47,12 @@ const peppaScriptSource = {
   filePath: buildCloudAssetUrl('A1/Peppa/第1季/PeppaPig第1季英文剧本台词.pdf')
 };
 
+const unlockAudioRoot = 'A1/Unlock1/Unlock1 听口音频 Class Audio';
+
 const unlockScriptSource = {
   sourceType: 'pdf',
   title: 'Unlock 2e Listening and Speaking 1 Scripts',
-  filePath: buildCloudAssetUrl('A1/Unlock1/Unlock 2e Listening and Speaking 1 Scripts.pdf')
+  filePath: buildCloudAssetUrl(`${unlockAudioRoot}/Unlock 2e Listening and Speaking 1 Scripts.pdf`)
 };
 
 const transcriptTracks = [...peppaTranscriptTracks, ...unlockTranscriptTracks];
@@ -125,9 +127,9 @@ const unlockTasks = unlockAudioFiles.map(([fileName, durationSec], index) => {
     category: 'unlock1',
     title: fileName.replace(/\.mp3$/i, ''),
     subtitle: `Unlock 1 第 ${index + 1} 条`,
-    audioUrl: buildCloudAssetUrl(`A1/Unlock1/${fileName}`),
-    audioCloudPath: `A1/Unlock1/${fileName}`,
-    audioFileId: buildCloudFileId(`A1/Unlock1/${fileName}`),
+    audioUrl: buildCloudAssetUrl(`${unlockAudioRoot}/${fileName}`),
+    audioCloudPath: `${unlockAudioRoot}/${fileName}`,
+    audioFileId: buildCloudFileId(`${unlockAudioRoot}/${fileName}`),
     audioSource: 'static-cloud-url',
     repeatTarget: 3,
     durationSec,

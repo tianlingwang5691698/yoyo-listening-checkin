@@ -8,6 +8,11 @@
     <view class="lesson-copy" wx:elif="{{task.coverMeta}}">{{task.coverMeta}}</view>
     <view class="sync-debug {{syncMode === 'cloud' ? 'is-cloud' : 'is-local'}}" wx:if="{{showCloudDebug && syncDebug && syncDebug.show}}">
       {{syncDebug.text}}
+      <block wx:if="{{syncDebug.resourceLines && syncDebug.resourceLines.length}}">
+        <block wx:for="{{syncDebug.resourceLines}}" wx:key="*this">
+          <view class="sync-debug-line">{{item}}</view>
+        </block>
+      </block>
     </view>
     <view class="hero-meta">
       <text>每天 3 遍</text>
@@ -40,6 +45,12 @@
           <view class="section-copy" wx:if="{{audioPlaybackMode && audioPlaybackMode !== 'idle'}}">
             播放链路：{{audioPlaybackMode}}
           </view>
+          <view class="section-copy" wx:if="{{showCloudDebug && task.audioCloudPath}}">
+            云路径：{{task.audioCloudPath}}
+          </view>
+          <view class="section-copy" wx:if="{{showCloudDebug && task.audioFileId}}">
+            fileId：{{task.audioFileId}}
+          </view>
           <view class="section-copy" wx:if="{{audioResolving}}">
             播放状态：正在解析云端音频
           </view>
@@ -48,6 +59,9 @@
           </view>
           <view class="section-copy error-copy" wx:if="{{audioError}}">
             播放状态：{{audioError}}
+          </view>
+          <view class="section-copy error-copy" wx:if="{{showCloudDebug && audioErrorDetail}}">
+            错误详情：{{audioErrorDetail}}
           </view>
         </view>
         <view wx:else>
@@ -60,24 +74,44 @@
     </view>
     <view class="custom-player" wx:if="{{!task.isPendingAsset}}">
       <view class="player-panel quest-{{task.category}}">
+        <view class="player-info-block">
+          <view class="player-info-top">
+            <view>
+              <view class="media-title" wx:if="{{task.audioCompactTitle}}">{{task.audioCompactTitle}}</view>
+              <view class="player-status">{{isPlaying ? '正在播放' : (audioResolving ? '正在准备' : (audioReady ? '已暂停' : '等待播放'))}}</view>
+            </view>
+            <view class="player-speed-badge">当前 {{playbackRate.toFixed(1)}}x</view>
+          </view>
+        </view>
         <view class="player-main">
           <button class="player-toggle" bindtap="toggleAudio" loading="{{audioResolving}}" disabled="{{task.isPendingAsset}}">
             <text>{{isPlaying ? '||' : '>'}}</text>
           </button>
           <view class="player-copy">
-            <view class="media-title" wx:if="{{task.audioCompactTitle}}">{{task.audioCompactTitle}}</view>
-            <view class="player-status">{{isPlaying ? '正在播放' : (audioResolving ? '正在准备' : (audioReady ? '已暂停' : '等待播放'))}} · {{playbackRate === 1 ? '原速' : '慢速 0.8x'}}</view>
+            <view class="player-main-label">播放 / 暂停</view>
+            <view class="player-main-copy">按三遍训练节奏稳稳往前听，不提供快进。</view>
           </view>
-          <view class="player-time">{{currentTimeLabel}} / {{durationLabel}}</view>
         </view>
         <view class="player-progress">
+          <view class="player-progress-meta">
+            <view class="player-progress-label">播放进度</view>
+            <view class="player-time">{{currentTimeLabel}} / {{durationLabel}}</view>
+          </view>
           <view class="player-progress-track">
             <view class="player-progress-fill quest-fill-{{task.category}}" style="width: {{progressPercent}}%;"></view>
           </view>
         </view>
         <view class="player-actions">
-          <button class="player-action {{canRewind ? '' : 'is-disabled'}}" bindtap="rewindAudio">-5s</button>
-          <button class="player-action player-action-rate" bindtap="togglePlaybackRate">{{playbackRate === 1 ? '0.8x' : '1.0x'}}</button>
+          <button class="player-action player-action-rewind {{canRewind ? '' : 'is-disabled'}}" bindtap="rewindAudio">后退 5 秒</button>
+          <view class="player-rate-group">
+            <block wx:for="{{playbackRateOptions}}" wx:key="*this">
+              <button
+                class="player-action player-rate-option {{playbackRate === item ? 'is-active-rate' : ''}}"
+                bindtap="setPlaybackRate"
+                data-rate="{{item}}"
+              >{{item.toFixed(1)}}x</button>
+            </block>
+          </view>
         </view>
       </view>
     </view>
