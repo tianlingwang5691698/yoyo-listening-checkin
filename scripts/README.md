@@ -26,14 +26,20 @@ python3 -m pip install pypdf
 
 额外素材目录建议：
 
-- Peppa 主音频：`assets/audio/Peppa/第1季/S101 Muddy Puddles.mp3`
-- Unlock 1 音频：`assets/audio/unlock1/Unlock2e_A1_1.2.mp3`
-- 歌曲音频：`assets/audio/songs/song-d1.mp3`
-- 脚本 PDF：`assets/scripts/peppa/1-6季英文版台词剧本pdf/PeppaPig第1季英文剧本台词.pdf`
-- 脚本 PDF：`assets/scripts/unlock1/Unlock 2e Listening and Speaking 1 Scripts.pdf`
+- 本地整理目录可继续使用：
+  - `assets/audio/Peppa/第1季/S101 Muddy Puddles.mp3`
+  - `assets/audio/unlock1/Unlock2e_A1_1.2.mp3`
+  - `assets/audio/songs/song-d1.mp3`
+  - `assets/scripts/peppa/1-6季英文版台词剧本pdf/PeppaPig第1季英文剧本台词.pdf`
+  - `assets/scripts/unlock1/Unlock 2e Listening and Speaking 1 Scripts.pdf`
+- 小程序正式读取以 CloudBase 云存储目录为准：
+  - `A1/Peppa`
+  - `A1/Unlock1`
+  - `A1/Super simple song`
 
 当前规则：
 
 - `Unlock 1` 音频时长低于 60 秒：自动排除，不计入当天打卡
 - `Unlock 1` 音频时长大于等于 60 秒：纳入当天打卡，需要听 3 遍
-- 所有任务前两遍不显示文本，第 3 遍才显示文本
+- 有逐句稿的任务，3 遍都可以同步显示文本
+- 没有逐句稿的任务，也不会阻塞当天完成

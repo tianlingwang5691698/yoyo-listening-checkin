@@ -6,12 +6,42 @@ const family = require('../domain/family/index');
 const reports = require('../domain/reports/index');
 const { getTodayString } = require('./date');
 
+function formatFallbackReason(error) {
+  if (!error) {
+    return 'unknown';
+  }
+  if (error.errMsg) {
+    return error.errMsg;
+  }
+  if (error.message) {
+    return error.message;
+  }
+  return String(error);
+}
+
+function buildSyncMeta(mode, error) {
+  const envId = cloud.getCloudEnvId();
+  const reason = mode === 'local' ? formatFallbackReason(error) : '';
+  return {
+    syncMode: mode,
+    syncDebug: {
+      mode,
+      envId,
+      show: cloud.shouldShowCloudDebug(),
+      reason,
+      text: mode === 'cloud'
+        ? `云环境已连接：${envId}`
+        : `当前使用本地回退，目标云环境：${envId}${reason ? `，失败原因：${reason}` : ''}`
+    }
+  };
+}
+
 async function callWithFallback(action, payload, fallback) {
   try {
     const result = await cloud.callYoyo(action, payload);
-    return Object.assign({ syncMode: 'cloud' }, result);
+    return Object.assign(buildSyncMeta('cloud'), result);
   } catch (error) {
-    return Object.assign({ syncMode: 'local' }, fallback(error));
+    return Object.assign(buildSyncMeta('local', error), fallback(error));
   }
 }
 

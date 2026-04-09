@@ -33,6 +33,26 @@
   color: #7f6d61;
 }
 
+.sync-debug {
+  margin-top: 18rpx;
+  padding: 14rpx 18rpx;
+  border-radius: 20rpx;
+  font-size: 22rpx;
+  line-height: 1.5;
+  background: rgba(255, 255, 255, 0.62);
+  color: #6f6258;
+}
+
+.sync-debug.is-cloud {
+  background: rgba(233, 248, 235, 0.84);
+  color: #44734b;
+}
+
+.sync-debug.is-local {
+  background: rgba(255, 241, 234, 0.9);
+  color: #b45e40;
+}
+
 .avatar-badge {
   width: 108rpx;
   height: 108rpx;

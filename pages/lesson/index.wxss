@@ -69,6 +69,28 @@
   color: rgba(47, 36, 31, 0.72);
 }
 
+.sync-debug {
+  position: relative;
+  z-index: 1;
+  margin-top: 18rpx;
+  padding: 14rpx 18rpx;
+  border-radius: 20rpx;
+  font-size: 22rpx;
+  line-height: 1.5;
+  background: rgba(255, 255, 255, 0.62);
+  color: #6f6258;
+}
+
+.sync-debug.is-cloud {
+  background: rgba(233, 248, 235, 0.84);
+  color: #44734b;
+}
+
+.sync-debug.is-local {
+  background: rgba(255, 241, 234, 0.9);
+  color: #b45e40;
+}
+
 .hero-meta {
   position: relative;
   z-index: 1;
@@ -148,6 +170,10 @@
   color: #2f241f;
 }
 
+.error-copy {
+  color: #d14d2f;
+}
+
 .player-header {
   align-items: flex-start;
 }
@@ -182,6 +208,8 @@
   width: 88rpx;
   min-width: 88rpx;
   height: 88rpx;
+  padding: 0;
+  border: none;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -192,6 +220,11 @@
   font-weight: 800;
   line-height: 1;
   box-shadow: 0 12rpx 28rpx rgba(239, 124, 85, 0.18);
+}
+
+.player-toggle::after,
+.player-action::after {
+  border: none;
 }
 
 .player-copy {
@@ -237,6 +270,9 @@
 
 .player-action {
   min-width: 120rpx;
+  padding: 18rpx 22rpx;
+  border: none;
+  line-height: 1;
   padding: 18rpx 22rpx;
   border-radius: 999rpx;
   text-align: center;

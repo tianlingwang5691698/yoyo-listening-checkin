@@ -1,5 +1,15 @@
 const store = require('../../utils/store');
 const player = require('../../domain/player/index');
+const cloud = require('../../domain/cloud/index');
+const appConfig = require('../../data/app-config');
+
+function buildCloudFileId(cloudPath) {
+  const normalizedPath = String(cloudPath || '').replace(/^\/+/, '');
+  if (!normalizedPath || !appConfig.cloudEnvId || !appConfig.cloudBucket) {
+    return '';
+  }
+  return `cloud://${appConfig.cloudEnvId}.${appConfig.cloudBucket}/${normalizedPath}`;
+}
 
 Page({
   data: {
@@ -16,6 +26,8 @@ Page({
     currentTimeLabel: '00:00',
     durationLabel: '00:00',
     progressPercent: 0,
+    syncMode: 'local',
+    syncDebug: null,
     isPlaying: false,
     playbackRate: 1,
     canRewind: false,
@@ -24,12 +36,33 @@ Page({
     transcriptScrollIntoView: '',
     prevLine: null,
     activeLine: null,
-    nextLine: null
+    nextLine: null,
+    audioSource: 'none',
+    audioReady: false,
+    audioResolving: false,
+    audioError: '',
+    audioPlaybackMode: 'idle'
   },
   onLoad(query) {
     this.category = query.category || 'peppa';
+    this.pendingAutoPlay = false;
     this.innerAudioContext = wx.createInnerAudioContext();
     this.innerAudioContext.obeyMuteSwitch = false;
+    this.innerAudioContext.onCanplay(() => {
+      const durationFromContext = Number(this.innerAudioContext.duration || 0);
+      const taskDuration = (this.data.task && this.data.task.durationSec) || 0;
+      this.setData({
+        audioReady: true,
+        audioResolving: false,
+        audioError: '',
+        audioPlaybackMode: 'ready',
+        durationLabel: this.formatTime(Math.floor(durationFromContext || taskDuration))
+      });
+      if (this.pendingAutoPlay) {
+        this.pendingAutoPlay = false;
+        this.innerAudioContext.play();
+      }
+    });
     this.innerAudioContext.onTimeUpdate(() => {
       const currentSeconds = this.innerAudioContext.currentTime || 0;
       const durationSeconds = (this.data.task && this.data.task.durationSec) || 0;
@@ -42,7 +75,10 @@ Page({
       });
     });
     this.innerAudioContext.onPlay(() => {
-      this.setData({ isPlaying: true });
+      this.setData({
+        isPlaying: true,
+        audioError: ''
+      });
     });
     this.innerAudioContext.onPause(() => {
       this.setData({ isPlaying: false });
@@ -53,7 +89,10 @@ Page({
         currentTimeMs: 0,
         currentTimeLabel: '00:00',
         progressPercent: 0,
-        canRewind: false
+        canRewind: false,
+        audioReady: false,
+        audioResolving: false,
+        audioPlaybackMode: 'idle'
       });
     });
     this.innerAudioContext.onEnded(() => {
@@ -65,6 +104,20 @@ Page({
         canRewind: false
       });
       this.handleAudioEnded();
+    });
+    this.innerAudioContext.onError((error) => {
+      this.pendingAutoPlay = false;
+      this.setData({
+        isPlaying: false,
+        audioReady: false,
+        audioResolving: false,
+        audioError: `${error.errCode || ''}`.trim() || 'playback-error',
+        audioPlaybackMode: 'error'
+      });
+      wx.showToast({
+        title: '云端音频加载失败',
+        icon: 'none'
+      });
     });
   },
   async onShow() {
@@ -85,23 +138,105 @@ Page({
   formatTime(totalSeconds) {
     return player.formatTime(totalSeconds);
   },
-  syncPlayer(task) {
+  async resolveTaskAudio(task) {
+    if (!task || task.isPendingAsset) {
+      return Object.assign({}, task, {
+        audioUrl: '',
+        audioFileId: '',
+        audioSource: 'none'
+      });
+    }
+    const audioFileId = task.audioFileId || buildCloudFileId(task.audioCloudPath);
+    if (audioFileId) {
+      try {
+        const tempUrl = await cloud.getTempFileURL(audioFileId);
+        if (tempUrl) {
+          return Object.assign({}, task, {
+            audioUrl: tempUrl,
+            audioFileId,
+            audioSource: 'temp-url'
+          });
+        }
+      } catch (error) {
+        // Fall back to existing URL below.
+      }
+    }
+    return Object.assign({}, task, {
+      audioFileId,
+      audioSource: task.audioSource || (task.audioUrl ? 'static-cloud-url' : 'none')
+    });
+  },
+  downloadAudio(url) {
+    return new Promise((resolve, reject) => {
+      wx.downloadFile({
+        url,
+        success: (response) => {
+          if (response.statusCode >= 200 && response.statusCode < 300 && response.tempFilePath) {
+            resolve(response.tempFilePath);
+            return;
+          }
+          reject(new Error(`download-${response.statusCode || 'failed'}`));
+        },
+        fail: reject
+      });
+    });
+  },
+  async syncPlayer(task) {
     const initialState = player.getInitialPlayerState((task && task.durationSec) || 0);
-    if (!task || task.isPendingAsset || !task.audioUrl) {
+    const resolvedTask = await this.resolveTaskAudio(task);
+    if (!resolvedTask || resolvedTask.isPendingAsset || !resolvedTask.audioUrl) {
       if (this.innerAudioContext) {
         this.innerAudioContext.stop();
       }
-      this.setData(initialState);
+      this.setData(Object.assign({}, initialState, {
+        audioSource: 'none',
+        audioReady: false,
+        audioResolving: false,
+        audioError: 'missing-audio-url',
+        audioPlaybackMode: 'error'
+      }));
       return;
     }
-    if (this.innerAudioContext && this.innerAudioContext.src !== task.audioUrl) {
+    let playableUrl = resolvedTask.audioUrl;
+    let playbackMode = resolvedTask.audioSource === 'temp-url' ? 'temp-url' : 'static-cloud-url';
+    try {
+      playableUrl = await this.downloadAudio(resolvedTask.audioUrl);
+      playbackMode = 'downloaded';
+    } catch (error) {
+      if (!playableUrl) {
+        this.setData(Object.assign({}, initialState, {
+          audioSource: resolvedTask.audioSource || 'none',
+          audioReady: false,
+          audioResolving: false,
+          audioError: 'download-failed',
+          audioPlaybackMode: 'error'
+        }));
+        wx.showToast({
+          title: '云端音频下载失败',
+          icon: 'none'
+        });
+        return;
+      }
+    }
+    if (this.data.task !== resolvedTask) {
+      this.setData({
+        task: resolvedTask
+      });
+    }
+    if (this.innerAudioContext && this.innerAudioContext.src !== playableUrl) {
       this.innerAudioContext.stop();
-      this.innerAudioContext.src = task.audioUrl;
+      this.innerAudioContext.src = playableUrl;
     }
     if (this.innerAudioContext) {
       this.innerAudioContext.playbackRate = 1;
     }
-    this.setData(initialState);
+    this.setData(Object.assign({}, initialState, {
+      audioSource: resolvedTask.audioSource || 'none',
+      audioReady: false,
+      audioResolving: true,
+      audioError: '',
+      audioPlaybackMode: playbackMode
+    }));
   },
   async refreshPage() {
     const detail = await store.getTaskDetail(this.category);
@@ -109,6 +244,8 @@ Page({
       child: detail.child,
       task: detail.task,
       stats: detail.stats,
+      syncMode: detail.syncMode || 'local',
+      syncDebug: detail.syncDebug || null,
       todayRecord: detail.todayRecord,
       progress: detail.progress,
       scriptSource: detail.scriptSource,
@@ -124,9 +261,14 @@ Page({
       transcriptScrollIntoView: '',
       prevLine: null,
       activeLine: null,
-      nextLine: detail.transcriptTrack && detail.transcriptTrack.lines.length ? detail.transcriptTrack.lines[0] : null
+      nextLine: detail.transcriptTrack && detail.transcriptTrack.lines.length ? detail.transcriptTrack.lines[0] : null,
+      audioSource: detail.task && detail.task.audioSource ? detail.task.audioSource : 'none',
+      audioReady: false,
+      audioResolving: false,
+      audioError: '',
+      audioPlaybackMode: 'idle'
     });
-    this.syncPlayer(detail.task);
+    await this.syncPlayer(detail.task);
   },
   clearTranscriptState() {
     this.setData({
@@ -185,14 +327,39 @@ Page({
     this.innerAudioContext.play();
     this.updateTranscriptByTime(line.startMs);
   },
-  toggleAudio() {
+  async toggleAudio() {
     if (!this.data.task || this.data.task.isPendingAsset || !this.innerAudioContext) {
+      return;
+    }
+    this.pendingAutoPlay = false;
+    if (!this.innerAudioContext.src) {
+      this.pendingAutoPlay = true;
+      await this.syncPlayer(this.data.task);
+    }
+    if (!this.innerAudioContext.src) {
+      wx.showToast({
+        title: '云端音频暂时不可用',
+        icon: 'none'
+      });
       return;
     }
     if (this.data.isPlaying) {
       this.innerAudioContext.pause();
     } else {
-      this.innerAudioContext.play();
+      if (this.data.audioReady) {
+        this.innerAudioContext.play();
+      } else {
+        this.pendingAutoPlay = true;
+        this.setData({
+          audioResolving: true,
+          audioError: '',
+          audioPlaybackMode: 'resolving'
+        });
+        wx.showToast({
+          title: '音频加载中',
+          icon: 'none'
+        });
+      }
     }
   },
   rewindAudio() {
@@ -231,14 +398,17 @@ Page({
       child: detail.child,
       task: detail.task,
       stats: detail.stats,
+      syncMode: detail.syncMode || 'local',
+      syncDebug: detail.syncDebug || null,
       todayRecord: detail.todayRecord,
       progress: detail.progress,
       scriptSource: detail.scriptSource,
       transcriptTrack: detail.transcriptTrack,
       transcriptLines: detail.transcriptTrack ? detail.transcriptTrack.lines : [],
-      history: detail.history
+      history: detail.history,
+      audioSource: detail.task && detail.task.audioSource ? detail.task.audioSource : 'none'
     });
-    this.syncPlayer(detail.task);
+    await this.syncPlayer(detail.task);
     wx.showToast({
       title: detail.progress.completedToday ? `${detail.task.categoryLabel} 今天完成` : `已完成第 ${detail.progress.playCount} 遍`,
       icon: 'none'

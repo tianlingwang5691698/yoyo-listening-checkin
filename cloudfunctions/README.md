@@ -14,12 +14,16 @@
 ## 你在微信开发者工具里需要做的事
 
 1. 用正式小程序 `wx15ab12b0da43128a` 打开这个工程
-2. 确认项目已经绑定到云环境 `english-6gm2vya9fc58a273`
-2. 在 `cloudfunctions/yoyo` 里安装依赖
+2. 确认项目已经绑定到云环境 `youshengenglish-6glk12rd6c6e719b`
+3. 在 `cloudfunctions/yoyo` 里安装依赖
    - 现在除了 `wx-server-sdk`，还需要 `@cloudbase/manager-node`
-3. 上传并部署 `yoyo` 云函数
-4. 在小程序订阅消息里申请模板
-5. 把模板 ID 填进：
+4. 上传并部署 `yoyo` 云函数到当前环境
+5. 在 CloudBase 控制台确认云存储目录如下
+   - `A1/Peppa`
+   - `A1/Unlock1`
+   - `A1/Super simple song`
+6. 在小程序订阅消息里申请模板
+7. 把模板 ID 填进：
    - `/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/data/app-config.js`
 
 ## 当前正式配置
@@ -27,7 +31,11 @@
 - 正式小程序 AppID
   - `wx15ab12b0da43128a`
 - 当前云环境
-  - `english-6gm2vya9fc58a273`
+  - `youshengenglish-6glk12rd6c6e719b`
+- 当前云存储桶
+  - `796f-youshengenglish-6glk12rd6c6e719b-1419984942`
+- 当前云存储访问域名
+  - `https://796f-youshengenglish-6glk12rd6c6e719b-1419984942.tcb.qcloud.la`
 - 当前工程名
   - `佑声英语`
 
@@ -35,9 +43,9 @@
 
 云函数会优先扫描下面三个目录：
 
-- `audio/Peppa`
-- `audio/Unlock2听力`
-- `audio/Super simple song`
+- `A1/Peppa`
+- `A1/Unlock1`
+- `A1/Super simple song`
 
 推荐你继续按下面的方式放资料：
 

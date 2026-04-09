@@ -8,7 +8,8 @@ Page({
     activeTaskCount: 0,
     completedTaskCountToday: 0,
     allDailyDone: false,
-    syncMode: 'local'
+    syncMode: 'local',
+    syncDebug: null
   },
   async onShow() {
     const data = await store.getDashboard();

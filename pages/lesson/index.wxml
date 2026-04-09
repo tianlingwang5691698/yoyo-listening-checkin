@@ -6,6 +6,9 @@
     <view class="lesson-title">{{task.displayTitle || task.title}}</view>
     <view class="lesson-copy" wx:if="{{task.displaySubtitle}}">{{task.displaySubtitle}}</view>
     <view class="lesson-copy" wx:elif="{{task.coverMeta}}">{{task.coverMeta}}</view>
+    <view class="sync-debug {{syncMode === 'cloud' ? 'is-cloud' : 'is-local'}}" wx:if="{{syncDebug && syncDebug.show}}">
+      {{syncDebug.text}}
+    </view>
     <view class="hero-meta">
       <text>每天 3 遍</text>
       <text>{{task.isPendingAsset ? '等待音频' : '纯音频任务'}}</text>
@@ -27,11 +30,30 @@
     <view class="row-between player-header">
       <view>
         <view class="section-title">今天这条音频</view>
-        <view class="section-copy" wx:if="{{!task.isPendingAsset}}">
-          现在是第 {{progress.currentPass}} 遍，共 {{progress.repeatTarget}} 遍。
+        <view wx:if="{{!task.isPendingAsset}}">
+          <view class="section-copy">
+            现在是第 {{progress.currentPass}} 遍，共 {{progress.repeatTarget}} 遍。
+          </view>
+          <view class="section-copy" wx:if="{{audioSource}}">
+            音频来源：{{audioSource}}
+          </view>
+          <view class="section-copy" wx:if="{{audioPlaybackMode && audioPlaybackMode !== 'idle'}}">
+            播放链路：{{audioPlaybackMode}}
+          </view>
+          <view class="section-copy" wx:if="{{audioResolving}}">
+            播放状态：正在解析云端音频
+          </view>
+          <view class="section-copy" wx:elif="{{audioReady}}">
+            播放状态：已就绪
+          </view>
+          <view class="section-copy error-copy" wx:if="{{audioError}}">
+            播放状态：{{audioError}}
+          </view>
         </view>
-        <view class="section-copy" wx:else>
-          这个分类暂时还没有音频，等你把素材放进来后就会开始轮换。
+        <view wx:else>
+          <view class="section-copy">
+            这个分类暂时还没有音频，等你把素材放进来后就会开始轮换。
+          </view>
         </view>
       </view>
       <view class="player-stage" wx:if="{{!task.isPendingAsset}}">{{progress.currentPass}} / {{progress.repeatTarget}}</view>
@@ -39,12 +61,12 @@
     <view class="custom-player" wx:if="{{!task.isPendingAsset}}">
       <view class="player-panel quest-{{task.category}}">
         <view class="player-main">
-          <view class="player-toggle" bindtap="toggleAudio">
+          <button class="player-toggle" bindtap="toggleAudio" loading="{{audioResolving}}" disabled="{{task.isPendingAsset}}">
             <text>{{isPlaying ? '||' : '>'}}</text>
-          </view>
+          </button>
           <view class="player-copy">
             <view class="media-title" wx:if="{{task.audioCompactTitle}}">{{task.audioCompactTitle}}</view>
-            <view class="player-status">{{isPlaying ? '正在播放' : '已暂停'}} · {{playbackRate === 1 ? '原速' : '慢速 0.8x'}}</view>
+            <view class="player-status">{{isPlaying ? '正在播放' : (audioResolving ? '正在准备' : (audioReady ? '已暂停' : '等待播放'))}} · {{playbackRate === 1 ? '原速' : '慢速 0.8x'}}</view>
           </view>
           <view class="player-time">{{currentTimeLabel}} / {{durationLabel}}</view>
         </view>
@@ -54,8 +76,8 @@
           </view>
         </view>
         <view class="player-actions">
-          <view class="player-action {{canRewind ? '' : 'is-disabled'}}" bindtap="rewindAudio">-5s</view>
-          <view class="player-action player-action-rate" bindtap="togglePlaybackRate">{{playbackRate === 1 ? '0.8x' : '1.0x'}}</view>
+          <button class="player-action {{canRewind ? '' : 'is-disabled'}}" bindtap="rewindAudio">-5s</button>
+          <button class="player-action player-action-rate" bindtap="togglePlaybackRate">{{playbackRate === 1 ? '0.8x' : '1.0x'}}</button>
         </view>
       </view>
     </view>
