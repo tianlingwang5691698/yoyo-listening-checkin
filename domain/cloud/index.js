@@ -6,18 +6,19 @@ function getCloudEnvId() {
   return appConfig.cloudEnvId || wx.cloud.DYNAMIC_CURRENT_ENV || '';
 }
 
-function getAccountEnvVersion() {
-  try {
-    const info = wx.getAccountInfoSync && wx.getAccountInfoSync();
-    return (((info || {}).miniProgram || {}).envVersion || '').trim();
-  } catch (error) {
-    return '';
-  }
+function getReleaseStage() {
+  return String(appConfig.releaseStage || 'internal').trim().toLowerCase() || 'internal';
 }
 
 function shouldShowCloudDebug() {
-  const envVersion = getAccountEnvVersion();
-  return envVersion !== 'release';
+  if (appConfig.showCloudDebug === false) {
+    return false;
+  }
+  return getReleaseStage() !== 'review';
+}
+
+function isReviewBuild() {
+  return getReleaseStage() === 'review';
 }
 
 function initCloud() {
@@ -68,7 +69,9 @@ module.exports = {
   initCloud,
   getSyncMode,
   getCloudEnvId,
+  getReleaseStage,
   shouldShowCloudDebug,
+  isReviewBuild,
   getTempFileURL,
   callYoyo
 };

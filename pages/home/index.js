@@ -9,6 +9,8 @@ Page({
     completedTaskCountToday: 0,
     allDailyDone: false,
     syncMode: 'local',
+    isReviewBuild: false,
+    showCloudDebug: false,
     syncDebug: null
   },
   async onShow() {

@@ -3,8 +3,12 @@
     <view class="avatar">{{child.avatarText}}</view>
     <view class="profile-name">{{child.nickname}}</view>
     <view class="profile-copy">当前阶段：{{level.name}} · 已完成 {{child.completedDays}} 天</view>
-    <view class="option-tag">{{syncMode === 'cloud' ? 'CLOUD SHARED' : 'LOCAL PREVIEW'}}</view>
-    <view class="identity-note">{{syncMode === 'cloud' ? '当前微信已自动识别为家庭成员，打开小程序就会进入同一个孩子档案。' : '当前还是本地预览模式，切到正式号并接通云开发后，家里人会自动进入同一份孩子记录。'}}</view>
+    <view class="sync-debug {{syncMode === 'cloud' ? 'is-cloud' : 'is-local'}}" wx:if="{{showCloudDebug && syncDebug && syncDebug.show}}">
+      {{syncDebug.text}}
+    </view>
+    <view class="option-tag" wx:if="{{!isReviewBuild}}">{{syncMode === 'cloud' ? 'CLOUD SHARED' : 'LOCAL PREVIEW'}}</view>
+    <view class="option-tag" wx:else>FAMILY ACCESS</view>
+    <view class="identity-note">{{isReviewBuild ? '当前微信会自动识别家庭身份，并进入同一份孩子档案。' : (syncMode === 'cloud' ? '当前微信已自动识别为家庭成员，打开小程序就会进入同一个孩子档案。' : '当前还是本地预览模式，切到正式号并接通云开发后，家里人会自动进入同一份孩子记录。')}}</view>
   </view>
 
   <view class="option card">

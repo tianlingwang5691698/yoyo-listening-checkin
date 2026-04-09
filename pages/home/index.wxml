@@ -5,7 +5,7 @@
         <view class="eyebrow">YOYO DAILY LISTENING</view>
         <view class="hero-title">佑佑的英语小耳朵</view>
         <view class="hero-copy">{{child.welcomeLine}}</view>
-        <view class="sync-debug {{syncMode === 'cloud' ? 'is-cloud' : 'is-local'}}" wx:if="{{syncDebug && syncDebug.show}}">
+        <view class="sync-debug {{syncMode === 'cloud' ? 'is-cloud' : 'is-local'}}" wx:if="{{showCloudDebug && syncDebug && syncDebug.show}}">
           {{syncDebug.text}}
         </view>
       </view>

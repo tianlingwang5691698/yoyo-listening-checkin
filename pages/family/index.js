@@ -3,6 +3,9 @@ const store = require('../../utils/store');
 Page({
   data: {
     syncMode: 'local',
+    isReviewBuild: false,
+    showCloudDebug: false,
+    syncDebug: null,
     family: {},
     currentMember: {},
     members: [],

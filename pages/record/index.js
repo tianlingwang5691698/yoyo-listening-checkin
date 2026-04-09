@@ -5,7 +5,10 @@ Page({
     child: null,
     stats: {},
     heatmap: [],
-    syncMode: 'local'
+    syncMode: 'local',
+    isReviewBuild: false,
+    showCloudDebug: false,
+    syncDebug: null
   },
   async onShow() {
     const dashboard = await store.getDashboard();
@@ -14,7 +17,10 @@ Page({
       child: dashboard.child,
       stats: dashboard.stats,
       heatmap: heatmapData.heatmap,
-      syncMode: dashboard.syncMode || 'local'
+      syncMode: dashboard.syncMode || 'local',
+      isReviewBuild: !!dashboard.isReviewBuild,
+      showCloudDebug: !!dashboard.showCloudDebug,
+      syncDebug: dashboard.syncDebug || null
     });
   }
 });

@@ -8,6 +8,9 @@ function getTemplateIds() {
 Page({
   data: {
     syncMode: 'local',
+    isReviewBuild: false,
+    showCloudDebug: false,
+    syncDebug: null,
     family: {},
     child: {},
     stats: {},

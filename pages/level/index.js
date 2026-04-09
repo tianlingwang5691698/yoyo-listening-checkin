@@ -6,7 +6,10 @@ Page({
     level: null,
     stats: {},
     categories: [],
-    syncMode: 'local'
+    syncMode: 'local',
+    isReviewBuild: false,
+    showCloudDebug: false,
+    syncDebug: null
   },
   async onShow() {
     const data = await store.getLevelOverview();

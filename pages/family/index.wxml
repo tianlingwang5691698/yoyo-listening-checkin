@@ -4,8 +4,11 @@
       <view>
         <view class="section-title">{{family.name}}</view>
         <view class="section-copy">家里每个人都用自己的微信进来，系统会自动识别身份。加入同一个家庭后，不在同一个网络也能看到 {{child.nickname}} 的同一份进度。</view>
+        <view class="sync-debug {{syncMode === 'cloud' ? 'is-cloud' : 'is-local'}}" wx:if="{{showCloudDebug && syncDebug && syncDebug.show}}">
+          {{syncDebug.text}}
+        </view>
       </view>
-      <view class="pill">{{syncMode === 'cloud' ? 'CLOUD' : 'LOCAL'}}</view>
+      <view class="pill">{{isReviewBuild ? '家庭共享' : (syncMode === 'cloud' ? 'CLOUD' : 'LOCAL')}}</view>
     </view>
     <view class="family-login-note">
       <view class="login-title">当前登录身份</view>

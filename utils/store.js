@@ -22,8 +22,12 @@ function formatFallbackReason(error) {
 function buildSyncMeta(mode, error) {
   const envId = cloud.getCloudEnvId();
   const reason = mode === 'local' ? formatFallbackReason(error) : '';
+  const releaseStage = cloud.getReleaseStage();
   return {
     syncMode: mode,
+    releaseStage,
+    isReviewBuild: cloud.isReviewBuild(),
+    showCloudDebug: cloud.shouldShowCloudDebug(),
     syncDebug: {
       mode,
       envId,

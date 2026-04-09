@@ -2,6 +2,9 @@
   <view class="summary card">
     <view class="section-title">成长正在发生</view>
     <view class="section-copy">把每天一小段听力，慢慢变成稳定的英语节奏。</view>
+    <view class="sync-debug {{syncMode === 'cloud' ? 'is-cloud' : 'is-local'}}" wx:if="{{showCloudDebug && syncDebug && syncDebug.show}}">
+      {{syncDebug.text}}
+    </view>
     <view class="summary-grid">
       <view class="summary-item">
         <view class="summary-value">{{stats.streakDays}}</view>

@@ -4,8 +4,11 @@
       <view>
         <view class="section-title">家长共享页</view>
         <view class="section-copy">{{family.name}} · {{child.nickname}} 的今日听力说明。家里不同微信账号看到的是同一个孩子的云端日报。</view>
+        <view class="sync-debug {{syncMode === 'cloud' ? 'is-cloud' : 'is-local'}}" wx:if="{{showCloudDebug && syncDebug && syncDebug.show}}">
+          {{syncDebug.text}}
+        </view>
       </view>
-      <view class="pill">{{syncMode === 'cloud' ? 'SYNCED' : 'LOCAL'}}</view>
+      <view class="pill">{{isReviewBuild ? '家庭日报' : (syncMode === 'cloud' ? 'SYNCED' : 'LOCAL')}}</view>
     </view>
     <view class="summary-grid">
       <view class="summary-item">
