@@ -1,0 +1,75 @@
+<view class="page-shell parent-page">
+  <view class="parent-hero card">
+    <view class="row-between">
+      <view>
+        <view class="section-title">家长共享页</view>
+        <view class="section-copy">{{family.name}} · {{child.nickname}} 的今日听力说明。家里不同微信账号看到的是同一个孩子的云端日报。</view>
+      </view>
+      <view class="pill">{{syncMode === 'cloud' ? 'SYNCED' : 'LOCAL'}}</view>
+    </view>
+    <view class="summary-grid">
+      <view class="summary-item">
+        <view class="summary-value">{{stats.streakDays}}</view>
+        <view class="summary-label">连续天数</view>
+      </view>
+      <view class="summary-item">
+        <view class="summary-value">{{todayReport.totalMinutes}}</view>
+        <view class="summary-label">今日分钟</view>
+      </view>
+      <view class="summary-item">
+        <view class="summary-value">{{todayReport.completedCategories.length}}</view>
+        <view class="summary-label">今日完成项</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="report-card card">
+    <view class="row-between">
+      <view>
+        <view class="section-title">今日完整日报</view>
+        <view class="section-copy">订阅消息只发摘要，这里保留完整明细。家长不在同一个网络，也能回来查看同一份报告。</view>
+      </view>
+      <view class="pill">{{subscriptionPreference.dailyReportEnabled ? 'PUSH ON' : 'PUSH OFF'}}</view>
+    </view>
+    <block wx:for="{{todayReport.items}}" wx:key="category">
+      <view class="report-item">
+        <view>
+          <view class="report-title">{{item.categoryLabel}}</view>
+          <view class="report-copy">{{item.title}}</view>
+        </view>
+        <view class="report-progress {{item.completedToday ? 'is-done' : ''}}">{{item.playCount}} / {{item.repeatTarget}}</view>
+      </view>
+    </block>
+    <button class="button-primary" bindtap="handleSubscribe">
+      {{subscriptionPreference.dailyReportEnabled ? '关闭订阅提醒' : '开启订阅提醒'}}
+    </button>
+  </view>
+
+  <view class="trend-card card">
+    <view class="section-title">最近 7 天</view>
+    <view class="section-copy">看看家里最近一周的节奏，是不是正在慢慢稳下来。</view>
+    <block wx:for="{{recentReports}}" wx:key="reportId">
+      <view class="trend-row">
+        <view>
+          <view class="trend-date">{{item.date}}</view>
+          <view class="trend-copy">{{item.completedCategories.length ? '已完成 ' + item.completedCategories.length + ' 项' : '当天还没有完成记录'}}</view>
+        </view>
+        <view class="trend-badge">{{item.totalMinutes}} min</view>
+      </view>
+    </block>
+  </view>
+
+  <view class="members-card card">
+    <view class="section-title">已加入家庭的家长</view>
+    <view class="section-copy">这些微信账号会自动登录成各自身份，并看到同一个孩子的进度和日报。</view>
+    <block wx:for="{{members}}" wx:key="memberId">
+      <view class="member-row">
+        <view>
+          <view class="member-name">{{item.displayName}}</view>
+          <view class="member-copy">{{item.role === 'owner' ? '管理员' : '家长成员'}}</view>
+        </view>
+        <view class="member-flag">{{item.subscriptionEnabled ? '已订阅' : '未订阅'}}</view>
+      </view>
+    </block>
+  </view>
+</view>

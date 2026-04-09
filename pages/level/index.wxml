@@ -1,0 +1,44 @@
+<view class="page-shell level-page">
+  <view class="level-hero card">
+    <view class="pill">CURRENT MODE</view>
+    <view class="level-name">{{level.name}}</view>
+    <view class="level-copy">{{level.description}}</view>
+    <view class="level-kpis">
+      <view>
+        <view class="kpi-value">{{stats.completedDays}}</view>
+        <view class="kpi-label">完成打卡</view>
+      </view>
+      <view>
+        <view class="kpi-value">{{stats.streakDays}}</view>
+        <view class="kpi-label">连续天数</view>
+      </view>
+      <view>
+        <view class="kpi-value">{{stats.totalMinutes}}</view>
+        <view class="kpi-label">累计分钟</view>
+      </view>
+    </view>
+  </view>
+
+  <block wx:for="{{categories}}" wx:key="category">
+    <view class="unit-block card">
+      <view class="row-between">
+        <view>
+          <view class="unit-block-title">{{item.categoryLabel}}</view>
+          <view class="section-copy">{{item.isPendingAsset ? '等待音频放入后开始轮换。' : '每天只做当前轮到的一条，完成 3 遍后明天切下一条。'}}</view>
+        </view>
+        <view class="unit-count">{{item.totalCount}}</view>
+      </view>
+
+      <view class="lesson-row {{item.isPendingAsset ? 'is-disabled' : ''}}" data-category="{{item.category}}" bindtap="openCategory">
+        <view class="lesson-order">{{item.category === 'peppa' ? 'P' : item.category === 'unlock1' ? 'U' : 'S'}}</view>
+        <view class="lesson-body">
+          <view class="lesson-title">{{item.todayTask.displayTitle || item.todayTask.title}}</view>
+          <view class="lesson-meta">{{item.todayTask.displaySubtitle || item.todayTask.audioDisplayName || '等待素材'}} · {{item.todayTask.playStepText}}</view>
+        </view>
+        <view class="lesson-tag {{item.todayTask.completedToday ? 'done' : item.isPendingAsset ? 'locked' : 'ready'}}">
+          {{item.todayTask.completedToday ? '完成' : item.isPendingAsset ? '等待' : '开始'}}
+        </view>
+      </view>
+    </view>
+  </block>
+</view>

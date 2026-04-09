@@ -1,0 +1,185 @@
+<view class="page-shell lesson-page" wx:if="{{task}}">
+  <view class="lesson-hero tone-{{task.coverTone}} cover-variant-{{task.coverVariant}}">
+    <view class="lesson-hero-top">
+      <view class="pill">{{task.coverBadge || task.categoryLabel}}</view>
+    </view>
+    <view class="lesson-title">{{task.displayTitle || task.title}}</view>
+    <view class="lesson-copy" wx:if="{{task.displaySubtitle}}">{{task.displaySubtitle}}</view>
+    <view class="lesson-copy" wx:elif="{{task.coverMeta}}">{{task.coverMeta}}</view>
+    <view class="hero-meta">
+      <text>每天 3 遍</text>
+      <text>{{task.isPendingAsset ? '等待音频' : '纯音频任务'}}</text>
+      <text>{{task.completedToday ? '今天已完成' : '今天进行中'}}</text>
+    </view>
+  </view>
+
+  <view class="card progress-card">
+    <view class="section-title">今天的三遍节奏</view>
+    <view class="section-copy">{{progress.currentPass < progress.repeatTarget ? (task.transcriptTrackId ? '这三遍都可以边听边看文本，先把这一遍稳稳听完。' : '这三遍先按纯听力推进，后面再补文本高亮。') : (task.transcriptTrackId ? '最后一遍也可以顺着文本完整过一遍。' : '最后一遍先按纯听力完成。')}}</view>
+    <view class="step-row">
+      <view class="step-pill {{progress.playCount >= 1 ? 'is-done' : 'is-current'}}">1. 第 1 遍{{task.transcriptTrackId ? ' + 文本' : ''}}</view>
+      <view class="step-pill {{progress.playCount >= 2 ? 'is-done' : progress.playCount >= 1 ? 'is-current' : ''}}">2. 第 2 遍{{task.transcriptTrackId ? ' + 文本' : ''}}</view>
+      <view class="step-pill {{progress.playCount >= 2 ? 'is-current' : ''}}">3. 第 3 遍{{task.transcriptTrackId ? ' + 文本' : ''}}</view>
+    </view>
+  </view>
+
+  <view class="card player-card">
+    <view class="row-between player-header">
+      <view>
+        <view class="section-title">今天这条音频</view>
+        <view class="section-copy" wx:if="{{!task.isPendingAsset}}">
+          现在是第 {{progress.currentPass}} 遍，共 {{progress.repeatTarget}} 遍。
+        </view>
+        <view class="section-copy" wx:else>
+          这个分类暂时还没有音频，等你把素材放进来后就会开始轮换。
+        </view>
+      </view>
+      <view class="player-stage" wx:if="{{!task.isPendingAsset}}">{{progress.currentPass}} / {{progress.repeatTarget}}</view>
+    </view>
+    <view class="custom-player" wx:if="{{!task.isPendingAsset}}">
+      <view class="player-panel quest-{{task.category}}">
+        <view class="player-main">
+          <view class="player-toggle" bindtap="toggleAudio">
+            <text>{{isPlaying ? '||' : '>'}}</text>
+          </view>
+          <view class="player-copy">
+            <view class="media-title" wx:if="{{task.audioCompactTitle}}">{{task.audioCompactTitle}}</view>
+            <view class="player-status">{{isPlaying ? '正在播放' : '已暂停'}} · {{playbackRate === 1 ? '原速' : '慢速 0.8x'}}</view>
+          </view>
+          <view class="player-time">{{currentTimeLabel}} / {{durationLabel}}</view>
+        </view>
+        <view class="player-progress">
+          <view class="player-progress-track">
+            <view class="player-progress-fill quest-fill-{{task.category}}" style="width: {{progressPercent}}%;"></view>
+          </view>
+        </view>
+        <view class="player-actions">
+          <view class="player-action {{canRewind ? '' : 'is-disabled'}}" bindtap="rewindAudio">-5s</view>
+          <view class="player-action player-action-rate" bindtap="togglePlaybackRate">{{playbackRate === 1 ? '0.8x' : '1.0x'}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="listen-state {{task.completedToday ? 'is-ready' : 'is-waiting'}}">
+      已完成 {{progress.playStepText}}
+    </view>
+  </view>
+
+  <view class="card quest-card quest-{{task.category}}">
+    <view class="row-between quest-top">
+      <view>
+        <view class="section-title">这一项的奖励线</view>
+        <view class="section-copy">完成 3 遍，就像过完今天这一关。</view>
+      </view>
+      <view class="pill">{{task.rewardBadge}}</view>
+    </view>
+    <view class="quest-title">{{task.rewardTitle}}</view>
+    <view class="quest-copy">{{task.rewardCopy}}</view>
+    <view class="quest-track">
+      <view class="quest-node {{progress.playCount >= 1 ? 'is-on' : ''}}"></view>
+      <view class="quest-line {{progress.playCount >= 1 ? 'is-on' : ''}}"></view>
+      <view class="quest-node {{progress.playCount >= 2 ? 'is-on' : ''}}"></view>
+      <view class="quest-line {{progress.textUnlocked ? 'is-on' : ''}}"></view>
+      <view class="quest-node {{task.completedToday ? 'is-on is-final' : progress.textUnlocked ? 'is-current is-final' : 'is-final'}}"></view>
+    </view>
+    <view class="quest-labels">
+      <view>盲听 1</view>
+      <view>盲听 2</view>
+      <view>文本通关</view>
+    </view>
+  </view>
+
+  <view class="card source-card" wx:if="{{scriptSource}}">
+    <view class="section-title">文本来源</view>
+    <view class="section-copy">有文本的条目会从这里同步显示出来。</view>
+    <view class="source-name">{{scriptSource.title}}</view>
+  </view>
+
+  <view class="card transcript-card">
+    <view class="row-between transcript-header">
+      <view>
+        <view class="section-title">同步文本</view>
+        <view class="section-copy">
+          {{transcriptLines.length ? '现在可以边听边看文本。' : task.transcriptStatus === 'pending' ? '这条的逐句高亮正在准备中，先按纯听力完成也可以。' : '这条音频目前没有可用文本，也可以照常完成。'}}
+        </view>
+      </view>
+      <view class="pill transcript-pill">{{transcriptLines.length ? 'TEXT ON' : task.transcriptStatus === 'pending' ? 'TEXT SOON' : 'NO TEXT'}}</view>
+    </view>
+
+    <view class="transcript-focus" wx:if="{{transcriptLines.length}}">
+      <view
+        class="transcript-focus-line is-prev {{prevLine ? 'is-ready' : 'is-empty'}}"
+        wx:if="{{prevLine}}"
+        data-index="{{activeLineIndex - 1}}"
+        bindtap="seekToLine"
+      >
+        <view class="transcript-focus-text">{{prevLine.text}}</view>
+      </view>
+      <view class="transcript-focus-line is-prev is-empty" wx:else>
+        <view class="transcript-focus-text"> </view>
+      </view>
+
+      <view
+        class="transcript-focus-line is-active"
+        wx:if="{{activeLine}}"
+        data-index="{{activeLineIndex}}"
+        bindtap="seekToLine"
+      >
+        <view class="transcript-focus-text">{{activeLine.text}}</view>
+      </view>
+      <view class="transcript-focus-line is-active is-empty" wx:else>
+        <view class="transcript-focus-text">音频开始后，这一句会在这里突出显示。</view>
+      </view>
+
+      <view
+        class="transcript-focus-line is-next {{nextLine ? 'is-ready' : 'is-empty'}}"
+        wx:if="{{nextLine}}"
+        data-index="{{activeLineIndex + 1}}"
+        bindtap="seekToLine"
+      >
+        <view class="transcript-focus-text">{{nextLine.text}}</view>
+      </view>
+      <view class="transcript-focus-line is-next is-empty" wx:else>
+        <view class="transcript-focus-text"> </view>
+      </view>
+    </view>
+
+    <view class="transcript-empty" wx:elif="{{task.transcriptStatus === 'pending'}}">
+      <view class="transcript-empty-title">这条文本准备中</view>
+      <view class="transcript-empty-copy">前 6 条已经接入高亮，这一条会在后续批次补上。今天先按纯听力完成，不会卡住任务。</view>
+    </view>
+
+    <view class="transcript-empty" wx:else>
+      <view class="transcript-empty-title">这一条没有文本</view>
+      <view class="transcript-empty-copy">没有文本也不会影响今天完成 3 遍任务。</view>
+    </view>
+  </view>
+
+  <view class="card result-card" wx:if="{{task.completedToday}}">
+    <view class="result-badge">TODAY DONE</view>
+    <view class="result-title">{{task.categoryLabel}} 今天完成了</view>
+    <view class="result-copy">这项任务已经听满 3 遍，明天会自动轮到下一条。</view>
+  </view>
+
+  <view class="card result-card" wx:if="{{todayRecord}}">
+    <view class="result-badge">DAILY CHECKIN</view>
+    <view class="result-title">今天的总打卡已经点亮</view>
+    <view class="result-copy">连续 {{todayRecord.streakSnapshot}} 天坚持，今天完成的分类已经记下来了。</view>
+  </view>
+
+  <view class="card history-card">
+    <view class="section-title">这个分类的历史</view>
+    <view class="section-copy">完成 3 遍以后，这里会留下该分类的完成记录。</view>
+    <block wx:if="{{history.length}}">
+      <block wx:for="{{history}}" wx:key="date">
+        <view class="history-row">
+          <view>
+            <view class="history-date">{{item.date}}</view>
+            <view class="history-time">{{item.taskTitle}}</view>
+          </view>
+          <view class="history-streak">{{item.playCount}} / 3</view>
+        </view>
+      </block>
+    </block>
+    <view class="section-copy" wx:else>还没有这个分类的完成记录。</view>
+  </view>
+</view>

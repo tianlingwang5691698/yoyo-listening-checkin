@@ -1,0 +1,48 @@
+<view class="page-shell family-page">
+  <view class="family-hero card">
+    <view class="row-between">
+      <view>
+        <view class="section-title">{{family.name}}</view>
+        <view class="section-copy">家里每个人都用自己的微信进来，系统会自动识别身份。加入同一个家庭后，不在同一个网络也能看到 {{child.nickname}} 的同一份进度。</view>
+      </view>
+      <view class="pill">{{syncMode === 'cloud' ? 'CLOUD' : 'LOCAL'}}</view>
+    </view>
+    <view class="family-login-note">
+      <view class="login-title">当前登录身份</view>
+      <view class="login-copy">{{currentMember.displayName}} · {{currentMember.role === 'owner' ? '管理员' : '家长成员'}}</view>
+    </view>
+    <view class="invite-box">
+      <view class="invite-label">邀请码</view>
+      <view class="invite-code">{{family.inviteCode}}</view>
+    </view>
+    <button class="button-primary" bindtap="refreshInviteCode">刷新邀请码</button>
+  </view>
+
+  <view class="join-card card">
+    <view class="section-title">加入家庭</view>
+    <view class="section-copy">弟弟或弟媳用自己的微信打开小程序后，在这里输入邀请码，就会加入同一个家庭，共享 {{child.nickname}} 的学习记录。</view>
+    <input class="family-input" placeholder="输入邀请码" value="{{inviteInput}}" bindinput="handleInviteInput" />
+    <input class="family-input" placeholder="输入加入者称呼，例如 弟弟 / 弟媳" value="{{joinName}}" bindinput="handleJoinNameInput" />
+    <button class="button-primary" bindtap="joinFamily">加入家庭</button>
+  </view>
+
+  <view class="child-card card">
+    <view class="section-title">当前孩子档案</view>
+    <view class="section-copy">首版先固定一个家庭只服务一个孩子，所有家长共享同一个 {{child.nickname}} 档案和日报。</view>
+    <view class="child-pill">{{child.nickname}} · {{child.currentLevel}}</view>
+  </view>
+
+  <view class="member-card card">
+    <view class="section-title">当前家庭成员</view>
+    <view class="section-copy">这些成员将共享 {{child.nickname}} 的任务进度、日报和连续天数。</view>
+    <block wx:for="{{members}}" wx:key="memberId">
+      <view class="member-row">
+        <view>
+          <view class="member-name">{{item.displayName}}</view>
+          <view class="member-copy">{{item.role === 'owner' ? '管理员' : '家长成员'}}</view>
+        </view>
+        <view class="member-state">{{item.subscriptionEnabled ? '提醒开' : '提醒关'}}</view>
+      </view>
+    </block>
+  </view>
+</view>

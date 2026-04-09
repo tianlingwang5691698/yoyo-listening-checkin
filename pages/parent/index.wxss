@@ -1,0 +1,98 @@
+.parent-hero,
+.report-card,
+.trend-card,
+.members-card {
+  padding: 30rpx;
+}
+
+.parent-hero {
+  background: linear-gradient(135deg, #fff0e3 0%, #fff8f0 100%);
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16rpx;
+  margin-top: 24rpx;
+}
+
+.summary-item {
+  padding: 20rpx 0;
+  border-radius: 24rpx;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.68);
+}
+
+.summary-value {
+  font-size: 38rpx;
+  font-weight: 800;
+}
+
+.summary-label {
+  margin-top: 8rpx;
+  font-size: 22rpx;
+  color: #8c7e72;
+}
+
+.report-card,
+.trend-card,
+.members-card {
+  margin-top: 24rpx;
+}
+
+.report-item,
+.trend-row,
+.member-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20rpx;
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid rgba(84, 57, 45, 0.08);
+}
+
+.report-item:last-child,
+.trend-row:last-child,
+.member-row:last-child {
+  border-bottom: none;
+}
+
+.report-title,
+.trend-date,
+.member-name {
+  font-size: 28rpx;
+  font-weight: 700;
+  color: #2f241f;
+}
+
+.report-copy,
+.trend-copy,
+.member-copy {
+  margin-top: 8rpx;
+  font-size: 23rpx;
+  line-height: 1.6;
+  color: #8c7e72;
+}
+
+.report-progress,
+.trend-badge,
+.member-flag {
+  flex-shrink: 0;
+  min-width: 120rpx;
+  padding: 14rpx 18rpx;
+  border-radius: 999rpx;
+  text-align: center;
+  background: #fff5ea;
+  color: #d96a45;
+  font-size: 22rpx;
+  font-weight: 700;
+}
+
+.report-progress.is-done {
+  background: #edf9ef;
+  color: #5f9d66;
+}
+
+.button-primary {
+  margin-top: 24rpx;
+}

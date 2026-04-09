@@ -1,0 +1,88 @@
+<view class="page-shell home-page">
+  <view class="hero card">
+    <view class="hero-top">
+      <view>
+        <view class="eyebrow">YOYO DAILY LISTENING</view>
+        <view class="hero-title">佑佑的英语小耳朵</view>
+        <view class="hero-copy">{{child.welcomeLine}}</view>
+      </view>
+      <view class="avatar-badge">{{child.avatarText}}</view>
+    </view>
+
+    <view class="hero-stats">
+      <view class="hero-stat">
+        <text class="hero-stat-value">{{stats.streakDays}}</text>
+        <text class="hero-stat-label">连续天数</text>
+      </view>
+      <view class="hero-stat">
+        <text class="hero-stat-value">{{stats.completedDays}}</text>
+        <text class="hero-stat-label">完成打卡</text>
+      </view>
+      <view class="hero-stat">
+        <text class="hero-stat-value">{{stats.totalMinutes}}</text>
+        <text class="hero-stat-label">累计分钟</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="assignment card">
+    <view class="row-between">
+      <view>
+        <view class="section-title">今日三项任务</view>
+        <view class="section-copy">
+          {{allDailyDone ? '今天的纯音频三遍已经全部完成了。' : '每一项都固定听 3 遍，有文本的条目从第一遍就能边听边看。'}}
+        </view>
+      </view>
+      <view class="pill">{{completedTaskCountToday}} / {{activeTaskCount || 3}}</view>
+    </view>
+  </view>
+
+  <block wx:for="{{dailyTasks}}" wx:key="category">
+    <view class="assignment card">
+      <view class="row-between">
+        <view>
+          <view class="section-title">{{item.categoryLabel}}</view>
+          <view class="section-copy">{{item.note}}</view>
+        </view>
+        <view class="pill">{{item.isPendingAsset ? 'WAIT' : item.completedToday ? 'DONE' : 'TODAY'}}</view>
+      </view>
+
+      <view class="assignment-cover cover-variant-{{item.coverVariant}} tone-{{item.coverTone}}">
+        <view class="cover-glow"></view>
+        <view class="cover-orbit"></view>
+        <view class="cover-text">
+          <view class="cover-label">{{item.coverBadge || item.categoryLabel}}</view>
+          <view class="cover-title">{{item.displayTitle || item.title}}</view>
+          <view class="cover-meta" wx:if="{{item.displaySubtitle}}">{{item.displaySubtitle}}</view>
+          <view class="cover-meta" wx:elif="{{item.coverMeta}}">{{item.coverMeta}}</view>
+        </view>
+        <view class="cover-ring">
+          <text>{{item.playStepText}}</text>
+        </view>
+      </view>
+
+      <view class="flow-card">
+        <view class="flow-title">今天这一项怎么做</view>
+        <view class="flow-copy">{{item.isPendingAsset ? '目前还没有可用音频，先放进素材目录。' : (item.transcriptTrackId ? '固定听 3 遍：从第 1 遍开始就可以边听边看文本。' : '固定听 3 遍：这条先按纯听力完成。')}}</view>
+        <view class="flow-row">
+          <view class="flow-pill {{item.playCount >= 1 ? 'is-on' : ''}}">第 1 遍{{item.transcriptTrackId ? ' + 文本' : ''}}</view>
+          <view class="flow-pill {{item.playCount >= 2 ? 'is-on' : ''}}">第 2 遍{{item.transcriptTrackId ? ' + 文本' : ''}}</view>
+          <view class="flow-pill {{item.playCount >= 3 ? 'is-on' : ''}}">第 3 遍{{item.transcriptTrackId ? ' + 文本' : ''}}</view>
+        </view>
+        <view class="flow-copy" wx:if="{{item.audioCompactTitle}}">当前音频：{{item.audioCompactTitle}}</view>
+      </view>
+
+      <view class="reward-card reward-{{item.category}}">
+        <view class="reward-badge">{{item.rewardBadge}}</view>
+        <view class="reward-body">
+          <view class="reward-title">{{item.rewardTitle}}</view>
+          <view class="reward-copy">{{item.rewardCopy}}</view>
+        </view>
+      </view>
+
+      <button class="button-primary" bindtap="openTask" data-category="{{item.category}}" disabled="{{item.isPendingAsset}}">
+        {{item.isPendingAsset ? '等音频放入' : item.completedToday ? '查看今天完成' : '开始这项任务'}}
+      </button>
+    </view>
+  </block>
+</view>

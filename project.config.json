@@ -1,0 +1,81 @@
+{
+  "description": "佑佑听力打卡小程序",
+  "packOptions": {
+    "ignore": [
+      {
+        "type": "folder",
+        "value": "scripts"
+      },
+      {
+        "type": "folder",
+        "value": "data/transcript-build"
+      },
+      {
+        "type": "folder",
+        "value": ".cloudbase"
+      },
+      {
+        "type": "file",
+        "value": "assets/README.md"
+      },
+      {
+        "type": "file",
+        "value": "cloudfunctions/README.md"
+      },
+      {
+        "type": "file",
+        "value": "scripts/README.md"
+      },
+      {
+        "type": "file",
+        "value": "data/transcripts/peppa/track-peppa-s101.json"
+      },
+      {
+        "type": "file",
+        "value": "data/transcripts/peppa/track-peppa-s102.json"
+      }
+    ],
+    "include": []
+  },
+  "setting": {
+    "urlCheck": false,
+    "es6": true,
+    "enhance": true,
+    "postcss": true,
+    "minified": false,
+    "compileHotReLoad": true,
+    "coverView": true,
+    "showShadowRootInWxmlPanel": true,
+    "checkInvalidKey": true,
+    "uploadWithSourceMap": false,
+    "lazyloadPlaceholderEnable": false,
+    "minifyWXSS": true,
+    "minifyWXML": true,
+    "minifyJS": true,
+    "useStaticServer": false,
+    "condition": false,
+    "swc": false,
+    "compileWorklet": false,
+    "uglifyFileName": false,
+    "packNpmManually": false,
+    "packNpmRelationList": [],
+    "localPlugins": false,
+    "disableUseStrict": false,
+    "useCompilerPlugins": false,
+    "disableSWC": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    }
+  },
+  "compileType": "miniprogram",
+  "cloudfunctionRoot": "cloudfunctions",
+  "libVersion": "3.6.5",
+  "appid": "wx15ab12b0da43128a",
+  "projectname": "佑声英语",
+  "simulatorType": "wechat",
+  "condition": {},
+  "simulatorPluginLibVersion": {},
+  "editorSetting": {}
+}
