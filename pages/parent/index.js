@@ -7,7 +7,7 @@ function getTemplateIds() {
 
 Page({
   data: {
-    syncMode: 'local',
+    syncMode: 'cloud-error',
     isReviewBuild: false,
     showCloudDebug: false,
     syncDebug: null,

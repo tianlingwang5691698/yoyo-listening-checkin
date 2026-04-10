@@ -37,7 +37,7 @@ function initCloud() {
 }
 
 function getSyncMode() {
-  return initCloud() ? 'cloud' : 'local';
+  return initCloud() ? 'cloud' : 'cloud-error';
 }
 
 async function getTempFileURL(fileId) {

@@ -7,7 +7,7 @@
 - 扫描 `A1/Unlock1/Unlock1 听口音频 Class Audio`
 - 仅识别 `.mp3 / .m4a / .wav`
 - 读取音频时长
-- 过滤 `<= 30s` 音频
+- 过滤 `< 60s` 音频
 - 将结果写入 `unlock1AudioTrainingPool`
 - 预留后续 transcript 接口动作
 

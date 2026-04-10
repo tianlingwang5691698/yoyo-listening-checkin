@@ -8,7 +8,7 @@
           {{syncDebug.text}}
         </view>
       </view>
-      <view class="pill">{{isReviewBuild ? '家庭共享' : (syncMode === 'cloud' ? 'CLOUD' : 'LOCAL')}}</view>
+      <view class="pill">{{syncMode === 'cloud' ? '家庭共享' : '云同步异常'}}</view>
     </view>
     <view class="family-login-note">
       <view class="login-title">当前登录身份</view>

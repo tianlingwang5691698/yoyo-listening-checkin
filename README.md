@@ -9,6 +9,15 @@
 - 完成真机稳定性验证
 - 收口到可提审的小程序基线版本
 
+## 体验版前置门槛
+
+在切体验版或提审包前，必须先满足下面四项：
+
+- `yoyo` 云函数在正式环境中可稳定执行
+- 首页 `syncMode = cloud`，不再出现 `cloud-error`
+- `Unlock1` 只出现 `>= 60 秒` 的云端音频，且课程页可正常播放
+- 当前工程仍允许 `releaseStage = 'internal'` 做排障，但不能把这版直接当体验版发出
+
 ## 当前正式配置
 
 - 小程序 AppID：`wx15ab12b0da43128a`
@@ -23,7 +32,7 @@
 
 - [app.js](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/app.js) / [app.json](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/app.json)：小程序入口与全局配置
 - [pages](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/pages)：页面层
-- [utils/store.js](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/utils/store.js)：页面统一数据入口，负责云优先与本地 fallback
+- [utils/store.js](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/utils/store.js)：页面统一数据入口，负责云端调用与 `cloud-error` 错误态
 - [domain](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/domain)：业务逻辑分层
 - [data](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/data)：正式配置、mock、逐句稿、静态目录映射
 
@@ -51,10 +60,10 @@
 
 1. 小程序启动时执行 `store.ensureState()`
 2. 页面层通过 `utils/store` 统一获取数据
-3. `utils/store` 优先调用 `domain/cloud -> wx.cloud.callFunction -> yoyo`
+3. `utils/store` 调用 `domain/cloud -> wx.cloud.callFunction -> yoyo`
 4. `yoyo` 云函数读取 CloudBase 数据库和云存储
 5. `unlock1-preprocess` 作为独立预处理链路维护 Unlock1 听力训练池
-6. 只有开发态允许 fallback 到本地数据；真机验收必须看到 `syncMode=cloud`
+6. 前台不再回退本地业务数据；云端失败时直接显示 `cloud-error`
 
 ## 云存储目录约定
 
@@ -92,6 +101,7 @@
 
 ## 当前验收口径
 
-- 开发工具中可以出现本地 fallback，但必须明确显示原因
+- 开发工具和真机都只允许走云端数据
+- 云端失败时必须明确显示 `cloud-error`，不能伪装成本地成功
 - 真机测试通过的标准不是“页面能打开”，而是关键链路持续走云并成功写回
 - 提审版本必须移除开发态调试提示、空资源占位和假数据感知

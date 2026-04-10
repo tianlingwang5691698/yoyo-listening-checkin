@@ -140,7 +140,7 @@ async function readDurationSec(file) {
 }
 
 function buildTrainingRecord(file, durationSec, now) {
-  const isExcluded = durationSec <= 30;
+  const isExcluded = durationSec < 60;
   return {
     fileID: file.fileID,
     cloudPath: file.cloudPath,

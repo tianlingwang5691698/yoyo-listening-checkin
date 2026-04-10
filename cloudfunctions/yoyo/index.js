@@ -12,6 +12,8 @@ const CLOUD_ASSET_BASE_URL = 'https://796f-youshengenglish-6glk12rd6c6e719b-1419
 const CLOUD_BUCKET = '796f-youshengenglish-6glk12rd6c6e719b-1419984942';
 const UNLOCK1_AUDIO_ROOT = 'A1/Unlock1/Unlock1 听口音频 Class Audio';
 const UNLOCK1_SCRIPT_PATH = `${UNLOCK1_AUDIO_ROOT}/Unlock 2e Listening and Speaking 1 Scripts.pdf`;
+const UNLOCK1_TRAINING_POOL_COLLECTION = 'unlock1AudioTrainingPool';
+const UNLOCK1_MIN_DURATION_SEC = 60;
 const STORAGE_ROOTS = {
   peppa: 'A1/Peppa',
   unlock1: UNLOCK1_AUDIO_ROOT,
@@ -38,6 +40,14 @@ let runtimeCatalogExpiresAt = 0;
 let runtimeCatalogDebug = null;
 let storageManager = null;
 let storageDebugShapes = {};
+let unlock1TrainingPoolBootstrapState = {
+  lastTriggeredAt: 0,
+  lastFinishedAt: 0,
+  lastResult: '',
+  lastError: '',
+  lastMode: '',
+  lastStats: null
+};
 
 function buildCloudAssetUrl(cloudPath) {
   const baseUrl = String(CLOUD_ASSET_BASE_URL || '').replace(/\/+$/, '');
@@ -249,7 +259,7 @@ function getStorageManager() {
   const secretId = process.env.TENCENTCLOUD_SECRETID || process.env.SECRETID;
   const secretKey = process.env.TENCENTCLOUD_SECRETKEY || process.env.SECRETKEY;
   const token = process.env.TENCENTCLOUD_SESSIONTOKEN || process.env.TOKEN;
-  if (!CLOUD_ENV_ID) {
+  if (!CLOUD_ENV_ID || !secretId || !secretKey) {
     return null;
   }
   storageManager = new CloudBaseManager({
@@ -287,8 +297,22 @@ function getBaseName(path) {
   return fileName.replace(/\.[^.]+$/i, '');
 }
 
+function getFileExt(path) {
+  const match = normalizeCloudPath(path).match(/\.([^.]+)$/);
+  return match ? match[1].toLowerCase() : '';
+}
+
 function normalizeKey(value) {
   return String(value || '').trim().toLowerCase();
+}
+
+function normalizeUnlock1Unit(value) {
+  const text = normalizeKey(value)
+    .replace(/^unlock[-\s_]*2e[-\s_]*a1[-\s_]*/i, '')
+    .replace(/^unlock[-\s_]*1[-\s_]*/i, '')
+    .replace(/[^0-9.]+/g, '')
+    .trim();
+  return text;
 }
 
 function buildStaticTaskLookup(items) {
@@ -296,8 +320,144 @@ function buildStaticTaskLookup(items) {
   items.forEach((item) => {
     map[normalizeKey(item.title)] = item;
     map[normalizeKey(getBaseName(item.audioCloudPath || item.audioUrl))] = item;
+    const normalizedUnit = normalizeUnlock1Unit(item.title);
+    if (normalizedUnit) {
+      map[normalizedUnit] = item;
+    }
   });
   return map;
+}
+
+function shouldUseUnlock1TrainingPool(trainingPool) {
+  return !!(trainingPool && trainingPool.collectionReady && trainingPool.eligibleReady);
+}
+
+async function getEligibleUnlock1TrainingPool() {
+  try {
+    const res = await db.collection(UNLOCK1_TRAINING_POOL_COLLECTION).limit(500).get();
+    const allRecords = (res.data || []).map((item) => Object.assign({}, item, {
+      cloudPath: normalizeCloudPath(item.cloudPath),
+      fileID: item.fileID || buildCloudFileId(item.cloudPath),
+      title: String(item.title || '').trim()
+    }));
+    const records = allRecords.filter((item) => item.status === 'eligible');
+    const byFileID = {};
+    const byCloudPath = {};
+    const byTitle = {};
+    records.forEach((record) => {
+      if (record.fileID) {
+        byFileID[record.fileID] = record;
+      }
+      if (record.cloudPath) {
+        byCloudPath[normalizeKey(record.cloudPath)] = record;
+      }
+      if (record.title) {
+        byTitle[normalizeKey(record.title)] = record;
+        const normalizedUnit = normalizeUnlock1Unit(record.title);
+        if (normalizedUnit) {
+          byTitle[normalizedUnit] = record;
+        }
+      }
+      const normalizedUnit = normalizeUnlock1Unit(record.cloudPath);
+      if (normalizedUnit) {
+        byTitle[normalizedUnit] = record;
+      }
+    });
+    return {
+      ready: true,
+      collectionReady: true,
+      eligibleReady: records.length > 0,
+      records,
+      totalCount: records.length,
+      totalRecordCount: allRecords.length,
+      byFileID,
+      byCloudPath,
+      byTitle,
+      error: ''
+    };
+  } catch (error) {
+    if (isMissingCollectionError(error)) {
+      return {
+        ready: false,
+        collectionReady: false,
+        eligibleReady: false,
+        records: [],
+        totalCount: 0,
+        totalRecordCount: 0,
+        byFileID: {},
+        byCloudPath: {},
+        byTitle: {},
+        error: `${UNLOCK1_TRAINING_POOL_COLLECTION} not ready`
+      };
+    }
+    return {
+      ready: false,
+      collectionReady: false,
+      eligibleReady: false,
+      records: [],
+      totalCount: 0,
+      totalRecordCount: 0,
+      byFileID: {},
+      byCloudPath: {},
+      byTitle: {},
+      error: formatStorageError(error)
+    };
+  }
+}
+
+function getUnlock1TrainingPoolBootstrapSnapshot() {
+  return Object.assign({}, unlock1TrainingPoolBootstrapState, {
+    lastStats: unlock1TrainingPoolBootstrapState.lastStats || null
+  });
+}
+
+async function triggerUnlock1TrainingPoolBootstrap(reason) {
+  unlock1TrainingPoolBootstrapState.lastTriggeredAt = Date.now();
+  unlock1TrainingPoolBootstrapState.lastFinishedAt = Date.now();
+  unlock1TrainingPoolBootstrapState.lastMode = 'manual-required';
+  unlock1TrainingPoolBootstrapState.lastResult = 'manual-required';
+  unlock1TrainingPoolBootstrapState.lastError = `训练池未就绪，请先手动部署并执行 unlock1-preprocess.scanUnlock1Audio（原因：${reason}）`;
+  unlock1TrainingPoolBootstrapState.lastStats = null;
+  return {
+    triggered: false,
+    reason,
+    state: getUnlock1TrainingPoolBootstrapSnapshot()
+  };
+}
+
+async function ensureUnlock1TrainingPoolPrepared(trainingPool) {
+  if (shouldUseUnlock1TrainingPool(trainingPool)) {
+    return {
+      trainingPool,
+      bootstrapState: getUnlock1TrainingPoolBootstrapSnapshot()
+    };
+  }
+  const bootstrap = await triggerUnlock1TrainingPoolBootstrap(
+    trainingPool && trainingPool.ready
+      ? 'training-pool-empty'
+      : 'training-pool-not-ready'
+  );
+  return {
+    trainingPool,
+    bootstrapState: bootstrap.state || getUnlock1TrainingPoolBootstrapSnapshot()
+  };
+}
+
+function findUnlock1TrainingRecord(file, matchedStatic, trainingPool) {
+  if (!trainingPool || !trainingPool.ready) {
+    return null;
+  }
+  const byFileID = trainingPool.byFileID || {};
+  const byCloudPath = trainingPool.byCloudPath || {};
+  const byTitle = trainingPool.byTitle || {};
+  const staticTitle = matchedStatic ? matchedStatic.title : '';
+  return byFileID[file.fileId]
+    || byCloudPath[normalizeKey(file.cloudPath)]
+    || byTitle[normalizeKey(getBaseName(file.cloudPath))]
+    || byTitle[normalizeUnlock1Unit(file.cloudPath)]
+    || byTitle[normalizeKey(staticTitle)]
+    || byTitle[normalizeUnlock1Unit(staticTitle)]
+    || null;
 }
 
 async function listDirectoryFiles(cloudPath) {
@@ -363,7 +523,7 @@ function sortFilesByPath(left, right) {
   });
 }
 
-async function buildCloudCatalogFromRoot(category, rootPath, staticItems) {
+async function buildCloudCatalogFromRoot(category, rootPath, staticItems, options) {
   const files = await listDirectoryFiles(rootPath);
   const audioFiles = files.filter((item) => AUDIO_FILE_PATTERN.test(item.cloudPath)).sort(sortFilesByPath);
   const pdfByFolder = {};
@@ -371,12 +531,46 @@ async function buildCloudCatalogFromRoot(category, rootPath, staticItems) {
     pdfByFolder[getParentFolder(item.cloudPath)] = item;
   });
   const staticLookup = buildStaticTaskLookup(staticItems);
+  const trainingPool = options && options.trainingPool;
+  const useUnlock1TrainingPool = category === 'unlock1' && shouldUseUnlock1TrainingPool(trainingPool);
+  const audioEntries = category === 'unlock1'
+    ? audioFiles.map((file, index) => {
+      const audioBaseName = getBaseName(file.cloudPath);
+      const matchedStatic = staticLookup[normalizeKey(audioBaseName)]
+        || staticLookup[normalizeUnlock1Unit(audioBaseName)]
+        || null;
+      const trainingRecord = findUnlock1TrainingRecord(file, matchedStatic, trainingPool);
+      return {
+        file,
+        index,
+        matchedStatic,
+        trainingRecord,
+        resolvedDurationSec: trainingRecord ? Number(trainingRecord.durationSec || 0) : Number((matchedStatic && matchedStatic.durationSec) || 0)
+      };
+    }).filter((entry) => {
+      if (useUnlock1TrainingPool) {
+        return !!entry.trainingRecord;
+      }
+      return !!entry.matchedStatic && entry.resolvedDurationSec >= UNLOCK1_MIN_DURATION_SEC;
+    })
+    : audioFiles.map((file, index) => ({
+      file,
+      index,
+      matchedStatic: staticLookup[normalizeKey(getBaseName(file.cloudPath))] || staticItems[index] || null,
+      trainingRecord: null
+    }));
+  const unlock1ExcludedShortCount = category === 'unlock1'
+    ? audioFiles.length - audioEntries.length
+    : undefined;
+  const sampleAudioFile = category === 'unlock1'
+    ? ((audioEntries[0] && audioEntries[0].file) || null)
+    : (audioFiles[0] || null);
 
-  const tasks = audioFiles.map((file, index) => {
+  const tasks = audioEntries.map((entry) => {
+    const { file, index, matchedStatic, trainingRecord } = entry;
     const audioBaseName = getBaseName(file.cloudPath);
-    const matchedStatic = staticLookup[normalizeKey(audioBaseName)] || staticItems[index] || null;
     const folderPdf = findNearestParentPdf(pdfByFolder, file.cloudPath);
-    const title = matchedStatic ? matchedStatic.title : audioBaseName;
+    const title = matchedStatic ? matchedStatic.title : ((trainingRecord && trainingRecord.title) || audioBaseName);
     const subtitle = matchedStatic
       ? matchedStatic.subtitle
       : (getParentFolder(file.cloudPath).split('/').pop() || rootPath.split('/').pop());
@@ -386,11 +580,12 @@ async function buildCloudCatalogFromRoot(category, rootPath, staticItems) {
       title,
       subtitle,
       repeatTarget: matchedStatic ? matchedStatic.repeatTarget : 3,
-      durationSec: matchedStatic ? matchedStatic.durationSec : 180,
+      durationSec: trainingRecord ? trainingRecord.durationSec : (matchedStatic ? matchedStatic.durationSec : 180),
       coverTone: matchedStatic ? matchedStatic.coverTone : (category === 'song' ? 'mint' : 'sunrise'),
       transcriptTrackId: matchedStatic ? matchedStatic.transcriptTrackId : null,
       transcriptStatus: matchedStatic ? matchedStatic.transcriptStatus : (folderPdf ? 'pending' : 'none'),
       transcriptBatch: matchedStatic ? matchedStatic.transcriptBatch : null,
+      audioTitle: (trainingRecord && trainingRecord.title) || audioBaseName,
       audioUrl: buildCloudAssetUrl(file.cloudPath),
       audioCloudPath: file.cloudPath,
       audioFileId: file.fileId,
@@ -402,30 +597,61 @@ async function buildCloudCatalogFromRoot(category, rootPath, staticItems) {
     tasks,
     debug: {
       root: rootPath,
-      audioCount: audioFiles.length,
-      samplePath: audioFiles[0] ? audioFiles[0].cloudPath : '',
+      audioCount: category === 'unlock1' ? audioEntries.length : audioFiles.length,
+      samplePath: sampleAudioFile ? sampleAudioFile.cloudPath : '',
       pdfCount: Object.keys(pdfByFolder).length,
       rawStorageShape: (storageDebugShapes[normalizeCloudPath(rootPath)] || []).join(','),
       scanMode: 'manager-scan',
-      scanError: ''
+      scanError: '',
+      listMode: category === 'unlock1'
+        ? (useUnlock1TrainingPool ? 'training-pool' : 'catalog-fallback')
+        : 'manager-scan',
+      trainingPoolReady: category === 'unlock1' ? !!(trainingPool && trainingPool.ready) : undefined,
+      trainingPoolCollectionReady: category === 'unlock1' ? !!(trainingPool && trainingPool.collectionReady) : undefined,
+      trainingPoolEligibleReady: category === 'unlock1' ? !!(trainingPool && trainingPool.eligibleReady) : undefined,
+      trainingPoolEligibleCount: category === 'unlock1' ? ((trainingPool && trainingPool.totalCount) || 0) : undefined,
+      rawAudioCount: category === 'unlock1' ? audioFiles.length : undefined,
+      filteredAudioCount: category === 'unlock1' ? audioEntries.length : undefined,
+      excludedShortCount: unlock1ExcludedShortCount,
+      minDurationRule: category === 'unlock1' ? UNLOCK1_MIN_DURATION_SEC : undefined
     }
   };
 }
 
 async function buildCloudCatalogForCategory(category, staticItems) {
   const roots = STORAGE_ROOT_CANDIDATES[category] || [STORAGE_ROOTS[category]];
+  let trainingPool = category === 'unlock1'
+    ? await getEligibleUnlock1TrainingPool()
+    : null;
+  let bootstrapState = null;
+  if (category === 'unlock1' && !shouldUseUnlock1TrainingPool(trainingPool)) {
+    const ensured = await ensureUnlock1TrainingPoolPrepared(trainingPool);
+    trainingPool = ensured.trainingPool;
+    bootstrapState = ensured.bootstrapState;
+  }
   const errors = [];
   const emptyScans = [];
   for (let index = 0; index < roots.length; index += 1) {
     const rootPath = roots[index];
     try {
-      const result = await buildCloudCatalogFromRoot(category, rootPath, staticItems);
+      const result = await buildCloudCatalogFromRoot(category, rootPath, staticItems, {
+        trainingPool
+      });
       if (result.tasks.length) {
         return {
           tasks: result.tasks,
           debug: Object.assign({}, result.debug, {
             selectedRoot: rootPath,
-            rootCandidates: roots
+            rootCandidates: roots,
+            listMode: category === 'unlock1'
+              ? (shouldUseUnlock1TrainingPool(trainingPool) ? 'training-pool' : 'catalog-fallback')
+              : result.debug.listMode,
+            trainingPoolReady: trainingPool ? trainingPool.ready : undefined,
+            trainingPoolCollectionReady: trainingPool ? trainingPool.collectionReady : undefined,
+            trainingPoolEligibleReady: trainingPool ? trainingPool.eligibleReady : undefined,
+            trainingPoolEligibleCount: trainingPool ? trainingPool.totalCount : undefined,
+            trainingPoolTotalCount: trainingPool ? trainingPool.totalRecordCount : undefined,
+            bootstrapState: category === 'unlock1' ? bootstrapState : undefined
           })
         };
       }
@@ -446,7 +672,21 @@ async function buildCloudCatalogForCategory(category, staticItems) {
       rawStorageShape: (storageDebugShapes[normalizeCloudPath(roots[0] || '')] || []).join(','),
       scanMode: errors.length ? 'static-fallback' : 'manager-scan',
       scanError: errors.join(' | '),
-      emptyRoots: emptyScans.map((item) => item.root)
+      emptyRoots: emptyScans.map((item) => item.root),
+      listMode: category === 'unlock1'
+        ? (shouldUseUnlock1TrainingPool(trainingPool) ? 'training-pool' : 'catalog-fallback')
+        : (errors.length ? 'static-fallback' : 'manager-scan'),
+      trainingPoolReady: trainingPool ? trainingPool.ready : undefined,
+      trainingPoolCollectionReady: trainingPool ? trainingPool.collectionReady : undefined,
+      trainingPoolEligibleReady: trainingPool ? trainingPool.eligibleReady : undefined,
+      trainingPoolEligibleCount: trainingPool ? trainingPool.totalCount : undefined,
+      trainingPoolTotalCount: trainingPool ? trainingPool.totalRecordCount : undefined,
+      rawAudioCount: category === 'unlock1' ? 0 : undefined,
+      filteredAudioCount: category === 'unlock1' ? 0 : undefined,
+      excludedShortCount: category === 'unlock1' ? 0 : undefined,
+      minDurationRule: category === 'unlock1' ? UNLOCK1_MIN_DURATION_SEC : undefined,
+      trainingPoolError: trainingPool && trainingPool.error ? trainingPool.error : '',
+      bootstrapState: category === 'unlock1' ? bootstrapState : undefined
     }
   };
 }
@@ -469,6 +709,22 @@ function summarizeRuntimeCatalogDebug(categoryDebugMap) {
     unlock1Root: unlock1.selectedRoot || unlock1.root || '',
     unlock1AudioCount: unlock1.audioCount || 0,
     unlock1SamplePath: unlock1.samplePath || '',
+    unlock1ListMode: unlock1.listMode || '',
+    unlock1TrainingPoolReady: unlock1.trainingPoolReady,
+    unlock1TrainingPoolCollectionReady: unlock1.trainingPoolCollectionReady,
+    unlock1TrainingPoolEligibleReady: unlock1.trainingPoolEligibleReady,
+    unlock1TrainingPoolEligibleCount: unlock1.trainingPoolEligibleCount || 0,
+    unlock1TrainingPoolTotalCount: unlock1.trainingPoolTotalCount || 0,
+    unlock1RawAudioCount: unlock1.rawAudioCount || 0,
+    unlock1FilteredAudioCount: unlock1.filteredAudioCount || 0,
+    unlock1ExcludedShortCount: unlock1.excludedShortCount || 0,
+    unlock1MinDurationRule: unlock1.minDurationRule || UNLOCK1_MIN_DURATION_SEC,
+    unlock1TrainingPoolError: unlock1.trainingPoolError || '',
+    unlock1BootstrapTriggeredAt: unlock1.bootstrapState ? unlock1.bootstrapState.lastTriggeredAt || 0 : 0,
+    unlock1BootstrapFinishedAt: unlock1.bootstrapState ? unlock1.bootstrapState.lastFinishedAt || 0 : 0,
+    unlock1BootstrapMode: unlock1.bootstrapState ? unlock1.bootstrapState.lastMode || '' : '',
+    unlock1BootstrapResult: unlock1.bootstrapState ? unlock1.bootstrapState.lastResult || '' : '',
+    unlock1BootstrapError: unlock1.bootstrapState ? unlock1.bootstrapState.lastError || '' : '',
     songRoot: song.selectedRoot || song.root || '',
     songAudioCount: song.audioCount || 0,
     songSamplePath: song.samplePath || ''
@@ -486,9 +742,12 @@ async function refreshRuntimeCatalogs(force) {
     buildCloudCatalogForCategory('unlock1', staticMap.unlock1),
     buildCloudCatalogForCategory('song', staticMap.song)
   ]);
+  const staticUnlock1Filtered = staticMap.unlock1.filter((item) => Number(item.durationSec || 0) >= UNLOCK1_MIN_DURATION_SEC);
   runtimeCatalogs = {
     peppa: peppaCatalog.tasks.length ? peppaCatalog.tasks : staticMap.peppa,
-    unlock1: unlockCatalog.tasks.length ? unlockCatalog.tasks : staticMap.unlock1,
+    unlock1: unlockCatalog.debug && unlockCatalog.debug.listMode === 'training-pool'
+      ? unlockCatalog.tasks
+      : (unlockCatalog.tasks.length ? unlockCatalog.tasks : staticUnlock1Filtered),
     song: songCatalog.tasks
   };
   runtimeCatalogDebug = summarizeRuntimeCatalogDebug({
@@ -589,8 +848,25 @@ function getTaskReward(category, progress, task) {
 
 function decorateTask(task, progress, category) {
   if (!task) {
-    const base = getTaskPresentation(songPlaceholder);
-    return Object.assign({}, songPlaceholder, base, {
+    const emptyTask = category === 'unlock1'
+      ? {
+        taskId: 'unlock1-pending',
+        category: 'unlock1',
+        title: 'Unlock 1',
+        subtitle: '检查云端 Unlock1 目录',
+        audioUrl: '',
+        audioCloudPath: '',
+        audioFileId: '',
+        audioSource: 'none',
+        repeatTarget: 3,
+        durationSec: 0,
+        coverTone: 'peach',
+        transcriptTrackId: null,
+        textSource: null
+      }
+      : songPlaceholder;
+    const base = getTaskPresentation(emptyTask);
+    return Object.assign({}, emptyTask, base, {
       category,
       categoryLabel: getCategoryLabel(category),
       audioCompactTitle: '',
@@ -600,10 +876,14 @@ function decorateTask(task, progress, category) {
       textUnlocked: false,
       completedToday: false,
       isPendingAsset: true,
-      note: '把歌曲音频放进来后，这里就会开始轮换。',
-      rewardBadge: 'SONG 1',
-      rewardTitle: '歌曲星星线',
-      rewardCopy: '把歌曲音频放进来后，这条奖励线就会亮起来。'
+      note: category === 'unlock1'
+        ? 'Unlock1 音频暂时未就绪，先检查训练池或云目录。'
+        : '把歌曲音频放进来后，这里就会开始轮换。',
+      rewardBadge: category === 'unlock1' ? 'UNLOCK 1' : 'SONG 1',
+      rewardTitle: category === 'unlock1' ? '学习任务线' : '歌曲星星线',
+      rewardCopy: category === 'unlock1'
+        ? 'Unlock1 素材恢复后，这条奖励线会继续推进。'
+        : '把歌曲音频放进来后，这条奖励线就会亮起来。'
     });
   }
   const base = getTaskPresentation(task);
@@ -768,7 +1048,10 @@ function getSelectedTask(progressRecords, childId, category, date, cursors) {
   if (!catalog.length) return null;
   const existing = progressRecords.find((item) => item.childId === childId && item.category === category && item.date === date);
   if (existing && existing.taskId) {
-    return catalog.find((item) => item.taskId === existing.taskId) || catalog[0];
+    const matched = catalog.find((item) => item.taskId === existing.taskId);
+    if (matched) {
+      return matched;
+    }
   }
   const index = (cursors[category] || 0) % catalog.length;
   return catalog[index];

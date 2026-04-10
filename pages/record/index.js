@@ -5,7 +5,7 @@ Page({
     child: null,
     stats: {},
     heatmap: [],
-    syncMode: 'local',
+    syncMode: 'cloud-error',
     isReviewBuild: false,
     showCloudDebug: false,
     syncDebug: null
@@ -17,7 +17,7 @@ Page({
       child: dashboard.child,
       stats: dashboard.stats,
       heatmap: heatmapData.heatmap,
-      syncMode: dashboard.syncMode || 'local',
+      syncMode: dashboard.syncMode || 'cloud-error',
       isReviewBuild: !!dashboard.isReviewBuild,
       showCloudDebug: !!dashboard.showCloudDebug,
       syncDebug: dashboard.syncDebug || null

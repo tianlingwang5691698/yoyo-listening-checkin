@@ -3,7 +3,7 @@
     <view class="lesson-hero-top">
       <view class="pill">{{task.coverBadge || task.categoryLabel}}</view>
     </view>
-    <view class="lesson-title">{{task.displayTitle || task.title}}</view>
+    <view class="lesson-title">{{(currentAudio && currentAudio.title) || task.displayTitle || task.title}}</view>
     <view class="lesson-copy" wx:if="{{task.displaySubtitle}}">{{task.displaySubtitle}}</view>
     <view class="lesson-copy" wx:elif="{{task.coverMeta}}">{{task.coverMeta}}</view>
     <view class="sync-debug {{syncMode === 'cloud' ? 'is-cloud' : 'is-local'}}" wx:if="{{showCloudDebug && syncDebug && syncDebug.show}}">
@@ -45,11 +45,14 @@
           <view class="section-copy" wx:if="{{audioPlaybackMode && audioPlaybackMode !== 'idle'}}">
             播放链路：{{audioPlaybackMode}}
           </view>
-          <view class="section-copy" wx:if="{{showCloudDebug && task.audioCloudPath}}">
-            云路径：{{task.audioCloudPath}}
+          <view class="section-copy" wx:if="{{showCloudDebug && currentAudio && currentAudio.cloudPath}}">
+            云路径：{{currentAudio.cloudPath}}
           </view>
-          <view class="section-copy" wx:if="{{showCloudDebug && task.audioFileId}}">
-            fileId：{{task.audioFileId}}
+          <view class="section-copy" wx:if="{{showCloudDebug && currentAudio && currentAudio.fileID}}">
+            fileId：{{currentAudio.fileID}}
+          </view>
+          <view class="section-copy" wx:if="{{showCloudDebug && currentAudio && currentAudio.src}}">
+            src：{{currentAudio.src}}
           </view>
           <view class="section-copy" wx:if="{{audioResolving}}">
             播放状态：正在解析云端音频
@@ -77,7 +80,7 @@
         <view class="player-info-block">
           <view class="player-info-top">
             <view>
-              <view class="media-title" wx:if="{{task.audioCompactTitle}}">{{task.audioCompactTitle}}</view>
+              <view class="media-title" wx:if="{{currentAudio && currentAudio.title}}">{{currentAudio.title}}</view>
               <view class="player-status">{{isPlaying ? '正在播放' : (audioResolving ? '正在准备' : (audioReady ? '已暂停' : '等待播放'))}}</view>
             </view>
             <view class="player-speed-badge">当前 {{playbackRate.toFixed(1)}}x</view>
@@ -85,12 +88,9 @@
         </view>
         <view class="player-main">
           <button class="player-toggle" bindtap="toggleAudio" loading="{{audioResolving}}" disabled="{{task.isPendingAsset}}">
-            <text>{{isPlaying ? '||' : '>'}}</text>
+            <text class="player-toggle-icon {{isPlaying ? 'is-pause' : 'is-play'}}">{{isPlaying ? '❚❚' : '▶'}}</text>
           </button>
-          <view class="player-copy">
-            <view class="player-main-label">播放 / 暂停</view>
-            <view class="player-main-copy">按三遍训练节奏稳稳往前听，不提供快进。</view>
-          </view>
+          <view class="player-status-note">按三遍训练节奏稳稳往前听，不提供快进。</view>
         </view>
         <view class="player-progress">
           <view class="player-progress-meta">
@@ -102,16 +102,8 @@
           </view>
         </view>
         <view class="player-actions">
-          <button class="player-action player-action-rewind {{canRewind ? '' : 'is-disabled'}}" bindtap="rewindAudio">后退 5 秒</button>
-          <view class="player-rate-group">
-            <block wx:for="{{playbackRateOptions}}" wx:key="*this">
-              <button
-                class="player-action player-rate-option {{playbackRate === item ? 'is-active-rate' : ''}}"
-                bindtap="setPlaybackRate"
-                data-rate="{{item}}"
-              >{{item.toFixed(1)}}x</button>
-            </block>
-          </view>
+          <button class="player-action player-action-rewind {{canRewind ? '' : 'is-disabled'}}" bindtap="rewindAudio">↺ 5秒</button>
+          <button class="player-action player-rate-toggle" bindtap="togglePlaybackRate">×{{playbackRate.toFixed(1)}}</button>
         </view>
       </view>
     </view>
@@ -237,5 +229,29 @@
       </block>
     </block>
     <view class="section-copy" wx:else>还没有这个分类的完成记录。</view>
+  </view>
+</view>
+
+<view class="page-shell lesson-page" wx:elif="{{syncMode === 'cloud-error'}}">
+  <view class="lesson-hero tone-peach cover-variant-unlock">
+    <view class="lesson-hero-top">
+      <view class="pill">CLOUD</view>
+    </view>
+    <view class="lesson-title">云端课程暂时不可用</view>
+    <view class="lesson-copy">当前课程详情页只读取云端任务和云端音频，不再回退本地。</view>
+    <view class="sync-debug is-local" wx:if="{{showCloudDebug && syncDebug && syncDebug.show}}">
+      {{syncDebug.text}}
+      <block wx:if="{{syncDebug.resourceLines && syncDebug.resourceLines.length}}">
+        <block wx:for="{{syncDebug.resourceLines}}" wx:key="*this">
+          <view class="sync-debug-line">{{item}}</view>
+        </block>
+      </block>
+    </view>
+  </view>
+
+  <view class="card result-card">
+    <view class="result-badge">CLOUD ERROR</view>
+    <view class="result-title">请先修复云函数后再重试</view>
+    <view class="result-copy">{{syncDebug.reason || '云端调用失败'}}</view>
   </view>
 </view>

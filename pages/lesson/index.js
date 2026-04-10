@@ -2,7 +2,6 @@ const store = require('../../utils/store');
 const player = require('../../domain/player/index');
 const cloud = require('../../domain/cloud/index');
 const appConfig = require('../../data/app-config');
-const PLAYBACK_RATE_OPTIONS = [0.8, 1.0];
 
 function buildCloudFileId(cloudPath) {
   const normalizedPath = String(cloudPath || '').replace(/^\/+/, '');
@@ -10,6 +9,39 @@ function buildCloudFileId(cloudPath) {
     return '';
   }
   return `cloud://${appConfig.cloudEnvId}.${appConfig.cloudBucket}/${normalizedPath}`;
+}
+
+function getDisplayNameFromPath(path) {
+  const normalizedPath = String(path || '').split('?')[0];
+  const fileName = normalizedPath.split('/').filter(Boolean).pop() || '';
+  return decodeURIComponent(fileName).replace(/\.[^.]+$/i, '');
+}
+
+function buildCurrentAudio(task, playableUrl, playbackMode) {
+  if (!task || task.isPendingAsset) {
+    return null;
+  }
+  const cloudPath = String(task.audioCloudPath || '').trim();
+  const fileID = String(task.audioFileId || buildCloudFileId(cloudPath)).trim();
+  const src = String(playableUrl || task.audioUrl || '').trim();
+  const title = String(
+    task.audioTitle
+    || getDisplayNameFromPath(cloudPath || src)
+    || task.title
+    || task.displayTitle
+    || ''
+  ).trim();
+  return {
+    title,
+    fileID,
+    src,
+    durationSec: Number(task.durationSec || 0),
+    course: String(task.displayTitle || task.title || '').trim(),
+    cloudPath,
+    source: String(task.audioSource || 'none').trim(),
+    playbackMode: String(playbackMode || 'idle').trim(),
+    taskId: String(task.taskId || '').trim()
+  };
 }
 
 Page({
@@ -27,13 +59,12 @@ Page({
     currentTimeLabel: '00:00',
     durationLabel: '00:00',
     progressPercent: 0,
-    syncMode: 'local',
+    syncMode: 'cloud-error',
     isReviewBuild: false,
     showCloudDebug: false,
     syncDebug: null,
     isPlaying: false,
     playbackRate: 1,
-    playbackRateOptions: PLAYBACK_RATE_OPTIONS,
     canRewind: false,
     activeLineId: '',
     activeLineIndex: -1,
@@ -46,7 +77,8 @@ Page({
     audioResolving: false,
     audioError: '',
     audioErrorDetail: '',
-    audioPlaybackMode: 'idle'
+    audioPlaybackMode: 'idle',
+    currentAudio: null
   },
   onLoad(query) {
     this.category = query.category || 'peppa';
@@ -55,7 +87,8 @@ Page({
     this.innerAudioContext.obeyMuteSwitch = false;
     this.innerAudioContext.onCanplay(() => {
       const durationFromContext = Number(this.innerAudioContext.duration || 0);
-      const taskDuration = (this.data.task && this.data.task.durationSec) || 0;
+      const taskDuration = (this.data.currentAudio && this.data.currentAudio.durationSec)
+        || ((this.data.task && this.data.task.durationSec) || 0);
       this.setData({
         audioReady: true,
         audioResolving: false,
@@ -71,7 +104,8 @@ Page({
     });
     this.innerAudioContext.onTimeUpdate(() => {
       const currentSeconds = this.innerAudioContext.currentTime || 0;
-      const durationSeconds = (this.data.task && this.data.task.durationSec) || 0;
+      const durationSeconds = (this.data.currentAudio && this.data.currentAudio.durationSec)
+        || ((this.data.task && this.data.task.durationSec) || 0);
       const currentTimeMs = Math.floor(currentSeconds * 1000);
       this.updateTranscriptByTime(currentTimeMs);
       this.setData({
@@ -100,7 +134,8 @@ Page({
         audioReady: false,
         audioResolving: false,
         audioErrorDetail: '',
-        audioPlaybackMode: 'idle'
+        audioPlaybackMode: 'idle',
+        currentAudio: null
       });
     });
     this.innerAudioContext.onEnded(() => {
@@ -197,11 +232,13 @@ Page({
   async syncPlayer(task) {
     const initialState = player.getInitialPlayerState((task && task.durationSec) || 0);
     const resolvedTask = await this.resolveTaskAudio(task);
+    const missingAudio = buildCurrentAudio(resolvedTask, '', 'error');
     if (!resolvedTask || resolvedTask.isPendingAsset || !resolvedTask.audioUrl) {
       if (this.innerAudioContext) {
         this.innerAudioContext.stop();
       }
       this.setData(Object.assign({}, initialState, {
+        currentAudio: missingAudio,
         audioSource: 'none',
         audioReady: false,
         audioResolving: false,
@@ -240,6 +277,7 @@ Page({
         task: resolvedTask
       });
     }
+    const currentAudio = buildCurrentAudio(resolvedTask, playableUrl, playbackMode);
     if (this.innerAudioContext && this.innerAudioContext.src !== playableUrl) {
       this.innerAudioContext.stop();
       this.innerAudioContext.src = playableUrl;
@@ -248,6 +286,7 @@ Page({
       this.innerAudioContext.playbackRate = 1;
     }
     this.setData(Object.assign({}, initialState, {
+      currentAudio,
       audioSource: resolvedTask.audioSource || 'none',
       audioReady: false,
       audioResolving: true,
@@ -258,11 +297,12 @@ Page({
   },
   async refreshPage() {
     const detail = await store.getTaskDetail(this.category);
+    const previewAudio = buildCurrentAudio(detail.task, '', 'idle');
     this.setData({
       child: detail.child,
       task: detail.task,
       stats: detail.stats,
-      syncMode: detail.syncMode || 'local',
+      syncMode: detail.syncMode || 'cloud-error',
       isReviewBuild: !!detail.isReviewBuild,
       showCloudDebug: !!detail.showCloudDebug,
       syncDebug: detail.syncDebug || null,
@@ -283,6 +323,7 @@ Page({
       prevLine: null,
       activeLine: null,
       nextLine: detail.transcriptTrack && detail.transcriptTrack.lines.length ? detail.transcriptTrack.lines[0] : null,
+      currentAudio: previewAudio,
       audioSource: detail.task && detail.task.audioSource ? detail.task.audioSource : 'none',
       audioReady: false,
       audioResolving: false,
@@ -290,7 +331,13 @@ Page({
       audioErrorDetail: '',
       audioPlaybackMode: 'idle'
     });
-    await this.syncPlayer(detail.task);
+    if (detail.task) {
+      await this.syncPlayer(detail.task);
+      return;
+    }
+    if (this.innerAudioContext) {
+      this.innerAudioContext.stop();
+    }
   },
   clearTranscriptState() {
     this.setData({
@@ -393,19 +440,16 @@ Page({
     this.innerAudioContext.seek(nextValue);
     this.setData({
       currentTimeLabel: this.formatTime(nextValue),
-      progressPercent: player.getProgressPercent(nextValue, this.data.task && this.data.task.durationSec),
+      progressPercent: player.getProgressPercent(nextValue, (this.data.currentAudio && this.data.currentAudio.durationSec) || (this.data.task && this.data.task.durationSec)),
       canRewind: nextValue > 1
     });
     this.updateTranscriptByTime(nextValue * 1000);
   },
-  setPlaybackRate(event) {
+  togglePlaybackRate() {
     if (!this.innerAudioContext) {
       return;
     }
-    const nextRate = Number(event.currentTarget.dataset.rate);
-    if (!PLAYBACK_RATE_OPTIONS.includes(nextRate)) {
-      return;
-    }
+    const nextRate = this.data.playbackRate === 1 ? 0.8 : 1;
     this.innerAudioContext.playbackRate = nextRate;
     this.setData({
       playbackRate: nextRate
@@ -423,7 +467,7 @@ Page({
       child: detail.child,
       task: detail.task,
       stats: detail.stats,
-      syncMode: detail.syncMode || 'local',
+      syncMode: detail.syncMode || 'cloud-error',
       isReviewBuild: !!detail.isReviewBuild,
       showCloudDebug: !!detail.showCloudDebug,
       syncDebug: detail.syncDebug || null,

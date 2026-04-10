@@ -13,9 +13,17 @@
 - `cloudfunctions/unlock1-preprocess`
   - 扫描 `Unlock1` 云端音频
   - 读取音频时长
-  - 过滤 30 秒以内短音频
+  - 过滤低于 60 秒的短音频
   - 写入听力训练素材池
   - 预留 transcript 对齐 / 生成接口
+
+## 体验版前必须通过
+
+- `yoyo` 在 `youshengenglish-6glk12rd6c6e719b` 中可稳定执行
+- 首页不再出现 `cloud-error`
+- `unlock1-preprocess` 已至少手动跑通一次 `scanUnlock1Audio`
+- `unlock1AudioTrainingPool` 中已存在 `eligible`
+- `Unlock1` 前台只出现 `>= 60 秒` 的云端音频
 
 ## 你在微信开发者工具里需要做的事
 
@@ -97,7 +105,8 @@
 
 - 这些集合需要先在 CloudBase 控制台手动创建为空集合。
 - 首次云调用会自动写入首批业务数据。
-- 如果新环境未先建集合，首页会在 bootstrap 阶段读取失败并回退本地。
+- 如果新环境未先建集合，首页会在 bootstrap 阶段读取失败并显示云端错误，不再回退本地数据。
+- 如果 `yoyo` 或 `unlock1-preprocess` 未正确部署到当前环境，前台会直接显示 `cloud-error`，此时不能切体验版。
 
 ## unlock1-preprocess 用法
 
@@ -109,9 +118,12 @@
 
 - 只扫描 `.mp3`、`.m4a`、`.wav`
 - 读取音频时长
-- `<= 30s` 写入 `excluded_short_audio`
-- `> 30s` 写入 `eligible`
+- `< 60s` 写入 `excluded_short_audio`
+- `>= 60s` 写入 `eligible`
 - 写入 collection：`unlock1AudioTrainingPool`
+- `yoyo` 检测到训练池未就绪时，会先回退到经过 `>= 60 秒` 过滤的云端原始目录，保证前台继续可用
+- `yoyo` 不会在前台请求里重跑 Unlock1 全量训练池扫描；训练池未就绪时会在调试信息中明确提示需要手动执行 `unlock1-preprocess`
+- 手动跑通训练池后，后续首页和详情页会优先切到 `training-pool`
 
 ### 手动触发
 
@@ -133,6 +145,15 @@ wx.cloud.callFunction({
   }
 });
 ```
+
+### 推荐首次启用顺序
+
+1. 先部署 `unlock1-preprocess`
+2. 手动执行一次 `scanUnlock1Audio`
+3. 确认 `unlock1AudioTrainingPool` 中已有 `eligible` 记录
+4. 再部署 `yoyo`
+5. 首页调试信息看到 `Unlock1 训练池已启用`
+6. 再切 `releaseStage = 'review'`、`showCloudDebug = false` 并做体验版复测
 
 ### 预留动作
 

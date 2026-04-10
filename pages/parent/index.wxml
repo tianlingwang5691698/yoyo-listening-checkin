@@ -8,7 +8,7 @@
           {{syncDebug.text}}
         </view>
       </view>
-      <view class="pill">{{isReviewBuild ? '家庭日报' : (syncMode === 'cloud' ? 'SYNCED' : 'LOCAL')}}</view>
+      <view class="pill">{{syncMode === 'cloud' ? '家庭日报' : '云同步异常'}}</view>
     </view>
     <view class="summary-grid">
       <view class="summary-item">

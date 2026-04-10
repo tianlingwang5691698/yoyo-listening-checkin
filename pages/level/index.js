@@ -6,7 +6,7 @@ Page({
     level: null,
     stats: {},
     categories: [],
-    syncMode: 'local',
+    syncMode: 'cloud-error',
     isReviewBuild: false,
     showCloudDebug: false,
     syncDebug: null

@@ -2,7 +2,7 @@
 
 ## 一句话架构
 
-微信小程序前端通过 `utils/store` 统一访问业务数据，优先走 CloudBase 云函数 `yoyo`，只有开发态才允许回退本地数据。
+微信小程序前端通过 `utils/store` 统一访问业务数据，只读取 CloudBase 云函数与云存储；云端失败时显示明确错误态，不再回退本地数据。
 
 ## 代码分层
 
@@ -25,12 +25,12 @@
 ### 数据入口层 `utils/store.js`
 
 - 页面唯一推荐数据入口
-- 封装云调用与本地 fallback
+- 封装云调用与云错误态
 - 输出统一的 `syncMode` / `syncDebug`
 
 约定：
 
-- 页面不要绕过 `store` 直接访问本地 mock
+- 页面不要绕过 `store` 直接访问本地 mock 作为业务兜底
 - 真机验收时，以 `store` 返回的云态结果为准
 
 ### 业务域 `domain/`
@@ -39,8 +39,8 @@
 - `progress`：本地进度和 dashboard 逻辑
 - `tasks`：任务编排与展示辅助
 - `transcript`：逐句稿绑定
-- `family`：本地家庭数据 fallback
-- `reports`：本地日报 fallback
+- `family`：历史本地家庭辅助逻辑
+- `reports`：历史本地日报辅助逻辑
 - `player`：播放时长和进度辅助
 
 ### 配置与静态数据 `data/`
@@ -74,7 +74,7 @@
 
 - 扫描 `Unlock1` 云端音频目录
 - 读取音频时长
-- 过滤 30 秒以内短音频
+- 过滤低于 60 秒的短音频
 - 写入 `unlock1AudioTrainingPool`
 - 预留 transcript 对齐 / 生成动作接口
 

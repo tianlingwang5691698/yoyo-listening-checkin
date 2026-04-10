@@ -2,7 +2,7 @@ const store = require('../../utils/store');
 
 Page({
   data: {
-    syncMode: 'local',
+    syncMode: 'cloud-error',
     isReviewBuild: false,
     showCloudDebug: false,
     syncDebug: null,

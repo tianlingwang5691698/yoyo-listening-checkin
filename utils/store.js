@@ -1,12 +1,6 @@
-const progress = require('../domain/progress/index');
-const tasks = require('../domain/tasks/index');
-const transcript = require('../domain/transcript/index');
 const cloud = require('../domain/cloud/index');
-const family = require('../domain/family/index');
-const reports = require('../domain/reports/index');
-const { getTodayString } = require('./date');
 
-function formatFallbackReason(error) {
+function formatCloudReason(error) {
   if (!error) {
     return 'unknown';
   }
@@ -30,6 +24,49 @@ function buildResourceDebugLines(resourceDebug) {
   if (resourceDebug.unlock1Root || resourceDebug.unlock1AudioCount) {
     lines.push(`Unlock1：${resourceDebug.unlock1AudioCount || 0} 个音频，目录 ${resourceDebug.unlock1Root || '未识别'}`);
   }
+  if (typeof resourceDebug.unlock1TrainingPoolReady === 'boolean') {
+    if (resourceDebug.unlock1ListMode === 'training-pool') {
+      lines.push(`Unlock1 训练池已启用，eligible ${resourceDebug.unlock1TrainingPoolEligibleCount || 0} 条`);
+    } else {
+      lines.push(`Unlock1 训练池未就绪，当前回退原始目录`);
+    }
+  }
+  if (typeof resourceDebug.unlock1TrainingPoolCollectionReady === 'boolean') {
+    lines.push(`Unlock1 训练池集合：${resourceDebug.unlock1TrainingPoolCollectionReady ? 'ready' : 'not-ready'}`);
+  }
+  if (typeof resourceDebug.unlock1TrainingPoolEligibleReady === 'boolean') {
+    lines.push(`Unlock1 eligible 就绪：${resourceDebug.unlock1TrainingPoolEligibleReady ? 'yes' : 'no'}`);
+  }
+  if (typeof resourceDebug.unlock1TrainingPoolTotalCount === 'number') {
+    lines.push(`Unlock1 训练池总记录：${resourceDebug.unlock1TrainingPoolTotalCount} 条`);
+  }
+  if (typeof resourceDebug.unlock1MinDurationRule === 'number') {
+    lines.push(`Unlock1 回退过滤阈值：${resourceDebug.unlock1MinDurationRule} 秒`);
+  }
+  if (typeof resourceDebug.unlock1RawAudioCount === 'number') {
+    lines.push(`Unlock1 原始扫描数量：${resourceDebug.unlock1RawAudioCount} 条`);
+  }
+  if (typeof resourceDebug.unlock1FilteredAudioCount === 'number') {
+    lines.push(`Unlock1 进入训练列表：${resourceDebug.unlock1FilteredAudioCount} 条`);
+  }
+  if (typeof resourceDebug.unlock1ExcludedShortCount === 'number') {
+    lines.push(`Unlock1 被排除短音频：${resourceDebug.unlock1ExcludedShortCount} 条`);
+  }
+  if (resourceDebug.unlock1TrainingPoolError) {
+    lines.push(`Unlock1 训练池告警：${resourceDebug.unlock1TrainingPoolError}`);
+  }
+  if (resourceDebug.unlock1BootstrapResult) {
+    lines.push(`Unlock1 自动补建：${resourceDebug.unlock1BootstrapResult}`);
+  }
+  if (resourceDebug.unlock1BootstrapMode) {
+    lines.push(`Unlock1 自动补建模式：${resourceDebug.unlock1BootstrapMode}`);
+  }
+  if (resourceDebug.unlock1BootstrapError) {
+    lines.push(`Unlock1 自动补建错误：${resourceDebug.unlock1BootstrapError}`);
+  }
+  if (resourceDebug.unlock1BootstrapFinishedAt) {
+    lines.push(`Unlock1 最近补建：${new Date(resourceDebug.unlock1BootstrapFinishedAt).toLocaleString('zh-CN', { hour12: false })}`);
+  }
   if (resourceDebug.unlock1SamplePath) {
     lines.push(`Unlock1 样例：${resourceDebug.unlock1SamplePath}`);
   }
@@ -50,7 +87,7 @@ function buildResourceDebugLines(resourceDebug) {
 
 function buildSyncMeta(mode, error, resourceDebug) {
   const envId = cloud.getCloudEnvId();
-  const reason = mode === 'local' ? formatFallbackReason(error) : '';
+  const reason = mode === 'cloud-error' ? formatCloudReason(error) : '';
   const releaseStage = cloud.getReleaseStage();
   const resourceLines = buildResourceDebugLines(resourceDebug);
   return {
@@ -67,136 +104,195 @@ function buildSyncMeta(mode, error, resourceDebug) {
       resourceLines,
       text: mode === 'cloud'
         ? `云环境已连接：${envId}`
-        : `当前使用本地回退，目标云环境：${envId}${reason ? `，失败原因：${reason}` : ''}`
+        : `云端调用失败，目标云环境：${envId}${reason ? `，失败原因：${reason}` : ''}`
     }
   };
 }
 
-async function callWithFallback(action, payload, fallback) {
+function buildCloudErrorPayload(action, error, defaults) {
+  const resourceDebug = null;
+  return Object.assign({}, defaults || {}, buildSyncMeta('cloud-error', error, resourceDebug), {
+    cloudError: {
+      action,
+      message: formatCloudReason(error)
+    }
+  });
+}
+
+async function callCloud(action, payload, defaults) {
   try {
     const result = await cloud.callYoyo(action, payload);
     return Object.assign(buildSyncMeta('cloud', null, result.resourceDebug), result);
   } catch (error) {
-    return Object.assign(buildSyncMeta('local', error), fallback(error));
+    return buildCloudErrorPayload(action, error, defaults);
   }
-}
-
-function getLocalTaskDetail(category) {
-  const state = progress.loadState();
-  const child = progress.getChild(state);
-  const stats = progress.getStats(state, child.childId);
-  const task = progress.getTodayTaskSummary(state, child.childId, category);
-  const transcriptBundle = transcript.getTranscriptBundle(task);
-  const todayRecord = progress.getChildCheckinRecords(state, child.childId)
-    .find((item) => item.date === getTodayString()) || null;
-  const history = progress.getChildCategoryProgress(state, child.childId)
-    .filter((item) => item.category === category && item.completedToday)
-    .map((item) => ({
-      date: item.date,
-      taskTitle: tasks.formatHistoryTaskTitle(tasks.getTaskById(item.category, item.taskId)) || item.taskId,
-      playCount: item.playCount
-    }));
-
-  return {
-    child,
-    stats,
-    task,
-    progress: {
-      playCount: task.playCount,
-      playStepText: task.playStepText,
-      currentPass: task.currentPass,
-      repeatTarget: task.repeatTarget,
-      textUnlocked: task.textUnlocked,
-      completedToday: task.completedToday
-    },
-    transcriptTrack: transcriptBundle.transcriptTrack,
-    transcriptLines: transcriptBundle.transcriptLines,
-    scriptSource: task.textSource || null,
-    todayRecord,
-    history
-  };
 }
 
 async function ensureState() {
-  progress.ensureState();
-  family.ensureLocalFamilyState();
   cloud.initCloud();
-  return callWithFallback('bootstrap', {}, () => ({
-    family: family.getFamilyPageData().family,
-    child: family.getFamilyPageData().child
-  }));
+  return callCloud('bootstrap', {}, {
+    family: null,
+    child: {
+      nickname: '',
+      avatarText: ''
+    }
+  });
 }
 
 async function getDashboard() {
-  return callWithFallback('getDashboard', {}, () => progress.getDashboardData());
+  return callCloud('getDashboard', {}, {
+    child: {
+      nickname: '',
+      avatarText: '',
+      welcomeLine: '云端数据暂时不可用，请稍后重试。'
+    },
+    stats: {
+      streakDays: 0,
+      completedDays: 0,
+      totalMinutes: 0
+    },
+    dailyTasks: [],
+    activeTaskCount: 0,
+    completedTaskCountToday: 0,
+    allDailyDone: false
+  });
 }
 
 async function getLevelOverview() {
-  return callWithFallback('getLevelOverview', {}, () => progress.getLevelOverviewData());
+  return callCloud('getLevelOverview', {}, {
+    child: null,
+    level: null,
+    stats: {
+      streakDays: 0,
+      completedDays: 0,
+      totalMinutes: 0
+    },
+    categories: []
+  });
 }
 
 async function getTaskDetail(category) {
-  const result = await callWithFallback('getTaskDetail', { category }, () => getLocalTaskDetail(category));
-  if (result.task && !result.transcriptTrack) {
-    const transcriptBundle = transcript.getTranscriptBundle(result.task);
-    result.transcriptTrack = transcriptBundle.transcriptTrack;
-    result.transcriptLines = transcriptBundle.transcriptLines;
-    result.scriptSource = result.scriptSource || result.task.textSource || null;
-  }
-  return result;
+  return callCloud('getTaskDetail', { category }, {
+    child: null,
+    stats: {
+      streakDays: 0,
+      completedDays: 0,
+      totalMinutes: 0
+    },
+    task: null,
+    progress: {
+      playCount: 0,
+      playStepText: '0/3',
+      currentPass: 1,
+      repeatTarget: 3,
+      textUnlocked: false,
+      completedToday: false
+    },
+    scriptSource: null,
+    transcriptTrack: null,
+    transcriptLines: [],
+    todayRecord: null,
+    history: []
+  });
 }
 
 async function markTaskListened(options) {
-  const result = await callWithFallback('markTaskListened', options, () => {
-    progress.markTaskListened(options);
-    return getLocalTaskDetail(options.category);
+  return callCloud('markTaskListened', options, {
+    child: null,
+    stats: {
+      streakDays: 0,
+      completedDays: 0,
+      totalMinutes: 0
+    },
+    task: null,
+    progress: {
+      playCount: 0,
+      playStepText: '0/3',
+      currentPass: 1,
+      repeatTarget: 3,
+      textUnlocked: false,
+      completedToday: false
+    },
+    scriptSource: null,
+    transcriptTrack: null,
+    transcriptLines: [],
+    todayRecord: null,
+    history: []
   });
-  if (result.task && !result.transcriptTrack) {
-    const transcriptBundle = transcript.getTranscriptBundle(result.task);
-    result.transcriptTrack = transcriptBundle.transcriptTrack;
-    result.transcriptLines = transcriptBundle.transcriptLines;
-    result.scriptSource = result.scriptSource || result.task.textSource || null;
-  }
-  return result;
 }
 
 async function getProfileData() {
-  return callWithFallback('getProfileData', {}, () => {
-    const profile = progress.getProfileData();
-    const familyData = family.getFamilyPageData();
-    return Object.assign({}, profile, {
-      family: familyData.family,
-      members: familyData.members,
-      currentMember: familyData.currentMember,
-      subscriptionPreference: familyData.subscriptionPreference
-    });
+  return callCloud('getProfileData', {}, {
+    child: null,
+    level: null,
+    familyReady: false,
+    family: null,
+    members: [],
+    currentMember: null,
+    subscriptionPreference: null
   });
 }
 
 async function getHeatmap(days) {
-  return callWithFallback('getHeatmap', { days }, () => ({
-    heatmap: progress.getHeatmap(days || 28)
-  }));
+  return callCloud('getHeatmap', { days }, {
+    heatmap: []
+  });
 }
 
 async function getParentDashboard() {
-  return callWithFallback('getParentDashboard', {}, () => reports.getParentDashboardData());
+  return callCloud('getParentDashboard', {}, {
+    family: null,
+    child: null,
+    stats: {
+      streakDays: 0,
+      completedDays: 0,
+      totalMinutes: 0
+    },
+    todayReport: null,
+    recentReports: [],
+    members: [],
+    subscriptionPreference: null
+  });
 }
 
 async function getFamilyPageData() {
-  return callWithFallback('getFamilyPage', {}, () => family.getFamilyPageData());
+  return callCloud('getFamilyPage', {}, {
+    family: null,
+    currentMember: null,
+    members: [],
+    child: null,
+    subscriptionPreference: null
+  });
 }
 
 async function refreshInviteCode() {
-  return callWithFallback('refreshInviteCode', {}, () => family.refreshInviteCode());
+  return callCloud('refreshInviteCode', {}, {
+    family: null,
+    currentMember: null,
+    members: [],
+    child: null,
+    subscriptionPreference: null
+  });
 }
 
 async function joinFamily(inviteCode, displayName) {
-  return callWithFallback('joinFamily', { inviteCode, displayName }, () => family.joinFamily(inviteCode, displayName));
+  return callCloud('joinFamily', { inviteCode, displayName }, {
+    family: null,
+    currentMember: null,
+    members: [],
+    child: null,
+    subscriptionPreference: null
+  });
 }
 
 async function updateSubscription(enabled) {
-  return callWithFallback('updateSubscription', { enabled }, () => family.toggleSubscription(enabled));
+  return callCloud('updateSubscription', { enabled }, {
+    family: null,
+    currentMember: null,
+    members: [],
+    child: null,
+    subscriptionPreference: null
+  });
 }
 
 module.exports = {

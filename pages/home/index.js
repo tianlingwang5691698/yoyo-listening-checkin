@@ -8,7 +8,7 @@ Page({
     activeTaskCount: 0,
     completedTaskCountToday: 0,
     allDailyDone: false,
-    syncMode: 'local',
+    syncMode: 'cloud-error',
     isReviewBuild: false,
     showCloudDebug: false,
     syncDebug: null
