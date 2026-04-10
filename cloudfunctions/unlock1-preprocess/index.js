@@ -1,6 +1,5 @@
 const cloud = require('wx-server-sdk');
 const CloudBaseManager = require('@cloudbase/manager-node');
-const { parseBuffer } = require('music-metadata');
 
 cloud.init({
   env: cloud.DYNAMIC_CURRENT_ENV
@@ -9,8 +8,35 @@ cloud.init({
 const db = cloud.database();
 const CLOUD_ENV_ID = process.env.TCB_ENV || process.env.SCF_NAMESPACE || cloud.DYNAMIC_CURRENT_ENV;
 const UNLOCK1_AUDIO_ROOT = 'A1/Unlock1/Unlock1 听口音频 Class Audio';
+const UNLOCK1_ROOT_CANDIDATES = [UNLOCK1_AUDIO_ROOT, 'A1/Unlock1'];
 const TRAINING_POOL_COLLECTION = 'unlock1AudioTrainingPool';
 const AUDIO_FILE_PATTERN = /\.(mp3|m4a|wav)$/i;
+const KNOWN_UNLOCK1_DURATIONS = {
+  'unlock2e_a1_1.2': 85,
+  'unlock2e_a1_1.5': 145,
+  'unlock2e_a1_2.2': 120,
+  'unlock2e_a1_2.3': 65,
+  'unlock2e_a1_2.5': 132,
+  'unlock2e_a1_3.3': 160,
+  'unlock2e_a1_3.5': 156,
+  'unlock2e_a1_3.6': 64,
+  'unlock2e_a1_4.2': 163,
+  'unlock2e_a1_4.3': 89,
+  'unlock2e_a1_4.4': 165,
+  'unlock2e_a1_4.9': 62,
+  'unlock2e_a1_5.3': 158,
+  'unlock2e_a1_5.6': 156,
+  'unlock2e_a1_6.2': 215,
+  'unlock2e_a1_6.5': 184,
+  'unlock2e_a1_6.6': 93,
+  'unlock2e_a1_7.2': 66,
+  'unlock2e_a1_7.3': 200,
+  'unlock2e_a1_7.4': 176,
+  'unlock2e_a1_7.9': 68,
+  'unlock2e_a1_8.3': 177,
+  'unlock2e_a1_8.5': 159,
+  'unlock2e_a1_8.6': 69
+};
 const STATUS = {
   EXCLUDED_SHORT_AUDIO: 'excluded_short_audio',
   ELIGIBLE: 'eligible',
@@ -34,6 +60,7 @@ const TRANSCRIPT_STATUSES = new Set([
 ]);
 
 let storageManager = null;
+let storageDebugShapes = {};
 
 function normalizeCloudPath(path) {
   return String(path || '').replace(/^\/+|\/+$/g, '');
@@ -72,11 +99,27 @@ function extractStorageFile(item) {
 
 async function listDirectoryFiles(cloudPath) {
   const manager = getStorageManager();
-  const result = await manager.storage.listDirectoryFiles(normalizeCloudPath(cloudPath));
+  const normalizedRoot = normalizeCloudPath(cloudPath);
+  const result = await manager.storage.listDirectoryFiles(normalizedRoot);
   const rawFiles = Array.isArray(result) ? result : ((((result || {}).data || {}).files || []));
+  const firstItem = rawFiles[0] || null;
+  storageDebugShapes[normalizedRoot] = firstItem ? Object.keys(firstItem).sort() : [];
   return rawFiles
     .map(extractStorageFile)
     .filter(Boolean);
+}
+
+function formatStorageError(error) {
+  if (!error) {
+    return '';
+  }
+  if (error.errMsg) {
+    return error.errMsg;
+  }
+  if (error.message) {
+    return error.message;
+  }
+  return String(error);
 }
 
 function getBaseName(cloudPath) {
@@ -113,28 +156,14 @@ async function ensureCollectionReady(collectionName) {
   }
 }
 
-async function downloadAudioBuffer(fileID) {
-  const response = await cloud.downloadFile({
-    fileID
-  });
-  const fileContent = response && response.fileContent;
-  if (!fileContent) {
-    throw new Error('download-empty');
-  }
-  if (Buffer.isBuffer(fileContent)) {
-    return fileContent;
-  }
-  return Buffer.from(fileContent);
+function normalizeDurationLookupKey(value) {
+  return getBaseName(value).trim().toLowerCase();
 }
 
-async function readDurationSec(file) {
-  const fileBuffer = await downloadAudioBuffer(file.fileID);
-  const metadata = await parseBuffer(fileBuffer, getFileExt(file.cloudPath), {
-    duration: true
-  });
-  const duration = Number((((metadata || {}).format || {}).duration) || 0);
+function readDurationSec(file) {
+  const duration = KNOWN_UNLOCK1_DURATIONS[normalizeDurationLookupKey(file.cloudPath)];
   if (!duration || !Number.isFinite(duration)) {
-    throw new Error('duration-unavailable');
+    return 0;
   }
   return Math.round(duration);
 }
@@ -198,18 +227,46 @@ function buildNotImplemented(action) {
 
 async function scanUnlock1Audio() {
   await ensureCollectionReady(TRAINING_POOL_COLLECTION);
-  const rootPath = UNLOCK1_AUDIO_ROOT;
-  const scannedFiles = await listDirectoryFiles(rootPath);
+  const rootCandidates = UNLOCK1_ROOT_CANDIDATES.slice();
+  let rootPath = rootCandidates[0];
+  let scannedFiles = [];
+  let scanError = '';
+
+  for (let index = 0; index < rootCandidates.length; index += 1) {
+    const candidate = rootCandidates[index];
+    try {
+      const files = await listDirectoryFiles(candidate);
+      if (files.length) {
+        rootPath = candidate;
+        scannedFiles = files;
+        scanError = '';
+        break;
+      }
+      if (!scannedFiles.length) {
+        rootPath = candidate;
+      }
+    } catch (error) {
+      scanError = `${candidate}: ${formatStorageError(error)}`;
+    }
+  }
+
   const audioFiles = scannedFiles.filter(isAudioCandidate);
   const now = Date.now();
+  const rawStorageShape = (storageDebugShapes[normalizeCloudPath(rootPath)] || []).join(',');
+  const samplePath = audioFiles[0] ? audioFiles[0].cloudPath : (scannedFiles[0] ? scannedFiles[0].cloudPath : '');
   const stats = {
     ok: true,
     action: 'scanUnlock1Audio',
     rootPath,
+    rootCandidates,
     scannedCount: scannedFiles.length,
     supportedAudioCount: audioFiles.length,
+    samplePath,
+    rawStorageShape,
+    scanError,
     eligibleCount: 0,
     excludedShortCount: 0,
+    durationResolvedByStaticMapCount: 0,
     durationReadFailedCount: 0,
     upsertedCount: 0,
     skippedCount: 0,
@@ -220,7 +277,14 @@ async function scanUnlock1Audio() {
   for (let index = 0; index < audioFiles.length; index += 1) {
     const file = audioFiles[index];
     try {
-      const durationSec = await readDurationSec(file);
+      const durationSec = readDurationSec(file);
+      if (durationSec > 0) {
+        stats.durationResolvedByStaticMapCount += 1;
+      } else {
+        stats.durationReadFailedCount += 1;
+        stats.skippedCount += 1;
+        continue;
+      }
       const record = buildTrainingRecord(file, durationSec, now);
       const upsertAction = await upsertTrainingRecord(record);
       stats.upsertedCount += 1;
@@ -235,9 +299,24 @@ async function scanUnlock1Audio() {
         stats.eligibleCount += 1;
       }
     } catch (error) {
-      stats.durationReadFailedCount += 1;
       stats.skippedCount += 1;
+      scanError = scanError || formatStorageError(error);
     }
+  }
+
+  if (!stats.scannedCount) {
+    stats.ok = false;
+    stats.message = scanError
+      ? `未扫描到存储文件：${scanError}`
+      : `未扫描到存储文件，请检查目录 ${rootCandidates.join(' / ')}`;
+  } else if (!stats.supportedAudioCount) {
+    stats.ok = false;
+    stats.message = '扫描到了文件，但没有识别到可支持的音频格式';
+  } else if (!stats.upsertedCount) {
+    stats.ok = false;
+    stats.message = '扫描到了音频，但没有任何记录写入训练池';
+  } else {
+    stats.message = '训练池扫描并写库完成';
   }
 
   return stats;
