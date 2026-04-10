@@ -88,6 +88,9 @@ function buildResourceDebugLines(resourceDebug) {
 function buildSyncMeta(mode, error, resourceDebug) {
   const envId = cloud.getCloudEnvId();
   const reason = mode === 'cloud-error' ? formatCloudReason(error) : '';
+  const publicReason = mode === 'cloud-error'
+    ? '云端服务暂时不可用，请稍后再试。'
+    : '';
   const releaseStage = cloud.getReleaseStage();
   const resourceLines = buildResourceDebugLines(resourceDebug);
   return {
@@ -100,6 +103,7 @@ function buildSyncMeta(mode, error, resourceDebug) {
       envId,
       show: cloud.shouldShowCloudDebug(),
       reason,
+      publicReason,
       resourceDebug: resourceDebug || null,
       resourceLines,
       text: mode === 'cloud'

@@ -2,7 +2,7 @@
   <view class="hero card">
     <view class="hero-top">
       <view>
-        <view class="eyebrow">YOYO DAILY LISTENING</view>
+        <view class="eyebrow">DAILY LISTENING</view>
         <view class="hero-title">佑佑的英语小耳朵</view>
         <view class="hero-copy">{{child.welcomeLine}}</view>
         <view class="sync-debug {{syncMode === 'cloud' ? 'is-cloud' : 'is-local'}}" wx:if="{{showCloudDebug && syncDebug && syncDebug.show}}">
@@ -51,11 +51,11 @@
         <view class="section-title">云端暂时不可用</view>
         <view class="section-copy">当前页面只允许读取云端数据，未再回退本地。请先修复云函数后再继续使用。</view>
       </view>
-      <view class="pill">CLOUD</view>
+      <view class="pill">云端</view>
     </view>
     <view class="flow-card">
       <view class="flow-title">当前错误</view>
-      <view class="flow-copy">{{syncDebug.reason || 'cloud-error'}}</view>
+        <view class="flow-copy">{{(syncDebug && (syncDebug.publicReason || syncDebug.reason)) || '云端服务暂时不可用，请稍后再试。'}}</view>
     </view>
   </view>
 
@@ -66,7 +66,7 @@
           <view class="section-title">{{item.categoryLabel}}</view>
           <view class="section-copy">{{item.note}}</view>
         </view>
-        <view class="pill">{{item.isPendingAsset ? 'WAIT' : item.completedToday ? 'DONE' : 'TODAY'}}</view>
+        <view class="pill">{{item.isPendingAsset ? '待准备' : item.completedToday ? '已完成' : '今日任务'}}</view>
       </view>
 
       <view class="assignment-cover cover-variant-{{item.coverVariant}} tone-{{item.coverTone}}">

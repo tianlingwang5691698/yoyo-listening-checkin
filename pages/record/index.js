@@ -1,26 +1,21 @@
 const store = require('../../utils/store');
+const page = require('../../utils/page');
 
 Page({
-  data: {
+  data: page.createCloudPageData({
     child: null,
     stats: {},
-    heatmap: [],
-    syncMode: 'cloud-error',
-    isReviewBuild: false,
-    showCloudDebug: false,
-    syncDebug: null
-  },
+    heatmap: []
+  }),
   async onShow() {
-    const dashboard = await store.getDashboard();
-    const heatmapData = await store.getHeatmap(28);
-    this.setData({
+    const [dashboard, heatmapData] = await Promise.all([
+      store.getDashboard(),
+      store.getHeatmap(28)
+    ]);
+    this.setData(page.buildCloudPageData(this.data, {
       child: dashboard.child,
       stats: dashboard.stats,
-      heatmap: heatmapData.heatmap,
-      syncMode: dashboard.syncMode || 'cloud-error',
-      isReviewBuild: !!dashboard.isReviewBuild,
-      showCloudDebug: !!dashboard.showCloudDebug,
-      syncDebug: dashboard.syncDebug || null
-    });
+      heatmap: heatmapData.heatmap
+    }));
   }
 });

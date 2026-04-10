@@ -1,21 +1,18 @@
 const store = require('../../utils/store');
+const page = require('../../utils/page');
 
 Page({
-  data: {
+  data: page.createCloudPageData({
     child: null,
     stats: {},
     dailyTasks: [],
     activeTaskCount: 0,
     completedTaskCountToday: 0,
-    allDailyDone: false,
-    syncMode: 'cloud-error',
-    isReviewBuild: false,
-    showCloudDebug: false,
-    syncDebug: null
-  },
+    allDailyDone: false
+  }),
   async onShow() {
     const data = await store.getDashboard();
-    this.setData(data);
+    this.setData(page.buildCloudPageData(this.data, data));
   },
   openTask(event) {
     const category = event.currentTarget.dataset.category;

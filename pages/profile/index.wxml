@@ -25,12 +25,12 @@
   <view class="option card">
     <view class="option-title">登录方式</view>
     <view class="option-copy">这版不做账号密码注册，直接用微信身份自动登录。每个家长都有自己的身份，同一个家庭共享同一个孩子的学习记录。</view>
-    <view class="option-tag">WECHAT AUTO LOGIN</view>
+    <view class="option-tag">微信自动识别</view>
   </view>
 
   <view class="option card">
     <view class="option-title">订阅状态</view>
     <view class="option-copy">{{subscriptionPreference.dailyReportEnabled ? '已开启每日报告提醒。家长完成后会收到摘要提醒。' : '还没开启每日报告提醒，可以到家长页里授权。'}}</view>
-    <view class="option-tag">{{subscriptionPreference.dailyReportEnabled ? 'REPORTS ON' : 'REPORTS OFF'}}</view>
+    <view class="option-tag">{{subscriptionPreference.dailyReportEnabled ? '日报提醒已开启' : '日报提醒未开启'}}</view>
   </view>
 </view>

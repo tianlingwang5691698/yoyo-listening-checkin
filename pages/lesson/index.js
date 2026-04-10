@@ -2,6 +2,7 @@ const store = require('../../utils/store');
 const player = require('../../domain/player/index');
 const cloud = require('../../domain/cloud/index');
 const appConfig = require('../../data/app-config');
+const page = require('../../utils/page');
 
 function buildCloudFileId(cloudPath) {
   const normalizedPath = String(cloudPath || '').replace(/^\/+/, '');
@@ -45,7 +46,7 @@ function buildCurrentAudio(task, playableUrl, playbackMode) {
 }
 
 Page({
-  data: {
+  data: page.createCloudPageData({
     child: null,
     task: null,
     stats: {},
@@ -79,7 +80,7 @@ Page({
     audioErrorDetail: '',
     audioPlaybackMode: 'idle',
     currentAudio: null
-  },
+  }),
   onLoad(query) {
     this.category = query.category || 'peppa';
     this.pendingAutoPlay = false;
@@ -298,14 +299,10 @@ Page({
   async refreshPage() {
     const detail = await store.getTaskDetail(this.category);
     const previewAudio = buildCurrentAudio(detail.task, '', 'idle');
-    this.setData({
+    this.setData(page.buildCloudPageData(this.data, {
       child: detail.child,
       task: detail.task,
       stats: detail.stats,
-      syncMode: detail.syncMode || 'cloud-error',
-      isReviewBuild: !!detail.isReviewBuild,
-      showCloudDebug: !!detail.showCloudDebug,
-      syncDebug: detail.syncDebug || null,
       todayRecord: detail.todayRecord,
       progress: detail.progress,
       scriptSource: detail.scriptSource,
@@ -330,7 +327,7 @@ Page({
       audioError: '',
       audioErrorDetail: '',
       audioPlaybackMode: 'idle'
-    });
+    }));
     if (detail.task) {
       await this.syncPlayer(detail.task);
       return;
@@ -463,14 +460,10 @@ Page({
       childId: this.data.child.childId,
       category: this.category
     });
-    this.setData({
+    this.setData(page.buildCloudPageData(this.data, {
       child: detail.child,
       task: detail.task,
       stats: detail.stats,
-      syncMode: detail.syncMode || 'cloud-error',
-      isReviewBuild: !!detail.isReviewBuild,
-      showCloudDebug: !!detail.showCloudDebug,
-      syncDebug: detail.syncDebug || null,
       todayRecord: detail.todayRecord,
       progress: detail.progress,
       scriptSource: detail.scriptSource,
@@ -479,7 +472,7 @@ Page({
       history: detail.history,
       audioSource: detail.task && detail.task.audioSource ? detail.task.audioSource : 'none',
       playbackRate: 1
-    });
+    }));
     await this.syncPlayer(detail.task);
     wx.showToast({
       title: detail.progress.completedToday ? `${detail.task.categoryLabel} 今天完成` : `已完成第 ${detail.progress.playCount} 遍`,

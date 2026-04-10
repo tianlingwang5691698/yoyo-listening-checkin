@@ -37,6 +37,6 @@
   <view class="sticker card">
     <view class="section-title">今日小奖章</view>
     <view class="section-copy">{{stats.streakDays > 0 ? '已经在坚持了，继续把这份节奏守住。' : '今天把该做的音频听完，就会点亮第一枚小奖章。'}}</view>
-    <view class="sticker-badge">{{stats.streakDays > 6 ? 'WEEK STAR' : stats.streakDays > 0 ? 'KEEP GOING' : 'START TODAY'}}</view>
+    <view class="sticker-badge">{{stats.streakDays > 6 ? '本周之星' : stats.streakDays > 0 ? '继续加油' : '今天开始'}}</view>
   </view>
 </view>

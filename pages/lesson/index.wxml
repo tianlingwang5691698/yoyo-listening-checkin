@@ -150,7 +150,7 @@
           {{transcriptLines.length ? '现在可以边听边看文本。' : task.transcriptStatus === 'pending' ? '这条的逐句高亮正在准备中，先按纯听力完成也可以。' : '这条音频目前没有可用文本，也可以照常完成。'}}
         </view>
       </view>
-      <view class="pill transcript-pill">{{transcriptLines.length ? 'TEXT ON' : task.transcriptStatus === 'pending' ? 'TEXT SOON' : 'NO TEXT'}}</view>
+      <view class="pill transcript-pill">{{transcriptLines.length ? '文本已就绪' : task.transcriptStatus === 'pending' ? '文本准备中' : '暂无文本'}}</view>
     </view>
 
     <view class="transcript-focus" wx:if="{{transcriptLines.length}}">
@@ -203,13 +203,13 @@
   </view>
 
   <view class="card result-card" wx:if="{{task.completedToday}}">
-    <view class="result-badge">TODAY DONE</view>
+    <view class="result-badge">今日完成</view>
     <view class="result-title">{{task.categoryLabel}} 今天完成了</view>
     <view class="result-copy">这项任务已经听满 3 遍，明天会自动轮到下一条。</view>
   </view>
 
   <view class="card result-card" wx:if="{{todayRecord}}">
-    <view class="result-badge">DAILY CHECKIN</view>
+    <view class="result-badge">今日打卡</view>
     <view class="result-title">今天的总打卡已经点亮</view>
     <view class="result-copy">连续 {{todayRecord.streakSnapshot}} 天坚持，今天完成的分类已经记下来了。</view>
   </view>
@@ -235,7 +235,7 @@
 <view class="page-shell lesson-page" wx:elif="{{syncMode === 'cloud-error'}}">
   <view class="lesson-hero tone-peach cover-variant-unlock">
     <view class="lesson-hero-top">
-      <view class="pill">CLOUD</view>
+      <view class="pill">云端</view>
     </view>
     <view class="lesson-title">云端课程暂时不可用</view>
     <view class="lesson-copy">当前课程详情页只读取云端任务和云端音频，不再回退本地。</view>
@@ -250,8 +250,8 @@
   </view>
 
   <view class="card result-card">
-    <view class="result-badge">CLOUD ERROR</view>
+    <view class="result-badge">服务异常</view>
     <view class="result-title">请先修复云函数后再重试</view>
-    <view class="result-copy">{{syncDebug.reason || '云端调用失败'}}</view>
+    <view class="result-copy">{{(syncDebug && (syncDebug.publicReason || syncDebug.reason)) || '云端服务暂时不可用，请稍后再试。'}}</view>
   </view>
 </view>

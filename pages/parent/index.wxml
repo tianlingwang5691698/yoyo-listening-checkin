@@ -32,7 +32,7 @@
         <view class="section-title">今日完整日报</view>
         <view class="section-copy">订阅消息只发摘要，这里保留完整明细。家长不在同一个网络，也能回来查看同一份报告。</view>
       </view>
-      <view class="pill">{{subscriptionPreference.dailyReportEnabled ? 'PUSH ON' : 'PUSH OFF'}}</view>
+      <view class="pill">{{subscriptionPreference.dailyReportEnabled ? '提醒已开启' : '提醒未开启'}}</view>
     </view>
     <block wx:for="{{todayReport.items}}" wx:key="category">
       <view class="report-item">

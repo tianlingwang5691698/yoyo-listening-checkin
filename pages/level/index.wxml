@@ -1,6 +1,6 @@
 <view class="page-shell level-page">
   <view class="level-hero card">
-    <view class="pill">CURRENT MODE</view>
+    <view class="pill">当前阶段</view>
     <view class="level-name">{{level.name}}</view>
     <view class="level-copy">{{level.description}}</view>
     <view class="sync-debug {{syncMode === 'cloud' ? 'is-cloud' : 'is-local'}}" wx:if="{{showCloudDebug && syncDebug && syncDebug.show}}">

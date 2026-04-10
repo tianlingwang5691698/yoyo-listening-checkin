@@ -58,12 +58,11 @@
 
 ## 运行链路
 
-1. 小程序启动时执行 `store.ensureState()`
-2. 页面层通过 `utils/store` 统一获取数据
-3. `utils/store` 调用 `domain/cloud -> wx.cloud.callFunction -> yoyo`
-4. `yoyo` 云函数读取 CloudBase 数据库和云存储
-5. `unlock1-preprocess` 作为独立预处理链路维护 Unlock1 听力训练池
-6. 前台不再回退本地业务数据；云端失败时直接显示 `cloud-error`
+1. 页面层通过 `utils/store` 统一获取数据
+2. `utils/store` 调用 `domain/cloud -> wx.cloud.callFunction -> yoyo`
+3. `yoyo` 云函数读取 CloudBase 数据库和云存储
+4. `unlock1-preprocess` 作为独立预处理链路维护 Unlock1 听力训练池
+5. 前台不再回退本地业务数据；云端失败时直接显示 `cloud-error`
 
 ## 云存储目录约定
 

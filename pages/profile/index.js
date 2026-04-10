@@ -1,7 +1,8 @@
 const store = require('../../utils/store');
+const page = require('../../utils/page');
 
 Page({
-  data: {
+  data: page.createCloudPageData({
     child: {},
     level: {},
     familyReady: false,
@@ -10,15 +11,11 @@ Page({
     currentMember: {},
     subscriptionPreference: {
       dailyReportEnabled: false
-    },
-    syncMode: 'cloud-error',
-    isReviewBuild: false,
-    showCloudDebug: false,
-    syncDebug: null
-  },
+    }
+  }),
   async onShow() {
     const data = await store.getProfileData();
-    this.setData(data);
+    this.setData(page.buildCloudPageData(this.data, data));
   },
   openParentPage() {
     wx.navigateTo({
