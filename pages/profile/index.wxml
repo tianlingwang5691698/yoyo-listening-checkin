@@ -7,7 +7,7 @@
       {{syncDebug.text}}
     </view>
     <view class="option-tag">{{syncMode === 'cloud' ? '家庭共享已接通' : '云同步异常'}}</view>
-    <view class="identity-note">{{syncMode === 'cloud' ? '当前微信会自动识别家庭身份，并进入同一份孩子档案。' : '当前无法读取云端家庭档案，请先修复云函数后再继续使用。'}}</view>
+    <view class="identity-note">{{syncMode === 'cloud' ? '当前微信会自动识别家庭身份，并进入同一份孩子档案。' : '家庭档案暂时没有同步成功，请稍后再试。'}}</view>
   </view>
 
   <view class="option card">

@@ -15,6 +15,22 @@
         "value": ".cloudbase"
       },
       {
+        "type": "folder",
+        "value": "docs"
+      },
+      {
+        "type": "file",
+        "value": "README.md"
+      },
+      {
+        "type": "file",
+        "value": ".DS_Store"
+      },
+      {
+        "type": "file",
+        "value": "project.private.config.json"
+      },
+      {
         "type": "file",
         "value": "assets/README.md"
       },
@@ -38,12 +54,12 @@
     "include": []
   },
   "setting": {
-    "urlCheck": false,
+    "urlCheck": true,
     "es6": true,
     "enhance": true,
     "postcss": true,
     "minified": false,
-    "compileHotReLoad": true,
+    "compileHotReLoad": false,
     "coverView": true,
     "showShadowRootInWxmlPanel": true,
     "checkInvalidKey": true,

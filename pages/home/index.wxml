@@ -48,8 +48,8 @@
   <view class="assignment card" wx:if="{{syncMode === 'cloud-error'}}">
     <view class="row-between">
       <view>
-        <view class="section-title">云端暂时不可用</view>
-        <view class="section-copy">当前页面只允许读取云端数据，未再回退本地。请先修复云函数后再继续使用。</view>
+        <view class="section-title">服务暂时不可用</view>
+        <view class="section-copy">学习数据暂时没有同步成功，请稍后再试。</view>
       </view>
       <view class="pill">云端</view>
     </view>
