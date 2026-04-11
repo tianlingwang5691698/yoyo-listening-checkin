@@ -43,6 +43,7 @@
 - 数据库集合
   - `families`
   - `familyMembers`
+  - `users`
   - `children`
   - `dailyTaskProgress`
   - `dailyCheckins`

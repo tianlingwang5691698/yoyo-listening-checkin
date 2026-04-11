@@ -53,6 +53,19 @@
   color: #8c7e72;
 }
 
+.identity-strip {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20rpx;
+  margin-top: 22rpx;
+  padding: 18rpx 22rpx;
+  border-radius: 24rpx;
+  background: rgba(255, 255, 255, 0.72);
+  color: #7d6f64;
+  font-size: 22rpx;
+}
+
 .heatmap,
 .sticker {
   margin-top: 24rpx;

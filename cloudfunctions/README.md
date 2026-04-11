@@ -36,6 +36,7 @@
 6. 在 CloudBase 控制台先手动创建首版数据库集合
    - `families`
    - `familyMembers`
+   - `users`
    - `children`
    - `dailyTaskProgress`
    - `dailyCheckins`
@@ -94,6 +95,7 @@
 
 - `families`
 - `familyMembers`
+- `users`
 - `children`
 - `dailyTaskProgress`
 - `dailyCheckins`

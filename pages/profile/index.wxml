@@ -24,8 +24,9 @@
 
   <view class="option card">
     <view class="option-title">登录方式</view>
-    <view class="option-copy">这版不做账号密码注册，直接用微信身份自动登录。每个家长都有自己的身份，同一个家庭共享同一个孩子的学习记录。</view>
-    <view class="option-tag">微信自动识别</view>
+    <view class="option-copy">进入小程序后会用微信身份自动识别当前用户。每个家长都有自己的打卡记录，也能继续加入同一个家庭查看孩子档案。</view>
+    <view class="option-tag">{{currentUser.phoneBound ? '微信 + 手机号已绑定' : '微信自动识别'}}</view>
+    <view class="identity-note">{{currentUser.phoneBound ? '手机号已绑定，后续可用于更明确的家庭成员识别。' : '手机号暂未绑定，不影响打卡和查看记录。'}}</view>
   </view>
 
   <view class="option card">

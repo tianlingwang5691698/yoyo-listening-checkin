@@ -8,6 +8,7 @@ Page({
     familyReady: false,
     family: {},
     members: [],
+    currentUser: {},
     currentMember: {},
     subscriptionPreference: {
       dailyReportEnabled: false

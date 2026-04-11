@@ -145,6 +145,9 @@ async function ensureState() {
 
 async function getDashboard() {
   return callCloud('getDashboard', {}, {
+    user: {},
+    currentUser: {},
+    currentMember: {},
     child: {
       nickname: '',
       avatarText: '',
@@ -153,7 +156,9 @@ async function getDashboard() {
     stats: {
       streakDays: 0,
       completedDays: 0,
-      totalMinutes: 0
+      totalMinutes: 0,
+      lastCheckinAt: '',
+      lastCheckinDate: ''
     },
     dailyTasks: [],
     activeTaskCount: 0,
@@ -164,12 +169,16 @@ async function getDashboard() {
 
 async function getLevelOverview() {
   return callCloud('getLevelOverview', {}, {
+    user: {},
+    currentUser: {},
     child: null,
     level: null,
     stats: {
       streakDays: 0,
       completedDays: 0,
-      totalMinutes: 0
+      totalMinutes: 0,
+      lastCheckinAt: '',
+      lastCheckinDate: ''
     },
     categories: []
   });
@@ -177,11 +186,16 @@ async function getLevelOverview() {
 
 async function getTaskDetail(category) {
   return callCloud('getTaskDetail', { category }, {
+    user: {},
+    currentUser: {},
+    currentMember: {},
     child: null,
     stats: {
       streakDays: 0,
       completedDays: 0,
-      totalMinutes: 0
+      totalMinutes: 0,
+      lastCheckinAt: '',
+      lastCheckinDate: ''
     },
     task: null,
     progress: {
@@ -202,11 +216,16 @@ async function getTaskDetail(category) {
 
 async function markTaskListened(options) {
   return callCloud('markTaskListened', options, {
+    user: {},
+    currentUser: {},
+    currentMember: {},
     child: null,
     stats: {
       streakDays: 0,
       completedDays: 0,
-      totalMinutes: 0
+      totalMinutes: 0,
+      lastCheckinAt: '',
+      lastCheckinDate: ''
     },
     task: null,
     progress: {
@@ -232,7 +251,9 @@ async function getProfileData() {
     familyReady: false,
     family: null,
     members: [],
-    currentMember: null,
+    user: {},
+    currentUser: {},
+    currentMember: {},
     subscriptionPreference: null
   });
 }
@@ -250,10 +271,14 @@ async function getParentDashboard() {
     stats: {
       streakDays: 0,
       completedDays: 0,
-      totalMinutes: 0
+      totalMinutes: 0,
+      lastCheckinAt: '',
+      lastCheckinDate: ''
     },
     todayReport: null,
     recentReports: [],
+    user: {},
+    currentUser: {},
     members: [],
     subscriptionPreference: null
   });
@@ -262,7 +287,9 @@ async function getParentDashboard() {
 async function getFamilyPageData() {
   return callCloud('getFamilyPage', {}, {
     family: null,
-    currentMember: null,
+    user: {},
+    currentUser: {},
+    currentMember: {},
     members: [],
     child: null,
     subscriptionPreference: null
@@ -272,7 +299,9 @@ async function getFamilyPageData() {
 async function refreshInviteCode() {
   return callCloud('refreshInviteCode', {}, {
     family: null,
-    currentMember: null,
+    user: {},
+    currentUser: {},
+    currentMember: {},
     members: [],
     child: null,
     subscriptionPreference: null
@@ -282,7 +311,9 @@ async function refreshInviteCode() {
 async function joinFamily(inviteCode, displayName) {
   return callCloud('joinFamily', { inviteCode, displayName }, {
     family: null,
-    currentMember: null,
+    user: {},
+    currentUser: {},
+    currentMember: {},
     members: [],
     child: null,
     subscriptionPreference: null
@@ -292,7 +323,9 @@ async function joinFamily(inviteCode, displayName) {
 async function updateSubscription(enabled) {
   return callCloud('updateSubscription', { enabled }, {
     family: null,
-    currentMember: null,
+    user: {},
+    currentUser: {},
+    currentMember: {},
     members: [],
     child: null,
     subscriptionPreference: null

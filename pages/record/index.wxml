@@ -19,6 +19,10 @@
         <view class="summary-label">累计分钟</view>
       </view>
     </view>
+    <view class="identity-strip">
+      <view>当前身份：{{currentMember.displayName ? currentMember.displayName : '微信用户'}}</view>
+      <view>最近一次：{{lastCheckinText}}</view>
+    </view>
   </view>
 
   <view class="heatmap card">

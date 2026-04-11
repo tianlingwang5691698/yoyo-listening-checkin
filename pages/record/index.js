@@ -5,7 +5,10 @@ Page({
   data: page.createCloudPageData({
     child: null,
     stats: {},
-    heatmap: []
+    heatmap: [],
+    currentMember: {},
+    currentUser: {},
+    lastCheckinText: '暂无记录'
   }),
   async onShow() {
     const [dashboard, heatmapData] = await Promise.all([
@@ -15,7 +18,10 @@ Page({
     this.setData(page.buildCloudPageData(this.data, {
       child: dashboard.child,
       stats: dashboard.stats,
-      heatmap: heatmapData.heatmap
+      heatmap: heatmapData.heatmap,
+      currentMember: dashboard.currentMember,
+      currentUser: dashboard.currentUser,
+      lastCheckinText: dashboard.stats && dashboard.stats.lastCheckinDate ? dashboard.stats.lastCheckinDate : '暂无记录'
     }));
   }
 });

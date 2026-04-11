@@ -25,6 +25,7 @@ const STORAGE_ROOT_CANDIDATES = {
   song: [STORAGE_ROOTS.song, 'A1/Super simple song']
 };
 const REQUIRED_COLLECTIONS = [
+  'users',
   'families',
   'familyMembers',
   'children',
@@ -924,6 +925,46 @@ async function getMember(openId) {
   return res.data[0] || null;
 }
 
+function buildUserId(openId) {
+  return `user-${String(openId || '').replace(/[^a-zA-Z0-9_-]/g, '')}`;
+}
+
+async function ensureUser(openId) {
+  if (!openId) {
+    const error = new Error('登录状态暂时不可用，请稍后再试');
+    error.code = 'login-unavailable';
+    throw error;
+  }
+  const now = new Date().toISOString();
+  const existing = (await db.collection('users').where({ openId }).limit(1).get()).data[0];
+  if (existing) {
+    await db.collection('users').doc(existing._id).update({
+      data: {
+        lastLoginAt: now,
+        updatedAt: now
+      }
+    });
+    return Object.assign({}, existing, {
+      lastLoginAt: now,
+      updatedAt: now
+    });
+  }
+  const user = {
+    userId: buildUserId(openId),
+    openId,
+    unionId: '',
+    nickName: '',
+    avatarUrl: '',
+    phoneNumberMasked: '',
+    phoneBound: false,
+    createdAt: now,
+    updatedAt: now,
+    lastLoginAt: now
+  };
+  await db.collection('users').add({ data: user });
+  return user;
+}
+
 async function getFamily(familyId) {
   const res = await db.collection('families').doc(familyId).get().catch(() => ({ data: null }));
   return res.data || null;
@@ -935,6 +976,7 @@ async function getChild(familyId) {
 }
 
 async function ensureBootstrap(openId) {
+  const user = await ensureUser(openId);
   let member = await getMember(openId);
   if (!member) {
     const familyId = `family-${Date.now()}`;
@@ -949,6 +991,7 @@ async function ensureBootstrap(openId) {
     member = {
       familyId,
       memberId: `member-${Date.now()}`,
+      userId: user.userId,
       openId,
       role: 'owner',
       displayName: '我',
@@ -969,6 +1012,13 @@ async function ensureBootstrap(openId) {
         familyId
       })
     });
+  } else if (!member.userId) {
+    await db.collection('familyMembers').doc(member._id).update({
+      data: {
+        userId: user.userId
+      }
+    });
+    member = Object.assign({}, member, { userId: user.userId });
   }
   const family = await getFamily(member.familyId);
   const child = await getChild(member.familyId);
@@ -979,11 +1029,21 @@ async function ensureBootstrap(openId) {
     dailyReportEnabled: !!member.subscriptionEnabled,
     lastAuthorizedAt: ''
   };
-  return { family, member, child, members, subscriptionPreference };
+  return { user, family, member, child, members, subscriptionPreference };
 }
 
-async function getProgressRecord(familyId, childId, category, date) {
-  const progressId = `${familyId}_${childId}_${date}_${category}`;
+function getUserScope(ctx) {
+  return {
+    userId: ctx.user.userId,
+    openId: ctx.user.openId,
+    memberId: ctx.member.memberId,
+    familyId: ctx.family.familyId,
+    childId: ctx.child.childId
+  };
+}
+
+async function getProgressRecord(scope, category, date) {
+  const progressId = `${scope.userId}_${scope.childId}_${date}_${category}`;
   const res = await db.collection('dailyTaskProgress').where({ progressId }).limit(1).get();
   return res.data[0] || null;
 }
@@ -997,12 +1057,18 @@ async function saveProgressRecord(record) {
   }
 }
 
-async function getChildProgressRecords(familyId, childId) {
-  return (await db.collection('dailyTaskProgress').where({ familyId, childId }).get()).data;
+async function getChildProgressRecords(scope) {
+  return (await db.collection('dailyTaskProgress').where({
+    userId: scope.userId,
+    childId: scope.childId
+  }).get()).data;
 }
 
-async function getCheckins(familyId, childId) {
-  return (await db.collection('dailyCheckins').where({ familyId, childId }).get()).data;
+async function getCheckins(scope) {
+  return (await db.collection('dailyCheckins').where({
+    userId: scope.userId,
+    childId: scope.childId
+  }).get()).data;
 }
 
 function getUniqueDates(records) {
@@ -1075,30 +1141,40 @@ function buildStats(progressRecords, checkins, childId) {
     return task ? sum + Math.round((task.durationSec * task.repeatTarget) / 60) : sum;
   }, 0);
   const today = new Date().toISOString().slice(0, 10);
+  const latestCheckin = checkins.slice().sort((a, b) => {
+    const left = String(a.completedAt || a.date || '');
+    const right = String(b.completedAt || b.date || '');
+    return right.localeCompare(left);
+  })[0] || null;
   return {
     streakDays: computeStreak(checkins, today),
     completedDays: checkins.length,
     completedLessons: checkins.length,
     completedTasks: completedProgress.length,
-    totalMinutes
+    totalMinutes,
+    lastCheckinAt: latestCheckin ? latestCheckin.completedAt || '' : '',
+    lastCheckinDate: latestCheckin ? latestCheckin.date || '' : ''
   };
 }
 
-async function maybeCreateCheckin(familyId, childId, progressRecords, date) {
+async function maybeCreateCheckin(scope, progressRecords, date) {
   const activeCategories = CATEGORY_ORDER.filter((category) => getCatalog(category).length > 0);
   const allDone = activeCategories.every((category) => {
     const item = progressRecords.find((record) => record.category === category && record.date === date);
     return item && item.completedToday;
   });
   if (!allDone) return null;
-  const checkins = await getCheckins(familyId, childId);
-  const recordId = `${familyId}_${childId}_${date}`;
+  const checkins = await getCheckins(scope);
+  const recordId = `${scope.userId}_${scope.childId}_${date}`;
   const existing = checkins.find((item) => item.recordId === recordId);
   const streakSnapshot = computeStreak(checkins.filter((item) => item.recordId !== recordId), date) + (existing ? 0 : 1);
   const next = {
     recordId,
-    familyId,
-    childId,
+    userId: scope.userId,
+    openId: scope.openId,
+    memberId: scope.memberId,
+    familyId: scope.familyId,
+    childId: scope.childId,
     date,
     completedAt: new Date().toISOString(),
     streakSnapshot,
@@ -1109,13 +1185,13 @@ async function maybeCreateCheckin(familyId, childId, progressRecords, date) {
   } else {
     await db.collection('dailyCheckins').add({ data: next });
   }
-  await upsertDailyReport(familyId, childId, date);
+  await upsertDailyReport(scope, date);
   return next;
 }
 
-async function upsertDailyReport(familyId, childId, date) {
-  const progressRecords = await getChildProgressRecords(familyId, childId);
-  const checkins = await getCheckins(familyId, childId);
+async function upsertDailyReport(scope, date) {
+  const progressRecords = await getChildProgressRecords(scope);
+  const checkins = await getCheckins(scope);
   const cursors = {};
   CATEGORY_ORDER.forEach((category) => {
     const completed = progressRecords
@@ -1124,7 +1200,7 @@ async function upsertDailyReport(familyId, childId, date) {
     cursors[category] = completed.length % Math.max(1, getCatalog(category).length || 1);
   });
   const items = CATEGORY_ORDER.map((category) => {
-    const task = getTaskSummary(progressRecords, childId, category, date, cursors);
+    const task = getTaskSummary(progressRecords, scope.childId, category, date, cursors);
     return {
       category,
       categoryLabel: task.categoryLabel,
@@ -1136,9 +1212,12 @@ async function upsertDailyReport(familyId, childId, date) {
     };
   });
   const report = {
-    reportId: `${familyId}_${childId}_${date}`,
-    familyId,
-    childId,
+    reportId: `${scope.userId}_${scope.childId}_${date}`,
+    userId: scope.userId,
+    openId: scope.openId,
+    memberId: scope.memberId,
+    familyId: scope.familyId,
+    childId: scope.childId,
     date,
     completedCategories: items.filter((item) => item.completedToday).map((item) => item.category),
     totalMinutes: items.reduce((sum, item) => {
@@ -1154,7 +1233,7 @@ async function upsertDailyReport(familyId, childId, date) {
     inAppVisible: true,
     updatedAt: new Date().toISOString()
   };
-  const subscribers = (await db.collection('familyMembers').where({ familyId, subscriptionEnabled: true }).get()).data;
+  const subscribers = (await db.collection('familyMembers').where({ familyId: scope.familyId, subscriptionEnabled: true }).get()).data;
   if (subscribers.length) {
     report.pushStatus = 'subscription-ready';
   }
@@ -1169,8 +1248,9 @@ async function upsertDailyReport(familyId, childId, date) {
 
 async function getDashboardData(ctx) {
   const today = new Date().toISOString().slice(0, 10);
-  const progressRecords = await getChildProgressRecords(ctx.family.familyId, ctx.child.childId);
-  const checkins = await getCheckins(ctx.family.familyId, ctx.child.childId);
+  const scope = getUserScope(ctx);
+  const progressRecords = await getChildProgressRecords(scope);
+  const checkins = await getCheckins(scope);
   const cursors = {};
   CATEGORY_ORDER.forEach((category) => {
     const categoryRecords = progressRecords.filter((item) => item.category === category && item.completedToday);
@@ -1180,6 +1260,9 @@ async function getDashboardData(ctx) {
   const activeTaskCount = dailyTasks.filter((item) => !item.isPendingAsset).length;
   const completedTaskCountToday = dailyTasks.filter((item) => item.completedToday).length;
   return {
+    user: ctx.user,
+    currentUser: ctx.user,
+    currentMember: ctx.member,
     family: ctx.family,
     child: Object.assign({}, ctx.child, {
       totalCompleted: checkins.length,
@@ -1212,6 +1295,9 @@ async function handleAction(event, context) {
   if (event.action === 'getLevelOverview') {
     const dashboard = await getDashboardData(ctx);
     return {
+      user: ctx.user,
+      currentUser: ctx.user,
+      currentMember: ctx.member,
       child: ctx.child,
       level,
       stats: dashboard.stats,
@@ -1231,7 +1317,8 @@ async function handleAction(event, context) {
   if (event.action === 'getTaskDetail') {
     const dashboard = await getDashboardData(ctx);
     const task = dashboard.dailyTasks.find((item) => item.category === event.payload.category);
-    const progressRecords = await getChildProgressRecords(ctx.family.familyId, ctx.child.childId);
+    const scope = getUserScope(ctx);
+    const progressRecords = await getChildProgressRecords(scope);
     const history = progressRecords
       .filter((item) => item.category === event.payload.category && item.completedToday)
       .map((item) => ({
@@ -1240,8 +1327,11 @@ async function handleAction(event, context) {
         playCount: item.playCount
       }))
       .sort((a, b) => b.date.localeCompare(a.date));
-    const todayRecord = (await getCheckins(ctx.family.familyId, ctx.child.childId)).find((item) => item.date === today) || null;
+    const todayRecord = (await getCheckins(scope)).find((item) => item.date === today) || null;
     return {
+      user: ctx.user,
+      currentUser: ctx.user,
+      currentMember: ctx.member,
       child: ctx.child,
       stats: dashboard.stats,
       task,
@@ -1260,7 +1350,8 @@ async function handleAction(event, context) {
   }
   if (event.action === 'markTaskListened') {
     const category = event.payload.category;
-    const progressRecords = await getChildProgressRecords(ctx.family.familyId, ctx.child.childId);
+    const scope = getUserScope(ctx);
+    const progressRecords = await getChildProgressRecords(scope);
     const cursors = {};
     CATEGORY_ORDER.forEach((item) => {
       const categoryDone = progressRecords.filter((record) => record.category === item && record.completedToday).length;
@@ -1272,25 +1363,31 @@ async function handleAction(event, context) {
     }
     const nextPlayCount = Math.min((task.playCount || 0) + 1, task.repeatTarget);
     const record = {
-      progressId: `${ctx.family.familyId}_${ctx.child.childId}_${today}_${category}`,
-      familyId: ctx.family.familyId,
-      childId: ctx.child.childId,
+      progressId: `${scope.userId}_${scope.childId}_${today}_${category}`,
+      userId: scope.userId,
+      openId: scope.openId,
+      memberId: scope.memberId,
+      familyId: scope.familyId,
+      childId: scope.childId,
       category,
       date: today,
       taskId: task.taskId,
       playCount: nextPlayCount,
       repeatTarget: task.repeatTarget,
       textUnlocked: nextPlayCount >= task.repeatTarget - 1,
-      completedToday: nextPlayCount >= task.repeatTarget
+      completedToday: nextPlayCount >= task.repeatTarget,
+      updatedAt: new Date().toISOString()
     };
     await saveProgressRecord(record);
-    const nextProgressRecords = await getChildProgressRecords(ctx.family.familyId, ctx.child.childId);
-    await maybeCreateCheckin(ctx.family.familyId, ctx.child.childId, nextProgressRecords, today);
+    const nextProgressRecords = await getChildProgressRecords(scope);
+    await maybeCreateCheckin(scope, nextProgressRecords, today);
     return handleAction({ action: 'getTaskDetail', payload: { category } }, context);
   }
   if (event.action === 'getProfileData') {
     const dashboard = await getDashboardData(ctx);
     return {
+      user: ctx.user,
+      currentUser: ctx.user,
       child: Object.assign({}, ctx.child, dashboard.stats),
       level,
       familyReady: true,
@@ -1302,7 +1399,7 @@ async function handleAction(event, context) {
   }
   if (event.action === 'getHeatmap') {
     const days = Number(event.payload.days || 28);
-    const records = await getCheckins(ctx.family.familyId, ctx.child.childId);
+    const records = await getCheckins(getUserScope(ctx));
     const counts = {};
     records.forEach((item) => {
       counts[item.date] = (counts[item.date] || 0) + 1;
@@ -1322,12 +1419,15 @@ async function handleAction(event, context) {
   }
   if (event.action === 'getParentDashboard') {
     const dashboard = await getDashboardData(ctx);
+    const scope = getUserScope(ctx);
     const recentReports = [];
     for (let i = 0; i < 7; i += 1) {
       const date = addDays(today, -i);
-      recentReports.push(await upsertDailyReport(ctx.family.familyId, ctx.child.childId, date));
+      recentReports.push(await upsertDailyReport(scope, date));
     }
     return {
+      user: ctx.user,
+      currentUser: ctx.user,
       family: ctx.family,
       child: ctx.child,
       stats: dashboard.stats,
@@ -1339,6 +1439,8 @@ async function handleAction(event, context) {
   }
   if (event.action === 'getFamilyPage') {
     return {
+      user: ctx.user,
+      currentUser: ctx.user,
       family: ctx.family,
       currentMember: ctx.member,
       members: ctx.members,
@@ -1359,23 +1461,45 @@ async function handleAction(event, context) {
     }
     const displayName = String((event.payload && event.payload.displayName) || '').trim() || '新家长';
     const memberRes = await db.collection('familyMembers').where({ openId: OPENID }).limit(1).get();
+    let joinedMemberId = '';
     if (memberRes.data[0]) {
+      joinedMemberId = memberRes.data[0].memberId;
       await db.collection('familyMembers').doc(memberRes.data[0]._id).update({
         data: {
+          userId: ctx.user.userId,
           familyId: target.familyId,
           displayName
         }
       });
     } else {
+      joinedMemberId = `member-${Date.now()}`;
       await db.collection('familyMembers').add({
         data: {
-          memberId: `member-${Date.now()}`,
+          memberId: joinedMemberId,
+          userId: ctx.user.userId,
           familyId: target.familyId,
           openId: OPENID,
           role: 'parent',
           displayName,
           subscriptionEnabled: false,
           createdAt: new Date().toISOString()
+        }
+      });
+    }
+    const preferenceRes = await db.collection('subscriptionPreferences').where({ memberId: joinedMemberId }).limit(1).get();
+    if (preferenceRes.data[0]) {
+      await db.collection('subscriptionPreferences').doc(preferenceRes.data[0]._id).update({
+        data: {
+          familyId: target.familyId
+        }
+      });
+    } else if (joinedMemberId) {
+      await db.collection('subscriptionPreferences').add({
+        data: {
+          memberId: joinedMemberId,
+          familyId: target.familyId,
+          dailyReportEnabled: false,
+          lastAuthorizedAt: ''
         }
       });
     }

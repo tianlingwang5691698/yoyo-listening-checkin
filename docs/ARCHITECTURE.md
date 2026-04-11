@@ -88,6 +88,7 @@
 
 - `families`
 - `familyMembers`
+- `users`
 - `children`
 - `dailyTaskProgress`
 - `dailyCheckins`
@@ -97,7 +98,7 @@
 
 说明：
 
-- 前 7 个集合服务主业务链路
+- 前 8 个集合服务主业务链路
 - `unlock1AudioTrainingPool` 服务 Unlock1 音频预处理链路
 
 ## 文档入口

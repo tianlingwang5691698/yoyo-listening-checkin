@@ -54,6 +54,7 @@
 
 - `families`
 - `familyMembers`
+- `users`
 - `children`
 - `dailyTaskProgress`
 - `dailyCheckins`
