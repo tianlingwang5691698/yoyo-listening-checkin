@@ -1,5 +1,6 @@
 const cloud = require('wx-server-sdk');
 const CloudBaseManager = require('@cloudbase/manager-node');
+const transcriptTrackMap = require('./transcripts/unlock1-word-tracks.json');
 
 cloud.init({
   env: cloud.DYNAMIC_CURRENT_ENV
@@ -244,6 +245,62 @@ const songPlaceholder = {
   transcriptTrackId: null,
   textSource: null
 };
+
+function normalizeTranscriptWord(word, lineId, index) {
+  const startMs = Number(word && word.startMs);
+  const endMs = Number(word && word.endMs);
+  return {
+    wordId: String((word && word.wordId) || `${lineId}-w${index + 1}`),
+    text: String((word && word.text) || '').trim(),
+    startMs: Number.isFinite(startMs) ? startMs : 0,
+    endMs: Number.isFinite(endMs) ? Math.max(endMs, startMs + 1) : 1
+  };
+}
+
+function normalizeTranscriptLine(line) {
+  const lineId = String((line && line.lineId) || '');
+  const startMs = Number((line && line.startMs) || 0);
+  const endMs = Math.max(Number((line && line.endMs) || startMs), startMs + 1);
+  const words = Array.isArray(line && line.words)
+    ? line.words.map((word, index) => normalizeTranscriptWord(word, lineId, index))
+    : [];
+  return Object.assign({}, line, {
+    lineId,
+    text: String((line && line.text) || '').trim(),
+    startMs,
+    endMs,
+    words
+  });
+}
+
+function formatTranscriptMsLabel(ms) {
+  const totalSeconds = Math.floor(ms / 1000);
+  const minutes = String(Math.floor(totalSeconds / 60)).padStart(2, '0');
+  const seconds = String(totalSeconds % 60).padStart(2, '0');
+  return `${minutes}:${seconds}`;
+}
+
+function getTranscriptBundle(task) {
+  if (!task || !task.transcriptTrackId || !transcriptTrackMap[task.transcriptTrackId]) {
+    return {
+      transcriptTrack: null,
+      transcriptLines: []
+    };
+  }
+  const transcriptTrack = transcriptTrackMap[task.transcriptTrackId];
+  const normalizedTrack = Object.assign({}, transcriptTrack, {
+    lines: transcriptTrack.lines.map((line) => {
+      const normalizedLine = normalizeTranscriptLine(line);
+      return Object.assign({}, normalizedLine, {
+        startLabel: formatTranscriptMsLabel(normalizedLine.startMs)
+      });
+    })
+  });
+  return {
+    transcriptTrack: normalizedTrack,
+    transcriptLines: normalizedTrack.lines
+  };
+}
 
 function getStaticCatalogMap() {
   return {
@@ -888,13 +945,15 @@ function decorateTask(task, progress, category) {
     });
   }
   const base = getTaskPresentation(task);
-  const reward = getTaskReward(category, progress, task);
   const completedCount = Math.min(progress.playCount, task.repeatTarget);
   const currentPass = progress.completedToday ? task.repeatTarget : Math.min(progress.playCount + 1, task.repeatTarget);
   const textUnlocked = progress.playCount >= task.repeatTarget - 1 || progress.completedToday;
+  const transcriptTrackId = transcriptTrackMap[task.transcriptTrackId] ? task.transcriptTrackId : null;
+  const reward = getTaskReward(category, progress, Object.assign({}, task, { transcriptTrackId }));
   return Object.assign({}, task, base, {
     category,
     categoryLabel: getCategoryLabel(category),
+    transcriptTrackId,
     audioDisplayName: getMediaDisplayName(task.audioUrl),
     audioCompactTitle: category === 'peppa'
       ? [base.displaySubtitle, base.displayTitle].filter(Boolean).join(' · ')
@@ -906,10 +965,10 @@ function decorateTask(task, progress, category) {
     currentPass,
     textUnlocked,
     completedToday: progress.completedToday,
-    transcriptStatus: task.transcriptStatus || (task.transcriptTrackId ? 'ready' : task.textSource ? 'pending' : 'none'),
+    transcriptStatus: transcriptTrackId ? 'ready' : (task.textSource ? 'pending' : 'none'),
     transcriptBatch: task.transcriptBatch || null,
     note: currentPass < task.repeatTarget ? `先完成第 ${currentPass} 遍。`
-      : (task.transcriptTrackId ? '最后一遍会带文本。' : task.textSource ? '最后一遍这条的逐句高亮还在准备中。' : '最后一遍按纯听力完成。'),
+      : (transcriptTrackId ? '最后一遍会带文本。' : task.textSource ? '最后一遍这条的逐句高亮还在准备中。' : '最后一遍按纯听力完成。'),
     rewardBadge: reward.rewardBadge,
     rewardTitle: reward.rewardTitle,
     rewardCopy: reward.rewardCopy
@@ -1317,6 +1376,7 @@ async function handleAction(event, context) {
   if (event.action === 'getTaskDetail') {
     const dashboard = await getDashboardData(ctx);
     const task = dashboard.dailyTasks.find((item) => item.category === event.payload.category);
+    const transcriptBundle = getTranscriptBundle(task);
     const scope = getUserScope(ctx);
     const progressRecords = await getChildProgressRecords(scope);
     const history = progressRecords
@@ -1344,6 +1404,8 @@ async function handleAction(event, context) {
         completedToday: task.completedToday
       },
       scriptSource: task.textSource || null,
+      transcriptTrack: transcriptBundle.transcriptTrack,
+      transcriptLines: transcriptBundle.transcriptLines,
       todayRecord,
       history
     };

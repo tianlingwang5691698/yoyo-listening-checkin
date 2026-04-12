@@ -69,9 +69,11 @@ Page({
     canRewind: false,
     activeLineId: '',
     activeLineIndex: -1,
+    activeWordIndex: -1,
     transcriptScrollIntoView: '',
     prevLine: null,
     activeLine: null,
+    activeWord: null,
     nextLine: null,
     audioSource: 'none',
     audioReady: false,
@@ -316,9 +318,11 @@ Page({
       canRewind: false,
       activeLineId: '',
       activeLineIndex: -1,
+      activeWordIndex: -1,
       transcriptScrollIntoView: '',
       prevLine: null,
       activeLine: null,
+      activeWord: null,
       nextLine: detail.transcriptTrack && detail.transcriptTrack.lines.length ? detail.transcriptTrack.lines[0] : null,
       currentAudio: previewAudio,
       audioSource: detail.task && detail.task.audioSource ? detail.task.audioSource : 'none',
@@ -344,9 +348,11 @@ Page({
       canRewind: false,
       activeLineId: '',
       activeLineIndex: -1,
+      activeWordIndex: -1,
       transcriptScrollIntoView: '',
       prevLine: null,
       activeLine: null,
+      activeWord: null,
       nextLine: null
     });
   },
@@ -366,13 +372,24 @@ Page({
     const activeLine = activeIndex >= 0 ? lines[activeIndex] : null;
     const prevLine = activeIndex > 0 ? lines[activeIndex - 1] : null;
     const nextLine = activeIndex >= 0 && activeIndex < lines.length - 1 ? lines[activeIndex + 1] : null;
+    const words = activeLine && activeLine.words ? activeLine.words : [];
+    let activeWordIndex = words.findIndex((word, index) => {
+      const next = words[index + 1];
+      const nextStart = next ? next.startMs : Number.POSITIVE_INFINITY;
+      return timeMs >= word.startMs && timeMs < nextStart;
+    });
+    if (activeWordIndex < 0 && words.length) {
+      activeWordIndex = timeMs < words[0].startMs ? 0 : words.length - 1;
+    }
     this.setData({
       currentTimeMs: timeMs,
       activeLineIndex: activeIndex,
       activeLineId: activeLine ? activeLine.lineId : '',
+      activeWordIndex,
       transcriptScrollIntoView: activeLine ? `line-${activeLine.lineId}` : '',
       prevLine,
       activeLine,
+      activeWord: activeWordIndex >= 0 ? words[activeWordIndex] : null,
       nextLine
     });
   },

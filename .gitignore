@@ -12,3 +12,9 @@ $RECYCLE.BIN/
 
 # Node.js
 node_modules/
+__pycache__/
+*.pyc
+
+# Local alignment workspace
+data/transcript-build/unlock1-word-align/
+.omx/

@@ -637,6 +637,18 @@
   color: #2f241f;
 }
 
+.transcript-word {
+  display: inline;
+  padding: 2rpx 4rpx;
+  border-radius: 10rpx;
+  transition: color 140ms ease, background 140ms ease;
+}
+
+.transcript-word.is-active {
+  background: rgba(239, 124, 85, 0.2);
+  color: #e7683c;
+}
+
 .transcript-empty {
   margin-top: 22rpx;
   padding: 28rpx;

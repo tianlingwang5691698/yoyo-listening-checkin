@@ -172,7 +172,12 @@
         data-index="{{activeLineIndex}}"
         bindtap="seekToLine"
       >
-        <view class="transcript-focus-text">{{activeLine.text}}</view>
+        <view class="transcript-focus-text" wx:if="{{activeLine.words && activeLine.words.length}}">
+          <block wx:for="{{activeLine.words}}" wx:key="wordId">
+            <text class="transcript-word {{index === activeWordIndex ? 'is-active' : ''}}">{{item.text}} </text>
+          </block>
+        </view>
+        <view class="transcript-focus-text" wx:else>{{activeLine.text}}</view>
       </view>
       <view class="transcript-focus-line is-active is-empty" wx:else>
         <view class="transcript-focus-text">音频开始后，这一句会在这里突出显示。</view>
