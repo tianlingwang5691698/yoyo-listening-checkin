@@ -184,7 +184,7 @@
       </view>
 
       <view
-        class="transcript-focus-line is-next {{nextLine ? 'is-ready' : 'is-empty'}}"
+        class="transcript-focus-line is-next {{nextLine ? 'is-ready is-disabled' : 'is-empty'}}"
         wx:if="{{nextLine}}"
         data-index="{{activeLineIndex + 1}}"
         bindtap="seekToLine"

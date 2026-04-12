@@ -405,6 +405,14 @@ Page({
     if (!line || !this.innerAudioContext) {
       return;
     }
+    const currentTimeMs = Number(this.data.currentTimeMs || 0);
+    if (line.startMs > currentTimeMs + 300) {
+      wx.showToast({
+        title: '这里只能回退，不能快进',
+        icon: 'none'
+      });
+      return;
+    }
     const seconds = Math.floor(line.startMs / 1000);
     this.innerAudioContext.seek(seconds);
     this.innerAudioContext.play();

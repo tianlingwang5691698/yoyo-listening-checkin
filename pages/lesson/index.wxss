@@ -618,6 +618,10 @@
   opacity: 0.35;
 }
 
+.transcript-focus-line.is-disabled {
+  opacity: 0.72;
+}
+
 .transcript-focus-text {
   font-size: 26rpx;
   line-height: 1.7;
@@ -628,6 +632,10 @@
 .transcript-focus-line.is-next .transcript-focus-text {
   font-size: 26rpx;
   color: rgba(79, 57, 45, 0.52);
+}
+
+.transcript-focus-line.is-next.is-disabled .transcript-focus-text {
+  color: rgba(79, 57, 45, 0.38);
 }
 
 .transcript-focus-line.is-active .transcript-focus-text {
