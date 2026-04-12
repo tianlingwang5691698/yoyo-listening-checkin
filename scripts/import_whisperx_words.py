@@ -142,7 +142,11 @@ def assign_timings(canonical_tokens, asr_words):
             slice_start = asr_words[j1]["startMs"]
             slice_end = asr_words[j2 - 1]["endMs"]
         else:
-            next_start = asr_words[j1]["startMs"] if j1 < len(asr_words) else max(prev_assigned_end + len(canon_slice), asr_words[-1]["endMs"])
+            next_start = (
+                asr_words[j1]["startMs"]
+                if j1 < len(asr_words)
+                else max(prev_assigned_end + len(canon_slice), asr_words[-1]["endMs"])
+            )
             slice_start = prev_assigned_end
             slice_end = max(next_start, slice_start + len(canon_slice))
         allocated = allocate_tokens([item["text"] for item in canon_slice], slice_start, slice_end, "tmp", 0)
@@ -185,7 +189,6 @@ def build_track(file_name: str, whisper_json_path: Path, canonical_map_path: Pat
         line_id = f"{track_config['contentId']}-{line_index}"
         line_words = []
         for token_offset, token_text in enumerate(line_tokens):
-            token_meta = canonical_tokens[cursor]
             timing = token_timings[cursor]
             line_words.append(
                 {
@@ -226,15 +229,15 @@ def build_track(file_name: str, whisper_json_path: Path, canonical_map_path: Pat
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Convert WhisperX JSON output into the project's transcript track format."
+        description="Convert WhisperX JSON output into a series transcript track JSON file."
     )
-    parser.add_argument("file_name", help="Unlock audio file name without extension, e.g. Unlock2e_A1_1.2")
+    parser.add_argument("file_name", help="Audio file name without extension")
     parser.add_argument("whisper_json", help="Path to the WhisperX JSON output file")
     parser.add_argument("output_json", help="Path to save the converted track JSON")
     parser.add_argument(
         "--canonical-map",
-        default="data/transcript-build/unlock1-word-align/work/unlock1-canonical-map.json",
-        help="Path to the canonical Unlock1 map JSON.",
+        required=True,
+        help="Path to the canonical map JSON generated from the source series module.",
     )
     args = parser.parse_args()
 

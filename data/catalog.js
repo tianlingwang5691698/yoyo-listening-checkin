@@ -6,6 +6,7 @@ const {
   songTasks,
   songPlaceholder,
   transcriptTracks,
+  peppaTranscriptBuildStatus,
   unlockTranscriptBuildStatus
 } = require('./mock');
 
@@ -17,5 +18,6 @@ module.exports = {
   songTasks,
   songPlaceholder,
   transcriptTracks,
+  peppaTranscriptBuildStatus,
   unlockTranscriptBuildStatus
 };

@@ -1,8 +1,1 @@
-const s101Track = require('./track-peppa-s101');
-const s102Track = require('./track-peppa-s102');
-
-const peppaTranscriptTracks = [s101Track, s102Track];
-
-module.exports = {
-  peppaTranscriptTracks
-};
+module.exports = require('../../transcript-build/peppa-s1/generated/peppa_s1_module');

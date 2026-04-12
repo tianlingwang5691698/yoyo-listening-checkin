@@ -1,6 +1,9 @@
 const cloud = require('wx-server-sdk');
 const CloudBaseManager = require('@cloudbase/manager-node');
-const transcriptTrackMap = require('./transcripts/unlock1-word-tracks.json');
+const unlockTranscriptTrackMap = require('./transcripts/unlock1-word-tracks.json');
+const peppaTranscriptTrackMap = require('./transcripts/peppa-word-tracks.json');
+const { peppaTranscriptBuildStatus } = require('./transcripts/peppa_build_status');
+const STATIC_TRANSCRIPT_TRACK_MAP = Object.assign({}, peppaTranscriptTrackMap, unlockTranscriptTrackMap);
 
 cloud.init({
   env: cloud.DYNAMIC_CURRENT_ENV
@@ -37,9 +40,17 @@ const REQUIRED_COLLECTIONS = [
 ];
 const TEMP_URL_TTL = 24 * 60 * 60;
 const AUDIO_FILE_PATTERN = /\.(mp3|m4a|aac|wav)$/i;
+const TRANSCRIPT_BUNDLE_TTL_MS = 5 * 60 * 1000;
+const TRANSCRIPT_BUNDLE_PATHS = {
+  peppa: 'A1/_transcripts/peppa/bundle.json',
+  unlock1: 'A1/_transcripts/unlock1/bundle.json'
+};
 let runtimeCatalogs = null;
 let runtimeCatalogExpiresAt = 0;
 let runtimeCatalogDebug = null;
+let runtimeTranscriptTrackMap = null;
+let runtimeTranscriptTrackMapExpiresAt = 0;
+let runtimeTranscriptTrackDebug = null;
 let storageManager = null;
 let storageDebugShapes = {};
 let unlock1TrainingPoolBootstrapState = {
@@ -130,36 +141,23 @@ const level = {
   description: '每天三项音频任务，前两遍盲听，第三遍再看文本。'
 };
 
-const peppaTasks = [
-  ['S101 Muddy Puddles', 311, 'track-peppa-s101'],
-  ['S102 Mr Dinosaur Is Lost', 300],
-  ['S103 Best Friend', 300],
-  ['S104 Polly Parrot', 300],
-  ['S105 Hide and Seek', 300],
-  ['S106 The Playgroup', 300],
-  ['S107 Mummy Pig at Work', 300],
-  ['S108 Piggy in the Middle', 300],
-  ['S109 Daddy Loses his Glasses', 300],
-  ['S110 Gardening', 300],
-  ['S111 Hiccups', 300],
-  ['S112 Bicycles', 300],
-  ['S113 Secrets', 300],
-  ['S114 Flying a Kite', 300],
-  ['S115 Picnic', 300],
-  ['S116 Musical Instruments', 300]
-].map((item, index) => ({
-  taskId: `peppa-${index + 1}`,
+const peppaDurationOverrides = {
+  'S101 Muddy Puddles': 311
+};
+
+const peppaTasks = peppaTranscriptBuildStatus.map((item, index) => ({
+  taskId: item.taskId || `peppa-${index + 1}`,
   category: 'peppa',
-  title: item[0],
+  title: item.fileName,
   subtitle: 'Peppa Pig Season 1',
-  audioUrl: buildCloudAssetUrl(`A1/Peppa/第1季/${item[0]}.mp3`),
-  audioCloudPath: `A1/Peppa/第1季/${item[0]}.mp3`,
-  audioFileId: buildCloudFileId(`A1/Peppa/第1季/${item[0]}.mp3`),
+  audioUrl: buildCloudAssetUrl(`A1/Peppa/第1季/${item.fileName}.mp3`),
+  audioCloudPath: `A1/Peppa/第1季/${item.fileName}.mp3`,
+  audioFileId: buildCloudFileId(`A1/Peppa/第1季/${item.fileName}.mp3`),
   audioSource: 'static-cloud-url',
   repeatTarget: 3,
-  durationSec: item[1],
+  durationSec: peppaDurationOverrides[item.fileName] || 300,
   coverTone: 'sunrise',
-  transcriptTrackId: item[2] || null,
+  transcriptTrackId: item.trackId || null,
   textSource: {
     sourceType: 'pdf',
     title: 'Peppa Pig Season 1 Script',
@@ -280,7 +278,64 @@ function formatTranscriptMsLabel(ms) {
   return `${minutes}:${seconds}`;
 }
 
-function getTranscriptBundle(task) {
+function mergeTranscriptTrackMaps(...maps) {
+  return Object.assign({}, ...maps.filter(Boolean));
+}
+
+async function downloadCloudJson(cloudPath) {
+  const manager = getStorageManager();
+  if (!manager) {
+    throw new Error('storage-manager-unavailable');
+  }
+  const tempPath = `/tmp/${Date.now()}-${Math.random().toString(36).slice(2, 8)}-${normalizeCloudPath(cloudPath).split('/').pop()}`;
+  const localPath = await manager.storage.downloadFile({
+    cloudPath,
+    localPath: tempPath
+  });
+  const text = require('fs').readFileSync(localPath, 'utf8');
+  return JSON.parse(text);
+}
+
+async function getTranscriptTrackMap() {
+  const now = Date.now();
+  if (runtimeTranscriptTrackMap && runtimeTranscriptTrackMapExpiresAt > now) {
+    return runtimeTranscriptTrackMap;
+  }
+
+  const cloudMaps = {};
+  const errors = {};
+  const categories = Object.keys(TRANSCRIPT_BUNDLE_PATHS);
+
+  for (const category of categories) {
+    const cloudPath = TRANSCRIPT_BUNDLE_PATHS[category];
+    try {
+      cloudMaps[category] = await downloadCloudJson(cloudPath);
+    } catch (error) {
+      errors[category] = String((error && (error.errMsg || error.message)) || error || 'unknown-error');
+      cloudMaps[category] = {};
+    }
+  }
+
+  runtimeTranscriptTrackMap = mergeTranscriptTrackMaps(
+    cloudMaps.peppa,
+    cloudMaps.unlock1,
+    STATIC_TRANSCRIPT_TRACK_MAP
+  );
+  runtimeTranscriptTrackMapExpiresAt = now + TRANSCRIPT_BUNDLE_TTL_MS;
+  runtimeTranscriptTrackDebug = {
+    loadedAt: now,
+    errors,
+    cloudCounts: {
+      peppa: Object.keys(cloudMaps.peppa || {}).length,
+      unlock1: Object.keys(cloudMaps.unlock1 || {}).length
+    },
+    fallbackCount: Object.keys(STATIC_TRANSCRIPT_TRACK_MAP).length
+  };
+  return runtimeTranscriptTrackMap;
+}
+
+async function getTranscriptBundle(task) {
+  const transcriptTrackMap = await getTranscriptTrackMap();
   if (!task || !task.transcriptTrackId || !transcriptTrackMap[task.transcriptTrackId]) {
     return {
       transcriptTrack: null,
@@ -640,7 +695,7 @@ async function buildCloudCatalogFromRoot(category, rootPath, staticItems, option
       repeatTarget: matchedStatic ? matchedStatic.repeatTarget : 3,
       durationSec: trainingRecord ? trainingRecord.durationSec : (matchedStatic ? matchedStatic.durationSec : 180),
       coverTone: matchedStatic ? matchedStatic.coverTone : (category === 'song' ? 'mint' : 'sunrise'),
-      transcriptTrackId: matchedStatic ? matchedStatic.transcriptTrackId : null,
+        transcriptTrackId: matchedStatic ? matchedStatic.transcriptTrackId : null,
       transcriptStatus: matchedStatic ? matchedStatic.transcriptStatus : (folderPdf ? 'pending' : 'none'),
       transcriptBatch: matchedStatic ? matchedStatic.transcriptBatch : null,
       audioTitle: (trainingRecord && trainingRecord.title) || audioBaseName,
@@ -904,7 +959,7 @@ function getTaskReward(category, progress, task) {
   };
 }
 
-function decorateTask(task, progress, category) {
+async function decorateTask(task, progress, category) {
   if (!task) {
     const emptyTask = category === 'unlock1'
       ? {
@@ -948,6 +1003,7 @@ function decorateTask(task, progress, category) {
   const completedCount = Math.min(progress.playCount, task.repeatTarget);
   const currentPass = progress.completedToday ? task.repeatTarget : Math.min(progress.playCount + 1, task.repeatTarget);
   const textUnlocked = progress.playCount >= task.repeatTarget - 1 || progress.completedToday;
+  const transcriptTrackMap = await getTranscriptTrackMap();
   const transcriptTrackId = transcriptTrackMap[task.transcriptTrackId] ? task.transcriptTrackId : null;
   const reward = getTaskReward(category, progress, Object.assign({}, task, { transcriptTrackId }));
   return Object.assign({}, task, base, {
@@ -1182,7 +1238,7 @@ function getSelectedTask(progressRecords, childId, category, date, cursors) {
   return catalog[index];
 }
 
-function getTaskSummary(progressRecords, childId, category, date, cursors) {
+async function getTaskSummary(progressRecords, childId, category, date, cursors) {
   const task = getSelectedTask(progressRecords, childId, category, date, cursors);
   if (!task) return decorateTask(null, { playCount: 0, textUnlocked: false, completedToday: false }, category);
   const progress = progressRecords.find((item) => item.childId === childId && item.category === category && item.date === date) || {
@@ -1315,7 +1371,9 @@ async function getDashboardData(ctx) {
     const categoryRecords = progressRecords.filter((item) => item.category === category && item.completedToday);
     cursors[category] = categoryRecords.length % Math.max(getCatalog(category).length || 1, 1);
   });
-  const dailyTasks = CATEGORY_ORDER.map((category) => getTaskSummary(progressRecords, ctx.child.childId, category, today, cursors));
+  const dailyTasks = await Promise.all(
+    CATEGORY_ORDER.map((category) => getTaskSummary(progressRecords, ctx.child.childId, category, today, cursors))
+  );
   const activeTaskCount = dailyTasks.filter((item) => !item.isPendingAsset).length;
   const completedTaskCountToday = dailyTasks.filter((item) => item.completedToday).length;
   return {
@@ -1376,7 +1434,7 @@ async function handleAction(event, context) {
   if (event.action === 'getTaskDetail') {
     const dashboard = await getDashboardData(ctx);
     const task = dashboard.dailyTasks.find((item) => item.category === event.payload.category);
-    const transcriptBundle = getTranscriptBundle(task);
+    const transcriptBundle = await getTranscriptBundle(task);
     const scope = getUserScope(ctx);
     const progressRecords = await getChildProgressRecords(scope);
     const history = progressRecords

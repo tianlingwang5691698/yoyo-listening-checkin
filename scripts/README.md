@@ -1,109 +1,107 @@
-Unlock1 逐词对齐工作流
+# 通用 WhisperX 音频文本对齐工具
 
-1. 生成 Unlock1 canonical 文稿映射：
+这套脚本现在已经内置在当前项目里，职责是：
 
-```bash
-node scripts/build_unlock1_canonical_map.js
-```
+- 从项目内 transcript 模块生成 canonical map
+- 复制该系列音频和可选 PDF 到本地工作区
+- 批量运行 WhisperX 并导入词级时间戳
+- 合并成最终 bundle JSON
+- 支持 `Peppa 第一季` 的 `docx -> module` 生成链路
 
-2. 把 Unlock1 需要的 24 条音频和 scripts PDF 复制到本地工作目录：
+## 核心主链路脚本
 
-```bash
-python3 scripts/download_unlock1_alignment_assets.py
-```
+- `build_series_canonical_map.js`
+- `copy_series_alignment_assets.py`
+- `run_series_whisperx_batch.py`
+- `build_series_transcript_bundle.js`
+- `run_series_transcript_pipeline.py`
+- `import_whisperx_words.py`
+- `validate_transcript_track.js`
+- `build_peppa_s1_from_docx.py`
 
-3. 如需检查 PDF 原始文本，可抽取全文：
+## Unlock1 示例
 
-```bash
-python3 scripts/extract_pdf_transcript.py \
-  "data/transcript-build/unlock1-word-align/raw/Unlock 2e Listening and Speaking 1 Scripts.pdf" \
-  unlock1-scripts \
-  data/transcript-build/unlock1-word-align/work/unlock1-scripts.raw.json
-```
-
-4. 如需检查某一段在 PDF 里的切分情况，可运行：
-
-```bash
-python3 scripts/slice_unlock1_scripts.py \
-  data/transcript-build/unlock1-word-align/work/unlock1-scripts.raw.json \
-  1.2 \
-  1.3 \
-  data/transcript-build/unlock1-word-align/work/unlock1-1.2.slice.json
-```
-
-5. 如果只想处理单条音频，可先手动运行 WhisperX，再导入项目格式：
+一步跑完整流水线：
 
 ```bash
-/opt/homebrew/bin/python3.12 -m whisperx \
-  --model base \
-  --language en \
-  --device cpu \
-  --compute_type int8 \
-  --vad_method silero \
-  --batch_size 4 \
-  --output_dir data/transcript-build/unlock1-word-align/output/whisperx/Unlock2e_A1_1.2 \
-  --output_format json \
-  data/transcript-build/unlock1-word-align/raw/Unlock2e_A1_1.2.mp3
+python3 scripts/run_series_transcript_pipeline.py \
+  --module ./data/transcripts/unlock1 \
+  --tracks-export unlockTranscriptTracks \
+  --status-export unlockTranscriptBuildStatus \
+  --output-root data/transcript-build/unlock1-word-align \
+  --audio-source-dir "/Users/wangtianlong/工作/01_教学与备考/unlock 第二版/Unlock1/LS/Unlock1 听口音频Class Audio" \
+  --pdf-source "/Users/wangtianlong/工作/01_教学与备考/unlock 第二版/Unlock1/LS/Unlock 2e Listening and Speaking 1 Scripts.pdf" \
+  --bundle-output cloudfunctions/yoyo/transcripts/unlock1-word-tracks.json
 ```
+
+## Peppa 第一季正式工作流
+
+原始素材固定放在：
+
+- `data/transcript-build/peppa-s1/source/docs/PeppaPig第1季剧本台词.docx`
+- `data/transcript-build/peppa-s1/source/audio/第1季/*.mp3`
+
+### 1. 从 docx + 音频生成 52 集模块
 
 ```bash
-python3 scripts/import_whisperx_words.py \
-  Unlock2e_A1_1.2 \
-  data/transcript-build/unlock1-word-align/output/whisperx/Unlock2e_A1_1.2/Unlock2e_A1_1.2.json \
-  data/transcript-build/unlock1-word-align/output/imported/track-unlock1-1-2.json
+python3 scripts/build_peppa_s1_from_docx.py \
+  --docx "./data/transcript-build/peppa-s1/source/docs/PeppaPig第1季剧本台词.docx" \
+  --audio-dir "./data/transcript-build/peppa-s1/source/audio/第1季" \
+  --output-root "./data/transcript-build/peppa-s1"
 ```
 
-6. 如需全量跑 24 条，直接使用批量脚本：
+生成结果：
+
+- `data/transcript-build/peppa-s1/source/paragraphs.json`
+- `data/transcript-build/peppa-s1/source/manifest.json`
+- `data/transcript-build/peppa-s1/generated/episodes.json`
+- `data/transcript-build/peppa-s1/generated/anomalies.json`
+- `data/transcript-build/peppa-s1/generated/peppa_tracks.js`
+- `data/transcript-build/peppa-s1/generated/peppa_build_status.js`
+- `data/transcript-build/peppa-s1/generated/peppa_s1_module.js`
+
+### 2. 先跑前三集冒烟
 
 ```bash
-python3 scripts/run_unlock1_whisperx_batch.py
+python3 scripts/run_series_transcript_pipeline.py \
+  --module ./data/transcripts/peppa \
+  --tracks-export peppaTranscriptTracks \
+  --status-export peppaTranscriptBuildStatus \
+  --output-root ./data/transcript-build/peppa-s1/run \
+  --audio-source-dir ./data/transcript-build/peppa-s1/source/audio/第1季 \
+  --bundle-output ./cloudfunctions/yoyo/transcripts/peppa-word-tracks.json \
+  --subset "S101 Muddy Puddles,S102 Mr Dinosaur Is Lost,S103 Best Friend"
 ```
 
-只跑某几条：
+### 3. 再跑整季
 
 ```bash
-python3 scripts/run_unlock1_whisperx_batch.py \
-  --subset Unlock2e_A1_2.2,Unlock2e_A1_2.3,Unlock2e_A1_2.5
+python3 scripts/run_series_transcript_pipeline.py \
+  --module ./data/transcripts/peppa \
+  --tracks-export peppaTranscriptTracks \
+  --status-export peppaTranscriptBuildStatus \
+  --output-root ./data/transcript-build/peppa-s1/run \
+  --audio-source-dir ./data/transcript-build/peppa-s1/source/audio/第1季 \
+  --bundle-output ./cloudfunctions/yoyo/transcripts/peppa-word-tracks.json
 ```
 
-7. 批量导入后，生成 `yoyo` 使用的 transcript bundle：
+## 关键默认行为
 
-```bash
-node scripts/build_unlock1_transcript_bundle.js
-```
+- 默认导出名是 `transcriptTracks` / `transcriptBuildStatus`
+- 音频文件名来自 canonical map 的 `fileName`
+- 默认音频扩展名是 `mp3`
+- 默认 WhisperX 使用英文 `--language en`
+- 默认在 CPU 上跑 `base` 模型
+- `python-bin` 会优先尝试显式参数，再尝试 `~/whisper-env/bin/python`，再退回系统 `python3.12` / `python3`
+- `vendor-dir` 默认使用当前 `output-root/vendor312`
 
-8. 最后做时间轴校验：
+## 阻塞判定
 
-```bash
-node scripts/validate_transcript_track.js \
-  data/transcript-build/unlock1-word-align/output/imported/track-unlock1-1-2.json
-```
+`Peppa` 生成后请检查 `data/transcript-build/peppa-s1/generated/anomalies.json`：
 
-9. 再重新部署 `yoyo` 并在开发者工具试听。
+- 出现 `missing-audio`：阻塞
+- 出现 `audio-without-docx-section`：阻塞
+- 出现大量 `title-mismatch`：阻塞
+- 出现 `empty-episode`：阻塞
 
-说明：
-- `build_unlock1_canonical_map.js` 会从现有 `data/transcripts/unlock1` 生成正式句子稿映射。
-- `download_unlock1_alignment_assets.py` 当前会复制 Unlock1 需要的 24 条音频和 1 个 scripts PDF。
-- `run_unlock1_whisperx_batch.py` 会自动串起 WhisperX、导入和校验。
-- `build_unlock1_transcript_bundle.js` 会把已导入的单条 JSON 合并成 `cloudfunctions/yoyo/transcripts/unlock1-word-tracks.json`。
-- `prepare_transcript_words.js` 仍可用于本地兜底显示，但 Unlock1 云端主链路应优先使用真实 WhisperX 结果。
-- `import_whisperx_words.py` 现在使用 canonical 文稿映射，不再只支持 2 条。
-
-如果只需要逐句兜底时间轴，可以继续用：
-
-```bash
-node scripts/prepare_transcript_words.js data/transcripts/a1-l1.json data/transcripts/a1-l1.words.json
-```
-
-依赖：
-
-```bash
-python3 -m pip install pypdf
-```
-
-当前规则：
-
-- `Unlock 1` 音频时长低于 60 秒：自动排除，不计入当天打卡
-- `Unlock 1` 音频时长大于等于 60 秒：纳入当天打卡，需要听 3 遍
-- 有逐词稿的任务，3 遍都可以同步显示文本
-- 没有逐词稿的任务，也不会阻塞当天完成
+少量标题规范化差异可以先人工复核，再决定是否继续跑 WhisperX。

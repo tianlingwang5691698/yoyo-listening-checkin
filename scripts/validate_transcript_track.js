@@ -52,6 +52,10 @@ function validateTrack(track) {
 
 function main() {
   const inputPath = process.argv[2];
+  if (process.argv.includes('--help') || process.argv.includes('-h')) {
+    console.log('Usage: node scripts/validate_transcript_track.js <track.json>');
+    process.exit(0);
+  }
   if (!inputPath) {
     fail('Usage: node scripts/validate_transcript_track.js <track.json>');
   }

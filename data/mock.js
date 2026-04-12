@@ -1,5 +1,5 @@
 const appConfig = require('./app-config');
-const { peppaTranscriptTracks } = require('./transcripts/peppa/index');
+const { peppaTranscriptTracks, peppaTranscriptBuildStatus } = require('./transcripts/peppa/index');
 const { unlockTranscriptTracks, unlockTranscriptBuildStatus } = require('./transcripts/unlock1/index');
 
 function buildCloudAssetUrl(cloudPath) {
@@ -56,41 +56,31 @@ const unlockScriptSource = {
 };
 
 const transcriptTracks = [...peppaTranscriptTracks, ...unlockTranscriptTracks];
+const peppaDurationOverrides = {
+  'S101 Muddy Puddles': 311
+};
 
-const peppaAudioFiles = [
-  ['S101 Muddy Puddles.mp3', 311],
-  ['S102 Mr Dinosaur Is Lost.mp3', 300],
-  ['S103 Best Friend.mp3', 300],
-  ['S104 Polly Parrot.mp3', 300],
-  ['S105 Hide and Seek.mp3', 300],
-  ['S106 The Playgroup.mp3', 300],
-  ['S107 Mummy Pig at Work.mp3', 300],
-  ['S108 Piggy in the Middle.mp3', 300],
-  ['S109 Daddy Loses his Glasses.mp3', 300],
-  ['S110 Gardening.mp3', 300],
-  ['S111 Hiccups.mp3', 300],
-  ['S112 Bicycles.mp3', 300],
-  ['S113 Secrets.mp3', 300],
-  ['S114 Flying a Kite.mp3', 300],
-  ['S115 Picnic.mp3', 300],
-  ['S116 Musical Instruments.mp3', 300]
-];
-
-const peppaTasks = peppaAudioFiles.map(([fileName, durationSec], index) => ({
-  taskId: `peppa-${index + 1}`,
-  category: 'peppa',
-  title: fileName.replace(/\.mp3$/i, ''),
-  subtitle: 'Peppa Pig Season 1',
-  audioUrl: buildCloudAssetUrl(`A1/Peppa/第1季/${fileName}`),
-  audioCloudPath: `A1/Peppa/第1季/${fileName}`,
-  audioFileId: buildCloudFileId(`A1/Peppa/第1季/${fileName}`),
-  audioSource: 'static-cloud-url',
-  repeatTarget: 3,
-  durationSec,
-  coverTone: 'sunrise',
-  transcriptTrackId: index === 0 ? 'track-peppa-s101' : index === 1 ? 'track-peppa-s102' : null,
-  textSource: peppaScriptSource
-}));
+const peppaTasks = peppaTranscriptBuildStatus.map((transcriptStatus, index) => {
+  const fileName = transcriptStatus.fileName;
+  const durationSec = peppaDurationOverrides[fileName] || 300;
+  return {
+    taskId: transcriptStatus.taskId || `peppa-${index + 1}`,
+    category: 'peppa',
+    title: fileName,
+    subtitle: 'Peppa Pig Season 1',
+    audioUrl: buildCloudAssetUrl(`A1/Peppa/第1季/${fileName}.mp3`),
+    audioCloudPath: `A1/Peppa/第1季/${fileName}.mp3`,
+    audioFileId: buildCloudFileId(`A1/Peppa/第1季/${fileName}.mp3`),
+    audioSource: 'static-cloud-url',
+    repeatTarget: 3,
+    durationSec,
+    coverTone: 'sunrise',
+    transcriptTrackId: transcriptStatus.trackId,
+    transcriptStatus: transcriptStatus.status || 'pending',
+    transcriptBatch: transcriptStatus.batch || null,
+    textSource: peppaScriptSource
+  };
+});
 
 const unlockAudioFiles = [
   ['Unlock2e_A1_1.2.mp3', 85],
@@ -167,5 +157,6 @@ module.exports = {
   songTasks,
   songPlaceholder,
   transcriptTracks,
+  peppaTranscriptBuildStatus,
   unlockTranscriptBuildStatus
 };
