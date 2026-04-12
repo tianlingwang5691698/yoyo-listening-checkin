@@ -65,3 +65,9 @@ python3 scripts/run_series_transcript_pipeline.py \
 - `empty-episode`
 
 少量标题标准化差异可以先人工核对，再决定是否继续跑整季。
+
+## 质量判定补充
+
+- 前 10 句不能出现明显断层，例如 `9s -> 34s` 这种无理由跳跃
+- 相邻短句不能连续挤在同一秒附近后再被整体推到后面
+- 如果 WhisperX 原始转写本身漏掉前半段对白，优先重跑单集，再重新导入，不要直接手工改 bundle
