@@ -60,6 +60,29 @@ def allocate_tokens(tokens, start_ms, end_ms, line_id, start_index):
     return results
 
 
+def normalize_line_words(words):
+    if not words:
+        return []
+    normalized = []
+    for item in words:
+        normalized.append(
+            {
+                "wordId": item["wordId"],
+                "text": item["text"],
+                "startMs": int(item["startMs"]),
+                "endMs": int(item["endMs"]),
+            }
+        )
+    for index in range(1, len(normalized)):
+        if normalized[index]["startMs"] < normalized[index - 1]["endMs"]:
+            normalized[index]["startMs"] = normalized[index - 1]["endMs"]
+        if normalized[index]["endMs"] <= normalized[index]["startMs"]:
+            normalized[index]["endMs"] = normalized[index]["startMs"] + 1
+    if normalized[0]["endMs"] <= normalized[0]["startMs"]:
+        normalized[0]["endMs"] = normalized[0]["startMs"] + 1
+    return normalized
+
+
 def load_canonical_map(path: Path):
     data = json.loads(path.read_text(encoding="utf-8"))
     tracks = data.get("tracksByFileName") or {}
@@ -178,7 +201,8 @@ def is_dialogue_series(canonical_lines):
 def assign_line_windows_dialogue(canonical_lines, asr_segments):
     assignments = [None] * len(canonical_lines)
     segment_cursor = 0
-    window_size = 8
+    window_size = 10
+    max_range_segments = 6
 
     for line_index, line in enumerate(canonical_lines):
         tokens = split_tokens(line)
@@ -187,48 +211,67 @@ def assign_line_windows_dialogue(canonical_lines, asr_segments):
         if not anchor_norm:
             anchor_norm = [normalize_token(token) for token in tokens if normalize_token(token)]
 
-        best_index = None
+        best_range = None
         best_score = 0.0
         best_distance_penalty = 0
         upper = min(len(asr_segments), segment_cursor + window_size)
-        for candidate in range(segment_cursor, upper):
-            segment_tokens = [word["norm"] for word in asr_segments[candidate]["words"] if word["norm"]]
-            score = sequence_overlap_score(anchor_norm, segment_tokens)
-            if score <= 0:
-                continue
-            distance_penalty = candidate - segment_cursor
-            if score > best_score or (score == best_score and distance_penalty < best_distance_penalty):
-                best_index = candidate
-                best_score = score
-                best_distance_penalty = distance_penalty
+        for start_candidate in range(segment_cursor, upper):
+            end_upper = min(len(asr_segments), start_candidate + max_range_segments)
+            combined = []
+            for end_candidate in range(start_candidate, end_upper):
+                combined.extend([word["norm"] for word in asr_segments[end_candidate]["words"] if word["norm"]])
+                score = sequence_overlap_score(anchor_norm, combined)
+                if score <= 0:
+                    continue
+                distance_penalty = start_candidate - segment_cursor
+                range_penalty = end_candidate - start_candidate
+                better = (
+                    score > best_score
+                    or (score == best_score and distance_penalty < best_distance_penalty)
+                    or (
+                        score == best_score
+                        and distance_penalty == best_distance_penalty
+                        and best_range is not None
+                        and range_penalty < (best_range[1] - best_range[0])
+                    )
+                )
+                if better:
+                    best_range = (start_candidate, end_candidate)
+                    best_score = score
+                    best_distance_penalty = distance_penalty
 
         min_score = 0.55 if len(anchor_norm) >= 5 else 0.42 if len(anchor_norm) >= 3 else 0.28
-        if best_index is not None and best_score >= min_score:
-            assignments[line_index] = best_index
-            segment_cursor = best_index + 1
+        if best_range is not None and best_score >= min_score:
+            assignments[line_index] = best_range
+            segment_cursor = best_range[1] + 1
 
     return assignments
 
 
-def slice_line_words_from_segment(line_text, segment, line_id):
+def slice_line_words_from_segments(line_text, segments, line_id):
+    segment_words = []
+    for segment in segments:
+        segment_words.extend(segment["words"])
+    segment_start_ms = segments[0]["startMs"]
+    segment_end_ms = segments[-1]["endMs"]
     tokens = split_tokens(line_text)
     prefix_tokens, anchor_tokens = split_speaker_prefix(tokens)
     anchor_words = segment_words_to_project_words(
         " ".join(anchor_tokens) if anchor_tokens else line_text,
-        segment["words"],
+        segment_words,
         line_id,
-        segment["startMs"],
-        segment["endMs"],
+        segment_start_ms,
+        segment_end_ms,
     )
     if not prefix_tokens:
         return anchor_words
 
     if anchor_words:
         prefix_end = anchor_words[0]["startMs"]
-        prefix_start = max(segment["startMs"], prefix_end - max(len(prefix_tokens), 1))
+        prefix_start = max(segment_start_ms, prefix_end - max(len(prefix_tokens), 1))
     else:
-        prefix_start = segment["startMs"]
-        prefix_end = min(segment["endMs"], prefix_start + max(len(prefix_tokens), 1))
+        prefix_start = segment_start_ms
+        prefix_end = min(segment_end_ms, prefix_start + max(len(prefix_tokens), 1))
     prefix_words = allocate_tokens(prefix_tokens, prefix_start, prefix_end, line_id, 0)
     merged = []
     merged.extend(prefix_words)
@@ -246,22 +289,25 @@ def slice_line_words_from_segment(line_text, segment, line_id):
             merged[index]["startMs"] = merged[index - 1]["endMs"]
         if merged[index]["endMs"] <= merged[index]["startMs"]:
             merged[index]["endMs"] = merged[index]["startMs"] + 1
-    return merged
+    return normalize_line_words(merged)
 
 
 def allocate_missing_lines(canonical_lines, assignments, asr_segments, content_id):
     lines = [None] * len(canonical_lines)
 
-    for line_index, segment_index in enumerate(assignments):
-        if segment_index is None:
+    for line_index, segment_range in enumerate(assignments):
+        if segment_range is None:
             continue
         line_id = f"{content_id}-{line_index + 1}"
-        words = slice_line_words_from_segment(canonical_lines[line_index], asr_segments[segment_index], line_id)
+        start_index, end_index = segment_range
+        selected_segments = asr_segments[start_index : end_index + 1]
+        words = slice_line_words_from_segments(canonical_lines[line_index], selected_segments, line_id)
+        words = normalize_line_words(words)
         lines[line_index] = {
             "lineId": line_id,
             "text": canonical_lines[line_index],
-            "startMs": words[0]["startMs"] if words else asr_segments[segment_index]["startMs"],
-            "endMs": words[-1]["endMs"] if words else asr_segments[segment_index]["endMs"],
+            "startMs": words[0]["startMs"] if words else selected_segments[0]["startMs"],
+            "endMs": words[-1]["endMs"] if words else selected_segments[-1]["endMs"],
             "words": words,
         }
 
@@ -300,6 +346,7 @@ def allocate_missing_lines(canonical_lines, assignments, asr_segments, content_i
             segment_end = gap_end if is_last else cursor + max(1, round(((gap_end - gap_start) * token_count) / total_tokens))
             line_id = f"{content_id}-{idx + 1}"
             words = allocate_tokens(tokens, cursor, segment_end, line_id, 0)
+            words = normalize_line_words(words)
             lines[idx] = {
                 "lineId": line_id,
                 "text": canonical_lines[idx],
@@ -491,6 +538,7 @@ def build_track(file_name: str, whisper_json_path: Path, canonical_map_path: Pat
                 }
             )
             cursor += 1
+        line_words = normalize_line_words(line_words)
         if line_words:
             line_start = line_words[0]["startMs"]
             line_end = line_words[-1]["endMs"]
