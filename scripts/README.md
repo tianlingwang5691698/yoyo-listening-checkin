@@ -95,6 +95,10 @@ python3 scripts/run_series_transcript_pipeline.py \
 - `python-bin` 会优先尝试显式参数，再尝试 `~/whisper-env/bin/python`，再退回系统 `python3.12` / `python3`
 - `vendor-dir` 默认使用当前 `output-root/vendor312`
 - `Peppa` 这类对白型文本会自动走更保守的“顺序局部匹配”模式，不建议再用整轨自由匹配直接落盘
+- 对 `Peppa` 里明显断层的集，建议加：
+  - `--vad-onset 0.35`
+  - `--vad-offset 0.2`
+  - `--chunk-size 10`
 
 ## 阻塞判定
 

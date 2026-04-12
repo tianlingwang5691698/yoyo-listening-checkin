@@ -41,6 +41,9 @@ def main():
     parser.add_argument("--python-bin", default="")
     parser.add_argument("--vendor-dir", default="")
     parser.add_argument("--model", default="base")
+    parser.add_argument("--vad-onset", default="")
+    parser.add_argument("--vad-offset", default="")
+    parser.add_argument("--chunk-size", default="")
     parser.add_argument("--force", action="store_true")
     args = parser.parse_args()
 
@@ -70,29 +73,40 @@ def main():
             raise FileNotFoundError(f"Missing audio: {audio_path}")
 
         if args.force or not whisper_json.exists():
-            run(
+            whisper_command = [
+                python_bin,
+                "-m",
+                "whisperx",
+                "--model",
+                args.model,
+                "--language",
+                "en",
+                "--device",
+                "cpu",
+                "--compute_type",
+                "int8",
+                "--vad_method",
+                "silero",
+                "--batch_size",
+                "4",
+            ]
+            if args.vad_onset:
+                whisper_command.extend(["--vad_onset", args.vad_onset])
+            if args.vad_offset:
+                whisper_command.extend(["--vad_offset", args.vad_offset])
+            if args.chunk_size:
+                whisper_command.extend(["--chunk_size", args.chunk_size])
+            whisper_command.extend(
                 [
-                    python_bin,
-                    "-m",
-                    "whisperx",
-                    "--model",
-                    args.model,
-                    "--language",
-                    "en",
-                    "--device",
-                    "cpu",
-                    "--compute_type",
-                    "int8",
-                    "--vad_method",
-                    "silero",
-                    "--batch_size",
-                    "4",
                     "--output_dir",
                     str(whisper_output_dir),
                     "--output_format",
                     "json",
                     str(audio_path),
-                ],
+                ]
+            )
+            run(
+                whisper_command,
                 env=base_env,
             )
         else:

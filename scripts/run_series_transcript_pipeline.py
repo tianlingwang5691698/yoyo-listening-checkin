@@ -41,6 +41,9 @@ def main():
     parser.add_argument("--vendor-dir", default="")
     parser.add_argument("--python-bin", default="")
     parser.add_argument("--model", default="base")
+    parser.add_argument("--vad-onset", default="")
+    parser.add_argument("--vad-offset", default="")
+    parser.add_argument("--chunk-size", default="")
     parser.add_argument("--force", action="store_true")
     args = parser.parse_args()
 
@@ -110,6 +113,12 @@ def main():
         "--model",
         args.model,
     ]
+    if args.vad_onset:
+        batch_command.extend(["--vad-onset", args.vad_onset])
+    if args.vad_offset:
+        batch_command.extend(["--vad-offset", args.vad_offset])
+    if args.chunk_size:
+        batch_command.extend(["--chunk-size", args.chunk_size])
     if args.subset:
         batch_command.extend(["--subset", args.subset])
     if args.force:

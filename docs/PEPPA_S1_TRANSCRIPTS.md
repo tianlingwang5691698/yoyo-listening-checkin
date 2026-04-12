@@ -43,6 +43,16 @@ python3 scripts/run_series_transcript_pipeline.py \
   --bundle-output ./cloudfunctions/yoyo/transcripts/peppa-word-tracks.json
 ```
 
+### 4. 问题集保守重跑参数
+
+对白型、前 10 句有明显断层的集，优先用：
+
+```bash
+--vad-onset 0.35 --vad-offset 0.2 --chunk-size 10
+```
+
+这组参数更适合把 `Peppa` 里短句密集的前半段重新切回来。
+
 ## 生成产物
 
 - `source/paragraphs.json`
