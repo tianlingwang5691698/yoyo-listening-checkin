@@ -32,7 +32,7 @@ python3 scripts/run_series_transcript_pipeline.py \
   --output-root data/transcript-build/unlock1-word-align \
   --audio-source-dir "/Users/wangtianlong/工作/01_教学与备考/unlock 第二版/Unlock1/LS/Unlock1 听口音频Class Audio" \
   --pdf-source "/Users/wangtianlong/工作/01_教学与备考/unlock 第二版/Unlock1/LS/Unlock 2e Listening and Speaking 1 Scripts.pdf" \
-  --bundle-output cloudfunctions/yoyo/transcripts/unlock1-word-tracks.json
+  --bundle-output data/transcript-build/unlock1-word-align/output/unlock1-word-tracks.json
 ```
 
 ## Peppa 第一季正式工作流
@@ -70,7 +70,7 @@ python3 scripts/run_series_transcript_pipeline.py \
   --status-export peppaTranscriptBuildStatus \
   --output-root ./data/transcript-build/peppa-s1/run \
   --audio-source-dir ./data/transcript-build/peppa-s1/source/audio/第1季 \
-  --bundle-output ./cloudfunctions/yoyo/transcripts/peppa-word-tracks.json \
+  --bundle-output ./data/transcript-build/peppa-s1/run/output/peppa-word-tracks.json \
   --subset "S101 Muddy Puddles,S102 Mr Dinosaur Is Lost,S103 Best Friend"
 ```
 
@@ -83,8 +83,35 @@ python3 scripts/run_series_transcript_pipeline.py \
   --status-export peppaTranscriptBuildStatus \
   --output-root ./data/transcript-build/peppa-s1/run \
   --audio-source-dir ./data/transcript-build/peppa-s1/source/audio/第1季 \
-  --bundle-output ./cloudfunctions/yoyo/transcripts/peppa-word-tracks.json
+  --bundle-output ./data/transcript-build/peppa-s1/run/output/peppa-word-tracks.json
 ```
+
+## CloudBase 线上目录规范
+
+正式线上读取统一建议放到：
+
+```text
+_transcripts/
+  A1/
+    peppa/
+      bundle.json
+      build-status.json
+      items/
+    unlock1/
+      bundle.json
+      build-status.json
+      items/
+```
+
+当前项目里 `yoyo` 会优先读取：
+
+- `_transcripts/A1/peppa/bundle.json`
+- `_transcripts/A1/unlock1/bundle.json`
+
+因此本地脚本跑完以后，推荐手动上传：
+
+- `.../output/peppa-word-tracks.json` -> `_transcripts/A1/peppa/bundle.json`
+- `.../output/unlock1-word-tracks.json` -> `_transcripts/A1/unlock1/bundle.json`
 
 ## 关键默认行为
 

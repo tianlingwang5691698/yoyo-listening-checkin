@@ -41,8 +41,8 @@ const TEMP_URL_TTL = 24 * 60 * 60;
 const AUDIO_FILE_PATTERN = /\.(mp3|m4a|aac|wav)$/i;
 const TRANSCRIPT_BUNDLE_TTL_MS = 5 * 60 * 1000;
 const TRANSCRIPT_BUNDLE_PATHS = {
-  peppa: 'A1/_transcripts/peppa/bundle.json',
-  unlock1: 'A1/_transcripts/unlock1/bundle.json'
+  peppa: '_transcripts/A1/peppa/bundle.json',
+  unlock1: '_transcripts/A1/unlock1/bundle.json'
 };
 const LOCAL_TRANSCRIPT_BUNDLE_PATHS = {
   peppa: `${__dirname}/transcripts/peppa-word-tracks.json.gz`,

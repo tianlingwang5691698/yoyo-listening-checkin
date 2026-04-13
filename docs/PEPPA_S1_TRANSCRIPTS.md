@@ -27,7 +27,7 @@ python3 scripts/run_series_transcript_pipeline.py \
   --status-export peppaTranscriptBuildStatus \
   --output-root ./data/transcript-build/peppa-s1/run \
   --audio-source-dir ./data/transcript-build/peppa-s1/source/audio/第1季 \
-  --bundle-output ./cloudfunctions/yoyo/transcripts/peppa-word-tracks.json \
+  --bundle-output ./data/transcript-build/peppa-s1/run/output/peppa-word-tracks.json \
   --subset "S101 Muddy Puddles,S102 Mr Dinosaur Is Lost,S103 Best Friend"
 ```
 
@@ -40,7 +40,7 @@ python3 scripts/run_series_transcript_pipeline.py \
   --status-export peppaTranscriptBuildStatus \
   --output-root ./data/transcript-build/peppa-s1/run \
   --audio-source-dir ./data/transcript-build/peppa-s1/source/audio/第1季 \
-  --bundle-output ./cloudfunctions/yoyo/transcripts/peppa-word-tracks.json
+  --bundle-output ./data/transcript-build/peppa-s1/run/output/peppa-word-tracks.json
 ```
 
 ### 4. 问题集保守重跑参数
@@ -63,7 +63,26 @@ python3 scripts/run_series_transcript_pipeline.py \
 - `generated/peppa_build_status.js`
 - `generated/peppa_s1_module.js`
 - `run/output/imported/*.json`
-- `cloudfunctions/yoyo/transcripts/peppa-word-tracks.json`
+- `run/output/peppa-word-tracks.json`
+
+## CloudBase 正式上传路径
+
+线上正式读取入口放这里：
+
+- `_transcripts/A1/peppa/bundle.json`
+- `_transcripts/A1/peppa/build-status.json`
+- `_transcripts/A1/peppa/items/<trackId>.json`
+
+也就是：
+
+- 本地生成在 `run/output/`
+- 线上正式上传到 CloudBase `_transcripts/A1/peppa/`
+
+推荐上传映射：
+
+- `run/output/peppa-word-tracks.json` -> `_transcripts/A1/peppa/bundle.json`
+- `generated/peppa_build_status.js` 或转成 json -> `_transcripts/A1/peppa/build-status.json`
+- `run/output/imported/track-peppa-s101.json` -> `_transcripts/A1/peppa/items/track-peppa-s101.json`
 
 ## anomalies 判定
 
