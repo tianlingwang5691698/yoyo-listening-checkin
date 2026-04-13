@@ -77,6 +77,8 @@ python3 scripts/run_series_transcript_pipeline.py \
 
 - 本地生成在 `run/output/`
 - 线上正式上传到 CloudBase `_transcripts/A1/peppa/`
+- `yoyo` 不再使用本地 transcript fallback，必须以上传到 CloudBase 的 `bundle.json` 为准
+- 如果云端 `bundle.json` 没上传成功，前台不会再回退到本地 transcript
 
 推荐上传映射：
 

@@ -6,7 +6,6 @@
 - 复制该系列音频和可选 PDF 到本地工作区
 - 批量运行 WhisperX 并导入词级时间戳
 - 合并成最终 bundle JSON
-- 同时输出本地云函数可直接读取的 `bundle.json.gz`
 - 支持 `Peppa 第一季` 的 `docx -> module` 生成链路
 
 ## 核心主链路脚本
@@ -107,6 +106,12 @@ _transcripts/
 
 - `_transcripts/A1/peppa/bundle.json`
 - `_transcripts/A1/unlock1/bundle.json`
+
+当前正式策略：
+
+- 线上正式只读 CloudBase 的 `bundle.json`
+- 本地生成文件只是中间产物，不再作为 `yoyo` fallback
+- 如果云端 `bundle.json` 缺失、路径不对或格式错误，前台 transcript 会直接不可用
 
 因此本地脚本跑完以后，推荐手动上传：
 

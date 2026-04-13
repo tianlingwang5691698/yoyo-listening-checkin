@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 const fs = require('fs');
 const path = require('path');
-const zlib = require('zlib');
 
 function printHelp() {
   console.log(`Usage: node scripts/build_series_transcript_bundle.js <input-dir> <output-file>
@@ -36,7 +35,4 @@ for (const name of fs.readdirSync(resolvedInputDir).filter((file) => file.endsWi
 fs.mkdirSync(path.dirname(resolvedOutputPath), { recursive: true });
 const jsonText = JSON.stringify(combined, null, 2);
 fs.writeFileSync(resolvedOutputPath, jsonText);
-const gzPath = `${resolvedOutputPath}.gz`;
-fs.writeFileSync(gzPath, zlib.gzipSync(Buffer.from(jsonText, 'utf8'), { level: 9 }));
 console.log(`Bundled ${Object.keys(combined).length} tracks -> ${resolvedOutputPath}`);
-console.log(`Compressed fallback -> ${gzPath}`);
