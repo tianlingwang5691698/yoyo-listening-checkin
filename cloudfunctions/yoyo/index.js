@@ -955,7 +955,7 @@ function getTaskReward(category, progress, task) {
   };
 }
 
-async function decorateTask(task, progress, category) {
+function decorateTask(task, progress, category) {
   if (!task) {
     const emptyTask = category === 'unlock1'
       ? {
@@ -999,8 +999,7 @@ async function decorateTask(task, progress, category) {
   const completedCount = Math.min(progress.playCount, task.repeatTarget);
   const currentPass = progress.completedToday ? task.repeatTarget : Math.min(progress.playCount + 1, task.repeatTarget);
   const textUnlocked = progress.playCount >= task.repeatTarget - 1 || progress.completedToday;
-  const transcriptTrackMap = await getTranscriptTrackMap();
-  const transcriptTrackId = transcriptTrackMap[task.transcriptTrackId] ? task.transcriptTrackId : null;
+  const transcriptTrackId = task.transcriptTrackId || null;
   const reward = getTaskReward(category, progress, Object.assign({}, task, { transcriptTrackId }));
   return Object.assign({}, task, base, {
     category,
@@ -1234,7 +1233,7 @@ function getSelectedTask(progressRecords, childId, category, date, cursors) {
   return catalog[index];
 }
 
-async function getTaskSummary(progressRecords, childId, category, date, cursors) {
+function getTaskSummary(progressRecords, childId, category, date, cursors) {
   const task = getSelectedTask(progressRecords, childId, category, date, cursors);
   if (!task) return decorateTask(null, { playCount: 0, textUnlocked: false, completedToday: false }, category);
   const progress = progressRecords.find((item) => item.childId === childId && item.category === category && item.date === date) || {
@@ -1367,9 +1366,7 @@ async function getDashboardData(ctx) {
     const categoryRecords = progressRecords.filter((item) => item.category === category && item.completedToday);
     cursors[category] = categoryRecords.length % Math.max(getCatalog(category).length || 1, 1);
   });
-  const dailyTasks = await Promise.all(
-    CATEGORY_ORDER.map((category) => getTaskSummary(progressRecords, ctx.child.childId, category, today, cursors))
-  );
+  const dailyTasks = CATEGORY_ORDER.map((category) => getTaskSummary(progressRecords, ctx.child.childId, category, today, cursors));
   const activeTaskCount = dailyTasks.filter((item) => !item.isPendingAsset).length;
   const completedTaskCountToday = dailyTasks.filter((item) => item.completedToday).length;
   return {
