@@ -6,6 +6,7 @@
 - 复制该系列音频和可选 PDF 到本地工作区
 - 批量运行 WhisperX 并导入词级时间戳
 - 合并成最终 bundle JSON
+- 同时输出本地云函数可直接读取的 `bundle.json.gz`
 - 支持 `Peppa 第一季` 的 `docx -> module` 生成链路
 
 ## 核心主链路脚本

@@ -1,9 +1,8 @@
 const cloud = require('wx-server-sdk');
 const CloudBaseManager = require('@cloudbase/manager-node');
-const unlockTranscriptTrackMap = require('./transcripts/unlock1-word-tracks.json');
-const peppaTranscriptTrackMap = require('./transcripts/peppa-word-tracks.json');
+const fs = require('fs');
+const zlib = require('zlib');
 const { peppaTranscriptBuildStatus } = require('./transcripts/peppa_build_status');
-const STATIC_TRANSCRIPT_TRACK_MAP = Object.assign({}, peppaTranscriptTrackMap, unlockTranscriptTrackMap);
 
 cloud.init({
   env: cloud.DYNAMIC_CURRENT_ENV
@@ -45,12 +44,17 @@ const TRANSCRIPT_BUNDLE_PATHS = {
   peppa: 'A1/_transcripts/peppa/bundle.json',
   unlock1: 'A1/_transcripts/unlock1/bundle.json'
 };
+const LOCAL_TRANSCRIPT_BUNDLE_PATHS = {
+  peppa: `${__dirname}/transcripts/peppa-word-tracks.json.gz`,
+  unlock1: `${__dirname}/transcripts/unlock1-word-tracks.json.gz`
+};
 let runtimeCatalogs = null;
 let runtimeCatalogExpiresAt = 0;
 let runtimeCatalogDebug = null;
 let runtimeTranscriptTrackMap = null;
 let runtimeTranscriptTrackMapExpiresAt = 0;
 let runtimeTranscriptTrackDebug = null;
+let runtimeLocalTranscriptTrackMap = null;
 let storageManager = null;
 let storageDebugShapes = {};
 let unlock1TrainingPoolBootstrapState = {
@@ -282,6 +286,31 @@ function mergeTranscriptTrackMaps(...maps) {
   return Object.assign({}, ...maps.filter(Boolean));
 }
 
+function readLocalTranscriptBundle(category) {
+  const filePath = LOCAL_TRANSCRIPT_BUNDLE_PATHS[category];
+  if (!filePath || !fs.existsSync(filePath)) {
+    return {};
+  }
+  try {
+    const payload = fs.readFileSync(filePath);
+    const jsonText = zlib.gunzipSync(payload).toString('utf8');
+    return JSON.parse(jsonText);
+  } catch (error) {
+    return {};
+  }
+}
+
+function getLocalTranscriptTrackMap() {
+  if (runtimeLocalTranscriptTrackMap) {
+    return runtimeLocalTranscriptTrackMap;
+  }
+  runtimeLocalTranscriptTrackMap = mergeTranscriptTrackMaps(
+    readLocalTranscriptBundle('peppa'),
+    readLocalTranscriptBundle('unlock1')
+  );
+  return runtimeLocalTranscriptTrackMap;
+}
+
 async function downloadCloudJson(cloudPath) {
   const manager = getStorageManager();
   if (!manager) {
@@ -319,7 +348,7 @@ async function getTranscriptTrackMap() {
   runtimeTranscriptTrackMap = mergeTranscriptTrackMaps(
     cloudMaps.peppa,
     cloudMaps.unlock1,
-    STATIC_TRANSCRIPT_TRACK_MAP
+    getLocalTranscriptTrackMap()
   );
   runtimeTranscriptTrackMapExpiresAt = now + TRANSCRIPT_BUNDLE_TTL_MS;
   runtimeTranscriptTrackDebug = {
@@ -329,7 +358,7 @@ async function getTranscriptTrackMap() {
       peppa: Object.keys(cloudMaps.peppa || {}).length,
       unlock1: Object.keys(cloudMaps.unlock1 || {}).length
     },
-    fallbackCount: Object.keys(STATIC_TRANSCRIPT_TRACK_MAP).length
+    fallbackCount: Object.keys(getLocalTranscriptTrackMap()).length
   };
   return runtimeTranscriptTrackMap;
 }

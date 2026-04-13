@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 const fs = require('fs');
 const path = require('path');
+const zlib = require('zlib');
 
 const inputDir = process.argv[2]
   ? path.resolve(process.argv[2])
@@ -19,5 +20,9 @@ for (const name of fs.readdirSync(inputDir).filter((file) => file.endsWith('.jso
 }
 
 fs.mkdirSync(path.dirname(outputPath), { recursive: true });
-fs.writeFileSync(outputPath, JSON.stringify(combined, null, 2));
+const jsonText = JSON.stringify(combined, null, 2);
+fs.writeFileSync(outputPath, jsonText);
+const gzPath = `${outputPath}.gz`;
+fs.writeFileSync(gzPath, zlib.gzipSync(Buffer.from(jsonText, 'utf8'), { level: 9 }));
 console.log(`Bundled ${Object.keys(combined).length} tracks -> ${outputPath}`);
+console.log(`Compressed fallback -> ${gzPath}`);
