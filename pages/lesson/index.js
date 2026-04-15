@@ -56,6 +56,7 @@ Page({
     scriptSource: null,
     transcriptTrack: null,
     transcriptLines: [],
+    transcriptSyncGranularity: 'word',
     currentTimeMs: 0,
     currentTimeLabel: '00:00',
     durationLabel: '00:00',
@@ -310,6 +311,7 @@ Page({
       scriptSource: detail.scriptSource,
       transcriptTrack: detail.transcriptTrack,
       transcriptLines: detail.transcriptTrack ? detail.transcriptTrack.lines : [],
+      transcriptSyncGranularity: detail.transcriptTrack ? (detail.transcriptTrack.syncGranularity || 'word') : 'word',
       history: detail.history,
       currentTimeMs: 0,
       currentTimeLabel: '00:00',
@@ -373,13 +375,16 @@ Page({
     const prevLine = activeIndex > 0 ? lines[activeIndex - 1] : null;
     const nextLine = activeIndex >= 0 && activeIndex < lines.length - 1 ? lines[activeIndex + 1] : null;
     const words = activeLine && activeLine.words ? activeLine.words : [];
-    let activeWordIndex = words.findIndex((word, index) => {
-      const next = words[index + 1];
-      const nextStart = next ? next.startMs : Number.POSITIVE_INFINITY;
-      return timeMs >= word.startMs && timeMs < nextStart;
-    });
-    if (activeWordIndex < 0 && words.length) {
-      activeWordIndex = timeMs < words[0].startMs ? 0 : words.length - 1;
+    let activeWordIndex = -1;
+    if (this.data.transcriptSyncGranularity === 'word' && words.length) {
+      activeWordIndex = words.findIndex((word, index) => {
+        const next = words[index + 1];
+        const nextStart = next ? next.startMs : Number.POSITIVE_INFINITY;
+        return timeMs >= word.startMs && timeMs < nextStart;
+      });
+      if (activeWordIndex < 0) {
+        activeWordIndex = timeMs < words[0].startMs ? 0 : words.length - 1;
+      }
     }
     this.setData({
       currentTimeMs: timeMs,
@@ -494,6 +499,7 @@ Page({
       scriptSource: detail.scriptSource,
       transcriptTrack: detail.transcriptTrack,
       transcriptLines: detail.transcriptTrack ? detail.transcriptTrack.lines : [],
+      transcriptSyncGranularity: detail.transcriptTrack ? (detail.transcriptTrack.syncGranularity || 'word') : 'word',
       history: detail.history,
       audioSource: detail.task && detail.task.audioSource ? detail.task.audioSource : 'none',
       playbackRate: 1

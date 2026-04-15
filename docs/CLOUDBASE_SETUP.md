@@ -20,6 +20,9 @@
 - `A1/Peppa`
 - `A1/Unlock1/Unlock1 听口音频 Class Audio`
 - `A1/Super simple songs`
+- `_transcripts/A1/peppa`
+- `_transcripts/A1/unlock1`
+- `_transcripts/A1/songs`
 
 要求：
 
@@ -27,6 +30,7 @@
 - 音频 `.mp3` 与对应 `.pdf` 尽量放同目录
 - `Unlock1` 音频与脚本 PDF 当前放在 `Unlock1 听口音频 Class Audio` 子目录
 - `Song` 当前从 `A1/Super simple songs` 递归扫描，至少要有可识别音频
+- transcript 正式文件统一放在 `_transcripts/<level>/<series>/`
 
 ## 云函数部署步骤
 
@@ -40,6 +44,11 @@
 8. 上传并部署 `unlock1-preprocess`
 9. 在云开发控制台先手动创建首版数据库集合
 10. 在云开发控制台确认云存储目录正常
+
+日常发版建议：
+
+- 只改前台业务、任务分配、transcript 读取逻辑时，只部署 `yoyo`
+- 只有 `Unlock1` 训练池扫描逻辑变化时，才额外部署 `unlock1-preprocess`
 
 ## 云函数依赖
 
@@ -61,6 +70,18 @@
 - `dailyReports`
 - `subscriptionPreferences`
 - `unlock1AudioTrainingPool`
+
+## Transcript 正式上传路径
+
+- `run/output/peppa-word-tracks.json` -> `_transcripts/A1/peppa/bundle.json`
+- `data/transcript-build/unlock1-word-align/output/unlock1-word-tracks.json` -> `_transcripts/A1/unlock1/bundle.json`
+- `Super simple songs` 当前交付包 -> `_transcripts/A1/songs/bundle.json`
+
+说明：
+
+- `bundle.json` 是线上正式源
+- `build-status.json` 只作为元信息，不代表质量已通过
+- `Songs` 当前按句级上线，不能按“逐词稳定”向审核或用户描述
 
 说明：
 

@@ -40,7 +40,8 @@ const AUDIO_FILE_PATTERN = /\.(mp3|m4a|aac|wav)$/i;
 const TRANSCRIPT_BUNDLE_TTL_MS = 5 * 60 * 1000;
 const TRANSCRIPT_BUNDLE_PATHS = {
   peppa: '_transcripts/A1/peppa/bundle.json',
-  unlock1: '_transcripts/A1/unlock1/bundle.json'
+  unlock1: '_transcripts/A1/unlock1/bundle.json',
+  song: '_transcripts/A1/songs/bundle.json'
 };
 let runtimeCatalogs = null;
 let runtimeCatalogExpiresAt = 0;
@@ -238,6 +239,7 @@ const songPlaceholder = {
   durationSec: 0,
   coverTone: 'mint',
   transcriptTrackId: null,
+  syncGranularity: 'line',
   textSource: null
 };
 
@@ -265,6 +267,22 @@ function normalizeTranscriptLine(line) {
     startMs,
     endMs,
     words
+  });
+}
+
+function normalizeTranscriptTrack(track, options = {}) {
+  const syncGranularity = String(options.syncGranularity || (track && track.syncGranularity) || 'word').trim() || 'word';
+  return Object.assign({}, track, {
+    syncGranularity,
+    lines: Array.isArray(track && track.lines)
+      ? track.lines.map((line) => {
+        const normalizedLine = normalizeTranscriptLine(line);
+        return Object.assign({}, normalizedLine, {
+          words: syncGranularity === 'line' ? [] : normalizedLine.words,
+          startLabel: formatTranscriptMsLabel(normalizedLine.startMs)
+        });
+      })
+      : []
   });
 }
 
@@ -315,7 +333,8 @@ async function getTranscriptTrackMap() {
 
   runtimeTranscriptTrackMap = mergeTranscriptTrackMaps(
     cloudMaps.peppa,
-    cloudMaps.unlock1
+    cloudMaps.unlock1,
+    cloudMaps.song
   );
   runtimeTranscriptTrackMapExpiresAt = now + TRANSCRIPT_BUNDLE_TTL_MS;
   runtimeTranscriptTrackDebug = {
@@ -323,7 +342,8 @@ async function getTranscriptTrackMap() {
     errors,
     cloudCounts: {
       peppa: Object.keys(cloudMaps.peppa || {}).length,
-      unlock1: Object.keys(cloudMaps.unlock1 || {}).length
+      unlock1: Object.keys(cloudMaps.unlock1 || {}).length,
+      song: Object.keys(cloudMaps.song || {}).length
     },
     fallbackCount: 0
   };
@@ -339,13 +359,8 @@ async function getTranscriptBundle(task) {
     };
   }
   const transcriptTrack = transcriptTrackMap[task.transcriptTrackId];
-  const normalizedTrack = Object.assign({}, transcriptTrack, {
-    lines: transcriptTrack.lines.map((line) => {
-      const normalizedLine = normalizeTranscriptLine(line);
-      return Object.assign({}, normalizedLine, {
-        startLabel: formatTranscriptMsLabel(normalizedLine.startMs)
-      });
-    })
+  const normalizedTrack = normalizeTranscriptTrack(transcriptTrack, {
+    syncGranularity: task && task.category === 'song' ? 'line' : undefined
   });
   return {
     transcriptTrack: normalizedTrack,
@@ -422,6 +437,38 @@ function normalizeUnlock1Unit(value) {
     .replace(/[^0-9.]+/g, '')
     .trim();
   return text;
+}
+
+function inferSongOrdinal(value) {
+  const text = getBaseName(value).replace(/^0+/, '').trim();
+  const match = text.match(/^(\d+)(?:[.\s_-]+)(.+)$/);
+  if (!match) {
+    return null;
+  }
+  const number = Number(match[1]);
+  if (!Number.isFinite(number) || number <= 0) {
+    return null;
+  }
+  return {
+    number,
+    padded: String(number).padStart(3, '0'),
+    title: match[2].trim()
+  };
+}
+
+function inferSongTaskMeta(value) {
+  const ordinal = inferSongOrdinal(value);
+  if (!ordinal) {
+    return null;
+  }
+  return {
+    taskId: `super-simple-songs-${ordinal.number}`,
+    title: `${ordinal.padded} ${ordinal.title}`,
+    subtitle: 'Super Simple Songs',
+    transcriptTrackId: `track-sss-${ordinal.padded}`,
+    transcriptBatch: Math.floor((ordinal.number - 1) / 100) + 1,
+    syncGranularity: 'line'
+  };
 }
 
 function buildStaticTaskLookup(items) {
@@ -665,7 +712,7 @@ async function buildCloudCatalogFromRoot(category, rootPath, staticItems, option
     : audioFiles.map((file, index) => ({
       file,
       index,
-      matchedStatic: staticLookup[normalizeKey(getBaseName(file.cloudPath))] || staticItems[index] || null,
+      matchedStatic: staticLookup[normalizeKey(getBaseName(file.cloudPath))] || null,
       trainingRecord: null
     }));
   const unlock1ExcludedShortCount = category === 'unlock1'
@@ -679,27 +726,45 @@ async function buildCloudCatalogFromRoot(category, rootPath, staticItems, option
     const { file, index, matchedStatic, trainingRecord } = entry;
     const audioBaseName = getBaseName(file.cloudPath);
     const folderPdf = findNearestParentPdf(pdfByFolder, file.cloudPath);
-    const title = matchedStatic ? matchedStatic.title : ((trainingRecord && trainingRecord.title) || audioBaseName);
+    const inferredSongTask = category === 'song' ? inferSongTaskMeta(audioBaseName) : null;
+    const title = matchedStatic
+      ? matchedStatic.title
+      : ((trainingRecord && trainingRecord.title) || (inferredSongTask && inferredSongTask.title) || audioBaseName);
     const subtitle = matchedStatic
       ? matchedStatic.subtitle
-      : (getParentFolder(file.cloudPath).split('/').pop() || rootPath.split('/').pop());
+      : ((inferredSongTask && inferredSongTask.subtitle) || getParentFolder(file.cloudPath).split('/').pop() || rootPath.split('/').pop());
+    const transcriptTrackId = matchedStatic
+      ? matchedStatic.transcriptTrackId
+      : (inferredSongTask && inferredSongTask.transcriptTrackId);
+    const syncGranularity = matchedStatic
+      ? String(matchedStatic.syncGranularity || 'word')
+      : ((inferredSongTask && inferredSongTask.syncGranularity) || 'word');
     return buildCloudTask(matchedStatic, {
-      taskId: matchedStatic ? matchedStatic.taskId : `${category}-${index + 1}`,
+      taskId: matchedStatic
+        ? matchedStatic.taskId
+        : ((inferredSongTask && inferredSongTask.taskId) || `${category}-${index + 1}`),
       category,
       title,
       subtitle,
       repeatTarget: matchedStatic ? matchedStatic.repeatTarget : 3,
       durationSec: trainingRecord ? trainingRecord.durationSec : (matchedStatic ? matchedStatic.durationSec : 180),
       coverTone: matchedStatic ? matchedStatic.coverTone : (category === 'song' ? 'mint' : 'sunrise'),
-        transcriptTrackId: matchedStatic ? matchedStatic.transcriptTrackId : null,
-      transcriptStatus: matchedStatic ? matchedStatic.transcriptStatus : (folderPdf ? 'pending' : 'none'),
-      transcriptBatch: matchedStatic ? matchedStatic.transcriptBatch : null,
+      transcriptTrackId,
+      transcriptStatus: matchedStatic ? matchedStatic.transcriptStatus : (transcriptTrackId ? 'ready' : (folderPdf ? 'pending' : 'none')),
+      transcriptBatch: matchedStatic ? matchedStatic.transcriptBatch : (inferredSongTask ? inferredSongTask.transcriptBatch : null),
+      syncGranularity,
       audioTitle: (trainingRecord && trainingRecord.title) || audioBaseName,
       audioUrl: buildCloudAssetUrl(file.cloudPath),
       audioCloudPath: file.cloudPath,
       audioFileId: file.fileId,
       audioSource: 'static-cloud-url',
-      textSource: createCloudTextSource(folderPdf, `${title} Script`)
+      textSource: category === 'song'
+        ? {
+          sourceType: 'transcript-bundle',
+          title: 'Super Simple Songs Lyrics',
+          filePath: ''
+        }
+        : createCloudTextSource(folderPdf, `${title} Script`)
     });
   });
   return {
@@ -922,6 +987,15 @@ function getTaskPresentation(task) {
       coverBadge: 'Unlock-1'
     };
   }
+  if (task.category === 'song') {
+    const match = title.match(/^0*([0-9]+)(?:[.\s_-]+)(.+)$/);
+    return {
+      displayTitle: match ? match[2].trim() : (title || 'Daily Song'),
+      displaySubtitle: match ? `Song ${Number(match[1])}` : 'Super Simple Songs',
+      coverVariant: 'song',
+      coverBadge: 'Song'
+    };
+  }
   return {
     displayTitle: 'Daily Song',
     displaySubtitle: '等待歌曲音频',
@@ -951,7 +1025,7 @@ function getTaskReward(category, progress, task) {
   return {
     rewardBadge: progress && progress.completedToday ? 'SING STAR' : `SONG ${nextStep}`,
     rewardTitle: progress && progress.completedToday ? '歌曲小星星到手了' : '歌曲星星线',
-    rewardCopy: progress && progress.completedToday ? '今天这首歌已经完成。' : '放入歌曲后就会开始轮换。'
+    rewardCopy: progress && progress.completedToday ? '今天这首歌已经完成。' : ((task && task.syncGranularity === 'line') ? '这条歌曲按句级文本同步，先把整句节奏听稳。' : '放入歌曲后就会开始轮换。')
   };
 }
 
@@ -992,7 +1066,7 @@ function decorateTask(task, progress, category) {
       rewardTitle: category === 'unlock1' ? '学习任务线' : '歌曲星星线',
       rewardCopy: category === 'unlock1'
         ? 'Unlock1 素材恢复后，这条奖励线会继续推进。'
-        : '把歌曲音频放进来后，这条奖励线就会亮起来。'
+        : '把歌曲音频和 bundle 放进来后，这条奖励线就会亮起来。'
     });
   }
   const base = getTaskPresentation(task);
@@ -1005,6 +1079,7 @@ function decorateTask(task, progress, category) {
     category,
     categoryLabel: getCategoryLabel(category),
     transcriptTrackId,
+    syncGranularity: task.syncGranularity || 'word',
     audioDisplayName: getMediaDisplayName(task.audioUrl),
     audioCompactTitle: category === 'peppa'
       ? [base.displaySubtitle, base.displayTitle].filter(Boolean).join(' · ')
@@ -1019,7 +1094,7 @@ function decorateTask(task, progress, category) {
     transcriptStatus: transcriptTrackId ? 'ready' : (task.textSource ? 'pending' : 'none'),
     transcriptBatch: task.transcriptBatch || null,
     note: currentPass < task.repeatTarget ? `先完成第 ${currentPass} 遍。`
-      : (transcriptTrackId ? '最后一遍会带文本。' : task.textSource ? '最后一遍这条的逐句高亮还在准备中。' : '最后一遍按纯听力完成。'),
+      : (transcriptTrackId ? ((task.syncGranularity === 'line') ? '最后一遍会带句级文本。' : '最后一遍会带文本。') : task.textSource ? '最后一遍这条的逐句高亮还在准备中。' : '最后一遍按纯听力完成。'),
     rewardBadge: reward.rewardBadge,
     rewardTitle: reward.rewardTitle,
     rewardCopy: reward.rewardCopy

@@ -10,6 +10,7 @@
   - 家长共享页数据
   - 每日报告文档骨架
   - 订阅偏好存储
+  - transcript bundle 按需读取
 - `cloudfunctions/unlock1-preprocess`
   - 扫描 `Unlock1` 云端音频
   - 读取音频时长
@@ -24,6 +25,7 @@
 - `unlock1-preprocess` 已至少手动跑通一次 `scanUnlock1Audio`
 - `unlock1AudioTrainingPool` 中已存在 `eligible`
 - `Unlock1` 前台只出现 `>= 60 秒` 的云端音频
+- `Songs` 如接入体验版，只按句级文本同步验收
 
 ## 你在微信开发者工具里需要做的事
 
@@ -47,6 +49,9 @@
    - `A1/Peppa`
    - `A1/Unlock1/Unlock1 听口音频 Class Audio`
    - `A1/Super simple songs`
+   - `_transcripts/A1/peppa`
+   - `_transcripts/A1/unlock1`
+   - `_transcripts/A1/songs`
 8. 在小程序订阅消息里申请模板
 9. 把模板 ID 填进：
    - `/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/data/app-config.js`
@@ -90,6 +95,13 @@
   - `Peppa` 的集号与标题格式
   - `Unlock 1` 的编号格式
   - 已接好的 `transcriptTrackId`
+
+当前 transcript 正式源：
+
+- `yoyo` 只读取 CloudBase `_transcripts/<level>/<series>/bundle.json`
+- `Peppa / Unlock1` 走逐词
+- `Songs` 走句级优先
+- `build-status.json` 只做元信息，不代表质量已通过
 
 ## 首版集合
 

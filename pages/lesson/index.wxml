@@ -147,10 +147,10 @@
       <view>
         <view class="section-title">同步文本</view>
         <view class="section-copy">
-          {{transcriptLines.length ? '现在可以边听边看文本。' : task.transcriptStatus === 'pending' ? '这条的逐句高亮正在准备中，先按纯听力完成也可以。' : '这条音频目前没有可用文本，也可以照常完成。'}}
+          {{transcriptLines.length ? (transcriptSyncGranularity === 'line' ? '现在可以边听边看句级文本。' : '现在可以边听边看文本。') : task.transcriptStatus === 'pending' ? '这条的逐句高亮正在准备中，先按纯听力完成也可以。' : '这条音频目前没有可用文本，也可以照常完成。'}}
         </view>
       </view>
-      <view class="pill transcript-pill">{{transcriptLines.length ? '文本已就绪' : task.transcriptStatus === 'pending' ? '文本准备中' : '暂无文本'}}</view>
+      <view class="pill transcript-pill">{{transcriptLines.length ? (transcriptSyncGranularity === 'line' ? '句级文本已就绪' : '文本已就绪') : task.transcriptStatus === 'pending' ? '文本准备中' : '暂无文本'}}</view>
     </view>
 
     <view class="transcript-focus" wx:if="{{transcriptLines.length}}">
@@ -172,7 +172,7 @@
         data-index="{{activeLineIndex}}"
         bindtap="seekToLine"
       >
-        <view class="transcript-focus-text" wx:if="{{activeLine.words && activeLine.words.length}}">
+        <view class="transcript-focus-text" wx:if="{{transcriptSyncGranularity === 'word' && activeLine.words && activeLine.words.length}}">
           <block wx:for="{{activeLine.words}}" wx:key="wordId">
             <text class="transcript-word {{index === activeWordIndex ? 'is-active' : ''}}">{{item.text}} </text>
           </block>
@@ -198,7 +198,7 @@
 
     <view class="transcript-empty" wx:elif="{{task.transcriptStatus === 'pending'}}">
       <view class="transcript-empty-title">这条文本准备中</view>
-      <view class="transcript-empty-copy">前 6 条已经接入高亮，这一条会在后续批次补上。今天先按纯听力完成，不会卡住任务。</view>
+      <view class="transcript-empty-copy">今天先按纯听力完成，不会卡住任务；文本同步准备好后会自动接上。</view>
     </view>
 
     <view class="transcript-empty" wx:else>

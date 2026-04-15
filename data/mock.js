@@ -55,6 +55,12 @@ const unlockScriptSource = {
   filePath: buildCloudAssetUrl(`${unlockAudioRoot}/Unlock 2e Listening and Speaking 1 Scripts.pdf`)
 };
 
+const songLyricsSource = {
+  sourceType: 'transcript-bundle',
+  title: 'Super Simple Songs Lyrics',
+  filePath: ''
+};
+
 const transcriptTracks = [...peppaTranscriptTracks, ...unlockTranscriptTracks];
 const peppaDurationOverrides = {
   'S101 Muddy Puddles': 311
@@ -146,6 +152,7 @@ const songPlaceholder = {
   durationSec: 0,
   coverTone: 'mint',
   transcriptTrackId: null,
+  syncGranularity: 'line',
   textSource: null
 };
 

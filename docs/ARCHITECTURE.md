@@ -4,6 +4,12 @@
 
 微信小程序前端通过 `utils/store` 统一访问业务数据，只读取 CloudBase 云函数与云存储；云端失败时显示明确错误态，不再回退本地数据。
 
+当前正式内容线分为三类：
+
+- `Peppa`：逐词 transcript
+- `Unlock1`：逐词 transcript
+- `Songs`：句级 transcript 优先，逐词仍属后续精修能力
+
 ## 代码分层
 
 ### 页面层 `pages/`
@@ -58,8 +64,9 @@
 - 家庭成员加入
 - 每日任务分配与进度写回
 - 打卡记录与日报聚合
-- 云存储目录扫描
+- 云存储目录扫描与任务装配
 - 云端音频地址与 PDF 来源回传
+- transcript bundle 按需读取
 
 依赖风险点：
 
@@ -67,6 +74,9 @@
 - `cloud.getTempFileURL` 生成临时可访问地址
 - 首次数据库集合自动写入
 - 云存储目录与命名规则一致性
+- transcript 粒度差异
+  - `Peppa / Unlock1` 走 `word`
+  - `Songs` 走 `line`
 
 ### 云函数 `cloudfunctions/unlock1-preprocess`
 
@@ -117,6 +127,18 @@
 - `cloudBucket`
 - `cloudAssetBaseUrl`
 - `subscriptionTemplateIds`
+
+## Transcript 正式目录
+
+- `_transcripts/A1/peppa/bundle.json`
+- `_transcripts/A1/unlock1/bundle.json`
+- `_transcripts/A1/songs/bundle.json`
+
+说明：
+
+- `bundle.json` 是线上唯一正式入口
+- `build-status.json` 是元信息，不代表质量已通过
+- `Songs` 的 `build-status` 只能表示“已生成/待审查”，不能等同于逐词质量通过
 
 其他文档只引用这份配置，不再重复维护独立环境值。
 
