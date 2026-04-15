@@ -7,12 +7,12 @@
       {{syncDebug.text}}
     </view>
     <view class="option-tag">{{syncMode === 'cloud' ? '家庭共享已接通' : '云同步异常'}}</view>
-    <view class="identity-note">{{syncMode === 'cloud' ? '当前微信会自动识别家庭身份，并进入同一份孩子档案。' : '家庭档案暂时没有同步成功，请稍后再试。'}}</view>
+    <view class="identity-note">{{syncMode === 'cloud' ? '当前微信会自动识别家庭身份，并进入同一份孩子档案。新家庭默认孩子昵称先显示为“佑佑”，后续可以改成自己孩子的名字。' : '家庭档案暂时没有同步成功，请稍后再试。'}}</view>
   </view>
 
   <view class="option card">
     <view class="option-title">家庭共享</view>
-    <view class="option-copy">家庭名：{{family.name}} · 当前身份：{{currentMember.displayName}}。其他家长用各自微信打开后，通过邀请码加入，就能跨网络看同一个孩子 {{child.nickname}} 的进度。</view>
+    <view class="option-copy">家庭名：{{family.name}} · 当前身份：{{currentMember.displayName}}。其他家长用各自微信打开后，通过邀请码加入，就能跨网络看同一个孩子 {{child.nickname}} 的进度；如果是新的独立家庭，也可以把默认昵称改成自己孩子的名字。</view>
     <button class="button-primary mini-button" bindtap="openFamilyPage">打开家庭页</button>
   </view>
 

@@ -3,7 +3,7 @@
     <view class="row-between">
       <view>
         <view class="section-title">{{family.name}}</view>
-        <view class="section-copy">家里每个人都用自己的微信进来，系统会自动识别身份。加入同一个家庭后，不在同一个网络也能看到 {{child.nickname}} 的同一份进度。</view>
+        <view class="section-copy">家里每个人都用自己的微信进来，系统会自动识别身份。加入同一个家庭后，不在同一个网络也能看到 {{child.nickname}} 的同一份进度。新家庭默认孩子昵称会先显示为“佑佑”，可以在下方改成自己孩子的名字。</view>
         <view class="sync-debug {{syncMode === 'cloud' ? 'is-cloud' : 'is-local'}}" wx:if="{{showCloudDebug && syncDebug && syncDebug.show}}">
           {{syncDebug.text}}
         </view>
@@ -31,7 +31,7 @@
 
   <view class="child-card card">
     <view class="section-title">当前孩子档案</view>
-    <view class="section-copy">当前仍是一个家庭对应一个孩子档案，但你现在可以把默认昵称改成自己孩子的名字。</view>
+    <view class="section-copy">当前仍是一个家庭对应一个孩子档案。默认孩子昵称先显示为“佑佑”，你现在可以把它改成自己孩子的名字。</view>
     <view class="child-pill">{{child.nickname}} · {{child.currentLevel}}</view>
     <input class="family-input" placeholder="输入孩子昵称，例如 乐乐 / Amy" value="{{childNicknameInput}}" bindinput="handleChildNicknameInput" />
     <button class="button-primary" bindtap="saveChildProfile">保存孩子昵称</button>

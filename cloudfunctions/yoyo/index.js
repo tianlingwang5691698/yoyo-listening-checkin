@@ -1195,7 +1195,7 @@ async function ensureBootstrap(openId) {
     const familyId = `family-${Date.now()}`;
     const familyDoc = {
       familyId,
-      name: '佑佑一家',
+      name: '听力打卡家庭',
       inviteCode: makeInviteCode(),
       ownerOpenId: openId,
       createdAt: new Date().toISOString()
