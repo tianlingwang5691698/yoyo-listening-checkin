@@ -10,12 +10,20 @@ Page({
     subscriptionPreference: {
       dailyReportEnabled: false
     },
+    childNicknameInput: '',
     inviteInput: '',
     joinName: ''
   }),
   async onShow() {
     const data = await store.getFamilyPageData();
-    this.setData(page.buildCloudPageData(this.data, data));
+    this.setData(page.buildCloudPageData(this.data, Object.assign({}, data, {
+      childNicknameInput: (data.child && data.child.nickname) || ''
+    })));
+  },
+  handleChildNicknameInput(event) {
+    this.setData({
+      childNicknameInput: event.detail.value
+    });
   },
   handleInviteInput(event) {
     this.setData({
@@ -56,6 +64,30 @@ Page({
     } catch (error) {
       wx.showToast({
         title: error.message || '加入失败',
+        icon: 'none'
+      });
+    }
+  },
+  async saveChildProfile() {
+    if (!this.data.childNicknameInput) {
+      wx.showToast({
+        title: '先输入孩子昵称',
+        icon: 'none'
+      });
+      return;
+    }
+    try {
+      const data = await store.updateChildProfile(this.data.childNicknameInput);
+      this.setData(page.buildCloudPageData(this.data, Object.assign({}, data, {
+        childNicknameInput: (data.child && data.child.nickname) || this.data.childNicknameInput
+      })));
+      wx.showToast({
+        title: '孩子档案已更新',
+        icon: 'none'
+      });
+    } catch (error) {
+      wx.showToast({
+        title: error.message || '更新失败',
         icon: 'none'
       });
     }

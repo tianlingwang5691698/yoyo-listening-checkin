@@ -23,16 +23,18 @@
 
   <view class="join-card card">
     <view class="section-title">加入家庭</view>
-    <view class="section-copy">弟弟或弟媳用自己的微信打开小程序后，在这里输入邀请码，就会加入同一个家庭，共享 {{child.nickname}} 的学习记录。</view>
+    <view class="section-copy">其他家长用自己的微信打开小程序后，在这里输入邀请码，就会加入同一个家庭，共享 {{child.nickname}} 的学习记录。</view>
     <input class="family-input" placeholder="输入邀请码" value="{{inviteInput}}" bindinput="handleInviteInput" />
-    <input class="family-input" placeholder="输入加入者称呼，例如 弟弟 / 弟媳" value="{{joinName}}" bindinput="handleJoinNameInput" />
+    <input class="family-input" placeholder="输入加入者称呼，例如 妈妈 / 奶奶 / 老师" value="{{joinName}}" bindinput="handleJoinNameInput" />
     <button class="button-primary" bindtap="joinFamily">加入家庭</button>
   </view>
 
   <view class="child-card card">
     <view class="section-title">当前孩子档案</view>
-    <view class="section-copy">首版先固定一个家庭只服务一个孩子，所有家长共享同一个 {{child.nickname}} 档案和日报。</view>
+    <view class="section-copy">当前仍是一个家庭对应一个孩子档案，但你现在可以把默认昵称改成自己孩子的名字。</view>
     <view class="child-pill">{{child.nickname}} · {{child.currentLevel}}</view>
+    <input class="family-input" placeholder="输入孩子昵称，例如 乐乐 / Amy" value="{{childNicknameInput}}" bindinput="handleChildNicknameInput" />
+    <button class="button-primary" bindtap="saveChildProfile">保存孩子昵称</button>
   </view>
 
   <view class="member-card card">

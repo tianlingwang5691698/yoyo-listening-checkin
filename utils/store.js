@@ -347,6 +347,18 @@ async function updateSubscription(enabled) {
   });
 }
 
+async function updateChildProfile(nickname) {
+  return callCloud('updateChildProfile', { nickname }, {
+    family: null,
+    user: {},
+    currentUser: {},
+    currentMember: {},
+    members: [],
+    child: null,
+    subscriptionPreference: null
+  });
+}
+
 module.exports = {
   ensureState,
   getDashboard,
@@ -359,5 +371,6 @@ module.exports = {
   getFamilyPageData,
   refreshInviteCode,
   joinFamily,
-  updateSubscription
+  updateSubscription,
+  updateChildProfile
 };

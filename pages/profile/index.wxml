@@ -12,7 +12,7 @@
 
   <view class="option card">
     <view class="option-title">家庭共享</view>
-    <view class="option-copy">家庭名：{{family.name}} · 当前身份：{{currentMember.displayName}}。弟弟、弟媳和你用各自微信打开后，通过邀请码加入，就能跨网络看同一个孩子 {{child.nickname}} 的进度。</view>
+    <view class="option-copy">家庭名：{{family.name}} · 当前身份：{{currentMember.displayName}}。其他家长用各自微信打开后，通过邀请码加入，就能跨网络看同一个孩子 {{child.nickname}} 的进度。</view>
     <button class="button-primary mini-button" bindtap="openFamilyPage">打开家庭页</button>
   </view>
 

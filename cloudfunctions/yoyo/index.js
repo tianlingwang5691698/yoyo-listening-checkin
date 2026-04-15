@@ -1105,6 +1105,15 @@ function makeInviteCode() {
   return `YOYO-${Math.random().toString(36).slice(2, 8).toUpperCase()}`;
 }
 
+function buildAvatarTextFromNickname(nickname) {
+  const text = String(nickname || '').trim();
+  if (!text) {
+    return 'YY';
+  }
+  const compact = text.replace(/\s+/g, '');
+  return compact.slice(0, 2).toUpperCase();
+}
+
 async function getMember(openId) {
   const res = await db.collection('familyMembers').where({ openId }).limit(1).get();
   return res.data[0] || null;
@@ -1158,6 +1167,25 @@ async function getFamily(familyId) {
 async function getChild(familyId) {
   const res = await db.collection('children').where({ familyId }).limit(1).get();
   return res.data[0] || null;
+}
+
+async function updateChildProfile(familyId, payload) {
+  const child = await getChild(familyId);
+  if (!child) {
+    throw new Error('孩子档案不存在');
+  }
+  const nickname = String((payload && payload.nickname) || '').trim();
+  if (!nickname) {
+    throw new Error('先填写孩子昵称');
+  }
+  const nextData = {
+    nickname,
+    avatarText: buildAvatarTextFromNickname(nickname),
+    updatedAt: new Date().toISOString()
+  };
+  await db.collection('children').doc(child._id).update({
+    data: nextData
+  });
 }
 
 async function ensureBootstrap(openId) {
@@ -1815,6 +1843,10 @@ async function handleAction(event, context) {
         }
       });
     }
+    return handleAction({ action: 'getFamilyPage', payload: {} }, context);
+  }
+  if (event.action === 'updateChildProfile') {
+    await updateChildProfile(ctx.family.familyId, event.payload || {});
     return handleAction({ action: 'getFamilyPage', payload: {} }, context);
   }
   if (event.action === 'updateSubscription') {
