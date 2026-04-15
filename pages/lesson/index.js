@@ -86,6 +86,7 @@ Page({
   }),
   onLoad(query) {
     this.category = query.category || 'peppa';
+    this.taskId = query.taskId || '';
     this.pendingAutoPlay = false;
     this.innerAudioContext = wx.createInnerAudioContext();
     this.innerAudioContext.obeyMuteSwitch = false;
@@ -300,7 +301,8 @@ Page({
     }));
   },
   async refreshPage() {
-    const detail = await store.getTaskDetail(this.category);
+    const detail = await store.getTaskDetail(this.category, this.taskId);
+    this.taskId = detail && detail.task ? detail.task.taskId || this.taskId : this.taskId;
     const previewAudio = buildCurrentAudio(detail.task, '', 'idle');
     this.setData(page.buildCloudPageData(this.data, {
       child: detail.child,
@@ -488,8 +490,10 @@ Page({
     }
     const detail = await store.markTaskListened({
       childId: this.data.child.childId,
-      category: this.category
+      category: this.category,
+      taskId: this.taskId
     });
+    this.taskId = detail && detail.task ? detail.task.taskId || this.taskId : this.taskId;
     this.setData(page.buildCloudPageData(this.data, {
       child: detail.child,
       task: detail.task,

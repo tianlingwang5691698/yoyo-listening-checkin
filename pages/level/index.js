@@ -6,6 +6,8 @@ Page({
     child: null,
     level: null,
     stats: {},
+    planDayIndex: 1,
+    planPhaseLabel: '第1轮',
     categories: []
   }),
   async onShow() {

@@ -2,7 +2,7 @@
   <view class="level-hero card">
     <view class="pill">当前阶段</view>
     <view class="level-name">{{level.name}}</view>
-    <view class="level-copy">{{level.description}}</view>
+    <view class="level-copy">{{level.description}} · Day {{planDayIndex}} · {{planPhaseLabel}}</view>
     <view class="sync-debug {{syncMode === 'cloud' ? 'is-cloud' : 'is-local'}}" wx:if="{{showCloudDebug && syncDebug && syncDebug.show}}">
       {{syncDebug.text}}
     </view>
@@ -27,7 +27,7 @@
       <view class="row-between">
         <view>
           <view class="unit-block-title">{{item.categoryLabel}}</view>
-          <view class="section-copy">{{item.isPendingAsset ? '等待音频放入后开始轮换。' : '每天只做当前轮到的一条，完成 3 遍后明天切下一条。'}}</view>
+          <view class="section-copy">{{item.isPendingAsset ? '等待音频放入后开始轮换。' : ('今天这个分类有 ' + (item.todayTaskCount || 0) + ' 条任务，完成后才会进入下一天。')}}</view>
         </view>
         <view class="unit-count">{{item.totalCount}}</view>
       </view>

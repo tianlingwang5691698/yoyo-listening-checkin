@@ -36,12 +36,12 @@
   <view class="assignment card">
     <view class="row-between">
       <view>
-        <view class="section-title">今日三项任务</view>
+        <view class="section-title">今日任务计划</view>
         <view class="section-copy">
-          {{allDailyDone ? '今天的纯音频三遍已经全部完成了。' : '每一项都固定听 3 遍，有文本的条目从第一遍就能边听边看。'}}
+          Day {{planDayIndex}} · {{planPhaseLabel}} · {{allDailyDone ? '今天的学习计划已经全部完成了。' : '今天的计划会按轮次自动调整任务数量，每一条都要听满 3 遍。'}}
         </view>
       </view>
-      <view class="pill">{{completedTaskCountToday}} / {{activeTaskCount || 3}}</view>
+      <view class="pill">{{completedTaskCountToday}} / {{activeTaskCount || planTaskCount || 3}}</view>
     </view>
   </view>
 
@@ -59,11 +59,11 @@
     </view>
   </view>
 
-  <block wx:for="{{dailyTasks}}" wx:key="category">
+  <block wx:for="{{dailyTasks}}" wx:key="taskId">
     <view class="assignment card">
       <view class="row-between">
         <view>
-          <view class="section-title">{{item.categoryLabel}}</view>
+          <view class="section-title">{{item.categoryLabel}} · 第{{item.planSlotIndex || 1}}条</view>
           <view class="section-copy">{{item.note}}</view>
         </view>
         <view class="pill">{{item.isPendingAsset ? '待准备' : item.completedToday ? '已完成' : '今日任务'}}</view>
@@ -102,7 +102,7 @@
         </view>
       </view>
 
-      <button class="button-primary" bindtap="openTask" data-category="{{item.category}}" disabled="{{item.isPendingAsset}}">
+      <button class="button-primary" bindtap="openTask" data-category="{{item.category}}" data-task-id="{{item.taskId}}" disabled="{{item.isPendingAsset}}">
         {{item.isPendingAsset ? '等音频放入' : item.completedToday ? '查看今天完成' : '开始这项任务'}}
       </button>
     </view>

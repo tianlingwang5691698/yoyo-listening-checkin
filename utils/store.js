@@ -160,6 +160,9 @@ async function getDashboard() {
       lastCheckinAt: '',
       lastCheckinDate: ''
     },
+    planDayIndex: 1,
+    planPhaseLabel: '第1轮',
+    planTaskCount: 0,
     dailyTasks: [],
     activeTaskCount: 0,
     completedTaskCountToday: 0,
@@ -180,12 +183,14 @@ async function getLevelOverview() {
       lastCheckinAt: '',
       lastCheckinDate: ''
     },
+    planDayIndex: 1,
+    planPhaseLabel: '第1轮',
     categories: []
   });
 }
 
-async function getTaskDetail(category) {
-  return callCloud('getTaskDetail', { category }, {
+async function getTaskDetail(category, taskId) {
+  return callCloud('getTaskDetail', { category, taskId }, {
     user: {},
     currentUser: {},
     currentMember: {},
@@ -206,6 +211,11 @@ async function getTaskDetail(category) {
       textUnlocked: false,
       completedToday: false
     },
+    categoryTasks: [],
+    categoryTaskCount: 0,
+    categoryCompletedCount: 0,
+    planDayIndex: 1,
+    planPhaseLabel: '第1轮',
     scriptSource: null,
     transcriptTrack: null,
     transcriptLines: [],
@@ -236,6 +246,11 @@ async function markTaskListened(options) {
       textUnlocked: false,
       completedToday: false
     },
+    categoryTasks: [],
+    categoryTaskCount: 0,
+    categoryCompletedCount: 0,
+    planDayIndex: 1,
+    planPhaseLabel: '第1轮',
     scriptSource: null,
     transcriptTrack: null,
     transcriptLines: [],
