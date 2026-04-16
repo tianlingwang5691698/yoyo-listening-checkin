@@ -58,19 +58,6 @@
   word-break: break-all;
 }
 
-.avatar-badge {
-  width: 108rpx;
-  height: 108rpx;
-  border-radius: 32rpx;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(255, 255, 255, 0.72);
-  color: #7a5a48;
-  font-size: 34rpx;
-  font-weight: 800;
-}
-
 .hero-stats {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

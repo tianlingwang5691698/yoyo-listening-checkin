@@ -1,7 +1,6 @@
 <view class="page-shell profile-page">
   <view class="profile-hero card">
     <view class="avatar">{{child.avatarText}}</view>
-    <view class="profile-name">{{child.nickname}}</view>
     <view class="profile-copy">当前阶段：{{level.name}} · 已完成 {{child.completedDays}} 天</view>
     <view class="sync-debug {{syncMode === 'cloud' ? 'is-cloud' : 'is-local'}}" wx:if="{{showCloudDebug && syncDebug && syncDebug.show}}">
       {{syncDebug.text}}

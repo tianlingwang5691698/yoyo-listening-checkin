@@ -22,15 +22,8 @@
   font-weight: 800;
 }
 
-.profile-name {
-  margin-top: 18rpx;
-  font-size: 42rpx;
-  font-weight: 800;
-  color: #2f241f;
-}
-
 .profile-copy {
-  margin-top: 14rpx;
+  margin-top: 18rpx;
   font-size: 24rpx;
   line-height: 1.7;
   color: #7f6d61;
