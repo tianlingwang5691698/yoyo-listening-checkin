@@ -1111,6 +1111,9 @@ function buildAvatarTextFromNickname(nickname) {
     return 'YY';
   }
   const compact = text.replace(/\s+/g, '');
+  if (compact === '佑佑') {
+    return 'YY';
+  }
   return compact.slice(0, 2).toUpperCase();
 }
 
@@ -1166,7 +1169,13 @@ async function getFamily(familyId) {
 
 async function getChild(familyId) {
   const res = await db.collection('children').where({ familyId }).limit(1).get();
-  return res.data[0] || null;
+  const child = res.data[0] || null;
+  if (!child) {
+    return null;
+  }
+  return Object.assign({}, child, {
+    avatarText: buildAvatarTextFromNickname(child.nickname || child.avatarText)
+  });
 }
 
 async function updateChildProfile(familyId, payload) {
@@ -1222,7 +1231,8 @@ async function ensureBootstrap(openId) {
     });
     await db.collection('children').add({
       data: Object.assign({}, childTemplate, {
-        familyId
+        familyId,
+        avatarText: buildAvatarTextFromNickname(childTemplate.nickname)
       })
     });
   } else if (!member.userId) {
