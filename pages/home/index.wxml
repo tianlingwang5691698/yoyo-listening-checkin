@@ -1,7 +1,7 @@
 <view class="page-shell home-page">
   <view class="home-titlebar">
     <view class="home-brand type-brand">{{child.nickname || '佑佑'}}的英语小耳朵</view>
-    <view class="home-subtitle type-caption">Day {{planDayIndex}} · {{phaseCopy}}</view>
+    <view class="home-subtitle type-caption">今日 · Day {{planDayIndex}}</view>
   </view>
 
   <view class="section-panel" wx:if="{{syncMode === 'cloud-error'}}">
