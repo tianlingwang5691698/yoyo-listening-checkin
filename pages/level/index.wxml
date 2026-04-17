@@ -1,7 +1,7 @@
 <view class="page-shell level-page">
   <view class="level-hero product-hero">
     <view class="product-eyebrow">音频</view>
-    <view class="product-title">{{level.name || 'A1'}}</view>
+    <view class="product-title type-page-title">{{level.name || 'A1'}}</view>
     <view class="product-copy">{{level.description}} · Day {{planDayIndex}} · {{planPhaseLabel}}</view>
     <view class="sync-debug {{syncMode === 'cloud' ? 'is-cloud' : 'is-local'}}" wx:if="{{showCloudDebug && syncDebug && syncDebug.show}}">
       {{syncDebug.text}}
@@ -27,7 +27,7 @@
       <view class="row-between">
         <view>
           <view class="program-order">{{item.category === 'peppa' ? '01' : item.category === 'unlock1' ? '02' : '03'}}</view>
-          <view class="unit-block-title">{{item.categoryLabel}}</view>
+          <view class="unit-block-title type-section-title">{{item.categoryLabel}}</view>
           <view class="section-copy">{{item.isPendingAsset ? '等待音频' : ('今日 ' + (item.todayTaskCount || 0) + ' 项')}}</view>
         </view>
         <view class="unit-count">{{item.totalCount}}</view>

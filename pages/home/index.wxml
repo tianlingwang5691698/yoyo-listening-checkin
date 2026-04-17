@@ -1,18 +1,18 @@
 <view class="page-shell home-page">
   <view class="home-titlebar">
-    <view class="home-brand">{{child.nickname || '佑佑'}}的英语小耳朵</view>
-    <view class="home-subtitle">今日打卡 · Day {{planDayIndex}} · {{phaseCopy}}</view>
+    <view class="home-brand type-brand">{{child.nickname || '佑佑'}}的英语小耳朵</view>
+    <view class="home-subtitle type-caption">今日打卡 · Day {{planDayIndex}} · {{phaseCopy}}</view>
   </view>
 
   <view class="primary-checkin card" wx:if="{{primaryTask}}">
-    <view class="primary-label">下一条</view>
-    <view class="primary-title">{{primaryTask.displayTitle || primaryTask.title}}</view>
-    <view class="primary-meta">{{primaryTask.progressText}} · {{primaryTask.textType}}</view>
+    <view class="primary-label type-caption">下一条</view>
+    <view class="primary-title type-card-title">{{primaryTask.displayTitle || primaryTask.title}}</view>
+    <view class="primary-meta type-body">{{primaryTask.progressText}} · {{primaryTask.textType}}</view>
     <view class="progress-rail primary-progress">
       <view class="progress-rail-fill" style="width: {{primaryProgressPercent}}%;"></view>
     </view>
     <button class="button-primary primary-button" bindtap="openTask" data-category="{{primaryTask.category}}" data-task-id="{{primaryTask.taskId}}" disabled="{{primaryTask.isPendingAsset}}">
-      {{primaryTask.completedToday ? '查看' : '开始'}}
+      {{primaryTask.actionText}}
     </button>
   </view>
 
@@ -26,7 +26,7 @@
       <view class="row-between">
         <view>
           <view class="program-name">{{item.categoryLabel}}</view>
-          <view class="program-line">{{item.completedCount}}/{{item.totalCount}} · {{item.textType}}</view>
+          <view class="program-line type-caption">{{item.completedCount}}/{{item.totalCount}} · {{item.textType}}</view>
         </view>
         <view class="program-state {{item.completedCount === item.totalCount ? 'is-done' : ''}}">{{item.completedCount === item.totalCount ? '完成' : '›'}}</view>
       </view>
@@ -36,7 +36,7 @@
         <view class="minimal-task {{task.isPendingAsset ? 'is-disabled' : ''}}" catchtap="openTask" data-category="{{task.category}}" data-task-id="{{task.taskId}}" data-disabled="{{task.isPendingAsset}}">
           <view>
             <view class="minimal-task-title">{{task.displayTitle || task.title}}</view>
-            <view class="minimal-task-meta">第{{task.planSlotIndex || 1}}条 · {{task.progressText}} · {{task.textType}}</view>
+            <view class="minimal-task-meta type-caption">第{{task.planSlotIndex || 1}}条 · {{task.progressText}} · {{task.textType}}</view>
           </view>
           <view class="minimal-task-action">{{task.completedToday ? '完成' : task.isPendingAsset ? '等待' : '›'}}</view>
         </view>

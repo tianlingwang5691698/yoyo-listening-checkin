@@ -3,7 +3,7 @@
     <view class="row-between">
       <view>
         <view class="product-eyebrow">家长</view>
-        <view class="product-title">家长日报</view>
+        <view class="product-title type-page-title">家长日报</view>
         <view class="product-copy">{{family.name}} · {{child.nickname}}</view>
         <view class="sync-debug {{syncMode === 'cloud' ? 'is-cloud' : 'is-local'}}" wx:if="{{showCloudDebug && syncDebug && syncDebug.show}}">
           {{syncDebug.text}}
@@ -30,7 +30,7 @@
   <view class="report-card section-panel">
     <view class="row-between">
       <view>
-        <view class="section-title">今日完整日报</view>
+        <view class="section-title type-section-title">今日完整日报</view>
         <view class="section-copy">今日明细。</view>
       </view>
       <view class="pill">{{subscriptionPreference.dailyReportEnabled ? '提醒已开启' : '提醒未开启'}}</view>
@@ -50,7 +50,7 @@
   </view>
 
   <view class="trend-card section-panel">
-    <view class="section-title">最近 7 天</view>
+    <view class="section-title type-section-title">最近 7 天</view>
     <view class="section-copy">最近一周。</view>
     <block wx:for="{{recentReports}}" wx:key="reportId">
       <view class="trend-row task-cell">
@@ -64,7 +64,7 @@
   </view>
 
   <view class="members-card section-panel">
-    <view class="section-title">家庭成员</view>
+    <view class="section-title type-section-title">家庭成员</view>
     <view class="section-copy">已加入的微信账号。</view>
     <block wx:for="{{members}}" wx:key="memberId">
       <view class="member-row task-cell">

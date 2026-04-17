@@ -3,7 +3,7 @@
     <view class="row-between family-head">
       <view>
         <view class="family-eyebrow">FAMILY</view>
-        <view class="product-title">家庭管理中心</view>
+        <view class="product-title type-page-title">家庭管理中心</view>
         <view class="product-copy">{{family.name || '我的家庭'}} · {{child.nickname || '佑佑'}}</view>
         <view class="sync-debug {{syncMode === 'cloud' ? 'is-cloud' : 'is-local'}}" wx:if="{{showCloudDebug && syncDebug && syncDebug.show}}">
           {{syncDebug.text}}

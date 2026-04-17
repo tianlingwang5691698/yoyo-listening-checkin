@@ -1,7 +1,7 @@
 <view class="page-shell profile-page">
   <view class="profile-hero product-hero">
     <view class="child-label">{{child.nickname || '佑佑'}}</view>
-    <view class="product-title">身份中心</view>
+    <view class="product-title type-page-title">身份中心</view>
     <view class="product-copy">当前阶段：{{level.name || child.currentLevel || 'A1'}} · 已完成 {{child.completedDays || child.totalCompleted || 0}} 天</view>
     <view class="sync-debug {{syncMode === 'cloud' ? 'is-cloud' : 'is-local'}}" wx:if="{{showCloudDebug && syncDebug && syncDebug.show}}">
       {{syncDebug.text}}

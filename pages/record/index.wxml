@@ -3,7 +3,7 @@
     <view class="record-hero-top">
       <view>
         <view class="record-eyebrow">成长</view>
-        <view class="record-title">学习成果</view>
+        <view class="record-title type-page-title">学习成果</view>
       </view>
       <view class="status-badge">{{syncMode === 'cloud' ? '已同步' : '本地状态'}}</view>
     </view>
@@ -47,7 +47,7 @@
   <view class="calendar-card section-panel">
     <view class="row-between">
       <view>
-        <view class="section-title">本月</view>
+        <view class="section-title type-section-title">本月</view>
         <view class="section-copy">点亮的日期会留在这里。</view>
       </view>
       <view class="pill">{{stats.completedDays || 0}} 天</view>
@@ -76,7 +76,7 @@
   <view class="catchup section-panel">
     <view class="row-between">
       <view>
-        <view class="section-title">追赶</view>
+        <view class="section-title type-section-title">追赶</view>
         <view class="section-copy" wx:if="{{catchupState.canCatchup}}">
           完成真实任务后点亮 {{catchupState.missedDate}}。
         </view>
@@ -100,13 +100,13 @@
   </view>
 
   <view class="quote-card section-panel">
-    <view class="section-title">鼓励</view>
+    <view class="section-title type-section-title">鼓励</view>
     <view class="quote-text">{{quoteText}}</view>
     <view class="quote-badge">{{stats.streakDays > 6 ? '本周之星' : stats.streakDays > 0 ? '继续加油' : '今天开始'}}</view>
   </view>
 
   <view class="total-card section-panel">
-    <view class="section-title">累计数据</view>
+    <view class="section-title type-section-title">累计数据</view>
     <view class="total-grid">
       <view class="stat-tile">
         <view class="stat-tile-value">{{stats.completedDays || 0}}</view>

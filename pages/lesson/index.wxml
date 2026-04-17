@@ -4,7 +4,7 @@
       <view class="pill">{{task.coverBadge || task.categoryLabel}}</view>
       <view class="status-badge {{task.completedToday ? '' : 'is-warn'}}">{{task.completedToday ? '已完成' : '训练中'}}</view>
     </view>
-    <view class="lesson-title product-title">{{(currentAudio && currentAudio.title) || task.displayTitle || task.title}}</view>
+    <view class="lesson-title type-page-title">{{(currentAudio && currentAudio.title) || task.displayTitle || task.title}}</view>
     <view class="lesson-copy" wx:if="{{task.displaySubtitle}}">{{task.displaySubtitle}}</view>
     <view class="lesson-copy" wx:elif="{{task.coverMeta}}">{{task.coverMeta}}</view>
     <view class="sync-debug {{syncMode === 'cloud' ? 'is-cloud' : 'is-local'}}" wx:if="{{showCloudDebug && syncDebug && syncDebug.show}}">
@@ -23,7 +23,7 @@
   </view>
 
   <view class="section-panel training-card">
-    <view class="section-title">三遍节奏</view>
+    <view class="section-title type-section-title">三遍节奏</view>
     <view class="training-steps">
       <view class="training-step {{progress.playCount >= 1 ? 'is-done' : 'is-current'}}">
         <view class="training-index">1</view>
@@ -40,7 +40,7 @@
   <view class="section-panel player-card">
     <view class="row-between player-header">
       <view>
-        <view class="section-title">今天这条音频</view>
+        <view class="section-title type-section-title">今天这条音频</view>
         <view wx:if="{{!task.isPendingAsset}}">
           <view class="section-copy">
             现在是第 {{progress.currentPass}} 遍，共 {{progress.repeatTarget}} 遍。
@@ -127,7 +127,7 @@
   <view class="section-panel transcript-card">
     <view class="row-between transcript-header">
       <view>
-        <view class="section-title">文本</view>
+        <view class="section-title type-section-title">文本</view>
         <view class="section-copy">
           {{transcriptLines.length ? (transcriptSyncGranularity === 'line' ? '现在可以边听边看句级文本。' : '现在可以边听边看文本。') : task.transcriptStatus === 'pending' ? '这条的逐句高亮正在准备中，先按纯听力完成也可以。' : '这条音频目前没有可用文本，也可以照常完成。'}}
         </view>
