@@ -5,10 +5,7 @@
   </view>
 
   <view class="primary-checkin card" wx:if="{{primaryTask}}">
-    <view class="primary-head">
-      <view class="primary-label">下一条</view>
-      <view class="primary-program">{{primaryProgramLabel}}</view>
-    </view>
+    <view class="primary-label">下一条</view>
     <view class="primary-title">{{primaryTask.displayTitle || primaryTask.title}}</view>
     <view class="primary-meta">{{primaryTask.progressText}} · {{primaryTask.textType}}</view>
     <view class="progress-rail primary-progress">
@@ -25,23 +22,25 @@
   </view>
 
   <block wx:for="{{groupedDailyTasks}}" wx:key="category">
-    <view class="minimal-program card">
+    <view class="minimal-program card {{item.nextTask.isPendingAsset ? 'is-disabled' : ''}}" bindtap="openTask" data-category="{{item.nextTask.category}}" data-task-id="{{item.nextTask.taskId}}" data-disabled="{{item.nextTask.isPendingAsset}}">
       <view class="row-between">
         <view>
           <view class="program-name">{{item.categoryLabel}}</view>
-          <view class="program-line">{{item.programCopy}} · 今日 {{item.totalCount}} 项 · 已完成 {{item.completedCount}}</view>
+          <view class="program-line">{{item.completedCount}}/{{item.totalCount}} · {{item.textType}}</view>
         </view>
-        <view class="status-badge {{item.completedCount === item.totalCount ? '' : 'is-warn'}}">{{item.completedCount === item.totalCount ? '完成' : '进行中'}}</view>
+        <view class="program-state {{item.completedCount === item.totalCount ? 'is-done' : ''}}">{{item.completedCount === item.totalCount ? '完成' : '›'}}</view>
       </view>
 
-      <block wx:for="{{item.tasks}}" wx:key="taskId" wx:for-item="task">
-        <view class="minimal-task {{task.isPendingAsset ? 'is-disabled' : ''}}" bindtap="openTask" data-category="{{task.category}}" data-task-id="{{task.taskId}}" data-disabled="{{task.isPendingAsset}}">
+      <block wx:if="{{item.tasks.length > 1}}">
+        <block wx:for="{{item.tasks}}" wx:key="taskId" wx:for-item="task">
+        <view class="minimal-task {{task.isPendingAsset ? 'is-disabled' : ''}}" catchtap="openTask" data-category="{{task.category}}" data-task-id="{{task.taskId}}" data-disabled="{{task.isPendingAsset}}">
           <view>
             <view class="minimal-task-title">{{task.displayTitle || task.title}}</view>
             <view class="minimal-task-meta">第{{task.planSlotIndex || 1}}条 · {{task.progressText}} · {{task.textType}}</view>
           </view>
-          <view class="minimal-task-action">{{task.completedToday ? '完成' : task.isPendingAsset ? '等待' : '开始'}}</view>
+          <view class="minimal-task-action">{{task.completedToday ? '完成' : task.isPendingAsset ? '等待' : '›'}}</view>
         </view>
+        </block>
       </block>
     </view>
   </block>
