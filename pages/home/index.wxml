@@ -9,29 +9,33 @@
     <view class="section-copy">{{(syncDebug && (syncDebug.publicReason || syncDebug.reason)) || '学习数据暂时没有同步成功，请稍后再试。'}}</view>
   </view>
 
-  <block wx:for="{{groupedDailyTasks}}" wx:key="category">
-    <view class="minimal-program card {{item.nextTask.isPendingAsset ? 'is-disabled' : ''}}" bindtap="openTask" data-category="{{item.nextTask.category}}" data-task-id="{{item.nextTask.taskId}}" data-disabled="{{item.nextTask.isPendingAsset}}">
-      <view class="row-between">
-        <view>
-          <view class="program-name">{{item.categoryLabel}}</view>
-          <view class="program-line type-caption">{{item.completedCount}}/{{item.totalCount}} · {{item.textType}}</view>
-        </view>
-        <view class="program-state {{item.completedCount === item.totalCount ? 'is-done' : ''}}">{{item.completedCount === item.totalCount ? '完成' : '›'}}</view>
-      </view>
-
-      <block wx:if="{{item.tasks.length > 1}}">
-        <block wx:for="{{item.tasks}}" wx:key="taskId" wx:for-item="task">
-        <view class="minimal-task {{task.isPendingAsset ? 'is-disabled' : ''}}" catchtap="openTask" data-category="{{task.category}}" data-task-id="{{task.taskId}}" data-disabled="{{task.isPendingAsset}}">
-          <view>
-            <view class="minimal-task-title">{{task.displayTitle || task.title}}</view>
-            <view class="minimal-task-meta type-caption">第{{task.planSlotIndex || 1}}条 · {{task.progressText}} · {{task.textType}}</view>
+  <swiper class="program-swiper" wx:if="{{hasGroupedTasks}}" previous-margin="32rpx" next-margin="32rpx" circular="{{false}}" indicator-dots="{{true}}" indicator-color="rgba(37, 35, 33, 0.14)" indicator-active-color="#252321">
+    <block wx:for="{{groupedDailyTasks}}" wx:key="category">
+      <swiper-item>
+        <view class="program-slide card {{item.nextTask.isPendingAsset ? 'is-disabled' : ''}}" bindtap="openTask" data-category="{{item.nextTask.category}}" data-task-id="{{item.nextTask.taskId}}" data-disabled="{{item.nextTask.isPendingAsset}}">
+          <view class="slide-top">
+            <view class="slide-name">{{item.categoryLabel}}</view>
+            <view class="slide-state {{item.completedCount === item.totalCount ? 'is-done' : item.nextTask.isPendingAsset ? 'is-waiting' : ''}}">{{item.programStateText}}</view>
           </view>
-          <view class="minimal-task-action">{{task.completedToday ? '完成' : task.isPendingAsset ? '等待' : '›'}}</view>
+          <view class="slide-title">{{item.programSubtitle}}</view>
+          <view class="slide-meta type-caption">{{item.textType}}</view>
+          <view class="slide-line"></view>
+
+          <block wx:if="{{item.tasks.length > 1}}">
+            <block wx:for="{{item.tasks}}" wx:key="taskId" wx:for-item="task">
+            <view class="slide-task {{task.isPendingAsset ? 'is-disabled' : ''}}" catchtap="openTask" data-category="{{task.category}}" data-task-id="{{task.taskId}}" data-disabled="{{task.isPendingAsset}}">
+              <view>
+                <view class="slide-task-title">{{task.displayTitle || task.title}}</view>
+                <view class="slide-task-meta type-caption">{{task.progressText}}</view>
+              </view>
+              <view class="slide-task-state">{{task.completedToday ? '完成' : task.isPendingAsset ? '等待' : '›'}}</view>
+            </view>
+            </block>
+          </block>
         </view>
-        </block>
-      </block>
-    </view>
-  </block>
+      </swiper-item>
+    </block>
+  </swiper>
 
   <view class="empty-state" wx:if="{{!hasGroupedTasks && syncMode !== 'cloud-error'}}">今日任务还在准备中。</view>
 </view>

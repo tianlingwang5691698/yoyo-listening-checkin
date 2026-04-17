@@ -1,5 +1,5 @@
 .home-titlebar {
-  padding: 76rpx 20rpx 34rpx;
+  padding: 76rpx 20rpx 42rpx;
   text-align: center;
 }
 
@@ -13,76 +13,99 @@
   margin-top: 12rpx;
 }
 
-.minimal-program {
-  margin-top: 18rpx;
-  padding: 30rpx 28rpx;
-  background: rgba(255, 255, 255, 0.82);
+.program-swiper {
+  width: 100%;
+  height: 520rpx;
 }
 
-.minimal-program:first-of-type {
-  margin-top: 0;
+.program-slide {
+  height: 456rpx;
+  margin: 0 10rpx;
+  padding: 34rpx 30rpx;
+  background: rgba(255, 255, 255, 0.86);
 }
 
-.minimal-program.is-disabled {
-  opacity: 0.48;
+.program-slide.is-disabled {
+  opacity: 0.5;
 }
 
-.program-name {
-  color: var(--text-strong);
-  font-size: 30rpx;
-  line-height: 1.3;
-  font-weight: 700;
-}
-
-.program-line {
-  margin-top: 12rpx;
-}
-
-.program-state {
-  flex-shrink: 0;
-  min-width: 46rpx;
-  color: var(--accent-deep);
-  text-align: right;
-  font-size: 34rpx;
-  line-height: 1;
-  font-weight: 700;
-}
-
-.program-state.is-done {
-  color: var(--text-muted);
-  font-size: 22rpx;
-}
-
-.minimal-task {
+.slide-top {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 20rpx;
-  margin-top: 22rpx;
-  padding-top: 22rpx;
+}
+
+.slide-name {
+  color: var(--text-strong);
+  font-size: 32rpx;
+  line-height: 1.3;
+  font-weight: 700;
+}
+
+.slide-state {
+  flex-shrink: 0;
+  color: var(--accent-deep);
+  font-size: 32rpx;
+  line-height: 1;
+  font-weight: 700;
+}
+
+.slide-state.is-done,
+.slide-state.is-waiting {
+  color: var(--text-muted);
+  font-size: 22rpx;
+}
+
+.slide-title {
+  margin-top: 44rpx;
+  color: var(--text-strong);
+  font-size: 42rpx;
+  line-height: 1.22;
+  font-weight: 700;
+}
+
+.slide-meta {
+  margin-top: 16rpx;
+}
+
+.slide-line {
+  width: 100%;
+  height: 2rpx;
+  margin-top: 34rpx;
+  background: rgba(37, 35, 33, 0.08);
+}
+
+.slide-task {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20rpx;
+  padding-top: 20rpx;
+  margin-top: 20rpx;
   border-top: 1rpx solid rgba(37, 35, 33, 0.08);
 }
 
-.minimal-task-title {
+.slide-task-title {
   color: var(--text-main);
-  font-size: 26rpx;
+  font-size: 25rpx;
   line-height: 1.35;
   font-weight: 600;
 }
 
-.minimal-task-meta {
-  margin-top: 8rpx;
+.slide-task-meta {
+  margin-top: 6rpx;
 }
 
-.minimal-task-action {
+.slide-task-state {
   flex-shrink: 0;
-  min-width: 88rpx;
+  min-width: 64rpx;
   color: var(--accent-deep);
   text-align: right;
   font-size: 23rpx;
   font-weight: 700;
 }
 
-.minimal-task.is-disabled {
+.slide-task.is-disabled {
   opacity: 0.48;
 }

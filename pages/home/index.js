@@ -8,29 +8,6 @@ const PHASE_COPY = {
   '第2轮': '复习加速',
   '第3轮': '冲刺复习'
 };
-const PROGRAM_STEPS = [
-  {
-    key: 'peppa',
-    orderText: '01',
-    title: 'Peppa',
-    copy: '剧情输入',
-    tone: 'peppa'
-  },
-  {
-    key: 'unlock1',
-    orderText: '02',
-    title: 'Unlock 1',
-    copy: '体系训练',
-    tone: 'unlock'
-  },
-  {
-    key: 'song',
-    orderText: '03',
-    title: 'Songs',
-    copy: '节奏巩固',
-    tone: 'song'
-  }
-];
 
 function getTextType(task) {
   if (task.isPendingAsset) {
@@ -61,16 +38,6 @@ function decorateHomeTask(task) {
   });
 }
 
-function getProgramMeta(category) {
-  return PROGRAM_STEPS.find((item) => item.key === category) || {
-    key: category,
-    orderText: '',
-    title: labels.getCategoryDisplayLabel(category, category),
-    copy: '今日训练',
-    tone: 'unlock'
-  };
-}
-
 function buildGroupedDailyTasks(tasks) {
   const groups = [];
   CATEGORY_ORDER.forEach((category) => {
@@ -82,17 +49,21 @@ function buildGroupedDailyTasks(tasks) {
     const completedCount = activeTasks.filter((item) => item.completedToday).length;
     const totalCount = activeTasks.length || categoryTasks.length;
     const nextTask = categoryTasks.find((item) => !item.isPendingAsset && !item.completedToday) || categoryTasks[0];
-    const meta = getProgramMeta(category);
+    const allDone = completedCount === totalCount;
+    const pending = nextTask && nextTask.isPendingAsset;
     groups.push({
       category,
       categoryLabel: labels.getCategoryDisplayLabel(category, categoryTasks[0].categoryLabel),
-      orderText: meta.orderText,
-      programCopy: meta.copy,
-      tone: meta.tone,
       completedCount,
       totalCount,
       progressPercent: totalCount ? Math.round((completedCount / totalCount) * 100) : 0,
       nextTask,
+      programSubtitle: allDone
+        ? '今日完成'
+        : pending
+          ? '等待音频'
+          : (nextTask.displayTitle || nextTask.title || ''),
+      programStateText: allDone ? '完成' : pending ? '等待' : '›',
       textType: nextTask ? nextTask.textType : '待准备',
       actionText: nextTask ? nextTask.actionText : '待准备',
       tasks: categoryTasks
@@ -116,7 +87,6 @@ Page({
     dailyTasks: [],
     groupedDailyTasks: [],
     hasGroupedTasks: false,
-    programSteps: PROGRAM_STEPS,
     activeTaskCount: 0,
     completedTaskCountToday: 0,
     allDailyDone: false
@@ -124,6 +94,8 @@ Page({
   async onShow() {
     const data = await store.getDashboard();
     const groupedDailyTasks = buildGroupedDailyTasks(data.dailyTasks);
+    const total = data.activeTaskCount || data.planTaskCount || 0;
+    const done = data.completedTaskCountToday || 0;
     this.setData(page.buildCloudPageData(this.data, Object.assign({}, data, {
       phaseCopy: buildPhaseCopy(data.planPhaseLabel),
       groupedDailyTasks,
