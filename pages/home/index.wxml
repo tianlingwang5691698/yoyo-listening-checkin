@@ -1,129 +1,47 @@
 <view class="page-shell home-page">
-  <view class="product-hero home-console">
-    <view class="product-eyebrow">PROGRAM CONSOLE</view>
-    <view class="product-title">{{child.nickname || '佑佑'}}的英语小耳朵</view>
-    <view class="product-copy">{{child.welcomeLine}}</view>
-    <view class="sync-debug {{syncMode === 'cloud' ? 'is-cloud' : 'is-local'}}" wx:if="{{showCloudDebug && syncDebug && syncDebug.show}}">
-      {{syncDebug.text}}
-      <block wx:if="{{syncDebug.resourceLines && syncDebug.resourceLines.length}}">
-        <block wx:for="{{syncDebug.resourceLines}}" wx:key="*this">
-          <view class="sync-debug-line">{{item}}</view>
-        </block>
-      </block>
-    </view>
-
-    <view class="console-strip">
-      <view class="console-main">
-        <view class="plan-day">Day {{planDayIndex}}</view>
-        <view class="plan-name">{{planPhaseLabel}} · {{phaseCopy}}</view>
-      </view>
-      <view class="plan-progress">{{completedTaskCountToday}} / {{activeTaskCount || planTaskCount || 3}}</view>
-    </view>
-
-    <view class="console-stats">
-      <view class="stat-tile">
-        <text class="stat-tile-value">{{stats.streakDays || 0}}</text>
-        <text class="stat-tile-label">连续天数</text>
-      </view>
-      <view class="stat-tile">
-        <text class="stat-tile-value">{{completedTaskCountToday}}</text>
-        <text class="stat-tile-label">今日完成</text>
-      </view>
-      <view class="stat-tile">
-        <text class="stat-tile-value">{{stats.totalMinutes || 0}}</text>
-        <text class="stat-tile-label">累计分钟</text>
-      </view>
-    </view>
+  <view class="home-titlebar">
+    <view class="home-time">今日打卡</view>
+    <view class="home-subtitle">Day {{planDayIndex}} · {{phaseCopy}}</view>
   </view>
 
-  <view class="section-panel">
-    <view class="row-between program-head">
-      <view>
-        <view class="section-title">今日节目路径</view>
-        <view class="section-copy">先剧情，再体系，最后用 Songs 收束节奏。</view>
-      </view>
-      <view class="pill">3 条线</view>
+  <view class="primary-checkin card" wx:if="{{primaryTask}}">
+    <view class="primary-label">下一条</view>
+    <view class="primary-title">{{primaryTask.displayTitle || primaryTask.title}}</view>
+    <view class="primary-meta">{{primaryTask.progressText}} · {{primaryTask.textType}}</view>
+    <view class="progress-rail primary-progress">
+      <view class="progress-rail-fill" style="width: {{primaryProgressPercent}}%;"></view>
     </view>
-    <view class="program-grid program-rail">
-      <block wx:for="{{programSteps}}" wx:key="key">
-        <view class="program-card tone-{{item.tone}}">
-          <view class="program-order">{{item.orderText}}</view>
-          <view class="program-title">{{item.title}}</view>
-          <view class="program-copy">{{item.copy}}</view>
-        </view>
-      </block>
-    </view>
-  </view>
-
-  <view class="section-panel">
-    <view class="row-between">
-      <view>
-        <view class="section-title">今日节目任务</view>
-        <view class="section-copy">
-          {{allDailyDone ? '今天的节目已经全部完成。' : '每个节目一张卡，卡内完成今日任务。'}}
-        </view>
-      </view>
-      <view class="pill">{{phaseCopy}}</view>
-    </view>
+    <button class="button-primary primary-button" bindtap="openTask" data-category="{{primaryTask.category}}" data-task-id="{{primaryTask.taskId}}" disabled="{{primaryTask.isPendingAsset}}">
+      {{primaryTask.completedToday ? '查看' : '开始'}}
+    </button>
   </view>
 
   <view class="section-panel" wx:if="{{syncMode === 'cloud-error'}}">
-    <view class="row-between">
-      <view>
-        <view class="section-title">服务暂时不可用</view>
-        <view class="section-copy">学习数据暂时没有同步成功，请稍后再试。</view>
-      </view>
-      <view class="pill">云端</view>
-    </view>
-    <view class="flow-card">
-      <view class="flow-title">当前错误</view>
-      <view class="flow-copy">{{(syncDebug && (syncDebug.publicReason || syncDebug.reason)) || '云端服务暂时不可用，请稍后再试。'}}</view>
-    </view>
+    <view class="section-title">服务暂时不可用</view>
+    <view class="section-copy">{{(syncDebug && (syncDebug.publicReason || syncDebug.reason)) || '学习数据暂时没有同步成功，请稍后再试。'}}</view>
   </view>
 
   <block wx:for="{{groupedDailyTasks}}" wx:key="category">
-    <view class="program-task-card program-card tone-{{item.tone}}">
-      <view class="row-between group-head">
+    <view class="minimal-program card">
+      <view class="row-between">
         <view>
-          <view class="program-order">{{item.orderText}}</view>
-          <view class="section-title">{{item.categoryLabel}}</view>
-          <view class="section-copy">{{item.programCopy}} · 今日 {{item.totalCount}} 项 · 已完成 {{item.completedCount}}</view>
+          <view class="program-name">{{item.categoryLabel}}</view>
+          <view class="program-line">{{item.programCopy}} · 今日 {{item.totalCount}} 项 · 已完成 {{item.completedCount}}</view>
         </view>
-        <view class="status-badge {{item.completedCount === item.totalCount ? '' : 'is-warn'}}">{{item.completedCount === item.totalCount ? '已完成' : '进行中'}}</view>
-      </view>
-
-      <view class="next-task-panel">
-        <view class="next-task-label">下一条</view>
-        <view class="next-task-title">{{item.nextTask.displayTitle || item.nextTask.title}}</view>
-        <view class="next-task-meta">{{item.nextTask.progressText}} · {{item.textType}}</view>
-        <view class="progress-rail">
-          <view class="progress-rail-fill fill-{{item.category}}" style="width: {{item.progressPercent}}%;"></view>
-        </view>
-        <button class="button-primary program-action" bindtap="openTask" data-category="{{item.nextTask.category}}" data-task-id="{{item.nextTask.taskId}}" disabled="{{item.nextTask.isPendingAsset}}">
-          {{item.actionText}}
-        </button>
+        <view class="status-badge {{item.completedCount === item.totalCount ? '' : 'is-warn'}}">{{item.completedCount === item.totalCount ? '完成' : '进行中'}}</view>
       </view>
 
       <block wx:for="{{item.tasks}}" wx:key="taskId" wx:for-item="task">
-        <view class="task-cell program-task-row">
-          <view class="task-main">
-            <view class="task-title">{{task.displayTitle || task.title}}</view>
-            <view class="task-meta">
-              <text>第{{task.planSlotIndex || 1}}条</text>
-              <text>{{task.progressText}}</text>
-              <text>{{task.textType}}</text>
-            </view>
-            <view class="task-note">{{task.audioCompactTitle || task.displaySubtitle || task.note}}</view>
+        <view class="minimal-task {{task.isPendingAsset ? 'is-disabled' : ''}}" bindtap="openTask" data-category="{{task.category}}" data-task-id="{{task.taskId}}" data-disabled="{{task.isPendingAsset}}">
+          <view>
+            <view class="minimal-task-title">{{task.displayTitle || task.title}}</view>
+            <view class="minimal-task-meta">第{{task.planSlotIndex || 1}}条 · {{task.progressText}} · {{task.textType}}</view>
           </view>
-          <button class="task-button {{task.completedToday ? 'is-done' : ''}}" bindtap="openTask" data-category="{{task.category}}" data-task-id="{{task.taskId}}" disabled="{{task.isPendingAsset}}">
-            {{task.actionText}}
-          </button>
+          <view class="minimal-task-action">{{task.completedToday ? '完成' : task.isPendingAsset ? '等待' : '开始'}}</view>
         </view>
       </block>
     </view>
   </block>
 
-  <view class="empty-state" wx:if="{{!hasGroupedTasks && syncMode !== 'cloud-error'}}">
-    今日任务还在准备中。
-  </view>
+  <view class="empty-state" wx:if="{{!hasGroupedTasks && syncMode !== 'cloud-error'}}">今日任务还在准备中。</view>
 </view>

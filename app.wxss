@@ -1,13 +1,13 @@
 page {
-  --bg-cream: #fff8ee;
-  --bg-warm: #fff6e8;
-  --surface: #fffdf8;
-  --surface-soft: #fff4dd;
-  --surface-subtle: #fff9f1;
-  --text-main: #2f241f;
-  --text-strong: #201916;
-  --text-muted: #8c7e72;
-  --text-soft: #a6978b;
+  --bg-cream: #fbf7ef;
+  --bg-warm: #f7f2e9;
+  --surface: #fffdfa;
+  --surface-soft: #f6f0e7;
+  --surface-subtle: #fbf8f2;
+  --text-main: #252321;
+  --text-strong: #181715;
+  --text-muted: #85807a;
+  --text-soft: #aaa49c;
   --accent: #ef7c55;
   --accent-deep: #d96a45;
   --accent-soft: #fff0e7;
@@ -22,10 +22,10 @@ page {
   --danger-soft: #fff0ee;
   --border-soft: rgba(84, 57, 45, 0.08);
   --border-strong: rgba(84, 57, 45, 0.14);
-  --shadow-soft: 0 16rpx 48rpx rgba(94, 64, 47, 0.08);
-  --shadow-card: 0 20rpx 56rpx rgba(94, 64, 47, 0.1);
-  --radius-xl: 36rpx;
-  --radius-lg: 28rpx;
+  --shadow-soft: 0 8rpx 24rpx rgba(40, 36, 30, 0.04);
+  --shadow-card: 0 10rpx 32rpx rgba(40, 36, 30, 0.06);
+  --radius-xl: 28rpx;
+  --radius-lg: 24rpx;
   --radius-md: 20rpx;
   --radius-sm: 14rpx;
   --space-page-x: 24rpx;
@@ -56,10 +56,7 @@ button::after {
 .page-shell {
   min-height: 100vh;
   padding: 28rpx var(--space-page-x) 40rpx;
-  background:
-    radial-gradient(circle at top left, rgba(255, 226, 189, 0.54), transparent 30%),
-    radial-gradient(circle at top right, rgba(235, 249, 235, 0.68), transparent 28%),
-    linear-gradient(180deg, #fff9f0 0%, #fff7eb 100%);
+  background: var(--bg-cream);
 }
 
 .page-container {
@@ -88,8 +85,8 @@ button::after {
   min-width: 92rpx;
   padding: 10rpx 22rpx;
   border-radius: 999rpx;
-  background: var(--accent-soft);
-  color: var(--accent-deep);
+  background: #f2eee7;
+  color: var(--text-muted);
   font-size: 22rpx;
   font-weight: 700;
   line-height: 1.25;
@@ -148,11 +145,11 @@ button::after {
   width: 100%;
   min-height: 96rpx;
   border-radius: 999rpx;
-  background: linear-gradient(135deg, #ff9864 0%, #ef7c55 100%);
+  background: var(--accent);
   color: #fffaf6;
   font-size: 30rpx;
   font-weight: 700;
-  box-shadow: 0 18rpx 36rpx rgba(239, 124, 85, 0.26);
+  box-shadow: 0 12rpx 28rpx rgba(239, 124, 85, 0.22);
 }
 
 .button-primary[disabled] {
@@ -202,8 +199,8 @@ button::after {
   min-height: 56rpx;
   padding: 0 18rpx;
   border-radius: 999rpx;
-  background: var(--growth-soft);
-  color: var(--growth-deep);
+  background: #f2eee7;
+  color: var(--text-muted);
   font-size: 22rpx;
   font-weight: 800;
 }
@@ -250,9 +247,7 @@ button::after {
   overflow: hidden;
   padding: 36rpx 32rpx;
   border-radius: var(--radius-xl);
-  background:
-    radial-gradient(circle at 88% 14%, rgba(102, 185, 133, 0.16), transparent 28%),
-    linear-gradient(135deg, #fff8ee 0%, #fffdf8 100%);
+  background: var(--surface);
   box-shadow: var(--shadow-card);
 }
 
@@ -290,7 +285,7 @@ button::after {
   margin-top: 24rpx;
   padding: var(--space-card);
   border-radius: var(--radius-xl);
-  background: linear-gradient(135deg, #fffdf8 0%, #fff8f1 100%);
+  background: var(--surface);
   box-shadow: var(--shadow-card);
 }
 
@@ -311,15 +306,15 @@ button::after {
 }
 
 .program-card.tone-peppa {
-  background: linear-gradient(135deg, #fff7ef 0%, #ffe7dc 100%);
+  background: var(--surface);
 }
 
 .program-card.tone-unlock {
-  background: linear-gradient(135deg, #fffdf8 0%, #eee7df 100%);
+  background: var(--surface);
 }
 
 .program-card.tone-song {
-  background: linear-gradient(135deg, #f7fffb 0%, #e6f7ef 100%);
+  background: var(--surface);
 }
 
 .task-cell {
