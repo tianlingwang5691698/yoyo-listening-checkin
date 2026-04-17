@@ -1,12 +1,36 @@
 const store = require('../../utils/store');
 const page = require('../../utils/page');
+const labels = require('../../utils/labels');
 
-const CATEGORY_ORDER = ['unlock1', 'peppa', 'song'];
+const CATEGORY_ORDER = ['peppa', 'unlock1', 'song'];
 const PHASE_COPY = {
   '第1轮': '轻量日计划',
   '第2轮': '复习加速',
   '第3轮': '冲刺复习'
 };
+const PROGRAM_STEPS = [
+  {
+    key: 'peppa',
+    orderText: '01',
+    title: 'Peppa',
+    copy: '剧情输入',
+    tone: 'peppa'
+  },
+  {
+    key: 'unlock1',
+    orderText: '02',
+    title: 'Unlock 1',
+    copy: '体系训练',
+    tone: 'unlock'
+  },
+  {
+    key: 'song',
+    orderText: '03',
+    title: 'Songs',
+    copy: '节奏巩固',
+    tone: 'song'
+  }
+];
 
 function getTextType(task) {
   if (task.isPendingAsset) {
@@ -22,17 +46,18 @@ function getTextType(task) {
 }
 
 function decorateHomeTask(task) {
-  const repeatTarget = task.repeatTarget || 3;
-  return Object.assign({}, task, {
-    textType: getTextType(task),
-    actionText: task.isPendingAsset
+  const normalizedTask = labels.normalizeTask(task);
+  const repeatTarget = normalizedTask.repeatTarget || 3;
+  return Object.assign({}, normalizedTask, {
+    textType: getTextType(normalizedTask),
+    actionText: normalizedTask.isPendingAsset
       ? '等音频放入'
-      : task.completedToday
+      : normalizedTask.completedToday
         ? '查看完成'
-        : task.playCount > 0
+        : normalizedTask.playCount > 0
           ? '继续'
           : '开始',
-    progressText: `${task.playCount || 0}/${repeatTarget} 遍`
+    progressText: `${normalizedTask.playCount || 0}/${repeatTarget} 遍`
   });
 }
 
@@ -45,7 +70,7 @@ function buildGroupedDailyTasks(tasks) {
     }
     groups.push({
       category,
-      categoryLabel: categoryTasks[0].categoryLabel || category,
+      categoryLabel: labels.getCategoryDisplayLabel(category, categoryTasks[0].categoryLabel),
       completedCount: categoryTasks.filter((item) => item.completedToday).length,
       totalCount: categoryTasks.filter((item) => !item.isPendingAsset).length || categoryTasks.length,
       tasks: categoryTasks
@@ -69,6 +94,7 @@ Page({
     dailyTasks: [],
     groupedDailyTasks: [],
     hasGroupedTasks: false,
+    programSteps: PROGRAM_STEPS,
     activeTaskCount: 0,
     completedTaskCountToday: 0,
     allDailyDone: false

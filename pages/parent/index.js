@@ -1,9 +1,18 @@
 const store = require('../../utils/store');
 const appConfig = require('../../data/app-config');
 const page = require('../../utils/page');
+const labels = require('../../utils/labels');
 
 function getTemplateIds() {
   return (appConfig && appConfig.subscriptionTemplateIds) || [];
+}
+
+function normalizeParentData(data) {
+  return Object.assign({}, data, {
+    todayReport: data.todayReport ? Object.assign({}, data.todayReport, {
+      items: (data.todayReport.items || []).map(labels.normalizeReportItem)
+    }) : data.todayReport
+  });
 }
 
 Page({
@@ -24,7 +33,7 @@ Page({
   }),
   onShow() {
     store.getParentDashboard().then((data) => {
-      this.setData(page.buildCloudPageData(this.data, data));
+      this.setData(page.buildCloudPageData(this.data, normalizeParentData(data)));
     });
   },
   handleSubscribe() {
@@ -42,7 +51,7 @@ Page({
     requestPromise.then(() => {
       return store.updateSubscription(enabled).then((nextData) => {
         return store.getParentDashboard().then((parentData) => {
-          this.setData(page.buildCloudPageData(this.data, Object.assign({}, parentData, {
+          this.setData(page.buildCloudPageData(this.data, Object.assign({}, normalizeParentData(parentData), {
             subscriptionPreference: nextData.subscriptionPreference || parentData.subscriptionPreference
           })));
           wx.showToast({

@@ -1,5 +1,6 @@
 const store = require('../../utils/store');
 const page = require('../../utils/page');
+const labels = require('../../utils/labels');
 
 const WEEK_LABELS = ['日', '一', '二', '三', '四', '五', '六'];
 
@@ -120,7 +121,7 @@ Page({
       stats: dashboard.stats,
       heatmap: heatmapData.heatmap,
       catchupState: heatmapData.catchupState,
-      catchupTasks: heatmapData.catchupTasks,
+      catchupTasks: labels.normalizeTaskList(heatmapData.catchupTasks),
       planDayIndex: dashboard.planDayIndex || 1,
       currentMember: dashboard.currentMember,
       currentUser: dashboard.currentUser,

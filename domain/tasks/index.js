@@ -9,7 +9,7 @@ const CATEGORY_ORDER = ['peppa', 'unlock1', 'song'];
 const CATEGORY_LABELS = {
   peppa: 'Peppa',
   unlock1: 'Unlock 1',
-  song: '歌曲'
+  song: 'Songs'
 };
 
 function getCatalog(category) {
@@ -125,7 +125,7 @@ function getTaskPresentation(task, audioDisplayName) {
     const numbered = sourceTitle.match(/^0*([0-9]+)\.(.+)$/);
     return {
       displayTitle: numbered ? `Song ${Number(numbered[1])}` : 'Daily Song',
-      displaySubtitle: normalized || '等待歌曲音频',
+      displaySubtitle: normalized || '等待 Songs 音频',
       episodeCode: '',
       coverVariant: 'song',
       coverBadge: 'Song',
@@ -183,12 +183,12 @@ function getTaskReward(category, progress, task) {
   return completed
     ? {
       rewardBadge: 'SING STAR',
-      rewardTitle: '歌曲小星星到手了',
+      rewardTitle: 'Songs 小星星到手了',
       rewardCopy: '今天这首歌已经听满 3 遍，奖励星已经亮起来了。'
     }
     : {
       rewardBadge: `SONG ${nextStep}`,
-      rewardTitle: '歌曲星星线',
+      rewardTitle: 'Songs 星星线',
       rewardCopy: nextStep < 3 ? `再听第 ${nextStep} 遍，这颗小星星就会更亮一点。`
         : '第 3 遍会顺着文本一起听，把今天的音乐奖励点亮。'
     };
@@ -203,7 +203,7 @@ function createPendingTask(category) {
       audioDisplayName: '',
       audioCompactTitle: '',
       isPendingAsset: true,
-      note: '云端歌曲目录扫描到音频后，这里就会开始轮换。',
+      note: '云端 Songs 目录扫描到音频后，这里就会开始轮换。',
       currentPass: 1,
       playStepText: '0/3',
       textUnlocked: false,
@@ -211,7 +211,7 @@ function createPendingTask(category) {
       durationMinutes: 0,
       rewardBadge: reward.rewardBadge,
       rewardTitle: reward.rewardTitle,
-      rewardCopy: '把歌曲音频放进来后，这条奖励线就会亮起来。'
+      rewardCopy: '把 Songs 音频放进来后，这条奖励线就会亮起来。'
     });
   }
 

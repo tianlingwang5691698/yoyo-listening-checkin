@@ -3,6 +3,7 @@ const player = require('../../domain/player/index');
 const cloud = require('../../domain/cloud/index');
 const appConfig = require('../../data/app-config');
 const page = require('../../utils/page');
+const labels = require('../../utils/labels');
 
 function buildCloudFileId(cloudPath) {
   const normalizedPath = String(cloudPath || '').replace(/^\/+/, '');
@@ -313,10 +314,11 @@ Page({
     this.planRunType = detail && detail.planRunType ? detail.planRunType : this.planRunType;
     this.targetDate = detail && detail.targetDate ? detail.targetDate : this.targetDate;
     this.planDayIndex = detail && detail.planDayIndex ? String(detail.planDayIndex) : this.planDayIndex;
-    const previewAudio = buildCurrentAudio(detail.task, '', 'idle');
+    const normalizedTask = labels.normalizeTask(detail.task);
+    const previewAudio = buildCurrentAudio(normalizedTask, '', 'idle');
     this.setData(page.buildCloudPageData(this.data, {
       child: detail.child,
-      task: detail.task,
+      task: normalizedTask,
       stats: detail.stats,
       todayRecord: detail.todayRecord,
       progress: detail.progress,
@@ -339,15 +341,15 @@ Page({
       activeWord: null,
       nextLine: detail.transcriptTrack && detail.transcriptTrack.lines.length ? detail.transcriptTrack.lines[0] : null,
       currentAudio: previewAudio,
-      audioSource: detail.task && detail.task.audioSource ? detail.task.audioSource : 'none',
+      audioSource: normalizedTask && normalizedTask.audioSource ? normalizedTask.audioSource : 'none',
       audioReady: false,
       audioResolving: false,
       audioError: '',
       audioErrorDetail: '',
       audioPlaybackMode: 'idle'
     }));
-    if (detail.task) {
-      await this.syncPlayer(detail.task);
+    if (normalizedTask) {
+      await this.syncPlayer(normalizedTask);
       return;
     }
     if (this.innerAudioContext) {
@@ -510,9 +512,10 @@ Page({
     this.planRunType = detail && detail.planRunType ? detail.planRunType : this.planRunType;
     this.targetDate = detail && detail.targetDate ? detail.targetDate : this.targetDate;
     this.planDayIndex = detail && detail.planDayIndex ? String(detail.planDayIndex) : this.planDayIndex;
+    const normalizedTask = labels.normalizeTask(detail.task);
     this.setData(page.buildCloudPageData(this.data, {
       child: detail.child,
-      task: detail.task,
+      task: normalizedTask,
       stats: detail.stats,
       todayRecord: detail.todayRecord,
       progress: detail.progress,
@@ -521,12 +524,12 @@ Page({
       transcriptLines: detail.transcriptTrack ? detail.transcriptTrack.lines : [],
       transcriptSyncGranularity: detail.transcriptTrack ? (detail.transcriptTrack.syncGranularity || 'word') : 'word',
       history: detail.history,
-      audioSource: detail.task && detail.task.audioSource ? detail.task.audioSource : 'none',
+      audioSource: normalizedTask && normalizedTask.audioSource ? normalizedTask.audioSource : 'none',
       playbackRate: 1
     }));
-    await this.syncPlayer(detail.task);
+    await this.syncPlayer(normalizedTask);
     wx.showToast({
-      title: detail.progress.completedToday ? `${detail.task.categoryLabel} 今天完成` : `已完成第 ${detail.progress.playCount} 遍`,
+      title: detail.progress.completedToday ? `${normalizedTask.categoryLabel} 今天完成` : `已完成第 ${detail.progress.playCount} 遍`,
       icon: 'none'
     });
   }

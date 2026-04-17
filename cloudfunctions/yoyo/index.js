@@ -229,8 +229,8 @@ const songTasks = [];
 const songPlaceholder = {
   taskId: 'song-pending',
   category: 'song',
-  title: '每日歌曲',
-  subtitle: '检查云端歌曲目录',
+  title: 'Daily Song',
+  subtitle: '检查云端 Songs 目录',
   audioUrl: '',
   audioCloudPath: '',
   audioFileId: '',
@@ -941,7 +941,7 @@ const CATEGORY_ORDER = ['peppa', 'unlock1', 'song'];
 const CATEGORY_LABELS = {
   peppa: 'Peppa',
   unlock1: 'Unlock 1',
-  song: '歌曲'
+  song: 'Songs'
 };
 
 function getCatalog(category) {
@@ -998,7 +998,7 @@ function getTaskPresentation(task) {
   }
   return {
     displayTitle: 'Daily Song',
-    displaySubtitle: '等待歌曲音频',
+      displaySubtitle: '等待 Songs 音频',
     coverVariant: 'song',
     coverBadge: 'Song'
   };
@@ -1024,8 +1024,8 @@ function getTaskReward(category, progress, task) {
   }
   return {
     rewardBadge: progress && progress.completedToday ? 'SING STAR' : `SONG ${nextStep}`,
-    rewardTitle: progress && progress.completedToday ? '歌曲小星星到手了' : '歌曲星星线',
-    rewardCopy: progress && progress.completedToday ? '今天这首歌已经完成。' : ((task && task.syncGranularity === 'line') ? '这条歌曲按句级文本同步，先把整句节奏听稳。' : '放入歌曲后就会开始轮换。')
+    rewardTitle: progress && progress.completedToday ? 'Songs 小星星到手了' : 'Songs 星星线',
+    rewardCopy: progress && progress.completedToday ? '今天这首歌已经完成。' : ((task && task.syncGranularity === 'line') ? '这条 Songs 按句级文本同步，先把整句节奏听稳。' : '放入 Songs 后就会开始轮换。')
   };
 }
 
@@ -1061,12 +1061,12 @@ function decorateTask(task, progress, category) {
       isPendingAsset: true,
       note: category === 'unlock1'
         ? 'Unlock1 音频暂时未就绪，先检查训练池或云目录。'
-        : '把歌曲音频放进来后，这里就会开始轮换。',
+        : '把 Songs 音频放进来后，这里就会开始轮换。',
       rewardBadge: category === 'unlock1' ? 'UNLOCK 1' : 'SONG 1',
-      rewardTitle: category === 'unlock1' ? '学习任务线' : '歌曲星星线',
+      rewardTitle: category === 'unlock1' ? '学习任务线' : 'Songs 星星线',
       rewardCopy: category === 'unlock1'
         ? 'Unlock1 素材恢复后，这条奖励线会继续推进。'
-        : '把歌曲音频和 bundle 放进来后，这条奖励线就会亮起来。'
+        : '把 Songs 音频和 bundle 放进来后，这条奖励线就会亮起来。'
     });
   }
   const base = getTaskPresentation(task);

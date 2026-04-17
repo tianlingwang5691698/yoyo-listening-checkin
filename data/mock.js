@@ -142,8 +142,8 @@ const songTasks = [];
 const songPlaceholder = {
   taskId: 'song-pending',
   category: 'song',
-  title: '每日歌曲',
-  subtitle: '检查云端歌曲目录',
+  title: 'Daily Song',
+  subtitle: '检查云端 Songs 目录',
   audioUrl: '',
   audioCloudPath: '',
   audioFileId: '',

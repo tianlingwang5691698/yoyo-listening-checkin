@@ -36,6 +36,25 @@
     </view>
   </view>
 
+  <view class="program-panel card">
+    <view class="row-between program-head">
+      <view>
+        <view class="section-title">今日节目路径</view>
+        <view class="section-copy">先剧情，再体系，最后用 Songs 收束节奏。</view>
+      </view>
+      <view class="pill">3 条线</view>
+    </view>
+    <view class="program-rail">
+      <block wx:for="{{programSteps}}" wx:key="key">
+        <view class="program-step tone-{{item.tone}}">
+          <view class="program-order">{{item.orderText}}</view>
+          <view class="program-title">{{item.title}}</view>
+          <view class="program-copy">{{item.copy}}</view>
+        </view>
+      </block>
+    </view>
+  </view>
+
   <view class="assignment card">
     <view class="row-between">
       <view>
