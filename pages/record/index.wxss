@@ -1,7 +1,5 @@
 .record-hero {
-  background:
-    radial-gradient(circle at 82% 12%, rgba(239, 124, 85, 0.14), transparent 28%),
-    linear-gradient(135deg, #fff8ee 0%, #fffdf8 100%);
+  background: var(--surface);
 }
 
 .record-hero-top {
@@ -79,7 +77,7 @@
   margin-top: 28rpx;
   padding: 30rpx;
   border-radius: 32rpx;
-  background: linear-gradient(135deg, #edf9ef 0%, #fff8ea 100%);
+  background: #fbf8f2;
 }
 
 .metric-value {
@@ -197,7 +195,7 @@
 }
 
 .catchup {
-  background: linear-gradient(135deg, #edfff9 0%, #fffdf2 100%);
+  background: var(--surface);
 }
 
 .catchup-row {
@@ -255,7 +253,7 @@
 }
 
 .quote-card {
-  background: linear-gradient(135deg, #f1ffed 0%, #fffef2 100%);
+  background: var(--surface);
 }
 
 .quote-text {

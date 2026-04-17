@@ -2,12 +2,12 @@
   <view class="record-hero product-hero">
     <view class="record-hero-top">
       <view>
-        <view class="record-eyebrow">GROWTH</view>
-        <view class="record-title">成长正在发生</view>
+        <view class="record-eyebrow">成长</view>
+        <view class="record-title">学习成果</view>
       </view>
       <view class="status-badge">{{syncMode === 'cloud' ? '已同步' : '本地状态'}}</view>
     </view>
-    <view class="section-copy">把每天一小段听力，慢慢变成稳定的英语节奏。</view>
+    <view class="section-copy">连续一点点，就是长期的变化。</view>
     <view class="sync-debug {{syncMode === 'cloud' ? 'is-cloud' : 'is-local'}}" wx:if="{{showCloudDebug && syncDebug && syncDebug.show}}">
       {{syncDebug.text}}
     </view>
@@ -47,8 +47,8 @@
   <view class="calendar-card section-panel">
     <view class="row-between">
       <view>
-        <view class="section-title">本月听力热力图</view>
-        <view class="section-copy">颜色越深，表示当天完成记录越多。</view>
+        <view class="section-title">本月</view>
+        <view class="section-copy">点亮的日期会留在这里。</view>
       </view>
       <view class="pill">{{stats.completedDays || 0}} 天</view>
     </view>
@@ -76,9 +76,9 @@
   <view class="catchup section-panel">
     <view class="row-between">
       <view>
-        <view class="section-title">追赶任务</view>
+        <view class="section-title">追赶</view>
         <view class="section-copy" wx:if="{{catchupState.canCatchup}}">
-          完成这一批真实任务后，会点亮 {{catchupState.missedDate}}。
+          完成真实任务后点亮 {{catchupState.missedDate}}。
         </view>
         <view class="section-copy" wx:else>
           {{catchupState.reason === 'finish-current-plan-first' ? '先完成今天计划，之后才能追赶落下日期。' : catchupState.reason === 'catchup-used-today' ? '今天已经追赶过一批，明天继续。' : '目前没有需要追赶的日期。'}}
@@ -100,7 +100,7 @@
   </view>
 
   <view class="quote-card section-panel">
-    <view class="section-title">今日鼓励</view>
+    <view class="section-title">鼓励</view>
     <view class="quote-text">{{quoteText}}</view>
     <view class="quote-badge">{{stats.streakDays > 6 ? '本周之星' : stats.streakDays > 0 ? '继续加油' : '今天开始'}}</view>
   </view>

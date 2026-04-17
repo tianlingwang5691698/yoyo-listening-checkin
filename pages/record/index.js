@@ -95,7 +95,7 @@ function buildCatchupPresentation(catchupState) {
   }
   if (state.reason === 'finish-current-plan-first') {
     return {
-      catchupStatusLabel: '先完成当前计划',
+      catchupStatusLabel: '先完成今日',
       catchupStatusClass: 'is-warn'
     };
   }

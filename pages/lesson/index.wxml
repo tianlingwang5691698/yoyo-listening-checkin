@@ -16,34 +16,23 @@
       </block>
     </view>
     <view class="hero-meta">
-      <text>每天 3 遍</text>
+      <text>{{progress.currentPass}} / {{progress.repeatTarget}}</text>
       <text>{{transcriptLines.length ? (transcriptSyncGranularity === 'line' ? '句级文本' : '逐词文本') : task.isPendingAsset ? '等待音频' : '纯听力'}}</text>
       <text>{{task.completedToday ? '今天已完成' : '今天进行中'}}</text>
-    </view>
-    <view class="lesson-pass-card">
-      <view>
-        <view class="pass-label">当前遍数</view>
-        <view class="pass-value">{{progress.currentPass}} / {{progress.repeatTarget}}</view>
-      </view>
-      <view class="pass-copy">{{progress.playStepText}} 已完成</view>
     </view>
   </view>
 
   <view class="section-panel training-card">
-    <view class="section-title">今天的三遍节奏</view>
-    <view class="section-copy">{{progress.currentPass < progress.repeatTarget ? (task.transcriptTrackId ? '这三遍都可以边听边看文本，先把这一遍稳稳听完。' : '这三遍先按纯听力推进，后面再补文本高亮。') : (task.transcriptTrackId ? '最后一遍也可以顺着文本完整过一遍。' : '最后一遍先按纯听力完成。')}}</view>
+    <view class="section-title">三遍节奏</view>
     <view class="training-steps">
       <view class="training-step {{progress.playCount >= 1 ? 'is-done' : 'is-current'}}">
-        <view class="training-index">01</view>
-        <view class="training-text">第 1 遍{{task.transcriptTrackId ? ' + 文本' : ''}}</view>
+        <view class="training-index">1</view>
       </view>
       <view class="training-step {{progress.playCount >= 2 ? 'is-done' : progress.playCount >= 1 ? 'is-current' : ''}}">
-        <view class="training-index">02</view>
-        <view class="training-text">第 2 遍{{task.transcriptTrackId ? ' + 文本' : ''}}</view>
+        <view class="training-index">2</view>
       </view>
       <view class="training-step {{progress.playCount >= 3 ? 'is-done' : progress.playCount >= 2 ? 'is-current' : ''}}">
-        <view class="training-index">03</view>
-        <view class="training-text">第 3 遍{{task.transcriptTrackId ? ' + 文本' : ''}}</view>
+        <view class="training-index">3</view>
       </view>
     </view>
   </view>
@@ -129,30 +118,6 @@
     </view>
   </view>
 
-  <view class="section-panel quest-card quest-{{task.category}}">
-    <view class="row-between quest-top">
-      <view>
-        <view class="section-title">这一项的奖励线</view>
-        <view class="section-copy">完成 3 遍，就像过完今天这一关。</view>
-      </view>
-      <view class="pill">{{task.rewardBadge}}</view>
-    </view>
-    <view class="quest-title">{{task.rewardTitle}}</view>
-    <view class="quest-copy">{{task.rewardCopy}}</view>
-    <view class="quest-track">
-      <view class="quest-node {{progress.playCount >= 1 ? 'is-on' : ''}}"></view>
-      <view class="quest-line {{progress.playCount >= 1 ? 'is-on' : ''}}"></view>
-      <view class="quest-node {{progress.playCount >= 2 ? 'is-on' : ''}}"></view>
-      <view class="quest-line {{progress.textUnlocked ? 'is-on' : ''}}"></view>
-      <view class="quest-node {{task.completedToday ? 'is-on is-final' : progress.textUnlocked ? 'is-current is-final' : 'is-final'}}"></view>
-    </view>
-    <view class="quest-labels">
-      <view>盲听 1</view>
-      <view>盲听 2</view>
-      <view>文本通关</view>
-    </view>
-  </view>
-
   <view class="section-panel source-card" wx:if="{{scriptSource}}">
     <view class="section-title">文本来源</view>
     <view class="section-copy">有文本的条目会从这里同步显示出来。</view>
@@ -162,7 +127,7 @@
   <view class="section-panel transcript-card">
     <view class="row-between transcript-header">
       <view>
-        <view class="section-title">同步文本</view>
+        <view class="section-title">文本</view>
         <view class="section-copy">
           {{transcriptLines.length ? (transcriptSyncGranularity === 'line' ? '现在可以边听边看句级文本。' : '现在可以边听边看文本。') : task.transcriptStatus === 'pending' ? '这条的逐句高亮正在准备中，先按纯听力完成也可以。' : '这条音频目前没有可用文本，也可以照常完成。'}}
         </view>
