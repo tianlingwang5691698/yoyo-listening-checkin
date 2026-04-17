@@ -1266,13 +1266,19 @@ function getUserScope(ctx) {
 }
 
 async function getProgressRecord(scope, category, date) {
-  const progressId = `${scope.userId}_${scope.childId}_${date}_${category}`;
+  const progressId = `${scope.familyId}_${scope.childId}_${date}_${category}`;
   const res = await db.collection('dailyTaskProgress').where({ progressId }).limit(1).get();
   return res.data[0] || null;
 }
 
 async function saveProgressRecord(record) {
-  const existing = await db.collection('dailyTaskProgress').where({ progressId: record.progressId }).limit(1).get();
+  const existing = await db.collection('dailyTaskProgress').where({
+    familyId: record.familyId,
+    childId: record.childId,
+    date: record.date,
+    category: record.category,
+    taskId: record.taskId
+  }).limit(1).get();
   if (existing.data[0]) {
     await db.collection('dailyTaskProgress').doc(existing.data[0]._id).update({ data: record });
   } else {
@@ -1282,14 +1288,14 @@ async function saveProgressRecord(record) {
 
 async function getChildProgressRecords(scope) {
   return (await db.collection('dailyTaskProgress').where({
-    userId: scope.userId,
+    familyId: scope.familyId,
     childId: scope.childId
   }).get()).data;
 }
 
 async function getCheckins(scope) {
   return (await db.collection('dailyCheckins').where({
-    userId: scope.userId,
+    familyId: scope.familyId,
     childId: scope.childId
   }).get()).data;
 }
@@ -1347,6 +1353,16 @@ function getPlanPhase(dayIndex) {
 function getPlanDayIndex(checkins) {
   const completedDays = Array.isArray(checkins) ? checkins.length : 0;
   return (completedDays % TOTAL_PLAN_DAYS) + 1;
+}
+
+function getPlanDayIndexForDate(checkins, date) {
+  const records = Array.isArray(checkins) ? checkins : [];
+  const sameDay = records.find((item) => item.date === date && item.planDayIndex);
+  if (sameDay) {
+    return Number(sameDay.planDayIndex) || 1;
+  }
+  const previousCount = records.filter((item) => String(item.date || '') < date).length;
+  return (previousCount % TOTAL_PLAN_DAYS) + 1;
 }
 
 function getPlanCatalog(category) {
@@ -1493,8 +1509,8 @@ async function maybeCreateCheckin(scope, progressRecords, date) {
     return !!progress.completedToday;
   });
   if (!allDone) return null;
-  const recordId = `${scope.userId}_${scope.childId}_${date}`;
-  const existing = checkins.find((item) => item.recordId === recordId);
+  const recordId = `${scope.familyId}_${scope.childId}_${date}`;
+  const existing = checkins.find((item) => item.recordId === recordId || item.date === date);
   const streakSnapshot = computeStreak(checkins.filter((item) => item.recordId !== recordId), date) + (existing ? 0 : 1);
   const next = {
     recordId,
@@ -1522,7 +1538,7 @@ async function maybeCreateCheckin(scope, progressRecords, date) {
 async function upsertDailyReport(scope, date) {
   const progressRecords = await getChildProgressRecords(scope);
   const checkins = await getCheckins(scope);
-  const todayPlan = buildPlanForDay(getPlanDayIndex(checkins));
+  const todayPlan = buildPlanForDay(getPlanDayIndexForDate(checkins, date));
   const groupedTasks = CATEGORY_ORDER.map((category) => ({
     category,
     tasks: decoratePlannedTasks(progressRecords, scope.childId, category, date, todayPlan.byCategory[category] || [])
@@ -1537,7 +1553,7 @@ async function upsertDailyReport(scope, date) {
     completedToday: !!task.completedToday
   })));
   const report = {
-    reportId: `${scope.userId}_${scope.childId}_${date}`,
+    reportId: `${scope.familyId}_${scope.childId}_${date}`,
     userId: scope.userId,
     openId: scope.openId,
     memberId: scope.memberId,
@@ -1564,7 +1580,11 @@ async function upsertDailyReport(scope, date) {
   if (subscribers.length) {
     report.pushStatus = 'subscription-ready';
   }
-  const existing = await db.collection('dailyReports').where({ reportId: report.reportId }).limit(1).get();
+  const existing = await db.collection('dailyReports').where({
+    familyId: scope.familyId,
+    childId: scope.childId,
+    date
+  }).limit(1).get();
   if (existing.data[0]) {
     await db.collection('dailyReports').doc(existing.data[0]._id).update({ data: report });
   } else {
@@ -1713,7 +1733,7 @@ async function handleAction(event, context) {
     }
     const nextPlayCount = Math.min((task.playCount || 0) + 1, task.repeatTarget);
     const record = {
-      progressId: `${scope.userId}_${scope.childId}_${today}_${category}_${task.taskId}`,
+      progressId: `${scope.familyId}_${scope.childId}_${today}_${category}_${task.taskId}`,
       userId: scope.userId,
       openId: scope.openId,
       memberId: scope.memberId,
