@@ -1,11 +1,3 @@
-.record-hero,
-.calendar-card,
-.catchup,
-.quote-card,
-.total-card {
-  padding: var(--space-card);
-}
-
 .record-hero {
   background:
     radial-gradient(circle at 82% 12%, rgba(239, 124, 85, 0.14), transparent 28%),
@@ -127,13 +119,6 @@
 
 .record-stats {
   margin-top: 18rpx;
-}
-
-.calendar-card,
-.catchup,
-.quote-card,
-.total-card {
-  margin-top: 24rpx;
 }
 
 .week-grid,
@@ -296,28 +281,9 @@
   font-weight: 800;
 }
 
-.total-list {
-  margin-top: 18rpx;
-  border-radius: 28rpx;
-  overflow: hidden;
-  background: rgba(255, 255, 255, 0.62);
-}
-
-.total-row {
-  display: flex;
-  justify-content: space-between;
-  gap: 20rpx;
-  padding: 24rpx;
-  border-bottom: 1rpx solid var(--border-soft);
-  color: var(--text-muted);
-  font-size: 25rpx;
-}
-
-.total-row:last-child {
-  border-bottom: none;
-}
-
-.total-value {
-  color: var(--text-main);
-  font-weight: 800;
+.total-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16rpx;
+  margin-top: 20rpx;
 }

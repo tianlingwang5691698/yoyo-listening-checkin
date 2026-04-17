@@ -1,9 +1,7 @@
 .lesson-hero {
   position: relative;
   overflow: hidden;
-  padding: 34rpx 30rpx 110rpx;
-  border-radius: 36rpx;
-  box-shadow: 0 24rpx 60rpx rgba(141, 102, 76, 0.16);
+  padding-bottom: 34rpx;
 }
 
 .tone-sunrise {
@@ -49,16 +47,13 @@
   z-index: 1;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  gap: 18rpx;
 }
 
 .lesson-title {
   position: relative;
   z-index: 1;
-  margin-top: 18rpx;
-  font-size: 50rpx;
-  line-height: 1.12;
-  font-weight: 800;
-  color: #2f241f;
 }
 
 .lesson-copy {
@@ -107,52 +102,99 @@
   color: rgba(47, 36, 31, 0.72);
 }
 
-.player-card,
-.progress-card,
-.quest-card,
-.source-card,
-.transcript-card,
-.feedback-card,
-.result-card,
-.history-card {
-  margin-top: -78rpx;
-  padding: 28rpx;
-}
-
-.progress-card,
-.player-card,
-.quest-card,
-.source-card,
-.transcript-card,
-.feedback-card,
-.result-card,
-.history-card {
-  margin-top: 22rpx;
-}
-
-.step-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12rpx;
-  margin-top: 22rpx;
-}
-
-.step-pill {
-  padding: 12rpx 18rpx;
+.hero-meta text {
+  min-height: 48rpx;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 16rpx;
   border-radius: 999rpx;
-  background: #f4efea;
-  color: #8c7e72;
+  background: rgba(255, 255, 255, 0.62);
+  font-weight: 700;
+}
+
+.lesson-pass-card {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20rpx;
+  margin-top: 24rpx;
+  padding: 24rpx;
+  border-radius: 30rpx;
+  background: rgba(255, 255, 255, 0.68);
+}
+
+.pass-label {
+  color: var(--text-muted);
   font-size: 22rpx;
 }
 
-.step-pill.is-current {
-  background: #fff2e7;
-  color: #d96a45;
+.pass-value {
+  margin-top: 8rpx;
+  color: var(--text-main);
+  font-size: 44rpx;
+  line-height: 1;
+  font-weight: 900;
 }
 
-.step-pill.is-done {
-  background: #edf9ef;
-  color: #5f9d66;
+.pass-copy {
+  color: var(--text-muted);
+  font-size: 23rpx;
+  font-weight: 800;
+}
+
+.player-card,
+.quest-card,
+.source-card,
+.transcript-card,
+.result-card,
+.history-card {
+  margin-top: 24rpx;
+}
+
+.training-card {
+  background: linear-gradient(135deg, #fffdf8 0%, #fff7ef 100%);
+}
+
+.training-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14rpx;
+  margin-top: 22rpx;
+}
+
+.training-step {
+  min-width: 0;
+  min-height: 138rpx;
+  padding: 20rpx 16rpx;
+  border-radius: 26rpx;
+  border: 1rpx solid var(--border-soft);
+  background: rgba(255, 255, 255, 0.66);
+}
+
+.training-step.is-current {
+  background: var(--accent-soft);
+  border-color: rgba(239, 124, 85, 0.26);
+}
+
+.training-step.is-done {
+  background: var(--growth-soft);
+  border-color: rgba(102, 185, 133, 0.3);
+}
+
+.training-index {
+  color: var(--text-soft);
+  font-size: 20rpx;
+  font-weight: 900;
+}
+
+.training-text {
+  margin-top: 14rpx;
+  color: var(--text-main);
+  font-size: 24rpx;
+  line-height: 1.35;
+  font-weight: 900;
 }
 
 .video-player {
@@ -309,15 +351,10 @@
 }
 
 .player-progress-track {
-  height: 16rpx;
-  border-radius: 999rpx;
-  overflow: hidden;
   background: rgba(255, 255, 255, 0.54);
 }
 
 .player-progress-fill {
-  height: 100%;
-  border-radius: 999rpx;
   background: linear-gradient(135deg, #ffc86c 0%, #f58a63 100%);
 }
 

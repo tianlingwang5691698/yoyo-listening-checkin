@@ -79,13 +79,39 @@ function buildMetric(stats, mode) {
   };
 }
 
+function buildCatchupPresentation(catchupState) {
+  const state = catchupState || {};
+  if (state.canCatchup) {
+    return {
+      catchupStatusLabel: '可追赶',
+      catchupStatusClass: ''
+    };
+  }
+  if (state.reason === 'catchup-used-today') {
+    return {
+      catchupStatusLabel: '今日已用',
+      catchupStatusClass: 'is-warn'
+    };
+  }
+  if (state.reason === 'finish-current-plan-first') {
+    return {
+      catchupStatusLabel: '先完成当前计划',
+      catchupStatusClass: 'is-warn'
+    };
+  }
+  return {
+    catchupStatusLabel: '无需追赶',
+    catchupStatusClass: 'is-muted'
+  };
+}
+
 function buildDerived(state, nextMode) {
   const mode = nextMode || state.metricMode || 'streak';
   return Object.assign({
     metricMode: mode,
     monthHeatmap: buildMonthHeatmap(state.heatmap),
     quoteText: getQuote(state.stats)
-  }, buildMetric(state.stats, mode));
+  }, buildMetric(state.stats, mode), buildCatchupPresentation(state.catchupState));
 }
 
 Page({
@@ -100,6 +126,8 @@ Page({
     heroMetricLabel: '连续打卡',
     quoteText: '',
     planDayIndex: 1,
+    catchupStatusLabel: '无需追赶',
+    catchupStatusClass: 'is-muted',
     catchupState: {
       canCatchup: false,
       missedDate: '',

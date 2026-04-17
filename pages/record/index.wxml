@@ -1,5 +1,5 @@
 <view class="page-shell record-page">
-  <view class="record-hero card">
+  <view class="record-hero product-hero">
     <view class="record-hero-top">
       <view>
         <view class="record-eyebrow">GROWTH</view>
@@ -29,22 +29,22 @@
     </view>
 
     <view class="data-grid record-stats">
-      <view class="data-cell">
-        <text class="data-value">{{stats.streakDays || 0}}</text>
-        <text class="data-label">连续天数</text>
+      <view class="stat-tile">
+        <text class="stat-tile-value">{{stats.streakDays || 0}}</text>
+        <text class="stat-tile-label">连续天数</text>
       </view>
-      <view class="data-cell">
-        <text class="data-value">{{stats.completedDays || 0}}</text>
-        <text class="data-label">累计打卡</text>
+      <view class="stat-tile">
+        <text class="stat-tile-value">{{stats.completedDays || 0}}</text>
+        <text class="stat-tile-label">累计打卡</text>
       </view>
-      <view class="data-cell">
-        <text class="data-value">{{stats.totalMinutes || 0}}</text>
-        <text class="data-label">累计分钟</text>
+      <view class="stat-tile">
+        <text class="stat-tile-value">{{stats.totalMinutes || 0}}</text>
+        <text class="stat-tile-label">累计分钟</text>
       </view>
     </view>
   </view>
 
-  <view class="calendar-card card">
+  <view class="calendar-card section-panel">
     <view class="row-between">
       <view>
         <view class="section-title">本月听力热力图</view>
@@ -73,7 +73,7 @@
     </view>
   </view>
 
-  <view class="catchup card">
+  <view class="catchup section-panel">
     <view class="row-between">
       <view>
         <view class="section-title">追赶任务</view>
@@ -84,7 +84,7 @@
           {{catchupState.reason === 'finish-current-plan-first' ? '先完成今天计划，之后才能追赶落下日期。' : catchupState.reason === 'catchup-used-today' ? '今天已经追赶过一批，明天继续。' : '目前没有需要追赶的日期。'}}
         </view>
       </view>
-      <view class="status-badge {{catchupState.canCatchup ? '' : 'is-muted'}}">{{catchupState.canCatchup ? '可追赶' : '已安排'}}</view>
+      <view class="status-badge {{catchupStatusClass}}">{{catchupStatusLabel}}</view>
     </view>
     <block wx:if="{{catchupState.canCatchup}}">
       <block wx:for="{{catchupTasks}}" wx:key="taskId">
@@ -99,26 +99,30 @@
     </block>
   </view>
 
-  <view class="quote-card card">
+  <view class="quote-card section-panel">
     <view class="section-title">今日鼓励</view>
     <view class="quote-text">{{quoteText}}</view>
     <view class="quote-badge">{{stats.streakDays > 6 ? '本周之星' : stats.streakDays > 0 ? '继续加油' : '今天开始'}}</view>
   </view>
 
-  <view class="total-card card">
+  <view class="total-card section-panel">
     <view class="section-title">累计数据</view>
-    <view class="total-list">
-      <view class="total-row">
-        <text>累计分钟</text>
-        <text class="total-value">{{stats.totalMinutes || 0}} 分钟</text>
+    <view class="total-grid">
+      <view class="stat-tile">
+        <view class="stat-tile-value">{{stats.completedDays || 0}}</view>
+        <view class="stat-tile-label">累计天数</view>
       </view>
-      <view class="total-row">
-        <text>完成任务</text>
-        <text class="total-value">{{stats.completedTasks || 0}} 项</text>
+      <view class="stat-tile">
+        <view class="stat-tile-value">{{stats.totalMinutes || 0}}</view>
+        <view class="stat-tile-label">累计分钟</view>
       </view>
-      <view class="total-row">
-        <text>当前计划日</text>
-        <text class="total-value">Day {{planDayIndex || 1}}</text>
+      <view class="stat-tile">
+        <view class="stat-tile-value">{{stats.completedTasks || 0}}</view>
+        <view class="stat-tile-label">完成任务</view>
+      </view>
+      <view class="stat-tile">
+        <view class="stat-tile-value">Day {{planDayIndex || 1}}</view>
+        <view class="stat-tile-label">当前计划日</view>
       </view>
     </view>
   </view>
