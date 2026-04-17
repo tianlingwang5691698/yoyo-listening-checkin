@@ -87,6 +87,9 @@ Page({
   onLoad(query) {
     this.category = query.category || 'peppa';
     this.taskId = query.taskId || '';
+    this.planRunType = query.planRunType || 'normal';
+    this.targetDate = query.targetDate || '';
+    this.planDayIndex = query.planDayIndex || '';
     this.pendingAutoPlay = false;
     this.innerAudioContext = wx.createInnerAudioContext();
     this.innerAudioContext.obeyMuteSwitch = false;
@@ -301,8 +304,15 @@ Page({
     }));
   },
   async refreshPage() {
-    const detail = await store.getTaskDetail(this.category, this.taskId);
+    const detail = await store.getTaskDetail(this.category, this.taskId, {
+      planRunType: this.planRunType,
+      targetDate: this.targetDate,
+      planDayIndex: this.planDayIndex
+    });
     this.taskId = detail && detail.task ? detail.task.taskId || this.taskId : this.taskId;
+    this.planRunType = detail && detail.planRunType ? detail.planRunType : this.planRunType;
+    this.targetDate = detail && detail.targetDate ? detail.targetDate : this.targetDate;
+    this.planDayIndex = detail && detail.planDayIndex ? String(detail.planDayIndex) : this.planDayIndex;
     const previewAudio = buildCurrentAudio(detail.task, '', 'idle');
     this.setData(page.buildCloudPageData(this.data, {
       child: detail.child,
@@ -491,9 +501,15 @@ Page({
     const detail = await store.markTaskListened({
       childId: this.data.child.childId,
       category: this.category,
-      taskId: this.taskId
+      taskId: this.taskId,
+      planRunType: this.planRunType,
+      targetDate: this.targetDate,
+      planDayIndex: this.planDayIndex
     });
     this.taskId = detail && detail.task ? detail.task.taskId || this.taskId : this.taskId;
+    this.planRunType = detail && detail.planRunType ? detail.planRunType : this.planRunType;
+    this.targetDate = detail && detail.targetDate ? detail.targetDate : this.targetDate;
+    this.planDayIndex = detail && detail.planDayIndex ? String(detail.planDayIndex) : this.planDayIndex;
     this.setData(page.buildCloudPageData(this.data, {
       child: detail.child,
       task: detail.task,

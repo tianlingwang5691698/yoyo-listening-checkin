@@ -1365,6 +1365,52 @@ function getPlanDayIndexForDate(checkins, date) {
   return (previousCount % TOTAL_PLAN_DAYS) + 1;
 }
 
+function getDatePart(value) {
+  return String(value || '').slice(0, 10);
+}
+
+function getCompletedDateSet(checkins) {
+  return new Set((Array.isArray(checkins) ? checkins : []).map((item) => item.date).filter(Boolean));
+}
+
+function getEarliestMissedDate(checkins, today, planStartDate) {
+  const completedDates = getCompletedDateSet(checkins);
+  let cursor = planStartDate || today;
+  while (cursor < today) {
+    if (!completedDates.has(cursor)) {
+      return cursor;
+    }
+    cursor = addDays(cursor, 1);
+  }
+  return '';
+}
+
+function hasCatchupToday(checkins, today) {
+  return (Array.isArray(checkins) ? checkins : []).some((item) => (
+    item.planRunType === 'catchup' && getDatePart(item.completedAt) === today
+  ));
+}
+
+function getPlanStartDate(ctx, today) {
+  return getDatePart((ctx && ctx.family && ctx.family.createdAt) || today) || today;
+}
+
+function buildCatchupState(checkins, today, planStartDate, todayDone) {
+  const missedDate = getEarliestMissedDate(checkins, today, planStartDate);
+  const usedToday = hasCatchupToday(checkins, today);
+  const canCatchup = !!(todayDone && missedDate && !usedToday);
+  const planDayIndex = canCatchup ? getPlanDayIndex(checkins) : 0;
+  return {
+    canCatchup,
+    missedDate,
+    planDayIndex,
+    usedToday,
+    reason: canCatchup
+      ? 'ready'
+      : (!todayDone ? 'finish-current-plan-first' : usedToday ? 'catchup-used-today' : 'no-missed-date')
+  };
+}
+
 function getPlanCatalog(category) {
   return getCatalog(category).slice(0, PLAN_SLOT_COUNT);
 }
@@ -1412,6 +1458,16 @@ function buildPlanForDay(dayIndex) {
   };
 }
 
+function decoratePlanTasks(progressRecords, childId, date, plan, options = {}) {
+  return CATEGORY_ORDER.flatMap((category) => (
+    decoratePlannedTasks(progressRecords, childId, category, date, plan.byCategory[category] || [], {
+      planRunType: options.planRunType || 'normal',
+      targetDate: date,
+      planDayIndex: plan.dayIndex
+    })
+  ));
+}
+
 function buildEmptyProgress() {
   return {
     playCount: 0,
@@ -1444,7 +1500,7 @@ function getTaskProgressForDate(progressRecords, childId, category, date, taskId
   return buildEmptyProgress();
 }
 
-function decoratePlannedTasks(progressRecords, childId, category, date, tasks) {
+function decoratePlannedTasks(progressRecords, childId, category, date, tasks, options = {}) {
   return tasks.map((task, index) => {
     const progress = getTaskProgressForDate(
       progressRecords,
@@ -1454,7 +1510,11 @@ function decoratePlannedTasks(progressRecords, childId, category, date, tasks) {
       task.taskId,
       { allowLegacyRecord: tasks.length === 1 && index === 0 }
     );
-    return decorateTask(task, progress, category);
+    return Object.assign({}, decorateTask(task, progress, category), {
+      planRunType: options.planRunType || 'normal',
+      targetDate: options.targetDate || date,
+      planDayIndex: options.planDayIndex || task.planDayIndex || 0
+    });
   });
 }
 
@@ -1492,9 +1552,11 @@ function buildStats(progressRecords, checkins, childId) {
   };
 }
 
-async function maybeCreateCheckin(scope, progressRecords, date) {
+async function maybeCreateCheckin(scope, progressRecords, date, options = {}) {
   const checkins = await getCheckins(scope);
-  const todayPlan = buildPlanForDay(getPlanDayIndex(checkins));
+  const planRunType = options.planRunType || 'normal';
+  const planDayIndex = Number(options.planDayIndex || 0) || getPlanDayIndex(checkins);
+  const todayPlan = buildPlanForDay(planDayIndex);
   const plannedTasks = todayPlan.flatTasks;
   const activeTasks = plannedTasks.filter((task) => !task.isPendingAsset);
   const allDone = activeTasks.every((task, index) => {
@@ -1524,7 +1586,9 @@ async function maybeCreateCheckin(scope, progressRecords, date) {
     streakSnapshot,
     completedCategories: Array.from(new Set(activeTasks.map((task) => task.category))),
     planDayIndex: todayPlan.dayIndex,
-    planPhase: todayPlan.phase.key
+    planPhase: todayPlan.phase.key,
+    planRunType,
+    makeupForDate: planRunType === 'catchup' ? date : ''
   };
   if (existing) {
     await db.collection('dailyCheckins').doc(existing._id).update({ data: next });
@@ -1541,7 +1605,11 @@ async function upsertDailyReport(scope, date) {
   const todayPlan = buildPlanForDay(getPlanDayIndexForDate(checkins, date));
   const groupedTasks = CATEGORY_ORDER.map((category) => ({
     category,
-    tasks: decoratePlannedTasks(progressRecords, scope.childId, category, date, todayPlan.byCategory[category] || [])
+    tasks: decoratePlannedTasks(progressRecords, scope.childId, category, date, todayPlan.byCategory[category] || [], {
+      planRunType: 'normal',
+      targetDate: date,
+      planDayIndex: todayPlan.dayIndex
+    })
   }));
   const items = groupedTasks.flatMap((group) => group.tasks.map((task) => ({
     category: group.category,
@@ -1601,14 +1669,20 @@ async function getDashboardData(ctx) {
   const planDayIndex = getPlanDayIndex(checkins);
   const todayPlan = buildPlanForDay(planDayIndex);
   const categorySummaries = CATEGORY_ORDER.map((category) => {
-    const plannedTasks = decoratePlannedTasks(progressRecords, ctx.child.childId, category, today, todayPlan.byCategory[category] || []);
+    const plannedTasks = decoratePlannedTasks(progressRecords, ctx.child.childId, category, today, todayPlan.byCategory[category] || [], {
+      planRunType: 'normal',
+      targetDate: today,
+      planDayIndex: todayPlan.dayIndex
+    });
     return buildCategorySummary(plannedTasks, category);
   });
-  const dailyTasks = CATEGORY_ORDER.flatMap((category) => (
-    decoratePlannedTasks(progressRecords, ctx.child.childId, category, today, todayPlan.byCategory[category] || [])
-  ));
+  const dailyTasks = decoratePlanTasks(progressRecords, ctx.child.childId, today, todayPlan, {
+    planRunType: 'normal'
+  });
   const activeTaskCount = dailyTasks.filter((item) => !item.isPendingAsset).length;
   const completedTaskCountToday = dailyTasks.filter((item) => item.completedToday).length;
+  const todayDone = activeTaskCount > 0 && activeTaskCount === completedTaskCountToday;
+  const catchupState = buildCatchupState(checkins, today, getPlanStartDate(ctx, today), todayDone);
   return {
     user: ctx.user,
     currentUser: ctx.user,
@@ -1628,9 +1702,10 @@ async function getDashboardData(ctx) {
     songTask: categorySummaries.find((item) => item.category === 'song'),
     categorySummaries,
     dailyTasks,
+    catchupState,
     activeTaskCount,
     completedTaskCountToday,
-    allDailyDone: activeTaskCount > 0 && activeTaskCount === completedTaskCountToday
+    allDailyDone: todayDone
   };
 }
 
@@ -1674,14 +1749,35 @@ async function handleAction(event, context) {
   }
   if (event.action === 'getTaskDetail') {
     const dashboard = await getDashboardData(ctx);
-    const categoryTasks = dashboard.dailyTasks.filter((item) => item.category === event.payload.category);
+    let planRunType = String((event.payload && event.payload.planRunType) || 'normal');
+    let targetDate = String((event.payload && event.payload.targetDate) || today).slice(0, 10);
+    if (
+      planRunType === 'catchup'
+      && (!dashboard.catchupState.canCatchup || targetDate !== dashboard.catchupState.missedDate)
+    ) {
+      planRunType = 'normal';
+      targetDate = today;
+    }
+    const targetPlanDayIndex = planRunType === 'catchup'
+      ? Number((event.payload && event.payload.planDayIndex) || 0) || dashboard.catchupState.planDayIndex || dashboard.planDayIndex
+      : dashboard.planDayIndex;
+    const targetPlan = planRunType === 'catchup'
+      ? buildPlanForDay(targetPlanDayIndex)
+      : null;
+    const progressRecords = await getChildProgressRecords(getUserScope(ctx));
+    const categoryTasks = planRunType === 'catchup'
+      ? decoratePlannedTasks(progressRecords, ctx.child.childId, event.payload.category, targetDate, targetPlan.byCategory[event.payload.category] || [], {
+        planRunType: 'catchup',
+        targetDate,
+        planDayIndex: targetPlan.dayIndex
+      })
+      : dashboard.dailyTasks.filter((item) => item.category === event.payload.category);
     const task = categoryTasks.find((item) => item.taskId === event.payload.taskId)
       || categoryTasks.find((item) => !item.completedToday)
       || categoryTasks[0]
       || decorateTask(null, buildEmptyProgress(), event.payload.category);
     const transcriptBundle = await getTranscriptBundle(task);
     const scope = getUserScope(ctx);
-    const progressRecords = await getChildProgressRecords(scope);
     const history = progressRecords
       .filter((item) => item.category === event.payload.category && item.completedToday)
       .map((item) => ({
@@ -1709,8 +1805,10 @@ async function handleAction(event, context) {
       categoryTasks,
       categoryTaskCount: categoryTasks.length,
       categoryCompletedCount: categoryTasks.filter((item) => item.completedToday).length,
-      planDayIndex: dashboard.planDayIndex,
-      planPhaseLabel: dashboard.planPhaseLabel,
+      planDayIndex: targetPlanDayIndex,
+      planPhaseLabel: planRunType === 'catchup' ? (targetPlan.phase.label || dashboard.planPhaseLabel) : dashboard.planPhaseLabel,
+      planRunType,
+      targetDate,
       scriptSource: task.textSource || null,
       transcriptTrack: transcriptBundle.transcriptTrack,
       transcriptLines: transcriptBundle.transcriptLines,
@@ -1723,35 +1821,68 @@ async function handleAction(event, context) {
     const scope = getUserScope(ctx);
     const progressRecords = await getChildProgressRecords(scope);
     const checkins = await getCheckins(scope);
-    const todayPlan = buildPlanForDay(getPlanDayIndex(checkins));
-    const categoryTasks = decoratePlannedTasks(progressRecords, ctx.child.childId, category, today, todayPlan.byCategory[category] || []);
+    const planRunType = String((event.payload && event.payload.planRunType) || 'normal');
+    const targetDate = String((event.payload && event.payload.targetDate) || today).slice(0, 10);
+    if (planRunType === 'catchup') {
+      const normalPlan = buildPlanForDay(getPlanDayIndex(checkins));
+      const normalTasks = decoratePlanTasks(progressRecords, ctx.child.childId, today, normalPlan, {
+        planRunType: 'normal'
+      });
+      const normalDone = normalTasks.length > 0 && normalTasks.every((item) => item.completedToday);
+      const catchupState = buildCatchupState(checkins, today, getPlanStartDate(ctx, today), normalDone);
+      const requestedPlanDayIndex = Number((event.payload && event.payload.planDayIndex) || 0);
+      if (
+        !catchupState.canCatchup
+        || targetDate !== catchupState.missedDate
+        || (requestedPlanDayIndex && requestedPlanDayIndex !== catchupState.planDayIndex)
+      ) {
+        throw new Error('请先完成当前计划后，再追赶一批任务');
+      }
+    }
+    const todayPlan = buildPlanForDay(
+      planRunType === 'catchup'
+        ? (Number((event.payload && event.payload.planDayIndex) || 0) || getPlanDayIndex(checkins))
+        : getPlanDayIndex(checkins)
+    );
+    const categoryTasks = decoratePlannedTasks(progressRecords, ctx.child.childId, category, targetDate, todayPlan.byCategory[category] || [], {
+      planRunType,
+      targetDate,
+      planDayIndex: todayPlan.dayIndex
+    });
     const task = categoryTasks.find((item) => item.taskId === event.payload.taskId)
       || categoryTasks.find((item) => !item.completedToday)
       || categoryTasks[0];
     if (!task || task.isPendingAsset || task.completedToday) {
-      return handleAction({ action: 'getTaskDetail', payload: { category, taskId: event.payload.taskId } }, context);
+      return handleAction({ action: 'getTaskDetail', payload: { category, taskId: event.payload.taskId, planRunType, targetDate, planDayIndex: todayPlan.dayIndex } }, context);
     }
     const nextPlayCount = Math.min((task.playCount || 0) + 1, task.repeatTarget);
     const record = {
-      progressId: `${scope.familyId}_${scope.childId}_${today}_${category}_${task.taskId}`,
+      progressId: `${scope.familyId}_${scope.childId}_${targetDate}_${category}_${task.taskId}`,
       userId: scope.userId,
       openId: scope.openId,
       memberId: scope.memberId,
       familyId: scope.familyId,
       childId: scope.childId,
       category,
-      date: today,
+      date: targetDate,
       taskId: task.taskId,
       playCount: nextPlayCount,
       repeatTarget: task.repeatTarget,
       textUnlocked: nextPlayCount >= task.repeatTarget - 1,
       completedToday: nextPlayCount >= task.repeatTarget,
+      planDayIndex: todayPlan.dayIndex,
+      planRunType,
+      targetDate,
+      makeupForDate: planRunType === 'catchup' ? targetDate : '',
       updatedAt: new Date().toISOString()
     };
     await saveProgressRecord(record);
     const nextProgressRecords = await getChildProgressRecords(scope);
-    await maybeCreateCheckin(scope, nextProgressRecords, today);
-    return handleAction({ action: 'getTaskDetail', payload: { category } }, context);
+    await maybeCreateCheckin(scope, nextProgressRecords, targetDate, {
+      planRunType,
+      planDayIndex: todayPlan.dayIndex
+    });
+    return handleAction({ action: 'getTaskDetail', payload: { category, planRunType, targetDate, planDayIndex: todayPlan.dayIndex } }, context);
   }
   if (event.action === 'getProfileData') {
     const dashboard = await getDashboardData(ctx);
@@ -1769,11 +1900,25 @@ async function handleAction(event, context) {
   }
   if (event.action === 'getHeatmap') {
     const days = Number(event.payload.days || 28);
-    const records = await getCheckins(getUserScope(ctx));
+    const scope = getUserScope(ctx);
+    const records = await getCheckins(scope);
+    const progressRecords = await getChildProgressRecords(scope);
     const counts = {};
     records.forEach((item) => {
       counts[item.date] = (counts[item.date] || 0) + 1;
     });
+    const todayPlan = buildPlanForDay(getPlanDayIndex(records));
+    const todayTasks = decoratePlanTasks(progressRecords, ctx.child.childId, today, todayPlan, {
+      planRunType: 'normal'
+    });
+    const todayDone = todayTasks.length > 0 && todayTasks.every((item) => item.completedToday);
+    const catchupState = buildCatchupState(records, today, getPlanStartDate(ctx, today), todayDone);
+    const catchupPlan = catchupState.canCatchup ? buildPlanForDay(catchupState.planDayIndex) : null;
+    const catchupTasks = catchupPlan
+      ? decoratePlanTasks(progressRecords, ctx.child.childId, catchupState.missedDate, catchupPlan, {
+        planRunType: 'catchup'
+      })
+      : [];
     const heatmap = [];
     for (let i = days - 1; i >= 0; i -= 1) {
       const date = addDays(today, -i);
@@ -1782,10 +1927,16 @@ async function handleAction(event, context) {
         date,
         shortDate: date.slice(5),
         count,
-        intensity: Math.min(count, 3)
+        intensity: Math.min(count, 3),
+        completed: count > 0,
+        isCatchupTarget: catchupState.missedDate === date
       });
     }
-    return { heatmap };
+    return {
+      heatmap,
+      catchupState,
+      catchupTasks
+    };
   }
   if (event.action === 'getParentDashboard') {
     const dashboard = await getDashboardData(ctx);

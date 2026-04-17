@@ -38,6 +38,27 @@
     </view>
   </view>
 
+  <view class="catchup card">
+    <view class="section-title">追赶补卡</view>
+    <view class="section-copy" wx:if="{{catchupState.canCatchup}}">
+      已经完成当前计划，可以追赶一批新任务，完成后会点亮 {{catchupState.missedDate}}。
+    </view>
+    <view class="section-copy" wx:else>
+      {{catchupState.reason === 'finish-current-plan-first' ? '先完成当前计划，完成后如果有落下的日期，就能追赶一批新任务。' : catchupState.reason === 'catchup-used-today' ? '今天已经追赶过一批了，明天再继续。' : '目前没有需要追赶的日期。'}}
+    </view>
+    <block wx:if="{{catchupState.canCatchup}}">
+      <block wx:for="{{catchupTasks}}" wx:key="taskId">
+        <view class="catchup-row {{item.completedToday ? 'is-done' : ''}}" data-category="{{item.category}}" data-task-id="{{item.taskId}}" bindtap="openCatchupTask">
+          <view>
+            <view class="catchup-title">{{item.categoryLabel}} · {{item.displayTitle || item.title}}</view>
+            <view class="catchup-copy">{{item.completedToday ? '已完成' : '点击进入，完成 3 遍后才算追赶成功'}}</view>
+          </view>
+          <view class="catchup-state">{{item.playStepText}}</view>
+        </view>
+      </block>
+    </block>
+  </view>
+
   <view class="sticker card">
     <view class="section-title">今日小奖章</view>
     <view class="section-copy">{{stats.streakDays > 0 ? '已经在坚持了，继续把这份节奏守住。' : '今天把该做的音频听完，就会点亮第一枚小奖章。'}}</view>

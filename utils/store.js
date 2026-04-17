@@ -189,8 +189,8 @@ async function getLevelOverview() {
   });
 }
 
-async function getTaskDetail(category, taskId) {
-  return callCloud('getTaskDetail', { category, taskId }, {
+async function getTaskDetail(category, taskId, options) {
+  return callCloud('getTaskDetail', Object.assign({ category, taskId }, options || {}), {
     user: {},
     currentUser: {},
     currentMember: {},
@@ -216,6 +216,8 @@ async function getTaskDetail(category, taskId) {
     categoryCompletedCount: 0,
     planDayIndex: 1,
     planPhaseLabel: '第1轮',
+    planRunType: 'normal',
+    targetDate: '',
     scriptSource: null,
     transcriptTrack: null,
     transcriptLines: [],
@@ -251,6 +253,8 @@ async function markTaskListened(options) {
     categoryCompletedCount: 0,
     planDayIndex: 1,
     planPhaseLabel: '第1轮',
+    planRunType: 'normal',
+    targetDate: '',
     scriptSource: null,
     transcriptTrack: null,
     transcriptLines: [],
@@ -275,7 +279,15 @@ async function getProfileData() {
 
 async function getHeatmap(days) {
   return callCloud('getHeatmap', { days }, {
-    heatmap: []
+    heatmap: [],
+    catchupState: {
+      canCatchup: false,
+      missedDate: '',
+      planDayIndex: 0,
+      usedToday: false,
+      reason: ''
+    },
+    catchupTasks: []
   });
 }
 

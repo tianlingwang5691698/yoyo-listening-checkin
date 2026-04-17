@@ -1,5 +1,6 @@
 .summary,
 .heatmap,
+.catchup,
 .sticker {
   padding: 30rpx;
 }
@@ -67,8 +68,50 @@
 }
 
 .heatmap,
+.catchup,
 .sticker {
   margin-top: 24rpx;
+}
+
+.catchup {
+  background: linear-gradient(135deg, #edfff9 0%, #fffdf2 100%);
+}
+
+.catchup-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20rpx;
+  align-items: center;
+  margin-top: 18rpx;
+  padding: 22rpx 24rpx;
+  border-radius: 24rpx;
+  background: rgba(255, 255, 255, 0.74);
+}
+
+.catchup-row.is-done {
+  opacity: 0.62;
+}
+
+.catchup-title {
+  font-size: 26rpx;
+  font-weight: 700;
+  color: #2f241f;
+}
+
+.catchup-copy {
+  margin-top: 8rpx;
+  font-size: 22rpx;
+  color: #7d6f64;
+}
+
+.catchup-state {
+  flex-shrink: 0;
+  padding: 10rpx 16rpx;
+  border-radius: 999rpx;
+  background: #15c49a;
+  color: #fff;
+  font-size: 22rpx;
+  font-weight: 800;
 }
 
 .heatmap-grid {
