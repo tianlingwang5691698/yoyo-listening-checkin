@@ -39,30 +39,12 @@
 
   <view class="section-panel player-card">
     <view class="row-between player-header">
-      <view>
-        <view class="section-title type-section-title">播放</view>
-        <view wx:if="{{!task.isPendingAsset}}">
-          <view class="section-copy" wx:if="{{showCloudDebug && currentAudio && currentAudio.cloudPath}}">
-            云路径：{{currentAudio.cloudPath}}
-          </view>
-          <view class="section-copy" wx:if="{{showCloudDebug && currentAudio && currentAudio.fileID}}">
-            fileId：{{currentAudio.fileID}}
-          </view>
-          <view class="section-copy" wx:if="{{showCloudDebug && currentAudio && currentAudio.src}}">
-            src：{{currentAudio.src}}
-          </view>
-          <view class="section-copy error-copy" wx:if="{{audioError}}">
-            播放状态：{{audioError}}
-          </view>
-          <view class="section-copy error-copy" wx:if="{{showCloudDebug && audioErrorDetail}}">
-            错误详情：{{audioErrorDetail}}
-          </view>
-        </view>
-        <view wx:else>
-          <view class="section-copy">
-            等待音频。
-          </view>
-        </view>
+      <view wx:if="{{!task.isPendingAsset}}">
+        <view class="section-copy error-copy" wx:if="{{audioError}}">{{audioError}}</view>
+        <view class="section-copy" wx:if="{{showCloudDebug && currentAudio && currentAudio.cloudPath}}">云路径：{{currentAudio.cloudPath}}</view>
+        <view class="section-copy" wx:if="{{showCloudDebug && currentAudio && currentAudio.fileID}}">fileId：{{currentAudio.fileID}}</view>
+        <view class="section-copy" wx:if="{{showCloudDebug && currentAudio && currentAudio.src}}">src：{{currentAudio.src}}</view>
+        <view class="section-copy error-copy" wx:if="{{showCloudDebug && audioErrorDetail}}">错误详情：{{audioErrorDetail}}</view>
       </view>
       <view class="player-stage" wx:if="{{!task.isPendingAsset}}">{{progress.currentPass}} / {{progress.repeatTarget}}</view>
     </view>
@@ -102,17 +84,10 @@
     </view>
   </view>
 
-  <view class="section-panel source-card" wx:if="{{scriptSource}}">
-    <view class="section-title">文本来源</view>
-    <view class="section-copy">有文本的条目会从这里同步显示出来。</view>
-    <view class="source-name">{{scriptSource.title}}</view>
-  </view>
-
   <view class="section-panel transcript-card">
     <view class="row-between transcript-header">
       <view>
         <view class="section-title type-section-title">文本</view>
-        <view class="section-copy">{{transcriptLines.length ? '跟随音频高亮。' : task.transcriptStatus === 'pending' ? '文本准备中。' : '暂无文本。'}}</view>
       </view>
       <view class="pill transcript-pill">{{transcriptLines.length ? (transcriptSyncGranularity === 'line' ? '句级文本已就绪' : '文本已就绪') : task.transcriptStatus === 'pending' ? '文本准备中' : '暂无文本'}}</view>
     </view>
@@ -171,34 +146,6 @@
     </view>
   </view>
 
-  <view class="section-panel result-card" wx:if="{{task.completedToday}}">
-    <view class="result-badge">今日完成</view>
-    <view class="result-title">{{task.categoryLabel}} 今天完成了</view>
-    <view class="result-copy">这项任务已经听满 3 遍，明天会自动轮到下一条。</view>
-  </view>
-
-  <view class="section-panel result-card" wx:if="{{todayRecord}}">
-    <view class="result-badge">今日打卡</view>
-    <view class="result-title">今天的总打卡已经点亮</view>
-    <view class="result-copy">连续 {{todayRecord.streakSnapshot}} 天坚持，今天完成的分类已经记下来了。</view>
-  </view>
-
-  <view class="section-panel history-card">
-    <view class="section-title">这个分类的历史</view>
-    <view class="section-copy">完成 3 遍以后，这里会留下该分类的完成记录。</view>
-    <block wx:if="{{history.length}}">
-      <block wx:for="{{history}}" wx:key="date">
-        <view class="history-row">
-          <view>
-            <view class="history-date">{{item.date}}</view>
-            <view class="history-time">{{item.taskTitle}}</view>
-          </view>
-          <view class="history-streak">{{item.playCount}} / 3</view>
-        </view>
-      </block>
-    </block>
-    <view class="section-copy" wx:else>还没有这个分类的完成记录。</view>
-  </view>
 </view>
 
 <view class="page-shell lesson-page" wx:elif="{{syncMode === 'cloud-error'}}">
