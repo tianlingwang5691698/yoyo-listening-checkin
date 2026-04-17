@@ -1,11 +1,14 @@
 <view class="page-shell home-page">
   <view class="home-titlebar">
-    <view class="home-time">今日打卡</view>
-    <view class="home-subtitle">Day {{planDayIndex}} · {{phaseCopy}}</view>
+    <view class="home-brand">{{child.nickname || '佑佑'}}的英语小耳朵</view>
+    <view class="home-subtitle">今日打卡 · Day {{planDayIndex}} · {{phaseCopy}}</view>
   </view>
 
   <view class="primary-checkin card" wx:if="{{primaryTask}}">
-    <view class="primary-label">下一条</view>
+    <view class="primary-head">
+      <view class="primary-label">下一条</view>
+      <view class="primary-program">{{primaryProgramLabel}}</view>
+    </view>
     <view class="primary-title">{{primaryTask.displayTitle || primaryTask.title}}</view>
     <view class="primary-meta">{{primaryTask.progressText}} · {{primaryTask.textType}}</view>
     <view class="progress-rail primary-progress">

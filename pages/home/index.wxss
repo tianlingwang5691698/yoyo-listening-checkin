@@ -1,12 +1,13 @@
 .home-titlebar {
-  padding: 72rpx 20rpx 22rpx;
+  padding: 62rpx 20rpx 24rpx;
   text-align: center;
 }
 
-.home-time {
+.home-brand {
   color: var(--text-strong);
-  font-size: 32rpx;
-  font-weight: 800;
+  font-size: 34rpx;
+  line-height: 1.22;
+  font-weight: 900;
 }
 
 .home-subtitle {
@@ -20,9 +21,23 @@
   background: rgba(255, 255, 255, 0.86);
 }
 
+.primary-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18rpx;
+}
+
 .primary-label {
   color: var(--text-muted);
   font-size: 23rpx;
+  font-weight: 800;
+}
+
+.primary-program {
+  flex-shrink: 0;
+  color: var(--text-muted);
+  font-size: 22rpx;
   font-weight: 800;
 }
 
