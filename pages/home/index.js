@@ -61,6 +61,16 @@ function decorateHomeTask(task) {
   });
 }
 
+function getProgramMeta(category) {
+  return PROGRAM_STEPS.find((item) => item.key === category) || {
+    key: category,
+    orderText: '',
+    title: labels.getCategoryDisplayLabel(category, category),
+    copy: '今日训练',
+    tone: 'unlock'
+  };
+}
+
 function buildGroupedDailyTasks(tasks) {
   const groups = [];
   CATEGORY_ORDER.forEach((category) => {
@@ -68,11 +78,23 @@ function buildGroupedDailyTasks(tasks) {
     if (!categoryTasks.length) {
       return;
     }
+    const activeTasks = categoryTasks.filter((item) => !item.isPendingAsset);
+    const completedCount = activeTasks.filter((item) => item.completedToday).length;
+    const totalCount = activeTasks.length || categoryTasks.length;
+    const nextTask = categoryTasks.find((item) => !item.isPendingAsset && !item.completedToday) || categoryTasks[0];
+    const meta = getProgramMeta(category);
     groups.push({
       category,
       categoryLabel: labels.getCategoryDisplayLabel(category, categoryTasks[0].categoryLabel),
-      completedCount: categoryTasks.filter((item) => item.completedToday).length,
-      totalCount: categoryTasks.filter((item) => !item.isPendingAsset).length || categoryTasks.length,
+      orderText: meta.orderText,
+      programCopy: meta.copy,
+      tone: meta.tone,
+      completedCount,
+      totalCount,
+      progressPercent: totalCount ? Math.round((completedCount / totalCount) * 100) : 0,
+      nextTask,
+      textType: nextTask ? nextTask.textType : '待准备',
+      actionText: nextTask ? nextTask.actionText : '待准备',
       tasks: categoryTasks
     });
   });

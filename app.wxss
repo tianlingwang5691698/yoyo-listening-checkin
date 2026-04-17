@@ -244,3 +244,133 @@ button::after {
 .muted {
   color: var(--text-muted);
 }
+
+.product-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 36rpx 32rpx;
+  border-radius: var(--radius-xl);
+  background:
+    radial-gradient(circle at 88% 14%, rgba(102, 185, 133, 0.16), transparent 28%),
+    linear-gradient(135deg, #fff8ee 0%, #fffdf8 100%);
+  box-shadow: var(--shadow-card);
+}
+
+.product-eyebrow {
+  color: #ad7f55;
+  font-size: 20rpx;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.product-title {
+  margin-top: 12rpx;
+  color: var(--text-main);
+  font-size: 50rpx;
+  line-height: 1.14;
+  font-weight: 900;
+}
+
+.product-copy {
+  margin-top: 14rpx;
+  color: var(--text-muted);
+  font-size: 25rpx;
+  line-height: 1.65;
+}
+
+.section-panel {
+  margin-top: 24rpx;
+  padding: var(--space-card);
+  border-radius: var(--radius-xl);
+  background: var(--surface);
+  box-shadow: var(--shadow-card);
+}
+
+.form-panel {
+  margin-top: 24rpx;
+  padding: var(--space-card);
+  border-radius: var(--radius-xl);
+  background: linear-gradient(135deg, #fffdf8 0%, #fff8f1 100%);
+  box-shadow: var(--shadow-card);
+}
+
+.program-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14rpx;
+}
+
+.program-card {
+  position: relative;
+  overflow: hidden;
+  min-width: 0;
+  padding: 26rpx;
+  border-radius: var(--radius-xl);
+  border: 1rpx solid var(--border-soft);
+  background: rgba(255, 255, 255, 0.74);
+}
+
+.program-card.tone-peppa {
+  background: linear-gradient(135deg, #fff7ef 0%, #ffe7dc 100%);
+}
+
+.program-card.tone-unlock {
+  background: linear-gradient(135deg, #fffdf8 0%, #eee7df 100%);
+}
+
+.program-card.tone-song {
+  background: linear-gradient(135deg, #f7fffb 0%, #e6f7ef 100%);
+}
+
+.task-cell {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20rpx;
+  padding: 24rpx;
+  border: 1rpx solid var(--border-soft);
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.stat-tile {
+  min-width: 0;
+  padding: 24rpx 18rpx;
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.7);
+  border: 1rpx solid var(--border-soft);
+}
+
+.stat-tile-value {
+  color: var(--text-strong);
+  font-size: 38rpx;
+  line-height: 1.1;
+  font-weight: 900;
+}
+
+.stat-tile-label {
+  margin-top: 8rpx;
+  color: var(--text-muted);
+  font-size: 22rpx;
+  line-height: 1.35;
+}
+
+.progress-rail {
+  width: 100%;
+  height: 16rpx;
+  overflow: hidden;
+  border-radius: 999rpx;
+  background: rgba(84, 57, 45, 0.1);
+}
+
+.progress-rail-fill {
+  height: 100%;
+  border-radius: 999rpx;
+  background: linear-gradient(135deg, var(--growth) 0%, var(--accent) 100%);
+}
+
+.action-row {
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+}

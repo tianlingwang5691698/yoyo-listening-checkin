@@ -1,8 +1,8 @@
 <view class="page-shell home-page">
-  <view class="hero card">
-    <view class="eyebrow">DAILY LISTENING</view>
-    <view class="hero-title">{{child.nickname || '佑佑'}}的英语小耳朵</view>
-    <view class="hero-copy">{{child.welcomeLine}}</view>
+  <view class="product-hero home-console">
+    <view class="product-eyebrow">PROGRAM CONSOLE</view>
+    <view class="product-title">{{child.nickname || '佑佑'}}的英语小耳朵</view>
+    <view class="product-copy">{{child.welcomeLine}}</view>
     <view class="sync-debug {{syncMode === 'cloud' ? 'is-cloud' : 'is-local'}}" wx:if="{{showCloudDebug && syncDebug && syncDebug.show}}">
       {{syncDebug.text}}
       <block wx:if="{{syncDebug.resourceLines && syncDebug.resourceLines.length}}">
@@ -12,31 +12,31 @@
       </block>
     </view>
 
-    <view class="plan-strip">
-      <view>
+    <view class="console-strip">
+      <view class="console-main">
         <view class="plan-day">Day {{planDayIndex}}</view>
         <view class="plan-name">{{planPhaseLabel}} · {{phaseCopy}}</view>
       </view>
       <view class="plan-progress">{{completedTaskCountToday}} / {{activeTaskCount || planTaskCount || 3}}</view>
     </view>
 
-    <view class="hero-stats">
-      <view class="hero-stat">
-        <text class="hero-stat-value">{{stats.streakDays}}</text>
-        <text class="hero-stat-label">连续天数</text>
+    <view class="console-stats">
+      <view class="stat-tile">
+        <text class="stat-tile-value">{{stats.streakDays || 0}}</text>
+        <text class="stat-tile-label">连续天数</text>
       </view>
-      <view class="hero-stat">
-        <text class="hero-stat-value">{{stats.completedDays}}</text>
-        <text class="hero-stat-label">完成打卡</text>
+      <view class="stat-tile">
+        <text class="stat-tile-value">{{completedTaskCountToday}}</text>
+        <text class="stat-tile-label">今日完成</text>
       </view>
-      <view class="hero-stat">
-        <text class="hero-stat-value">{{stats.totalMinutes}}</text>
-        <text class="hero-stat-label">累计分钟</text>
+      <view class="stat-tile">
+        <text class="stat-tile-value">{{stats.totalMinutes || 0}}</text>
+        <text class="stat-tile-label">累计分钟</text>
       </view>
     </view>
   </view>
 
-  <view class="program-panel card">
+  <view class="section-panel">
     <view class="row-between program-head">
       <view>
         <view class="section-title">今日节目路径</view>
@@ -44,9 +44,9 @@
       </view>
       <view class="pill">3 条线</view>
     </view>
-    <view class="program-rail">
+    <view class="program-grid program-rail">
       <block wx:for="{{programSteps}}" wx:key="key">
-        <view class="program-step tone-{{item.tone}}">
+        <view class="program-card tone-{{item.tone}}">
           <view class="program-order">{{item.orderText}}</view>
           <view class="program-title">{{item.title}}</view>
           <view class="program-copy">{{item.copy}}</view>
@@ -55,19 +55,19 @@
     </view>
   </view>
 
-  <view class="assignment card">
+  <view class="section-panel">
     <view class="row-between">
       <view>
-        <view class="section-title">今日任务计划</view>
+        <view class="section-title">今日节目任务</view>
         <view class="section-copy">
-          {{allDailyDone ? '今天的学习计划已经全部完成。' : '按计划轮次完成每一条，每条听满 3 遍。'}}
+          {{allDailyDone ? '今天的节目已经全部完成。' : '每个节目一张卡，卡内完成今日任务。'}}
         </view>
       </view>
       <view class="pill">{{phaseCopy}}</view>
     </view>
   </view>
 
-  <view class="assignment card" wx:if="{{syncMode === 'cloud-error'}}">
+  <view class="section-panel" wx:if="{{syncMode === 'cloud-error'}}">
     <view class="row-between">
       <view>
         <view class="section-title">服务暂时不可用</view>
@@ -82,17 +82,30 @@
   </view>
 
   <block wx:for="{{groupedDailyTasks}}" wx:key="category">
-    <view class="task-group card group-{{item.category}}">
+    <view class="program-task-card program-card tone-{{item.tone}}">
       <view class="row-between group-head">
         <view>
+          <view class="program-order">{{item.orderText}}</view>
           <view class="section-title">{{item.categoryLabel}}</view>
-          <view class="section-copy">已完成 {{item.completedCount}} / {{item.totalCount}}</view>
+          <view class="section-copy">{{item.programCopy}} · 今日 {{item.totalCount}} 项 · 已完成 {{item.completedCount}}</view>
         </view>
         <view class="status-badge {{item.completedCount === item.totalCount ? '' : 'is-warn'}}">{{item.completedCount === item.totalCount ? '已完成' : '进行中'}}</view>
       </view>
 
+      <view class="next-task-panel">
+        <view class="next-task-label">下一条</view>
+        <view class="next-task-title">{{item.nextTask.displayTitle || item.nextTask.title}}</view>
+        <view class="next-task-meta">{{item.nextTask.progressText}} · {{item.textType}}</view>
+        <view class="progress-rail">
+          <view class="progress-rail-fill fill-{{item.category}}" style="width: {{item.progressPercent}}%;"></view>
+        </view>
+        <button class="button-primary program-action" bindtap="openTask" data-category="{{item.nextTask.category}}" data-task-id="{{item.nextTask.taskId}}" disabled="{{item.nextTask.isPendingAsset}}">
+          {{item.actionText}}
+        </button>
+      </view>
+
       <block wx:for="{{item.tasks}}" wx:key="taskId" wx:for-item="task">
-        <view class="task-card card-subtle">
+        <view class="task-cell program-task-row">
           <view class="task-main">
             <view class="task-title">{{task.displayTitle || task.title}}</view>
             <view class="task-meta">

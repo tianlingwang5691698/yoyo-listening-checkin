@@ -1,33 +1,11 @@
-.hero {
-  padding: 36rpx 32rpx;
+.home-console {
   background:
-    radial-gradient(circle at 86% 20%, rgba(102, 185, 133, 0.14), transparent 28%),
+    radial-gradient(circle at 88% 14%, rgba(239, 124, 85, 0.16), transparent 26%),
+    radial-gradient(circle at 8% 88%, rgba(102, 185, 133, 0.18), transparent 28%),
     linear-gradient(135deg, #fff8ee 0%, #fffdf8 100%);
 }
 
-.eyebrow {
-  font-size: 20rpx;
-  font-weight: 800;
-  color: #ad7f55;
-}
-
-.hero-title {
-  margin-top: 14rpx;
-  font-size: 54rpx;
-  line-height: 1.1;
-  font-weight: 800;
-  color: #2f241f;
-}
-
-.hero-copy {
-  margin-top: 16rpx;
-  max-width: 430rpx;
-  font-size: 26rpx;
-  line-height: 1.7;
-  color: #7f6d61;
-}
-
-.plan-strip {
+.console-strip {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -36,6 +14,10 @@
   padding: 24rpx;
   border-radius: 30rpx;
   background: rgba(255, 255, 255, 0.72);
+}
+
+.console-main {
+  min-width: 0;
 }
 
 .plan-day {
@@ -89,42 +71,11 @@
   word-break: break-all;
 }
 
-.hero-stats {
+.console-stats {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 16rpx;
   margin-top: 30rpx;
-}
-
-.hero-stat {
-  padding: 22rpx 0;
-  border-radius: 24rpx;
-  text-align: center;
-  background: rgba(255, 255, 255, 0.64);
-}
-
-.hero-stat-value {
-  display: block;
-  font-size: 40rpx;
-  font-weight: 800;
-  color: #2f241f;
-}
-
-.hero-stat-label {
-  display: block;
-  margin-top: 8rpx;
-  font-size: 22rpx;
-  color: #8c7e72;
-}
-
-.assignment {
-  margin-top: 24rpx;
-  padding: 30rpx;
-}
-
-.program-panel {
-  margin-top: 24rpx;
-  padding: 30rpx;
 }
 
 .program-head {
@@ -132,31 +83,12 @@
 }
 
 .program-rail {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14rpx;
   margin-top: 24rpx;
 }
 
-.program-step {
-  min-width: 0;
+.program-rail .program-card {
   min-height: 168rpx;
   padding: 20rpx 16rpx;
-  border-radius: 28rpx;
-  background: rgba(255, 255, 255, 0.7);
-  border: 1rpx solid var(--border-soft);
-}
-
-.program-step.tone-peppa {
-  background: linear-gradient(180deg, #fff7ef 0%, #ffeade 100%);
-}
-
-.program-step.tone-unlock {
-  background: linear-gradient(180deg, #fffdf8 0%, #f0e9e1 100%);
-}
-
-.program-step.tone-song {
-  background: linear-gradient(180deg, #f7fffa 0%, #e8f7ef 100%);
 }
 
 .program-order {
@@ -180,34 +112,66 @@
   line-height: 1.35;
 }
 
-.task-group {
+.program-task-card {
   margin-top: 24rpx;
   padding: 30rpx;
-}
-
-.group-unlock1 {
-  background: linear-gradient(135deg, #fffdf8 0%, #f3eee8 100%);
-}
-
-.group-peppa {
-  background: linear-gradient(135deg, #fffdf8 0%, #fff1e8 100%);
-}
-
-.group-song {
-  background: linear-gradient(135deg, #fffdf8 0%, #effaf3 100%);
 }
 
 .group-head {
   align-items: flex-start;
 }
 
-.task-card {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20rpx;
-  margin-top: 18rpx;
+.next-task-panel {
+  margin-top: 22rpx;
   padding: 24rpx;
+  border-radius: 28rpx;
+  background: rgba(255, 255, 255, 0.62);
+}
+
+.next-task-label {
+  color: var(--text-muted);
+  font-size: 21rpx;
+  font-weight: 800;
+}
+
+.next-task-title {
+  margin-top: 10rpx;
+  color: var(--text-main);
+  font-size: 34rpx;
+  line-height: 1.25;
+  font-weight: 900;
+}
+
+.next-task-meta {
+  margin-top: 10rpx;
+  color: var(--text-muted);
+  font-size: 23rpx;
+}
+
+.next-task-panel .progress-rail {
+  margin-top: 18rpx;
+}
+
+.fill-peppa {
+  background: linear-gradient(135deg, #ffc86c 0%, #f58a63 100%);
+}
+
+.fill-unlock1 {
+  background: linear-gradient(135deg, #c5ad8d 0%, #8f7668 100%);
+}
+
+.fill-song {
+  background: linear-gradient(135deg, #8fd7b8 0%, #58b592 100%);
+}
+
+.program-action {
+  margin-top: 20rpx;
+  min-height: 82rpx;
+  font-size: 26rpx;
+}
+
+.program-task-row {
+  margin-top: 18rpx;
 }
 
 .task-main {
