@@ -40,17 +40,8 @@
   <view class="section-panel player-card">
     <view class="row-between player-header">
       <view>
-        <view class="section-title type-section-title">今天这条音频</view>
+        <view class="section-title type-section-title">播放</view>
         <view wx:if="{{!task.isPendingAsset}}">
-          <view class="section-copy">
-            现在是第 {{progress.currentPass}} 遍，共 {{progress.repeatTarget}} 遍。
-          </view>
-          <view class="section-copy" wx:if="{{audioSource}}">
-            音频来源：{{audioSource}}
-          </view>
-          <view class="section-copy" wx:if="{{audioPlaybackMode && audioPlaybackMode !== 'idle'}}">
-            播放链路：{{audioPlaybackMode}}
-          </view>
           <view class="section-copy" wx:if="{{showCloudDebug && currentAudio && currentAudio.cloudPath}}">
             云路径：{{currentAudio.cloudPath}}
           </view>
@@ -59,12 +50,6 @@
           </view>
           <view class="section-copy" wx:if="{{showCloudDebug && currentAudio && currentAudio.src}}">
             src：{{currentAudio.src}}
-          </view>
-          <view class="section-copy" wx:if="{{audioResolving}}">
-            播放状态：正在解析云端音频
-          </view>
-          <view class="section-copy" wx:elif="{{audioReady}}">
-            播放状态：已就绪
           </view>
           <view class="section-copy error-copy" wx:if="{{audioError}}">
             播放状态：{{audioError}}
@@ -75,7 +60,7 @@
         </view>
         <view wx:else>
           <view class="section-copy">
-            这个分类暂时还没有音频，等你把素材放进来后就会开始轮换。
+            等待音频。
           </view>
         </view>
       </view>
@@ -96,11 +81,10 @@
           <button class="player-toggle" bindtap="toggleAudio" loading="{{audioResolving}}" disabled="{{task.isPendingAsset}}">
             <text class="player-toggle-icon {{isPlaying ? 'is-pause' : 'is-play'}}">{{isPlaying ? '❚❚' : '▶'}}</text>
           </button>
-          <view class="player-status-note">按三遍训练节奏稳稳往前听，不提供快进。</view>
         </view>
         <view class="player-progress">
           <view class="player-progress-meta">
-            <view class="player-progress-label">播放进度</view>
+            <view class="player-progress-label">{{progress.playStepText}}</view>
             <view class="player-time">{{currentTimeLabel}} / {{durationLabel}}</view>
           </view>
           <view class="progress-rail player-progress-track">
@@ -128,9 +112,7 @@
     <view class="row-between transcript-header">
       <view>
         <view class="section-title type-section-title">文本</view>
-        <view class="section-copy">
-          {{transcriptLines.length ? (transcriptSyncGranularity === 'line' ? '现在可以边听边看句级文本。' : '现在可以边听边看文本。') : task.transcriptStatus === 'pending' ? '这条的逐句高亮正在准备中，先按纯听力完成也可以。' : '这条音频目前没有可用文本，也可以照常完成。'}}
-        </view>
+        <view class="section-copy">{{transcriptLines.length ? '跟随音频高亮。' : task.transcriptStatus === 'pending' ? '文本准备中。' : '暂无文本。'}}</view>
       </view>
       <view class="pill transcript-pill">{{transcriptLines.length ? (transcriptSyncGranularity === 'line' ? '句级文本已就绪' : '文本已就绪') : task.transcriptStatus === 'pending' ? '文本准备中' : '暂无文本'}}</view>
     </view>
