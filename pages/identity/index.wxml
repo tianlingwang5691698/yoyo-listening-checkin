@@ -1,0 +1,40 @@
+<view class="page-shell identity-page">
+  <view class="identity-hero card">
+    <view class="identity-eyebrow">IDENTITY</view>
+    <view class="identity-title">选择身份</view>
+    <view class="section-copy">学生和家长入口先做好 UI，后续接入数字 ID 和邀请码绑定。</view>
+  </view>
+
+  <view class="role-switch card">
+    <view class="role-option {{role === 'student' ? 'is-active' : ''}}" data-role="student" bindtap="chooseRole">
+      <view class="role-title">我是学生</view>
+      <view class="role-copy">使用孩子 ID 进入自己的学习档案。</view>
+    </view>
+    <view class="role-option {{role === 'parent' ? 'is-active' : ''}}" data-role="parent" bindtap="chooseRole">
+      <view class="role-title">我是家长</view>
+      <view class="role-copy">使用家长邀请码加入家庭管理。</view>
+    </view>
+  </view>
+
+  <view class="bind-card card" wx:if="{{role === 'student'}}">
+    <view class="section-title">学生入口</view>
+    <view class="section-copy">输入孩子 ID。当前仅展示界面，不会发起绑定。</view>
+    <input class="form-input identity-input" placeholder="输入孩子 ID" value="{{childCode}}" bindinput="handleChildCodeInput" />
+    <button class="button-primary" bindtap="submitIdentity">确认学生身份</button>
+  </view>
+
+  <view class="bind-card card" wx:else>
+    <view class="section-title">家长入口</view>
+    <view class="section-copy">输入家长邀请码。当前仅展示界面，不会发起绑定。</view>
+    <input class="form-input identity-input" placeholder="输入家长邀请码" value="{{parentInviteCode}}" bindinput="handleParentInviteInput" />
+    <button class="button-primary" bindtap="submitIdentity">确认家长身份</button>
+  </view>
+
+  <view class="notice-card card">
+    <view class="notice-title">后续接入</view>
+    <view class="notice-row">childLoginCode</view>
+    <view class="notice-row">parentInviteCode</view>
+    <view class="notice-row">bindStudentByCode</view>
+    <view class="notice-row">joinAsParentByCode</view>
+  </view>
+</view>

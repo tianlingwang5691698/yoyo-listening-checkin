@@ -1,57 +1,97 @@
 <view class="page-shell record-page">
-  <view class="summary card">
-    <view class="section-title">成长正在发生</view>
+  <view class="record-hero card">
+    <view class="record-hero-top">
+      <view>
+        <view class="record-eyebrow">GROWTH</view>
+        <view class="record-title">成长正在发生</view>
+      </view>
+      <view class="status-badge">{{syncMode === 'cloud' ? '已同步' : '本地状态'}}</view>
+    </view>
     <view class="section-copy">把每天一小段听力，慢慢变成稳定的英语节奏。</view>
     <view class="sync-debug {{syncMode === 'cloud' ? 'is-cloud' : 'is-local'}}" wx:if="{{showCloudDebug && syncDebug && syncDebug.show}}">
       {{syncDebug.text}}
     </view>
-    <view class="summary-grid">
-      <view class="summary-item">
-        <view class="summary-value">{{stats.streakDays}}</view>
-        <view class="summary-label">连续打卡</view>
+
+    <view class="metric-switch">
+      <view class="metric-tab {{metricMode === 'streak' ? 'is-active' : ''}}" data-mode="streak" bindtap="switchMetric">连续打卡</view>
+      <view class="metric-tab {{metricMode === 'total' ? 'is-active' : ''}}" data-mode="total" bindtap="switchMetric">累计打卡</view>
+    </view>
+
+    <view class="metric-board">
+      <view>
+        <view class="metric-value">{{heroMetricValue}}</view>
+        <view class="metric-label">{{heroMetricLabel}}天</view>
       </view>
-      <view class="summary-item">
-        <view class="summary-value">{{stats.completedDays}}</view>
-        <view class="summary-label">完成打卡</view>
-      </view>
-      <view class="summary-item">
-        <view class="summary-value">{{stats.totalMinutes}}</view>
-        <view class="summary-label">累计分钟</view>
+      <view class="metric-mark">
+        <view class="metric-mark-main">{{stats.streakDays > 6 ? '稳' : stats.completedDays > 0 ? '亮' : '启'}}</view>
+        <view class="metric-mark-copy">{{lastCheckinText}}</view>
       </view>
     </view>
-    <view class="identity-strip">
-      <view>当前身份：{{currentMember.displayName ? currentMember.displayName : '微信用户'}}</view>
-      <view>最近一次：{{lastCheckinText}}</view>
+
+    <view class="data-grid record-stats">
+      <view class="data-cell">
+        <text class="data-value">{{stats.streakDays || 0}}</text>
+        <text class="data-label">连续天数</text>
+      </view>
+      <view class="data-cell">
+        <text class="data-value">{{stats.completedDays || 0}}</text>
+        <text class="data-label">累计打卡</text>
+      </view>
+      <view class="data-cell">
+        <text class="data-value">{{stats.totalMinutes || 0}}</text>
+        <text class="data-label">累计分钟</text>
+      </view>
     </view>
   </view>
 
-  <view class="heatmap card">
-    <view class="section-title">最近 28 天</view>
-    <view class="section-copy">颜色越深，表示那天完成的听力记录越多。</view>
-    <view class="heatmap-grid">
-      <block wx:for="{{heatmap}}" wx:key="date">
-        <view class="heatmap-cell">
-          <view class="heat {{'level-' + item.intensity}}"></view>
-          <view class="heat-date">{{item.shortDate}}</view>
+  <view class="calendar-card card">
+    <view class="row-between">
+      <view>
+        <view class="section-title">本月听力热力图</view>
+        <view class="section-copy">颜色越深，表示当天完成记录越多。</view>
+      </view>
+      <view class="pill">{{stats.completedDays || 0}} 天</view>
+    </view>
+    <view class="week-grid">
+      <block wx:for="{{weekLabels}}" wx:key="*this">
+        <view class="week-label">{{item}}</view>
+      </block>
+    </view>
+    <view class="calendar-grid">
+      <block wx:for="{{monthHeatmap}}" wx:key="key">
+        <view class="calendar-cell {{item.isBlank ? 'is-blank' : ''}} {{item.isToday ? 'is-today' : ''}} {{item.isCatchupTarget ? 'is-catchup-target' : ''}}">
+          <view wx:if="{{!item.isBlank}}" class="calendar-dot level-{{item.intensity}}">
+            {{item.dayText}}
+          </view>
         </view>
       </block>
+    </view>
+    <view class="calendar-legend">
+      <view><text class="legend-dot level-0"></text>未完成</view>
+      <view><text class="legend-dot level-2"></text>已点亮</view>
+      <view><text class="legend-dot is-target"></text>可追赶</view>
     </view>
   </view>
 
   <view class="catchup card">
-    <view class="section-title">追赶补卡</view>
-    <view class="section-copy" wx:if="{{catchupState.canCatchup}}">
-      已经完成当前计划，可以追赶一批新任务，完成后会点亮 {{catchupState.missedDate}}。
-    </view>
-    <view class="section-copy" wx:else>
-      {{catchupState.reason === 'finish-current-plan-first' ? '先完成当前计划，完成后如果有落下的日期，就能追赶一批新任务。' : catchupState.reason === 'catchup-used-today' ? '今天已经追赶过一批了，明天再继续。' : '目前没有需要追赶的日期。'}}
+    <view class="row-between">
+      <view>
+        <view class="section-title">追赶任务</view>
+        <view class="section-copy" wx:if="{{catchupState.canCatchup}}">
+          完成这一批真实任务后，会点亮 {{catchupState.missedDate}}。
+        </view>
+        <view class="section-copy" wx:else>
+          {{catchupState.reason === 'finish-current-plan-first' ? '先完成今天计划，之后才能追赶落下日期。' : catchupState.reason === 'catchup-used-today' ? '今天已经追赶过一批，明天继续。' : '目前没有需要追赶的日期。'}}
+        </view>
+      </view>
+      <view class="status-badge {{catchupState.canCatchup ? '' : 'is-muted'}}">{{catchupState.canCatchup ? '可追赶' : '已安排'}}</view>
     </view>
     <block wx:if="{{catchupState.canCatchup}}">
       <block wx:for="{{catchupTasks}}" wx:key="taskId">
         <view class="catchup-row {{item.completedToday ? 'is-done' : ''}}" data-category="{{item.category}}" data-task-id="{{item.taskId}}" bindtap="openCatchupTask">
           <view>
             <view class="catchup-title">{{item.categoryLabel}} · {{item.displayTitle || item.title}}</view>
-            <view class="catchup-copy">{{item.completedToday ? '已完成' : '点击进入，完成 3 遍后才算追赶成功'}}</view>
+            <view class="catchup-copy">{{item.completedToday ? '这条已完成' : '进入课程，听满 3 遍才算追赶成功'}}</view>
           </view>
           <view class="catchup-state">{{item.playStepText}}</view>
         </view>
@@ -59,9 +99,27 @@
     </block>
   </view>
 
-  <view class="sticker card">
-    <view class="section-title">今日小奖章</view>
-    <view class="section-copy">{{stats.streakDays > 0 ? '已经在坚持了，继续把这份节奏守住。' : '今天把该做的音频听完，就会点亮第一枚小奖章。'}}</view>
-    <view class="sticker-badge">{{stats.streakDays > 6 ? '本周之星' : stats.streakDays > 0 ? '继续加油' : '今天开始'}}</view>
+  <view class="quote-card card">
+    <view class="section-title">今日鼓励</view>
+    <view class="quote-text">{{quoteText}}</view>
+    <view class="quote-badge">{{stats.streakDays > 6 ? '本周之星' : stats.streakDays > 0 ? '继续加油' : '今天开始'}}</view>
+  </view>
+
+  <view class="total-card card">
+    <view class="section-title">累计数据</view>
+    <view class="total-list">
+      <view class="total-row">
+        <text>累计分钟</text>
+        <text class="total-value">{{stats.totalMinutes || 0}} 分钟</text>
+      </view>
+      <view class="total-row">
+        <text>完成任务</text>
+        <text class="total-value">{{stats.completedTasks || 0}} 项</text>
+      </view>
+      <view class="total-row">
+        <text>当前计划日</text>
+        <text class="total-value">Day {{planDayIndex || 1}}</text>
+      </view>
+    </view>
   </view>
 </view>

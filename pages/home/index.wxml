@@ -1,19 +1,23 @@
 <view class="page-shell home-page">
   <view class="hero card">
-    <view class="hero-top">
+    <view class="eyebrow">DAILY LISTENING</view>
+    <view class="hero-title">{{child.nickname || '佑佑'}}的英语小耳朵</view>
+    <view class="hero-copy">{{child.welcomeLine}}</view>
+    <view class="sync-debug {{syncMode === 'cloud' ? 'is-cloud' : 'is-local'}}" wx:if="{{showCloudDebug && syncDebug && syncDebug.show}}">
+      {{syncDebug.text}}
+      <block wx:if="{{syncDebug.resourceLines && syncDebug.resourceLines.length}}">
+        <block wx:for="{{syncDebug.resourceLines}}" wx:key="*this">
+          <view class="sync-debug-line">{{item}}</view>
+        </block>
+      </block>
+    </view>
+
+    <view class="plan-strip">
       <view>
-        <view class="eyebrow">DAILY LISTENING</view>
-        <view class="hero-title">{{child.nickname || '佑佑'}}的英语小耳朵</view>
-        <view class="hero-copy">{{child.welcomeLine}}</view>
-        <view class="sync-debug {{syncMode === 'cloud' ? 'is-cloud' : 'is-local'}}" wx:if="{{showCloudDebug && syncDebug && syncDebug.show}}">
-          {{syncDebug.text}}
-          <block wx:if="{{syncDebug.resourceLines && syncDebug.resourceLines.length}}">
-            <block wx:for="{{syncDebug.resourceLines}}" wx:key="*this">
-              <view class="sync-debug-line">{{item}}</view>
-            </block>
-          </block>
-        </view>
+        <view class="plan-day">Day {{planDayIndex}}</view>
+        <view class="plan-name">{{planPhaseLabel}} · {{phaseCopy}}</view>
       </view>
+      <view class="plan-progress">{{completedTaskCountToday}} / {{activeTaskCount || planTaskCount || 3}}</view>
     </view>
 
     <view class="hero-stats">
@@ -37,10 +41,10 @@
       <view>
         <view class="section-title">今日任务计划</view>
         <view class="section-copy">
-          Day {{planDayIndex}} · {{planPhaseLabel}} · {{allDailyDone ? '今天的学习计划已经全部完成了。' : '今天的计划会按轮次自动调整任务数量，每一条都要听满 3 遍。'}}
+          {{allDailyDone ? '今天的学习计划已经全部完成。' : '按计划轮次完成每一条，每条听满 3 遍。'}}
         </view>
       </view>
-      <view class="pill">{{completedTaskCountToday}} / {{activeTaskCount || planTaskCount || 3}}</view>
+      <view class="pill">{{phaseCopy}}</view>
     </view>
   </view>
 
@@ -54,56 +58,40 @@
     </view>
     <view class="flow-card">
       <view class="flow-title">当前错误</view>
-        <view class="flow-copy">{{(syncDebug && (syncDebug.publicReason || syncDebug.reason)) || '云端服务暂时不可用，请稍后再试。'}}</view>
+      <view class="flow-copy">{{(syncDebug && (syncDebug.publicReason || syncDebug.reason)) || '云端服务暂时不可用，请稍后再试。'}}</view>
     </view>
   </view>
 
-  <block wx:for="{{dailyTasks}}" wx:key="taskId">
-    <view class="assignment card">
-      <view class="row-between">
+  <block wx:for="{{groupedDailyTasks}}" wx:key="category">
+    <view class="task-group card group-{{item.category}}">
+      <view class="row-between group-head">
         <view>
-          <view class="section-title">{{item.categoryLabel}} · 第{{item.planSlotIndex || 1}}条</view>
-          <view class="section-copy">{{item.note}}</view>
+          <view class="section-title">{{item.categoryLabel}}</view>
+          <view class="section-copy">已完成 {{item.completedCount}} / {{item.totalCount}}</view>
         </view>
-        <view class="pill">{{item.isPendingAsset ? '待准备' : item.completedToday ? '已完成' : '今日任务'}}</view>
+        <view class="status-badge {{item.completedCount === item.totalCount ? '' : 'is-warn'}}">{{item.completedCount === item.totalCount ? '已完成' : '进行中'}}</view>
       </view>
 
-      <view class="assignment-cover cover-variant-{{item.coverVariant}} tone-{{item.coverTone}}">
-        <view class="cover-glow"></view>
-        <view class="cover-orbit"></view>
-        <view class="cover-text">
-          <view class="cover-label">{{item.coverBadge || item.categoryLabel}}</view>
-          <view class="cover-title">{{item.displayTitle || item.title}}</view>
-          <view class="cover-meta" wx:if="{{item.displaySubtitle}}">{{item.displaySubtitle}}</view>
-          <view class="cover-meta" wx:elif="{{item.coverMeta}}">{{item.coverMeta}}</view>
+      <block wx:for="{{item.tasks}}" wx:key="taskId" wx:for-item="task">
+        <view class="task-card card-subtle">
+          <view class="task-main">
+            <view class="task-title">{{task.displayTitle || task.title}}</view>
+            <view class="task-meta">
+              <text>第{{task.planSlotIndex || 1}}条</text>
+              <text>{{task.progressText}}</text>
+              <text>{{task.textType}}</text>
+            </view>
+            <view class="task-note">{{task.audioCompactTitle || task.displaySubtitle || task.note}}</view>
+          </view>
+          <button class="task-button {{task.completedToday ? 'is-done' : ''}}" bindtap="openTask" data-category="{{task.category}}" data-task-id="{{task.taskId}}" disabled="{{task.isPendingAsset}}">
+            {{task.actionText}}
+          </button>
         </view>
-        <view class="cover-ring">
-          <text>{{item.playStepText}}</text>
-        </view>
-      </view>
-
-      <view class="flow-card">
-        <view class="flow-title">今天这一项怎么做</view>
-        <view class="flow-copy">{{item.isPendingAsset ? '目前还没有可用音频，先放进素材目录。' : (item.transcriptTrackId ? '固定听 3 遍：从第 1 遍开始就可以边听边看文本。' : '固定听 3 遍：这条先按纯听力完成。')}}</view>
-        <view class="flow-row">
-          <view class="flow-pill {{item.playCount >= 1 ? 'is-on' : ''}}">第 1 遍{{item.transcriptTrackId ? ' + 文本' : ''}}</view>
-          <view class="flow-pill {{item.playCount >= 2 ? 'is-on' : ''}}">第 2 遍{{item.transcriptTrackId ? ' + 文本' : ''}}</view>
-          <view class="flow-pill {{item.playCount >= 3 ? 'is-on' : ''}}">第 3 遍{{item.transcriptTrackId ? ' + 文本' : ''}}</view>
-        </view>
-        <view class="flow-copy" wx:if="{{item.audioCompactTitle}}">当前音频：{{item.audioCompactTitle}}</view>
-      </view>
-
-      <view class="reward-card reward-{{item.category}}">
-        <view class="reward-badge">{{item.rewardBadge}}</view>
-        <view class="reward-body">
-          <view class="reward-title">{{item.rewardTitle}}</view>
-          <view class="reward-copy">{{item.rewardCopy}}</view>
-        </view>
-      </view>
-
-      <button class="button-primary" bindtap="openTask" data-category="{{item.category}}" data-task-id="{{item.taskId}}" disabled="{{item.isPendingAsset}}">
-        {{item.isPendingAsset ? '等音频放入' : item.completedToday ? '查看今天完成' : '开始这项任务'}}
-      </button>
+      </block>
     </view>
   </block>
+
+  <view class="empty-state" wx:if="{{!hasGroupedTasks && syncMode !== 'cloud-error'}}">
+    今日任务还在准备中。
+  </view>
 </view>

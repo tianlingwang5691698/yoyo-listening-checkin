@@ -1,11 +1,35 @@
 .family-hero,
 .join-card,
+.invite-card,
+.child-card,
+.reserve-card,
 .member-card {
   padding: 30rpx;
 }
 
 .family-hero {
-  background: linear-gradient(135deg, #fff1e5 0%, #fff9f2 100%);
+  background:
+    radial-gradient(circle at 86% 14%, rgba(102, 185, 133, 0.16), transparent 28%),
+    linear-gradient(135deg, #fff8ee 0%, #fffdf8 100%);
+}
+
+.family-head,
+.family-section-head {
+  align-items: flex-start;
+}
+
+.family-eyebrow {
+  color: #ad7f55;
+  font-size: 20rpx;
+  font-weight: 800;
+}
+
+.family-title {
+  margin-top: 12rpx;
+  color: var(--text-main);
+  font-size: 48rpx;
+  line-height: 1.14;
+  font-weight: 900;
 }
 
 .sync-debug {
@@ -28,18 +52,15 @@
   color: #b45e40;
 }
 
-.invite-box {
-  margin-top: 26rpx;
-  padding: 24rpx;
-  border-radius: 28rpx;
-  background: rgba(255, 255, 255, 0.72);
+.family-status-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16rpx;
+  margin-top: 24rpx;
 }
 
-.family-login-note {
-  margin-top: 24rpx;
-  padding: 22rpx 24rpx;
-  border-radius: 26rpx;
-  background: rgba(255, 255, 255, 0.58);
+.family-status {
+  padding: 22rpx;
 }
 
 .login-title {
@@ -52,6 +73,19 @@
   font-size: 28rpx;
   font-weight: 700;
   color: #2f241f;
+}
+
+.status-copy {
+  margin-top: 8rpx;
+  color: var(--text-muted);
+  font-size: 22rpx;
+}
+
+.invite-box {
+  margin-top: 24rpx;
+  padding: 28rpx;
+  border-radius: 30rpx;
+  background: rgba(255, 255, 255, 0.72);
 }
 
 .invite-label {
@@ -67,8 +101,10 @@
   color: #2f241f;
 }
 
+.invite-card,
 .join-card,
 .child-card,
+.reserve-card,
 .member-card {
   margin-top: 24rpx;
 }
@@ -100,6 +136,31 @@
 
 .button-primary {
   margin-top: 22rpx;
+}
+
+.reserve-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16rpx;
+  margin-top: 20rpx;
+}
+
+.reserve-item {
+  min-width: 0;
+  padding: 22rpx;
+}
+
+.reserve-label {
+  color: var(--text-muted);
+  font-size: 22rpx;
+}
+
+.reserve-value {
+  margin-top: 12rpx;
+  color: var(--text-main);
+  font-size: 26rpx;
+  font-weight: 900;
+  word-break: break-all;
 }
 
 .member-row {

@@ -1,0 +1,88 @@
+.identity-hero,
+.role-switch,
+.bind-card,
+.notice-card {
+  padding: var(--space-card);
+}
+
+.identity-hero {
+  background:
+    radial-gradient(circle at 84% 16%, rgba(102, 185, 133, 0.16), transparent 28%),
+    linear-gradient(135deg, #fff8ee 0%, #fffdf8 100%);
+}
+
+.identity-eyebrow {
+  color: #ad7f55;
+  font-size: 20rpx;
+  font-weight: 800;
+}
+
+.identity-title {
+  margin-top: 12rpx;
+  color: var(--text-main);
+  font-size: 50rpx;
+  line-height: 1.12;
+  font-weight: 900;
+}
+
+.role-switch,
+.bind-card,
+.notice-card {
+  margin-top: 24rpx;
+}
+
+.role-switch {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16rpx;
+}
+
+.role-option {
+  min-height: 178rpx;
+  padding: 24rpx;
+  border: 2rpx solid var(--border-soft);
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.62);
+}
+
+.role-option.is-active {
+  border-color: rgba(239, 124, 85, 0.42);
+  background: var(--accent-soft);
+}
+
+.role-title {
+  color: var(--text-main);
+  font-size: 30rpx;
+  font-weight: 900;
+}
+
+.role-copy {
+  margin-top: 12rpx;
+  color: var(--text-muted);
+  font-size: 22rpx;
+  line-height: 1.55;
+}
+
+.identity-input {
+  margin-top: 22rpx;
+}
+
+.bind-card .button-primary {
+  margin-top: 22rpx;
+}
+
+.notice-title {
+  color: var(--text-main);
+  font-size: 28rpx;
+  font-weight: 900;
+}
+
+.notice-row {
+  margin-top: 14rpx;
+  padding: 18rpx 20rpx;
+  border-radius: var(--radius-md);
+  background: #fff8f0;
+  color: var(--text-muted);
+  font-size: 24rpx;
+  font-weight: 700;
+}

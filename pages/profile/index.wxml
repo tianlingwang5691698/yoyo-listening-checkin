@@ -1,36 +1,62 @@
 <view class="page-shell profile-page">
   <view class="profile-hero card">
-    <view class="avatar">{{child.avatarText}}</view>
-    <view class="profile-copy">当前阶段：{{level.name}} · 已完成 {{child.completedDays}} 天</view>
+    <view class="child-label">{{child.nickname || '佑佑'}}</view>
+    <view class="profile-title">身份中心</view>
+    <view class="profile-copy">当前阶段：{{level.name || child.currentLevel || 'A1'}} · 已完成 {{child.completedDays || child.totalCompleted || 0}} 天</view>
     <view class="sync-debug {{syncMode === 'cloud' ? 'is-cloud' : 'is-local'}}" wx:if="{{showCloudDebug && syncDebug && syncDebug.show}}">
       {{syncDebug.text}}
     </view>
-    <view class="option-tag">{{syncMode === 'cloud' ? '家庭共享已接通' : '云同步异常'}}</view>
-    <view class="identity-note">{{syncMode === 'cloud' ? '当前微信会自动识别家庭身份，并进入同一份孩子档案。新家庭默认孩子昵称先显示为“佑佑”，后续可以改成自己孩子的名字。' : '家庭档案暂时没有同步成功，请稍后再试。'}}</view>
+  </view>
+
+  <view class="identity-grid">
+    <view class="identity-card card-subtle">
+      <view class="identity-label">当前身份</view>
+      <view class="identity-value">{{currentMember.displayName || '微信用户'}}</view>
+      <view class="identity-copy">{{currentMember.role === 'owner' ? '家庭管理员' : '家长成员'}}</view>
+    </view>
+    <view class="identity-card card-subtle">
+      <view class="identity-label">当前孩子</view>
+      <view class="identity-value">{{child.nickname || '佑佑'}}</view>
+      <view class="identity-copy">{{level.name || child.currentLevel || 'A1'}}</view>
+    </view>
   </view>
 
   <view class="option card">
-    <view class="option-title">家庭共享</view>
-    <view class="option-copy">家庭名：{{family.name}} · 当前身份：{{currentMember.displayName}}。其他家长用各自微信打开后，通过邀请码加入，就能跨网络看同一个孩子 {{child.nickname}} 的进度；如果是新的独立家庭，也可以把默认昵称改成自己孩子的名字。</view>
-    <button class="button-primary mini-button" bindtap="openFamilyPage">打开家庭页</button>
+    <view class="row-between option-head">
+      <view>
+        <view class="option-title">家庭共享</view>
+        <view class="option-copy">{{family.name || '我的家庭'}} · {{syncMode === 'cloud' ? '已接通' : '云同步异常'}}</view>
+      </view>
+      <view class="status-badge {{syncMode === 'cloud' ? '' : 'is-warn'}}">{{syncMode === 'cloud' ? '可用' : '异常'}}</view>
+    </view>
+    <button class="button-secondary mini-button" bindtap="openFamilyPage">打开家庭管理</button>
   </view>
 
   <view class="option card">
-    <view class="option-title">家长日报</view>
-    <view class="option-copy">订阅消息做提醒，内页保留完整日报。家长页里可以看到 {{child.nickname}} 今天听了什么、完成了几遍、最近 7 天有没有稳住。</view>
-    <button class="button-primary mini-button" bindtap="openParentPage">打开家长页</button>
+    <view class="row-between option-head">
+      <view>
+        <view class="option-title">家长日报</view>
+        <view class="option-copy">{{subscriptionPreference.dailyReportEnabled ? '日报提醒已开启' : '日报提醒未开启'}}</view>
+      </view>
+      <view class="status-badge {{subscriptionPreference.dailyReportEnabled ? '' : 'is-muted'}}">{{subscriptionPreference.dailyReportEnabled ? '提醒开' : '提醒关'}}</view>
+    </view>
+    <button class="button-primary mini-button" bindtap="openParentPage">查看日报</button>
+  </view>
+
+  <view class="option card">
+    <view class="row-between option-head">
+      <view>
+        <view class="option-title">身份绑定</view>
+        <view class="option-copy">{{currentUser.phoneBound ? '微信 + 手机号已绑定' : '微信自动识别'}}</view>
+      </view>
+      <view class="status-badge is-muted">预留</view>
+    </view>
+    <button class="button-secondary mini-button" bindtap="openIdentityPage">打开身份页</button>
   </view>
 
   <view class="option card">
     <view class="option-title">登录方式</view>
-    <view class="option-copy">进入小程序后会用微信身份自动识别当前用户。每个家长都有自己的打卡记录，也能继续加入同一个家庭查看孩子档案。</view>
-    <view class="option-tag">{{currentUser.phoneBound ? '微信 + 手机号已绑定' : '微信自动识别'}}</view>
-    <view class="identity-note">{{currentUser.phoneBound ? '手机号已绑定，后续可用于更明确的家庭成员识别。' : '手机号暂未绑定，不影响打卡和查看记录。'}}</view>
-  </view>
-
-  <view class="option card">
-    <view class="option-title">订阅状态</view>
-    <view class="option-copy">{{subscriptionPreference.dailyReportEnabled ? '已开启每日报告提醒。家长完成后会收到摘要提醒。' : '还没开启每日报告提醒，可以到家长页里授权。'}}</view>
-    <view class="option-tag">{{subscriptionPreference.dailyReportEnabled ? '日报提醒已开启' : '日报提醒未开启'}}</view>
+    <view class="option-copy">微信身份自动识别，不影响打卡、日报和家庭共享。</view>
+    <view class="option-tag">{{currentUser.phoneBound ? '手机号已绑定' : '微信自动识别'}}</view>
   </view>
 </view>

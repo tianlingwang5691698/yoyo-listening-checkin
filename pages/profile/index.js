@@ -27,5 +27,10 @@ Page({
     wx.navigateTo({
       url: '/pages/family/index'
     });
+  },
+  openIdentityPage() {
+    wx.navigateTo({
+      url: '/pages/identity/index'
+    });
   }
 });
