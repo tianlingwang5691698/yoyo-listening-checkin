@@ -1,48 +1,26 @@
 .home-titlebar {
-  padding: 62rpx 20rpx 24rpx;
+  padding: 76rpx 20rpx 34rpx;
   text-align: center;
 }
 
 .home-brand {
+  font-size: 42rpx;
+  font-weight: 600;
+  letter-spacing: 0;
 }
 
 .home-subtitle {
   margin-top: 12rpx;
 }
 
-.primary-checkin {
-  padding: 34rpx 28rpx 30rpx;
-  background: rgba(255, 255, 255, 0.86);
-}
-
-.primary-label {
-}
-
-.primary-title {
-  margin-top: 16rpx;
-}
-
-.primary-meta {
-  margin-top: 16rpx;
-}
-
-.primary-progress {
-  margin-top: 24rpx;
-  background: #ece8e1;
-}
-
-.primary-button {
-  width: 520rpx;
-  max-width: 100%;
-  min-height: 86rpx;
-  margin: 28rpx auto 0;
-  font-size: 28rpx;
-}
-
 .minimal-program {
-  margin-top: 24rpx;
-  padding: 28rpx;
+  margin-top: 18rpx;
+  padding: 30rpx 28rpx;
   background: rgba(255, 255, 255, 0.82);
+}
+
+.minimal-program:first-of-type {
+  margin-top: 0;
 }
 
 .minimal-program.is-disabled {

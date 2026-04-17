@@ -101,13 +101,6 @@ function buildGroupedDailyTasks(tasks) {
   return groups;
 }
 
-function findPrimaryTask(groups) {
-  const firstActive = (groups || [])
-    .map((group) => group.nextTask)
-    .find((task) => task && !task.isPendingAsset && !task.completedToday);
-  return firstActive || ((groups && groups[0] && groups[0].nextTask) || null);
-}
-
 function buildPhaseCopy(label) {
   return PHASE_COPY[label] || '今日计划';
 }
@@ -122,9 +115,6 @@ Page({
     planTaskCount: 0,
     dailyTasks: [],
     groupedDailyTasks: [],
-    primaryTask: null,
-    primaryProgramLabel: '',
-    primaryProgressPercent: 0,
     hasGroupedTasks: false,
     programSteps: PROGRAM_STEPS,
     activeTaskCount: 0,
@@ -134,14 +124,9 @@ Page({
   async onShow() {
     const data = await store.getDashboard();
     const groupedDailyTasks = buildGroupedDailyTasks(data.dailyTasks);
-    const primaryTask = findPrimaryTask(groupedDailyTasks);
-    const primaryProgram = groupedDailyTasks.find((item) => primaryTask && item.category === primaryTask.category) || null;
     this.setData(page.buildCloudPageData(this.data, Object.assign({}, data, {
       phaseCopy: buildPhaseCopy(data.planPhaseLabel),
       groupedDailyTasks,
-      primaryTask,
-      primaryProgramLabel: primaryProgram ? primaryProgram.categoryLabel : '',
-      primaryProgressPercent: primaryTask ? Math.round(((primaryTask.playCount || 0) / (primaryTask.repeatTarget || 3)) * 100) : 0,
       hasGroupedTasks: groupedDailyTasks.length > 0
     })));
   },
