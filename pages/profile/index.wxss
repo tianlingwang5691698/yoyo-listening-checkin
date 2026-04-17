@@ -1,8 +1,3 @@
-.profile-hero,
-.option {
-  padding: 30rpx;
-}
-
 .profile-hero {
   background:
     radial-gradient(circle at 86% 12%, rgba(102, 185, 133, 0.16), transparent 28%),
@@ -23,21 +18,6 @@
   font-weight: 800;
 }
 
-.profile-title {
-  margin-top: 20rpx;
-  font-size: 50rpx;
-  line-height: 1.12;
-  font-weight: 900;
-  color: var(--text-main);
-}
-
-.profile-copy {
-  margin-top: 18rpx;
-  font-size: 24rpx;
-  line-height: 1.7;
-  color: #7f6d61;
-}
-
 .identity-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -46,7 +26,6 @@
 }
 
 .identity-card {
-  padding: 24rpx;
   background: rgba(255, 255, 255, 0.72);
 }
 
@@ -96,10 +75,6 @@
   font-size: 22rpx;
   line-height: 1.7;
   color: #8c7e72;
-}
-
-.option {
-  margin-top: 22rpx;
 }
 
 .option-head {

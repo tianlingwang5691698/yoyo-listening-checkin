@@ -1,27 +1,27 @@
 <view class="page-shell profile-page">
-  <view class="profile-hero card">
+  <view class="profile-hero product-hero">
     <view class="child-label">{{child.nickname || '佑佑'}}</view>
-    <view class="profile-title">身份中心</view>
-    <view class="profile-copy">当前阶段：{{level.name || child.currentLevel || 'A1'}} · 已完成 {{child.completedDays || child.totalCompleted || 0}} 天</view>
+    <view class="product-title">身份中心</view>
+    <view class="product-copy">当前阶段：{{level.name || child.currentLevel || 'A1'}} · 已完成 {{child.completedDays || child.totalCompleted || 0}} 天</view>
     <view class="sync-debug {{syncMode === 'cloud' ? 'is-cloud' : 'is-local'}}" wx:if="{{showCloudDebug && syncDebug && syncDebug.show}}">
       {{syncDebug.text}}
     </view>
   </view>
 
   <view class="identity-grid">
-    <view class="identity-card card-subtle">
+    <view class="identity-card stat-tile">
       <view class="identity-label">当前身份</view>
       <view class="identity-value">{{currentMember.displayName || '微信用户'}}</view>
       <view class="identity-copy">{{currentMember.role === 'owner' ? '家庭管理员' : '家长成员'}}</view>
     </view>
-    <view class="identity-card card-subtle">
+    <view class="identity-card stat-tile">
       <view class="identity-label">当前孩子</view>
       <view class="identity-value">{{child.nickname || '佑佑'}}</view>
       <view class="identity-copy">{{level.name || child.currentLevel || 'A1'}}</view>
     </view>
   </view>
 
-  <view class="option card">
+  <view class="option section-panel">
     <view class="row-between option-head">
       <view>
         <view class="option-title">家庭共享</view>
@@ -32,7 +32,7 @@
     <button class="button-secondary mini-button" bindtap="openFamilyPage">打开家庭管理</button>
   </view>
 
-  <view class="option card">
+  <view class="option section-panel">
     <view class="row-between option-head">
       <view>
         <view class="option-title">家长日报</view>
@@ -43,7 +43,7 @@
     <button class="button-primary mini-button" bindtap="openParentPage">查看日报</button>
   </view>
 
-  <view class="option card">
+  <view class="option section-panel">
     <view class="row-between option-head">
       <view>
         <view class="option-title">身份绑定</view>
@@ -54,7 +54,7 @@
     <button class="button-secondary mini-button" bindtap="openIdentityPage">打开身份页</button>
   </view>
 
-  <view class="option card">
+  <view class="option section-panel">
     <view class="option-title">登录方式</view>
     <view class="option-copy">微信身份自动识别，不影响打卡、日报和家庭共享。</view>
     <view class="option-tag">{{currentUser.phoneBound ? '手机号已绑定' : '微信自动识别'}}</view>

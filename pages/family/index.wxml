@@ -1,10 +1,10 @@
 <view class="page-shell family-page">
-  <view class="family-hero card">
+  <view class="family-hero product-hero">
     <view class="row-between family-head">
       <view>
         <view class="family-eyebrow">FAMILY</view>
-        <view class="family-title">家庭管理中心</view>
-        <view class="section-copy">{{family.name || '我的家庭'}} · {{child.nickname || '佑佑'}}</view>
+        <view class="product-title">家庭管理中心</view>
+        <view class="product-copy">{{family.name || '我的家庭'}} · {{child.nickname || '佑佑'}}</view>
         <view class="sync-debug {{syncMode === 'cloud' ? 'is-cloud' : 'is-local'}}" wx:if="{{showCloudDebug && syncDebug && syncDebug.show}}">
           {{syncDebug.text}}
         </view>
@@ -13,12 +13,12 @@
     </view>
 
     <view class="family-status-grid">
-      <view class="family-status card-subtle">
+      <view class="family-status stat-tile">
         <view class="login-title">当前身份</view>
         <view class="login-copy">{{currentMember.displayName || '微信用户'}}</view>
         <view class="status-copy">{{currentMember.role === 'owner' ? '管理员' : '家长成员'}}</view>
       </view>
-      <view class="family-status card-subtle">
+      <view class="family-status stat-tile">
         <view class="login-title">订阅状态</view>
         <view class="login-copy">{{subscriptionPreference.dailyReportEnabled ? '日报提醒开' : '日报提醒关'}}</view>
         <view class="status-copy">家长日报</view>
@@ -26,7 +26,7 @@
     </view>
   </view>
 
-  <view class="child-card card">
+  <view class="child-card form-panel">
     <view class="row-between family-section-head">
       <view>
         <view class="section-title">孩子档案</view>
@@ -38,7 +38,7 @@
     <button class="button-primary" bindtap="saveChildProfile">保存孩子昵称</button>
   </view>
 
-  <view class="invite-card card">
+  <view class="invite-card section-panel">
     <view class="row-between family-section-head">
       <view>
         <view class="section-title">家庭邀请码</view>
@@ -53,21 +53,21 @@
     <button class="button-primary" bindtap="refreshInviteCode">刷新邀请码</button>
   </view>
 
-  <view class="reserve-card card">
+  <view class="reserve-card section-panel">
     <view class="section-title">后续身份码</view>
     <view class="reserve-grid">
-      <view class="reserve-item card-subtle">
+      <view class="reserve-item stat-tile">
         <view class="reserve-label">孩子 ID</view>
         <view class="reserve-value">{{child.childId || '后续开放'}}</view>
       </view>
-      <view class="reserve-item card-subtle">
+      <view class="reserve-item stat-tile">
         <view class="reserve-label">家长邀请码</view>
         <view class="reserve-value">后续开放</view>
       </view>
     </view>
   </view>
 
-  <view class="join-card card">
+  <view class="join-card form-panel">
     <view class="section-title">加入家庭</view>
     <view class="section-copy">输入邀请码，加入同一个孩子档案。</view>
     <input class="family-input form-input" placeholder="输入邀请码" value="{{inviteInput}}" bindinput="handleInviteInput" />
@@ -75,7 +75,7 @@
     <button class="button-primary" bindtap="joinFamily">加入家庭</button>
   </view>
 
-  <view class="member-card card">
+  <view class="member-card section-panel">
     <view class="row-between family-section-head">
       <view>
         <view class="section-title">当前家庭成员</view>

@@ -1,34 +1,7 @@
-.identity-hero,
-.role-switch,
-.bind-card,
-.notice-card {
-  padding: var(--space-card);
-}
-
 .identity-hero {
   background:
     radial-gradient(circle at 84% 16%, rgba(102, 185, 133, 0.16), transparent 28%),
     linear-gradient(135deg, #fff8ee 0%, #fffdf8 100%);
-}
-
-.identity-eyebrow {
-  color: #ad7f55;
-  font-size: 20rpx;
-  font-weight: 800;
-}
-
-.identity-title {
-  margin-top: 12rpx;
-  color: var(--text-main);
-  font-size: 50rpx;
-  line-height: 1.12;
-  font-weight: 900;
-}
-
-.role-switch,
-.bind-card,
-.notice-card {
-  margin-top: 24rpx;
 }
 
 .role-switch {
