@@ -205,3 +205,20 @@ rg ">开始<|0/1|font-weight: 900" pages/**/*.wxml pages/**/*.wxss app.wxss
 - 音频页展示层未发现 `课程地图`、`听力路径` 重复。
 - 音频页首页未发现 `Peppa`、`Unlock 1`、`Songs`。
 - 新页面与音频页页面层未发现 `歌曲`、`0/1`、`>开始<`、`Dashboard`、`Console`、`控制台`。
+
+## 2026-04-18 成长页月历与日期详情
+
+整改内容：
+
+- 新增云函数 action：`getMonthHeatmap`、`getDailyReportByDate`。
+- 新增 store 方法：`getMonthHeatmap`、`getDailyReportByDate`。
+- 成长页支持按月切换。
+- 成长页日期可点击选择。
+- 成长页展示选中日期的完成状态、任务列表和分钟数。
+- 追赶任务保留为日期详情之后的轻入口。
+
+扫描结果：
+
+- `pages/record/index.js`、`utils/store.js`、`cloudfunctions/yoyo/index.js` 语法检查通过。
+- 成长页展示层未发现 `热力图`、`Dashboard`、`Console`、`控制台`、`歌曲`、`>开始<`、`0/1`。
+- 全页面扫描仍只剩统计数字和成长大数字中的 `font-weight: 900` 例外。

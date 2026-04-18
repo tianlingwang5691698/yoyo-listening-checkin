@@ -291,6 +291,32 @@ async function getHeatmap(days) {
   });
 }
 
+async function getMonthHeatmap(year, month) {
+  return callCloud('getMonthHeatmap', { year, month }, {
+    year,
+    month,
+    heatmap: [],
+    catchupState: {
+      canCatchup: false,
+      missedDate: '',
+      planDayIndex: 0,
+      usedToday: false,
+      reason: ''
+    }
+  });
+}
+
+async function getDailyReportByDate(date) {
+  return callCloud('getDailyReportByDate', { date }, {
+    report: {
+      date,
+      totalMinutes: 0,
+      completedCategories: [],
+      items: []
+    }
+  });
+}
+
 async function getParentDashboard() {
   return callCloud('getParentDashboard', {}, {
     family: null,
@@ -375,6 +401,8 @@ module.exports = {
   ensureState,
   getDashboard,
   getHeatmap,
+  getMonthHeatmap,
+  getDailyReportByDate,
   getLevelOverview,
   getProfileData,
   getTaskDetail,

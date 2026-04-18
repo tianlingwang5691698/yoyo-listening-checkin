@@ -1938,6 +1938,55 @@ async function handleAction(event, context) {
       catchupTasks
     };
   }
+  if (event.action === 'getMonthHeatmap') {
+    const year = Number(event.payload.year || today.slice(0, 4));
+    const month = Number(event.payload.month || today.slice(5, 7));
+    const monthText = `${year}-${String(month).padStart(2, '0')}`;
+    const scope = getUserScope(ctx);
+    const records = await getCheckins(scope);
+    const progressRecords = await getChildProgressRecords(scope);
+    const counts = {};
+    records.forEach((item) => {
+      if (String(item.date || '').slice(0, 7) === monthText) {
+        counts[item.date] = (counts[item.date] || 0) + 1;
+      }
+    });
+    const todayPlan = buildPlanForDay(getPlanDayIndex(records));
+    const todayTasks = decoratePlanTasks(progressRecords, ctx.child.childId, today, todayPlan, {
+      planRunType: 'normal'
+    });
+    const todayDone = todayTasks.length > 0 && todayTasks.every((item) => item.completedToday);
+    const catchupState = buildCatchupState(records, today, getPlanStartDate(ctx, today), todayDone);
+    const daysInMonth = new Date(year, month, 0).getDate();
+    const heatmap = [];
+    for (let day = 1; day <= daysInMonth; day += 1) {
+      const date = `${monthText}-${String(day).padStart(2, '0')}`;
+      const count = counts[date] || 0;
+      heatmap.push({
+        date,
+        shortDate: date.slice(5),
+        count,
+        intensity: Math.min(count, 3),
+        completed: count > 0,
+        isToday: date === today,
+        isCatchupTarget: catchupState.missedDate === date
+      });
+    }
+    return {
+      year,
+      month,
+      heatmap,
+      catchupState
+    };
+  }
+  if (event.action === 'getDailyReportByDate') {
+    const date = String((event.payload && event.payload.date) || today).slice(0, 10);
+    const scope = getUserScope(ctx);
+    const report = await upsertDailyReport(scope, date);
+    return {
+      report
+    };
+  }
   if (event.action === 'getParentDashboard') {
     const dashboard = await getDashboardData(ctx);
     const scope = getUserScope(ctx);

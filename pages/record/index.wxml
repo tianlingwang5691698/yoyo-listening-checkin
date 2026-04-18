@@ -7,14 +7,10 @@
       </view>
       <view class="status-badge">{{syncMode === 'cloud' ? '已同步' : '本地状态'}}</view>
     </view>
-    <view class="section-copy">连续一点点，就是长期的变化。</view>
-    <view class="sync-debug {{syncMode === 'cloud' ? 'is-cloud' : 'is-local'}}" wx:if="{{showCloudDebug && syncDebug && syncDebug.show}}">
-      {{syncDebug.text}}
-    </view>
 
     <view class="metric-switch">
-      <view class="metric-tab {{metricMode === 'streak' ? 'is-active' : ''}}" data-mode="streak" bindtap="switchMetric">连续打卡</view>
-      <view class="metric-tab {{metricMode === 'total' ? 'is-active' : ''}}" data-mode="total" bindtap="switchMetric">累计打卡</view>
+      <view class="metric-tab {{metricMode === 'streak' ? 'is-active' : ''}}" data-mode="streak" bindtap="switchMetric">连续</view>
+      <view class="metric-tab {{metricMode === 'total' ? 'is-active' : ''}}" data-mode="total" bindtap="switchMetric">累计</view>
     </view>
 
     <view class="metric-board">
@@ -22,67 +18,81 @@
         <view class="metric-value">{{heroMetricValue}}</view>
         <view class="metric-label">{{heroMetricLabel}}天</view>
       </view>
-      <view class="metric-mark">
-        <view class="metric-mark-main">{{stats.streakDays > 6 ? '稳' : stats.completedDays > 0 ? '亮' : '启'}}</view>
-        <view class="metric-mark-copy">{{lastCheckinText}}</view>
-      </view>
     </view>
 
-    <view class="data-grid record-stats">
-      <view class="stat-tile">
-        <text class="stat-tile-value">{{stats.streakDays || 0}}</text>
-        <text class="stat-tile-label">连续天数</text>
+    <view class="summary-row">
+      <view class="summary-item">
+        <view class="summary-value">{{stats.completedDays || 0}}</view>
+        <view class="summary-label">累计天数</view>
       </view>
-      <view class="stat-tile">
-        <text class="stat-tile-value">{{stats.completedDays || 0}}</text>
-        <text class="stat-tile-label">累计打卡</text>
+      <view class="summary-item">
+        <view class="summary-value">{{stats.totalMinutes || 0}}</view>
+        <view class="summary-label">累计分钟</view>
       </view>
-      <view class="stat-tile">
-        <text class="stat-tile-value">{{stats.totalMinutes || 0}}</text>
-        <text class="stat-tile-label">累计分钟</text>
+      <view class="summary-item">
+        <view class="summary-value">{{stats.completedTasks || 0}}</view>
+        <view class="summary-label">完成任务</view>
       </view>
     </view>
   </view>
 
   <view class="calendar-card section-panel">
-    <view class="row-between">
-      <view>
-        <view class="section-title type-section-title">本月</view>
-        <view class="section-copy">点亮的日期会留在这里。</view>
+    <view class="calendar-head">
+      <view class="type-section-title">本月</view>
+      <view class="month-control">
+        <view class="month-arrow" data-direction="-1" bindtap="switchMonth">‹</view>
+        <view class="month-title">{{calendarTitle}}</view>
+        <view class="month-arrow" data-direction="1" bindtap="switchMonth">›</view>
       </view>
-      <view class="pill">{{stats.completedDays || 0}} 天</view>
     </view>
+
     <view class="week-grid">
       <block wx:for="{{weekLabels}}" wx:key="*this">
         <view class="week-label">{{item}}</view>
       </block>
     </view>
+
     <view class="calendar-grid">
-      <block wx:for="{{monthHeatmap}}" wx:key="key">
-        <view class="calendar-cell {{item.isBlank ? 'is-blank' : ''}} {{item.isToday ? 'is-today' : ''}} {{item.isCatchupTarget ? 'is-catchup-target' : ''}}">
-          <view wx:if="{{!item.isBlank}}" class="calendar-dot level-{{item.intensity}}">
-            {{item.dayText}}
-          </view>
+      <block wx:for="{{monthCells}}" wx:key="key">
+        <view
+          class="calendar-cell {{item.isBlank ? 'is-blank' : ''}} {{item.completed ? 'is-completed' : ''}} {{item.isToday ? 'is-today' : ''}} {{item.isSelected ? 'is-selected' : ''}} {{item.isCatchupTarget ? 'is-catchup-target' : ''}}"
+          data-date="{{item.date}}"
+          bindtap="selectDate"
+        >
+          <view wx:if="{{!item.isBlank}}" class="calendar-dot">{{item.dayText}}</view>
         </view>
       </block>
     </view>
-    <view class="calendar-legend">
-      <view><text class="legend-dot level-0"></text>未完成</view>
-      <view><text class="legend-dot level-2"></text>已点亮</view>
-      <view><text class="legend-dot is-target"></text>可追赶</view>
+  </view>
+
+  <view class="day-card section-panel">
+    <view class="row-between">
+      <view>
+        <view class="type-section-title">{{selectedDateLabel}}</view>
+        <view class="section-copy">{{selectedDayReport.completedCategories.length ? '已完成' : '未完成'}}</view>
+      </view>
+      <view class="pill">{{selectedDayReport.totalMinutes || 0}} 分钟</view>
     </view>
+
+    <block wx:if="{{selectedDayReport.items && selectedDayReport.items.length}}">
+      <block wx:for="{{selectedDayReport.items}}" wx:key="taskId">
+        <view class="report-row">
+          <view>
+            <view class="report-title">{{item.categoryLabel}}</view>
+            <view class="report-copy">{{item.title}}</view>
+          </view>
+          <view class="report-state {{item.completedToday ? 'is-done' : ''}}">{{item.completedToday ? '完成' : '未完成'}}</view>
+        </view>
+      </block>
+    </block>
+    <view class="empty-state" wx:else>这一天还没有记录。</view>
   </view>
 
   <view class="catchup section-panel">
     <view class="row-between">
       <view>
-        <view class="section-title type-section-title">追赶</view>
-        <view class="section-copy" wx:if="{{catchupState.canCatchup}}">
-          完成真实任务后点亮 {{catchupState.missedDate}}。
-        </view>
-        <view class="section-copy" wx:else>
-          {{catchupState.reason === 'finish-current-plan-first' ? '先完成今天计划，之后才能追赶落下日期。' : catchupState.reason === 'catchup-used-today' ? '今天已经追赶过一批，明天继续。' : '目前没有需要追赶的日期。'}}
-        </view>
+        <view class="type-section-title">追赶</view>
+        <view class="section-copy">{{catchupState.canCatchup ? ('可点亮 ' + catchupState.missedDate) : catchupStatusLabel}}</view>
       </view>
       <view class="status-badge {{catchupStatusClass}}">{{catchupStatusLabel}}</view>
     </view>
@@ -90,40 +100,12 @@
       <block wx:for="{{catchupTasks}}" wx:key="taskId">
         <view class="catchup-row {{item.completedToday ? 'is-done' : ''}}" data-category="{{item.category}}" data-task-id="{{item.taskId}}" bindtap="openCatchupTask">
           <view>
-            <view class="catchup-title">{{item.categoryLabel}} · {{item.displayTitle || item.title}}</view>
-            <view class="catchup-copy">{{item.completedToday ? '这条已完成' : '进入课程，听满 3 遍才算追赶成功'}}</view>
+            <view class="catchup-title">{{item.categoryLabel}}</view>
+            <view class="catchup-copy">{{item.displayTitle || item.title}}</view>
           </view>
           <view class="catchup-state">{{item.playStepText}}</view>
         </view>
       </block>
     </block>
-  </view>
-
-  <view class="quote-card section-panel">
-    <view class="section-title type-section-title">鼓励</view>
-    <view class="quote-text">{{quoteText}}</view>
-    <view class="quote-badge">{{stats.streakDays > 6 ? '本周之星' : stats.streakDays > 0 ? '继续加油' : '今天开始'}}</view>
-  </view>
-
-  <view class="total-card section-panel">
-    <view class="section-title type-section-title">累计数据</view>
-    <view class="total-grid">
-      <view class="stat-tile">
-        <view class="stat-tile-value">{{stats.completedDays || 0}}</view>
-        <view class="stat-tile-label">累计天数</view>
-      </view>
-      <view class="stat-tile">
-        <view class="stat-tile-value">{{stats.totalMinutes || 0}}</view>
-        <view class="stat-tile-label">累计分钟</view>
-      </view>
-      <view class="stat-tile">
-        <view class="stat-tile-value">{{stats.completedTasks || 0}}</view>
-        <view class="stat-tile-label">完成任务</view>
-      </view>
-      <view class="stat-tile">
-        <view class="stat-tile-value">Day {{planDayIndex || 1}}</view>
-        <view class="stat-tile-label">当前计划日</view>
-      </view>
-    </view>
   </view>
 </view>
