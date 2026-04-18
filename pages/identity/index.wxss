@@ -1,7 +1,5 @@
 .identity-hero {
-  background:
-    radial-gradient(circle at 84% 16%, rgba(102, 185, 133, 0.16), transparent 28%),
-    linear-gradient(135deg, #fff8ee 0%, #fffdf8 100%);
+  background: var(--surface);
 }
 
 .role-switch {
@@ -11,16 +9,16 @@
 }
 
 .role-option {
-  min-height: 178rpx;
+  min-height: 160rpx;
   padding: 24rpx;
   border: 2rpx solid var(--border-soft);
   border-radius: var(--radius-lg);
-  background: rgba(255, 255, 255, 0.62);
+  background: rgba(255, 255, 255, 0.68);
 }
 
 .role-option.is-active {
-  border-color: rgba(239, 124, 85, 0.42);
-  background: var(--accent-soft);
+  border-color: rgba(37, 35, 33, 0.18);
+  background: rgba(37, 35, 33, 0.06);
 }
 
 .role-title {
@@ -40,22 +38,23 @@
   margin-top: 22rpx;
 }
 
-.bind-card .button-primary {
+.code-input {
+  text-align: center;
+  font-size: 34rpx;
+  font-weight: 800;
+}
+
+.bind-card .button-primary,
+.bind-card .button-secondary {
   margin-top: 22rpx;
 }
 
-.notice-title {
-  color: var(--text-main);
-  font-size: 28rpx;
-  font-weight: 700;
-}
-
-.notice-row {
-  margin-top: 14rpx;
-  padding: 18rpx 20rpx;
-  border-radius: var(--radius-md);
-  background: #fff8f0;
-  color: var(--text-muted);
-  font-size: 24rpx;
-  font-weight: 700;
+.student-code {
+  margin-top: 24rpx;
+  color: var(--text-strong);
+  font-size: 68rpx;
+  line-height: 1;
+  font-weight: 800;
+  text-align: center;
+  letter-spacing: 0;
 }

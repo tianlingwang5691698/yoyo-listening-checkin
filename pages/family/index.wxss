@@ -1,7 +1,5 @@
 .family-hero {
-  background:
-    radial-gradient(circle at 86% 14%, rgba(102, 185, 133, 0.16), transparent 28%),
-    linear-gradient(135deg, #fff8ee 0%, #fffdf8 100%);
+  background: var(--surface);
 }
 
 .family-head,
@@ -10,9 +8,9 @@
 }
 
 .family-eyebrow {
-  color: #ad7f55;
+  color: var(--text-muted);
   font-size: 20rpx;
-  font-weight: 800;
+  font-weight: 700;
 }
 
 .sync-debug {
@@ -78,10 +76,11 @@
 
 .invite-code {
   margin-top: 10rpx;
-  font-size: 42rpx;
+  font-size: 52rpx;
   font-weight: 800;
-  letter-spacing: 4rpx;
+  letter-spacing: 0;
   color: #2f241f;
+  text-align: center;
 }
 
 .child-pill {
@@ -111,6 +110,12 @@
 
 .button-primary {
   margin-top: 22rpx;
+}
+
+.legacy-join {
+  margin-top: 26rpx;
+  padding-top: 8rpx;
+  border-top: 1rpx solid rgba(37, 35, 33, 0.08);
 }
 
 .reserve-grid {

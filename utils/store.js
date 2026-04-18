@@ -138,7 +138,8 @@ async function ensureState() {
     family: null,
     child: {
       nickname: '',
-      avatarText: ''
+      avatarText: '',
+      childLoginCode: ''
     }
   });
 }
@@ -151,6 +152,7 @@ async function getDashboard() {
     child: {
       nickname: '',
       avatarText: '',
+      childLoginCode: '',
       welcomeLine: '云端数据暂时不可用，请稍后重试。'
     },
     stats: {
@@ -265,7 +267,11 @@ async function markTaskListened(options) {
 
 async function getProfileData() {
   return callCloud('getProfileData', {}, {
-    child: null,
+    child: {
+      nickname: '',
+      avatarText: '',
+      childLoginCode: ''
+    },
     level: null,
     familyReady: false,
     family: null,
@@ -344,7 +350,11 @@ async function getFamilyPageData() {
     currentUser: {},
     currentMember: {},
     members: [],
-    child: null,
+    child: {
+      nickname: '',
+      avatarText: '',
+      childLoginCode: ''
+    },
     subscriptionPreference: null
   });
 }
@@ -356,7 +366,11 @@ async function refreshInviteCode() {
     currentUser: {},
     currentMember: {},
     members: [],
-    child: null,
+    child: {
+      nickname: '',
+      avatarText: '',
+      childLoginCode: ''
+    },
     subscriptionPreference: null
   });
 }
@@ -368,7 +382,27 @@ async function joinFamily(inviteCode, displayName) {
     currentUser: {},
     currentMember: {},
     members: [],
-    child: null,
+    child: {
+      nickname: '',
+      avatarText: '',
+      childLoginCode: ''
+    },
+    subscriptionPreference: null
+  });
+}
+
+async function joinFamilyByChildCode(childLoginCode, displayName) {
+  return callCloud('joinFamilyByChildCode', { childLoginCode, displayName }, {
+    family: null,
+    user: {},
+    currentUser: {},
+    currentMember: {},
+    members: [],
+    child: {
+      nickname: '',
+      avatarText: '',
+      childLoginCode: ''
+    },
     subscriptionPreference: null
   });
 }
@@ -380,7 +414,11 @@ async function updateSubscription(enabled) {
     currentUser: {},
     currentMember: {},
     members: [],
-    child: null,
+    child: {
+      nickname: '',
+      avatarText: '',
+      childLoginCode: ''
+    },
     subscriptionPreference: null
   });
 }
@@ -392,7 +430,11 @@ async function updateChildProfile(nickname) {
     currentUser: {},
     currentMember: {},
     members: [],
-    child: null,
+    child: {
+      nickname: '',
+      avatarText: '',
+      childLoginCode: ''
+    },
     subscriptionPreference: null
   });
 }
@@ -411,6 +453,7 @@ module.exports = {
   getFamilyPageData,
   refreshInviteCode,
   joinFamily,
+  joinFamilyByChildCode,
   updateSubscription,
   updateChildProfile
 };

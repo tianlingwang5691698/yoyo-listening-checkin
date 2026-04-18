@@ -1105,6 +1105,21 @@ function makeInviteCode() {
   return `YOYO-${Math.random().toString(36).slice(2, 8).toUpperCase()}`;
 }
 
+function makeChildLoginCode() {
+  return String(Math.floor(100000 + Math.random() * 900000));
+}
+
+async function makeUniqueChildLoginCode() {
+  for (let i = 0; i < 12; i += 1) {
+    const childLoginCode = makeChildLoginCode();
+    const existing = (await db.collection('children').where({ childLoginCode }).limit(1).get()).data[0];
+    if (!existing) {
+      return childLoginCode;
+    }
+  }
+  throw new Error('孩子 ID 生成失败，请稍后再试');
+}
+
 function buildAvatarTextFromNickname(nickname) {
   const text = String(nickname || '').trim();
   if (!text) {
@@ -1169,9 +1184,19 @@ async function getFamily(familyId) {
 
 async function getChild(familyId) {
   const res = await db.collection('children').where({ familyId }).limit(1).get();
-  const child = res.data[0] || null;
+  let child = res.data[0] || null;
   if (!child) {
     return null;
+  }
+  if (!/^\d{6}$/.test(String(child.childLoginCode || ''))) {
+    const childLoginCode = await makeUniqueChildLoginCode();
+    await db.collection('children').doc(child._id).update({
+      data: {
+        childLoginCode,
+        updatedAt: new Date().toISOString()
+      }
+    });
+    child = Object.assign({}, child, { childLoginCode });
   }
   return Object.assign({}, child, {
     avatarText: buildAvatarTextFromNickname(child.nickname || child.avatarText)
@@ -1195,6 +1220,56 @@ async function updateChildProfile(familyId, payload) {
   await db.collection('children').doc(child._id).update({
     data: nextData
   });
+}
+
+async function upsertFamilyMemberForFamily(openId, userId, familyId, displayName) {
+  const memberRes = await db.collection('familyMembers').where({ openId }).limit(1).get();
+  let joinedMemberId = '';
+  if (memberRes.data[0]) {
+    const existingMember = memberRes.data[0];
+    joinedMemberId = memberRes.data[0].memberId;
+    await db.collection('familyMembers').doc(memberRes.data[0]._id).update({
+      data: {
+        userId,
+        familyId,
+        displayName,
+        role: existingMember.familyId === familyId ? (existingMember.role || 'parent') : 'parent',
+        updatedAt: new Date().toISOString()
+      }
+    });
+  } else {
+    joinedMemberId = `member-${Date.now()}`;
+    await db.collection('familyMembers').add({
+      data: {
+        memberId: joinedMemberId,
+        userId,
+        familyId,
+        openId,
+        role: 'parent',
+        displayName,
+        subscriptionEnabled: false,
+        createdAt: new Date().toISOString()
+      }
+    });
+  }
+  const preferenceRes = await db.collection('subscriptionPreferences').where({ memberId: joinedMemberId }).limit(1).get();
+  if (preferenceRes.data[0]) {
+    await db.collection('subscriptionPreferences').doc(preferenceRes.data[0]._id).update({
+      data: {
+        familyId
+      }
+    });
+  } else if (joinedMemberId) {
+    await db.collection('subscriptionPreferences').add({
+      data: {
+        memberId: joinedMemberId,
+        familyId,
+        dailyReportEnabled: false,
+        lastAuthorizedAt: ''
+      }
+    });
+  }
+  return joinedMemberId;
 }
 
 async function ensureBootstrap(openId) {
@@ -1232,6 +1307,7 @@ async function ensureBootstrap(openId) {
     await db.collection('children').add({
       data: Object.assign({}, childTemplate, {
         familyId,
+        childLoginCode: await makeUniqueChildLoginCode(),
         avatarText: buildAvatarTextFromNickname(childTemplate.nickname)
       })
     });
@@ -2030,49 +2106,20 @@ async function handleAction(event, context) {
       throw new Error('邀请码不正确');
     }
     const displayName = String((event.payload && event.payload.displayName) || '').trim() || '新家长';
-    const memberRes = await db.collection('familyMembers').where({ openId: OPENID }).limit(1).get();
-    let joinedMemberId = '';
-    if (memberRes.data[0]) {
-      joinedMemberId = memberRes.data[0].memberId;
-      await db.collection('familyMembers').doc(memberRes.data[0]._id).update({
-        data: {
-          userId: ctx.user.userId,
-          familyId: target.familyId,
-          displayName
-        }
-      });
-    } else {
-      joinedMemberId = `member-${Date.now()}`;
-      await db.collection('familyMembers').add({
-        data: {
-          memberId: joinedMemberId,
-          userId: ctx.user.userId,
-          familyId: target.familyId,
-          openId: OPENID,
-          role: 'parent',
-          displayName,
-          subscriptionEnabled: false,
-          createdAt: new Date().toISOString()
-        }
-      });
+    await upsertFamilyMemberForFamily(OPENID, ctx.user.userId, target.familyId, displayName);
+    return handleAction({ action: 'getFamilyPage', payload: {} }, context);
+  }
+  if (event.action === 'joinFamilyByChildCode') {
+    const childLoginCode = String((event.payload && event.payload.childLoginCode) || '').replace(/\D/g, '').slice(0, 6);
+    if (!/^\d{6}$/.test(childLoginCode)) {
+      throw new Error('请输入 6 位孩子 ID');
     }
-    const preferenceRes = await db.collection('subscriptionPreferences').where({ memberId: joinedMemberId }).limit(1).get();
-    if (preferenceRes.data[0]) {
-      await db.collection('subscriptionPreferences').doc(preferenceRes.data[0]._id).update({
-        data: {
-          familyId: target.familyId
-        }
-      });
-    } else if (joinedMemberId) {
-      await db.collection('subscriptionPreferences').add({
-        data: {
-          memberId: joinedMemberId,
-          familyId: target.familyId,
-          dailyReportEnabled: false,
-          lastAuthorizedAt: ''
-        }
-      });
+    const targetChild = (await db.collection('children').where({ childLoginCode }).limit(1).get()).data[0];
+    if (!targetChild || !targetChild.familyId) {
+      throw new Error('没有找到这个孩子 ID');
     }
+    const displayName = String((event.payload && event.payload.displayName) || '').trim() || '新家长';
+    await upsertFamilyMemberForFamily(OPENID, ctx.user.userId, targetChild.familyId, displayName);
     return handleAction({ action: 'getFamilyPage', payload: {} }, context);
   }
   if (event.action === 'updateChildProfile') {

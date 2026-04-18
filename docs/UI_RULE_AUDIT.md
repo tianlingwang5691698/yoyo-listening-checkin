@@ -415,3 +415,21 @@ rg ">开始<|0/1|font-weight: 900" pages/**/*.wxml pages/**/*.wxss app.wxss
 - 页面层未发现 `控制台`、`Dashboard`、`Console`、`PROGRAM CONSOLE`、`报表式总览`、`歌曲`。
 - 页面层未发现 `>开始<` 和 `0/1`。
 - 全页面扫描仍只剩统计数字和成长大数字中的 `font-weight: 900` 例外。
+
+## 2026-04-18 我的页产品化与孩子 ID
+
+整改内容：
+
+- 云端为孩子档案生成唯一 6 位 `childLoginCode`。
+- 既有孩子档案在读取时自动补齐 6 位孩子 ID。
+- 新增 `joinFamilyByChildCode`，家长输入孩子 ID 后加入孩子所在家庭。
+- 我的页重构为身份页：孩子 ID、昵称编辑、每日一句、日报入口、家庭管理入口。
+- 身份页接入真实绑定：家长输入孩子 ID，学生查看并复制自己的 ID。
+- 家庭页把孩子 ID 作为主绑定入口，旧邀请码降级为兼容入口。
+
+扫描结果：
+
+- `cloudfunctions/yoyo/index.js`、`utils/store.js`、`pages/profile/index.js`、`pages/family/index.js`、`pages/identity/index.js` 语法检查通过。
+- 页面层未发现 `控制台`、`Dashboard`、`Console`、`PROGRAM CONSOLE`、`报表式总览`、`歌曲`。
+- 页面层未发现 `>开始<` 和 `0/1`。
+- 全页面扫描仍只剩统计数字和成长大数字中的 `font-weight: 900` 例外。

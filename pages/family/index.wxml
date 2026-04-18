@@ -2,7 +2,7 @@
   <view class="family-hero product-hero">
     <view class="row-between family-head">
       <view>
-        <view class="family-eyebrow">FAMILY</view>
+        <view class="family-eyebrow">家庭</view>
         <view class="product-title type-page-title">家庭管理中心</view>
         <view class="product-copy">{{family.name || '我的家庭'}} · {{child.nickname || '佑佑'}}</view>
         <view class="sync-debug {{syncMode === 'cloud' ? 'is-cloud' : 'is-local'}}" wx:if="{{showCloudDebug && syncDebug && syncDebug.show}}">
@@ -35,44 +35,49 @@
       <view class="pill">{{child.currentLevel || 'A1'}}</view>
     </view>
     <input class="family-input form-input" placeholder="输入孩子昵称，例如 乐乐 / Amy" value="{{childNicknameInput}}" bindinput="handleChildNicknameInput" />
-    <button class="button-primary" bindtap="saveChildProfile">保存孩子昵称</button>
+    <button class="button-secondary" bindtap="saveChildProfile">保存孩子昵称</button>
   </view>
 
   <view class="invite-card section-panel">
     <view class="row-between family-section-head">
       <view>
-        <view class="section-title">家庭邀请码</view>
-        <view class="section-copy">其他家长输入后加入同一份记录。</view>
+        <view class="section-title">孩子 ID</view>
+        <view class="section-copy">家长输入 6 位数字，加入同一份记录。</view>
       </view>
-      <view class="status-badge">可刷新</view>
+      <view class="status-badge">绑定用</view>
     </view>
     <view class="invite-box">
-      <view class="invite-label">邀请码</view>
-      <view class="invite-code">{{family.inviteCode || '待生成'}}</view>
+      <view class="invite-label">孩子 ID</view>
+      <view class="invite-code">{{child.childLoginCode || '生成中'}}</view>
     </view>
-    <button class="button-primary" bindtap="refreshInviteCode">刷新邀请码</button>
+    <button class="button-secondary" bindtap="copyChildCode">复制孩子 ID</button>
   </view>
 
   <view class="reserve-card section-panel">
-    <view class="section-title">后续身份码</view>
+    <view class="section-title">兼容邀请码</view>
+    <view class="section-copy">旧家长入口仍可使用。</view>
     <view class="reserve-grid">
       <view class="reserve-item stat-tile">
-        <view class="reserve-label">孩子 ID</view>
-        <view class="reserve-value">{{child.childId || '后续开放'}}</view>
+        <view class="reserve-label">家庭邀请码</view>
+        <view class="reserve-value">{{family.inviteCode || '待生成'}}</view>
       </view>
       <view class="reserve-item stat-tile">
-        <view class="reserve-label">家长邀请码</view>
-        <view class="reserve-value">后续开放</view>
+        <view class="reserve-label">刷新</view>
+        <view class="reserve-value" bindtap="refreshInviteCode">更新</view>
       </view>
     </view>
   </view>
 
   <view class="join-card form-panel">
-    <view class="section-title">加入家庭</view>
-    <view class="section-copy">输入邀请码，加入同一个孩子档案。</view>
-    <input class="family-input form-input" placeholder="输入邀请码" value="{{inviteInput}}" bindinput="handleInviteInput" />
+    <view class="section-title">绑定孩子记录</view>
+    <view class="section-copy">输入孩子 ID，查看同一份日报。</view>
+    <input class="family-input form-input" type="number" maxlength="6" placeholder="输入 6 位孩子 ID" value="{{childCodeInput}}" bindinput="handleChildCodeInput" />
     <input class="family-input form-input" placeholder="输入称呼，例如 妈妈 / 奶奶 / 老师" value="{{joinName}}" bindinput="handleJoinNameInput" />
-    <button class="button-primary" bindtap="joinFamily">加入家庭</button>
+    <button class="button-primary" bindtap="joinFamilyByChildCode">绑定孩子记录</button>
+    <view class="legacy-join">
+      <input class="family-input form-input" placeholder="旧邀请码入口" value="{{inviteInput}}" bindinput="handleInviteInput" />
+      <button class="button-secondary" bindtap="joinFamily">使用邀请码加入</button>
+    </view>
   </view>
 
   <view class="member-card section-panel">

@@ -11,6 +11,7 @@ Page({
       dailyReportEnabled: false
     },
     childNicknameInput: '',
+    childCodeInput: '',
     inviteInput: '',
     joinName: ''
   }),
@@ -28,6 +29,11 @@ Page({
   handleInviteInput(event) {
     this.setData({
       inviteInput: event.detail.value
+    });
+  },
+  handleChildCodeInput(event) {
+    this.setData({
+      childCodeInput: String(event.detail.value || '').replace(/\D/g, '').slice(0, 6)
     });
   },
   handleJoinNameInput(event) {
@@ -67,6 +73,44 @@ Page({
         icon: 'none'
       });
     }
+  },
+  async joinFamilyByChildCode() {
+    if (!/^\d{6}$/.test(String(this.data.childCodeInput || ''))) {
+      wx.showToast({
+        title: '请输入 6 位孩子 ID',
+        icon: 'none'
+      });
+      return;
+    }
+    try {
+      const data = await store.joinFamilyByChildCode(this.data.childCodeInput, this.data.joinName);
+      this.setData(page.buildCloudPageData(this.data, Object.assign({}, data, {
+        childCodeInput: '',
+        joinName: ''
+      })));
+      wx.showToast({
+        title: '已加入孩子记录',
+        icon: 'none'
+      });
+    } catch (error) {
+      wx.showToast({
+        title: error.message || '绑定失败',
+        icon: 'none'
+      });
+    }
+  },
+  copyChildCode() {
+    const childLoginCode = (this.data.child && this.data.child.childLoginCode) || '';
+    if (!childLoginCode) {
+      wx.showToast({
+        title: '孩子 ID 准备中',
+        icon: 'none'
+      });
+      return;
+    }
+    wx.setClipboardData({
+      data: childLoginCode
+    });
   },
   async saveChildProfile() {
     if (!this.data.childNicknameInput) {

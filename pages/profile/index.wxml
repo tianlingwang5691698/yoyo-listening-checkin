@@ -1,11 +1,36 @@
 <view class="page-shell profile-page">
   <view class="profile-hero product-hero">
     <view class="child-label">{{child.nickname || '佑佑'}}</view>
-    <view class="product-title type-page-title">身份中心</view>
-    <view class="product-copy">当前阶段：{{level.name || child.currentLevel || 'A1'}} · 已完成 {{child.completedDays || child.totalCompleted || 0}} 天</view>
+    <view class="product-title type-page-title">我的身份</view>
+    <view class="product-copy">{{dailyEncouragement.english}}</view>
+    <view class="profile-cn">{{dailyEncouragement.chinese}}</view>
     <view class="sync-debug {{syncMode === 'cloud' ? 'is-cloud' : 'is-local'}}" wx:if="{{showCloudDebug && syncDebug && syncDebug.show}}">
       {{syncDebug.text}}
     </view>
+  </view>
+
+  <view class="identity-code section-panel">
+    <view class="row-between option-head">
+      <view>
+        <view class="option-title">孩子 ID</view>
+        <view class="option-copy">家长输入这个 6 位数字，就能加入同一份记录。</view>
+      </view>
+      <view class="status-badge">6 位</view>
+    </view>
+    <view class="child-code">{{child.childLoginCode || '生成中'}}</view>
+    <button class="button-secondary mini-button" bindtap="copyChildCode">复制孩子 ID</button>
+  </view>
+
+  <view class="nickname-card form-panel">
+    <view class="row-between option-head">
+      <view>
+        <view class="option-title">孩子昵称</view>
+        <view class="option-copy">显示在今日学习和家庭日报里。</view>
+      </view>
+      <view class="pill">{{level.name || child.currentLevel || 'A1'}}</view>
+    </view>
+    <input class="form-input profile-input" placeholder="输入孩子昵称" value="{{childNicknameInput}}" bindinput="handleChildNicknameInput" />
+    <button class="button-secondary mini-button" bindtap="saveChildProfile">保存昵称</button>
   </view>
 
   <view class="identity-grid">
@@ -15,17 +40,28 @@
       <view class="identity-copy">{{currentMember.role === 'owner' ? '家庭管理员' : '家长成员'}}</view>
     </view>
     <view class="identity-card stat-tile">
-      <view class="identity-label">当前孩子</view>
-      <view class="identity-value">{{child.nickname || '佑佑'}}</view>
-      <view class="identity-copy">{{level.name || child.currentLevel || 'A1'}}</view>
+      <view class="identity-label">家庭共享</view>
+      <view class="identity-value">{{syncMode === 'cloud' ? '已接通' : '异常'}}</view>
+      <view class="identity-copy">{{family.name || '我的家庭'}}</view>
     </view>
   </view>
 
   <view class="option section-panel">
     <view class="row-between option-head">
       <view>
-        <view class="option-title">家庭共享</view>
-        <view class="option-copy">{{family.name || '我的家庭'}} · {{syncMode === 'cloud' ? '已接通' : '云同步异常'}}</view>
+        <view class="option-title">家长日报</view>
+        <view class="option-copy">{{subscriptionPreference.dailyReportEnabled ? '日报提醒已开启' : '可查看孩子打卡日报'}}</view>
+      </view>
+      <view class="status-badge {{subscriptionPreference.dailyReportEnabled ? '' : 'is-muted'}}">{{subscriptionPreference.dailyReportEnabled ? '提醒开' : '日报'}}</view>
+    </view>
+    <button class="button-primary mini-button" bindtap="openParentPage">查看日报</button>
+  </view>
+
+  <view class="option section-panel">
+    <view class="row-between option-head">
+      <view>
+        <view class="option-title">家庭管理</view>
+        <view class="option-copy">昵称、成员和绑定入口。</view>
       </view>
       <view class="status-badge {{syncMode === 'cloud' ? '' : 'is-warn'}}">{{syncMode === 'cloud' ? '可用' : '异常'}}</view>
     </view>
@@ -35,28 +71,11 @@
   <view class="option section-panel">
     <view class="row-between option-head">
       <view>
-        <view class="option-title">家长日报</view>
-        <view class="option-copy">{{subscriptionPreference.dailyReportEnabled ? '日报提醒已开启' : '日报提醒未开启'}}</view>
+        <view class="option-title">绑定身份</view>
+        <view class="option-copy">家长用孩子 ID 加入记录。</view>
       </view>
-      <view class="status-badge {{subscriptionPreference.dailyReportEnabled ? '' : 'is-muted'}}">{{subscriptionPreference.dailyReportEnabled ? '提醒开' : '提醒关'}}</view>
-    </view>
-    <button class="button-primary mini-button" bindtap="openParentPage">查看日报</button>
-  </view>
-
-  <view class="option section-panel">
-    <view class="row-between option-head">
-      <view>
-        <view class="option-title">身份绑定</view>
-        <view class="option-copy">{{currentUser.phoneBound ? '微信 + 手机号已绑定' : '微信自动识别'}}</view>
-      </view>
-      <view class="status-badge is-muted">预留</view>
+      <view class="status-badge is-muted">ID</view>
     </view>
     <button class="button-secondary mini-button" bindtap="openIdentityPage">打开身份页</button>
-  </view>
-
-  <view class="option section-panel">
-    <view class="option-title">登录方式</view>
-    <view class="option-copy">微信身份自动识别，不影响打卡、日报和家庭共享。</view>
-    <view class="option-tag">{{currentUser.phoneBound ? '手机号已绑定' : '微信自动识别'}}</view>
   </view>
 </view>

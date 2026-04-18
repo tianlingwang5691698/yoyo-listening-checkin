@@ -1,21 +1,45 @@
 .profile-hero {
-  background:
-    radial-gradient(circle at 86% 12%, rgba(102, 185, 133, 0.16), transparent 28%),
-    linear-gradient(135deg, #fff8ee 0%, #fffdf8 100%);
+  background: var(--surface);
 }
 
 .child-label {
   display: inline-flex;
   max-width: 100%;
-  min-height: 58rpx;
-  padding: 0 22rpx;
+  min-height: 54rpx;
+  padding: 0 20rpx;
   border-radius: 999rpx;
   align-items: center;
   justify-content: center;
-  background: var(--accent-soft);
-  color: var(--accent-deep);
+  background: rgba(37, 35, 33, 0.06);
+  color: var(--text-main);
   font-size: 23rpx;
+  font-weight: 700;
+}
+
+.profile-cn {
+  margin-top: 10rpx;
+  color: var(--text-muted);
+  font-size: 23rpx;
+  line-height: 1.5;
+}
+
+.identity-code,
+.nickname-card {
+  margin-top: 24rpx;
+}
+
+.child-code {
+  margin-top: 24rpx;
+  color: var(--text-strong);
+  font-size: 64rpx;
+  line-height: 1;
   font-weight: 800;
+  text-align: center;
+  letter-spacing: 0;
+}
+
+.profile-input {
+  margin-top: 22rpx;
 }
 
 .identity-grid {
@@ -67,16 +91,6 @@
   color: #b45e40;
 }
 
-.identity-note {
-  margin-top: 18rpx;
-  padding: 18rpx 22rpx;
-  border-radius: 24rpx;
-  background: rgba(255, 255, 255, 0.68);
-  font-size: 22rpx;
-  line-height: 1.7;
-  color: #8c7e72;
-}
-
 .option-head {
   align-items: flex-start;
 }
@@ -84,28 +98,14 @@
 .option-title {
   font-size: 30rpx;
   font-weight: 700;
-  color: #2f241f;
+  color: var(--text-main);
 }
 
 .option-copy {
-  margin-top: 12rpx;
-  font-size: 24rpx;
-  line-height: 1.7;
-  color: #8c7e72;
-}
-
-.option-tag {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 22rpx;
-  min-height: 72rpx;
-  padding: 0 20rpx;
-  border-radius: 999rpx;
-  background: #edf9ef;
-  color: #5f9d66;
-  font-size: 22rpx;
-  font-weight: 700;
+  margin-top: 10rpx;
+  font-size: 23rpx;
+  line-height: 1.55;
+  color: var(--text-muted);
 }
 
 .mini-button {
