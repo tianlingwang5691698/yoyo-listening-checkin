@@ -122,10 +122,13 @@ Page({
     calendarMonth: new Date().getMonth() + 1,
     calendarTitle: '',
     monthCells: [],
+    todayDate: getDateKey(new Date()),
     selectedDate: getDateKey(new Date()),
     selectedDateLabel: '',
     selectedDayReport: EMPTY_REPORT,
     selectedDayLoading: false,
+    calendarTouchStartX: 0,
+    calendarTouchStartY: 0,
     catchupStatusLabel: '无需追赶',
     catchupStatusClass: 'is-muted',
     catchupState: {
@@ -151,6 +154,7 @@ Page({
       calendarYear,
       calendarMonth,
       calendarTitle: `${calendarYear}年${calendarMonth}月`,
+      todayDate: getDateKey(today),
       selectedDate,
       selectedDateLabel: formatDateLabel(selectedDate),
       monthCells: buildMonthCells(calendarYear, calendarMonth, heatmapData.heatmap, selectedDate),
@@ -220,6 +224,52 @@ Page({
       : `${nextYear}-${pad(nextMonth)}-01`;
     await this.loadCalendar(nextYear, nextMonth, selectedDate);
     await this.loadSelectedDay(selectedDate);
+  },
+  handleCalendarTouchStart(event) {
+    const touch = event.touches && event.touches[0];
+    if (!touch) {
+      return;
+    }
+    this.setData({
+      calendarTouchStartX: touch.clientX,
+      calendarTouchStartY: touch.clientY
+    });
+  },
+  async handleCalendarTouchEnd(event) {
+    const touch = event.changedTouches && event.changedTouches[0];
+    if (!touch) {
+      return;
+    }
+    const diffX = touch.clientX - this.data.calendarTouchStartX;
+    const diffY = touch.clientY - this.data.calendarTouchStartY;
+    if (Math.abs(diffX) < 50 || Math.abs(diffX) < Math.abs(diffY)) {
+      return;
+    }
+    await this.switchMonth({
+      currentTarget: {
+        dataset: {
+          direction: diffX < 0 ? 1 : -1
+        }
+      }
+    });
+  },
+  async pickDate(event) {
+    const date = event.detail.value;
+    if (!date) {
+      return;
+    }
+    await this.goToDate(date);
+  },
+  async goToDate(date) {
+    const target = parseDateKey(date);
+    const today = new Date();
+    if (target > today) {
+      return;
+    }
+    const year = target.getFullYear();
+    const month = target.getMonth() + 1;
+    await this.loadCalendar(year, month, date);
+    await this.loadSelectedDay(date);
   },
   async selectDate(event) {
     const date = event.currentTarget.dataset.date;

@@ -41,7 +41,9 @@
       <view class="type-section-title">本月</view>
       <view class="month-control">
         <view class="month-arrow" data-direction="-1" bindtap="switchMonth">‹</view>
-        <view class="month-title">{{calendarTitle}}</view>
+        <picker mode="date" value="{{selectedDate}}" end="{{todayDate}}" bindchange="pickDate">
+          <view class="month-title">{{calendarTitle}}</view>
+        </picker>
         <view class="month-arrow" data-direction="1" bindtap="switchMonth">›</view>
       </view>
     </view>
@@ -52,7 +54,7 @@
       </block>
     </view>
 
-    <view class="calendar-grid">
+    <view class="calendar-grid" bindtouchstart="handleCalendarTouchStart" bindtouchend="handleCalendarTouchEnd">
       <block wx:for="{{monthCells}}" wx:key="key">
         <view
           class="calendar-cell {{item.isBlank ? 'is-blank' : ''}} {{item.completed ? 'is-completed' : ''}} {{item.isToday ? 'is-today' : ''}} {{item.isSelected ? 'is-selected' : ''}} {{item.isCatchupTarget ? 'is-catchup-target' : ''}}"

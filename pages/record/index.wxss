@@ -103,6 +103,10 @@
 
 .month-title {
   min-width: 150rpx;
+  min-height: 54rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
   color: var(--text-main);
   font-size: 24rpx;

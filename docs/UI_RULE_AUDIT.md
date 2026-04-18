@@ -222,3 +222,19 @@ rg ">开始<|0/1|font-weight: 900" pages/**/*.wxml pages/**/*.wxss app.wxss
 - `pages/record/index.js`、`utils/store.js`、`cloudfunctions/yoyo/index.js` 语法检查通过。
 - 成长页展示层未发现 `热力图`、`Dashboard`、`Console`、`控制台`、`歌曲`、`>开始<`、`0/1`。
 - 全页面扫描仍只剩统计数字和成长大数字中的 `font-weight: 900` 例外。
+
+## 2026-04-18 成长页月历滑动与日期选择
+
+整改内容：
+
+- 月历区域支持左右滑动切换月份。
+- 年月标题接入原生日期选择器。
+- 选择日期后自动切换到对应月份，并加载当天详情。
+- 未来日期不可跳转。
+
+扫描结果：
+
+- `pages/record/index.js` 语法检查通过。
+- 成长页已接入 `picker mode="date"`、`bindtouchstart`、`bindtouchend`。
+- 页面层未发现 `控制台`、`Dashboard`、`Console`、`PROGRAM CONSOLE`、`报表式总览`、`歌曲`。
+- 页面层未发现 `>开始<` 和 `0/1`。
