@@ -332,3 +332,21 @@ rg ">开始<|0/1|font-weight: 900" pages/**/*.wxml pages/**/*.wxss app.wxss
 - `pages/record/index.js` 语法检查通过。
 - 页面层未发现 `控制台`、`Dashboard`、`Console`、`PROGRAM CONSOLE`、`报表式总览`、`歌曲`。
 - 页面层未发现 `>开始<` 和 `0/1`。
+
+## 2026-04-18 成长页月历页面缓存
+
+整改内容：
+
+- 成长页增加页面内存级 `monthCache`，只在当前页面生命周期内缓存月份点亮数据。
+- 增加 `monthRequests`，合并同一月份的重复请求。
+- 打开成长页时强制刷新当前月，同时后台预加载上月和下月。
+- 滑动切换月份时先用缓存或空月历立即渲染，再后台刷新云端数据。
+- 增加 `calendarLoadVersion`，避免快速滑动时旧请求覆盖新月份。
+- 追赶状态仍从云端刷新，日期详情仍实时请求。
+
+扫描结果：
+
+- `pages/record/index.js` 语法检查通过。
+- 页面层未发现 `控制台`、`Dashboard`、`Console`、`PROGRAM CONSOLE`、`报表式总览`、`歌曲`。
+- 页面层未发现 `>开始<` 和 `0/1`。
+- 全页面扫描仍只剩统计数字和成长大数字中的 `font-weight: 900` 例外。

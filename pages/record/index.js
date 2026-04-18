@@ -24,6 +24,10 @@ function getDateKey(date) {
   return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}`;
 }
 
+function getMonthKey(year, month) {
+  return `${year}-${pad(month)}`;
+}
+
 function parseDateKey(dateKey) {
   const parts = String(dateKey || '').split('-').map(Number);
   return new Date(parts[0], (parts[1] || 1) - 1, parts[2] || 1);
@@ -78,12 +82,13 @@ function buildCatchupPresentation(catchupState) {
   };
 }
 
-function buildMonthCells(year, month, heatmap, selectedDate) {
+function buildMonthCells(year, month, heatmap, selectedDate, catchupState) {
   const heatmapMap = {};
   (heatmap || []).forEach((item) => {
     heatmapMap[item.date] = item;
   });
   const todayKey = getDateKey(new Date());
+  const catchupTarget = (catchupState && catchupState.missedDate) || '';
   const firstDate = new Date(year, month - 1, 1);
   const daysInMonth = new Date(year, month, 0).getDate();
   const cells = [];
@@ -104,7 +109,7 @@ function buildMonthCells(year, month, heatmap, selectedDate) {
       completed: !!record.completed,
       isToday: date === todayKey,
       isSelected: date === selectedDate,
-      isCatchupTarget: !!record.isCatchupTarget
+      isCatchupTarget: catchupTarget === date
     });
   }
   return cells;
@@ -158,6 +163,9 @@ function markSelectedPages(pages, selectedDate) {
 }
 
 Page({
+  monthCache: {},
+  monthRequests: {},
+  calendarLoadVersion: 0,
   data: page.createCloudPageData({
     child: null,
     stats: {},
@@ -196,9 +204,10 @@ Page({
     const calendarMonth = this.data.calendarMonth || today.getMonth() + 1;
     const [dashboard, heatmapData] = await Promise.all([
       store.getDashboard(),
-      store.getMonthHeatmap(calendarYear, calendarMonth)
+      this.getMonthHeatmapCached(calendarYear, calendarMonth, { force: true })
     ]);
-    const calendarPages = await this.buildCalendarPages(calendarYear, calendarMonth, selectedDate);
+    const catchupPresentation = buildCatchupPresentation(heatmapData.catchupState);
+    const calendarPages = this.buildCalendarPages(calendarYear, calendarMonth, selectedDate, heatmapData.catchupState);
     const nextState = Object.assign({}, dashboard, {
       child: dashboard.child,
       stats: dashboard.stats,
@@ -208,7 +217,7 @@ Page({
       todayDate: getDateKey(today),
       selectedDate,
       selectedDateLabel: formatDateLabel(selectedDate),
-      monthCells: buildMonthCells(calendarYear, calendarMonth, heatmapData.heatmap, selectedDate),
+      monthCells: buildMonthCells(calendarYear, calendarMonth, heatmapData.heatmap, selectedDate, heatmapData.catchupState),
       calendarPages,
       calendarSwiperIndex: 1,
       catchupState: heatmapData.catchupState,
@@ -219,15 +228,43 @@ Page({
       {},
       nextState,
       buildMetric(nextState.stats, this.data.metricMode),
-      buildCatchupPresentation(nextState.catchupState)
+      catchupPresentation
     )));
+    this.preloadAdjacentMonths(calendarYear, calendarMonth);
     await this.loadSelectedDay(selectedDate);
     await this.loadCatchupTasks();
   },
-  async buildCalendarPages(year, month, selectedDate) {
+  getCachedMonthData(year, month) {
+    return this.monthCache[getMonthKey(year, month)] || null;
+  },
+  async getMonthHeatmapCached(year, month, options) {
+    const key = getMonthKey(year, month);
+    const shouldForce = !!(options && options.force);
+    if (!shouldForce && this.monthCache[key]) {
+      return this.monthCache[key];
+    }
+    if (!shouldForce && this.monthRequests[key]) {
+      return this.monthRequests[key];
+    }
+    const request = store.getMonthHeatmap(year, month).then((data) => {
+      const safeData = data || {};
+      this.monthCache[key] = {
+        heatmap: safeData.heatmap || [],
+        catchupState: safeData.catchupState || this.data.catchupState
+      };
+      delete this.monthRequests[key];
+      return this.monthCache[key];
+    }).catch((error) => {
+      delete this.monthRequests[key];
+      throw error;
+    });
+    this.monthRequests[key] = request;
+    return request;
+  },
+  buildCalendarPages(year, month, selectedDate, catchupState) {
     const monthRefs = [addMonths(year, month, -1), { year, month }, addMonths(year, month, 1)];
     const sideLabels = ['上月', '当前月份', '下月'];
-    const pages = await Promise.all(monthRefs.map(async (item, index) => {
+    return monthRefs.map((item, index) => {
       if (isFutureMonth(item.year, item.month)) {
         return {
           year: item.year,
@@ -238,32 +275,66 @@ Page({
           cells: []
         };
       }
-      const heatmapData = await store.getMonthHeatmap(item.year, item.month);
+      const heatmapData = this.getCachedMonthData(item.year, item.month) || { heatmap: [] };
       return {
         year: item.year,
         month: item.month,
         title: `${item.year}年${item.month}月`,
         sideLabel: sideLabels[index],
         disabled: false,
-        cells: buildMonthCells(item.year, item.month, heatmapData.heatmap, index === 1 ? selectedDate : '')
+        cells: buildMonthCells(item.year, item.month, heatmapData.heatmap, index === 1 ? selectedDate : '', catchupState)
       };
-    }));
-    return pages;
+    });
+  },
+  preloadAdjacentMonths(year, month) {
+    [addMonths(year, month, -1), addMonths(year, month, 1)].forEach((item) => {
+      if (!isFutureMonth(item.year, item.month)) {
+        this.getMonthHeatmapCached(item.year, item.month).then(() => {
+          if (this.data.calendarYear === year && this.data.calendarMonth === month) {
+            this.refreshCalendarPagesFromCache();
+          }
+        }).catch(() => {});
+      }
+    });
+  },
+  refreshCalendarPagesFromCache() {
+    const calendarPages = this.buildCalendarPages(
+      this.data.calendarYear,
+      this.data.calendarMonth,
+      this.data.selectedDate,
+      this.data.catchupState
+    );
+    this.setData({
+      calendarPages,
+      monthCells: (calendarPages[1] && calendarPages[1].cells) || this.data.monthCells
+    });
   },
   async loadCalendar(year, month, selectedDate) {
-    const heatmapData = await store.getMonthHeatmap(year, month);
-    const calendarPages = await this.buildCalendarPages(year, month, selectedDate);
+    this.calendarLoadVersion += 1;
+    const loadVersion = this.calendarLoadVersion;
+    const cachedData = this.getCachedMonthData(year, month) || { heatmap: [], catchupState: this.data.catchupState };
+    const optimisticPages = this.buildCalendarPages(year, month, selectedDate, this.data.catchupState);
     this.setData(page.buildCloudPageData(this.data, Object.assign({
       calendarYear: year,
       calendarMonth: month,
       calendarTitle: `${year}年${month}月`,
       selectedDate,
       selectedDateLabel: formatDateLabel(selectedDate),
-      monthCells: buildMonthCells(year, month, heatmapData.heatmap, selectedDate),
+      monthCells: buildMonthCells(year, month, cachedData.heatmap, selectedDate, this.data.catchupState),
+      calendarPages: optimisticPages,
+      calendarSwiperIndex: 1
+    }, buildCatchupPresentation(this.data.catchupState))));
+    const heatmapData = await this.getMonthHeatmapCached(year, month, { force: true });
+    if (loadVersion !== this.calendarLoadVersion) {
+      return;
+    }
+    const calendarPages = this.buildCalendarPages(year, month, selectedDate, heatmapData.catchupState);
+    this.setData(page.buildCloudPageData(this.data, Object.assign({
+      monthCells: buildMonthCells(year, month, heatmapData.heatmap, selectedDate, heatmapData.catchupState),
       calendarPages,
-      calendarSwiperIndex: 1,
       catchupState: heatmapData.catchupState
     }, buildCatchupPresentation(heatmapData.catchupState))));
+    this.preloadAdjacentMonths(year, month);
   },
   async loadSelectedDay(date) {
     this.setData({
@@ -283,6 +354,7 @@ Page({
       catchupTasks: labels.normalizeTaskList(heatmapData.catchupTasks || []),
       catchupState: heatmapData.catchupState || this.data.catchupState
     }, buildCatchupPresentation(heatmapData.catchupState || this.data.catchupState))));
+    this.refreshCalendarPagesFromCache();
   },
   switchMetric(event) {
     const mode = event.currentTarget.dataset.mode || 'streak';
@@ -332,10 +404,11 @@ Page({
       selectedDate,
       selectedDateLabel: formatDateLabel(selectedDate),
       monthCells: markSelectedCells(pageData.cells, selectedDate),
-      calendarPages: visiblePages
+      calendarPages: visiblePages,
+      calendarSwiperIndex: current
     });
     await this.loadSelectedDay(selectedDate);
-    await this.loadCalendar(pageData.year, pageData.month, selectedDate);
+    this.loadCalendar(pageData.year, pageData.month, selectedDate).catch(() => {});
   },
   async pickDate(event) {
     const date = event.detail.value;
