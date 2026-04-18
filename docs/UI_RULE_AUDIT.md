@@ -238,3 +238,19 @@ rg ">开始<|0/1|font-weight: 900" pages/**/*.wxml pages/**/*.wxss app.wxss
 - 成长页已接入 `picker mode="date"`、`bindtouchstart`、`bindtouchend`。
 - 页面层未发现 `控制台`、`Dashboard`、`Console`、`PROGRAM CONSOLE`、`报表式总览`、`歌曲`。
 - 页面层未发现 `>开始<` 和 `0/1`。
+
+## 2026-04-18 成长页月历滑动方向修正
+
+整改内容：
+
+- 月历左滑切换到上一个月。
+- 月历右滑切换到下一个月。
+- 手势响应范围从日期格扩展到整个月历区域，包括星期行和日期格。
+- 未来月份仍不可进入。
+
+扫描结果：
+
+- `pages/record/index.js` 语法检查通过。
+- 成长页已接入 `calendar-body` 作为整月滑动区域。
+- 页面层未发现 `控制台`、`Dashboard`、`Console`、`PROGRAM CONSOLE`、`报表式总览`、`歌曲`。
+- 页面层未发现 `>开始<` 和 `0/1`。

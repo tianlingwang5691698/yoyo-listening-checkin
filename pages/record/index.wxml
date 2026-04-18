@@ -48,22 +48,24 @@
       </view>
     </view>
 
-    <view class="week-grid">
-      <block wx:for="{{weekLabels}}" wx:key="*this">
-        <view class="week-label">{{item}}</view>
-      </block>
-    </view>
+    <view class="calendar-body" bindtouchstart="handleCalendarTouchStart" bindtouchend="handleCalendarTouchEnd">
+      <view class="week-grid">
+        <block wx:for="{{weekLabels}}" wx:key="*this">
+          <view class="week-label">{{item}}</view>
+        </block>
+      </view>
 
-    <view class="calendar-grid" bindtouchstart="handleCalendarTouchStart" bindtouchend="handleCalendarTouchEnd">
-      <block wx:for="{{monthCells}}" wx:key="key">
-        <view
-          class="calendar-cell {{item.isBlank ? 'is-blank' : ''}} {{item.completed ? 'is-completed' : ''}} {{item.isToday ? 'is-today' : ''}} {{item.isSelected ? 'is-selected' : ''}} {{item.isCatchupTarget ? 'is-catchup-target' : ''}}"
-          data-date="{{item.date}}"
-          bindtap="selectDate"
-        >
-          <view wx:if="{{!item.isBlank}}" class="calendar-dot">{{item.dayText}}</view>
-        </view>
-      </block>
+      <view class="calendar-grid">
+        <block wx:for="{{monthCells}}" wx:key="key">
+          <view
+            class="calendar-cell {{item.isBlank ? 'is-blank' : ''}} {{item.completed ? 'is-completed' : ''}} {{item.isToday ? 'is-today' : ''}} {{item.isSelected ? 'is-selected' : ''}} {{item.isCatchupTarget ? 'is-catchup-target' : ''}}"
+            data-date="{{item.date}}"
+            bindtap="selectDate"
+          >
+            <view wx:if="{{!item.isBlank}}" class="calendar-dot">{{item.dayText}}</view>
+          </view>
+        </block>
+      </view>
     </view>
   </view>
 

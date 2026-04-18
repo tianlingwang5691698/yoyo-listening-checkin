@@ -248,7 +248,7 @@ Page({
     await this.switchMonth({
       currentTarget: {
         dataset: {
-          direction: diffX < 0 ? 1 : -1
+          direction: diffX < 0 ? -1 : 1
         }
       }
     });
