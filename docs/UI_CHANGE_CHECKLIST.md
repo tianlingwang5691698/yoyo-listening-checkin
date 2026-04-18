@@ -1,10 +1,12 @@
 # UI 改动检查清单
 
-每次 UI、交互、字体、页面结构改动前后都必须使用本清单。改动前先阅读 [PRODUCT_DESIGN_RULES.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/PRODUCT_DESIGN_RULES.md)。
+每次 UI、交互、字体、页面结构改动前后都必须使用本清单。改动前先阅读 [PRODUCT_DESIGN_RULES.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/PRODUCT_DESIGN_RULES.md) 和 [DESIGN_STYLE_REQUIREMENTS.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/DESIGN_STYLE_REQUIREMENTS.md)。
 
 ## 改动前
 
 - 已阅读产品设计规则。
+- 已阅读设计风格与产品语言要求。
+- 已查看项目进度记录中的当前待办。
 - 本次改动只解决一个清晰问题。
 - 已确认是否会影响首页、课程页、成长页、家庭共享或 transcript 链路。
 - 已确认不引入 TDesign、Vant、WeUI 等依赖。

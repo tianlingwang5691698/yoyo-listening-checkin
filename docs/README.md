@@ -21,10 +21,14 @@
 
 - [PRODUCT_DESIGN_RULES.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/PRODUCT_DESIGN_RULES.md)
   - 高级极简产品语言、字体层级、信息密度和交互规则
+- [DESIGN_STYLE_REQUIREMENTS.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/DESIGN_STYLE_REQUIREMENTS.md)
+  - 对话中确认的设计风格、页面语言和交互要求
 - [UI_CHANGE_CHECKLIST.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/UI_CHANGE_CHECKLIST.md)
   - 每次 UI/交互改动前后的检查清单
 - [UI_RULE_AUDIT.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/UI_RULE_AUDIT.md)
   - UI 规则扫描记录和后续整改重点
+- [PROJECT_PROGRESS_LOG.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/PROJECT_PROGRESS_LOG.md)
+  - 项目级 UI/交互进度、变化和结论
 - [REAL_DEVICE_TEST.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/REAL_DEVICE_TEST.md)
   - 真机测试清单和通过标准
 - [REAL_DEVICE_TEST_LOG_TEMPLATE.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/REAL_DEVICE_TEST_LOG_TEMPLATE.md)
