@@ -17,21 +17,24 @@ const PHASE_LABELS = {
 const STAGE_GROUPS = [
   {
     phaseLabel: '第1轮',
+    phaseKey: 'round-1',
     stageText: '阶段一',
     title: '基础输入组',
-    composition: 'Peppa · Unlock 1 · Songs'
+    hint: '先建立稳定输入。',
   },
   {
     phaseLabel: '第2轮',
+    phaseKey: 'round-2',
     stageText: '阶段二',
     title: '复习加速组',
-    composition: '多条复习 · 三线并行'
+    hint: '提高回看密度。',
   },
   {
     phaseLabel: '第3轮',
+    phaseKey: 'round-3',
     stageText: '阶段三',
     title: '综合冲刺组',
-    composition: '高频回看 · 集中巩固'
+    hint: '集中巩固节奏。',
   }
 ];
 
@@ -69,7 +72,8 @@ function buildCurrentStage(data) {
     levelId: 'A1',
     label: PHASE_LABELS[data.planPhaseLabel] || stage.title,
     stageText: stage.stageText,
-    composition: stage.composition
+    hint: stage.hint,
+    phaseKey: stage.phaseKey
   };
 }
 
@@ -92,7 +96,8 @@ Page({
       levelId: 'A1',
       label: '基础输入组',
       stageText: '阶段一',
-      composition: 'Peppa · Unlock 1 · Songs'
+      hint: '先建立稳定输入。',
+      phaseKey: 'round-1'
     },
     stageGroups: STAGE_GROUPS,
     programEntries: []
@@ -116,6 +121,15 @@ Page({
         icon: 'none'
       });
     }
+  },
+  openStage(event) {
+    const phase = event.currentTarget.dataset.phase;
+    if (!phase) {
+      return;
+    }
+    wx.navigateTo({
+      url: `/pages/level-stage/index?levelId=A1&phase=${phase}`
+    });
   },
   openCategory(event) {
     const category = event.currentTarget.dataset.category;

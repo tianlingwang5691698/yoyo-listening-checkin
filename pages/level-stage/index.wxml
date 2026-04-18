@@ -1,0 +1,25 @@
+<view class="page-shell level-stage-page">
+  <view class="stage-hero card">
+    <view class="type-caption">{{stage.levelId}} · {{stage.stageText}}</view>
+    <view class="stage-title type-page-title">{{stage.title}}</view>
+    <view class="stage-hint type-caption">{{stage.hint}}</view>
+  </view>
+
+  <view class="stage-total card">
+    <view class="total-label type-caption">预计总时长</view>
+    <view class="total-value">{{totalMinutesText}}</view>
+  </view>
+
+  <block wx:for="{{taskGroups}}" wx:key="category">
+    <view class="task-group-row card {{item.disabled ? 'is-disabled' : ''}}" data-category="{{item.category}}" data-task-id="{{item.taskId}}" data-disabled="{{item.disabled}}" bindtap="openTask">
+      <view>
+        <view class="group-name">{{item.categoryLabel}}</view>
+        <view class="group-meta type-caption">{{item.title}} · {{item.textType}}</view>
+      </view>
+      <view class="group-side">
+        <view class="group-minutes type-caption">{{item.minutesText}}</view>
+        <view class="group-state">{{item.stateText}}</view>
+      </view>
+    </view>
+  </block>
+</view>

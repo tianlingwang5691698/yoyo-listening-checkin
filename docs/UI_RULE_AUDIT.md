@@ -159,3 +159,20 @@ rg ">开始<|0/1|font-weight: 900" pages/**/*.wxml pages/**/*.wxss app.wxss
 - 音频页页面层未发现 `Day`、`A1课程地图`、`课程地图`。
 - 音频页页面层未发现 `歌曲`、`0/1`、`>开始<`、`Dashboard`、`Console`、`控制台`。
 - 全页面扫描仍只剩统计数字和成长大数字中的 `font-weight: 900` 例外。
+
+## 2026-04-18 A1 阶段详情页
+
+整改内容：
+
+- 新增 `pages/level-stage/index` 阶段详情页。
+- 音频页阶段行点击进入阶段详情页。
+- 阶段详情页展示阶段轻提示、预计总时长和任务组合。
+- 任务组合沿用 Peppa / Unlock 1 / Songs 当前数据，未来可接真实阶段任务池。
+- 不改云函数和数据结构。
+
+扫描结果：
+
+- 新页面 JS 和音频页 JS 语法检查通过。
+- `app.json` 和 `pages/level-stage/index.json` JSON parse 通过。
+- 新页面与音频页页面层未发现 `课程地图`、`歌曲`、`0/1`、`>开始<`、`Dashboard`、`Console`、`控制台`。
+- 全页面扫描仍只剩统计数字和成长大数字中的 `font-weight: 900` 例外。

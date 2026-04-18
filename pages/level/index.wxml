@@ -15,17 +15,17 @@
   <view class="stage-card card">
     <view class="stage-level">{{currentStage.stageText}}</view>
     <view class="stage-title">{{currentStage.label}}</view>
-    <view class="stage-composition type-caption">{{currentStage.composition}}</view>
+    <view class="stage-composition type-caption">{{currentStage.hint}}</view>
   </view>
 
   <view class="stage-list">
     <block wx:for="{{stageGroups}}" wx:key="phaseLabel">
-      <view class="stage-row {{item.active ? 'is-active' : ''}}">
+      <view class="stage-row {{item.active ? 'is-active' : ''}}" data-phase="{{item.phaseKey}}" bindtap="openStage">
         <view>
           <view class="stage-row-title">{{item.stageText}}</view>
-          <view class="stage-row-meta type-caption">{{item.composition}}</view>
+          <view class="stage-row-meta type-caption">{{item.title}}</view>
         </view>
-        <view class="stage-row-state">{{item.active ? '当前' : ''}}</view>
+        <view class="stage-row-state">{{item.active ? '当前' : '›'}}</view>
       </view>
     </block>
   </view>
