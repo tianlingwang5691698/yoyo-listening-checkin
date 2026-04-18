@@ -1,48 +1,29 @@
 <view class="page-shell level-page">
-  <view class="level-hero product-hero">
-    <view class="product-eyebrow">音频</view>
-    <view class="product-title type-page-title">{{level.name || 'A1'}}</view>
-    <view class="product-copy">{{level.description}} · Day {{planDayIndex}} · {{planPhaseLabel}}</view>
-    <view class="sync-debug {{syncMode === 'cloud' ? 'is-cloud' : 'is-local'}}" wx:if="{{showCloudDebug && syncDebug && syncDebug.show}}">
-      {{syncDebug.text}}
-    </view>
-    <view class="level-kpis">
-      <view class="stat-tile">
-        <view class="stat-tile-value">{{stats.completedDays || 0}}</view>
-        <view class="stat-tile-label">完成打卡</view>
-      </view>
-      <view class="stat-tile">
-        <view class="stat-tile-value">{{stats.streakDays || 0}}</view>
-        <view class="stat-tile-label">连续天数</view>
-      </view>
-      <view class="stat-tile">
-        <view class="stat-tile-value">{{stats.totalMinutes || 0}}</view>
-        <view class="stat-tile-label">累计分钟</view>
-      </view>
-    </view>
+  <view class="level-header">
+    <view class="type-page-title">音频</view>
+    <view class="type-caption level-subtitle">{{currentStage.dayText}}</view>
   </view>
 
-  <block wx:for="{{categories}}" wx:key="category">
-    <view class="unit-block section-panel program-card tone-{{item.category === 'peppa' ? 'peppa' : item.category === 'unlock1' ? 'unlock' : 'song'}}">
-      <view class="row-between">
-        <view>
-          <view class="program-order">{{item.category === 'peppa' ? '01' : item.category === 'unlock1' ? '02' : '03'}}</view>
-          <view class="unit-block-title type-section-title">{{item.categoryLabel}}</view>
-          <view class="section-copy">{{item.isPendingAsset ? '等待音频' : ('今日 ' + (item.todayTaskCount || 0) + ' 项')}}</view>
-        </view>
-        <view class="unit-count">{{item.totalCount}}</view>
+  <view class="level-tabs">
+    <block wx:for="{{levelTabs}}" wx:key="levelId">
+      <view class="level-tab {{item.enabled ? 'is-active' : 'is-disabled'}}" data-enabled="{{item.enabled}}" bindtap="chooseLevel">
+        {{item.levelId}}
       </view>
+    </block>
+  </view>
 
-      <view class="lesson-row task-cell {{item.isPendingAsset ? 'is-disabled' : ''}}" data-category="{{item.category}}" bindtap="openCategory">
-        <view class="lesson-order">{{item.category === 'peppa' ? 'P' : item.category === 'unlock1' ? 'U' : 'S'}}</view>
-        <view class="lesson-body">
-          <view class="lesson-title">{{item.todayTask.displayTitle || item.todayTask.title}}</view>
-          <view class="lesson-meta">{{item.todayTask.displaySubtitle || item.todayTask.audioDisplayName || '等待素材'}} · {{item.todayTask.playStepText}}</view>
-        </view>
-        <view class="lesson-tag {{item.todayTask.completedToday ? 'done' : item.isPendingAsset ? 'locked' : 'ready'}}">
-          {{item.todayTask.completedToday ? '完成' : item.isPendingAsset ? '等待' : '开始'}}
-        </view>
+  <view class="stage-card card">
+    <view class="stage-level">{{currentStage.levelId}}</view>
+    <view class="stage-title">{{currentStage.label}}</view>
+  </view>
+
+  <block wx:for="{{programEntries}}" wx:key="category">
+    <view class="program-row card {{item.disabled ? 'is-disabled' : ''}}" data-category="{{item.category}}" data-task-id="{{item.taskId}}" data-disabled="{{item.disabled}}" bindtap="openCategory">
+      <view>
+        <view class="program-name">{{item.categoryLabel}}</view>
+        <view class="program-meta type-caption">{{item.title}} · {{item.textType}}</view>
       </view>
+      <view class="program-state {{item.stateClass}}">{{item.stateText}}</view>
     </view>
   </block>
 </view>
