@@ -225,10 +225,10 @@ Page({
     await this.loadCatchupTasks();
   },
   async buildCalendarPages(year, month, selectedDate) {
-    const monthRefs = [addMonths(year, month, 1), { year, month }, addMonths(year, month, -1)];
-    const sideLabels = ['下月', '当前月份', '上月'];
+    const monthRefs = [addMonths(year, month, -1), { year, month }, addMonths(year, month, 1)];
+    const sideLabels = ['上月', '当前月份', '下月'];
     const pages = await Promise.all(monthRefs.map(async (item, index) => {
-      if (index === 0 && isFutureMonth(item.year, item.month)) {
+      if (isFutureMonth(item.year, item.month)) {
         return {
           year: item.year,
           month: item.month,
