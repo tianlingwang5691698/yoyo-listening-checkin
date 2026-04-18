@@ -399,3 +399,19 @@ rg ">开始<|0/1|font-weight: 900" pages/**/*.wxml pages/**/*.wxss app.wxss
 - 成长页已无 `swiper`、`calendarSwiperIndex`、`calendarPages`、`handleCalendarSwiperChange`。
 - 页面层未发现 `控制台`、`Dashboard`、`Console`、`PROGRAM CONSOLE`、`报表式总览`、`歌曲`。
 - 页面层未发现 `>开始<` 和 `0/1`。
+
+## 2026-04-18 成长页统计对齐与追赶文案
+
+整改内容：
+
+- summary 三个统计 tile 增加固定数值区，保证 `累计天数`、`累计时长`、`完成任务` 的标签基线一致。
+- 累计时长允许自然换行，但不挤压其他 tile 的底部标签位置。
+- 追赶卡增加短文案：`完成真实任务，点亮漏掉的一天。`
+- 保留追赶状态短句，不展开成长说明书式长解释。
+
+扫描结果：
+
+- `pages/record/index.js` 语法检查通过。
+- 页面层未发现 `控制台`、`Dashboard`、`Console`、`PROGRAM CONSOLE`、`报表式总览`、`歌曲`。
+- 页面层未发现 `>开始<` 和 `0/1`。
+- 全页面扫描仍只剩统计数字和成长大数字中的 `font-weight: 900` 例外。

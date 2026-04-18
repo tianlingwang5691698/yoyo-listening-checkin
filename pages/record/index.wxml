@@ -22,15 +22,21 @@
 
     <view class="summary-row">
       <view class="summary-item">
-        <view class="summary-value">{{stats.completedDays || 0}}</view>
+        <view class="summary-value-wrap">
+          <view class="summary-value">{{stats.completedDays || 0}}</view>
+        </view>
         <view class="summary-label">累计天数</view>
       </view>
       <view class="summary-item">
-        <view class="summary-value is-duration">{{totalDurationText}}</view>
+        <view class="summary-value-wrap">
+          <view class="summary-value is-duration">{{totalDurationText}}</view>
+        </view>
         <view class="summary-label">累计时长</view>
       </view>
       <view class="summary-item">
-        <view class="summary-value">{{stats.completedTasks || 0}}</view>
+        <view class="summary-value-wrap">
+          <view class="summary-value">{{stats.completedTasks || 0}}</view>
+        </view>
         <view class="summary-label">完成任务</view>
       </view>
     </view>
@@ -103,6 +109,7 @@
       <view>
         <view class="type-section-title">追赶</view>
         <view class="section-copy">{{catchupCopy}}</view>
+        <view class="catchup-purpose">完成真实任务，点亮漏掉的一天。</view>
       </view>
       <view class="status-badge {{catchupStatusClass}}">{{catchupStatusLabel}}</view>
     </view>

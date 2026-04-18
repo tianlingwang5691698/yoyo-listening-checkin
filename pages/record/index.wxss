@@ -71,9 +71,20 @@
 }
 
 .summary-item {
-  padding: 20rpx 12rpx;
+  min-height: 114rpx;
+  padding: 18rpx 12rpx;
   border: 1rpx solid rgba(37, 35, 33, 0.08);
   border-radius: 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.summary-value-wrap {
+  min-height: 44rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .summary-value {
@@ -83,14 +94,17 @@
 }
 
 .summary-value.is-duration {
-  font-size: 25rpx;
+  max-width: 100%;
+  font-size: 24rpx;
   line-height: 1.2;
+  text-align: center;
+  word-break: break-all;
 }
 
 .summary-label {
-  margin-top: 8rpx;
   color: var(--text-muted);
   font-size: 21rpx;
+  text-align: center;
 }
 
 .month-title {
@@ -257,6 +271,12 @@
   margin-top: 8rpx;
   color: var(--text-muted);
   font-size: 22rpx;
+}
+
+.catchup-purpose {
+  margin-top: 8rpx;
+  color: var(--text-soft);
+  font-size: 21rpx;
 }
 
 .report-state,
