@@ -2,7 +2,7 @@
   <view class="lesson-hero product-hero tone-{{task.coverTone}} cover-variant-{{task.coverVariant}}">
     <view class="lesson-hero-top">
       <view class="pill">{{task.coverBadge || task.categoryLabel}}</view>
-      <view class="status-badge {{task.completedToday ? '' : 'is-warn'}}">{{task.completedToday ? '已完成' : '训练中'}}</view>
+      <view class="status-badge {{task.completedToday ? '' : 'is-warn'}}">{{task.completedToday ? '完成' : '训练中'}}</view>
     </view>
     <view class="lesson-title type-page-title">{{(currentAudio && currentAudio.title) || task.displayTitle || task.title}}</view>
     <view class="lesson-copy" wx:if="{{task.displaySubtitle}}">{{task.displaySubtitle}}</view>
@@ -14,11 +14,6 @@
           <view class="sync-debug-line">{{item}}</view>
         </block>
       </block>
-    </view>
-    <view class="hero-meta">
-      <text>{{progress.currentPass}} / {{progress.repeatTarget}}</text>
-      <text>{{transcriptLines.length ? (transcriptSyncGranularity === 'line' ? '句级文本' : '逐词文本') : task.isPendingAsset ? '等待音频' : '纯听力'}}</text>
-      <text>{{task.completedToday ? '今天已完成' : '今天进行中'}}</text>
     </view>
   </view>
 
@@ -46,7 +41,6 @@
         <view class="section-copy" wx:if="{{showCloudDebug && currentAudio && currentAudio.src}}">src：{{currentAudio.src}}</view>
         <view class="section-copy error-copy" wx:if="{{showCloudDebug && audioErrorDetail}}">错误详情：{{audioErrorDetail}}</view>
       </view>
-      <view class="player-stage" wx:if="{{!task.isPendingAsset}}">{{progress.currentPass}} / {{progress.repeatTarget}}</view>
     </view>
     <view class="custom-player" wx:if="{{!task.isPendingAsset}}">
       <view class="player-panel quest-{{task.category}}">
@@ -56,17 +50,16 @@
               <view class="media-title" wx:if="{{currentAudio && currentAudio.title}}">{{currentAudio.title}}</view>
               <view class="player-status">{{isPlaying ? '正在播放' : (audioResolving ? '正在准备' : (audioReady ? '已暂停' : '等待播放'))}}</view>
             </view>
-            <view class="player-speed-badge">当前 {{playbackRate.toFixed(1)}}x</view>
           </view>
         </view>
         <view class="player-main">
-          <button class="player-toggle" bindtap="toggleAudio" loading="{{audioResolving}}" disabled="{{task.isPendingAsset}}">
+          <view class="player-toggle {{audioResolving ? 'is-loading' : ''}}" bindtap="toggleAudio">
             <text class="player-toggle-icon {{isPlaying ? 'is-pause' : 'is-play'}}">{{isPlaying ? '❚❚' : '▶'}}</text>
-          </button>
+          </view>
         </view>
         <view class="player-progress">
           <view class="player-progress-meta">
-            <view class="player-progress-label">{{progress.playStepText}}</view>
+            <view class="player-progress-label">{{isPlaying ? '播放中' : audioResolving ? '准备中' : audioReady ? '已暂停' : '等待播放'}}</view>
             <view class="player-time">{{currentTimeLabel}} / {{durationLabel}}</view>
           </view>
           <view class="progress-rail player-progress-track">
@@ -79,9 +72,6 @@
         </view>
       </view>
     </view>
-    <view class="listen-state {{task.completedToday ? 'is-ready' : 'is-waiting'}}">
-      已完成 {{progress.playStepText}}
-    </view>
   </view>
 
   <view class="section-panel transcript-card">
@@ -89,7 +79,7 @@
       <view>
         <view class="section-title type-section-title">文本</view>
       </view>
-      <view class="pill transcript-pill">{{transcriptLines.length ? (transcriptSyncGranularity === 'line' ? '句级文本已就绪' : '文本已就绪') : task.transcriptStatus === 'pending' ? '文本准备中' : '暂无文本'}}</view>
+      <view class="pill transcript-pill" wx:if="{{!transcriptLines.length}}">{{task.transcriptStatus === 'pending' ? '准备中' : '暂无文本'}}</view>
     </view>
 
     <view class="transcript-focus" wx:if="{{transcriptLines.length}}">
@@ -136,13 +126,11 @@
     </view>
 
     <view class="transcript-empty" wx:elif="{{task.transcriptStatus === 'pending'}}">
-      <view class="transcript-empty-title">这条文本准备中</view>
-      <view class="transcript-empty-copy">今天先按纯听力完成，不会卡住任务；文本同步准备好后会自动接上。</view>
+      <view class="transcript-empty-title">文本准备中</view>
     </view>
 
     <view class="transcript-empty" wx:else>
-      <view class="transcript-empty-title">这一条没有文本</view>
-      <view class="transcript-empty-copy">没有文本也不会影响今天完成 3 遍任务。</view>
+      <view class="transcript-empty-title">暂无文本</view>
     </view>
   </view>
 
