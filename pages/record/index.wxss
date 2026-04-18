@@ -147,6 +147,10 @@
   margin-top: 14rpx;
 }
 
+.calendar-swiper {
+  height: 520rpx;
+}
+
 .calendar-cell {
   min-width: 0;
   height: 76rpx;

@@ -100,6 +100,19 @@ function buildMonthCells(year, month, heatmap, selectedDate) {
   return cells;
 }
 
+function addMonths(year, month, offset) {
+  const date = new Date(year, month - 1 + offset, 1);
+  return {
+    year: date.getFullYear(),
+    month: date.getMonth() + 1
+  };
+}
+
+function isFutureMonth(year, month) {
+  const today = new Date();
+  return year > today.getFullYear() || (year === today.getFullYear() && month > today.getMonth() + 1);
+}
+
 function normalizeReport(report) {
   const safeReport = report || {};
   return Object.assign({}, safeReport, {
@@ -122,13 +135,13 @@ Page({
     calendarMonth: new Date().getMonth() + 1,
     calendarTitle: '',
     monthCells: [],
+    calendarPages: [],
+    calendarSwiperIndex: 1,
     todayDate: getDateKey(new Date()),
     selectedDate: getDateKey(new Date()),
     selectedDateLabel: '',
     selectedDayReport: EMPTY_REPORT,
     selectedDayLoading: false,
-    calendarTouchStartX: 0,
-    calendarTouchStartY: 0,
     catchupStatusLabel: '无需追赶',
     catchupStatusClass: 'is-muted',
     catchupState: {
@@ -148,6 +161,7 @@ Page({
       store.getDashboard(),
       store.getMonthHeatmap(calendarYear, calendarMonth)
     ]);
+    const calendarPages = await this.buildCalendarPages(calendarYear, calendarMonth, selectedDate);
     const nextState = Object.assign({}, dashboard, {
       child: dashboard.child,
       stats: dashboard.stats,
@@ -158,6 +172,8 @@ Page({
       selectedDate,
       selectedDateLabel: formatDateLabel(selectedDate),
       monthCells: buildMonthCells(calendarYear, calendarMonth, heatmapData.heatmap, selectedDate),
+      calendarPages,
+      calendarSwiperIndex: 1,
       catchupState: heatmapData.catchupState,
       catchupTasks: [],
       planDayIndex: dashboard.planDayIndex || 1
@@ -171,8 +187,32 @@ Page({
     await this.loadSelectedDay(selectedDate);
     await this.loadCatchupTasks();
   },
+  async buildCalendarPages(year, month, selectedDate) {
+    const monthRefs = [addMonths(year, month, 1), { year, month }, addMonths(year, month, -1)];
+    const pages = await Promise.all(monthRefs.map(async (item, index) => {
+      if (index === 0 && isFutureMonth(item.year, item.month)) {
+        return {
+          year: item.year,
+          month: item.month,
+          title: `${item.year}年${item.month}月`,
+          disabled: true,
+          cells: []
+        };
+      }
+      const heatmapData = await store.getMonthHeatmap(item.year, item.month);
+      return {
+        year: item.year,
+        month: item.month,
+        title: `${item.year}年${item.month}月`,
+        disabled: false,
+        cells: buildMonthCells(item.year, item.month, heatmapData.heatmap, index === 1 ? selectedDate : '')
+      };
+    }));
+    return pages;
+  },
   async loadCalendar(year, month, selectedDate) {
     const heatmapData = await store.getMonthHeatmap(year, month);
+    const calendarPages = await this.buildCalendarPages(year, month, selectedDate);
     this.setData(page.buildCloudPageData(this.data, Object.assign({
       calendarYear: year,
       calendarMonth: month,
@@ -180,6 +220,8 @@ Page({
       selectedDate,
       selectedDateLabel: formatDateLabel(selectedDate),
       monthCells: buildMonthCells(year, month, heatmapData.heatmap, selectedDate),
+      calendarPages,
+      calendarSwiperIndex: 1,
       catchupState: heatmapData.catchupState
     }, buildCatchupPresentation(heatmapData.catchupState))));
   },
@@ -225,33 +267,24 @@ Page({
     await this.loadCalendar(nextYear, nextMonth, selectedDate);
     await this.loadSelectedDay(selectedDate);
   },
-  handleCalendarTouchStart(event) {
-    const touch = event.touches && event.touches[0];
-    if (!touch) {
+  async handleCalendarSwiperChange(event) {
+    const current = event.detail.current;
+    if (current === 1) {
       return;
     }
-    this.setData({
-      calendarTouchStartX: touch.clientX,
-      calendarTouchStartY: touch.clientY
-    });
-  },
-  async handleCalendarTouchEnd(event) {
-    const touch = event.changedTouches && event.changedTouches[0];
-    if (!touch) {
+    const pageData = this.data.calendarPages[current];
+    if (!pageData || pageData.disabled) {
+      this.setData({
+        calendarSwiperIndex: 1
+      });
       return;
     }
-    const diffX = touch.clientX - this.data.calendarTouchStartX;
-    const diffY = touch.clientY - this.data.calendarTouchStartY;
-    if (Math.abs(diffX) < 50 || Math.abs(diffX) < Math.abs(diffY)) {
-      return;
-    }
-    await this.switchMonth({
-      currentTarget: {
-        dataset: {
-          direction: diffX < 0 ? -1 : 1
-        }
-      }
-    });
+    const today = new Date();
+    const selectedDate = pageData.year === today.getFullYear() && pageData.month === today.getMonth() + 1
+      ? getDateKey(today)
+      : `${pageData.year}-${pad(pageData.month)}-01`;
+    await this.loadCalendar(pageData.year, pageData.month, selectedDate);
+    await this.loadSelectedDay(selectedDate);
   },
   async pickDate(event) {
     const date = event.detail.value;

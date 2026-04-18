@@ -254,3 +254,19 @@ rg ">开始<|0/1|font-weight: 900" pages/**/*.wxml pages/**/*.wxss app.wxss
 - 成长页已接入 `calendar-body` 作为整月滑动区域。
 - 页面层未发现 `控制台`、`Dashboard`、`Console`、`PROGRAM CONSOLE`、`报表式总览`、`歌曲`。
 - 页面层未发现 `>开始<` 和 `0/1`。
+
+## 2026-04-18 成长页月历 Swiper 反馈
+
+整改内容：
+
+- 月历改为原生 `swiper` 三页结构。
+- 三页顺序按用户预期排列：下月 / 本月 / 上月。
+- 左滑进入上一个月，右滑进入下一个月。
+- 当前月右滑到未来月份时自动回到当前月。
+
+扫描结果：
+
+- `pages/record/index.js` 语法检查通过。
+- 成长页已接入 `calendar-swiper` 和 `handleCalendarSwiperChange`。
+- 页面层未发现 `控制台`、`Dashboard`、`Console`、`PROGRAM CONSOLE`、`报表式总览`、`歌曲`。
+- 页面层未发现 `>开始<` 和 `0/1`。
