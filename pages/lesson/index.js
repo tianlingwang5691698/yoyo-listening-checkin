@@ -490,7 +490,7 @@ Page({
     if (!this.innerAudioContext) {
       return;
     }
-    const nextRate = this.data.playbackRate === 1 ? 0.8 : 1;
+    const nextRate = this.data.playbackRate === 1 ? 0.9 : 1;
     this.innerAudioContext.playbackRate = nextRate;
     this.setData({
       playbackRate: nextRate

@@ -17,22 +17,12 @@
     </view>
   </view>
 
-  <view class="section-panel training-card">
-    <view class="section-title type-section-title">三遍节奏</view>
-    <view class="training-steps">
-      <view class="training-step {{progress.playCount >= 1 ? 'is-done' : 'is-current'}}">
-        <view class="training-index">1</view>
-      </view>
-      <view class="training-step {{progress.playCount >= 2 ? 'is-done' : progress.playCount >= 1 ? 'is-current' : ''}}">
-        <view class="training-index">2</view>
-      </view>
-      <view class="training-step {{progress.playCount >= 3 ? 'is-done' : progress.playCount >= 2 ? 'is-current' : ''}}">
-        <view class="training-index">3</view>
-      </view>
-    </view>
-  </view>
-
   <view class="section-panel player-card">
+    <view class="pass-steps">
+      <view class="pass-step {{progress.playCount >= 1 ? 'is-done' : 'is-current'}}">1</view>
+      <view class="pass-step {{progress.playCount >= 2 ? 'is-done' : progress.playCount >= 1 ? 'is-current' : ''}}">2</view>
+      <view class="pass-step {{progress.playCount >= 3 ? 'is-done' : progress.playCount >= 2 ? 'is-current' : ''}}">3</view>
+    </view>
     <view class="row-between player-header">
       <view wx:if="{{!task.isPendingAsset}}">
         <view class="section-copy error-copy" wx:if="{{audioError}}">{{audioError}}</view>
