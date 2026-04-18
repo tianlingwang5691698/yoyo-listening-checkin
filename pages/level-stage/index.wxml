@@ -10,7 +10,8 @@
     <view class="total-value">{{totalMinutesText}}</view>
   </view>
 
-  <block wx:for="{{taskGroups}}" wx:key="category">
+  <block wx:if="{{hasTaskGroups}}">
+    <block wx:for="{{taskGroups}}" wx:key="category">
     <view class="task-group-row card {{item.disabled ? 'is-disabled' : ''}}" data-category="{{item.category}}" data-task-id="{{item.taskId}}" data-disabled="{{item.disabled}}" bindtap="openTask">
       <view>
         <view class="group-name">{{item.categoryLabel}}</view>
@@ -21,5 +22,11 @@
         <view class="group-state">{{item.stateText}}</view>
       </view>
     </view>
+    </block>
   </block>
+
+  <view class="empty-combo card" wx:else>
+    <view class="empty-title">暂时没有组合</view>
+    <view class="empty-copy type-caption">后续会加入新的 A1 听力材料。</view>
+  </view>
 </view>

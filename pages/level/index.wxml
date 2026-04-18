@@ -1,7 +1,7 @@
 <view class="page-shell level-page">
   <view class="level-header">
-    <view class="type-page-title">听力路径</view>
-    <view class="type-caption level-subtitle">{{currentStage.levelId}} · 当前阶段</view>
+    <view class="type-page-title">A1 听力积累</view>
+    <view class="type-caption level-subtitle">不同材料组合，累积听力时长</view>
   </view>
 
   <view class="level-tabs">
@@ -23,14 +23,4 @@
       </view>
     </block>
   </view>
-
-  <block wx:for="{{programEntries}}" wx:key="category">
-    <view class="program-row card {{item.disabled ? 'is-disabled' : ''}}" data-category="{{item.category}}" data-task-id="{{item.taskId}}" data-disabled="{{item.disabled}}" bindtap="openCategory">
-      <view>
-        <view class="program-name">{{item.categoryLabel}}</view>
-        <view class="program-meta type-caption">{{item.title}} · {{item.textType}}</view>
-      </view>
-      <view class="program-state {{item.stateClass}}">{{item.stateText}}</view>
-    </view>
-  </block>
 </view>

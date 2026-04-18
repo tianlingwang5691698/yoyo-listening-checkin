@@ -70,3 +70,19 @@
   font-size: 28rpx;
   font-weight: 700;
 }
+
+.empty-combo {
+  margin-top: 18rpx;
+  padding: 30rpx;
+  background: rgba(255, 255, 255, 0.84);
+}
+
+.empty-title {
+  color: var(--text-strong);
+  font-size: 30rpx;
+  font-weight: 700;
+}
+
+.empty-copy {
+  margin-top: 10rpx;
+}

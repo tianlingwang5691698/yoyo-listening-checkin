@@ -9,9 +9,9 @@ const LEVEL_TABS = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'].map((levelId) => ({
 }));
 
 const PHASE_LABELS = {
-  '第1轮': '基础输入组',
-  '第2轮': '复习加速组',
-  '第3轮': '综合冲刺组'
+  '第1轮': '听力组合 A',
+  '第2轮': '听力组合 B',
+  '第3轮': '听力组合 C'
 };
 
 const STAGE_GROUPS = [
@@ -19,22 +19,22 @@ const STAGE_GROUPS = [
     phaseLabel: '第1轮',
     phaseKey: 'round-1',
     stageText: '阶段一',
-    title: '基础输入组',
-    hint: '先建立稳定输入。',
+    title: '听力组合 A',
+    hint: '累积 A1 听力时长。',
   },
   {
     phaseLabel: '第2轮',
     phaseKey: 'round-2',
     stageText: '阶段二',
-    title: '复习加速组',
-    hint: '提高回看密度。',
+    title: '听力组合 B',
+    hint: '累积 A1 听力时长。',
   },
   {
     phaseLabel: '第3轮',
     phaseKey: 'round-3',
     stageText: '阶段三',
-    title: '综合冲刺组',
-    hint: '集中巩固节奏。',
+    title: '听力组合 C',
+    hint: '累积 A1 听力时长。',
   }
 ];
 
@@ -94,9 +94,9 @@ Page({
     levelTabs: LEVEL_TABS,
     currentStage: {
       levelId: 'A1',
-      label: '基础输入组',
+      label: '听力组合 A',
       stageText: '阶段一',
-      hint: '先建立稳定输入。',
+      hint: '累积 A1 听力时长。',
       phaseKey: 'round-1'
     },
     stageGroups: STAGE_GROUPS,
@@ -129,19 +129,6 @@ Page({
     }
     wx.navigateTo({
       url: `/pages/level-stage/index?levelId=A1&phase=${phase}`
-    });
-  },
-  openCategory(event) {
-    const category = event.currentTarget.dataset.category;
-    const taskId = event.currentTarget.dataset.taskId;
-    const disabled = event.currentTarget.dataset.disabled;
-    if (!category || disabled === true || disabled === 'true') {
-      return;
-    }
-    wx.navigateTo({
-      url: taskId
-        ? `/pages/lesson/index?category=${category}&taskId=${taskId}`
-        : `/pages/lesson/index?category=${category}`
     });
   }
 });

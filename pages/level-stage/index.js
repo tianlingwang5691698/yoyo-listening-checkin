@@ -6,20 +6,20 @@ const STAGES = {
   'round-1': {
     levelId: 'A1',
     stageText: '阶段一',
-    title: '基础输入组',
-    hint: '先建立稳定输入。'
+    title: '听力组合 A',
+    hint: '多种材料累积 A1 听力时长。'
   },
   'round-2': {
     levelId: 'A1',
     stageText: '阶段二',
-    title: '复习加速组',
-    hint: '提高回看密度。'
+    title: '听力组合 B',
+    hint: '多种材料累积 A1 听力时长。'
   },
   'round-3': {
     levelId: 'A1',
     stageText: '阶段三',
-    title: '综合冲刺组',
-    hint: '集中巩固节奏。'
+    title: '听力组合 C',
+    hint: '多种材料累积 A1 听力时长。'
   }
 };
 
@@ -62,26 +62,33 @@ function buildTaskGroups(categories) {
   });
 }
 
+function shouldShowTaskGroups(phase) {
+  return phase === 'round-1';
+}
+
 Page({
   data: page.createCloudPageData({
     levelId: 'A1',
     phase: 'round-1',
     stage: STAGES['round-1'],
     taskGroups: [],
-    totalMinutesText: '待生成'
+    totalMinutesText: '待生成',
+    hasTaskGroups: false
   }),
   async onLoad(query) {
     const phase = query.phase || 'round-1';
     const data = await store.getLevelOverview();
     const categories = (data.categories || []).map(labels.normalizeCategory);
-    const taskGroups = buildTaskGroups(categories);
+    const hasTaskGroups = shouldShowTaskGroups(phase);
+    const taskGroups = hasTaskGroups ? buildTaskGroups(categories) : [];
     const totalMinutes = taskGroups.reduce((sum, item) => sum + item.minutes, 0);
     this.setData(page.buildCloudPageData(this.data, {
       levelId: query.levelId || 'A1',
       phase,
       stage: STAGES[phase] || STAGES['round-1'],
       taskGroups,
-      totalMinutesText: totalMinutes ? `${totalMinutes} 分钟` : '待生成'
+      totalMinutesText: totalMinutes ? `${totalMinutes} 分钟` : '待生成',
+      hasTaskGroups
     }));
   },
   openTask(event) {
