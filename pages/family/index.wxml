@@ -13,7 +13,7 @@
         <view class="row-title">ID</view>
         <view class="row-copy">{{child.childLoginCode || '待同步'}}</view>
       </view>
-      <button class="row-action" bindtap="copyChildCode">⧉</button>
+      <button class="row-action" bindtap="copyChildCode">复制</button>
     </view>
     <view class="family-row input-row">
       <view>
@@ -21,7 +21,7 @@
         <input class="family-input" type="number" maxlength="6" placeholder="孩子 ID" value="{{childCodeInput}}" bindinput="handleChildCodeInput" />
         <input class="family-input" placeholder="称呼" value="{{joinName}}" bindinput="handleJoinNameInput" />
       </view>
-      <button class="row-action" bindtap="joinFamilyByChildCode">✓</button>
+      <button class="row-action" bindtap="joinFamilyByChildCode">加入</button>
     </view>
   </view>
 

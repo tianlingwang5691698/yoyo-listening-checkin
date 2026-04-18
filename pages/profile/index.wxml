@@ -14,14 +14,14 @@
         <view class="row-title">昵称</view>
         <input class="profile-input" placeholder="孩子昵称" value="{{childNicknameInput}}" bindinput="handleChildNicknameInput" />
       </view>
-      <button class="row-action" bindtap="saveChildProfile">✓</button>
+      <button class="row-action" bindtap="saveChildProfile">保存</button>
     </view>
     <view class="profile-row">
       <view>
         <view class="row-title">ID</view>
         <view class="row-copy {{childCodeReady ? '' : 'is-pending'}}">{{childCodeText}}</view>
       </view>
-      <button wx:if="{{childCodeReady}}" class="row-action" bindtap="copyChildCode">⧉</button>
+      <button wx:if="{{childCodeReady}}" class="row-action" bindtap="copyChildCode">复制</button>
     </view>
     <view class="profile-row" bindtap="openParentPage">
       <view>
