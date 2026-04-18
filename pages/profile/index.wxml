@@ -1,6 +1,13 @@
 <view class="page-shell profile-page">
   <view class="profile-hero product-hero">
-    <view class="profile-name">{{child.nickname || '佑佑'}}</view>
+    <view class="profile-name-row">
+      <input class="profile-name-input" placeholder="孩子昵称" value="{{childNicknameInput}}" bindinput="handleChildNicknameInput" />
+      <button class="name-action" bindtap="saveChildProfile">✓</button>
+    </view>
+    <view class="profile-id-row">
+      <view class="profile-id {{childCodeReady ? '' : 'is-pending'}}">ID {{childCodeText}}</view>
+      <button wx:if="{{childCodeReady}}" class="id-copy" bindtap="copyChildCode">复制</button>
+    </view>
     <view class="product-copy">{{dailyEncouragement.english}}</view>
     <view class="profile-cn">{{dailyEncouragement.chinese}}</view>
     <view class="sync-debug {{syncMode === 'cloud' ? 'is-cloud' : 'is-local'}}" wx:if="{{showCloudDebug && syncDebug && syncDebug.show}}">
@@ -8,23 +15,7 @@
     </view>
   </view>
 
-  <view class="identity-code section-panel">
-    <view class="code-top">
-      <view class="code-label">孩子 ID</view>
-      <view class="status-badge {{childCodeReady ? '' : 'is-muted'}}">{{childCodeReady ? '可绑定' : '同步中'}}</view>
-    </view>
-    <view class="child-code {{childCodeReady ? '' : 'is-pending'}}">{{childCodeText}}</view>
-    <button wx:if="{{childCodeReady}}" class="button-secondary mini-button" bindtap="copyChildCode">复制 ID</button>
-  </view>
-
   <view class="profile-list section-panel">
-    <view class="profile-row edit-row">
-      <view>
-        <view class="row-title">昵称</view>
-        <input class="profile-input" placeholder="孩子昵称" value="{{childNicknameInput}}" bindinput="handleChildNicknameInput" />
-      </view>
-      <button class="row-action" bindtap="saveChildProfile">✓</button>
-    </view>
     <view class="profile-row" bindtap="openParentPage">
       <view>
         <view class="row-title">日报</view>
@@ -36,13 +27,6 @@
       <view>
         <view class="row-title">家庭</view>
         <view class="row-copy">{{syncMode === 'cloud' ? '已接通' : '待同步'}}</view>
-      </view>
-      <view class="row-arrow">›</view>
-    </view>
-    <view class="profile-row" bindtap="openIdentityPage">
-      <view>
-        <view class="row-title">绑定</view>
-        <view class="row-copy">{{currentMember.role === 'owner' ? '家庭管理员' : '家长成员'}}</view>
       </view>
       <view class="row-arrow">›</view>
     </view>

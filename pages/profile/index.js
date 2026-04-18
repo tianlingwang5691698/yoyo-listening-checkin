@@ -90,7 +90,7 @@ Page({
     const childLoginCode = (this.data.child && this.data.child.childLoginCode) || '';
     if (!childLoginCode) {
       wx.showToast({
-        title: '孩子 ID 准备中',
+        title: '孩子 ID 待同步',
         icon: 'none'
       });
       return;
@@ -107,11 +107,6 @@ Page({
   openFamilyPage() {
     wx.navigateTo({
       url: '/pages/family/index'
-    });
-  },
-  openIdentityPage() {
-    wx.navigateTo({
-      url: '/pages/identity/index'
     });
   }
 });

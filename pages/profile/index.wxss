@@ -2,11 +2,74 @@
   background: var(--surface);
 }
 
-.profile-name {
+.profile-name-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16rpx;
+}
+
+.profile-name-input {
+  flex: 1;
+  min-width: 0;
+  min-height: 58rpx;
   color: var(--text-main);
   font-size: 42rpx;
   line-height: 1.15;
   font-weight: 800;
+}
+
+.name-action {
+  width: 62rpx;
+  height: 62rpx;
+  min-width: 62rpx;
+  min-height: 62rpx;
+  padding: 0;
+  border-radius: 50%;
+  background: rgba(37, 35, 33, 0.06);
+  color: var(--text-main);
+  font-size: 27rpx;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.name-action::after {
+  border: none;
+}
+
+.profile-id-row {
+  display: flex;
+  align-items: center;
+  gap: 14rpx;
+  margin-top: 10rpx;
+}
+
+.profile-id {
+  color: var(--text-muted);
+  font-size: 23rpx;
+  font-weight: 700;
+}
+
+.profile-id.is-pending {
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.id-copy {
+  min-width: 82rpx;
+  min-height: 46rpx;
+  padding: 0 16rpx;
+  border-radius: 999rpx;
+  background: rgba(37, 35, 33, 0.06);
+  color: var(--text-main);
+  font-size: 21rpx;
+  font-weight: 700;
+}
+
+.id-copy::after {
+  border: none;
 }
 
 .profile-cn {
@@ -14,46 +77,6 @@
   color: var(--text-muted);
   font-size: 23rpx;
   line-height: 1.5;
-}
-
-.identity-code {
-  margin-top: 24rpx;
-  padding-top: 32rpx;
-  padding-bottom: 32rpx;
-}
-
-.code-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16rpx;
-}
-
-.code-label {
-  color: var(--text-muted);
-  font-size: 23rpx;
-  font-weight: 700;
-}
-
-.child-code {
-  margin-top: 28rpx;
-  color: var(--text-strong);
-  font-size: 78rpx;
-  line-height: 1;
-  font-weight: 800;
-  text-align: center;
-  letter-spacing: 0;
-}
-
-.child-code.is-pending {
-  color: var(--text-muted);
-  font-size: 48rpx;
-}
-
-.mini-button {
-  margin-top: 28rpx;
-  min-height: 78rpx;
-  font-size: 25rpx;
 }
 
 .profile-list {
@@ -76,10 +99,6 @@
   border-bottom: none;
 }
 
-.edit-row {
-  align-items: center;
-}
-
 .row-title {
   color: var(--text-main);
   font-size: 29rpx;
@@ -90,34 +109,6 @@
   margin-top: 8rpx;
   color: var(--text-muted);
   font-size: 22rpx;
-}
-
-.profile-input {
-  margin-top: 8rpx;
-  width: 360rpx;
-  min-height: 54rpx;
-  color: var(--text-main);
-  font-size: 25rpx;
-}
-
-.row-action {
-  width: 64rpx;
-  height: 64rpx;
-  min-width: 64rpx;
-  min-height: 64rpx;
-  padding: 0;
-  border-radius: 50%;
-  background: rgba(37, 35, 33, 0.06);
-  color: var(--text-main);
-  font-size: 28rpx;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.row-action::after {
-  border: none;
 }
 
 .row-arrow {
