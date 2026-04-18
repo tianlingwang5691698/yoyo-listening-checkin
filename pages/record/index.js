@@ -189,12 +189,14 @@ Page({
   },
   async buildCalendarPages(year, month, selectedDate) {
     const monthRefs = [addMonths(year, month, 1), { year, month }, addMonths(year, month, -1)];
+    const sideLabels = ['下月', '当前月份', '上月'];
     const pages = await Promise.all(monthRefs.map(async (item, index) => {
       if (index === 0 && isFutureMonth(item.year, item.month)) {
         return {
           year: item.year,
           month: item.month,
           title: `${item.year}年${item.month}月`,
+          sideLabel: sideLabels[index],
           disabled: true,
           cells: []
         };
@@ -204,6 +206,7 @@ Page({
         year: item.year,
         month: item.month,
         title: `${item.year}年${item.month}月`,
+        sideLabel: sideLabels[index],
         disabled: false,
         cells: buildMonthCells(item.year, item.month, heatmapData.heatmap, index === 1 ? selectedDate : '')
       };
@@ -309,12 +312,18 @@ Page({
     if (!date) {
       return;
     }
+    const calendarPages = this.data.calendarPages.map((pageItem) => Object.assign({}, pageItem, {
+      cells: (pageItem.cells || []).map((item) => Object.assign({}, item, {
+        isSelected: item.date === date
+      }))
+    }));
     this.setData({
       selectedDate: date,
       selectedDateLabel: formatDateLabel(date),
       monthCells: this.data.monthCells.map((item) => Object.assign({}, item, {
         isSelected: item.date === date
-      }))
+      })),
+      calendarPages
     });
     await this.loadSelectedDay(date);
   },

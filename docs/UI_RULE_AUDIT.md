@@ -270,3 +270,19 @@ rg ">开始<|0/1|font-weight: 900" pages/**/*.wxml pages/**/*.wxss app.wxss
 - 成长页已接入 `calendar-swiper` 和 `handleCalendarSwiperChange`。
 - 页面层未发现 `控制台`、`Dashboard`、`Console`、`PROGRAM CONSOLE`、`报表式总览`、`歌曲`。
 - 页面层未发现 `>开始<` 和 `0/1`。
+
+## 2026-04-18 成长页月历滑动感增强
+
+整改内容：
+
+- 月历 swiper 增加左右侧页面露出，滑动前就能感知还有相邻月份。
+- 月历页增加 `上月 / 当前月份 / 下月` 轻标签，避免重复展示年月。
+- 增加极简滑动提示：`左滑看上月`。
+- 日期选中状态同步到 swiper 渲染数据，避免点选后描边不稳定。
+
+扫描结果：
+
+- `pages/record/index.js` 语法检查通过。
+- 页面层未发现 `控制台`、`Dashboard`、`Console`、`PROGRAM CONSOLE`、`报表式总览`、`歌曲`。
+- 页面层未发现 `>开始<` 和 `0/1`。
+- 全页面扫描仍只剩统计数字和成长大数字中的 `font-weight: 900` 例外。

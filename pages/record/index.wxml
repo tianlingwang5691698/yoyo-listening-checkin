@@ -54,23 +54,39 @@
       </block>
     </view>
 
-    <swiper class="calendar-swiper" current="{{calendarSwiperIndex}}" bindchange="handleCalendarSwiperChange" duration="260">
+    <swiper
+      class="calendar-swiper"
+      current="{{calendarSwiperIndex}}"
+      previous-margin="30rpx"
+      next-margin="30rpx"
+      bindchange="handleCalendarSwiperChange"
+      duration="320"
+      easing-function="easeOutCubic"
+    >
       <block wx:for="{{calendarPages}}" wx:key="title" wx:for-item="pageItem">
         <swiper-item>
-          <view class="calendar-grid">
-            <block wx:for="{{pageItem.cells}}" wx:key="key">
-              <view
-                class="calendar-cell {{item.isBlank ? 'is-blank' : ''}} {{item.completed ? 'is-completed' : ''}} {{item.isToday ? 'is-today' : ''}} {{item.isSelected ? 'is-selected' : ''}} {{item.isCatchupTarget ? 'is-catchup-target' : ''}}"
-                data-date="{{item.date}}"
-                bindtap="selectDate"
-              >
-                <view wx:if="{{!item.isBlank}}" class="calendar-dot">{{item.dayText}}</view>
-              </view>
-            </block>
+          <view class="calendar-slide {{pageItem.disabled ? 'is-disabled' : ''}}">
+            <view class="calendar-slide-title">{{pageItem.sideLabel}}</view>
+            <view class="calendar-grid">
+              <block wx:for="{{pageItem.cells}}" wx:key="key">
+                <view
+                  class="calendar-cell {{item.isBlank ? 'is-blank' : ''}} {{item.completed ? 'is-completed' : ''}} {{item.isToday ? 'is-today' : ''}} {{item.isSelected ? 'is-selected' : ''}} {{item.isCatchupTarget ? 'is-catchup-target' : ''}}"
+                  data-date="{{item.date}}"
+                  bindtap="selectDate"
+                >
+                  <view wx:if="{{!item.isBlank}}" class="calendar-dot">{{item.dayText}}</view>
+                </view>
+              </block>
+            </view>
           </view>
         </swiper-item>
       </block>
     </swiper>
+    <view class="calendar-swipe-hint">
+      <view class="swipe-mark"></view>
+      <view class="swipe-copy">左滑看上月</view>
+      <view class="swipe-mark"></view>
+    </view>
   </view>
 
   <view class="day-card section-panel">
