@@ -2,6 +2,48 @@
   background: var(--surface);
 }
 
+.report-head {
+  align-items: flex-start;
+}
+
+.report-item,
+.trend-row {
+  margin-top: 18rpx;
+}
+
+.report-title,
+.trend-date {
+  font-size: 28rpx;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.report-copy,
+.trend-copy {
+  margin-top: 8rpx;
+  font-size: 23rpx;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+.report-progress,
+.trend-badge {
+  flex-shrink: 0;
+  min-width: 112rpx;
+  padding: 14rpx 18rpx;
+  border-radius: 999rpx;
+  text-align: center;
+  background: rgba(37, 35, 33, 0.06);
+  color: var(--text-muted);
+  font-size: 22rpx;
+  font-weight: 700;
+}
+
+.report-progress.is-done {
+  background: #edf9ef;
+  color: #5f9d66;
+}
+
 .sync-debug {
   margin-top: 18rpx;
   padding: 14rpx 18rpx;
@@ -20,57 +62,4 @@
 .sync-debug.is-local {
   background: rgba(255, 241, 234, 0.9);
   color: #b45e40;
-}
-
-.summary-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16rpx;
-  margin-top: 24rpx;
-}
-
-.report-item,
-.trend-row,
-.member-row {
-  margin-top: 18rpx;
-}
-
-.report-title,
-.trend-date,
-.member-name {
-  font-size: 28rpx;
-  font-weight: 700;
-  color: #2f241f;
-}
-
-.report-copy,
-.trend-copy,
-.member-copy {
-  margin-top: 8rpx;
-  font-size: 23rpx;
-  line-height: 1.6;
-  color: #8c7e72;
-}
-
-.report-progress,
-.trend-badge,
-.member-flag {
-  flex-shrink: 0;
-  min-width: 120rpx;
-  padding: 14rpx 18rpx;
-  border-radius: 999rpx;
-  text-align: center;
-  background: #fff5ea;
-  color: #d96a45;
-  font-size: 22rpx;
-  font-weight: 700;
-}
-
-.report-progress.is-done {
-  background: #edf9ef;
-  color: #5f9d66;
-}
-
-.button-primary {
-  margin-top: 24rpx;
 }

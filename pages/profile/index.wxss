@@ -86,12 +86,6 @@
   justify-content: center;
 }
 
-.row-action.text-action {
-  width: 96rpx;
-  border-radius: 999rpx;
-  font-size: 22rpx;
-}
-
 .row-action::after {
   border: none;
 }

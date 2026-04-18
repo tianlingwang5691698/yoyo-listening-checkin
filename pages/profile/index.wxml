@@ -21,12 +21,12 @@
         <view class="row-title">ID</view>
         <view class="row-copy {{childCodeReady ? '' : 'is-pending'}}">{{childCodeText}}</view>
       </view>
-      <button wx:if="{{childCodeReady}}" class="row-action text-action" bindtap="copyChildCode">复制</button>
+      <button wx:if="{{childCodeReady}}" class="row-action" bindtap="copyChildCode">⧉</button>
     </view>
     <view class="profile-row" bindtap="openParentPage">
       <view>
         <view class="row-title">日报</view>
-        <view class="row-copy">{{subscriptionPreference.dailyReportEnabled ? '提醒已开' : '查看打卡'}}</view>
+        <view class="row-copy">查看打卡</view>
       </view>
       <view class="row-arrow">›</view>
     </view>

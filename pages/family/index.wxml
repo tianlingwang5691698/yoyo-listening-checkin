@@ -1,100 +1,38 @@
 <view class="page-shell family-page">
   <view class="family-hero product-hero">
-    <view class="row-between family-head">
+    <view class="product-title type-page-title">家庭</view>
+    <view class="product-copy">{{syncMode === 'cloud' ? '已接通' : '待同步'}}</view>
+    <view class="sync-debug {{syncMode === 'cloud' ? 'is-cloud' : 'is-local'}}" wx:if="{{showCloudDebug && syncDebug && syncDebug.show}}">
+      {{syncDebug.text}}
+    </view>
+  </view>
+
+  <view class="family-list section-panel">
+    <view class="family-row">
       <view>
-        <view class="family-eyebrow">家庭</view>
-        <view class="product-title type-page-title">家庭管理中心</view>
-        <view class="product-copy">{{family.name || '我的家庭'}} · {{child.nickname || '佑佑'}}</view>
-        <view class="sync-debug {{syncMode === 'cloud' ? 'is-cloud' : 'is-local'}}" wx:if="{{showCloudDebug && syncDebug && syncDebug.show}}">
-          {{syncDebug.text}}
-        </view>
+        <view class="row-title">ID</view>
+        <view class="row-copy">{{child.childLoginCode || '待同步'}}</view>
       </view>
-      <view class="status-badge {{syncMode === 'cloud' ? '' : 'is-warn'}}">{{syncMode === 'cloud' ? '共享中' : '异常'}}</view>
+      <button class="row-action" bindtap="copyChildCode">⧉</button>
     </view>
-
-    <view class="family-status-grid">
-      <view class="family-status stat-tile">
-        <view class="login-title">当前身份</view>
-        <view class="login-copy">{{currentMember.displayName || '微信用户'}}</view>
-        <view class="status-copy">{{currentMember.role === 'owner' ? '管理员' : '家长成员'}}</view>
-      </view>
-      <view class="family-status stat-tile">
-        <view class="login-title">订阅状态</view>
-        <view class="login-copy">{{subscriptionPreference.dailyReportEnabled ? '日报提醒开' : '日报提醒关'}}</view>
-        <view class="status-copy">家长日报</view>
-      </view>
-    </view>
-  </view>
-
-  <view class="child-card form-panel">
-    <view class="row-between family-section-head">
+    <view class="family-row input-row">
       <view>
-        <view class="section-title">孩子档案</view>
-        <view class="section-copy">当前一个家庭对应一个孩子档案。</view>
+        <view class="row-title">加入</view>
+        <input class="family-input" type="number" maxlength="6" placeholder="孩子 ID" value="{{childCodeInput}}" bindinput="handleChildCodeInput" />
+        <input class="family-input" placeholder="称呼" value="{{joinName}}" bindinput="handleJoinNameInput" />
       </view>
-      <view class="pill">{{child.currentLevel || 'A1'}}</view>
-    </view>
-    <input class="family-input form-input" placeholder="输入孩子昵称，例如 乐乐 / Amy" value="{{childNicknameInput}}" bindinput="handleChildNicknameInput" />
-    <button class="button-secondary" bindtap="saveChildProfile">保存孩子昵称</button>
-  </view>
-
-  <view class="invite-card section-panel">
-    <view class="row-between family-section-head">
-      <view>
-        <view class="section-title">孩子 ID</view>
-        <view class="section-copy">家长输入 6 位数字，加入同一份记录。</view>
-      </view>
-      <view class="status-badge">绑定用</view>
-    </view>
-    <view class="invite-box">
-      <view class="invite-label">孩子 ID</view>
-      <view class="invite-code">{{child.childLoginCode || '生成中'}}</view>
-    </view>
-    <button class="button-secondary" bindtap="copyChildCode">复制孩子 ID</button>
-  </view>
-
-  <view class="reserve-card section-panel">
-    <view class="section-title">兼容邀请码</view>
-    <view class="section-copy">旧家长入口仍可使用。</view>
-    <view class="reserve-grid">
-      <view class="reserve-item stat-tile">
-        <view class="reserve-label">家庭邀请码</view>
-        <view class="reserve-value">{{family.inviteCode || '待生成'}}</view>
-      </view>
-      <view class="reserve-item stat-tile">
-        <view class="reserve-label">刷新</view>
-        <view class="reserve-value" bindtap="refreshInviteCode">更新</view>
-      </view>
-    </view>
-  </view>
-
-  <view class="join-card form-panel">
-    <view class="section-title">绑定孩子记录</view>
-    <view class="section-copy">输入孩子 ID，查看同一份日报。</view>
-    <input class="family-input form-input" type="number" maxlength="6" placeholder="输入 6 位孩子 ID" value="{{childCodeInput}}" bindinput="handleChildCodeInput" />
-    <input class="family-input form-input" placeholder="输入称呼，例如 妈妈 / 奶奶 / 老师" value="{{joinName}}" bindinput="handleJoinNameInput" />
-    <button class="button-primary" bindtap="joinFamilyByChildCode">绑定孩子记录</button>
-    <view class="legacy-join">
-      <input class="family-input form-input" placeholder="旧邀请码入口" value="{{inviteInput}}" bindinput="handleInviteInput" />
-      <button class="button-secondary" bindtap="joinFamily">使用邀请码加入</button>
+      <button class="row-action" bindtap="joinFamilyByChildCode">✓</button>
     </view>
   </view>
 
   <view class="member-card section-panel">
-    <view class="row-between family-section-head">
-      <view>
-        <view class="section-title">当前家庭成员</view>
-        <view class="section-copy">共享任务进度、日报和连续天数。</view>
-      </view>
-      <view class="pill">{{members.length || 0}} 人</view>
-    </view>
+    <view class="section-title">成员</view>
     <block wx:for="{{members}}" wx:key="memberId">
       <view class="member-row">
         <view>
           <view class="member-name">{{item.displayName}}</view>
-          <view class="member-copy">{{item.role === 'owner' ? '管理员' : '家长成员'}}</view>
+          <view class="member-copy">{{item.role === 'owner' ? '管理员' : '家长'}}</view>
         </view>
-        <view class="member-state">{{item.subscriptionEnabled ? '提醒开' : '提醒关'}}</view>
       </view>
     </block>
   </view>

@@ -1,39 +1,18 @@
 <view class="page-shell parent-page">
   <view class="parent-hero product-hero">
-    <view class="row-between">
-      <view>
-        <view class="product-eyebrow">家长</view>
-        <view class="product-title type-page-title">家长日报</view>
-        <view class="product-copy">{{family.name}} · {{child.nickname}}</view>
-        <view class="sync-debug {{syncMode === 'cloud' ? 'is-cloud' : 'is-local'}}" wx:if="{{showCloudDebug && syncDebug && syncDebug.show}}">
-          {{syncDebug.text}}
-        </view>
-      </view>
-      <view class="pill">{{syncMode === 'cloud' ? '家庭日报' : '云同步异常'}}</view>
-    </view>
-    <view class="summary-grid">
-      <view class="stat-tile">
-        <view class="stat-tile-value">{{stats.streakDays || 0}}</view>
-        <view class="stat-tile-label">连续天数</view>
-      </view>
-      <view class="stat-tile">
-        <view class="stat-tile-value">{{todayReport.totalMinutes || 0}}</view>
-        <view class="stat-tile-label">今日分钟</view>
-      </view>
-      <view class="stat-tile">
-        <view class="stat-tile-value">{{todayReport.completedCategories.length || 0}}</view>
-        <view class="stat-tile-label">今日完成项</view>
-      </view>
+    <view class="product-title type-page-title">日报</view>
+    <view class="product-copy">{{child.nickname || '佑佑'}}</view>
+    <view class="sync-debug {{syncMode === 'cloud' ? 'is-cloud' : 'is-local'}}" wx:if="{{showCloudDebug && syncDebug && syncDebug.show}}">
+      {{syncDebug.text}}
     </view>
   </view>
 
   <view class="report-card section-panel">
-    <view class="row-between">
+    <view class="row-between report-head">
       <view>
-        <view class="section-title type-section-title">今日完整日报</view>
-        <view class="section-copy">今日明细。</view>
+        <view class="section-title type-section-title">今日</view>
+        <view class="section-copy">{{todayReport.completedCategories.length || 0}} 项 · {{todayReport.totalMinutes || 0}} 分钟</view>
       </view>
-      <view class="pill">{{subscriptionPreference.dailyReportEnabled ? '提醒已开启' : '提醒未开启'}}</view>
     </view>
     <block wx:for="{{todayReport.items}}" wx:key="category">
       <view class="report-item task-cell">
@@ -44,35 +23,17 @@
         <view class="report-progress {{item.completedToday ? 'is-done' : ''}}">{{item.playCount}} / {{item.repeatTarget}}</view>
       </view>
     </block>
-    <button class="button-primary" bindtap="handleSubscribe">
-      {{subscriptionPreference.dailyReportEnabled ? '关闭订阅提醒' : '开启订阅提醒'}}
-    </button>
   </view>
 
   <view class="trend-card section-panel">
     <view class="section-title type-section-title">最近 7 天</view>
-    <view class="section-copy">最近一周。</view>
     <block wx:for="{{recentReports}}" wx:key="reportId">
       <view class="trend-row task-cell">
         <view>
           <view class="trend-date">{{item.date}}</view>
-          <view class="trend-copy">{{item.completedCategories.length ? '已完成 ' + item.completedCategories.length + ' 项' : '当天还没有完成记录'}}</view>
+          <view class="trend-copy">{{item.completedCategories.length ? '完成 ' + item.completedCategories.length + ' 项' : '无记录'}}</view>
         </view>
-        <view class="trend-badge">{{item.totalMinutes}} min</view>
-      </view>
-    </block>
-  </view>
-
-  <view class="members-card section-panel">
-    <view class="section-title type-section-title">家庭成员</view>
-    <view class="section-copy">已加入的微信账号。</view>
-    <block wx:for="{{members}}" wx:key="memberId">
-      <view class="member-row task-cell">
-        <view>
-          <view class="member-name">{{item.displayName}}</view>
-          <view class="member-copy">{{item.role === 'owner' ? '管理员' : '家长成员'}}</view>
-        </view>
-        <view class="member-flag">{{item.subscriptionEnabled ? '已订阅' : '未订阅'}}</view>
+        <view class="trend-badge">{{item.totalMinutes}} 分钟</view>
       </view>
     </block>
   </view>
