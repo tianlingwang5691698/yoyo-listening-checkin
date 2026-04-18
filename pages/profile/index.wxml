@@ -1,7 +1,6 @@
 <view class="page-shell profile-page">
   <view class="profile-hero product-hero">
-    <view class="child-label">{{child.nickname || '佑佑'}}</view>
-    <view class="product-title type-page-title">我的</view>
+    <view class="profile-name">{{child.nickname || '佑佑'}}</view>
     <view class="product-copy">{{dailyEncouragement.english}}</view>
     <view class="profile-cn">{{dailyEncouragement.chinese}}</view>
     <view class="sync-debug {{syncMode === 'cloud' ? 'is-cloud' : 'is-local'}}" wx:if="{{showCloudDebug && syncDebug && syncDebug.show}}">
@@ -24,7 +23,7 @@
         <view class="row-title">昵称</view>
         <input class="profile-input" placeholder="孩子昵称" value="{{childNicknameInput}}" bindinput="handleChildNicknameInput" />
       </view>
-      <button class="row-action" bindtap="saveChildProfile">保存</button>
+      <button class="row-action" bindtap="saveChildProfile">✓</button>
     </view>
     <view class="profile-row" bindtap="openParentPage">
       <view>
@@ -36,7 +35,7 @@
     <view class="profile-row" bindtap="openFamilyPage">
       <view>
         <view class="row-title">家庭</view>
-        <view class="row-copy">{{family.name || '我的家庭'}} · {{syncMode === 'cloud' ? '已接通' : '待同步'}}</view>
+        <view class="row-copy">{{syncMode === 'cloud' ? '已接通' : '待同步'}}</view>
       </view>
       <view class="row-arrow">›</view>
     </view>
