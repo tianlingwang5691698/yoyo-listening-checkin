@@ -10,7 +10,7 @@
 
 .family-row,
 .member-row {
-  min-height: 104rpx;
+  min-height: 112rpx;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -24,8 +24,13 @@
   border-bottom: none;
 }
 
-.input-row {
-  align-items: center;
+.action-row {
+  align-items: flex-start;
+}
+
+.row-main {
+  flex: 1;
+  min-width: 0;
 }
 
 .row-title,
@@ -38,12 +43,15 @@
 .row-copy,
 .member-copy {
   margin-top: 8rpx;
+  min-height: 54rpx;
+  display: flex;
+  align-items: center;
   color: var(--text-muted);
   font-size: 22rpx;
 }
 
 .family-input {
-  width: 360rpx;
+  width: 100%;
   min-height: 54rpx;
   margin-top: 8rpx;
   color: var(--text-main);
@@ -55,11 +63,14 @@
   height: 60rpx;
   min-width: 112rpx;
   min-height: 60rpx;
+  margin: 43rpx 0 0;
   padding: 0;
+  box-sizing: border-box;
   border-radius: 999rpx;
   background: rgba(37, 35, 33, 0.06);
   color: var(--text-main);
   font-size: 23rpx;
+  line-height: 60rpx;
   font-weight: 700;
   display: flex;
   align-items: center;

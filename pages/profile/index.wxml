@@ -9,29 +9,29 @@
   </view>
 
   <view class="profile-list section-panel">
-    <view class="profile-row edit-row">
-      <view>
+    <view class="profile-row action-row">
+      <view class="row-main">
         <view class="row-title">昵称</view>
-        <input class="profile-input" placeholder="孩子昵称" value="{{childNicknameInput}}" bindinput="handleChildNicknameInput" />
+        <input class="row-field profile-input" placeholder="孩子昵称" value="{{childNicknameInput}}" bindinput="handleChildNicknameInput" />
       </view>
       <button class="row-action" bindtap="saveChildProfile">保存</button>
     </view>
-    <view class="profile-row">
-      <view>
+    <view class="profile-row action-row">
+      <view class="row-main">
         <view class="row-title">ID</view>
         <view class="row-copy {{childCodeReady ? '' : 'is-pending'}}">{{childCodeText}}</view>
       </view>
       <button wx:if="{{childCodeReady}}" class="row-action" bindtap="copyChildCode">复制</button>
     </view>
     <view class="profile-row" bindtap="openParentPage">
-      <view>
+      <view class="row-main">
         <view class="row-title">日报</view>
         <view class="row-copy">查看打卡</view>
       </view>
       <view class="row-arrow">›</view>
     </view>
     <view class="profile-row" bindtap="openFamilyPage">
-      <view>
+      <view class="row-main">
         <view class="row-title">家庭</view>
         <view class="row-copy">{{syncMode === 'cloud' ? '已接通' : '待同步'}}</view>
       </view>

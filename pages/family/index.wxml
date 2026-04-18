@@ -8,18 +8,18 @@
   </view>
 
   <view class="family-list section-panel">
-    <view class="family-row">
-      <view>
+    <view class="family-row action-row">
+      <view class="row-main">
         <view class="row-title">ID</view>
         <view class="row-copy">{{child.childLoginCode || '待同步'}}</view>
       </view>
       <button class="row-action" bindtap="copyChildCode">复制</button>
     </view>
-    <view class="family-row input-row">
-      <view>
+    <view class="family-row action-row">
+      <view class="row-main">
         <view class="row-title">加入</view>
-        <input class="family-input" type="number" maxlength="6" placeholder="孩子 ID" value="{{childCodeInput}}" bindinput="handleChildCodeInput" />
-        <input class="family-input" placeholder="称呼" value="{{joinName}}" bindinput="handleJoinNameInput" />
+        <input class="row-field family-input" type="number" maxlength="6" placeholder="孩子 ID" value="{{childCodeInput}}" bindinput="handleChildCodeInput" />
+        <input class="row-field family-input" placeholder="称呼" value="{{joinName}}" bindinput="handleJoinNameInput" />
       </view>
       <button class="row-action" bindtap="joinFamilyByChildCode">加入</button>
     </view>
@@ -29,7 +29,7 @@
     <view class="section-title">成员</view>
     <block wx:for="{{members}}" wx:key="memberId">
       <view class="member-row">
-        <view>
+        <view class="row-main">
           <view class="member-name">{{item.displayName}}</view>
           <view class="member-copy">{{item.role === 'owner' ? '管理员' : '家长'}}</view>
         </view>
