@@ -12,12 +12,6 @@
     </block>
   </view>
 
-  <view class="stage-card card">
-    <view class="stage-level">{{currentStage.stageText}}</view>
-    <view class="stage-title">{{currentStage.label}}</view>
-    <view class="stage-composition type-caption">{{currentStage.hint}}</view>
-  </view>
-
   <view class="stage-list">
     <block wx:for="{{stageGroups}}" wx:key="phaseLabel">
       <view class="stage-row {{item.active ? 'is-active' : ''}}" data-phase="{{item.phaseKey}}" bindtap="openStage">

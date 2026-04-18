@@ -33,31 +33,8 @@
   opacity: 0.38;
 }
 
-.stage-card {
-  padding: 30rpx 28rpx;
-  background: rgba(255, 255, 255, 0.84);
-}
-
-.stage-level {
-  color: var(--text-muted);
-  font-size: 22rpx;
-  font-weight: 600;
-}
-
-.stage-title {
-  margin-top: 12rpx;
-  color: var(--text-strong);
-  font-size: 42rpx;
-  line-height: 1.24;
-  font-weight: 700;
-}
-
-.stage-composition {
-  margin-top: 12rpx;
-}
-
 .stage-list {
-  margin-top: 18rpx;
+  margin-top: 0;
   border-radius: var(--radius-xl);
   overflow: hidden;
   background: rgba(255, 255, 255, 0.72);
