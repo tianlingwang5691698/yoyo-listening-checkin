@@ -68,6 +68,7 @@ Page({
     syncDebug: null,
     isPlaying: false,
     playbackRate: 1,
+    playbackRateText: '1.0',
     canRewind: false,
     activeLineId: '',
     activeLineIndex: -1,
@@ -331,6 +332,7 @@ Page({
       currentTimeLabel: '00:00',
       progressPercent: 0,
       playbackRate: 1,
+      playbackRateText: '1.0',
       canRewind: false,
       activeLineId: '',
       activeLineIndex: -1,
@@ -493,7 +495,8 @@ Page({
     const nextRate = this.data.playbackRate === 1 ? 0.9 : 1;
     this.innerAudioContext.playbackRate = nextRate;
     this.setData({
-      playbackRate: nextRate
+      playbackRate: nextRate,
+      playbackRateText: nextRate.toFixed(1)
     });
   },
   async handleAudioEnded() {
@@ -525,7 +528,8 @@ Page({
       transcriptSyncGranularity: detail.transcriptTrack ? (detail.transcriptTrack.syncGranularity || 'word') : 'word',
       history: detail.history,
       audioSource: normalizedTask && normalizedTask.audioSource ? normalizedTask.audioSource : 'none',
-      playbackRate: 1
+      playbackRate: 1,
+      playbackRateText: '1.0'
     }));
     await this.syncPlayer(normalizedTask);
     wx.showToast({

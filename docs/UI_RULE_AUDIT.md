@@ -110,3 +110,17 @@ rg ">开始<|0/1|font-weight: 900" pages/**/*.wxml pages/**/*.wxss app.wxss
 - 课程页 WXML/WXSS 未发现 `文本已就绪`、`句级文本已就绪`、`逐词文本`、`今天进行中`。
 - 页面层未发现 `控制台`、`Dashboard`、`Console`、`PROGRAM CONSOLE`、`报表式总览`、`歌曲`。
 - 页面层未发现 `>开始<` 和 `0/1`。
+
+## 2026-04-18 课程页倍速显示修复
+
+整改内容：
+
+- 倍速按钮不再在 WXML 中直接调用 `playbackRate.toFixed(1)`。
+- 新增页面数据 `playbackRateText`，确保真机稳定显示 `×1.0` 或 `×0.9`。
+- 倍速切换逻辑保持 `1.0 <-> 0.9`。
+
+扫描结果：
+
+- `node -c pages/lesson/index.js` 通过。
+- 课程页未发现 `0.8`。
+- 课程页未发现 `当前 x` 或 `当前 ×` 这类解释性倍速文案。

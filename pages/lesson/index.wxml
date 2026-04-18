@@ -58,7 +58,7 @@
         </view>
         <view class="player-actions action-row">
           <button class="player-action player-action-rewind {{canRewind ? '' : 'is-disabled'}}" bindtap="rewindAudio">↺ 5秒</button>
-          <button class="player-action player-rate-toggle" bindtap="togglePlaybackRate">×{{playbackRate.toFixed(1)}}</button>
+          <button class="player-action player-rate-toggle" bindtap="togglePlaybackRate">×{{playbackRateText}}</button>
         </view>
       </view>
     </view>
