@@ -50,13 +50,13 @@
         <swiper-item>
           <view class="calendar-slide {{pageItem.disabled ? 'is-disabled' : ''}}">
             <view class="calendar-slide-head">
-              <view class="month-arrow" wx:if="{{pageIndex === 1}}" data-direction="-1" catchtap="switchMonth">‹</view>
+              <view class="month-arrow" wx:if="{{pageIndex === calendarSwiperIndex}}" data-direction="-1" catchtap="switchMonth">‹</view>
               <view class="month-arrow is-ghost" wx:else>‹</view>
-              <picker wx:if="{{pageIndex === 1}}" mode="date" value="{{selectedDate}}" end="{{todayDate}}" bindchange="pickDate">
+              <picker wx:if="{{pageIndex === calendarSwiperIndex}}" mode="date" value="{{selectedDate}}" end="{{todayDate}}" bindchange="pickDate">
                 <view class="month-title">{{pageItem.title}}</view>
               </picker>
               <view wx:else class="month-title">{{pageItem.title}}</view>
-              <view class="month-arrow" wx:if="{{pageIndex === 1}}" data-direction="1" catchtap="switchMonth">›</view>
+              <view class="month-arrow" wx:if="{{pageIndex === calendarSwiperIndex}}" data-direction="1" catchtap="switchMonth">›</view>
               <view class="month-arrow is-ghost" wx:else>›</view>
             </view>
             <view class="week-grid">
