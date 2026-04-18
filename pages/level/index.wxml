@@ -1,7 +1,7 @@
 <view class="page-shell level-page">
   <view class="level-header">
-    <view class="type-page-title">音频</view>
-    <view class="type-caption level-subtitle">{{currentStage.dayText}}</view>
+    <view class="type-page-title">听力路径</view>
+    <view class="type-caption level-subtitle">{{currentStage.levelId}} · 当前阶段</view>
   </view>
 
   <view class="level-tabs">
@@ -13,8 +13,21 @@
   </view>
 
   <view class="stage-card card">
-    <view class="stage-level">{{currentStage.levelId}}</view>
+    <view class="stage-level">{{currentStage.stageText}}</view>
     <view class="stage-title">{{currentStage.label}}</view>
+    <view class="stage-composition type-caption">{{currentStage.composition}}</view>
+  </view>
+
+  <view class="stage-list">
+    <block wx:for="{{stageGroups}}" wx:key="phaseLabel">
+      <view class="stage-row {{item.active ? 'is-active' : ''}}">
+        <view>
+          <view class="stage-row-title">{{item.stageText}}</view>
+          <view class="stage-row-meta type-caption">{{item.composition}}</view>
+        </view>
+        <view class="stage-row-state">{{item.active ? '当前' : ''}}</view>
+      </view>
+    </block>
   </view>
 
   <block wx:for="{{programEntries}}" wx:key="category">

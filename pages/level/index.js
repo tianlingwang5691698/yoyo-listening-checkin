@@ -9,10 +9,31 @@ const LEVEL_TABS = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'].map((levelId) => ({
 }));
 
 const PHASE_LABELS = {
-  '第1轮': '轻量日计划',
-  '第2轮': '复习加速',
-  '第3轮': '冲刺复习'
+  '第1轮': '基础输入组',
+  '第2轮': '复习加速组',
+  '第3轮': '综合冲刺组'
 };
+
+const STAGE_GROUPS = [
+  {
+    phaseLabel: '第1轮',
+    stageText: '阶段一',
+    title: '基础输入组',
+    composition: 'Peppa · Unlock 1 · Songs'
+  },
+  {
+    phaseLabel: '第2轮',
+    stageText: '阶段二',
+    title: '复习加速组',
+    composition: '多条复习 · 三线并行'
+  },
+  {
+    phaseLabel: '第3轮',
+    stageText: '阶段三',
+    title: '综合冲刺组',
+    composition: '高频回看 · 集中巩固'
+  }
+];
 
 function getTextType(task) {
   if (!task || task.isPendingAsset) {
@@ -43,11 +64,19 @@ function buildProgramEntries(categories) {
 }
 
 function buildCurrentStage(data) {
+  const stage = STAGE_GROUPS.find((item) => item.phaseLabel === data.planPhaseLabel) || STAGE_GROUPS[0];
   return {
     levelId: 'A1',
-    label: PHASE_LABELS[data.planPhaseLabel] || data.planPhaseLabel || '轻量日计划',
-    dayText: `Day ${data.planDayIndex || 1}`
+    label: PHASE_LABELS[data.planPhaseLabel] || stage.title,
+    stageText: stage.stageText,
+    composition: stage.composition
   };
+}
+
+function buildStageGroups(data) {
+  return STAGE_GROUPS.map((stage) => Object.assign({}, stage, {
+    active: stage.phaseLabel === data.planPhaseLabel
+  }));
 }
 
 Page({
@@ -61,9 +90,11 @@ Page({
     levelTabs: LEVEL_TABS,
     currentStage: {
       levelId: 'A1',
-      label: '轻量日计划',
-      dayText: 'Day 1'
+      label: '基础输入组',
+      stageText: '阶段一',
+      composition: 'Peppa · Unlock 1 · Songs'
     },
+    stageGroups: STAGE_GROUPS,
     programEntries: []
   }),
   async onShow() {
@@ -73,6 +104,7 @@ Page({
       categories,
       levelTabs: LEVEL_TABS,
       currentStage: buildCurrentStage(data),
+      stageGroups: buildStageGroups(data),
       programEntries: buildProgramEntries(categories)
     })));
   },
