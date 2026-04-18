@@ -9,6 +9,12 @@ const EMPTY_REPORT = {
   completedCategories: [],
   items: []
 };
+const EMPTY_DAY_SUMMARY = {
+  completedCount: 0,
+  totalCount: 0,
+  statusText: '未完成',
+  minutesText: '0 分钟'
+};
 
 function pad(value) {
   return value < 10 ? `0${value}` : String(value);
@@ -47,24 +53,28 @@ function buildCatchupPresentation(catchupState) {
   if (state.canCatchup) {
     return {
       catchupStatusLabel: '可追赶',
-      catchupStatusClass: ''
+      catchupStatusClass: '',
+      catchupCopy: `可点亮 ${state.missedDate || ''}`
     };
   }
   if (state.reason === 'catchup-used-today') {
     return {
       catchupStatusLabel: '今日已用',
-      catchupStatusClass: 'is-warn'
+      catchupStatusClass: 'is-warn',
+      catchupCopy: '明天继续'
     };
   }
   if (state.reason === 'finish-current-plan-first') {
     return {
       catchupStatusLabel: '先完成今日',
-      catchupStatusClass: 'is-warn'
+      catchupStatusClass: 'is-warn',
+      catchupCopy: '完成今日后可追赶'
     };
   }
   return {
     catchupStatusLabel: '无需追赶',
-    catchupStatusClass: 'is-muted'
+    catchupStatusClass: 'is-muted',
+    catchupCopy: '节奏正常'
   };
 }
 
@@ -122,6 +132,31 @@ function normalizeReport(report) {
   });
 }
 
+function buildDaySummary(report) {
+  const safeReport = report || EMPTY_REPORT;
+  const items = safeReport.items || [];
+  const completedCount = items.filter((item) => item.completedToday).length;
+  const totalCount = items.length;
+  return {
+    completedCount,
+    totalCount,
+    statusText: completedCount ? '已完成' : '未完成',
+    minutesText: `${safeReport.totalMinutes || 0} 分钟`
+  };
+}
+
+function markSelectedCells(cells, selectedDate) {
+  return (cells || []).map((item) => Object.assign({}, item, {
+    isSelected: item.date === selectedDate
+  }));
+}
+
+function markSelectedPages(pages, selectedDate) {
+  return (pages || []).map((pageItem) => Object.assign({}, pageItem, {
+    cells: markSelectedCells(pageItem.cells, selectedDate)
+  }));
+}
+
 Page({
   data: page.createCloudPageData({
     child: null,
@@ -141,9 +176,11 @@ Page({
     selectedDate: getDateKey(new Date()),
     selectedDateLabel: '',
     selectedDayReport: EMPTY_REPORT,
+    selectedDaySummary: EMPTY_DAY_SUMMARY,
     selectedDayLoading: false,
     catchupStatusLabel: '无需追赶',
     catchupStatusClass: 'is-muted',
+    catchupCopy: '节奏正常',
     catchupState: {
       canCatchup: false,
       missedDate: '',
@@ -235,6 +272,7 @@ Page({
     const data = await store.getDailyReportByDate(date);
     this.setData({
       selectedDayReport: normalizeReport(data.report),
+      selectedDaySummary: buildDaySummary(normalizeReport(data.report)),
       selectedDayLoading: false,
       selectedDateLabel: formatDateLabel(date)
     });
@@ -286,8 +324,18 @@ Page({
     const selectedDate = pageData.year === today.getFullYear() && pageData.month === today.getMonth() + 1
       ? getDateKey(today)
       : `${pageData.year}-${pad(pageData.month)}-01`;
-    await this.loadCalendar(pageData.year, pageData.month, selectedDate);
+    const visiblePages = markSelectedPages(this.data.calendarPages, selectedDate);
+    this.setData({
+      calendarYear: pageData.year,
+      calendarMonth: pageData.month,
+      calendarTitle: pageData.title,
+      selectedDate,
+      selectedDateLabel: formatDateLabel(selectedDate),
+      monthCells: markSelectedCells(pageData.cells, selectedDate),
+      calendarPages: visiblePages
+    });
     await this.loadSelectedDay(selectedDate);
+    await this.loadCalendar(pageData.year, pageData.month, selectedDate);
   },
   async pickDate(event) {
     const date = event.detail.value;
@@ -312,17 +360,11 @@ Page({
     if (!date) {
       return;
     }
-    const calendarPages = this.data.calendarPages.map((pageItem) => Object.assign({}, pageItem, {
-      cells: (pageItem.cells || []).map((item) => Object.assign({}, item, {
-        isSelected: item.date === date
-      }))
-    }));
+    const calendarPages = markSelectedPages(this.data.calendarPages, date);
     this.setData({
       selectedDate: date,
       selectedDateLabel: formatDateLabel(date),
-      monthCells: this.data.monthCells.map((item) => Object.assign({}, item, {
-        isSelected: item.date === date
-      })),
+      monthCells: markSelectedCells(this.data.monthCells, date),
       calendarPages
     });
     await this.loadSelectedDay(date);

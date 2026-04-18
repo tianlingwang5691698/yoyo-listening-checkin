@@ -93,9 +93,12 @@
     <view class="row-between">
       <view>
         <view class="type-section-title">{{selectedDateLabel}}</view>
-        <view class="section-copy">{{selectedDayReport.completedCategories.length ? '已完成' : '未完成'}}</view>
+        <view class="section-copy">{{selectedDaySummary.statusText}}</view>
       </view>
-      <view class="pill">{{selectedDayReport.totalMinutes || 0}} 分钟</view>
+      <view class="day-meta">
+        <view class="pill">{{selectedDaySummary.minutesText}}</view>
+        <view class="day-count">{{selectedDaySummary.completedCount}} / {{selectedDaySummary.totalCount}}</view>
+      </view>
     </view>
 
     <block wx:if="{{selectedDayReport.items && selectedDayReport.items.length}}">
@@ -105,7 +108,10 @@
             <view class="report-title">{{item.categoryLabel}}</view>
             <view class="report-copy">{{item.title}}</view>
           </view>
-          <view class="report-state {{item.completedToday ? 'is-done' : ''}}">{{item.completedToday ? '完成' : '未完成'}}</view>
+          <view class="report-state {{item.completedToday ? 'is-done' : ''}}">
+            <view>{{item.completedToday ? '完成' : '等待'}}</view>
+            <view class="report-progress">{{item.playCount}} / {{item.repeatTarget}}</view>
+          </view>
         </view>
       </block>
     </block>
@@ -116,7 +122,7 @@
     <view class="row-between">
       <view>
         <view class="type-section-title">追赶</view>
-        <view class="section-copy">{{catchupState.canCatchup ? ('可点亮 ' + catchupState.missedDate) : catchupStatusLabel}}</view>
+        <view class="section-copy">{{catchupCopy}}</view>
       </view>
       <view class="status-badge {{catchupStatusClass}}">{{catchupStatusLabel}}</view>
     </view>

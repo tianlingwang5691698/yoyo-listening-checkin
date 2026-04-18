@@ -232,6 +232,19 @@
   background: rgba(37, 35, 33, 0.12);
 }
 
+.day-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8rpx;
+}
+
+.day-count {
+  color: var(--text-soft);
+  font-size: 20rpx;
+  font-weight: 700;
+}
+
 .report-row,
 .catchup-row {
   display: flex;
@@ -268,10 +281,17 @@
   color: var(--text-muted);
   font-size: 22rpx;
   font-weight: 700;
+  text-align: right;
 }
 
 .report-state.is-done {
   color: var(--accent-deep);
+}
+
+.report-progress {
+  margin-top: 6rpx;
+  color: var(--text-soft);
+  font-size: 19rpx;
 }
 
 .catchup-row.is-done {
