@@ -302,3 +302,19 @@ rg ">开始<|0/1|font-weight: 900" pages/**/*.wxml pages/**/*.wxss app.wxss
 - 页面层未发现 `控制台`、`Dashboard`、`Console`、`PROGRAM CONSOLE`、`报表式总览`、`歌曲`。
 - 页面层未发现 `>开始<` 和 `0/1`。
 - 全页面扫描仍只剩统计数字和成长大数字中的 `font-weight: 900` 例外。
+
+## 2026-04-18 成长页整月卡片横滑
+
+整改内容：
+
+- 月历从“日期格区域滑动”改为“整张月份卡片滑动”。
+- 年月、左右箭头、星期行、日期格统一放进同一个 swiper item。
+- swiper 切换改为 `bindanimationfinish`，动画完成后再处理月份数据，减少中途重置造成的割裂感。
+- 滑动提示改为中性的 `滑动切换月份`。
+
+扫描结果：
+
+- `pages/record/index.js` 语法检查通过。
+- 页面层未发现 `控制台`、`Dashboard`、`Console`、`PROGRAM CONSOLE`、`报表式总览`、`歌曲`。
+- 页面层未发现 `>开始<` 和 `0/1`。
+- 全页面扫描仍只剩统计数字和成长大数字中的 `font-weight: 900` 例外。

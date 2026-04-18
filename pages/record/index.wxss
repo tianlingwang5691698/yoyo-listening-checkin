@@ -88,19 +88,6 @@
   font-size: 21rpx;
 }
 
-.calendar-head {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 18rpx;
-}
-
-.month-control {
-  display: flex;
-  align-items: center;
-  gap: 18rpx;
-}
-
 .month-title {
   min-width: 150rpx;
   min-height: 54rpx;
@@ -125,6 +112,10 @@
   font-size: 32rpx;
 }
 
+.month-arrow.is-ghost {
+  opacity: 0;
+}
+
 .week-grid,
 .calendar-grid {
   display: grid;
@@ -133,7 +124,7 @@
 }
 
 .week-grid {
-  margin-top: 28rpx;
+  margin-top: 26rpx;
 }
 
 .week-label {
@@ -148,15 +139,15 @@
 }
 
 .calendar-swiper {
-  height: 586rpx;
-  margin: 10rpx -30rpx 0;
+  height: 628rpx;
+  margin: -2rpx -30rpx 0;
   overflow: visible;
 }
 
 .calendar-slide {
-  min-height: 536rpx;
+  min-height: 588rpx;
   margin: 0 10rpx;
-  padding: 22rpx 20rpx 24rpx;
+  padding: 22rpx 20rpx 26rpx;
   border: 1rpx solid rgba(37, 35, 33, 0.06);
   border-radius: 28rpx;
   background: rgba(255, 253, 250, 0.92);
@@ -167,12 +158,11 @@
   opacity: 0.36;
 }
 
-.calendar-slide-title {
-  margin-bottom: 14rpx;
-  color: var(--text-muted);
-  font-size: 21rpx;
-  font-weight: 700;
-  text-align: center;
+.calendar-slide-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18rpx;
 }
 
 .calendar-cell {
