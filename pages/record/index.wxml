@@ -26,8 +26,8 @@
         <view class="summary-label">累计天数</view>
       </view>
       <view class="summary-item">
-        <view class="summary-value">{{stats.totalMinutes || 0}}</view>
-        <view class="summary-label">累计分钟</view>
+        <view class="summary-value is-duration">{{totalDurationText}}</view>
+        <view class="summary-label">累计时长</view>
       </view>
       <view class="summary-item">
         <view class="summary-value">{{stats.completedTasks || 0}}</view>
@@ -42,7 +42,7 @@
       current="{{calendarSwiperIndex}}"
       previous-margin="30rpx"
       next-margin="30rpx"
-      bindanimationfinish="handleCalendarSwiperChange"
+      bindchange="handleCalendarSwiperChange"
       duration="320"
       easing-function="easeOutCubic"
     >

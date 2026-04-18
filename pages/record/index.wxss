@@ -82,6 +82,11 @@
   font-weight: 800;
 }
 
+.summary-value.is-duration {
+  font-size: 25rpx;
+  line-height: 1.2;
+}
+
 .summary-label {
   margin-top: 8rpx;
   color: var(--text-muted);

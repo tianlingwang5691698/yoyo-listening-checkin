@@ -53,6 +53,19 @@ function buildMetric(stats, mode) {
   };
 }
 
+function formatDuration(minutes) {
+  const totalMinutes = Math.max(0, Number(minutes || 0));
+  const hours = Math.floor(totalMinutes / 60);
+  const restMinutes = totalMinutes % 60;
+  if (hours && restMinutes) {
+    return `${hours}小时${restMinutes}分钟`;
+  }
+  if (hours) {
+    return `${hours}小时`;
+  }
+  return `${restMinutes}分钟`;
+}
+
 function buildCatchupPresentation(catchupState) {
   const state = catchupState || {};
   if (state.canCatchup) {
@@ -185,6 +198,7 @@ Page({
     metricMode: 'streak',
     heroMetricValue: 0,
     heroMetricLabel: '连续打卡',
+    totalDurationText: '0分钟',
     planDayIndex: 1,
     calendarYear: new Date().getFullYear(),
     calendarMonth: new Date().getMonth() + 1,
@@ -223,6 +237,7 @@ Page({
     const nextState = Object.assign({}, dashboard, {
       child: dashboard.child,
       stats: dashboard.stats,
+      totalDurationText: formatDuration((dashboard.stats || {}).totalMinutes),
       calendarYear,
       calendarMonth,
       calendarTitle: `${calendarYear}年${calendarMonth}月`,

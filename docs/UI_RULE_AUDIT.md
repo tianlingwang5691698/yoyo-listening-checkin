@@ -366,3 +366,19 @@ rg ">开始<|0/1|font-weight: 900" pages/**/*.wxml pages/**/*.wxss app.wxss
 - `pages/record/index.js` 语法检查通过。
 - 页面层未发现 `控制台`、`Dashboard`、`Console`、`PROGRAM CONSOLE`、`报表式总览`、`歌曲`。
 - 页面层未发现 `>开始<` 和 `0/1`。
+
+## 2026-04-18 成长页滑动同步与时长文案
+
+整改内容：
+
+- 月历 swiper 从 `bindanimationfinish` 改为 `bindchange`，滑动页变更时立即同步 `calendarSwiperIndex`。
+- 减少真机上受控 `current` 在动画结束前仍保持旧值导致的拉回感。
+- 成长页 summary 将 `累计分钟` 改为 `累计时长`。
+- 累计时长显示为自然格式：`X小时Y分钟`、`X小时` 或 `Y分钟`。
+
+扫描结果：
+
+- `pages/record/index.js` 语法检查通过。
+- 页面层未发现 `控制台`、`Dashboard`、`Console`、`PROGRAM CONSOLE`、`报表式总览`、`歌曲`。
+- 页面层未发现 `>开始<` 和 `0/1`。
+- 全页面扫描仍只剩统计数字和成长大数字中的 `font-weight: 900` 例外。
