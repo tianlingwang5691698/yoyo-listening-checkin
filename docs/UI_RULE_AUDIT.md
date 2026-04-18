@@ -490,3 +490,21 @@ rg ">开始<|0/1|font-weight: 900" pages/**/*.wxml pages/**/*.wxss app.wxss
 - 页面操作按钮未发现 `✓`、`⧉` 图标残留。
 - 页面层未发现 `控制台`、`Dashboard`、`Console`、`PROGRAM CONSOLE`、`报表式总览`、`歌曲`。
 - 页面层未发现 `>开始<` 和 `0/1`。
+
+## 2026-04-19 学生设备与陪伴试听
+
+整改内容：
+
+- 在现有 `familyMembers` 增加 `studyRole` 字段，不新增集合。
+- 首次创建家庭的成员默认 `studyRole: student`。
+- 通过孩子 ID 加入的成员默认 `studyRole: parent`。
+- 旧成员读取时按 `owner -> student`、其他成员 -> `parent` 自动补齐。
+- 云端 `markTaskListened` 只允许学生设备写入进度。
+- 家庭页增加当前设备身份与切换按钮。
+- 课程页陪伴者显示 `陪伴试听 · 不计入打卡`，播放结束只提示试听完成。
+
+扫描结果：
+
+- `cloudfunctions/yoyo/index.js`、`utils/store.js`、`pages/family/index.js`、`pages/lesson/index.js` 语法检查通过。
+- 页面层未发现 `控制台`、`Dashboard`、`Console`、`PROGRAM CONSOLE`、`报表式总览`、`歌曲`。
+- 页面层未发现 `>开始<` 和 `0/1`。

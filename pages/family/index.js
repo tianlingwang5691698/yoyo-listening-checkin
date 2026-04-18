@@ -12,11 +12,20 @@ Page({
     },
     childCodeInput: '',
     inviteInput: '',
-    joinName: ''
+    joinName: '',
+    studyRoleLabel: '陪伴者',
+    studyRoleActionText: '设为学生'
   }),
   async onShow() {
     const data = await store.getFamilyPageData();
-    this.setData(page.buildCloudPageData(this.data, data));
+    this.setData(page.buildCloudPageData(this.data, Object.assign({}, data, this.buildStudyRolePresentation(data.currentMember))));
+  },
+  buildStudyRolePresentation(member) {
+    const studyRole = member && member.studyRole === 'student' ? 'student' : 'parent';
+    return {
+      studyRoleLabel: studyRole === 'student' ? '学生设备' : '陪伴者',
+      studyRoleActionText: studyRole === 'student' ? '设为陪伴' : '设为学生'
+    };
   },
   handleInviteInput(event) {
     this.setData({
@@ -76,7 +85,7 @@ Page({
     }
     try {
       const data = await store.joinFamilyByChildCode(this.data.childCodeInput, this.data.joinName);
-      this.setData(page.buildCloudPageData(this.data, Object.assign({}, data, {
+      this.setData(page.buildCloudPageData(this.data, Object.assign({}, data, this.buildStudyRolePresentation(data.currentMember), {
         childCodeInput: '',
         joinName: ''
       })));
@@ -103,5 +112,22 @@ Page({
     wx.setClipboardData({
       data: childLoginCode
     });
+  },
+  async toggleStudyRole() {
+    const currentRole = this.data.currentMember && this.data.currentMember.studyRole === 'student' ? 'student' : 'parent';
+    const nextRole = currentRole === 'student' ? 'parent' : 'student';
+    try {
+      const data = await store.setStudyRole(nextRole);
+      this.setData(page.buildCloudPageData(this.data, Object.assign({}, data, this.buildStudyRolePresentation(data.currentMember))));
+      wx.showToast({
+        title: nextRole === 'student' ? '已设为学生设备' : '已设为陪伴者',
+        icon: 'none'
+      });
+    } catch (error) {
+      wx.showToast({
+        title: error.message || '切换失败',
+        icon: 'none'
+      });
+    }
   }
 });

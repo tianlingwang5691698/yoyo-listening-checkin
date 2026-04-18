@@ -148,7 +148,9 @@ async function getDashboard() {
   return callCloud('getDashboard', {}, {
     user: {},
     currentUser: {},
-    currentMember: {},
+    currentMember: {
+      studyRole: 'parent'
+    },
     child: {
       nickname: '',
       avatarText: '',
@@ -195,7 +197,9 @@ async function getTaskDetail(category, taskId, options) {
   return callCloud('getTaskDetail', Object.assign({ category, taskId }, options || {}), {
     user: {},
     currentUser: {},
-    currentMember: {},
+    currentMember: {
+      studyRole: 'parent'
+    },
     child: null,
     stats: {
       streakDays: 0,
@@ -224,7 +228,9 @@ async function getTaskDetail(category, taskId, options) {
     transcriptTrack: null,
     transcriptLines: [],
     todayRecord: null,
-    history: []
+    history: [],
+    studyWriteAllowed: false,
+    studyWriteMessage: ''
   });
 }
 
@@ -232,7 +238,9 @@ async function markTaskListened(options) {
   return callCloud('markTaskListened', options, {
     user: {},
     currentUser: {},
-    currentMember: {},
+    currentMember: {
+      studyRole: 'parent'
+    },
     child: null,
     stats: {
       streakDays: 0,
@@ -348,7 +356,9 @@ async function getFamilyPageData() {
     family: null,
     user: {},
     currentUser: {},
-    currentMember: {},
+    currentMember: {
+      studyRole: 'parent'
+    },
     members: [],
     child: {
       nickname: '',
@@ -407,6 +417,24 @@ async function joinFamilyByChildCode(childLoginCode, displayName) {
   });
 }
 
+async function setStudyRole(studyRole) {
+  return callCloud('setStudyRole', { studyRole }, {
+    family: null,
+    user: {},
+    currentUser: {},
+    currentMember: {
+      studyRole: 'parent'
+    },
+    members: [],
+    child: {
+      nickname: '',
+      avatarText: '',
+      childLoginCode: ''
+    },
+    subscriptionPreference: null
+  });
+}
+
 async function updateSubscription(enabled) {
   return callCloud('updateSubscription', { enabled }, {
     family: null,
@@ -454,6 +482,7 @@ module.exports = {
   refreshInviteCode,
   joinFamily,
   joinFamilyByChildCode,
+  setStudyRole,
   updateSubscription,
   updateChildProfile
 };

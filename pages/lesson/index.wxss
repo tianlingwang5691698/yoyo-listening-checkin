@@ -34,6 +34,15 @@
   font-size: 26rpx;
 }
 
+.lesson-mode {
+  position: relative;
+  z-index: 1;
+  margin-top: 14rpx;
+  color: var(--text-muted);
+  font-size: 24rpx;
+  font-weight: 700;
+}
+
 .sync-debug {
   position: relative;
   z-index: 1;

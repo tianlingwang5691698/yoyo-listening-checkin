@@ -1222,6 +1222,14 @@ async function updateChildProfile(familyId, payload) {
   });
 }
 
+function normalizeStudyRole(member) {
+  const studyRole = String((member && member.studyRole) || '').trim();
+  if (studyRole === 'student' || studyRole === 'parent') {
+    return studyRole;
+  }
+  return member && member.role === 'owner' ? 'student' : 'parent';
+}
+
 async function upsertFamilyMemberForFamily(openId, userId, familyId, displayName) {
   const memberRes = await db.collection('familyMembers').where({ openId }).limit(1).get();
   let joinedMemberId = '';
@@ -1234,6 +1242,7 @@ async function upsertFamilyMemberForFamily(openId, userId, familyId, displayName
         familyId,
         displayName,
         role: existingMember.familyId === familyId ? (existingMember.role || 'parent') : 'parent',
+        studyRole: existingMember.familyId === familyId ? normalizeStudyRole(existingMember) : 'parent',
         updatedAt: new Date().toISOString()
       }
     });
@@ -1246,6 +1255,7 @@ async function upsertFamilyMemberForFamily(openId, userId, familyId, displayName
         familyId,
         openId,
         role: 'parent',
+        studyRole: 'parent',
         displayName,
         subscriptionEnabled: false,
         createdAt: new Date().toISOString()
@@ -1291,6 +1301,7 @@ async function ensureBootstrap(openId) {
       userId: user.userId,
       openId,
       role: 'owner',
+      studyRole: 'student',
       displayName: '我',
       subscriptionEnabled: false,
       createdAt: new Date().toISOString()
@@ -1319,9 +1330,21 @@ async function ensureBootstrap(openId) {
     });
     member = Object.assign({}, member, { userId: user.userId });
   }
+  if (!member.studyRole) {
+    const studyRole = normalizeStudyRole(member);
+    await db.collection('familyMembers').doc(member._id).update({
+      data: {
+        studyRole,
+        updatedAt: new Date().toISOString()
+      }
+    });
+    member = Object.assign({}, member, { studyRole });
+  }
   const family = await getFamily(member.familyId);
   const child = await getChild(member.familyId);
-  const members = (await db.collection('familyMembers').where({ familyId: member.familyId }).get()).data;
+  const members = (await db.collection('familyMembers').where({ familyId: member.familyId }).get()).data.map((item) => Object.assign({}, item, {
+    studyRole: normalizeStudyRole(item)
+  }));
   const subscriptionPreference = (await db.collection('subscriptionPreferences').where({ memberId: member.memberId }).limit(1).get()).data[0] || {
     memberId: member.memberId,
     familyId: member.familyId,
@@ -1889,7 +1912,9 @@ async function handleAction(event, context) {
       transcriptTrack: transcriptBundle.transcriptTrack,
       transcriptLines: transcriptBundle.transcriptLines,
       todayRecord,
-      history
+      history,
+      studyWriteAllowed: normalizeStudyRole(ctx.member) === 'student',
+      studyWriteMessage: normalizeStudyRole(ctx.member) === 'student' ? '' : '陪伴试听，不计入打卡'
     };
   }
   if (event.action === 'markTaskListened') {
@@ -1899,6 +1924,15 @@ async function handleAction(event, context) {
     const checkins = await getCheckins(scope);
     const planRunType = String((event.payload && event.payload.planRunType) || 'normal');
     const targetDate = String((event.payload && event.payload.targetDate) || today).slice(0, 10);
+    if (normalizeStudyRole(ctx.member) !== 'student') {
+      return Object.assign(
+        await handleAction({ action: 'getTaskDetail', payload: { category, taskId: event.payload.taskId, planRunType, targetDate, planDayIndex: event.payload.planDayIndex } }, context),
+        {
+          studyWriteAllowed: false,
+          studyWriteMessage: '陪伴试听，不计入打卡'
+        }
+      );
+    }
     if (planRunType === 'catchup') {
       const normalPlan = buildPlanForDay(getPlanDayIndex(checkins));
       const normalTasks = decoratePlanTasks(progressRecords, ctx.child.childId, today, normalPlan, {
@@ -2124,6 +2158,19 @@ async function handleAction(event, context) {
   }
   if (event.action === 'updateChildProfile') {
     await updateChildProfile(ctx.family.familyId, event.payload || {});
+    return handleAction({ action: 'getFamilyPage', payload: {} }, context);
+  }
+  if (event.action === 'setStudyRole') {
+    const studyRole = String((event.payload && event.payload.studyRole) || '').trim();
+    if (studyRole !== 'student' && studyRole !== 'parent') {
+      throw new Error('设备身份不可用');
+    }
+    await db.collection('familyMembers').doc(ctx.member._id).update({
+      data: {
+        studyRole,
+        updatedAt: new Date().toISOString()
+      }
+    });
     return handleAction({ action: 'getFamilyPage', payload: {} }, context);
   }
   if (event.action === 'updateSubscription') {

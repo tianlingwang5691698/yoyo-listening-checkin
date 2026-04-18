@@ -49,6 +49,7 @@ function buildCurrentAudio(task, playableUrl, playbackMode) {
 Page({
   data: page.createCloudPageData({
     child: null,
+    currentMember: {},
     task: null,
     stats: {},
     todayRecord: null,
@@ -84,8 +85,14 @@ Page({
     audioError: '',
     audioErrorDetail: '',
     audioPlaybackMode: 'idle',
-    currentAudio: null
+    currentAudio: null,
+    studyWriteAllowed: true,
+    studyModeLabel: '学生设备'
   }),
+  isStudyWriteAllowed() {
+    const currentMember = this.data.currentMember || {};
+    return currentMember.studyRole === 'student';
+  },
   onLoad(query) {
     this.category = query.category || 'peppa';
     this.taskId = query.taskId || '';
@@ -328,6 +335,9 @@ Page({
       transcriptLines: detail.transcriptTrack ? detail.transcriptTrack.lines : [],
       transcriptSyncGranularity: detail.transcriptTrack ? (detail.transcriptTrack.syncGranularity || 'word') : 'word',
       history: detail.history,
+      currentMember: detail.currentMember,
+      studyWriteAllowed: detail.studyWriteAllowed !== false,
+      studyModeLabel: detail.currentMember && detail.currentMember.studyRole === 'student' ? '学生设备' : '陪伴试听',
       currentTimeMs: 0,
       currentTimeLabel: '00:00',
       progressPercent: 0,
@@ -503,6 +513,13 @@ Page({
     if (!this.data.task || this.data.task.isPendingAsset) {
       return;
     }
+    if (!this.isStudyWriteAllowed()) {
+      wx.showToast({
+        title: '试听完成',
+        icon: 'none'
+      });
+      return;
+    }
     const detail = await store.markTaskListened({
       childId: this.data.child.childId,
       category: this.category,
@@ -527,6 +544,9 @@ Page({
       transcriptLines: detail.transcriptTrack ? detail.transcriptTrack.lines : [],
       transcriptSyncGranularity: detail.transcriptTrack ? (detail.transcriptTrack.syncGranularity || 'word') : 'word',
       history: detail.history,
+      currentMember: detail.currentMember,
+      studyWriteAllowed: detail.studyWriteAllowed !== false,
+      studyModeLabel: detail.currentMember && detail.currentMember.studyRole === 'student' ? '学生设备' : '陪伴试听',
       audioSource: normalizedTask && normalizedTask.audioSource ? normalizedTask.audioSource : 'none',
       playbackRate: 1,
       playbackRateText: '1.0'
