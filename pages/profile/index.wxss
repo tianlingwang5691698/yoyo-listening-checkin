@@ -23,52 +23,109 @@
   line-height: 1.5;
 }
 
-.identity-code,
-.nickname-card {
+.identity-code {
   margin-top: 24rpx;
+  padding-top: 32rpx;
+  padding-bottom: 32rpx;
+}
+
+.code-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16rpx;
+}
+
+.code-label {
+  color: var(--text-muted);
+  font-size: 23rpx;
+  font-weight: 700;
 }
 
 .child-code {
-  margin-top: 24rpx;
+  margin-top: 28rpx;
   color: var(--text-strong);
-  font-size: 64rpx;
+  font-size: 78rpx;
   line-height: 1;
   font-weight: 800;
   text-align: center;
   letter-spacing: 0;
 }
 
-.profile-input {
-  margin-top: 22rpx;
-}
-
-.identity-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 18rpx;
-  margin-top: 24rpx;
-}
-
-.identity-card {
-  background: rgba(255, 255, 255, 0.72);
-}
-
-.identity-label {
+.child-code.is-pending {
   color: var(--text-muted);
-  font-size: 22rpx;
+  font-size: 48rpx;
 }
 
-.identity-value {
-  margin-top: 12rpx;
-  font-size: 30rpx;
-  font-weight: 700;
+.mini-button {
+  margin-top: 28rpx;
+  min-height: 78rpx;
+  font-size: 25rpx;
+}
+
+.profile-list {
+  margin-top: 24rpx;
+  padding-top: 8rpx;
+  padding-bottom: 8rpx;
+}
+
+.profile-row {
+  min-height: 104rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20rpx;
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid rgba(37, 35, 33, 0.08);
+}
+
+.profile-row:last-child {
+  border-bottom: none;
+}
+
+.edit-row {
+  align-items: flex-end;
+}
+
+.row-title {
   color: var(--text-main);
+  font-size: 29rpx;
+  font-weight: 700;
 }
 
-.identity-copy {
+.row-copy {
   margin-top: 8rpx;
   color: var(--text-muted);
   font-size: 22rpx;
+}
+
+.profile-input {
+  margin-top: 8rpx;
+  width: 360rpx;
+  min-height: 54rpx;
+  color: var(--text-main);
+  font-size: 25rpx;
+}
+
+.row-action {
+  min-width: 110rpx;
+  min-height: 58rpx;
+  padding: 0 22rpx;
+  border-radius: 999rpx;
+  background: rgba(37, 35, 33, 0.06);
+  color: var(--text-main);
+  font-size: 23rpx;
+  font-weight: 700;
+}
+
+.row-action::after {
+  border: none;
+}
+
+.row-arrow {
+  color: var(--accent);
+  font-size: 34rpx;
+  line-height: 1;
 }
 
 .sync-debug {
@@ -89,27 +146,4 @@
 .sync-debug.is-local {
   background: rgba(255, 241, 234, 0.9);
   color: #b45e40;
-}
-
-.option-head {
-  align-items: flex-start;
-}
-
-.option-title {
-  font-size: 30rpx;
-  font-weight: 700;
-  color: var(--text-main);
-}
-
-.option-copy {
-  margin-top: 10rpx;
-  font-size: 23rpx;
-  line-height: 1.55;
-  color: var(--text-muted);
-}
-
-.mini-button {
-  margin-top: 24rpx;
-  min-height: 82rpx;
-  font-size: 26rpx;
 }

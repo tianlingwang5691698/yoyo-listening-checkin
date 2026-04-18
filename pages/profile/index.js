@@ -22,6 +22,16 @@ function getDailyEncouragement() {
   };
 }
 
+function buildProfilePresentation(data) {
+  const child = (data && data.child) || {};
+  const childLoginCode = String(child.childLoginCode || '');
+  const childCodeReady = /^\d{6}$/.test(childLoginCode);
+  return {
+    childCodeReady,
+    childCodeText: childCodeReady ? childLoginCode : ((data && data.syncMode) === 'cloud' ? '同步中' : '待同步')
+  };
+}
+
 Page({
   data: page.createCloudPageData({
     child: {},
@@ -35,14 +45,16 @@ Page({
       dailyReportEnabled: false
     },
     childNicknameInput: '',
-    dailyEncouragement: getDailyEncouragement()
+    dailyEncouragement: getDailyEncouragement(),
+    childCodeReady: false,
+    childCodeText: '待同步'
   }),
   async onShow() {
     const data = await store.getProfileData();
     this.setData(page.buildCloudPageData(this.data, Object.assign({}, data, {
       childNicknameInput: (data.child && data.child.nickname) || '',
       dailyEncouragement: getDailyEncouragement()
-    })));
+    }, buildProfilePresentation(data))));
   },
   handleChildNicknameInput(event) {
     this.setData({
@@ -62,7 +74,7 @@ Page({
       const data = await store.updateChildProfile(nickname);
       this.setData(page.buildCloudPageData(this.data, Object.assign({}, data, {
         childNicknameInput: (data.child && data.child.nickname) || nickname
-      })));
+      }, buildProfilePresentation(data))));
       wx.showToast({
         title: '昵称已更新',
         icon: 'none'
