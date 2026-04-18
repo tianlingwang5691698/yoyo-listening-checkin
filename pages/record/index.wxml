@@ -37,51 +37,34 @@
   </view>
 
   <view class="calendar-card section-panel">
-    <swiper
-      class="calendar-swiper"
-      current="{{calendarSwiperIndex}}"
-      previous-margin="30rpx"
-      next-margin="30rpx"
-      bindchange="handleCalendarSwiperChange"
-      duration="320"
-      easing-function="easeOutCubic"
-    >
-      <block wx:for="{{calendarPages}}" wx:key="title" wx:for-item="pageItem" wx:for-index="pageIndex">
-        <swiper-item>
-          <view class="calendar-slide {{pageItem.disabled ? 'is-disabled' : ''}}">
-            <view class="calendar-slide-head">
-              <view class="month-arrow" wx:if="{{pageIndex === calendarSwiperIndex}}" data-direction="-1" catchtap="switchMonth">‹</view>
-              <view class="month-arrow is-ghost" wx:else>‹</view>
-              <picker wx:if="{{pageIndex === calendarSwiperIndex}}" mode="date" value="{{selectedDate}}" end="{{todayDate}}" bindchange="pickDate">
-                <view class="month-title">{{pageItem.title}}</view>
-              </picker>
-              <view wx:else class="month-title">{{pageItem.title}}</view>
-              <view class="month-arrow" wx:if="{{pageIndex === calendarSwiperIndex}}" data-direction="1" catchtap="switchMonth">›</view>
-              <view class="month-arrow is-ghost" wx:else>›</view>
-            </view>
-            <view class="week-grid">
-              <block wx:for="{{weekLabels}}" wx:key="*this">
-                <view class="week-label">{{item}}</view>
-              </block>
-            </view>
-            <view class="calendar-grid">
-              <block wx:for="{{pageItem.cells}}" wx:key="key">
-                <view
-                  class="calendar-cell {{item.isBlank ? 'is-blank' : ''}} {{item.completed ? 'is-completed' : ''}} {{item.isToday ? 'is-today' : ''}} {{item.isSelected ? 'is-selected' : ''}} {{item.isCatchupTarget ? 'is-catchup-target' : ''}}"
-                  data-date="{{item.date}}"
-                  bindtap="selectDate"
-                >
-                  <view wx:if="{{!item.isBlank}}" class="calendar-dot">{{item.dayText}}</view>
-                </view>
-              </block>
-            </view>
+    <view class="calendar-slide">
+      <view class="calendar-slide-head">
+        <view class="month-arrow" data-direction="-1" catchtap="switchMonth">‹</view>
+        <picker mode="date" value="{{selectedDate}}" end="{{todayDate}}" bindchange="pickDate">
+          <view class="month-title">{{calendarTitle}}</view>
+        </picker>
+        <view class="month-arrow" data-direction="1" catchtap="switchMonth">›</view>
+      </view>
+      <view class="week-grid">
+        <block wx:for="{{weekLabels}}" wx:key="*this">
+          <view class="week-label">{{item}}</view>
+        </block>
+      </view>
+      <view class="calendar-grid">
+        <block wx:for="{{monthCells}}" wx:key="key">
+          <view
+            class="calendar-cell {{item.isBlank ? 'is-blank' : ''}} {{item.completed ? 'is-completed' : ''}} {{item.isToday ? 'is-today' : ''}} {{item.isSelected ? 'is-selected' : ''}} {{item.isCatchupTarget ? 'is-catchup-target' : ''}}"
+            data-date="{{item.date}}"
+            bindtap="selectDate"
+          >
+            <view wx:if="{{!item.isBlank}}" class="calendar-dot">{{item.dayText}}</view>
           </view>
-        </swiper-item>
-      </block>
-    </swiper>
+        </block>
+      </view>
+    </view>
     <view class="calendar-swipe-hint">
       <view class="swipe-mark"></view>
-      <view class="swipe-copy">滑动切换月份</view>
+      <view class="swipe-copy">点击切换月份</view>
       <view class="swipe-mark"></view>
     </view>
   </view>

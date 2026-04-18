@@ -117,10 +117,6 @@
   font-size: 32rpx;
 }
 
-.month-arrow.is-ghost {
-  opacity: 0;
-}
-
 .week-grid,
 .calendar-grid {
   display: grid;
@@ -143,15 +139,8 @@
   margin-top: 14rpx;
 }
 
-.calendar-swiper {
-  height: 628rpx;
-  margin: -2rpx -30rpx 0;
-  overflow: visible;
-}
-
 .calendar-slide {
   min-height: 588rpx;
-  margin: 0 10rpx;
   padding: 22rpx 20rpx 26rpx;
   border: 1rpx solid rgba(37, 35, 33, 0.06);
   border-radius: 28rpx;

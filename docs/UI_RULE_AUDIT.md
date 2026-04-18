@@ -382,3 +382,20 @@ rg ">开始<|0/1|font-weight: 900" pages/**/*.wxml pages/**/*.wxss app.wxss
 - 页面层未发现 `控制台`、`Dashboard`、`Console`、`PROGRAM CONSOLE`、`报表式总览`、`歌曲`。
 - 页面层未发现 `>开始<` 和 `0/1`。
 - 全页面扫描仍只剩统计数字和成长大数字中的 `font-weight: 900` 例外。
+
+## 2026-04-18 成长页禁用 swiper 稳定月历
+
+整改内容：
+
+- 移除成长页月历 swiper，避免真机原生 swiper 与受控 `current` 抢状态。
+- 月历改为单张稳定卡片。
+- 月份切换保留左右按钮和日期选择器。
+- 保留页面内存缓存、相邻月份预加载、日期详情和追赶逻辑。
+- 提示文案从 `滑动切换月份` 改为 `点击切换月份`。
+
+扫描结果：
+
+- `pages/record/index.js` 语法检查通过。
+- 成长页已无 `swiper`、`calendarSwiperIndex`、`calendarPages`、`handleCalendarSwiperChange`。
+- 页面层未发现 `控制台`、`Dashboard`、`Console`、`PROGRAM CONSOLE`、`报表式总览`、`歌曲`。
+- 页面层未发现 `>开始<` 和 `0/1`。

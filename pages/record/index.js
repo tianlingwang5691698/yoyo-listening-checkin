@@ -3,7 +3,6 @@ const page = require('../../utils/page');
 const labels = require('../../utils/labels');
 
 const WEEK_LABELS = ['日', '一', '二', '三', '四', '五', '六'];
-const CALENDAR_PAST_MONTH_COUNT = 24;
 const EMPTY_REPORT = {
   date: '',
   totalMinutes: 0,
@@ -137,17 +136,6 @@ function addMonths(year, month, offset) {
   };
 }
 
-function compareMonth(a, b) {
-  if (a.year !== b.year) {
-    return a.year - b.year;
-  }
-  return a.month - b.month;
-}
-
-function getMonthDistance(from, to) {
-  return (to.year - from.year) * 12 + (to.month - from.month);
-}
-
 function isFutureMonth(year, month) {
   const today = new Date();
   return year > today.getFullYear() || (year === today.getFullYear() && month > today.getMonth() + 1);
@@ -181,12 +169,6 @@ function markSelectedCells(cells, selectedDate) {
   }));
 }
 
-function markSelectedPages(pages, selectedDate) {
-  return (pages || []).map((pageItem) => Object.assign({}, pageItem, {
-    cells: markSelectedCells(pageItem.cells, selectedDate)
-  }));
-}
-
 Page({
   monthCache: {},
   monthRequests: {},
@@ -204,8 +186,6 @@ Page({
     calendarMonth: new Date().getMonth() + 1,
     calendarTitle: '',
     monthCells: [],
-    calendarPages: [],
-    calendarSwiperIndex: CALENDAR_PAST_MONTH_COUNT,
     todayDate: getDateKey(new Date()),
     selectedDate: getDateKey(new Date()),
     selectedDateLabel: '',
@@ -233,7 +213,6 @@ Page({
       this.getMonthHeatmapCached(calendarYear, calendarMonth, { force: true })
     ]);
     const catchupPresentation = buildCatchupPresentation(heatmapData.catchupState);
-    const calendarView = this.buildCalendarView(calendarYear, calendarMonth, selectedDate, heatmapData.catchupState);
     const nextState = Object.assign({}, dashboard, {
       child: dashboard.child,
       stats: dashboard.stats,
@@ -244,9 +223,7 @@ Page({
       todayDate: getDateKey(today),
       selectedDate,
       selectedDateLabel: formatDateLabel(selectedDate),
-      monthCells: (calendarView.calendarPages[calendarView.calendarSwiperIndex] && calendarView.calendarPages[calendarView.calendarSwiperIndex].cells) || [],
-      calendarPages: calendarView.calendarPages,
-      calendarSwiperIndex: calendarView.calendarSwiperIndex,
+      monthCells: buildMonthCells(calendarYear, calendarMonth, heatmapData.heatmap, selectedDate, heatmapData.catchupState),
       catchupState: heatmapData.catchupState,
       catchupTasks: [],
       planDayIndex: dashboard.planDayIndex || 1
@@ -288,101 +265,41 @@ Page({
     this.monthRequests[key] = request;
     return request;
   },
-  getCalendarMonthRefs(activeYear, activeMonth) {
-    const today = new Date();
-    const currentRef = {
-      year: today.getFullYear(),
-      month: today.getMonth() + 1
-    };
-    const activeRef = {
-      year: activeYear,
-      month: activeMonth
-    };
-    let startRef = addMonths(currentRef.year, currentRef.month, -CALENDAR_PAST_MONTH_COUNT);
-    if (compareMonth(activeRef, startRef) < 0) {
-      startRef = activeRef;
-    }
-    const refs = [];
-    const total = Math.max(0, getMonthDistance(startRef, currentRef));
-    for (let offset = 0; offset <= total; offset += 1) {
-      refs.push(addMonths(startRef.year, startRef.month, offset));
-    }
-    return refs;
-  },
-  buildCalendarView(year, month, selectedDate, catchupState) {
-    const monthRefs = this.getCalendarMonthRefs(year, month);
-    const selected = parseDateKey(selectedDate);
-    let calendarSwiperIndex = monthRefs.findIndex((item) => item.year === year && item.month === month);
-    if (calendarSwiperIndex < 0) {
-      calendarSwiperIndex = monthRefs.length - 1;
-    }
-    const calendarPages = monthRefs.map((item) => {
-      const heatmapData = this.getCachedMonthData(item.year, item.month) || { heatmap: [] };
-      const pageSelectedDate = item.year === selected.getFullYear() && item.month === selected.getMonth() + 1
-        ? selectedDate
-        : '';
-      return {
-        year: item.year,
-        month: item.month,
-        title: `${item.year}年${item.month}月`,
-        sideLabel: '',
-        disabled: false,
-        cells: buildMonthCells(item.year, item.month, heatmapData.heatmap, pageSelectedDate, catchupState)
-      };
-    });
-    return {
-      calendarPages,
-      calendarSwiperIndex
-    };
-  },
   preloadAdjacentMonths(year, month) {
     [addMonths(year, month, -1), addMonths(year, month, 1)].forEach((item) => {
       if (!isFutureMonth(item.year, item.month)) {
         this.getMonthHeatmapCached(item.year, item.month).then(() => {
           if (this.data.calendarYear === year && this.data.calendarMonth === month) {
-            this.refreshCalendarPagesFromCache();
+            this.refreshMonthCellsFromCache();
           }
         }).catch(() => {});
       }
     });
   },
-  refreshCalendarPagesFromCache() {
-    const calendarView = this.buildCalendarView(
-      this.data.calendarYear,
-      this.data.calendarMonth,
-      this.data.selectedDate,
-      this.data.catchupState
-    );
+  refreshMonthCellsFromCache() {
+    const heatmapData = this.getCachedMonthData(this.data.calendarYear, this.data.calendarMonth) || { heatmap: [] };
     this.setData({
-      calendarPages: calendarView.calendarPages,
-      calendarSwiperIndex: calendarView.calendarSwiperIndex,
-      monthCells: (calendarView.calendarPages[calendarView.calendarSwiperIndex] && calendarView.calendarPages[calendarView.calendarSwiperIndex].cells) || this.data.monthCells
+      monthCells: buildMonthCells(this.data.calendarYear, this.data.calendarMonth, heatmapData.heatmap, this.data.selectedDate, this.data.catchupState)
     });
   },
   async loadCalendar(year, month, selectedDate) {
     this.calendarLoadVersion += 1;
     const loadVersion = this.calendarLoadVersion;
     const cachedData = this.getCachedMonthData(year, month) || { heatmap: [], catchupState: this.data.catchupState };
-    const optimisticView = this.buildCalendarView(year, month, selectedDate, this.data.catchupState);
     this.setData(page.buildCloudPageData(this.data, Object.assign({
       calendarYear: year,
       calendarMonth: month,
       calendarTitle: `${year}年${month}月`,
       selectedDate,
       selectedDateLabel: formatDateLabel(selectedDate),
-      monthCells: buildMonthCells(year, month, cachedData.heatmap, selectedDate, this.data.catchupState),
-      calendarPages: optimisticView.calendarPages,
-      calendarSwiperIndex: optimisticView.calendarSwiperIndex
+      monthCells: buildMonthCells(year, month, cachedData.heatmap, selectedDate, this.data.catchupState)
     }, buildCatchupPresentation(this.data.catchupState))));
     const heatmapData = await this.getMonthHeatmapCached(year, month, { force: true });
     if (loadVersion !== this.calendarLoadVersion) {
       return;
     }
-    const calendarView = this.buildCalendarView(year, month, selectedDate, heatmapData.catchupState);
     this.setData(page.buildCloudPageData(this.data, Object.assign({
       monthCells: buildMonthCells(year, month, heatmapData.heatmap, selectedDate, heatmapData.catchupState),
-      calendarPages: calendarView.calendarPages,
-      calendarSwiperIndex: calendarView.calendarSwiperIndex,
       catchupState: heatmapData.catchupState
     }, buildCatchupPresentation(heatmapData.catchupState))));
     this.preloadAdjacentMonths(year, month);
@@ -405,7 +322,7 @@ Page({
       catchupTasks: labels.normalizeTaskList(heatmapData.catchupTasks || []),
       catchupState: heatmapData.catchupState || this.data.catchupState
     }, buildCatchupPresentation(heatmapData.catchupState || this.data.catchupState))));
-    this.refreshCalendarPagesFromCache();
+    this.refreshMonthCellsFromCache();
   },
   switchMetric(event) {
     const mode = event.currentTarget.dataset.mode || 'streak';
@@ -431,33 +348,6 @@ Page({
     await this.loadCalendar(nextYear, nextMonth, selectedDate);
     await this.loadSelectedDay(selectedDate);
   },
-  async handleCalendarSwiperChange(event) {
-    const current = event.detail.current;
-    if (current === this.data.calendarSwiperIndex) {
-      return;
-    }
-    const pageData = this.data.calendarPages[current];
-    if (!pageData || pageData.disabled) {
-      return;
-    }
-    const today = new Date();
-    const selectedDate = pageData.year === today.getFullYear() && pageData.month === today.getMonth() + 1
-      ? getDateKey(today)
-      : `${pageData.year}-${pad(pageData.month)}-01`;
-    const visiblePages = markSelectedPages(this.data.calendarPages, selectedDate);
-    this.setData({
-      calendarYear: pageData.year,
-      calendarMonth: pageData.month,
-      calendarTitle: pageData.title,
-      selectedDate,
-      selectedDateLabel: formatDateLabel(selectedDate),
-      monthCells: markSelectedCells(pageData.cells, selectedDate),
-      calendarPages: visiblePages,
-      calendarSwiperIndex: current
-    });
-    await this.loadSelectedDay(selectedDate);
-    this.loadCalendar(pageData.year, pageData.month, selectedDate).catch(() => {});
-  },
   async pickDate(event) {
     const date = event.detail.value;
     if (!date) {
@@ -481,12 +371,10 @@ Page({
     if (!date) {
       return;
     }
-    const calendarPages = markSelectedPages(this.data.calendarPages, date);
     this.setData({
       selectedDate: date,
       selectedDateLabel: formatDateLabel(date),
-      monthCells: markSelectedCells(this.data.monthCells, date),
-      calendarPages
+      monthCells: markSelectedCells(this.data.monthCells, date)
     });
     await this.loadSelectedDay(date);
   },
