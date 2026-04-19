@@ -17,10 +17,10 @@
     </view>
     <view class="family-row action-row" wx:if="{{!childJoinRequired && currentMember && currentMember.studyRole === 'parent'}}">
       <view class="row-main">
-        <view class="row-title">误用学生设备</view>
-        <view class="row-copy">家长没切回家长，清掉今天多记的播放</view>
+        <view class="row-title">家长误用学生身份</view>
+        <view class="row-copy">清掉今天多记的播放</view>
       </view>
-      <button class="row-action row-action-wide row-action-warn {{undoingLastListened ? 'is-disabled' : ''}}" bindtap="undoLastListened">{{undoingLastListened ? '处理中' : '处理'}}</button>
+      <button class="row-action row-action-wide row-action-warn {{undoingLastListened ? 'is-disabled' : ''}}" bindtap="undoLastListened">{{undoingLastListened ? '处理中' : '清掉'}}</button>
     </view>
     <view class="family-row action-row" wx:if="{{!childJoinRequired && currentMember && currentMember.studyRole === 'student'}}">
       <view class="row-main">

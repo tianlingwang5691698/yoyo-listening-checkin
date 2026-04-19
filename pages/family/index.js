@@ -139,10 +139,10 @@ Page({
     }
     const choice = await new Promise((resolve) => {
       wx.showModal({
-        title: '误用学生设备？',
-        content: '清掉今天多记的播放次数，并切回家长。',
-        cancelText: '不用处理',
-        confirmText: '清掉次数',
+        title: '清掉多记播放？',
+        content: '今天还没打卡，可以清掉家长误记的播放次数。',
+        cancelText: '不用',
+        confirmText: '清掉',
         confirmColor: '#b45e40',
         success: (res) => resolve(res.confirm ? 'clear' : ''),
         fail: () => resolve('')
@@ -159,7 +159,7 @@ Page({
       })));
       const cleared = data.cleared || {};
       wx.showToast({
-        title: cleared.playCount ? '已清掉多记次数' : '已处理',
+        title: cleared.playCount ? '已清掉多记播放' : '已处理',
         icon: 'none'
       });
     } catch (error) {
