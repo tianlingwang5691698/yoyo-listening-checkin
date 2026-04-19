@@ -204,6 +204,13 @@ Page({
     catchupTasks: []
   }),
   async onShow() {
+    const tabBar = this.getTabBar && this.getTabBar();
+    if (tabBar) {
+      tabBar.setData({ selected: 2 });
+    }
+    if (!page.requireIdentityConfirmed()) {
+      return;
+    }
     const today = new Date();
     const selectedDate = this.data.selectedDate || getDateKey(today);
     const calendarYear = this.data.calendarYear || today.getFullYear();

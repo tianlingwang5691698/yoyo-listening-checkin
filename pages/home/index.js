@@ -102,6 +102,10 @@ Page({
     };
   },
   async onShow() {
+    const tabBar = this.getTabBar && this.getTabBar();
+    if (tabBar) {
+      tabBar.setData({ selected: 0 });
+    }
     const data = await store.getDashboard();
     const groupedDailyTasks = buildGroupedDailyTasks(data.dailyTasks);
     const total = data.activeTaskCount || data.planTaskCount || 0;
@@ -114,6 +118,7 @@ Page({
       phaseCopy: buildPhaseCopy(data.planPhaseLabel),
       groupedDailyTasks,
       hasGroupedTasks: groupedDailyTasks.length > 0,
+      identityConfirmVisible: !page.isIdentityConfirmed(),
       modeChangedNoticeVisible
     }, this.buildStudyModePresentation(data.currentMember))));
   },
@@ -121,6 +126,7 @@ Page({
     const nextRole = event.currentTarget.dataset.role === 'student' ? 'student' : 'parent';
     try {
       const data = await store.setStudyRole(nextRole);
+      page.setIdentityConfirmed(true);
       wx.setStorageSync('lastStudyRole', nextRole);
       if (nextRole === 'student') {
         wx.setStorageSync('hasUsedStudentMode', 'yes');
@@ -148,6 +154,13 @@ Page({
     }
   },
   openTask(event) {
+    if (this.data.identityConfirmVisible) {
+      wx.showToast({
+        title: '先选择身份',
+        icon: 'none'
+      });
+      return;
+    }
     const category = event.currentTarget.dataset.category;
     const taskId = event.currentTarget.dataset.taskId;
     const disabled = event.currentTarget.dataset.disabled;

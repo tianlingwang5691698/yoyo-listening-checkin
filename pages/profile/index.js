@@ -50,6 +50,13 @@ Page({
     childCodeText: '待同步'
   }),
   async onShow() {
+    const tabBar = this.getTabBar && this.getTabBar();
+    if (tabBar) {
+      tabBar.setData({ selected: 3 });
+    }
+    if (!page.requireIdentityConfirmed()) {
+      return;
+    }
     const data = await store.getProfileData();
     this.setData(page.buildCloudPageData(this.data, Object.assign({}, data, {
       childNicknameInput: (data.child && data.child.nickname) || '',

@@ -103,6 +103,13 @@ Page({
     programEntries: []
   }),
   async onShow() {
+    const tabBar = this.getTabBar && this.getTabBar();
+    if (tabBar) {
+      tabBar.setData({ selected: 1 });
+    }
+    if (!page.requireIdentityConfirmed()) {
+      return;
+    }
     const data = await store.getLevelOverview();
     const categories = (data.categories || []).map(labels.normalizeCategory);
     this.setData(page.buildCloudPageData(this.data, Object.assign({}, data, {

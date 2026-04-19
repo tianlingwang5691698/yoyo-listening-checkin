@@ -184,6 +184,9 @@ Page({
     });
   },
   async onShow() {
+    if (!page.requireIdentityConfirmed()) {
+      return;
+    }
     await this.refreshPage();
   },
   onHide() {

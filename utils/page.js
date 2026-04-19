@@ -22,7 +22,33 @@ function buildCloudPageData(defaults, data) {
   return Object.assign({}, createCloudPageData(defaults), normalizeCloudPageData(data));
 }
 
+function setIdentityConfirmed(confirmed) {
+  const app = getApp();
+  if (app && app.globalData) {
+    app.globalData.identityConfirmed = !!confirmed;
+  }
+}
+
+function isIdentityConfirmed() {
+  const app = getApp();
+  return !!(app && app.globalData && app.globalData.identityConfirmed);
+}
+
+function requireIdentityConfirmed() {
+  if (isIdentityConfirmed()) {
+    return true;
+  }
+  wx.showToast({
+    title: '先选择身份',
+    icon: 'none'
+  });
+  return false;
+}
+
 module.exports = {
   createCloudPageData,
-  buildCloudPageData
+  buildCloudPageData,
+  setIdentityConfirmed,
+  isIdentityConfirmed,
+  requireIdentityConfirmed
 };
