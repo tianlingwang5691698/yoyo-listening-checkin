@@ -16,12 +16,11 @@
       </view>
       <button class="row-action" bindtap="saveChildProfile">保存</button>
     </view>
-    <view class="profile-row action-row">
+    <view class="profile-row action-row" wx:if="{{currentMember && currentMember.studyRole === 'student'}}">
       <view class="row-main">
         <view class="row-title">ID</view>
         <view class="row-copy {{childCodeReady ? '' : 'is-pending'}}">{{childCodeText}}</view>
       </view>
-      <button wx:if="{{childCodeReady}}" class="row-action" bindtap="copyChildCode">复制</button>
     </view>
     <view class="profile-row" bindtap="openParentPage">
       <view class="row-main">

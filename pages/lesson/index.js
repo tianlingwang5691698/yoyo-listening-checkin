@@ -87,7 +87,8 @@ Page({
     audioPlaybackMode: 'idle',
     currentAudio: null,
     studyWriteAllowed: true,
-    studyModeLabel: '学生设备'
+    studyModeLabel: '学生设备',
+    checkinReady: false
   }),
   isStudyWriteAllowed() {
     const currentMember = this.data.currentMember || {};
@@ -100,6 +101,7 @@ Page({
     this.targetDate = query.targetDate || '';
     this.planDayIndex = query.planDayIndex || '';
     this.pendingAutoPlay = false;
+    this.checkinConfirmShowing = false;
     this.innerAudioContext = wx.createInnerAudioContext();
     this.innerAudioContext.obeyMuteSwitch = false;
     this.innerAudioContext.onCanplay(() => {
@@ -337,7 +339,7 @@ Page({
       history: detail.history,
       currentMember: detail.currentMember,
       studyWriteAllowed: detail.studyWriteAllowed !== false,
-      studyModeLabel: detail.currentMember && detail.currentMember.studyRole === 'student' ? '学生设备' : '陪伴试听',
+      studyModeLabel: detail.currentMember && detail.currentMember.studyRole === 'student' ? '学生设备' : '家长模式',
       currentTimeMs: 0,
       currentTimeLabel: '00:00',
       progressPercent: 0,
@@ -546,7 +548,8 @@ Page({
       history: detail.history,
       currentMember: detail.currentMember,
       studyWriteAllowed: detail.studyWriteAllowed !== false,
-      studyModeLabel: detail.currentMember && detail.currentMember.studyRole === 'student' ? '学生设备' : '陪伴试听',
+      studyModeLabel: detail.currentMember && detail.currentMember.studyRole === 'student' ? '学生设备' : '家长模式',
+      checkinReady: !!detail.checkinReady,
       audioSource: normalizedTask && normalizedTask.audioSource ? normalizedTask.audioSource : 'none',
       playbackRate: 1,
       playbackRateText: '1.0'
@@ -556,5 +559,46 @@ Page({
       title: detail.progress.completedToday ? `${normalizedTask.categoryLabel} 今天完成` : `已完成第 ${detail.progress.playCount} 遍`,
       icon: 'none'
     });
+    if (detail.checkinReady) {
+      this.promptCompleteTodayCheckin();
+    }
+  },
+  async promptCompleteTodayCheckin() {
+    if (this.checkinConfirmShowing || !this.data.checkinReady) {
+      return;
+    }
+    this.checkinConfirmShowing = true;
+    const confirmed = await new Promise((resolve) => {
+      wx.showModal({
+        title: '今天听完啦',
+        content: '点一下，完成今天打卡。',
+        confirmText: '完成打卡',
+        showCancel: false,
+        success: (res) => resolve(!!res.confirm),
+        fail: () => resolve(false)
+      });
+    });
+    this.checkinConfirmShowing = false;
+    if (!confirmed) {
+      return;
+    }
+    try {
+      const data = await store.completeTodayCheckin();
+      this.setData(page.buildCloudPageData(this.data, {
+        child: data.child || this.data.child,
+        stats: data.stats || this.data.stats,
+        todayRecord: data.todayRecord || null,
+        checkinReady: !!data.checkinReady
+      }));
+      wx.showToast({
+        title: '今天打卡完成',
+        icon: 'none'
+      });
+    } catch (error) {
+      wx.showToast({
+        title: error.message || '打卡失败',
+        icon: 'none'
+      });
+    }
   }
 });

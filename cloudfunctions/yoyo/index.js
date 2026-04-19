@@ -1137,6 +1137,44 @@ async function getMember(openId) {
   return res.data[0] || null;
 }
 
+function getMemberIdentityKey(member) {
+  return String((member && (member.openId || member.userId || member.memberId)) || '');
+}
+
+function normalizeAndDedupeMembers(members) {
+  const unique = new Map();
+  (members || []).forEach((member) => {
+    const normalized = Object.assign({}, member, {
+      studyRole: normalizeStudyRole(member)
+    });
+    const key = getMemberIdentityKey(normalized);
+    if (!key) {
+      unique.set(normalized.memberId || `member-${unique.size}`, normalized);
+      return;
+    }
+    const existing = unique.get(key);
+    if (!existing) {
+      unique.set(key, normalized);
+      return;
+    }
+    const existingUpdatedAt = String(existing.updatedAt || existing.createdAt || '');
+    const nextUpdatedAt = String(normalized.updatedAt || normalized.createdAt || '');
+    if (nextUpdatedAt >= existingUpdatedAt) {
+      unique.set(key, Object.assign({}, normalized, {
+        joinedFamilyAt: [existing.joinedFamilyAt, normalized.joinedFamilyAt, existing.createdAt, normalized.createdAt]
+          .filter(Boolean)
+          .sort()[0] || normalized.joinedFamilyAt || normalized.createdAt || ''
+      }));
+    }
+  });
+  return Array.from(unique.values()).sort((a, b) => {
+    if (a.studyRole !== b.studyRole) {
+      return a.studyRole === 'student' ? -1 : 1;
+    }
+    return String(a.joinedFamilyAt || a.createdAt || '').localeCompare(String(b.joinedFamilyAt || b.createdAt || ''));
+  });
+}
+
 function buildUserId(openId) {
   return `user-${String(openId || '').replace(/[^a-zA-Z0-9_-]/g, '')}`;
 }
@@ -1230,20 +1268,46 @@ function normalizeStudyRole(member) {
   return member && member.role === 'owner' ? 'student' : 'parent';
 }
 
+async function setExclusiveStudyRole(member, studyRole) {
+  const now = new Date().toISOString();
+  if (studyRole === 'student') {
+    const familyMembers = (await db.collection('familyMembers').where({ familyId: member.familyId }).get()).data;
+    await Promise.all(familyMembers
+      .filter((item) => item._id)
+      .map((item) => db.collection('familyMembers').doc(item._id).update({
+        data: {
+          studyRole: item.memberId === member.memberId ? 'student' : 'parent',
+          updatedAt: now
+        }
+      })));
+    return;
+  }
+  await db.collection('familyMembers').doc(member._id).update({
+    data: {
+      studyRole: 'parent',
+      updatedAt: now
+    }
+  });
+}
+
 async function upsertFamilyMemberForFamily(openId, userId, familyId, displayName) {
-  const memberRes = await db.collection('familyMembers').where({ openId }).limit(1).get();
+  const memberRes = await db.collection('familyMembers').where({ openId }).get();
   let joinedMemberId = '';
-  if (memberRes.data[0]) {
-    const existingMember = memberRes.data[0];
-    joinedMemberId = memberRes.data[0].memberId;
-    await db.collection('familyMembers').doc(memberRes.data[0]._id).update({
+  const existingMember = memberRes.data.find((item) => item.familyId === familyId) || memberRes.data[0];
+  const now = new Date().toISOString();
+  if (existingMember) {
+    joinedMemberId = existingMember.memberId;
+    await db.collection('familyMembers').doc(existingMember._id).update({
       data: {
         userId,
         familyId,
         displayName,
         role: existingMember.familyId === familyId ? (existingMember.role || 'parent') : 'parent',
         studyRole: existingMember.familyId === familyId ? normalizeStudyRole(existingMember) : 'parent',
-        updatedAt: new Date().toISOString()
+        joinedFamilyAt: existingMember.familyId === familyId
+          ? (existingMember.joinedFamilyAt || existingMember.createdAt || now)
+          : now,
+        updatedAt: now
       }
     });
   } else {
@@ -1258,7 +1322,8 @@ async function upsertFamilyMemberForFamily(openId, userId, familyId, displayName
         studyRole: 'parent',
         displayName,
         subscriptionEnabled: false,
-        createdAt: new Date().toISOString()
+        joinedFamilyAt: now,
+        createdAt: now
       }
     });
   }
@@ -1304,6 +1369,7 @@ async function ensureBootstrap(openId) {
       studyRole: 'student',
       displayName: '我',
       subscriptionEnabled: false,
+      joinedFamilyAt: new Date().toISOString(),
       createdAt: new Date().toISOString()
     };
     await db.collection('familyMembers').add({ data: member });
@@ -1342,9 +1408,7 @@ async function ensureBootstrap(openId) {
   }
   const family = await getFamily(member.familyId);
   const child = await getChild(member.familyId);
-  const members = (await db.collection('familyMembers').where({ familyId: member.familyId }).get()).data.map((item) => Object.assign({}, item, {
-    studyRole: normalizeStudyRole(item)
-  }));
+  const members = normalizeAndDedupeMembers((await db.collection('familyMembers').where({ familyId: member.familyId }).get()).data);
   const subscriptionPreference = (await db.collection('subscriptionPreferences').where({ memberId: member.memberId }).limit(1).get()).data[0] || {
     memberId: member.memberId,
     familyId: member.familyId,
@@ -1698,6 +1762,41 @@ async function maybeCreateCheckin(scope, progressRecords, date, options = {}) {
   return next;
 }
 
+async function clearTodayUnconfirmedListens(ctx) {
+  const today = new Date().toISOString().slice(0, 10);
+  const scope = getUserScope(ctx);
+  const todayRecord = (await getCheckins(scope)).find((item) => item.date === today);
+  if (todayRecord) {
+    throw new Error('今天已经打卡，不能清掉记录');
+  }
+  const progressRecords = await getChildProgressRecords(scope);
+  const candidates = progressRecords
+    .filter((item) => item.date === today && Number(item.playCount || 0) > 0)
+    .sort((a, b) => String(b.updatedAt || '').localeCompare(String(a.updatedAt || '')));
+  if (!candidates.length) {
+    throw new Error('今天没有可清掉的播放记录');
+  }
+  const now = new Date().toISOString();
+  await Promise.all(candidates.map((item) => db.collection('dailyTaskProgress').doc(item._id).update({
+    data: {
+      playCount: 0,
+      textUnlocked: false,
+      completedToday: false,
+      updatedAt: now,
+      lastUndoAt: now,
+      lastUndoByMemberId: scope.memberId
+    }
+  })));
+  await upsertDailyReport(scope, today);
+  return {
+    cleared: {
+      date: today,
+      taskCount: candidates.length,
+      playCount: candidates.reduce((sum, item) => sum + Number(item.playCount || 0), 0)
+    }
+  };
+}
+
 async function upsertDailyReport(scope, date) {
   const progressRecords = await getChildProgressRecords(scope);
   const checkins = await getCheckins(scope);
@@ -1886,6 +1985,11 @@ async function handleAction(event, context) {
       }))
       .sort((a, b) => b.date.localeCompare(a.date));
     const todayRecord = (await getCheckins(scope)).find((item) => item.date === today) || null;
+    const checkinReady = normalizeStudyRole(ctx.member) === 'student'
+      && planRunType === 'normal'
+      && targetDate === today
+      && dashboard.allDailyDone
+      && !todayRecord;
     return {
       user: ctx.user,
       currentUser: ctx.user,
@@ -1914,7 +2018,8 @@ async function handleAction(event, context) {
       todayRecord,
       history,
       studyWriteAllowed: normalizeStudyRole(ctx.member) === 'student',
-      studyWriteMessage: normalizeStudyRole(ctx.member) === 'student' ? '' : '陪伴试听，不计入打卡'
+      studyWriteMessage: normalizeStudyRole(ctx.member) === 'student' ? '' : '家长模式，不计入打卡',
+      checkinReady
     };
   }
   if (event.action === 'markTaskListened') {
@@ -1929,7 +2034,7 @@ async function handleAction(event, context) {
         await handleAction({ action: 'getTaskDetail', payload: { category, taskId: event.payload.taskId, planRunType, targetDate, planDayIndex: event.payload.planDayIndex } }, context),
         {
           studyWriteAllowed: false,
-          studyWriteMessage: '陪伴试听，不计入打卡'
+          studyWriteMessage: '家长模式，不计入打卡'
         }
       );
     }
@@ -1987,12 +2092,45 @@ async function handleAction(event, context) {
       updatedAt: new Date().toISOString()
     };
     await saveProgressRecord(record);
-    const nextProgressRecords = await getChildProgressRecords(scope);
-    await maybeCreateCheckin(scope, nextProgressRecords, targetDate, {
-      planRunType,
-      planDayIndex: todayPlan.dayIndex
-    });
+    if (planRunType === 'catchup') {
+      const nextProgressRecords = await getChildProgressRecords(scope);
+      await maybeCreateCheckin(scope, nextProgressRecords, targetDate, {
+        planRunType,
+        planDayIndex: todayPlan.dayIndex
+      });
+    }
     return handleAction({ action: 'getTaskDetail', payload: { category, planRunType, targetDate, planDayIndex: todayPlan.dayIndex } }, context);
+  }
+  if (event.action === 'completeTodayCheckin') {
+    if (normalizeStudyRole(ctx.member) !== 'student') {
+      throw new Error('家长模式不计入打卡');
+    }
+    const scope = getUserScope(ctx);
+    const progressRecords = await getChildProgressRecords(scope);
+    const checkins = await getCheckins(scope);
+    const planDayIndex = getPlanDayIndex(checkins);
+    const checkin = await maybeCreateCheckin(scope, progressRecords, today, {
+      planRunType: 'normal',
+      planDayIndex
+    });
+    if (!checkin) {
+      throw new Error('今天还没全部听完');
+    }
+    const dashboard = await getDashboardData(ctx);
+    return {
+      user: ctx.user,
+      currentUser: ctx.user,
+      currentMember: ctx.member,
+      family: ctx.family,
+      child: dashboard.child,
+      stats: dashboard.stats,
+      todayRecord: checkin,
+      dailyTasks: dashboard.dailyTasks,
+      activeTaskCount: dashboard.activeTaskCount,
+      completedTaskCountToday: dashboard.completedTaskCountToday,
+      allDailyDone: dashboard.allDailyDone,
+      checkinReady: false
+    };
   }
   if (event.action === 'getProfileData') {
     const dashboard = await getDashboardData(ctx);
@@ -2165,13 +2303,16 @@ async function handleAction(event, context) {
     if (studyRole !== 'student' && studyRole !== 'parent') {
       throw new Error('设备身份不可用');
     }
-    await db.collection('familyMembers').doc(ctx.member._id).update({
-      data: {
-        studyRole,
-        updatedAt: new Date().toISOString()
-      }
-    });
+    await setExclusiveStudyRole(ctx.member, studyRole);
     return handleAction({ action: 'getFamilyPage', payload: {} }, context);
+  }
+  if (event.action === 'undoLastListened') {
+    const result = await clearTodayUnconfirmedListens(ctx);
+    if (normalizeStudyRole(ctx.member) === 'student') {
+      await setExclusiveStudyRole(ctx.member, 'parent');
+    }
+    const familyPage = await handleAction({ action: 'getFamilyPage', payload: {} }, context);
+    return Object.assign({}, familyPage, result);
   }
   if (event.action === 'updateSubscription') {
     const enabled = !!(event.payload && event.payload.enabled);

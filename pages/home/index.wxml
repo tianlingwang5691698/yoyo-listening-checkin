@@ -9,6 +9,17 @@
     <view class="section-copy">{{(syncDebug && (syncDebug.publicReason || syncDebug.reason)) || '学习数据暂时没有同步成功，请稍后再试。'}}</view>
   </view>
 
+  <view class="mode-notice" wx:if="{{modeChangedNoticeVisible}}">
+    这台手机已切回家长模式
+  </view>
+
+  <view class="mode-reminder" wx:if="{{identityConfirmVisible}}">
+    <view class="mode-reminder-actions">
+      <button class="mode-reminder-action" data-role="parent" bindtap="confirmStudyIdentity">我是家长</button>
+      <button class="mode-reminder-action is-primary" data-role="student" bindtap="confirmStudyIdentity">我是学生</button>
+    </view>
+  </view>
+
   <swiper class="program-swiper" wx:if="{{hasGroupedTasks}}" previous-margin="32rpx" next-margin="32rpx" circular="{{false}}" indicator-dots="{{true}}" indicator-color="rgba(37, 35, 33, 0.14)" indicator-active-color="#252321">
     <block wx:for="{{groupedDailyTasks}}" wx:key="category">
       <swiper-item>

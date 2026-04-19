@@ -79,6 +79,7 @@ function buildPhaseCopy(label) {
 Page({
   data: page.createCloudPageData({
     child: null,
+    currentMember: {},
     stats: {},
     planDayIndex: 1,
     planPhaseLabel: '第1轮',
@@ -89,18 +90,62 @@ Page({
     hasGroupedTasks: false,
     activeTaskCount: 0,
     completedTaskCountToday: 0,
-    allDailyDone: false
+    allDailyDone: false,
+    studyRole: 'parent',
+    identityConfirmVisible: true,
+    modeChangedNoticeVisible: false
   }),
+  buildStudyModePresentation(member) {
+    const studyRole = member && member.studyRole === 'student' ? 'student' : 'parent';
+    return {
+      studyRole
+    };
+  },
   async onShow() {
     const data = await store.getDashboard();
     const groupedDailyTasks = buildGroupedDailyTasks(data.dailyTasks);
     const total = data.activeTaskCount || data.planTaskCount || 0;
     const done = data.completedTaskCountToday || 0;
+    const nextStudyRole = data.currentMember && data.currentMember.studyRole === 'student' ? 'student' : 'parent';
+    const previousStudyRole = wx.getStorageSync('lastStudyRole') || '';
+    const modeChangedNoticeVisible = previousStudyRole === 'student' && nextStudyRole === 'parent';
+    wx.setStorageSync('lastStudyRole', nextStudyRole);
     this.setData(page.buildCloudPageData(this.data, Object.assign({}, data, {
       phaseCopy: buildPhaseCopy(data.planPhaseLabel),
       groupedDailyTasks,
-      hasGroupedTasks: groupedDailyTasks.length > 0
-    })));
+      hasGroupedTasks: groupedDailyTasks.length > 0,
+      modeChangedNoticeVisible
+    }, this.buildStudyModePresentation(data.currentMember))));
+  },
+  async confirmStudyIdentity(event) {
+    const nextRole = event.currentTarget.dataset.role === 'student' ? 'student' : 'parent';
+    try {
+      const data = await store.setStudyRole(nextRole);
+      wx.setStorageSync('lastStudyRole', nextRole);
+      if (nextRole === 'student') {
+        wx.setStorageSync('hasUsedStudentMode', 'yes');
+      }
+      this.setData(page.buildCloudPageData(this.data, Object.assign({}, data, {
+        groupedDailyTasks: this.data.groupedDailyTasks,
+        hasGroupedTasks: this.data.hasGroupedTasks,
+        identityConfirmVisible: false,
+        modeChangedNoticeVisible: false
+      }, this.buildStudyModePresentation(data.currentMember))));
+      wx.showToast({
+        title: nextRole === 'student' ? '已进入学生设备' : '已进入家长模式',
+        icon: 'none'
+      });
+      if (nextRole === 'parent' && data.currentMember && data.currentMember.role === 'owner') {
+        wx.navigateTo({
+          url: '/pages/family/index'
+        });
+      }
+    } catch (error) {
+      wx.showToast({
+        title: error.message || '切换失败',
+        icon: 'none'
+      });
+    }
   },
   openTask(event) {
     const category = event.currentTarget.dataset.category;
@@ -114,6 +159,11 @@ Page({
       : `/pages/lesson/index?category=${category}`;
     wx.navigateTo({
       url: query
+    });
+  },
+  openFamilyPage() {
+    wx.navigateTo({
+      url: '/pages/family/index'
     });
   }
 });

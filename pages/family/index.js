@@ -13,18 +13,28 @@ Page({
     childCodeInput: '',
     inviteInput: '',
     joinName: '',
-    studyRoleLabel: '陪伴者',
-    studyRoleActionText: '设为学生'
+    studyRoleLabel: '家长',
+    studyRoleActionText: '切换',
+    undoingLastListened: false,
+    childJoinRequired: false
   }),
   async onShow() {
     const data = await store.getFamilyPageData();
-    this.setData(page.buildCloudPageData(this.data, Object.assign({}, data, this.buildStudyRolePresentation(data.currentMember))));
+    this.setData(page.buildCloudPageData(this.data, Object.assign({}, data, this.buildStudyRolePresentation(data.currentMember), {
+      childJoinRequired: this.isChildJoinRequired(data)
+    })));
+  },
+  isChildJoinRequired(data) {
+    const member = (data && data.currentMember) || {};
+    return member.role === 'owner'
+      && member.studyRole === 'parent'
+      && wx.getStorageSync('hasUsedStudentMode') !== 'yes';
   },
   buildStudyRolePresentation(member) {
     const studyRole = member && member.studyRole === 'student' ? 'student' : 'parent';
     return {
-      studyRoleLabel: studyRole === 'student' ? '学生设备' : '陪伴者',
-      studyRoleActionText: studyRole === 'student' ? '设为陪伴' : '设为学生'
+      studyRoleLabel: studyRole === 'student' ? '学生设备' : '家长',
+      studyRoleActionText: '切换'
     };
   },
   handleInviteInput(event) {
@@ -87,7 +97,8 @@ Page({
       const data = await store.joinFamilyByChildCode(this.data.childCodeInput, this.data.joinName);
       this.setData(page.buildCloudPageData(this.data, Object.assign({}, data, this.buildStudyRolePresentation(data.currentMember), {
         childCodeInput: '',
-        joinName: ''
+        joinName: '',
+        childJoinRequired: this.isChildJoinRequired(data)
       })));
       wx.showToast({
         title: '已加入孩子记录',
@@ -100,32 +111,61 @@ Page({
       });
     }
   },
-  copyChildCode() {
-    const childLoginCode = (this.data.child && this.data.child.childLoginCode) || '';
-    if (!childLoginCode) {
-      wx.showToast({
-        title: '孩子 ID 待同步',
-        icon: 'none'
-      });
-      return;
-    }
-    wx.setClipboardData({
-      data: childLoginCode
-    });
-  },
   async toggleStudyRole() {
     const currentRole = this.data.currentMember && this.data.currentMember.studyRole === 'student' ? 'student' : 'parent';
     const nextRole = currentRole === 'student' ? 'parent' : 'student';
     try {
       const data = await store.setStudyRole(nextRole);
-      this.setData(page.buildCloudPageData(this.data, Object.assign({}, data, this.buildStudyRolePresentation(data.currentMember))));
+      if (nextRole === 'student') {
+        wx.setStorageSync('hasUsedStudentMode', 'yes');
+      }
+      this.setData(page.buildCloudPageData(this.data, Object.assign({}, data, this.buildStudyRolePresentation(data.currentMember), {
+        childJoinRequired: this.isChildJoinRequired(data)
+      })));
       wx.showToast({
-        title: nextRole === 'student' ? '已设为学生设备' : '已设为陪伴者',
+        title: nextRole === 'student' ? '已切到学生设备' : '已切到家长',
         icon: 'none'
       });
     } catch (error) {
       wx.showToast({
         title: error.message || '切换失败',
+        icon: 'none'
+      });
+    }
+  },
+  async undoLastListened() {
+    if (this.data.undoingLastListened) {
+      return;
+    }
+    const choice = await new Promise((resolve) => {
+      wx.showModal({
+        title: '误用学生设备？',
+        content: '清掉今天多记的播放次数，并切回家长。',
+        cancelText: '不用处理',
+        confirmText: '清掉次数',
+        confirmColor: '#b45e40',
+        success: (res) => resolve(res.confirm ? 'clear' : ''),
+        fail: () => resolve('')
+      });
+    });
+    if (!choice) {
+      return;
+    }
+    this.setData({ undoingLastListened: true });
+    try {
+      const data = await store.undoLastListened();
+      this.setData(page.buildCloudPageData(this.data, Object.assign({}, data, this.buildStudyRolePresentation(data.currentMember), {
+        undoingLastListened: false
+      })));
+      const cleared = data.cleared || {};
+      wx.showToast({
+        title: cleared.playCount ? '已清掉多记次数' : '已处理',
+        icon: 'none'
+      });
+    } catch (error) {
+      this.setData({ undoingLastListened: false });
+      wx.showToast({
+        title: error.message || '撤回失败',
         icon: 'none'
       });
     }

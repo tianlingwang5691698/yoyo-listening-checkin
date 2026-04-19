@@ -178,6 +178,9 @@ async function getLevelOverview() {
   return callCloud('getLevelOverview', {}, {
     user: {},
     currentUser: {},
+    currentMember: {
+      studyRole: 'parent'
+    },
     child: null,
     level: null,
     stats: {
@@ -230,7 +233,8 @@ async function getTaskDetail(category, taskId, options) {
     todayRecord: null,
     history: [],
     studyWriteAllowed: false,
-    studyWriteMessage: ''
+    studyWriteMessage: '',
+    checkinReady: false
   });
 }
 
@@ -269,7 +273,23 @@ async function markTaskListened(options) {
     transcriptTrack: null,
     transcriptLines: [],
     todayRecord: null,
-    history: []
+    history: [],
+    checkinReady: false
+  });
+}
+
+async function completeTodayCheckin() {
+  return callCloud('completeTodayCheckin', {}, {
+    child: null,
+    stats: {
+      streakDays: 0,
+      completedDays: 0,
+      totalMinutes: 0,
+      lastCheckinAt: '',
+      lastCheckinDate: ''
+    },
+    todayRecord: null,
+    checkinReady: false
   });
 }
 
@@ -346,6 +366,9 @@ async function getParentDashboard() {
     recentReports: [],
     user: {},
     currentUser: {},
+    currentMember: {
+      studyRole: 'parent'
+    },
     members: [],
     subscriptionPreference: null
   });
@@ -435,6 +458,25 @@ async function setStudyRole(studyRole) {
   });
 }
 
+async function undoLastListened() {
+  return callCloud('undoLastListened', {}, {
+    family: null,
+    user: {},
+    currentUser: {},
+    currentMember: {
+      studyRole: 'parent'
+    },
+    members: [],
+    child: {
+      nickname: '',
+      avatarText: '',
+      childLoginCode: ''
+    },
+    subscriptionPreference: null,
+    cleared: null
+  });
+}
+
 async function updateSubscription(enabled) {
   return callCloud('updateSubscription', { enabled }, {
     family: null,
@@ -477,12 +519,14 @@ module.exports = {
   getProfileData,
   getTaskDetail,
   markTaskListened,
+  completeTodayCheckin,
   getParentDashboard,
   getFamilyPageData,
   refreshInviteCode,
   joinFamily,
   joinFamilyByChildCode,
   setStudyRole,
+  undoLastListened,
   updateSubscription,
   updateChildProfile
 };

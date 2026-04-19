@@ -13,6 +13,58 @@
   margin-top: 12rpx;
 }
 
+.mode-notice {
+  margin: 0 20rpx 16rpx;
+  padding: 18rpx 22rpx;
+  border-radius: 22rpx;
+  background: rgba(37, 35, 33, 0.06);
+  color: var(--text-muted);
+  font-size: 23rpx;
+  line-height: 1.35;
+  text-align: center;
+  font-weight: 700;
+}
+
+.mode-reminder {
+  margin: 0 20rpx 24rpx;
+  padding: 22rpx 24rpx;
+  border-radius: 24rpx;
+  background: rgba(180, 94, 64, 0.09);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mode-reminder-actions {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12rpx;
+}
+
+.mode-reminder-action {
+  flex: 1;
+  min-width: 0;
+  height: 60rpx;
+  margin: 0;
+  padding: 0;
+  border-radius: 999rpx;
+  background: rgba(37, 35, 33, 0.06);
+  color: var(--text-main);
+  font-size: 23rpx;
+  line-height: 60rpx;
+  font-weight: 700;
+}
+
+.mode-reminder-action.is-primary {
+  background: rgba(180, 94, 64, 0.12);
+  color: #b45e40;
+}
+
+.mode-reminder-action::after {
+  border: none;
+}
+
 .program-swiper {
   width: 100%;
   height: 520rpx;

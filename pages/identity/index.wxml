@@ -27,6 +27,5 @@
     <view class="section-title">我的孩子 ID</view>
     <view class="section-copy">把这个数字给家长，家长即可加入记录。</view>
     <view class="student-code">{{child.childLoginCode || '生成中'}}</view>
-    <button class="button-secondary" bindtap="copyChildCode">复制孩子 ID</button>
   </view>
 </view>

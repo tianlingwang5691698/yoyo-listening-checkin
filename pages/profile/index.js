@@ -86,19 +86,6 @@ Page({
       });
     }
   },
-  copyChildCode() {
-    const childLoginCode = (this.data.child && this.data.child.childLoginCode) || '';
-    if (!childLoginCode) {
-      wx.showToast({
-        title: '孩子 ID 待同步',
-        icon: 'none'
-      });
-      return;
-    }
-    wx.setClipboardData({
-      data: childLoginCode
-    });
-  },
   openParentPage() {
     wx.navigateTo({
       url: '/pages/parent/index'

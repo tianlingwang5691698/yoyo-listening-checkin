@@ -30,22 +30,8 @@ Page({
       displayName: event.detail.value
     });
   },
-  copyChildCode() {
-    const childLoginCode = (this.data.child && this.data.child.childLoginCode) || '';
-    if (!childLoginCode) {
-      wx.showToast({
-        title: '孩子 ID 准备中',
-        icon: 'none'
-      });
-      return;
-    }
-    wx.setClipboardData({
-      data: childLoginCode
-    });
-  },
   async submitIdentity() {
     if (this.data.role === 'student') {
-      this.copyChildCode();
       return;
     }
     if (!/^\d{6}$/.test(String(this.data.childCode || ''))) {

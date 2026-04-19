@@ -5,7 +5,7 @@
       <view class="status-badge {{studyWriteAllowed ? (task.completedToday ? '' : 'is-warn') : 'is-muted'}}">{{studyWriteAllowed ? (task.completedToday ? '完成' : '训练中') : '试听'}}</view>
     </view>
     <view class="lesson-title type-page-title">{{(currentAudio && currentAudio.title) || task.displayTitle || task.title}}</view>
-    <view class="lesson-mode" wx:if="{{!studyWriteAllowed}}">陪伴试听 · 不计入打卡</view>
+    <view class="lesson-mode" wx:if="{{!studyWriteAllowed}}">家长模式 · 不计入打卡</view>
     <view class="lesson-copy" wx:if="{{task.displaySubtitle}}">{{task.displaySubtitle}}</view>
     <view class="lesson-copy" wx:elif="{{task.coverMeta}}">{{task.coverMeta}}</view>
     <view class="sync-debug {{syncMode === 'cloud' ? 'is-cloud' : 'is-local'}}" wx:if="{{showCloudDebug && syncDebug && syncDebug.show}}">

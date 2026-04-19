@@ -81,6 +81,20 @@
   border: none;
 }
 
+.row-action-wide {
+  width: 128rpx;
+  min-width: 128rpx;
+}
+
+.row-action-warn {
+  background: rgba(180, 94, 64, 0.1);
+  color: #b45e40;
+}
+
+.row-action.is-disabled {
+  opacity: 0.5;
+}
+
 .member-card {
   margin-top: 24rpx;
 }
