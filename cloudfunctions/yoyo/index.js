@@ -1090,6 +1090,7 @@ function decorateTask(task, progress, category) {
     playStepText: `${completedCount}/${task.repeatTarget}`,
     currentPass,
     textUnlocked,
+    transcriptVisible: task.planPhase === 'round-1' ? currentPass !== 2 : textUnlocked,
     completedToday: progress.completedToday,
     transcriptStatus: transcriptTrackId ? 'ready' : (task.textSource ? 'pending' : 'none'),
     transcriptBatch: task.transcriptBatch || null,
@@ -1665,18 +1666,23 @@ function getTaskProgressForDate(progressRecords, childId, category, date, taskId
 
 function decoratePlannedTasks(progressRecords, childId, category, date, tasks, options = {}) {
   return tasks.map((task, index) => {
+    const plannedTask = Object.assign({}, task, {
+      planPhase: task.planPhase || (options.planDayIndex ? getPlanPhase(options.planDayIndex).key : ''),
+      planPhaseLabel: task.planPhaseLabel || (options.planDayIndex ? getPlanPhase(options.planDayIndex).label : ''),
+      planDayIndex: options.planDayIndex || task.planDayIndex || 0
+    });
     const progress = getTaskProgressForDate(
       progressRecords,
       childId,
       category,
       date,
-      task.taskId,
+      plannedTask.taskId,
       { allowLegacyRecord: tasks.length === 1 && index === 0 }
     );
-    return Object.assign({}, decorateTask(task, progress, category), {
+    return Object.assign({}, decorateTask(plannedTask, progress, category), {
       planRunType: options.planRunType || 'normal',
       targetDate: options.targetDate || date,
-      planDayIndex: options.planDayIndex || task.planDayIndex || 0
+      planDayIndex: plannedTask.planDayIndex
     });
   });
 }
@@ -2003,6 +2009,7 @@ async function handleAction(event, context) {
         currentPass: task.currentPass,
         repeatTarget: task.repeatTarget,
         textUnlocked: task.textUnlocked,
+        transcriptVisible: task.transcriptVisible,
         completedToday: task.completedToday
       },
       categoryTasks,

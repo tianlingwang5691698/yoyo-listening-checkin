@@ -45,7 +45,7 @@
         </view>
         <view class="player-main">
           <view class="player-toggle {{audioResolving ? 'is-loading' : ''}}" bindtap="toggleAudio">
-            <text class="player-toggle-icon {{isPlaying ? 'is-pause' : 'is-play'}}">{{isPlaying ? '❚❚' : '▶'}}</text>
+            <view class="player-toggle-icon {{isPlaying ? 'is-pause' : 'is-play'}}"></view>
           </view>
         </view>
         <view class="player-progress">
@@ -58,14 +58,14 @@
           </view>
         </view>
         <view class="player-actions action-row">
-          <button class="player-action player-action-rewind {{canRewind ? '' : 'is-disabled'}}" bindtap="rewindAudio">↺ 5秒</button>
+          <button class="player-action player-action-rewind {{canRewind ? '' : 'is-disabled'}}" bindtap="rewindAudio">5 秒</button>
           <button class="player-action player-rate-toggle" bindtap="togglePlaybackRate">×{{playbackRateText}}</button>
         </view>
       </view>
     </view>
   </view>
 
-  <view class="section-panel transcript-card">
+  <view class="section-panel transcript-card" wx:if="{{progress && progress.transcriptVisible}}">
     <view class="row-between transcript-header">
       <view>
         <view class="section-title type-section-title">文本</view>
@@ -122,6 +122,12 @@
 
     <view class="transcript-empty" wx:else>
       <view class="transcript-empty-title">暂无文本</view>
+    </view>
+  </view>
+
+  <view class="section-panel transcript-card" wx:else>
+    <view class="transcript-empty">
+      <view class="transcript-empty-title">这一遍先盲听</view>
     </view>
   </view>
 

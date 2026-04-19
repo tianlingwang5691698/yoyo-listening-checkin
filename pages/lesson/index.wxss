@@ -154,19 +154,16 @@
 }
 
 .player-toggle {
-  width: 132rpx;
-  min-width: 132rpx;
-  height: 132rpx;
+  width: 128rpx;
+  min-width: 128rpx;
+  height: 128rpx;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   background: var(--accent);
   color: #fffaf6;
-  font-size: 46rpx;
-  font-weight: 700;
-  line-height: 1;
-  box-shadow: 0 14rpx 28rpx rgba(239, 124, 85, 0.2);
+  box-shadow: 0 16rpx 30rpx rgba(239, 124, 85, 0.18);
 }
 
 .player-toggle.is-loading {
@@ -174,13 +171,37 @@
 }
 
 .player-toggle-icon {
-  display: block;
-  line-height: 1;
-  transform: translateX(4rpx);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44rpx;
+  height: 44rpx;
 }
 
-.player-toggle-icon.is-pause {
-  transform: none;
+.player-toggle-icon.is-play::before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  margin-left: 8rpx;
+  border-top: 22rpx solid transparent;
+  border-bottom: 22rpx solid transparent;
+  border-left: 32rpx solid #fffaf6;
+}
+
+.player-toggle-icon.is-pause::before,
+.player-toggle-icon.is-pause::after {
+  content: "";
+  display: block;
+  width: 12rpx;
+  height: 42rpx;
+  border-radius: 999rpx;
+  background: #fffaf6;
+}
+
+.player-toggle-icon.is-pause::after {
+  margin-left: 12rpx;
 }
 
 .player-progress {
@@ -226,14 +247,15 @@
 .player-action {
   flex: 1;
   min-width: 0;
-  padding: 20rpx 18rpx;
+  height: 68rpx;
+  padding: 0 18rpx;
   border: none;
   border-radius: 999rpx;
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(37, 35, 33, 0.05);
   color: var(--text-main);
   font-size: 24rpx;
   font-weight: 700;
-  line-height: 1;
+  line-height: 68rpx;
   text-align: center;
 }
 
@@ -242,8 +264,8 @@
 }
 
 .player-rate-toggle {
-  background: var(--accent);
-  color: #fffaf6;
+  background: rgba(239, 124, 85, 0.14);
+  color: var(--accent-deep);
 }
 
 .player-action.is-disabled {

@@ -218,6 +218,7 @@ async function getTaskDetail(category, taskId, options) {
       currentPass: 1,
       repeatTarget: 3,
       textUnlocked: false,
+      transcriptVisible: true,
       completedToday: false
     },
     categoryTasks: [],
@@ -260,6 +261,7 @@ async function markTaskListened(options) {
       currentPass: 1,
       repeatTarget: 3,
       textUnlocked: false,
+      transcriptVisible: true,
       completedToday: false
     },
     categoryTasks: [],
