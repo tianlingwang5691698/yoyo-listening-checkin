@@ -1722,9 +1722,7 @@ function computeStreak(records, today) {
 
 const PLAN_SLOT_COUNT = 24;
 const PLAN_PHASES = [
-  { key: 'round-1', label: '第1轮', startDay: 1, length: 38, batchSize: 1 },
-  { key: 'round-2', label: '第2轮', startDay: 39, length: 8, batchSize: 3 },
-  { key: 'round-3', label: '第3轮', startDay: 47, length: 6, batchSize: 4 }
+  { key: 'round-1', label: '第1轮', startDay: 1, length: 72, batchSize: 1 }
 ];
 const TOTAL_PLAN_DAYS = PLAN_PHASES.reduce((sum, phase) => sum + phase.length, 0);
 
@@ -1740,8 +1738,10 @@ function getPlanCategoryBatchSize(dayIndex, category) {
   if (category === 'newconcept1') {
     return 2;
   }
-  const phase = getPlanPhase(dayIndex);
-  return phase.batchSize;
+  if (category === 'unlock1') {
+    return dayIndex <= 24 ? 1 : 3;
+  }
+  return 1;
 }
 
 function getPlanDayIndex(checkins) {
@@ -1809,7 +1809,38 @@ function getPlanCatalog(category) {
   if (category === 'newconcept1') {
     return getCatalog(category).slice(0, 76);
   }
-  return getCatalog(category).slice(0, PLAN_SLOT_COUNT);
+  if (category === 'unlock1') {
+    return getCatalog(category).slice(0, PLAN_SLOT_COUNT);
+  }
+  return getCatalog(category);
+}
+
+function buildLoopingIndices(startIndex, count, totalCount) {
+  if (!totalCount || count <= 0) {
+    return [];
+  }
+  const indices = [];
+  for (let step = 0; step < count; step += 1) {
+    indices.push((startIndex + step) % totalCount);
+  }
+  return indices;
+}
+
+function getRound1IndicesForCategory(dayIndex, category, catalogLength) {
+  if (!catalogLength) {
+    return [];
+  }
+  if (category === 'newconcept1') {
+    return buildLoopingIndices((dayIndex - 1) * 2, 2, catalogLength);
+  }
+  if (category === 'unlock1') {
+    const unlockCount = Math.min(PLAN_SLOT_COUNT, catalogLength);
+    if (dayIndex <= unlockCount) {
+      return [dayIndex - 1];
+    }
+    return buildLoopingIndices((dayIndex - unlockCount - 1) * 3, 3, unlockCount);
+  }
+  return buildLoopingIndices(dayIndex - 1, 1, catalogLength);
 }
 
 function buildLevelCategoryOverview(progressRecords, childId, category, date, options = {}) {
@@ -1901,13 +1932,9 @@ async function resolveStandaloneCategoryTasks(category, childId, date) {
 
 function getPlanIndicesForDay(dayIndex, category) {
   const phase = getPlanPhase(dayIndex);
-  const dayOffset = dayIndex - phase.startDay;
-  const batchSize = getPlanCategoryBatchSize(dayIndex, category);
-  const startIndex = dayOffset * batchSize;
-  const indices = [];
-  for (let step = 0; step < batchSize; step += 1) {
-    indices.push(startIndex + step);
-  }
+  const catalogLength = getPlanCatalog(category).length;
+  const indices = getRound1IndicesForCategory(dayIndex, category, catalogLength);
+  const batchSize = indices.length;
   return {
     phase,
     indices,
