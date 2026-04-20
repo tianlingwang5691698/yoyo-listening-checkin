@@ -15,7 +15,7 @@ const dateLib = require('../lib/china-date');
 const taskPresenter = require('../lib/task-presenter');
 const identityLib = require('../lib/identity');
 const planLib = require('../lib/plan-runtime');
-const taskRuntime = require('../lib/task-runtime');
+const taskEngine = require('../lib/task-engine');
 const planEngine = require('../lib/plan-engine');
 const checkinEngine = require('../lib/checkin-engine');
 const reportEngine = require('../lib/report-engine');
@@ -1385,28 +1385,28 @@ function decoratePlanTasks(progressRecords, childId, date, plan, options = {}) {
 }
 
 function buildEmptyProgress() {
-  return taskRuntime.buildEmptyProgress();
+  return taskEngine.buildEmptyProgress();
 }
 
 function getTaskProgressForDate(progressRecords, childId, category, date, taskId, options = {}) {
-  return taskRuntime.getTaskProgressForDate(progressRecords, childId, category, date, taskId, options);
+  return taskEngine.getTaskProgressForDate(progressRecords, childId, category, date, taskId, options);
 }
 
 function decoratePlannedTasks(progressRecords, childId, category, date, tasks, options = {}) {
-  return taskRuntime.decoratePlannedTasks(progressRecords, childId, category, date, tasks, options, {
+  return taskEngine.decoratePlannedTasks(progressRecords, childId, category, date, tasks, options, {
     getPlanPhase,
     decorateTask
   });
 }
 
 function buildCategorySummary(categoryTasks, category) {
-  return taskRuntime.buildCategorySummary(categoryTasks, category, {
+  return taskEngine.buildCategorySummary(categoryTasks, category, {
     decorateTask
   });
 }
 
 function buildStats(progressRecords, checkins, childId) {
-  return taskRuntime.buildStats(progressRecords, checkins, childId, {
+  return taskEngine.buildStats(progressRecords, checkins, childId, {
     getCatalog,
     computeStreak
   });
