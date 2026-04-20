@@ -1493,7 +1493,7 @@ async function getDashboardData(ctx, options = {}) {
 async function prepareRequestContext(event) {
   const action = String((event && event.action) || '').trim();
   const requestedCategory = String((event && event.payload && event.payload.category) || '').trim();
-  const catalogCategories = requestContextEngine.resolveCatalogCategories(action, requestedCategory);
+  const catalogCategories = requestContextEngine.resolveCatalogCategories(action, requestedCategory, (event && event.payload) || {});
   await refreshRuntimeCatalogs(false, catalogCategories);
   await ensureRequiredCollectionsReady();
   const { OPENID } = getWXContext();

@@ -1,4 +1,5 @@
 const cloud = require('../domain/cloud/index');
+const inflightCloudRequests = {};
 
 function formatCloudReason(error) {
   if (!error) {
@@ -124,13 +125,29 @@ function buildCloudErrorPayload(action, error, defaults) {
 }
 
 async function callCloud(action, payload, defaults) {
-  try {
-    const result = await cloud.callYoyo(action, payload);
-    return Object.assign(buildSyncMeta('cloud', null, result.resourceDebug), result);
-  } catch (error) {
-    console.error('[callCloud]', action, formatCloudReason(error), error);
-    return buildCloudErrorPayload(action, error, defaults);
+  const inflightKey = action === 'getDashboard'
+    ? `${action}:${JSON.stringify(payload || {})}`
+    : '';
+  if (inflightKey && inflightCloudRequests[inflightKey]) {
+    return inflightCloudRequests[inflightKey];
   }
+  const request = (async () => {
+    try {
+      const result = await cloud.callYoyo(action, payload);
+      return Object.assign(buildSyncMeta('cloud', null, result.resourceDebug), result);
+    } catch (error) {
+      console.error('[callCloud]', action, formatCloudReason(error), error);
+      return buildCloudErrorPayload(action, error, defaults);
+    } finally {
+      if (inflightKey) {
+        delete inflightCloudRequests[inflightKey];
+      }
+    }
+  })();
+  if (inflightKey) {
+    inflightCloudRequests[inflightKey] = request;
+  }
+  return request;
 }
 
 async function ensureState() {

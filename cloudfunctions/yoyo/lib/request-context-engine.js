@@ -1,5 +1,9 @@
-function resolveCatalogCategories(action, requestedCategory) {
+function resolveCatalogCategories(action, requestedCategory, payload = {}) {
   let catalogCategories = ['newconcept1', 'song'];
+  const view = String((payload && payload.view) || '').trim();
+  if (action === 'getDashboard' && view === 'record') {
+    return [];
+  }
   if (action === 'getLevelOverview') {
     return ['newconcept1', 'newconcept2', 'newconcept3', 'newconcept4', 'song'];
   }
