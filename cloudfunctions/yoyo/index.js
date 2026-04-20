@@ -1305,11 +1305,13 @@ function decorateTask(task, progress, category) {
         ? [base.coverBadge, base.displayTitle].filter(Boolean).join(' · ')
         : [base.displayTitle, base.displaySubtitle].filter(Boolean).join(' · '),
     playCount: progress.playCount,
+    playMoments: Array.isArray(progress.playMoments) ? progress.playMoments : [],
     playStepText: `${completedCount}/${task.repeatTarget}`,
     currentPass,
     textUnlocked,
     transcriptVisible: currentPass !== 2,
     completedToday: progress.completedToday,
+    updatedAt: progress.updatedAt || '',
     transcriptStatus: transcriptTrackId ? 'ready' : (task.textSource ? 'pending' : 'none'),
     transcriptBatch: task.transcriptBatch || null,
     note: currentPass < task.repeatTarget ? `先完成第 ${currentPass} 遍。`
@@ -1986,7 +1988,9 @@ function buildEmptyProgress() {
   return {
     playCount: 0,
     textUnlocked: false,
-    completedToday: false
+    completedToday: false,
+    playMoments: [],
+    updatedAt: ''
   };
 }
 
@@ -2171,8 +2175,10 @@ async function upsertDailyReport(scope, date) {
     taskId: task.taskId,
     title: task.audioCompactTitle || task.displayTitle || task.title,
     playCount: task.playCount || 0,
+    playMoments: Array.isArray(task.playMoments) ? task.playMoments : [],
     repeatTarget: task.repeatTarget || 3,
-    completedToday: !!task.completedToday
+    completedToday: !!task.completedToday,
+    updatedAt: task.updatedAt || ''
   })));
   const report = {
     reportId: `${scope.familyId}_${scope.childId}_${date}`,
@@ -2519,6 +2525,9 @@ async function handleAction(event, context) {
       return handleAction({ action: 'getTaskDetail', payload: { category, taskId: event.payload.taskId, planRunType, targetDate, planDayIndex: todayPlan.dayIndex } }, context);
     }
     const nextPlayCount = Math.min((task.playCount || 0) + 1, task.repeatTarget);
+    const now = new Date().toISOString();
+    const playMoments = Array.isArray(task.playMoments) ? task.playMoments.slice(0, nextPlayCount - 1) : [];
+    playMoments.push(now);
     const record = {
       progressId: `${scope.familyId}_${scope.childId}_${targetDate}_${category}_${task.taskId}`,
       userId: scope.userId,
@@ -2530,6 +2539,7 @@ async function handleAction(event, context) {
       date: targetDate,
       taskId: task.taskId,
       playCount: nextPlayCount,
+      playMoments,
       repeatTarget: task.repeatTarget,
       textUnlocked: nextPlayCount >= task.repeatTarget - 1,
       completedToday: nextPlayCount >= task.repeatTarget,
@@ -2537,7 +2547,7 @@ async function handleAction(event, context) {
       planRunType,
       targetDate,
       makeupForDate: planRunType === 'catchup' ? targetDate : '',
-      updatedAt: new Date().toISOString()
+      updatedAt: now
     };
     await saveProgressRecord(record);
     if (planRunType === 'catchup') {

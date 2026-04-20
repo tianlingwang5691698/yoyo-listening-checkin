@@ -1,0 +1,37 @@
+<view class="page-shell parent-detail-page">
+  <view class="product-hero detail-hero">
+    <view class="product-title type-page-title">{{report.dateLabel || '日报详情'}}</view>
+    <view class="product-copy">{{report.completedCount}} / {{report.totalCount}} 项 · {{report.totalMinutes}} 分钟</view>
+    <view class="sync-debug {{syncMode === 'cloud' ? 'is-cloud' : 'is-local'}}" wx:if="{{showCloudDebug && syncDebug && syncDebug.show}}">
+      {{syncDebug.text}}
+    </view>
+  </view>
+
+  <view class="section-panel">
+    <view class="section-title type-section-title">任务完成情况</view>
+    <block wx:if="{{report.items.length}}">
+      <block wx:for="{{report.items}}" wx:key="category">
+        <view class="detail-row task-cell">
+          <view class="detail-main">
+            <view class="detail-title">{{item.categoryLabel}}</view>
+            <view class="detail-copy">{{item.title}}</view>
+            <block wx:if="{{item.timeLines.length}}">
+              <block wx:for="{{item.timeLines}}" wx:key="key" wx:for-item="time">
+                <view class="detail-time-row">
+                  <view class="detail-time-label">{{time.label}}</view>
+                  <view class="detail-time-value">{{time.timeText}}</view>
+                </view>
+              </block>
+            </block>
+            <view class="detail-empty-time" wx:else>还没有完成时间记录</view>
+          </view>
+          <view class="detail-side">
+            <view class="detail-status {{item.completedToday ? 'is-done' : ''}}">{{item.completedToday ? '完成' : '未完成'}}</view>
+            <view class="detail-progress">{{item.playCount}} / {{item.repeatTarget}}</view>
+          </view>
+        </view>
+      </block>
+    </block>
+    <view class="empty-state" wx:else>这一天还没有记录。</view>
+  </view>
+</view>

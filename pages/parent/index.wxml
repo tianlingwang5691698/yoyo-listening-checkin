@@ -13,6 +13,7 @@
         <view class="section-title type-section-title">今日</view>
         <view class="section-copy">{{todayReport.completedCategories.length || 0}} 项 · {{todayReport.totalMinutes || 0}} 分钟</view>
       </view>
+      <view class="detail-link" data-date="{{todayReport.date}}" bindtap="openDailyDetail">查看</view>
     </view>
     <block wx:for="{{todayReport.items}}" wx:key="category">
       <view class="report-item task-cell">
@@ -28,12 +29,15 @@
   <view class="trend-card section-panel">
     <view class="section-title type-section-title">最近 7 天</view>
     <block wx:for="{{recentReports}}" wx:key="reportId">
-      <view class="trend-row task-cell">
+      <view class="trend-row task-cell is-link" data-date="{{item.date}}" bindtap="openDailyDetail">
         <view>
-          <view class="trend-date">{{item.date}}</view>
+          <view class="trend-date">{{item.dateLabel}}</view>
           <view class="trend-copy">{{item.completedCategories.length ? '完成 ' + item.completedCategories.length + ' 项' : '无记录'}}</view>
         </view>
-        <view class="trend-badge">{{item.totalMinutes}} 分钟</view>
+        <view class="trend-side">
+          <view class="trend-badge">{{item.totalMinutes}} 分钟</view>
+          <view class="trend-arrow">›</view>
+        </view>
       </view>
     </block>
   </view>

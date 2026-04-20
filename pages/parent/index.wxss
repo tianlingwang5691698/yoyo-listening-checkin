@@ -11,6 +11,13 @@
   margin-top: 18rpx;
 }
 
+.detail-link {
+  padding: 10rpx 0 10rpx 20rpx;
+  font-size: 24rpx;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
 .report-title,
 .trend-date {
   font-size: 28rpx;
@@ -42,6 +49,22 @@
 .report-progress.is-done {
   background: #edf9ef;
   color: #5f9d66;
+}
+
+.is-link {
+  align-items: center;
+}
+
+.trend-side {
+  display: flex;
+  align-items: center;
+  gap: 12rpx;
+}
+
+.trend-arrow {
+  color: var(--text-muted);
+  font-size: 32rpx;
+  line-height: 1;
 }
 
 .sync-debug {
