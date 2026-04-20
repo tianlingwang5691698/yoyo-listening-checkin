@@ -1,7 +1,7 @@
-const shared = require('./shared.service');
+const study = require('../facades/study.facade');
 
 async function getTaskTranscript(event) {
-  const { ctx, requestedCategory, today } = await shared.prepareRequestContext(Object.assign({}, event, {
+  const { ctx, requestedCategory, today } = await study.prepareRequestContext(Object.assign({}, event, {
     action: 'getTaskTranscript'
   }));
   const payload = (event && event.payload) || {};
@@ -10,11 +10,11 @@ async function getTaskTranscript(event) {
     taskId: String(payload.taskId || ((payload.taskSnapshot && payload.taskSnapshot.taskId) || '')).trim()
   });
   if (['newconcept2', 'newconcept3', 'newconcept4'].includes(requestedCategory)) {
-    const standaloneTasks = await shared.resolveStandaloneCategoryTasks(requestedCategory, ctx.child.childId, today);
+    const standaloneTasks = await study.resolveStandaloneCategoryTasks(requestedCategory, ctx.child.childId, today);
     task = standaloneTasks.find((item) => item.taskId === task.taskId) || standaloneTasks[0] || task;
   }
-  task = task.taskId ? task : shared.decorateTask(null, shared.buildEmptyProgress(), requestedCategory);
-  const transcriptBundle = await shared.getTranscriptBundle(task);
+  task = task.taskId ? task : study.decorateTask(null, study.buildEmptyProgress(), requestedCategory);
+  const transcriptBundle = await study.getTranscriptBundle(task);
   return {
     task,
     scriptSource: task.textSource || null,

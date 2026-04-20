@@ -1,10 +1,10 @@
-const shared = require('./shared.service');
+const study = require('../facades/study.facade');
 
 async function getDashboard(event) {
-  const { ctx } = await shared.prepareRequestContext(Object.assign({}, event, {
+  const { ctx } = await study.prepareRequestContext(Object.assign({}, event, {
     action: 'getDashboard'
   }));
-  return shared.getDashboardData(ctx);
+  return study.getDashboardData(ctx);
 }
 
 module.exports = {

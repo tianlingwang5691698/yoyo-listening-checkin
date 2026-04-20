@@ -1,11 +1,11 @@
-const shared = require('./shared.service');
+const study = require('../facades/study.facade');
 
 async function getTaskDetail(event) {
-  const { ctx, today } = await shared.prepareRequestContext(Object.assign({}, event, {
+  const { ctx, today } = await study.prepareRequestContext(Object.assign({}, event, {
     action: 'getTaskDetail'
   }));
   const payload = (event && event.payload) || {};
-  const dashboard = await shared.getDashboardData(ctx);
+  const dashboard = await study.getDashboardData(ctx);
   let planRunType = String(payload.planRunType || 'normal');
   let targetDate = String(payload.targetDate || today).slice(0, 10);
   if (planRunType === 'catchup' && (!dashboard.catchupState.canCatchup || targetDate !== dashboard.catchupState.missedDate)) {
@@ -15,16 +15,16 @@ async function getTaskDetail(event) {
   const targetPlanDayIndex = planRunType === 'catchup'
     ? Number(payload.planDayIndex || 0) || dashboard.catchupState.planDayIndex || dashboard.planDayIndex
     : dashboard.planDayIndex;
-  const targetPlan = planRunType === 'catchup' ? shared.buildPlanForDay(targetPlanDayIndex) : null;
-  const progressRecords = await shared.getChildProgressRecords(shared.getUserScope(ctx));
+  const targetPlan = planRunType === 'catchup' ? study.buildPlanForDay(targetPlanDayIndex) : null;
+  const progressRecords = await study.getChildProgressRecords(study.getUserScope(ctx));
   const categoryTasks = ['newconcept2', 'newconcept3', 'newconcept4'].includes(payload.category)
-    ? shared.decoratePlannedTasks(progressRecords, ctx.child.childId, payload.category, targetDate, await shared.resolveStandaloneCategoryTasks(payload.category, ctx.child.childId, targetDate), {
+    ? study.decoratePlannedTasks(progressRecords, ctx.child.childId, payload.category, targetDate, await study.resolveStandaloneCategoryTasks(payload.category, ctx.child.childId, targetDate), {
       planRunType: 'level',
       targetDate,
       planDayIndex: 1
     })
     : planRunType === 'catchup'
-      ? shared.decoratePlannedTasks(progressRecords, ctx.child.childId, payload.category, targetDate, targetPlan.byCategory[payload.category] || [], {
+      ? study.decoratePlannedTasks(progressRecords, ctx.child.childId, payload.category, targetDate, targetPlan.byCategory[payload.category] || [], {
         planRunType: 'catchup',
         targetDate,
         planDayIndex: targetPlan.dayIndex
@@ -33,8 +33,8 @@ async function getTaskDetail(event) {
   const task = categoryTasks.find((item) => item.taskId === payload.taskId)
     || categoryTasks.find((item) => !item.completedToday)
     || categoryTasks[0]
-    || shared.decorateTask(null, shared.buildEmptyProgress(), payload.category);
-  const scope = shared.getUserScope(ctx);
+    || study.decorateTask(null, study.buildEmptyProgress(), payload.category);
+  const scope = study.getUserScope(ctx);
   const history = progressRecords
     .filter((item) => item.category === payload.category && item.completedToday)
     .map((item) => ({
@@ -43,8 +43,8 @@ async function getTaskDetail(event) {
       playCount: item.playCount
     }))
     .sort((a, b) => b.date.localeCompare(a.date));
-  const todayRecord = (await shared.getCheckins(scope)).find((item) => item.date === today) || null;
-  const checkinReady = shared.normalizeStudyRole(ctx.member) === 'student'
+  const todayRecord = (await study.getCheckins(scope)).find((item) => item.date === today) || null;
+  const checkinReady = study.normalizeStudyRole(ctx.member) === 'student'
     && planRunType === 'normal'
     && targetDate === today
     && dashboard.allDailyDone
@@ -78,14 +78,14 @@ async function getTaskDetail(event) {
     transcriptPendingLoad: true,
     todayRecord,
     history,
-    studyWriteAllowed: shared.normalizeStudyRole(ctx.member) === 'student',
-    studyWriteMessage: shared.normalizeStudyRole(ctx.member) === 'student' ? '' : '家长模式，不计入打卡',
+    studyWriteAllowed: study.normalizeStudyRole(ctx.member) === 'student',
+    studyWriteMessage: study.normalizeStudyRole(ctx.member) === 'student' ? '' : '家长模式，不计入打卡',
     checkinReady
   };
 }
 
 async function getTaskTranscript(event) {
-  const { ctx, requestedCategory, today } = await shared.prepareRequestContext(Object.assign({}, event, {
+  const { ctx, requestedCategory, today } = await study.prepareRequestContext(Object.assign({}, event, {
     action: 'getTaskTranscript'
   }));
   const payload = (event && event.payload) || {};
@@ -94,11 +94,11 @@ async function getTaskTranscript(event) {
     taskId: String(payload.taskId || ((payload.taskSnapshot && payload.taskSnapshot.taskId) || '')).trim()
   });
   if (['newconcept2', 'newconcept3', 'newconcept4'].includes(requestedCategory)) {
-    const standaloneTasks = await shared.resolveStandaloneCategoryTasks(requestedCategory, ctx.child.childId, today);
+    const standaloneTasks = await study.resolveStandaloneCategoryTasks(requestedCategory, ctx.child.childId, today);
     task = standaloneTasks.find((item) => item.taskId === task.taskId) || standaloneTasks[0] || task;
   }
-  task = task.taskId ? task : shared.decorateTask(null, shared.buildEmptyProgress(), requestedCategory);
-  const transcriptBundle = await shared.getTranscriptBundle(task);
+  task = task.taskId ? task : study.decorateTask(null, study.buildEmptyProgress(), requestedCategory);
+  const transcriptBundle = await study.getTranscriptBundle(task);
   return {
     task,
     scriptSource: task.textSource || null,
@@ -109,17 +109,17 @@ async function getTaskTranscript(event) {
 }
 
 async function markTaskListened(event, context) {
-  const { ctx, today } = await shared.prepareRequestContext(Object.assign({}, event, {
+  const { ctx, today } = await study.prepareRequestContext(Object.assign({}, event, {
     action: 'markTaskListened'
   }));
   const payload = (event && event.payload) || {};
   const category = payload.category;
-  const scope = shared.getUserScope(ctx);
-  const progressRecords = await shared.getChildProgressRecords(scope);
-  const checkins = await shared.getCheckins(scope);
+  const scope = study.getUserScope(ctx);
+  const progressRecords = await study.getChildProgressRecords(scope);
+  const checkins = await study.getCheckins(scope);
   const planRunType = String(payload.planRunType || 'normal');
   const targetDate = String(payload.targetDate || today).slice(0, 10);
-  if (shared.normalizeStudyRole(ctx.member) !== 'student') {
+  if (study.normalizeStudyRole(ctx.member) !== 'student') {
     return Object.assign(
       await getTaskDetail({ payload: { category, taskId: payload.taskId, planRunType, targetDate, planDayIndex: payload.planDayIndex } }),
       {
@@ -129,12 +129,12 @@ async function markTaskListened(event, context) {
     );
   }
   if (planRunType === 'catchup') {
-    const normalPlan = shared.buildPlanForDay(shared.getPlanDayIndexForDate(checkins, today));
-    const normalTasks = shared.decoratePlanTasks(progressRecords, ctx.child.childId, today, normalPlan, {
+    const normalPlan = study.buildPlanForDay(study.getPlanDayIndexForDate(checkins, today));
+    const normalTasks = study.decoratePlanTasks(progressRecords, ctx.child.childId, today, normalPlan, {
       planRunType: 'normal'
     });
     const normalDone = normalTasks.length > 0 && normalTasks.every((item) => item.completedToday);
-    const catchupState = shared.buildCatchupState(checkins, today, shared.getPlanStartDate(ctx, today, checkins), normalDone);
+    const catchupState = study.buildCatchupState(checkins, today, study.getPlanStartDate(ctx, today, checkins), normalDone);
     const requestedPlanDayIndex = Number(payload.planDayIndex || 0);
     if (!catchupState.canCatchup || targetDate !== catchupState.missedDate || (requestedPlanDayIndex && requestedPlanDayIndex !== catchupState.planDayIndex)) {
       throw new Error('请先完成当前计划后，再追赶一批任务');
@@ -142,16 +142,16 @@ async function markTaskListened(event, context) {
   }
   const todayPlan = shared.buildPlanForDay(
     planRunType === 'catchup'
-      ? (Number(payload.planDayIndex || 0) || shared.getPlanDayIndexForDate(checkins, targetDate))
-      : shared.getPlanDayIndexForDate(checkins, today)
+    ? (Number(payload.planDayIndex || 0) || study.getPlanDayIndexForDate(checkins, targetDate))
+      : study.getPlanDayIndexForDate(checkins, today)
   );
   const categoryTasks = ['newconcept2', 'newconcept3', 'newconcept4'].includes(category)
-    ? shared.decoratePlannedTasks(progressRecords, ctx.child.childId, category, targetDate, await shared.resolveStandaloneCategoryTasks(category, ctx.child.childId, targetDate), {
+    ? study.decoratePlannedTasks(progressRecords, ctx.child.childId, category, targetDate, await study.resolveStandaloneCategoryTasks(category, ctx.child.childId, targetDate), {
       planRunType: 'level',
       targetDate,
       planDayIndex: 1
     })
-    : shared.decoratePlannedTasks(progressRecords, ctx.child.childId, category, targetDate, todayPlan.byCategory[category] || [], {
+    : study.decoratePlannedTasks(progressRecords, ctx.child.childId, category, targetDate, todayPlan.byCategory[category] || [], {
       planRunType,
       targetDate,
       planDayIndex: todayPlan.dayIndex
@@ -187,10 +187,10 @@ async function markTaskListened(event, context) {
     makeupForDate: planRunType === 'catchup' ? targetDate : '',
     updatedAt: now
   };
-  await shared.saveProgressRecord(record);
+  await study.saveProgressRecord(record);
   if (planRunType === 'catchup') {
-    const nextProgressRecords = await shared.getChildProgressRecords(scope);
-    await shared.maybeCreateCheckin(scope, nextProgressRecords, targetDate, {
+    const nextProgressRecords = await study.getChildProgressRecords(scope);
+    await study.maybeCreateCheckin(scope, nextProgressRecords, targetDate, {
       planRunType,
       planDayIndex: todayPlan.dayIndex
     });
@@ -199,24 +199,24 @@ async function markTaskListened(event, context) {
 }
 
 async function completeTodayCheckin(event, context) {
-  const { ctx, today } = await shared.prepareRequestContext(Object.assign({}, event, {
+  const { ctx, today } = await study.prepareRequestContext(Object.assign({}, event, {
     action: 'completeTodayCheckin'
   }));
-  if (shared.normalizeStudyRole(ctx.member) !== 'student') {
+  if (study.normalizeStudyRole(ctx.member) !== 'student') {
     throw new Error('家长模式不计入打卡');
   }
-  const scope = shared.getUserScope(ctx);
-  const progressRecords = await shared.getChildProgressRecords(scope);
-  const checkins = await shared.getCheckins(scope);
-  const planDayIndex = shared.getPlanDayIndexForDate(checkins, today);
-  const checkin = await shared.maybeCreateCheckin(scope, progressRecords, today, {
+  const scope = study.getUserScope(ctx);
+  const progressRecords = await study.getChildProgressRecords(scope);
+  const checkins = await study.getCheckins(scope);
+  const planDayIndex = study.getPlanDayIndexForDate(checkins, today);
+  const checkin = await study.maybeCreateCheckin(scope, progressRecords, today, {
     planRunType: 'normal',
     planDayIndex
   });
   if (!checkin) {
     throw new Error('今天还没全部听完');
   }
-  const dashboard = await shared.getDashboardData(ctx);
+  const dashboard = await study.getDashboardData(ctx);
   return {
     user: ctx.user,
     currentUser: ctx.user,

@@ -1,18 +1,18 @@
-const shared = require('./shared.service');
+const familyFacade = require('../facades/family.facade');
 const familyRepository = require('../repositories/family.repository');
 const childRepository = require('../repositories/child.repository');
 const subscriptionRepository = require('../repositories/subscription.repository');
 
 async function getProfileData(event) {
-  const { ctx } = await shared.prepareRequestContext(Object.assign({}, event, {
+  const { ctx } = await familyFacade.prepareRequestContext(Object.assign({}, event, {
     action: 'getProfileData'
   }));
-  const dashboard = await shared.getDashboardData(ctx);
+  const dashboard = await familyFacade.getDashboardData(ctx);
   return {
     user: ctx.user,
     currentUser: ctx.user,
     child: Object.assign({}, ctx.child, dashboard.stats),
-    level: shared.level,
+    level: familyFacade.level,
     familyReady: true,
     family: ctx.family,
     members: ctx.members,
@@ -22,7 +22,7 @@ async function getProfileData(event) {
 }
 
 async function getFamilyPage(event) {
-  const { ctx } = await shared.prepareRequestContext(Object.assign({}, event, {
+  const { ctx } = await familyFacade.prepareRequestContext(Object.assign({}, event, {
     action: 'getFamilyPage'
   }));
   return {
@@ -37,12 +37,12 @@ async function getFamilyPage(event) {
 }
 
 async function refreshInviteCode(event) {
-  const { ctx } = await shared.prepareRequestContext(Object.assign({}, event, {
+  const { ctx } = await familyFacade.prepareRequestContext(Object.assign({}, event, {
     action: 'refreshInviteCode'
   }));
   const inviteCode = `YOYO-${Math.random().toString(36).slice(2, 8).toUpperCase()}`;
   await familyRepository.updateFamilyById(ctx.family.familyId, { inviteCode });
-  const nextCtx = await shared.ensureBootstrap(ctx.user.openId);
+  const nextCtx = await familyFacade.ensureBootstrap(ctx.user.openId);
   return {
     user: nextCtx.user,
     currentUser: nextCtx.user,
@@ -55,7 +55,7 @@ async function refreshInviteCode(event) {
 }
 
 async function joinFamily(event) {
-  const { ctx } = await shared.prepareRequestContext(Object.assign({}, event, {
+  const { ctx } = await familyFacade.prepareRequestContext(Object.assign({}, event, {
     action: 'joinFamily'
   }));
   const payload = (event && event.payload) || {};
@@ -65,8 +65,8 @@ async function joinFamily(event) {
     throw new Error('邀请码不正确');
   }
   const displayName = String(payload.displayName || '').trim() || '新家长';
-  await shared.upsertFamilyMemberForFamily(ctx.user.openId, ctx.user.userId, target.familyId, displayName);
-  const nextCtx = await shared.ensureBootstrap(ctx.user.openId);
+  await familyFacade.upsertFamilyMemberForFamily(ctx.user.openId, ctx.user.userId, target.familyId, displayName);
+  const nextCtx = await familyFacade.ensureBootstrap(ctx.user.openId);
   return {
     user: nextCtx.user,
     currentUser: nextCtx.user,
@@ -79,7 +79,7 @@ async function joinFamily(event) {
 }
 
 async function joinFamilyByChildCode(event) {
-  const { ctx } = await shared.prepareRequestContext(Object.assign({}, event, {
+  const { ctx } = await familyFacade.prepareRequestContext(Object.assign({}, event, {
     action: 'joinFamilyByChildCode'
   }));
   const payload = (event && event.payload) || {};
@@ -92,8 +92,8 @@ async function joinFamilyByChildCode(event) {
     throw new Error('没有找到这个孩子 ID');
   }
   const displayName = String(payload.displayName || '').trim() || '新家长';
-  await shared.upsertFamilyMemberForFamily(ctx.user.openId, ctx.user.userId, targetChild.familyId, displayName);
-  const nextCtx = await shared.ensureBootstrap(ctx.user.openId);
+  await familyFacade.upsertFamilyMemberForFamily(ctx.user.openId, ctx.user.userId, targetChild.familyId, displayName);
+  const nextCtx = await familyFacade.ensureBootstrap(ctx.user.openId);
   return {
     user: nextCtx.user,
     currentUser: nextCtx.user,
@@ -106,11 +106,11 @@ async function joinFamilyByChildCode(event) {
 }
 
 async function updateChildProfile(event) {
-  const { ctx } = await shared.prepareRequestContext(Object.assign({}, event, {
+  const { ctx } = await familyFacade.prepareRequestContext(Object.assign({}, event, {
     action: 'updateChildProfile'
   }));
-  await shared.updateChildProfile(ctx.family.familyId, (event && event.payload) || {});
-  const nextCtx = await shared.ensureBootstrap(ctx.user.openId);
+  await familyFacade.updateChildProfile(ctx.family.familyId, (event && event.payload) || {});
+  const nextCtx = await familyFacade.ensureBootstrap(ctx.user.openId);
   return {
     user: nextCtx.user,
     currentUser: nextCtx.user,
@@ -123,7 +123,7 @@ async function updateChildProfile(event) {
 }
 
 async function updateSubscription(event) {
-  const { ctx } = await shared.prepareRequestContext(Object.assign({}, event, {
+  const { ctx } = await familyFacade.prepareRequestContext(Object.assign({}, event, {
     action: 'updateSubscription'
   }));
   const enabled = !!(((event && event.payload) || {}).enabled);
@@ -142,7 +142,7 @@ async function updateSubscription(event) {
   } else {
     await subscriptionRepository.create(prefData);
   }
-  const nextCtx = await shared.ensureBootstrap(ctx.user.openId);
+  const nextCtx = await familyFacade.ensureBootstrap(ctx.user.openId);
   return {
     user: nextCtx.user,
     currentUser: nextCtx.user,
