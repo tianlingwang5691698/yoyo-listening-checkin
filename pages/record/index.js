@@ -173,6 +173,7 @@ Page({
   monthCache: {},
   monthRequests: {},
   calendarLoadVersion: 0,
+  lastHeatmapRefreshToken: 0,
   data: page.createCloudPageData({
     child: null,
     stats: {},
@@ -210,6 +211,12 @@ Page({
     }
     if (!page.requireIdentityConfirmed()) {
       return;
+    }
+    const refreshToken = page.getHeatmapRefreshToken();
+    if (refreshToken !== this.lastHeatmapRefreshToken) {
+      this.monthCache = {};
+      this.monthRequests = {};
+      this.lastHeatmapRefreshToken = refreshToken;
     }
     const today = new Date();
     const selectedDate = this.data.selectedDate || getDateKey(today);

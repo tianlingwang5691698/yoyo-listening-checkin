@@ -621,6 +621,7 @@ Page({
     }
     try {
       const data = await store.completeTodayCheckin();
+      page.bumpHeatmapRefreshToken();
       this.setData(page.buildCloudPageData(this.data, {
         child: data.child || this.data.child,
         stats: data.stats || this.data.stats,

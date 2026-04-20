@@ -45,10 +45,26 @@ function requireIdentityConfirmed() {
   return false;
 }
 
+function bumpHeatmapRefreshToken() {
+  const app = getApp();
+  if (app && app.globalData) {
+    app.globalData.heatmapRefreshToken = Number(app.globalData.heatmapRefreshToken || 0) + 1;
+    return app.globalData.heatmapRefreshToken;
+  }
+  return 0;
+}
+
+function getHeatmapRefreshToken() {
+  const app = getApp();
+  return Number((app && app.globalData && app.globalData.heatmapRefreshToken) || 0);
+}
+
 module.exports = {
   createCloudPageData,
   buildCloudPageData,
   setIdentityConfirmed,
   isIdentityConfirmed,
-  requireIdentityConfirmed
+  requireIdentityConfirmed,
+  bumpHeatmapRefreshToken,
+  getHeatmapRefreshToken
 };
