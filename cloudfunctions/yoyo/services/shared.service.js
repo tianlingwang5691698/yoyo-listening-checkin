@@ -11,11 +11,15 @@ const subscriptionRepository = require('../repositories/subscription.repository'
 const trainingPoolRepository = require('../repositories/training-pool.repository');
 const storageAdapter = require('../adapters/storage.adapter');
 const transcriptAdapter = require('../adapters/transcript.adapter');
-const dateLib = require('../lib/date');
+const dateLib = require('../lib/china-date');
 const taskPresenter = require('../lib/task-presenter');
 const identityLib = require('../lib/identity');
 const planLib = require('../lib/plan-runtime');
 const taskRuntime = require('../lib/task-runtime');
+const planEngine = require('../lib/plan-engine');
+const checkinEngine = require('../lib/checkin-engine');
+const reportEngine = require('../lib/report-engine');
+const dashboardEngine = require('../lib/dashboard-engine');
 
 cloud.init({
   env: cloud.DYNAMIC_CURRENT_ENV
@@ -1281,25 +1285,9 @@ async function getCheckins(scope) {
   return checkinRepository.findByScope(scope);
 }
 
-function getUniqueDates(records) {
-  return dateLib.getUniqueDates(records);
-}
-
-function addDays(date, delta) {
-  return dateLib.addDays(date, delta);
-}
-
-function getTodayString() {
-  return dateLib.getTodayString();
-}
-
-function diffDays(a, b) {
-  return dateLib.diffDays(a, b);
-}
-
-function computeStreak(records, today) {
-  return dateLib.computeStreak(records, today);
-}
+const addDays = dateLib.addDays;
+const getTodayString = dateLib.getTodayString;
+const computeStreak = dateLib.computeStreak;
 
 const PLAN_SLOT_COUNT = planLib.PLAN_SLOT_COUNT;
 const PLAN_PHASES = planLib.PLAN_PHASES;
@@ -1313,38 +1301,12 @@ function getPlanCategoryOrder(dayIndex) {
   return planLib.getPlanCategoryOrder(dayIndex);
 }
 
-function getPlanCategoryBatchSize(dayIndex, category) {
-  if (category === 'newconcept1') {
-    return 2;
-  }
-  if (category === 'unlock1') {
-    return dayIndex <= 24 ? 1 : 3;
-  }
-  return 1;
-}
-
 function getPlanDayIndex(checkins) {
   return planLib.getPlanDayIndex(checkins);
 }
 
 function getPlanDayIndexForDate(checkins, date) {
   return planLib.getPlanDayIndexForDate(checkins, date);
-}
-
-function getDatePart(value) {
-  return planLib.getDatePart(value);
-}
-
-function getCompletedDateSet(checkins) {
-  return planLib.getCompletedDateSet(checkins);
-}
-
-function getEarliestMissedDate(checkins, today, planStartDate) {
-  return planLib.getEarliestMissedDate(checkins, today, planStartDate);
-}
-
-function hasCatchupToday(checkins, today) {
-  return planLib.hasCatchupToday(checkins, today);
 }
 
 function getPlanStartDate(ctx, today, checkins) {
@@ -1356,21 +1318,10 @@ function buildCatchupState(checkins, today, planStartDate, todayDone) {
 }
 
 function getPlanCatalog(category) {
-  if (category === 'newconcept1') {
-    return getCatalog(category).slice(0, 76);
-  }
-  if (category === 'unlock1') {
-    return getCatalog(category).slice(0, PLAN_SLOT_COUNT);
-  }
-  return getCatalog(category);
-}
-
-function buildLoopingIndices(startIndex, count, totalCount) {
-  return planLib.buildLoopingIndices(startIndex, count, totalCount);
-}
-
-function getRound1IndicesForCategory(dayIndex, category, catalogLength) {
-  return planLib.getRound1IndicesForCategory(dayIndex, category, catalogLength);
+  return planEngine.getPlanCatalog(category, {
+    getCatalog,
+    planSlotCount: PLAN_SLOT_COUNT
+  });
 }
 
 function buildLevelCategoryOverview(progressRecords, childId, category, date, options = {}) {
@@ -1460,56 +1411,19 @@ async function resolveStandaloneCategoryTasks(category, childId, date) {
   }));
 }
 
-function getPlanIndicesForDay(dayIndex, category) {
-  const phase = getPlanPhase(dayIndex);
-  const catalogLength = getPlanCatalog(category).length;
-  const indices = getRound1IndicesForCategory(dayIndex, category, catalogLength);
-  const batchSize = indices.length;
-  return {
-    phase,
-    indices,
-    batchSize
-  };
-}
-
 function buildPlanForDay(dayIndex) {
-  const phase = getPlanPhase(dayIndex);
-  const byCategory = {};
-  const flatTasks = [];
-  getPlanCategoryOrder(dayIndex).forEach((category) => {
-    const { indices, batchSize } = getPlanIndicesForDay(dayIndex, category);
-    const catalog = getPlanCatalog(category);
-    const tasks = indices
-      .map((index) => catalog[index] || null)
-      .filter(Boolean);
-    byCategory[category] = tasks;
-    tasks.forEach((task, slotIndex) => {
-      flatTasks.push(Object.assign({}, task, {
-        planDayIndex: dayIndex,
-        planPhase: phase.key,
-        planPhaseLabel: phase.label,
-        planBatchSize: batchSize,
-        planSlotIndex: slotIndex + 1,
-        planSlotCount: tasks.length
-      }));
-    });
+  return planEngine.buildPlanForDay(dayIndex, {
+    getCatalog,
+    planSlotCount: PLAN_SLOT_COUNT,
+    planLib
   });
-  return {
-    dayIndex,
-    phase,
-    byCategory,
-    flatTasks
-  };
 }
 
 function decoratePlanTasks(progressRecords, childId, date, plan, options = {}) {
-  return getPlanCategoryOrder(plan.dayIndex).flatMap((category) => (
-    decoratePlannedTasks(progressRecords, childId, category, date, plan.byCategory[category] || [], {
-      planRunType: options.planRunType || 'normal',
-      targetDate: date,
-      planDayIndex: plan.dayIndex
-    })
-  ));
+  return planEngine.decoratePlanTasks(progressRecords, childId, date, plan, options, {
+    decoratePlannedTasks,
+    planLib
+  });
 }
 
 function buildEmptyProgress() {
@@ -1541,46 +1455,15 @@ function buildStats(progressRecords, checkins, childId) {
 }
 
 async function maybeCreateCheckin(scope, progressRecords, date, options = {}) {
-  const checkins = await getCheckins(scope);
-  const planRunType = options.planRunType || 'normal';
-  const planDayIndex = Number(options.planDayIndex || 0) || getPlanDayIndex(checkins);
-  const todayPlan = buildPlanForDay(planDayIndex);
-  const plannedTasks = todayPlan.flatTasks;
-  const activeTasks = plannedTasks.filter((task) => !task.isPendingAsset);
-  const allDone = activeTasks.every((task, index) => {
-    const progress = getTaskProgressForDate(
-      progressRecords,
-      scope.childId,
-      task.category,
-      date,
-      task.taskId,
-      { allowLegacyRecord: activeTasks.length === 1 && index === 0 }
-    );
-    return !!progress.completedToday;
+  return checkinEngine.maybeCreateCheckin(scope, progressRecords, date, options, {
+    getCheckins,
+    getPlanDayIndex,
+    buildPlanForDay,
+    getTaskProgressForDate,
+    computeStreak,
+    upsertCheckin: (existing, next) => checkinRepository.upsertByRecordId(existing, next),
+    upsertDailyReport
   });
-  if (!allDone) return null;
-  const recordId = `${scope.familyId}_${scope.childId}_${date}`;
-  const existing = checkins.find((item) => item.recordId === recordId || item.date === date);
-  const streakSnapshot = computeStreak(checkins.filter((item) => item.recordId !== recordId), date) + (existing ? 0 : 1);
-  const next = {
-    recordId,
-    userId: scope.userId,
-    openId: scope.openId,
-    memberId: scope.memberId,
-    familyId: scope.familyId,
-    childId: scope.childId,
-    date,
-    completedAt: new Date().toISOString(),
-    streakSnapshot,
-    completedCategories: Array.from(new Set(activeTasks.map((task) => task.category))),
-    planDayIndex: todayPlan.dayIndex,
-    planPhase: todayPlan.phase.key,
-    planRunType,
-    makeupForDate: planRunType === 'catchup' ? date : ''
-  };
-  await checkinRepository.upsertByRecordId(existing, next);
-  await upsertDailyReport(scope, date);
-  return next;
 }
 
 async function clearTodayUnconfirmedListens(ctx) {
@@ -1617,123 +1500,36 @@ async function clearTodayUnconfirmedListens(ctx) {
 }
 
 async function upsertDailyReport(scope, date) {
-  const startedAt = Date.now();
-  const progressRecords = await getChildProgressRecords(scope);
-  const checkins = await getCheckins(scope);
-  const todayPlan = buildPlanForDay(getPlanDayIndexForDate(checkins, date));
-  const groupedTasks = getPlanCategoryOrder(todayPlan.dayIndex).map((category) => ({
-    category,
-    tasks: decoratePlannedTasks(progressRecords, scope.childId, category, date, todayPlan.byCategory[category] || [], {
-      planRunType: 'normal',
-      targetDate: date,
-      planDayIndex: todayPlan.dayIndex
-    })
-  }));
-  const items = groupedTasks.flatMap((group) => group.tasks.map((task) => ({
-    category: group.category,
-    categoryLabel: task.categoryLabel,
-    taskId: task.taskId,
-    title: task.audioCompactTitle || task.displayTitle || task.title,
-    playCount: task.playCount || 0,
-    playMoments: Array.isArray(task.playMoments) ? task.playMoments : [],
-    repeatTarget: task.repeatTarget || 3,
-    completedToday: !!task.completedToday,
-    updatedAt: task.updatedAt || ''
-  })));
-  const report = {
-    reportId: `${scope.familyId}_${scope.childId}_${date}`,
-    userId: scope.userId,
-    openId: scope.openId,
-    memberId: scope.memberId,
-    familyId: scope.familyId,
-    childId: scope.childId,
-    date,
-    completedCategories: Array.from(new Set(items.filter((item) => item.completedToday).map((item) => item.category))),
-    totalMinutes: items.reduce((sum, item) => {
-      if (!item.completedToday) {
-        return sum;
-      }
-      const task = getCatalog(item.category).find((entry) => entry.taskId === item.taskId);
-      return task ? sum + Math.round((task.durationSec * task.repeatTarget) / 60) : sum;
-    }, 0),
-    streakSnapshot: (checkins.find((item) => item.date === date) || {}).streakSnapshot || 0,
-    planDayIndex: todayPlan.dayIndex,
-    planPhase: todayPlan.phase.key,
-    items,
-    pushStatus: 'in-app-ready',
-    inAppVisible: true,
-    updatedAt: new Date().toISOString()
-  };
-  const subscribers = (await familyRepository.findMembersByFamilyId(scope.familyId))
-    .filter((item) => item.subscriptionEnabled);
-  if (subscribers.length) {
-    report.pushStatus = 'subscription-ready';
-  }
-  await reportRepository.upsert(scope, date, report);
-  console.log(`[perf] upsertDailyReport ${Date.now() - startedAt}ms date=${date}`);
-  return report;
+  return reportEngine.upsertDailyReport(scope, date, {
+    getChildProgressRecords,
+    getCheckins,
+    buildPlanForDay,
+    getPlanDayIndexForDate,
+    getPlanCategoryOrder,
+    decoratePlannedTasks,
+    getCatalog,
+    findFamilyMembersByFamilyId: (familyId) => familyRepository.findMembersByFamilyId(familyId),
+    upsertReport: (nextScope, nextDate, report) => reportRepository.upsert(nextScope, nextDate, report)
+  });
 }
 
 async function getDashboardData(ctx) {
-  const today = getTodayString();
-  const scope = getUserScope(ctx);
-  const progressRecords = await getChildProgressRecords(scope);
-  const checkins = await getCheckins(scope);
-  const planDayIndex = getPlanDayIndexForDate(checkins, today);
-  const todayPlan = buildPlanForDay(planDayIndex);
-  const categorySummaries = getPlanCategoryOrder(todayPlan.dayIndex).map((category) => {
-    const plannedTasks = decoratePlannedTasks(progressRecords, ctx.child.childId, category, today, todayPlan.byCategory[category] || [], {
-      planRunType: 'normal',
-      targetDate: today,
-      planDayIndex: todayPlan.dayIndex
-    });
-    return buildCategorySummary(plannedTasks, category);
+  return dashboardEngine.getDashboardData(ctx, {
+    getTodayString,
+    getUserScope,
+    getChildProgressRecords,
+    getCheckins,
+    getPlanDayIndexForDate,
+    buildPlanForDay,
+    getPlanCategoryOrder,
+    decoratePlannedTasks,
+    buildCategorySummary,
+    decoratePlanTasks,
+    buildStats,
+    buildCatchupState,
+    getPlanStartDate,
+    getCatalog
   });
-  const dailyTasks = decoratePlanTasks(progressRecords, ctx.child.childId, today, todayPlan, {
-    planRunType: 'normal'
-  });
-  const stats = buildStats(progressRecords, checkins, ctx.child.childId);
-  const activeTaskCount = dailyTasks.filter((item) => !item.isPendingAsset).length;
-  const completedTaskCountToday = dailyTasks.filter((item) => item.completedToday).length;
-  const todayDone = activeTaskCount > 0 && activeTaskCount === completedTaskCountToday;
-  const catchupState = buildCatchupState(checkins, today, getPlanStartDate(ctx, today, checkins), todayDone);
-  return {
-    user: ctx.user,
-    currentUser: ctx.user,
-    currentMember: ctx.member,
-    family: ctx.family,
-    child: Object.assign({}, ctx.child, {
-      totalCompleted: checkins.length,
-      streakDays: stats.streakDays
-    }),
-    stats,
-    planDayIndex,
-    planPhase: todayPlan.phase.key,
-    planPhaseLabel: todayPlan.phase.label,
-    planTaskCount: activeTaskCount,
-    peppaTask: categorySummaries.find((item) => item.category === 'peppa'),
-    unlockTask: categorySummaries.find((item) => item.category === 'unlock1'),
-    songTask: categorySummaries.find((item) => item.category === 'song'),
-    categorySummaries,
-    dailyTasks,
-    planDebug: {
-      day1Categories: getPlanCategoryOrder(planDayIndex),
-      catalogCounts: {
-        newconcept1: getCatalog('newconcept1').length,
-        peppa: getCatalog('peppa').length,
-        unlock1: getCatalog('unlock1').length,
-        song: getCatalog('song').length
-      },
-      todayTaskCounts: getPlanCategoryOrder(planDayIndex).reduce((acc, category) => {
-        acc[category] = (todayPlan.byCategory[category] || []).length;
-        return acc;
-      }, {})
-    },
-    catchupState,
-    activeTaskCount,
-    completedTaskCountToday,
-    allDailyDone: todayDone
-  };
 }
 
 async function prepareRequestContext(event) {
