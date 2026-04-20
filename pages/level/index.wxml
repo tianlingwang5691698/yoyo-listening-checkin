@@ -34,8 +34,5 @@
         <view class="stage-row-state">{{item.stateText}}</view>
       </view>
     </block>
-    <view class="stage-debug type-caption" wx:if="{{showCloudDebug && levelDebug}}">
-      newconcept2={{levelDebug.newconcept2CatalogCount || 0}}
-    </view>
   </view>
 </view>

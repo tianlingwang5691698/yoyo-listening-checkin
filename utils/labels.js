@@ -14,6 +14,12 @@ function getCategoryDisplayLabel(category, label) {
   if (category === 'newconcept2') {
     return 'New Concept 2';
   }
+  if (category === 'newconcept3') {
+    return 'New Concept 3';
+  }
+  if (category === 'newconcept4') {
+    return 'New Concept 4';
+  }
   return label || category || '';
 }
 

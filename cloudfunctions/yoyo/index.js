@@ -15,6 +15,8 @@ const CLOUD_ASSET_BASE_URL = 'https://796f-youshengenglish-6glk12rd6c6e719b-1419
 const CLOUD_BUCKET = '796f-youshengenglish-6glk12rd6c6e719b-1419984942';
 const NEW_CONCEPT1_AUDIO_ROOT = 'A1/NewConcept1-US';
 const NEW_CONCEPT2_AUDIO_ROOT = 'A2/NewConcept2-US';
+const NEW_CONCEPT3_AUDIO_ROOT = 'B1/NewConcept3-US';
+const NEW_CONCEPT4_AUDIO_ROOT = 'B2/NewConcept4-US';
 const UNLOCK1_AUDIO_ROOT = 'A1/Unlock1/Unlock1 听口音频Class Audio';
 const UNLOCK1_SCRIPT_PATH = `${UNLOCK1_AUDIO_ROOT}/Unlock 2e Listening and Speaking 1 Scripts.pdf`;
 const UNLOCK1_TRAINING_POOL_COLLECTION = 'unlock1AudioTrainingPool';
@@ -22,6 +24,8 @@ const UNLOCK1_MIN_DURATION_SEC = 60;
 const STORAGE_ROOTS = {
   newconcept1: NEW_CONCEPT1_AUDIO_ROOT,
   newconcept2: NEW_CONCEPT2_AUDIO_ROOT,
+  newconcept3: NEW_CONCEPT3_AUDIO_ROOT,
+  newconcept4: NEW_CONCEPT4_AUDIO_ROOT,
   peppa: 'A1/Peppa',
   unlock1: UNLOCK1_AUDIO_ROOT,
   song: 'A1/Super simple songs'
@@ -29,6 +33,8 @@ const STORAGE_ROOTS = {
 const STORAGE_ROOT_CANDIDATES = {
   newconcept1: [NEW_CONCEPT1_AUDIO_ROOT, 'A1/NewConcept1', 'A1/New Concept 1', 'A1/new-concept-1-us'],
   newconcept2: [NEW_CONCEPT2_AUDIO_ROOT, 'A2/NewConcept2', 'A2/New Concept 2', 'A2/new-concept-2-us', 'A2/Newconcept2'],
+  newconcept3: [NEW_CONCEPT3_AUDIO_ROOT, 'B1/NewConcept3', 'B1/New Concept 3', 'B1/new-concept-3-us', 'B1/Newconcept3'],
+  newconcept4: ['B2/NewConcept3-US/新概念英语（第4册）美音（MP3+LRC）', NEW_CONCEPT4_AUDIO_ROOT, 'B2/NewConcept4', 'B2/New Concept 4', 'B2/new-concept-4-us', 'B2/Newconcept4', 'B2/NewConcept3-US'],
   peppa: [STORAGE_ROOTS.peppa],
   unlock1: [UNLOCK1_AUDIO_ROOT, 'A1/Unlock1'],
   song: [STORAGE_ROOTS.song, 'A1/Super simple song']
@@ -49,6 +55,8 @@ const TRANSCRIPT_BUNDLE_TTL_MS = 5 * 60 * 1000;
 const TRANSCRIPT_BUNDLE_PATHS = {
   newconcept1: ['_transcripts/A1/new-concept-1-us-line/bundle.json', '_transcripts/A1/new-concept-1-us/bundle.json', '_transcripts/A1/newconcept1-us/bundle.json'],
   newconcept2: ['_transcripts/A2/new-concept-2-us-line/bundle.json', '_transcripts/A2/new-concept-2-us/bundle.json', '_transcripts/A2/new-concept-2/bundle.json', '_transcripts/A2/newconcept2/bundle.json'],
+  newconcept3: ['_transcripts/B1/new-concept-3-us-line/bundle.json', '_transcripts/B1/new-concept-3-us/bundle.json', '_transcripts/B1/newconcept3/bundle.json'],
+  newconcept4: ['_transcripts/B2/new-concept-4-us-line/bundle.json', '_transcripts/B2/new-concept-4-us/bundle.json', '_transcripts/B2/newconcept4/bundle.json'],
   peppa: ['_transcripts/A1/peppa/bundle.json'],
   unlock1: ['_transcripts/A1/unlock1/bundle.json'],
   song: ['_transcripts/A1/songs/bundle.json']
@@ -275,7 +283,7 @@ function getTrackSlugVariants(value) {
 }
 
 function inferNewConceptTaskMeta(category, audioBaseName, index) {
-  if (category !== 'newconcept1' && category !== 'newconcept2') {
+  if (!['newconcept1', 'newconcept2', 'newconcept3', 'newconcept4'].includes(category)) {
     return null;
   }
   const levelNumber = category === 'newconcept1' ? 1 : 2;
@@ -494,7 +502,7 @@ function findTranscriptTrack(transcriptTrackMap, task) {
 }
 
 function shouldLazyTranscriptCategory(category) {
-  return category === 'newconcept1' || category === 'newconcept2';
+  return ['newconcept1', 'newconcept2', 'newconcept3', 'newconcept4'].includes(category);
 }
 
 async function getTranscriptBundle(task) {
@@ -525,6 +533,8 @@ function getStaticCatalogMap() {
   return {
     newconcept1: [],
     newconcept2: [],
+    newconcept3: [],
+    newconcept4: [],
     peppa: peppaTasks,
     unlock1: unlockTasks,
     song: songTasks
@@ -1115,6 +1125,8 @@ const CATEGORY_ORDER = ['newconcept1', 'peppa', 'unlock1', 'song', 'newconcept2'
 const CATEGORY_LABELS = {
   newconcept1: 'New Concept 1',
   newconcept2: 'New Concept 2',
+  newconcept3: 'New Concept 3',
+  newconcept4: 'New Concept 4',
   peppa: 'Peppa',
   unlock1: 'Unlock 1',
   song: 'Songs'
@@ -1126,8 +1138,8 @@ function getCatalog(category) {
   if (category === 'newconcept1') {
     return Object.prototype.hasOwnProperty.call(catalogs, 'newconcept1') ? (catalogs.newconcept1 || []) : staticCatalogs.newconcept1;
   }
-  if (category === 'newconcept2') {
-    return Object.prototype.hasOwnProperty.call(catalogs, 'newconcept2') ? (catalogs.newconcept2 || []) : staticCatalogs.newconcept2;
+  if (['newconcept2', 'newconcept3', 'newconcept4'].includes(category)) {
+    return Object.prototype.hasOwnProperty.call(catalogs, category) ? (catalogs[category] || []) : staticCatalogs[category];
   }
   if (category === 'peppa') {
     return Object.prototype.hasOwnProperty.call(catalogs, 'peppa') ? (catalogs.peppa || []) : staticCatalogs.peppa;
@@ -1167,7 +1179,7 @@ function getTaskPresentation(task) {
       };
     }
   }
-  if (task.category === 'newconcept1' || task.category === 'newconcept2') {
+  if (['newconcept1', 'newconcept2', 'newconcept3', 'newconcept4'].includes(task.category)) {
     const levelNumber = task.category === 'newconcept1' ? 1 : 2;
     return {
       displayTitle: title,
@@ -1212,7 +1224,7 @@ function getTaskReward(category, progress, task) {
       rewardCopy: progress && progress.completedToday ? '这一集今天已经顺利通关。' : '前两遍盲听，最后一遍带文本高亮。'
     };
   }
-  if (category === 'newconcept1' || category === 'newconcept2') {
+  if (['newconcept1', 'newconcept2', 'newconcept3', 'newconcept4'].includes(category)) {
     return {
       rewardBadge: category === 'newconcept1' ? 'NCE 1' : 'NCE 2',
       rewardTitle: category === 'newconcept1' ? 'New Concept 1' : 'New Concept 2',
@@ -1874,7 +1886,7 @@ async function listDirectAudioTasksForCategory(category) {
 }
 
 async function resolveStandaloneCategoryTasks(category, childId, date) {
-  if (category !== 'newconcept2') {
+  if (!['newconcept2', 'newconcept3', 'newconcept4'].includes(category)) {
     return [];
   }
   const tasks = await listDirectAudioTasksForCategory(category);
@@ -2242,9 +2254,9 @@ async function handleAction(event, context) {
   const requestedCategory = String((event && event.payload && event.payload.category) || '').trim();
   let catalogCategories = ['newconcept1', 'song'];
   if (action === 'getLevelOverview') {
-    catalogCategories = ['newconcept1', 'newconcept2', 'song'];
+    catalogCategories = ['newconcept1', 'newconcept2', 'newconcept3', 'newconcept4', 'song'];
   } else if (action === 'getTaskDetail' || action === 'markTaskListened') {
-    if (requestedCategory === 'newconcept1' || requestedCategory === 'newconcept2' || requestedCategory === 'song' || requestedCategory === 'unlock1') {
+    if (['newconcept1', 'newconcept2', 'newconcept3', 'newconcept4', 'song', 'unlock1'].includes(requestedCategory)) {
       catalogCategories = [requestedCategory];
     } else {
       catalogCategories = [];
@@ -2269,18 +2281,22 @@ async function handleAction(event, context) {
   if (action === 'getLevelOverview') {
     const dashboard = await getDashboardData(ctx);
     const progressRecords = await getChildProgressRecords(getUserScope(ctx));
-    const a2DirectTasks = await listDirectAudioTasksForCategory('newconcept2');
-    const a2Overview = a2DirectTasks.length
-      ? [{
-        category: 'newconcept2',
-        categoryLabel: getCategoryLabel('newconcept2'),
-        totalCount: a2DirectTasks.length,
-        completedCount: 0,
-        todayTask: decorateTask(a2DirectTasks[0], buildEmptyProgress(), 'newconcept2'),
-        isPendingAsset: false,
-        todayTaskCount: 1
-      }]
-      : [buildLevelCatalogEntry('newconcept2', { limit: 1 })];
+    const standaloneCategoryIds = ['newconcept2', 'newconcept3', 'newconcept4'];
+    const standaloneOverviews = Object.fromEntries(await Promise.all(standaloneCategoryIds.map(async (categoryId) => {
+      const directTasks = await listDirectAudioTasksForCategory(categoryId);
+      const overview = directTasks.length
+        ? [{
+          category: categoryId,
+          categoryLabel: getCategoryLabel(categoryId),
+          totalCount: directTasks.length,
+          completedCount: 0,
+          todayTask: decorateTask(directTasks[0], buildEmptyProgress(), categoryId),
+          isPendingAsset: false,
+          todayTaskCount: 1
+        }]
+        : [buildLevelCatalogEntry(categoryId, { limit: 1 })];
+      return [categoryId, { directTasks, overview }];
+    })));
     return {
       user: ctx.user,
       currentUser: ctx.user,
@@ -2302,10 +2318,16 @@ async function handleAction(event, context) {
           todayTaskCount: todayTask.plannedTaskCount || 0
         };
       }),
-      a2Categories: a2Overview,
+      a2Categories: standaloneOverviews.newconcept2.overview,
+      b1Categories: standaloneOverviews.newconcept3.overview,
+      b2Categories: standaloneOverviews.newconcept4.overview,
       levelDebug: {
         newconcept2CatalogCount: getCatalog('newconcept2').length,
-        newconcept2DirectCount: a2DirectTasks.length,
+        newconcept2DirectCount: standaloneOverviews.newconcept2.directTasks.length,
+        newconcept3CatalogCount: getCatalog('newconcept3').length,
+        newconcept3DirectCount: standaloneOverviews.newconcept3.directTasks.length,
+        newconcept4CatalogCount: getCatalog('newconcept4').length,
+        newconcept4DirectCount: standaloneOverviews.newconcept4.directTasks.length,
         resourceDebug: getResourceDebugSnapshot()
       },
       planDayIndex: dashboard.planDayIndex,
@@ -2330,8 +2352,8 @@ async function handleAction(event, context) {
       ? buildPlanForDay(targetPlanDayIndex)
       : null;
     const progressRecords = await getChildProgressRecords(getUserScope(ctx));
-    const categoryTasks = event.payload.category === 'newconcept2'
-      ? decoratePlannedTasks(progressRecords, ctx.child.childId, event.payload.category, targetDate, await resolveStandaloneCategoryTasks('newconcept2', ctx.child.childId, targetDate), {
+    const categoryTasks = ['newconcept2', 'newconcept3', 'newconcept4'].includes(event.payload.category)
+      ? decoratePlannedTasks(progressRecords, ctx.child.childId, event.payload.category, targetDate, await resolveStandaloneCategoryTasks(event.payload.category, ctx.child.childId, targetDate), {
         planRunType: 'level',
         targetDate,
         planDayIndex: 1
@@ -2401,8 +2423,8 @@ async function handleAction(event, context) {
       category: requestedCategory || ((event.payload && event.payload.taskSnapshot && event.payload.taskSnapshot.category) || ''),
       taskId: String((event.payload && event.payload.taskId) || ((event.payload && event.payload.taskSnapshot && event.payload.taskSnapshot.taskId) || '')).trim()
     });
-    if (requestedCategory === 'newconcept2') {
-      const standaloneTasks = await resolveStandaloneCategoryTasks('newconcept2', ctx.child.childId, today);
+    if (['newconcept2', 'newconcept3', 'newconcept4'].includes(requestedCategory)) {
+      const standaloneTasks = await resolveStandaloneCategoryTasks(requestedCategory, ctx.child.childId, today);
       task = standaloneTasks.find((item) => item.taskId === task.taskId) || standaloneTasks[0] || task;
     }
     task = task.taskId ? task : decorateTask(null, buildEmptyProgress(), requestedCategory);
@@ -2452,8 +2474,8 @@ async function handleAction(event, context) {
         ? (Number((event.payload && event.payload.planDayIndex) || 0) || getPlanDayIndex(checkins))
         : getPlanDayIndex(checkins)
     );
-    const categoryTasks = category === 'newconcept2'
-      ? decoratePlannedTasks(progressRecords, ctx.child.childId, category, targetDate, await resolveStandaloneCategoryTasks('newconcept2', ctx.child.childId, targetDate), {
+    const categoryTasks = ['newconcept2', 'newconcept3', 'newconcept4'].includes(category)
+      ? decoratePlannedTasks(progressRecords, ctx.child.childId, category, targetDate, await resolveStandaloneCategoryTasks(category, ctx.child.childId, targetDate), {
         planRunType: 'level',
         targetDate,
         planDayIndex: 1

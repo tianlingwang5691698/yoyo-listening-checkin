@@ -4,8 +4,8 @@ const labels = require('../../utils/labels');
 
 const LEVEL_TABS = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'].map((levelId) => ({
   levelId,
-  enabled: levelId === 'A1' || levelId === 'A2',
-  stateText: levelId === 'A1' || levelId === 'A2' ? '' : '未开放'
+  enabled: ['A1', 'A2', 'B1', 'B2'].includes(levelId),
+  stateText: ['A1', 'A2', 'B1', 'B2'].includes(levelId) ? '' : '未开放'
 }));
 
 const PHASE_LABELS = {
@@ -66,7 +66,7 @@ function buildProgramEntries(categories) {
   });
 }
 
-function buildA2Entries(categories) {
+function buildStandaloneEntries(categories) {
   return (categories || []).map((category) => {
     const task = category.todayTask || {};
     return Object.assign({}, category, {
@@ -112,6 +112,8 @@ Page({
     planPhaseLabel: '第1轮',
     categories: [],
     a2Categories: [],
+    b1Categories: [],
+    b2Categories: [],
     levelDebug: null,
     levelTabs: LEVEL_TABS,
     selectedLevel: 'A1',
@@ -136,14 +138,20 @@ Page({
     const data = await store.getLevelOverview();
     const categories = (data.categories || []).map(labels.normalizeCategory);
     const a2Categories = (data.a2Categories || []).map(labels.normalizeCategory);
+    const b1Categories = (data.b1Categories || []).map(labels.normalizeCategory);
+    const b2Categories = (data.b2Categories || []).map(labels.normalizeCategory);
     this.setData(page.buildCloudPageData(this.data, Object.assign({}, data, {
       categories,
       a2Categories,
+      b1Categories,
+      b2Categories,
       levelDebug: data.levelDebug || null,
       levelTabs: buildLevelTabs(this.data.selectedLevel || 'A1'),
       currentStage: buildCurrentStage(data),
       stageGroups: buildStageGroups(data),
-      programEntries: (this.data.selectedLevel || 'A1') === 'A2' ? buildA2Entries(a2Categories) : buildProgramEntries(categories)
+      programEntries: ['A2', 'B1', 'B2'].includes(this.data.selectedLevel || 'A1')
+        ? buildStandaloneEntries((this.data.selectedLevel || 'A1') === 'A2' ? a2Categories : ((this.data.selectedLevel || 'A1') === 'B1' ? b1Categories : b2Categories))
+        : buildProgramEntries(categories)
     })));
   },
   chooseLevel(event) {
@@ -156,11 +164,17 @@ Page({
       });
       return;
     }
-    const selectedLevel = levelId === 'A2' ? 'A2' : 'A1';
+    const selectedLevel = ['A2', 'B1', 'B2'].includes(levelId) ? levelId : 'A1';
     this.setData({
       selectedLevel,
       levelTabs: buildLevelTabs(selectedLevel),
-      programEntries: selectedLevel === 'A2' ? buildA2Entries(this.data.a2Categories) : buildProgramEntries(this.data.categories)
+      programEntries: selectedLevel === 'A2'
+        ? buildStandaloneEntries(this.data.a2Categories)
+        : selectedLevel === 'B1'
+          ? buildStandaloneEntries(this.data.b1Categories)
+          : selectedLevel === 'B2'
+            ? buildStandaloneEntries(this.data.b2Categories)
+            : buildProgramEntries(this.data.categories)
     });
   },
   openStage(event) {

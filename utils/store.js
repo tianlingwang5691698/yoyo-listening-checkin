@@ -194,7 +194,9 @@ async function getLevelOverview() {
     planDayIndex: 1,
     planPhaseLabel: '第1轮',
     categories: [],
-    a2Categories: []
+    a2Categories: [],
+    b1Categories: [],
+    b2Categories: []
   });
 }
 
