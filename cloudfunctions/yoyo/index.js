@@ -19,6 +19,7 @@ const actionMap = {
   refreshInviteCode: familyService.refreshInviteCode,
   joinFamily: familyService.joinFamily,
   joinFamilyByChildCode: familyService.joinFamilyByChildCode,
+  leaveFamily: familyService.leaveFamily,
   updateChildProfile: familyService.updateChildProfile,
   setStudyRole: identityService.setStudyRole,
   undoLastListened: identityService.undoLastListened,

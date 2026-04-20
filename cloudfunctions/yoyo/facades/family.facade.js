@@ -6,6 +6,7 @@ module.exports = {
   updateChildProfile: shared.updateChildProfile,
   setExclusiveStudyRole: shared.setExclusiveStudyRole,
   upsertFamilyMemberForFamily: shared.upsertFamilyMemberForFamily,
+  leaveCurrentFamily: shared.leaveCurrentFamily,
   normalizeStudyRole: shared.normalizeStudyRole,
   clearTodayUnconfirmedListens: shared.clearTodayUnconfirmedListens,
   getDashboardData: (ctx, options) => shared.getDashboardData(ctx, options),

@@ -18,11 +18,14 @@ Page({
     undoingLastListened: false,
     childJoinRequired: false
   }),
+  applyFamilyState(data, extra) {
+    this.setData(page.buildCloudPageData(this.data, Object.assign({}, data, this.buildStudyRolePresentation((data || {}).currentMember), extra || {})));
+  },
   async onShow() {
     const data = await store.getFamilyPageData();
-    this.setData(page.buildCloudPageData(this.data, Object.assign({}, data, this.buildStudyRolePresentation(data.currentMember), {
+    this.applyFamilyState(data, {
       childJoinRequired: this.isChildJoinRequired(data)
-    })));
+    });
   },
   isChildJoinRequired(data) {
     const member = (data && data.currentMember) || {};
@@ -95,11 +98,11 @@ Page({
     }
     try {
       const data = await store.joinFamilyByChildCode(this.data.childCodeInput, this.data.joinName);
-      this.setData(page.buildCloudPageData(this.data, Object.assign({}, data, this.buildStudyRolePresentation(data.currentMember), {
+      this.applyFamilyState(data, {
         childCodeInput: '',
         joinName: '',
         childJoinRequired: this.isChildJoinRequired(data)
-      })));
+      });
       wx.showToast({
         title: '已加入孩子记录',
         icon: 'none'
@@ -111,21 +114,60 @@ Page({
       });
     }
   },
+  async leaveFamily() {
+    const confirmed = await new Promise((resolve) => {
+      wx.showModal({
+        title: '退出孩子记录？',
+        content: '退出后，这个微信将不再连接当前孩子记录。',
+        confirmText: '退出',
+        confirmColor: '#b45e40',
+        success: (res) => resolve(!!res.confirm),
+        fail: () => resolve(false)
+      });
+    });
+    if (!confirmed) {
+      return;
+    }
+    try {
+      const data = await store.leaveFamily();
+      wx.removeStorageSync('lastStudyRole');
+      this.applyFamilyState(data, {
+        childCodeInput: '',
+        joinName: '',
+        childJoinRequired: this.isChildJoinRequired(data)
+      });
+      wx.showToast({
+        title: '已退出孩子记录',
+        icon: 'none'
+      });
+    } catch (error) {
+      wx.showToast({
+        title: error.message || '退出失败',
+        icon: 'none'
+      });
+    }
+  },
   async toggleStudyRole() {
     const currentRole = this.data.currentMember && this.data.currentMember.studyRole === 'student' ? 'student' : 'parent';
     const nextRole = currentRole === 'student' ? 'parent' : 'student';
     try {
       const data = await store.setStudyRole(nextRole);
+      wx.setStorageSync('lastStudyRole', nextRole);
       if (nextRole === 'student') {
         wx.setStorageSync('hasUsedStudentMode', 'yes');
       }
-      this.setData(page.buildCloudPageData(this.data, Object.assign({}, data, this.buildStudyRolePresentation(data.currentMember), {
+      this.applyFamilyState(data, {
         childJoinRequired: this.isChildJoinRequired(data)
-      })));
+      });
       wx.showToast({
         title: nextRole === 'student' ? '已切到学生设备' : '已切到家长',
         icon: 'none'
       });
+      if (nextRole === 'student') {
+        wx.switchTab({
+          url: '/pages/home/index'
+        });
+      }
     } catch (error) {
       wx.showToast({
         title: error.message || '切换失败',
@@ -154,9 +196,9 @@ Page({
     this.setData({ undoingLastListened: true });
     try {
       const data = await store.undoLastListened();
-      this.setData(page.buildCloudPageData(this.data, Object.assign({}, data, this.buildStudyRolePresentation(data.currentMember), {
+      this.applyFamilyState(data, {
         undoingLastListened: false
-      })));
+      });
       const cleared = data.cleared || {};
       wx.showToast({
         title: cleared.playCount ? '已清掉多记播放' : '已处理',

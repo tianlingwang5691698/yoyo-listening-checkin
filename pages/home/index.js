@@ -30,6 +30,10 @@ Page({
     const modeChangedNoticeVisible = previousStudyRole === 'student' && nextStudyRole === 'parent';
     wx.setStorageSync('lastStudyRole', nextStudyRole);
     this.setData(page.buildCloudPageData(this.data, Object.assign({}, {
+      syncMode: data.syncMode,
+      isReviewBuild: data.isReviewBuild,
+      showCloudDebug: data.showCloudDebug,
+      syncDebug: data.syncDebug,
       child: data.child,
       currentMember: data.currentMember,
       planDayIndex: data.planDayIndex,
@@ -51,6 +55,10 @@ Page({
         wx.setStorageSync('hasUsedStudentMode', 'yes');
       }
       this.setData(page.buildCloudPageData(this.data, Object.assign({}, {
+        syncMode: data.syncMode,
+        isReviewBuild: data.isReviewBuild,
+        showCloudDebug: data.showCloudDebug,
+        syncDebug: data.syncDebug,
         child: data.child,
         currentMember: data.currentMember,
         identityConfirmVisible: false,

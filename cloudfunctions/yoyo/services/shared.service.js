@@ -1152,12 +1152,17 @@ async function upsertFamilyMemberForFamily(openId, userId, familyId, displayName
   const now = new Date().toISOString();
   if (existingMember) {
     joinedMemberId = existingMember.memberId;
+    const shouldPreserveOriginalFamily = existingMember.familyId !== familyId && !existingMember.previousFamilyId;
     await familyRepository.updateMemberById(existingMember._id, {
       userId,
       familyId,
       displayName,
       role: existingMember.familyId === familyId ? (existingMember.role || 'parent') : 'parent',
       studyRole: existingMember.familyId === familyId ? normalizeStudyRole(existingMember) : 'parent',
+      previousFamilyId: shouldPreserveOriginalFamily ? existingMember.familyId : (existingMember.previousFamilyId || ''),
+      previousRole: shouldPreserveOriginalFamily ? (existingMember.role || 'parent') : (existingMember.previousRole || ''),
+      previousStudyRole: shouldPreserveOriginalFamily ? normalizeStudyRole(existingMember) : (existingMember.previousStudyRole || ''),
+      previousDisplayName: shouldPreserveOriginalFamily ? (existingMember.displayName || displayName || '') : (existingMember.previousDisplayName || ''),
       joinedFamilyAt: existingMember.familyId === familyId
         ? (existingMember.joinedFamilyAt || existingMember.createdAt || now)
         : now,
@@ -1192,6 +1197,52 @@ async function upsertFamilyMemberForFamily(openId, userId, familyId, displayName
     });
   }
   return joinedMemberId;
+}
+
+async function leaveCurrentFamily(ctx) {
+  const member = (ctx && ctx.member) || null;
+  if (!member || !member._id) {
+    throw new Error('当前成员不存在');
+  }
+  if ((member.role || '') === 'owner') {
+    throw new Error('当前孩子主设备不能退出记录');
+  }
+  const ownFamily = await familyRepository.findFamilyByOwnerOpenId(member.openId);
+  const restoreFamilyId = String(member.previousFamilyId || (ownFamily && ownFamily.familyId) || '').trim();
+  const restoreRole = String(member.previousRole || ((ownFamily && ownFamily.ownerOpenId === member.openId) ? 'owner' : 'parent') || 'parent').trim();
+  const restoreStudyRole = String(member.previousStudyRole || (restoreRole === 'owner' ? 'student' : 'parent') || 'parent').trim();
+  const restoreDisplayName = String(member.previousDisplayName || member.displayName || '').trim();
+  const preference = await subscriptionRepository.findByMemberId(member.memberId);
+  if (restoreFamilyId) {
+    await familyRepository.updateMemberById(member._id, {
+      familyId: restoreFamilyId,
+      role: restoreRole,
+      studyRole: restoreStudyRole,
+      displayName: restoreDisplayName,
+      previousFamilyId: '',
+      previousRole: '',
+      previousStudyRole: '',
+      previousDisplayName: '',
+      updatedAt: new Date().toISOString()
+    });
+    if (preference && preference._id) {
+      await subscriptionRepository.updateById(preference._id, {
+        familyId: restoreFamilyId
+      });
+    } else {
+      await subscriptionRepository.create({
+        memberId: member.memberId,
+        familyId: restoreFamilyId,
+        dailyReportEnabled: false,
+        lastAuthorizedAt: ''
+      });
+    }
+    return;
+  }
+  if (preference && preference._id) {
+    await subscriptionRepository.deleteById(preference._id);
+  }
+  await familyRepository.deleteMemberById(member._id);
 }
 
 async function ensureBootstrap(openId) {
@@ -1542,5 +1593,6 @@ module.exports = {
   updateChildProfile,
   setExclusiveStudyRole,
   upsertFamilyMemberForFamily,
+  leaveCurrentFamily,
   clearTodayUnconfirmedListens
 };

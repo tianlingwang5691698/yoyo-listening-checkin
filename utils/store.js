@@ -484,6 +484,24 @@ async function joinFamilyByChildCode(childLoginCode, displayName) {
   });
 }
 
+async function leaveFamily() {
+  return callCloud('leaveFamily', {}, {
+    family: null,
+    user: {},
+    currentUser: {},
+    currentMember: {
+      studyRole: 'parent'
+    },
+    members: [],
+    child: {
+      nickname: '',
+      avatarText: '',
+      childLoginCode: ''
+    },
+    subscriptionPreference: null
+  });
+}
+
 async function setStudyRole(studyRole) {
   return callCloud('setStudyRole', { studyRole }, {
     family: null,
@@ -570,6 +588,7 @@ module.exports = {
   refreshInviteCode,
   joinFamily,
   joinFamilyByChildCode,
+  leaveFamily,
   setStudyRole,
   undoLastListened,
   updateSubscription,

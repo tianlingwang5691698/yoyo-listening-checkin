@@ -26,6 +26,12 @@ async function findFamilyByInviteCode(inviteCode) {
   return res.data[0] || null;
 }
 
+async function findFamilyByOwnerOpenId(ownerOpenId) {
+  const res = await families().where({ ownerOpenId }).get();
+  const list = res.data || [];
+  return list.sort((a, b) => String(b.createdAt || '').localeCompare(String(a.createdAt || '')))[0] || null;
+}
+
 async function findMemberByOpenId(openId) {
   const res = await familyMembers().where({ openId }).limit(1).get();
   return res.data[0] || null;
@@ -49,6 +55,10 @@ async function updateMemberById(id, data) {
   return familyMembers().doc(id).update({ data });
 }
 
+async function deleteMemberById(id) {
+  return familyMembers().doc(id).remove();
+}
+
 module.exports = {
   families,
   familyMembers,
@@ -56,9 +66,11 @@ module.exports = {
   createFamily,
   updateFamilyById,
   findFamilyByInviteCode,
+  findFamilyByOwnerOpenId,
   findMemberByOpenId,
   findMembersByOpenId,
   findMembersByFamilyId,
   createMember,
-  updateMemberById
+  updateMemberById,
+  deleteMemberById
 };

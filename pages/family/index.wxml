@@ -31,10 +31,17 @@
     <view class="family-row action-row" wx:if="{{currentMember && currentMember.studyRole === 'parent'}}">
       <view class="row-main">
         <view class="row-title">加入</view>
-        <input class="row-field family-input" type="number" maxlength="6" placeholder="孩子 ID" value="{{childCodeInput}}" bindinput="handleChildCodeInput" />
+        <input class="row-field family-input" type="number" maxlength="6" placeholder="孩子ID" value="{{childCodeInput}}" bindinput="handleChildCodeInput" />
         <input class="row-field family-input" placeholder="称呼" value="{{joinName}}" bindinput="handleJoinNameInput" />
       </view>
       <button class="row-action" bindtap="joinFamilyByChildCode">加入</button>
+    </view>
+    <view class="family-row action-row" wx:if="{{currentMember && currentMember.studyRole === 'parent' && currentMember.role !== 'owner'}}">
+      <view class="row-main">
+        <view class="row-title">退出孩子记录</view>
+        <view class="row-copy">解绑当前孩子 ID</view>
+      </view>
+      <button class="row-action row-action-warn" bindtap="leaveFamily">退出</button>
     </view>
   </view>
 

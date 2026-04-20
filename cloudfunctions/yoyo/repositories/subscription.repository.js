@@ -17,9 +17,14 @@ async function updateById(id, data) {
   return subscriptionPreferences().doc(id).update({ data });
 }
 
+async function deleteById(id) {
+  return subscriptionPreferences().doc(id).remove();
+}
+
 module.exports = {
   subscriptionPreferences,
   findByMemberId,
   create,
-  updateById
+  updateById,
+  deleteById
 };

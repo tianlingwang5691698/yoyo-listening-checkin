@@ -4,7 +4,15 @@ async function bootstrap(event) {
   const { ctx } = await familyFacade.prepareRequestContext(Object.assign({}, event, {
     action: 'bootstrap'
   }));
-  return ctx;
+  return {
+    user: ctx.user,
+    currentUser: ctx.user,
+    family: ctx.family,
+    currentMember: ctx.member,
+    members: ctx.members,
+    child: ctx.child,
+    subscriptionPreference: ctx.subscriptionPreference
+  };
 }
 
 async function setStudyRole(event) {
@@ -16,7 +24,16 @@ async function setStudyRole(event) {
     throw new Error('设备身份不可用');
   }
   await familyFacade.setExclusiveStudyRole(ctx.member, studyRole);
-  return familyFacade.ensureBootstrap(ctx.user.openId);
+  const nextCtx = await familyFacade.ensureBootstrap(ctx.user.openId);
+  return {
+    user: nextCtx.user,
+    currentUser: nextCtx.user,
+    family: nextCtx.family,
+    currentMember: nextCtx.member,
+    members: nextCtx.members,
+    child: nextCtx.child,
+    subscriptionPreference: nextCtx.subscriptionPreference
+  };
 }
 
 async function undoLastListened(event) {

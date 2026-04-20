@@ -154,6 +154,23 @@ async function updateSubscription(event) {
   };
 }
 
+async function leaveFamily(event) {
+  const { ctx } = await familyFacade.prepareRequestContext(Object.assign({}, event, {
+    action: 'leaveFamily'
+  }));
+  await familyFacade.leaveCurrentFamily(ctx);
+  const nextCtx = await familyFacade.ensureBootstrap(ctx.user.openId);
+  return {
+    user: nextCtx.user,
+    currentUser: nextCtx.user,
+    family: nextCtx.family,
+    currentMember: nextCtx.member,
+    members: nextCtx.members,
+    child: nextCtx.child,
+    subscriptionPreference: nextCtx.subscriptionPreference
+  };
+}
+
 module.exports = {
   getProfileData,
   getFamilyPage,
@@ -161,5 +178,6 @@ module.exports = {
   joinFamily,
   joinFamilyByChildCode,
   updateChildProfile,
-  updateSubscription
+  updateSubscription,
+  leaveFamily
 };
