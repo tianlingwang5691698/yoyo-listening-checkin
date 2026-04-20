@@ -2,6 +2,9 @@
   "name": "yoyo-cloud-function",
   "version": "3.0.0",
   "main": "index.js",
+  "scripts": {
+    "test": "node --test tests/*.test.js"
+  },
   "dependencies": {
     "@cloudbase/manager-node": "^3.10.1",
     "wx-server-sdk": "^3.0.1"
