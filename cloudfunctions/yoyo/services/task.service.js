@@ -140,7 +140,7 @@ async function markTaskListened(event, context) {
       throw new Error('请先完成当前计划后，再追赶一批任务');
     }
   }
-  const todayPlan = shared.buildPlanForDay(
+  const todayPlan = study.buildPlanForDay(
     planRunType === 'catchup'
     ? (Number(payload.planDayIndex || 0) || study.getPlanDayIndexForDate(checkins, targetDate))
       : study.getPlanDayIndexForDate(checkins, today)
