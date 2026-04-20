@@ -40,15 +40,19 @@ exports.main = async (event, context) => {
   const result = await handler(event || {}, context || {});
   const durationMs = Date.now() - startedAt;
 
-  if (['getDashboard', 'getTaskDetail', 'getParentDashboard'].includes(action)) {
-    console.log(`[perf] ${action} ${durationMs}ms`);
-  }
-
   if (!result || typeof result !== 'object' || Array.isArray(result)) {
+    if (['getDashboard', 'getTaskDetail', 'getParentDashboard'].includes(action)) {
+      console.log(`[perf] ${action} ${durationMs}ms shape=primitive`);
+    }
     return result;
   }
 
-  return Object.assign({}, result, {
+  const finalResult = Object.assign({}, result, {
     resourceDebug: result.resourceDebug || catalogService.getResourceDebugSnapshot()
   });
+  if (['getDashboard', 'getTaskDetail', 'getParentDashboard'].includes(action)) {
+    const payloadSize = Buffer.byteLength(JSON.stringify(finalResult), 'utf8');
+    console.log(`[perf] ${action} ${durationMs}ms payload=${payloadSize}B`);
+  }
+  return finalResult;
 };

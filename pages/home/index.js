@@ -102,6 +102,7 @@ Page({
     };
   },
   async onShow() {
+    const startedAt = Date.now();
     const tabBar = this.getTabBar && this.getTabBar();
     if (tabBar) {
       tabBar.setData({ selected: 0 });
@@ -121,6 +122,7 @@ Page({
       identityConfirmVisible: !page.isIdentityConfirmed(),
       modeChangedNoticeVisible
     }, this.buildStudyModePresentation(data.currentMember))));
+    console.log(`[perf][home] onShow total=${Date.now() - startedAt}ms tasks=${(data.dailyTasks || []).length}`);
   },
   async confirmStudyIdentity(event) {
     const nextRole = event.currentTarget.dataset.role === 'student' ? 'student' : 'parent';

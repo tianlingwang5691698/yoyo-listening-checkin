@@ -55,6 +55,7 @@ async function callYoyo(action, payload) {
   if (!initCloud()) {
     throw new Error('cloud-unavailable');
   }
+  const startedAt = Date.now();
   const response = await wx.cloud.callFunction({
     name: 'yoyo',
     data: {
@@ -62,7 +63,17 @@ async function callYoyo(action, payload) {
       payload: payload || {}
     }
   });
-  return response.result || {};
+  const result = response.result || {};
+  if (['getDashboard', 'getTaskDetail', 'getParentDashboard'].includes(action)) {
+    let payloadSize = 0;
+    try {
+      payloadSize = JSON.stringify(result).length;
+    } catch (error) {
+      payloadSize = -1;
+    }
+    console.log(`[perf][cloud] ${action} ${Date.now() - startedAt}ms payload=${payloadSize}B`);
+  }
+  return result;
 }
 
 module.exports = {
