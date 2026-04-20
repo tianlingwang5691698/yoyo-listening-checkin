@@ -1,11 +1,11 @@
 # UI 改动检查清单
 
-每次 UI、交互、字体、页面结构改动前后都必须使用本清单。改动前先阅读 [PRODUCT_DESIGN_RULES.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/PRODUCT_DESIGN_RULES.md) 和 [DESIGN_STYLE_REQUIREMENTS.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/DESIGN_STYLE_REQUIREMENTS.md)。
+本清单用于 UI、交互、字体、页面结构改动的自检。它不是 Codex App 的执行模式指令；Default Mode 下用户明确要求实施时，应直接实施并在改动后按需检查。
 
 ## 改动前
 
-- 已阅读产品设计规则。
-- 已阅读设计风格与产品语言要求。
+- 已按需参考产品设计规则。
+- 已按需参考设计风格与产品语言要求。
 - 已查看项目进度记录中的当前待办。
 - 本次改动只解决一个清晰问题。
 - 已确认是否会影响首页、课程页、成长页、家庭共享或 transcript 链路。
@@ -72,9 +72,9 @@ node -c utils/labels.js
 - 未把无关改动混入提交。
 - 提交信息按主题命名。
 
-## 最终回复必须包含
+## 最终回复建议包含
 
 - 改了什么。
 - 跑了哪些检查。
 - 未跑哪些检查。
-- 下一步建议。
+- 必要时给下一步建议。

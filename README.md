@@ -91,7 +91,7 @@
 ## 开发与部署
 
 - 文档总入口见 [docs/README.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/README.md)
-- UI/交互改动前必须先读 [docs/PRODUCT_DESIGN_RULES.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/PRODUCT_DESIGN_RULES.md)、[docs/DESIGN_STYLE_REQUIREMENTS.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/DESIGN_STYLE_REQUIREMENTS.md)、[docs/UI_CHANGE_CHECKLIST.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/UI_CHANGE_CHECKLIST.md) 和 [docs/PROJECT_PROGRESS_LOG.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/PROJECT_PROGRESS_LOG.md)
+- UI/交互改动可参考 [docs/PRODUCT_DESIGN_RULES.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/PRODUCT_DESIGN_RULES.md)、[docs/DESIGN_STYLE_REQUIREMENTS.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/DESIGN_STYLE_REQUIREMENTS.md)、[docs/UI_CHANGE_CHECKLIST.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/UI_CHANGE_CHECKLIST.md) 和 [docs/PROJECT_PROGRESS_LOG.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/PROJECT_PROGRESS_LOG.md)；这些文档不要求 Codex App 在 Default Mode 下先输出计划
 - 云环境部署说明见 [docs/CLOUDBASE_SETUP.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/CLOUDBASE_SETUP.md)
 - 真机测试清单见 [docs/REAL_DEVICE_TEST.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/REAL_DEVICE_TEST.md)
 - 真机测试记录模板见 [docs/REAL_DEVICE_TEST_LOG_TEMPLATE.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/REAL_DEVICE_TEST_LOG_TEMPLATE.md)

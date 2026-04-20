@@ -1,6 +1,6 @@
 # 产品设计规则
 
-本项目的界面目标是高级极简的亲子英语学习产品，而不是功能集合、报表页或控制台。后续任何 UI、交互、字体、页面结构改动前，必须先阅读本文、[DESIGN_STYLE_REQUIREMENTS.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/DESIGN_STYLE_REQUIREMENTS.md) 和 [UI_CHANGE_CHECKLIST.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/UI_CHANGE_CHECKLIST.md)。
+本项目的界面目标是高级极简的亲子英语学习产品，而不是功能集合、报表页或控制台。本文是产品设计参考，不是 Codex App 的模式切换指令；Default Mode 下用户明确要求实施时，应直接实施，不要因为本文先输出完整计划。
 
 ## 第一性原则
 
@@ -72,11 +72,10 @@
 - 我的/家庭/身份页：管理入口和必要状态，每页最多一个主动作。
 - 家长页：日报明细，避免控制台式指标堆叠。
 
-## 每次改动流程
+## 推荐改动流程
 
-1. 先阅读本文。
-2. 再阅读 [DESIGN_STYLE_REQUIREMENTS.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/DESIGN_STYLE_REQUIREMENTS.md) 和 [UI_CHANGE_CHECKLIST.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/UI_CHANGE_CHECKLIST.md)。
+1. 需要 UI 判断时，参考本文。
+2. 视改动风险参考 [DESIGN_STYLE_REQUIREMENTS.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/DESIGN_STYLE_REQUIREMENTS.md) 和 [UI_CHANGE_CHECKLIST.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/UI_CHANGE_CHECKLIST.md)。
 3. 实施改动。
 4. 运行回归检查。
-5. 检查通过后再提交。
-6. 最终回复必须说明改动、检查、未跑检查和下一步建议。
+5. 最终回复说明改动、检查和未跑检查。

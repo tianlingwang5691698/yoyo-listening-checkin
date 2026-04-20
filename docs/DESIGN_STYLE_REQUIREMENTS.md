@@ -1,6 +1,6 @@
 # 设计风格与产品语言要求
 
-本文件沉淀对话中已经明确的设计风格、交互要求和禁止项。每次进入计划模式、制定 UI 方案或实施 UI 改动前，必须先阅读本文、[PRODUCT_DESIGN_RULES.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/PRODUCT_DESIGN_RULES.md) 和 [UI_CHANGE_CHECKLIST.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/UI_CHANGE_CHECKLIST.md)。
+本文件沉淀对话中已经明确的设计风格、交互要求和禁止项。它是设计参考，不是 Codex App 的执行模式指令；在 Default Mode 下，如果用户明确要求实施，应直接实施，不要因为本文先输出完整计划。
 
 ## 目标气质
 
@@ -84,10 +84,10 @@
 - 首页节目卡点击进入当前节目任务。
 - 课程页播放、回退、倍速、结束计数、transcript 高亮是核心链路，UI 改动不能破坏。
 
-## 计划与实施纪律
+## 使用方式
 
-- 每次计划模式前必须先阅读本文。
-- 每次 UI 实施前必须先阅读本文和检查清单。
-- 每次改动后必须跑回归检查。
-- 检查通过后再提交。
-- 最终回复必须包含下一步建议。
+- 需要做 UI 判断时，可参考本文、[PRODUCT_DESIGN_RULES.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/PRODUCT_DESIGN_RULES.md) 和 [UI_CHANGE_CHECKLIST.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/UI_CHANGE_CHECKLIST.md)。
+- 如果当前会话明确处于 Plan Mode，按 Codex App 原生 Plan Mode 输出计划。
+- 如果当前会话处于 Default Mode 且用户明确要求实施，直接实施并验证，不要因为本文切换成计划输出。
+- 改动后尽量运行相关回归检查。
+- 最终回复说明改了什么、跑了哪些检查、未跑哪些检查。
