@@ -3,7 +3,8 @@ const study = require('../facades/study.facade');
 function resolveDashboardOptions(view) {
   if (view === 'home') {
     return {
-      includeDailyTasks: true,
+      includeDailyTasks: false,
+      includeHomeTaskGroups: true,
       includeCategorySummaries: false,
       includeCatchupState: false,
       includePlanDebug: false,
@@ -13,6 +14,7 @@ function resolveDashboardOptions(view) {
   if (view === 'record') {
     return {
       includeDailyTasks: false,
+      includeHomeTaskGroups: false,
       includeCategorySummaries: false,
       includeCatchupState: false,
       includePlanDebug: false,

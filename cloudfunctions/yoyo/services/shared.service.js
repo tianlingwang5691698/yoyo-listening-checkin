@@ -1486,7 +1486,8 @@ async function getDashboardData(ctx, options = {}) {
     buildStats,
     buildCatchupState,
     getPlanStartDate,
-    getCatalog
+    getCatalog,
+    getCategoryLabel
   }, options);
 }
 

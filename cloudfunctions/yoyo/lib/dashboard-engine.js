@@ -5,8 +5,69 @@ function buildCategorySummariesFromDailyTasks(dailyTasks, planDayIndex, deps) {
   });
 }
 
+function getHomeTextType(task) {
+  if (!task || task.isPendingAsset) {
+    return '待准备';
+  }
+  if (task.transcriptTrackId) {
+    return task.syncGranularity === 'line' ? '句级' : '逐词';
+  }
+  if (task.transcriptStatus === 'pending') {
+    return '文本准备中';
+  }
+  return '纯听力';
+}
+
+function decorateHomeTask(task) {
+  const repeatTarget = task.repeatTarget || 3;
+  return Object.assign({}, task, {
+    textType: getHomeTextType(task),
+    actionText: task.isPendingAsset
+      ? '等音频放入'
+      : task.completedToday
+        ? '查看完成'
+        : task.playCount > 0
+          ? '继续'
+          : '开始',
+    progressText: `${task.playCount || 0}/${repeatTarget} 遍`
+  });
+}
+
+function buildHomeTaskGroups(dailyTasks, planDayIndex, deps) {
+  return deps.getPlanCategoryOrder(planDayIndex).map((category) => {
+    const categoryTasks = (dailyTasks || []).filter((item) => item.category === category).map(decorateHomeTask);
+    if (!categoryTasks.length) {
+      return null;
+    }
+    const activeTasks = categoryTasks.filter((item) => !item.isPendingAsset);
+    const completedCount = activeTasks.filter((item) => item.completedToday).length;
+    const totalCount = activeTasks.length || categoryTasks.length;
+    const nextTask = categoryTasks.find((item) => !item.isPendingAsset && !item.completedToday) || categoryTasks[0];
+    const allDone = completedCount === totalCount;
+    const pending = nextTask && nextTask.isPendingAsset;
+    return {
+      category,
+      categoryLabel: deps.getCategoryLabel(category),
+      completedCount,
+      totalCount,
+      progressPercent: totalCount ? Math.round((completedCount / totalCount) * 100) : 0,
+      nextTask,
+      programSubtitle: allDone
+        ? '今日完成'
+        : pending
+          ? '等待音频'
+          : (nextTask.displayTitle || nextTask.title || ''),
+      programStateText: allDone ? '完成' : pending ? '等待' : '›',
+      textType: nextTask ? nextTask.textType : '待准备',
+      actionText: nextTask ? nextTask.actionText : '待准备',
+      tasks: categoryTasks
+    };
+  }).filter(Boolean);
+}
+
 async function getDashboardData(ctx, deps, options = {}) {
   const includeDailyTasks = options.includeDailyTasks !== false;
+  const includeHomeTaskGroups = !!options.includeHomeTaskGroups;
   const includeCategorySummaries = options.includeCategorySummaries !== false;
   const includeCatchupState = options.includeCatchupState !== false;
   const includePlanDebug = options.includePlanDebug !== false;
@@ -63,6 +124,9 @@ async function getDashboardData(ctx, deps, options = {}) {
   }
   if (includeDailyTasks) {
     result.dailyTasks = dailyTasks;
+  }
+  if (includeHomeTaskGroups) {
+    result.groupedDailyTasks = buildHomeTaskGroups(dailyTasks, planDayIndex, deps);
   }
   if (includeCategorySummaries) {
     result.categorySummaries = categorySummaries;

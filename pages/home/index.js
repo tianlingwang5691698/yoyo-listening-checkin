@@ -1,81 +1,5 @@
 const store = require('../../utils/store');
 const page = require('../../utils/page');
-const labels = require('../../utils/labels');
-
-const CATEGORY_ORDER = ['newconcept1', 'newconcept2', 'peppa', 'unlock1', 'song'];
-const PHASE_COPY = {
-  '第1轮': '轻量日计划',
-  '第2轮': '复习加速',
-  '第3轮': '冲刺复习'
-};
-
-function getTextType(task) {
-  if (task.isPendingAsset) {
-    return '待准备';
-  }
-  if (task.transcriptTrackId) {
-    return task.syncGranularity === 'line' ? '句级' : '逐词';
-  }
-  if (task.transcriptStatus === 'pending') {
-    return '文本准备中';
-  }
-  return '纯听力';
-}
-
-function decorateHomeTask(task) {
-  const normalizedTask = labels.normalizeTask(task);
-  const repeatTarget = normalizedTask.repeatTarget || 3;
-  return Object.assign({}, normalizedTask, {
-    textType: getTextType(normalizedTask),
-    actionText: normalizedTask.isPendingAsset
-      ? '等音频放入'
-      : normalizedTask.completedToday
-        ? '查看完成'
-        : normalizedTask.playCount > 0
-          ? '继续'
-          : '开始',
-    progressText: `${normalizedTask.playCount || 0}/${repeatTarget} 遍`
-  });
-}
-
-function buildGroupedDailyTasks(tasks) {
-  const groups = [];
-  CATEGORY_ORDER.forEach((category) => {
-    const categoryTasks = (tasks || []).filter((item) => item.category === category).map(decorateHomeTask);
-    if (!categoryTasks.length) {
-      return;
-    }
-    const activeTasks = categoryTasks.filter((item) => !item.isPendingAsset);
-    const completedCount = activeTasks.filter((item) => item.completedToday).length;
-    const totalCount = activeTasks.length || categoryTasks.length;
-    const nextTask = categoryTasks.find((item) => !item.isPendingAsset && !item.completedToday) || categoryTasks[0];
-    const allDone = completedCount === totalCount;
-    const pending = nextTask && nextTask.isPendingAsset;
-    groups.push({
-      category,
-      categoryLabel: labels.getCategoryDisplayLabel(category, categoryTasks[0].categoryLabel),
-      completedCount,
-      totalCount,
-      progressPercent: totalCount ? Math.round((completedCount / totalCount) * 100) : 0,
-      nextTask,
-      programSubtitle: allDone
-        ? '今日完成'
-        : pending
-          ? '等待音频'
-          : (nextTask.displayTitle || nextTask.title || ''),
-      programStateText: allDone ? '完成' : pending ? '等待' : '›',
-      textType: nextTask ? nextTask.textType : '待准备',
-      actionText: nextTask ? nextTask.actionText : '待准备',
-      tasks: categoryTasks
-    });
-  });
-  return groups;
-}
-
-function buildPhaseCopy(label) {
-  return PHASE_COPY[label] || '今日计划';
-}
-
 Page({
   data: page.createCloudPageData({
     child: null,
@@ -101,7 +25,6 @@ Page({
       tabBar.setData({ selected: 0 });
     }
     const data = await store.getDashboard({ view: 'home' });
-    const groupedDailyTasks = buildGroupedDailyTasks(data.dailyTasks);
     const nextStudyRole = data.currentMember && data.currentMember.studyRole === 'student' ? 'student' : 'parent';
     const previousStudyRole = wx.getStorageSync('lastStudyRole') || '';
     const modeChangedNoticeVisible = previousStudyRole === 'student' && nextStudyRole === 'parent';
@@ -111,12 +34,12 @@ Page({
       currentMember: data.currentMember,
       planDayIndex: data.planDayIndex,
       planPhaseLabel: data.planPhaseLabel,
-      groupedDailyTasks,
-      hasGroupedTasks: groupedDailyTasks.length > 0,
+      groupedDailyTasks: data.groupedDailyTasks || [],
+      hasGroupedTasks: !!((data.groupedDailyTasks || []).length),
       identityConfirmVisible: !page.isIdentityConfirmed(),
       modeChangedNoticeVisible
     }, this.buildStudyModePresentation(data.currentMember))));
-    console.log(`[perf][home] onShow total=${Date.now() - startedAt}ms tasks=${(data.dailyTasks || []).length}`);
+    console.log(`[perf][home] onShow total=${Date.now() - startedAt}ms groups=${(data.groupedDailyTasks || []).length}`);
   },
   async confirmStudyIdentity(event) {
     const nextRole = event.currentTarget.dataset.role === 'student' ? 'student' : 'parent';

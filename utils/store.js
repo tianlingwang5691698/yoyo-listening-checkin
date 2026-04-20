@@ -186,6 +186,7 @@ async function getDashboard(options) {
     planPhaseLabel: '第1轮',
     planTaskCount: 0,
     dailyTasks: [],
+    groupedDailyTasks: [],
     categorySummaries: [],
     activeTaskCount: 0,
     completedTaskCountToday: 0,
