@@ -13,8 +13,11 @@ module.exports = {
   resolveStandaloneCategoryTasks: shared.resolveStandaloneCategoryTasks,
   buildCategorySummary: shared.buildCategorySummary,
   getPlanCatalog: shared.getPlanCatalog,
+  getCatalog: shared.getCatalog,
+  getCategoryLabel: shared.getCategoryLabel,
   addDays: shared.addDays,
   getTodayString: shared.getTodayString,
+  buildLevelCatalogEntry: shared.buildLevelCatalogEntry,
   buildEmptyProgress: shared.buildEmptyProgress,
   decorateTask: shared.decorateTask,
   getTranscriptBundle: shared.getTranscriptBundle,
@@ -24,5 +27,6 @@ module.exports = {
   normalizeStudyRole: shared.normalizeStudyRole,
   maybeCreateCheckin: shared.maybeCreateCheckin,
   saveProgressRecord: shared.saveProgressRecord,
+  getResourceDebugSnapshot: shared.getResourceDebugSnapshot,
   level: shared.level
 };
