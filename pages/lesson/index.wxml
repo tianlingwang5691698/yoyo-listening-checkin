@@ -131,6 +131,14 @@
     </view>
   </view>
 
+  <view class="completion-card-mask" wx:if="{{completionCardVisible}}">
+    <view class="completion-card">
+      <view class="completion-card-title">Great job today!</view>
+      <view class="completion-card-copy">今天也认真完成了，真不错。</view>
+      <view class="completion-card-status">今天打卡完成</view>
+    </view>
+  </view>
+
 </view>
 
 <view class="page-shell lesson-page" wx:elif="{{syncMode === 'cloud-error'}}">

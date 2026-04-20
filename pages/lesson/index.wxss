@@ -259,6 +259,60 @@
   text-align: center;
 }
 
+.completion-card-mask {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48rpx;
+  background: rgba(255, 250, 246, 0.14);
+  pointer-events: none;
+}
+
+.completion-card {
+  width: 100%;
+  max-width: 520rpx;
+  padding: 40rpx 36rpx 32rpx;
+  border-radius: 28rpx;
+  background: rgba(255, 253, 250, 0.94);
+  box-shadow: 0 18rpx 44rpx rgba(47, 36, 31, 0.12);
+  text-align: center;
+  animation: completionCardIn 180ms ease-out;
+}
+
+.completion-card-title {
+  color: var(--text-main);
+  font-size: 42rpx;
+  font-weight: 700;
+}
+
+.completion-card-copy {
+  margin-top: 14rpx;
+  color: rgba(47, 36, 31, 0.76);
+  font-size: 26rpx;
+  line-height: 1.5;
+}
+
+.completion-card-status {
+  margin-top: 22rpx;
+  color: var(--accent-deep);
+  font-size: 24rpx;
+  font-weight: 700;
+}
+
+@keyframes completionCardIn {
+  from {
+    opacity: 0;
+    transform: translateY(18rpx);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .player-action::after {
   border: none;
 }

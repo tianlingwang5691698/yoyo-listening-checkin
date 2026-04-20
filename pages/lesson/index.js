@@ -108,7 +108,8 @@ Page({
     studyModeLabel: '学生设备',
     checkinReady: false,
     transcriptPendingLoad: false,
-    passSteps: []
+    passSteps: [],
+    completionCardVisible: false
   }),
   isStudyWriteAllowed() {
     const currentMember = this.data.currentMember || {};
@@ -216,6 +217,10 @@ Page({
     this.clearTranscriptState();
   },
   onUnload() {
+    if (this.completionCardTimer) {
+      clearTimeout(this.completionCardTimer);
+      this.completionCardTimer = null;
+    }
     if (this.innerAudioContext) {
       this.innerAudioContext.destroy();
       this.innerAudioContext = null;
@@ -417,6 +422,20 @@ Page({
       activeWord: null,
       nextLine: null
     });
+  },
+  showCompletionCard() {
+    if (this.completionCardTimer) {
+      clearTimeout(this.completionCardTimer);
+    }
+    this.setData({
+      completionCardVisible: true
+    });
+    this.completionCardTimer = setTimeout(() => {
+      this.setData({
+        completionCardVisible: false
+      });
+      this.completionCardTimer = null;
+    }, 1800);
   },
   updateTranscriptByTime(timeMs) {
     const lines = this.data.transcriptLines || [];
@@ -628,10 +647,7 @@ Page({
         todayRecord: data.todayRecord || null,
         checkinReady: !!data.checkinReady
       }));
-      wx.showToast({
-        title: '今天打卡完成',
-        icon: 'none'
-      });
+      this.showCompletionCard();
     } catch (error) {
       wx.showToast({
         title: error.message || '打卡失败',
