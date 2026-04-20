@@ -2,7 +2,7 @@ const shared = require('../services/shared.service');
 
 module.exports = {
   prepareRequestContext: shared.prepareRequestContext,
-  getDashboardData: shared.getDashboardData,
+  getDashboardData: (ctx, options) => shared.getDashboardData(ctx, options),
   getUserScope: shared.getUserScope,
   getChildProgressRecords: shared.getChildProgressRecords,
   getCheckins: shared.getCheckins,

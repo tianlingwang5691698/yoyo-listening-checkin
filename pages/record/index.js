@@ -223,7 +223,7 @@ Page({
     const calendarYear = this.data.calendarYear || today.getFullYear();
     const calendarMonth = this.data.calendarMonth || today.getMonth() + 1;
     const [dashboard, heatmapData] = await Promise.all([
-      store.getDashboard(),
+      store.getDashboard({ view: 'record' }),
       this.getMonthHeatmapCached(calendarYear, calendarMonth, { force: true })
     ]);
     const catchupPresentation = buildCatchupPresentation(heatmapData.catchupState);

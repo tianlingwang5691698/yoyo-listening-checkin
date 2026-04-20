@@ -1471,7 +1471,7 @@ async function upsertDailyReport(scope, date) {
   });
 }
 
-async function getDashboardData(ctx) {
+async function getDashboardData(ctx, options = {}) {
   return dashboardEngine.getDashboardData(ctx, {
     getTodayString,
     getUserScope,
@@ -1487,7 +1487,7 @@ async function getDashboardData(ctx) {
     buildCatchupState,
     getPlanStartDate,
     getCatalog
-  });
+  }, options);
 }
 
 async function prepareRequestContext(event) {

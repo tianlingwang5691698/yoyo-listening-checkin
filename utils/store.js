@@ -145,8 +145,8 @@ async function ensureState() {
   });
 }
 
-async function getDashboard() {
-  return callCloud('getDashboard', {}, {
+async function getDashboard(options) {
+  return callCloud('getDashboard', Object.assign({}, options || {}), {
     user: {},
     currentUser: {},
     currentMember: {
@@ -169,9 +169,17 @@ async function getDashboard() {
     planPhaseLabel: '第1轮',
     planTaskCount: 0,
     dailyTasks: [],
+    categorySummaries: [],
     activeTaskCount: 0,
     completedTaskCountToday: 0,
-    allDailyDone: false
+    allDailyDone: false,
+    catchupState: {
+      canCatchup: false,
+      missedDate: '',
+      planDayIndex: 0,
+      usedToday: false,
+      reason: ''
+    }
   });
 }
 

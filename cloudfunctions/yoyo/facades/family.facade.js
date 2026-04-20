@@ -8,6 +8,6 @@ module.exports = {
   upsertFamilyMemberForFamily: shared.upsertFamilyMemberForFamily,
   normalizeStudyRole: shared.normalizeStudyRole,
   clearTodayUnconfirmedListens: shared.clearTodayUnconfirmedListens,
-  getDashboardData: shared.getDashboardData,
+  getDashboardData: (ctx, options) => shared.getDashboardData(ctx, options),
   level: shared.level
 };

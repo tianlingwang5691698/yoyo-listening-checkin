@@ -106,7 +106,7 @@ Page({
     if (tabBar) {
       tabBar.setData({ selected: 0 });
     }
-    const data = await store.getDashboard();
+    const data = await store.getDashboard({ view: 'home' });
     const groupedDailyTasks = buildGroupedDailyTasks(data.dailyTasks);
     const total = data.activeTaskCount || data.planTaskCount || 0;
     const done = data.completedTaskCountToday || 0;
