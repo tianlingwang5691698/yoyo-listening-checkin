@@ -20,6 +20,8 @@ const planEngine = require('../lib/plan-engine');
 const checkinEngine = require('../lib/checkin-engine');
 const reportEngine = require('../lib/report-engine');
 const dashboardEngine = require('../lib/dashboard-engine');
+const levelEngine = require('../lib/level-engine');
+const requestContextEngine = require('../lib/request-context-engine');
 
 cloud.init({
   env: cloud.DYNAMIC_CURRENT_ENV
@@ -1344,71 +1346,27 @@ function buildLevelCategoryOverview(progressRecords, childId, category, date, op
 }
 
 function buildLevelCatalogEntry(category, options = {}) {
-  const tasks = getCatalog(category).slice(0, options.limit || 1);
-  const task = tasks[0] ? decorateTask(tasks[0], buildEmptyProgress(), category) : buildCategorySummary([], category);
-  return {
-    category,
-    categoryLabel: getCategoryLabel(category),
-    totalCount: getCatalog(category).length,
-    completedCount: 0,
-    todayTask: task,
-    isPendingAsset: !tasks.length || task.isPendingAsset,
-    todayTaskCount: tasks.length ? 1 : 0
-  };
-}
-
-async function listDirectAudioTasksForCategory(category) {
-  const roots = STORAGE_ROOT_CANDIDATES[category] || [STORAGE_ROOTS[category]];
-  for (const rootPath of roots.filter(Boolean)) {
-    try {
-      const files = await listDirectoryFiles(rootPath);
-      const audioFiles = files.filter((item) => AUDIO_FILE_PATTERN.test(item.cloudPath)).sort(sortFilesByPath);
-      if (!audioFiles.length) {
-        continue;
-      }
-      return audioFiles.map((file, index) => {
-        const audioBaseName = getBaseName(file.cloudPath);
-        const inferred = inferNewConceptTaskMeta(category, audioBaseName, index);
-        return buildCloudTask(null, {
-          taskId: inferred.taskId,
-          category,
-          title: inferred.title,
-          subtitle: inferred.subtitle,
-          repeatTarget: 3,
-          durationSec: 180,
-          coverTone: inferred.coverTone,
-          transcriptTrackId: inferred.transcriptTrackId,
-          transcriptTrackCandidates: inferred.transcriptTrackCandidates,
-          transcriptStatus: 'ready',
-          transcriptBatch: inferred.transcriptBatch,
-          syncGranularity: inferred.syncGranularity,
-          audioTitle: audioBaseName,
-          audioUrl: buildCloudAssetUrl(file.cloudPath),
-          audioCloudPath: file.cloudPath,
-          audioFileId: file.fileId,
-          audioSource: 'static-cloud-url',
-          textSource: inferred.textSource
-        });
-      });
-    } catch (error) {
-      // try next candidate root
-    }
-  }
-  return [];
+  return levelEngine.buildLevelCatalogEntry(category, options, {
+    getCatalog,
+    decorateTask,
+    buildEmptyProgress,
+    buildCategorySummary,
+    getCategoryLabel
+  });
 }
 
 async function resolveStandaloneCategoryTasks(category, childId, date) {
-  if (!['newconcept2', 'newconcept3', 'newconcept4'].includes(category)) {
-    return [];
-  }
-  const tasks = await listDirectAudioTasksForCategory(category);
-  return tasks.map((task) => Object.assign({}, task, {
-    planDayIndex: 1,
-    planPhase: 'level',
-    planPhaseLabel: 'A2',
-    targetDate: date,
-    planRunType: 'level'
-  }));
+  return levelEngine.resolveStandaloneCategoryTasks(category, childId, date, {
+    storageRootCandidates: STORAGE_ROOT_CANDIDATES,
+    storageRoots: STORAGE_ROOTS,
+    listDirectoryFiles,
+    audioFilePattern: AUDIO_FILE_PATTERN,
+    sortFilesByPath,
+    getBaseName,
+    inferNewConceptTaskMeta,
+    buildCloudTask,
+    buildCloudAssetUrl
+  });
 }
 
 function buildPlanForDay(dayIndex) {
@@ -1535,20 +1493,7 @@ async function getDashboardData(ctx) {
 async function prepareRequestContext(event) {
   const action = String((event && event.action) || '').trim();
   const requestedCategory = String((event && event.payload && event.payload.category) || '').trim();
-  let catalogCategories = ['newconcept1', 'song'];
-  if (action === 'getLevelOverview') {
-    catalogCategories = ['newconcept1', 'newconcept2', 'newconcept3', 'newconcept4', 'song'];
-  } else if (action === 'getTaskDetail' || action === 'markTaskListened') {
-    if (['newconcept1', 'newconcept2', 'newconcept3', 'newconcept4', 'song', 'unlock1'].includes(requestedCategory)) {
-      catalogCategories = [requestedCategory];
-    } else {
-      catalogCategories = [];
-    }
-  } else if (action === 'getTaskTranscript') {
-    catalogCategories = [];
-  } else if (action === 'getFamilyPage' || action === 'refreshInviteCode' || action === 'joinFamily' || action === 'joinFamilyByChildCode' || action === 'updateChildProfile' || action === 'setStudyRole' || action === 'updateSubscription' || action === 'bootstrap') {
-    catalogCategories = [];
-  }
+  const catalogCategories = requestContextEngine.resolveCatalogCategories(action, requestedCategory);
   await refreshRuntimeCatalogs(false, catalogCategories);
   await ensureRequiredCollectionsReady();
   const { OPENID } = getWXContext();
