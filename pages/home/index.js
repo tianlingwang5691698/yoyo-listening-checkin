@@ -80,17 +80,10 @@ Page({
   data: page.createCloudPageData({
     child: null,
     currentMember: {},
-    stats: {},
     planDayIndex: 1,
     planPhaseLabel: '第1轮',
-    phaseCopy: '轻量日计划',
-    planTaskCount: 0,
-    dailyTasks: [],
     groupedDailyTasks: [],
     hasGroupedTasks: false,
-    activeTaskCount: 0,
-    completedTaskCountToday: 0,
-    allDailyDone: false,
     studyRole: 'parent',
     identityConfirmVisible: true,
     modeChangedNoticeVisible: false
@@ -109,14 +102,15 @@ Page({
     }
     const data = await store.getDashboard({ view: 'home' });
     const groupedDailyTasks = buildGroupedDailyTasks(data.dailyTasks);
-    const total = data.activeTaskCount || data.planTaskCount || 0;
-    const done = data.completedTaskCountToday || 0;
     const nextStudyRole = data.currentMember && data.currentMember.studyRole === 'student' ? 'student' : 'parent';
     const previousStudyRole = wx.getStorageSync('lastStudyRole') || '';
     const modeChangedNoticeVisible = previousStudyRole === 'student' && nextStudyRole === 'parent';
     wx.setStorageSync('lastStudyRole', nextStudyRole);
-    this.setData(page.buildCloudPageData(this.data, Object.assign({}, data, {
-      phaseCopy: buildPhaseCopy(data.planPhaseLabel),
+    this.setData(page.buildCloudPageData(this.data, Object.assign({}, {
+      child: data.child,
+      currentMember: data.currentMember,
+      planDayIndex: data.planDayIndex,
+      planPhaseLabel: data.planPhaseLabel,
       groupedDailyTasks,
       hasGroupedTasks: groupedDailyTasks.length > 0,
       identityConfirmVisible: !page.isIdentityConfirmed(),
@@ -133,9 +127,9 @@ Page({
       if (nextRole === 'student') {
         wx.setStorageSync('hasUsedStudentMode', 'yes');
       }
-      this.setData(page.buildCloudPageData(this.data, Object.assign({}, data, {
-        groupedDailyTasks: this.data.groupedDailyTasks,
-        hasGroupedTasks: this.data.hasGroupedTasks,
+      this.setData(page.buildCloudPageData(this.data, Object.assign({}, {
+        child: data.child,
+        currentMember: data.currentMember,
         identityConfirmVisible: false,
         modeChangedNoticeVisible: false
       }, this.buildStudyModePresentation(data.currentMember))));
