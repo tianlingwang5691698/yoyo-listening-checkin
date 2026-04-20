@@ -12,12 +12,12 @@ async function getHeatmap(event) {
   records.forEach((item) => {
     counts[item.date] = (counts[item.date] || 0) + 1;
   });
-  const todayPlan = shared.buildPlanForDay(shared.getPlanDayIndex(records));
+  const todayPlan = shared.buildPlanForDay(shared.getPlanDayIndexForDate(records, today));
   const todayTasks = shared.decoratePlanTasks(progressRecords, ctx.child.childId, today, todayPlan, {
     planRunType: 'normal'
   });
   const todayDone = todayTasks.length > 0 && todayTasks.every((item) => item.completedToday);
-  const catchupState = shared.buildCatchupState(records, today, shared.getPlanStartDate(ctx, today), todayDone);
+  const catchupState = shared.buildCatchupState(records, today, shared.getPlanStartDate(ctx, today, records), todayDone);
   const catchupPlan = catchupState.canCatchup ? shared.buildPlanForDay(catchupState.planDayIndex) : null;
   const catchupTasks = catchupPlan
     ? shared.decoratePlanTasks(progressRecords, ctx.child.childId, catchupState.missedDate, catchupPlan, {
@@ -60,12 +60,12 @@ async function getMonthHeatmap(event) {
       counts[item.date] = (counts[item.date] || 0) + 1;
     }
   });
-  const todayPlan = shared.buildPlanForDay(shared.getPlanDayIndex(records));
+  const todayPlan = shared.buildPlanForDay(shared.getPlanDayIndexForDate(records, today));
   const todayTasks = shared.decoratePlanTasks(progressRecords, ctx.child.childId, today, todayPlan, {
     planRunType: 'normal'
   });
   const todayDone = todayTasks.length > 0 && todayTasks.every((item) => item.completedToday);
-  const catchupState = shared.buildCatchupState(records, today, shared.getPlanStartDate(ctx, today), todayDone);
+  const catchupState = shared.buildCatchupState(records, today, shared.getPlanStartDate(ctx, today, records), todayDone);
   const daysInMonth = new Date(year, month, 0).getDate();
   const heatmap = [];
   for (let day = 1; day <= daysInMonth; day += 1) {

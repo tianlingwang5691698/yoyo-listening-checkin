@@ -1,12 +1,36 @@
+const CHINA_UTC_OFFSET_MS = 8 * 60 * 60 * 1000;
+
+function pad(value) {
+  return String(value).padStart(2, '0');
+}
+
+function parseDate(date) {
+  const [year, month, day] = String(date || '').slice(0, 10).split('-').map(Number);
+  return new Date(Date.UTC(year || 1970, (month || 1) - 1, day || 1));
+}
+
+function formatChinaDateFromDate(value) {
+  const date = value instanceof Date ? value : new Date(value);
+  if (Number.isNaN(date.getTime())) {
+    return '';
+  }
+  const chinaDate = new Date(date.getTime() + CHINA_UTC_OFFSET_MS);
+  return `${chinaDate.getUTCFullYear()}-${pad(chinaDate.getUTCMonth() + 1)}-${pad(chinaDate.getUTCDate())}`;
+}
+
+function getTodayString() {
+  return formatChinaDateFromDate(new Date());
+}
+
 function addDays(date, delta) {
-  const next = new Date(`${date}T00:00:00`);
-  next.setDate(next.getDate() + delta);
-  return next.toISOString().slice(0, 10);
+  const next = parseDate(date);
+  next.setUTCDate(next.getUTCDate() + delta);
+  return `${next.getUTCFullYear()}-${pad(next.getUTCMonth() + 1)}-${pad(next.getUTCDate())}`;
 }
 
 function diffDays(a, b) {
-  const left = new Date(`${a}T00:00:00`).getTime();
-  const right = new Date(`${b}T00:00:00`).getTime();
+  const left = parseDate(a).getTime();
+  const right = parseDate(b).getTime();
   return Math.round((left - right) / (24 * 60 * 60 * 1000));
 }
 
@@ -43,6 +67,8 @@ function computeStreak(records, today) {
 module.exports = {
   addDays,
   diffDays,
+  formatChinaDateFromDate,
+  getTodayString,
   getUniqueDates,
   computeStreak
 };

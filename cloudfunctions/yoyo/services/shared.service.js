@@ -1289,6 +1289,10 @@ function addDays(date, delta) {
   return dateLib.addDays(date, delta);
 }
 
+function getTodayString() {
+  return dateLib.getTodayString();
+}
+
 function diffDays(a, b) {
   return dateLib.diffDays(a, b);
 }
@@ -1343,8 +1347,8 @@ function hasCatchupToday(checkins, today) {
   return planLib.hasCatchupToday(checkins, today);
 }
 
-function getPlanStartDate(ctx, today) {
-  return planLib.getPlanStartDate(ctx, today);
+function getPlanStartDate(ctx, today, checkins) {
+  return planLib.getPlanStartDate(ctx, today, checkins);
 }
 
 function buildCatchupState(checkins, today, planStartDate, todayDone) {
@@ -1580,7 +1584,7 @@ async function maybeCreateCheckin(scope, progressRecords, date, options = {}) {
 }
 
 async function clearTodayUnconfirmedListens(ctx) {
-  const today = new Date().toISOString().slice(0, 10);
+  const today = getTodayString();
   const scope = getUserScope(ctx);
   const todayRecord = (await getCheckins(scope)).find((item) => item.date === today);
   if (todayRecord) {
@@ -1671,11 +1675,11 @@ async function upsertDailyReport(scope, date) {
 }
 
 async function getDashboardData(ctx) {
-  const today = new Date().toISOString().slice(0, 10);
+  const today = getTodayString();
   const scope = getUserScope(ctx);
   const progressRecords = await getChildProgressRecords(scope);
   const checkins = await getCheckins(scope);
-  const planDayIndex = getPlanDayIndex(checkins);
+  const planDayIndex = getPlanDayIndexForDate(checkins, today);
   const todayPlan = buildPlanForDay(planDayIndex);
   const categorySummaries = getPlanCategoryOrder(todayPlan.dayIndex).map((category) => {
     const plannedTasks = decoratePlannedTasks(progressRecords, ctx.child.childId, category, today, todayPlan.byCategory[category] || [], {
@@ -1692,7 +1696,7 @@ async function getDashboardData(ctx) {
   const activeTaskCount = dailyTasks.filter((item) => !item.isPendingAsset).length;
   const completedTaskCountToday = dailyTasks.filter((item) => item.completedToday).length;
   const todayDone = activeTaskCount > 0 && activeTaskCount === completedTaskCountToday;
-  const catchupState = buildCatchupState(checkins, today, getPlanStartDate(ctx, today), todayDone);
+  const catchupState = buildCatchupState(checkins, today, getPlanStartDate(ctx, today, checkins), todayDone);
   return {
     user: ctx.user,
     currentUser: ctx.user,
@@ -1753,7 +1757,7 @@ async function prepareRequestContext(event) {
   await ensureRequiredCollectionsReady();
   const { OPENID } = getWXContext();
   const ctx = await ensureBootstrap(OPENID);
-  const today = new Date().toISOString().slice(0, 10);
+  const today = getTodayString();
   return {
     action,
     requestedCategory,
@@ -1770,6 +1774,7 @@ module.exports = {
   getChildProgressRecords,
   getCheckins,
   getPlanDayIndex,
+  getPlanDayIndexForDate,
   buildPlanForDay,
   decoratePlannedTasks,
   decoratePlanTasks,
@@ -1779,6 +1784,7 @@ module.exports = {
   getCatalog,
   getCategoryLabel,
   addDays,
+  getTodayString,
   buildLevelCatalogEntry,
   buildEmptyProgress,
   decorateTask,

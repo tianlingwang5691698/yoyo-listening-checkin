@@ -1,3 +1,5 @@
+const { getTodayString } = require('./date');
+
 function buildEmptyProgress() {
   return {
     playCount: 0,
@@ -75,7 +77,7 @@ function buildStats(progressRecords, checkins, childId, deps) {
     const task = getCatalog(item.category).find((entry) => entry.taskId === item.taskId);
     return task ? sum + Math.round((task.durationSec * task.repeatTarget) / 60) : sum;
   }, 0);
-  const today = new Date().toISOString().slice(0, 10);
+  const today = getTodayString();
   const latestCheckin = (checkins || []).slice().sort((a, b) => {
     const left = String(a.completedAt || a.date || '');
     const right = String(b.completedAt || b.date || '');

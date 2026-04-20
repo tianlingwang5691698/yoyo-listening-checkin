@@ -129,12 +129,12 @@ async function markTaskListened(event, context) {
     );
   }
   if (planRunType === 'catchup') {
-    const normalPlan = shared.buildPlanForDay(shared.getPlanDayIndex(checkins));
+    const normalPlan = shared.buildPlanForDay(shared.getPlanDayIndexForDate(checkins, today));
     const normalTasks = shared.decoratePlanTasks(progressRecords, ctx.child.childId, today, normalPlan, {
       planRunType: 'normal'
     });
     const normalDone = normalTasks.length > 0 && normalTasks.every((item) => item.completedToday);
-    const catchupState = shared.buildCatchupState(checkins, today, shared.getPlanStartDate(ctx, today), normalDone);
+    const catchupState = shared.buildCatchupState(checkins, today, shared.getPlanStartDate(ctx, today, checkins), normalDone);
     const requestedPlanDayIndex = Number(payload.planDayIndex || 0);
     if (!catchupState.canCatchup || targetDate !== catchupState.missedDate || (requestedPlanDayIndex && requestedPlanDayIndex !== catchupState.planDayIndex)) {
       throw new Error('请先完成当前计划后，再追赶一批任务');
@@ -142,8 +142,8 @@ async function markTaskListened(event, context) {
   }
   const todayPlan = shared.buildPlanForDay(
     planRunType === 'catchup'
-      ? (Number(payload.planDayIndex || 0) || shared.getPlanDayIndex(checkins))
-      : shared.getPlanDayIndex(checkins)
+      ? (Number(payload.planDayIndex || 0) || shared.getPlanDayIndexForDate(checkins, targetDate))
+      : shared.getPlanDayIndexForDate(checkins, today)
   );
   const categoryTasks = ['newconcept2', 'newconcept3', 'newconcept4'].includes(category)
     ? shared.decoratePlannedTasks(progressRecords, ctx.child.childId, category, targetDate, await shared.resolveStandaloneCategoryTasks(category, ctx.child.childId, targetDate), {
@@ -208,7 +208,7 @@ async function completeTodayCheckin(event, context) {
   const scope = shared.getUserScope(ctx);
   const progressRecords = await shared.getChildProgressRecords(scope);
   const checkins = await shared.getCheckins(scope);
-  const planDayIndex = shared.getPlanDayIndex(checkins);
+  const planDayIndex = shared.getPlanDayIndexForDate(checkins, today);
   const checkin = await shared.maybeCreateCheckin(scope, progressRecords, today, {
     planRunType: 'normal',
     planDayIndex

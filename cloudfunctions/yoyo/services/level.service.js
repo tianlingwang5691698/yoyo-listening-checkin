@@ -1,14 +1,14 @@
 const shared = require('./shared.service');
 
 async function getLevelOverview(event) {
-  const { ctx } = await shared.prepareRequestContext(Object.assign({}, event, {
+  const { ctx, today } = await shared.prepareRequestContext(Object.assign({}, event, {
     action: 'getLevelOverview'
   }));
   const dashboard = await shared.getDashboardData(ctx);
   const progressRecords = await shared.getChildProgressRecords(shared.getUserScope(ctx));
   const standaloneCategoryIds = ['newconcept2', 'newconcept3', 'newconcept4'];
   const standaloneOverviews = Object.fromEntries(await Promise.all(standaloneCategoryIds.map(async (categoryId) => {
-    const directTasks = await shared.resolveStandaloneCategoryTasks(categoryId, ctx.child.childId, new Date().toISOString().slice(0, 10));
+    const directTasks = await shared.resolveStandaloneCategoryTasks(categoryId, ctx.child.childId, today);
     const overview = directTasks.length
       ? [{
         category: categoryId,

@@ -1,4 +1,4 @@
-const { addDays } = require('./date');
+const { addDays, formatChinaDateFromDate } = require('./date');
 
 const PLAN_SLOT_COUNT = 24;
 const PLAN_PHASES = [
@@ -30,7 +30,7 @@ function getPlanDayIndexForDate(checkins, date) {
 }
 
 function getDatePart(value) {
-  return String(value || '').slice(0, 10);
+  return formatChinaDateFromDate(value) || String(value || '').slice(0, 10);
 }
 
 function getCompletedDateSet(checkins) {
@@ -38,8 +38,11 @@ function getCompletedDateSet(checkins) {
 }
 
 function getEarliestMissedDate(checkins, today, planStartDate) {
+  if (!planStartDate) {
+    return '';
+  }
   const completedDates = getCompletedDateSet(checkins);
-  let cursor = planStartDate || today;
+  let cursor = planStartDate;
   while (cursor < today) {
     if (!completedDates.has(cursor)) {
       return cursor;
@@ -53,15 +56,19 @@ function hasCatchupToday(checkins, today) {
   return (Array.isArray(checkins) ? checkins : []).some((item) => item.planRunType === 'catchup' && getDatePart(item.completedAt) === today);
 }
 
-function getPlanStartDate(ctx, today) {
-  return getDatePart((ctx && ctx.family && ctx.family.createdAt) || today) || today;
+function getPlanStartDate(ctx, today, checkins) {
+  const records = (Array.isArray(checkins) ? checkins : [])
+    .map((item) => String(item.date || '').slice(0, 10))
+    .filter(Boolean)
+    .sort();
+  return records[0] || '';
 }
 
 function buildCatchupState(checkins, today, planStartDate, todayDone) {
   const missedDate = getEarliestMissedDate(checkins, today, planStartDate);
   const usedToday = hasCatchupToday(checkins, today);
   const canCatchup = !!(todayDone && missedDate && !usedToday);
-  const planDayIndex = canCatchup ? getPlanDayIndex(checkins) : 0;
+  const planDayIndex = canCatchup ? getPlanDayIndexForDate(checkins, missedDate) : 0;
   return {
     canCatchup,
     missedDate,
