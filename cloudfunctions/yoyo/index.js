@@ -1,5 +1,6 @@
 const cloud = require('wx-server-sdk');
 const CloudBaseManager = require('@cloudbase/manager-node');
+const https = require('https');
 const { peppaTranscriptBuildStatus } = require('./transcripts/peppa_build_status');
 
 cloud.init({
@@ -8,19 +9,26 @@ cloud.init({
 
 const db = cloud.database();
 const _ = db.command;
-const CLOUD_ENV_ID = process.env.TCB_ENV || process.env.SCF_NAMESPACE || cloud.DYNAMIC_CURRENT_ENV;
+const CLOUD_ENV_ID_RAW = process.env.TCB_ENV || process.env.SCF_NAMESPACE || cloud.DYNAMIC_CURRENT_ENV;
+const CLOUD_ENV_ID = typeof CLOUD_ENV_ID_RAW === 'string' ? CLOUD_ENV_ID_RAW : '';
 const CLOUD_ASSET_BASE_URL = 'https://796f-youshengenglish-6glk12rd6c6e719b-1419984942.tcb.qcloud.la';
 const CLOUD_BUCKET = '796f-youshengenglish-6glk12rd6c6e719b-1419984942';
-const UNLOCK1_AUDIO_ROOT = 'A1/Unlock1/Unlock1 听口音频 Class Audio';
+const NEW_CONCEPT1_AUDIO_ROOT = 'A1/NewConcept1-US';
+const NEW_CONCEPT2_AUDIO_ROOT = 'A2/NewConcept2-US';
+const UNLOCK1_AUDIO_ROOT = 'A1/Unlock1/Unlock1 听口音频Class Audio';
 const UNLOCK1_SCRIPT_PATH = `${UNLOCK1_AUDIO_ROOT}/Unlock 2e Listening and Speaking 1 Scripts.pdf`;
 const UNLOCK1_TRAINING_POOL_COLLECTION = 'unlock1AudioTrainingPool';
 const UNLOCK1_MIN_DURATION_SEC = 60;
 const STORAGE_ROOTS = {
+  newconcept1: NEW_CONCEPT1_AUDIO_ROOT,
+  newconcept2: NEW_CONCEPT2_AUDIO_ROOT,
   peppa: 'A1/Peppa',
   unlock1: UNLOCK1_AUDIO_ROOT,
   song: 'A1/Super simple songs'
 };
 const STORAGE_ROOT_CANDIDATES = {
+  newconcept1: [NEW_CONCEPT1_AUDIO_ROOT, 'A1/NewConcept1', 'A1/New Concept 1', 'A1/new-concept-1-us'],
+  newconcept2: [NEW_CONCEPT2_AUDIO_ROOT, 'A2/NewConcept2', 'A2/New Concept 2', 'A2/new-concept-2-us', 'A2/Newconcept2'],
   peppa: [STORAGE_ROOTS.peppa],
   unlock1: [UNLOCK1_AUDIO_ROOT, 'A1/Unlock1'],
   song: [STORAGE_ROOTS.song, 'A1/Super simple song']
@@ -39,16 +47,18 @@ const TEMP_URL_TTL = 24 * 60 * 60;
 const AUDIO_FILE_PATTERN = /\.(mp3|m4a|aac|wav)$/i;
 const TRANSCRIPT_BUNDLE_TTL_MS = 5 * 60 * 1000;
 const TRANSCRIPT_BUNDLE_PATHS = {
-  peppa: '_transcripts/A1/peppa/bundle.json',
-  unlock1: '_transcripts/A1/unlock1/bundle.json',
-  song: '_transcripts/A1/songs/bundle.json'
+  newconcept1: ['_transcripts/A1/new-concept-1-us-line/bundle.json', '_transcripts/A1/new-concept-1-us/bundle.json', '_transcripts/A1/newconcept1-us/bundle.json'],
+  newconcept2: ['_transcripts/A2/new-concept-2-us-line/bundle.json', '_transcripts/A2/new-concept-2-us/bundle.json', '_transcripts/A2/new-concept-2/bundle.json', '_transcripts/A2/newconcept2/bundle.json'],
+  peppa: ['_transcripts/A1/peppa/bundle.json'],
+  unlock1: ['_transcripts/A1/unlock1/bundle.json'],
+  song: ['_transcripts/A1/songs/bundle.json']
 };
 let runtimeCatalogs = null;
 let runtimeCatalogExpiresAt = 0;
 let runtimeCatalogDebug = null;
-let runtimeTranscriptTrackMap = null;
-let runtimeTranscriptTrackMapExpiresAt = 0;
-let runtimeTranscriptTrackDebug = null;
+let runtimeTranscriptTrackMaps = {};
+let runtimeTranscriptTrackMapExpiresAt = {};
+let runtimeTranscriptTrackDebug = {};
 let storageManager = null;
 let storageDebugShapes = {};
 let unlock1TrainingPoolBootstrapState = {
@@ -243,6 +253,69 @@ const songPlaceholder = {
   textSource: null
 };
 
+function slugifyTrackIdPart(value) {
+  return String(value || '')
+    .trim()
+    .toLowerCase()
+    .replace(/\.[^.]+$/i, '')
+    .replace(/['’]/g, '')
+    .replace(/&/g, ' and ')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
+
+function getTrackSlugVariants(value) {
+  const text = String(value || '');
+  return Array.from(new Set([
+    slugifyTrackIdPart(text),
+    slugifyTrackIdPart(text.replace(/&/g, ' ')),
+    slugifyTrackIdPart(text.replace(/&/g, '-')),
+    slugifyTrackIdPart(text.replace(/&/g, ' and '))
+  ].filter(Boolean)));
+}
+
+function inferNewConceptTaskMeta(category, audioBaseName, index) {
+  if (category !== 'newconcept1' && category !== 'newconcept2') {
+    return null;
+  }
+  const levelNumber = category === 'newconcept1' ? 1 : 2;
+  const levelId = category === 'newconcept1' ? 'A1' : 'A2';
+  const seriesSlug = category === 'newconcept1' ? 'new-concept-1-us' : 'new-concept-2';
+  const shortSeriesSlug = category === 'newconcept1' ? 'nce1-us' : 'nce2';
+  const audioSlugs = getTrackSlugVariants(audioBaseName);
+  const audioSlug = audioSlugs[0] || '';
+  const ordinal = String(index + 1).padStart(3, '0');
+  const pairedOrdinalMatch = String(audioBaseName || '').match(/^(\d{3})&/);
+  const pairedOrdinal = pairedOrdinalMatch ? pairedOrdinalMatch[1] : ordinal;
+  const candidates = Array.from(new Set(audioSlugs.flatMap((slug) => [
+    `track-${seriesSlug}-${slug}`,
+    `${seriesSlug}-${slug}`,
+    `track-${shortSeriesSlug}-${pairedOrdinal}`,
+    `${shortSeriesSlug}-${pairedOrdinal}`,
+    `track-${slug}`,
+    slug
+  ]).concat([
+    `track-${seriesSlug}-${ordinal}`,
+    `${seriesSlug}-${ordinal}`,
+    audioBaseName
+  ]).filter(Boolean)));
+  return {
+    taskId: `${category}-${index + 1}`,
+    title: audioBaseName,
+    subtitle: `New Concept English ${levelNumber}`,
+    transcriptTrackId: candidates[0] || null,
+    transcriptTrackCandidates: candidates,
+    transcriptBatch: Math.floor(index / 24) + 1,
+    syncGranularity: 'line',
+    coverTone: category === 'newconcept1' ? 'peach' : 'berry',
+    textSource: {
+      sourceType: 'transcript-bundle',
+      title: `${levelId} New Concept English ${levelNumber}`,
+      filePath: ''
+    }
+  };
+}
+
 function normalizeTranscriptWord(word, lineId, index) {
   const startMs = Number(word && word.startMs);
   const endMs = Number(word && word.endMs);
@@ -297,68 +370,148 @@ function mergeTranscriptTrackMaps(...maps) {
   return Object.assign({}, ...maps.filter(Boolean));
 }
 
+function downloadJsonFromCdn(cloudPath) {
+  return new Promise((resolve, reject) => {
+    const url = buildCloudAssetUrl(cloudPath);
+    if (!url) {
+      reject(new Error('cdn-url-unavailable'));
+      return;
+    }
+    https.get(url, (response) => {
+      if (response.statusCode !== 200) {
+        reject(new Error(`cdn-http-${response.statusCode || 0}`));
+        response.resume();
+        return;
+      }
+      let body = '';
+      response.setEncoding('utf8');
+      response.on('data', (chunk) => {
+        body += chunk;
+      });
+      response.on('end', () => {
+        try {
+          resolve(JSON.parse(body));
+        } catch (error) {
+          reject(error);
+        }
+      });
+    }).on('error', reject);
+  });
+}
+
 async function downloadCloudJson(cloudPath) {
-  const manager = getStorageManager();
-  if (!manager) {
-    throw new Error('storage-manager-unavailable');
+  try {
+    return await downloadJsonFromCdn(cloudPath);
+  } catch (error) {
+    // Fall back to storage APIs when CDN access is unavailable or stale.
   }
   const tempPath = `/tmp/${Date.now()}-${Math.random().toString(36).slice(2, 8)}-${normalizeCloudPath(cloudPath).split('/').pop()}`;
-  const localPath = await manager.storage.downloadFile({
-    cloudPath,
-    localPath: tempPath
-  });
+  const fileID = buildCloudFileId(cloudPath);
+  let localPath = '';
+  if (fileID) {
+    const result = await cloud.downloadFile({
+      fileID
+    });
+    localPath = result && result.tempFilePath ? result.tempFilePath : '';
+  }
+  if (!localPath) {
+    const manager = getStorageManager();
+    if (!manager) {
+      throw new Error('storage-manager-unavailable');
+    }
+    localPath = await manager.storage.downloadFile({
+      cloudPath,
+      localPath: tempPath
+    });
+  }
   const text = require('fs').readFileSync(localPath, 'utf8');
   return JSON.parse(text);
 }
 
-async function getTranscriptTrackMap() {
-  const now = Date.now();
-  if (runtimeTranscriptTrackMap && runtimeTranscriptTrackMapExpiresAt > now) {
-    return runtimeTranscriptTrackMap;
+async function getTranscriptTrackMap(category) {
+  const key = String(category || '').trim();
+  if (!key) {
+    return {};
   }
-
-  const cloudMaps = {};
-  const errors = {};
-  const categories = Object.keys(TRANSCRIPT_BUNDLE_PATHS);
-
-  for (const category of categories) {
-    const cloudPath = TRANSCRIPT_BUNDLE_PATHS[category];
+  const now = Date.now();
+  if (runtimeTranscriptTrackMaps[key] && runtimeTranscriptTrackMapExpiresAt[key] > now) {
+    return runtimeTranscriptTrackMaps[key];
+  }
+  const cloudPaths = Array.isArray(TRANSCRIPT_BUNDLE_PATHS[key])
+    ? TRANSCRIPT_BUNDLE_PATHS[key]
+    : [TRANSCRIPT_BUNDLE_PATHS[key]];
+  let trackMap = {};
+  let errorText = '';
+  for (const cloudPath of (cloudPaths || []).filter(Boolean)) {
     try {
-      cloudMaps[category] = await downloadCloudJson(cloudPath);
+      trackMap = await downloadCloudJson(cloudPath);
+      errorText = '';
+      break;
     } catch (error) {
-      errors[category] = String((error && (error.errMsg || error.message)) || error || 'unknown-error');
-      cloudMaps[category] = {};
+      errorText = String((error && (error.errMsg || error.message)) || error || 'unknown-error');
     }
   }
-
-  runtimeTranscriptTrackMap = mergeTranscriptTrackMaps(
-    cloudMaps.peppa,
-    cloudMaps.unlock1,
-    cloudMaps.song
-  );
-  runtimeTranscriptTrackMapExpiresAt = now + TRANSCRIPT_BUNDLE_TTL_MS;
-  runtimeTranscriptTrackDebug = {
+  runtimeTranscriptTrackMaps[key] = trackMap || {};
+  runtimeTranscriptTrackMapExpiresAt[key] = now + TRANSCRIPT_BUNDLE_TTL_MS;
+  runtimeTranscriptTrackDebug[key] = {
     loadedAt: now,
-    errors,
-    cloudCounts: {
-      peppa: Object.keys(cloudMaps.peppa || {}).length,
-      unlock1: Object.keys(cloudMaps.unlock1 || {}).length,
-      song: Object.keys(cloudMaps.song || {}).length
-    },
-    fallbackCount: 0
+    error: errorText,
+    cloudCount: Object.keys(trackMap || {}).length
   };
-  return runtimeTranscriptTrackMap;
+  return runtimeTranscriptTrackMaps[key];
+}
+
+function findTranscriptTrack(transcriptTrackMap, task) {
+  const candidates = [
+    task && task.transcriptTrackId,
+    task && task.contentId,
+    task && task.title,
+    task && task.audioTitle,
+    task && task.displayTitle,
+    task && getBaseName(task.audioCloudPath),
+    task && getBaseName(task.audioUrl)
+  ].concat((task && task.transcriptTrackCandidates) || []).filter(Boolean);
+  for (const trackId of candidates) {
+    if (transcriptTrackMap[trackId]) {
+      return transcriptTrackMap[trackId];
+    }
+  }
+  const normalizedCandidates = new Set(candidates.flatMap(getTrackSlugVariants));
+  const matchedKey = Object.keys(transcriptTrackMap || {}).find((trackId) => {
+    const track = transcriptTrackMap[trackId] || {};
+    const trackCandidates = [
+      trackId,
+      track.trackId,
+      track.contentId,
+      track.title,
+      track.audioTitle,
+      track.fileName,
+      track.audioFileName
+    ].filter(Boolean).flatMap(getTrackSlugVariants);
+    return trackCandidates.some((item) => normalizedCandidates.has(item));
+  });
+  return matchedKey ? transcriptTrackMap[matchedKey] : null;
+}
+
+function shouldLazyTranscriptCategory(category) {
+  return category === 'newconcept1' || category === 'newconcept2';
 }
 
 async function getTranscriptBundle(task) {
-  const transcriptTrackMap = await getTranscriptTrackMap();
-  if (!task || !task.transcriptTrackId || !transcriptTrackMap[task.transcriptTrackId]) {
+  if (shouldLazyTranscriptCategory(task && task.category) && (!task || !task.transcriptTrackId) && !(task && task.transcriptTrackCandidates && task.transcriptTrackCandidates.length)) {
     return {
       transcriptTrack: null,
       transcriptLines: []
     };
   }
-  const transcriptTrack = transcriptTrackMap[task.transcriptTrackId];
+  const transcriptTrackMap = await getTranscriptTrackMap(task && task.category);
+  const transcriptTrack = findTranscriptTrack(transcriptTrackMap, task);
+  if (!task || !transcriptTrack) {
+    return {
+      transcriptTrack: null,
+      transcriptLines: []
+    };
+  }
   const normalizedTrack = normalizeTranscriptTrack(transcriptTrack, {
     syncGranularity: task && task.category === 'song' ? 'line' : undefined
   });
@@ -370,6 +523,8 @@ async function getTranscriptBundle(task) {
 
 function getStaticCatalogMap() {
   return {
+    newconcept1: [],
+    newconcept2: [],
     peppa: peppaTasks,
     unlock1: unlockTasks,
     song: songTasks
@@ -727,38 +882,42 @@ async function buildCloudCatalogFromRoot(category, rootPath, staticItems, option
     const audioBaseName = getBaseName(file.cloudPath);
     const folderPdf = findNearestParentPdf(pdfByFolder, file.cloudPath);
     const inferredSongTask = category === 'song' ? inferSongTaskMeta(audioBaseName) : null;
+    const inferredNewConceptTask = inferNewConceptTaskMeta(category, audioBaseName, index);
     const title = matchedStatic
       ? matchedStatic.title
-      : ((trainingRecord && trainingRecord.title) || (inferredSongTask && inferredSongTask.title) || audioBaseName);
+      : ((trainingRecord && trainingRecord.title) || (inferredSongTask && inferredSongTask.title) || (inferredNewConceptTask && inferredNewConceptTask.title) || audioBaseName);
     const subtitle = matchedStatic
       ? matchedStatic.subtitle
-      : ((inferredSongTask && inferredSongTask.subtitle) || getParentFolder(file.cloudPath).split('/').pop() || rootPath.split('/').pop());
+      : ((inferredSongTask && inferredSongTask.subtitle) || (inferredNewConceptTask && inferredNewConceptTask.subtitle) || getParentFolder(file.cloudPath).split('/').pop() || rootPath.split('/').pop());
     const transcriptTrackId = matchedStatic
       ? matchedStatic.transcriptTrackId
-      : (inferredSongTask && inferredSongTask.transcriptTrackId);
+      : ((inferredSongTask && inferredSongTask.transcriptTrackId) || (inferredNewConceptTask && inferredNewConceptTask.transcriptTrackId));
     const syncGranularity = matchedStatic
       ? String(matchedStatic.syncGranularity || 'word')
-      : ((inferredSongTask && inferredSongTask.syncGranularity) || 'word');
+      : ((inferredSongTask && inferredSongTask.syncGranularity) || (inferredNewConceptTask && inferredNewConceptTask.syncGranularity) || 'word');
     return buildCloudTask(matchedStatic, {
       taskId: matchedStatic
         ? matchedStatic.taskId
-        : ((inferredSongTask && inferredSongTask.taskId) || `${category}-${index + 1}`),
+        : ((inferredSongTask && inferredSongTask.taskId) || (inferredNewConceptTask && inferredNewConceptTask.taskId) || `${category}-${index + 1}`),
       category,
       title,
       subtitle,
       repeatTarget: matchedStatic ? matchedStatic.repeatTarget : 3,
       durationSec: trainingRecord ? trainingRecord.durationSec : (matchedStatic ? matchedStatic.durationSec : 180),
-      coverTone: matchedStatic ? matchedStatic.coverTone : (category === 'song' ? 'mint' : 'sunrise'),
+      coverTone: matchedStatic ? matchedStatic.coverTone : ((inferredNewConceptTask && inferredNewConceptTask.coverTone) || (category === 'song' ? 'mint' : 'sunrise')),
       transcriptTrackId,
       transcriptStatus: matchedStatic ? matchedStatic.transcriptStatus : (transcriptTrackId ? 'ready' : (folderPdf ? 'pending' : 'none')),
-      transcriptBatch: matchedStatic ? matchedStatic.transcriptBatch : (inferredSongTask ? inferredSongTask.transcriptBatch : null),
+      transcriptBatch: matchedStatic ? matchedStatic.transcriptBatch : ((inferredSongTask && inferredSongTask.transcriptBatch) || (inferredNewConceptTask && inferredNewConceptTask.transcriptBatch) || null),
+      transcriptTrackCandidates: inferredNewConceptTask ? inferredNewConceptTask.transcriptTrackCandidates : undefined,
       syncGranularity,
       audioTitle: (trainingRecord && trainingRecord.title) || audioBaseName,
       audioUrl: buildCloudAssetUrl(file.cloudPath),
       audioCloudPath: file.cloudPath,
       audioFileId: file.fileId,
       audioSource: 'static-cloud-url',
-      textSource: category === 'song'
+      textSource: inferredNewConceptTask
+        ? inferredNewConceptTask.textSource
+        : category === 'song'
         ? {
           sourceType: 'transcript-bundle',
           title: 'Super Simple Songs Lyrics',
@@ -866,7 +1025,7 @@ async function buildCloudCatalogForCategory(category, staticItems) {
 }
 
 function summarizeRuntimeCatalogDebug(categoryDebugMap) {
-  const categories = Object.values(categoryDebugMap || {});
+  const categories = Object.values(categoryDebugMap || {}).filter(Boolean);
   const unlock1 = categoryDebugMap.unlock1 || {};
   const song = categoryDebugMap.song || {};
   const modes = new Set(categories.map((item) => item.scanMode).filter(Boolean));
@@ -905,30 +1064,45 @@ function summarizeRuntimeCatalogDebug(categoryDebugMap) {
   };
 }
 
-async function refreshRuntimeCatalogs(force) {
+function mergeCatalogDebug(...debugEntries) {
+  const merged = {};
+  debugEntries.filter(Boolean).forEach((entry) => {
+    Object.keys(entry).forEach((key) => {
+      merged[key] = entry[key];
+    });
+  });
+  return merged;
+}
+
+async function refreshRuntimeCatalogs(force, categories) {
   const now = Date.now();
-  if (!force && runtimeCatalogs && runtimeCatalogExpiresAt > now) {
+  const targetCategories = Array.from(new Set((categories && categories.length ? categories : ['newconcept1', 'peppa', 'unlock1', 'song']).filter(Boolean)));
+  const hasAllRequested = runtimeCatalogs && targetCategories.every((category) => Array.isArray(runtimeCatalogs[category]));
+  if (!force && hasAllRequested && runtimeCatalogExpiresAt > now) {
     return runtimeCatalogs;
   }
   const staticMap = getStaticCatalogMap();
-  const [peppaCatalog, unlockCatalog, songCatalog] = await Promise.all([
-    buildCloudCatalogForCategory('peppa', staticMap.peppa),
-    buildCloudCatalogForCategory('unlock1', staticMap.unlock1),
-    buildCloudCatalogForCategory('song', staticMap.song)
-  ]);
-  const staticUnlock1Filtered = staticMap.unlock1.filter((item) => Number(item.durationSec || 0) >= UNLOCK1_MIN_DURATION_SEC);
-  runtimeCatalogs = {
-    peppa: peppaCatalog.tasks.length ? peppaCatalog.tasks : staticMap.peppa,
-    unlock1: unlockCatalog.debug && unlockCatalog.debug.listMode === 'training-pool'
-      ? unlockCatalog.tasks
-      : (unlockCatalog.tasks.length ? unlockCatalog.tasks : staticUnlock1Filtered),
-    song: songCatalog.tasks
-  };
-  runtimeCatalogDebug = summarizeRuntimeCatalogDebug({
-    peppa: peppaCatalog.debug,
-    unlock1: unlockCatalog.debug,
-    song: songCatalog.debug
+  const entries = await Promise.all(targetCategories.map(async (category) => {
+    const result = await buildCloudCatalogForCategory(category, staticMap[category] || []);
+    return { category, result };
+  }));
+  const nextCatalogs = Object.assign({}, runtimeCatalogs || getStaticCatalogMap());
+  const nextDebug = Object.assign({}, runtimeCatalogDebug || {});
+  entries.forEach(({ category, result }) => {
+    if (category === 'unlock1') {
+      const staticUnlock1Filtered = (staticMap.unlock1 || []).filter((item) => Number(item.durationSec || 0) >= UNLOCK1_MIN_DURATION_SEC);
+      nextCatalogs.unlock1 = result.debug && result.debug.listMode === 'training-pool'
+        ? result.tasks
+        : (result.tasks.length ? result.tasks : staticUnlock1Filtered);
+    } else if (category === 'peppa') {
+      nextCatalogs.peppa = result.tasks.length ? result.tasks : staticMap.peppa;
+    } else {
+      nextCatalogs[category] = result.tasks;
+    }
+    nextDebug[category] = result.debug;
   });
+  runtimeCatalogs = nextCatalogs;
+  runtimeCatalogDebug = summarizeRuntimeCatalogDebug(nextDebug);
   runtimeCatalogExpiresAt = now + 5 * 60 * 1000;
   return runtimeCatalogs;
 }
@@ -937,18 +1111,33 @@ function getResourceDebugSnapshot() {
   return Object.assign({}, runtimeCatalogDebug || summarizeRuntimeCatalogDebug({}));
 }
 
-const CATEGORY_ORDER = ['peppa', 'unlock1', 'song'];
+const CATEGORY_ORDER = ['newconcept1', 'peppa', 'unlock1', 'song', 'newconcept2'];
 const CATEGORY_LABELS = {
+  newconcept1: 'New Concept 1',
+  newconcept2: 'New Concept 2',
   peppa: 'Peppa',
   unlock1: 'Unlock 1',
   song: 'Songs'
 };
 
 function getCatalog(category) {
-  const catalogs = runtimeCatalogs || getStaticCatalogMap();
-  if (category === 'peppa') return catalogs.peppa || [];
-  if (category === 'unlock1') return catalogs.unlock1 || [];
-  if (category === 'song') return catalogs.song || [];
+  const staticCatalogs = getStaticCatalogMap();
+  const catalogs = runtimeCatalogs || {};
+  if (category === 'newconcept1') {
+    return Object.prototype.hasOwnProperty.call(catalogs, 'newconcept1') ? (catalogs.newconcept1 || []) : staticCatalogs.newconcept1;
+  }
+  if (category === 'newconcept2') {
+    return Object.prototype.hasOwnProperty.call(catalogs, 'newconcept2') ? (catalogs.newconcept2 || []) : staticCatalogs.newconcept2;
+  }
+  if (category === 'peppa') {
+    return Object.prototype.hasOwnProperty.call(catalogs, 'peppa') ? (catalogs.peppa || []) : staticCatalogs.peppa;
+  }
+  if (category === 'unlock1') {
+    return Object.prototype.hasOwnProperty.call(catalogs, 'unlock1') ? (catalogs.unlock1 || []) : staticCatalogs.unlock1;
+  }
+  if (category === 'song') {
+    return Object.prototype.hasOwnProperty.call(catalogs, 'song') ? (catalogs.song || []) : staticCatalogs.song;
+  }
   return [];
 }
 
@@ -977,6 +1166,16 @@ function getTaskPresentation(task) {
         coverBadge: 'Peppa'
       };
     }
+  }
+  if (task.category === 'newconcept1' || task.category === 'newconcept2') {
+    const levelNumber = task.category === 'newconcept1' ? 1 : 2;
+    return {
+      displayTitle: title,
+      displaySubtitle: `New Concept English ${levelNumber}`,
+      coverVariant: 'unlock',
+      coverBadge: `New Concept ${levelNumber}`,
+      coverMeta: `New Concept English ${levelNumber}`
+    };
   }
   if (task.category === 'unlock1') {
     const match = title.match(/Unlock2e_A1_(\d+\.\d+)/i);
@@ -1011,6 +1210,13 @@ function getTaskReward(category, progress, task) {
       rewardBadge: progress && progress.completedToday ? 'MUDDY BOOTS' : `PEPPA ${nextStep}`,
       rewardTitle: progress && progress.completedToday ? '泥坑探险章拿到了' : '泥坑探险线',
       rewardCopy: progress && progress.completedToday ? '这一集今天已经顺利通关。' : '前两遍盲听，最后一遍带文本高亮。'
+    };
+  }
+  if (category === 'newconcept1' || category === 'newconcept2') {
+    return {
+      rewardBadge: category === 'newconcept1' ? 'NCE 1' : 'NCE 2',
+      rewardTitle: category === 'newconcept1' ? 'New Concept 1' : 'New Concept 2',
+      rewardCopy: progress && progress.completedToday ? '今天这条已经完成。' : '按三遍节奏听，第二遍专心盲听。'
     };
   }
   if (category === 'unlock1') {
@@ -1090,7 +1296,7 @@ function decorateTask(task, progress, category) {
     playStepText: `${completedCount}/${task.repeatTarget}`,
     currentPass,
     textUnlocked,
-    transcriptVisible: task.planPhase === 'round-1' ? currentPass !== 2 : textUnlocked,
+    transcriptVisible: currentPass !== 2,
     completedToday: progress.completedToday,
     transcriptStatus: transcriptTrackId ? 'ready' : (task.textSource ? 'pending' : 'none'),
     transcriptBatch: task.transcriptBatch || null,
@@ -1504,14 +1710,26 @@ function computeStreak(records, today) {
 
 const PLAN_SLOT_COUNT = 24;
 const PLAN_PHASES = [
-  { key: 'round-1', label: '第1轮', startDay: 1, length: 24, batchSize: 1 },
-  { key: 'round-2', label: '第2轮', startDay: 25, length: 8, batchSize: 3 },
-  { key: 'round-3', label: '第3轮', startDay: 33, length: 6, batchSize: 4 }
+  { key: 'round-1', label: '第1轮', startDay: 1, length: 38, batchSize: 1 },
+  { key: 'round-2', label: '第2轮', startDay: 39, length: 8, batchSize: 3 },
+  { key: 'round-3', label: '第3轮', startDay: 47, length: 6, batchSize: 4 }
 ];
 const TOTAL_PLAN_DAYS = PLAN_PHASES.reduce((sum, phase) => sum + phase.length, 0);
 
 function getPlanPhase(dayIndex) {
   return PLAN_PHASES.find((phase) => dayIndex >= phase.startDay && dayIndex < phase.startDay + phase.length) || PLAN_PHASES[0];
+}
+
+function getPlanCategoryOrder(dayIndex) {
+  return ['newconcept1', 'peppa', 'unlock1', 'song'];
+}
+
+function getPlanCategoryBatchSize(dayIndex, category) {
+  if (category === 'newconcept1') {
+    return 2;
+  }
+  const phase = getPlanPhase(dayIndex);
+  return phase.batchSize;
 }
 
 function getPlanDayIndex(checkins) {
@@ -1576,28 +1794,121 @@ function buildCatchupState(checkins, today, planStartDate, todayDone) {
 }
 
 function getPlanCatalog(category) {
+  if (category === 'newconcept1') {
+    return getCatalog(category).slice(0, 76);
+  }
   return getCatalog(category).slice(0, PLAN_SLOT_COUNT);
 }
 
-function getPlanIndicesForDay(dayIndex) {
+function buildLevelCategoryOverview(progressRecords, childId, category, date, options = {}) {
+  const tasks = getCatalog(category).slice(0, options.limit || PLAN_SLOT_COUNT);
+  const plannedTasks = decoratePlannedTasks(progressRecords, childId, category, date, tasks, {
+    planRunType: options.planRunType || 'level',
+    targetDate: date,
+    planDayIndex: options.planDayIndex || 1
+  });
+  const todayTask = buildCategorySummary(plannedTasks, category);
+  return {
+    category,
+    categoryLabel: getCategoryLabel(category),
+    totalCount: tasks.length,
+    completedCount: plannedTasks.filter((item) => item.completedToday).length,
+    todayTask,
+    isPendingAsset: todayTask.isPendingAsset,
+    todayTaskCount: todayTask.plannedTaskCount || 0
+  };
+}
+
+function buildLevelCatalogEntry(category, options = {}) {
+  const tasks = getCatalog(category).slice(0, options.limit || 1);
+  const task = tasks[0] ? decorateTask(tasks[0], buildEmptyProgress(), category) : buildCategorySummary([], category);
+  return {
+    category,
+    categoryLabel: getCategoryLabel(category),
+    totalCount: getCatalog(category).length,
+    completedCount: 0,
+    todayTask: task,
+    isPendingAsset: !tasks.length || task.isPendingAsset,
+    todayTaskCount: tasks.length ? 1 : 0
+  };
+}
+
+async function listDirectAudioTasksForCategory(category) {
+  const roots = STORAGE_ROOT_CANDIDATES[category] || [STORAGE_ROOTS[category]];
+  for (const rootPath of roots.filter(Boolean)) {
+    try {
+      const files = await listDirectoryFiles(rootPath);
+      const audioFiles = files.filter((item) => AUDIO_FILE_PATTERN.test(item.cloudPath)).sort(sortFilesByPath);
+      if (!audioFiles.length) {
+        continue;
+      }
+      return audioFiles.map((file, index) => {
+        const audioBaseName = getBaseName(file.cloudPath);
+        const inferred = inferNewConceptTaskMeta(category, audioBaseName, index);
+        return buildCloudTask(null, {
+          taskId: inferred.taskId,
+          category,
+          title: inferred.title,
+          subtitle: inferred.subtitle,
+          repeatTarget: 3,
+          durationSec: 180,
+          coverTone: inferred.coverTone,
+          transcriptTrackId: inferred.transcriptTrackId,
+          transcriptTrackCandidates: inferred.transcriptTrackCandidates,
+          transcriptStatus: 'ready',
+          transcriptBatch: inferred.transcriptBatch,
+          syncGranularity: inferred.syncGranularity,
+          audioTitle: audioBaseName,
+          audioUrl: buildCloudAssetUrl(file.cloudPath),
+          audioCloudPath: file.cloudPath,
+          audioFileId: file.fileId,
+          audioSource: 'static-cloud-url',
+          textSource: inferred.textSource
+        });
+      });
+    } catch (error) {
+      // try next candidate root
+    }
+  }
+  return [];
+}
+
+async function resolveStandaloneCategoryTasks(category, childId, date) {
+  if (category !== 'newconcept2') {
+    return [];
+  }
+  const tasks = await listDirectAudioTasksForCategory(category);
+  return tasks.map((task) => Object.assign({}, task, {
+    planDayIndex: 1,
+    planPhase: 'level',
+    planPhaseLabel: 'A2',
+    targetDate: date,
+    planRunType: 'level'
+  }));
+}
+
+function getPlanIndicesForDay(dayIndex, category) {
   const phase = getPlanPhase(dayIndex);
   const dayOffset = dayIndex - phase.startDay;
-  const startIndex = dayOffset * phase.batchSize;
+  const batchSize = getPlanCategoryBatchSize(dayIndex, category);
+  const startIndex = dayOffset * batchSize;
   const indices = [];
-  for (let step = 0; step < phase.batchSize; step += 1) {
+  for (let step = 0; step < batchSize; step += 1) {
     indices.push(startIndex + step);
   }
   return {
     phase,
-    indices
+    indices,
+    batchSize
   };
 }
 
 function buildPlanForDay(dayIndex) {
-  const { phase, indices } = getPlanIndicesForDay(dayIndex);
+  const phase = getPlanPhase(dayIndex);
   const byCategory = {};
   const flatTasks = [];
-  CATEGORY_ORDER.forEach((category) => {
+  getPlanCategoryOrder(dayIndex).forEach((category) => {
+    const { indices, batchSize } = getPlanIndicesForDay(dayIndex, category);
     const catalog = getPlanCatalog(category);
     const tasks = indices
       .map((index) => catalog[index] || null)
@@ -1608,7 +1919,7 @@ function buildPlanForDay(dayIndex) {
         planDayIndex: dayIndex,
         planPhase: phase.key,
         planPhaseLabel: phase.label,
-        planBatchSize: phase.batchSize,
+        planBatchSize: batchSize,
         planSlotIndex: slotIndex + 1,
         planSlotCount: tasks.length
       }));
@@ -1623,7 +1934,7 @@ function buildPlanForDay(dayIndex) {
 }
 
 function decoratePlanTasks(progressRecords, childId, date, plan, options = {}) {
-  return CATEGORY_ORDER.flatMap((category) => (
+  return getPlanCategoryOrder(plan.dayIndex).flatMap((category) => (
     decoratePlannedTasks(progressRecords, childId, category, date, plan.byCategory[category] || [], {
       planRunType: options.planRunType || 'normal',
       targetDate: date,
@@ -1807,7 +2118,7 @@ async function upsertDailyReport(scope, date) {
   const progressRecords = await getChildProgressRecords(scope);
   const checkins = await getCheckins(scope);
   const todayPlan = buildPlanForDay(getPlanDayIndexForDate(checkins, date));
-  const groupedTasks = CATEGORY_ORDER.map((category) => ({
+  const groupedTasks = getPlanCategoryOrder(todayPlan.dayIndex).map((category) => ({
     category,
     tasks: decoratePlannedTasks(progressRecords, scope.childId, category, date, todayPlan.byCategory[category] || [], {
       planRunType: 'normal',
@@ -1872,7 +2183,7 @@ async function getDashboardData(ctx) {
   const checkins = await getCheckins(scope);
   const planDayIndex = getPlanDayIndex(checkins);
   const todayPlan = buildPlanForDay(planDayIndex);
-  const categorySummaries = CATEGORY_ORDER.map((category) => {
+  const categorySummaries = getPlanCategoryOrder(todayPlan.dayIndex).map((category) => {
     const plannedTasks = decoratePlannedTasks(progressRecords, ctx.child.childId, category, today, todayPlan.byCategory[category] || [], {
       planRunType: 'normal',
       targetDate: today,
@@ -1906,6 +2217,19 @@ async function getDashboardData(ctx) {
     songTask: categorySummaries.find((item) => item.category === 'song'),
     categorySummaries,
     dailyTasks,
+    planDebug: {
+      day1Categories: getPlanCategoryOrder(planDayIndex),
+      catalogCounts: {
+        newconcept1: getCatalog('newconcept1').length,
+        peppa: getCatalog('peppa').length,
+        unlock1: getCatalog('unlock1').length,
+        song: getCatalog('song').length
+      },
+      todayTaskCounts: getPlanCategoryOrder(planDayIndex).reduce((acc, category) => {
+        acc[category] = (todayPlan.byCategory[category] || []).length;
+        return acc;
+      }, {})
+    },
     catchupState,
     activeTaskCount,
     completedTaskCountToday,
@@ -1914,20 +2238,49 @@ async function getDashboardData(ctx) {
 }
 
 async function handleAction(event, context) {
-  await refreshRuntimeCatalogs(false);
+  const action = String((event && event.action) || '').trim();
+  const requestedCategory = String((event && event.payload && event.payload.category) || '').trim();
+  let catalogCategories = ['newconcept1', 'song'];
+  if (action === 'getLevelOverview') {
+    catalogCategories = ['newconcept1', 'newconcept2', 'song'];
+  } else if (action === 'getTaskDetail' || action === 'markTaskListened') {
+    if (requestedCategory === 'newconcept1' || requestedCategory === 'newconcept2' || requestedCategory === 'song' || requestedCategory === 'unlock1') {
+      catalogCategories = [requestedCategory];
+    } else {
+      catalogCategories = [];
+    }
+  } else if (action === 'getTaskTranscript') {
+    catalogCategories = [];
+  } else if (action === 'getFamilyPage' || action === 'refreshInviteCode' || action === 'joinFamily' || action === 'joinFamilyByChildCode' || action === 'updateChildProfile' || action === 'setStudyRole' || action === 'updateSubscription' || action === 'bootstrap') {
+    catalogCategories = [];
+  }
+  await refreshRuntimeCatalogs(false, catalogCategories);
   await ensureRequiredCollectionsReady();
   const { OPENID } = cloud.getWXContext();
   const ctx = await ensureBootstrap(OPENID);
   const today = new Date().toISOString().slice(0, 10);
 
-  if (event.action === 'bootstrap') {
+  if (action === 'bootstrap') {
     return ctx;
   }
-  if (event.action === 'getDashboard') {
+  if (action === 'getDashboard') {
     return getDashboardData(ctx);
   }
-  if (event.action === 'getLevelOverview') {
+  if (action === 'getLevelOverview') {
     const dashboard = await getDashboardData(ctx);
+    const progressRecords = await getChildProgressRecords(getUserScope(ctx));
+    const a2DirectTasks = await listDirectAudioTasksForCategory('newconcept2');
+    const a2Overview = a2DirectTasks.length
+      ? [{
+        category: 'newconcept2',
+        categoryLabel: getCategoryLabel('newconcept2'),
+        totalCount: a2DirectTasks.length,
+        completedCount: 0,
+        todayTask: decorateTask(a2DirectTasks[0], buildEmptyProgress(), 'newconcept2'),
+        isPendingAsset: false,
+        todayTaskCount: 1
+      }]
+      : [buildLevelCatalogEntry('newconcept2', { limit: 1 })];
     return {
       user: ctx.user,
       currentUser: ctx.user,
@@ -1935,23 +2288,31 @@ async function handleAction(event, context) {
       child: ctx.child,
       level,
       stats: dashboard.stats,
-      categories: CATEGORY_ORDER.map((category) => {
+      categories: getPlanCategoryOrder(dashboard.planDayIndex).map((category) => {
         const task = dashboard.categorySummaries.find((item) => item.category === category);
+        const fallbackTask = buildCategorySummary([], category);
+        const todayTask = task || fallbackTask;
         return {
           category,
           categoryLabel: getCategoryLabel(category),
           totalCount: getPlanCatalog(category).length,
           completedCount: (dashboard.stats.completedTasks || 0),
-          todayTask: task,
-          isPendingAsset: task.isPendingAsset,
-          todayTaskCount: task.plannedTaskCount || 0
+          todayTask,
+          isPendingAsset: todayTask.isPendingAsset,
+          todayTaskCount: todayTask.plannedTaskCount || 0
         };
       }),
+      a2Categories: a2Overview,
+      levelDebug: {
+        newconcept2CatalogCount: getCatalog('newconcept2').length,
+        newconcept2DirectCount: a2DirectTasks.length,
+        resourceDebug: getResourceDebugSnapshot()
+      },
       planDayIndex: dashboard.planDayIndex,
       planPhaseLabel: dashboard.planPhaseLabel
     };
   }
-  if (event.action === 'getTaskDetail') {
+  if (action === 'getTaskDetail') {
     const dashboard = await getDashboardData(ctx);
     let planRunType = String((event.payload && event.payload.planRunType) || 'normal');
     let targetDate = String((event.payload && event.payload.targetDate) || today).slice(0, 10);
@@ -1969,7 +2330,13 @@ async function handleAction(event, context) {
       ? buildPlanForDay(targetPlanDayIndex)
       : null;
     const progressRecords = await getChildProgressRecords(getUserScope(ctx));
-    const categoryTasks = planRunType === 'catchup'
+    const categoryTasks = event.payload.category === 'newconcept2'
+      ? decoratePlannedTasks(progressRecords, ctx.child.childId, event.payload.category, targetDate, await resolveStandaloneCategoryTasks('newconcept2', ctx.child.childId, targetDate), {
+        planRunType: 'level',
+        targetDate,
+        planDayIndex: 1
+      })
+      : planRunType === 'catchup'
       ? decoratePlannedTasks(progressRecords, ctx.child.childId, event.payload.category, targetDate, targetPlan.byCategory[event.payload.category] || [], {
         planRunType: 'catchup',
         targetDate,
@@ -1980,7 +2347,6 @@ async function handleAction(event, context) {
       || categoryTasks.find((item) => !item.completedToday)
       || categoryTasks[0]
       || decorateTask(null, buildEmptyProgress(), event.payload.category);
-    const transcriptBundle = await getTranscriptBundle(task);
     const scope = getUserScope(ctx);
     const history = progressRecords
       .filter((item) => item.category === event.payload.category && item.completedToday)
@@ -2020,8 +2386,9 @@ async function handleAction(event, context) {
       planRunType,
       targetDate,
       scriptSource: task.textSource || null,
-      transcriptTrack: transcriptBundle.transcriptTrack,
-      transcriptLines: transcriptBundle.transcriptLines,
+      transcriptTrack: null,
+      transcriptLines: [],
+      transcriptPendingLoad: true,
       todayRecord,
       history,
       studyWriteAllowed: normalizeStudyRole(ctx.member) === 'student',
@@ -2029,7 +2396,26 @@ async function handleAction(event, context) {
       checkinReady
     };
   }
-  if (event.action === 'markTaskListened') {
+  if (action === 'getTaskTranscript') {
+    let task = Object.assign({}, event.payload && event.payload.taskSnapshot ? event.payload.taskSnapshot : {}, {
+      category: requestedCategory || ((event.payload && event.payload.taskSnapshot && event.payload.taskSnapshot.category) || ''),
+      taskId: String((event.payload && event.payload.taskId) || ((event.payload && event.payload.taskSnapshot && event.payload.taskSnapshot.taskId) || '')).trim()
+    });
+    if (requestedCategory === 'newconcept2') {
+      const standaloneTasks = await resolveStandaloneCategoryTasks('newconcept2', ctx.child.childId, today);
+      task = standaloneTasks.find((item) => item.taskId === task.taskId) || standaloneTasks[0] || task;
+    }
+    task = task.taskId ? task : decorateTask(null, buildEmptyProgress(), requestedCategory);
+    const transcriptBundle = await getTranscriptBundle(task);
+    return {
+      task,
+      scriptSource: task.textSource || null,
+      transcriptTrack: transcriptBundle.transcriptTrack,
+      transcriptLines: transcriptBundle.transcriptLines,
+      transcriptPendingLoad: false
+    };
+  }
+  if (action === 'markTaskListened') {
     const category = event.payload.category;
     const scope = getUserScope(ctx);
     const progressRecords = await getChildProgressRecords(scope);
@@ -2066,11 +2452,17 @@ async function handleAction(event, context) {
         ? (Number((event.payload && event.payload.planDayIndex) || 0) || getPlanDayIndex(checkins))
         : getPlanDayIndex(checkins)
     );
-    const categoryTasks = decoratePlannedTasks(progressRecords, ctx.child.childId, category, targetDate, todayPlan.byCategory[category] || [], {
-      planRunType,
-      targetDate,
-      planDayIndex: todayPlan.dayIndex
-    });
+    const categoryTasks = category === 'newconcept2'
+      ? decoratePlannedTasks(progressRecords, ctx.child.childId, category, targetDate, await resolveStandaloneCategoryTasks('newconcept2', ctx.child.childId, targetDate), {
+        planRunType: 'level',
+        targetDate,
+        planDayIndex: 1
+      })
+      : decoratePlannedTasks(progressRecords, ctx.child.childId, category, targetDate, todayPlan.byCategory[category] || [], {
+        planRunType,
+        targetDate,
+        planDayIndex: todayPlan.dayIndex
+      });
     const task = categoryTasks.find((item) => item.taskId === event.payload.taskId)
       || categoryTasks.find((item) => !item.completedToday)
       || categoryTasks[0];
@@ -2108,7 +2500,7 @@ async function handleAction(event, context) {
     }
     return handleAction({ action: 'getTaskDetail', payload: { category, planRunType, targetDate, planDayIndex: todayPlan.dayIndex } }, context);
   }
-  if (event.action === 'completeTodayCheckin') {
+  if (action === 'completeTodayCheckin') {
     if (normalizeStudyRole(ctx.member) !== 'student') {
       throw new Error('家长模式不计入打卡');
     }
@@ -2139,7 +2531,7 @@ async function handleAction(event, context) {
       checkinReady: false
     };
   }
-  if (event.action === 'getProfileData') {
+  if (action === 'getProfileData') {
     const dashboard = await getDashboardData(ctx);
     return {
       user: ctx.user,
@@ -2153,7 +2545,7 @@ async function handleAction(event, context) {
       subscriptionPreference: ctx.subscriptionPreference
     };
   }
-  if (event.action === 'getHeatmap') {
+  if (action === 'getHeatmap') {
     const days = Number(event.payload.days || 28);
     const scope = getUserScope(ctx);
     const records = await getCheckins(scope);
@@ -2193,7 +2585,7 @@ async function handleAction(event, context) {
       catchupTasks
     };
   }
-  if (event.action === 'getMonthHeatmap') {
+  if (action === 'getMonthHeatmap') {
     const year = Number(event.payload.year || today.slice(0, 4));
     const month = Number(event.payload.month || today.slice(5, 7));
     const monthText = `${year}-${String(month).padStart(2, '0')}`;
@@ -2234,7 +2626,7 @@ async function handleAction(event, context) {
       catchupState
     };
   }
-  if (event.action === 'getDailyReportByDate') {
+  if (action === 'getDailyReportByDate') {
     const date = String((event.payload && event.payload.date) || today).slice(0, 10);
     const scope = getUserScope(ctx);
     const report = await upsertDailyReport(scope, date);
@@ -2242,7 +2634,7 @@ async function handleAction(event, context) {
       report
     };
   }
-  if (event.action === 'getParentDashboard') {
+  if (action === 'getParentDashboard') {
     const dashboard = await getDashboardData(ctx);
     const scope = getUserScope(ctx);
     const recentReports = [];
@@ -2262,7 +2654,7 @@ async function handleAction(event, context) {
       subscriptionPreference: ctx.subscriptionPreference
     };
   }
-  if (event.action === 'getFamilyPage') {
+  if (action === 'getFamilyPage') {
     return {
       user: ctx.user,
       currentUser: ctx.user,
@@ -2273,12 +2665,12 @@ async function handleAction(event, context) {
       subscriptionPreference: ctx.subscriptionPreference
     };
   }
-  if (event.action === 'refreshInviteCode') {
+  if (action === 'refreshInviteCode') {
     const inviteCode = makeInviteCode();
     await db.collection('families').doc(ctx.family.familyId).update({ data: { inviteCode } });
     return handleAction({ action: 'getFamilyPage', payload: {} }, context);
   }
-  if (event.action === 'joinFamily') {
+  if (action === 'joinFamily') {
     const inviteCode = String((event.payload && event.payload.inviteCode) || '').trim();
     const target = (await db.collection('families').where({ inviteCode }).limit(1).get()).data[0];
     if (!target) {
@@ -2288,7 +2680,7 @@ async function handleAction(event, context) {
     await upsertFamilyMemberForFamily(OPENID, ctx.user.userId, target.familyId, displayName);
     return handleAction({ action: 'getFamilyPage', payload: {} }, context);
   }
-  if (event.action === 'joinFamilyByChildCode') {
+  if (action === 'joinFamilyByChildCode') {
     const childLoginCode = String((event.payload && event.payload.childLoginCode) || '').replace(/\D/g, '').slice(0, 6);
     if (!/^\d{6}$/.test(childLoginCode)) {
       throw new Error('请输入 6 位孩子 ID');
@@ -2301,11 +2693,11 @@ async function handleAction(event, context) {
     await upsertFamilyMemberForFamily(OPENID, ctx.user.userId, targetChild.familyId, displayName);
     return handleAction({ action: 'getFamilyPage', payload: {} }, context);
   }
-  if (event.action === 'updateChildProfile') {
+  if (action === 'updateChildProfile') {
     await updateChildProfile(ctx.family.familyId, event.payload || {});
     return handleAction({ action: 'getFamilyPage', payload: {} }, context);
   }
-  if (event.action === 'setStudyRole') {
+  if (action === 'setStudyRole') {
     const studyRole = String((event.payload && event.payload.studyRole) || '').trim();
     if (studyRole !== 'student' && studyRole !== 'parent') {
       throw new Error('设备身份不可用');
@@ -2313,7 +2705,7 @@ async function handleAction(event, context) {
     await setExclusiveStudyRole(ctx.member, studyRole);
     return handleAction({ action: 'getFamilyPage', payload: {} }, context);
   }
-  if (event.action === 'undoLastListened') {
+  if (action === 'undoLastListened') {
     const result = await clearTodayUnconfirmedListens(ctx);
     if (normalizeStudyRole(ctx.member) === 'student') {
       await setExclusiveStudyRole(ctx.member, 'parent');
@@ -2321,7 +2713,7 @@ async function handleAction(event, context) {
     const familyPage = await handleAction({ action: 'getFamilyPage', payload: {} }, context);
     return Object.assign({}, familyPage, result);
   }
-  if (event.action === 'updateSubscription') {
+  if (action === 'updateSubscription') {
     const enabled = !!(event.payload && event.payload.enabled);
     const memberRes = await db.collection('familyMembers').where({ openId: OPENID }).limit(1).get();
     if (memberRes.data[0]) {
@@ -2345,7 +2737,7 @@ async function handleAction(event, context) {
     }
     return handleAction({ action: 'getFamilyPage', payload: {} }, context);
   }
-  throw new Error(`unsupported action: ${event.action}`);
+  throw new Error(`unsupported action: ${action}`);
 }
 
 exports.main = async (event, context) => {

@@ -4,8 +4,8 @@ const labels = require('../../utils/labels');
 
 const LEVEL_TABS = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'].map((levelId) => ({
   levelId,
-  enabled: levelId === 'A1',
-  stateText: levelId === 'A1' ? '' : '未开放'
+  enabled: levelId === 'A1' || levelId === 'A2',
+  stateText: levelId === 'A1' || levelId === 'A2' ? '' : '未开放'
 }));
 
 const PHASE_LABELS = {
@@ -66,6 +66,26 @@ function buildProgramEntries(categories) {
   });
 }
 
+function buildA2Entries(categories) {
+  return (categories || []).map((category) => {
+    const task = category.todayTask || {};
+    return Object.assign({}, category, {
+      title: task.displayTitle || task.title || '等待素材',
+      textType: getTextType(task),
+      stateText: '›',
+      stateClass: '',
+      disabled: !task.taskId,
+      taskId: task.taskId || ''
+    });
+  });
+}
+
+function buildLevelTabs(selectedLevel) {
+  return LEVEL_TABS.map((item) => Object.assign({}, item, {
+    active: item.levelId === selectedLevel
+  }));
+}
+
 function buildCurrentStage(data) {
   const stage = STAGE_GROUPS.find((item) => item.phaseLabel === data.planPhaseLabel) || STAGE_GROUPS[0];
   return {
@@ -91,7 +111,10 @@ Page({
     planDayIndex: 1,
     planPhaseLabel: '第1轮',
     categories: [],
+    a2Categories: [],
+    levelDebug: null,
     levelTabs: LEVEL_TABS,
+    selectedLevel: 'A1',
     currentStage: {
       levelId: 'A1',
       label: '听力组合 A',
@@ -112,22 +135,33 @@ Page({
     }
     const data = await store.getLevelOverview();
     const categories = (data.categories || []).map(labels.normalizeCategory);
+    const a2Categories = (data.a2Categories || []).map(labels.normalizeCategory);
     this.setData(page.buildCloudPageData(this.data, Object.assign({}, data, {
       categories,
-      levelTabs: LEVEL_TABS,
+      a2Categories,
+      levelDebug: data.levelDebug || null,
+      levelTabs: buildLevelTabs(this.data.selectedLevel || 'A1'),
       currentStage: buildCurrentStage(data),
       stageGroups: buildStageGroups(data),
-      programEntries: buildProgramEntries(categories)
+      programEntries: (this.data.selectedLevel || 'A1') === 'A2' ? buildA2Entries(a2Categories) : buildProgramEntries(categories)
     })));
   },
   chooseLevel(event) {
     const enabled = event.currentTarget.dataset.enabled;
+    const levelId = event.currentTarget.dataset.levelId || 'A1';
     if (enabled === false || enabled === 'false') {
       wx.showToast({
         title: '暂未开放',
         icon: 'none'
       });
+      return;
     }
+    const selectedLevel = levelId === 'A2' ? 'A2' : 'A1';
+    this.setData({
+      selectedLevel,
+      levelTabs: buildLevelTabs(selectedLevel),
+      programEntries: selectedLevel === 'A2' ? buildA2Entries(this.data.a2Categories) : buildProgramEntries(this.data.categories)
+    });
   },
   openStage(event) {
     const phase = event.currentTarget.dataset.phase;
@@ -136,6 +170,19 @@ Page({
     }
     wx.navigateTo({
       url: `/pages/level-stage/index?levelId=A1&phase=${phase}`
+    });
+  },
+  openTask(event) {
+    const category = event.currentTarget.dataset.category;
+    const taskId = event.currentTarget.dataset.taskId;
+    const disabled = event.currentTarget.dataset.disabled;
+    if (!category || disabled === true || disabled === 'true') {
+      return;
+    }
+    wx.navigateTo({
+      url: taskId
+        ? `/pages/lesson/index?category=${category}&taskId=${taskId}`
+        : `/pages/lesson/index?category=${category}`
     });
   }
 });

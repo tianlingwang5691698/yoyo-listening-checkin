@@ -6,13 +6,13 @@
 
   <view class="level-tabs">
     <block wx:for="{{levelTabs}}" wx:key="levelId">
-      <view class="level-tab {{item.enabled ? 'is-active' : 'is-disabled'}}" data-enabled="{{item.enabled}}" bindtap="chooseLevel">
+      <view class="level-tab {{item.active ? 'is-active' : ''}} {{item.enabled ? '' : 'is-disabled'}}" data-enabled="{{item.enabled}}" data-level-id="{{item.levelId}}" bindtap="chooseLevel">
         {{item.levelId}}
       </view>
     </block>
   </view>
 
-  <view class="stage-list">
+  <view class="stage-list" wx:if="{{selectedLevel === 'A1'}}">
     <block wx:for="{{stageGroups}}" wx:key="phaseLabel">
       <view class="stage-row {{item.active ? 'is-active' : ''}}" data-phase="{{item.phaseKey}}" bindtap="openStage">
         <view>
@@ -22,5 +22,20 @@
         <view class="stage-row-state">{{item.active ? '当前' : '›'}}</view>
       </view>
     </block>
+  </view>
+
+  <view class="stage-list" wx:else>
+    <block wx:for="{{programEntries}}" wx:key="category">
+      <view class="stage-row {{item.disabled ? 'is-disabled' : ''}}" data-category="{{item.category}}" data-task-id="{{item.taskId}}" data-disabled="{{item.disabled}}" bindtap="openTask">
+        <view>
+          <view class="stage-row-title">{{item.categoryLabel}}</view>
+          <view class="stage-row-meta type-caption">{{item.title}} · {{item.textType}}</view>
+        </view>
+        <view class="stage-row-state">{{item.stateText}}</view>
+      </view>
+    </block>
+    <view class="stage-debug type-caption" wx:if="{{showCloudDebug && levelDebug}}">
+      newconcept2={{levelDebug.newconcept2CatalogCount || 0}}
+    </view>
   </view>
 </view>

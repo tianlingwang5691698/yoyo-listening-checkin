@@ -8,6 +8,12 @@ function getCategoryDisplayLabel(category, label) {
   if (category === 'unlock1') {
     return 'Unlock 1';
   }
+  if (category === 'newconcept1') {
+    return 'New Concept 1';
+  }
+  if (category === 'newconcept2') {
+    return 'New Concept 2';
+  }
   return label || category || '';
 }
 

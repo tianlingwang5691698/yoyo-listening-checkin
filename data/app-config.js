@@ -4,8 +4,8 @@ module.exports = {
   cloudEnvId: 'youshengenglish-6glk12rd6c6e719b',
   cloudBucket: '796f-youshengenglish-6glk12rd6c6e719b-1419984942',
   cloudAssetBaseUrl: 'https://796f-youshengenglish-6glk12rd6c6e719b-1419984942.tcb.qcloud.la',
-  releaseStage: 'review',
-  showCloudDebug: false,
+  releaseStage: 'internal',
+  showCloudDebug: true,
   subscriptionTemplateIds: [
     ''
   ].filter(Boolean)

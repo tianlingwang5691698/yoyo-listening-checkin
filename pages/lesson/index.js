@@ -46,6 +46,24 @@ function buildCurrentAudio(task, playableUrl, playbackMode) {
   };
 }
 
+function buildPassSteps(progress) {
+  const repeatTarget = Number((progress && progress.repeatTarget) || 3);
+  const playCount = Number((progress && progress.playCount) || 0);
+  const steps = [];
+  for (let step = 1; step <= repeatTarget; step += 1) {
+    steps.push({
+      key: `step-${step}`,
+      text: String(step),
+      done: playCount >= step,
+      current: playCount + 1 === step && playCount < repeatTarget
+    });
+  }
+  if (steps.length && playCount <= 0) {
+    steps[0].current = true;
+  }
+  return steps;
+}
+
 Page({
   data: page.createCloudPageData({
     child: null,
@@ -88,7 +106,9 @@ Page({
     currentAudio: null,
     studyWriteAllowed: true,
     studyModeLabel: '学生设备',
-    checkinReady: false
+    checkinReady: false,
+    transcriptPendingLoad: false,
+    passSteps: []
   }),
   isStudyWriteAllowed() {
     const currentMember = this.data.currentMember || {};
@@ -274,26 +294,6 @@ Page({
     let playbackMode = resolvedTask.audioSource === 'temp-url'
       ? 'temp-url'
       : (resolvedTask.audioResolveError ? 'static-fallback' : 'static-cloud-url');
-    try {
-      playableUrl = await this.downloadAudio(resolvedTask.audioUrl);
-      playbackMode = 'downloaded';
-    } catch (error) {
-      if (!playableUrl) {
-        this.setData(Object.assign({}, initialState, {
-          audioSource: resolvedTask.audioSource || 'none',
-          audioReady: false,
-          audioResolving: false,
-          audioError: 'download-failed',
-          audioErrorDetail: '',
-          audioPlaybackMode: 'error'
-        }));
-        wx.showToast({
-          title: '云端音频下载失败',
-          icon: 'none'
-        });
-        return;
-      }
-    }
     if (this.data.task !== resolvedTask) {
       this.setData({
         task: resolvedTask
@@ -335,9 +335,11 @@ Page({
       stats: detail.stats,
       todayRecord: detail.todayRecord,
       progress: detail.progress,
+      passSteps: buildPassSteps(detail.progress),
       scriptSource: detail.scriptSource,
       transcriptTrack: detail.transcriptTrack,
       transcriptLines: detail.transcriptTrack ? detail.transcriptTrack.lines : [],
+      transcriptPendingLoad: !!detail.transcriptPendingLoad,
       transcriptSyncGranularity: detail.transcriptTrack ? (detail.transcriptTrack.syncGranularity || 'word') : 'word',
       history: detail.history,
       currentMember: detail.currentMember,
@@ -367,11 +369,38 @@ Page({
     }));
     if (normalizedTask) {
       await this.syncPlayer(normalizedTask);
+      if (detail.transcriptPendingLoad) {
+        this.loadTranscript();
+      }
       return;
     }
     if (this.innerAudioContext) {
       this.innerAudioContext.stop();
     }
+  },
+  async loadTranscript() {
+    const detail = await store.getTaskTranscript(this.category, this.taskId, {
+      planRunType: this.planRunType,
+      targetDate: this.targetDate,
+      planDayIndex: this.planDayIndex,
+      taskSnapshot: this.data.task
+    }).catch(() => null);
+    if (!detail) {
+      return;
+    }
+    const normalizedTask = labels.normalizeTask(detail.task || this.data.task);
+    this.setData(page.buildCloudPageData(this.data, {
+      task: normalizedTask,
+      scriptSource: detail.scriptSource || this.data.scriptSource,
+      transcriptTrack: detail.transcriptTrack,
+      transcriptLines: detail.transcriptTrack ? detail.transcriptTrack.lines : [],
+      transcriptPendingLoad: !!detail.transcriptPendingLoad,
+      transcriptSyncGranularity: detail.transcriptTrack ? (detail.transcriptTrack.syncGranularity || 'word') : 'word',
+      prevLine: null,
+      activeLine: null,
+      activeWord: null,
+      nextLine: detail.transcriptTrack && detail.transcriptTrack.lines.length ? detail.transcriptTrack.lines[0] : null
+    }));
   },
   clearTranscriptState() {
     this.setData({
@@ -544,6 +573,7 @@ Page({
       stats: detail.stats,
       todayRecord: detail.todayRecord,
       progress: detail.progress,
+      passSteps: buildPassSteps(detail.progress),
       scriptSource: detail.scriptSource,
       transcriptTrack: detail.transcriptTrack,
       transcriptLines: detail.transcriptTrack ? detail.transcriptTrack.lines : [],
@@ -553,11 +583,15 @@ Page({
       studyWriteAllowed: detail.studyWriteAllowed !== false,
       studyModeLabel: detail.currentMember && detail.currentMember.studyRole === 'student' ? '学生设备' : '家长模式',
       checkinReady: !!detail.checkinReady,
+      transcriptPendingLoad: !!detail.transcriptPendingLoad,
       audioSource: normalizedTask && normalizedTask.audioSource ? normalizedTask.audioSource : 'none',
       playbackRate: 1,
       playbackRateText: '1.0'
     }));
     await this.syncPlayer(normalizedTask);
+    if (detail.transcriptPendingLoad) {
+      this.loadTranscript();
+    }
     wx.showToast({
       title: detail.progress.completedToday ? `${normalizedTask.categoryLabel} 今天完成` : `已完成第 ${detail.progress.playCount} 遍`,
       icon: 'none'

@@ -2,7 +2,7 @@ const store = require('../../utils/store');
 const page = require('../../utils/page');
 const labels = require('../../utils/labels');
 
-const CATEGORY_ORDER = ['peppa', 'unlock1', 'song'];
+const CATEGORY_ORDER = ['newconcept1', 'newconcept2', 'peppa', 'unlock1', 'song'];
 const PHASE_COPY = {
   '第1轮': '轻量日计划',
   '第2轮': '复习加速',

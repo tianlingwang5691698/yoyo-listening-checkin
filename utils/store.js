@@ -128,6 +128,7 @@ async function callCloud(action, payload, defaults) {
     const result = await cloud.callYoyo(action, payload);
     return Object.assign(buildSyncMeta('cloud', null, result.resourceDebug), result);
   } catch (error) {
+    console.error('[callCloud]', action, formatCloudReason(error), error);
     return buildCloudErrorPayload(action, error, defaults);
   }
 }
@@ -192,7 +193,8 @@ async function getLevelOverview() {
     },
     planDayIndex: 1,
     planPhaseLabel: '第1轮',
-    categories: []
+    categories: [],
+    a2Categories: []
   });
 }
 
@@ -235,7 +237,18 @@ async function getTaskDetail(category, taskId, options) {
     history: [],
     studyWriteAllowed: false,
     studyWriteMessage: '',
-    checkinReady: false
+    checkinReady: false,
+    transcriptPendingLoad: false
+  });
+}
+
+async function getTaskTranscript(category, taskId, options) {
+  return callCloud('getTaskTranscript', Object.assign({ category, taskId }, options || {}), {
+    task: null,
+    scriptSource: null,
+    transcriptTrack: null,
+    transcriptLines: [],
+    transcriptPendingLoad: false
   });
 }
 
@@ -276,7 +289,8 @@ async function markTaskListened(options) {
     transcriptLines: [],
     todayRecord: null,
     history: [],
-    checkinReady: false
+    checkinReady: false,
+    transcriptPendingLoad: false
   });
 }
 
@@ -520,6 +534,7 @@ module.exports = {
   getLevelOverview,
   getProfileData,
   getTaskDetail,
+  getTaskTranscript,
   markTaskListened,
   completeTodayCheckin,
   getParentDashboard,

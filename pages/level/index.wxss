@@ -57,6 +57,10 @@
   background: rgba(255, 244, 235, 0.74);
 }
 
+.stage-row.is-disabled {
+  opacity: 0.5;
+}
+
 .stage-row-title {
   color: var(--text-main);
   font-size: 27rpx;
@@ -74,4 +78,9 @@
   text-align: right;
   font-size: 22rpx;
   font-weight: 700;
+}
+
+.stage-debug {
+  padding: 20rpx 28rpx 24rpx;
+  color: var(--text-muted);
 }

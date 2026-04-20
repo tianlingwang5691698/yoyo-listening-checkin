@@ -20,9 +20,9 @@
 
   <view class="section-panel player-card">
     <view class="pass-steps">
-      <view class="pass-step {{progress.playCount >= 1 ? 'is-done' : 'is-current'}}">1</view>
-      <view class="pass-step {{progress.playCount >= 2 ? 'is-done' : progress.playCount >= 1 ? 'is-current' : ''}}">2</view>
-      <view class="pass-step {{progress.playCount >= 3 ? 'is-done' : progress.playCount >= 2 ? 'is-current' : ''}}">3</view>
+      <block wx:for="{{passSteps}}" wx:key="key">
+        <view class="pass-step {{item.done ? 'is-done' : item.current ? 'is-current' : ''}}">{{item.text}}</view>
+      </block>
     </view>
     <view class="row-between player-header">
       <view wx:if="{{!task.isPendingAsset}}">
@@ -70,7 +70,7 @@
       <view>
         <view class="section-title type-section-title">文本</view>
       </view>
-      <view class="pill transcript-pill" wx:if="{{!transcriptLines.length}}">{{task.transcriptStatus === 'pending' ? '准备中' : '暂无文本'}}</view>
+      <view class="pill transcript-pill" wx:if="{{!transcriptLines.length}}">{{transcriptPendingLoad ? '准备中' : (task.transcriptStatus === 'pending' ? '准备中' : '暂无文本')}}</view>
     </view>
 
     <view class="transcript-focus" wx:if="{{transcriptLines.length}}">
@@ -116,7 +116,7 @@
       </view>
     </view>
 
-    <view class="transcript-empty" wx:elif="{{task.transcriptStatus === 'pending'}}">
+    <view class="transcript-empty" wx:elif="{{transcriptPendingLoad || task.transcriptStatus === 'pending'}}">
       <view class="transcript-empty-title">文本准备中</view>
     </view>
 
