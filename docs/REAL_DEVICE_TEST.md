@@ -21,6 +21,7 @@
 - 测试手机使用正式体验版或真机调试
 - 准备 1 个管理员微信和 1 个家庭成员微信
 - 创建一份测试记录，建议直接复制 [docs/REAL_DEVICE_TEST_LOG_TEMPLATE.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/REAL_DEVICE_TEST_LOG_TEMPLATE.md)
+- 若涉及版本升级或规则变更，发版前同时执行 [docs/LEGACY_USER_COMPATIBILITY_CHECKLIST.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/LEGACY_USER_COMPATIBILITY_CHECKLIST.md)
 
 ## 第一轮：开发者真机自测
 

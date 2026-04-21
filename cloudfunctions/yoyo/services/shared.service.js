@@ -78,6 +78,10 @@ function buildCloudTask(baseTask, overrides) {
   return catalogEngine.buildCloudTask(baseTask, overrides);
 }
 
+async function listDirectoryFiles(cloudPath) {
+  return catalogEngine.listDirectoryFiles(cloudPath);
+}
+
 function refreshRuntimeCatalogs(force, categories) {
   return catalogEngine.refreshRuntimeCatalogs(force, categories);
 }

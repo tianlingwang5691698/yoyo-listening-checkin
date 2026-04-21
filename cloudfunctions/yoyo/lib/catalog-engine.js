@@ -891,6 +891,7 @@ module.exports = {
   STORAGE_ROOT_CANDIDATES,
   buildCloudAssetUrl,
   getBaseName,
+  listDirectoryFiles,
   sortFilesByPath,
   inferNewConceptTaskMeta,
   buildCloudTask,
