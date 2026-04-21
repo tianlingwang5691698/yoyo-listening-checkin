@@ -75,10 +75,17 @@ async function getDashboardData(ctx, deps, options = {}) {
   const includeStats = options.includeStats !== false;
   const today = deps.getTodayString();
   const scope = deps.getUserScope(ctx);
-  const [progressRecords, checkins] = await Promise.all([
+  let [progressRecords, checkins] = await Promise.all([
     deps.getChildProgressRecords(scope),
     deps.getCheckins(scope)
   ]);
+  if (deps.reconcileCheckins) {
+    const reconciled = await deps.reconcileCheckins(scope, progressRecords, checkins, today);
+    if (reconciled) {
+      progressRecords = reconciled.progressRecords || progressRecords;
+      checkins = reconciled.checkins || checkins;
+    }
+  }
   const planDayIndex = deps.getPlanDayIndexForDate(checkins, today);
   const todayPlan = deps.buildPlanForDay(planDayIndex);
   const shouldBuildDailyTasks = includeDailyTasks || includeCategorySummaries || includeCatchupState || includeTaskProgressSummary;

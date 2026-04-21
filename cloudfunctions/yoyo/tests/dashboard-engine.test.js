@@ -115,3 +115,44 @@ test('home view 任务分组不返回首页不用的大字段', async () => {
     'title'
   ].sort());
 });
+
+test('缺失昨日打卡时，dashboard 先使用修复后的 checkins 再计算当天计划', async () => {
+  const dashboard = await dashboardEngine.getDashboardData({
+    user: {},
+    member: {},
+    family: {},
+    child: { childId: 'child-1' }
+  }, {
+    getTodayString: () => '2026-04-21',
+    getUserScope: () => ({ childId: 'child-1' }),
+    getChildProgressRecords: async () => [],
+    getCheckins: async () => [],
+    reconcileCheckins: async (_scope, progressRecords, checkins) => ({
+      progressRecords,
+      checkins: checkins.concat([{ date: '2026-04-20', planDayIndex: 1 }])
+    }),
+    getPlanDayIndexForDate: (checkins, date) => {
+      assert.equal(date, '2026-04-21');
+      assert.equal(checkins.length, 1);
+      assert.equal(checkins[0].date, '2026-04-20');
+      return 2;
+    },
+    buildPlanForDay: (dayIndex) => ({
+      dayIndex,
+      phase: { key: 'round-1', label: '第1轮' },
+      byCategory: {
+        peppa: [{ taskId: 'peppa-2' }]
+      }
+    }),
+    getPlanCategoryOrder: () => ['peppa'],
+    decoratePlannedTasks: () => [{ category: 'peppa', completedToday: false, isPendingAsset: false }],
+    buildCategorySummary: () => ({ category: 'peppa', completedToday: false, isPendingAsset: false }),
+    decoratePlanTasks: () => [{ category: 'peppa', completedToday: false, isPendingAsset: false }],
+    buildStats: () => ({ streakDays: 1 }),
+    buildCatchupState: () => ({ canCatchup: false, missedDate: '', planDayIndex: 0, usedToday: false, reason: 'no-missed-date' }),
+    getPlanStartDate: () => '2026-04-20',
+    getCatalog: () => []
+  });
+
+  assert.equal(dashboard.planDayIndex, 2);
+});

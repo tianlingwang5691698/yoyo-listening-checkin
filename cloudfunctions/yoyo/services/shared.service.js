@@ -308,6 +308,53 @@ async function maybeCreateCheckin(scope, progressRecords, date, options = {}) {
   });
 }
 
+async function reconcileCheckins(scope, progressRecords, checkins, today) {
+  const records = Array.isArray(progressRecords) ? progressRecords : [];
+  const workingCheckins = Array.isArray(checkins) ? checkins.slice() : [];
+  const candidateDates = Array.from(new Set(records
+    .filter((item) => (
+      item.childId === scope.childId
+        && item.date
+        && item.date <= today
+        && String(item.planRunType || 'normal') === 'normal'
+        && (item.completedToday || Number(item.playCount || 0) >= Number(item.repeatTarget || 3))
+    ))
+    .map((item) => item.date)))
+    .sort();
+  for (const date of candidateDates) {
+    const existing = workingCheckins.find((item) => item.date === date && String(item.planRunType || 'normal') === 'normal');
+    if (existing) {
+      continue;
+    }
+    const planDayIndex = Number(records.find((item) => item.date === date && item.planDayIndex)?.planDayIndex || 0)
+      || getPlanDayIndexForDate(workingCheckins, date);
+    await checkinEngine.maybeCreateCheckin(scope, records, date, {
+      planRunType: 'normal',
+      planDayIndex
+    }, {
+      getCheckins: async () => workingCheckins,
+      getPlanDayIndex,
+      buildPlanForDay,
+      getTaskProgressForDate,
+      computeStreak,
+      upsertCheckin: async (current, next) => {
+        await checkinRepository.upsertByRecordId(current, next);
+        const index = workingCheckins.findIndex((item) => item.recordId === next.recordId || item.date === next.date);
+        if (index >= 0) {
+          workingCheckins[index] = Object.assign({}, workingCheckins[index], next);
+        } else {
+          workingCheckins.push(next);
+        }
+      },
+      upsertDailyReport
+    });
+  }
+  return {
+    progressRecords: records,
+    checkins: workingCheckins
+  };
+}
+
 async function clearTodayUnconfirmedListens(ctx) {
   const today = getTodayString();
   const scope = getUserScope(ctx);
@@ -361,6 +408,7 @@ async function getDashboardData(ctx, options = {}) {
     getUserScope,
     getChildProgressRecords,
     getCheckins,
+    reconcileCheckins,
     getPlanDayIndexForDate,
     buildPlanForDay,
     getPlanCategoryOrder,

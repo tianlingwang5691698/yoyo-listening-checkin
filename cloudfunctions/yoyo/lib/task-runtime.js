@@ -10,6 +10,24 @@ function buildEmptyProgress() {
   };
 }
 
+function normalizeProgressRecord(record) {
+  if (!record) {
+    return buildEmptyProgress();
+  }
+  const repeatTarget = Number(record.repeatTarget || 3);
+  const playCount = Number(record.playCount || 0);
+  return Object.assign({}, record, {
+    repeatTarget,
+    playCount,
+    textUnlocked: typeof record.textUnlocked === 'boolean'
+      ? record.textUnlocked
+      : playCount >= Math.max(repeatTarget - 1, 1),
+    completedToday: typeof record.completedToday === 'boolean'
+      ? record.completedToday
+      : playCount >= repeatTarget
+  });
+}
+
 function getTaskProgressForDate(progressRecords, childId, category, date, taskId, options = {}) {
   const exact = (progressRecords || []).find((item) => (
     item.childId === childId
@@ -18,7 +36,7 @@ function getTaskProgressForDate(progressRecords, childId, category, date, taskId
       && item.taskId === taskId
   ));
   if (exact) {
-    return exact;
+    return normalizeProgressRecord(exact);
   }
   if (options.allowLegacyRecord) {
     const legacy = (progressRecords || []).find((item) => (
@@ -28,7 +46,7 @@ function getTaskProgressForDate(progressRecords, childId, category, date, taskId
         && !item.taskId
     ));
     if (legacy) {
-      return legacy;
+      return normalizeProgressRecord(legacy);
     }
   }
   return buildEmptyProgress();
@@ -72,7 +90,10 @@ function buildCategorySummary(categoryTasks, category, deps) {
 
 function buildStats(progressRecords, checkins, childId, deps) {
   const { getCatalog, computeStreak } = deps;
-  const completedProgress = (progressRecords || []).filter((item) => item.childId === childId && item.completedToday);
+  const completedProgress = (progressRecords || [])
+    .filter((item) => item.childId === childId)
+    .map(normalizeProgressRecord)
+    .filter((item) => item.completedToday);
   const totalMinutes = completedProgress.reduce((sum, item) => {
     const task = getCatalog(item.category).find((entry) => entry.taskId === item.taskId);
     return task ? sum + Math.round((task.durationSec * task.repeatTarget) / 60) : sum;
@@ -96,6 +117,7 @@ function buildStats(progressRecords, checkins, childId, deps) {
 
 module.exports = {
   buildEmptyProgress,
+  normalizeProgressRecord,
   getTaskProgressForDate,
   decoratePlannedTasks,
   buildCategorySummary,
