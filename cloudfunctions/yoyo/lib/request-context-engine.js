@@ -22,6 +22,23 @@ function resolveCatalogCategories(action, requestedCategory, payload = {}) {
   return catalogCategories;
 }
 
+async function prepareRequestContext(event, deps) {
+  const action = String((event && event.action) || '').trim();
+  const requestedCategory = String((event && event.payload && event.payload.category) || '').trim();
+  const catalogCategories = resolveCatalogCategories(action, requestedCategory, (event && event.payload) || {});
+  await deps.refreshRuntimeCatalogs(false, catalogCategories);
+  await deps.ensureRequiredCollectionsReady();
+  const { OPENID } = deps.getWXContext();
+  const ctx = await deps.ensureBootstrap(OPENID);
+  return {
+    action,
+    requestedCategory,
+    ctx,
+    today: deps.getTodayString()
+  };
+}
+
 module.exports = {
-  resolveCatalogCategories
+  resolveCatalogCategories,
+  prepareRequestContext
 };

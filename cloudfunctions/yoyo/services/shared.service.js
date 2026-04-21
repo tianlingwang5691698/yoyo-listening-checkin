@@ -23,6 +23,8 @@ const dashboardEngine = require('../lib/dashboard-engine');
 const levelEngine = require('../lib/level-engine');
 const requestContextEngine = require('../lib/request-context-engine');
 const monitor = require('../lib/monitor');
+const familyEngine = require('../lib/family-engine');
+const bootstrapEngine = require('../lib/bootstrap-engine');
 
 cloud.init({
   env: cloud.DYNAMIC_CURRENT_ENV
@@ -1056,37 +1058,12 @@ function buildUserId(openId) {
 }
 
 async function ensureUser(openId) {
-  if (!openId) {
-    const error = new Error('登录状态暂时不可用，请稍后再试');
-    error.code = 'login-unavailable';
-    throw error;
-  }
-  const now = new Date().toISOString();
-  const existing = await userRepository.findByOpenId(openId);
-  if (existing) {
-    await userRepository.updateById(existing._id, {
-      lastLoginAt: now,
-      updatedAt: now
-    });
-    return Object.assign({}, existing, {
-      lastLoginAt: now,
-      updatedAt: now
-    });
-  }
-  const user = {
-    userId: buildUserId(openId),
-    openId,
-    unionId: '',
-    nickName: '',
-    avatarUrl: '',
-    phoneNumberMasked: '',
-    phoneBound: false,
-    createdAt: now,
-    updatedAt: now,
-    lastLoginAt: now
-  };
-  await userRepository.create(user);
-  return user;
+  return bootstrapEngine.ensureUser(openId, {
+    findUserByOpenId: (nextOpenId) => userRepository.findByOpenId(nextOpenId),
+    updateUserById: (id, data) => userRepository.updateById(id, data),
+    createUser: (user) => userRepository.create(user),
+    buildUserId
+  });
 }
 
 async function getFamily(familyId) {
@@ -1094,38 +1071,20 @@ async function getFamily(familyId) {
 }
 
 async function getChild(familyId) {
-  let child = await childRepository.findByFamilyId(familyId);
-  if (!child) {
-    return null;
-  }
-  if (!/^\d{6}$/.test(String(child.childLoginCode || ''))) {
-    const childLoginCode = await makeUniqueChildLoginCode();
-    await childRepository.updateById(child._id, {
-      childLoginCode,
-      updatedAt: new Date().toISOString()
-    });
-    child = Object.assign({}, child, { childLoginCode });
-  }
-  return Object.assign({}, child, {
-    avatarText: buildAvatarTextFromNickname(child.nickname || child.avatarText)
+  return bootstrapEngine.getChild(familyId, {
+    findChildByFamilyId: (nextFamilyId) => childRepository.findByFamilyId(nextFamilyId),
+    updateChildById: (id, data) => childRepository.updateById(id, data),
+    makeUniqueChildLoginCode,
+    buildAvatarTextFromNickname
   });
 }
 
 async function updateChildProfile(familyId, payload) {
-  const child = await getChild(familyId);
-  if (!child) {
-    throw new Error('孩子档案不存在');
-  }
-  const nickname = String((payload && payload.nickname) || '').trim();
-  if (!nickname) {
-    throw new Error('先填写孩子昵称');
-  }
-  const nextData = {
-    nickname,
-    avatarText: buildAvatarTextFromNickname(nickname),
-    updatedAt: new Date().toISOString()
-  };
-  await childRepository.updateById(child._id, nextData);
+  return familyEngine.updateChildProfile(familyId, payload, {
+    getChild,
+    updateChildById: (id, data) => childRepository.updateById(id, data),
+    buildAvatarTextFromNickname
+  });
 }
 
 function normalizeStudyRole(member) {
@@ -1133,184 +1092,59 @@ function normalizeStudyRole(member) {
 }
 
 async function setExclusiveStudyRole(member, studyRole) {
-  const now = new Date().toISOString();
-  if (studyRole === 'student') {
-    const familyMembers = await familyRepository.findMembersByFamilyId(member.familyId);
-    await Promise.all(familyMembers
-      .filter((item) => item._id)
-      .map((item) => familyRepository.updateMemberById(item._id, {
-        studyRole: item.memberId === member.memberId ? 'student' : 'parent',
-        updatedAt: now
-      })));
-    return;
-  }
-  await familyRepository.updateMemberById(member._id, {
-    studyRole: 'parent',
-    updatedAt: now
+  return familyEngine.setExclusiveStudyRole(member, studyRole, {
+    findMembersByFamilyId: (familyId) => familyRepository.findMembersByFamilyId(familyId),
+    updateMemberById: (id, data) => familyRepository.updateMemberById(id, data)
   });
 }
 
 async function upsertFamilyMemberForFamily(openId, userId, familyId, displayName) {
-  const memberRecords = await familyRepository.findMembersByOpenId(openId);
-  let joinedMemberId = '';
-  const existingMember = memberRecords.find((item) => item.familyId === familyId) || memberRecords[0];
-  const now = new Date().toISOString();
-  if (existingMember) {
-    joinedMemberId = existingMember.memberId;
-    const shouldPreserveOriginalFamily = existingMember.familyId !== familyId && !existingMember.previousFamilyId;
-    await familyRepository.updateMemberById(existingMember._id, {
-      userId,
-      familyId,
-      displayName,
-      role: existingMember.familyId === familyId ? (existingMember.role || 'parent') : 'parent',
-      studyRole: existingMember.familyId === familyId ? normalizeStudyRole(existingMember) : 'parent',
-      previousFamilyId: shouldPreserveOriginalFamily ? existingMember.familyId : (existingMember.previousFamilyId || ''),
-      previousRole: shouldPreserveOriginalFamily ? (existingMember.role || 'parent') : (existingMember.previousRole || ''),
-      previousStudyRole: shouldPreserveOriginalFamily ? normalizeStudyRole(existingMember) : (existingMember.previousStudyRole || ''),
-      previousDisplayName: shouldPreserveOriginalFamily ? (existingMember.displayName || displayName || '') : (existingMember.previousDisplayName || ''),
-      joinedFamilyAt: existingMember.familyId === familyId
-        ? (existingMember.joinedFamilyAt || existingMember.createdAt || now)
-        : now,
-      updatedAt: now
-    });
-  } else {
-    joinedMemberId = `member-${Date.now()}`;
-    await familyRepository.createMember({
-      memberId: joinedMemberId,
-      userId,
-      familyId,
-      openId,
-      role: 'parent',
-      studyRole: 'parent',
-      displayName,
-      subscriptionEnabled: false,
-      joinedFamilyAt: now,
-      createdAt: now
-    });
-  }
-  const preference = await subscriptionRepository.findByMemberId(joinedMemberId);
-  if (preference) {
-    await subscriptionRepository.updateById(preference._id, {
-      familyId
-    });
-  } else if (joinedMemberId) {
-    await subscriptionRepository.create({
-      memberId: joinedMemberId,
-      familyId,
-      dailyReportEnabled: false,
-      lastAuthorizedAt: ''
-    });
-  }
-  return joinedMemberId;
+  return familyEngine.upsertFamilyMemberForFamily(openId, userId, familyId, displayName, {
+    findMembersByOpenId: (nextOpenId) => familyRepository.findMembersByOpenId(nextOpenId),
+    updateMemberById: (id, data) => familyRepository.updateMemberById(id, data),
+    createMember: (data) => familyRepository.createMember(data),
+    normalizeStudyRole,
+    findSubscriptionByMemberId: (memberId) => subscriptionRepository.findByMemberId(memberId),
+    updateSubscriptionById: (id, data) => subscriptionRepository.updateById(id, data),
+    createSubscription: (data) => subscriptionRepository.create(data)
+  });
 }
 
 async function leaveCurrentFamily(ctx) {
-  const member = (ctx && ctx.member) || null;
-  if (!member || !member._id) {
-    throw new Error('当前成员不存在');
-  }
-  if ((member.role || '') === 'owner') {
-    throw new Error('当前孩子主设备不能退出记录');
-  }
-  const ownFamily = await familyRepository.findFamilyByOwnerOpenId(member.openId);
-  const restoreFamilyId = String(member.previousFamilyId || (ownFamily && ownFamily.familyId) || '').trim();
-  const restoreRole = String(member.previousRole || ((ownFamily && ownFamily.ownerOpenId === member.openId) ? 'owner' : 'parent') || 'parent').trim();
-  const restoreStudyRole = String(member.previousStudyRole || (restoreRole === 'owner' ? 'student' : 'parent') || 'parent').trim();
-  const restoreDisplayName = String(member.previousDisplayName || member.displayName || '').trim();
-  const preference = await subscriptionRepository.findByMemberId(member.memberId);
-  if (restoreFamilyId) {
-    await familyRepository.updateMemberById(member._id, {
-      familyId: restoreFamilyId,
-      role: restoreRole,
-      studyRole: restoreStudyRole,
-      displayName: restoreDisplayName,
-      previousFamilyId: '',
-      previousRole: '',
-      previousStudyRole: '',
-      previousDisplayName: '',
-      updatedAt: new Date().toISOString()
-    });
-    if (preference && preference._id) {
-      await subscriptionRepository.updateById(preference._id, {
-        familyId: restoreFamilyId
-      });
-    } else {
-      await subscriptionRepository.create({
-        memberId: member.memberId,
-        familyId: restoreFamilyId,
-        dailyReportEnabled: false,
-        lastAuthorizedAt: ''
-      });
-    }
-    return;
-  }
-  if (preference && preference._id) {
-    await subscriptionRepository.deleteById(preference._id);
-  }
-  await familyRepository.deleteMemberById(member._id);
+  return familyEngine.leaveCurrentFamily(ctx, {
+    findFamilyByOwnerOpenId: (ownerOpenId) => familyRepository.findFamilyByOwnerOpenId(ownerOpenId),
+    updateMemberById: (id, data) => familyRepository.updateMemberById(id, data),
+    deleteMemberById: (id) => familyRepository.deleteMemberById(id),
+    findSubscriptionByMemberId: (memberId) => subscriptionRepository.findByMemberId(memberId),
+    updateSubscriptionById: (id, data) => subscriptionRepository.updateById(id, data),
+    createSubscription: (data) => subscriptionRepository.create(data),
+    deleteSubscriptionById: (id) => subscriptionRepository.deleteById(id)
+  });
 }
 
 async function ensureBootstrap(openId) {
-  const user = await ensureUser(openId);
-  let member = await getMember(openId);
-  if (!member) {
-    const familyId = `family-${Date.now()}`;
-    const familyDoc = {
-      familyId,
-      name: '听力打卡家庭',
-      inviteCode: makeInviteCode(),
-      ownerOpenId: openId,
-      createdAt: new Date().toISOString()
-    };
-    await familyRepository.createFamily(familyId, familyDoc);
-    member = {
-      familyId,
-      memberId: `member-${Date.now()}`,
-      userId: user.userId,
-      openId,
-      role: 'owner',
-      studyRole: 'student',
-      displayName: '我',
-      subscriptionEnabled: false,
-      joinedFamilyAt: new Date().toISOString(),
-      createdAt: new Date().toISOString()
-    };
-    await familyRepository.createMember(member);
-    await subscriptionRepository.create({
-      memberId: member.memberId,
-      familyId,
-      dailyReportEnabled: false,
-      lastAuthorizedAt: ''
-    });
-    await childRepository.create(Object.assign({}, childTemplate, {
-      familyId,
-      childLoginCode: await makeUniqueChildLoginCode(),
-      avatarText: buildAvatarTextFromNickname(childTemplate.nickname)
-    }));
-  } else if (!member.userId) {
-    await familyRepository.updateMemberById(member._id, {
-      userId: user.userId
-    });
-    member = Object.assign({}, member, { userId: user.userId });
-  }
-  if (!member.studyRole) {
-    const studyRole = normalizeStudyRole(member);
-    await familyRepository.updateMemberById(member._id, {
-      studyRole,
-      updatedAt: new Date().toISOString()
-    });
-    member = Object.assign({}, member, { studyRole });
-  }
-  const family = await getFamily(member.familyId);
-  const child = await getChild(member.familyId);
-  const members = normalizeAndDedupeMembers(await familyRepository.findMembersByFamilyId(member.familyId));
-  const subscriptionPreference = await subscriptionRepository.findByMemberId(member.memberId) || {
-    memberId: member.memberId,
-    familyId: member.familyId,
-    dailyReportEnabled: !!member.subscriptionEnabled,
-    lastAuthorizedAt: ''
-  };
-  return { user, family, member, child, members, subscriptionPreference };
+  return bootstrapEngine.ensureBootstrap(openId, {
+    findUserByOpenId: (nextOpenId) => userRepository.findByOpenId(nextOpenId),
+    updateUserById: (id, data) => userRepository.updateById(id, data),
+    createUser: (user) => userRepository.create(user),
+    buildUserId,
+    getMember,
+    createFamily: (familyId, data) => familyRepository.createFamily(familyId, data),
+    createMember: (data) => familyRepository.createMember(data),
+    updateMemberById: (id, data) => familyRepository.updateMemberById(id, data),
+    createSubscription: (data) => subscriptionRepository.create(data),
+    createChild: (data) => childRepository.create(data),
+    makeInviteCode,
+    makeUniqueChildLoginCode,
+    buildAvatarTextFromNickname,
+    childTemplate,
+    normalizeStudyRole,
+    getFamily,
+    getChild,
+    normalizeAndDedupeMembers,
+    findMembersByFamilyId: (familyId) => familyRepository.findMembersByFamilyId(familyId),
+    findSubscriptionByMemberId: (memberId) => subscriptionRepository.findByMemberId(memberId)
+  });
 }
 
 function getUserScope(ctx) {
@@ -1548,20 +1382,13 @@ async function getDashboardData(ctx, options = {}) {
 }
 
 async function prepareRequestContext(event) {
-  const action = String((event && event.action) || '').trim();
-  const requestedCategory = String((event && event.payload && event.payload.category) || '').trim();
-  const catalogCategories = requestContextEngine.resolveCatalogCategories(action, requestedCategory, (event && event.payload) || {});
-  await refreshRuntimeCatalogs(false, catalogCategories);
-  await ensureRequiredCollectionsReady();
-  const { OPENID } = getWXContext();
-  const ctx = await ensureBootstrap(OPENID);
-  const today = getTodayString();
-  return {
-    action,
-    requestedCategory,
-    ctx,
-    today
-  };
+  return requestContextEngine.prepareRequestContext(event, {
+    refreshRuntimeCatalogs,
+    ensureRequiredCollectionsReady,
+    getWXContext,
+    ensureBootstrap,
+    getTodayString
+  });
 }
 
 module.exports = {
