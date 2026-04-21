@@ -1,9 +1,127 @@
+/**
+ * @typedef {Object} CurrentMemberData
+ * @property {'student'|'parent'} studyRole
+ */
+
+/**
+ * @typedef {Object} ChildData
+ * @property {string} nickname
+ * @property {string} avatarText
+ * @property {string} childLoginCode
+ */
+
+/**
+ * @typedef {Object} StatsData
+ * @property {number} streakDays
+ * @property {number} completedDays
+ * @property {number} completedLessons
+ * @property {number} completedTasks
+ * @property {number} totalMinutes
+ * @property {string} lastCheckinAt
+ * @property {string} lastCheckinDate
+ */
+
+/**
+ * @typedef {Object} CatchupStateData
+ * @property {boolean} canCatchup
+ * @property {string} missedDate
+ * @property {number} planDayIndex
+ * @property {boolean} usedToday
+ * @property {string} reason
+ */
+
+/**
+ * @typedef {Object} TaskProgressData
+ * @property {number} playCount
+ * @property {string} playStepText
+ * @property {number} currentPass
+ * @property {number} repeatTarget
+ * @property {boolean} textUnlocked
+ * @property {boolean} transcriptVisible
+ * @property {boolean} completedToday
+ */
+
+/**
+ * @typedef {Object} ReportData
+ * @property {string} reportId
+ * @property {string} date
+ * @property {string[]} completedCategories
+ * @property {number} totalMinutes
+ * @property {number} streakSnapshot
+ * @property {number} planDayIndex
+ * @property {string} planPhase
+ * @property {any[]} items
+ * @property {string} pushStatus
+ * @property {boolean} inAppVisible
+ * @property {string} updatedAt
+ */
+
+/**
+ * @typedef {Object} DashboardData
+ * @property {Object} user
+ * @property {Object} currentUser
+ * @property {CurrentMemberData} currentMember
+ * @property {ChildData & {welcomeLine: string}} child
+ * @property {StatsData} stats
+ * @property {number} planDayIndex
+ * @property {string} planPhase
+ * @property {string} planPhaseLabel
+ * @property {number} planTaskCount
+ * @property {any[]} dailyTasks
+ * @property {any[]} groupedDailyTasks
+ * @property {any[]} categorySummaries
+ * @property {number} activeTaskCount
+ * @property {number} completedTaskCountToday
+ * @property {boolean} allDailyDone
+ * @property {CatchupStateData} catchupState
+ */
+
+/**
+ * @typedef {Object} FamilyPageData
+ * @property {Object|null} family
+ * @property {Object} user
+ * @property {Object} currentUser
+ * @property {CurrentMemberData} currentMember
+ * @property {any[]} members
+ * @property {ChildData} child
+ * @property {Object|null} subscriptionPreference
+ */
+
+/**
+ * @typedef {Object} TaskDetailData
+ * @property {Object} user
+ * @property {Object} currentUser
+ * @property {CurrentMemberData} currentMember
+ * @property {ChildData|null} child
+ * @property {StatsData} stats
+ * @property {Object|null} task
+ * @property {TaskProgressData} progress
+ * @property {any[]} categoryTasks
+ * @property {number} categoryTaskCount
+ * @property {number} categoryCompletedCount
+ * @property {number} planDayIndex
+ * @property {string} planPhaseLabel
+ * @property {string} planRunType
+ * @property {string} targetDate
+ * @property {Object|null} scriptSource
+ * @property {Object|null} transcriptTrack
+ * @property {any[]} transcriptLines
+ * @property {Object|null} todayRecord
+ * @property {any[]} history
+ * @property {boolean} studyWriteAllowed
+ * @property {string} studyWriteMessage
+ * @property {boolean} checkinReady
+ * @property {boolean} transcriptPendingLoad
+ */
+
+/** @returns {CurrentMemberData} */
 function createCurrentMemberDefaults() {
   return {
     studyRole: 'parent'
   };
 }
 
+/** @returns {DashboardData} */
 function createDashboardDefaults() {
   return {
     user: {},
@@ -27,6 +145,7 @@ function createDashboardDefaults() {
   };
 }
 
+/** @returns {FamilyPageData} */
 function createFamilyPageDefaults() {
   return {
     family: null,
@@ -39,6 +158,7 @@ function createFamilyPageDefaults() {
   };
 }
 
+/** @returns {ChildData} */
 function createChildDefaults() {
   return {
     nickname: '',
@@ -47,6 +167,7 @@ function createChildDefaults() {
   };
 }
 
+/** @returns {StatsData} */
 function createStatsDefaults() {
   return {
     streakDays: 0,
@@ -59,6 +180,7 @@ function createStatsDefaults() {
   };
 }
 
+/** @returns {CatchupStateData} */
 function createCatchupStateDefaults() {
   return {
     canCatchup: false,
@@ -69,6 +191,7 @@ function createCatchupStateDefaults() {
   };
 }
 
+/** @returns {TaskProgressData} */
 function createTaskProgressDefaults() {
   return {
     playCount: 0,
@@ -81,6 +204,9 @@ function createTaskProgressDefaults() {
   };
 }
 
+/** @param {string=} date
+ *  @returns {ReportData}
+ */
 function createReportDefaults(date) {
   return {
     reportId: '',
@@ -97,6 +223,7 @@ function createReportDefaults(date) {
   };
 }
 
+/** @returns {TaskDetailData} */
 function createTaskDetailDefaults() {
   return {
     user: {},
