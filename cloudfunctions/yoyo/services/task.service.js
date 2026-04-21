@@ -5,6 +5,8 @@ async function getTaskDetail(event) {
     action: 'getTaskDetail'
   }));
   const payload = (event && event.payload) || {};
+  const view = String(payload.view || '').trim();
+  const isLessonView = view === 'lesson';
   const dashboard = await study.getDashboardData(ctx);
   let planRunType = String(payload.planRunType || 'normal');
   let targetDate = String(payload.targetDate || today).slice(0, 10);
@@ -35,7 +37,7 @@ async function getTaskDetail(event) {
     || categoryTasks[0]
     || study.decorateTask(null, study.buildEmptyProgress(), payload.category);
   const scope = study.getUserScope(ctx);
-  const history = progressRecords
+  const history = isLessonView ? [] : progressRecords
     .filter((item) => item.category === payload.category && item.completedToday)
     .map((item) => ({
       date: item.date,
@@ -49,12 +51,9 @@ async function getTaskDetail(event) {
     && targetDate === today
     && dashboard.allDailyDone
     && !todayRecord;
-  return {
-    user: ctx.user,
-    currentUser: ctx.user,
+  const result = {
     currentMember: ctx.member,
     child: ctx.child,
-    stats: dashboard.stats,
     task,
     progress: {
       playCount: task.playCount,
@@ -82,6 +81,12 @@ async function getTaskDetail(event) {
     studyWriteMessage: study.normalizeStudyRole(ctx.member) === 'student' ? '' : '家长模式，不计入打卡',
     checkinReady
   };
+  if (!isLessonView) {
+    result.user = ctx.user;
+    result.currentUser = ctx.user;
+    result.stats = dashboard.stats;
+  }
+  return result;
 }
 
 async function getTaskTranscript(event) {

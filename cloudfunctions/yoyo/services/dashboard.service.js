@@ -8,7 +8,10 @@ function resolveDashboardOptions(view) {
       includeCategorySummaries: false,
       includeCatchupState: false,
       includePlanDebug: false,
-      includeTaskProgressSummary: true
+      includeTaskProgressSummary: true,
+      includeUser: false,
+      includeFamily: false,
+      includeStats: false
     };
   }
   if (view === 'record') {
@@ -18,7 +21,9 @@ function resolveDashboardOptions(view) {
       includeCategorySummaries: false,
       includeCatchupState: false,
       includePlanDebug: false,
-      includeTaskProgressSummary: false
+      includeTaskProgressSummary: false,
+      includeUser: false,
+      includeFamily: false
     };
   }
   return {};

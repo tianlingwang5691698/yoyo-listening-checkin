@@ -45,10 +45,22 @@ async function getTempFileURL(fileId) {
   if (!initCloud() || !fileId) {
     throw new Error('cloud-unavailable');
   }
-  const response = await wx.cloud.getTempFileURL({
-    fileList: [fileId]
-  });
+  const startedAt = Date.now();
+  let response;
+  try {
+    response = await wx.cloud.getTempFileURL({
+      fileList: [fileId]
+    });
+  } catch (error) {
+    monitor.logError('cloud', 'getTempFileURL', error, {
+      duration: `${Date.now() - startedAt}ms`
+    });
+    throw error;
+  }
   const item = ((response || {}).fileList || [])[0] || null;
+  monitor.logPerf('cloud', 'getTempFileURL', Date.now() - startedAt, {
+    hit: item && item.tempFileURL ? 'yes' : 'no'
+  });
   return item && item.tempFileURL ? item.tempFileURL : '';
 }
 

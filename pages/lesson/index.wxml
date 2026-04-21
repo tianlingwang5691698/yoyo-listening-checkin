@@ -70,7 +70,8 @@
       <view>
         <view class="section-title type-section-title">文本</view>
       </view>
-      <view class="pill transcript-pill" wx:if="{{!transcriptLines.length}}">{{transcriptPendingLoad ? '准备中' : (task.transcriptStatus === 'pending' ? '准备中' : '暂无文本')}}</view>
+      <button class="pill transcript-pill" wx:if="{{transcriptPendingLoad && !transcriptLines.length}}" bindtap="loadTranscript">加载文本</button>
+      <view class="pill transcript-pill" wx:elif="{{!transcriptLines.length}}">{{transcriptLoadFailed ? '加载失败' : (task.transcriptStatus === 'pending' ? '准备中' : '暂无文本')}}</view>
     </view>
 
     <view class="transcript-focus" wx:if="{{transcriptLines.length}}">
@@ -116,7 +117,15 @@
       </view>
     </view>
 
-    <view class="transcript-empty" wx:elif="{{transcriptPendingLoad || task.transcriptStatus === 'pending'}}">
+    <view class="transcript-empty" wx:elif="{{transcriptPendingLoad}}">
+      <view class="transcript-empty-title">需要时再加载文本</view>
+    </view>
+
+    <view class="transcript-empty" wx:elif="{{transcriptLoadFailed}}">
+      <view class="transcript-empty-title">文本加载失败，可稍后再试</view>
+    </view>
+
+    <view class="transcript-empty" wx:elif="{{task.transcriptStatus === 'pending'}}">
       <view class="transcript-empty-title">文本准备中</view>
     </view>
 

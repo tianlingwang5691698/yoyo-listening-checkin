@@ -109,6 +109,7 @@ Page({
     studyModeLabel: '学生设备',
     checkinReady: false,
     transcriptPendingLoad: false,
+    transcriptLoadFailed: false,
     passSteps: [],
     completionCardVisible: false
   }),
@@ -231,7 +232,11 @@ Page({
     return player.formatTime(totalSeconds);
   },
   async resolveTaskAudio(task) {
+    const startedAt = Date.now();
     if (!task || task.isPendingAsset) {
+      monitor.logPerf('lesson', 'resolveTaskAudio', Date.now() - startedAt, {
+        mode: 'pending'
+      });
       return Object.assign({}, task, {
         audioUrl: '',
         audioFileId: '',
@@ -254,8 +259,18 @@ Page({
         }
       } catch (error) {
         audioResolveError = 'temp-url-failed';
+        monitor.logError('lesson', 'resolveTaskAudio', error, {
+          category: task.category,
+          taskId: task.taskId,
+          mode: 'temp-url'
+        });
       }
     }
+    monitor.logPerf('lesson', 'resolveTaskAudio', Date.now() - startedAt, {
+      category: task.category,
+      taskId: task.taskId,
+      mode: audioResolveError ? 'static-fallback' : (task.audioUrl ? 'static-cloud-url' : 'missing')
+    });
     return Object.assign({}, task, {
       audioFileId,
       audioSource: task.audioSource || (task.audioUrl ? 'static-cloud-url' : 'none'),
@@ -326,6 +341,7 @@ Page({
   async refreshPage() {
     const startedAt = Date.now();
     const detail = await store.getTaskDetail(this.category, this.taskId, {
+      view: 'lesson',
       planRunType: this.planRunType,
       targetDate: this.targetDate,
       planDayIndex: this.planDayIndex
@@ -339,16 +355,15 @@ Page({
     this.setData(page.buildCloudPageData(this.data, {
       child: detail.child,
       task: normalizedTask,
-      stats: detail.stats,
       todayRecord: detail.todayRecord,
       progress: detail.progress,
       passSteps: buildPassSteps(detail.progress),
-      scriptSource: detail.scriptSource,
-      transcriptTrack: detail.transcriptTrack,
-      transcriptLines: detail.transcriptTrack ? detail.transcriptTrack.lines : [],
+      scriptSource: null,
+      transcriptTrack: null,
+      transcriptLines: [],
       transcriptPendingLoad: !!detail.transcriptPendingLoad,
-      transcriptSyncGranularity: detail.transcriptTrack ? (detail.transcriptTrack.syncGranularity || 'word') : 'word',
-      history: detail.history,
+      transcriptLoadFailed: false,
+      transcriptSyncGranularity: 'word',
       currentMember: detail.currentMember,
       studyWriteAllowed: detail.studyWriteAllowed !== false,
       studyModeLabel: detail.currentMember && detail.currentMember.studyRole === 'student' ? '学生设备' : '家长模式',
@@ -365,7 +380,7 @@ Page({
       prevLine: null,
       activeLine: null,
       activeWord: null,
-      nextLine: detail.transcriptTrack && detail.transcriptTrack.lines.length ? detail.transcriptTrack.lines[0] : null,
+      nextLine: null,
       currentAudio: previewAudio,
       audioSource: normalizedTask && normalizedTask.audioSource ? normalizedTask.audioSource : 'none',
       audioReady: false,
@@ -376,9 +391,6 @@ Page({
     }));
     if (normalizedTask) {
       await this.syncPlayer(normalizedTask);
-      if (detail.transcriptPendingLoad) {
-        this.loadTranscript();
-      }
       monitor.logPerf('lesson', 'refreshPage', Date.now() - startedAt, {
         category: this.category,
         taskId: this.taskId
@@ -390,7 +402,13 @@ Page({
     }
   },
   async loadTranscript() {
+    if (!this.data.transcriptPendingLoad || this.data.transcriptLines.length) {
+      return;
+    }
     const startedAt = Date.now();
+    this.setData({
+      transcriptLoadFailed: false
+    });
     const detail = await store.getTaskTranscript(this.category, this.taskId, {
       planRunType: this.planRunType,
       targetDate: this.targetDate,
@@ -400,6 +418,10 @@ Page({
       monitor.logError('lesson', 'loadTranscript', error, {
         category: this.category,
         taskId: this.taskId
+      });
+      this.setData({
+        transcriptPendingLoad: false,
+        transcriptLoadFailed: true
       });
       return null;
     });
@@ -413,6 +435,7 @@ Page({
       transcriptTrack: detail.transcriptTrack,
       transcriptLines: detail.transcriptTrack ? detail.transcriptTrack.lines : [],
       transcriptPendingLoad: !!detail.transcriptPendingLoad,
+      transcriptLoadFailed: false,
       transcriptSyncGranularity: detail.transcriptTrack ? (detail.transcriptTrack.syncGranularity || 'word') : 'word',
       prevLine: null,
       activeLine: null,
@@ -621,14 +644,12 @@ Page({
       studyModeLabel: detail.currentMember && detail.currentMember.studyRole === 'student' ? '学生设备' : '家长模式',
       checkinReady: !!detail.checkinReady,
       transcriptPendingLoad: !!detail.transcriptPendingLoad,
+      transcriptLoadFailed: false,
       audioSource: normalizedTask && normalizedTask.audioSource ? normalizedTask.audioSource : 'none',
       playbackRate: 1,
       playbackRateText: '1.0'
     }));
     await this.syncPlayer(normalizedTask);
-    if (detail.transcriptPendingLoad) {
-      this.loadTranscript();
-    }
     wx.showToast({
       title: detail.progress.completedToday ? `${normalizedTask.categoryLabel} 今天完成` : `已完成第 ${detail.progress.playCount} 遍`,
       icon: 'none'

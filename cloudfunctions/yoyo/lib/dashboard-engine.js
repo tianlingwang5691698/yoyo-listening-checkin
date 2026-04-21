@@ -22,22 +22,12 @@ function decorateHomeTask(task) {
   const repeatTarget = task.repeatTarget || 3;
   return {
     category: task.category,
-    categoryLabel: task.categoryLabel,
     taskId: task.taskId,
     title: task.title || '',
     displayTitle: task.displayTitle || '',
     isPendingAsset: !!task.isPendingAsset,
     completedToday: !!task.completedToday,
-    playCount: task.playCount || 0,
-    repeatTarget,
     textType: getHomeTextType(task),
-    actionText: task.isPendingAsset
-      ? '等音频放入'
-      : task.completedToday
-        ? '查看完成'
-        : task.playCount > 0
-          ? '继续'
-          : '开始',
     progressText: `${task.playCount || 0}/${repeatTarget} 遍`
   };
 }
@@ -68,7 +58,6 @@ function buildHomeTaskGroups(dailyTasks, planDayIndex, deps) {
           : (nextTask.displayTitle || nextTask.title || ''),
       programStateText: allDone ? '完成' : pending ? '等待' : '›',
       textType: nextTask ? nextTask.textType : '待准备',
-      actionText: nextTask ? nextTask.actionText : '待准备',
       tasks: categoryTasks
     };
   }).filter(Boolean);
@@ -81,6 +70,9 @@ async function getDashboardData(ctx, deps, options = {}) {
   const includeCatchupState = options.includeCatchupState !== false;
   const includePlanDebug = options.includePlanDebug !== false;
   const includeTaskProgressSummary = options.includeTaskProgressSummary !== false;
+  const includeUser = options.includeUser !== false;
+  const includeFamily = options.includeFamily !== false;
+  const includeStats = options.includeStats !== false;
   const today = deps.getTodayString();
   const scope = deps.getUserScope(ctx);
   const [progressRecords, checkins] = await Promise.all([
@@ -112,19 +104,25 @@ async function getDashboardData(ctx, deps, options = {}) {
     ? deps.buildCatchupState(checkins, today, deps.getPlanStartDate(ctx, today, checkins), todayDone)
     : undefined;
   const result = {
-    user: ctx.user,
-    currentUser: ctx.user,
     currentMember: ctx.member,
-    family: ctx.family,
     child: Object.assign({}, ctx.child, {
       totalCompleted: checkins.length,
       streakDays: stats.streakDays
     }),
-    stats,
     planDayIndex,
     planPhase: todayPlan.phase.key,
     planPhaseLabel: todayPlan.phase.label
   };
+  if (includeUser) {
+    result.user = ctx.user;
+    result.currentUser = ctx.user;
+  }
+  if (includeFamily) {
+    result.family = ctx.family;
+  }
+  if (includeStats) {
+    result.stats = stats;
+  }
   if (includeTaskProgressSummary) {
     result.planTaskCount = activeTaskCount;
     result.activeTaskCount = activeTaskCount;

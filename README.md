@@ -2,6 +2,11 @@
 
 一个基于微信小程序 + CloudBase 的家庭英语听力打卡项目，面向单个孩子的日常音频训练、家庭共享进度和家长日报。
 
+## 当前版本
+
+- 稳定回退点：`3.0.1`
+- 当前云函数版本：`cloudfunctions/yoyo/package.json -> 3.0.1`
+
 ## 当前目标
 
 - 稳定接入正式云环境 `youshengenglish-6glk12rd6c6e719b`
@@ -38,7 +43,7 @@
 
 ### 云函数
 
-- [cloudfunctions/yoyo](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/cloudfunctions/yoyo)：主云函数，负责家庭、任务、进度、日报、云存储任务扫描
+- [cloudfunctions/yoyo](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/cloudfunctions/yoyo)：主云函数，当前按 `services / facades / lib / repositories / adapters` 分层，负责家庭、任务、进度、日报和云存储任务扫描
 - [cloudfunctions/unlock1-preprocess](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/cloudfunctions/unlock1-preprocess)：Unlock1 音频预处理云函数，负责扫描、时长提取和训练池写库
 - [cloudfunctions/README.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/cloudfunctions/README.md)：云函数部署、集合和手动触发说明
 
@@ -52,17 +57,31 @@
 
 1. [docs/README.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/README.md)
 2. [docs/ARCHITECTURE.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/ARCHITECTURE.md)
-3. [docs/CLOUDBASE_SETUP.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/CLOUDBASE_SETUP.md)
-4. [docs/REAL_DEVICE_TEST.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/REAL_DEVICE_TEST.md)
-5. [docs/RELEASE_SOP.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/RELEASE_SOP.md)
+3. [docs/ENGINEERING_RULES.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/ENGINEERING_RULES.md)
+4. [docs/DATA_CONTRACTS.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/DATA_CONTRACTS.md)
+5. [docs/CLOUDBASE_SETUP.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/CLOUDBASE_SETUP.md)
+6. [docs/REAL_DEVICE_TEST.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/REAL_DEVICE_TEST.md)
+7. [docs/RELEASE_SOP.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/RELEASE_SOP.md)
 
 ## 运行链路
 
 1. 页面层通过 `utils/store` 统一获取数据
 2. `utils/store` 调用 `domain/cloud -> wx.cloud.callFunction -> yoyo`
-3. `yoyo` 云函数读取 CloudBase 数据库和云存储
+3. `yoyo` 云函数入口分发到 `services/*`
+4. `services/*` 通过 `facades/*`、`lib/*-engine`、`repositories/*` 完成业务编排
+5. `repositories/*` 读取 CloudBase 数据库，`adapters/*` 处理云存储、上下文和转写资源
 4. `unlock1-preprocess` 作为独立预处理链路维护 Unlock1 听力训练池
 5. 前台不再回退本地业务数据；云端失败时直接显示 `cloud-error`
+
+## 当前能力
+
+- 按中国时间 `00:00` 刷新当天任务
+- 补卡只允许从首次成功打卡之后的漏卡日期开始
+- 家长可通过孩子 ID 加入同一份记录
+- 非 owner 家长支持退出孩子记录，并优先回到自己原本的记录
+- 首页 `getDashboard` 已按页面场景瘦身，首页任务分组改为云端生成
+- 已增加核心规则测试：日期、补卡、打卡、日报、dashboard
+- 已增加性能埋点：`getDashboard` / `getTaskDetail` / 首页加载
 
 ## 云存储目录约定
 
@@ -91,6 +110,8 @@
 ## 开发与部署
 
 - 文档总入口见 [docs/README.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/README.md)
+- 工程演进规则见 [docs/ENGINEERING_RULES.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/ENGINEERING_RULES.md)
+- 数据契约见 [docs/DATA_CONTRACTS.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/DATA_CONTRACTS.md)
 - UI/交互改动可参考 [docs/PRODUCT_DESIGN_RULES.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/PRODUCT_DESIGN_RULES.md)、[docs/DESIGN_STYLE_REQUIREMENTS.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/DESIGN_STYLE_REQUIREMENTS.md)、[docs/UI_CHANGE_CHECKLIST.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/UI_CHANGE_CHECKLIST.md) 和 [docs/PROJECT_PROGRESS_LOG.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/PROJECT_PROGRESS_LOG.md)；这些文档不要求 Codex App 在 Default Mode 下先输出计划
 - 云环境部署说明见 [docs/CLOUDBASE_SETUP.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/CLOUDBASE_SETUP.md)
 - 真机测试清单见 [docs/REAL_DEVICE_TEST.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/REAL_DEVICE_TEST.md)

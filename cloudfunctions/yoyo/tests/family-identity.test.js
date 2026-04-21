@@ -3,6 +3,7 @@ const assert = require('node:assert/strict');
 
 const familyService = require('../services/family.service');
 const dashboardService = require('../services/dashboard.service');
+const taskService = require('../services/task.service');
 const identityService = require('../services/identity.service');
 const familyFacade = require('../facades/family.facade');
 const studyFacade = require('../facades/study.facade');
@@ -161,7 +162,10 @@ test('getDashboard 按 view 返回不同 shape', async (t) => {
     includeCategorySummaries: false,
     includeCatchupState: false,
     includePlanDebug: false,
-    includeTaskProgressSummary: true
+    includeTaskProgressSummary: true,
+    includeUser: false,
+    includeFamily: false,
+    includeStats: false
   });
   assert.deepEqual(recordResult, {
     includeDailyTasks: false,
@@ -169,6 +173,59 @@ test('getDashboard 按 view 返回不同 shape', async (t) => {
     includeCategorySummaries: false,
     includeCatchupState: false,
     includePlanDebug: false,
-    includeTaskProgressSummary: false
+    includeTaskProgressSummary: false,
+    includeUser: false,
+    includeFamily: false
   });
+});
+
+test('getTaskDetail lesson view 不返回首屏不用的大字段', async (t) => {
+  t.mock.method(studyFacade, 'prepareRequestContext', async () => ({
+    ctx: {
+      user: { userId: 'user-1' },
+      member: { memberId: 'member-1', studyRole: 'parent' },
+      child: { childId: 'child-1' }
+    },
+    today: '2026-04-21'
+  }));
+  t.mock.method(studyFacade, 'getDashboardData', async () => ({
+    dailyTasks: [{
+      category: 'peppa',
+      taskId: 'peppa-1',
+      playCount: 0,
+      repeatTarget: 3,
+      transcriptVisible: true,
+      completedToday: false
+    }],
+    planDayIndex: 1,
+    planPhaseLabel: '第1轮',
+    allDailyDone: false,
+    catchupState: {
+      canCatchup: false,
+      missedDate: '',
+      planDayIndex: 0
+    },
+    stats: { totalMinutes: 999 }
+  }));
+  t.mock.method(studyFacade, 'getUserScope', () => ({ childId: 'child-1' }));
+  t.mock.method(studyFacade, 'getChildProgressRecords', async () => [
+    { category: 'peppa', completedToday: true, date: '2026-04-20', taskId: 'old-task', playCount: 3 }
+  ]);
+  t.mock.method(studyFacade, 'getCheckins', async () => []);
+  t.mock.method(studyFacade, 'normalizeStudyRole', () => 'parent');
+
+  const result = await taskService.getTaskDetail({
+    payload: {
+      view: 'lesson',
+      category: 'peppa',
+      taskId: 'peppa-1'
+    }
+  });
+
+  assert.equal(result.user, undefined);
+  assert.equal(result.currentUser, undefined);
+  assert.equal(result.stats, undefined);
+  assert.deepEqual(result.history, []);
+  assert.equal(result.task.taskId, 'peppa-1');
+  assert.equal(result.currentMember.memberId, 'member-1');
 });
