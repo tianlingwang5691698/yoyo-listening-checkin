@@ -6,8 +6,13 @@ async function getHeatmap(event) {
   }));
   const days = Number((event && event.payload && event.payload.days) || 28);
   const scope = study.getUserScope(ctx);
-  const records = await study.getCheckins(scope);
-  const progressRecords = await study.getChildProgressRecords(scope);
+  let records = await study.getCheckins(scope);
+  let progressRecords = await study.getChildProgressRecords(scope);
+  if (study.reconcileCheckins) {
+    const reconciled = await study.reconcileCheckins(scope, progressRecords, records, today);
+    records = reconciled.checkins || records;
+    progressRecords = reconciled.progressRecords || progressRecords;
+  }
   const counts = {};
   records.forEach((item) => {
     counts[item.date] = (counts[item.date] || 0) + 1;
@@ -52,8 +57,13 @@ async function getMonthHeatmap(event) {
   const month = Number((event && event.payload && event.payload.month) || today.slice(5, 7));
   const monthText = `${year}-${String(month).padStart(2, '0')}`;
   const scope = study.getUserScope(ctx);
-  const records = await study.getCheckins(scope);
-  const progressRecords = await study.getChildProgressRecords(scope);
+  let records = await study.getCheckins(scope);
+  let progressRecords = await study.getChildProgressRecords(scope);
+  if (study.reconcileCheckins) {
+    const reconciled = await study.reconcileCheckins(scope, progressRecords, records, today);
+    records = reconciled.checkins || records;
+    progressRecords = reconciled.progressRecords || progressRecords;
+  }
   const counts = {};
   records.forEach((item) => {
     if (String(item.date || '').slice(0, 7) === monthText) {

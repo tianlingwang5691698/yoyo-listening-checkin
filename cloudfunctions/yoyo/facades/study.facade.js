@@ -26,6 +26,7 @@ module.exports = {
   getPlanStartDate: shared.getPlanStartDate,
   normalizeStudyRole: shared.normalizeStudyRole,
   maybeCreateCheckin: shared.maybeCreateCheckin,
+  reconcileCheckins: shared.reconcileCheckins,
   saveProgressRecord: shared.saveProgressRecord,
   getResourceDebugSnapshot: shared.getResourceDebugSnapshot,
   level: shared.level

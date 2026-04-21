@@ -500,6 +500,7 @@ module.exports = {
   getPlanStartDate,
   normalizeStudyRole,
   maybeCreateCheckin,
+  reconcileCheckins,
   saveProgressRecord,
   level,
   ensureBootstrap,
