@@ -31,6 +31,22 @@ const actionMap = {
   getParentDashboard: reportService.getParentDashboard
 };
 
+const MONITORED_ACTIONS = new Set([
+  'getDashboard',
+  'getTaskDetail',
+  'getTaskTranscript',
+  'markTaskListened',
+  'completeTodayCheckin',
+  'getProfileData',
+  'getFamilyPage',
+  'joinFamilyByChildCode',
+  'leaveFamily',
+  'setStudyRole',
+  'getMonthHeatmap',
+  'getDailyReportByDate',
+  'getParentDashboard'
+]);
+
 exports.main = async (event, context) => {
   const action = String((event && event.action) || '').trim();
   const handler = actionMap[action];
@@ -51,7 +67,7 @@ exports.main = async (event, context) => {
   const durationMs = Date.now() - startedAt;
 
   if (!result || typeof result !== 'object' || Array.isArray(result)) {
-    if (['getDashboard', 'getTaskDetail', 'getParentDashboard'].includes(action)) {
+    if (MONITORED_ACTIONS.has(action)) {
       monitor.logPerf('cloudfn', action, durationMs, { shape: 'primitive' });
     }
     return result;
@@ -60,7 +76,7 @@ exports.main = async (event, context) => {
   const finalResult = Object.assign({}, result, {
     resourceDebug: result.resourceDebug || catalogService.getResourceDebugSnapshot()
   });
-  if (['getDashboard', 'getTaskDetail', 'getParentDashboard'].includes(action)) {
+  if (MONITORED_ACTIONS.has(action)) {
     const payloadSize = Buffer.byteLength(JSON.stringify(finalResult), 'utf8');
     monitor.logPerf('cloudfn', action, durationMs, { payload: `${payloadSize}B` });
   }

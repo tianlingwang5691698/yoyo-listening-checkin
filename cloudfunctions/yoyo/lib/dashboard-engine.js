@@ -20,7 +20,16 @@ function getHomeTextType(task) {
 
 function decorateHomeTask(task) {
   const repeatTarget = task.repeatTarget || 3;
-  return Object.assign({}, task, {
+  return {
+    category: task.category,
+    categoryLabel: task.categoryLabel,
+    taskId: task.taskId,
+    title: task.title || '',
+    displayTitle: task.displayTitle || '',
+    isPendingAsset: !!task.isPendingAsset,
+    completedToday: !!task.completedToday,
+    playCount: task.playCount || 0,
+    repeatTarget,
     textType: getHomeTextType(task),
     actionText: task.isPendingAsset
       ? '等音频放入'
@@ -30,7 +39,7 @@ function decorateHomeTask(task) {
           ? '继续'
           : '开始',
     progressText: `${task.playCount || 0}/${repeatTarget} 遍`
-  });
+  };
 }
 
 function buildHomeTaskGroups(dailyTasks, planDayIndex, deps) {
