@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+
+jobs:
+  yoyo-cloud-checks:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: cloudfunctions/yoyo/package-lock.json
+
+      - name: Install yoyo dependencies
+        working-directory: cloudfunctions/yoyo
+        run: npm ci
+
+      - name: Syntax check
+        run: |
+          node --check cloudfunctions/yoyo/index.js
+          node --check cloudfunctions/yoyo/services/*.js
+          node --check cloudfunctions/yoyo/facades/*.js
+          node --check cloudfunctions/yoyo/repositories/*.js
+          node --check cloudfunctions/yoyo/lib/*.js
+          node --check utils/store.js
+          node --check pages/home/index.js
+          node --check pages/family/index.js
+
+      - name: Run yoyo tests
+        working-directory: cloudfunctions/yoyo
+        run: npm test
