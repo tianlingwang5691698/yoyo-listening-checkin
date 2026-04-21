@@ -17,6 +17,8 @@ const requestContextEngine = require('../lib/request-context-engine');
 const monitor = require('../lib/monitor');
 const catalogEngine = require('../lib/catalog-engine');
 const familyContextFacade = require('../facades/family-context.facade');
+const { collection } = require('../adapters/db.adapter');
+const { isMissingCollectionError } = require('../lib/errors');
 
 cloud.init({
   env: cloud.DYNAMIC_CURRENT_ENV
@@ -115,6 +117,43 @@ function decorateTask(task, progress, category) {
     songPlaceholder,
     getMediaDisplayName
   });
+}
+
+async function checkCollectionReady(collectionName) {
+  try {
+    await collection(collectionName).limit(1).get();
+    return true;
+  } catch (error) {
+    if (isMissingCollectionError(error)) {
+      return false;
+    }
+    throw error;
+  }
+}
+
+function createMissingCollectionsError(missingCollections) {
+  const missing = missingCollections.filter(Boolean);
+  const message = [
+    `cloud-env-not-ready: 当前云环境 ${CLOUD_ENV_ID || 'unknown'} 缺少数据库集合`,
+    missing.join(', '),
+    '请先在 CloudBase 控制台手动创建这些空集合，再重新部署 yoyo 并刷新首页。'
+  ].join(' | ');
+  const error = new Error(message);
+  error.code = 'cloud-env-not-ready';
+  error.missingCollections = missing;
+  error.envId = CLOUD_ENV_ID || '';
+  return error;
+}
+
+async function ensureRequiredCollectionsReady() {
+  const results = await Promise.all(REQUIRED_COLLECTIONS.map(async (collectionName) => ({
+    collectionName,
+    ready: await checkCollectionReady(collectionName)
+  })));
+  const missingCollections = results.filter((item) => !item.ready).map((item) => item.collectionName);
+  if (missingCollections.length) {
+    throw createMissingCollectionsError(missingCollections);
+  }
 }
 
 async function updateChildProfile(familyId, payload) {
