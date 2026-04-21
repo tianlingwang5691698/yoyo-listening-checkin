@@ -4,6 +4,7 @@ const cloud = require('../../domain/cloud/index');
 const appConfig = require('../../data/app-config');
 const page = require('../../utils/page');
 const labels = require('../../utils/labels');
+const monitor = require('../../utils/monitor');
 
 function buildCloudFileId(cloudPath) {
   const normalizedPath = String(cloudPath || '').replace(/^\/+/, '');
@@ -323,6 +324,7 @@ Page({
     }));
   },
   async refreshPage() {
+    const startedAt = Date.now();
     const detail = await store.getTaskDetail(this.category, this.taskId, {
       planRunType: this.planRunType,
       targetDate: this.targetDate,
@@ -377,6 +379,10 @@ Page({
       if (detail.transcriptPendingLoad) {
         this.loadTranscript();
       }
+      monitor.logPerf('lesson', 'refreshPage', Date.now() - startedAt, {
+        category: this.category,
+        taskId: this.taskId
+      });
       return;
     }
     if (this.innerAudioContext) {
@@ -384,12 +390,19 @@ Page({
     }
   },
   async loadTranscript() {
+    const startedAt = Date.now();
     const detail = await store.getTaskTranscript(this.category, this.taskId, {
       planRunType: this.planRunType,
       targetDate: this.targetDate,
       planDayIndex: this.planDayIndex,
       taskSnapshot: this.data.task
-    }).catch(() => null);
+    }).catch((error) => {
+      monitor.logError('lesson', 'loadTranscript', error, {
+        category: this.category,
+        taskId: this.taskId
+      });
+      return null;
+    });
     if (!detail) {
       return;
     }
@@ -406,6 +419,11 @@ Page({
       activeWord: null,
       nextLine: detail.transcriptTrack && detail.transcriptTrack.lines.length ? detail.transcriptTrack.lines[0] : null
     }));
+    monitor.logPerf('lesson', 'loadTranscript', Date.now() - startedAt, {
+      category: this.category,
+      taskId: this.taskId,
+      lines: detail.transcriptLines ? detail.transcriptLines.length : 0
+    });
   },
   clearTranscriptState() {
     this.setData({

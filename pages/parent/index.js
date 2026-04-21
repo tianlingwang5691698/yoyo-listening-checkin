@@ -1,6 +1,7 @@
 const store = require('../../utils/store');
 const page = require('../../utils/page');
 const labels = require('../../utils/labels');
+const contracts = require('../../utils/contracts');
 
 function formatDateLabel(dateKey) {
   const parts = String(dateKey || '').split('-').map(Number);
@@ -27,12 +28,8 @@ function normalizeParentData(data) {
 Page({
   data: page.createCloudPageData({
     family: {},
-    child: {},
-    todayReport: {
-      totalMinutes: 0,
-      completedCategories: [],
-      items: []
-    },
+    child: contracts.createChildDefaults(),
+    todayReport: contracts.createReportDefaults(),
     recentReports: []
   }),
   onShow() {

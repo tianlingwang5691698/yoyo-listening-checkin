@@ -1,12 +1,13 @@
 const store = require('../../utils/store');
 const page = require('../../utils/page');
+const contracts = require('../../utils/contracts');
 
 Page({
   data: page.createCloudPageData({
     family: {},
-    currentMember: {},
+    currentMember: contracts.createCurrentMemberDefaults(),
     members: [],
-    child: {},
+    child: contracts.createChildDefaults(),
     subscriptionPreference: {
       dailyReportEnabled: false
     },

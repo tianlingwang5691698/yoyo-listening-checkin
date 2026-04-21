@@ -22,6 +22,7 @@ const reportEngine = require('../lib/report-engine');
 const dashboardEngine = require('../lib/dashboard-engine');
 const levelEngine = require('../lib/level-engine');
 const requestContextEngine = require('../lib/request-context-engine');
+const monitor = require('../lib/monitor');
 
 cloud.init({
   env: cloud.DYNAMIC_CURRENT_ENV
@@ -397,7 +398,9 @@ function shouldLazyTranscriptCategory(category) {
 async function getTranscriptBundle(task) {
   const startedAt = Date.now();
   const result = await transcriptAdapter.getTranscriptBundle(task);
-  console.log(`[perf] getTranscriptBundle ${Date.now() - startedAt}ms category=${String((task && task.category) || '')}`);
+  monitor.logPerf('cloudfn', 'getTranscriptBundle', Date.now() - startedAt, {
+    category: String((task && task.category) || '')
+  });
   return result;
 }
 
@@ -946,7 +949,9 @@ async function refreshRuntimeCatalogs(force, categories) {
   runtimeCatalogs = nextCatalogs;
   runtimeCatalogDebug = summarizeRuntimeCatalogDebug(nextDebug);
   runtimeCatalogExpiresAt = now + 5 * 60 * 1000;
-  console.log(`[perf] refreshRuntimeCatalogs ${Date.now() - startedAt}ms categories=${targetCategories.join(',')}`);
+  monitor.logPerf('cloudfn', 'refreshRuntimeCatalogs', Date.now() - startedAt, {
+    categories: targetCategories.join(',')
+  });
   return runtimeCatalogs;
 }
 

@@ -1,13 +1,11 @@
 const store = require('../../utils/store');
 const page = require('../../utils/page');
 const labels = require('../../utils/labels');
+const contracts = require('../../utils/contracts');
 
 const WEEK_LABELS = ['日', '一', '二', '三', '四', '五', '六'];
 const EMPTY_REPORT = {
-  date: '',
-  totalMinutes: 0,
-  completedCategories: [],
-  items: []
+  ...contracts.createReportDefaults()
 };
 const EMPTY_DAY_SUMMARY = {
   completedCount: 0,
@@ -175,8 +173,8 @@ Page({
   calendarLoadVersion: 0,
   lastHeatmapRefreshToken: 0,
   data: page.createCloudPageData({
-    child: null,
-    stats: {},
+    child: contracts.createChildDefaults(),
+    stats: contracts.createStatsDefaults(),
     weekLabels: WEEK_LABELS,
     metricMode: 'streak',
     heroMetricValue: 0,
@@ -196,12 +194,7 @@ Page({
     catchupStatusLabel: '无需追赶',
     catchupStatusClass: 'is-muted',
     catchupCopy: '节奏正常',
-    catchupState: {
-      canCatchup: false,
-      missedDate: '',
-      planDayIndex: 0,
-      reason: ''
-    },
+    catchupState: contracts.createCatchupStateDefaults(),
     catchupTasks: []
   }),
   async onShow() {

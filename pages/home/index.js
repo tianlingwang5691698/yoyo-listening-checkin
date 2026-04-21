@@ -1,9 +1,11 @@
 const store = require('../../utils/store');
 const page = require('../../utils/page');
+const contracts = require('../../utils/contracts');
+const monitor = require('../../utils/monitor');
 Page({
   data: page.createCloudPageData({
-    child: null,
-    currentMember: {},
+    child: contracts.createChildDefaults(),
+    currentMember: contracts.createCurrentMemberDefaults(),
     planDayIndex: 1,
     planPhaseLabel: '第1轮',
     groupedDailyTasks: [],
@@ -43,7 +45,9 @@ Page({
       identityConfirmVisible: !page.isIdentityConfirmed(),
       modeChangedNoticeVisible
     }, this.buildStudyModePresentation(data.currentMember))));
-    console.log(`[perf][home] onShow total=${Date.now() - startedAt}ms groups=${(data.groupedDailyTasks || []).length}`);
+    monitor.logPerf('home', 'onShow', Date.now() - startedAt, {
+      groups: (data.groupedDailyTasks || []).length
+    });
   },
   async confirmStudyIdentity(event) {
     const nextRole = event.currentTarget.dataset.role === 'student' ? 'student' : 'parent';

@@ -1,4 +1,6 @@
 const cloud = require('../domain/cloud/index');
+const contracts = require('./contracts');
+const monitor = require('./monitor');
 const inflightCloudRequests = {};
 
 function formatCloudReason(error) {
@@ -136,7 +138,7 @@ async function callCloud(action, payload, defaults) {
       const result = await cloud.callYoyo(action, payload);
       return Object.assign(buildSyncMeta('cloud', null, result.resourceDebug), result);
     } catch (error) {
-      console.error('[callCloud]', action, formatCloudReason(error), error);
+      monitor.logError('store', action, error, { reason: formatCloudReason(error) });
       return buildCloudErrorPayload(action, error, defaults);
     } finally {
       if (inflightKey) {
@@ -154,69 +156,22 @@ async function ensureState() {
   cloud.initCloud();
   return callCloud('bootstrap', {}, {
     family: null,
-    child: {
-      nickname: '',
-      avatarText: '',
-      childLoginCode: ''
-    }
+    child: contracts.createChildDefaults()
   });
 }
 
 async function getDashboard(options) {
-  return callCloud('getDashboard', Object.assign({}, options || {}), {
-    user: {},
-    currentUser: {},
-    currentMember: {
-      studyRole: 'parent'
-    },
-    child: {
-      nickname: '',
-      avatarText: '',
-      childLoginCode: '',
-      welcomeLine: '云端数据暂时不可用，请稍后重试。'
-    },
-    stats: {
-      streakDays: 0,
-      completedDays: 0,
-      totalMinutes: 0,
-      lastCheckinAt: '',
-      lastCheckinDate: ''
-    },
-    planDayIndex: 1,
-    planPhaseLabel: '第1轮',
-    planTaskCount: 0,
-    dailyTasks: [],
-    groupedDailyTasks: [],
-    categorySummaries: [],
-    activeTaskCount: 0,
-    completedTaskCountToday: 0,
-    allDailyDone: false,
-    catchupState: {
-      canCatchup: false,
-      missedDate: '',
-      planDayIndex: 0,
-      usedToday: false,
-      reason: ''
-    }
-  });
+  return callCloud('getDashboard', Object.assign({}, options || {}), contracts.createDashboardDefaults());
 }
 
 async function getLevelOverview() {
   return callCloud('getLevelOverview', {}, {
     user: {},
     currentUser: {},
-    currentMember: {
-      studyRole: 'parent'
-    },
+    currentMember: contracts.createCurrentMemberDefaults(),
     child: null,
     level: null,
-    stats: {
-      streakDays: 0,
-      completedDays: 0,
-      totalMinutes: 0,
-      lastCheckinAt: '',
-      lastCheckinDate: ''
-    },
+    stats: contracts.createStatsDefaults(),
     planDayIndex: 1,
     planPhaseLabel: '第1轮',
     categories: [],
@@ -227,47 +182,7 @@ async function getLevelOverview() {
 }
 
 async function getTaskDetail(category, taskId, options) {
-  return callCloud('getTaskDetail', Object.assign({ category, taskId }, options || {}), {
-    user: {},
-    currentUser: {},
-    currentMember: {
-      studyRole: 'parent'
-    },
-    child: null,
-    stats: {
-      streakDays: 0,
-      completedDays: 0,
-      totalMinutes: 0,
-      lastCheckinAt: '',
-      lastCheckinDate: ''
-    },
-    task: null,
-    progress: {
-      playCount: 0,
-      playStepText: '0/3',
-      currentPass: 1,
-      repeatTarget: 3,
-      textUnlocked: false,
-      transcriptVisible: true,
-      completedToday: false
-    },
-    categoryTasks: [],
-    categoryTaskCount: 0,
-    categoryCompletedCount: 0,
-    planDayIndex: 1,
-    planPhaseLabel: '第1轮',
-    planRunType: 'normal',
-    targetDate: '',
-    scriptSource: null,
-    transcriptTrack: null,
-    transcriptLines: [],
-    todayRecord: null,
-    history: [],
-    studyWriteAllowed: false,
-    studyWriteMessage: '',
-    checkinReady: false,
-    transcriptPendingLoad: false
-  });
+  return callCloud('getTaskDetail', Object.assign({ category, taskId }, options || {}), contracts.createTaskDetailDefaults());
 }
 
 async function getTaskTranscript(category, taskId, options) {
@@ -281,57 +196,13 @@ async function getTaskTranscript(category, taskId, options) {
 }
 
 async function markTaskListened(options) {
-  return callCloud('markTaskListened', options, {
-    user: {},
-    currentUser: {},
-    currentMember: {
-      studyRole: 'parent'
-    },
-    child: null,
-    stats: {
-      streakDays: 0,
-      completedDays: 0,
-      totalMinutes: 0,
-      lastCheckinAt: '',
-      lastCheckinDate: ''
-    },
-    task: null,
-    progress: {
-      playCount: 0,
-      playStepText: '0/3',
-      currentPass: 1,
-      repeatTarget: 3,
-      textUnlocked: false,
-      transcriptVisible: true,
-      completedToday: false
-    },
-    categoryTasks: [],
-    categoryTaskCount: 0,
-    categoryCompletedCount: 0,
-    planDayIndex: 1,
-    planPhaseLabel: '第1轮',
-    planRunType: 'normal',
-    targetDate: '',
-    scriptSource: null,
-    transcriptTrack: null,
-    transcriptLines: [],
-    todayRecord: null,
-    history: [],
-    checkinReady: false,
-    transcriptPendingLoad: false
-  });
+  return callCloud('markTaskListened', options, contracts.createTaskDetailDefaults());
 }
 
 async function completeTodayCheckin() {
   return callCloud('completeTodayCheckin', {}, {
     child: null,
-    stats: {
-      streakDays: 0,
-      completedDays: 0,
-      totalMinutes: 0,
-      lastCheckinAt: '',
-      lastCheckinDate: ''
-    },
+    stats: contracts.createStatsDefaults(),
     todayRecord: null,
     checkinReady: false
   });
@@ -358,13 +229,7 @@ async function getProfileData() {
 async function getHeatmap(days) {
   return callCloud('getHeatmap', { days }, {
     heatmap: [],
-    catchupState: {
-      canCatchup: false,
-      missedDate: '',
-      planDayIndex: 0,
-      usedToday: false,
-      reason: ''
-    },
+    catchupState: contracts.createCatchupStateDefaults(),
     catchupTasks: []
   });
 }
@@ -374,24 +239,13 @@ async function getMonthHeatmap(year, month) {
     year,
     month,
     heatmap: [],
-    catchupState: {
-      canCatchup: false,
-      missedDate: '',
-      planDayIndex: 0,
-      usedToday: false,
-      reason: ''
-    }
+    catchupState: contracts.createCatchupStateDefaults()
   });
 }
 
 async function getDailyReportByDate(date) {
   return callCloud('getDailyReportByDate', { date }, {
-    report: {
-      date,
-      totalMinutes: 0,
-      completedCategories: [],
-      items: []
-    }
+    report: contracts.createReportDefaults(date)
   });
 }
 
@@ -399,176 +253,53 @@ async function getParentDashboard() {
   return callCloud('getParentDashboard', {}, {
     family: null,
     child: null,
-    stats: {
-      streakDays: 0,
-      completedDays: 0,
-      totalMinutes: 0,
-      lastCheckinAt: '',
-      lastCheckinDate: ''
-    },
-    todayReport: null,
+    stats: contracts.createStatsDefaults(),
+    todayReport: contracts.createReportDefaults(),
     recentReports: [],
     user: {},
     currentUser: {},
-    currentMember: {
-      studyRole: 'parent'
-    },
+    currentMember: contracts.createCurrentMemberDefaults(),
     members: [],
     subscriptionPreference: null
   });
 }
 
 async function getFamilyPageData() {
-  return callCloud('getFamilyPage', {}, {
-    family: null,
-    user: {},
-    currentUser: {},
-    currentMember: {
-      studyRole: 'parent'
-    },
-    members: [],
-    child: {
-      nickname: '',
-      avatarText: '',
-      childLoginCode: ''
-    },
-    subscriptionPreference: null
-  });
+  return callCloud('getFamilyPage', {}, contracts.createFamilyPageDefaults());
 }
 
 async function refreshInviteCode() {
-  return callCloud('refreshInviteCode', {}, {
-    family: null,
-    user: {},
-    currentUser: {},
-    currentMember: {},
-    members: [],
-    child: {
-      nickname: '',
-      avatarText: '',
-      childLoginCode: ''
-    },
-    subscriptionPreference: null
-  });
+  return callCloud('refreshInviteCode', {}, contracts.createFamilyPageDefaults());
 }
 
 async function joinFamily(inviteCode, displayName) {
-  return callCloud('joinFamily', { inviteCode, displayName }, {
-    family: null,
-    user: {},
-    currentUser: {},
-    currentMember: {},
-    members: [],
-    child: {
-      nickname: '',
-      avatarText: '',
-      childLoginCode: ''
-    },
-    subscriptionPreference: null
-  });
+  return callCloud('joinFamily', { inviteCode, displayName }, contracts.createFamilyPageDefaults());
 }
 
 async function joinFamilyByChildCode(childLoginCode, displayName) {
-  return callCloud('joinFamilyByChildCode', { childLoginCode, displayName }, {
-    family: null,
-    user: {},
-    currentUser: {},
-    currentMember: {},
-    members: [],
-    child: {
-      nickname: '',
-      avatarText: '',
-      childLoginCode: ''
-    },
-    subscriptionPreference: null
-  });
+  return callCloud('joinFamilyByChildCode', { childLoginCode, displayName }, contracts.createFamilyPageDefaults());
 }
 
 async function leaveFamily() {
-  return callCloud('leaveFamily', {}, {
-    family: null,
-    user: {},
-    currentUser: {},
-    currentMember: {
-      studyRole: 'parent'
-    },
-    members: [],
-    child: {
-      nickname: '',
-      avatarText: '',
-      childLoginCode: ''
-    },
-    subscriptionPreference: null
-  });
+  return callCloud('leaveFamily', {}, contracts.createFamilyPageDefaults());
 }
 
 async function setStudyRole(studyRole) {
-  return callCloud('setStudyRole', { studyRole }, {
-    family: null,
-    user: {},
-    currentUser: {},
-    currentMember: {
-      studyRole: 'parent'
-    },
-    members: [],
-    child: {
-      nickname: '',
-      avatarText: '',
-      childLoginCode: ''
-    },
-    subscriptionPreference: null
-  });
+  return callCloud('setStudyRole', { studyRole }, contracts.createFamilyPageDefaults());
 }
 
 async function undoLastListened() {
-  return callCloud('undoLastListened', {}, {
-    family: null,
-    user: {},
-    currentUser: {},
-    currentMember: {
-      studyRole: 'parent'
-    },
-    members: [],
-    child: {
-      nickname: '',
-      avatarText: '',
-      childLoginCode: ''
-    },
-    subscriptionPreference: null,
+  return callCloud('undoLastListened', {}, Object.assign({}, contracts.createFamilyPageDefaults(), {
     cleared: null
-  });
+  }));
 }
 
 async function updateSubscription(enabled) {
-  return callCloud('updateSubscription', { enabled }, {
-    family: null,
-    user: {},
-    currentUser: {},
-    currentMember: {},
-    members: [],
-    child: {
-      nickname: '',
-      avatarText: '',
-      childLoginCode: ''
-    },
-    subscriptionPreference: null
-  });
+  return callCloud('updateSubscription', { enabled }, contracts.createFamilyPageDefaults());
 }
 
 async function updateChildProfile(nickname) {
-  return callCloud('updateChildProfile', { nickname }, {
-    family: null,
-    user: {},
-    currentUser: {},
-    currentMember: {},
-    members: [],
-    child: {
-      nickname: '',
-      avatarText: '',
-      childLoginCode: ''
-    },
-    subscriptionPreference: null
-  });
+  return callCloud('updateChildProfile', { nickname }, contracts.createFamilyPageDefaults());
 }
 
 module.exports = {

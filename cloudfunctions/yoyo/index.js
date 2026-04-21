@@ -5,6 +5,7 @@ const familyService = require('./services/family.service');
 const reportService = require('./services/report.service');
 const identityService = require('./services/identity.service');
 const catalogService = require('./services/catalog.service');
+const monitor = require('./lib/monitor');
 
 const actionMap = {
   bootstrap: identityService.bootstrap,
@@ -38,12 +39,20 @@ exports.main = async (event, context) => {
   }
 
   const startedAt = Date.now();
-  const result = await handler(event || {}, context || {});
+  let result;
+  try {
+    result = await handler(event || {}, context || {});
+  } catch (error) {
+    monitor.logError('cloudfn', action, error, {
+      duration: `${Date.now() - startedAt}ms`
+    });
+    throw error;
+  }
   const durationMs = Date.now() - startedAt;
 
   if (!result || typeof result !== 'object' || Array.isArray(result)) {
     if (['getDashboard', 'getTaskDetail', 'getParentDashboard'].includes(action)) {
-      console.log(`[perf] ${action} ${durationMs}ms shape=primitive`);
+      monitor.logPerf('cloudfn', action, durationMs, { shape: 'primitive' });
     }
     return result;
   }
@@ -53,7 +62,7 @@ exports.main = async (event, context) => {
   });
   if (['getDashboard', 'getTaskDetail', 'getParentDashboard'].includes(action)) {
     const payloadSize = Buffer.byteLength(JSON.stringify(finalResult), 'utf8');
-    console.log(`[perf] ${action} ${durationMs}ms payload=${payloadSize}B`);
+    monitor.logPerf('cloudfn', action, durationMs, { payload: `${payloadSize}B` });
   }
   return finalResult;
 };

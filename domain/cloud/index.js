@@ -1,4 +1,5 @@
 const appConfig = require('../../data/app-config');
+const monitor = require('../../utils/monitor');
 
 let cloudInited = false;
 
@@ -56,13 +57,21 @@ async function callYoyo(action, payload) {
     throw new Error('cloud-unavailable');
   }
   const startedAt = Date.now();
-  const response = await wx.cloud.callFunction({
-    name: 'yoyo',
-    data: {
-      action,
-      payload: payload || {}
-    }
-  });
+  let response;
+  try {
+    response = await wx.cloud.callFunction({
+      name: 'yoyo',
+      data: {
+        action,
+        payload: payload || {}
+      }
+    });
+  } catch (error) {
+    monitor.logError('cloud', action, error, {
+      duration: `${Date.now() - startedAt}ms`
+    });
+    throw error;
+  }
   const result = response.result || {};
   if (['getDashboard', 'getTaskDetail', 'getParentDashboard'].includes(action)) {
     let payloadSize = 0;
@@ -71,7 +80,7 @@ async function callYoyo(action, payload) {
     } catch (error) {
       payloadSize = -1;
     }
-    console.log(`[perf][cloud] ${action} ${Date.now() - startedAt}ms payload=${payloadSize}B`);
+    monitor.logPerf('cloud', action, Date.now() - startedAt, { payload: `${payloadSize}B` });
   }
   return result;
 }

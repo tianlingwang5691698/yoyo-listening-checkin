@@ -1,3 +1,5 @@
+const monitor = require('./monitor');
+
 async function upsertDailyReport(scope, date, deps) {
   const startedAt = Date.now();
   const progressRecords = await deps.getChildProgressRecords(scope);
@@ -52,7 +54,7 @@ async function upsertDailyReport(scope, date, deps) {
     report.pushStatus = 'subscription-ready';
   }
   await deps.upsertReport(scope, date, report);
-  console.log(`[perf] upsertDailyReport ${Date.now() - startedAt}ms date=${date}`);
+  monitor.logPerf('cloudfn', 'upsertDailyReport', Date.now() - startedAt, { date });
   return report;
 }
 
