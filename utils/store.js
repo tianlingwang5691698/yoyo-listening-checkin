@@ -3,6 +3,13 @@ const contracts = require('./contracts');
 const monitor = require('./monitor');
 const inflightCloudRequests = {};
 
+/**
+ * @typedef {import('./contracts').DashboardData} DashboardData
+ * @typedef {import('./contracts').TaskDetailData} TaskDetailData
+ * @typedef {import('./contracts').FamilyPageData} FamilyPageData
+ * @typedef {import('./contracts').ReportData} ReportData
+ */
+
 function formatCloudReason(error) {
   if (!error) {
     return 'unknown';
@@ -160,6 +167,10 @@ async function ensureState() {
   });
 }
 
+/**
+ * @param {Object=} options
+ * @returns {Promise<DashboardData>}
+ */
 async function getDashboard(options) {
   return callCloud('getDashboard', Object.assign({}, options || {}), contracts.createDashboardDefaults());
 }
@@ -181,6 +192,12 @@ async function getLevelOverview() {
   });
 }
 
+/**
+ * @param {string} category
+ * @param {string} taskId
+ * @param {Object=} options
+ * @returns {Promise<TaskDetailData>}
+ */
 async function getTaskDetail(category, taskId, options) {
   return callCloud('getTaskDetail', Object.assign({ category, taskId }, options || {}), contracts.createTaskDetailDefaults());
 }
@@ -193,6 +210,15 @@ async function getTaskTranscript(category, taskId, options) {
     transcriptLines: [],
     transcriptPendingLoad: false
   });
+}
+
+async function getTempFileURL(fileId) {
+  try {
+    return await cloud.getTempFileURL(fileId);
+  } catch (error) {
+    monitor.logError('store', 'getTempFileURL', error, { fileId: fileId ? 'set' : 'empty' });
+    throw error;
+  }
 }
 
 async function markTaskListened(options) {
@@ -243,6 +269,10 @@ async function getMonthHeatmap(year, month) {
   });
 }
 
+/**
+ * @param {string} date
+ * @returns {Promise<{report: ReportData}>}
+ */
 async function getDailyReportByDate(date) {
   return callCloud('getDailyReportByDate', { date }, {
     report: contracts.createReportDefaults(date)
@@ -264,6 +294,9 @@ async function getParentDashboard() {
   });
 }
 
+/**
+ * @returns {Promise<FamilyPageData>}
+ */
 async function getFamilyPageData() {
   return callCloud('getFamilyPage', {}, contracts.createFamilyPageDefaults());
 }
@@ -312,6 +345,7 @@ module.exports = {
   getProfileData,
   getTaskDetail,
   getTaskTranscript,
+  getTempFileURL,
   markTaskListened,
   completeTodayCheckin,
   getParentDashboard,

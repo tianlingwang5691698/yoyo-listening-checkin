@@ -121,6 +121,12 @@ repository 只管“拿数据 / 写数据”，不决定“业务意义”。
 
 `shared.service.js` 不再新增大块复杂业务规则。
 
+当前约定：
+
+- catalog / resource 逻辑进 `lib/catalog-engine.js`
+- family / bootstrap 上下文编排优先进 `facades/family-context.facade.js`
+- 页面返回结构复用优先进 facade helper，不在 service 重复拼装
+
 如果新增逻辑超过下列任一情况，就不要放进 shared：
 
 - 超过 20 行且含多处判断

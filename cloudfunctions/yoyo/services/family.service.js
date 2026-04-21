@@ -8,32 +8,14 @@ async function getProfileData(event) {
     action: 'getProfileData'
   }));
   const dashboard = await familyFacade.getDashboardData(ctx);
-  return {
-    user: ctx.user,
-    currentUser: ctx.user,
-    child: Object.assign({}, ctx.child, dashboard.stats),
-    level: familyFacade.level,
-    familyReady: true,
-    family: ctx.family,
-    members: ctx.members,
-    currentMember: ctx.member,
-    subscriptionPreference: ctx.subscriptionPreference
-  };
+  return familyFacade.buildProfilePayload(ctx, dashboard);
 }
 
 async function getFamilyPage(event) {
   const { ctx } = await familyFacade.prepareRequestContext(Object.assign({}, event, {
     action: 'getFamilyPage'
   }));
-  return {
-    user: ctx.user,
-    currentUser: ctx.user,
-    family: ctx.family,
-    currentMember: ctx.member,
-    members: ctx.members,
-    child: ctx.child,
-    subscriptionPreference: ctx.subscriptionPreference
-  };
+  return familyFacade.buildFamilyContextPayload(ctx);
 }
 
 async function refreshInviteCode(event) {
@@ -42,16 +24,7 @@ async function refreshInviteCode(event) {
   }));
   const inviteCode = `YOYO-${Math.random().toString(36).slice(2, 8).toUpperCase()}`;
   await familyRepository.updateFamilyById(ctx.family.familyId, { inviteCode });
-  const nextCtx = await familyFacade.ensureBootstrap(ctx.user.openId);
-  return {
-    user: nextCtx.user,
-    currentUser: nextCtx.user,
-    family: nextCtx.family,
-    currentMember: nextCtx.member,
-    members: nextCtx.members,
-    child: nextCtx.child,
-    subscriptionPreference: nextCtx.subscriptionPreference
-  };
+  return familyFacade.reloadFamilyContext(ctx.user.openId);
 }
 
 async function joinFamily(event) {
@@ -66,16 +39,7 @@ async function joinFamily(event) {
   }
   const displayName = String(payload.displayName || '').trim() || '新家长';
   await familyFacade.upsertFamilyMemberForFamily(ctx.user.openId, ctx.user.userId, target.familyId, displayName);
-  const nextCtx = await familyFacade.ensureBootstrap(ctx.user.openId);
-  return {
-    user: nextCtx.user,
-    currentUser: nextCtx.user,
-    family: nextCtx.family,
-    currentMember: nextCtx.member,
-    members: nextCtx.members,
-    child: nextCtx.child,
-    subscriptionPreference: nextCtx.subscriptionPreference
-  };
+  return familyFacade.reloadFamilyContext(ctx.user.openId);
 }
 
 async function joinFamilyByChildCode(event) {
@@ -93,16 +57,7 @@ async function joinFamilyByChildCode(event) {
   }
   const displayName = String(payload.displayName || '').trim() || '新家长';
   await familyFacade.upsertFamilyMemberForFamily(ctx.user.openId, ctx.user.userId, targetChild.familyId, displayName);
-  const nextCtx = await familyFacade.ensureBootstrap(ctx.user.openId);
-  return {
-    user: nextCtx.user,
-    currentUser: nextCtx.user,
-    family: nextCtx.family,
-    currentMember: nextCtx.member,
-    members: nextCtx.members,
-    child: nextCtx.child,
-    subscriptionPreference: nextCtx.subscriptionPreference
-  };
+  return familyFacade.reloadFamilyContext(ctx.user.openId);
 }
 
 async function updateChildProfile(event) {
@@ -110,16 +65,7 @@ async function updateChildProfile(event) {
     action: 'updateChildProfile'
   }));
   await familyFacade.updateChildProfile(ctx.family.familyId, (event && event.payload) || {});
-  const nextCtx = await familyFacade.ensureBootstrap(ctx.user.openId);
-  return {
-    user: nextCtx.user,
-    currentUser: nextCtx.user,
-    family: nextCtx.family,
-    currentMember: nextCtx.member,
-    members: nextCtx.members,
-    child: nextCtx.child,
-    subscriptionPreference: nextCtx.subscriptionPreference
-  };
+  return familyFacade.reloadFamilyContext(ctx.user.openId);
 }
 
 async function updateSubscription(event) {
@@ -142,16 +88,7 @@ async function updateSubscription(event) {
   } else {
     await subscriptionRepository.create(prefData);
   }
-  const nextCtx = await familyFacade.ensureBootstrap(ctx.user.openId);
-  return {
-    user: nextCtx.user,
-    currentUser: nextCtx.user,
-    family: nextCtx.family,
-    currentMember: nextCtx.member,
-    members: nextCtx.members,
-    child: nextCtx.child,
-    subscriptionPreference: nextCtx.subscriptionPreference
-  };
+  return familyFacade.reloadFamilyContext(ctx.user.openId);
 }
 
 async function leaveFamily(event) {
@@ -159,16 +96,7 @@ async function leaveFamily(event) {
     action: 'leaveFamily'
   }));
   await familyFacade.leaveCurrentFamily(ctx);
-  const nextCtx = await familyFacade.ensureBootstrap(ctx.user.openId);
-  return {
-    user: nextCtx.user,
-    currentUser: nextCtx.user,
-    family: nextCtx.family,
-    currentMember: nextCtx.member,
-    members: nextCtx.members,
-    child: nextCtx.child,
-    subscriptionPreference: nextCtx.subscriptionPreference
-  };
+  return familyFacade.reloadFamilyContext(ctx.user.openId);
 }
 
 module.exports = {

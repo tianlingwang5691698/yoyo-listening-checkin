@@ -68,11 +68,23 @@
 - 云端音频地址与 PDF 来源回传
 - transcript bundle 按需读取
 
-依赖风险点：
+当前内部主链路：
+
+```text
+services -> facades -> lib/*-engine -> repositories/adapters
+```
+
+当前关键收口：
+
+- `services/shared.service.js`：保留跨域公共编排与少量接线
+- `lib/catalog-engine.js`：承接 catalog / resource 运行时扫描、训练池与缓存
+- `facades/family-context.facade.js`：承接 family / bootstrap 上下文编排
+- `facades/family.facade.js`：统一家庭相关页面返回结构装配
+
+当前主要运行风险点：
 
 - `@cloudbase/manager-node` 扫描目录
 - `cloud.getTempFileURL` 生成临时可访问地址
-- 首次数据库集合自动写入
 - 云存储目录与命名规则一致性
 - transcript 粒度差异
   - `Peppa / Unlock1` 走 `word`

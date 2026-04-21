@@ -6,7 +6,7 @@
 
 - 让新增逻辑优先落到正确领域
 - 让 `services / facades / lib/*-engine / repositories` 的职责更稳定
-- 为后续继续拆 `shared.service.js` 和 catalog 相关逻辑提供边界依据
+- 为后续继续保持 `shared.service.js` 轻量提供边界依据
 
 ## 1. Study 域
 
@@ -57,6 +57,7 @@
 - `cloudfunctions/yoyo/services/family.service.js`
 - `cloudfunctions/yoyo/services/identity.service.js`
 - `cloudfunctions/yoyo/facades/family.facade.js`
+- `cloudfunctions/yoyo/facades/family-context.facade.js`
 
 当前主要规则层：
 
@@ -131,12 +132,12 @@
 
 当前主要位置：
 
-- `cloudfunctions/yoyo/services/shared.service.js`
+- `cloudfunctions/yoyo/lib/catalog-engine.js`
 
 说明：
 
-- 这是当前仍然偏大的剩余块
-- 后续若继续拆分，优先单独形成 `catalog-engine`
+- `catalog-engine` 已承接资源扫描、训练池与 runtime cache
+- `shared.service.js` 只保留跨 service 公共接线，不再承载 catalog 主逻辑
 
 边界规则：
 

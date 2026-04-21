@@ -1,6 +1,5 @@
 const store = require('../../utils/store');
 const player = require('../../domain/player/index');
-const cloud = require('../../domain/cloud/index');
 const appConfig = require('../../data/app-config');
 const page = require('../../utils/page');
 const labels = require('../../utils/labels');
@@ -248,7 +247,7 @@ Page({
     let audioResolveError = '';
     if (audioFileId) {
       try {
-        const tempUrl = await cloud.getTempFileURL(audioFileId);
+        const tempUrl = await store.getTempFileURL(audioFileId);
         if (tempUrl) {
           return Object.assign({}, task, {
             audioUrl: tempUrl,
