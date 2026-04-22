@@ -2,6 +2,7 @@ const store = require('../../utils/store');
 const page = require('../../utils/page');
 const contracts = require('../../utils/contracts');
 const monitor = require('../../utils/monitor');
+const labels = require('../../utils/labels');
 Page({
   data: page.createCloudPageData({
     child: contracts.createChildDefaults(),
