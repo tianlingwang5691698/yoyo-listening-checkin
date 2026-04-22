@@ -12,7 +12,8 @@ Page({
     hasGroupedTasks: false,
     studyRole: 'parent',
     identityConfirmVisible: true,
-    modeChangedNoticeVisible: false
+    modeChangedNoticeVisible: false,
+    homeLoading: true
   }),
   buildStudyModePresentation(member) {
     const studyRole = member && member.studyRole === 'student' ? 'student' : 'parent';
@@ -26,6 +27,9 @@ Page({
     if (tabBar) {
       tabBar.setData({ selected: 0 });
     }
+    this.setData({
+      homeLoading: true
+    });
     const data = await store.getDashboard({ view: 'home' });
     const nextStudyRole = data.currentMember && data.currentMember.studyRole === 'student' ? 'student' : 'parent';
     const previousStudyRole = wx.getStorageSync('lastStudyRole') || '';
@@ -43,7 +47,8 @@ Page({
       groupedDailyTasks: data.groupedDailyTasks || [],
       hasGroupedTasks: !!((data.groupedDailyTasks || []).length),
       identityConfirmVisible: !page.isIdentityConfirmed(),
-      modeChangedNoticeVisible
+      modeChangedNoticeVisible,
+      homeLoading: false
     }, this.buildStudyModePresentation(data.currentMember))));
     monitor.logPerf('home', 'onShow', Date.now() - startedAt, {
       groups: (data.groupedDailyTasks || []).length

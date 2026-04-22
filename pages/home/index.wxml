@@ -4,7 +4,12 @@
     <view class="home-subtitle type-caption">今日 · Day {{planDayIndex}}</view>
   </view>
 
-  <view class="section-panel" wx:if="{{syncMode === 'cloud-error'}}">
+  <view class="section-panel" wx:if="{{homeLoading}}">
+    <view class="section-title">今日任务加载中</view>
+    <view class="section-copy">正在同步学习内容。</view>
+  </view>
+
+  <view class="section-panel" wx:elif="{{syncMode === 'cloud-error'}}">
     <view class="section-title">服务暂时不可用</view>
     <view class="section-copy">{{(syncDebug && (syncDebug.publicReason || syncDebug.reason)) || '学习数据暂时没有同步成功，请稍后再试。'}}</view>
   </view>
@@ -48,5 +53,5 @@
     </block>
   </swiper>
 
-  <view class="empty-state" wx:if="{{!hasGroupedTasks && syncMode !== 'cloud-error'}}">今日任务还在准备中。</view>
+  <view class="empty-state" wx:if="{{!homeLoading && !hasGroupedTasks && syncMode !== 'cloud-error'}}">今日任务还在准备中。</view>
 </view>
