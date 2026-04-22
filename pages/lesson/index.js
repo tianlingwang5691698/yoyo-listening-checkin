@@ -125,6 +125,7 @@ Page({
     this.planDayIndex = query.planDayIndex || '';
     this.pendingAutoPlay = false;
     this.checkinConfirmShowing = false;
+    this.audioPlayRequested = false;
     this.innerAudioContext = wx.createInnerAudioContext();
     this.innerAudioContext.obeyMuteSwitch = false;
     this.innerAudioContext.onCanplay(() => {
@@ -141,6 +142,7 @@ Page({
       });
       if (this.pendingAutoPlay) {
         this.pendingAutoPlay = false;
+        this.audioPlayRequested = true;
         this.innerAudioContext.play();
       }
     });
@@ -200,10 +202,12 @@ Page({
         audioErrorDetail: `${error.errCode || ''}`.trim(),
         audioPlaybackMode: 'error'
       });
-      wx.showToast({
-        title: '云端音频加载失败',
-        icon: 'none'
-      });
+      if (this.audioPlayRequested) {
+        wx.showToast({
+          title: '云端音频加载失败',
+          icon: 'none'
+        });
+      }
     });
   },
   async onShow() {
@@ -557,6 +561,7 @@ Page({
       return;
     }
     this.pendingAutoPlay = false;
+    this.audioPlayRequested = true;
     if (!this.innerAudioContext.src) {
       this.pendingAutoPlay = true;
       await this.syncPlayer(this.data.task);
@@ -572,6 +577,7 @@ Page({
       this.innerAudioContext.pause();
     } else {
       if (this.data.audioReady) {
+        this.audioPlayRequested = true;
         this.innerAudioContext.play();
       } else {
         this.pendingAutoPlay = true;
