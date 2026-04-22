@@ -64,6 +64,23 @@ function buildPassSteps(progress) {
   return steps;
 }
 
+function formatAudioErrorText(code) {
+  const value = String(code || '').trim();
+  if (!value) {
+    return '';
+  }
+  if (value === 'playback-error') {
+    return '音频暂时不可用，请重新加载。';
+  }
+  if (value === 'temp-url-failed') {
+    return '音频地址获取失败，请重新加载。';
+  }
+  if (value === 'missing-audio-url') {
+    return '当前音频还没有准备好。';
+  }
+  return '云端音频暂时不可用，请稍后再试。';
+}
+
 Page({
   data: page.createCloudPageData({
     child: null,
@@ -101,6 +118,7 @@ Page({
     audioReady: false,
     audioResolving: false,
     audioError: '',
+    audioErrorText: '',
     audioErrorDetail: '',
     audioPlaybackMode: 'idle',
     currentAudio: null,
@@ -126,6 +144,7 @@ Page({
     this.pendingAutoPlay = false;
     this.checkinConfirmShowing = false;
     this.audioPlayRequested = false;
+    this.audioErrorTimer = null;
     this.innerAudioContext = wx.createInnerAudioContext();
     this.innerAudioContext.obeyMuteSwitch = false;
     this.innerAudioContext.onCanplay(() => {
@@ -136,6 +155,7 @@ Page({
         audioReady: true,
         audioResolving: false,
         audioError: '',
+        audioErrorText: '',
         audioErrorDetail: '',
         audioPlaybackMode: 'ready',
         durationLabel: this.formatTime(Math.floor(durationFromContext || taskDuration))
@@ -162,6 +182,7 @@ Page({
       this.setData({
         isPlaying: true,
         audioError: '',
+        audioErrorText: '',
         audioErrorDetail: ''
       });
     });
@@ -199,9 +220,11 @@ Page({
         audioReady: false,
         audioResolving: false,
         audioError: 'playback-error',
+        audioErrorText: '',
         audioErrorDetail: `${error.errCode || ''}`.trim(),
         audioPlaybackMode: 'error'
       });
+      this.scheduleAudioErrorText('playback-error');
       if (this.audioPlayRequested) {
         wx.showToast({
           title: '云端音频加载失败',
@@ -228,6 +251,10 @@ Page({
       clearTimeout(this.completionCardTimer);
       this.completionCardTimer = null;
     }
+    if (this.audioErrorTimer) {
+      clearTimeout(this.audioErrorTimer);
+      this.audioErrorTimer = null;
+    }
     if (this.innerAudioContext) {
       this.innerAudioContext.destroy();
       this.innerAudioContext = null;
@@ -235,6 +262,21 @@ Page({
   },
   formatTime(totalSeconds) {
     return player.formatTime(totalSeconds);
+  },
+  clearAudioErrorTimer() {
+    if (this.audioErrorTimer) {
+      clearTimeout(this.audioErrorTimer);
+      this.audioErrorTimer = null;
+    }
+  },
+  scheduleAudioErrorText(code) {
+    this.clearAudioErrorTimer();
+    this.audioErrorTimer = setTimeout(() => {
+      this.setData({
+        audioErrorText: formatAudioErrorText(code)
+      });
+      this.audioErrorTimer = null;
+    }, 1500);
   },
   async resolveTaskAudio(task) {
     const startedAt = Date.now();
@@ -311,9 +353,11 @@ Page({
         audioReady: false,
         audioResolving: false,
         audioError: resolvedTask && resolvedTask.audioResolveError ? resolvedTask.audioResolveError : 'missing-audio-url',
+        audioErrorText: '',
         audioErrorDetail: '',
         audioPlaybackMode: 'error'
       }));
+      this.scheduleAudioErrorText(resolvedTask && resolvedTask.audioResolveError ? resolvedTask.audioResolveError : 'missing-audio-url');
       return;
     }
     let playableUrl = resolvedTask.audioUrl;
@@ -339,6 +383,7 @@ Page({
       audioReady: false,
       audioResolving: true,
       audioError: '',
+      audioErrorText: '',
       audioErrorDetail: '',
       audioPlaybackMode: playbackMode
     }));
@@ -399,6 +444,7 @@ Page({
       audioReady: false,
       audioResolving: false,
       audioError: '',
+      audioErrorText: '',
       audioErrorDetail: '',
       audioPlaybackMode: 'idle'
     }));
@@ -584,6 +630,7 @@ Page({
         this.setData({
           audioResolving: true,
           audioError: '',
+          audioErrorText: '',
           audioPlaybackMode: 'resolving'
         });
         wx.showToast({

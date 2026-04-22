@@ -33,7 +33,7 @@
     </view>
     <view class="row-between player-header">
       <view wx:if="{{!task.isPendingAsset}}">
-        <view class="section-copy error-copy" wx:if="{{audioError}}">{{audioError}}</view>
+        <view class="section-copy error-copy" wx:if="{{audioErrorText}}">{{audioErrorText}}</view>
         <view class="section-copy" wx:if="{{showCloudDebug && currentAudio && currentAudio.cloudPath}}">云路径：{{currentAudio.cloudPath}}</view>
         <view class="section-copy" wx:if="{{showCloudDebug && currentAudio && currentAudio.fileID}}">fileId：{{currentAudio.fileID}}</view>
         <view class="section-copy" wx:if="{{showCloudDebug && currentAudio && currentAudio.src}}">src：{{currentAudio.src}}</view>
