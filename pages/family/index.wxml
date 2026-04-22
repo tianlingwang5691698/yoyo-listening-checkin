@@ -11,17 +11,9 @@
     <view class="section-title">身份</view>
     <view class="family-row action-row" wx:if="{{!childJoinRequired}}">
       <view class="row-main">
-        <view class="row-title">当前</view>
         <view class="row-copy">{{studyRoleLabel}}</view>
       </view>
       <button class="row-action" bindtap="toggleStudyRole">{{studyRoleActionText}}</button>
-    </view>
-    <view class="family-row action-row" wx:if="{{!childJoinRequired && currentMember && currentMember.studyRole === 'parent'}}">
-      <view class="row-main">
-        <view class="row-title">清误</view>
-        <view class="row-copy">清掉今天误记播放</view>
-      </view>
-      <button class="row-action row-action-wide row-action-warn {{undoingLastListened ? 'is-disabled' : ''}}" bindtap="undoLastListened">{{undoingLastListened ? '处理中' : '清掉'}}</button>
     </view>
     <view class="family-row action-row" wx:if="{{!childJoinRequired && currentMember && currentMember.studyRole === 'student'}}">
       <view class="row-main">
@@ -35,7 +27,6 @@
     <view class="section-title">绑定</view>
     <view class="family-row action-row" wx:if="{{currentMember && currentMember.studyRole === 'parent'}}">
       <view class="row-main">
-        <view class="row-title">孩子</view>
         <input class="row-field family-input" type="number" maxlength="6" placeholder="孩子ID" value="{{childCodeInput}}" bindinput="handleChildCodeInput" />
       </view>
       <button class="row-action" bindtap="joinFamilyByChildCode">加入</button>
@@ -47,9 +38,22 @@
       </view>
       <view class="row-action row-action-ghost"> </view>
     </view>
-    <view class="family-row action-row" wx:if="{{currentMember && currentMember.studyRole === 'parent' && currentMember.role !== 'owner'}}">
+  </view>
+
+  <view class="family-list section-panel" wx:if="{{!childJoinRequired && currentMember && currentMember.studyRole === 'parent'}}">
+    <view class="section-title">清误</view>
+    <view class="family-row action-row">
       <view class="row-main">
-        <view class="row-title">解绑</view>
+        <view class="row-copy">清掉今天误记播放</view>
+      </view>
+      <button class="row-action row-action-wide row-action-warn {{undoingLastListened ? 'is-disabled' : ''}}" bindtap="undoLastListened">{{undoingLastListened ? '处理中' : '清掉'}}</button>
+    </view>
+  </view>
+
+  <view class="family-list section-panel" wx:if="{{currentMember && currentMember.studyRole === 'parent' && currentMember.role !== 'owner'}}">
+    <view class="section-title">解绑</view>
+    <view class="family-row action-row">
+      <view class="row-main">
         <view class="row-copy">解除当前绑定</view>
       </view>
       <button class="row-action row-action-warn" bindtap="leaveFamily">退出</button>
@@ -59,7 +63,7 @@
   <view class="member-card section-panel" wx:if="{{!childJoinRequired}}">
     <view class="section-title">成员</view>
     <block wx:for="{{memberCards}}" wx:key="memberId">
-      <view class="member-row">
+      <view class="member-row {{item.isCurrentDevice ? 'is-current-device' : ''}}">
         <view class="row-main">
           <view class="member-name">{{item.displayName}}</view>
         </view>

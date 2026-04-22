@@ -109,6 +109,10 @@
   margin-top: 24rpx;
 }
 
+.member-row.is-current-device {
+  background: rgba(180, 94, 64, 0.04);
+}
+
 .member-role {
   flex-shrink: 0;
   align-self: center;
