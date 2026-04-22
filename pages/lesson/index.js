@@ -110,7 +110,8 @@ Page({
     transcriptPendingLoad: false,
     transcriptLoadFailed: false,
     passSteps: [],
-    completionCardVisible: false
+    completionCardVisible: false,
+    lessonLoading: true
   }),
   isStudyWriteAllowed() {
     const currentMember = this.data.currentMember || {};
@@ -207,6 +208,7 @@ Page({
   },
   async onShow() {
     if (!page.requireIdentityConfirmed()) {
+      this.setData({ lessonLoading: false });
       return;
     }
     await this.refreshPage();
@@ -339,6 +341,9 @@ Page({
   },
   async refreshPage() {
     const startedAt = Date.now();
+    this.setData({
+      lessonLoading: true
+    });
     const detail = await store.getTaskDetail(this.category, this.taskId, {
       view: 'lesson',
       planRunType: this.planRunType,
@@ -352,6 +357,11 @@ Page({
     const normalizedTask = labels.normalizeTask(detail.task);
     const previewAudio = buildCurrentAudio(normalizedTask, '', 'idle');
     this.setData(page.buildCloudPageData(this.data, {
+      syncMode: detail.syncMode,
+      isReviewBuild: detail.isReviewBuild,
+      showCloudDebug: detail.showCloudDebug,
+      syncDebug: detail.syncDebug,
+      lessonLoading: false,
       child: detail.child,
       task: normalizedTask,
       todayRecord: detail.todayRecord,

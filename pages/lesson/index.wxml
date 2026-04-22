@@ -1,4 +1,11 @@
-<view class="page-shell lesson-page" wx:if="{{task}}">
+<view class="page-shell lesson-page" wx:if="{{lessonLoading}}">
+  <view class="section-panel">
+    <view class="section-title">课程加载中</view>
+    <view class="section-copy">正在同步学习内容。</view>
+  </view>
+</view>
+
+<view class="page-shell lesson-page" wx:elif="{{task}}">
   <view class="lesson-hero product-hero tone-{{task.coverTone}} cover-variant-{{task.coverVariant}}">
     <view class="lesson-hero-top">
       <view class="pill">{{task.coverBadge || task.categoryLabel}}</view>
