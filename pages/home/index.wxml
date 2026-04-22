@@ -39,7 +39,7 @@
 
           <block wx:if="{{item.tasks.length > 1}}">
             <block wx:for="{{item.tasks}}" wx:key="taskId" wx:for-item="task">
-            <view class="slide-task {{task.isPendingAsset ? 'is-disabled' : ''}}" catchtap="openTask" data-category="{{task.category}}" data-task-id="{{task.taskId}}" data-disabled="{{task.isPendingAsset}}">
+            <view class="slide-task {{task.isPendingAsset ? 'is-disabled' : ''}}" wx:if="{{task.taskId !== item.nextTask.taskId}}" catchtap="openTask" data-category="{{task.category}}" data-task-id="{{task.taskId}}" data-disabled="{{task.isPendingAsset}}">
               <view>
                 <view class="slide-task-title">{{task.displayTitle || task.title}}</view>
                 <view class="slide-task-meta type-caption">{{task.progressText}}</view>
