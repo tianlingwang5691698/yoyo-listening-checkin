@@ -8,38 +8,49 @@
   </view>
 
   <view class="family-list section-panel">
+    <view class="section-title">身份</view>
     <view class="family-row action-row" wx:if="{{!childJoinRequired}}">
       <view class="row-main">
-        <view class="row-title">设备</view>
+        <view class="row-title">身份</view>
         <view class="row-copy">{{studyRoleLabel}}</view>
       </view>
       <button class="row-action" bindtap="toggleStudyRole">{{studyRoleActionText}}</button>
     </view>
     <view class="family-row action-row" wx:if="{{!childJoinRequired && currentMember && currentMember.studyRole === 'parent'}}">
       <view class="row-main">
-        <view class="row-title">家长误用学生身份</view>
-        <view class="row-copy">清掉今天多记的播放</view>
+        <view class="row-title">清误</view>
+        <view class="row-copy">清掉今天误记播放</view>
       </view>
       <button class="row-action row-action-wide row-action-warn {{undoingLastListened ? 'is-disabled' : ''}}" bindtap="undoLastListened">{{undoingLastListened ? '处理中' : '清掉'}}</button>
     </view>
     <view class="family-row action-row" wx:if="{{!childJoinRequired && currentMember && currentMember.studyRole === 'student'}}">
       <view class="row-main">
-        <view class="row-title">ID</view>
+        <view class="row-title">学号</view>
         <view class="row-copy">{{child.childLoginCode || '待同步'}}</view>
       </view>
     </view>
+  </view>
+
+  <view class="family-list section-panel" wx:if="{{currentMember && currentMember.studyRole === 'parent'}}">
+    <view class="section-title">绑定</view>
     <view class="family-row action-row" wx:if="{{currentMember && currentMember.studyRole === 'parent'}}">
       <view class="row-main">
-        <view class="row-title">加入</view>
+        <view class="row-title">绑定</view>
         <input class="row-field family-input" type="number" maxlength="6" placeholder="孩子ID" value="{{childCodeInput}}" bindinput="handleChildCodeInput" />
-        <input class="row-field family-input" placeholder="称呼" value="{{joinName}}" bindinput="handleJoinNameInput" />
       </view>
       <button class="row-action" bindtap="joinFamilyByChildCode">加入</button>
     </view>
+    <view class="family-row action-row" wx:if="{{currentMember && currentMember.studyRole === 'parent'}}">
+      <view class="row-main">
+        <view class="row-title">备注</view>
+        <input class="row-field family-input" placeholder="称呼" value="{{joinName}}" bindinput="handleJoinNameInput" />
+      </view>
+      <view class="row-action row-action-ghost"> </view>
+    </view>
     <view class="family-row action-row" wx:if="{{currentMember && currentMember.studyRole === 'parent' && currentMember.role !== 'owner'}}">
       <view class="row-main">
-        <view class="row-title">退出孩子记录</view>
-        <view class="row-copy">解绑当前孩子 ID</view>
+        <view class="row-title">解绑</view>
+        <view class="row-copy">解除当前绑定</view>
       </view>
       <button class="row-action row-action-warn" bindtap="leaveFamily">退出</button>
     </view>
@@ -47,11 +58,12 @@
 
   <view class="member-card section-panel" wx:if="{{!childJoinRequired}}">
     <view class="section-title">成员</view>
-    <block wx:for="{{members}}" wx:key="memberId">
+    <block wx:for="{{memberCards}}" wx:key="memberId">
       <view class="member-row">
         <view class="row-main">
           <view class="member-name">{{item.displayName}}</view>
         </view>
+        <view class="member-role type-caption">{{item.roleText}}</view>
       </view>
     </block>
   </view>

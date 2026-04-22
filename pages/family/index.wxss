@@ -8,6 +8,11 @@
   padding-bottom: 8rpx;
 }
 
+.family-list .section-title,
+.member-card .section-title {
+  margin-bottom: 8rpx;
+}
+
 .family-row,
 .member-row {
   min-height: 112rpx;
@@ -81,6 +86,11 @@
   border: none;
 }
 
+.row-action-ghost {
+  background: transparent;
+  color: transparent;
+}
+
 .row-action-wide {
   width: 128rpx;
   min-width: 128rpx;
@@ -97,6 +107,13 @@
 
 .member-card {
   margin-top: 24rpx;
+}
+
+.member-role {
+  flex-shrink: 0;
+  align-self: center;
+  color: var(--text-muted);
+  text-align: right;
 }
 
 .sync-debug {

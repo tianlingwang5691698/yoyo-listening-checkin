@@ -20,7 +20,9 @@ Page({
     childJoinRequired: false
   }),
   applyFamilyState(data, extra) {
-    this.setData(page.buildCloudPageData(this.data, Object.assign({}, data, this.buildStudyRolePresentation((data || {}).currentMember), extra || {})));
+    this.setData(page.buildCloudPageData(this.data, Object.assign({}, data, this.buildStudyRolePresentation((data || {}).currentMember), {
+      memberCards: this.buildMemberCards((data || {}).members, (data || {}).currentMember)
+    }, extra || {})));
   },
   async onShow() {
     const data = await store.getFamilyPageData();
@@ -37,9 +39,20 @@ Page({
   buildStudyRolePresentation(member) {
     const studyRole = member && member.studyRole === 'student' ? 'student' : 'parent';
     return {
-      studyRoleLabel: studyRole === 'student' ? '学生设备' : '家长',
+      studyRoleLabel: studyRole === 'student' ? '学生' : '家长',
       studyRoleActionText: '切换'
     };
+  },
+  buildMemberCards(members, currentMember) {
+    const currentMemberId = currentMember && currentMember.memberId ? currentMember.memberId : '';
+    return (members || []).map((item) => {
+      const studyRole = item && item.studyRole === 'student' ? '学生' : '家长';
+      return {
+        memberId: item.memberId,
+        displayName: item.displayName,
+        roleText: item.memberId === currentMemberId ? `我的 · ${studyRole}` : studyRole
+      };
+    });
   },
   handleInviteInput(event) {
     this.setData({
@@ -161,7 +174,7 @@ Page({
         childJoinRequired: this.isChildJoinRequired(data)
       });
       wx.showToast({
-        title: nextRole === 'student' ? '已切到学生设备' : '已切到家长',
+        title: nextRole === 'student' ? '已切到学生' : '已切到家长',
         icon: 'none'
       });
       if (nextRole === 'student') {
