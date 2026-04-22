@@ -46,11 +46,10 @@ Page({
   buildMemberCards(members, currentMember) {
     const currentMemberId = currentMember && currentMember.memberId ? currentMember.memberId : '';
     return (members || []).map((item) => {
-      const studyRole = item && item.studyRole === 'student' ? '学生' : '家长';
       return {
         memberId: item.memberId,
         displayName: item.displayName,
-        roleText: item.memberId === currentMemberId ? `我的 · ${studyRole}` : studyRole
+        isCurrentDevice: item.memberId === currentMemberId
       };
     });
   },

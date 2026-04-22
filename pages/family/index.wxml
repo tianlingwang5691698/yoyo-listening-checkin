@@ -11,7 +11,7 @@
     <view class="section-title">身份</view>
     <view class="family-row action-row" wx:if="{{!childJoinRequired}}">
       <view class="row-main">
-        <view class="row-title">身份</view>
+        <view class="row-title">当前</view>
         <view class="row-copy">{{studyRoleLabel}}</view>
       </view>
       <button class="row-action" bindtap="toggleStudyRole">{{studyRoleActionText}}</button>
@@ -35,7 +35,7 @@
     <view class="section-title">绑定</view>
     <view class="family-row action-row" wx:if="{{currentMember && currentMember.studyRole === 'parent'}}">
       <view class="row-main">
-        <view class="row-title">绑定</view>
+        <view class="row-title">孩子</view>
         <input class="row-field family-input" type="number" maxlength="6" placeholder="孩子ID" value="{{childCodeInput}}" bindinput="handleChildCodeInput" />
       </view>
       <button class="row-action" bindtap="joinFamilyByChildCode">加入</button>
@@ -63,7 +63,7 @@
         <view class="row-main">
           <view class="member-name">{{item.displayName}}</view>
         </view>
-        <view class="member-role type-caption">{{item.roleText}}</view>
+        <view class="member-role type-caption" wx:if="{{item.isCurrentDevice}}">本机</view>
       </view>
     </block>
   </view>
