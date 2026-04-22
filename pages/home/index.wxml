@@ -33,20 +33,23 @@
             <view class="slide-name">{{item.categoryLabel}}</view>
             <view class="slide-state {{item.completedCount === item.totalCount ? 'is-done' : item.nextTask.isPendingAsset ? 'is-waiting' : ''}}">{{item.programStateText}}</view>
           </view>
-          <view class="slide-title">{{item.programSubtitle}}</view>
-          <view class="slide-meta type-caption">{{item.textType}}</view>
-          <view class="slide-line"></view>
-
           <block wx:if="{{item.tasks.length > 1}}">
-            <block wx:for="{{item.tasks}}" wx:key="taskId" wx:for-item="task">
-            <view class="slide-task {{task.isPendingAsset ? 'is-disabled' : ''}}" wx:if="{{task.taskId !== item.nextTask.taskId}}" catchtap="openTask" data-category="{{task.category}}" data-task-id="{{task.taskId}}" data-disabled="{{task.isPendingAsset}}">
-              <view>
+            <view class="slide-line"></view>
+            <view class="slide-task-list">
+            <block wx:for="{{item.tasks}}" wx:key="taskId" wx:for-item="task" wx:for-index="taskIndex">
+            <view class="slide-task {{task.isPendingAsset ? 'is-disabled' : ''}} {{task.taskId === item.nextTask.taskId ? 'is-primary' : ''}}" catchtap="openTask" data-category="{{task.category}}" data-task-id="{{task.taskId}}" data-disabled="{{task.isPendingAsset}}">
+              <view class="slide-task-main">
                 <view class="slide-task-title">{{task.displayTitle || task.title}}</view>
-                <view class="slide-task-meta type-caption">{{task.progressText}}</view>
+                <view class="slide-task-meta type-caption">{{task.textType}} · {{task.progressText}}</view>
               </view>
               <view class="slide-task-state">{{task.completedToday ? '完成' : task.isPendingAsset ? '等待' : '›'}}</view>
             </view>
             </block>
+            </view>
+          </block>
+          <block wx:else>
+            <view class="slide-title">{{item.programSubtitle}}</view>
+            <view class="slide-meta type-caption">{{item.textType}} · {{item.nextTask.progressText}}</view>
           </block>
         </view>
       </swiper-item>

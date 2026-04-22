@@ -130,6 +130,12 @@
   background: rgba(37, 35, 33, 0.08);
 }
 
+.slide-task-list {
+  display: flex;
+  flex-direction: column;
+  margin-top: 8rpx;
+}
+
 .slide-task {
   display: flex;
   align-items: center;
@@ -139,6 +145,15 @@
   margin-top: 20rpx;
   border-top: 1rpx solid rgba(37, 35, 33, 0.08);
   min-width: 0;
+}
+
+.slide-task.is-primary {
+  padding-top: 24rpx;
+}
+
+.slide-task-main {
+  min-width: 0;
+  flex: 1;
 }
 
 .slide-task-title {
