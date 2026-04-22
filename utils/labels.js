@@ -88,11 +88,31 @@ function normalizeReportItem(item) {
   });
 }
 
+function normalizeHomeTaskGroups(groups) {
+  return (groups || []).map((group) => Object.assign({}, group, {
+    programSubtitle: decodeHtmlEntities(group.programSubtitle),
+    textType: decodeHtmlEntities(group.textType),
+    nextTask: group.nextTask ? Object.assign({}, group.nextTask, {
+      title: decodeHtmlEntities(group.nextTask.title),
+      displayTitle: decodeHtmlEntities(group.nextTask.displayTitle),
+      textType: decodeHtmlEntities(group.nextTask.textType),
+      progressText: decodeHtmlEntities(group.nextTask.progressText)
+    }) : group.nextTask,
+    tasks: (group.tasks || []).map((task) => Object.assign({}, task, {
+      title: decodeHtmlEntities(task.title),
+      displayTitle: decodeHtmlEntities(task.displayTitle),
+      textType: decodeHtmlEntities(task.textType),
+      progressText: decodeHtmlEntities(task.progressText)
+    }))
+  }));
+}
+
 module.exports = {
   decodeHtmlEntities,
   getCategoryDisplayLabel,
   normalizeTask,
   normalizeTaskList,
   normalizeCategory,
-  normalizeReportItem
+  normalizeReportItem,
+  normalizeHomeTaskGroups
 };

@@ -35,6 +35,7 @@ Page({
     const previousStudyRole = wx.getStorageSync('lastStudyRole') || '';
     const modeChangedNoticeVisible = previousStudyRole === 'student' && nextStudyRole === 'parent';
     wx.setStorageSync('lastStudyRole', nextStudyRole);
+    const groupedDailyTasks = labels.normalizeHomeTaskGroups(data.groupedDailyTasks || []);
     this.setData(page.buildCloudPageData(this.data, Object.assign({}, {
       syncMode: data.syncMode,
       isReviewBuild: data.isReviewBuild,
@@ -44,14 +45,14 @@ Page({
       currentMember: data.currentMember,
       planDayIndex: data.planDayIndex,
       planPhaseLabel: data.planPhaseLabel,
-      groupedDailyTasks: data.groupedDailyTasks || [],
-      hasGroupedTasks: !!((data.groupedDailyTasks || []).length),
+      groupedDailyTasks,
+      hasGroupedTasks: !!groupedDailyTasks.length,
       identityConfirmVisible: !page.isIdentityConfirmed(),
       modeChangedNoticeVisible,
       homeLoading: false
     }, this.buildStudyModePresentation(data.currentMember))));
     monitor.logPerf('home', 'onShow', Date.now() - startedAt, {
-      groups: (data.groupedDailyTasks || []).length
+      groups: groupedDailyTasks.length
     });
   },
   async confirmStudyIdentity(event) {
