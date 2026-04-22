@@ -16,7 +16,34 @@ function buildCloudFileId(cloudPath) {
 function getDisplayNameFromPath(path) {
   const normalizedPath = String(path || '').split('?')[0];
   const fileName = normalizedPath.split('/').filter(Boolean).pop() || '';
-  return decodeURIComponent(fileName).replace(/\.[^.]+$/i, '');
+  return labels.decodeHtmlEntities(decodeURIComponent(fileName).replace(/\.[^.]+$/i, ''));
+}
+
+function normalizePlayableUrl(url) {
+  const raw = String(url || '').trim();
+  if (!/^https?:\/\//i.test(raw)) {
+    return raw;
+  }
+  const queryIndex = raw.indexOf('?');
+  const basePart = queryIndex >= 0 ? raw.slice(0, queryIndex) : raw;
+  const queryPart = queryIndex >= 0 ? raw.slice(queryIndex) : '';
+  const matched = basePart.match(/^(https?:\/\/[^/]+)\/?(.*)$/i);
+  if (!matched) {
+    return raw;
+  }
+  const origin = matched[1];
+  const rawPath = matched[2] || '';
+  const encodedPath = rawPath
+    .split('/')
+    .map((segment) => {
+      try {
+        return encodeURIComponent(decodeURIComponent(segment));
+      } catch (error) {
+        return encodeURIComponent(segment);
+      }
+    })
+    .join('/');
+  return `${origin}/${encodedPath}${queryPart}`;
 }
 
 function buildCurrentAudio(task, playableUrl, playbackMode) {
@@ -25,12 +52,12 @@ function buildCurrentAudio(task, playableUrl, playbackMode) {
   }
   const cloudPath = String(task.audioCloudPath || '').trim();
   const fileID = String(task.audioFileId || buildCloudFileId(cloudPath)).trim();
-  const src = String(playableUrl || task.audioUrl || '').trim();
+  const src = normalizePlayableUrl(String(playableUrl || task.audioUrl || '').trim());
   const title = String(
-    task.audioTitle
+    labels.decodeHtmlEntities(task.audioTitle)
     || getDisplayNameFromPath(cloudPath || src)
-    || task.title
-    || task.displayTitle
+    || labels.decodeHtmlEntities(task.title)
+    || labels.decodeHtmlEntities(task.displayTitle)
     || ''
   ).trim();
   return {
@@ -38,7 +65,7 @@ function buildCurrentAudio(task, playableUrl, playbackMode) {
     fileID,
     src,
     durationSec: Number(task.durationSec || 0),
-    course: String(task.displayTitle || task.title || '').trim(),
+    course: labels.decodeHtmlEntities(String(task.displayTitle || task.title || '').trim()),
     cloudPath,
     source: String(task.audioSource || 'none').trim(),
     playbackMode: String(playbackMode || 'idle').trim(),
@@ -360,7 +387,7 @@ Page({
       this.scheduleAudioErrorText(resolvedTask && resolvedTask.audioResolveError ? resolvedTask.audioResolveError : 'missing-audio-url');
       return;
     }
-    let playableUrl = resolvedTask.audioUrl;
+    let playableUrl = normalizePlayableUrl(resolvedTask.audioUrl);
     let playbackMode = resolvedTask.audioSource === 'temp-url'
       ? 'temp-url'
       : (resolvedTask.audioResolveError ? 'static-fallback' : 'static-cloud-url');

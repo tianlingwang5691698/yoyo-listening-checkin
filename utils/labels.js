@@ -1,3 +1,10 @@
+function decodeHtmlEntities(value) {
+  return String(value || '')
+    .replace(/&#39;|&apos;|&#x27;/gi, '\'')
+    .replace(/&#34;|&quot;/gi, '"')
+    .replace(/&amp;/gi, '&');
+}
+
 function getCategoryDisplayLabel(category, label) {
   if (category === 'song' || label === '歌曲') {
     return 'Songs';
@@ -34,7 +41,15 @@ function normalizeTask(task) {
   const categoryLabel = getCategoryDisplayLabel(task.category, task.categoryLabel);
   const nextTask = Object.assign({}, task, {
     categoryLabel,
-    displayCategoryLabel: categoryLabel
+    displayCategoryLabel: categoryLabel,
+    title: decodeHtmlEntities(task.title),
+    displayTitle: decodeHtmlEntities(task.displayTitle),
+    displaySubtitle: decodeHtmlEntities(task.displaySubtitle),
+    audioTitle: decodeHtmlEntities(task.audioTitle),
+    audioCompactTitle: decodeHtmlEntities(task.audioCompactTitle),
+    note: decodeHtmlEntities(task.note),
+    rewardTitle: decodeHtmlEntities(task.rewardTitle),
+    rewardCopy: decodeHtmlEntities(task.rewardCopy)
   });
   if (task.category === 'song') {
     nextTask.coverBadge = task.coverBadge === 'Song' || task.coverBadge === '歌曲' ? 'Songs' : (task.coverBadge || 'Songs');
@@ -68,11 +83,13 @@ function normalizeReportItem(item) {
   const categoryLabel = getCategoryDisplayLabel(item.category, item.categoryLabel);
   return Object.assign({}, item, {
     categoryLabel,
-    displayCategoryLabel: categoryLabel
+    displayCategoryLabel: categoryLabel,
+    title: decodeHtmlEntities(item.title)
   });
 }
 
 module.exports = {
+  decodeHtmlEntities,
   getCategoryDisplayLabel,
   normalizeTask,
   normalizeTaskList,
