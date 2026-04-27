@@ -1,3 +1,7 @@
+.record-page {
+  padding-bottom: calc(180rpx + env(safe-area-inset-bottom));
+}
+
 .record-hero {
   background: var(--surface);
 }

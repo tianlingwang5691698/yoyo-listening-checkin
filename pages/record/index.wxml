@@ -75,6 +75,28 @@
     </view>
   </view>
 
+  <view class="catchup section-panel">
+    <view class="row-between">
+      <view>
+        <view class="type-section-title">追赶</view>
+        <view class="section-copy">{{catchupCopy}}</view>
+        <view class="catchup-purpose">完成真实任务，点亮漏掉的一天。</view>
+      </view>
+      <view class="status-badge {{catchupStatusClass}}">{{catchupStatusLabel}}</view>
+    </view>
+    <block wx:if="{{catchupState.canCatchup}}">
+      <block wx:for="{{catchupTasks}}" wx:key="taskId">
+        <view class="catchup-row {{item.completedToday ? 'is-done' : ''}}" data-category="{{item.category}}" data-task-id="{{item.taskId}}" bindtap="openCatchupTask">
+          <view>
+            <view class="catchup-title">{{item.categoryLabel}}</view>
+            <view class="catchup-copy">{{item.displayTitle || item.title}}</view>
+          </view>
+          <view class="catchup-state">{{item.playStepText}}</view>
+        </view>
+      </block>
+    </block>
+  </view>
+
   <view class="day-card section-panel">
     <view class="row-between">
       <view>
@@ -102,27 +124,5 @@
       </block>
     </block>
     <view class="empty-state" wx:else>这一天还没有记录。</view>
-  </view>
-
-  <view class="catchup section-panel">
-    <view class="row-between">
-      <view>
-        <view class="type-section-title">追赶</view>
-        <view class="section-copy">{{catchupCopy}}</view>
-        <view class="catchup-purpose">完成真实任务，点亮漏掉的一天。</view>
-      </view>
-      <view class="status-badge {{catchupStatusClass}}">{{catchupStatusLabel}}</view>
-    </view>
-    <block wx:if="{{catchupState.canCatchup}}">
-      <block wx:for="{{catchupTasks}}" wx:key="taskId">
-        <view class="catchup-row {{item.completedToday ? 'is-done' : ''}}" data-category="{{item.category}}" data-task-id="{{item.taskId}}" bindtap="openCatchupTask">
-          <view>
-            <view class="catchup-title">{{item.categoryLabel}}</view>
-            <view class="catchup-copy">{{item.displayTitle || item.title}}</view>
-          </view>
-          <view class="catchup-state">{{item.playStepText}}</view>
-        </view>
-      </block>
-    </block>
   </view>
 </view>
