@@ -2,15 +2,15 @@ page,
 .theme-warm,
 .theme-current,
 .custom-tabbar.theme-warm {
-  --bg-cream: #fdf9f3;
-  --bg-warm: #faf4ec;
-  --surface: #fffdfa;
-  --surface-soft: #faf2ea;
-  --surface-subtle: #fdf9f3;
-  --surface-glass: rgba(255, 255, 255, 0.68);
-  --surface-raised: rgba(255, 253, 250, 0.94);
-  --control-muted-bg: rgba(37, 35, 33, 0.06);
-  --control-strong-bg: rgba(37, 35, 33, 0.12);
+  --bg-cream: #fff9f1;
+  --bg-warm: #f8efe4;
+  --surface: #fffefd;
+  --surface-soft: #fff2e6;
+  --surface-subtle: #fff7ef;
+  --surface-glass: rgba(255, 248, 240, 0.72);
+  --surface-raised: rgba(255, 254, 253, 0.98);
+  --control-muted-bg: rgba(201, 111, 80, 0.09);
+  --control-strong-bg: rgba(201, 111, 80, 0.18);
   --text-main: #252321;
   --text-strong: #181715;
   --text-muted: #85807a;
@@ -35,10 +35,10 @@ page,
   --warning-soft: #fff5e7;
   --danger: #c85f50;
   --danger-soft: #fff0ee;
-  --border-soft: rgba(84, 57, 45, 0.08);
-  --border-strong: rgba(84, 57, 45, 0.14);
-  --shadow-soft: 0 8rpx 24rpx rgba(40, 36, 30, 0.04);
-  --shadow-card: 0 10rpx 32rpx rgba(40, 36, 30, 0.06);
+  --border-soft: rgba(201, 111, 80, 0.1);
+  --border-strong: rgba(201, 111, 80, 0.18);
+  --shadow-soft: 0 8rpx 24rpx rgba(122, 70, 42, 0.04);
+  --shadow-card: 0 14rpx 38rpx rgba(122, 70, 42, 0.08);
   --radius-xl: 28rpx;
   --radius-lg: 24rpx;
   --radius-md: 20rpx;

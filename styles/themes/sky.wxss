@@ -1,14 +1,14 @@
 .theme-sky,
 .custom-tabbar.theme-sky {
-  --bg-cream: #f7faff;
-  --bg-warm: #f0f5fd;
+  --bg-cream: #f8fbff;
+  --bg-warm: #edf5ff;
   --surface: #ffffff;
-  --surface-soft: #f0f5ff;
-  --surface-subtle: #fbfdff;
-  --surface-glass: rgba(255, 255, 255, 0.78);
-  --surface-raised: rgba(255, 255, 255, 0.96);
-  --control-muted-bg: rgba(39, 88, 156, 0.08);
-  --control-strong-bg: rgba(39, 88, 156, 0.16);
+  --surface-soft: #edf5ff;
+  --surface-subtle: #f5f9ff;
+  --surface-glass: rgba(245, 249, 255, 0.8);
+  --surface-raised: rgba(255, 255, 255, 0.98);
+  --control-muted-bg: rgba(71, 125, 204, 0.1);
+  --control-strong-bg: rgba(71, 125, 204, 0.2);
   --text-main: #263141;
   --text-strong: #121a27;
   --text-muted: #708096;
@@ -33,10 +33,10 @@
   --warning-soft: #fff4df;
   --danger: #c85f50;
   --danger-soft: #fff0ee;
-  --border-soft: rgba(39, 88, 156, 0.1);
-  --border-strong: rgba(39, 88, 156, 0.18);
-  --shadow-soft: 0 8rpx 24rpx rgba(30, 70, 125, 0.04);
-  --shadow-card: 0 10rpx 32rpx rgba(30, 70, 125, 0.07);
+  --border-soft: rgba(71, 125, 204, 0.12);
+  --border-strong: rgba(71, 125, 204, 0.2);
+  --shadow-soft: 0 8rpx 24rpx rgba(37, 79, 140, 0.04);
+  --shadow-card: 0 14rpx 38rpx rgba(37, 79, 140, 0.08);
   --radius-xl: 22rpx;
   --radius-lg: 18rpx;
   --radius-md: 16rpx;

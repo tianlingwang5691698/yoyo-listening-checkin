@@ -1,14 +1,14 @@
 .theme-fresh,
 .custom-tabbar.theme-fresh {
-  --bg-cream: #f3faf7;
-  --bg-warm: #ecf7f2;
+  --bg-cream: #f6fcf9;
+  --bg-warm: #eaf7f1;
   --surface: #ffffff;
-  --surface-soft: #edf7f3;
-  --surface-subtle: #f7fcfa;
-  --surface-glass: rgba(255, 255, 255, 0.72);
-  --surface-raised: rgba(255, 255, 255, 0.96);
-  --control-muted-bg: rgba(33, 86, 69, 0.08);
-  --control-strong-bg: rgba(33, 86, 69, 0.14);
+  --surface-soft: #e9f7f1;
+  --surface-subtle: #f4fbf8;
+  --surface-glass: rgba(244, 251, 248, 0.78);
+  --surface-raised: rgba(255, 255, 255, 0.98);
+  --control-muted-bg: rgba(61, 143, 112, 0.1);
+  --control-strong-bg: rgba(61, 143, 112, 0.18);
   --text-main: #21302c;
   --text-strong: #101816;
   --text-muted: #71817b;
@@ -33,10 +33,10 @@
   --warning-soft: #fff6df;
   --danger: #c85f50;
   --danger-soft: #fff0ee;
-  --border-soft: rgba(33, 86, 69, 0.1);
-  --border-strong: rgba(33, 86, 69, 0.18);
-  --shadow-soft: 0 8rpx 24rpx rgba(24, 65, 54, 0.04);
-  --shadow-card: 0 10rpx 32rpx rgba(24, 65, 54, 0.06);
+  --border-soft: rgba(61, 143, 112, 0.12);
+  --border-strong: rgba(61, 143, 112, 0.2);
+  --shadow-soft: 0 8rpx 24rpx rgba(28, 89, 69, 0.04);
+  --shadow-card: 0 14rpx 38rpx rgba(28, 89, 69, 0.08);
   --radius-xl: 28rpx;
   --radius-lg: 24rpx;
   --radius-md: 20rpx;
