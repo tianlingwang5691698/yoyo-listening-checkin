@@ -1,10 +1,10 @@
 .theme-fresh,
 .custom-tabbar.theme-fresh {
-  --bg-cream: #eef8f4;
-  --bg-warm: #e4f3ed;
+  --bg-cream: #f3faf7;
+  --bg-warm: #ecf7f2;
   --surface: #ffffff;
-  --surface-soft: #e7f4ef;
-  --surface-subtle: #f4fbf8;
+  --surface-soft: #edf7f3;
+  --surface-subtle: #f7fcfa;
   --surface-glass: rgba(255, 255, 255, 0.72);
   --surface-raised: rgba(255, 255, 255, 0.96);
   --control-muted-bg: rgba(33, 86, 69, 0.08);
@@ -14,21 +14,21 @@
   --text-muted: #71817b;
   --text-soft: #9ba9a4;
   --text-inverse: #ffffff;
-  --accent: #35a87c;
-  --accent-deep: #247d5e;
-  --accent-soft: #e4f7ef;
+  --accent: #5ab894;
+  --accent-deep: #3d8f70;
+  --accent-soft: #edf8f3;
   --accent-contrast: #ffffff;
   --growth: #4fbd8a;
   --growth-deep: #2f8f66;
   --growth-soft: #e7f8ef;
   --reward: #58b894;
   --reward-soft: #e7f8ef;
-  --calendar-cell-bg: #dceee8;
+  --calendar-cell-bg: #e6f3ee;
   --calendar-cell-text: #61756e;
-  --calendar-completed-bg: #35a87c;
+  --calendar-completed-bg: #5ab894;
   --calendar-completed-text: #ffffff;
-  --calendar-selected-ring: rgba(36, 125, 94, 0.68);
-  --calendar-catchup-ring: rgba(53, 168, 124, 0.58);
+  --calendar-selected-ring: rgba(61, 143, 112, 0.56);
+  --calendar-catchup-ring: rgba(90, 184, 148, 0.48);
   --warning: #c99035;
   --warning-soft: #fff6df;
   --danger: #c85f50;
@@ -43,7 +43,7 @@
   --radius-sm: 14rpx;
   --space-page-x: 24rpx;
   --space-card: 30rpx;
-  --tabbar-bg: #eef8f4;
+  --tabbar-bg: #f3faf7;
   --tabbar-text: #71817b;
   --tabbar-active: #101816;
   --tabbar-border: rgba(33, 86, 69, 0.1);
