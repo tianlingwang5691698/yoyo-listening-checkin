@@ -1,0 +1,42 @@
+page,
+.theme-current,
+.custom-tabbar {
+  --bg-cream: #fbf7ef;
+  --bg-warm: #f7f2e9;
+  --surface: #fffdfa;
+  --surface-soft: #f6f0e7;
+  --surface-subtle: #fbf8f2;
+  --text-main: #252321;
+  --text-strong: #181715;
+  --text-muted: #85807a;
+  --text-soft: #aaa49c;
+  --accent: #ef7c55;
+  --accent-deep: #d96a45;
+  --accent-soft: #fff0e7;
+  --growth: #66b985;
+  --growth-deep: #428f62;
+  --growth-soft: #edf9ef;
+  --reward: #74b87c;
+  --reward-soft: #edf9ef;
+  --warning: #d98f45;
+  --warning-soft: #fff5e7;
+  --danger: #c85f50;
+  --danger-soft: #fff0ee;
+  --border-soft: rgba(84, 57, 45, 0.08);
+  --border-strong: rgba(84, 57, 45, 0.14);
+  --shadow-soft: 0 8rpx 24rpx rgba(40, 36, 30, 0.04);
+  --shadow-card: 0 10rpx 32rpx rgba(40, 36, 30, 0.06);
+  --radius-xl: 28rpx;
+  --radius-lg: 24rpx;
+  --radius-md: 20rpx;
+  --radius-sm: 14rpx;
+  --space-page-x: 24rpx;
+  --space-card: 30rpx;
+  --tabbar-bg: #fbf7ef;
+  --tabbar-text: #8c7e72;
+  --tabbar-active: #2f2b27;
+  --tabbar-border: rgba(37, 35, 33, 0.08);
+  background: var(--bg-cream);
+  color: var(--text-main);
+  font-family: "PingFang SC", "Helvetica Neue", sans-serif;
+}
