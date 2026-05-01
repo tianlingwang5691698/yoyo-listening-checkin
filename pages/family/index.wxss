@@ -97,8 +97,8 @@
 }
 
 .row-action-warn {
-  background: rgba(180, 94, 64, 0.1);
-  color: #b45e40;
+  background: var(--danger-soft);
+  color: var(--danger);
 }
 
 .row-action.is-disabled {
@@ -110,7 +110,7 @@
 }
 
 .member-row.is-current-device {
-  background: rgba(180, 94, 64, 0.04);
+  background: var(--surface-subtle);
 }
 
 .member-role {
@@ -127,15 +127,15 @@
   font-size: var(--font-caption-size);
   line-height: 1.5;
   background: var(--surface-glass);
-  color: #6f6258;
+  color: var(--text-muted);
 }
 
 .sync-debug.is-cloud {
-  background: rgba(233, 248, 235, 0.84);
-  color: #44734b;
+  background: var(--growth-soft);
+  color: var(--growth-deep);
 }
 
 .sync-debug.is-local {
-  background: rgba(255, 241, 234, 0.9);
-  color: #b45e40;
+  background: var(--accent-soft);
+  color: var(--accent-deep);
 }

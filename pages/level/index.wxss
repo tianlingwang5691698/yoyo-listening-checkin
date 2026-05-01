@@ -54,7 +54,7 @@
 }
 
 .stage-row.is-active {
-  background: rgba(255, 244, 235, 0.74);
+  background: var(--accent-soft);
 }
 
 .stage-row.is-disabled {

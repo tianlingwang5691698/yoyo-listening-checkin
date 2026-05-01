@@ -29,7 +29,7 @@
   margin: 0 20rpx 24rpx;
   padding: 22rpx 24rpx;
   border-radius: 24rpx;
-  background: rgba(180, 94, 64, 0.09);
+  background: var(--accent-soft);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -57,8 +57,8 @@
 }
 
 .mode-reminder-action.is-primary {
-  background: rgba(180, 94, 64, 0.12);
-  color: #b45e40;
+  background: var(--accent);
+  color: var(--accent-contrast);
 }
 
 .mode-reminder-action::after {

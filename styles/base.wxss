@@ -115,7 +115,7 @@ button::after {
   font-family: var(--font-title-family);
   font-size: var(--font-section-title-size);
   font-weight: var(--font-title-weight);
-  box-shadow: 0 12rpx 28rpx rgba(239, 124, 85, 0.22);
+  box-shadow: var(--shadow-accent);
 }
 
 .button-primary[disabled] {
@@ -277,7 +277,7 @@ button::after {
 }
 
 .product-eyebrow {
-  color: #ad7f55;
+  color: var(--accent-deep);
   font-family: var(--font-title-family);
   font-size: var(--font-eyebrow-size);
   font-weight: var(--font-section-weight);
