@@ -13,24 +13,24 @@
   padding: 24rpx;
   border: 2rpx solid var(--border-soft);
   border-radius: var(--radius-lg);
-  background: rgba(255, 255, 255, 0.68);
+  background: var(--surface-glass);
 }
 
 .role-option.is-active {
-  border-color: rgba(37, 35, 33, 0.18);
-  background: rgba(37, 35, 33, 0.06);
+  border-color: var(--border-strong);
+  background: var(--control-muted-bg);
 }
 
 .role-title {
   color: var(--text-main);
-  font-size: 30rpx;
-  font-weight: 700;
+  font-size: var(--font-section-title-size);
+  font-weight: var(--font-title-weight);
 }
 
 .role-copy {
   margin-top: 12rpx;
   color: var(--text-muted);
-  font-size: 22rpx;
+  font-size: var(--font-caption-size);
   line-height: 1.55;
 }
 
@@ -40,8 +40,8 @@
 
 .code-input {
   text-align: center;
-  font-size: 34rpx;
-  font-weight: 800;
+  font-size: var(--font-section-title-size);
+  font-weight: var(--font-section-heading-weight);
 }
 
 .bind-card .button-primary,
@@ -52,9 +52,9 @@
 .student-code {
   margin-top: 24rpx;
   color: var(--text-strong);
-  font-size: 68rpx;
+  font-size: var(--font-code-size);
   line-height: 1;
-  font-weight: 800;
+  font-weight: var(--font-section-heading-weight);
   text-align: center;
   letter-spacing: 0;
 }

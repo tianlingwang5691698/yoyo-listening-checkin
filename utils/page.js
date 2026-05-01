@@ -1,12 +1,18 @@
+const theme = require('./theme');
+
 const CLOUD_PAGE_DEFAULTS = {
   syncMode: 'cloud-error',
   isReviewBuild: false,
   showCloudDebug: false,
-  syncDebug: null
+  syncDebug: null,
+  theme: 'warm',
+  themeClass: 'theme-warm',
+  themeOptions: theme.getThemeOptions(),
+  currentThemeLabel: '暖白'
 };
 
 function createCloudPageData(defaults) {
-  return Object.assign({}, CLOUD_PAGE_DEFAULTS, defaults || {});
+  return Object.assign({}, CLOUD_PAGE_DEFAULTS, theme.buildThemeData(), defaults || {});
 }
 
 function normalizeCloudPageData(data) {
@@ -19,7 +25,20 @@ function normalizeCloudPageData(data) {
 }
 
 function buildCloudPageData(defaults, data) {
-  return Object.assign({}, createCloudPageData(defaults), normalizeCloudPageData(data));
+  return Object.assign({}, createCloudPageData(defaults), normalizeCloudPageData(data), theme.buildThemeData());
+}
+
+function syncTheme(target) {
+  const themeData = theme.buildThemeData();
+  theme.applyWindowTheme(themeData.theme);
+  if (target && target.setData) {
+    target.setData(themeData);
+  }
+  const tabBar = target && target.getTabBar && target.getTabBar();
+  if (tabBar && tabBar.setData) {
+    tabBar.setData(themeData);
+  }
+  return themeData;
 }
 
 function setIdentityConfirmed(confirmed) {
@@ -62,6 +81,7 @@ function getHeatmapRefreshToken() {
 module.exports = {
   createCloudPageData,
   buildCloudPageData,
+  syncTheme,
   setIdentityConfirmed,
   isIdentityConfirmed,
   requireIdentityConfirmed,

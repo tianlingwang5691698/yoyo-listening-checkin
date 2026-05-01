@@ -1,4 +1,4 @@
-<view class="page-shell parent-page">
+<view class="theme-{{theme}} page-shell parent-page">
   <view class="parent-hero product-hero">
     <view class="product-title type-page-title">日报</view>
     <view class="product-copy">{{child.nickname || '佑佑'}}</view>

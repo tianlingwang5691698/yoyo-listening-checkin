@@ -1,4 +1,4 @@
-<view class="page-shell home-page">
+<view class="theme-{{theme}} page-shell home-page">
   <view class="home-titlebar">
     <view class="home-brand type-brand">{{child.nickname || '佑佑'}}的英语小耳朵</view>
     <view class="home-subtitle type-caption">今日 · Day {{planDayIndex}}</view>

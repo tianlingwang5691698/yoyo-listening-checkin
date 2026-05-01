@@ -33,6 +33,7 @@ Page({
     recentReports: []
   }),
   onShow() {
+    page.syncTheme(this);
     store.getParentDashboard().then((data) => {
       this.setData(page.buildCloudPageData(this.data, normalizeParentData(data)));
     });

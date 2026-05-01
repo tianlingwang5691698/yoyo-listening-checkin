@@ -13,14 +13,14 @@
 }
 
 .detail-title {
-  font-size: 28rpx;
-  font-weight: 700;
+  font-size: var(--font-control-size);
+  font-weight: var(--font-title-weight);
   color: var(--text-main);
 }
 
 .detail-copy {
   margin-top: 8rpx;
-  font-size: 23rpx;
+  font-size: var(--font-caption-size);
   line-height: 1.6;
   color: var(--text-muted);
 }
@@ -33,19 +33,19 @@
 }
 
 .detail-time-label {
-  font-size: 22rpx;
+  font-size: var(--font-caption-size);
   color: var(--text-muted);
 }
 
 .detail-time-value {
-  font-size: 22rpx;
-  font-weight: 700;
+  font-size: var(--font-caption-size);
+  font-weight: var(--font-title-weight);
   color: var(--text-main);
 }
 
 .detail-empty-time {
   margin-top: 10rpx;
-  font-size: 22rpx;
+  font-size: var(--font-caption-size);
   color: var(--text-light);
 }
 
@@ -63,12 +63,12 @@
   padding: 12rpx 18rpx;
   border-radius: 999rpx;
   text-align: center;
-  font-size: 22rpx;
-  font-weight: 700;
+  font-size: var(--font-caption-size);
+  font-weight: var(--font-title-weight);
 }
 
 .detail-status {
-  background: rgba(37, 35, 33, 0.06);
+  background: var(--control-muted-bg);
   color: var(--text-muted);
 }
 
@@ -78,7 +78,7 @@
 }
 
 .detail-progress {
-  background: rgba(37, 35, 33, 0.04);
+  background: var(--control-muted-bg);
   color: var(--text-main);
 }
 
@@ -86,9 +86,9 @@
   margin-top: 18rpx;
   padding: 14rpx 18rpx;
   border-radius: 20rpx;
-  font-size: 22rpx;
+  font-size: var(--font-caption-size);
   line-height: 1.5;
-  background: rgba(255, 255, 255, 0.62);
+  background: var(--surface-glass);
   color: #6f6258;
 }
 

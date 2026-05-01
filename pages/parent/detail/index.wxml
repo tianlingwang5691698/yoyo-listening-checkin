@@ -1,4 +1,4 @@
-<view class="page-shell parent-detail-page">
+<view class="theme-{{theme}} page-shell parent-detail-page">
   <view class="product-hero detail-hero">
     <view class="product-title type-page-title">{{report.dateLabel || '日报详情'}}</view>
     <view class="product-copy">{{report.completedCount}} / {{report.totalCount}} 项 · {{report.totalMinutes}} 分钟</view>

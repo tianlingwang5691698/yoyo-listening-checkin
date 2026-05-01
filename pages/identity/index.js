@@ -10,6 +10,7 @@ Page({
     currentMember: {}
   }),
   async onShow() {
+    page.syncTheme(this);
     const data = await store.getProfileData();
     this.setData(page.buildCloudPageData(this.data, Object.assign({}, data, {
       childCode: '',

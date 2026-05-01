@@ -90,6 +90,7 @@ Page({
     });
   },
   onShow() {
+    page.syncTheme(this);
     if (!page.requireIdentityConfirmed()) {
       return;
     }

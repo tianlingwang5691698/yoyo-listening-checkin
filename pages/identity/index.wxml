@@ -1,4 +1,4 @@
-<view class="page-shell identity-page">
+<view class="theme-{{theme}} page-shell identity-page">
   <view class="identity-hero product-hero">
     <view class="product-title type-page-title">绑定身份</view>
     <view class="product-copy">用孩子 ID，把家长和同一份打卡记录连起来。</view>

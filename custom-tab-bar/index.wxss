@@ -1,4 +1,4 @@
-@import "../styles/theme-current.wxss";
+@import "../styles/theme-tabbar.wxss";
 
 .custom-tabbar {
   position: fixed;
@@ -22,8 +22,9 @@
   align-items: center;
   justify-content: center;
   color: var(--tabbar-text);
-  font-size: 22rpx;
-  font-weight: 600;
+  font-family: var(--font-body-family);
+  font-size: var(--font-caption-size);
+  font-weight: var(--font-section-weight);
 }
 
 .tabbar-item.is-active {

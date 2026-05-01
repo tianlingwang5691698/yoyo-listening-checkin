@@ -15,8 +15,8 @@
 
 .record-eyebrow {
   color: var(--text-muted);
-  font-size: 20rpx;
-  font-weight: 600;
+  font-size: var(--font-eyebrow-size);
+  font-weight: var(--font-section-weight);
 }
 
 .record-title {
@@ -29,7 +29,7 @@
   margin-top: 28rpx;
   padding: 8rpx;
   border-radius: 999rpx;
-  background: rgba(37, 35, 33, 0.06);
+  background: var(--control-muted-bg);
 }
 
 .metric-tab {
@@ -40,13 +40,13 @@
   justify-content: center;
   border-radius: 999rpx;
   color: var(--text-muted);
-  font-size: 24rpx;
-  font-weight: 700;
+  font-size: var(--font-body-size);
+  font-weight: var(--font-title-weight);
 }
 
 .metric-tab.is-active {
   background: var(--text-strong);
-  color: #fffdfa;
+  color: var(--text-inverse);
 }
 
 .metric-board {
@@ -55,16 +55,16 @@
 
 .metric-value {
   color: var(--text-strong);
-  font-size: 104rpx;
+  font-size: var(--font-display-size);
   line-height: 0.9;
-  font-weight: 900;
+  font-weight: var(--font-strong-number-weight);
 }
 
 .metric-label {
   margin-top: 16rpx;
   color: var(--text-muted);
-  font-size: 24rpx;
-  font-weight: 600;
+  font-size: var(--font-body-size);
+  font-weight: var(--font-section-weight);
 }
 
 .summary-row {
@@ -77,7 +77,7 @@
 .summary-item {
   min-height: 114rpx;
   padding: 18rpx 12rpx;
-  border: 1rpx solid rgba(37, 35, 33, 0.08);
+  border: 1rpx solid var(--border-soft);
   border-radius: 20rpx;
   display: flex;
   flex-direction: column;
@@ -93,13 +93,13 @@
 
 .summary-value {
   color: var(--text-strong);
-  font-size: 30rpx;
-  font-weight: 800;
+  font-size: var(--font-section-title-size);
+  font-weight: var(--font-section-heading-weight);
 }
 
 .summary-value.is-duration {
   max-width: 100%;
-  font-size: 24rpx;
+  font-size: var(--font-body-size);
   line-height: 1.2;
   text-align: center;
   word-break: break-all;
@@ -107,7 +107,7 @@
 
 .summary-label {
   color: var(--text-muted);
-  font-size: 21rpx;
+  font-size: var(--font-caption-size);
   text-align: center;
 }
 
@@ -119,8 +119,8 @@
   justify-content: center;
   text-align: center;
   color: var(--text-main);
-  font-size: 24rpx;
-  font-weight: 700;
+  font-size: var(--font-body-size);
+  font-weight: var(--font-title-weight);
 }
 
 .month-arrow {
@@ -131,8 +131,8 @@
   align-items: center;
   justify-content: center;
   color: var(--text-muted);
-  background: rgba(37, 35, 33, 0.06);
-  font-size: 32rpx;
+  background: var(--control-muted-bg);
+  font-size: var(--font-section-title-size);
 }
 
 .week-grid,
@@ -149,8 +149,8 @@
 .week-label {
   text-align: center;
   color: var(--text-soft);
-  font-size: 20rpx;
-  font-weight: 700;
+  font-size: var(--font-eyebrow-size);
+  font-weight: var(--font-title-weight);
 }
 
 .calendar-grid {
@@ -160,10 +160,10 @@
 .calendar-slide {
   min-height: 588rpx;
   padding: 22rpx 20rpx 26rpx;
-  border: 1rpx solid rgba(37, 35, 33, 0.06);
+  border: 1rpx solid var(--border-soft);
   border-radius: 28rpx;
-  background: rgba(255, 253, 250, 0.92);
-  box-shadow: 0 14rpx 34rpx rgba(37, 35, 33, 0.05);
+  background: var(--surface-raised);
+  box-shadow: var(--shadow-card);
 }
 
 .calendar-slide.is-disabled {
@@ -193,19 +193,19 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #f4efea;
-  color: var(--text-muted);
-  font-size: 22rpx;
-  font-weight: 700;
+  background: var(--calendar-cell-bg);
+  color: var(--calendar-cell-text);
+  font-size: var(--font-caption-size);
+  font-weight: var(--font-title-weight);
 }
 
 .calendar-cell.is-completed .calendar-dot {
-  background: #e4f1e8;
-  color: #4f8f62;
+  background: var(--calendar-completed-bg);
+  color: var(--calendar-completed-text);
 }
 
 .calendar-cell.is-selected .calendar-dot {
-  box-shadow: inset 0 0 0 4rpx rgba(239, 124, 85, 0.42);
+  box-shadow: inset 0 0 0 4rpx var(--calendar-selected-ring);
 }
 
 .calendar-cell.is-today .calendar-dot {
@@ -213,7 +213,24 @@
 }
 
 .calendar-cell.is-catchup-target .calendar-dot {
-  box-shadow: inset 0 0 0 4rpx rgba(239, 124, 85, 0.58);
+  box-shadow: inset 0 0 0 4rpx var(--calendar-catchup-ring);
+}
+
+.theme-sky .calendar-slide {
+  border-color: var(--border-strong);
+}
+
+.theme-sky .calendar-dot {
+  border: 1rpx solid rgba(39, 88, 156, 0.06);
+}
+
+.theme-sky .calendar-cell.is-today .calendar-dot {
+  background: #d9e8ff;
+  color: var(--text-strong);
+}
+
+.theme-sky .calendar-cell.is-selected .calendar-dot {
+  background: #eef5ff;
 }
 
 .calendar-swipe-hint {
@@ -223,15 +240,15 @@
   gap: 12rpx;
   margin-top: 10rpx;
   color: var(--text-soft);
-  font-size: 20rpx;
-  font-weight: 700;
+  font-size: var(--font-eyebrow-size);
+  font-weight: var(--font-title-weight);
 }
 
 .swipe-mark {
   width: 28rpx;
   height: 4rpx;
   border-radius: 999rpx;
-  background: rgba(37, 35, 33, 0.12);
+  background: var(--control-strong-bg);
 }
 
 .day-meta {
@@ -243,8 +260,8 @@
 
 .day-count {
   color: var(--text-soft);
-  font-size: 20rpx;
-  font-weight: 700;
+  font-size: var(--font-eyebrow-size);
+  font-weight: var(--font-title-weight);
 }
 
 .report-row,
@@ -254,7 +271,7 @@
   justify-content: space-between;
   gap: 20rpx;
   padding: 22rpx 0;
-  border-bottom: 1rpx solid rgba(37, 35, 33, 0.08);
+  border-bottom: 1rpx solid var(--border-soft);
 }
 
 .report-row:last-child,
@@ -266,29 +283,29 @@
 .report-title,
 .catchup-title {
   color: var(--text-main);
-  font-size: 27rpx;
-  font-weight: 700;
+  font-size: var(--font-control-size);
+  font-weight: var(--font-title-weight);
 }
 
 .report-copy,
 .catchup-copy {
   margin-top: 8rpx;
   color: var(--text-muted);
-  font-size: 22rpx;
+  font-size: var(--font-caption-size);
 }
 
 .catchup-purpose {
   margin-top: 8rpx;
   color: var(--text-soft);
-  font-size: 21rpx;
+  font-size: var(--font-caption-size);
 }
 
 .report-state,
 .catchup-state {
   flex-shrink: 0;
   color: var(--text-muted);
-  font-size: 22rpx;
-  font-weight: 700;
+  font-size: var(--font-caption-size);
+  font-weight: var(--font-title-weight);
   text-align: right;
 }
 
@@ -299,7 +316,7 @@
 .report-progress {
   margin-top: 6rpx;
   color: var(--text-soft);
-  font-size: 19rpx;
+  font-size: var(--font-eyebrow-size);
 }
 
 .catchup-row.is-done {

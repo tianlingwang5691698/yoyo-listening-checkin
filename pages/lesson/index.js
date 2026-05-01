@@ -261,6 +261,7 @@ Page({
     });
   },
   async onShow() {
+    page.syncTheme(this);
     if (!page.requireIdentityConfirmed()) {
       this.setData({ lessonLoading: false });
       return;

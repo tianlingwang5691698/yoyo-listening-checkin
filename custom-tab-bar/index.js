@@ -1,6 +1,10 @@
+const theme = require('../utils/theme');
+
 Component({
   data: {
     selected: 0,
+    theme: 'warm',
+    themeClass: 'theme-warm',
     list: [
       {
         pagePath: '/pages/home/index',
@@ -20,7 +24,15 @@ Component({
       }
     ]
   },
+  lifetimes: {
+    attached() {
+      this.syncTheme();
+    }
+  },
   methods: {
+    syncTheme() {
+      this.setData(theme.buildThemeData());
+    },
     switchTab(event) {
       const index = Number(event.currentTarget.dataset.index || 0);
       const target = this.data.list[index];

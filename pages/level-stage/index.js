@@ -76,6 +76,7 @@ Page({
     hasTaskGroups: false
   }),
   async onLoad(query) {
+    page.syncTheme(this);
     const phase = query.phase || 'round-1';
     const data = await store.getLevelOverview();
     const categories = (data.categories || []).map(labels.normalizeCategory);
@@ -90,6 +91,9 @@ Page({
       totalMinutesText: totalMinutes ? `${totalMinutes} 分钟` : '待生成',
       hasTaskGroups
     }));
+  },
+  onShow() {
+    page.syncTheme(this);
   },
   openTask(event) {
     const category = event.currentTarget.dataset.category;

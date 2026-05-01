@@ -1,0 +1,29 @@
+.custom-tabbar.theme-warm {
+  --tabbar-bg: #fbf7ef;
+  --tabbar-text: #8c7e72;
+  --tabbar-active: #2f2b27;
+  --tabbar-border: rgba(37, 35, 33, 0.08);
+  --font-body-family: "PingFang SC", "Helvetica Neue", sans-serif;
+  --font-caption-size: 22rpx;
+  --font-section-weight: 700;
+}
+
+.custom-tabbar.theme-fresh {
+  --tabbar-bg: #eef8f4;
+  --tabbar-text: #71817b;
+  --tabbar-active: #101816;
+  --tabbar-border: rgba(33, 86, 69, 0.1);
+  --font-body-family: "Kaiti SC", "STKaiti", "Songti SC", "PingFang SC", serif;
+  --font-caption-size: 23rpx;
+  --font-section-weight: 500;
+}
+
+.custom-tabbar.theme-sky {
+  --tabbar-bg: #f3f7ff;
+  --tabbar-text: #708096;
+  --tabbar-active: #121a27;
+  --tabbar-border: rgba(39, 88, 156, 0.1);
+  --font-body-family: "Avenir Next", "Arial", "PingFang SC", sans-serif;
+  --font-caption-size: 20rpx;
+  --font-section-weight: 600;
+}

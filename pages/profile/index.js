@@ -1,5 +1,6 @@
 const store = require('../../utils/store');
 const page = require('../../utils/page');
+const theme = require('../../utils/theme');
 
 const DAILY_ENCOURAGEMENTS = [
   ['Small steps count.', '一点点坚持，也会慢慢变强。'],
@@ -50,6 +51,7 @@ Page({
     childCodeText: '待同步'
   }),
   async onShow() {
+    page.syncTheme(this);
     const tabBar = this.getTabBar && this.getTabBar();
     if (tabBar) {
       tabBar.setData({ selected: 3 });
@@ -101,6 +103,15 @@ Page({
   openFamilyPage() {
     wx.navigateTo({
       url: '/pages/family/index'
+    });
+  },
+  switchTheme(event) {
+    const nextTheme = theme.setTheme(event.currentTarget.dataset.theme);
+    const themeData = page.syncTheme(this);
+    this.setData(themeData);
+    wx.showToast({
+      title: `${theme.getThemeLabel(nextTheme)}主题`,
+      icon: 'none'
     });
   }
 });

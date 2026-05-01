@@ -1,4 +1,4 @@
-<view class="page-shell family-page">
+<view class="theme-{{theme}} page-shell family-page">
   <view class="family-hero product-hero">
     <view class="product-title type-page-title">家庭</view>
     <view class="product-copy">{{syncMode === 'cloud' ? '已接通' : '待同步'}}</view>
