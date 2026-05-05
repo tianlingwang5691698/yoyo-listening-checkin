@@ -4,10 +4,40 @@ async function getLevelOverview(event) {
   const { ctx, today } = await study.prepareRequestContext(Object.assign({}, event, {
     action: 'getLevelOverview'
   }));
-  const dashboard = await study.getDashboardData(ctx);
+  const payload = (event && event.payload) || {};
+  const requestedPhase = String(payload.phase || '').trim();
+  const previewPlanDayIndex = requestedPhase === 'round-2'
+    ? 73
+    : requestedPhase === 'round-1'
+      ? 1
+      : 0;
   const progressRecords = await study.getChildProgressRecords(study.getUserScope(ctx));
+  const previewPlan = previewPlanDayIndex ? study.buildPlanForDay(previewPlanDayIndex) : null;
+  const isA1PhaseOverview = requestedPhase === 'round-1' || requestedPhase === 'round-2';
+  const dashboard = await study.getDashboardData(ctx, previewPlan ? {
+    includeDailyTasks: false,
+    includeHomeTaskGroups: false,
+    includeCategorySummaries: false,
+    includeCatchupState: false,
+    includePlanDebug: false,
+    includeTaskProgressSummary: false,
+    includeUser: false,
+    includeFamily: false,
+    includeStats: true
+  } : undefined);
+  const previewTasks = previewPlan
+    ? study.decoratePlanTasks(progressRecords, ctx.child.childId, today, previewPlan, {
+      planRunType: 'normal',
+      targetDate: today,
+      planDayIndex: previewPlanDayIndex
+    })
+    : [];
   const standaloneCategoryIds = ['newconcept2', 'newconcept3', 'newconcept4'];
-  const standaloneOverviews = Object.fromEntries(await Promise.all(standaloneCategoryIds.map(async (categoryId) => {
+  const standaloneOverviews = isA1PhaseOverview ? {
+    newconcept2: { directTasks: [], overview: [] },
+    newconcept3: { directTasks: [], overview: [] },
+    newconcept4: { directTasks: [], overview: [] }
+  } : Object.fromEntries(await Promise.all(standaloneCategoryIds.map(async (categoryId) => {
     const directTasks = await study.resolveStandaloneCategoryTasks(categoryId, ctx.child.childId, today);
     const overview = directTasks.length
       ? [{
@@ -30,7 +60,9 @@ async function getLevelOverview(event) {
     level: study.level,
     stats: dashboard.stats,
     categories: ['newconcept1', 'peppa', 'unlock1', 'song'].map((category) => {
-      const task = dashboard.categorySummaries.find((item) => item.category === category);
+      const task = previewPlan
+        ? study.buildCategorySummary(previewTasks.filter((item) => item.category === category), category)
+        : (dashboard.categorySummaries || []).find((item) => item.category === category);
       const fallbackTask = study.buildCategorySummary([], category);
       const todayTask = task || fallbackTask;
       return {
@@ -40,7 +72,9 @@ async function getLevelOverview(event) {
         completedCount: (dashboard.stats.completedTasks || 0),
         todayTask,
         isPendingAsset: todayTask.isPendingAsset,
-        todayTaskCount: todayTask.plannedTaskCount || 0
+        todayTaskCount: todayTask.plannedTaskCount || 0,
+        planRunType: previewPlan ? 'preview' : 'normal',
+        planDayIndex: previewPlan ? previewPlan.dayIndex : dashboard.planDayIndex
       };
     }),
     a2Categories: standaloneOverviews.newconcept2.overview,
@@ -55,8 +89,8 @@ async function getLevelOverview(event) {
       newconcept4DirectCount: standaloneOverviews.newconcept4.directTasks.length,
       resourceDebug: study.getResourceDebugSnapshot()
     },
-    planDayIndex: dashboard.planDayIndex,
-    planPhaseLabel: dashboard.planPhaseLabel
+    planDayIndex: previewPlan ? previewPlan.dayIndex : dashboard.planDayIndex,
+    planPhaseLabel: previewPlan ? previewPlan.phase.label : dashboard.planPhaseLabel
   };
 }
 

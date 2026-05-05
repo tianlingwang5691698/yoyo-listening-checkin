@@ -145,6 +145,16 @@ function decorateTask(task, progress, category, deps) {
   const currentPass = progress.completedToday ? task.repeatTarget : Math.min(progress.playCount + 1, task.repeatTarget);
   const textUnlocked = progress.playCount >= task.repeatTarget - 1 || progress.completedToday;
   const transcriptTrackId = task.transcriptTrackId || null;
+  const planPhase = task.planPhase || '';
+  const isRound2 = planPhase === 'round-2';
+  const isNewConcept = ['newconcept1', 'newconcept2', 'newconcept3', 'newconcept4'].includes(category);
+  const supportsQuestionAnswer = isRound2 && isNewConcept;
+  const speakingMode = supportsQuestionAnswer
+    ? 'nce-question-answer'
+    : (isRound2 && category === 'unlock1' ? 'unlock-sentence-repeat' : '');
+  const transcriptVisible = isRound2
+    ? currentPass === 1
+    : currentPass !== 2;
   const reward = getTaskReward(category, progress, Object.assign({}, task, { transcriptTrackId }));
   return Object.assign({}, task, base, {
     category,
@@ -162,7 +172,11 @@ function decorateTask(task, progress, category, deps) {
     playStepText: `${completedCount}/${task.repeatTarget}`,
     currentPass,
     textUnlocked,
-    transcriptVisible: currentPass !== 2,
+    transcriptVisible,
+    speakingMode,
+    speakingRequired: !!speakingMode,
+    questionAnswerRequired: speakingMode === 'nce-question-answer',
+    sentenceRepeatRequired: speakingMode === 'unlock-sentence-repeat',
     completedToday: progress.completedToday,
     updatedAt: progress.updatedAt || '',
     transcriptStatus: transcriptTrackId ? 'ready' : (task.textSource ? 'pending' : 'none'),

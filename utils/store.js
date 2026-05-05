@@ -175,8 +175,8 @@ async function getDashboard(options) {
   return callCloud('getDashboard', Object.assign({}, options || {}), contracts.createDashboardDefaults());
 }
 
-async function getLevelOverview() {
-  return callCloud('getLevelOverview', {}, {
+async function getLevelOverview(options) {
+  return callCloud('getLevelOverview', Object.assign({}, options || {}), {
     user: {},
     currentUser: {},
     currentMember: contracts.createCurrentMemberDefaults(),
@@ -223,6 +223,32 @@ async function getTempFileURL(fileId) {
 
 async function markTaskListened(options) {
   return callCloud('markTaskListened', options, contracts.createTaskDetailDefaults());
+}
+
+async function createSpeakingUploadUrl(options) {
+  return callCloud('createSpeakingUploadUrl', options, {
+    cloudPath: '',
+    fileId: ''
+  });
+}
+
+async function uploadSpeakingAudio(cloudPath, filePath) {
+  return cloud.uploadFile(cloudPath, filePath);
+}
+
+async function submitSpeakingAttempt(options) {
+  return callCloud('submitSpeakingAttempt', options, {
+    attempt: null,
+    attempts: [],
+    summary: {}
+  });
+}
+
+async function getSpeakingAttempts(options) {
+  return callCloud('getSpeakingAttempts', options, {
+    attempts: [],
+    summary: {}
+  });
 }
 
 async function completeTodayCheckin() {
@@ -347,6 +373,10 @@ module.exports = {
   getTaskTranscript,
   getTempFileURL,
   markTaskListened,
+  createSpeakingUploadUrl,
+  uploadSpeakingAudio,
+  submitSpeakingAttempt,
+  getSpeakingAttempts,
   completeTodayCheckin,
   getParentDashboard,
   getFamilyPageData,

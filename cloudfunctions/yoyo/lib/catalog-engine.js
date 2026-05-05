@@ -1,4 +1,5 @@
 const { peppaTranscriptBuildStatus } = require('../transcripts/peppa_build_status');
+const { TRANSCRIPT_BUNDLE_PATHS } = require('./constants');
 const trainingPoolRepository = require('../repositories/training-pool.repository');
 const storageAdapter = require('../adapters/storage.adapter');
 const transcriptAdapter = require('../adapters/transcript.adapter');
@@ -26,7 +27,7 @@ const STORAGE_ROOT_CANDIDATES = {
   newconcept2: [NEW_CONCEPT2_AUDIO_ROOT, 'A2/NewConcept2', 'A2/New Concept 2', 'A2/new-concept-2-us', 'A2/Newconcept2'],
   newconcept3: [NEW_CONCEPT3_AUDIO_ROOT, 'B1/NewConcept3', 'B1/New Concept 3', 'B1/new-concept-3-us', 'B1/Newconcept3'],
   newconcept4: ['B2/NewConcept3-US/新概念英语（第4册）美音（MP3+LRC）', NEW_CONCEPT4_AUDIO_ROOT, 'B2/NewConcept4', 'B2/New Concept 4', 'B2/new-concept-4-us', 'B2/Newconcept4', 'B2/NewConcept3-US'],
-  peppa: [STORAGE_ROOTS.peppa],
+  peppa: [`${STORAGE_ROOTS.peppa}/第1季`, `${STORAGE_ROOTS.peppa}/第2季`, `${STORAGE_ROOTS.peppa}/第3季`, STORAGE_ROOTS.peppa],
   unlock1: [UNLOCK1_AUDIO_ROOT, 'A1/Unlock1'],
   song: [STORAGE_ROOTS.song, 'A1/Super simple song']
 };
@@ -34,6 +35,8 @@ const AUDIO_FILE_PATTERN = /\.(mp3|m4a|aac|wav)$/i;
 let runtimeCatalogs = null;
 let runtimeCatalogExpiresAt = 0;
 let runtimeCatalogDebug = null;
+let runtimeDurationTrackMaps = {};
+let runtimeDurationTrackMapExpiresAt = {};
 let storageDebugShapes = {};
 let unlock1TrainingPoolBootstrapState = {
   lastTriggeredAt: 0,
@@ -229,6 +232,45 @@ function inferNewConceptTaskMeta(category, audioBaseName, index) {
   };
 }
 
+function inferPeppaTaskMeta(audioBaseName, cloudPath, index) {
+  const match = String(audioBaseName || '').match(/^S(\d)(\d{2})\s*(.*)$/i);
+  const folderText = String(cloudPath || '');
+  const season = match
+    ? Number(match[1])
+    : (folderText.includes('第2季') || /season\s*2/i.test(folderText) ? 2 : 1);
+  const episode = match ? Number(match[2]) : (index + 1);
+  if (!Number.isFinite(season) || !Number.isFinite(episode) || season < 1 || episode < 1) {
+    return null;
+  }
+  const episodeText = String(episode).padStart(2, '0');
+  const code = `s${season}${episodeText}`;
+  const title = match ? `S${season}${episodeText} ${String(match[3] || '').trim()}`.trim() : audioBaseName;
+  const trackId = `track-peppa-${code}`;
+  const candidates = Array.from(new Set([
+    trackId,
+    `peppa-${code}`,
+    `peppa-s${season}-${episode}`,
+    `peppa-s${season}-${episodeText}`,
+    audioBaseName,
+    getBaseName(cloudPath)
+  ].filter(Boolean)));
+  return {
+    taskId: season === 1 ? `peppa-${episode}` : `peppa-s${season}-${episode}`,
+    title,
+    subtitle: `Peppa Pig Season ${season}`,
+    transcriptTrackId: trackId,
+    transcriptTrackCandidates: candidates,
+    transcriptBatch: season,
+    syncGranularity: 'word',
+    coverTone: season === 1 ? 'sunrise' : 'mint',
+    textSource: {
+      sourceType: 'transcript-bundle',
+      title: `Peppa Pig Season ${season} Script`,
+      filePath: ''
+    }
+  };
+}
+
 function normalizeTranscriptWord(word, lineId, index) {
   const startMs = Number(word && word.startMs);
   const endMs = Number(word && word.endMs);
@@ -384,6 +426,75 @@ function inferSongTaskMeta(value) {
     transcriptBatch: Math.floor((ordinal.number - 1) / 100) + 1,
     syncGranularity: 'line'
   };
+}
+
+function getTrackDurationSec(track) {
+  const durationMs = Number(track && (track.durationMs || track.duration || track.audioDurationMs));
+  if (Number.isFinite(durationMs) && durationMs > 0) {
+    return Math.max(1, Math.round(durationMs / 1000));
+  }
+  const durationSec = Number(track && (track.durationSec || track.audioDurationSec));
+  if (Number.isFinite(durationSec) && durationSec > 0) {
+    return Math.max(1, Math.round(durationSec));
+  }
+  const lines = Array.isArray(track && track.lines) ? track.lines : [];
+  const maxEndMs = lines.reduce((max, line) => {
+    const endMs = Number(line && line.endMs);
+    return Number.isFinite(endMs) ? Math.max(max, endMs) : max;
+  }, 0);
+  return maxEndMs > 0 ? Math.max(1, Math.ceil(maxEndMs / 1000)) : 0;
+}
+
+async function getDurationTrackMap(category) {
+  const key = String(category || '').trim();
+  if (!key) {
+    return {};
+  }
+  const now = Date.now();
+  if (runtimeDurationTrackMaps[key] && runtimeDurationTrackMapExpiresAt[key] > now) {
+    return runtimeDurationTrackMaps[key];
+  }
+  const paths = Array.isArray(TRANSCRIPT_BUNDLE_PATHS[key]) ? TRANSCRIPT_BUNDLE_PATHS[key] : [TRANSCRIPT_BUNDLE_PATHS[key]];
+  let trackMap = {};
+  for (const cloudPath of (paths || []).filter(Boolean)) {
+    try {
+      const nextMap = await downloadCloudJson(cloudPath);
+      trackMap = Object.assign(trackMap, nextMap || {});
+      if (key !== 'peppa') {
+        break;
+      }
+    } catch (error) {
+      // try next
+    }
+  }
+  runtimeDurationTrackMaps[key] = trackMap;
+  runtimeDurationTrackMapExpiresAt[key] = now + 5 * 60 * 1000;
+  return trackMap;
+}
+
+async function getTranscriptDurationLookup(category) {
+  if (!['newconcept1', 'newconcept2', 'newconcept3', 'newconcept4', 'peppa', 'song'].includes(category)) {
+    return {};
+  }
+  const trackMap = await getDurationTrackMap(category);
+  return Object.keys(trackMap || {}).reduce((lookup, trackId) => {
+    const durationSec = getTrackDurationSec(trackMap[trackId]);
+    if (durationSec > 0) {
+      lookup[trackId] = durationSec;
+    }
+    return lookup;
+  }, {});
+}
+
+function getDurationFromLookup(durationLookup, trackId, candidates) {
+  const keys = [trackId].concat(candidates || []).filter(Boolean);
+  for (const key of keys) {
+    const durationSec = Number(durationLookup && durationLookup[key]);
+    if (Number.isFinite(durationSec) && durationSec > 0) {
+      return durationSec;
+    }
+  }
+  return 0;
 }
 
 function buildStaticTaskLookup(items) {
@@ -573,6 +684,7 @@ function sortFilesByPath(left, right) {
 
 async function buildCloudCatalogFromRoot(category, rootPath, staticItems, options) {
   const files = await listDirectoryFiles(rootPath);
+  const durationLookup = (options && options.durationLookup) || {};
   const audioFiles = files.filter((item) => AUDIO_FILE_PATTERN.test(item.cloudPath)).sort(sortFilesByPath);
   const pdfByFolder = {};
   files.filter((item) => /\.pdf$/i.test(item.cloudPath)).forEach((item) => {
@@ -619,40 +731,45 @@ async function buildCloudCatalogFromRoot(category, rootPath, staticItems, option
     const audioBaseName = getBaseName(file.cloudPath);
     const folderPdf = findNearestParentPdf(pdfByFolder, file.cloudPath);
     const inferredSongTask = category === 'song' ? inferSongTaskMeta(audioBaseName) : null;
+    const inferredPeppaTask = category === 'peppa' ? inferPeppaTaskMeta(audioBaseName, file.cloudPath, index) : null;
     const inferredNewConceptTask = inferNewConceptTaskMeta(category, audioBaseName, index);
     const title = matchedStatic
       ? matchedStatic.title
-      : ((trainingRecord && trainingRecord.title) || (inferredSongTask && inferredSongTask.title) || (inferredNewConceptTask && inferredNewConceptTask.title) || audioBaseName);
+      : ((trainingRecord && trainingRecord.title) || (inferredSongTask && inferredSongTask.title) || (inferredPeppaTask && inferredPeppaTask.title) || (inferredNewConceptTask && inferredNewConceptTask.title) || audioBaseName);
     const subtitle = matchedStatic
       ? matchedStatic.subtitle
-      : ((inferredSongTask && inferredSongTask.subtitle) || (inferredNewConceptTask && inferredNewConceptTask.subtitle) || getParentFolder(file.cloudPath).split('/').pop() || rootPath.split('/').pop());
+      : ((inferredSongTask && inferredSongTask.subtitle) || (inferredPeppaTask && inferredPeppaTask.subtitle) || (inferredNewConceptTask && inferredNewConceptTask.subtitle) || getParentFolder(file.cloudPath).split('/').pop() || rootPath.split('/').pop());
     const transcriptTrackId = matchedStatic
       ? matchedStatic.transcriptTrackId
-      : ((inferredSongTask && inferredSongTask.transcriptTrackId) || (inferredNewConceptTask && inferredNewConceptTask.transcriptTrackId));
+      : ((inferredSongTask && inferredSongTask.transcriptTrackId) || (inferredPeppaTask && inferredPeppaTask.transcriptTrackId) || (inferredNewConceptTask && inferredNewConceptTask.transcriptTrackId));
+    const transcriptTrackCandidates = (inferredPeppaTask && inferredPeppaTask.transcriptTrackCandidates) || (inferredNewConceptTask && inferredNewConceptTask.transcriptTrackCandidates) || undefined;
+    const transcriptDurationSec = getDurationFromLookup(durationLookup, transcriptTrackId, transcriptTrackCandidates);
     const syncGranularity = matchedStatic
       ? String(matchedStatic.syncGranularity || 'word')
-      : ((inferredSongTask && inferredSongTask.syncGranularity) || (inferredNewConceptTask && inferredNewConceptTask.syncGranularity) || 'word');
+      : ((inferredSongTask && inferredSongTask.syncGranularity) || (inferredPeppaTask && inferredPeppaTask.syncGranularity) || (inferredNewConceptTask && inferredNewConceptTask.syncGranularity) || 'word');
     return buildCloudTask(matchedStatic, {
       taskId: matchedStatic
         ? matchedStatic.taskId
-        : ((inferredSongTask && inferredSongTask.taskId) || (inferredNewConceptTask && inferredNewConceptTask.taskId) || `${category}-${index + 1}`),
+        : ((inferredSongTask && inferredSongTask.taskId) || (inferredPeppaTask && inferredPeppaTask.taskId) || (inferredNewConceptTask && inferredNewConceptTask.taskId) || `${category}-${index + 1}`),
       category,
       title,
       subtitle,
       repeatTarget: matchedStatic ? matchedStatic.repeatTarget : 3,
-      durationSec: trainingRecord ? trainingRecord.durationSec : (matchedStatic ? matchedStatic.durationSec : 180),
-      coverTone: matchedStatic ? matchedStatic.coverTone : ((inferredNewConceptTask && inferredNewConceptTask.coverTone) || (category === 'song' ? 'mint' : 'sunrise')),
+      durationSec: trainingRecord ? trainingRecord.durationSec : (transcriptDurationSec || (matchedStatic ? matchedStatic.durationSec : 180)),
+      coverTone: matchedStatic ? matchedStatic.coverTone : ((inferredPeppaTask && inferredPeppaTask.coverTone) || (inferredNewConceptTask && inferredNewConceptTask.coverTone) || (category === 'song' ? 'mint' : 'sunrise')),
       transcriptTrackId,
       transcriptStatus: matchedStatic ? matchedStatic.transcriptStatus : (transcriptTrackId ? 'ready' : (folderPdf ? 'pending' : 'none')),
-      transcriptBatch: matchedStatic ? matchedStatic.transcriptBatch : ((inferredSongTask && inferredSongTask.transcriptBatch) || (inferredNewConceptTask && inferredNewConceptTask.transcriptBatch) || null),
-      transcriptTrackCandidates: inferredNewConceptTask ? inferredNewConceptTask.transcriptTrackCandidates : undefined,
+      transcriptBatch: matchedStatic ? matchedStatic.transcriptBatch : ((inferredSongTask && inferredSongTask.transcriptBatch) || (inferredPeppaTask && inferredPeppaTask.transcriptBatch) || (inferredNewConceptTask && inferredNewConceptTask.transcriptBatch) || null),
+      transcriptTrackCandidates,
       syncGranularity,
       audioTitle: (trainingRecord && trainingRecord.title) || audioBaseName,
       audioUrl: buildCloudAssetUrl(file.cloudPath),
       audioCloudPath: file.cloudPath,
       audioFileId: file.fileId,
       audioSource: 'static-cloud-url',
-      textSource: inferredNewConceptTask
+      textSource: inferredPeppaTask
+        ? inferredPeppaTask.textSource
+        : inferredNewConceptTask
         ? inferredNewConceptTask.textSource
         : category === 'song'
         ? {
@@ -690,6 +807,7 @@ async function buildCloudCatalogFromRoot(category, rootPath, staticItems, option
 
 async function buildCloudCatalogForCategory(category, staticItems) {
   const roots = STORAGE_ROOT_CANDIDATES[category] || [STORAGE_ROOTS[category]];
+  const durationLookup = await getTranscriptDurationLookup(category);
   let trainingPool = category === 'unlock1'
     ? await getEligibleUnlock1TrainingPool()
     : null;
@@ -699,13 +817,64 @@ async function buildCloudCatalogForCategory(category, staticItems) {
     trainingPool = ensured.trainingPool;
     bootstrapState = ensured.bootstrapState;
   }
+  if (category === 'peppa') {
+    const errors = [];
+    const emptyScans = [];
+    const tasks = [];
+    const seenPaths = new Set();
+    let selectedRoot = '';
+    let firstDebug = null;
+    for (let index = 0; index < roots.length; index += 1) {
+      const rootPath = roots[index];
+      try {
+        const result = await buildCloudCatalogFromRoot(category, rootPath, staticItems, {
+          trainingPool,
+          durationLookup
+        });
+        if (!firstDebug) {
+          firstDebug = result.debug;
+        }
+        if (result.tasks.length) {
+          selectedRoot = selectedRoot || rootPath;
+          result.tasks.forEach((task) => {
+            const pathKey = normalizeCloudPath(task.audioCloudPath || task.audioUrl || task.taskId);
+            if (!seenPaths.has(pathKey)) {
+              seenPaths.add(pathKey);
+              tasks.push(task);
+            }
+          });
+        } else {
+          emptyScans.push(result.debug);
+        }
+      } catch (error) {
+        errors.push(`${rootPath}: ${formatStorageError(error)}`);
+      }
+    }
+    if (tasks.length) {
+      return {
+        tasks: tasks.sort((left, right) => sortFilesByPath({
+          cloudPath: left.audioCloudPath || left.title
+        }, {
+          cloudPath: right.audioCloudPath || right.title
+        })),
+        debug: Object.assign({}, firstDebug || {}, {
+          selectedRoot,
+          rootCandidates: roots,
+          audioCount: tasks.length,
+          scanError: errors.join(' | '),
+          emptyRoots: emptyScans.map((item) => item.root)
+        })
+      };
+    }
+  }
   const errors = [];
   const emptyScans = [];
   for (let index = 0; index < roots.length; index += 1) {
     const rootPath = roots[index];
     try {
       const result = await buildCloudCatalogFromRoot(category, rootPath, staticItems, {
-        trainingPool
+        trainingPool,
+        durationLookup
       });
       if (result.tasks.length) {
         return {

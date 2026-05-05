@@ -7,17 +7,30 @@ async function getTaskDetail(event) {
   const payload = (event && event.payload) || {};
   const view = String(payload.view || '').trim();
   const isLessonView = view === 'lesson';
-  const dashboard = await study.getDashboardData(ctx);
   let planRunType = String(payload.planRunType || 'normal');
   let targetDate = String(payload.targetDate || today).slice(0, 10);
+  const isPreview = planRunType === 'preview';
+  const dashboard = await study.getDashboardData(ctx, isPreview ? {
+    includeDailyTasks: false,
+    includeHomeTaskGroups: false,
+    includeCategorySummaries: false,
+    includeCatchupState: false,
+    includePlanDebug: false,
+    includeTaskProgressSummary: false,
+    includeUser: false,
+    includeFamily: false,
+    includeStats: false
+  } : undefined);
   if (planRunType === 'catchup' && (!dashboard.catchupState.canCatchup || targetDate !== dashboard.catchupState.missedDate)) {
     planRunType = 'normal';
     targetDate = today;
   }
-  const targetPlanDayIndex = planRunType === 'catchup'
+  const targetPlanDayIndex = isPreview
+    ? (Number(payload.planDayIndex || 0) || dashboard.planDayIndex)
+    : planRunType === 'catchup'
     ? Number(payload.planDayIndex || 0) || dashboard.catchupState.planDayIndex || dashboard.planDayIndex
     : dashboard.planDayIndex;
-  const targetPlan = planRunType === 'catchup' ? study.buildPlanForDay(targetPlanDayIndex) : null;
+  const targetPlan = (planRunType === 'catchup' || isPreview) ? study.buildPlanForDay(targetPlanDayIndex) : null;
   const progressRecords = await study.getChildProgressRecords(study.getUserScope(ctx));
   const categoryTasks = ['newconcept2', 'newconcept3', 'newconcept4'].includes(payload.category)
     ? study.decoratePlannedTasks(progressRecords, ctx.child.childId, payload.category, targetDate, await study.resolveStandaloneCategoryTasks(payload.category, ctx.child.childId, targetDate), {
@@ -25,9 +38,9 @@ async function getTaskDetail(event) {
       targetDate,
       planDayIndex: 1
     })
-    : planRunType === 'catchup'
+    : (planRunType === 'catchup' || isPreview)
       ? study.decoratePlannedTasks(progressRecords, ctx.child.childId, payload.category, targetDate, targetPlan.byCategory[payload.category] || [], {
-        planRunType: 'catchup',
+        planRunType,
         targetDate,
         planDayIndex: targetPlan.dayIndex
       })
@@ -45,7 +58,7 @@ async function getTaskDetail(event) {
       playCount: item.playCount
     }))
     .sort((a, b) => b.date.localeCompare(a.date));
-  const todayRecord = (await study.getCheckins(scope)).find((item) => item.date === today) || null;
+  const todayRecord = isPreview ? null : ((await study.getCheckins(scope)).find((item) => item.date === today) || null);
   const checkinReady = study.normalizeStudyRole(ctx.member) === 'student'
     && planRunType === 'normal'
     && targetDate === today
@@ -68,7 +81,7 @@ async function getTaskDetail(event) {
     categoryTaskCount: categoryTasks.length,
     categoryCompletedCount: categoryTasks.filter((item) => item.completedToday).length,
     planDayIndex: targetPlanDayIndex,
-    planPhaseLabel: planRunType === 'catchup' ? (targetPlan.phase.label || dashboard.planPhaseLabel) : dashboard.planPhaseLabel,
+    planPhaseLabel: targetPlan ? (targetPlan.phase.label || dashboard.planPhaseLabel) : dashboard.planPhaseLabel,
     planRunType,
     targetDate,
     scriptSource: task.textSource || null,
@@ -77,8 +90,8 @@ async function getTaskDetail(event) {
     transcriptPendingLoad: true,
     todayRecord,
     history,
-    studyWriteAllowed: study.normalizeStudyRole(ctx.member) === 'student',
-    studyWriteMessage: study.normalizeStudyRole(ctx.member) === 'student' ? '' : '家长模式，不计入打卡',
+    studyWriteAllowed: !isPreview && study.normalizeStudyRole(ctx.member) === 'student',
+    studyWriteMessage: isPreview ? '预览模式，不计入打卡' : (study.normalizeStudyRole(ctx.member) === 'student' ? '' : '家长模式，不计入打卡'),
     checkinReady
   };
   if (!isLessonView) {
@@ -124,6 +137,15 @@ async function markTaskListened(event, context) {
   const checkins = await study.getCheckins(scope);
   const planRunType = String(payload.planRunType || 'normal');
   const targetDate = String(payload.targetDate || today).slice(0, 10);
+  if (planRunType === 'preview') {
+    return Object.assign(
+      await getTaskDetail({ payload: { category, taskId: payload.taskId, planRunType, targetDate, planDayIndex: payload.planDayIndex } }),
+      {
+        studyWriteAllowed: false,
+        studyWriteMessage: '预览模式，不计入打卡'
+      }
+    );
+  }
   if (study.normalizeStudyRole(ctx.member) !== 'student') {
     return Object.assign(
       await getTaskDetail({ payload: { category, taskId: payload.taskId, planRunType, targetDate, planDayIndex: payload.planDayIndex } }),

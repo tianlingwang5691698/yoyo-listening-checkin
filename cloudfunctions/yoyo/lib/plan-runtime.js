@@ -2,7 +2,8 @@ const { addDays, formatChinaDateFromDate } = require('./date');
 
 const PLAN_SLOT_COUNT = 24;
 const PLAN_PHASES = [
-  { key: 'round-1', label: '第1轮', startDay: 1, length: 72, batchSize: 1 }
+  { key: 'round-1', label: '第1轮', startDay: 1, length: 72, batchSize: 1 },
+  { key: 'round-2', label: '阶段二', startDay: 73, length: 72, batchSize: 1 }
 ];
 const TOTAL_PLAN_DAYS = PLAN_PHASES.reduce((sum, phase) => sum + phase.length, 0);
 
@@ -89,6 +90,20 @@ function buildLoopingIndices(startIndex, count, totalCount) {
   return indices;
 }
 
+function buildLinearIndices(startIndex, count, totalCount) {
+  if (!totalCount || count <= 0) {
+    return [];
+  }
+  const indices = [];
+  for (let step = 0; step < count; step += 1) {
+    const index = startIndex + step;
+    if (index < totalCount) {
+      indices.push(index);
+    }
+  }
+  return indices;
+}
+
 function getRound1IndicesForCategory(dayIndex, category, catalogLength) {
   if (!catalogLength) {
     return [];
@@ -106,6 +121,29 @@ function getRound1IndicesForCategory(dayIndex, category, catalogLength) {
   return buildLoopingIndices(dayIndex - 1, 1, catalogLength);
 }
 
+function getRound2IndicesForCategory(dayIndex, category, catalogLength) {
+  if (!catalogLength) {
+    return [];
+  }
+  const roundDay = dayIndex - PLAN_PHASES[1].startDay + 1;
+  if (category === 'newconcept1') {
+    return buildLoopingIndices((roundDay - 1) * 2, 2, catalogLength);
+  }
+  if (category === 'unlock1') {
+    const unlockCount = Math.min(PLAN_SLOT_COUNT, catalogLength);
+    return buildLoopingIndices(roundDay - 1, 1, unlockCount);
+  }
+  return buildLoopingIndices(72 + roundDay - 1, 1, catalogLength);
+}
+
+function getPlanIndicesForCategory(dayIndex, category, catalogLength) {
+  const phase = getPlanPhase(dayIndex);
+  if (phase.key === 'round-2') {
+    return getRound2IndicesForCategory(dayIndex, category, catalogLength);
+  }
+  return getRound1IndicesForCategory(dayIndex, category, catalogLength);
+}
+
 module.exports = {
   PLAN_SLOT_COUNT,
   PLAN_PHASES,
@@ -121,5 +159,8 @@ module.exports = {
   getPlanStartDate,
   buildCatchupState,
   buildLoopingIndices,
-  getRound1IndicesForCategory
+  buildLinearIndices,
+  getRound1IndicesForCategory,
+  getRound2IndicesForCategory,
+  getPlanIndicesForCategory
 };

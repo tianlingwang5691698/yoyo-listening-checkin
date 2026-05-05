@@ -25,7 +25,6 @@ test('prepareRequestContext 按 action 选择 catalog 并返回上下文', async
 
   assert.deepEqual(calls, [
     ['refresh', false, []],
-    ['ensureCollections'],
     ['bootstrap', 'open-1']
   ]);
   assert.deepEqual(result, {
@@ -34,6 +33,34 @@ test('prepareRequestContext 按 action 选择 catalog 并返回上下文', async
     ctx: { user: { openId: 'open-1' } },
     today: '2026-04-21'
   });
+});
+
+test('prepareRequestContext 首页优先使用轻量上下文', async () => {
+  const calls = [];
+  const result = await requestContextEngine.prepareRequestContext({
+    action: 'getDashboard',
+    payload: { view: 'home' }
+  }, {
+    refreshRuntimeCatalogs: async (force, categories) => {
+      calls.push(['refresh', force, categories]);
+    },
+    getWXContext: () => ({ OPENID: 'open-1' }),
+    getLightweightContext: async (openId) => {
+      calls.push(['lightweight', openId]);
+      return { user: { openId }, child: { childId: 'child-yoyo' } };
+    },
+    ensureBootstrap: async (openId) => {
+      calls.push(['bootstrap', openId]);
+      return { user: { openId } };
+    },
+    getTodayString: () => '2026-04-21'
+  });
+
+  assert.deepEqual(calls, [
+    ['refresh', false, []],
+    ['lightweight', 'open-1']
+  ]);
+  assert.deepEqual(result.ctx.child.childId, 'child-yoyo');
 });
 
 test('resolveCatalogCategories 对任务详情只刷新请求分类', () => {

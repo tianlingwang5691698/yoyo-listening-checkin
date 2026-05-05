@@ -141,6 +141,48 @@ async function downloadCloudJson(cloudPath) {
   return JSON.parse(text);
 }
 
+async function downloadCloudFileBuffer(fileID, cloudPath) {
+  const targetFileID = String(fileID || buildCloudFileId(cloudPath)).trim();
+  if (targetFileID) {
+    const result = await cloud.downloadFile({ fileID: targetFileID });
+    if (result && result.fileContent) {
+      return Buffer.isBuffer(result.fileContent)
+        ? result.fileContent
+        : Buffer.from(result.fileContent);
+    }
+    if (result && result.tempFilePath) {
+      return fs.readFileSync(result.tempFilePath);
+    }
+  }
+  const manager = getStorageManager();
+  if (!manager || !cloudPath) {
+    throw new Error('storage-download-unavailable');
+  }
+  const localPath = `/tmp/${Date.now()}-${Math.random().toString(36).slice(2, 8)}-${normalizeCloudPath(cloudPath).split('/').pop()}`;
+  await manager.storage.downloadFile({
+    cloudPath,
+    localPath
+  });
+  return fs.readFileSync(localPath);
+}
+
+async function uploadCloudFileBuffer(cloudPath, buffer) {
+  const normalizedPath = normalizeCloudPath(cloudPath);
+  if (!normalizedPath || !buffer) {
+    throw new Error('storage-upload-unavailable');
+  }
+  const localPath = `/tmp/${Date.now()}-${Math.random().toString(36).slice(2, 8)}-${normalizeCloudPath(cloudPath).split('/').pop()}`;
+  fs.writeFileSync(localPath, Buffer.isBuffer(buffer) ? buffer : Buffer.from(buffer));
+  await cloud.uploadFile({
+    cloudPath: normalizedPath,
+    filePath: localPath
+  });
+  return {
+    cloudPath: normalizedPath,
+    fileId: buildCloudFileId(normalizedPath)
+  };
+}
+
 module.exports = {
   normalizeCloudPath,
   buildCloudAssetUrl,
@@ -151,5 +193,7 @@ module.exports = {
   getParentFolder,
   listDirectoryFiles,
   downloadJsonFromCdn,
-  downloadCloudJson
+  downloadCloudJson,
+  downloadCloudFileBuffer,
+  uploadCloudFileBuffer
 };

@@ -93,6 +93,31 @@ async function ensureBootstrap(openId) {
   });
 }
 
+async function getLightweightContext(openId) {
+  const member = await getMember(openId);
+  if (!member || !member.familyId) {
+    return null;
+  }
+  const [user, child] = await Promise.all([
+    userRepository.findByOpenId(openId),
+    getChild(member.familyId)
+  ]);
+  if (!child) {
+    return null;
+  }
+  return {
+    user: user || {
+      userId: member.userId || buildUserId(openId),
+      openId
+    },
+    family: { familyId: member.familyId },
+    member,
+    child,
+    members: [],
+    subscriptionPreference: null
+  };
+}
+
 async function updateChildProfile(familyId, payload) {
   return familyEngine.updateChildProfile(familyId, payload, {
     getChild,
@@ -134,6 +159,7 @@ async function leaveCurrentFamily(ctx) {
 
 module.exports = {
   ensureBootstrap,
+  getLightweightContext,
   updateChildProfile,
   setExclusiveStudyRole,
   upsertFamilyMemberForFamily,

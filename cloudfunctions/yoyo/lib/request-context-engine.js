@@ -1,14 +1,18 @@
 function resolveCatalogCategories(action, requestedCategory, payload = {}) {
   let catalogCategories = ['newconcept1', 'song'];
   const view = String((payload && payload.view) || '').trim();
-  if (action === 'getDashboard' && view === 'record') {
+  if (action === 'getDashboard') {
     return [];
   }
   if (action === 'getLevelOverview') {
-    return ['newconcept1', 'newconcept2', 'newconcept3', 'newconcept4', 'song'];
+    const phase = String((payload && payload.phase) || '').trim();
+    if (phase === 'round-1' || phase === 'round-2') {
+      return ['newconcept1', 'peppa', 'unlock1', 'song'];
+    }
+    return ['newconcept1', 'newconcept2', 'newconcept3', 'newconcept4', 'peppa', 'unlock1', 'song'];
   }
   if (action === 'getTaskDetail' || action === 'markTaskListened') {
-    if (['newconcept1', 'newconcept2', 'newconcept3', 'newconcept4', 'song', 'unlock1'].includes(requestedCategory)) {
+    if (['newconcept1', 'newconcept2', 'newconcept3', 'newconcept4', 'peppa', 'song', 'unlock1'].includes(requestedCategory)) {
       return [requestedCategory];
     }
     return [];
@@ -27,9 +31,12 @@ async function prepareRequestContext(event, deps) {
   const requestedCategory = String((event && event.payload && event.payload.category) || '').trim();
   const catalogCategories = resolveCatalogCategories(action, requestedCategory, (event && event.payload) || {});
   await deps.refreshRuntimeCatalogs(false, catalogCategories);
-  await deps.ensureRequiredCollectionsReady();
   const { OPENID } = deps.getWXContext();
-  const ctx = await deps.ensureBootstrap(OPENID);
+  const view = String((event && event.payload && event.payload.view) || '').trim();
+  const lightweightCtx = action === 'getDashboard' && view === 'home' && deps.getLightweightContext
+    ? await deps.getLightweightContext(OPENID)
+    : null;
+  const ctx = lightweightCtx || await deps.ensureBootstrap(OPENID);
   return {
     action,
     requestedCategory,

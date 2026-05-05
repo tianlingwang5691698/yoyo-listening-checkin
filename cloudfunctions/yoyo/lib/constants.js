@@ -6,7 +6,7 @@ const TRANSCRIPT_BUNDLE_PATHS = {
   newconcept2: ['_transcripts/A2/new-concept-2-us-line/bundle.json', '_transcripts/A2/new-concept-2-us/bundle.json', '_transcripts/A2/new-concept-2/bundle.json', '_transcripts/A2/newconcept2/bundle.json'],
   newconcept3: ['_transcripts/B1/new-concept-3-us-line/bundle.json', '_transcripts/B1/new-concept-3-us/bundle.json', '_transcripts/B1/newconcept3/bundle.json'],
   newconcept4: ['_transcripts/B2/new-concept-4-us-line/bundle.json', '_transcripts/B2/new-concept-4-us/bundle.json', '_transcripts/B2/newconcept4/bundle.json'],
-  peppa: ['_transcripts/A1/peppa/bundle.json'],
+  peppa: ['_transcripts/A1/peppa/bundle.json', '_transcripts/A1/peppa/S2/bundle.json', '_transcripts/A1/peppa/S3/bundle.json'],
   unlock1: ['_transcripts/A1/unlock1/bundle.json'],
   song: ['_transcripts/A1/songs/bundle.json']
 };

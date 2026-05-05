@@ -90,12 +90,22 @@ async function getTranscriptTrackMap(category) {
   }
   const cloudPaths = Array.isArray(TRANSCRIPT_BUNDLE_PATHS[key]) ? TRANSCRIPT_BUNDLE_PATHS[key] : [TRANSCRIPT_BUNDLE_PATHS[key]];
   let trackMap = {};
-  for (const cloudPath of (cloudPaths || []).filter(Boolean)) {
-    try {
-      trackMap = await downloadCloudJson(cloudPath);
-      break;
-    } catch (error) {
-      // try next
+  if (key === 'peppa') {
+    for (const cloudPath of (cloudPaths || []).filter(Boolean)) {
+      try {
+        trackMap = Object.assign(trackMap, await downloadCloudJson(cloudPath));
+      } catch (error) {
+        // try next
+      }
+    }
+  } else {
+    for (const cloudPath of (cloudPaths || []).filter(Boolean)) {
+      try {
+        trackMap = await downloadCloudJson(cloudPath);
+        break;
+      } catch (error) {
+        // try next
+      }
     }
   }
   runtimeTranscriptTrackMaps[key] = trackMap || {};

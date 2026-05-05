@@ -36,7 +36,8 @@ const REQUIRED_COLLECTIONS = [
   'dailyTaskProgress',
   'dailyCheckins',
   'dailyReports',
-  'subscriptionPreferences'
+  'subscriptionPreferences',
+  'taskAttempts'
 ];
 const childTemplate = {
   childId: 'child-yoyo',
@@ -166,6 +167,10 @@ async function updateChildProfile(familyId, payload) {
 
 function normalizeStudyRole(member) {
   return familyContextFacade.normalizeStudyRole(member);
+}
+
+async function getLightweightContext(openId) {
+  return familyContextFacade.getLightweightContext(openId);
 }
 
 async function setExclusiveStudyRole(member, studyRole) {
@@ -471,6 +476,7 @@ async function prepareRequestContext(event) {
     refreshRuntimeCatalogs,
     ensureRequiredCollectionsReady,
     getWXContext,
+    getLightweightContext,
     ensureBootstrap,
     getTodayString
   });
@@ -507,6 +513,7 @@ module.exports = {
   reconcileCheckins,
   saveProgressRecord,
   level,
+  getLightweightContext,
   ensureBootstrap,
   updateChildProfile,
   setExclusiveStudyRole,

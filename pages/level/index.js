@@ -10,8 +10,8 @@ const LEVEL_TABS = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'].map((levelId) => ({
 
 const PHASE_LABELS = {
   '第1轮': '听力组合 A',
-  '第2轮': '听力组合 B',
-  '第3轮': '听力组合 C'
+  '阶段二': '听力组合 B',
+  '阶段三': '听力组合 C'
 };
 
 const STAGE_GROUPS = [
@@ -23,14 +23,14 @@ const STAGE_GROUPS = [
     hint: '累积 A1 听力时长。',
   },
   {
-    phaseLabel: '第2轮',
+    phaseLabel: '阶段二',
     phaseKey: 'round-2',
     stageText: '阶段二',
     title: '听力组合 B',
     hint: '累积 A1 听力时长。',
   },
   {
-    phaseLabel: '第3轮',
+    phaseLabel: '阶段三',
     phaseKey: 'round-3',
     stageText: '阶段三',
     title: '听力组合 C',

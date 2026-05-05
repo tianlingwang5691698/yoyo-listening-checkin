@@ -57,13 +57,15 @@ function buildTaskGroups(categories) {
       minutes,
       taskId: task.taskId || '',
       disabled,
-      stateText: task.completedToday ? '完成' : disabled ? '等待' : '›'
+      stateText: task.completedToday ? '完成' : disabled ? '等待' : '›',
+      planRunType: category.planRunType || 'normal',
+      planDayIndex: category.planDayIndex || 0
     };
   });
 }
 
 function shouldShowTaskGroups(phase) {
-  return phase === 'round-1';
+  return phase === 'round-1' || phase === 'round-2';
 }
 
 Page({
@@ -78,9 +80,9 @@ Page({
   async onLoad(query) {
     page.syncTheme(this);
     const phase = query.phase || 'round-1';
-    const data = await store.getLevelOverview();
+    const data = await store.getLevelOverview({ phase });
     const categories = (data.categories || []).map(labels.normalizeCategory);
-    const hasTaskGroups = shouldShowTaskGroups(phase);
+    const hasTaskGroups = shouldShowTaskGroups(phase) && categories.length > 0;
     const taskGroups = hasTaskGroups ? buildTaskGroups(categories) : [];
     const totalMinutes = taskGroups.reduce((sum, item) => sum + item.minutes, 0);
     this.setData(page.buildCloudPageData(this.data, {
@@ -99,13 +101,18 @@ Page({
     const category = event.currentTarget.dataset.category;
     const taskId = event.currentTarget.dataset.taskId;
     const disabled = event.currentTarget.dataset.disabled;
+    const planRunType = event.currentTarget.dataset.planRunType || 'normal';
+    const planDayIndex = event.currentTarget.dataset.planDayIndex || '';
     if (!category || disabled === true || disabled === 'true') {
       return;
     }
+    const previewQuery = planRunType === 'preview'
+      ? `&planRunType=preview&planDayIndex=${planDayIndex}`
+      : '';
     wx.navigateTo({
       url: taskId
-        ? `/pages/lesson/index?category=${category}&taskId=${taskId}`
-        : `/pages/lesson/index?category=${category}`
+        ? `/pages/lesson/index?category=${category}&taskId=${taskId}${previewQuery}`
+        : `/pages/lesson/index?category=${category}${previewQuery}`
     });
   }
 });

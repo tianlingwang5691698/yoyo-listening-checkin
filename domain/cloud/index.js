@@ -97,6 +97,17 @@ async function callYoyo(action, payload) {
   return result;
 }
 
+async function uploadFile(cloudPath, filePath) {
+  if (!initCloud() || !cloudPath || !filePath) {
+    throw new Error('cloud-upload-unavailable');
+  }
+  const result = await wx.cloud.uploadFile({
+    cloudPath,
+    filePath
+  });
+  return result.fileID || result.fileId || '';
+}
+
 module.exports = {
   initCloud,
   getSyncMode,
@@ -105,5 +116,6 @@ module.exports = {
   shouldShowCloudDebug,
   isReviewBuild,
   getTempFileURL,
+  uploadFile,
   callYoyo
 };

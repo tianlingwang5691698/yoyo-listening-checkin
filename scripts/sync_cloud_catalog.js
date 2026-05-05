@@ -1,9 +1,11 @@
 #!/usr/bin/env node
 
 const fs = require('fs');
+const https = require('https');
 const path = require('path');
 
 const appConfig = require('../data/app-config');
+const { TRANSCRIPT_BUNDLE_PATHS } = require('../cloudfunctions/yoyo/lib/constants');
 
 let CloudBaseManager;
 try {
@@ -106,6 +108,81 @@ function inferNewConceptMeta(category, baseName, index) {
   };
 }
 
+function getTrackDurationSec(track) {
+  const durationMs = Number(track && (track.durationMs || track.duration || track.audioDurationMs));
+  if (Number.isFinite(durationMs) && durationMs > 0) {
+    return Math.max(1, Math.round(durationMs / 1000));
+  }
+  const durationSec = Number(track && (track.durationSec || track.audioDurationSec));
+  if (Number.isFinite(durationSec) && durationSec > 0) {
+    return Math.max(1, Math.round(durationSec));
+  }
+  const lines = Array.isArray(track && track.lines) ? track.lines : [];
+  const maxEndMs = lines.reduce((max, line) => {
+    const endMs = Number(line && line.endMs);
+    return Number.isFinite(endMs) ? Math.max(max, endMs) : max;
+  }, 0);
+  return maxEndMs > 0 ? Math.max(1, Math.ceil(maxEndMs / 1000)) : 0;
+}
+
+function downloadCloudJson(cloudPath) {
+  return new Promise((resolve, reject) => {
+    https.get(buildCloudAssetUrl(cloudPath), (response) => {
+      if (response.statusCode < 200 || response.statusCode >= 300) {
+        response.resume();
+        reject(new Error(`download failed: ${response.statusCode}`));
+        return;
+      }
+      let body = '';
+      response.setEncoding('utf8');
+      response.on('data', (chunk) => {
+        body += chunk;
+      });
+      response.on('end', () => {
+        try {
+          resolve(JSON.parse(body));
+        } catch (error) {
+          reject(error);
+        }
+      });
+    }).on('error', reject);
+  });
+}
+
+async function getTranscriptDurationLookup(category) {
+  const paths = Array.isArray(TRANSCRIPT_BUNDLE_PATHS[category]) ? TRANSCRIPT_BUNDLE_PATHS[category] : [TRANSCRIPT_BUNDLE_PATHS[category]];
+  let trackMap = {};
+  for (const cloudPath of (paths || []).filter(Boolean)) {
+    try {
+      const nextMap = await downloadCloudJson(cloudPath);
+      trackMap = Object.assign(trackMap, nextMap || {});
+      if (category !== 'peppa') {
+        break;
+      }
+    } catch (error) {
+      // try next bundle
+    }
+  }
+  return Object.keys(trackMap || {}).reduce((lookup, trackId) => {
+    const durationSec = getTrackDurationSec(trackMap[trackId]);
+    if (durationSec > 0) {
+      lookup[trackId] = durationSec;
+    }
+    return lookup;
+  }, {});
+}
+
+function getDurationFromLookup(durationLookup, trackId, candidates) {
+  const keys = [trackId].concat(candidates || []).filter(Boolean);
+  for (const key of keys) {
+    const durationSec = Number(durationLookup && durationLookup[key]);
+    if (Number.isFinite(durationSec) && durationSec > 0) {
+      return durationSec;
+    }
+  }
+  return 0;
+}
+
 async function listDirectoryFiles(manager, root) {
   const result = await manager.storage.listDirectoryFiles(normalizeCloudPath(root));
   const rawFiles = Array.isArray(result) ? result : ((((result || {}).data || {}).files || []));
@@ -122,6 +199,7 @@ async function listDirectoryFiles(manager, root) {
 async function scanCategory(manager, category) {
   const roots = ROOT_CANDIDATES[category] || [];
   const errors = [];
+  const durationLookup = await getTranscriptDurationLookup(category);
   for (const root of roots) {
     try {
       const files = await listDirectoryFiles(manager, root);
@@ -138,6 +216,7 @@ async function scanCategory(manager, category) {
         const folderPdf = pdfByFolder[getParentFolder(file.cloudPath)] || null;
         const songMeta = category === 'song' ? inferSongMeta(baseName) : null;
         const nceMeta = category === 'newconcept1' ? inferNewConceptMeta(category, baseName, index) : null;
+        const durationSec = getDurationFromLookup(durationLookup, (songMeta && songMeta.transcriptTrackId) || (nceMeta && nceMeta.transcriptTrackId), nceMeta && nceMeta.transcriptTrackCandidates);
         return Object.assign({}, songMeta || nceMeta || {}, {
           taskId: (songMeta && songMeta.taskId) || (nceMeta && nceMeta.taskId) || `${category}-${index + 1}`,
           category,
@@ -148,7 +227,7 @@ async function scanCategory(manager, category) {
           audioFileId: file.fileId,
           audioSource: 'static-cloud-url',
           repeatTarget: 3,
-          durationSec: 180,
+          durationSec: durationSec || 180,
           coverTone: (nceMeta && nceMeta.coverTone) || (category === 'song' ? 'mint' : 'sunrise'),
           transcriptStatus: ((songMeta && songMeta.transcriptTrackId) || (nceMeta && nceMeta.transcriptTrackId)) ? 'ready' : (folderPdf ? 'pending' : 'none'),
           textSource: (nceMeta && nceMeta.textSource) || (category === 'song' ? {
