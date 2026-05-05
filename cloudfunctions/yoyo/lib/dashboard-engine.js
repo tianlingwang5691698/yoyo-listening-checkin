@@ -87,7 +87,13 @@ async function getDashboardData(ctx, deps, options = {}) {
     }
   }
   const planDayIndex = deps.getPlanDayIndexForDate(checkins, today);
-  const todayPlan = deps.buildPlanForDay(planDayIndex);
+  const peppaReviewPlanOptions = deps.getPeppaReviewPlanOptions
+    ? deps.getPeppaReviewPlanOptions(progressRecords, checkins, ctx.child.childId, today)
+    : {};
+  const todayPlan = deps.buildPlanForDay(
+    planDayIndex,
+    peppaReviewPlanOptions
+  );
   const shouldBuildDailyTasks = includeDailyTasks || includeCategorySummaries || includeCatchupState || includeTaskProgressSummary;
   const dailyTasks = shouldBuildDailyTasks
     ? deps.decoratePlanTasks(progressRecords, ctx.child.childId, today, todayPlan, {

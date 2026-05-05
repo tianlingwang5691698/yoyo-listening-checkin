@@ -301,12 +301,33 @@ async function resolveStandaloneCategoryTasks(category, childId, date) {
   });
 }
 
-function buildPlanForDay(dayIndex) {
+const PEPPA_REVIEW_START_DATE = '2026-05-06';
+
+function getPeppaReviewCursor(progressRecords, childId, date) {
+  return (Array.isArray(progressRecords) ? progressRecords : []).filter((item) => (
+    item.childId === childId
+      && item.category === 'peppa'
+      && String(item.date || '') < date
+      && String(item.taskId || '').includes('__review_')
+      && (item.completedToday || Number(item.playCount || 0) >= Number(item.repeatTarget || 1))
+  )).length;
+}
+
+function getPeppaReviewPlanOptions(progressRecords, checkins, childId, date) {
+  const targetDate = String(date || '').slice(0, 10);
+  const checkedIn = (Array.isArray(checkins) ? checkins : []).some((item) => item.date === targetDate);
+  return {
+    includePeppaReview: targetDate >= PEPPA_REVIEW_START_DATE && !checkedIn,
+    peppaReviewCursor: getPeppaReviewCursor(progressRecords, childId, targetDate)
+  };
+}
+
+function buildPlanForDay(dayIndex, options = {}) {
   return planEngine.buildPlanForDay(dayIndex, {
     getCatalog,
     planSlotCount: PLAN_SLOT_COUNT,
     planLib
-  });
+  }, options);
 }
 
 function decoratePlanTasks(progressRecords, childId, date, plan, options = {}) {
@@ -349,6 +370,7 @@ async function maybeCreateCheckin(scope, progressRecords, date, options = {}) {
     getCheckins,
     getPlanDayIndex,
     buildPlanForDay,
+    getPeppaReviewPlanOptions,
     getTaskProgressForDate,
     computeStreak,
     upsertCheckin: (existing, next) => checkinRepository.upsertByRecordId(existing, next),
@@ -459,6 +481,7 @@ async function getDashboardData(ctx, options = {}) {
     reconcileCheckins,
     getPlanDayIndexForDate,
     buildPlanForDay,
+    getPeppaReviewPlanOptions,
     getPlanCategoryOrder,
     decoratePlannedTasks,
     buildCategorySummary,
@@ -492,6 +515,8 @@ module.exports = {
   getPlanDayIndex,
   getPlanDayIndexForDate,
   buildPlanForDay,
+  getPeppaReviewCursor,
+  getPeppaReviewPlanOptions,
   decoratePlannedTasks,
   decoratePlanTasks,
   resolveStandaloneCategoryTasks,

@@ -30,8 +30,12 @@ async function getTaskDetail(event) {
     : planRunType === 'catchup'
     ? Number(payload.planDayIndex || 0) || dashboard.catchupState.planDayIndex || dashboard.planDayIndex
     : dashboard.planDayIndex;
-  const targetPlan = (planRunType === 'catchup' || isPreview) ? study.buildPlanForDay(targetPlanDayIndex) : null;
   const progressRecords = await study.getChildProgressRecords(study.getUserScope(ctx));
+  const scope = study.getUserScope(ctx);
+  const checkins = await study.getCheckins(scope);
+  const targetPlan = (planRunType === 'catchup' || isPreview)
+    ? study.buildPlanForDay(targetPlanDayIndex, study.getPeppaReviewPlanOptions(progressRecords, checkins, ctx.child.childId, targetDate))
+    : null;
   const categoryTasks = ['newconcept2', 'newconcept3', 'newconcept4'].includes(payload.category)
     ? study.decoratePlannedTasks(progressRecords, ctx.child.childId, payload.category, targetDate, await study.resolveStandaloneCategoryTasks(payload.category, ctx.child.childId, targetDate), {
       planRunType: 'level',
@@ -49,7 +53,6 @@ async function getTaskDetail(event) {
     || categoryTasks.find((item) => !item.completedToday)
     || categoryTasks[0]
     || study.decorateTask(null, study.buildEmptyProgress(), payload.category);
-  const scope = study.getUserScope(ctx);
   const history = isLessonView ? [] : progressRecords
     .filter((item) => item.category === payload.category && item.completedToday)
     .map((item) => ({
@@ -58,7 +61,7 @@ async function getTaskDetail(event) {
       playCount: item.playCount
     }))
     .sort((a, b) => b.date.localeCompare(a.date));
-  const todayRecord = isPreview ? null : ((await study.getCheckins(scope)).find((item) => item.date === today) || null);
+  const todayRecord = isPreview ? null : (checkins.find((item) => item.date === today) || null);
   const checkinReady = study.normalizeStudyRole(ctx.member) === 'student'
     && planRunType === 'normal'
     && targetDate === today
@@ -156,7 +159,10 @@ async function markTaskListened(event, context) {
     );
   }
   if (planRunType === 'catchup') {
-    const normalPlan = study.buildPlanForDay(study.getPlanDayIndexForDate(checkins, today));
+    const normalPlan = study.buildPlanForDay(
+      study.getPlanDayIndexForDate(checkins, today),
+      study.getPeppaReviewPlanOptions(progressRecords, checkins, ctx.child.childId, today)
+    );
     const normalTasks = study.decoratePlanTasks(progressRecords, ctx.child.childId, today, normalPlan, {
       planRunType: 'normal'
     });
@@ -169,8 +175,9 @@ async function markTaskListened(event, context) {
   }
   const todayPlan = study.buildPlanForDay(
     planRunType === 'catchup'
-    ? (Number(payload.planDayIndex || 0) || study.getPlanDayIndexForDate(checkins, targetDate))
-      : study.getPlanDayIndexForDate(checkins, today)
+      ? (Number(payload.planDayIndex || 0) || study.getPlanDayIndexForDate(checkins, targetDate))
+      : study.getPlanDayIndexForDate(checkins, today),
+    study.getPeppaReviewPlanOptions(progressRecords, checkins, ctx.child.childId, targetDate)
   );
   const categoryTasks = ['newconcept2', 'newconcept3', 'newconcept4'].includes(category)
     ? study.decoratePlannedTasks(progressRecords, ctx.child.childId, category, targetDate, await study.resolveStandaloneCategoryTasks(category, ctx.child.childId, targetDate), {

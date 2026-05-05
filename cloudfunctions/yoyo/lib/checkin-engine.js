@@ -2,7 +2,13 @@ async function maybeCreateCheckin(scope, progressRecords, date, options = {}, de
   const checkins = await deps.getCheckins(scope);
   const planRunType = options.planRunType || 'normal';
   const planDayIndex = Number(options.planDayIndex || 0) || deps.getPlanDayIndex(checkins);
-  const todayPlan = deps.buildPlanForDay(planDayIndex);
+  const peppaReviewPlanOptions = deps.getPeppaReviewPlanOptions
+    ? deps.getPeppaReviewPlanOptions(progressRecords, checkins, scope.childId, date)
+    : {};
+  const todayPlan = deps.buildPlanForDay(
+    planDayIndex,
+    peppaReviewPlanOptions
+  );
   const plannedTasks = todayPlan.flatTasks;
   const activeTasks = plannedTasks.filter((task) => !task.isPendingAsset);
   const allDone = activeTasks.every((task, index) => {

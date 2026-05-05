@@ -22,7 +22,7 @@ function getPlanIndicesForDay(dayIndex, category, deps) {
   };
 }
 
-function getPeppaReviewIndices(dayIndex, catalogLength) {
+function getPeppaReviewIndices(dayIndex, catalogLength, cursor = 0) {
   if (!catalogLength) {
     return [];
   }
@@ -31,7 +31,7 @@ function getPeppaReviewIndices(dayIndex, catalogLength) {
     return [];
   }
   const reviewCount = Math.min(PEPPA_REVIEW_DAILY_COUNT, learnedCount);
-  const startIndex = (Math.max(0, dayIndex - 2) * PEPPA_REVIEW_DAILY_COUNT) % learnedCount;
+  const startIndex = Math.max(0, Number(cursor || 0)) % learnedCount;
   const indices = [];
   for (let step = 0; step < learnedCount && indices.length < reviewCount; step += 1) {
     indices.push((startIndex + step) % learnedCount);
@@ -39,10 +39,10 @@ function getPeppaReviewIndices(dayIndex, catalogLength) {
   return indices;
 }
 
-function buildPeppaReviewTasks(dayIndex, catalog, currentTasks) {
+function buildPeppaReviewTasks(dayIndex, catalog, currentTasks, cursor = 0) {
   const currentTaskIds = new Set(currentTasks.map((task) => task.taskId).filter(Boolean));
   const reviewTasks = [];
-  getPeppaReviewIndices(dayIndex, catalog.length).some((index) => {
+  getPeppaReviewIndices(dayIndex, catalog.length, cursor).some((index) => {
     const source = catalog[index];
     if (!source || currentTaskIds.has(source.taskId)) {
       return false;
@@ -57,14 +57,14 @@ function buildPeppaReviewTasks(dayIndex, catalog, currentTasks) {
       textSource: null,
       syncGranularity: 'none',
       subtitle: 'Peppa 旧集裸听',
-      title: `复听 ${source.title || source.name || source.taskId}`.trim()
+      title: source.title || source.name || source.taskId
     }));
     return reviewTasks.length >= PEPPA_REVIEW_DAILY_COUNT;
   });
   return reviewTasks;
 }
 
-function buildPlanForDay(dayIndex, deps) {
+function buildPlanForDay(dayIndex, deps, options = {}) {
   const { getPlanPhase, getPlanCategoryOrder } = deps.planLib;
   const phase = getPlanPhase(dayIndex);
   const byCategory = {};
@@ -73,8 +73,8 @@ function buildPlanForDay(dayIndex, deps) {
     const { indices, batchSize } = getPlanIndicesForDay(dayIndex, category, deps);
     const catalog = getPlanCatalog(category, deps);
     const tasks = indices.map((index) => catalog[index] || null).filter(Boolean);
-    const plannedTasks = category === 'peppa'
-      ? tasks.concat(buildPeppaReviewTasks(dayIndex, catalog, tasks))
+    const plannedTasks = category === 'peppa' && options.includePeppaReview
+      ? tasks.concat(buildPeppaReviewTasks(dayIndex, catalog, tasks, options.peppaReviewCursor))
       : tasks;
     byCategory[category] = plannedTasks;
     plannedTasks.forEach((task, slotIndex) => {

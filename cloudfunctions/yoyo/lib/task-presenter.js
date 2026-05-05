@@ -19,14 +19,12 @@ function getTaskPresentation(task) {
   }
   if (task.category === 'peppa') {
     const match = title.match(/^S(\d)(\d{2})\s+(.+)$/i);
-    if (match) {
-      return {
-        displayTitle: match[3],
-        displaySubtitle: `${Number(match[1])}-${Number(match[2])}`,
-        coverVariant: 'peppa',
-        coverBadge: 'Peppa'
-      };
-    }
+    return {
+      displayTitle: match ? match[3] : title,
+      displaySubtitle: task.isReviewTask ? 'Peppa 旧集裸听' : (match ? `${Number(match[1])}-${Number(match[2])}` : 'Peppa Pig'),
+      coverVariant: 'peppa',
+      coverBadge: 'Peppa'
+    };
   }
   if (['newconcept1', 'newconcept2', 'newconcept3', 'newconcept4'].includes(task.category)) {
     const levelNumber = task.category === 'newconcept1' ? 1 : 2;

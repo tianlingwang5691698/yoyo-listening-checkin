@@ -8,6 +8,8 @@ module.exports = {
   getCheckins: shared.getCheckins,
   getPlanDayIndexForDate: shared.getPlanDayIndexForDate,
   buildPlanForDay: shared.buildPlanForDay,
+  getPeppaReviewCursor: shared.getPeppaReviewCursor,
+  getPeppaReviewPlanOptions: shared.getPeppaReviewPlanOptions,
   decoratePlannedTasks: shared.decoratePlannedTasks,
   decoratePlanTasks: shared.decoratePlanTasks,
   resolveStandaloneCategoryTasks: shared.resolveStandaloneCategoryTasks,
