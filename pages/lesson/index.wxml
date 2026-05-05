@@ -12,7 +12,7 @@
       <view class="status-badge {{studyWriteAllowed ? (task.completedToday ? '' : 'is-warn') : 'is-muted'}}">{{studyWriteAllowed ? (task.completedToday ? '完成' : '训练中') : '试听'}}</view>
     </view>
     <view class="lesson-title type-page-title">{{(currentAudio && currentAudio.title) || task.displayTitle || task.title}}</view>
-    <view class="lesson-mode" wx:if="{{!studyWriteAllowed}}">家长模式 · 不计入打卡</view>
+    <view class="lesson-mode" wx:if="{{!studyWriteAllowed}}">{{isPreviewMode ? '预览模式 · 不计入打卡' : '家长模式 · 不计入打卡'}}</view>
     <view class="lesson-copy" wx:if="{{task.displaySubtitle}}">{{task.displaySubtitle}}</view>
     <view class="lesson-copy" wx:elif="{{task.coverMeta}}">{{task.coverMeta}}</view>
     <view class="sync-debug {{syncMode === 'cloud' ? 'is-cloud' : 'is-local'}}" wx:if="{{showCloudDebug && syncDebug && syncDebug.show}}">
@@ -144,6 +144,84 @@
   <view class="section-panel transcript-card" wx:else>
     <view class="transcript-empty">
       <view class="transcript-empty-title">这一遍先盲听</view>
+    </view>
+  </view>
+
+  <view class="section-panel speaking-card" wx:if="{{passQuestionVisible && !speakingPanelVisible}}">
+    <view class="row-between">
+      <view>
+        <view class="section-title type-section-title">本遍问题</view>
+        <view class="section-copy">{{passQuestionText || '听问题后准备回答'}}</view>
+      </view>
+      <view class="pill">听完回答</view>
+    </view>
+  </view>
+
+  <view class="section-panel speaking-card" wx:if="{{speakingPanelVisible}}">
+    <view class="row-between">
+      <view>
+        <view class="section-title type-section-title">{{speakingMode === 'unlock-sentence-repeat' ? '跟读评分' : '回答评分'}}</view>
+        <view class="section-copy" wx:if="{{speakingMode === 'nce-question-answer'}}">{{speakingQuestionText || '听问题后录音回答'}}</view>
+        <view class="section-copy" wx:else>第 {{repeatActiveIndex + 1}} / {{repeatLines.length}} 句</view>
+      </view>
+      <view class="pill">{{speakingSubmitting ? '提交中' : '录音'}}</view>
+    </view>
+
+    <view class="repeat-list" wx:if="{{speakingMode === 'unlock-sentence-repeat'}}">
+      <block wx:for="{{repeatLines}}" wx:key="lineId">
+        <view class="repeat-chip {{index === repeatActiveIndex ? 'is-active' : ''}}" data-index="{{index}}" bindtap="switchRepeatLine">{{index + 1}}</view>
+      </block>
+    </view>
+    <view class="speaking-prompt" wx:if="{{speakingMode === 'unlock-sentence-repeat' && activeRepeatLine}}">
+      {{activeRepeatLine.text}}
+    </view>
+    <view class="speaking-feedback" wx:if="{{speakingPromptText}}">{{speakingPromptText}}</view>
+
+    <view class="action-row speaking-actions">
+      <button class="player-action record-action {{speakingTempFilePath ? 'is-ready' : ''}}" wx:if="{{!speakingRecording}}" bindtap="startSpeakingRecord">{{speakingTempFilePath ? '重录' : '开始录音'}}</button>
+      <button class="player-action record-action is-recording" wx:else bindtap="stopSpeakingRecord">停止录音</button>
+      <button class="player-action primary submit-action {{speakingSubmitting || !speakingTempFilePath ? 'is-disabled' : ''}}" disabled="{{speakingSubmitting || !speakingTempFilePath || speakingRecording}}" bindtap="submitSpeakingRecord">{{speakingSubmitting ? '提交中' : (speakingMode === 'nce-question-answer' && speakingAttemptIndex === 3 ? '提交最终回答' : '提交评分')}}</button>
+      <button class="player-action primary" wx:if="{{speakingMode === 'nce-question-answer' && speakingAttemptIndex === 1 && speakingPromptText}}" bindtap="continueAfterSpeakingFeedback">继续第3遍</button>
+      <button class="player-action" wx:if="{{speakingMode === 'unlock-sentence-repeat'}}" bindtap="completeUnlockRepeat">完成跟读</button>
+    </view>
+    <view class="record-status {{speakingRecording ? 'is-recording' : (speakingTempFilePath ? 'is-ready' : '')}}">
+      {{speakingRecording ? '正在录音，答完后点停止' : (speakingTempFilePath ? ('已录制 ' + speakingRecordDurationText + '，可以提交评分') : '先录音，再提交评分')}}
+    </view>
+
+    <view class="score-board" wx:if="{{speakingSummary.scoredCount}}">
+      <view class="score-item">
+        <view class="score-value">{{speakingSummary.bestScore || 0}}</view>
+        <view class="score-label">最佳</view>
+      </view>
+      <view class="score-item">
+        <view class="score-value">{{speakingSummary.latestScore || 0}}</view>
+        <view class="score-label">最近</view>
+      </view>
+    </view>
+
+    <view class="attempt-list" wx:if="{{speakingMode === 'nce-question-answer' && speakingAttempts.length}}">
+      <view class="attempt-card" wx:for="{{speakingAttempts}}" wx:key="createdAt">
+        <view class="attempt-head">
+          <view>
+            <view class="attempt-title">{{item.resultRole || ('第 ' + item.attemptIndex + ' 次')}}</view>
+            <view class="attempt-meta" wx:if="{{item.answerDurationText}}">录音 {{item.answerDurationText}}</view>
+          </view>
+          <view class="attempt-score">{{item.status === 'score-pending' ? '待评分' : ((item.score || 0) + ' 分')}}</view>
+        </view>
+        <view class="attempt-sub-scores" wx:if="{{item.pronunciationFluencyScore || item.contentGrammarScore}}">
+          发音流畅 {{item.pronunciationFluencyScore || 0}} / 内容语法 {{item.contentGrammarScore || 0}}
+        </view>
+        <view class="attempt-transcript" wx:if="{{item.studentTranscript}}">学生回答：{{item.studentTranscript}}</view>
+        <view class="attempt-feedback">{{item.feedback || '暂无建议'}}</view>
+        <view class="action-row speaking-actions">
+          <button class="player-action attempt-play" data-index="{{index}}" data-audio-type="answer" bindtap="playSpeakingAttempt">
+            {{speakingPlayingAttemptKey === ('answer-' + item.attemptType + '-' + item.attemptIndex + '-' + item.sentenceIndex + '-' + index) ? '停止录音' : '播放录音'}}
+          </button>
+          <button class="player-action attempt-play" wx:if="{{item.feedbackAudioFileId || item.feedbackAudioCloudPath}}" data-index="{{index}}" data-audio-type="feedback" bindtap="playSpeakingAttempt">
+            {{speakingPlayingAttemptKey === ('feedback-' + item.attemptType + '-' + item.attemptIndex + '-' + item.sentenceIndex + '-' + index) ? '停止建议' : '播放建议'}}
+          </button>
+        </view>
+      </view>
     </view>
   </view>
 
