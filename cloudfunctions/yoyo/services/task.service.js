@@ -210,6 +210,7 @@ async function markTaskListened(event, context) {
     category,
     date: targetDate,
     taskId: task.taskId,
+    originalTaskId: task.originalTaskId || '',
     playCount: nextPlayCount,
     playMoments,
     repeatTarget: task.repeatTarget,

@@ -315,9 +315,17 @@ function getPeppaReviewCursor(progressRecords, childId, date) {
 
 function getPeppaReviewPlanOptions(progressRecords, checkins, childId, date) {
   const targetDate = String(date || '').slice(0, 10);
-  const checkedIn = (Array.isArray(checkins) ? checkins : []).some((item) => item.date === targetDate);
+  const hasTodayReviewProgress = (Array.isArray(progressRecords) ? progressRecords : []).some((item) => (
+    item.childId === childId
+      && item.category === 'peppa'
+      && String(item.date || '') === targetDate
+      && String(item.taskId || '').includes('__review_')
+  ));
   return {
-    includePeppaReview: targetDate >= PEPPA_REVIEW_START_DATE && !checkedIn,
+    includePeppaReview: targetDate >= PEPPA_REVIEW_START_DATE && (
+      hasTodayReviewProgress
+        || !(Array.isArray(checkins) ? checkins : []).some((item) => item.date === targetDate)
+    ),
     peppaReviewCursor: getPeppaReviewCursor(progressRecords, childId, targetDate)
   };
 }
@@ -463,6 +471,7 @@ async function upsertDailyReport(scope, date) {
     getChildProgressRecords,
     getCheckins,
     buildPlanForDay,
+    getPeppaReviewPlanOptions,
     getPlanDayIndexForDate,
     getPlanCategoryOrder,
     decoratePlannedTasks,

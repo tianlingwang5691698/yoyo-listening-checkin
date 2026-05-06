@@ -88,16 +88,21 @@ function buildCategorySummary(categoryTasks, category, deps) {
   });
 }
 
+function getProgressDurationMinutes(item, deps) {
+  const { getCatalog } = deps;
+  const taskId = item.originalTaskId || item.taskId;
+  const task = getCatalog(item.category).find((entry) => entry.taskId === taskId);
+  const repeatTarget = Number(item.repeatTarget || (task && task.repeatTarget) || 3);
+  return task ? Math.round((Number(task.durationSec || 0) * repeatTarget) / 60) : 0;
+}
+
 function buildStats(progressRecords, checkins, childId, deps) {
   const { getCatalog, computeStreak } = deps;
   const completedProgress = (progressRecords || [])
     .filter((item) => item.childId === childId)
     .map(normalizeProgressRecord)
     .filter((item) => item.completedToday);
-  const totalMinutes = completedProgress.reduce((sum, item) => {
-    const task = getCatalog(item.category).find((entry) => entry.taskId === item.taskId);
-    return task ? sum + Math.round((task.durationSec * task.repeatTarget) / 60) : sum;
-  }, 0);
+  const totalMinutes = completedProgress.reduce((sum, item) => sum + getProgressDurationMinutes(item, deps), 0);
   const today = getTodayString();
   const latestCheckin = (checkins || []).slice().sort((a, b) => {
     const left = String(a.completedAt || a.date || '');
@@ -121,5 +126,6 @@ module.exports = {
   getTaskProgressForDate,
   decoratePlannedTasks,
   buildCategorySummary,
+  getProgressDurationMinutes,
   buildStats
 };

@@ -4,7 +4,13 @@ async function upsertDailyReport(scope, date, deps) {
   const startedAt = Date.now();
   const progressRecords = await deps.getChildProgressRecords(scope);
   const checkins = await deps.getCheckins(scope);
-  const todayPlan = deps.buildPlanForDay(deps.getPlanDayIndexForDate(checkins, date));
+  const planOptions = deps.getPeppaReviewPlanOptions
+    ? deps.getPeppaReviewPlanOptions(progressRecords, checkins, scope.childId, date)
+    : {};
+  const todayPlan = deps.buildPlanForDay(deps.getPlanDayIndexForDate(checkins, date), planOptions);
+  const checkin = checkins.find((item) => item.date === date) || null;
+  const checkinCategories = new Set(Array.isArray(checkin && checkin.completedCategories) ? checkin.completedCategories : []);
+  const checkinCoversAllCategories = !!(checkin && !checkinCategories.size);
   const groupedTasks = deps.getPlanCategoryOrder(todayPlan.dayIndex).map((category) => ({
     category,
     tasks: deps.decoratePlannedTasks(progressRecords, scope.childId, category, date, todayPlan.byCategory[category] || [], {
@@ -13,17 +19,23 @@ async function upsertDailyReport(scope, date, deps) {
       planDayIndex: todayPlan.dayIndex
     })
   }));
-  const items = groupedTasks.flatMap((group) => group.tasks.map((task) => ({
-    category: group.category,
-    categoryLabel: task.categoryLabel,
-    taskId: task.taskId,
-    title: task.audioCompactTitle || task.displayTitle || task.title,
-    playCount: task.playCount || 0,
-    playMoments: Array.isArray(task.playMoments) ? task.playMoments : [],
-    repeatTarget: task.repeatTarget || 3,
-    completedToday: !!task.completedToday,
-    updatedAt: task.updatedAt || ''
-  })));
+  const items = groupedTasks.flatMap((group) => group.tasks.map((task) => {
+    const repeatTarget = task.repeatTarget || 3;
+    const completedByCheckin = !!(checkin && (checkinCoversAllCategories || checkinCategories.has(group.category)));
+    const completedToday = !!task.completedToday || completedByCheckin;
+    return {
+      category: group.category,
+      categoryLabel: task.categoryLabel,
+      taskId: task.taskId,
+      originalTaskId: task.originalTaskId || '',
+      title: task.audioCompactTitle || task.displayTitle || task.title,
+      playCount: completedToday ? Math.max(task.playCount || 0, repeatTarget) : (task.playCount || 0),
+      playMoments: Array.isArray(task.playMoments) ? task.playMoments : [],
+      repeatTarget,
+      completedToday,
+      updatedAt: task.updatedAt || (checkin && checkin.completedAt) || ''
+    };
+  }));
   const report = {
     reportId: `${scope.familyId}_${scope.childId}_${date}`,
     userId: scope.userId,
@@ -37,10 +49,11 @@ async function upsertDailyReport(scope, date, deps) {
       if (!item.completedToday) {
         return sum;
       }
-      const task = deps.getCatalog(item.category).find((entry) => entry.taskId === item.taskId);
-      return task ? sum + Math.round((task.durationSec * task.repeatTarget) / 60) : sum;
+      const taskId = item.originalTaskId || item.taskId;
+      const task = deps.getCatalog(item.category).find((entry) => entry.taskId === taskId);
+      return task ? sum + Math.round((task.durationSec * item.repeatTarget) / 60) : sum;
     }, 0),
-    streakSnapshot: (checkins.find((item) => item.date === date) || {}).streakSnapshot || 0,
+    streakSnapshot: (checkin || {}).streakSnapshot || 0,
     planDayIndex: todayPlan.dayIndex,
     planPhase: todayPlan.phase.key,
     items,
