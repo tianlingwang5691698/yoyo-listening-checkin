@@ -21,7 +21,8 @@ async function getHeatmap(event) {
   const todayTasks = study.decoratePlanTasks(progressRecords, ctx.child.childId, today, todayPlan, {
     planRunType: 'normal'
   });
-  const todayDone = todayTasks.length > 0 && todayTasks.every((item) => item.completedToday);
+  const hasTodayCheckin = records.some((item) => item.date === today && String(item.planRunType || 'normal') === 'normal');
+  const todayDone = hasTodayCheckin || (todayTasks.length > 0 && todayTasks.every((item) => item.completedToday));
   const catchupState = study.buildCatchupState(records, today, study.getPlanStartDate(ctx, today, records), todayDone);
   const catchupPlan = catchupState.canCatchup ? study.buildPlanForDay(catchupState.planDayIndex) : null;
   const catchupTasks = catchupPlan
@@ -74,7 +75,8 @@ async function getMonthHeatmap(event) {
   const todayTasks = study.decoratePlanTasks(progressRecords, ctx.child.childId, today, todayPlan, {
     planRunType: 'normal'
   });
-  const todayDone = todayTasks.length > 0 && todayTasks.every((item) => item.completedToday);
+  const hasTodayCheckin = records.some((item) => item.date === today && String(item.planRunType || 'normal') === 'normal');
+  const todayDone = hasTodayCheckin || (todayTasks.length > 0 && todayTasks.every((item) => item.completedToday));
   const catchupState = study.buildCatchupState(records, today, study.getPlanStartDate(ctx, today, records), todayDone);
   const daysInMonth = new Date(year, month, 0).getDate();
   const heatmap = [];

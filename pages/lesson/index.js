@@ -1006,6 +1006,13 @@ Page({
       this.completionCardTimer = null;
     }, 1800);
   },
+  returnToTodayAfterCompletion() {
+    setTimeout(() => {
+      wx.switchTab({
+        url: '/pages/home/index'
+      });
+    }, 900);
+  },
   updateTranscriptByTime(timeMs) {
     const lines = this.data.transcriptLines || [];
     if (!lines.length) {
@@ -1168,6 +1175,13 @@ Page({
       targetDate: this.targetDate,
       planDayIndex: this.planDayIndex
     });
+    if (detail && detail.syncMode === 'cloud-error') {
+      wx.showToast({
+        title: '进度同步失败',
+        icon: 'none'
+      });
+      return;
+    }
     this.taskId = detail && detail.task ? detail.task.taskId || this.taskId : this.taskId;
     this.planRunType = detail && detail.planRunType ? detail.planRunType : this.planRunType;
     this.targetDate = detail && detail.targetDate ? detail.targetDate : this.targetDate;
@@ -1253,6 +1267,7 @@ Page({
         checkinReady: !!data.checkinReady
       }));
       this.showCompletionCard();
+      this.returnToTodayAfterCompletion();
     } catch (error) {
       wx.showToast({
         title: error.message || '打卡失败',

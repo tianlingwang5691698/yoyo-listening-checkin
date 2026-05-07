@@ -32,6 +32,24 @@ function decorateHomeTask(task) {
   };
 }
 
+function applyCheckinCompletion(dailyTasks, checkins, today) {
+  const hasTodayCheckin = (checkins || []).some((item) => item.date === today && String(item.planRunType || 'normal') === 'normal');
+  if (!hasTodayCheckin) {
+    return dailyTasks || [];
+  }
+  return (dailyTasks || []).map((task) => {
+    if (task.isPendingAsset) {
+      return task;
+    }
+    const repeatTarget = task.repeatTarget || 3;
+    return Object.assign({}, task, {
+      playCount: Math.max(task.playCount || 0, repeatTarget),
+      completedToday: true,
+      textUnlocked: true
+    });
+  });
+}
+
 function buildHomeTaskGroups(dailyTasks, planDayIndex, deps) {
   return deps.getPlanCategoryOrder(planDayIndex).map((category) => {
     const categoryTasks = (dailyTasks || []).filter((item) => item.category === category).map(decorateHomeTask);
@@ -95,11 +113,11 @@ async function getDashboardData(ctx, deps, options = {}) {
     peppaReviewPlanOptions
   );
   const shouldBuildDailyTasks = includeDailyTasks || includeCategorySummaries || includeCatchupState || includeTaskProgressSummary;
-  const dailyTasks = shouldBuildDailyTasks
+  const dailyTasks = applyCheckinCompletion(shouldBuildDailyTasks
     ? deps.decoratePlanTasks(progressRecords, ctx.child.childId, today, todayPlan, {
       planRunType: 'normal'
     })
-    : [];
+    : [], checkins, today);
   const categorySummaries = includeCategorySummaries
     ? buildCategorySummariesFromDailyTasks(dailyTasks, planDayIndex, deps)
     : [];

@@ -156,3 +156,50 @@ test('缺失昨日打卡时，dashboard 先使用修复后的 checkins 再计算
 
   assert.equal(dashboard.planDayIndex, 2);
 });
+
+test('已有当天打卡记录时，home 进度按整日完成兜底', async () => {
+  const dashboard = await dashboardEngine.getDashboardData({
+    user: {},
+    member: { studyRole: 'student' },
+    family: {},
+    child: { childId: 'child-1' }
+  }, {
+    getTodayString: () => '2026-05-07',
+    getUserScope: () => ({ childId: 'child-1' }),
+    getChildProgressRecords: async () => [],
+    getCheckins: async () => [{ date: '2026-05-07', completedCategories: ['peppa'] }],
+    getPlanDayIndexForDate: () => 21,
+    buildPlanForDay: (dayIndex) => ({
+      dayIndex,
+      phase: { key: 'round-1', label: '第1轮' },
+      byCategory: {
+        newconcept1: [{ taskId: 'nce-1' }],
+        song: [{ taskId: 'song-1' }]
+      }
+    }),
+    getPlanCategoryOrder: () => ['newconcept1', 'song'],
+    decoratePlannedTasks: () => [],
+    buildCategorySummary: (tasks, category) => ({
+      category,
+      completedToday: tasks.every((item) => item.completedToday),
+      completedCount: tasks.filter((item) => item.completedToday).length,
+      plannedTaskCount: tasks.length
+    }),
+    decoratePlanTasks: () => [
+      { category: 'newconcept1', taskId: 'nce-1', title: 'NCE', playCount: 0, repeatTarget: 3, completedToday: false, isPendingAsset: false },
+      { category: 'song', taskId: 'song-1', title: 'Song', playCount: 0, repeatTarget: 3, completedToday: false, isPendingAsset: false }
+    ],
+    buildStats: () => ({ streakDays: 1 }),
+    buildCatchupState: () => ({ canCatchup: false }),
+    getPlanStartDate: () => '2026-04-17',
+    getCatalog: () => [],
+    getCategoryLabel: (category) => category
+  }, {
+    includeDailyTasks: true,
+    includeHomeTaskGroups: true
+  });
+
+  assert.equal(dashboard.allDailyDone, true);
+  assert.equal(dashboard.groupedDailyTasks[0].tasks[0].progressText, '3/3 遍');
+  assert.equal(dashboard.groupedDailyTasks[1].tasks[0].progressText, '3/3 遍');
+});

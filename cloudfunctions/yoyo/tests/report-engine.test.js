@@ -93,6 +93,51 @@ test('已有打卡记录的历史日报按 checkin 修复完成状态', async ()
   assert.equal(report.totalMinutes, 6);
 });
 
+test('已有 partial completedCategories 的打卡日仍按整日完成修复日报', async () => {
+  const report = await reportEngine.upsertDailyReport({
+    familyId: 'family-1',
+    childId: 'child-1',
+    userId: 'user-1',
+    openId: 'open-1',
+    memberId: 'member-1'
+  }, '2026-05-07', {
+    getChildProgressRecords: async () => [],
+    getCheckins: async () => [{
+      date: '2026-05-07',
+      completedCategories: ['peppa', 'unlock1'],
+      completedAt: '2026-05-07T12:00:00.000Z'
+    }],
+    buildPlanForDay: () => ({
+      dayIndex: 21,
+      phase: { key: 'round-1' },
+      byCategory: {
+        newconcept1: [{ taskId: 'nce-1' }],
+        song: [{ taskId: 'song-1' }]
+      }
+    }),
+    getPlanDayIndexForDate: () => 21,
+    getPlanCategoryOrder: () => ['newconcept1', 'song'],
+    decoratePlannedTasks: (_progressRecords, _childId, category, _date, tasks) => tasks.map((task) => ({
+      categoryLabel: category,
+      taskId: task.taskId,
+      audioCompactTitle: task.taskId,
+      playCount: 0,
+      repeatTarget: 3,
+      completedToday: false
+    })),
+    getCatalog: (category) => [{
+      taskId: category === 'song' ? 'song-1' : 'nce-1',
+      durationSec: 60,
+      repeatTarget: 3
+    }],
+    findFamilyMembersByFamilyId: async () => [],
+    upsertReport: async () => {}
+  });
+
+  assert.equal(report.items.every((item) => item.completedToday), true);
+  assert.equal(report.items.every((item) => item.playCount === 3), true);
+});
+
 test('日报生成包含当天 Peppa 复听任务和时长', async () => {
   const report = await reportEngine.upsertDailyReport({
     familyId: 'family-1',

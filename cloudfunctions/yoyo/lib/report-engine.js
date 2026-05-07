@@ -9,8 +9,6 @@ async function upsertDailyReport(scope, date, deps) {
     : {};
   const todayPlan = deps.buildPlanForDay(deps.getPlanDayIndexForDate(checkins, date), planOptions);
   const checkin = checkins.find((item) => item.date === date) || null;
-  const checkinCategories = new Set(Array.isArray(checkin && checkin.completedCategories) ? checkin.completedCategories : []);
-  const checkinCoversAllCategories = !!(checkin && !checkinCategories.size);
   const groupedTasks = deps.getPlanCategoryOrder(todayPlan.dayIndex).map((category) => ({
     category,
     tasks: deps.decoratePlannedTasks(progressRecords, scope.childId, category, date, todayPlan.byCategory[category] || [], {
@@ -21,7 +19,7 @@ async function upsertDailyReport(scope, date, deps) {
   }));
   const items = groupedTasks.flatMap((group) => group.tasks.map((task) => {
     const repeatTarget = task.repeatTarget || 3;
-    const completedByCheckin = !!(checkin && (checkinCoversAllCategories || checkinCategories.has(group.category)));
+    const completedByCheckin = !!checkin;
     const completedToday = !!task.completedToday || completedByCheckin;
     return {
       category: group.category,
