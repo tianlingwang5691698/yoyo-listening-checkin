@@ -50,6 +50,36 @@ function applyCheckinCompletion(dailyTasks, checkins, today) {
   });
 }
 
+function appendTodayPeppaReviewProgress(dailyTasks, progressRecords, childId, today, deps) {
+  if (!deps.decorateTask) {
+    return dailyTasks || [];
+  }
+  const existingTaskIds = new Set((dailyTasks || []).map((item) => item.taskId).filter(Boolean));
+  const catalog = deps.getCatalog('peppa') || [];
+  const reviewTasks = (progressRecords || []).filter((item) => (
+    item.childId === childId
+      && item.category === 'peppa'
+      && item.date === today
+      && String(item.taskId || '').includes('__review_')
+      && !existingTaskIds.has(item.taskId)
+  )).map((progress) => {
+    const sourceTask = catalog.find((item) => item.taskId === (progress.originalTaskId || progress.taskId)) || {};
+    return deps.decorateTask(Object.assign({}, sourceTask, {
+      category: 'peppa',
+      taskId: progress.taskId,
+      originalTaskId: progress.originalTaskId || sourceTask.taskId || '',
+      isReviewTask: true,
+      reviewType: 'peppa-old-listening',
+      repeatTarget: Number(progress.repeatTarget || 1),
+      transcriptTrackId: null,
+      textSource: null,
+      syncGranularity: 'none',
+      title: sourceTask.title || progress.taskId
+    }), progress, 'peppa');
+  });
+  return (dailyTasks || []).concat(reviewTasks);
+}
+
 function buildHomeTaskGroups(dailyTasks, planDayIndex, deps) {
   return deps.getPlanCategoryOrder(planDayIndex).map((category) => {
     const categoryTasks = (dailyTasks || []).filter((item) => item.category === category).map(decorateHomeTask);
@@ -113,11 +143,11 @@ async function getDashboardData(ctx, deps, options = {}) {
     peppaReviewPlanOptions
   );
   const shouldBuildDailyTasks = includeDailyTasks || includeCategorySummaries || includeCatchupState || includeTaskProgressSummary;
-  const dailyTasks = applyCheckinCompletion(shouldBuildDailyTasks
+  const dailyTasks = appendTodayPeppaReviewProgress(applyCheckinCompletion(shouldBuildDailyTasks
     ? deps.decoratePlanTasks(progressRecords, ctx.child.childId, today, todayPlan, {
       planRunType: 'normal'
     })
-    : [], checkins, today);
+    : [], checkins, today), progressRecords, ctx.child.childId, today, deps);
   const categorySummaries = includeCategorySummaries
     ? buildCategorySummariesFromDailyTasks(dailyTasks, planDayIndex, deps)
     : [];

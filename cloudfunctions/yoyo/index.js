@@ -341,6 +341,32 @@ const catalogService = require('./services/catalog.service');
 const speakingService = require('./services/speaking.service');
 const monitor = require('./lib/monitor');
 
+if (!taskService.__autoCheckinAfterListeningPatch) {
+  const originalMarkTaskListened = taskService.markTaskListened;
+  taskService.markTaskListened = async function patchedMarkTaskListened(event, context) {
+    const detail = await originalMarkTaskListened(event, context);
+    const payload = (event && event.payload) || {};
+    if (!detail || detail.syncMode === 'cloud-error' || !detail.checkinReady || String(payload.planRunType || 'normal') !== 'normal') {
+      return detail;
+    }
+    try {
+      const checkinData = await taskService.completeTodayCheckin(event, context);
+      return Object.assign({}, detail, {
+        child: checkinData.child || detail.child,
+        stats: checkinData.stats || detail.stats,
+        todayRecord: checkinData.todayRecord || detail.todayRecord,
+        activeTaskCount: checkinData.activeTaskCount,
+        completedTaskCountToday: checkinData.completedTaskCountToday,
+        allDailyDone: checkinData.allDailyDone,
+        checkinReady: false
+      });
+    } catch (error) {
+      return detail;
+    }
+  };
+  taskService.__autoCheckinAfterListeningPatch = true;
+}
+
 const actionMap = {
   bootstrap: identityService.bootstrap,
   getDashboard: dashboardService.getDashboard,

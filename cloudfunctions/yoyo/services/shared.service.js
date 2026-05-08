@@ -493,6 +493,7 @@ async function getDashboardData(ctx, options = {}) {
     getPeppaReviewPlanOptions,
     getPlanCategoryOrder,
     decoratePlannedTasks,
+    decorateTask,
     buildCategorySummary,
     decoratePlanTasks,
     buildStats,

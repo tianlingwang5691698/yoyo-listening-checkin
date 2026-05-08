@@ -203,3 +203,78 @@ test('已有当天打卡记录时，home 进度按整日完成兜底', async () 
   assert.equal(dashboard.groupedDailyTasks[0].tasks[0].progressText, '3/3 遍');
   assert.equal(dashboard.groupedDailyTasks[1].tasks[0].progressText, '3/3 遍');
 });
+
+test('home view 显示当天 Peppa 旧集完成记录', async () => {
+  const dashboard = await dashboardEngine.getDashboardData({
+    user: {},
+    member: { studyRole: 'student' },
+    family: {},
+    child: { childId: 'child-1' }
+  }, {
+    getTodayString: () => '2026-05-08',
+    getUserScope: () => ({ childId: 'child-1' }),
+    getChildProgressRecords: async () => [{
+      childId: 'child-1',
+      category: 'peppa',
+      date: '2026-05-08',
+      taskId: 'peppa-5__review_22_1',
+      originalTaskId: 'peppa-5',
+      playCount: 1,
+      repeatTarget: 1,
+      completedToday: true
+    }],
+    getCheckins: async () => [{ date: '2026-05-08' }],
+    getPlanDayIndexForDate: () => 22,
+    buildPlanForDay: (dayIndex) => ({
+      dayIndex,
+      phase: { key: 'round-1', label: '第1轮' },
+      byCategory: {
+        peppa: [{ category: 'peppa', taskId: 'peppa-22', title: 'S122 The Tooth Fairy', repeatTarget: 3 }]
+      }
+    }),
+    getPlanCategoryOrder: () => ['peppa'],
+    decoratePlannedTasks: () => [],
+    decorateTask: (task, progress, category) => ({
+      category,
+      taskId: task.taskId,
+      title: task.title,
+      displayTitle: 'Hide and Seek',
+      playCount: progress.playCount,
+      repeatTarget: task.repeatTarget,
+      completedToday: progress.completedToday,
+      isPendingAsset: false
+    }),
+    buildCategorySummary: () => ({}),
+    decoratePlanTasks: () => [{
+      category: 'peppa',
+      taskId: 'peppa-22',
+      title: 'S122 The Tooth Fairy',
+      displayTitle: 'The Tooth Fairy',
+      playCount: 3,
+      repeatTarget: 3,
+      completedToday: true,
+      isPendingAsset: false
+    }],
+    buildStats: () => ({ streakDays: 1 }),
+    buildCatchupState: () => ({}),
+    getPlanStartDate: () => '',
+    getCatalog: () => [{ category: 'peppa', taskId: 'peppa-5', title: 'S105 Hide and Seek' }],
+    getCategoryLabel: () => 'Peppa'
+  }, {
+    includeDailyTasks: false,
+    includeHomeTaskGroups: true,
+    includeCategorySummaries: false,
+    includeCatchupState: false,
+    includePlanDebug: false,
+    includeTaskProgressSummary: true,
+    includeUser: false,
+    includeFamily: false,
+    includeStats: false
+  });
+
+  const peppaGroup = dashboard.groupedDailyTasks[0];
+  assert.equal(peppaGroup.tasks.length, 2);
+  assert.equal(peppaGroup.completedCount, 2);
+  assert.equal(peppaGroup.totalCount, 2);
+  assert.equal(peppaGroup.tasks.some((item) => item.taskId === 'peppa-5__review_22_1' && item.progressText === '1/1 遍'), true);
+});
