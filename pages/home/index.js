@@ -22,43 +22,6 @@ Page({
       studyRole
     };
   },
-  withPeppaReviewFallback(groups, planDayIndex) {
-    if (Number(planDayIndex || 0) !== 22) {
-      return groups;
-    }
-    return (groups || []).map((group) => {
-      if (group.category !== 'peppa' || (group.tasks || []).some((task) => String(task.taskId || '').includes('__review_'))) {
-        return group;
-      }
-      const reviewTasks = [{
-        category: 'peppa',
-        taskId: 'peppa-5__review_22_1',
-        title: 'Hide and Seek',
-        displayTitle: 'Hide and Seek',
-        isPendingAsset: false,
-        completedToday: true,
-        textType: '纯听力',
-        progressText: '1/1 遍'
-      }, {
-        category: 'peppa',
-        taskId: 'peppa-6__review_22_2',
-        title: 'The Playgroup',
-        displayTitle: 'The Playgroup',
-        isPendingAsset: false,
-        completedToday: true,
-        textType: '纯听力',
-        progressText: '1/1 遍'
-      }];
-      return Object.assign({}, group, {
-        completedCount: (group.completedCount || 0) + reviewTasks.length,
-        totalCount: (group.totalCount || 0) + reviewTasks.length,
-        progressPercent: 100,
-        programSubtitle: '今日完成',
-        programStateText: '完成',
-        tasks: (group.tasks || []).concat(reviewTasks)
-      });
-    });
-  },
   async onShow() {
     const startedAt = Date.now();
     page.syncTheme(this);
@@ -74,7 +37,7 @@ Page({
     const previousStudyRole = wx.getStorageSync('lastStudyRole') || '';
     const modeChangedNoticeVisible = previousStudyRole === 'student' && nextStudyRole === 'parent';
     wx.setStorageSync('lastStudyRole', nextStudyRole);
-    const groupedDailyTasks = this.withPeppaReviewFallback(labels.normalizeHomeTaskGroups(data.groupedDailyTasks || []), data.planDayIndex);
+    const groupedDailyTasks = labels.normalizeHomeTaskGroups(data.groupedDailyTasks || []);
     this.setData(page.buildCloudPageData(this.data, Object.assign({}, {
       syncMode: data.syncMode,
       isReviewBuild: data.isReviewBuild,

@@ -36,6 +36,28 @@ function formatDateLabel(dateKey) {
   return `${date.getMonth() + 1}月${date.getDate()}日`;
 }
 
+function formatClock(value) {
+  if (!value) {
+    return '';
+  }
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) {
+    return '';
+  }
+  return `${pad(date.getHours())}:${pad(date.getMinutes())}`;
+}
+
+function buildTimeLines(item) {
+  const playMoments = Array.isArray(item.playMoments) ? item.playMoments : [];
+  return playMoments
+    .map((value, index) => ({
+      key: `${item.category}-${item.taskId || 'task'}-${index}`,
+      label: `第 ${index + 1} 遍`,
+      timeText: formatClock(value)
+    }))
+    .filter((entry) => entry.timeText);
+}
+
 function buildMetric(stats, mode) {
   const safeStats = stats || {};
   if (mode === 'total') {
@@ -141,32 +163,15 @@ function isFutureMonth(year, month) {
 
 function normalizeReport(report) {
   const safeReport = report || {};
-  const items = (safeReport.items || []).map(labels.normalizeReportItem);
-  const shouldAppendPeppaReview = safeReport.date === '2026-05-08'
-    && items.some((item) => item.taskId === 'peppa-22')
-    && !items.some((item) => String(item.taskId || '').includes('__review_'));
-  const nextItems = shouldAppendPeppaReview ? items.concat([{
-    category: 'peppa',
-    categoryLabel: 'Peppa',
-    displayCategoryLabel: 'Peppa',
-    taskId: 'peppa-5__review_22_1',
-    title: '1-5 · Hide and Seek',
-    playCount: 1,
-    repeatTarget: 1,
-    completedToday: true
-  }, {
-    category: 'peppa',
-    categoryLabel: 'Peppa',
-    displayCategoryLabel: 'Peppa',
-    taskId: 'peppa-6__review_22_2',
-    title: '1-6 · The Playgroup',
-    playCount: 1,
-    repeatTarget: 1,
-    completedToday: true
-  }]) : items;
+  const items = (safeReport.items || []).map((item) => {
+    const normalized = labels.normalizeReportItem(item);
+    return Object.assign({}, normalized, {
+      timeLines: buildTimeLines(normalized)
+    });
+  });
   return Object.assign({}, safeReport, {
-    items: nextItems,
-    totalMinutes: (safeReport.totalMinutes || 0) + (shouldAppendPeppaReview ? 10 : 0),
+    items,
+    totalMinutes: safeReport.totalMinutes || 0,
     completedCategories: safeReport.completedCategories || []
   });
 }
@@ -175,11 +180,12 @@ function buildDaySummary(report) {
   const safeReport = report || EMPTY_REPORT;
   const items = safeReport.items || [];
   const completedCount = items.filter((item) => item.completedToday).length;
+  const listenedCount = items.filter((item) => Number(item.playCount || 0) > 0).length;
   const totalCount = items.length;
   return {
     completedCount,
     totalCount,
-    statusText: completedCount ? '已完成' : '未完成',
+    statusText: completedCount ? '已完成' : (listenedCount ? '有记录' : '未完成'),
     minutesText: `${safeReport.totalMinutes || 0} 分钟`
   };
 }

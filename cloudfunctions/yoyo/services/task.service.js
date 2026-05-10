@@ -224,6 +224,9 @@ async function markTaskListened(event, context) {
   };
   await study.saveProgressRecord(record);
   if (planRunType === 'normal' || planRunType === 'catchup') {
+    await study.upsertDailyReport(scope, targetDate);
+  }
+  if (planRunType === 'normal' || planRunType === 'catchup') {
     const nextProgressRecords = await study.getChildProgressRecords(scope);
     await study.maybeCreateCheckin(scope, nextProgressRecords, targetDate, {
       planRunType,

@@ -294,6 +294,22 @@
   font-size: var(--font-caption-size);
 }
 
+.report-times {
+  margin-top: 10rpx;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8rpx;
+}
+
+.report-time {
+  padding: 6rpx 12rpx;
+  border-radius: 999rpx;
+  background: var(--control-muted-bg);
+  color: var(--text-muted);
+  font-size: var(--font-eyebrow-size);
+  font-weight: var(--font-title-weight);
+}
+
 .catchup-purpose {
   margin-top: 8rpx;
   color: var(--text-soft);

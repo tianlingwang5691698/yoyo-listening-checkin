@@ -115,6 +115,11 @@
           <view>
             <view class="report-title">{{item.categoryLabel}}</view>
             <view class="report-copy">{{item.title}}</view>
+            <view class="report-times" wx:if="{{item.timeLines && item.timeLines.length}}">
+              <block wx:for="{{item.timeLines}}" wx:key="key" wx:for-item="time">
+                <view class="report-time">{{time.label}} {{time.timeText}}</view>
+              </block>
+            </view>
           </view>
           <view class="report-state {{item.completedToday ? 'is-done' : ''}}">
             <view>{{item.completedToday ? '完成' : '等待'}}</view>

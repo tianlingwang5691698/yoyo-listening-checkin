@@ -8,7 +8,7 @@ async function findByScope(scope) {
   const res = await dailyTaskProgress().where({
     familyId: scope.familyId,
     childId: scope.childId
-  }).get();
+  }).limit(1000).get();
   return res.data || [];
 }
 
