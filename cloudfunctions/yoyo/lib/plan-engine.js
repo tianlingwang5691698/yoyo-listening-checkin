@@ -1,5 +1,12 @@
 const PEPPA_REVIEW_DAILY_COUNT = 2;
 
+function normalizePlannedTask(task, category, dayIndex, deps) {
+  if (category === 'unlock1' && dayIndex > deps.planSlotCount) {
+    return Object.assign({}, task, { repeatTarget: 1 });
+  }
+  return task;
+}
+
 function getPlanCatalog(category, deps) {
   const { getCatalog, planSlotCount } = deps;
   if (category === 'newconcept1') {
@@ -72,7 +79,10 @@ function buildPlanForDay(dayIndex, deps, options = {}) {
   getPlanCategoryOrder(dayIndex).forEach((category) => {
     const { indices, batchSize } = getPlanIndicesForDay(dayIndex, category, deps);
     const catalog = getPlanCatalog(category, deps);
-    const tasks = indices.map((index) => catalog[index] || null).filter(Boolean);
+    const tasks = indices
+      .map((index) => catalog[index] || null)
+      .filter(Boolean)
+      .map((task) => normalizePlannedTask(task, category, dayIndex, deps));
     const plannedTasks = category === 'peppa' && options.includePeppaReview
       ? tasks.concat(buildPeppaReviewTasks(dayIndex, catalog, tasks, options.peppaReviewCursor))
       : tasks;

@@ -127,7 +127,7 @@ function getRound2IndicesForCategory(dayIndex, category, catalogLength) {
   }
   const roundDay = dayIndex - PLAN_PHASES[1].startDay + 1;
   if (category === 'newconcept1') {
-    return buildLoopingIndices((roundDay - 1) * 2, 2, catalogLength);
+    return buildLoopingIndices((roundDay - 1) * 3, 3, catalogLength);
   }
   if (category === 'unlock1') {
     const unlockCount = Math.min(PLAN_SLOT_COUNT, catalogLength);

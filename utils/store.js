@@ -2,6 +2,22 @@ const cloud = require('../domain/cloud/index');
 const contracts = require('./contracts');
 const monitor = require('./monitor');
 const inflightCloudRequests = {};
+const memoryCloudCache = {};
+const CACHE_INDEX_KEY = 'yoyoCloudReadCacheKeysV1';
+const CACHE_MAX_AGE_MS = 7 * 24 * 60 * 60 * 1000;
+const READ_CACHE_CONFIG = {
+  getDashboard: { persist: true },
+  getLevelOverview: { persist: true },
+  getTaskDetail: { persist: true },
+  getTaskTranscript: { persist: false },
+  getSpeakingAttempts: { persist: false },
+  getProfileData: { persist: true },
+  getHeatmap: { persist: true },
+  getMonthHeatmap: { persist: true },
+  getDailyReportByDate: { persist: true },
+  getParentDashboard: { persist: true },
+  getFamilyPage: { persist: true }
+};
 
 /**
  * @typedef {import('./contracts').DashboardData} DashboardData
@@ -133,8 +149,77 @@ function buildCloudErrorPayload(action, error, defaults) {
   });
 }
 
-async function callCloud(action, payload, defaults) {
-  const inflightKey = action === 'getDashboard'
+function hashText(value) {
+  let hash = 5381;
+  const text = String(value || '');
+  for (let index = 0; index < text.length; index += 1) {
+    hash = ((hash << 5) + hash) ^ text.charCodeAt(index);
+  }
+  return (hash >>> 0).toString(36);
+}
+
+function getReadCacheKey(action, payload) {
+  return `yoyoCloudReadCacheV1:${action}:${hashText(JSON.stringify(payload || {}))}`;
+}
+
+function getCachedCloudResult(action, payload) {
+  const config = READ_CACHE_CONFIG[action];
+  if (!config) {
+    return null;
+  }
+  const key = getReadCacheKey(action, payload);
+  let entry = memoryCloudCache[key] || null;
+  if (!entry && config.persist) {
+    try {
+      entry = wx.getStorageSync(key) || null;
+      if (entry) {
+        memoryCloudCache[key] = entry;
+      }
+    } catch (error) {
+      entry = null;
+    }
+  }
+  if (!entry || !entry.data || Date.now() - Number(entry.savedAt || 0) > CACHE_MAX_AGE_MS) {
+    return null;
+  }
+  return entry.data;
+}
+
+function cacheCloudResult(action, payload, data) {
+  const config = READ_CACHE_CONFIG[action];
+  if (!config || !data || data.syncMode === 'cloud-error') {
+    return;
+  }
+  const key = getReadCacheKey(action, payload);
+  const entry = { savedAt: Date.now(), data };
+  memoryCloudCache[key] = entry;
+  if (!config.persist) {
+    return;
+  }
+  try {
+    wx.setStorageSync(key, entry);
+    const keys = wx.getStorageSync(CACHE_INDEX_KEY) || [];
+    if (!keys.includes(key)) {
+      wx.setStorageSync(CACHE_INDEX_KEY, keys.concat(key));
+    }
+  } catch (error) {
+    monitor.logError('store', 'cache-write', error, { action });
+  }
+}
+
+function clearCloudReadCache() {
+  Object.keys(memoryCloudCache).forEach((key) => delete memoryCloudCache[key]);
+  try {
+    const keys = wx.getStorageSync(CACHE_INDEX_KEY) || [];
+    keys.forEach((key) => wx.removeStorageSync(key));
+    wx.removeStorageSync(CACHE_INDEX_KEY);
+  } catch (error) {
+    monitor.logError('store', 'cache-clear', error, {});
+  }
+}
+
+async function callCloudFresh(action, payload, defaults) {
+  const inflightKey = READ_CACHE_CONFIG[action]
     ? `${action}:${JSON.stringify(payload || {})}`
     : '';
   if (inflightKey && inflightCloudRequests[inflightKey]) {
@@ -159,6 +244,28 @@ async function callCloud(action, payload, defaults) {
   return request;
 }
 
+async function callCloud(action, payload, defaults, options = {}) {
+  const cached = options.useCache === false ? null : getCachedCloudResult(action, payload);
+  if (cached) {
+    callCloudFresh(action, payload, defaults).then((fresh) => {
+      if (fresh && fresh.syncMode !== 'cloud-error') {
+        cacheCloudResult(action, payload, fresh);
+        if (typeof options.onRefresh === 'function') {
+          options.onRefresh(fresh);
+        }
+      }
+    });
+    return cached;
+  }
+  const result = await callCloudFresh(action, payload, defaults);
+  if (READ_CACHE_CONFIG[action]) {
+    cacheCloudResult(action, payload, result);
+  } else if (result && result.syncMode !== 'cloud-error') {
+    clearCloudReadCache();
+  }
+  return result;
+}
+
 async function ensureState() {
   cloud.initCloud();
   return callCloud('bootstrap', {}, {
@@ -171,11 +278,11 @@ async function ensureState() {
  * @param {Object=} options
  * @returns {Promise<DashboardData>}
  */
-async function getDashboard(options) {
-  return callCloud('getDashboard', Object.assign({}, options || {}), contracts.createDashboardDefaults());
+async function getDashboard(options, onRefresh) {
+  return callCloud('getDashboard', Object.assign({}, options || {}), contracts.createDashboardDefaults(), { onRefresh });
 }
 
-async function getLevelOverview(options) {
+async function getLevelOverview(options, onRefresh) {
   return callCloud('getLevelOverview', Object.assign({}, options || {}), {
     user: {},
     currentUser: {},
@@ -189,7 +296,7 @@ async function getLevelOverview(options) {
     a2Categories: [],
     b1Categories: [],
     b2Categories: []
-  });
+  }, { onRefresh });
 }
 
 /**
@@ -198,18 +305,18 @@ async function getLevelOverview(options) {
  * @param {Object=} options
  * @returns {Promise<TaskDetailData>}
  */
-async function getTaskDetail(category, taskId, options) {
-  return callCloud('getTaskDetail', Object.assign({ category, taskId }, options || {}), contracts.createTaskDetailDefaults());
+async function getTaskDetail(category, taskId, options, onRefresh) {
+  return callCloud('getTaskDetail', Object.assign({ category, taskId }, options || {}), contracts.createTaskDetailDefaults(), { onRefresh });
 }
 
-async function getTaskTranscript(category, taskId, options) {
+async function getTaskTranscript(category, taskId, options, onRefresh) {
   return callCloud('getTaskTranscript', Object.assign({ category, taskId }, options || {}), {
     task: null,
     scriptSource: null,
     transcriptTrack: null,
     transcriptLines: [],
     transcriptPendingLoad: false
-  });
+  }, { onRefresh });
 }
 
 async function getTempFileURL(fileId) {
@@ -244,11 +351,11 @@ async function submitSpeakingAttempt(options) {
   });
 }
 
-async function getSpeakingAttempts(options) {
+async function getSpeakingAttempts(options, onRefresh) {
   return callCloud('getSpeakingAttempts', options, {
     attempts: [],
     summary: {}
-  });
+  }, { onRefresh });
 }
 
 async function completeTodayCheckin() {
@@ -260,7 +367,7 @@ async function completeTodayCheckin() {
   });
 }
 
-async function getProfileData() {
+async function getProfileData(onRefresh) {
   return callCloud('getProfileData', {}, {
     child: {
       nickname: '',
@@ -275,37 +382,37 @@ async function getProfileData() {
     currentUser: {},
     currentMember: {},
     subscriptionPreference: null
-  });
+  }, { onRefresh });
 }
 
-async function getHeatmap(days) {
+async function getHeatmap(days, onRefresh) {
   return callCloud('getHeatmap', { days }, {
     heatmap: [],
     catchupState: contracts.createCatchupStateDefaults(),
     catchupTasks: []
-  });
+  }, { onRefresh });
 }
 
-async function getMonthHeatmap(year, month) {
+async function getMonthHeatmap(year, month, onRefresh) {
   return callCloud('getMonthHeatmap', { year, month }, {
     year,
     month,
     heatmap: [],
     catchupState: contracts.createCatchupStateDefaults()
-  });
+  }, { onRefresh });
 }
 
 /**
  * @param {string} date
  * @returns {Promise<{report: ReportData}>}
  */
-async function getDailyReportByDate(date) {
+async function getDailyReportByDate(date, onRefresh) {
   return callCloud('getDailyReportByDate', { date }, {
     report: contracts.createReportDefaults(date)
-  });
+  }, { onRefresh });
 }
 
-async function getParentDashboard() {
+async function getParentDashboard(onRefresh) {
   return callCloud('getParentDashboard', {}, {
     family: null,
     child: null,
@@ -317,14 +424,14 @@ async function getParentDashboard() {
     currentMember: contracts.createCurrentMemberDefaults(),
     members: [],
     subscriptionPreference: null
-  });
+  }, { onRefresh });
 }
 
 /**
  * @returns {Promise<FamilyPageData>}
  */
-async function getFamilyPageData() {
-  return callCloud('getFamilyPage', {}, contracts.createFamilyPageDefaults());
+async function getFamilyPageData(onRefresh) {
+  return callCloud('getFamilyPage', {}, contracts.createFamilyPageDefaults(), { onRefresh });
 }
 
 async function refreshInviteCode() {

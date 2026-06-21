@@ -50,6 +50,12 @@ Page({
     childCodeReady: false,
     childCodeText: '待同步'
   }),
+  applyProfileData(data) {
+    this.setData(page.buildCloudPageData(this.data, Object.assign({}, data, {
+      childNicknameInput: (data.child && data.child.nickname) || '',
+      dailyEncouragement: getDailyEncouragement()
+    }, buildProfilePresentation(data))));
+  },
   async onShow() {
     page.syncTheme(this);
     const tabBar = this.getTabBar && this.getTabBar();
@@ -59,11 +65,8 @@ Page({
     if (!page.requireIdentityConfirmed()) {
       return;
     }
-    const data = await store.getProfileData();
-    this.setData(page.buildCloudPageData(this.data, Object.assign({}, data, {
-      childNicknameInput: (data.child && data.child.nickname) || '',
-      dailyEncouragement: getDailyEncouragement()
-    }, buildProfilePresentation(data))));
+    const data = await store.getProfileData((fresh) => this.applyProfileData(fresh));
+    this.applyProfileData(data);
   },
   handleChildNicknameInput(event) {
     this.setData({

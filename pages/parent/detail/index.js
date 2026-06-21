@@ -94,11 +94,12 @@ Page({
     if (!page.requireIdentityConfirmed()) {
       return;
     }
-    store.getDailyReportByDate(this.data.date).then((data) => {
+    const applyData = (data) => {
       this.setData(page.buildCloudPageData(this.data, {
         date: this.data.date,
         report: normalizeReport(data.report)
       }));
-    });
+    };
+    store.getDailyReportByDate(this.data.date, applyData).then(applyData);
   }
 });

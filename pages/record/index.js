@@ -246,7 +246,13 @@ Page({
     const calendarYear = this.data.calendarYear || today.getFullYear();
     const calendarMonth = this.data.calendarMonth || today.getMonth() + 1;
     const [dashboard, heatmapData] = await Promise.all([
-      store.getDashboard({ view: 'record' }),
+      store.getDashboard({ view: 'record' }, (fresh) => {
+        const freshState = Object.assign({}, fresh, {
+          totalDurationText: formatDuration((fresh.stats || {}).totalMinutes),
+          planDayIndex: fresh.planDayIndex || 1
+        });
+        this.setData(page.buildCloudPageData(this.data, Object.assign({}, freshState, buildMetric(freshState.stats, this.data.metricMode))));
+      }),
       this.getMonthHeatmapCached(calendarYear, calendarMonth, { force: true })
     ]);
     const catchupPresentation = buildCatchupPresentation(heatmapData.catchupState);
@@ -287,12 +293,19 @@ Page({
     if (!shouldForce && this.monthRequests[key]) {
       return this.monthRequests[key];
     }
-    const request = store.getMonthHeatmap(year, month).then((data) => {
+    const applyData = (data) => {
       const safeData = data || {};
       this.monthCache[key] = {
         heatmap: safeData.heatmap || [],
         catchupState: safeData.catchupState || this.data.catchupState
       };
+      if (this.data.calendarYear === year && this.data.calendarMonth === month) {
+        this.refreshMonthCellsFromCache();
+      }
+      return this.monthCache[key];
+    };
+    const request = store.getMonthHeatmap(year, month, applyData).then((data) => {
+      applyData(data);
       delete this.monthRequests[key];
       return this.monthCache[key];
     }).catch((error) => {
@@ -345,21 +358,27 @@ Page({
     this.setData({
       selectedDayLoading: true
     });
-    const data = await store.getDailyReportByDate(date);
-    this.setData({
-      selectedDayReport: normalizeReport(data.report),
-      selectedDaySummary: buildDaySummary(normalizeReport(data.report)),
-      selectedDayLoading: false,
-      selectedDateLabel: formatDateLabel(date)
-    });
+    const applyData = (data) => {
+      this.setData({
+        selectedDayReport: normalizeReport(data.report),
+        selectedDaySummary: buildDaySummary(normalizeReport(data.report)),
+        selectedDayLoading: false,
+        selectedDateLabel: formatDateLabel(date)
+      });
+    };
+    const data = await store.getDailyReportByDate(date, applyData);
+    applyData(data);
   },
   async loadCatchupTasks() {
-    const heatmapData = await store.getHeatmap(42);
-    this.setData(page.buildCloudPageData(this.data, Object.assign({
-      catchupTasks: labels.normalizeTaskList(heatmapData.catchupTasks || []),
-      catchupState: heatmapData.catchupState || this.data.catchupState
-    }, buildCatchupPresentation(heatmapData.catchupState || this.data.catchupState))));
-    this.refreshMonthCellsFromCache();
+    const applyData = (heatmapData) => {
+      this.setData(page.buildCloudPageData(this.data, Object.assign({
+        catchupTasks: labels.normalizeTaskList(heatmapData.catchupTasks || []),
+        catchupState: heatmapData.catchupState || this.data.catchupState
+      }, buildCatchupPresentation(heatmapData.catchupState || this.data.catchupState))));
+      this.refreshMonthCellsFromCache();
+    };
+    const heatmapData = await store.getHeatmap(42, applyData);
+    applyData(heatmapData);
   },
   switchMetric(event) {
     const mode = event.currentTarget.dataset.mode || 'streak';

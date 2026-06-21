@@ -2,6 +2,7 @@ const test = require('node:test');
 const assert = require('node:assert/strict');
 
 const planRuntime = require('../lib/plan-runtime');
+const planEngine = require('../lib/plan-engine');
 
 test('补卡起点取首次成功打卡日期', () => {
   const checkins = [
@@ -33,4 +34,34 @@ test('当天是否已使用补卡按中国日期判断', () => {
   ];
   assert.equal(planRuntime.hasCatchupToday(checkins, '2026-04-21'), true);
   assert.equal(planRuntime.hasCatchupToday(checkins, '2026-04-20'), false);
+});
+
+test('Unlock1 首轮后循环任务每条只听 1 遍', () => {
+  const catalog = Array.from({ length: 24 }, (_, index) => ({
+    taskId: `unlock1-${index + 1}`,
+    category: 'unlock1',
+    repeatTarget: 3
+  }));
+  const deps = {
+    planSlotCount: 24,
+    getCatalog: () => catalog,
+    planLib: planRuntime
+  };
+
+  assert.equal(planEngine.buildPlanForDay(24, deps).byCategory.unlock1[0].repeatTarget, 3);
+  assert.deepEqual(
+    planEngine.buildPlanForDay(25, deps).byCategory.unlock1.map((task) => task.repeatTarget),
+    [1, 1, 1]
+  );
+});
+
+test('阶段二 New Concept 1 每天排 3 条', () => {
+  assert.deepEqual(
+    planRuntime.getPlanIndicesForCategory(73, 'newconcept1', 76),
+    [0, 1, 2]
+  );
+  assert.deepEqual(
+    planRuntime.getPlanIndicesForCategory(74, 'newconcept1', 76),
+    [3, 4, 5]
+  );
 });

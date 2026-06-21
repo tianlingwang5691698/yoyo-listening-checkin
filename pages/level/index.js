@@ -127,16 +127,7 @@ Page({
     stageGroups: STAGE_GROUPS,
     programEntries: []
   }),
-  async onShow() {
-    page.syncTheme(this);
-    const tabBar = this.getTabBar && this.getTabBar();
-    if (tabBar) {
-      tabBar.setData({ selected: 1 });
-    }
-    if (!page.requireIdentityConfirmed()) {
-      return;
-    }
-    const data = await store.getLevelOverview();
+  applyOverview(data) {
     const categories = (data.categories || []).map(labels.normalizeCategory);
     const a2Categories = (data.a2Categories || []).map(labels.normalizeCategory);
     const b1Categories = (data.b1Categories || []).map(labels.normalizeCategory);
@@ -154,6 +145,18 @@ Page({
         ? buildStandaloneEntries((this.data.selectedLevel || 'A1') === 'A2' ? a2Categories : ((this.data.selectedLevel || 'A1') === 'B1' ? b1Categories : b2Categories))
         : buildProgramEntries(categories)
     })));
+  },
+  async onShow() {
+    page.syncTheme(this);
+    const tabBar = this.getTabBar && this.getTabBar();
+    if (tabBar) {
+      tabBar.setData({ selected: 1 });
+    }
+    if (!page.requireIdentityConfirmed()) {
+      return;
+    }
+    const data = await store.getLevelOverview({}, (fresh) => this.applyOverview(fresh));
+    this.applyOverview(data);
   },
   chooseLevel(event) {
     const enabled = event.currentTarget.dataset.enabled;

@@ -9,13 +9,16 @@ Page({
     child: {},
     currentMember: {}
   }),
-  async onShow() {
-    page.syncTheme(this);
-    const data = await store.getProfileData();
+  applyProfileData(data) {
     this.setData(page.buildCloudPageData(this.data, Object.assign({}, data, {
       childCode: '',
       displayName: (data.currentMember && data.currentMember.displayName) || ''
     })));
+  },
+  async onShow() {
+    page.syncTheme(this);
+    const data = await store.getProfileData((fresh) => this.applyProfileData(fresh));
+    this.applyProfileData(data);
   },
   chooseRole(event) {
     const role = event.currentTarget.dataset.role || 'parent';

@@ -5,7 +5,7 @@
 ## 当前版本
 
 - 稳定回退点：`3.0.1`
-- 当前云函数版本：`cloudfunctions/yoyo/package.json -> 3.0.1`
+- 当前云函数版本：`cloudfunctions/yoyo/package.json -> 3.6.1`
 
 ## 当前目标
 

@@ -77,22 +77,26 @@ Page({
     totalMinutesText: '待生成',
     hasTaskGroups: false
   }),
-  async onLoad(query) {
-    page.syncTheme(this);
-    const phase = query.phase || 'round-1';
-    const data = await store.getLevelOverview({ phase });
+  applyOverview(data, phase, levelId) {
     const categories = (data.categories || []).map(labels.normalizeCategory);
     const hasTaskGroups = shouldShowTaskGroups(phase) && categories.length > 0;
     const taskGroups = hasTaskGroups ? buildTaskGroups(categories) : [];
     const totalMinutes = taskGroups.reduce((sum, item) => sum + item.minutes, 0);
     this.setData(page.buildCloudPageData(this.data, {
-      levelId: query.levelId || 'A1',
+      levelId,
       phase,
       stage: STAGES[phase] || STAGES['round-1'],
       taskGroups,
       totalMinutesText: totalMinutes ? `${totalMinutes} 分钟` : '待生成',
       hasTaskGroups
     }));
+  },
+  async onLoad(query) {
+    page.syncTheme(this);
+    const phase = query.phase || 'round-1';
+    const levelId = query.levelId || 'A1';
+    const data = await store.getLevelOverview({ phase }, (fresh) => this.applyOverview(fresh, phase, levelId));
+    this.applyOverview(data, phase, levelId);
   },
   onShow() {
     page.syncTheme(this);

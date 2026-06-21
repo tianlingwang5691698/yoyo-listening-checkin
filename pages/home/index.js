@@ -22,17 +22,7 @@ Page({
       studyRole
     };
   },
-  async onShow() {
-    const startedAt = Date.now();
-    page.syncTheme(this);
-    const tabBar = this.getTabBar && this.getTabBar();
-    if (tabBar) {
-      tabBar.setData({ selected: 0 });
-    }
-    this.setData({
-      homeLoading: true
-    });
-    const data = await store.getDashboard({ view: 'home' });
+  applyDashboard(data) {
     const nextStudyRole = data.currentMember && data.currentMember.studyRole === 'student' ? 'student' : 'parent';
     const previousStudyRole = wx.getStorageSync('lastStudyRole') || '';
     const modeChangedNoticeVisible = previousStudyRole === 'student' && nextStudyRole === 'parent';
@@ -53,6 +43,20 @@ Page({
       modeChangedNoticeVisible,
       homeLoading: false
     }, this.buildStudyModePresentation(data.currentMember))));
+    return groupedDailyTasks;
+  },
+  async onShow() {
+    const startedAt = Date.now();
+    page.syncTheme(this);
+    const tabBar = this.getTabBar && this.getTabBar();
+    if (tabBar) {
+      tabBar.setData({ selected: 0 });
+    }
+    this.setData({
+      homeLoading: true
+    });
+    const data = await store.getDashboard({ view: 'home' }, (fresh) => this.applyDashboard(fresh));
+    const groupedDailyTasks = this.applyDashboard(data);
     monitor.logPerf('home', 'onShow', Date.now() - startedAt, {
       groups: groupedDailyTasks.length
     });
@@ -117,5 +121,17 @@ Page({
     wx.navigateTo({
       url: '/pages/family/index'
     });
+  },
+  onShareAppMessage() {
+    return {
+      title: '佑声英语',
+      path: '/pages/home/index'
+    };
+  },
+  onShareTimeline() {
+    return {
+      title: '佑声英语',
+      query: ''
+    };
   }
 });

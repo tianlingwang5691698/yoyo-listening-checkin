@@ -527,6 +527,31 @@ Page({
       audioPlaybackMode: playbackMode
     }));
   },
+  applyFreshTaskDetail(detail) {
+    if (!detail || !detail.task) {
+      return;
+    }
+    this.taskId = detail.task.taskId || this.taskId;
+    this.planRunType = detail.planRunType || this.planRunType;
+    this.targetDate = detail.targetDate || this.targetDate;
+    this.planDayIndex = detail.planDayIndex ? String(detail.planDayIndex) : this.planDayIndex;
+    const normalizedTask = labels.normalizeTask(detail.task);
+    this.setData(page.buildCloudPageData(this.data, {
+      syncMode: detail.syncMode,
+      isReviewBuild: detail.isReviewBuild,
+      showCloudDebug: detail.showCloudDebug,
+      syncDebug: detail.syncDebug,
+      child: detail.child,
+      task: normalizedTask,
+      todayRecord: detail.todayRecord,
+      progress: detail.progress,
+      passSteps: buildPassSteps(detail.progress),
+      currentMember: detail.currentMember,
+      studyWriteAllowed: detail.studyWriteAllowed !== false,
+      isPreviewMode: this.planRunType === 'preview',
+      studyModeLabel: this.planRunType === 'preview' ? '预览模式' : (detail.currentMember && detail.currentMember.studyRole === 'student' ? '学生设备' : '家长模式')
+    }));
+  },
   async refreshPage() {
     const startedAt = Date.now();
     this.setData({
@@ -537,7 +562,7 @@ Page({
       planRunType: this.planRunType,
       targetDate: this.targetDate,
       planDayIndex: this.planDayIndex
-    });
+    }, (fresh) => this.applyFreshTaskDetail(fresh));
     this.taskId = detail && detail.task ? detail.task.taskId || this.taskId : this.taskId;
     this.planRunType = detail && detail.planRunType ? detail.planRunType : this.planRunType;
     this.targetDate = detail && detail.targetDate ? detail.targetDate : this.targetDate;
@@ -667,15 +692,13 @@ Page({
     const task = this.data.task || {};
     const lines = await this.ensureTranscriptLoadedForSpeaking();
     if (task.speakingMode === 'nce-question-answer') {
-      const doneAttempts = (this.data.speakingAttempts || [])
+      const attemptCount = (this.data.speakingAttempts || [])
         .filter((item) => item.attemptType === 'nce_question_answer')
-        .map((item) => Number(item.attemptIndex || 0));
-      const hasAttempt2 = doneAttempts.includes(2);
-      const attemptIndex = passNumber >= 3 ? (hasAttempt2 ? 3 : 2) : 1;
+        .length;
       this.setData({
         speakingPanelVisible: true,
         speakingMode: task.speakingMode,
-        speakingAttemptIndex: attemptIndex,
+        speakingAttemptIndex: attemptCount + 1,
         speakingQuestionText: this.data.passQuestionText || this.getQuestionFromLines(lines),
         speakingPromptText: '',
         speakingTempFilePath: '',
@@ -777,16 +800,8 @@ Page({
           wx.showToast({ title: '预览评分完成', icon: 'none' });
           return;
         }
-        if (attemptIndex === 1) {
-          wx.showToast({ title: '评分完成', icon: 'none' });
-          return;
-        }
-        if (attemptIndex === 2) {
-          this.setData({ speakingAttemptIndex: 3 });
-          wx.showToast({ title: '请录最终回答', icon: 'none' });
-          return;
-        }
-        await this.finishPendingListenAfterSpeaking();
+        this.setData({ speakingAttemptIndex: attemptIndex + 1 });
+        wx.showToast({ title: '评分完成，可重录', icon: 'none' });
         return;
       }
       const upload = await store.createSpeakingUploadUrl({
@@ -848,16 +863,8 @@ Page({
         wx.showToast({ title: '本句已评分', icon: 'none' });
         return;
       }
-      if (attemptIndex === 1) {
-        wx.showToast({ title: '评分完成', icon: 'none' });
-        return;
-      }
-      if (attemptIndex === 2) {
-        this.setData({ speakingAttemptIndex: 3 });
-        wx.showToast({ title: '请录最终回答', icon: 'none' });
-        return;
-      }
-      await this.finishPendingListenAfterSpeaking();
+      this.setData({ speakingAttemptIndex: attemptIndex + 1 });
+      wx.showToast({ title: '评分完成，可重录', icon: 'none' });
     } catch (error) {
       wx.showToast({ title: '提交失败，请重试', icon: 'none' });
     } finally {

@@ -3,6 +3,19 @@ const monitor = require('../../utils/monitor');
 
 let cloudInited = false;
 
+function withTimeout(promise, timeoutMs, label) {
+  return new Promise((resolve, reject) => {
+    const timer = setTimeout(() => reject(new Error(`${label || 'cloud'}-timeout`)), timeoutMs);
+    promise.then((result) => {
+      clearTimeout(timer);
+      resolve(result);
+    }).catch((error) => {
+      clearTimeout(timer);
+      reject(error);
+    });
+  });
+}
+
 function getCloudEnvId() {
   return appConfig.cloudEnvId || wx.cloud.DYNAMIC_CURRENT_ENV || '';
 }
@@ -71,13 +84,14 @@ async function callYoyo(action, payload) {
   const startedAt = Date.now();
   let response;
   try {
-    response = await wx.cloud.callFunction({
+    const timeoutMs = action === 'submitSpeakingAttempt' ? 45000 : 12000;
+    response = await withTimeout(wx.cloud.callFunction({
       name: 'yoyo',
       data: {
         action,
         payload: payload || {}
       }
-    });
+    }), timeoutMs, action);
   } catch (error) {
     monitor.logError('cloud', action, error, {
       duration: `${Date.now() - startedAt}ms`

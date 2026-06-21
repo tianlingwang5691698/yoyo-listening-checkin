@@ -34,9 +34,10 @@ Page({
   }),
   onShow() {
     page.syncTheme(this);
-    store.getParentDashboard().then((data) => {
+    const applyData = (data) => {
       this.setData(page.buildCloudPageData(this.data, normalizeParentData(data)));
-    });
+    };
+    store.getParentDashboard(applyData).then(applyData);
   },
   openDailyDetail(event) {
     const date = event.currentTarget.dataset.date;

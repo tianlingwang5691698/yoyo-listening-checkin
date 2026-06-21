@@ -180,8 +180,8 @@
     <view class="action-row speaking-actions">
       <button class="player-action record-action {{speakingTempFilePath ? 'is-ready' : ''}}" wx:if="{{!speakingRecording}}" bindtap="startSpeakingRecord">{{speakingTempFilePath ? '重录' : '开始录音'}}</button>
       <button class="player-action record-action is-recording" wx:else bindtap="stopSpeakingRecord">停止录音</button>
-      <button class="player-action primary submit-action {{speakingSubmitting || !speakingTempFilePath ? 'is-disabled' : ''}}" disabled="{{speakingSubmitting || !speakingTempFilePath || speakingRecording}}" bindtap="submitSpeakingRecord">{{speakingSubmitting ? '提交中' : (speakingMode === 'nce-question-answer' && speakingAttemptIndex === 3 ? '提交最终回答' : '提交评分')}}</button>
-      <button class="player-action primary" wx:if="{{speakingMode === 'nce-question-answer' && speakingAttemptIndex === 1 && speakingPromptText}}" bindtap="continueAfterSpeakingFeedback">继续第3遍</button>
+      <button class="player-action primary submit-action {{speakingSubmitting || !speakingTempFilePath ? 'is-disabled' : ''}}" disabled="{{speakingSubmitting || !speakingTempFilePath || speakingRecording}}" bindtap="submitSpeakingRecord">{{speakingSubmitting ? '提交中' : '提交评分'}}</button>
+      <button class="player-action primary" wx:if="{{speakingMode === 'nce-question-answer' && speakingPromptText}}" bindtap="continueAfterSpeakingFeedback">满意，继续</button>
       <button class="player-action" wx:if="{{speakingMode === 'unlock-sentence-repeat'}}" bindtap="completeUnlockRepeat">完成跟读</button>
     </view>
     <view class="record-status {{speakingRecording ? 'is-recording' : (speakingTempFilePath ? 'is-ready' : '')}}">

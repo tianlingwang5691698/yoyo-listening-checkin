@@ -26,7 +26,9 @@ Page({
   },
   async onShow() {
     page.syncTheme(this);
-    const data = await store.getFamilyPageData();
+    const data = await store.getFamilyPageData((fresh) => this.applyFamilyState(fresh, {
+      childJoinRequired: this.isChildJoinRequired(fresh)
+    }));
     this.applyFamilyState(data, {
       childJoinRequired: this.isChildJoinRequired(data)
     });
