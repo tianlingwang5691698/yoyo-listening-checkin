@@ -224,11 +224,13 @@ function fallbackSpeakingScore(payload, error) {
   };
 }
 
-speakingEnginePatch.scoreSpeakingAttempt = async (payload) => {
+async function scoreSpeakingAttemptLegacy(payload) {
   const endpoint = String(process.env.SPEAKING_SCORE_ENDPOINT || '').trim();
   const transcribeEndpoint = normalizeTranscribeEndpoint(process.env.SPEAKING_TRANSCRIBE_ENDPOINT || inferTranscribeEndpoint(endpoint));
   const apiKey = String(process.env.SPEAKING_SCORE_API_KEY || '').trim();
   const audioModel = String(process.env.SPEAKING_SCORE_MODEL || 'gpt-4o-audio-preview').trim();
+  const audioFallbackModel = String(process.env.SPEAKING_SCORE_FALLBACK_MODEL || 'gpt-audio-2025-08-28').trim();
+  const audioModels = [...new Set([audioModel, audioFallbackModel].filter(Boolean))];
   const transcribeModel = String(process.env.SPEAKING_TRANSCRIBE_MODEL || 'whisper-1').trim();
   const contentModel = String(process.env.SPEAKING_CONTENT_SCORE_MODEL || 'gpt-5.4-mini').trim();
   if (!endpoint || !transcribeEndpoint) {
@@ -241,9 +243,16 @@ speakingEnginePatch.scoreSpeakingAttempt = async (payload) => {
     try {
       transcript = await transcribeAudio(transcribeEndpoint, authHeaders, transcribeModel, audioBuffer);
     } catch (error) {
-      try {
-        transcript = await transcribeAudioByChat(endpoint, authHeaders, audioModel, audioBuffer);
-      } catch (fallbackError) {
+      let fallbackError = error;
+      for (const model of audioModels) {
+        try {
+          transcript = await transcribeAudioByChat(endpoint, authHeaders, model, audioBuffer);
+          if (transcript) break;
+        } catch (modelError) {
+          fallbackError = modelError;
+        }
+      }
+      if (!transcript) {
         return {
           score: 0,
           pronunciationFluencyScore: 0,
@@ -251,17 +260,20 @@ speakingEnginePatch.scoreSpeakingAttempt = async (payload) => {
           transcript: '',
           feedback: '录音已保存，但这次语音转文字没有成功，请稍后重试或重新录音。',
           status: 'score-pending',
-          error: String(fallbackError && fallbackError.message || error && error.message || 'transcribe-failed'),
+          error: String(fallbackError && fallbackError.message || 'transcribe-failed'),
           errorType: 'audio-transcript'
         };
       }
     }
     let pronunciationFluencyScore = 75;
-    try {
-      const audioResult = await scoreAudio(endpoint, authHeaders, audioModel, audioBuffer);
-      pronunciationFluencyScore = audioResult.pronunciationFluencyScore;
-    } catch (error) {
-      pronunciationFluencyScore = 75;
+    for (const model of audioModels) {
+      try {
+        const audioResult = await scoreAudio(endpoint, authHeaders, model, audioBuffer);
+        pronunciationFluencyScore = audioResult.pronunciationFluencyScore;
+        break;
+      } catch (error) {
+        pronunciationFluencyScore = 75;
+      }
     }
     if (!transcript) {
       return {
@@ -329,7 +341,7 @@ speakingEnginePatch.scoreSpeakingAttempt = async (payload) => {
   } catch (error) {
     return fallbackSpeakingScore(payload, error);
   }
-};
+}
 
 const dashboardService = require('./services/dashboard.service');
 const levelService = require('./services/level.service');

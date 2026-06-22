@@ -149,7 +149,7 @@ function decorateTask(task, progress, category, deps) {
   const supportsQuestionAnswer = isRound2 && isNewConcept;
   const speakingMode = supportsQuestionAnswer
     ? 'nce-question-answer'
-    : (isRound2 && category === 'unlock1' ? 'unlock-sentence-repeat' : '');
+    : '';
   const transcriptVisible = isRound2
     ? currentPass === 1
     : currentPass !== 2;

@@ -246,11 +246,14 @@ async function scoreSpeakingAttempt(payload) {
   const endpoint = String(process.env.SPEAKING_SCORE_ENDPOINT || '').trim();
   const apiKey = String(process.env.SPEAKING_SCORE_API_KEY || '').trim();
   const model = String(process.env.SPEAKING_SCORE_MODEL || 'gpt-4o-audio-preview').trim();
+  const preferredModel = String(process.env.SPEAKING_SCORE_PREFERRED_MODEL || 'doubao-seed-2-0-lite-260428').trim();
   if (!endpoint) {
     return {
-      score: fallbackScore(payload),
-      feedback: buildTemplateFeedback(payload.attemptType, payload.attemptIndex, payload.promptText),
-      status: 'scored-local'
+      score: 0,
+      feedback: '评分服务未配置，请联系管理员。',
+      status: 'score-pending',
+      error: 'missing-score-endpoint',
+      errorType: 'configuration'
     };
   }
   try {
@@ -270,8 +273,7 @@ async function scoreSpeakingAttempt(payload) {
       attemptType: payload.attemptType || '',
       attemptIndex: payload.attemptIndex || 0
     }));
-    const fallbackModel = String(process.env.SPEAKING_SCORE_FALLBACK_MODEL || 'gpt-4o-audio-preview').trim();
-    const models = [model, model, fallbackModel].filter((item, index) => item && (index < 2 || item !== model));
+    const models = preferredModel ? [preferredModel, preferredModel] : [model];
     let data = null;
     let lastError = null;
     for (let index = 0; index < models.length; index += 1) {
@@ -366,7 +368,6 @@ async function scoreSpeakingAttempt(payload) {
       answerAudioFileId: payload.answerAudioFileId || '',
       answerCloudPath: payload.answerCloudPath || ''
     }));
-    const fallbackFeedback = buildTemplateFeedback(payload.attemptType, payload.attemptIndex, payload.promptText);
     if (errorType === 'audio-download') {
       return {
         score: 0,
@@ -378,7 +379,9 @@ async function scoreSpeakingAttempt(payload) {
     }
     return {
       score: 0,
-      feedback: '模型繁忙，录音已保存。请稍后重新提交评分。',
+      pronunciationFluencyScore: 0,
+      contentGrammarScore: 0,
+      feedback: '模型评分暂时失败，录音已保存，请重新提交评分。',
       status: 'score-pending',
       error: String(error && error.message || error || ''),
       errorType

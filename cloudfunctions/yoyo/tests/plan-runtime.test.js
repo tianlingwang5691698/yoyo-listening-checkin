@@ -65,3 +65,14 @@ test('阶段二 New Concept 1 每天排 3 条', () => {
     [3, 4, 5]
   );
 });
+
+test('阶段二 Unlock1 每天安排三个音频', () => {
+  assert.deepEqual(
+    planRuntime.getPlanIndicesForCategory(73, 'unlock1', 24),
+    [0, 1, 2]
+  );
+  assert.deepEqual(
+    planRuntime.getPlanIndicesForCategory(144, 'unlock1', 24),
+    [21, 22, 23]
+  );
+});
