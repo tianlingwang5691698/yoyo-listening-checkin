@@ -184,6 +184,17 @@
     </view>
     <view class="speaking-feedback" wx:if="{{speakingPromptText}}">{{speakingPromptText}}</view>
 
+    <view class="score-dimensions" wx:if="{{speakingMode === 'nce-question-answer' && speakingScoreDetail.visible}}">
+      <view class="score-dimension-item">
+        <view class="score-dimension-value">{{speakingScoreDetail.pronunciationFluencyScore}}</view>
+        <view class="score-dimension-label">发音流畅</view>
+      </view>
+      <view class="score-dimension-item">
+        <view class="score-dimension-value">{{speakingScoreDetail.contentGrammarScore}}</view>
+        <view class="score-dimension-label">内容语法评分</view>
+      </view>
+    </view>
+
     <view class="action-row speaking-actions">
       <button class="player-action record-action {{speakingTempFilePath ? 'is-ready' : ''}}" wx:if="{{!speakingRecording}}" bindtap="startSpeakingRecord">{{speakingTempFilePath ? '重录' : '开始录音'}}</button>
       <button class="player-action record-action is-recording" wx:else bindtap="stopSpeakingRecord">停止录音</button>

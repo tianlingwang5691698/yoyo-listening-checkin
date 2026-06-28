@@ -131,6 +131,27 @@ function buildLocalSpeakingSummary(attempts) {
   return { latestScore, bestScore, averageScore, scoredCount: scores.length };
 }
 
+function buildSpeakingScoreDetail(attempts) {
+  const latest = (attempts || []).filter((item) => (
+    item.attemptType === 'nce_question_answer'
+    && (
+      item.status === 'scored'
+      || item.status === 'scored-local'
+      || Number(item.score || 0) > 0
+      || Number(item.pronunciationFluencyScore || 0) > 0
+      || Number(item.contentGrammarScore || 0) > 0
+    )
+  )).slice(-1)[0];
+  if (!latest) {
+    return { visible: false, pronunciationFluencyScore: 0, contentGrammarScore: 0 };
+  }
+  return {
+    visible: true,
+    pronunciationFluencyScore: Math.round(Number(latest.pronunciationFluencyScore || 0)),
+    contentGrammarScore: Math.round(Number(latest.contentGrammarScore || 0))
+  };
+}
+
 function normalizeSpeakingAttempts(attempts) {
   return (attempts || []).map((item) => {
     const feedback = String(item.feedback || '').replace(/模型繁忙，?/g, '录音已保存，');
@@ -238,6 +259,7 @@ Page({
     speakingSubmitting: false,
     speakingAttempts: [],
     speakingSummary: {},
+    speakingScoreDetail: { visible: false, pronunciationFluencyScore: 0, contentGrammarScore: 0 },
     speakingRescoringKey: '',
     speakingCanContinue: false,
     pendingListenAfterSpeaking: false,
@@ -697,6 +719,7 @@ Page({
     this.setData({
       speakingAttempts: attempts,
       speakingSummary: result.summary || {},
+      speakingScoreDetail: buildSpeakingScoreDetail(attempts),
       speakingCanContinue: canContinueAfterSpeaking(attempts),
       repeatCompletedCount: Object.keys(repeated).length
     });
@@ -825,6 +848,7 @@ Page({
         this.setData({
           speakingAttempts: attempts,
           speakingSummary: buildLocalSpeakingSummary(attempts),
+          speakingScoreDetail: buildSpeakingScoreDetail(attempts),
           repeatCompletedCount: Object.keys(repeated).length,
           speakingTempFilePath: '',
           speakingRecordDurationMs: 0,
@@ -882,6 +906,7 @@ Page({
       this.setData({
         speakingAttempts: normalizedAttempts,
         speakingSummary: buildLocalSpeakingSummary(normalizedAttempts),
+        speakingScoreDetail: buildSpeakingScoreDetail(normalizedAttempts),
         speakingTempFilePath: '',
         speakingRecordDurationMs: 0,
         speakingRecordDurationText: '',
@@ -987,6 +1012,7 @@ Page({
       this.setData({
         speakingAttempts: normalizedAttempts,
         speakingSummary: buildLocalSpeakingSummary(normalizedAttempts),
+        speakingScoreDetail: buildSpeakingScoreDetail(normalizedAttempts),
         speakingPromptText: normalizedAttempt && normalizedAttempt.feedback ? normalizedAttempt.feedback : '',
         speakingCanContinue: canContinueAfterSpeaking(normalizedAttempts)
       });
