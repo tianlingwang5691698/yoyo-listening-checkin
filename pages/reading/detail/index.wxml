@@ -1,0 +1,56 @@
+<view class="theme-{{theme}} page-shell reading-detail">
+  <view class="section-panel" wx:if="{{loading}}">
+    <view class="section-title">阅读加载中</view>
+    <view class="section-copy">正在准备文章。</view>
+  </view>
+
+  <block wx:elif="{{passage}}">
+    <view class="passage-card card">
+      <view class="passage-meta">{{passage.year}} · {{passage.district}} · {{passage.examType}} · 阅读 {{passage.section}}</view>
+      <view class="passage-title">{{passage.title}}</view>
+      <view class="passage-text">{{passage.passage}}</view>
+    </view>
+
+    <view class="question-card card" wx:for="{{passage.questions}}" wx:key="number">
+      <view class="question-title">{{item.number}}. {{item.prompt}}</view>
+      <view class="option-list">
+        <button class="option-row {{option.selected ? 'is-selected' : ''}}" wx:for="{{item.optionsList}}" wx:key="key" wx:for-item="option" data-number="{{item.number}}" data-option="{{option.key}}" bindtap="selectOption">
+          <text class="option-key">{{option.key}}</text>
+          <text class="option-text">{{option.text}}</text>
+        </button>
+      </view>
+    </view>
+
+    <button class="button-primary submit-button" wx:if="{{!submitted}}" loading="{{submitting}}" disabled="{{submitting}}" bindtap="submit">提交阅读</button>
+
+    <view class="review-card card" wx:if="{{submitted}}">
+      <view class="review-score" wx:if="{{hasScore}}">{{attempt.score}} 分</view>
+      <view class="review-score" wx:else>已完成</view>
+      <view class="review-copy">可查看答案句、短语、生词和解析。</view>
+    </view>
+
+    <view class="review-card card" wx:if="{{review}}">
+      <view class="review-title">解析</view>
+      <view class="review-section" wx:if="{{review.answerSentences.length}}">
+        <view class="review-label">答案句</view>
+        <view class="review-line" wx:for="{{review.answerSentences}}" wx:key="*this">{{item}}</view>
+      </view>
+      <view class="review-section" wx:if="{{review.phrases.length}}">
+        <view class="review-label">短语</view>
+        <view class="review-line" wx:for="{{review.phrases}}" wx:key="*this">{{item}}</view>
+      </view>
+      <view class="review-section" wx:if="{{review.vocabulary.length}}">
+        <view class="review-label">生词</view>
+        <view class="review-line" wx:for="{{review.vocabulary}}" wx:key="*this">{{item}}</view>
+      </view>
+      <view class="review-section" wx:if="{{review.analysis.length}}">
+        <view class="review-label">题目解析</view>
+        <view class="analysis-line" wx:for="{{review.analysis}}" wx:key="number">
+          {{item.number}}. 答案 {{item.answer || '待补充'}}，你的答案 {{item.selected || '-'}}。{{item.text}}
+        </view>
+      </view>
+    </view>
+  </block>
+
+  <view class="empty-state" wx:else>阅读内容还在准备中。</view>
+</view>

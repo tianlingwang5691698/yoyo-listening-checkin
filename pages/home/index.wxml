@@ -25,6 +25,7 @@
     </view>
   </view>
 
+  <view class="home-section-heading" wx:if="{{hasGroupedTasks}}">听力</view>
   <swiper class="program-swiper" wx:if="{{hasGroupedTasks}}" previous-margin="32rpx" next-margin="32rpx" circular="{{false}}" indicator-dots="{{true}}" indicator-color="rgba(37, 35, 33, 0.14)" indicator-active-color="#252321">
     <block wx:for="{{groupedDailyTasks}}" wx:key="category">
       <swiper-item>
@@ -55,6 +56,17 @@
       </swiper-item>
     </block>
   </swiper>
+
+  <view class="home-section-heading">阅读</view>
+  <view class="reading-entry card" bindtap="openReading">
+    <view class="reading-entry-main">
+      <view class="reading-entry-kicker">每天 1 篇</view>
+      <view class="reading-entry-title">{{readingToday.title || '今日阅读'}}</view>
+      <view class="reading-entry-meta" wx:if="{{readingToday}}">{{readingToday.meta}} · {{readingToday.questionCount}} 题</view>
+      <view class="reading-entry-meta" wx:else>{{readingLoading ? '正在准备今日文章' : '今日阅读还在准备中'}}</view>
+    </view>
+    <view class="reading-entry-state">{{readingCompleted ? '完成' : '›'}}</view>
+  </view>
 
   <view class="empty-state" wx:if="{{!homeLoading && !hasGroupedTasks && syncMode !== 'cloud-error'}}">今日任务还在准备中。</view>
 </view>

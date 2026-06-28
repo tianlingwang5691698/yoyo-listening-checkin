@@ -14,7 +14,10 @@ Page({
     studyRole: 'parent',
     identityConfirmVisible: true,
     modeChangedNoticeVisible: false,
-    homeLoading: true
+    homeLoading: true,
+    readingLoading: true,
+    readingToday: null,
+    readingCompleted: false
   }),
   buildStudyModePresentation(member) {
     const studyRole = member && member.studyRole === 'student' ? 'student' : 'parent';
@@ -45,6 +48,18 @@ Page({
     }, this.buildStudyModePresentation(data.currentMember))));
     return groupedDailyTasks;
   },
+  applyReadingHome(data) {
+    this.setData({
+      readingLoading: false,
+      readingToday: data.passage || null,
+      readingCompleted: !!data.completedToday
+    });
+  },
+  async loadReadingHome() {
+    this.setData({ readingLoading: true });
+    const data = await store.getReadingHome({}, (fresh) => this.applyReadingHome(fresh));
+    this.applyReadingHome(data);
+  },
   async onShow() {
     const startedAt = Date.now();
     page.syncTheme(this);
@@ -57,6 +72,7 @@ Page({
     });
     const data = await store.getDashboard({ view: 'home' }, (fresh) => this.applyDashboard(fresh));
     const groupedDailyTasks = this.applyDashboard(data);
+    this.loadReadingHome();
     monitor.logPerf('home', 'onShow', Date.now() - startedAt, {
       groups: groupedDailyTasks.length
     });
@@ -115,6 +131,18 @@ Page({
       : `/pages/lesson/index?category=${category}`;
     wx.navigateTo({
       url: query
+    });
+  },
+  openReading() {
+    if (this.data.identityConfirmVisible) {
+      wx.showToast({
+        title: '先选择身份',
+        icon: 'none'
+      });
+      return;
+    }
+    wx.navigateTo({
+      url: '/pages/reading/index'
     });
   },
   openFamilyPage() {

@@ -1,0 +1,68 @@
+.reading-page {
+  padding-top: 72rpx;
+}
+
+.reading-hero {
+  padding: 34rpx 32rpx;
+  background: var(--surface-raised);
+}
+
+.reading-eyebrow {
+  color: var(--text-muted);
+  font-size: var(--font-caption-size);
+  font-weight: var(--font-title-weight);
+}
+
+.reading-title {
+  margin-top: 10rpx;
+  color: var(--text-strong);
+  font-size: var(--font-page-title-size);
+  line-height: 1.2;
+  font-weight: var(--font-title-weight);
+}
+
+.reading-copy {
+  margin-top: 14rpx;
+  color: var(--text-muted);
+  font-size: var(--font-body-size);
+  line-height: var(--line-body);
+}
+
+.reading-card {
+  margin-top: 24rpx;
+  padding: 30rpx 28rpx;
+}
+
+.reading-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20rpx;
+}
+
+.reading-card-label,
+.reading-card-state {
+  color: var(--accent-deep);
+  font-size: var(--font-caption-size);
+  font-weight: var(--font-title-weight);
+}
+
+.reading-card-title {
+  margin-top: 18rpx;
+  color: var(--text-strong);
+  font-size: var(--font-card-title-size);
+  line-height: 1.25;
+  font-weight: var(--font-title-weight);
+}
+
+.reading-card-meta {
+  margin-top: 12rpx;
+  color: var(--text-muted);
+  font-size: var(--font-body-size);
+  line-height: var(--line-body);
+}
+
+.section-panel,
+.empty-state {
+  margin-top: 24rpx;
+}

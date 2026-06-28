@@ -70,6 +70,14 @@
   height: 660rpx;
 }
 
+.home-section-heading {
+  margin: 0 20rpx 18rpx;
+  color: var(--text-strong);
+  font-size: var(--font-section-title-size);
+  line-height: 1.3;
+  font-weight: var(--font-section-heading-weight);
+}
+
 .program-slide {
   min-height: 590rpx;
   margin: 0 10rpx;
@@ -185,4 +193,49 @@
 
 .slide-task.is-disabled {
   opacity: 0.48;
+}
+
+.reading-entry {
+  margin: 24rpx 20rpx 0;
+  padding: 28rpx 28rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24rpx;
+  background: var(--surface-raised);
+}
+
+.reading-entry-main {
+  min-width: 0;
+  flex: 1;
+}
+
+.reading-entry-kicker {
+  color: var(--accent-deep);
+  font-size: var(--font-caption-size);
+  line-height: 1.3;
+  font-weight: var(--font-title-weight);
+}
+
+.reading-entry-title {
+  margin-top: 10rpx;
+  color: var(--text-strong);
+  font-size: var(--font-section-title-size);
+  line-height: 1.3;
+  font-weight: var(--font-title-weight);
+  word-break: break-word;
+}
+
+.reading-entry-meta {
+  margin-top: 8rpx;
+  color: var(--text-muted);
+  font-size: var(--font-caption-size);
+  line-height: var(--line-caption);
+}
+
+.reading-entry-state {
+  flex-shrink: 0;
+  color: var(--accent-deep);
+  font-size: var(--font-section-title-size);
+  font-weight: var(--font-title-weight);
 }

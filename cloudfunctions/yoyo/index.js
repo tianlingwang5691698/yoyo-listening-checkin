@@ -352,6 +352,7 @@ const reportService = require('./services/report.service');
 const identityService = require('./services/identity.service');
 const catalogService = require('./services/catalog.service');
 const speakingService = require('./services/speaking.service');
+const readingService = require('./services/reading.service');
 const monitor = require('./lib/monitor');
 
 if (!taskService.__autoCheckinAfterListeningPatch) {
@@ -405,7 +406,10 @@ const actionMap = {
   getHeatmap: reportService.getHeatmap,
   getMonthHeatmap: reportService.getMonthHeatmap,
   getDailyReportByDate: reportService.getDailyReportByDate,
-  getParentDashboard: reportService.getParentDashboard
+  getParentDashboard: reportService.getParentDashboard,
+  getReadingHome: readingService.getReadingHome,
+  getReadingPassage: readingService.getReadingPassage,
+  submitReadingAttempt: readingService.submitReadingAttempt
 };
 
 const MONITORED_ACTIONS = new Set([
@@ -425,7 +429,10 @@ const MONITORED_ACTIONS = new Set([
   'setStudyRole',
   'getMonthHeatmap',
   'getDailyReportByDate',
-  'getParentDashboard'
+  'getParentDashboard',
+  'getReadingHome',
+  'getReadingPassage',
+  'submitReadingAttempt'
 ]);
 
 exports.main = async (event, context) => {

@@ -16,7 +16,9 @@ const READ_CACHE_CONFIG = {
   getMonthHeatmap: { persist: true },
   getDailyReportByDate: { persist: true },
   getParentDashboard: { persist: true },
-  getFamilyPage: { persist: true }
+  getFamilyPage: { persist: true },
+  getReadingHome: { persist: true },
+  getReadingPassage: { persist: true }
 };
 
 /**
@@ -435,6 +437,32 @@ async function getParentDashboard(onRefresh) {
   }, { onRefresh });
 }
 
+async function getReadingHome(options, onRefresh) {
+  return callCloud('getReadingHome', Object.assign({}, options || {}), {
+    today: '',
+    dailyCount: 1,
+    passage: null,
+    completedToday: false,
+    latestAttempt: null
+  }, { onRefresh });
+}
+
+async function getReadingPassage(options, onRefresh) {
+  return callCloud('getReadingPassage', Object.assign({}, options || {}), {
+    today: '',
+    passage: null,
+    latestAttempt: null
+  }, { onRefresh });
+}
+
+async function submitReadingAttempt(options) {
+  return callCloud('submitReadingAttempt', Object.assign({}, options || {}), {
+    passage: null,
+    attempt: null,
+    review: null
+  }, { useCache: false });
+}
+
 /**
  * @returns {Promise<FamilyPageData>}
  */
@@ -495,6 +523,9 @@ module.exports = {
   getSpeakingAttempts,
   completeTodayCheckin,
   getParentDashboard,
+  getReadingHome,
+  getReadingPassage,
+  submitReadingAttempt,
   getFamilyPageData,
   refreshInviteCode,
   joinFamily,

@@ -1,0 +1,23 @@
+<view class="theme-{{theme}} page-shell reading-page">
+  <view class="reading-hero card">
+    <view class="reading-eyebrow">今日阅读</view>
+    <view class="reading-title">每天 1 篇</view>
+    <view class="reading-copy">完成后查看答案句、短语、生词和解析。</view>
+  </view>
+
+  <view class="section-panel" wx:if="{{loading}}">
+    <view class="section-title">阅读加载中</view>
+    <view class="section-copy">正在准备今日文章。</view>
+  </view>
+
+  <view class="reading-card card" wx:elif="{{passage}}" bindtap="openPassage">
+    <view class="reading-card-top">
+      <view class="reading-card-label">今日 1 篇</view>
+      <view class="reading-card-state">{{completedToday ? '已完成' : '开始'}}</view>
+    </view>
+    <view class="reading-card-title">{{passage.title}}</view>
+    <view class="reading-card-meta">{{passage.meta}} · {{passage.questionCount}} 题</view>
+  </view>
+
+  <view class="empty-state" wx:else>今日阅读还在准备中。</view>
+</view>

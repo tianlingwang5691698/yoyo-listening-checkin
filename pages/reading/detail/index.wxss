@@ -1,0 +1,117 @@
+.reading-detail {
+  padding-top: 28rpx;
+}
+
+.passage-card,
+.question-card,
+.review-card {
+  padding: 30rpx 28rpx;
+  margin-bottom: 22rpx;
+}
+
+.passage-meta {
+  color: var(--text-muted);
+  font-size: var(--font-caption-size);
+  font-weight: var(--font-title-weight);
+}
+
+.passage-title {
+  margin-top: 10rpx;
+  color: var(--text-strong);
+  font-size: var(--font-card-title-size);
+  line-height: 1.25;
+  font-weight: var(--font-title-weight);
+}
+
+.passage-text {
+  margin-top: 22rpx;
+  color: var(--text-main);
+  font-size: 28rpx;
+  line-height: 1.7;
+  white-space: pre-wrap;
+}
+
+.question-title {
+  color: var(--text-strong);
+  font-size: 28rpx;
+  line-height: 1.45;
+  font-weight: var(--font-title-weight);
+}
+
+.option-list {
+  margin-top: 18rpx;
+  display: flex;
+  flex-direction: column;
+  gap: 14rpx;
+}
+
+.option-row {
+  width: 100%;
+  min-height: 78rpx;
+  padding: 18rpx 20rpx;
+  border-radius: var(--radius-lg);
+  background: var(--surface-subtle);
+  color: var(--text-main);
+  display: flex;
+  align-items: flex-start;
+  gap: 16rpx;
+  text-align: left;
+}
+
+.option-row.is-selected {
+  background: var(--accent-soft);
+  color: var(--accent-deep);
+}
+
+.option-key {
+  flex-shrink: 0;
+  width: 42rpx;
+  font-size: var(--font-control-size);
+  font-weight: var(--font-title-weight);
+}
+
+.option-text {
+  flex: 1;
+  min-width: 0;
+  font-size: var(--font-body-size);
+  line-height: 1.45;
+}
+
+.submit-button {
+  margin: 10rpx 0 26rpx;
+}
+
+.review-score {
+  color: var(--accent-deep);
+  font-size: var(--font-page-title-size);
+  font-weight: var(--font-title-weight);
+}
+
+.review-copy,
+.review-line,
+.analysis-line {
+  margin-top: 10rpx;
+  color: var(--text-muted);
+  font-size: var(--font-body-size);
+  line-height: var(--line-body);
+}
+
+.review-title {
+  color: var(--text-strong);
+  font-size: var(--font-section-title-size);
+  font-weight: var(--font-title-weight);
+}
+
+.review-section {
+  margin-top: 24rpx;
+}
+
+.review-label {
+  color: var(--text-main);
+  font-size: var(--font-body-size);
+  font-weight: var(--font-title-weight);
+}
+
+.analysis-line {
+  color: var(--text-main);
+}
