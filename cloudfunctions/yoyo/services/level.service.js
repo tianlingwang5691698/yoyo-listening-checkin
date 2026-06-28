@@ -60,8 +60,11 @@ async function getLevelOverview(event) {
     level: study.level,
     stats: dashboard.stats,
     categories: ['newconcept1', 'peppa', 'unlock1', 'song'].map((category) => {
+      const categoryTasks = previewPlan
+        ? previewTasks.filter((item) => item.category === category)
+        : [];
       const task = previewPlan
-        ? study.buildCategorySummary(previewTasks.filter((item) => item.category === category), category)
+        ? study.buildCategorySummary(categoryTasks, category)
         : (dashboard.categorySummaries || []).find((item) => item.category === category);
       const fallbackTask = study.buildCategorySummary([], category);
       const todayTask = task || fallbackTask;
@@ -73,6 +76,9 @@ async function getLevelOverview(event) {
         todayTask,
         isPendingAsset: todayTask.isPendingAsset,
         todayTaskCount: todayTask.plannedTaskCount || 0,
+        plannedDurationSec: categoryTasks.reduce((sum, item) => (
+          sum + (Number(item.durationSec || 0) * Number(item.repeatTarget || 1))
+        ), 0),
         planRunType: previewPlan ? 'preview' : 'normal',
         planDayIndex: previewPlan ? previewPlan.dayIndex : dashboard.planDayIndex
       };

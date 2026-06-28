@@ -89,6 +89,7 @@ test('契约工厂返回完整默认结构', () => {
     planDayIndex: 0,
     planPhase: '',
     items: [],
+    speakingAttempts: [],
     pushStatus: '',
     inAppVisible: true,
     updatedAt: ''

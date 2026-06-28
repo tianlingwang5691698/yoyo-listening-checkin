@@ -11,7 +11,10 @@ function getPlanPhase(dayIndex) {
   return PLAN_PHASES.find((phase) => dayIndex >= phase.startDay && dayIndex < phase.startDay + phase.length) || PLAN_PHASES[0];
 }
 
-function getPlanCategoryOrder() {
+function getPlanCategoryOrder(dayIndex = 1) {
+  if (getPlanPhase(dayIndex).key === 'round-2') {
+    return ['newconcept1', 'peppa', 'unlock1'];
+  }
   return ['newconcept1', 'peppa', 'unlock1', 'song'];
 }
 
@@ -133,7 +136,13 @@ function getRound2IndicesForCategory(dayIndex, category, catalogLength) {
     const unlockCount = Math.min(PLAN_SLOT_COUNT, catalogLength);
     return buildLoopingIndices((roundDay - 1) * 3, 3, unlockCount);
   }
-  return buildLoopingIndices(72 + roundDay - 1, 1, catalogLength);
+  if (category === 'peppa') {
+    return buildLoopingIndices(72 + (roundDay - 1) * 5, 5, catalogLength);
+  }
+  if (category === 'song') {
+    return buildLoopingIndices(72 + (roundDay - 1) * 3, 3, catalogLength);
+  }
+  return buildLoopingIndices((roundDay - 1) * 3, 3, catalogLength);
 }
 
 function getPlanIndicesForCategory(dayIndex, category, catalogLength) {

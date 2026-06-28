@@ -29,6 +29,7 @@ function formatDuration(ms) {
 function formatAttemptForClient(record) {
   const answerDurationMs = Number(record && (record.answerDurationMs || record.recordDurationMs || 0));
   return Object.assign({}, record, {
+    attemptId: (record && (record.attemptId || record._id)) || '',
     answerDurationMs,
     answerDurationText: formatDuration(answerDurationMs)
   });
@@ -179,8 +180,71 @@ async function getSpeakingAttempts(event) {
   };
 }
 
+async function rescoreSpeakingAttempt(event) {
+  const { ctx, today } = await study.prepareRequestContext(Object.assign({}, event, {
+    action: 'rescoreSpeakingAttempt'
+  }));
+  const payload = (event && event.payload) || {};
+  const attemptId = String(payload.attemptId || '').trim();
+  const existing = await attemptRepository.findById(attemptId);
+  const scope = study.getUserScope(ctx);
+  if (!existing || existing.familyId !== scope.familyId || existing.childId !== scope.childId) {
+    throw new Error('录音记录不存在');
+  }
+  if (existing.planRunType !== 'preview' && study.normalizeStudyRole(ctx.member) !== 'student') {
+    throw new Error('家长模式不计入训练');
+  }
+  const attempt = normalizeAttemptPayload(Object.assign({}, existing, {
+    targetDate: existing.date || today
+  }));
+  const task = await resolveTaskForPayload(ctx, attempt, today);
+  let questionMeta = null;
+  let sourceText = '';
+  if (attempt.attemptType === 'nce_question_answer') {
+    const transcriptBundle = await study.getTranscriptBundle(task || {
+      category: attempt.category,
+      taskId: attempt.taskId
+    });
+    questionMeta = speakingEngine.findQuestionFromTranscript(transcriptBundle.transcriptTrack);
+    sourceText = speakingEngine.buildSourceTextFromTranscript(transcriptBundle.transcriptTrack);
+  }
+  const promptText = attempt.promptText || attempt.questionText || (questionMeta && questionMeta.questionText) || '';
+  const scoreResult = await speakingEngine.scoreSpeakingAttempt(Object.assign({}, existing, attempt, {
+    promptText,
+    sourceText,
+    taskTitle: task ? task.title : ''
+  }));
+  const now = new Date().toISOString();
+  const patch = {
+    promptText,
+    questionText: existing.questionText || (questionMeta && questionMeta.questionText) || '',
+    score: Number(scoreResult.score || 0),
+    pronunciationFluencyScore: Number(scoreResult.pronunciationFluencyScore || 0),
+    contentGrammarScore: Number(scoreResult.contentGrammarScore || 0),
+    studentTranscript: scoreResult.transcript || '',
+    feedback: scoreResult.feedback || '',
+    status: scoreResult.status || 'saved',
+    scoreError: scoreResult.error || '',
+    scoreErrorType: scoreResult.errorType || '',
+    updatedAt: now
+  };
+  await attemptRepository.update(attemptId, patch);
+  const attempts = await attemptRepository.findBestAndLatestByTask(scope, {
+    date: existing.date || today,
+    category: existing.category,
+    taskId: existing.taskId,
+    attemptType: existing.attemptType
+  });
+  return {
+    attempt: formatAttemptForClient(Object.assign({}, existing, patch, { _id: attemptId })),
+    attempts: attempts.map(formatAttemptForClient),
+    summary: speakingEngine.summarizeAttempts(attempts)
+  };
+}
+
 module.exports = {
   createSpeakingUploadUrl,
   submitSpeakingAttempt,
-  getSpeakingAttempts
+  getSpeakingAttempts,
+  rescoreSpeakingAttempt
 };

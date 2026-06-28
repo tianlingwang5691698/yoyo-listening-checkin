@@ -1,12 +1,41 @@
 const https = require('https');
+const crypto = require('crypto');
+const WebSocket = require('ws');
+const tencentcloud = require('tencentcloud-sdk-nodejs');
 const storageAdapter = require('../adapters/storage.adapter');
 
 function normalizeText(value) {
   return String(value || '').replace(/\s+/g, ' ').trim();
 }
 
+function getEnvValue(names) {
+  for (const name of names) {
+    const value = String(process.env[name] || '').trim();
+    if (value) {
+      return value;
+    }
+  }
+  return '';
+}
+
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+function clampScore(value, fallback) {
+  const score = Number(value);
+  if (!Number.isFinite(score)) {
+    return fallback;
+  }
+  return Math.max(0, Math.min(100, score));
+}
+
+function readNumber(value) {
+  if (value === null || value === undefined || value === '') {
+    return NaN;
+  }
+  const number = Number(value);
+  return Number.isFinite(number) ? number : NaN;
 }
 
 function postJson(url, headers, body) {
@@ -37,7 +66,7 @@ function postJson(url, headers, body) {
           return;
         }
         try {
-          resolve(JSON.parse(text));
+          resolve(parseJsonResponseBody(text));
         } catch (error) {
           reject(error);
         }
@@ -52,10 +81,112 @@ function postJson(url, headers, body) {
   });
 }
 
+function parseJsonResponseBody(text) {
+  const raw = String(text || '').trim();
+  if (!raw) {
+    throw new Error('empty-json-response');
+  }
+  try {
+    return JSON.parse(raw);
+  } catch (error) {}
+  const dataLines = raw
+    .split(/\r?\n/)
+    .map((line) => line.trim())
+    .filter((line) => line.startsWith('data:'))
+    .map((line) => line.slice(5).trim())
+    .filter((line) => line && line !== '[DONE]');
+  if (!dataLines.length) {
+    throw new Error(`invalid-json-response:${raw.slice(0, 80)}`);
+  }
+  let last = null;
+  let streamedText = '';
+  dataLines.forEach((line) => {
+    const item = JSON.parse(line);
+    last = item;
+    const choice = item && item.choices && item.choices[0];
+    streamedText += extractMessageText(choice && (choice.delta || choice.message || choice.text || ''));
+  });
+  return streamedText
+    ? { choices: [{ message: { content: streamedText } }], _streamed: true }
+    : last;
+}
+
+async function postJsonWithRetry(url, headers, body, label) {
+  let lastError = null;
+  for (let attempt = 1; attempt <= 3; attempt += 1) {
+    try {
+      return await postJson(url, headers, body);
+    } catch (error) {
+      lastError = error;
+      if (!isRetryableScoreError(error) || attempt === 3) {
+        break;
+      }
+      console.warn('[speaking-score-retry]', JSON.stringify({
+        label: label || 'json',
+        attempt,
+        message: String(error && error.message || error || '')
+      }));
+      await sleep(900 * attempt);
+    }
+  }
+  throw lastError;
+}
+
+function postMultipart(url, headers, fields, file) {
+  return new Promise((resolve, reject) => {
+    const target = new URL(url);
+    const boundary = `----yoyo${Date.now()}${Math.random().toString(16).slice(2)}`;
+    const chunks = [];
+    Object.keys(fields || {}).forEach((name) => {
+      chunks.push(Buffer.from(`--${boundary}\r\nContent-Disposition: form-data; name="${name}"\r\n\r\n${fields[name]}\r\n`));
+    });
+    chunks.push(Buffer.from(`--${boundary}\r\nContent-Disposition: form-data; name="${file.name}"; filename="${file.filename}"\r\nContent-Type: ${file.contentType}\r\n\r\n`));
+    chunks.push(Buffer.isBuffer(file.buffer) ? file.buffer : Buffer.from(file.buffer || ''));
+    chunks.push(Buffer.from(`\r\n--${boundary}--\r\n`));
+    const payload = Buffer.concat(chunks);
+    const request = https.request({
+      method: 'POST',
+      hostname: target.hostname,
+      path: `${target.pathname}${target.search}`,
+      headers: Object.assign({}, headers, {
+        'content-type': `multipart/form-data; boundary=${boundary}`,
+        'content-length': payload.length
+      }),
+      timeout: 22000
+    }, (response) => {
+      let text = '';
+      response.setEncoding('utf8');
+      response.on('data', (chunk) => {
+        text += chunk;
+      });
+      response.on('end', () => {
+        if (response.statusCode < 200 || response.statusCode >= 300) {
+          const error = new Error(`transcribe-http-${response.statusCode || 0}:${text.slice(0, 120)}`);
+          error.statusCode = response.statusCode;
+          error.responseText = text;
+          reject(error);
+          return;
+        }
+        try {
+          resolve(parseJsonResponseBody(text));
+        } catch (error) {
+          reject(error);
+        }
+      });
+    });
+    request.on('timeout', () => {
+      request.destroy(new Error('transcribe-timeout'));
+    });
+    request.on('error', reject);
+    request.write(payload);
+    request.end();
+  });
+}
+
 function isRetryableScoreError(error) {
   const message = String(error && error.message || error || '');
   return (error && error.statusCode === 429)
-    || /upstream|负载|timeout|ECONNRESET|ETIMEDOUT/i.test(message);
+    || /upstream|负载|timeout|transcribe-http|ECONNRESET|ETIMEDOUT/i.test(message);
 }
 
 function getSpeakingErrorType(error) {
@@ -63,7 +194,7 @@ function getSpeakingErrorType(error) {
   if (/storage|downloadFile|fileID|cloudPath|ENOENT|not\s*found/i.test(message)) {
     return 'audio-download';
   }
-  if (/score-http|429|upstream|负载|timeout|ECONNRESET|ETIMEDOUT/i.test(message)) {
+  if (/transcribe-http|score-http|429|upstream|负载|timeout|ECONNRESET|ETIMEDOUT/i.test(message)) {
     return 'model-busy';
   }
   return 'unknown';
@@ -208,6 +339,693 @@ function parseJsonResponseText(text) {
   }
 }
 
+function extractMessageText(content) {
+  if (Array.isArray(content)) {
+    return content.map((item) => (
+      item && typeof item === 'object'
+        ? (item.text || item.transcript || item.content || item.output_text || '')
+        : item
+    )).join(' ');
+  }
+  if (content && typeof content === 'object') {
+    return content.text || content.transcript || content.content || JSON.stringify(content);
+  }
+  return String(content || '');
+}
+
+function inferTranscribeEndpoint(endpoint) {
+  return normalizeTranscribeEndpoint(String(endpoint || '').replace(/\/chat\/completions\/?$/, '/audio/transcriptions'));
+}
+
+function normalizeTranscribeEndpoint(endpoint) {
+  return String(endpoint || '').trim();
+}
+
+function inferAudioFormat(buffer) {
+  if (!Buffer.isBuffer(buffer) || buffer.length < 12) {
+    return '';
+  }
+  const head4 = buffer.slice(0, 4).toString('ascii');
+  const head3 = buffer.slice(0, 3).toString('ascii');
+  if (head3 === 'ID3' || (buffer[0] === 0xff && (buffer[1] & 0xe0) === 0xe0)) {
+    return 'mp3';
+  }
+  if (head4 === 'RIFF') {
+    return 'wav';
+  }
+  if (head4 === 'OggS') {
+    return 'ogg-opus';
+  }
+  if (head4.charCodeAt(0) === 0x1a && head4.charCodeAt(1) === 0x45 && head4.charCodeAt(2) === 0xdf && head4.charCodeAt(3) === 0xa3) {
+    return 'webm';
+  }
+  if (buffer.slice(4, 8).toString('ascii') === 'ftyp') {
+    return 'm4a';
+  }
+  if (buffer.slice(0, 5).toString('ascii') === '#!AM') {
+    return 'amr';
+  }
+  return '';
+}
+
+async function transcribeAudio(endpoint, authHeaders, model, audioBuffer) {
+  const data = await postMultipart(normalizeTranscribeEndpoint(endpoint), authHeaders, {
+    model,
+    language: 'en',
+    prompt: 'This is a child answering a short English lesson question.'
+  }, {
+    name: 'file',
+    filename: 'answer.mp3',
+    contentType: 'audio/mpeg',
+    buffer: audioBuffer
+  });
+  return normalizeText(data && (data.text || data.transcript || data.output_text));
+}
+
+async function transcribeAudioByChat(endpoint, authHeaders, model, audioBuffer) {
+  const data = await postJson(endpoint, authHeaders, {
+    model,
+    temperature: 0,
+    messages: [{
+      role: 'user',
+      content: [{
+        type: 'text',
+        text: [
+          'Listen to this child English audio and transcribe the student answer.',
+          'Return JSON only: {"transcript":"exact English words you hear"}.',
+          'If there is any understandable English, write it. Do not translate.'
+        ].join('\n')
+      }, {
+        type: 'input_audio',
+        input_audio: {
+          data: audioBuffer.toString('base64'),
+          format: 'mp3'
+        }
+      }]
+    }]
+  });
+  const message = data && data.choices && data.choices[0] && data.choices[0].message
+    ? data.choices[0].message
+    : {};
+  const parsed = parseJsonResponseText(extractMessageText(message.content));
+  return normalizeText((parsed && parsed.transcript) || extractMessageText(message.audio && message.audio.transcript));
+}
+
+async function transcribeAudioByTencentAsr(audioBuffer, payload) {
+  const secretId = getEnvValue(['TENCENT_SECRET_ID', 'TENCENTCLOUD_SECRET_ID']);
+  const secretKey = getEnvValue(['TENCENT_SECRET_KEY', 'TENCENTCLOUD_SECRET_KEY']);
+  if (!secretId || !secretKey) {
+    throw new Error('missing-tencent-asr-credential');
+  }
+  const AsrClient = tencentcloud.asr.v20190614.Client;
+  const client = new AsrClient({
+    credential: { secretId, secretKey },
+    region: String(process.env.TENCENT_ASR_REGION || process.env.TENCENT_SOE_REGION || 'ap-guangzhou').trim(),
+    profile: {
+      httpProfile: {
+        endpoint: 'asr.tencentcloudapi.com',
+        reqTimeout: 20
+      }
+    }
+  });
+  const inferredFormat = inferAudioFormat(audioBuffer);
+  const voiceFormat = String(process.env.TENCENT_ASR_VOICE_FORMAT || inferredFormat || 'mp3').trim();
+  if (voiceFormat === 'webm') {
+    throw new Error('unsupported-webm-audio-use-real-device');
+  }
+  const baseRequest = {
+    EngSerViceType: String(process.env.TENCENT_ASR_ENGINE || '16k_en').trim(),
+    VoiceFormat: voiceFormat,
+    ProjectId: 0,
+    SubServiceType: 2,
+    UsrAudioKey: `yoyo-${Date.now()}`
+  };
+  const audioUrl = await storageAdapter.getTempFileURL(
+    payload && payload.answerAudioFileId,
+    payload && payload.answerCloudPath
+  );
+  console.log('[speaking-tencent-asr-input]', JSON.stringify({
+    bytes: audioBuffer && audioBuffer.length ? audioBuffer.length : 0,
+    voiceFormat,
+    magic: Buffer.isBuffer(audioBuffer) ? audioBuffer.slice(0, 12).toString('hex') : '',
+    hasUrl: !!audioUrl,
+    answerAudioFileId: payload && payload.answerAudioFileId ? 'yes' : 'no',
+    answerCloudPath: payload && payload.answerCloudPath ? 'yes' : 'no'
+  }));
+  if (audioUrl) {
+    try {
+      const urlResult = await client.SentenceRecognition(Object.assign({}, baseRequest, {
+        SourceType: 0,
+        Url: audioUrl
+      }));
+      const urlTranscript = normalizeText(urlResult && urlResult.Result);
+      if (urlTranscript) {
+        return urlTranscript;
+      }
+      console.warn('[speaking-tencent-asr-url-empty]', JSON.stringify({
+        requestId: urlResult && urlResult.RequestId ? urlResult.RequestId : '',
+        voiceFormat
+      }));
+    } catch (error) {
+      console.error('[speaking-tencent-asr-url-failed]', JSON.stringify({
+        message: String(error && error.message || error || '')
+      }));
+    }
+  }
+  if (!audioBuffer || !audioBuffer.length) {
+    throw new Error('tencent-asr-empty-audio-buffer');
+  }
+  const result = await client.SentenceRecognition(Object.assign({}, baseRequest, {
+    SourceType: 1,
+    Data: audioBuffer.toString('base64'),
+    DataLen: audioBuffer.length
+  }));
+  return normalizeText(result && result.Result);
+}
+
+function isChatAudioTranscribeModel(model) {
+  return /audio-preview|audio$/i.test(String(model || ''));
+}
+
+function isTencentAsrModel(model) {
+  return /^tencent-asr$/i.test(String(model || ''));
+}
+
+async function transcribeWithPreferredRoute(options) {
+  const {
+    endpoint,
+    transcribeEndpoint,
+    authHeaders,
+    model,
+    audioBuffer,
+    payload
+  } = options;
+  if (isTencentAsrModel(model)) {
+    return transcribeAudioByTencentAsr(audioBuffer, payload);
+  }
+  if (isChatAudioTranscribeModel(model)) {
+    return transcribeAudioByChat(endpoint, authHeaders, model, audioBuffer);
+  }
+  return transcribeAudio(transcribeEndpoint, authHeaders, model, audioBuffer);
+}
+
+function estimateFluencyScore(transcript) {
+  const answer = normalizeText(transcript);
+  if (!answer) {
+    return 0;
+  }
+  const wordCount = answer.split(/\s+/).filter(Boolean).length;
+  if (wordCount <= 2) {
+    return 68;
+  }
+  if (wordCount <= 5) {
+    return 76;
+  }
+  return 82;
+}
+
+function shouldUseTencentSoe() {
+  const provider = String(process.env.SPEAKING_PRONUNCIATION_PROVIDER || '').trim();
+  return provider === 'tencent-soe'
+    || provider === 'tencent-soe-new'
+    || String(process.env.TENCENT_SOE_ENABLED || '').trim() === '1';
+}
+
+function buildTencentSoeRefText(payload, transcript) {
+  const attemptType = String(payload && payload.attemptType || '');
+  if (attemptType === 'unlock_sentence_repeat') {
+    return normalizeText(payload.promptText || payload.questionText || transcript);
+  }
+  return normalizeText(transcript || payload.promptText || payload.questionText || 'answer');
+}
+
+function getTencentSoeVoiceFileType(format) {
+  const normalized = String(format || '').toLowerCase();
+  if (normalized === 'wav') {
+    return 2;
+  }
+  if (normalized === 'mp3') {
+    return 3;
+  }
+  if (normalized === 'speex') {
+    return 4;
+  }
+  return 0;
+}
+
+function getTencentSoeCredentials() {
+  return {
+    appId: getEnvValue(['TENCENT_SOE_APP_ID', 'TENCENT_APP_ID', 'TENCENTCLOUD_APP_ID', 'TENCENT_APPID', 'APPID']),
+    secretId: getEnvValue(['TENCENT_SECRET_ID', 'TENCENTCLOUD_SECRET_ID']),
+    secretKey: getEnvValue(['TENCENT_SECRET_KEY', 'TENCENTCLOUD_SECRET_KEY'])
+  };
+}
+
+function getTencentSoeNewVoiceFormat(format) {
+  const normalized = String(format || '').toLowerCase();
+  if (normalized === 'pcm') {
+    return 0;
+  }
+  if (normalized === 'wav') {
+    return 1;
+  }
+  if (normalized === 'mp3') {
+    return 2;
+  }
+  if (normalized === 'speex') {
+    return 4;
+  }
+  throw new Error(`tencent-soe-unsupported-audio-format:${normalized || 'unknown'}`);
+}
+
+function buildTencentSoeNewUrl(params, appId, secretKey) {
+  const keys = Object.keys(params).filter((key) => key !== 'signature').sort();
+  const queryForSign = keys.map((key) => `${key}=${params[key]}`).join('&');
+  const signText = `soe.cloud.tencent.com/soe/api/${appId}?${queryForSign}`;
+  const signature = crypto.createHmac('sha1', secretKey).update(signText).digest('base64');
+  const finalQuery = keys
+    .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`)
+    .concat(`signature=${encodeURIComponent(signature)}`)
+    .join('&');
+  return `wss://soe.cloud.tencent.com/soe/api/${appId}?${finalQuery}`;
+}
+
+function readNamedNumber(text, name) {
+  const match = String(text || '').match(new RegExp(`"?${name}"?\\s*[:=]\\s*(-?\\d+(?:\\.\\d+)?)`, 'i'));
+  return match ? Number(match[1]) : NaN;
+}
+
+function averageValidNamedNumbers(text, name) {
+  const values = [];
+  const pattern = new RegExp(`"?${name}"?\\s*[:=]\\s*(-?\\d+(?:\\.\\d+)?)`, 'ig');
+  let match = pattern.exec(String(text || ''));
+  while (match) {
+    const value = Number(match[1]);
+    if (Number.isFinite(value) && value >= 0) {
+      values.push(value);
+    }
+    match = pattern.exec(String(text || ''));
+  }
+  return values.length ? values.reduce((sum, value) => sum + value, 0) / values.length : NaN;
+}
+
+function stringifyTencentSoeResult(value) {
+  if (value === null || value === undefined) {
+    return '';
+  }
+  if (typeof value === 'string') {
+    return value;
+  }
+  try {
+    return JSON.stringify(value);
+  } catch (error) {
+    return String(value);
+  }
+}
+
+function collectTencentSoeNumbers(value, names, results = []) {
+  if (value === null || value === undefined) {
+    return results;
+  }
+  const wanted = new Set(names.map((name) => String(name).toLowerCase()));
+  if (Array.isArray(value)) {
+    value.forEach((item) => collectTencentSoeNumbers(item, names, results));
+    return results;
+  }
+  if (typeof value === 'object') {
+    Object.keys(value).forEach((key) => {
+      const item = value[key];
+      if (wanted.has(String(key).toLowerCase())) {
+        const number = Number(item);
+        if (Number.isFinite(number) && number >= 0) {
+          results.push(number);
+        }
+      }
+      collectTencentSoeNumbers(item, names, results);
+    });
+  }
+  return results;
+}
+
+function firstTencentSoeNumber(messages, names) {
+  const values = messages.flatMap((message) => collectTencentSoeNumbers(message, names, []));
+  return values.length ? values[values.length - 1] : NaN;
+}
+
+function averageTencentSoeNumber(messages, names) {
+  const values = messages.flatMap((message) => collectTencentSoeNumbers(message, names, []));
+  return values.length ? values.reduce((sum, value) => sum + value, 0) / values.length : NaN;
+}
+
+function normalizeSoeRatioScore(value) {
+  const number = readNumber(value);
+  if (!Number.isFinite(number) || number < 0) {
+    return NaN;
+  }
+  return clampScore(number <= 1 ? number * 100 : number, NaN);
+}
+
+function extractTencentSoeScores(messages) {
+  const resultText = messages
+    .map((message) => normalizeText([
+      stringifyTencentSoeResult(message && message.result),
+      stringifyTencentSoeResult(message && message.Result),
+      stringifyTencentSoeResult(message && message.sentence_info),
+      stringifyTencentSoeResult(message)
+    ].filter(Boolean).join(' ')))
+    .filter(Boolean)
+    .join('\n');
+  if (!resultText && !messages.length) {
+    return null;
+  }
+  const suggestedScore = clampScore(
+    firstTencentSoeNumber(messages, ['SuggestedScore', 'suggested_score', 'suggestedScore'])
+      || readNamedNumber(resultText, 'SuggestedScore'),
+    NaN
+  );
+  const topAccuracy = clampScore(
+    firstTencentSoeNumber(messages, ['PronAccuracy', 'pron_accuracy', 'pronAccuracy'])
+      || readNamedNumber(resultText, 'PronAccuracy'),
+    NaN
+  );
+  const wordAccuracy = clampScore(
+    averageTencentSoeNumber(messages, ['PronAccuracy', 'pron_accuracy', 'pronAccuracy'])
+      || averageValidNamedNumbers(resultText, 'PronAccuracy'),
+    NaN
+  );
+  const accuracy = Number.isFinite(topAccuracy) ? topAccuracy : wordAccuracy;
+  const topFluency = normalizeSoeRatioScore(
+    firstTencentSoeNumber(messages, ['PronFluency', 'pron_fluency', 'pronFluency'])
+      || readNamedNumber(resultText, 'PronFluency')
+  );
+  const wordFluency = normalizeSoeRatioScore(
+    averageTencentSoeNumber(messages, ['PronFluency', 'pron_fluency', 'pronFluency'])
+      || averageValidNamedNumbers(resultText, 'PronFluency')
+  );
+  const fluency = Number.isFinite(topFluency) ? topFluency : wordFluency;
+  const completion = normalizeSoeRatioScore(
+    firstTencentSoeNumber(messages, ['PronCompletion', 'pron_completion', 'pronCompletion'])
+      || readNamedNumber(resultText, 'PronCompletion')
+  );
+  let blended = Number.isFinite(suggestedScore) ? suggestedScore : NaN;
+  if (!Number.isFinite(blended)) {
+    const weighted = [
+      [accuracy, 0.55],
+      [fluency, 0.25],
+      [completion, 0.2]
+    ].filter(([value]) => Number.isFinite(value));
+    const totalWeight = weighted.reduce((sum, item) => sum + item[1], 0);
+    blended = totalWeight
+      ? weighted.reduce((sum, item) => sum + (item[0] * item[1]), 0) / totalWeight
+      : NaN;
+  }
+  if (!Number.isFinite(blended)) {
+    return null;
+  }
+  return {
+    score: Math.round(clampScore(blended, NaN)),
+    accuracy,
+    fluency,
+    completion,
+    rawResult: resultText
+  };
+}
+
+function sendWebSocketMessage(ws, data) {
+  return new Promise((resolve, reject) => {
+    ws.send(data, (error) => {
+      if (error) {
+        reject(error);
+        return;
+      }
+      resolve();
+    });
+  });
+}
+
+function delay(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+function getAnswerDurationMs(payload, audioBuffer) {
+  const candidates = [
+    payload && payload.answerDurationMs,
+    payload && payload.durationMs,
+    payload && payload.audioDurationMs
+  ];
+  const value = candidates.map(readNumber).find((number) => Number.isFinite(number) && number > 0);
+  if (value) {
+    return Math.max(1000, Math.min(60000, value));
+  }
+  const bytes = audioBuffer && audioBuffer.length ? audioBuffer.length : 0;
+  return Math.max(1000, Math.min(15000, Math.round(bytes / 6)));
+}
+
+async function sendTencentSoeAudio(ws, audioBuffer, payload, recMode) {
+  if (Number(recMode) === 1) {
+    await sendWebSocketMessage(ws, audioBuffer);
+    await sendWebSocketMessage(ws, JSON.stringify({ type: 'end' }));
+    return { chunks: 1, intervalMs: 0 };
+  }
+  const durationMs = getAnswerDurationMs(payload, audioBuffer);
+  const chunkCount = Math.max(1, Math.min(40, Math.ceil(durationMs / 250)));
+  const chunkSize = Math.max(1, Math.ceil(audioBuffer.length / chunkCount));
+  const intervalMs = Math.max(80, Math.min(250, Math.round(durationMs / chunkCount)));
+  let chunks = 0;
+  for (let offset = 0; offset < audioBuffer.length; offset += chunkSize) {
+    await sendWebSocketMessage(ws, audioBuffer.slice(offset, Math.min(audioBuffer.length, offset + chunkSize)));
+    chunks += 1;
+    if (offset + chunkSize < audioBuffer.length) {
+      await delay(intervalMs);
+    }
+  }
+  await sendWebSocketMessage(ws, JSON.stringify({ type: 'end' }));
+  return { chunks, intervalMs };
+}
+
+async function evaluateWithTencentSoeNew(audioBuffer, payload, transcript) {
+  if (!shouldUseTencentSoe()) {
+    return null;
+  }
+  const { appId, secretId, secretKey } = getTencentSoeCredentials();
+  const refText = buildTencentSoeRefText(payload, transcript);
+  if (!appId || !secretId || !secretKey || !refText) {
+    return null;
+  }
+  const audioFormat = inferAudioFormat(audioBuffer);
+  const voiceFormat = getTencentSoeNewVoiceFormat(audioFormat);
+  const wordCount = refText.split(/\s+/).filter(Boolean).length;
+  const now = Math.floor(Date.now() / 1000);
+  const voiceId = crypto.randomUUID ? crypto.randomUUID() : `${Date.now()}-${Math.random().toString(16).slice(2)}`;
+  const params = {
+    eval_mode: wordCount > 30 ? 2 : 1,
+    expired: now + 3600,
+    nonce: Math.floor(Math.random() * 1000000000) + 1,
+    rec_mode: readNumber(process.env.TENCENT_SOE_REC_MODE || 0),
+    ref_text: refText,
+    score_coeff: Number(process.env.TENCENT_SOE_SCORE_COEFF || 1),
+    secretid: secretId,
+    sentence_info_enabled: 1,
+    server_engine_type: String(process.env.TENCENT_SOE_ENGINE || '16k_en').trim(),
+    text_mode: 0,
+    timestamp: now,
+    voice_format: voiceFormat,
+    voice_id: voiceId
+  };
+  console.log('[speaking-tencent-soe-input]', JSON.stringify({
+    provider: 'tencent-soe-new',
+    bytes: audioBuffer && audioBuffer.length ? audioBuffer.length : 0,
+    audioFormat,
+    voiceFormat,
+    evalMode: params.eval_mode,
+    recMode: params.rec_mode,
+    wordCount,
+    refTextLength: refText.length,
+    magic: Buffer.isBuffer(audioBuffer) ? audioBuffer.slice(0, 12).toString('hex') : ''
+  }));
+  const url = buildTencentSoeNewUrl(params, appId, secretKey);
+  const messages = [];
+  return new Promise((resolve, reject) => {
+    const ws = new WebSocket(url, { perMessageDeflate: false, handshakeTimeout: 15000 });
+    let settled = false;
+    let sentAudio = false;
+    const timer = setTimeout(() => {
+      if (settled) {
+        return;
+      }
+      settled = true;
+      try { ws.close(); } catch (error) {}
+      reject(new Error('tencent-soe-timeout'));
+    }, 45000);
+    function finish(error, value) {
+      if (settled) {
+        return;
+      }
+      settled = true;
+      clearTimeout(timer);
+      try { ws.close(); } catch (closeError) {}
+      if (error) {
+        reject(error);
+        return;
+      }
+      resolve(value);
+    }
+    ws.on('message', async (data) => {
+      try {
+        const text = Buffer.isBuffer(data) ? data.toString('utf8') : String(data || '');
+        const message = JSON.parse(text);
+        messages.push(message);
+        if (message.code && Number(message.code) !== 0) {
+          finish(new Error(`tencent-soe-${message.code}:${message.message || ''}`));
+          return;
+        }
+        if (!sentAudio && Number(message.code) === 0 && message.message === 'success') {
+          sentAudio = true;
+          const sent = await sendTencentSoeAudio(ws, audioBuffer, payload, params.rec_mode);
+          console.log('[speaking-tencent-soe-audio-sent]', JSON.stringify({
+            provider: 'tencent-soe-new',
+            recMode: params.rec_mode,
+            chunks: sent.chunks,
+            intervalMs: sent.intervalMs
+          }));
+          return;
+        }
+        if (Number(message.final || 0) === 1) {
+          const parsed = extractTencentSoeScores(messages);
+          if (!parsed) {
+            console.warn('[speaking-tencent-soe-no-score]', JSON.stringify({
+              messages: messages.map((item) => ({
+                code: item && item.code,
+                message: item && item.message,
+                final: item && item.final,
+                keys: item && typeof item === 'object' ? Object.keys(item) : [],
+                resultPreview: normalizeText(stringifyTencentSoeResult(item && item.result)).slice(0, 240)
+              }))
+            }));
+            finish(new Error('tencent-soe-no-valid-score'));
+            return;
+          }
+          console.log('[speaking-tencent-soe-result]', JSON.stringify({
+            provider: 'tencent-soe-new',
+            score: parsed.score,
+            accuracy: parsed.accuracy,
+            fluency: parsed.fluency,
+            completion: parsed.completion,
+            messages: messages.length
+          }));
+          finish(null, {
+            score: parsed.score,
+            requestId: voiceId,
+            status: 'success',
+            accuracy: parsed.accuracy,
+            fluency: parsed.fluency,
+            completion: parsed.completion
+          });
+        }
+      } catch (error) {
+        finish(error);
+      }
+    });
+    ws.on('error', finish);
+    ws.on('close', () => {
+      if (!settled) {
+        finish(new Error('tencent-soe-closed-before-final'));
+      }
+    });
+  });
+}
+
+async function evaluateWithTencentSoeLegacy(audioBuffer, payload, transcript) {
+  if (!shouldUseTencentSoe()) {
+    return null;
+  }
+  const { secretId, secretKey } = getTencentSoeCredentials();
+  const refText = buildTencentSoeRefText(payload, transcript);
+  if (!secretId || !secretKey || !refText) {
+    return null;
+  }
+  const SoeClient = tencentcloud.soe.v20180724.Client;
+  const client = new SoeClient({
+    credential: { secretId, secretKey },
+    region: String(process.env.TENCENT_SOE_REGION || 'ap-guangzhou').trim(),
+    profile: {
+      httpProfile: {
+        endpoint: 'soe.tencentcloudapi.com',
+        reqTimeout: 20
+      }
+    }
+  });
+  const wordCount = refText.split(/\s+/).filter(Boolean).length;
+  const audioFormat = inferAudioFormat(audioBuffer);
+  const voiceFileType = getTencentSoeVoiceFileType(audioFormat);
+  if (!voiceFileType) {
+    throw new Error(`tencent-soe-unsupported-audio-format:${audioFormat || 'unknown'}`);
+  }
+  const request = {
+    SeqId: 1,
+    IsEnd: 1,
+    VoiceFileType: voiceFileType,
+    VoiceEncodeType: 1,
+    UserVoiceData: audioBuffer.toString('base64'),
+    SessionId: crypto.randomUUID ? crypto.randomUUID() : `${Date.now()}-${Math.random().toString(16).slice(2)}`,
+    RefText: refText,
+    WorkMode: 1,
+    EvalMode: wordCount > 30 ? 2 : 1,
+    ScoreCoeff: Number(process.env.TENCENT_SOE_SCORE_COEFF || 1),
+    ServerType: 0,
+    IsAsync: 0
+  };
+  const soeAppId = getEnvValue(['TENCENT_SOE_APP_ID', 'TENCENT_APP_ID', 'TENCENTCLOUD_APP_ID', 'TENCENT_APPID', 'APPID']);
+  if (soeAppId) {
+    request.SoeAppId = soeAppId;
+  }
+  console.log('[speaking-tencent-soe-input]', JSON.stringify({
+    bytes: audioBuffer && audioBuffer.length ? audioBuffer.length : 0,
+    audioFormat,
+    voiceFileType,
+    evalMode: request.EvalMode,
+    wordCount,
+    refTextLength: refText.length,
+    magic: Buffer.isBuffer(audioBuffer) ? audioBuffer.slice(0, 12).toString('hex') : ''
+  }));
+  const result = await client.TransmitOralProcessWithInit(request);
+  console.log('[speaking-tencent-soe-result]', JSON.stringify({
+    requestId: result && result.RequestId ? result.RequestId : '',
+    status: result && result.Status ? result.Status : '',
+    suggestedScore: result && result.SuggestedScore,
+    pronAccuracy: result && result.PronAccuracy,
+    pronFluency: result && result.PronFluency,
+    pronCompletion: result && result.PronCompletion,
+    words: Array.isArray(result && result.Words) ? result.Words.length : 0
+  }));
+  const suggestedScore = clampScore(readNumber(result && result.SuggestedScore), NaN);
+  const accuracy = clampScore(readNumber(result && result.PronAccuracy), NaN);
+  const fluency = clampScore(readNumber(result && result.PronFluency) * 100, NaN);
+  const completion = clampScore(readNumber(result && result.PronCompletion) * 100, NaN);
+  const blended = Number.isFinite(suggestedScore)
+    ? suggestedScore
+    : clampScore((accuracy * 0.55) + (fluency * 0.25) + (completion * 0.2), NaN);
+  if (!Number.isFinite(blended)) {
+    throw new Error(`tencent-soe-no-valid-score:${result && result.Status ? result.Status : 'unknown'}`);
+  }
+  return {
+    score: Math.round(clampScore(blended, NaN)),
+    requestId: result && result.RequestId,
+    status: result && result.Status,
+    accuracy,
+    fluency,
+    completion
+  };
+}
+
+async function evaluateWithTencentSoe(audioBuffer, payload, transcript) {
+  const version = String(process.env.TENCENT_SOE_VERSION || 'new').trim();
+  if (version === 'legacy') {
+    return evaluateWithTencentSoeLegacy(audioBuffer, payload, transcript);
+  }
+  return evaluateWithTencentSoeNew(audioBuffer, payload, transcript);
+}
+
 function normalizeSuggestedAnswer(value) {
   const answer = normalizeText(value);
   if (!answer || /[?？]\s*$/.test(answer)) {
@@ -244,10 +1062,29 @@ function buildContentFallbackFromTranscript(payload, transcript, audioScore) {
 
 async function scoreSpeakingAttempt(payload) {
   const endpoint = String(process.env.SPEAKING_SCORE_ENDPOINT || '').trim();
+  const transcribeEndpoint = normalizeTranscribeEndpoint(process.env.SPEAKING_TRANSCRIBE_ENDPOINT || inferTranscribeEndpoint(endpoint)).trim();
   const apiKey = String(process.env.SPEAKING_SCORE_API_KEY || '').trim();
-  const model = String(process.env.SPEAKING_SCORE_MODEL || 'gpt-4o-audio-preview').trim();
-  const preferredModel = String(process.env.SPEAKING_SCORE_PREFERRED_MODEL || 'doubao-seed-2-0-lite-260428').trim();
-  if (!endpoint) {
+  const transcribeModel = String(process.env.SPEAKING_TRANSCRIBE_MODEL || 'gpt-4o-transcribe').trim();
+  const contentModel = getEnvValue(['SPEAKING_CONTENT_SCORE_MODEL', 'SPEAKING_CONTENT_SCORE_MODE', 'SPEAKING_SCORE_PREFERRED_MODEL']) || 'doubao-seed-2-1-pro-260628';
+  const audioTranscribeModels = [
+    process.env.SPEAKING_AUDIO_TRANSCRIBE_MODEL
+  ]
+    .flatMap((item) => String(item || '').split(','))
+    .map((item) => item.trim())
+    .filter(Boolean);
+  const chatAudioTranscribeModels = audioTranscribeModels.filter(isChatAudioTranscribeModel);
+  const standardAudioTranscribeModels = audioTranscribeModels.filter((model) => !isChatAudioTranscribeModel(model) && !isTencentAsrModel(model));
+  const transcribeProvider = String(process.env.SPEAKING_TRANSCRIBE_PROVIDER || '').trim();
+  const tencentAsrModels = (
+    transcribeProvider === 'tencent-asr'
+    || String(process.env.TENCENT_ASR_ENABLED || '').trim() === '1'
+    || audioTranscribeModels.some(isTencentAsrModel)
+  ) ? ['tencent-asr'] : [];
+  const allowTencentAsrFallback = String(process.env.TENCENT_ASR_ALLOW_FALLBACK || '').trim() === '1';
+  const transcribeModels = transcribeProvider === 'tencent-asr' && !allowTencentAsrFallback
+    ? ['tencent-asr']
+    : Array.from(new Set(tencentAsrModels.concat(chatAudioTranscribeModels, standardAudioTranscribeModels, [transcribeModel]).filter(Boolean)));
+  if (!endpoint || !transcribeEndpoint) {
     return {
       score: 0,
       feedback: '评分服务未配置，请联系管理员。',
@@ -273,87 +1110,177 @@ async function scoreSpeakingAttempt(payload) {
       attemptType: payload.attemptType || '',
       attemptIndex: payload.attemptIndex || 0
     }));
-    const models = preferredModel ? [preferredModel, preferredModel] : [model];
-    let data = null;
-    let lastError = null;
-    for (let index = 0; index < models.length; index += 1) {
+    if (!audioBuffer || !audioBuffer.length) {
+      throw new Error('empty-downloaded-audio');
+    }
+    const authHeaders = {
+      authorization: apiKey ? `Bearer ${apiKey}` : ''
+    };
+    let transcript = '';
+    let transcriptModel = '';
+    let pronunciationScore = null;
+    let transcribeError = null;
+    for (const model of transcribeModels) {
+      if (transcript) {
+        break;
+      }
       try {
         console.log('[speaking-score-stage]', JSON.stringify({
-          stage: 'audio-model-start',
-          model: models[index],
+          stage: isTencentAsrModel(model) ? 'transcribe-tencent-asr-start' : (isChatAudioTranscribeModel(model) ? 'transcribe-chat-start' : 'transcribe-start'),
+          model,
           taskId: payload.taskId || '',
           attemptType: payload.attemptType || '',
           attemptIndex: payload.attemptIndex || 0
         }));
-        data = await postJson(endpoint, {
-          authorization: apiKey ? `Bearer ${apiKey}` : ''
-        }, {
-          model: models[index],
-          temperature: 0,
-          messages: [{
-            role: 'user',
-            content: [
-              {
-                type: 'text',
-                text: [
-                  'You grade a child English speaking answer from audio and lesson source.',
-                  'First transcribe the student audio answer, then grade pronunciation/fluency and content/grammar.',
-                  'Return JSON only: {"transcript": "student answer transcript", "pronunciationFluencyScore": number, "contentScore": number, "feedback": "short Chinese advice", "suggestedAnswer": "one natural English answer"}.',
-                  'pronunciationFluencyScore must be 0 to 100.',
-                  'contentScore must be 0 to 100.',
-                  'Final content rubric: answer structure 35, grammar 30, source accuracy 25, relevance to question 10.',
-                  'Give lenient pronunciation and fluency scores. Do not punish accent unless it blocks understanding.',
-                  'Suggested answer must be one direct declarative answer to the question, not a new question.',
-                  'Never suggest sentence starters such as "Excuse me" or "Is this" for a Whose/Who/What answer.',
-                  'Do not replace a clear possessive noun phrase such as "the woman\'s handbag" with a vague pronoun such as "her handbag" unless the source requires that exact pronoun.',
-                  'Feedback must be warm Chinese: praise one thing, then give one concrete improvement, then point to the suggested answer.',
-                  `Source lesson text:\n${payload.sourceText || ''}`,
-                  `Question or prompt: ${payload.promptText || payload.questionText || ''}`,
-                  `Attempt index: ${payload.attemptIndex || 0}`
-                ].join('\n')
-              },
-              {
-                type: 'input_audio',
-                input_audio: {
-                  data: audioBuffer.toString('base64'),
-                  format: 'mp3'
-                }
-              }
-            ]
-          }]
+        transcript = await transcribeWithPreferredRoute({
+          endpoint,
+          transcribeEndpoint,
+          authHeaders,
+          model,
+          audioBuffer,
+          payload
         });
-        console.log('[speaking-score-stage]', JSON.stringify({
-          stage: 'audio-model-ok',
-          model: models[index],
-          taskId: payload.taskId || '',
-          attemptType: payload.attemptType || '',
-          attemptIndex: payload.attemptIndex || 0
-        }));
-        break;
+        transcriptModel = model;
       } catch (error) {
-        lastError = error;
-        if (!isRetryableScoreError(error) || index >= models.length - 1) {
-          throw error;
-        }
-        await sleep(600);
+        transcribeError = error;
+        console.error('[speaking-transcribe-failed]', JSON.stringify({
+          model,
+          message: String(error && error.message || error || ''),
+          endpointHost: isTencentAsrModel(model)
+            ? 'asr.tencentcloudapi.com'
+            : (isChatAudioTranscribeModel(model)
+            ? (endpoint ? new URL(endpoint).hostname : '')
+            : (transcribeEndpoint ? new URL(transcribeEndpoint).hostname : ''))
+        }));
       }
     }
-    if (!data && lastError) {
-      throw lastError;
+    if (!transcript && transcribeError) {
+      throw transcribeError;
     }
+    console.log('[speaking-score-stage]', JSON.stringify({
+      stage: 'transcribe-ok',
+      model: transcriptModel,
+      transcriptLength: transcript.length,
+      taskId: payload.taskId || '',
+      attemptType: payload.attemptType || '',
+      attemptIndex: payload.attemptIndex || 0
+    }));
+    if (!transcript) {
+      return {
+        score: 0,
+        pronunciationFluencyScore: 0,
+        contentGrammarScore: 0,
+        transcript: '',
+        feedback: '这次录音没有识别到清晰英文回答，请重新录音后再提交评分。',
+        status: 'score-pending',
+        error: 'empty-transcript',
+        errorType: 'audio-transcript'
+      };
+    }
+    const requireTencentSoeScore = shouldUseTencentSoe();
+    if (transcript && !pronunciationScore && requireTencentSoeScore) {
+      try {
+        const soeResult = await evaluateWithTencentSoe(audioBuffer, payload, transcript);
+        if (soeResult) {
+          pronunciationScore = soeResult.score;
+          console.log('[speaking-score-stage]', JSON.stringify({
+            stage: 'tencent-soe-ok',
+            score: pronunciationScore,
+            requestId: soeResult.requestId || '',
+            status: soeResult.status || '',
+            taskId: payload.taskId || '',
+            attemptType: payload.attemptType || '',
+            attemptIndex: payload.attemptIndex || 0
+          }));
+        }
+      } catch (error) {
+        console.error('[speaking-tencent-soe-failed]', JSON.stringify({
+          message: String(error && error.message || error || ''),
+          taskId: payload.taskId || '',
+          attemptType: payload.attemptType || '',
+          attemptIndex: payload.attemptIndex || 0
+        }));
+      }
+    }
+    if (requireTencentSoeScore && !Number.isFinite(Number(pronunciationScore))) {
+      return {
+        score: 0,
+        pronunciationFluencyScore: 0,
+        contentGrammarScore: 0,
+        transcript,
+        feedback: '腾讯 SOE 发音评分暂时未返回有效分数，请重新提交评分。',
+        status: 'score-pending',
+        error: 'tencent-soe-no-score',
+        errorType: 'pronunciation-score'
+      };
+    }
+    console.log('[speaking-score-stage]', JSON.stringify({
+      stage: 'content-model-start',
+      model: contentModel,
+      taskId: payload.taskId || '',
+      attemptType: payload.attemptType || '',
+      attemptIndex: payload.attemptIndex || 0
+    }));
+    const data = await postJsonWithRetry(endpoint, authHeaders, {
+      model: contentModel,
+      temperature: 0,
+      messages: [{
+        role: 'user',
+        content: [
+          'You grade a child English speaking answer from transcript and lesson source.',
+          'Return JSON only: {"contentScore": number, "expressionFluencyScore": number, "feedback": "short Chinese advice", "suggestedAnswer": "one natural English answer"}.',
+          'contentScore must be 0 to 100. Rubric: answer structure 35, grammar 30, source accuracy 25, relevance to question 10.',
+          'expressionFluencyScore must be 0 to 100 based only on transcript completeness and naturalness.',
+          'Be stable and lenient for a child learner. Correct answer with acceptable grammar should score 85-100.',
+          'Suggested answer must be one direct declarative answer to the question, not a new question.',
+          'Never suggest sentence starters such as "Excuse me" or "Is this" for a Whose/Who/What answer.',
+          'Feedback must be warm Chinese: praise one thing, then give one concrete improvement, then point to the suggested answer.',
+          `Source lesson text:\n${payload.sourceText || ''}`,
+          `Question or prompt: ${payload.promptText || payload.questionText || ''}`,
+          `Student transcript: ${transcript}`,
+          `Attempt index: ${payload.attemptIndex || 0}`
+        ].join('\n')
+      }]
+    }, 'content-score');
+    console.log('[speaking-score-stage]', JSON.stringify({
+      stage: 'content-model-ok',
+      model: contentModel,
+      taskId: payload.taskId || '',
+      attemptType: payload.attemptType || '',
+      attemptIndex: payload.attemptIndex || 0
+    }));
     const content = data && data.choices && data.choices[0] && data.choices[0].message
       ? data.choices[0].message.content
       : '';
-    const audioParsed = parseJsonResponseText(Array.isArray(content) ? content.map((item) => item.text || '').join(' ') : content) || {};
-    const transcript = normalizeText(audioParsed.transcript || '');
-    const audioScore = Math.max(0, Math.min(100, Number(audioParsed.pronunciationFluencyScore || 0)));
-    const contentScore = Math.max(0, Math.min(100, Number(audioParsed.contentScore || audioParsed.score || 0)));
+    const responseText = extractMessageText(content);
+    const parsed = parseJsonResponseText(responseText) || {};
+    const looseParsed = !Number.isFinite(Number(parsed.contentScore))
+      ? parseScoreResponseText(responseText)
+      : null;
+    const rawContentScore = Number(parsed.contentScore || parsed.score || (looseParsed && looseParsed.score) || 0);
+    if (!Number.isFinite(rawContentScore) || rawContentScore <= 0) {
+      return {
+        score: 0,
+        pronunciationFluencyScore: 0,
+        contentGrammarScore: 0,
+        transcript,
+        feedback: '录音已转写，但评分模型暂时没有返回有效评分，请稍后重试。',
+        status: 'score-pending',
+        error: 'invalid-score-json',
+        errorType: 'model-output'
+      };
+    }
+    const expressionFallback = clampScore(parsed.expressionFluencyScore, estimateFluencyScore(transcript));
+    const expressionScore = Number.isFinite(Number(pronunciationScore))
+      ? clampScore(pronunciationScore, expressionFallback)
+      : expressionFallback;
+    const contentScore = Math.max(0, Math.min(100, rawContentScore));
     return {
-      score: Math.max(0, Math.min(100, Math.round((contentScore * 0.8) + (audioScore * 0.2)))),
-      pronunciationFluencyScore: Math.round(audioScore),
+      score: Math.max(0, Math.min(100, Math.round((contentScore * 0.8) + (expressionScore * 0.2)))),
+      pronunciationFluencyScore: Math.round(expressionScore),
       contentGrammarScore: Math.round(contentScore),
       transcript,
-      feedback: buildFeedbackWithSuggestedAnswer(audioParsed.feedback, audioParsed.suggestedAnswer)
+      feedback: buildFeedbackWithSuggestedAnswer(parsed.feedback || (looseParsed && looseParsed.feedback), parsed.suggestedAnswer || (looseParsed && looseParsed.suggestedAnswer))
         || buildTemplateFeedback(payload.attemptType, payload.attemptIndex, payload.promptText),
       status: 'scored'
     };

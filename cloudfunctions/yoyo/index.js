@@ -2,7 +2,9 @@ const https = require('https');
 const storageAdapter = require('./adapters/storage.adapter');
 const speakingEnginePatch = require('./lib/speaking-engine');
 
-process.env.SPEAKING_CONTENT_SCORE_MODEL = process.env.SPEAKING_CONTENT_SCORE_MODEL || 'gpt-5.4-mini';
+process.env.SPEAKING_CONTENT_SCORE_MODEL = process.env.SPEAKING_CONTENT_SCORE_MODEL
+  || process.env.SPEAKING_CONTENT_SCORE_MODE
+  || 'doubao-seed-2-1-pro-260628';
 
 function normalizeText(value) {
   return String(value || '').replace(/\s+/g, ' ').trim();
@@ -157,11 +159,11 @@ async function scoreAudio(endpoint, authHeaders, model, audioBuffer) {
 
 function inferTranscribeEndpoint(endpoint) {
   const raw = String(endpoint || '').replace(/\/chat\/completions\/?$/, '/audio/transcriptions');
-  return raw.replace('api.qingyunjuhe.top', 'api.qingyuntop.top');
+  return raw.trim();
 }
 
 function normalizeTranscribeEndpoint(endpoint) {
-  return String(endpoint || '').replace('api.qingyunjuhe.top', 'api.qingyuntop.top');
+  return String(endpoint || '').trim();
 }
 
 async function transcribeAudio(endpoint, authHeaders, model, audioBuffer) {
@@ -211,14 +213,14 @@ function fallbackSpeakingScore(payload, error) {
   const isQuestion = String(payload && payload.attemptType || '') === 'nce_question_answer';
   const promptText = normalizeText(payload && (payload.promptText || payload.questionText));
   return {
-    score: isQuestion ? 78 : 76,
-    pronunciationFluencyScore: 75,
-    contentGrammarScore: isQuestion ? 80 : 76,
+    score: 0,
+    pronunciationFluencyScore: 0,
+    contentGrammarScore: 0,
     transcript: '',
     feedback: isQuestion
-      ? `录音已保存，并已给出基础评分。建议用完整句直接回答问题：${promptText || '请根据原文信息回答。'}`
-      : '录音已保存，并已给出基础评分。建议继续保持完整朗读，注意发音清晰和语速稳定。',
-    status: 'scored-local',
+      ? `录音已保存，但模型评分暂时失败。请稍后重新提交评分：${promptText || '请根据原文信息回答。'}`
+      : '录音已保存，但模型评分暂时失败。请稍后重新提交评分。',
+    status: 'score-pending',
     error: String(error && error.message || error || 'model-fallback'),
     errorType: 'model-fallback'
   };
@@ -228,11 +230,10 @@ async function scoreSpeakingAttemptLegacy(payload) {
   const endpoint = String(process.env.SPEAKING_SCORE_ENDPOINT || '').trim();
   const transcribeEndpoint = normalizeTranscribeEndpoint(process.env.SPEAKING_TRANSCRIBE_ENDPOINT || inferTranscribeEndpoint(endpoint));
   const apiKey = String(process.env.SPEAKING_SCORE_API_KEY || '').trim();
-  const audioModel = String(process.env.SPEAKING_SCORE_MODEL || 'gpt-4o-audio-preview').trim();
-  const audioFallbackModel = String(process.env.SPEAKING_SCORE_FALLBACK_MODEL || 'gpt-audio-2025-08-28').trim();
-  const audioModels = [...new Set([audioModel, audioFallbackModel].filter(Boolean))];
-  const transcribeModel = String(process.env.SPEAKING_TRANSCRIBE_MODEL || 'whisper-1').trim();
-  const contentModel = String(process.env.SPEAKING_CONTENT_SCORE_MODEL || 'gpt-5.4-mini').trim();
+  const audioModel = String(process.env.SPEAKING_AUDIO_TRANSCRIBE_MODEL || '').trim();
+  const audioModels = [...new Set([audioModel].filter(Boolean))];
+  const transcribeModel = String(process.env.SPEAKING_TRANSCRIBE_MODEL || 'gpt-4o-transcribe').trim();
+  const contentModel = String(process.env.SPEAKING_CONTENT_SCORE_MODEL || 'doubao-seed-2-1-pro-260628').trim();
   if (!endpoint || !transcribeEndpoint) {
     return fallbackSpeakingScore(payload, 'missing-endpoint');
   }
@@ -388,6 +389,7 @@ const actionMap = {
   markTaskListened: taskService.markTaskListened,
   createSpeakingUploadUrl: speakingService.createSpeakingUploadUrl,
   submitSpeakingAttempt: speakingService.submitSpeakingAttempt,
+  rescoreSpeakingAttempt: speakingService.rescoreSpeakingAttempt,
   getSpeakingAttempts: speakingService.getSpeakingAttempts,
   completeTodayCheckin: taskService.completeTodayCheckin,
   getProfileData: familyService.getProfileData,
@@ -413,6 +415,7 @@ const MONITORED_ACTIONS = new Set([
   'markTaskListened',
   'createSpeakingUploadUrl',
   'submitSpeakingAttempt',
+  'rescoreSpeakingAttempt',
   'getSpeakingAttempts',
   'completeTodayCheckin',
   'getProfileData',

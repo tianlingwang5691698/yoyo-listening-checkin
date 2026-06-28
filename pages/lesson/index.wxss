@@ -5,6 +5,10 @@
   box-shadow: var(--shadow-card);
 }
 
+.lesson-page {
+  overflow-x: hidden;
+}
+
 .cover-variant-peppa,
 .cover-variant-unlock,
 .cover-variant-song,
@@ -422,6 +426,9 @@
 .speaking-card {
   display: grid;
   gap: 20rpx;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .speaking-prompt,
@@ -431,6 +438,8 @@
   background: var(--surface-subtle);
   color: var(--text-main);
   line-height: 1.6;
+  word-break: break-word;
+  overflow-wrap: anywhere;
 }
 
 .speaking-feedback {
@@ -438,7 +447,21 @@
 }
 
 .speaking-actions {
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14rpx;
+  width: 100%;
+  max-width: 100%;
+}
+
+.speaking-actions .player-action {
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 0 12rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .player-action.is-danger {
@@ -495,6 +518,7 @@
 .attempt-list {
   display: grid;
   gap: 16rpx;
+  min-width: 0;
 }
 
 .attempt-card {
@@ -503,6 +527,8 @@
   background: var(--surface-subtle);
   display: grid;
   gap: 12rpx;
+  min-width: 0;
+  overflow: hidden;
 }
 
 .attempt-head {
@@ -510,12 +536,14 @@
   justify-content: space-between;
   align-items: center;
   gap: 16rpx;
+  min-width: 0;
 }
 
 .attempt-title {
   font-size: 26rpx;
   font-weight: 700;
   color: var(--text-main);
+  word-break: break-word;
 }
 
 .attempt-meta {
@@ -528,17 +556,21 @@
   font-size: 28rpx;
   font-weight: 800;
   color: var(--accent-deep);
+  flex-shrink: 0;
 }
 
 .attempt-sub-scores {
   margin-top: 10rpx;
   font-size: 22rpx;
   color: var(--text-muted);
+  word-break: break-word;
 }
 
 .attempt-feedback {
   color: var(--text-muted);
   line-height: 1.6;
+  word-break: break-word;
+  overflow-wrap: anywhere;
 }
 
 .attempt-transcript {
@@ -547,6 +579,8 @@
   background: rgba(255, 255, 255, 0.72);
   color: var(--text-main);
   line-height: 1.55;
+  word-break: break-word;
+  overflow-wrap: anywhere;
 }
 
 .record-status {
@@ -582,5 +616,11 @@
 }
 
 .attempt-play {
-  justify-self: start;
+  justify-self: stretch;
+}
+
+@media (max-width: 360px) {
+  .speaking-actions {
+    grid-template-columns: 1fr;
+  }
 }

@@ -4,6 +4,7 @@ const familyRepository = require('../repositories/family.repository');
 const progressRepository = require('../repositories/progress.repository');
 const checkinRepository = require('../repositories/checkin.repository');
 const reportRepository = require('../repositories/report.repository');
+const attemptRepository = require('../repositories/attempt.repository');
 const dateLib = require('../lib/china-date');
 const taskPresenter = require('../lib/task-presenter');
 const planLib = require('../lib/plan-runtime');
@@ -476,6 +477,7 @@ async function upsertDailyReport(scope, date) {
     getPlanCategoryOrder,
     decoratePlannedTasks,
     getCatalog,
+    findAttemptsByDate: (nextScope, nextDate) => attemptRepository.findByDate(nextScope, nextDate),
     findFamilyMembersByFamilyId: (familyId) => familyRepository.findMembersByFamilyId(familyId),
     upsertReport: (nextScope, nextDate, report) => reportRepository.upsert(nextScope, nextDate, report)
   });

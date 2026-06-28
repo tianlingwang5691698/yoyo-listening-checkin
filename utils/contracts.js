@@ -217,6 +217,7 @@ function createReportDefaults(date) {
     planDayIndex: 0,
     planPhase: '',
     items: [],
+    speakingAttempts: [],
     pushStatus: '',
     inAppVisible: true,
     updatedAt: ''

@@ -351,6 +351,14 @@ async function submitSpeakingAttempt(options) {
   });
 }
 
+async function rescoreSpeakingAttempt(options) {
+  return callCloud('rescoreSpeakingAttempt', options, {
+    attempt: null,
+    attempts: [],
+    summary: {}
+  });
+}
+
 async function getSpeakingAttempts(options, onRefresh) {
   return callCloud('getSpeakingAttempts', options, {
     attempts: [],
@@ -409,7 +417,7 @@ async function getMonthHeatmap(year, month, onRefresh) {
 async function getDailyReportByDate(date, onRefresh) {
   return callCloud('getDailyReportByDate', { date }, {
     report: contracts.createReportDefaults(date)
-  }, { onRefresh });
+  }, { onRefresh, useCache: false });
 }
 
 async function getParentDashboard(onRefresh) {
@@ -483,6 +491,7 @@ module.exports = {
   createSpeakingUploadUrl,
   uploadSpeakingAudio,
   submitSpeakingAttempt,
+  rescoreSpeakingAttempt,
   getSpeakingAttempts,
   completeTodayCheckin,
   getParentDashboard,

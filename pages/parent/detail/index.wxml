@@ -34,4 +34,46 @@
     </block>
     <view class="empty-state" wx:else>这一天还没有记录。</view>
   </view>
+
+  <view class="section-panel">
+    <view class="section-title type-section-title">录音记录</view>
+    <block wx:if="{{report.speakingAttempts.length}}">
+      <view class="recording-summary">
+        <view class="recording-summary-item">
+          <view class="recording-summary-value">{{report.speakingSummary.averageScore || 0}}</view>
+          <view class="recording-summary-label">平均分</view>
+        </view>
+        <view class="recording-summary-item">
+          <view class="recording-summary-value">{{report.speakingSummary.latestScore || 0}}</view>
+          <view class="recording-summary-label">最近得分</view>
+        </view>
+        <view class="recording-summary-item">
+          <view class="recording-summary-value">{{report.speakingSummary.scoredCount || 0}}/{{report.speakingSummary.totalCount || 0}}</view>
+          <view class="recording-summary-label">已评分</view>
+        </view>
+      </view>
+      <block wx:for="{{report.speakingAttempts}}" wx:key="key">
+        <view class="recording-row">
+          <view class="row-between recording-head">
+            <view>
+              <view class="detail-title">{{item.title}}</view>
+              <view class="detail-copy">{{item.questionText}}</view>
+            </view>
+            <view class="recording-score">{{item.scoreText}}</view>
+          </view>
+          <view class="recording-score-detail" wx:if="{{item.scoreDetailText}}">{{item.scoreDetailText}}</view>
+          <view class="recording-meta">
+            <text wx:if="{{item.answerDurationText}}">录音 {{item.answerDurationText}}</text>
+            <text wx:if="{{item.createdTimeText}}"> · {{item.createdTimeText}}</text>
+          </view>
+          <view class="recording-text" wx:if="{{item.studentTranscript}}">孩子回答：{{item.studentTranscript}}</view>
+          <view class="recording-text" wx:if="{{item.feedback}}">建议：{{item.feedback}}</view>
+          <button class="player-action attempt-play {{loadingAttemptKey === item.key && playingAttemptKey !== item.key ? 'is-disabled' : ''}}" data-index="{{index}}" bindtap="playSpeakingAttempt">
+            {{playingAttemptKey === item.key ? (pausedAttemptKey === item.key ? '继续播放' : '暂停录音') : (loadingAttemptKey === item.key ? '加载中' : '播放录音')}}
+          </button>
+        </view>
+      </block>
+    </block>
+    <view class="empty-state" wx:else>这一天还没有录音。</view>
+  </view>
 </view>

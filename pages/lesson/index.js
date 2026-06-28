@@ -98,7 +98,7 @@ function buildPreviewProgress(progress, playCount, task) {
   const speakingMode = String((task && task.speakingMode) || '').trim();
   const planPhase = String((task && task.planPhase) || '').trim();
   const transcriptVisible = speakingMode === 'nce-question-answer'
-    ? currentPass === 1
+    ? false
     : (planPhase === 'round-2' ? currentPass === 1 : currentPass !== 2 || safePlayCount >= repeatTarget);
   return Object.assign({}, progress, {
     playCount: safePlayCount,
@@ -136,6 +136,19 @@ function normalizeSpeakingAttempts(attempts) {
     const feedback = String(item.feedback || '').replace(/模型繁忙，?/g, '录音已保存，');
     return Object.assign({}, item, { feedback });
   });
+}
+
+function canContinueAfterSpeaking(attempts) {
+  const latest = (attempts || [])
+    .filter((item) => item.attemptType === 'nce_question_answer')
+    .slice(-1)[0];
+  return !!(latest && (
+    Number(latest.score || 0) > 0
+    || latest.status === 'score-pending'
+    || latest.answerAudioFileId
+    || latest.answerCloudPath
+    || latest.localAudioPath
+  ));
 }
 
 function formatRecordDuration(ms) {
@@ -207,6 +220,7 @@ Page({
     checkinReady: false,
     transcriptPendingLoad: false,
     transcriptLoadFailed: false,
+    transcriptManualVisible: false,
     passSteps: [],
     completionCardVisible: false,
     speakingPanelVisible: false,
@@ -224,12 +238,15 @@ Page({
     speakingSubmitting: false,
     speakingAttempts: [],
     speakingSummary: {},
+    speakingRescoringKey: '',
+    speakingCanContinue: false,
     pendingListenAfterSpeaking: false,
     repeatLines: [],
     repeatActiveIndex: 0,
     activeRepeatLine: null,
     repeatCompletedCount: 0,
     speakingPlayingAttemptKey: '',
+    speakingPausedAttemptKey: '',
     lessonLoading: true
   }),
   isStudyWriteAllowed() {
@@ -255,6 +272,10 @@ Page({
           speakingTempFilePath: result.tempFilePath || '',
           speakingRecordDurationMs: durationMs,
           speakingRecordDurationText: formatRecordDuration(durationMs)
+        }, () => {
+          if (result.tempFilePath && !this.data.speakingSubmitting) {
+            this.submitSpeakingRecord();
+          }
         });
       });
       this.recorderManager.onError(() => {
@@ -267,14 +288,20 @@ Page({
     this.innerAudioContext.obeyMuteSwitch = false;
     this.speakingAudioContext = wx.createInnerAudioContext();
     this.speakingAudioContext.obeyMuteSwitch = false;
+    this.speakingAudioContext.onPlay(() => {
+      this.setData({ speakingPausedAttemptKey: '' });
+    });
+    this.speakingAudioContext.onPause(() => {
+      this.setData({ speakingPausedAttemptKey: this.data.speakingPlayingAttemptKey });
+    });
     this.speakingAudioContext.onEnded(() => {
-      this.setData({ speakingPlayingAttemptKey: '' });
+      this.setData({ speakingPlayingAttemptKey: '', speakingPausedAttemptKey: '' });
     });
     this.speakingAudioContext.onStop(() => {
-      this.setData({ speakingPlayingAttemptKey: '' });
+      this.setData({ speakingPlayingAttemptKey: '', speakingPausedAttemptKey: '' });
     });
     this.speakingAudioContext.onError(() => {
-      this.setData({ speakingPlayingAttemptKey: '' });
+      this.setData({ speakingPlayingAttemptKey: '', speakingPausedAttemptKey: '' });
       wx.showToast({ title: '录音播放失败', icon: 'none' });
     });
     this.innerAudioContext.onCanplay(() => {
@@ -546,6 +573,7 @@ Page({
       todayRecord: detail.todayRecord,
       progress: detail.progress,
       passSteps: buildPassSteps(detail.progress),
+      transcriptManualVisible: false,
       currentMember: detail.currentMember,
       studyWriteAllowed: detail.studyWriteAllowed !== false,
       isPreviewMode: this.planRunType === 'preview',
@@ -585,6 +613,7 @@ Page({
       transcriptLines: [],
       transcriptPendingLoad: !!detail.transcriptPendingLoad,
       transcriptLoadFailed: false,
+      transcriptManualVisible: false,
       transcriptSyncGranularity: 'word',
       currentMember: detail.currentMember,
       studyWriteAllowed: detail.studyWriteAllowed !== false,
@@ -668,13 +697,14 @@ Page({
     this.setData({
       speakingAttempts: attempts,
       speakingSummary: result.summary || {},
+      speakingCanContinue: canContinueAfterSpeaking(attempts),
       repeatCompletedCount: Object.keys(repeated).length
     });
   },
   async updatePassQuestion(task, progress) {
     const targetTask = task || this.data.task || {};
     const currentPass = Number((progress && progress.currentPass) || (this.data.progress && this.data.progress.currentPass) || 1);
-    if (targetTask.speakingMode !== 'nce-question-answer' || (currentPass !== 2 && currentPass !== 3)) {
+    if (targetTask.speakingMode !== 'nce-question-answer' || !currentPass) {
       this.setData({
         passQuestionVisible: false,
         passQuestionText: ''
@@ -685,7 +715,7 @@ Page({
     const questionText = this.getQuestionFromLines(lines);
     this.setData({
       passQuestionVisible: true,
-      passQuestionText: questionText
+      passQuestionText: questionText || '听完问题后录音回答'
     });
   },
   async openSpeakingPanelForPass(passNumber) {
@@ -702,6 +732,7 @@ Page({
         speakingQuestionText: this.data.passQuestionText || this.getQuestionFromLines(lines),
         speakingPromptText: '',
         speakingTempFilePath: '',
+        speakingCanContinue: false,
         pendingListenAfterSpeaking: true
       });
       return true;
@@ -714,11 +745,20 @@ Page({
         repeatActiveIndex: 0,
         activeRepeatLine: lines[0] || null,
         speakingTempFilePath: '',
+        speakingCanContinue: false,
         pendingListenAfterSpeaking: true
       });
       return true;
     }
     return false;
+  },
+  async startQuestionAnswerNow() {
+    const passNumber = Number((this.data.progress && this.data.progress.currentPass) || (this.data.task && this.data.task.currentPass) || 1);
+    await this.openSpeakingPanelForPass(passNumber);
+  },
+  async showTranscriptOnDemand() {
+    await this.ensureTranscriptLoadedForSpeaking();
+    this.setData({ transcriptManualVisible: true });
   },
   startSpeakingRecord() {
     if (!this.recorderManager || this.data.speakingRecording) {
@@ -726,6 +766,8 @@ Page({
     }
     this.setData({
       speakingTempFilePath: '',
+      speakingPromptText: '',
+      speakingCanContinue: false,
       speakingRecordDurationMs: 0,
       speakingRecordDurationText: '',
       speakingRecordStartedAt: Date.now(),
@@ -733,9 +775,9 @@ Page({
     });
     this.recorderManager.start({
       duration: 60000,
-      sampleRate: 44100,
+      sampleRate: 16000,
       numberOfChannels: 1,
-      encodeBitRate: 128000,
+      encodeBitRate: 48000,
       format: 'mp3'
     });
   },
@@ -787,7 +829,8 @@ Page({
           speakingTempFilePath: '',
           speakingRecordDurationMs: 0,
           speakingRecordDurationText: '',
-          speakingPromptText: attempts[attempts.length - 1].feedback
+          speakingPromptText: attempts[attempts.length - 1].feedback,
+          speakingCanContinue: !isRepeat && canContinueAfterSpeaking(attempts)
         });
         if (isRepeat) {
           if (this.data.repeatActiveIndex < (this.data.repeatLines || []).length - 1) {
@@ -842,7 +885,8 @@ Page({
         speakingTempFilePath: '',
         speakingRecordDurationMs: 0,
         speakingRecordDurationText: '',
-        speakingPromptText: normalizedAttempt && normalizedAttempt.feedback ? normalizedAttempt.feedback : ''
+        speakingPromptText: normalizedAttempt && normalizedAttempt.feedback ? normalizedAttempt.feedback : '',
+        speakingCanContinue: !isRepeat && canContinueAfterSpeaking(normalizedAttempts)
       });
       if (normalizedAttempt && normalizedAttempt.status === 'score-pending') {
         wx.showToast({
@@ -882,6 +926,10 @@ Page({
     await this.markCurrentTaskListened();
   },
   async continueAfterSpeakingFeedback() {
+    if (!this.data.speakingCanContinue) {
+      wx.showToast({ title: '录音保存后才能继续', icon: 'none' });
+      return;
+    }
     await this.finishPendingListenAfterSpeaking();
   },
   async playSpeakingAttempt(event) {
@@ -893,7 +941,11 @@ Page({
     }
     const key = `${audioType}-${attempt.attemptType || 'attempt'}-${attempt.attemptIndex || 0}-${attempt.sentenceIndex || 0}-${index}`;
     if (this.data.speakingPlayingAttemptKey === key) {
-      this.speakingAudioContext.stop();
+      if (this.data.speakingPausedAttemptKey === key) {
+        this.speakingAudioContext.play();
+      } else {
+        this.speakingAudioContext.pause();
+      }
       return;
     }
     let src = String(attempt.localAudioPath || '').trim();
@@ -919,6 +971,34 @@ Page({
     this.speakingAudioContext.src = normalizePlayableUrl(src);
     this.setData({ speakingPlayingAttemptKey: key });
     this.speakingAudioContext.play();
+  },
+  async rescoreSpeakingAttempt(event) {
+    const index = Number(event.currentTarget.dataset.index || 0);
+    const attempt = (this.data.speakingAttempts || [])[index] || null;
+    const attemptId = String(attempt && (attempt.attemptId || attempt._id) || '').trim();
+    if (!attemptId || this.data.speakingRescoringKey) {
+      return;
+    }
+    this.setData({ speakingRescoringKey: attemptId });
+    try {
+      const result = await store.rescoreSpeakingAttempt({ attemptId });
+      const normalizedAttempts = normalizeSpeakingAttempts(result.attempts || []);
+      const normalizedAttempt = normalizeSpeakingAttempts([result.attempt])[0] || result.attempt;
+      this.setData({
+        speakingAttempts: normalizedAttempts,
+        speakingSummary: buildLocalSpeakingSummary(normalizedAttempts),
+        speakingPromptText: normalizedAttempt && normalizedAttempt.feedback ? normalizedAttempt.feedback : '',
+        speakingCanContinue: canContinueAfterSpeaking(normalizedAttempts)
+      });
+      wx.showToast({
+        title: normalizedAttempt && normalizedAttempt.status === 'scored' ? '评分完成' : '仍需稍后重试',
+        icon: 'none'
+      });
+    } catch (error) {
+      wx.showToast({ title: '重新评分失败', icon: 'none' });
+    } finally {
+      this.setData({ speakingRescoringKey: '' });
+    }
   },
   async completeUnlockRepeat() {
     const total = (this.data.repeatLines || []).length;
@@ -977,6 +1057,7 @@ Page({
       activeWord: null,
       nextLine: detail.transcriptTrack && detail.transcriptTrack.lines.length ? detail.transcriptTrack.lines[0] : null
     }));
+    await this.updatePassQuestion(normalizedTask, this.data.progress);
     monitor.logPerf('lesson', 'loadTranscript', Date.now() - startedAt, {
       category: this.category,
       taskId: this.taskId,
@@ -1161,7 +1242,7 @@ Page({
     }
     const passNumber = Number((this.data.progress && this.data.progress.currentPass) || (this.data.task && this.data.task.currentPass) || 1);
     if (this.data.task && this.data.task.speakingMode) {
-      const shouldOpen = (this.data.task.speakingMode === 'nce-question-answer' && (passNumber === 2 || passNumber === 3))
+      const shouldOpen = this.data.task.speakingMode === 'nce-question-answer'
         || (this.data.task.speakingMode === 'unlock-sentence-repeat' && passNumber === 3);
       if (shouldOpen && await this.openSpeakingPanelForPass(passNumber)) {
         return;
@@ -1212,6 +1293,7 @@ Page({
       checkinReady: !!detail.checkinReady,
       transcriptPendingLoad: !!detail.transcriptPendingLoad,
       transcriptLoadFailed: false,
+      transcriptManualVisible: false,
       audioSource: normalizedTask && normalizedTask.audioSource ? normalizedTask.audioSource : 'none',
       playbackRate: 1,
       playbackRateText: '1.0'
@@ -1237,7 +1319,8 @@ Page({
       studyWriteAllowed: false,
       isPreviewMode: true,
       studyModeLabel: '预览模式',
-      checkinReady: false
+      checkinReady: false,
+      transcriptManualVisible: false
     }));
     await this.updatePassQuestion(nextTask, nextProgress);
     wx.showToast({

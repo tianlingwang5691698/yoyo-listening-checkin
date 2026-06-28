@@ -101,3 +101,68 @@
   background: var(--accent-soft);
   color: var(--accent-deep);
 }
+
+.recording-row {
+  margin-top: 18rpx;
+  padding-top: 18rpx;
+  border-top: 1rpx solid var(--border-soft);
+}
+
+.recording-summary {
+  margin-top: 16rpx;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12rpx;
+}
+
+.recording-summary-item {
+  padding: 18rpx 12rpx;
+  border-radius: 20rpx;
+  background: var(--control-muted-bg);
+  text-align: center;
+}
+
+.recording-summary-value {
+  font-size: 32rpx;
+  font-weight: var(--font-title-weight);
+  color: var(--text-main);
+}
+
+.recording-summary-label {
+  margin-top: 6rpx;
+  font-size: 22rpx;
+  color: var(--text-muted);
+}
+
+.recording-head {
+  align-items: flex-start;
+  gap: 18rpx;
+}
+
+.recording-score {
+  flex: 0 0 auto;
+  padding: 10rpx 18rpx;
+  border-radius: 999rpx;
+  background: var(--accent-soft);
+  color: var(--accent-deep);
+  font-size: var(--font-caption-size);
+  font-weight: var(--font-title-weight);
+}
+
+.recording-meta,
+.recording-score-detail,
+.recording-text {
+  margin-top: 10rpx;
+  font-size: var(--font-caption-size);
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+.recording-text {
+  color: var(--text-main);
+}
+
+.attempt-play {
+  margin-top: 16rpx;
+  width: 100%;
+}

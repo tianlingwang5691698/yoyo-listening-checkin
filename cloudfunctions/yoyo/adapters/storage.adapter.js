@@ -166,6 +166,18 @@ async function downloadCloudFileBuffer(fileID, cloudPath) {
   return fs.readFileSync(localPath);
 }
 
+async function getTempFileURL(fileID, cloudPath) {
+  const targetFileID = String(fileID || buildCloudFileId(cloudPath)).trim();
+  if (!targetFileID) {
+    return '';
+  }
+  const result = await cloud.getTempFileURL({
+    fileList: [targetFileID]
+  });
+  const item = result && result.fileList && result.fileList[0] ? result.fileList[0] : null;
+  return String((item && (item.tempFileURL || item.download_url)) || '').trim();
+}
+
 async function uploadCloudFileBuffer(cloudPath, buffer) {
   const normalizedPath = normalizeCloudPath(cloudPath);
   if (!normalizedPath || !buffer) {
@@ -195,5 +207,6 @@ module.exports = {
   downloadJsonFromCdn,
   downloadCloudJson,
   downloadCloudFileBuffer,
+  getTempFileURL,
   uploadCloudFileBuffer
 };

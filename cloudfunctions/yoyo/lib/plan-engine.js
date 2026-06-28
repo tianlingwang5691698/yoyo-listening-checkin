@@ -1,6 +1,9 @@
 const PEPPA_REVIEW_DAILY_COUNT = 2;
 
 function normalizePlannedTask(task, category, dayIndex, deps) {
+  if (deps.planLib.getPlanPhase(dayIndex).key === 'round-2') {
+    return Object.assign({}, task, { repeatTarget: 1 });
+  }
   if (category === 'unlock1' && dayIndex > deps.planSlotCount) {
     return Object.assign({}, task, { repeatTarget: 1 });
   }
@@ -83,7 +86,7 @@ function buildPlanForDay(dayIndex, deps, options = {}) {
       .map((index) => catalog[index] || null)
       .filter(Boolean)
       .map((task) => normalizePlannedTask(task, category, dayIndex, deps));
-    const plannedTasks = category === 'peppa' && options.includePeppaReview
+    const plannedTasks = category === 'peppa' && options.includePeppaReview && phase.key !== 'round-2'
       ? tasks.concat(buildPeppaReviewTasks(dayIndex, catalog, tasks, options.peppaReviewCursor))
       : tasks;
     byCategory[category] = plannedTasks;

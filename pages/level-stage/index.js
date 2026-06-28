@@ -36,25 +36,36 @@ function getTextType(task) {
   return '纯听力';
 }
 
-function getTaskMinutes(task) {
+function getTaskDurationSec(task, plannedDurationSec) {
+  if (Number(plannedDurationSec || 0) > 0) {
+    return Number(plannedDurationSec);
+  }
   if (!task || task.isPendingAsset || !task.durationSec) {
     return 0;
   }
-  return Math.max(1, Math.round((task.durationSec * (task.repeatTarget || 3)) / 60));
+  return Number(task.durationSec) * Number(task.repeatTarget || 1);
+}
+
+function getDurationMinutes(durationSec) {
+  return durationSec > 0 ? Math.max(1, Math.round(durationSec / 60)) : 0;
 }
 
 function buildTaskGroups(categories) {
   return (categories || []).map((category) => {
     const task = labels.normalizeTask(category.todayTask || {});
-    const minutes = getTaskMinutes(task);
+    const taskCount = Number(category.todayTaskCount || task.plannedTaskCount || 0);
+    const durationSec = getTaskDurationSec(task, category.plannedDurationSec);
+    const minutes = getDurationMinutes(durationSec);
     const disabled = !!(category.isPendingAsset || task.isPendingAsset);
     return {
       category: category.category,
       categoryLabel: labels.getCategoryDisplayLabel(category.category, category.categoryLabel),
       title: task.displayTitle || task.title || '等待素材',
+      taskCountText: taskCount ? `${taskCount} 个任务` : '',
       textType: getTextType(task),
       minutesText: minutes ? `${minutes} 分钟` : '待生成',
       minutes,
+      durationSec,
       taskId: task.taskId || '',
       disabled,
       stateText: task.completedToday ? '完成' : disabled ? '等待' : '›',
@@ -81,7 +92,7 @@ Page({
     const categories = (data.categories || []).map(labels.normalizeCategory);
     const hasTaskGroups = shouldShowTaskGroups(phase) && categories.length > 0;
     const taskGroups = hasTaskGroups ? buildTaskGroups(categories) : [];
-    const totalMinutes = taskGroups.reduce((sum, item) => sum + item.minutes, 0);
+    const totalMinutes = getDurationMinutes(taskGroups.reduce((sum, item) => sum + item.durationSec, 0));
     this.setData(page.buildCloudPageData(this.data, {
       levelId,
       phase,

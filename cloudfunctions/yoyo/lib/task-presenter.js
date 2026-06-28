@@ -150,9 +150,9 @@ function decorateTask(task, progress, category, deps) {
   const speakingMode = supportsQuestionAnswer
     ? 'nce-question-answer'
     : '';
-  const transcriptVisible = isRound2
-    ? currentPass === 1
-    : currentPass !== 2;
+  const transcriptVisible = supportsQuestionAnswer
+    ? false
+    : (isRound2 ? currentPass === 1 : currentPass !== 2);
   const reward = getTaskReward(category, progress, Object.assign({}, task, { transcriptTrackId }));
   return Object.assign({}, task, base, {
     category,

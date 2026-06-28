@@ -72,7 +72,7 @@
     </view>
   </view>
 
-  <view class="section-panel transcript-card" wx:if="{{progress && progress.transcriptVisible}}">
+  <view class="section-panel transcript-card" wx:if="{{progress && (progress.transcriptVisible || transcriptManualVisible)}}">
     <view class="row-between transcript-header">
       <view>
         <view class="section-title type-section-title">文本</view>
@@ -141,6 +141,13 @@
     </view>
   </view>
 
+  <view class="section-panel transcript-card" wx:elif="{{task.speakingMode === 'nce-question-answer'}}">
+    <view class="transcript-empty">
+      <view class="transcript-empty-title">文本已隐藏</view>
+      <button class="player-action record-action" bindtap="showTranscriptOnDemand">查看文本</button>
+    </view>
+  </view>
+
   <view class="section-panel transcript-card" wx:else>
     <view class="transcript-empty">
       <view class="transcript-empty-title">这一遍先盲听</view>
@@ -153,7 +160,7 @@
         <view class="section-title type-section-title">本遍问题</view>
         <view class="section-copy">{{passQuestionText || '听问题后准备回答'}}</view>
       </view>
-      <view class="pill">听完回答</view>
+      <button class="player-action record-action" bindtap="startQuestionAnswerNow">开始回答</button>
     </view>
   </view>
 
@@ -180,12 +187,11 @@
     <view class="action-row speaking-actions">
       <button class="player-action record-action {{speakingTempFilePath ? 'is-ready' : ''}}" wx:if="{{!speakingRecording}}" bindtap="startSpeakingRecord">{{speakingTempFilePath ? '重录' : '开始录音'}}</button>
       <button class="player-action record-action is-recording" wx:else bindtap="stopSpeakingRecord">停止录音</button>
-      <button class="player-action primary submit-action {{speakingSubmitting || !speakingTempFilePath ? 'is-disabled' : ''}}" disabled="{{speakingSubmitting || !speakingTempFilePath || speakingRecording}}" bindtap="submitSpeakingRecord">{{speakingSubmitting ? '提交中' : '提交评分'}}</button>
-      <button class="player-action primary" wx:if="{{speakingMode === 'nce-question-answer' && speakingPromptText}}" bindtap="continueAfterSpeakingFeedback">满意，继续</button>
+      <button class="player-action primary" wx:if="{{speakingMode === 'nce-question-answer' && speakingCanContinue}}" bindtap="continueAfterSpeakingFeedback">满意，继续</button>
       <button class="player-action" wx:if="{{speakingMode === 'unlock-sentence-repeat'}}" bindtap="completeUnlockRepeat">完成跟读</button>
     </view>
     <view class="record-status {{speakingRecording ? 'is-recording' : (speakingTempFilePath ? 'is-ready' : '')}}">
-      {{speakingRecording ? '正在录音，答完后点停止' : (speakingTempFilePath ? ('已录制 ' + speakingRecordDurationText + '，可以提交评分') : '先录音，再提交评分')}}
+      {{speakingSubmitting ? '录音已结束，正在自动评分' : (speakingRecording ? '正在录音，答完后点停止' : (speakingTempFilePath ? ('已录制 ' + speakingRecordDurationText) : '点开始录音，结束后自动评分'))}}
     </view>
 
     <view class="score-board" wx:if="{{speakingSummary.scoredCount}}">
@@ -213,12 +219,18 @@
         </view>
         <view class="attempt-transcript" wx:if="{{item.studentTranscript}}">学生回答：{{item.studentTranscript}}</view>
         <view class="attempt-feedback">{{item.feedback || '暂无建议'}}</view>
+        <view class="attempt-feedback" wx:if="{{item.scoreErrorType || item.scoreError}}">
+          错误：{{item.scoreErrorType || 'unknown'}} {{item.scoreError || ''}}
+        </view>
         <view class="action-row speaking-actions">
           <button class="player-action attempt-play" data-index="{{index}}" data-audio-type="answer" bindtap="playSpeakingAttempt">
-            {{speakingPlayingAttemptKey === ('answer-' + item.attemptType + '-' + item.attemptIndex + '-' + item.sentenceIndex + '-' + index) ? '停止录音' : '播放录音'}}
+            {{speakingPlayingAttemptKey === ('answer-' + item.attemptType + '-' + item.attemptIndex + '-' + item.sentenceIndex + '-' + index) ? (speakingPausedAttemptKey === ('answer-' + item.attemptType + '-' + item.attemptIndex + '-' + item.sentenceIndex + '-' + index) ? '继续录音' : '暂停录音') : '播放录音'}}
+          </button>
+          <button class="player-action attempt-play" wx:if="{{item.status === 'score-pending' && item.attemptId}}" data-index="{{index}}" bindtap="rescoreSpeakingAttempt">
+            {{speakingRescoringKey === item.attemptId ? '评分中' : '重新评分'}}
           </button>
           <button class="player-action attempt-play" wx:if="{{item.feedbackAudioFileId || item.feedbackAudioCloudPath}}" data-index="{{index}}" data-audio-type="feedback" bindtap="playSpeakingAttempt">
-            {{speakingPlayingAttemptKey === ('feedback-' + item.attemptType + '-' + item.attemptIndex + '-' + item.sentenceIndex + '-' + index) ? '停止建议' : '播放建议'}}
+            {{speakingPlayingAttemptKey === ('feedback-' + item.attemptType + '-' + item.attemptIndex + '-' + item.sentenceIndex + '-' + index) ? (speakingPausedAttemptKey === ('feedback-' + item.attemptType + '-' + item.attemptIndex + '-' + item.sentenceIndex + '-' + index) ? '继续建议' : '暂停建议') : '播放建议'}}
           </button>
         </view>
       </view>

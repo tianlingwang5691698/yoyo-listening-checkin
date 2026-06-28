@@ -9,6 +9,22 @@ async function add(record) {
   return created && created._id ? created._id : '';
 }
 
+async function findById(id) {
+  if (!id) {
+    return null;
+  }
+  const res = await taskAttempts().doc(id).get();
+  return res && res.data ? res.data : null;
+}
+
+async function update(id, data) {
+  if (!id) {
+    return null;
+  }
+  await taskAttempts().doc(id).update({ data });
+  return Object.assign({ _id: id }, data || {});
+}
+
 async function findByTask(scope, filters) {
   const where = {
     familyId: scope.familyId,
@@ -21,6 +37,15 @@ async function findByTask(scope, filters) {
     where.attemptType = filters.attemptType;
   }
   const res = await taskAttempts().where(where).orderBy('createdAt', 'asc').limit(200).get();
+  return res.data || [];
+}
+
+async function findByDate(scope, date) {
+  const res = await taskAttempts().where({
+    familyId: scope.familyId,
+    childId: scope.childId,
+    date
+  }).orderBy('createdAt', 'asc').limit(300).get();
   return res.data || [];
 }
 
@@ -47,6 +72,9 @@ async function findBestAndLatestByTask(scope, filters) {
 module.exports = {
   taskAttempts,
   add,
+  findById,
+  update,
+  findByDate,
   findByTask,
   findRecentByTask,
   findBestAndLatestByTask

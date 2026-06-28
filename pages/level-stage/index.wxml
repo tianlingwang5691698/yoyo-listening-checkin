@@ -15,7 +15,7 @@
     <view class="task-group-row card {{item.disabled ? 'is-disabled' : ''}}" data-category="{{item.category}}" data-task-id="{{item.taskId}}" data-disabled="{{item.disabled}}" data-plan-run-type="{{item.planRunType}}" data-plan-day-index="{{item.planDayIndex}}" bindtap="openTask">
       <view>
         <view class="group-name">{{item.categoryLabel}}</view>
-        <view class="group-meta type-caption">{{item.title}} · {{item.textType}}</view>
+        <view class="group-meta type-caption">{{item.taskCountText}} · {{item.title}} · {{item.textType}}</view>
       </view>
       <view class="group-side">
         <view class="group-minutes type-caption">{{item.minutesText}}</view>

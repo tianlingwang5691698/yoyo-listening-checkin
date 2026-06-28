@@ -76,3 +76,34 @@ test('阶段二 Unlock1 每天安排三个音频', () => {
     [21, 22, 23]
   );
 });
+
+test('阶段二 Peppa 每天五集，取消 Songs', () => {
+  assert.deepEqual(
+    planRuntime.getPlanIndicesForCategory(73, 'peppa', 100),
+    [72, 73, 74, 75, 76]
+  );
+  assert.deepEqual(
+    planRuntime.getPlanCategoryOrder(73),
+    ['newconcept1', 'peppa', 'unlock1']
+  );
+});
+
+test('阶段二 Peppa 不额外叠加旧集复听', () => {
+  const catalogs = {
+    newconcept1: Array.from({ length: 76 }, (_, index) => ({ taskId: `nce-${index}`, category: 'newconcept1' })),
+    peppa: Array.from({ length: 80 }, (_, index) => ({ taskId: `peppa-${index}`, category: 'peppa' })),
+    unlock1: Array.from({ length: 24 }, (_, index) => ({ taskId: `unlock-${index}`, category: 'unlock1' })),
+    song: Array.from({ length: 30 }, (_, index) => ({ taskId: `song-${index}`, category: 'song' }))
+  };
+  const plan = planEngine.buildPlanForDay(73, {
+    planSlotCount: 24,
+    getCatalog: (category) => catalogs[category],
+    planLib: planRuntime
+  }, { includePeppaReview: true });
+
+  assert.equal(plan.byCategory.peppa.length, 5);
+  assert.equal(plan.byCategory.song, undefined);
+  assert.deepEqual(plan.byCategory.newconcept1.map((task) => task.repeatTarget), [1, 1, 1]);
+  assert.deepEqual(plan.byCategory.peppa.map((task) => task.repeatTarget), [1, 1, 1, 1, 1]);
+  assert.deepEqual(plan.byCategory.unlock1.map((task) => task.repeatTarget), [1, 1, 1]);
+});

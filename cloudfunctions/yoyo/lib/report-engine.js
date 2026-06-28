@@ -34,6 +34,27 @@ async function upsertDailyReport(scope, date, deps) {
       updatedAt: task.updatedAt || (checkin && checkin.completedAt) || ''
     };
   }));
+  const attempts = deps.findAttemptsByDate ? await deps.findAttemptsByDate(scope, date) : [];
+  const speakingAttempts = attempts.map((item) => ({
+    attemptId: item._id || item.attemptId || '',
+    category: item.category || '',
+    taskId: item.taskId || '',
+    attemptType: item.attemptType || '',
+    attemptIndex: Number(item.attemptIndex || 0),
+    sentenceIndex: Number(item.sentenceIndex || 0),
+    questionText: item.questionText || item.promptText || '',
+    studentTranscript: item.studentTranscript || '',
+    score: Number(item.score || 0),
+    pronunciationFluencyScore: Number(item.pronunciationFluencyScore || 0),
+    contentGrammarScore: Number(item.contentGrammarScore || 0),
+    feedback: item.feedback || '',
+    status: item.status || '',
+    scoreErrorType: item.scoreErrorType || '',
+    answerAudioFileId: item.answerAudioFileId || '',
+    answerCloudPath: item.answerCloudPath || '',
+    answerDurationMs: Number(item.answerDurationMs || 0),
+    createdAt: item.createdAt || ''
+  }));
   const report = {
     reportId: `${scope.familyId}_${scope.childId}_${date}`,
     userId: scope.userId,
@@ -55,6 +76,7 @@ async function upsertDailyReport(scope, date, deps) {
     planDayIndex: todayPlan.dayIndex,
     planPhase: todayPlan.phase.key,
     items,
+    speakingAttempts,
     pushStatus: 'in-app-ready',
     inAppVisible: true,
     updatedAt: new Date().toISOString()
