@@ -27,9 +27,14 @@ function tomorrowString() {
 }
 
 function normalizeCard(item, index) {
+  const typeLabels = {
+    phrase: '短语',
+    pattern: '句型',
+    word: '单词'
+  };
   return Object.assign({}, item, {
-    displayText: item.text || item.word || item.phrase || '',
-    typeLabel: item.type === 'phrase' ? '短语' : '单词',
+    displayText: item.text || item.word || item.phrase || item.pattern || '',
+    typeLabel: typeLabels[item.type] || '单词',
     index: index + 1
   });
 }
@@ -45,7 +50,7 @@ function readItems() {
     }
     items.forEach((item) => {
       if (!item) return;
-      const flashcardKey = item.flashcardKey || `${item.type || 'word'}:${item.text || item.word || item.phrase || ''}`;
+      const flashcardKey = item.flashcardKey || `${item.type || 'word'}:${item.text || item.word || item.phrase || item.pattern || ''}`;
       if (!flashcardKey || seen[flashcardKey]) return;
       seen[flashcardKey] = true;
       list.push(Object.assign({}, item, {

@@ -1,8 +1,8 @@
 <view class="theme-{{theme}} page-shell reading-page" bindtouchstart="onDirectoryTouchStart" bindtouchend="onDirectoryTouchEnd">
   <view class="reading-hero card">
     <view class="reading-eyebrow">中考阅读</view>
-    <view class="reading-title">阅读练习</view>
-    <view class="reading-copy">按学生当前学习内容显示；完成后查看解析，生词短语统一进入词库。</view>
+    <view class="reading-title">中考阅读</view>
+    <view class="reading-copy">选择一模、二模或真题卷；完成后单词、短语和句型进入当天背诵闪卡。</view>
   </view>
 
   <view class="section-panel" wx:if="{{loading}}">
@@ -10,26 +10,8 @@
     <view class="section-copy">正在准备今日文章。</view>
   </view>
 
-  <block wx:elif="{{passages.length}}">
+  <block wx:elif="{{categoryRoot}}">
     <view class="reading-card card">
-      <view class="reading-card-top">
-        <view class="reading-card-label">当前学习 {{dailyCount}} 篇</view>
-        <view class="reading-card-state">{{completedCount}} / {{totalCount}} 已完成</view>
-      </view>
-      <view class="task-list">
-        <view class="task-row" wx:for="{{passages}}" wx:key="_id" data-passage-id="{{item._id}}" bindtap="openPassage">
-          <view class="task-index">{{item.index}}</view>
-          <view class="task-main">
-            <view class="task-title">{{item.title}}</view>
-            <view class="task-meta" wx:if="{{item.completed}}">已完成，可进入复习</view>
-            <view class="task-meta" wx:else>{{item.meta}} · {{item.questionCount}} 题</view>
-          </view>
-          <view class="task-state {{item.completed ? 'is-done' : ''}}">{{item.completed ? '复习' : '开始'}}</view>
-        </view>
-      </view>
-    </view>
-
-    <view class="reading-card card" wx:if="{{categoryRoot}}">
       <view class="reading-card-top">
         <view class="reading-card-label">
           <text>{{selectedHeader}}</text>
@@ -76,28 +58,6 @@
           <view class="task-state {{item.completed ? 'is-done' : ''}}">{{item.completed ? '复习' : '练习'}}</view>
         </view>
       </view>
-    </view>
-
-    <view class="reading-card card" wx:if="{{memoryPlan}}">
-      <view class="reading-card-top">
-        <view class="reading-card-label">阅读后背诵检测</view>
-        <view class="reading-card-state">随文章生成</view>
-      </view>
-      <view class="memory-grid">
-        <view class="memory-item">
-          <view class="memory-number">{{memoryPlan.vocabularyCount}}</view>
-          <view class="memory-label">单词</view>
-        </view>
-        <view class="memory-item">
-          <view class="memory-number">{{memoryPlan.phraseCount}}</view>
-          <view class="memory-label">词组</view>
-        </view>
-        <view class="memory-item">
-          <view class="memory-number">{{memoryPlan.sentencePatternCount}}</view>
-          <view class="memory-label">句型</view>
-        </view>
-      </view>
-      <view class="reading-card-meta">检测：单词拼写、词组英译、句型仿写。</view>
     </view>
 
   </block>

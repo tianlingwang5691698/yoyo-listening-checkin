@@ -290,8 +290,18 @@ function buildReviewSchedule(now) {
   }));
 }
 
+function getCardText(card, type) {
+  if (type === 'phrase') {
+    return card.text || card.phrase;
+  }
+  if (type === 'pattern') {
+    return card.pattern || card.text;
+  }
+  return card.word || card.text;
+}
+
 function addUnfamiliarCard(card, type) {
-  const text = type === 'phrase' ? (card.text || card.phrase) : (card.word || card.text);
+  const text = getCardText(card, type);
   if (!text) {
     return false;
   }
@@ -319,6 +329,20 @@ function addUnfamiliarCard(card, type) {
   }));
   wx.setStorageSync(FLASHCARD_ITEMS_KEY, items);
   return true;
+}
+
+function addReviewFlashcards(review) {
+  const normalized = normalizeReview(review);
+  if (!normalized) {
+    return 0;
+  }
+  const cards = []
+    .concat((normalized.vocabularyCards || []).map((card) => ({ type: 'word', card })))
+    .concat((normalized.phraseCards || []).map((card) => ({ type: 'phrase', card })))
+    .concat((normalized.sentencePatternCards || []).map((card) => ({ type: 'pattern', card })));
+  return cards.reduce((count, item) => (
+    addUnfamiliarCard(item.card, item.type) ? count + 1 : count
+  ), 0);
 }
 
 Page({
@@ -526,6 +550,7 @@ Page({
         hasScore: !!result.attempt && result.attempt.score !== null && result.attempt.score !== undefined
       });
       this.applyReview(result.review);
+      addReviewFlashcards(result.review);
       if (this.data.passage && this.data.passage._id && result.review) {
         savePhoneStudyPack(this.data.passage._id, {
           fullTranslation: result.review.fullTranslation,
