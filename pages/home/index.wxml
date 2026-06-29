@@ -27,35 +27,47 @@
 
   <view class="study-area-grid">
     <view class="study-area-card card" bindtap="openListening">
-      <view class="study-area-kicker">A1-C1 全部听力</view>
       <view class="study-area-title">听力</view>
       <view class="study-area-meta">{{listeningSummary}}</view>
     </view>
     <view class="study-area-card card" bindtap="openReading">
-      <view class="study-area-kicker">一模 · 二模 · 中考真题</view>
       <view class="study-area-title">阅读</view>
       <view class="study-area-meta">{{readingSummary}}</view>
     </view>
     <view class="study-area-card card" bindtap="openGrammar">
-      <view class="study-area-kicker">单选检测</view>
       <view class="study-area-title">语法</view>
       <view class="study-area-meta">单选错词入库</view>
     </view>
     <view class="study-area-card card" bindtap="openVocabulary">
-      <view class="study-area-kicker">统一词库</view>
       <view class="study-area-title">词汇</view>
       <view class="study-area-meta">{{vocabularySummary.due}} 到期 · {{vocabularySummary.total}} 总计</view>
     </view>
+    <view class="study-area-card card" bindtap="openTest">
+      <view class="study-area-title">测试</view>
+      <view class="study-area-meta">专项检测</view>
+    </view>
     <view class="study-area-card card" bindtap="openWriting">
-      <view class="study-area-kicker">作文练习</view>
       <view class="study-area-title">写作</view>
       <view class="study-area-meta">生词短语入库</view>
     </view>
     <view class="study-area-card card" bindtap="openSpeaking">
-      <view class="study-area-kicker">录音对话</view>
       <view class="study-area-title">口语</view>
       <view class="study-area-meta">录音评分</view>
     </view>
+  </view>
+
+  <view class="today-completed card">
+    <view class="today-completed-title">今日完成</view>
+    <view class="completed-list" wx:if="{{todayCompletedItems.length}}">
+      <view class="completed-row" wx:for="{{todayCompletedItems}}" wx:key="title">
+        <view class="completed-main">
+          <view class="completed-title">{{item.title}}</view>
+          <view class="completed-meta">{{item.meta}}</view>
+        </view>
+        <view class="completed-state">完成</view>
+      </view>
+    </view>
+    <view class="completed-empty" wx:else>暂无完成</view>
   </view>
 
   <view class="empty-state" wx:if="{{!homeLoading && !hasGroupedTasks && syncMode !== 'cloud-error'}}">今日任务还在准备中。</view>

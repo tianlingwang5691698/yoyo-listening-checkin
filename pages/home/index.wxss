@@ -78,7 +78,7 @@
 }
 
 .study-area-card {
-  min-height: 150rpx;
+  min-height: 132rpx;
   padding: 24rpx;
   background: var(--surface-raised);
 }
@@ -94,7 +94,6 @@
 }
 
 .study-area-title {
-  margin-top: 10rpx;
   color: var(--text-strong);
   font-size: var(--font-card-title-size);
   line-height: 1.25;
@@ -106,6 +105,66 @@
   color: var(--text-muted);
   font-size: var(--font-caption-size);
   line-height: 1.35;
+}
+
+.today-completed {
+  margin: 0 20rpx 28rpx;
+  padding: 26rpx 24rpx;
+  background: var(--surface-raised);
+}
+
+.today-completed-title {
+  color: var(--text-strong);
+  font-size: var(--font-section-title-size);
+  line-height: 1.3;
+  font-weight: var(--font-title-weight);
+}
+
+.completed-list {
+  margin-top: 14rpx;
+  display: flex;
+  flex-direction: column;
+  gap: 12rpx;
+}
+
+.completed-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18rpx;
+  padding: 16rpx 18rpx;
+  border-radius: 18rpx;
+  background: var(--surface-subtle);
+}
+
+.completed-main {
+  min-width: 0;
+  flex: 1;
+}
+
+.completed-title {
+  color: var(--text-main);
+  font-size: var(--font-body-size);
+  line-height: 1.3;
+  font-weight: var(--font-title-weight);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.completed-meta,
+.completed-empty {
+  margin-top: 6rpx;
+  color: var(--text-muted);
+  font-size: var(--font-caption-size);
+  line-height: 1.3;
+}
+
+.completed-state {
+  flex-shrink: 0;
+  color: var(--accent-deep);
+  font-size: var(--font-caption-size);
+  font-weight: var(--font-title-weight);
 }
 
 .home-section-heading {

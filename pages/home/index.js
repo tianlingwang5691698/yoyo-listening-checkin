@@ -56,9 +56,30 @@ function buildListeningSummary(groupedDailyTasks) {
 }
 
 function buildReadingSummary(passage, completed) {
-  if (!passage) return '一模 / 二模 / 中考真题';
+  if (!passage) return '6-9 年级阅读';
   if (completed) return '今日已完成';
   return `${passage.questionCount || 0} 题 · ${(passage.meta || '').split(' · ')[0] || '今日阅读'}`;
+}
+
+function buildTodayCompletedItems(groupedDailyTasks, readingToday, readingCompleted) {
+  const listeningItems = (groupedDailyTasks || []).reduce((list, group) => {
+    (group.tasks || []).forEach((task) => {
+      if (task.completedToday) {
+        list.push({
+          title: task.displayTitle || task.title || group.categoryLabel,
+          meta: group.categoryLabel || task.category || '听力'
+        });
+      }
+    });
+    return list;
+  }, []);
+  if (readingCompleted && readingToday) {
+    listeningItems.push({
+      title: readingToday.title || '阅读',
+      meta: '阅读'
+    });
+  }
+  return listeningItems;
 }
 
 Page({
@@ -77,8 +98,9 @@ Page({
     readingToday: null,
     readingCompleted: false,
     listeningSummary: '同步中',
-    readingSummary: '一模 / 二模 / 中考真题',
-    vocabularySummary: buildVocabularySummary()
+    readingSummary: '6-9 年级阅读',
+    vocabularySummary: buildVocabularySummary(),
+    todayCompletedItems: []
   }),
   buildStudyModePresentation(member) {
     const studyRole = member && member.studyRole === 'student' ? 'student' : 'parent';
@@ -104,6 +126,7 @@ Page({
       groupedDailyTasks,
       hasGroupedTasks: !!groupedDailyTasks.length,
       listeningSummary: buildListeningSummary(groupedDailyTasks),
+      todayCompletedItems: buildTodayCompletedItems(groupedDailyTasks, this.data.readingToday, this.data.readingCompleted),
       identityConfirmVisible: !page.isIdentityConfirmed(),
       modeChangedNoticeVisible,
       homeLoading: false
@@ -117,7 +140,8 @@ Page({
       readingLoading: false,
       readingToday: passage,
       readingCompleted: completed,
-      readingSummary: buildReadingSummary(passage, completed)
+      readingSummary: buildReadingSummary(passage, completed),
+      todayCompletedItems: buildTodayCompletedItems(this.data.groupedDailyTasks, passage, completed)
     });
   },
   async loadReadingHome() {
@@ -226,6 +250,12 @@ Page({
   openGrammar() {
     wx.showToast({
       title: '语法模块准备中',
+      icon: 'none'
+    });
+  },
+  openTest() {
+    wx.showToast({
+      title: '测试模块准备中',
       icon: 'none'
     });
   },
