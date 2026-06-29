@@ -6,21 +6,23 @@
   right: 0;
   bottom: 0;
   z-index: 999;
-  height: calc(104rpx + env(safe-area-inset-bottom));
+  height: calc(128rpx + env(safe-area-inset-bottom));
   padding-bottom: env(safe-area-inset-bottom);
   box-sizing: border-box;
-  background: var(--tabbar-bg);
-  border-top: 1rpx solid var(--tabbar-border);
+  background: rgba(255, 253, 249, 0.96);
+  border-top: 1rpx solid rgba(45, 38, 31, 0.06);
   display: grid;
   grid-template-columns: repeat(4, 1fr);
 }
 
 .tabbar-item {
   min-width: 0;
-  height: 104rpx;
+  height: 128rpx;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 8rpx;
   color: var(--tabbar-text);
   font-family: var(--font-body-family);
   font-size: var(--font-caption-size);
@@ -28,9 +30,15 @@
 }
 
 .tabbar-item.is-active {
-  color: var(--tabbar-active);
+  color: #bd6a08;
+}
+
+.tabbar-icon {
+  font-size: 36rpx;
+  line-height: 1;
 }
 
 .tabbar-text {
+  font-size: 22rpx;
   line-height: 1;
 }

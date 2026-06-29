@@ -20,6 +20,26 @@ function todayString() {
   return `${year}-${month}-${day}`;
 }
 
+function todayDisplayText() {
+  const now = new Date();
+  const month = now.getMonth() + 1;
+  const day = now.getDate();
+  const week = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'][now.getDay()];
+  return `${month}月${day}日（${week}）`;
+}
+
+function greetingText() {
+  const hour = new Date().getHours();
+  if (hour < 11) return '上午好';
+  if (hour < 18) return '下午好';
+  return '晚上好';
+}
+
+function profileInitial(child) {
+  const name = String((child && child.nickname) || 'Y');
+  return name.slice(0, 1).toUpperCase();
+}
+
 function buildVocabularySummary() {
   const today = todayString();
   const seen = {};
@@ -85,8 +105,11 @@ function buildTodayCompletedItems(groupedDailyTasks, readingToday, readingComple
 Page({
   data: page.createCloudPageData({
     child: contracts.createChildDefaults(),
+    profileInitial: 'Y',
     currentMember: contracts.createCurrentMemberDefaults(),
     planDayIndex: 1,
+    todayDisplay: todayDisplayText(),
+    greeting: greetingText(),
     planPhaseLabel: '第1轮',
     groupedDailyTasks: [],
     hasGroupedTasks: false,
@@ -120,6 +143,7 @@ Page({
       showCloudDebug: data.showCloudDebug,
       syncDebug: data.syncDebug,
       child: data.child,
+      profileInitial: profileInitial(data.child),
       currentMember: data.currentMember,
       planDayIndex: data.planDayIndex,
       planPhaseLabel: data.planPhaseLabel,
@@ -158,6 +182,8 @@ Page({
     }
     this.setData({
       homeLoading: true,
+      todayDisplay: todayDisplayText(),
+      greeting: greetingText(),
       vocabularySummary: buildVocabularySummary()
     });
     const data = await store.getDashboard({ view: 'home' }, (fresh) => this.applyDashboard(fresh));

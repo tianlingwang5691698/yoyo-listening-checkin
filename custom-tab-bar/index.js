@@ -8,19 +8,23 @@ Component({
     list: [
       {
         pagePath: '/pages/home/index',
-        text: '今日'
+        text: '首页',
+        icon: '⌂'
       },
       {
         pagePath: '/pages/level/index',
-        text: '音频'
+        text: '自学',
+        icon: '▣'
       },
       {
         pagePath: '/pages/record/index',
-        text: '成长'
+        text: '记录',
+        icon: '▤'
       },
       {
         pagePath: '/pages/profile/index',
-        text: '我的'
+        text: '我的',
+        icon: '◉'
       }
     ]
   },

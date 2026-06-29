@@ -1,7 +1,11 @@
 <view class="theme-{{theme}} page-shell home-page">
   <view class="home-titlebar">
-    <view class="home-brand type-brand">{{child.nickname || '佑佑'}}的英语小耳朵</view>
-    <view class="home-subtitle type-caption">今日 · Day {{planDayIndex}}</view>
+    <view class="settings-dot">⚙</view>
+    <view class="home-heading">
+      <view class="home-brand type-brand">{{greeting}}，{{child.nickname || '佑佑'}}</view>
+      <view class="home-subtitle type-caption">{{todayDisplay}} · Day {{planDayIndex}}</view>
+    </view>
+    <view class="profile-badge">{{profileInitial}}</view>
   </view>
 
   <view class="section-panel" wx:if="{{homeLoading}}">
@@ -25,32 +29,48 @@
     </view>
   </view>
 
+  <view class="wordbook-card card" bindtap="openVocabulary">
+    <view>
+      <view class="wordbook-title">我的词库</view>
+      <view class="wordbook-copy">{{vocabularySummary.total ? vocabularySummary.due + ' 个到期复习' : '阅读后的生词会自动进入词库'}}</view>
+    </view>
+    <view class="wordbook-action">去复习 →</view>
+  </view>
+
+  <view class="test-card" bindtap="openTest">
+    <view class="test-title">水平测试</view>
+    <view class="test-copy">测试英语水平，生成专属学习档案</view>
+    <view class="test-action">开始测试 →</view>
+  </view>
+
   <view class="study-area-grid">
     <view class="study-area-card card" bindtap="openListening">
+      <view class="study-area-icon">🎧</view>
       <view class="study-area-title">听力</view>
       <view class="study-area-meta">{{listeningSummary}}</view>
     </view>
     <view class="study-area-card card" bindtap="openReading">
+      <view class="study-area-icon">📚</view>
       <view class="study-area-title">阅读</view>
       <view class="study-area-meta">{{readingSummary}}</view>
     </view>
     <view class="study-area-card card" bindtap="openGrammar">
+      <view class="study-area-icon">✍</view>
       <view class="study-area-title">语法</view>
       <view class="study-area-meta">单选错词入库</view>
     </view>
     <view class="study-area-card card" bindtap="openVocabulary">
+      <view class="study-area-icon">🔎</view>
       <view class="study-area-title">词汇</view>
       <view class="study-area-meta">{{vocabularySummary.due}} 到期 · {{vocabularySummary.total}} 总计</view>
     </view>
-    <view class="study-area-card card" bindtap="openTest">
-      <view class="study-area-title">测试</view>
-      <view class="study-area-meta">专项检测</view>
-    </view>
     <view class="study-area-card card" bindtap="openWriting">
+      <view class="study-area-icon">📝</view>
       <view class="study-area-title">写作</view>
       <view class="study-area-meta">生词短语入库</view>
     </view>
     <view class="study-area-card card" bindtap="openSpeaking">
+      <view class="study-area-icon">🎙</view>
       <view class="study-area-title">口语</view>
       <view class="study-area-meta">录音评分</view>
     </view>
