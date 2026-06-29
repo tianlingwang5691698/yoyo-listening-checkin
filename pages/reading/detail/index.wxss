@@ -359,6 +359,10 @@
   font-size: 24rpx;
 }
 
+.word-pronounce:active {
+  opacity: 0.66;
+}
+
 .word-actions {
   width: 100%;
   display: flex;
@@ -382,14 +386,6 @@
 .mini-action.strong {
   color: var(--accent-deep);
   background: var(--accent-soft);
-}
-
-.speak-action {
-  flex: 0 0 52rpx;
-  width: 52rpx;
-  padding: 0;
-  font-size: 26rpx;
-  line-height: 52rpx;
 }
 
 .card-meaning,
