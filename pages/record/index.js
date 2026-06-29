@@ -163,10 +163,25 @@ function isFutureMonth(year, month) {
 
 function normalizeReport(report) {
   const safeReport = report || {};
+  const speakingAttempts = safeReport.speakingAttempts || [];
   const items = (safeReport.items || []).map((item) => {
     const normalized = labels.normalizeReportItem(item);
+    const attempts = speakingAttempts
+      .filter((attempt) => (
+        attempt.category === normalized.category
+        && (attempt.taskId === normalized.taskId || attempt.taskId === normalized.originalTaskId)
+      ))
+      .map((attempt, attemptIndex) => Object.assign({}, attempt, {
+        displayTitle: `第 ${attemptIndex + 1} 次回答`,
+        scoreText: attempt.status === 'score-pending' ? '待评分' : `${Number(attempt.score || 0)} 分`
+      }));
     return Object.assign({}, normalized, {
-      timeLines: buildTimeLines(normalized)
+      timeLines: buildTimeLines(normalized),
+      type: attempts.length ? 'speaking' : 'listening',
+      attempts,
+      attemptCount: attempts.length,
+      latestAttemptScore: attempts.length ? Number(attempts[attempts.length - 1].score || 0) : 0,
+      expanded: false
     });
   });
   return Object.assign({}, safeReport, {
@@ -445,5 +460,50 @@ Page({
     wx.navigateTo({
       url: `/pages/lesson/index?category=${category}&taskId=${taskId}&planRunType=catchup&targetDate=${targetDate}&planDayIndex=${planDayIndex}`
     });
+  },
+  openReportItem(event) {
+    const index = Number(event.currentTarget.dataset.index || 0);
+    const item = (this.data.selectedDayReport.items || [])[index];
+    if (!item) return;
+    if (item.type === 'speaking' && item.attempts && item.attempts.length) {
+      const report = Object.assign({}, this.data.selectedDayReport);
+      const items = (report.items || []).slice();
+      items[index] = Object.assign({}, item, { expanded: !item.expanded });
+      report.items = items;
+      this.setData({ selectedDayReport: report });
+      return;
+    }
+    if (item.category && item.taskId) {
+      wx.navigateTo({
+        url: `/pages/lesson/index?category=${item.category}&taskId=${item.taskId}`
+      });
+    }
+  },
+  async playAttempt(event) {
+    const itemIndex = Number(event.currentTarget.dataset.itemIndex || 0);
+    const attemptIndex = Number(event.currentTarget.dataset.attemptIndex || 0);
+    const audioType = String(event.currentTarget.dataset.audioType || 'answer');
+    const item = (this.data.selectedDayReport.items || [])[itemIndex] || {};
+    const attempt = (item.attempts || [])[attemptIndex] || null;
+    if (!attempt) return;
+    const fileId = audioType === 'feedback'
+      ? (attempt.feedbackAudioFileId || '')
+      : (attempt.answerAudioFileId || '');
+    if (!fileId) {
+      wx.showToast({ title: audioType === 'feedback' ? '暂无建议语音' : '暂无录音', icon: 'none' });
+      return;
+    }
+    try {
+      const url = await store.getTempFileURL(fileId);
+      if (!this.audioContext) {
+        this.audioContext = wx.createInnerAudioContext();
+        this.audioContext.obeyMuteSwitch = false;
+      }
+      this.audioContext.stop();
+      this.audioContext.src = url;
+      this.audioContext.play();
+    } catch (error) {
+      wx.showToast({ title: '播放失败', icon: 'none' });
+    }
   }
 });

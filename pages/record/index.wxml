@@ -111,19 +111,41 @@
 
     <block wx:if="{{selectedDayReport.items && selectedDayReport.items.length}}">
       <block wx:for="{{selectedDayReport.items}}" wx:key="taskId">
-        <view class="report-row">
-          <view>
-            <view class="report-title">{{item.categoryLabel}}</view>
-            <view class="report-copy">{{item.title}}</view>
-            <view class="report-times" wx:if="{{item.timeLines && item.timeLines.length}}">
-              <block wx:for="{{item.timeLines}}" wx:key="key" wx:for-item="time">
-                <view class="report-time">{{time.label}} {{time.timeText}}</view>
-              </block>
+        <view class="report-item-card">
+          <view class="report-row" data-index="{{index}}" bindtap="openReportItem">
+            <view>
+              <view class="report-title">{{item.categoryLabel}}</view>
+              <view class="report-copy">{{item.title}}</view>
+              <view class="report-copy" wx:if="{{item.type === 'speaking' && item.attemptCount}}">
+                最近 {{item.latestAttemptScore}} 分 · {{item.attemptCount}} 次回答
+              </view>
+              <view class="report-times" wx:if="{{item.timeLines && item.timeLines.length}}">
+                <block wx:for="{{item.timeLines}}" wx:key="key" wx:for-item="time">
+                  <view class="report-time">{{time.label}} {{time.timeText}}</view>
+                </block>
+              </view>
+            </view>
+            <view class="report-state {{item.completedToday ? 'is-done' : ''}}">
+              <view>{{item.type === 'speaking' ? '查看' : (item.completedToday ? '完成' : '等待')}}</view>
+              <view class="report-progress">{{item.playCount}} / {{item.repeatTarget}}</view>
             </view>
           </view>
-          <view class="report-state {{item.completedToday ? 'is-done' : ''}}">
-            <view>{{item.completedToday ? '完成' : '等待'}}</view>
-            <view class="report-progress">{{item.playCount}} / {{item.repeatTarget}}</view>
+
+          <view class="attempt-detail-list" wx:if="{{item.expanded}}">
+            <view class="attempt-detail" wx:for="{{item.attempts}}" wx:key="attemptId" wx:for-item="attempt" wx:for-index="attemptIndex">
+              <view class="attempt-head">
+                <view class="attempt-title">{{attempt.displayTitle}}</view>
+                <view class="attempt-score">{{attempt.scoreText}}</view>
+              </view>
+              <view class="attempt-subscore">发音流畅 {{attempt.pronunciationFluencyScore || 0}} / 内容语法 {{attempt.contentGrammarScore || 0}}</view>
+              <view class="attempt-text" wx:if="{{attempt.questionText}}">问题：{{attempt.questionText}}</view>
+              <view class="attempt-text" wx:if="{{attempt.studentTranscript}}">回答：{{attempt.studentTranscript}}</view>
+              <view class="attempt-feedback">{{attempt.feedback || '暂无分析'}}</view>
+              <view class="attempt-actions">
+                <button class="attempt-button" data-item-index="{{index}}" data-attempt-index="{{attemptIndex}}" data-audio-type="answer" bindtap="playAttempt">播放回答</button>
+                <button class="attempt-button" wx:if="{{attempt.feedbackAudioFileId}}" data-item-index="{{index}}" data-attempt-index="{{attemptIndex}}" data-audio-type="feedback" bindtap="playAttempt">播放分析</button>
+              </view>
+            </view>
           </view>
         </view>
       </block>
