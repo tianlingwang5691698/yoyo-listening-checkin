@@ -238,6 +238,11 @@ function buildScoreText(attempt) {
   if (!attempt) {
     return '';
   }
+  const correctCount = Number(attempt.correctCount);
+  const totalCount = Number(attempt.totalCount);
+  if (Number.isFinite(correctCount) && Number.isFinite(totalCount) && totalCount > 0) {
+    return `${correctCount * 2} / ${totalCount * 2} 分`;
+  }
   const score = Number(attempt.score);
   const totalScore = Number(attempt.totalScore);
   if (Number.isFinite(score) && Number.isFinite(totalScore) && totalScore > 0) {

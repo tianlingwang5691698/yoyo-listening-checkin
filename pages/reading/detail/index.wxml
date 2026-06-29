@@ -61,7 +61,7 @@
               <text class="phonetic" wx:if="{{item.phonetic}}">{{item.phonetic}}</text>
             </view>
             <view class="word-actions">
-              <button class="mini-action" data-word="{{item.word}}" bindtap="speakWord">发音</button>
+              <button class="mini-action speak-action" data-word="{{item.word}}" bindtap="speakWord" aria-label="发音">🔊</button>
               <button class="mini-action strong" data-word="{{item.word}}" bindtap="toggleWordUnfamiliar">{{unfamiliarMap[item.flashcardKey] ? '已加入' : '不熟'}}</button>
             </view>
           </view>

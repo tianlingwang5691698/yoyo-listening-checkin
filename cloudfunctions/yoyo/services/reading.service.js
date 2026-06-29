@@ -410,6 +410,13 @@ function normalizeStudyPack(pack, passage) {
     vocabularyCards: ((pack && pack.vocabularyCards) || fallback.vocabularyCards || []).map(formatVocabularyCard).filter(Boolean).slice(0, 20),
     phraseCards: ((pack && pack.phraseCards) || fallback.phraseCards || []).map(formatPhraseItem).filter(Boolean).slice(0, 20),
     sentencePatternCards: ((pack && pack.sentencePatternCards) || fallback.sentencePatternCards || []).map(formatSentencePattern).filter(Boolean).slice(0, 12),
+    questionAnalyses: Array.isArray(pack && pack.questionAnalyses) ? pack.questionAnalyses.map((item) => ({
+      number: item.number,
+      answer: item.answer || '',
+      answerSentence: item.answerSentence || '',
+      answerSentenceTranslation: item.answerSentenceTranslation || '',
+      analysis: item.analysis || ''
+    })).filter((item) => item.number !== undefined && item.number !== null).slice(0, 30) : [],
     source
   };
 }
@@ -418,21 +425,24 @@ function getReadingStudyModelConfig() {
   return {
     endpoint: process.env.READING_STUDY_ENDPOINT || process.env.SPEAKING_SCORE_ENDPOINT || '',
     apiKey: process.env.READING_STUDY_API_KEY || process.env.SPEAKING_SCORE_API_KEY || '',
-    model: process.env.READING_STUDY_MODEL || process.env.SPEAKING_CONTENT_SCORE_MODEL || process.env.SPEAKING_CONTENT_SCORE_MODE || 'doubao-seed-2-1-pro-260628'
+    model: process.env.READING_STUDY_MODEL || 'gpt-5.5'
   };
 }
 
 async function buildStudyPackWithModel(passage) {
   const config = getReadingStudyModelConfig();
   if (!config.endpoint || !config.apiKey) {
-    return normalizeStudyPack(buildFallbackStudyPack(passage), passage);
+    throw new Error('reading-study-model-not-configured');
   }
   const prompt = [
     '你是中考英语阅读老师。请只返回 JSON，不要 Markdown。',
-    '从文章中提取学习包：全文中文翻译、生词卡、短语卡、句型卡。',
+    '从文章中提取学习包：全文中文翻译、生词卡、短语卡、句型卡、逐题答案句和解析。',
     '生词优先选择中考常见但学生可能不熟的词，例句必须来自原文或贴近原文。',
-    'JSON 格式：{"fullTranslation":"","vocabularyCards":[{"word":"","phonetic":"","meaning":"","example":"","exampleMeaning":""}],"phraseCards":[{"text":"","meaning":"","example":""}],"sentencePatternCards":[{"pattern":"","meaning":"","example":""}]}',
+    '句型卡 meaning 必须是中文解释，example 必须是原文或贴近原文例句。',
+    '逐题解析必须按真实题号返回，answerSentence 必须是原文中的直接依据，analysis 用中文说明为什么选该答案。',
+    'JSON 格式：{"fullTranslation":"","vocabularyCards":[{"word":"","phonetic":"","meaning":"","example":"","exampleMeaning":""}],"phraseCards":[{"text":"","meaning":"","example":""}],"sentencePatternCards":[{"pattern":"","meaning":"","example":""}],"questionAnalyses":[{"number":69,"answer":"A","answerSentence":"","answerSentenceTranslation":"","analysis":""}]}',
     `标题：${passage.title}`,
+    `题目：${JSON.stringify((passage.questions || []).map((item) => ({ number: item.number, prompt: item.prompt, options: item.options, answer: item.answer })))} `,
     `文章：${passage.passage}`
   ].join('\n');
   try {
@@ -449,10 +459,7 @@ async function buildStudyPackWithModel(passage) {
       source: `model:${config.model}`
     }), passage);
   } catch (error) {
-    return Object.assign(normalizeStudyPack(buildFallbackStudyPack(passage), passage), {
-      source: 'fallback',
-      warning: error.message || String(error)
-    });
+    throw new Error(`reading-study-model-failed:${error.message || String(error)}`);
   }
 }
 
@@ -492,7 +499,7 @@ async function saveStudyPack(passage, studyPack) {
 
 async function getOrCreateStudyPack(passage) {
   const cached = await getCachedStudyPack(passage._id);
-  if (cached) {
+  if (cached && cached.source && String(cached.source).indexOf('model:') === 0) {
     return normalizeStudyPack(Object.assign({}, cached, { source: cached.source || 'cloud-cache' }), passage);
   }
   const studyPack = await buildStudyPackWithModel(passage);
@@ -565,9 +572,27 @@ function normalizeAnswerSentenceForQuestion(item, question, index) {
 
 function buildReview(passage, grade, studyPack) {
   const normalizedPack = normalizeStudyPack(studyPack, passage);
-  const answerSentences = (passage.answerSentences || [])
+  const modelAnalysesByNumber = (normalizedPack.questionAnalyses || []).reduce((map, item) => {
+    map[String(item.number)] = item;
+    return map;
+  }, {});
+  const fallbackAnswerSentences = (passage.answerSentences || [])
     .map((item, index) => normalizeAnswerSentenceForQuestion(item, passage.questions[index], index))
     .filter(Boolean);
+  const answerSentences = grade.questionResults.map((item) => {
+    const modelAnalysis = modelAnalysesByNumber[String(item.number)] || {};
+    const fallback = fallbackAnswerSentences.find((sentence) => String(sentence.number) === String(item.number)) || null;
+    const text = modelAnalysis.answerSentence || (fallback && fallback.text) || '';
+    if (!text) {
+      return null;
+    }
+    return {
+      number: item.number,
+      label: `第${item.number}题`,
+      text,
+      translation: modelAnalysis.answerSentenceTranslation || (fallback && fallback.translation) || ''
+    };
+  }).filter(Boolean);
   return {
     answerSentences,
     phrases: (passage.phrases || []).map((item) => textValue(item, ['phrase', 'text'])).filter(Boolean),
@@ -589,7 +614,7 @@ function buildReview(passage, grade, studyPack) {
       selected: item.selected,
       correct: item.correct,
       answerSentence: answerSentences.find((sentence) => String(sentence.number) === String(item.number)) || null,
-      text: item.analysis
+      text: (modelAnalysesByNumber[String(item.number)] && modelAnalysesByNumber[String(item.number)].analysis) || item.analysis
     }))
   };
 }

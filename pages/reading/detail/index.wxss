@@ -380,6 +380,14 @@
   background: var(--accent-soft);
 }
 
+.speak-action {
+  flex: 0 0 52rpx;
+  width: 52rpx;
+  padding: 0;
+  font-size: 26rpx;
+  line-height: 52rpx;
+}
+
 .card-meaning,
 .card-example,
 .card-example-meaning,
