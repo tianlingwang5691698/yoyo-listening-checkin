@@ -270,6 +270,19 @@ function buildScoreText(attempt) {
   return '';
 }
 
+function buildReviewSummary(attempt) {
+  if (!attempt) {
+    return '';
+  }
+  const correctCount = Number(attempt.correctCount);
+  const totalCount = Number(attempt.totalCount);
+  if (!Number.isFinite(totalCount) || totalCount <= 0) {
+    return '';
+  }
+  const wrongCount = Math.max(0, totalCount - (Number.isFinite(correctCount) ? correctCount : 0));
+  return wrongCount ? `答对 ${correctCount} 题，错 ${wrongCount} 题。解析已展开。` : `全部答对，共 ${totalCount} 题。解析已展开。`;
+}
+
 function mergeStudyPackIntoReview(review, studyPack) {
   const base = normalizeReview(review || {});
   const pack = studyPack || {};
@@ -426,6 +439,7 @@ Page({
     fullTranslation: '',
     unfamiliarMap: {},
     scoreText: '',
+    reviewSummary: '',
     submitted: false,
     showReviewDetails: false,
     hasScore: false
@@ -459,6 +473,7 @@ Page({
       fullTranslation: review ? review.fullTranslation : '',
       unfamiliarMap: getUnfamiliarMap(),
       scoreText: buildScoreText(latestAttempt),
+      reviewSummary: buildReviewSummary(latestAttempt),
       submitted,
       hasScore: !!latestAttempt && latestAttempt.score !== null && latestAttempt.score !== undefined
     }));
@@ -630,6 +645,7 @@ Page({
         showReviewDetails: true,
         passageSegments: buildPassageSegments(this.data.passage ? this.data.passage.passage : '', normalizeReview(result.review), 'answer'),
         scoreText: buildScoreText(result.attempt),
+        reviewSummary: buildReviewSummary(result.attempt),
         submitted: true,
         hasScore: !!result.attempt && result.attempt.score !== null && result.attempt.score !== undefined
       });

@@ -43,8 +43,9 @@
     <view class="review-card card" wx:if="{{submitted}}">
       <view class="review-score" wx:if="{{hasScore}}">{{scoreText}}</view>
       <view class="review-score" wx:else>已完成</view>
-      <view class="review-copy">在原文中切换答案句、生词释义和短语释义。</view>
-      <button class="detail-toggle" wx:if="{{review}}" bindtap="toggleReviewDetails">{{showReviewDetails ? '收起明细' : '查看词卡和解析'}}</button>
+      <view class="review-copy">{{reviewSummary || '解析已生成。'}}</view>
+      <view class="review-copy">每题后方可查看答案解析；原文中可切换答案句、生词和短语。</view>
+      <button class="detail-toggle primary" wx:if="{{review}}" bindtap="toggleReviewDetails">{{showReviewDetails ? '收起解析' : '查看完整解析'}}</button>
     </view>
 
     <view class="review-card card" wx:if="{{review && showReviewDetails}}">
