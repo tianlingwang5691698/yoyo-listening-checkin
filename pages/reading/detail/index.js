@@ -627,7 +627,7 @@ Page({
         attempt: result.attempt || null,
         passage: normalizePassage(this.data.passage, this.data.answers, true, normalizeReview(result.review)),
         activeHighlight: 'answer',
-        showReviewDetails: false,
+        showReviewDetails: true,
         passageSegments: buildPassageSegments(this.data.passage ? this.data.passage.passage : '', normalizeReview(result.review), 'answer'),
         scoreText: buildScoreText(result.attempt),
         submitted: true,
@@ -645,6 +645,10 @@ Page({
           source: result.review.studyPackSource || 'submit'
         });
       }
+      wx.showToast({ title: '已提交', icon: 'success' });
+      wx.nextTick(() => {
+        wx.pageScrollTo({ selector: '.review-card', duration: 240 });
+      });
     } catch (error) {
       this.setData({ submitting: false });
       wx.showToast({ title: error.message || '提交失败', icon: 'none' });

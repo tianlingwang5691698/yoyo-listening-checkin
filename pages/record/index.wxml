@@ -75,6 +75,25 @@
     </view>
   </view>
 
+  <view class="recent-card section-panel">
+    <view class="row-between">
+      <view>
+        <view class="type-section-title">过去 7 天</view>
+        <view class="section-copy">点击查看当天完成内容。</view>
+      </view>
+    </view>
+    <block wx:if="{{recentDays && recentDays.length}}">
+      <view class="recent-day-row {{item.date === selectedDate ? 'is-active' : ''}}" wx:for="{{recentDays}}" wx:key="date" data-date="{{item.date}}" bindtap="openRecentDay">
+        <view>
+          <view class="recent-day-title">{{item.label}}</view>
+          <view class="recent-day-copy">{{item.statusText}} · {{item.countText}}</view>
+        </view>
+        <view class="recent-day-meta">{{item.minutesText}}</view>
+      </view>
+    </block>
+    <view class="empty-state" wx:else>{{recentDaysLoading ? '加载中。' : '暂无记录。'}}</view>
+  </view>
+
   <view class="catchup section-panel">
     <view class="row-between">
       <view>

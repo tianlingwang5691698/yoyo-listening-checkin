@@ -264,6 +264,48 @@
   font-weight: var(--font-title-weight);
 }
 
+.recent-card {
+  margin-top: 22rpx;
+}
+
+.recent-day-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18rpx;
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid var(--border-soft);
+}
+
+.recent-day-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.recent-day-row.is-active .recent-day-title,
+.recent-day-row.is-active .recent-day-meta {
+  color: var(--accent-deep);
+}
+
+.recent-day-title {
+  color: var(--text-main);
+  font-size: var(--font-control-size);
+  font-weight: var(--font-title-weight);
+}
+
+.recent-day-copy {
+  margin-top: 8rpx;
+  color: var(--text-muted);
+  font-size: var(--font-caption-size);
+}
+
+.recent-day-meta {
+  flex-shrink: 0;
+  color: var(--text-soft);
+  font-size: var(--font-caption-size);
+  font-weight: var(--font-title-weight);
+}
+
 .report-row,
 .catchup-row {
   display: flex;

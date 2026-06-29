@@ -65,10 +65,6 @@
   overflow-wrap: normal;
 }
 
-.passage-segment:active {
-  opacity: 0.72;
-}
-
 .segment-answer,
 .segment-word,
 .segment-phrase {

@@ -211,6 +211,30 @@ function markSelectedCells(cells, selectedDate) {
   }));
 }
 
+function buildRecentDates(todayKey, days) {
+  const today = parseDateKey(todayKey);
+  const list = [];
+  for (let i = 0; i < days; i += 1) {
+    const date = new Date(today);
+    date.setDate(today.getDate() - i);
+    list.push(getDateKey(date));
+  }
+  return list;
+}
+
+function buildRecentDayItem(report) {
+  const normalized = normalizeReport(report);
+  const summary = buildDaySummary(normalized);
+  return {
+    date: normalized.date || '',
+    label: formatDateLabel(normalized.date || ''),
+    statusText: summary.statusText,
+    countText: `${summary.completedCount} / ${summary.totalCount}`,
+    minutesText: summary.minutesText,
+    isCompleted: summary.completedCount > 0
+  };
+}
+
 Page({
   monthCache: {},
   monthRequests: {},
@@ -235,6 +259,8 @@ Page({
     selectedDayReport: EMPTY_REPORT,
     selectedDaySummary: EMPTY_DAY_SUMMARY,
     selectedDayLoading: false,
+    recentDays: [],
+    recentDaysLoading: false,
     catchupStatusLabel: '无需追赶',
     catchupStatusClass: 'is-muted',
     catchupCopy: '节奏正常',
@@ -294,6 +320,7 @@ Page({
     )));
     this.preloadAdjacentMonths(calendarYear, calendarMonth);
     await this.loadSelectedDay(selectedDate);
+    await this.loadRecentDays();
     await this.loadCatchupTasks();
   },
   getCachedMonthData(year, month) {
@@ -384,6 +411,19 @@ Page({
     const data = await store.getDailyReportByDate(date, applyData);
     applyData(data);
   },
+  async loadRecentDays() {
+    const dates = buildRecentDates(this.data.todayDate || getDateKey(new Date()), 7);
+    this.setData({ recentDaysLoading: true });
+    try {
+      const reports = await Promise.all(dates.map((date) => store.getDailyReportByDate(date).then((data) => data.report)));
+      this.setData({
+        recentDays: reports.map(buildRecentDayItem),
+        recentDaysLoading: false
+      });
+    } catch (error) {
+      this.setData({ recentDaysLoading: false });
+    }
+  },
   async loadCatchupTasks() {
     const applyData = (heatmapData) => {
       this.setData(page.buildCloudPageData(this.data, Object.assign({
@@ -448,6 +488,11 @@ Page({
       monthCells: markSelectedCells(this.data.monthCells, date)
     });
     await this.loadSelectedDay(date);
+  },
+  async openRecentDay(event) {
+    const date = event.currentTarget.dataset.date;
+    if (!date) return;
+    await this.goToDate(date);
   },
   openCatchupTask(event) {
     const category = event.currentTarget.dataset.category;
