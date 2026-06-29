@@ -132,6 +132,27 @@ async function postJsonWithRetry(url, headers, body, label) {
   throw lastError;
 }
 
+async function postJsonWithModelFallback(url, headers, body, primaryModel, fallbackModel, label) {
+  const models = Array.from(new Set([primaryModel, fallbackModel].filter(Boolean)));
+  let lastError = null;
+  for (const model of models) {
+    try {
+      return {
+        model,
+        data: await postJsonWithRetry(url, headers, Object.assign({}, body, { model }), label)
+      };
+    } catch (error) {
+      lastError = error;
+      console.error('[speaking-score-model-failed]', JSON.stringify({
+        label: label || 'json',
+        model,
+        message: String(error && error.message || error || '')
+      }));
+    }
+  }
+  throw lastError;
+}
+
 function postMultipart(url, headers, fields, file) {
   return new Promise((resolve, reject) => {
     const target = new URL(url);
@@ -1046,6 +1067,23 @@ function buildFeedbackWithSuggestedAnswer(feedback, suggestedAnswer) {
   ].filter(Boolean).join(' '));
 }
 
+function parseContentScoreData(data) {
+  const content = data && data.choices && data.choices[0] && data.choices[0].message
+    ? data.choices[0].message.content
+    : '';
+  const responseText = extractMessageText(content);
+  const parsed = parseJsonResponseText(responseText) || {};
+  const looseParsed = !Number.isFinite(Number(parsed.contentScore))
+    ? parseScoreResponseText(responseText)
+    : null;
+  const rawContentScore = Number(parsed.contentScore || parsed.score || (looseParsed && looseParsed.score) || 0);
+  return {
+    parsed,
+    looseParsed,
+    rawContentScore
+  };
+}
+
 function buildContentFallbackFromTranscript(payload, transcript, audioScore) {
   const answer = normalizeText(transcript);
   const question = normalizeText(payload.promptText || payload.questionText);
@@ -1066,6 +1104,7 @@ async function scoreSpeakingAttempt(payload) {
   const apiKey = String(process.env.SPEAKING_SCORE_API_KEY || '').trim();
   const transcribeModel = String(process.env.SPEAKING_TRANSCRIBE_MODEL || 'gpt-4o-transcribe').trim();
   const contentModel = getEnvValue(['SPEAKING_CONTENT_SCORE_MODEL', 'SPEAKING_CONTENT_SCORE_MODE', 'SPEAKING_SCORE_PREFERRED_MODEL']) || 'doubao-seed-2-1-pro-260628';
+  const fallbackContentModel = getEnvValue(['SPEAKING_SCORE_FALLBACK_MODEL', 'SPEAKING_SCORE_FALLBACK_MODE', 'SPEAKING_CONTENT_SCORE_FALLBACK_MODEL', 'SPEAKING_CONTENT_SCORE_FALLBACK_MODE']);
   const audioTranscribeModels = [
     process.env.SPEAKING_AUDIO_TRANSCRIBE_MODEL
   ]
@@ -1221,8 +1260,7 @@ async function scoreSpeakingAttempt(payload) {
       attemptType: payload.attemptType || '',
       attemptIndex: payload.attemptIndex || 0
     }));
-    const data = await postJsonWithRetry(endpoint, authHeaders, {
-      model: contentModel,
+    const contentBody = {
       temperature: 0,
       messages: [{
         role: 'user',
@@ -1241,23 +1279,37 @@ async function scoreSpeakingAttempt(payload) {
           `Attempt index: ${payload.attemptIndex || 0}`
         ].join('\n')
       }]
-    }, 'content-score');
+    };
+    let contentResult = await postJsonWithModelFallback(endpoint, authHeaders, contentBody, contentModel, fallbackContentModel, 'content-score');
+    let contentParsed = parseContentScoreData(contentResult.data);
+    if (
+      (!Number.isFinite(contentParsed.rawContentScore) || contentParsed.rawContentScore <= 0)
+      && fallbackContentModel
+      && fallbackContentModel !== contentResult.model
+    ) {
+      console.warn('[speaking-score-model-invalid]', JSON.stringify({
+        model: contentResult.model,
+        fallbackModel: fallbackContentModel,
+        taskId: payload.taskId || '',
+        attemptType: payload.attemptType || '',
+        attemptIndex: payload.attemptIndex || 0
+      }));
+      contentResult = {
+        model: fallbackContentModel,
+        data: await postJsonWithRetry(endpoint, authHeaders, Object.assign({}, contentBody, { model: fallbackContentModel }), 'content-score-fallback')
+      };
+      contentParsed = parseContentScoreData(contentResult.data);
+    }
     console.log('[speaking-score-stage]', JSON.stringify({
       stage: 'content-model-ok',
-      model: contentModel,
+      model: contentResult.model,
       taskId: payload.taskId || '',
       attemptType: payload.attemptType || '',
       attemptIndex: payload.attemptIndex || 0
     }));
-    const content = data && data.choices && data.choices[0] && data.choices[0].message
-      ? data.choices[0].message.content
-      : '';
-    const responseText = extractMessageText(content);
-    const parsed = parseJsonResponseText(responseText) || {};
-    const looseParsed = !Number.isFinite(Number(parsed.contentScore))
-      ? parseScoreResponseText(responseText)
-      : null;
-    const rawContentScore = Number(parsed.contentScore || parsed.score || (looseParsed && looseParsed.score) || 0);
+    const parsed = contentParsed.parsed;
+    const looseParsed = contentParsed.looseParsed;
+    const rawContentScore = contentParsed.rawContentScore;
     if (!Number.isFinite(rawContentScore) || rawContentScore <= 0) {
       return {
         score: 0,
