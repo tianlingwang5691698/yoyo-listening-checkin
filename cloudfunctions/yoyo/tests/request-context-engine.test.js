@@ -79,4 +79,8 @@ test('resolveCatalogCategories 阅读学习包不刷新音频目录', () => {
     requestContextEngine.resolveCatalogCategories('getReadingStudyPack', '', {}),
     []
   );
+  assert.deepEqual(
+    requestContextEngine.resolveCatalogCategories('synthesizeReadingAudio', '', {}),
+    []
+  );
 });

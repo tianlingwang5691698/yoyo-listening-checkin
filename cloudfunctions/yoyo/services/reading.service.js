@@ -1,6 +1,8 @@
 const study = require('../facades/study.facade');
 const dbAdapter = require('../adapters/db.adapter');
 const samplePassages = require('../data/reading-passages.sample.json');
+const speakingEngine = require('../lib/speaking-engine');
+const crypto = require('crypto');
 const https = require('https');
 
 const DEFAULT_READING_DAILY_COUNT = 3;
@@ -830,9 +832,37 @@ async function submitReadingAttempt(event) {
   };
 }
 
+async function synthesizeReadingAudio(event) {
+  const payload = (event && event.payload) || {};
+  const { ctx, today } = await study.prepareRequestContext(Object.assign({}, event, {
+    action: 'synthesizeReadingAudio'
+  }));
+  const text = normalizeText(payload.text).slice(0, 500);
+  if (!text) {
+    throw new Error('reading-audio-text-empty');
+  }
+  const hash = crypto.createHash('sha1').update(text).digest('hex').slice(0, 20);
+  const cloudPath = [
+    '_reading_tts',
+    ctx.family.familyId,
+    ctx.child.childId,
+    today,
+    `${hash}.mp3`
+  ].join('/');
+  const fileId = await speakingEngine.synthesizeFeedbackAudio(text, cloudPath);
+  if (!fileId) {
+    throw new Error('reading-audio-tts-unavailable');
+  }
+  return {
+    text,
+    fileId
+  };
+}
+
 module.exports = {
   getReadingHome,
   getReadingPassage,
   getReadingStudyPack,
+  synthesizeReadingAudio,
   submitReadingAttempt
 };

@@ -468,6 +468,13 @@ async function getReadingStudyPack(options, onRefresh) {
   }, { onRefresh });
 }
 
+async function synthesizeReadingAudio(options) {
+  return callCloud('synthesizeReadingAudio', Object.assign({}, options || {}), {
+    text: '',
+    fileId: ''
+  }, { useCache: false });
+}
+
 async function submitReadingAttempt(options) {
   return callCloud('submitReadingAttempt', Object.assign({}, options || {}), {
     passage: null,
@@ -539,6 +546,7 @@ module.exports = {
   getReadingHome,
   getReadingPassage,
   getReadingStudyPack,
+  synthesizeReadingAudio,
   submitReadingAttempt,
   getFamilyPageData,
   refreshInviteCode,

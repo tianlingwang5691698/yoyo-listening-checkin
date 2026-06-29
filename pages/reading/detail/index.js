@@ -175,20 +175,36 @@ function buildPassageSegments(text, review, mode) {
   let cursor = 0;
   selected.forEach((range) => {
     if (range.start > cursor) {
-      segments.push({ text: source.slice(cursor, range.start), tone: 'normal' });
+      segments.push({ text: source.slice(cursor, range.start), tone: 'normal', start: cursor, end: range.start });
     }
     segments.push({
       text: source.slice(range.start, range.end),
       tone: range.tone,
+      start: range.start,
+      end: range.end,
       label: range.label || '',
       note: range.note || ''
     });
     cursor = range.end;
   });
   if (cursor < source.length) {
-    segments.push({ text: source.slice(cursor), tone: 'normal' });
+    segments.push({ text: source.slice(cursor), tone: 'normal', start: cursor, end: source.length });
   }
-  return segments.length ? segments : [{ text: source, tone: 'normal' }];
+  return segments.length ? segments : [{ text: source, tone: 'normal', start: 0, end: source.length }];
+}
+
+function pickSentenceAt(text, start, end) {
+  const source = String(text || '');
+  if (!source) return '';
+  const from = Math.max(0, Math.min(Number(start || 0), source.length));
+  const to = Math.max(from, Math.min(Number(end || from), source.length));
+  const leftMarks = '.!?。！？\n';
+  let left = from;
+  while (left > 0 && !leftMarks.includes(source[left - 1])) left -= 1;
+  let right = to;
+  while (right < source.length && !leftMarks.includes(source[right])) right += 1;
+  if (right < source.length) right += 1;
+  return source.slice(left, right).replace(/\s+/g, ' ').trim();
 }
 
 function normalizeCardList(list, fallbackKey) {
@@ -560,6 +576,35 @@ Page({
     const audio = wx.createInnerAudioContext();
     audio.src = card.audioUrl;
     audio.play();
+  },
+  async speakPassageSegment(event) {
+    const sentence = pickSentenceAt(
+      this.data.passage ? this.data.passage.passage : '',
+      event.currentTarget.dataset.start,
+      event.currentTarget.dataset.end
+    );
+    if (!sentence || this._readingAudioLoading) {
+      return;
+    }
+    this._readingAudioLoading = true;
+    try {
+      const result = await store.synthesizeReadingAudio({ text: sentence });
+      const url = result && result.fileId ? await store.getTempFileURL(result.fileId) : '';
+      if (!url) {
+        throw new Error('reading-audio-url-empty');
+      }
+      if (!this.readingAudioContext) {
+        this.readingAudioContext = wx.createInnerAudioContext();
+        this.readingAudioContext.obeyMuteSwitch = false;
+      }
+      this.readingAudioContext.stop();
+      this.readingAudioContext.src = url;
+      this.readingAudioContext.play();
+    } catch (error) {
+      wx.showToast({ title: error.message || '朗读失败', icon: 'none' });
+    } finally {
+      this._readingAudioLoading = false;
+    }
   },
   async submit() {
     if (this.data.submitting || !this.data.passage) {

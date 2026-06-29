@@ -12,7 +12,7 @@
         <button class="highlight-button {{activeHighlight === item.key ? 'is-active' : ''}}" wx:for="{{highlightButtons}}" wx:key="key" data-mode="{{item.key}}" bindtap="selectHighlight">{{item.label}}</button>
       </view>
       <view class="passage-text">
-        <text wx:for="{{passageSegments}}" wx:key="index" class="passage-segment segment-{{item.tone}}">
+        <text wx:for="{{passageSegments}}" wx:key="index" class="passage-segment segment-{{item.tone}}" data-start="{{item.start}}" data-end="{{item.end}}" bindtap="speakPassageSegment">
           <text wx:if="{{item.label}}" class="segment-label">{{item.label}}</text><text>{{item.text}}</text><text wx:if="{{item.note}}" class="segment-note">{{item.note}}</text>
         </text>
       </view>

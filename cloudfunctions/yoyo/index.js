@@ -410,6 +410,7 @@ const actionMap = {
   getReadingHome: readingService.getReadingHome,
   getReadingPassage: readingService.getReadingPassage,
   getReadingStudyPack: readingService.getReadingStudyPack,
+  synthesizeReadingAudio: readingService.synthesizeReadingAudio,
   submitReadingAttempt: readingService.submitReadingAttempt
 };
 
@@ -434,6 +435,7 @@ const MONITORED_ACTIONS = new Set([
   'getReadingHome',
   'getReadingPassage',
   'getReadingStudyPack',
+  'synthesizeReadingAudio',
   'submitReadingAttempt'
 ]);
 
