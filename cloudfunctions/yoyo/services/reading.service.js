@@ -421,6 +421,39 @@ function normalizeStudyPack(pack, passage) {
   };
 }
 
+function isModelStudyPack(studyPack) {
+  return !!(studyPack && studyPack.source && String(studyPack.source).indexOf('model:') === 0);
+}
+
+function validateModelStudyPack(studyPack, passage) {
+  const questions = (passage.questions || []).filter((question) => question.answer);
+  if (!isModelStudyPack(studyPack)) {
+    throw new Error('reading-study-pack-not-model');
+  }
+  if (!studyPack.fullTranslation) {
+    throw new Error('reading-study-pack-missing-translation');
+  }
+  if (!studyPack.questionAnalyses || studyPack.questionAnalyses.length < questions.length) {
+    throw new Error('reading-study-pack-missing-question-analyses');
+  }
+  const analysisByNumber = studyPack.questionAnalyses.reduce((map, item) => {
+    map[String(item.number)] = item;
+    return map;
+  }, {});
+  questions.forEach((question) => {
+    const analysis = analysisByNumber[String(question.number)];
+    if (!analysis || !analysis.answerSentence || !analysis.analysis) {
+      throw new Error(`reading-study-pack-missing-question-${question.number}`);
+    }
+  });
+  if (!studyPack.sentencePatternCards || !studyPack.sentencePatternCards.length) {
+    throw new Error('reading-study-pack-missing-sentence-patterns');
+  }
+  if (studyPack.sentencePatternCards.some((item) => !item.pattern || !item.meaning)) {
+    throw new Error('reading-study-pack-missing-sentence-pattern-translation');
+  }
+}
+
 function getReadingStudyModelConfig() {
   return {
     endpoint: process.env.READING_STUDY_ENDPOINT || process.env.SPEAKING_SCORE_ENDPOINT || '',
@@ -455,9 +488,11 @@ async function buildStudyPackWithModel(passage) {
       temperature: 0.2
     }, 45000);
     const parsed = parseJsonText(extractMessageText(response));
-    return normalizeStudyPack(Object.assign({}, parsed || {}, {
+    const studyPack = normalizeStudyPack(Object.assign({}, parsed || {}, {
       source: `model:${config.model}`
     }), passage);
+    validateModelStudyPack(studyPack, passage);
+    return studyPack;
   } catch (error) {
     throw new Error(`reading-study-model-failed:${error.message || String(error)}`);
   }
@@ -481,6 +516,7 @@ async function saveStudyPack(passage, studyPack) {
   if (!passage || !passage._id || !studyPack) {
     return;
   }
+  validateModelStudyPack(studyPack, passage);
   try {
     await dbAdapter.collection(STUDY_PACK_COLLECTION).add({
       data: {
@@ -499,8 +535,10 @@ async function saveStudyPack(passage, studyPack) {
 
 async function getOrCreateStudyPack(passage) {
   const cached = await getCachedStudyPack(passage._id);
-  if (cached && cached.source && String(cached.source).indexOf('model:') === 0) {
-    return normalizeStudyPack(Object.assign({}, cached, { source: cached.source || 'cloud-cache' }), passage);
+  if (cached && isModelStudyPack(cached)) {
+    const cachedPack = normalizeStudyPack(cached, passage);
+    validateModelStudyPack(cachedPack, passage);
+    return cachedPack;
   }
   const studyPack = await buildStudyPackWithModel(passage);
   await saveStudyPack(passage, studyPack);

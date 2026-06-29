@@ -268,13 +268,20 @@ function mergeStudyPackIntoReview(review, studyPack) {
 
 function getPhoneStudyPack(passageId) {
   try {
-    return wx.getStorageSync(`${STUDY_PACK_STORAGE_PREFIX}${passageId}`) || null;
+    const cached = wx.getStorageSync(`${STUDY_PACK_STORAGE_PREFIX}${passageId}`) || null;
+    if (!cached || !cached.studyPack || !cached.studyPack.source || String(cached.studyPack.source).indexOf('model:') !== 0) {
+      return null;
+    }
+    return cached;
   } catch (error) {
     return null;
   }
 }
 
 function savePhoneStudyPack(passageId, studyPack) {
+  if (!studyPack || !studyPack.source || String(studyPack.source).indexOf('model:') !== 0) {
+    return;
+  }
   try {
     wx.setStorageSync(`${STUDY_PACK_STORAGE_PREFIX}${passageId}`, {
       savedAt: Date.now(),
@@ -589,6 +596,7 @@ Page({
           vocabularyCards: result.review.vocabularyCards,
           phraseCards: result.review.phraseCards,
           sentencePatternCards: result.review.sentencePatternCards,
+          questionAnalyses: result.review.analysis,
           source: result.review.studyPackSource || 'submit'
         });
       }
