@@ -86,8 +86,13 @@ function buildTodayCompletedItems(groupedDailyTasks, readingToday, readingComple
     (group.tasks || []).forEach((task) => {
       if (task.completedToday) {
         list.push({
+          type: 'listening',
           title: task.displayTitle || task.title || group.categoryLabel,
-          meta: group.categoryLabel || task.category || '听力'
+          meta: group.categoryLabel || task.category || '听力',
+          category: task.category || group.category || '',
+          taskId: task.taskId || '',
+          progressText: task.progressText || '',
+          completedToday: true
         });
       }
     });
@@ -95,8 +100,12 @@ function buildTodayCompletedItems(groupedDailyTasks, readingToday, readingComple
   }, []);
   if (readingCompleted && readingToday) {
     listeningItems.push({
+      type: 'reading',
       title: readingToday.title || '阅读',
-      meta: '阅读'
+      meta: '阅读',
+      passageId: readingToday._id || '',
+      completedToday: true,
+      latestAttempt: readingToday.latestAttempt || null
     });
   }
   return listeningItems;
@@ -299,6 +308,12 @@ Page({
   openVocabulary() {
     wx.navigateTo({
       url: '/pages/reading/flashcards/index'
+    });
+  },
+  openCompleted() {
+    wx.setStorageSync('todayCompletedItemsV1', this.data.todayCompletedItems || []);
+    wx.navigateTo({
+      url: '/pages/home/completed/index'
     });
   },
   openFamilyPage() {

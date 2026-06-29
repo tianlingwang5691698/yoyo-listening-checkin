@@ -158,6 +158,22 @@ function createPassageSummary(passage) {
   };
 }
 
+function attachAttemptSummary(summary, latestAttempt) {
+  if (!summary || !latestAttempt) {
+    return summary;
+  }
+  return Object.assign({}, summary, {
+    latestAttempt: {
+      _id: latestAttempt._id || '',
+      score: latestAttempt.score,
+      totalScore: latestAttempt.totalScore,
+      correctCount: latestAttempt.correctCount,
+      totalCount: latestAttempt.totalCount,
+      status: latestAttempt.status || ''
+    }
+  });
+}
+
 function textValue(item, fields) {
   if (!item) {
     return '';
@@ -742,7 +758,7 @@ async function getReadingHome(event) {
   return {
     today,
     dailyCount: summaries.length,
-    passage: createPassageSummary(passage),
+    passage: attachAttemptSummary(createPassageSummary(passage), latestAttempt),
     passages: summaries,
     categoryTree: buildCategoryTree(passages, latestByAllPassageId),
     memoryPlan: buildMemoryPlan(plannedPassages),

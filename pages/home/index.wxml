@@ -29,7 +29,7 @@
     </view>
   </view>
 
-  <view class="wordbook-card card">
+  <view class="wordbook-card card" bindtap="openCompleted">
     <view>
       <view class="wordbook-title">今日完成</view>
       <view class="wordbook-copy">{{todayCompletedItems.length ? todayCompletedItems.length + ' 项已完成' : '暂无完成'}}</view>

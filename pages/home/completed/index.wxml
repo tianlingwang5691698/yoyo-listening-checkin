@@ -1,0 +1,23 @@
+<view class="theme-{{theme}} page-shell completed-page">
+  <view class="completed-header">
+    <view class="type-page-title">今日完成</view>
+    <view class="type-caption completed-subtitle">{{items.length}} 项已完成</view>
+  </view>
+
+  <view class="completed-list" wx:if="{{items.length}}">
+    <view class="completed-card card" wx:for="{{items}}" wx:key="index" data-index="{{index}}" bindtap="openItem">
+      <view class="completed-index">{{item.index}}</view>
+      <view class="completed-main">
+        <view class="completed-title">{{item.title}}</view>
+        <view class="completed-meta">{{item.typeLabel}} · {{item.meta}}</view>
+        <view class="completed-copy" wx:if="{{item.type === 'reading' && item.latestAttempt}}">
+          得分 {{item.latestAttempt.score || 0}} / {{item.latestAttempt.totalScore || (item.latestAttempt.totalCount * 2) || 0}} 分
+        </view>
+        <view class="completed-copy" wx:elif="{{item.progressText}}">{{item.progressText}}</view>
+      </view>
+      <view class="completed-action">{{item.actionText}}</view>
+    </view>
+  </view>
+
+  <view class="empty-state" wx:else>今天还没有完成记录。</view>
+</view>
