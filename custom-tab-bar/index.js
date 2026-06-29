@@ -13,7 +13,7 @@ Component({
       },
       {
         pagePath: '/pages/level/index',
-        text: '自学',
+        text: '音频',
         icon: '▣'
       },
       {

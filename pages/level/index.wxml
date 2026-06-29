@@ -4,6 +4,12 @@
     <view class="type-caption level-subtitle">不同材料组合，累积听力时长</view>
   </view>
 
+  <view class="test-card" bindtap="openTest">
+    <view class="test-title">水平测试</view>
+    <view class="test-copy">测试英语水平，生成专属学习档案</view>
+    <view class="test-action">开始测试 →</view>
+  </view>
+
   <view class="level-tabs">
     <block wx:for="{{levelTabs}}" wx:key="levelId">
       <view class="level-tab {{item.active ? 'is-active' : ''}} {{item.enabled ? '' : 'is-disabled'}}" data-enabled="{{item.enabled}}" data-level-id="{{item.levelId}}" bindtap="chooseLevel">

@@ -13,6 +13,41 @@
   margin-bottom: 18rpx;
 }
 
+.test-card {
+  margin: 0 0 28rpx;
+  min-height: 136rpx;
+  padding: 28rpx 28rpx;
+  border: 3rpx solid rgba(196, 119, 17, 0.72);
+  border-bottom-width: 8rpx;
+  border-radius: 28rpx;
+  background: rgba(255, 254, 252, 0.82);
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 24rpx;
+}
+
+.test-title {
+  color: var(--text-strong);
+  font-size: 34rpx;
+  line-height: 1.25;
+  font-weight: 800;
+}
+
+.test-copy {
+  color: #8a847c;
+  font-size: 26rpx;
+  line-height: 1.45;
+}
+
+.test-action {
+  color: #bd6a08;
+  font-size: 28rpx;
+  line-height: 1.25;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
 .level-tab {
   min-height: 62rpx;
   border-radius: 999rpx;

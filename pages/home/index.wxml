@@ -29,18 +29,12 @@
     </view>
   </view>
 
-  <view class="wordbook-card card" bindtap="openVocabulary">
+  <view class="wordbook-card card">
     <view>
-      <view class="wordbook-title">我的词库</view>
-      <view class="wordbook-copy">{{vocabularySummary.total ? vocabularySummary.due + ' 个到期复习' : '阅读后的生词会自动进入词库'}}</view>
+      <view class="wordbook-title">今日完成</view>
+      <view class="wordbook-copy">{{todayCompletedItems.length ? todayCompletedItems.length + ' 项已完成' : '暂无完成'}}</view>
     </view>
-    <view class="wordbook-action">去复习 →</view>
-  </view>
-
-  <view class="test-card" bindtap="openTest">
-    <view class="test-title">水平测试</view>
-    <view class="test-copy">测试英语水平，生成专属学习档案</view>
-    <view class="test-action">开始测试 →</view>
+    <view class="wordbook-action">{{todayCompletedItems.length ? '已记录' : '继续学习 →'}}</view>
   </view>
 
   <view class="study-area-grid">
@@ -74,20 +68,6 @@
       <view class="study-area-title">口语</view>
       <view class="study-area-meta">录音评分</view>
     </view>
-  </view>
-
-  <view class="today-completed card">
-    <view class="today-completed-title">今日完成</view>
-    <view class="completed-list" wx:if="{{todayCompletedItems.length}}">
-      <view class="completed-row" wx:for="{{todayCompletedItems}}" wx:key="title">
-        <view class="completed-main">
-          <view class="completed-title">{{item.title}}</view>
-          <view class="completed-meta">{{item.meta}}</view>
-        </view>
-        <view class="completed-state">完成</view>
-      </view>
-    </view>
-    <view class="completed-empty" wx:else>暂无完成</view>
   </view>
 
   <view class="empty-state" wx:if="{{!homeLoading && !hasGroupedTasks && syncMode !== 'cloud-error'}}">今日任务还在准备中。</view>

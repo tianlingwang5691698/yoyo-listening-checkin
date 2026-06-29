@@ -190,6 +190,12 @@ Page({
       url: `/pages/level-stage/index?levelId=A1&phase=${phase}`
     });
   },
+  openTest() {
+    wx.showToast({
+      title: '测试模块准备中',
+      icon: 'none'
+    });
+  },
   openTask(event) {
     const category = event.currentTarget.dataset.category;
     const taskId = event.currentTarget.dataset.taskId;
