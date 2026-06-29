@@ -22,12 +22,19 @@ function normalizeAnswerText(value) {
   return String(value || '').trim().replace(/\s+/g, ' ').toLowerCase();
 }
 
-function normalizePassage(passage, answers, submitted) {
+function normalizePassage(passage, answers, submitted, review) {
   if (!passage) {
     return null;
   }
+  const analysisByNumber = ((review && review.analysis) || []).reduce((map, item) => {
+    if (item && item.number !== undefined && item.number !== null) {
+      map[String(item.number)] = item;
+    }
+    return map;
+  }, {});
   return Object.assign({}, passage, {
     questions: (passage.questions || []).map((question) => {
+      const reviewAnalysis = analysisByNumber[String(question.number)] || null;
       const type = hasOptions(question) ? 'choice' : 'blank';
       const userAnswer = String(answers[String(question.number)] || '');
       const rawAnswer = String(question.answer || '').trim();
@@ -44,6 +51,7 @@ function normalizePassage(passage, answers, submitted) {
         inputValue: type === 'blank' ? selected : '',
         answer,
         isCorrect,
+        reviewAnalysis,
         optionsList: buildOptionList(question.options).map((option) => Object.assign({}, option, {
           selected: option.key === selected,
           correct: !!submitted && !!answer && option.key === answer,
@@ -204,7 +212,7 @@ function normalizeReview(review) {
     flashcardKey: `phrase:${card.text || card.phrase || ''}`
   }));
   return Object.assign({}, review, {
-    answerSentences: review.answerSentences || [],
+    answerSentences: normalizeCardList(review.answerSentences || [], 'text'),
     phrases: review.phrases || [],
     vocabulary: review.vocabulary || [],
     sentencePatterns: review.sentencePatterns || [],
@@ -224,6 +232,21 @@ function normalizeReview(review) {
       sentencePattern: (memoryChecks.sentencePatterns || [])[0] || ''
     }
   });
+}
+
+function buildScoreText(attempt) {
+  if (!attempt) {
+    return '';
+  }
+  const score = Number(attempt.score);
+  const totalScore = Number(attempt.totalScore);
+  if (Number.isFinite(score) && Number.isFinite(totalScore) && totalScore > 0) {
+    return `${score} / ${totalScore} 分`;
+  }
+  if (Number.isFinite(score)) {
+    return `${score} 分`;
+  }
+  return '';
 }
 
 function mergeStudyPackIntoReview(review, studyPack) {
@@ -374,6 +397,7 @@ Page({
     sentencePatternCards: [],
     fullTranslation: '',
     unfamiliarMap: {},
+    scoreText: '',
     submitted: false,
     showReviewDetails: false,
     hasScore: false
@@ -393,7 +417,7 @@ Page({
     const answers = latestAttempt && latestAttempt.answers ? latestAttempt.answers : this.data.answers;
     const submitted = !!latestAttempt;
     const review = latestAttempt && latestAttempt.review ? normalizeReview(latestAttempt.review) : null;
-    const passage = normalizePassage(data.passage, answers, submitted);
+    const passage = normalizePassage(data.passage, answers, submitted, review);
     this.setData(page.buildCloudPageData(this.data, {
       loading: false,
       passage,
@@ -406,6 +430,7 @@ Page({
       sentencePatternCards: review ? review.sentencePatternCards : [],
       fullTranslation: review ? review.fullTranslation : '',
       unfamiliarMap: getUnfamiliarMap(),
+      scoreText: buildScoreText(latestAttempt),
       submitted,
       hasScore: !!latestAttempt && latestAttempt.score !== null && latestAttempt.score !== undefined
     }));
@@ -425,7 +450,7 @@ Page({
     const answers = Object.assign({}, this.data.answers, { [number]: option });
     this.setData({
       answers,
-      passage: normalizePassage(this.data.passage, answers, this.data.submitted)
+      passage: normalizePassage(this.data.passage, answers, this.data.submitted, this.data.review)
     });
   },
   inputAnswer(event) {
@@ -441,13 +466,14 @@ Page({
     });
     this.setData({
       answers,
-      passage: normalizePassage(this.data.passage, answers, this.data.submitted)
+      passage: normalizePassage(this.data.passage, answers, this.data.submitted, this.data.review)
     });
   },
   applyReview(review) {
     const normalized = normalizeReview(review);
     this.setData({
       review: normalized,
+      passage: normalizePassage(this.data.passage, this.data.answers, this.data.submitted, normalized),
       passageSegments: buildPassageSegments(this.data.passage ? this.data.passage.passage : '', normalized, this.data.activeHighlight),
       wordCards: normalized ? normalized.vocabularyCards : [],
       phraseCards: normalized ? normalized.phraseCards : [],
@@ -542,10 +568,11 @@ Page({
       this.setData({
         submitting: false,
         attempt: result.attempt || null,
-        passage: normalizePassage(this.data.passage, this.data.answers, true),
+        passage: normalizePassage(this.data.passage, this.data.answers, true, normalizeReview(result.review)),
         activeHighlight: 'answer',
         showReviewDetails: false,
         passageSegments: buildPassageSegments(this.data.passage ? this.data.passage.passage : '', normalizeReview(result.review), 'answer'),
+        scoreText: buildScoreText(result.attempt),
         submitted: true,
         hasScore: !!result.attempt && result.attempt.score !== null && result.attempt.score !== undefined
       });

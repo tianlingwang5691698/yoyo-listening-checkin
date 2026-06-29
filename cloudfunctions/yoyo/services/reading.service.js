@@ -316,11 +316,15 @@ function buildCategoryTree(passages, latestByPassageId) {
 
 function buildSentencePatterns(passage) {
   if (passage.sentencePatterns && passage.sentencePatterns.length) {
-    return passage.sentencePatterns.map((item) => textValue(item, ['pattern', 'text', 'sentence'])).filter(Boolean);
+    return passage.sentencePatterns;
   }
   return (passage.answerSentences || [])
     .slice(0, 3)
-    .map((item) => textValue(item, ['text', 'sentence']))
+    .map((item) => ({
+      pattern: textValue(item, ['text', 'sentence']),
+      meaning: item && item.translation ? item.translation : '',
+      example: textValue(item, ['text', 'sentence'])
+    }))
     .filter(Boolean);
 }
 
@@ -393,7 +397,7 @@ function buildFallbackStudyPack(passage) {
     fullTranslation: passage.translation || '',
     vocabularyCards: (passage.vocabulary || []).map(formatVocabularyCard).filter(Boolean),
     phraseCards: (passage.phrases || []).map(formatPhraseItem).filter(Boolean),
-    sentencePatternCards: (passage.sentencePatterns || buildSentencePatterns(passage)).map(formatSentencePattern).filter(Boolean),
+    sentencePatternCards: buildSentencePatterns(passage).map(formatSentencePattern).filter(Boolean),
     source: 'fallback'
   };
 }
@@ -512,6 +516,7 @@ function gradeAnswers(passage, answers) {
   const answerMap = answers || {};
   let keyedCount = 0;
   let correctCount = 0;
+  const pointPerQuestion = 2;
   const questionResults = passage.questions.map((question) => {
     const selected = String(answerMap[question.number] || '').trim().toUpperCase();
     const answer = String(question.answer || '').trim().toUpperCase();
@@ -531,21 +536,43 @@ function gradeAnswers(passage, answers) {
       analysis: question.analysis || '请结合原文定位答案句。'
     };
   });
+  const totalScore = keyedCount * pointPerQuestion;
+  const score = correctCount * pointPerQuestion;
   return {
-    score: keyedCount ? Math.round((correctCount / keyedCount) * 100) : null,
+    score: keyedCount ? score : null,
+    totalScore,
+    pointPerQuestion,
     correctCount,
     totalCount: keyedCount,
     questionResults
   };
 }
 
+function normalizeAnswerSentenceForQuestion(item, question, index) {
+  const text = textValue(item, ['text', 'sentence']);
+  if (!text) {
+    return null;
+  }
+  const source = typeof item === 'string' ? {} : (item || {});
+  const number = source.questionNumber || source.number || source.question || (question && question.number) || index + 1;
+  return {
+    number,
+    label: `第${number}题`,
+    text,
+    translation: source.translation || source.meaning || source.cn || ''
+  };
+}
+
 function buildReview(passage, grade, studyPack) {
   const normalizedPack = normalizeStudyPack(studyPack, passage);
+  const answerSentences = (passage.answerSentences || [])
+    .map((item, index) => normalizeAnswerSentenceForQuestion(item, passage.questions[index], index))
+    .filter(Boolean);
   return {
-    answerSentences: (passage.answerSentences || []).map((item) => textValue(item, ['text', 'sentence'])).filter(Boolean),
+    answerSentences,
     phrases: (passage.phrases || []).map((item) => textValue(item, ['phrase', 'text'])).filter(Boolean),
     vocabulary: (passage.vocabulary || []).map((item) => textValue(item, ['word', 'text'])).filter(Boolean),
-    sentencePatterns: buildSentencePatterns(passage),
+    sentencePatterns: buildSentencePatterns(passage).map(formatSentencePattern).filter(Boolean),
     fullTranslation: normalizedPack.fullTranslation,
     vocabularyCards: normalizedPack.vocabularyCards,
     phraseCards: normalizedPack.phraseCards,
@@ -561,6 +588,7 @@ function buildReview(passage, grade, studyPack) {
       answer: item.answer,
       selected: item.selected,
       correct: item.correct,
+      answerSentence: answerSentences.find((sentence) => String(sentence.number) === String(item.number)) || null,
       text: item.analysis
     }))
   };
@@ -703,6 +731,8 @@ async function submitReadingAttempt(event) {
     userId: ctx.user.userId,
     answers: payload.answers || {},
     score: grade.score,
+    totalScore: grade.totalScore,
+    pointPerQuestion: grade.pointPerQuestion,
     correctCount: grade.correctCount,
     totalCount: grade.totalCount,
     questionResults: grade.questionResults,

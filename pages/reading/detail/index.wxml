@@ -32,12 +32,16 @@
         <input class="blank-input {{item.isCorrect === true ? 'is-correct' : ''}} {{item.isCorrect === false ? 'is-wrong' : ''}}" value="{{item.inputValue}}" disabled="{{submitted}}" data-number="{{item.number}}" bindinput="inputAnswer" placeholder="填写答案" />
         <view class="blank-answer" wx:if="{{submitted}}">正确答案：{{item.answer || '待补充'}}</view>
       </view>
+      <view class="analysis-line" wx:if="{{submitted && item.reviewAnalysis}}">
+        <view>答案 {{item.reviewAnalysis.answer || '待补充'}}，你的答案 {{item.reviewAnalysis.selected || '-'}}。{{item.reviewAnalysis.text}}</view>
+        <view wx:if="{{item.reviewAnalysis.answerSentence}}" class="card-example">答案句：{{item.reviewAnalysis.answerSentence.text}}</view>
+      </view>
     </view>
 
     <button class="button-primary submit-button" wx:if="{{!submitted}}" loading="{{submitting}}" disabled="{{submitting}}" bindtap="submit">提交阅读</button>
 
     <view class="review-card card" wx:if="{{submitted}}">
-      <view class="review-score" wx:if="{{hasScore}}">{{attempt.score}} 分</view>
+      <view class="review-score" wx:if="{{hasScore}}">{{scoreText}}</view>
       <view class="review-score" wx:else>已完成</view>
       <view class="review-copy">在原文中切换答案句、生词释义和短语释义。</view>
       <button class="detail-toggle" wx:if="{{review}}" bindtap="toggleReviewDetails">{{showReviewDetails ? '收起明细' : '查看词卡和解析'}}</button>
@@ -93,13 +97,6 @@
 
       <view class="translation-box" wx:else>
         {{fullTranslation || '暂无全文翻译。'}}
-      </view>
-
-      <view class="review-section" wx:if="{{review.analysis.length}}">
-        <view class="review-label">题目解析</view>
-        <view class="analysis-line" wx:for="{{review.analysis}}" wx:key="number">
-          {{item.number}}. 答案 {{item.answer || '待补充'}}，你的答案 {{item.selected || '-'}}。{{item.text}}
-        </view>
       </view>
     </view>
 
