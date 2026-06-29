@@ -18,12 +18,16 @@
 
 .completed-card {
   padding: 24rpx 24rpx;
-  display: flex;
-  align-items: center;
-  gap: 18rpx;
+  display: block;
   background: rgba(255, 254, 252, 0.98);
   border: 1rpx solid rgba(45, 38, 31, 0.05);
   box-shadow: 0 10rpx 24rpx rgba(44, 33, 23, 0.05);
+}
+
+.completed-row-main {
+  display: flex;
+  align-items: center;
+  gap: 18rpx;
 }
 
 .completed-card:active {
@@ -71,4 +75,73 @@
   color: var(--accent-deep);
   font-size: 24rpx;
   font-weight: 800;
+}
+
+.attempt-detail-list {
+  margin-top: 22rpx;
+  display: flex;
+  flex-direction: column;
+  gap: 16rpx;
+}
+
+.attempt-detail {
+  padding: 20rpx;
+  border-radius: 24rpx;
+  background: rgba(255, 247, 241, 0.9);
+}
+
+.attempt-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16rpx;
+}
+
+.attempt-title,
+.attempt-score {
+  color: var(--text-strong);
+  font-size: 26rpx;
+  line-height: 1.35;
+  font-weight: 800;
+}
+
+.attempt-score {
+  color: var(--accent-deep);
+  white-space: nowrap;
+}
+
+.attempt-subscore,
+.attempt-text,
+.attempt-feedback {
+  margin-top: 10rpx;
+  color: var(--text-muted);
+  font-size: 24rpx;
+  line-height: 1.5;
+}
+
+.attempt-text,
+.attempt-feedback {
+  color: var(--text-strong);
+}
+
+.attempt-actions {
+  margin-top: 16rpx;
+  display: flex;
+  gap: 14rpx;
+}
+
+.attempt-button {
+  margin: 0;
+  min-width: 160rpx;
+  height: 54rpx;
+  border-radius: 999rpx;
+  background: rgba(255, 255, 255, 0.82);
+  color: var(--accent-deep);
+  font-size: 24rpx;
+  line-height: 54rpx;
+  font-weight: 800;
+}
+
+.attempt-button::after {
+  border: 0;
 }

@@ -52,6 +52,8 @@ async function upsertDailyReport(scope, date, deps) {
     scoreErrorType: item.scoreErrorType || '',
     answerAudioFileId: item.answerAudioFileId || '',
     answerCloudPath: item.answerCloudPath || '',
+    feedbackAudioFileId: item.feedbackAudioFileId || '',
+    feedbackAudioCloudPath: item.feedbackAudioCloudPath || '',
     answerDurationMs: Number(item.answerDurationMs || 0),
     createdAt: item.createdAt || ''
   }));

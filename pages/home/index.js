@@ -82,16 +82,28 @@ function buildReadingSummary(passage, completed) {
 }
 
 function buildTodayCompletedItems(groupedDailyTasks, readingToday, readingCompleted) {
+  let speakingAttempts = [];
+  try {
+    const report = wx.getStorageSync('todayReportForCompletedV1') || null;
+    speakingAttempts = report && Array.isArray(report.speakingAttempts) ? report.speakingAttempts : [];
+  } catch (error) {
+    speakingAttempts = [];
+  }
   const listeningItems = (groupedDailyTasks || []).reduce((list, group) => {
     (group.tasks || []).forEach((task) => {
       if (task.completedToday) {
+        const attempts = speakingAttempts.filter((attempt) => (
+          attempt.category === (task.category || group.category)
+          && (attempt.taskId === task.taskId || attempt.taskId === task.originalTaskId)
+        ));
         list.push({
-          type: 'listening',
+          type: attempts.length ? 'speaking' : 'listening',
           title: task.displayTitle || task.title || group.categoryLabel,
-          meta: group.categoryLabel || task.category || '听力',
+          meta: attempts.length ? '回答评分' : (group.categoryLabel || task.category || '听力'),
           category: task.category || group.category || '',
           taskId: task.taskId || '',
           progressText: task.progressText || '',
+          attempts,
           completedToday: true
         });
       }
@@ -197,6 +209,13 @@ Page({
     });
     const data = await store.getDashboard({ view: 'home' }, (fresh) => this.applyDashboard(fresh));
     const groupedDailyTasks = this.applyDashboard(data);
+    try {
+      const reportData = await store.getDailyReportByDate(todayString());
+      wx.setStorageSync('todayReportForCompletedV1', reportData.report || null);
+      this.setData({
+        todayCompletedItems: buildTodayCompletedItems(this.data.groupedDailyTasks, this.data.readingToday, this.data.readingCompleted)
+      });
+    } catch (error) {}
     this.loadReadingHome();
     monitor.logPerf('home', 'onShow', Date.now() - startedAt, {
       groups: groupedDailyTasks.length
