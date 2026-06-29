@@ -70,6 +70,44 @@
   height: 660rpx;
 }
 
+.study-area-grid {
+  margin: 0 20rpx 28rpx;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16rpx;
+}
+
+.study-area-card {
+  min-height: 150rpx;
+  padding: 24rpx;
+  background: var(--surface-raised);
+}
+
+.study-area-kicker {
+  color: var(--accent-deep);
+  font-size: 22rpx;
+  line-height: 1.2;
+  font-weight: var(--font-title-weight);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.study-area-title {
+  margin-top: 10rpx;
+  color: var(--text-strong);
+  font-size: var(--font-card-title-size);
+  line-height: 1.25;
+  font-weight: var(--font-title-weight);
+}
+
+.study-area-meta {
+  margin-top: 10rpx;
+  color: var(--text-muted);
+  font-size: var(--font-caption-size);
+  line-height: 1.35;
+}
+
 .home-section-heading {
   margin: 0 20rpx 18rpx;
   color: var(--text-strong);

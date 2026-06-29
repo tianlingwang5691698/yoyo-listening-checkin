@@ -8,16 +8,29 @@
     <view class="passage-card card">
       <view class="passage-meta">{{passage.year}} · {{passage.district}} · {{passage.examType}} · 阅读 {{passage.section}}</view>
       <view class="passage-title">{{passage.title}}</view>
-      <view class="passage-text">{{passage.passage}}</view>
+      <view class="highlight-actions" wx:if="{{submitted && review}}">
+        <button class="highlight-button {{activeHighlight === item.key ? 'is-active' : ''}}" wx:for="{{highlightButtons}}" wx:key="key" data-mode="{{item.key}}" bindtap="selectHighlight">{{item.label}}</button>
+      </view>
+      <view class="passage-text">
+        <text wx:for="{{passageSegments}}" wx:key="index" class="passage-segment segment-{{item.tone}}">
+          <text wx:if="{{item.label}}" class="segment-label">{{item.label}}</text><text>{{item.text}}</text><text wx:if="{{item.note}}" class="segment-note">{{item.note}}</text>
+        </text>
+      </view>
     </view>
 
     <view class="question-card card" wx:for="{{passage.questions}}" wx:key="number">
       <view class="question-title">{{item.number}}. {{item.prompt}}</view>
-      <view class="option-list">
-        <button class="option-row {{option.selected ? 'is-selected' : ''}}" wx:for="{{item.optionsList}}" wx:key="key" wx:for-item="option" data-number="{{item.number}}" data-option="{{option.key}}" bindtap="selectOption">
+      <view class="option-list" wx:if="{{item.type === 'choice'}}">
+        <button class="option-row {{option.selected ? 'is-selected' : ''}} {{option.correct ? 'is-correct' : ''}} {{option.wrong ? 'is-wrong' : ''}}" wx:for="{{item.optionsList}}" wx:key="key" wx:for-item="option" data-number="{{item.number}}" data-option="{{option.key}}" bindtap="selectOption">
           <text class="option-key">{{option.key}}</text>
           <text class="option-text">{{option.text}}</text>
+          <text class="option-badge" wx:if="{{option.correct}}">正确</text>
+          <text class="option-badge wrong" wx:elif="{{option.wrong}}">你的</text>
         </button>
+      </view>
+      <view class="blank-answer-box" wx:else>
+        <input class="blank-input {{item.isCorrect === true ? 'is-correct' : ''}} {{item.isCorrect === false ? 'is-wrong' : ''}}" value="{{item.inputValue}}" disabled="{{submitted}}" data-number="{{item.number}}" bindinput="inputAnswer" placeholder="填写答案" />
+        <view class="blank-answer" wx:if="{{submitted}}">正确答案：{{item.answer || '待补充'}}</view>
       </view>
     </view>
 
@@ -26,28 +39,83 @@
     <view class="review-card card" wx:if="{{submitted}}">
       <view class="review-score" wx:if="{{hasScore}}">{{attempt.score}} 分</view>
       <view class="review-score" wx:else>已完成</view>
-      <view class="review-copy">可查看答案句、短语、生词和解析。</view>
+      <view class="review-copy">在原文中切换答案句、生词释义和短语释义。</view>
+      <button class="detail-toggle" wx:if="{{review}}" bindtap="toggleReviewDetails">{{showReviewDetails ? '收起明细' : '查看词卡和解析'}}</button>
     </view>
 
-    <view class="review-card card" wx:if="{{review}}">
-      <view class="review-title">解析</view>
-      <view class="review-section" wx:if="{{review.answerSentences.length}}">
-        <view class="review-label">答案句</view>
-        <view class="review-line" wx:for="{{review.answerSentences}}" wx:key="*this">{{item}}</view>
+    <view class="review-card card" wx:if="{{review && showReviewDetails}}">
+      <view class="review-title">学习解析</view>
+      <view class="review-tabs">
+        <button class="review-tab tab-{{item.tone}} {{activeReviewTab === item.key ? 'is-active' : ''}}" wx:for="{{reviewTabs}}" wx:key="key" data-tab="{{item.key}}" bindtap="selectReviewTab">{{item.label}}</button>
       </view>
-      <view class="review-section" wx:if="{{review.phrases.length}}">
-        <view class="review-label">短语</view>
-        <view class="review-line" wx:for="{{review.phrases}}" wx:key="*this">{{item}}</view>
+
+      <view class="card-list" wx:if="{{activeReviewTab === 'vocabulary'}}">
+        <view class="word-card" wx:for="{{wordCards}}" wx:key="word">
+          <view class="word-head">
+            <view>
+              <text class="word-text">{{item.word}}</text>
+              <text class="phonetic" wx:if="{{item.phonetic}}">{{item.phonetic}}</text>
+            </view>
+            <view class="word-actions">
+              <button class="mini-action" data-word="{{item.word}}" bindtap="speakWord">发音</button>
+              <button class="mini-action strong" data-word="{{item.word}}" bindtap="toggleWordUnfamiliar">{{unfamiliarMap[item.flashcardKey] ? '已加入' : '不熟'}}</button>
+            </view>
+          </view>
+          <view class="card-meaning">{{item.meaning}}</view>
+          <view class="card-example" wx:if="{{item.example}}">{{item.example}}</view>
+          <view class="card-example-meaning" wx:if="{{item.exampleMeaning}}">{{item.exampleMeaning}}</view>
+        </view>
+        <view class="empty-inline" wx:if="{{!wordCards.length}}">暂无生词卡。</view>
       </view>
-      <view class="review-section" wx:if="{{review.vocabulary.length}}">
-        <view class="review-label">生词</view>
-        <view class="review-line" wx:for="{{review.vocabulary}}" wx:key="*this">{{item}}</view>
+
+      <view class="card-list" wx:elif="{{activeReviewTab === 'phrases'}}">
+        <view class="phrase-card" wx:for="{{phraseCards}}" wx:key="text">
+          <view class="word-head">
+            <view class="phrase-text">{{item.text}}</view>
+            <view class="word-actions">
+              <button class="mini-action strong" data-text="{{item.text}}" bindtap="togglePhraseUnfamiliar">{{unfamiliarMap[item.flashcardKey] ? '已加入' : '不熟'}}</button>
+            </view>
+          </view>
+          <view class="card-meaning">{{item.meaning}}</view>
+          <view class="card-example" wx:if="{{item.example}}">{{item.example}}</view>
+        </view>
+        <view class="empty-inline" wx:if="{{!phraseCards.length}}">暂无短语。</view>
       </view>
+
+      <view class="card-list" wx:elif="{{activeReviewTab === 'patterns'}}">
+        <view class="pattern-card" wx:for="{{sentencePatternCards}}" wx:key="pattern">
+          <view class="pattern-text">{{item.pattern}}</view>
+          <view class="card-meaning">{{item.meaning}}</view>
+          <view class="card-example" wx:if="{{item.example}}">{{item.example}}</view>
+        </view>
+        <view class="empty-inline" wx:if="{{!sentencePatternCards.length}}">暂无句型。</view>
+      </view>
+
+      <view class="translation-box" wx:else>
+        {{fullTranslation || '暂无全文翻译。'}}
+      </view>
+
       <view class="review-section" wx:if="{{review.analysis.length}}">
         <view class="review-label">题目解析</view>
         <view class="analysis-line" wx:for="{{review.analysis}}" wx:key="number">
           {{item.number}}. 答案 {{item.answer || '待补充'}}，你的答案 {{item.selected || '-'}}。{{item.text}}
         </view>
+      </view>
+    </view>
+
+    <view class="review-card card" wx:if="{{review && showReviewDetails}}">
+      <view class="review-title">背诵检测</view>
+      <view class="memory-test-row" wx:if="{{review.memoryCheckTexts.vocabulary}}">
+        <view class="memory-test-label">单词拼写</view>
+        <view class="memory-test-content">{{review.memoryCheckTexts.vocabulary}}</view>
+      </view>
+      <view class="memory-test-row" wx:if="{{review.memoryCheckTexts.phrases}}">
+        <view class="memory-test-label">词组英译</view>
+        <view class="memory-test-content">{{review.memoryCheckTexts.phrases}}</view>
+      </view>
+      <view class="memory-test-row" wx:if="{{review.memoryCheckTexts.sentencePattern}}">
+        <view class="memory-test-label">句型仿写</view>
+        <view class="memory-test-content">{{review.memoryCheckTexts.sentencePattern}}</view>
       </view>
     </view>
   </block>

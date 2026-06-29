@@ -1,0 +1,71 @@
+.flashcard-page {
+  padding-top: 72rpx;
+}
+
+.flashcard {
+  margin-top: 24rpx;
+  padding: 34rpx 30rpx;
+}
+
+.flashcard-top,
+.flashcard-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16rpx;
+}
+
+.flashcard-type,
+.flashcard-count {
+  color: var(--accent-deep);
+  font-size: var(--font-caption-size);
+  font-weight: var(--font-title-weight);
+}
+
+.flashcard-word {
+  margin-top: 34rpx;
+  color: var(--text-strong);
+  font-size: 46rpx;
+  line-height: 1.2;
+  font-weight: var(--font-title-weight);
+  word-break: keep-all;
+  overflow-wrap: normal;
+}
+
+.flashcard-phonetic,
+.flashcard-meaning,
+.flashcard-example {
+  margin-top: 18rpx;
+  color: var(--text-main);
+  font-size: var(--font-body-size);
+  line-height: var(--line-body);
+}
+
+.flashcard-phonetic {
+  color: var(--text-muted);
+}
+
+.flashcard-example {
+  padding: 22rpx;
+  border-radius: var(--radius-lg);
+  background: var(--surface-subtle);
+}
+
+.flashcard-actions {
+  margin-top: 34rpx;
+}
+
+.mini-action {
+  flex: 1;
+  min-height: 68rpx;
+  border-radius: var(--radius-pill);
+  background: var(--surface-subtle);
+  color: var(--text-main);
+  font-size: var(--font-caption-size);
+  font-weight: var(--font-title-weight);
+}
+
+.mini-action.strong {
+  background: var(--accent-soft);
+  color: var(--accent-deep);
+}

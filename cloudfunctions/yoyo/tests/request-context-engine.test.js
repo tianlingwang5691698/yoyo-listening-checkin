@@ -73,3 +73,10 @@ test('resolveCatalogCategories 对任务详情只刷新请求分类', () => {
     []
   );
 });
+
+test('resolveCatalogCategories 阅读学习包不刷新音频目录', () => {
+  assert.deepEqual(
+    requestContextEngine.resolveCatalogCategories('getReadingStudyPack', '', {}),
+    []
+  );
+});

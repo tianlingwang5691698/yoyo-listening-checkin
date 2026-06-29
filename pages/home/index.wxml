@@ -25,47 +25,37 @@
     </view>
   </view>
 
-  <view class="home-section-heading" wx:if="{{hasGroupedTasks}}">听力</view>
-  <swiper class="program-swiper" wx:if="{{hasGroupedTasks}}" previous-margin="32rpx" next-margin="32rpx" circular="{{false}}" indicator-dots="{{true}}" indicator-color="rgba(37, 35, 33, 0.14)" indicator-active-color="#252321">
-    <block wx:for="{{groupedDailyTasks}}" wx:key="category">
-      <swiper-item>
-        <view class="program-slide card {{item.nextTask.isPendingAsset ? 'is-disabled' : ''}}" bindtap="openTask" data-category="{{item.nextTask.category}}" data-task-id="{{item.nextTask.taskId}}" data-disabled="{{item.nextTask.isPendingAsset}}">
-          <view class="slide-top">
-            <view class="slide-name">{{item.categoryLabel}}</view>
-            <view class="slide-state {{item.completedCount === item.totalCount ? 'is-done' : item.nextTask.isPendingAsset ? 'is-waiting' : ''}}">{{item.programStateText}}</view>
-          </view>
-          <block wx:if="{{item.tasks.length > 1}}">
-            <view class="slide-line"></view>
-            <view class="slide-task-list">
-            <block wx:for="{{item.tasks}}" wx:key="taskId" wx:for-item="task" wx:for-index="taskIndex">
-            <view class="slide-task {{task.isPendingAsset ? 'is-disabled' : ''}} {{task.taskId === item.nextTask.taskId ? 'is-primary' : ''}}" catchtap="openTask" data-category="{{task.category}}" data-task-id="{{task.taskId}}" data-disabled="{{task.isPendingAsset}}">
-              <view class="slide-task-main">
-                <view class="slide-task-title">{{task.displayTitle || task.title}}</view>
-                <view class="slide-task-meta type-caption">{{task.textType}} · {{task.progressText}}</view>
-              </view>
-              <view class="slide-task-state">{{task.completedToday ? '完成' : task.isPendingAsset ? '等待' : '›'}}</view>
-            </view>
-            </block>
-            </view>
-          </block>
-          <block wx:else>
-            <view class="slide-title">{{item.programSubtitle}}</view>
-            <view class="slide-meta type-caption">{{item.textType}} · {{item.nextTask.progressText}}</view>
-          </block>
-        </view>
-      </swiper-item>
-    </block>
-  </swiper>
-
-  <view class="home-section-heading">阅读</view>
-  <view class="reading-entry card" bindtap="openReading">
-    <view class="reading-entry-main">
-      <view class="reading-entry-kicker">每天 1 篇</view>
-      <view class="reading-entry-title">{{readingToday.title || '今日阅读'}}</view>
-      <view class="reading-entry-meta" wx:if="{{readingToday}}">{{readingToday.meta}} · {{readingToday.questionCount}} 题</view>
-      <view class="reading-entry-meta" wx:else>{{readingLoading ? '正在准备今日文章' : '今日阅读还在准备中'}}</view>
+  <view class="study-area-grid">
+    <view class="study-area-card card" bindtap="openListening">
+      <view class="study-area-kicker">A1-C1 全部听力</view>
+      <view class="study-area-title">听力</view>
+      <view class="study-area-meta">{{listeningSummary}}</view>
     </view>
-    <view class="reading-entry-state">{{readingCompleted ? '完成' : '›'}}</view>
+    <view class="study-area-card card" bindtap="openReading">
+      <view class="study-area-kicker">一模 · 二模 · 中考真题</view>
+      <view class="study-area-title">阅读</view>
+      <view class="study-area-meta">{{readingSummary}}</view>
+    </view>
+    <view class="study-area-card card" bindtap="openGrammar">
+      <view class="study-area-kicker">单选检测</view>
+      <view class="study-area-title">语法</view>
+      <view class="study-area-meta">单选错词入库</view>
+    </view>
+    <view class="study-area-card card" bindtap="openVocabulary">
+      <view class="study-area-kicker">统一词库</view>
+      <view class="study-area-title">词汇</view>
+      <view class="study-area-meta">{{vocabularySummary.due}} 到期 · {{vocabularySummary.total}} 总计</view>
+    </view>
+    <view class="study-area-card card" bindtap="openWriting">
+      <view class="study-area-kicker">作文练习</view>
+      <view class="study-area-title">写作</view>
+      <view class="study-area-meta">生词短语入库</view>
+    </view>
+    <view class="study-area-card card" bindtap="openSpeaking">
+      <view class="study-area-kicker">录音对话</view>
+      <view class="study-area-title">口语</view>
+      <view class="study-area-meta">录音评分</view>
+    </view>
   </view>
 
   <view class="empty-state" wx:if="{{!homeLoading && !hasGroupedTasks && syncMode !== 'cloud-error'}}">今日任务还在准备中。</view>

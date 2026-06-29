@@ -1,0 +1,25 @@
+<view class="theme-{{theme}} page-shell flashcard-page">
+  <view class="reading-hero card">
+    <view class="reading-eyebrow">统一词库</view>
+    <view class="reading-title">今日词汇短语</view>
+    <view class="reading-copy">来自听力、阅读、语法、写作和口语，只显示今天到期的单词和短语。</view>
+  </view>
+
+  <view class="flashcard card" wx:if="{{current}}">
+    <view class="flashcard-top">
+      <view class="flashcard-type">{{current.typeLabel}}</view>
+      <view class="flashcard-count">{{current.index}} / {{total}}</view>
+    </view>
+    <view class="flashcard-word">{{current.displayText}}</view>
+    <view class="flashcard-phonetic" wx:if="{{current.phonetic}}">{{current.phonetic}}</view>
+    <view class="flashcard-meaning">{{current.meaning || current.translation || '暂无释义'}}</view>
+    <view class="flashcard-example" wx:if="{{current.example}}">{{current.example}}</view>
+    <view class="flashcard-actions">
+      <button class="mini-action" bindtap="speakCurrent">发音</button>
+      <button class="mini-action" bindtap="markUnfamiliar">仍不熟</button>
+      <button class="mini-action strong" bindtap="markRemembered">记住了</button>
+    </view>
+  </view>
+
+  <view class="empty-state" wx:else>今天没有到期复习。</view>
+</view>

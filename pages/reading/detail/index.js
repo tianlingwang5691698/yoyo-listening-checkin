@@ -1,6 +1,11 @@
 const store = require('../../../utils/store');
 const page = require('../../../utils/page');
 
+const STUDY_PACK_STORAGE_PREFIX = 'readingStudyPack:';
+const FLASHCARD_WORDS_KEY = 'readingFlashcardWordsV1';
+const FLASHCARD_ITEMS_KEY = 'readingFlashcardItemsV1';
+const EBBINGHAUS_REVIEW_DAYS = [0, 1, 2, 4, 7, 15, 30];
+
 function buildOptionList(options) {
   return ['A', 'B', 'C', 'D'].filter((key) => options && options[key]).map((key) => ({
     key,
@@ -9,20 +14,311 @@ function buildOptionList(options) {
   }));
 }
 
-function normalizePassage(passage, answers) {
+function hasOptions(question) {
+  return !!(question && question.options && buildOptionList(question.options).length);
+}
+
+function normalizeAnswerText(value) {
+  return String(value || '').trim().replace(/\s+/g, ' ').toLowerCase();
+}
+
+function normalizePassage(passage, answers, submitted) {
   if (!passage) {
     return null;
   }
   return Object.assign({}, passage, {
     questions: (passage.questions || []).map((question) => {
-      const selected = answers[String(question.number)] || '';
+      const type = hasOptions(question) ? 'choice' : 'blank';
+      const userAnswer = String(answers[String(question.number)] || '');
+      const rawAnswer = String(question.answer || '').trim();
+      const answer = type === 'choice' ? rawAnswer.toUpperCase() : rawAnswer;
+      const selected = type === 'choice' ? userAnswer.trim().toUpperCase() : userAnswer;
+      const isCorrect = submitted && answer ? (
+        type === 'choice'
+          ? selected === answer
+          : normalizeAnswerText(selected) === normalizeAnswerText(answer)
+      ) : null;
       return Object.assign({}, question, {
+        type,
+        selected,
+        inputValue: type === 'blank' ? selected : '',
+        answer,
+        isCorrect,
         optionsList: buildOptionList(question.options).map((option) => Object.assign({}, option, {
-          selected: option.key === selected
+          selected: option.key === selected,
+          correct: !!submitted && !!answer && option.key === answer,
+          wrong: !!submitted && !!answer && option.key === selected && selected !== answer
         }))
       });
     })
   });
+}
+
+function pickText(item, keys) {
+  if (typeof item === 'string') {
+    return item;
+  }
+  const source = item || {};
+  for (let i = 0; i < keys.length; i += 1) {
+    if (source[keys[i]]) {
+      return source[keys[i]];
+    }
+  }
+  return '';
+}
+
+function uniqueTerms(items, keys) {
+  const seen = {};
+  return (items || []).map((item) => pickText(item, keys).trim()).filter((text) => {
+    const key = text.toLowerCase();
+    if (!text || seen[key]) {
+      return false;
+    }
+    seen[key] = true;
+    return true;
+  });
+}
+
+function termEntries(items, keys, options) {
+  const seen = {};
+  return (items || []).map((item, index) => {
+    const text = pickText(item, keys).trim();
+    const source = typeof item === 'string' ? {} : (item || {});
+    const key = text.toLowerCase();
+    if (!text || seen[key]) {
+      return null;
+    }
+    seen[key] = true;
+
+    let label = '';
+    if (options && options.answer) {
+      const raw = source.questionNumber || source.number || source.question || source.no || source.label || '';
+      const match = String(raw).match(/\d+/);
+      label = `第${match ? match[0] : index + 1}题`;
+    }
+
+    return {
+      text,
+      label,
+      note: source.meaning || source.translation || source.cn || ''
+    };
+  }).filter(Boolean);
+}
+
+function isAlpha(ch) {
+  return !!ch && /[A-Za-z]/.test(ch);
+}
+
+function pushTermRanges(source, terms, tone, wordBoundary, ranges) {
+  const lower = source.toLowerCase();
+  (terms || []).forEach((term) => {
+    const needle = String((term && term.text) || term || '').trim().toLowerCase();
+    if (needle.length < (wordBoundary ? 2 : 4)) {
+      return;
+    }
+    let from = 0;
+    while (from < lower.length) {
+      const start = lower.indexOf(needle, from);
+      if (start < 0) {
+        break;
+      }
+      const end = start + needle.length;
+      if (!wordBoundary || (!isAlpha(source[start - 1]) && !isAlpha(source[end]))) {
+        ranges.push({
+          start,
+          end,
+          tone,
+          label: term && term.label ? term.label : '',
+          note: term && term.note ? term.note : '',
+          rank: tone === 'answer' ? 0 : tone === 'phrase' ? 1 : 2
+        });
+      }
+      from = end;
+    }
+  });
+}
+
+function buildPassageSegments(text, review, mode) {
+  const source = String(text || '');
+  if (!source) {
+    return [];
+  }
+  const ranges = [];
+  const activeMode = mode || 'none';
+  if (review && (activeMode === 'answer' || activeMode === 'all')) {
+    pushTermRanges(source, termEntries(review.answerSentences, ['text', 'sentence'], { answer: true }), 'answer', false, ranges);
+  }
+  if (review && (activeMode === 'phrase' || activeMode === 'all')) {
+    pushTermRanges(source, termEntries([].concat(review.phraseCards || [], review.phrases || []), ['text', 'phrase']), 'phrase', false, ranges);
+  }
+  if (review && (activeMode === 'word' || activeMode === 'all')) {
+    pushTermRanges(source, termEntries([].concat(review.vocabularyCards || [], review.vocabulary || []), ['word', 'text']), 'word', true, ranges);
+  }
+  ranges.sort((a, b) => a.start - b.start || a.rank - b.rank || (b.end - b.start) - (a.end - a.start));
+  const selected = [];
+  let coveredEnd = -1;
+  ranges.forEach((range) => {
+    if (range.start >= coveredEnd) {
+      selected.push(range);
+      coveredEnd = range.end;
+    }
+  });
+  const segments = [];
+  let cursor = 0;
+  selected.forEach((range) => {
+    if (range.start > cursor) {
+      segments.push({ text: source.slice(cursor, range.start), tone: 'normal' });
+    }
+    segments.push({
+      text: source.slice(range.start, range.end),
+      tone: range.tone,
+      label: range.label || '',
+      note: range.note || ''
+    });
+    cursor = range.end;
+  });
+  if (cursor < source.length) {
+    segments.push({ text: source.slice(cursor), tone: 'normal' });
+  }
+  return segments.length ? segments : [{ text: source, tone: 'normal' }];
+}
+
+function normalizeCardList(list, fallbackKey) {
+  return (list || []).map((item) => {
+    if (typeof item === 'string') {
+      return { [fallbackKey]: item };
+    }
+    return item || {};
+  }).filter((item) => item[fallbackKey] || item.word || item.text || item.pattern);
+}
+
+function normalizeReview(review) {
+  if (!review) {
+    return null;
+  }
+  const memoryChecks = review.memoryChecks || {};
+  const vocabularyCards = normalizeCardList(review.vocabularyCards || review.vocabulary, 'word').map((card) => Object.assign({}, card, {
+    flashcardKey: `word:${card.word || card.text || ''}`
+  }));
+  const phraseCards = normalizeCardList(review.phraseCards || review.phrases, 'text').map((card) => Object.assign({}, card, {
+    flashcardKey: `phrase:${card.text || card.phrase || ''}`
+  }));
+  return Object.assign({}, review, {
+    answerSentences: review.answerSentences || [],
+    phrases: review.phrases || [],
+    vocabulary: review.vocabulary || [],
+    sentencePatterns: review.sentencePatterns || [],
+    vocabularyCards,
+    phraseCards,
+    sentencePatternCards: normalizeCardList(review.sentencePatternCards || review.sentencePatterns, 'pattern'),
+    fullTranslation: review.fullTranslation || '',
+    analysis: review.analysis || [],
+    memoryChecks: {
+      vocabulary: memoryChecks.vocabulary || [],
+      phrases: memoryChecks.phrases || [],
+      sentencePatterns: memoryChecks.sentencePatterns || []
+    },
+    memoryCheckTexts: {
+      vocabulary: (memoryChecks.vocabulary || []).join(' / '),
+      phrases: (memoryChecks.phrases || []).join(' / '),
+      sentencePattern: (memoryChecks.sentencePatterns || [])[0] || ''
+    }
+  });
+}
+
+function mergeStudyPackIntoReview(review, studyPack) {
+  const base = normalizeReview(review || {});
+  const pack = studyPack || {};
+  return normalizeReview(Object.assign({}, base, {
+    vocabularyCards: pack.vocabularyCards || base.vocabularyCards,
+    phraseCards: pack.phraseCards || base.phraseCards,
+    sentencePatternCards: pack.sentencePatternCards || base.sentencePatternCards,
+    fullTranslation: pack.fullTranslation || base.fullTranslation,
+    studyPackSource: pack.source || base.studyPackSource
+  }));
+}
+
+function getPhoneStudyPack(passageId) {
+  try {
+    return wx.getStorageSync(`${STUDY_PACK_STORAGE_PREFIX}${passageId}`) || null;
+  } catch (error) {
+    return null;
+  }
+}
+
+function savePhoneStudyPack(passageId, studyPack) {
+  try {
+    wx.setStorageSync(`${STUDY_PACK_STORAGE_PREFIX}${passageId}`, {
+      savedAt: Date.now(),
+      studyPack
+    });
+  } catch (error) {}
+}
+
+function getUnfamiliarMap() {
+  try {
+    const legacyWords = wx.getStorageSync(FLASHCARD_WORDS_KEY) || [];
+    const items = wx.getStorageSync(FLASHCARD_ITEMS_KEY) || [];
+    return items.concat(legacyWords).reduce((map, item) => {
+      const type = item && item.type ? item.type : 'word';
+      const text = item && (item.text || item.word || item.phrase);
+      if (text) {
+        map[`${type}:${text}`] = true;
+        map[text] = true;
+      }
+      return map;
+    }, {});
+  } catch (error) {
+    return {};
+  }
+}
+
+function formatReviewDate(timestamp) {
+  const date = new Date(timestamp);
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const day = String(date.getDate()).padStart(2, '0');
+  return `${year}-${month}-${day}`;
+}
+
+function buildReviewSchedule(now) {
+  return EBBINGHAUS_REVIEW_DAYS.map((days, index) => ({
+    step: index,
+    days,
+    date: formatReviewDate(now + days * 24 * 60 * 60 * 1000),
+    done: false
+  }));
+}
+
+function addUnfamiliarCard(card, type) {
+  const text = type === 'phrase' ? (card.text || card.phrase) : (card.word || card.text);
+  if (!text) {
+    return false;
+  }
+  const flashcardKey = `${type}:${text}`;
+  let items = [];
+  try {
+    items = wx.getStorageSync(FLASHCARD_ITEMS_KEY) || [];
+  } catch (error) {
+    items = [];
+  }
+  if (items.some((item) => item && item.flashcardKey === flashcardKey)) {
+    return false;
+  }
+  const now = Date.now();
+  const reviewSchedule = buildReviewSchedule(now);
+  items.push(Object.assign({}, card, {
+    type,
+    text,
+    flashcardKey,
+    addedAt: now,
+    familiarLevel: 'unfamiliar',
+    reviewStep: 0,
+    nextReviewDate: reviewSchedule[0].date,
+    reviewSchedule
+  }));
+  wx.setStorageSync(FLASHCARD_ITEMS_KEY, items);
+  return true;
 }
 
 Page({
@@ -34,7 +330,28 @@ Page({
     answers: {},
     attempt: null,
     review: null,
+    activeReviewTab: 'vocabulary',
+    reviewTabs: [
+      { key: 'vocabulary', label: '生词', tone: 'word' },
+      { key: 'phrases', label: '短语', tone: 'phrase' },
+      { key: 'patterns', label: '句型', tone: 'pattern' },
+      { key: 'translation', label: '全文翻译', tone: 'translation' }
+    ],
+    activeHighlight: 'none',
+    highlightButtons: [
+      { key: 'answer', label: '答案句' },
+      { key: 'word', label: '生词释义' },
+      { key: 'phrase', label: '短语释义' },
+      { key: 'all', label: '全部' }
+    ],
+    passageSegments: [],
+    wordCards: [],
+    phraseCards: [],
+    sentencePatternCards: [],
+    fullTranslation: '',
+    unfamiliarMap: {},
     submitted: false,
+    showReviewDetails: false,
     hasScore: false
   }),
   async onLoad(options) {
@@ -50,15 +367,27 @@ Page({
   applyPassage(data) {
     const latestAttempt = data.latestAttempt || null;
     const answers = latestAttempt && latestAttempt.answers ? latestAttempt.answers : this.data.answers;
+    const submitted = !!latestAttempt;
+    const review = latestAttempt && latestAttempt.review ? normalizeReview(latestAttempt.review) : null;
+    const passage = normalizePassage(data.passage, answers, submitted);
     this.setData(page.buildCloudPageData(this.data, {
       loading: false,
-      passage: normalizePassage(data.passage, answers),
+      passage,
       answers,
       attempt: latestAttempt,
-      review: latestAttempt && latestAttempt.review ? latestAttempt.review : null,
-      submitted: !!latestAttempt,
+      review,
+      passageSegments: buildPassageSegments(passage ? passage.passage : '', review, this.data.activeHighlight),
+      wordCards: review ? review.vocabularyCards : [],
+      phraseCards: review ? review.phraseCards : [],
+      sentencePatternCards: review ? review.sentencePatternCards : [],
+      fullTranslation: review ? review.fullTranslation : '',
+      unfamiliarMap: getUnfamiliarMap(),
+      submitted,
       hasScore: !!latestAttempt && latestAttempt.score !== null && latestAttempt.score !== undefined
     }));
+    if (submitted && data.passage && data.passage._id) {
+      this.ensureStudyPack(data.passage._id);
+    }
   },
   selectOption(event) {
     if (this.data.submitted) {
@@ -72,16 +401,112 @@ Page({
     const answers = Object.assign({}, this.data.answers, { [number]: option });
     this.setData({
       answers,
-      passage: normalizePassage(this.data.passage, answers)
+      passage: normalizePassage(this.data.passage, answers, this.data.submitted)
     });
+  },
+  inputAnswer(event) {
+    if (this.data.submitted) {
+      return;
+    }
+    const number = String(event.currentTarget.dataset.number || '');
+    if (!number) {
+      return;
+    }
+    const answers = Object.assign({}, this.data.answers, {
+      [number]: event.detail.value || ''
+    });
+    this.setData({
+      answers,
+      passage: normalizePassage(this.data.passage, answers, this.data.submitted)
+    });
+  },
+  applyReview(review) {
+    const normalized = normalizeReview(review);
+    this.setData({
+      review: normalized,
+      passageSegments: buildPassageSegments(this.data.passage ? this.data.passage.passage : '', normalized, this.data.activeHighlight),
+      wordCards: normalized ? normalized.vocabularyCards : [],
+      phraseCards: normalized ? normalized.phraseCards : [],
+      sentencePatternCards: normalized ? normalized.sentencePatternCards : [],
+      fullTranslation: normalized ? normalized.fullTranslation : ''
+    });
+  },
+  toggleReviewDetails() {
+    this.setData({
+      showReviewDetails: !this.data.showReviewDetails
+    });
+  },
+  async ensureStudyPack(passageId) {
+    if (!passageId || this._studyPackLoading) {
+      return;
+    }
+    const cached = getPhoneStudyPack(passageId);
+    if (cached && cached.studyPack) {
+      this.applyReview(mergeStudyPackIntoReview(this.data.review, cached.studyPack));
+      return;
+    }
+    this._studyPackLoading = true;
+    try {
+      const result = await store.getReadingStudyPack({ passageId });
+      const studyPack = result && result.studyPack ? result.studyPack : null;
+      if (studyPack) {
+        savePhoneStudyPack(passageId, studyPack);
+        this.applyReview(mergeStudyPackIntoReview(this.data.review, studyPack));
+      }
+    } finally {
+      this._studyPackLoading = false;
+    }
+  },
+  selectReviewTab(event) {
+    this.setData({ activeReviewTab: String(event.currentTarget.dataset.tab || 'vocabulary') });
+  },
+  selectHighlight(event) {
+    const mode = String(event.currentTarget.dataset.mode || 'none');
+    const activeHighlight = this.data.activeHighlight === mode ? 'none' : mode;
+    this.setData({
+      activeHighlight,
+      passageSegments: buildPassageSegments(this.data.passage ? this.data.passage.passage : '', this.data.review, activeHighlight)
+    });
+  },
+  toggleWordUnfamiliar(event) {
+    const word = String(event.currentTarget.dataset.word || '');
+    if (!word) {
+      return;
+    }
+    const card = (this.data.wordCards || []).find((item) => item.word === word) || { word };
+    addUnfamiliarCard(card, 'word');
+    this.setData({ unfamiliarMap: getUnfamiliarMap() });
+    wx.showToast({ title: '已加入复习', icon: 'none' });
+  },
+  togglePhraseUnfamiliar(event) {
+    const text = String(event.currentTarget.dataset.text || '');
+    if (!text) {
+      return;
+    }
+    const card = (this.data.phraseCards || []).find((item) => item.text === text) || { text };
+    addUnfamiliarCard(card, 'phrase');
+    this.setData({ unfamiliarMap: getUnfamiliarMap() });
+    wx.showToast({ title: '已加入复习', icon: 'none' });
+  },
+  speakWord(event) {
+    const word = String(event.currentTarget.dataset.word || '');
+    const card = (this.data.wordCards || []).find((item) => item.word === word) || {};
+    if (!card.audioUrl) {
+      wx.showToast({ title: '暂无发音音频', icon: 'none' });
+      return;
+    }
+    const audio = wx.createInnerAudioContext();
+    audio.src = card.audioUrl;
+    audio.play();
   },
   async submit() {
     if (this.data.submitting || !this.data.passage) {
       return;
     }
-    const answerCount = Object.keys(this.data.answers || {}).length;
-    if (!answerCount) {
-      wx.showToast({ title: '先选择答案', icon: 'none' });
+    const questions = this.data.passage.questions || [];
+    const hasUnanswered = questions.some((question) => !String((this.data.answers || {})[String(question.number)] || '').trim());
+    if (hasUnanswered) {
+      wx.showToast({ title: '先完成题目', icon: 'none' });
       return;
     }
     this.setData({ submitting: true });
@@ -93,10 +518,23 @@ Page({
       this.setData({
         submitting: false,
         attempt: result.attempt || null,
-        review: result.review || null,
+        passage: normalizePassage(this.data.passage, this.data.answers, true),
+        activeHighlight: 'answer',
+        showReviewDetails: false,
+        passageSegments: buildPassageSegments(this.data.passage ? this.data.passage.passage : '', normalizeReview(result.review), 'answer'),
         submitted: true,
         hasScore: !!result.attempt && result.attempt.score !== null && result.attempt.score !== undefined
       });
+      this.applyReview(result.review);
+      if (this.data.passage && this.data.passage._id && result.review) {
+        savePhoneStudyPack(this.data.passage._id, {
+          fullTranslation: result.review.fullTranslation,
+          vocabularyCards: result.review.vocabularyCards,
+          phraseCards: result.review.phraseCards,
+          sentencePatternCards: result.review.sentencePatternCards,
+          source: result.review.studyPackSource || 'submit'
+        });
+      }
     } catch (error) {
       this.setData({ submitting: false });
       wx.showToast({ title: error.message || '提交失败', icon: 'none' });

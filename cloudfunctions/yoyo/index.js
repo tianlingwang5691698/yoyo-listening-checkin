@@ -409,6 +409,7 @@ const actionMap = {
   getParentDashboard: reportService.getParentDashboard,
   getReadingHome: readingService.getReadingHome,
   getReadingPassage: readingService.getReadingPassage,
+  getReadingStudyPack: readingService.getReadingStudyPack,
   submitReadingAttempt: readingService.submitReadingAttempt
 };
 
@@ -432,6 +433,7 @@ const MONITORED_ACTIONS = new Set([
   'getParentDashboard',
   'getReadingHome',
   'getReadingPassage',
+  'getReadingStudyPack',
   'submitReadingAttempt'
 ]);
 

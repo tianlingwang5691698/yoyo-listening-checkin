@@ -18,7 +18,8 @@ const READ_CACHE_CONFIG = {
   getParentDashboard: { persist: true },
   getFamilyPage: { persist: true },
   getReadingHome: { persist: true },
-  getReadingPassage: { persist: true }
+  getReadingPassage: { persist: true },
+  getReadingStudyPack: { persist: true }
 };
 
 /**
@@ -440,8 +441,13 @@ async function getParentDashboard(onRefresh) {
 async function getReadingHome(options, onRefresh) {
   return callCloud('getReadingHome', Object.assign({}, options || {}), {
     today: '',
-    dailyCount: 1,
+    dailyCount: 0,
     passage: null,
+    passages: [],
+    categoryTree: [],
+    memoryPlan: null,
+    completedCount: 0,
+    totalCount: 0,
     completedToday: false,
     latestAttempt: null
   }, { onRefresh });
@@ -452,6 +458,13 @@ async function getReadingPassage(options, onRefresh) {
     today: '',
     passage: null,
     latestAttempt: null
+  }, { onRefresh });
+}
+
+async function getReadingStudyPack(options, onRefresh) {
+  return callCloud('getReadingStudyPack', Object.assign({}, options || {}), {
+    passageId: '',
+    studyPack: null
   }, { onRefresh });
 }
 
@@ -525,6 +538,7 @@ module.exports = {
   getParentDashboard,
   getReadingHome,
   getReadingPassage,
+  getReadingStudyPack,
   submitReadingAttempt,
   getFamilyPageData,
   refreshInviteCode,

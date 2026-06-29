@@ -1,8 +1,8 @@
-<view class="theme-{{theme}} page-shell reading-page">
+<view class="theme-{{theme}} page-shell reading-page" bindtouchstart="onDirectoryTouchStart" bindtouchend="onDirectoryTouchEnd">
   <view class="reading-hero card">
-    <view class="reading-eyebrow">今日阅读</view>
-    <view class="reading-title">每天 1 篇</view>
-    <view class="reading-copy">完成后查看答案句、短语、生词和解析。</view>
+    <view class="reading-eyebrow">中考阅读</view>
+    <view class="reading-title">阅读练习</view>
+    <view class="reading-copy">按学生当前学习内容显示；完成后查看解析，生词短语统一进入词库。</view>
   </view>
 
   <view class="section-panel" wx:if="{{loading}}">
@@ -10,14 +10,97 @@
     <view class="section-copy">正在准备今日文章。</view>
   </view>
 
-  <view class="reading-card card" wx:elif="{{passage}}" bindtap="openPassage">
-    <view class="reading-card-top">
-      <view class="reading-card-label">今日 1 篇</view>
-      <view class="reading-card-state">{{completedToday ? '已完成' : '开始'}}</view>
+  <block wx:elif="{{passages.length}}">
+    <view class="reading-card card">
+      <view class="reading-card-top">
+        <view class="reading-card-label">当前学习 {{dailyCount}} 篇</view>
+        <view class="reading-card-state">{{completedCount}} / {{totalCount}} 已完成</view>
+      </view>
+      <view class="task-list">
+        <view class="task-row" wx:for="{{passages}}" wx:key="_id" data-passage-id="{{item._id}}" bindtap="openPassage">
+          <view class="task-index">{{item.index}}</view>
+          <view class="task-main">
+            <view class="task-title">{{item.title}}</view>
+            <view class="task-meta" wx:if="{{item.completed}}">已完成，可进入复习</view>
+            <view class="task-meta" wx:else>{{item.meta}} · {{item.questionCount}} 题</view>
+          </view>
+          <view class="task-state {{item.completed ? 'is-done' : ''}}">{{item.completed ? '复习' : '开始'}}</view>
+        </view>
+      </view>
     </view>
-    <view class="reading-card-title">{{passage.title}}</view>
-    <view class="reading-card-meta">{{passage.meta}} · {{passage.questionCount}} 题</view>
-  </view>
 
-  <view class="empty-state" wx:else>今日阅读还在准备中。</view>
+    <view class="reading-card card" wx:if="{{categoryRoot}}">
+      <view class="reading-card-top">
+        <view class="reading-card-label">
+          <text>{{selectedHeader}}</text>
+        </view>
+        <view class="reading-card-state" wx:if="{{isRootLevel}}">{{categoryRoot.count}} 篇</view>
+        <view class="directory-back-icon" wx:else bindtap="backOneLevel">‹ 上一级</view>
+      </view>
+
+      <view class="reading-breadcrumb" wx:if="{{!isRootLevel}}">
+        <text bindtap="backToRoot">中考阅读</text>
+        <text> / </text>
+        <text wx:if="{{isExamLevel}}">{{selectedGroup.label}}</text>
+        <text wx:if="{{isDistrictLevel}}" bindtap="backToExam">{{selectedGroup.label}}</text>
+        <text wx:if="{{isDistrictLevel}}"> / {{selectedDistrictNode.label}}</text>
+      </view>
+
+      <view class="directory-list" wx:if="{{isRootLevel}}">
+        <view class="directory-row" wx:for="{{categoryRoot.groups}}" wx:key="key" data-exam-type="{{item.key}}" bindtap="selectExamType">
+          <view>
+            <view class="directory-title">{{item.label}}</view>
+            <view class="directory-meta">{{item.districts.length}} 个区 · {{item.count}} 篇</view>
+          </view>
+          <view class="directory-arrow">›</view>
+        </view>
+      </view>
+
+      <view class="directory-list" wx:elif="{{isExamLevel}}">
+        <view class="directory-row" wx:for="{{selectedGroup.districts}}" wx:key="key" data-district="{{item.key}}" bindtap="selectDistrict">
+          <view>
+            <view class="directory-title">{{item.label}}</view>
+            <view class="directory-meta">{{item.completedCount}} / {{item.count}} 已完成</view>
+          </view>
+          <view class="directory-arrow">›</view>
+        </view>
+      </view>
+
+      <view class="task-list" wx:elif="{{isDistrictLevel}}">
+        <view class="task-row" wx:for="{{selectedDistrictNode.passages}}" wx:key="_id" data-passage-id="{{item._id}}" bindtap="openPassage">
+          <view class="task-index">{{index + 1}}</view>
+          <view class="task-main">
+            <view class="task-title">{{item.title}}</view>
+            <view class="task-meta">{{item.meta}} · {{item.questionCount}} 题</view>
+          </view>
+          <view class="task-state {{item.completed ? 'is-done' : ''}}">{{item.completed ? '复习' : '练习'}}</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="reading-card card" wx:if="{{memoryPlan}}">
+      <view class="reading-card-top">
+        <view class="reading-card-label">阅读后背诵检测</view>
+        <view class="reading-card-state">随文章生成</view>
+      </view>
+      <view class="memory-grid">
+        <view class="memory-item">
+          <view class="memory-number">{{memoryPlan.vocabularyCount}}</view>
+          <view class="memory-label">单词</view>
+        </view>
+        <view class="memory-item">
+          <view class="memory-number">{{memoryPlan.phraseCount}}</view>
+          <view class="memory-label">词组</view>
+        </view>
+        <view class="memory-item">
+          <view class="memory-number">{{memoryPlan.sentencePatternCount}}</view>
+          <view class="memory-label">句型</view>
+        </view>
+      </view>
+      <view class="reading-card-meta">检测：单词拼写、词组英译、句型仿写。</view>
+    </view>
+
+  </block>
+
+  <view class="empty-state" wx:else>阅读内容还在准备中。</view>
 </view>
