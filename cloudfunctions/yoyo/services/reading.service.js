@@ -458,7 +458,8 @@ function getReadingStudyModelConfig() {
   return {
     endpoint: process.env.READING_STUDY_ENDPOINT || process.env.SPEAKING_SCORE_ENDPOINT || '',
     apiKey: process.env.READING_STUDY_API_KEY || process.env.SPEAKING_SCORE_API_KEY || '',
-    model: process.env.READING_STUDY_MODEL || 'gpt-5.5'
+    model: process.env.READING_STUDY_MODEL || 'gpt-5.5',
+    fallbackModel: process.env.READING_STUDY_FALLBACK_MODEL || 'claude-opus-4-8'
   };
 }
 
@@ -478,9 +479,9 @@ async function buildStudyPackWithModel(passage) {
     `题目：${JSON.stringify((passage.questions || []).map((item) => ({ number: item.number, prompt: item.prompt, options: item.options, answer: item.answer })))} `,
     `文章：${passage.passage}`
   ].join('\n');
-  try {
+  async function requestModel(model) {
     const response = await postJson(config.endpoint, config.apiKey, {
-      model: config.model,
+      model,
       messages: [
         { role: 'system', content: 'You extract structured English reading study material for Chinese middle-school students.' },
         { role: 'user', content: prompt }
@@ -489,11 +490,21 @@ async function buildStudyPackWithModel(passage) {
     }, 45000);
     const parsed = parseJsonText(extractMessageText(response));
     const studyPack = normalizeStudyPack(Object.assign({}, parsed || {}, {
-      source: `model:${config.model}`
+      source: `model:${model}`
     }), passage);
     validateModelStudyPack(studyPack, passage);
     return studyPack;
+  }
+  try {
+    return await requestModel(config.model);
   } catch (error) {
+    if (config.fallbackModel && config.fallbackModel !== config.model) {
+      try {
+        return await requestModel(config.fallbackModel);
+      } catch (fallbackError) {
+        throw new Error(`reading-study-model-failed:${error.message || String(error)};fallback:${fallbackError.message || String(fallbackError)}`);
+      }
+    }
     throw new Error(`reading-study-model-failed:${error.message || String(error)}`);
   }
 }
