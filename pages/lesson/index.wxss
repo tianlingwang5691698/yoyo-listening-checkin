@@ -75,8 +75,75 @@
 }
 
 .player-card,
+.lesson-study-card,
 .transcript-card {
   margin-top: 24rpx;
+}
+
+.study-error,
+.lesson-study-done {
+  margin-top: 14rpx;
+  color: var(--text-muted);
+  font-size: var(--font-caption-size);
+}
+
+.lesson-study-tabs {
+  margin-top: 18rpx;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12rpx;
+}
+
+.lesson-study-tab {
+  min-height: 60rpx;
+  border-radius: 999rpx;
+  background: var(--control-muted-bg);
+  color: var(--text-main);
+  font-size: var(--font-caption-size);
+}
+
+.lesson-study-tab.is-active {
+  background: var(--accent);
+  color: var(--accent-contrast);
+}
+
+.lesson-study-list {
+  margin-top: 16rpx;
+}
+
+.lesson-study-item {
+  margin-top: 12rpx;
+  padding: 18rpx;
+  border-radius: 18rpx;
+  background: var(--surface-subtle);
+}
+
+.lesson-study-title {
+  color: var(--text-main);
+  font-size: var(--font-body-size);
+  font-weight: var(--font-title-weight);
+  line-height: 1.4;
+}
+
+.lesson-study-meaning,
+.lesson-study-example {
+  margin-top: 8rpx;
+  color: var(--text-muted);
+  font-size: var(--font-caption-size);
+  line-height: 1.5;
+}
+
+.lesson-study-complete {
+  margin-top: 18rpx;
+  min-height: 72rpx;
+  border-radius: 999rpx;
+  background: var(--accent);
+  color: var(--accent-contrast);
+  font-size: var(--font-body-size);
+}
+
+.lesson-study-done {
+  color: var(--accent-deep);
 }
 
 .pass-steps {

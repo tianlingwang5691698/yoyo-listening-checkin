@@ -25,6 +25,45 @@
     </view>
   </view>
 
+  <view class="section-panel lesson-study-card" wx:if="{{lessonAudioLocked || lessonStudyPack || lessonStudyCompleted || transcriptPendingLoad || transcriptLines.length}}">
+    <view class="row-between transcript-header">
+      <view>
+        <view class="section-title type-section-title">文本学习</view>
+        <view class="section-copy" wx:if="{{lessonAudioLocked}}">学完生词、短语和句型后再听音频。</view>
+      </view>
+      <button class="pill transcript-pill" loading="{{lessonStudyLoading}}" disabled="{{lessonStudyLoading}}" bindtap="loadLessonStudyPack">{{lessonStudyPack ? '刷新' : '生成'}}</button>
+    </view>
+    <view class="study-error" wx:if="{{lessonStudyError}}">{{lessonStudyError}}</view>
+    <view class="lesson-study-tabs" wx:if="{{lessonStudyPack}}">
+      <button class="lesson-study-tab {{lessonStudyTab === item.key ? 'is-active' : ''}}" wx:for="{{lessonStudyTabs}}" wx:key="key" data-tab="{{item.key}}" bindtap="selectLessonStudyTab">{{item.label}}</button>
+    </view>
+    <view class="lesson-study-list" wx:if="{{lessonStudyPack && lessonStudyTab === 'vocabulary'}}">
+      <view class="lesson-study-item" wx:for="{{lessonVocabularyCards}}" wx:key="word">
+        <view class="lesson-study-title">{{item.word}}</view>
+        <view class="lesson-study-meaning">{{item.meaning}}</view>
+        <view class="lesson-study-example" wx:if="{{item.example}}">{{item.example}}</view>
+        <view class="lesson-study-example" wx:if="{{item.exampleMeaning}}">{{item.exampleMeaning}}</view>
+      </view>
+    </view>
+    <view class="lesson-study-list" wx:elif="{{lessonStudyPack && lessonStudyTab === 'phrases'}}">
+      <view class="lesson-study-item" wx:for="{{lessonPhraseCards}}" wx:key="text">
+        <view class="lesson-study-title">{{item.text}}</view>
+        <view class="lesson-study-meaning">{{item.meaning}}</view>
+        <view class="lesson-study-example" wx:if="{{item.example}}">{{item.example}}</view>
+      </view>
+    </view>
+    <view class="lesson-study-list" wx:elif="{{lessonStudyPack}}">
+      <view class="lesson-study-item" wx:for="{{lessonPatternCards}}" wx:key="pattern">
+        <view class="lesson-study-title">{{item.pattern}}</view>
+        <view class="lesson-study-meaning">{{item.meaning}}</view>
+        <view class="lesson-study-example" wx:if="{{item.example}}">{{item.example}}</view>
+        <view class="lesson-study-example" wx:if="{{item.exampleMeaning}}">{{item.exampleMeaning}}</view>
+      </view>
+    </view>
+    <button class="lesson-study-complete" wx:if="{{lessonStudyPack && !lessonStudyCompleted}}" bindtap="completeLessonStudy">已学完，开始听</button>
+    <view class="lesson-study-done" wx:if="{{lessonStudyCompleted}}">已完成文本学习</view>
+  </view>
+
   <view class="section-panel player-card">
     <view class="pass-steps">
       <block wx:for="{{passSteps}}" wx:key="key">
@@ -46,7 +85,7 @@
           <view class="player-info-top">
             <view>
               <view class="media-title" wx:if="{{currentAudio && currentAudio.title}}">{{currentAudio.title}}</view>
-              <view class="player-status">{{isPlaying ? '正在播放' : (audioResolving ? '正在准备' : (audioReady ? '已暂停' : '等待播放'))}}</view>
+              <view class="player-status">{{lessonAudioLocked ? '先学文本' : (isPlaying ? '正在播放' : (audioResolving ? '正在准备' : (audioReady ? '已暂停' : '等待播放')))}}</view>
             </view>
           </view>
         </view>
@@ -57,7 +96,7 @@
         </view>
         <view class="player-progress">
           <view class="player-progress-meta">
-            <view class="player-progress-label">{{isPlaying ? '播放中' : audioResolving ? '准备中' : audioReady ? '已暂停' : '等待播放'}}</view>
+            <view class="player-progress-label">{{lessonAudioLocked ? '先学文本' : (isPlaying ? '播放中' : audioResolving ? '准备中' : audioReady ? '已暂停' : '等待播放')}}</view>
             <view class="player-time">{{currentTimeLabel}} / {{durationLabel}}</view>
           </view>
           <view class="progress-rail player-progress-track">
