@@ -3,6 +3,7 @@ const page = require('../../utils/page');
 const contracts = require('../../utils/contracts');
 const monitor = require('../../utils/monitor');
 const labels = require('../../utils/labels');
+const completed = require('../../utils/completed');
 
 const VOCABULARY_ITEM_KEYS = [
   'listeningFlashcardItemsV1',
@@ -120,7 +121,14 @@ function buildTodayCompletedItems(groupedDailyTasks, readingToday, readingComple
       latestAttempt: readingToday.latestAttempt || null
     });
   }
-  return listeningItems;
+  const extraItems = (this && this.data && this.data.cloudCompletedItems) || completed.getTodayCompletedItems();
+  const seen = {};
+  return listeningItems.concat(extraItems).filter((item) => {
+    const key = item.id || `${item.type}:${item.title}:${item.passageId || item.topicId || ''}`;
+    if (seen[key]) return false;
+    seen[key] = true;
+    return true;
+  });
 }
 
 Page({
@@ -144,7 +152,8 @@ Page({
     listeningSummary: '同步中',
     readingSummary: '6-9 年级阅读',
     vocabularySummary: buildVocabularySummary(),
-    todayCompletedItems: []
+    todayCompletedItems: [],
+    cloudCompletedItems: []
   }),
   buildStudyModePresentation(member) {
     const studyRole = member && member.studyRole === 'student' ? 'student' : 'parent';
@@ -171,7 +180,7 @@ Page({
       groupedDailyTasks,
       hasGroupedTasks: !!groupedDailyTasks.length,
       listeningSummary: buildListeningSummary(groupedDailyTasks),
-      todayCompletedItems: buildTodayCompletedItems(groupedDailyTasks, this.data.readingToday, this.data.readingCompleted),
+      todayCompletedItems: buildTodayCompletedItems.call(this, groupedDailyTasks, this.data.readingToday, this.data.readingCompleted),
       identityConfirmVisible: !page.isIdentityConfirmed(),
       modeChangedNoticeVisible,
       homeLoading: false
@@ -186,8 +195,18 @@ Page({
       readingToday: passage,
       readingCompleted: completed,
       readingSummary: buildReadingSummary(passage, completed),
-      todayCompletedItems: buildTodayCompletedItems(this.data.groupedDailyTasks, passage, completed)
+      todayCompletedItems: buildTodayCompletedItems.call(this, this.data.groupedDailyTasks, passage, completed)
     });
+  },
+  async loadStudyCompletions() {
+    try {
+      const data = await store.getStudyCompletions({ date: todayString() });
+      const items = data && Array.isArray(data.items) ? data.items : [];
+      this.setData({
+        cloudCompletedItems: items,
+        todayCompletedItems: buildTodayCompletedItems.call(this, this.data.groupedDailyTasks, this.data.readingToday, this.data.readingCompleted)
+      });
+    } catch (error) {}
   },
   async loadReadingHome() {
     this.setData({ readingLoading: true });
@@ -213,9 +232,10 @@ Page({
       const reportData = await store.getDailyReportByDate(todayString());
       wx.setStorageSync('todayReportForCompletedV1', reportData.report || null);
       this.setData({
-        todayCompletedItems: buildTodayCompletedItems(this.data.groupedDailyTasks, this.data.readingToday, this.data.readingCompleted)
+        todayCompletedItems: buildTodayCompletedItems.call(this, this.data.groupedDailyTasks, this.data.readingToday, this.data.readingCompleted)
       });
     } catch (error) {}
+    this.loadStudyCompletions();
     this.loadReadingHome();
     monitor.logPerf('home', 'onShow', Date.now() - startedAt, {
       groups: groupedDailyTasks.length
@@ -223,13 +243,17 @@ Page({
   },
   async confirmStudyIdentity(event) {
     const nextRole = event.currentTarget.dataset.role === 'student' ? 'student' : 'parent';
+    page.setIdentityConfirmed(true);
+    wx.setStorageSync('lastStudyRole', nextRole);
+    if (nextRole === 'student') {
+      wx.setStorageSync('hasUsedStudentMode', 'yes');
+    }
+    this.setData(Object.assign({
+      identityConfirmVisible: false,
+      modeChangedNoticeVisible: false
+    }, this.buildStudyModePresentation({ studyRole: nextRole })));
     try {
       const data = await store.setStudyRole(nextRole);
-      page.setIdentityConfirmed(true);
-      wx.setStorageSync('lastStudyRole', nextRole);
-      if (nextRole === 'student') {
-        wx.setStorageSync('hasUsedStudentMode', 'yes');
-      }
       this.setData(page.buildCloudPageData(this.data, Object.assign({}, {
         syncMode: data.syncMode,
         isReviewBuild: data.isReviewBuild,
@@ -251,7 +275,7 @@ Page({
       }
     } catch (error) {
       wx.showToast({
-        title: error.message || '切换失败',
+        title: '已本机切换，云端稍后同步',
         icon: 'none'
       });
     }
@@ -285,8 +309,8 @@ Page({
       });
       return;
     }
-    wx.switchTab({
-      url: '/pages/level/index'
+    wx.navigateTo({
+      url: '/pages/material/index?module=listening'
     });
   },
   openReading() {
@@ -302,9 +326,15 @@ Page({
     });
   },
   openGrammar() {
-    wx.showToast({
-      title: '语法模块准备中',
-      icon: 'none'
+    if (this.data.identityConfirmVisible) {
+      wx.showToast({
+        title: '先选择身份',
+        icon: 'none'
+      });
+      return;
+    }
+    wx.navigateTo({
+      url: '/pages/grammar/index'
     });
   },
   openTest() {
@@ -314,9 +344,15 @@ Page({
     });
   },
   openWriting() {
-    wx.showToast({
-      title: '写作模块准备中',
-      icon: 'none'
+    if (this.data.identityConfirmVisible) {
+      wx.showToast({
+        title: '先选择身份',
+        icon: 'none'
+      });
+      return;
+    }
+    wx.navigateTo({
+      url: '/pages/material/index?module=writing'
     });
   },
   openSpeaking() {

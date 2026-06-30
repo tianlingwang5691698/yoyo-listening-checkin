@@ -21,3 +21,7 @@ data/transcript-build/peppa-s1/run/
 data/transcript-build/peppa-s1/source/audio/
 data/transcript-build/peppa-s1/source/docs/
 .omx/
+
+# Local generated/source assets too large for git
+data/listening-em2/
+data/imports/

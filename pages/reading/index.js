@@ -41,6 +41,7 @@ Page({
     latestAttempt: null
   }),
   applyReadingHome(data) {
+    data = data || {};
     const categoryTree = data.categoryTree || [];
     const selectedGroup = pickGroup(categoryTree, this.data.selectedExamType);
     const selectedDistrictNode = pickDistrict(selectedGroup, this.data.selectedDistrict);

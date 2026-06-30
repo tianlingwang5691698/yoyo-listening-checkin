@@ -826,7 +826,7 @@ Page({
     const sentenceIndex = isRepeat ? this.data.repeatActiveIndex + 1 : 0;
     this.setData({ speakingSubmitting: true });
     try {
-      if (this.planRunType === 'preview' && isRepeat) {
+      if (this.planRunType === 'preview' || !this.isStudyWriteAllowed()) {
         const attempts = (this.data.speakingAttempts || []).concat([{
           attemptType,
           attemptIndex,
@@ -837,7 +837,7 @@ Page({
           answerDurationMs: this.data.speakingRecordDurationMs,
           answerDurationText: this.data.speakingRecordDurationText,
           score: Math.max(70, Math.min(95, 82 + ((attemptIndex + sentenceIndex) % 9))),
-          feedback: isRepeat ? '预览评分：发音流程可继续检查。' : '预览评分：回答流程可继续检查。',
+          feedback: isRepeat ? '试做评分：发音流程可继续检查。' : '试做评分：回答流程可继续检查。',
           status: 'preview',
           createdAt: new Date().toISOString()
         }]);
@@ -864,7 +864,7 @@ Page({
               activeRepeatLine: (this.data.repeatLines || [])[nextIndex] || null
             });
           }
-          wx.showToast({ title: '预览评分完成', icon: 'none' });
+          wx.showToast({ title: '试做评分完成', icon: 'none' });
           return;
         }
         this.setData({ speakingAttemptIndex: attemptIndex + 1 });

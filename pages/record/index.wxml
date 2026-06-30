@@ -116,6 +116,43 @@
     </block>
   </view>
 
+  <view class="writing-history section-panel">
+    <view class="row-between">
+      <view>
+        <view class="type-section-title">作文记录</view>
+        <view class="section-copy">可回看作文原文和批改。</view>
+      </view>
+    </view>
+    <block wx:if="{{writingAttempts && writingAttempts.length}}">
+      <view class="writing-attempt" wx:for="{{writingAttempts}}" wx:key="key">
+        <view class="writing-attempt-head" data-index="{{index}}" bindtap="toggleWritingAttempt">
+          <view>
+            <view class="writing-title">{{item.title}}</view>
+            <view class="writing-meta">{{item.dateLabel}} {{item.timeText}} · {{item.wordCount}} 词</view>
+          </view>
+          <view class="writing-score">{{item.scoreText}}</view>
+        </view>
+        <view class="writing-detail" wx:if="{{item.expanded}}">
+          <view class="writing-detail-title">作文原文</view>
+          <view class="writing-text">{{item.essay}}</view>
+          <view class="writing-detail-title" wx:if="{{item.review.summary}}">批改点评</view>
+          <view class="writing-text" wx:if="{{item.review.summary}}">{{item.review.summary}}</view>
+          <block wx:if="{{item.review.problems && item.review.problems.length}}">
+            <view class="writing-detail-title">主要问题</view>
+            <view class="writing-text" wx:for="{{item.review.problems}}" wx:key="*this" wx:for-item="problem">· {{problem}}</view>
+          </block>
+          <block wx:if="{{item.review.suggestions && item.review.suggestions.length}}">
+            <view class="writing-detail-title">改进建议</view>
+            <view class="writing-text" wx:for="{{item.review.suggestions}}" wx:key="*this" wx:for-item="suggestion">· {{suggestion}}</view>
+          </block>
+          <view class="writing-detail-title" wx:if="{{item.review.polishedVersion}}">参考改写</view>
+          <view class="writing-text" wx:if="{{item.review.polishedVersion}}">{{item.review.polishedVersion}}</view>
+        </view>
+      </view>
+    </block>
+    <view class="empty-state" wx:else>{{writingAttemptsLoading ? '加载中。' : '暂无作文记录。'}}</view>
+  </view>
+
   <view class="day-card section-panel">
     <view class="row-between">
       <view>

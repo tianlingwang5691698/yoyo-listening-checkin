@@ -1,0 +1,35 @@
+<view class="theme-{{theme}} page-shell listening-detail-page">
+  <view class="detail-hero card">
+    <view class="detail-eyebrow">听力练习</view>
+    <view class="detail-title">{{item.title}}</view>
+    <view class="detail-copy">{{item.year}} · {{item.district}} · {{item.examType}}</view>
+  </view>
+
+  <view class="audio-card card">
+    <view class="audio-title">{{audioLoading ? '音频准备中' : (isPlaying ? '正在播放' : '听力音频')}}</view>
+    <button class="audio-button" bindtap="toggleAudio" disabled="{{audioLoading || !audioSrc}}">{{isPlaying ? '暂停' : '播放'}}</button>
+    <view class="audio-error" wx:if="{{audioError}}">{{audioError}}</view>
+  </view>
+
+  <view class="question-card card">
+    <view class="question-top">
+      <view class="question-label">答题区</view>
+      <view class="question-state" wx:if="{{submitted}}">{{correctCount}} / {{questions.length}}</view>
+    </view>
+    <view class="picture-grid" wx:if="{{item.images && item.images.length}}">
+      <image class="picture-item" wx:for="{{item.images}}" wx:key="cloudPath" mode="aspectFit" src="{{item.src}}"></image>
+    </view>
+    <view class="question-row" wx:for="{{questions}}" wx:key="number">
+      <view class="question-title">{{item.number}}. {{item.prompt}}</view>
+      <view class="option-list" wx:if="{{item.optionsList.length}}">
+        <button class="option-row {{option.selected ? 'is-selected' : ''}}" wx:for="{{item.optionsList}}" wx:for-item="option" wx:key="key" data-number="{{item.number}}" data-option="{{option.key}}" bindtap="selectOption">
+          {{option.key}} {{option.text}}
+        </button>
+      </view>
+      <input wx:else class="answer-input" value="{{item.inputValue}}" data-number="{{item.number}}" bindinput="inputAnswer" placeholder="填写答案" />
+      <view class="answer-line" wx:if="{{submitted && item.answer}}">{{item.correct ? '正确' : '订正'}}：{{item.answer}}</view>
+    </view>
+  </view>
+
+  <button class="button-primary submit-button" bindtap="submit">提交听力</button>
+</view>

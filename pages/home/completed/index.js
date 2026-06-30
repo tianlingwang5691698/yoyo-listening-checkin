@@ -10,8 +10,8 @@ function normalizeItems(items) {
     const latestAttempt = attempts.length ? attempts[attempts.length - 1] : null;
     return Object.assign({}, item, {
     index: index + 1,
-    typeLabel: item.type === 'reading' ? '阅读' : (item.type === 'speaking' ? '回答' : '听力'),
-    actionText: item.type === 'reading' ? '查看解析' : (item.type === 'speaking' ? '查看回答' : '查看任务'),
+    typeLabel: item.type === 'reading' ? '阅读' : (item.type === 'reading-study' ? '阅读学习' : (item.type === 'grammar' ? '语法' : (item.type === 'writing' ? '写作' : (item.type === 'speaking' ? '回答' : '听力')))),
+    actionText: item.type === 'reading' ? '查看解析' : (item.type === 'reading-study' ? '查看学习包' : (item.type === 'grammar' ? '查看语法' : (item.type === 'writing' ? '查看批改' : (item.type === 'speaking' ? '查看回答' : '查看任务')))),
     expanded: false,
     attempts,
     attemptCount: attempts.length,
@@ -24,13 +24,20 @@ Page({
   data: page.createCloudPageData({
     items: []
   }),
-  onShow() {
+  async onShow() {
     page.syncTheme(this);
     let items = [];
     try {
-      items = wx.getStorageSync('todayCompletedItemsV1') || [];
+      const data = await store.getStudyCompletions();
+      items = data && Array.isArray(data.items) && data.items.length
+        ? data.items
+        : (wx.getStorageSync('todayCompletedItemsV1') || []);
     } catch (error) {
-      items = [];
+      try {
+        items = wx.getStorageSync('todayCompletedItemsV1') || [];
+      } catch (innerError) {
+        items = [];
+      }
     }
     this.setData({
       items: normalizeItems(items)
@@ -43,6 +50,27 @@ Page({
     if (item.type === 'reading' && item.passageId) {
       wx.navigateTo({
         url: `/pages/reading/detail/index?passageId=${item.passageId}`
+      });
+      return;
+    }
+    if (item.type === 'reading-study' && item.passageId) {
+      wx.navigateTo({
+        url: `/pages/reading/detail/index?passageId=${item.passageId}`
+      });
+      return;
+    }
+    if (item.type === 'grammar') {
+      wx.navigateTo({
+        url: '/pages/grammar/index'
+      });
+      return;
+    }
+    if (item.type === 'writing') {
+      if (item.prompt) {
+        wx.setStorageSync('currentWritingPromptV1', item.prompt);
+      }
+      wx.navigateTo({
+        url: `/pages/writing/detail/index?id=${encodeURIComponent(item.targetId || '')}`
       });
       return;
     }

@@ -1,0 +1,66 @@
+<view class="theme-{{theme}} page-shell writing-page">
+  <view class="card prompt-card">
+    <view class="eyebrow">{{prompt.examType}} · {{prompt.district}}</view>
+    <view class="title">{{prompt.title}}</view>
+    <view class="prompt-text">{{prompt.prompt}}</view>
+    <view class="meta">不少于 {{prompt.minWords || 60}} 词 · 满分 {{prompt.score || 20}} 分</view>
+  </view>
+
+  <view class="card editor-card">
+    <view class="section-title">我的作文</view>
+    <textarea class="essay-input" value="{{essayText}}" maxlength="5000" cursor-spacing="180" show-confirm-bar="{{true}}" placeholder="在这里输入作文..." bindinput="onEssayInput"></textarea>
+    <view class="editor-footer">
+      <view>{{wordCount}} 词</view>
+      <button class="submit-button" loading="{{submitting}}" disabled="{{submitting}}" bindtap="submitEssay">{{submitting ? '批改中' : '提交批改'}}</button>
+    </view>
+    <view class="loading-text" wx:if="{{submitting}}">正在批改，请稍等。</view>
+    <view class="error-text" wx:if="{{errorText}}">{{errorText}}</view>
+  </view>
+
+  <view class="card review-card" wx:if="{{review}}">
+    <view class="review-top">
+      <view>
+        <view class="section-title">批改结果</view>
+        <view class="score">{{review.score}} / {{review.totalScore || prompt.score || 20}} 分</view>
+      </view>
+      <view class="level">{{review.level}}</view>
+    </view>
+    <view class="review-block" wx:if="{{review.summary}}">{{review.summary}}</view>
+    <view class="review-list" wx:if="{{review.content}}">
+      <view class="list-title">内容切题</view>
+      <view>{{review.content}}</view>
+    </view>
+    <view class="review-list" wx:if="{{review.structure}}">
+      <view class="list-title">结构逻辑</view>
+      <view>{{review.structure}}</view>
+    </view>
+    <view class="review-list" wx:if="{{review.language}}">
+      <view class="list-title">语言表达</view>
+      <view>{{review.language}}</view>
+    </view>
+    <view class="review-list" wx:if="{{review.spelling}}">
+      <view class="list-title">拼写标点</view>
+      <view>{{review.spelling}}</view>
+    </view>
+    <view class="review-list" wx:if="{{review.problems.length}}">
+      <view class="list-title">主要问题</view>
+      <view wx:for="{{review.problems}}" wx:key="*this">· {{item}}</view>
+    </view>
+    <view class="review-list" wx:if="{{review.suggestions.length}}">
+      <view class="list-title">改进建议</view>
+      <view wx:for="{{review.suggestions}}" wx:key="*this">· {{item}}</view>
+    </view>
+    <view class="review-list" wx:if="{{review.grammarCorrections.length}}">
+      <view class="list-title">语法逐句修改</view>
+      <view class="correction-item" wx:for="{{review.grammarCorrections}}" wx:key="original">
+        <view class="wrong">原句：{{item.original}}</view>
+        <view class="right">改为：{{item.corrected}}</view>
+        <view class="reason">原因：{{item.reason}}</view>
+      </view>
+    </view>
+    <view class="review-list" wx:if="{{review.polishedVersion}}">
+      <view class="list-title">参考改写</view>
+      <view>{{review.polishedVersion}}</view>
+    </view>
+  </view>
+</view>

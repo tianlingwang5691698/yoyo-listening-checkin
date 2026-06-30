@@ -1370,12 +1370,15 @@ async function scoreSpeakingAttempt(payload) {
 
 async function synthesizeFeedbackAudio(text, cloudPath) {
   const endpoint = String(process.env.SPEAKING_TTS_ENDPOINT || '').trim();
-  const apiKey = String(process.env.SPEAKING_SCORE_API_KEY || '').trim();
+  const apiKey = String(process.env.SPEAKING_TTS_API_KEY || process.env.SPEAKING_SCORE_API_KEY || '').trim();
   const model = String(process.env.SPEAKING_TTS_MODEL || 'gpt-4o-mini-tts').trim();
   const voice = String(process.env.SPEAKING_TTS_VOICE || 'alloy').trim();
   const input = normalizeText(text);
   if (!endpoint || !input || !cloudPath) {
     return null;
+  }
+  if (endpoint.includes('api.openai.com') && !process.env.SPEAKING_TTS_API_KEY && process.env.SPEAKING_SCORE_ENDPOINT && !String(process.env.SPEAKING_SCORE_ENDPOINT).includes('api.openai.com')) {
+    throw new Error('missing-speaking-tts-api-key-for-openai-endpoint');
   }
   const audioBuffer = await postAudio(endpoint, {
     authorization: apiKey ? `Bearer ${apiKey}` : ''
@@ -1383,7 +1386,7 @@ async function synthesizeFeedbackAudio(text, cloudPath) {
     model,
     voice,
     input,
-    format: 'mp3'
+    response_format: 'mp3'
   });
   return storageAdapter.uploadCloudFileBuffer(cloudPath, audioBuffer);
 }

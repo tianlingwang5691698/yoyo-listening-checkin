@@ -1,0 +1,167 @@
+.material-page {
+  padding-top: 72rpx;
+}
+
+.material-hero {
+  padding: 34rpx 32rpx;
+  background: var(--surface-raised);
+}
+
+.material-eyebrow {
+  color: var(--text-muted);
+  font-size: var(--font-caption-size);
+  font-weight: var(--font-title-weight);
+}
+
+.material-title {
+  margin-top: 10rpx;
+  color: var(--text-strong);
+  font-size: var(--font-page-title-size);
+  line-height: 1.2;
+  font-weight: var(--font-title-weight);
+}
+
+.material-copy {
+  margin-top: 14rpx;
+  color: var(--text-muted);
+  font-size: var(--font-body-size);
+  line-height: var(--line-body);
+}
+
+.material-card {
+  margin-top: 24rpx;
+  padding: 30rpx 28rpx;
+}
+
+.material-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20rpx;
+}
+
+.material-card-label,
+.material-card-state {
+  color: var(--accent-deep);
+  font-size: var(--font-caption-size);
+  font-weight: var(--font-title-weight);
+}
+
+.directory-list {
+  margin-top: 18rpx;
+  display: flex;
+  flex-direction: column;
+  gap: 14rpx;
+}
+
+.directory-row {
+  min-height: 112rpx;
+  padding: 20rpx 22rpx;
+  border-radius: var(--radius-lg);
+  background: var(--surface-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20rpx;
+}
+
+.directory-title {
+  color: var(--text-strong);
+  font-size: var(--font-card-title-size);
+  line-height: 1.25;
+  font-weight: var(--font-title-weight);
+}
+
+.directory-meta {
+  margin-top: 8rpx;
+  color: var(--text-muted);
+  font-size: var(--font-caption-size);
+  line-height: 1.35;
+}
+
+.directory-arrow {
+  flex-shrink: 0;
+  color: var(--accent-deep);
+  font-size: 44rpx;
+  line-height: 1;
+}
+
+.directory-back-icon {
+  flex-shrink: 0;
+  color: var(--accent-deep);
+  font-size: var(--font-caption-size);
+  line-height: 1.4;
+  font-weight: var(--font-title-weight);
+}
+
+.task-list {
+  margin-top: 18rpx;
+  display: flex;
+  flex-direction: column;
+  gap: 14rpx;
+}
+
+.task-row {
+  min-height: 104rpx;
+  padding: 18rpx;
+  border-radius: var(--radius-lg);
+  background: var(--surface-subtle);
+  display: flex;
+  align-items: center;
+  gap: 18rpx;
+}
+
+.task-index {
+  width: 48rpx;
+  height: 48rpx;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent-deep);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-caption-size);
+  font-weight: var(--font-title-weight);
+}
+
+.task-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.task-title {
+  color: var(--text-strong);
+  font-size: var(--font-body-size);
+  font-weight: var(--font-title-weight);
+  line-height: 1.35;
+}
+
+.task-meta {
+  margin-top: 8rpx;
+  color: var(--text-muted);
+  font-size: var(--font-caption-size);
+  line-height: 1.35;
+}
+
+.task-state {
+  flex-shrink: 0;
+  color: var(--accent-deep);
+  font-size: var(--font-caption-size);
+  font-weight: var(--font-title-weight);
+}
+
+.material-detail {
+  margin-top: 16rpx;
+  padding: 18rpx;
+  border-radius: var(--radius-md);
+  background: var(--surface-raised);
+  color: var(--text-main);
+  font-size: var(--font-body-size);
+  line-height: 1.55;
+  word-break: normal;
+  overflow-wrap: break-word;
+}
+
+.empty-state {
+  margin-top: 24rpx;
+}

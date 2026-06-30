@@ -353,6 +353,9 @@ const identityService = require('./services/identity.service');
 const catalogService = require('./services/catalog.service');
 const speakingService = require('./services/speaking.service');
 const readingService = require('./services/reading.service');
+const grammarService = require('./services/grammar.service');
+const completionService = require('./services/completion.service');
+const writingService = require('./services/writing.service');
 const monitor = require('./lib/monitor');
 
 if (!taskService.__autoCheckinAfterListeningPatch) {
@@ -411,7 +414,18 @@ const actionMap = {
   getReadingPassage: readingService.getReadingPassage,
   getReadingStudyPack: readingService.getReadingStudyPack,
   synthesizeReadingAudio: readingService.synthesizeReadingAudio,
-  submitReadingAttempt: readingService.submitReadingAttempt
+  submitReadingAttempt: readingService.submitReadingAttempt,
+  getGrammarHome: grammarService.getGrammarHome,
+  getGrammarTopic: grammarService.getGrammarTopic,
+  recordGrammarWrong: grammarService.recordGrammarWrong,
+  getGrammarWrongBook: grammarService.getGrammarWrongBook,
+  getGrammarProgress: grammarService.getGrammarProgress,
+  recordGrammarProgress: grammarService.recordGrammarProgress,
+  explainGrammarQuestion: grammarService.explainGrammarQuestion,
+  submitWritingAttempt: writingService.submitWritingAttempt,
+  getWritingAttempts: writingService.getWritingAttempts,
+  recordStudyCompletion: completionService.recordStudyCompletion,
+  getStudyCompletions: completionService.getStudyCompletions
 };
 
 const MONITORED_ACTIONS = new Set([
@@ -436,7 +450,18 @@ const MONITORED_ACTIONS = new Set([
   'getReadingPassage',
   'getReadingStudyPack',
   'synthesizeReadingAudio',
-  'submitReadingAttempt'
+  'submitReadingAttempt',
+  'getGrammarHome',
+  'getGrammarTopic',
+  'recordGrammarWrong',
+  'getGrammarWrongBook',
+  'getGrammarProgress',
+  'recordGrammarProgress',
+  'explainGrammarQuestion',
+  'submitWritingAttempt',
+  'getWritingAttempts',
+  'recordStudyCompletion',
+  'getStudyCompletions'
 ]);
 
 exports.main = async (event, context) => {

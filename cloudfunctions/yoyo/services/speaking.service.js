@@ -56,6 +56,9 @@ async function createSpeakingUploadUrl(event) {
   const attempt = normalizeAttemptPayload(Object.assign({}, payload, {
     targetDate: payload.targetDate || today
   }));
+  if (attempt.planRunType !== 'preview' && study.normalizeStudyRole(ctx.member) !== 'student') {
+    throw new Error('家长模式不上传录音');
+  }
   const scope = study.getUserScope(ctx);
   const now = Date.now();
   const cloudPath = [

@@ -84,9 +84,14 @@ async function callYoyo(action, payload) {
   const startedAt = Date.now();
   let response;
   try {
-    const timeoutMs = action === 'submitSpeakingAttempt'
-      ? 55000
-      : (action === 'synthesizeReadingAudio' ? 30000 : 12000);
+    let timeoutMs = 12000;
+    if (action === 'getReadingStudyPack' || action === 'submitWritingAttempt') {
+      timeoutMs = 120000;
+    } else if (action === 'submitSpeakingAttempt' || action === 'submitReadingAttempt' || action === 'explainGrammarQuestion') {
+      timeoutMs = 70000;
+    } else if (action === 'synthesizeReadingAudio' || action === 'getGrammarTopic') {
+      timeoutMs = 30000;
+    }
     response = await withTimeout(wx.cloud.callFunction({
       name: 'yoyo',
       data: {

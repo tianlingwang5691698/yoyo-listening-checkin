@@ -1,0 +1,9941 @@
+module.exports = {
+  "writingEm1": [
+    {
+      "_id": "sh-em1-2014-嘉定-writing",
+      "title": "2014 上海嘉定一模作文",
+      "year": 2014,
+      "district": "嘉定",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "(共20分) 94. Write a letter in at least 60 words according to the given situation (根据所给情景写一封不少于60词的信) 假如你是Linda, 你收到英国笔友Mark的来信，他现住在北京姑妈家，春节期间他收到一些长辈给的压岁钱，请写一封回信，对有关“如何使用压岁钱”提出一些建议。） （注意：短文中不得出现考生的姓名、校名及其它相关信息，否则不予评分。）",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2014-奉贤-writing",
+      "title": "2014 上海奉贤一模作文",
+      "year": 2014,
+      "district": "奉贤",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "Writing (作文)（共20分） 94. Write at least 60 words about the topic “ I believe I can _______________ ”. (“以我相信我能_______________”为题，写一篇不少于60个词的短文，标点符号不占格。) Suggested points: What do you believe you can do ? Why do think you can do that? How will you do that?",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2014-宝山-writing",
+      "title": "2014 上海宝山一模作文",
+      "year": 2014,
+      "district": "宝山",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "(共20分) 94. Write at least 60 words on the topic “How to be a good learner?”（以“怎样成为一个好的学习者?”为题，写一篇不少于60个词的短文，标点符号不占格。） 短文需包含下列至少三个要点： （ 注意：短文中不得出现考生的姓名、校名及其他相关信息，否则不予评分。）",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2014-崇明-writing",
+      "title": "2014 上海崇明一模作文",
+      "year": 2014,
+      "district": "崇明",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "(共20分) Write a letter in at least 60 words according to the given situation.(根据所给情景写一篇不少 于60个词的信，标点符号不占格。) 1、提示：假设你是张翔，你的朋友孙磊上周来信说，他的同桌上课经常找借口跟他说话，这使他非常苦恼，不知道如何处理这件事。请你给他写封信，提出一些建议并帮助他。 2、要求：建议不得少于两条。 3、Phrases for reference (以下短语仅供参考) in trouble; be bad for; talk with; heart to heart; try one’s best; after all; get on well with; Dear Sun Lei, ____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________ Yours, Zahng Xiang 崇明县2013-2014学年度第一学期期末质量抽查试卷 初三英语 初三英语试卷",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2014-徐汇-writing",
+      "title": "2014 上海徐汇一模作文",
+      "year": 2014,
+      "district": "徐汇",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "VII. Writing（写作 共20分） 94. Write at least 60 words about the topic “A good way to ________”（在生活中，在学习技能等各方面，每个人都会有做某件事独特的非常有效的好方法，请以“一个______的好方法”为题写一篇不少于60个词的短文，标点符号不占格。） （注意：短文中不得出现任何人名、校名及其它相关信息，否则不予评分。）",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2014-普陀-writing",
+      "title": "2014 上海普陀一模作文",
+      "year": 2014,
+      "district": "普陀",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "(共20分) 94. Write a composition in at least 60 words according to the given situation (根据所给情景写一篇不少于60词的短文) Suppose there is an English Festival in your school every year. Some students think it is helpful, but others don’t think so. What do you think, and why? （假设你们学校每年开展英语文化节活动，有些学生认为活动对自己有帮助，有些则不这么认为，你的观点是什么？并说明理由。） （注意：文中不得出现任何姓名、校名及其它相关信息，否则不予评分。）",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2014-杨浦-writing",
+      "title": "2014 上海杨浦一模作文",
+      "year": 2014,
+      "district": "杨浦",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": ": (共20分) 94. Write a passage of at least 60 words on the topic “Haze weather in Shanghai”. ( 以“上海的雾霾天”为题写一篇不少于60个词的短文，标点符号不占格。) 提示：近来人们深受雾䨪天气的困扰，学习、工作、出行等都受到了不同程度的影响。请简单描述一下雾䨪天气给你带来的烦恼或不便，并谈谈你的建议或希望。 The following are for reference. （以下词语仅供参考） （ 注意：短文中不得出现考生的姓名、校名及其他相关信息，否则不予评分。） PAGE 4 上海市教育考试院 保留版权 学业考试（2006）英语试卷 第 PAGE 1页（共 NUMPAGES 9页） A. transport B. spread C. desire D. development E. tool A. far from B. for lack of C. powerful D. economy E. especially outdoor activities, air quality, road safety, mask (口罩) improve, cancel, allow, control, prevent",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2014-松江-writing",
+      "title": "2014 上海松江一模作文",
+      "year": 2014,
+      "district": "松江",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "(共20分) 94. Write a letter at least 60 words according to the given situation (根据所给情景写一封不少于60词的信，标点符号不占格。) (注意：短文中不得出现考生的姓名、校名及其它相关信息，否则不予评分。) 假如你是Zhang Lin，你的笔友Li Hua来信询问你学英语的方法。请你给他写一封回信，并给他提一些学好英语的建议(至少两条建议)。回信的开头已给出，不计入总字数。 Dear Li Hua, Thanks for your letter. You asked me __________________________________ ____________________________________________________________________ ____________________________________________________________________ ____________________________________________________________________. Yours sincerely, Zhang Lin",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2014-浦东-writing",
+      "title": "2014 上海浦东一模作文",
+      "year": 2014,
+      "district": "浦东",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "VII. Writing. (作文) (共20分) 94. Write at least 60 words according to the given situation (根据所给情景写一篇不少于60词的短文，标点符号不占格。) Situation: Nowadays many students go to school by bike, by car, by underground… How do you go to school? What do you think of it? 眼下不少学生骑自行车、乘私家车、乘地铁等方式上学。你是怎么去学校的？你觉得你的方式如何？谈谈你的想法并简述其理由。 Words and patterns for reference (以下单词或词组可供选用): choice, convenient, save time, stop…from (注意：文中不得出现任何姓名、校名及其它相关信息，否则不予评分。)",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2014-虹口-writing",
+      "title": "2014 上海虹口一模作文",
+      "year": 2014,
+      "district": "虹口",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": ": (共20分) 94. Write at least 60 words on the topic “When I see an old person fall down in the street, I… ” 以《当我看到老人在街上摔倒, 我……》为题写一篇不少于60个词的短文，标点符号不占格。 Reference words(Use at least two of them): a traditional virtue (美德)； in favor of /against; calm; get along with; care for; （注意：短文中不得出现考生的姓名、校名及其他相关信息，否则不予评分。） _____ _____ ______ ______ ______ ______ ______ _____ _____ _____ _____ _____ ______ ______ ______ ______ ______ _____ _____ _____ _____ _____ ______ ______ ______ ______ ______ _____ _____ _____ _____ _____ ______ ______ ______ ______ ______ _____ _____ _____ _____ _____ ______ ______ ______ ______ ______ _____ _____ _____ _____ _____ ______ ______ ______ ______ ______ _____ _____ _____",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2014-金山-writing",
+      "title": "2014 上海金山一模作文",
+      "year": 2014,
+      "district": "金山",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "(共20分) 94. Complete the poster of at least 60 words on the topic “A little more fresh air, please”. ( 以“多一点新鲜空气”为题完成一篇不少于60个词的海报，标点符号不占格。) （ 注意：短文中不得出现考生的姓名、校名及其他相关信息，否则不予评分。） Expressions for reference （以下短语仅供参考） plant trees, drive cars, walk more, pollute, haze（霾）",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2014-长宁-writing",
+      "title": "2014 上海长宁一模作文",
+      "year": 2014,
+      "district": "长宁",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "(共20分) Write a passage of at least 60 words on the topic “Let’s learn to smile.”. ( 以“让我们学会微笑”为题写一篇不少于60个词的短文，标点符号不占格。) 注意：1. 短文中不得出现考生的姓名、校名及其他相关信息，否则不予评分。 2. 不得抄袭试卷中阅读文章，否则不给分。 Suggested points: Do you often smile in your daily life? Why should we learn to smile? (Give one or two examples.) What changes will we see if we smile more often?",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2014-闵行-writing",
+      "title": "2014 上海闵行一模作文",
+      "year": 2014,
+      "district": "闵行",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "(共20分) 94. Write a passage on “A happy memory in my Junior High School” in at least 60 words according to the given situation (以“我初中时期的一次快乐的回忆”为题，写一篇不少于60词的文章。) 提示：初中时期留给我们很多快乐的回忆,你可以结合学习或生活中的某一个情景或具体事例，例如：一次班会、一次活动等等，谈谈初中时期曾经留给你的一次快乐的回忆。 Phrases for reference（以下短语仅供参考）: a spring outing a class meeting a party take",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2014-静安-writing",
+      "title": "2014 上海静安一模作文",
+      "year": 2014,
+      "district": "静安",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "(共20分) 94. Write a passage of at least 60 words on the topic “A suggestion to my dear school!” (以“给学校的一个建议!”为题写一篇不少于60个词的短文，标点符号不占格。) （ 注意：短文中不得出现考生的姓名、校名及其他相关信息，否则不予评分。） Questions for reference only（以下问题仅供参考） What aren’t you satisfied with in your school? Your reasons? What is your suggestion? Would you give your possible solution(s)? model, silent, shout out in a roar, a train",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2014-黄浦-writing",
+      "title": "2014 上海黄浦一模作文",
+      "year": 2014,
+      "district": "黄浦",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "：（共20分） Write at least 60 words with the topic “A heavy smog day” .（以“大雾霾天”为题，写一篇不少于60个词的短文，标点符号不占格。） 提示：去年12月上旬，申城笼罩在茫茫的雾霾（was shrouded in heavy smog）中，陷于重度污染（severe pollution）。人们戴口罩（wear masks）出行，雾霾天给人们的健康带来危害，给生活和工作带来不便（inconvenience）。请你就其中某一天，描述你的经历和感受。 （注意：短文中不得出现考生的姓名、校名及其它相关信息，否则不予评分。）",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2015-嘉定-writing",
+      "title": "2015 上海嘉定一模作文",
+      "year": 2015,
+      "district": "嘉定",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": ": (20分) 94. Write at least 60 words about the topic “Something I should never do”(以“我不应该做的事 情”为题写—篇不少于60个词的短文，标点符号不占格) 遵纪守法是每个人应尽的责任和义务，作为一名中学生，不应该做违反校纪校规的事情，比如考试作弊、抄袭他人作业、说谎等，请谈谈你的观点和理由。 Phrases for reference(以下短语仅供参考)： obey the school rules cheat in the exams copy others’ homework be honest … (注意：短文中不得出现考生的姓名、校名及其它相关信息，否则不予评分。)",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2015-奉贤-writing",
+      "title": "2015 上海奉贤一模作文",
+      "year": 2015,
+      "district": "奉贤",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": ": (20分) 94. Write at least 60 words according to the given situation. (根据所给情景写—篇不少于60个 词的信，标点符号不占格。) 假如你叫王芳，最近你收到了你好朋友Ann的信。她正为她的学习而烦恼。请你根据她的信写一封回信，给她一些建议。(注意：建议不得少于两条) Words and phrases for reference (以下短语仅供参考): improve; I suggest that ...; useful methods; be relaxed; (注意：短文中不得出现考生的姓名、校名及其他相关信息，否则不予评分。) Dear Ann, Nice to hear from you. ________________________________________________________ _______________________________________________________________________________ _______________________________________________________________________________ _______________________________________________________________________________ _______________________________________________________________________________ _______________________________________________________________________________ _______________________________________________________________________________ _______________________________________________________________________________ _______________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2015-宝山-writing",
+      "title": "2015 上海宝山一模作文",
+      "year": 2015,
+      "district": "宝山",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "(20分) 94.Recently there has been a discussion about the topic “Water Is Precious” in your class. Please write at Host 60 words about the topic \"Water Is Precious\" to express your point of view,(请以“水是珍贵的”写一篇至少60词的作文，标点符号不占格） (你的作文内容须包含以下几点) 1) Why is water very important in our life? 2) What are the causes of the water shortage? 3} How can we protect our precious water resources?",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2015-崇明-writing",
+      "title": "2015 上海崇明一模作文",
+      "year": 2015,
+      "district": "崇明",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": ": (20分) 94. Write a passage of at least 60 words on the topic \"Changes in my school\".(以“学校发生的变化”为题写一篇不少于60个词的短文，标点符号不占格。) Use the following points as a reference (以下提示仅供参考) ·What changes have taken place in your school? ·What do you think of these changes? (注意：文中不得出现任何姓名、校名及其它相关信息，否则不予评分。) 崇明县2014-2015学年度第一学期期末质量抽查试卷 初三英语",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2015-徐汇-writing",
+      "title": "2015 上海徐汇一模作文",
+      "year": 2015,
+      "district": "徐汇",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "Ⅶ writing 94. Suppose you are on an educational visit in a foreign country and are asked to make a brief introduction. Write a passage in at least 60 words to introduce yourself and probably your school (ABC school) or your country, so you can leave people a deep impression.假设你正在国外参加教育交流访问活动，你需要做一个简短的，让人印象深刻的自我介绍，请写一篇至少60词的发言稿介绍一下你自己（Danny）或者你的国家和学校（ABC school）。 （标点符号不占格） （注意：短文中不得出现任何人名、校名及其他相关信息，否则不予评分。你的名字请用Danny代替，学校名请用ABC school代替。）",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2015-杨浦-writing",
+      "title": "2015 上海杨浦一模作文",
+      "year": 2015,
+      "district": "杨浦",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": ":(共20分) 94.In 60 to 120 words, write about the topic \"The best gift I’ve received\".(以“我收到的最好 的礼物”为题，写一篇60—120个词的短文，标点符号不占格) The following are for reference only.(以下问题仅供参考) √ What is the gift? Who was it from? √ What is the gift like? √ Why do you like it so much? √ What makes it so special? （注意：短文中不得出现考生的姓名、校名及其他相关信息，否则不予评分。）",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2015-松江-writing",
+      "title": "2015 上海松江一模作文",
+      "year": 2015,
+      "district": "松江",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "(共20分) 94. Nowadays, it’s getting more and more important to get on well with others. What are your opinions about it? What are your good ways to get on well with others? 如今，与人和睦相处越来越显得重要了，你认为呢？请根据以上情景写一篇不少于60个词的短文，谈谈你对与人相处的看法并建议如何与人（你可以从你的父母、你的老师或者你的同学中任意选取一位）相处，并举例说明。（注意：标点符号不占格，短文中不得出现任何人名、校名及其它相关信息，否则不予评分。） The following key points are for reference only. (以下要点仅供参考) 1. I think that… / In my opinion,… 2. in a friendly way",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2015-浦东-writing",
+      "title": "2015 上海浦东一模作文",
+      "year": 2015,
+      "district": "浦东",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "（共20分) 94 Write at least 60 words about the topic “I get ______from my class life “(以我从班级生活中得到_____”为题，写一篇不少于60个词的短文。请在答题纸上吧作文标题补充完整，如：I get friendship/happiness/help…from my class life) 每个人的成长都离不开班级生活，你认为你的班级生活如何？从中你最大的收获是什么？你又为班集体做些什么？ The following points are only for reference My class life is exciting/boring/interesting.(以下句型仅供参考) I get …from… I expect/hope (that/to)…",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2015-虹口-writing",
+      "title": "2015 上海虹口一模作文",
+      "year": 2015,
+      "district": "虹口",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "(共20分) 94. Write at least 60 words about the topic “My last winter holiday in junior middle school” (以“我初中的最后一个寒假”为题，写一篇不少于60个词的短文，标点符号不占格) 即将到来的寒假是你在初中阶段最后一个寒假。你想怎样度过这个寒假呢？你最想做的事情是什么呢？你觉得你父母会赞成你的想法吗？请把你的想法写下来，告诉他们吧。 (注意：短文中不得出现任何人名、校名及其它相关信息，否则不予评分。)",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2015-金山-writing",
+      "title": "2015 上海金山一模作文",
+      "year": 2015,
+      "district": "金山",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "：（共20分） 94. Write a passage of at least 60 words on the topic “One problem /question I met in my English study”. according to the situation given (请根据所给情形，以“我在英语学习中碰到的一个问题”为题，写一篇不少于60个字的短文。要求内容切题、语言地道、表达流畅) 情境： 每个人在自己的英语学习过程中总会碰到这样那样的问题。你碰到过怎样的问题？你解决了 这个问题吗？如果解决了，你认为你的解决方案怎么样？如果没有解决，你认为是什么原因？以后会用什么更好的方法？ 以下词或词组供参考 can(not), understand, (don’t) know, read…correctly, remember, write, ask (注意：短文中不得出现考生的姓名、校名及其他相关信息，否则不予评分)",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2015-长宁-writing",
+      "title": "2015 上海长宁一模作文",
+      "year": 2015,
+      "district": "长宁",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": ": (共20分) 94. Write a passage of at least 60 words about the Topic“A lucky _______” (以一个/件/…幸运的_______为题写一篇不少于60个词的短文，标点符号不占格子。) 注意：补全题目，记叙或描述你认为幸运的人/物/事…..,并阐述理由。",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2015-闵行-writing",
+      "title": "2015 上海闵行一模作文",
+      "year": 2015,
+      "district": "闵行",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": ": (20分) 94. Write a passage of at least 60 words on the topic \"Learning to be polite\". (以“学会礼貌”为题写一篇不少于60个词的短文，标点符号不占格。) 提示： 某英语报社正在举办“学会礼貌”的正文活动。请你以“学会礼貌”为题写一篇不少于60词的短文，谈谈你对礼貌的理解；请列举至少三个不礼貌的行为，并谈谈怎样才能成为有礼貌的人。 (注意：文中不得出现任何姓名、校名及其它相关信息，否则不予评分。) The following are for reference only. (以下短语仅供参考) laugh at make noise smoke in public give a seat to ... keep quiet be friendly (helpful...)",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2015-静安-writing",
+      "title": "2015 上海静安一模作文",
+      "year": 2015,
+      "district": "静安",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": ": (20分) 94. Write at least 60 words about the topic \"Growing up with good books\". (请以“好书伴我成长”为题，写一篇不少于60个词的短文，标点符号不占格。) (注意：文中不得出现任何姓名、校名及其它相关信息，否则不予评分。) Situation for your reference: Nowadays we often talk a lot about reading, especially reading good books. What are good books in your eyes? And what advantages can we get from reading them? Please show us your own understanding and experience of reading good books.",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2015-黄浦-writing",
+      "title": "2015 上海黄浦一模作文",
+      "year": 2015,
+      "district": "黄浦",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "：（共20分） 94. Write a passage of at least 60 words on the topic “I’m not … any more”. (以“我不再……”为题写一篇不少于60个词的短文， 标点符号不占格。) 要求： 补全作文标题。 短文中不得出现考生的姓名、校名及其他相关信息，否则不予评分。",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2016-嘉定-writing",
+      "title": "2016 上海嘉定一模作文",
+      "year": 2016,
+      "district": "嘉定",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": ": (20分) 94. Write a passage ofat least 60 words about the topic on \"How to Celebrate Graduation.\"（以“如何庆祝毕业”为题写一篇不少于60词的短文，标点符号不占格。） Situation:临近毕业，班里的同学们打算举行一次毕业庆祝活动，他们在讨论征集庆祝活动的建议。以“How to Celebrate Graduation”写题写一篇英语短文，谈谈你的建议并陈述理由。 （注意：短文中不得出现考生的姓名、校名及其它相关信息，否则不予评分。） 嘉定区2015~2016年第一学期期末质量抽查试卷 初三英语",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2016-宝山-writing",
+      "title": "2016 上海宝山一模作文",
+      "year": 2016,
+      "district": "宝山",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "VII. Writing 94.In some primary or middle schools, students are asked to wear school uniforms. Do you think it is necessary for students to wear school uniforms? Write an essay of at least 60 words on the topic. (请以“学生是否要在学校穿校服”为题写一篇至少60词的作文，标点符号不占格) Suggested outline: 1. Do you think it is necessary to wear school uniforms? 2. What are the advantages or disadvantages of school uniforms? 3. What's your conclusion (结论） ? 宝山区2015~2016年第一学期期末质量抽查试卷 初三英语 听力材料及",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2016-崇明-writing",
+      "title": "2016 上海崇明一模作文",
+      "year": 2016,
+      "district": "崇明",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": ": (20分) 94. Write at least 60 words on the topic 66Harvest\".（以“收获”为题写一篇不少于60个词 的短文，标点符号不占格。） （注意：短文中不得出现任何人名·校名及其他相关信息，否则不予评分。） The following is for reference only.（以下问题仅供参考） 1. Which harvest impressed you most in your growth? 2. How did the harvest happen? 3. Why do you think it was a harvest? 4. Do you have any changes after the harvest? 崇明县2015~2016年第一学期期末质量抽查试卷 初三英语",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2016-徐汇-writing",
+      "title": "2016 上海徐汇一模作文",
+      "year": 2016,
+      "district": "徐汇",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": ": (20 分) 94.Look at the picture below and write it down into your diary to describe what happened and how you felt in at least 60 words.请看下图，写一篇 至少 60 个字的日记描述一下发生的事情和你的感受。(标点符号不 占格)注意，短文中不得出现任何人名校名及其它相关信息，否则不 予评分。图片中人物名字请用 Tom 代替。 徐汇区 2015 年度第一学期初三质量调研试卷解析",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2016-杨浦-writing",
+      "title": "2016 上海杨浦一模作文",
+      "year": 2016,
+      "district": "杨浦",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "VII. Writing 94. In at least 60 words, write a letter to your headmaster suggesting rules you think should be changed or improved. Support your opinions with facts or examples. (给校长写一封至少60个词的信，向他建议几条需要改变或改进的学校规则，并辅以事实或例子。) The following are for reference only. ((以下提示仅供参考)) Remember: Headmasters care about students' learning, safety and behavior. They are also concerned (在意) about costs. 杨浦区2015~2016年第一学期期末质量抽查试卷 初三英语 听力材料及",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2016-松江-writing",
+      "title": "2016 上海松江一模作文",
+      "year": 2016,
+      "district": "松江",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "（共20分） 94. Write at least 60 words about the topic“______ influenced me most”. （在你成长过程中可能有很多的人、事、物在潜移默化地影响着你，那么对你影响最深的是谁？是什么？请以“______深深地影响了我”为题，写一篇不少于60个词的短文，标点符号不占格） （注意：1. 在答题纸上将题目补充完整。 2. 短文中不得出现任何人名、校名及其它相关信息，否则不予评分。） The following questions are for reference only. （以下问题仅供参考） 1. Who/what influenced you most? 2. How did somebody/something influence you? (You may give an example.) 3. What did you learn from him/it? 松江区2015~2016年第一学期期末质量抽查试卷 初三英语",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2016-浦东-writing",
+      "title": "2016 上海浦东一模作文",
+      "year": 2016,
+      "district": "浦东",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "Writing(作文) (共20分) 94.Write at least 60 words on the topic ”Tom’s Christmas” (以汤姆的圣诞节为题，写一篇不少于60个词的短文，标点符号不占格) 汤姆在圣诞节发生了什么事？由此他产生了怎样的感想？请根据图片进行描述。 (注意：短文中不得出现任何真实人名、校名及其他相关信息，否则不予评分。) The following is for reference only. (以下表达仅供参考) Strange, disappointed At midnight The next morning 浦东新区2015~2016年第一学期期末质量抽查试卷 初三英语 答案： 26-30：BCBAD 31-35：AACDB 36-40：ADDAD 41-45：BCBAC 46-49：BADC 50-53：DBEC cases 55.driver 56.foolish 57.length 58.unhappy 59.mainly 60.raising 61.collect don’t write 63.How often 64.whether to 65.be chosen 66.could she 67.so```that``` 68.The writer added up the bills very accurately. 69-74:BCADDC 75-80:BABACD air 82.belonged 83.decorate 84.cheaper 85.common 86.instead 87.under Yes, they do. Audience may think them interesting and funny while watching. Reality TV had its beginning in Europe in the early 1990s. The producers. Because it is real and cannot be controlled. Yes,it is.It’s human nature to be attracted by the ups and downs of the lives of other human beings. PAGE",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2016-长宁-writing",
+      "title": "2016 上海长宁一模作文",
+      "year": 2016,
+      "district": "长宁",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": ": (共20分) 94. Write at least 60 words about the topic “What I have learnt from (making) mistakes”. (以“我从（犯）错误中学到的”为题写一篇不少于60词的短文，标点符号不占格。) 生活中人人会犯错误，或大或小，关键是犯错后的态度。你犯过什么样的错误呢？犯过之后有什么体会和我们分享吗？ （短文中不得出现考生的姓名、校名及其他相关信息，否则不予评分） 长宁、金山区2015~2016年第一学期期末质量抽查试卷 初三英语",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2016-闵行-writing",
+      "title": "2016 上海闵行一模作文",
+      "year": 2016,
+      "district": "闵行",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": ": (20分) 94. Write an open letter of at least 60 words according to the given situation（根据所给情景写一封不少于60词的公开信） Suppose you are Linda, a student of Garden School. You see some of the schoolmates waste food in the school canteen every day. Write an open letter to them and offer some good suggestions on saving food.（假设你是琳达，花园学校的一名学生，你发现每天同学们在学校食堂有浪费粮食的现象，因此你给同学们写一封公开信，倡议大家节约粮食、抵制浪费，并就此提出一些自己的建议。公开信的开头和结尾已给出。） Phrases for reference（以下短语仅供参考）： eat up throw away remain be responsible for show respect (注意：文中不得出现任何姓名/校名及其他相关信息，否则不予评分。) Dear schoolmates, As we can see, some students waste food in the school canteen every day. ________________ _______________________________________________________________________________ _______________________________________________________________________________ _______________________________________________________________________________ _______________________________________________________________________________ _______________________________________________________________________________ _______________________________________________________________________________ _______________________________________________________________________________ _______________________________________________________________________________ Yours, Linda 闵行区2015~2016年第一学期期末质量抽查试卷 初三英语",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2016-静安-writing",
+      "title": "2016 上海静安一模作文",
+      "year": 2016,
+      "district": "静安",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "(共20分) 94. Write at least 60 words about the topic “Learn to relax myself!”(请以“学会放松自己!”为题，写一篇不少于60个词的短文，标点符号不占格。) (注意：文中不得出现考生的姓名、校名及其他相关信息，否则不予评分。) Situation: You are busy with lots of school work in and after school. You need to spend some of your spare time relaxing yourself. Tell us the importance of it and show us one example. 静安、闸北、青浦区2015~2016年第一学期期末质量抽查试卷 初三英语 九年级英语 听力文字和",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2016-黄浦-writing",
+      "title": "2016 上海黄浦一模作文",
+      "year": 2016,
+      "district": "黄浦",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": ": (20分) 94. Write at least 60 words on the topic \"My Lifestyle\" according to the information given.（阅读下面这份生活方式的自我评价表，并以“我的生活方式”为题写一篇不少于60个词的短文，标点符号不占格。） Lifestyle Self-assessment 1.ThefoodI often eat: 口vegetables 口fruit 口meat 口sweets 口chocolates 口fried food 口eggs 口fish 口ice cream 口hamburgers … 2. How many hours I sleep every day: 口1ess than7 hours 口about8 hours 口about9 hours 口more than 10 hours … 3. The sports I usually play: 口running 口cycling 口swimming口skating 口basketball 口volleyball 口football 口tennis … 4. How to relax in my spare time: 口listen to music 口read books 口watch TV 口play mobile phones 口play computer games … 5. How many times I brush my teeth every day: 口three times 口twice 口once 口never … 要求： ● 请在答题纸上在符合自己实际情况的选择方框中打√（可以多选或补充）； ● 描述、评价并反思你的生活方式； ● 短文中不得出现考生的姓名、校名及其他相关信息，否则不予评分。 黄浦区2015~2016年第一学期期末质量抽查试卷 初三英语",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2017-嘉定-writing",
+      "title": "2017 上海嘉定一模作文",
+      "year": 2017,
+      "district": "嘉定",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "（共20分） 94. Write a passage of at least 60 words about the topic “I want to give ______ a gift”（以“我想给________一份礼物”为题写一篇不少于60词的短文，标点符号不占格。） 在过去的日子里，你一定体验过收到礼物的欣喜和愉悦。在新年伊始，你最想给谁送一份礼物，并谈谈为什么要送这份礼物。 （注意：1、在答题纸上将题目补充完整。 2、短文中不得出现任何人名、校名及其他相关信息，否则不予评分。） The following is for reference only.（以下表达仅供参考） I want to give him/her the gift because... It will be useful/necessary/helpful to...",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2017-奉贤-writing",
+      "title": "2017 上海奉贤一模作文",
+      "year": 2017,
+      "district": "奉贤",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "：（共20分） Writing at least 60 words on the topic “A moving __________ of 2016”. (以“2016n年，让我感动的___________”为题，写一篇不少于60个词的短文，标点符号不占格)。 盘点即将过去的2016年，你一定经历了许许多多的感动：一句温暖的话、一个会意的眼神，一份特别的礼物，一个温馨的画面......请你选取最触动你心弦的部分，写下来与大家分享。 （注意：短文中不得出现任何人名、校名及其它相关信息，否则不予评分。） 奉贤区2016~2017学年第一学期期末质量调研 初三英语 KEY: CHBFAD KEY:DCDCABCC KEY:TFTTFT KEY: 21 took place 22 green travel 23 More importantly 24 pick up 25 less than KEY: DABCC ADBCB CDBDB BABDA KEY:CEAB KEY:CDAB KEY: 54 first 55 ourselves 56 copies 57 politely 58 homeless 59 memorize 60 responsibility 61 educational KEY: 62 doesn’t do 63 How special 64 How long 65 were destroyed 66 whether had 67 allow to 68 There are many modern schools in our estate these days. Keys: BCCDCD Keys：CABDCA KEYS: 81. According 82.easy 83.then 84.mistakes 85.covers 86.published 87. are PAGE",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2017-宝山-writing",
+      "title": "2017 上海宝山一模作文",
+      "year": 2017,
+      "district": "宝山",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "（共20分） 94. Write a passage of at least 60 words on the topic “My Pocket Money”.（以“我的零花钱”为题写一篇不少于60个词的短文，标点符号不占格。） （学校举办主题为“My Pocket Money”的英语征文活动， 请你就以下三个方面谈谈自己的看法） Use the following points as a guide （短文须包含以下要点） 1) How much pocket money do you have every month? 2) How do you usually spend your pocket money? 3) How can you manage your pocket money better? （注意：短文中不得出现考生的姓名、校名及其他相关信息，否则不予评分。） 宝山区2016~2017学年第一学期期末质量调研 初三英语",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2017-崇明-writing",
+      "title": "2017 上海崇明一模作文",
+      "year": 2017,
+      "district": "崇明",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "（共 20 分） 94. Write at least 60 words on the topic “I’m proud of ” (以“我为感到自豪”为题，写一篇不少于60个词的短文，标点符号不占格） (注意：短文中不得出现任何人名、校名及其它相关信息，否则不予评分。） The following question cues are for reference only.(以下问题提示仅供参考） > What/Whom are you proud of? > Why are you proud of it/his/her/them?",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2017-徐汇-writing",
+      "title": "2017 上海徐汇一模作文",
+      "year": 2017,
+      "district": "徐汇",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "VII. Writing: (20分) 94. Write a passage on the topic “When I grow up” in at least 60 words. 成长对你意味着什么？长大后的你会是怎样？请以“当我长大后”为命题写一篇至少60个字的短文， （标点符号不占格）（注意：短文中不得出现任何人名、校名及其它相关信息，否则不予评分。） 徐汇区2016~2017学年第一学期期末质量调研 初三英语",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2017-普陀-writing",
+      "title": "2017 上海普陀一模作文",
+      "year": 2017,
+      "district": "普陀",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "（共 20 分） Write a short passage of at least 60 words on the topic “My favourite activity at the School ________ (Science/Art/English...) Festival ”(根据下面的信息，写一篇不少于60个词的短文，标点符号不占格。) 信息提示： 以学校__________科技/艺术/英语....节中我最喜欢的一项活动为题，写一篇不少于60词的作文。 为了给学生提供更多学习和展示平台，学校每年举行各种活动，例如，科技节，艺术节，英语节等等，请选取某个活动中你最喜欢的一项活动，可以结合你最近的一次经历，谈谈你在该项活动中做了什么，以及你最喜欢这项活动的理由。 （注意：短文中不得出现任何人名、校名及其他相关信息，否则不予评分。） 普陀区2016~2017学年第一学期期末质量调研 初三英语",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2017-杨浦-writing",
+      "title": "2017 上海杨浦一模作文",
+      "year": 2017,
+      "district": "杨浦",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "VII. Writing: (20分) In at least 60 words ,write a poster for school uniform design competition.(用至少60 个词写一份校服设计竞赛的海报，部分信息已经提供。） The following questions are reference only(以下问题仅供参考）： √ What are the requirements for the design? √ Who will be the judges? What is the prize for the winner? √ How much is the entry fee(报名费）？Where does the money go? √ What’s the aim of the competition? (注意：段文中不得出现考生的姓名、校名及其他相关信息，否则不予评分)",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2017-松江-writing",
+      "title": "2017 上海松江一模作文",
+      "year": 2017,
+      "district": "松江",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "（共20分） 94.Write at least 60 words on the topic I want to say“______”to my ______”. （以我想对________说“_______”）为题写一篇不少于60词的短文，标点符号不占格。） 有些话你可能和自己的家人、老师、朋友或同学面对面的时候不好意思说，或者错过了时机没有说，此时此刻你想对他们说什么？请你举例说明为什么要说这句话。 注意： 1.在答题纸上将题目补充完整。 2.短文中不得出现真实姓名和校名及其它相关信息，否则不予评分。）",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2017-虹口-writing",
+      "title": "2017 上海虹口一模作文",
+      "year": 2017,
+      "district": "虹口",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "（共 20 分） 94. Write a passage of at least 60 words on the topic “Besides study, I also pay attention to …”（以“除 了学习，我还关注……”为题，写一篇不少于 60 个词的短文，标点符号不占格） 除了学习，你还关注什么？你怎么想的？怎么做的？请说明理由。 （注意：短文中不得出现考生的姓名、校名及其他相关信息，否则不予评分。 ） Besides study, I also pay attention to ________________ ________ ________ ________ ________ ________ ________ ________ ________ ________ ________ ________ ________ ________ ________ ________ ________ ________ ________ ________ ________ ________ ________ ________ ________ ________ ________ ________ ________ ________ ________ ________ ________ ________ ________ ________ ________ ________ ________ ________ ________ ________ ________ ________ ________ ________ ________ ________ ________ ________ ________ ________ ________ ________ _______ PAGE",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2017-闵行-writing",
+      "title": "2017 上海闵行一模作文",
+      "year": 2017,
+      "district": "闵行",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "（共20分） 94. Write a passage of at least 60 words on the topic ”I want to say sorry to ______”.（根据提示，以“我想对________说对不起”为题，写一篇不少于60个词的短文，写作前先将题目补充完整。标点符号不占格。） 提示：在学习、生活中，每个人都难免会做错一些事，这些事总会让人感到遗憾或后悔。请结合你的亲身经历，谈谈你的感触。 （注意：短文中不得出现考生的姓名、校名及其他相关信息，否则不予评分。）",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2017-静安-writing",
+      "title": "2017 上海静安一模作文",
+      "year": 2017,
+      "district": "静安",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "（共20分） 94.Write at least 60 words about the topic“To be a responsible student!”（请以“做一个有担当的学生!”为题，写一篇不少于60个词的短文，标点符号不占格。） （注意：中文不得出现考生的姓名、校名及其他相关信息，否则不予评分。） Situation： 新时代的学生都需要有责任意识，无论是在自己家中、在学校或者是在社会上都需要有担当。请你谈谈你的认识，并举例说明你的理解。 静安区2016~2017学年第一学期期末质量调研 初三英语答案",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2017-黄浦-writing",
+      "title": "2017 上海黄浦一模作文",
+      "year": 2017,
+      "district": "黄浦",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "：（共20分） 94. In 60 to 120 words, write about the topic “It is very important to...”.（以“……很重要”为题，写一篇60-120个词的短文，标点符号不占格。） 作文一名中学生，你的生活一定很忙碌。目前，你觉得什么对你来说很重要？请结合自己的经历谈谈你的想法，并说明理由。 （注意：短文中不得出现考生真实的姓名、校名及其他相关信息，否则不予评分） _______ _______ _______ _______ _______ _______ _______ _______ _______ _______ _______ _______ _______ _______ _______ _______ _______ _______ _______ _______ _______ _______ _______ _______ _______ _______ _______ _______ _______ _______ _______ _______ _______ _______ _______ _______ _______ _______ _______ _______ _______ _______ _______ _______ _______ _______ _______ _______ _______ _______ 黄浦区2016~2017学年第一学期期末质量调研 初三英语",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2018-嘉定-writing",
+      "title": "2018 上海嘉定一模作文",
+      "year": 2018,
+      "district": "嘉定",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "（共20分） 94. Write at least 60 words on the topic“_____ brings me happiness”（以“___为我带来快乐”为题，写一篇不少于60个词的短文，标点符号不占格） 我们的生活多姿多彩，在学习和生活中，总有一叠经历、习惯、爱好或一些人会为你带来快乐。请结合自身经历，谈谈你的感想。 （注意：短文中不得出现任何人名、学校及其它相关信息，否则不予评分。） The following is for reference only（以下表达仅供参考） be full of make…happy be fond of",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2018-奉贤-writing",
+      "title": "2018 上海奉贤一模作文",
+      "year": 2018,
+      "district": "奉贤",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "（共20分） 94. Write at least 60 words on the topic“Imagine 2020”（以“畅想2020年”为题，写一篇不少于60个词的短文，标点符号不占格） 未来已来，请发挥你的想象力，畅想2020年你的生活中会有哪些令人欣喜的变化。 （注意：短文中不得出现任何人名、校名及其它相关信息，否则不予评分。） The following is for reference only（以下表达仅供参考） *enjoy *be more convenient *not...any longer",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2018-崇明-writing",
+      "title": "2018 上海崇明一模作文",
+      "year": 2018,
+      "district": "崇明",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "（共20分） 94. Write at least 60 words on the topic“The person I respect most.”（请以“我最尊敬的人”为题，写一篇不少于60个词的短文，标点符号不占格。） 提示：在我们的学习和日常生活中接触到过很多人，在这些人中也许有人对你曾有过帮助、有过影响。请你说说谁是值得你最尊敬的人，并谈谈他/她是如何影响你的。 （注意：短文中不得出现考生姓名、校名及其他相关信息，否则不予评分。） The following is for reference only（以下表达仅供参考） in trouble learn from encourage…to do… make progress The person I respect most _______ _______ _______ ________ ________ ________ ________ ________ ________ ______ _______ _______ _______ ________ ________ ________ ________ ________ ________ ______ _______ _______ _______ ________ ________ ________ ________ ________ ________ ______ _______ _______ _______ ________ ________ ________ ________ ________ ________ ______ _______ _______ _______ ________ ________ ________ ________ ________ ________ ______ _______ _______ _______ ________ ________ ________ ________ ________ ________ ______ _______ _______ _______ ________ ________ ________ ________ ________ ________ ______",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2018-徐汇-writing",
+      "title": "2018 上海徐汇一模作文",
+      "year": 2018,
+      "district": "徐汇",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "： （共20分） 94. Write at least 60 words on the topic“My happy moment with _______”. (请以“_________和我的快来时光”为题写一篇不少于60词的短文。你的家人，朋友，物件或是你的某项爱好与活动曾经给你留下了幸福开心的时刻。 请选取 一个角度，描写你和他（它）幸福快乐的瞬间。) （注意： 短文中不得出现考生的姓名、校名及其他相关信息，否则不予评分，标点符号不占格） The following is for reference only (以下表述仅供参考) communicate with….., share with…. , learn from ……, enjoy, relax 2018.1徐汇区初三英语第一学期期末质量抽查试卷",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2018-普陀-writing",
+      "title": "2018 上海普陀一模作文",
+      "year": 2018,
+      "district": "普陀",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": ": (20分) 94. Write at least 60 words on the topic \"My opinion on getting pay for doing housework\" (以“我对有偿做家务的看法”为题，写一篇不少于60词的短文，标点符号不占格) 提示：一些家长为了鼓励孩子参与家务活，便给予孩子一定的报酬作为孩子承担家务的奖励，你怎么看这件事？可以结合自身的经历阐述观点和理由。 (注意：文中不得出现任何姓名、校名及其它相关信息，否则不予评分。)",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2018-杨浦-writing",
+      "title": "2018 上海杨浦一模作文",
+      "year": 2018,
+      "district": "杨浦",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "VII. Writing 94. In 60-120 words, write a story to go long with the given picture.(根据所给图片，合理发挥想象，用60-120 个词写一个故事) （注意： 短文中不得初选考生的姓名、校名以及其他相关信息，否则不予评分） The following words and expressions are for reference(以下词语仅供参考)： theft, handbag, bench, run away, walking stick, trip, arrest",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2018-松江-writing",
+      "title": "2018 上海松江一模作文",
+      "year": 2018,
+      "district": "松江",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "（共20分） 94. Write a passage of at least 60 words on the topic“I’m looking forward to sth./doing sth.”（以“我期待…”为题，写一篇不少于60个词的短文，标点符号不占格。） （注意：短文中不得出现真实姓名和校名及其它相关信息，否则不予评分。） 提示：在你今后的生活和学习中有什么期待？为何有这样的期待？为此你将如何作努力？",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2018-浦东-writing",
+      "title": "2018 上海浦东一模作文",
+      "year": 2018,
+      "district": "浦东",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "（共20分） 94. Write at least 60 words on the topic“The beauty in my life”（以“我生活中的美”为题，写一篇不少于60个词的短文，标点符号不占格） 生活中的美无处不在，如在学校活动中、与家人共处时、与朋友欢聚时、与动物相处时……，请选择一个方面，结合发生在你自己身上的一次经历，来写一写你发现的家人或师生间的亲情之美，朋友或同学间的友谊之美，人与动物间的和谐之美……，并说说理由。 （注意：短文中不得出现任何人名、学校及其它相关信息，否则不予评分。）",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2018-虹口-writing",
+      "title": "2018 上海虹口一模作文",
+      "year": 2018,
+      "district": "虹口",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "（共20分） 94. Write at least 60 words on the topic“I'm looking forward to … in 2018”（以“2018，我期待……”为题写一篇不少于60个词的短文，标点符号不占格） 每个人对生活都有幢憬和期待，2018年你的期待是什么?请你说说你的理由。 （注意：短文中不得出现任何人名、校名及其他相关信息，否则不予评分。）",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2018-金山-writing",
+      "title": "2018 上海金山一模作文",
+      "year": 2018,
+      "district": "金山",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": ": (20分) 94. Write at least 60 words about the topic \"The change(s) ______ (a person) has brought me\" (以某某给我带来的变化”为题写一篇不少于60个词的短文；标点符号不占格) 我们的生活总是被不同的人影响着、改变着，请选择你身边给你留下深刻印象的人，来写写她/他给你带来的变化。 注意：1. 请先把文章标题补充完整；如填上my father，a boy等，不要填写具体姓名。 2. 短文中不得出现考生的姓名、校名及其他相关信息，否则不事评分。",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2018-长宁-writing",
+      "title": "2018 上海长宁一模作文",
+      "year": 2018,
+      "district": "长宁",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "VII. Writing 94. Write at least 60 words about the topic “I finished a task successfully” （请以‘我成功地完成了一项任务’为题，写一篇不少于60词的短文，标点符号不占格。） 你再初中四年的学习生活中一定完成过家长，学校和老师布置的一项任务。请你简单描述一次完成任务的经历。",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2018-闵行-writing",
+      "title": "2018 上海闵行一模作文",
+      "year": 2018,
+      "district": "闵行",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "（共20分） 94. Write at least 60 words on the topic“___ has changed me”（以“_____改变了我”为题，写一篇不少于60个词的短文，标点符号不占格） 成长路上，你曾经遇见过很多人，如一位师长、一个朋友等，你也曾经经历过很多事，如一次比赛、一项活动等，这些人与事或多或少改变了你，让你变成更好的自己。请选择其中某件事或某个人，以“______ has changed me”为题写一篇不少于60字的短文。 （注意：短文中不得出现任何人名、学校及其它相关信息，否则不予评分。",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2018-静安-writing",
+      "title": "2018 上海静安一模作文",
+      "year": 2018,
+      "district": "静安",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": ": (20分) 94. In 60-100 words, write a story based on the pictures below. (展开合理想象，看图写一篇60-100个词的有趣的短文故事，标点符号不占格) The following words and phrases are for reference only (以下单词和短语仅供参考) hours of studying take a break a pair of skates",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2018-黄浦-writing",
+      "title": "2018 上海黄浦一模作文",
+      "year": 2018,
+      "district": "黄浦",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "VII. Writing 94. In 60 to 120 words, write about the topic “Life is not always …”. 作为一名初三学生，你的学习生活紧张忙碌。要想取得好的成绩，良好的心态很重要。 你是如何看待初三的学生生活，请谈谈你的体验或想法，分享自己的故事。",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2019-嘉定-writing",
+      "title": "2019 上海嘉定一模作文",
+      "year": 2019,
+      "district": "嘉定",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "(共20分) 94. Write at least 60 words on the topic “________ Makes My Life Full of Fun”（以“________使我的生活充满乐趣”为题，写一篇不少于 60 个词的短文，标点符号不占格） 初三的生活虽然紧张，但学习体验、集体活动、兴趣爱好……仍能为我们带来很多欢乐。请选取一个方面，结合自身经历，谈谈它如何使你的生活充满乐趣。 The following is for reference only be fond of take",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2019-奉贤-writing",
+      "title": "2019 上海奉贤一模作文",
+      "year": 2019,
+      "district": "奉贤",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "(共20分) 94. Write at least 60 words on the topic “Say ‘________’ to myself”(以“对自己说‘________’”为题， 写一篇不少于 60 个词的短文， 标点符号不占格) （注意： 短文中不得出现任何人名、校名及其它相关信息，否则不予评分） 你一定对你周围的人说过：“谢谢”、“对不起”、“生日快乐”等血多话。 你对自己说过的哪句话最让你记忆犹新？或者此刻你最想对自己说什么？请用你的笔尖倾吐你最真实的心声吧！",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2019-宝山-writing",
+      "title": "2019 上海宝山一模作文",
+      "year": 2019,
+      "district": "宝山",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "(共20分) 94. Write at least 60 words about the topic “My Ideal Weekend”. (以“我理想的周末” 为题写一篇不少于 60 个词的短文，标点符号不占格。) Use the following questions as a reference.(以下问题仅供参考) 1） What's your weekend like? 2) What's your ideal weekend like? 3) Why do you want a weekend like that? (注意： 短文中不得出现考生的姓名、校名及其他相关信息，否则不予评分)",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2019-崇明-writing",
+      "title": "2019 上海崇明一模作文",
+      "year": 2019,
+      "district": "崇明",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "(共20分) 94. Write at least 60 words on the topic \" My dream will come true\" (以“我的未来不是梦”为题写一篇不少于60个词的短文，标点符号不占格。) 你对自己的未来一定有美好的梦想；但梦想的实现取决于勤奋、努力等诸多因素。请结合你自己的梦想，谈谈你将如何使美梦成真。 The following words or phrases are only for reference (以下词或短语仅供参考) My dream is to be/do.. with the help of .. come true take",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2019-徐汇-writing",
+      "title": "2019 上海徐汇一模作文",
+      "year": 2019,
+      "district": "徐汇",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "Ⅶ. Writing 94. There is a section “My Volunteer Work” in the school newspaper. The editor wants good articles to be collected. Please write at least 60 words on the topic. 学校校报有“我的志愿者工作”这一栏目。编辑想收录好的文章登载。请写写你的志愿者工作。 （注意：短文中不得出现考生的姓名、校名及其他相关信息，否则不予评分。标点符号不占 格）",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2019-普陀-writing",
+      "title": "2019 上海普陀一模作文",
+      "year": 2019,
+      "district": "普陀",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "(共20分) 94. Write at least 60 words on the topic“I learned to be ______ through a school activity” 【以“通过一次学校活动我变得......”为题，写一篇不少于60词的短文，标点符号不占格】 提示：初中四年你一定参加了不少学校活动，也从中学到了不少东西，请就其中一次活动的经历和收获写一篇短文。 （注意:短文中不得出现任何人名、校名及其他相关倍息，否则不予评分。〉",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2019-杨浦-writing",
+      "title": "2019 上海杨浦一模作文",
+      "year": 2019,
+      "district": "杨浦",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "(共20分) 94. Suppose you are Mark. You witnessed a crime. Write a diary in 60-120 words about it.（假设你是Mark，看到了一起犯罪活动，就你所见所为写一篇 60-120 个词的日记，标点符号不占格） The following questions are for reference: Who did you see? When and where did you see them? What were they doing? How did you feel? What did you do then?",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2019-松江-writing",
+      "title": "2019 上海松江一模作文",
+      "year": 2019,
+      "district": "松江",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "(共20分) 94. Write at least 60 words on the topic \"I tried my best to________\"(以 \"我尽全力____了”为题，写一篇不少于60个词的短文，标点符号不占格。） 每个人都有一段为实现自己某个目标而竭尽全力的经历，请你补全题目，介绍自己的某次拼搏过程并谈谈自己的所感所获。 （注意： 1、在答题纸上将题目补充完整 2、短文中不得出现真实人名、校名及其相关信息，否则不予评分） 教育资源分享店铺 网址：https://shop175591889.taobao.com 微信号：kingcsa333 A) exciting B) truly C) teaching D) everything E) uncomfortable A) worried B) mainly C)through D) although E) discussion",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2019-浦东-writing",
+      "title": "2019 上海浦东一模作文",
+      "year": 2019,
+      "district": "浦东",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "(共20分) 94. Write at least 60 words on the topic “ How lucky I am to have _________”(以‘我多么幸运能够拥有________’为题，写一篇不少于 60 个词的短文，标点符号不占格， 请在答题纸上把作文标题补充完整，如: a true friend, a warm family, an interesting book….) 在学习和生活中你可能因为拥有一位真诚的朋友、一个温暖的家、一本有趣的书等而感 到幸运，请选择一个方面谈谈自己的亲身经历，并说明为何感到幸运。 （注意： 短文中不得出现任何人名、校名及其它相关信息，否则不予评分。） The following is for reference only(以下表达仅供参考) be satisfied with ….. encourage sb. to do sth. do sb. a favor with the help of ……..",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2019-虹口-writing",
+      "title": "2019 上海虹口一模作文",
+      "year": 2019,
+      "district": "虹口",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "(共20分) 94. Write at least 60 words on the topic“I admire myself.”（以“夸夸我自己”为题，写一篇不少于 60 词的短文，标点符号不占格。） 提示：为了给初中四年的学习生活留下美好的回忆，你们班级策划了一次主题班会。要求每位同学以“夸夸我自己”为题，用一至三个形容词概括自己的优点，并通过举例子或列举理由加以说明。 （注意：短文中不得出现考生真实的姓名、校名及其他相关信息，否则不予评分）",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2019-金山-writing",
+      "title": "2019 上海金山一模作文",
+      "year": 2019,
+      "district": "金山",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "(共20分) 94. Write at least 60 words on the topic \" I am no longer a little child\" ( 以“我不再是一个孩子”为题，写一篇不少于60个词的短词，标点符号不占格） 背景：如今，我们的父母一方面对我们百般呵护，一方面又时常抱怨我们长不大。请给你的父母写一封信，证明你不再是一个孩子了（开头和结尾已经给出，不计入字数） The following is for reference only (以下表达和图片仅供参考） use to make me （be） full of （注意：信中不得出现考生的姓名、校名及其他相关信息，否则不予评分） Dear parents _____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________Yours XXX 教育资源分享店铺 网址：https://shop175591889.taobao.com 微信号：kingcsa333 A. adult B. require C. a bit D. look forward to E. never A. Expecting yourself B. while C. harder D. lessons E. Having money",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2019-长宁-writing",
+      "title": "2019 上海长宁一模作文",
+      "year": 2019,
+      "district": "长宁",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "(共20分) 94. Write at least 60 words about the topic “That time, I really felt worried”(请以“那一次，我真的感到很担心”为题， 写一篇不少于 60 个词的短文， 标点符号不占格) 在你的学习和生活中，你一定解决过一度令你感到担心的事情，请你描述担心的事情是什么，为什么担心以及最后又如何解决的。 （注意： 文中不得出现考生的姓名、校名及其相关信息，否则不予评分）",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2019-闵行-writing",
+      "title": "2019 上海闵行一模作文",
+      "year": 2019,
+      "district": "闵行",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "(共20分) 94. Write a passage of at least 60 words on the topic “Sharing”.（根据中文提示，以“分享”为题写一篇不少于 60 个词的短文，标点符号不占格。） 提示：生活中每个人都有过与他人分享的经历，如分享一本有趣的书、一段难忘的经历、一个闪光的想法、一次美好的旅行……，结合你自己的生活体验，描述一次你与他人分享的经历，并谈谈你的感受。",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2019-青浦-writing",
+      "title": "2019 上海青浦一模作文",
+      "year": 2019,
+      "district": "青浦",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "(共20分) 94. Write a passage of at least 60 words about the topic “The most valuable lesson I've ever learned” （请以“我学到的最珍贵的一课”为题写一篇不少于 60 个词的短文，标点符号不占格） Use the following as a reference（以下内容仅供参考） Who or what gave you the most valuable lesson? Why do you think it is the most valuable lesson? What will you do after learning this lesson? 注意： 抄袭试卷中内容不得分。 文中不得出现任何姓名、校名以及其他相关信息，否则不与评分。",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2019-静安-writing",
+      "title": "2019 上海静安一模作文",
+      "year": 2019,
+      "district": "静安",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "(共20分) 94. Write at least 60 words on the topic \"This was my promis\" (请以“这就是我的承诺”为题，写一篇不少于60个词的短文，标点符号不占格。) 承诺是份责任，也是一种素养，在你的成长过程中，对家人、老师、朋友、同学和社会有过哪些与承诺有关的经历和感触呢?请结合自己的个人经历，选取一个角度，讲述一个具体事例。 (注意:短文中不得出现考生的姓名、校名及其它相关信息，否则不予评分。标点符号不占格) The following is for reference only (以下表述仅供参考) be responsible for .... promise (sb.) that .. make/ keep/ break one's promise 教育资源分享店铺 网址：https://shop175591889.taobao.com 微信号：kingcsa333 A) popular B) improve C) rarely D) offer E) nearly A) market B) sales C) discovered D) invented E) hungry Today's Topic Parents are asked to guard school gates every morning. Do you think it's reasonable?",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2019-黄浦-writing",
+      "title": "2019 上海黄浦一模作文",
+      "year": 2019,
+      "district": "黄浦",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "(共20分) 94. Write at least 60 words on the topic“Weekend or Not?”according to the information given.（阅读以下内容， 并以“这是汤姆的周末吗？”为题写一篇不少于 60 个词的短文，标点符号不占格。） 如今，很多孩子在父母的安排下没有了自己的周末，如下图中的 Tom，请分析图中的这种现象并谈谈你的看法，以 Weekend or Not?为题写一篇不少于 60 个词的英语短文，向 Parents 杂志投稿，让父母们通过阅读你的文章能有所启发。 要求：  简单描述“Tom”的周末状态、提出你的具体想法并给出建议；  短文中不得出现“Tom”以外的人名或任何校名及其他相关信息，否则不予评分。",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2020-嘉定-writing",
+      "title": "2020 上海嘉定一模作文",
+      "year": 2020,
+      "district": "嘉定",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": ":(共20分） 94. Write at least 60 words on the topic “______ help(s) me grow ”（以“ ______助我成长”为题，写一篇不少于60个词的短文，标点符号不占格） 生活中的很多事或人能帮助我们成长。理想、品格、老师、亲人、朋友……都为我们的成长助力，请选取一个方面，结合发生在你自己身上的经历，来写一写他（它）是如何助力你成长的。 (注意：短文中不得出现任何人名、校名及其它相关信息，否则不予评分。） The following is for reference only (以下表达仅供参考） encourage sb. to do ... do sb. a favour with the help of ... make great progress",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2020-奉贤-writing",
+      "title": "2020 上海奉贤一模作文",
+      "year": 2020,
+      "district": "奉贤",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "Write at least 60 words on the topic “The Warmest Words in My Life”（以“生活中最温暖的话语”为题，写一篇不少于60个词的短文，标点符号不占格） 学习生活中，朋友间看似再平凡不过、再简单不过的话语，却会让你鼓起勇气；会让你阴郁消散；会让你信心满满；会让你坚持不懈……请从以下的话语中，选取其中一个，分享温暖的话语给你带来的力量。 1) You’ll be OK! 2) Don’t be afraid. 3) Don’t cry. 4) Keep it on! A) even B) powerful C) around D) simple E) through A) flight B) anything C) energy D) future E) flying",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2020-宝山-writing",
+      "title": "2020 上海宝山一模作文",
+      "year": 2020,
+      "district": "宝山",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "(共20分） 94. Write at least 60 words about the topic“A thank-you letter to_______”.（以“给……的一封感谢信”为题写一篇不少于60个词的短文。信件格式已给，标点符号不占格。） 在日常的生活与学习中有许多人曾经帮助或鼓励过我们，令我们时常心存感激。请选择一个对象写一封感谢信，并结合你们之间的真实经历谈一谈你为何要感谢他/她，说一说你当时的感受以及此时此刻想对他/她说的话。 （注意：短文中不得出现任何真实人名、校名及其它相关信息，否则不予评分。） The following is for reference only.（以下表达仅供参考） ☺ have difficulty in… ☺ encourage me to… ☺ It was…of you to…",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2020-崇明-writing",
+      "title": "2020 上海崇明一模作文",
+      "year": 2020,
+      "district": "崇明",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "Write a passage of at least 60 words on the topic “_______ influenced me deeply”.（请以“________深深地影响了我”为题，写一篇不少于60个词的短文，标点符号不占格。） 提示：在我们的学习和生活中，我们一定遇到过深刻影响我们的人或事。有时候一句关怀、 —个活动、一个人等等都会给予我们深刻的印象。请先补全题目，然后结合你的经历，谈谈 你的感受。 (注意：短文中不得出现考生姓名、校名及其他相关信息，否则不予评分。) ___________ influenced me deeply A) breaks B) turn up C) advantages D) protect E) serious A) be responsible for B) local C) used to D) community E) professional",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2020-徐汇-writing",
+      "title": "2020 上海徐汇一模作文",
+      "year": 2020,
+      "district": "徐汇",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": ": (共20分) 94. Write at least 60 words to introduce the elective you have attended at school. 请以“My favorite elective”（我最喜欢的选修课）为题，写一篇不少于60个词的短文介绍你在学校参加过的印象深刻的选修课。谈谈该课程的学习内容以及你的学习体会。 （ 注意：短文中不得出现考生的姓名、校名及其他相关信息，否则不予评分。标点符号不占格）",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2020-普陀-writing",
+      "title": "2020 上海普陀一模作文",
+      "year": 2020,
+      "district": "普陀",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "Write at least 60 words on the topic “The thing I want to do in the coming winter holiday” 【以“寒假里我想做的一件事”为题，写一篇不少于60词的短文，标点符号不占格】 提示：平日里学习任务较重，如今寒假即将到来，你是否有一件想做而没有机会做的事情呢？请谈谈想 做的这件事，并阐述理由。 (注意：短文中不得出现任何人名、校名及其他相关信息，否则不予评分。）",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2020-杨浦-writing",
+      "title": "2020 上海杨浦一模作文",
+      "year": 2020,
+      "district": "杨浦",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": ":(共20分） 94. In 60-100 words, make up a two-turn dialogue according to the given situation (根据所给情境编一段60-100词的两个轮次的对话。标点符号不占格，对话的开头和结尾已给出。） Situation: Tom Brown, a 40-year-old P.E. teacher, saved a boy from being knocked down by a car. Crystal school reporter wanted to write an article about his good deed (事迹). She interviewed Tom Brown. The interview begins like this: Crystal: Mr. Brown, May I ask you a few questions? Tom Brown: Sure. Please go ahead. Crystal: ______________________________________________________________________ Tom Brown: ________________________________________________________________ ________________________________________________________________ ________________________________________________________________ ________________________________________________________________ ________________________________________________________________ Crystal: ______________________________________________________________________ Tom Brown: ________________________________________________________________ ________________________________________________________________ ________________________________________________________________ Crystal: Thank you for your time! It’s nice talking to you. (注意：文中不得出现考生的姓名、校名及其他相关信息，否则不予评分)",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2020-虹口-writing",
+      "title": "2020 上海虹口一模作文",
+      "year": 2020,
+      "district": "虹口",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "Write a passage of at least 60 words about the topic “_______in my memory”. （以“我记忆中（的）_______”为题，写一篇不少于60个词的短文，标点符号不占格） 回顾初中几年的学习生活，你的记忆中一定有许多难忘的人、事、物或地点，请选取一个角度谈谈你的想法或感受。 （注意：1. 在答题纸上将题目补充完整。 2. 短文中不得出现任何真实人名、校名及其他相关信息，否则不予评分。）",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2020-长宁-writing",
+      "title": "2020 上海长宁一模作文",
+      "year": 2020,
+      "district": "长宁",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "Write at least 60 words about the topic “My new way(s) to__________” （请以“我的新方法”为题， 写一篇不少于 60 个词的短文，标点符号不占格。） 在你的日常的学习生活中，你习惯于老方法做某事。有一天你尝试使用新方法，结果发现效果更好。请你举例简单叙述使用什么新方法、做了什么事、介绍新方法的优点以及谈谈给你的感想。 （注意：文中不得出现考生的姓名、校名以其他相关信息，否则不予评分。）",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2020-青浦-writing",
+      "title": "2020 上海青浦一模作文",
+      "year": 2020,
+      "district": "青浦",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "Write a passage of at least 60 words about the topic“Life in 2050”（请以“2050年的生活” 为题写一篇不少于60个词的短文，标点符号不占格。） 提示：到2050年，我们的生活会是什么样的？请选择下图中(或自拟)1-2个方面展开描述。 A) empty B) full of C) inside D) made friends with E) knew about A) for a while B) covered C) completely D) gently E) crowded",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2020-静安-writing",
+      "title": "2020 上海静安一模作文",
+      "year": 2020,
+      "district": "静安",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "Write at least 60 words about the topic “ __________ makes me grow”（请以“________ 让我成长”为题，写一篇不少于60个词的短文，标点符号不占格。 (注意：文中不得出现考生的姓名、校名及其他相关信息，否则不予评分。） 在你的学习和生活经历中，其成长过程肯定有来自于自己的拼搏和坚持，还会有来自外力的辅助，它们可能是鼓励、帮助、甚至有批评。请你结合自己自身的感受，选取给你印象最深，影响最大的，理解、经历 和感悟。",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2020-黄浦-writing",
+      "title": "2020 上海黄浦一模作文",
+      "year": 2020,
+      "district": "黄浦",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "Read the above story again and write a passage of at least 60 words to complete it. (请根据上 文内容和下列问题提示，续写一篇不少于60个词的短文，使之构成一个完整的故事，标点 符号不占格。） 要求： • 续写故事的词数不少于60个词； • 短文中不得出现考生的姓名、校名及其他相关信息，否则不予评分。 • 可根据需要自主选用一下参考词汇：",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2021-嘉定-writing",
+      "title": "2021 上海嘉定一模作文",
+      "year": 2021,
+      "district": "嘉定",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "（共20分） 84. Write at least 60 words about the topic “When I met with a problem.”（以“当我遇到问题时”为题写一篇不少于60个词的短文。标点符号不占格。） 在日常的生活与学习中，我们应该具备一些解决问题的能力。请结合一次自身经历，说说你是如何解决那个问题的，并分享一下你的经验：如果未能解决，也请谈谈你从中获得的教训。 （注意：短文中不得出现任何真实人名、校名及其它相关信息，否则不予评分。） The following is for reference only.（以下表达仅供参考） have difficulty in…¬ enable me to…¬ help me realize... ________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2021-奉贤-writing",
+      "title": "2021 上海奉贤一模作文",
+      "year": 2021,
+      "district": "奉贤",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "（共20分） 84. Write at least 60 words on the given situation（根据以下情景写一篇不少于 60 个词的短文，标点不占格。） Mr. Smith 用特殊的方式给他的学生上了“精彩一课”。你的老师一定也以他/她独特的方式给你留下过深刻的印象。他/她或许组织过精彩的活动，他/她或许讲述过精彩的故事，他/她或许…… 请以“A wonderful lesson（精彩一课）”为题，记录老师给你上过的精彩一课。 （注意：1. 短文中不得出现任何真实人名、校名及其它相关信息，否则不予评分。 2. 照搬阅读语篇内容不得分。） ________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2021-宝山-writing",
+      "title": "2021 上海宝山一模作文",
+      "year": 2021,
+      "district": "宝山",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "（共20分） 94. Write at least 60 words about the topic “An act of kindness”. (以“一个善意的举动”为题写一篇不少于 60 个词的短文，标点符号不占格。） “赠人玫瑰，手有余香”。意思是一件很平凡微小事情，哪怕如同赠人一只玫瑰般微不足道，但它带来的温馨都会在赠花人和爱花人的心底慢慢升腾、弥漫。因此，善待他人也是善待自己，请结合生活中的一次真实经历，谈一谈你对善良的看法。 （注意：1. 短文中不得出现任何真实人名、校名及其它相关信息，否则不予评分。2. 照搬阅读语篇内容不得分。） The following is for reference only. (以下表达仅供参考） have trouble with/doing give a helping hand.... treat sb. with kindness... ____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2021-崇明-writing",
+      "title": "2021 上海崇明一模作文",
+      "year": 2021,
+      "district": "崇明",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "（共20分） 84. Write at least 60 words on the topic “Things I love to do at weekends”（以“周末我喜欢做的事”为题写一篇不少于60个词的短文，标点符号不占格。） 在紧张的学习之余，周末做些自己喜欢的事可以调节放松一下自我，以便更有效地继续下一周的学习，请谈谈你周末喜欢做的事，并说说理由。 注意：短文中不得出现任何校名、人名及其它相关信息，否则不予评分。",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2021-徐汇-writing",
+      "title": "2021 上海徐汇一模作文",
+      "year": 2021,
+      "district": "徐汇",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "（共20分） 84. Write at least 60 words to talk about “How technology affects me”. Does the development of technology affect you in a positive way or in a negative way? What do you think of the influence? How do you deal with it? 请以“How technology affects me”为题，写一篇不少于 60 个词的短文，谈论科技发展对你带来了正面的影响还是负面的影响。你怎样看待科技对你的影响吗? 你怎样面对这些影响呢? （注意：短文中不得出现考生的姓名、校名及其他相关信息，否则不予评分。标点符号不占格）",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2021-普陀-writing",
+      "title": "2021 上海普陀一模作文",
+      "year": 2021,
+      "district": "普陀",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "（共20分） 84. Write at least 60 words on the topic “I can be a winner”【以“我可以成为赢家”为题，写一篇不少于60词的短文，标点符号不占格】 提示：马拉松爱好者Allen的人生经历告诉我们：每个人都能够在某方面取得成功。请结合具体自己的经历谈谈你对这一观点的认识。 （注意：短文中不得出现任何人名、校名及其他相关信息，否则不予评分。照抄语篇不得分） ____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2021-杨浦-writing",
+      "title": "2021 上海杨浦一模作文",
+      "year": 2021,
+      "district": "杨浦",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "（共20分） 84. Write at least 60 words on the given situation.（根据以下情境写一篇不少于 60 个词短文，标点符号不占格。） 法国“蜘蛛人”阿兰•罗伯特的经历告诉我们，战胜恐惧也可以是一种勇敢。你对勇敢的理解是如何的呢？请以“The time I was brave（那次我很勇敢）” 为题，根据自身的经历谈谈你对勇敢的理解。 （注意：1. 短文中不得出现考生的姓名、校名等个人信息，否则不予评分。2. 照抄阅读的语篇不得分。） ____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2021-松江-writing",
+      "title": "2021 上海松江一模作文",
+      "year": 2021,
+      "district": "松江",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "（共20分） 94. Write at least 60 words according to the following information. 虽然写给地球人的一封信中所提及到的问题确实存在，但是我们人类正在努力改变现状。相信你也看到身边的变化或感受到自己的变化了。请选取其中的一个题目A change around me（我身边的变化）或A change about me（我的变化），写一篇不少于60词的短文，标点符号不占格。 注意∶1、短文中不得出现真实姓名和校名及其它相关信息，否则不予评分。 2、照抄阅读语篇不得分。 ________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2021-浦东-writing",
+      "title": "2021 上海浦东一模作文",
+      "year": 2021,
+      "district": "浦东",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "（共20分） 84. Write at least 60 words on the topic “My choice”.（请以“我 的选择” 为题，写一篇不少于 60 字的短文。） 人生即是选择。你在生活中一定做过无数次选择，或许是明智的，亦或许是错误的；或许是难忘的，亦或许是遗憾的……请结合你以往的一次选择，谈谈它对你的影响或你的感悟。 （注意：短文中不得出现任何真实人名、校名其它相关信息，否则不予评分。）",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2021-虹口-writing",
+      "title": "2021 上海虹口一模作文",
+      "year": 2021,
+      "district": "虹口",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "（共20分） 84. Write at least 60 words on the topic “Happiness doesn’t always disappear during difficult times” (以“在困难时期，幸福感不一定会消失”为题写一篇不少于60个词的短文，标点符号不占格). 小到个人，大到团队、城市、国家，都会有困难时期，但即便是困难时期，人们还是能感受生活中的小喜悦，感受幸福温馨的片刻，请结合自己或他人的经历，说说困难时期的幸福感。 (注意：短文中不得出现任何人名、校名及其他相关信息，否则不予计分) ____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2021-长宁-writing",
+      "title": "2021 上海长宁一模作文",
+      "year": 2021,
+      "district": "长宁",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "（共20分） 94. Write at least 60 words about the topic “________left me a new impression.”（请以“________给我留下一个新印象”为题，写一篇不少于 60 个词的短文，标点符号不占格。） 你身边有熟悉的同学、朋友、老师……，有一天可能因为某件事让你对她（他）改变了原有的看法。请补全标题，并结合这个事例谈谈她（他）给你留下的这个新的印象。 （注意：文中不得出现考生的姓名、校名及其他相关信息，否则不予评分。）",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2021-闵行-writing",
+      "title": "2021 上海闵行一模作文",
+      "year": 2021,
+      "district": "闵行",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "（共20分） 84. Write at least 60 words about the topic “The secret of ”. (根据中文提示，以“......的秘诀”为题，写一篇不少于 60 个词的短文，标点符号不占格。） 阅读D篇告诉我们作者拥有幸福家庭的秘诀。无论是生活、学习还是工作，我们都有做某事的秘诀。请结合自身的经历，选取一个方面谈谈你的秘诀及感想。写作前先请你把题目补充完整。 （注意：1. 短文中不得出现考生姓名、校名等个人信息，否则不予评分。 2. 照抄阅读语篇不得分。）",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2021-青浦-writing",
+      "title": "2021 上海青浦一模作文",
+      "year": 2021,
+      "district": "青浦",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "（共20分） 84. Write at least 60 words on the topic “A Good Will”（请以“善举”为题写一篇不少于60个词的短文，标点符号不占格。） 在学习与生活中，我们会去帮助他人，也会接受他人的善待。有时候一个善意的举动，自己也会受益匪浅。请结合你的经历或所见所闻，谈谈你的感受。 注意：1. 抄袭试卷中内容不得分。 2. 文中不得出现任何姓名、校名以及其它相关信息, 否则不予评分。 ____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2021-静安-writing",
+      "title": "2021 上海静安一模作文",
+      "year": 2021,
+      "district": "静安",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "（共20分） 94. Write at least 60 words on the given situation.（根据以下情境写一篇不少于60个词的短文，标点符号不占格） 在美国新泽西这一走丢孩子的眼中，马是世界上最美好的事物。你眼中最美好的事物是什么呢？ 请以“The greatest thing in the world”为题，结合自身经历谈谈你的看法。 （注意：1. 短文中不得出现考生姓名、校名等个人信息，否则不予评分。 2. 照抄阅读语篇不得分。）",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2021-黄浦-writing",
+      "title": "2021 上海黄浦一模作文",
+      "year": 2021,
+      "district": "黄浦",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "（共20分） 94. Write an email of at least 60 words according to the situation given. (根据所给情境, 写一封不少于60个词的电子邮件, 标点符号不占格) You are planning a reading club on line, so you decide to invite a friend of yours to join you by email. (你正在筹备一个在线阅读社团，你决定通过电子邮件邀请一个朋友加入。) In your email, you need to... introduce your plan of the reading club. talk about what kind of books you are going to read. give the reason(s) why you want to run the club. (注意：文中不得出现考生的姓名、校名及其他相关信息，否则不予评分。) ____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2022-嘉定-writing",
+      "title": "2022 上海嘉定一模作文",
+      "year": 2022,
+      "district": "嘉定",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "(本大题共1题, 共20分) 80. Write at least 60 words according to the given situation. (根据以下情境写一篇不少于60个词的短文，标点符号不占格) 实践类作业 (Project-based homework) 形式多样，可以个人完成，也可以小组合作完成；可以是写书评 (book review)、影评 (film review)；也可以是完成调查报告 (survey report) 或海报制作 (posters) 等。学校正在为“最喜欢的寒假实践类作业”征询建议。假设你是李华，请你在学校网站给张老师留言，分享你的最喜欢的寒假实践类作业，既可以是你完成过的，也可以是你新的创意，请简单描述实践过程并陈述分享理由。 (注意：1.不得出现姓名、校名等个人信息，否则不予评分。2.照抄阅读语篇不得分。) __________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2022-奉贤-writing",
+      "title": "2022 上海奉贤一模作文",
+      "year": 2022,
+      "district": "奉贤",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "Ⅶ. Writing 64. Write at least 60 words on the topic “I can be better”【以“我可以更好”为题，写一篇不少于60词的短文，标点符号不占格】 提示：校园吉尼斯纪录创造者的经历告诉我们：每个人都能够通过努力改变自己，让自己变得更好。请结合自己的具体经历谈谈你对这一观点的认识。 注意：短文中不得出现任何人名、校名及其他相关信息，否则不予评分。照抄语篇不得分 ________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2022-崇明-writing",
+      "title": "2022 上海崇明一模作文",
+      "year": 2022,
+      "district": "崇明",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "VII. Writing 64. Write a letter of at least 60 words on the topic “A suggestion for our school” (以“给学校的一个建议”为题写一封不少于60个词的信，标点符号不占格。) 在近四年的初中校园生活和学习中，你学到和享受到了很多。但是通过你的观察，学校有些地方还有提升和完善的空间，比如在课后服务、活动项目、学生午餐、学校设施、校园文化等等方面。要求：请你结合自身经历，确定一个主题，给校长写封信，为学校提出一个合理化、可操作的建议，并说说你的理由或感想。 注意：1. 短文中不得出现任何校名、人名及其它相关信息，否则不予评分。 2. 照抄阅读语篇不得分。 ________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2022-普陀-writing",
+      "title": "2022 上海普陀一模作文",
+      "year": 2022,
+      "district": "普陀",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "VII. Writing 80. Write at least 60 words according to the pictures about “A 14th birthday ceremony” 【根据所给的图片，写一篇关于 “十四岁生日仪式” 的短文，题目可另拟，字数不少于 60 个词，标点符号不占格】 ____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2022-杨浦-writing",
+      "title": "2022 上海杨浦一模作文",
+      "year": 2022,
+      "district": "杨浦",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "VII. Writing 84.Write at least 60 words according to the given situation. ( 根据以下情境写一篇不少于 60 个词的短文，标点符号不占格) 学校以下各社团打算在活动周开展一些竞赛活动： comics club (动漫社) computer club (电脑社) school newspaper club (校报社) super brain club (最强大脑社) debate club (辩论社) paper cutting club (剪纸社) 假设你是其中一个社团的干事 Sandy，请拟一份通知告知你所在社团将要举行的活动，内容包括： 1)活动名称、目的 2)活动时间、地点 3)参加活动的相关要求 4)奖项设置等 （ 注意：1. 短文中不得出现姓名、校名等个人信息，否则不予评分 2. 照抄阅读语篇不得分） A. attention B. no longer C. competed D. compared E. conclusion A. calm B. basic C. faithfully D. depend on E. get along with",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2022-松江-writing",
+      "title": "2022 上海松江一模作文",
+      "year": 2022,
+      "district": "松江",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "Ⅶ. Writing 84. Write at least 60 words according to the given situation. (根据以下情境写一篇不少于 60 个词的短文，标点符号不占格) 今年教育部颁布的“双减”政策(Double Reduction policy)要求学校减轻学生作业负担(reduce students’ homework burden)，这就意味着放学后你会获得更多自由调配的时间，请谈谈你将如何合理安排自己的学习和生活。 注意：1. 短文中不得出现任何真实人名、校名及其它相关信息，否则不予评分。 2. 照搬阅读语篇内容不得分。 A. show off B. brave C. end D. anything E. back A. swimming B. finally C. words D. certainly E. reach",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2022-虹口-writing",
+      "title": "2022 上海虹口一模作文",
+      "year": 2022,
+      "district": "虹口",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "Ⅶ. Writing 64. Write at least 60 words on the topic “A perfect family”（以“完美家庭”为题写一篇不少于60个词短文，标点符号不占格） 我们都和家人生活在一起，都希望拥有一个完美的家庭。请你描述一下你心目中的完美家庭。（注意：短文中不得出现任何人名、校名及其他相关信息，否则不予计分） __________（题目） ________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2022-金山-writing",
+      "title": "2022 上海金山一模作文",
+      "year": 2022,
+      "district": "金山",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "VII. Writing （写作）（共20分） 64. Write at least 60 words on the topic “‘Double Reduction Policy’ affects me”.（以“‘双减政策’影响我”为题，写一篇至少60个单词的短文，标点符号不占格。） 全国义务教育阶段都在实施“双减政策”。“政策”实施后，校内课后服务全面覆盖，学生作业有限定，周末培训机构不再提供服务。学生有了更多自主学习和享受家庭生活的时间了。对你而言，“双减政策”给你带来了哪些影响呢？你是如何看待这些影响的呢？ 以下短语供选用：put into effect 实施 benefit me/everyone 使我/大家获益 give individual help 给予个别帮助 service after class 课后服务 （注意：短文中不得出现考生姓名、校名及其它相关信息，否则不予评分。） 文章首句“Since ‘Double Reduction Policy’ was put into effect, something has changed in my life.”已给，这些文字不计入文章字数。 ______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2022-青浦-writing",
+      "title": "2022 上海青浦一模作文",
+      "year": 2022,
+      "district": "青浦",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "VII. Writing 64. Write a passage of at least 60 words about the topic “The best ________ I have ever met”（请以“最美的遇见”为题写一篇不少于60个词的短文，标点符号不占格）。 一场美丽的相遇是生命的恩赐， 是缘分的开始。最美的遇见可以是雨后的彩虹，可以是陪伴的挚友，亦可是成长的鼓励等。请选择一个方面，结合你的经历，谈谈你的感受。 注意：1.补全作文题目； 2.抄袭试卷中内容不得分； 3.文中不得出现任何姓名、校名以及其他相关信息，否则不予评分。 ___________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2022-静安-writing",
+      "title": "2022 上海静安一模作文",
+      "year": 2022,
+      "district": "静安",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "VII. Writing 69. Write at least 60 words according to the given situation.（根据以下情景写一篇不少于 60 个词的短文，标点符号不占格。） 新学期带来了新变化。“双减”新规（The new rules）提出：减轻义务教育阶段学生过重作业负担和校外培训负担。“双减”后，你的生活有了什么变化？请给学校的校长（Headmaster）写一封信，从课后作业、学校活动和业余生活三方面谈谈你是否满意现在的变化以及还有何烦恼，并请对方给你的烦恼提些建议。 ____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2022-黄浦-writing",
+      "title": "2022 上海黄浦一模作文",
+      "year": 2022,
+      "district": "黄浦",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "(本大题共1题, 共20分) 84. Write at least 60 words according to the given situation(根据以下情景写一篇不少于 60 个词的短文，标点符号不占格) 黄浦区在创建文明城区，你的学校正在开展主题为\"The most beautiful volunteer\"的征文活动，请写一篇文章介绍一位志愿者，以及她/他的事迹。 文章内容可以包含以下几个问题： 1. Who is he / she? 2. What did he / she do? (What does he / she do?) 3. What can you learn from him/her? A. valuable B. dramatic C. organise D. matter E. develop A. avoid B. case C. create D. simply E. contact ABCBOOKing.com Admission to the London Eye 90% liked It from 80 reviews With this admission ticket you can hop aboard the famous London Eye for a 30-minute ride over the city. The observation wheel reaches a height of 135 metres, offering you a chance to enjoy beautiful views of London. Admission to the London Eye London Eye, 30 The Queen's walk, Lambeth, London, SE1 Tickets and Prices Adult --- US$44 Child (age 4-15) --- US$39 Infant (age 0-3) --- US$0 Why visit ☑ A thrilling bird's-eye view of the English capital ☑ Chance to spot well-known landmarks of the city ☑ Admire Big Ben, Buckingham Palace and St Paul's Cathedral What do you need to know ●Visitors must show a photo ID. ●Children under 15 years old must be accompanied by an adult. ●Please note that attractions may close areas or exhibits on the data of your visit. ●Please note that visitors are required to go through a security check before boarding. You can ask to be searched by an officer of the same sex.",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2023-嘉定-writing",
+      "title": "2023 上海嘉定一模作文",
+      "year": 2023,
+      "district": "嘉定",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "（共 20 分） 64. Write at least 60 words according to the given situation （根据以下情境写一篇不少于 60 个词的短 文，标点符号不占格） 假如你是李华，学校要组织学生参加“生活技能体验”和“博物馆探索”的项目活动，每位学生可以报名参加一个项目。你会报名参加哪个项目？请写一封邮件给班主任张老师，告诉他你的决定，并说明理由。 （注意：邮件中不得出现任何人名、校名及其他相关信息，否则不予评分。照抄语篇不得分） ____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2023-宝山-writing",
+      "title": "2023 上海宝山一模作文",
+      "year": 2023,
+      "district": "宝山",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "（本大题共1题，共20分） 64. Write at least 60 words according to the situation given.（请根据所给情境，写一篇不少于60个词的短文。标点符号不占格，信件格式已给） 近日，你校举办了“我为母校建言献策”的征集活动，请毕业年级的学生为学校未来发展提出自己宝贵的建议。假如你是李华，请你给教导处王老师写一份信。内容包括： 1. 请结合实际情况，在学校课程设计（course design）、校园环境（school environment）、午餐质量（quality of lunch）、作业负担（burden of homework）、校园活动（school activities）中选择1-2个方面，谈谈你的真实感受； 2. 针对你认为有待提高的地方，提出合理建议并简要说明理由； 3.表达你对母校的感激，献上你对母校未来发展的美好祝福。 （注意：1. 文中不得出现任何真实人名、校名及其它相关信息，否则不予评分。 2. 照抄阅读语篇内容不得分。） The following is for reference only.（以下内容仅供参考） ☺I’d like to suggest… ☺…needs to be improved ☺I hope… _________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2023-崇明-writing",
+      "title": "2023 上海崇明一模作文",
+      "year": 2023,
+      "district": "崇明",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "（共20分） 64. Write at least 60 words on the topic“Things I harvested in 2022”（以“2022年的收获”为题写一篇不少于60个词的短文，标点符号不占格。） 在刚过去的2022年中，你一定在很多方面收获颇多，请结合具体事例，谈谈你的收获有哪些，你是怎样取得的。 （注意：短文中不得出现任何校名、人名及其他相关信息，否则不予评分）。 ____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2023-徐汇-writing",
+      "title": "2023 上海徐汇一模作文",
+      "year": 2023,
+      "district": "徐汇",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "：（共20分） 80. Write at least 60 words according to the given situation（根据以下情境写一篇不少于60个词的短文，标点符号不占格）。 假设你是Joe，你校校报正在通过邮件评选最受欢迎的一个栏目（section）。 备选栏目如下： ·School sports ·Word games and crossword puzzles ·School clubs ·Book or Film reviews ·Poems by students 请给校报写封邮件，谈谈你的选择，并简要说明理由。 注意： 1. 信中不得出现姓名、校名等个人信息，否则不予评分。 2. 照抄阅读语篇不得分。 _________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2023-普陀-writing",
+      "title": "2023 上海普陀一模作文",
+      "year": 2023,
+      "district": "普陀",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "(共 20分) 64. Read the beginning of the story and write a passage of at least 60 words to complete it. (根据短文情节进行续写，使之构成一个完整的故事。字数不少于60词。) Frank and his wife had just parked the car around the corner from their home. Frank got a call from one of his daughters, “The kitchen next door is on fire!” Frank then saw the black smoke coming out of the windows of his neighbour’s home... 以下问题仅供参考：(短文中不得出现考生的姓名、校名及其他相关信息，否则不予评分。) How did Frank feel after he saw the smoke? What did Frank and his wife do? What happened at last? ____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2023-杨浦-writing",
+      "title": "2023 上海杨浦一模作文",
+      "year": 2023,
+      "district": "杨浦",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "(共20分) 80. Last Friday, Mary went to the night market. Look at the pictures and write a story in at least 80 words on the topic Lucky Mary (上周五，Mary 去了夜市。请根据图片提示，以《幸运的玛丽》为题，写一篇不少于80个单词的短文) 写作提示及要求： ①下列词汇你在写作的过程中可能会使用到：dart n.飞镖，teddy bear n.玩具熊，game stand游戏摊位。 ②关注图片传递的信息与图片之间的关联，适当增加对话或内心独白。 ③写作内容中不得出现真实姓名和校名。 _______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2023-松江-writing",
+      "title": "2023 上海松江一模作文",
+      "year": 2023,
+      "district": "松江",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "Write at least 60 words according to the given situation. （根据以下情境写一篇不少于60个词的短文，标点符号不占格） 你校网站新增了一个专栏“夸夸我的小伙伴”，希望学生能够发现身边的正能量并将其广泛传播。学校目前正在发动学生参与投稿。假设你是李华，请给网站投稿，夸夸你的小伙伴张文。 注意： 1.文中不得出现姓名、校名等个人信息，否则不予评分。 2.照抄阅读语篇不得分。 __________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2023-浦东-writing",
+      "title": "2023 上海浦东一模作文",
+      "year": 2023,
+      "district": "浦东",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "Writing (作文) 64. Write at least 60 words according to the given situation。(根据以下情境写一篇不少于60个词的短文，标点符号不占格) D篇阅读中，作者Tessa从松树身上受到了启发。在中国文化中松树还可寓意“坚毅”和“正直”的品质。请选择其中的一个品质，结合自己或他人的经历，谈谈你对该品质的理解。 （strong-willed adj. 坚毅的 upright adj. 正直的） （注意：1、短文中不得出现姓名、校名等个人信息，否则不予评分。 2、照抄阅读语篇不得分。） _________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2023-虹口-writing",
+      "title": "2023 上海虹口一模作文",
+      "year": 2023,
+      "district": "虹口",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "（本大题共1题，共20分） 64. Write at least 60 words according to the given situation（根据以下情境写一篇不少于60个词的短文，标点符号不占格） 下列是学校征集的模范学生的其中四条标准，你最认同哪一条？为什么？请举例说明。 注意：1. 文中不得出现姓名、校名等个人信息，否则不予评分。 2. 照抄阅读语篇不得分。 3. 请选择一条填在横线上作为标题。 ________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2023-金山-writing",
+      "title": "2023 上海金山一模作文",
+      "year": 2023,
+      "district": "金山",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "VII. Writing（写作）(共20分） 64. Write at least 60 words on the topic“The success in my eyes”（以“我眼里的成功”为题，写一篇至少60个单词的短文。标点符号不占格） 在你的生活中，你总是不断在成长，不断收获着属于自己的成功。成功可以是令人瞩目的，也可以是籍籍无名的；有的成功可以改变世界，有的成功可以只是自己的一个小进步、小改变，……请你说说你眼里的成功是怎样的，并结合自身生活上或者学习上的经历进行说明。 ______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2023-长宁-writing",
+      "title": "2023 上海长宁一模作文",
+      "year": 2023,
+      "district": "长宁",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "(本大题共1题，共20分) 64. Write at least 60 words about the topic “My suggestions for the new schoolmates” (请根据下面的提示，以“给新同学的建议”为题，写一篇不少于60个词的短文，标点符号不占格。) 度过了几年初中学习生活，你终将面临毕业，而马上又会有新的同学即将进入你上过的初中。请根据你的亲身体验写封短信给这些新同学，给他们提一些学习生活方面的建议，如：学习方法、参与活动、业余生活、师生关系、课后作业等等。短信的开头2句已提供。 (注意：文中不得出现任何姓名、校名以及其他标志性的具体信息，否则不予评分。) My suggestions for the new schoolmates Dear fellow schoolmates, Welcome to our school. As I’m leaving here for a senior high school, I’d like to write a few lines of suggestions for you… __________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________ Yours, Li Hua",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2023-青浦-writing",
+      "title": "2023 上海青浦一模作文",
+      "year": 2023,
+      "district": "青浦",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "（共20分） 64. Write at least 60 words about the topic “Make the right move”（请以“明智之举”为题写一篇不少于60个词的短文，标点符号不占格。） 在学习与生活中，我们会遇到需要做出选择的关键时刻，只有经过慎重考虑，才能采取正确的行动。请以“Make the right move (明智之举)”为题，结合你的经历或见闻，谈谈你的感受。 注意： ● 文中不得出现姓名、校名等个人信息，否则不予评分。 ● 照抄试卷中内容不得分。 ________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2023-静安-writing",
+      "title": "2023 上海静安一模作文",
+      "year": 2023,
+      "district": "静安",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "（本大题共1题，共20分） 69. Write at least 60 words about the topic “I am very active in ________ classes”(请以“我在________课上十分活跃”为题，写一篇不少于60个词的短文，标点符号不占格。) 在你的日常学习中，你总会对某一门学科情有独钟，在它的课堂上参与学习活动尤其活跃。请你明确一门学科，并填写在空格内；陈述你活跃的理由（要求所列原因不少于两个），简单介绍你的收获。 （注意：不得出现任何姓名、校名以及其它相关信息，否则不予评分。） ________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2023-黄浦-writing",
+      "title": "2023 上海黄浦一模作文",
+      "year": 2023,
+      "district": "黄浦",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "（20 分） 64. Write at least 60 words according to the given situation.（根据以下情境写一篇不少于60个词的短文，标点符号不占格。） 你和你的家人刚搬到了上海郊区的一个城镇，你打算给你的朋友 Jane 寄一张小镇风景的明信片。 In your postcard to your friend, you should ● introduce the town briefly ● explain why you have moved ● say what you like and dislike about living there. 注意：1.短文中不得出现考生的姓名、校名等个人信息，否则不予评分 2. 照抄阅读语篇不得分 ______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2024-嘉定-writing",
+      "title": "2024 上海嘉定一模作文",
+      "year": 2024,
+      "district": "嘉定",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "(共20分) 84. 你觉得学校组织的心理讲座 (lectures on mental health) 是否有助于缓解压力 (reduce pressure)? 为什么?你还希望学校开展一个什么活动来有效缓解压力?说说你的理由, 写一篇不少于60个词的短文。 (注意：1. 短文中不得出现考生真实姓名、校名等个人信息, 否则不予评分。2. 照抄阅读语篇不得分。) ______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________ 2024届嘉定一模参考（答案）",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2024-崇明-writing",
+      "title": "2024 上海崇明一模作文",
+      "year": 2024,
+      "district": "崇明",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "(共20分) 84. Write at least 60 words on the topic “Take it easy ” according to the given situation (根据以下情境，以“放轻松”为题写一篇不少于60个词的短文，标点符号不占格) 你的好朋友Sandy正在准备一场关于传统文化的演讲比赛，尽管她每天练习至少半小时，但仍然无法记住整份演讲稿。此外，Sandy因为太紧张，晚上无法入睡。请你写一封信给Sandy, 鼓励她，让她放轻松。信中至少给她二个建议，并给出合适理由，同时注意信件格式。 （注意：短文中不得出现任何校名、人名及其它相关信息，否则不予评分。） 2023学年第一学期期末学业质量调研 九年级英语 (听力文字、",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2024-普陀-writing",
+      "title": "2024 上海普陀一模作文",
+      "year": 2024,
+      "district": "普陀",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "(共 20 分) 84.Write at least 60 words on the topic\"My ways to improve myself \".【以“我的自我完善方法”为题，写一篇字数不少于 60 词的短文，标点符号不占格。】“吾日三省吾身”是一句出自《礼记·大学》的名言，意思是每天反思自己的言行以完善自己。请你结合自己的经历介绍一下你的自我完善方法以及这样做的成效或理由。（温馨提示：word解析版&范文添加微信：muzhiyingyu会员群推送领取） 可以从以下方面进行思考： *为人处世 *生活技能 *学习方法*身心健康 注意：短文中不得出现考生的姓名、校名及其他相关信息，否则不予评分。 ( )65. A)conclusions B)choices C)details D)meanings ( )66. A)Above all B)In fact C)For example D)In brief ( )67. A)explains B)wonders C)complains D)imagines ( )68. A)hobby B)case C)personality D)ability ( )69. A)basic B)proud C)serious D)personal ( )70. A)damage B)worry C)illness D)attention",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2024-松江-writing",
+      "title": "2024 上海松江一模作文",
+      "year": 2024,
+      "district": "松江",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "(共20分) 84. Write at least 60 words according to the given situation. (根据以下情境写一篇不少于60 个词的短文, 标点符号不占格) 玫瑰花园学校校报“知心信箱”专栏收到了一封来自李明同学的求助信。信中提及上周末他未经哥哥同意使用他的电脑, 导致电脑出故障, 耽误了哥哥的工作。李明没有告知实情, 也不知道该怎么办。 假设你是该报专栏编辑张华, 请写封回信给李明, 指出他行为上的不当之处, 并提出可行的解决办法。 (注意：1. 文中不得出现姓名、校名等个人信息, 否则不予评分。2. 照抄阅读语篇不得分。) A)long-term B)exactly C)story D)ancient E)truth A)predicted B)proved C)receiver D)search E)owners Life always has some precious memories that can be caught by a camera. Here are four photos chosen from thousands of ones. The photographers also share the stories behind these photos. Click“”to give your favourite one a like before January 30, 2024. The winner who receives the most likes will get a camera—Canon 4000D.",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2024-浦东-writing",
+      "title": "2024 上海浦东一模作文",
+      "year": 2024,
+      "district": "浦东",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "（本大题共 1 题，共 20 分） 80. Write at least 60 words according to the given situation (根据以下情境写一篇不少于 60 个词的短文，标点符号不占格) 学校报社做了一次有关学生如何使用零花钱的调查。现假设你是报社编辑李华，请根据以下图表写一份报告，报告必须包含以下内容： 1. 简要描述图表显示的结果； 2. 针对结果，提出改进消费习惯的建议，并阐述理由。 注意： 1. 短文中不得出现姓名校名等个人信息，否则不予评分。 2. 照抄阅读语篇不得分。 ________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2024-虹口-writing",
+      "title": "2024 上海虹口一模作文",
+      "year": 2024,
+      "district": "虹口",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "Writing (作文)(本大题共1题, 共20分) 84. Write at least 60 words according to the given situation （根据以下情境写一封不少于60个词的信，标点符号不占格） 学校计划在今年暑假组织两个劳动教育项目： The Joy of Harvest（丰收的喜悦） 和 You Are the Chef（你是大厨），现向学生征求建议。假如你是Li Hua，请给项目负责人Miss Liu写一封信，告知她你想参加哪个劳动教育项目，说明理由，并为这个项目再设计1-2个活动。 注意： 1. 照抄阅读语篇不得分。 2. 信中不得出现姓名、校名等个人信息，否则不予评分。 __________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________ A.while B.familiar C.squares D.similar E.take turns A.liquid B.Instead C.discovered D.Besides E.various Abseiling and Rope activities Overcome your fear of heights by taking",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2024-金山-writing",
+      "title": "2024 上海金山一模作文",
+      "year": 2024,
+      "district": "金山",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "VII. Writing (写作)(共20分) 64. Write at least 60 words on the topic “My favourite kind of English homework”. (以”我最喜欢的英语作业”为题，写一篇至少60个单词的短文。要求紧扣题意，语句正确通顺，内容连贯。) 寒假来临，你希望老师布置什么样的英语作业：读英语小故事(reading English short stories)、 朗读课文并录音 (reading the texts and recording)、给动画配音 (dubbing cartoons)、写英语日记 (keeping English diaries)、角色扮演 (role playing) 还是做练习(doing exercises)？ 为什么？说说你的理由。 (注意：短文中不得出现考生姓名、校名及其它相关信息，否则不予评分。) _______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________ A. activities B. official C. invented D. invitations E. causing A. exercise B. nearly C. various D. nearby E. produce",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2024-长宁-writing",
+      "title": "2024 上海长宁一模作文",
+      "year": 2024,
+      "district": "长宁",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "Writing (作文)(本大题共 1 题，共 20 分) 64. Write at least 60 words according to the given situation(请根据以下情景写一篇不少于 60 个词的短文，标点符号不占格。) 学校拟为初三学生组织一次活动，现在校长征询同学们的意见，请你写一封电子邮件给他，就下列活动中选择其中的一项推荐给校长，并说明理由。 An outing School Subject Festival Talent Show A school sports meeting (注意: 不得出现任何姓名、校名以及其它相关信息，否则不予评分) ________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2024-静安-writing",
+      "title": "2024 上海静安一模作文",
+      "year": 2024,
+      "district": "静安",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "(共 20分) 94. In 60-100 words, write a presentation speech according to the given situation(请根据所给情境，写一篇60-100 词的演讲稿，标点符号不占格) To raise money for the SPCA, the school Social Service Club is going to have a school fair, As a member of the club, make a speech to share your suggestions and ideas. In your speech, you may include: ·Why is the School Fair held? ·When and where will it be held? ·What activities and attractions will be included? (注意：1. 短文中不得出现考生姓名、校名等个人信息，否则不予评分。2. 照抄阅读语篇不得分。)",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2025-嘉定-writing",
+      "title": "2025 上海嘉定一模作文",
+      "year": 2025,
+      "district": "嘉定",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "（共20分） 80. Write at least 60 words according to the situation given. （请根据所给情境，写一篇不少于60个词的短文。标点符号不占格。） 你的班级正在制作一本毕业相册（yearbook），现向同学们征集照片。请你选择一张最喜欢的照片，描述照片的内容（如时间、地点、人物、事件等），并说明选择的理由。 注意： 1. 短文中不得出现考生真实姓名、校名等个人信息，否则不予评分。 2. 照抄阅读语篇不得分。 ____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2025-宝山-writing",
+      "title": "2025 上海宝山一模作文",
+      "year": 2025,
+      "district": "宝山",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "（共20分） 64. Write at least 60 words according to the situation given. (请根据所给情境，写一篇不少于60个词的短文。标点符号不占格。) 假设你是李华，你在学校的国际交流活动中结识了一位英国留学生Michael。他对中国学校的校园生活很感兴趣。你决定写一封邮件给他，向他介绍你的校园生活。你可以从校园环境(campus environment)、学校午餐(school lunch)、传统节庆活动(traditional festivals and celebrations)、社团活动(club activities)中选择1-2个方面进行介绍，让Michael感受到中国校园的独特魅力。 注意： 1.信中不得出现任何真实人名、校名及其它相关信息，否则不予评分。 2.照抄阅读语篇内容不得分。 Dear Michael, _____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________ Yours sincerely, Li Hua",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2025-崇明-writing",
+      "title": "2025 上海崇明一模作文",
+      "year": 2025,
+      "district": "崇明",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "(共20分) 64. Write at least 60 words according to the given situation(根据以下情境写一篇不少于60个词的短文，标点符号不占格) 假设你是初三学生林东，下周有一所国外姐妹学校来你校进行为期两周的学习交流活动。学校请你给来校交流的外国同龄学生做一个主题为“交流文化、增进友谊”的发言。你的发言必须包含以下两点： 1. 向对方学生介绍一项具有中国特色的传统文化 2. 谈谈两周中你准备为这批外国学生安排什么跨文化交流活动(参观文化景点、文化交流活动、文化习俗体验等) (注意：短文中不得出现任何校名、人名及其它相关信息，否则不予评分。) ________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2025-徐汇-writing",
+      "title": "2025 上海徐汇一模作文",
+      "year": 2025,
+      "district": "徐汇",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "：（共20分） 64. What does Charlie’s story make you think of? Please write at least 60 words from your own or the school’s perspective on how to ensure every student has a fair opportunity to receive a good education. 读完了Charlie的故事后，你有了哪些思考和感悟？请用不少于60个词从自身或学校的视角来谈谈可以怎样做来让每一个学生都能获得公平接受教育的机会。 （注意：短文中不得出现考生的姓名、校名及其他相关信息，否则不予评分。标点符号不占格） _________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2025-普陀-writing",
+      "title": "2025 上海普陀一模作文",
+      "year": 2025,
+      "district": "普陀",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "（共20分） 64. 根据以下情境写一篇字数不少于60词的短文，标点符号不占格。 假如你是李明，你的好朋友王林最近常常抱怨平凡的生活千篇一律，又苦恼不知如何发现或创造不凡。请给他写一封信，结合你的自身经历或所见所闻，谈谈你对“平凡”和“不凡”的理解，并给他一些建议。 注意：短文中不得出现考生的姓名、校名及其他相关信息，否则不予评分。 你可以这样开始： Dear Wang Lin I know you are bored with everyday life and don’t know how to find or create something great_____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2025-杨浦-writing",
+      "title": "2025 上海杨浦一模作文",
+      "year": 2025,
+      "district": "杨浦",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "(共20分) 84. Write at least 60 words according to the given situation. (根据以下情境写一篇不少于60个词的短文，标点符号不占格) 你是学校图书馆的志愿者李枫，负责每周一下午的图书馆整理工作。这周你因为某个原因而忘记了图书馆的任务。你需要写一封道歉信给你的图书馆负责人Mr. Wang，表达你的歉意。 道歉信内容须包括： 表达歉意 解释缺席的原因 提出补救措施 （ 注意：1. 短文中不得出现姓名、校名等个人信息，否则不予评分。 2. 照抄阅读语篇不得分。） A B B C C D E E F F G G A) B) C) D)",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2025-松江-writing",
+      "title": "2025 上海松江一模作文",
+      "year": 2025,
+      "district": "松江",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "(共20分) 84. Write at least 60 words according to the given situation. (根据以下情境写一篇不少于60个词的短文，标点符号不占格) 假如你是初三学生李华，最近收到小学同学张文的来信，信中抱怨了他的烦恼：他学业繁忙，但是父母还要他每天晚上饭后做家务，如洗碗、拖地、遛狗等。请你回信给张文，帮助他排解烦恼。 （注意：1.文中不得出现姓名、校名等个人信息，否则不予评分。 2.照抄阅读语篇不得分。）",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2025-虹口-writing",
+      "title": "2025 上海虹口一模作文",
+      "year": 2025,
+      "district": "虹口",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "(20分) 64. Write a text message of at least 60 words according to the given situation.(根据以下情境写一个不少于60个词的短信，标点符号不占格。) 春节即将来临。假如你是学生李华，你想给你的班主任张老师发一个短信，感谢她在过去一年对你的帮助。请从李华的草稿中选择一件事情，完成这个短信。 短信须包含以下内容： 1. 你发送短信的原因； 2. 简要描述这件事情。 注意： 1.文中不得出现任何真实的人名、校名等个人信息，否则不予评分。 2.照抄阅读语篇不得分。 __________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2025-金山-writing",
+      "title": "2025 上海金山一模作文",
+      "year": 2025,
+      "district": "金山",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "VII. Writing（写作）(共20分） 84. Write at least 60 words on the topic“Activities on spreading the culture of Spring Festival ”（以“传播春节文化的活动”为题，写一篇至少60个单词的短文。标点符号不占格）（共20分） 最近联合国教科文组织(the UNESCO)宣布将中国的春节列入世界非物质文化遗产名录(the list of Intangible Cultural Heritage)。为了庆祝这一重要时刻，你所在的社区向居民们征集在社区内传播春节文化的活动方案，诸如，举办春节美食分享会、春节故事演讲比赛、制作传统手工艺品(handicrafts)如窗花剪纸和红灯笼、写福字（write the Chinese character Fu）、贴春联 paste the Spring Festival couplets）、表演舞龙（dragon dances）或舞狮等等。你作为一名社区志愿者，请设计至少二种活动，并结合自己的擅长和活动的意义说明理由。 说明：文中不得出现真实的地名和人名。 A. consider B. tiny C. discover D. creative E. thoughts A. goals B. reduce C. serious D. effects E. respect",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2025-长宁-writing",
+      "title": "2025 上海长宁一模作文",
+      "year": 2025,
+      "district": "长宁",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "(本大题共1题，共20分) 84. Write at least 60 words according to the given situation(请根据以下情景写一篇不少于60个词的短文，标点符号不占格。) 假如你是李华，你的英国朋友Alex发邮件告诉你，最近他已经成功报名参加交换生项目(exchange program)，下学期来你学校交流学习2个月，想了解你校的特色课程(feature course)，请你给Alex回信，表示欢迎并介绍你认为最有特色的学校课程，如：运动、艺术、编程(programming)、茶艺(tea art)等等并说明理由。 Dear Alex, __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ Yours. Li Hua (注意：不得出现任何姓名、校名以及其它相关信息，否则不予评分) A) companies B) pockets C) fortunately D) completely E) exciting A) as well as B) control C) select D) instead of E) remind",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2025-闵行-writing",
+      "title": "2025 上海闵行一模作文",
+      "year": 2025,
+      "district": "闵行",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "(本大题共1题，共20分) 84. Write at least 60 words according to the given situation. (根据以下情境写一篇不少于60个词的短文，标点符号不占格) 假设你是李枫，你们学校计划寒假开展主题为“感受春节” (Feeling the atmosphere of the Spring Festival）的项目，现向学生征求一个小队活动设想。请给负责人Miss Zhang写一封邮件。 邮件需包含以下内容： （1）你对此项目的看法； （2）小队活动内容简介及设计意图。 以下活动内容供参考： 包饺子（making jiaozi） 贴窗花（sticking paper-cut） 写春联（writing Spring Festival couplets） 扫尘 （sweeping the dust） A) a B) an C) the D) / A) he B) him C) his D) himself A) at B) in C) with D) for A) other B) another C) the other D) others A) strong B) stronger C) strongest D) the strongest A) safe B) safely C) safety D) save A) take B) took C) have taken D) had taken A) studies B) studied C) has studied D) will study A) How far B) How often C) How much D) How long A) must B) should C) need D) would A) saw B) seeing C) see D) to see A) teach B) to teach C) teaching D) taught A) because B) unless C) until D) though A) but B) or C) and D) so A) What an B) What C) How D) What a A) immediately B) joke C) speech D) knock E) downstairs A) awful B) frightened C) operate D) checked E) phone",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2026-嘉定-writing",
+      "title": "2026 上海嘉定一模作文",
+      "year": 2026,
+      "district": "嘉定",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "(共20分) 80. Write at least 60 words according to the situation given.（请根据所给情境，写一篇不少于60个词的短文。标点符号不占格。） 假如你是李华，中国农历新年将至，你的英国笔友Harry从英国给你发来一封邮件，他打算在社区组织一次中国文化体验日的活动（Enjoy Chinese Culture），希望英国朋友们能够更了解和喜欢中国文化。Harry 拟定了以下四个活动主题，请推荐一个你认为最有趣的主题，回复邮件。 活动主题： ▶Traditional Chinese Food ▶Traditional Chinese Festivals ▶Chinese Tourist Attractions ▶Traditional Chinese Skills 你的邮件需包括： 1）选择并推荐的活动主题； 2）推荐该主题的理由，并简单介绍； 3）为这个主题设计一个体验日的活动。 （注意：1.短文中不得出现考生真实姓名、校名等个人信息，否则不予评分。2.照抄阅读语篇不得分。） ___________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2026-奉贤-writing",
+      "title": "2026 上海奉贤一模作文",
+      "year": 2026,
+      "district": "奉贤",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "Writing (作文)(本大题共1题，共20分) 64. Write a passage in at least 60 words according to the following situation. (根据以下情境写一篇不少于60个词的短文，标点符号不占格) 假如你是初三学生李华，你的班级计划在寒假期间组织一次公益活动(public welfare activity)，如探访养老院、社区文明养宠宣传、捐赠旧书籍……请你给班主任李老师写一封邮件，阐述你的活动策划方案，邮件需包含以下内容： 1. 活动主题 2. 具体活动内容和安排 3. 举办此次活动的意义 (注意：1. 写作中不得出现除已经给出的姓名、校名等之外的个人真实信息，否则不予评分。2. 照抄阅读语篇不得分。) ____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2026-杨浦-writing",
+      "title": "2026 上海杨浦一模作文",
+      "year": 2026,
+      "district": "杨浦",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "（共20分） 80. Write at least 60 words according to the given information.（根据所给信息写一篇不少于60个词的短文，标点符号不占格） 请根据图片写一个故事。第三幅图片为故事中的空缺部分，请根据上下文展开合理想象，使故事情节与最后一幅图片相衔接。 （注意：1.短文中不得出现真实姓名、校名等个人信息，否则不予评分。2.照抄阅读语篇不得分。） _______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2026-松江-writing",
+      "title": "2026 上海松江一模作文",
+      "year": 2026,
+      "district": "松江",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "(共 20 分) [解析] [分析] 这是一篇应用文（邮件）。要求根据给定情境，邀请朋友参加社 区活动中心的一个活动，并说明理由。写作要点应包括： 邮件格式（开头、结尾）。 明确邀请对象和意图。 从两个活动中选择一个。 阐述选择该活动的理由（可从活动内容、时间、参与者、议程等方面考虑）。 词数不少于 60 词。 写作时人称主要使用第一人称和第二人称，时态以一般现在时和一般将来时为主。 注意不要出现真实人名、校名。 [点评] 考查应用文写作（邀请邮件）。注意内容要点、语言准确性和连贯性。 （范文示例，仅供参考） Dear Li Ming, How are you? I'm writing to invite you to join me in an activity at the Rose Garden Community Center. I think we should go to the Writer's Meet-and-Greet on Saturday, January 24th. This activity is specially for students. The agenda sounds fun: we can learn about the writer's new book, take",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2026-浦东-writing",
+      "title": "2026 上海浦东一模作文",
+      "year": 2026,
+      "district": "浦东",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "(本大题共1题，共20分) 80. Write at least 60 words according to the given situation. (根据以下情境写一篇不少于60个词的短文，标点符号不占格) 假设你是初三学生李华，为了鼓励同学们度过充实且有意义的寒假，你的学校公布了五个寒假特色实践活动设想。你有意参加其中一项活动，请你给班主任Mr. Gao写一封邮件，内容需包含： (1) 你选择哪项寒假特色实践活动； (2) 选择该项活动的理由及你能为活动组织提供的具体协助； (3) 为了让该项活动更受同学欢迎、参与度更高，提出一条具体建议。 (注意：1. 邮件中不得出现姓名、校名等个人信息，否则不予评分。2. 照抄本卷语篇不得分。) ____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2026-虹口-writing",
+      "title": "2026 上海虹口一模作文",
+      "year": 2026,
+      "district": "虹口",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "（本大题共1题，共20分） 64. Write a passage of at least 60 words according to the given situation. （根据以下情境写一篇不少于60个词的短文，标点符号不占格。） 假设你是李华，你的外国朋友Peter对中国的书法（calligraphy）很感兴趣。你们学校即将举办一场“书法展”，请你写一封邮件邀请他参加。 邮件须包括邀请他参加活动的原因、活动的时间和地点、活动的内容（至少两项）。 （注意：1. 照抄阅读语篇不得分。2. 邮件不得出现真实姓名、校名等信息，否则不予评分。） ___________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2026-金山-writing",
+      "title": "2026 上海金山一模作文",
+      "year": 2026,
+      "district": "金山",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "VII. Writing (写作) (共20分) 64. Write at least 60 words according to the given situation. (根据以下情境写一篇不少于60个词的短文，标点符号不占格。) 毕业在即，你所在的班级计划制作一份独特的毕业纪念品。班委会提出了三个方案，正在班级微信群内征集所有同学的意见。假设你是李华，请发表你的意见，意见须包含以下内容： 1. 你倾向于选择哪个方案; 2. 你做出这个选择的两点主要原因： 3. 对你所选方案提出补充意见。 (注意：1. 短文中不得出现考生姓名、校名及其它相关信息，否则不予评分。2. 照抄阅读语篇不得分。) ________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2026-闵行-writing",
+      "title": "2026 上海闵行一模作文",
+      "year": 2026,
+      "district": "闵行",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "（本大题共1题，共20分) 64. Write at least 60 words according to the given situation (根据以下情境写一篇不少于60个词的短文，标点符号不占格) 假设你是一名花园学校（Rose Garden School）的初三学生李华，英国姊妹学校校长Mrs. Miller带领一批学生来你校访问，你被选为学生代表上台发言。 请用英语撰写一篇欢迎辞，欢迎Mrs. Miller和同学们的同时，介绍你校的校园特色文化或活动，说明接待期间你所负责的具体工作、能给予的帮助，并送上你和同学们的祝福。 注意： 1. 欢迎辞中不得出现真实姓名、校名等个人信息，否则不予评分； 2. 照抄本卷语篇不得分。 ____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em1-2026-青浦-writing",
+      "title": "2026 上海青浦一模作文",
+      "year": 2026,
+      "district": "青浦",
+      "examType": "一模",
+      "stage": "初中",
+      "prompt": "(共20分) 64. Write at least 60 words according to the given situation. (根据以下情境写一篇不少于60个词的短文，标点符号不占格) 学校劳动实践课程提供了四门短时课供学生选择，假设你是初三学生李华，请写一封邮件给教导处王老师报名，你的邮件必须包括： 1.你选择的课程名称； 2.你选择该课程的理由； 3.你期待的学习收获。 课程选项：花卉种植 (planting flowers)、点心制作 (making Dim Sum)、收纳整理 (tidying up)、职业体验 (trying out careers) 注意： -文中不得出现姓名、校名等个人信息，否则不予评分。 -照抄试卷中内容不得分。 ________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    }
+  ],
+  "writingEm2": [
+    {
+      "_id": "sh-em2-2012-奉贤-writing",
+      "title": "2012 上海奉贤二模作文",
+      "year": 2012,
+      "district": "奉贤",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": ": (共20分) 99. Write at least 60 words about the topic 'My Opinion on Having Lessons at Weekends’. （以“双休日上课之我见一为题写一篇不少于60个词的短文，标点符号不占格。） As a Grade Nine student, you have lessons at weekends. Do you think it is a good idea to improve your study? Why or why not? Give at least two reasons to support your opinion. 作为一名九年级的学生，你双休日还要去学校上课。你觉得这是提高学习成绩的好办法吗? 请你陈述支持你观点的理由。（至少两条） （注意：短文中不得出现考生的姓名、校名及其它相关信息，否则不予评分。） 奉贤区2011~2012年第二学期初三年级学业质量调研 英语学科试卷",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2012-宝山-writing",
+      "title": "2012 上海宝山二模作文",
+      "year": 2012,
+      "district": "宝山",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": ": (共20分) 99.Write a passage of at least 60 words on the topic “What’s Your View on Fast Food?”. ( 以“你对快餐的看法”为题写一篇不少于60个词的短文，标点符号不占格。) Use the following points as a reference. （以下问题仅供参考） 1）Why is fast food so popular in China? 2）What do you think of fast food? （注意：短文中不得出现任何人名、校名及其它相关信息，否则不予评分。） 宝山、嘉定区2011~2012年第二学期初三年级学业质量调研 英语学科试卷",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2012-徐汇-writing",
+      "title": "2012 上海徐汇二模作文",
+      "year": 2012,
+      "district": "徐汇",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "VII. Writing: （20分） 99. Write at least 60 words about the topic “My plan for _______” （以“我的_______计划” 为题写一篇不少于60个词的短文，标点符号不占格。) 提示：你可以描述你对于学校活动,毕业考,高中学习,假期或者未来的规划和打算, 可以具体举例说明计划的原因,目的和内容以及你期望的结果。 school activities high school study summer holidays future job Use the following points as a reference. (以下问题仅供参考) ＊ What is your plan about? What have you planned? ＊ Why do you have such a plan? How are you going to do it? ＊ What result do you expect? （注意：短文中不得出现任何人名、校名及其它相关信息，否则不予评分。） 徐汇区2011~2012年第二学期初三年级学业质量调研 英语学科试卷 （满分150分，考试时间100分钟）",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2012-普陀-writing",
+      "title": "2012 上海普陀二模作文",
+      "year": 2012,
+      "district": "普陀",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": ": (共20分) 99. Write at least 60 words about the topic “I gain __________ from my hobby”. （以“我从我的爱好中获得了__________”为题写一篇不少于60个词的短文，标点符号不占格。) （注意：短文中不得出现考生的姓名、校名及其它相关信息，否则不予评分。） Use the following points as a reference. （以下问题仅供参考） What is your hobby? What do you gain from your hobby? How do you gain … from your hobby? （注意：短文中不得出现任何人名、校名及其它相关信息，否则不予评分。） 普陀区2011~2012年第二学期初三年级学业质量调研 英语学科试卷 英语听力录音朗读稿 2011学年度第二学期普陀区初三质量调研英语试卷，",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2012-杨浦-writing",
+      "title": "2012 上海杨浦二模作文",
+      "year": 2012,
+      "district": "杨浦",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": ": (共20分) 99. Write a passage of at least 60 words on the topic “I want to do something for my family”. ( 以“我想为家庭做件事”为题写一篇不少于60个词的短文，标点符号不占格。) （ 注意：短文中不得出现考生的姓名、校名及其他相关信息，否则不予评分。） Use the following points as a reference. （以下问题仅供参考） What do you want to do for your family? Why do you want to do it? How are you going to do it? 杨浦、崇明区2011~2012年第二学期初三年级学业质量调研 英语学科试卷",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2012-浦东-writing",
+      "title": "2012 上海浦东二模作文",
+      "year": 2012,
+      "district": "浦东",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": ": (共20分) 99. Write a passage of at least 60 words on the topic “The View out of the Window”. ( 以“窗外的风景”为题写一篇不少于60个词的短文，标点符号不占格。) Use the following points for reference （以下问题仅供参考） What do you see out of the window? How do you feel about it? What do you like to do most after seeing the view? Why? （ 注意：短文中不得出现考生的姓名、校名及其他相关信息，否则不予评分。） 浦东新区2011~2012年第二学期初三年级学业质量调研 英语学科试卷 听力文字和",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2012-虹口-writing",
+      "title": "2012 上海虹口二模作文",
+      "year": 2012,
+      "district": "虹口",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": ": (共20分) 99. Write at least 60 words about the topic \"My classmates and my class\". (以“我的同学我的班”为题写一篇不少于60个词的短文，标点符号不占格。） Use the following points as a reference. (以下问题和图片仅供参考) 1. How do you get along with your classmates? 2. What have you done with your classmates? (Give at least 2 examples) 3. What do you think of your class? （注意：短文中不得出现考生的姓名，校名及其他相关信息，否则不予评分。） 虹口区2011~2012年第二学期初三年级学业质量调研 英语学科试卷",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2012-金山-writing",
+      "title": "2012 上海金山二模作文",
+      "year": 2012,
+      "district": "金山",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": ": (共20分) 99. Write at least 60 words about the topic “ Sharing brings ”. （以“分享带来 ”为题写一篇不少于60个词的短文，标点符号不占格。) （注意：短文中不得出现考生的姓名、校名及其它相关信息，否则不予评分。） Use the following points as a reference. （以下问题仅供参考。） Do you often share something with others? What do you usually share with others? What does sharing bring you? （注意：短文中不得出现任何人名、校名及其它相关信息，否则不予评分。） 金山区2011~2012年第二学期初三年级学业质量调研 英语学科试卷",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2012-闵行-writing",
+      "title": "2012 上海闵行二模作文",
+      "year": 2012,
+      "district": "闵行",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": ": (共20分) 99. Write a passage of at least 60 words on the topic “_______ makes me learn a lot”. ( 以“……使我学到了很多”为题写一篇不少于60个词的短文，标点符号不占格。) （ 注意：短文中不得出现考生的姓名、校名及其他相关信息，否则不予评分。） Use the following points as a reference（以下问题与图片仅供参考）: What makes you learn a lot? Reading books Being a volunteer Using computers Travelling … What have you learned from it? (Give at least two examples) 闵行区2011~2012年第二学期初三年级学业质量调研 英语学科试卷 听力文字及",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2012-青浦-writing",
+      "title": "2012 上海青浦二模作文",
+      "year": 2012,
+      "district": "青浦",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": ": (共20分) 99. Write at least 60 words about the topic “The most important ...in my life”. （以“我生活中最重要的......”为题写一篇不少于60个词的短文，标点符号不占格。必须把题目补充完整。) （注意：短文中不得出现考生的姓名、校名及其它相关信息，否则不予评分。） Use the following points as a reference. （以下问题仅供参考） What is the most important thing in your life? (Who is the most important person in your life?) Why is it/he/she so important to you? (Give one or two reasons.) （注意：短文中不得出现任何人名、校名及其它相关信息，否则不予评分。） 青浦区2011~2012年第二学期初三年级学业质量调研 英语学科试卷 听力文字稿及答案",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2012-静安-writing",
+      "title": "2012 上海静安二模作文",
+      "year": 2012,
+      "district": "静安",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": ": (共20分) 99. Write a short passage of at least 60 words about the topic “I love our class wall newspaper！”（以“我爱班级的墙报/黑板报”为题写一篇不少于60个词的短文。标点符号不占格。) （注意：文中不得出现考生的姓名、校名及其它相关信息，否则不予评分。） Use the following points as a reference. （以下问题仅供参考） Why do you love your class wall newspaper? Introduce one or two items that you like most. Have/Haven’t you done anything for it? What is it? Say a few words about it. What’s your suggestion to improve it? List one or two suggestions. And give your reason(s). 静安区2011~2012年第二学期初三年级学业质量调研 英语学科试卷",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2012-黄浦-writing",
+      "title": "2012 上海黄浦二模作文",
+      "year": 2012,
+      "district": "黄浦",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": ": (共20分) 99. Write at least 60 words about the topic “The hero in my eyes”. （以“我眼中的英雄”为题写一篇不少于60个词的短文，标点符号不占格。) （注意：短文中不得出现考生的姓名、校名及其它相关信息，否则不予评分。） Use the following points as a reference. （以下问题仅供参考） Who is the hero in your eyes? Why do you think he/she is the hero in your eyes? (Give one or two reasons.) What have you learned from him/her? （注意：短文中不得出现任何人名、校名及其它相关信息，否则不予评分。） 黄浦区2011~2012年第二学期初三年级学业质量调研 英语学科试卷 录音文字稿 黄浦区2011学年度第二学期期中基础学业测评，初三英语试卷，",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2013-奉贤-writing",
+      "title": "2013 上海奉贤二模作文",
+      "year": 2013,
+      "district": "奉贤",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": ": (共20分) 99. Write at least 60 words according to the given situation (根据所给情景写一封不少于60词的短文，标点符号不占格。) Nowadays many students are busy with their study. They seldom help their parents with housework .What do you think of it? Try to show your opinions and tell your own experience. （现在，许多学生忙于学习而很少帮助家长做家务，你是怎么看待这种现象的，请给出自己的观点及自己的经历。） 奉贤区2012~2013年第二学期初三年级学业质量调研 英语学科试卷 英语录音材料及",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2013-宝山-writing",
+      "title": "2013 上海宝山二模作文",
+      "year": 2013,
+      "district": "宝山",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "(共20分) 99. Write at least 60 words about the topic “What’s Your View on Setting off Firecrackers?”. （以“你对燃放爆竹的看法”为题写一篇不少于60个词的短文，标点符号不占格。) Use the following points as a reference. （以下问题仅供参考） 1) Do you usually set off firecrackers during the Spring Festival? What about last Spring Festival? 2) How do you like this Chinese traditional custom? 3) Do you think it good or not? Why or why not? （注意：短文中不得出现任何人名、校名及其它相关信息，否则不予评分。） 宝山、嘉定区2012~2013年第二学期初三年级学业质量调研 英语学科试卷听力材料与答案",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2013-崇明-writing",
+      "title": "2013 上海崇明二模作文",
+      "year": 2013,
+      "district": "崇明",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": ":（共20分） 99. Write a passage in at least 60 words according to the given situation (根据所给情景写一篇不少于60词的短文) Suppose your class is having a discussion about the topic “What kind of school activities do you like? ”. Please write a passage about your opinion on the topic and give reasons.（假如你的班级在开展一场关于“你喜欢怎样的学校活动？”的讨论，请写出你的想法和理由。） （注意：短文中不得出现任何人名、校名及其它相关信息，否则不予评分。） [来源:学科网] 崇明县2012~2013年第二学期初三年级学业质量调研 英语学科试卷 听力文字及",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2013-徐汇-writing",
+      "title": "2013 上海徐汇二模作文",
+      "year": 2013,
+      "district": "徐汇",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "VII. Writing: （20分） 99. Mr. Jones introduced Lin some school rules on the first day when Lin arrived at the new school in New York. Lin found quite a few differences about Dos and Don’ts between Chinese school rules and American school rules. 在纽约新学校上学的第一天， Jones先生给Lin介绍了学校的一些校规。Lin在日记里描述了一些中美学校校规的对比， 并记叙了他/她的感受。 假设你是Lin， 写一篇不少于60个字的日记。 Suppose you were Lin, write at least 60 words to describe the differences between the Chinese school rules and the American school rules and how you felt about the differences in the diary. （注意：短文中不得出现任何人名、校名及其它相关信息，否则不予评分。） Here are the school rules introduced to Lin: School Rules Always call your teacher with Mr. or Ms. Don’t be late for your class. Raise your hand when asking a question. Be an active thinker in the classroom. Do your homework on your own. No cheating in exams. [来源:学科网] Ask your teachers for help if you have difficulty in learning. They will be glad to help you out. Remember to wear your uniform to school every day and keep your uniform clean and tidy. Use kind words when you talk with others and learn to share and take turns when you work and play. 徐汇区2012~2013年第二学期初三年级学业质量调研 英语学科试卷答案与",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2013-松江-writing",
+      "title": "2013 上海松江二模作文",
+      "year": 2013,
+      "district": "松江",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": ": (共20分) 99. Write a passage in at least 60 words according to the given situation (根据所给情景写一段不少于60词的短文，标点符号不占格。) In March, 2013, it was reported that thousands of dead pigs were seen floating on the Huangpu River in Shanghai. What do you think of it? How should we develop our good habits to protect the environment? (今年3月，上海黄浦江上漂浮着许多死猪。你是如何看待这种现象的？我们应该如何养成习惯去保护环境？至少举1-2个例子) （注意：文中不得出现任何姓名、校名及其它相关信息，否则不予评分。） 松江区2012~2013年第二学期初三年级学业质量调研 英语学科试卷 2013.4 （满分150分，完卷时间100分钟）",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2013-浦东-writing",
+      "title": "2013 上海浦东二模作文",
+      "year": 2013,
+      "district": "浦东",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": ": (共20分) 99. Write at least 60 words about the given situation. (请根据下列情景写一篇不少于60个词的短文，标点符号不占格。) Labor Day is coming. We’ll have three days off. Some are going travelling, others will stay at home doing some housework. Please make a holiday plan for your family and give some reasons for your plan. (劳动节即将来临，我们将放三天假。有人打算去旅游，有人准备待在家里做家务。请为你的家庭制定一份节日计划，并谈谈你的理由。) （注意：文中不得出现考生的姓名、校名及其它相关信息，否则不予评分。） [来源:学科网ZXXK] 浦东新区2012~2013年第二学期初三年级学业质量调研 英语学科试卷 听力文字及答案",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2013-虹口-writing",
+      "title": "2013 上海虹口二模作文",
+      "year": 2013,
+      "district": "虹口",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "(共20分) 99. Write a passage of at least 60 words on the topic “I want to recommend a good book to …”. ( 以“ 我想要给……推荐一本好书”为题写一篇不少于60个词的短文，标点符号不占格。) （ 注意：短文中不得出现考生的姓名、校名及其他相关信息，否则不予评分。） Some words for reference （仅供参考） Who…? What…? Why…? ______ ______ ______ ______ ______ ______ ______ ______ ______ ______ ______ _____ ______ ______ ______ ______ ______ ______ ______ ______ ______ ______ ______ _____ ______ ______ ______ ______ ______ ______ ______ ______ ______ ______ ______ _____ ______ ______ ______ ______ ______ ______ ______ ______ ______ ______ ______ _____ ______ ______ ______ ______ ______ ______ ______ ______ ______ ______ ______ _____ ______ ______ ______ ______ ______ ______ ______ ______ ______ ______ ______ _____ 虹口区2012~2013年第二学期初三年级学业质量调研 英语学科试卷",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2013-金山-writing",
+      "title": "2013 上海金山二模作文",
+      "year": 2013,
+      "district": "金山",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": ": (共20分) 99. Write at least 60 words about the topic “ A success experience in my memory” (以“我记忆中的一次成功经历”为题，写一篇不少于60词的短文，标点符号不计入在内。) Use the following points as reference. (以下问题仅供参考) When did you have your success experience? How did it happen? (Please write in detail.) What have you learnt from the experience? （注意：短文中不得出现任何人名、校名及其它相关信息，否则不予评分。） 金山区2012~2013年第二学期初三年级学业质量调研 英语学科试卷 听力部分及",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2013-长宁-writing",
+      "title": "2013 上海长宁二模作文",
+      "year": 2013,
+      "district": "长宁",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "：（共20分） 99．Write a passage of at least 60 words on the topic “My favourite ________”（以“我最喜欢的________”为题写一篇不少于60个词的短文，标点符号不占格。） What’s your favourite…? Why do you like/love …? The following is only for reference.（请自行确定一个话题，并阐述理由。以下内容仅供参考。） 长宁区2012~2013年第二学期初三年级学业质量调研 英语学科试卷 听力文字及答案",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2013-静安-writing",
+      "title": "2013 上海静安二模作文",
+      "year": 2013,
+      "district": "静安",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": ": (共20分) [来源:Zxxk.Com] 99. Write a short passage of at least 60 words about the topic “To be self-confident!”（以“自信!”为题写一篇不少于60个词的短文。标点符号不占格。) （注意：文中不得出现考生的姓名、校名及其它相关信息，否则不予评分。） Situation: 最近，你们班上将要组织一场“To be self-confident!” 为题的主题班会，请根据以下提示写一篇短文。 提示供参考：1. 简述你对“自信”的理解。 2. 举例说明你的观点。 3. 适当进行评论。 [来源:学科网] 静安、青浦区2012~2013年第二学期初三年级学业质量调研 英语学科试卷",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2013-黄浦-writing",
+      "title": "2013 上海黄浦二模作文",
+      "year": 2013,
+      "district": "黄浦",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "VII. Writing. (作文) （20分） 99. Write a short passage at least 60 words according to the given information. (根据所给信息写一篇不少于60个词的短文，标点符号不占格。) （注意：文中不得出现任何姓名、校名及其它相关信息，否则不予评分。） Last month thousands of dead pigs appeared on the Huang Pu River. People were very upset about the event. What do you think? (上个月黄浦江水域出现大量死猪。人们对此事很焦虑。请你就这个事情谈谈你的看法。) __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________(60) _________ _________ _________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ 黄浦区2012~2013年第二学期初三年级学业质量调研 英语学科试卷答案",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2014-奉贤-writing",
+      "title": "2014 上海奉贤二模作文",
+      "year": 2014,
+      "district": "奉贤",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "(共20分) 94. Write a passage on “A letter to my headmaster/headmistress ” in at least 60 words according to the given situation (以“给校长的一封信”为题，写一篇不少于60词的文章。) 提示：初中学习阶段肯定给你留下许多的回忆。有甜美，有苦涩，这些都是宝贵的人生经历。在即将告别你的初中生活，请你以Susan的名义给你的校长写一封信，分享一件让你最难忘的校园活动以及提出一个你最希望学校改进的方面。 （注意：短文中不得出现任何人名、校名及其它相关信息，否则不予评分。） 奉贤区2013~2014年第二学期初三年级学业质量调研 英语学科试卷听力文字和",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2014-宝山-writing",
+      "title": "2014 上海宝山二模作文",
+      "year": 2014,
+      "district": "宝山",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "VII. Writing: （20分） 94. Write at least 60 words about the topic “My opinion on copying others’ homework”(以“我对抄袭他们人作业的看法”为题写一篇不少于60个词的短文，标点符号不占格。) 注意： 1) 短文必须包含下列三大点； 2) 第一至第三要点必须包含1--2个列表中所给词语，但第三点要适当发挥； 3) 短文标题与开头已为你写好，不计入总词数。 The main reason (主要原因) a large amount of homework, difficult to work out, lazy 2) The harms (危害) a bad habit, be against the rules of the school 3) Your views (你的看法) be honest, work hard （注意：短文中不得出现考生的姓名、校名及其他相关信息，否则不予评分。） My opinion on copying other’s homework It is known to us all that some students copy other’s homework..... 宝山、嘉定区2013~2014年第二学期初三年级学业质量调研 英语学科试卷",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2014-崇明-writing",
+      "title": "2014 上海崇明二模作文",
+      "year": 2014,
+      "district": "崇明",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": ": (20分) 94. Write at least 60 words about the topic \"Sharing\". (以“分享”为题,写一篇不少于60个词的短文，标点符号不占格。) （注意：短文中不得出现考生的姓名、校名及其他相关信息，否则不予评分。） Use the following points for a reference. (以下问题仅供参考) ● What do you think of \"sharing\"? ● What do / did you share with your friends, your parents or ...? ● Are there any advantages of \"sharing\"? What are they? 崇明县2013~2014年第二学期初三年级学业质量调研 英语学科试卷",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2014-徐汇-writing",
+      "title": "2014 上海徐汇二模作文",
+      "year": 2014,
+      "district": "徐汇",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "VII. Writing: （20分） 94.请仔细阅读以下关于初三学生睡眠时间调查结果的数据图表，以图表为依据简单分析初三学生的日常作息情况，谈谈你的感想，并就如何安排好复习迎考提些建议， 写一篇不少于60个词的短文。（标点符号不占格） Write a passage based on the given graphic with at least 60 words （注意：短文中不得出现任何人名、校名及其它相关信息，否则不予评分。） 徐汇区2013~2014年第二学期初三年级学业质量调研 英语学科试卷答案与",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2014-普陀-writing",
+      "title": "2014 上海普陀二模作文",
+      "year": 2014,
+      "district": "普陀",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": ": (20分) 94. Write a composition in at least 60 words according to the given situation. (根据所给情景写一篇不少于60词的短文) Suppose your school newspaper is doing a survey on the topic \"The thing I'd like to do most after the entrance examination\". Please give your reply and reasons. (假设你们校报在做—个调查，调查主题是“中考后你最想做的一件事”，请给出你的回答，并说明理由。) （注意：短文中不得出现考生的姓名、校名及其他相关信息，否则不予评分。） 杨浦区2013~2014年第二学期初三年级学业质量调研 英语学科试卷 英语听力录音朗读稿 2013学年度第二学期普陀区初三质量调研英语试卷，",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2014-杨浦-writing",
+      "title": "2014 上海杨浦二模作文",
+      "year": 2014,
+      "district": "杨浦",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": ": (20分) 99. Write a passage of at least 60 words on the topic “I want to volunteer in/at_________”.以“我想在________担任志愿者”为题,写一篇不少于60个词的短文，标点符号不占格。) （ 注意：短文中不得出现考生的姓名、校名及其他相关信息，否则不予评分。） Questions for reference （以下问题仅供参考） Where do you want to volunteer? Why do you want to be a volunteer there? Do you have any problem with volunteering? 杨浦区2013~2014年第二学期初三年级学业质量调研 英语学科试卷",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2014-松江-writing",
+      "title": "2014 上海松江二模作文",
+      "year": 2014,
+      "district": "松江",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "(共20分) 94. Write at least 60 words about the topic “How can I get along well with my ______”. (以“如何与 _____________(老师/同学/家人等）友好相处”为题，写一篇不少于60个词的短文，标点符号不占格。) (注意：短文中不得出现考生的姓名、校名及其它相关信息，否则不予评分。) Phrases for reference： (以下短语仅供参考) talk with share ideas care for give a helping hand learn from show respect to … … 松江区2013~2014年第二学期初三年级学业质量调研 英语学科试卷 英语听力与",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2014-浦东-writing",
+      "title": "2014 上海浦东二模作文",
+      "year": 2014,
+      "district": "浦东",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "VII. Writing. (作文) (共20分)[来源:Z*xx*k.Com] 94. Write at least 60 words about the topic “I don’t want to lose________” (以“我不想失去……”为题写一篇不少于60个词的短文，标点符号不占格。) 提示： 许多初三的学生忙于学习，可能没有时间去留意身边的事物，但在生活中总有某样东西你不想失去，是什么呢？为什么？ Words or phrases for reference（以下单词或短语仅供参考） precious be helpful to worth care for （注意：文中不得出现任何姓名、校名及其它相关信息，否则不予评分。） 浦东新区2013~2014年第二学期初三年级学业质量调研 英语学科试卷听力录音稿",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2014-长宁-writing",
+      "title": "2014 上海长宁二模作文",
+      "year": 2014,
+      "district": "长宁",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": ": (20分) 94. Write a passage of at least 60 words on the topic \"A problem I've solved\". (以“我解决了这个问题”为题,写一篇不少于60个词的短文，标点符号不占格。) （注意：短文中不得出现考生的姓名、校名及其他相关信息，否则不予评分。） 提示：你可以根据以下问题讲述自己如何解决在学习、生活中遇到的一个问题。 Use the following points as a reference. 1. What was the problem? 2. How did you solve it? 3. What have you learned? 长宁区2013~2014年第二学期初三年级学业质量调研 英语学科试卷",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2014-闵行-writing",
+      "title": "2014 上海闵行二模作文",
+      "year": 2014,
+      "district": "闵行",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "（共20分) 94. Writing a letter in at least 60 words according to the given situation. (根据所给情景写一封不少于60词的信) Suppose you are Mary. You have learned from Wenhui Daily that volunteers for caring for the elderly are needed. Please write a letter and tell them you would like to be one of them.(加入你是Mary，你从文汇报纸上看到一则有关照顾老年人志愿者的招聘启事，请你写一封剪短的应聘信，介绍自己的情况，并表示愿意并且能够胜任这份志愿者的工作。信的开头和结尾已给出。) (注意：短文中不得出现任何人名，校名及其其他相关信息，否则不予评分) Dear Sir/ Madam, I have learned from your newspaper that volunteers for caring for the elderly are needed. _______ ________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________ Best wishes Yours Sincerely Mary",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2014-静安-writing",
+      "title": "2014 上海静安二模作文",
+      "year": 2014,
+      "district": "静安",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": ": (共20分) 94. Write a passage of at least 60 words about the topic “Online shopping is changing the way of our life.”（请以“网上购物正在改变我们的生活方式”为题写一篇不少于60个词的短文，标点符号不占格。） (注意：短文中不得出现考生的姓名、校名及其他相关信息，否则不予评分。) Use the following as a reference (以下内容供参考) What’s your view on online shopping? What are its advantages and disadvantages? Please give one or two suggestions to your friends if they love online shopping. 静安、青浦区2013~2014年第二学期初三年级学业质量调研 英语学科试卷",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2014-黄浦-writing",
+      "title": "2014 上海黄浦二模作文",
+      "year": 2014,
+      "district": "黄浦",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": ": (共20分) 94．Write at least 60 words with the topic “Growing Up” 请你以“成长”为题，写一篇不少于60个词的短文，标点符号不占格。) 提示：在每个人的成长过程中，有些因素对人的成长具有重要的作用。如，一桩事、一件物、一个人、一段经历、一次体验……。请你就其中的一个进行描述，与大家分享。 要求：内容切题、语句通顺、意思连贯、字迹清楚。 （注意：短文中不得出现考生的姓名、校名及其它相关信息，否则不予评分。） A. with a smile B. discovered C. interview D. advice E. saw A. quietly B. instead of C. station D. situation E. suggested",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2015-奉贤-writing",
+      "title": "2015 上海奉贤二模作文",
+      "year": 2015,
+      "district": "奉贤",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "：（共20分） 94. Writing at least 60 words on the topic “Better habits, Better life”. (请你以“培养良好习惯，打造美好生活”为题，写一篇不少于60个词的短文，标点符号不占格)。 （注意：短文中不得出现任何人名、校名及其它相关信息，否则不予评分。） The following questions are for your reference(以下信息仅供参考)： What bad habits do you have in your life? How do they affect(影响) your life? How will you change your bad habits? 奉贤区2014~2015年第二学期初三年级学业质量调研 英语学科试卷",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2015-崇明-writing",
+      "title": "2015 上海崇明二模作文",
+      "year": 2015,
+      "district": "崇明",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": ": (20分) 94. Write an email of at least 60 words according to the situation given below. (请根据所给情景 提示，写一封不少于60个词的邮件，标点符号不占格。) Suppose you are Jenny. Your friend David is upset about a coming exam. He is not sure whether he should find a tutor(家教)or not．What do you think? Write aIl email to give him your opinion． 你叫Jenny,你的朋友David(六年级学生)即将面临期末考试，近日，他就是否要请家教来帮他复习迎考发邮件向你求教。请给David回复一封电子邮件，结合你自身的学习经历就是否请家教表达你的观点及理由。 (注意：文中不得出现任何姓名、校名及其它相关信息，否则不予评分。) 崇明县2014~2015年第二学期初三年级学业质量调研 英语学科试卷",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2015-徐汇-writing",
+      "title": "2015 上海徐汇二模作文",
+      "year": 2015,
+      "district": "徐汇",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "VII. Writing: （20分） Write a passage in at least 60 words on the topic “I want to say to myself ‘________’ ”. 。（以“我想对自己说‘_______’”为题写一篇不少于60个字的短文，标点符号不占格） （注意：短文中不得出现任何人名、校名及其它相关信息，否则不予评分。） Questions for reference: (以下仅供参考) What would you like to say to yourself? Why do you want to say these words to yourself? What do those words or sentences mean to you? A. details B. yearly C. around D. abroad E. locations A. for example B. open C. results D. above all E. driving",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2015-杨浦-writing",
+      "title": "2015 上海杨浦二模作文",
+      "year": 2015,
+      "district": "杨浦",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": ": (共20分) 94. In 60 to 120 words, write about the topic “Meeting a special friend for the first time”. ( 以“与一个特殊朋友的第一次相见”为题，写一篇60-120个词的短文，标点符号不占格) The following are for reference only. （以下问题仅供参考） When and where did you meet the friend for the first time? Why do you think the friend is special? What made your first meeting so impressive/unforgettable? How are you getting along with each other? （ 注意：短文中不得出现考生真实的姓名、校名及其他相关信息，否则不予评分。） 杨浦区2014~2015年第二学期初三年级学业质量调研 英语学科试卷听力文字及答案",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2015-松江-writing",
+      "title": "2015 上海松江二模作文",
+      "year": 2015,
+      "district": "松江",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "(共20分) 94. Suppose you are Doctor Bob, please write a reply to Alice. (假定你是Bob医生, 请根据左列Alice的来信写一封至少60词的回信) （注意：短文中不得出现考生的中文姓名及其他相关信息，否则不予评分。） 松江区2014~2015年第二学期初三年级学业质量调研 英语学科试卷 （听力文字及",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2015-浦东-writing",
+      "title": "2015 上海浦东二模作文",
+      "year": 2015,
+      "district": "浦东",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": ": (20分) 94. Write at least 60 words about the topic \"A lesson from an argument\". (以“一次争论的感 悟”为题，写一篇不少于60个词的短文，标点符号不占格) 在你的成长过程中，你与谁有过争论? 你们是为何事而争论?你从中学到了什么? (注意：短文中不得出现任何真实的人名、校名及其它相关信息，否则不予评分。) The following sentence patterns are for reference only．(以下句型仅供参考) ● I argued with … ／I had an argument with… ● Once…／One day, … ● I have 1earnt … 浦东新区2014~2015年第二学期初三年级学业质量调研 英语学科试卷",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2015-虹口-writing",
+      "title": "2015 上海虹口二模作文",
+      "year": 2015,
+      "district": "虹口",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": ": (20分) 94. Write a passage of at least 60 words about the topic \"A Ten-minute Break\". (以十分钟的休息时间”为题写一篇不少于60个词的短文，标点符号不占格。) 提示：进人初三以来，同学们倍感学习任务重，压力大。许多同学争分夺秒甚至连课间十分钟的休息时间也在看书做题。请以A Ten-minute Break为题，描写这一现象(包括你自己的做法)并针对这一现象谈谈你的看法。 (注意：缉享中否，得出孕任何人名、棼名孕其它相关信息，否则不予评分。) 虹口区2014~2015年第二学期初三年级学业质量调研 英语学科试卷",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2015-金山-writing",
+      "title": "2015 上海金山二模作文",
+      "year": 2015,
+      "district": "金山",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": ": (20分) 94. Please write at least 60 words about the topic \"One change I dream in my family\". (请以“我希望家里的一个变化”为题，写一篇不少于60个字的短文。要求内容切题、语言地道、表达流畅。) Suggested questions: (以下问题仅供参考) ● What is the change? ● Why do you dream the change? ● What will the change probably bring you ? (注意：文中不得出现任何姓名、校名及其它相关信息，否则不予评分。) 金山区2014~2015年第二学期初三年级学业质量调研 英语学科试卷",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2015-长宁-writing",
+      "title": "2015 上海长宁二模作文",
+      "year": 2015,
+      "district": "长宁",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": ": (共20分) 94. Write a passage of at least 60 words about the topic “A Good Habit of Mine”（请以“我的一个好习惯”为题写一篇不少于60个词的短文，标点符号不占格。） （注意：短文中不得出现考生的姓名、校名及其他相关信息，否则不予评分。） Use the following as necessary points: What’s your good habit? (Describe it with an example) Why do you think it is good? How will you keep it in your future life? 长宁区2014~2015年第二学期初三年级学业质量调研 英语学科试卷听力文字及",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2015-静安-writing",
+      "title": "2015 上海静安二模作文",
+      "year": 2015,
+      "district": "静安",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": ": (20分) 94. Write a passage of at least 60 words about the topic \"Encouragement brings me power.\" (根 据所给情景，请以“鼓励带给我力量”为题写—篇不少于60个词的短文，标点符号不占格。) (注意：短文中不得出现考生的姓名、校名及其他相关信息，否则不予评分。) Situation: In our daily life, we need lots of encouragement from our teachers, parents or friends. Please use one or two examples to show us your opinion on this topic and give your reason(s). (日常生活中我们需要来自多方的鼓励。请你举1-2个例子阐述你的观点，并说明理由。) The following words and phrases are for your reference only. (下列词语仅供参考) difficulties deal with disappointed achievements manage powerful 静安区、青浦区2014~2015年第二学期初三年级学业质量调研 英语学科试卷",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2015-黄浦-writing",
+      "title": "2015 上海黄浦二模作文",
+      "year": 2015,
+      "district": "黄浦",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "(共20分) 94. Write a passage of at least 60 words on the topic “Our School Students ‘After-class Reading’” according to the information given. ( 阅读以下信息，并以“我校学生的课外阅读”为题写一篇不少于60个词的短文，标点符号不占格。) 1995年联合国科教文组织宣布每年的4月23日为“世界读书日”。在第20个世界读书日来临之际，我校分别对四个年级学生的课外阅读情况进行了调查，下面的图表（chart）显示了学校的调查结果。 要求： 简要描述图中的信息，分析产生这种结果的原因，提出你的额想法和建议； 文章的题目和开头已给出，不计入词数； 短文中不得出现考生的姓名、校名及其他相关信息，否则不予评分。 Our School Students’ After-class Reading As is shown in the chart,... SUMMER SKIN CARE —RIGHT OR WRONG?",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2016-宝山-writing",
+      "title": "2016 上海宝山二模作文",
+      "year": 2016,
+      "district": "宝山",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "(共20分) 94. Write at least 60 words about the topic “Group Work”.（以“小组活动”为题写一篇不少于60个词的短文，标点符号不占格。） 小组活动（group work）是我们英语课堂中的一个重要学习方式。请你根据以下图示，写一篇短文，介绍我们应如何在课堂中开展小组活动，并谈谈这种学习方式的好处。注意： 文中必须包含所有要点； （ 注意：短文中不得出现考生的姓名、校名及其他相关信息，否则不予评分。） 宝山、嘉定区2015-2016年第二学期教学质量调研（二模）测试卷 九年级英语",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2016-崇明-writing",
+      "title": "2016 上海崇明二模作文",
+      "year": 2016,
+      "district": "崇明",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "(共20分) 94. Write a short passage of at least 60 words according to the information below. (根据下面的信息，写一篇不少于60个词的短文，标点符号不占格。) (信息提示：在学校或班级里，你会时常听到或者看到一些不和谐的声音和事情。面对这些，你是怎样想的？又如何去做来传递你的正能量？请以一件事或一个现象为例，来谈谈你的想法、做法和建议。) （ 注意：短文中不得出现任何人名、校名及其他相关信息，否则不予评分。） The following is for reference only. （以下提示仅供参考） What to do … How to influence/advise others… In my opinion, … I hope that… 崇明县2015-2016年第二学期教学质量调研（二模）测试卷 九年级英语 (",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2016-徐汇-writing",
+      "title": "2016 上海徐汇二模作文",
+      "year": 2016,
+      "district": "徐汇",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "VII. Writing: (20分) 94. 假设你参加了一个暑假去偏远地区(a remote area)和小朋友们生活一段时间的志愿者项目。出发之前你希望得到更多一些关于项目的信息。你列了一张表，请决定你最希望了解的1至2个关键问题，然后写一封信给组织者Mr. Prince, 请求他的帮助（信件格式已给，标点符号不占格，至少60个字。） （注意：短文中不得出现任何人名、校名及其他相关信息，否则不予评分。） INCLUDEPICTURE \"../AppData/Local/Temp/ksohtml/wps2CEC.tmp.png\" \\* MERGEFORMAT 徐汇区2015-2016年第二学期教学质量调研（二模）测试卷 九年级英语",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2016-普陀-writing",
+      "title": "2016 上海普陀二模作文",
+      "year": 2016,
+      "district": "普陀",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "VII. Writing(20%) 94. Complete the title “ I learned to be/do after the failure” and write a composition about it in at least 60 words. 普陀区2015-2016年第二学期教学质量调研（二模）测试卷 九年级英语",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2016-杨浦-writing",
+      "title": "2016 上海杨浦二模作文",
+      "year": 2016,
+      "district": "杨浦",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "：（共20分） 94. In 60 to 120 words, write about the topic \"What makes a good neighbour”．（以‘‘怎样才是个好邻居”为题，写一篇60-120个词的短文，标点符号不占格） （注意：短文中不得出现考生真实的姓名、校名及其他相关信息，否则不予评分。） 杨浦区2015-2016年第二学期教学质量调研（二模）测试卷 九年级英语 英语学科听力文字及答案",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2016-松江-writing",
+      "title": "2016 上海松江二模作文",
+      "year": 2016,
+      "district": "松江",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "(共20分) 现今越来越多的人开始参与各种体育锻炼。有的加入跑团，有的跳广场舞，有的甚至报名参加马拉松比赛。请结合自己的实际情况谈谈你经常参与的运动项目，以及运动给你带来的好处。 （注意：1、短文字数不少于60个词，标点符号不占格。 2、短文中不得出现任何人名、校名及其它相关信息，否则不予评分。） The following is for reference only (以下表达仅供参考) take",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2016-浦东-writing",
+      "title": "2016 上海浦东二模作文",
+      "year": 2016,
+      "district": "浦东",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "（共20分） 94. Write at least 60 words on the topic “ A person ___________me before” （以“曾经_________ 过我的人”为题，写一篇不少于60个词的短文，标点符号不占格） 很多人曾经出现在你的成长旅程中，他们或帮助你，或鼓励你，或爱护你，…… 请你描述他（她）是怎样的人，以及发生在你和他（她）之间的故事，并谈谈他（她）对你的影响。 （注意：短文中不得出现任何真实人名、校名及其它相关信息，否则不予评分。） 浦东新区2015-2016年第二学期教学质量调研（二模）测试卷 九年级英语 听力文字、",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2016-长宁-writing",
+      "title": "2016 上海长宁二模作文",
+      "year": 2016,
+      "district": "长宁",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "VII. Writing (写作) （共20分） 94. Write at least 60 words on the topic of “Students should not work too hard”. (针对图片所揭示的现象，以“学生不应太辛苦”为题，写一篇不少于60字的文章。) 长宁、金山区2015-2016年第二学期教学质量调研（二模）测试卷 九年级英语 听力部分及",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2017-奉贤-writing",
+      "title": "2017 上海奉贤二模作文",
+      "year": 2017,
+      "district": "奉贤",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "Ⅶ.Writing( 作文) （共 20 分） 94. Writing at least 60 words on the topic“______ make me a better person” ( 以“_____ 成就更好的自己” 为题，写一篇不少于 60 个词的短文，标点符号不占格) （注意：短文中不得出现任何人名、校名及其它相关信息，否则不予评分）",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2017-宝山-writing",
+      "title": "2017 上海宝山二模作文",
+      "year": 2017,
+      "district": "宝山",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "（共20分） 94. Shanghai Students’ Post is asking for the comments on“New Century English”textbook. Write a passage of at least 60 words for Shanghai Students’ Post（上海学生英文报社向中学生征集对现行中学英语教材《新世纪英语》的评价和建议。 请你根据以下内容给该报纸写一篇不少于60个词小短文。标点符号不占格。） Use the following points as a guide：",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2017-徐汇-writing",
+      "title": "2017 上海徐汇二模作文",
+      "year": 2017,
+      "district": "徐汇",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "VII. Writing: （20分） 94. Write a passage on the topic “A party for/to ________” in at least 60 words. 请设计一个主题派对，并以“_________ 派对”为题介绍派对主题、对象及活动内容等，写一篇至少60个字的短文，（标点符号不占格） （注意：短文中不得出现任何人名、校名及其它相关信息，否则不予评分。） The following is for reference only.（以下内容仅供参考） organize it is to… invite…to… be able to… 2016-2017学年第二学期徐汇区学习能力诊断卷 初三英语学科 2017.4 （满分150分，考试时间100分钟）",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2017-普陀-writing",
+      "title": "2017 上海普陀二模作文",
+      "year": 2017,
+      "district": "普陀",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "（共20分） 94. Write at least 60 words on the topic “Our last class meeting in junior high school”. （以“我们初中最后一次班会”为题，写一篇不少于60个词的短文，标点符号不占格） 情景提示： 同学们即将初中毕业，班级将开展最后一次班会活动，对于这次班会的主题内容和活动形式，班主任想听取大家的意见。请谈谈你的想法，并给出这样设计的理由。",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2017-杨浦-writing",
+      "title": "2017 上海杨浦二模作文",
+      "year": 2017,
+      "district": "杨浦",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "（共20分） 94. In 60 to 120 words, write about the topic “things we can do make our city a better place”. （以“我们可以做些什么让我们的城市更美好”为题，写一篇60-120个词的短文，标点符号不占格） （注意：短文中不得出现考生真实的姓名、校名及其他相关信息，否则不予评分。） The following is for reference only（下列单词仅供参考） community society volunteer law rules environment A. returned B. brave C. proud of D. cross E. across A. promise B. named C. directly D. progress E. social",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2017-松江-writing",
+      "title": "2017 上海松江二模作文",
+      "year": 2017,
+      "district": "松江",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "（共20分） 94. Write at least 60 words on the topic “Something I want to do for my family”. （以“我想为家人做件事”为题写一篇不少于60词的短文，标点符号不占格。） The following questions are only for reference: 1. What do you want to do for your family? 2. Why do you want to do it? 3. How do you plan to do it? 2017年松江区初中毕业生学业模拟考试 初三英语",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2017-虹口-writing",
+      "title": "2017 上海虹口二模作文",
+      "year": 2017,
+      "district": "虹口",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "（共20分） 94. Write a passage of at least 60 words on the topic “My joy of living”（以“我的生活乐趣”为题，写一篇不少于60个词的短文，标点符号不占格） 生活有艰辛，也有乐趣，你的生活乐趣是什么？你为何觉得这是你的乐趣所在？你是怎么 想的？怎么做的？ (注意：短文中不得出现考生的姓名、校名及其他栩关倍息，否则不予评分。） My joy of living ____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2017-长宁-writing",
+      "title": "2017 上海长宁二模作文",
+      "year": 2017,
+      "district": "长宁",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "VII. Writing (共20 分） 94. Write at least 60 words on the topic “A story about_________”.（以“一个关于……的故事”为题，写一篇不少于60 词的短文，标点符号不占格。） (注意：1.在答题上将题目补充完整。 2.短文中不得出现任何姓名、校名及其它相关信息，否则不予评分。） 2017.4 长宁等区中考英语质量抽查试卷",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2017-闵行-writing",
+      "title": "2017 上海闵行二模作文",
+      "year": 2017,
+      "district": "闵行",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "（20分） 94. Write a letter to your American pen-pal Tony in at least 60 words according to the given situation（根据所给情景给你的美国笔友Tony写一封不少于60词的回答。要求内容适切，意思连贯，标点符号不占格。信的开头、结尾和署名已给，不计入总字数。） 假设你是小明（Xiao Ming），是美国中学生Tony的笔友，你收到了他的来信。请给Tony写一封回信，回答他的问题，介绍上海良好的公共交通服务。 （注意：文中不得出现考生的姓名、校名及其它相关信息，否则不予评分。） 1-6 FBADEC 7-14 DCCABDBD 15-20 TTFFTT 21. the seaside 22. every evening 23. sitting in 24. an hour 25. go home 26-30 BBCAB 31-35 ADCBD 36-40 BCDBB 41-45 BDCAD 46-49 DCEB 50-53 BDCA 54. matches 55. nine 56. itself 57. inventor 58. widen 59. mix 60. easily 61. dislike 62. didn’t cost 63. has , she 64. went, without 65. Why , did 66. be planted 67. if/ whether , had 68. It would be possible for you to visit my company next time. 69-74 BADDBC 75-80 BADCAD 81. busiest 82. map 83. all 84. reduced 85. Outside 86. Walk 87. train 88. Yes , he is . 89. In 1994 90. He visited 3cities 91. The team coached by (former National Basketball Association star) Yao Ming 92. He encouraged other countries to move forward in the fight against climate charge . 93. He is well-educated (intelligent , wise , friendly ,etc) Because he learned a lot and established his goals in life and became a successful man. Besides , being a leader , he encouraged other countries to move forward in the fighting against climate change ----(any reasonable answer is ok )",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2017-静安-writing",
+      "title": "2017 上海静安二模作文",
+      "year": 2017,
+      "district": "静安",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "VII. Writing.(作文） Write at least 60words about the topic “______,a new way of life!”(请以 “______，一种崭新的生活方式”为题，从以下图片中选择其中一张图片，举例表述你的思考和理由，写一篇不少于60字的短文，标点符号不占格） Weixin Mobike Points for reference: Which way do you choose to write about ? Why do you think it a new way of life? Could you give some suggestions in order to make better use of it?",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2017-黄浦-writing",
+      "title": "2017 上海黄浦二模作文",
+      "year": 2017,
+      "district": "黄浦",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": ": （共20分） 94. In 60 to 120 words, write about the topic “… is a good habit”. （ 以“……是好习惯”为题，写一篇60-120个词的短文，标点符号不占格） 一个好的习惯会让我们终生受益。什么是好习惯？请分享你的一个好习惯，说说你是怎么养成的，它给你带来哪些好处。请结合生活实际，谈谈你的体验或想法。 （ 注意：短文中不得出现考生真实的姓名、校名及其他相关信息，否则不予评分。） A. youngest B. professional C. likely D. grows up E. won A. free B. meet C. receive D. also E. improving Did you know Aztecs? The Aztecs were the Native Americans who lived in Central Mexico from the early 1300s to the early 1500s. The Aztecs were powerful and founded the capital city of Tenochtitlan, where Mexico City is today. The Spanish conqueror Cortes arrived in 1519. After many battles, he conquered the Aztecs. Spain began to rule Mexico and named it New Spain. eq \\o\\ac(○,1)negative adj. 消极的，负面的 eq \\o\\ac(○,2)text v. 发文字信息 eq \\o\\ac(○,3)distract v. 使分心，转移（注意力） eq \\o\\ac(○,4)eccentric adj. 古怪的",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2018-奉贤-writing",
+      "title": "2018 上海奉贤二模作文",
+      "year": 2018,
+      "district": "奉贤",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "（共20分） 94. Write at least 60 words on the topic “That day, I made a/an __________”（以“那天，我(做)了一（个）___________” 为题，写一篇不少于60个词的短文，标点符号不占格） （注意：短文中不得出现任何人名、校名及其它相关信息，否则不予评分。） 生活中的每一次体验、每一段经历都为你的成长助力。你或许交了一个新朋友、许了一个新愿望、作了一次新选择……，请分享一段你的经历，并说明这段经历是如何帮助你成长的。",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2018-宝山-writing",
+      "title": "2018 上海宝山二模作文",
+      "year": 2018,
+      "district": "宝山",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "Write a passage of at least 60 words about the topic“A New Skill I have Learned”（以“我学会的一种新技能”为题写一篇不少于60词的短文，标点符号不占格。） 生活中，我们不断地学习新本领、新技能。请简单描述你学会某一种新技能的过程，并谈谈它给你的学习或生活带来了什么变化。 短文中不得出现任何人名、校名及其他相关信息，否则不予评分 2017学年第二学期九年级期中学业质量调研测试",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2018-崇明-writing",
+      "title": "2018 上海崇明二模作文",
+      "year": 2018,
+      "district": "崇明",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "（共20分） 94. Write a passage of at least 60 words on the topic “I have grown up”. (请以“我已经长大了”为题，写一篇不少于60个词的短文，标点符号不占格。) （注意：短文中不得出现考生姓名、校名及其他相关信息，否则不予评分。） 提示：我们经过了四年的初中学习生活，或多或少在某些方面长大了、成熟了。请结合自己的1-2个经历，谈谈你在哪个方面体现出长大了、成熟了，并有何感悟。 I have grown up",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2018-徐汇-writing",
+      "title": "2018 上海徐汇二模作文",
+      "year": 2018,
+      "district": "徐汇",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": ": (共20分) You are graduating from middle school soon. Your parents will give you a gift to celebrate the important time. Write a letter with at least 60 words to your mum and dad. Tell what you want and how useful and important it is to you. The beginning part of the letter is given. 你即将初中毕业，父母准备一份礼物给你庆祝这一重要时刻。写一篇至少60词的信给你的父母。告诉他们你想要什么礼物，它对你的重要性及用处。信的开头已给。 （ 注意：短文中不得出现考生的姓名、校名及其他相关信息，否则不予评分。标点符号不占格） Dear mum and dad, Thank you for your great love for me. As to the gift, I’d like to have ______________________ ______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________ Yours truly Michelle 2017学年第二学期徐汇区学习能力诊断卷 初三英语",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2018-杨浦-writing",
+      "title": "2018 上海杨浦二模作文",
+      "year": 2018,
+      "district": "杨浦",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "(共20分) In 60 to 120 words, write a review about a hotel you stayed at. ( 根据所给提示，针对你曾经住过的宾馆，写一篇60-120个词的评论，标点符号不占格) In your review, you may include: - the name of the hotel - the price - what you liked about it - what you didn’t like about it - where you got the information about it - your recommendation（推荐） （ 注意：短文中不得出现考生真实的姓名、校名及其他相关信息，否则不予评分。） 杨浦区2017学年度第二学期初三年级学业质量调研 英语学科听力文字及答案",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2018-松江-writing",
+      "title": "2018 上海松江二模作文",
+      "year": 2018,
+      "district": "松江",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "(共20分) 94. Write at least 60 words on the topic “A personal habit I'd like to change”. （以“我想改变的一个个人习惯”为题写一篇不少于60词的短文，标点符号不占格。） （注意: 短文中不得出现任何人名、校名及其它相关信息，否则不予评分。） The following points are only for reference: ① 简述你想改变的这个个人习惯； ② 说明你改变这一习惯的理由及措施。 2018年松江区初中毕业生学业模拟考试 初三英语听力文字及",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2018-浦东-writing",
+      "title": "2018 上海浦东二模作文",
+      "year": 2018,
+      "district": "浦东",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "（共20分） Write at least 60 words on the topic “As long as I try hard,….” （以“只要我努力，……”为题，写一篇不少于60个词的短文，标点符号不占格） 作为一名初三学生，在忙碌的学习生活中也许会碰到困难，遭遇失败等，但只要你努力，困难也许会被克服、失败的事情也许会有转机……请分享你的故事，谈谈你的体会或想法。 （注意：短文中不得出现任何人名、学校及其他相关信息，否则不予评分。）",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2018-虹口-writing",
+      "title": "2018 上海虹口二模作文",
+      "year": 2018,
+      "district": "虹口",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "(共20分) Write at least 60 words on the topic “This time, let me make my own decision” (以“这次，请让我自己做主”为题写一篇不少于60个词的短文，标点符号不占格) 每个人的一生都会面临很多选择。小时候，我们多听父母的建议，现在我们要学习自己分析问题，自己拿主意。请结合自己的实际，谈谈你的经历和感受。 __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2018-金山-writing",
+      "title": "2018 上海金山二模作文",
+      "year": 2018,
+      "district": "金山",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "（共20分） 94. Write at least 60 words on the topic \"A precious photo\"（以“一张珍贵的照片”为题，写一篇不少于60个词的短文，标点符号不占格） 在我们成长的历程中，一定留下了许多珍贵的照片，那些精彩的瞬间，记录着许多美好的回忆和有趣的故事。请选择其中一张珍贵的照片，来讲一讲它背后的故事吧！ （注意：短文中不得出现考生的姓名、校名及其他相关信息，否则不予评分。）",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2018-长宁-writing",
+      "title": "2018 上海长宁二模作文",
+      "year": 2018,
+      "district": "长宁",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "(共20分) 94. Write at least 60 words about the topic “The ______ I want to recommend”(请以“我想推荐____”为题，写一篇不少于60个词的短文，标点符号不占格。) 在你的日常生活中，肯定有很多给你留下了深刻的印象，如观看过一部电影，阅读过一本书，欣赏过一个表演。请你从以上三个方面选取其中一个内容，向你的朋友作推荐，并说明推荐理由。 (注意：文中不得出现考生的姓名、校名及其他相关信息，否则不予评分。)",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2018-闵行-writing",
+      "title": "2018 上海闵行二模作文",
+      "year": 2018,
+      "district": "闵行",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "VII. Writing 94. Write an e-mail in at least 60 words according to the given situation 加入你是Sunny，你们班级将要在教室里举行一次毕业派对，班主任Susan正在征集大家的金点子。请给Susan写一封电子邮件，介绍你设计的一个或几个有意义的毕业派对活动。",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2018-青浦-writing",
+      "title": "2018 上海青浦二模作文",
+      "year": 2018,
+      "district": "青浦",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "VII. Writing (共20分) 94．Write at least 60 words about the topic “My hometown in ten years”. (以“十年后的家乡”为题，写一篇短文，不少于60词，标点符号不占格。) 提示：十年后，你希望家乡会有哪些变化？是希望她的交通更为便捷，还是希望她成为一个山清水净的现代化田园？请展开你的想象，围绕一个中心简单描述一下。 （注意：文中不得出现任何姓名、校名及其它相关信息，否则不予评分。） 青浦区2017学年九年级第二次学业质量调研测试 英语听力文字与答案 Q 2018.04 A. Listen and choose the right picture (根据你听到的内容，选出相应的图片) (6分) 1. Mary’s brother will take",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2018-静安-writing",
+      "title": "2018 上海静安二模作文",
+      "year": 2018,
+      "district": "静安",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "(共20分) 94. Write a review of a novel in 60-120 words. (从你平时看过的小说中选取一本，写一篇60-120个词的书评，标点符号不占格) You can use the following points to help you: What is the novel about? Give your opinions and your conclusion. Would you recommend this novel to others? Why or why not? （注意：短文中不得出现任何人名、学校及其它相关信息，否则不予评分。） 静安区2017学年第二学期学习质量调研 九年级英语 听力文字和",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2018-黄浦-writing",
+      "title": "2018 上海黄浦二模作文",
+      "year": 2018,
+      "district": "黄浦",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": ": （共20分） 94. In 60 to 120 words, write about the topic“... and I”. （以“我和……”为题，写一篇60-120个词的短文，标点符号不占格。） 每一个生命个体都和这个世界发生着联系，你也不例外。请分享一个你和他人、社会或自然之间的故事（事件），并谈谈自己的体验或感受。 （ 注意：短文中不得出现考生真实的姓名、校名及其他相关信息，否则不予评分。）",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2019-奉贤-writing",
+      "title": "2019 上海奉贤二模作文",
+      "year": 2019,
+      "district": "奉贤",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "（共20分） 94. Write at least 60 words on the topic “Take time to ________” （以“花时间去……”为题， 写一篇不少于60个词的短文，标点符号不占格） （注意：短文中不得出现任何人名、校名及其他相关信息，否则不予评分。） 如果你把时间花在阅读上，你就会收获知识；如果你把时间花在运动上，你就会收获强健…… 你曾经把时间花在哪里？或者愿意把时间花在哪里？请分享你的经历或计划吧！",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2019-宝山-writing",
+      "title": "2019 上海宝山二模作文",
+      "year": 2019,
+      "district": "宝山",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "(共20分) 94.Write at least 60 words on the topic “__________ gives me courage”(以“ 让我鼓起勇气”为题,写一篇不少于60个词的短文,标点符号不占格) 在生活或学习中我们难免会遇到一些困难与挫折,面对困难我们需要鼓起勇气。请结合你的一次自身经历,补充完整标题,说一说什么令你鼓起勇气,谈一谈你是如何勇敢克服困难的。 （注意：短文中不得出现任何人名、校名及其它相关信息，否则不予评分） The following is for reference only（以下仅供参考） have difficulty in … encourage me to … try my best to...",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2019-崇明-writing",
+      "title": "2019 上海崇明二模作文",
+      "year": 2019,
+      "district": "崇明",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "（共 20 分） 94. Write at least 60 words on the topic “My happy childhood” （以“我快乐的童年”为题写一篇不少于 60 个词的短文，标点符号不占格） 童年的回忆总是美好的，发生的事情历历在目。请列举一两件事情描述一下你快乐的童年。 The following words or phrases are only for reference. （以下短语仅供参考） used to do(be) be interested in dream of be fond of grow up be proud of （注意：短文中不得出现任何人名、校名及其他相关信息，否则不予评分。）",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2019-徐汇-writing",
+      "title": "2019 上海徐汇二模作文",
+      "year": 2019,
+      "district": "徐汇",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": ": (共20分) 94. Write at least 60 words on the topic “My half-day plan with the exchange student” (以“我与交换生的半日活动计划”为题，写一篇不少于60个词的短文，标点符号不占格) 一群美国的交换生将到你学校来，校方现征集“金点子”——校内半天的互动活动，希望你带领他（她）一起参加，来感受学校的文化与特色。学课课堂学习、体育活动、趣味课堂、校园特色活动等等。请谈谈你的活动设想，并简述活动内容及其意义。 （注意：短文中不得出现考生的姓名、校名及其他相关信息，否则不予评分） exchange student 交换生",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2019-普陀-writing",
+      "title": "2019 上海普陀二模作文",
+      "year": 2019,
+      "district": "普陀",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "VII. Writing (共20 分） 94. Write at least 60 words on the topic “At that moment, I realized the importance of (something/ being…)【以“那一刻我意识到…..有多重要”为题，写一篇不少于 60 词的短文，标点符号不占格】 提示： 无论是生活还是学习，一定有一些事情让你感到特别有意义， 它们往往会让你意识到一些东西的重要性。 请就其中一次经历，谈谈发生了什么以及你从中获得的感悟。 （注意：短文中不得出现任何人名、校名及其他相关信息， 否则不予评分）",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2019-杨浦-writing",
+      "title": "2019 上海杨浦二模作文",
+      "year": 2019,
+      "district": "杨浦",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "VII. Writing (共20 分） 94. In 60-120 words, write about the topic“A goal I would like to achieve”. （以“一个我想实现的目标”为题，写一篇 60-120 个词的短文，标点符号不占格） The following are for reference only. （以下内容仅供参考）  √ What is your goal?  √ Why do you want to do this?  √ How do you plan to achieve your goal? （注意：文中不得出现考生的姓名、校名及其他相关信息，否则不予评分。）",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2019-松江-writing",
+      "title": "2019 上海松江二模作文",
+      "year": 2019,
+      "district": "松江",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "VII. Writing (共20 分） 94. Write at least 60 words on the topic“A/An _______I’d like to share”（以“我想分享…..” 为题，写一篇不少于60个词的短文，标点符号不占格。） 在学习和生活中，你有什么值得与他人分享的？比如可以谈谈你看过的书、电影或一次难忘的经历等等，同时能让别人从中获益什么或者受到何种启发。 (注意：1.在答题纸上将题目补充完整。 2. 短文中不得出现真实人名、校名及其它相关信息，否则不予给分。）",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2019-浦东-writing",
+      "title": "2019 上海浦东二模作文",
+      "year": 2019,
+      "district": "浦东",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "(共20分) 94. Write at least 60 words on the topic “Let me praise Shanghai for its ______”(以“让我夸夸上海的______”为题，写一篇不少于60个词的短文，标点符号不占格，请在答题纸上把作文标题补充完整，如： convenient transportation, good service, friendly people…) 生活在上海,我们的城市每天都有让我们惊喜和自豪的发现,如:方便的交通、周到的 服务、友善的人们,请结合你生活中的一件事,谈谈你的发现和感受。 (注意：短文中不得出现任何人名、校名及其它相关信息，否则不予评分。) The following is for reference only(以下表达仅供参考) praise for… be thankful to… be proud of… make progress…",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2019-虹口-writing",
+      "title": "2019 上海虹口二模作文",
+      "year": 2019,
+      "district": "虹口",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "（共20分） 94. Write at least 60 words about the topic “Life needs …”. (以“生活需要…”为题写一篇不少于60个词的短文,标点符号不占格。) 提示：生活五味杂陈，需要我们的一些品质、爱好、技能或行为等才能彰显其美的真谛。请你选取一个方面，以“生活需要…..”为题，结合自身经历通过举例子或列举理由加以说明。 （注意：短文中不得出现任何真实的人名、校名及其它相关信息，否则不予评分。）",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2019-金山-writing",
+      "title": "2019 上海金山二模作文",
+      "year": 2019,
+      "district": "金山",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "Write at least 60 words on the topic “Sometimes troubles can also make us go forward”. (请以“有时候麻烦也能促使我们前进”为题，结合自己的亲身经历，写一段不少于60字，中心突出，语言正确，叙述流畅的短文。注意：文中不得出现考生的姓名、校名及其相关信息，否则不予评分)（标点符号不计入字数） 以下表达供参考： Learn from on the other hand overcome",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2019-长宁-writing",
+      "title": "2019 上海长宁二模作文",
+      "year": 2019,
+      "district": "长宁",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "VII. Writing (共20 分） 94. Write at least 60 words about the topic “A Grandpa’s Birthday” （根据下面的图片情景，请以“一位爷爷的生日”为题， 写一篇不少于 60个词的短文，标点符号不占格。） Use the following questions as a reference （以下内容仅供参考） What happened on a Grandpa’s Birthday? How did Grandpa feel at the table? What do you think about it? And why? （注意：文中不得出现考生的姓名、校名及其他相关信息，否则不予评分。）",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2019-闵行-writing",
+      "title": "2019 上海闵行二模作文",
+      "year": 2019,
+      "district": "闵行",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "VII. Writing (共20 分） Write at least 60 words on the topic “________makes my life better”. (参考以下图示, 结合你的实际,发挥你的想象,选取其中一个方面,以“________使我的生活更美好为题,写一篇不少于 60 个词的短文,标点符号不占格。写作前先请你把题目补充完整。)",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2019-青浦-writing",
+      "title": "2019 上海青浦二模作文",
+      "year": 2019,
+      "district": "青浦",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "（共20分） 94．Write a letter of at least 60 words according to the given situation.（请根据所给情景写一封信，不少于60个词，标点符号不占格。） Situation: Martin最近转学到了一所新学校，由于对周围环境和同学不熟悉，学习有点跟不上，因此感到沮丧，他给笔友Tim写信，诉说他的烦恼。请你以Tim的身份写一封回信，给他提一些建议，帮助他更快地适应新的学习生活。 注意： 抄袭试卷中内容不得分。 文中不得出现任何姓名、校名以及其它相关信息，否则不予评分。",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2019-静安-writing",
+      "title": "2019 上海静安二模作文",
+      "year": 2019,
+      "district": "静安",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "（共20分） 94. Write an e-mail in at least 60 words（请写一封不少于60 个词的点自己邮件，标点符号不占格。） 你即将初中毕业，回顾以往，展望未来，一定有许多心里话想对父母、老师、同学、朋友……说吧？请选择一位你最想倾诉的对象，结合一个你最难忘的具体事例，给他（她）写一封电子邮件，表达你此刻的所思所想，并说明为何在这个特别的时刻想对他（她）说这件事。 （注意：短文中不得出现考生和他人的真实姓名、校名及其他相关信息，否则不予评分。标点符号不占格）",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2019-黄浦-writing",
+      "title": "2019 上海黄浦二模作文",
+      "year": 2019,
+      "district": "黄浦",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "VII. Writing (共20 分） 94. Writer a passage of at least 60 words on the topic “________Makes My life Better”. (以_________ 使我的生活更美好”为题， 写一篇不少于 60 个词的短文， 标点符号表不占格。) 要求： 补全作文标题 短文中不得出现考生的姓名，校名及其他相关信息， 否则不予评分。",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2020-嘉定-writing",
+      "title": "2020 上海嘉定二模作文",
+      "year": 2020,
+      "district": "嘉定",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "Writing (作文) 69.In at least 60 words, write a letter to the person you want to express your thanks. 请以\"A thank-you letter to ________\"为题，写一封不少于60个词的感谢信，标点符号不占格。 2020年是不平凡的一年，在这段特殊的日子里，你一定感受到了父母、老师、朋友或是一些陌生人给你带来的温暖和感动，请结合自己的经历，写一封信给他（他们），表达你的感激之情。 The following is for reference only (以下表达仅供参考) thank…for be moved by provide...with ________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2020-崇明-writing",
+      "title": "2020 上海崇明二模作文",
+      "year": 2020,
+      "district": "崇明",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "Write a passage of at least 60 words on the topic “Online learning” (请以“在线学习”为题,写一篇不少于60个词的短文,标点符号不占格。) 提示: 由于新冠病毒(novel coronavirus), 前段时间我们只能在家里通过网络进行学习,有人认为很新鲜效果好,也有人觉得效果一般。请从以上两个观点中,选择一个角度，并结合自己网络学习的经历,谈谈你对“在线学习”的体会或看法，并给出理由。 (注意: 短文中不得出现考生姓名、校名及其他相关信息,否则不予评分。) Online learning ____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2020-普陀-writing",
+      "title": "2020 上海普陀二模作文",
+      "year": 2020,
+      "district": "普陀",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "Write at least 60 words on the topic “My harvest in spring” 【以“春天的收获”为题，写一篇不少于60词的短文，标点符号不占格】 提示：前段时间，大家在家学习，不少同学在这段时间内不仅培养了自主学习能力还学习了不少其他本领，收获颇丰。请结合具体事例谈谈自己某方面的收获以及从中获得的感悟。 (注意：短文中不得出现任何人名、校名及其他相关信息，否则不予评分) ____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2020-杨浦-writing",
+      "title": "2020 上海杨浦二模作文",
+      "year": 2020,
+      "district": "杨浦",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": ": 69.Write a letter of at least 60 words based on the given situation. (根据所给情境，写一封不少于60个词的信，标点符号不占格) A friend of yours is studying at home and has asked you to recommend a learning tool. 你的一位朋友最近在家自学，想请你推荐一个学习工具。 Write a letter to your friend. In your letter: say what the learning tool is (give it an interesting name) describe the learning tool and its uses tell the reason why you recommend it Remember: the learning tool can be a reference book, a website, a program, an app, or whatever you use to help you with your study. __________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2020-松江-writing",
+      "title": "2020 上海松江二模作文",
+      "year": 2020,
+      "district": "松江",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "Write at least 60 words on the topic “My gains”. （疫情期间，我们足不出户，但是我们看到听到了很多感人事迹，我们也经历了一段不同寻常的学习生活。无论是无私奉献的白衣天使或社区志愿者还是我们自己的生活经历都给我们带来了不同的感悟和收获。请结合这些感人事迹或自身经历，完成一篇不少于60词的短文，标点符号不占格。） The following expressions are just for reference: online learning moving medical workers impressive community volunteers warm-hearted ____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2020-浦东-writing",
+      "title": "2020 上海浦东二模作文",
+      "year": 2020,
+      "district": "浦东",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "Ⅶ. Writing 69.Write at least 60 words on the topic “A letter to My Hero(es)” 我们的心中都住着英雄，他（们）也许是救死扶伤的医生，是勇夺金牌的冠军，是飞身火海的消防员，是见义勇为的路人，还也许是默默付出的亲人、伙伴……请写一封信给你心中的英雄，表达你的敬意，聊聊他（们）的事（举动）对你的影响. A letter to My Hero(es) ___________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2020-金山-writing",
+      "title": "2020 上海金山二模作文",
+      "year": 2020,
+      "district": "金山",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "VII. Writing (写作) (共20分) 94. Write at least 60 words on the topic“My opinion on remote lessons”. ( 以“我对远程课堂的看法”为题，写一篇至少60个单词的短文。标点符号不占格。) （共20分） 疫情期间我们开启了一种全新的学习模式--远程课堂 (remote lessons)。在此期间你是如何学习的？请结合你自身经历，谈谈对远程课堂的看法。 （注意：短文中不得出现考生姓名、校名及其它相关信息，否则不予评分。） The following is for reference only. (以下表达仅供参考。) because of the virus manage time self-control effective PAGE",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2020-长宁-writing",
+      "title": "2020 上海长宁二模作文",
+      "year": 2020,
+      "district": "长宁",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "Write at least 60 words about the topic “Online study makes me __________”（请以“网上学习使我__________”为题，写一篇不少于60个词的短文，标点符号不占格。） 抗疫期间(during the anti-epidemic - period,你不得不在家上网课(have online classes)， 这个特殊的经历使你在培养独立性、自信心……等方面也有所收获。请你结合具体事例谈谈自己某一方面的收获。 （注意：文中不得出现考生的姓名、校名及其他相关信息，否则不予评分。） A. Think about B. encourage C. technology D. average E. set out A. calmer B. politely C. carefully D. truth D. methods",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2020-闵行-writing",
+      "title": "2020 上海闵行二模作文",
+      "year": 2020,
+      "district": "闵行",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "VII. Writing 69.Write at least 60 words on the topic “Ways to improve my online learning”（以“提高我在线学习效率的方法”为题，写一篇不少于 60 个词的短文，标点符号不占格。）在线学习是当代青少年需要掌握的一项重要技能，请结合居家学习期间自己在线学习中的具体事例，谈谈你有些哪里提高学习效率的方法。 （注意；短文中不得出现任何人名、校名及其他相关信息，否则不予评分） ____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2020-青浦-writing",
+      "title": "2020 上海青浦二模作文",
+      "year": 2020,
+      "district": "青浦",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "Write a passage of at least 60 words according to the given situation 情景提示： 在本学期居家学习期间，你是如何开展学习的？有什么收获？请结合你的学习经历和体验谈一谈。（除诗歌外文体不限。） Expressions for references: take online courses, watch video lectures, organize Wechat groups, share the experience follow the advice, the self-learning ability ________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2020-静安-writing",
+      "title": "2020 上海静安二模作文",
+      "year": 2020,
+      "district": "静安",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "Write at least 60 words about the topic “My view on online lessons this March”(请以“今年三月的网课之我见”为题，写一篇不少于 60 个词的短文，标点符号不占格。) (注意：文中不得出现考生的姓名、校名及其他相关信息，否则不予评分。 The following is for reference only.（以下内容仅供参考） What is your view? Show us an example or give your reason(s.) to support your view. Give at least one suggestion you would like to make to your teacher(s). ____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2020-黄浦-writing",
+      "title": "2020 上海黄浦二模作文",
+      "year": 2020,
+      "district": "黄浦",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "Write a passage of at least 60 words on the topic “The first time I ...”（以“我第一次……”为题，写一篇不少于 60 个词的短文，标点符号不占格。） 要求： 1. 补全作文标题。 2. 短文中不得出现考生的姓名、校名以及其他相关信息，否则不予评分。 ______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2021-嘉定-writing",
+      "title": "2021 上海嘉定二模作文",
+      "year": 2021,
+      "district": "嘉定",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "（共20分） 84. Write at least 60 words on the given situation（根据以下情境写一篇不少于60个词的短文，标点符号不占格。） 石砖和雕像的经历告诉我们，不同的选择会带来不同的结果。生活中，我们也会碰到很多选择。请以“I chose to ________”为题，结合自身的经历，说说你是怎么做的？你为什么会做出这样的选择？ The following is for reference only choose to be / do make up my mind encourage me to （注意：1. 短文中不得出现考生的姓名、校名等个人信息，否则不予评分。 2. 照抄阅读语篇不得分。） ____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2021-宝山-writing",
+      "title": "2021 上海宝山二模作文",
+      "year": 2021,
+      "district": "宝山",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "（共20分） 94. Write at least 60 words about the topic “_________ made me a better person”. （请以“……使我成为更好的自己”为题，写一篇不少于60个词的短文，标点符号不占格。） 生活中往往有许多人或事帮助我们成为更好的自己。也许是曾经的某一次经历或某个人使我们发现了自己的潜力与天赋；使我们由依赖到独立，敢于选择、敢于承担责任；使我们勇于面对未知，尝试新经验，主动做出改变。请补全标题并结合过去的真实经历，谈一谈什么促使你成为更好的自己，你又在哪些方面做出了改变。 （注意：短文中不得出现任何真实人名、校名及其它相关信息，否则不予评分。） ____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2021-崇明-writing",
+      "title": "2021 上海崇明二模作文",
+      "year": 2021,
+      "district": "崇明",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "（共20分） 84. Write at least 60 words on the topic “In three years’ time”（以“三年以后”为题写一篇不少于60个词的短文，标点符号不占格。） 你是否想象过，三年以后你的生活或者周围的世界会发生产怎样的变化？你对三年以后的自己或周围的世界有怎样的期待？你能为此做些什么？ （注意：短文中不得出现任何校名、人名及其它相关信息，否则不予评分。）",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2021-徐汇-writing",
+      "title": "2021 上海徐汇二模作文",
+      "year": 2021,
+      "district": "徐汇",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "（共20分） 84. Suppose you are interested in dearMars Project, and you send an e-mail to dearMarsproiect@****.com based on one of the given situations. Situation l: You want to be one of the crew members to the Mars. You write to apply for a seat in the rocket. Situation 2: You want to know more about the project, hoping to get more detailed information. 假设你对 dearMars 的项目感兴趣，你选择所给情境之一完成一封发送给dearMarsproiect@****.com的电子邮件（不少于60词）。 （注意：邮件中不得出现考生的姓名、校名及其他相关伯息，否则不子评分、标点符号不占格） 正文 Dear dearMars Project, _____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________ Yours sincerely ***\u0007\u0007",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2021-普陀-writing",
+      "title": "2021 上海普陀二模作文",
+      "year": 2021,
+      "district": "普陀",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "（共20分） 84. Write at least 60 words on the topic “________ has won my respect”【以“……赢得了我的尊敬”为题，写一篇不少于60词的短文，标点符号不占格】 提示：Aunt Sandy 用行动赢得了外甥女的尊敬。你的身边是否有这样一位值得尊敬的人关心着你的成长？请先补全标题，再结合具体事例谈谈你自己的感受。 （注意：短文中不得出现任何人名、校名及其他相关信息，否则不予评分。照抄语篇不得分） ________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2021-杨浦-writing",
+      "title": "2021 上海杨浦二模作文",
+      "year": 2021,
+      "district": "杨浦",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "（共20分） 84. Write at least 60 words on the given topic “________ has changed me”. （以“________ 改变了我”为题写一篇不少于60个词的短文，标点符号不占格。） 世间瞬息万变，凡事都在变化、都在发展，我们也在不断地调整、改变自己。某些人、事、经历改变着我们的心态、行为、价值观、思维方式、生活方式等。请结合题目和自己的经历，谈一谈自己的改变。 注意：1. 短文中不得出现考生的姓名、校名等个人信息，否则不予评分。 2. 照抄阅读语篇不得分。",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2021-松江-writing",
+      "title": "2021 上海松江二模作文",
+      "year": 2021,
+      "district": "松江",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "（共20分） 84. Write at least 60 words according to the following information. 意大利爷爷Paternò的励志故事使他成为很多青少年的偶像。相信在生活学习中你也有一位想效仿或追随的榜样。请以“A model I want to follow”为题，写一篇不少于60词的短文，标点符号不占格。 注意：1. 短文中不得出现真实姓名和校名及其它相关信息，否则不予评分。 2. 照抄阅读语篇不得分。",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2021-浦东-writing",
+      "title": "2021 上海浦东二模作文",
+      "year": 2021,
+      "district": "浦东",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "（共20分） 84. Write at least 60 words about the topic “A(n) _______ with love”（请以“爱的_______.” 为题，写一篇不少于60字的短文，标点符号不占格。） 在上文中，祖母收到的生日礼物包含了祖父对她真挚的爱。我们的生活也充满了爱，我们一定收到过带有满满爱意的物品。请你分享一下关于这个物品的故事，并谈谈你的感受或它对你的影响。 （注意：1. 短文中不得出现考生的姓名、校名等个人信息，否则不予评分。 2. 照抄阅读语篇不得分。） ____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2021-虹口-writing",
+      "title": "2021 上海虹口二模作文",
+      "year": 2021,
+      "district": "虹口",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "（共20分） 84. Write at least 60 words on the topic “I’d like to get close to...”（以“我想要走近……”为题写一篇不少于60 个词的短文，标点符号不占格。） 人的一生会遇见很多美好的事物，人、物、景等各种美好的存在都会吸引我们走进。请写写你想走近什么？怎么走近？说说你的理由。 ____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________ ____________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2021-长宁-writing",
+      "title": "2021 上海长宁二模作文",
+      "year": 2021,
+      "district": "长宁",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "（共20分） 84. Write at least 60 words about the topic “Keep patient when facing difficulties”.（请以“面对困难保持耐心”为题，写一篇不少于60词的短文，标点符号不占格。） 阅读文章（c）篇告诉我们日常生活中不能缺乏耐心，还提出用2种方式来帮助我们克服这样的缺点，在我们的生活和学习中遇到的各种困难也很容易使人失去耐心，请你以一个具体的例子谈谈怎样面对困难保持耐心。 （注意：文中不得摘录试卷阅读原文，不得出现任何姓名、校名以及其他相关信息，否则不予评分） 【分析】 【高分句型一】 I was so impatient that I couldn’t deal with difficulties. 我太没有耐心了，以致于我无法处理困难。 so...that... 如此……以至于…… 【高分句型二】 Little by little, I’ve become patient in English and I’m good at it. 渐渐地，我在英语上变得有耐心，我很擅长它。 be good at 擅长…… 【解答】 Keep patient when facing difficulties I used to be impatient. I was so impatient that I couldn’t deal with difficulties.【高分句型一】I never asked the teachers any questions. I just sat behind the book and never said anything in class. Of course, I often got bad grades on examinations.（描述自己的问题） One day, my English teacher found my problem. She had a long talk with me. And she told me many useful ways to learn English well. Since then, I has tried hard to learn English well.（通过努力解决问题）Little by little, I’ve become patient in English and I’m good at it.【高分句型二】 I began to answer questions in class. Now I am not impatient anymore! I know that as long as I try hard, I can make it.（总结全文） 【点评】考生在把握了文章的中心后，应在内心构思一个基本的框架，并考虑使用恰当的词语、短语和句型，以充分地表达文章的内容．尽可能地充分利用所学的短语或句型来表述具体的内容，避免使用无把握或偏、难句型。注意所写句子要符合英语的表达习惯。 附",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2021-闵行-writing",
+      "title": "2021 上海闵行二模作文",
+      "year": 2021,
+      "district": "闵行",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "（20分） 84. Write at least 60 words on the topic “My funnest family memory”（根据提示，以“我最有趣的家庭回忆”为题，写一篇不少于60个词的短文，标点符号不占格。） 提示：回忆有趣的家庭生活总是美好的。请结合你的亲身经历，描述你和家人在一起时最有趣的事儿，并谈谈感想。 （注意：文中不得出现考生的姓名、校名及其它相关信息，否则不予评分。抄袭阅读理解语篇的不给分。） ____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________ ____________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2021-静安-writing",
+      "title": "2021 上海静安二模作文",
+      "year": 2021,
+      "district": "静安",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "（共20分） 84. Write at least 60 words on the given situation.（根据所给情境写一篇不少于60个词的短文，标点符号不占格。） 美国拉斯维加斯的不少学生参加了户外花园教室项目，在活动中收获了很多。你在校内外参加过什么有趣有益的项目，并给你留下了深刻的映像。 请以“Making learning fun (乐中学)”为题，分享你的经历或感想。 （注意：1. 短文中不得出现考生的姓名、校名等个人信息，否则不予评分。 2. 照抄阅读语篇不得分。） 【分析】 【高分句型一】 Let me tell you my school activity --- Learning Lei Feng. 让我告诉你我的学校学习雷锋的活动． let sb. do sth. 表示让某人做某事． 【高分句型二】 If I have another chance to go there, I will take it. 如果我还有机会去那里，我会抓住的． 句子中if引导一个条件状语从句，主句用一般将来时，从句用一般现在时． 【解答】 Making learning fun Let me tell you my school activity --- Learning Lei Feng. 【高分句型一】（引出话题）We, the volunteers, went to the Nursing Home and did many things for the old people there. When the old people saw us, they were very happy. We gave them lots of flowers and fruits. We did cleaning for them. After that we chatted with them. We talked very happily. Some of us sang great songs for them. And others danced. The old people told us stories. We wished them good luck. All of us had a wonderful time there.（具体的活动） I felt happy that I cared for the old people and showed our respect to them. If I have another chance to go there, I will take it.【高分句型二】（感想） 【点评】考生首先要认真阅读前面的提示认真审题，确定文章的中心．注意文章文体、人称和时态．要求介绍．同时应选用合适的连接词或过渡词，使文章具有一定的连贯性．温馨提醒：考生必须认真查验是否有漏写情况，有无拼写错误及标点误用等． 附",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2021-黄浦-writing",
+      "title": "2021 上海黄浦二模作文",
+      "year": 2021,
+      "district": "黄浦",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "（共20分） 84. Write at least 60 words on the given situation. （根据以下情景写一篇不少于60个词的短文，标点符号不占格。） 在生活中，要取得成就，往往需要勇气。你需要勇气来帮助你战胜困难，承认错误，拒绝他人，或者克服恐惧。你是如何理解勇气的呢？请以“I have the courage to...（我有勇气……）”为题，结合自己的经历谈谈你对勇气的理解和感受。 注意：1. 短文中不得出现考生的姓名、校名等个人信息，否则不予评分。 2. 照抄阅读语篇不得分。 【分析】 【高分句型一】 I used to be afraid of speaking in public. 我过去害怕在公众面前讲话。 used to do sth. 过去常常做某事。 【高分句型二】 Now I have become more and more confident in expressing myself in public. 现在我变得越来越有信心在公共场合表达自己。 比较级+and+比较级，表示越来越…… 【解答】 I have the courage to overcome nervousness In our daily life, we have various fears preventing us from moving forward. And overcoming the fears helps us become more confident.（对勇敢的理解） I used to be afraid of speaking in public.【高分句型一】 I never dared to step up and speak in front of a crowd. Then, in Grade 9, a speech contest was held in my school. With my teacher’s encouragement, I entered for it and made full preparations for it. Luckily, I finished it smoothly. To my surprise, I won the second prize. This time I was brave. Now I have become more and more confident in expressing myself in public.【高分句型二】（自己的经历） Don’t let the fear take you. Just step forward and you will find you can do it!（总结全文） 【点评】能够根据提示进行书面表达，能够围绕主题准确使用一定的语法、词汇、短语和句型等，清楚连贯地表达自己的思想，进而完成写作任务。 附",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2022-嘉定-writing",
+      "title": "2022 上海嘉定二模作文",
+      "year": 2022,
+      "district": "嘉定",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "(本大题共1题，共20分) 80. Write at least 60 words according on the topic of “ ________ made me a difference”. 生活、学习中的经历，我们亲人、朋友或是陌生人等，都可能对我们产生影响，让我们发生一些变化。这些变化往往会有助于我们的成长。请结合一次自身经历，以“ ________ 改变了我”为题，写一篇短文，标点符号不占格。 （注意：1. 短文中不得出现姓名、校名等个人信息，否则不予评分。2. 照抄阅读语篇不得分。） ________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2022-宝山-writing",
+      "title": "2022 上海宝山二模作文",
+      "year": 2022,
+      "district": "宝山",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "(本大题共1题，共20分) 64. Write at least 60 words according to the situation given. (请根据所给情境，写一篇不少于60个词的短文。标点符号不占格。) 假如你是李华，你的朋友小强最近在学习时注意力难以集中，学习效果不佳，感觉压力很大。请你给他写一封信对他表示关心，结合自身或他人的经历谈谈你对压力的看法，并给他提供一些缓解学习压力的方法，帮助他放松身心、提高学习效率。 注意： 1. 文中不得出现任何真实人名、校名及其它相关信息，否则不予评分。 2. 照抄阅读语篇内容不得分。 The following is for reference only. (以下表达仅供参考) ☺ under stress ☺ take an active",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2022-崇明-writing",
+      "title": "2022 上海崇明二模作文",
+      "year": 2022,
+      "district": "崇明",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "（共20分） 84. Write a passage of at least 60 words on the topic “ Grow up in labour ”（以“在劳动中成长”为题，写一篇不少于60个词的短文，标点符号不占格。） 在日常生活中，每个同学都会参与一些社会公益劳动、学校组织的劳动活动或居家时的家务劳动等，相信你们在过程中都有所感悟和收获。请你结合自身经历，谈谈你曾参与的劳动并分享一下你的所感所悟。 注意：1. 短文中不得出现任何校名、人名及其它相关信息，否则不予评分。 2. 照抄阅读语篇不得分。 A) courses B) appeared C) records D) caused E) widely A) copy B) polite C) solve D) once E) better 64 Quick Links Eton College School News Windsor, Berkshire, SL4 6DW Term Dates (+44) 01753 370 100 Policies and Reports Privacy Policy",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2022-徐汇-writing",
+      "title": "2022 上海徐汇二模作文",
+      "year": 2022,
+      "district": "徐汇",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": ":(共20分) 80. The school newspaper is going to use the given photo in the culture section. It’s a photo of two exchange students from America. Please write a short news article entitled “Exploring Chinese Culture” based on the given photo for the newspaper. 校报准备在报纸文化栏里用到所给照片做报道。这张照片主人公是两位来自美国的交换生。请仔细看所给照片，并为报纸撰写一篇题为“探索中国文化”的简单报道。不少于60词。 (注意：短文中不得出现考生的姓名、校名及其他相关信息，否则不予评分。标点符号不占格) 剪纸paper cutting 书法 calligraphy Exploring Chinese Culture ______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2022-普陀-writing",
+      "title": "2022 上海普陀二模作文",
+      "year": 2022,
+      "district": "普陀",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "(共20分) 80. Write at least 60 words on the topic “I learned a lot from...”（以“我从……学到了很多”为题，写一篇不少于60词的短文，标点符号不占格） 提示：每个人都能通过不同的方式学到有益于成长的东西，请结合具体事例谈谈你自己的感悟。 (注意：短文中不得出现任何人名、校名及其他相关信息，否则不予评分。照抄语篇不得分) __________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2022-松江-writing",
+      "title": "2022 上海松江二模作文",
+      "year": 2022,
+      "district": "松江",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "Write at least 60 words according to the given situation (根据以下情境写一篇不少于60个词的倡议书，标点符号不占格) 在疫情防控的特殊时期，人们自觉落实各项防疫举措，居家工作、学习和生活成为阻隔病毒传染的有效方法之一。请你以学校学生会的名义，给全体学生写一封倡议书，使大家明白疫情期间在线学习和规律生活的重要性，并给出合理可行的建议，号召全校学生遵守执行，为防疫工作贡献自己的力量。 Some phrases for reference: call on (号召); during COVID; study online / have online lessons 注意： 1. 短文中不得出现任何真实人名、校名及其它相关信息 2. 不得照搬阅读语篇内容。 Dear schoolmates ________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________ From The Students’ Union",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2022-浦东-writing",
+      "title": "2022 上海浦东二模作文",
+      "year": 2022,
+      "district": "浦东",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "Write at least 60 words according to the given situation (假定你是Tony，根据以下情境续写这一封信，不少于60 词，标点符号不占格) 注意： 1.文中不得出现姓名、校名等个人信息，否则不予评分。 2.照抄阅读语篇不得分。 Note: entire adj. 全部的，整个的 Dear Editor, I have lived in Jackson my entire life. I go to Lake School. I am in second grade. I am writing this letter because I do not agree with your article. You wrote about the new shopping mall that will be built on First Street. I think it is exciting to have new things to do here. I just wish our city did not decide to get rid of Hardy Park. Why should we lose a park to get a mall?__________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2022-虹口-writing",
+      "title": "2022 上海虹口二模作文",
+      "year": 2022,
+      "district": "虹口",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "(共20分) 64. Write at least 60 words on the topic “Small tricks to improve happiness” (以“提升幸福感的小妙招”为题写一篇不少于60个词的短文，标点符号不占格) 3月20日是国际幸福日。快乐、自信、充实、自豪，当你拥有这些感受，你就是一个幸福的人。生活中的一些小妙招可以让我们获得幸福感，请你结合自己或他人的经历和感受描述至少两个提升幸福感的小妙招，并说明一下理由。 (注意: 1.短文中不得出现任何真实的人名、校名及其它相关信息，否则不予评分。2.照抄阅读语篇不得分。) _________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2022-长宁-writing",
+      "title": "2022 上海长宁二模作文",
+      "year": 2022,
+      "district": "长宁",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "（本大题共1题，共20分） Write at least 60 words about the given situation(请跟据以下情景写一篇不少于60个词的短文，标点符号不占格。） 64. 为了提高学生英语学习能力，李老师想要调查了解一下学生课外在记忆单词、朗读/背诵课文、做书面作业、读英语书刊和故事，或者其他等等方面的学习情况。请你写一封信给他，谈谈以上几个方面你觉得哪个最重要，哪个方面你花时间最多，哪个做得最少；哪个方面你最感到困难或最有成功经验；你将如何改进学习方法才能取得更大的进步。 （注意：1、信的格式与开头已给，这些文字不计入你所写的总数。2、信中不得出现任何姓名、校名以及其他相关信息，否则不予评分。） Dear Mr. Li, In response to your survey, I’d like to tell you something about how I learn English after school._______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________ Yours, XXX",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2022-青浦-writing",
+      "title": "2022 上海青浦二模作文",
+      "year": 2022,
+      "district": "青浦",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "VII. Writing. （作文）（共20分） 80. Write a passage of at least 60 words about the topic “A decision I made”（请以“决定”为题写一篇不少于60个词的短文，标点符号不占格。） 在学习和生活中，我们会做出许多决定，有时会庆幸自己的决定是正确的，有时也会为错误的决定而懊恼后悔。这些决定都会让我们有所感悟。请结合你的经历，谈谈你的感受。 注意： 1) 抄袭试卷中内容不得分； 2) 文中不得出现任何姓名、校名以及其他相关信息，否则不予评分。 __________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2022-黄浦-writing",
+      "title": "2022 上海黄浦二模作文",
+      "year": 2022,
+      "district": "黄浦",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "(20 分) 84．Write at least 60 words according to the given situation. (根据以下情境写一篇不少于 60 个词的短文，标点符号不占格。) 疫情期间，为了帮助同学们保护视力，避免过多使用电子产品，学校鼓励大家阅读纸质书籍。老师决定招募志愿者，管理在线读书俱乐部“Online reading club”。如果你有意愿承担管理读书俱乐部的工作，请给老师写一封电子邮件，谈谈你计划如何做。 邮件内容可以包含以下几个问题： 1．How often do you meet on line? 2．How will you choose books to read? 3．What activities will you organise for your club? (注意:1.短文中不得出现任何真实的人名、校名及其它相关信息，否则不予评分。 2.照抄阅读语篇不得分。) Markets What can I buy? Sell with us News About Blog",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2023-嘉定-writing",
+      "title": "2023 上海嘉定二模作文",
+      "year": 2023,
+      "district": "嘉定",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "(共20分) 80. Write at least 60 words according to the given situation (根据以下情境写一篇不少于60个词的短文，标点符号不占格) 滴水穿石，铁杵成针，都向我们展示了坚持的力量。坚持，定会给我们带来收获。请回忆在过去一年里你坚持做的一件事，以“One thing I kept doing”为题，简单描述，并谈谈收获和感受。 (注意：短文中不得出现任何人名、校名及其他相关信息，否则不予评分。照抄语篇不得分) _______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2023-奉贤-writing",
+      "title": "2023 上海奉贤二模作文",
+      "year": 2023,
+      "district": "奉贤",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "（本大题共1题，共20分） 64. Write at least 60 words on the topic “How I Went From Hating __________ to Loving it” 成长过程中，总会经历很多的变化。你是否有过对一样事物或者一种活动由讨厌转变为享受的经历呢？请以“How I Went From Hating __________ to Loving it”为题，写一篇不少于60词的短文。 （注意：1.写作中不得出现姓名、校名等个人信息，否则不予评分。2.照抄阅读语篇不得分。） ______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2023-宝山-writing",
+      "title": "2023 上海宝山二模作文",
+      "year": 2023,
+      "district": "宝山",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "（本大题共1题， 共20分） 64. Write at least 60 words according to the situation given.（请根据所给情境， 写一篇不少于60个词的短文。标点符号不占格，邮件格式已给） 美好的初中生活即将画上句号，你的学校正在征集初三年级毕业典礼的活动方案。假如你是李华，请你给教导处王老师写一份邮件。阐述你对毕业典礼活动的初步设想，重点设计1-2个活动并说明你的设计理由。 以下活动仅供参考： 诗歌朗诵（poetry reading） 小组唱（group singing） 脱口秀（talk show） 制作微视频（making short videos） 小品表演（short play） 赠送礼物（giving gifts） （注意：1.文中不得出现任何真实人各、校名及其它相关信息，否则不予评分。 2.照抄阅读语篇内容不得分。） _________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2023-崇明-writing",
+      "title": "2023 上海崇明二模作文",
+      "year": 2023,
+      "district": "崇明",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "（共20分） 64. Write at least 60 words on the topic “No Gains without Pains”（以“一分耕耘一分收获”为题写一篇不少于60个词的短文，标点符号不占格）。 成功的背后都凝聚着辛勤的付出。请结合自己的亲身经历，分享你的一个“没有耕耘就不可能有收获”的故事。 （注意：短文中不得出现任何校名、人名及其它相关信息，否则不予评分。） ________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2023-徐汇-writing",
+      "title": "2023 上海徐汇二模作文",
+      "year": 2023,
+      "district": "徐汇",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": ": (共20分) 64. Write at least 60 words according to the given situation (根据以下情境写一篇不少于60个词的短文，标点符号不占格) 你校正招募志愿者，将在校园开放日欢迎小学五年级学生参观了解校园环境与生活。假如你是Joe，请给校方写一封邮件，谈谈作为志愿者，你会介绍校园的哪些亮点或特色。 注意： 1.信中不得出现姓名、校名等个人信息，否则不予评分。 2.照抄阅读语篇不得分。 参考短语：school Open Day, Year 5 students, show around Dear sir, ___________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________ Yours Joe",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2023-普陀-writing",
+      "title": "2023 上海普陀二模作文",
+      "year": 2023,
+      "district": "普陀",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "（共20分） 64. Write at least 60 words according to the given situation【根据以下情景写一篇不少于60词的短文，标点符号不占格】 毕业将至，初三年级正在开展“我为学校发展献一计”（A suggestion for my school）的活动，请根据以下内容任选一个方面提出合理建议并阐述理由。 ●课程与活动（Courses and activities） ●设施与环境（Facilities and environment） ●规章与制度（Rules and regulations） （注意：短文中不得出现任何人名、校名及其他相关信息，否则不予评分。照抄语篇不得分） ____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2023-浦东-writing",
+      "title": "2023 上海浦东二模作文",
+      "year": 2023,
+      "district": "浦东",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "(本大题共1题，共20分) 64. Write at least 60 words according to the given situation(根据以下情境写一篇不少于60个词的短文，标点符号不占格) 初三毕业典礼即将到来，为此学校开展了主题海报设计活动。目前初步确定了三幅主题为“友谊长存”、“感谢师恩”、“美好未来”的候选海报，并在学校网站展示，征询学生们的意见。假设你是该校学生李华，请在学校网站留言，选择其中的一幅海报，并结合海报内容阐述你的理由。 注意： 1、短文中不得出现姓名、校名等个人信息，否则不予评分。 2、照抄阅读语篇不得分。 Poster 1 Poster 2 Poster 3 _______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2023-虹口-writing",
+      "title": "2023 上海虹口二模作文",
+      "year": 2023,
+      "district": "虹口",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "（本大题共1题，共20分） 80. Write at least 60 words according to the given situation（根据以下情境写一篇不少于60个词的短文，标点符号不占格） 阅读D篇中的三位读者和我们分享了他们在日常生活中所做的小小改变和尝试。请根据你横线上所填的故事主题，结合自己的经历，谈谈你的体会。 注意： 1.请自拟标题填在横线上。 2.照抄阅读语篇不得分。 3.文中不得出现姓名、校名等个人信息，否则不予评分。 _________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2023-金山-writing",
+      "title": "2023 上海金山二模作文",
+      "year": 2023,
+      "district": "金山",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "VII. Writing（写作）(共20分） 64. Write at least 60 words on the topic“A volunteer labor”（以“一次公益劳动”为题，写一篇至少60个单词的短文。标点符号不占格） 劳动教育(Labor Education) 已经纳入国家课程方案，它包含日常生活劳动、农业生产劳动和服务性劳动。在生活中，学生通过劳动，养成吃苦耐劳的品质，培养合作共享的精神，形成助人为乐、服务他人和服务社会的公益精神。请你以“一次公益劳动(A volunteer labor)”为题，结合自身的经历谈谈自己对公益劳动的看法。文中不得出现真实的校名和姓名。 以下问题供参考： Suggested questions: What do you think of the volunteer labor? Why do you think so?（结合自身经历说明） What have you learned from it? ___________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2023-长宁-writing",
+      "title": "2023 上海长宁二模作文",
+      "year": 2023,
+      "district": "长宁",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "（本大题共1题，共20分） 64. Write at least 60 words on the topic “I no longer fear ________”（以“我不再害怕________”为题，写一篇不少于60个词的短文，标点符号不占格。） 在成长的道路上，常常会有一些事情开始时让我们感到畏而却步，例如：有的害怕某些学科学习、或某项技能训练；有的缺乏勇气在班会上发言；还有的难于接受一时的挫折与失败等等。随着经历和知识的增长，相信我们最终都会战胜挑战。请以一个具体的例子谈谈你在哪一方面积极应变，增强勇气，得以成长的。请补全标题。 （注意：短文中不得出现任何姓名、校名以及其它相关信息，否则不予评分） ________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2023-闵行-writing",
+      "title": "2023 上海闵行二模作文",
+      "year": 2023,
+      "district": "闵行",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": ". (20分. 80. Write a passage of at least 60 words on the topic “My views on robots entering the classroom”. (以“我对机器人进入课堂的看法”为题，展开合理想象，写一篇不少于60个词的短文，标点符号不占格。 2023年1月中国工信部等十七个部门，对外发布“机器人+”应用行动实施方案，提出了十大应用场景。请你就机器人进入教室，结合实际，展开想象，谈谈你的看法，表明你的观点。 The following is for reference only. (以下表达仅供参考) advantages/disadvantages give us practical advice respond to questions communicate with collect our problems mark the homework... 注意： 文中不得出现考生的姓名、校名及其它相关信息，否则不予评分。抄袭阅读理解语篇的不给分。 ______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2023-青浦-writing",
+      "title": "2023 上海青浦二模作文",
+      "year": 2023,
+      "district": "青浦",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "（共20分） 80. Write at least 60 words according to the given situation (根据以下情境写一篇不少于60个词的短文，标点符号不占格) 假设你是李华，收到一封来自笔友Paul的邮件，请阅读邮件内容并进行回复。 注意： 1. 文中不得出现姓名、校名等个人信息，否则不予评分。 2. 照抄试卷中内容不得分。",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2023-静安-writing",
+      "title": "2023 上海静安二模作文",
+      "year": 2023,
+      "district": "静安",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "(本大题共1题，共20分) 64. Write at least 60 words about the topic “Be sunflowers in life” (请根据下面的提示，以“做生活中的向日葵”为题，写一篇不少于60个词的短文，标点符号不占格。) “Keep your face to the sunshine and you cannot see the shadows”(面向阳光，你就看不到阴影)这句话告诉我们，在学习和日常生活中我们经历风雨，但是我们也知道“阳光总在风雨后”。请你结合自身的生活体验，举一个例子来谈谈你是如何做生活中的sunflowers的。请介绍你的理解、经历和感悟。 (注意：文中不得出现任何姓名、校名以及其它标志性的具体信息，否则不予评分。) __________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2023-黄浦-writing",
+      "title": "2023 上海黄浦二模作文",
+      "year": 2023,
+      "district": "黄浦",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "（20分） 80. Write at least 60 words according to the given situation.（根据以下情境写一篇不少于60个词的短文，标点符号不占格。） 假设你是李华，暑假期间，你将参加一个国际夏令营。在夏令营期间，各国青少年都要介绍自己国家的文化，包含语言（language）、节日（festivals）、饮食（food and drinks）、服饰（clothing）、文学艺术（art and literature）、传统技艺（traditional skills）等不同方面。请你选择其中一种形式，向外国小朋友介绍中国文化，并说明理由。 注意：1.短文中不得出现考生的姓名、校名等个人信息，否则不予评分。 2.照抄阅读语篇不得分。 ____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2024-嘉定-writing",
+      "title": "2024 上海嘉定二模作文",
+      "year": 2024,
+      "district": "嘉定",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "(共 20分) 64. Write at least 60 words according to the situation given.(请根据所给情境，写一篇不少于60个词的短文。标点符号不占格。) 你所在学校即将欢迎一批国际交流生(international exchange students)，学校正在策划一系列精彩纷呈的活动。目前，学校正积极征集学生们对于具体活动及国际交流生住宿地点的建议。假设你是李华，请给学校负责人张老师写一封邮件，详细描述你推荐的一个活动及住宿地点的建议，并说明理由。请撰写一篇不少于60个词的短文，展现你对这次交流活动价值的深刻理解。 (注意：1.短文中不得出现考生真实姓名、校名等个人信息，否则不予评分 2.照抄阅读语篇不得分。) _____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2024-宝山-writing",
+      "title": "2024 上海宝山二模作文",
+      "year": 2024,
+      "district": "宝山",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "Writing (作文)(共20分) 64. Write at least 60 words according to the situation given. (请根据所给情境，写一篇不少于60个词的短文。标点符号不占格。) 你的学校近期拟开展一次校园艺术节活动 (School Art Festival)，本次活动旨在发挥同学们的艺术特长，营造良好的校园艺术氛围。目前学校德育处正就活动方案征求意见。 假如你是初三学生毕华，请阅读以下活动方案，给德育处王老师写一封信。 信件必须包括以下内容： 1. 你是否会报名参加校园艺术节活动，并简述理由； 2. 针对活动方案中的1-2项内容，提出修改建议。 (注意：1. 信中不得出现任何真实人名、校名及其他相关信息，否则不予评分。 2. 照抄阅读语篇内容不得分。) _________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2024-崇明-writing",
+      "title": "2024 上海崇明二模作文",
+      "year": 2024,
+      "district": "崇明",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "（共20分） 64. Write at least 60 words on the topic “Making our school better” according to the given situation （根据以下情境，以“让我们的学校变得更好”为题写一篇不少于60个词的短文，标点符号不占格） 你的学校获得一笔100万元的资金用于改善教学设施、生活设施和体育设施等，你认为学校的哪个方面最急需改善呢？请你从表格内三类不同的设施中选出一个方面，谈谈自己的想法并给出理由。 （注意：短文中不得出现任何校名、人名及其它相关信息，否则不予评分。） ________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2024-徐汇-writing",
+      "title": "2024 上海徐汇二模作文",
+      "year": 2024,
+      "district": "徐汇",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": ": (共20分) 84. Write at least 60 words according to the given situation(根据以下情境写一篇不少于 60个词的短文，标点符号不占格) 64. 初中的学习即将结束。你所在的学校正在筹备毕业典礼(graduation ceremony)，部分学生将有机会在毕业典礼上演讲，演讲的主题是“我和我的校园”。假如你是Joe，请从“课程、校园文化、场馆设施”等中选择一项内容，结合自己的经历，写一篇演讲稿，谈谈你的感受，给出你的建议。演讲稿开头已经写好。 ___________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2024-松江-writing",
+      "title": "2024 上海松江二模作文",
+      "year": 2024,
+      "district": "松江",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "(共20分) 64. Write at least 60 words according to the given information. (根据以下信息写一篇不少于60个词的短文， 标点符号不占格。) 短文中的主人公Luke用日复一日的苦练和不言放弃的信念战胜了先天性疾病引发的障碍，取得了看似不可能的成功，体验到克服困难之后的喜悦。 你在生活或学习中遭遇过什么困难，请结合自身经历，谈谈你是如何克服困难，并取得了何种收获或成功。 注意： 1. 文中不得出现姓名、校名等个人信息，否则不予评分。 2. 照抄阅读语篇不得分。 ________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2024-浦东-writing",
+      "title": "2024 上海浦东二模作文",
+      "year": 2024,
+      "district": "浦东",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "(本大题共1题, 共20分) 80. Write at least 60 words according to the given situation (根据以下情境写一篇不少于 60个词的短文，标点符号不占格) 学校呼吁师生共建美好校园。学生会 (the student union) 收到来自同学们的众多提议(proposal)。请代表学生会选取以下一项提议写一份倡议书。谈一谈提出该倡议的理由并给出具体实施建议。 _________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2024-虹口-writing",
+      "title": "2024 上海虹口二模作文",
+      "year": 2024,
+      "district": "虹口",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "（20分） Write a speech of at least 60 words according to the given situation.（根据以下情境写一篇不少于60个词的演讲稿,标点符号不占格。） 64. 你所在学校的英语校报正在举行公开竞选。假如你是学生李华，请阅读竞选职位和要求，参与其中一个职位的竞选，并完成竞选演讲稿。 演讲稿须包含以下内容： （1）你想要参与校报工作的原因； （2）你想竞选哪个职位，并说明理由。 注意： 1.演讲稿中不得出现考生的姓名、校名等个人信息，否则不予评分。 2.照抄阅读语篇不得分。 ______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2024-金山-writing",
+      "title": "2024 上海金山二模作文",
+      "year": 2024,
+      "district": "金山",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "VII. Writing（写作）（共20分） 64. Write at least 60 words according to the given information.（以“My suggestion for social practice”为题，写一篇至少60个单词的短文。要求紧扣题意，语句正确通顺，内容连贯。） 社会实践活动是课堂教学的延伸，它能够丰富我们的生活经历，帮助我们认识社会、开拓视野、锻炼能力。你的学校正在开展“我为社会实践献一计”（My suggestion for social practice）的活动，即将初中毕业的你针对这个活动有何建议？请介绍你所希望进行的社会实践活动并阐述理由。 以下活动仅供参考。 参观类（Visit）：科技馆（Science Museum）、博物馆…… 实践类（Practice）：田间劳作（Working in the fields）、志愿者、厨艺…… 娱乐类（Entertainment）：演出（Performance）…… 比赛类（Match）：摄影（Taking photos）…… …… （注意：1.短文中不得出现考生姓名、校名及其它相关信息，否则不予评分。2.照抄阅读语篇不得分。） ____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2024-长宁-writing",
+      "title": "2024 上海长宁二模作文",
+      "year": 2024,
+      "district": "长宁",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "（本大题共1题，共20分） 80. Write at least 60 words according to the given situation （根据以下情境写一篇不少于60个词的短文，标点符号不占格。） 你学校的英语专栏将在下月进行主题为“My social activity（我的社会实践活动）”的分享。请你写一篇短文，介绍你参与校外的某一次社会实践活动，并谈谈你的感受。 （注意：短文中不得出现任何姓名、校名以及其它相关信息，否则不予评分。） ________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2024-闵行-writing",
+      "title": "2024 上海闵行二模作文",
+      "year": 2024,
+      "district": "闵行",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "（本大题共 1题，共20分） 64. Write at least 60 words according to the given situation (根据以下情境写一篇不少于60个词的短文，标点符号不占格) 今年“青少年心理健康周” (Teenagers’ Mental Health Week) 活动期间，校园英文电台就同学们眼中“最合适的倾诉对象”进行了问卷调查，下图为调查结果的饼状图 (the pie chart)。请阅读下图，谈谈你对此结果的看法，并结合自身实际，说说你眼中最合适的倾诉对象及理由。 ___________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2024-青浦-writing",
+      "title": "2024 上海青浦二模作文",
+      "year": 2024,
+      "district": "青浦",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "(20 分) 64. Write at least 60 words on the given topic “Actions speak louder than words”. (根据所给题目“行动胜于空谈”写一篇不少于60 个词的短文，标点符号不占格。) 常言道“行动胜于空谈”，一个行动往往胜过千言万语，我们在生活与学习中需要牢记这一点。请结合你的经历或是所见所闻，谈谈你的心得感悟。 写作要点： (1) 围绕“行动胜于空谈”的主题，讲述一则你生活中的小故事。 (2) 谈谈你对这件事的心得感悟。 注意：1.短文中不得出现考生的姓名、校名等个人信息，否则不予评分。 2. 照抄阅读语篇不得分。 ________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2024-静安-writing",
+      "title": "2024 上海静安二模作文",
+      "year": 2024,
+      "district": "静安",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "（共 20分） 64. Write a passage of at least 60 words about the topic “A problem I solved”. （以“我解决的一个问题”为题，根据以下情境写一篇不少于60个词的短文，标点符号不占格） 在日常生活中，我们时常面临各种挑战和问题。请分享一次你的亲身经历，谈谈你是如何运用具体的策略或方法，成功解决问题或找到答案的。 （注意：1. 短文中不得出现考生姓名、校名及其他相关信息。2. 照抄阅读语篇不得分。） ________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2024-黄浦-writing",
+      "title": "2024 上海黄浦二模作文",
+      "year": 2024,
+      "district": "黄浦",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "(20分) 64. Write at least 60 words according to the given situation. (根据以下情境写一篇不少于 60个词的短文，标点符号不占格。) “世界地球日”即将来临，学校将举办公益宣传活动，具体活动安排如下表格所示。请你为校园网站写一篇通知，邀请同学们踊跃参与，通知内容包括活动主题、目的，以及具体活动安排等。 You can begin like this: It’s time to celebrate Earth Day. You are welcome to join us! 注意：1. 短文中不得出现考生的姓名、校名等个人信息，否则不予评分。 2. 照抄阅读语篇不得分。 _____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2026-奉贤-writing",
+      "title": "2026 上海奉贤二模作文",
+      "year": 2026,
+      "district": "奉贤",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "（本大题共 1 题，共 20 分） 80. Write a passage in at least 60 words according to the following situation.（根据以下情境写一篇不少于 60 个 第 22页/共 24页 学科 网（北 京）股 份有限 公司 词的短文，标点符号不占格） 为落实“健康第一”的教育理念，学校决定将每个上学日的上午 9:00-9:30 设为“每日晨练半小时” (Daily Morning Workout)，用于组织体育活动。学校提出了三个活动方案，现面向全体同学征集意见。假设你是初 三学生李华，请你给活动负责人王老师写一封建议信，内容需包括： 1. 你选择哪个方案； 2. 你选择该方案的理由； 3. 对如何组织实施该活动提出两条具体建议。 Daily Morning Workout Activity Personal Sports Challenge ( 个 人 运 动 打 1 卡) Activity Class Team sports (班级团队运动) 2 Activity School Group Dance (全校活力集体舞) 3 ．．．．．．．．．．．．．．．．．．．．．．．．．2. 照抄阅读语篇不得分 （注意：1. 写作中不得出现姓名、校名等个人信息，否则不予评分。 ．．．．．．．．．。） ____________________________________________________________________________________________ ____________________________________________________________________________________________ ____________________________________________________________________________________________ ____________________________________________________________________________________________ ____________________________________________________________________________________________ ____________________________________________________________________________________________ _________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2026-崇明-writing",
+      "title": "2026 上海崇明二模作文",
+      "year": 2026,
+      "district": "崇明",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "（共 20 分） 64. Write at least 60 words according to the given situation.（根据以下情境，写一篇不少于 60 个词的短文， 标点符号不占格。） 你校的“同伴心理互助社 Peer Psychological Support Society”正在招募新一届社员，旨在帮助同学们缓解 学习压力、解决成长中的小烦恼。假设你是初三学生李华，请写一封申请邮件给社团指导老师周老师，邮 件须包含以下内容： （1）你想要加入社团的原因； （2）你能为社团带来的帮助； （3）你对社团活动的一个小设想。 注意： 1. 短文中不得出现任何校名 ．．．．．．．．．．．、人名以及其它相关信息 ．．．．．．．．．．，否则不予评分； ．．．．．．． 2. 照抄阅读语篇不得分 ．．．．．．．．．。 ____________________________________________________________________________________________ ____________________________________________________________________________________________ ____________________________________________________________________________________________ ____________________________________________________________________________________________ ____________________________________________________________________________________________ 第 20页/共 22页 学科 网（北 京）股 份有限 公司 ____________________________________________________________________________________________ ____________________________________________________________________________________________ ____________________________________________________________________________________________ ____________________________________________________________________________________________ _________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2026-徐汇-writing",
+      "title": "2026 上海徐汇二模作文",
+      "year": 2026,
+      "district": "徐汇",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "：（共 20 分） 64. The Senior High School Entrance Examination is approaching. From the list below, choose one sentence that you think motivates you the most at the moment. Write a short essay of at least 60 words explaining which sentence you’ve chosen and why you chose this sentence. 中考即将临近，请从所给句子中选择一句你觉得最能 激励你的话，并用不少于 60 个词谈一谈你选了哪句话以及你选择的理由。 （注意：短文中不得出现考生的姓名、校名及其他相关信息，否则不予评分。标点符号不占格） Focus on the process, the result will follow. One exam cannot define my whole life, but I will give it my all. My future self will thank me for the hard work I put in now. It does not matter how slowly I go as long as I do not stop. ____________________________________________________________________________________________ ____________________________________________________________________________________________ ____________________________________________________________________________________________ ____________________________________________________________________________________________ ____________________________________________________________________________________________ _______________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2026-普陀-writing",
+      "title": "2026 上海普陀二模作文",
+      "year": 2026,
+      "district": "普陀",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "（共 20 分） 64. Write at least 60 words according to the given situation. 【根据以下情境写一篇不少于 60 词的短文，标点符号不占格。 】 假设你是学生志愿者李华，为更好地迎接即将来你校访问的英国学生，国际交流处负责人王老师安排 你负责拍摄一个题为“承中华文化、融未来科技、育时代英才”的学校宣传视频。请你给王老师写一封邮 件，内容包括： （1）你计划拍摄的学校场景或活动（至少两个） ； （2）选择这些场景或活动的理由； （3）为顺利完成拍摄，你需要学校提供什么协助。 注意：短文中不得出现考生的姓名、校名及其他相关信息，否则不予评分。 ____________________________________________________________________________________________ ____________________________________________________________________________________________ ____________________________________________________________________________________________ ____________________________________________________________________________________________ ____________________________________________________________________________________________ ____________________________________________________________________________________________ ____________________________________________________________________________________________ ____________________________________________________________________________________________ ____________________________________________________________________________________________ ____________________________________________________________________________________________ ____________________________________________________________________________________________ _______________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2026-杨浦-writing",
+      "title": "2026 上海杨浦二模作文",
+      "year": 2026,
+      "district": "杨浦",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "（共 20 分） 64. Write at least 60 words according to the given information. （根据所给信息写一篇不少于 60 个词的短 文，标点符号不占格） 为响应每天不少于两小时的学校综合体育活动要求，学校大队部正在策划 30 分钟的大课间活动内容。 现向全校征集“金点子”，让活动更有趣、更受同学们欢迎。假设你是李华，请给大队部的辅导员张老师写一 封邮件，提出你的设想。你需要： 1. 推荐一项你最希望开展的体育活动或游戏； 2. 简要描述该活动并说明推荐理由； 3. 提出建议，以使活动更有趣、更受学生欢迎。 以下词汇仅供参考（非必选）： Word bank: rope skipping （跳绳） shuttlecock kicking （踢毽子） fitness dance （健身舞） frisbee （飞盘） hopscotch （跳房子） Kungfu （功夫） （注意：1. 短文中不得出现真实姓名、校名等个人信息，否则不予评分。2. 照抄阅读语篇不得分。 ） ____________________________________________________________________________________________ ____________________________________________________________________________________________ ____________________________________________________________________________________________ ___________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2026-虹口-writing",
+      "title": "2026 上海虹口二模作文",
+      "year": 2026,
+      "district": "虹口",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "（本大题共 1 题，共 20 分） 84. Write at least 60 words according to the given situation（根据以下情境写一篇不少于 60 个 词的短文，标点符号不占格）（共 20 分） 64. 假如你是李华，为鼓励九年级学生参加校园每日两小时的锻炼活动，学校举办海报设计征集活动。 现有两份设计进入决赛，学校正征集推荐意见。请你选择其中一份海报，给学校负责老师 Mr Wang 写一封 邮件，用自己的语言简述所选海报的内容和所选海报的理由。 （注意：1．照抄阅读语篇不得分。 2．文中不得出现真实姓名、校名等个人信息，否则不予评分。 ） Poster A: 2 Hours of Daily Campus Sports/Stay Active, Stay Healthy! (with benefits: Stronger Body, Sharper Mind, Happier Life) Poster B: Give Your Body a Hug. Move./You don’t have to be fast. Just start. Wind will remember your breath. The playground will remember your shadow./2 Hours Daily/For Your Body, For Your Mind/For Grade 9 students. 第 20页/共 22页 学科 网（北 京）股 份有限 公司 ____________________________________________________________________________________________ ____________________________________________________________________________________________ ____________________________________________________________________________________________ ____________________________________________________________________________________________ ____________________________________________________________________________________________ ____________________________________________________________________________________________ __________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2026-金山-writing",
+      "title": "2026 上海金山二模作文",
+      "year": 2026,
+      "district": "金山",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "Ⅶ. Writing（写作）*（共 20 分） 84. Write at least 60 words according to the given information.（根据以下情景写一篇至少 60 个词的短文，标点符号不占格。） 64. 假设你是初三学生李华。你校将举办“中华文化周（Chinese Culture Week）”主题活动，现需要招募 一批“文化小使者”（Little Cultural Ambassador）协助接待来自英国的师生代表团。请你用英文给活动负责人 王老师写一封申请邮件，邮件须包含以下内容 ．．．．．．．： 1）你申请担任“文化小使者”的意愿； 2）推荐一项可展示的中国传统文化活动（如书法、茶艺等），并说明推荐理由； 3）你胜任此角色的优势（如语言能力、组织经验、文化知识等）。 注意： 1.短文中不得出现考生姓名 ．．．．．．．．．．．、校名及其它相关信息 ．．．．．．．．．，否则不予评分 ．．．．．．。 2.照抄阅读语篇不得分 ．．．．．．．．．。 The following is for reference only.（以下表达仅供参考。） Chinese calligraphy (书法), Chinese tea ceremony (茶艺), paper-cutting (剪纸), Peking Opera (京剧) ____________________________________________________________________________________________ ____________________________________________________________________________________________ ____________________________________________________________________________________________ ____________________________________________________________________________________________ ____________________________________________________________________________________________ ____________________________________________________________________________________________ ___________________ 第 20页/共 22页 学科 网（北 京）股 份有限 公司",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2026-长宁-writing",
+      "title": "2026 上海长宁二模作文",
+      "year": 2026,
+      "district": "长宁",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "（本大题共 1 题，共 20 分） 64. Write at least 60 words according to the given situation（根据以下情境写一篇不少于 60 个词的短文， 第 19页/共 21页 学科 网（北 京）股 份有限 公司 标点符号不占格） 在“校园匿名墙”上，有这样一条新留言（见下表），请你回复此留言，提出相应建议并阐述理由。 Hi, My best friend is crazy about buying popular dolls these days. She spends all her pocket money on the latest limited edition (最新限量版). Now she even asked me to lend her some money. What should I do? Thanks! （注意：留言条中不得出现姓名、校名等个人信息，否则不予评分。） ____________________________________________________________________________________________ ____________________________________________________________________________________________ ____________________________________________________________________________________________ ____________________________________________________________________________________________ ____________________________________________________________________________________________ ____________________________________________________________________________________________ _____________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2026-闵行-writing",
+      "title": "2026 上海闵行二模作文",
+      "year": 2026,
+      "district": "闵行",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "（本大题共 1 题，共 20 分） 84．Write at least 60 words according to the given situation （根据以下情境写一篇不少于 60 个词的短文，标点符号不占格） 80. 假设你是花园学校初三学生李华，班级窗外的大树上有几处鸟窝，每天下午四点到五点半之间，成 第 22页/共 24页 学科 网（北 京）股 份有限 公司 群的小鸟在窗口外叽叽喳喳，热闹非凡。眼下正值学习的关键阶段，部分同学认为鸟鸣聒噪，严重影响了 自己的学习，向学校提议拆除鸟窝；但也有同学觉得此举并无必要。学校希望广泛听取同学们的意见，请 你给负责此事的张老师写一封信，阐述你的立场与理由，并为解决此问题提出你的一条建议。 (注意：1. 文中不得出现姓名、校名等个人信息，否则不予评分。2. 照抄本卷语篇不得分。) ____________________________________________________________________________________________ ____________________________________________________________________________________________ ____________________________________________________________________________________________ ____________________________________________________________________________________________ ____________________________________________________________________________________________ ____________________________________________________________________________________________ _______________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2026-青浦-writing",
+      "title": "2026 上海青浦二模作文",
+      "year": 2026,
+      "district": "青浦",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "(共 20 分) 64. Write at least 60 words according to the given situation. (请根据所给情境写一篇不少于 60 个词的短文， 标点符号不占格。) 学校校刊专栏以 “A corner full of warmth” (一个充满温暖的角落) 为题向学生征文，请写一篇短文投稿。 提示：校园/家里/社区等安静小角落，在这里发生过感动、帮助、关心、安慰、善意的暖心小事，让你 觉得心里温暖、有力量。请结合你的经历谈一谈你的感受。 You should include: 1. Where is the corner? 2. Describe one warm thing that happened there. 3. How does it influence your life? 注意： ● 文中不得出现姓名、校名等个人信息，否则不予评分。 ● 照抄试卷中内容不得分。 ____________________________________________________________________________________________ ____________________________________________________________________________________________ ____________________________________________________________________________________________ ____________________________________________________________________________________________ ____________________________________________________________________________________________ ____________________________________________________________________________________________ ____________________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2026-黄浦-writing",
+      "title": "2026 上海黄浦二模作文",
+      "year": 2026,
+      "district": "黄浦",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "（20 分） 64. Write at least 60 words according to the given situation.（根据以下情境写一篇不少于 60 个词的短文， 标点符号不占格。） 假如你是李华，你们学校正在组织以“科技改变生活”为主题的演讲活动，请你围绕主题撰写一篇发言稿。 内容可以涵盖以下问题： 1. What is your favorite digital device, and why? 2. How does technology change your life? 3. What advice would you give your classmates for using technology in a better way? 注意： 1. 短文中不得出现考生的姓名、校名等个人信息，否则不予评分 ．．．．．．．．．．．．．．．．．．．．．．．．．．．。 2. 照抄阅读语篇不得分。 ．．．．．．．．．． 第 18页/共 20页 学科 网（北 京）股 份有限 公司 Hello everyone, My name is Li Hua. Today I want to talk about how technology changes our life. ____________________________________________________________________________________________ ____________________________________________________________________________________________ ____________________________________________________________________________________________ ____________________________________________________________________________________________ ____________________________________________________________________________________________ ____________________________________________________________________________________________ ______",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2025-宝山-writing",
+      "title": "2025 上海宝山二模作文",
+      "year": 2025,
+      "district": "宝山",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "（共 20 分） 84. Write at least 60 words according to the given situation. (根据以下情境写一篇不少于 60 个 词的短文，标点符号不占格) 近年来，全球掀起了汉语学习的热潮，越来越多的人渴望了解中国文化和掌握汉语。 英 国留学生 John 是一名汉语爱好者，他在《跨文化对话》杂志上发布了招募启事，寻求一名 汉语学习小顾问（adviser），帮助他解决汉语学习中的困惑：如记忆汉字（Chinese characters）、 理解成语（Chinese idioms）及辨别文化差异（cultural differences）等。 假如你是初三学生李华，请你给 John 写一封应征信，阐述你能胜任汉语学习小顾问的 理由，并针对 John 汉语学习中的 1-2 个困惑提供合理的学习建议。 (注意：1. 短文中不得出现姓名、校名等个人信息 ．．．．．．．．．．．．．．．．．．, 否则不予评分。 ．．．．．．． 2. 照抄阅读语篇不得分。 ．．．．．．．．．．)",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2025-崇明-writing",
+      "title": "2025 上海崇明二模作文",
+      "year": 2025,
+      "district": "崇明",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "Write at least 60 words according to the given situation. (根据以下情境写一篇不少于 60 个 词的短文，标点符号不占格) 社区计划下个周末开展一次 “社区健康跑 (Community Health Run)” 活动，招募学生 志愿者参与策划与组织，以此倡导健康生活方式。假设你是初三学生陆遥，请写一封自荐信 给社区负责人张先生，自荐信必须包含以下两点： 1. 介绍你具备的组织能力（如活动策划经验、沟通能力等） 2. 谈谈你对这次活动流程的设想 (注意：1. 短文中不得出现姓名、校名等个人信息 ．．．．．．．．．．．．．．．．．．, 否则不予评分。 ．．．．．．． 2. 照抄阅读语篇不得分。 ．．．．．．．．．．)",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2025-奉贤-writing",
+      "title": "2025 上海奉贤二模作文",
+      "year": 2025,
+      "district": "奉贤",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "（共 20 分） 84. Write at least 60 words according to the given situation. (根据以下情境写一篇不少于 60 个 词的短文，标点符号不占格) 科技点燃梦想，创新引领未来! 你们学校第 10 届科技节即将开幕，现向全体同学征集 活动“金点子”——无论是邀请大咖作科技讲座、举行趣味实验比拼、还是……只要你的活 动创意新颖、可行性强，就有机会被采纳并亮相科技节! 快来用你的智慧，为校园科技盛宴 添彩! (注意：1. 短文中不得出现姓名、校名等个人信息 ．．．．．．．．．．．．．．．．．．, 否则不予评分。 ．．．．．．． 2. 照抄阅读语篇不得分。 ．．．．．．．．．．)",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2025-虹口-writing",
+      "title": "2025 上海虹口二模作文",
+      "year": 2025,
+      "district": "虹口",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "（共 20 分） 84. Write at least 60 words according to the given situation. (根据以下情境写一篇不少于 60 个 词的短文，标点符号不占格) 学校校报收到了一封来自学生 Paul 的邮件，他建议校报增设“文化角” (Culture corner) 和“旅游角”(Travel corner)两个板块。假如你是校报主编 Joyce，请给 Paul 回复一封邮件， 说明你的决定并阐述理由。 (注意：1. 短文中不得出现姓名、校名等个人信息 ．．．．．．．．．．．．．．．．．．, 否则不予评分。 ．．．．．．． ．．．．．．．．．．) 2. 照抄阅读语篇不得分。",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2025-黄浦-writing",
+      "title": "2025 上海黄浦二模作文",
+      "year": 2025,
+      "district": "黄浦",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "（共 20 分） 84. Write at least 60 words according to the given situation. (根据以下情境写一篇不少于 60 个 词的短文，标点符号不占格) 假设你是李华，收到英国笔友 Tom 的求助邮件。他因借助 AI 完成作业与爸爸产生矛 盾。Tom 想缓和关系却不知如何表达。请以李华的身份给 Tom 回复邮件，提出建议，助 其改善与爸爸的关系。 邮件需包含对使用 AI 完成作业的看法及解决矛盾的建议。 (注意：1. 短文中不得出现姓名、校名等个人信息 ．．．．．．．．．．．．．．．．．．, 否则不予评分。 ．．．．．．． 2. 照抄阅读语篇不得分。 ．．．．．．．．．．)",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2025-嘉定-writing",
+      "title": "2025 上海嘉定二模作文",
+      "year": 2025,
+      "district": "嘉定",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "（共 20 分） 84. Write at least 60 words according to the given situation. (根据以下情境写一篇不少于 60 个 词的短文，标点符号不占格) . . 为丰富学生的校园生活, 学校拟成立校外实践基地 (off-campus practical base), 现有四 个候选基地供选择:  生态花卉园 (Ecological Flower Garden)  科创实验基地 (Science and Innovation Experiment Base)  传统文化体验馆 (Traditional Culture Experience Center)  历史博物馆 (History Museum) 现面向全体学生征集意见，并邀请同学们设计相关实践活动。假设你是学生李华，请写 一封邮件给负责此项目的张老师。内容包括: 1. 推荐一个实践基地，并简要说明理由。 2. 设计本学期校外实践活动，说明活动形式及意义。 (注意：1. 短文中不得出现姓名、校名等个人信息 ．．．．．．．．．．．．．．．．．，．否则不予评分。 ．．．．．．． 2. 照抄阅读语篇不得分。 ．．．．．．．．．．) . .",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2025-金山-writing",
+      "title": "2025 上海金山二模作文",
+      "year": 2025,
+      "district": "金山",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "Write at least 60 words according to the given situation. (根据以下情境写一篇不少于 60 个 词的短文，标点符号不占格) 花园中学最近成立了一个“青少年建议专栏” ，为学生提供在生活中遇到问题的解决建 议。 学生陆遥在上周给专栏的求助信中描述了她遇到的问题，如：因为她弄丢了朋友的书 而失去朋友的信任、因学习成绩下降而失去信心、因同学的误解而感到伤心。假如你是专栏 的负责人李明，请你选择其中一个方面给陆遥写封回信，说说你的建议并结合自己的经历进 行说明。",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2025-静安-writing",
+      "title": "2025 上海静安二模作文",
+      "year": 2025,
+      "district": "静安",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "（共 20 分） 84. Write at least 60 words according to the given situation. (根据以下情境写一篇不少于 60 个 词的短文，标点符号不占格) 你的学校计划举办名为 “用英语讲中国故事” 的校园文化节活动，现就活动方案征求 意见。假设你是初三学生李华，请阅读以下活动方案，写一封邮件给大队部汪老师。邮件须 包含以下内容: （1）你是否会参加此活动，并简述理由； （2）针对方案中的一项内容，提出修改建议。 校园文化节活动方案 The Plan of Campus Culture Festival 主题 “用英语讲中国故事” Theme Telling Chinese stories in English 时间 4 月 21 日—4 月 25 日下午 4:00-6:00 Time 地点 学校图书馆前的草坪 (lawn) Place 对象 6-9 年级学生",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2025-闵行-writing",
+      "title": "2025 上海闵行二模作文",
+      "year": 2025,
+      "district": "闵行",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "（共 20 分） 84. Write at least 60 words according to the given situation. (根据以下情境写一篇不少于 60 个 词的短文，标点符号不占格) 假设你是学校 AI 俱乐部的负责学生李枫，你们俱乐部将而向本校九年级学生举办一场 主题为“生活中的人工智能”（\"AI in our Life\"）的讲座。请为此拟一份通知。 通知需包含以下内容： （1）讲座的时间和地点； （2）选择该主题的理由及会场注意事项。 (注意：1. 短文中不得出现姓名、校名等个人信息 ．．．．．．．．．．．．．．．．．．, 否则不予评分。 ．．．．．．． 2. 照抄阅读语篇不得分。 ．．．．．．．．．．) . .",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2025-浦东-writing",
+      "title": "2025 上海浦东二模作文",
+      "year": 2025,
+      "district": "浦东",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "（共 20 分） 84. Write at least 60 words according to the given situation. (根据以下情境写一篇不少于 60 个 词的短文，标点符号不占格) 你的初中生活即将结束。回首过去四年，除了悉心教导的老师，还有站岗巡逻的保安叔 叔，用心烹饪的食堂员工，辛勤清扫的保洁阿姨，细心诊疗的校园医生……这些校园里的无 名英雄用日复一日的付出，为你创造了安心学习的环境。校学生会在校园论坛上发起了“致 谢校园平凡英雄”的主题帖。假设你是初三学生李枫，请在此主题帖下跟帖，选择一名/类 你最想感谢的校园工作人员（教师除外），表明选择的理由，并说说自己将以哪些方式向他 （们）/她（们）致谢。  Security officers 安保人员  Canteen staff 食堂员工  School nurses 校园医生  School cleaners 保洁人员  Librarians 图书管理员  Gardeners 绿植养护员 ...... (注意：1. 短文中不得出现姓名、校名等个人信息 ．．．．．．．．．．．．．．．．．．, 否则不予评分。 ．．．．．．． 2. 照抄阅读语篇不得分。 ．．．．．．．．．．)",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2025-普陀-writing",
+      "title": "2025 上海普陀二模作文",
+      "year": 2025,
+      "district": "普陀",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "（共 20 分） 84. Write at least 60 words according to the given situation. (根据以下情境写一篇不少于 60 个 词的短文，标点符号不占格) 假 设 你 是 李 华 ， 将 于 今 年 7 月 4 日 — 7 月 10 日 去 英 国 伦 敦 旅 行 。 你 在 浏 览 TrustedHousesitters 网站时，发现以下两个家庭在寻找此时间段能帮助他们照看房子和宠物 的人 (house sitter). 请任选一个家庭，撰写一封申请邮件，说明你的情况、申请目的和理由， 并简要谈谈你的照看计划。 Cat sitting for a cute cat, in a lovely house Experienced sitter needed for our dog Mr. and Mrs. Colins Mr. and Mrs. Walsh 职责: 职责:  照顾猫咪 Mimi  照顾小狗 Bell  保持房子整洁  照顾花园里的植物 友情提示: 友情提示:  Mimi 很粘人，需要陪伴和玩耍  Bell 精力旺盛，但害怕淘气的小孩子 注意: 短文中不得出现考生的姓名、校名及其他相关信息, 否则不予评分.",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2025-青浦-writing",
+      "title": "2025 上海青浦二模作文",
+      "year": 2025,
+      "district": "青浦",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "（共 20 分） 84. Write at least 60 words according to the given situation. (根据以下情境写一篇不少于 60 个 词的短文，标点符号不占格) 假如你是吴磊，你的学校为丰富学生校园生活，推出了校园电影放映活动，具体方案如 下。 现学校向全校征询电影选片及方案改进意见，请根据方案内容，向教导处王老师写一 封邮件，需包含以下要点: 校园电影放映活动方案 1. 推荐一部电影 ．．．．，并说明理由; ☐ Ne Zha 2（哪吒之魔童闹海）144mins 2. 对方案提出一点改进建议 ．．．．．．, 并解释原因。 ☐ The Battle of Lake Changjin（长津湖）176mins 电影 注意: ☐ Kung Fu Panda（功夫熊猫）92mins  文中不得出现姓名、校名等个人信息，否则 ☐____________________（Your choice) 不予评分。 时间 3:30 Monday afternoon  照抄试卷中内容不得分。 地点 School gym  邮件格式不计入总词数。 观众 Ninth graders",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2025-松江-writing",
+      "title": "2025 上海松江二模作文",
+      "year": 2025,
+      "district": "松江",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "（共 20 分） 84. Write at least 60 words according to the given situation. (根据以下情境写一篇不少于 60 个 词的短文，标点符号不占格) 作为未成年人，我们往往和父母、祖父母住在一起。生活中，你与长辈是如何相处的? 请以 “How to get along with elders” 为题，分享你与长辈的相处之道，并用一个事例来说明。 (注意：1. 短文中不得出现姓名、校名等个人信息 ．．．．．．．．．．．．．．．．．．, 否则不予评分。 ．．．．．．． 2. 照抄阅读语篇不得分。 ．．．．．．．．．．)",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2025-徐汇-writing",
+      "title": "2025 上海徐汇二模作文",
+      "year": 2025,
+      "district": "徐汇",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "After four years of junior high school study, you must have grown up a lot. Let’s get to know you again from new perspectives, for example, your strengths, your pursuits, your attitudes and viewpoints towards things, the ways you handle matters, and so on. Please write a self-introduction in no less than 60 words. 经过了四年的初中学习生活，你一定成长了不少吧。让我们从新的视角重新认识一下你， 比如你的优势、你的追求、你对事物的态度和观点或是你处理事情的方式等等。请完成一份 自我介绍，不少于 60 个词。 (注意：短文中不得出现考生的姓名、校名及其他相关信息，否则不予评分。标点符号 不占格) Hi, I am _______________________________________________________________________ _______________________________________________________________________________ _______________________________________________________________________________ _______________________________________________________________________________ _______________________________________________________________________________ _______________________________________________________________________________ _______________________________________________________________________________ _______________________________________________________________________________ _______________________________________________________________________________ _______________________________________________________________________________ ______________________________________________________________________________",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2025-杨浦-writing",
+      "title": "2025 上海杨浦二模作文",
+      "year": 2025,
+      "district": "杨浦",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "（共 20 分） 84. Write at least 60 words according to the given situation. (根据以下情境写一篇不少于 60 个 词的短文，标点符号不占格) 假设你是 Tammy Luo，在新西兰交流学习期间，你需要向同学们做一次关于上海文化 （如建筑、食物、节日活动、生活方式等）的演讲。请写一篇演讲稿，其中要体现你使用照 片或明信片来辅助演讲。 (注意：1. 短文中不得出现姓名、校名等个人信息 ．．．．．．．．．．．．．．．．．,．否则不予评分。 ．．．．．．． 2. 照抄阅读语篇不得分。 ．．．．．．．．．．)",
+      "minWords": 60,
+      "score": 20
+    },
+    {
+      "_id": "sh-em2-2025-长宁-writing",
+      "title": "2025 上海长宁二模作文",
+      "year": 2025,
+      "district": "长宁",
+      "examType": "二模",
+      "stage": "初中",
+      "prompt": "（共 20 分） 84. Write at least 60 words according to the given situation. (根据以下情境写一篇不少于 60 个 词的短文，标点符号不占格) 阅读 C 篇告诉我们：时代的进步改变我们阅读经典的方式，除了纸质阅读（read paper books）经典以外，还有在线阅读（read books online）、视频阅读（read books with videos） 等等。请你谈谈你喜欢用哪个方式阅读，并说明理由（至少两个）。 (注意：1. 短文中不得出现姓名、校名等个人信息 ．．．．．．．．．．．．．．．．．．, 否则不予评分。 ．．．．．．． 2. 照抄阅读语篇不得分。 ．．．．．．．．．．)",
+      "minWords": 60,
+      "score": 20
+    }
+  ],
+  "listeningEm2": [
+    {
+      "_id": "sh-em2-2021-奉贤-listening",
+      "title": "2021 上海奉贤二模听力",
+      "year": 2021,
+      "district": "奉贤",
+      "examType": "二模",
+      "stage": "初中",
+      "audioCloudPath": "_content/listening-em2/audio/sh-em2-2021-奉贤-listening.mp3",
+      "transcript": "",
+      "hasAudio": true,
+      "hasTranscript": false,
+      "questionSourceFile": "精品解析：2021年上海市奉贤区中考二模英语试题（含听力）（原卷版）.docx",
+      "images": [
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2021-奉贤-listening-image-1.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2021-奉贤-listening-image-1.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2021-奉贤-listening-image-2.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2021-奉贤-listening-image-2.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2021-奉贤-listening-image-3.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2021-奉贤-listening-image-3.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2021-奉贤-listening-image-4.jpeg",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2021-奉贤-listening-image-4.jpeg"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2021-奉贤-listening-image-5.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2021-奉贤-listening-image-5.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2021-奉贤-listening-image-6.jpeg",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2021-奉贤-listening-image-6.jpeg"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2021-奉贤-listening-image-7.jpeg",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2021-奉贤-listening-image-7.jpeg"
+        }
+      ],
+      "questions": [
+        {
+          "number": 1,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 2,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 3,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 4,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 5,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 6,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Children’s story books.",
+            "B": "Cartoon books.",
+            "C": "Detective story books.",
+            "D": "Science fiction."
+          },
+          "answer": ""
+        },
+        {
+          "number": 7,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Rainy.",
+            "B": "Fine.",
+            "C": "Windy.",
+            "D": "Snowy."
+          },
+          "answer": ""
+        },
+        {
+          "number": 8,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "At the post office.",
+            "B": "In the restaurant.",
+            "C": "In the library.",
+            "D": "In the supermarket."
+          },
+          "answer": ""
+        },
+        {
+          "number": 9,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "He agrees with May.",
+            "B": "Everyone should do housework.",
+            "C": "He never does any housework.",
+            "D": "Housework is only for parents."
+          },
+          "answer": ""
+        },
+        {
+          "number": 10,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "She is not familiar with the bus system.",
+            "B": "She is tired and not feeling very well.",
+            "C": "Listen to the dialogue and tell whether the following statements are true or false（判断下列句子是否符合你听到的短文内容，符合的用“T”表示，不符合的用“F”表示）（5分）",
+            "D": "Listen to the passage and complete the following sentences（听短文，用听到的单词完成下列句子。每空格限填一词）（10分）"
+          },
+          "answer": ""
+        },
+        {
+          "number": 11,
+          "prompt": "Scott felt sick on Sunday afternoon and he became better now.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 12,
+          "prompt": "Scott was afraid to miss an interview on Friday because of the bad cold.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 13,
+          "prompt": "Scott followed the doctor’s advice and stayed in bed for two days.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 14,
+          "prompt": "Scott agreed to try traditional Chinese medicine after Kitty introduced it to him.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 15,
+          "prompt": "Kitty and Scott will meet at 8:30 at the gate of Kitty’s housing estate.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 16,
+          "prompt": "During our daily lives, we ________ ________ understanding the world, not remembering it.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 17,
+          "prompt": "We do remember ________ ________ of the game, but they are only a byproduct (副产品) of this experience.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 18,
+          "prompt": "Second, forgetting helps us to ________ ________ hard times.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 19,
+          "prompt": "You wouldn’t like to fill your brain with useless things, such as an old password you _______ _______ use.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 20,
+          "prompt": "Don’t be sad if you forget a lot. Forgetting is just part of having a ________ ________.",
+          "questionType": "blank",
+          "answer": ""
+        }
+      ]
+    },
+    {
+      "_id": "sh-em2-2021-杨浦-listening",
+      "title": "2021 上海杨浦二模听力",
+      "year": 2021,
+      "district": "杨浦",
+      "examType": "二模",
+      "stage": "初中",
+      "audioCloudPath": "_content/listening-em2/audio/sh-em2-2021-杨浦-listening.mp3",
+      "transcript": "",
+      "hasAudio": true,
+      "hasTranscript": false,
+      "questionSourceFile": "精品解析：2021年上海市杨浦区中考二模英语试题（含听力）（原卷版）.docx",
+      "images": [
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2021-杨浦-listening-image-1.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2021-杨浦-listening-image-1.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2021-杨浦-listening-image-2.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2021-杨浦-listening-image-2.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2021-杨浦-listening-image-3.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2021-杨浦-listening-image-3.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2021-杨浦-listening-image-4.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2021-杨浦-listening-image-4.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2021-杨浦-listening-image-5.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2021-杨浦-listening-image-5.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2021-杨浦-listening-image-6.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2021-杨浦-listening-image-6.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2021-杨浦-listening-image-7.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2021-杨浦-listening-image-7.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2021-杨浦-listening-image-8.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2021-杨浦-listening-image-8.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2021-杨浦-listening-image-9.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2021-杨浦-listening-image-9.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2021-杨浦-listening-image-10.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2021-杨浦-listening-image-10.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2021-杨浦-listening-image-11.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2021-杨浦-listening-image-11.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2021-杨浦-listening-image-12.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2021-杨浦-listening-image-12.png"
+        }
+      ],
+      "questions": [
+        {
+          "number": 1,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 2,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 3,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 4,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 5,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 6,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Hot soup.",
+            "B": "Cola.",
+            "C": "Hot coffee.",
+            "D": "Juice."
+          },
+          "answer": ""
+        },
+        {
+          "number": 7,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "A reporter.",
+            "B": "A TV presenter.",
+            "C": "A director.",
+            "D": "A history professor."
+          },
+          "answer": ""
+        },
+        {
+          "number": 8,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "In a restaurant.",
+            "B": "In a company.",
+            "C": "In a hotel.",
+            "D": "In a sports centre."
+          },
+          "answer": ""
+        },
+        {
+          "number": 9,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Visiting landmarks.",
+            "B": "Trying local food.",
+            "C": "Shopping at markets.",
+            "D": "Meeting local people."
+          },
+          "answer": ""
+        },
+        {
+          "number": 10,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Jim saved his report in time.",
+            "B": "Jim has just lost his job.",
+            "C": "Listen to the passage and tell whether the following statements are true or false（判断下列句子是否符合你听到的短文内容，符合的用“T”表示，不符合的用“F”表示）（5分）",
+            "D": "Listen to the passage and complete the following sentences（听短文填空，完成下列句子。每空格限填一词）（10分）"
+          },
+          "answer": ""
+        },
+        {
+          "number": 11,
+          "prompt": "Lisa’s ticket for the gadget (小器具) show cost 15 pounds.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 12,
+          "prompt": "Lisa went to the show by underground and arrived at 10 a.m.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 13,
+          "prompt": "Lisa really liked seeing the Games Hall.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 14,
+          "prompt": "For lunch Lisa decided to get a sandwich instead of a hot meal.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 15,
+          "prompt": "The show will finish on 25th April, next Saturday.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 16,
+          "prompt": "A British couple had a ________ ________ after they were lost at sea for five hours.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 17,
+          "prompt": "On the ________ ________ of their holiday, the Browns had a frightening experience.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 18,
+          "prompt": "The Browns had to go back to their boat because the sea was ________ ________.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 19,
+          "prompt": "The Browns swam away from the shore (岸) to avoid some ________ ________.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 20,
+          "prompt": "When they were out at sea, the Browns were ________ ________ for sharks all the time.",
+          "questionType": "blank",
+          "answer": ""
+        }
+      ]
+    },
+    {
+      "_id": "sh-em2-2021-长宁-listening",
+      "title": "2021 上海长宁二模听力",
+      "year": 2021,
+      "district": "长宁",
+      "examType": "二模",
+      "stage": "初中",
+      "audioCloudPath": "_content/listening-em2/audio/sh-em2-2021-长宁-listening.mp3",
+      "transcript": "",
+      "hasAudio": true,
+      "hasTranscript": false,
+      "questionSourceFile": "精品解析：2021年上海市长宁区中考二模英语试题（含听力）（原卷版）.docx",
+      "images": [
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2021-长宁-listening-image-1.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2021-长宁-listening-image-1.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2021-长宁-listening-image-2.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2021-长宁-listening-image-2.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2021-长宁-listening-image-3.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2021-长宁-listening-image-3.png"
+        }
+      ],
+      "questions": [
+        {
+          "number": 1,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 2,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 3,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 4,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 5,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 6,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "A reporter.",
+            "B": "A detective.",
+            "C": "A manager.",
+            "D": "A lawyer."
+          },
+          "answer": ""
+        },
+        {
+          "number": 7,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "9:40.",
+            "B": "9:50.",
+            "C": "10:00.",
+            "D": "10:10."
+          },
+          "answer": ""
+        },
+        {
+          "number": 8,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Surprised.",
+            "B": "Upset.",
+            "C": "Embarrassed.",
+            "D": "Worried."
+          },
+          "answer": ""
+        },
+        {
+          "number": 9,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "In a market.",
+            "B": "In a park.",
+            "C": "At home.",
+            "D": "At school."
+          },
+          "answer": ""
+        },
+        {
+          "number": 10,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "He will be glad to join the party.",
+            "B": "He wants to take his sister to the party.",
+            "C": "Listen to the passage and tell whether the following statements are true or false（判断下列句子是否符合你听到的对话内容，符合的用“T”表示，不符合的用“F”表示）（5分）",
+            "D": "Listen to the passage and complete the following sentences（听短文，完成下列内容。每空格限填一词）（10分）"
+          },
+          "answer": ""
+        },
+        {
+          "number": 11,
+          "prompt": "The writer felt very sad when his mobile phone didn’t work.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 12,
+          "prompt": "To save money, the writer wanted to buy a cheap mobile phone.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 13,
+          "prompt": "The writer didn’t buy the mid-range mobile phone in the end.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 14,
+          "prompt": "The writer’s mum was happy with what her son had bought.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 15,
+          "prompt": "Finally, the writer managed to get his refund (退款) from Kevin.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 16,
+          "prompt": "The programme aims that children can learn important skill _______ _______ by building things together.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 17,
+          "prompt": "Some children have _______ _______ when using a knife, or hurt their fingers then using hammer.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 18,
+          "prompt": "At Tinkering School, the children must wear the _______ _______ and protection at all times.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 19,
+          "prompt": "The real school ‘Brightworks’ is very small --- it only has 20 students _______ _______ to 13.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 20,
+          "prompt": "Some people have said the students are just ‘_______ _______’ instead of learning enough at Brightworks.",
+          "questionType": "blank",
+          "answer": ""
+        }
+      ]
+    },
+    {
+      "_id": "sh-em2-2021-静安-listening",
+      "title": "2021 上海静安二模听力",
+      "year": 2021,
+      "district": "静安",
+      "examType": "二模",
+      "stage": "初中",
+      "audioCloudPath": "_content/listening-em2/audio/sh-em2-2021-静安-listening.mp3",
+      "transcript": "",
+      "hasAudio": true,
+      "hasTranscript": false,
+      "questionSourceFile": "精品解析：2021年上海市静安区中考二模英语试题（含听力）（原卷版）.docx",
+      "images": [
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2021-静安-listening-image-1.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2021-静安-listening-image-1.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2021-静安-listening-image-2.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2021-静安-listening-image-2.png"
+        }
+      ],
+      "questions": [
+        {
+          "number": 1,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 2,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 3,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 4,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 5,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 6,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Rainy.",
+            "B": "Cloudy.",
+            "C": "Sunny.",
+            "D": "Windy."
+          },
+          "answer": ""
+        },
+        {
+          "number": 7,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Helpful.",
+            "B": "Careless.",
+            "C": "Humorous.",
+            "D": "Independent."
+          },
+          "answer": ""
+        },
+        {
+          "number": 8,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "In a restaurant.",
+            "B": "In a hospital.",
+            "C": "At a bank.",
+            "D": "At a cinema."
+          },
+          "answer": ""
+        },
+        {
+          "number": 9,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Weather.",
+            "B": "A novel.",
+            "C": "A disaster.",
+            "D": "A film."
+          },
+          "answer": ""
+        },
+        {
+          "number": 10,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "The woman has much business.",
+            "B": "The woman used to enjoy train trips.",
+            "C": "Listen to the passage and tell whether the following statements are true or false（判断下列句子是否符合你听到的短文内容，符合的用“T”表示，不符合的用“F”表示）（5分）",
+            "D": "Listen to the passage and complete the following sentences（听短文，完成下列内容。每空格限填一词）（10分）"
+          },
+          "answer": ""
+        },
+        {
+          "number": 11,
+          "prompt": "Akane hopes to get some advice on her future from her best friend Mari.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 12,
+          "prompt": "Akane is soon going to visit Finland (芬兰) for the first time.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 13,
+          "prompt": "Akane thinks it’s unfair for her parents to decide where she should live.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 14,
+          "prompt": "Akane thinks that staying in Paris is the best solution.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 15,
+          "prompt": "Akane is truly in love and she wants to marry Lukas as soon as possible",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 16,
+          "prompt": "Amanda Gorman delivered _______ _______ at a president’s inauguration (就职典礼).",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 17,
+          "prompt": "She will be performing at the Super Bowl — a _______ _______ for the National Football League (NFL).",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 18,
+          "prompt": "She will show respect to teachers, nurses and _______ _______.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 19,
+          "prompt": "It appears that people are _______ _______hear more from Amanda Gorman.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 20,
+          "prompt": "Amanda Gorman’s books are set to be released _______ _______ this year.",
+          "questionType": "blank",
+          "answer": ""
+        }
+      ]
+    },
+    {
+      "_id": "sh-em2-2021-黄浦-listening",
+      "title": "2021 上海黄浦二模听力",
+      "year": 2021,
+      "district": "黄浦",
+      "examType": "二模",
+      "stage": "初中",
+      "audioCloudPath": "_content/listening-em2/audio/sh-em2-2021-黄浦-listening.mp3",
+      "transcript": "",
+      "hasAudio": true,
+      "hasTranscript": false,
+      "questionSourceFile": "精品解析：2021年上海市黄浦区中考二模英语试题（含听力）（原卷版）.docx",
+      "images": [
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2021-黄浦-listening-image-1.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2021-黄浦-listening-image-1.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2021-黄浦-listening-image-2.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2021-黄浦-listening-image-2.png"
+        }
+      ],
+      "questions": [
+        {
+          "number": 1,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 2,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 3,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 4,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 5,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 6,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Sunny.",
+            "B": "Rainy.",
+            "C": "Cloudy.",
+            "D": "Snowy."
+          },
+          "answer": ""
+        },
+        {
+          "number": 7,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "At 9:30.",
+            "B": "At 10:30.",
+            "C": "At 11:30.",
+            "D": "At 13:30."
+          },
+          "answer": ""
+        },
+        {
+          "number": 8,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Friends.",
+            "B": "Neighbours.",
+            "C": "Relatives.",
+            "D": "Classmates."
+          },
+          "answer": ""
+        },
+        {
+          "number": 9,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Necessary.",
+            "B": "Boring.",
+            "C": "Interesting.",
+            "D": "Expensive."
+          },
+          "answer": ""
+        },
+        {
+          "number": 10,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Jessica is preparing the dinner.",
+            "B": "David is good at driving.",
+            "C": "Listen to the dialogue and tell whether the following statements are true or false（判断下列句子是否符合你听到的对话内容，符合的用“T”表示， 不符合的用“F”表示）（5分）",
+            "D": "Listen to the passage and fill in the blanks（听短文填空，完成下列句子。每空格限填一词）（10分）"
+          },
+          "answer": ""
+        },
+        {
+          "number": 11,
+          "prompt": "Mr. Brown is taking a job interview.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 12,
+          "prompt": "Without writing experience, Mr. Brown can’t write any scientific papers.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 13,
+          "prompt": "Mr. Brown is good at word processing and can type about 60 words a minute.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 14,
+          "prompt": "Mr. Brown is expected to travel abroad a lot, even during holidays.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 15,
+          "prompt": "From the dialogue, we can learn that Mr. Brown is likely to get the job offer.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 16,
+          "prompt": "On Pancake Tuesday, everyone goes down to the road next to the beach when a ________ ________ is rung.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 17,
+          "prompt": "In pancake races, people usually ________ ________ a frying pan and toss a pancake at the same time.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 18,
+          "prompt": "Cheese rolling often ________ ________ in spring, in the south-west of England.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 19,
+          "prompt": "________ ________ snail owners take part in the race every year.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 20,
+          "prompt": "After the snail race, there’s usually a ________ ________ for the owners and on-lookers.",
+          "questionType": "blank",
+          "answer": ""
+        }
+      ]
+    },
+    {
+      "_id": "sh-em2-2022-奉贤-listening",
+      "title": "2022 上海奉贤二模听力",
+      "year": 2022,
+      "district": "奉贤",
+      "examType": "二模",
+      "stage": "初中",
+      "audioCloudPath": "_content/listening-em2/audio/sh-em2-2022-奉贤-listening.mp3",
+      "transcript": "",
+      "hasAudio": true,
+      "hasTranscript": false,
+      "questionSourceFile": "上海市奉贤区2022届九年级6月质量调研（二模）英语试卷（word原卷精校版）.docx",
+      "images": [
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-奉贤-listening-image-1.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-奉贤-listening-image-1.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-奉贤-listening-image-2.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-奉贤-listening-image-2.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-奉贤-listening-image-3.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-奉贤-listening-image-3.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-奉贤-listening-image-4.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-奉贤-listening-image-4.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-奉贤-listening-image-5.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-奉贤-listening-image-5.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-奉贤-listening-image-6.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-奉贤-listening-image-6.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-奉贤-listening-image-7.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-奉贤-listening-image-7.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-奉贤-listening-image-8.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-奉贤-listening-image-8.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-奉贤-listening-image-9.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-奉贤-listening-image-9.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-奉贤-listening-image-10.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-奉贤-listening-image-10.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-奉贤-listening-image-11.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-奉贤-listening-image-11.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-奉贤-listening-image-12.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-奉贤-listening-image-12.png"
+        }
+      ],
+      "questions": [
+        {
+          "number": 1,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 2,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 3,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 4,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 5,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 6,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "7:00.",
+            "B": "7:30.",
+            "C": "8:00.",
+            "D": "8:30."
+          },
+          "answer": ""
+        },
+        {
+          "number": 7,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Sam.",
+            "B": "Mary.",
+            "C": "James.",
+            "D": "Jane."
+          },
+          "answer": ""
+        },
+        {
+          "number": 8,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "On foot.",
+            "B": "By bus.",
+            "C": "By taxi.",
+            "D": "By bike."
+          },
+          "answer": ""
+        },
+        {
+          "number": 9,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "In a restaurant.",
+            "B": "In a hotel.",
+            "C": "In a coffee bar.",
+            "D": "On a plane."
+          },
+          "answer": ""
+        },
+        {
+          "number": 10,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "She doesn’t know where the lift is.",
+            "B": "She has no time to wait for the lift.",
+            "C": "Listen to the dialogue and tell whether the following statements are true or false（判断下列句子是否符合你听到的短文内容，符合的用“T”表示，不符合的用“F”表示）：（共 5分）",
+            "D": "Listen to the conversation and fill in the blanks (根据你听到的内容，完成下列短文，每空格限填一词): (共 10 分)"
+          },
+          "answer": ""
+        },
+        {
+          "number": 11,
+          "prompt": "Shanghai Chenshan Botanical Garden(上海辰山植物园) has nearly 16,000 different kinds of plants.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 12,
+          "prompt": "The Quarry Garden(矿坑花园) will make you think of traditional Chinese ink paintings.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 13,
+          "prompt": "The tree houses and suspension bridges(吊桥) in the Children's Garden can guide them through all kinds of plants.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 14,
+          "prompt": "In the Blind’s Garden, the designers specially planted many fragrant and differently shaped plants.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 15,
+          "prompt": "The passage introduces four special themed areas in Shanghai Chenshan Botanical Garden.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 16,
+          "prompt": "Sue still reads comic books every day, though he is already in his _______ _______.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 17,
+          "prompt": "Sue thinks his life would have been _______ _______ without comic books.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 18,
+          "prompt": "The pictures and word balloons in the comic books were _______ _______ to Sue.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 19,
+          "prompt": "When Sue was a kid, comic books were too great for him to _______ _______.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 20,
+          "prompt": "In Sue’s view, comics are not the _______ _______ to get kids reading.",
+          "questionType": "blank",
+          "answer": ""
+        }
+      ]
+    },
+    {
+      "_id": "sh-em2-2022-宝山-listening",
+      "title": "2022 上海宝山二模听力",
+      "year": 2022,
+      "district": "宝山",
+      "examType": "二模",
+      "stage": "初中",
+      "audioCloudPath": "_content/listening-em2/audio/sh-em2-2022-宝山-listening.mp3",
+      "transcript": "",
+      "hasAudio": true,
+      "hasTranscript": false,
+      "questionSourceFile": "上海市宝山区2022届九年级6月质量调研（二模）英语试卷（word原卷精校版）.docx",
+      "images": [
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-宝山-listening-image-1.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-宝山-listening-image-1.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-宝山-listening-image-2.jpeg",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-宝山-listening-image-2.jpeg"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-宝山-listening-image-3.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-宝山-listening-image-3.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-宝山-listening-image-4.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-宝山-listening-image-4.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-宝山-listening-image-5.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-宝山-listening-image-5.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-宝山-listening-image-6.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-宝山-listening-image-6.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-宝山-listening-image-7.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-宝山-listening-image-7.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-宝山-listening-image-8.jpeg",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-宝山-listening-image-8.jpeg"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-宝山-listening-image-9.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-宝山-listening-image-9.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-宝山-listening-image-10.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-宝山-listening-image-10.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-宝山-listening-image-11.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-宝山-listening-image-11.png"
+        }
+      ],
+      "questions": [
+        {
+          "number": 1,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 2,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 3,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 4,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 5,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 6,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "A dentist.",
+            "B": "A detective.",
+            "C": "A doctor.",
+            "D": "A teacher."
+          },
+          "answer": ""
+        },
+        {
+          "number": 7,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Spring.",
+            "B": "Winter.",
+            "C": "Autumn.",
+            "D": "Summer."
+          },
+          "answer": ""
+        },
+        {
+          "number": 8,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "It was interesting.",
+            "B": "It was exciting.",
+            "C": "It was wonderful.",
+            "D": "It was funny."
+          },
+          "answer": ""
+        },
+        {
+          "number": 9,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "In an office.",
+            "B": "In a library.",
+            "C": "At a book store.",
+            "D": "At a post office."
+          },
+          "answer": ""
+        },
+        {
+          "number": 10,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Tom's.",
+            "B": "Sue's.",
+            "C": "Listen to the passage and tell whether the following statements are true or false (判断下列句子是否符合你听到的短文内容，符合的用“T”表示，不符合的用“F”表示) (5分)",
+            "D": "Listen to the passage and complete the following sentences (听短文，完成下列内容，每空格限填一词) (10分)"
+          },
+          "answer": ""
+        },
+        {
+          "number": 11,
+          "prompt": "The officer came back to school to have English lessons with children.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 12,
+          "prompt": "The officer studied in this school when he was 10 years old.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 13,
+          "prompt": "The officer thought the children were much happier than before.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 14,
+          "prompt": "At first, nobody answered the officer's question.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 15,
+          "prompt": "The boy was happy because he liked the speech very much.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 16,
+          "prompt": "A hobby is something you like to do with your free time. You don't _______ _______ to do it.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 17,
+          "prompt": "It's a pity that your only indoor activities are watching television and staying on the Internet because there is always _______ _______ for you to try.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 18,
+          "prompt": "Hobbies can help you forget _______ _______ and give you a lot of pleasure.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 19,
+          "prompt": "It will be great if you can find people with the _______ _______.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 20,
+          "prompt": "Whatever you like to do, you can have _______ _______ trying out new things and exploring what's out there.",
+          "questionType": "blank",
+          "answer": ""
+        }
+      ]
+    },
+    {
+      "_id": "sh-em2-2022-徐汇-listening",
+      "title": "2022 上海徐汇二模听力",
+      "year": 2022,
+      "district": "徐汇",
+      "examType": "二模",
+      "stage": "初中",
+      "audioCloudPath": "_content/listening-em2/audio/sh-em2-2022-徐汇-listening.mp3",
+      "transcript": "",
+      "hasAudio": true,
+      "hasTranscript": false,
+      "questionSourceFile": "上海市徐汇区2022届九年级4月质量调研（二模）英语试卷（word原卷版）.docx",
+      "images": [
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-徐汇-listening-image-1.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-徐汇-listening-image-1.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-徐汇-listening-image-2.jpeg",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-徐汇-listening-image-2.jpeg"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-徐汇-listening-image-3.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-徐汇-listening-image-3.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-徐汇-listening-image-4.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-徐汇-listening-image-4.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-徐汇-listening-image-5.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-徐汇-listening-image-5.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-徐汇-listening-image-6.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-徐汇-listening-image-6.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-徐汇-listening-image-7.jpeg",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-徐汇-listening-image-7.jpeg"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-徐汇-listening-image-8.jpeg",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-徐汇-listening-image-8.jpeg"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-徐汇-listening-image-9.jpeg",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-徐汇-listening-image-9.jpeg"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-徐汇-listening-image-10.jpeg",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-徐汇-listening-image-10.jpeg"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-徐汇-listening-image-11.jpeg",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-徐汇-listening-image-11.jpeg"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-徐汇-listening-image-12.jpeg",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-徐汇-listening-image-12.jpeg"
+        }
+      ],
+      "questions": [
+        {
+          "number": 1,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 2,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 3,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 4,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 5,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 6,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "The music club.",
+            "B": "The sports club.",
+            "C": "The computer club.",
+            "D": "The art club."
+          },
+          "answer": ""
+        },
+        {
+          "number": 7,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "63744579.",
+            "B": "63734599.",
+            "C": "63735597.",
+            "D": "63734497."
+          },
+          "answer": ""
+        },
+        {
+          "number": 8,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Sunny.",
+            "B": "Windy.",
+            "C": "Rainy.",
+            "D": "Cloudy."
+          },
+          "answer": ""
+        },
+        {
+          "number": 9,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Ice.",
+            "B": "Chocolate.",
+            "C": "Strawberry.",
+            "D": "Nuts."
+          },
+          "answer": ""
+        },
+        {
+          "number": 10,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "She is too busy to do the shopping.",
+            "B": "There are no cups in the supermarket.",
+            "C": "Listen to the passage and tell whether the following statements are true or false (判断下列句子是否符合你听到的短文内容，符合的用“T”表示，不符合的用“F”表示) (5分)",
+            "D": "Listen to the passage and complete the following sentences (听短文，完成下列内容，每空格限填一词) (10分)"
+          },
+          "answer": ""
+        },
+        {
+          "number": 11,
+          "prompt": "Sam found it hard to get a job because he is from Cornwall.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 12,
+          "prompt": "Charlotte had trouble in having a good relationship with her family.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 13,
+          "prompt": "“Fifteen Cornwall” is a school set up for young people with no future.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 14,
+          "prompt": "Only those who have a love for cooking will be given the opportunity.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 15,
+          "prompt": "Jamie Oliver has changed lives of some young people in Cornwall.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 16,
+          "prompt": "The school magazine is going to be printed _______ _______.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 17,
+          "prompt": "If you are _______ _______, send in a drawing or painting.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 18,
+          "prompt": "Send Tom an email if you are going to _______ _______ or any other event.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 19,
+          "prompt": "The sports page needs an article about the _______ _______ this summer.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 20,
+          "prompt": "The school magazine will be _______ _______ in the library instead of in the shop.",
+          "questionType": "blank",
+          "answer": ""
+        }
+      ]
+    },
+    {
+      "_id": "sh-em2-2022-浦东-listening",
+      "title": "2022 上海浦东二模听力",
+      "year": 2022,
+      "district": "浦东",
+      "examType": "二模",
+      "stage": "初中",
+      "audioCloudPath": "_content/listening-em2/audio/sh-em2-2022-浦东-listening.mp3",
+      "transcript": "",
+      "hasAudio": true,
+      "hasTranscript": false,
+      "questionSourceFile": "上海市浦东新区2022届九年级6月质量调研（二模）英语试卷（Word原卷版）.docx",
+      "images": [
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-浦东-listening-image-1.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-浦东-listening-image-1.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-浦东-listening-image-2.jpeg",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-浦东-listening-image-2.jpeg"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-浦东-listening-image-3.jpeg",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-浦东-listening-image-3.jpeg"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-浦东-listening-image-4.jpeg",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-浦东-listening-image-4.jpeg"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-浦东-listening-image-5.jpeg",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-浦东-listening-image-5.jpeg"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-浦东-listening-image-6.jpeg",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-浦东-listening-image-6.jpeg"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-浦东-listening-image-7.jpeg",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-浦东-listening-image-7.jpeg"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-浦东-listening-image-8.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-浦东-listening-image-8.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-浦东-listening-image-9.jpeg",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-浦东-listening-image-9.jpeg"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-浦东-listening-image-10.jpeg",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-浦东-listening-image-10.jpeg"
+        }
+      ],
+      "questions": [
+        {
+          "number": 1,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 2,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 3,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 4,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 5,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 6,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "On foot.",
+            "B": "By bike.",
+            "C": "By bus.",
+            "D": "By underground."
+          },
+          "answer": ""
+        },
+        {
+          "number": 7,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Snowy.",
+            "B": "Foggy.",
+            "C": "Rainy.",
+            "D": "Sunny."
+          },
+          "answer": ""
+        },
+        {
+          "number": 8,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "At 1:00.",
+            "B": "At 3:00.",
+            "C": "At 2:00.",
+            "D": "At 4:00."
+          },
+          "answer": ""
+        },
+        {
+          "number": 9,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Table tennis.",
+            "B": "A table tennis match.",
+            "C": "Buying a ping pong table.",
+            "D": "Having ping pong balls."
+          },
+          "answer": ""
+        },
+        {
+          "number": 10,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Susie wants rice with meat and vegetables.",
+            "B": "Susie doesn’t want anything hot for lunch.",
+            "C": "Listen to the passage and tell whether the following statements are true or false (判断下列句子是否符合你听到的内容, 符合的用“T”表示，不符合的用“F”表示) (5 分)",
+            "D": "Listen to the passage and complete the following sentences (听短文，完成下列内容， 每空格限填一词) (10 分)"
+          },
+          "answer": ""
+        },
+        {
+          "number": 11,
+          "prompt": "One spring morning Eric suddenly found his voice had changed.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 12,
+          "prompt": "Eric’s mother was really surprised with his voice breaking.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 13,
+          "prompt": "Eric’s sister’s voice has the same sudden change as Eric’s.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 14,
+          "prompt": "As the teacher says, when becoming a teenager, the voice box grows smaller and thinner.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 15,
+          "prompt": "The passage is mainly talking about the teenager’s physical change of growing up.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 16,
+          "prompt": "It is really a _______ _______ for Grade 9 students to say goodbye to each other.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 17,
+          "prompt": "In front of Grade 9 students, there is a much brighter future _______ _______ them.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 18,
+          "prompt": "In the past, writing something on notebooks was an interesting way to keep the _______ _______ .",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 19,
+          "prompt": "Nowadays things are _______ _______ different. Some students use e-notebooks instead.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 20,
+          "prompt": "Some students still like to keep friends’ handwriting because they _______ _______ .",
+          "questionType": "blank",
+          "answer": ""
+        }
+      ]
+    },
+    {
+      "_id": "sh-em2-2022-虹口-listening",
+      "title": "2022 上海虹口二模听力",
+      "year": 2022,
+      "district": "虹口",
+      "examType": "二模",
+      "stage": "初中",
+      "audioCloudPath": "_content/listening-em2/audio/sh-em2-2022-虹口-listening.mp3",
+      "transcript": "",
+      "hasAudio": true,
+      "hasTranscript": false,
+      "questionSourceFile": "上海市虹口区2022届九年级6月质量调研（二模）英语试卷（word原卷精校版）.docx",
+      "images": [
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-虹口-listening-image-1.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-虹口-listening-image-1.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-虹口-listening-image-2.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-虹口-listening-image-2.png"
+        }
+      ],
+      "questions": [
+        {
+          "number": 1,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 2,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 3,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 4,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 5,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 6,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "It'll be rainy.",
+            "B": "It'll be sunny.",
+            "C": "It'll be windy.",
+            "D": "It'll be cold."
+          },
+          "answer": ""
+        },
+        {
+          "number": 7,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Because Peter played with Mike after school.",
+            "B": "Because Peter arrived home in the morning.",
+            "C": "Because Peter didn’t go home as early as possible.",
+            "D": "Because Mike helped Peter with his homework."
+          },
+          "answer": ""
+        },
+        {
+          "number": 8,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "A shop assistant and a customer.",
+            "B": "A director and an actress.",
+            "C": "A policeman and a stranger.",
+            "D": "A father and his daughter."
+          },
+          "answer": ""
+        },
+        {
+          "number": 9,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Make friends actively.",
+            "B": "Learn some sports skills.",
+            "C": "Have pity on his classmates.",
+            "D": "Get along well with his parents."
+          },
+          "answer": ""
+        },
+        {
+          "number": 10,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "The father isn’t satisfied with his son.",
+            "B": "The son has no right to talk to his father like that.",
+            "C": "Listen to the dialogue and tell whether the following statements are true or false (判断下列句子是否符合你听到的对话内容，符合的用“T”表示，不符合的用“F”表示)(共5分)",
+            "D": "Listen to the passage and complete the following sentences. (听短文，用听到的单词完成下列句子。每空格限填一词)(共10分)"
+          },
+          "answer": ""
+        },
+        {
+          "number": 11,
+          "prompt": "Alice is very happy that she will see many interesting things in Ola.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 12,
+          "prompt": "Alice is very worried that she has no friends in Ola.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 13,
+          "prompt": "The people in Ola are hard-working and most are talented.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 14,
+          "prompt": "Alice will telephone Mr. Green as soon as she settles down.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 15,
+          "prompt": "According to the dialogue, some people in Ola are not friendly enough.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 16,
+          "prompt": "In 1783, the first balloon trip ________ ________ in France.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 17,
+          "prompt": "They found ________ ________ in the balloon and it was getting bigger and bigger.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 18,
+          "prompt": "They found out that the gas keeping the balloon up was ________ ________.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 19,
+          "prompt": "To save themselves, the men ________ ________ most of their clothes.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 20,
+          "prompt": "Finally, the balloon ________ ________ on the ground.",
+          "questionType": "blank",
+          "answer": ""
+        }
+      ]
+    },
+    {
+      "_id": "sh-em2-2022-金山-listening",
+      "title": "2022 上海金山二模听力",
+      "year": 2022,
+      "district": "金山",
+      "examType": "二模",
+      "stage": "初中",
+      "audioCloudPath": "_content/listening-em2/audio/sh-em2-2022-金山-listening.mp3",
+      "transcript": "",
+      "hasAudio": true,
+      "hasTranscript": false,
+      "questionSourceFile": "上海市金山区2022届九年级6月质量调研（二模）英语试卷（word原卷精校版）.docx",
+      "images": [
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-金山-listening-image-1.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-金山-listening-image-1.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-金山-listening-image-2.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-金山-listening-image-2.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-金山-listening-image-3.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-金山-listening-image-3.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-金山-listening-image-4.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-金山-listening-image-4.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-金山-listening-image-5.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-金山-listening-image-5.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-金山-listening-image-6.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-金山-listening-image-6.png"
+        }
+      ],
+      "questions": [
+        {
+          "number": 1,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 2,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 3,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 4,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 5,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 6,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "May's.",
+            "B": "Emily's.",
+            "C": "Keven's.",
+            "D": "Jason's."
+          },
+          "answer": ""
+        },
+        {
+          "number": 7,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "By reading novels.",
+            "B": "By keeping a diary.",
+            "C": "By listening to the radio.",
+            "D": "By doing exercises."
+          },
+          "answer": ""
+        },
+        {
+          "number": 8,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "The painting group.",
+            "B": "The chess group.",
+            "C": "The dancing group.",
+            "D": "The singing group."
+          },
+          "answer": ""
+        },
+        {
+          "number": 9,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "The Internet.",
+            "B": "A video chat.",
+            "C": "Online study.",
+            "D": "High technology."
+          },
+          "answer": ""
+        },
+        {
+          "number": 10,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "The man can't borrow the book right now.",
+            "B": "The woman will buy it in 2 weeks.",
+            "C": "Listen to the passage and tell whether the following statements are true or false (判断下列句子是否符合你听到的内容, 符合的用“T”表示，不符合的用“F”表示) : (5 分)",
+            "D": "Listen to the passage and complete the following sentences (听短文，完成下列内容，每空格限填一词) : (10 分) 注:pandemic(流行病)"
+          },
+          "answer": ""
+        },
+        {
+          "number": 11,
+          "prompt": "A tongue twister contest is going to be held at this year’s English Festival.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 12,
+          "prompt": "The students will have five days to practise the twenty tongue twisters.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 13,
+          "prompt": "The English teachers and some students will be the judges together.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 14,
+          "prompt": "The judges will read all the twenty tongue twisters at the beginning of the contest",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 15,
+          "prompt": "If a student wants to join the competition, he/she can send an e-mail to the English Club.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 16,
+          "prompt": "Alice didn't understand what it brought to her until she became _______ _______.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 17,
+          "prompt": "Alice learned to cook when she was _______ _______ years old.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 18,
+          "prompt": "Thanks to her cooking skill, she could _______ _______ than others during the pandemic.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 19,
+          "prompt": "After having the experience in the countryside, you’ll value everything on _______ _______.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 20,
+          "prompt": "This may be why Alice is so happy to hear that labor education will _______ _______ in China.",
+          "questionType": "blank",
+          "answer": ""
+        }
+      ]
+    },
+    {
+      "_id": "sh-em2-2022-长宁-listening",
+      "title": "2022 上海长宁二模听力",
+      "year": 2022,
+      "district": "长宁",
+      "examType": "二模",
+      "stage": "初中",
+      "audioCloudPath": "_content/listening-em2/audio/sh-em2-2022-长宁-listening.mp3",
+      "transcript": "",
+      "hasAudio": true,
+      "hasTranscript": false,
+      "questionSourceFile": "上海市长宁区2022届九年级6月质量调研（二模）英语试卷（Word解析版）.docx",
+      "images": [
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-长宁-listening-image-1.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-长宁-listening-image-1.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-长宁-listening-image-2.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-长宁-listening-image-2.png"
+        }
+      ],
+      "questions": [
+        {
+          "number": 1,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 2,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 3,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 4,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 5,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 6,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "8:00.",
+            "B": "8:10.",
+            "C": "8:30.",
+            "D": "9:00."
+          },
+          "answer": ""
+        },
+        {
+          "number": 7,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Calm.",
+            "B": "Puzzled.",
+            "C": "Sad.",
+            "D": "Excited."
+          },
+          "answer": ""
+        },
+        {
+          "number": 8,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Play online games.",
+            "B": "Go sightseeing.",
+            "C": "Take online courses.",
+            "D": "Visiting Hongkong."
+          },
+          "answer": ""
+        },
+        {
+          "number": 9,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "A ta hotel.",
+            "B": "In a plane.",
+            "C": "On a train.",
+            "D": "In a hospital."
+          },
+          "answer": ""
+        },
+        {
+          "number": 10,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "For helping her move the desk.",
+            "B": "For helping her do her homework.",
+            "C": "Listen to the dialogue and tell whether the following statements are true or false(判断下列句子是否符合你听到的对话内容，符合的用“I”表示，不符合的用“F”表示）（5分）",
+            "D": "Listen to the passage and complete the following sentences(听短文，用听到的单词完成下列句子。每空格限填一词）（10分）"
+          },
+          "answer": ""
+        },
+        {
+          "number": 11,
+          "prompt": "Julia and Simon are on the phone and Simon is giving Julia some advice on moving.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 12,
+          "prompt": "Simon will be busy on the 27th of this month, so he can't help Julia.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 13,
+          "prompt": "It's not difficult for Julia to change the mail address to her new apartment.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 14,
+          "prompt": "Julia will spend less money for Internet service if she gets phone, Internet and TV together.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 15,
+          "prompt": "There's a charity shop which sells a lot of old things to poor people.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 16,
+          "prompt": "Many 11—14—year—olds ________ ________ cookery at school which is made compulsory from 2011.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 17,
+          "prompt": "All secondary school students will have cooking lessons fora week for ________ ________ one term.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 18,
+          "prompt": "Schools are ________ ________ cookery clubs called 'Let's Get Cooking' throughout the country.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 19,
+          "prompt": "Head Teachers _______ _______ the equipment they will need for the lessons.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 20,
+          "prompt": "The government is promising to help children from ________ ________ to pay for ingredients.",
+          "questionType": "blank",
+          "answer": ""
+        }
+      ]
+    },
+    {
+      "_id": "sh-em2-2022-闵行-listening",
+      "title": "2022 上海闵行二模听力",
+      "year": 2022,
+      "district": "闵行",
+      "examType": "二模",
+      "stage": "初中",
+      "audioCloudPath": "_content/listening-em2/audio/sh-em2-2022-闵行-listening.mp3",
+      "transcript": "",
+      "hasAudio": true,
+      "hasTranscript": false,
+      "questionSourceFile": "上海市闵行区2022届九年级6月质量调研（二模）英语试卷（Word原卷精校版）.docx",
+      "images": [
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-闵行-listening-image-1.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-闵行-listening-image-1.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-闵行-listening-image-2.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-闵行-listening-image-2.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-闵行-listening-image-3.jpeg",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-闵行-listening-image-3.jpeg"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-闵行-listening-image-4.jpeg",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-闵行-listening-image-4.jpeg"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-闵行-listening-image-5.jpeg",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-闵行-listening-image-5.jpeg"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-闵行-listening-image-6.jpeg",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-闵行-listening-image-6.jpeg"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-闵行-listening-image-7.jpeg",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-闵行-listening-image-7.jpeg"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-闵行-listening-image-8.jpeg",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-闵行-listening-image-8.jpeg"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-闵行-listening-image-9.jpeg",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-闵行-listening-image-9.jpeg"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-闵行-listening-image-10.jpeg",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-闵行-listening-image-10.jpeg"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-闵行-listening-image-11.jpeg",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-闵行-listening-image-11.jpeg"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-闵行-listening-image-12.jpeg",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-闵行-listening-image-12.jpeg"
+        }
+      ],
+      "questions": [
+        {
+          "number": 1,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 2,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 3,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 4,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 5,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 6,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Blue.",
+            "B": "Black.",
+            "C": "Green.",
+            "D": "White."
+          },
+          "answer": ""
+        },
+        {
+          "number": 7,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "On Sunday.",
+            "B": "On Saturday.",
+            "C": "On Friday.",
+            "D": "On Thursday."
+          },
+          "answer": ""
+        },
+        {
+          "number": 8,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Mr. Smith.",
+            "B": "Mrs. Smith.",
+            "C": "Sam.",
+            "D": "John."
+          },
+          "answer": ""
+        },
+        {
+          "number": 9,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Mother and son.",
+            "B": "Father and daughter.",
+            "C": "Doctor and patient.",
+            "D": "Teacher and student."
+          },
+          "answer": ""
+        },
+        {
+          "number": 10,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "The woman drove too fast.",
+            "B": "The woman broke the traffic rule.",
+            "C": "Listen to the passage and tell whether the following statements are true or false (判断下列句子是否符合你听到的内容, 符合的用“T”表示，不符合的用“F”表示) (5 分)",
+            "D": "Listen to the passage and complete the following sentences (听短文，完成下列内容， 每空格限填一词) (10 分)"
+          },
+          "answer": ""
+        },
+        {
+          "number": 11,
+          "prompt": "Harry loved his school so much and liked going to school.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 12,
+          "prompt": "Harry’s mother thought he should change because a lot of people didn’t like him.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 13,
+          "prompt": "Harry told his mother that he was too old to change.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 14,
+          "prompt": "Harry’s mother asked him to go to school.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 15,
+          "prompt": "From the passage we know that Harry was a schoolboy.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 16,
+          "prompt": "If the door feels cold, open the door. Then ________ ________ and find the closest door to outside.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 17,
+          "prompt": "Go to the ________ ________ your family have picked, and wait for them to meet you.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 18,
+          "prompt": "Stay under your window, so they can find you ________ ________.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 19,
+          "prompt": "Don’t be ________ ________ the firefighters, they will keep you safe.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 20,
+          "prompt": "Remember the ________ ________ and they do help when there is a fire.",
+          "questionType": "blank",
+          "answer": ""
+        }
+      ]
+    },
+    {
+      "_id": "sh-em2-2022-静安-listening",
+      "title": "2022 上海静安二模听力",
+      "year": 2022,
+      "district": "静安",
+      "examType": "二模",
+      "stage": "初中",
+      "audioCloudPath": "_content/listening-em2/audio/sh-em2-2022-静安-listening.mp3",
+      "transcript": "",
+      "hasAudio": true,
+      "hasTranscript": false,
+      "questionSourceFile": "上海市静安区2022届九年级6月质量调研（二模）英语试卷（Word原卷精校版）.docx",
+      "images": [
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-静安-listening-image-1.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-静安-listening-image-1.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-静安-listening-image-2.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-静安-listening-image-2.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-静安-listening-image-3.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-静安-listening-image-3.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-静安-listening-image-4.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-静安-listening-image-4.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-静安-listening-image-5.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-静安-listening-image-5.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-静安-listening-image-6.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-静安-listening-image-6.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-静安-listening-image-7.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-静安-listening-image-7.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-静安-listening-image-8.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-静安-listening-image-8.png"
+        }
+      ],
+      "questions": [
+        {
+          "number": 1,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 2,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 3,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 4,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 5,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 6,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "His sister.",
+            "B": "His father.",
+            "C": "His brother.",
+            "D": "His mother."
+          },
+          "answer": ""
+        },
+        {
+          "number": 7,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Basketball.",
+            "B": "Volleyball.",
+            "C": "Football.",
+            "D": "Table tennis."
+          },
+          "answer": ""
+        },
+        {
+          "number": 8,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "At 7:00.",
+            "B": "At 7:30.",
+            "C": "At 8:00.",
+            "D": "At 8:30."
+          },
+          "answer": ""
+        },
+        {
+          "number": 9,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "In a car.",
+            "B": "In a hotel.",
+            "C": "In a shop.",
+            "D": "In a restaurant."
+          },
+          "answer": ""
+        },
+        {
+          "number": 10,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Tony is too tired to go out.",
+            "B": "Kate doesn't like going out.",
+            "C": "Listen to the passage and tell whether the following statements are true or false (判断下列句子是否符合你听到的短文内容，符合的用“T”表示，不符合的用F表示）（5分）",
+            "D": "Listen to the dialogue and complete the following sentences (听对话，完成下列内容, 每空格限填一词)(10分)"
+          },
+          "answer": ""
+        },
+        {
+          "number": 11,
+          "prompt": "John is lucky enough to be a host of the school radio club.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 12,
+          "prompt": "At first the club was started to broadcast the news at break.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 13,
+          "prompt": "Now more kinds of music are provided by the club.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 14,
+          "prompt": "The radio club is very useful to the students and parents.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 15,
+          "prompt": "The article is mainly about the introduction of a school radio club.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 16,
+          "prompt": "Movies have a history of just ______ ______ years.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 17,
+          "prompt": "When movies were first created, they were not ______ ______.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 18,
+          "prompt": "______ ______ people can take part in movie - making now.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 19,
+          "prompt": "Adventure movies take people on ______ ______, to escape life or explore it.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 20,
+          "prompt": "Jenny likes the movies acted by Charlie Chaplin — a ______ ______.",
+          "questionType": "blank",
+          "answer": ""
+        }
+      ]
+    },
+    {
+      "_id": "sh-em2-2022-黄浦-listening",
+      "title": "2022 上海黄浦二模听力",
+      "year": 2022,
+      "district": "黄浦",
+      "examType": "二模",
+      "stage": "初中",
+      "audioCloudPath": "_content/listening-em2/audio/sh-em2-2022-黄浦-listening.mp3",
+      "transcript": "",
+      "hasAudio": true,
+      "hasTranscript": false,
+      "questionSourceFile": "上海市黄浦区2022届九年级6月质量调研（二模）英语试卷（word解析版）.docx",
+      "images": [
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-黄浦-listening-image-1.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-黄浦-listening-image-1.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-黄浦-listening-image-2.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-黄浦-listening-image-2.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-黄浦-listening-image-3.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-黄浦-listening-image-3.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-黄浦-listening-image-4.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-黄浦-listening-image-4.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-黄浦-listening-image-5.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-黄浦-listening-image-5.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-黄浦-listening-image-7.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-黄浦-listening-image-7.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-黄浦-listening-image-8.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-黄浦-listening-image-8.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-黄浦-listening-image-9.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-黄浦-listening-image-9.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-黄浦-listening-image-10.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-黄浦-listening-image-10.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-黄浦-listening-image-11.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-黄浦-listening-image-11.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-黄浦-listening-image-12.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-黄浦-listening-image-12.png"
+        }
+      ],
+      "questions": [
+        {
+          "number": 1,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 2,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 3,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 4,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 5,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 6,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "At 5:15.",
+            "B": "At 5:45.",
+            "C": "At 6:15.",
+            "D": "At 6:45."
+          },
+          "answer": ""
+        },
+        {
+          "number": 7,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Shy.",
+            "B": "Overweight.",
+            "C": "Friendly.",
+            "D": "Handsome."
+          },
+          "answer": ""
+        },
+        {
+          "number": 8,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "On the train.",
+            "B": "In the cinema.",
+            "C": "On the plane.",
+            "D": "In the taxi."
+          },
+          "answer": ""
+        },
+        {
+          "number": 9,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Useful.",
+            "B": "Helpful.",
+            "C": "Difficult.",
+            "D": "Interesting."
+          },
+          "answer": ""
+        },
+        {
+          "number": 10,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Repair her car.",
+            "B": "Meet her aunt.",
+            "C": "Listen to the dialogue and tell whether the following statements are true or false (判断下列句子是否符合你听到的对话内容，符合的用“T”表示，不符合的用“F”表示)(5 分)",
+            "D": "Listen to the passage and complete the following sentences (听短文，完成下列内容。每空格限填一词)(10 分)"
+          },
+          "answer": ""
+        },
+        {
+          "number": 11,
+          "prompt": "Lisa Jones and Tom Robinson are talking in the office for the first time.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 12,
+          "prompt": "Tom Robinson is the sales manager and Lisa is his new secretary.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 13,
+          "prompt": "Tom Robinson has worked there for more than 20 years.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 14,
+          "prompt": "Tom enjoys working there because he can visit other countries on business.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 15,
+          "prompt": "Lisa lives far from the office and she has to take the underground.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 16,
+          "prompt": "Henry Williams is sharing his ________ with us.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 17,
+          "prompt": "Henry spends a lot of his time ________ when he travels around the world.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 18,
+          "prompt": "He usually watches people ________ and try to read their mind.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 19,
+          "prompt": "When Henry was waiting for his flight ________, he saw a couple buying magazines.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 20,
+          "prompt": "Henry saw the couple say goodbye to each other, and the woman ________.",
+          "questionType": "blank",
+          "answer": ""
+        }
+      ]
+    },
+    {
+      "_id": "sh-em2-2023-奉贤-listening",
+      "title": "2023 上海奉贤二模听力",
+      "year": 2023,
+      "district": "奉贤",
+      "examType": "二模",
+      "stage": "初中",
+      "audioCloudPath": "_content/listening-em2/audio/sh-em2-2023-奉贤-listening.mp3",
+      "transcript": "Part 1 Listening (第一部分 听力) I．Listening Comprehension (听力理解) (本大题共20题，共25分) A. Listen and choose the right picture (根据你听到的内容，选出相应的图片) (5分) A B C D E F 1. ________ 2. ________ 3. ________ 4. ________ 5. ________ B. Listen to the dialogues and choose the best answer to each question your hear (根据你听到的对话和问题，选出最恰当的答案) (5分) ( ) 6. A) Windy. B) Snowy. C) Sunny. D) Rainy. ( ) 7. A) At the hotel. B) At the airport. C) At the ferry. D) At the bus station. ( ) 8. A) For one day. B) For one week. C) For two weeks. D) For three weeks. ( ) 9. A) Sticking the chopsticks into the food. B) Talking to others over the table. C) Putting chopsticks on an empty bowl. D) Hiding chopsticks under the table. ( ) 10. A) She threw away Peter’s shoes. B) Peter should clean his shoes. C) She has never seen Peter’s shoes. D) She will buy a new pair of shoes for Peter. C. Listen to the passage and tell whether the following statements are true or false (判断下列句子是否符合你听到的短文内容，符合的用“T”表示，不符合的用“F”表示） (5分) ( ) 11. Some students often complain that learning English takes up too much of their time. ( ) 12. Chinese Astronaut Deng Qingming had the same problem as some students. ( ) 13. Deng Qingming has spent almost all of his time training hard to become an astronaut since 1998. ( ) 14. On the night of November 29, 2022, Deng Qingming and two other astronauts boarded the Shenzhou 15 aircraft and flew into space. ( ) 15. Deng Qingming’s experience teaches us that we have to wait for 24 years for success to knock at our door. D. Listen to the dialogue and complete the following sentences (听对话，用听到的单词完成下列句子。每空格限填一词） (10分) 16. The charity shop in the U.K. sells everything from clothes to furniture, all at very _______ _______. 17. The first charity shop _______ ________ in 1947. Now there are over 7,000 charity shops in Britain. 18. Most of the people working in the charity shops are volunteers, though there is often a manager who ________ ________. 19. Charity shops raise more than £110 million a year for doing medical research and supporting sick and ________ ________, homeless and disabled people, and so on. 20. You are not _________ the planet, but ________ a new home for unwanted goods when you buy things in a charity shop.",
+      "hasAudio": true,
+      "hasTranscript": true,
+      "questionSourceFile": "精品解析：2023年上海市奉贤区中考二模英语试题（原卷版）.docx",
+      "images": [
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2023-奉贤-listening-image-1.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2023-奉贤-listening-image-1.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2023-奉贤-listening-image-2.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2023-奉贤-listening-image-2.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2023-奉贤-listening-image-3.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2023-奉贤-listening-image-3.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2023-奉贤-listening-image-4.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2023-奉贤-listening-image-4.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2023-奉贤-listening-image-5.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2023-奉贤-listening-image-5.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2023-奉贤-listening-image-6.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2023-奉贤-listening-image-6.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2023-奉贤-listening-image-7.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2023-奉贤-listening-image-7.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2023-奉贤-listening-image-8.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2023-奉贤-listening-image-8.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2023-奉贤-listening-image-9.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2023-奉贤-listening-image-9.png"
+        }
+      ],
+      "questions": [
+        {
+          "number": 1,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 2,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 3,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 4,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 5,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 6,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Windy.",
+            "B": "Snowy.",
+            "C": "Sunny.",
+            "D": "Rainy."
+          },
+          "answer": ""
+        },
+        {
+          "number": 7,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "At the hotel.",
+            "B": "At the airport.",
+            "C": "At the ferry.",
+            "D": "At the bus station."
+          },
+          "answer": ""
+        },
+        {
+          "number": 8,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "For one day.",
+            "B": "For one week.",
+            "C": "For two weeks.",
+            "D": "For three weeks."
+          },
+          "answer": ""
+        },
+        {
+          "number": 9,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Sticking the chopsticks into the food.",
+            "B": "Talking to others over the table.",
+            "C": "Putting chopsticks on an empty bowl.",
+            "D": "Hiding chopsticks under the table."
+          },
+          "answer": ""
+        },
+        {
+          "number": 10,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "She threw away Peter’s shoes.",
+            "B": "Peter should clean his shoes.",
+            "C": "Listen to the passage and tell whether the following statements are true or false（判断下列句子是否符合你听到的短文内容，符合的用“T”表示，不符合的用“F”表示）（5分）",
+            "D": "Listen to the dialogue and complete the following sentences（听对话，用听到的单词完成下列句子。每空格限填一词）（10分）"
+          },
+          "answer": ""
+        },
+        {
+          "number": 11,
+          "prompt": "Some students often complain that learning English takes up too much of their time.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 12,
+          "prompt": "Chinese Astronaut Deng Qingming had the same problem as some students.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 13,
+          "prompt": "Deng Qingming has spent almost all of his time training hard to become an astronaut since",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 14,
+          "prompt": "On the night of November 29, 2022, Deng Qingming and two other astronauts boarded the Shenzhou 15 aircraft and flew into space.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 15,
+          "prompt": "Deng Qingming’s experience teaches us that we have to wait for 24 years for success to knock at our door.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 16,
+          "prompt": "The charity shop in the U.K. sells everything from clothes to furniture, all at very ______ ______.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 17,
+          "prompt": "The first charity shop ______ ______ in 1947. Now there are over 7,000 charity shops in Britain.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 18,
+          "prompt": "Most of the people working in the charity shops are volunteers, though there is often a manager who ______ ______.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 19,
+          "prompt": "Charity shops raise more than £110 million a year for doing medical research and supporting sick and ______ ______, homeless and disabled people, and so on.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 20,
+          "prompt": "You are not ______ the planet, but ______ a new home for unwanted goods when you buy things in a charity shop.",
+          "questionType": "blank",
+          "answer": ""
+        }
+      ]
+    },
+    {
+      "_id": "sh-em2-2023-宝山-listening",
+      "title": "2023 上海宝山二模听力",
+      "year": 2023,
+      "district": "宝山",
+      "examType": "二模",
+      "stage": "初中",
+      "audioCloudPath": "_content/listening-em2/audio/sh-em2-2023-宝山-listening.wav",
+      "transcript": "",
+      "hasAudio": true,
+      "hasTranscript": false,
+      "questionSourceFile": "精品解析：2023年上海市宝山区中考二模英语试题（解析版）.docx",
+      "images": [
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2023-宝山-listening-image-1.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2023-宝山-listening-image-1.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2023-宝山-listening-image-2.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2023-宝山-listening-image-2.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2023-宝山-listening-image-4.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2023-宝山-listening-image-4.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2023-宝山-listening-image-5.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2023-宝山-listening-image-5.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2023-宝山-listening-image-6.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2023-宝山-listening-image-6.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2023-宝山-listening-image-7.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2023-宝山-listening-image-7.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2023-宝山-listening-image-8.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2023-宝山-listening-image-8.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2023-宝山-listening-image-10.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2023-宝山-listening-image-10.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2023-宝山-listening-image-11.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2023-宝山-listening-image-11.png"
+        }
+      ],
+      "questions": [
+        {
+          "number": 1,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 2,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 3,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 4,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 5,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 6,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Collecting stamps.",
+            "B": "Playing ballgames.",
+            "C": "Watching cartoons.",
+            "D": "Reading interesting books."
+          },
+          "answer": ""
+        },
+        {
+          "number": 7,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "8:00.",
+            "B": "8:30.",
+            "C": "9:00.",
+            "D": "9:30."
+          },
+          "answer": ""
+        },
+        {
+          "number": 8,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "80 yuan.",
+            "B": "112 yuan.",
+            "C": "20 yuan.",
+            "D": "180 yuan."
+          },
+          "answer": ""
+        },
+        {
+          "number": 9,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "He lost his way.",
+            "B": "The train was carly.",
+            "C": "He started too late.",
+            "D": "The traffic wash cavy."
+          },
+          "answer": ""
+        },
+        {
+          "number": 10,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "The man really liked this new type of digital camera.",
+            "B": "The man has already wasted a lot of money on sightseeing.",
+            "C": "Listen to the dialogue and tell whether the following statements are true or false（判断下列句子是否符合你听到的内容，符合的用“T”表示，不符合的用“F”表示）（5分）",
+            "D": "Listen to the passage and complete the following sentences（听短文完成下列内容，每空格限填一词）（10分）"
+          },
+          "answer": ""
+        },
+        {
+          "number": 11,
+          "prompt": "Alice went on a holiday in the country with some friends.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 12,
+          "prompt": "Alice camped in the mountain and had meals in a hotel on the first day.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 13,
+          "prompt": "The weather there was wonderful though i trained a little one day.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 14,
+          "prompt": "Alice found the farmers there friendly and had tea in their houses.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 15,
+          "prompt": "It was so tiring for Alice because she went to bed very late last night.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 16,
+          "prompt": "Don’t wait until very late. Always do your homework before you get ________ ________",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 17,
+          "prompt": "Give yourself ________ ________after an hour if you have more than an hour’s work.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 18,
+          "prompt": "If you want to get things done, you should work at least a half at a time ________ ________",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 19,
+          "prompt": "You won’t enjoy your free time so much if you ________ ________doing your homework.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 20,
+          "prompt": "It will help you make it a ________ ________to do your homework at the same time every evening.",
+          "questionType": "blank",
+          "answer": ""
+        }
+      ]
+    },
+    {
+      "_id": "sh-em2-2023-徐汇-listening",
+      "title": "2023 上海徐汇二模听力",
+      "year": 2023,
+      "district": "徐汇",
+      "examType": "二模",
+      "stage": "初中",
+      "audioCloudPath": "_content/listening-em2/audio/sh-em2-2023-徐汇-listening.mp3",
+      "transcript": "",
+      "hasAudio": true,
+      "hasTranscript": false,
+      "questionSourceFile": "精品解析：2023年上海市徐汇区中考二模英语试题（原卷版）.docx",
+      "images": [
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2023-徐汇-listening-image-1.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2023-徐汇-listening-image-1.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2023-徐汇-listening-image-2.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2023-徐汇-listening-image-2.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2023-徐汇-listening-image-3.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2023-徐汇-listening-image-3.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2023-徐汇-listening-image-5.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2023-徐汇-listening-image-5.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2023-徐汇-listening-image-6.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2023-徐汇-listening-image-6.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2023-徐汇-listening-image-7.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2023-徐汇-listening-image-7.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2023-徐汇-listening-image-8.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2023-徐汇-listening-image-8.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2023-徐汇-listening-image-9.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2023-徐汇-listening-image-9.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2023-徐汇-listening-image-10.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2023-徐汇-listening-image-10.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2023-徐汇-listening-image-11.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2023-徐汇-listening-image-11.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2023-徐汇-listening-image-12.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2023-徐汇-listening-image-12.png"
+        }
+      ],
+      "questions": [
+        {
+          "number": 1,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 2,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 3,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 4,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 5,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 6,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "In China.",
+            "B": "In Singapore.",
+            "C": "In Japan.",
+            "D": "In France."
+          },
+          "answer": ""
+        },
+        {
+          "number": 7,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "6 months old.",
+            "B": "7 months old.",
+            "C": "12 months old.",
+            "D": "18 months old."
+          },
+          "answer": ""
+        },
+        {
+          "number": 8,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "An E-dictionary.",
+            "B": "Sports shoes.",
+            "C": "Tickets for Shanghai Disney.",
+            "D": "Dinner with friends."
+          },
+          "answer": ""
+        },
+        {
+          "number": 9,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "The reading club.",
+            "B": "The racing club.",
+            "C": "The language club.",
+            "D": "The cooking club."
+          },
+          "answer": ""
+        },
+        {
+          "number": 10,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "The change for a new flat.",
+            "B": "The share of housework.",
+            "C": "Listen to the conversation and tell whether the following statements are true or false (判断下列句子是否符合你听到的内容，符合的用“T”表示，不符合的用“F”表示): (5分)",
+            "D": "Listen to the passage and complete the following sentences (听短文，完成下列内容，每空格限填一词): (10分)"
+          },
+          "answer": ""
+        },
+        {
+          "number": 11,
+          "prompt": "The conversation is about an interview with a journalist in a studio.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 12,
+          "prompt": "David’s first ambition was to be a scientist when he was young.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 13,
+          "prompt": "Because of a special radio program, David became a student journalist.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 14,
+          "prompt": "It was easy for David to get a first job of being a journalist at AFP.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 15,
+          "prompt": "Today’s broadcast is to help the audience learn from David’s experience.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 16,
+          "prompt": "The speaker is introducing ________ ________ in the world to the audience.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 17,
+          "prompt": "Though the Clock Tower was renamed, tourists will call it “Big Ben” ________ ________.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 18,
+          "prompt": "The Shanghai TV Tower got the nickname “Pearl of the East” from its ________ ________.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 19,
+          "prompt": "The eleven balls of the Oriental Pearl Tower are of ________ ________.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 20,
+          "prompt": "Besides offices, the Petronas Towers house a museum, an art gallery and a ________ ________.",
+          "questionType": "blank",
+          "answer": ""
+        }
+      ]
+    },
+    {
+      "_id": "sh-em2-2023-普陀-listening",
+      "title": "2023 上海普陀二模听力",
+      "year": 2023,
+      "district": "普陀",
+      "examType": "二模",
+      "stage": "初中",
+      "audioCloudPath": "_content/listening-em2/audio/sh-em2-2023-普陀-listening.mp3",
+      "transcript": "",
+      "hasAudio": true,
+      "hasTranscript": false,
+      "questionSourceFile": "精品解析：2023年上海市普陀区中考二模英语试题（原卷版）.docx",
+      "images": [
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2023-普陀-listening-image-1.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2023-普陀-listening-image-1.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2023-普陀-listening-image-2.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2023-普陀-listening-image-2.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2023-普陀-listening-image-3.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2023-普陀-listening-image-3.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2023-普陀-listening-image-4.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2023-普陀-listening-image-4.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2023-普陀-listening-image-5.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2023-普陀-listening-image-5.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2023-普陀-listening-image-6.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2023-普陀-listening-image-6.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2023-普陀-listening-image-9.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2023-普陀-listening-image-9.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2023-普陀-listening-image-10.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2023-普陀-listening-image-10.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2023-普陀-listening-image-11.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2023-普陀-listening-image-11.png"
+        }
+      ],
+      "questions": [
+        {
+          "number": 1,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 2,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 3,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 4,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 5,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 6,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "One week.",
+            "B": "Two weeks.",
+            "C": "Three weeks.",
+            "D": "Five weeks."
+          },
+          "answer": ""
+        },
+        {
+          "number": 7,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "He’s patient.",
+            "B": "He’s nice.",
+            "C": "He’s active.",
+            "D": "He’s tidy."
+          },
+          "answer": ""
+        },
+        {
+          "number": 8,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "News.",
+            "B": "Sports.",
+            "C": "Fashion.",
+            "D": "Film review."
+          },
+          "answer": ""
+        },
+        {
+          "number": 9,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Mother and son.",
+            "B": "Husband and wife.",
+            "C": "Teacher and student.",
+            "D": "Customer and clerk."
+          },
+          "answer": ""
+        },
+        {
+          "number": 10,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "The big sharks.",
+            "B": "The film they saw.",
+            "C": "Listen to the dialogue and tell whether the following statements are true or false（判断下列句子是否符合你听到的对话内容，符合的用“T”表示，不符合的用“F”表示）（5分）",
+            "D": "Listen to the passage and complete the following sentences（根据你听到的短文，完成下列句子。每空格限填一词）（10分）"
+          },
+          "answer": ""
+        },
+        {
+          "number": 11,
+          "prompt": "David provides training for cooks of big restaurants.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 12,
+          "prompt": "David took a course and passed tests before he got the job.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 13,
+          "prompt": "According to David, he usually works six days a week.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 14,
+          "prompt": "David finds it hard to stand all the time and meet angry customers.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 15,
+          "prompt": "This dialogue is mainly about how David runs the restaurant.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 16,
+          "prompt": "Mobile phones have developed quickly and ________ ________.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 17,
+          "prompt": "If you look at your phone in ________ ________ before sleep, it will do harm to your eyes.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 18,
+          "prompt": "Here are ________ ________ to protect your eyes if you don’t want to give up using the phone.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 19,
+          "prompt": "You should hold the phone ________ ________ 30 centimeters away from your face to protect your eyes.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 20,
+          "prompt": "You can look at things 5 meters away from you and then the ________ ________ tip of your nose.",
+          "questionType": "blank",
+          "answer": ""
+        }
+      ]
+    },
+    {
+      "_id": "sh-em2-2023-浦东-listening",
+      "title": "2023 上海浦东二模听力",
+      "year": 2023,
+      "district": "浦东",
+      "examType": "二模",
+      "stage": "初中",
+      "audioCloudPath": "_content/listening-em2/audio/sh-em2-2023-浦东-listening.mp3",
+      "transcript": "",
+      "hasAudio": true,
+      "hasTranscript": false,
+      "questionSourceFile": "上海市浦东新区2023年中考英语二模试卷.docx",
+      "images": [
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2023-浦东-listening-image-1.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2023-浦东-listening-image-1.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2023-浦东-listening-image-2.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2023-浦东-listening-image-2.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2023-浦东-listening-image-3.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2023-浦东-listening-image-3.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2023-浦东-listening-image-4.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2023-浦东-listening-image-4.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2023-浦东-listening-image-5.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2023-浦东-listening-image-5.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2023-浦东-listening-image-6.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2023-浦东-listening-image-6.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2023-浦东-listening-image-7.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2023-浦东-listening-image-7.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2023-浦东-listening-image-8.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2023-浦东-listening-image-8.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2023-浦东-listening-image-9.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2023-浦东-listening-image-9.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2023-浦东-listening-image-10.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2023-浦东-listening-image-10.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2023-浦东-listening-image-11.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2023-浦东-listening-image-11.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2023-浦东-listening-image-12.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2023-浦东-listening-image-12.png"
+        }
+      ],
+      "questions": [
+        {
+          "number": 1,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 2,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 3,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 4,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 5,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 6,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "A scarf.",
+            "B": "A phone.",
+            "C": "A watch.",
+            "D": "A pad."
+          },
+          "answer": ""
+        },
+        {
+          "number": 7,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "On Thursday.",
+            "B": "On Wednesday.",
+            "C": "On Tuesday.",
+            "D": "On Friday."
+          },
+          "answer": ""
+        },
+        {
+          "number": 8,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "To the shop.",
+            "B": "To the cinema.",
+            "C": "To the park.",
+            "D": "To the restaurant."
+          },
+          "answer": ""
+        },
+        {
+          "number": 9,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Mother and son.",
+            "B": "Teacher and student.",
+            "C": "Doctor and patient.",
+            "D": "Policewoman and driver."
+          },
+          "answer": ""
+        },
+        {
+          "number": 10,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Tom can't do the homework himself.",
+            "B": "Alice is good at teaching her child.",
+            "C": "Listen to the passage and tell whether the following statements are true or false（判断下列句子是否符合你听到的短文内容，符合的用“T”表示，不符合的用“F”表示）（5分）",
+            "D": "Listen to the dialogue and complete the following sentences（听对话，用听到的单词完成下列句子。每空格限填一词）（10分）"
+          },
+          "answer": ""
+        },
+        {
+          "number": 11,
+          "prompt": "Jack was happy because he could pay a visit to a history museum.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 12,
+          "prompt": "The class teacher showed the students around and introduced many things.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 13,
+          "prompt": "Jack learned the meaning and the use of the coins from the guide.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 14,
+          "prompt": "Jack and other students answered the guide's questions one after another.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 15,
+          "prompt": "Through the educational visit, Jack changed his attitude towards history as a subject.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 16,
+          "prompt": "From Sandy, we know that Lynda is _____________ _____________.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 17,
+          "prompt": "Billy is thinking about trying to learn an online course on__________ __________.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 18,
+          "prompt": "It cost Sandy about________ ___________to pay for the course on programming.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 19,
+          "prompt": "Sandy thinks it is a great way to learn __________ _____________and keep up with the times.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 20,
+          "prompt": "Taking an online course enables you to learn and ________ ___________it at your own speed.",
+          "questionType": "blank",
+          "answer": ""
+        }
+      ]
+    },
+    {
+      "_id": "sh-em2-2023-静安-listening",
+      "title": "2023 上海静安二模听力",
+      "year": 2023,
+      "district": "静安",
+      "examType": "二模",
+      "stage": "初中",
+      "audioCloudPath": "_content/listening-em2/audio/sh-em2-2023-静安-listening.mp3",
+      "transcript": "听力文字和",
+      "hasAudio": true,
+      "hasTranscript": true,
+      "questionSourceFile": "精品解析：2023年上海市静安区中考二模英语试题（原卷版）.docx",
+      "images": [
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2023-静安-listening-image-1.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2023-静安-listening-image-1.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2023-静安-listening-image-2.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2023-静安-listening-image-2.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2023-静安-listening-image-5.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2023-静安-listening-image-5.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2023-静安-listening-image-6.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2023-静安-listening-image-6.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2023-静安-listening-image-7.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2023-静安-listening-image-7.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2023-静安-listening-image-8.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2023-静安-listening-image-8.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2023-静安-listening-image-9.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2023-静安-listening-image-9.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2023-静安-listening-image-10.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2023-静安-listening-image-10.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2023-静安-listening-image-11.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2023-静安-listening-image-11.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2023-静安-listening-image-12.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2023-静安-listening-image-12.png"
+        }
+      ],
+      "questions": [
+        {
+          "number": 1,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 2,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 3,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 4,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 5,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 6,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Boring.",
+            "B": "Exciting.",
+            "C": "Surprising.",
+            "D": "Frightening."
+          },
+          "answer": ""
+        },
+        {
+          "number": 7,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Yellow.",
+            "B": "Black.",
+            "C": "Blue.",
+            "D": "Green."
+          },
+          "answer": ""
+        },
+        {
+          "number": 8,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "It’s 8:10.",
+            "B": "It’s 8:50.",
+            "C": "It’s 9:00.",
+            "D": "It’s 9:10."
+          },
+          "answer": ""
+        },
+        {
+          "number": 9,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "At her own office.",
+            "B": "At a doctor’s office.",
+            "C": "At a post office.",
+            "D": "At the manager’s office."
+          },
+          "answer": ""
+        },
+        {
+          "number": 10,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Mr Li asked them to buy the first three books on the list.",
+            "B": "Mr Li wrote three reading books for his students.",
+            "C": "Listen to the passage and tell whether the following statements are true or false (判断下列句子是否符合你听到的短文内容，符合的用“T”表示，不符合的用“F”表示)(5分)",
+            "D": "Listen to the passage and complete the following sentences (听短文，用听到的单词完成下列句子。每空格限填一词)(10分)"
+          },
+          "answer": ""
+        },
+        {
+          "number": 11,
+          "prompt": "At a restaurant a little girl dropped a dollar and it was given back by the writer.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 12,
+          "prompt": "The old man at a store was thankful because the writer helped him carry the firewood.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 13,
+          "prompt": "Inside the store, a woman was very kind and she let the writer check out first.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 14,
+          "prompt": "The middle-aged woman in the street felt surprised when the writer gave her the flowers.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 15,
+          "prompt": "The writer had three chances altogether to be kind to others that day.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 16,
+          "prompt": "Bikes can take you almost anywhere, and they don’t need ________ ________ at all.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 17,
+          "prompt": "Stopping and getting off a bike is ________ ________ stopping and getting out of your car.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 18,
+          "prompt": "A folding (折叠) bike can ________ ________ in a suitcase before you fly.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 19,
+          "prompt": "Bicycling helps to stop heart diseases and control ________ ________.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 20,
+          "prompt": "A 15-minute bike ride twice a week helps you ________ ________, about 5 kilos in a year.",
+          "questionType": "blank",
+          "answer": ""
+        }
+      ]
+    },
+    {
+      "_id": "sh-em2-2023-黄浦-listening",
+      "title": "2023 上海黄浦二模听力",
+      "year": 2023,
+      "district": "黄浦",
+      "examType": "二模",
+      "stage": "初中",
+      "audioCloudPath": "_content/listening-em2/audio/sh-em2-2023-黄浦-listening.mp3",
+      "transcript": "",
+      "hasAudio": true,
+      "hasTranscript": false,
+      "questionSourceFile": "2023年上海市黄浦区中考二模英语试题.docx",
+      "images": [
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2023-黄浦-listening-image-1.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2023-黄浦-listening-image-1.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2023-黄浦-listening-image-2.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2023-黄浦-listening-image-2.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2023-黄浦-listening-image-3.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2023-黄浦-listening-image-3.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2023-黄浦-listening-image-4.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2023-黄浦-listening-image-4.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2023-黄浦-listening-image-5.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2023-黄浦-listening-image-5.png"
+        }
+      ],
+      "questions": [
+        {
+          "number": 1,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 2,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 3,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 4,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 5,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 6,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "At 7:10.",
+            "B": "At 7:30.",
+            "C": "At 7:50.",
+            "D": "At 8:00."
+          },
+          "answer": ""
+        },
+        {
+          "number": 7,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "In a shop.",
+            "B": "In an office.",
+            "C": "In a restaurant.",
+            "D": "In a hospital."
+          },
+          "answer": ""
+        },
+        {
+          "number": 8,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Teacher and student.",
+            "B": "Doctor and patient.",
+            "C": "Husband and wife.",
+            "D": "Father and son."
+          },
+          "answer": ""
+        },
+        {
+          "number": 9,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Awful.",
+            "B": "Pleasant.",
+            "C": "Foolish.",
+            "D": "Frightening."
+          },
+          "answer": ""
+        },
+        {
+          "number": 10,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "To see a film.",
+            "B": "To do a part-time job.",
+            "C": "Listen to the dialogue and tell whether the following statements are true or false（判断下列句子是否 符合你听到的对话内容, 符合的用\"T\"表示, 不符合的用表示）（5分）",
+            "D": "Listen to the passage and complete the following sentences（听短文, 完成下列内容. 每空格限填 一 词）（10分）"
+          },
+          "answer": ""
+        },
+        {
+          "number": 11,
+          "prompt": "Rose Clark is checking into a hotel at the front desk.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 12,
+          "prompt": "Mr. Clark has booked a single room for three nights by phone.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 13,
+          "prompt": "Rose Clark has to fill in her details in the guest book.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 14,
+          "prompt": "Someone will take the luggage to Room 306 for Rose Clark.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 15,
+          "prompt": "Breakfast is served from 7 to 11 o'clock in the Green Hall.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 16,
+          "prompt": "Lucy is giving ______________ _________ at the graduation ceremony.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 17,
+          "prompt": "Middle school was a time of discovery __________, and ____________.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 18,
+          "prompt": "The tens have made some progress in the past ________________ ___________.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 19,
+          "prompt": "Lucy encouraged her fellow students to face____________ _______ bravely.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 20,
+          "prompt": "Lucy __________ __________to see all the amazing things in senior high school and beyond.",
+          "questionType": "blank",
+          "answer": ""
+        }
+      ]
+    },
+    {
+      "_id": "sh-em2-2024-奉贤-listening",
+      "title": "2024 上海奉贤二模听力",
+      "year": 2024,
+      "district": "奉贤",
+      "examType": "二模",
+      "stage": "初中",
+      "audioCloudPath": "_content/listening-em2/audio/sh-em2-2024-奉贤-listening.mp3",
+      "transcript": "Part 1 Listening (第一部分 听力) I．Listening Comprehension (听力理解) (本大题共20题，共25分) A. Listen and choose the right picture. 1. When you get home, remember to wash your hands first. ( A ) 2. Riding a bicycle is a good way to keep fit and be close to nature. ( E ) 3. The restaurant offers its guests a variety of sandwiches. ( F ) 4. March 20 marks World Oral Health Day. It’s a time to focus on the importance of good oral health. ( C ) 5. The Great Wall is one of the most famous tourist attractions in Beijing. ( B ) B. Listen to the dialogues and choose the best answer to each question your hear. 6. M: Which TV program do you like best, Betty? W: I prefer The Animal World. What about you, John? M: The World Sports. Q: Which TV program does John prefer? ( A ) 7. M: Would you like to watch a football game this Sunday? W: Well, I often feel that football matches are too noisy. How about going to a concert, instead? M: OK. Let’s meet at the gate of Peace Park. Q: What are they going to do this Sunday? ( A ) 8. M: Good afternoon. What troubles are you having? W: I’ve got a headache and a runny nose. It also feels hard to breathe. M: Open your mouth and say “Ah.” W: OK. Q: Where does the dialogue probably take place? ( D ) 9. M: Hi, Mary. I just received a phone call from Mr. Li. He said that you had won first prize in the reading contest the previous week. W: Wow! Really? I never thought it would happen! Q: How did Mary feel about the news? ( A ) 10. M: Excuse me, Mrs. Zhang. I’m a reporter from the school newspaper. May I ask you a few questions? W: Sure. M: Do you like your job? W: Yes, of course. M: How long have you been a teacher? W: I started my job at the age of 24 and have been a teacher for 30 years. Q: How old is Mrs. Zhang? ( C ) C. Listen to the passage and tell whether the following statements are true or false. One day, a professor entered the classroom with some question papers. He handed the papers out to his students. To everyone’s surprise, there were no questions on the paper. There was just a black dot at the center of the paper. The professor told his students, “I want you to write down what you see on your paper.” At the end of the class, the professor collected all the students’ answers. He read each of them. All the students were trying to describe the black dot. The professor then explained, “I am not going to grade your answers. I just want to give you something to think about. No one wrote about the white part of the paper. Everyone focused on the black dot. The same thing happened in our lives. We have a piece of white paper to observe, but we always focus on the dark spots.” “Our life is a gift given to us. We always have reasons to celebrate. However, we keep focusing only on the dark spots: weight problems, lack of money, etc. They are very small problems, compared with everything we have in our lives. Do not waste time thinking about the negative things. Enjoy each moment that life gives us.” 11. T 12. T 13. F 14. F 15. T D. Listen to the dialogue and complete the following sentences. The Qingming Festival is an important traditional festival in China. It usually falls on April 4 or 5 every year. The festival has a history of over 2,500 years. Qingming, in Chinese, means “clear” and “bright.” The two words describe the weather during this time period. It is suitable for farming and getting close to nature. The day before the Qingming Festival is Cold Food Day. On that day, people are not allowed to use fire for cooking and can only eat cold food. As time went by, the two festivals became one. There are various activities for the Qingming Festival. Tomb sweeping is the most important one. On the day of the festival, people sweep tombs to remember their ancestors. The Qingming Festival is also a good time to feel the warm, sweet breezes of spring. Many people go on outings and fly kites during the festival. The festival combines respect and fun together. Different places have different foods for the Qingming Festival. Sweet green rice ball is a popular Qingming food. It is traditionally sweet, but now it has other flavors. clear bright 17. not allowed 18. various activities 19. fly kites 20. traditionally sweet) Part 2 II. 21. B 22. C 23. D 24. A 25. B 26. B 27.C 28. B 29. A 30. B 31. D 32. D 33. C 34. B 35. C III. 36. C 37. E 38. D 39. A 40. D 41. A 42. E 43. B IV. 44. stories 45. twelfth 46. properly 47. ourselves 48. height 49. success 50. explain 51. independent V. 52. Both are 53. is there 54. How did 55. are sent 56. If aren’t/ Unless are 57. According to 58. Susan has made a decision to further her studies in Canada. Part 3 VI. A) 59. D 60. C 61. C 62. B 63. D 64. D B) 65. B 66. A 67. B 68. C 69. D 70. B C) 71. good 72. without 73. believe 74. discover 75. really 76. practice 77. through D) 78. Yes, it did. 79. Monkeys threw bananas at it. 80. They all agreed it would be better to wait for that group of monkeys to move on before they tried to grow. 81. Because she was so determined to become a tree. 82. Hard knots and scars. 83. Any reasonable answers are acceptable. For reference: If I were one of the four seeds, I would prepare for my future by cultivating a strong support network of friends. Having a supportive community can provide encouragement, guidance, and resources to help me achieve growth. I would focus on continuous learning and personal development to prepare for my future. By learning new skills, knowledge, and experiences, I can change myself for the better. 84. 略",
+      "hasAudio": true,
+      "hasTranscript": true,
+      "questionSourceFile": "精品解析：2024年上海市奉贤区中考二模英语试题（解析版）.docx",
+      "images": [
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2024-奉贤-listening-image-1.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2024-奉贤-listening-image-1.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2024-奉贤-listening-image-2.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2024-奉贤-listening-image-2.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2024-奉贤-listening-image-3.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2024-奉贤-listening-image-3.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2024-奉贤-listening-image-4.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2024-奉贤-listening-image-4.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2024-奉贤-listening-image-5.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2024-奉贤-listening-image-5.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2024-奉贤-listening-image-7.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2024-奉贤-listening-image-7.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2024-奉贤-listening-image-8.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2024-奉贤-listening-image-8.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2024-奉贤-listening-image-9.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2024-奉贤-listening-image-9.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2024-奉贤-listening-image-10.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2024-奉贤-listening-image-10.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2024-奉贤-listening-image-11.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2024-奉贤-listening-image-11.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2024-奉贤-listening-image-12.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2024-奉贤-listening-image-12.png"
+        }
+      ],
+      "questions": [
+        {
+          "number": 1,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 2,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 3,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 4,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 5,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 6,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "The World Sports.",
+            "B": "The Animal World.",
+            "C": "The World News.",
+            "D": "Around the World."
+          },
+          "answer": ""
+        },
+        {
+          "number": 7,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Go to a concert.",
+            "B": "Watch a football game.",
+            "C": "Stay at home.",
+            "D": "Visit Peace Park."
+          },
+          "answer": ""
+        },
+        {
+          "number": 8,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "In a shop.",
+            "B": "On the playground.",
+            "C": "At a restaurant.",
+            "D": "In a hospital."
+          },
+          "answer": ""
+        },
+        {
+          "number": 9,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Surprised.",
+            "B": "Worried.",
+            "C": "Moved.",
+            "D": "Upset."
+          },
+          "answer": ""
+        },
+        {
+          "number": 10,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "24.",
+            "B": "30.",
+            "C": "54.",
+            "D": "58."
+          },
+          "answer": ""
+        },
+        {
+          "number": 11,
+          "prompt": "The professor handed out question papers with only a black dot in the center.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 12,
+          "prompt": "The students were asked to write about what they saw on their papers.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 13,
+          "prompt": "The students focused on describing the white part of the paper, not the black dot.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 14,
+          "prompt": "The professor graded the students'answers based on their descriptions of the black dot.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 15,
+          "prompt": "The professor wanted to tell his students that they should not waste time thinking about the negative things in their lives.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 16,
+          "prompt": "Qingming, in Chinese, means“ ________ ”and“ ________”. The two words describe the weather during this time period.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 17,
+          "prompt": "The day before the Qingming Festival is Cold Food Day. On that day, people are ________ to use fire for cooking and can only eat cold food.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 18,
+          "prompt": "There are ________ for the Qingming Festival. Tomb sweeping is the most important one.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 19,
+          "prompt": "Many people go on outings and ________ during the festival. The festival combines respect and fun together.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 20,
+          "prompt": "Sweet green rice ball is a popular Qingming food. It is ________, but now it has other flavors.",
+          "questionType": "blank",
+          "answer": ""
+        }
+      ]
+    },
+    {
+      "_id": "sh-em2-2024-普陀-listening",
+      "title": "2024 上海普陀二模听力",
+      "year": 2024,
+      "district": "普陀",
+      "examType": "二模",
+      "stage": "初中",
+      "audioCloudPath": "_content/listening-em2/audio/sh-em2-2024-普陀-listening.mp3",
+      "transcript": "2023学年度第二学期九年级自适应练习2024.4 英语学科（听力录音） 根据你听到的内容, 选出相应的图片，在选择题区域相应的空格内用2B铅笔填涂。每个句子念两遍。 You shouldn’t step on a frozen lake. (C) 2. Suddenly, Nina saw a huge wave coming towards her. (F) 3. Look, Mom is preparing a tasty meal for the family! (D) 4. The price of the product has increased a lot. (B) 5. My cousin was down on knees and begged for forgiveness. (E) 根据你听到的对话和问题，选出最恰当的答案，在选择题区域相应的空格内用2B铅笔填涂。对话和问题都念两遍。 M: Excuse me, could you tell me where Dr. Sari’s office is? W: Sure. You can take the lift over there. Her office is on the fourth floor. It’s the seventh room on the left. Q: Where is Dr. Sari’s office? (请再听一遍) (C) W: What about going to see a film, Sky? M: Great! How about City Cinema or Changfeng Cinema? They have the biggest screens. W: But tickets are the most expensive. What about going to Mingzhu Cinema? It has the most comfortable seats and the best service. M: OK. Q: In which cinema are they going to see a film? (请再听一遍) (D) .M: Anna, what are you working on so hard? W: It’s an article for the school newspaper. If I can’t finish on time, it won’t get printed until next week. M: Oh, you’re the best editor, but you also need to balance work and rest. Q: What is the woman trying to do? (请再听一遍) (A) M: Dear, I’m so glad you’ve booked the tickets. Look at the long waiting line outside. W: Yeah, they are all for the famous paintings-Winter Scene Central Park by William Glackens and Spring Outing of the Court Ladies by Zhao Ji. Q: Where does this dialogue most probably take place? (请再听一遍) (B) W: I don’t know what’s wrong with my watch. I just had it repaired a month ago. M: Don’t waste your time and money any more. It’s old and it needs to retire now. Q: What does the man mean? (请再听一遍) (C) 判断下列句子是否符合你听到的对话内容，符合的用“T”表示，不符合的用“F”表示，在选择题区域相应的空格内用2B铅笔填涂。对话念两遍。 W: Good morning, my dear students. Today for our lecture, we are glad to have Ms. Laura Davis with us, a well-known writer. She’s going to share with us her interesting experiences. Now, Laura, please tell us how you find so many interesting things for your stories. M: Okay, I watch people a lot. I do that when I travel. I've been to many countries such as China, Britain and Italy. So I spend a lot of time at airports. While waiting for my flights, I watch people passing by and start my imagination. For example, the other day when I was waiting for my flight for Britain, I saw a couple. They were buying magazines. They were not wearing business clothes but the man was carrying a suitcase. Every few seconds the woman looked around. I wondered if someone was following them. Perhaps they were running away and, you know this reminded me of a story in the newspaper that day. A bank clerk stole 1,000,000 pounds a week before and disappeared with his wife. There was a picture of them in the paper. The couple really looked like the thieves. Maybe I should stop them. Just then I saw them say goodbye to each other and the woman walked away. Well sometimes I make mistakes like that but I find things like that very useful for my writing. 11. T 12. F 13. F 14. T 15. F D. 根据你听到的短文，完成下列句子，每空格限填一词。在非选择题区域相应的空格内用黑墨水钢笔或黑色水笔填写。短文念两遍。 Running, like other forms of exercise, helps the body in important ways. Whether the goal is to win a race or just to make it to the finish line of a 10-kilometer run, every runner should follow some basic rules for good health. First, a runner should do some light activities before exercising to protect him from being hurt. For example, walking is a good way to warm up. Then a runner can do exercises easily. In addition to warm-ups, a pair of running shoes can properly support the feet. They also help protect a runner from being hurt. Third, proper plans can help runners to benefit from exercise. A good training plan should improve performance without causing tiredness. For more experienced runners, a weekly plan can include easy and difficult exercises as well as days off. A new runner should start slowly and then work up to faster speed and longer distance. Finally, it is best to stop running at the first sign of getting hurt. If you continue to run, you will be hurt more seriously. basic rules 17. light activities 18. properly support 19. improve performance 20. longer distance 第一部分 “听力测试” 到此结束。请同学们继续答题。 2023学年度第二学期九年级自适应练习 英语学科（",
+      "hasAudio": true,
+      "hasTranscript": true,
+      "questionSourceFile": "精品解析：2024年上海市普陀区中考二模英语试题（解析版）.docx",
+      "images": [
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2024-普陀-listening-image-1.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2024-普陀-listening-image-1.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2024-普陀-listening-image-2.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2024-普陀-listening-image-2.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2024-普陀-listening-image-3.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2024-普陀-listening-image-3.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2024-普陀-listening-image-4.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2024-普陀-listening-image-4.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2024-普陀-listening-image-5.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2024-普陀-listening-image-5.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2024-普陀-listening-image-6.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2024-普陀-listening-image-6.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2024-普陀-listening-image-7.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2024-普陀-listening-image-7.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2024-普陀-listening-image-9.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2024-普陀-listening-image-9.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2024-普陀-listening-image-10.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2024-普陀-listening-image-10.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2024-普陀-listening-image-11.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2024-普陀-listening-image-11.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2024-普陀-listening-image-12.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2024-普陀-listening-image-12.png"
+        }
+      ],
+      "questions": [
+        {
+          "number": 1,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 2,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 3,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 4,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 5,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 6,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "On the first floor.",
+            "B": "On the third floor.",
+            "C": "On the fourth floor.",
+            "D": "On the seventh floor."
+          },
+          "answer": ""
+        },
+        {
+          "number": 7,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Sky Cinema.",
+            "B": "City Cinema.",
+            "C": "Changfeng Cinema.",
+            "D": "Mingzhu Cinema."
+          },
+          "answer": ""
+        },
+        {
+          "number": 8,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Finish some writing.",
+            "B": "Print a long article.",
+            "C": "Find a school newspaper.",
+            "D": "Have a balanced diet."
+          },
+          "answer": ""
+        },
+        {
+          "number": 9,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "In a book store.",
+            "B": "In a museum.",
+            "C": "In a restaurant.",
+            "D": "In a park."
+          },
+          "answer": ""
+        },
+        {
+          "number": 10,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "It’ll take about a month to repair the watch.",
+            "B": "It costs too much to have the watch repaired.",
+            "C": "The watch is not worth repairing any more.",
+            "D": "A retired repairman can help the woman."
+          },
+          "answer": ""
+        },
+        {
+          "number": 11,
+          "prompt": "Laura works as a writer and she is giving a lecture to students.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 12,
+          "prompt": "Laura likes reading magazines and newspapers at airports.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 13,
+          "prompt": "Laura learned from the newspaper that a precious suitcase was missing.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 14,
+          "prompt": "Finally, Laura found that the couple at the airport wasn’t the thieves.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 15,
+          "prompt": "Laura’s lecture is mainly about how to find ideas for stories from newspapers.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 16,
+          "prompt": "Every runner should follow some ___________ ___________ for good health.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 17,
+          "prompt": "A runner should do some ___________ ___________ before exercising to avoid being hurt.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 18,
+          "prompt": "A pair of running shoes can ___________ ___________ the feet.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 19,
+          "prompt": "A good training plan should ___________ ___________ without causing tiredness.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 20,
+          "prompt": "A new runner should start slowly and then work up to faster speed and ___________ ___________.",
+          "questionType": "blank",
+          "answer": ""
+        }
+      ]
+    },
+    {
+      "_id": "sh-em2-2026-嘉定-listening",
+      "title": "2026 上海嘉定二模听力",
+      "year": 2026,
+      "district": "嘉定",
+      "examType": "二模",
+      "stage": "初中",
+      "audioCloudPath": "_content/listening-em2/audio/sh-em2-2026-嘉定-listening.mp3",
+      "transcript": "Listening Comprehension（听力理解）（25分） A. Listen and choose the right picture.（根据你听到的内容，选出相应的图片）（5分） A B C D E F 1. ________ 2. ________ 3. ________ 4. ________ 5. ________ B. Listen to the dialogue and choose the best answer to the question you hear.（根据你听到的对话和问题，选择最恰当的答案）（5分） 6. A. By train. B. By air. C. By bus. D. By car. 7. A. The hiking plan. B. Their friend Mary. C. The weather. D. A TV programme. 8. A. In a hospital. B. In a museum. C. In a library. D. In a restaurant. 9. A. Because he made a wrong delivery. B. Because he didn’t have a red skirt. C. Because he forgot to pay for the delivery. D. Because he couldn’t take the skirt back. 10. A. She has no interest in the wild life protection group. B. She can not join the wild life protection group now. C. She has already been a member of the wild life protection group. D. She will leave the Stem club to join the wildlife protection group. C. Listen to the passage and tell whether the following statements are true or false. （判断下列句子是否符合你听到的短文内容，符合的用“T”表示，不符合的用“F”表示）（5分） 11. Cindy is having a study trip to Jamaica (牙买加) with her cousins now. 12. Besides some local dishes, Cindy also tried the famous Blue Mountain Coffee. 13. Travelers can experience the mixture of European, African, and local culture in Jamaica. 14. Cindy is excited because she’s never taken part in similar volunteer programmes before. 15. Cindy shares her experience in order to invite Sherry to travel to Jamaica. D. Listen to the passage and complete the following sentences.（根据你听到的对话，完成下列句子。每空格限填一词。）（10分） 16. Mr. Fang’s school is ________ ________ longer breaks between classes this term. 17. Longer breaks give students more time to relax. play games and ________ ________ with their friends. 18. Teachers walk around the activity areas to help students ________ ________. 19. The school plays ________ ________ before the break ends to tell students to return to class. 20. The 15-minute break makes a ________ ________ by helping students relax and get ready to learn. 答案及听力原文 【答案】 1-5 FAEDB 6-10 BCDAB 11-15 TFTTF 16. trying out 17. share joy 18. keep safe 19. soft music 20. real difference 【听力原文】 Ⅰ. Listening comprehension（听力理解）（共25分） A. Listen and choose the right picture（根据你听到的内容，选出相应的图片）（5分） 1. Li Ming went to the city park and planted several trees with his friends. 2. Students are now learning Tai Chi as part of their PE class this year. 3. Jenny is conducting a survey with her classmates about their favorite food. 4. Do you know the kite has been a part of Chinese culture for over 2000 years?5. Teens can explore the wild and make friends when they go camping. B. Listen to the dialogue and choose the best answer to the question you hear（根据你听到的对话和问题，选出最恰当的答案）（5分） 6. M: Why are you in such a hurry, Miss Gu? W: I'll fly to Guangzhou this evening. I must get everything ready before 4 o'clock. Q: How will Miss Gu go to Guangzhou? 7. M: I hope it will be fine tomorrow. I'm going hiking with Mary. W: I think it will be fine. I got it from the TV programme. Q: What are the two speakers talking about? 8. M: Excuse me, can I pack the steak left on my plate? W: Oh, no problem, sir. Just wait a minute, and I'll get you a packing box and a bag right away. Q: Where does this conversation most probably take place? 9. M: Customer Service. May I help you? W: Yes, I bought a red skirt, but you delivered a white one. M: Oh, I'm terribly sorry, madam. Please return it to us. We will pay for the delivery and send you the correct colour. Q: Why does the man say sorry? 10. M: Our wildlife protection group is looking for new members to join. I thought you might be interested. W: Oh, I'd love to. But I have already signed up for the Stem club. I want to improve my programming skills this term. The activities take up most of my spare time every week. Q: What does the woman mean? C. Listen to the passage and tell whether the following statements are true or false（判断下列句子是否符合你听到的短文内容，符合的用“T”表示，不符合的用“T”表示）（5分） Cindy is travelling in Jamaica. She leaves a voice message to her friend Sherry on her mobile phone to share the experience. “Hey Sherry, it's Cindy! I'm having a study trip in Jamaica right now. Yes, the island with those beautiful golden beaches and amazing African drum music. The weather is just perfect, sunny and warm every day. I'm here with my cousins. We've been here for three days, but we've already done so much. We went on a short river tour, walked along the beach, and yesterday, Oh my gosh— we went to an amazing beach party! So much fun! Local food here is so delicious. But, we haven't tried the famous Blue Mountain coffee yet. That's next on our list. We've also made some new friends here. They told us the the name of the country means‘land of wood and water’, and people have lived here for over 2,500 years. Now you can feel the mix of European, African, and local culture everywhere. Just this morning, we heard some street musicians playing drums and guitars! The best part is coming up tomorrow. I'm joining a volunteer programme to help look after wounded sea animals! I've just got my plan, and since I've never done anything like this before, I'm super excited. This trip is not just a holiday, but also an eye-opening experience.” D. Listen to the dialogue and complete the sentences（听对话，用听到的单词完成句子。每空格限填一词）（10分） W: Good morning, Mr. Fang. May I ask you a few questions about the new break policy? M: Sure, go ahead. W: Your school is trying out longer breaks this term, extending the break time between classes from 10 minutes to 15 minctcs. What changes do you see in students? M: Oh, more students go out of the classroom now! They can have more time to rest, to play games and share joy with their friends. They look very happy every break. W: Then what activities do students like most during the break? M: Most students love ball games, like basketball and table tennis. Some younger students like to play skipping rope. They all have great fun! W: Safety is very important for students. What do you do to help them keep safe? M: We teachers walk around the activity areas every break. Students are told to follow the rules. We also teach them to do simple arm exercises instead. W: Hmm. What do you do to help students get ready for class quickly after the break? M: We play soft music for 2 minutes before the break ends. It tells students to finish their games and walk back to the classroom. W: Why does your school make this change? M: We care about the kids'well-being and growth. The 15-minute break helps them feel relaxed and get ready to learn, and it really makes a real difference. W: I see. That sounds like a thoughtful change.",
+      "hasAudio": true,
+      "hasTranscript": true,
+      "questionSourceFile": "06 嘉定区二模英语听力.docx",
+      "images": [
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2026-嘉定-listening-image-1.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2026-嘉定-listening-image-1.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2026-嘉定-listening-image-2.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2026-嘉定-listening-image-2.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2026-嘉定-listening-image-3.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2026-嘉定-listening-image-3.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2026-嘉定-listening-image-4.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2026-嘉定-listening-image-4.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2026-嘉定-listening-image-5.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2026-嘉定-listening-image-5.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2026-嘉定-listening-image-6.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2026-嘉定-listening-image-6.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2026-嘉定-listening-image-7.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2026-嘉定-listening-image-7.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2026-嘉定-listening-image-8.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2026-嘉定-listening-image-8.png"
+        }
+      ],
+      "questions": [
+        {
+          "number": 1,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 2,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 3,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 4,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 5,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 6,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "By train.",
+            "B": "By air.",
+            "C": "By bus.",
+            "D": "By car."
+          },
+          "answer": ""
+        },
+        {
+          "number": 7,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "The hiking plan.",
+            "B": "Their friend Mary.",
+            "C": "The weather.",
+            "D": "A TV programme."
+          },
+          "answer": ""
+        },
+        {
+          "number": 8,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "In a hospital.",
+            "B": "In a museum.",
+            "C": "In a library.",
+            "D": "In a restaurant."
+          },
+          "answer": ""
+        },
+        {
+          "number": 9,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Because he made a wrong delivery.",
+            "B": "Because he didn’t have a red skirt.",
+            "C": "Because he forgot to pay for the delivery.",
+            "D": "Because he couldn’t take the skirt back."
+          },
+          "answer": ""
+        },
+        {
+          "number": 10,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Listen and choose the right picture（根据你听到的内容，选出相应的图片）（5分）",
+            "B": "Listen to the dialogue and choose the best answer to the question you hear（根据你听到的对话和问题，选出最恰当的答案）（5分）",
+            "C": "Listen to the passage and tell whether the following statements are true or false. （判断下列句子是否符合你听到的短文内容，符合的用“T”表示，不符合的用“F”表示）（5分）",
+            "D": "Listen to the passage and complete the following sentences.（根据你听到的对话，完成下列句子。每空格限填一词。）（10分）"
+          },
+          "answer": ""
+        },
+        {
+          "number": 11,
+          "prompt": "Cindy is having a study trip to Jamaica (牙买加) with her cousins now.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 12,
+          "prompt": "Besides some local dishes, Cindy also tried the famous Blue Mountain Coffee.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 13,
+          "prompt": "Travelers can experience the mixture of European, African, and local culture in Jamaica.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 14,
+          "prompt": "Cindy is excited because she’s never taken part in similar volunteer programmes before.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 15,
+          "prompt": "Cindy shares her experience in order to invite Sherry to travel to Jamaica.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 16,
+          "prompt": "Mr. Fang’s school is ________ ________ longer breaks between classes this term.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 17,
+          "prompt": "Longer breaks give students more time to relax. play games and ________ ________ with their friends.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 18,
+          "prompt": "Teachers walk around the activity areas to help students ________ ________.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 19,
+          "prompt": "The school plays ________ ________ before the break ends to tell students to return to class.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 20,
+          "prompt": "The 15-minute break makes a ________ ________ by helping students relax and get ready to learn.",
+          "questionType": "blank",
+          "answer": ""
+        }
+      ]
+    },
+    {
+      "_id": "sh-em2-2026-宝山-listening",
+      "title": "2026 上海宝山二模听力",
+      "year": 2026,
+      "district": "宝山",
+      "examType": "二模",
+      "stage": "初中",
+      "audioCloudPath": "_content/listening-em2/audio/sh-em2-2026-宝山-listening.mp3",
+      "transcript": "Listening Comprehension（听力理解）（25分） A. Listen and choose the right picture.（根据你听到的内容，选出相应的图片）（5分） A B C D E F 1. ________ 2. ________ 3. ________ 4. ________ 5. ________ B. Listen to the dialogue and choose the best answer to the question you hear.（根据你听到的对话和问题，选择最恰当的答案）（5分） 6. A. 7:30. B. 8:15. C. 9:00. D. 9:45. 7. A. By bus. B. On foot. C. By car. D. By bike. 8. A. In a library. B. In a post office. C. In a bank. D. In a museum. 9. A. Teacher and student. B. Customer and shop assistant. C. Doctor and patient. D. Parent and child. 10. A. Pick up the parcel. B. Go home. C. Buy some milk. D. Pick up his kid. C. Listen to the passage and tell whether the following statements are true or false. （判断下列句子是否符合你听到的内容，符合的用“T”表示，不符合的用“F”表示）（5分） 11. The airline allows passengers to check three bags for free. 12. The passenger is going on an international trip. 13. His carry-on bag is small enough to fit under his seat. 14. His round-trip ticket costs more than 625 US dollars. 15. This dialogue is mainly about a passenger’s unhappy experience at the airport. D. Listen to the passage and complete the following sentences.（听短文，用听到的单词完成下列句子。每空格限填一词。）（10分） 16. Sandboarding is __________ __________ other board sports, such as surfing and snowboarding. 17. Sandboarders can go down from the top of a hill and __________ __________ continuously. 18. As sandboarders go up the sand hill, their feet sink into the sand with __________ __________. 19. When practising the sport, sandboarders must have the __________ __________ gear (/ɡɪə(r)/装备). 20. Because the sun can be strong, it is important for sandboarders to have __________ __________. 答案及听力原文 【答案】 1-5 DFBEC 6-10 CDABC 11-15 FTFTT 16. similar to 17. speed up 18. each step 19. basic safety 20. enough water 【听力原文】 Ⅰ. Listening comprehension（听力理解）（共25分） A. Listen and choose the right picture（根据你听到的内容，选出相应的图片）（5分） 1. Stephen raised his hand confidently to answer the question. 2. Susan is very good at ballroom dancing and often wins prizes. 3. Our success in the project mainly depends on good team work. 4. Did the tourists enjoy the beautiful mountain landscape by the lake? 5. After running along way, Betty felt sick and saw stars. B. Listen to the dialogue and choose the best answer to the question you hear（根据你听到的对话和问题，选出最恰当的答案）（5分） 6. W: When will the train to Fuzhou leave? M: It will leave at nine o’ clock. It is 8:15 now, so we have only 45 minutes left. W: Oh, we need to hurry then. Q: What time will the train leave? 7. M: How will you go to the art exhibition tomorrow? W: I wanted to take the bus, but it's too crowded at weekends. M: Why not ride a bike? The exhibition is not too far from here. W: That's a good idea. Q: How will the woman most probably go to the exhibition? 8. M: Hello, Miss Zhang! I need this history book! W: OK, show me your student card first, please. Q: Where does this dialogue most probably take place? 9. W: I bought the dress for my daughter yesterday, but she doesn't like the color. She likes white. M: If so, I can change it for you. Q: What's the relationship between the two speakers? 10. W: Honey, don't forget to pick up the parcel before you come home. M: Okay, but I need to go to the supermarket to buy some milk first. Q: What will the man do first? C. Listen to the dialogue and tell whether the following statements are true or false（判断下列句子是否符合你听到的内容，符合的用“T”表示，不符合的用“F”表示）（5分） W: Hello sir, may I see your passport please? M: Yes, here you are. W: Will you be checking any bags? M: Yes, I'd like to check three bags. W: I'm sorry, sir. Our airline allows only two checked bags, 20 kilograms each, plus one carry-on bag. I will have to charge you extra for the third. M: What? Why? I am taking an international flight. I'm flying 16,000 kilometers. How may I suppose to take only two 20-kilo bags? That sounds unfair. W: I am sorry sir, there's nothing I can do. You cannot board the flight with that large bag either. Carry-on bags must fit in the overhead bin or under your seat. That bag is clearly too big. M: Now I see. You charge next to nothing for an international ticket, but when it comes to charging for any other small thing, you charge too much. So tell me, Miss, how much will I have to pay for all of this? W: Let me see, 625 US dollars. M: That's more than my round-trip ticket. D. Listen to the passage and complete the following sentences（听短文,用听到的单词完成下列句子，每空格限填一词。）（10分） In deserts, rolling hills of sand can go on for miles. Seen from far away, these beautiful sand hills often look like dragons. They are excellent for an exciting sport called sandboarding. Sandboarding is similar to other board sports such as surfing and snowboarding. From the top of a sand hill, sandborders can go straight down and speed up continuously. It takes hours of practice to learn how to balance and move on the sand. Even the walk back up to the top can be difficult. As sandwaters go up the sand hill, their feet sink into the sand with each step, so falling on the way back up is just as likely as a fall on the way down. When practicing the sport, sandboards must have the basic safety gear. Sandboarders must protect their skin by using sunscreen and by wearing long clothing. It is also necessary to wear sunglasses. Protective eyewear protects the sandboards eyes from the bright sun and shiny sand. Even with the right gear, the sun and heat can be strong. So it is important for sandborders to have enough water. Although there are some challenges, sandboarding offers high speed excitement in beautiful places.",
+      "hasAudio": true,
+      "hasTranscript": true,
+      "questionSourceFile": "01 宝山区二模英语听力.docx",
+      "images": [
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2026-宝山-listening-image-1.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2026-宝山-listening-image-1.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2026-宝山-listening-image-2.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2026-宝山-listening-image-2.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2026-宝山-listening-image-3.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2026-宝山-listening-image-3.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2026-宝山-listening-image-4.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2026-宝山-listening-image-4.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2026-宝山-listening-image-5.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2026-宝山-listening-image-5.png"
+        }
+      ],
+      "questions": [
+        {
+          "number": 1,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 2,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 3,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 4,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 5,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 6,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "7:30.",
+            "B": "8:15.",
+            "C": "9:00.",
+            "D": "9:45."
+          },
+          "answer": ""
+        },
+        {
+          "number": 7,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "By bus.",
+            "B": "On foot.",
+            "C": "By car.",
+            "D": "By bike."
+          },
+          "answer": ""
+        },
+        {
+          "number": 8,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "In a library.",
+            "B": "In a post office.",
+            "C": "In a bank.",
+            "D": "In a museum."
+          },
+          "answer": ""
+        },
+        {
+          "number": 9,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Teacher and student.",
+            "B": "Customer and shop assistant.",
+            "C": "Doctor and patient.",
+            "D": "Parent and child."
+          },
+          "answer": ""
+        },
+        {
+          "number": 10,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Listen and choose the right picture（根据你听到的内容，选出相应的图片）（5分）",
+            "B": "Listen to the dialogue and choose the best answer to the question you hear（根据你听到的对话和问题，选出最恰当的答案）（5分）",
+            "C": "Listen to the passage and tell whether the following statements are true or false. （判断下列句子是否符合你听到的内容，符合的用“T”表示，不符合的用“F”表示）（5分）",
+            "D": "Listen to the passage and complete the following sentences.（听短文，用听到的单词完成下列句子。每空格限填一词。）（10分）"
+          },
+          "answer": ""
+        },
+        {
+          "number": 11,
+          "prompt": "The airline allows passengers to check three bags for free.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 12,
+          "prompt": "The passenger is going on an international trip.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 13,
+          "prompt": "His carry-on bag is small enough to fit under his seat.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 14,
+          "prompt": "His round-trip ticket costs more than 625 US dollars.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 15,
+          "prompt": "This dialogue is mainly about a passenger’s unhappy experience at the airport.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 16,
+          "prompt": "Sandboarding is __________ __________ other board sports, such as surfing and snowboarding.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 17,
+          "prompt": "Sandboarders can go down from the top of a hill and __________ __________ continuously.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 18,
+          "prompt": "As sandboarders go up the sand hill, their feet sink into the sand with __________ __________.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 19,
+          "prompt": "When practising the sport, sandboarders must have the __________ __________ gear (/ɡɪə(r)/装备).",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 20,
+          "prompt": "Because the sun can be strong, it is important for sandboarders to have __________ __________.",
+          "questionType": "blank",
+          "answer": ""
+        }
+      ]
+    },
+    {
+      "_id": "sh-em2-2026-浦东-listening",
+      "title": "2026 上海浦东二模听力",
+      "year": 2026,
+      "district": "浦东",
+      "examType": "二模",
+      "stage": "初中",
+      "audioCloudPath": "_content/listening-em2/audio/sh-em2-2026-浦东-listening.mp3",
+      "transcript": "Listening Comprehension（听力理解）（25分） A. Listen and choose the right picture.（根据你听到的内容，选出相应的图片）（5分） A B C D E F 1. ________ 2. ________ 3. ________ 4. ________ 5. ________ B. Listen to the dialogue and choose the best answer to the question you hear.（根据你听到的对话和问题，选择最恰当的答案）（5分） 6.A. Every day. B. Three times a week. C. Twice a week. D. Once a week. 7.A. Rainy. B. Sunny. C. Windy. D. Snowy. 8.A. At 8:30. B. At 8:45. C. At 9:00. D. At 9:15. 9.A. He thinks it has poor quality. B. He thinks it's a good deal. C. He thinks it's not the woman's size. D. He thinks it's too expensive. 10.A. The woman thinks experience is the most important at first. B. The man advises the woman to ask for a raise now. C. The company's training program is the best in the industry. D. The woman is likely to accept the job because of its training. C. Listen to the passage and tell whether the following statements are true or false. （判断下列句子是否符合你听到的短文内容，符合的用“T”表示，不符合的用“F”表示）（5分） 11.Tony is a 15-year-old boy who was born blind. 12.Years ago, it was difficult for most students to understand students like Tony. 13.Tony joins online clubs mainly to teach people like him to use new AI tools. 14.Tony feels more confident because people online treat him like everyone else. 15.The passage mainly talks about how technology helps deaf teenagers improve their social life. D. Listen to the passage and complete the following sentences.（听对话，用听到的单词完成下列句子。每空格限填一词。）（10分） 16.When the house shook heavily, Mr. Green shouted to everyone to _______. 17.The family hid under the kitchen table _______ when dishes dropped off. 18.After the shaking stopped, there was _______ on the whole floor. 19.Mr. Green turned on _______ to get news about the earthquake. 20.In the disaster, everyone _______ to support each other. 答案及听力原文 【答案】 1-5 DFACE 6-10 CBBAD 11-15 TFFTT 16. move quickly 17. for safety 18. small glass 19. a radio 20. worked together 【听力原文】 Ⅰ. Listening comprehension（听力理解）（共25分） A. Listen and choose the right picture（根据你听到的内容，选出相应的图片）（5分） 1. People will possibly live in space hotels during holidays in the future. 2. There will be more natural disasters unless we try to protect the earth. 3. When I feel upset, my friend always encourages me to cheer up. 4. My father spent the whole afternoon repairing my broken bicycle. 5: In a smart home, the internet controls almost everything and makes life easier. B. Listen to the dialogues and choose the best answer to the question you hear（根据你听到的对话和问题，选出最恰当的答案）（5分） 6. W: Do you often go to the gym? M: Yes, I go every Tuesday and Thursday after work. Q: How often does the man go to the gym? 7. W: It's pouring outside, don't forget your umbrella. M: Thanks, I' ll take it. The weather forecast says it will clear up in the afternoon. Q: What will the weather be like in the afternoon? 8. W: The film starts at nine o’ clock. What time is it now? M: It's half past eight. But it takes 15 minutes to the cinema. Let's hurry. Q: When will they get to the cinema? 9. W: Look at this jacket, it's only 90 yuan. That's a great price. M: Really? But the material feels cheap, it might not last alone. W: You are right. Maybe I should spend more on better quality. M: I think so. You get what you pay for. Q: What does a man think about the jacket? 10. W: I got a job offer from a company but the salary is lower than I expected. M: Is it a good company? Experience is also important. W: Yes, it's a well-known company with great training. M: Then maybe you should take it. You can ask for a raise later. W: You are right. Thank you for your advice. Q: What can we learn from the dialogue? C. Listen to the passage and tell whether the following statements are true or false（判断下列句子是否符合你听到的短文内容，符合的用“T”表示，不符合的用“F”表示）（5分） Tony is 15. Like many kids his age, he spends a lot of time on his computer and smartphone, but his parents are not complaining. In fact, Tony was born deaf. He can't hear others talking. Thanks to technology and social media, his life has completely changed, but it was not always like this. Years ago, although deaf students could attend regular schools, most of them communicated only by sign language. It was hard for most classmates to understand. As a result, they couldn't take part in group activities and made few friends. They felt bored and lonely. Now with modern technology, things are different. Teenagers communicate more by texting messages. It doesn't need hearing or speaking. New AI tools can even translate sign language into text and make communication easier. The internet also opens up new social spaces for Tony. He joins online clubs for deaf teens to share experiences and gain help. On social media, people focus on his posts, not his hearing problem. “Online nobody knows I'm deaf unless I tell them. They treat me like everyone else.”Tony explains,“That makes me feel more confident and relaxed.” He believes that technology will soon help deaf teenagers enjoy a normal social life. D. Listen to the dialogue and complete the following sentences（听对话，用听到的单词完成下列句子。每空格限填一词。）（10分） W: Good morning, Mr. Green, thank you for being here. Could you tell us what happened on March 15th? M: Well, it was about 2:15 a. m.. My family were sleeping at home. Suddenly, the house began to shake heavily. I woke up and shouted to everyone to move quickly. W: What did you do then? M: My wife and I held our children tightly and ran downstairs to the kitchen. When dishes dropped off the shelves, we hid under the kitchen table for safety. W: What did you see after the shaking stopped? M: There was small glass everywhere on the floor. Electricity was cut off. So we lit two candles. W: How did you get news about the earthquake? M: I turned on a radio. The reporter said the strong earthquake caused a much damage. W: Did you have enough food and water? M: Yes. But I worried about our neighbors so I went out to see if they were safe. W: That was very sweet. How did people in your town deal with the disaster? M: Many people lost homes, but everyone worked together to support each other. It was a hard time, but we showed a great community spirit. W: Thank you Mr. green for sharing your experience.",
+      "hasAudio": true,
+      "hasTranscript": true,
+      "questionSourceFile": "10 浦东新区二模英语听力.docx",
+      "images": [
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2026-浦东-listening-image-1.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2026-浦东-listening-image-1.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2026-浦东-listening-image-2.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2026-浦东-listening-image-2.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2026-浦东-listening-image-3.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2026-浦东-listening-image-3.png"
+        }
+      ],
+      "questions": [
+        {
+          "number": 1,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 2,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 3,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 4,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 5,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 6,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Every day.",
+            "B": "Three times a week.",
+            "C": "Twice a week.",
+            "D": "Once a week."
+          },
+          "answer": ""
+        },
+        {
+          "number": 7,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Rainy.",
+            "B": "Sunny.",
+            "C": "Windy.",
+            "D": "Snowy."
+          },
+          "answer": ""
+        },
+        {
+          "number": 8,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "At 8:30.",
+            "B": "At 8:45.",
+            "C": "At 9:00.",
+            "D": "At 9:15."
+          },
+          "answer": ""
+        },
+        {
+          "number": 9,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "He thinks it has poor quality.",
+            "B": "He thinks it's a good deal.",
+            "C": "He thinks it's not the woman's size.",
+            "D": "He thinks it's too expensive."
+          },
+          "answer": ""
+        },
+        {
+          "number": 10,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Listen and choose the right picture（根据你听到的内容，选出相应的图片）（5分）",
+            "B": "Listen to the dialogues and choose the best answer to the question you hear（根据你听到的对话和问题，选出最恰当的答案）（5分）",
+            "C": "Listen to the passage and tell whether the following statements are true or false. （判断下列句子是否符合你听到的短文内容，符合的用“T”表示，不符合的用“F”表示）（5分）",
+            "D": "Listen to the passage and complete the following sentences.（听对话，用听到的单词完成下列句子。每空格限填一词。）（10分）"
+          },
+          "answer": ""
+        },
+        {
+          "number": 11,
+          "prompt": "Tony is a 15-year-old boy who was born blind.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 12,
+          "prompt": "Years ago, it was difficult for most students to understand students like Tony.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 13,
+          "prompt": "Tony joins online clubs mainly to teach people like him to use new AI tools.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 14,
+          "prompt": "Tony feels more confident because people online treat him like everyone else.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 15,
+          "prompt": "The passage mainly talks about how technology helps deaf teenagers improve their social life.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 16,
+          "prompt": "When the house shook heavily, Mr. Green shouted to everyone to _______.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 17,
+          "prompt": "The family hid under the kitchen table _______ when dishes dropped off.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 18,
+          "prompt": "After the shaking stopped, there was _______ on the whole floor.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 19,
+          "prompt": "Mr. Green turned on _______ to get news about the earthquake.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 20,
+          "prompt": "In the disaster, everyone _______ to support each other.",
+          "questionType": "blank",
+          "answer": ""
+        }
+      ]
+    },
+    {
+      "_id": "sh-em2-2026-静安-listening",
+      "title": "2026 上海静安二模听力",
+      "year": 2026,
+      "district": "静安",
+      "examType": "二模",
+      "stage": "初中",
+      "audioCloudPath": "_content/listening-em2/audio/sh-em2-2026-静安-listening.mp3",
+      "transcript": "Listening Comprehension（听力理解）（25分） A. Listen and choose the right picture.（根据你听到的内容，选出相应的图片）（5分） A B C D E F 1. ________ 2. ________ 3. ________ 4. ________ 5. ________ B. Listen to the dialogue and choose the best answer to the question you hear.（根据你听到的对话和问题，选择最恰当的答案）（5分） 6. A. Italian food. B. Japanese food. C. Both. D. Neither. 7. A. Factories. B. Bikes. C. Cars. D. Buses. 8. A. Every day. B. Once a week. C. Very often. D. Twice a week. 9. A. He didn’t have time. B. He didn’t like tennis. C. He was listening to a report. D. He watched a shorter match. 10. A. She doesn’t know the supermarket’s hours. B. The supermarket is closed today. C. They are too late to get to the supermarket. D. They should go to the supermarket now. C. Listen to the passage and tell whether the following statements are true or false. （判断下列句子是否符合你听到的短文内容，符合的用“T”表示，不符合的用“F”表示）（5分） 11. The tourists found the information about Weldborough Hot Springs (温泉) on a travel website. 12. The tourists successfully found the hot spring and enjoyed their trip. 13. The AI programme created the hot spring by mixing real and imagined details. 14. Some tourists thought the experience was funny, though they had wasted time and money. 15. According to the story, using AI for travel planning is dangerous and should be avoided. D. Listen to the passage and complete the following sentences.（听对话，完成下列内容。每空格限填一词。）（10分） 16. The smart speaker can read ________ ________ and give reminders. 17. The smart bed can ________ ________ us fall asleep after a long school day. 18. The smart fridge can ________ ________ based on the food inside 19. Using smart switches can save energy and improve ________ ________. 20. The microwave radar sensor system makes devices ________ ________ and lowers electricity bills. 答案及听力原文 【答案】 1-5 CDBFA 6-10 BCDAC 11-15 TFTTF 16. text messages 17. gently help 18. suggest dishes 19. power safety 20. last longer 【听力原文】 Ⅰ. Listening comprehension（听力理解）（共25分） A. Listen and choose the right picture（根据你听到的内容，选出相应的图片）（5分） 1. We can take shorter showers to save water. 2. The postcard reminds Wendy of her happy holiday. 3. Jack was asked to get some cooking fuel for the camping trip. 4. The two neighbours are arguing about where to put the fence. 5. Jane was so focused on playing chess that she ignored everything else. B. Listen to the short conversations and choose the best answer to the question you hear（根据你听到的短对话和问题，选出最恰当的答案）（5分） 6. W: There are two new restaurants near our school, an Italian one and a Japanese one.Which do you prefer, Jason? M: I prefer Japanese food. How about you? W: I like both, but I prefer Italian. Q: What type of food does Jason like better? 7. M: The air in our city is getting worse. Some people say factories are the biggest problem. What do you think? W: Factories are a problem, but I think cars are the main cause. Too many people drive every day. M: That's true. Maybe we should ride bikes or take the bus more often. Q: What does the woman think is the main cause of pollution? 8. M: How often do you go to the training centre? W: Not as often as I'd like to. M: I thought you went there every day. W: No, only on Mondays and Fridays now. I'm too busy. Q: How often does the woman go to the training centre? 9. W: Did you watch the tennis match on TV last night? M: No, it was too long and I didn't have time. I had to finish a working report. W: What a pity! The match was really exciting. Q: Why didn't the man watch the match? 10. M: Let's stop by the supermarket on the way home. We need milk and bread. W:I think it closes at 9:00 on weekdays. It's already 8:55. We won't make it in time. Q: What does the woman mean? C. Listen to the passage and tell whether the following statements are true or false（判断下列句子是否符合你听到的短文内容，符合的用“T”表示，不符合的用“F”表示）（5分） Last year, a group of tourists visited Tasmania, Australia, hoping to see a famous hot spring. They found the information on a popular travel website. The website said thatWeldborough Hot Springs was a beautiful place to relax and enjoy nature. Excited by the description, many people planned trips there. However, when the tourists arrived, they were shocked. There was no hot spring at all. Instead, they only found a cold river in the area. They realized that Weldborough HotSprings did not exist. How could this happen? The reason was surprising. The travel website had used an AI programme to write some of its articles. The AI combined real information with imagined details. It created the hot spring as if it were real, but nobody had ever visited it before. The website's managers admitted that they did not check the AI's work carefully. It caused confusion and disappointment. Tourists had wasted time and money travelling to a place that was never there. Some said they felt angry, while others found it funny that technology could make such a mistake. The story also teaches an important lesson. AI can be very helpful, but it is not always correct. We should not believe everything online without checking it carefully. When planning a trip, it is better to confirm information from multiple sources, such as official tourist websites, maps, or guidebooks. D. Listen to the conversation and complete the following sentences（听对话，完成下列内容，每空格限填一词）（10分） Arthur and Pansy are visiting a technology exhibition. They are talking about the smart home devices they have just seen. Arthur: Pansy, have you seen that smart speaker? I just told it the name of a song, and it started playing immediately. I really like it! Pansy: Yes, I tried it too. It's amazing. I heard it can also read text messages and give reminders. That would be helpful for busy students like us. Arthur: That's true! And did you notice the smart bed? It can gently help us fall asleep. Ithink that would be perfect after a long school day. Pansy: I agree. I was also impressed by the smart fridge. It can suggest dishes based on the food inside. That means we don't have to worry about what to cook every day. Arthur: Technology really makes life easier. But I have a question. What if we forget to turn off some devices when we leave home? Pansy: The engineer explained that they have smart switches. You can use your phone to cut off power to unused devices. That not only saves energy but also improves power safety. Arthur: That's smart! I also remember something about a special sensor. Pansy: Oh yes, the microwave radar sensor. It can sense whether people are at home and adjust the temperature automatically. So the house stays comfortable whether you are in or away. Arthur: That sounds very convenient. And I think it can also reduce energy costs. Pansy: Exactly. The system makes devices last longer and lowers electricity bills. I believe smart homes will become more popular in the future. Arthur: I hope so. Living in a smart home like that would definitely make our lives easier and more comfortable.",
+      "hasAudio": true,
+      "hasTranscript": true,
+      "questionSourceFile": "08 静安区二模英语听力.docx",
+      "images": [
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2026-静安-listening-image-1.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2026-静安-listening-image-1.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2026-静安-listening-image-2.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2026-静安-listening-image-2.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2026-静安-listening-image-3.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2026-静安-listening-image-3.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2026-静安-listening-image-4.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2026-静安-listening-image-4.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2026-静安-listening-image-5.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2026-静安-listening-image-5.png"
+        }
+      ],
+      "questions": [
+        {
+          "number": 1,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 2,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 3,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 4,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 5,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": ""
+        },
+        {
+          "number": 6,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Italian food.",
+            "B": "Japanese food.",
+            "C": "Both.",
+            "D": "Neither."
+          },
+          "answer": ""
+        },
+        {
+          "number": 7,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Factories.",
+            "B": "Bikes.",
+            "C": "Cars.",
+            "D": "Buses."
+          },
+          "answer": ""
+        },
+        {
+          "number": 8,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Every day.",
+            "B": "Once a week.",
+            "C": "Very often.",
+            "D": "Twice a week."
+          },
+          "answer": ""
+        },
+        {
+          "number": 9,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "He didn’t have time.",
+            "B": "He didn’t like tennis.",
+            "C": "He was listening to a report.",
+            "D": "He watched a shorter match."
+          },
+          "answer": ""
+        },
+        {
+          "number": 10,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Listen and choose the right picture（根据你听到的内容，选出相应的图片）（5分）",
+            "B": "Listen to the short conversations and choose the best answer to the question you hear（根据你听到的短对话和问题，选出最恰当的答案）（5分）",
+            "C": "Listen to the passage and tell whether the following statements are true or false. （判断下列句子是否符合你听到的短文内容，符合的用“T”表示，不符合的用“F”表示）（5分）",
+            "D": "Listen to the passage and complete the following sentences.（听对话，完成下列内容。每空格限填一词。）（10分）"
+          },
+          "answer": ""
+        },
+        {
+          "number": 11,
+          "prompt": "The tourists found the information about Weldborough Hot Springs (温泉) on a travel website.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 12,
+          "prompt": "The tourists successfully found the hot spring and enjoyed their trip.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 13,
+          "prompt": "The AI programme created the hot spring by mixing real and imagined details.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 14,
+          "prompt": "Some tourists thought the experience was funny, though they had wasted time and money.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 15,
+          "prompt": "According to the story, using AI for travel planning is dangerous and should be avoided.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": ""
+        },
+        {
+          "number": 16,
+          "prompt": "The smart speaker can read ________ ________ and give reminders.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 17,
+          "prompt": "The smart bed can ________ ________ us fall asleep after a long school day.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 18,
+          "prompt": "The smart fridge can ________ ________ based on the food inside",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 19,
+          "prompt": "Using smart switches can save energy and improve ________ ________.",
+          "questionType": "blank",
+          "answer": ""
+        },
+        {
+          "number": 20,
+          "prompt": "The microwave radar sensor system makes devices ________ ________ and lowers electricity bills.",
+          "questionType": "blank",
+          "answer": ""
+        }
+      ]
+    }
+  ]
+};

@@ -1,0 +1,223 @@
+const https = require('https');
+const study = require('../facades/study.facade');
+const dbAdapter = require('../adapters/db.adapter');
+
+const COLLECTION = 'writingAttempts';
+
+function normalizeText(value) {
+  return String(value || '').replace(/\s+/g, ' ').trim();
+}
+
+function postJson(url, headers, body) {
+  return new Promise((resolve, reject) => {
+    const target = new URL(url);
+    const payload = JSON.stringify(body);
+    const request = https.request({
+      method: 'POST',
+      hostname: target.hostname,
+      path: `${target.pathname}${target.search}`,
+      headers: Object.assign({}, headers, {
+        'content-type': 'application/json',
+        'content-length': Buffer.byteLength(payload)
+      }),
+      timeout: 90000
+    }, (response) => {
+      let text = '';
+      response.setEncoding('utf8');
+      response.on('data', (chunk) => { text += chunk; });
+      response.on('end', () => {
+        if (response.statusCode < 200 || response.statusCode >= 300) {
+          reject(new Error(`writing-http-${response.statusCode || 0}:${text.slice(0, 160)}`));
+          return;
+        }
+        try {
+          resolve(JSON.parse(text));
+        } catch (error) {
+          reject(error);
+        }
+      });
+    });
+    request.on('timeout', () => request.destroy(new Error('writing-timeout')));
+    request.on('error', reject);
+    request.write(payload);
+    request.end();
+  });
+}
+
+function parseJsonText(text) {
+  const raw = String(text || '').replace(/```json|```/g, '').trim();
+  const matched = raw.match(/\{[\s\S]*\}/);
+  if (!matched) return {};
+  try {
+    return JSON.parse(matched[0]);
+  } catch (error) {
+    return {};
+  }
+}
+
+function extractMessageText(data) {
+  const message = data && data.choices && data.choices[0] && data.choices[0].message
+    ? data.choices[0].message
+    : {};
+  const content = message.content || data.output_text || '';
+  if (Array.isArray(content)) {
+    return content.map((item) => (item && typeof item === 'object' ? (item.text || item.content || '') : item)).join(' ');
+  }
+  if (content && typeof content === 'object') {
+    return content.text || content.content || JSON.stringify(content);
+  }
+  return String(content || '');
+}
+
+function getModelConfig() {
+  return {
+    endpoint: process.env.WRITING_SCORE_ENDPOINT || process.env.READING_STUDY_ENDPOINT || process.env.SPEAKING_SCORE_ENDPOINT || '',
+    apiKey: process.env.WRITING_SCORE_API_KEY || process.env.READING_STUDY_API_KEY || process.env.SPEAKING_SCORE_API_KEY || '',
+    model: process.env.WRITING_SCORE_MODEL || process.env.READING_STUDY_MODEL || process.env.SPEAKING_CONTENT_SCORE_MODEL || 'gpt-5.5'
+  };
+}
+
+function normalizeReview(data, prompt) {
+  const totalScore = Number(data.totalScore || prompt.score || 20) || 20;
+  const score = Math.max(0, Math.min(totalScore, Number(data.score || 0)));
+  const dimensions = data.dimensions && typeof data.dimensions === 'object' ? data.dimensions : {};
+  return {
+    score,
+    totalScore,
+    level: normalizeText(data.level || (score >= totalScore * 0.8 ? '良好' : '继续练习')),
+    summary: normalizeText(data.summary || data.feedback || '已完成批改。'),
+    content: normalizeText(data.content || dimensions.content || ''),
+    structure: normalizeText(data.structure || dimensions.structure || ''),
+    language: normalizeText(data.language || dimensions.language || ''),
+    spelling: normalizeText(data.spelling || dimensions.spelling || ''),
+    strengths: Array.isArray(data.strengths) ? data.strengths.map(normalizeText).filter(Boolean).slice(0, 3) : [],
+    problems: Array.isArray(data.problems) ? data.problems.map(normalizeText).filter(Boolean).slice(0, 6) : [],
+    suggestions: Array.isArray(data.suggestions) ? data.suggestions.map(normalizeText).filter(Boolean).slice(0, 6) : [],
+    grammarCorrections: Array.isArray(data.grammarCorrections)
+      ? data.grammarCorrections.map((item) => ({
+        original: normalizeText(item && item.original),
+        corrected: normalizeText(item && item.corrected),
+        reason: normalizeText(item && item.reason)
+      })).filter((item) => item.original || item.corrected).slice(0, 12)
+      : [],
+    polishedVersion: normalizeText(data.polishedVersion || data.polished || '').slice(0, 1200)
+  };
+}
+
+async function gradeWriting(prompt, essay) {
+  const config = getModelConfig();
+  if (!config.endpoint || !config.apiKey) {
+    throw new Error('writing-model-not-configured');
+  }
+  const data = await postJson(config.endpoint, {
+    authorization: `Bearer ${config.apiKey}`
+  }, {
+    model: config.model,
+    temperature: 0.2,
+    messages: [{
+      role: 'user',
+      content: [
+        '你是上海中考英语作文阅卷老师。请按20分制详细批改学生作文。',
+        '只返回JSON，不要Markdown。',
+        '必须结合题目要求判断内容是否切题、要点是否覆盖。',
+        '语法错误要逐个指出，不要只笼统说有语法问题。',
+        '格式：{"score":number,"totalScore":20,"level":"string","summary":"总体评价","content":"内容切题度和要点覆盖","structure":"结构、段落、逻辑连接","language":"词汇、句型、表达地道性","spelling":"拼写、标点、大小写","strengths":["优点"],"problems":["主要问题"],"suggestions":["改进建议"],"grammarCorrections":[{"original":"原句","corrected":"修改后","reason":"原因"}],"polishedVersion":"一版更好的英文作文"}',
+        `题目：${prompt.prompt || prompt.title || ''}`,
+        `最低词数：${prompt.minWords || 60}`,
+        `学生作文：${essay}`
+      ].join('\n')
+    }]
+  });
+  return normalizeReview(parseJsonText(extractMessageText(data)), prompt);
+}
+
+async function submitWritingAttempt(event) {
+  const payload = (event && event.payload) || {};
+  const { ctx, today } = await study.prepareRequestContext(Object.assign({}, event, {
+    action: 'submitWritingAttempt'
+  }));
+  const prompt = payload.prompt || {};
+  const promptId = String(payload.promptId || prompt._id || '').trim();
+  const essay = String(payload.essay || '').trim();
+  if (!promptId || !essay) {
+    throw new Error('missing-writing-payload');
+  }
+  const review = await gradeWriting(prompt, essay);
+  const now = new Date().toISOString();
+  const attempt = {
+    promptId,
+    title: prompt.title || '',
+    date: today,
+    essay,
+    wordCount: (essay.match(/[A-Za-z]+(?:[-'][A-Za-z]+)?/g) || []).length,
+    score: review.score,
+    totalScore: review.totalScore,
+    review,
+    createdAt: now
+  };
+  if (study.normalizeStudyRole(ctx.member) === 'student') {
+    await dbAdapter.collection(COLLECTION).add({
+      data: Object.assign({}, attempt, {
+        familyId: ctx.family.familyId,
+        childId: ctx.child.childId,
+        userId: ctx.user.userId,
+        memberId: ctx.member.memberId
+      })
+    });
+  }
+  return {
+    prompt: {
+      _id: promptId,
+      title: prompt.title || '',
+      prompt: prompt.prompt || ''
+    },
+    attempt,
+    review
+  };
+}
+
+function formatAttempt(record) {
+  const item = record || {};
+  const review = item.review || {};
+  return {
+    attemptId: item._id || '',
+    promptId: item.promptId || '',
+    title: item.title || '写作',
+    date: item.date || '',
+    essay: item.essay || '',
+    wordCount: Number(item.wordCount || 0),
+    score: Number(item.score || review.score || 0),
+    totalScore: Number(item.totalScore || review.totalScore || 20),
+    review,
+    createdAt: item.createdAt || ''
+  };
+}
+
+async function getWritingAttempts(event) {
+  const payload = (event && event.payload) || {};
+  const { ctx } = await study.prepareRequestContext(Object.assign({}, event, {
+    action: 'getWritingAttempts'
+  }));
+  const limit = Math.max(1, Math.min(50, Number(payload.limit || 20)));
+  const where = {
+    familyId: ctx.family.familyId,
+    childId: ctx.child.childId
+  };
+  const promptId = String(payload.promptId || '').trim();
+  if (promptId) {
+    where.promptId = promptId;
+  }
+  const res = await dbAdapter.collection(COLLECTION)
+    .where(where)
+    .orderBy('createdAt', 'desc')
+    .limit(limit)
+    .get();
+  return {
+    attempts: (res.data || []).map(formatAttempt)
+  };
+}
+
+module.exports = {
+  submitWritingAttempt,
+  getWritingAttempts
+};

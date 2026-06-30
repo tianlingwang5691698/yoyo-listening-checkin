@@ -1,0 +1,127 @@
+.listening-detail-page {
+  padding-top: 72rpx;
+  padding-bottom: 72rpx;
+}
+
+.detail-hero,
+.audio-card,
+.question-card {
+  padding: 30rpx 28rpx;
+}
+
+.audio-card,
+.question-card {
+  margin-top: 24rpx;
+}
+
+.detail-eyebrow,
+.detail-copy,
+.question-label,
+.question-state,
+.audio-error {
+  color: var(--text-muted);
+  font-size: var(--font-caption-size);
+}
+
+.detail-title {
+  margin-top: 10rpx;
+  color: var(--text-strong);
+  font-size: var(--font-page-title-size);
+  line-height: 1.2;
+  font-weight: var(--font-title-weight);
+}
+
+.detail-copy {
+  margin-top: 12rpx;
+}
+
+.audio-title {
+  color: var(--text-strong);
+  font-size: var(--font-card-title-size);
+  font-weight: var(--font-title-weight);
+}
+
+.audio-button {
+  margin-top: 18rpx;
+  min-height: 72rpx;
+  border-radius: var(--radius-pill);
+  background: var(--accent-deep);
+  color: #fff;
+  font-size: var(--font-body-size);
+}
+
+.question-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.question-row {
+  margin-top: 18rpx;
+  padding: 20rpx;
+  border-radius: var(--radius-lg);
+  background: var(--surface-subtle);
+}
+
+.picture-grid {
+  margin-top: 18rpx;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12rpx;
+}
+
+.picture-item {
+  width: 100%;
+  height: 180rpx;
+  border-radius: var(--radius-md);
+  background: var(--surface-subtle);
+}
+
+.question-title {
+  color: var(--text-strong);
+  font-size: var(--font-body-size);
+  line-height: 1.4;
+  font-weight: var(--font-title-weight);
+}
+
+.option-list {
+  margin-top: 14rpx;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12rpx;
+}
+
+.option-row {
+  min-height: 68rpx;
+  border-radius: var(--radius-md);
+  background: var(--surface-raised);
+  color: var(--text-main);
+  font-size: var(--font-body-size);
+  text-align: left;
+}
+
+.option-row.is-selected {
+  background: var(--accent-soft);
+  color: var(--accent-deep);
+}
+
+.answer-input {
+  margin-top: 14rpx;
+  min-height: 72rpx;
+  padding: 0 20rpx;
+  border-radius: var(--radius-md);
+  background: var(--surface-raised);
+  color: var(--text-main);
+  font-size: var(--font-body-size);
+}
+
+.answer-line {
+  margin-top: 12rpx;
+  color: var(--accent-deep);
+  font-size: var(--font-caption-size);
+  font-weight: var(--font-title-weight);
+}
+
+.submit-button {
+  margin-top: 24rpx;
+}

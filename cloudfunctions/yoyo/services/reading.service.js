@@ -1,5 +1,6 @@
 const study = require('../facades/study.facade');
 const dbAdapter = require('../adapters/db.adapter');
+const storageAdapter = require('../adapters/storage.adapter');
 const samplePassages = require('../data/reading-passages.sample.json');
 const speakingEngine = require('../lib/speaking-engine');
 const crypto = require('crypto');
@@ -8,6 +9,9 @@ const https = require('https');
 const DEFAULT_READING_DAILY_COUNT = 3;
 const MAX_READING_DAILY_COUNT = 20;
 const STUDY_PACK_COLLECTION = 'readingStudyPacks';
+const SENTENCE_TRANSLATION_COLLECTION = 'readingSentenceTranslations';
+const READING_CONTENT_PATH = '_content/reading/reading-passages.json';
+const READING_EM1_CONTENT_PATH = '_content/reading-em1/reading-passages.json';
 
 function todayIndex(today) {
   const start = Date.parse('2026-06-29T00:00:00+08:00');
@@ -26,6 +30,9 @@ function normalizePassage(item) {
     district: item.district || '',
     examType: item.examType || '',
     section: item.section || '',
+    sectionLabel: item.sectionLabel || '',
+    difficultyLevel: item.difficultyLevel || 0,
+    difficultyLabel: item.difficultyLabel || '',
     sourceType: item.sourceType || '',
     passage: item.passage || '',
     translation: item.translation || item.fullTranslation || '',
@@ -50,6 +57,23 @@ async function readCollection(name, limit) {
 }
 
 async function loadPassages() {
+  const cloudStoragePassages = [];
+  try {
+    for (const path of [READING_EM1_CONTENT_PATH, READING_CONTENT_PATH]) {
+      try {
+        const content = await storageAdapter.downloadCloudJson(path);
+        const list = Array.isArray(content) ? content : (content.passages || content.items || []);
+        cloudStoragePassages.push(...list);
+      } catch (error) {
+        // One missing cloud file should not hide the other exam type.
+      }
+    }
+    if (cloudStoragePassages.length) {
+      return cloudStoragePassages.map(normalizePassage).filter((item) => item._id && item.passage);
+    }
+  } catch (error) {
+    // Fallback to database/sample content below.
+  }
   const cloudPassages = await readCollection('readingPassages', 200);
   const list = cloudPassages.length ? cloudPassages : samplePassages;
   return list.map(normalizePassage).filter((item) => item._id && item.passage);
@@ -152,7 +176,7 @@ function createPassageSummary(passage) {
   return {
     _id: passage._id,
     title: passage.title,
-    meta: [passage.year, passage.district, passage.examType, passage.section].filter(Boolean).join(' · '),
+    meta: [passage.year, passage.district, passage.examType, passage.sectionLabel || passage.section, passage.difficultyLabel].filter(Boolean).join(' · '),
     questionCount: passage.questions.length,
     status: passage.status
   };
@@ -406,16 +430,23 @@ function formatSentencePattern(item) {
   return {
     pattern,
     meaning: item.meaning || item.translation || '',
-    example: item.example || pattern
+    example: item.example || pattern,
+    exampleMeaning: item.exampleMeaning || item.exampleTranslation || ''
   };
+}
+
+function withGroupIndexes(items) {
+  return (items || []).map((item, index) => Object.assign({}, item, {
+    groupIndex: index + 1
+  }));
 }
 
 function buildFallbackStudyPack(passage) {
   return {
     fullTranslation: passage.translation || '',
-    vocabularyCards: (passage.vocabulary || []).map(formatVocabularyCard).filter(Boolean),
-    phraseCards: (passage.phrases || []).map(formatPhraseItem).filter(Boolean),
-    sentencePatternCards: buildSentencePatterns(passage).map(formatSentencePattern).filter(Boolean),
+    vocabularyCards: withGroupIndexes((passage.vocabulary || []).map(formatVocabularyCard).filter(Boolean)),
+    phraseCards: withGroupIndexes((passage.phrases || []).map(formatPhraseItem).filter(Boolean)),
+    sentencePatternCards: withGroupIndexes(buildSentencePatterns(passage).map(formatSentencePattern).filter(Boolean)),
     source: 'fallback'
   };
 }
@@ -423,11 +454,12 @@ function buildFallbackStudyPack(passage) {
 function normalizeStudyPack(pack, passage) {
   const fallback = buildFallbackStudyPack(passage);
   const source = pack && pack.source ? pack.source : fallback.source;
+  const useFallback = !pack || !isModelStudyPack(pack);
   return {
-    fullTranslation: normalizeText((pack && pack.fullTranslation) || fallback.fullTranslation),
-    vocabularyCards: ((pack && pack.vocabularyCards) || fallback.vocabularyCards || []).map(formatVocabularyCard).filter(Boolean).slice(0, 20),
-    phraseCards: ((pack && pack.phraseCards) || fallback.phraseCards || []).map(formatPhraseItem).filter(Boolean).slice(0, 20),
-    sentencePatternCards: ((pack && pack.sentencePatternCards) || fallback.sentencePatternCards || []).map(formatSentencePattern).filter(Boolean).slice(0, 12),
+    fullTranslation: normalizeText((pack && pack.fullTranslation) || (useFallback ? fallback.fullTranslation : '')),
+    vocabularyCards: withGroupIndexes(((pack && pack.vocabularyCards) || (useFallback ? fallback.vocabularyCards : []) || []).map(formatVocabularyCard).filter(Boolean).slice(0, 20)),
+    phraseCards: withGroupIndexes(((pack && pack.phraseCards) || (useFallback ? fallback.phraseCards : []) || []).map(formatPhraseItem).filter(Boolean).slice(0, 20)),
+    sentencePatternCards: withGroupIndexes(((pack && pack.sentencePatternCards) || (useFallback ? fallback.sentencePatternCards : []) || []).map(formatSentencePattern).filter(Boolean).slice(0, 12)),
     questionAnalyses: Array.isArray(pack && pack.questionAnalyses) ? pack.questionAnalyses.map((item) => ({
       number: item.number,
       answer: item.answer || '',
@@ -451,6 +483,18 @@ function validateModelStudyPack(studyPack, passage) {
   if (!studyPack.fullTranslation) {
     throw new Error('reading-study-pack-missing-translation');
   }
+  if (!studyPack.vocabularyCards || !studyPack.vocabularyCards.length) {
+    throw new Error('reading-study-pack-missing-vocabulary');
+  }
+  if (studyPack.vocabularyCards.some((item) => !item.word || !item.meaning)) {
+    throw new Error('reading-study-pack-missing-vocabulary-meaning');
+  }
+  if (!studyPack.phraseCards || !studyPack.phraseCards.length) {
+    throw new Error('reading-study-pack-missing-phrases');
+  }
+  if (studyPack.phraseCards.some((item) => !item.text || !item.meaning)) {
+    throw new Error('reading-study-pack-missing-phrase-meaning');
+  }
   if (!studyPack.questionAnalyses || studyPack.questionAnalyses.length < questions.length) {
     throw new Error('reading-study-pack-missing-question-analyses');
   }
@@ -467,17 +511,90 @@ function validateModelStudyPack(studyPack, passage) {
   if (!studyPack.sentencePatternCards || !studyPack.sentencePatternCards.length) {
     throw new Error('reading-study-pack-missing-sentence-patterns');
   }
-  if (studyPack.sentencePatternCards.some((item) => !item.pattern || !item.meaning)) {
+  if (studyPack.sentencePatternCards.some((item) => !item.pattern || !item.meaning || !item.example || !item.exampleMeaning)) {
     throw new Error('reading-study-pack-missing-sentence-pattern-translation');
   }
+}
+
+function validateQuestionStudyPack(studyPack, passage) {
+  const questions = (passage.questions || []).filter((question) => question.answer);
+  if (!isModelStudyPack(studyPack)) {
+    throw new Error('reading-study-pack-not-model');
+  }
+  if (!studyPack.questionAnalyses || studyPack.questionAnalyses.length < questions.length) {
+    throw new Error('reading-study-pack-missing-question-analyses');
+  }
+  const analysisByNumber = studyPack.questionAnalyses.reduce((map, item) => {
+    map[String(item.number)] = item;
+    return map;
+  }, {});
+  questions.forEach((question) => {
+    const analysis = analysisByNumber[String(question.number)];
+    if (!analysis || !analysis.answerSentence || !analysis.analysis) {
+      throw new Error(`reading-study-pack-missing-question-${question.number}`);
+    }
+  });
+}
+
+function validateLearningStudyPack(studyPack, section) {
+  if (!isModelStudyPack(studyPack)) {
+    throw new Error('reading-study-pack-not-model');
+  }
+  if ((section === 'vocabulary' || section === 'cards') && (!(studyPack.vocabularyCards || []).length || studyPack.vocabularyCards.some((item) => !item.word || !item.meaning))) {
+    throw new Error('reading-study-pack-missing-vocabulary');
+  }
+  if ((section === 'phrases' || section === 'cards') && (!(studyPack.phraseCards || []).length || studyPack.phraseCards.some((item) => !item.text || !item.meaning))) {
+    throw new Error('reading-study-pack-missing-phrases');
+  }
+  if ((section === 'patterns' || section === 'cards') && (!(studyPack.sentencePatternCards || []).length || studyPack.sentencePatternCards.some((item) => !item.pattern || !item.meaning || !item.example || !item.exampleMeaning))) {
+    throw new Error('reading-study-pack-missing-patterns');
+  }
+}
+
+function hasStudyPackSection(studyPack, section, passage) {
+  const pack = normalizeStudyPack(studyPack, passage);
+  if (section === 'vocabulary') {
+    return !!pack.vocabularyCards.length;
+  }
+  if (section === 'phrases') {
+    return !!pack.phraseCards.length;
+  }
+  if (section === 'patterns') {
+    return !!pack.sentencePatternCards.length;
+  }
+  if (section === 'cards') {
+    return !!pack.vocabularyCards.length && !!pack.phraseCards.length && !!pack.sentencePatternCards.length;
+  }
+  return false;
+}
+
+function mergeStudyPacks(cached, next, passage) {
+  const empty = {
+    fullTranslation: '',
+    vocabularyCards: [],
+    phraseCards: [],
+    sentencePatternCards: [],
+    questionAnalyses: [],
+    source: ''
+  };
+  const base = cached ? normalizeStudyPack(cached, passage) : empty;
+  const incoming = next ? normalizeStudyPack(next, passage) : empty;
+  return {
+    fullTranslation: incoming.fullTranslation || base.fullTranslation || '',
+    vocabularyCards: incoming.vocabularyCards.length ? incoming.vocabularyCards : base.vocabularyCards,
+    phraseCards: incoming.phraseCards.length ? incoming.phraseCards : base.phraseCards,
+    sentencePatternCards: incoming.sentencePatternCards.length ? incoming.sentencePatternCards : base.sentencePatternCards,
+    questionAnalyses: incoming.questionAnalyses.length ? incoming.questionAnalyses : base.questionAnalyses,
+    source: incoming.source || base.source || ''
+  };
 }
 
 function getReadingStudyModelConfig() {
   return {
     endpoint: process.env.READING_STUDY_ENDPOINT || process.env.SPEAKING_SCORE_ENDPOINT || '',
     apiKey: process.env.READING_STUDY_API_KEY || process.env.SPEAKING_SCORE_API_KEY || '',
-    model: process.env.READING_STUDY_MODEL || 'gpt-5.5',
-    fallbackModel: process.env.READING_STUDY_FALLBACK_MODEL || 'claude-opus-4-8'
+    model: 'gpt-5.5',
+    fallbackModel: 'deepseek-v4-pro'
   };
 }
 
@@ -486,18 +603,18 @@ async function buildStudyPackWithModel(passage) {
   if (!config.endpoint || !config.apiKey) {
     throw new Error('reading-study-model-not-configured');
   }
-  const prompt = [
+  const questionPrompt = [
     '你是中考英语阅读老师。请只返回 JSON，不要 Markdown。',
-    '从文章中提取学习包：全文中文翻译、生词卡、短语卡、句型卡、逐题答案句和解析。',
-    '生词优先选择中考常见但学生可能不熟的词，例句必须来自原文或贴近原文。',
-    '句型卡 meaning 必须是中文解释，example 必须是原文或贴近原文例句。',
-    '逐题解析必须按真实题号返回，answerSentence 必须是原文中的直接依据，analysis 用中文说明为什么选该答案。',
-    'JSON 格式：{"fullTranslation":"","vocabularyCards":[{"word":"","phonetic":"","meaning":"","example":"","exampleMeaning":""}],"phraseCards":[{"text":"","meaning":"","example":""}],"sentencePatternCards":[{"pattern":"","meaning":"","example":""}],"questionAnalyses":[{"number":69,"answer":"A","answerSentence":"","answerSentenceTranslation":"","analysis":""}]}',
+    '只做逐题解析：必须按真实题号返回每题答案、原文直接答案句、答案句中文翻译、中文解析。',
+    '题目自带 answer 时按标准答案讲；answer 为空时，请根据文章和题干生成最可能答案。',
+    'answerSentence 必须是原文中的直接依据，不要改写，不要只写泛泛依据。',
+    'analysis 用中文说明为什么选该答案，并点出排除干扰项的关键。',
+    'JSON 格式：{"questionAnalyses":[{"number":69,"answer":"A","answerSentence":"","answerSentenceTranslation":"","analysis":""}]}',
     `标题：${passage.title}`,
     `题目：${JSON.stringify((passage.questions || []).map((item) => ({ number: item.number, prompt: item.prompt, options: item.options, answer: item.answer })))} `,
     `文章：${passage.passage}`
   ].join('\n');
-  async function requestModel(model) {
+  async function requestJson(model, prompt) {
     const response = await postJson(config.endpoint, config.apiKey, {
       model,
       messages: [
@@ -505,12 +622,15 @@ async function buildStudyPackWithModel(passage) {
         { role: 'user', content: prompt }
       ],
       temperature: 0.2
-    }, 45000);
-    const parsed = parseJsonText(extractMessageText(response));
+    }, 110000);
+    return parseJsonText(extractMessageText(response)) || {};
+  }
+  async function requestModel(model) {
+    const parsed = await requestJson(model, questionPrompt);
     const studyPack = normalizeStudyPack(Object.assign({}, parsed || {}, {
       source: `model:${model}`
     }), passage);
-    validateModelStudyPack(studyPack, passage);
+    validateQuestionStudyPack(studyPack, passage);
     return studyPack;
   }
   try {
@@ -527,15 +647,183 @@ async function buildStudyPackWithModel(passage) {
   }
 }
 
-async function getCachedStudyPack(passageId) {
+async function buildLearningPackWithModel(passage, section) {
+  const config = getReadingStudyModelConfig();
+  const target = ['vocabulary', 'phrases', 'patterns', 'cards'].includes(section) ? section : 'cards';
+  if (!config.endpoint || !config.apiKey) {
+    throw new Error('reading-study-model-not-configured');
+  }
+  const sectionRules = {
+    vocabulary: [
+      '只生成生词卡。',
+      '生词必须选择初高中阶段重要、学生可能不熟、且在本文中有学习价值的词；例句必须来自原文或贴近原文。',
+      'JSON 格式：{"vocabularyCards":[{"word":"","phonetic":"","meaning":"","example":"","exampleMeaning":""}]}'
+    ],
+    phrases: [
+      '只生成短语卡。',
+      '短语必须选择原文中值得掌握的固定搭配或阅读高频表达。',
+      'JSON 格式：{"phraseCards":[{"text":"","meaning":"","example":""}]}'
+    ],
+    patterns: [
+      '只生成句型卡。',
+      '句型卡 meaning 必须是中文解释，example 必须是原文或贴近原文例句，exampleMeaning 必须是例句中文翻译。',
+      'JSON 格式：{"sentencePatternCards":[{"pattern":"","meaning":"","example":"","exampleMeaning":""}]}'
+    ],
+    cards: [
+      '只生成生词卡、短语卡、句型卡，不生成全文翻译。',
+      '生词必须选择初高中阶段重要、学生可能不熟、且在本文中有学习价值的词；例句必须来自原文或贴近原文。',
+      '短语必须选择原文中值得掌握的固定搭配或阅读高频表达。',
+      '句型卡 meaning 必须是中文解释，example 必须是原文或贴近原文例句，exampleMeaning 必须是例句中文翻译。',
+      'JSON 格式：{"vocabularyCards":[{"word":"","phonetic":"","meaning":"","example":"","exampleMeaning":""}],"phraseCards":[{"text":"","meaning":"","example":""}],"sentencePatternCards":[{"pattern":"","meaning":"","example":"","exampleMeaning":""}]}'
+    ]
+  };
+  const prompt = [
+    '你是中考英语阅读老师。请只返回 JSON，不要 Markdown。',
+    ...sectionRules[target],
+    `标题：${passage.title}`,
+    `文章：${passage.passage}`
+  ].join('\n');
+  async function requestModel(model) {
+    const response = await postJson(config.endpoint, config.apiKey, {
+      model,
+      messages: [
+        { role: 'system', content: 'You extract structured English reading study material for Chinese middle-school students.' },
+        { role: 'user', content: prompt }
+      ],
+      temperature: 0.2
+    }, 110000);
+    const studyPack = normalizeStudyPack(Object.assign({}, parseJsonText(extractMessageText(response)) || {}, {
+      source: `model:${model}`
+    }), passage);
+    validateLearningStudyPack(studyPack, target);
+    return studyPack;
+  }
+  try {
+    return await requestModel(config.model);
+  } catch (error) {
+    if (config.fallbackModel && config.fallbackModel !== config.model) {
+      try {
+        return await requestModel(config.fallbackModel);
+      } catch (fallbackError) {
+        throw new Error(`reading-study-model-failed:${error.message || String(error)};fallback:${fallbackError.message || String(fallbackError)}`);
+      }
+    }
+    throw new Error(`reading-study-model-failed:${error.message || String(error)}`);
+  }
+}
+
+async function translateReadingSentenceWithModel(text) {
+  const config = getReadingStudyModelConfig();
+  const sentence = normalizeText(text).slice(0, 800);
+  if (!sentence) {
+    throw new Error('reading-sentence-empty');
+  }
+  if (!config.endpoint || !config.apiKey) {
+    throw new Error('reading-study-model-not-configured');
+  }
+  async function requestModel(model) {
+    const response = await postJson(config.endpoint, config.apiKey, {
+      model,
+      messages: [
+        { role: 'system', content: 'You translate English reading sentences into concise Chinese for middle-school students.' },
+        { role: 'user', content: `只返回 JSON，不要 Markdown。翻译这个英文句子，保留原意，中文自然简洁。JSON 格式：{"translation":""}\n句子：${sentence}` }
+      ],
+      temperature: 0.1
+    }, 30000);
+    const parsed = parseJsonText(extractMessageText(response)) || {};
+    if (!parsed.translation) {
+      throw new Error('reading-sentence-translation-empty');
+    }
+    return {
+      sentence,
+      translation: parsed.translation,
+      source: `model:${model}`
+    };
+  }
+  try {
+    return await requestModel(config.model);
+  } catch (error) {
+    if (config.fallbackModel && config.fallbackModel !== config.model) {
+      try {
+        return await requestModel(config.fallbackModel);
+      } catch (fallbackError) {
+        throw new Error(`reading-sentence-translation-failed:${error.message || String(error)};fallback:${fallbackError.message || String(fallbackError)}`);
+      }
+    }
+    throw new Error(`reading-sentence-translation-failed:${error.message || String(error)}`);
+  }
+}
+
+function sentenceTranslationHash(passageId, sentence) {
+  return crypto.createHash('sha1').update(`${passageId || ''}\n${sentence || ''}`).digest('hex');
+}
+
+async function getCachedSentenceTranslation(ctx, passageId, sentence) {
+  const sentenceHash = sentenceTranslationHash(passageId, sentence);
+  try {
+    const result = await dbAdapter.collection(SENTENCE_TRANSLATION_COLLECTION).where({
+      familyId: ctx.family.familyId,
+      childId: ctx.child.childId,
+      passageId,
+      sentenceHash
+    }).limit(1).get();
+    const item = result && result.data && result.data[0];
+    return item && item.translation ? item : null;
+  } catch (error) {
+    return null;
+  }
+}
+
+async function saveSentenceTranslation(ctx, passageId, sentenceTranslation) {
+  if (!sentenceTranslation || !sentenceTranslation.sentence || !sentenceTranslation.translation) {
+    return;
+  }
+  const sentenceHash = sentenceTranslationHash(passageId, sentenceTranslation.sentence);
+  const now = new Date().toISOString();
+  const data = {
+    familyId: ctx.family.familyId,
+    childId: ctx.child.childId,
+    userId: ctx.user.userId,
+    passageId,
+    sentenceHash,
+    sentence: sentenceTranslation.sentence,
+    translation: sentenceTranslation.translation,
+    source: sentenceTranslation.source || '',
+    updatedAt: now
+  };
+  try {
+    const result = await dbAdapter.collection(SENTENCE_TRANSLATION_COLLECTION).where({
+      familyId: data.familyId,
+      childId: data.childId,
+      passageId,
+      sentenceHash
+    }).limit(1).get();
+    const current = result && result.data && result.data[0];
+    if (current && current._id) {
+      await dbAdapter.collection(SENTENCE_TRANSLATION_COLLECTION).doc(current._id).update({ data });
+      return;
+    }
+    await dbAdapter.collection(SENTENCE_TRANSLATION_COLLECTION).add({ data: Object.assign({}, data, { createdAt: now }) });
+  } catch (error) {}
+}
+
+async function getCachedStudyPack(passageOrId) {
+  const passage = passageOrId && typeof passageOrId === 'object' ? passageOrId : null;
+  const passageId = passage ? passage._id : passageOrId;
   try {
     const result = await dbAdapter.collection(STUDY_PACK_COLLECTION)
       .where({ passageId })
       .orderBy('updatedAt', 'desc')
-      .limit(1)
+      .limit(20)
       .get();
-    const row = result && result.data && result.data[0] ? result.data[0] : null;
-    return row && row.studyPack ? row.studyPack : null;
+    const rows = result && Array.isArray(result.data) ? result.data.filter((row) => row && row.studyPack) : [];
+    if (!rows.length) {
+      return null;
+    }
+    if (!passage) {
+      return rows[0].studyPack;
+    }
+    return rows.reverse().reduce((merged, row) => mergeStudyPacks(merged, row.studyPack, passage), null);
   } catch (error) {
     return null;
   }
@@ -545,8 +833,10 @@ async function saveStudyPack(passage, studyPack) {
   if (!passage || !passage._id || !studyPack) {
     return;
   }
-  validateModelStudyPack(studyPack, passage);
   try {
+    if ((studyPack.questionAnalyses || []).length) {
+      validateQuestionStudyPack(studyPack, passage);
+    }
     await dbAdapter.collection(STUDY_PACK_COLLECTION).add({
       data: {
         passageId: passage._id,
@@ -563,11 +853,15 @@ async function saveStudyPack(passage, studyPack) {
 }
 
 async function getOrCreateStudyPack(passage) {
-  const cached = await getCachedStudyPack(passage._id);
+  const cached = await getCachedStudyPack(passage);
   if (cached && isModelStudyPack(cached)) {
-    const cachedPack = normalizeStudyPack(cached, passage);
-    validateModelStudyPack(cachedPack, passage);
-    return cachedPack;
+    try {
+      const cachedPack = normalizeStudyPack(cached, passage);
+      validateQuestionStudyPack(cachedPack, passage);
+      return cachedPack;
+    } catch (error) {
+      // Old cached packs can miss newly required sections; rebuild below.
+    }
   }
   const studyPack = await buildStudyPackWithModel(passage);
   await saveStudyPack(passage, studyPack);
@@ -592,12 +886,15 @@ function gradeAnswers(passage, answers) {
   let correctCount = 0;
   const pointPerQuestion = 2;
   const questionResults = passage.questions.map((question) => {
-    const selected = String(answerMap[question.number] || '').trim().toUpperCase();
-    const answer = String(question.answer || '').trim().toUpperCase();
+    const isChoice = !!(question.options && Object.keys(question.options).length);
+    const selectedRaw = String(answerMap[question.number] || '').trim();
+    const answerRaw = String(question.answer || '').trim();
+    const selected = isChoice ? selectedRaw.toUpperCase() : selectedRaw;
+    const answer = isChoice ? answerRaw.toUpperCase() : answerRaw;
     const keyed = !!answer;
     if (keyed) {
       keyedCount += 1;
-      if (selected === answer) {
+      if (isChoice ? selected === answer : normalizeText(selected).toLowerCase() === normalizeText(answer).toLowerCase()) {
         correctCount += 1;
       }
     }
@@ -606,8 +903,8 @@ function gradeAnswers(passage, answers) {
       prompt: question.prompt,
       selected,
       answer,
-      correct: keyed ? selected === answer : null,
-      analysis: question.analysis || '请结合原文定位答案句。'
+      correct: keyed ? (isChoice ? selected === answer : normalizeText(selected).toLowerCase() === normalizeText(answer).toLowerCase()) : null,
+      analysis: question.analysis || '结合原文判断。'
     };
   });
   const totalScore = keyedCount * pointPerQuestion;
@@ -677,13 +974,30 @@ function buildReview(passage, grade, studyPack) {
     },
     analysis: grade.questionResults.map((item) => ({
       number: item.number,
-      answer: item.answer,
+      answer: item.answer || (modelAnalysesByNumber[String(item.number)] && modelAnalysesByNumber[String(item.number)].answer) || '',
       selected: item.selected,
       correct: item.correct,
       answerSentence: answerSentences.find((sentence) => String(sentence.number) === String(item.number)) || null,
       text: (modelAnalysesByNumber[String(item.number)] && modelAnalysesByNumber[String(item.number)].analysis) || item.analysis
     }))
   };
+}
+
+function keepQuestionReviewOnly(review) {
+  return Object.assign({}, review, {
+    phrases: [],
+    vocabulary: [],
+    sentencePatterns: [],
+    fullTranslation: '',
+    vocabularyCards: [],
+    phraseCards: [],
+    sentencePatternCards: [],
+    memoryChecks: {
+      vocabulary: [],
+      phrases: [],
+      sentencePatterns: []
+    }
+  });
 }
 
 async function getLatestAttemptsByPassageIds(ctx, passageIds, today) {
@@ -788,16 +1102,47 @@ async function getReadingPassage(event) {
 
 async function getReadingStudyPack(event) {
   const payload = (event && event.payload) || {};
-  const { today } = await study.prepareRequestContext(Object.assign({}, event, {
+  const { ctx, today } = await study.prepareRequestContext(Object.assign({}, event, {
     action: 'getReadingStudyPack'
   }));
   const passage = await findPassageById(String(payload.passageId || ''), today);
   if (!passage) {
     throw new Error('reading-passage-not-found');
   }
-  const studyPack = await getOrCreateStudyPack(passage);
+  if (String(payload.section || '') === 'sentenceTranslation') {
+    const sentence = normalizeText(payload.text || '').slice(0, 800);
+    const cached = await getCachedSentenceTranslation(ctx, passage._id, sentence);
+    const sentenceTranslation = cached
+      ? {
+        sentence: cached.sentence,
+        translation: cached.translation,
+        source: cached.source || 'cache'
+      }
+      : await translateReadingSentenceWithModel(sentence);
+    if (!cached) {
+      await saveSentenceTranslation(ctx, passage._id, sentenceTranslation);
+    }
+    return {
+      passageId: passage._id,
+      section: 'sentenceTranslation',
+      sentenceTranslation
+    };
+  }
+  const section = String(payload.section || 'cards');
+  const cached = await getCachedStudyPack(passage);
+  if (cached && hasStudyPackSection(cached, section, passage)) {
+    return {
+      passageId: passage._id,
+      section,
+      studyPack: normalizeStudyPack(cached, passage)
+    };
+  }
+  const generatedPack = await buildLearningPackWithModel(passage, section);
+  const studyPack = mergeStudyPacks(cached, generatedPack, passage);
+  await saveStudyPack(passage, studyPack);
   return {
     passageId: passage._id,
+    section,
     studyPack
   };
 }
@@ -813,7 +1158,7 @@ async function submitReadingAttempt(event) {
   }
   const grade = gradeAnswers(passage, payload.answers || {});
   const studyPack = await getOrCreateStudyPack(passage);
-  const review = buildReview(passage, grade, studyPack);
+  const review = keepQuestionReviewOnly(buildReview(passage, grade, studyPack));
   const attempt = {
     passageId: passage._id,
     title: passage.title,
@@ -833,18 +1178,24 @@ async function submitReadingAttempt(event) {
     createdAt: new Date().toISOString(),
     updatedAt: new Date().toISOString()
   };
-  try {
-    const created = await dbAdapter.collection('readingAttempts').add({
-      data: attempt
-    });
-    attempt._id = created && created._id ? created._id : '';
-  } catch (error) {
-    attempt.saveWarning = 'readingAttempts 集合暂未写入，结果仅本次显示。';
+  if (study.normalizeStudyRole(ctx.member) === 'student') {
+    try {
+      const created = await dbAdapter.collection('readingAttempts').add({
+        data: attempt
+      });
+      attempt._id = created && created._id ? created._id : '';
+    } catch (error) {
+      attempt.saveWarning = 'readingAttempts 集合暂未写入，结果仅本次显示。';
+    }
+  } else {
+    attempt.status = 'preview';
+    attempt.saveWarning = '家长模式，不计入记录。';
   }
   return {
     passage,
     attempt,
-    review
+    review,
+    studyWriteAllowed: study.normalizeStudyRole(ctx.member) === 'student'
   };
 }
 
@@ -865,7 +1216,12 @@ async function synthesizeReadingAudio(event) {
     today,
     `${hash}.mp3`
   ].join('/');
-  const fileId = await speakingEngine.synthesizeFeedbackAudio(text, cloudPath);
+  let fileId = '';
+  try {
+    fileId = await speakingEngine.synthesizeFeedbackAudio(text, cloudPath);
+  } catch (error) {
+    throw new Error(`reading-audio-tts-failed:${error.message || String(error)}`);
+  }
   if (!fileId) {
     throw new Error('reading-audio-tts-unavailable');
   }

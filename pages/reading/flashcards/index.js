@@ -1,5 +1,13 @@
 const page = require('../../../utils/page');
 
+function canWriteStudyRecord() {
+  try {
+    return wx.getStorageSync('lastStudyRole') === 'student';
+  } catch (error) {
+    return false;
+  }
+}
+
 const FLASHCARD_ITEM_KEYS = [
   'listeningFlashcardItemsV1',
   'readingFlashcardItemsV1',
@@ -127,6 +135,10 @@ Page({
     });
   },
   markRemembered() {
+    if (!canWriteStudyRecord()) {
+      wx.showToast({ title: '家长模式仅试做', icon: 'none' });
+      return;
+    }
     const current = this.data.current;
     if (!current || !current.flashcardKey) return;
     const items = readItems().map((item) => {
@@ -151,6 +163,10 @@ Page({
     this.advanceVisibleCards();
   },
   markUnfamiliar() {
+    if (!canWriteStudyRecord()) {
+      wx.showToast({ title: '家长模式仅试做', icon: 'none' });
+      return;
+    }
     const current = this.data.current;
     if (!current || !current.flashcardKey) return;
     const items = readItems().map((item) => (

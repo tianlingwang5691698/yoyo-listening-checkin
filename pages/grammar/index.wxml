@@ -1,0 +1,114 @@
+<view class="theme-{{theme}} page-shell grammar-page">
+  <view class="grammar-hero card">
+    <view class="grammar-eyebrow">英语语法</view>
+    <view class="grammar-title">考点分类</view>
+    <view class="grammar-copy">按难度和考点练习单选题。</view>
+    <view class="grammar-actions">
+      <view class="grammar-action {{mode === 'topics' ? 'is-active' : ''}}" bindtap="openTopicBook">考点分类</view>
+      <view class="grammar-action {{mode === 'wrong' ? 'is-active' : ''}}" bindtap="openWrongBook">错题集</view>
+    </view>
+  </view>
+
+  <view class="grammar-card card" wx:if="{{!selectedStageId && !selectedExamId && !selectedCategoryId && !selectedTopicId}}">
+    <view class="grammar-card-top">
+      <view class="grammar-card-label">{{mode === 'wrong' ? '错题难度' : '语法难度'}}</view>
+      <view class="grammar-card-state">{{stages.length}} 类</view>
+    </view>
+    <view class="directory-list">
+      <view class="directory-row" wx:for="{{stages}}" wx:key="stageId" data-stage-id="{{item.stageId}}" bindtap="selectStage">
+        <view>
+          <view class="directory-title">{{item.stage}}</view>
+          <view class="directory-meta">{{item.count}} 题</view>
+        </view>
+        <view class="directory-arrow">›</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="grammar-card card" wx:elif="{{selectedStageId && !selectedExamId && !selectedCategoryId && !selectedTopicId}}">
+    <view class="grammar-card-top">
+      <view class="grammar-card-label">{{selectedStage.stage}}</view>
+      <view class="directory-back-icon" bindtap="backToTopics">‹ 难度</view>
+    </view>
+    <view class="directory-list">
+      <view class="directory-row" wx:for="{{exams}}" wx:key="examId" data-exam-id="{{item.examId}}" bindtap="selectExam">
+        <view>
+          <view class="directory-title">{{item.exam}}</view>
+          <view class="directory-meta">{{item.count}} 题</view>
+        </view>
+        <view class="directory-arrow">›</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="grammar-card card" wx:elif="{{selectedExamId && !selectedCategoryId && !selectedTopicId}}">
+    <view class="grammar-card-top">
+      <view class="grammar-card-label">{{selectedStage.stage}} · {{selectedExam.exam}}</view>
+      <view class="directory-back-icon" bindtap="backToStageCategories">‹ 模考</view>
+    </view>
+    <view class="directory-list">
+      <view class="directory-row" wx:for="{{topics}}" wx:key="topicId" data-topic-id="{{item.topicId}}" bindtap="selectTopic">
+        <view>
+          <view class="directory-title">{{item.topic}}</view>
+          <view class="directory-meta">{{item.count}} 题</view>
+        </view>
+        <view class="directory-arrow">›</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="grammar-card card" wx:elif="{{selectedCategoryId && !selectedTopicId}}">
+    <view class="grammar-card-top">
+      <view class="grammar-card-label">{{selectedCategory.topic}}</view>
+      <view class="directory-back-icon" bindtap="backToExamCategories">‹ 大类</view>
+    </view>
+    <view class="directory-list">
+      <view class="directory-row" wx:for="{{selectedCategory.children}}" wx:key="topicId" data-topic-id="{{item.topicId}}" bindtap="selectTopic">
+        <view>
+          <view class="directory-title">{{item.topic}}</view>
+          <view class="directory-meta">{{item.count}} 题</view>
+        </view>
+        <view class="directory-arrow">›</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="grammar-card card" wx:else>
+    <view class="grammar-card-top">
+      <view class="grammar-card-label">{{selectedTopic.topic}} · {{answeredCount}} / {{selectedQuestions.length}}</view>
+      <view class="directory-back-icon" bindtap="backToCategory">‹ 细分</view>
+    </view>
+    <view class="directory-meta" wx:if="{{selectedTopicOffset > 0}}">已自动接着第 {{selectedTopicOffset + 1}} 题开始。</view>
+    <view class="directory-meta" wx:if="{{selectedQuestions.length === 0}}">本考点已做完。</view>
+    <view class="question-list">
+      <view class="question-row" wx:for="{{selectedQuestions}}" wx:key="_id">
+        <view class="question-meta">第 {{item.sequenceNumber}} 题 · {{item.year}} · {{item.district}} · 原卷第 {{item.number}} 题</view>
+        <view class="question-prompt">{{item.prompt}}</view>
+        <view class="option-grid">
+          <view class="option-item {{option.selected ? 'is-selected' : ''}} {{option.correct ? 'is-correct' : ''}} {{option.wrong ? 'is-wrong' : ''}}" wx:for="{{item.optionsList}}" wx:for-item="option" wx:key="key" data-question-id="{{item._id}}" data-option="{{option.key}}" bindtap="selectOption">
+            {{option.key}}. {{option.text}}
+          </view>
+        </view>
+        <view class="answer-line" wx:if="{{item.isAnswered}}">
+          <text wx:if="{{item.answer}}">{{item.isCorrect ? '答对了' : '答错了'}} · 标准答案：{{item.answer}}</text>
+          <text wx:else>无标准答案，等待模型生成。</text>
+        </view>
+        <view class="grammar-explain-actions" wx:if="{{item.isAnswered && !item.explanation && !item.explaining}}">
+          <view class="grammar-explain-action" data-question-id="{{item._id}}" bindtap="loadExplanation">看讲解</view>
+        </view>
+        <view class="answer-line" wx:if="{{item.explaining}}">讲解生成中。</view>
+        <view class="analysis-item inline-analysis" wx:if="{{item.explanation}}">
+          <view class="analysis-head">
+            <text>{{item.explanation.topic}}</text>
+            <text class="analysis-state is-correct">答案 {{item.explanation.answer}}</text>
+          </view>
+          <view class="analysis-text">{{item.explanation.explanation}}</view>
+          <view class="analysis-text" wx:if="{{item.explanation.elimination}}">{{item.explanation.elimination}}</view>
+          <view class="grammar-explain-actions">
+            <view class="grammar-explain-action" data-question-id="{{item._id}}" bindtap="regenerateExplanation">重新讲</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -8,7 +8,55 @@
       },
       {
         "type": "folder",
+        "value": "cloudfunctions"
+      },
+      {
+        "type": "folder",
+        "value": "cloudfunctions-dev"
+      },
+      {
+        "type": "folder",
+        "value": "node_modules"
+      },
+      {
+        "type": "folder",
+        "value": ".github"
+      },
+      {
+        "type": "folder",
         "value": "data/transcript-build"
+      },
+      {
+        "type": "folder",
+        "value": "data/transcripts"
+      },
+      {
+        "type": "folder",
+        "value": "data/imports"
+      },
+      {
+        "type": "folder",
+        "value": "data/grammar"
+      },
+      {
+        "type": "folder",
+        "value": "data/reading"
+      },
+      {
+        "type": "folder",
+        "value": "data/listening-em2"
+      },
+      {
+        "type": "folder",
+        "value": "data/grammar-em1-upload"
+      },
+      {
+        "type": "folder",
+        "value": "data/reading-em1"
+      },
+      {
+        "type": "folder",
+        "value": "data/writing-em1"
       },
       {
         "type": "folder",
@@ -36,11 +84,19 @@
       },
       {
         "type": "file",
-        "value": "cloudfunctions/README.md"
+        "value": "scripts/README.md"
       },
       {
         "type": "file",
-        "value": "scripts/README.md"
+        "value": "AGENTS.md"
+      },
+      {
+        "type": "file",
+        "value": "data/reading-passages.sample.js"
+      },
+      {
+        "type": "file",
+        "value": "data/reading-passages.sample.json"
       },
       {
         "type": "file",

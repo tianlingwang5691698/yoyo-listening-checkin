@@ -1,0 +1,153 @@
+.writing-page {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  padding: 28rpx 24rpx 48rpx;
+}
+
+.prompt-card,
+.editor-card,
+.review-card {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 24rpx;
+  padding: 28rpx;
+  overflow: hidden;
+}
+
+.eyebrow,
+.meta {
+  color: #d9795d;
+  font-size: 24rpx;
+  font-weight: 700;
+}
+
+.title {
+  margin-top: 8rpx;
+  color: #221f1c;
+  font-size: 38rpx;
+  font-weight: 800;
+}
+
+.prompt-text {
+  margin-top: 22rpx;
+  color: #2f3747;
+  font-size: 30rpx;
+  line-height: 1.65;
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+.meta {
+  margin-top: 18rpx;
+}
+
+.section-title {
+  color: #171f2d;
+  font-size: 30rpx;
+  font-weight: 800;
+}
+
+.essay-input {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 620rpx;
+  margin-top: 20rpx;
+  padding: 22rpx;
+  border-radius: 18rpx;
+  background: #f6f8fb;
+  color: #202938;
+  font-size: 30rpx;
+  line-height: 1.6;
+}
+
+.editor-footer,
+.review-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20rpx;
+  margin-top: 20rpx;
+  color: #7a8798;
+  font-size: 26rpx;
+}
+
+.submit-button {
+  min-width: 240rpx;
+  height: 76rpx;
+  line-height: 76rpx;
+  margin: 0;
+  border-radius: 999rpx;
+  background: #e98264;
+  color: #fff;
+  font-size: 32rpx;
+  font-weight: 800;
+}
+
+.loading-text,
+.error-text {
+  margin-top: 18rpx;
+  font-size: 28rpx;
+}
+
+.loading-text {
+  color: #8a6a43;
+}
+
+.error-text {
+  color: #c95742;
+}
+
+.score {
+  margin-top: 8rpx;
+  color: #178a53;
+  font-size: 44rpx;
+  font-weight: 900;
+}
+
+.level {
+  padding: 10rpx 18rpx;
+  border-radius: 999rpx;
+  background: #e9f6ef;
+  color: #178a53;
+  font-size: 26rpx;
+  font-weight: 800;
+}
+
+.review-block,
+.review-list {
+  margin-top: 22rpx;
+  color: #334155;
+  font-size: 29rpx;
+  line-height: 1.65;
+}
+
+.list-title {
+  margin-bottom: 8rpx;
+  color: #111827;
+  font-weight: 800;
+}
+
+.correction-item {
+  margin-top: 14rpx;
+  padding: 16rpx;
+  border-radius: 14rpx;
+  background: #f8fafc;
+}
+
+.wrong {
+  color: #b94b3a;
+}
+
+.right {
+  margin-top: 8rpx;
+  color: #168452;
+}
+
+.reason {
+  margin-top: 8rpx;
+  color: #64748b;
+}

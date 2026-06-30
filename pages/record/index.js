@@ -235,6 +235,18 @@ function buildRecentDayItem(report) {
   };
 }
 
+function buildWritingAttemptItem(item, index) {
+  const attempt = item || {};
+  const createdAt = attempt.createdAt || '';
+  return Object.assign({}, attempt, {
+    key: attempt.attemptId || `${attempt.promptId || 'writing'}-${createdAt || index}`,
+    dateLabel: attempt.date ? formatDateLabel(attempt.date) : '',
+    timeText: formatClock(createdAt),
+    scoreText: `${Number(attempt.score || 0)} / ${Number(attempt.totalScore || 20)} 分`,
+    expanded: false
+  });
+}
+
 Page({
   monthCache: {},
   monthRequests: {},
@@ -265,7 +277,9 @@ Page({
     catchupStatusClass: 'is-muted',
     catchupCopy: '节奏正常',
     catchupState: contracts.createCatchupStateDefaults(),
-    catchupTasks: []
+    catchupTasks: [],
+    writingAttempts: [],
+    writingAttemptsLoading: false
   }),
   async onShow() {
     page.syncTheme(this);
@@ -321,6 +335,7 @@ Page({
     this.preloadAdjacentMonths(calendarYear, calendarMonth);
     await this.loadSelectedDay(selectedDate);
     await this.loadRecentDays();
+    await this.loadWritingAttempts();
     await this.loadCatchupTasks();
   },
   getCachedMonthData(year, month) {
@@ -424,6 +439,21 @@ Page({
       this.setData({ recentDaysLoading: false });
     }
   },
+  async loadWritingAttempts() {
+    this.setData({ writingAttemptsLoading: true });
+    try {
+      const applyData = (data) => {
+        this.setData({
+          writingAttempts: (data.attempts || []).map(buildWritingAttemptItem),
+          writingAttemptsLoading: false
+        });
+      };
+      const data = await store.getWritingAttempts({ limit: 20 }, applyData);
+      applyData(data);
+    } catch (error) {
+      this.setData({ writingAttemptsLoading: false });
+    }
+  },
   async loadCatchupTasks() {
     const applyData = (heatmapData) => {
       this.setData(page.buildCloudPageData(this.data, Object.assign({
@@ -505,6 +535,13 @@ Page({
     wx.navigateTo({
       url: `/pages/lesson/index?category=${category}&taskId=${taskId}&planRunType=catchup&targetDate=${targetDate}&planDayIndex=${planDayIndex}`
     });
+  },
+  toggleWritingAttempt(event) {
+    const index = Number(event.currentTarget.dataset.index || 0);
+    const items = (this.data.writingAttempts || []).slice();
+    if (!items[index]) return;
+    items[index] = Object.assign({}, items[index], { expanded: !items[index].expanded });
+    this.setData({ writingAttempts: items });
   },
   openReportItem(event) {
     const index = Number(event.currentTarget.dataset.index || 0);

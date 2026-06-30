@@ -29,6 +29,12 @@
   - UI 规则扫描记录和后续整改重点
 - [PROJECT_PROGRESS_LOG.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/PROJECT_PROGRESS_LOG.md)
   - 项目级 UI/交互进度、变化和结论
+- [CHANGE_INDEX.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/CHANGE_INDEX.md)
+  - 当前大批量功能改动的分类索引，后续改动优先参考
+- [ports/README.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/ports/README.md)
+  - 全局端口修改规则
+- [ports/reading-detail.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/ports/reading-detail.md)
+  - 阅读详情端口说明、要求和修改记录
 - [REAL_DEVICE_TEST.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/REAL_DEVICE_TEST.md)
   - 真机测试清单和通过标准
 - [REAL_DEVICE_TEST_LOG_TEMPLATE.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/REAL_DEVICE_TEST_LOG_TEMPLATE.md)

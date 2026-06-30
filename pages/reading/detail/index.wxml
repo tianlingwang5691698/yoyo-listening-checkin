@@ -6,59 +6,103 @@
 
   <block wx:elif="{{passage}}">
     <view class="passage-card card">
-      <view class="passage-meta">{{passage.year}} · {{passage.district}} · {{passage.examType}} · 阅读 {{passage.section}}</view>
+      <view class="passage-meta">{{passage.year}} · {{passage.district}} · {{passage.examType}} · {{passage.sectionDisplay}} · {{passage.difficultyDisplay}}</view>
       <view class="passage-title">{{passage.title}}</view>
       <view class="highlight-actions" wx:if="{{submitted && review}}">
-        <button class="highlight-button {{activeHighlight === item.key ? 'is-active' : ''}}" wx:for="{{highlightButtons}}" wx:key="key" data-mode="{{item.key}}" bindtap="selectHighlight">{{item.label}}</button>
-      </view>
-      <view class="passage-text">
-        <text wx:for="{{passageSegments}}" wx:key="index" class="passage-segment segment-{{item.tone}}" data-start="{{item.start}}" data-end="{{item.end}}" bindtap="speakPassageSegment">
-          <text wx:if="{{item.label}}" class="segment-label">{{item.label}}</text><text>{{item.text}}</text><text wx:if="{{item.note}}" class="segment-note">{{item.note}}</text>
-        </text>
-      </view>
-    </view>
-
-    <view class="question-card card" wx:for="{{passage.questions}}" wx:key="number">
-      <view class="question-title">{{item.number}}. {{item.prompt}}</view>
-      <view class="option-list" wx:if="{{item.type === 'choice'}}">
-        <button class="option-row {{option.selected ? 'is-selected' : ''}} {{option.correct ? 'is-correct' : ''}} {{option.wrong ? 'is-wrong' : ''}}" wx:for="{{item.optionsList}}" wx:key="key" wx:for-item="option" data-number="{{item.number}}" data-option="{{option.key}}" bindtap="selectOption">
-          <text class="option-key">{{option.key}}</text>
-          <text class="option-text">{{option.text}}</text>
-          <text class="option-badge" wx:if="{{option.correct}}">正确</text>
-          <text class="option-badge wrong" wx:elif="{{option.wrong}}">你的</text>
+        <button class="highlight-button {{activeHighlight === item.key ? 'is-active' : ''}} {{loadingStudySection ? 'is-loading' : ''}}" wx:for="{{highlightButtons}}" wx:key="key" data-mode="{{item.key}}" bindtap="selectHighlight">
+          <text>{{item.label}}</text>
+          <text class="button-dot" wx:if="{{activeHighlight === item.key}}"></text>
         </button>
       </view>
-      <view class="blank-answer-box" wx:else>
-        <input class="blank-input {{item.isCorrect === true ? 'is-correct' : ''}} {{item.isCorrect === false ? 'is-wrong' : ''}}" value="{{item.inputValue}}" disabled="{{submitted}}" data-number="{{item.number}}" bindinput="inputAnswer" placeholder="填写答案" />
-        <view class="blank-answer" wx:if="{{submitted}}">正确答案：{{item.answer || '待补充'}}</view>
+      <view class="cloze-passage-text" wx:if="{{passage.isClozePassage}}">
+        <block wx:for="{{passage.clozePassageParts}}" wx:key="index">
+          <text wx:if="{{item.type === 'text'}}">{{item.text}}</text>
+          <view wx:else class="cloze-inline">
+            <text class="cloze-inline-initial" wx:if="{{item.initial}}">{{item.initial}}</text>
+            <input class="cloze-inline-input {{item.isCorrect === true ? 'is-correct' : ''}} {{item.isCorrect === false ? 'is-wrong' : ''}}" value="{{item.inputValue}}" disabled="{{submitted}}" data-number="{{item.number}}" bindinput="inputAnswer" placeholder="{{item.number}}" />
+          </view>
+        </block>
       </view>
-      <view class="analysis-line" wx:if="{{submitted && item.reviewAnalysis}}">
-        <view>答案 {{item.reviewAnalysis.answer || '待补充'}}，你的答案 {{item.reviewAnalysis.selected || '-'}}。{{item.reviewAnalysis.text}}</view>
-        <view wx:if="{{item.reviewAnalysis.answerSentence}}" class="card-example">答案句：{{item.reviewAnalysis.answerSentence.text}}</view>
+      <view class="passage-text" wx:else>
+        <view wx:for="{{passageSegments}}" wx:key="index" class="passage-segment segment-{{item.tone}}" data-start="{{item.start}}" data-end="{{item.end}}" bindtap="translatePassageSentence">
+          <block wx:if="{{item.chunks && item.chunks.length}}">
+            <text wx:for="{{item.chunks}}" wx:key="index" class="{{item.className}}">{{item.text}}</text>
+          </block>
+          <block wx:else>
+            <text wx:if="{{item.label}}" class="segment-label">{{item.label}}</text><text>{{item.text}}</text><text wx:if="{{item.note}}" class="segment-note">{{item.note}}</text>
+          </block>
+          <view class="sentence-translation-inline" wx:if="{{selectedSentenceStart === item.start}}">
+            {{sentenceTranslating ? '翻译中。' : selectedSentenceTranslation}}
+          </view>
+        </view>
       </view>
     </view>
-
-    <button class="button-primary submit-button" wx:if="{{!submitted}}" loading="{{submitting}}" disabled="{{submitting}}" bindtap="submit">提交阅读</button>
 
     <view class="review-card card" wx:if="{{submitted}}">
       <view class="review-score" wx:if="{{hasScore}}">{{scoreText}}</view>
       <view class="review-score" wx:else>已完成</view>
       <view class="review-copy">{{reviewSummary || '解析已生成。'}}</view>
-      <view class="review-copy">每题后方可查看答案解析；原文中可切换答案句、生词和短语。</view>
-      <button class="detail-toggle primary" wx:if="{{review}}" bindtap="toggleReviewDetails">{{showReviewDetails ? '收起解析' : '查看完整解析'}}</button>
+    </view>
+
+    <block wx:if="{{!passage.isClozePassage}}">
+      <view class="question-card card" wx:for="{{passage.questions}}" wx:key="number">
+        <view class="question-title">{{item.number}}. {{item.prompt}}</view>
+        <view class="option-list" wx:if="{{item.type === 'choice'}}">
+          <button class="option-row {{option.selected ? 'is-selected' : ''}} {{option.correct ? 'is-correct' : ''}} {{option.wrong ? 'is-wrong' : ''}} {{submitted || submitting ? 'is-locked' : ''}}" wx:for="{{item.optionsList}}" wx:key="key" wx:for-item="option" data-number="{{item.number}}" data-option="{{option.key}}" bindtap="selectOption">
+            <text class="option-key">{{option.key}}</text>
+            <text class="option-text">{{option.text}}</text>
+            <text class="option-badge" wx:if="{{option.correct}}">正确</text>
+            <text class="option-badge wrong" wx:elif="{{option.wrong}}">你的</text>
+          </button>
+        </view>
+        <view class="blank-answer-box" wx:else>
+          <input class="blank-input {{item.isCorrect === true ? 'is-correct' : ''}} {{item.isCorrect === false ? 'is-wrong' : ''}}" value="{{item.inputValue}}" disabled="{{submitted || submitting}}" data-number="{{item.number}}" bindinput="inputAnswer" placeholder="填写答案" />
+          <view class="blank-answer" wx:if="{{submitted}}">正确答案：{{item.answerDisplay || '待补充'}}</view>
+        </view>
+        <view class="analysis-item inline-analysis" wx:if="{{submitted && item.reviewAnalysis}}">
+          <view class="analysis-head">
+            <text>解析</text>
+            <text class="{{item.reviewAnalysis.correct ? 'analysis-state is-correct' : 'analysis-state is-wrong'}}">{{item.reviewAnalysis.correct ? '正确' : '订正'}}</text>
+          </view>
+          <view class="analysis-text">{{item.reviewAnalysis.text}}</view>
+          <view wx:if="{{item.reviewAnalysis.answerSentence}}" class="answer-sentence">
+            <view class="answer-sentence-label">答案句</view>
+            <view class="answer-sentence-text">{{item.reviewAnalysis.answerSentence.text}}</view>
+            <view wx:if="{{item.reviewAnalysis.answerSentence.translation}}" class="answer-sentence-translation">{{item.reviewAnalysis.answerSentence.translation}}</view>
+          </view>
+        </view>
+      </view>
+    </block>
+
+    <button class="button-primary submit-button" wx:if="{{!submitted}}" loading="{{submitting}}" disabled="{{submitting}}" bindtap="submit">{{submitting ? '生成解析中' : '提交阅读'}}</button>
+    <view class="retry-card" wx:if="{{analysisErrorText && !submitted}}">
+      <text>{{analysisErrorText}}</text>
+      <button class="retry-button" loading="{{submitting}}" disabled="{{submitting}}" bindtap="retrySubmit">重试</button>
     </view>
 
     <view class="review-card card" wx:if="{{review && showReviewDetails}}">
-      <view class="review-title">学习解析</view>
+      <view class="review-title">学习包</view>
       <view class="review-tabs">
-        <button class="review-tab tab-{{item.tone}} {{activeReviewTab === item.key ? 'is-active' : ''}}" wx:for="{{reviewTabs}}" wx:key="key" data-tab="{{item.key}}" bindtap="selectReviewTab">{{item.label}}</button>
+        <button class="review-tab tab-{{item.tone}} {{activeReviewTab === item.key ? 'is-active' : ''}} {{loadingStudySection === item.key ? 'is-loading' : ''}}" wx:for="{{reviewTabs}}" wx:key="key" data-tab="{{item.key}}" bindtap="selectReviewTab">
+          <text>{{item.label}}</text>
+          <text class="tab-loading" wx:if="{{loadingStudySection === item.key}}">生成中</text>
+          <text class="button-dot" wx:if="{{activeReviewTab === item.key}}"></text>
+        </button>
+      </view>
+      <view class="study-loading-tip" wx:if="{{studyLoadingText}}">{{studyLoadingText}}</view>
+      <view class="study-error-tip" wx:if="{{studyErrorText}}">
+        <text>{{studyErrorText}}</text>
+        <button class="retry-button" bindtap="retryStudySection">重试</button>
       </view>
 
       <view class="card-list" wx:if="{{activeReviewTab === 'vocabulary'}}">
         <view class="word-card" wx:for="{{wordCards}}" wx:key="word">
           <view class="word-head">
             <view class="word-pronounce" data-word="{{item.word}}" bindtap="speakWord">
-              <text class="word-text">{{item.word}}</text>
+              <view class="card-title-line">
+                <text class="card-index">{{item.groupIndex}}</text>
+                <text class="word-text">{{item.word}}</text>
+              </view>
               <text class="phonetic" wx:if="{{item.phonetic}}">{{item.phonetic}}</text>
             </view>
             <view class="word-actions">
@@ -69,13 +113,16 @@
           <view class="card-example" wx:if="{{item.example}}">{{item.example}}</view>
           <view class="card-example-meaning" wx:if="{{item.exampleMeaning}}">{{item.exampleMeaning}}</view>
         </view>
-        <view class="empty-inline" wx:if="{{!wordCards.length}}">暂无生词卡。</view>
+        <view class="empty-inline" wx:if="{{!wordCards.length}}">{{loadingStudySection === 'vocabulary' || loadingStudySection === 'cards' ? '生词生成中，请稍等。' : '点击后生成生词。'}}</view>
       </view>
 
       <view class="card-list" wx:elif="{{activeReviewTab === 'phrases'}}">
         <view class="phrase-card" wx:for="{{phraseCards}}" wx:key="text">
           <view class="word-head">
-            <view class="phrase-text">{{item.text}}</view>
+            <view class="card-title-line">
+              <text class="card-index">{{item.groupIndex}}</text>
+              <text class="phrase-text">{{item.text}}</text>
+            </view>
             <view class="word-actions">
               <button class="mini-action strong" data-text="{{item.text}}" bindtap="togglePhraseUnfamiliar">{{unfamiliarMap[item.flashcardKey] ? '已加入' : '不熟'}}</button>
             </view>
@@ -83,36 +130,20 @@
           <view class="card-meaning">{{item.meaning}}</view>
           <view class="card-example" wx:if="{{item.example}}">{{item.example}}</view>
         </view>
-        <view class="empty-inline" wx:if="{{!phraseCards.length}}">暂无短语。</view>
+        <view class="empty-inline" wx:if="{{!phraseCards.length}}">{{loadingStudySection === 'phrases' || loadingStudySection === 'cards' ? '短语生成中，请稍等。' : '点击后生成短语。'}}</view>
       </view>
 
       <view class="card-list" wx:elif="{{activeReviewTab === 'patterns'}}">
         <view class="pattern-card" wx:for="{{sentencePatternCards}}" wx:key="pattern">
-          <view class="pattern-text">{{item.pattern}}</view>
+          <view class="card-title-line">
+            <text class="card-index">{{item.groupIndex}}</text>
+            <text class="pattern-text">{{item.pattern}}</text>
+          </view>
           <view class="card-meaning">{{item.meaning}}</view>
           <view class="card-example" wx:if="{{item.example}}">{{item.example}}</view>
+          <view class="card-example-meaning" wx:if="{{item.exampleMeaning}}">{{item.exampleMeaning}}</view>
         </view>
-        <view class="empty-inline" wx:if="{{!sentencePatternCards.length}}">暂无句型。</view>
-      </view>
-
-      <view class="translation-box" wx:else>
-        {{fullTranslation || '暂无全文翻译。'}}
-      </view>
-    </view>
-
-    <view class="review-card card" wx:if="{{review && showReviewDetails}}">
-      <view class="review-title">背诵检测</view>
-      <view class="memory-test-row" wx:if="{{review.memoryCheckTexts.vocabulary}}">
-        <view class="memory-test-label">单词拼写</view>
-        <view class="memory-test-content">{{review.memoryCheckTexts.vocabulary}}</view>
-      </view>
-      <view class="memory-test-row" wx:if="{{review.memoryCheckTexts.phrases}}">
-        <view class="memory-test-label">词组英译</view>
-        <view class="memory-test-content">{{review.memoryCheckTexts.phrases}}</view>
-      </view>
-      <view class="memory-test-row" wx:if="{{review.memoryCheckTexts.sentencePattern}}">
-        <view class="memory-test-label">句型仿写</view>
-        <view class="memory-test-content">{{review.memoryCheckTexts.sentencePattern}}</view>
+        <view class="empty-inline" wx:if="{{!sentencePatternCards.length}}">{{loadingStudySection === 'patterns' || loadingStudySection === 'cards' ? '句型生成中，请稍等。' : '点击后生成句型。'}}</view>
       </view>
     </view>
   </block>

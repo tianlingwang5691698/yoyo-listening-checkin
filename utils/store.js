@@ -19,7 +19,11 @@ const READ_CACHE_CONFIG = {
   getFamilyPage: { persist: true },
   getReadingHome: { persist: true },
   getReadingPassage: { persist: true },
-  getReadingStudyPack: { persist: true }
+  getReadingStudyPack: { persist: true },
+  getGrammarHome: { persist: true },
+  getGrammarWrongBook: { persist: false },
+  getGrammarProgress: { persist: false },
+  explainGrammarQuestion: { persist: false }
 };
 
 /**
@@ -465,14 +469,18 @@ async function getReadingStudyPack(options, onRefresh) {
   return callCloud('getReadingStudyPack', Object.assign({}, options || {}), {
     passageId: '',
     studyPack: null
-  }, { onRefresh });
+  }, { onRefresh, useCache: false });
 }
 
 async function synthesizeReadingAudio(options) {
-  return callCloud('synthesizeReadingAudio', Object.assign({}, options || {}), {
+  const result = await callCloud('synthesizeReadingAudio', Object.assign({}, options || {}), {
     text: '',
     fileId: ''
   }, { useCache: false });
+  if (result && result.syncMode === 'cloud-error') {
+    throw new Error((result.cloudError && result.cloudError.message) || '发音生成失败');
+  }
+  return result;
 }
 
 async function submitReadingAttempt(options) {
@@ -480,6 +488,75 @@ async function submitReadingAttempt(options) {
     passage: null,
     attempt: null,
     review: null
+  }, { useCache: false });
+}
+
+async function submitWritingAttempt(options) {
+  return callCloud('submitWritingAttempt', Object.assign({}, options || {}), {
+    prompt: null,
+    attempt: null,
+    review: null
+  }, { useCache: false });
+}
+
+async function getWritingAttempts(options, onRefresh) {
+  return callCloud('getWritingAttempts', Object.assign({}, options || {}), {
+    attempts: []
+  }, { onRefresh, useCache: false });
+}
+
+async function getGrammarHome(options, onRefresh) {
+  return callCloud('getGrammarHome', Object.assign({}, options || {}), {
+    topicTypes: [],
+    byTopic: [],
+    questions: [],
+    source: ''
+  }, { onRefresh });
+}
+
+async function getGrammarTopic(topicId, options) {
+  return callCloud('getGrammarTopic', Object.assign({ topicId }, options || {}), {
+    topic: null,
+    questions: [],
+    source: ''
+  }, { useCache: false });
+}
+
+async function recordGrammarWrong(question, selectedAnswer) {
+  return callCloud('recordGrammarWrong', { question, selectedAnswer }, { saved: false }, { useCache: false });
+}
+
+async function getGrammarWrongBook() {
+  return callCloud('getGrammarWrongBook', {}, {
+    topicTypes: [],
+    questions: [],
+    source: ''
+  }, { useCache: false });
+}
+
+async function getGrammarProgress(topicId) {
+  return callCloud('getGrammarProgress', { topicId }, {
+    topicId,
+    nextIndex: 0
+  }, { useCache: false });
+}
+
+async function recordGrammarProgress(topicId, nextIndex) {
+  return callCloud('recordGrammarProgress', { topicId, nextIndex }, { saved: false }, { useCache: false });
+}
+
+async function recordStudyCompletion(item) {
+  return callCloud('recordStudyCompletion', Object.assign({}, item || {}), { saved: false }, { useCache: false });
+}
+
+async function getStudyCompletions(options) {
+  return callCloud('getStudyCompletions', Object.assign({}, options || {}), { items: [] }, { useCache: false });
+}
+
+async function explainGrammarQuestion(question, options = {}) {
+  return callCloud('explainGrammarQuestion', { question, force: Boolean(options.force) }, {
+    explanation: null,
+    source: ''
   }, { useCache: false });
 }
 
@@ -548,6 +625,17 @@ module.exports = {
   getReadingStudyPack,
   synthesizeReadingAudio,
   submitReadingAttempt,
+  submitWritingAttempt,
+  getWritingAttempts,
+  getGrammarHome,
+  getGrammarTopic,
+  recordGrammarWrong,
+  getGrammarWrongBook,
+  getGrammarProgress,
+  recordGrammarProgress,
+  recordStudyCompletion,
+  getStudyCompletions,
+  explainGrammarQuestion,
   getFamilyPageData,
   refreshInviteCode,
   joinFamily,
