@@ -1060,12 +1060,15 @@ Page({
         this._readingAudioLoading = true;
         wx.showToast({ title: '发音生成中', icon: 'none' });
         const result = await store.synthesizeReadingAudio({ text });
-        const fileId = result && result.fileId ? result.fileId : '';
-        if (!fileId) throw new Error('发音生成失败');
-        try {
-          url = await store.getTempFileURL(fileId);
-        } catch (error) {
-          throw new Error('发音链接失败');
+        url = result && result.audioUrl ? result.audioUrl : '';
+        if (!url) {
+          const fileId = result && result.fileId ? result.fileId : '';
+          if (!fileId) throw new Error('发音生成失败');
+          try {
+            url = await store.getTempFileURL(fileId);
+          } catch (error) {
+            throw new Error('发音链接失败');
+          }
         }
         if (!url) throw new Error('发音链接为空');
         this._wordAudioUrls = Object.assign({}, this._wordAudioUrls || {}, { [text]: url });

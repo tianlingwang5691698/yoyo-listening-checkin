@@ -10,6 +10,7 @@ const DEFAULT_READING_DAILY_COUNT = 3;
 const MAX_READING_DAILY_COUNT = 20;
 const STUDY_PACK_COLLECTION = 'readingStudyPacks';
 const SENTENCE_TRANSLATION_COLLECTION = 'readingSentenceTranslations';
+const READING_AUDIO_CACHE_COLLECTION = 'readingAudioCache';
 const READING_CONTENT_PATH = '_content/reading/reading-passages.json';
 const READING_EM1_CONTENT_PATH = '_content/reading-em1/reading-passages.json';
 
@@ -53,6 +54,18 @@ async function readCollection(name, limit) {
     return (result && result.data) || [];
   } catch (error) {
     return [];
+  }
+}
+
+async function findReadingAudioCache(hash) {
+  try {
+    const result = await dbAdapter.collection(READING_AUDIO_CACHE_COLLECTION)
+      .where({ hash })
+      .limit(1)
+      .get();
+    return result && result.data && result.data[0] ? result.data[0] : null;
+  } catch (error) {
+    return null;
   }
 }
 
@@ -1201,33 +1214,63 @@ async function submitReadingAttempt(event) {
 
 async function synthesizeReadingAudio(event) {
   const payload = (event && event.payload) || {};
-  const { ctx, today } = await study.prepareRequestContext(Object.assign({}, event, {
+  await study.prepareRequestContext(Object.assign({}, event, {
     action: 'synthesizeReadingAudio'
   }));
   const text = normalizeText(payload.text).slice(0, 500);
   if (!text) {
     throw new Error('reading-audio-text-empty');
   }
-  const hash = crypto.createHash('sha1').update(text).digest('hex').slice(0, 20);
+  const cacheKey = text.toLowerCase();
+  const hash = crypto.createHash('sha1').update(cacheKey).digest('hex').slice(0, 20);
+  const cached = await findReadingAudioCache(hash);
+  if (cached && (cached.fileId || cached.cloudPath)) {
+    const audioUrl = await storageAdapter.getTempFileURL(cached.fileId, cached.cloudPath);
+    if (audioUrl) {
+      return {
+        text,
+        fileId: cached.fileId || '',
+        cloudPath: cached.cloudPath || '',
+        audioUrl,
+        cached: true
+      };
+    }
+  }
   const cloudPath = [
     '_reading_tts',
-    ctx.family.familyId,
-    ctx.child.childId,
-    today,
+    'words',
     `${hash}.mp3`
   ].join('/');
-  let fileId = '';
+  let audioFile = null;
   try {
-    fileId = await speakingEngine.synthesizeFeedbackAudio(text, cloudPath);
+    audioFile = await speakingEngine.synthesizeFeedbackAudio(text, cloudPath);
   } catch (error) {
     throw new Error(`reading-audio-tts-failed:${error.message || String(error)}`);
   }
+  const fileId = audioFile && audioFile.fileId ? audioFile.fileId : '';
   if (!fileId) {
     throw new Error('reading-audio-tts-unavailable');
   }
+  const audioUrl = await storageAdapter.getTempFileURL(fileId, cloudPath);
+  try {
+    await dbAdapter.collection(READING_AUDIO_CACHE_COLLECTION).add({
+      data: {
+        hash,
+        text,
+        fileId,
+        cloudPath,
+        createdAt: new Date().toISOString()
+      }
+    });
+  } catch (error) {
+    // Audio can still play even if cache metadata is not saved.
+  }
   return {
     text,
-    fileId
+    fileId,
+    cloudPath,
+    audioUrl,
+    cached: false
   };
 }
 
