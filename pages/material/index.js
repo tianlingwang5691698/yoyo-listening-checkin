@@ -69,12 +69,12 @@ function buildStages(config) {
 
 Page({
   data: page.createCloudPageData({
-    moduleId: 'writing',
-    title: '写作',
-    eyebrow: '英语写作',
+    moduleId: 'listening',
+    title: '听力',
+    eyebrow: '英语听力',
     copy: '',
-    itemUnit: '题',
-    showCefrEntry: false,
+    itemUnit: '套',
+    showCefrEntry: true,
     stages: [],
     selectedStageId: '',
     selectedStage: null,
@@ -90,10 +90,18 @@ Page({
   }),
   async onLoad(options) {
     const moduleId = options && options.module === 'writing' ? 'writing' : 'listening';
+    const baseConfig = buildMaterials({})[moduleId];
+    this.setData({
+      moduleId,
+      title: baseConfig.title,
+      eyebrow: baseConfig.eyebrow,
+      copy: baseConfig.copy,
+      itemUnit: baseConfig.itemUnit,
+      showCefrEntry: moduleId === 'listening'
+    });
     const materialIndex = await store.getMaterialIndex();
     const config = buildMaterials(materialIndex)[moduleId];
     this.setData({
-      moduleId,
       title: config.title,
       eyebrow: config.eyebrow,
       copy: config.copy,

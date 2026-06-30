@@ -76,6 +76,42 @@ function buildListeningSummary(groupedDailyTasks) {
   return `${completed}/${total || groups.length} 完成 · ${(nextGroup && nextGroup.categoryLabel) || '继续'}`;
 }
 
+function buildListeningTaskStatus(groupedDailyTasks) {
+  const groups = groupedDailyTasks || [];
+  const total = groups.reduce((sum, item) => sum + Number(item.totalCount || 0), 0);
+  const completed = groups.reduce((sum, item) => sum + Number(item.completedCount || 0), 0);
+  if (!groups.length || !total) {
+    return {
+      title: '今日任务',
+      copy: '听力任务准备中',
+      action: '准备中',
+      pending: false
+    };
+  }
+  const pending = completed < total;
+  return {
+    title: '今日任务',
+    copy: `听力 ${completed}/${total} · ${pending ? '待完成' : '已完成'}`,
+    action: pending ? '继续学习 →' : '查看记录',
+    pending
+  };
+}
+
+function findNextListeningTask(groupedDailyTasks) {
+  const groups = groupedDailyTasks || [];
+  for (let groupIndex = 0; groupIndex < groups.length; groupIndex += 1) {
+    const group = groups[groupIndex] || {};
+    const task = (group.tasks || []).find((item) => !item.completedToday && !item.isPendingAsset);
+    if (task) {
+      return {
+        category: task.category || group.category || '',
+        taskId: task.taskId || ''
+      };
+    }
+  }
+  return null;
+}
+
 function buildReadingSummary(passage, completed) {
   if (!passage) return '6-9 年级阅读';
   if (completed) return '今日已完成';
@@ -150,6 +186,8 @@ Page({
     readingToday: null,
     readingCompleted: false,
     listeningSummary: '同步中',
+    listeningTaskStatus: buildListeningTaskStatus([]),
+    nextListeningTask: null,
     readingSummary: '6-9 年级阅读',
     vocabularySummary: buildVocabularySummary(),
     todayCompletedItems: [],
@@ -180,6 +218,8 @@ Page({
       groupedDailyTasks,
       hasGroupedTasks: !!groupedDailyTasks.length,
       listeningSummary: buildListeningSummary(groupedDailyTasks),
+      listeningTaskStatus: buildListeningTaskStatus(groupedDailyTasks),
+      nextListeningTask: findNextListeningTask(groupedDailyTasks),
       todayCompletedItems: buildTodayCompletedItems.call(this, groupedDailyTasks, this.data.readingToday, this.data.readingCompleted),
       identityConfirmVisible: !page.isIdentityConfirmed(),
       modeChangedNoticeVisible,
@@ -268,11 +308,6 @@ Page({
         title: nextRole === 'student' ? '已进入学生设备' : '已进入家长模式',
         icon: 'none'
       });
-      if (nextRole === 'parent' && data.currentMember && data.currentMember.role === 'owner') {
-        wx.navigateTo({
-          url: '/pages/family/index'
-        });
-      }
     } catch (error) {
       wx.showToast({
         title: '已本机切换，云端稍后同步',
@@ -374,6 +409,15 @@ Page({
     });
   },
   openCompleted() {
+    if (this.data.listeningTaskStatus && this.data.listeningTaskStatus.pending && this.data.nextListeningTask && this.data.nextListeningTask.category) {
+      const task = this.data.nextListeningTask;
+      wx.navigateTo({
+        url: task.taskId
+          ? `/pages/lesson/index?category=${task.category}&taskId=${task.taskId}`
+          : `/pages/lesson/index?category=${task.category}`
+      });
+      return;
+    }
     wx.setStorageSync('todayCompletedItemsV1', this.data.todayCompletedItems || []);
     wx.navigateTo({
       url: '/pages/home/completed/index'

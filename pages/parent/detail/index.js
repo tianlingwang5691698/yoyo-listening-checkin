@@ -95,6 +95,89 @@ function buildSpeakingSummary(attempts) {
   };
 }
 
+function getCompletionTypeLabel(type) {
+  if (type === 'reading' || type === 'reading-study') return '阅读';
+  if (type === 'grammar') return '语法';
+  if (type === 'writing') return '写作';
+  return '完成';
+}
+
+function normalizeCompletionItem(item, index) {
+  const safeItem = item || {};
+  const latestAttempt = safeItem.latestAttempt || {};
+  const review = latestAttempt.review || {};
+  const questionResults = Array.isArray(latestAttempt.questionResults) ? latestAttempt.questionResults : [];
+  const correctCount = Number(latestAttempt.correctCount || 0);
+  const totalCount = Number(latestAttempt.totalCount || questionResults.length || 0);
+  const score = Number(latestAttempt.score || review.score || 0);
+  const totalScore = Number(latestAttempt.totalScore || review.totalScore || 0);
+  const reviewProblems = Array.isArray(review.problems) ? review.problems : [];
+  const reviewSuggestions = Array.isArray(review.suggestions) ? review.suggestions : [];
+  const grammarQuestions = Array.isArray(latestAttempt.questions) ? latestAttempt.questions : [];
+  return Object.assign({}, safeItem, {
+    key: safeItem.id || safeItem.recordId || `${safeItem.type || 'item'}-${index}`,
+    typeLabel: getCompletionTypeLabel(safeItem.type),
+    title: safeItem.title || safeItem.meta || '完成记录',
+    meta: safeItem.meta || '',
+    progressText: safeItem.progressText || (totalScore ? `${score}/${totalScore} 分` : '完成'),
+    scoreText: totalScore ? `${score}/${totalScore} 分` : '',
+    correctText: totalCount ? `${correctCount}/${totalCount} 题` : '',
+    reviewSummary: review.summary || review.feedback || '',
+    reviewContent: review.content || '',
+    reviewLanguage: review.language || '',
+    reviewStructure: review.structure || '',
+    reviewSpelling: review.spelling || '',
+    reviewProblems,
+    reviewProblemsText: reviewProblems.join('；'),
+    reviewSuggestions,
+    reviewSuggestionsText: reviewSuggestions.join('；'),
+    grammarCorrections: Array.isArray(review.grammarCorrections) ? review.grammarCorrections : [],
+    passage: latestAttempt.passage || null,
+    grammarQuestions: grammarQuestions.map((question, questionIndex) => ({
+      key: question._id || `${safeItem.id || index}-${questionIndex}`,
+      number: question.number || questionIndex + 1,
+      prompt: question.prompt || '',
+      optionsList: Object.keys(question.options || {}).map((key) => ({
+        key,
+        text: question.options[key]
+      })),
+      selectedAnswer: question.selectedAnswer || '',
+      answer: question.answer || '',
+      isCorrect: !!question.isCorrect,
+      explanation: question.explanation || null
+    })),
+    questionResults: questionResults.slice(0, 8).map((result, resultIndex) => ({
+      key: `${safeItem.id || safeItem.recordId || index}-${resultIndex}`,
+      number: result.number || resultIndex + 1,
+      correct: !!result.correct,
+      answer: result.answer || '',
+      userAnswer: result.userAnswer || '',
+      analysis: result.analysis || result.explanation || '',
+      answerSentence: result.answerSentence || null
+    }))
+  });
+}
+
+async function hydrateReadingItems(items) {
+  const nextItems = await Promise.all((items || []).map(async (item) => {
+    if (item.type !== 'reading' || item.passage || !item.passageId) {
+      return item;
+    }
+    try {
+      const data = await store.getReadingPassage({ passageId: item.passageId });
+      const latestAttempt = data.latestAttempt || item.latestAttempt || {};
+      return normalizeCompletionItem(Object.assign({}, item, {
+        latestAttempt: Object.assign({}, latestAttempt, {
+          passage: data.passage || null
+        })
+      }), 0);
+    } catch (error) {
+      return item;
+    }
+  }));
+  return nextItems;
+}
+
 function normalizeReport(report) {
   const safeReport = report || {};
   const items = (safeReport.items || []).map((item) => Object.assign({}, labels.normalizeReportItem(item), {
@@ -111,7 +194,8 @@ function normalizeReport(report) {
     totalCount: items.length,
     items,
     speakingAttempts,
-    speakingSummary
+    speakingSummary,
+    completionItems: []
   };
 }
 
@@ -131,7 +215,8 @@ Page({
         scoredCount: 0,
         averageScore: 0,
         latestScore: 0
-      }
+      },
+      completionItems: []
     },
     playingAttemptKey: '',
     pausedAttemptKey: '',
@@ -184,13 +269,32 @@ Page({
     if (!page.requireIdentityConfirmed()) {
       return;
     }
-    const applyData = (data) => {
+    Promise.all([
+      store.getDailyReportByDate(this.data.date),
+      store.getStudyCompletions({ date: this.data.date })
+    ]).then(([reportData, completionData]) => {
+      const report = normalizeReport(reportData.report);
+      const completionItems = ((completionData && completionData.items) || []).map(normalizeCompletionItem);
       this.setData(page.buildCloudPageData(this.data, {
         date: this.data.date,
-        report: normalizeReport(data.report)
+        report: Object.assign({}, report, { completionItems })
       }));
-    };
-    store.getDailyReportByDate(this.data.date, applyData).then(applyData);
+      hydrateReadingItems(completionItems).then((items) => {
+        this.setData({
+          report: Object.assign({}, this.data.report, { completionItems: items })
+        });
+      });
+    }).catch(() => {});
+  },
+  toggleCompletionDetail(event) {
+    const key = event.currentTarget.dataset.key || '';
+    if (!key) return;
+    const items = (this.data.report.completionItems || []).map((item) => Object.assign({}, item, {
+      expanded: item.key === key ? !item.expanded : item.expanded
+    }));
+    this.setData({
+      report: Object.assign({}, this.data.report, { completionItems: items })
+    });
   },
   async playSpeakingAttempt(event) {
     const index = Number(event.currentTarget.dataset.index || 0);

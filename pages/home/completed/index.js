@@ -1,6 +1,14 @@
 const page = require('../../../utils/page');
 const store = require('../../../utils/store');
 
+function todayString() {
+  const now = new Date();
+  const year = now.getFullYear();
+  const month = String(now.getMonth() + 1).padStart(2, '0');
+  const day = String(now.getDate()).padStart(2, '0');
+  return `${year}-${month}-${day}`;
+}
+
 function normalizeItems(items) {
   return (items || []).map((item, index) => {
     const attempts = (item.attempts || []).map((attempt, attemptIndex) => Object.assign({}, attempt, {
@@ -47,30 +55,9 @@ Page({
     const index = Number(event.currentTarget.dataset.index || 0);
     const item = this.data.items[index];
     if (!item) return;
-    if (item.type === 'reading' && item.passageId) {
+    if (['reading', 'reading-study', 'grammar', 'writing'].includes(item.type)) {
       wx.navigateTo({
-        url: `/pages/reading/detail/index?passageId=${item.passageId}`
-      });
-      return;
-    }
-    if (item.type === 'reading-study' && item.passageId) {
-      wx.navigateTo({
-        url: `/pages/reading/detail/index?passageId=${item.passageId}`
-      });
-      return;
-    }
-    if (item.type === 'grammar') {
-      wx.navigateTo({
-        url: '/pages/grammar/index'
-      });
-      return;
-    }
-    if (item.type === 'writing') {
-      if (item.prompt) {
-        wx.setStorageSync('currentWritingPromptV1', item.prompt);
-      }
-      wx.navigateTo({
-        url: `/pages/writing/detail/index?id=${encodeURIComponent(item.targetId || '')}`
+        url: `/pages/parent/detail/index?date=${item.date || todayString()}`
       });
       return;
     }

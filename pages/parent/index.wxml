@@ -41,12 +41,15 @@
   <view class="section-panel">
     <view class="section-title type-section-title">完成内容</view>
     <block wx:if="{{completionItems.length}}">
-      <view class="trend-row task-cell" wx:for="{{completionItems}}" wx:key="id">
+      <view class="trend-row task-cell is-link" wx:for="{{completionItems}}" wx:key="id" data-date="{{item.date}}" bindtap="openDailyDetail">
         <view>
           <view class="trend-date">{{item.typeLabel}} · {{item.dateLabel}}</view>
           <view class="trend-copy">{{item.title}}</view>
         </view>
-        <view class="trend-badge">{{item.progressText || '完成'}}</view>
+        <view class="trend-side">
+          <view class="trend-badge">{{item.progressText || '完成'}}</view>
+          <view class="trend-arrow">›</view>
+        </view>
       </view>
     </block>
     <view class="empty-state" wx:else>暂无阅读、语法、写作完成记录。</view>

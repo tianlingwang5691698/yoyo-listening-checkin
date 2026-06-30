@@ -76,4 +76,55 @@
     </block>
     <view class="empty-state" wx:else>这一天还没有录音。</view>
   </view>
+
+  <view class="section-panel">
+    <view class="section-title type-section-title">阅读/语法/写作</view>
+    <block wx:if="{{report.completionItems.length}}">
+      <block wx:for="{{report.completionItems}}" wx:key="key">
+        <view class="study-record-row" data-key="{{item.key}}" bindtap="toggleCompletionDetail">
+          <view class="row-between recording-head">
+            <view>
+              <view class="detail-title">{{item.typeLabel}} · {{item.title}}</view>
+              <view class="detail-copy">{{item.meta}}</view>
+            </view>
+            <view class="recording-score">{{item.scoreText || item.progressText}}</view>
+          </view>
+          <view class="recording-meta" wx:if="{{item.correctText}}">答题：{{item.correctText}}</view>
+          <view class="detail-copy">{{item.expanded ? '收起详情' : '点开查看原题和分析'}}</view>
+          <block wx:if="{{item.expanded}}">
+            <view class="source-passage" wx:if="{{item.passage && item.passage.passage}}">
+              <view class="question-review-title">原文</view>
+              <view class="recording-text">{{item.passage.passage}}</view>
+            </view>
+            <view class="recording-text" wx:if="{{item.reviewSummary}}">分析：{{item.reviewSummary}}</view>
+            <view class="recording-text" wx:if="{{item.reviewContent}}">内容：{{item.reviewContent}}</view>
+            <view class="recording-text" wx:if="{{item.reviewLanguage}}">语言：{{item.reviewLanguage}}</view>
+            <view class="recording-text" wx:if="{{item.reviewStructure}}">结构：{{item.reviewStructure}}</view>
+            <view class="recording-text" wx:if="{{item.reviewSpelling}}">拼写：{{item.reviewSpelling}}</view>
+            <view class="recording-text" wx:if="{{item.reviewProblemsText}}">问题：{{item.reviewProblemsText}}</view>
+            <view class="recording-text" wx:if="{{item.reviewSuggestionsText}}">建议：{{item.reviewSuggestionsText}}</view>
+            <block wx:if="{{item.grammarQuestions.length}}">
+              <view class="question-review" wx:for="{{item.grammarQuestions}}" wx:key="key" wx:for-item="question">
+                <view class="question-review-title">第 {{question.number}} 题 · {{question.isCorrect ? '正确' : '订正'}} · 答案 {{question.answer}}</view>
+                <view class="recording-text">{{question.prompt}}</view>
+                <view class="recording-text" wx:for="{{question.optionsList}}" wx:key="key" wx:for-item="option">{{option.key}}. {{option.text}}</view>
+                <view class="recording-text">孩子选择：{{question.selectedAnswer || '未记录'}}</view>
+                <view class="recording-text" wx:if="{{question.explanation && question.explanation.explanation}}">分析：{{question.explanation.explanation}}</view>
+                <view class="recording-text" wx:if="{{question.explanation && question.explanation.elimination}}">{{question.explanation.elimination}}</view>
+              </view>
+            </block>
+            <block wx:if="{{item.questionResults.length}}">
+              <view class="question-review" wx:for="{{item.questionResults}}" wx:key="key" wx:for-item="question">
+                <view class="question-review-title">第 {{question.number}} 题 · {{question.correct ? '正确' : '订正'}} · 答案 {{question.answer}}</view>
+                <view class="recording-text" wx:if="{{question.analysis}}">{{question.analysis}}</view>
+                <view class="recording-text" wx:if="{{question.answerSentence && question.answerSentence.text}}">定位句：{{question.answerSentence.text}}</view>
+                <view class="recording-text" wx:if="{{question.answerSentence && question.answerSentence.translation}}">译文：{{question.answerSentence.translation}}</view>
+              </view>
+            </block>
+          </block>
+        </view>
+      </block>
+    </block>
+    <view class="empty-state" wx:else>这一天还没有阅读、语法、写作记录。</view>
+  </view>
 </view>

@@ -103,6 +103,16 @@ function recordGrammarCompleted(state, answeredCount) {
   const topic = state.selectedTopic || state.selectedCategory || state.selectedExam || {};
   const topicId = state.selectedTopicId || state.selectedCategoryId || state.selectedExamId || '';
   if (!topicId) return;
+  const answeredQuestions = (state.selectedQuestions || []).filter((question) => question.isAnswered).map((question) => ({
+    _id: question._id || '',
+    number: question.sequenceNumber || question.number || 0,
+    prompt: question.prompt || question.question || '',
+    options: question.options || {},
+    selectedAnswer: question.selectedAnswer || '',
+    answer: question.answer || '',
+    isCorrect: !!question.isCorrect,
+    explanation: question.explanation || null
+  }));
   const item = {
     id: `grammar:${state.selectedExamId || 'grammar'}:${topicId}`,
     type: 'grammar',
@@ -110,7 +120,12 @@ function recordGrammarCompleted(state, answeredCount) {
     title: `语法：${topic.topic || topic.exam || '练习'}`,
     meta: state.selectedExam ? state.selectedExam.exam : '语法',
     topicId,
-    progressText: `今日已做 ${answeredCount || 1} 题`
+    progressText: `今日已做 ${answeredCount || 1} 题`,
+    latestAttempt: {
+      answeredCount: answeredCount || answeredQuestions.length,
+      totalCount: (state.selectedQuestions || []).length,
+      questions: answeredQuestions
+    }
   };
   completed.addCompletedItem(item);
   store.recordStudyCompletion(item);
@@ -387,6 +402,7 @@ Page({
       if (currentQuestion && currentQuestion.answer && option !== currentQuestion.answer) {
         store.recordGrammarWrong(currentQuestion, option);
       }
+      this.loadExplanation({ currentTarget: { dataset: { questionId } } });
       this.setData({
         selectedQuestions: (this.data.selectedQuestions || []).map((item) => Object.assign({}, item, {
           explaining: item._id === questionId ? false : item.explaining
@@ -431,6 +447,8 @@ Page({
           explaining: item._id === questionId ? false : item.explaining,
           explanation: item._id === questionId ? explanation : item.explanation
         }))
+      }, () => {
+        recordGrammarCompleted(this.data, this.data.answeredCount);
       });
     } catch (error) {
       this.setData({

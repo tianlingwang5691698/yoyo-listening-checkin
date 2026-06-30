@@ -67,6 +67,30 @@ function normalizeCompletionItems(items) {
   }));
 }
 
+function buildCompletionDays(items) {
+  const map = {};
+  (items || []).forEach((item) => {
+    const date = item.date || '';
+    if (!date) return;
+    if (!map[date]) {
+      map[date] = {
+        date,
+        dateLabel: item.dateLabel,
+        count: 0,
+        types: {}
+      };
+    }
+    map[date].count += 1;
+    map[date].types[item.typeLabel] = true;
+  });
+  return Object.keys(map).sort().reverse().map((date) => {
+    const item = map[date];
+    return Object.assign({}, item, {
+      typeText: Object.keys(item.types).join('、')
+    });
+  });
+}
+
 function normalizeReport(report) {
   const safeReport = report || {};
   return Object.assign({}, safeReport, {
@@ -82,6 +106,7 @@ function normalizeParentData(data) {
     todayReport: normalizeReport(data.todayReport),
     recentReports,
     completionItems,
+    completionDays: buildCompletionDays(completionItems),
     moduleStats: buildModuleStats(recentReports, completionItems)
   });
 }
@@ -93,6 +118,7 @@ Page({
     todayReport: contracts.createReportDefaults(),
     recentReports: [],
     completionItems: [],
+    completionDays: [],
     moduleStats: buildModuleStats([], [])
   }),
   applyParentData(data) {
