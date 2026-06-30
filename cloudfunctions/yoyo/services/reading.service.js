@@ -11,6 +11,7 @@ const MAX_READING_DAILY_COUNT = 20;
 const STUDY_PACK_COLLECTION = 'readingStudyPacks';
 const SENTENCE_TRANSLATION_COLLECTION = 'readingSentenceTranslations';
 const READING_AUDIO_CACHE_COLLECTION = 'readingAudioCache';
+const WORD_DICTIONARY_COLLECTION = 'wordDictionary';
 const READING_CONTENT_PATH = '_content/reading/reading-passages.json';
 const READING_EM1_CONTENT_PATH = '_content/reading-em1/reading-passages.json';
 
@@ -256,6 +257,31 @@ function fetchAudioBuffer(url) {
   });
 }
 
+function fetchJson(url, timeoutMs) {
+  return new Promise((resolve, reject) => {
+    const request = https.get(url, (response) => {
+      if (response.statusCode !== 200) {
+        response.resume();
+        reject(new Error(`json-http-${response.statusCode || 0}`));
+        return;
+      }
+      let body = '';
+      response.setEncoding('utf8');
+      response.on('data', (chunk) => { body += chunk; });
+      response.on('end', () => {
+        try {
+          resolve(JSON.parse(body));
+        } catch (error) {
+          reject(error);
+        }
+      });
+    }).on('error', reject);
+    request.setTimeout(timeoutMs || 5000, () => {
+      request.destroy(new Error('json-timeout'));
+    });
+  });
+}
+
 function isSingleWord(text) {
   return /^[A-Za-z][A-Za-z'-]{0,40}$/.test(String(text || '').trim());
 }
@@ -278,6 +304,53 @@ async function synthesizeWordAudioFast(text, cloudPath) {
     }
   }
   return null;
+}
+
+function normalizeLookupWord(value) {
+  return String(value || '').trim().replace(/^[^A-Za-z]+|[^A-Za-z]+$/g, '').toLowerCase();
+}
+
+function parseYoudaoWord(data, word) {
+  const item = data && data.ec && data.ec.word && data.ec.word[0] ? data.ec.word[0] : {};
+  const definitions = [];
+  (item.trs || []).forEach((row) => {
+    const lines = row && row.tr && row.tr[0] && row.tr[0].l && row.tr[0].l.i;
+    (Array.isArray(lines) ? lines : []).forEach((line) => {
+      const text = normalizeText(line);
+      if (text && definitions.indexOf(text) < 0) {
+        definitions.push(text);
+      }
+    });
+  });
+  if (!definitions.length && data && data.web_trans && data.web_trans['web-translation']) {
+    (data.web_trans['web-translation'] || []).slice(0, 3).forEach((row) => {
+      ((row && row.trans) || []).slice(0, 2).forEach((entry) => {
+        const text = normalizeText(entry && entry.value);
+        if (text && definitions.indexOf(text) < 0) {
+          definitions.push(text);
+        }
+      });
+    });
+  }
+  return {
+    word,
+    wordLower: word.toLowerCase(),
+    phonetic: item.usphone || item.ukphone || '',
+    definitions: definitions.slice(0, 6),
+    source: 'youdao'
+  };
+}
+
+async function findDictionaryEntry(wordLower) {
+  try {
+    const result = await dbAdapter.collection(WORD_DICTIONARY_COLLECTION)
+      .where({ wordLower })
+      .limit(1)
+      .get();
+    return result && result.data && result.data[0] ? result.data[0] : null;
+  } catch (error) {
+    return null;
+  }
 }
 
 function postJson(url, apiKey, body, timeoutMs) {
@@ -1326,10 +1399,64 @@ async function synthesizeReadingAudio(event) {
   };
 }
 
+async function lookupWord(event) {
+  const payload = (event && event.payload) || {};
+  await study.prepareRequestContext(Object.assign({}, event, {
+    action: 'lookupWord'
+  }));
+  const wordLower = normalizeLookupWord(payload.word);
+  if (!wordLower || !isSingleWord(wordLower)) {
+    throw new Error('dictionary-word-invalid');
+  }
+  const cached = await findDictionaryEntry(wordLower);
+  if (cached) {
+    let audioUrl = cached.audioUrl || '';
+    if (!audioUrl && (cached.audioFileId || cached.audioCloudPath)) {
+      audioUrl = await storageAdapter.getTempFileURL(cached.audioFileId, cached.audioCloudPath);
+    }
+    return Object.assign({}, cached, {
+      word: cached.word || wordLower,
+      wordLower,
+      definitions: Array.isArray(cached.definitions) ? cached.definitions : [],
+      audioUrl,
+      cached: true
+    });
+  }
+
+  const data = await fetchJson(`https://dict.youdao.com/jsonapi?q=${encodeURIComponent(wordLower)}`, 5000);
+  const entry = parseYoudaoWord(data, wordLower);
+  const hash = crypto.createHash('sha1').update(wordLower).digest('hex').slice(0, 20);
+  const audioCloudPath = `_dictionary_audio/words/${hash}.mp3`;
+  let audioFile = null;
+  try {
+    audioFile = await synthesizeWordAudioFast(wordLower, audioCloudPath);
+  } catch (error) {
+    audioFile = null;
+  }
+  const audioFileId = audioFile && audioFile.fileId ? audioFile.fileId : '';
+  const audioUrl = audioFileId ? await storageAdapter.getTempFileURL(audioFileId, audioCloudPath) : '';
+  const saved = Object.assign({}, entry, {
+    audioFileId,
+    audioCloudPath,
+    createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString()
+  });
+  try {
+    await dbAdapter.collection(WORD_DICTIONARY_COLLECTION).add({ data: saved });
+  } catch (error) {
+    // Lookup result can still be used even if cache save fails.
+  }
+  return Object.assign({}, saved, {
+    audioUrl,
+    cached: false
+  });
+}
+
 module.exports = {
   getReadingHome,
   getReadingPassage,
   getReadingStudyPack,
   synthesizeReadingAudio,
-  submitReadingAttempt
+  submitReadingAttempt,
+  lookupWord
 };

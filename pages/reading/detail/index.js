@@ -331,6 +331,35 @@ function buildSentenceChunks(source, sentenceRange, ranges) {
   return chunks.length ? chunks : [{ text: source.slice(sentenceRange.start, sentenceRange.end), tone: 'normal', highlight: false, className: 'passage-chunk' }];
 }
 
+function tokenizeChunkText(text) {
+  const source = String(text || '');
+  if (!source) return [];
+  const tokens = [];
+  const regex = /[A-Za-z][A-Za-z'-]*/g;
+  let cursor = 0;
+  let match;
+  while ((match = regex.exec(source))) {
+    if (match.index > cursor) {
+      tokens.push({ text: source.slice(cursor, match.index), isWord: false });
+    }
+    tokens.push({ text: match[0], isWord: true, word: match[0].toLowerCase() });
+    cursor = match.index + match[0].length;
+  }
+  if (cursor < source.length) {
+    tokens.push({ text: source.slice(cursor), isWord: false });
+  }
+  return tokens.length ? tokens : [{ text: source, isWord: false }];
+}
+
+function attachChunkTokens(segments) {
+  return (segments || []).map((segment) => Object.assign({}, segment, {
+    chunks: (segment.chunks || []).map((chunk) => Object.assign({}, chunk, {
+      tokens: tokenizeChunkText(chunk.text)
+    })),
+    tokens: segment.chunks && segment.chunks.length ? [] : tokenizeChunkText(segment.text)
+  }));
+}
+
 function buildPassageSegments(text, review, mode) {
   const source = String(text || '');
   if (!source) {
@@ -350,7 +379,7 @@ function buildPassageSegments(text, review, mode) {
   if (review && (activeMode === 'word' || activeMode === 'all')) {
     pushTermRanges(source, termEntries([].concat(review.vocabularyCards || [], review.vocabulary || []), ['word', 'text']), 'word', true, ranges);
   }
-  return splitSentenceRanges(source).map((sentenceRange) => {
+  return attachChunkTokens(splitSentenceRanges(source).map((sentenceRange) => {
     const meta = pickSentenceTone(sentenceRange, ranges);
     const shouldColorWholeSentence = meta.tone === 'answer';
     return Object.assign({
@@ -359,7 +388,7 @@ function buildPassageSegments(text, review, mode) {
       end: sentenceRange.end,
       chunks: shouldColorWholeSentence ? [] : buildSentenceChunks(source, sentenceRange, ranges)
     }, shouldColorWholeSentence ? meta : { tone: 'normal', label: '', note: '' });
-  });
+  }));
 }
 
 function pickSentenceAt(text, start, end) {
@@ -785,7 +814,11 @@ Page({
     showReviewDetails: false,
     hasScore: false,
     speakingWord: '',
-    audioStatusText: ''
+    audioStatusText: '',
+    dictionaryVisible: false,
+    dictionaryLoading: false,
+    dictionaryWord: '',
+    dictionaryEntry: null
   }),
   async onLoad(options) {
     page.syncTheme(this);
@@ -1050,6 +1083,56 @@ Page({
     addUnfamiliarCard(card, 'phrase');
     this.setData({ unfamiliarMap: getUnfamiliarMap() });
     wx.showToast({ title: '已加入复习', icon: 'none' });
+  },
+  async lookupPassageWord(event) {
+    const word = String(event.currentTarget.dataset.word || '').trim();
+    if (!word || this.data.dictionaryLoading) return;
+    if (wx.vibrateShort) {
+      wx.vibrateShort({ type: 'light' });
+    }
+    this.setData({
+      dictionaryVisible: true,
+      dictionaryLoading: true,
+      dictionaryWord: word,
+      dictionaryEntry: null
+    });
+    const localKey = `dictionary:${word.toLowerCase()}`;
+    try {
+      const cached = wx.getStorageSync(localKey);
+      const cacheAge = Date.now() - Number(cached && cached._cachedAt || 0);
+      if (cached && cached.wordLower && cacheAge < 30 * 60 * 1000) {
+        this.setData({ dictionaryEntry: cached, dictionaryLoading: false });
+        return;
+      }
+    } catch (error) {}
+    try {
+      const entry = await store.lookupWord(word);
+      try {
+        wx.setStorageSync(localKey, Object.assign({}, entry, { _cachedAt: Date.now() }));
+      } catch (error) {}
+      this.setData({ dictionaryEntry: entry, dictionaryLoading: false });
+    } catch (error) {
+      this.setData({ dictionaryLoading: false });
+      wx.showToast({ title: '查词失败', icon: 'none' });
+    }
+  },
+  closeDictionary() {
+    this.setData({ dictionaryVisible: false, dictionaryLoading: false });
+  },
+  playDictionaryWord() {
+    const entry = this.data.dictionaryEntry || {};
+    const word = entry.word || this.data.dictionaryWord || '';
+    if (entry.audioUrl) {
+      if (!this.readingAudioContext) {
+        this.readingAudioContext = wx.createInnerAudioContext();
+        this.readingAudioContext.obeyMuteSwitch = false;
+      }
+      this.readingAudioContext.stop();
+      this.readingAudioContext.src = entry.audioUrl;
+      this.readingAudioContext.play();
+      return;
+    }
+    this.speakWord({ currentTarget: { dataset: { word } } });
   },
   async speakWord(event) {
     const word = String(event.currentTarget.dataset.word || '');

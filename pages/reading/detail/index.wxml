@@ -26,10 +26,14 @@
       <view class="passage-text" wx:else>
         <view wx:for="{{passageSegments}}" wx:key="index" class="passage-segment segment-{{item.tone}}" data-start="{{item.start}}" data-end="{{item.end}}" bindtap="translatePassageSentence">
           <block wx:if="{{item.chunks && item.chunks.length}}">
-            <text wx:for="{{item.chunks}}" wx:key="index" class="{{item.className}}">{{item.text}}</text>
+            <text wx:for="{{item.chunks}}" wx:key="index" wx:for-item="chunk" class="{{chunk.className}}">
+              <text wx:for="{{chunk.tokens}}" wx:key="index" wx:for-item="token" class="{{token.isWord ? 'tap-word' : ''}}" data-word="{{token.word}}" catchtap="lookupPassageWord">{{token.text}}</text>
+            </text>
           </block>
           <block wx:else>
-            <text wx:if="{{item.label}}" class="segment-label">{{item.label}}</text><text>{{item.text}}</text><text wx:if="{{item.note}}" class="segment-note">{{item.note}}</text>
+            <text wx:if="{{item.label}}" class="segment-label">{{item.label}}</text>
+            <text wx:for="{{item.tokens}}" wx:key="index" wx:for-item="token" class="{{token.isWord ? 'tap-word' : ''}}" data-word="{{token.word}}" catchtap="lookupPassageWord">{{token.text}}</text>
+            <text wx:if="{{item.note}}" class="segment-note">{{item.note}}</text>
           </block>
           <view class="sentence-translation-inline" wx:if="{{selectedSentenceStart === item.start}}">
             {{sentenceTranslating ? '翻译中。' : selectedSentenceTranslation}}
@@ -147,6 +151,22 @@
         </view>
         <view class="empty-inline" wx:if="{{!sentencePatternCards.length}}">{{loadingStudySection === 'patterns' || loadingStudySection === 'cards' ? '句型生成中，请稍等。' : '点击后生成句型。'}}</view>
       </view>
+    </view>
+
+    <view class="dictionary-mask" wx:if="{{dictionaryVisible}}" catchtap="closeDictionary"></view>
+    <view class="dictionary-sheet" wx:if="{{dictionaryVisible}}">
+      <view class="dictionary-head">
+        <view>
+          <view class="dictionary-word">{{dictionaryEntry.word || dictionaryWord}}</view>
+          <view class="dictionary-phonetic" wx:if="{{dictionaryEntry.phonetic}}">/{{dictionaryEntry.phonetic}}/</view>
+        </view>
+        <button class="dictionary-audio" loading="{{dictionaryLoading}}" bindtap="playDictionaryWord">发音</button>
+      </view>
+      <view class="dictionary-loading" wx:if="{{dictionaryLoading}}">查词中。</view>
+      <block wx:else>
+        <view class="dictionary-definition" wx:for="{{dictionaryEntry.definitions}}" wx:key="*this">· {{item}}</view>
+        <view class="dictionary-empty" wx:if="{{!dictionaryEntry.definitions || !dictionaryEntry.definitions.length}}">暂无释义。</view>
+      </block>
     </view>
   </block>
 

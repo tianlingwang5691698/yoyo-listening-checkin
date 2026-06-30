@@ -794,6 +794,90 @@
   overflow-wrap: anywhere;
 }
 
+.tap-word {
+  padding: 0 1rpx;
+  border-radius: 6rpx;
+}
+
+.tap-word:active {
+  background: rgba(46, 95, 168, 0.14);
+  color: var(--accent-deep);
+}
+
+.dictionary-mask {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 40;
+  background: rgba(20, 24, 31, 0.24);
+}
+
+.dictionary-sheet {
+  position: fixed;
+  left: 24rpx;
+  right: 24rpx;
+  bottom: calc(24rpx + env(safe-area-inset-bottom));
+  z-index: 41;
+  padding: 26rpx;
+  border-radius: 28rpx;
+  background: #ffffff;
+  box-shadow: 0 18rpx 60rpx rgba(28, 36, 52, 0.18);
+}
+
+.dictionary-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20rpx;
+}
+
+.dictionary-word {
+  color: var(--text-strong);
+  font-size: 40rpx;
+  line-height: 1.2;
+  font-weight: var(--font-section-heading-weight);
+}
+
+.dictionary-phonetic {
+  margin-top: 6rpx;
+  color: var(--text-muted);
+  font-size: 26rpx;
+}
+
+.dictionary-audio {
+  flex-shrink: 0;
+  min-width: 112rpx;
+  height: 56rpx;
+  margin: 0;
+  padding: 0 20rpx;
+  border-radius: 999rpx;
+  background: var(--accent-soft);
+  color: var(--accent-deep);
+  font-size: 24rpx;
+  line-height: 56rpx;
+  font-weight: var(--font-title-weight);
+}
+
+.dictionary-audio::after {
+  border: 0;
+}
+
+.dictionary-loading,
+.dictionary-empty,
+.dictionary-definition {
+  margin-top: 16rpx;
+  color: var(--text-main);
+  font-size: 28rpx;
+  line-height: 1.55;
+}
+
+.dictionary-loading,
+.dictionary-empty {
+  color: var(--text-muted);
+}
+
 .review-label {
   color: var(--text-main);
   font-size: var(--font-body-size);

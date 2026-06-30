@@ -491,6 +491,18 @@ async function synthesizeReadingAudio(options) {
   return result;
 }
 
+async function lookupWord(word) {
+  return callCloud('lookupWord', { word }, {
+    word: '',
+    wordLower: '',
+    phonetic: '',
+    definitions: [],
+    audioUrl: '',
+    audioFileId: '',
+    audioCloudPath: ''
+  }, { useCache: false });
+}
+
 async function submitReadingAttempt(options) {
   return callCloud('submitReadingAttempt', Object.assign({}, options || {}), {
     passage: null,
@@ -633,6 +645,7 @@ module.exports = {
   getReadingPassage,
   getReadingStudyPack,
   synthesizeReadingAudio,
+  lookupWord,
   submitReadingAttempt,
   submitWritingAttempt,
   getWritingAttempts,
