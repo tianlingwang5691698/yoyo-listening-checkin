@@ -386,6 +386,7 @@ if (!taskService.__autoCheckinAfterListeningPatch) {
 
 const actionMap = {
   bootstrap: identityService.bootstrap,
+  getMaterialIndex: catalogService.getMaterialIndex,
   getDashboard: dashboardService.getDashboard,
   getLevelOverview: levelService.getLevelOverview,
   getTaskDetail: taskService.getTaskDetail,
@@ -430,6 +431,7 @@ const actionMap = {
 
 const MONITORED_ACTIONS = new Set([
   'getDashboard',
+  'getMaterialIndex',
   'getTaskDetail',
   'getTaskTranscript',
   'markTaskListened',

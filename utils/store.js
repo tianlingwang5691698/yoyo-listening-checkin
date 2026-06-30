@@ -289,6 +289,14 @@ async function getDashboard(options, onRefresh) {
   return callCloud('getDashboard', Object.assign({}, options || {}), contracts.createDashboardDefaults(), { onRefresh });
 }
 
+async function getMaterialIndex(onRefresh) {
+  return callCloud('getMaterialIndex', {}, {
+    writingEm1: [],
+    writingEm2: [],
+    listeningEm2: []
+  }, { onRefresh, useCache: false });
+}
+
 async function getLevelOverview(options, onRefresh) {
   return callCloud('getLevelOverview', Object.assign({}, options || {}), {
     user: {},
@@ -603,6 +611,7 @@ async function updateChildProfile(nickname) {
 
 module.exports = {
   ensureState,
+  getMaterialIndex,
   getDashboard,
   getHeatmap,
   getMonthHeatmap,

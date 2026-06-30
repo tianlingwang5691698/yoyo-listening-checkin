@@ -1,10 +1,9 @@
 const page = require('../../../utils/page');
 const store = require('../../../utils/store');
 const completed = require('../../../utils/completed');
-const materialIndex = require('../../../data/material-index');
 
-function findPrompt(promptId) {
-  const all = [].concat(materialIndex.writingEm2 || [], materialIndex.writingEm1 || []);
+function findPrompt(materialIndex, promptId) {
+  const all = [].concat((materialIndex || {}).writingEm2 || [], (materialIndex || {}).writingEm1 || []);
   return all.find((item) => item && item._id === promptId) || null;
 }
 
@@ -45,7 +44,7 @@ Page({
     review: null,
     errorText: ''
   }),
-  onLoad(options) {
+  async onLoad(options) {
     const promptId = decodeURIComponent((options && options.id) || '');
     let prompt = null;
     try {
@@ -54,7 +53,8 @@ Page({
       prompt = null;
     }
     if (!prompt || (promptId && prompt._id !== promptId)) {
-      prompt = findPrompt(promptId);
+      const materialIndex = await store.getMaterialIndex();
+      prompt = findPrompt(materialIndex, promptId);
     }
     this.setData({ prompt });
   },

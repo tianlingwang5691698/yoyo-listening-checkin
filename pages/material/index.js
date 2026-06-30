@@ -1,28 +1,30 @@
 const page = require('../../utils/page');
-const materialIndex = require('../../data/material-index');
+const store = require('../../utils/store');
 
-const MATERIALS = {
-  writing: {
-    title: '写作',
-    eyebrow: '英语写作',
-    copy: '按学段和模考类型选择作文题。',
-    itemUnit: '题',
-    exams: [
-      { examId: 'em2', exam: '二模', items: materialIndex.writingEm2 || [] },
-      { examId: 'em1', exam: '一模', items: materialIndex.writingEm1 || [] }
-    ]
-  },
-  listening: {
-    title: '听力',
-    eyebrow: '英语听力',
-    copy: '按学段和模考类型选择听力音频。',
-    itemUnit: '套',
-    exams: [
-      { examId: 'em2', exam: '二模', items: materialIndex.listeningEm2 || [] },
-      { examId: 'em1', exam: '一模', items: [] }
-    ]
-  }
-};
+function buildMaterials(materialIndex) {
+  return {
+    writing: {
+      title: '写作',
+      eyebrow: '英语写作',
+      copy: '按学段和模考类型选择作文题。',
+      itemUnit: '题',
+      exams: [
+        { examId: 'em2', exam: '二模', items: materialIndex.writingEm2 || [] },
+        { examId: 'em1', exam: '一模', items: materialIndex.writingEm1 || [] }
+      ]
+    },
+    listening: {
+      title: '听力',
+      eyebrow: '英语听力',
+      copy: '按学段和模考类型选择听力音频。',
+      itemUnit: '套',
+      exams: [
+        { examId: 'em2', exam: '二模', items: materialIndex.listeningEm2 || [] },
+        { examId: 'em1', exam: '一模', items: [] }
+      ]
+    }
+  };
+}
 
 function groupByDistrict(items) {
   const map = {};
@@ -83,11 +85,13 @@ Page({
     selectedDistrict: '',
     selectedDistrictNode: null,
     items: [],
-    expandedItemId: ''
+    expandedItemId: '',
+    loading: true
   }),
-  onLoad(options) {
+  async onLoad(options) {
     const moduleId = options && options.module === 'listening' ? 'listening' : 'writing';
-    const config = MATERIALS[moduleId];
+    const materialIndex = await store.getMaterialIndex();
+    const config = buildMaterials(materialIndex)[moduleId];
     this.setData({
       moduleId,
       title: config.title,
@@ -95,7 +99,8 @@ Page({
       copy: config.copy,
       itemUnit: config.itemUnit,
       showCefrEntry: moduleId === 'listening',
-      stages: buildStages(config)
+      stages: buildStages(config),
+      loading: false
     });
   },
   onShow() {
