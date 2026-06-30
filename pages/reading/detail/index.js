@@ -783,7 +783,9 @@ Page({
     reviewSummary: '',
     submitted: false,
     showReviewDetails: false,
-    hasScore: false
+    hasScore: false,
+    speakingWord: '',
+    audioStatusText: ''
   }),
   async onLoad(options) {
     page.syncTheme(this);
@@ -1054,11 +1056,18 @@ Page({
     const card = (this.data.wordCards || []).find((item) => item.word === word) || {};
     const text = word || card.text || '';
     if (!text || this._readingAudioLoading) return;
+    this.setData({
+      speakingWord: text,
+      audioStatusText: '准备发音'
+    });
+    if (wx.vibrateShort) {
+      wx.vibrateShort({ type: 'light' });
+    }
     try {
       let url = card.audioUrl || (this._wordAudioUrls && this._wordAudioUrls[text]);
       if (!url) {
         this._readingAudioLoading = true;
-        wx.showToast({ title: '发音生成中', icon: 'none' });
+        this.setData({ audioStatusText: '生成发音中' });
         const result = await store.synthesizeReadingAudio({ text });
         url = result && result.audioUrl ? result.audioUrl : '';
         if (!url) {
@@ -1076,17 +1085,25 @@ Page({
       if (!this.readingAudioContext) {
         this.readingAudioContext = wx.createInnerAudioContext();
         this.readingAudioContext.obeyMuteSwitch = false;
+        this.readingAudioContext.onPlay(() => {
+          this.setData({ audioStatusText: '播放中' });
+        });
+        this.readingAudioContext.onEnded(() => {
+          this.setData({ speakingWord: '', audioStatusText: '' });
+        });
         this.readingAudioContext.onError((error) => {
-          wx.showToast({ title: '发音播放失败', icon: 'none' });
+          this.setData({ audioStatusText: '播放失败' });
+          wx.showToast({ title: '播放失败，稍后再试', icon: 'none' });
           console.warn('reading-word-audio-error', error);
         });
       }
       this.readingAudioContext.stop();
       this.readingAudioContext.src = url;
-      wx.showToast({ title: '播放中', icon: 'none', duration: 600 });
+      this.setData({ audioStatusText: '播放中' });
       this.readingAudioContext.play();
     } catch (error) {
-      wx.showToast({ title: error.message || '朗读失败', icon: 'none' });
+      this.setData({ audioStatusText: '发音失败' });
+      wx.showToast({ title: '发音失败，稍后重试', icon: 'none' });
     } finally {
       this._readingAudioLoading = false;
     }

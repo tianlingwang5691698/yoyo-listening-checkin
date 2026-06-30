@@ -231,6 +231,55 @@ function normalizeText(value) {
   return String(value || '').replace(/\s+/g, ' ').trim();
 }
 
+function fetchAudioBuffer(url) {
+  return new Promise((resolve, reject) => {
+    const request = https.get(url, (response) => {
+      if (response.statusCode !== 200) {
+        response.resume();
+        reject(new Error(`audio-http-${response.statusCode || 0}`));
+        return;
+      }
+      const chunks = [];
+      response.on('data', (chunk) => chunks.push(chunk));
+      response.on('end', () => {
+        const buffer = Buffer.concat(chunks);
+        if (buffer.length < 800) {
+          reject(new Error('audio-too-small'));
+          return;
+        }
+        resolve(buffer);
+      });
+    }).on('error', reject);
+    request.setTimeout(5000, () => {
+      request.destroy(new Error('audio-timeout'));
+    });
+  });
+}
+
+function isSingleWord(text) {
+  return /^[A-Za-z][A-Za-z'-]{0,40}$/.test(String(text || '').trim());
+}
+
+async function synthesizeWordAudioFast(text, cloudPath) {
+  if (!isSingleWord(text)) {
+    return null;
+  }
+  const encoded = encodeURIComponent(text);
+  const urls = [
+    `https://dict.youdao.com/dictvoice?audio=${encoded}&type=2`,
+    `https://dict.youdao.com/dictvoice?audio=${encoded}&type=1`
+  ];
+  for (let index = 0; index < urls.length; index += 1) {
+    try {
+      const buffer = await fetchAudioBuffer(urls[index]);
+      return storageAdapter.uploadCloudFileBuffer(cloudPath, buffer);
+    } catch (error) {
+      // Try the next dictionary voice.
+    }
+  }
+  return null;
+}
+
 function postJson(url, apiKey, body, timeoutMs) {
   return new Promise((resolve, reject) => {
     let parsed;
@@ -1243,7 +1292,10 @@ async function synthesizeReadingAudio(event) {
   ].join('/');
   let audioFile = null;
   try {
-    audioFile = await speakingEngine.synthesizeFeedbackAudio(text, cloudPath);
+    audioFile = await synthesizeWordAudioFast(text, cloudPath);
+    if (!audioFile) {
+      audioFile = await speakingEngine.synthesizeFeedbackAudio(text, cloudPath);
+    }
   } catch (error) {
     throw new Error(`reading-audio-tts-failed:${error.message || String(error)}`);
   }

@@ -98,12 +98,14 @@
       <view class="card-list" wx:if="{{activeReviewTab === 'vocabulary'}}">
         <view class="word-card" wx:for="{{wordCards}}" wx:key="word">
           <view class="word-head">
-            <view class="word-pronounce" data-word="{{item.word}}" bindtap="speakWord">
+            <view class="word-pronounce {{speakingWord === item.word ? 'is-speaking' : ''}}" data-word="{{item.word}}" bindtap="speakWord">
               <view class="card-title-line">
                 <text class="card-index">{{item.groupIndex}}</text>
                 <text class="word-text">{{item.word}}</text>
+                <text class="sound-wave" wx:if="{{speakingWord === item.word}}">♪</text>
               </view>
               <text class="phonetic" wx:if="{{item.phonetic}}">{{item.phonetic}}</text>
+              <text class="audio-status" wx:if="{{speakingWord === item.word && audioStatusText}}">{{audioStatusText}}</text>
             </view>
             <view class="word-actions">
               <button class="mini-action strong" data-word="{{item.word}}" bindtap="toggleWordUnfamiliar">{{unfamiliarMap[item.flashcardKey] ? '已加入' : '不熟'}}</button>

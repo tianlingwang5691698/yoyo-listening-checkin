@@ -655,6 +655,15 @@
 .word-pronounce {
   flex: 1;
   min-width: 0;
+  border-radius: 18rpx;
+  transition: background-color 0.16s ease, transform 0.16s ease;
+}
+
+.word-pronounce.is-speaking {
+  padding: 8rpx 10rpx;
+  margin: -8rpx -10rpx;
+  background: rgba(46, 95, 168, 0.08);
+  transform: scale(0.99);
 }
 
 .card-title-line {
@@ -686,6 +695,46 @@
 
 .word-pronounce:active {
   opacity: 0.66;
+}
+
+.sound-wave {
+  flex-shrink: 0;
+  min-width: 34rpx;
+  height: 34rpx;
+  border-radius: 999rpx;
+  background: var(--accent-deep);
+  color: #fff;
+  font-size: 22rpx;
+  line-height: 34rpx;
+  text-align: center;
+  animation: readingSoundPulse 0.72s ease-in-out infinite;
+}
+
+.audio-status {
+  display: inline-flex;
+  margin-top: 8rpx;
+  padding: 4rpx 12rpx;
+  border-radius: 999rpx;
+  background: #ffffff;
+  color: var(--accent-deep);
+  font-size: 22rpx;
+  line-height: 1.4;
+  font-weight: var(--font-title-weight);
+}
+
+@keyframes readingSoundPulse {
+  0% {
+    opacity: 0.55;
+    transform: scale(0.88);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+  100% {
+    opacity: 0.55;
+    transform: scale(0.88);
+  }
 }
 
 .word-actions {
