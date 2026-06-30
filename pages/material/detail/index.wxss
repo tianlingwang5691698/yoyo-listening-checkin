@@ -5,11 +5,13 @@
 
 .detail-hero,
 .audio-card,
+.study-card,
 .question-card {
   padding: 30rpx 28rpx;
 }
 
 .audio-card,
+.study-card,
 .question-card {
   margin-top: 24rpx;
 }
@@ -18,6 +20,10 @@
 .detail-copy,
 .question-label,
 .question-state,
+.empty-line,
+.study-error,
+.audio-lock-tip,
+.study-done,
 .audio-error {
   color: var(--text-muted);
   font-size: var(--font-caption-size);
@@ -48,6 +54,102 @@
   background: var(--accent-deep);
   color: #fff;
   font-size: var(--font-body-size);
+}
+
+.audio-lock-tip {
+  margin-top: 12rpx;
+}
+
+.mini-button {
+  margin: 0;
+  min-width: 120rpx;
+  min-height: 56rpx;
+  border-radius: var(--radius-pill);
+  background: var(--accent-soft);
+  color: var(--accent-deep);
+  font-size: var(--font-caption-size);
+}
+
+.transcript-box {
+  margin-top: 18rpx;
+  max-height: 240rpx;
+  padding: 20rpx;
+  border-radius: var(--radius-md);
+  background: var(--surface-subtle);
+  color: var(--text-main);
+  font-size: var(--font-body-size);
+  line-height: 1.55;
+  overflow: auto;
+}
+
+.empty-line,
+.study-error {
+  margin-top: 14rpx;
+}
+
+.study-tabs {
+  margin-top: 18rpx;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12rpx;
+}
+
+.study-tab {
+  min-height: 60rpx;
+  border-radius: var(--radius-md);
+  background: var(--surface-subtle);
+  color: var(--text-main);
+  font-size: var(--font-caption-size);
+}
+
+.study-tab.is-active {
+  background: var(--accent-deep);
+  color: #fff;
+}
+
+.study-complete-button {
+  margin-top: 18rpx;
+  min-height: 72rpx;
+  border-radius: var(--radius-pill);
+  background: var(--accent-deep);
+  color: #fff;
+  font-size: var(--font-body-size);
+}
+
+.study-done {
+  margin-top: 16rpx;
+  color: var(--accent-deep);
+}
+
+.study-list {
+  margin-top: 16rpx;
+}
+
+.study-item {
+  margin-top: 12rpx;
+  padding: 18rpx;
+  border-radius: var(--radius-md);
+  background: var(--surface-subtle);
+}
+
+.study-title {
+  color: var(--text-strong);
+  font-size: var(--font-body-size);
+  font-weight: var(--font-title-weight);
+}
+
+.study-meaning,
+.study-example,
+.study-example-meaning {
+  margin-top: 8rpx;
+  color: var(--text-main);
+  font-size: var(--font-caption-size);
+  line-height: 1.45;
+}
+
+.study-example,
+.study-example-meaning {
+  color: var(--text-muted);
 }
 
 .question-top {

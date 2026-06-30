@@ -81,7 +81,7 @@
     <view class="section-title type-section-title">阅读/语法/写作</view>
     <block wx:if="{{report.completionItems.length}}">
       <block wx:for="{{report.completionItems}}" wx:key="key">
-        <view class="study-record-row" data-key="{{item.key}}" bindtap="toggleCompletionDetail">
+        <view class="study-record-row">
           <view class="row-between recording-head">
             <view>
               <view class="detail-title">{{item.typeLabel}} · {{item.title}}</view>
@@ -90,11 +90,19 @@
             <view class="recording-score">{{item.scoreText || item.progressText}}</view>
           </view>
           <view class="recording-meta" wx:if="{{item.correctText}}">答题：{{item.correctText}}</view>
-          <view class="detail-copy">{{item.expanded ? '收起详情' : '点开查看原题和分析'}}</view>
+          <button class="detail-toggle" data-key="{{item.key}}" catchtap="toggleCompletionDetail">{{item.expanded ? '收起详情' : '查看原题和分析'}}</button>
           <block wx:if="{{item.expanded}}">
             <view class="source-passage" wx:if="{{item.passage && item.passage.passage}}">
               <view class="question-review-title">原文</view>
               <view class="recording-text">{{item.passage.passage}}</view>
+            </view>
+            <view class="source-passage" wx:if="{{item.writingPrompt && item.writingPrompt.prompt}}">
+              <view class="question-review-title">作文题目</view>
+              <view class="recording-text">{{item.writingPrompt.prompt}}</view>
+            </view>
+            <view class="source-passage" wx:if="{{item.essay}}">
+              <view class="question-review-title">学生作文</view>
+              <view class="recording-text">{{item.essay}}</view>
             </view>
             <view class="recording-text" wx:if="{{item.reviewSummary}}">分析：{{item.reviewSummary}}</view>
             <view class="recording-text" wx:if="{{item.reviewContent}}">内容：{{item.reviewContent}}</view>
@@ -108,14 +116,17 @@
                 <view class="question-review-title">第 {{question.number}} 题 · {{question.isCorrect ? '正确' : '订正'}} · 答案 {{question.answer}}</view>
                 <view class="recording-text">{{question.prompt}}</view>
                 <view class="recording-text" wx:for="{{question.optionsList}}" wx:key="key" wx:for-item="option">{{option.key}}. {{option.text}}</view>
-                <view class="recording-text">孩子选择：{{question.selectedAnswer || '未记录'}}</view>
+                <view class="recording-text">孩子选择：{{question.selectedAnswer || '旧记录未保存选择'}}</view>
                 <view class="recording-text" wx:if="{{question.explanation && question.explanation.explanation}}">分析：{{question.explanation.explanation}}</view>
                 <view class="recording-text" wx:if="{{question.explanation && question.explanation.elimination}}">{{question.explanation.elimination}}</view>
               </view>
             </block>
-            <block wx:if="{{item.questionResults.length}}">
-              <view class="question-review" wx:for="{{item.questionResults}}" wx:key="key" wx:for-item="question">
+            <block wx:if="{{item.readingQuestions.length}}">
+              <view class="question-review" wx:for="{{item.readingQuestions}}" wx:key="key" wx:for-item="question">
                 <view class="question-review-title">第 {{question.number}} 题 · {{question.correct ? '正确' : '订正'}} · 答案 {{question.answer}}</view>
+                <view class="recording-text" wx:if="{{question.prompt}}">{{question.prompt}}</view>
+                <view class="recording-text" wx:for="{{question.optionsList}}" wx:key="key" wx:for-item="option">{{option.key}}. {{option.text}}</view>
+                <view class="recording-text" wx:if="{{question.selectedAnswer}}">孩子选择：{{question.selectedAnswer}}</view>
                 <view class="recording-text" wx:if="{{question.analysis}}">{{question.analysis}}</view>
                 <view class="recording-text" wx:if="{{question.answerSentence && question.answerSentence.text}}">定位句：{{question.answerSentence.text}}</view>
                 <view class="recording-text" wx:if="{{question.answerSentence && question.answerSentence.translation}}">译文：{{question.answerSentence.translation}}</view>

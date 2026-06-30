@@ -1,4 +1,5 @@
 const page = require('../../../utils/page');
+const store = require('../../../utils/store');
 
 function buildQuestions(item) {
   return (item.questions || []).map((question) => ({
@@ -18,6 +19,10 @@ function buildQuestions(item) {
   }));
 }
 
+function studyDoneKey(item) {
+  return `listeningStudyDoneV1:${item && (item._id || item.id || '')}`;
+}
+
 Page({
   data: page.createCloudPageData({
     item: null,
@@ -27,13 +32,30 @@ Page({
     audioError: '',
     isPlaying: false,
     submitted: false,
-    correctCount: 0
+    correctCount: 0,
+    studyPack: null,
+    studyLoading: false,
+    studyError: '',
+    activeStudyTab: 'vocabulary',
+    studyTabs: [
+      { key: 'vocabulary', label: '生词' },
+      { key: 'phrases', label: '短语' },
+      { key: 'patterns', label: '句型' }
+    ],
+    studyCompleted: false,
+    audioLocked: false,
+    vocabularyCards: [],
+    phraseCards: [],
+    sentencePatternCards: []
   }),
   onLoad() {
     const item = wx.getStorageSync('currentListeningSetV1') || null;
+    const studyCompleted = item ? !!wx.getStorageSync(studyDoneKey(item)) : false;
     this.setData({
       item,
-      questions: item ? buildQuestions(item) : []
+      questions: item ? buildQuestions(item) : [],
+      studyCompleted,
+      audioLocked: !!(item && item.transcript && !studyCompleted)
     });
     if (item && item.audioCloudPath) {
       this.prepareAudio(item.audioCloudPath);
@@ -94,6 +116,10 @@ Page({
     });
   },
   toggleAudio() {
+    if (this.data.audioLocked) {
+      this.setData({ studyError: '请先学完文本学习包，再听音频。' });
+      return;
+    }
     if (!this.audio) return;
     if (this.data.isPlaying) {
       this.audio.pause();
@@ -135,5 +161,49 @@ Page({
       return Object.assign({}, question, { checked: true, correct });
     });
     this.setData({ questions, submitted: true, correctCount });
+  },
+  completeStudy() {
+    const item = this.data.item;
+    if (!item || !this.data.studyPack) return;
+    wx.setStorageSync(studyDoneKey(item), true);
+    this.setData({
+      studyCompleted: true,
+      audioLocked: false,
+      studyError: ''
+    });
+  },
+  selectStudyTab(event) {
+    this.setData({ activeStudyTab: event.currentTarget.dataset.tab || 'vocabulary' });
+  },
+  applyStudyPack(studyPack) {
+    const pack = studyPack || {};
+    this.setData({
+      studyPack: pack,
+      vocabularyCards: pack.vocabularyCards || [],
+      phraseCards: pack.phraseCards || [],
+      sentencePatternCards: pack.sentencePatternCards || []
+    });
+  },
+  async loadStudyPack() {
+    const item = this.data.item;
+    if (!item || this.data.studyLoading) return;
+    if (!String(item.transcript || '').trim()) {
+      this.setData({ studyError: '这套听力暂无文本，暂不能生成。' });
+      return;
+    }
+    this.setData({ studyLoading: true, studyError: '' });
+    const result = await store.getListeningStudyPack(item);
+    const studyPack = result && result.studyPack;
+    const hasCards = studyPack
+      && ((studyPack.vocabularyCards || []).length || (studyPack.phraseCards || []).length || (studyPack.sentencePatternCards || []).length);
+    if (hasCards) {
+      this.applyStudyPack(studyPack);
+      this.setData({ studyLoading: false });
+      return;
+    }
+    this.setData({
+      studyLoading: false,
+      studyError: '生成失败，稍后重试。'
+    });
   }
 });

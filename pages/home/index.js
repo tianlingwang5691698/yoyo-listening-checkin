@@ -112,6 +112,12 @@ function findNextListeningTask(groupedDailyTasks) {
   return null;
 }
 
+function getCurrentPhaseKey(planPhaseLabel) {
+  if (planPhaseLabel === '阶段二') return 'round-2';
+  if (planPhaseLabel === '阶段三') return 'round-3';
+  return 'round-1';
+}
+
 function buildReadingSummary(passage, completed) {
   if (!passage) return '6-9 年级阅读';
   if (completed) return '今日已完成';
@@ -409,12 +415,9 @@ Page({
     });
   },
   openCompleted() {
-    if (this.data.listeningTaskStatus && this.data.listeningTaskStatus.pending && this.data.nextListeningTask && this.data.nextListeningTask.category) {
-      const task = this.data.nextListeningTask;
+    if (this.data.listeningTaskStatus && this.data.listeningTaskStatus.pending) {
       wx.navigateTo({
-        url: task.taskId
-          ? `/pages/lesson/index?category=${task.category}&taskId=${task.taskId}`
-          : `/pages/lesson/index?category=${task.category}`
+        url: `/pages/level-stage/index?levelId=A1&phase=${getCurrentPhaseKey(this.data.planPhaseLabel)}`
       });
       return;
     }

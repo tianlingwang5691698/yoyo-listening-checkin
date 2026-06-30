@@ -353,6 +353,7 @@ const identityService = require('./services/identity.service');
 const catalogService = require('./services/catalog.service');
 const speakingService = require('./services/speaking.service');
 const readingService = require('./services/reading.service');
+const listeningService = require('./services/listening.service');
 const grammarService = require('./services/grammar.service');
 const completionService = require('./services/completion.service');
 const writingService = require('./services/writing.service');
@@ -414,6 +415,7 @@ const actionMap = {
   getReadingHome: readingService.getReadingHome,
   getReadingPassage: readingService.getReadingPassage,
   getReadingStudyPack: readingService.getReadingStudyPack,
+  getListeningStudyPack: listeningService.getListeningStudyPack,
   synthesizeReadingAudio: readingService.synthesizeReadingAudio,
   lookupWord: readingService.lookupWord,
   submitReadingAttempt: readingService.submitReadingAttempt,
@@ -452,6 +454,7 @@ const MONITORED_ACTIONS = new Set([
   'getReadingHome',
   'getReadingPassage',
   'getReadingStudyPack',
+  'getListeningStudyPack',
   'synthesizeReadingAudio',
   'lookupWord',
   'submitReadingAttempt',

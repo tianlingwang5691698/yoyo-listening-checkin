@@ -20,6 +20,7 @@ const READ_CACHE_CONFIG = {
   getReadingHome: { persist: true },
   getReadingPassage: { persist: true },
   getReadingStudyPack: { persist: true },
+  getListeningStudyPack: { persist: true },
   getGrammarHome: { persist: true },
   getGrammarWrongBook: { persist: false },
   getGrammarProgress: { persist: false },
@@ -334,6 +335,22 @@ async function getTaskTranscript(category, taskId, options, onRefresh) {
   }, { onRefresh });
 }
 
+async function getListeningStudyPack(item, onRefresh) {
+  const payload = {
+    listeningId: item && (item._id || item.id),
+    item
+  };
+  return callCloud('getListeningStudyPack', payload, {
+    listeningId: payload.listeningId || '',
+    studyPack: {
+      vocabularyCards: [],
+      phraseCards: [],
+      sentencePatternCards: [],
+      source: ''
+    }
+  }, { onRefresh });
+}
+
 async function getTempFileURL(fileId) {
   try {
     return await cloud.getTempFileURL(fileId);
@@ -636,6 +653,7 @@ module.exports = {
   getProfileData,
   getTaskDetail,
   getTaskTranscript,
+  getListeningStudyPack,
   getTempFileURL,
   markTaskListened,
   createSpeakingUploadUrl,

@@ -129,6 +129,23 @@
   background: var(--surface);
 }
 
+.detail-toggle {
+  width: 100%;
+  height: 64rpx;
+  margin: 16rpx 0 0;
+  padding: 0;
+  border-radius: 999rpx;
+  background: var(--accent-soft);
+  color: var(--accent-deep);
+  font-size: var(--font-caption-size);
+  line-height: 64rpx;
+  font-weight: var(--font-title-weight);
+}
+
+.detail-toggle::after {
+  border: none;
+}
+
 .question-review-title {
   font-size: var(--font-caption-size);
   font-weight: var(--font-title-weight);

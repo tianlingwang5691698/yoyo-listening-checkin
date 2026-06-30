@@ -114,6 +114,39 @@ function normalizeCompletionItem(item, index) {
   const reviewProblems = Array.isArray(review.problems) ? review.problems : [];
   const reviewSuggestions = Array.isArray(review.suggestions) ? review.suggestions : [];
   const grammarQuestions = Array.isArray(latestAttempt.questions) ? latestAttempt.questions : [];
+  const passage = latestAttempt.passage || null;
+  const readingAnalysisByNumber = (Array.isArray(review.analysis) ? review.analysis : []).reduce((map, analysis) => {
+    if (analysis && analysis.number !== undefined && analysis.number !== null) {
+      map[String(analysis.number)] = analysis;
+    }
+    return map;
+  }, {});
+  const readingResultByNumber = questionResults.reduce((map, result) => {
+    if (result && result.number !== undefined && result.number !== null) {
+      map[String(result.number)] = result;
+    }
+    return map;
+  }, {});
+  const passageQuestions = passage && Array.isArray(passage.questions) ? passage.questions : [];
+  const readingQuestions = (passageQuestions.length ? passageQuestions : questionResults).map((question, questionIndex) => {
+    const number = question.number || questionIndex + 1;
+    const result = readingResultByNumber[String(number)] || {};
+    const analysis = readingAnalysisByNumber[String(number)] || result || {};
+    return {
+      key: `${safeItem.id || safeItem.recordId || index}-reading-${number}`,
+      number,
+      prompt: question.prompt || result.prompt || '',
+      optionsList: Object.keys(question.options || {}).map((key) => ({
+        key,
+        text: question.options[key]
+      })),
+      selectedAnswer: result.selected || result.userAnswer || '',
+      answer: result.answer || question.answer || '',
+      correct: result.correct,
+      analysis: analysis.text || analysis.analysis || analysis.explanation || '',
+      answerSentence: analysis.answerSentence || null
+    };
+  });
   return Object.assign({}, safeItem, {
     key: safeItem.id || safeItem.recordId || `${safeItem.type || 'item'}-${index}`,
     typeLabel: getCompletionTypeLabel(safeItem.type),
@@ -132,7 +165,10 @@ function normalizeCompletionItem(item, index) {
     reviewSuggestions,
     reviewSuggestionsText: reviewSuggestions.join('；'),
     grammarCorrections: Array.isArray(review.grammarCorrections) ? review.grammarCorrections : [],
-    passage: latestAttempt.passage || null,
+    passage,
+    writingPrompt: latestAttempt.prompt || safeItem.prompt || null,
+    essay: latestAttempt.essay || '',
+    readingQuestions,
     grammarQuestions: grammarQuestions.map((question, questionIndex) => ({
       key: question._id || `${safeItem.id || index}-${questionIndex}`,
       number: question.number || questionIndex + 1,
@@ -176,6 +212,63 @@ async function hydrateReadingItems(items) {
     }
   }));
   return nextItems;
+}
+
+async function hydrateGrammarItems(items) {
+  const nextItems = await Promise.all((items || []).map(async (item) => {
+    if (item.type !== 'grammar' || (item.grammarQuestions && item.grammarQuestions.length) || !item.topicId) {
+      return item;
+    }
+    try {
+      const data = await store.getGrammarTopic(item.topicId);
+      const count = Number((item.latestAttempt && item.latestAttempt.answeredCount) || 3);
+      const questions = (data.questions || []).slice(0, count).map((question, index) => ({
+        _id: question._id || '',
+        number: question.number || index + 1,
+        prompt: question.prompt || '',
+        options: question.options || {},
+        selectedAnswer: '',
+        answer: question.answer || '',
+        isCorrect: false,
+        explanation: null
+      }));
+      return normalizeCompletionItem(Object.assign({}, item, {
+        latestAttempt: Object.assign({}, item.latestAttempt || {}, {
+          questions,
+          totalCount: data.questions ? data.questions.length : 0
+        })
+      }), 0);
+    } catch (error) {
+      return item;
+    }
+  }));
+  return nextItems;
+}
+
+function findWritingPrompt(materialIndex, promptId) {
+  const all = [].concat((materialIndex || {}).writingEm2 || [], (materialIndex || {}).writingEm1 || []);
+  return all.find((item) => item && item._id === promptId) || null;
+}
+
+async function hydrateWritingItems(items) {
+  const needsPrompt = (items || []).some((item) => item.type === 'writing' && !item.writingPrompt && item.targetId);
+  if (!needsPrompt) {
+    return items;
+  }
+  try {
+    const materialIndex = await store.getMaterialIndex();
+    return (items || []).map((item) => {
+      if (item.type !== 'writing' || item.writingPrompt || !item.targetId) {
+        return item;
+      }
+      const prompt = findWritingPrompt(materialIndex, item.targetId);
+      return normalizeCompletionItem(Object.assign({}, item, {
+        latestAttempt: Object.assign({}, item.latestAttempt || {}, { prompt })
+      }), 0);
+    });
+  } catch (error) {
+    return items;
+  }
 }
 
 function normalizeReport(report) {
@@ -279,7 +372,7 @@ Page({
         date: this.data.date,
         report: Object.assign({}, report, { completionItems })
       }));
-      hydrateReadingItems(completionItems).then((items) => {
+      hydrateReadingItems(completionItems).then(hydrateGrammarItems).then(hydrateWritingItems).then((items) => {
         this.setData({
           report: Object.assign({}, this.data.report, { completionItems: items })
         });
