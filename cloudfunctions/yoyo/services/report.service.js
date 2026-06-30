@@ -115,16 +115,18 @@ async function getParentDashboard(event) {
   const { ctx, today } = await study.prepareRequestContext(Object.assign({}, event, {
     action: 'getParentDashboard'
   }));
+  const days = Math.max(7, Math.min(Number((event && event.payload && event.payload.days) || 7), 30));
   const dashboard = await study.getDashboardData(ctx);
   const scope = study.getUserScope(ctx);
   const recentReports = [];
-  for (let i = 0; i < 7; i += 1) {
+  for (let i = 0; i < days; i += 1) {
     const date = study.addDays(today, -i);
     recentReports.push(await study.upsertDailyReport(scope, date));
   }
   return {
     user: ctx.user,
     currentUser: ctx.user,
+    currentMember: ctx.member,
     family: ctx.family,
     child: ctx.child,
     stats: dashboard.stats,

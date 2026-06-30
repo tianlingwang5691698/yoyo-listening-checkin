@@ -98,6 +98,23 @@ Page({
       });
     }
   },
+  async switchStudyRole(event) {
+    const role = event.currentTarget.dataset.role === 'student' ? 'student' : 'parent';
+    try {
+      const data = await store.setStudyRole(role);
+      this.applyProfileData(Object.assign({}, this.data, data));
+      wx.setStorageSync('lastStudyRole', role);
+      wx.showToast({
+        title: role === 'student' ? '已切到学生' : '已切到家长',
+        icon: 'none'
+      });
+    } catch (error) {
+      wx.showToast({
+        title: '切换失败',
+        icon: 'none'
+      });
+    }
+  },
   openParentPage() {
     wx.navigateTo({
       url: '/pages/parent/index'

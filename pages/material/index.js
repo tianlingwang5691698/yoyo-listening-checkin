@@ -89,7 +89,7 @@ Page({
     loading: true
   }),
   async onLoad(options) {
-    const moduleId = options && options.module === 'listening' ? 'listening' : 'writing';
+    const moduleId = options && options.module === 'writing' ? 'writing' : 'listening';
     const materialIndex = await store.getMaterialIndex();
     const config = buildMaterials(materialIndex)[moduleId];
     this.setData({

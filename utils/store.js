@@ -435,8 +435,12 @@ async function getDailyReportByDate(date, onRefresh) {
   }, { onRefresh, useCache: false });
 }
 
-async function getParentDashboard(onRefresh) {
-  return callCloud('getParentDashboard', {}, {
+async function getParentDashboard(options, onRefresh) {
+  if (typeof options === 'function') {
+    onRefresh = options;
+    options = {};
+  }
+  return callCloud('getParentDashboard', Object.assign({}, options || {}), {
     family: null,
     child: null,
     stats: contracts.createStatsDefaults(),

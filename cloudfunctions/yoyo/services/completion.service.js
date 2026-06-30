@@ -66,13 +66,19 @@ async function getStudyCompletions(event) {
     action: 'getStudyCompletions'
   }));
   const date = String(payload.date || today);
+  const days = Math.max(1, Math.min(Number(payload.days || 1), 90));
+  const command = dbAdapter.getCommand();
+  const dateFilter = days > 1
+    ? command.gte(study.addDays(date, 1 - days)).and(command.lte(date))
+    : date;
   const result = await dbAdapter.collection(COLLECTION).where({
     familyId: ctx.family.familyId,
     childId: ctx.child.childId,
-    date
-  }).limit(100).get();
+    date: dateFilter
+  }).orderBy('date', 'desc').limit(300).get();
   return {
     date,
+    days,
     items: (result && result.data ? result.data : []).map((item) => Object.assign({}, item, {
       id: item.recordId || item._id || ''
     }))

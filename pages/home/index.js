@@ -356,8 +356,16 @@ Page({
     });
   },
   openSpeaking() {
-    wx.switchTab({
-      url: '/pages/level/index'
+    if (this.data.identityConfirmVisible) {
+      wx.showToast({
+        title: '先选择身份',
+        icon: 'none'
+      });
+      return;
+    }
+    wx.showToast({
+      title: '口语练习准备中',
+      icon: 'none'
     });
   },
   openVocabulary() {

@@ -2,6 +2,49 @@
   background: var(--surface);
 }
 
+.parent-id {
+  margin-top: 12rpx;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: var(--font-caption-size);
+}
+
+.module-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16rpx;
+  margin-top: 18rpx;
+}
+
+.module-card {
+  min-height: 150rpx;
+  padding: 18rpx;
+  border-radius: 16rpx;
+  background: var(--surface-subtle);
+  box-sizing: border-box;
+}
+
+.module-count {
+  color: var(--text-main);
+  font-size: 38rpx;
+  line-height: 1.1;
+  font-weight: var(--font-section-heading-weight);
+}
+
+.module-label {
+  margin-top: 8rpx;
+  color: var(--text-main);
+  font-size: var(--font-control-size);
+  font-weight: var(--font-title-weight);
+}
+
+.module-copy {
+  margin-top: 8rpx;
+  color: var(--text-muted);
+  font-size: var(--font-caption-size);
+  line-height: 1.4;
+}
+
 .report-head {
   align-items: flex-start;
 }

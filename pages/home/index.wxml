@@ -22,10 +22,10 @@
     这台手机已切回家长模式
   </view>
 
-  <view class="mode-reminder" wx:if="{{identityConfirmVisible}}">
+  <view class="mode-reminder">
     <view class="mode-reminder-actions">
-      <button class="mode-reminder-action" data-role="parent" bindtap="confirmStudyIdentity">我是家长</button>
-      <button class="mode-reminder-action is-primary" data-role="student" bindtap="confirmStudyIdentity">我是学生</button>
+      <button class="mode-reminder-action {{studyRole === 'parent' ? 'is-primary' : ''}}" data-role="parent" bindtap="confirmStudyIdentity">我是家长</button>
+      <button class="mode-reminder-action {{studyRole === 'student' ? 'is-primary' : ''}}" data-role="student" bindtap="confirmStudyIdentity">我是学生</button>
     </view>
   </view>
 
