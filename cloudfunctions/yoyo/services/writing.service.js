@@ -1,6 +1,7 @@
 const https = require('https');
 const study = require('../facades/study.facade');
 const dbAdapter = require('../adapters/db.adapter');
+const completion = require('./completion.service');
 
 const COLLECTION = 'writingAttempts';
 
@@ -104,6 +105,31 @@ function normalizeReview(data, prompt) {
   };
 }
 
+function buildCompletionPayload(prompt, attempt, progressText) {
+  const safePrompt = prompt || {};
+  const safeAttempt = attempt || {};
+  return {
+    type: 'writing',
+    targetId: safeAttempt.promptId || safePrompt._id || '',
+    topicId: safeAttempt.promptId || safePrompt._id || '',
+    title: safeAttempt.title || safePrompt.title || '写作',
+    meta: [
+      safePrompt.year || (safeAttempt.promptMeta && safeAttempt.promptMeta.year),
+      safePrompt.district || (safeAttempt.promptMeta && safeAttempt.promptMeta.district),
+      safePrompt.examType || (safeAttempt.promptMeta && safeAttempt.promptMeta.examType)
+    ].filter(Boolean).join(' · '),
+    progressText,
+    latestAttempt: safeAttempt,
+    prompt: safePrompt
+  };
+}
+
+async function saveWritingCompletion(ctx, date, prompt, attempt, progressText) {
+  try {
+    await completion.upsertStudyCompletion(ctx, date, buildCompletionPayload(prompt, attempt, progressText));
+  } catch (error) {}
+}
+
 async function gradeWriting(prompt, essay) {
   const config = getModelConfig();
   if (!config.endpoint || !config.apiKey) {
@@ -192,13 +218,21 @@ async function submitWritingAttempt(event) {
     })
   });
   attemptId = created && created._id ? created._id : '';
+  const savedAttempt = Object.assign({}, attempt, { attemptId, _id: attemptId });
+  await saveWritingCompletion(
+    ctx,
+    today,
+    Object.assign({}, prompt, { _id: promptId }),
+    savedAttempt,
+    '批改中'
+  );
   return {
     prompt: {
       _id: promptId,
       title: prompt.title || '',
       prompt: prompt.prompt || ''
     },
-    attempt: Object.assign({}, attempt, { attemptId, _id: attemptId }),
+    attempt: savedAttempt,
     review: null,
     pending: true
   };
@@ -207,7 +241,7 @@ async function submitWritingAttempt(event) {
 async function gradeWritingAttempt(event) {
   const payload = (event && event.payload) || {};
   const attemptId = String(payload.attemptId || '').trim();
-  const { ctx } = await study.prepareRequestContext(Object.assign({}, event, {
+  const { ctx, today } = await study.prepareRequestContext(Object.assign({}, event, {
     action: 'gradeWritingAttempt'
   }));
   if (!attemptId) {
@@ -218,9 +252,6 @@ async function gradeWritingAttempt(event) {
   if (!attempt || attempt.familyId !== ctx.family.familyId || attempt.childId !== ctx.child.childId) {
     throw new Error('writing-attempt-not-found');
   }
-  if (attempt.status === 'graded' && attempt.review) {
-    return { attempt: formatAttempt(Object.assign({}, attempt, { _id: attemptId })), review: attempt.review, pending: false };
-  }
   const prompt = {
     _id: attempt.promptId || '',
     title: attempt.title || '',
@@ -228,6 +259,11 @@ async function gradeWritingAttempt(event) {
     minWords: attempt.promptMeta && attempt.promptMeta.minWords,
     score: attempt.totalScore || (attempt.promptMeta && attempt.promptMeta.score) || 20
   };
+  if (attempt.status === 'graded' && attempt.review) {
+    const formatted = formatAttempt(Object.assign({}, attempt, { _id: attemptId }));
+    await saveWritingCompletion(ctx, attempt.date || today, prompt, formatted, `${formatted.score}/${formatted.totalScore} 分`);
+    return { attempt: formatted, review: attempt.review, pending: false };
+  }
   const now = new Date().toISOString();
   try {
     await dbAdapter.collection(COLLECTION).doc(attemptId).update({
@@ -246,12 +282,19 @@ async function gradeWritingAttempt(event) {
       updatedAt: new Date().toISOString()
     };
     await dbAdapter.collection(COLLECTION).doc(attemptId).update({ data: patch });
+    const formatted = formatAttempt(Object.assign({}, attempt, patch, { _id: attemptId }));
+    await saveWritingCompletion(ctx, attempt.date || today, prompt, formatted, `${review.score}/${review.totalScore} 分`);
     return {
-      attempt: formatAttempt(Object.assign({}, attempt, patch, { _id: attemptId })),
+      attempt: formatted,
       review,
       pending: false
     };
   } catch (error) {
+    const failedAttempt = formatAttempt(Object.assign({}, attempt, {
+      _id: attemptId,
+      status: 'grading-failed',
+      gradeError: String(error && error.message || error || '')
+    }));
     await dbAdapter.collection(COLLECTION).doc(attemptId).update({
       data: {
         status: 'grading-failed',
@@ -259,6 +302,7 @@ async function gradeWritingAttempt(event) {
         updatedAt: new Date().toISOString()
       }
     });
+    await saveWritingCompletion(ctx, attempt.date || today, prompt, failedAttempt, '批改失败');
     throw error;
   }
 }

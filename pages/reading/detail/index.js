@@ -565,7 +565,6 @@ function recordReadingCompleted(passage, attempt) {
     latestAttempt: attempt || null
   };
   completed.addCompletedItem(item);
-  store.recordStudyCompletion(item);
 }
 
 function recordReadingStudyCompleted(passage, section, studyPack) {

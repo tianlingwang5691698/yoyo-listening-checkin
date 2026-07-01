@@ -2,6 +2,7 @@ const study = require('../facades/study.facade');
 const dbAdapter = require('../adapters/db.adapter');
 const storageAdapter = require('../adapters/storage.adapter');
 const flashcards = require('./flashcard.service');
+const completion = require('./completion.service');
 const samplePassages = require('../data/reading-passages.sample.json');
 const speakingEngine = require('../lib/speaking-engine');
 const crypto = require('crypto');
@@ -1367,13 +1368,7 @@ async function submitReadingAttempt(event) {
     throw new Error('reading-passage-not-found');
   }
   const grade = gradeAnswers(passage, payload.answers || {});
-  const studyPack = await getOrCreateStudyPack(passage);
-  await flashcards.upsertStudyPackFlashcards(ctx, today, {
-    sourceType: 'reading',
-    sourceId: passage._id,
-    title: passage.title || ''
-  }, studyPack);
-  const review = keepQuestionReviewOnly(buildReview(passage, grade, studyPack));
+  const review = keepQuestionReviewOnly(buildReview(passage, grade, null));
   const attempt = {
     passageId: passage._id,
     title: passage.title,
@@ -1401,6 +1396,19 @@ async function submitReadingAttempt(event) {
       attempt._id = created && created._id ? created._id : '';
     } catch (error) {
       attempt.saveWarning = 'readingAttempts 集合暂未写入，结果仅本次显示。';
+    }
+    try {
+      await completion.upsertStudyCompletion(ctx, today, {
+        type: 'reading',
+        targetId: passage._id,
+        passageId: passage._id,
+        title: passage.title || '阅读练习',
+        meta: passage.year ? `${passage.year} · ${passage.district || ''}` : '阅读',
+        progressText: `${grade.score}/${grade.totalScore} 分`,
+        latestAttempt: attempt
+      });
+    } catch (error) {
+      attempt.completionWarning = '完成记录暂未同步，稍后会在记录页刷新。';
     }
   } else {
     attempt.status = 'preview';

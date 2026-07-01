@@ -3,11 +3,7 @@ const dbAdapter = require('../adapters/db.adapter');
 
 const COLLECTION = 'studyCompletedItems';
 
-async function recordStudyCompletion(event) {
-  const payload = (event && event.payload) || {};
-  const { ctx, today } = await study.prepareRequestContext(Object.assign({}, event, {
-    action: 'recordStudyCompletion'
-  }));
+async function upsertStudyCompletion(ctx, today, payload) {
   if (study.normalizeStudyRole(ctx.member) !== 'student') {
     return { saved: false, reason: 'preview-role' };
   }
@@ -60,6 +56,14 @@ async function recordStudyCompletion(event) {
   return { saved: true, updated: false, item: record };
 }
 
+async function recordStudyCompletion(event) {
+  const payload = (event && event.payload) || {};
+  const { ctx, today } = await study.prepareRequestContext(Object.assign({}, event, {
+    action: 'recordStudyCompletion'
+  }));
+  return upsertStudyCompletion(ctx, today, payload);
+}
+
 async function getStudyCompletions(event) {
   const payload = (event && event.payload) || {};
   const { ctx, today } = await study.prepareRequestContext(Object.assign({}, event, {
@@ -86,6 +90,7 @@ async function getStudyCompletions(event) {
 }
 
 module.exports = {
+  upsertStudyCompletion,
   recordStudyCompletion,
   getStudyCompletions
 };

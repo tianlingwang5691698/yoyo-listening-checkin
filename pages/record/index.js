@@ -239,13 +239,15 @@ function buildWritingAttemptItem(item, index) {
   const attempt = item || {};
   const createdAt = attempt.createdAt || '';
   const prompt = attempt.prompt || null;
+  const pending = ['grading-pending', 'grading', 'score-pending'].includes(attempt.status);
+  const failed = attempt.status === 'grading-failed';
   return Object.assign({}, attempt, {
     key: attempt.attemptId || `${attempt.promptId || 'writing'}-${createdAt || index}`,
     prompt,
     promptText: attempt.promptText || attempt.promptTitle || (prompt && prompt.prompt) || '',
     dateLabel: attempt.date ? formatDateLabel(attempt.date) : '',
     timeText: formatClock(createdAt),
-    scoreText: `${Number(attempt.score || 0)} / ${Number(attempt.totalScore || 20)} 分`,
+    scoreText: pending ? '批改中' : (failed ? '批改失败' : `${Number(attempt.score || 0)} / ${Number(attempt.totalScore || 20)} 分`),
     expanded: false
   });
 }

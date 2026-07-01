@@ -562,6 +562,7 @@ Page({
   }),
   onUnload() {
     this.flushReviewQueue(true);
+    this.syncVocabularyCompletion(true);
     if (this.autoSpeakTimer) {
       clearTimeout(this.autoSpeakTimer);
       this.autoSpeakTimer = null;
@@ -1149,6 +1150,44 @@ Page({
       this.reviewQueueFlushing = false;
     });
   },
+  recordVocabularyResult(result, card) {
+    if (!card || card.demo) return;
+    const stats = this.vocabularySessionStats || {
+      reviewed: 0,
+      remembered: 0,
+      easy: 0,
+      unfamiliar: 0
+    };
+    stats.reviewed += 1;
+    if (result === 'unfamiliar') {
+      stats.unfamiliar += 1;
+    } else if (result === 'easy') {
+      stats.easy += 1;
+    } else {
+      stats.remembered += 1;
+    }
+    this.vocabularySessionStats = stats;
+    if (stats.reviewed % 5 === 0) {
+      this.syncVocabularyCompletion(false);
+    }
+  },
+  syncVocabularyCompletion(force) {
+    const stats = this.vocabularySessionStats || {};
+    if (!stats.reviewed || (!force && stats.reviewed % 5 !== 0)) return;
+    const sourceTitle = this.data.activeSourceTitle || '词汇复习';
+    store.recordStudyCompletion({
+      type: 'vocabulary',
+      targetId: this.data.activeSourceId || 'daily-vocabulary',
+      title: sourceTitle === '我的词库' ? '词汇复习' : sourceTitle,
+      meta: '词汇',
+      progressText: `复习 ${stats.reviewed} 张 · 不熟 ${stats.unfamiliar || 0} 张`,
+      latestAttempt: Object.assign({}, stats, {
+        sourceId: this.data.activeSourceId || '',
+        sourceTitle,
+        date: this.data.today || ''
+      })
+    }).catch(() => null);
+  },
   advanceVisibleCards(shouldPersist) {
     const cards = this.data.cards.slice();
     cards.splice(this.data.currentIndex, 1);
@@ -1214,9 +1253,11 @@ Page({
       audioPlaying: false,
       audioCompleted: isAudioCompletedForCard(current)
     });
+    this.vocabularySessionStats = null;
     this.scheduleAutoSpeakCurrent();
   },
   exitReview() {
+    this.syncVocabularyCompletion(true);
     this.setData({ mode: 'library' });
   },
   async markRemembered() {
@@ -1258,6 +1299,7 @@ Page({
     });
     if (nextResult === 'unfamiliar') {
       if (!current.demo) {
+        this.recordVocabularyResult(nextResult, current);
         this.updateCurrentReviewState(current, nextResult);
         this.syncReviewToCloud(current, nextResult);
       }
@@ -1270,6 +1312,7 @@ Page({
     }
     this.updateCurrentReviewState(current, nextResult);
     this.syncReviewToCloud(current, nextResult);
+    this.recordVocabularyResult(nextResult, current);
     this.advanceVisibleCards(!!this.data.activeSourceId);
   }
 });

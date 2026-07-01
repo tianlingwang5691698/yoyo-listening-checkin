@@ -124,7 +124,6 @@ Page({
           prompt
         };
         completed.addCompletedItem(item);
-        store.recordStudyCompletion(item);
       }).catch(() => {
         this.setData({ grading: false, errorText: '批改失败，可以稍后在记录里查看或重新提交。' });
       });
