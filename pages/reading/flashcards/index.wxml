@@ -64,8 +64,8 @@
     <view class="progress-bar">
       <view class="progress-fill {{planSummary.learnedPercent === 0 ? 'is-zero' : ''}}" style="width: {{planSummary.learnedPercent}}%;"></view>
       <view class="progress-boat" style="left: {{planSummary.boatPercent}}%;">
-        <view class="boat-sail main"></view>
-        <view class="boat-sail small"></view>
+        <view class="boat-mast"></view>
+        <view class="boat-sail"></view>
         <view class="boat-hull"></view>
       </view>
     </view>

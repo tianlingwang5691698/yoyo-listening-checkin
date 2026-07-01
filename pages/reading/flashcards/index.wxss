@@ -105,11 +105,11 @@
 
 .progress-bar {
   position: relative;
-  height: 32rpx;
-  margin-bottom: 18rpx;
+  height: 18rpx;
+  margin: 16rpx 4rpx 22rpx;
   border-radius: 999rpx;
-  background: linear-gradient(180deg, rgba(137, 184, 198, 0.32), rgba(78, 147, 168, 0.34));
-  box-shadow: inset 0 0 0 1rpx rgba(90, 78, 66, 0.08);
+  background: linear-gradient(90deg, rgba(111, 164, 178, 0.18), rgba(111, 164, 178, 0.3));
+  box-shadow: inset 0 0 0 1rpx rgba(90, 78, 66, 0.06);
   overflow: visible;
 }
 
@@ -117,7 +117,7 @@
   position: relative;
   height: 100%;
   border-radius: inherit;
-  background: linear-gradient(90deg, rgba(89, 154, 174, 0.88), rgba(238, 171, 96, 0.9));
+  background: linear-gradient(90deg, rgba(87, 151, 169, 0.82), rgba(239, 178, 103, 0.88));
   transition: width 360ms ease;
   overflow: hidden;
 }
@@ -139,42 +139,45 @@
 
 .progress-boat {
   position: absolute;
-  top: -30rpx;
-  width: 54rpx;
-  height: 54rpx;
+  top: -24rpx;
+  width: 34rpx;
+  height: 36rpx;
   transform: translateX(-50%);
   transition: left 360ms ease;
   z-index: 2;
 }
 
+.boat-mast {
+  position: absolute;
+  left: 16rpx;
+  top: 2rpx;
+  width: 2rpx;
+  height: 25rpx;
+  border-radius: 999rpx;
+  background: rgba(73, 62, 52, 0.72);
+}
+
 .boat-sail {
   position: absolute;
-  bottom: 18rpx;
+  left: 17rpx;
+  top: 3rpx;
   width: 0;
   height: 0;
   border-style: solid;
-}
-
-.boat-sail.main {
-  left: 22rpx;
-  border-width: 0 0 36rpx 24rpx;
+  border-width: 0 0 22rpx 15rpx;
   border-color: transparent transparent rgba(255, 250, 236, 0.98) transparent;
-}
-
-.boat-sail.small {
-  left: 8rpx;
-  border-width: 0 18rpx 28rpx 0;
-  border-color: transparent rgba(245, 183, 91, 0.96) transparent transparent;
+  filter: drop-shadow(0 2rpx 3rpx rgba(90, 78, 66, 0.12));
 }
 
 .boat-hull {
   position: absolute;
-  left: 8rpx;
-  right: 8rpx;
-  bottom: 10rpx;
-  height: 12rpx;
-  border-radius: 0 0 22rpx 22rpx;
-  background: var(--text-strong);
+  left: 5rpx;
+  right: 5rpx;
+  bottom: 7rpx;
+  height: 8rpx;
+  border-radius: 2rpx 2rpx 12rpx 12rpx;
+  background: rgba(73, 62, 52, 0.9);
+  box-shadow: 0 4rpx 8rpx rgba(90, 78, 66, 0.12);
 }
 
 @keyframes progress-flow {
