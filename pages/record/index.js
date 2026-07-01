@@ -235,6 +235,18 @@ function buildRecentDayItem(report) {
   };
 }
 
+function buildRecentDayFastItem(date, heatmapItem, completionCount) {
+  const completed = !!(heatmapItem && heatmapItem.completed);
+  return {
+    date,
+    label: formatDateLabel(date),
+    statusText: completed || completionCount ? '有记录' : '未完成',
+    countText: completionCount ? `${completionCount} 条记录` : (completed ? '已点亮' : '无记录'),
+    minutesText: completed ? '已完成' : '',
+    isCompleted: completed || completionCount > 0
+  };
+}
+
 function buildWritingAttemptItem(item, index) {
   const attempt = item || {};
   const createdAt = attempt.createdAt || '';
@@ -486,9 +498,19 @@ Page({
     const dates = buildRecentDates(this.data.todayDate || getDateKey(new Date()), 7);
     this.setData({ recentDaysLoading: true });
     try {
-      const reports = await Promise.all(dates.map((date) => store.getDailyReportByDate(date).then((data) => data.report)));
+      const completionsData = await store.getStudyCompletions({ days: 7 });
+      const completionCounts = (completionsData.items || []).reduce((map, item) => {
+        const date = item.date || '';
+        if (date) map[date] = (map[date] || 0) + 1;
+        return map;
+      }, {});
+      const monthData = this.getCachedMonthData(this.data.calendarYear, this.data.calendarMonth) || { heatmap: [] };
+      const heatmapMap = (monthData.heatmap || []).reduce((map, item) => {
+        map[item.date] = item;
+        return map;
+      }, {});
       this.setData({
-        recentDays: reports.map(buildRecentDayItem),
+        recentDays: dates.map((date) => buildRecentDayFastItem(date, heatmapMap[date], completionCounts[date] || 0)),
         recentDaysLoading: false
       });
     } catch (error) {

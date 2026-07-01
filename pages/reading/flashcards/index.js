@@ -1174,6 +1174,8 @@ Page({
   syncVocabularyCompletion(force) {
     const stats = this.vocabularySessionStats || {};
     if (!stats.reviewed || (!force && stats.reviewed % 5 !== 0)) return;
+    if (this.lastVocabularyCompletionSyncedReviewed === stats.reviewed) return;
+    this.lastVocabularyCompletionSyncedReviewed = stats.reviewed;
     const sourceTitle = this.data.activeSourceTitle || '词汇复习';
     store.recordStudyCompletion({
       type: 'vocabulary',
@@ -1254,6 +1256,7 @@ Page({
       audioCompleted: isAudioCompletedForCard(current)
     });
     this.vocabularySessionStats = null;
+    this.lastVocabularyCompletionSyncedReviewed = 0;
     this.scheduleAutoSpeakCurrent();
   },
   exitReview() {

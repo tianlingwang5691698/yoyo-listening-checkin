@@ -9,6 +9,7 @@ const wordLookupCache = {};
 const CACHE_INDEX_KEY = 'yoyoCloudReadCacheKeysV1';
 const SELECTED_STUDENT_KEY = 'yoyoSelectedStudentTargetV1';
 const CACHE_MAX_AGE_MS = 7 * 24 * 60 * 60 * 1000;
+const RECORD_CACHE_MAX_AGE_MS = 2 * 60 * 1000;
 const TEMP_FILE_URL_MAX_AGE_MS = 20 * 60 * 1000;
 const WORD_LOOKUP_MAX_AGE_MS = 30 * 60 * 1000;
 let cloudReadCacheVersion = 0;
@@ -46,10 +47,10 @@ const READ_CACHE_CONFIG = {
   getSpeakingAttempts: { persist: false },
   getProfileData: { persist: true },
   getHeatmap: { persist: true },
-  getMonthHeatmap: { persist: true },
-  getDailyReportByDate: { persist: true },
-  getParentDashboard: { persist: true },
-  getStudyCompletions: { persist: true },
+  getMonthHeatmap: { persist: true, maxAgeMs: RECORD_CACHE_MAX_AGE_MS },
+  getDailyReportByDate: { persist: true, maxAgeMs: RECORD_CACHE_MAX_AGE_MS },
+  getParentDashboard: { persist: true, maxAgeMs: RECORD_CACHE_MAX_AGE_MS },
+  getStudyCompletions: { persist: true, maxAgeMs: RECORD_CACHE_MAX_AGE_MS },
   getFamilyPage: { persist: true },
   getReadingHome: { persist: true },
   getReadingPassage: { persist: true },
@@ -261,7 +262,8 @@ function getCachedCloudResult(action, payload) {
       entry = null;
     }
   }
-  if (!entry || !entry.data || Date.now() - Number(entry.savedAt || 0) > CACHE_MAX_AGE_MS) {
+  const maxAgeMs = Number(config.maxAgeMs || CACHE_MAX_AGE_MS);
+  if (!entry || !entry.data || Date.now() - Number(entry.savedAt || 0) > maxAgeMs) {
     return null;
   }
   return entry.data;
