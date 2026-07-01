@@ -77,27 +77,22 @@ Page({
       this.audio = null;
     }
   },
-  prepareAudio(cloudPath) {
+  async prepareAudio(cloudPath) {
     this.setData({ audioLoading: true, audioError: '' });
-    wx.cloud.getTempFileURL({
-      fileList: [cloudPath],
-      success: (res) => {
-        const file = res.fileList && res.fileList[0];
-        const src = file && file.tempFileURL ? file.tempFileURL : '';
-        if (!src) {
-          this.setData({ audioLoading: false, audioError: '音频暂时无法加载' });
-          return;
-        }
-        this.audio = wx.createInnerAudioContext();
-        this.audio.src = src;
-        this.audio.onEnded(() => this.setData({ isPlaying: false }));
-        this.audio.onError(() => this.setData({ isPlaying: false, audioError: '音频播放失败' }));
-        this.setData({ audioSrc: src, audioLoading: false });
-      },
-      fail: () => {
+    try {
+      const src = await store.getTempFileURL(cloudPath);
+      if (!src) {
         this.setData({ audioLoading: false, audioError: '音频暂时无法加载' });
+        return;
       }
-    });
+      this.audio = wx.createInnerAudioContext();
+      this.audio.src = src;
+      this.audio.onEnded(() => this.setData({ isPlaying: false }));
+      this.audio.onError(() => this.setData({ isPlaying: false, audioError: '音频播放失败' }));
+      this.setData({ audioSrc: src, audioLoading: false });
+    } catch (error) {
+      this.setData({ audioLoading: false, audioError: '音频暂时无法加载' });
+    }
   },
   prepareImages(images) {
     const fileList = (images || []).map((image) => image.cloudPath).filter(Boolean);
