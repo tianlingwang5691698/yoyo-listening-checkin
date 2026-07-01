@@ -66,7 +66,7 @@ def find_audio(level_dir, word):
 def main():
     OUTPUT.mkdir(parents=True, exist_ok=True)
     AUDIO_OUTPUT.mkdir(parents=True, exist_ok=True)
-    entries = {}
+    entries_by_level = {}
     audio_manifest = []
 
     for level_dir in sorted([p for p in SOURCE.iterdir() if p.is_dir()]) if SOURCE.exists() else []:
@@ -91,20 +91,23 @@ def main():
                     "localPath": str(local_out),
                     "cloudPath": rel_cloud
                 })
-            key = word
-            old = entries.get(key)
-            if not old or entry["levelRank"] < old.get("levelRank", 99):
-                entries[key] = entry
+            entries_by_level.setdefault(level, {})[word] = entry
 
-    output_entries = sorted(entries.values(), key=lambda x: (x.get("levelRank", 99), x["wordLower"]))
-    for item in output_entries:
-        item.pop("levelRank", None)
-    (OUTPUT / "word-dictionary.json").write_text(json.dumps(output_entries, ensure_ascii=False, indent=2), encoding="utf-8")
+    level_counts = {}
+    for level, level_entries in entries_by_level.items():
+        rows = sorted(level_entries.values(), key=lambda x: x["wordLower"])
+        for item in rows:
+            item.pop("levelRank", None)
+        level_counts[level] = len(rows)
+        (OUTPUT / f"word-dictionary-{level}.json").write_text(json.dumps(rows, ensure_ascii=False, indent=2), encoding="utf-8")
+    legacy_dictionary = OUTPUT / "word-dictionary.json"
+    if legacy_dictionary.exists():
+        legacy_dictionary.unlink()
     (OUTPUT / "upload-audio-manifest.json").write_text(json.dumps(audio_manifest, ensure_ascii=False, indent=2), encoding="utf-8")
     print(json.dumps({
-        "words": len(output_entries),
+        "levels": level_counts,
         "audio": len(audio_manifest),
-        "dictionary": str(OUTPUT / "word-dictionary.json"),
+        "dictionaries": {level: str(OUTPUT / f"word-dictionary-{level}.json") for level in sorted(level_counts)},
         "audioManifest": str(OUTPUT / "upload-audio-manifest.json")
     }, ensure_ascii=False, indent=2))
 

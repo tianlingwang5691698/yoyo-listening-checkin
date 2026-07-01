@@ -89,7 +89,7 @@ async function callYoyo(action, payload) {
       timeoutMs = 120000;
     } else if (action === 'submitSpeakingAttempt' || action === 'submitReadingAttempt' || action === 'explainGrammarQuestion') {
       timeoutMs = 70000;
-    } else if (action === 'synthesizeReadingAudio' || action === 'getGrammarTopic') {
+    } else if (action === 'synthesizeReadingAudio' || action === 'getGrammarTopic' || action === 'addDictionaryBook') {
       timeoutMs = 30000;
     }
     response = await withTimeout(wx.cloud.callFunction({

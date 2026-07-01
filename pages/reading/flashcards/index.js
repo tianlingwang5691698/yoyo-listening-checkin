@@ -1,5 +1,6 @@
 const page = require('../../../utils/page');
 const store = require('../../../utils/store');
+const appConfig = require('../../../data/app-config');
 
 const TYPE_LABELS = {
   all: '全部',
@@ -45,19 +46,35 @@ const DEMO_FLASHCARDS = [
   }
 ];
 
-const LIMIT_MIN = 5;
-const LIMIT_MAX = 500;
-const LIMIT_STEP = 5;
-const LIMIT_OPTIONS = Array.from({ length: LIMIT_MAX / LIMIT_STEP }, (_, index) => (index + 1) * LIMIT_STEP);
+const DEFAULT_DICTIONARY_BOOKS = [
+  { level: 'junior', title: '新东方 初中英语词汇词根+联想记忆法：乱序版', imported: 0, cloudPath: 'dictionary_books/word-dictionary-junior.json' },
+  { level: 'senior', title: '高中英语词汇 乱序', imported: 0, cloudPath: 'dictionary_books/word-dictionary-senior.json' }
+];
+const FLASHCARD_SOURCE_CACHE_PREFIX = 'flashcardSourceCache:';
+const FLASHCARD_SOURCE_CACHE_TTL = 7 * 24 * 60 * 60 * 1000;
+const FLASHCARD_PLAN_SETTINGS_PREFIX = 'flashcardPlanSettings:';
 
-function normalizeLimit(value) {
-  const numericValue = Number(value || 0);
-  const steppedValue = Math.round(numericValue / LIMIT_STEP) * LIMIT_STEP;
-  return Math.max(LIMIT_MIN, Math.min(LIMIT_MAX, steppedValue || LIMIT_MIN));
+const LIMIT_MIN = 5;
+const LIMIT_DEFAULT_MAX = 500;
+const LIMIT_STEP = 5;
+
+function buildLimitOptions(maxValue) {
+  const max = Math.max(LIMIT_MIN, Number(maxValue || LIMIT_DEFAULT_MAX));
+  const roundedMax = Math.ceil(max / LIMIT_STEP) * LIMIT_STEP;
+  return Array.from({ length: roundedMax / LIMIT_STEP }, (_, index) => Math.min((index + 1) * LIMIT_STEP, max));
 }
 
-function getLimitIndex(value) {
-  return Math.max(0, LIMIT_OPTIONS.indexOf(normalizeLimit(value)));
+function normalizeLimit(value, maxValue) {
+  const numericValue = Number(value || 0);
+  const max = Math.max(LIMIT_MIN, Number(maxValue || LIMIT_DEFAULT_MAX));
+  if (numericValue >= max) return max;
+  const steppedValue = Math.round(numericValue / LIMIT_STEP) * LIMIT_STEP;
+  return Math.max(LIMIT_MIN, Math.min(max, steppedValue || LIMIT_MIN));
+}
+
+function getLimitIndex(value, maxValue) {
+  const options = buildLimitOptions(maxValue);
+  return Math.max(0, options.indexOf(normalizeLimit(value, maxValue)));
 }
 
 function getLimitItemHeightPx() {
@@ -66,6 +83,27 @@ function getLimitItemHeightPx() {
     return systemInfo.windowWidth * 84 / 750;
   } catch (error) {
     return 42;
+  }
+}
+
+function getNavLayout() {
+  try {
+    const systemInfo = wx.getSystemInfoSync();
+    const menu = wx.getMenuButtonBoundingClientRect ? wx.getMenuButtonBoundingClientRect() : null;
+    const statusBarHeight = Number(systemInfo.statusBarHeight || 0);
+    const navBarHeight = menu && menu.height
+      ? (menu.top - statusBarHeight) * 2 + menu.height
+      : 44;
+    const navHeight = statusBarHeight + navBarHeight;
+    return {
+      navStyle: `height:${navHeight}px;padding-top:${statusBarHeight}px;`,
+      pageTopStyle: `padding-top:${navHeight + 16}px;`
+    };
+  } catch (error) {
+    return {
+      navStyle: 'height:88px;padding-top:44px;',
+      pageTopStyle: 'padding-top:112px;'
+    };
   }
 }
 
@@ -110,6 +148,145 @@ function groupLibrary(library) {
   }).filter((group) => group.count > 0);
 }
 
+function getBookSourceId(level) {
+  return level ? `dictionary-book-${level}` : '';
+}
+
+function filterBySource(items, sourceId) {
+  if (!sourceId) return items;
+  return (items || []).filter((item) => item.sourceId === sourceId);
+}
+
+function isCardDue(item, today) {
+  return item && item.status !== 'mastered' && (!item.nextReviewDate || item.nextReviewDate <= today);
+}
+
+function buildDueCards(library, settings, today) {
+  const due = (library || []).filter((item) => isCardDue(item, today));
+  return due
+    .filter((item) => item.status !== 'new')
+    .slice(0, settings.reviewLimit)
+    .concat(due.filter((item) => item.status === 'new').slice(0, settings.newLimit));
+}
+
+function isBookSource(sourceId) {
+  return String(sourceId || '').indexOf('dictionary-book-') === 0;
+}
+
+function getEffectiveSettings(settings, library, sourceId) {
+  const total = Math.max(LIMIT_MIN, (library || []).length || LIMIT_DEFAULT_MAX);
+  return {
+    newLimit: normalizeLimit(settings && settings.newLimit, total),
+    reviewLimit: normalizeLimit(settings && settings.reviewLimit, total)
+  };
+}
+
+function buildPlanState(library, settings, today) {
+  const cards = buildDueCards(library, settings, today);
+  return {
+    cards,
+    currentIndex: 0,
+    current: cards[0] || null,
+    total: cards.length,
+    dueCount: cards.length,
+    newDueCount: cards.filter((item) => item.status === 'new').length,
+    reviewDueCount: cards.filter((item) => item.status !== 'new').length
+  };
+}
+
+function getPlanSettingsKey(sourceId) {
+  return `${FLASHCARD_PLAN_SETTINGS_PREFIX}${sourceId || 'all'}`;
+}
+
+function readPlanSettings(sourceId, fallback) {
+  try {
+    return Object.assign({}, fallback || {}, wx.getStorageSync(getPlanSettingsKey(sourceId)) || {});
+  } catch (error) {
+    return fallback || {};
+  }
+}
+
+function writePlanSettings(sourceId, settings) {
+  try {
+    wx.setStorageSync(getPlanSettingsKey(sourceId), settings || {});
+  } catch (error) {}
+}
+
+function normalizeBook(book) {
+  const fallback = DEFAULT_DICTIONARY_BOOKS.find((item) => item.level === book.level) || {};
+  return Object.assign({}, fallback, book, {
+    sourceId: getBookSourceId(book.level)
+  });
+}
+
+async function loadBookCardsFromStorage(book) {
+  const baseUrl = String(appConfig.cloudAssetBaseUrl || '').replace(/\/+$/, '');
+  const cloudPath = String(book.cloudPath || '').replace(/^\/+/, '');
+  if (!baseUrl || !cloudPath) throw new Error('dictionary-book-url-empty');
+  const rows = await requestJson(`${baseUrl}/${encodeURI(cloudPath)}`);
+  if (!Array.isArray(rows)) throw new Error('dictionary-book-json-invalid');
+  return rows.map((entry, index) => buildBookCard(entry, book, index)).filter((item) => item.word);
+}
+
+function getSourceCacheKey(sourceId) {
+  return `${FLASHCARD_SOURCE_CACHE_PREFIX}${sourceId || 'all'}`;
+}
+
+function readSourceCache(sourceId) {
+  try {
+    const cached = wx.getStorageSync(getSourceCacheKey(sourceId));
+    if (!cached || Date.now() - Number(cached.cachedAt || 0) > FLASHCARD_SOURCE_CACHE_TTL) return null;
+    return cached.data || null;
+  } catch (error) {
+    return null;
+  }
+}
+
+function writeSourceCache(sourceId, data) {
+  try {
+    wx.setStorageSync(getSourceCacheKey(sourceId), {
+      cachedAt: Date.now(),
+      data
+    });
+  } catch (error) {}
+}
+
+function requestJson(url) {
+  return new Promise((resolve, reject) => {
+    wx.request({
+      url,
+      method: 'GET',
+      success(response) {
+        if (response.statusCode >= 200 && response.statusCode < 300) {
+          resolve(response.data);
+          return;
+        }
+        reject(new Error(`http-${response.statusCode || 0}`));
+      },
+      fail: reject
+    });
+  });
+}
+
+function buildBookCard(entry, book, index) {
+  const word = String(entry.word || entry.wordLower || '').trim().toLowerCase();
+  return normalizeCard({
+    flashcardKey: `dictionaryBook:${book.level}:word:${word}`,
+    sourceType: `dictionaryBook:${book.level}`,
+    sourceId: getBookSourceId(book.level),
+    sourceTitle: book.title,
+    type: 'word',
+    text: word,
+    word,
+    phonetic: entry.phonetic || '',
+    meaning: Array.isArray(entry.definitions) ? entry.definitions.join('；') : '',
+    example: entry.example || '',
+    status: 'new',
+    nextReviewDate: '',
+    localBook: true
+  }, index);
+}
+
 function canUseDictionaryVoice(text) {
   const value = String(text || '').replace(/\s+/g, ' ').trim();
   if (!value || value.length > 60 || /[.!?;:]/.test(value)) return false;
@@ -125,6 +302,7 @@ function buildDictionaryVoiceUrl(text) {
 
 Page({
   data: page.createCloudPageData({
+    sourceMode: 'bookshelf',
     mode: 'library',
     library: [],
     libraryGroups: [],
@@ -136,13 +314,20 @@ Page({
     stats: { all: 0, word: 0, phrase: 0, pattern: 0 },
     progress: { total: 0, mastered: 0, reviewing: 0, fresh: 0 },
     logs: [],
+    dictionaryBooks: DEFAULT_DICTIONARY_BOOKS,
+    importingBook: '',
+    activeSourceId: '',
+    activeSourceTitle: '我的词库',
+    isBookPlan: false,
+    isUnlimitedPlan: false,
     dueCount: 0,
     newDueCount: 0,
     reviewDueCount: 0,
     settings: { newLimit: 10, reviewLimit: 20 },
-    limitOptions: LIMIT_OPTIONS,
-    newLimitIndex: getLimitIndex(10),
-    reviewLimitIndex: getLimitIndex(20),
+    limitOptions: buildLimitOptions(LIMIT_DEFAULT_MAX),
+    planLimitMax: LIMIT_DEFAULT_MAX,
+    newLimitIndex: getLimitIndex(10, LIMIT_DEFAULT_MAX),
+    reviewLimitIndex: getLimitIndex(20, LIMIT_DEFAULT_MAX),
     limitPickerVisible: false,
     limitPickerTitle: '',
     limitPickerField: '',
@@ -155,7 +340,9 @@ Page({
     previousCardChoice: '',
     reviewDays: 0,
     loading: false,
-    audioLoading: false
+    audioLoading: false,
+    navStyle: '',
+    pageTopStyle: ''
   }),
   onUnload() {
     if (this.flashcardAudioContext) {
@@ -165,21 +352,34 @@ Page({
   },
   onShow() {
     page.syncTheme(this);
+    this.setData(getNavLayout());
     this.loadCards();
   },
   async loadCards() {
     this.setData({ loading: true });
+    const activeSourceId = this.data.activeSourceId || '';
+    const cached = readSourceCache(activeSourceId);
+    if (cached) {
+      this.setData(Object.assign({}, cached, { loading: false }));
+    }
     const data = await store.getFlashcardReview();
     const rawLibrary = data.library && data.library.length ? data.library : DEMO_FLASHCARDS;
-    const rawCards = data.cards && data.cards.length ? data.cards : rawLibrary;
-    const library = rawLibrary.map(normalizeCard);
-    const cards = rawCards.map(normalizeCard);
+    let library = filterBySource(rawLibrary, activeSourceId).map(normalizeCard);
     const demoMode = rawLibrary === DEMO_FLASHCARDS;
     const settings = {
       newLimit: normalizeLimit((data.settings || {}).newLimit == null ? 10 : data.settings.newLimit),
       reviewLimit: normalizeLimit((data.settings || {}).reviewLimit == null ? 20 : data.settings.reviewLimit)
     };
-    this.setData({
+    if (activeSourceId && !library.length && cached && cached.library && cached.library.length) {
+      library = cached.library.map(normalizeCard);
+    }
+    const sourceSettings = readPlanSettings(activeSourceId, settings);
+    const effectiveSettings = getEffectiveSettings(sourceSettings, library, activeSourceId);
+    const limitOptions = buildLimitOptions(library.length || LIMIT_DEFAULT_MAX);
+    const cards = (activeSourceId
+      ? buildDueCards(library, effectiveSettings, data.today)
+      : ((data.cards && data.cards.length ? data.cards : rawLibrary).map(normalizeCard)));
+    const nextData = {
       library,
       libraryGroups: groupLibrary(library),
       cards,
@@ -188,20 +388,146 @@ Page({
       total: cards.length,
       empty: !library.length,
       stats: countByType(library),
-      dueCount: demoMode ? cards.length : (data.dueCount || 0),
-      newDueCount: demoMode ? cards.length : (data.newDueCount || 0),
-      reviewDueCount: data.reviewDueCount || 0,
-      settings,
-      newLimitIndex: getLimitIndex(settings.newLimit),
-      reviewLimitIndex: getLimitIndex(settings.reviewLimit),
+      dueCount: cards.length,
+      newDueCount: cards.filter((item) => item.status === 'new').length,
+      reviewDueCount: cards.filter((item) => item.status !== 'new').length,
+      settings: effectiveSettings,
+      limitOptions,
+      planLimitMax: Math.max(LIMIT_MIN, library.length || LIMIT_DEFAULT_MAX),
+      newLimitIndex: getLimitIndex(effectiveSettings.newLimit, library.length),
+      reviewLimitIndex: getLimitIndex(effectiveSettings.reviewLimit, library.length),
+      today: data.today,
+      isBookPlan: isBookSource(activeSourceId),
+      isUnlimitedPlan: false,
       progress: demoMode
         ? { total: library.length, mastered: 0, reviewing: 0, fresh: library.length }
-        : Object.assign({ total: 0, mastered: 0, reviewing: 0, fresh: 0 }, data.progress || {}),
+        : {
+          total: library.length,
+          mastered: library.filter((item) => item.status === 'mastered').length,
+          reviewing: library.filter((item) => item.status === 'reviewing').length,
+          fresh: library.filter((item) => item.status === 'new').length
+        },
       reviewDays: Number((data.progress && data.progress.reviewDays) || countLogDays(data.logs || [])),
       logs: data.logs || [],
+      dictionaryBooks: (data.dictionaryBooks && data.dictionaryBooks.length ? data.dictionaryBooks : DEFAULT_DICTIONARY_BOOKS).map(normalizeBook),
       demoMode,
       loading: false
+    };
+    this.setData(nextData);
+    writeSourceCache(activeSourceId, nextData);
+  },
+  async importDictionaryBook(event) {
+    const level = event.currentTarget.dataset.level || '';
+    if (!level || this.data.importingBook) return;
+    const sourceId = getBookSourceId(level);
+    const book = normalizeBook((this.data.dictionaryBooks || []).find((item) => item.level === level) || { level });
+    this.setData({
+      sourceMode: 'library',
+      mode: 'library',
+      activeSourceId: sourceId,
+      activeSourceTitle: book.title || '词汇书',
+      importingBook: book.imported ? '' : level
     });
+    const cached = readSourceCache(sourceId);
+    if (cached || book.imported) {
+      await this.loadCards();
+    } else {
+      this.setData({
+        loading: true,
+        library: [],
+        libraryGroups: [],
+        empty: false,
+        stats: { all: 0, word: 0, phrase: 0, pattern: 0 }
+      });
+    }
+    if (!book.imported && !this.data.library.length) {
+      try {
+        const localCards = await loadBookCardsFromStorage(book);
+        const sourceSettings = readPlanSettings(sourceId, this.data.settings);
+        const effectiveSettings = getEffectiveSettings(sourceSettings, localCards, sourceId);
+        const limitOptions = buildLimitOptions(localCards.length);
+        const cards = buildDueCards(localCards, effectiveSettings, this.data.today);
+        const nextData = {
+          library: localCards,
+          libraryGroups: groupLibrary(localCards),
+          cards,
+          currentIndex: 0,
+          current: cards[0] || null,
+          total: cards.length,
+          empty: !localCards.length,
+          stats: countByType(localCards),
+          dueCount: cards.length,
+          newDueCount: cards.filter((item) => item.status === 'new').length,
+          reviewDueCount: cards.filter((item) => item.status !== 'new').length,
+          settings: effectiveSettings,
+          limitOptions,
+          planLimitMax: Math.max(LIMIT_MIN, localCards.length || LIMIT_DEFAULT_MAX),
+          newLimitIndex: getLimitIndex(effectiveSettings.newLimit, localCards.length),
+          reviewLimitIndex: getLimitIndex(effectiveSettings.reviewLimit, localCards.length),
+          today: this.data.today,
+          isBookPlan: true,
+          isUnlimitedPlan: false,
+          progress: {
+            total: localCards.length,
+            mastered: 0,
+            reviewing: 0,
+            fresh: localCards.length
+          },
+          demoMode: false,
+          loading: false
+        };
+        this.setData(nextData);
+        writeSourceCache(sourceId, nextData);
+      } catch (error) {
+        wx.showToast({ title: '词书读取失败', icon: 'none' });
+      }
+    }
+    if (book.imported) return;
+    try {
+      let offset = 0;
+      let done = false;
+      while (!done) {
+        const result = await store.addDictionaryBook(level, { offset, limit: 80 });
+        if (!result.saved) throw new Error('dictionary-book-import-failed');
+        offset = Number(result.nextOffset || 0);
+        done = !!result.done;
+        await this.loadCards();
+      }
+      wx.showToast({ title: '计划已建立', icon: 'none' });
+    } catch (error) {
+      // 本机计划已可用时，不再打扰用户。
+    } finally {
+      this.setData({ importingBook: '' });
+    }
+  },
+  useAllVocabulary() {
+    this.setData({
+      sourceMode: 'library',
+      mode: 'library',
+      activeSourceId: '',
+      activeSourceTitle: '我的词库'
+    });
+    this.loadCards();
+  },
+  backToBookshelf() {
+    this.setData({
+      sourceMode: 'bookshelf',
+      mode: 'library',
+      cardRevealed: false,
+      cardChoice: '',
+      previousCardChoice: ''
+    });
+  },
+  handlePageBack() {
+    if (this.data.mode === 'review') {
+      this.exitReview();
+      return;
+    }
+    if (this.data.sourceMode !== 'bookshelf') {
+      this.backToBookshelf();
+      return;
+    }
+    wx.navigateBack({ delta: 1 });
   },
   switchMode(event) {
     const mode = event.currentTarget.dataset.mode || 'library';
@@ -217,13 +543,13 @@ Page({
     const isLongPress = event.type === 'longpress';
     const delta = Number((isLongPress ? event.currentTarget.dataset.longDelta : event.currentTarget.dataset.delta) || 0);
     const currentValue = Number(this.data.settings[field] || 0);
-    const nextValue = normalizeLimit(currentValue + delta);
+    const nextValue = normalizeLimit(currentValue + delta, this.data.library.length);
     if (nextValue === currentValue) return;
     await this.saveLimit(field, nextValue);
   },
   openLimitPicker(event) {
     const field = event.currentTarget.dataset.field;
-    const selectedLimitIndex = getLimitIndex(this.data.settings[field]);
+    const selectedLimitIndex = getLimitIndex(this.data.settings[field], this.data.library.length);
     this.setData({
       limitPickerVisible: true,
       limitPickerField: field,
@@ -236,7 +562,7 @@ Page({
     this.setData({ limitPickerVisible: false });
   },
   scrollLimit(event) {
-    const index = Math.max(0, Math.min(LIMIT_OPTIONS.length - 1, Math.round(Number(event.detail.scrollTop || 0) / getLimitItemHeightPx())));
+    const index = Math.max(0, Math.min((this.data.limitOptions || []).length - 1, Math.round(Number(event.detail.scrollTop || 0) / getLimitItemHeightPx())));
     if (index !== this.data.selectedLimitIndex) {
       this.setData({ selectedLimitIndex: index });
     }
@@ -250,22 +576,26 @@ Page({
   },
   async confirmLimit() {
     const field = this.data.limitPickerField;
-    const nextValue = LIMIT_OPTIONS[this.data.selectedLimitIndex] || LIMIT_MIN;
+    const nextValue = this.data.limitOptions[this.data.selectedLimitIndex] || LIMIT_MIN;
     this.setData({ limitPickerVisible: false });
     if (!field || nextValue === Number(this.data.settings[field] || 0)) return;
     await this.saveLimit(field, nextValue);
   },
   async saveLimit(field, nextValue) {
     const settings = Object.assign({}, this.data.settings, {
-      [field]: nextValue
+      [field]: normalizeLimit(nextValue, this.data.library.length)
     });
-    this.setData({
+    const planState = buildPlanState(this.data.library || [], settings, this.data.today);
+    const nextData = Object.assign({
       settings,
-      newLimitIndex: getLimitIndex(settings.newLimit),
-      reviewLimitIndex: getLimitIndex(settings.reviewLimit)
-    });
-    await store.saveFlashcardSettings(settings);
-    this.loadCards();
+      newLimitIndex: getLimitIndex(settings.newLimit, this.data.library.length),
+      reviewLimitIndex: getLimitIndex(settings.reviewLimit, this.data.library.length)
+    }, planState);
+    this.setData(nextData);
+    writePlanSettings(this.data.activeSourceId || '', settings);
+    if (!this.data.activeSourceId) {
+      await store.saveFlashcardSettings(settings);
+    }
   },
   playAudioUrl(url) {
     if (!url) return;
@@ -382,6 +712,7 @@ Page({
   },
   startReview() {
     this.setData({
+      sourceMode: 'library',
       mode: 'review',
       currentIndex: 0,
       current: this.data.cards[0] || null,
@@ -427,7 +758,7 @@ Page({
     if (!current || !current.flashcardKey) return;
     const nextResult = typeof result === 'string' ? result : (this.data.cardChoice || 'remembered');
     if (nextResult === 'unfamiliar') {
-      if (!current.demo) {
+      if (!current.demo && !current.localBook) {
         try {
           await store.updateFlashcardReview(current.flashcardKey, 'unfamiliar');
         } catch (error) {}
@@ -435,7 +766,7 @@ Page({
       this.repeatCurrentCard();
       return;
     }
-    if (current.demo) {
+    if (current.demo || current.localBook) {
       this.advanceVisibleCards();
       return;
     }

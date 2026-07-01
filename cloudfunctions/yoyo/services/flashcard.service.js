@@ -1,9 +1,14 @@
 const study = require('../facades/study.facade');
 const dbAdapter = require('../adapters/db.adapter');
+const storageAdapter = require('../adapters/storage.adapter');
 
 const COLLECTION = 'studyFlashcards';
 const SETTINGS_COLLECTION = 'studyFlashcardSettings';
 const LOG_COLLECTION = 'studyFlashcardReviewLogs';
+const DICTIONARY_BOOKS = [
+  { level: 'junior', title: '新东方 初中英语词汇词根+联想记忆法：乱序版', cloudPath: 'dictionary_books/word-dictionary-junior.json' },
+  { level: 'senior', title: '高中英语词汇 乱序', cloudPath: 'dictionary_books/word-dictionary-senior.json' }
+];
 const REVIEW_DAYS = [0, 1, 2, 4, 7, 15, 30];
 const DEFAULT_SETTINGS = { newLimit: 10, reviewLimit: 20 };
 const LIMIT_MIN = 5;
@@ -205,12 +210,18 @@ function isDue(item, today) {
 async function getFlashcardReview(event) {
   const { ctx, today } = await study.prepareRequestContext(Object.assign({}, event, { action: 'getFlashcardReview' }));
   const settings = await getSettings(ctx);
-  const result = await dbAdapter.collection(COLLECTION)
-    .where({ familyId: ctx.family.familyId, childId: ctx.child.childId })
-    .orderBy('nextReviewDate', 'asc')
-    .limit(500)
-    .get();
-  const all = result && result.data ? result.data : [];
+  const all = [];
+  for (let skip = 0; skip < 5000; skip += 100) {
+    const result = await dbAdapter.collection(COLLECTION)
+      .where({ familyId: ctx.family.familyId, childId: ctx.child.childId })
+      .orderBy('nextReviewDate', 'asc')
+      .skip(skip)
+      .limit(100)
+      .get();
+    const rows = result && result.data ? result.data : [];
+    all.push.apply(all, rows);
+    if (rows.length < 100) break;
+  }
   const due = all.filter((item) => isDue(item, today));
   const reviewCards = due.filter((item) => item.status !== 'new').slice(0, settings.reviewLimit);
   const newCards = due.filter((item) => item.status === 'new').slice(0, settings.newLimit);
@@ -241,7 +252,73 @@ async function getFlashcardReview(event) {
       fresh: all.filter((item) => item.status === 'new').length,
       reviewDays
     },
+    dictionaryBooks: DICTIONARY_BOOKS.map((book) => ({
+      level: book.level,
+      title: book.title,
+      imported: all.filter((item) => item.sourceId === `dictionary-book-${book.level}`).length
+    })),
     logs: logs.slice(0, 10)
+  };
+}
+
+async function addDictionaryBook(event) {
+  const payload = (event && event.payload) || {};
+  const { ctx, today } = await study.prepareRequestContext(Object.assign({}, event, { action: 'addDictionaryBook' }));
+  const level = normalizeText(payload.level).toLowerCase();
+  const book = DICTIONARY_BOOKS.find((item) => item.level === level);
+  if (!book) throw new Error('dictionary-book-invalid');
+  const entries = await storageAdapter.downloadCloudJson(book.cloudPath);
+  const rows = Array.isArray(entries) ? entries : [];
+  const offset = Math.max(0, Number(payload.offset || 0));
+  const limit = Math.max(1, Math.min(100, Number(payload.limit || 80)));
+  const batch = rows.slice(offset, offset + limit);
+  let inserted = 0;
+  let updated = 0;
+  for (const entry of batch) {
+    const word = normalizeText(entry.word || entry.wordLower).toLowerCase();
+    if (!word) continue;
+    const record = makeFlashcard(ctx, today, {
+      sourceType: `dictionaryBook:${level}`,
+      sourceId: `dictionary-book-${level}`,
+      title: book.title
+    }, 'word', {
+      word,
+      phonetic: entry.phonetic || '',
+      meaning: Array.isArray(entry.definitions) ? entry.definitions.join('；') : '',
+      example: entry.example || ''
+    });
+    const currentResult = await dbAdapter.collection(COLLECTION)
+      .where({ familyId: record.familyId, childId: record.childId, flashcardKey: record.flashcardKey })
+      .limit(1)
+      .get();
+    const current = currentResult && currentResult.data && currentResult.data[0];
+    if (current && current._id) {
+      await dbAdapter.collection(COLLECTION).doc(current._id).update({
+        data: {
+          sourceTitle: record.sourceTitle,
+          sourceId: record.sourceId,
+          phonetic: record.phonetic || current.phonetic || '',
+          meaning: record.meaning || current.meaning || '',
+          example: record.example || current.example || '',
+          updatedAt: record.updatedAt
+        }
+      });
+      updated += 1;
+    } else {
+      await dbAdapter.collection(COLLECTION).add({ data: record });
+      inserted += 1;
+    }
+  }
+  return {
+    saved: true,
+    level,
+    title: book.title,
+    total: rows.length,
+    offset,
+    nextOffset: offset + batch.length,
+    done: offset + batch.length >= rows.length,
+    inserted,
+    updated
   };
 }
 
@@ -403,5 +480,6 @@ module.exports = {
   updateFlashcardReview,
   saveSettings,
   saveFlashcardAudio,
+  addDictionaryBook,
   addDictionaryWord
 };

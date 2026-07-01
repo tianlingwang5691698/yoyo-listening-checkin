@@ -378,6 +378,10 @@ async function saveFlashcardSettings(settings) {
   }, { useCache: false });
 }
 
+async function addDictionaryBook(level, options) {
+  return callCloud('addDictionaryBook', Object.assign({ level }, options || {}), { saved: false }, { useCache: false });
+}
+
 async function saveFlashcardAudio(options) {
   return callCloud('saveFlashcardAudio', options || {}, { saved: false }, { useCache: false });
 }
@@ -692,6 +696,7 @@ module.exports = {
   getFlashcardReview,
   updateFlashcardReview,
   saveFlashcardSettings,
+  addDictionaryBook,
   saveFlashcardAudio,
   getTempFileURL,
   markTaskListened,

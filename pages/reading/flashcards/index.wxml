@@ -1,11 +1,51 @@
-<view class="theme-{{theme}} page-shell flashcard-page {{mode === 'review' ? 'is-review' : ''}}">
+<view class="flashcard-nav theme-{{theme}}" style="{{navStyle}}">
+  <view class="flashcard-back" bindtap="handlePageBack">‹</view>
+  <view class="flashcard-nav-title">词汇复习</view>
+</view>
+
+<view class="theme-{{theme}} page-shell flashcard-page {{mode === 'review' ? 'is-review' : ''}}" style="{{pageTopStyle}}">
+  <block wx:if="{{sourceMode === 'bookshelf'}}">
+    <view class="bookshelf-head card">
+      <view class="progress-title">我的书库</view>
+      <view class="progress-copy">选择一个词库或词汇书开始学习计划</view>
+    </view>
+    <view class="book-list">
+      <view class="book-card card book-library" bindtap="useAllVocabulary">
+        <view class="book-cover">
+          <view class="book-spine"></view>
+          <view class="book-lines"><text></text><text></text><text></text></view>
+        </view>
+        <view class="book-main">
+          <view class="book-title">我的词库</view>
+          <view class="book-meta">阅读、语法和已加入的生词</view>
+        </view>
+        <view class="book-action">进入</view>
+      </view>
+      <view class="book-card card book-{{item.level}}" wx:for="{{dictionaryBooks}}" wx:key="level" bindtap="importDictionaryBook" data-level="{{item.level}}">
+        <view class="book-cover">
+          <view class="book-spine"></view>
+          <view class="book-lines"><text></text><text></text><text></text></view>
+        </view>
+        <view class="book-main">
+          <view class="book-title">{{item.title}}</view>
+          <view class="book-meta">{{item.imported ? item.imported + ' 个已在计划' : '从云存储建立计划'}}</view>
+        </view>
+        <view class="book-action {{importingBook === item.level ? 'is-loading' : ''}}">{{importingBook === item.level ? '处理中' : '进入'}}</view>
+      </view>
+    </view>
+  </block>
+
+  <block wx:else>
   <view class="vocab-summary card">
     <view class="progress-head">
       <view>
         <view class="progress-title">{{stats.all}} 个内容 <text wx:if="{{demoMode}}" class="demo-tag">演示</text></view>
-        <view class="progress-copy">已打卡 {{reviewDays}} 天</view>
+        <view class="progress-copy">{{activeSourceTitle}} · 已打卡 {{reviewDays}} 天</view>
       </view>
-      <view class="start-review" bindtap="startReview">开始复习</view>
+      <view class="plan-actions">
+        <view class="source-back" bindtap="backToBookshelf">书库</view>
+        <view class="start-review" bindtap="startReview">开始复习</view>
+      </view>
     </view>
     <view class="progress-bar"><view style="width: {{progress.total ? progress.mastered * 100 / progress.total : 0}}%;"></view></view>
     <view class="vocab-stats">
@@ -13,7 +53,7 @@
       <view class="vocab-count"><text>{{stats.phrase}}</text><text>短语</text></view>
       <view class="vocab-count"><text>{{stats.pattern}}</text><text>句型</text></view>
     </view>
-    <view class="limit-panel">
+    <view class="limit-panel" wx:if="{{!isUnlimitedPlan}}">
       <view class="limit-row">
         <text class="limit-label">今日新学</text>
         <view class="stepper">
@@ -21,7 +61,7 @@
           <view class="stepper-picker" bindtap="openLimitPicker" data-field="newLimit">
             <text class="stepper-value">{{settings.newLimit}}</text>
           </view>
-          <view class="stepper-btn {{settings.newLimit >= 500 ? 'disabled' : ''}}" bindtap="changeLimit" bindlongpress="changeLimit" data-field="newLimit" data-delta="5" data-long-delta="25">+</view>
+          <view class="stepper-btn {{settings.newLimit >= planLimitMax ? 'disabled' : ''}}" bindtap="changeLimit" bindlongpress="changeLimit" data-field="newLimit" data-delta="5" data-long-delta="25">+</view>
         </view>
       </view>
       <view class="limit-row">
@@ -31,7 +71,7 @@
           <view class="stepper-picker" bindtap="openLimitPicker" data-field="reviewLimit">
             <text class="stepper-value">{{settings.reviewLimit}}</text>
           </view>
-          <view class="stepper-btn {{settings.reviewLimit >= 500 ? 'disabled' : ''}}" bindtap="changeLimit" bindlongpress="changeLimit" data-field="reviewLimit" data-delta="5" data-long-delta="25">+</view>
+          <view class="stepper-btn {{settings.reviewLimit >= planLimitMax ? 'disabled' : ''}}" bindtap="changeLimit" bindlongpress="changeLimit" data-field="reviewLimit" data-delta="5" data-long-delta="25">+</view>
         </view>
       </view>
     </view>
@@ -58,16 +98,13 @@
           <text>{{group.count}}</text>
         </view>
         <view class="vocab-item card" wx:for="{{group.items}}" wx:key="flashcardKey" wx:for-item="item">
-          <view class="vocab-item-top">
-            <text>{{item.sourceTitle}}</text>
-          </view>
           <view class="vocab-text">{{item.displayText}}</view>
           <view class="vocab-meaning">{{item.meaning || item.translation || '暂无释义'}}</view>
           <view class="vocab-example" wx:if="{{item.example}}">{{item.example}}</view>
         </view>
       </view>
     </view>
-    <view class="empty-state" wx:else>暂无词汇。</view>
+    <view class="empty-state" wx:else>{{importingBook ? '正在建立计划。' : '暂无词汇。'}}</view>
   </block>
 
   <block wx:else>
@@ -77,8 +114,8 @@
       <view class="review-head-spacer"></view>
     </view>
     <view class="review-metrics card">
-      <view><text>今日复习</text><text>{{reviewDueCount}}/{{settings.reviewLimit}}</text></view>
-      <view><text>今日新词</text><text>{{newDueCount}}/{{settings.newLimit}}</text></view>
+      <view><text>本轮复习</text><text>{{reviewDueCount}}/{{settings.reviewLimit}}</text></view>
+      <view><text>本轮新词</text><text>{{newDueCount}}/{{settings.newLimit}}</text></view>
       <view><text>待学习</text><text>{{total}}</text></view>
     </view>
     <view class="study-card {{cardChoice === 'unfamiliar' ? 'is-unfamiliar' : ''}} {{cardChoice === 'easy' ? 'is-easy' : ''}}" wx:if="{{current}}">
@@ -119,6 +156,7 @@
       </view>
     </view>
     <view class="empty-state" wx:else>今天没有复习。</view>
+  </block>
   </block>
 
   <view class="limit-picker-mask" wx:if="{{limitPickerVisible}}" catchtap="closeLimitPicker">

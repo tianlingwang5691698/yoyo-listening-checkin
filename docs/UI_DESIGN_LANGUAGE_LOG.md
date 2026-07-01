@@ -194,6 +194,7 @@
 - 文件：`cloudfunctions/yoyo/index.js`
 - 文件：`utils/store.js`
 - 文件：`pages/reading/flashcards/index.js`
+- 文件：`pages/reading/flashcards/index.json`
 - 文件：`pages/reading/flashcards/index.wxml`
 - 文件：`pages/reading/flashcards/index.wxss`
 - 改动：新增云端 `studyFlashcards` 统一词库，听力/阅读学习包生成或命中缓存后同步写入生词、短语、句型。
@@ -584,6 +585,25 @@
 - 改动：全局主强调色由深咖调整为低饱和暖杏橙，纸张底色降低黄感。
 - 设计记录：普通页面以纸白灰底承载长时间阅读，完成、选中、主按钮统一用暖杏橙提升活力；避免茶绿和重黑色压住页面。
 - 验证：已做前端脚本语法检查和样式差异检查。
+
+### 2026-07-01 词汇云存储词书
+
+- 文件：`pages/reading/flashcards/index.js`
+- 文件：`pages/reading/flashcards/index.wxml`
+- 文件：`pages/reading/flashcards/index.wxss`
+- 文件：`cloudfunctions/yoyo/services/flashcard.service.js`
+- 文件：`utils/store.js`
+- 文件：`domain/cloud/index.js`
+- 改动：词汇板块入口改为“我的书库”，先选择“我的词库”或某本词汇书，再进入该来源的学习计划和词表；书库第一屏增加书本封面和轻动态书架效果；页面返回按“闪卡 -> 计划 -> 书库 -> 上一页”处理；词汇书按批导入，避免大书首次进入超时，并把每个来源缓存到本机；词表条目不再重复显示书名。
+- 设计记录：词书卡使用原书名展示；书库第一屏用小书本封面和错峰轻浮动表达书架感；每个来源各自保存学习计划数量，数量上限是该来源总数，不再用全局 500 上限；自定义顶部返回必须逐级处理页内层级，再退出页面；已进入过的词书优先读本机缓存秒开，再后台刷新；书名只在计划标题/书库展示，不在每个词条重复渲染。
+- 验证：已做前端和云函数脚本语法检查。
+
+### 2026-07-01 词汇数量保存不清空
+
+- 文件：`pages/reading/flashcards/index.js`
+- 改动：词书数量保存改为基于当前已加载词库本地重算计划，不再保存后立刻重拉云端导致真机清零；没有缓存的词书先进入页面，再直接拉词书文件。
+- 设计记录：数量选择是当前词书内的轻量设置，确认后必须保持词书内容稳定，不跳空状态；计划设置不依赖词书缓存。
+- 验证：已做前端脚本语法检查。
 
 ## 后续记录格式
 
