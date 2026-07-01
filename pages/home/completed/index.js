@@ -34,22 +34,32 @@ Page({
   }),
   async onShow() {
     page.syncTheme(this);
-    let items = [];
+    let cachedItems = [];
+    try {
+      cachedItems = wx.getStorageSync('todayCompletedItemsV1') || [];
+    } catch (error) {
+      cachedItems = [];
+    }
+    if (cachedItems.length) {
+      this.setData({
+        items: normalizeItems(cachedItems)
+      });
+    }
     try {
       const data = await store.getStudyCompletions();
-      items = data && Array.isArray(data.items) && data.items.length
+      const items = data && Array.isArray(data.items) && data.items.length
         ? data.items
-        : (wx.getStorageSync('todayCompletedItemsV1') || []);
+        : cachedItems;
+      this.setData({
+        items: normalizeItems(items)
+      });
     } catch (error) {
-      try {
-        items = wx.getStorageSync('todayCompletedItemsV1') || [];
-      } catch (innerError) {
-        items = [];
+      if (!cachedItems.length) {
+        this.setData({
+          items: []
+        });
       }
     }
-    this.setData({
-      items: normalizeItems(items)
-    });
   },
   openItem(event) {
     const index = Number(event.currentTarget.dataset.index || 0);

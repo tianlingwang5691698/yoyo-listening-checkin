@@ -333,12 +333,12 @@ Page({
       catchupPresentation
     )));
     this.preloadAdjacentMonths(calendarYear, calendarMonth);
-    await Promise.all([
+    Promise.all([
       this.loadSelectedDay(selectedDate).catch(() => {}),
       this.loadRecentDays().catch(() => {}),
       this.loadWritingAttempts().catch(() => {}),
       this.loadCatchupTasks().catch(() => {})
-    ]);
+    ]).catch(() => {});
   },
   getCachedMonthData(year, month) {
     return this.monthCache[getMonthKey(year, month)] || null;
