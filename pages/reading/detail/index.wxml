@@ -31,8 +31,8 @@
               <text wx:for="{{item.tokens}}" wx:key="index" wx:for-item="token" class="{{submitted && token.isWord ? 'tap-word' : ''}}" data-word="{{submitted ? token.word : ''}}" catchtap="lookupPassageWord">{{token.text}}</text>
               <text wx:if="{{item.note}}" class="segment-note">{{item.note}}</text>
             </block>
-            <view class="sentence-translation-inline" wx:if="{{selectedSentenceStart === item.start}}">
-              {{sentenceTranslating ? '' : selectedSentenceTranslation}}
+            <view class="sentence-translation-inline {{sentenceTranslating ? 'is-loading' : ''}}" wx:if="{{selectedSentenceStart === item.start}}">
+              {{sentenceTranslating ? '翻译中...' : selectedSentenceTranslation}}
             </view>
           </view>
         </view>
@@ -49,8 +49,8 @@
             <text wx:for="{{item.tokens}}" wx:key="index" wx:for-item="token" class="{{submitted && token.isWord ? 'tap-word' : ''}}" data-word="{{submitted ? token.word : ''}}" catchtap="lookupPassageWord">{{token.text}}</text>
             <text wx:if="{{item.note}}" class="segment-note">{{item.note}}</text>
           </block>
-          <view class="sentence-translation-inline" wx:if="{{selectedSentenceStart === item.start}}">
-            {{sentenceTranslating ? '' : selectedSentenceTranslation}}
+          <view class="sentence-translation-inline {{sentenceTranslating ? 'is-loading' : ''}}" wx:if="{{selectedSentenceStart === item.start}}">
+            {{sentenceTranslating ? '翻译中...' : selectedSentenceTranslation}}
           </view>
         </view>
       </view>

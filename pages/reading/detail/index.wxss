@@ -990,6 +990,10 @@
   overflow-wrap: anywhere;
 }
 
+.sentence-translation-inline.is-loading {
+  color: var(--text-muted);
+}
+
 .tap-word {
   padding: 0 1rpx;
   border-radius: 6rpx;
