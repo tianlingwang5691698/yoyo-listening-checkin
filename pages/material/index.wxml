@@ -51,7 +51,7 @@
         <view class="directory-arrow">›</view>
       </view>
     </view>
-    <view class="empty-state" wx:if="{{!exams.length}}">内容还在准备中。</view>
+    <view class="empty-state" wx:if="{{!exams.length}}">暂无内容。</view>
   </view>
 
   <view class="material-card card" wx:elif="{{selectedExamId && !selectedDistrict}}">
@@ -68,7 +68,7 @@
         <view class="directory-arrow">›</view>
       </view>
     </view>
-    <view class="empty-state" wx:if="{{!districts.length}}">内容还在准备中。</view>
+    <view class="empty-state" wx:if="{{!districts.length}}">暂无内容。</view>
   </view>
 
   <view class="material-card card" wx:else>

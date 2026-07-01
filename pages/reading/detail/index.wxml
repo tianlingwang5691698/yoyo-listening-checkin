@@ -1,10 +1,5 @@
 <view class="theme-{{theme}} page-shell reading-detail">
-  <view class="section-panel" wx:if="{{loading}}">
-    <view class="section-title">阅读加载中</view>
-    <view class="section-copy">正在准备文章。</view>
-  </view>
-
-  <block wx:elif="{{passage}}">
+  <block wx:if="{{passage}}">
     <view class="passage-card card">
       <view class="passage-meta">{{passage.year}} · {{passage.district}} · {{passage.examType}} · {{passage.sectionDisplay}} · {{passage.difficultyDisplay}}</view>
       <view class="passage-title">{{passage.title}}</view>
@@ -37,7 +32,7 @@
               <text wx:if="{{item.note}}" class="segment-note">{{item.note}}</text>
             </block>
             <view class="sentence-translation-inline" wx:if="{{selectedSentenceStart === item.start}}">
-              {{sentenceTranslating ? '翻译中。' : selectedSentenceTranslation}}
+              {{sentenceTranslating ? '' : selectedSentenceTranslation}}
             </view>
           </view>
         </view>
@@ -55,7 +50,7 @@
             <text wx:if="{{item.note}}" class="segment-note">{{item.note}}</text>
           </block>
           <view class="sentence-translation-inline" wx:if="{{selectedSentenceStart === item.start}}">
-            {{sentenceTranslating ? '翻译中。' : selectedSentenceTranslation}}
+            {{sentenceTranslating ? '' : selectedSentenceTranslation}}
           </view>
         </view>
       </view>
@@ -149,11 +144,9 @@
       <view class="review-tabs">
         <view class="review-tab tab-{{item.tone}} {{activeReviewTab === item.key ? 'is-active' : ''}} {{loadingStudySection === item.key ? 'is-loading' : ''}}" wx:for="{{reviewTabs}}" wx:key="key" data-tab="{{item.key}}" bindtap="selectReviewTab">
           <text>{{item.label}}</text>
-          <text class="tab-loading" wx:if="{{loadingStudySection === item.key}}">生成中</text>
           <text class="button-dot" wx:if="{{activeReviewTab === item.key}}"></text>
         </view>
       </view>
-      <view class="study-loading-tip" wx:if="{{studyLoadingText}}">{{studyLoadingText}}</view>
       <view class="study-error-tip" wx:if="{{studyErrorText}}">
         <text>{{studyErrorText}}</text>
         <button class="retry-button" bindtap="retryStudySection">重试</button>
@@ -178,8 +171,8 @@
           <view class="card-example" wx:if="{{item.example}}">{{item.example}}</view>
           <view class="card-example-meaning" wx:if="{{item.exampleMeaning}}">{{item.exampleMeaning}}</view>
         </view>
-        <view class="empty-inline" wx:if="{{!wordCards.length}}">
-          <view>{{loadingStudySection === 'vocabulary' || loadingStudySection === 'cards' ? '生词生成中，请稍等。' : '还没有生成生词。'}}</view>
+        <view class="empty-inline" wx:if="{{!wordCards.length && loadingStudySection !== 'vocabulary' && loadingStudySection !== 'cards'}}">
+          <view>还没有生成生词。</view>
           <button wx:if="{{loadingStudySection !== 'vocabulary' && loadingStudySection !== 'cards'}}" data-tab="vocabulary" bindtap="selectReviewTab">生成生词</button>
         </view>
       </view>
@@ -201,8 +194,8 @@
           <view class="card-meaning">{{item.meaning}}</view>
           <view class="card-example" wx:if="{{item.example}}">{{item.example}}</view>
         </view>
-        <view class="empty-inline" wx:if="{{!phraseCards.length}}">
-          <view>{{loadingStudySection === 'phrases' || loadingStudySection === 'cards' ? '短语生成中，请稍等。' : '还没有生成短语。'}}</view>
+        <view class="empty-inline" wx:if="{{!phraseCards.length && loadingStudySection !== 'phrases' && loadingStudySection !== 'cards'}}">
+          <view>还没有生成短语。</view>
           <button wx:if="{{loadingStudySection !== 'phrases' && loadingStudySection !== 'cards'}}" data-tab="phrases" bindtap="selectReviewTab">生成短语</button>
         </view>
       </view>
@@ -217,8 +210,8 @@
           <view class="card-example" wx:if="{{item.example}}">{{item.example}}</view>
           <view class="card-example-meaning" wx:if="{{item.exampleMeaning}}">{{item.exampleMeaning}}</view>
         </view>
-        <view class="empty-inline" wx:if="{{!sentencePatternCards.length}}">
-          <view>{{loadingStudySection === 'patterns' || loadingStudySection === 'cards' ? '句型生成中，请稍等。' : '还没有生成句型。'}}</view>
+        <view class="empty-inline" wx:if="{{!sentencePatternCards.length && loadingStudySection !== 'patterns' && loadingStudySection !== 'cards'}}">
+          <view>还没有生成句型。</view>
           <button wx:if="{{loadingStudySection !== 'patterns' && loadingStudySection !== 'cards'}}" data-tab="patterns" bindtap="selectReviewTab">生成句型</button>
         </view>
       </view>
@@ -234,13 +227,12 @@
         <button class="dictionary-audio {{dictionaryAudioLoading ? 'is-loading' : ''}}" disabled="{{dictionaryLoading || dictionaryAudioLoading}}" bindtap="playDictionaryWord">♪</button>
       </view>
       <button class="dictionary-add" loading="{{dictionaryAdding}}" bindtap="addDictionaryWordToLibrary">加入词库</button>
-      <view class="dictionary-loading" wx:if="{{dictionaryLoading}}">查词中。</view>
-      <block wx:else>
+      <block wx:if="{{!dictionaryLoading}}">
         <view class="dictionary-definition" wx:for="{{dictionaryEntry.definitions}}" wx:key="*this">· {{item}}</view>
         <view class="dictionary-empty" wx:if="{{!dictionaryEntry.definitions || !dictionaryEntry.definitions.length}}">暂无释义。</view>
       </block>
     </view>
   </block>
 
-  <view class="empty-state" wx:else>阅读内容还在准备中。</view>
+  <view class="empty-state" wx:else>暂无阅读内容。</view>
 </view>

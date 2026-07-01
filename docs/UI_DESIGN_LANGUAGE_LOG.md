@@ -218,6 +218,40 @@
 - 设计记录：演示状态只加轻量标签，保持词库首页先分类浏览，再进入复习卡片。
 - 验证：已做前端脚本语法检查。
 
+### 2026-07-01 首页加载提示优化
+
+- 文件：`pages/home/index.js`
+- 文件：`pages/home/index.wxml`
+- 改动：首页首次同步不再显示“加载中”提示卡片，查看记录去掉系统 loading 弹层。
+- 设计记录：首页打开时保留现有首屏结构，加载状态静默处理，避免提示遮挡页面观感。
+- 验证：已做前端脚本语法检查。
+
+### 2026-07-01 全页面加载提示静默化
+
+- 文件：`pages/lesson/index.wxml`
+- 文件：`pages/lesson/index.js`
+- 文件：`pages/reading/index.wxml`
+- 文件：`pages/reading/detail/index.wxml`
+- 文件：`pages/reading/detail/index.js`
+- 文件：`pages/record/index.wxml`
+- 文件：`pages/grammar/index.wxml`
+- 文件：`pages/parent/detail/index.wxml`
+- 文件：`pages/writing/detail/index.wxml`
+- 文件：`pages/identity/index.wxml`
+- 文件：`pages/home/index.js`
+- 文件：`pages/home/index.wxml`
+- 文件：`pages/level/index.js`
+- 文件：`pages/level-stage/index.js`
+- 文件：`pages/material/detail/index.wxml`
+- 文件：`pages/material/index.wxml`
+- 文件：`pages/profile/index.js`
+- 文件：`pages/parent/index.wxml`
+- 文件：`pages/family/index.wxml`
+- 文件：`pages/reading/flashcards/index.wxml`
+- 改动：移除页面内“加载中/生成中/查词中/准备中/同步中”等等待提示，加载阶段静默等待，空状态只在确认无数据后显示。
+- 设计记录：全页面等待过程不弹提示、不占首屏视觉；保留按钮禁用/转圈这类局部操作反馈。
+- 验证：已做前端脚本语法检查。
+
 ### 2026-07-01 写作输入框信纸样式
 
 - 文件：`pages/writing/detail/index.wxml`

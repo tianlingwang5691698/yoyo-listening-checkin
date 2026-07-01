@@ -2,7 +2,7 @@
   <view class="parent-hero product-hero">
     <view class="product-title type-page-title">日报</view>
     <view class="product-copy">{{child.nickname || '佑佑'}}</view>
-    <view class="parent-id">绑定 ID：{{child.childLoginCode || '同步中'}}</view>
+    <view class="parent-id">绑定 ID：{{child.childLoginCode || '未绑定'}}</view>
     <view class="sync-debug {{syncMode === 'cloud' ? 'is-cloud' : 'is-local'}}" wx:if="{{showCloudDebug && syncDebug && syncDebug.show}}">
       {{syncDebug.text}}
     </view>

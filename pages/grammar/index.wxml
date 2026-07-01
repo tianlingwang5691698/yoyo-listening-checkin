@@ -98,12 +98,11 @@
         </view>
         <view class="answer-line" wx:if="{{item.isAnswered}}">
           <text wx:if="{{item.answer}}">{{item.isCorrect ? '答对了' : '答错了'}} · 标准答案：{{item.answer}}</text>
-          <text wx:else>无标准答案，等待模型生成。</text>
+          <text wx:else>无标准答案。</text>
         </view>
         <view class="grammar-explain-actions" wx:if="{{item.isAnswered && !item.explanation && !item.explaining}}">
           <view class="grammar-explain-action" data-question-id="{{item._id}}" bindtap="loadExplanation">看讲解</view>
         </view>
-        <view class="answer-line" wx:if="{{item.explaining}}">讲解生成中。</view>
         <view class="analysis-item inline-analysis" wx:if="{{item.explanation}}">
           <view class="analysis-head">
             <text>{{item.explanation.topic}}</text>
@@ -128,8 +127,7 @@
       <button class="dictionary-audio {{dictionaryAudioLoading ? 'is-loading' : ''}}" disabled="{{dictionaryLoading || dictionaryAudioLoading}}" bindtap="playDictionaryWord">♪</button>
     </view>
     <button class="dictionary-add" loading="{{dictionaryAdding}}" bindtap="addDictionaryWordToLibrary">加入词库</button>
-    <view class="dictionary-loading" wx:if="{{dictionaryLoading}}">查词中。</view>
-    <block wx:else>
+    <block wx:if="{{!dictionaryLoading}}">
       <view class="dictionary-definition" wx:for="{{dictionaryEntry.definitions}}" wx:key="*this">· {{item}}</view>
       <view class="dictionary-empty" wx:if="{{!dictionaryEntry.definitions || !dictionaryEntry.definitions.length}}">暂无释义。</view>
     </block>

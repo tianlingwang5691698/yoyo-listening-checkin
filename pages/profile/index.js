@@ -29,7 +29,7 @@ function buildProfilePresentation(data) {
   const childCodeReady = /^\d{6}$/.test(childLoginCode);
   return {
     childCodeReady,
-    childCodeText: childCodeReady ? childLoginCode : ((data && data.syncMode) === 'cloud' ? '同步中' : '待同步')
+    childCodeText: childCodeReady ? childLoginCode : '未绑定'
   };
 }
 

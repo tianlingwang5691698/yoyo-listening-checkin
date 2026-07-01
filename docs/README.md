@@ -29,6 +29,8 @@
   - 每次 UI/交互改动前后的检查清单
 - [UI_RULE_AUDIT.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/UI_RULE_AUDIT.md)
   - UI 规则扫描记录和后续整改重点
+- [PAGE_LOADING_QUALITY_STANDARD.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/PAGE_LOADING_QUALITY_STANDARD.md)
+  - 页面打开速度、缓存、静默加载和首屏质量标准；后续性能和加载逻辑修改优先参考
 - [PROJECT_PROGRESS_LOG.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/PROJECT_PROGRESS_LOG.md)
   - 项目级 UI/交互进度、变化和结论
 - [CHANGE_INDEX.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/CHANGE_INDEX.md)

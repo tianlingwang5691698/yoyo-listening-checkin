@@ -6,7 +6,7 @@
   </view>
 
   <view class="audio-card card">
-    <view class="audio-title">{{audioLocked ? '先学文本' : (audioLoading ? '音频准备中' : (isPlaying ? '正在播放' : '听力音频'))}}</view>
+    <view class="audio-title">{{audioLocked ? '先学文本' : (isPlaying ? '正在播放' : '听力音频')}}</view>
     <view class="audio-lock-tip" wx:if="{{audioLocked}}">学完生词、短语和句型后再听音频。</view>
     <button class="audio-button" bindtap="toggleAudio" disabled="{{audioLoading || !audioSrc || audioLocked}}">{{isPlaying ? '暂停' : '播放'}}</button>
     <view class="audio-error" wx:if="{{audioError}}">{{audioError}}</view>

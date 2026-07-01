@@ -69,7 +69,7 @@
           <view class="recording-text" wx:if="{{item.studentTranscript}}">孩子回答：{{item.studentTranscript}}</view>
           <view class="recording-text" wx:if="{{item.feedback}}">建议：{{item.feedback}}</view>
           <button class="player-action attempt-play {{loadingAttemptKey === item.key && playingAttemptKey !== item.key ? 'is-disabled' : ''}}" data-index="{{index}}" bindtap="playSpeakingAttempt">
-            {{playingAttemptKey === item.key ? (pausedAttemptKey === item.key ? '继续播放' : '暂停录音') : (loadingAttemptKey === item.key ? '加载中' : '播放录音')}}
+            {{playingAttemptKey === item.key ? (pausedAttemptKey === item.key ? '继续播放' : '暂停录音') : '播放录音'}}
           </button>
         </view>
       </block>
@@ -92,7 +92,6 @@
           <view class="recording-meta" wx:if="{{item.correctText}}">答题：{{item.correctText}}</view>
           <button class="detail-toggle" data-key="{{item.key}}" catchtap="toggleCompletionDetail">{{item.expanded ? '收起详情' : '查看原题和分析'}}</button>
           <block wx:if="{{item.expanded}}">
-            <view class="empty-state" wx:if="{{item.detailLoading}}">详情加载中。</view>
             <view class="source-passage" wx:if="{{item.passage && item.passage.passage}}">
               <view class="question-review-title">原文</view>
               <view class="recording-text">{{item.passage.passage}}</view>

@@ -1,11 +1,4 @@
-<view class="theme-{{theme}} page-shell lesson-page" wx:if="{{lessonLoading}}">
-  <view class="section-panel">
-    <view class="section-title">课程加载中</view>
-    <view class="section-copy">正在同步学习内容。</view>
-  </view>
-</view>
-
-<view class="theme-{{theme}} page-shell lesson-page" wx:elif="{{task}}">
+<view class="theme-{{theme}} page-shell lesson-page" wx:if="{{task}}">
   <view class="lesson-hero product-hero tone-{{task.coverTone}} cover-variant-{{task.coverVariant}}">
     <view class="lesson-hero-top">
       <view class="pill">{{task.coverBadge || task.categoryLabel}}</view>
@@ -85,7 +78,7 @@
           <view class="player-info-top">
             <view>
               <view class="media-title" wx:if="{{currentAudio && currentAudio.title}}">{{currentAudio.title}}</view>
-              <view class="player-status">{{lessonAudioLocked ? '先学文本' : (isPlaying ? '正在播放' : (audioResolving ? '正在准备' : (audioReady ? '已暂停' : '等待播放')))}}</view>
+              <view class="player-status">{{lessonAudioLocked ? '先学文本' : (isPlaying ? '正在播放' : (audioReady ? '已暂停' : '等待播放'))}}</view>
             </view>
           </view>
         </view>
@@ -96,7 +89,7 @@
         </view>
         <view class="player-progress">
           <view class="player-progress-meta">
-            <view class="player-progress-label">{{lessonAudioLocked ? '先学文本' : (isPlaying ? '播放中' : audioResolving ? '准备中' : audioReady ? '已暂停' : '等待播放')}}</view>
+            <view class="player-progress-label">{{lessonAudioLocked ? '先学文本' : (isPlaying ? '播放中' : audioReady ? '已暂停' : '等待播放')}}</view>
             <view class="player-time">{{currentTimeLabel}} / {{durationLabel}}</view>
           </view>
           <view class="progress-rail player-progress-track">
@@ -116,8 +109,8 @@
       <view>
         <view class="section-title type-section-title">文本</view>
       </view>
-      <button class="pill transcript-pill" wx:if="{{transcriptPendingLoad && !transcriptLines.length}}" bindtap="loadTranscript">加载文本</button>
-      <view class="pill transcript-pill" wx:elif="{{!transcriptLines.length}}">{{transcriptLoadFailed ? '加载失败' : (task.transcriptStatus === 'pending' ? '准备中' : '暂无文本')}}</view>
+      <button class="pill transcript-pill" wx:if="{{transcriptPendingLoad && !transcriptLines.length}}" bindtap="loadTranscript">查看文本</button>
+      <view class="pill transcript-pill" wx:elif="{{!transcriptLines.length}}">{{transcriptLoadFailed ? '加载失败' : '暂无文本'}}</view>
     </view>
 
     <view class="transcript-focus" wx:if="{{transcriptLines.length}}">
@@ -164,15 +157,11 @@
     </view>
 
     <view class="transcript-empty" wx:elif="{{transcriptPendingLoad}}">
-      <view class="transcript-empty-title">需要时再加载文本</view>
+      <view class="transcript-empty-title">需要时再查看文本</view>
     </view>
 
     <view class="transcript-empty" wx:elif="{{transcriptLoadFailed}}">
       <view class="transcript-empty-title">文本加载失败，可稍后再试</view>
-    </view>
-
-    <view class="transcript-empty" wx:elif="{{task.transcriptStatus === 'pending'}}">
-      <view class="transcript-empty-title">文本准备中</view>
     </view>
 
     <view class="transcript-empty" wx:else>
@@ -210,7 +199,7 @@
         <view class="section-copy" wx:if="{{speakingMode === 'nce-question-answer'}}">{{speakingQuestionText || '听问题后录音回答'}}</view>
         <view class="section-copy" wx:else>第 {{repeatActiveIndex + 1}} / {{repeatLines.length}} 句</view>
       </view>
-      <view class="pill">{{speakingSubmitting ? '提交中' : '录音'}}</view>
+      <view class="pill">录音</view>
     </view>
 
     <view class="repeat-list" wx:if="{{speakingMode === 'unlock-sentence-repeat'}}">

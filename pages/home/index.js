@@ -71,7 +71,7 @@ function buildListeningSummary(groupedDailyTasks) {
   const total = groups.reduce((sum, item) => sum + Number(item.totalCount || 0), 0);
   const completed = groups.reduce((sum, item) => sum + Number(item.completedCount || 0), 0);
   const nextGroup = groups.find((item) => Number(item.completedCount || 0) < Number(item.totalCount || 0));
-  if (!groups.length) return '同步中';
+  if (!groups.length) return '进入听力';
   if (total > 0 && completed >= total) return '今日已完成';
   return `${completed}/${total || groups.length} 完成 · ${(nextGroup && nextGroup.categoryLabel) || '继续'}`;
 }
@@ -83,8 +83,8 @@ function buildListeningTaskStatus(groupedDailyTasks) {
   if (!groups.length || !total) {
     return {
       title: '今日任务',
-      copy: '听力任务准备中',
-      action: '准备中',
+      copy: '暂无今日听力任务',
+      action: '查看',
       pending: false
     };
   }
@@ -185,7 +185,7 @@ Page({
     readingLoading: true,
     readingToday: null,
     readingCompleted: false,
-    listeningSummary: '同步中',
+    listeningSummary: '进入听力',
     listeningTaskStatus: buildListeningTaskStatus([]),
     nextListeningTask: null,
     readingSummary: '进入阅读',
@@ -387,7 +387,7 @@ Page({
   },
   openTest() {
     wx.showToast({
-      title: '测试模块准备中',
+      title: '测试模块暂未开放',
       icon: 'none'
     });
   },
@@ -412,7 +412,7 @@ Page({
       return;
     }
     wx.showToast({
-      title: '口语练习准备中',
+      title: '口语练习暂未开放',
       icon: 'none'
     });
   },
@@ -435,7 +435,6 @@ Page({
       });
       return;
     }
-    wx.showLoading({ title: '加载记录' });
     Promise.all([
       this.loadTodayReport().catch(() => {}),
       this.loadStudyCompletions().catch(() => {})
@@ -444,8 +443,6 @@ Page({
       wx.navigateTo({
         url: '/pages/home/completed/index'
       });
-    }).finally(() => {
-      wx.hideLoading();
     });
   },
   openFamilyPage() {

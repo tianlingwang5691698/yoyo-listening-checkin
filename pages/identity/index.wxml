@@ -26,6 +26,6 @@
   <view class="bind-card form-panel" wx:else>
     <view class="section-title">我的孩子 ID</view>
     <view class="section-copy">把这个数字给家长，家长即可加入记录。</view>
-    <view class="student-code">{{child.childLoginCode || '生成中'}}</view>
+    <view class="student-code">{{child.childLoginCode || '未生成'}}</view>
   </view>
 </view>

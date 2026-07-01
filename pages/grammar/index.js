@@ -311,23 +311,23 @@ Page({
       return;
     }
     let topicQuestions = selectedTopic ? (selectedTopic.questions || []) : [];
-    if (selectedTopic && !topicQuestions.length && this.data.mode !== 'wrong') {
-      try {
-        const result = await store.getGrammarTopic(selectedTopic.sourceTopicId || topicId, { examId: this.data.selectedExamId });
-        topicQuestions = (result && result.questions) || [];
-      } catch (error) {
-        topicQuestions = [];
-      }
-    }
     const sourceTopicId = selectedTopic ? (selectedTopic.sourceTopicId || topicId) : topicId;
+    const shouldLoadRemote = selectedTopic && !topicQuestions.length && this.data.mode !== 'wrong';
+    const shouldLoadProgress = selectedTopic && this.data.mode !== 'wrong';
+    const [topicResult, progressResult] = await Promise.all([
+      shouldLoadRemote
+        ? store.getGrammarTopic(sourceTopicId, { examId: this.data.selectedExamId }).catch(() => null)
+        : Promise.resolve(null),
+      shouldLoadProgress
+        ? store.getGrammarProgress(`${this.data.selectedExamId}:${sourceTopicId}`).catch(() => null)
+        : Promise.resolve(null)
+    ]);
+    if (topicResult) {
+      topicQuestions = topicResult.questions || [];
+    }
     let nextIndex = 0;
-    if (selectedTopic && this.data.mode !== 'wrong') {
-      try {
-        const progress = await store.getGrammarProgress(`${this.data.selectedExamId}:${sourceTopicId}`);
-        nextIndex = Math.min(Math.max(Number((progress && progress.nextIndex) || 0), 0), topicQuestions.length);
-      } catch (error) {
-        nextIndex = 0;
-      }
+    if (progressResult) {
+      nextIndex = Math.min(Math.max(Number(progressResult.nextIndex || 0), 0), topicQuestions.length);
     }
     const selectedQuestions = topicQuestions.slice(nextIndex).map((item, index) => buildQuestion(item, nextIndex + index));
     this.setData({

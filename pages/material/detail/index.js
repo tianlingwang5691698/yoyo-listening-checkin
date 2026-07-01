@@ -188,7 +188,7 @@ Page({
     });
   },
   async loadCachedStudyPack(item) {
-    const result = await store.getListeningStudyPack(item, { cacheOnly: true, useCache: false });
+    const result = await store.getListeningStudyPack(item, { cacheOnly: true });
     const studyPack = result && result.studyPack;
     const hasCards = studyPack
       && ((studyPack.vocabularyCards || []).length || (studyPack.phraseCards || []).length || (studyPack.sentencePatternCards || []).length);
@@ -204,7 +204,7 @@ Page({
       return;
     }
     this.setData({ studyLoading: true, studyError: '' });
-    const result = await store.getListeningStudyPack(item);
+    const result = await store.getListeningStudyPack(item, { useCache: false });
     const studyPack = result && result.studyPack;
     const hasCards = studyPack
       && ((studyPack.vocabularyCards || []).length || (studyPack.phraseCards || []).length || (studyPack.sentencePatternCards || []).length);

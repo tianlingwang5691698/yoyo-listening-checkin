@@ -5,12 +5,7 @@
     <view class="reading-copy">选择一模、二模或真题卷；完成后单词、短语和句型进入当天背诵闪卡。</view>
   </view>
 
-  <view class="section-panel" wx:if="{{loading}}">
-    <view class="section-title">阅读加载中</view>
-    <view class="section-copy">正在准备今日文章。</view>
-  </view>
-
-  <block wx:elif="{{categoryRoot}}">
+  <block wx:if="{{categoryRoot}}">
     <view class="reading-card card">
       <view class="reading-card-top">
         <view class="reading-card-label">
@@ -62,5 +57,5 @@
 
   </block>
 
-  <view class="empty-state" wx:else>阅读内容还在准备中。</view>
+  <view class="empty-state" wx:else>暂无阅读内容。</view>
 </view>

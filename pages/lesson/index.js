@@ -1291,10 +1291,6 @@ Page({
           audioErrorText: '',
           audioPlaybackMode: 'resolving'
         });
-        wx.showToast({
-          title: '音频加载中',
-          icon: 'none'
-        });
       }
     }
   },
@@ -1339,7 +1335,7 @@ Page({
     const target = task || this.data.task || {};
     const result = await store.getListeningStudyPack(
       buildLessonStudyItem(target, this.category, this.taskId, ''),
-      { cacheOnly: true, useCache: false }
+      { cacheOnly: true }
     );
     const studyPack = result && result.studyPack;
     const hasCards = studyPack
@@ -1365,7 +1361,7 @@ Page({
       return;
     }
     this.setData({ lessonStudyLoading: true, lessonStudyError: '' });
-    const result = await store.getListeningStudyPack(buildLessonStudyItem(task, this.category, this.taskId, transcript));
+    const result = await store.getListeningStudyPack(buildLessonStudyItem(task, this.category, this.taskId, transcript), { useCache: false });
     const studyPack = result && result.studyPack;
     const hasCards = studyPack
       && ((studyPack.vocabularyCards || []).length || (studyPack.phraseCards || []).length || (studyPack.sentencePatternCards || []).length);

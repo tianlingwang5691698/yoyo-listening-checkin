@@ -91,7 +91,7 @@
         <view class="recent-day-meta">{{item.minutesText}}</view>
       </view>
     </block>
-    <view class="empty-state" wx:else>{{recentDaysLoading ? '加载中。' : '暂无记录。'}}</view>
+    <view class="empty-state" wx:if="{{!recentDaysLoading && (!recentDays || !recentDays.length)}}">暂无记录。</view>
   </view>
 
   <view class="catchup section-panel">
@@ -160,7 +160,7 @@
         </view>
       </view>
     </block>
-    <view class="empty-state" wx:else>{{writingAttemptsLoading ? '加载中。' : '暂无作文记录。'}}</view>
+    <view class="empty-state" wx:if="{{!writingAttemptsLoading && (!writingAttempts || !writingAttempts.length)}}">暂无作文记录。</view>
   </view>
 
   <view class="day-card section-panel">

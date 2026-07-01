@@ -275,6 +275,7 @@ Page({
   monthCache: {},
   monthRequests: {},
   calendarLoadVersion: 0,
+  deferredLoadTimer: null,
   lastHeatmapRefreshToken: 0,
   data: page.createCloudPageData({
     child: contracts.createChildDefaults(),
@@ -357,13 +358,29 @@ Page({
       buildMetric(nextState.stats, this.data.metricMode),
       catchupPresentation
     )));
-    this.preloadAdjacentMonths(calendarYear, calendarMonth);
-    Promise.all([
-      this.loadSelectedDay(selectedDate).catch(() => {}),
-      this.loadRecentDays().catch(() => {}),
-      this.loadWritingAttempts().catch(() => {}),
-      this.loadCatchupTasks().catch(() => {})
-    ]).catch(() => {});
+    this.scheduleDeferredLoads(calendarYear, calendarMonth, selectedDate);
+  },
+  onHide() {
+    this.clearDeferredLoads();
+  },
+  clearDeferredLoads() {
+    if (this.deferredLoadTimer) {
+      clearTimeout(this.deferredLoadTimer);
+      this.deferredLoadTimer = null;
+    }
+  },
+  scheduleDeferredLoads(calendarYear, calendarMonth, selectedDate) {
+    this.clearDeferredLoads();
+    this.deferredLoadTimer = setTimeout(() => {
+      this.deferredLoadTimer = null;
+      this.preloadAdjacentMonths(calendarYear, calendarMonth);
+      Promise.all([
+        this.loadSelectedDay(selectedDate).catch(() => {}),
+        this.loadRecentDays().catch(() => {}),
+        this.loadWritingAttempts().catch(() => {}),
+        this.loadCatchupTasks().catch(() => {})
+      ]).catch(() => {});
+    }, 350);
   },
   getCachedMonthData(year, month) {
     return this.monthCache[getMonthKey(year, month)] || null;

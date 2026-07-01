@@ -161,7 +161,6 @@ Page({
     const fallbackPassage = this.data.passage || {};
     const targetPassageId = passageId || fallbackPassage._id || '';
     if (!targetPassageId) {
-      wx.showToast({ title: '阅读内容还在准备中', icon: 'none' });
       return;
     }
     wx.navigateTo({

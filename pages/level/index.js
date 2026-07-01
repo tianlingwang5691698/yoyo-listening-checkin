@@ -46,7 +46,7 @@ function getTextType(task) {
     return task.syncGranularity === 'line' ? '句级' : '逐词';
   }
   if (task.transcriptStatus === 'pending') {
-    return '准备中';
+    return '暂无文本';
   }
   return '纯听力';
 }
@@ -192,7 +192,7 @@ Page({
   },
   openTest() {
     wx.showToast({
-      title: '测试模块准备中',
+      title: '测试模块暂未开放',
       icon: 'none'
     });
   },

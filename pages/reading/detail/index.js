@@ -970,19 +970,17 @@ Page({
       return;
     }
     if (this._studyPackLoading) {
-      wx.showToast({ title: `${getStudySectionLabel(this.data.loadingStudySection || section)}生成中，请稍等`, icon: 'none' });
       return;
     }
     this._studyPackLoading = true;
     this.setData({
       loadingStudySection: section,
-      studyLoadingText: `${getStudySectionLabel(section)}生成中。`,
+      studyLoadingText: '',
       studyErrorText: '',
       failedStudySection: ''
     });
-    wx.showToast({ title: `${getStudySectionLabel(section)}生成中`, icon: 'none' });
     try {
-      const result = await store.getReadingStudyPack({ passageId, section });
+      const result = await store.getReadingStudyPack({ passageId, section, useCache: false });
       const studyPack = result && result.studyPack ? result.studyPack : null;
       if (studyPack) {
         mergePhoneStudyPack(passageId, studyPack);

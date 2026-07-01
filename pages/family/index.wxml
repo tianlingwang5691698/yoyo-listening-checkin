@@ -46,7 +46,7 @@
       <view class="row-main">
         <view class="row-copy">清掉今天误记播放</view>
       </view>
-      <button class="row-action row-action-wide row-action-warn {{undoingLastListened ? 'is-disabled' : ''}}" bindtap="undoLastListened">{{undoingLastListened ? '处理中' : '清掉'}}</button>
+      <button class="row-action row-action-wide row-action-warn {{undoingLastListened ? 'is-disabled' : ''}}" bindtap="undoLastListened">清掉</button>
     </view>
   </view>
 

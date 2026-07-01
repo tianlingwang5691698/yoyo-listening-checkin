@@ -3,10 +3,13 @@ const contracts = require('./contracts');
 const monitor = require('./monitor');
 const inflightCloudRequests = {};
 const memoryCloudCache = {};
+const tempFileUrlCache = {};
 const CACHE_INDEX_KEY = 'yoyoCloudReadCacheKeysV1';
 const CACHE_MAX_AGE_MS = 7 * 24 * 60 * 60 * 1000;
+const TEMP_FILE_URL_MAX_AGE_MS = 20 * 60 * 1000;
 const READ_CACHE_CONFIG = {
   getDashboard: { persist: true },
+  getMaterialIndex: { persist: true },
   getLevelOverview: { persist: true },
   getTaskDetail: { persist: true },
   getTaskTranscript: { persist: false },
@@ -295,7 +298,7 @@ async function getMaterialIndex(onRefresh) {
     writingEm1: [],
     writingEm2: [],
     listeningEm2: []
-  }, { onRefresh, useCache: false });
+  }, { onRefresh });
 }
 
 async function getLevelOverview(options, onRefresh) {
@@ -387,8 +390,20 @@ async function saveFlashcardAudio(options) {
 }
 
 async function getTempFileURL(fileId) {
+  const key = String(fileId || '');
+  const cached = key ? tempFileUrlCache[key] : null;
+  if (cached && cached.url && Date.now() - cached.savedAt < TEMP_FILE_URL_MAX_AGE_MS) {
+    return cached.url;
+  }
   try {
-    return await cloud.getTempFileURL(fileId);
+    const url = await cloud.getTempFileURL(fileId);
+    if (key && url) {
+      tempFileUrlCache[key] = {
+        savedAt: Date.now(),
+        url
+      };
+    }
+    return url;
   } catch (error) {
     monitor.logError('store', 'getTempFileURL', error, { fileId: fileId ? 'set' : 'empty' });
     throw error;
@@ -530,10 +545,13 @@ async function getReadingPassage(options, onRefresh) {
 }
 
 async function getReadingStudyPack(options, onRefresh) {
-  return callCloud('getReadingStudyPack', Object.assign({}, options || {}), {
+  const opts = Object.assign({}, options || {});
+  const useCache = opts.useCache !== false;
+  delete opts.useCache;
+  return callCloud('getReadingStudyPack', opts, {
     passageId: '',
     studyPack: null
-  }, { onRefresh, useCache: false });
+  }, { onRefresh, useCache });
 }
 
 async function synthesizeReadingAudio(options) {
