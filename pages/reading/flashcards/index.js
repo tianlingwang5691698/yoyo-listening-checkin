@@ -71,9 +71,11 @@ function getLimitItemHeightPx() {
 
 function normalizeCard(item, index) {
   const type = item.type || (item.pattern ? 'pattern' : (item.phrase ? 'phrase' : 'word'));
+  const displayText = item.text || item.word || item.phrase || item.pattern || '';
   return Object.assign({}, item, {
     type,
-    displayText: item.text || item.word || item.phrase || item.pattern || '',
+    displayText,
+    canSpeak: (type === 'word' || type === 'phrase') && canUseDictionaryVoice(item.word || item.phrase || displayText),
     typeLabel: TYPE_LABELS[type] || '生词',
     index: index + 1
   });
@@ -280,7 +282,8 @@ Page({
   },
   async speakCurrent() {
     const current = this.data.current || {};
-    const text = current.displayText || current.text || current.word || current.phrase || current.pattern || '';
+    if (!current.canSpeak) return;
+    const text = current.word || current.phrase || current.displayText || '';
     if (!text) {
       wx.showToast({ title: '暂无发音内容', icon: 'none' });
       return;
