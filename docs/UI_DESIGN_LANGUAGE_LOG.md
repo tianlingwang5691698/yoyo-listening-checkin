@@ -522,6 +522,18 @@
 - 设计记录：轻操作胶囊按钮文字必须水平和垂直居中，不能受原生 button 行高影响偏上。
 - 验证：已做样式检查。
 
+### 2026-07-01 全局词典音符发音
+
+- 文件：`pages/grammar/index.wxml`
+- 文件：`pages/grammar/index.wxss`
+- 文件：`pages/reading/detail/index.wxml`
+- 文件：`pages/reading/detail/index.wxss`
+- 文件：`pages/reading/flashcards/index.wxml`
+- 文件：`pages/reading/flashcards/index.wxss`
+- 改动：语法词典、阅读词典和词汇闪卡的发音入口统一为音符按钮。
+- 设计记录：全局词典发音使用 `♪` 音符，播放时音符轻跳动；不再使用“发音/…”文字按钮。
+- 验证：已做前端脚本语法检查。
+
 ## 后续记录格式
 
 每次 UI/交互改动后追加：

@@ -521,30 +521,34 @@
   position: absolute;
   right: 0;
   top: 50%;
-  width: 72rpx;
-  min-height: 54rpx;
+  width: 56rpx;
+  height: 56rpx;
   transform: translateY(-50%);
-  border-radius: 27rpx;
+  border-radius: 999rpx;
   background: var(--accent-soft);
   color: var(--accent-deep);
   text-align: center;
-  font-size: 22rpx;
+  font-size: 28rpx;
   font-weight: var(--font-title-weight);
-  line-height: 54rpx;
+  line-height: 56rpx;
 }
 
 .study-speak.is-loading {
-  opacity: 0.68;
-  animation: audioPulse 0.9s ease-in-out infinite;
+  animation: audioPulse 0.72s ease-in-out infinite;
 }
 
 @keyframes audioPulse {
-  0%,
-  100% {
-    transform: translateY(-50%) scale(1);
+  0% {
+    opacity: 0.55;
+    transform: translateY(-50%) scale(0.88);
   }
   50% {
-    transform: translateY(-50%) scale(0.92);
+    opacity: 1;
+    transform: translateY(-50%) scale(1.08);
+  }
+  100% {
+    opacity: 0.55;
+    transform: translateY(-50%) scale(0.88);
   }
 }
 

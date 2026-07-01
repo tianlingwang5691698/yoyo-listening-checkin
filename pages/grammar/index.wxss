@@ -247,13 +247,15 @@
 
 .dictionary-audio {
   flex-shrink: 0;
-  min-width: 112rpx;
+  width: 56rpx;
+  min-width: 56rpx;
   height: 56rpx;
-  padding: 0 20rpx;
+  padding: 0;
   background: var(--accent-soft);
   color: var(--accent-deep);
-  font-size: 24rpx;
+  font-size: 28rpx;
   line-height: 56rpx;
+  text-align: center;
 }
 
 .dictionary-add {
@@ -272,17 +274,21 @@
 }
 
 .dictionary-audio.is-loading {
-  opacity: 0.68;
-  animation: dictionaryAudioPulse 0.9s ease-in-out infinite;
+  animation: dictionaryAudioPulse 0.72s ease-in-out infinite;
 }
 
 @keyframes dictionaryAudioPulse {
-  0%,
-  100% {
-    transform: scale(1);
+  0% {
+    opacity: 0.55;
+    transform: scale(0.88);
   }
   50% {
-    transform: scale(0.92);
+    opacity: 1;
+    transform: scale(1.08);
+  }
+  100% {
+    opacity: 0.55;
+    transform: scale(0.88);
   }
 }
 
