@@ -194,6 +194,23 @@ function buildPlanState(library, settings, today) {
   };
 }
 
+function buildPlanSummary(library, settings) {
+  const total = (library || []).length;
+  const mastered = (library || []).filter((item) => item.status === 'mastered').length;
+  const reviewing = (library || []).filter((item) => item.status === 'reviewing').length;
+  const fresh = (library || []).filter((item) => item.status === 'new').length;
+  return {
+    total,
+    learned: mastered + reviewing,
+    learnedPercent: total ? Math.round((mastered + reviewing) * 100 / total) : 0,
+    boatPercent: total ? Math.max(4, Math.min(96, Math.round((mastered + reviewing) * 100 / total))) : 4,
+    mastered,
+    reviewing,
+    fresh,
+    todayPlan: Number((settings && settings.newLimit) || 0) + Number((settings && settings.reviewLimit) || 0)
+  };
+}
+
 function getPlanSettingsKey(sourceId) {
   return `${FLASHCARD_PLAN_SETTINGS_PREFIX}${sourceId || 'all'}`;
 }
@@ -337,6 +354,7 @@ Page({
     empty: false,
     stats: { all: 0, word: 0, phrase: 0, pattern: 0 },
     progress: { total: 0, mastered: 0, reviewing: 0, fresh: 0 },
+    planSummary: { total: 0, learned: 0, learnedPercent: 0, boatPercent: 4, mastered: 0, reviewing: 0, fresh: 0, todayPlan: 0 },
     logs: [],
     dictionaryBooks: DEFAULT_DICTIONARY_BOOKS,
     importingBook: '',
@@ -403,6 +421,7 @@ Page({
     const cards = (activeSourceId
       ? buildDueCards(library, effectiveSettings, data.today)
       : ((data.cards && data.cards.length ? data.cards : rawLibrary).map(normalizeCard)));
+    const planSummary = buildPlanSummary(library, effectiveSettings);
     const nextData = {
       library,
       libraryGroups: groupLibrary(library),
@@ -423,6 +442,7 @@ Page({
       today: data.today,
       isBookPlan: isBookSource(activeSourceId),
       isUnlimitedPlan: false,
+      planSummary,
       progress: demoMode
         ? { total: library.length, mastered: 0, reviewing: 0, fresh: library.length }
         : {
@@ -471,6 +491,7 @@ Page({
         const effectiveSettings = getEffectiveSettings(sourceSettings, localCards, sourceId);
         const limitOptions = buildLimitOptions(localCards.length);
         const cards = buildDueCards(localCards, effectiveSettings, this.data.today);
+        const planSummary = buildPlanSummary(localCards, effectiveSettings);
         const nextData = {
           library: localCards,
           libraryGroups: groupLibrary(localCards),
@@ -491,6 +512,7 @@ Page({
           today: this.data.today,
           isBookPlan: true,
           isUnlimitedPlan: false,
+          planSummary,
           progress: {
             total: localCards.length,
             mastered: 0,
@@ -613,7 +635,8 @@ Page({
     const nextData = Object.assign({
       settings,
       newLimitIndex: getLimitIndex(settings.newLimit, this.data.library.length),
-      reviewLimitIndex: getLimitIndex(settings.reviewLimit, this.data.library.length)
+      reviewLimitIndex: getLimitIndex(settings.reviewLimit, this.data.library.length),
+      planSummary: buildPlanSummary(this.data.library || [], settings)
     }, planState);
     this.setData(nextData);
     writePlanSettings(this.data.activeSourceId || '', settings);

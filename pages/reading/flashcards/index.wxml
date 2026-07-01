@@ -39,7 +39,7 @@
   <view class="vocab-summary card">
     <view class="progress-head">
       <view>
-        <view class="progress-title">{{stats.all}} 个内容 <text wx:if="{{demoMode}}" class="demo-tag">演示</text></view>
+        <view class="progress-title">总词汇 {{planSummary.total}} <text wx:if="{{demoMode}}" class="demo-tag">演示</text></view>
         <view class="progress-copy">{{activeSourceTitle}} · 已打卡 {{reviewDays}} 天</view>
       </view>
       <view class="plan-actions">
@@ -47,11 +47,32 @@
         <view class="start-review" bindtap="startReview">开始复习</view>
       </view>
     </view>
-    <view class="progress-bar"><view style="width: {{progress.total ? progress.mastered * 100 / progress.total : 0}}%;"></view></view>
+    <view class="plan-overview">
+      <view>
+        <text>{{planSummary.learned}} / {{planSummary.total}}</text>
+        <text>总共已学</text>
+      </view>
+      <view>
+        <text>{{planSummary.todayPlan}}</text>
+        <text>今日学习</text>
+      </view>
+    </view>
+    <view class="progress-line-head">
+      <text>学习进度</text>
+      <text>{{planSummary.learnedPercent}}%</text>
+    </view>
+    <view class="progress-bar">
+      <view class="progress-fill {{planSummary.learnedPercent === 0 ? 'is-zero' : ''}}" style="width: {{planSummary.learnedPercent}}%;"></view>
+      <view class="progress-boat" style="left: {{planSummary.boatPercent}}%;">
+        <view class="boat-sail main"></view>
+        <view class="boat-sail small"></view>
+        <view class="boat-hull"></view>
+      </view>
+    </view>
     <view class="vocab-stats">
-      <view class="vocab-count"><text>{{stats.word}}</text><text>生词</text></view>
-      <view class="vocab-count"><text>{{stats.phrase}}</text><text>短语</text></view>
-      <view class="vocab-count"><text>{{stats.pattern}}</text><text>句型</text></view>
+      <view class="vocab-count"><text>{{planSummary.fresh}}</text><text>新词</text></view>
+      <view class="vocab-count"><text>{{planSummary.reviewing}}</text><text>复习中</text></view>
+      <view class="vocab-count"><text>{{planSummary.mastered}}</text><text>已掌握</text></view>
     </view>
     <view class="limit-panel" wx:if="{{!isUnlimitedPlan}}">
       <view class="limit-row">
