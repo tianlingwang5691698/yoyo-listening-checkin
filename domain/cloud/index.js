@@ -85,7 +85,7 @@ async function callYoyo(action, payload) {
   let response;
   try {
     let timeoutMs = 12000;
-    if (action === 'getReadingStudyPack' || action === 'getListeningStudyPack' || action === 'submitWritingAttempt') {
+    if (action === 'getReadingStudyPack' || action === 'getListeningStudyPack' || action === 'gradeWritingAttempt') {
       timeoutMs = 120000;
     } else if (action === 'submitSpeakingAttempt' || action === 'submitReadingAttempt' || action === 'explainGrammarQuestion') {
       timeoutMs = 70000;

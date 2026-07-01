@@ -219,6 +219,17 @@
 - 设计记录：首屏先可操作，数据随后补齐；错误文案保持学生可理解；查词和记录查看优先复用缓存。
 - 验证：语法检查通过，云函数测试通过。
 
+### 2026-07-01 词汇首屏和写作提交提速
+
+- 文件：`cloudfunctions/yoyo/services/flashcard.service.js`
+- 文件：`pages/reading/flashcards/index.js`
+- 文件：`cloudfunctions/yoyo/services/writing.service.js`
+- 文件：`pages/writing/detail/index.js`
+- 文件：`pages/writing/detail/index.wxml`
+- 改动：词汇首屏新增今日到期轻量接口，先返回复习队列再后台补全词库；写作提交先保存待批改记录，再触发独立批改动作回填结果。
+- 设计记录：词汇首页优先进入可复习状态；写作提交不让学生长时间等在按钮 loading 上，批改中状态明确可理解。
+- 验证：语法检查通过，云函数测试通过。
+
 ### 2026-06-30 统一词汇板块
 
 - 文件：`cloudfunctions/yoyo/services/flashcard.service.js`

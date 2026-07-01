@@ -207,40 +207,18 @@ function isDue(item, today) {
   return item && item.status !== 'mastered' && (!item.nextReviewDate || item.nextReviewDate <= today);
 }
 
-async function getFlashcardReview(event) {
-  const { ctx, today } = await study.prepareRequestContext(Object.assign({}, event, { action: 'getFlashcardReview' }));
-  const settings = await getSettings(ctx);
-  const all = [];
-  for (let skip = 0; skip < 5000; skip += 100) {
-    const result = await dbAdapter.collection(COLLECTION)
-      .where({ familyId: ctx.family.familyId, childId: ctx.child.childId })
-      .orderBy('nextReviewDate', 'asc')
-      .skip(skip)
-      .limit(100)
-      .get();
-    const rows = result && result.data ? result.data : [];
-    all.push.apply(all, rows);
-    if (rows.length < 100) break;
-  }
+function summarizeFlashcards(cards, logs, today, settings) {
+  const all = cards || [];
   const due = all.filter((item) => isDue(item, today));
   const reviewCards = due.filter((item) => item.status !== 'new').slice(0, settings.reviewLimit);
   const newCards = due.filter((item) => item.status === 'new').slice(0, settings.newLimit);
-  const logsResult = await dbAdapter.collection(LOG_COLLECTION)
-    .where({ familyId: ctx.family.familyId, childId: ctx.child.childId })
-    .orderBy('createdAt', 'desc')
-    .limit(300)
-    .get();
-  const logs = logsResult && logsResult.data ? logsResult.data : [];
-  const reviewDays = Object.keys(logs.reduce((days, item) => {
+  const reviewDays = Object.keys((logs || []).reduce((days, item) => {
     if (item && item.date) {
       days[item.date] = true;
     }
     return days;
   }, {})).length;
   return {
-    today,
-    settings,
-    library: all,
     cards: reviewCards.concat(newCards),
     dueCount: due.length,
     newDueCount: due.filter((item) => item.status === 'new').length,
@@ -256,8 +234,84 @@ async function getFlashcardReview(event) {
       level: book.level,
       title: book.title,
       imported: all.filter((item) => item.sourceId === `dictionary-book-${book.level}`).length
-    })),
+    }))
+  };
+}
+
+async function getFlashcardReview(event) {
+  const { ctx, today } = await study.prepareRequestContext(Object.assign({}, event, { action: 'getFlashcardReview' }));
+  const settings = await getSettings(ctx);
+  const all = [];
+  for (let skip = 0; skip < 5000; skip += 100) {
+    const result = await dbAdapter.collection(COLLECTION)
+      .where({ familyId: ctx.family.familyId, childId: ctx.child.childId })
+      .orderBy('nextReviewDate', 'asc')
+      .skip(skip)
+      .limit(100)
+      .get();
+    const rows = result && result.data ? result.data : [];
+    all.push.apply(all, rows);
+    if (rows.length < 100) break;
+  }
+  const logsResult = await dbAdapter.collection(LOG_COLLECTION)
+    .where({ familyId: ctx.family.familyId, childId: ctx.child.childId })
+    .orderBy('createdAt', 'desc')
+    .limit(300)
+    .get();
+  const logs = logsResult && logsResult.data ? logsResult.data : [];
+  const summary = summarizeFlashcards(all, logs, today, settings);
+  return {
+    today,
+    settings,
+    library: all,
+    cards: summary.cards,
+    dueCount: summary.dueCount,
+    newDueCount: summary.newDueCount,
+    reviewDueCount: summary.reviewDueCount,
+    progress: summary.progress,
+    dictionaryBooks: summary.dictionaryBooks,
     logs: logs.slice(0, 10)
+  };
+}
+
+async function getFlashcardDue(event) {
+  const { ctx, today } = await study.prepareRequestContext(Object.assign({}, event, { action: 'getFlashcardDue' }));
+  const settings = await getSettings(ctx);
+  const command = dbAdapter.getCommand();
+  const dueResult = await dbAdapter.collection(COLLECTION)
+    .where({
+      familyId: ctx.family.familyId,
+      childId: ctx.child.childId,
+      status: command.neq('mastered'),
+      nextReviewDate: command.lte(today)
+    })
+    .orderBy('nextReviewDate', 'asc')
+    .limit(120)
+    .get();
+  const dueRows = ((dueResult && dueResult.data) || []).filter((item) => isDue(item, today));
+  const logsResult = await dbAdapter.collection(LOG_COLLECTION)
+    .where({ familyId: ctx.family.familyId, childId: ctx.child.childId })
+    .orderBy('createdAt', 'desc')
+    .limit(120)
+    .get();
+  const logs = logsResult && logsResult.data ? logsResult.data : [];
+  const summary = summarizeFlashcards(dueRows, logs, today, settings);
+  return {
+    today,
+    settings,
+    library: dueRows,
+    cards: summary.cards,
+    dueCount: summary.dueCount,
+    newDueCount: summary.newDueCount,
+    reviewDueCount: summary.reviewDueCount,
+    progress: summary.progress,
+    dictionaryBooks: DICTIONARY_BOOKS.map((book) => ({
+      level: book.level,
+      title: book.title,
+      imported: 0
+    })),
+    logs: logs.slice(0, 10),
+    partial: true
   };
 }
 
@@ -496,6 +550,7 @@ async function addDictionaryWord(event) {
 module.exports = {
   upsertStudyPackFlashcards,
   getFlashcardReview,
+  getFlashcardDue,
   updateFlashcardReview,
   saveSettings,
   saveFlashcardAudio,

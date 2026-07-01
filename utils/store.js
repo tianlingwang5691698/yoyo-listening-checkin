@@ -23,6 +23,7 @@ const MUTATION_ACTIONS = {
   completeTodayCheckin: true,
   submitReadingAttempt: true,
   submitWritingAttempt: true,
+  gradeWritingAttempt: true,
   addDictionaryWord: true,
   recordGrammarWrong: true,
   recordGrammarProgress: true,
@@ -54,6 +55,7 @@ const READ_CACHE_CONFIG = {
   getReadingPassage: { persist: true },
   getReadingStudyPack: { persist: true },
   getListeningStudyPack: { persist: true },
+  getFlashcardDue: { persist: true },
   getFlashcardReview: { persist: true },
   getGrammarHome: { persist: true },
   getGrammarTopic: { persist: true },
@@ -449,6 +451,21 @@ async function getFlashcardReview(onRefresh) {
   }, { onRefresh });
 }
 
+async function getFlashcardDue(onRefresh) {
+  return callCloud('getFlashcardDue', {}, {
+    today: '',
+    settings: { newLimit: 10, reviewLimit: 20 },
+    library: [],
+    cards: [],
+    progress: { total: 0, mastered: 0, reviewing: 0, fresh: 0 },
+    logs: [],
+    dueCount: 0,
+    newDueCount: 0,
+    reviewDueCount: 0,
+    partial: true
+  }, { onRefresh });
+}
+
 async function updateFlashcardReview(flashcardKey, result, card) {
   return callCloud('updateFlashcardReview', { flashcardKey, result, card: card || null }, { saved: false }, { useCache: false });
 }
@@ -697,6 +714,14 @@ async function submitWritingAttempt(options) {
   }, { useCache: false });
 }
 
+async function gradeWritingAttempt(attemptId) {
+  return callCloud('gradeWritingAttempt', { attemptId }, {
+    attempt: null,
+    review: null,
+    pending: true
+  }, { useCache: false });
+}
+
 async function getWritingAttempts(options, onRefresh) {
   return callCloud('getWritingAttempts', Object.assign({}, options || {}), {
     attempts: []
@@ -820,6 +845,7 @@ module.exports = {
   getTaskTranscript,
   getListeningStudyPack,
   getFlashcardReview,
+  getFlashcardDue,
   updateFlashcardReview,
   saveFlashcardSettings,
   addDictionaryBook,
@@ -841,6 +867,7 @@ module.exports = {
   addDictionaryWord,
   submitReadingAttempt,
   submitWritingAttempt,
+  gradeWritingAttempt,
   getWritingAttempts,
   getGrammarHome,
   getGrammarTopic,

@@ -418,6 +418,7 @@ const actionMap = {
   getReadingStudyPack: readingService.getReadingStudyPack,
   getListeningStudyPack: listeningService.getListeningStudyPack,
   getFlashcardReview: flashcardService.getFlashcardReview,
+  getFlashcardDue: flashcardService.getFlashcardDue,
   updateFlashcardReview: flashcardService.updateFlashcardReview,
   saveFlashcardSettings: flashcardService.saveSettings,
   saveFlashcardAudio: flashcardService.saveFlashcardAudio,
@@ -434,6 +435,7 @@ const actionMap = {
   recordGrammarProgress: grammarService.recordGrammarProgress,
   explainGrammarQuestion: grammarService.explainGrammarQuestion,
   submitWritingAttempt: writingService.submitWritingAttempt,
+  gradeWritingAttempt: writingService.gradeWritingAttempt,
   getWritingAttempts: writingService.getWritingAttempts,
   recordStudyCompletion: completionService.recordStudyCompletion,
   getStudyCompletions: completionService.getStudyCompletions
@@ -463,6 +465,7 @@ const MONITORED_ACTIONS = new Set([
   'getReadingStudyPack',
   'getListeningStudyPack',
   'getFlashcardReview',
+  'getFlashcardDue',
   'updateFlashcardReview',
   'saveFlashcardSettings',
   'saveFlashcardAudio',
@@ -479,6 +482,7 @@ const MONITORED_ACTIONS = new Set([
   'recordGrammarProgress',
   'explainGrammarQuestion',
   'submitWritingAttempt',
+  'gradeWritingAttempt',
   'getWritingAttempts',
   'recordStudyCompletion',
   'getStudyCompletions'

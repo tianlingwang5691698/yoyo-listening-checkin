@@ -596,7 +596,7 @@ Page({
     }));
   },
   buildFlashcardData(data, activeSourceId, cached) {
-    const rawLibrary = data.library && data.library.length ? data.library : DEMO_FLASHCARDS;
+    const rawLibrary = data.partial ? (data.library || []) : (data.library && data.library.length ? data.library : DEMO_FLASHCARDS);
     let library = filterBySource(rawLibrary, activeSourceId).map(normalizeCard);
     let demoMode = rawLibrary === DEMO_FLASHCARDS;
     const settings = {
@@ -690,7 +690,7 @@ Page({
       });
       return;
     }
-    const data = await store.getFlashcardReview();
+    const data = activeSourceId ? await store.getFlashcardReview() : await store.getFlashcardDue();
     const nextData = this.buildFlashcardData(data, activeSourceId, cached);
     if (keepReviewSession) {
       this.setData({
@@ -705,6 +705,15 @@ Page({
     }
     this.applyFlashcardData(nextData);
     writeSourceCache(activeSourceId, nextData);
+    if (!activeSourceId && data && data.partial) {
+      store.getFlashcardReview().then((fresh) => {
+        if (fresh && fresh.syncMode !== 'cloud-error' && this.data.mode !== 'review' && !(this.data.activeSourceId || '')) {
+          const freshData = this.buildFlashcardData(fresh, activeSourceId, nextData);
+          this.applyFlashcardData(freshData);
+          writeSourceCache(activeSourceId, freshData);
+        }
+      }).catch(() => {});
+    }
     if (this.flashcardPerf) {
       this.flashcardPerf.ready('pageReady', {
         cacheHit: !!data.__cacheHit,

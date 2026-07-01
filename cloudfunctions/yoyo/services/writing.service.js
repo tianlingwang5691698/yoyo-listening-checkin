@@ -142,38 +142,125 @@ async function submitWritingAttempt(event) {
   if (!promptId || !essay) {
     throw new Error('missing-writing-payload');
   }
-  const review = await gradeWriting(prompt, essay);
   const now = new Date().toISOString();
   const attempt = {
     promptId,
     title: prompt.title || '',
+    prompt: prompt.prompt || '',
+    promptMeta: {
+      year: prompt.year || '',
+      district: prompt.district || '',
+      examType: prompt.examType || '',
+      minWords: prompt.minWords || 60,
+      score: prompt.score || 20
+    },
     date: today,
     essay,
     wordCount: (essay.match(/[A-Za-z]+(?:[-'][A-Za-z]+)?/g) || []).length,
-    score: review.score,
-    totalScore: review.totalScore,
-    review,
-    createdAt: now
+    score: 0,
+    totalScore: Number(prompt.score || 20) || 20,
+    review: null,
+    status: 'grading-pending',
+    createdAt: now,
+    updatedAt: now
   };
-  if (study.normalizeStudyRole(ctx.member) === 'student') {
-    await dbAdapter.collection(COLLECTION).add({
-      data: Object.assign({}, attempt, {
-        familyId: ctx.family.familyId,
-        childId: ctx.child.childId,
-        userId: ctx.user.userId,
-        memberId: ctx.member.memberId
-      })
-    });
+  let attemptId = '';
+  if (study.normalizeStudyRole(ctx.member) !== 'student') {
+    const review = await gradeWriting(prompt, essay);
+    return {
+      prompt: {
+        _id: promptId,
+        title: prompt.title || '',
+        prompt: prompt.prompt || ''
+      },
+      attempt: Object.assign({}, attempt, {
+        score: review.score,
+        totalScore: review.totalScore,
+        review,
+        status: 'preview'
+      }),
+      review,
+      pending: false
+    };
   }
+  const created = await dbAdapter.collection(COLLECTION).add({
+    data: Object.assign({}, attempt, {
+      familyId: ctx.family.familyId,
+      childId: ctx.child.childId,
+      userId: ctx.user.userId,
+      memberId: ctx.member.memberId
+    })
+  });
+  attemptId = created && created._id ? created._id : '';
   return {
     prompt: {
       _id: promptId,
       title: prompt.title || '',
       prompt: prompt.prompt || ''
     },
-    attempt,
-    review
+    attempt: Object.assign({}, attempt, { attemptId, _id: attemptId }),
+    review: null,
+    pending: true
   };
+}
+
+async function gradeWritingAttempt(event) {
+  const payload = (event && event.payload) || {};
+  const attemptId = String(payload.attemptId || '').trim();
+  const { ctx } = await study.prepareRequestContext(Object.assign({}, event, {
+    action: 'gradeWritingAttempt'
+  }));
+  if (!attemptId) {
+    throw new Error('missing-writing-attempt-id');
+  }
+  const result = await dbAdapter.collection(COLLECTION).doc(attemptId).get();
+  const attempt = result && result.data ? result.data : null;
+  if (!attempt || attempt.familyId !== ctx.family.familyId || attempt.childId !== ctx.child.childId) {
+    throw new Error('writing-attempt-not-found');
+  }
+  if (attempt.status === 'graded' && attempt.review) {
+    return { attempt: formatAttempt(Object.assign({}, attempt, { _id: attemptId })), review: attempt.review, pending: false };
+  }
+  const prompt = {
+    _id: attempt.promptId || '',
+    title: attempt.title || '',
+    prompt: attempt.prompt || '',
+    minWords: attempt.promptMeta && attempt.promptMeta.minWords,
+    score: attempt.totalScore || (attempt.promptMeta && attempt.promptMeta.score) || 20
+  };
+  const now = new Date().toISOString();
+  try {
+    await dbAdapter.collection(COLLECTION).doc(attemptId).update({
+      data: {
+        status: 'grading',
+        updatedAt: now
+      }
+    });
+    const review = await gradeWriting(prompt, attempt.essay || '');
+    const patch = {
+      score: review.score,
+      totalScore: review.totalScore,
+      review,
+      status: 'graded',
+      gradedAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString()
+    };
+    await dbAdapter.collection(COLLECTION).doc(attemptId).update({ data: patch });
+    return {
+      attempt: formatAttempt(Object.assign({}, attempt, patch, { _id: attemptId })),
+      review,
+      pending: false
+    };
+  } catch (error) {
+    await dbAdapter.collection(COLLECTION).doc(attemptId).update({
+      data: {
+        status: 'grading-failed',
+        gradeError: String(error && error.message || error || ''),
+        updatedAt: new Date().toISOString()
+      }
+    });
+    throw error;
+  }
 }
 
 function formatAttempt(record) {
@@ -189,6 +276,8 @@ function formatAttempt(record) {
     score: Number(item.score || review.score || 0),
     totalScore: Number(item.totalScore || review.totalScore || 20),
     review,
+    status: item.status || (review && review.summary ? 'graded' : ''),
+    gradeError: item.gradeError || '',
     createdAt: item.createdAt || ''
   };
 }
@@ -219,5 +308,6 @@ async function getWritingAttempts(event) {
 
 module.exports = {
   submitWritingAttempt,
+  gradeWritingAttempt,
   getWritingAttempts
 };

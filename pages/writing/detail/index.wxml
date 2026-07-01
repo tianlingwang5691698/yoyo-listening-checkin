@@ -18,6 +18,11 @@
     <view class="error-text" wx:if="{{errorText}}">{{errorText}}</view>
   </view>
 
+  <view class="card review-card" wx:if="{{grading}}">
+    <view class="section-title">批改中</view>
+    <view class="review-block">作文已保存，系统正在批改。可以停留等待，也可以稍后到成长记录查看。</view>
+  </view>
+
   <view class="card review-card" wx:if="{{review}}">
     <view class="review-top">
       <view>

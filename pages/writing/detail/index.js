@@ -42,6 +42,7 @@ Page({
     wordCount: 0,
     editorFocused: false,
     submitting: false,
+    grading: false,
     review: null,
     errorText: ''
   }),
@@ -95,20 +96,49 @@ Page({
       if (result && result.syncMode === 'cloud-error') {
         throw new Error((result.cloudError && result.cloudError.message) || '批改失败');
       }
-      const review = normalizeReview(result.review, prompt);
-      this.setData({ review });
+      const attempt = result.attempt || null;
+      const attemptId = (attempt && (attempt.attemptId || attempt._id)) || '';
+      if (result.review && !result.pending) {
+        const review = normalizeReview(result.review, prompt);
+        this.setData({ review, grading: false, errorText: '' });
+        return;
+      }
+      this.setData({ grading: true, errorText: '作文已提交，正在批改。' });
+      if (!attemptId) {
+        throw new Error('missing-writing-attempt-id');
+      }
+      store.gradeWritingAttempt(attemptId).then((graded) => {
+        if (graded && graded.syncMode === 'cloud-error') {
+          throw new Error((graded.cloudError && graded.cloudError.message) || '批改失败');
+        }
+        const review = normalizeReview(graded.review, prompt);
+        this.setData({ review, grading: false, errorText: '' });
+        const item = {
+          id: `${completed.todayString()}:writing:${prompt._id}`,
+          type: 'writing',
+          targetId: prompt._id,
+          title: prompt.title || '写作',
+          meta: [prompt.year, prompt.district, prompt.examType].filter(Boolean).join(' · '),
+          progressText: `${review.score}/${review.totalScore} 分`,
+          latestAttempt: graded.attempt || attempt,
+          prompt
+        };
+        completed.addCompletedItem(item);
+        store.recordStudyCompletion(item);
+      }).catch(() => {
+        this.setData({ grading: false, errorText: '批改失败，可以稍后在记录里查看或重新提交。' });
+      });
       const item = {
         id: `${completed.todayString()}:writing:${prompt._id}`,
         type: 'writing',
         targetId: prompt._id,
         title: prompt.title || '写作',
         meta: [prompt.year, prompt.district, prompt.examType].filter(Boolean).join(' · '),
-        progressText: `${review.score}/${review.totalScore} 分`,
-        latestAttempt: result.attempt || null,
+        progressText: '批改中',
+        latestAttempt: attempt,
         prompt
       };
       completed.addCompletedItem(item);
-      store.recordStudyCompletion(item);
     } catch (error) {
       this.setData({ errorText: '批改失败，可以再点一次提交。' });
       wx.showToast({ title: '批改失败，可重试', icon: 'none' });
