@@ -86,7 +86,7 @@
         <view class="study-age">{{current.typeLabel}}</view>
         <view class="study-word-row">
           <view class="study-word" bindtap="speakCurrent">{{current.displayText}}</view>
-          <view class="study-speak" bindtap="speakCurrent">发音</view>
+          <view class="study-speak {{audioLoading ? 'is-loading' : ''}}" bindtap="speakCurrent">{{audioLoading ? '…' : '发音'}}</view>
         </view>
         <view class="study-pron">
           <text class="study-phonetic" wx:if="{{current.phonetic}}">{{current.phonetic}}</text>

@@ -533,6 +533,21 @@
   line-height: 54rpx;
 }
 
+.study-speak.is-loading {
+  opacity: 0.68;
+  animation: audioPulse 0.9s ease-in-out infinite;
+}
+
+@keyframes audioPulse {
+  0%,
+  100% {
+    transform: translateY(-50%) scale(1);
+  }
+  50% {
+    transform: translateY(-50%) scale(0.92);
+  }
+}
+
 .study-pron {
   margin-top: 14rpx;
   color: rgba(36, 42, 44, 0.58);

@@ -152,7 +152,8 @@ Page({
     cardChoice: '',
     previousCardChoice: '',
     reviewDays: 0,
-    loading: false
+    loading: false,
+    audioLoading: false
   }),
   onUnload() {
     if (this.flashcardAudioContext) {
@@ -301,8 +302,8 @@ Page({
     }
     if (this._flashcardAudioLoading) return;
     this._flashcardAudioLoading = true;
+    this.setData({ audioLoading: true });
     try {
-      wx.showLoading({ title: '生成发音中' });
       const result = await store.synthesizeReadingAudio({ text });
       let url = result && result.audioUrl ? result.audioUrl : '';
       const audioFileId = result && result.fileId ? result.fileId : '';
@@ -338,7 +339,7 @@ Page({
         wx.showToast({ title: '发音失败，稍后重试', icon: 'none' });
       }
     } finally {
-      wx.hideLoading();
+      this.setData({ audioLoading: false });
       this._flashcardAudioLoading = false;
     }
   },
