@@ -155,8 +155,10 @@ Page({
     let em2Data = null;
     let em1Data = null;
     try {
-      em2Data = await store.getGrammarHome({ examId: 'em2' });
-      em1Data = await store.getGrammarHome({ examId: 'em1' });
+      [em2Data, em1Data] = await Promise.all([
+        store.getGrammarHome({ examId: 'em2' }),
+        store.getGrammarHome({ examId: 'em1' })
+      ]);
     } catch (error) {
       em2Data = null;
       em1Data = null;
@@ -208,8 +210,10 @@ Page({
     });
   },
   async openTopicBook() {
-    const em2Data = await store.getGrammarHome({ examId: 'em2' });
-    const em1Data = await store.getGrammarHome({ examId: 'em1' });
+    const [em2Data, em1Data] = await Promise.all([
+      store.getGrammarHome({ examId: 'em2' }),
+      store.getGrammarHome({ examId: 'em1' })
+    ]);
     this.setData({
       mode: 'topics',
       stages: buildStages(buildTopics(em2Data), buildTopics(em1Data)),

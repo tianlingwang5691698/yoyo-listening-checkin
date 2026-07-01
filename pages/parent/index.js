@@ -126,14 +126,9 @@ Page({
   },
   onShow() {
     page.syncTheme(this);
+    const completionsRequest = store.getStudyCompletions({ days: 90 }).then((data) => data.items || []).catch(() => []);
     store.getParentDashboard({ days: 30 }, (fresh) => this.applyParentData(fresh)).then(async (data) => {
-      let completionItems = [];
-      try {
-        const completions = await store.getStudyCompletions({ days: 90 });
-        completionItems = completions.items || [];
-      } catch (error) {
-        completionItems = [];
-      }
+      const completionItems = await completionsRequest;
       this.applyParentData(Object.assign({}, data, { completionItems }));
     });
   },
