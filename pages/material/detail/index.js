@@ -94,24 +94,24 @@ Page({
       this.setData({ audioLoading: false, audioError: '音频暂时无法加载' });
     }
   },
-  prepareImages(images) {
+  async prepareImages(images) {
     const fileList = (images || []).map((image) => image.cloudPath).filter(Boolean);
     if (!fileList.length) return;
-    wx.cloud.getTempFileURL({
-      fileList,
-      success: (res) => {
-        const urls = {};
-        (res.fileList || []).forEach((file) => {
-          urls[file.fileID] = file.tempFileURL || '';
-        });
-        const item = Object.assign({}, this.data.item, {
-          images: (images || []).map((image) => Object.assign({}, image, {
-            src: urls[image.cloudPath] || ''
-          }))
-        });
-        this.setData({ item });
-      }
+    const entries = await Promise.all(fileList.map((cloudPath) => (
+      store.getTempFileURL(cloudPath)
+        .then((url) => ({ cloudPath, url }))
+        .catch(() => ({ cloudPath, url: '' }))
+    )));
+    const urls = entries.reduce((map, entry) => {
+      map[entry.cloudPath] = entry.url || '';
+      return map;
+    }, {});
+    const item = Object.assign({}, this.data.item, {
+      images: (images || []).map((image) => Object.assign({}, image, {
+        src: urls[image.cloudPath] || ''
+      }))
     });
+    this.setData({ item });
   },
   toggleAudio() {
     if (this.data.audioLocked) {
