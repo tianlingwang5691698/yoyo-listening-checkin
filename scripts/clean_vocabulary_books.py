@@ -3,6 +3,7 @@ import argparse
 import csv
 import re
 import subprocess
+import unicodedata
 from pathlib import Path
 
 
@@ -56,7 +57,7 @@ def clean_space(text):
 
 
 def clean_phonetic(text):
-    text = clean_space(text)
+    text = unicodedata.normalize("NFKC", clean_space(text))
     text = text.strip("[]［］/I丨｜| ")
     return text
 

@@ -4,6 +4,7 @@ import hashlib
 import json
 import re
 import shutil
+import unicodedata
 from pathlib import Path
 
 ROOT = Path("data/dictionary-import")
@@ -18,6 +19,18 @@ def norm_word(value):
     text = re.sub(r"^[^a-z]+|[^a-z]+$", "", text)
     text = re.sub(r"\s+", "-", text)
     return text
+
+
+def clean_phonetic(value):
+    text = unicodedata.normalize("NFKC", str(value or "")).strip()
+    text = text.strip("[]［］/I丨｜| ")
+    text = re.sub(r"\s+", " ", text)
+    return text
+
+
+def display_phonetic(value):
+    text = clean_phonetic(value)
+    return f"/{text}/" if text else ""
 
 
 def safe_name(word):
@@ -42,7 +55,7 @@ def read_csv(path, level):
                 "wordLower": word,
                 "level": level,
                 "levelRank": LEVEL_ORDER.get(level, 99),
-                "phonetic": str(row.get("phonetic") or "").strip().strip("/"),
+                "phonetic": clean_phonetic(row.get("phonetic")),
                 "definitions": definitions,
                 "example": str(row.get("example") or "").strip(),
                 "source": "local-import"
@@ -98,6 +111,7 @@ def main():
         rows = sorted(level_entries.values(), key=lambda x: x["wordLower"])
         for item in rows:
             item.pop("levelRank", None)
+            item["phonetic"] = display_phonetic(item.get("phonetic"))
         level_counts[level] = len(rows)
         (OUTPUT / f"word-dictionary-{level}.json").write_text(json.dumps(rows, ensure_ascii=False, indent=2), encoding="utf-8")
     legacy_dictionary = OUTPUT / "word-dictionary.json"
