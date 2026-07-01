@@ -272,6 +272,19 @@ async function hydrateWritingItems(items) {
   }
 }
 
+function needsCompletionHydration(item) {
+  if (!item) return false;
+  if (item.type === 'reading' && !item.passage && item.passageId) return true;
+  if (item.type === 'grammar' && !(item.grammarQuestions && item.grammarQuestions.length) && item.topicId) return true;
+  if (item.type === 'writing' && !item.writingPrompt && item.targetId) return true;
+  return false;
+}
+
+async function hydrateCompletionItem(item) {
+  const items = await hydrateWritingItems(await hydrateGrammarItems(await hydrateReadingItems([item])));
+  return items[0] || item;
+}
+
 function normalizeReport(report) {
   const safeReport = report || {};
   const items = (safeReport.items || []).map((item) => Object.assign({}, labels.normalizeReportItem(item), {
@@ -373,21 +386,34 @@ Page({
         date: this.data.date,
         report: Object.assign({}, report, { completionItems })
       }));
-      hydrateReadingItems(completionItems).then(hydrateGrammarItems).then(hydrateWritingItems).then((items) => {
-        this.setData({
-          report: Object.assign({}, this.data.report, { completionItems: items })
-        });
-      });
     }).catch(() => {});
   },
-  toggleCompletionDetail(event) {
+  async toggleCompletionDetail(event) {
     const key = event.currentTarget.dataset.key || '';
     if (!key) return;
+    const current = (this.data.report.completionItems || []).find((item) => item.key === key);
+    const willExpand = current ? !current.expanded : false;
+    const shouldHydrate = willExpand && needsCompletionHydration(current);
     const items = (this.data.report.completionItems || []).map((item) => Object.assign({}, item, {
-      expanded: item.key === key ? !item.expanded : item.expanded
+      expanded: item.key === key ? willExpand : item.expanded,
+      detailLoading: item.key === key ? shouldHydrate : false
     }));
     this.setData({
       report: Object.assign({}, this.data.report, { completionItems: items })
+    });
+    if (!shouldHydrate) return;
+    const hydrated = Object.assign({}, await hydrateCompletionItem(current), {
+      expanded: true,
+      detailLoading: false
+    });
+    const latest = (this.data.report.completionItems || []).find((item) => item.key === key);
+    if (!latest || !latest.expanded) return;
+    this.setData({
+      report: Object.assign({}, this.data.report, {
+        completionItems: (this.data.report.completionItems || []).map((item) => (
+          item.key === key ? hydrated : item
+        ))
+      })
     });
   },
   async playSpeakingAttempt(event) {

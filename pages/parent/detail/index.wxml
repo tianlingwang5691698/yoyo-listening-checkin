@@ -92,6 +92,7 @@
           <view class="recording-meta" wx:if="{{item.correctText}}">答题：{{item.correctText}}</view>
           <button class="detail-toggle" data-key="{{item.key}}" catchtap="toggleCompletionDetail">{{item.expanded ? '收起详情' : '查看原题和分析'}}</button>
           <block wx:if="{{item.expanded}}">
+            <view class="empty-state" wx:if="{{item.detailLoading}}">详情加载中。</view>
             <view class="source-passage" wx:if="{{item.passage && item.passage.passage}}">
               <view class="question-review-title">原文</view>
               <view class="recording-text">{{item.passage.passage}}</view>
