@@ -802,9 +802,6 @@ Page({
       }
     }
     this.setData({ importingBook: '' });
-    if (ready) {
-      wx.showToast({ title: '计划已建立', icon: 'none' });
-    }
   },
   useAllVocabulary() {
     this.setData({
