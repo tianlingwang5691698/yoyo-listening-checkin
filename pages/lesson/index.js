@@ -198,6 +198,22 @@ function lessonStudyDoneKey(category, taskId) {
   return `lessonListeningStudyDoneV1:${category || ''}:${taskId || ''}`;
 }
 
+function recordLessonStudyPackSynced(task, category, taskId) {
+  const target = task || {};
+  const safeCategory = target.category || category || '';
+  const safeTaskId = target.taskId || taskId || '';
+  const targetId = [safeCategory, safeTaskId].filter(Boolean).join(':');
+  if (!targetId) return;
+  store.recordStudyCompletion({
+    id: `listening-study:${targetId}`,
+    type: 'listening',
+    targetId,
+    title: '听力学习包',
+    meta: target.displayTitle || target.title || target.audioTitle || '听力课程',
+    progressText: '学习包已生成'
+  });
+}
+
 function buildTranscriptText(lines) {
   return (lines || [])
     .map((line) => String(line && line.text || '').trim())
@@ -1330,6 +1346,7 @@ Page({
       lessonPhraseCards: pack.phraseCards || [],
       lessonPatternCards: pack.sentencePatternCards || []
     });
+    recordLessonStudyPackSynced(this.data.task || {}, this.category, this.taskId);
   },
   async loadCachedLessonStudyPack(task) {
     const target = task || this.data.task || {};

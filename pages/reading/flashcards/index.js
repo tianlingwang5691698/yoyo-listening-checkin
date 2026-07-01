@@ -547,6 +547,7 @@ Page({
     }
   },
   onShow() {
+    this.flashcardPerf = page.startPagePerf('flashcards');
     page.syncTheme(this);
     this.setData(getNavLayout());
     if (this.data.mode === 'review') return;
@@ -634,14 +635,27 @@ Page({
     const cached = readSourceCache(activeSourceId);
     if (cached && !keepReviewSession) {
       this.applyFlashcardData(Object.assign({}, cached, { loading: false }));
+      if (this.flashcardPerf) {
+        this.flashcardPerf.ready('pageReady', {
+          cacheHit: true,
+          sourceId: activeSourceId || 'all',
+          total: (cached.library || []).length
+        });
+      }
       store.getFlashcardReview((fresh) => {
         if (this.data.mode !== 'review' && (this.data.activeSourceId || '') === activeSourceId) {
           const freshData = this.buildFlashcardData(fresh, activeSourceId, cached);
           this.applyFlashcardData(freshData);
           writeSourceCache(activeSourceId, freshData);
+          if (this.flashcardPerf) {
+            this.flashcardPerf.mark('cloudRefresh', {
+              sourceId: activeSourceId || 'all',
+              total: freshData.library.length
+            });
+          }
         }
       }).then((fresh) => {
-        if (fresh && fresh.syncMode !== 'cloud-error' && this.data.mode !== 'review' && (this.data.activeSourceId || '') === activeSourceId) {
+        if (fresh && !fresh.__cacheHit && fresh.syncMode !== 'cloud-error' && this.data.mode !== 'review' && (this.data.activeSourceId || '') === activeSourceId) {
           const freshData = this.buildFlashcardData(fresh, activeSourceId, cached);
           this.applyFlashcardData(freshData);
           writeSourceCache(activeSourceId, freshData);
@@ -664,6 +678,13 @@ Page({
     }
     this.applyFlashcardData(nextData);
     writeSourceCache(activeSourceId, nextData);
+    if (this.flashcardPerf) {
+      this.flashcardPerf.ready('pageReady', {
+        cacheHit: !!data.__cacheHit,
+        sourceId: activeSourceId || 'all',
+        total: nextData.library.length
+      });
+    }
   },
   async importDictionaryBook(event) {
     const level = event.currentTarget.dataset.level || '';

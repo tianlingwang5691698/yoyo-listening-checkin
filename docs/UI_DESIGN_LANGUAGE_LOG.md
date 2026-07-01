@@ -782,6 +782,27 @@
 - 设计记录：词汇页首屏只保留书库、摘要、进度和开始按钮，词表明细属于二级展开内容。
 - 验证：已做前端脚本语法检查。
 
+### 2026-07-01 重点页面速度埋点
+
+- 文件：`utils/page.js`
+- 文件：`utils/store.js`
+- 文件：`pages/home/index.js`
+- 文件：`pages/reading/index.js`
+- 文件：`pages/reading/flashcards/index.js`
+- 文件：`pages/grammar/index.js`
+- 文件：`pages/record/index.js`
+- 改动：首页、阅读目录、词汇、语法、记录页增加 `pageReady`、`cacheHit` 和后台刷新耗时日志。
+- 设计记录：速度优化先记录真实首屏耗时和缓存命中，再按数据继续压慢页面。
+- 验证：已做前端脚本语法检查。
+
+### 2026-07-01 听力学习包完成记录
+
+- 文件：`pages/material/detail/index.js`
+- 文件：`pages/lesson/index.js`
+- 改动：听力学习包成功拉取/生成后写入云端完成记录，供家长端查看；本机完成按钮只负责解锁音频。
+- 设计记录：学生端拿到学习包即形成家长端可见记录，本机状态只负责当前设备解锁。
+- 验证：已做前端脚本语法检查。
+
 ## 后续记录格式
 
 每次 UI/交互改动后追加：

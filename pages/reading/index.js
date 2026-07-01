@@ -73,13 +73,27 @@ Page({
     }));
   },
   async onShow() {
+    this.readingPerf = page.startPagePerf('reading-home');
     page.syncTheme(this);
     if (!page.requireIdentityConfirmed()) {
       return;
     }
     this.setData({ loading: true });
-    const data = await store.getReadingHome({}, (fresh) => this.applyReadingHome(fresh));
+    const data = await store.getReadingHome({}, (fresh) => {
+      this.applyReadingHome(fresh);
+      if (this.readingPerf) {
+        this.readingPerf.mark('cloudRefresh', {
+          passages: (fresh.passages || []).length
+        });
+      }
+    });
     this.applyReadingHome(data);
+    if (this.readingPerf) {
+      this.readingPerf.ready('pageReady', {
+        cacheHit: !!data.__cacheHit,
+        passages: (data.passages || []).length
+      });
+    }
   },
   onDirectoryTouchStart(event) {
     const touch = event.touches && event.touches[0];

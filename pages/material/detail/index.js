@@ -23,6 +23,20 @@ function studyDoneKey(item) {
   return `listeningStudyDoneV1:${item && (item._id || item.id || '')}`;
 }
 
+function recordListeningStudyPackSynced(item) {
+  if (!item) return;
+  const targetId = String(item._id || item.id || item.audioCloudPath || item.title || '').trim();
+  if (!targetId) return;
+  store.recordStudyCompletion({
+    id: `listening-study:${targetId}`,
+    type: 'listening',
+    targetId,
+    title: '听力学习包',
+    meta: item.title || item.displayTitle || item.audioTitle || '听力',
+    progressText: '学习包已生成'
+  });
+}
+
 Page({
   data: page.createCloudPageData({
     item: null,
@@ -181,6 +195,7 @@ Page({
       phraseCards: pack.phraseCards || [],
       sentencePatternCards: pack.sentencePatternCards || []
     });
+    recordListeningStudyPackSynced(this.data.item);
   },
   async loadCachedStudyPack(item) {
     const result = await store.getListeningStudyPack(item, { cacheOnly: true });

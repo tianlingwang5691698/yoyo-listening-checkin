@@ -175,6 +175,7 @@ Page({
     }
   },
   async onLoad() {
+    this.grammarPerf = page.startPagePerf('grammar');
     let em2Data = null;
     let em1Data = null;
     try {
@@ -202,6 +203,13 @@ Page({
       selectedQuestions: [],
       selectedTopicOffset: 0
     });
+    if (this.grammarPerf) {
+      this.grammarPerf.ready('pageReady', {
+        em2CacheHit: !!(em2Data && em2Data.__cacheHit),
+        em1CacheHit: !!(em1Data && em1Data.__cacheHit),
+        stages: stages.length
+      });
+    }
   },
   onShow() {
     page.syncTheme(this);
@@ -294,6 +302,7 @@ Page({
     });
   },
   async selectTopic(event) {
+    const topicPerf = page.startPagePerf('grammar-topic');
     const topicId = event.currentTarget.dataset.topicId;
     const selectedTopic = ((this.data.selectedCategory && this.data.selectedCategory.children) || this.data.topics)
       .find((item) => item.topicId === topicId) || null;
@@ -347,6 +356,11 @@ Page({
       selectedTopicOffset: nextIndex,
       expandedQuestionId: '',
       answeredCount: 0
+    });
+    topicPerf.ready('topicReady', {
+      remote: !!topicResult,
+      progress: !!progressResult,
+      questions: selectedQuestions.length
     });
   },
   backToTopics() {

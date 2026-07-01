@@ -1,7 +1,6 @@
 const store = require('../../utils/store');
 const page = require('../../utils/page');
 const contracts = require('../../utils/contracts');
-const monitor = require('../../utils/monitor');
 const labels = require('../../utils/labels');
 const completed = require('../../utils/completed');
 const LEVEL_STAGE_SNAPSHOT_KEY = 'levelStageSnapshotV1';
@@ -272,7 +271,7 @@ Page({
     });
   },
   async onShow() {
-    const startedAt = Date.now();
+    this.homePerf = page.startPagePerf('home');
     const app = getApp();
     page.syncTheme(this);
     const tabBar = this.getTabBar && this.getTabBar();
@@ -291,11 +290,21 @@ Page({
       entryPosterVisible,
       entryPosterPage: 0
     });
-    const data = await store.getDashboard({ view: 'home' }, (fresh) => this.applyDashboard(fresh));
-    const groupedDailyTasks = this.applyDashboard(data);
-    monitor.logPerf('home', 'onShow', Date.now() - startedAt, {
-      groups: groupedDailyTasks.length
+    const data = await store.getDashboard({ view: 'home' }, (fresh) => {
+      const groups = this.applyDashboard(fresh);
+      if (this.homePerf) {
+        this.homePerf.mark('cloudRefresh', {
+          groups: groups.length
+        });
+      }
     });
+    const groupedDailyTasks = this.applyDashboard(data);
+    if (this.homePerf) {
+      this.homePerf.ready('pageReady', {
+        cacheHit: !!data.__cacheHit,
+        groups: groupedDailyTasks.length
+      });
+    }
     setTimeout(() => {
       store.getMaterialIndex().catch(() => {});
     }, 500);

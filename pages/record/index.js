@@ -308,6 +308,7 @@ Page({
     writingPromptIndex: null
   }),
   async onShow() {
+    this.recordPerf = page.startPagePerf('record');
     page.syncTheme(this);
     const tabBar = this.getTabBar && this.getTabBar();
     if (tabBar) {
@@ -358,6 +359,13 @@ Page({
       buildMetric(nextState.stats, this.data.metricMode),
       catchupPresentation
     )));
+    if (this.recordPerf) {
+      this.recordPerf.ready('pageReady', {
+        dashboardCacheHit: !!dashboard.__cacheHit,
+        heatmapCacheHit: !!heatmapData.__cacheHit,
+        cells: nextState.monthCells.length
+      });
+    }
     this.scheduleDeferredLoads(calendarYear, calendarMonth, selectedDate);
   },
   onHide() {
@@ -389,6 +397,7 @@ Page({
     const key = getMonthKey(year, month);
     const shouldForce = !!(options && options.force);
     if (!shouldForce && this.monthCache[key]) {
+      this.monthCache[key].__cacheHit = true;
       return this.monthCache[key];
     }
     if (!shouldForce && this.monthRequests[key]) {
@@ -398,7 +407,8 @@ Page({
       const safeData = data || {};
       this.monthCache[key] = {
         heatmap: safeData.heatmap || [],
-        catchupState: safeData.catchupState || this.data.catchupState
+        catchupState: safeData.catchupState || this.data.catchupState,
+        __cacheHit: !!safeData.__cacheHit
       };
       if (this.data.calendarYear === year && this.data.calendarMonth === month) {
         this.refreshMonthCellsFromCache();

@@ -242,7 +242,7 @@ async function callCloudFresh(action, payload, defaults) {
   const request = (async () => {
     try {
       const result = await cloud.callYoyo(action, payload);
-      return Object.assign(buildSyncMeta('cloud', null, result.resourceDebug), result);
+      return Object.assign(buildSyncMeta('cloud', null, result.resourceDebug), result, { __cacheHit: false });
     } catch (error) {
       monitor.logError('store', action, error, { reason: formatCloudReason(error) });
       return buildCloudErrorPayload(action, error, defaults);
@@ -269,7 +269,7 @@ async function callCloud(action, payload, defaults, options = {}) {
         }
       }
     });
-    return cached;
+    return Object.assign({}, cached, { __cacheHit: true });
   }
   const result = await callCloudFresh(action, payload, defaults);
   if (READ_CACHE_CONFIG[action]) {

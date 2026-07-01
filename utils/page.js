@@ -1,4 +1,5 @@
 const theme = require('./theme');
+const monitor = require('./monitor');
 
 const CLOUD_PAGE_DEFAULTS = {
   syncMode: 'cloud-error',
@@ -78,6 +79,21 @@ function getHeatmapRefreshToken() {
   return Number((app && app.globalData && app.globalData.heatmapRefreshToken) || 0);
 }
 
+function startPagePerf(scope) {
+  const startedAt = Date.now();
+  let readyLogged = false;
+  return {
+    ready(name, meta) {
+      if (readyLogged) return;
+      readyLogged = true;
+      monitor.logPerf(scope, name || 'pageReady', Date.now() - startedAt, meta || {});
+    },
+    mark(name, meta) {
+      monitor.logPerf(scope, name, Date.now() - startedAt, meta || {});
+    }
+  };
+}
+
 module.exports = {
   createCloudPageData,
   buildCloudPageData,
@@ -86,5 +102,6 @@ module.exports = {
   isIdentityConfirmed,
   requireIdentityConfirmed,
   bumpHeatmapRefreshToken,
-  getHeatmapRefreshToken
+  getHeatmapRefreshToken,
+  startPagePerf
 };
