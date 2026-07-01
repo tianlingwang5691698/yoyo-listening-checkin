@@ -24,9 +24,12 @@ const READ_CACHE_CONFIG = {
   getReadingPassage: { persist: true },
   getReadingStudyPack: { persist: true },
   getListeningStudyPack: { persist: true },
+  getFlashcardReview: { persist: true },
   getGrammarHome: { persist: true },
-  getGrammarWrongBook: { persist: false },
+  getGrammarTopic: { persist: true },
+  getGrammarWrongBook: { persist: true },
   getGrammarProgress: { persist: false },
+  getWritingAttempts: { persist: true },
   explainGrammarQuestion: { persist: false }
 };
 
@@ -368,7 +371,7 @@ async function getFlashcardReview() {
     dueCount: 0,
     newDueCount: 0,
     reviewDueCount: 0
-  }, { useCache: false });
+  });
 }
 
 async function updateFlashcardReview(flashcardKey, result) {
@@ -499,7 +502,7 @@ async function getMonthHeatmap(year, month, onRefresh) {
 async function getDailyReportByDate(date, onRefresh) {
   return callCloud('getDailyReportByDate', { date }, {
     report: contracts.createReportDefaults(date)
-  }, { onRefresh, useCache: false });
+  }, { onRefresh });
 }
 
 async function getParentDashboard(options, onRefresh) {
@@ -600,7 +603,7 @@ async function submitWritingAttempt(options) {
 async function getWritingAttempts(options, onRefresh) {
   return callCloud('getWritingAttempts', Object.assign({}, options || {}), {
     attempts: []
-  }, { onRefresh, useCache: false });
+  }, { onRefresh });
 }
 
 async function getGrammarHome(options, onRefresh) {
@@ -617,7 +620,7 @@ async function getGrammarTopic(topicId, options) {
     topic: null,
     questions: [],
     source: ''
-  }, { useCache: false });
+  });
 }
 
 async function recordGrammarWrong(question, selectedAnswer) {
@@ -629,7 +632,7 @@ async function getGrammarWrongBook() {
     topicTypes: [],
     questions: [],
     source: ''
-  }, { useCache: false });
+  });
 }
 
 async function getGrammarProgress(topicId) {
