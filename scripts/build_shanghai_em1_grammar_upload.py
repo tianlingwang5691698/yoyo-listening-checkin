@@ -136,8 +136,14 @@ def split_options(text):
     for key in ['A', 'B', 'C', 'D']:
         m = re.search(rf'(?:^|\s){key}[\)\.．、]\s*(.*?)(?=\s+[A-D][\)\.．、]\s*|$)', text)
         if m:
-            opts[key] = norm(m.group(1))
+            opts[key] = clean_option(m.group(1))
     return opts
+
+
+def clean_option(text):
+    text = norm(text)
+    text = re.split(r'\s*(?:【|\[)\s*(?:答案|解析)|\s*故选[A-D][\s\S]*$', text, maxsplit=1)[0]
+    return norm(text)
 
 
 def grammar_window(text):
