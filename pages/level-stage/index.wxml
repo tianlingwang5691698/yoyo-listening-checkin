@@ -25,7 +25,7 @@
     </block>
   </block>
 
-  <view class="empty-combo card" wx:else>
+  <view class="empty-combo card" wx:elif="{{hydrated}}">
     <view class="empty-title">暂时没有组合</view>
     <view class="empty-copy type-caption">后续会加入新的 A1 听力材料。</view>
   </view>

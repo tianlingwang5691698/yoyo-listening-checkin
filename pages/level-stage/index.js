@@ -90,6 +90,13 @@ function getStageSnapshot(phase) {
   return null;
 }
 
+function writeStageSnapshot(phase, snapshot) {
+  if (!phase || !snapshot || !Array.isArray(snapshot.taskGroups) || !snapshot.taskGroups.length) return;
+  try {
+    wx.setStorageSync(LEVEL_STAGE_SNAPSHOT_KEY, Object.assign({}, snapshot, { phase }));
+  } catch (error) {}
+}
+
 Page({
   data: page.createCloudPageData({
     levelId: 'A1',
@@ -97,26 +104,36 @@ Page({
     stage: STAGES['round-1'],
     taskGroups: [],
     totalMinutesText: '待生成',
-    hasTaskGroups: false
+    hasTaskGroups: false,
+    hydrated: false
   }),
   applyOverview(data, phase, levelId) {
     const categories = (data.categories || []).map(labels.normalizeCategory);
     const hasTaskGroups = shouldShowTaskGroups(phase) && categories.length > 0;
     const taskGroups = hasTaskGroups ? buildTaskGroups(categories) : [];
     const totalMinutes = getDurationMinutes(taskGroups.reduce((sum, item) => sum + item.durationSec, 0));
-    this.setData(page.buildCloudPageData(this.data, {
+    const nextData = {
       levelId,
       phase,
       stage: STAGES[phase] || STAGES['round-1'],
       taskGroups,
       totalMinutesText: totalMinutes ? `${totalMinutes} 分钟` : '待生成',
-      hasTaskGroups
-    }));
+      hasTaskGroups,
+      hydrated: true
+    };
+    this.setData(page.buildCloudPageData(this.data, nextData));
+    writeStageSnapshot(phase, nextData);
   },
   async onLoad(query) {
     page.syncTheme(this);
     const phase = query.phase || 'round-1';
     const levelId = query.levelId || 'A1';
+    this.setData(page.buildCloudPageData(this.data, {
+      levelId,
+      phase,
+      stage: STAGES[phase] || STAGES['round-1'],
+      hydrated: false
+    }));
     const snapshot = getStageSnapshot(phase);
     if (snapshot) {
       this.setData(page.buildCloudPageData(this.data, {
@@ -125,7 +142,8 @@ Page({
         stage: STAGES[phase] || STAGES['round-1'],
         taskGroups: snapshot.taskGroups,
         totalMinutesText: snapshot.totalMinutesText || '待生成',
-        hasTaskGroups: true
+        hasTaskGroups: true,
+        hydrated: true
       }));
     }
     const data = await store.getLevelOverview({ phase }, (fresh) => this.applyOverview(fresh, phase, levelId));
