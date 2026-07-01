@@ -530,10 +530,7 @@ function isModelReview(review) {
   if (!review) {
     return false;
   }
-  return isQuestionStudyPack({
-    source: review.studyPackSource || '',
-    questionAnalyses: review.analysis || []
-  });
+  return !!(review.analysis || []).length;
 }
 
 function isCardStudyPack(studyPack) {
@@ -1271,10 +1268,7 @@ Page({
         passageId: this.data.passage._id,
         answers: this.data.answers
       });
-      if (!result || result.syncMode === 'cloud-error' || !result.attempt || !result.review || !isQuestionStudyPack({
-        questionAnalyses: result.review.analysis,
-        source: result.review.studyPackSource || 'model'
-      })) {
+      if (!result || result.syncMode === 'cloud-error' || !result.attempt || !result.review || !(result.review.analysis || []).length) {
         throw new Error((result && result.cloudError && result.cloudError.message) || '解析生成失败');
       }
       this.setData({
