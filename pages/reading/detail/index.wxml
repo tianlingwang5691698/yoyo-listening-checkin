@@ -229,7 +229,7 @@
           <view class="dictionary-word">{{dictionaryEntry.word || dictionaryWord}}</view>
           <view class="dictionary-phonetic" wx:if="{{dictionaryEntry.phonetic}}">/{{dictionaryEntry.phonetic}}/</view>
         </view>
-        <button class="dictionary-audio" loading="{{dictionaryLoading}}" bindtap="playDictionaryWord">发音</button>
+        <button class="dictionary-audio {{dictionaryAudioLoading ? 'is-loading' : ''}}" disabled="{{dictionaryLoading || dictionaryAudioLoading}}" bindtap="playDictionaryWord">{{dictionaryAudioLoading ? '…' : '发音'}}</button>
       </view>
       <button class="dictionary-add" loading="{{dictionaryAdding}}" bindtap="addDictionaryWordToLibrary">加入词库</button>
       <view class="dictionary-loading" wx:if="{{dictionaryLoading}}">查词中。</view>

@@ -822,9 +822,20 @@ Page({
     audioStatusText: '',
     dictionaryVisible: false,
     dictionaryLoading: false,
+    dictionaryAudioLoading: false,
     dictionaryWord: '',
     dictionaryEntry: null
   }),
+  onUnload() {
+    if (this.readingAudioContext) {
+      this.readingAudioContext.destroy();
+      this.readingAudioContext = null;
+    }
+    if (this.dictionaryAudioContext) {
+      this.dictionaryAudioContext.destroy();
+      this.dictionaryAudioContext = null;
+    }
+  },
   async onLoad(options) {
     page.syncTheme(this);
     const passageId = options && options.passageId ? String(options.passageId) : '';
@@ -1122,7 +1133,7 @@ Page({
     }
   },
   closeDictionary() {
-    this.setData({ dictionaryVisible: false, dictionaryLoading: false });
+    this.setData({ dictionaryVisible: false, dictionaryLoading: false, dictionaryAudioLoading: false });
   },
   async addDictionaryWordToLibrary() {
     const entry = this.data.dictionaryEntry || {};
@@ -1138,36 +1149,43 @@ Page({
       this.setData({ dictionaryAdding: false });
     }
   },
-  playDictionaryWord() {
+  async playDictionaryWord() {
     const entry = this.data.dictionaryEntry || {};
     const word = entry.word || this.data.dictionaryWord || '';
+    if (!word || this.data.dictionaryAudioLoading) return;
     const playUrl = (url) => {
-      if (!this.readingAudioContext) {
-        this.readingAudioContext = wx.createInnerAudioContext();
-        this.readingAudioContext.obeyMuteSwitch = false;
+      if (!this.dictionaryAudioContext) {
+        this.dictionaryAudioContext = wx.createInnerAudioContext();
+        this.dictionaryAudioContext.obeyMuteSwitch = false;
+        this.dictionaryAudioContext.onEnded(() => {
+          this.setData({ dictionaryAudioLoading: false });
+        });
+        this.dictionaryAudioContext.onError(() => {
+          this.setData({ dictionaryAudioLoading: false });
+          wx.showToast({ title: '播放失败，稍后再试', icon: 'none' });
+        });
       }
-      this.readingAudioContext.stop();
-      this.readingAudioContext.src = url;
-      this.readingAudioContext.play();
+      this.dictionaryAudioContext.stop();
+      this.dictionaryAudioContext.src = url;
+      this.setData({ dictionaryAudioLoading: true });
+      this.dictionaryAudioContext.play();
     };
-    if (entry.audioUrl) {
-      playUrl(entry.audioUrl);
-      return;
-    }
-    if (entry.audioFileId) {
-      store.getTempFileURL(entry.audioFileId).then((url) => {
+    try {
+      let url = entry.audioUrl || '';
+      if (!url && entry.audioFileId) {
+        url = await store.getTempFileURL(entry.audioFileId);
         if (url) {
           this.setData({ dictionaryEntry: Object.assign({}, entry, { audioUrl: url }) });
-          playUrl(url);
-          return;
         }
-        this.speakWord({ currentTarget: { dataset: { word } } });
-      }).catch(() => {
-        this.speakWord({ currentTarget: { dataset: { word } } });
-      });
-      return;
+      }
+      if (!url) {
+        url = `https://dict.youdao.com/dictvoice?audio=${encodeURIComponent(word)}&type=2`;
+      }
+      playUrl(url);
+    } catch (error) {
+      this.setData({ dictionaryAudioLoading: false });
+      wx.showToast({ title: '播放失败，稍后再试', icon: 'none' });
     }
-    this.speakWord({ currentTarget: { dataset: { word } } });
   },
   async speakWord(event) {
     const word = String(event.currentTarget.dataset.word || '');

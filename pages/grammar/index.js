@@ -163,6 +163,7 @@ Page({
     answeredCount: 0,
     dictionaryVisible: false,
     dictionaryLoading: false,
+    dictionaryAudioLoading: false,
     dictionaryAdding: false,
     dictionaryWord: '',
     dictionaryEntry: null
@@ -542,7 +543,7 @@ Page({
     }
   },
   closeDictionary() {
-    this.setData({ dictionaryVisible: false, dictionaryLoading: false });
+    this.setData({ dictionaryVisible: false, dictionaryLoading: false, dictionaryAudioLoading: false });
   },
   async addDictionaryWordToLibrary() {
     const entry = this.data.dictionaryEntry || {};
@@ -558,34 +559,41 @@ Page({
       this.setData({ dictionaryAdding: false });
     }
   },
-  playDictionaryWord() {
+  async playDictionaryWord() {
     const entry = this.data.dictionaryEntry || {};
     const word = entry.word || this.data.dictionaryWord || '';
+    if (!word || this.data.dictionaryAudioLoading) return;
     const playUrl = (url) => {
       if (!this.grammarAudioContext) {
         this.grammarAudioContext = wx.createInnerAudioContext();
         this.grammarAudioContext.obeyMuteSwitch = false;
+        this.grammarAudioContext.onEnded(() => {
+          this.setData({ dictionaryAudioLoading: false });
+        });
         this.grammarAudioContext.onError(() => {
+          this.setData({ dictionaryAudioLoading: false });
           wx.showToast({ title: '播放失败，稍后再试', icon: 'none' });
         });
       }
       this.grammarAudioContext.stop();
       this.grammarAudioContext.src = url;
+      this.setData({ dictionaryAudioLoading: true });
       this.grammarAudioContext.play();
     };
-    if (entry.audioUrl) {
-      playUrl(entry.audioUrl);
-      return;
-    }
-    if (entry.audioFileId) {
-      store.getTempFileURL(entry.audioFileId).then((url) => {
-        if (url) playUrl(url);
-      }).catch(() => {
-        if (word) playUrl(`https://dict.youdao.com/dictvoice?audio=${encodeURIComponent(word)}&type=2`);
-      });
-      return;
-    }
-    if (word) {
+    try {
+      let url = entry.audioUrl || '';
+      if (!url && entry.audioFileId) {
+        url = await store.getTempFileURL(entry.audioFileId);
+        if (url) {
+          this.setData({ dictionaryEntry: Object.assign({}, entry, { audioUrl: url }) });
+        }
+      }
+      if (!url) {
+        url = `https://dict.youdao.com/dictvoice?audio=${encodeURIComponent(word)}&type=2`;
+      }
+      playUrl(url);
+    } catch (error) {
+      this.setData({ dictionaryAudioLoading: false });
       playUrl(`https://dict.youdao.com/dictvoice?audio=${encodeURIComponent(word)}&type=2`);
     }
   }
