@@ -261,6 +261,24 @@ Page({
     const data = await store.getReadingHome({}, (fresh) => this.applyReadingHome(fresh));
     this.applyReadingHome(data);
   },
+  async loadTodayReport() {
+    const reportData = await store.getDailyReportByDate(todayString());
+    wx.setStorageSync('todayReportForCompletedV1', reportData.report || null);
+    this.setData({
+      todayCompletedItems: buildTodayCompletedItems.call(this, this.data.groupedDailyTasks, this.data.readingToday, this.data.readingCompleted)
+    });
+  },
+  loadHomeSecondaryData(startedAt) {
+    Promise.all([
+      this.loadTodayReport().catch(() => {}),
+      this.loadStudyCompletions().catch(() => {}),
+      this.loadReadingHome().catch(() => {})
+    ]).then(() => {
+      monitor.logPerf('home', 'secondaryLoad', Date.now() - startedAt, {
+        groups: (this.data.groupedDailyTasks || []).length
+      });
+    });
+  },
   async onShow() {
     const startedAt = Date.now();
     const app = getApp();
@@ -283,15 +301,7 @@ Page({
     });
     const data = await store.getDashboard({ view: 'home' }, (fresh) => this.applyDashboard(fresh));
     const groupedDailyTasks = this.applyDashboard(data);
-    try {
-      const reportData = await store.getDailyReportByDate(todayString());
-      wx.setStorageSync('todayReportForCompletedV1', reportData.report || null);
-      this.setData({
-        todayCompletedItems: buildTodayCompletedItems.call(this, this.data.groupedDailyTasks, this.data.readingToday, this.data.readingCompleted)
-      });
-    } catch (error) {}
-    this.loadStudyCompletions();
-    this.loadReadingHome();
+    this.loadHomeSecondaryData(startedAt);
     monitor.logPerf('home', 'onShow', Date.now() - startedAt, {
       groups: groupedDailyTasks.length
     });
