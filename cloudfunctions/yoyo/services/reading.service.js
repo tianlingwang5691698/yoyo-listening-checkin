@@ -12,6 +12,8 @@ const MAX_READING_DAILY_COUNT = 20;
 const STUDY_PACK_COLLECTION = 'readingStudyPacks';
 const SENTENCE_TRANSLATION_COLLECTION = 'readingSentenceTranslations';
 const READING_AUDIO_CACHE_COLLECTION = 'readingAudioCache';
+let passageListCache = null;
+const PASSAGE_LIST_CACHE_MAX_AGE_MS = 10 * 60 * 1000;
 const WORD_DICTIONARY_COLLECTION = 'wordDictionary';
 const READING_CONTENT_PATH = '_content/reading/reading-passages.json';
 const READING_EM1_CONTENT_PATH = '_content/reading-em1/reading-passages.json';
@@ -72,6 +74,9 @@ async function findReadingAudioCache(hash) {
 }
 
 async function loadPassages() {
+  if (passageListCache && Date.now() - passageListCache.savedAt < PASSAGE_LIST_CACHE_MAX_AGE_MS) {
+    return passageListCache.passages;
+  }
   const cloudStoragePassages = [];
   try {
     for (const path of [READING_EM1_CONTENT_PATH, READING_CONTENT_PATH]) {
@@ -84,14 +89,18 @@ async function loadPassages() {
       }
     }
     if (cloudStoragePassages.length) {
-      return cloudStoragePassages.map(normalizePassage).filter((item) => item._id && item.passage);
+      const passages = cloudStoragePassages.map(normalizePassage).filter((item) => item._id && item.passage);
+      passageListCache = { savedAt: Date.now(), passages };
+      return passages;
     }
   } catch (error) {
     // Fallback to database/sample content below.
   }
   const cloudPassages = await readCollection('readingPassages', 200);
   const list = cloudPassages.length ? cloudPassages : samplePassages;
-  return list.map(normalizePassage).filter((item) => item._id && item.passage);
+  const passages = list.map(normalizePassage).filter((item) => item._id && item.passage);
+  passageListCache = { savedAt: Date.now(), passages };
+  return passages;
 }
 
 async function getDailyPlan(ctx, today) {

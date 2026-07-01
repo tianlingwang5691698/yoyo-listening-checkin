@@ -208,6 +208,17 @@
 - 设计记录：词汇学习保持单张卡片即时切换，不让保存动作打断“不认识 / 我认识”的练习节奏。
 - 验证：语法检查通过，云函数测试通过。
 
+### 2026-07-01 二次高速和质量优化
+
+- 文件：`pages/home/index.js`
+- 文件：`utils/store.js`
+- 文件：`cloudfunctions/yoyo/lib/request-context-engine.js`
+- 文件：`cloudfunctions/yoyo/services/grammar.service.js`
+- 文件：`cloudfunctions/yoyo/services/reading.service.js`
+- 改动：首页首屏完成后后台刷新今日完成数据；写作记录查询走轻量上下文；阅读题库列表增加云函数内存缓存；查词增加短时本地缓存；语法讲解失败不向学生暴露接口错误。
+- 设计记录：首屏先可操作，数据随后补齐；错误文案保持学生可理解；查词和记录查看优先复用缓存。
+- 验证：语法检查通过，云函数测试通过。
+
 ### 2026-06-30 统一词汇板块
 
 - 文件：`cloudfunctions/yoyo/services/flashcard.service.js`

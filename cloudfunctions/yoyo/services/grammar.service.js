@@ -319,12 +319,13 @@ function postJson(url, apiKey, body) {
 }
 
 function fallbackExplanation(question, reason) {
+  if (reason) {
+    console.warn('[grammar] explain fallback', reason);
+  }
   return {
     answer: question.answer || '',
     topic: question.topic || '语法',
-    explanation: reason
-      ? `这道题已有标准答案，但 GPT 讲解暂时失败。原因：${reason}`
-      : '这道题已有标准答案，但 GPT 讲解接口未配置或暂时不可用。',
+    explanation: '这道题已有标准答案，详细讲解暂时不可用。可以先看标准答案，稍后再点“重新讲”。',
     elimination: '',
     source: 'fallback'
   };

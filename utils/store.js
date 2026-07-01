@@ -5,10 +5,12 @@ const inflightCloudRequests = {};
 const inflightTempFileUrlRequests = {};
 const memoryCloudCache = {};
 const tempFileUrlCache = {};
+const wordLookupCache = {};
 const CACHE_INDEX_KEY = 'yoyoCloudReadCacheKeysV1';
 const SELECTED_STUDENT_KEY = 'yoyoSelectedStudentTargetV1';
 const CACHE_MAX_AGE_MS = 7 * 24 * 60 * 60 * 1000;
 const TEMP_FILE_URL_MAX_AGE_MS = 20 * 60 * 1000;
+const WORD_LOOKUP_MAX_AGE_MS = 30 * 60 * 1000;
 let cloudReadCacheVersion = 0;
 const MUTATION_ACTIONS = {
   updateFlashcardReview: true,
@@ -655,7 +657,12 @@ async function synthesizeReadingAudio(options) {
 }
 
 async function lookupWord(word) {
-  return callCloud('lookupWord', { word }, {
+  const key = String(word || '').trim().toLowerCase();
+  const cached = key ? wordLookupCache[key] : null;
+  if (cached && cached.data && Date.now() - cached.savedAt < WORD_LOOKUP_MAX_AGE_MS) {
+    return Object.assign({}, cached.data, { __cacheHit: true });
+  }
+  const data = await callCloud('lookupWord', { word }, {
     word: '',
     wordLower: '',
     phonetic: '',
@@ -664,6 +671,10 @@ async function lookupWord(word) {
     audioFileId: '',
     audioCloudPath: ''
   }, { useCache: false });
+  if (key && data && data.syncMode !== 'cloud-error') {
+    wordLookupCache[key] = { savedAt: Date.now(), data };
+  }
+  return data;
 }
 
 async function addDictionaryWord(entry) {

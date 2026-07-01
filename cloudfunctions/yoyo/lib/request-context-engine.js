@@ -20,7 +20,7 @@ function resolveCatalogCategories(action, requestedCategory, payload = {}) {
   if (action === 'getTaskTranscript') {
     return [];
   }
-  if (['getFamilyPage', 'refreshInviteCode', 'joinFamily', 'joinFamilyByChildCode', 'leaveFamily', 'updateChildProfile', 'setStudyRole', 'updateSubscription', 'bootstrap', 'getReadingHome', 'getReadingPassage', 'getReadingStudyPack', 'synthesizeReadingAudio', 'submitReadingAttempt', 'submitWritingAttempt', 'recordStudyCompletion', 'getStudyCompletions'].includes(action)) {
+  if (['getFamilyPage', 'refreshInviteCode', 'joinFamily', 'joinFamilyByChildCode', 'leaveFamily', 'updateChildProfile', 'setStudyRole', 'updateSubscription', 'bootstrap', 'getReadingHome', 'getReadingPassage', 'getReadingStudyPack', 'synthesizeReadingAudio', 'submitReadingAttempt', 'submitWritingAttempt', 'getWritingAttempts', 'recordStudyCompletion', 'getStudyCompletions'].includes(action)) {
     return [];
   }
   return catalogCategories;

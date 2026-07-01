@@ -318,6 +318,16 @@ Page({
       });
     }
     setTimeout(() => {
+      Promise.all([
+        this.loadStudyCompletions().catch(() => {}),
+        this.loadTodayReport().catch(() => {})
+      ]).then(() => {
+        try {
+          wx.setStorageSync('todayCompletedItemsV1', this.data.todayCompletedItems || []);
+        } catch (error) {}
+      });
+    }, 100);
+    setTimeout(() => {
       store.getMaterialIndex().catch(() => {});
     }, 500);
   },
