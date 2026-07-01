@@ -10,7 +10,7 @@ const THEME_MAP = THEMES.reduce((map, item) => {
 }, {});
 
 const WINDOW_COLORS = {
-  warm: { backgroundColor: '#FFF8EE', frontColor: '#000000' }
+  warm: { backgroundColor: '#F6F2EA', frontColor: '#000000' }
 };
 
 function normalizeTheme(value) {
