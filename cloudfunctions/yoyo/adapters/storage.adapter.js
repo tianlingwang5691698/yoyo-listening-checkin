@@ -5,6 +5,8 @@ const { CLOUD_ASSET_BASE_URL, CLOUD_BUCKET } = require('../lib/constants');
 const { cloud, getEnvId } = require('./db.adapter');
 
 let storageManager = null;
+const jsonCache = {};
+const JSON_CACHE_MAX_AGE_MS = 10 * 60 * 1000;
 
 function normalizeCloudPath(path) {
   return String(path || '').replace(/^\/+|\/+$/g, '');
@@ -113,8 +115,18 @@ function downloadJsonFromCdn(cloudPath) {
 }
 
 async function downloadCloudJson(cloudPath) {
+  const cacheKey = normalizeCloudPath(cloudPath);
+  const cached = cacheKey ? jsonCache[cacheKey] : null;
+  if (cached && Date.now() - cached.savedAt < JSON_CACHE_MAX_AGE_MS) {
+    return cached.data;
+  }
+  let data;
   try {
-    return await downloadJsonFromCdn(cloudPath);
+    data = await downloadJsonFromCdn(cloudPath);
+    if (cacheKey) {
+      jsonCache[cacheKey] = { savedAt: Date.now(), data };
+    }
+    return data;
   } catch (error) {
     // fall through
   }
@@ -138,7 +150,11 @@ async function downloadCloudJson(cloudPath) {
     });
   }
   const text = fs.readFileSync(localPath, 'utf8');
-  return JSON.parse(text);
+  data = JSON.parse(text);
+  if (cacheKey) {
+    jsonCache[cacheKey] = { savedAt: Date.now(), data };
+  }
+  return data;
 }
 
 async function downloadCloudFileBuffer(fileID, cloudPath) {

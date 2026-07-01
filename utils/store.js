@@ -2,12 +2,14 @@ const cloud = require('../domain/cloud/index');
 const contracts = require('./contracts');
 const monitor = require('./monitor');
 const inflightCloudRequests = {};
+const inflightTempFileUrlRequests = {};
 const memoryCloudCache = {};
 const tempFileUrlCache = {};
 const CACHE_INDEX_KEY = 'yoyoCloudReadCacheKeysV1';
 const SELECTED_STUDENT_KEY = 'yoyoSelectedStudentTargetV1';
 const CACHE_MAX_AGE_MS = 7 * 24 * 60 * 60 * 1000;
 const TEMP_FILE_URL_MAX_AGE_MS = 20 * 60 * 1000;
+let cloudReadCacheVersion = 0;
 const MUTATION_ACTIONS = {
   updateFlashcardReview: true,
   saveFlashcardSettings: true,
@@ -284,6 +286,7 @@ function cacheCloudResult(action, payload, data) {
 }
 
 function clearCloudReadCache() {
+  cloudReadCacheVersion += 1;
   Object.keys(memoryCloudCache).forEach((key) => delete memoryCloudCache[key]);
   try {
     const keys = wx.getStorageSync(CACHE_INDEX_KEY) || [];
@@ -324,11 +327,14 @@ async function callCloud(action, payload, defaults, options = {}) {
   if (MUTATION_ACTIONS[action]) {
     clearCloudReadCache();
   }
+  const cacheVersion = cloudReadCacheVersion;
   const cached = options.useCache === false ? null : getCachedCloudResult(action, payload);
   if (cached) {
     callCloudFresh(action, payload, defaults).then((fresh) => {
       if (fresh && fresh.syncMode !== 'cloud-error') {
-        cacheCloudResult(action, payload, fresh);
+        if (cacheVersion === cloudReadCacheVersion) {
+          cacheCloudResult(action, payload, fresh);
+        }
         if (typeof options.onRefresh === 'function') {
           options.onRefresh(fresh);
         }
@@ -338,7 +344,9 @@ async function callCloud(action, payload, defaults, options = {}) {
   }
   const result = await callCloudFresh(action, payload, defaults);
   if (READ_CACHE_CONFIG[action]) {
-    cacheCloudResult(action, payload, result);
+    if (cacheVersion === cloudReadCacheVersion) {
+      cacheCloudResult(action, payload, result);
+    }
   } else if (result && result.syncMode !== 'cloud-error') {
     clearCloudReadCache();
   }
@@ -463,19 +471,32 @@ async function getTempFileURL(fileId) {
   if (cached && cached.url && Date.now() - cached.savedAt < TEMP_FILE_URL_MAX_AGE_MS) {
     return cached.url;
   }
-  try {
-    const url = await cloud.getTempFileURL(fileId);
-    if (key && url) {
-      tempFileUrlCache[key] = {
-        savedAt: Date.now(),
-        url
-      };
-    }
-    return url;
-  } catch (error) {
-    monitor.logError('store', 'getTempFileURL', error, { fileId: fileId ? 'set' : 'empty' });
-    throw error;
+  if (key && inflightTempFileUrlRequests[key]) {
+    return inflightTempFileUrlRequests[key];
   }
+  const request = (async () => {
+    try {
+      const url = await cloud.getTempFileURL(fileId);
+      if (key && url) {
+        tempFileUrlCache[key] = {
+          savedAt: Date.now(),
+          url
+        };
+      }
+      return url;
+    } catch (error) {
+      monitor.logError('store', 'getTempFileURL', error, { fileId: fileId ? 'set' : 'empty' });
+      throw error;
+    } finally {
+      if (key) {
+        delete inflightTempFileUrlRequests[key];
+      }
+    }
+  })();
+  if (key) {
+    inflightTempFileUrlRequests[key] = request;
+  }
+  return request;
 }
 
 async function markTaskListened(options) {
