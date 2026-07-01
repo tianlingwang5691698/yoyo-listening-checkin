@@ -51,17 +51,36 @@
   font-weight: 800;
 }
 
-.essay-input {
+.letter-editor {
   box-sizing: border-box;
+  position: relative;
   width: 100%;
   min-height: 620rpx;
   margin-top: 20rpx;
-  padding: 22rpx;
-  border-radius: 18rpx;
-  background: #f6f8fb;
+  padding: 0;
+  border: 0;
+  border-radius: 12rpx;
+  background: #fff;
+  overflow: hidden;
+}
+
+.letter-editor-focused {
+  box-shadow: 0 0 0 1rpx rgba(47, 55, 71, 0.08);
+}
+
+.essay-input {
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  min-height: 620rpx;
+  padding: 0 0 0;
+  background:
+    repeating-linear-gradient(180deg, transparent 0, transparent 62rpx, #566071 63rpx, transparent 64rpx);
   color: #202938;
   font-size: 30rpx;
-  line-height: 1.6;
+  line-height: 64rpx;
+  caret-color: #8f5b2f;
 }
 
 .editor-footer,

@@ -40,6 +40,7 @@ Page({
     prompt: null,
     essayText: '',
     wordCount: 0,
+    editorFocused: false,
     submitting: false,
     review: null,
     errorText: ''
@@ -68,6 +69,12 @@ Page({
       wordCount: countWords(essayText),
       errorText: ''
     });
+  },
+  onEditorFocus() {
+    this.setData({ editorFocused: true });
+  },
+  onEditorBlur() {
+    this.setData({ editorFocused: false });
   },
   async submitEssay() {
     const prompt = this.data.prompt;
