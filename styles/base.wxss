@@ -20,12 +20,14 @@ button::after {
   min-height: 100vh;
   padding: 28rpx var(--space-page-x) 48rpx;
   background: var(--bg-cream);
+  color: var(--text-main);
 }
 
 .page-container {
   min-height: 100vh;
   padding: 28rpx var(--space-page-x) 48rpx;
   background: var(--bg-cream);
+  color: var(--text-main);
 }
 
 .section-title {
@@ -58,14 +60,14 @@ button::after {
 
 .card {
   border-radius: var(--radius-xl);
-  background: var(--surface);
+  background: var(--surface-raised);
   border: 1rpx solid var(--border-soft);
   box-shadow: var(--shadow-card);
 }
 
 .card-main {
   border-radius: var(--radius-xl);
-  background: var(--surface);
+  background: var(--surface-raised);
   border: 1rpx solid var(--border-soft);
   box-shadow: var(--shadow-card);
 }

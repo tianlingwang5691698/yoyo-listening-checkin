@@ -1,9 +1,7 @@
 const THEME_STORAGE_KEY = 'uiTheme';
 
 const THEMES = [
-  { key: 'warm', label: '暖白' },
-  { key: 'fresh', label: '清新' },
-  { key: 'sky', label: '晴空' }
+  { key: 'warm', label: '统一' }
 ];
 
 const THEME_MAP = THEMES.reduce((map, item) => {
@@ -12,9 +10,7 @@ const THEME_MAP = THEMES.reduce((map, item) => {
 }, {});
 
 const WINDOW_COLORS = {
-  warm: { backgroundColor: '#FFF8EE', frontColor: '#000000' },
-  fresh: { backgroundColor: '#EEF8F4', frontColor: '#000000' },
-  sky: { backgroundColor: '#F3F7FF', frontColor: '#000000' }
+  warm: { backgroundColor: '#FFF8EE', frontColor: '#000000' }
 };
 
 function normalizeTheme(value) {

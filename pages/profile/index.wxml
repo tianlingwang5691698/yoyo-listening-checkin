@@ -45,7 +45,7 @@
     </view>
     <view class="profile-theme">
       <view class="row-main">
-        <view class="row-title">主题</view>
+        <view class="row-title">界面风格</view>
         <view class="row-copy">{{currentThemeLabel}}</view>
       </view>
       <view class="theme-switch">
