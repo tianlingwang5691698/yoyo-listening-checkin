@@ -197,7 +197,9 @@ Page({
     readingSummary: '6-9 年级阅读',
     vocabularySummary: buildVocabularySummary(),
     todayCompletedItems: [],
-    cloudCompletedItems: []
+    cloudCompletedItems: [],
+    entryPosterVisible: true,
+    entryPosterPage: 0
   }),
   buildStudyModePresentation(member) {
     const studyRole = member && member.studyRole === 'student' ? 'student' : 'parent';
@@ -261,16 +263,23 @@ Page({
   },
   async onShow() {
     const startedAt = Date.now();
+    const app = getApp();
     page.syncTheme(this);
     const tabBar = this.getTabBar && this.getTabBar();
+    const entryPosterVisible = !(app && app.globalData && app.globalData.entryPosterSkipped);
     if (tabBar) {
-      tabBar.setData({ selected: 0 });
+      tabBar.setData({
+        selected: 0,
+        hidden: entryPosterVisible
+      });
     }
     this.setData({
       homeLoading: true,
       todayDisplay: todayDisplayText(),
       greeting: greetingText(),
-      vocabularySummary: buildVocabularySummary()
+      vocabularySummary: buildVocabularySummary(),
+      entryPosterVisible,
+      entryPosterPage: 0
     });
     const data = await store.getDashboard({ view: 'home' }, (fresh) => this.applyDashboard(fresh));
     const groupedDailyTasks = this.applyDashboard(data);
@@ -285,6 +294,29 @@ Page({
     this.loadReadingHome();
     monitor.logPerf('home', 'onShow', Date.now() - startedAt, {
       groups: groupedDailyTasks.length
+    });
+  },
+  showNextEntryPosterPage() {
+    this.setData({
+      entryPosterPage: 1
+    });
+  },
+  showPrevEntryPosterPage() {
+    this.setData({
+      entryPosterPage: 0
+    });
+  },
+  closeEntryPoster() {
+    const app = getApp();
+    const tabBar = this.getTabBar && this.getTabBar();
+    if (app && app.globalData) {
+      app.globalData.entryPosterSkipped = true;
+    }
+    if (tabBar) {
+      tabBar.setData({ hidden: false });
+    }
+    this.setData({
+      entryPosterVisible: false
     });
   },
   async confirmStudyIdentity(event) {

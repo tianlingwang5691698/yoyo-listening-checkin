@@ -71,4 +71,54 @@
   </view>
 
   <view class="empty-state" wx:if="{{!homeLoading && !hasGroupedTasks && syncMode !== 'cloud-error'}}">今日任务还在准备中。</view>
+
+  <view class="entry-poster" wx:if="{{entryPosterVisible}}">
+    <view class="entry-poster-skip" bindtap="closeEntryPoster">跳过</view>
+    <view wx:if="{{entryPosterPage === 0}}">
+      <view class="entry-poster-visual">
+        <view class="sound-orbit orbit-one"></view>
+        <view class="sound-orbit orbit-two"></view>
+        <view class="sound-core">听</view>
+        <view class="caption-line caption-one">Listen first.</view>
+        <view class="caption-line caption-two">Understand more.</view>
+        <view class="caption-line caption-three">Speak naturally.</view>
+      </view>
+      <view class="entry-poster-copy">
+        <view class="entry-poster-kicker">开始前想说的话</view>
+        <view class="entry-poster-title">听力先行</view>
+        <view class="entry-poster-lead">先把声音听懂，再让阅读、表达和写作自然长出来。</view>
+        <view class="entry-poster-text">一开始只是想给侄子佑佑做一个能坚持用的小工具。如果它也适合你家的孩子，也欢迎一起使用。英语学习不急着从题目开始，先让孩子每天听懂一点，有声音、有节奏、有感觉。</view>
+        <view class="entry-poster-tags">
+          <view class="entry-poster-tag">听懂输入</view>
+          <view class="entry-poster-tag">持续节奏</view>
+          <view class="entry-poster-tag">自然表达</view>
+        </view>
+      </view>
+    </view>
+    <view class="entry-message" wx:else>
+      <view class="entry-guide-visual">
+        <view class="guide-card guide-parent">家长</view>
+        <view class="guide-link-line"></view>
+        <view class="guide-card guide-child">孩子 ID</view>
+      </view>
+      <view class="entry-message-card">
+        <view class="entry-message-kicker">小程序使用说明</view>
+        <view class="entry-message-title">先绑定孩子 ID</view>
+        <view class="entry-message-text">首次使用时，先在首页选择身份：家长选“我是家长”，孩子设备选“我是学生”。</view>
+        <view class="entry-message-text">家长进入“我的”，输入或复制孩子 ID 完成绑定。绑定后，就能查看孩子的学习记录和每日完成情况。</view>
+        <view class="entry-message-text">孩子每天先完成“今日听力任务”，再进入阅读、语法、写作和词汇复习。</view>
+        <view class="entry-message-sign">
+          <view class="entry-message-sign-label">设计与内容</view>
+          <view>王天龙</view>
+        </view>
+      </view>
+      <view class="entry-message-back" bindtap="showPrevEntryPosterPage">返回理念</view>
+    </view>
+    <view class="entry-poster-dots">
+      <view class="entry-poster-dot {{entryPosterPage === 0 ? 'is-active' : ''}}"></view>
+      <view class="entry-poster-dot {{entryPosterPage === 1 ? 'is-active' : ''}}"></view>
+    </view>
+    <view class="entry-poster-action" wx:if="{{entryPosterPage === 0}}" bindtap="showNextEntryPosterPage">下一页</view>
+    <view class="entry-poster-action" wx:else bindtap="closeEntryPoster">进入首页</view>
+  </view>
 </view>

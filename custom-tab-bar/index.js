@@ -3,6 +3,7 @@ const theme = require('../utils/theme');
 Component({
   data: {
     selected: 0,
+    hidden: false,
     theme: 'warm',
     themeClass: 'theme-warm',
     list: [
