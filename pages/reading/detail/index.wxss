@@ -324,7 +324,6 @@
 }
 
 .option-row.is-locked {
-  pointer-events: none;
   opacity: 1;
 }
 

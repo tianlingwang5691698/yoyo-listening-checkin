@@ -11,6 +11,7 @@ function buildOptionList(options) {
   return ['A', 'B', 'C', 'D'].filter((key) => options && options[key]).map((key) => ({
     key,
     text: options[key],
+    tokens: tokenizeChunkText(options[key]),
     selected: false
   }));
 }
@@ -131,6 +132,7 @@ function normalizePassage(passage, answers, submitted, review) {
     ) : null;
     return Object.assign({}, question, {
       type,
+      promptTokens: tokenizeChunkText(question.prompt || ''),
       selected,
       selectedDisplay,
       inputValue: type === 'blank' ? selected : '',

@@ -97,7 +97,13 @@
 
     <block wx:if="{{!passage.isClozePassage}}">
       <view class="question-card card" wx:for="{{passage.questions}}" wx:key="number">
-        <view class="question-title">{{item.number}}. {{item.prompt}}</view>
+        <view class="question-title">
+          <text>{{item.number}}. </text>
+          <block wx:if="{{submitted}}">
+            <text wx:for="{{item.promptTokens}}" wx:key="index" wx:for-item="token" class="{{token.isWord ? 'tap-word' : ''}}" data-word="{{token.word}}" catchtap="lookupPassageWord">{{token.text}}</text>
+          </block>
+          <text wx:else>{{item.prompt}}</text>
+        </view>
         <view class="option-list" wx:if="{{item.type === 'choice'}}">
           <view class="option-row {{option.selected ? 'is-selected' : ''}} {{option.correct ? 'is-correct' : ''}} {{option.wrong ? 'is-wrong' : ''}} {{submitted || submitting ? 'is-locked' : ''}}" wx:for="{{item.optionsList}}" wx:key="key" wx:for-item="option" data-number="{{item.number}}" data-option="{{option.key}}" bindtap="selectOption">
             <view class="option-mark">
@@ -105,7 +111,12 @@
               <text class="option-badge" wx:if="{{option.correct}}">正确</text>
               <text class="option-badge wrong" wx:elif="{{option.wrong}}">你的</text>
             </view>
-            <text class="option-text">{{option.text}}</text>
+            <view class="option-text">
+              <block wx:if="{{submitted}}">
+                <text wx:for="{{option.tokens}}" wx:key="index" wx:for-item="token" class="{{token.isWord ? 'tap-word' : ''}}" data-word="{{token.word}}" catchtap="lookupPassageWord">{{token.text}}</text>
+              </block>
+              <text wx:else>{{option.text}}</text>
+            </view>
           </view>
         </view>
         <view class="blank-answer-box" wx:else>
