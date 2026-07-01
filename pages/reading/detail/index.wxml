@@ -28,12 +28,12 @@
           <view wx:for="{{passageSegments}}" wx:key="index" class="passage-segment segment-{{item.tone}}" data-start="{{item.start}}" data-end="{{item.end}}" bindtap="translatePassageSentence">
             <block wx:if="{{item.chunks && item.chunks.length}}">
               <text wx:for="{{item.chunks}}" wx:key="index" wx:for-item="chunk" class="{{chunk.className}}">
-                <text wx:for="{{chunk.tokens}}" wx:key="index" wx:for-item="token" class="{{token.isWord ? 'tap-word' : ''}}" data-word="{{token.word}}" catchtap="lookupPassageWord">{{token.text}}</text>
+                <text wx:for="{{chunk.tokens}}" wx:key="index" wx:for-item="token" class="{{submitted && token.isWord ? 'tap-word' : ''}}" data-word="{{submitted ? token.word : ''}}" catchtap="lookupPassageWord">{{token.text}}</text>
               </text>
             </block>
             <block wx:else>
               <text wx:if="{{item.label}}" class="segment-label">{{item.label}}</text>
-              <text wx:for="{{item.tokens}}" wx:key="index" wx:for-item="token" class="{{token.isWord ? 'tap-word' : ''}}" data-word="{{token.word}}" catchtap="lookupPassageWord">{{token.text}}</text>
+              <text wx:for="{{item.tokens}}" wx:key="index" wx:for-item="token" class="{{submitted && token.isWord ? 'tap-word' : ''}}" data-word="{{submitted ? token.word : ''}}" catchtap="lookupPassageWord">{{token.text}}</text>
               <text wx:if="{{item.note}}" class="segment-note">{{item.note}}</text>
             </block>
             <view class="sentence-translation-inline" wx:if="{{selectedSentenceStart === item.start}}">
@@ -46,12 +46,12 @@
         <view wx:for="{{passageSegments}}" wx:key="index" class="passage-segment segment-{{item.tone}}" data-start="{{item.start}}" data-end="{{item.end}}" bindtap="translatePassageSentence">
           <block wx:if="{{item.chunks && item.chunks.length}}">
             <text wx:for="{{item.chunks}}" wx:key="index" wx:for-item="chunk" class="{{chunk.className}}">
-              <text wx:for="{{chunk.tokens}}" wx:key="index" wx:for-item="token" class="{{token.isWord ? 'tap-word' : ''}}" data-word="{{token.word}}" catchtap="lookupPassageWord">{{token.text}}</text>
+              <text wx:for="{{chunk.tokens}}" wx:key="index" wx:for-item="token" class="{{submitted && token.isWord ? 'tap-word' : ''}}" data-word="{{submitted ? token.word : ''}}" catchtap="lookupPassageWord">{{token.text}}</text>
             </text>
           </block>
           <block wx:else>
             <text wx:if="{{item.label}}" class="segment-label">{{item.label}}</text>
-            <text wx:for="{{item.tokens}}" wx:key="index" wx:for-item="token" class="{{token.isWord ? 'tap-word' : ''}}" data-word="{{token.word}}" catchtap="lookupPassageWord">{{token.text}}</text>
+            <text wx:for="{{item.tokens}}" wx:key="index" wx:for-item="token" class="{{submitted && token.isWord ? 'tap-word' : ''}}" data-word="{{submitted ? token.word : ''}}" catchtap="lookupPassageWord">{{token.text}}</text>
             <text wx:if="{{item.note}}" class="segment-note">{{item.note}}</text>
           </block>
           <view class="sentence-translation-inline" wx:if="{{selectedSentenceStart === item.start}}">
@@ -162,14 +162,13 @@
       <view class="card-list" wx:if="{{activeReviewTab === 'vocabulary'}}">
         <view class="word-card" wx:for="{{wordCards}}" wx:key="word">
           <view class="word-head">
-            <view class="word-pronounce {{speakingWord === item.word ? 'is-speaking' : ''}}" data-word="{{item.word}}" bindtap="speakWord">
+            <view class="word-pronounce {{speakingWord === ('word:' + item.word) ? 'is-speaking' : ''}}" data-type="word" data-text="{{item.word}}" bindtap="speakStudyAudio">
               <view class="card-title-line">
                 <text class="card-index">{{item.groupIndex}}</text>
                 <text class="word-text">{{item.word}}</text>
-                <text class="sound-wave" wx:if="{{speakingWord === item.word}}">♪</text>
+                <text class="sound-wave {{speakingWord === ('word:' + item.word) ? 'is-speaking' : ''}}" wx:if="{{item.canSpeak}}">♪</text>
               </view>
               <text class="phonetic" wx:if="{{item.phonetic}}">{{item.phonetic}}</text>
-              <text class="audio-status" wx:if="{{speakingWord === item.word && audioStatusText}}">{{audioStatusText}}</text>
             </view>
             <view class="word-actions">
               <button class="mini-action strong" data-word="{{item.word}}" bindtap="toggleWordUnfamiliar">{{unfamiliarMap[item.flashcardKey] ? '已加入' : '不熟'}}</button>
@@ -188,9 +187,12 @@
       <view class="card-list" wx:elif="{{activeReviewTab === 'phrases'}}">
         <view class="phrase-card" wx:for="{{phraseCards}}" wx:key="text">
           <view class="word-head">
-            <view class="card-title-line">
-              <text class="card-index">{{item.groupIndex}}</text>
-              <text class="phrase-text">{{item.text}}</text>
+            <view class="word-pronounce {{speakingWord === ('phrase:' + item.text) ? 'is-speaking' : ''}}" data-type="phrase" data-text="{{item.text}}" bindtap="speakStudyAudio">
+              <view class="card-title-line">
+                <text class="card-index">{{item.groupIndex}}</text>
+                <text class="phrase-text">{{item.text}}</text>
+                <text class="sound-wave {{speakingWord === ('phrase:' + item.text) ? 'is-speaking' : ''}}" wx:if="{{item.canSpeak}}">♪</text>
+              </view>
             </view>
             <view class="word-actions">
               <button class="mini-action strong" data-text="{{item.text}}" bindtap="togglePhraseUnfamiliar">{{unfamiliarMap[item.flashcardKey] ? '已加入' : '不熟'}}</button>

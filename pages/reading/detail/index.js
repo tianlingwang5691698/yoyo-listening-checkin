@@ -29,6 +29,19 @@ function formatAnswerDisplay(value) {
   return /^[A-D]$/.test(text) ? text.toLowerCase() : text;
 }
 
+function canUseDictionaryVoice(text) {
+  const value = String(text || '').replace(/\s+/g, ' ').trim();
+  if (!value || value.length > 60 || /[.!?;:]/.test(value)) return false;
+  const words = value.split(' ').filter(Boolean);
+  return words.length >= 1
+    && words.length <= 6
+    && words.every((word) => /^[A-Za-z][A-Za-z'-]{0,30}$/.test(word));
+}
+
+function buildDictionaryVoiceUrl(text) {
+  return `https://dict.youdao.com/dictvoice?audio=${encodeURIComponent(text)}&type=2`;
+}
+
 function findClozeBlanks(text) {
   const source = String(text || '');
   const found = {};
@@ -424,10 +437,12 @@ function normalizeReview(review) {
     return null;
   }
   const vocabularyCards = withGroupIndexes(normalizeCardList(review.vocabularyCards || review.vocabulary, 'word')).map((card) => Object.assign({}, card, {
-    flashcardKey: `word:${card.word || card.text || ''}`
+    flashcardKey: `word:${card.word || card.text || ''}`,
+    canSpeak: canUseDictionaryVoice(card.word || card.text || '')
   }));
   const phraseCards = withGroupIndexes(normalizeCardList(review.phraseCards || review.phrases, 'text')).map((card) => Object.assign({}, card, {
-    flashcardKey: `phrase:${card.text || card.phrase || ''}`
+    flashcardKey: `phrase:${card.text || card.phrase || ''}`,
+    canSpeak: canUseDictionaryVoice(card.text || card.phrase || '')
   }));
   return Object.assign({}, review, {
     answerSentences: normalizeCardList(review.answerSentences || [], 'text'),
@@ -819,7 +834,6 @@ Page({
     showReviewDetails: false,
     hasScore: false,
     speakingWord: '',
-    audioStatusText: '',
     dictionaryVisible: false,
     dictionaryLoading: false,
     dictionaryAudioLoading: false,
@@ -1102,7 +1116,7 @@ Page({
   },
   async lookupPassageWord(event) {
     const word = String(event.currentTarget.dataset.word || '').trim();
-    if (!word || this.data.dictionaryLoading) return;
+    if (!this.data.submitted || !word || this.data.dictionaryLoading) return;
     if (wx.vibrateShort) {
       wx.vibrateShort({ type: 'light' });
     }
@@ -1187,58 +1201,41 @@ Page({
       wx.showToast({ title: '播放失败，稍后再试', icon: 'none' });
     }
   },
-  async speakWord(event) {
-    const word = String(event.currentTarget.dataset.word || '');
-    const card = (this.data.wordCards || []).find((item) => item.word === word) || {};
-    const text = word || card.text || '';
-    if (!text || this._readingAudioLoading) return;
-    this.setData({
-      speakingWord: text,
-      audioStatusText: '准备发音'
-    });
-    if (wx.vibrateShort) {
-      wx.vibrateShort({ type: 'light' });
-    }
+  async speakStudyAudio(event) {
+    const type = String(event.currentTarget.dataset.type || 'word');
+    const text = String(event.currentTarget.dataset.text || '').replace(/\s+/g, ' ').trim();
+    const audioKey = `${type}:${text}`;
+    if (!text || this._readingAudioLoading || !canUseDictionaryVoice(text)) return;
+    const cards = type === 'phrase' ? this.data.phraseCards : this.data.wordCards;
+    const card = (cards || []).find((item) => (item.word || item.text || item.phrase) === text) || {};
+    this._readingAudioLoading = true;
+    this.setData({ speakingWord: audioKey });
     try {
       let url = card.audioUrl || (this._wordAudioUrls && this._wordAudioUrls[text]);
-      if (!url) {
-        this._readingAudioLoading = true;
-        this.setData({ audioStatusText: '生成发音中' });
-        const result = await store.synthesizeReadingAudio({ text });
-        url = result && result.audioUrl ? result.audioUrl : '';
-        if (!url) {
-          const fileId = result && result.fileId ? result.fileId : '';
-          if (!fileId) throw new Error('发音生成失败');
-          try {
-            url = await store.getTempFileURL(fileId);
-          } catch (error) {
-            throw new Error('发音链接失败');
-          }
-        }
-        if (!url) throw new Error('发音链接为空');
-        this._wordAudioUrls = Object.assign({}, this._wordAudioUrls || {}, { [text]: url });
+      if (!url && card.audioFileId) {
+        url = await store.getTempFileURL(card.audioFileId);
       }
+      if (!url) {
+        url = buildDictionaryVoiceUrl(text);
+      }
+      this._wordAudioUrls = Object.assign({}, this._wordAudioUrls || {}, { [text]: url });
       if (!this.readingAudioContext) {
         this.readingAudioContext = wx.createInnerAudioContext();
         this.readingAudioContext.obeyMuteSwitch = false;
-        this.readingAudioContext.onPlay(() => {
-          this.setData({ audioStatusText: '播放中' });
-        });
         this.readingAudioContext.onEnded(() => {
-          this.setData({ speakingWord: '', audioStatusText: '' });
+          this.setData({ speakingWord: '' });
         });
         this.readingAudioContext.onError((error) => {
-          this.setData({ audioStatusText: '播放失败' });
+          this.setData({ speakingWord: '' });
           wx.showToast({ title: '播放失败，稍后再试', icon: 'none' });
-          console.warn('reading-word-audio-error', error);
+          console.warn('reading-study-audio-error', error);
         });
       }
       this.readingAudioContext.stop();
       this.readingAudioContext.src = url;
-      this.setData({ audioStatusText: '播放中' });
       this.readingAudioContext.play();
     } catch (error) {
-      this.setData({ audioStatusText: '发音失败' });
+      this.setData({ speakingWord: '' });
       wx.showToast({ title: '发音失败，稍后重试', icon: 'none' });
     } finally {
       this._readingAudioLoading = false;

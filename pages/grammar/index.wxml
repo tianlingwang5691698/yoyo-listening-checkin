@@ -85,14 +85,14 @@
         <view class="question-meta">第 {{item.sequenceNumber}} 题 · {{item.year}} · {{item.district}} · 原卷第 {{item.number}} 题</view>
         <view class="question-prompt" wx:if="{{!item.isAnswered}}">{{item.prompt}}</view>
         <view class="question-prompt token-line" wx:else>
-          <text wx:for="{{item.promptTokens}}" wx:key="id" class="{{item.word ? 'lookup-token' : ''}}" data-word="{{item.word}}" catchtap="openDictionaryWord">{{item.text}}</text>
+          <text wx:for="{{item.promptTokens}}" wx:key="id" wx:for-item="token" class="{{token.word ? 'lookup-token' : ''}}" data-question-id="{{item._id}}" data-word="{{token.word}}" catchtap="openDictionaryWord">{{token.text}}</text>
         </view>
         <view class="option-grid">
           <view class="option-item {{option.selected ? 'is-selected' : ''}} {{option.correct ? 'is-correct' : ''}} {{option.wrong ? 'is-wrong' : ''}}" wx:for="{{item.optionsList}}" wx:for-item="option" wx:key="key" data-question-id="{{item._id}}" data-option="{{option.key}}" bindtap="selectOption">
             <text>{{option.key}}. </text>
             <block wx:if="{{!item.isAnswered}}">{{option.text}}</block>
             <block wx:else>
-              <text wx:for="{{option.tokens}}" wx:key="id" class="{{item.word ? 'lookup-token' : ''}}" data-word="{{item.word}}" catchtap="openDictionaryWord">{{item.text}}</text>
+              <text wx:for="{{option.tokens}}" wx:key="id" wx:for-item="token" class="{{token.word ? 'lookup-token' : ''}}" data-question-id="{{item._id}}" data-word="{{token.word}}" catchtap="openDictionaryWord">{{token.text}}</text>
             </block>
           </view>
         </view>

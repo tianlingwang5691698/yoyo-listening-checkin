@@ -521,6 +521,11 @@ Page({
   },
   async openDictionaryWord(event) {
     const word = String(event.currentTarget.dataset.word || '').trim();
+    const questionId = String(event.currentTarget.dataset.questionId || '');
+    if (questionId) {
+      const question = (this.data.selectedQuestions || []).find((item) => item._id === questionId);
+      if (!question || !question.isAnswered) return;
+    }
     if (!word) return;
     this.setData({
       dictionaryVisible: true,

@@ -858,9 +858,12 @@
   border-radius: 999rpx;
   background: var(--accent-deep);
   color: #fff;
-  font-size: 22rpx;
+  font-size: 18rpx;
   line-height: 34rpx;
   text-align: center;
+}
+
+.sound-wave.is-speaking {
   animation: readingSoundPulse 0.72s ease-in-out infinite;
 }
 
@@ -893,22 +896,34 @@
 
 .word-actions {
   flex-shrink: 0;
-  width: 132rpx;
+  width: 136rpx;
   display: flex;
+  align-items: center;
+  justify-content: center;
   gap: 8rpx;
 }
 
 .mini-action {
   width: 100%;
   min-width: 0;
-  height: 52rpx;
+  height: 56rpx;
   margin: 0;
   padding: 0 12rpx;
   border-radius: 999rpx;
   color: var(--text-muted);
   background: #fff;
-  font-size: 22rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24rpx;
+  line-height: 1;
+  font-weight: var(--font-title-weight);
+  text-align: center;
   box-sizing: border-box;
+}
+
+.mini-action::after {
+  border: 0;
 }
 
 .mini-action.strong {
