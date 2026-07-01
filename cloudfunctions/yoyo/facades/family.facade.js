@@ -9,6 +9,7 @@ function buildFamilyContextPayload(ctx) {
     currentMember: ctx.member,
     members: ctx.members,
     child: ctx.child,
+    studentLinks: ctx.studentLinks || [],
     subscriptionPreference: ctx.subscriptionPreference
   };
 }
@@ -21,8 +22,8 @@ function buildProfilePayload(ctx, dashboard) {
   });
 }
 
-async function reloadFamilyContext(openId) {
-  const nextCtx = await module.exports.ensureBootstrap(openId);
+async function reloadFamilyContext(openId, target) {
+  const nextCtx = await module.exports.ensureBootstrap(openId, target);
   return buildFamilyContextPayload(nextCtx);
 }
 

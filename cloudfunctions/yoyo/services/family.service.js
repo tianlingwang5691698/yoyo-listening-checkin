@@ -39,7 +39,7 @@ async function joinFamily(event) {
   }
   const displayName = String(payload.displayName || '').trim() || '新家长';
   await familyFacade.upsertFamilyMemberForFamily(ctx.user.openId, ctx.user.userId, target.familyId, displayName);
-  return familyFacade.reloadFamilyContext(ctx.user.openId);
+  return familyFacade.reloadFamilyContext(ctx.user.openId, { targetFamilyId: target.familyId });
 }
 
 async function joinFamilyByChildCode(event) {
@@ -57,7 +57,10 @@ async function joinFamilyByChildCode(event) {
   }
   const displayName = String(payload.displayName || '').trim() || '新家长';
   await familyFacade.upsertFamilyMemberForFamily(ctx.user.openId, ctx.user.userId, targetChild.familyId, displayName);
-  return familyFacade.reloadFamilyContext(ctx.user.openId);
+  return familyFacade.reloadFamilyContext(ctx.user.openId, {
+    targetFamilyId: targetChild.familyId,
+    targetChildId: targetChild.childId || ''
+  });
 }
 
 async function updateChildProfile(event) {

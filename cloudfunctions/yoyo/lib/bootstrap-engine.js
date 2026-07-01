@@ -50,9 +50,50 @@ async function getChild(familyId, deps) {
   });
 }
 
-async function ensureBootstrap(openId, deps) {
+function selectMember(memberRecords, target) {
+  const list = memberRecords || [];
+  const targetFamilyId = String((target && target.targetFamilyId) || '').trim();
+  if (targetFamilyId) {
+    const matched = list.find((item) => item.familyId === targetFamilyId);
+    if (matched) {
+      return matched;
+    }
+  }
+  return list[0] || null;
+}
+
+async function buildStudentLinks(memberRecords, currentMember, deps) {
+  const seen = {};
+  const links = [];
+  for (const member of memberRecords || []) {
+    const familyId = String(member.familyId || '').trim();
+    if (!familyId || seen[familyId]) {
+      continue;
+    }
+    seen[familyId] = true;
+    const child = await getChild(familyId, deps);
+    if (!child) {
+      continue;
+    }
+    links.push({
+      familyId,
+      childId: child.childId || '',
+      childLoginCode: child.childLoginCode || '',
+      nickname: child.nickname || '',
+      avatarText: child.avatarText || '',
+      memberId: member.memberId || '',
+      role: member.role || 'parent',
+      studyRole: deps.normalizeStudyRole(member),
+      isCurrent: !!(currentMember && member.memberId === currentMember.memberId)
+    });
+  }
+  return links;
+}
+
+async function ensureBootstrap(openId, deps, target) {
   const user = await ensureUser(openId, deps);
-  let member = await deps.getMember(openId);
+  let memberRecords = deps.findMembersByOpenId ? await deps.findMembersByOpenId(openId) : [];
+  let member = selectMember(memberRecords, target);
   if (!member) {
     const familyId = `family-${Date.now()}`;
     const now = new Date().toISOString();
@@ -76,6 +117,7 @@ async function ensureBootstrap(openId, deps) {
       createdAt: now
     };
     await deps.createMember(member);
+    memberRecords = [member];
     await deps.createSubscription({
       memberId: member.memberId,
       familyId,
@@ -104,13 +146,14 @@ async function ensureBootstrap(openId, deps) {
   const family = await deps.getFamily(member.familyId);
   const child = await getChild(member.familyId, deps);
   const members = deps.normalizeAndDedupeMembers(await deps.findMembersByFamilyId(member.familyId));
+  const studentLinks = await buildStudentLinks(memberRecords, member, deps);
   const subscriptionPreference = await deps.findSubscriptionByMemberId(member.memberId) || {
     memberId: member.memberId,
     familyId: member.familyId,
     dailyReportEnabled: !!member.subscriptionEnabled,
     lastAuthorizedAt: ''
   };
-  return { user, family, member, child, members, subscriptionPreference };
+  return { user, family, member, child, members, studentLinks, subscriptionPreference };
 }
 
 module.exports = {

@@ -326,12 +326,31 @@ async function updateFlashcardReview(event) {
   const payload = (event && event.payload) || {};
   const { ctx, today } = await study.prepareRequestContext(Object.assign({}, event, { action: 'updateFlashcardReview' }));
   const key = normalizeText(payload.flashcardKey);
-  const result = await dbAdapter.collection(COLLECTION)
+  let result = await dbAdapter.collection(COLLECTION)
     .where({ familyId: ctx.family.familyId, childId: ctx.child.childId, flashcardKey: key })
     .limit(1)
     .get();
-  const current = result && result.data && result.data[0];
-  if (!current || !current._id) return { saved: false };
+  let current = result && result.data && result.data[0];
+  if (!current || !current._id) {
+    const card = payload.card || {};
+    const type = normalizeType(card.type);
+    const text = cardText(card, type);
+    if (!key || !text) return { saved: false };
+    const record = Object.assign(makeFlashcard(ctx, today, {
+      sourceType: normalizeText(card.sourceType) || 'study',
+      sourceId: normalizeText(card.sourceId),
+      title: normalizeText(card.sourceTitle)
+    }, type, card), {
+      flashcardKey: key
+    });
+    await dbAdapter.collection(COLLECTION).add({ data: record });
+    result = await dbAdapter.collection(COLLECTION)
+      .where({ familyId: ctx.family.familyId, childId: ctx.child.childId, flashcardKey: key })
+      .limit(1)
+      .get();
+    current = result && result.data && result.data[0];
+    if (!current || !current._id) return { saved: false };
+  }
   const remembered = payload.result !== 'unfamiliar';
   const schedule = Array.isArray(current.reviewSchedule) && current.reviewSchedule.length
     ? current.reviewSchedule

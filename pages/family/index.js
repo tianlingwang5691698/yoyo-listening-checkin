@@ -8,6 +8,8 @@ Page({
     currentMember: contracts.createCurrentMemberDefaults(),
     members: [],
     child: contracts.createChildDefaults(),
+    studentLinks: [],
+    studentCards: [],
     subscriptionPreference: {
       dailyReportEnabled: false
     },
@@ -20,8 +22,11 @@ Page({
     childJoinRequired: false
   }),
   applyFamilyState(data, extra) {
+    const studentCards = this.buildStudentCards(data);
     this.setData(page.buildCloudPageData(this.data, Object.assign({}, data, this.buildStudyRolePresentation((data || {}).currentMember), {
-      memberCards: this.buildMemberCards((data || {}).members, (data || {}).currentMember)
+      memberCards: this.buildMemberCards((data || {}).members, (data || {}).currentMember),
+      studentCards,
+      studentCountText: studentCards.length ? `已绑定 ${studentCards.length} 人` : ''
     }, extra || {})));
   },
   async onShow() {
@@ -53,6 +58,27 @@ Page({
         memberId: item.memberId,
         displayName: item.displayName,
         isCurrentDevice: item.memberId === currentMemberId
+      };
+    });
+  },
+  buildStudentCards(data) {
+    const studentLinks = (data && data.studentLinks) || [];
+    const child = (data && data.child) || null;
+    const fallback = child && (child.childLoginCode || child.nickname) ? [{
+      familyId: (data.family && data.family.familyId) || child.familyId || '',
+      childId: child.childId || '',
+      nickname: child.nickname || '学生',
+      childLoginCode: child.childLoginCode || '',
+      isCurrent: true
+    }] : [];
+    const source = studentLinks.length ? studentLinks : fallback;
+    return source.map((item) => {
+      return {
+        familyId: item.familyId,
+        childId: item.childId,
+        nickname: item.nickname || '学生',
+        childLoginCode: item.childLoginCode || '',
+        isCurrent: !!item.isCurrent
       };
     });
   },
@@ -129,6 +155,22 @@ Page({
         icon: 'none'
       });
     }
+  },
+  async selectStudent(event) {
+    const index = Number(event.currentTarget.dataset.index) || 0;
+    const target = this.data.studentCards[index];
+    if (!target) {
+      return;
+    }
+    store.setSelectedStudentTarget(target);
+    const data = await store.getFamilyPageData();
+    this.applyFamilyState(data, {
+      childJoinRequired: this.isChildJoinRequired(data)
+    });
+    wx.showToast({
+      title: '已切换学生',
+      icon: 'none'
+    });
   },
   async leaveFamily() {
     const confirmed = await new Promise((resolve) => {

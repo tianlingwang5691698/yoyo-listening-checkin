@@ -23,6 +23,23 @@
     </view>
   </view>
 
+  <view class="family-list section-panel" wx:if="{{!childJoinRequired && currentMember && currentMember.studyRole === 'parent' && studentCards.length}}">
+    <view class="section-head">
+      <view class="section-title">学生列表</view>
+      <view class="section-count">{{studentCountText}}</view>
+    </view>
+    <block wx:for="{{studentCards}}" wx:key="familyId">
+      <view class="student-row {{item.isCurrent ? 'is-current' : ''}}" data-index="{{index}}" bindtap="selectStudent">
+        <view class="row-main">
+          <view class="row-title">{{item.nickname}}</view>
+          <view class="row-copy">ID：{{item.childLoginCode || '待同步'}}</view>
+        </view>
+        <view class="student-current" wx:if="{{item.isCurrent}}">当前</view>
+      </view>
+    </block>
+    <view class="student-hint" wx:if="{{studentCards.length === 1}}">继续在下面输入孩子 ID，可添加更多学生。</view>
+  </view>
+
   <view class="family-list section-panel" wx:if="{{currentMember && currentMember.studyRole === 'parent'}}">
     <view class="section-title">绑定</view>
     <view class="family-row action-row" wx:if="{{currentMember && currentMember.studyRole === 'parent'}}">

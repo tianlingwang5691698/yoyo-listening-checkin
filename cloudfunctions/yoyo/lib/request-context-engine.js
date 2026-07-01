@@ -32,11 +32,16 @@ async function prepareRequestContext(event, deps) {
   const catalogCategories = resolveCatalogCategories(action, requestedCategory, (event && event.payload) || {});
   await deps.refreshRuntimeCatalogs(false, catalogCategories);
   const { OPENID } = deps.getWXContext();
-  const view = String((event && event.payload && event.payload.view) || '').trim();
+  const payload = (event && event.payload) || {};
+  const view = String(payload.view || '').trim();
+  const target = {
+    targetFamilyId: String(payload.targetFamilyId || '').trim(),
+    targetChildId: String(payload.targetChildId || '').trim()
+  };
   const lightweightCtx = action === 'getDashboard' && view === 'home' && deps.getLightweightContext
-    ? await deps.getLightweightContext(OPENID)
+    ? await deps.getLightweightContext(OPENID, target)
     : null;
-  const ctx = lightweightCtx || await deps.ensureBootstrap(OPENID);
+  const ctx = lightweightCtx || await deps.ensureBootstrap(OPENID, target);
   return {
     action,
     requestedCategory,

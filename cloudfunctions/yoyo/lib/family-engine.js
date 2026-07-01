@@ -35,24 +35,17 @@ async function setExclusiveStudyRole(member, studyRole, deps) {
 async function upsertFamilyMemberForFamily(openId, userId, familyId, displayName, deps) {
   const memberRecords = await deps.findMembersByOpenId(openId);
   let joinedMemberId = '';
-  const existingMember = memberRecords.find((item) => item.familyId === familyId) || memberRecords[0];
+  const existingMember = memberRecords.find((item) => item.familyId === familyId);
   const now = new Date().toISOString();
   if (existingMember) {
     joinedMemberId = existingMember.memberId;
-    const shouldPreserveOriginalFamily = existingMember.familyId !== familyId && !existingMember.previousFamilyId;
     await deps.updateMemberById(existingMember._id, {
       userId,
       familyId,
       displayName,
-      role: existingMember.familyId === familyId ? (existingMember.role || 'parent') : 'parent',
-      studyRole: existingMember.familyId === familyId ? deps.normalizeStudyRole(existingMember) : 'parent',
-      previousFamilyId: shouldPreserveOriginalFamily ? existingMember.familyId : (existingMember.previousFamilyId || ''),
-      previousRole: shouldPreserveOriginalFamily ? (existingMember.role || 'parent') : (existingMember.previousRole || ''),
-      previousStudyRole: shouldPreserveOriginalFamily ? deps.normalizeStudyRole(existingMember) : (existingMember.previousStudyRole || ''),
-      previousDisplayName: shouldPreserveOriginalFamily ? (existingMember.displayName || displayName || '') : (existingMember.previousDisplayName || ''),
-      joinedFamilyAt: existingMember.familyId === familyId
-        ? (existingMember.joinedFamilyAt || existingMember.createdAt || now)
-        : now,
+      role: existingMember.role || 'parent',
+      studyRole: deps.normalizeStudyRole(existingMember),
+      joinedFamilyAt: existingMember.joinedFamilyAt || existingMember.createdAt || now,
       updatedAt: now
     });
   } else {

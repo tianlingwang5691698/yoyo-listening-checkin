@@ -8,6 +8,7 @@ const identityService = require('../services/identity.service');
 const familyFacade = require('../facades/family.facade');
 const studyFacade = require('../facades/study.facade');
 const childRepository = require('../repositories/child.repository');
+const familyEngine = require('../lib/family-engine');
 
 test('leaveFamily 退出后回到原本自己的记录', async (t) => {
   const calls = [];
@@ -119,6 +120,33 @@ test('joinFamilyByChildCode 会进入孩子记录', async (t) => {
   assert.equal(result.family.familyId, 'family-child');
   assert.equal(result.currentMember.role, 'parent');
   assert.deepEqual(calls, [['join', 'open-1', 'user-1', 'family-child', '妈妈']]);
+});
+
+test('老师绑定新学生时保留原有学生绑定', async () => {
+  const created = [];
+  const updates = [];
+  const joinedMemberId = await familyEngine.upsertFamilyMemberForFamily('open-1', 'user-1', 'family-new', '老师', {
+    findMembersByOpenId: async () => [{
+      _id: 'member-doc-old',
+      memberId: 'member-old',
+      userId: 'user-1',
+      openId: 'open-1',
+      familyId: 'family-old',
+      role: 'parent',
+      studyRole: 'parent'
+    }],
+    updateMemberById: async (id, data) => updates.push({ id, data }),
+    createMember: async (data) => created.push(data),
+    normalizeStudyRole: (member) => member.studyRole || 'parent',
+    findSubscriptionByMemberId: async () => null,
+    updateSubscriptionById: async () => {},
+    createSubscription: async () => {}
+  });
+
+  assert.equal(joinedMemberId, created[0].memberId);
+  assert.equal(created[0].familyId, 'family-new');
+  assert.equal(created[0].studyRole, 'parent');
+  assert.deepEqual(updates, []);
 });
 
 test('退出后再切学生会回到自己的学生态', async (t) => {

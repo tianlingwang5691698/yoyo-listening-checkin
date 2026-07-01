@@ -9,6 +9,20 @@
   font-size: var(--font-caption-size);
 }
 
+.student-switch {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 56rpx;
+  margin-top: 18rpx;
+  padding: 0 22rpx;
+  border-radius: 999rpx;
+  background: var(--control-muted-bg);
+  color: var(--text-main);
+  font-size: var(--font-caption-size);
+  font-weight: var(--font-title-weight);
+}
+
 .module-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));

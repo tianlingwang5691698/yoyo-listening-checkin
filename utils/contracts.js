@@ -84,6 +84,7 @@
  * @property {CurrentMemberData} currentMember
  * @property {any[]} members
  * @property {ChildData} child
+ * @property {any[]} studentLinks
  * @property {Object|null} subscriptionPreference
  */
 
@@ -154,6 +155,7 @@ function createFamilyPageDefaults() {
     currentMember: createCurrentMemberDefaults(),
     members: [],
     child: createChildDefaults(),
+    studentLinks: [],
     subscriptionPreference: null
   };
 }

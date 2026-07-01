@@ -63,6 +63,31 @@ test('prepareRequestContext 首页优先使用轻量上下文', async () => {
   assert.deepEqual(result.ctx.child.childId, 'child-yoyo');
 });
 
+test('prepareRequestContext 会传递选中学生上下文', async () => {
+  const calls = [];
+  await requestContextEngine.prepareRequestContext({
+    action: 'getParentDashboard',
+    payload: {
+      targetFamilyId: 'family-2',
+      targetChildId: 'child-2'
+    }
+  }, {
+    refreshRuntimeCatalogs: async () => {},
+    getWXContext: () => ({ OPENID: 'open-1' }),
+    ensureBootstrap: async (openId, target) => {
+      calls.push(['bootstrap', openId, target]);
+      return { user: { openId } };
+    },
+    getTodayString: () => '2026-04-21'
+  });
+
+  assert.deepEqual(calls, [[
+    'bootstrap',
+    'open-1',
+    { targetFamilyId: 'family-2', targetChildId: 'child-2' }
+  ]]);
+});
+
 test('resolveCatalogCategories 对任务详情只刷新请求分类', () => {
   assert.deepEqual(
     requestContextEngine.resolveCatalogCategories('getTaskDetail', 'unlock1', {}),

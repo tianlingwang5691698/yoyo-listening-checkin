@@ -322,6 +322,30 @@ function mergeCachedCardState(library, cachedLibrary) {
   });
 }
 
+function mergeBookProgress(bookLibrary, progressLibrary) {
+  const progressMap = (progressLibrary || []).reduce((map, item) => {
+    if (item && item.flashcardKey) map[item.flashcardKey] = item;
+    return map;
+  }, {});
+  return (bookLibrary || []).map((item) => {
+    const progress = progressMap[item.flashcardKey];
+    if (!progress) return item;
+    return Object.assign({}, item, {
+      status: progress.status || item.status,
+      nextReviewDate: progress.nextReviewDate || '',
+      reviewStep: progress.reviewStep != null ? progress.reviewStep : item.reviewStep,
+      familiarLevel: progress.familiarLevel || item.familiarLevel || '',
+      unfamiliarCount: progress.unfamiliarCount || 0,
+      lastReviewedAt: progress.lastReviewedAt || item.lastReviewedAt,
+      lastReviewDate: progress.lastReviewDate || item.lastReviewDate,
+      audioUrl: progress.audioUrl || item.audioUrl || '',
+      audioFileId: progress.audioFileId || item.audioFileId || '',
+      audioCloudPath: progress.audioCloudPath || item.audioCloudPath || '',
+      audioLocalPath: item.audioLocalPath || progress.audioLocalPath || ''
+    });
+  });
+}
+
 function getLocalAudioPath(flashcardKey) {
   if (!flashcardKey || !wx.getFileSystemManager || !wx.env || !wx.env.USER_DATA_PATH) return '';
   return `${wx.env.USER_DATA_PATH}/${FLASHCARD_AUDIO_CACHE_PREFIX}${encodeURIComponent(flashcardKey)}.mp3`;
@@ -573,15 +597,17 @@ Page({
   buildFlashcardData(data, activeSourceId, cached) {
     const rawLibrary = data.library && data.library.length ? data.library : DEMO_FLASHCARDS;
     let library = filterBySource(rawLibrary, activeSourceId).map(normalizeCard);
-    const demoMode = rawLibrary === DEMO_FLASHCARDS;
+    let demoMode = rawLibrary === DEMO_FLASHCARDS;
     const settings = {
       newLimit: normalizeLimit((data.settings || {}).newLimit == null ? 10 : data.settings.newLimit),
       reviewLimit: normalizeLimit((data.settings || {}).reviewLimit == null ? 20 : data.settings.reviewLimit)
     };
-    if (activeSourceId && !library.length && cached && cached.library && cached.library.length) {
+    if (isBookSource(activeSourceId) && cached && cached.library && cached.library.length) {
+      library = mergeBookProgress(cached.library.map(normalizeCard), library).map(normalizeCard);
+      demoMode = false;
+    } else if (activeSourceId && !library.length && cached && cached.library && cached.library.length) {
       library = cached.library.map(normalizeCard);
-    }
-    if (activeSourceId && cached && cached.library && cached.library.length) {
+    } else if (activeSourceId && cached && cached.library && cached.library.length) {
       library = mergeCachedCardState(library, cached.library).map(normalizeCard);
     }
     const sourceSettings = readPlanSettings(activeSourceId, settings);
@@ -699,7 +725,7 @@ Page({
       importingBook: book.imported ? '' : level
     });
     const cached = readSourceCache(sourceId);
-    if (cached || book.imported) {
+    if (cached) {
       await this.loadCards();
     } else {
       this.setFlashcardLibrary([]);
@@ -711,7 +737,8 @@ Page({
         stats: { all: 0, word: 0, phrase: 0, pattern: 0 }
       });
     }
-    if (!book.imported && !this.getFlashcardLibrary().length) {
+    let ready = !!cached;
+    if (!cached) {
       try {
         const localCards = await loadBookCardsFromStorage(book);
         const sourceSettings = readPlanSettings(sourceId, this.data.settings);
@@ -751,26 +778,21 @@ Page({
         };
         this.applyFlashcardData(nextData);
         writeSourceCache(sourceId, nextData);
+        ready = true;
+        store.getFlashcardReview().then((fresh) => {
+          if (this.data.mode !== 'review' && (this.data.activeSourceId || '') === sourceId) {
+            const freshData = this.buildFlashcardData(fresh, sourceId, { library: localCards });
+            this.applyFlashcardData(freshData);
+            writeSourceCache(sourceId, freshData);
+          }
+        }).catch(() => {});
       } catch (error) {
         wx.showToast({ title: '词书读取失败', icon: 'none' });
       }
     }
-    if (book.imported) return;
-    try {
-      let offset = 0;
-      let done = false;
-      while (!done) {
-        const result = await store.addDictionaryBook(level, { offset, limit: 80 });
-        if (!result.saved) throw new Error('dictionary-book-import-failed');
-        offset = Number(result.nextOffset || 0);
-        done = !!result.done;
-        await this.loadCards();
-      }
+    this.setData({ importingBook: '' });
+    if (ready) {
       wx.showToast({ title: '计划已建立', icon: 'none' });
-    } catch (error) {
-      // 本机计划已可用时，不再打扰用户。
-    } finally {
-      this.setData({ importingBook: '' });
     }
   },
   useAllVocabulary() {
@@ -1087,7 +1109,7 @@ Page({
   },
   syncReviewToCloud(current, nextResult) {
     if (!current || current.demo || !current.flashcardKey) return;
-    store.updateFlashcardReview(current.flashcardKey, nextResult).catch(() => {});
+    store.updateFlashcardReview(current.flashcardKey, nextResult, current).catch(() => {});
   },
   advanceVisibleCards(shouldPersist) {
     const cards = this.data.cards.slice();

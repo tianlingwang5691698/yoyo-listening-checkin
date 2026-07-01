@@ -133,6 +133,7 @@ async function getParentDashboard(event) {
     todayReport: recentReports[0],
     recentReports,
     members: ctx.members,
+    studentLinks: ctx.studentLinks || [],
     subscriptionPreference: ctx.subscriptionPreference
   };
 }

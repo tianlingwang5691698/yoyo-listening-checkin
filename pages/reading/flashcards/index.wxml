@@ -28,7 +28,7 @@
         </view>
         <view class="book-main">
           <view class="book-title">{{item.title}}</view>
-          <view class="book-meta">{{item.imported ? item.imported + ' 个已在计划' : '从云存储建立计划'}}</view>
+          <view class="book-meta">{{item.imported ? item.imported + ' 个有进度' : '首次下载到本机'}}</view>
         </view>
         <view class="book-action {{importingBook === item.level ? 'is-loading' : ''}}">进入</view>
       </view>

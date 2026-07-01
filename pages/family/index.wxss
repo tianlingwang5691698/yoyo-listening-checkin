@@ -13,8 +13,21 @@
   margin-bottom: 8rpx;
 }
 
+.section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16rpx;
+}
+
+.section-count {
+  color: var(--text-muted);
+  font-size: var(--font-caption-size);
+}
+
 .family-row,
-.member-row {
+.member-row,
+.student-row {
   min-height: 112rpx;
   display: flex;
   align-items: center;
@@ -25,7 +38,8 @@
 }
 
 .family-row:last-child,
-.member-row:last-child {
+.member-row:last-child,
+.student-row:last-child {
   border-bottom: none;
 }
 
@@ -111,6 +125,26 @@
 
 .member-row.is-current-device {
   background: var(--surface-subtle);
+}
+
+.student-row.is-current {
+  background: var(--surface-subtle);
+}
+
+.student-current {
+  flex-shrink: 0;
+  min-width: 84rpx;
+  text-align: right;
+  color: var(--accent-deep);
+  font-size: var(--font-caption-size);
+  font-weight: var(--font-title-weight);
+}
+
+.student-hint {
+  padding: 18rpx 0 10rpx;
+  color: var(--text-muted);
+  font-size: var(--font-caption-size);
+  line-height: 1.5;
 }
 
 .member-role {

@@ -67,13 +67,14 @@ function normalizeStudyRole(member) {
   return identityLib.normalizeStudyRole(member);
 }
 
-async function ensureBootstrap(openId) {
+async function ensureBootstrap(openId, target) {
   return bootstrapEngine.ensureBootstrap(openId, {
     findUserByOpenId: (nextOpenId) => userRepository.findByOpenId(nextOpenId),
     updateUserById: (id, data) => userRepository.updateById(id, data),
     createUser: (user) => userRepository.create(user),
     buildUserId,
     getMember,
+    findMembersByOpenId: (nextOpenId) => familyRepository.findMembersByOpenId(nextOpenId),
     createFamily: (familyId, data) => familyRepository.createFamily(familyId, data),
     createMember: (data) => familyRepository.createMember(data),
     updateMemberById: (id, data) => familyRepository.updateMemberById(id, data),
@@ -90,11 +91,13 @@ async function ensureBootstrap(openId) {
     normalizeAndDedupeMembers,
     findMembersByFamilyId: (familyId) => familyRepository.findMembersByFamilyId(familyId),
     findSubscriptionByMemberId: (memberId) => subscriptionRepository.findByMemberId(memberId)
-  });
+  }, target);
 }
 
-async function getLightweightContext(openId) {
-  const member = await getMember(openId);
+async function getLightweightContext(openId, target) {
+  const memberRecords = await familyRepository.findMembersByOpenId(openId);
+  const targetFamilyId = String((target && target.targetFamilyId) || '').trim();
+  const member = memberRecords.find((item) => item.familyId === targetFamilyId) || memberRecords[0] || null;
   if (!member || !member.familyId) {
     return null;
   }
@@ -114,6 +117,7 @@ async function getLightweightContext(openId) {
     member,
     child,
     members: [],
+    studentLinks: [],
     subscriptionPreference: null
   };
 }

@@ -170,8 +170,8 @@ function normalizeStudyRole(member) {
   return familyContextFacade.normalizeStudyRole(member);
 }
 
-async function getLightweightContext(openId) {
-  return familyContextFacade.getLightweightContext(openId);
+async function getLightweightContext(openId, target) {
+  return familyContextFacade.getLightweightContext(openId, target);
 }
 
 async function setExclusiveStudyRole(member, studyRole) {
@@ -186,8 +186,8 @@ async function leaveCurrentFamily(ctx) {
   return familyContextFacade.leaveCurrentFamily(ctx);
 }
 
-async function ensureBootstrap(openId) {
-  return familyContextFacade.ensureBootstrap(openId);
+async function ensureBootstrap(openId, target) {
+  return familyContextFacade.ensureBootstrap(openId, target);
 }
 
 function getUserScope(ctx) {

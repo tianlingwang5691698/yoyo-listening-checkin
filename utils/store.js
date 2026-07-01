@@ -5,6 +5,7 @@ const inflightCloudRequests = {};
 const memoryCloudCache = {};
 const tempFileUrlCache = {};
 const CACHE_INDEX_KEY = 'yoyoCloudReadCacheKeysV1';
+const SELECTED_STUDENT_KEY = 'yoyoSelectedStudentTargetV1';
 const CACHE_MAX_AGE_MS = 7 * 24 * 60 * 60 * 1000;
 const TEMP_FILE_URL_MAX_AGE_MS = 20 * 60 * 1000;
 const READ_CACHE_CONFIG = {
@@ -33,6 +34,42 @@ const READ_CACHE_CONFIG = {
   getWritingAttempts: { persist: true },
   explainGrammarQuestion: { persist: false }
 };
+
+function normalizeStudentTarget(target) {
+  const next = target || {};
+  return {
+    targetFamilyId: String(next.targetFamilyId || next.familyId || '').trim(),
+    targetChildId: String(next.targetChildId || next.childId || '').trim()
+  };
+}
+
+function getSelectedStudentTarget() {
+  return normalizeStudentTarget(wx.getStorageSync(SELECTED_STUDENT_KEY) || {});
+}
+
+function setSelectedStudentTarget(target) {
+  const next = normalizeStudentTarget(target);
+  if (next.targetFamilyId || next.targetChildId) {
+    wx.setStorageSync(SELECTED_STUDENT_KEY, next);
+  }
+  return next;
+}
+
+function withSelectedStudent(payload) {
+  const next = Object.assign({}, payload || {});
+  if (next.targetFamilyId || next.targetChildId) {
+    return next;
+  }
+  return Object.assign(next, getSelectedStudentTarget());
+}
+
+function syncSelectedStudentFromData(data) {
+  const current = (data && data.studentLinks || []).find((item) => item && item.isCurrent);
+  const child = current || (data && data.child) || null;
+  if (child && (child.familyId || child.childId)) {
+    setSelectedStudentTarget(child);
+  }
+}
 
 /**
  * @typedef {import('./contracts').DashboardData} DashboardData
@@ -375,8 +412,8 @@ async function getFlashcardReview(onRefresh) {
   }, { onRefresh });
 }
 
-async function updateFlashcardReview(flashcardKey, result) {
-  return callCloud('updateFlashcardReview', { flashcardKey, result }, { saved: false }, { useCache: false });
+async function updateFlashcardReview(flashcardKey, result, card) {
+  return callCloud('updateFlashcardReview', { flashcardKey, result, card: card || null }, { saved: false }, { useCache: false });
 }
 
 async function saveFlashcardSettings(settings) {
@@ -501,7 +538,7 @@ async function getMonthHeatmap(year, month, onRefresh) {
  * @returns {Promise<{report: ReportData}>}
  */
 async function getDailyReportByDate(date, onRefresh) {
-  return callCloud('getDailyReportByDate', { date }, {
+  return callCloud('getDailyReportByDate', withSelectedStudent({ date }), {
     report: contracts.createReportDefaults(date)
   }, { onRefresh });
 }
@@ -511,7 +548,7 @@ async function getParentDashboard(options, onRefresh) {
     onRefresh = options;
     options = {};
   }
-  return callCloud('getParentDashboard', Object.assign({}, options || {}), {
+  return callCloud('getParentDashboard', withSelectedStudent(options || {}), {
     family: null,
     child: null,
     stats: contracts.createStatsDefaults(),
@@ -652,7 +689,7 @@ async function recordStudyCompletion(item) {
 }
 
 async function getStudyCompletions(options, onRefresh) {
-  return callCloud('getStudyCompletions', Object.assign({}, options || {}), { items: [] }, { onRefresh });
+  return callCloud('getStudyCompletions', withSelectedStudent(options || {}), { items: [] }, { onRefresh });
 }
 
 async function explainGrammarQuestion(question, options = {}) {
@@ -666,41 +703,49 @@ async function explainGrammarQuestion(question, options = {}) {
  * @returns {Promise<FamilyPageData>}
  */
 async function getFamilyPageData(onRefresh) {
-  return callCloud('getFamilyPage', {}, contracts.createFamilyPageDefaults(), { onRefresh });
+  const data = await callCloud('getFamilyPage', withSelectedStudent({}), contracts.createFamilyPageDefaults(), { onRefresh });
+  syncSelectedStudentFromData(data);
+  return data;
 }
 
 async function refreshInviteCode() {
-  return callCloud('refreshInviteCode', {}, contracts.createFamilyPageDefaults());
+  return callCloud('refreshInviteCode', withSelectedStudent({}), contracts.createFamilyPageDefaults());
 }
 
 async function joinFamily(inviteCode, displayName) {
-  return callCloud('joinFamily', { inviteCode, displayName }, contracts.createFamilyPageDefaults());
+  const data = await callCloud('joinFamily', { inviteCode, displayName }, contracts.createFamilyPageDefaults());
+  syncSelectedStudentFromData(data);
+  return data;
 }
 
 async function joinFamilyByChildCode(childLoginCode, displayName) {
-  return callCloud('joinFamilyByChildCode', { childLoginCode, displayName }, contracts.createFamilyPageDefaults());
+  const data = await callCloud('joinFamilyByChildCode', { childLoginCode, displayName }, contracts.createFamilyPageDefaults());
+  syncSelectedStudentFromData(data);
+  return data;
 }
 
 async function leaveFamily() {
-  return callCloud('leaveFamily', {}, contracts.createFamilyPageDefaults());
+  const data = await callCloud('leaveFamily', withSelectedStudent({}), contracts.createFamilyPageDefaults());
+  syncSelectedStudentFromData(data);
+  return data;
 }
 
 async function setStudyRole(studyRole) {
-  return callCloud('setStudyRole', { studyRole }, contracts.createFamilyPageDefaults());
+  return callCloud('setStudyRole', withSelectedStudent({ studyRole }), contracts.createFamilyPageDefaults());
 }
 
 async function undoLastListened() {
-  return callCloud('undoLastListened', {}, Object.assign({}, contracts.createFamilyPageDefaults(), {
+  return callCloud('undoLastListened', withSelectedStudent({}), Object.assign({}, contracts.createFamilyPageDefaults(), {
     cleared: null
   }));
 }
 
 async function updateSubscription(enabled) {
-  return callCloud('updateSubscription', { enabled }, contracts.createFamilyPageDefaults());
+  return callCloud('updateSubscription', withSelectedStudent({ enabled }), contracts.createFamilyPageDefaults());
 }
 
 async function updateChildProfile(nickname) {
-  return callCloud('updateChildProfile', { nickname }, contracts.createFamilyPageDefaults());
+  return callCloud('updateChildProfile', withSelectedStudent({ nickname }), contracts.createFamilyPageDefaults());
 }
 
 module.exports = {
@@ -746,6 +791,8 @@ module.exports = {
   recordGrammarProgress,
   recordStudyCompletion,
   getStudyCompletions,
+  getSelectedStudentTarget,
+  setSelectedStudentTarget,
   explainGrammarQuestion,
   getFamilyPageData,
   refreshInviteCode,

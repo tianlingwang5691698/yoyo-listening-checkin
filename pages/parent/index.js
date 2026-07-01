@@ -102,12 +102,17 @@ function normalizeReport(report) {
 function normalizeParentData(data) {
   const recentReports = (data.recentReports || []).map(normalizeReport);
   const completionItems = normalizeCompletionItems(data.completionItems || []);
+  const studentLinks = data.studentLinks || [];
+  const selectedStudentIndex = Math.max(0, studentLinks.findIndex((item) => item && item.isCurrent));
   return Object.assign({}, data, {
     todayReport: normalizeReport(data.todayReport),
     recentReports,
     completionItems,
     completionDays: buildCompletionDays(completionItems),
-    moduleStats: buildModuleStats(recentReports, completionItems)
+    moduleStats: buildModuleStats(recentReports, completionItems),
+    studentLinks,
+    selectedStudentIndex,
+    studentNames: studentLinks.map((item) => item.nickname || item.childLoginCode || '学生')
   });
 }
 
@@ -119,13 +124,19 @@ Page({
     recentReports: [],
     completionItems: [],
     completionDays: [],
-    moduleStats: buildModuleStats([], [])
+    moduleStats: buildModuleStats([], []),
+    studentLinks: [],
+    studentNames: [],
+    selectedStudentIndex: 0
   }),
   applyParentData(data) {
     this.setData(page.buildCloudPageData(this.data, normalizeParentData(data)));
   },
   onShow() {
     page.syncTheme(this);
+    this.loadParentData();
+  },
+  loadParentData() {
     const completionsRequest = store.getStudyCompletions({ days: 90 }, (fresh) => {
       this.applyParentData(Object.assign({}, this.data, { completionItems: fresh.items || [] }));
     }).then((data) => data.items || []).catch(() => []);
@@ -133,6 +144,16 @@ Page({
       const completionItems = await completionsRequest;
       this.applyParentData(Object.assign({}, data, { completionItems }));
     });
+  },
+  handleStudentChange(event) {
+    const index = Number(event.detail && event.detail.value) || 0;
+    const target = this.data.studentLinks[index];
+    if (!target) {
+      return;
+    }
+    store.setSelectedStudentTarget(target);
+    this.setData({ selectedStudentIndex: index });
+    this.loadParentData();
   },
   openDailyDetail(event) {
     const date = event.currentTarget.dataset.date;
