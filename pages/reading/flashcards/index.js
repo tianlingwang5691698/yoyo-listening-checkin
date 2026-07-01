@@ -232,7 +232,21 @@ function getSourceCacheKey(sourceId) {
   return `${FLASHCARD_SOURCE_CACHE_PREFIX}${sourceId || 'all'}`;
 }
 
+function getSourceCacheFilePath(sourceId) {
+  if (!wx.getFileSystemManager || !wx.env || !wx.env.USER_DATA_PATH) return '';
+  return `${wx.env.USER_DATA_PATH}/flashcard-source-${encodeURIComponent(sourceId || 'all')}.json`;
+}
+
 function readSourceCache(sourceId) {
+  const filePath = getSourceCacheFilePath(sourceId);
+  if (filePath) {
+    try {
+      const cached = JSON.parse(wx.getFileSystemManager().readFileSync(filePath, 'utf8'));
+      if (cached && Date.now() - Number(cached.cachedAt || 0) <= FLASHCARD_SOURCE_CACHE_TTL) {
+        return cached.data || null;
+      }
+    } catch (error) {}
+  }
   try {
     const cached = wx.getStorageSync(getSourceCacheKey(sourceId));
     if (!cached || Date.now() - Number(cached.cachedAt || 0) > FLASHCARD_SOURCE_CACHE_TTL) return null;
@@ -243,6 +257,16 @@ function readSourceCache(sourceId) {
 }
 
 function writeSourceCache(sourceId, data) {
+  const filePath = getSourceCacheFilePath(sourceId);
+  if (filePath) {
+    try {
+      wx.getFileSystemManager().writeFileSync(filePath, JSON.stringify({
+        cachedAt: Date.now(),
+        data
+      }), 'utf8');
+      return;
+    } catch (error) {}
+  }
   try {
     wx.setStorageSync(getSourceCacheKey(sourceId), {
       cachedAt: Date.now(),
