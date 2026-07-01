@@ -19,6 +19,7 @@ const READ_CACHE_CONFIG = {
   getMonthHeatmap: { persist: true },
   getDailyReportByDate: { persist: true },
   getParentDashboard: { persist: true },
+  getStudyCompletions: { persist: true },
   getFamilyPage: { persist: true },
   getReadingHome: { persist: true },
   getReadingPassage: { persist: true },
@@ -650,8 +651,8 @@ async function recordStudyCompletion(item) {
   return callCloud('recordStudyCompletion', Object.assign({}, item || {}), { saved: false }, { useCache: false });
 }
 
-async function getStudyCompletions(options) {
-  return callCloud('getStudyCompletions', Object.assign({}, options || {}), { items: [] }, { useCache: false });
+async function getStudyCompletions(options, onRefresh) {
+  return callCloud('getStudyCompletions', Object.assign({}, options || {}), { items: [] }, { onRefresh });
 }
 
 async function explainGrammarQuestion(question, options = {}) {

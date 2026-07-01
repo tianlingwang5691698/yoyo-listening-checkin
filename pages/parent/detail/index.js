@@ -376,9 +376,17 @@ Page({
     if (!page.requireIdentityConfirmed()) {
       return;
     }
+    const applyCompletionItems = (items) => {
+      const report = this.data.report || {};
+      this.setData(page.buildCloudPageData(this.data, {
+        report: Object.assign({}, report, {
+          completionItems: (items || []).map(normalizeCompletionItem)
+        })
+      }));
+    };
     Promise.all([
       store.getDailyReportByDate(this.data.date),
-      store.getStudyCompletions({ date: this.data.date })
+      store.getStudyCompletions({ date: this.data.date }, (fresh) => applyCompletionItems(fresh.items || []))
     ]).then(([reportData, completionData]) => {
       const report = normalizeReport(reportData.report);
       const completionItems = ((completionData && completionData.items) || []).map(normalizeCompletionItem);
