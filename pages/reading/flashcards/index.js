@@ -53,10 +53,13 @@ const DEFAULT_DICTIONARY_BOOKS = [
 const FLASHCARD_SOURCE_CACHE_PREFIX = 'flashcardSourceCache:';
 const FLASHCARD_SOURCE_CACHE_TTL = 7 * 24 * 60 * 60 * 1000;
 const FLASHCARD_PLAN_SETTINGS_PREFIX = 'flashcardPlanSettings:';
+const FLASHCARD_CHECKIN_DAYS_KEY = 'flashcardCheckinDays';
+const FLASHCARD_AUDIO_CACHE_PREFIX = 'flashcard-audio-';
 
 const LIMIT_MIN = 5;
 const LIMIT_DEFAULT_MAX = 500;
 const LIMIT_STEP = 5;
+const REVIEW_DAYS = [0, 1, 2, 4, 7, 15, 30];
 
 function buildLimitOptions(maxValue) {
   const max = Math.max(LIMIT_MIN, Number(maxValue || LIMIT_DEFAULT_MAX));
@@ -136,6 +139,32 @@ function countLogDays(logs) {
   }, {})).length;
 }
 
+function readVocabularyCheckinDays() {
+  try {
+    return wx.getStorageSync(FLASHCARD_CHECKIN_DAYS_KEY) || {};
+  } catch (error) {
+    return {};
+  }
+}
+
+function writeVocabularyCheckinDay(today) {
+  if (!today) return readVocabularyCheckinDays();
+  const days = Object.assign({}, readVocabularyCheckinDays(), { [today]: true });
+  try {
+    wx.setStorageSync(FLASHCARD_CHECKIN_DAYS_KEY, days);
+  } catch (error) {}
+  return days;
+}
+
+function countVocabularyCheckinDays(logs) {
+  return Object.keys(Object.assign({}, readVocabularyCheckinDays(), (logs || []).reduce((days, item) => {
+    if (item && item.date) {
+      days[item.date] = true;
+    }
+    return days;
+  }, {}))).length;
+}
+
 function groupLibrary(library) {
   return ['word', 'phrase', 'pattern'].map((type) => {
     const items = library.filter((item) => item.type === type);
@@ -209,6 +238,122 @@ function buildPlanSummary(library, settings) {
     fresh,
     todayPlan: Number((settings && settings.newLimit) || 0) + Number((settings && settings.reviewLimit) || 0)
   };
+}
+
+function addDaysString(today, days) {
+  const parts = String(today || '').split('-').map((item) => Number(item));
+  if (parts.length !== 3 || parts.some((item) => !item)) return '';
+  const date = new Date(parts[0], parts[1] - 1, parts[2] + Number(days || 0));
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const day = String(date.getDate()).padStart(2, '0');
+  return `${date.getFullYear()}-${month}-${day}`;
+}
+
+function applyReviewState(card, result, today) {
+  const base = Object.assign({}, card, {
+    lastReviewedAt: Date.now(),
+    lastReviewDate: today || ''
+  });
+  if (result === 'easy') {
+    return Object.assign(base, {
+      status: 'mastered',
+      nextReviewDate: '',
+      reviewStep: 99
+    });
+  }
+  if (result === 'unfamiliar') {
+    return Object.assign(base, {
+      status: 'reviewing',
+      nextReviewDate: today || '',
+      reviewStep: 0
+    });
+  }
+  const nextStep = Math.max(1, Number(card.reviewStep || 0) + 1);
+  if (nextStep >= REVIEW_DAYS.length) {
+    return Object.assign(base, {
+      status: 'mastered',
+      nextReviewDate: '',
+      reviewStep: nextStep
+    });
+  }
+  return Object.assign(base, {
+    status: 'reviewing',
+    nextReviewDate: addDaysString(today, REVIEW_DAYS[nextStep]),
+    reviewStep: nextStep
+  });
+}
+
+function replaceCard(list, card) {
+  return (list || []).map((item) => (
+    item.flashcardKey === card.flashcardKey ? Object.assign({}, item, card) : item
+  ));
+}
+
+function isAudioCompletedForCard(card) {
+  return !(card && card.canSpeak);
+}
+
+function buildReviewQueue(library, settings, today) {
+  return buildDueCards(library || [], settings || {}, today || '');
+}
+
+function mergeCachedCardState(library, cachedLibrary) {
+  const cachedMap = (cachedLibrary || []).reduce((map, item) => {
+    if (item && item.flashcardKey) map[item.flashcardKey] = item;
+    return map;
+  }, {});
+  return (library || []).map((item) => {
+    const cached = cachedMap[item.flashcardKey];
+    if (!cached) return item;
+    const cachedHasProgress = cached.status && cached.status !== 'new';
+    const itemHasProgress = item.status && item.status !== 'new';
+    const useCachedProgress = cachedHasProgress || !itemHasProgress;
+    return Object.assign({}, item, {
+      status: useCachedProgress ? (cached.status || item.status) : item.status,
+      nextReviewDate: useCachedProgress ? (cached.nextReviewDate || '') : (item.nextReviewDate || ''),
+      reviewStep: useCachedProgress && cached.reviewStep != null ? cached.reviewStep : item.reviewStep,
+      lastReviewedAt: useCachedProgress ? (cached.lastReviewedAt || item.lastReviewedAt) : item.lastReviewedAt,
+      lastReviewDate: useCachedProgress ? (cached.lastReviewDate || item.lastReviewDate) : item.lastReviewDate,
+      audioUrl: cached.audioUrl || item.audioUrl || '',
+      audioFileId: cached.audioFileId || item.audioFileId || '',
+      audioCloudPath: cached.audioCloudPath || item.audioCloudPath || '',
+      audioLocalPath: cached.audioLocalPath || item.audioLocalPath || ''
+    });
+  });
+}
+
+function getLocalAudioPath(flashcardKey) {
+  if (!flashcardKey || !wx.getFileSystemManager || !wx.env || !wx.env.USER_DATA_PATH) return '';
+  return `${wx.env.USER_DATA_PATH}/${FLASHCARD_AUDIO_CACHE_PREFIX}${encodeURIComponent(flashcardKey)}.mp3`;
+}
+
+function localFileExists(filePath) {
+  if (!filePath || !wx.getFileSystemManager) return false;
+  try {
+    wx.getFileSystemManager().accessSync(filePath);
+    return true;
+  } catch (error) {
+    return false;
+  }
+}
+
+function downloadAudioToLocal(url, flashcardKey) {
+  const filePath = getLocalAudioPath(flashcardKey);
+  if (!url || !filePath || localFileExists(filePath)) {
+    return Promise.resolve(filePath);
+  }
+  return new Promise((resolve) => {
+    wx.downloadFile({
+      url,
+      filePath,
+      success(result) {
+        resolve(result && result.statusCode >= 200 && result.statusCode < 300 ? filePath : '');
+      },
+      fail() {
+        resolve('');
+      }
+    });
+  });
 }
 
 function getPlanSettingsKey(sourceId) {
@@ -371,6 +516,8 @@ Page({
     newLimitIndex: getLimitIndex(10, LIMIT_DEFAULT_MAX),
     reviewLimitIndex: getLimitIndex(20, LIMIT_DEFAULT_MAX),
     limitPickerVisible: false,
+    planSettingsVisible: false,
+    libraryVisible: false,
     limitPickerTitle: '',
     limitPickerField: '',
     selectedLimitIndex: 0,
@@ -381,8 +528,11 @@ Page({
     cardChoice: '',
     previousCardChoice: '',
     reviewDays: 0,
+    vocabCheckinDays: 0,
     loading: false,
     audioLoading: false,
+    audioPlaying: false,
+    audioCompleted: true,
     navStyle: '',
     pageTopStyle: ''
   }),
@@ -399,16 +549,27 @@ Page({
   onShow() {
     page.syncTheme(this);
     this.setData(getNavLayout());
+    if (this.data.mode === 'review') return;
     this.loadCards();
   },
-  async loadCards() {
-    this.setData({ loading: true });
-    const activeSourceId = this.data.activeSourceId || '';
-    const cached = readSourceCache(activeSourceId);
-    if (cached) {
-      this.setData(Object.assign({}, cached, { loading: false }));
-    }
-    const data = await store.getFlashcardReview();
+  getFlashcardLibrary() {
+    return this.flashcardLibrary || [];
+  },
+  setFlashcardLibrary(library) {
+    this.flashcardLibrary = library || [];
+  },
+  getRenderedLibraryGroups(library) {
+    return this.data.libraryVisible ? groupLibrary(library || this.getFlashcardLibrary()) : [];
+  },
+  applyFlashcardData(data) {
+    const library = data.library || [];
+    this.setFlashcardLibrary(library);
+    this.setData(Object.assign({}, data, {
+      library: [],
+      libraryGroups: this.getRenderedLibraryGroups(library)
+    }));
+  },
+  buildFlashcardData(data, activeSourceId, cached) {
     const rawLibrary = data.library && data.library.length ? data.library : DEMO_FLASHCARDS;
     let library = filterBySource(rawLibrary, activeSourceId).map(normalizeCard);
     const demoMode = rawLibrary === DEMO_FLASHCARDS;
@@ -419,6 +580,9 @@ Page({
     if (activeSourceId && !library.length && cached && cached.library && cached.library.length) {
       library = cached.library.map(normalizeCard);
     }
+    if (activeSourceId && cached && cached.library && cached.library.length) {
+      library = mergeCachedCardState(library, cached.library).map(normalizeCard);
+    }
     const sourceSettings = readPlanSettings(activeSourceId, settings);
     const effectiveSettings = getEffectiveSettings(sourceSettings, library, activeSourceId);
     const limitOptions = buildLimitOptions(library.length || LIMIT_DEFAULT_MAX);
@@ -426,9 +590,9 @@ Page({
       ? buildDueCards(library, effectiveSettings, data.today)
       : ((data.cards && data.cards.length ? data.cards : rawLibrary).map(normalizeCard)));
     const planSummary = buildPlanSummary(library, effectiveSettings);
-    const nextData = {
+    return {
       library,
-      libraryGroups: groupLibrary(library),
+      libraryGroups: [],
       cards,
       currentIndex: 0,
       current: cards[0] || null,
@@ -455,13 +619,50 @@ Page({
           reviewing: library.filter((item) => item.status === 'reviewing').length,
           fresh: library.filter((item) => item.status === 'new').length
         },
-      reviewDays: Number((data.progress && data.progress.reviewDays) || countLogDays(data.logs || [])),
+      reviewDays: countVocabularyCheckinDays(data.logs || []),
+      vocabCheckinDays: countVocabularyCheckinDays(data.logs || []),
       logs: data.logs || [],
       dictionaryBooks: (data.dictionaryBooks && data.dictionaryBooks.length ? data.dictionaryBooks : DEFAULT_DICTIONARY_BOOKS).map(normalizeBook),
       demoMode,
       loading: false
     };
-    this.setData(nextData);
+  },
+  async loadCards() {
+    const keepReviewSession = this.data.mode === 'review';
+    this.setData({ loading: true });
+    const activeSourceId = this.data.activeSourceId || '';
+    const cached = readSourceCache(activeSourceId);
+    if (cached && !keepReviewSession) {
+      this.applyFlashcardData(Object.assign({}, cached, { loading: false }));
+      store.getFlashcardReview((fresh) => {
+        if (this.data.mode !== 'review' && (this.data.activeSourceId || '') === activeSourceId) {
+          const freshData = this.buildFlashcardData(fresh, activeSourceId, cached);
+          this.applyFlashcardData(freshData);
+          writeSourceCache(activeSourceId, freshData);
+        }
+      }).then((fresh) => {
+        if (fresh && fresh.syncMode !== 'cloud-error' && this.data.mode !== 'review' && (this.data.activeSourceId || '') === activeSourceId) {
+          const freshData = this.buildFlashcardData(fresh, activeSourceId, cached);
+          this.applyFlashcardData(freshData);
+          writeSourceCache(activeSourceId, freshData);
+        }
+      });
+      return;
+    }
+    const data = await store.getFlashcardReview();
+    const nextData = this.buildFlashcardData(data, activeSourceId, cached);
+    if (keepReviewSession) {
+      this.setData({
+        reviewDays: nextData.reviewDays,
+        vocabCheckinDays: nextData.vocabCheckinDays,
+        logs: nextData.logs,
+        dictionaryBooks: nextData.dictionaryBooks,
+        loading: false
+      });
+      writeSourceCache(activeSourceId, nextData);
+      return;
+    }
+    this.applyFlashcardData(nextData);
     writeSourceCache(activeSourceId, nextData);
   },
   async importDictionaryBook(event) {
@@ -480,6 +681,7 @@ Page({
     if (cached || book.imported) {
       await this.loadCards();
     } else {
+      this.setFlashcardLibrary([]);
       this.setData({
         loading: true,
         library: [],
@@ -488,7 +690,7 @@ Page({
         stats: { all: 0, word: 0, phrase: 0, pattern: 0 }
       });
     }
-    if (!book.imported && !this.data.library.length) {
+    if (!book.imported && !this.getFlashcardLibrary().length) {
       try {
         const localCards = await loadBookCardsFromStorage(book);
         const sourceSettings = readPlanSettings(sourceId, this.data.settings);
@@ -526,7 +728,7 @@ Page({
           demoMode: false,
           loading: false
         };
-        this.setData(nextData);
+        this.applyFlashcardData(nextData);
         writeSourceCache(sourceId, nextData);
       } catch (error) {
         wx.showToast({ title: '词书读取失败', icon: 'none' });
@@ -563,6 +765,8 @@ Page({
     this.setData({
       sourceMode: 'bookshelf',
       mode: 'library',
+      planSettingsVisible: false,
+      libraryVisible: false,
       cardRevealed: false,
       cardChoice: '',
       previousCardChoice: ''
@@ -593,13 +797,14 @@ Page({
     const isLongPress = event.type === 'longpress';
     const delta = Number((isLongPress ? event.currentTarget.dataset.longDelta : event.currentTarget.dataset.delta) || 0);
     const currentValue = Number(this.data.settings[field] || 0);
-    const nextValue = normalizeLimit(currentValue + delta, this.data.library.length);
+    const library = this.getFlashcardLibrary();
+    const nextValue = normalizeLimit(currentValue + delta, library.length);
     if (nextValue === currentValue) return;
     await this.saveLimit(field, nextValue);
   },
   openLimitPicker(event) {
     const field = event.currentTarget.dataset.field;
-    const selectedLimitIndex = getLimitIndex(this.data.settings[field], this.data.library.length);
+    const selectedLimitIndex = getLimitIndex(this.data.settings[field], this.getFlashcardLibrary().length);
     this.setData({
       limitPickerVisible: true,
       limitPickerField: field,
@@ -610,6 +815,16 @@ Page({
   },
   closeLimitPicker() {
     this.setData({ limitPickerVisible: false });
+  },
+  togglePlanSettings() {
+    this.setData({ planSettingsVisible: !this.data.planSettingsVisible });
+  },
+  toggleLibraryVisible() {
+    const libraryVisible = !this.data.libraryVisible;
+    this.setData({
+      libraryVisible,
+      libraryGroups: libraryVisible ? groupLibrary(this.getFlashcardLibrary()) : []
+    });
   },
   scrollLimit(event) {
     const index = Math.max(0, Math.min((this.data.limitOptions || []).length - 1, Math.round(Number(event.detail.scrollTop || 0) / getLimitItemHeightPx())));
@@ -632,15 +847,16 @@ Page({
     await this.saveLimit(field, nextValue);
   },
   async saveLimit(field, nextValue) {
+    const library = this.getFlashcardLibrary();
     const settings = Object.assign({}, this.data.settings, {
-      [field]: normalizeLimit(nextValue, this.data.library.length)
+      [field]: normalizeLimit(nextValue, library.length)
     });
-    const planState = buildPlanState(this.data.library || [], settings, this.data.today);
+    const planState = buildPlanState(library, settings, this.data.today);
     const nextData = Object.assign({
       settings,
-      newLimitIndex: getLimitIndex(settings.newLimit, this.data.library.length),
-      reviewLimitIndex: getLimitIndex(settings.reviewLimit, this.data.library.length),
-      planSummary: buildPlanSummary(this.data.library || [], settings)
+      newLimitIndex: getLimitIndex(settings.newLimit, library.length),
+      reviewLimitIndex: getLimitIndex(settings.reviewLimit, library.length),
+      planSummary: buildPlanSummary(library, settings)
     }, planState);
     this.setData(nextData);
     writePlanSettings(this.data.activeSourceId || '', settings);
@@ -653,7 +869,11 @@ Page({
     if (!this.flashcardAudioContext) {
       this.flashcardAudioContext = wx.createInnerAudioContext();
       this.flashcardAudioContext.obeyMuteSwitch = false;
+      this.flashcardAudioContext.onEnded(() => {
+        this.setData({ audioPlaying: false, audioCompleted: true });
+      });
       this.flashcardAudioContext.onError(() => {
+        this.setData({ audioPlaying: false, audioCompleted: true });
         if (Date.now() < Number(this.silentAudioErrorUntil || 0)) {
           return;
         }
@@ -665,6 +885,7 @@ Page({
     }
     this.flashcardAudioContext.stop();
     this.flashcardAudioContext.src = url;
+    this.setData({ audioPlaying: true, audioCompleted: false });
     this.flashcardAudioContext.play();
   },
   scheduleAutoSpeakCurrent() {
@@ -690,13 +911,22 @@ Page({
     if (!current.canSpeak) return;
     const text = current.word || current.phrase || current.displayText || '';
     if (!text) {
+      this.setData({ audioCompleted: true });
       if (!silent) {
         wx.showToast({ title: '暂无发音内容', icon: 'none' });
       }
       return;
     }
+    const localAudioPath = current.audioLocalPath || getLocalAudioPath(current.flashcardKey);
+    if (localFileExists(localAudioPath)) {
+      this.playAudioUrl(localAudioPath, { silent });
+      return;
+    }
     if (current.audioUrl) {
       this.playAudioUrl(current.audioUrl, { silent });
+      downloadAudioToLocal(current.audioUrl, current.flashcardKey).then((path) => {
+        if (path) this.updateCardAudioCache(current.flashcardKey, { audioLocalPath: path });
+      });
       return;
     }
     if (current.audioFileId) {
@@ -704,6 +934,9 @@ Page({
         const url = await store.getTempFileURL(current.audioFileId);
         if (url) {
           this.playAudioUrl(url, { silent });
+          downloadAudioToLocal(url, current.flashcardKey).then((path) => {
+            if (path) this.updateCardAudioCache(current.flashcardKey, { audioLocalPath: path });
+          });
           return;
         }
       } catch (error) {
@@ -732,74 +965,173 @@ Page({
       const cards = (this.data.cards || []).map((item) => (
         item.flashcardKey === current.flashcardKey ? Object.assign({}, item, { audioUrl: url, audioFileId, audioCloudPath }) : item
       ));
-      const library = (this.data.library || []).map((item) => (
+      const library = this.getFlashcardLibrary().map((item) => (
         item.flashcardKey === current.flashcardKey ? Object.assign({}, item, { audioUrl: url, audioFileId, audioCloudPath }) : item
       ));
+      this.setFlashcardLibrary(library);
       this.setData({
         cards,
-        library,
-        libraryGroups: groupLibrary(library),
+        library: [],
+        libraryGroups: this.getRenderedLibraryGroups(library),
         current: Object.assign({}, current, { audioUrl: url, audioFileId, audioCloudPath })
       });
       this.playAudioUrl(url, { silent });
+      downloadAudioToLocal(url, current.flashcardKey).then((path) => {
+        if (path) this.updateCardAudioCache(current.flashcardKey, { audioLocalPath: path });
+      });
     } catch (error) {
       if (canUseDictionaryVoice(text)) {
-        this.playAudioUrl(buildDictionaryVoiceUrl(text), { silent });
+        const url = buildDictionaryVoiceUrl(text);
+        this.playAudioUrl(url, { silent });
+        downloadAudioToLocal(url, current.flashcardKey).then((path) => {
+          if (path) this.updateCardAudioCache(current.flashcardKey, { audioUrl: url, audioLocalPath: path });
+        });
       } else if (!silent) {
+        this.setData({ audioCompleted: true });
         wx.showToast({ title: '发音失败，稍后重试', icon: 'none' });
+      } else {
+        this.setData({ audioCompleted: true });
       }
     } finally {
       this.setData({ audioLoading: false });
       this._flashcardAudioLoading = false;
     }
   },
-  advanceVisibleCards() {
+  updateCardAudioCache(flashcardKey, patch) {
+    if (!flashcardKey || !patch) return;
+    const cards = (this.data.cards || []).map((item) => (
+      item.flashcardKey === flashcardKey ? Object.assign({}, item, patch) : item
+    ));
+    const library = this.getFlashcardLibrary().map((item) => (
+      item.flashcardKey === flashcardKey ? Object.assign({}, item, patch) : item
+    ));
+    this.setFlashcardLibrary(library);
+    const current = this.data.current && this.data.current.flashcardKey === flashcardKey
+      ? Object.assign({}, this.data.current, patch)
+      : this.data.current;
+    this.setData({
+      cards,
+      library: [],
+      libraryGroups: this.getRenderedLibraryGroups(library),
+      current
+    });
+    this.persistActiveSourceState();
+  },
+  persistActiveSourceState() {
+    const activeSourceId = this.data.activeSourceId || '';
+    if (!activeSourceId) return;
+    writeSourceCache(activeSourceId, {
+      library: this.getFlashcardLibrary(),
+      libraryGroups: [],
+      cards: this.data.cards,
+      currentIndex: this.data.currentIndex,
+      current: this.data.current,
+      total: this.data.total,
+      empty: this.data.empty,
+      stats: this.data.stats,
+      dueCount: this.data.dueCount,
+      newDueCount: this.data.newDueCount,
+      reviewDueCount: this.data.reviewDueCount,
+      settings: this.data.settings,
+      limitOptions: this.data.limitOptions,
+      planLimitMax: this.data.planLimitMax,
+      newLimitIndex: this.data.newLimitIndex,
+      reviewLimitIndex: this.data.reviewLimitIndex,
+      today: this.data.today,
+      isBookPlan: this.data.isBookPlan,
+      isUnlimitedPlan: this.data.isUnlimitedPlan,
+      planSummary: this.data.planSummary,
+      progress: this.data.progress,
+      demoMode: this.data.demoMode,
+      loading: false
+    });
+  },
+  updateCurrentReviewState(current, nextResult) {
+    const updatedCard = applyReviewState(current, nextResult, this.data.today);
+    const library = replaceCard(this.getFlashcardLibrary(), updatedCard);
+    const cards = replaceCard(this.data.cards, updatedCard);
+    this.setFlashcardLibrary(library);
+    this.setData({
+      library: [],
+      cards,
+      libraryGroups: this.getRenderedLibraryGroups(library),
+      progress: {
+        total: library.length,
+        mastered: library.filter((item) => item.status === 'mastered').length,
+        reviewing: library.filter((item) => item.status === 'reviewing').length,
+        fresh: library.filter((item) => item.status === 'new').length
+      },
+      planSummary: buildPlanSummary(library, this.data.settings)
+    });
+  },
+  syncReviewToCloud(current, nextResult) {
+    if (!current || current.demo || !current.flashcardKey) return;
+    store.updateFlashcardReview(current.flashcardKey, nextResult).catch(() => {});
+  },
+  advanceVisibleCards(shouldPersist) {
     const cards = this.data.cards.slice();
     cards.splice(this.data.currentIndex, 1);
     const nextIndex = Math.min(this.data.currentIndex, Math.max(cards.length - 1, 0));
+    const nextCard = cards[nextIndex] || null;
     const reviewDone = Math.min(Number(this.data.reviewDone || 0) + 1, Number(this.data.reviewSessionTotal || 0));
     this.setData({
       cards,
       currentIndex: nextIndex,
-      current: cards[nextIndex] || null,
+      current: nextCard,
       total: cards.length,
       reviewDone,
       cardRevealed: false,
       cardChoice: '',
       previousCardChoice: '',
-      empty: !this.data.library.length
+      audioPlaying: false,
+      audioCompleted: isAudioCompletedForCard(nextCard),
+      empty: !this.getFlashcardLibrary().length
     });
+    if (shouldPersist) this.persistActiveSourceState();
     this.scheduleAutoSpeakCurrent();
   },
-  repeatCurrentCard() {
+  repeatCurrentCard(shouldPersist) {
     const cards = this.data.cards.slice();
     const current = cards[this.data.currentIndex];
     if (!current) return;
     cards.splice(this.data.currentIndex, 1);
     cards.push(current);
     const nextIndex = Math.min(this.data.currentIndex, Math.max(cards.length - 1, 0));
+    const nextCard = cards[nextIndex] || null;
     this.setData({
       cards,
       currentIndex: nextIndex,
-      current: cards[nextIndex] || null,
+      current: nextCard,
       total: cards.length,
       cardRevealed: false,
       cardChoice: '',
-      previousCardChoice: ''
+      previousCardChoice: '',
+      audioPlaying: false,
+      audioCompleted: isAudioCompletedForCard(nextCard)
     });
+    if (shouldPersist) this.persistActiveSourceState();
     this.scheduleAutoSpeakCurrent();
   },
   startReview() {
+    const cards = buildReviewQueue(this.getFlashcardLibrary(), this.data.settings, this.data.today);
+    const current = cards[0] || null;
     this.setData({
       sourceMode: 'library',
       mode: 'review',
+      cards,
       currentIndex: 0,
-      current: this.data.cards[0] || null,
+      current,
       reviewDone: 0,
-      reviewSessionTotal: this.data.cards.length,
+      reviewSessionTotal: cards.length,
+      total: cards.length,
+      dueCount: cards.length,
+      newDueCount: cards.filter((item) => item.status === 'new').length,
+      reviewDueCount: cards.filter((item) => item.status !== 'new').length,
       cardRevealed: false,
       cardChoice: '',
-      previousCardChoice: ''
+      previousCardChoice: '',
+      audioPlaying: false,
+      audioCompleted: isAudioCompletedForCard(current)
     });
     this.scheduleAutoSpeakCurrent();
   },
@@ -836,21 +1168,27 @@ Page({
   async commitCurrentCard(result) {
     const current = this.data.current;
     if (!current || !current.flashcardKey) return;
+    if (this.data.audioLoading || this.data.audioPlaying) return;
     const nextResult = typeof result === 'string' ? result : (this.data.cardChoice || 'remembered');
+    const checkinDays = writeVocabularyCheckinDay(this.data.today);
+    this.setData({
+      reviewDays: Object.keys(checkinDays).length,
+      vocabCheckinDays: Object.keys(checkinDays).length
+    });
     if (nextResult === 'unfamiliar') {
-      if (!current.demo && !current.localBook) {
-        try {
-          await store.updateFlashcardReview(current.flashcardKey, 'unfamiliar');
-        } catch (error) {}
+      if (!current.demo) {
+        this.updateCurrentReviewState(current, nextResult);
+        this.syncReviewToCloud(current, nextResult);
       }
-      this.repeatCurrentCard();
+      this.repeatCurrentCard(!!this.data.activeSourceId);
       return;
     }
-    if (current.demo || current.localBook) {
-      this.advanceVisibleCards();
+    if (current.demo) {
+      this.advanceVisibleCards(false);
       return;
     }
-    await store.updateFlashcardReview(current.flashcardKey, nextResult);
-    this.advanceVisibleCards();
+    this.updateCurrentReviewState(current, nextResult);
+    this.syncReviewToCloud(current, nextResult);
+    this.advanceVisibleCards(!!this.data.activeSourceId);
   }
 });

@@ -360,7 +360,7 @@ async function getListeningStudyPack(item, options, onRefresh) {
   }, { onRefresh: refresh, useCache: opts.useCache !== false });
 }
 
-async function getFlashcardReview() {
+async function getFlashcardReview(onRefresh) {
   return callCloud('getFlashcardReview', {}, {
     today: '',
     settings: { newLimit: 10, reviewLimit: 20 },
@@ -371,7 +371,7 @@ async function getFlashcardReview() {
     dueCount: 0,
     newDueCount: 0,
     reviewDueCount: 0
-  });
+  }, { onRefresh });
 }
 
 async function updateFlashcardReview(flashcardKey, result) {
