@@ -417,6 +417,13 @@ Page({
     });
   },
   openVocabulary() {
+    if (this.data.identityConfirmVisible) {
+      wx.showToast({
+        title: '先选择身份',
+        icon: 'none'
+      });
+      return;
+    }
     wx.navigateTo({
       url: '/pages/reading/flashcards/index'
     });
