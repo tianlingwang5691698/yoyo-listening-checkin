@@ -314,6 +314,16 @@ Page({
     const sourceTopicId = selectedTopic ? (selectedTopic.sourceTopicId || topicId) : topicId;
     const shouldLoadRemote = selectedTopic && !topicQuestions.length && this.data.mode !== 'wrong';
     const shouldLoadProgress = selectedTopic && this.data.mode !== 'wrong';
+    if (topicQuestions.length) {
+      this.setData({
+        selectedTopicId: topicId,
+        selectedTopic,
+        selectedQuestions: topicQuestions.map((item, index) => buildQuestion(item, index)),
+        selectedTopicOffset: 0,
+        expandedQuestionId: '',
+        answeredCount: 0
+      });
+    }
     const [topicResult, progressResult] = await Promise.all([
       shouldLoadRemote
         ? store.getGrammarTopic(sourceTopicId, { examId: this.data.selectedExamId }).catch(() => null)

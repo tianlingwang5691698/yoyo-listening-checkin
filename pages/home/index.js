@@ -4,6 +4,7 @@ const contracts = require('../../utils/contracts');
 const monitor = require('../../utils/monitor');
 const labels = require('../../utils/labels');
 const completed = require('../../utils/completed');
+const LEVEL_STAGE_SNAPSHOT_KEY = 'levelStageSnapshotV1';
 
 const VOCABULARY_ITEM_KEYS = [
   'listeningFlashcardItemsV1',
@@ -116,6 +117,31 @@ function getCurrentPhaseKey(planPhaseLabel) {
   if (planPhaseLabel === '阶段二') return 'round-2';
   if (planPhaseLabel === '阶段三') return 'round-3';
   return 'round-1';
+}
+
+function buildStageSnapshotTaskGroups(groupedDailyTasks) {
+  return (groupedDailyTasks || []).map((group) => {
+    const task = (group.tasks || []).find((item) => !item.completedToday && !item.isPendingAsset)
+      || (group.tasks || [])[0]
+      || group.nextTask
+      || {};
+    const disabled = !!(task.isPendingAsset || group.isPendingAsset);
+    return {
+      category: task.category || group.category || '',
+      categoryLabel: group.categoryLabel || task.categoryLabel || '',
+      title: task.displayTitle || task.title || group.programSubtitle || '',
+      taskCountText: Number(group.totalCount || 0) ? `${Number(group.totalCount || 0)} 个任务` : '',
+      textType: task.textType || group.textType || '',
+      minutesText: group.minutesText || '',
+      minutes: Number(group.minutes || 0),
+      durationSec: Number(group.durationSec || 0),
+      taskId: task.taskId || '',
+      disabled,
+      stateText: task.completedToday ? '完成' : disabled ? '等待' : '›',
+      planRunType: task.planRunType || group.planRunType || 'normal',
+      planDayIndex: task.planDayIndex || group.planDayIndex || 0
+    };
+  });
 }
 
 function buildTodayCompletedItems(groupedDailyTasks, readingToday, readingCompleted) {
@@ -270,6 +296,9 @@ Page({
     monitor.logPerf('home', 'onShow', Date.now() - startedAt, {
       groups: groupedDailyTasks.length
     });
+    setTimeout(() => {
+      store.getMaterialIndex().catch(() => {});
+    }, 500);
   },
   showNextEntryPosterPage() {
     this.setData({
@@ -430,8 +459,19 @@ Page({
   },
   openCompleted() {
     if (this.data.listeningTaskStatus && this.data.listeningTaskStatus.pending) {
+      const phase = getCurrentPhaseKey(this.data.planPhaseLabel);
+      const taskGroups = buildStageSnapshotTaskGroups(this.data.groupedDailyTasks);
+      const totalMinutes = taskGroups.reduce((sum, item) => sum + Number(item.minutes || 0), 0);
+      try {
+        wx.setStorageSync(LEVEL_STAGE_SNAPSHOT_KEY, {
+          phase,
+          savedAt: Date.now(),
+          taskGroups,
+          totalMinutesText: totalMinutes ? `${totalMinutes} 分钟` : '待生成'
+        });
+      } catch (error) {}
       wx.navigateTo({
-        url: `/pages/level-stage/index?levelId=A1&phase=${getCurrentPhaseKey(this.data.planPhaseLabel)}`
+        url: `/pages/level-stage/index?levelId=A1&phase=${phase}`
       });
       return;
     }

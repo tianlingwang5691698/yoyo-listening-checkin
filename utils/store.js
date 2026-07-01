@@ -28,7 +28,7 @@ const READ_CACHE_CONFIG = {
   getGrammarHome: { persist: true },
   getGrammarTopic: { persist: true },
   getGrammarWrongBook: { persist: true },
-  getGrammarProgress: { persist: false },
+  getGrammarProgress: { persist: true },
   getWritingAttempts: { persist: true },
   explainGrammarQuestion: { persist: false }
 };
@@ -639,7 +639,7 @@ async function getGrammarProgress(topicId) {
   return callCloud('getGrammarProgress', { topicId }, {
     topicId,
     nextIndex: 0
-  }, { useCache: false });
+  });
 }
 
 async function recordGrammarProgress(topicId, nextIndex) {

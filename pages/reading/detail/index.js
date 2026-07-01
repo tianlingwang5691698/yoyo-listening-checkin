@@ -3,6 +3,7 @@ const page = require('../../../utils/page');
 const completed = require('../../../utils/completed');
 
 const STUDY_PACK_STORAGE_PREFIX = 'readingStudyPack:';
+const READING_PASSAGE_SNAPSHOT_KEY = 'readingPassageSnapshotV1';
 const FLASHCARD_WORDS_KEY = 'readingFlashcardWordsV1';
 const FLASHCARD_ITEMS_KEY = 'readingFlashcardItemsV1';
 const EBBINGHAUS_REVIEW_DAYS = [0, 1, 2, 4, 7, 15, 30];
@@ -641,6 +642,17 @@ function mergePhoneStudyPack(passageId, studyPack) {
   savePhoneStudyPack(passageId, merged);
 }
 
+function getPassageSnapshot(passageId) {
+  try {
+    const cached = wx.getStorageSync(READING_PASSAGE_SNAPSHOT_KEY) || null;
+    const passage = cached && cached.passage;
+    if (passage && passage._id === passageId) {
+      return passage;
+    }
+  } catch (error) {}
+  return null;
+}
+
 function getUnfamiliarMap() {
   try {
     const legacyWords = wx.getStorageSync(FLASHCARD_WORDS_KEY) || [];
@@ -854,6 +866,10 @@ Page({
     page.syncTheme(this);
     const passageId = options && options.passageId ? String(options.passageId) : '';
     this.setData({ passageId });
+    const snapshot = getPassageSnapshot(passageId);
+    if (snapshot) {
+      this.applyPassage({ passage: snapshot, latestAttempt: null });
+    }
     await this.loadPassage(passageId);
   },
   async loadPassage(passageId) {

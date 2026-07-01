@@ -1,6 +1,7 @@
 const store = require('../../utils/store');
 const page = require('../../utils/page');
 const labels = require('../../utils/labels');
+const LEVEL_STAGE_SNAPSHOT_KEY = 'levelStageSnapshotV1';
 
 const STAGES = {
   'round-1': {
@@ -79,6 +80,16 @@ function shouldShowTaskGroups(phase) {
   return phase === 'round-1' || phase === 'round-2';
 }
 
+function getStageSnapshot(phase) {
+  try {
+    const snapshot = wx.getStorageSync(LEVEL_STAGE_SNAPSHOT_KEY) || null;
+    if (snapshot && snapshot.phase === phase && Array.isArray(snapshot.taskGroups) && snapshot.taskGroups.length) {
+      return snapshot;
+    }
+  } catch (error) {}
+  return null;
+}
+
 Page({
   data: page.createCloudPageData({
     levelId: 'A1',
@@ -106,6 +117,17 @@ Page({
     page.syncTheme(this);
     const phase = query.phase || 'round-1';
     const levelId = query.levelId || 'A1';
+    const snapshot = getStageSnapshot(phase);
+    if (snapshot) {
+      this.setData(page.buildCloudPageData(this.data, {
+        levelId,
+        phase,
+        stage: STAGES[phase] || STAGES['round-1'],
+        taskGroups: snapshot.taskGroups,
+        totalMinutesText: snapshot.totalMinutesText || '待生成',
+        hasTaskGroups: true
+      }));
+    }
     const data = await store.getLevelOverview({ phase }, (fresh) => this.applyOverview(fresh, phase, levelId));
     this.applyOverview(data, phase, levelId);
   },
