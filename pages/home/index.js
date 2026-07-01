@@ -118,12 +118,6 @@ function getCurrentPhaseKey(planPhaseLabel) {
   return 'round-1';
 }
 
-function buildReadingSummary(passage, completed) {
-  if (!passage) return '6-9 年级阅读';
-  if (completed) return '今日已完成';
-  return `${passage.questionCount || 0} 题 · ${(passage.meta || '').split(' · ')[0] || '今日阅读'}`;
-}
-
 function buildTodayCompletedItems(groupedDailyTasks, readingToday, readingCompleted) {
   let speakingAttempts = [];
   try {
@@ -194,7 +188,7 @@ Page({
     listeningSummary: '同步中',
     listeningTaskStatus: buildListeningTaskStatus([]),
     nextListeningTask: null,
-    readingSummary: '6-9 年级阅读',
+    readingSummary: '进入阅读',
     vocabularySummary: buildVocabularySummary(),
     todayCompletedItems: [],
     cloudCompletedItems: [],
@@ -228,23 +222,11 @@ Page({
       listeningSummary: buildListeningSummary(groupedDailyTasks),
       listeningTaskStatus: buildListeningTaskStatus(groupedDailyTasks),
       nextListeningTask: findNextListeningTask(groupedDailyTasks),
-      todayCompletedItems: buildTodayCompletedItems.call(this, groupedDailyTasks, this.data.readingToday, this.data.readingCompleted),
       identityConfirmVisible: !page.isIdentityConfirmed(),
       modeChangedNoticeVisible,
       homeLoading: false
     }, this.buildStudyModePresentation(data.currentMember))));
     return groupedDailyTasks;
-  },
-  applyReadingHome(data) {
-    const passage = data.passage || null;
-    const completed = !!data.completedToday;
-    this.setData({
-      readingLoading: false,
-      readingToday: passage,
-      readingCompleted: completed,
-      readingSummary: buildReadingSummary(passage, completed),
-      todayCompletedItems: buildTodayCompletedItems.call(this, this.data.groupedDailyTasks, passage, completed)
-    });
   },
   async loadStudyCompletions() {
     try {
@@ -256,27 +238,11 @@ Page({
       });
     } catch (error) {}
   },
-  async loadReadingHome() {
-    this.setData({ readingLoading: true });
-    const data = await store.getReadingHome({}, (fresh) => this.applyReadingHome(fresh));
-    this.applyReadingHome(data);
-  },
   async loadTodayReport() {
     const reportData = await store.getDailyReportByDate(todayString());
     wx.setStorageSync('todayReportForCompletedV1', reportData.report || null);
     this.setData({
       todayCompletedItems: buildTodayCompletedItems.call(this, this.data.groupedDailyTasks, this.data.readingToday, this.data.readingCompleted)
-    });
-  },
-  loadHomeSecondaryData(startedAt) {
-    Promise.all([
-      this.loadTodayReport().catch(() => {}),
-      this.loadStudyCompletions().catch(() => {}),
-      this.loadReadingHome().catch(() => {})
-    ]).then(() => {
-      monitor.logPerf('home', 'secondaryLoad', Date.now() - startedAt, {
-        groups: (this.data.groupedDailyTasks || []).length
-      });
     });
   },
   async onShow() {
@@ -301,7 +267,6 @@ Page({
     });
     const data = await store.getDashboard({ view: 'home' }, (fresh) => this.applyDashboard(fresh));
     const groupedDailyTasks = this.applyDashboard(data);
-    this.loadHomeSecondaryData(startedAt);
     monitor.logPerf('home', 'onShow', Date.now() - startedAt, {
       groups: groupedDailyTasks.length
     });
@@ -463,9 +428,17 @@ Page({
       });
       return;
     }
-    wx.setStorageSync('todayCompletedItemsV1', this.data.todayCompletedItems || []);
-    wx.navigateTo({
-      url: '/pages/home/completed/index'
+    wx.showLoading({ title: '加载记录' });
+    Promise.all([
+      this.loadTodayReport().catch(() => {}),
+      this.loadStudyCompletions().catch(() => {})
+    ]).then(() => {
+      wx.setStorageSync('todayCompletedItemsV1', this.data.todayCompletedItems || []);
+      wx.navigateTo({
+        url: '/pages/home/completed/index'
+      });
+    }).finally(() => {
+      wx.hideLoading();
     });
   },
   openFamilyPage() {
