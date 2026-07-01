@@ -387,6 +387,10 @@ Page({
     pageTopStyle: ''
   }),
   onUnload() {
+    if (this.autoSpeakTimer) {
+      clearTimeout(this.autoSpeakTimer);
+      this.autoSpeakTimer = null;
+    }
     if (this.flashcardAudioContext) {
       this.flashcardAudioContext.destroy();
       this.flashcardAudioContext = null;
@@ -644,36 +648,62 @@ Page({
       await store.saveFlashcardSettings(settings);
     }
   },
-  playAudioUrl(url) {
+  playAudioUrl(url, options) {
     if (!url) return;
     if (!this.flashcardAudioContext) {
       this.flashcardAudioContext = wx.createInnerAudioContext();
       this.flashcardAudioContext.obeyMuteSwitch = false;
       this.flashcardAudioContext.onError(() => {
+        if (Date.now() < Number(this.silentAudioErrorUntil || 0)) {
+          return;
+        }
         wx.showToast({ title: '播放失败，稍后再试', icon: 'none' });
       });
+    }
+    if (options && options.silent) {
+      this.silentAudioErrorUntil = Date.now() + 3000;
     }
     this.flashcardAudioContext.stop();
     this.flashcardAudioContext.src = url;
     this.flashcardAudioContext.play();
   },
-  async speakCurrent() {
+  scheduleAutoSpeakCurrent() {
+    if (this.autoSpeakTimer) {
+      clearTimeout(this.autoSpeakTimer);
+      this.autoSpeakTimer = null;
+    }
+    const current = this.data.current || {};
+    if (!current.canSpeak) return;
+    const key = current.flashcardKey || current.displayText || '';
+    this.autoSpeakTimer = setTimeout(() => {
+      this.autoSpeakTimer = null;
+      const latest = this.data.current || {};
+      const latestKey = latest.flashcardKey || latest.displayText || '';
+      if (latestKey === key) {
+        this.speakCurrent({ auto: true });
+      }
+    }, 160);
+  },
+  async speakCurrent(options) {
+    const silent = !!(options && options.auto);
     const current = this.data.current || {};
     if (!current.canSpeak) return;
     const text = current.word || current.phrase || current.displayText || '';
     if (!text) {
-      wx.showToast({ title: '暂无发音内容', icon: 'none' });
+      if (!silent) {
+        wx.showToast({ title: '暂无发音内容', icon: 'none' });
+      }
       return;
     }
     if (current.audioUrl) {
-      this.playAudioUrl(current.audioUrl);
+      this.playAudioUrl(current.audioUrl, { silent });
       return;
     }
     if (current.audioFileId) {
       try {
         const url = await store.getTempFileURL(current.audioFileId);
         if (url) {
-          this.playAudioUrl(url);
+          this.playAudioUrl(url, { silent });
           return;
         }
       } catch (error) {
@@ -711,11 +741,11 @@ Page({
         libraryGroups: groupLibrary(library),
         current: Object.assign({}, current, { audioUrl: url, audioFileId, audioCloudPath })
       });
-      this.playAudioUrl(url);
+      this.playAudioUrl(url, { silent });
     } catch (error) {
       if (canUseDictionaryVoice(text)) {
-        this.playAudioUrl(buildDictionaryVoiceUrl(text));
-      } else {
+        this.playAudioUrl(buildDictionaryVoiceUrl(text), { silent });
+      } else if (!silent) {
         wx.showToast({ title: '发音失败，稍后重试', icon: 'none' });
       }
     } finally {
@@ -739,6 +769,7 @@ Page({
       previousCardChoice: '',
       empty: !this.data.library.length
     });
+    this.scheduleAutoSpeakCurrent();
   },
   repeatCurrentCard() {
     const cards = this.data.cards.slice();
@@ -756,6 +787,7 @@ Page({
       cardChoice: '',
       previousCardChoice: ''
     });
+    this.scheduleAutoSpeakCurrent();
   },
   startReview() {
     this.setData({
@@ -769,6 +801,7 @@ Page({
       cardChoice: '',
       previousCardChoice: ''
     });
+    this.scheduleAutoSpeakCurrent();
   },
   exitReview() {
     this.setData({ mode: 'library' });
