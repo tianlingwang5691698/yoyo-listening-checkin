@@ -56,9 +56,10 @@
 .role-switch {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 18rpx;
+  gap: 20rpx;
   margin-top: 18rpx;
   width: 100%;
+  overflow: hidden;
 }
 
 .role-chip {
@@ -76,10 +77,7 @@
   font-size: var(--font-caption-size);
   line-height: 1;
   box-sizing: border-box;
-}
-
-.role-chip::after {
-  border: none;
+  overflow: hidden;
 }
 
 .role-chip.is-active {

@@ -25,8 +25,8 @@
     <view class="profile-role">
       <view class="row-title">身份</view>
       <view class="role-switch">
-        <button class="role-chip {{currentMember.studyRole === 'parent' ? 'is-active' : ''}}" data-role="parent" bindtap="switchStudyRole">我是家长</button>
-        <button class="role-chip {{currentMember.studyRole === 'student' ? 'is-active' : ''}}" data-role="student" bindtap="switchStudyRole">我是学生</button>
+        <view class="role-chip {{currentMember.studyRole === 'parent' ? 'is-active' : ''}}" data-role="parent" bindtap="switchStudyRole">我是家长</view>
+        <view class="role-chip {{currentMember.studyRole === 'student' ? 'is-active' : ''}}" data-role="student" bindtap="switchStudyRole">我是学生</view>
       </view>
     </view>
     <view class="profile-row" bindtap="openParentPage">
