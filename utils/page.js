@@ -11,6 +11,7 @@ const CLOUD_PAGE_DEFAULTS = {
   themeOptions: theme.getThemeOptions(),
   currentThemeLabel: '暖白'
 };
+const IDENTITY_CONFIRMED_KEY = 'yoyoIdentityConfirmedV1';
 
 function createCloudPageData(defaults) {
   return Object.assign({}, CLOUD_PAGE_DEFAULTS, theme.buildThemeData(), defaults || {});
@@ -47,11 +48,25 @@ function setIdentityConfirmed(confirmed) {
   if (app && app.globalData) {
     app.globalData.identityConfirmed = !!confirmed;
   }
+  try {
+    if (confirmed) {
+      wx.setStorageSync(IDENTITY_CONFIRMED_KEY, 'yes');
+    } else {
+      wx.removeStorageSync(IDENTITY_CONFIRMED_KEY);
+    }
+  } catch (error) {}
 }
 
 function isIdentityConfirmed() {
   const app = getApp();
-  return !!(app && app.globalData && app.globalData.identityConfirmed);
+  if (app && app.globalData && app.globalData.identityConfirmed) {
+    return true;
+  }
+  try {
+    return wx.getStorageSync(IDENTITY_CONFIRMED_KEY) === 'yes';
+  } catch (error) {
+    return false;
+  }
 }
 
 function requireIdentityConfirmed() {

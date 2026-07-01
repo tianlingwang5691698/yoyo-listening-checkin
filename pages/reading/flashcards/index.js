@@ -561,6 +561,7 @@ Page({
     pageTopStyle: ''
   }),
   onUnload() {
+    this.flushReviewQueue(true);
     if (this.autoSpeakTimer) {
       clearTimeout(this.autoSpeakTimer);
       this.autoSpeakTimer = null;
@@ -1109,7 +1110,35 @@ Page({
   },
   syncReviewToCloud(current, nextResult) {
     if (!current || current.demo || !current.flashcardKey) return;
-    store.updateFlashcardReview(current.flashcardKey, nextResult, current).catch(() => {});
+    this.pendingReviewQueue = this.pendingReviewQueue || [];
+    this.pendingReviewQueue.push({
+      flashcardKey: current.flashcardKey,
+      result: nextResult,
+      card: current
+    });
+    if (this.pendingReviewQueue.length >= 5) {
+      this.flushReviewQueue();
+    }
+  },
+  flushReviewQueue(force) {
+    if (this.reviewQueueFlushing) {
+      if (force) this.forceFlushReviewQueue = true;
+      return;
+    }
+    if (!this.pendingReviewQueue || !this.pendingReviewQueue.length) return;
+    const batch = this.pendingReviewQueue.splice(0, this.pendingReviewQueue.length);
+    this.reviewQueueFlushing = true;
+    Promise.all(batch.map((item) => (
+      store.updateFlashcardReview(item.flashcardKey, item.result, item.card).catch(() => null)
+    ))).then(() => {
+      this.reviewQueueFlushing = false;
+      if (this.pendingReviewQueue && (this.pendingReviewQueue.length >= 5 || this.forceFlushReviewQueue)) {
+        this.forceFlushReviewQueue = false;
+        this.flushReviewQueue(true);
+      }
+    }).catch(() => {
+      this.reviewQueueFlushing = false;
+    });
   },
   advanceVisibleCards(shouldPersist) {
     const cards = this.data.cards.slice();

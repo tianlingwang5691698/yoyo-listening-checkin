@@ -4,6 +4,7 @@ const contracts = require('../../utils/contracts');
 const labels = require('../../utils/labels');
 const completed = require('../../utils/completed');
 const LEVEL_STAGE_SNAPSHOT_KEY = 'levelStageSnapshotV1';
+const ENTRY_POSTER_SKIPPED_KEY = 'yoyoEntryPosterSkippedV1';
 
 const VOCABULARY_ITEM_KEYS = [
   'listeningFlashcardItemsV1',
@@ -95,6 +96,17 @@ function buildListeningTaskStatus(groupedDailyTasks) {
     action: pending ? '继续学习 →' : '查看记录',
     pending
   };
+}
+
+function isEntryPosterSkipped(app) {
+  if (app && app.globalData && app.globalData.entryPosterSkipped) {
+    return true;
+  }
+  try {
+    return wx.getStorageSync(ENTRY_POSTER_SKIPPED_KEY) === 'yes';
+  } catch (error) {
+    return false;
+  }
 }
 
 function findNextListeningTask(groupedDailyTasks) {
@@ -275,7 +287,7 @@ Page({
     const app = getApp();
     page.syncTheme(this);
     const tabBar = this.getTabBar && this.getTabBar();
-    const entryPosterVisible = !(app && app.globalData && app.globalData.entryPosterSkipped);
+    const entryPosterVisible = !isEntryPosterSkipped(app);
     if (tabBar) {
       tabBar.setData({
         selected: 0,
@@ -325,6 +337,9 @@ Page({
     if (app && app.globalData) {
       app.globalData.entryPosterSkipped = true;
     }
+    try {
+      wx.setStorageSync(ENTRY_POSTER_SKIPPED_KEY, 'yes');
+    } catch (error) {}
     if (tabBar) {
       tabBar.setData({ hidden: false });
     }
@@ -484,14 +499,11 @@ Page({
       });
       return;
     }
-    Promise.all([
-      this.loadTodayReport().catch(() => {}),
-      this.loadStudyCompletions().catch(() => {})
-    ]).then(() => {
+    try {
       wx.setStorageSync('todayCompletedItemsV1', this.data.todayCompletedItems || []);
-      wx.navigateTo({
-        url: '/pages/home/completed/index'
-      });
+    } catch (error) {}
+    wx.navigateTo({
+      url: '/pages/home/completed/index'
     });
   },
   openFamilyPage() {

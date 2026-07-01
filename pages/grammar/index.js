@@ -169,9 +169,28 @@ Page({
     dictionaryEntry: null
   }),
   onUnload() {
+    this.flushGrammarCompletion();
+    this.flushGrammarProgress();
     if (this.grammarAudioContext) {
       this.grammarAudioContext.destroy();
       this.grammarAudioContext = null;
+    }
+  },
+  flushGrammarCompletion() {
+    if (!this.data.selectedTopicId || !this.data.answeredCount) return;
+    recordGrammarCompleted(this.data, this.data.answeredCount);
+  },
+  flushGrammarProgress() {
+    const progress = this.pendingGrammarProgress || null;
+    if (!progress || !progress.topicId) return;
+    this.pendingGrammarProgress = null;
+    store.recordGrammarProgress(progress.topicId, progress.nextIndex).catch(() => {});
+  },
+  queueGrammarProgress(topicId, nextIndex, answeredCount) {
+    if (!topicId) return;
+    this.pendingGrammarProgress = { topicId, nextIndex };
+    if (answeredCount % 3 === 0) {
+      this.flushGrammarProgress();
     }
   },
   async onLoad() {
@@ -364,6 +383,8 @@ Page({
     });
   },
   backToTopics() {
+    this.flushGrammarCompletion();
+    this.flushGrammarProgress();
     this.setData({
       selectedStageId: '',
       selectedStage: null,
@@ -382,6 +403,8 @@ Page({
     });
   },
   backToStageCategories() {
+    this.flushGrammarCompletion();
+    this.flushGrammarProgress();
     this.setData({
       selectedExamId: '',
       selectedExam: null,
@@ -397,6 +420,8 @@ Page({
     });
   },
   backToExamCategories() {
+    this.flushGrammarCompletion();
+    this.flushGrammarProgress();
     this.setData({
       selectedCategoryId: '',
       selectedCategory: null,
@@ -409,6 +434,8 @@ Page({
     });
   },
   backToCategory() {
+    this.flushGrammarCompletion();
+    this.flushGrammarProgress();
     this.setData({
       selectedTopicId: '',
       selectedTopic: null,
@@ -425,7 +452,7 @@ Page({
     if (!currentQuestion || currentQuestion.isAnswered) {
       return;
     }
-    let answeredCount = 0;
+    const answeredCount = (this.data.selectedQuestions || []).filter((item) => item.isAnswered).length + 1;
     this.setData({
       expandedQuestionId: questionId,
       selectedQuestions: (this.data.selectedQuestions || []).map((item) => Object.assign({}, item, {
@@ -440,25 +467,20 @@ Page({
         }))
       }))
     }, () => {
-      answeredCount = (this.data.selectedQuestions || []).filter((item) => item.isAnswered).length;
       this.setData({ answeredCount });
-      recordGrammarCompleted(this.data, answeredCount);
+      if (answeredCount % 3 === 0) {
+        recordGrammarCompleted(this.data, answeredCount);
+      }
     });
     try {
       const questionIndex = (this.data.selectedQuestions || []).findIndex((item) => item._id === questionId);
       const nextIndex = Math.max(0, Number(this.data.selectedTopicOffset || 0)) + questionIndex + 1;
       if (this.data.mode !== 'wrong') {
-        store.recordGrammarProgress(`${this.data.selectedExamId}:${currentQuestion.subtopicId || this.data.selectedTopicId}`, nextIndex);
+        this.queueGrammarProgress(`${this.data.selectedExamId}:${currentQuestion.subtopicId || this.data.selectedTopicId}`, nextIndex, answeredCount);
       }
       if (currentQuestion && currentQuestion.answer && option !== currentQuestion.answer) {
         store.recordGrammarWrong(currentQuestion, option);
       }
-      this.loadExplanation({ currentTarget: { dataset: { questionId } } });
-      this.setData({
-        selectedQuestions: (this.data.selectedQuestions || []).map((item) => Object.assign({}, item, {
-          explaining: item._id === questionId ? false : item.explaining
-        }))
-      });
     } catch (error) {
       this.setData({
         selectedQuestions: (this.data.selectedQuestions || []).map((item) => Object.assign({}, item, {
