@@ -8,6 +8,30 @@ const CACHE_INDEX_KEY = 'yoyoCloudReadCacheKeysV1';
 const SELECTED_STUDENT_KEY = 'yoyoSelectedStudentTargetV1';
 const CACHE_MAX_AGE_MS = 7 * 24 * 60 * 60 * 1000;
 const TEMP_FILE_URL_MAX_AGE_MS = 20 * 60 * 1000;
+const MUTATION_ACTIONS = {
+  updateFlashcardReview: true,
+  saveFlashcardSettings: true,
+  addDictionaryBook: true,
+  saveFlashcardAudio: true,
+  markTaskListened: true,
+  submitSpeakingAttempt: true,
+  rescoreSpeakingAttempt: true,
+  completeTodayCheckin: true,
+  submitReadingAttempt: true,
+  submitWritingAttempt: true,
+  addDictionaryWord: true,
+  recordGrammarWrong: true,
+  recordGrammarProgress: true,
+  recordStudyCompletion: true,
+  refreshInviteCode: true,
+  joinFamily: true,
+  joinFamilyByChildCode: true,
+  leaveFamily: true,
+  setStudyRole: true,
+  undoLastListened: true,
+  updateChildProfile: true,
+  updateSubscription: true
+};
 const READ_CACHE_CONFIG = {
   getDashboard: { persist: true },
   getMaterialIndex: { persist: true },
@@ -297,6 +321,9 @@ async function callCloudFresh(action, payload, defaults) {
 }
 
 async function callCloud(action, payload, defaults, options = {}) {
+  if (MUTATION_ACTIONS[action]) {
+    clearCloudReadCache();
+  }
   const cached = options.useCache === false ? null : getCachedCloudResult(action, payload);
   if (cached) {
     callCloudFresh(action, payload, defaults).then((fresh) => {
