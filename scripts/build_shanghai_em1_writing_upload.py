@@ -16,7 +16,7 @@ def writing_section(text):
         return ''
     tail = text[match.start():]
     end = re.search(
-        r'(?:参考答案|英语试卷答案|答案要点|听力原文|第一部分|Part\s*[I1]|写话评分标准|作文评分标准|评分标准|[^\s]{0,8}区20\d{2}[-—~～]20\d{2}学年度)',
+        r'(?:参考答案|英语试卷答案|答案要点|听力原文|听力文字|录音文字|第一部分|Part\s*[I1]|写话评分标准|作文评分标准|评分标准|[^\s]{0,8}区20\d{2}[-—~～]20\d{2}学年度|[^\s]{0,8}区20\d{2}学年|[^\s]{0,8}区20\d{2}届|教育资源分享|网址：https?://|温馨提示)',
         tail,
         re.I,
     )
@@ -25,6 +25,12 @@ def writing_section(text):
 
 def normalize_prompt(section):
     text = clean(section)
+    text = re.split(
+        r'\s*(?:参考答案|英语试卷答案|答案要点|听力原文|听力文字|录音文字|第一部分|Part\s*[I1]|写话评分标准|作文评分标准|评分标准|[^\s]{0,8}区20\d{2}[-—~～]20\d{2}学年度|[^\s]{0,8}区20\d{2}学年|[^\s]{0,8}区20\d{2}届|教育资源分享|网址：https?://|温馨提示|PAGE\s+\d+|【答案】|参考范文|Sample writing)',
+        text,
+        maxsplit=1,
+        flags=re.I,
+    )[0]
     text = re.sub(r'^(?:VII|Ⅶ)\.?\s*Writing\s*[（(]?作文[）)]?\s*(?:本大题共\s*1\s*题)?\s*(?:共?\s*20\s*分)?', '', text, flags=re.I)
     text = re.sub(r'^\d{1,3}[\.．]\s*', '', text).strip()
     text = re.sub(r'\s*【答案】[\s\S]*$', '', text).strip()
@@ -38,7 +44,7 @@ def normalize_prompt(section):
 def valid_prompt(prompt):
     if not (30 <= len(prompt) <= 1400):
         return False
-    if re.search(r'评分标准|扣分|满分结构|参考范文|听力测试', prompt):
+    if re.search(r'评分标准|扣分|满分结构|参考范文|听力测试|答案|录音文字|听力文字|教育资源分享|范文添加微信|^\s*\(?共\s*\d+\s*分\)?\s*\[?解析\]?', prompt):
         return False
     return bool(re.search(r'Write|composition|essay|words|作文|短文|不少于|至少', prompt, re.I))
 

@@ -107,7 +107,7 @@ module.exports = [
     "category": "初中作文",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市杨浦区2014届九年级上学期期末（一模）质量监控英语试题及答案（word版）.doc",
-    "prompt": ": (共20分) 94. Write a passage of at least 60 words on the topic “Haze weather in Shanghai”. ( 以“上海的雾霾天”为题写一篇不少于60个词的短文，标点符号不占格。) 提示：近来人们深受雾䨪天气的困扰，学习、工作、出行等都受到了不同程度的影响。请简单描述一下雾䨪天气给你带来的烦恼或不便，并谈谈你的建议或希望。 The following are for reference. （以下词语仅供参考） （ 注意：短文中不得出现考生的姓名、校名及其他相关信息，否则不予评分。） PAGE 4 上海市教育考试院 保留版权 学业考试（2006）英语试卷 第 PAGE 1页（共 NUMPAGES 9页） A. transport B. spread C. desire D. development E. tool A. far from B. for lack of C. powerful D. economy E. especially outdoor activities, air quality, road safety, mask (口罩) improve, cancel, allow, control, prevent",
+    "prompt": ": (共20分) 94. Write a passage of at least 60 words on the topic “Haze weather in Shanghai”. ( 以“上海的雾霾天”为题写一篇不少于60个词的短文，标点符号不占格。) 提示：近来人们深受雾䨪天气的困扰，学习、工作、出行等都受到了不同程度的影响。请简单描述一下雾䨪天气给你带来的烦恼或不便，并谈谈你的建议或希望。 The following are for reference. （以下词语仅供参考） （ 注意：短文中不得出现考生的姓名、校名及其他相关信息，否则不予评分。）",
     "minWords": 60,
     "score": 20
   },
@@ -560,22 +560,6 @@ module.exports = [
     "score": 20
   },
   {
-    "_id": "sh-em1-2016-浦东-writing",
-    "title": "2016 上海浦东一模作文",
-    "year": 2016,
-    "city": "上海",
-    "district": "浦东",
-    "examType": "一模",
-    "stage": "初中",
-    "section": "writing",
-    "category": "初中作文",
-    "sourceType": "shanghai-mock",
-    "sourceFile": "上海市浦东新区2016届九年级上学期期末（一模）质量监控英语试题及答案（word版）.doc",
-    "prompt": "Writing(作文) (共20分) 94.Write at least 60 words on the topic ”Tom’s Christmas” (以汤姆的圣诞节为题，写一篇不少于60个词的短文，标点符号不占格) 汤姆在圣诞节发生了什么事？由此他产生了怎样的感想？请根据图片进行描述。 (注意：短文中不得出现任何真实人名、校名及其他相关信息，否则不予评分。) The following is for reference only. (以下表达仅供参考) Strange, disappointed At midnight The next morning 浦东新区2015~2016年第一学期期末质量抽查试卷 初三英语 答案： 26-30：BCBAD 31-35：AACDB 36-40：ADDAD 41-45：BCBAC 46-49：BADC 50-53：DBEC cases 55.driver 56.foolish 57.length 58.unhappy 59.mainly 60.raising 61.collect don’t write 63.How often 64.whether to 65.be chosen 66.could she 67.so```that``` 68.The writer added up the bills very accurately. 69-74:BCADDC 75-80:BABACD air 82.belonged 83.decorate 84.cheaper 85.common 86.instead 87.under Yes, they do. Audience may think them interesting and funny while watching. Reality TV had its beginning in Europe in the early 1990s. The producers. Because it is real and cannot be controlled. Yes,it is.It’s human nature to be attracted by the ups and downs of the lives of other human beings. PAGE",
-    "minWords": 60,
-    "score": 20
-  },
-  {
     "_id": "sh-em1-2016-长宁-writing",
     "title": "2016 上海长宁一模作文",
     "year": 2016,
@@ -619,7 +603,7 @@ module.exports = [
     "category": "初中作文",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市静安（闸北、青浦）区2016届九年级上学期期末（一模）质量监控英语试题及答案（word版）.doc",
-    "prompt": "(共20分) 94. Write at least 60 words about the topic “Learn to relax myself!”(请以“学会放松自己!”为题，写一篇不少于60个词的短文，标点符号不占格。) (注意：文中不得出现考生的姓名、校名及其他相关信息，否则不予评分。) Situation: You are busy with lots of school work in and after school. You need to spend some of your spare time relaxing yourself. Tell us the importance of it and show us one example. 静安、闸北、青浦区2015~2016年第一学期期末质量抽查试卷 初三英语 九年级英语 听力文字和",
+    "prompt": "(共20分) 94. Write at least 60 words about the topic “Learn to relax myself!”(请以“学会放松自己!”为题，写一篇不少于60个词的短文，标点符号不占格。) (注意：文中不得出现考生的姓名、校名及其他相关信息，否则不予评分。) Situation: You are busy with lots of school work in and after school. You need to spend some of your spare time relaxing yourself. Tell us the importance of it and show us one example. 静安、闸北、青浦区2015~2016年第一学期期末质量抽查试卷 初三英语 九年级英语",
     "minWords": 60,
     "score": 20
   },
@@ -796,22 +780,6 @@ module.exports = [
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市闵行区2017届九年级上学期期末（一模）质量监控英语试题及答案（word版）.doc",
     "prompt": "（共20分） 94. Write a passage of at least 60 words on the topic ”I want to say sorry to ______”.（根据提示，以“我想对________说对不起”为题，写一篇不少于60个词的短文，写作前先将题目补充完整。标点符号不占格。） 提示：在学习、生活中，每个人都难免会做错一些事，这些事总会让人感到遗憾或后悔。请结合你的亲身经历，谈谈你的感触。 （注意：短文中不得出现考生的姓名、校名及其他相关信息，否则不予评分。）",
-    "minWords": 60,
-    "score": 20
-  },
-  {
-    "_id": "sh-em1-2017-静安-writing",
-    "title": "2017 上海静安一模作文",
-    "year": 2017,
-    "city": "上海",
-    "district": "静安",
-    "examType": "一模",
-    "stage": "初中",
-    "section": "writing",
-    "category": "初中作文",
-    "sourceType": "shanghai-mock",
-    "sourceFile": "上海市静安区2017届九年级上学期期末（一模）质量监控英语试题及答案（word版）.doc",
-    "prompt": "（共20分） 94.Write at least 60 words about the topic“To be a responsible student!”（请以“做一个有担当的学生!”为题，写一篇不少于60个词的短文，标点符号不占格。） （注意：中文不得出现考生的姓名、校名及其他相关信息，否则不予评分。） Situation： 新时代的学生都需要有责任意识，无论是在自己家中、在学校或者是在社会上都需要有担当。请你谈谈你的认识，并举例说明你的理解。 静安区2016~2017学年第一学期期末质量调研 初三英语答案",
     "minWords": 60,
     "score": 20
   },
@@ -1179,7 +1147,7 @@ module.exports = [
     "category": "初中作文",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市松江区2019届九年级上学期期末（一模）质量监控英语试题（Word版 ）.doc",
-    "prompt": "(共20分) 94. Write at least 60 words on the topic \"I tried my best to________\"(以 \"我尽全力____了”为题，写一篇不少于60个词的短文，标点符号不占格。） 每个人都有一段为实现自己某个目标而竭尽全力的经历，请你补全题目，介绍自己的某次拼搏过程并谈谈自己的所感所获。 （注意： 1、在答题纸上将题目补充完整 2、短文中不得出现真实人名、校名及其相关信息，否则不予评分） 教育资源分享店铺 网址：https://shop175591889.taobao.com 微信号：kingcsa333 A) exciting B) truly C) teaching D) everything E) uncomfortable A) worried B) mainly C)through D) although E) discussion",
+    "prompt": "(共20分) 94. Write at least 60 words on the topic \"I tried my best to________\"(以 \"我尽全力____了”为题，写一篇不少于60个词的短文，标点符号不占格。） 每个人都有一段为实现自己某个目标而竭尽全力的经历，请你补全题目，介绍自己的某次拼搏过程并谈谈自己的所感所获。 （注意： 1、在答题纸上将题目补充完整 2、短文中不得出现真实人名、校名及其相关信息，否则不予评分）",
     "minWords": 60,
     "score": 20
   },
@@ -1227,7 +1195,7 @@ module.exports = [
     "category": "初中作文",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市金山区2019届九年级上学期期末（一模）质量监控英语试题（Word版 ）.doc",
-    "prompt": "(共20分) 94. Write at least 60 words on the topic \" I am no longer a little child\" ( 以“我不再是一个孩子”为题，写一篇不少于60个词的短词，标点符号不占格） 背景：如今，我们的父母一方面对我们百般呵护，一方面又时常抱怨我们长不大。请给你的父母写一封信，证明你不再是一个孩子了（开头和结尾已经给出，不计入字数） The following is for reference only (以下表达和图片仅供参考） use to make me （be） full of （注意：信中不得出现考生的姓名、校名及其他相关信息，否则不予评分） Dear parents _____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________Yours XXX 教育资源分享店铺 网址：https://shop175591889.taobao.com 微信号：kingcsa333 A. adult B. require C. a bit D. look forward to E. never A. Expecting yourself B. while C. harder D. lessons E. Having money",
+    "prompt": "(共20分) 94. Write at least 60 words on the topic \" I am no longer a little child\" ( 以“我不再是一个孩子”为题，写一篇不少于60个词的短词，标点符号不占格） 背景：如今，我们的父母一方面对我们百般呵护，一方面又时常抱怨我们长不大。请给你的父母写一封信，证明你不再是一个孩子了（开头和结尾已经给出，不计入字数） The following is for reference only (以下表达和图片仅供参考） use to make me （be） full of （注意：信中不得出现考生的姓名、校名及其他相关信息，否则不予评分） Dear parents _____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________Yours XXX",
     "minWords": 60,
     "score": 20
   },
@@ -1291,7 +1259,7 @@ module.exports = [
     "category": "初中作文",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市静安区2019届九年级上学期期末（一模）质量监控英语试题（Word版 ）.doc",
-    "prompt": "(共20分) 94. Write at least 60 words on the topic \"This was my promis\" (请以“这就是我的承诺”为题，写一篇不少于60个词的短文，标点符号不占格。) 承诺是份责任，也是一种素养，在你的成长过程中，对家人、老师、朋友、同学和社会有过哪些与承诺有关的经历和感触呢?请结合自己的个人经历，选取一个角度，讲述一个具体事例。 (注意:短文中不得出现考生的姓名、校名及其它相关信息，否则不予评分。标点符号不占格) The following is for reference only (以下表述仅供参考) be responsible for .... promise (sb.) that .. make/ keep/ break one's promise 教育资源分享店铺 网址：https://shop175591889.taobao.com 微信号：kingcsa333 A) popular B) improve C) rarely D) offer E) nearly A) market B) sales C) discovered D) invented E) hungry Today's Topic Parents are asked to guard school gates every morning. Do you think it's reasonable?",
+    "prompt": "(共20分) 94. Write at least 60 words on the topic \"This was my promis\" (请以“这就是我的承诺”为题，写一篇不少于60个词的短文，标点符号不占格。) 承诺是份责任，也是一种素养，在你的成长过程中，对家人、老师、朋友、同学和社会有过哪些与承诺有关的经历和感触呢?请结合自己的个人经历，选取一个角度，讲述一个具体事例。 (注意:短文中不得出现考生的姓名、校名及其它相关信息，否则不予评分。标点符号不占格) The following is for reference only (以下表述仅供参考) be responsible for .... promise (sb.) that .. make/ keep/ break one's promise",
     "minWords": 60,
     "score": 20
   },
@@ -2144,22 +2112,6 @@ module.exports = [
     "score": 20
   },
   {
-    "_id": "sh-em1-2024-嘉定-writing",
-    "title": "2024 上海嘉定一模作文",
-    "year": 2024,
-    "city": "上海",
-    "district": "嘉定",
-    "examType": "一模",
-    "stage": "初中",
-    "section": "writing",
-    "category": "初中作文",
-    "sourceType": "shanghai-mock",
-    "sourceFile": "2024届上海市嘉定区中考一模英语试卷（答案版）.docx",
-    "prompt": "(共20分) 84. 你觉得学校组织的心理讲座 (lectures on mental health) 是否有助于缓解压力 (reduce pressure)? 为什么?你还希望学校开展一个什么活动来有效缓解压力?说说你的理由, 写一篇不少于60个词的短文。 (注意：1. 短文中不得出现考生真实姓名、校名等个人信息, 否则不予评分。2. 照抄阅读语篇不得分。) ______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________ 2024届嘉定一模参考（答案）",
-    "minWords": 60,
-    "score": 20
-  },
-  {
     "_id": "sh-em1-2024-崇明-writing",
     "title": "2024 上海崇明一模作文",
     "year": 2024,
@@ -2171,7 +2123,7 @@ module.exports = [
     "category": "初中作文",
     "sourceType": "shanghai-mock",
     "sourceFile": "2024届崇明区初三英语一模（学生版）.docx",
-    "prompt": "(共20分) 84. Write at least 60 words on the topic “Take it easy ” according to the given situation (根据以下情境，以“放轻松”为题写一篇不少于60个词的短文，标点符号不占格) 你的好朋友Sandy正在准备一场关于传统文化的演讲比赛，尽管她每天练习至少半小时，但仍然无法记住整份演讲稿。此外，Sandy因为太紧张，晚上无法入睡。请你写一封信给Sandy, 鼓励她，让她放轻松。信中至少给她二个建议，并给出合适理由，同时注意信件格式。 （注意：短文中不得出现任何校名、人名及其它相关信息，否则不予评分。） 2023学年第一学期期末学业质量调研 九年级英语 (听力文字、",
+    "prompt": "(共20分) 84. Write at least 60 words on the topic “Take it easy ” according to the given situation (根据以下情境，以“放轻松”为题写一篇不少于60个词的短文，标点符号不占格) 你的好朋友Sandy正在准备一场关于传统文化的演讲比赛，尽管她每天练习至少半小时，但仍然无法记住整份演讲稿。此外，Sandy因为太紧张，晚上无法入睡。请你写一封信给Sandy, 鼓励她，让她放轻松。信中至少给她二个建议，并给出合适理由，同时注意信件格式。 （注意：短文中不得出现任何校名、人名及其它相关信息，否则不予评分。） 2023学年第一学期期末学业质量调研 九年级英语 (",
     "minWords": 60,
     "score": 20
   },
@@ -2187,7 +2139,7 @@ module.exports = [
     "category": "初中作文",
     "sourceType": "shanghai-mock",
     "sourceFile": "2024届上海普陀区中考英语一模试卷（学生版 ）.docx",
-    "prompt": "(共 20 分) 84.Write at least 60 words on the topic\"My ways to improve myself \".【以“我的自我完善方法”为题，写一篇字数不少于 60 词的短文，标点符号不占格。】“吾日三省吾身”是一句出自《礼记·大学》的名言，意思是每天反思自己的言行以完善自己。请你结合自己的经历介绍一下你的自我完善方法以及这样做的成效或理由。（温馨提示：word解析版&范文添加微信：muzhiyingyu会员群推送领取） 可以从以下方面进行思考： *为人处世 *生活技能 *学习方法*身心健康 注意：短文中不得出现考生的姓名、校名及其他相关信息，否则不予评分。 ( )65. A)conclusions B)choices C)details D)meanings ( )66. A)Above all B)In fact C)For example D)In brief ( )67. A)explains B)wonders C)complains D)imagines ( )68. A)hobby B)case C)personality D)ability ( )69. A)basic B)proud C)serious D)personal ( )70. A)damage B)worry C)illness D)attention",
+    "prompt": "(共 20 分) 84.Write at least 60 words on the topic\"My ways to improve myself \".【以“我的自我完善方法”为题，写一篇字数不少于 60 词的短文，标点符号不占格。】“吾日三省吾身”是一句出自《礼记·大学》的名言，意思是每天反思自己的言行以完善自己。请你结合自己的经历介绍一下你的自我完善方法以及这样做的成效或理由。（",
     "minWords": 60,
     "score": 20
   },
@@ -2508,22 +2460,6 @@ module.exports = [
     "sourceType": "shanghai-mock",
     "sourceFile": "2026年上海市杨浦区中考一模英语试题（解析版）.docx",
     "prompt": "（共20分） 80. Write at least 60 words according to the given information.（根据所给信息写一篇不少于60个词的短文，标点符号不占格） 请根据图片写一个故事。第三幅图片为故事中的空缺部分，请根据上下文展开合理想象，使故事情节与最后一幅图片相衔接。 （注意：1.短文中不得出现真实姓名、校名等个人信息，否则不予评分。2.照抄阅读语篇不得分。） _______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
-    "minWords": 60,
-    "score": 20
-  },
-  {
-    "_id": "sh-em1-2026-松江-writing",
-    "title": "2026 上海松江一模作文",
-    "year": 2026,
-    "city": "上海",
-    "district": "松江",
-    "examType": "一模",
-    "stage": "初中",
-    "section": "writing",
-    "category": "初中作文",
-    "sourceType": "shanghai-mock",
-    "sourceFile": "2026上海松江初三一模英语试卷解析.pdf",
-    "prompt": "(共 20 分) [解析] [分析] 这是一篇应用文（邮件）。要求根据给定情境，邀请朋友参加社 区活动中心的一个活动，并说明理由。写作要点应包括： 邮件格式（开头、结尾）。 明确邀请对象和意图。 从两个活动中选择一个。 阐述选择该活动的理由（可从活动内容、时间、参与者、议程等方面考虑）。 词数不少于 60 词。 写作时人称主要使用第一人称和第二人称，时态以一般现在时和一般将来时为主。 注意不要出现真实人名、校名。 [点评] 考查应用文写作（邀请邮件）。注意内容要点、语言准确性和连贯性。 （范文示例，仅供参考） Dear Li Ming, How are you? I'm writing to invite you to join me in an activity at the Rose Garden Community Center. I think we should go to the Writer's Meet-and-Greet on Saturday, January 24th. This activity is specially for students. The agenda sounds fun: we can learn about the writer's new book, take",
     "minWords": 60,
     "score": 20
   },

@@ -327,6 +327,59 @@ async function synthesizeWordAudioFast(text, cloudPath) {
   return null;
 }
 
+function getMerriamWebsterAudioUrl(audioName) {
+  const name = String(audioName || '').trim();
+  if (!name) {
+    return '';
+  }
+  let subdir = name.charAt(0).toLowerCase();
+  if (name.startsWith('bix')) {
+    subdir = 'bix';
+  } else if (name.startsWith('gg')) {
+    subdir = 'gg';
+  } else if (!/^[a-z]$/.test(subdir)) {
+    subdir = 'number';
+  }
+  return `https://media.merriam-webster.com/audio/prons/en/us/mp3/${subdir}/${name}.mp3`;
+}
+
+function findMerriamWebsterAudioName(items) {
+  const list = Array.isArray(items) ? items : [];
+  for (let itemIndex = 0; itemIndex < list.length; itemIndex += 1) {
+    const pronunciations = (((list[itemIndex] || {}).hwi || {}).prs || []);
+    for (let index = 0; index < pronunciations.length; index += 1) {
+      const audio = (((pronunciations[index] || {}).sound || {}).audio || '').trim();
+      if (audio) {
+        return audio;
+      }
+    }
+  }
+  return '';
+}
+
+async function synthesizeMerriamWebsterAudio(text, cloudPath) {
+  if (!isSingleWord(text)) {
+    return null;
+  }
+  const apiKey = process.env.MERRIAM_WEBSTER_API_KEY || process.env.MW_DICTIONARY_API_KEY || '';
+  if (!apiKey) {
+    return null;
+  }
+  const word = normalizeLookupWord(text);
+  if (!word) {
+    return null;
+  }
+  const apiUrl = `https://www.dictionaryapi.com/api/v3/references/collegiate/json/${encodeURIComponent(word)}?key=${encodeURIComponent(apiKey)}`;
+  const entries = await fetchJson(apiUrl, 7000);
+  const audioName = findMerriamWebsterAudioName(entries);
+  const audioUrl = getMerriamWebsterAudioUrl(audioName);
+  if (!audioUrl) {
+    return null;
+  }
+  const buffer = await fetchAudioBuffer(audioUrl);
+  return storageAdapter.uploadCloudFileBuffer(cloudPath, buffer);
+}
+
 function normalizeLookupWord(value) {
   return String(value || '').trim().replace(/^[^A-Za-z]+|[^A-Za-z]+$/g, '').toLowerCase();
 }
@@ -1330,6 +1383,14 @@ async function getReadingStudyPack(event) {
   }
   const section = String(payload.section || 'cards');
   const cached = await getCachedStudyPack(passage);
+  if (section === 'questions') {
+    const studyPack = await getOrCreateStudyPack(passage);
+    return {
+      passageId: passage._id,
+      section,
+      studyPack
+    };
+  }
   if (cached && hasStudyPackSection(cached, section, passage)) {
     const studyPack = normalizeStudyPack(cached, passage);
     await flashcards.upsertStudyPackFlashcards(ctx, today, {
@@ -1447,22 +1508,24 @@ async function synthesizeReadingAudio(event) {
     }
   }
   const cloudPath = [
-    '_reading_tts',
+    '_reading_dictionary_audio',
     'words',
     `${hash}.mp3`
   ].join('/');
   let audioFile = null;
   try {
-    audioFile = await synthesizeWordAudioFast(text, cloudPath);
+    if (!payload.skipYoudao) {
+      audioFile = await synthesizeWordAudioFast(text, cloudPath);
+    }
     if (!audioFile) {
-      audioFile = await speakingEngine.synthesizeFeedbackAudio(text, cloudPath);
+      audioFile = await synthesizeMerriamWebsterAudio(text, cloudPath);
     }
   } catch (error) {
-    throw new Error(`reading-audio-tts-failed:${error.message || String(error)}`);
+    throw new Error(`reading-audio-dictionary-failed:${error.message || String(error)}`);
   }
   const fileId = audioFile && audioFile.fileId ? audioFile.fileId : '';
   if (!fileId) {
-    throw new Error('reading-audio-tts-unavailable');
+    throw new Error('reading-audio-dictionary-unavailable');
   }
   const audioUrl = await storageAdapter.getTempFileURL(fileId, cloudPath);
   try {

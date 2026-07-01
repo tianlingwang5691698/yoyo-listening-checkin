@@ -30,6 +30,10 @@ function formatAnswerDisplay(value) {
   return /^[A-D]$/.test(text) ? text.toLowerCase() : text;
 }
 
+function isSingleWord(text) {
+  return /^[A-Za-z][A-Za-z'-]{0,40}$/.test(String(text || '').trim());
+}
+
 function canUseDictionaryVoice(text) {
   const value = String(text || '').replace(/\s+/g, ' ').trim();
   if (!value || value.length > 60 || /[.!?;:]/.test(value)) return false;
@@ -41,6 +45,14 @@ function canUseDictionaryVoice(text) {
 
 function buildDictionaryVoiceUrl(text) {
   return `https://dict.youdao.com/dictvoice?audio=${encodeURIComponent(text)}&type=2`;
+}
+
+function buildDictionaryVoiceUrls(text) {
+  const encoded = encodeURIComponent(text);
+  return [
+    `https://dict.youdao.com/dictvoice?audio=${encoded}&type=2`,
+    `https://dict.youdao.com/dictvoice?audio=${encoded}&type=1`
+  ];
 }
 
 function findClozeBlanks(text) {
@@ -497,7 +509,37 @@ function buildReviewSummary(attempt) {
 function mergeStudyPackIntoReview(review, studyPack) {
   const base = normalizeReview(review || {});
   const pack = studyPack || {};
+  const analyses = pack.questionAnalyses || pack.analysis || [];
+  const existingAnswerSentences = base.answerSentences || [];
+  const modelAnswerSentences = analyses.map((item) => item && item.answerSentence ? {
+    number: item.number,
+    label: `第${item.number}题`,
+    text: item.answerSentence,
+    translation: item.answerSentenceTranslation || ''
+  } : null).filter(Boolean);
+  const answerSentenceByNumber = modelAnswerSentences.reduce((map, item) => {
+    map[String(item.number)] = item;
+    return map;
+  }, {});
+  const analysisByNumber = analyses.reduce((map, item) => {
+    if (item && item.number !== undefined && item.number !== null) {
+      map[String(item.number)] = item;
+    }
+    return map;
+  }, {});
   return normalizeReview(Object.assign({}, base, {
+    answerSentences: modelAnswerSentences.length ? modelAnswerSentences : existingAnswerSentences,
+    analysis: (base.analysis || []).map((item) => {
+      const modelAnalysis = analysisByNumber[String(item.number)];
+      if (!modelAnalysis) {
+        return item;
+      }
+      return Object.assign({}, item, {
+        answer: item.answer || modelAnalysis.answer || '',
+        answerSentence: answerSentenceByNumber[String(item.number)] || item.answerSentence || null,
+        text: modelAnalysis.analysis || item.text
+      });
+    }),
     vocabularyCards: pack.vocabularyCards || base.vocabularyCards,
     phraseCards: pack.phraseCards || base.phraseCards,
     sentencePatternCards: pack.sentencePatternCards || base.sentencePatternCards,
@@ -976,6 +1018,24 @@ Page({
       this._studyPackLoading = false;
     }
   },
+  async ensureQuestionAnalysis(passageId) {
+    if (!passageId || this._questionAnalysisLoading) {
+      return;
+    }
+    this._questionAnalysisLoading = true;
+    try {
+      const result = await store.getReadingStudyPack({ passageId, section: 'questions', useCache: false });
+      const studyPack = result && result.studyPack ? result.studyPack : null;
+      if (studyPack && isQuestionStudyPack(studyPack)) {
+        mergePhoneStudyPack(passageId, studyPack);
+        this.applyReview(mergeStudyPackIntoReview(this.data.review, studyPack));
+      }
+    } catch (error) {
+      // Keep the fast standard-answer review if model analysis is unavailable.
+    } finally {
+      this._questionAnalysisLoading = false;
+    }
+  },
   async ensureStudySection(section) {
     const passageId = this.data.passage && this.data.passage._id;
     if (!passageId || !section || hasStudySection(this.data.review, section)) {
@@ -1225,8 +1285,13 @@ Page({
       if (!url && card.audioFileId) {
         url = await store.getTempFileURL(card.audioFileId);
       }
+      this._readingAudioFallbackUrls = [];
+      this._readingAudioFallbackIndex = 0;
+      this._readingAudioDictionaryFallbackTried = false;
+      this._readingAudioText = text;
       if (!url) {
-        url = buildDictionaryVoiceUrl(text);
+        this._readingAudioFallbackUrls = buildDictionaryVoiceUrls(text);
+        url = this._readingAudioFallbackUrls[0];
       }
       this._wordAudioUrls = Object.assign({}, this._wordAudioUrls || {}, { [text]: url });
       if (!this.readingAudioContext) {
@@ -1235,7 +1300,28 @@ Page({
         this.readingAudioContext.onEnded(() => {
           this.setData({ speakingWord: '' });
         });
-        this.readingAudioContext.onError((error) => {
+        this.readingAudioContext.onError(async (error) => {
+          const urls = this._readingAudioFallbackUrls || [];
+          this._readingAudioFallbackIndex = Number(this._readingAudioFallbackIndex || 0) + 1;
+          if (this._readingAudioFallbackIndex < urls.length) {
+            this.readingAudioContext.src = urls[this._readingAudioFallbackIndex];
+            this.readingAudioContext.play();
+            return;
+          }
+          if (!this._readingAudioDictionaryFallbackTried && isSingleWord(this._readingAudioText)) {
+            this._readingAudioDictionaryFallbackTried = true;
+            try {
+              const audioResult = await store.synthesizeReadingAudio({
+                text: this._readingAudioText,
+                skipYoudao: true
+              });
+              if (audioResult && audioResult.audioUrl) {
+                this.readingAudioContext.src = audioResult.audioUrl;
+                this.readingAudioContext.play();
+                return;
+              }
+            } catch (fallbackError) {}
+          }
           this.setData({ speakingWord: '' });
           wx.showToast({ title: '播放失败，稍后再试', icon: 'none' });
           console.warn('reading-study-audio-error', error);
@@ -1298,6 +1384,7 @@ Page({
       wx.nextTick(() => {
         wx.pageScrollTo({ selector: '.review-card', duration: 240 });
       });
+      this.ensureQuestionAnalysis(this.data.passage && this.data.passage._id);
     } catch (error) {
       this.setData({
         submitting: false,

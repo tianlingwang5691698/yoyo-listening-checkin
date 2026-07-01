@@ -20,7 +20,7 @@
           </block>
         </view>
         <view class="passage-text cloze-highlight-text" wx:else>
-          <view wx:for="{{passageSegments}}" wx:key="index" class="passage-segment segment-{{item.tone}}" data-start="{{item.start}}" data-end="{{item.end}}" bindtap="translatePassageSentence">
+          <view wx:for="{{passageSegments}}" wx:key="index" class="passage-segment segment-{{item.tone}}" data-start="{{item.start}}" data-end="{{item.end}}" bindlongpress="translatePassageSentence">
             <block wx:if="{{item.chunks && item.chunks.length}}">
               <text wx:for="{{item.chunks}}" wx:key="index" wx:for-item="chunk" class="{{chunk.className}}">
                 <text wx:for="{{chunk.tokens}}" wx:key="index" wx:for-item="token" class="{{submitted && token.isWord ? 'tap-word' : ''}}" data-word="{{submitted ? token.word : ''}}" catchtap="lookupPassageWord">{{token.text}}</text>
@@ -38,7 +38,7 @@
         </view>
       </block>
       <view class="passage-text" wx:else>
-        <view wx:for="{{passageSegments}}" wx:key="index" class="passage-segment segment-{{item.tone}}" data-start="{{item.start}}" data-end="{{item.end}}" bindtap="translatePassageSentence">
+        <view wx:for="{{passageSegments}}" wx:key="index" class="passage-segment segment-{{item.tone}}" data-start="{{item.start}}" data-end="{{item.end}}" bindlongpress="translatePassageSentence">
           <block wx:if="{{item.chunks && item.chunks.length}}">
             <text wx:for="{{item.chunks}}" wx:key="index" wx:for-item="chunk" class="{{chunk.className}}">
               <text wx:for="{{chunk.tokens}}" wx:key="index" wx:for-item="token" class="{{submitted && token.isWord ? 'tap-word' : ''}}" data-word="{{submitted ? token.word : ''}}" catchtap="lookupPassageWord">{{token.text}}</text>

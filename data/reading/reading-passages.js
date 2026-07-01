@@ -1536,18 +1536,6 @@ module.exports = [
           "C": "However",
           "D": "Finally"
         }
-      },
-      {
-        "number": 85,
-        "prompt": "99. Write at least 60 words about the topic \"My classmates and my class\". (以“我的同学我的班”为题写一篇不少于60个词的短文，标点符号不占格。） 1. How do you get along with your classmates? 2. What have you done with your classmates? (Give at least 2 examples) 3. What do you think of your class? 1. My brother has a pet fish and he never forgets to feed it once a day. -'OF) 2. Julia, do you want the balloon I got from the party? (D) 3. Henry practised kicking the ball very hard after he joined the school team. (E) 4. Although I won't leave until next month, Mother has begun to pack everything for me. (G) 5. Helen succeeded in training the dog to do many things under her orders. (A) 6. Lisa, you've played computer games too much, and now you have to wear thick glasses. (C) 7. M: Did you have eggs and noodles for breakfast, Nancy? 8. W: Don't stay at home, Ben. You need some outdoor activities like playing tennis and cycling. 9. W: Do you walk to school everyday, Peter? 10. M: Is Alice watching TV or listening to music now? 11. M: Welcome to my family for home stay! 12. W: Good afternoon. What can I do for you? 13. Wt When will the meeting begin? 14. M: There are many lovely animals in the zoo. Shall we go to see the funny monkeys first? 15. W: Turn right here, please. 16. M: Grandma, yesterday evening Dad promised he would give up smoking. 41. D 42. A 43. B 44. C 45. D 46. C 47. D 48. A 49. B 50. A 65. produce 66. choice 94. Twenty-two. 95. She liked to listen to her favourite radio programme. 96. No, it didn't. 97. Dorothy Price gave sleeping pills to them. 98. (Any reasonable answers are acceptable.)",
-        "answer": "C",
-        "questionType": "choice",
-        "options": {
-          "A": "Listen and choose the right picture (根据你听到的内容，选出相应的图片)",
-          "B": "80. B 81. C 82. A 83. D 84. A 85. C",
-          "C": "86. rules 87. forever 88. angry 89. still 90. hated 91. how 92. world",
-          "D": "93. They lived the little village of Milford in Derbyshire."
-        }
       }
     ],
     "answerSentences": [],
@@ -8433,18 +8421,6 @@ module.exports = [
           "B": "An Australian Family",
           "C": "A Locust Plague",
           "D": "Animals in Australia"
-        }
-      },
-      {
-        "number": 80,
-        "prompt": "88. Did Kyle start his trade with a house? 89. Where does Kyle come from? 90. How do young people start their trading activities? 91. Why do some traders like face-to-face trading? 92. What has the girl in Beijing got after several trades? 93. According to Kyle’s words, why are these trades popular among young people？ 94. Write a composition in at least 60 words according to the situation given. (根据所给情景写一篇短文，字数不得少于60词) 1. Vegetables are good for people’s health. (3”) 2. Tom enjoys riding a bicycle at weekends. (3”) 3. Sherry would like to be a singer in the future. (3”) 4. Serious pollution is making the earth sick. (3”) 5. Susan and her husband got married in a church. (3”) 6. Nick was going over his lessons this time yesterday. (3”) 7. M: When did you post the mail? 8. M: I’ve had a headache for several days. I don’t know what’s wrong. 9. M: Could you tell me more details about the volunteers? 10. W: A wonderful movie, isn’t it? The story touched me. 11. W: How long does it take to travel to the airport by bus? 12. W: Good afternoon. Can I help you? 13. M: I’ve heard that many people applied for the job. I feel worried. 14. W: The conference started 10 minutes ago. Where were you? 24. returned to 25. in March 36. D 37. B 38. C 39. A 40. C 41. B 42. D 43. C 44. A 45. D 58. forgetful 59. dancer 60. lost 61. solution 85. difficulty(ies) 86.encourages 87. guest 89. Canada. 90. (They start their trading activities) by setting up websites. 91. Because they don’t have to worry about who is going to pay for the delivery. 92. A piano. 93. Because they can get what they need/ they can get things (that are) useful to them.",
-        "answer": "B",
-        "questionType": "choice",
-        "options": {
-          "A": "1. B 2. F 3. H 4. A 5. C 6. E",
-          "B": "75. B 76. A 77. C 78. D 79. D 80. B",
-          "C": "81. happier 82. foreign 83. share/see 84. besides",
-          "D": "88. No."
         }
       }
     ],

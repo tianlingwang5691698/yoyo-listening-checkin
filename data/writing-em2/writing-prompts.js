@@ -91,7 +91,7 @@ module.exports = [
     "category": "初中作文",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市浦东新区2012届九年级4月质量调研（二模）英语试题及答案（word版）.doc",
-    "prompt": ": (共20分) 99. Write a passage of at least 60 words on the topic “The View out of the Window”. ( 以“窗外的风景”为题写一篇不少于60个词的短文，标点符号不占格。) Use the following points for reference （以下问题仅供参考） What do you see out of the window? How do you feel about it? What do you like to do most after seeing the view? Why? （ 注意：短文中不得出现考生的姓名、校名及其他相关信息，否则不予评分。） 浦东新区2011~2012年第二学期初三年级学业质量调研 英语学科试卷 听力文字和",
+    "prompt": ": (共20分) 99. Write a passage of at least 60 words on the topic “The View out of the Window”. ( 以“窗外的风景”为题写一篇不少于60个词的短文，标点符号不占格。) Use the following points for reference （以下问题仅供参考） What do you see out of the window? How do you feel about it? What do you like to do most after seeing the view? Why? （ 注意：短文中不得出现考生的姓名、校名及其他相关信息，否则不予评分。） 浦东新区2011~2012年第二学期初三年级学业质量调研 英语学科试卷",
     "minWords": 60,
     "score": 20
   },
@@ -139,7 +139,7 @@ module.exports = [
     "category": "初中作文",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市闵行区2012届九年级4月质量调研（二模）英语试题及答案（word版）.doc",
-    "prompt": ": (共20分) 99. Write a passage of at least 60 words on the topic “_______ makes me learn a lot”. ( 以“……使我学到了很多”为题写一篇不少于60个词的短文，标点符号不占格。) （ 注意：短文中不得出现考生的姓名、校名及其他相关信息，否则不予评分。） Use the following points as a reference（以下问题与图片仅供参考）: What makes you learn a lot? Reading books Being a volunteer Using computers Travelling … What have you learned from it? (Give at least two examples) 闵行区2011~2012年第二学期初三年级学业质量调研 英语学科试卷 听力文字及",
+    "prompt": ": (共20分) 99. Write a passage of at least 60 words on the topic “_______ makes me learn a lot”. ( 以“……使我学到了很多”为题写一篇不少于60个词的短文，标点符号不占格。) （ 注意：短文中不得出现考生的姓名、校名及其他相关信息，否则不予评分。） Use the following points as a reference（以下问题与图片仅供参考）: What makes you learn a lot? Reading books Being a volunteer Using computers Travelling … What have you learned from it? (Give at least two examples) 闵行区2011~2012年第二学期初三年级学业质量调研 英语学科试卷",
     "minWords": 60,
     "score": 20
   },
@@ -155,7 +155,7 @@ module.exports = [
     "category": "初中作文",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市青浦区2012届九年级4月质量调研（二模）英语试题及答案（word版）.doc",
-    "prompt": ": (共20分) 99. Write at least 60 words about the topic “The most important ...in my life”. （以“我生活中最重要的......”为题写一篇不少于60个词的短文，标点符号不占格。必须把题目补充完整。) （注意：短文中不得出现考生的姓名、校名及其它相关信息，否则不予评分。） Use the following points as a reference. （以下问题仅供参考） What is the most important thing in your life? (Who is the most important person in your life?) Why is it/he/she so important to you? (Give one or two reasons.) （注意：短文中不得出现任何人名、校名及其它相关信息，否则不予评分。） 青浦区2011~2012年第二学期初三年级学业质量调研 英语学科试卷 听力文字稿及答案",
+    "prompt": ": (共20分) 99. Write at least 60 words about the topic “The most important ...in my life”. （以“我生活中最重要的......”为题写一篇不少于60个词的短文，标点符号不占格。必须把题目补充完整。) （注意：短文中不得出现考生的姓名、校名及其它相关信息，否则不予评分。） Use the following points as a reference. （以下问题仅供参考） What is the most important thing in your life? (Who is the most important person in your life?) Why is it/he/she so important to you? (Give one or two reasons.) （注意：短文中不得出现任何人名、校名及其它相关信息，否则不予评分。） 青浦区2011~2012年第二学期初三年级学业质量调研 英语学科试卷",
     "minWords": 60,
     "score": 20
   },
@@ -187,7 +187,7 @@ module.exports = [
     "category": "初中作文",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市黄浦区2012届九年级4月质量调研（二模）英语试题及答案（word版）.doc",
-    "prompt": ": (共20分) 99. Write at least 60 words about the topic “The hero in my eyes”. （以“我眼中的英雄”为题写一篇不少于60个词的短文，标点符号不占格。) （注意：短文中不得出现考生的姓名、校名及其它相关信息，否则不予评分。） Use the following points as a reference. （以下问题仅供参考） Who is the hero in your eyes? Why do you think he/she is the hero in your eyes? (Give one or two reasons.) What have you learned from him/her? （注意：短文中不得出现任何人名、校名及其它相关信息，否则不予评分。） 黄浦区2011~2012年第二学期初三年级学业质量调研 英语学科试卷 录音文字稿 黄浦区2011学年度第二学期期中基础学业测评，初三英语试卷，",
+    "prompt": ": (共20分) 99. Write at least 60 words about the topic “The hero in my eyes”. （以“我眼中的英雄”为题写一篇不少于60个词的短文，标点符号不占格。) （注意：短文中不得出现考生的姓名、校名及其它相关信息，否则不予评分。） Use the following points as a reference. （以下问题仅供参考） Who is the hero in your eyes? Why do you think he/she is the hero in your eyes? (Give one or two reasons.) What have you learned from him/her? （注意：短文中不得出现任何人名、校名及其它相关信息，否则不予评分。） 黄浦区2011~2012年第二学期初三年级学业质量调研 英语学科试卷",
     "minWords": 60,
     "score": 20
   },
@@ -208,22 +208,6 @@ module.exports = [
     "score": 20
   },
   {
-    "_id": "sh-em2-2013-宝山-writing",
-    "title": "2013 上海宝山二模作文",
-    "year": 2013,
-    "city": "上海",
-    "district": "宝山",
-    "examType": "二模",
-    "stage": "初中",
-    "section": "writing",
-    "category": "初中作文",
-    "sourceType": "shanghai-mock",
-    "sourceFile": "上海市宝山、嘉定区2013届九年级4月质量调研（二模）英语试题及答案（word版）.doc",
-    "prompt": "(共20分) 99. Write at least 60 words about the topic “What’s Your View on Setting off Firecrackers?”. （以“你对燃放爆竹的看法”为题写一篇不少于60个词的短文，标点符号不占格。) Use the following points as a reference. （以下问题仅供参考） 1) Do you usually set off firecrackers during the Spring Festival? What about last Spring Festival? 2) How do you like this Chinese traditional custom? 3) Do you think it good or not? Why or why not? （注意：短文中不得出现任何人名、校名及其它相关信息，否则不予评分。） 宝山、嘉定区2012~2013年第二学期初三年级学业质量调研 英语学科试卷听力材料与答案",
-    "minWords": 60,
-    "score": 20
-  },
-  {
     "_id": "sh-em2-2013-崇明-writing",
     "title": "2013 上海崇明二模作文",
     "year": 2013,
@@ -235,23 +219,7 @@ module.exports = [
     "category": "初中作文",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市崇明县2013届九年级4月质量调研（二模）英语试题及答案（word版）.doc",
-    "prompt": ":（共20分） 99. Write a passage in at least 60 words according to the given situation (根据所给情景写一篇不少于60词的短文) Suppose your class is having a discussion about the topic “What kind of school activities do you like? ”. Please write a passage about your opinion on the topic and give reasons.（假如你的班级在开展一场关于“你喜欢怎样的学校活动？”的讨论，请写出你的想法和理由。） （注意：短文中不得出现任何人名、校名及其它相关信息，否则不予评分。） [来源:学科网] 崇明县2012~2013年第二学期初三年级学业质量调研 英语学科试卷 听力文字及",
-    "minWords": 60,
-    "score": 20
-  },
-  {
-    "_id": "sh-em2-2013-徐汇-writing",
-    "title": "2013 上海徐汇二模作文",
-    "year": 2013,
-    "city": "上海",
-    "district": "徐汇",
-    "examType": "二模",
-    "stage": "初中",
-    "section": "writing",
-    "category": "初中作文",
-    "sourceType": "shanghai-mock",
-    "sourceFile": "上海市徐汇区2013届九年级4月质量调研（二模）英语试题及答案（word版 无听力原文）.doc",
-    "prompt": "VII. Writing: （20分） 99. Mr. Jones introduced Lin some school rules on the first day when Lin arrived at the new school in New York. Lin found quite a few differences about Dos and Don’ts between Chinese school rules and American school rules. 在纽约新学校上学的第一天， Jones先生给Lin介绍了学校的一些校规。Lin在日记里描述了一些中美学校校规的对比， 并记叙了他/她的感受。 假设你是Lin， 写一篇不少于60个字的日记。 Suppose you were Lin, write at least 60 words to describe the differences between the Chinese school rules and the American school rules and how you felt about the differences in the diary. （注意：短文中不得出现任何人名、校名及其它相关信息，否则不予评分。） Here are the school rules introduced to Lin: School Rules Always call your teacher with Mr. or Ms. Don’t be late for your class. Raise your hand when asking a question. Be an active thinker in the classroom. Do your homework on your own. No cheating in exams. [来源:学科网] Ask your teachers for help if you have difficulty in learning. They will be glad to help you out. Remember to wear your uniform to school every day and keep your uniform clean and tidy. Use kind words when you talk with others and learn to share and take turns when you work and play. 徐汇区2012~2013年第二学期初三年级学业质量调研 英语学科试卷答案与",
+    "prompt": ":（共20分） 99. Write a passage in at least 60 words according to the given situation (根据所给情景写一篇不少于60词的短文) Suppose your class is having a discussion about the topic “What kind of school activities do you like? ”. Please write a passage about your opinion on the topic and give reasons.（假如你的班级在开展一场关于“你喜欢怎样的学校活动？”的讨论，请写出你的想法和理由。） （注意：短文中不得出现任何人名、校名及其它相关信息，否则不予评分。） [来源:学科网] 崇明县2012~2013年第二学期初三年级学业质量调研 英语学科试卷",
     "minWords": 60,
     "score": 20
   },
@@ -283,7 +251,7 @@ module.exports = [
     "category": "初中作文",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市浦东区2013届九年级4月质量调研（二模）英语试题及答案（word版）.doc",
-    "prompt": ": (共20分) 99. Write at least 60 words about the given situation. (请根据下列情景写一篇不少于60个词的短文，标点符号不占格。) Labor Day is coming. We’ll have three days off. Some are going travelling, others will stay at home doing some housework. Please make a holiday plan for your family and give some reasons for your plan. (劳动节即将来临，我们将放三天假。有人打算去旅游，有人准备待在家里做家务。请为你的家庭制定一份节日计划，并谈谈你的理由。) （注意：文中不得出现考生的姓名、校名及其它相关信息，否则不予评分。） [来源:学科网ZXXK] 浦东新区2012~2013年第二学期初三年级学业质量调研 英语学科试卷 听力文字及答案",
+    "prompt": ": (共20分) 99. Write at least 60 words about the given situation. (请根据下列情景写一篇不少于60个词的短文，标点符号不占格。) Labor Day is coming. We’ll have three days off. Some are going travelling, others will stay at home doing some housework. Please make a holiday plan for your family and give some reasons for your plan. (劳动节即将来临，我们将放三天假。有人打算去旅游，有人准备待在家里做家务。请为你的家庭制定一份节日计划，并谈谈你的理由。) （注意：文中不得出现考生的姓名、校名及其它相关信息，否则不予评分。） [来源:学科网ZXXK] 浦东新区2012~2013年第二学期初三年级学业质量调研 英语学科试卷",
     "minWords": 60,
     "score": 20
   },
@@ -331,7 +299,7 @@ module.exports = [
     "category": "初中作文",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市长宁区2013届九年级4月质量调研（二模）英语试题及答案（word版）.doc",
-    "prompt": "：（共20分） 99．Write a passage of at least 60 words on the topic “My favourite ________”（以“我最喜欢的________”为题写一篇不少于60个词的短文，标点符号不占格。） What’s your favourite…? Why do you like/love …? The following is only for reference.（请自行确定一个话题，并阐述理由。以下内容仅供参考。） 长宁区2012~2013年第二学期初三年级学业质量调研 英语学科试卷 听力文字及答案",
+    "prompt": "：（共20分） 99．Write a passage of at least 60 words on the topic “My favourite ________”（以“我最喜欢的________”为题写一篇不少于60个词的短文，标点符号不占格。） What’s your favourite…? Why do you like/love …? The following is only for reference.（请自行确定一个话题，并阐述理由。以下内容仅供参考。） 长宁区2012~2013年第二学期初三年级学业质量调研 英语学科试卷",
     "minWords": 60,
     "score": 20
   },
@@ -352,22 +320,6 @@ module.exports = [
     "score": 20
   },
   {
-    "_id": "sh-em2-2013-黄浦-writing",
-    "title": "2013 上海黄浦二模作文",
-    "year": 2013,
-    "city": "上海",
-    "district": "黄浦",
-    "examType": "二模",
-    "stage": "初中",
-    "section": "writing",
-    "category": "初中作文",
-    "sourceType": "shanghai-mock",
-    "sourceFile": "上海市黄浦区2013届九年级4月质量调研（二模）英语试题及答案（word版 无听力原文）.doc",
-    "prompt": "VII. Writing. (作文) （20分） 99. Write a short passage at least 60 words according to the given information. (根据所给信息写一篇不少于60个词的短文，标点符号不占格。) （注意：文中不得出现任何姓名、校名及其它相关信息，否则不予评分。） Last month thousands of dead pigs appeared on the Huang Pu River. People were very upset about the event. What do you think? (上个月黄浦江水域出现大量死猪。人们对此事很焦虑。请你就这个事情谈谈你的看法。) __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________(60) _________ _________ _________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ __________ 黄浦区2012~2013年第二学期初三年级学业质量调研 英语学科试卷答案",
-    "minWords": 60,
-    "score": 20
-  },
-  {
     "_id": "sh-em2-2014-奉贤-writing",
     "title": "2014 上海奉贤二模作文",
     "year": 2014,
@@ -379,7 +331,7 @@ module.exports = [
     "category": "初中作文",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市奉贤区2014届九年级4月质量调研（二模）英语试题及答案（word版）.doc",
-    "prompt": "(共20分) 94. Write a passage on “A letter to my headmaster/headmistress ” in at least 60 words according to the given situation (以“给校长的一封信”为题，写一篇不少于60词的文章。) 提示：初中学习阶段肯定给你留下许多的回忆。有甜美，有苦涩，这些都是宝贵的人生经历。在即将告别你的初中生活，请你以Susan的名义给你的校长写一封信，分享一件让你最难忘的校园活动以及提出一个你最希望学校改进的方面。 （注意：短文中不得出现任何人名、校名及其它相关信息，否则不予评分。） 奉贤区2013~2014年第二学期初三年级学业质量调研 英语学科试卷听力文字和",
+    "prompt": "(共20分) 94. Write a passage on “A letter to my headmaster/headmistress ” in at least 60 words according to the given situation (以“给校长的一封信”为题，写一篇不少于60词的文章。) 提示：初中学习阶段肯定给你留下许多的回忆。有甜美，有苦涩，这些都是宝贵的人生经历。在即将告别你的初中生活，请你以Susan的名义给你的校长写一封信，分享一件让你最难忘的校园活动以及提出一个你最希望学校改进的方面。 （注意：短文中不得出现任何人名、校名及其它相关信息，否则不予评分。） 奉贤区2013~2014年第二学期初三年级学业质量调研 英语学科试卷",
     "minWords": 60,
     "score": 20
   },
@@ -412,22 +364,6 @@ module.exports = [
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市崇明区2014届九年级4月质量调研（二模）英语试题及答案（word版）.doc",
     "prompt": ": (20分) 94. Write at least 60 words about the topic \"Sharing\". (以“分享”为题,写一篇不少于60个词的短文，标点符号不占格。) （注意：短文中不得出现考生的姓名、校名及其他相关信息，否则不予评分。） Use the following points for a reference. (以下问题仅供参考) ● What do you think of \"sharing\"? ● What do / did you share with your friends, your parents or ...? ● Are there any advantages of \"sharing\"? What are they? 崇明县2013~2014年第二学期初三年级学业质量调研 英语学科试卷",
-    "minWords": 60,
-    "score": 20
-  },
-  {
-    "_id": "sh-em2-2014-徐汇-writing",
-    "title": "2014 上海徐汇二模作文",
-    "year": 2014,
-    "city": "上海",
-    "district": "徐汇",
-    "examType": "二模",
-    "stage": "初中",
-    "section": "writing",
-    "category": "初中作文",
-    "sourceType": "shanghai-mock",
-    "sourceFile": "上海市徐汇区2014届九年级4月质量调研（二模）英语试题及答案（word版）.doc",
-    "prompt": "VII. Writing: （20分） 94.请仔细阅读以下关于初三学生睡眠时间调查结果的数据图表，以图表为依据简单分析初三学生的日常作息情况，谈谈你的感想，并就如何安排好复习迎考提些建议， 写一篇不少于60个词的短文。（标点符号不占格） Write a passage based on the given graphic with at least 60 words （注意：短文中不得出现任何人名、校名及其它相关信息，否则不予评分。） 徐汇区2013~2014年第二学期初三年级学业质量调研 英语学科试卷答案与",
     "minWords": 60,
     "score": 20
   },
@@ -619,7 +555,7 @@ module.exports = [
     "category": "初中作文",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市杨浦区2015届九年级4月质量调研（二模）英语试题及答案（word版）.doc",
-    "prompt": ": (共20分) 94. In 60 to 120 words, write about the topic “Meeting a special friend for the first time”. ( 以“与一个特殊朋友的第一次相见”为题，写一篇60-120个词的短文，标点符号不占格) The following are for reference only. （以下问题仅供参考） When and where did you meet the friend for the first time? Why do you think the friend is special? What made your first meeting so impressive/unforgettable? How are you getting along with each other? （ 注意：短文中不得出现考生真实的姓名、校名及其他相关信息，否则不予评分。） 杨浦区2014~2015年第二学期初三年级学业质量调研 英语学科试卷听力文字及答案",
+    "prompt": ": (共20分) 94. In 60 to 120 words, write about the topic “Meeting a special friend for the first time”. ( 以“与一个特殊朋友的第一次相见”为题，写一篇60-120个词的短文，标点符号不占格) The following are for reference only. （以下问题仅供参考） When and where did you meet the friend for the first time? Why do you think the friend is special? What made your first meeting so impressive/unforgettable? How are you getting along with each other? （ 注意：短文中不得出现考生真实的姓名、校名及其他相关信息，否则不予评分。） 杨浦区2014~2015年第二学期初三年级学业质量调研 英语学科试卷",
     "minWords": 60,
     "score": 20
   },
@@ -635,7 +571,7 @@ module.exports = [
     "category": "初中作文",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市松江区2015届九年级4月质量调研（二模）英语试题及答案（word版）.doc",
-    "prompt": "(共20分) 94. Suppose you are Doctor Bob, please write a reply to Alice. (假定你是Bob医生, 请根据左列Alice的来信写一封至少60词的回信) （注意：短文中不得出现考生的中文姓名及其他相关信息，否则不予评分。） 松江区2014~2015年第二学期初三年级学业质量调研 英语学科试卷 （听力文字及",
+    "prompt": "(共20分) 94. Suppose you are Doctor Bob, please write a reply to Alice. (假定你是Bob医生, 请根据左列Alice的来信写一封至少60词的回信) （注意：短文中不得出现考生的中文姓名及其他相关信息，否则不予评分。） 松江区2014~2015年第二学期初三年级学业质量调研 英语学科试卷 （",
     "minWords": 60,
     "score": 20
   },
@@ -699,7 +635,7 @@ module.exports = [
     "category": "初中作文",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市长宁区2015届九年级4月质量调研（二模）英语试题及答案（word版）.doc",
-    "prompt": ": (共20分) 94. Write a passage of at least 60 words about the topic “A Good Habit of Mine”（请以“我的一个好习惯”为题写一篇不少于60个词的短文，标点符号不占格。） （注意：短文中不得出现考生的姓名、校名及其他相关信息，否则不予评分。） Use the following as necessary points: What’s your good habit? (Describe it with an example) Why do you think it is good? How will you keep it in your future life? 长宁区2014~2015年第二学期初三年级学业质量调研 英语学科试卷听力文字及",
+    "prompt": ": (共20分) 94. Write a passage of at least 60 words about the topic “A Good Habit of Mine”（请以“我的一个好习惯”为题写一篇不少于60个词的短文，标点符号不占格。） （注意：短文中不得出现考生的姓名、校名及其他相关信息，否则不予评分。） Use the following as necessary points: What’s your good habit? (Describe it with an example) Why do you think it is good? How will you keep it in your future life? 长宁区2014~2015年第二学期初三年级学业质量调研 英语学科试卷",
     "minWords": 60,
     "score": 20
   },
@@ -732,6 +668,22 @@ module.exports = [
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市黄浦区2015届九年级4月质量调研（二模）英语试题及答案（word版）.doc",
     "prompt": "(共20分) 94. Write a passage of at least 60 words on the topic “Our School Students ‘After-class Reading’” according to the information given. ( 阅读以下信息，并以“我校学生的课外阅读”为题写一篇不少于60个词的短文，标点符号不占格。) 1995年联合国科教文组织宣布每年的4月23日为“世界读书日”。在第20个世界读书日来临之际，我校分别对四个年级学生的课外阅读情况进行了调查，下面的图表（chart）显示了学校的调查结果。 要求： 简要描述图中的信息，分析产生这种结果的原因，提出你的额想法和建议； 文章的题目和开头已给出，不计入词数； 短文中不得出现考生的姓名、校名及其他相关信息，否则不予评分。 Our School Students’ After-class Reading As is shown in the chart,... SUMMER SKIN CARE —RIGHT OR WRONG?",
+    "minWords": 60,
+    "score": 20
+  },
+  {
+    "_id": "sh-em2-2016-奉贤-writing",
+    "title": "2016 上海奉贤二模作文",
+    "year": 2016,
+    "city": "上海",
+    "district": "奉贤",
+    "examType": "二模",
+    "stage": "初中",
+    "section": "writing",
+    "category": "初中作文",
+    "sourceType": "shanghai-mock",
+    "sourceFile": "上海市奉贤区2016届九年级4月质量调研（二模）英语试题及答案（word版）.doc",
+    "prompt": ": (共20分) 94. Please complete the topic \"The___________ I will never forget\" and write at least 60 words on your topic. (请补全题目并以此为题，写一篇不少于60个词的短文，标点符号不占格)。 提示： 生活中总有一些令人难忘的东西，或是一个给你帮助的人；或是一个意义非凡的日子或是一部令人深思的电影……请你搜索记忆的宝库，分享一段令人难忘的片段。 （注意：短文中不得出现任何人名、校名及其它相关信息，否则不予评分。) 奉贤区2015-2016年第二学期教学质量调研（二模）测试卷 九年级英语 201604",
     "minWords": 60,
     "score": 20
   },
@@ -811,7 +763,7 @@ module.exports = [
     "category": "初中作文",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市杨浦区2016届九年级4月质量调研（二模）英语试题及答案（word版）.doc",
-    "prompt": "：（共20分） 94. In 60 to 120 words, write about the topic \"What makes a good neighbour”．（以‘‘怎样才是个好邻居”为题，写一篇60-120个词的短文，标点符号不占格） （注意：短文中不得出现考生真实的姓名、校名及其他相关信息，否则不予评分。） 杨浦区2015-2016年第二学期教学质量调研（二模）测试卷 九年级英语 英语学科听力文字及答案",
+    "prompt": "：（共20分） 94. In 60 to 120 words, write about the topic \"What makes a good neighbour”．（以‘‘怎样才是个好邻居”为题，写一篇60-120个词的短文，标点符号不占格） （注意：短文中不得出现考生真实的姓名、校名及其他相关信息，否则不予评分。） 杨浦区2015-2016年第二学期教学质量调研（二模）测试卷 九年级英语 英语学科",
     "minWords": 60,
     "score": 20
   },
@@ -843,7 +795,7 @@ module.exports = [
     "category": "初中作文",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市浦东新区2016届九年级4月质量调研（二模）英语试题及答案（word版）.doc",
-    "prompt": "（共20分） 94. Write at least 60 words on the topic “ A person ___________me before” （以“曾经_________ 过我的人”为题，写一篇不少于60个词的短文，标点符号不占格） 很多人曾经出现在你的成长旅程中，他们或帮助你，或鼓励你，或爱护你，…… 请你描述他（她）是怎样的人，以及发生在你和他（她）之间的故事，并谈谈他（她）对你的影响。 （注意：短文中不得出现任何真实人名、校名及其它相关信息，否则不予评分。） 浦东新区2015-2016年第二学期教学质量调研（二模）测试卷 九年级英语 听力文字、",
+    "prompt": "（共20分） 94. Write at least 60 words on the topic “ A person ___________me before” （以“曾经_________ 过我的人”为题，写一篇不少于60个词的短文，标点符号不占格） 很多人曾经出现在你的成长旅程中，他们或帮助你，或鼓励你，或爱护你，…… 请你描述他（她）是怎样的人，以及发生在你和他（她）之间的故事，并谈谈他（她）对你的影响。 （注意：短文中不得出现任何真实人名、校名及其它相关信息，否则不予评分。） 浦东新区2015-2016年第二学期教学质量调研（二模）测试卷 九年级英语",
     "minWords": 60,
     "score": 20
   },
@@ -1104,6 +1056,22 @@ module.exports = [
     "score": 20
   },
   {
+    "_id": "sh-em2-2018-普陀-writing",
+    "title": "2018 上海普陀二模作文",
+    "year": 2018,
+    "city": "上海",
+    "district": "普陀",
+    "examType": "二模",
+    "stage": "初中",
+    "section": "writing",
+    "category": "初中作文",
+    "sourceType": "shanghai-mock",
+    "sourceFile": "上海市普陀区2018届九年级4月质量调研（二模）英语试题及答案（word版）.doc",
+    "prompt": "Writing (作文) (共20分) 94. Write at least 60 words on the topic “When I have trouble with my best friend” 【以“我与好朋友闹矛盾后”为题，写一篇不少于60词的短文，标点符号不占格】 提示：生活中好友间也会因各种原因闹些小矛盾，当你与朋友间产生不愉快后，你会如何处理此类问题呢？请就此话题谈谈你的做法以及这样做的理由，可结合自身经历进行阐述。 (注意：短文中不得出现任何人名、校名及其他相关信息，否则不予评分。)",
+    "minWords": 60,
+    "score": 20
+  },
+  {
     "_id": "sh-em2-2018-杨浦-writing",
     "title": "2018 上海杨浦二模作文",
     "year": 2018,
@@ -1115,7 +1083,7 @@ module.exports = [
     "category": "初中作文",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市杨浦区2018届九年级4月质量调研（二模）英语试题及答案（word版）.doc",
-    "prompt": "(共20分) In 60 to 120 words, write a review about a hotel you stayed at. ( 根据所给提示，针对你曾经住过的宾馆，写一篇60-120个词的评论，标点符号不占格) In your review, you may include: - the name of the hotel - the price - what you liked about it - what you didn’t like about it - where you got the information about it - your recommendation（推荐） （ 注意：短文中不得出现考生真实的姓名、校名及其他相关信息，否则不予评分。） 杨浦区2017学年度第二学期初三年级学业质量调研 英语学科听力文字及答案",
+    "prompt": "(共20分) In 60 to 120 words, write a review about a hotel you stayed at. ( 根据所给提示，针对你曾经住过的宾馆，写一篇60-120个词的评论，标点符号不占格) In your review, you may include: - the name of the hotel - the price - what you liked about it - what you didn’t like about it - where you got the information about it - your recommendation（推荐） （ 注意：短文中不得出现考生真实的姓名、校名及其他相关信息，否则不予评分。）",
     "minWords": 60,
     "score": 20
   },
@@ -1131,7 +1099,7 @@ module.exports = [
     "category": "初中作文",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市松江区2018届九年级4月质量调研（二模）英语试题及答案（word版）.doc",
-    "prompt": "(共20分) 94. Write at least 60 words on the topic “A personal habit I'd like to change”. （以“我想改变的一个个人习惯”为题写一篇不少于60词的短文，标点符号不占格。） （注意: 短文中不得出现任何人名、校名及其它相关信息，否则不予评分。） The following points are only for reference: ① 简述你想改变的这个个人习惯； ② 说明你改变这一习惯的理由及措施。 2018年松江区初中毕业生学业模拟考试 初三英语听力文字及",
+    "prompt": "(共20分) 94. Write at least 60 words on the topic “A personal habit I'd like to change”. （以“我想改变的一个个人习惯”为题写一篇不少于60词的短文，标点符号不占格。） （注意: 短文中不得出现任何人名、校名及其它相关信息，否则不予评分。） The following points are only for reference: ① 简述你想改变的这个个人习惯； ② 说明你改变这一习惯的理由及措施。 2018年松江区初中毕业生学业模拟考试 初三英语",
     "minWords": 60,
     "score": 20
   },
@@ -1227,7 +1195,7 @@ module.exports = [
     "category": "初中作文",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市青浦区2018届九年级4月质量调研（二模）英语试题及答案（word版）.doc",
-    "prompt": "VII. Writing (共20分) 94．Write at least 60 words about the topic “My hometown in ten years”. (以“十年后的家乡”为题，写一篇短文，不少于60词，标点符号不占格。) 提示：十年后，你希望家乡会有哪些变化？是希望她的交通更为便捷，还是希望她成为一个山清水净的现代化田园？请展开你的想象，围绕一个中心简单描述一下。 （注意：文中不得出现任何姓名、校名及其它相关信息，否则不予评分。） 青浦区2017学年九年级第二次学业质量调研测试 英语听力文字与答案 Q 2018.04 A. Listen and choose the right picture (根据你听到的内容，选出相应的图片) (6分) 1. Mary’s brother will take",
+    "prompt": "VII. Writing (共20分) 94．Write at least 60 words about the topic “My hometown in ten years”. (以“十年后的家乡”为题，写一篇短文，不少于60词，标点符号不占格。) 提示：十年后，你希望家乡会有哪些变化？是希望她的交通更为便捷，还是希望她成为一个山清水净的现代化田园？请展开你的想象，围绕一个中心简单描述一下。 （注意：文中不得出现任何姓名、校名及其它相关信息，否则不予评分。）",
     "minWords": 60,
     "score": 20
   },
@@ -1243,7 +1211,7 @@ module.exports = [
     "category": "初中作文",
     "sourceType": "shanghai-mock",
     "sourceFile": "上海市静安区2018届九年级4月质量调研（二模）英语试题及答案（word版）.doc",
-    "prompt": "(共20分) 94. Write a review of a novel in 60-120 words. (从你平时看过的小说中选取一本，写一篇60-120个词的书评，标点符号不占格) You can use the following points to help you: What is the novel about? Give your opinions and your conclusion. Would you recommend this novel to others? Why or why not? （注意：短文中不得出现任何人名、学校及其它相关信息，否则不予评分。） 静安区2017学年第二学期学习质量调研 九年级英语 听力文字和",
+    "prompt": "(共20分) 94. Write a review of a novel in 60-120 words. (从你平时看过的小说中选取一本，写一篇60-120个词的书评，标点符号不占格) You can use the following points to help you: What is the novel about? Give your opinions and your conclusion. Would you recommend this novel to others? Why or why not? （注意：短文中不得出现任何人名、学校及其它相关信息，否则不予评分。）",
     "minWords": 60,
     "score": 20
   },
@@ -2476,22 +2444,6 @@ module.exports = [
     "sourceType": "shanghai-mock",
     "sourceFile": "精品解析：2024年上海市青浦区中考二模英语试题（解析版）.docx",
     "prompt": "(20 分) 64. Write at least 60 words on the given topic “Actions speak louder than words”. (根据所给题目“行动胜于空谈”写一篇不少于60 个词的短文，标点符号不占格。) 常言道“行动胜于空谈”，一个行动往往胜过千言万语，我们在生活与学习中需要牢记这一点。请结合你的经历或是所见所闻，谈谈你的心得感悟。 写作要点： (1) 围绕“行动胜于空谈”的主题，讲述一则你生活中的小故事。 (2) 谈谈你对这件事的心得感悟。 注意：1.短文中不得出现考生的姓名、校名等个人信息，否则不予评分。 2. 照抄阅读语篇不得分。 ________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
-    "minWords": 60,
-    "score": 20
-  },
-  {
-    "_id": "sh-em2-2024-静安-writing",
-    "title": "2024 上海静安二模作文",
-    "year": 2024,
-    "city": "上海",
-    "district": "静安",
-    "examType": "二模",
-    "stage": "初中",
-    "section": "writing",
-    "category": "初中作文",
-    "sourceType": "shanghai-mock",
-    "sourceFile": "精品解析：2024年上海市静安区中考二模英语试题（解析版）.docx",
-    "prompt": "（共 20分） 64. Write a passage of at least 60 words about the topic “A problem I solved”. （以“我解决的一个问题”为题，根据以下情境写一篇不少于60个词的短文，标点符号不占格） 在日常生活中，我们时常面临各种挑战和问题。请分享一次你的亲身经历，谈谈你是如何运用具体的策略或方法，成功解决问题或找到答案的。 （注意：1. 短文中不得出现考生姓名、校名及其他相关信息。2. 照抄阅读语篇不得分。） ________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
     "minWords": 60,
     "score": 20
   },

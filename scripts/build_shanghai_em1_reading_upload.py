@@ -150,8 +150,14 @@ def between(text, start_re, end_re):
 def parse_options(chunk):
     opts = {}
     for m in re.finditer(r'(?:^|\s)([A-D])[\)）\.．、]\s*(.*?)(?=\s+[A-D][\)）\.．、]\s*|$)', clean(chunk), re.S):
-        opts[m.group(1)] = clean(m.group(2))
+        opts[m.group(1)] = clean_option(m.group(2))
     return opts
+
+
+def clean_option(text):
+    text = clean(text)
+    text = re.split(r'\s*(?:【|\[)\s*(?:答案|解析)|(?:^|\s+)\d{1,2}\s*[\.．、]\s*[A-D]\b', text, maxsplit=1)[0]
+    return clean(text)
 
 
 def invalid_composite_choice(prompt, options):

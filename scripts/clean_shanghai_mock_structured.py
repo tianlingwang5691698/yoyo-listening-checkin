@@ -9,6 +9,12 @@ def clean_text(text):
     return re.sub(r'\s+', ' ', str(text or '')).strip()
 
 
+def clean_option(text):
+    text = clean_text(text)
+    text = re.split(r'\s*(?:【|\[)\s*(?:答案|解析)|(?:^|\s+)\d{1,2}\s*[\.．、]\s*[A-D]\b', text, maxsplit=1)[0]
+    return clean_text(text)
+
+
 def valid_options(options):
     return isinstance(options, dict) and all(clean_text(options.get(k)) for k in ['A', 'B', 'C', 'D'])
 
@@ -30,7 +36,7 @@ def normalize_question(q):
     item = {
         'number': q.get('number'),
         'prompt': clean_text(q.get('prompt')),
-        'options': {k: clean_text((q.get('options') or {}).get(k)) for k in ['A', 'B', 'C', 'D']},
+        'options': {k: clean_option((q.get('options') or {}).get(k)) for k in ['A', 'B', 'C', 'D']},
         'answer': clean_text(q.get('answer')).upper()
     }
     if not isinstance(item['number'], int):

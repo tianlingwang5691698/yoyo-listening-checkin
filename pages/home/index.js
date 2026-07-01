@@ -4,7 +4,6 @@ const contracts = require('../../utils/contracts');
 const labels = require('../../utils/labels');
 const completed = require('../../utils/completed');
 const LEVEL_STAGE_SNAPSHOT_KEY = 'levelStageSnapshotV1';
-const ENTRY_POSTER_SKIPPED_KEY = 'yoyoEntryPosterSkippedV1';
 
 const VOCABULARY_ITEM_KEYS = [
   'listeningFlashcardItemsV1',
@@ -96,17 +95,6 @@ function buildListeningTaskStatus(groupedDailyTasks) {
     action: pending ? '继续学习 →' : '查看记录',
     pending
   };
-}
-
-function isEntryPosterSkipped(app) {
-  if (app && app.globalData && app.globalData.entryPosterSkipped) {
-    return true;
-  }
-  try {
-    return wx.getStorageSync(ENTRY_POSTER_SKIPPED_KEY) === 'yes';
-  } catch (error) {
-    return false;
-  }
 }
 
 function findNextListeningTask(groupedDailyTasks) {
@@ -284,10 +272,9 @@ Page({
   },
   async onShow() {
     this.homePerf = page.startPagePerf('home');
-    const app = getApp();
     page.syncTheme(this);
     const tabBar = this.getTabBar && this.getTabBar();
-    const entryPosterVisible = !isEntryPosterSkipped(app);
+    const entryPosterVisible = true;
     if (tabBar) {
       tabBar.setData({
         selected: 0,
@@ -342,14 +329,7 @@ Page({
     });
   },
   closeEntryPoster() {
-    const app = getApp();
     const tabBar = this.getTabBar && this.getTabBar();
-    if (app && app.globalData) {
-      app.globalData.entryPosterSkipped = true;
-    }
-    try {
-      wx.setStorageSync(ENTRY_POSTER_SKIPPED_KEY, 'yes');
-    } catch (error) {}
     if (tabBar) {
       tabBar.setData({ hidden: false });
     }
