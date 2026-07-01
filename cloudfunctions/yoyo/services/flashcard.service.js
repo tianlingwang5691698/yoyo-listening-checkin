@@ -37,6 +37,50 @@ function makeSchedule(today) {
   }));
 }
 
+function getStepDate(schedule, step, today) {
+  const slot = (schedule || []).find((item) => Number(item.step) === Number(step));
+  return slot && slot.date ? slot.date : study.addDays(today, REVIEW_DAYS[Math.max(0, Math.min(REVIEW_DAYS.length - 1, step))] || 1);
+}
+
+function buildRememberedScheduleData(current, schedule, today) {
+  const currentStep = Number(current.reviewStep || 0);
+  const unfamiliarCount = Number(current.unfamiliarCount || 0);
+  if (unfamiliarCount >= 4) {
+    return {
+      status: 'reviewing',
+      familiarLevel: 'reviewing',
+      reviewStep: 0,
+      nextReviewDate: study.addDays(today, 1),
+      unfamiliarCount: 0
+    };
+  }
+  if (unfamiliarCount >= 2) {
+    return {
+      status: 'reviewing',
+      familiarLevel: 'reviewing',
+      reviewStep: Math.max(0, currentStep - 1),
+      nextReviewDate: study.addDays(today, 1),
+      unfamiliarCount: 0
+    };
+  }
+  const nextSlot = schedule.find((slot) => Number(slot.step) > currentStep);
+  if (!nextSlot) {
+    return {
+      status: 'mastered',
+      familiarLevel: 'mastered',
+      nextReviewDate: '',
+      unfamiliarCount: 0
+    };
+  }
+  return {
+    status: 'reviewing',
+    familiarLevel: 'reviewing',
+    reviewStep: Number(nextSlot.step),
+    nextReviewDate: getStepDate(schedule, Number(nextSlot.step), today),
+    unfamiliarCount: 0
+  };
+}
+
 function normalizeLimit(value, fallback) {
   const numericValue = Number(value == null ? fallback : value);
   const steppedValue = Math.round(numericValue / LIMIT_STEP) * LIMIT_STEP;
@@ -215,7 +259,6 @@ async function updateFlashcardReview(event) {
   const schedule = Array.isArray(current.reviewSchedule) && current.reviewSchedule.length
     ? current.reviewSchedule
     : makeSchedule(today);
-  const currentStep = Number(current.reviewStep || 0);
   if (payload.result === 'easy') {
     await dbAdapter.collection(COLLECTION).doc(current._id).update({
       data: {
@@ -240,11 +283,14 @@ async function updateFlashcardReview(event) {
     return { saved: true };
   }
   if (!remembered) {
+    const command = dbAdapter.getCommand();
     await dbAdapter.collection(COLLECTION).doc(current._id).update({
       data: {
         status: 'reviewing',
         familiarLevel: 'unfamiliar',
         nextReviewDate: today,
+        unfamiliarCount: command.inc(1),
+        lastUnfamiliarDate: today,
         updatedAt: new Date().toISOString()
       }
     });
@@ -262,10 +308,7 @@ async function updateFlashcardReview(event) {
     });
     return { saved: true };
   }
-  const nextSlot = schedule.find((slot) => Number(slot.step) > currentStep);
-  const nextData = nextSlot
-    ? { status: 'reviewing', familiarLevel: 'reviewing', reviewStep: Number(nextSlot.step), nextReviewDate: nextSlot.date }
-    : { status: 'mastered', familiarLevel: 'mastered', nextReviewDate: '' };
+  const nextData = buildRememberedScheduleData(current, schedule, today);
   await dbAdapter.collection(COLLECTION).doc(current._id).update({
     data: Object.assign({}, nextData, { updatedAt: new Date().toISOString() })
   });

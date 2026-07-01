@@ -104,10 +104,13 @@
           <view wx:if="{{current.exampleMeaning}}">{{current.exampleMeaning}}</view>
         </view>
       </view>
-      <view class="study-hint">{{cardRevealed ? (cardChoice === 'easy' ? '太简单的词不会进入学习计划。' : '看完释义和例句，再进入下一个。') : '先回忆意思，再选择认识程度。'}}</view>
+      <view class="study-hint">{{cardRevealed ? (cardChoice === 'unfamiliar' ? '先看释义和例句，点下一个，稍后还会出现。' : (cardChoice === 'easy' ? '太简单的词不会进入学习计划。' : '看完释义和例句，再进入下一个。')) : '先回忆意思，再选择认识程度。'}}</view>
       <view class="flashcard-actions">
         <block wx:if="{{cardRevealed}}">
-          <button class="choice-action strong full" bindtap="commitCurrentCard">下一个</button>
+          <block wx:if="{{cardChoice === 'unfamiliar'}}">
+            <button class="choice-action strong full" bindtap="commitCurrentCard">下一个</button>
+          </block>
+          <button wx:else class="choice-action strong full" bindtap="commitCurrentCard">下一个</button>
         </block>
         <block wx:else>
           <button class="choice-action weak" bindtap="markUnfamiliar">不认识</button>

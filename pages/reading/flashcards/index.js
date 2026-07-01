@@ -359,6 +359,23 @@ Page({
       empty: !this.data.library.length
     });
   },
+  repeatCurrentCard() {
+    const cards = this.data.cards.slice();
+    const current = cards[this.data.currentIndex];
+    if (!current) return;
+    cards.splice(this.data.currentIndex, 1);
+    cards.push(current);
+    const nextIndex = Math.min(this.data.currentIndex, Math.max(cards.length - 1, 0));
+    this.setData({
+      cards,
+      currentIndex: nextIndex,
+      current: cards[nextIndex] || null,
+      total: cards.length,
+      cardRevealed: false,
+      cardChoice: '',
+      previousCardChoice: ''
+    });
+  },
   startReview() {
     this.setData({
       mode: 'review',
@@ -379,7 +396,7 @@ Page({
       this.setData({ cardRevealed: true, cardChoice: 'remembered', previousCardChoice: '' });
       return;
     }
-    await this.commitCurrentCard();
+    await this.commitCurrentCard('remembered');
   },
   markUnfamiliar() {
     if (!this.data.cardRevealed) {
@@ -401,14 +418,24 @@ Page({
       previousCardChoice: ''
     });
   },
-  async commitCurrentCard() {
+  async commitCurrentCard(result) {
     const current = this.data.current;
     if (!current || !current.flashcardKey) return;
+    const nextResult = typeof result === 'string' ? result : (this.data.cardChoice || 'remembered');
+    if (nextResult === 'unfamiliar') {
+      if (!current.demo) {
+        try {
+          await store.updateFlashcardReview(current.flashcardKey, 'unfamiliar');
+        } catch (error) {}
+      }
+      this.repeatCurrentCard();
+      return;
+    }
     if (current.demo) {
       this.advanceVisibleCards();
       return;
     }
-    await store.updateFlashcardReview(current.flashcardKey, this.data.cardChoice || 'remembered');
+    await store.updateFlashcardReview(current.flashcardKey, nextResult);
     this.advanceVisibleCards();
   }
 });
