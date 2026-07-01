@@ -81,22 +81,33 @@ function buildStages(em2Topics, em1Topics) {
 
 function buildQuestion(item, index) {
   const answer = String(item.answer || '').trim().toUpperCase();
+  const optionsList = ['A', 'B', 'C', 'D'].filter((key) => item.options && item.options[key]).map((key) => ({
+    key,
+    text: item.options[key],
+    tokens: tokenizeText(item.options[key]),
+    selected: false,
+    correct: false,
+    wrong: false
+  }));
   return Object.assign({}, item, {
     answer,
     sequenceNumber: Number(index || 0) + 1,
+    promptTokens: tokenizeText(item.prompt || ''),
     selectedAnswer: '',
     isAnswered: false,
     isCorrect: false,
     explaining: false,
     explanation: null,
-    optionsList: ['A', 'B', 'C', 'D'].filter((key) => item.options && item.options[key]).map((key) => ({
-      key,
-      text: item.options[key],
-      selected: false,
-      correct: false,
-      wrong: false
-    }))
+    optionsList
   });
+}
+
+function tokenizeText(text) {
+  return String(text || '').split(/([A-Za-z][A-Za-z'-]*)/g).filter((part) => part !== '').map((part, index) => ({
+    id: index,
+    text: part,
+    word: /^[A-Za-z][A-Za-z'-]*$/.test(part) ? part : ''
+  }));
 }
 
 function recordGrammarCompleted(state, answeredCount) {
@@ -149,8 +160,19 @@ Page({
     wrongTopics: [],
     mode: 'topics',
     expandedQuestionId: '',
-    answeredCount: 0
+    answeredCount: 0,
+    dictionaryVisible: false,
+    dictionaryLoading: false,
+    dictionaryAdding: false,
+    dictionaryWord: '',
+    dictionaryEntry: null
   }),
+  onUnload() {
+    if (this.grammarAudioContext) {
+      this.grammarAudioContext.destroy();
+      this.grammarAudioContext = null;
+    }
+  },
   async onLoad() {
     let em2Data = null;
     let em1Data = null;
@@ -494,6 +516,77 @@ Page({
           explaining: item._id === questionId ? false : item.explaining
         }))
       });
+    }
+  },
+  async openDictionaryWord(event) {
+    const word = String(event.currentTarget.dataset.word || '').trim();
+    if (!word) return;
+    this.setData({
+      dictionaryVisible: true,
+      dictionaryLoading: true,
+      dictionaryWord: word,
+      dictionaryEntry: null
+    });
+    try {
+      const entry = await store.lookupWord(word);
+      this.setData({
+        dictionaryLoading: false,
+        dictionaryEntry: entry || { word, definitions: [] }
+      });
+    } catch (error) {
+      this.setData({
+        dictionaryLoading: false,
+        dictionaryEntry: { word, definitions: [] }
+      });
+      wx.showToast({ title: '词典暂不可用', icon: 'none' });
+    }
+  },
+  closeDictionary() {
+    this.setData({ dictionaryVisible: false, dictionaryLoading: false });
+  },
+  async addDictionaryWordToLibrary() {
+    const entry = this.data.dictionaryEntry || {};
+    const word = entry.word || this.data.dictionaryWord || '';
+    if (!word || this.data.dictionaryAdding) return;
+    this.setData({ dictionaryAdding: true });
+    try {
+      await store.addDictionaryWord(Object.assign({}, entry, { word }));
+      wx.showToast({ title: '已加入词库', icon: 'none' });
+    } catch (error) {
+      wx.showToast({ title: '加入失败', icon: 'none' });
+    } finally {
+      this.setData({ dictionaryAdding: false });
+    }
+  },
+  playDictionaryWord() {
+    const entry = this.data.dictionaryEntry || {};
+    const word = entry.word || this.data.dictionaryWord || '';
+    const playUrl = (url) => {
+      if (!this.grammarAudioContext) {
+        this.grammarAudioContext = wx.createInnerAudioContext();
+        this.grammarAudioContext.obeyMuteSwitch = false;
+        this.grammarAudioContext.onError(() => {
+          wx.showToast({ title: '播放失败，稍后再试', icon: 'none' });
+        });
+      }
+      this.grammarAudioContext.stop();
+      this.grammarAudioContext.src = url;
+      this.grammarAudioContext.play();
+    };
+    if (entry.audioUrl) {
+      playUrl(entry.audioUrl);
+      return;
+    }
+    if (entry.audioFileId) {
+      store.getTempFileURL(entry.audioFileId).then((url) => {
+        if (url) playUrl(url);
+      }).catch(() => {
+        if (word) playUrl(`https://dict.youdao.com/dictvoice?audio=${encodeURIComponent(word)}&type=2`);
+      });
+      return;
+    }
+    if (word) {
+      playUrl(`https://dict.youdao.com/dictvoice?audio=${encodeURIComponent(word)}&type=2`);
     }
   }
 });

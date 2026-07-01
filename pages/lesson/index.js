@@ -213,6 +213,15 @@ function hasStudyTranscript(task, transcriptPendingLoad, transcriptLines) {
   );
 }
 
+function buildLessonStudyItem(task, category, taskId, transcript) {
+  const target = task || {};
+  return {
+    _id: `lesson-${target.category || category}-${target.taskId || taskId}`,
+    title: target.displayTitle || target.title || target.audioTitle || '听力课程',
+    transcript: transcript || ''
+  };
+}
+
 Page({
   data: page.createCloudPageData({
     child: null,
@@ -714,6 +723,9 @@ Page({
       lessonPhraseCards: [],
       lessonPatternCards: []
     }));
+    if (normalizedTask) {
+      await this.loadCachedLessonStudyPack(normalizedTask);
+    }
     await this.refreshSpeakingAttempts(normalizedTask);
     await this.updatePassQuestion(normalizedTask, detail.progress);
     if (normalizedTask) {
@@ -1323,6 +1335,19 @@ Page({
       lessonPatternCards: pack.sentencePatternCards || []
     });
   },
+  async loadCachedLessonStudyPack(task) {
+    const target = task || this.data.task || {};
+    const result = await store.getListeningStudyPack(
+      buildLessonStudyItem(target, this.category, this.taskId, ''),
+      { cacheOnly: true, useCache: false }
+    );
+    const studyPack = result && result.studyPack;
+    const hasCards = studyPack
+      && ((studyPack.vocabularyCards || []).length || (studyPack.phraseCards || []).length || (studyPack.sentencePatternCards || []).length);
+    if (hasCards) {
+      this.applyLessonStudyPack(studyPack);
+    }
+  },
   async loadLessonStudyPack() {
     if (this.data.lessonStudyLoading) return;
     const task = this.data.task || {};
@@ -1340,11 +1365,7 @@ Page({
       return;
     }
     this.setData({ lessonStudyLoading: true, lessonStudyError: '' });
-    const result = await store.getListeningStudyPack({
-      _id: `lesson-${task.category || this.category}-${task.taskId || this.taskId}`,
-      title: task.displayTitle || task.title || task.audioTitle || '听力课程',
-      transcript
-    });
+    const result = await store.getListeningStudyPack(buildLessonStudyItem(task, this.category, this.taskId, transcript));
     const studyPack = result && result.studyPack;
     const hasCards = studyPack
       && ((studyPack.vocabularyCards || []).length || (studyPack.phraseCards || []).length || (studyPack.sentencePatternCards || []).length);
@@ -1450,6 +1471,7 @@ Page({
       lessonPhraseCards: [],
       lessonPatternCards: []
     }));
+    await this.loadCachedLessonStudyPack(normalizedTask);
     await this.updatePassQuestion(normalizedTask, detail.progress);
     await this.syncPlayer(normalizedTask);
     wx.showToast({

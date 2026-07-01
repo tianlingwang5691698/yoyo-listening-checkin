@@ -111,6 +111,10 @@
             <view class="recording-text" wx:if="{{item.reviewSpelling}}">拼写：{{item.reviewSpelling}}</view>
             <view class="recording-text" wx:if="{{item.reviewProblemsText}}">问题：{{item.reviewProblemsText}}</view>
             <view class="recording-text" wx:if="{{item.reviewSuggestionsText}}">建议：{{item.reviewSuggestionsText}}</view>
+            <view class="source-passage" wx:if="{{item.polishedVersion}}">
+              <view class="question-review-title">参考范文</view>
+              <view class="recording-text">{{item.polishedVersion}}</view>
+            </view>
             <block wx:if="{{item.grammarQuestions.length}}">
               <view class="question-review" wx:for="{{item.grammarQuestions}}" wx:key="key" wx:for-item="question">
                 <view class="question-review-title">第 {{question.number}} 题 · {{question.isCorrect ? '正确' : '订正'}} · 答案 {{question.answer}}</view>

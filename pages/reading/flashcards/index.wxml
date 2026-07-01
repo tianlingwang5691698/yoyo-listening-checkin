@@ -1,25 +1,137 @@
-<view class="theme-{{theme}} page-shell flashcard-page">
-  <view class="reading-hero card">
-    <view class="reading-eyebrow">统一词库</view>
-    <view class="reading-title">今日词汇短语</view>
-    <view class="reading-copy">来自听力、阅读、语法、写作和口语，只显示今天到期的单词和短语。</view>
+<view class="theme-{{theme}} page-shell flashcard-page {{mode === 'review' ? 'is-review' : ''}}">
+  <view class="vocab-summary card">
+    <view class="progress-head">
+      <view>
+        <view class="progress-title">{{stats.all}} 个内容 <text wx:if="{{demoMode}}" class="demo-tag">演示</text></view>
+        <view class="progress-copy">已打卡 {{reviewDays}} 天</view>
+      </view>
+      <view class="start-review" bindtap="startReview">开始复习</view>
+    </view>
+    <view class="progress-bar"><view style="width: {{progress.total ? progress.mastered * 100 / progress.total : 0}}%;"></view></view>
+    <view class="vocab-stats">
+      <view class="vocab-count"><text>{{stats.word}}</text><text>生词</text></view>
+      <view class="vocab-count"><text>{{stats.phrase}}</text><text>短语</text></view>
+      <view class="vocab-count"><text>{{stats.pattern}}</text><text>句型</text></view>
+    </view>
+    <view class="limit-panel">
+      <view class="limit-row">
+        <text class="limit-label">今日新学</text>
+        <view class="stepper">
+          <view class="stepper-btn {{settings.newLimit <= 5 ? 'disabled' : ''}}" bindtap="changeLimit" bindlongpress="changeLimit" data-field="newLimit" data-delta="-5" data-long-delta="-25">-</view>
+          <view class="stepper-picker" bindtap="openLimitPicker" data-field="newLimit">
+            <text class="stepper-value">{{settings.newLimit}}</text>
+          </view>
+          <view class="stepper-btn {{settings.newLimit >= 500 ? 'disabled' : ''}}" bindtap="changeLimit" bindlongpress="changeLimit" data-field="newLimit" data-delta="5" data-long-delta="25">+</view>
+        </view>
+      </view>
+      <view class="limit-row">
+        <text class="limit-label">今日复习</text>
+        <view class="stepper">
+          <view class="stepper-btn {{settings.reviewLimit <= 5 ? 'disabled' : ''}}" bindtap="changeLimit" bindlongpress="changeLimit" data-field="reviewLimit" data-delta="-5" data-long-delta="-25">-</view>
+          <view class="stepper-picker" bindtap="openLimitPicker" data-field="reviewLimit">
+            <text class="stepper-value">{{settings.reviewLimit}}</text>
+          </view>
+          <view class="stepper-btn {{settings.reviewLimit >= 500 ? 'disabled' : ''}}" bindtap="changeLimit" bindlongpress="changeLimit" data-field="reviewLimit" data-delta="5" data-long-delta="25">+</view>
+        </view>
+      </view>
+    </view>
   </view>
 
-  <view class="flashcard card" wx:if="{{current}}">
-    <view class="flashcard-top">
-      <view class="flashcard-type">{{current.typeLabel}}</view>
-      <view class="flashcard-count">{{current.index}} / {{total}}</view>
-    </view>
-    <view class="flashcard-word">{{current.displayText}}</view>
-    <view class="flashcard-phonetic" wx:if="{{current.phonetic}}">{{current.phonetic}}</view>
-    <view class="flashcard-meaning">{{current.meaning || current.translation || '暂无释义'}}</view>
-    <view class="flashcard-example" wx:if="{{current.example}}">{{current.example}}</view>
-    <view class="flashcard-actions">
-      <button class="mini-action" bindtap="speakCurrent">发音</button>
-      <button class="mini-action" bindtap="markUnfamiliar">仍不熟</button>
-      <button class="mini-action strong" bindtap="markRemembered">记住了</button>
+  <view class="review-log card" wx:if="{{logs.length}}">
+    <view class="progress-title">最近</view>
+    <view class="log-row" wx:for="{{logs}}" wx:key="_id">
+      <text>{{item.text}}</text>
+      <text>{{item.result === 'remembered' ? '认识' : '不熟'}}</text>
     </view>
   </view>
 
-  <view class="empty-state" wx:else>今天没有到期复习。</view>
+  <view class="mode-tabs">
+    <button class="{{mode === 'library' ? 'active' : ''}}" bindtap="switchMode" data-mode="library">词库</button>
+    <button class="{{mode === 'review' ? 'active' : ''}}" bindtap="switchMode" data-mode="review">复习</button>
+  </view>
+
+  <block wx:if="{{mode === 'library'}}">
+    <view class="vocab-list" wx:if="{{libraryGroups.length}}">
+      <view class="vocab-group" wx:for="{{libraryGroups}}" wx:key="type" wx:for-item="group">
+        <view class="vocab-group-head">
+          <text>{{group.label}}</text>
+          <text>{{group.count}}</text>
+        </view>
+        <view class="vocab-item card" wx:for="{{group.items}}" wx:key="flashcardKey" wx:for-item="item">
+          <view class="vocab-item-top">
+            <text>{{item.sourceTitle}}</text>
+          </view>
+          <view class="vocab-text">{{item.displayText}}</view>
+          <view class="vocab-meaning">{{item.meaning || item.translation || '暂无释义'}}</view>
+          <view class="vocab-example" wx:if="{{item.example}}">{{item.example}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="empty-state" wx:else>暂无词汇。</view>
+  </block>
+
+  <block wx:else>
+    <view class="review-full-head">
+      <view class="review-exit" bindtap="exitReview">词库</view>
+      <view class="review-full-progress">{{current ? reviewDone + 1 : reviewDone}} / {{reviewSessionTotal || total}}</view>
+      <view class="review-head-spacer"></view>
+    </view>
+    <view class="review-metrics card">
+      <view><text>今日复习</text><text>{{reviewDueCount}}/{{settings.reviewLimit}}</text></view>
+      <view><text>今日新词</text><text>{{newDueCount}}/{{settings.newLimit}}</text></view>
+      <view><text>待学习</text><text>{{total}}</text></view>
+    </view>
+    <view class="study-card {{cardChoice === 'unfamiliar' ? 'is-unfamiliar' : ''}} {{cardChoice === 'easy' ? 'is-easy' : ''}}" wx:if="{{current}}">
+      <view class="study-card-head">
+        <view class="study-age">{{current.typeLabel}}</view>
+        <view class="study-word-row">
+          <view class="study-word" bindtap="speakCurrent">{{current.displayText}}</view>
+          <view class="study-speak" bindtap="speakCurrent">发音</view>
+        </view>
+        <view class="study-pron">
+          <text class="study-phonetic" wx:if="{{current.phonetic}}">{{current.phonetic}}</text>
+        </view>
+      </view>
+      <view class="study-back" wx:if="{{cardRevealed}}">
+        <view class="study-choice-row">
+          <view class="study-choice-tag {{cardChoice}}">{{cardChoice === 'unfamiliar' ? '不认识' : (cardChoice === 'easy' ? '太简单' : '我认识')}}</view>
+          <view class="study-easy-action" wx:if="{{cardChoice !== 'easy'}}" bindtap="markTooEasy">标记为太简单</view>
+          <view class="study-easy-action" wx:else bindtap="undoTooEasy">撤销</view>
+        </view>
+        <view class="study-meaning">{{current.meaning || current.translation || '暂无释义'}}</view>
+        <view class="study-example" wx:if="{{current.example}}">
+          <view>{{current.example}}</view>
+          <view wx:if="{{current.exampleMeaning}}">{{current.exampleMeaning}}</view>
+        </view>
+      </view>
+      <view class="study-hint">{{cardRevealed ? (cardChoice === 'easy' ? '太简单的词不会进入学习计划。' : '看完释义和例句，再进入下一个。') : '先回忆意思，再选择认识程度。'}}</view>
+      <view class="flashcard-actions">
+        <block wx:if="{{cardRevealed}}">
+          <button class="choice-action strong full" bindtap="commitCurrentCard">下一个</button>
+        </block>
+        <block wx:else>
+          <button class="choice-action weak" bindtap="markUnfamiliar">不认识</button>
+          <button class="choice-action strong" bindtap="markRemembered">我认识</button>
+        </block>
+      </view>
+    </view>
+    <view class="empty-state" wx:else>今天没有复习。</view>
+  </block>
+
+  <view class="limit-picker-mask" wx:if="{{limitPickerVisible}}" catchtap="closeLimitPicker">
+    <view class="limit-picker-sheet" catchtap="noop">
+      <view class="limit-picker-head">
+        <view class="limit-picker-action" bindtap="closeLimitPicker">取消</view>
+        <view class="limit-picker-title">{{limitPickerTitle}}</view>
+        <view class="limit-picker-action confirm" bindtap="confirmLimit">确定</view>
+      </view>
+      <view class="limit-picker-wheel">
+        <scroll-view class="limit-picker-view" scroll-y="{{true}}" enhanced="{{true}}" bounces="{{true}}" show-scrollbar="{{false}}" scroll-top="{{limitScrollTop}}" bindscroll="scrollLimit">
+          <view class="limit-picker-list">
+            <view class="limit-picker-item {{index === selectedLimitIndex ? 'selected' : ''}}" wx:for="{{limitOptions}}" wx:key="*this" bindtap="tapLimitOption" data-index="{{index}}">{{item}}</view>
+          </view>
+        </scroll-view>
+      </view>
+    </view>
+  </view>
 </view>

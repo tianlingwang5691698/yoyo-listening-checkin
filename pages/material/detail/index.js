@@ -63,6 +63,9 @@ Page({
     if (item && item.images && item.images.length) {
       this.prepareImages(item.images);
     }
+    if (item) {
+      this.loadCachedStudyPack(item);
+    }
   },
   onShow() {
     page.syncTheme(this);
@@ -183,6 +186,15 @@ Page({
       phraseCards: pack.phraseCards || [],
       sentencePatternCards: pack.sentencePatternCards || []
     });
+  },
+  async loadCachedStudyPack(item) {
+    const result = await store.getListeningStudyPack(item, { cacheOnly: true, useCache: false });
+    const studyPack = result && result.studyPack;
+    const hasCards = studyPack
+      && ((studyPack.vocabularyCards || []).length || (studyPack.phraseCards || []).length || (studyPack.sentencePatternCards || []).length);
+    if (hasCards) {
+      this.applyStudyPack(studyPack);
+    }
   },
   async loadStudyPack() {
     const item = this.data.item;

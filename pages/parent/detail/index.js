@@ -165,6 +165,7 @@ function normalizeCompletionItem(item, index) {
     reviewSuggestions,
     reviewSuggestionsText: reviewSuggestions.join('；'),
     grammarCorrections: Array.isArray(review.grammarCorrections) ? review.grammarCorrections : [],
+    polishedVersion: review.polishedVersion || '',
     passage,
     writingPrompt: latestAttempt.prompt || safeItem.prompt || null,
     essay: latestAttempt.essay || '',

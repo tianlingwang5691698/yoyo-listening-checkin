@@ -1,0 +1,364 @@
+const study = require('../facades/study.facade');
+const dbAdapter = require('../adapters/db.adapter');
+
+const COLLECTION = 'studyFlashcards';
+const SETTINGS_COLLECTION = 'studyFlashcardSettings';
+const LOG_COLLECTION = 'studyFlashcardReviewLogs';
+const REVIEW_DAYS = [0, 1, 2, 4, 7, 15, 30];
+const DEFAULT_SETTINGS = { newLimit: 10, reviewLimit: 20 };
+const LIMIT_MIN = 5;
+const LIMIT_MAX = 500;
+const LIMIT_STEP = 5;
+
+function normalizeText(value) {
+  return String(value || '').replace(/\s+/g, ' ').trim();
+}
+
+function normalizeType(type) {
+  const raw = String(type || '').trim();
+  return ['word', 'phrase', 'pattern'].includes(raw) ? raw : 'word';
+}
+
+function flashcardKey(sourceType, type, text) {
+  return [sourceType || 'study', normalizeType(type), normalizeText(text).toLowerCase()].join(':');
+}
+
+function cardText(card, type) {
+  if (type === 'word') return normalizeText(card.word || card.text);
+  if (type === 'pattern') return normalizeText(card.pattern || card.text);
+  return normalizeText(card.text || card.phrase);
+}
+
+function makeSchedule(today) {
+  return REVIEW_DAYS.map((days, index) => ({
+    step: index,
+    date: study.addDays(today, days),
+    done: false
+  }));
+}
+
+function normalizeLimit(value, fallback) {
+  const numericValue = Number(value == null ? fallback : value);
+  const steppedValue = Math.round(numericValue / LIMIT_STEP) * LIMIT_STEP;
+  return Math.max(LIMIT_MIN, Math.min(steppedValue || fallback, LIMIT_MAX));
+}
+
+function normalizeSettings(settings) {
+  return {
+    newLimit: normalizeLimit(settings && settings.newLimit, DEFAULT_SETTINGS.newLimit),
+    reviewLimit: normalizeLimit(settings && settings.reviewLimit, DEFAULT_SETTINGS.reviewLimit)
+  };
+}
+
+function makeFlashcard(ctx, today, source, type, card) {
+  const text = cardText(card, type);
+  const schedule = makeSchedule(today);
+  return {
+    flashcardKey: flashcardKey(source.sourceType, type, text),
+    familyId: ctx.family.familyId,
+    childId: ctx.child.childId,
+    userId: ctx.user.userId,
+    memberId: ctx.member.memberId,
+    sourceType: source.sourceType || 'study',
+    sourceId: source.sourceId || '',
+    sourceTitle: source.title || '',
+    type,
+    text,
+    word: type === 'word' ? text : '',
+    phrase: type === 'phrase' ? text : '',
+    pattern: type === 'pattern' ? text : '',
+    phonetic: normalizeText(card.phonetic),
+    meaning: normalizeText(card.meaning || card.translation),
+    example: normalizeText(card.example),
+    exampleMeaning: normalizeText(card.exampleMeaning),
+    status: 'new',
+    familiarLevel: 'new',
+    reviewStep: 0,
+    reviewSchedule: schedule,
+    nextReviewDate: today,
+    createdDate: today,
+    createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString()
+  };
+}
+
+function cardsFromStudyPack(studyPack) {
+  const pack = studyPack || {};
+  return []
+    .concat((pack.vocabularyCards || []).map((card) => ({ type: 'word', card })))
+    .concat((pack.phraseCards || []).map((card) => ({ type: 'phrase', card })))
+    .concat((pack.sentencePatternCards || []).map((card) => ({ type: 'pattern', card })))
+    .filter((item) => cardText(item.card, item.type));
+}
+
+async function upsertStudyPackFlashcards(ctx, today, source, studyPack) {
+  if (!ctx || study.normalizeStudyRole(ctx.member) !== 'student') {
+    return { saved: false, reason: 'preview-role', count: 0 };
+  }
+  const items = cardsFromStudyPack(studyPack);
+  let count = 0;
+  for (const item of items) {
+    const record = makeFlashcard(ctx, today, source || {}, item.type, item.card);
+    const currentResult = await dbAdapter.collection(COLLECTION)
+      .where({ familyId: record.familyId, childId: record.childId, flashcardKey: record.flashcardKey })
+      .limit(1)
+      .get();
+    const current = currentResult && currentResult.data && currentResult.data[0];
+    if (current && current._id) {
+      await dbAdapter.collection(COLLECTION).doc(current._id).update({
+        data: {
+          sourceTitle: record.sourceTitle || current.sourceTitle || '',
+          meaning: record.meaning || current.meaning || '',
+          example: record.example || current.example || '',
+          exampleMeaning: record.exampleMeaning || current.exampleMeaning || '',
+          updatedAt: record.updatedAt
+        }
+      });
+    } else {
+      await dbAdapter.collection(COLLECTION).add({ data: record });
+    }
+    count += 1;
+  }
+  return { saved: true, count };
+}
+
+async function getSettings(ctx) {
+  const result = await dbAdapter.collection(SETTINGS_COLLECTION)
+    .where({ familyId: ctx.family.familyId, childId: ctx.child.childId })
+    .limit(1)
+    .get();
+  const row = result && result.data && result.data[0];
+  return Object.assign({}, row || {}, normalizeSettings(row || DEFAULT_SETTINGS));
+}
+
+async function saveSettings(event) {
+  const payload = (event && event.payload) || {};
+  const { ctx } = await study.prepareRequestContext(Object.assign({}, event, { action: 'saveFlashcardSettings' }));
+  const settings = {
+    familyId: ctx.family.familyId,
+    childId: ctx.child.childId,
+    newLimit: normalizeLimit(payload.newLimit, DEFAULT_SETTINGS.newLimit),
+    reviewLimit: normalizeLimit(payload.reviewLimit, DEFAULT_SETTINGS.reviewLimit),
+    updatedAt: new Date().toISOString()
+  };
+  const result = await dbAdapter.collection(SETTINGS_COLLECTION)
+    .where({ familyId: settings.familyId, childId: settings.childId })
+    .limit(1)
+    .get();
+  const current = result && result.data && result.data[0];
+  if (current && current._id) {
+    await dbAdapter.collection(SETTINGS_COLLECTION).doc(current._id).update({ data: settings });
+  } else {
+    await dbAdapter.collection(SETTINGS_COLLECTION).add({ data: Object.assign({}, settings, { createdAt: settings.updatedAt }) });
+  }
+  return { settings };
+}
+
+function isDue(item, today) {
+  return item && item.status !== 'mastered' && (!item.nextReviewDate || item.nextReviewDate <= today);
+}
+
+async function getFlashcardReview(event) {
+  const { ctx, today } = await study.prepareRequestContext(Object.assign({}, event, { action: 'getFlashcardReview' }));
+  const settings = await getSettings(ctx);
+  const result = await dbAdapter.collection(COLLECTION)
+    .where({ familyId: ctx.family.familyId, childId: ctx.child.childId })
+    .orderBy('nextReviewDate', 'asc')
+    .limit(500)
+    .get();
+  const all = result && result.data ? result.data : [];
+  const due = all.filter((item) => isDue(item, today));
+  const reviewCards = due.filter((item) => item.status !== 'new').slice(0, settings.reviewLimit);
+  const newCards = due.filter((item) => item.status === 'new').slice(0, settings.newLimit);
+  const logsResult = await dbAdapter.collection(LOG_COLLECTION)
+    .where({ familyId: ctx.family.familyId, childId: ctx.child.childId })
+    .orderBy('createdAt', 'desc')
+    .limit(300)
+    .get();
+  const logs = logsResult && logsResult.data ? logsResult.data : [];
+  const reviewDays = Object.keys(logs.reduce((days, item) => {
+    if (item && item.date) {
+      days[item.date] = true;
+    }
+    return days;
+  }, {})).length;
+  return {
+    today,
+    settings,
+    library: all,
+    cards: reviewCards.concat(newCards),
+    dueCount: due.length,
+    newDueCount: due.filter((item) => item.status === 'new').length,
+    reviewDueCount: due.filter((item) => item.status !== 'new').length,
+    progress: {
+      total: all.length,
+      mastered: all.filter((item) => item.status === 'mastered').length,
+      reviewing: all.filter((item) => item.status === 'reviewing').length,
+      fresh: all.filter((item) => item.status === 'new').length,
+      reviewDays
+    },
+    logs: logs.slice(0, 10)
+  };
+}
+
+async function updateFlashcardReview(event) {
+  const payload = (event && event.payload) || {};
+  const { ctx, today } = await study.prepareRequestContext(Object.assign({}, event, { action: 'updateFlashcardReview' }));
+  const key = normalizeText(payload.flashcardKey);
+  const result = await dbAdapter.collection(COLLECTION)
+    .where({ familyId: ctx.family.familyId, childId: ctx.child.childId, flashcardKey: key })
+    .limit(1)
+    .get();
+  const current = result && result.data && result.data[0];
+  if (!current || !current._id) return { saved: false };
+  const remembered = payload.result !== 'unfamiliar';
+  const schedule = Array.isArray(current.reviewSchedule) && current.reviewSchedule.length
+    ? current.reviewSchedule
+    : makeSchedule(today);
+  const currentStep = Number(current.reviewStep || 0);
+  if (payload.result === 'easy') {
+    await dbAdapter.collection(COLLECTION).doc(current._id).update({
+      data: {
+        status: 'mastered',
+        familiarLevel: 'easy',
+        nextReviewDate: '',
+        updatedAt: new Date().toISOString()
+      }
+    });
+    await dbAdapter.collection(LOG_COLLECTION).add({
+      data: {
+        familyId: ctx.family.familyId,
+        childId: ctx.child.childId,
+        flashcardKey: key,
+        text: current.text || current.word || current.phrase || current.pattern || '',
+        type: current.type || 'word',
+        result: 'easy',
+        date: today,
+        createdAt: new Date().toISOString()
+      }
+    });
+    return { saved: true };
+  }
+  if (!remembered) {
+    await dbAdapter.collection(COLLECTION).doc(current._id).update({
+      data: {
+        status: 'reviewing',
+        familiarLevel: 'unfamiliar',
+        nextReviewDate: today,
+        updatedAt: new Date().toISOString()
+      }
+    });
+    await dbAdapter.collection(LOG_COLLECTION).add({
+      data: {
+        familyId: ctx.family.familyId,
+        childId: ctx.child.childId,
+        flashcardKey: key,
+        text: current.text || current.word || current.phrase || current.pattern || '',
+        type: current.type || 'word',
+        result: 'unfamiliar',
+        date: today,
+        createdAt: new Date().toISOString()
+      }
+    });
+    return { saved: true };
+  }
+  const nextSlot = schedule.find((slot) => Number(slot.step) > currentStep);
+  const nextData = nextSlot
+    ? { status: 'reviewing', familiarLevel: 'reviewing', reviewStep: Number(nextSlot.step), nextReviewDate: nextSlot.date }
+    : { status: 'mastered', familiarLevel: 'mastered', nextReviewDate: '' };
+  await dbAdapter.collection(COLLECTION).doc(current._id).update({
+    data: Object.assign({}, nextData, { updatedAt: new Date().toISOString() })
+  });
+  await dbAdapter.collection(LOG_COLLECTION).add({
+    data: {
+      familyId: ctx.family.familyId,
+      childId: ctx.child.childId,
+      flashcardKey: key,
+      text: current.text || current.word || current.phrase || current.pattern || '',
+      type: current.type || 'word',
+      result: 'remembered',
+      date: today,
+      createdAt: new Date().toISOString()
+    }
+  });
+  return { saved: true };
+}
+
+async function saveFlashcardAudio(event) {
+  const payload = (event && event.payload) || {};
+  const { ctx } = await study.prepareRequestContext(Object.assign({}, event, { action: 'saveFlashcardAudio' }));
+  const key = normalizeText(payload.flashcardKey);
+  const audioFileId = normalizeText(payload.audioFileId || payload.fileId);
+  const audioCloudPath = normalizeText(payload.audioCloudPath || payload.cloudPath);
+  if (!key || (!audioFileId && !audioCloudPath)) {
+    return { saved: false };
+  }
+  const result = await dbAdapter.collection(COLLECTION)
+    .where({ familyId: ctx.family.familyId, childId: ctx.child.childId, flashcardKey: key })
+    .limit(1)
+    .get();
+  const current = result && result.data && result.data[0];
+  if (!current || !current._id) return { saved: false };
+  await dbAdapter.collection(COLLECTION).doc(current._id).update({
+    data: {
+      audioFileId,
+      audioCloudPath,
+      updatedAt: new Date().toISOString()
+    }
+  });
+  return { saved: true };
+}
+
+async function addDictionaryWord(event) {
+  const payload = (event && event.payload) || {};
+  const { ctx, today } = await study.prepareRequestContext(Object.assign({}, event, { action: 'addDictionaryWord' }));
+  const word = normalizeText(payload.word || payload.text);
+  if (!word) return { saved: false };
+  const definitions = Array.isArray(payload.definitions) ? payload.definitions : [];
+  const record = makeFlashcard(ctx, today, {
+    sourceType: 'dictionary',
+    sourceId: word.toLowerCase(),
+    title: '项目词典'
+  }, 'word', {
+    word,
+    phonetic: payload.phonetic || '',
+    meaning: payload.meaning || definitions.join('；'),
+    example: payload.example || '',
+    exampleMeaning: payload.exampleMeaning || ''
+  });
+  const audioFileId = normalizeText(payload.audioFileId || payload.fileId);
+  const audioCloudPath = normalizeText(payload.audioCloudPath || payload.cloudPath);
+  const currentResult = await dbAdapter.collection(COLLECTION)
+    .where({ familyId: record.familyId, childId: record.childId, flashcardKey: record.flashcardKey })
+    .limit(1)
+    .get();
+  const current = currentResult && currentResult.data && currentResult.data[0];
+  const data = Object.assign({}, record, {
+    audioFileId,
+    audioCloudPath,
+    updatedAt: new Date().toISOString()
+  });
+  if (current && current._id) {
+    await dbAdapter.collection(COLLECTION).doc(current._id).update({
+      data: {
+        phonetic: data.phonetic || current.phonetic || '',
+        meaning: data.meaning || current.meaning || '',
+        audioFileId: data.audioFileId || current.audioFileId || '',
+        audioCloudPath: data.audioCloudPath || current.audioCloudPath || '',
+        updatedAt: data.updatedAt
+      }
+    });
+    return { saved: true, existed: true, flashcardKey: record.flashcardKey };
+  }
+  await dbAdapter.collection(COLLECTION).add({ data });
+  return { saved: true, existed: false, flashcardKey: record.flashcardKey };
+}
+
+module.exports = {
+  upsertStudyPackFlashcards,
+  getFlashcardReview,
+  updateFlashcardReview,
+  saveSettings,
+  saveFlashcardAudio,
+  addDictionaryWord
+};

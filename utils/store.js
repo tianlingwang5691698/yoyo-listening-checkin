@@ -335,10 +335,13 @@ async function getTaskTranscript(category, taskId, options, onRefresh) {
   }, { onRefresh });
 }
 
-async function getListeningStudyPack(item, onRefresh) {
+async function getListeningStudyPack(item, options, onRefresh) {
+  const opts = typeof options === 'function' ? {} : (options || {});
+  const refresh = typeof options === 'function' ? options : onRefresh;
   const payload = {
     listeningId: item && (item._id || item.id),
-    item
+    item,
+    cacheOnly: !!opts.cacheOnly
   };
   return callCloud('getListeningStudyPack', payload, {
     listeningId: payload.listeningId || '',
@@ -348,7 +351,35 @@ async function getListeningStudyPack(item, onRefresh) {
       sentencePatternCards: [],
       source: ''
     }
-  }, { onRefresh });
+  }, { onRefresh: refresh, useCache: opts.useCache !== false });
+}
+
+async function getFlashcardReview() {
+  return callCloud('getFlashcardReview', {}, {
+    today: '',
+    settings: { newLimit: 10, reviewLimit: 20 },
+    library: [],
+    cards: [],
+    progress: { total: 0, mastered: 0, reviewing: 0, fresh: 0 },
+    logs: [],
+    dueCount: 0,
+    newDueCount: 0,
+    reviewDueCount: 0
+  }, { useCache: false });
+}
+
+async function updateFlashcardReview(flashcardKey, result) {
+  return callCloud('updateFlashcardReview', { flashcardKey, result }, { saved: false }, { useCache: false });
+}
+
+async function saveFlashcardSettings(settings) {
+  return callCloud('saveFlashcardSettings', settings || {}, {
+    settings: Object.assign({ newLimit: 10, reviewLimit: 20 }, settings || {})
+  }, { useCache: false });
+}
+
+async function saveFlashcardAudio(options) {
+  return callCloud('saveFlashcardAudio', options || {}, { saved: false }, { useCache: false });
 }
 
 async function getTempFileURL(fileId) {
@@ -524,6 +555,10 @@ async function lookupWord(word) {
   }, { useCache: false });
 }
 
+async function addDictionaryWord(entry) {
+  return callCloud('addDictionaryWord', entry || {}, { saved: false }, { useCache: false });
+}
+
 async function submitReadingAttempt(options) {
   return callCloud('submitReadingAttempt', Object.assign({}, options || {}), {
     passage: null,
@@ -654,6 +689,10 @@ module.exports = {
   getTaskDetail,
   getTaskTranscript,
   getListeningStudyPack,
+  getFlashcardReview,
+  updateFlashcardReview,
+  saveFlashcardSettings,
+  saveFlashcardAudio,
   getTempFileURL,
   markTaskListened,
   createSpeakingUploadUrl,
@@ -668,6 +707,7 @@ module.exports = {
   getReadingStudyPack,
   synthesizeReadingAudio,
   lookupWord,
+  addDictionaryWord,
   submitReadingAttempt,
   submitWritingAttempt,
   getWritingAttempts,

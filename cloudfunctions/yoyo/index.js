@@ -357,6 +357,7 @@ const listeningService = require('./services/listening.service');
 const grammarService = require('./services/grammar.service');
 const completionService = require('./services/completion.service');
 const writingService = require('./services/writing.service');
+const flashcardService = require('./services/flashcard.service');
 const monitor = require('./lib/monitor');
 
 if (!taskService.__autoCheckinAfterListeningPatch) {
@@ -416,6 +417,11 @@ const actionMap = {
   getReadingPassage: readingService.getReadingPassage,
   getReadingStudyPack: readingService.getReadingStudyPack,
   getListeningStudyPack: listeningService.getListeningStudyPack,
+  getFlashcardReview: flashcardService.getFlashcardReview,
+  updateFlashcardReview: flashcardService.updateFlashcardReview,
+  saveFlashcardSettings: flashcardService.saveSettings,
+  saveFlashcardAudio: flashcardService.saveFlashcardAudio,
+  addDictionaryWord: flashcardService.addDictionaryWord,
   synthesizeReadingAudio: readingService.synthesizeReadingAudio,
   lookupWord: readingService.lookupWord,
   submitReadingAttempt: readingService.submitReadingAttempt,
@@ -455,6 +461,11 @@ const MONITORED_ACTIONS = new Set([
   'getReadingPassage',
   'getReadingStudyPack',
   'getListeningStudyPack',
+  'getFlashcardReview',
+  'updateFlashcardReview',
+  'saveFlashcardSettings',
+  'saveFlashcardAudio',
+  'addDictionaryWord',
   'synthesizeReadingAudio',
   'lookupWord',
   'submitReadingAttempt',

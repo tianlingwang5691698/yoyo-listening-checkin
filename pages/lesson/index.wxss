@@ -80,6 +80,39 @@
   margin-top: 24rpx;
 }
 
+.lesson-study-card {
+  overflow: hidden;
+}
+
+.lesson-study-card .transcript-header {
+  gap: 18rpx;
+}
+
+.lesson-study-card .transcript-header > view {
+  min-width: 0;
+  flex: 1;
+}
+
+.lesson-study-card .transcript-pill {
+  width: 220rpx;
+  min-width: 220rpx;
+  min-height: 64rpx;
+  margin: 0;
+  padding: 0 24rpx;
+  border-radius: 999rpx;
+  background: var(--accent-soft);
+  color: var(--accent-deep);
+  font-size: var(--font-body-size);
+  font-weight: var(--font-title-weight);
+  line-height: 64rpx;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.lesson-study-card .transcript-pill::after {
+  border: none;
+}
+
 .study-error,
 .lesson-study-done {
   margin-top: 14rpx;
@@ -88,18 +121,31 @@
 }
 
 .lesson-study-tabs {
-  margin-top: 18rpx;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 20rpx;
+  padding: 0 10rpx;
+  display: flex;
   gap: 12rpx;
+  box-sizing: border-box;
 }
 
 .lesson-study-tab {
-  min-height: 60rpx;
+  flex: 1;
+  min-width: 0;
+  min-height: 64rpx;
+  margin: 0;
+  padding: 0;
   border-radius: 999rpx;
   background: var(--control-muted-bg);
   color: var(--text-main);
   font-size: var(--font-caption-size);
+  line-height: 64rpx;
+  text-align: center;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.lesson-study-tab::after {
+  border: none;
 }
 
 .lesson-study-tab.is-active {
@@ -108,14 +154,15 @@
 }
 
 .lesson-study-list {
-  margin-top: 16rpx;
+  margin-top: 18rpx;
 }
 
 .lesson-study-item {
-  margin-top: 12rpx;
-  padding: 18rpx;
-  border-radius: 18rpx;
+  margin-top: 14rpx;
+  padding: 22rpx;
+  border-radius: 20rpx;
   background: var(--surface-subtle);
+  box-sizing: border-box;
 }
 
 .lesson-study-title {
@@ -127,19 +174,25 @@
 
 .lesson-study-meaning,
 .lesson-study-example {
-  margin-top: 8rpx;
+  margin-top: 10rpx;
   color: var(--text-muted);
   font-size: var(--font-caption-size);
   line-height: 1.5;
+  word-break: break-word;
 }
 
 .lesson-study-complete {
-  margin-top: 18rpx;
+  width: 520rpx;
+  max-width: 100%;
+  margin: 22rpx auto 0;
   min-height: 72rpx;
+  padding: 0 28rpx;
   border-radius: 999rpx;
   background: var(--accent);
   color: var(--accent-contrast);
   font-size: var(--font-body-size);
+  line-height: 72rpx;
+  box-sizing: border-box;
 }
 
 .lesson-study-done {

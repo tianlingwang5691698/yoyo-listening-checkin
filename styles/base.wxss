@@ -18,13 +18,13 @@ button::after {
 
 .page-shell {
   min-height: 100vh;
-  padding: 28rpx var(--space-page-x) 40rpx;
+  padding: 28rpx var(--space-page-x) 48rpx;
   background: var(--bg-cream);
 }
 
 .page-container {
   min-height: 100vh;
-  padding: 28rpx var(--space-page-x) 40rpx;
+  padding: 28rpx var(--space-page-x) 48rpx;
   background: var(--bg-cream);
 }
 
@@ -59,12 +59,14 @@ button::after {
 .card {
   border-radius: var(--radius-xl);
   background: var(--surface);
+  border: 1rpx solid var(--border-soft);
   box-shadow: var(--shadow-card);
 }
 
 .card-main {
   border-radius: var(--radius-xl);
   background: var(--surface);
+  border: 1rpx solid var(--border-soft);
   box-shadow: var(--shadow-card);
 }
 
@@ -171,7 +173,7 @@ button::after {
   color: var(--text-muted);
   font-family: var(--font-title-family);
   font-size: var(--font-caption-size);
-  font-weight: var(--font-badge-weight);
+  font-weight: var(--font-title-weight);
 }
 
 .status-badge.is-muted {
@@ -217,6 +219,7 @@ button::after {
   font-size: var(--font-brand-size);
   line-height: var(--line-title);
   font-weight: var(--font-brand-weight);
+  letter-spacing: 0;
 }
 
 .type-page-title {
@@ -225,6 +228,7 @@ button::after {
   font-size: var(--font-page-title-size);
   line-height: var(--line-title);
   font-weight: var(--font-title-weight);
+  letter-spacing: 0;
 }
 
 .type-card-title {
@@ -233,6 +237,7 @@ button::after {
   font-size: var(--font-card-title-size);
   line-height: var(--line-title);
   font-weight: var(--font-title-weight);
+  letter-spacing: 0;
 }
 
 .type-section-title {

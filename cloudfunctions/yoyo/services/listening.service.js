@@ -1,4 +1,6 @@
 const dbAdapter = require('../adapters/db.adapter');
+const study = require('../facades/study.facade');
+const flashcards = require('./flashcard.service');
 const https = require('https');
 
 const STUDY_PACK_COLLECTION = 'listeningStudyPacks';
@@ -194,16 +196,37 @@ async function getListeningStudyPack(event) {
   const listeningId = normalizeText(payload.listeningId || item._id || item.id);
   const transcript = normalizeText(payload.transcript || item.transcript);
   if (!listeningId) throw new Error('listening-id-empty');
-  if (!transcript) throw new Error('listening-transcript-empty');
+  const { ctx, today } = await study.prepareRequestContext(Object.assign({}, event, { action: 'getListeningStudyPack' }));
+  async function syncFlashcards(studyPack) {
+    try {
+      await flashcards.upsertStudyPackFlashcards(ctx, today, {
+        sourceType: 'listening',
+        sourceId: listeningId,
+        title: item.title || payload.title || ''
+      }, studyPack);
+    } catch (error) {
+      // Vocabulary sync should not block the lesson.
+    }
+  }
   const cached = await getCachedStudyPack(listeningId);
   if (cached) {
+    const studyPack = normalizeStudyPack(cached);
+    await syncFlashcards(studyPack);
     return {
       listeningId,
-      studyPack: normalizeStudyPack(cached)
+      studyPack
     };
   }
+  if (payload.cacheOnly) {
+    return {
+      listeningId,
+      studyPack: null
+    };
+  }
+  if (!transcript) throw new Error('listening-transcript-empty');
   const studyPack = await buildStudyPackWithModel(Object.assign({}, item, { transcript }));
   await saveStudyPack(listeningId, item.title || payload.title || '', studyPack);
+  await syncFlashcards(studyPack);
   return {
     listeningId,
     studyPack

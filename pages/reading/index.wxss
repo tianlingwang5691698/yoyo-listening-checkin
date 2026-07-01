@@ -3,7 +3,7 @@
 }
 
 .reading-hero {
-  padding: 34rpx 32rpx;
+  padding: 38rpx 34rpx;
   background: var(--surface-raised);
 }
 
@@ -14,10 +14,10 @@
 }
 
 .reading-title {
-  margin-top: 10rpx;
+  margin-top: 12rpx;
   color: var(--text-strong);
   font-size: var(--font-page-title-size);
-  line-height: 1.2;
+  line-height: var(--line-title);
   font-weight: var(--font-title-weight);
 }
 
@@ -26,11 +26,12 @@
   color: var(--text-muted);
   font-size: var(--font-body-size);
   line-height: var(--line-body);
+  max-width: 560rpx;
 }
 
 .reading-card {
-  margin-top: 24rpx;
-  padding: 30rpx 28rpx;
+  margin-top: 26rpx;
+  padding: 32rpx 28rpx;
 }
 
 .reading-card-top {
@@ -45,6 +46,7 @@
   color: var(--accent-deep);
   font-size: var(--font-caption-size);
   font-weight: var(--font-title-weight);
+  line-height: var(--line-caption);
 }
 
 .reading-card-title {
@@ -63,25 +65,26 @@
 }
 
 .task-list {
-  margin-top: 18rpx;
+  margin-top: 22rpx;
   display: flex;
   flex-direction: column;
-  gap: 14rpx;
+  gap: 16rpx;
 }
 
 .task-row {
-  min-height: 104rpx;
-  padding: 18rpx;
+  min-height: 112rpx;
+  padding: 22rpx;
+  border: 1rpx solid var(--border-soft);
   border-radius: var(--radius-lg);
-  background: var(--surface-subtle);
+  background: linear-gradient(180deg, var(--surface), var(--surface-subtle));
   display: flex;
   align-items: center;
   gap: 18rpx;
 }
 
 .task-index {
-  width: 48rpx;
-  height: 48rpx;
+  width: 52rpx;
+  height: 52rpx;
   border-radius: 50%;
   background: var(--accent-soft);
   color: var(--accent-deep);
@@ -99,9 +102,9 @@
 
 .task-title {
   color: var(--text-strong);
-  font-size: var(--font-body-size);
+  font-size: var(--font-section-title-size);
   font-weight: var(--font-title-weight);
-  line-height: 1.35;
+  line-height: var(--line-section);
 }
 
 .task-meta {
@@ -138,17 +141,18 @@
 }
 
 .directory-list {
-  margin-top: 18rpx;
+  margin-top: 22rpx;
   display: flex;
   flex-direction: column;
-  gap: 14rpx;
+  gap: 16rpx;
 }
 
 .directory-row {
-  min-height: 112rpx;
-  padding: 20rpx 22rpx;
+  min-height: 116rpx;
+  padding: 24rpx;
+  border: 1rpx solid var(--border-soft);
   border-radius: var(--radius-lg);
-  background: var(--surface-subtle);
+  background: linear-gradient(180deg, var(--surface), var(--surface-subtle));
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -172,7 +176,7 @@
 .directory-arrow {
   flex-shrink: 0;
   color: var(--accent-deep);
-  font-size: 44rpx;
+  font-size: 38rpx;
   line-height: 1;
 }
 

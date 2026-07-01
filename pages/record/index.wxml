@@ -133,10 +133,20 @@
           <view class="writing-score">{{item.scoreText}}</view>
         </view>
         <view class="writing-detail" wx:if="{{item.expanded}}">
-          <view class="writing-detail-title">作文原文</view>
+          <view class="writing-detail-title" wx:if="{{item.promptText}}">作文题目</view>
+          <view class="writing-text" wx:if="{{item.promptText}}">{{item.promptText}}</view>
+          <view class="writing-detail-title">学生作文</view>
           <view class="writing-text">{{item.essay}}</view>
           <view class="writing-detail-title" wx:if="{{item.review.summary}}">批改点评</view>
           <view class="writing-text" wx:if="{{item.review.summary}}">{{item.review.summary}}</view>
+          <view class="writing-detail-title" wx:if="{{item.review.content}}">内容</view>
+          <view class="writing-text" wx:if="{{item.review.content}}">{{item.review.content}}</view>
+          <view class="writing-detail-title" wx:if="{{item.review.language}}">语言</view>
+          <view class="writing-text" wx:if="{{item.review.language}}">{{item.review.language}}</view>
+          <view class="writing-detail-title" wx:if="{{item.review.structure}}">结构</view>
+          <view class="writing-text" wx:if="{{item.review.structure}}">{{item.review.structure}}</view>
+          <view class="writing-detail-title" wx:if="{{item.review.spelling}}">拼写</view>
+          <view class="writing-text" wx:if="{{item.review.spelling}}">{{item.review.spelling}}</view>
           <block wx:if="{{item.review.problems && item.review.problems.length}}">
             <view class="writing-detail-title">主要问题</view>
             <view class="writing-text" wx:for="{{item.review.problems}}" wx:key="*this" wx:for-item="problem">· {{problem}}</view>

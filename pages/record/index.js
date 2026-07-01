@@ -238,12 +238,36 @@ function buildRecentDayItem(report) {
 function buildWritingAttemptItem(item, index) {
   const attempt = item || {};
   const createdAt = attempt.createdAt || '';
+  const prompt = attempt.prompt || null;
   return Object.assign({}, attempt, {
     key: attempt.attemptId || `${attempt.promptId || 'writing'}-${createdAt || index}`,
+    prompt,
+    promptText: attempt.promptText || attempt.promptTitle || (prompt && prompt.prompt) || '',
     dateLabel: attempt.date ? formatDateLabel(attempt.date) : '',
     timeText: formatClock(createdAt),
     scoreText: `${Number(attempt.score || 0)} / ${Number(attempt.totalScore || 20)} 分`,
     expanded: false
+  });
+}
+
+function buildWritingPromptIndex(materialIndex) {
+  const all = [].concat((materialIndex || {}).writingEm2 || [], (materialIndex || {}).writingEm1 || []);
+  return all.reduce((map, prompt) => {
+    if (prompt && prompt._id) {
+      map[prompt._id] = prompt;
+    }
+    return map;
+  }, {});
+}
+
+function attachWritingPrompts(items, promptIndex) {
+  const byId = promptIndex || {};
+  return (items || []).map((item) => {
+    const prompt = item.prompt || byId[item.promptId] || null;
+    return Object.assign({}, item, {
+      prompt,
+      promptText: item.promptText || (prompt && prompt.prompt) || ''
+    });
   });
 }
 
@@ -279,7 +303,8 @@ Page({
     catchupState: contracts.createCatchupStateDefaults(),
     catchupTasks: [],
     writingAttempts: [],
-    writingAttemptsLoading: false
+    writingAttemptsLoading: false,
+    writingPromptIndex: null
   }),
   async onShow() {
     page.syncTheme(this);
@@ -446,12 +471,19 @@ Page({
     try {
       const applyData = (data) => {
         this.setData({
-          writingAttempts: (data.attempts || []).map(buildWritingAttemptItem),
+          writingAttempts: attachWritingPrompts((data.attempts || []).map(buildWritingAttemptItem), this.data.writingPromptIndex),
           writingAttemptsLoading: false
         });
       };
+      const materialIndexPromise = store.getMaterialIndex();
       const data = await store.getWritingAttempts({ limit: 20 }, applyData);
       applyData(data);
+      const materialIndex = await materialIndexPromise;
+      const writingPromptIndex = buildWritingPromptIndex(materialIndex);
+      this.setData({
+        writingPromptIndex,
+        writingAttempts: attachWritingPrompts(this.data.writingAttempts, writingPromptIndex)
+      });
     } catch (error) {
       this.setData({ writingAttemptsLoading: false });
     }

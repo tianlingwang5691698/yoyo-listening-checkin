@@ -213,11 +213,14 @@ function isAlpha(ch) {
 function pushTermRanges(source, terms, tone, wordBoundary, ranges) {
   const lower = source.toLowerCase();
   (terms || []).forEach((term) => {
-    const needle = String((term && term.text) || term || '').trim().toLowerCase();
+    let needle = String((term && term.text) || term || '').trim().toLowerCase();
+    if (tone === 'phrase') {
+      needle = needle.replace(/[.!?。！？]+$/g, '').trim();
+    }
     if (wordBoundary && /\s/.test(needle)) {
       return;
     }
-    if (tone === 'phrase' && (needle.length > 80 || /[.!?。！？]$/.test(needle))) {
+    if (tone === 'phrase' && needle.length > 120) {
       return;
     }
     if (needle.length < (wordBoundary ? 2 : 4)) {
@@ -371,7 +374,7 @@ function buildPassageSegments(text, review, mode) {
     pushTermRanges(source, termEntries(review.answerSentences, ['text', 'sentence'], { answer: true }), 'answer', false, ranges);
   }
   if (review && (activeMode === 'phrase' || activeMode === 'all')) {
-    pushTermRanges(source, termEntries([].concat(review.phraseCards || [], review.phrases || []), ['text', 'phrase']), 'phrase', false, ranges);
+    pushTermRanges(source, termEntries([].concat(review.phraseCards || [], review.phrases || []), ['text', 'phrase', 'example']), 'phrase', false, ranges);
   }
   if (review && (activeMode === 'pattern' || activeMode === 'all')) {
     pushTermRanges(source, termEntries(review.sentencePatternCards || [], ['example', 'pattern', 'text']), 'pattern', false, ranges);
@@ -1119,17 +1122,47 @@ Page({
   closeDictionary() {
     this.setData({ dictionaryVisible: false, dictionaryLoading: false });
   },
+  async addDictionaryWordToLibrary() {
+    const entry = this.data.dictionaryEntry || {};
+    const word = entry.word || this.data.dictionaryWord || '';
+    if (!word || this.data.dictionaryAdding) return;
+    this.setData({ dictionaryAdding: true });
+    try {
+      await store.addDictionaryWord(Object.assign({}, entry, { word }));
+      wx.showToast({ title: '已加入词库', icon: 'none' });
+    } catch (error) {
+      wx.showToast({ title: '加入失败', icon: 'none' });
+    } finally {
+      this.setData({ dictionaryAdding: false });
+    }
+  },
   playDictionaryWord() {
     const entry = this.data.dictionaryEntry || {};
     const word = entry.word || this.data.dictionaryWord || '';
-    if (entry.audioUrl) {
+    const playUrl = (url) => {
       if (!this.readingAudioContext) {
         this.readingAudioContext = wx.createInnerAudioContext();
         this.readingAudioContext.obeyMuteSwitch = false;
       }
       this.readingAudioContext.stop();
-      this.readingAudioContext.src = entry.audioUrl;
+      this.readingAudioContext.src = url;
       this.readingAudioContext.play();
+    };
+    if (entry.audioUrl) {
+      playUrl(entry.audioUrl);
+      return;
+    }
+    if (entry.audioFileId) {
+      store.getTempFileURL(entry.audioFileId).then((url) => {
+        if (url) {
+          this.setData({ dictionaryEntry: Object.assign({}, entry, { audioUrl: url }) });
+          playUrl(url);
+          return;
+        }
+        this.speakWord({ currentTarget: { dataset: { word } } });
+      }).catch(() => {
+        this.speakWord({ currentTarget: { dataset: { word } } });
+      });
       return;
     }
     this.speakWord({ currentTarget: { dataset: { word } } });

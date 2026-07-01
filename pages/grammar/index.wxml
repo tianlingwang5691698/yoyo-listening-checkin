@@ -83,10 +83,17 @@
     <view class="question-list">
       <view class="question-row" wx:for="{{selectedQuestions}}" wx:key="_id">
         <view class="question-meta">第 {{item.sequenceNumber}} 题 · {{item.year}} · {{item.district}} · 原卷第 {{item.number}} 题</view>
-        <view class="question-prompt">{{item.prompt}}</view>
+        <view class="question-prompt" wx:if="{{!item.isAnswered}}">{{item.prompt}}</view>
+        <view class="question-prompt token-line" wx:else>
+          <text wx:for="{{item.promptTokens}}" wx:key="id" class="{{item.word ? 'lookup-token' : ''}}" data-word="{{item.word}}" catchtap="openDictionaryWord">{{item.text}}</text>
+        </view>
         <view class="option-grid">
           <view class="option-item {{option.selected ? 'is-selected' : ''}} {{option.correct ? 'is-correct' : ''}} {{option.wrong ? 'is-wrong' : ''}}" wx:for="{{item.optionsList}}" wx:for-item="option" wx:key="key" data-question-id="{{item._id}}" data-option="{{option.key}}" bindtap="selectOption">
-            {{option.key}}. {{option.text}}
+            <text>{{option.key}}. </text>
+            <block wx:if="{{!item.isAnswered}}">{{option.text}}</block>
+            <block wx:else>
+              <text wx:for="{{option.tokens}}" wx:key="id" class="{{item.word ? 'lookup-token' : ''}}" data-word="{{item.word}}" catchtap="openDictionaryWord">{{item.text}}</text>
+            </block>
           </view>
         </view>
         <view class="answer-line" wx:if="{{item.isAnswered}}">
@@ -110,5 +117,21 @@
         </view>
       </view>
     </view>
+  </view>
+  <view class="dictionary-mask" wx:if="{{dictionaryVisible}}" catchtap="closeDictionary"></view>
+  <view class="dictionary-sheet" wx:if="{{dictionaryVisible}}">
+    <view class="dictionary-head">
+      <view>
+        <view class="dictionary-word">{{dictionaryEntry.word || dictionaryWord}}</view>
+        <view class="dictionary-phonetic" wx:if="{{dictionaryEntry.phonetic}}">/{{dictionaryEntry.phonetic}}/</view>
+      </view>
+      <button class="dictionary-audio" loading="{{dictionaryLoading}}" bindtap="playDictionaryWord">发音</button>
+    </view>
+    <button class="dictionary-add" loading="{{dictionaryAdding}}" bindtap="addDictionaryWordToLibrary">加入词库</button>
+    <view class="dictionary-loading" wx:if="{{dictionaryLoading}}">查词中。</view>
+    <block wx:else>
+      <view class="dictionary-definition" wx:for="{{dictionaryEntry.definitions}}" wx:key="*this">· {{item}}</view>
+      <view class="dictionary-empty" wx:if="{{!dictionaryEntry.definitions || !dictionaryEntry.definitions.length}}">暂无释义。</view>
+    </block>
   </view>
 </view>

@@ -1,6 +1,7 @@
 const study = require('../facades/study.facade');
 const dbAdapter = require('../adapters/db.adapter');
 const storageAdapter = require('../adapters/storage.adapter');
+const flashcards = require('./flashcard.service');
 const samplePassages = require('../data/reading-passages.sample.json');
 const speakingEngine = require('../lib/speaking-engine');
 const crypto = require('crypto');
@@ -286,8 +287,18 @@ function isSingleWord(text) {
   return /^[A-Za-z][A-Za-z'-]{0,40}$/.test(String(text || '').trim());
 }
 
+function canUseDictionaryVoice(text) {
+  const value = normalizeText(text);
+  if (isSingleWord(value)) return true;
+  if (value.length > 60 || /[.!?;:]/.test(value)) return false;
+  const words = value.split(' ').filter(Boolean);
+  return words.length >= 2
+    && words.length <= 6
+    && words.every((word) => /^[A-Za-z][A-Za-z'-]{0,30}$/.test(word));
+}
+
 async function synthesizeWordAudioFast(text, cloudPath) {
-  if (!isSingleWord(text)) {
+  if (!canUseDictionaryVoice(text)) {
     return null;
   }
   const encoded = encodeURIComponent(text);
@@ -350,6 +361,39 @@ async function findDictionaryEntry(wordLower) {
     return result && result.data && result.data[0] ? result.data[0] : null;
   } catch (error) {
     return null;
+  }
+}
+
+async function ensureDictionaryAudio(wordLower, cached) {
+  const hash = crypto.createHash('sha1').update(wordLower).digest('hex').slice(0, 20);
+  const audioCloudPath = (cached && cached.audioCloudPath) || `_dictionary_audio/words/${hash}.mp3`;
+  const debug = {
+    source: 'youdao',
+    cloudPath: audioCloudPath,
+    uploaded: false,
+    hasUrl: false,
+    error: ''
+  };
+  try {
+    const audioFile = await synthesizeWordAudioFast(wordLower, audioCloudPath);
+    const audioFileId = audioFile && audioFile.fileId ? audioFile.fileId : '';
+    const audioUrl = audioFileId ? await storageAdapter.getTempFileURL(audioFileId, audioCloudPath) : '';
+    debug.uploaded = !!audioFileId;
+    debug.hasUrl = !!audioUrl;
+    return {
+      audioFileId,
+      audioCloudPath,
+      audioUrl,
+      audioDebug: debug
+    };
+  } catch (error) {
+    debug.error = error && error.message ? error.message : String(error || '');
+    return {
+      audioFileId: '',
+      audioCloudPath,
+      audioUrl: '',
+      audioDebug: debug
+    };
   }
 }
 
@@ -523,6 +567,17 @@ function formatPhraseItem(item) {
   };
 }
 
+function includesNormalizedText(source, needle) {
+  const sourceText = normalizeText(source).toLowerCase();
+  const needleText = normalizeText(needle).toLowerCase();
+  return !!needleText && sourceText.indexOf(needleText) >= 0;
+}
+
+function isPhraseLocatable(passage, item) {
+  return includesNormalizedText(passage && passage.passage, item && item.text)
+    || includesNormalizedText(passage && passage.passage, item && item.example);
+}
+
 function formatVocabularyCard(item) {
   if (!item) {
     return null;
@@ -671,14 +726,14 @@ function validateQuestionStudyPack(studyPack, passage) {
   });
 }
 
-function validateLearningStudyPack(studyPack, section) {
+function validateLearningStudyPack(studyPack, section, passage) {
   if (!isModelStudyPack(studyPack)) {
     throw new Error('reading-study-pack-not-model');
   }
   if ((section === 'vocabulary' || section === 'cards') && (!(studyPack.vocabularyCards || []).length || studyPack.vocabularyCards.some((item) => !item.word || !item.meaning))) {
     throw new Error('reading-study-pack-missing-vocabulary');
   }
-  if ((section === 'phrases' || section === 'cards') && (!(studyPack.phraseCards || []).length || studyPack.phraseCards.some((item) => !item.text || !item.meaning))) {
+  if ((section === 'phrases' || section === 'cards') && (!(studyPack.phraseCards || []).length || studyPack.phraseCards.some((item) => !item.text || !item.meaning || !isPhraseLocatable(passage, item)))) {
     throw new Error('reading-study-pack-missing-phrases');
   }
   if ((section === 'patterns' || section === 'cards') && (!(studyPack.sentencePatternCards || []).length || studyPack.sentencePatternCards.some((item) => !item.pattern || !item.meaning || !item.example || !item.exampleMeaning))) {
@@ -796,7 +851,7 @@ async function buildLearningPackWithModel(passage, section) {
     ],
     phrases: [
       '只生成短语卡。',
-      '短语必须选择原文中值得掌握的固定搭配或阅读高频表达。',
+      '短语 text 必须逐字摘自原文，不能改写成泛化表达；example 必须包含该 text。',
       'JSON 格式：{"phraseCards":[{"text":"","meaning":"","example":""}]}'
     ],
     patterns: [
@@ -807,7 +862,7 @@ async function buildLearningPackWithModel(passage, section) {
     cards: [
       '只生成生词卡、短语卡、句型卡，不生成全文翻译。',
       '生词必须选择初高中阶段重要、学生可能不熟、且在本文中有学习价值的词；例句必须来自原文或贴近原文。',
-      '短语必须选择原文中值得掌握的固定搭配或阅读高频表达。',
+      '短语 text 必须逐字摘自原文，不能改写成泛化表达；example 必须包含该 text。',
       '句型卡 meaning 必须是中文解释，example 必须是原文或贴近原文例句，exampleMeaning 必须是例句中文翻译。',
       'JSON 格式：{"vocabularyCards":[{"word":"","phonetic":"","meaning":"","example":"","exampleMeaning":""}],"phraseCards":[{"text":"","meaning":"","example":""}],"sentencePatternCards":[{"pattern":"","meaning":"","example":"","exampleMeaning":""}]}'
     ]
@@ -830,7 +885,7 @@ async function buildLearningPackWithModel(passage, section) {
     const studyPack = normalizeStudyPack(Object.assign({}, parseJsonText(extractMessageText(response)) || {}, {
       source: `model:${model}`
     }), passage);
-    validateLearningStudyPack(studyPack, target);
+    validateLearningStudyPack(studyPack, target, passage);
     return studyPack;
   }
   try {
@@ -1266,15 +1321,26 @@ async function getReadingStudyPack(event) {
   const section = String(payload.section || 'cards');
   const cached = await getCachedStudyPack(passage);
   if (cached && hasStudyPackSection(cached, section, passage)) {
+    const studyPack = normalizeStudyPack(cached, passage);
+    await flashcards.upsertStudyPackFlashcards(ctx, today, {
+      sourceType: 'reading',
+      sourceId: passage._id,
+      title: passage.title || ''
+    }, studyPack);
     return {
       passageId: passage._id,
       section,
-      studyPack: normalizeStudyPack(cached, passage)
+      studyPack
     };
   }
   const generatedPack = await buildLearningPackWithModel(passage, section);
   const studyPack = mergeStudyPacks(cached, generatedPack, passage);
   await saveStudyPack(passage, studyPack);
+  await flashcards.upsertStudyPackFlashcards(ctx, today, {
+    sourceType: 'reading',
+    sourceId: passage._id,
+    title: passage.title || ''
+  }, studyPack);
   return {
     passageId: passage._id,
     section,
@@ -1293,6 +1359,11 @@ async function submitReadingAttempt(event) {
   }
   const grade = gradeAnswers(passage, payload.answers || {});
   const studyPack = await getOrCreateStudyPack(passage);
+  await flashcards.upsertStudyPackFlashcards(ctx, today, {
+    sourceType: 'reading',
+    sourceId: passage._id,
+    title: passage.title || ''
+  }, studyPack);
   const review = keepQuestionReviewOnly(buildReview(passage, grade, studyPack));
   const attempt = {
     passageId: passage._id,
@@ -1414,7 +1485,29 @@ async function lookupWord(event) {
     if (!audioUrl && (cached.audioFileId || cached.audioCloudPath)) {
       audioUrl = await storageAdapter.getTempFileURL(cached.audioFileId, cached.audioCloudPath);
     }
-    return Object.assign({}, cached, {
+    let audioPatch = null;
+    if (!audioUrl) {
+      audioPatch = await ensureDictionaryAudio(wordLower, cached);
+      audioUrl = audioPatch.audioUrl || '';
+      if (cached._id && audioPatch.audioFileId) {
+        try {
+          await dbAdapter.collection(WORD_DICTIONARY_COLLECTION).doc(cached._id).update({
+            data: {
+              audioFileId: audioPatch.audioFileId,
+              audioCloudPath: audioPatch.audioCloudPath,
+              updatedAt: new Date().toISOString()
+            }
+          });
+        } catch (error) {
+          // Lookup result can still be used even if cache update fails.
+        }
+      }
+    }
+    return Object.assign({}, cached, audioPatch ? {
+      audioFileId: audioPatch.audioFileId || cached.audioFileId || '',
+      audioCloudPath: audioPatch.audioCloudPath || cached.audioCloudPath || '',
+      audioDebug: audioPatch.audioDebug
+    } : {}, {
       word: cached.word || wordLower,
       wordLower,
       definitions: Array.isArray(cached.definitions) ? cached.definitions : [],
@@ -1425,16 +1518,10 @@ async function lookupWord(event) {
 
   const data = await fetchJson(`https://dict.youdao.com/jsonapi?q=${encodeURIComponent(wordLower)}`, 5000);
   const entry = parseYoudaoWord(data, wordLower);
-  const hash = crypto.createHash('sha1').update(wordLower).digest('hex').slice(0, 20);
-  const audioCloudPath = `_dictionary_audio/words/${hash}.mp3`;
-  let audioFile = null;
-  try {
-    audioFile = await synthesizeWordAudioFast(wordLower, audioCloudPath);
-  } catch (error) {
-    audioFile = null;
-  }
-  const audioFileId = audioFile && audioFile.fileId ? audioFile.fileId : '';
-  const audioUrl = audioFileId ? await storageAdapter.getTempFileURL(audioFileId, audioCloudPath) : '';
+  const audioPatch = await ensureDictionaryAudio(wordLower);
+  const audioFileId = audioPatch.audioFileId || '';
+  const audioCloudPath = audioPatch.audioCloudPath || '';
+  const audioUrl = audioPatch.audioUrl || '';
   const saved = Object.assign({}, entry, {
     audioFileId,
     audioCloudPath,
@@ -1448,6 +1535,7 @@ async function lookupWord(event) {
   }
   return Object.assign({}, saved, {
     audioUrl,
+    audioDebug: audioPatch.audioDebug,
     cached: false
   });
 }

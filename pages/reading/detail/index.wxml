@@ -9,20 +9,39 @@
       <view class="passage-meta">{{passage.year}} · {{passage.district}} · {{passage.examType}} · {{passage.sectionDisplay}} · {{passage.difficultyDisplay}}</view>
       <view class="passage-title">{{passage.title}}</view>
       <view class="highlight-actions" wx:if="{{submitted && review}}">
-        <button class="highlight-button {{activeHighlight === item.key ? 'is-active' : ''}} {{loadingStudySection ? 'is-loading' : ''}}" wx:for="{{highlightButtons}}" wx:key="key" data-mode="{{item.key}}" bindtap="selectHighlight">
+        <view class="highlight-button {{activeHighlight === item.key ? 'is-active' : ''}} {{loadingStudySection ? 'is-loading' : ''}}" wx:for="{{highlightButtons}}" wx:key="key" data-mode="{{item.key}}" bindtap="selectHighlight">
           <text>{{item.label}}</text>
           <text class="button-dot" wx:if="{{activeHighlight === item.key}}"></text>
-        </button>
+        </view>
       </view>
-      <view class="cloze-passage-text" wx:if="{{passage.isClozePassage}}">
-        <block wx:for="{{passage.clozePassageParts}}" wx:key="index">
-          <text wx:if="{{item.type === 'text'}}">{{item.text}}</text>
-          <view wx:else class="cloze-inline">
-            <text class="cloze-inline-initial" wx:if="{{item.initial}}">{{item.initial}}</text>
-            <input class="cloze-inline-input {{item.isCorrect === true ? 'is-correct' : ''}} {{item.isCorrect === false ? 'is-wrong' : ''}}" value="{{item.inputValue}}" disabled="{{submitted}}" data-number="{{item.number}}" bindinput="inputAnswer" placeholder="{{item.number}}" />
+      <block wx:if="{{passage.isClozePassage}}">
+        <view class="cloze-passage-text" wx:if="{{!submitted}}">
+          <block wx:for="{{passage.clozePassageParts}}" wx:key="index">
+            <text wx:if="{{item.type === 'text'}}">{{item.text}}</text>
+            <view wx:else class="cloze-inline">
+              <text class="cloze-inline-initial" wx:if="{{item.initial}}">{{item.initial}}</text>
+              <input class="cloze-inline-input {{item.isCorrect === true ? 'is-correct' : ''}} {{item.isCorrect === false ? 'is-wrong' : ''}}" value="{{item.inputValue}}" disabled="{{submitted}}" data-number="{{item.number}}" bindinput="inputAnswer" placeholder="{{item.number}}" />
+            </view>
+          </block>
+        </view>
+        <view class="passage-text cloze-highlight-text" wx:else>
+          <view wx:for="{{passageSegments}}" wx:key="index" class="passage-segment segment-{{item.tone}}" data-start="{{item.start}}" data-end="{{item.end}}" bindtap="translatePassageSentence">
+            <block wx:if="{{item.chunks && item.chunks.length}}">
+              <text wx:for="{{item.chunks}}" wx:key="index" wx:for-item="chunk" class="{{chunk.className}}">
+                <text wx:for="{{chunk.tokens}}" wx:key="index" wx:for-item="token" class="{{token.isWord ? 'tap-word' : ''}}" data-word="{{token.word}}" catchtap="lookupPassageWord">{{token.text}}</text>
+              </text>
+            </block>
+            <block wx:else>
+              <text wx:if="{{item.label}}" class="segment-label">{{item.label}}</text>
+              <text wx:for="{{item.tokens}}" wx:key="index" wx:for-item="token" class="{{token.isWord ? 'tap-word' : ''}}" data-word="{{token.word}}" catchtap="lookupPassageWord">{{token.text}}</text>
+              <text wx:if="{{item.note}}" class="segment-note">{{item.note}}</text>
+            </block>
+            <view class="sentence-translation-inline" wx:if="{{selectedSentenceStart === item.start}}">
+              {{sentenceTranslating ? '翻译中。' : selectedSentenceTranslation}}
+            </view>
           </view>
-        </block>
-      </view>
+        </view>
+      </block>
       <view class="passage-text" wx:else>
         <view wx:for="{{passageSegments}}" wx:key="index" class="passage-segment segment-{{item.tone}}" data-start="{{item.start}}" data-end="{{item.end}}" bindtap="translatePassageSentence">
           <block wx:if="{{item.chunks && item.chunks.length}}">
@@ -48,16 +67,46 @@
       <view class="review-copy">{{reviewSummary || '解析已生成。'}}</view>
     </view>
 
+    <view class="cloze-review-card card" wx:if="{{submitted && passage.isClozePassage}}">
+      <view class="review-title">逐题订正</view>
+      <view class="cloze-review-list">
+        <view class="cloze-review-item {{item.isCorrect ? 'is-correct' : 'is-wrong'}}" wx:for="{{passage.questions}}" wx:key="number">
+          <view class="cloze-review-head">
+            <view class="cloze-review-number">第{{item.number}}空</view>
+            <view class="{{item.isCorrect ? 'cloze-review-state is-correct' : 'cloze-review-state is-wrong'}}">{{item.isCorrect ? '正确' : '订正'}}</view>
+          </view>
+          <view class="cloze-answer-grid">
+            <view class="cloze-answer-box">
+              <view class="cloze-answer-label">你的答案</view>
+              <view class="cloze-answer-value {{item.isCorrect ? 'is-correct' : 'is-wrong'}}">{{item.selectedDisplay || '未填'}}</view>
+            </view>
+            <view class="cloze-answer-box">
+              <view class="cloze-answer-label">正确答案</view>
+              <view class="cloze-answer-value is-correct">{{item.answerDisplay || '待补充'}}</view>
+            </view>
+          </view>
+          <view class="cloze-analysis-text" wx:if="{{item.reviewAnalysis && item.reviewAnalysis.text}}">{{item.reviewAnalysis.text}}</view>
+          <view wx:if="{{item.reviewAnalysis && item.reviewAnalysis.answerSentence}}" class="cloze-evidence">
+            <view class="cloze-evidence-label">答案句</view>
+            <view class="cloze-evidence-text">{{item.reviewAnalysis.answerSentence.text}}</view>
+            <view wx:if="{{item.reviewAnalysis.answerSentence.translation}}" class="cloze-evidence-translation">{{item.reviewAnalysis.answerSentence.translation}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+
     <block wx:if="{{!passage.isClozePassage}}">
       <view class="question-card card" wx:for="{{passage.questions}}" wx:key="number">
         <view class="question-title">{{item.number}}. {{item.prompt}}</view>
         <view class="option-list" wx:if="{{item.type === 'choice'}}">
-          <button class="option-row {{option.selected ? 'is-selected' : ''}} {{option.correct ? 'is-correct' : ''}} {{option.wrong ? 'is-wrong' : ''}} {{submitted || submitting ? 'is-locked' : ''}}" wx:for="{{item.optionsList}}" wx:key="key" wx:for-item="option" data-number="{{item.number}}" data-option="{{option.key}}" bindtap="selectOption">
-            <text class="option-key">{{option.key}}</text>
+          <view class="option-row {{option.selected ? 'is-selected' : ''}} {{option.correct ? 'is-correct' : ''}} {{option.wrong ? 'is-wrong' : ''}} {{submitted || submitting ? 'is-locked' : ''}}" wx:for="{{item.optionsList}}" wx:key="key" wx:for-item="option" data-number="{{item.number}}" data-option="{{option.key}}" bindtap="selectOption">
+            <view class="option-mark">
+              <text class="option-key">{{option.key}}</text>
+              <text class="option-badge" wx:if="{{option.correct}}">正确</text>
+              <text class="option-badge wrong" wx:elif="{{option.wrong}}">你的</text>
+            </view>
             <text class="option-text">{{option.text}}</text>
-            <text class="option-badge" wx:if="{{option.correct}}">正确</text>
-            <text class="option-badge wrong" wx:elif="{{option.wrong}}">你的</text>
-          </button>
+          </view>
         </view>
         <view class="blank-answer-box" wx:else>
           <input class="blank-input {{item.isCorrect === true ? 'is-correct' : ''}} {{item.isCorrect === false ? 'is-wrong' : ''}}" value="{{item.inputValue}}" disabled="{{submitted || submitting}}" data-number="{{item.number}}" bindinput="inputAnswer" placeholder="填写答案" />
@@ -87,11 +136,11 @@
     <view class="review-card card" wx:if="{{review && showReviewDetails}}">
       <view class="review-title">学习包</view>
       <view class="review-tabs">
-        <button class="review-tab tab-{{item.tone}} {{activeReviewTab === item.key ? 'is-active' : ''}} {{loadingStudySection === item.key ? 'is-loading' : ''}}" wx:for="{{reviewTabs}}" wx:key="key" data-tab="{{item.key}}" bindtap="selectReviewTab">
+        <view class="review-tab tab-{{item.tone}} {{activeReviewTab === item.key ? 'is-active' : ''}} {{loadingStudySection === item.key ? 'is-loading' : ''}}" wx:for="{{reviewTabs}}" wx:key="key" data-tab="{{item.key}}" bindtap="selectReviewTab">
           <text>{{item.label}}</text>
           <text class="tab-loading" wx:if="{{loadingStudySection === item.key}}">生成中</text>
           <text class="button-dot" wx:if="{{activeReviewTab === item.key}}"></text>
-        </button>
+        </view>
       </view>
       <view class="study-loading-tip" wx:if="{{studyLoadingText}}">{{studyLoadingText}}</view>
       <view class="study-error-tip" wx:if="{{studyErrorText}}">
@@ -119,7 +168,10 @@
           <view class="card-example" wx:if="{{item.example}}">{{item.example}}</view>
           <view class="card-example-meaning" wx:if="{{item.exampleMeaning}}">{{item.exampleMeaning}}</view>
         </view>
-        <view class="empty-inline" wx:if="{{!wordCards.length}}">{{loadingStudySection === 'vocabulary' || loadingStudySection === 'cards' ? '生词生成中，请稍等。' : '点击后生成生词。'}}</view>
+        <view class="empty-inline" wx:if="{{!wordCards.length}}">
+          <view>{{loadingStudySection === 'vocabulary' || loadingStudySection === 'cards' ? '生词生成中，请稍等。' : '还没有生成生词。'}}</view>
+          <button wx:if="{{loadingStudySection !== 'vocabulary' && loadingStudySection !== 'cards'}}" data-tab="vocabulary" bindtap="selectReviewTab">生成生词</button>
+        </view>
       </view>
 
       <view class="card-list" wx:elif="{{activeReviewTab === 'phrases'}}">
@@ -136,7 +188,10 @@
           <view class="card-meaning">{{item.meaning}}</view>
           <view class="card-example" wx:if="{{item.example}}">{{item.example}}</view>
         </view>
-        <view class="empty-inline" wx:if="{{!phraseCards.length}}">{{loadingStudySection === 'phrases' || loadingStudySection === 'cards' ? '短语生成中，请稍等。' : '点击后生成短语。'}}</view>
+        <view class="empty-inline" wx:if="{{!phraseCards.length}}">
+          <view>{{loadingStudySection === 'phrases' || loadingStudySection === 'cards' ? '短语生成中，请稍等。' : '还没有生成短语。'}}</view>
+          <button wx:if="{{loadingStudySection !== 'phrases' && loadingStudySection !== 'cards'}}" data-tab="phrases" bindtap="selectReviewTab">生成短语</button>
+        </view>
       </view>
 
       <view class="card-list" wx:elif="{{activeReviewTab === 'patterns'}}">
@@ -149,7 +204,10 @@
           <view class="card-example" wx:if="{{item.example}}">{{item.example}}</view>
           <view class="card-example-meaning" wx:if="{{item.exampleMeaning}}">{{item.exampleMeaning}}</view>
         </view>
-        <view class="empty-inline" wx:if="{{!sentencePatternCards.length}}">{{loadingStudySection === 'patterns' || loadingStudySection === 'cards' ? '句型生成中，请稍等。' : '点击后生成句型。'}}</view>
+        <view class="empty-inline" wx:if="{{!sentencePatternCards.length}}">
+          <view>{{loadingStudySection === 'patterns' || loadingStudySection === 'cards' ? '句型生成中，请稍等。' : '还没有生成句型。'}}</view>
+          <button wx:if="{{loadingStudySection !== 'patterns' && loadingStudySection !== 'cards'}}" data-tab="patterns" bindtap="selectReviewTab">生成句型</button>
+        </view>
       </view>
     </view>
 
@@ -162,6 +220,7 @@
         </view>
         <button class="dictionary-audio" loading="{{dictionaryLoading}}" bindtap="playDictionaryWord">发音</button>
       </view>
+      <button class="dictionary-add" loading="{{dictionaryAdding}}" bindtap="addDictionaryWordToLibrary">加入词库</button>
       <view class="dictionary-loading" wx:if="{{dictionaryLoading}}">查词中。</view>
       <block wx:else>
         <view class="dictionary-definition" wx:for="{{dictionaryEntry.definitions}}" wx:key="*this">· {{item}}</view>

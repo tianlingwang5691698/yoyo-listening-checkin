@@ -23,6 +23,8 @@
   - 高级极简产品语言、字体层级、信息密度和交互规则
 - [DESIGN_STYLE_REQUIREMENTS.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/DESIGN_STYLE_REQUIREMENTS.md)
   - 对话中确认的设计风格、页面语言和交互要求
+- [UI_DESIGN_LANGUAGE_LOG.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/UI_DESIGN_LANGUAGE_LOG.md)
+  - 小程序各模块设计语言、组件规则和 UI 改动记录；后续 UI/交互改动优先参考
 - [UI_CHANGE_CHECKLIST.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/UI_CHANGE_CHECKLIST.md)
   - 每次 UI/交互改动前后的检查清单
 - [UI_RULE_AUDIT.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/UI_RULE_AUDIT.md)
