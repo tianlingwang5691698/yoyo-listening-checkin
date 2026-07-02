@@ -49,6 +49,23 @@ def display_year_of(source_year):
     return int(source_year) - 1 if source_year else source_year
 
 
+def remap_audio_to_display_year(item, display_year):
+    district = item.get('district')
+    if not display_year or not district:
+        return
+    current_path = str(item.get('audioLocalPath') or '')
+    if not current_path:
+        return
+    suffix = Path(current_path).suffix or '.mp3'
+    target_name = f'sh-em2-{display_year}-{district}-listening{suffix}'
+    target_path = OUT_DIR / 'audio' / target_name
+    if not target_path.exists():
+        return
+    item['audioFile'] = target_name
+    item['audioLocalPath'] = str(target_path)
+    item['audioCloudPath'] = f'_content/listening-em2/audio/{target_name}'
+
+
 def iter_docx_text(path):
     doc = Document(path)
     texts = []
@@ -550,6 +567,7 @@ def main():
         next_item['year'] = display_year
         next_item['_id'] = f"sh-em2-{display_year}-{item.get('district')}-listening"
         next_item['title'] = f"{display_year} 上海{item.get('district')}二模听力"
+        remap_audio_to_display_year(next_item, display_year)
         transcript_source = transcript_sources.get(key)
         if transcript_source:
             next_item['transcriptSourceFile'] = transcript_source['path'].name
