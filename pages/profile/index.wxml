@@ -22,13 +22,6 @@
         <view class="row-copy {{childCodeReady ? '' : 'is-pending'}}">{{childCodeText}}</view>
       </view>
     </view>
-    <view class="profile-row" bindtap="openFamilyPage">
-      <view class="row-main">
-        <view class="row-title">身份</view>
-        <view class="row-copy">{{currentMember.studyRole === 'student' ? '学生' : '家长'}}</view>
-      </view>
-      <view class="row-arrow">›</view>
-    </view>
     <view class="profile-row" bindtap="openParentPage">
       <view class="row-main">
         <view class="row-title">日报</view>
@@ -38,8 +31,8 @@
     </view>
     <view class="profile-row" bindtap="openFamilyPage">
       <view class="row-main">
-        <view class="row-title">家庭</view>
-        <view class="row-copy">{{syncMode === 'cloud' ? '已接通' : '待同步'}}</view>
+        <view class="row-title">家庭与账号</view>
+        <view class="row-copy">{{currentMember.studyRole === 'student' ? '学生' : '家长'}} · {{syncMode === 'cloud' ? '已接通' : '待同步'}}</view>
       </view>
       <view class="row-arrow">›</view>
     </view>

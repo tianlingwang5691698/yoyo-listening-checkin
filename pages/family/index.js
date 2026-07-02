@@ -72,7 +72,7 @@ Page({
       isCurrent: true
     }] : [];
     const source = studentLinks.length ? studentLinks : fallback;
-    return source.map((item) => {
+    return source.filter((item) => item && item.role !== 'owner').map((item) => {
       return {
         familyId: item.familyId,
         childId: item.childId,
