@@ -156,7 +156,14 @@ def parse_options(chunk):
 
 def clean_option(text):
     text = clean(text)
-    text = re.split(r'\s*(?:【|\[)\s*(?:答案|解析)|(?:^|\s+)\d{1,2}\s*[\.．、]\s*[A-D]\b', text, maxsplit=1)[0]
+    text = re.split(
+        r'\s*(?:【|\[)\s*(?:答案|解析)|(?:^|\s+)\d{1,2}\s*[\.．、]\s*[A-D]\b|'
+        r'\s+[B-D][\)）\.．]\s*(?:Choose|Read|Answer)\b|'
+        r'\s+Choose the words or expressions\b|(?:VII|Ⅶ)\.?\s*Writing',
+        text,
+        maxsplit=1,
+        flags=re.I
+    )[0]
     return clean(text)
 
 
@@ -217,8 +224,8 @@ def passage_before_questions(section):
 
 def section_block(text, section):
     if section == 'A':
-        return between(text, r'A[\.．]\s*Choose the best answer', r'B[\.．]\s*Choose (?:the )?(?:best )?(?:answer|words|words or expressions).*?passage')
-    return between(text, r'B[\.．]\s*Choose (?:the )?(?:best )?(?:answer|words|words or expressions).*?passage', r'C[\.．]\s*(?:Choose the words|Fill in the blanks|Read the passage)|D[\.．]\s*Answer|(?:VII|Ⅶ)\.?\s*Writing')
+        return between(text, r'A[\)）\.．]\s*Choose the best answer', r'B[\)）\.．]\s*Choose (?:the )?(?:best )?(?:answer|words|words or expressions).*?passage')
+    return between(text, r'B[\)）\.．]\s*Choose (?:the )?(?:best )?(?:answer|words|words or expressions).*?passage', r'C[\)）\.．]\s*(?:Choose the words|Fill in the blanks|Read the passage)|D[\)）\.．]\s*Answer|(?:VII|Ⅶ)\.?\s*Writing')
 
 
 def build_item(year, district, source, section, passage, questions):
