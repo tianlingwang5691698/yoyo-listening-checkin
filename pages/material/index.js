@@ -20,7 +20,7 @@ function buildMaterials(materialIndex) {
       itemUnit: '套',
       exams: [
         { examId: 'em2', exam: '二模', items: materialIndex.listeningEm2 || [] },
-        { examId: 'em1', exam: '一模', items: [] }
+        { examId: 'em1', exam: '一模', items: materialIndex.listeningEm1 || [] }
       ]
     }
   };

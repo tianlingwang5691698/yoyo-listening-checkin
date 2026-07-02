@@ -4,6 +4,7 @@ const storageAdapter = require('../adapters/storage.adapter');
 const MATERIAL_PATHS = {
   writingEm1: '_content/writing-em1/writing-prompts.json',
   writingEm2: '_content/writing-em2/writing-prompts.json',
+  listeningEm1: '_content/listening-em1/listening-practice.json',
   listeningEm2: '_content/listening-em2/listening-practice.json'
 };
 
@@ -21,14 +22,16 @@ async function loadList(path) {
 }
 
 async function getMaterialIndex() {
-  const [writingEm1, writingEm2, listeningEm2] = await Promise.all([
+  const [writingEm1, writingEm2, listeningEm1, listeningEm2] = await Promise.all([
     loadList(MATERIAL_PATHS.writingEm1),
     loadList(MATERIAL_PATHS.writingEm2),
+    loadList(MATERIAL_PATHS.listeningEm1),
     loadList(MATERIAL_PATHS.listeningEm2)
   ]);
   return {
     writingEm1,
     writingEm2,
+    listeningEm1,
     listeningEm2
   };
 }

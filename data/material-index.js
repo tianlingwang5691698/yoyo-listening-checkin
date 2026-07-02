@@ -5091,5 +5091,433 @@ module.exports = {
         }
       ]
     }
+  ],
+  "listeningEm1": [
+    {
+      "_id": "sh-em1-2025-宝山-listening",
+      "title": "2025 上海宝山一模听力",
+      "year": 2025,
+      "district": "宝山",
+      "examType": "一模",
+      "stage": "初中",
+      "audioCloudPath": "_content/listening-em1/audio/sh-em1-2025-宝山-listening.mp3",
+      "transcript": "参考答案 Part 1 I.Listening Comprehension(听力理解) A.Listen and choose the right picture(根据你听到的内容，选出相应的图片) 1.Jason and his friend met at the gate of a museum yesterday afternoon. 2.In order to keep fit,my uncle goes jogging in the woods every day. 3.My little sister is fond of paper cutting,a traditional skill in China. 4.The quiet corner of the library helps me concentrate well. 5.Some students are preparing a report about mountains and rivers in the geography club. B.Listen to the dialogue and choose the best answer to the question you hear(根据你听到的对 话和问题，选出最恰当的答案) 6. M: Do you have any travel plan,Susan? W: I've been to China before.I hope I can visit some other Asian countries like Singapore,Thailand and Japan next year. Q: Which country has Susan been to? 7. M: Do you have any books about space? W: Yes,they're in the science section. M: Great.How many books can I borrow at a time? W: Up to three books,for a month. Q: Where does this dialogue probably take place? 8. W: Jason,your room is such a mess.Can you clean it up right now? M: I'll do it after I finish my homework,I promise. W: All right,but don't forget! Q: What's the possible relationship between the two speakers? 9. W: Today is New Year's Eve.Are you planning anything special? M: Not really.I don't enjoy the celebrations much.I'd rather stay at home and relax. W: That's fine.Everyone celebrates differently. Q: How does the man feel about the celebrations? 10. W: Would you like to play basketball with us this weekend,John? M: I'd love to,Mary.But I've already promised to help my brother with his project. W: What a pity!Maybe next time. Q: What can we learn from the dialogue? C. Listen to the passage and tell whether the following statements are true or false(判断下列句子是否符合你听到的内容，符合的用“T”表示，不符合的用“F”表示) In a bright and colourful world of engines,there lived a little blue engine.Though it was small,it had big dreams!One day,all the engines received the most important task of the year:delivering toys to children who lived on the other side of a high mountain. \"The mountain is too high,and the task is too hard.We can't do it,\"said the powerful,bigger engines.One by one,they refused to help.But the little blue engine was different.It believed in itself and accepted the task bravely.\"I can do it,\"the little blue engine said,eventhough the other engines laughed at it. The little blue engine started its journey.As it climbed up the mountain,it kept saying to itself,“I think I can.I think I can.”The climb was really hard,but the little engine never gave up.Finally,it reached the top of the mountain!On the other side,it delivered all the toys to the children waiting below. The little blue engine's success brought joy to all the children,and it has proved that when we believe in ourselves,we can achieve even the hardest tasks! D .Listen to the passage and complete the following sentences(听短文，完成下列内容，每空格限填一词) Good afternoon!My name is David Lance and I'm an astronaut.Right now,I am at a space station.Today,I'll tell you a little about life in space. In the mornings,I like to take showers.But I can't take a normal shower.Do you know why?There isn't enough water at the space station!So,I have to use a wet cloth to clean myself.Astronauts also eat three times a day at the space station.There are a lot of snacks and drinks,too,But the food and drinks are different from those on Earth.They are usually frozen or dried.This is because our trips are very long.We don't want our food to go bad in space! Next,we take exercise every day to make our bodies strong.Astronauts float in space, so we don't use a lot of our muscles.There is a bicycle at the space station.It helps us keep our bodies healthy. We all go to sleep after we finish our work.But we don't sleep in beds.We have sleeping bags on the walls.They keep us from floating away during our sleep!As you can see,life in space is different from life on Earth.And being an astronaut is a difficult job. It's quite common for us to work at the space station for several months.But the space research we do is very important to people on Earth! Part 1 I. A)1.C 2.F 3.D 4.A 5.B B)6.A 7.C 8.B 9.D 10.C C)11.F 12.F 13.T 14.T 15.T D)16.clean himself 17.different from 18.take exercise 19.sleeping bags 20.quite common",
+      "hasAudio": true,
+      "hasTranscript": true,
+      "questionSourceFile": "2025届宝山区初三一模英语试卷.pdf",
+      "images": [
+        {
+          "localPath": "data/listening-em1/images/sh-em1-2025-宝山-listening-image-1.png",
+          "cloudPath": "_content/listening-em1/images/sh-em1-2025-宝山-listening-image-1.png"
+        },
+        {
+          "localPath": "data/listening-em1/images/sh-em1-2025-宝山-listening-image-2.png",
+          "cloudPath": "_content/listening-em1/images/sh-em1-2025-宝山-listening-image-2.png"
+        },
+        {
+          "localPath": "data/listening-em1/images/sh-em1-2025-宝山-listening-image-3.png",
+          "cloudPath": "_content/listening-em1/images/sh-em1-2025-宝山-listening-image-3.png"
+        },
+        {
+          "localPath": "data/listening-em1/images/sh-em1-2025-宝山-listening-image-4.png",
+          "cloudPath": "_content/listening-em1/images/sh-em1-2025-宝山-listening-image-4.png"
+        },
+        {
+          "localPath": "data/listening-em1/images/sh-em1-2025-宝山-listening-image-5.png",
+          "cloudPath": "_content/listening-em1/images/sh-em1-2025-宝山-listening-image-5.png"
+        },
+        {
+          "localPath": "data/listening-em1/images/sh-em1-2025-宝山-listening-image-6.png",
+          "cloudPath": "_content/listening-em1/images/sh-em1-2025-宝山-listening-image-6.png"
+        },
+        {
+          "localPath": "data/listening-em1/images/sh-em1-2025-宝山-listening-image-7.png",
+          "cloudPath": "_content/listening-em1/images/sh-em1-2025-宝山-listening-image-7.png"
+        }
+      ],
+      "questions": [
+        {
+          "number": 1,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "C"
+        },
+        {
+          "number": 2,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "F"
+        },
+        {
+          "number": 3,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "D"
+        },
+        {
+          "number": 4,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "A"
+        },
+        {
+          "number": 5,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "B"
+        },
+        {
+          "number": 6,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "China.",
+            "B": "Singapore.",
+            "C": "Thailand.",
+            "D": "Japan."
+          },
+          "answer": "A"
+        },
+        {
+          "number": 7,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "In a museum.",
+            "B": "In a supermarket.",
+            "C": "In a library.",
+            "D": "In a book shop."
+          },
+          "answer": "C"
+        },
+        {
+          "number": 8,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Teacher and student.",
+            "B": "Mother and son.",
+            "C": "Doctor and patient.",
+            "D": "Manager and secretary."
+          },
+          "answer": "B"
+        },
+        {
+          "number": 9,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Excited.",
+            "B": "Worried.",
+            "C": "Disappointed.",
+            "D": "Uninterested."
+          },
+          "answer": "D"
+        },
+        {
+          "number": 10,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "John has agreed to play basketball.",
+            "B": "John’s brother is going to play basketball.",
+            "C": "John has promised to help his brother.",
+            "D": "Mary is asking John to help with her project."
+          },
+          "answer": "C"
+        },
+        {
+          "number": 11,
+          "prompt": "The little blue engine was the smallest engine in the world of engines.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "F"
+        },
+        {
+          "number": 12,
+          "prompt": "All the bigger engines agreed to help with the toy delivery task.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "F"
+        },
+        {
+          "number": 13,
+          "prompt": "The little blue engine was laughed at by the other engines for accepting the task.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "T"
+        },
+        {
+          "number": 14,
+          "prompt": "The little blue engine didn’t give up until it reached the top of the mountain.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "T"
+        },
+        {
+          "number": 15,
+          "prompt": "From the story, we can learn that believing in ourselves is the key to success.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "T"
+        },
+        {
+          "number": 16,
+          "prompt": "David uses a wet cloth to _______ _______ because there isn’t enough water at the space station.",
+          "questionType": "blank",
+          "answer": "clean himself"
+        },
+        {
+          "number": 17,
+          "prompt": "Astronauts eat three times a day. But the food and drinks are _______ _______ those on Earth.",
+          "questionType": "blank",
+          "answer": "different from"
+        },
+        {
+          "number": 18,
+          "prompt": "To keep their bodies strong and healthy, astronauts _______ _______ every day.",
+          "questionType": "blank",
+          "answer": "take exercise"
+        },
+        {
+          "number": 19,
+          "prompt": "Astronauts usually sleep in _______ _______ on the walls to avoid floating away.",
+          "questionType": "blank",
+          "answer": "sleeping bags"
+        },
+        {
+          "number": 20,
+          "prompt": "It’s ______ _______ for astronauts to work at the space station for several months.",
+          "questionType": "blank",
+          "answer": "quite common"
+        }
+      ]
+    },
+    {
+      "_id": "sh-em1-2025-普陀-listening",
+      "title": "2025 上海普陀一模听力",
+      "year": 2025,
+      "district": "普陀",
+      "examType": "一模",
+      "stage": "初中",
+      "audioCloudPath": "_content/listening-em1/audio/sh-em1-2025-普陀-listening.mp3",
+      "transcript": "参考答案） Part I I. A. 1. F 2. A 3. E 4. B 5. C B. 6. B 7. D 8. D 9. A 10. C C. 11. F 12. F 13. T 14. F 15. T D. 16. keeping safe 17. closely connected 18. accept yourself 19. social backgrounds 20. among animals Part II II. 21. B 22. A 23. D 24. C 25. D 26. B 27. C 28. D 29. C 30. A 31. D 32. B 33. B 34. C 35. A III. 36. E 37. C 38. B 39. A 40. B 41. E 42. D 43. A IV. 44. speeches 45. third 46. ours 47. successful 48. helpless 49. safety 50. mainly 51. enable V. 52. Did drive 53. How does 54. when to 55. too to 56. I was 57. was broken 58. The poor service of the restaurant made John complain a lot. Part III VI. ( A ) 59. B 60. D 61. B 62. C 63. A 64. D ( B ) 65. B 66. A 67. C 68. A 69. B 70. D ( C ) 71. Amazing 72. flight/flying 73. rarely 74. produces 75. love 76. lose 77. control ( D ) 78. His face./His appearance. It refers to “pretending not to see other people’s reaction when they see August”. August (himself)./August./Himself. He felt excited and worried/nervous. Because he had a lot of surgeries and he used to get sick a lot. The title not only shows August really wants to be seen as an ordinary kid(表达主人公内心渴望), but also makes the readers think about what it really means to be ordinary (引发读者思考)./realize that people like August should be treated like ordinary people.（挑战刻板印象） VII. 84. 略 2024学年度第一学期期末九年级自适应练习 英语学科（听力录音） 根据你听到的内容, 选出相应的图片，在选择题区域相应的空格内用2B铅笔填涂。每个句子念两遍。 It is important for us to see the dentist regularly. (F) Stop! Don’t create a lot of mess in your room! (A) Keeping a diary is a good way to improve our memory. (E) Mr. Jones escaped from the prison last night. (B) Sound effects can make a story more exciting. (C) 根据你听到的对话和问题，选出最恰当的答案，在选择题区域相应的空格内用2B铅笔填涂。对话和问题都念两遍。 M: Who will go hiking with us this Saturday? W: Peter will have to finish his history report. Mary and Lisa are not interested in sports. Only Danny will go. Q: Who will go hiking with the two speakers this Saturday? (请再听一遍) (B) W: What’s the date today? M: It’s July 5th. Why did you ask? W: Fiona’s birthday is three days away. Q: When is Fiona’s birthday? (请再听一遍) (D) W: Why were you late for the meeting today? I had left a message with your secretary about the time change. M: She has a poor short-term memory. And it’s a headache for me. Q: Why was the man late for the meeting? (请再听一遍) (D) W: Excuse me, can you sit down? I paid 800 dollars to see my favourite band performing in front of me, not to see the back of your head! M: Sorry, Madam. I’m just too excited to stay seated. Q: What are the two speakers probably doing? (请再听一遍) (A) W: Judy won the first prize in the school writing competition. I’m so proud of her. M: I’m not surprised. She’s your daughter. Q: What does the man mean? (请再听一遍) (C) 判断下列句子是否符合你听到的对话内容，符合的用“T”表示，不符合的用“F”表示，在选择题区域相应的空格内用2B铅笔填涂。对话念两遍。 M: This is police office. Can I help you? W: Oh, my god. Someone has broken into my house. It’s a total mess! M: Madam. Please calm down. Can you tell me your name and address, please? W: Sorry, I’m Mary Brown, and I live at 45 Green Lane. M: OK. Ms Brown. Is there anything important missing? W: That’s the strange part. Nothing expensive seems to be gone. My laptop, jewellery, cash—all still here. Just my new novel. It was written by hand. I’ve been working on it for months. It’s just gone. M: Can you tell me what it looks like? W: It was in a black notebook with a picture of roses on the cover. M: Got it. Do you have any idea who might have taken it? W: I can’t think of anyone. But... wait, there was one person who had been really interested in my work. A fan, maybe? He asked a lot of questions about my new novel and even tried to get into my house a few times. M: That's helpful information. Can you give us a description or any details about this person? W: He’s tall, always wears a baseball hat, and about 40 years old. I’ve seen him around the neighborhood a few times. M: Got it. Ms. Brown. We’ll send someone to check things out and look for clues. Don’t touch anything until our police officer arrives. 11. F 12.F 13. T 14. F 15. T D. 根据你听到的短文，完成下列句子，每空格限填一词。在非选择题区域相应的空格内用黑墨水钢笔或黑色水笔填写。短文念两遍。 Love is a feeling that has been around forever. It goes across different places, people, and even animals. There are different kinds of love, and everyone shows it in their own way. One kind of love is family love. This is the love between family members. It’s about taking care of and keeping safe the people who are related to you. Another kind is friend love. It makes you and your friends closely connected. It’s about respecting, admiring, and caring for each other. But there’s also self-love. It means you like and accept yourself, even your mistakes. It’s important to love yourself before you can love other people. But we show love in many different ways. That’s because we have different social backgrounds. In some places, people show love by doing things for others, while in other places, people say nice things to show love. Love isn’t just for people. It can also be found among animals. When you see how a mother bear protects her babies, or how a dog is always loyal to its owner, you know love is everywhere. So, remember, love comes in many forms and everyone experiences it in their own way. That’s what makes love so amazing. keeping safe 17. closely connected 18. accept yourself 19. social backgrounds 20. among animals 第一部分 “听力测试” 到此结束。请同学们继续答题。 微信号：Minzimin001 路华教育",
+      "hasAudio": true,
+      "hasTranscript": true,
+      "questionSourceFile": "2025年上海市普陀区中考一模英语试题（解析版）.docx",
+      "images": [
+        {
+          "localPath": "data/listening-em1/images/sh-em1-2025-普陀-listening-image-1.png",
+          "cloudPath": "_content/listening-em1/images/sh-em1-2025-普陀-listening-image-1.png"
+        },
+        {
+          "localPath": "data/listening-em1/images/sh-em1-2025-普陀-listening-image-2.png",
+          "cloudPath": "_content/listening-em1/images/sh-em1-2025-普陀-listening-image-2.png"
+        },
+        {
+          "localPath": "data/listening-em1/images/sh-em1-2025-普陀-listening-image-3.png",
+          "cloudPath": "_content/listening-em1/images/sh-em1-2025-普陀-listening-image-3.png"
+        },
+        {
+          "localPath": "data/listening-em1/images/sh-em1-2025-普陀-listening-image-4.png",
+          "cloudPath": "_content/listening-em1/images/sh-em1-2025-普陀-listening-image-4.png"
+        },
+        {
+          "localPath": "data/listening-em1/images/sh-em1-2025-普陀-listening-image-5.png",
+          "cloudPath": "_content/listening-em1/images/sh-em1-2025-普陀-listening-image-5.png"
+        },
+        {
+          "localPath": "data/listening-em1/images/sh-em1-2025-普陀-listening-image-6.png",
+          "cloudPath": "_content/listening-em1/images/sh-em1-2025-普陀-listening-image-6.png"
+        }
+      ],
+      "questions": [
+        {
+          "number": 1,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "F"
+        },
+        {
+          "number": 2,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "A"
+        },
+        {
+          "number": 3,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "E"
+        },
+        {
+          "number": 4,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "B"
+        },
+        {
+          "number": 5,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "C"
+        },
+        {
+          "number": 6,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Peter.",
+            "B": "Danny.",
+            "C": "Mary.",
+            "D": "Lisa."
+          },
+          "answer": "B"
+        },
+        {
+          "number": 7,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "July 2nd.",
+            "B": "July 3rd.",
+            "C": "July 5t.",
+            "D": "July 8th."
+          },
+          "answer": "D"
+        },
+        {
+          "number": 8,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "He had a headache.",
+            "B": "He had a poor memory.",
+            "C": "He got up late.",
+            "D": "He didn’t get the message."
+          },
+          "answer": "D"
+        },
+        {
+          "number": 9,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Enjoying a live concert.",
+            "B": "Seeing an exciting film.",
+            "C": "Watching a football match.",
+            "D": "Dancing at a party."
+          },
+          "answer": "A"
+        },
+        {
+          "number": 10,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Judy didn’t deserve to win.",
+            "B": "Judy looks like her mother a lot.",
+            "C": "Judy’s good at writing like her mother.",
+            "D": "Judy’s mother is too proud."
+          },
+          "answer": "C"
+        },
+        {
+          "number": 11,
+          "prompt": "Someone broke into Mary Brown’s office at 45 Green Lane.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "F"
+        },
+        {
+          "number": 12,
+          "prompt": "Mary’s laptop, jewellery, cash and her favourite novel were missing.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "F"
+        },
+        {
+          "number": 13,
+          "prompt": "The novel was in a black notebook with a picture of roses on the cover.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "T"
+        },
+        {
+          "number": 14,
+          "prompt": "A tall man in his twenties with a baseball hat might be the thief.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "F"
+        },
+        {
+          "number": 15,
+          "prompt": "This case was probably caused by a crazy novel fan’s great interest.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "T"
+        },
+        {
+          "number": 16,
+          "prompt": "Family love is about taking care of and ________ ________ the people who are related to you.",
+          "questionType": "blank",
+          "answer": "keeping safe"
+        },
+        {
+          "number": 17,
+          "prompt": "Friend love makes you and your friends ________ ________.",
+          "questionType": "blank",
+          "answer": "closely connected"
+        },
+        {
+          "number": 18,
+          "prompt": "Self-love means you like and ________ ________,even your mistakes.",
+          "questionType": "blank",
+          "answer": "accept yourself"
+        },
+        {
+          "number": 19,
+          "prompt": "We show love in different ways because of different ________ ________.",
+          "questionType": "blank",
+          "answer": "social backgrounds"
+        },
+        {
+          "number": 20,
+          "prompt": "Love is not just for people, and it can also be found ________ ________.",
+          "questionType": "blank",
+          "answer": "among animals"
+        }
+      ]
+    }
   ]
 };

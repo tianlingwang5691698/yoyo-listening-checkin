@@ -211,6 +211,22 @@ node -e "const fs=require('fs'),crypto=require('crypto');const id='verb:时态';
 
 听力文本只收真实听力原文或听力文字稿，可来自答案、听力文本、听力文稿、录音文字稿等文件。仅有答案、解析、题干或“原文略”的文件不能当作 `transcript`；缺真实原文时 `hasTranscript: false`，不人工补写、不跨年借用。
 
+## 一模听力上传规则
+
+一模听力不要合并进二模听力 JSON。本地生成到：
+
+- `data/listening-em1/listening-practice.json`
+- `data/listening-em1/audio/`
+- `data/listening-em1/images/`
+
+云存储上传到：
+
+- `_content/listening-em1/listening-practice.json`
+- `_content/listening-em1/audio/`
+- `_content/listening-em1/images/`
+
+一模听力沿用二模听力清洗准入：必须同时具备音频、原卷题目、20 题答案、A 部分图片题图片。A 部分图片只从 `Listen and choose the right picture` 到 B 部分之前抽取；文本只收真实听力原文或文字稿，不人工补写。
+
 ## 元数据规则
 
 - `浦东新区` 统一为 `浦东`
