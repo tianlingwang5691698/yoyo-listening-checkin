@@ -445,6 +445,14 @@ function withGroupIndexes(items) {
   }));
 }
 
+function normalizeAnalysisText(text) {
+  const value = String(text || '').trim();
+  if (!value || value === '结合原文判断。' || value === '结合原文判断' || value === '解析生成中，请稍等。') {
+    return '生成解析中';
+  }
+  return value;
+}
+
 function normalizeReview(review) {
   if (!review) {
     return null;
@@ -467,6 +475,7 @@ function normalizeReview(review) {
     sentencePatternCards: withGroupIndexes(normalizeCardList(review.sentencePatternCards || review.sentencePatterns, 'pattern')),
     fullTranslation: review.fullTranslation || '',
     analysis: (review.analysis || []).map((item) => Object.assign({}, item, {
+      text: normalizeAnalysisText(item && item.text),
       answerDisplay: item && item.answer ? formatAnswerDisplay(item.answer) : '',
       selectedDisplay: item && item.selected ? formatAnswerDisplay(item.selected) : ''
     }))
@@ -804,7 +813,7 @@ function buildLocalReadingResult(passage, answers) {
       selected,
       correct,
       answerSentence: answerSentences[index] || answerSentences[0] || null,
-      text: question.analysis || '生成解析中'
+      text: normalizeAnalysisText(question.analysis)
     };
   });
   const review = {

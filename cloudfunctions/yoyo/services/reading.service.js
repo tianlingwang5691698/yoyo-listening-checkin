@@ -1138,6 +1138,13 @@ function gradeAnswers(passage, answers) {
   let keyedCount = 0;
   let correctCount = 0;
   const pointPerQuestion = 2;
+  const normalizeAnalysisText = (text) => {
+    const value = String(text || '').trim();
+    if (!value || value === '结合原文判断。' || value === '结合原文判断' || value === '解析生成中，请稍等。') {
+      return '生成解析中';
+    }
+    return value;
+  };
   const questionResults = passage.questions.map((question) => {
     const isChoice = !!(question.options && Object.keys(question.options).length);
     const selectedRaw = String(answerMap[question.number] || '').trim();
@@ -1157,7 +1164,7 @@ function gradeAnswers(passage, answers) {
       selected,
       answer,
       correct: keyed ? (isChoice ? selected === answer : normalizeText(selected).toLowerCase() === normalizeText(answer).toLowerCase()) : null,
-      analysis: question.analysis || '生成解析中'
+      analysis: normalizeAnalysisText(question.analysis)
     };
   });
   const totalScore = keyedCount * pointPerQuestion;
