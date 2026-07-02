@@ -1,24 +1,48 @@
 const page = require('../../../utils/page');
 const store = require('../../../utils/store');
 
+function sectionForNumber(number) {
+  if (number >= 1 && number <= 5) {
+    return { key: 'A', title: 'A. Listen and choose the right picture.' };
+  }
+  if (number >= 6 && number <= 10) {
+    return { key: 'B', title: 'B. Listen and choose the best answer.' };
+  }
+  if (number >= 11 && number <= 15) {
+    return { key: 'C', title: 'C. Listen and tell whether the statements are true or false.' };
+  }
+  return { key: 'D', title: 'D. Listen and complete the sentences.' };
+}
+
 function buildQuestions(item) {
-  return (item.questions || []).map((question) => ({
-    number: question.number,
-    prompt: question.prompt,
-    questionType: question.questionType || 'blank',
-    optionsList: Object.keys(question.options || {}).map((key) => ({
-      key,
-      text: question.options[key],
-      label: question.options[key] === key ? key : `${key} ${question.options[key]}`,
-      isWide: String(question.options[key] || '').length > 34,
-      selected: false
-    })),
-    inputValue: '',
-    selectedAnswer: '',
-    answer: question.answer || '',
-    checked: false,
-    correct: false
-  }));
+  let lastSection = '';
+  return (item.questions || []).map((question) => {
+    const section = question.sectionKey
+      ? { key: question.sectionKey, title: question.sectionTitle || '' }
+      : sectionForNumber(Number(question.number || 0));
+    const showSectionTitle = section.key !== lastSection && !(section.key === 'A' && item.images && item.images.length);
+    lastSection = section.key;
+    return {
+      number: question.number,
+      prompt: question.prompt,
+      questionType: question.questionType || 'blank',
+      sectionKey: section.key,
+      sectionTitle: section.title,
+      showSectionTitle,
+      optionsList: Object.keys(question.options || {}).map((key) => ({
+        key,
+        text: question.options[key],
+        label: question.options[key] === key ? key : `${key} ${question.options[key]}`,
+        isWide: String(question.options[key] || '').length > 34,
+        selected: false
+      })),
+      inputValue: '',
+      selectedAnswer: '',
+      answer: question.answer || '',
+      checked: false,
+      correct: false
+    };
+  });
 }
 
 function studyDoneKey(item) {

@@ -144,9 +144,37 @@ def option_map(line):
     )[0]
     for key, value in re.findall(r'([A-D])[\).．]\s*(.*?)(?=\s+[A-D][\).．]\s*|$)', clean(line)):
         value = clean(value)
-        if value and not re.match(r'Listen to (?:the dialogue|the passage|the conversation|the short passage|the recording)', value, re.I):
+        if value and not re.match(r'Listen (?:to (?:the dialogue|the passage|the conversation|the short passage|the recording)|and choose the right picture)', value, re.I):
             opts[key] = value
     return opts
+
+
+def section_for_number(number):
+    number = int(number)
+    if 1 <= number <= 5:
+        return {
+            'sectionKey': 'A',
+            'sectionTitle': 'A. Listen and choose the right picture.'
+        }
+    if 6 <= number <= 10:
+        return {
+            'sectionKey': 'B',
+            'sectionTitle': 'B. Listen and choose the best answer.'
+        }
+    if 11 <= number <= 15:
+        return {
+            'sectionKey': 'C',
+            'sectionTitle': 'C. Listen and tell whether the statements are true or false.'
+        }
+    return {
+        'sectionKey': 'D',
+        'sectionTitle': 'D. Listen and complete the sentences.'
+    }
+
+
+def apply_question_section(question):
+    question.update(section_for_number(question.get('number', 0)))
+    return question
 
 
 def parse_choice(lines):
@@ -158,7 +186,7 @@ def parse_choice(lines):
             if current:
                 questions.append(current)
             num = int(m.group(1))
-            current = {'number': num, 'prompt': 'Listen and choose the best answer.', 'questionType': 'choice', 'options': {}, 'answer': ''}
+            current = apply_question_section({'number': num, 'prompt': 'Listen and choose the best answer.', 'questionType': 'choice', 'options': {}, 'answer': ''})
             opts = option_map(line)
             current['options'].update(opts)
             continue
@@ -182,7 +210,7 @@ def parse_true_false(lines):
                 'questionType': 'truefalse',
                 'options': {'T': 'T', 'F': 'F'},
                 'answer': ''
-            })
+            } | section_for_number(int(m.group(1))))
     return questions
 
 
@@ -196,7 +224,7 @@ def parse_blanks(lines):
                 'prompt': clean(m.group(2)),
                 'questionType': 'blank',
                 'answer': ''
-            })
+            } | section_for_number(int(m.group(1))))
     return questions
 
 
@@ -421,7 +449,7 @@ def picture_questions():
         'prompt': 'Listen and choose the right picture.',
         'questionType': 'picture',
         'answer': ''
-    } for number in range(1, 6)]
+    } | section_for_number(number) for number in range(1, 6)]
 
 
 def best_sources():

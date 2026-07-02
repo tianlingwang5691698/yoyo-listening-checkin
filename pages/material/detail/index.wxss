@@ -197,6 +197,19 @@
   gap: 12rpx;
 }
 
+.section-heading {
+  margin-top: 20rpx;
+  color: var(--accent-deep);
+  font-size: var(--font-caption-size);
+  line-height: 1.35;
+  font-weight: var(--font-title-weight);
+}
+
+.section-heading.in-list {
+  margin-top: 0;
+  margin-bottom: 14rpx;
+}
+
 .picture-cell {
   position: relative;
   min-width: 0;

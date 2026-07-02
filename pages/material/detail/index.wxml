@@ -19,6 +19,7 @@
       <view class="question-label">答题区</view>
       <view class="question-state" wx:if="{{submitted}}">{{correctCount}} / {{questions.length}}</view>
     </view>
+    <view class="section-heading" wx:if="{{item.images && item.images.length}}">A. Listen and choose the right picture.</view>
     <view class="picture-grid" wx:if="{{item.images && item.images.length}}">
       <view class="picture-cell" wx:for="{{item.images}}" wx:key="cloudPath">
         <image class="picture-item" mode="aspectFit" src="{{item.src}}"></image>
@@ -26,6 +27,7 @@
       </view>
     </view>
     <view class="question-row" wx:for="{{questions}}" wx:key="number">
+      <view class="section-heading in-list" wx:if="{{item.showSectionTitle}}">{{item.sectionTitle}}</view>
       <view class="question-title">{{item.number}}. {{item.prompt}}</view>
       <view class="option-list" wx:if="{{item.optionsList.length}}">
         <view class="option-row {{option.isWide ? 'is-wide' : ''}} {{option.selected ? 'is-selected' : ''}}" wx:for="{{item.optionsList}}" wx:for-item="option" wx:key="key" data-number="{{item.number}}" data-option="{{option.key}}" bindtap="selectOption">

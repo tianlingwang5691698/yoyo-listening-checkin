@@ -3864,31 +3864,41 @@ module.exports = {
           "number": 1,
           "prompt": "Listen and choose the right picture.",
           "questionType": "picture",
-          "answer": "F"
+          "answer": "F",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
         },
         {
           "number": 2,
           "prompt": "Listen and choose the right picture.",
           "questionType": "picture",
-          "answer": "E"
+          "answer": "E",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
         },
         {
           "number": 3,
           "prompt": "Listen and choose the right picture.",
           "questionType": "picture",
-          "answer": "C"
+          "answer": "C",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
         },
         {
           "number": 4,
           "prompt": "Listen and choose the right picture.",
           "questionType": "picture",
-          "answer": "A"
+          "answer": "A",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
         },
         {
           "number": 5,
           "prompt": "Listen and choose the right picture.",
           "questionType": "picture",
-          "answer": "D"
+          "answer": "D",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
         },
         {
           "number": 6,
@@ -3900,7 +3910,9 @@ module.exports = {
             "C": "The computer club.",
             "D": "The art club."
           },
-          "answer": "D"
+          "answer": "D",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
         },
         {
           "number": 7,
@@ -3912,7 +3924,9 @@ module.exports = {
             "C": "63735597.",
             "D": "63734497."
           },
-          "answer": "C"
+          "answer": "C",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
         },
         {
           "number": 8,
@@ -3924,7 +3938,9 @@ module.exports = {
             "C": "Rainy.",
             "D": "Cloudy."
           },
-          "answer": "C"
+          "answer": "C",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
         },
         {
           "number": 9,
@@ -3936,7 +3952,9 @@ module.exports = {
             "C": "Strawberry.",
             "D": "Nuts."
           },
-          "answer": "B"
+          "answer": "B",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
         },
         {
           "number": 10,
@@ -3948,7 +3966,9 @@ module.exports = {
             "C": "They don't need to buy a new cup.",
             "D": "The boy has to fix his broken cup."
           },
-          "answer": "C"
+          "answer": "C",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
         },
         {
           "number": 11,
@@ -3958,7 +3978,9 @@ module.exports = {
             "T": "T",
             "F": "F"
           },
-          "answer": "F"
+          "answer": "F",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
         },
         {
           "number": 12,
@@ -3968,7 +3990,9 @@ module.exports = {
             "T": "T",
             "F": "F"
           },
-          "answer": "T"
+          "answer": "T",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
         },
         {
           "number": 13,
@@ -3978,7 +4002,9 @@ module.exports = {
             "T": "T",
             "F": "F"
           },
-          "answer": "F"
+          "answer": "F",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
         },
         {
           "number": 14,
@@ -3988,7 +4014,9 @@ module.exports = {
             "T": "T",
             "F": "F"
           },
-          "answer": "F"
+          "answer": "F",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
         },
         {
           "number": 15,
@@ -3998,37 +4026,49 @@ module.exports = {
             "T": "T",
             "F": "F"
           },
-          "answer": "T"
+          "answer": "T",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
         },
         {
           "number": 16,
           "prompt": "The school magazine is going to be printed _______ _______.",
           "questionType": "blank",
-          "answer": "in June"
+          "answer": "in June",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
         },
         {
           "number": 17,
           "prompt": "If you are _______ _______, send in a drawing or painting.",
           "questionType": "blank",
-          "answer": "an artist"
+          "answer": "an artist",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
         },
         {
           "number": 18,
           "prompt": "Send Tom an email if you are going to _______ _______ or any other event.",
           "questionType": "blank",
-          "answer": "hold parties"
+          "answer": "hold parties",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
         },
         {
           "number": 19,
           "prompt": "The sports page needs an article about the _______ _______ this summer.",
           "questionType": "blank",
-          "answer": "tennis match"
+          "answer": "tennis match",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
         },
         {
           "number": 20,
           "prompt": "The school magazine will be _______ _______ in the library instead of in the shop.",
           "questionType": "blank",
-          "answer": "on sale"
+          "answer": "on sale",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
         }
       ]
     },
@@ -4075,31 +4115,41 @@ module.exports = {
           "number": 1,
           "prompt": "Listen and choose the right picture.",
           "questionType": "picture",
-          "answer": "C"
+          "answer": "C",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
         },
         {
           "number": 2,
           "prompt": "Listen and choose the right picture.",
           "questionType": "picture",
-          "answer": "B"
+          "answer": "B",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
         },
         {
           "number": 3,
           "prompt": "Listen and choose the right picture.",
           "questionType": "picture",
-          "answer": "E"
+          "answer": "E",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
         },
         {
           "number": 4,
           "prompt": "Listen and choose the right picture.",
           "questionType": "picture",
-          "answer": "D"
+          "answer": "D",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
         },
         {
           "number": 5,
           "prompt": "Listen and choose the right picture.",
           "questionType": "picture",
-          "answer": "A"
+          "answer": "A",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
         },
         {
           "number": 6,
@@ -4111,7 +4161,9 @@ module.exports = {
             "C": "Watching cartoons.",
             "D": "Reading interesting books."
           },
-          "answer": "B"
+          "answer": "B",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
         },
         {
           "number": 7,
@@ -4123,7 +4175,9 @@ module.exports = {
             "C": "9:00.",
             "D": "9:30."
           },
-          "answer": "C"
+          "answer": "C",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
         },
         {
           "number": 8,
@@ -4135,7 +4189,9 @@ module.exports = {
             "C": "20 yuan.",
             "D": "180 yuan."
           },
-          "answer": "C"
+          "answer": "C",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
         },
         {
           "number": 9,
@@ -4147,7 +4203,9 @@ module.exports = {
             "C": "He started too late.",
             "D": "The traffic wash cavy."
           },
-          "answer": "D"
+          "answer": "D",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
         },
         {
           "number": 10,
@@ -4159,7 +4217,9 @@ module.exports = {
             "C": "The man didn’t like to go sightseeing with the woman.",
             "D": "The man didn’t want to buy the camera because of the price."
           },
-          "answer": "D"
+          "answer": "D",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
         },
         {
           "number": 11,
@@ -4169,7 +4229,9 @@ module.exports = {
             "T": "T",
             "F": "F"
           },
-          "answer": "T"
+          "answer": "T",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
         },
         {
           "number": 12,
@@ -4179,7 +4241,9 @@ module.exports = {
             "T": "T",
             "F": "F"
           },
-          "answer": "F"
+          "answer": "F",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
         },
         {
           "number": 13,
@@ -4189,7 +4253,9 @@ module.exports = {
             "T": "T",
             "F": "F"
           },
-          "answer": "F"
+          "answer": "F",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
         },
         {
           "number": 14,
@@ -4199,7 +4265,9 @@ module.exports = {
             "T": "T",
             "F": "F"
           },
-          "answer": "T"
+          "answer": "T",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
         },
         {
           "number": 15,
@@ -4209,37 +4277,49 @@ module.exports = {
             "T": "T",
             "F": "F"
           },
-          "answer": "F"
+          "answer": "F",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
         },
         {
           "number": 16,
           "prompt": "Don’t wait until very late. Always do your homework before you get ________ ________",
           "questionType": "blank",
-          "answer": "too tired"
+          "answer": "too tired",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
         },
         {
           "number": 17,
           "prompt": "Give yourself ________ ________after an hour if you have more than an hour’s work.",
           "questionType": "blank",
-          "answer": "a break"
+          "answer": "a break",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
         },
         {
           "number": 18,
           "prompt": "If you want to get things done, you should work at least a half at a time ________ ________",
           "questionType": "blank",
-          "answer": "without stopping"
+          "answer": "without stopping",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
         },
         {
           "number": 19,
           "prompt": "You won’t enjoy your free time so much if you ________ ________doing your homework.",
           "questionType": "blank",
-          "answer": "put off"
+          "answer": "put off",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
         },
         {
           "number": 20,
           "prompt": "It will help you make it a ________ ________to do your homework at the same time every evening.",
           "questionType": "blank",
-          "answer": "good habit"
+          "answer": "good habit",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
         }
       ]
     },
@@ -4286,31 +4366,41 @@ module.exports = {
           "number": 1,
           "prompt": "Listen and choose the right picture.",
           "questionType": "picture",
-          "answer": "C"
+          "answer": "C",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
         },
         {
           "number": 2,
           "prompt": "Listen and choose the right picture.",
           "questionType": "picture",
-          "answer": "F"
+          "answer": "F",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
         },
         {
           "number": 3,
           "prompt": "Listen and choose the right picture.",
           "questionType": "picture",
-          "answer": "D"
+          "answer": "D",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
         },
         {
           "number": 4,
           "prompt": "Listen and choose the right picture.",
           "questionType": "picture",
-          "answer": "E"
+          "answer": "E",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
         },
         {
           "number": 5,
           "prompt": "Listen and choose the right picture.",
           "questionType": "picture",
-          "answer": "B"
+          "answer": "B",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
         },
         {
           "number": 6,
@@ -4322,7 +4412,9 @@ module.exports = {
             "C": "A watch.",
             "D": "A pad."
           },
-          "answer": "C"
+          "answer": "C",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
         },
         {
           "number": 7,
@@ -4334,7 +4426,9 @@ module.exports = {
             "C": "On Tuesday.",
             "D": "On Friday."
           },
-          "answer": "A"
+          "answer": "A",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
         },
         {
           "number": 8,
@@ -4346,7 +4440,9 @@ module.exports = {
             "C": "To the park.",
             "D": "To the restaurant."
           },
-          "answer": "B"
+          "answer": "B",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
         },
         {
           "number": 9,
@@ -4358,7 +4454,9 @@ module.exports = {
             "C": "Doctor and patient.",
             "D": "Policewoman and driver."
           },
-          "answer": "C"
+          "answer": "C",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
         },
         {
           "number": 10,
@@ -4370,7 +4468,9 @@ module.exports = {
             "C": "Alice feels sorry for Tom's homework.",
             "D": "Tom and Alice have the same trouble."
           },
-          "answer": "D"
+          "answer": "D",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
         },
         {
           "number": 11,
@@ -4380,7 +4480,9 @@ module.exports = {
             "T": "T",
             "F": "F"
           },
-          "answer": "T"
+          "answer": "T",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
         },
         {
           "number": 12,
@@ -4390,7 +4492,9 @@ module.exports = {
             "T": "T",
             "F": "F"
           },
-          "answer": "F"
+          "answer": "F",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
         },
         {
           "number": 13,
@@ -4400,7 +4504,9 @@ module.exports = {
             "T": "T",
             "F": "F"
           },
-          "answer": "T"
+          "answer": "T",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
         },
         {
           "number": 14,
@@ -4410,7 +4516,9 @@ module.exports = {
             "T": "T",
             "F": "F"
           },
-          "answer": "F"
+          "answer": "F",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
         },
         {
           "number": 15,
@@ -4420,37 +4528,49 @@ module.exports = {
             "T": "T",
             "F": "F"
           },
-          "answer": "T"
+          "answer": "T",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
         },
         {
           "number": 16,
           "prompt": "From Sandy, we know that Lynda is _____________ _____________.",
           "questionType": "blank",
-          "answer": "a website"
+          "answer": "a website",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
         },
         {
           "number": 17,
           "prompt": "Billy is thinking about trying to learn an online course on__________ __________.",
           "questionType": "blank",
-          "answer": "public speech"
+          "answer": "public speech",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
         },
         {
           "number": 18,
           "prompt": "It cost Sandy about________ ___________to pay for the course on programming.",
           "questionType": "blank",
-          "answer": "50/fifty dollars"
+          "answer": "50/fifty dollars",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
         },
         {
           "number": 19,
           "prompt": "Sandy thinks it is a great way to learn __________ _____________and keep up with the times.",
           "questionType": "blank",
-          "answer": "new skills"
+          "answer": "new skills",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
         },
         {
           "number": 20,
           "prompt": "Taking an online course enables you to learn and ________ ___________it at your own speed.",
           "questionType": "blank",
-          "answer": "go over"
+          "answer": "go over",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
         }
       ]
     },
@@ -4501,31 +4621,41 @@ module.exports = {
           "number": 1,
           "prompt": "Listen and choose the right picture.",
           "questionType": "picture",
-          "answer": "B"
+          "answer": "B",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
         },
         {
           "number": 2,
           "prompt": "Listen and choose the right picture.",
           "questionType": "picture",
-          "answer": "D"
+          "answer": "D",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
         },
         {
           "number": 3,
           "prompt": "Listen and choose the right picture.",
           "questionType": "picture",
-          "answer": "A"
+          "answer": "A",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
         },
         {
           "number": 4,
           "prompt": "Listen and choose the right picture.",
           "questionType": "picture",
-          "answer": "G"
+          "answer": "G",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
         },
         {
           "number": 5,
           "prompt": "Listen and choose the right picture.",
           "questionType": "picture",
-          "answer": "E"
+          "answer": "E",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
         },
         {
           "number": 6,
@@ -4537,7 +4667,9 @@ module.exports = {
             "C": "At 7:50.",
             "D": "At 8:00."
           },
-          "answer": "C"
+          "answer": "C",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
         },
         {
           "number": 7,
@@ -4549,7 +4681,9 @@ module.exports = {
             "C": "In a restaurant.",
             "D": "In a hospital."
           },
-          "answer": "A"
+          "answer": "A",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
         },
         {
           "number": 8,
@@ -4561,7 +4695,9 @@ module.exports = {
             "C": "Husband and wife.",
             "D": "Father and son."
           },
-          "answer": "B"
+          "answer": "B",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
         },
         {
           "number": 9,
@@ -4573,7 +4709,9 @@ module.exports = {
             "C": "Foolish.",
             "D": "Frightening."
           },
-          "answer": "D"
+          "answer": "D",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
         },
         {
           "number": 10,
@@ -4585,7 +4723,9 @@ module.exports = {
             "C": "To watch a spider show.",
             "D": "To visit a history museum."
           },
-          "answer": "C"
+          "answer": "C",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
         },
         {
           "number": 11,
@@ -4595,7 +4735,9 @@ module.exports = {
             "T": "T",
             "F": "F"
           },
-          "answer": "T"
+          "answer": "T",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
         },
         {
           "number": 12,
@@ -4605,7 +4747,9 @@ module.exports = {
             "T": "T",
             "F": "F"
           },
-          "answer": "F"
+          "answer": "F",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
         },
         {
           "number": 13,
@@ -4615,7 +4759,9 @@ module.exports = {
             "T": "T",
             "F": "F"
           },
-          "answer": "T"
+          "answer": "T",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
         },
         {
           "number": 14,
@@ -4625,7 +4771,9 @@ module.exports = {
             "T": "T",
             "F": "F"
           },
-          "answer": "T"
+          "answer": "T",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
         },
         {
           "number": 15,
@@ -4635,37 +4783,49 @@ module.exports = {
             "T": "T",
             "F": "F"
           },
-          "answer": "F"
+          "answer": "F",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
         },
         {
           "number": 16,
           "prompt": "Lucy is giving ______________ _________ at the graduation ceremony.",
           "questionType": "blank",
-          "answer": "a speech"
+          "answer": "a speech",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
         },
         {
           "number": 17,
           "prompt": "Middle school was a time of discovery __________, and ____________.",
           "questionType": "blank",
-          "answer": "change, growth"
+          "answer": "change, growth",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
         },
         {
           "number": 18,
           "prompt": "The tens have made some progress in the past ________________ ___________.",
           "questionType": "blank",
-          "answer": "4/four years"
+          "answer": "4/four years",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
         },
         {
           "number": 19,
           "prompt": "Lucy encouraged her fellow students to face____________ _______ bravely.",
           "questionType": "blank",
-          "answer": "new challenges"
+          "answer": "new challenges",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
         },
         {
           "number": 20,
           "prompt": "Lucy __________ __________to see all the amazing things in senior high school and beyond.",
           "questionType": "blank",
-          "answer": "can’t/cannot wait"
+          "answer": "can’t/cannot wait",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
         }
       ]
     },
@@ -4712,31 +4872,41 @@ module.exports = {
           "number": 1,
           "prompt": "Listen and choose the right picture.",
           "questionType": "picture",
-          "answer": "C"
+          "answer": "C",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
         },
         {
           "number": 2,
           "prompt": "Listen and choose the right picture.",
           "questionType": "picture",
-          "answer": "F"
+          "answer": "F",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
         },
         {
           "number": 3,
           "prompt": "Listen and choose the right picture.",
           "questionType": "picture",
-          "answer": "D"
+          "answer": "D",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
         },
         {
           "number": 4,
           "prompt": "Listen and choose the right picture.",
           "questionType": "picture",
-          "answer": "B"
+          "answer": "B",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
         },
         {
           "number": 5,
           "prompt": "Listen and choose the right picture.",
           "questionType": "picture",
-          "answer": "E"
+          "answer": "E",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
         },
         {
           "number": 6,
@@ -4748,7 +4918,9 @@ module.exports = {
             "C": "On the fourth floor.",
             "D": "On the seventh floor."
           },
-          "answer": "C"
+          "answer": "C",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
         },
         {
           "number": 7,
@@ -4760,7 +4932,9 @@ module.exports = {
             "C": "Changfeng Cinema.",
             "D": "Mingzhu Cinema."
           },
-          "answer": "D"
+          "answer": "D",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
         },
         {
           "number": 8,
@@ -4772,7 +4946,9 @@ module.exports = {
             "C": "Find a school newspaper.",
             "D": "Have a balanced diet."
           },
-          "answer": "A"
+          "answer": "A",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
         },
         {
           "number": 9,
@@ -4784,7 +4960,9 @@ module.exports = {
             "C": "In a restaurant.",
             "D": "In a park."
           },
-          "answer": "B"
+          "answer": "B",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
         },
         {
           "number": 10,
@@ -4796,7 +4974,9 @@ module.exports = {
             "C": "The watch is not worth repairing any more.",
             "D": "A retired repairman can help the woman."
           },
-          "answer": "C"
+          "answer": "C",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
         },
         {
           "number": 11,
@@ -4806,7 +4986,9 @@ module.exports = {
             "T": "T",
             "F": "F"
           },
-          "answer": "T"
+          "answer": "T",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
         },
         {
           "number": 12,
@@ -4816,7 +4998,9 @@ module.exports = {
             "T": "T",
             "F": "F"
           },
-          "answer": "F"
+          "answer": "F",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
         },
         {
           "number": 13,
@@ -4826,7 +5010,9 @@ module.exports = {
             "T": "T",
             "F": "F"
           },
-          "answer": "F"
+          "answer": "F",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
         },
         {
           "number": 14,
@@ -4836,7 +5022,9 @@ module.exports = {
             "T": "T",
             "F": "F"
           },
-          "answer": "T"
+          "answer": "T",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
         },
         {
           "number": 15,
@@ -4846,37 +5034,49 @@ module.exports = {
             "T": "T",
             "F": "F"
           },
-          "answer": "F"
+          "answer": "F",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
         },
         {
           "number": 16,
           "prompt": "Every runner should follow some ___________ ___________ for good health.",
           "questionType": "blank",
-          "answer": "basic rules"
+          "answer": "basic rules",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
         },
         {
           "number": 17,
           "prompt": "A runner should do some ___________ ___________ before exercising to avoid being hurt.",
           "questionType": "blank",
-          "answer": "light activities"
+          "answer": "light activities",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
         },
         {
           "number": 18,
           "prompt": "A pair of running shoes can ___________ ___________ the feet.",
           "questionType": "blank",
-          "answer": "properly support"
+          "answer": "properly support",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
         },
         {
           "number": 19,
           "prompt": "A good training plan should ___________ ___________ without causing tiredness.",
           "questionType": "blank",
-          "answer": "improve performance"
+          "answer": "improve performance",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
         },
         {
           "number": 20,
           "prompt": "A new runner should start slowly and then work up to faster speed and ___________ ___________.",
           "questionType": "blank",
-          "answer": "longer distance"
+          "answer": "longer distance",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
         }
       ]
     },
@@ -4923,31 +5123,41 @@ module.exports = {
           "number": 1,
           "prompt": "Listen and choose the right picture.",
           "questionType": "picture",
-          "answer": "F"
+          "answer": "F",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
         },
         {
           "number": 2,
           "prompt": "Listen and choose the right picture.",
           "questionType": "picture",
-          "answer": "A"
+          "answer": "A",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
         },
         {
           "number": 3,
           "prompt": "Listen and choose the right picture.",
           "questionType": "picture",
-          "answer": "E"
+          "answer": "E",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
         },
         {
           "number": 4,
           "prompt": "Listen and choose the right picture.",
           "questionType": "picture",
-          "answer": "D"
+          "answer": "D",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
         },
         {
           "number": 5,
           "prompt": "Listen and choose the right picture.",
           "questionType": "picture",
-          "answer": "B"
+          "answer": "B",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
         },
         {
           "number": 6,
@@ -4959,7 +5169,9 @@ module.exports = {
             "C": "By bus.",
             "D": "By car."
           },
-          "answer": "B"
+          "answer": "B",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
         },
         {
           "number": 7,
@@ -4971,7 +5183,9 @@ module.exports = {
             "C": "The weather.",
             "D": "A TV programme."
           },
-          "answer": "C"
+          "answer": "C",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
         },
         {
           "number": 8,
@@ -4983,7 +5197,9 @@ module.exports = {
             "C": "In a library.",
             "D": "In a restaurant."
           },
-          "answer": "D"
+          "answer": "D",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
         },
         {
           "number": 9,
@@ -4995,19 +5211,23 @@ module.exports = {
             "C": "Because he forgot to pay for the delivery.",
             "D": "Because he couldn’t take the skirt back."
           },
-          "answer": "A"
+          "answer": "A",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
         },
         {
           "number": 10,
           "prompt": "Listen and choose the best answer.",
           "questionType": "choice",
           "options": {
-            "A": "Listen and choose the right picture（根据你听到的内容，选出相应的图片）（5分）",
+            "A": "She has no interest in the wild life protection group.",
             "B": "She can not join the wild life protection group now.",
             "C": "She has already been a member of the wild life protection group.",
             "D": "She will leave the Stem club to join the wildlife protection group."
           },
-          "answer": "B"
+          "answer": "B",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
         },
         {
           "number": 11,
@@ -5017,7 +5237,9 @@ module.exports = {
             "T": "T",
             "F": "F"
           },
-          "answer": "T"
+          "answer": "T",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
         },
         {
           "number": 12,
@@ -5027,7 +5249,9 @@ module.exports = {
             "T": "T",
             "F": "F"
           },
-          "answer": "F"
+          "answer": "F",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
         },
         {
           "number": 13,
@@ -5037,7 +5261,9 @@ module.exports = {
             "T": "T",
             "F": "F"
           },
-          "answer": "T"
+          "answer": "T",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
         },
         {
           "number": 14,
@@ -5047,7 +5273,9 @@ module.exports = {
             "T": "T",
             "F": "F"
           },
-          "answer": "T"
+          "answer": "T",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
         },
         {
           "number": 15,
@@ -5057,37 +5285,49 @@ module.exports = {
             "T": "T",
             "F": "F"
           },
-          "answer": "F"
+          "answer": "F",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
         },
         {
           "number": 16,
           "prompt": "Mr. Fang’s school is ________ ________ longer breaks between classes this term.",
           "questionType": "blank",
-          "answer": "trying out"
+          "answer": "trying out",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
         },
         {
           "number": 17,
           "prompt": "Longer breaks give students more time to relax. play games and ________ ________ with their friends.",
           "questionType": "blank",
-          "answer": "share joy"
+          "answer": "share joy",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
         },
         {
           "number": 18,
           "prompt": "Teachers walk around the activity areas to help students ________ ________.",
           "questionType": "blank",
-          "answer": "keep safe"
+          "answer": "keep safe",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
         },
         {
           "number": 19,
           "prompt": "The school plays ________ ________ before the break ends to tell students to return to class.",
           "questionType": "blank",
-          "answer": "soft music"
+          "answer": "soft music",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
         },
         {
           "number": 20,
           "prompt": "The 15-minute break makes a ________ ________ by helping students relax and get ready to learn.",
           "questionType": "blank",
-          "answer": "real difference"
+          "answer": "real difference",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
         }
       ]
     }
@@ -5140,31 +5380,41 @@ module.exports = {
           "number": 1,
           "prompt": "Listen and choose the right picture.",
           "questionType": "picture",
-          "answer": "C"
+          "answer": "C",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
         },
         {
           "number": 2,
           "prompt": "Listen and choose the right picture.",
           "questionType": "picture",
-          "answer": "F"
+          "answer": "F",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
         },
         {
           "number": 3,
           "prompt": "Listen and choose the right picture.",
           "questionType": "picture",
-          "answer": "D"
+          "answer": "D",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
         },
         {
           "number": 4,
           "prompt": "Listen and choose the right picture.",
           "questionType": "picture",
-          "answer": "A"
+          "answer": "A",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
         },
         {
           "number": 5,
           "prompt": "Listen and choose the right picture.",
           "questionType": "picture",
-          "answer": "B"
+          "answer": "B",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
         },
         {
           "number": 6,
@@ -5176,7 +5426,9 @@ module.exports = {
             "C": "Thailand.",
             "D": "Japan."
           },
-          "answer": "A"
+          "answer": "A",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
         },
         {
           "number": 7,
@@ -5188,7 +5440,9 @@ module.exports = {
             "C": "In a library.",
             "D": "In a book shop."
           },
-          "answer": "C"
+          "answer": "C",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
         },
         {
           "number": 8,
@@ -5200,7 +5454,9 @@ module.exports = {
             "C": "Doctor and patient.",
             "D": "Manager and secretary."
           },
-          "answer": "B"
+          "answer": "B",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
         },
         {
           "number": 9,
@@ -5212,7 +5468,9 @@ module.exports = {
             "C": "Disappointed.",
             "D": "Uninterested."
           },
-          "answer": "D"
+          "answer": "D",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
         },
         {
           "number": 10,
@@ -5224,7 +5482,9 @@ module.exports = {
             "C": "John has promised to help his brother.",
             "D": "Mary is asking John to help with her project."
           },
-          "answer": "C"
+          "answer": "C",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
         },
         {
           "number": 11,
@@ -5234,7 +5494,9 @@ module.exports = {
             "T": "T",
             "F": "F"
           },
-          "answer": "F"
+          "answer": "F",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
         },
         {
           "number": 12,
@@ -5244,7 +5506,9 @@ module.exports = {
             "T": "T",
             "F": "F"
           },
-          "answer": "F"
+          "answer": "F",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
         },
         {
           "number": 13,
@@ -5254,7 +5518,9 @@ module.exports = {
             "T": "T",
             "F": "F"
           },
-          "answer": "T"
+          "answer": "T",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
         },
         {
           "number": 14,
@@ -5264,7 +5530,9 @@ module.exports = {
             "T": "T",
             "F": "F"
           },
-          "answer": "T"
+          "answer": "T",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
         },
         {
           "number": 15,
@@ -5274,37 +5542,49 @@ module.exports = {
             "T": "T",
             "F": "F"
           },
-          "answer": "T"
+          "answer": "T",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
         },
         {
           "number": 16,
           "prompt": "David uses a wet cloth to _______ _______ because there isn’t enough water at the space station.",
           "questionType": "blank",
-          "answer": "clean himself"
+          "answer": "clean himself",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
         },
         {
           "number": 17,
           "prompt": "Astronauts eat three times a day. But the food and drinks are _______ _______ those on Earth.",
           "questionType": "blank",
-          "answer": "different from"
+          "answer": "different from",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
         },
         {
           "number": 18,
           "prompt": "To keep their bodies strong and healthy, astronauts _______ _______ every day.",
           "questionType": "blank",
-          "answer": "take exercise"
+          "answer": "take exercise",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
         },
         {
           "number": 19,
           "prompt": "Astronauts usually sleep in _______ _______ on the walls to avoid floating away.",
           "questionType": "blank",
-          "answer": "sleeping bags"
+          "answer": "sleeping bags",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
         },
         {
           "number": 20,
           "prompt": "It’s ______ _______ for astronauts to work at the space station for several months.",
           "questionType": "blank",
-          "answer": "quite common"
+          "answer": "quite common",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
         }
       ]
     },
@@ -5351,31 +5631,41 @@ module.exports = {
           "number": 1,
           "prompt": "Listen and choose the right picture.",
           "questionType": "picture",
-          "answer": "F"
+          "answer": "F",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
         },
         {
           "number": 2,
           "prompt": "Listen and choose the right picture.",
           "questionType": "picture",
-          "answer": "A"
+          "answer": "A",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
         },
         {
           "number": 3,
           "prompt": "Listen and choose the right picture.",
           "questionType": "picture",
-          "answer": "E"
+          "answer": "E",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
         },
         {
           "number": 4,
           "prompt": "Listen and choose the right picture.",
           "questionType": "picture",
-          "answer": "B"
+          "answer": "B",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
         },
         {
           "number": 5,
           "prompt": "Listen and choose the right picture.",
           "questionType": "picture",
-          "answer": "C"
+          "answer": "C",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
         },
         {
           "number": 6,
@@ -5387,7 +5677,9 @@ module.exports = {
             "C": "Mary.",
             "D": "Lisa."
           },
-          "answer": "B"
+          "answer": "B",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
         },
         {
           "number": 7,
@@ -5399,7 +5691,9 @@ module.exports = {
             "C": "July 5t.",
             "D": "July 8th."
           },
-          "answer": "D"
+          "answer": "D",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
         },
         {
           "number": 8,
@@ -5411,7 +5705,9 @@ module.exports = {
             "C": "He got up late.",
             "D": "He didn’t get the message."
           },
-          "answer": "D"
+          "answer": "D",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
         },
         {
           "number": 9,
@@ -5423,7 +5719,9 @@ module.exports = {
             "C": "Watching a football match.",
             "D": "Dancing at a party."
           },
-          "answer": "A"
+          "answer": "A",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
         },
         {
           "number": 10,
@@ -5435,7 +5733,9 @@ module.exports = {
             "C": "Judy’s good at writing like her mother.",
             "D": "Judy’s mother is too proud."
           },
-          "answer": "C"
+          "answer": "C",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
         },
         {
           "number": 11,
@@ -5445,7 +5745,9 @@ module.exports = {
             "T": "T",
             "F": "F"
           },
-          "answer": "F"
+          "answer": "F",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
         },
         {
           "number": 12,
@@ -5455,7 +5757,9 @@ module.exports = {
             "T": "T",
             "F": "F"
           },
-          "answer": "F"
+          "answer": "F",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
         },
         {
           "number": 13,
@@ -5465,7 +5769,9 @@ module.exports = {
             "T": "T",
             "F": "F"
           },
-          "answer": "T"
+          "answer": "T",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
         },
         {
           "number": 14,
@@ -5475,7 +5781,9 @@ module.exports = {
             "T": "T",
             "F": "F"
           },
-          "answer": "F"
+          "answer": "F",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
         },
         {
           "number": 15,
@@ -5485,37 +5793,49 @@ module.exports = {
             "T": "T",
             "F": "F"
           },
-          "answer": "T"
+          "answer": "T",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
         },
         {
           "number": 16,
           "prompt": "Family love is about taking care of and ________ ________ the people who are related to you.",
           "questionType": "blank",
-          "answer": "keeping safe"
+          "answer": "keeping safe",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
         },
         {
           "number": 17,
           "prompt": "Friend love makes you and your friends ________ ________.",
           "questionType": "blank",
-          "answer": "closely connected"
+          "answer": "closely connected",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
         },
         {
           "number": 18,
           "prompt": "Self-love means you like and ________ ________,even your mistakes.",
           "questionType": "blank",
-          "answer": "accept yourself"
+          "answer": "accept yourself",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
         },
         {
           "number": 19,
           "prompt": "We show love in different ways because of different ________ ________.",
           "questionType": "blank",
-          "answer": "social backgrounds"
+          "answer": "social backgrounds",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
         },
         {
           "number": 20,
           "prompt": "Love is not just for people, and it can also be found ________ ________.",
           "questionType": "blank",
-          "answer": "among animals"
+          "answer": "among animals",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
         }
       ]
     }
