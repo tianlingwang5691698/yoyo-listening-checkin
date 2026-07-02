@@ -213,18 +213,24 @@ Page({
   async onLoad() {
     this.grammarPerf = page.startPagePerf('grammar');
     let em2Data = null;
+    let em1Data = null;
     try {
-      em2Data = await store.getGrammarHome({ examId: 'em2' });
+      [em2Data, em1Data] = await Promise.all([
+        store.getGrammarHome({ examId: 'em2' }),
+        store.getGrammarHome({ examId: 'em1' })
+      ]);
     } catch (error) {
       em2Data = null;
+      em1Data = null;
     }
     const em2Topics = buildTopics(em2Data);
-    const stages = buildStages(em2Topics, []);
+    const em1Topics = buildTopics(em1Data);
+    const stages = buildStages(em2Topics, em1Topics);
     this.setData({
       stages,
       em2Topics,
-      em1Topics: [],
-      em1Loaded: false,
+      em1Topics,
+      em1Loaded: true,
       em1Loading: false,
       topics: [],
       selectedStageId: '',
@@ -242,6 +248,7 @@ Page({
     if (this.grammarPerf) {
       this.grammarPerf.ready('pageReady', {
         em2CacheHit: !!(em2Data && em2Data.__cacheHit),
+        em1CacheHit: !!(em1Data && em1Data.__cacheHit),
         stages: stages.length
       });
     }
