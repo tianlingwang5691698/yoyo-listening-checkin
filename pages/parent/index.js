@@ -123,6 +123,8 @@ Page({
     todayReport: contracts.createReportDefaults(),
     recentReports: [],
     completionItems: [],
+    completionItemsLoaded: false,
+    completionItemsLoading: false,
     completionDays: [],
     moduleStats: buildModuleStats([], []),
     studentLinks: [],
@@ -137,13 +139,41 @@ Page({
     this.loadParentData();
   },
   loadParentData() {
-    const completionsRequest = store.getStudyCompletions({ days: 90 }, (fresh) => {
-      this.applyParentData(Object.assign({}, this.data, { completionItems: fresh.items || [] }));
-    }).then((data) => data.items || []).catch(() => []);
-    store.getParentDashboard({ days: 7 }, (fresh) => this.applyParentData(fresh)).then(async (data) => {
-      const completionItems = await completionsRequest;
-      this.applyParentData(Object.assign({}, data, { completionItems }));
+    const preserveCompletionState = (data) => Object.assign({}, data, {
+      completionItems: this.data.completionItems || [],
+      completionItemsLoaded: this.data.completionItemsLoaded,
+      completionItemsLoading: this.data.completionItemsLoading
     });
+    store.getParentDashboard({ days: 7 }, (fresh) => this.applyParentData(preserveCompletionState(fresh))).then((data) => {
+      this.applyParentData(Object.assign({}, data, {
+        completionItems: this.data.completionItems || [],
+        completionItemsLoaded: this.data.completionItemsLoaded,
+        completionItemsLoading: this.data.completionItemsLoading
+      }));
+    });
+  },
+  async loadCompletionItems() {
+    if (this.data.completionItemsLoading) {
+      return;
+    }
+    this.setData({ completionItemsLoading: true });
+    try {
+      const data = await store.getStudyCompletions({ days: 90 }, (fresh) => {
+        this.applyParentData(Object.assign({}, this.data, {
+          completionItems: fresh.items || [],
+          completionItemsLoaded: true,
+          completionItemsLoading: false
+        }));
+      });
+      this.applyParentData(Object.assign({}, this.data, {
+        completionItems: data.items || [],
+        completionItemsLoaded: true,
+        completionItemsLoading: false
+      }));
+    } catch (error) {
+      this.setData({ completionItemsLoading: false });
+      wx.showToast({ title: '完成内容加载失败', icon: 'none' });
+    }
   },
   handleStudentChange(event) {
     const index = Number(event.detail && event.detail.value) || 0;
@@ -153,7 +183,12 @@ Page({
     }
     store.setSelectedStudentTarget(target);
     store.setLastParentStudentTarget(target);
-    this.setData({ selectedStudentIndex: index });
+    this.setData({
+      selectedStudentIndex: index,
+      completionItems: [],
+      completionItemsLoaded: false,
+      completionItemsLoading: false
+    });
     this.loadParentData();
   },
   openDailyDetail(event) {

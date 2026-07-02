@@ -79,7 +79,17 @@
 
   <view class="section-panel">
     <view class="section-title type-section-title">阅读/语法/写作</view>
-    <block wx:if="{{report.completionItems.length}}">
+    <view class="lazy-load-row task-cell is-link" wx:if="{{!completionItemsLoaded}}" bindtap="loadCompletionItems">
+      <view>
+        <view class="detail-title">查看阅读、语法、写作</view>
+        <view class="detail-copy">按需加载当天完成内容和摘要。</view>
+      </view>
+      <view class="lazy-load-side">
+        <view class="lazy-load-badge">{{completionItemsLoading ? '加载中' : '查看'}}</view>
+        <view class="lazy-load-arrow">›</view>
+      </view>
+    </view>
+    <block wx:elif="{{report.completionItems.length}}">
       <block wx:for="{{report.completionItems}}" wx:key="key">
         <view class="study-record-row">
           <view class="row-between recording-head">

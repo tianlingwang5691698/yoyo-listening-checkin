@@ -327,7 +327,9 @@ Page({
     },
     playingAttemptKey: '',
     pausedAttemptKey: '',
-    loadingAttemptKey: ''
+    loadingAttemptKey: '',
+    completionItemsLoaded: false,
+    completionItemsLoading: false
   }),
   onLoad(options) {
     this.audioContext = wx.createInnerAudioContext();
@@ -376,25 +378,38 @@ Page({
     if (!page.requireIdentityConfirmed()) {
       return;
     }
+    store.getDailyReportByDate(this.data.date).then((reportData) => {
+      const report = normalizeReport(reportData.report);
+      this.setData(page.buildCloudPageData(this.data, {
+        date: this.data.date,
+        report: Object.assign({}, report, {
+          completionItems: this.data.report.completionItems || []
+        })
+      }));
+    }).catch(() => {});
+  },
+  async loadCompletionItems() {
+    if (this.data.completionItemsLoading) {
+      return;
+    }
+    this.setData({ completionItemsLoading: true });
     const applyCompletionItems = (items) => {
       const report = this.data.report || {};
       this.setData(page.buildCloudPageData(this.data, {
+        completionItemsLoaded: true,
+        completionItemsLoading: false,
         report: Object.assign({}, report, {
           completionItems: (items || []).map(normalizeCompletionItem)
         })
       }));
     };
-    Promise.all([
-      store.getDailyReportByDate(this.data.date),
-      store.getStudyCompletions({ date: this.data.date }, (fresh) => applyCompletionItems(fresh.items || []))
-    ]).then(([reportData, completionData]) => {
-      const report = normalizeReport(reportData.report);
-      const completionItems = ((completionData && completionData.items) || []).map(normalizeCompletionItem);
-      this.setData(page.buildCloudPageData(this.data, {
-        date: this.data.date,
-        report: Object.assign({}, report, { completionItems })
-      }));
-    }).catch(() => {});
+    try {
+      const data = await store.getStudyCompletions({ date: this.data.date }, (fresh) => applyCompletionItems(fresh.items || []));
+      applyCompletionItems((data && data.items) || []);
+    } catch (error) {
+      this.setData({ completionItemsLoading: false });
+      wx.showToast({ title: '记录加载失败', icon: 'none' });
+    }
   },
   async toggleCompletionDetail(event) {
     const key = event.currentTarget.dataset.key || '';

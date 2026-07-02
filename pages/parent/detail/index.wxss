@@ -116,6 +116,32 @@
   background: var(--surface-subtle);
 }
 
+.lazy-load-row {
+  margin-top: 18rpx;
+  align-items: center;
+}
+
+.lazy-load-side {
+  margin-left: 20rpx;
+  display: flex;
+  align-items: center;
+  gap: 12rpx;
+}
+
+.lazy-load-badge {
+  padding: 12rpx 22rpx;
+  border-radius: 999rpx;
+  background: var(--accent-soft);
+  color: var(--accent-deep);
+  font-size: var(--font-caption-size);
+  font-weight: var(--font-title-weight);
+}
+
+.lazy-load-arrow {
+  font-size: 34rpx;
+  color: var(--text-muted);
+}
+
 .question-review {
   margin-top: 14rpx;
   padding-top: 14rpx;
