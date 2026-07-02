@@ -37,7 +37,7 @@
     <view class="study-area-card card" bindtap="openListening">
       <view class="study-area-icon">🎧</view>
       <view class="study-area-title">听力</view>
-      <view class="study-area-meta">初中一模/二模</view>
+      <view class="study-area-meta">初三一模/二模</view>
     </view>
     <view class="study-area-card card" bindtap="openReading">
       <view class="study-area-icon">📚</view>
@@ -57,7 +57,7 @@
     <view class="study-area-card card" bindtap="openWriting">
       <view class="study-area-icon">📝</view>
       <view class="study-area-title">写作</view>
-      <view class="study-area-meta">初中一模/二模</view>
+      <view class="study-area-meta">初三一模/二模</view>
     </view>
     <view class="study-area-card card" bindtap="openSpeaking">
       <view class="study-area-icon">🎙</view>
