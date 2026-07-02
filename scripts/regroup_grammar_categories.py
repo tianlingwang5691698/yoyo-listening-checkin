@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import json
+import hashlib
 import re
 from pathlib import Path
 
@@ -122,15 +123,32 @@ def main():
                 'count': child['count'],
                 'questions': [q for q in group['questions'] if q.get('subtopicId') == child['topicId']],
             })
+    topic_types = [{
+        'topicId': group['topicId'],
+        'topic': group['topic'],
+        'count': group['count'],
+        'children': group['children']
+    } for group in groups]
     for name, payload in {
         'shanghai-em2-grammar-questions': questions,
         'shanghai-em2-grammar-by-topic': flat_groups,
-        'grammar-topic-types': groups,
+        'grammar-topic-types': topic_types,
     }.items():
         text = json.dumps(payload, ensure_ascii=False, indent=2)
         (OUT / f'{name}.json').write_text(text, encoding='utf-8')
         (OUT / f'{name}.js').write_text(f'module.exports = {text};\n', encoding='utf-8')
-    print(json.dumps([{'topic': g['topic'], 'count': g['count'], 'children': g['children']} for g in groups], ensure_ascii=False, indent=2))
+    topic_dir = OUT / 'topics'
+    topic_dir.mkdir(parents=True, exist_ok=True)
+    for stale in topic_dir.glob('*.json'):
+        stale.unlink()
+    for group in flat_groups:
+        name = hashlib.sha1(group['topicId'].encode('utf-8')).hexdigest() + '.json'
+        (topic_dir / name).write_text(json.dumps({
+            'topicId': group['topicId'],
+            'topic': group['topic'],
+            'questions': group['questions']
+        }, ensure_ascii=False, indent=2), encoding='utf-8')
+    print(json.dumps([{'topic': g['topic'], 'count': g['count'], 'children': g['children']} for g in topic_types], ensure_ascii=False, indent=2))
 
 
 if __name__ == '__main__':

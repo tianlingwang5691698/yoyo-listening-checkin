@@ -1,62 +1,154 @@
 module.exports = [
   {
-    "topicId": "article",
-    "topic": "冠词",
-    "count": 115
+    "topicId": "verb",
+    "topic": "动词类",
+    "count": 558,
+    "children": [
+      {
+        "topicId": "verb:时态",
+        "topic": "时态",
+        "count": 251
+      },
+      {
+        "topicId": "verb:语态",
+        "topic": "语态",
+        "count": 70
+      },
+      {
+        "topicId": "verb:情态动词",
+        "topic": "情态动词",
+        "count": 217
+      },
+      {
+        "topicId": "verb:非谓语",
+        "topic": "非谓语",
+        "count": 20
+      }
+    ]
   },
   {
-    "topicId": "preposition",
-    "topic": "介词",
-    "count": 542
+    "topicId": "lexical",
+    "topic": "词法类",
+    "count": 1028,
+    "children": [
+      {
+        "topicId": "lexical:名词",
+        "topic": "名词",
+        "count": 18
+      },
+      {
+        "topicId": "lexical:冠词",
+        "topic": "冠词",
+        "count": 115
+      },
+      {
+        "topicId": "lexical:代词",
+        "topic": "代词",
+        "count": 221
+      },
+      {
+        "topicId": "lexical:形容词副词",
+        "topic": "形容词副词",
+        "count": 132
+      },
+      {
+        "topicId": "lexical:介词",
+        "topic": "介词",
+        "count": 542
+      }
+    ]
   },
   {
-    "topicId": "pronoun",
-    "topic": "代词",
-    "count": 221
+    "topicId": "clause",
+    "topic": "从句类",
+    "count": 240,
+    "children": [
+      {
+        "topicId": "clause:宾语从句",
+        "topic": "宾语从句",
+        "count": 24
+      },
+      {
+        "topicId": "clause:状语从句",
+        "topic": "状语从句",
+        "count": 120
+      },
+      {
+        "topicId": "clause:定语从句",
+        "topic": "定语从句",
+        "count": 96
+      }
+    ]
   },
   {
-    "topicId": "noun",
-    "topic": "名词",
-    "count": 18
+    "topicId": "sentence",
+    "topic": "句型结构类",
+    "count": 198,
+    "children": [
+      {
+        "topicId": "sentence:固定句型",
+        "topic": "固定句型",
+        "count": 192
+      },
+      {
+        "topicId": "sentence:反意疑问句",
+        "topic": "反意疑问句",
+        "count": 5
+      },
+      {
+        "topicId": "sentence:倒装",
+        "topic": "倒装",
+        "count": 1
+      }
+    ]
   },
   {
-    "topicId": "adjective-adverb",
-    "topic": "形容词副词",
-    "count": 132
-  },
-  {
-    "topicId": "verb-tense-voice",
-    "topic": "时态语态",
-    "count": 321
-  },
-  {
-    "topicId": "modal-verb",
-    "topic": "情态动词",
-    "count": 217
-  },
-  {
-    "topicId": "non-finite-verb",
-    "topic": "非谓语动词",
-    "count": 20
-  },
-  {
-    "topicId": "conjunction-clause",
-    "topic": "连词与从句",
-    "count": 426
-  },
-  {
-    "topicId": "sentence-pattern",
-    "topic": "句型结构",
-    "count": 78
+    "topicId": "logic",
+    "topic": "连词逻辑类",
+    "count": 186,
+    "children": [
+      {
+        "topicId": "logic:并列",
+        "topic": "并列",
+        "count": 10
+      },
+      {
+        "topicId": "logic:转折",
+        "topic": "转折",
+        "count": 6
+      },
+      {
+        "topicId": "logic:原因",
+        "topic": "原因",
+        "count": 109
+      },
+      {
+        "topicId": "logic:条件",
+        "topic": "条件",
+        "count": 19
+      },
+      {
+        "topicId": "logic:时间",
+        "topic": "时间",
+        "count": 39
+      },
+      {
+        "topicId": "logic:让步",
+        "topic": "让步",
+        "count": 3
+      }
+    ]
   },
   {
     "topicId": "communicative",
-    "topic": "情景交际",
-    "count": 11
-  },
-  {
-    "topicId": "other",
-    "topic": "综合辨析",
-    "count": 120
+    "topic": "情景交际类",
+    "count": 11,
+    "children": [
+      {
+        "topicId": "communicative:日常口语表达",
+        "topic": "日常口语表达",
+        "count": 11
+      }
+    ]
   }
 ];

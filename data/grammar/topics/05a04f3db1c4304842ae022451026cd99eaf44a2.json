@@ -1,6 +1,6 @@
 {
-  "topicId": "verb-tense-voice",
-  "topic": "时态语态",
+  "topicId": "verb:时态",
+  "topic": "时态",
   "questions": [
     {
       "_id": "sh-em2-2012-奉贤-grammar-choice-q38",
@@ -22,29 +22,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
-    },
-    {
-      "_id": "sh-em2-2012-奉贤-grammar-choice-q46",
-      "sourceSetId": "sh-em2-2012-奉贤-grammar-choice",
-      "year": 2012,
-      "city": "上海",
-      "district": "奉贤",
-      "examType": "二模",
-      "sourceFile": "上海市奉贤区2012届九年级4月质量调研（二模）英语试题及答案（word版）.doc",
-      "number": 46,
-      "prompt": "The teacher, as well as his students_______ to attend the party last week.",
-      "options": {
-        "A": "is invited",
-        "B": "are invited",
-        "C": "was invited",
-        "D": "were invited"
-      },
-      "answer": "C",
-      "topicId": "verb-tense-voice",
-      "topic": "时态语态",
-      "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2012-宝山嘉定-grammar-choice-q38",
@@ -66,7 +48,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2012-普陀-grammar-choice-q46",
@@ -88,7 +74,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2012-普陀-grammar-choice-q47",
@@ -110,7 +100,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2012-普陀-grammar-choice-q48",
@@ -132,7 +126,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2012-杨浦崇明-grammar-choice-q36",
@@ -154,7 +152,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2012-杨浦崇明-grammar-choice-q40",
@@ -176,51 +178,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
-    },
-    {
-      "_id": "sh-em2-2012-杨浦崇明-grammar-choice-q43",
-      "sourceSetId": "sh-em2-2012-杨浦崇明-grammar-choice",
-      "year": 2012,
-      "city": "上海",
-      "district": "杨浦崇明",
-      "examType": "二模",
-      "sourceFile": "上海市杨浦、崇明区2012届九年级4月质量调研（二模）英语试题及答案（word版）.doc",
-      "number": 43,
-      "prompt": "Tornadoes swept across the South America last month. At least 28 people ______.",
-      "options": {
-        "A": "killed",
-        "B": "are killed",
-        "C": "were killed",
-        "D": "were killing"
-      },
-      "answer": "C",
-      "topicId": "verb-tense-voice",
-      "topic": "时态语态",
-      "stage": "初中",
-      "questionType": "grammar-choice"
-    },
-    {
-      "_id": "sh-em2-2012-松江-grammar-choice-q41",
-      "sourceSetId": "sh-em2-2012-松江-grammar-choice",
-      "year": 2012,
-      "city": "上海",
-      "district": "松江",
-      "examType": "二模",
-      "sourceFile": "上海市松江区2012届九年级4月质量调研（二模）英语试题及答案（word版）.doc",
-      "number": 41,
-      "prompt": "The firemen can't go into the room because the door by someone.",
-      "options": {
-        "A": "locks",
-        "B": "was locked",
-        "C": "has locked",
-        "D": "locked"
-      },
-      "answer": "B",
-      "topicId": "verb-tense-voice",
-      "topic": "时态语态",
-      "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2012-松江-grammar-choice-q42",
@@ -242,7 +204,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2012-松江-grammar-choice-q50",
@@ -264,7 +230,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2012-浦东-grammar-choice-q36",
@@ -286,7 +256,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2012-浦东-grammar-choice-q40",
@@ -308,7 +282,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2012-浦东-grammar-choice-q44",
@@ -330,7 +308,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2012-虹口-grammar-choice-q37",
@@ -352,7 +334,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2012-虹口-grammar-choice-q41",
@@ -374,7 +360,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2012-虹口-grammar-choice-q42",
@@ -396,7 +386,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2012-虹口-grammar-choice-q43",
@@ -418,7 +412,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2012-虹口-grammar-choice-q47",
@@ -440,7 +438,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2012-金山-grammar-choice-q41",
@@ -462,7 +464,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2012-金山-grammar-choice-q42",
@@ -484,29 +490,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
-    },
-    {
-      "_id": "sh-em2-2012-金山-grammar-choice-q43",
-      "sourceSetId": "sh-em2-2012-金山-grammar-choice",
-      "year": 2012,
-      "city": "上海",
-      "district": "金山",
-      "examType": "二模",
-      "sourceFile": "上海市金山区2012届九年级4月质量调研（二模）英语试题及答案（word版）.doc",
-      "number": 43,
-      "prompt": "When the 632-metre Shanghai Tower , it will be the second tallest building in the world.",
-      "options": {
-        "A": "finishes",
-        "B": "finished",
-        "C": "will finish",
-        "D": "is finished"
-      },
-      "answer": "D",
-      "topicId": "verb-tense-voice",
-      "topic": "时态语态",
-      "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2012-闵行-grammar-choice-q39",
@@ -528,7 +516,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2012-闵行-grammar-choice-q40",
@@ -550,7 +542,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2012-闵行-grammar-choice-q41",
@@ -572,29 +568,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
-    },
-    {
-      "_id": "sh-em2-2012-闸北-grammar-choice-q46",
-      "sourceSetId": "sh-em2-2012-闸北-grammar-choice",
-      "year": 2012,
-      "city": "上海",
-      "district": "闸北",
-      "examType": "二模",
-      "sourceFile": "上海市闸北区2012届九年级4月质量调研（二模）英语试题及答案（word版）.doc",
-      "number": 46,
-      "prompt": "On February 29 the world’s tallest broadcast tower “the Tokyo Sky Tree” ______ finally.",
-      "options": {
-        "A": "completed",
-        "B": "is completed",
-        "C": "was completed",
-        "D": "has completed"
-      },
-      "answer": "C",
-      "topicId": "verb-tense-voice",
-      "topic": "时态语态",
-      "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2013-宝山嘉定-grammar-choice-q36",
@@ -616,7 +594,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2013-宝山嘉定-grammar-choice-q38",
@@ -638,29 +620,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
-    },
-    {
-      "_id": "sh-em2-2013-宝山嘉定-grammar-choice-q47",
-      "sourceSetId": "sh-em2-2013-宝山嘉定-grammar-choice",
-      "year": 2013,
-      "city": "上海",
-      "district": "宝山嘉定",
-      "examType": "二模",
-      "sourceFile": "上海市宝山、嘉定区2013届九年级4月质量调研（二模）英语试题及答案（word版）.doc",
-      "number": 47,
-      "prompt": "A: Show me the map, please. I wonder ________. B: Look, it’s here, in the east of China, near Taiwan Province.",
-      "options": {
-        "A": "where is Diaoyu Island",
-        "B": "where is Diaoyu Island located",
-        "C": "where does Diaoyu Island lie",
-        "D": "where Diaoyu Island is located"
-      },
-      "answer": "D",
-      "topicId": "verb-tense-voice",
-      "topic": "时态语态",
-      "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2013-崇明-grammar-choice-q38",
@@ -682,7 +646,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2013-崇明-grammar-choice-q46",
@@ -704,7 +672,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2013-崇明-grammar-choice-q47",
@@ -726,7 +698,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2013-崇明-grammar-choice-q48",
@@ -748,7 +724,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2013-松江-grammar-choice-q36",
@@ -770,7 +750,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2013-松江-grammar-choice-q44",
@@ -792,7 +776,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2013-松江-grammar-choice-q46",
@@ -814,7 +802,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2013-松江-grammar-choice-q47",
@@ -836,7 +828,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2013-松江-grammar-choice-q48",
@@ -858,7 +854,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2013-浦东-grammar-choice-q42",
@@ -880,7 +880,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2013-金山-grammar-choice-q37",
@@ -902,7 +906,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2013-金山-grammar-choice-q39",
@@ -924,7 +932,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2013-金山-grammar-choice-q40",
@@ -946,7 +958,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2013-金山-grammar-choice-q43",
@@ -968,7 +984,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2013-金山-grammar-choice-q44",
@@ -990,29 +1010,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
-    },
-    {
-      "_id": "sh-em2-2013-金山-grammar-choice-q45",
-      "sourceSetId": "sh-em2-2013-金山-grammar-choice",
-      "year": 2013,
-      "city": "上海",
-      "district": "金山",
-      "examType": "二模",
-      "sourceFile": "上海市金山区2013届九年级4月质量调研（二模）英语试题及答案（word版）.doc",
-      "number": 45,
-      "prompt": "Xi Jinping __________ president of the People's Republic of China (PRC) in March, 2013.",
-      "options": {
-        "A": "elect",
-        "B": "is elected",
-        "C": "elected",
-        "D": "was elected"
-      },
-      "answer": "D",
-      "topicId": "verb-tense-voice",
-      "topic": "时态语态",
-      "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2013-长宁-grammar-choice-q35",
@@ -1034,29 +1036,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
-    },
-    {
-      "_id": "sh-em2-2013-长宁-grammar-choice-q40",
-      "sourceSetId": "sh-em2-2013-长宁-grammar-choice",
-      "year": 2013,
-      "city": "上海",
-      "district": "长宁",
-      "examType": "二模",
-      "sourceFile": "上海市长宁区2013届九年级4月质量调研（二模）英语试题及答案（word版）.doc",
-      "number": 40,
-      "prompt": "My cousin ________ to the Oriental Pearl TV Tower three times by last month.",
-      "options": {
-        "A": "has been",
-        "B": "has gone",
-        "C": "had been",
-        "D": "had gone"
-      },
-      "answer": "C",
-      "topicId": "verb-tense-voice",
-      "topic": "时态语态",
-      "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2013-长宁-grammar-choice-q49",
@@ -1078,7 +1062,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2013-闸北-grammar-choice-q35",
@@ -1100,29 +1088,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
-    },
-    {
-      "_id": "sh-em2-2013-闸北-grammar-choice-q36",
-      "sourceSetId": "sh-em2-2013-闸北-grammar-choice",
-      "year": 2013,
-      "city": "上海",
-      "district": "闸北",
-      "examType": "二模",
-      "sourceFile": "上海市闸北区2013届九年级4月质量调研（二模）英语试题及答案（word版）.doc",
-      "number": 36,
-      "prompt": "Miss Zhang is satisfied with Helen because she has made ______ mistakes than before.",
-      "options": {
-        "A": "few",
-        "B": "fewer",
-        "C": "little",
-        "D": "less"
-      },
-      "answer": "B",
-      "topicId": "verb-tense-voice",
-      "topic": "时态语态",
-      "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2013-闸北-grammar-choice-q46",
@@ -1144,7 +1114,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2013-静安青浦-grammar-choice-q37",
@@ -1166,7 +1140,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2013-静安青浦-grammar-choice-q45",
@@ -1188,7 +1166,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2013-静安青浦-grammar-choice-q47",
@@ -1210,7 +1192,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2014-松江-grammar-choice-q40",
@@ -1232,7 +1218,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2014-虹口-grammar-choice-q42",
@@ -1254,29 +1244,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
-    },
-    {
-      "_id": "sh-em2-2014-虹口-grammar-choice-q43",
-      "sourceSetId": "sh-em2-2014-虹口-grammar-choice",
-      "year": 2014,
-      "city": "上海",
-      "district": "虹口",
-      "examType": "二模",
-      "sourceFile": "上海市虹口区2014届九年级4月质量调研（二模）英语试题及答案（word版）.doc",
-      "number": 43,
-      "prompt": "If my homework ________ on Saturday, I will go to Century Park to watch the flower show on Sunday.",
-      "options": {
-        "A": "is finished",
-        "B": "had been finished",
-        "C": "was finished",
-        "D": "will be finished[来源:学科网ZXXK]"
-      },
-      "answer": "A",
-      "topicId": "verb-tense-voice",
-      "topic": "时态语态",
-      "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2014-闸北-grammar-choice-q32",
@@ -1298,7 +1270,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2014-闸北-grammar-choice-q35",
@@ -1320,29 +1296,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
-    },
-    {
-      "_id": "sh-em2-2014-闸北-grammar-choice-q37",
-      "sourceSetId": "sh-em2-2014-闸北-grammar-choice",
-      "year": 2014,
-      "city": "上海",
-      "district": "闸北",
-      "examType": "二模",
-      "sourceFile": "上海市闸北区2014届九年级4月质量调研（二模）英语试题及答案（word版）.doc",
-      "number": 37,
-      "prompt": "The students ___ to check the answers by discussing with others just now.",
-      "options": {
-        "A": "ask",
-        "B": "are asked",
-        "C": "asked",
-        "D": "were asked"
-      },
-      "answer": "D",
-      "topicId": "verb-tense-voice",
-      "topic": "时态语态",
-      "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2014-闸北-grammar-choice-q42",
@@ -1364,7 +1322,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2014-闸北-grammar-choice-q45",
@@ -1386,7 +1348,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2014-静安青浦-grammar-choice-q38",
@@ -1408,29 +1374,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
-    },
-    {
-      "_id": "sh-em2-2014-静安青浦-grammar-choice-q40",
-      "sourceSetId": "sh-em2-2014-静安青浦-grammar-choice",
-      "year": 2014,
-      "city": "上海",
-      "district": "静安青浦",
-      "examType": "二模",
-      "sourceFile": "上海市静安、青浦区2014届九年级4月质量调研（二模）英语试题及答案（word版）.doc",
-      "number": 40,
-      "prompt": "Lots of top leaders to attend the Opening Ceremony (开幕式) in August, 2014.",
-      "options": {
-        "A": "invite",
-        "B": "are invited",
-        "C": "will invite",
-        "D": "will be invited"
-      },
-      "answer": "D",
-      "topicId": "verb-tense-voice",
-      "topic": "时态语态",
-      "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2014-静安青浦-grammar-choice-q43",
@@ -1452,7 +1400,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2015-普陀-grammar-choice-q35",
@@ -1474,7 +1426,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2015-普陀-grammar-choice-q36",
@@ -1496,7 +1452,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2015-杨浦-grammar-choice-q39",
@@ -1518,29 +1478,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
-    },
-    {
-      "_id": "sh-em2-2015-杨浦-grammar-choice-q44",
-      "sourceSetId": "sh-em2-2015-杨浦-grammar-choice",
-      "year": 2015,
-      "city": "上海",
-      "district": "杨浦",
-      "examType": "二模",
-      "sourceFile": "上海市杨浦区2015届九年级4月质量调研（二模）英语试题及答案（word版）.doc",
-      "number": 44,
-      "prompt": "Please make sure all the mobile phones ______ off during the performance.",
-      "options": {
-        "A": "turn",
-        "B": "are turned",
-        "C": "turned",
-        "D": "were turned"
-      },
-      "answer": "B",
-      "topicId": "verb-tense-voice",
-      "topic": "时态语态",
-      "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2015-长宁-grammar-choice-q27",
@@ -1562,7 +1504,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2015-长宁-grammar-choice-q39",
@@ -1584,7 +1530,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2015-长宁-grammar-choice-q40",
@@ -1606,7 +1556,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2015-长宁-grammar-choice-q45",
@@ -1628,7 +1582,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2015-闸北-grammar-choice-q40",
@@ -1650,7 +1608,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2016-奉贤-grammar-choice-q33",
@@ -1672,7 +1634,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2016-奉贤-grammar-choice-q36",
@@ -1694,7 +1660,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2016-奉贤-grammar-choice-q42",
@@ -1716,7 +1686,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2016-奉贤-grammar-choice-q43",
@@ -1738,29 +1712,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
-    },
-    {
-      "_id": "sh-em2-2016-宝山嘉定-grammar-choice-q36",
-      "sourceSetId": "sh-em2-2016-宝山嘉定-grammar-choice",
-      "year": 2016,
-      "city": "上海",
-      "district": "宝山嘉定",
-      "examType": "二模",
-      "sourceFile": "上海市宝山、嘉定区2016届九年级4月质量调研（二模）英语试题及答案（word版）.doc",
-      "number": 36,
-      "prompt": "The library of our neighbourhood ________ ten hours a day.",
-      "options": {
-        "A": "opens",
-        "B": "is open",
-        "C": "has opened",
-        "D": "is opened"
-      },
-      "answer": "B",
-      "topicId": "verb-tense-voice",
-      "topic": "时态语态",
-      "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2016-宝山嘉定-grammar-choice-q37",
@@ -1782,29 +1738,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
-    },
-    {
-      "_id": "sh-em2-2016-宝山嘉定-grammar-choice-q38",
-      "sourceSetId": "sh-em2-2016-宝山嘉定-grammar-choice",
-      "year": 2016,
-      "city": "上海",
-      "district": "宝山嘉定",
-      "examType": "二模",
-      "sourceFile": "上海市宝山、嘉定区2016届九年级4月质量调研（二模）英语试题及答案（word版）.doc",
-      "number": 38,
-      "prompt": "I think the homeless cat is quite weak, so she ________ well later by us.",
-      "options": {
-        "A": "will be looked after",
-        "B": "has been looked after",
-        "C": "is looked after",
-        "D": "was looked after"
-      },
-      "answer": "A",
-      "topicId": "verb-tense-voice",
-      "topic": "时态语态",
-      "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2016-崇明-grammar-choice-q35",
@@ -1826,7 +1764,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2016-崇明-grammar-choice-q36",
@@ -1848,7 +1790,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2016-徐汇-grammar-choice-q32",
@@ -1870,7 +1816,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2016-徐汇-grammar-choice-q33",
@@ -1892,7 +1842,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2016-徐汇-grammar-choice-q36",
@@ -1914,7 +1868,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2016-徐汇-grammar-choice-q42",
@@ -1936,7 +1894,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2016-松江-grammar-choice-q40",
@@ -1958,29 +1920,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
-    },
-    {
-      "_id": "sh-em2-2016-浦东-grammar-choice-q35",
-      "sourceSetId": "sh-em2-2016-浦东-grammar-choice",
-      "year": 2016,
-      "city": "上海",
-      "district": "浦东",
-      "examType": "二模",
-      "sourceFile": "上海市浦东新区2016届九年级4月质量调研（二模）英语试题及答案（word版）.doc",
-      "number": 35,
-      "prompt": "By the time I got to the check-out, I realized that I _____ my purse at my office.",
-      "options": {
-        "A": "have left",
-        "B": "had left",
-        "C": "left",
-        "D": "was leaving"
-      },
-      "answer": "B",
-      "topicId": "verb-tense-voice",
-      "topic": "时态语态",
-      "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2016-浦东-grammar-choice-q36",
@@ -2002,7 +1946,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2016-长宁金山-grammar-choice-q39",
@@ -2024,29 +1972,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
-    },
-    {
-      "_id": "sh-em2-2016-长宁金山-grammar-choice-q40",
-      "sourceSetId": "sh-em2-2016-长宁金山-grammar-choice",
-      "year": 2016,
-      "city": "上海",
-      "district": "长宁金山",
-      "examType": "二模",
-      "sourceFile": "上海市长宁、金山区2016届九年级4月质量调研（二模）英语试题及答案（word版）.doc",
-      "number": 40,
-      "prompt": "Every year in spring, many problems of the country at the conference.",
-      "options": {
-        "A": "discuss",
-        "B": "are discussed",
-        "C": "have discussed",
-        "D": "discusses"
-      },
-      "answer": "B",
-      "topicId": "verb-tense-voice",
-      "topic": "时态语态",
-      "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2016-闵行-grammar-choice-q30",
@@ -2068,29 +1998,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
-    },
-    {
-      "_id": "sh-em2-2016-闵行-grammar-choice-q38",
-      "sourceSetId": "sh-em2-2016-闵行-grammar-choice",
-      "year": 2016,
-      "city": "上海",
-      "district": "闵行",
-      "examType": "二模",
-      "sourceFile": "上海市闵行区2016届九年级4月质量调研（二模）英语试题及答案（word版）.doc",
-      "number": 38,
-      "prompt": "By the end of last year. Steve computer science in a university for two years.",
-      "options": {
-        "A": "studies",
-        "B": "has studied",
-        "C": "had studied",
-        "D": "is studying"
-      },
-      "answer": "C",
-      "topicId": "verb-tense-voice",
-      "topic": "时态语态",
-      "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2016-闵行-grammar-choice-q43",
@@ -2112,29 +2024,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
-    },
-    {
-      "_id": "sh-em2-2016-静安青浦-grammar-choice-q36",
-      "sourceSetId": "sh-em2-2016-静安青浦-grammar-choice",
-      "year": 2016,
-      "city": "上海",
-      "district": "静安青浦",
-      "examType": "二模",
-      "sourceFile": "上海市静安、青浦区2016届九年级4月质量调研（二模）英语试题及答案（word版）.doc",
-      "number": 36,
-      "prompt": "Frank usually in touch with his primary school teachers by e-mail.",
-      "options": {
-        "A": "keep",
-        "B": "keeps",
-        "C": "kept",
-        "D": "will keep"
-      },
-      "answer": "B",
-      "topicId": "verb-tense-voice",
-      "topic": "时态语态",
-      "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2016-黄浦-grammar-choice-q37",
@@ -2156,7 +2050,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2016-黄浦-grammar-choice-q38",
@@ -2178,29 +2076,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
-    },
-    {
-      "_id": "sh-em2-2016-黄浦-grammar-choice-q39",
-      "sourceSetId": "sh-em2-2016-黄浦-grammar-choice",
-      "year": 2016,
-      "city": "上海",
-      "district": "黄浦",
-      "examType": "二模",
-      "sourceFile": "上海市黄浦区2016届九年级4月质量调研（二模）英语试题及答案（word版）.doc",
-      "number": 39,
-      "prompt": "People to send up fireworks around the centre of the city last Spring Festival.",
-      "options": {
-        "A": "weren't allowed",
-        "B": "won't be allowed",
-        "C": "are not allowed",
-        "D": "haven't been allowed"
-      },
-      "answer": "A",
-      "topicId": "verb-tense-voice",
-      "topic": "时态语态",
-      "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2016-黄浦-grammar-choice-q42",
@@ -2222,7 +2102,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2017-嘉定-grammar-choice-q40",
@@ -2244,7 +2128,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2017-嘉定-grammar-choice-q41",
@@ -2266,29 +2154,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
-    },
-    {
-      "_id": "sh-em2-2017-嘉定-grammar-choice-q42",
-      "sourceSetId": "sh-em2-2017-嘉定-grammar-choice",
-      "year": 2017,
-      "city": "上海",
-      "district": "嘉定",
-      "examType": "二模",
-      "sourceFile": "上海市嘉定区2017届九年级4月质量调研（二模）英语试题及答案（word版）.doc",
-      "number": 42,
-      "prompt": "Two free tickets for the concert ________if you follow its Wechat public number .",
-      "options": {
-        "A": "have offered",
-        "B": "will be offered",
-        "C": "will offer",
-        "D": "have been offered"
-      },
-      "answer": "B",
-      "topicId": "verb-tense-voice",
-      "topic": "时态语态",
-      "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2017-宝山-grammar-choice-q29",
@@ -2310,51 +2180,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
-    },
-    {
-      "_id": "sh-em2-2017-宝山-grammar-choice-q38",
-      "sourceSetId": "sh-em2-2017-宝山-grammar-choice",
-      "year": 2017,
-      "city": "上海",
-      "district": "宝山",
-      "examType": "二模",
-      "sourceFile": "上海市宝山区2017届九年级4月质量调研（二模）英语试题及答案（word解析版）.doc",
-      "number": 38,
-      "prompt": "It is common knowledge that paper __ by the Chinese in Han Dynasty(汉代).",
-      "options": {
-        "A": "invent",
-        "B": "is invented",
-        "C": "invented",
-        "D": "was invented"
-      },
-      "answer": "D",
-      "topicId": "verb-tense-voice",
-      "topic": "时态语态",
-      "stage": "初中",
-      "questionType": "grammar-choice"
-    },
-    {
-      "_id": "sh-em2-2017-松江-grammar-choice-q38",
-      "sourceSetId": "sh-em2-2017-松江-grammar-choice",
-      "year": 2017,
-      "city": "上海",
-      "district": "松江",
-      "examType": "二模",
-      "sourceFile": "上海市松江区2017届九年级4月质量调研（二模）英语试题及答案（word版）.doc",
-      "number": 38,
-      "prompt": "Now Artificial Intelligence（人工智能）________ in many ways of our life.",
-      "options": {
-        "A": "is used",
-        "B": "was used",
-        "C": "will be used",
-        "D": "had been used"
-      },
-      "answer": "A",
-      "topicId": "verb-tense-voice",
-      "topic": "时态语态",
-      "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2017-松江-grammar-choice-q43",
@@ -2376,29 +2206,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
-    },
-    {
-      "_id": "sh-em2-2017-浦东-grammar-choice-q40",
-      "sourceSetId": "sh-em2-2017-浦东-grammar-choice",
-      "year": 2017,
-      "city": "上海",
-      "district": "浦东",
-      "examType": "二模",
-      "sourceFile": "上海市浦东新区2017届九年级4月质量调研（二模）英语试题及答案（word版）.doc",
-      "number": 40,
-      "prompt": "By March 19, 2017, we ______ the 2017students’ English competition.",
-      "options": {
-        "A": "have finished",
-        "B": "had finished",
-        "C": "finished",
-        "D": "finish"
-      },
-      "answer": "B",
-      "topicId": "verb-tense-voice",
-      "topic": "时态语态",
-      "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2018-奉贤-grammar-choice-q39",
@@ -2420,7 +2232,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2018-奉贤-grammar-choice-q41",
@@ -2442,7 +2258,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2018-宝山嘉定-grammar-choice-q37",
@@ -2464,7 +2284,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2018-宝山嘉定-grammar-choice-q39",
@@ -2486,7 +2310,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2018-松江-grammar-choice-q39",
@@ -2508,7 +2336,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2018-松江-grammar-choice-q40",
@@ -2530,7 +2362,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2018-松江-grammar-choice-q43",
@@ -2552,29 +2388,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
-    },
-    {
-      "_id": "sh-em2-2018-虹口-grammar-choice-q40",
-      "sourceSetId": "sh-em2-2018-虹口-grammar-choice",
-      "year": 2018,
-      "city": "上海",
-      "district": "虹口",
-      "examType": "二模",
-      "sourceFile": "上海市虹口区2018届九年级4月质量调研（二模）英语试题及答案（word版）.doc",
-      "number": 40,
-      "prompt": "If an area _______ by flooding, the government will face very serious difficulties.",
-      "options": {
-        "A": "affects",
-        "B": "is affected",
-        "C": "will be affected",
-        "D": "was affected"
-      },
-      "answer": "B",
-      "topicId": "verb-tense-voice",
-      "topic": "时态语态",
-      "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2018-虹口-grammar-choice-q42",
@@ -2596,7 +2414,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2018-金山-grammar-choice-q33",
@@ -2618,7 +2440,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2018-金山-grammar-choice-q37",
@@ -2640,29 +2466,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
-    },
-    {
-      "_id": "sh-em2-2018-金山-grammar-choice-q38",
-      "sourceSetId": "sh-em2-2018-金山-grammar-choice",
-      "year": 2018,
-      "city": "上海",
-      "district": "金山",
-      "examType": "二模",
-      "sourceFile": "上海市金山区2018届九年级4月质量调研（二模）英语试题及答案（word版）.doc",
-      "number": 38,
-      "prompt": "The famous lawyer ____________ by a news reporter from China Daily just now.",
-      "options": {
-        "A": "has interviewed",
-        "B": "was interviewed",
-        "C": "is interviewing",
-        "D": "is interviewed"
-      },
-      "answer": "B",
-      "topicId": "verb-tense-voice",
-      "topic": "时态语态",
-      "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2018-长宁-grammar-choice-q33",
@@ -2684,7 +2492,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2018-长宁-grammar-choice-q40",
@@ -2706,7 +2518,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2018-闵行-grammar-choice-q37",
@@ -2728,29 +2544,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
-    },
-    {
-      "_id": "sh-em2-2018-闵行-grammar-choice-q38",
-      "sourceSetId": "sh-em2-2018-闵行-grammar-choice",
-      "year": 2018,
-      "city": "上海",
-      "district": "闵行",
-      "examType": "二模",
-      "sourceFile": "上海市闵行区2018届九年级4月质量调研（二模）英语试题及答案（word版）.docx",
-      "number": 38,
-      "prompt": "Workers _______ the construction of Underground Line 23 by the year of 2025.",
-      "options": {
-        "A": "completed",
-        "B": "will complete",
-        "C": "complete",
-        "D": "had completed"
-      },
-      "answer": "B",
-      "topicId": "verb-tense-voice",
-      "topic": "时态语态",
-      "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2018-静安-grammar-choice-q35",
@@ -2772,7 +2570,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2018-静安-grammar-choice-q41",
@@ -2794,7 +2596,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2018-静安-grammar-choice-q45",
@@ -2816,7 +2622,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2018-黄浦-grammar-choice-q31",
@@ -2838,7 +2648,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2018-黄浦-grammar-choice-q38",
@@ -2860,51 +2674,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
-    },
-    {
-      "_id": "sh-em2-2018-黄浦-grammar-choice-q41",
-      "sourceSetId": "sh-em2-2018-黄浦-grammar-choice",
-      "year": 2018,
-      "city": "上海",
-      "district": "黄浦",
-      "examType": "二模",
-      "sourceFile": "上海市黄埔区2018届九年级4月质量调研（二模）英语试题及答案（word版）.doc",
-      "number": 41,
-      "prompt": "It is reported that the ticket prices for key tourist sites in our country ______ soon.",
-      "options": {
-        "A": "will reduce",
-        "B": "were reduced",
-        "C": "have reduced",
-        "D": "will be reduced"
-      },
-      "answer": "D",
-      "topicId": "verb-tense-voice",
-      "topic": "时态语态",
-      "stage": "初中",
-      "questionType": "grammar-choice"
-    },
-    {
-      "_id": "sh-em2-2019-普陀-grammar-choice-q37",
-      "sourceSetId": "sh-em2-2019-普陀-grammar-choice",
-      "year": 2019,
-      "city": "上海",
-      "district": "普陀",
-      "examType": "二模",
-      "sourceFile": "上海市普陀区2019届九年级4月质量调研（二模）英语试题及答案（word版）---已校对.docx",
-      "number": 37,
-      "prompt": "---How old is the house? ---It ________ by my grand grandfather in 1940",
-      "options": {
-        "A": "is built",
-        "B": "was built",
-        "C": "will be built",
-        "D": "has been built"
-      },
-      "answer": "B",
-      "topicId": "verb-tense-voice",
-      "topic": "时态语态",
-      "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2019-普陀-grammar-choice-q40",
@@ -2926,7 +2700,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2019-普陀-grammar-choice-q41",
@@ -2948,7 +2726,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2019-杨浦-grammar-choice-q35",
@@ -2970,7 +2752,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2019-杨浦-grammar-choice-q40",
@@ -2992,7 +2778,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2019-杨浦-grammar-choice-q45",
@@ -3014,7 +2804,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2019-长宁-grammar-choice-q32",
@@ -3036,7 +2830,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2019-长宁-grammar-choice-q40",
@@ -3058,29 +2856,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
-    },
-    {
-      "_id": "sh-em2-2019-长宁-grammar-choice-q41",
-      "sourceSetId": "sh-em2-2019-长宁-grammar-choice",
-      "year": 2019,
-      "city": "上海",
-      "district": "长宁",
-      "examType": "二模",
-      "sourceFile": "上海市长宁区2019届九年级4月质量调研（二模）英语试题及答案（word版）---已校对.docx",
-      "number": 41,
-      "prompt": "Julia___________ how to swim well by the time she was eight year old.",
-      "options": {
-        "A": "learns",
-        "B": "will learn",
-        "C": "has learnt",
-        "D": "had learnt"
-      },
-      "answer": "D",
-      "topicId": "verb-tense-voice",
-      "topic": "时态语态",
-      "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2019-黄浦-grammar-choice-q37",
@@ -3102,7 +2882,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2019-黄浦-grammar-choice-q38",
@@ -3124,7 +2908,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2019-黄浦-grammar-choice-q39",
@@ -3146,7 +2934,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2019-黄浦-grammar-choice-q40",
@@ -3168,7 +2960,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2019-黄浦-grammar-choice-q41",
@@ -3190,7 +2986,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2019-黄浦-grammar-choice-q70",
@@ -3212,7 +3012,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2020-金山-grammar-choice-q32",
@@ -3234,7 +3038,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2020-金山-grammar-choice-q33",
@@ -3256,51 +3064,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
-    },
-    {
-      "_id": "sh-em2-2021-嘉定-grammar-choice-q32",
-      "sourceSetId": "sh-em2-2021-嘉定-grammar-choice",
-      "year": 2021,
-      "city": "上海",
-      "district": "嘉定",
-      "examType": "二模",
-      "sourceFile": "精品解析：2021年上海市嘉定区中考二模英语试题（含听力）（解析版）.doc",
-      "number": 32,
-      "prompt": "The students _______ into six groups for group discussion just now.",
-      "options": {
-        "A": "divided",
-        "B": "have divided",
-        "C": "have been divided",
-        "D": "were divided"
-      },
-      "answer": "D",
-      "topicId": "verb-tense-voice",
-      "topic": "时态语态",
-      "stage": "初中",
-      "questionType": "grammar-choice"
-    },
-    {
-      "_id": "sh-em2-2021-宝山-grammar-choice-q36",
-      "sourceSetId": "sh-em2-2021-宝山-grammar-choice",
-      "year": 2021,
-      "city": "上海",
-      "district": "宝山",
-      "examType": "二模",
-      "sourceFile": "精品解析：2021年上海市宝山区中考二模英语试题（含听力）（解析版）.doc",
-      "number": 36,
-      "prompt": "Tina and Tom ________ with a Chinese family for three years. They are used to the life there.",
-      "options": {
-        "A": "live",
-        "B": "have lived",
-        "C": "are living",
-        "D": "will live"
-      },
-      "answer": "B",
-      "topicId": "verb-tense-voice",
-      "topic": "时态语态",
-      "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2021-宝山-grammar-choice-q38",
@@ -3322,7 +3090,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2021-崇明-grammar-choice-q31",
@@ -3344,7 +3116,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2021-崇明-grammar-choice-q32",
@@ -3366,51 +3142,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
-    },
-    {
-      "_id": "sh-em2-2021-崇明-grammar-choice-q33",
-      "sourceSetId": "sh-em2-2021-崇明-grammar-choice",
-      "year": 2021,
-      "city": "上海",
-      "district": "崇明",
-      "examType": "二模",
-      "sourceFile": "精品解析：2021年上海市崇明区中考二模英语试题（含听力）（解析版）.doc",
-      "number": 33,
-      "prompt": "By the end of last month, they ________ the work on the new hospital already.",
-      "options": {
-        "A": "finish",
-        "B": "will finish",
-        "C": "has finished",
-        "D": "had finished"
-      },
-      "answer": "D",
-      "topicId": "verb-tense-voice",
-      "topic": "时态语态",
-      "stage": "初中",
-      "questionType": "grammar-choice"
-    },
-    {
-      "_id": "sh-em2-2021-徐汇-grammar-choice-q28",
-      "sourceSetId": "sh-em2-2021-徐汇-grammar-choice",
-      "year": 2021,
-      "city": "上海",
-      "district": "徐汇",
-      "examType": "二模",
-      "sourceFile": "精品解析：2021年上海市徐汇区中考二模英语试题（含听力）（解析版）.doc",
-      "number": 28,
-      "prompt": "The villagers ________ a way to control pollution by the end of last year.",
-      "options": {
-        "A": "find",
-        "B": "are finding",
-        "C": "will find",
-        "D": "had found"
-      },
-      "answer": "D",
-      "topicId": "verb-tense-voice",
-      "topic": "时态语态",
-      "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2021-徐汇-grammar-choice-q30",
@@ -3432,7 +3168,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2021-普陀-grammar-choice-q32",
@@ -3454,51 +3194,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
-    },
-    {
-      "_id": "sh-em2-2021-普陀-grammar-choice-q33",
-      "sourceSetId": "sh-em2-2021-普陀-grammar-choice",
-      "year": 2021,
-      "city": "上海",
-      "district": "普陀",
-      "examType": "二模",
-      "sourceFile": "精品解析：2021年上海市普陀区中考二模英语试题（含听力）（解析版）.doc",
-      "number": 33,
-      "prompt": "By seven o’clock this morning, Allen ________ breakfast with his wife.",
-      "options": {
-        "A": "will have",
-        "B": "had",
-        "C": "had had",
-        "D": "is having"
-      },
-      "answer": "C",
-      "topicId": "verb-tense-voice",
-      "topic": "时态语态",
-      "stage": "初中",
-      "questionType": "grammar-choice"
-    },
-    {
-      "_id": "sh-em2-2021-普陀-grammar-choice-q34",
-      "sourceSetId": "sh-em2-2021-普陀-grammar-choice",
-      "year": 2021,
-      "city": "上海",
-      "district": "普陀",
-      "examType": "二模",
-      "sourceFile": "精品解析：2021年上海市普陀区中考二模英语试题（含听力）（解析版）.doc",
-      "number": 34,
-      "prompt": "Next week about six new dishes ________ by the cools in our restaurant.",
-      "options": {
-        "A": "was created",
-        "B": "is created",
-        "C": "has been create",
-        "D": "will be created"
-      },
-      "answer": "D",
-      "topicId": "verb-tense-voice",
-      "topic": "时态语态",
-      "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2021-杨浦-grammar-choice-q29",
@@ -3520,7 +3220,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2021-松江-grammar-choice-q27",
@@ -3542,7 +3246,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2021-松江-grammar-choice-q32",
@@ -3564,7 +3272,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2021-松江-grammar-choice-q34",
@@ -3586,7 +3298,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2021-浦东-grammar-choice-q26",
@@ -3608,29 +3324,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
-    },
-    {
-      "_id": "sh-em2-2021-浦东-grammar-choice-q27",
-      "sourceSetId": "sh-em2-2021-浦东-grammar-choice",
-      "year": 2021,
-      "city": "上海",
-      "district": "浦东",
-      "examType": "二模",
-      "sourceFile": "精品解析：2021年上海市浦东新区中考二模英语试题（含听力）（解析版）.doc",
-      "number": 27,
-      "prompt": "By the end of last March, We ________ fifty trees in the schoolyard.",
-      "options": {
-        "A": "plant",
-        "B": "were planting",
-        "C": "had planted",
-        "D": "will plant"
-      },
-      "answer": "C",
-      "topicId": "verb-tense-voice",
-      "topic": "时态语态",
-      "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2021-浦东-grammar-choice-q28",
@@ -3652,7 +3350,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2021-浦东-grammar-choice-q29",
@@ -3674,7 +3376,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2021-虹口-grammar-choice-q35",
@@ -3696,7 +3402,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2021-闵行-grammar-choice-q32",
@@ -3718,29 +3428,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
-    },
-    {
-      "_id": "sh-em2-2022-嘉定-grammar-choice-q4",
-      "sourceSetId": "sh-em2-2022-嘉定-grammar-choice",
-      "year": 2022,
-      "city": "上海",
-      "district": "嘉定",
-      "examType": "二模",
-      "sourceFile": "精品解析：2022年上海市嘉定区中考二模英语试题（解析版）.docx",
-      "number": 4,
-      "prompt": "The furniture in each of the bedrooms ______ designed by the owner himself.",
-      "options": {
-        "A": "is",
-        "B": "are",
-        "C": "has",
-        "D": "have"
-      },
-      "answer": "A",
-      "topicId": "verb-tense-voice",
-      "topic": "时态语态",
-      "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2022-嘉定-grammar-choice-q8",
@@ -3762,29 +3454,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
-    },
-    {
-      "_id": "sh-em2-2022-嘉定-grammar-choice-q14",
-      "sourceSetId": "sh-em2-2022-嘉定-grammar-choice",
-      "year": 2022,
-      "city": "上海",
-      "district": "嘉定",
-      "examType": "二模",
-      "sourceFile": "精品解析：2022年上海市嘉定区中考二模英语试题（解析版）.docx",
-      "number": 14,
-      "prompt": "By the end of last year, Steve computer science in a university for two years.",
-      "options": {
-        "A": "studies",
-        "B": "has studied",
-        "C": "had studied",
-        "D": "is studying"
-      },
-      "answer": "C",
-      "topicId": "verb-tense-voice",
-      "topic": "时态语态",
-      "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2022-奉贤-grammar-choice-q27",
@@ -3806,29 +3480,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
-    },
-    {
-      "_id": "sh-em2-2022-奉贤-grammar-choice-q28",
-      "sourceSetId": "sh-em2-2022-奉贤-grammar-choice",
-      "year": 2022,
-      "city": "上海",
-      "district": "奉贤",
-      "examType": "二模",
-      "sourceFile": "上海市奉贤区2022届九年级6月质量调研（二模）英语试卷（word解析版）.docx",
-      "number": 28,
-      "prompt": "By the age of 15, Su Yiming _______ to train on the national team.",
-      "options": {
-        "A": "began",
-        "B": "has begun",
-        "C": "will begin",
-        "D": "had begun"
-      },
-      "answer": "D",
-      "topicId": "verb-tense-voice",
-      "topic": "时态语态",
-      "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2022-宝山-grammar-choice-q4",
@@ -3850,51 +3506,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
-    },
-    {
-      "_id": "sh-em2-2022-宝山-grammar-choice-q8",
-      "sourceSetId": "sh-em2-2022-宝山-grammar-choice",
-      "year": 2022,
-      "city": "上海",
-      "district": "宝山",
-      "examType": "二模",
-      "sourceFile": "上海市宝山区2022届九年级6月质量调研（二模）英语试卷（word解析版）.docx",
-      "number": 8,
-      "prompt": "Emily and her parents ________ each other for weeks by yesterday afternoon.",
-      "options": {
-        "A": "didn’t see",
-        "B": "haven’t seen",
-        "C": "hadn’t seen",
-        "D": "wouldn’t see"
-      },
-      "answer": "C",
-      "topicId": "verb-tense-voice",
-      "topic": "时态语态",
-      "stage": "初中",
-      "questionType": "grammar-choice"
-    },
-    {
-      "_id": "sh-em2-2022-宝山-grammar-choice-q9",
-      "sourceSetId": "sh-em2-2022-宝山-grammar-choice",
-      "year": 2022,
-      "city": "上海",
-      "district": "宝山",
-      "examType": "二模",
-      "sourceFile": "上海市宝山区2022届九年级6月质量调研（二模）英语试卷（word解析版）.docx",
-      "number": 9,
-      "prompt": "Look the paper tiger looks very lovely. It ________ by my grandfather just now.",
-      "options": {
-        "A": "made",
-        "B": "is made",
-        "C": "has been made",
-        "D": "was made"
-      },
-      "answer": "D",
-      "topicId": "verb-tense-voice",
-      "topic": "时态语态",
-      "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2022-徐汇-grammar-choice-q24",
@@ -3916,7 +3532,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2022-普陀-grammar-choice-q21",
@@ -3938,7 +3558,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2022-普陀-grammar-choice-q27",
@@ -3960,7 +3584,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2022-普陀-grammar-choice-q29",
@@ -3982,29 +3610,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
-    },
-    {
-      "_id": "sh-em2-2022-松江-grammar-choice-q30",
-      "sourceSetId": "sh-em2-2022-松江-grammar-choice",
-      "year": 2022,
-      "city": "上海",
-      "district": "松江",
-      "examType": "二模",
-      "sourceFile": "上海市松江区2022届九年级6月质量调研（二模）英语试卷（word解析版）.docx",
-      "number": 30,
-      "prompt": "The students in our school ________ about 8,000 yuan for SPCA by this time yesterday.",
-      "options": {
-        "A": "are raising",
-        "B": "were raising",
-        "C": "has raised",
-        "D": "had raised"
-      },
-      "answer": "D",
-      "topicId": "verb-tense-voice",
-      "topic": "时态语态",
-      "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2022-松江-grammar-choice-q31",
@@ -4026,29 +3636,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
-    },
-    {
-      "_id": "sh-em2-2022-浦东-grammar-choice-q25",
-      "sourceSetId": "sh-em2-2022-浦东-grammar-choice",
-      "year": 2022,
-      "city": "上海",
-      "district": "浦东",
-      "examType": "二模",
-      "sourceFile": "上海市浦东新区2022届九年级6月质量调研（二模）英语试卷（Word解析版）.docx",
-      "number": 25,
-      "prompt": "All parents will ________ to come and see The Wrong Trousers, our English-language play.",
-      "options": {
-        "A": "are invited",
-        "B": "invited",
-        "C": "be invited",
-        "D": "invite"
-      },
-      "answer": "C",
-      "topicId": "verb-tense-voice",
-      "topic": "时态语态",
-      "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2022-浦东-grammar-choice-q28",
@@ -4070,7 +3662,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2022-浦东-grammar-choice-q29",
@@ -4092,29 +3688,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
-    },
-    {
-      "_id": "sh-em2-2022-虹口-grammar-choice-q9",
-      "sourceSetId": "sh-em2-2022-虹口-grammar-choice",
-      "year": 2022,
-      "city": "上海",
-      "district": "虹口",
-      "examType": "二模",
-      "sourceFile": "上海市虹口区2022届九年级6月质量调研（二模）英语试卷（word解析版）.docx",
-      "number": 9,
-      "prompt": "These windows________. Now they are very clean.",
-      "options": {
-        "A": "were washed",
-        "B": "will be washed",
-        "C": "have been washed",
-        "D": "are washed"
-      },
-      "answer": "C",
-      "topicId": "verb-tense-voice",
-      "topic": "时态语态",
-      "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2022-金山-grammar-choice-q9",
@@ -4136,7 +3714,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2022-金山-grammar-choice-q10",
@@ -4158,7 +3740,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2022-长宁-grammar-choice-q3",
@@ -4180,29 +3766,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
-    },
-    {
-      "_id": "sh-em2-2022-长宁-grammar-choice-q8",
-      "sourceSetId": "sh-em2-2022-长宁-grammar-choice",
-      "year": 2022,
-      "city": "上海",
-      "district": "长宁",
-      "examType": "二模",
-      "sourceFile": "上海市长宁区2022届九年级6月质量调研（二模）英语试卷（Word解析版）.docx",
-      "number": 8,
-      "prompt": "Don’t always tell your partner _______ to do next. Let her solve the problem by herself.",
-      "options": {
-        "A": "how",
-        "B": "who",
-        "C": "what",
-        "D": "where"
-      },
-      "answer": "C",
-      "topicId": "verb-tense-voice",
-      "topic": "时态语态",
-      "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2022-长宁-grammar-choice-q9",
@@ -4224,7 +3792,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2022-长宁-grammar-choice-q10",
@@ -4246,29 +3818,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
-    },
-    {
-      "_id": "sh-em2-2022-长宁-grammar-choice-q14",
-      "sourceSetId": "sh-em2-2022-长宁-grammar-choice",
-      "year": 2022,
-      "city": "上海",
-      "district": "长宁",
-      "examType": "二模",
-      "sourceFile": "上海市长宁区2022届九年级6月质量调研（二模）英语试卷（Word解析版）.docx",
-      "number": 14,
-      "prompt": "________ proud Adam felt when he was elected captain of his basketball team just now!",
-      "options": {
-        "A": "What",
-        "B": "What a",
-        "C": "How",
-        "D": "How a"
-      },
-      "answer": "C",
-      "topicId": "verb-tense-voice",
-      "topic": "时态语态",
-      "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2022-闵行-grammar-choice-q8",
@@ -4290,7 +3844,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2022-闵行-grammar-choice-q9",
@@ -4312,7 +3870,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2022-静安-grammar-choice-q10",
@@ -4334,7 +3896,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2023-奉贤-grammar-choice-q4",
@@ -4356,7 +3922,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2023-奉贤-grammar-choice-q12",
@@ -4378,51 +3948,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
-    },
-    {
-      "_id": "sh-em2-2023-宝山-grammar-choice-q8",
-      "sourceSetId": "sh-em2-2023-宝山-grammar-choice",
-      "year": 2023,
-      "city": "上海",
-      "district": "宝山",
-      "examType": "二模",
-      "sourceFile": "精品解析：2023年上海市宝山区中考二模英语试题（解析版）.docx",
-      "number": 8,
-      "prompt": "The students and their teachers ________ the School Art Festival when I passed by their school.",
-      "options": {
-        "A": "are celebrating",
-        "B": "will celebrate",
-        "C": "were celebrating",
-        "D": "have celebrated"
-      },
-      "answer": "C",
-      "topicId": "verb-tense-voice",
-      "topic": "时态语态",
-      "stage": "初中",
-      "questionType": "grammar-choice"
-    },
-    {
-      "_id": "sh-em2-2023-宝山-grammar-choice-q12",
-      "sourceSetId": "sh-em2-2023-宝山-grammar-choice",
-      "year": 2023,
-      "city": "上海",
-      "district": "宝山",
-      "examType": "二模",
-      "sourceFile": "精品解析：2023年上海市宝山区中考二模英语试题（解析版）.docx",
-      "number": 12,
-      "prompt": "I don’t like traveling by plane ________ it’s so tiring to wait for hours before the plane takes off.",
-      "options": {
-        "A": "until",
-        "B": "although",
-        "C": "because",
-        "D": "unless"
-      },
-      "answer": "C",
-      "topicId": "verb-tense-voice",
-      "topic": "时态语态",
-      "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2023-宝山-grammar-choice-q13",
@@ -4444,7 +3974,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2023-崇明-grammar-choice-q7",
@@ -4466,7 +4000,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2023-崇明-grammar-choice-q9",
@@ -4488,7 +4026,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2023-崇明-grammar-choice-q13",
@@ -4510,7 +4052,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2023-徐汇-grammar-choice-q2",
@@ -4532,7 +4078,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2023-徐汇-grammar-choice-q6",
@@ -4554,7 +4104,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2023-徐汇-grammar-choice-q11",
@@ -4576,7 +4130,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2023-普陀-grammar-choice-q8",
@@ -4598,7 +4156,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2023-普陀-grammar-choice-q11",
@@ -4620,7 +4182,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2023-普陀-grammar-choice-q13",
@@ -4642,7 +4208,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2023-浦东-grammar-choice-q9",
@@ -4664,29 +4234,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
-    },
-    {
-      "_id": "sh-em2-2023-浦东-grammar-choice-q10",
-      "sourceSetId": "sh-em2-2023-浦东-grammar-choice",
-      "year": 2023,
-      "city": "上海",
-      "district": "浦东",
-      "examType": "二模",
-      "sourceFile": "精品解析：2023年上海市浦东新区中考二模英语试题（解析版）.docx",
-      "number": 10,
-      "prompt": "By last month, the TV series Three-Body ________ a large audience.",
-      "options": {
-        "A": "attracts",
-        "B": "attracted",
-        "C": "had attracted",
-        "D": "has attracted"
-      },
-      "answer": "C",
-      "topicId": "verb-tense-voice",
-      "topic": "时态语态",
-      "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2023-虹口-grammar-choice-q24",
@@ -4708,7 +4260,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2023-虹口-grammar-choice-q27",
@@ -4730,7 +4286,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2023-金山-grammar-choice-q4",
@@ -4752,7 +4312,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2023-金山-grammar-choice-q8",
@@ -4774,29 +4338,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
-    },
-    {
-      "_id": "sh-em2-2023-金山-grammar-choice-q9",
-      "sourceSetId": "sh-em2-2023-金山-grammar-choice",
-      "year": 2023,
-      "city": "上海",
-      "district": "金山",
-      "examType": "二模",
-      "sourceFile": "精品解析：2023年上海市金山区中考二模英语试题（解析版）.docx",
-      "number": 9,
-      "prompt": "By the time we got to the station, the train ________ for ten minutes.",
-      "options": {
-        "A": "has left",
-        "B": "has been away",
-        "C": "had left",
-        "D": "had been away"
-      },
-      "answer": "D",
-      "topicId": "verb-tense-voice",
-      "topic": "时态语态",
-      "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2023-金山-grammar-choice-q11",
@@ -4818,7 +4364,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2023-金山-grammar-choice-q15",
@@ -4840,7 +4390,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2023-长宁-grammar-choice-q9",
@@ -4862,7 +4416,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2023-长宁-grammar-choice-q11",
@@ -4884,7 +4442,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2023-闵行-grammar-choice-q21",
@@ -4906,29 +4468,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
-    },
-    {
-      "_id": "sh-em2-2023-闵行-grammar-choice-q25",
-      "sourceSetId": "sh-em2-2023-闵行-grammar-choice",
-      "year": 2023,
-      "city": "上海",
-      "district": "闵行",
-      "examType": "二模",
-      "sourceFile": "精品解析：2023年上海市闵行区中考二模英语试题（含听力）（解析版）.docx",
-      "number": 25,
-      "prompt": "New energy cars ________ by electricity, so they’ re environmentally friendly.",
-      "options": {
-        "A": "are driven",
-        "B": "drive",
-        "C": "were driven",
-        "D": "drove"
-      },
-      "answer": "A",
-      "topicId": "verb-tense-voice",
-      "topic": "时态语态",
-      "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2023-青浦-grammar-choice-q22",
@@ -4950,29 +4494,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
-    },
-    {
-      "_id": "sh-em2-2023-青浦-grammar-choice-q24",
-      "sourceSetId": "sh-em2-2023-青浦-grammar-choice",
-      "year": 2023,
-      "city": "上海",
-      "district": "青浦",
-      "examType": "二模",
-      "sourceFile": "精品解析：2023年上海市青浦区中考二模英语试题（含听力）（解析版）.docx",
-      "number": 24,
-      "prompt": "By the time I got the note from Tom, I ________ him for what he said to me.",
-      "options": {
-        "A": "forgive",
-        "B": "will forgive",
-        "C": "had forgiven",
-        "D": "have forgiven"
-      },
-      "answer": "C",
-      "topicId": "verb-tense-voice",
-      "topic": "时态语态",
-      "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2023-青浦-grammar-choice-q28",
@@ -4994,7 +4520,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2023-静安-grammar-choice-q9",
@@ -5016,7 +4546,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2023-静安-grammar-choice-q11",
@@ -5038,7 +4572,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2024-嘉定-grammar-choice-q9",
@@ -5060,7 +4598,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2024-嘉定-grammar-choice-q10",
@@ -5082,7 +4624,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2024-嘉定-grammar-choice-q13",
@@ -5104,7 +4650,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2024-嘉定-grammar-choice-q15",
@@ -5126,7 +4676,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2024-奉贤-grammar-choice-q6",
@@ -5148,29 +4702,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
-    },
-    {
-      "_id": "sh-em2-2024-奉贤-grammar-choice-q11",
-      "sourceSetId": "sh-em2-2024-奉贤-grammar-choice",
-      "year": 2024,
-      "city": "上海",
-      "district": "奉贤",
-      "examType": "二模",
-      "sourceFile": "精品解析：2024年上海市奉贤区中考二模英语试题（解析版）.docx",
-      "number": 11,
-      "prompt": "By the end of last week, the student ________ reading two-thirds of the book.",
-      "options": {
-        "A": "finished",
-        "B": "was finishing",
-        "C": "has finished",
-        "D": "had finished"
-      },
-      "answer": "D",
-      "topicId": "verb-tense-voice",
-      "topic": "时态语态",
-      "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2024-奉贤-grammar-choice-q14",
@@ -5192,7 +4728,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2024-奉贤-grammar-choice-q15",
@@ -5214,29 +4754,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
-    },
-    {
-      "_id": "sh-em2-2024-宝山-grammar-choice-q8",
-      "sourceSetId": "sh-em2-2024-宝山-grammar-choice",
-      "year": 2024,
-      "city": "上海",
-      "district": "宝山",
-      "examType": "二模",
-      "sourceFile": "精品解析：2024年上海市宝山区中考二模英语试题（解析版）.docx",
-      "number": 8,
-      "prompt": "By the end of last year, Kevin ________ in Shanghai for ten years.",
-      "options": {
-        "A": "lived",
-        "B": "lives",
-        "C": "has lived",
-        "D": "had lived"
-      },
-      "answer": "D",
-      "topicId": "verb-tense-voice",
-      "topic": "时态语态",
-      "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2024-崇明-grammar-choice-q6",
@@ -5258,7 +4780,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2024-崇明-grammar-choice-q7",
@@ -5280,7 +4806,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2024-崇明-grammar-choice-q10",
@@ -5302,7 +4832,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2024-徐汇-grammar-choice-q9",
@@ -5324,7 +4858,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2024-徐汇-grammar-choice-q15",
@@ -5346,7 +4884,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2024-普陀-grammar-choice-q5",
@@ -5368,7 +4910,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2024-普陀-grammar-choice-q11",
@@ -5390,7 +4936,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2024-杨浦-grammar-choice-q23",
@@ -5412,7 +4962,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2024-松江-grammar-choice-q4",
@@ -5434,51 +4988,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
-    },
-    {
-      "_id": "sh-em2-2024-松江-grammar-choice-q9",
-      "sourceSetId": "sh-em2-2024-松江-grammar-choice",
-      "year": 2024,
-      "city": "上海",
-      "district": "松江",
-      "examType": "二模",
-      "sourceFile": "精品解析：2024年上海市松江区中考二模英语试题（解析版）.docx",
-      "number": 9,
-      "prompt": "Luckily, the rain ________ by the time we reached the foot of the hill.",
-      "options": {
-        "A": "stops",
-        "B": "stopped",
-        "C": "has stopped",
-        "D": "had stopped"
-      },
-      "answer": "D",
-      "topicId": "verb-tense-voice",
-      "topic": "时态语态",
-      "stage": "初中",
-      "questionType": "grammar-choice"
-    },
-    {
-      "_id": "sh-em2-2024-浦东-grammar-choice-q23",
-      "sourceSetId": "sh-em2-2024-浦东-grammar-choice",
-      "year": 2024,
-      "city": "上海",
-      "district": "浦东",
-      "examType": "二模",
-      "sourceFile": "精品解析：2024年上海市浦东新区中考二模英语试题（含听力）（解析版）.docx",
-      "number": 23,
-      "prompt": "—By the way, _______ is the next bus stop from here? —About 500 hundred meters.",
-      "options": {
-        "A": "how much",
-        "B": "how far",
-        "C": "how soon",
-        "D": "how often"
-      },
-      "answer": "B",
-      "topicId": "verb-tense-voice",
-      "topic": "时态语态",
-      "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2024-浦东-grammar-choice-q24",
@@ -5500,29 +5014,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
-    },
-    {
-      "_id": "sh-em2-2024-浦东-grammar-choice-q30",
-      "sourceSetId": "sh-em2-2024-浦东-grammar-choice",
-      "year": 2024,
-      "city": "上海",
-      "district": "浦东",
-      "examType": "二模",
-      "sourceFile": "精品解析：2024年上海市浦东新区中考二模英语试题（含听力）（解析版）.docx",
-      "number": 30,
-      "prompt": "It is reported that a new supermarket _______ in our community in about two years.",
-      "options": {
-        "A": "be opened",
-        "B": "has been opened",
-        "C": "was opened",
-        "D": "will be opened"
-      },
-      "answer": "D",
-      "topicId": "verb-tense-voice",
-      "topic": "时态语态",
-      "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2024-浦东-grammar-choice-q31",
@@ -5544,7 +5040,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2024-虹口-grammar-choice-q8",
@@ -5566,7 +5066,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2024-金山-grammar-choice-q8",
@@ -5588,7 +5092,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2024-金山-grammar-choice-q11",
@@ -5610,7 +5118,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2024-长宁-grammar-choice-q26",
@@ -5632,29 +5144,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
-    },
-    {
-      "_id": "sh-em2-2024-长宁-grammar-choice-q27",
-      "sourceSetId": "sh-em2-2024-长宁-grammar-choice",
-      "year": 2024,
-      "city": "上海",
-      "district": "长宁",
-      "examType": "二模",
-      "sourceFile": "精品解析：2024年上海市长宁区中考二模英语试题（含听力）（解析版）.docx",
-      "number": 27,
-      "prompt": "By 10 o’clock last night, we ________ over 200 e-mails on the program from the local citizens.",
-      "options": {
-        "A": "received",
-        "B": "have received",
-        "C": "had received",
-        "D": "will receive"
-      },
-      "answer": "C",
-      "topicId": "verb-tense-voice",
-      "topic": "时态语态",
-      "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2024-长宁-grammar-choice-q31",
@@ -5676,7 +5170,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2024-闵行-grammar-choice-q7",
@@ -5698,7 +5196,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2024-闵行-grammar-choice-q8",
@@ -5720,7 +5222,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2024-闵行-grammar-choice-q10",
@@ -5742,7 +5248,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2024-黄浦-grammar-choice-q5",
@@ -5764,29 +5274,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
-    },
-    {
-      "_id": "sh-em2-2024-黄浦-grammar-choice-q9",
-      "sourceSetId": "sh-em2-2024-黄浦-grammar-choice",
-      "year": 2024,
-      "city": "上海",
-      "district": "黄浦",
-      "examType": "二模",
-      "sourceFile": "精品解析：2024年上海市黄浦区中考二模英语试题（解析版）.docx",
-      "number": 9,
-      "prompt": "It is reported that the third airport ________ in Shanghai in two years.",
-      "options": {
-        "A": "is built",
-        "B": "was built",
-        "C": "has been built",
-        "D": "will be built"
-      },
-      "answer": "D",
-      "topicId": "verb-tense-voice",
-      "topic": "时态语态",
-      "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2024-黄浦-grammar-choice-q10",
@@ -5808,7 +5300,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2025-宝山-grammar-choice-q28",
@@ -5830,7 +5326,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2025-宝山-grammar-choice-q29",
@@ -5852,7 +5352,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2025-崇明-grammar-choice-q24",
@@ -5874,7 +5378,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2025-崇明-grammar-choice-q27",
@@ -5896,7 +5404,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2025-虹口-grammar-choice-q28",
@@ -5918,7 +5430,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2025-虹口-grammar-choice-q33",
@@ -5940,7 +5456,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2025-黄浦-grammar-choice-q30",
@@ -5962,7 +5482,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2025-黄浦-grammar-choice-q34",
@@ -5984,7 +5508,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2025-嘉定-grammar-choice-q28",
@@ -6006,29 +5534,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
-    },
-    {
-      "_id": "sh-em2-2025-嘉定-grammar-choice-q29",
-      "sourceSetId": "sh-em2-2025-嘉定-grammar-choice",
-      "year": 2025,
-      "city": "上海",
-      "district": "嘉定",
-      "examType": "二模",
-      "sourceFile": "2025上海初三英语二模16区试卷.pdf",
-      "number": 29,
-      "prompt": "When Alice looked for the copy of Harry Potter, she found that it ________ by someone else.",
-      "options": {
-        "A": "is borrowed",
-        "B": "was borrowed",
-        "C": "has been borrowed",
-        "D": "had been borrowed"
-      },
-      "answer": "C",
-      "topicId": "verb-tense-voice",
-      "topic": "时态语态",
-      "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2025-嘉定-grammar-choice-q34",
@@ -6050,29 +5560,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
-    },
-    {
-      "_id": "sh-em2-2025-金山-grammar-choice-q30",
-      "sourceSetId": "sh-em2-2025-金山-grammar-choice",
-      "year": 2025,
-      "city": "上海",
-      "district": "金山",
-      "examType": "二模",
-      "sourceFile": "2025上海初三英语二模16区试卷.pdf",
-      "number": 30,
-      "prompt": "By the time I called my friend to cancel our visit, she ________ the tickets to the museum.",
-      "options": {
-        "A": "had booked",
-        "B": "has booked",
-        "C": "booked",
-        "D": "books"
-      },
-      "answer": "D",
-      "topicId": "verb-tense-voice",
-      "topic": "时态语态",
-      "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2025-金山-grammar-choice-q31",
@@ -6094,7 +5586,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2025-静安-grammar-choice-q30",
@@ -6116,7 +5612,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2025-浦东-grammar-choice-q30",
@@ -6138,29 +5638,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
-    },
-    {
-      "_id": "sh-em2-2025-普陀-grammar-choice-q28",
-      "sourceSetId": "sh-em2-2025-普陀-grammar-choice",
-      "year": 2025,
-      "city": "上海",
-      "district": "普陀",
-      "examType": "二模",
-      "sourceFile": "2025上海初三英语二模16区试卷.pdf",
-      "number": 28,
-      "prompt": "- Any plans for the coming weekend? It’ll be warm and sunny. - Nice weather can’t be wasted. I ________ for a hike with my parents.",
-      "options": {
-        "A": "go",
-        "B": "went",
-        "C": "will go",
-        "D": "have gone"
-      },
-      "answer": "B",
-      "topicId": "verb-tense-voice",
-      "topic": "时态语态",
-      "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2025-普陀-grammar-choice-q34",
@@ -6182,7 +5664,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2025-青浦-grammar-choice-q28",
@@ -6204,7 +5690,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2025-青浦-grammar-choice-q29",
@@ -6226,7 +5716,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2025-松江-grammar-choice-q35",
@@ -6248,7 +5742,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2025-徐汇-grammar-choice-q25",
@@ -6270,7 +5768,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2025-杨浦-grammar-choice-q25",
@@ -6292,29 +5794,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
-    },
-    {
-      "_id": "sh-em2-2025-杨浦-grammar-choice-q27",
-      "sourceSetId": "sh-em2-2025-杨浦-grammar-choice",
-      "year": 2025,
-      "city": "上海",
-      "district": "杨浦",
-      "examType": "二模",
-      "sourceFile": "2025上海初三英语二模16区试卷.pdf",
-      "number": 27,
-      "prompt": "By the time the firefighters arrived, the fire ________ most of the building.",
-      "options": {
-        "A": "destroy",
-        "B": "destroyed",
-        "C": "has destroyed",
-        "D": "had destroyed"
-      },
-      "answer": "D",
-      "topicId": "verb-tense-voice",
-      "topic": "时态语态",
-      "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2025-杨浦-grammar-choice-q31",
@@ -6336,29 +5820,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
-    },
-    {
-      "_id": "sh-em2-2025-杨浦-grammar-choice-q34",
-      "sourceSetId": "sh-em2-2025-杨浦-grammar-choice",
-      "year": 2025,
-      "city": "上海",
-      "district": "杨浦",
-      "examType": "二模",
-      "sourceFile": "2025上海初三英语二模16区试卷.pdf",
-      "number": 34,
-      "prompt": "The businessman bought all the pictures that ________ by the famous artist.",
-      "options": {
-        "A": "draw",
-        "B": "drew",
-        "C": "were drawn",
-        "D": "were drawing"
-      },
-      "answer": "A",
-      "topicId": "verb-tense-voice",
-      "topic": "时态语态",
-      "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2025-长宁-grammar-choice-q31",
@@ -6380,7 +5846,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2025-长宁-grammar-choice-q34",
@@ -6402,29 +5872,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
-    },
-    {
-      "_id": "sh-em2-2026-崇明-grammar-choice-q11",
-      "sourceSetId": "sh-em2-2026-崇明-grammar-choice",
-      "year": 2026,
-      "city": "上海",
-      "district": "崇明",
-      "examType": "二模",
-      "sourceFile": "【英语】精品解析：2026年上海市崇明区初三下学期英语二模试题（解析版）.pdf",
-      "number": 11,
-      "prompt": "By the time the park opened, many visitors ________ outside the gate for a long time.",
-      "options": {
-        "A": "wait",
-        "B": "waited",
-        "C": "have waited",
-        "D": "had waited"
-      },
-      "answer": "D",
-      "topicId": "verb-tense-voice",
-      "topic": "时态语态",
-      "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2026-崇明-grammar-choice-q14",
@@ -6446,7 +5898,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2026-崇明-grammar-choice-q15",
@@ -6468,7 +5924,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2026-奉贤-grammar-choice-q20",
@@ -6490,7 +5950,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2026-奉贤-grammar-choice-q27",
@@ -6512,7 +5976,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2026-虹口-grammar-choice-q11",
@@ -6534,29 +6002,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
-    },
-    {
-      "_id": "sh-em2-2026-虹口-grammar-choice-q12",
-      "sourceSetId": "sh-em2-2026-虹口-grammar-choice",
-      "year": 2026,
-      "city": "上海",
-      "district": "虹口",
-      "examType": "二模",
-      "sourceFile": "【英语官方解析】上海市虹口区2026年下学期九年级中考二模 英语试卷（解析版）.pdf",
-      "number": 12,
-      "prompt": "Mary has drawn five comic strips this year and three of them ________ months ago.",
-      "options": {
-        "A": "published",
-        "B": "were published",
-        "C": "have published",
-        "D": "have been published"
-      },
-      "answer": "B",
-      "topicId": "verb-tense-voice",
-      "topic": "时态语态",
-      "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2026-虹口-grammar-choice-q14",
@@ -6578,7 +6028,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2026-黄浦-grammar-choice-q6",
@@ -6600,29 +6054,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
-    },
-    {
-      "_id": "sh-em2-2026-黄浦-grammar-choice-q9",
-      "sourceSetId": "sh-em2-2026-黄浦-grammar-choice",
-      "year": 2026,
-      "city": "上海",
-      "district": "黄浦",
-      "examType": "二模",
-      "sourceFile": "【英语官方解析】上海市黄浦区2026年九年级中考二模英语试卷（解析版）.pdf",
-      "number": 9,
-      "prompt": "All visitors ________ to sign in and show their ID before they enter the school campus.",
-      "options": {
-        "A": "require",
-        "B": "required",
-        "C": "are required",
-        "D": "were required"
-      },
-      "answer": "C",
-      "topicId": "verb-tense-voice",
-      "topic": "时态语态",
-      "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2026-金山-grammar-choice-q4",
@@ -6644,7 +6080,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2026-金山-grammar-choice-q7",
@@ -6666,7 +6106,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2026-金山-grammar-choice-q10",
@@ -6688,7 +6132,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2026-金山-grammar-choice-q11",
@@ -6710,29 +6158,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
-    },
-    {
-      "_id": "sh-em2-2026-金山-grammar-choice-q12",
-      "sourceSetId": "sh-em2-2026-金山-grammar-choice",
-      "year": 2026,
-      "city": "上海",
-      "district": "金山",
-      "examType": "二模",
-      "sourceFile": "【英语官方解析】精品解析：上海市金山区2026年九年级下学期中考二模英语试卷（解析版）.pdf",
-      "number": 12,
-      "prompt": "A large number of old houses in this area ________ down last year to build a new park.",
-      "options": {
-        "A": "pull",
-        "B": "pulled",
-        "C": "were pulled",
-        "D": "are pulled"
-      },
-      "answer": "C",
-      "topicId": "verb-tense-voice",
-      "topic": "时态语态",
-      "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2026-闵行-grammar-choice-q22",
@@ -6754,7 +6184,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2026-闵行-grammar-choice-q25",
@@ -6776,7 +6210,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2026-闵行-grammar-choice-q26",
@@ -6798,7 +6236,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2026-普陀-grammar-choice-q8",
@@ -6820,7 +6262,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2026-青浦-grammar-choice-q5",
@@ -6842,7 +6288,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2026-青浦-grammar-choice-q6",
@@ -6864,7 +6314,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2026-青浦-grammar-choice-q10",
@@ -6886,7 +6340,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2026-松江-grammar-choice-q31",
@@ -6908,7 +6366,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2026-徐汇-grammar-choice-q6",
@@ -6930,7 +6392,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2026-徐汇-grammar-choice-q10",
@@ -6952,29 +6418,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
-    },
-    {
-      "_id": "sh-em2-2026-徐汇-grammar-choice-q13",
-      "sourceSetId": "sh-em2-2026-徐汇-grammar-choice",
-      "year": 2026,
-      "city": "上海",
-      "district": "徐汇",
-      "examType": "二模",
-      "sourceFile": "【英语官方答案】2026年上海市徐汇区中考二模考试英语试题（解析版）.pdf",
-      "number": 13,
-      "prompt": "That bakery promises that all the ingredients ________ accurately to ensure the taste.",
-      "options": {
-        "A": "will weigh",
-        "B": "have weighed",
-        "C": "are weighed",
-        "D": "had been weighed"
-      },
-      "answer": "C",
-      "topicId": "verb-tense-voice",
-      "topic": "时态语态",
-      "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2026-杨浦-grammar-choice-q12",
@@ -6996,7 +6444,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2026-长宁-grammar-choice-q11",
@@ -7018,7 +6470,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2026-长宁-grammar-choice-q13",
@@ -7040,7 +6496,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     },
     {
       "_id": "sh-em2-2026-长宁-grammar-choice-q15",
@@ -7062,7 +6522,11 @@
       "topicId": "verb-tense-voice",
       "topic": "时态语态",
       "stage": "初中",
-      "questionType": "grammar-choice"
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:时态",
+      "subtopic": "时态"
     }
   ]
 }
