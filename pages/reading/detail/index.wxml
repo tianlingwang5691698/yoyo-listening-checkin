@@ -171,9 +171,9 @@
           <view class="card-example" wx:if="{{item.example}}">{{item.example}}</view>
           <view class="card-example-meaning" wx:if="{{item.exampleMeaning}}">{{item.exampleMeaning}}</view>
         </view>
-        <view class="empty-inline" wx:if="{{!wordCards.length && loadingStudySection !== 'vocabulary' && loadingStudySection !== 'cards'}}">
-          <view>还没有生成生词。</view>
-          <button wx:if="{{loadingStudySection !== 'vocabulary' && loadingStudySection !== 'cards'}}" data-tab="vocabulary" bindtap="selectReviewTab">生成生词</button>
+        <view class="empty-inline" wx:if="{{!wordCards.length}}">
+          <view>{{loadingStudySection === 'vocabulary' || loadingStudySection === 'cards' ? '生词生成中' : '还没有生成生词。'}}</view>
+          <button loading="{{loadingStudySection === 'vocabulary' || loadingStudySection === 'cards'}}" disabled="{{loadingStudySection === 'vocabulary' || loadingStudySection === 'cards'}}" data-tab="vocabulary" bindtap="selectReviewTab">{{loadingStudySection === 'vocabulary' || loadingStudySection === 'cards' ? '生成中' : '生成生词'}}</button>
         </view>
       </view>
 
@@ -194,9 +194,9 @@
           <view class="card-meaning">{{item.meaning}}</view>
           <view class="card-example" wx:if="{{item.example}}">{{item.example}}</view>
         </view>
-        <view class="empty-inline" wx:if="{{!phraseCards.length && loadingStudySection !== 'phrases' && loadingStudySection !== 'cards'}}">
-          <view>还没有生成短语。</view>
-          <button wx:if="{{loadingStudySection !== 'phrases' && loadingStudySection !== 'cards'}}" data-tab="phrases" bindtap="selectReviewTab">生成短语</button>
+        <view class="empty-inline" wx:if="{{!phraseCards.length}}">
+          <view>{{loadingStudySection === 'phrases' || loadingStudySection === 'cards' ? '短语生成中' : '还没有生成短语。'}}</view>
+          <button loading="{{loadingStudySection === 'phrases' || loadingStudySection === 'cards'}}" disabled="{{loadingStudySection === 'phrases' || loadingStudySection === 'cards'}}" data-tab="phrases" bindtap="selectReviewTab">{{loadingStudySection === 'phrases' || loadingStudySection === 'cards' ? '生成中' : '生成短语'}}</button>
         </view>
       </view>
 
@@ -210,9 +210,9 @@
           <view class="card-example" wx:if="{{item.example}}">{{item.example}}</view>
           <view class="card-example-meaning" wx:if="{{item.exampleMeaning}}">{{item.exampleMeaning}}</view>
         </view>
-        <view class="empty-inline" wx:if="{{!sentencePatternCards.length && loadingStudySection !== 'patterns' && loadingStudySection !== 'cards'}}">
-          <view>还没有生成句型。</view>
-          <button wx:if="{{loadingStudySection !== 'patterns' && loadingStudySection !== 'cards'}}" data-tab="patterns" bindtap="selectReviewTab">生成句型</button>
+        <view class="empty-inline" wx:if="{{!sentencePatternCards.length}}">
+          <view>{{loadingStudySection === 'patterns' || loadingStudySection === 'cards' ? '句型生成中' : '还没有生成句型。'}}</view>
+          <button loading="{{loadingStudySection === 'patterns' || loadingStudySection === 'cards'}}" disabled="{{loadingStudySection === 'patterns' || loadingStudySection === 'cards'}}" data-tab="patterns" bindtap="selectReviewTab">{{loadingStudySection === 'patterns' || loadingStudySection === 'cards' ? '生成中' : '生成句型'}}</button>
         </view>
       </view>
     </view>
