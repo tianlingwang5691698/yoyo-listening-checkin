@@ -114,6 +114,10 @@
       <view class="entry-poster-dot {{entryPosterPage === 1 ? 'is-active' : ''}}"></view>
     </view>
     <view class="entry-poster-action" wx:if="{{entryPosterPage === 0}}" bindtap="showNextEntryPosterPage">下一页</view>
+    <view class="entry-poster-actions" wx:elif="{{identityConfirmVisible}}">
+      <button class="entry-poster-role-action" data-role="parent" bindtap="confirmStudyIdentity">我是家长</button>
+      <button class="entry-poster-role-action is-primary" data-role="student" bindtap="confirmStudyIdentity">我是学生</button>
+    </view>
     <view class="entry-poster-action" wx:else bindtap="closeEntryPoster">进入首页</view>
   </view>
 </view>

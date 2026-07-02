@@ -352,13 +352,21 @@ Page({
   async confirmStudyIdentity(event) {
     const nextRole = event.currentTarget.dataset.role === 'student' ? 'student' : 'parent';
     page.setIdentityConfirmed(true);
+    try {
+      wx.setStorageSync(ENTRY_POSTER_DISMISSED_KEY, 'yes');
+    } catch (error) {}
     wx.setStorageSync('lastStudyRole', nextRole);
     if (nextRole === 'student') {
       wx.setStorageSync('hasUsedStudentMode', 'yes');
     }
+    const tabBar = this.getTabBar && this.getTabBar();
+    if (tabBar) {
+      tabBar.setData({ hidden: false });
+    }
     this.setData(Object.assign({
       identityConfirmVisible: false,
-      modeChangedNoticeVisible: false
+      modeChangedNoticeVisible: false,
+      entryPosterVisible: false
     }, this.buildStudyModePresentation({ studyRole: nextRole })));
     try {
       const data = await store.setStudyRole(nextRole);
