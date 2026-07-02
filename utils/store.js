@@ -411,7 +411,7 @@ async function getMaterialIndex(options, onRefresh) {
 }
 
 async function getLevelOverview(options, onRefresh) {
-  return callCloud('getLevelOverview', Object.assign({}, options || {}), {
+  return callCloud('getLevelOverview', withSelectedStudent(Object.assign({}, options || {})), {
     user: {},
     currentUser: {},
     currentMember: contracts.createCurrentMemberDefaults(),
@@ -548,7 +548,7 @@ async function getTempFileURL(fileId) {
 }
 
 async function markTaskListened(options) {
-  return callCloud('markTaskListened', options, contracts.createTaskDetailDefaults());
+  return callCloud('markTaskListened', withSelectedStudent(options || {}), contracts.createTaskDetailDefaults());
 }
 
 async function createSpeakingUploadUrl(options) {
@@ -592,7 +592,7 @@ async function getSpeakingAttempts(options, onRefresh) {
 }
 
 async function completeTodayCheckin() {
-  return callCloud('completeTodayCheckin', {}, {
+  return callCloud('completeTodayCheckin', withSelectedStudent({}), {
     child: null,
     stats: contracts.createStatsDefaults(),
     todayRecord: null,
