@@ -376,7 +376,8 @@ async function ensureState() {
  * @returns {Promise<DashboardData>}
  */
 async function getDashboard(options, onRefresh) {
-  return callCloud('getDashboard', Object.assign({}, options || {}), contracts.createDashboardDefaults(), { onRefresh });
+  const payload = Object.assign({}, options || {});
+  return callCloud('getDashboard', payload.view === 'record' ? withSelectedStudent(payload) : payload, contracts.createDashboardDefaults(), { onRefresh });
 }
 
 async function getMaterialIndex(onRefresh) {
@@ -590,7 +591,7 @@ async function getProfileData(onRefresh) {
 }
 
 async function getHeatmap(days, onRefresh) {
-  return callCloud('getHeatmap', { days }, {
+  return callCloud('getHeatmap', withSelectedStudent({ days }), {
     heatmap: [],
     catchupState: contracts.createCatchupStateDefaults(),
     catchupTasks: []
@@ -598,7 +599,7 @@ async function getHeatmap(days, onRefresh) {
 }
 
 async function getMonthHeatmap(year, month, onRefresh) {
-  return callCloud('getMonthHeatmap', { year, month }, {
+  return callCloud('getMonthHeatmap', withSelectedStudent({ year, month }), {
     year,
     month,
     heatmap: [],

@@ -9,7 +9,30 @@ const DAILY_ENCOURAGEMENTS = [
   ['Every day adds up.', '每天一点点，都会算数。'],
   ['You are building a habit.', '你正在养成一个很棒的习惯。'],
   ['Three times, one brave heart.', '听三遍，是小小的勇敢。'],
-  ['Good listening takes time.', '好的听力，是慢慢长出来的。']
+  ['Good listening takes time.', '好的听力，是慢慢长出来的。'],
+  ['One more sound today.', '今天多听懂一点点。'],
+  ['Keep your ears open.', '小耳朵打开，进步就会进来。'],
+  ['A little focus helps.', '专心一小会儿，也很厉害。'],
+  ['You heard something new.', '今天又听见了新的声音。'],
+  ['Practice makes it familiar.', '多听几次，就会越来越熟。'],
+  ['Your rhythm is building.', '你的学习节奏正在建立。'],
+  ['Listen, then understand.', '先听见，再慢慢听懂。'],
+  ['Tiny progress is progress.', '小小进步，也是真的进步。'],
+  ['You are getting steadier.', '你正在越来越稳。'],
+  ['Today counts.', '今天的坚持也算数。'],
+  ['Sounds become words.', '声音会慢慢变成听得懂的词。'],
+  ['Stay with the sentence.', '跟住一句话，就更靠近理解。'],
+  ['Your habit is growing.', '你的习惯正在长大。'],
+  ['Listen with patience.', '耐心听，答案会慢慢清楚。'],
+  ['A calm mind hears more.', '心静一点，就能听见更多。'],
+  ['You are training your ear.', '你在训练自己的小耳朵。'],
+  ['Repeat and it gets easier.', '重复几次，就会轻松一点。'],
+  ['Every lesson leaves a trace.', '每次学习都会留下痕迹。'],
+  ['You are closer than yesterday.', '你比昨天更近一步。'],
+  ['Let the sounds settle.', '让今天的声音慢慢留下来。'],
+  ['One step, one sentence.', '一步一步，一句一句。'],
+  ['Your listening is waking up.', '你的听力正在醒来。'],
+  ['Keep going gently.', '轻轻坚持，就很好。']
 ];
 
 function getDailyEncouragement() {
