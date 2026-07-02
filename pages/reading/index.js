@@ -45,18 +45,14 @@ Page({
   }),
   applyReadingHome(data) {
     data = data || {};
-    const categoryTree = data.categoryTree || this.data.categoryTree || [];
+    const categoryTree = data.categoryTree || [];
     const selectedGroup = pickGroup(categoryTree, this.data.selectedExamType);
     const selectedDistrictNode = pickDistrict(selectedGroup, this.data.selectedDistrict);
     const hasDirectory = !!(categoryTree && categoryTree.length);
-    const nextPassage = data.passage || this.data.passage || null;
-    const nextPassages = data.passages && data.passages.length
-      ? data.passages
-      : (data.passage ? [data.passage] : (this.data.passages || []));
     this.setData(page.buildCloudPageData(this.data, {
       loading: false,
-      passage: nextPassage,
-      passages: nextPassages,
+      passage: data.passage || null,
+      passages: data.passages || [],
       categoryRoot: categoryTree[0] || null,
       categoryTree,
       directoryLoaded: hasDirectory || this.data.directoryLoaded,
@@ -88,11 +84,11 @@ Page({
       return;
     }
     this.setData({ loading: true });
-    const data = await store.getReadingHome({}, (fresh) => {
+    const data = await store.getReadingHome({ directoryOnly: true }, (fresh) => {
       this.applyReadingHome(fresh);
       if (this.readingPerf) {
         this.readingPerf.mark('cloudRefresh', {
-          passages: (fresh.passages || []).length
+          groups: (((fresh.categoryTree || [])[0] || {}).groups || []).length
         });
       }
     });
@@ -100,7 +96,7 @@ Page({
     if (this.readingPerf) {
       this.readingPerf.ready('pageReady', {
         cacheHit: !!data.__cacheHit,
-        passages: (data.passages || []).length
+        groups: (((data.categoryTree || [])[0] || {}).groups || []).length
       });
     }
   },

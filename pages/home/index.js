@@ -4,6 +4,7 @@ const contracts = require('../../utils/contracts');
 const labels = require('../../utils/labels');
 const completed = require('../../utils/completed');
 const LEVEL_STAGE_SNAPSHOT_KEY = 'levelStageSnapshotV1';
+const LESSON_TASK_SNAPSHOT_KEY = 'lessonTaskSnapshotV1';
 const ENTRY_POSTER_DISMISSED_KEY = 'homeEntryPosterDismissedV1';
 
 const VOCABULARY_ITEM_KEYS = [
@@ -152,6 +153,7 @@ function buildStageSnapshotTaskGroups(groupedDailyTasks) {
       minutes: Number(group.minutes || 0),
       durationSec: Number(group.durationSec || 0),
       taskId: task.taskId || '',
+      taskSnapshot: task,
       disabled,
       stateText: task.completedToday ? '完成' : disabled ? '等待' : '›',
       planRunType: task.planRunType || group.planRunType || 'normal',
@@ -411,9 +413,29 @@ Page({
     const query = taskId
       ? `/pages/lesson/index?category=${category}&taskId=${taskId}`
       : `/pages/lesson/index?category=${category}`;
+    this.writeLessonTaskSnapshot(category, taskId);
     wx.navigateTo({
       url: query
     });
+  },
+  writeLessonTaskSnapshot(category, taskId) {
+    const groups = this.data.groupedDailyTasks || [];
+    const group = groups.find((item) => item.category === category) || null;
+    const task = group
+      ? ((group.tasks || []).find((item) => item.taskId === taskId)
+        || (group.tasks || []).find((item) => !item.completedToday && !item.isPendingAsset)
+        || (group.tasks || [])[0]
+        || group.nextTask)
+      : null;
+    if (!task) return;
+    try {
+      wx.setStorageSync(LESSON_TASK_SNAPSHOT_KEY, {
+        savedAt: Date.now(),
+        category,
+        taskId: taskId || task.taskId || '',
+        task
+      });
+    } catch (error) {}
   },
   openListening() {
     if (this.data.identityConfirmVisible) {

@@ -4,6 +4,8 @@ const appConfig = require('../../data/app-config');
 const page = require('../../utils/page');
 const labels = require('../../utils/labels');
 const monitor = require('../../utils/monitor');
+const LESSON_TASK_SNAPSHOT_KEY = 'lessonTaskSnapshotV1';
+const LESSON_TASK_SNAPSHOT_MAX_AGE_MS = 2 * 60 * 1000;
 
 function buildCloudFileId(cloudPath) {
   const normalizedPath = String(cloudPath || '').replace(/^\/+/, '');
@@ -329,6 +331,50 @@ Page({
     lessonPhraseCards: [],
     lessonPatternCards: []
   }),
+  readLessonTaskSnapshot() {
+    try {
+      const snapshot = wx.getStorageSync(LESSON_TASK_SNAPSHOT_KEY) || null;
+      if (!snapshot || Date.now() - Number(snapshot.savedAt || 0) > LESSON_TASK_SNAPSHOT_MAX_AGE_MS) {
+        return null;
+      }
+      const task = snapshot.task || null;
+      if (!task || String(task.category || snapshot.category || '') !== this.category) {
+        return null;
+      }
+      if (this.taskId && String(task.taskId || snapshot.taskId || '') !== this.taskId) {
+        return null;
+      }
+      return task;
+    } catch (error) {
+      return null;
+    }
+  },
+  applyTaskSnapshot(task) {
+    const normalizedTask = labels.normalizeTask(task);
+    if (!normalizedTask) return;
+    const progress = {
+      playCount: Number(normalizedTask.playCount || 0),
+      playStepText: normalizedTask.playStepText || `${Number(normalizedTask.playCount || 0)}/${Number(normalizedTask.repeatTarget || 3)}`,
+      currentPass: Number(normalizedTask.currentPass || 1),
+      repeatTarget: Number(normalizedTask.repeatTarget || 3),
+      textUnlocked: !!normalizedTask.textUnlocked,
+      transcriptVisible: !!normalizedTask.transcriptVisible,
+      completedToday: !!normalizedTask.completedToday
+    };
+    const previewAudio = buildCurrentAudio(normalizedTask, '', 'idle');
+    this.setData(page.buildCloudPageData(this.data, {
+      lessonLoading: false,
+      task: normalizedTask,
+      progress,
+      passSteps: buildPassSteps(progress),
+      currentAudio: previewAudio,
+      audioSource: normalizedTask.audioSource || 'none',
+      audioReady: false,
+      audioResolving: false,
+      audioPlaybackMode: 'idle'
+    }));
+    this.prefetchTaskAudio(normalizedTask);
+  },
   isStudyWriteAllowed() {
     const currentMember = this.data.currentMember || {};
     return currentMember.studyRole === 'student';
@@ -469,6 +515,10 @@ Page({
         });
       }
     });
+    const snapshotTask = this.readLessonTaskSnapshot();
+    if (snapshotTask) {
+      this.applyTaskSnapshot(snapshotTask);
+    }
   },
   async onShow() {
     page.syncTheme(this);
@@ -634,6 +684,46 @@ Page({
       audioPlaybackMode: playbackMode
     }));
   },
+  async prefetchTaskAudio(task) {
+    if (!task || task.isPendingAsset || !this.innerAudioContext) {
+      return;
+    }
+    const prefetchKey = `${task.category || this.category}:${task.taskId || this.taskId}`;
+    if (this.audioPrefetchKey === prefetchKey && (this.data.audioReady || (this.innerAudioContext && this.innerAudioContext.src))) {
+      return;
+    }
+    this.audioPrefetchKey = prefetchKey;
+    try {
+      const resolvedTask = await this.resolveTaskAudio(task);
+      if (!resolvedTask || resolvedTask.isPendingAsset || !resolvedTask.audioUrl || this.audioPrefetchKey !== prefetchKey) {
+        this.audioPrefetchKey = '';
+        return;
+      }
+      const playableUrl = normalizePlayableUrl(resolvedTask.audioUrl);
+      const playbackMode = resolvedTask.audioSource === 'temp-url'
+        ? 'temp-url'
+        : (resolvedTask.audioResolveError ? 'static-fallback' : 'static-cloud-url');
+      const currentAudio = buildCurrentAudio(resolvedTask, playableUrl, playbackMode);
+      if (this.innerAudioContext && this.innerAudioContext.src !== playableUrl) {
+        this.innerAudioContext.stop();
+        this.innerAudioContext.src = playableUrl;
+        this.innerAudioContext.playbackRate = 1;
+      }
+      if (this.data.task && this.data.task.taskId === resolvedTask.taskId) {
+        this.setData({
+          task: resolvedTask,
+          currentAudio,
+          audioSource: resolvedTask.audioSource || 'none',
+          audioPlaybackMode: playbackMode,
+          audioError: '',
+          audioErrorText: '',
+          audioErrorDetail: ''
+        });
+      }
+    } catch (error) {
+      this.audioPrefetchKey = '';
+    }
+  },
   applyFreshTaskDetail(detail) {
     if (!detail || !detail.task) {
       return;
@@ -664,6 +754,7 @@ Page({
       lessonStudyCompleted: studyCompleted,
       lessonAudioLocked: hasStudyTranscript(normalizedTask, detail.transcriptPendingLoad, []) && !studyCompleted
     }));
+    this.prefetchTaskAudio(normalizedTask);
   },
   async refreshPage() {
     const startedAt = Date.now();
@@ -745,7 +836,7 @@ Page({
     await this.refreshSpeakingAttempts(normalizedTask);
     await this.updatePassQuestion(normalizedTask, detail.progress);
     if (normalizedTask) {
-      await this.syncPlayer(normalizedTask);
+      this.prefetchTaskAudio(normalizedTask);
       monitor.logPerf('lesson', 'refreshPage', Date.now() - startedAt, {
         category: this.category,
         taskId: this.taskId

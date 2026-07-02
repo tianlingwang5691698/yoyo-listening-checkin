@@ -2,6 +2,7 @@ const store = require('../../utils/store');
 const page = require('../../utils/page');
 const labels = require('../../utils/labels');
 const LEVEL_STAGE_SNAPSHOT_KEY = 'levelStageSnapshotV1';
+const LESSON_TASK_SNAPSHOT_KEY = 'lessonTaskSnapshotV1';
 
 const STAGES = {
   'round-1': {
@@ -68,6 +69,7 @@ function buildTaskGroups(categories) {
       minutes,
       durationSec,
       taskId: task.taskId || '',
+      taskSnapshot: task,
       disabled,
       stateText: task.completedToday ? '完成' : disabled ? '等待' : '›',
       planRunType: category.planRunType || 'normal',
@@ -160,6 +162,17 @@ Page({
     const planDayIndex = event.currentTarget.dataset.planDayIndex || '';
     if (!category || disabled === true || disabled === 'true') {
       return;
+    }
+    const taskGroup = (this.data.taskGroups || []).find((item) => item.category === category && item.taskId === taskId) || null;
+    if (taskGroup && taskGroup.taskSnapshot) {
+      try {
+        wx.setStorageSync(LESSON_TASK_SNAPSHOT_KEY, {
+          savedAt: Date.now(),
+          category,
+          taskId,
+          task: taskGroup.taskSnapshot
+        });
+      } catch (error) {}
     }
     const previewQuery = planRunType === 'preview'
       ? `&planRunType=preview&planDayIndex=${planDayIndex}`
