@@ -162,6 +162,26 @@ async function submitSpeakingAttempt(event) {
   };
 }
 
+async function evaluateSpeakingPronunciation(event) {
+  const { ctx, today } = await study.prepareRequestContext(Object.assign({}, event, {
+    action: 'evaluateSpeakingPronunciation'
+  }));
+  const payload = (event && event.payload) || {};
+  const attempt = normalizeAttemptPayload(Object.assign({}, payload, {
+    targetDate: payload.targetDate || today,
+    promptText: payload.promptText || payload.refText || payload.questionText
+  }));
+  if (attempt.planRunType !== 'preview' && study.normalizeStudyRole(ctx.member) !== 'student') {
+    throw new Error('家长模式不进行口语评分');
+  }
+  const result = await speakingEngine.evaluateSpeakingPronunciation(Object.assign({}, attempt, {
+    refText: payload.refText || attempt.promptText || attempt.questionText
+  }));
+  return {
+    pronunciation: result
+  };
+}
+
 async function getSpeakingAttempts(event) {
   const { ctx, today } = await study.prepareRequestContext(Object.assign({}, event, {
     action: 'getSpeakingAttempts'
@@ -248,6 +268,7 @@ async function rescoreSpeakingAttempt(event) {
 module.exports = {
   createSpeakingUploadUrl,
   submitSpeakingAttempt,
+  evaluateSpeakingPronunciation,
   getSpeakingAttempts,
   rescoreSpeakingAttempt
 };

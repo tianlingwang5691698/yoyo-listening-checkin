@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import json
 import re
+import subprocess
 import zipfile
 from pathlib import Path
 
@@ -13,8 +14,8 @@ from docx.text.paragraph import Paragraph
 from build_shanghai_em1_reading_upload import DISTRICTS, clean
 
 ROOTS = [
-    Path('/Users/wangtianlong/工作/未命名文件夹/3. 上海中考英语一模二模（12-24）/二模（12年无音频）'),
-    Path('/Users/wangtianlong/工作/未命名文件夹/7. 2025年上海二模'),
+    Path('/Users/wangtianlong/工作/未命名文件夹/3. 上海中考英语一模二模（12-24）'),
+    Path('/Users/wangtianlong/工作/未命名文件夹/7. 2025年上海二模/英语'),
     Path('/Users/wangtianlong/工作/未命名文件夹/9.2026年上海二模'),
 ]
 OUT_DIR = Path('data/listening-em2')
@@ -22,6 +23,13 @@ IMAGE_DIR = OUT_DIR / 'images'
 PRACTICE_OUT = OUT_DIR / 'listening-practice.json'
 INDEX_OUT = Path('data/material-index.js')
 INDEX_JSON_OUT = Path('data/material-index.json')
+
+
+def is_em2_path(path):
+    parts = [str(part) for part in Path(path).parts]
+    if not any('二模' in part for part in parts):
+        return False
+    return not any(('一模' in part and '二模' not in part) for part in parts)
 
 
 def year_of(path):
@@ -53,12 +61,23 @@ def iter_docx_text(path):
     return '\n'.join(texts)
 
 
+def read_with_command(args):
+    proc = subprocess.run(args, stdout=subprocess.PIPE, stderr=subprocess.PIPE, check=False)
+    if proc.returncode != 0:
+        return ''
+    return proc.stdout.decode('utf-8', errors='ignore')
+
+
 def read_text(path):
     if path.suffix.lower() == '.docx':
         try:
             return iter_docx_text(path)
         except Exception:
             return ''
+    if path.suffix.lower() == '.doc':
+        return read_with_command(['textutil', '-convert', 'txt', '-stdout', str(path)])
+    if path.suffix.lower() == '.pdf':
+        return read_with_command(['pdftotext', '-layout', str(path), '-'])
     if path.suffix.lower() == '.txt':
         return path.read_text(encoding='utf-8', errors='ignore')
     return ''
@@ -74,7 +93,7 @@ def candidate_text_files():
                 continue
             low = path.suffix.lower()
             s = str(path)
-            if low in {'.docx', '.txt'} and '英语' in s and ('二模' in s or '听力' in s):
+            if low in {'.doc', '.docx', '.pdf', '.txt'} and '英语' in s and is_em2_path(path):
                 if any(bad in s for bad in ['答案纸', '答题纸', '答题卡']):
                     continue
                 files.append(path)
@@ -171,6 +190,47 @@ def parse_blanks(lines):
     return questions
 
 
+def extract_listening_answers(text):
+    answers = {}
+    candidates = []
+    for marker in re.finditer(r'【答案】|参考答案|答案[:：]', text):
+        block = text[marker.end():marker.end() + 3500]
+        if re.search(r'1\s*-\s*5|6\s*-\s*10|11\s*-\s*15|16[\.．、]', block):
+            candidates.append(block)
+    if not candidates:
+        candidates = [text[:2500]]
+
+    for raw_block in candidates:
+        block = re.split(r'Part\s*2|Vocabulary and Grammar|第二部分|II\.', raw_block, maxsplit=1, flags=re.I)[0]
+        block = clean(block)
+
+        for start, end, letters in re.findall(r'(\d{1,2})\s*-\s*(\d{1,2})\s*([A-GTFacgtf]{2,})', block):
+            start = int(start)
+            end = int(end)
+            letters = letters.upper()
+            if 1 <= start <= end <= 20 and end - start + 1 == len(letters):
+                for offset, letter in enumerate(letters):
+                    answers[start + offset] = letter
+
+        for num, letter in re.findall(r'\b(\d{1,2})\s*[\.．、]\s*([A-GTF])\b', block, flags=re.I):
+            num = int(num)
+            if 1 <= num <= 15:
+                answers[num] = letter.upper()
+
+        blank_pattern = re.compile(
+            r'(1[6-9]|20)\s*[\.．、]\s*(.+?)(?=\s+(?:1[6-9]|20)\s*[\.．、]|\s+Part\s*2|\s+II\.|$)',
+            re.I,
+        )
+        for num, value in blank_pattern.findall(block):
+            value = clean(value)
+            value = re.sub(r'【解析】.*$', '', value).strip()
+            if value and len(value) <= 80:
+                answers[int(num)] = value
+        if len(answers) == 20:
+            break
+    return answers
+
+
 def extract_docx_images(path, item_id):
     if path.suffix.lower() != '.docx':
         return []
@@ -234,6 +294,41 @@ def best_sources():
     return best
 
 
+def best_answer_sources():
+    best = {}
+    for path in candidate_text_files():
+        year = year_of(path)
+        district = district_of(path)
+        if not year or not district:
+            continue
+        text = read_text(path)
+        answers = extract_listening_answers(text)
+        if not is_valid_listening_answer_set(answers):
+            continue
+        key = (year, district)
+        s = str(path)
+        score = len(answers) * 10
+        if '解析版' in s or '答案' in s or '参考答案' in s:
+            score += 50
+        if '原卷版' in s:
+            score -= 30
+        old = best.get(key)
+        if not old or score > old['score']:
+            best[key] = {'path': path, 'answers': answers, 'score': score}
+    return best
+
+
+def is_valid_listening_answer_set(answers):
+    if not all(num in answers for num in range(1, 11)):
+        return False
+    tf_count = sum(1 for num in range(11, 16) if str(answers.get(num, '')).upper() in {'T', 'F'})
+    blank_count = sum(
+        1 for num in range(16, 21)
+        if answers.get(num) and str(answers[num]).upper() not in set('ABCDEFGTF')
+    )
+    return tf_count >= 3 and blank_count >= 3
+
+
 def main():
     sets = json.load(open(OUT_DIR / 'listening-sets.json', encoding='utf-8'))
     IMAGE_DIR.mkdir(parents=True, exist_ok=True)
@@ -241,6 +336,7 @@ def main():
         if stale.is_file():
             stale.unlink()
     sources = best_sources()
+    answer_sources = best_answer_sources()
     items = []
     for item in sets:
         key = (item.get('year'), item.get('district'))
@@ -250,11 +346,22 @@ def main():
         next_item = dict(item)
         next_item['questions'] = source['questions']
         next_item['questionSourceFile'] = source['path'].name
+        answer_source = answer_sources.get(key)
+        if answer_source:
+            next_item['answerSourceFile'] = answer_source['path'].name
+            answers = answer_source['answers']
+            for question in next_item['questions']:
+                if question.get('number') in answers:
+                    question['answer'] = answers[question['number']]
         next_item['images'] = extract_docx_images(source['path'], next_item['_id'])
         next_item['hasPictureQuestions'] = bool(next_item['images'])
         if next_item['hasPictureQuestions']:
             existing = {q['number'] for q in next_item['questions']}
             next_item['questions'] = picture_questions() + [q for q in next_item['questions'] if q['number'] not in existing or q['number'] > 5]
+            if answer_source:
+                for question in next_item['questions']:
+                    if question.get('number') in answers:
+                        question['answer'] = answers[question['number']]
         if next_item['hasPictureQuestions'] and len(next_item['questions']) == 20:
             items.append(next_item)
     used_images = {Path(image['localPath']).name for item in items for image in item.get('images', [])}

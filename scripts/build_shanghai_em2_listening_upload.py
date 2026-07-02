@@ -9,14 +9,21 @@ from build_shanghai_em1_reading_upload import DISTRICTS, clean, read_text
 
 
 ROOTS = [
-    Path('/Users/wangtianlong/工作/未命名文件夹/3. 上海中考英语一模二模（12-24）/二模（12年无音频）'),
-    Path('/Users/wangtianlong/工作/未命名文件夹/7. 2025年上海二模'),
+    Path('/Users/wangtianlong/工作/未命名文件夹/3. 上海中考英语一模二模（12-24）'),
+    Path('/Users/wangtianlong/工作/未命名文件夹/7. 2025年上海二模/英语'),
     Path('/Users/wangtianlong/工作/未命名文件夹/9.2026年上海二模'),
 ]
 FORMAL_OUT = Path('data/imports/shanghai-em2-2012-2026/formal')
 UPLOAD_OUT = Path('data/listening-em2')
 AUDIO_OUT = UPLOAD_OUT / 'audio'
 CLOUD_AUDIO_DIR = '_content/listening-em2/audio'
+
+
+def is_em2_path(path):
+    parts = [str(part) for part in Path(path).parts]
+    if not any('二模' in part for part in parts):
+        return False
+    return not any(('一模' in part and '二模' not in part) for part in parts)
 
 
 def year_of(path):
@@ -74,10 +81,10 @@ def collect_sources():
             if not year or not district or not 2012 <= year <= 2026:
                 continue
             key = (year, district)
-            if is_audio(path) and ('英语' in str(path) or '听力' in str(path) or '二模' in str(path)):
+            if is_audio(path) and is_em2_path(path) and ('英语' in str(path) or '听力' in str(path) or '二模' in str(path)):
                 if key not in audio_best or audio_score(path) > audio_score(audio_best[key]):
                     audio_best[key] = path
-            elif is_text_candidate(path):
+            elif is_em2_path(path) and is_text_candidate(path):
                 if key not in transcript_best or len(str(path)) < len(str(transcript_best[key])):
                     transcript_best[key] = path
     return audio_best, transcript_best

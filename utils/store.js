@@ -20,6 +20,7 @@ const MUTATION_ACTIONS = {
   saveFlashcardAudio: true,
   markTaskListened: true,
   submitSpeakingAttempt: true,
+  evaluateSpeakingPronunciation: true,
   rescoreSpeakingAttempt: true,
   completeTodayCheckin: true,
   submitReadingAttempt: true,
@@ -377,7 +378,7 @@ async function ensureState() {
  */
 async function getDashboard(options, onRefresh) {
   const payload = Object.assign({}, options || {});
-  return callCloud('getDashboard', payload.view === 'record' ? withSelectedStudent(payload) : payload, contracts.createDashboardDefaults(), { onRefresh });
+  return callCloud('getDashboard', payload.view === 'home' || payload.view === 'record' ? withSelectedStudent(payload) : payload, contracts.createDashboardDefaults(), { onRefresh });
 }
 
 async function getMaterialIndex(onRefresh) {
@@ -548,6 +549,12 @@ async function submitSpeakingAttempt(options) {
   });
 }
 
+async function evaluateSpeakingPronunciation(options) {
+  return callCloud('evaluateSpeakingPronunciation', options, {
+    pronunciation: null
+  });
+}
+
 async function rescoreSpeakingAttempt(options) {
   return callCloud('rescoreSpeakingAttempt', options, {
     attempt: null,
@@ -573,7 +580,7 @@ async function completeTodayCheckin() {
 }
 
 async function getProfileData(onRefresh) {
-  return callCloud('getProfileData', {}, {
+  return callCloud('getProfileData', withSelectedStudent({}), {
     child: {
       nickname: '',
       avatarText: '',
@@ -871,6 +878,7 @@ module.exports = {
   createSpeakingUploadUrl,
   uploadSpeakingAudio,
   submitSpeakingAttempt,
+  evaluateSpeakingPronunciation,
   rescoreSpeakingAttempt,
   getSpeakingAttempts,
   completeTodayCheckin,

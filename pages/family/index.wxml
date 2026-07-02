@@ -28,6 +28,7 @@
       <view class="section-title">绑定学生</view>
       <view class="section-count">{{studentCountText}}</view>
     </view>
+    <view class="student-hint">已绑定的学生在这里，点学生姓名即可切换查看记录。</view>
     <block wx:for="{{studentCards}}" wx:key="familyId">
       <view class="student-row {{item.isCurrent ? 'is-current' : ''}}" data-index="{{index}}" bindtap="selectStudent">
         <view class="row-main">

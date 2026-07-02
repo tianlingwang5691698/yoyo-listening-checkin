@@ -1047,6 +1047,34 @@ async function evaluateWithTencentSoe(audioBuffer, payload, transcript) {
   return evaluateWithTencentSoeNew(audioBuffer, payload, transcript);
 }
 
+async function evaluateSpeakingPronunciation(payload) {
+  const audioBuffer = await storageAdapter.downloadCloudFileBuffer(payload.answerAudioFileId, payload.answerCloudPath);
+  if (!audioBuffer || !audioBuffer.length) {
+    throw new Error('empty-downloaded-audio');
+  }
+  const refText = normalizeText(payload.promptText || payload.questionText || payload.refText);
+  if (!refText) {
+    throw new Error('missing-pronunciation-ref-text');
+  }
+  if (!shouldUseTencentSoe()) {
+    throw new Error('tencent-soe-disabled');
+  }
+  const result = await evaluateWithTencentSoe(audioBuffer, Object.assign({}, payload, {
+    promptText: refText
+  }), refText);
+  if (!result) {
+    throw new Error('tencent-soe-no-result');
+  }
+  return {
+    score: Math.round(clampScore(result.score, 0)),
+    accuracy: Math.round(clampScore(result.accuracy, result.score || 0)),
+    fluency: Math.round(clampScore(result.fluency, result.score || 0)),
+    completion: Math.round(clampScore(result.completion, result.score || 0)),
+    requestId: result.requestId || '',
+    status: result.status || 'success'
+  };
+}
+
 function normalizeSuggestedAnswer(value) {
   const answer = normalizeText(value);
   if (!answer || /[?？]\s*$/.test(answer)) {
@@ -1414,6 +1442,7 @@ function summarizeAttempts(items) {
 module.exports = {
   findQuestionFromTranscript,
   buildSourceTextFromTranscript,
+  evaluateSpeakingPronunciation,
   scoreSpeakingAttempt,
   synthesizeFeedbackAudio,
   summarizeAttempts
