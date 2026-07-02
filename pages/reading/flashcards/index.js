@@ -961,7 +961,7 @@ Page({
       if (latestKey === key) {
         this.speakCurrent({ auto: true });
       }
-    }, 160);
+    }, 60);
   },
   scheduleAudioPrefetchAroundCurrent() {
     if (this.audioPrefetchTimer) {
@@ -975,7 +975,7 @@ Page({
     this.audioPrefetchTimer = setTimeout(() => {
       this.audioPrefetchTimer = null;
       nextCards.reduce((chain, card) => chain.then(() => this.prefetchCardAudio(card)), Promise.resolve());
-    }, 600);
+    }, 120);
   },
   async prefetchCardAudio(card) {
     if (!card || !card.canSpeak || !card.flashcardKey) return;
@@ -987,6 +987,12 @@ Page({
     if (localFileExists(localAudioPath)) return;
     this.prefetchingAudioKeys[card.flashcardKey] = true;
     try {
+      if (canUseDictionaryVoice(text)) {
+        const url = buildDictionaryVoiceUrl(text);
+        const path = await downloadAudioToLocal(url, card.flashcardKey);
+        this.updateCardAudioCache(card.flashcardKey, { audioUrl: url, audioLocalPath: path || '' });
+        return;
+      }
       if (card.audioUrl) {
         const path = await downloadAudioToLocal(card.audioUrl, card.flashcardKey);
         if (path) this.updateCardAudioCache(card.flashcardKey, { audioLocalPath: path });
@@ -1047,6 +1053,15 @@ Page({
     const localAudioPath = current.audioLocalPath || getLocalAudioPath(current.flashcardKey);
     if (localFileExists(localAudioPath)) {
       this.playAudioUrl(localAudioPath, { silent });
+      return;
+    }
+    if (canUseDictionaryVoice(text)) {
+      const url = buildDictionaryVoiceUrl(text);
+      this.playAudioUrl(url, { silent });
+      this.updateCardAudioCache(current.flashcardKey, { audioUrl: url });
+      downloadAudioToLocal(url, current.flashcardKey).then((path) => {
+        if (path) this.updateCardAudioCache(current.flashcardKey, { audioLocalPath: path });
+      });
       return;
     }
     if (current.audioUrl) {
