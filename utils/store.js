@@ -852,11 +852,21 @@ async function setStudyRole(studyRole) {
     return callCloud('setStudyRole', { studyRole, forceSelf: true }, contracts.createFamilyPageDefaults());
   }
   const lastParentTarget = getLastParentStudentTarget();
-  const payload = lastParentTarget.targetFamilyId || lastParentTarget.targetChildId
+  const hasLastParentTarget = !!(lastParentTarget.targetFamilyId || lastParentTarget.targetChildId);
+  const payload = hasLastParentTarget
     ? Object.assign({ studyRole }, lastParentTarget)
     : withSelectedStudent({ studyRole });
-  const data = await callCloud('setStudyRole', payload, contracts.createFamilyPageDefaults());
+  let data = await callCloud('setStudyRole', payload, contracts.createFamilyPageDefaults());
   syncSelectedStudentFromData(data);
+  if (!hasLastParentTarget) {
+    const fallbackTarget = (data.studentLinks || []).find((item) => item && item.role !== 'owner' && (item.familyId || item.childId));
+    if (fallbackTarget) {
+      setSelectedStudentTarget(fallbackTarget);
+      setLastParentStudentTarget(fallbackTarget);
+      data = await callCloud('getFamilyPage', normalizeStudentTarget(fallbackTarget), contracts.createFamilyPageDefaults(), { useCache: false });
+      syncSelectedStudentFromData(data);
+    }
+  }
   return data;
 }
 
