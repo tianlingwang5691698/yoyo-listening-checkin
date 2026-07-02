@@ -132,7 +132,7 @@ function shouldShowEntryPoster() {
 }
 
 function shouldShowIdentityConfirm() {
-  return !page.isIdentityConfirmed();
+  return true;
 }
 
 function buildStageSnapshotTaskGroups(groupedDailyTasks) {
@@ -235,7 +235,8 @@ Page({
     todayCompletedItems: [],
     cloudCompletedItems: [],
     entryPosterVisible: true,
-    entryPosterPage: 0
+    entryPosterPage: 0,
+    identitySelectedInSession: false
   }),
   buildStudyModePresentation(member) {
     const studyRole = member && member.studyRole === 'student' ? 'student' : 'parent';
@@ -264,7 +265,7 @@ Page({
       listeningSummary: buildListeningSummary(groupedDailyTasks),
       listeningTaskStatus: buildListeningTaskStatus(groupedDailyTasks),
       nextListeningTask: findNextListeningTask(groupedDailyTasks),
-      identityConfirmVisible: shouldShowIdentityConfirm(),
+      identityConfirmVisible: !this.data.identitySelectedInSession,
       modeChangedNoticeVisible,
       homeLoading: false
     }, this.buildStudyModePresentation(data.currentMember))));
@@ -306,7 +307,8 @@ Page({
       vocabularySummary: buildVocabularySummary(),
       entryPosterVisible,
       identityConfirmVisible,
-      entryPosterPage: 0
+      entryPosterPage: 0,
+      identitySelectedInSession: false
     });
     const data = await store.getDashboard({ view: 'home' }, (fresh) => {
       const groups = this.applyDashboard(fresh);
@@ -376,7 +378,8 @@ Page({
     this.setData(Object.assign({
       identityConfirmVisible: false,
       modeChangedNoticeVisible: false,
-      entryPosterVisible: false
+      entryPosterVisible: false,
+      identitySelectedInSession: true
     }, this.buildStudyModePresentation({ studyRole: nextRole })));
     try {
       const data = await store.setStudyRole(nextRole);
