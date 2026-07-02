@@ -171,6 +171,10 @@ Page({
     selectedQuestions: [],
     selectedTopicOffset: 0,
     wrongTopics: [],
+    em2Topics: [],
+    em1Topics: [],
+    em1Loaded: false,
+    em1Loading: false,
     mode: 'topics',
     expandedQuestionId: '',
     answeredCount: 0,
@@ -209,19 +213,19 @@ Page({
   async onLoad() {
     this.grammarPerf = page.startPagePerf('grammar');
     let em2Data = null;
-    let em1Data = null;
     try {
-      [em2Data, em1Data] = await Promise.all([
-        store.getGrammarHome({ examId: 'em2' }),
-        store.getGrammarHome({ examId: 'em1' })
-      ]);
+      em2Data = await store.getGrammarHome({ examId: 'em2' });
     } catch (error) {
       em2Data = null;
-      em1Data = null;
     }
-    const stages = buildStages(buildTopics(em2Data), buildTopics(em1Data));
+    const em2Topics = buildTopics(em2Data);
+    const stages = buildStages(em2Topics, []);
     this.setData({
       stages,
+      em2Topics,
+      em1Topics: [],
+      em1Loaded: false,
+      em1Loading: false,
       topics: [],
       selectedStageId: '',
       selectedStage: null,
@@ -238,7 +242,6 @@ Page({
     if (this.grammarPerf) {
       this.grammarPerf.ready('pageReady', {
         em2CacheHit: !!(em2Data && em2Data.__cacheHit),
-        em1CacheHit: !!(em1Data && em1Data.__cacheHit),
         stages: stages.length
       });
     }
@@ -273,13 +276,15 @@ Page({
     });
   },
   async openTopicBook() {
-    const [em2Data, em1Data] = await Promise.all([
-      store.getGrammarHome({ examId: 'em2' }),
-      store.getGrammarHome({ examId: 'em1' })
-    ]);
+    let em2Topics = this.data.em2Topics || [];
+    if (!em2Topics.length) {
+      const em2Data = await store.getGrammarHome({ examId: 'em2' });
+      em2Topics = buildTopics(em2Data);
+    }
     this.setData({
       mode: 'topics',
-      stages: buildStages(buildTopics(em2Data), buildTopics(em1Data)),
+      stages: buildStages(em2Topics, this.data.em1Topics || []),
+      em2Topics,
       topics: [],
       selectedStageId: '',
       selectedStage: null,
@@ -295,6 +300,29 @@ Page({
       expandedQuestionId: '',
       answeredCount: 0
     });
+  },
+  async ensureExamLoaded(examId) {
+    if (examId !== 'em1' || this.data.em1Loaded || this.data.em1Loading) {
+      return;
+    }
+    this.setData({ em1Loading: true });
+    try {
+      const em1Data = await store.getGrammarHome({ examId: 'em1' });
+      const em1Topics = buildTopics(em1Data);
+      const stages = buildStages(this.data.em2Topics || [], em1Topics);
+      const selectedStage = stages.find((item) => item.stageId === this.data.selectedStageId) || null;
+      this.setData({
+        stages,
+        em1Topics,
+        em1Loaded: true,
+        em1Loading: false,
+        selectedStage,
+        exams: selectedStage ? (selectedStage.exams || []) : []
+      });
+    } catch (error) {
+      this.setData({ em1Loading: false });
+      wx.showToast({ title: '一模语法加载失败', icon: 'none' });
+    }
   },
   selectStage(event) {
     const stageId = event.currentTarget.dataset.stageId;
@@ -316,8 +344,9 @@ Page({
       answeredCount: 0
     });
   },
-  selectExam(event) {
+  async selectExam(event) {
     const examId = event.currentTarget.dataset.examId;
+    await this.ensureExamLoaded(examId);
     const selectedExam = (this.data.exams || []).find((item) => item.examId === examId) || null;
     this.setData({
       selectedExamId: examId,

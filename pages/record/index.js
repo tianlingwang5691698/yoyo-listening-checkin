@@ -240,7 +240,9 @@ Page({
     catchupStatusClass: 'is-muted',
     catchupCopy: '节奏正常',
     catchupState: contracts.createCatchupStateDefaults(),
-    catchupTasks: []
+    catchupTasks: [],
+    catchupTasksLoaded: false,
+    catchupTasksLoading: false
   }),
   async onShow() {
     this.recordPerf = page.startPagePerf('record');
@@ -286,6 +288,8 @@ Page({
       monthCells: buildMonthCells(calendarYear, calendarMonth, heatmapData.heatmap, selectedDate, heatmapData.catchupState),
       catchupState: heatmapData.catchupState,
       catchupTasks: [],
+      catchupTasksLoaded: false,
+      catchupTasksLoading: false,
       planDayIndex: dashboard.planDayIndex || 1
     });
     this.setData(page.buildCloudPageData(this.data, Object.assign(
@@ -318,8 +322,7 @@ Page({
       this.deferredLoadTimer = null;
       this.preloadAdjacentMonths(calendarYear, calendarMonth);
       Promise.all([
-        this.loadSelectedDay(selectedDate).catch(() => {}),
-        this.loadCatchupTasks().catch(() => {})
+        this.loadSelectedDay(selectedDate).catch(() => {})
       ]).catch(() => {});
     }, 350);
   },
@@ -414,15 +417,26 @@ Page({
     applyData(data);
   },
   async loadCatchupTasks() {
+    if (!this.data.catchupState || !this.data.catchupState.canCatchup || this.data.catchupTasksLoading) {
+      return;
+    }
+    this.setData({ catchupTasksLoading: true });
     const applyData = (heatmapData) => {
       this.setData(page.buildCloudPageData(this.data, Object.assign({
         catchupTasks: labels.normalizeTaskList(heatmapData.catchupTasks || []),
-        catchupState: heatmapData.catchupState || this.data.catchupState
+        catchupState: heatmapData.catchupState || this.data.catchupState,
+        catchupTasksLoaded: true,
+        catchupTasksLoading: false
       }, buildCatchupPresentation(heatmapData.catchupState || this.data.catchupState))));
       this.refreshMonthCellsFromCache();
     };
-    const heatmapData = await store.getHeatmap(42, applyData);
-    applyData(heatmapData);
+    try {
+      const heatmapData = await store.getHeatmap(42, applyData);
+      applyData(heatmapData);
+    } catch (error) {
+      this.setData({ catchupTasksLoading: false });
+      wx.showToast({ title: '追赶任务加载失败', icon: 'none' });
+    }
   },
   switchMetric(event) {
     const mode = event.currentTarget.dataset.mode || 'streak';

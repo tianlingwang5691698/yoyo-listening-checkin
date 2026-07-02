@@ -85,6 +85,13 @@
       <view class="status-badge {{catchupStatusClass}}">{{catchupStatusLabel}}</view>
     </view>
     <block wx:if="{{catchupState.canCatchup}}">
+      <view class="catchup-row" wx:if="{{!catchupTasksLoaded}}" bindtap="loadCatchupTasks">
+        <view>
+          <view class="catchup-title">查看追赶任务</view>
+          <view class="catchup-copy">按需加载可补做的真实任务。</view>
+        </view>
+        <view class="catchup-state">{{catchupTasksLoading ? '加载中' : '查看'}}</view>
+      </view>
       <block wx:for="{{catchupTasks}}" wx:key="taskId">
         <view class="catchup-row {{item.completedToday ? 'is-done' : ''}}" data-category="{{item.category}}" data-task-id="{{item.taskId}}" bindtap="openCatchupTask">
           <view>
