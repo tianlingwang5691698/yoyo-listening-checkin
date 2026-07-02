@@ -215,6 +215,7 @@ Page({
     const nextRole = currentRole === 'student' ? 'parent' : 'student';
     try {
       const data = await store.setStudyRole(nextRole);
+      page.setIdentityConfirmed(true);
       wx.setStorageSync('lastStudyRole', nextRole);
       if (nextRole === 'student') {
         wx.setStorageSync('hasUsedStudentMode', 'yes');

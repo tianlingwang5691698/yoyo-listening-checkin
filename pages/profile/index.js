@@ -126,6 +126,7 @@ Page({
     try {
       const data = await store.setStudyRole(role);
       this.applyProfileData(Object.assign({}, this.data, data));
+      page.setIdentityConfirmed(true);
       wx.setStorageSync('lastStudyRole', role);
       wx.showToast({
         title: role === 'student' ? '已切到学生' : '已切到家长',
