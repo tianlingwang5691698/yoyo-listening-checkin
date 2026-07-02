@@ -9,6 +9,75 @@ const familyFacade = require('../facades/family.facade');
 const studyFacade = require('../facades/study.facade');
 const childRepository = require('../repositories/child.repository');
 const familyEngine = require('../lib/family-engine');
+const bootstrapEngine = require('../lib/bootstrap-engine');
+
+test('无目标学生时默认选择本机 owner 家庭', async () => {
+  const ctx = await bootstrapEngine.ensureBootstrap('open-1', {
+    findUserByOpenId: async () => ({ openId: 'open-1', userId: 'user-1' }),
+    updateUserById: async () => {},
+    createUser: async () => {},
+    buildUserId: () => 'user-1',
+    findMembersByOpenId: async () => [
+      { familyId: 'family-bound', memberId: 'member-bound', role: 'parent', studyRole: 'parent' },
+      { familyId: 'family-self', memberId: 'member-self', role: 'owner', studyRole: 'student' }
+    ],
+    createFamily: async () => {},
+    createMember: async () => {},
+    updateMemberById: async () => {},
+    createSubscription: async () => {},
+    createChild: async () => {},
+    makeInviteCode: () => 'INVITE',
+    makeUniqueChildLoginCode: async () => '123456',
+    buildAvatarTextFromNickname: () => 'Y',
+    childTemplate: {},
+    normalizeStudyRole: (member) => member.studyRole || 'parent',
+    getFamily: async (familyId) => ({ familyId }),
+    findChildByFamilyId: async (familyId) => ({ familyId, childId: `${familyId}-child`, childLoginCode: '123456' }),
+    updateChildById: async () => {},
+    normalizeAndDedupeMembers: (members) => members,
+    findMembersByFamilyId: async () => [],
+    findSubscriptionByMemberId: async () => null
+  });
+
+  assert.equal(ctx.family.familyId, 'family-self');
+  assert.equal(ctx.member.role, 'owner');
+  assert.equal(ctx.child.childId, 'family-self-child');
+});
+
+test('强制本机学生时没有 owner 会创建本机家庭', async () => {
+  const createdFamilies = [];
+  const createdMembers = [];
+  const ctx = await bootstrapEngine.ensureBootstrap('open-1', {
+    findUserByOpenId: async () => ({ openId: 'open-1', userId: 'user-1' }),
+    updateUserById: async () => {},
+    createUser: async () => {},
+    buildUserId: () => 'user-1',
+    findMembersByOpenId: async () => [
+      { familyId: 'family-bound', memberId: 'member-bound', role: 'parent', studyRole: 'parent' }
+    ],
+    createFamily: async (familyId, data) => createdFamilies.push({ familyId, data }),
+    createMember: async (member) => createdMembers.push(member),
+    updateMemberById: async () => {},
+    createSubscription: async () => {},
+    createChild: async () => {},
+    makeInviteCode: () => 'INVITE',
+    makeUniqueChildLoginCode: async () => '123456',
+    buildAvatarTextFromNickname: () => 'Y',
+    childTemplate: { childId: 'child-yoyo', nickname: '佑佑' },
+    normalizeStudyRole: (member) => member.studyRole || 'parent',
+    getFamily: async (familyId) => ({ familyId }),
+    findChildByFamilyId: async (familyId) => ({ familyId, childId: `${familyId}-child`, childLoginCode: '123456' }),
+    updateChildById: async () => {},
+    normalizeAndDedupeMembers: (members) => members,
+    findMembersByFamilyId: async () => [],
+    findSubscriptionByMemberId: async () => null
+  }, { forceSelf: true });
+
+  assert.equal(createdFamilies.length, 1);
+  assert.equal(createdMembers[0].role, 'owner');
+  assert.equal(ctx.member.role, 'owner');
+  assert.equal(ctx.member.studyRole, 'student');
+});
 
 test('leaveFamily 退出后回到原本自己的记录', async (t) => {
   const calls = [];

@@ -36,7 +36,8 @@ async function prepareRequestContext(event, deps) {
   const view = String(payload.view || '').trim();
   const target = {
     targetFamilyId: String(payload.targetFamilyId || '').trim(),
-    targetChildId: String(payload.targetChildId || '').trim()
+    targetChildId: String(payload.targetChildId || '').trim(),
+    forceSelf: !!payload.forceSelf
   };
   const lightweightCtx = action === 'getDashboard' && view === 'home' && deps.getLightweightContext
     ? await deps.getLightweightContext(OPENID, target)

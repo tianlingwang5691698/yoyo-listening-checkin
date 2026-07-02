@@ -86,6 +86,10 @@ function setSelectedStudentTarget(target) {
   return next;
 }
 
+function clearSelectedStudentTarget() {
+  wx.removeStorageSync(SELECTED_STUDENT_KEY);
+}
+
 function withSelectedStudent(payload) {
   const next = Object.assign({}, payload || {});
   if (next.targetFamilyId || next.targetChildId) {
@@ -582,7 +586,7 @@ async function getProfileData(onRefresh) {
     currentUser: {},
     currentMember: {},
     subscriptionPreference: null
-  }, { onRefresh });
+  }, { onRefresh, useCache: false });
 }
 
 async function getHeatmap(days, onRefresh) {
@@ -789,7 +793,7 @@ async function explainGrammarQuestion(question, options = {}) {
  * @returns {Promise<FamilyPageData>}
  */
 async function getFamilyPageData(onRefresh) {
-  const data = await callCloud('getFamilyPage', withSelectedStudent({}), contracts.createFamilyPageDefaults(), { onRefresh });
+  const data = await callCloud('getFamilyPage', withSelectedStudent({}), contracts.createFamilyPageDefaults(), { onRefresh, useCache: false });
   syncSelectedStudentFromData(data);
   return data;
 }
@@ -804,8 +808,12 @@ async function joinFamily(inviteCode, displayName) {
   return data;
 }
 
-async function joinFamilyByChildCode(childLoginCode, displayName) {
-  const data = await callCloud('joinFamilyByChildCode', { childLoginCode, displayName }, contracts.createFamilyPageDefaults());
+async function joinFamilyByChildCode(childLoginCode, displayName, options = {}) {
+  const data = await callCloud('joinFamilyByChildCode', {
+    childLoginCode,
+    displayName,
+    studyRole: options.studyRole
+  }, contracts.createFamilyPageDefaults());
   syncSelectedStudentFromData(data);
   return data;
 }
@@ -817,6 +825,11 @@ async function leaveFamily() {
 }
 
 async function setStudyRole(studyRole) {
+  if (studyRole === 'student') {
+    clearSelectedStudentTarget();
+    clearCloudReadCache();
+    return callCloud('setStudyRole', { studyRole, forceSelf: true }, contracts.createFamilyPageDefaults());
+  }
   return callCloud('setStudyRole', withSelectedStudent({ studyRole }), contracts.createFamilyPageDefaults());
 }
 
@@ -881,6 +894,7 @@ module.exports = {
   getStudyCompletions,
   getSelectedStudentTarget,
   setSelectedStudentTarget,
+  clearSelectedStudentTarget,
   explainGrammarQuestion,
   getFamilyPageData,
   refreshInviteCode,

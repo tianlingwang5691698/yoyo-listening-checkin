@@ -97,7 +97,11 @@ async function ensureBootstrap(openId, target) {
 async function getLightweightContext(openId, target) {
   const memberRecords = await familyRepository.findMembersByOpenId(openId);
   const targetFamilyId = String((target && target.targetFamilyId) || '').trim();
-  const member = memberRecords.find((item) => item.familyId === targetFamilyId) || memberRecords[0] || null;
+  const forceSelf = !!(target && target.forceSelf);
+  const member = (targetFamilyId ? memberRecords.find((item) => item.familyId === targetFamilyId) : null)
+    || memberRecords.find((item) => item.role === 'owner')
+    || (forceSelf ? null : memberRecords[0])
+    || null;
   if (!member || !member.familyId) {
     return null;
   }

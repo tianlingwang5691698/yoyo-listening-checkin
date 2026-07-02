@@ -55,8 +55,16 @@ async function joinFamilyByChildCode(event) {
   if (!targetChild || !targetChild.familyId) {
     throw new Error('没有找到这个孩子 ID');
   }
-  const displayName = String(payload.displayName || '').trim() || '新家长';
+  const targetStudyRole = String(payload.studyRole || '').trim() === 'student' ? 'student' : 'parent';
+  const displayName = String(payload.displayName || '').trim() || (targetStudyRole === 'student' ? '学生设备' : '新家长');
   await familyFacade.upsertFamilyMemberForFamily(ctx.user.openId, ctx.user.userId, targetChild.familyId, displayName);
+  if (targetStudyRole === 'student') {
+    const joinedCtx = await familyFacade.ensureBootstrap(ctx.user.openId, {
+      targetFamilyId: targetChild.familyId,
+      targetChildId: targetChild.childId || ''
+    });
+    await familyFacade.setExclusiveStudyRole(joinedCtx.member, 'student');
+  }
   return familyFacade.reloadFamilyContext(ctx.user.openId, {
     targetFamilyId: targetChild.familyId,
     targetChildId: targetChild.childId || ''

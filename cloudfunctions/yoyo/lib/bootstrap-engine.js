@@ -53,13 +53,18 @@ async function getChild(familyId, deps) {
 function selectMember(memberRecords, target) {
   const list = memberRecords || [];
   const targetFamilyId = String((target && target.targetFamilyId) || '').trim();
+  const forceSelf = !!(target && target.forceSelf);
   if (targetFamilyId) {
     const matched = list.find((item) => item.familyId === targetFamilyId);
     if (matched) {
       return matched;
     }
   }
-  return list[0] || null;
+  const owner = list.find((item) => item.role === 'owner');
+  if (forceSelf) {
+    return owner || null;
+  }
+  return owner || list[0] || null;
 }
 
 async function buildStudentLinks(memberRecords, currentMember, deps) {
@@ -117,7 +122,7 @@ async function ensureBootstrap(openId, deps, target) {
       createdAt: now
     };
     await deps.createMember(member);
-    memberRecords = [member];
+    memberRecords = memberRecords.concat(member);
     await deps.createSubscription({
       memberId: member.memberId,
       familyId,

@@ -292,8 +292,9 @@ Page({
     this.homePerf = page.startPagePerf('home');
     page.syncTheme(this);
     const tabBar = this.getTabBar && this.getTabBar();
-    const entryPosterVisible = shouldShowEntryPoster();
-    const identityConfirmVisible = shouldShowIdentityConfirm();
+    const identitySelectedInSession = !!this.data.identitySelectedInSession;
+    const entryPosterVisible = !identitySelectedInSession && shouldShowEntryPoster();
+    const identityConfirmVisible = !identitySelectedInSession && shouldShowIdentityConfirm();
     if (tabBar) {
       tabBar.setData({
         selected: 0,
@@ -307,8 +308,8 @@ Page({
       vocabularySummary: buildVocabularySummary(),
       entryPosterVisible,
       identityConfirmVisible,
-      entryPosterPage: 0,
-      identitySelectedInSession: false
+      entryPosterPage: entryPosterVisible ? 0 : this.data.entryPosterPage,
+      identitySelectedInSession
     });
     const data = await store.getDashboard({ view: 'home' }, (fresh) => {
       const groups = this.applyDashboard(fresh);

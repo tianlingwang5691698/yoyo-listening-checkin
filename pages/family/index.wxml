@@ -40,18 +40,18 @@
     <view class="student-hint" wx:if="{{studentCards.length === 1}}">继续在下面输入孩子 ID，可添加更多学生。</view>
   </view>
 
-  <view class="family-list section-panel" wx:if="{{currentMember && currentMember.studyRole === 'parent'}}">
-    <view class="section-title">绑定</view>
-    <view class="family-row action-row" wx:if="{{currentMember && currentMember.studyRole === 'parent'}}">
+  <view class="family-list section-panel" wx:if="{{currentMember}}">
+    <view class="section-title">{{currentMember.studyRole === 'student' ? '进入已有学生账号' : '绑定'}}</view>
+    <view class="family-row action-row">
       <view class="row-main">
         <input class="row-field family-input" type="number" maxlength="6" placeholder="孩子ID" value="{{childCodeInput}}" bindinput="handleChildCodeInput" />
       </view>
-      <button class="row-action" bindtap="joinFamilyByChildCode">加入</button>
+      <button class="row-action" bindtap="joinFamilyByChildCode">{{currentMember.studyRole === 'student' ? '进入' : '加入'}}</button>
     </view>
-    <view class="family-row action-row" wx:if="{{currentMember && currentMember.studyRole === 'parent'}}">
+    <view class="family-row action-row">
       <view class="row-main">
-        <view class="row-title">备注</view>
-        <input class="row-field family-input" placeholder="称呼" value="{{joinName}}" bindinput="handleJoinNameInput" />
+        <view class="row-title">{{currentMember.studyRole === 'student' ? '姓名' : '备注'}}</view>
+        <input class="row-field family-input" placeholder="{{currentMember.studyRole === 'student' ? '学生姓名' : '称呼'}}" value="{{joinName}}" bindinput="handleJoinNameInput" />
       </view>
       <view class="row-action row-action-ghost"> </view>
     </view>

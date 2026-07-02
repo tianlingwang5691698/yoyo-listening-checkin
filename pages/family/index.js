@@ -139,14 +139,21 @@ Page({
       return;
     }
     try {
-      const data = await store.joinFamilyByChildCode(this.data.childCodeInput, this.data.joinName);
+      const currentRole = this.data.currentMember && this.data.currentMember.studyRole === 'student' ? 'student' : 'parent';
+      const data = await store.joinFamilyByChildCode(this.data.childCodeInput, this.data.joinName, {
+        studyRole: currentRole
+      });
+      if (currentRole === 'student') {
+        wx.setStorageSync('lastStudyRole', 'student');
+        wx.setStorageSync('hasUsedStudentMode', 'yes');
+      }
       this.applyFamilyState(data, {
         childCodeInput: '',
         joinName: '',
         childJoinRequired: this.isChildJoinRequired(data)
       });
       wx.showToast({
-        title: '已加入孩子记录',
+        title: currentRole === 'student' ? '已进入学生账号' : '已加入孩子记录',
         icon: 'none'
       });
     } catch (error) {

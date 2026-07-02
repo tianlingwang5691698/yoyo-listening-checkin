@@ -16,6 +16,9 @@ async function setStudyRole(event) {
     throw new Error('设备身份不可用');
   }
   await familyFacade.setExclusiveStudyRole(ctx.member, studyRole);
+  if (studyRole === 'student' && ((event && event.payload) || {}).forceSelf) {
+    return familyFacade.reloadFamilyContext(ctx.user.openId, { forceSelf: true });
+  }
   return familyFacade.reloadFamilyContext(ctx.user.openId);
 }
 
