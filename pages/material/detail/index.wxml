@@ -62,7 +62,7 @@
       <view class="question-title">{{item.number}}. {{item.prompt}}</view>
       <view class="option-list" wx:if="{{item.optionsList.length}}">
         <button class="option-row {{option.selected ? 'is-selected' : ''}}" wx:for="{{item.optionsList}}" wx:for-item="option" wx:key="key" data-number="{{item.number}}" data-option="{{option.key}}" bindtap="selectOption">
-          {{option.key}} {{option.text}}
+          {{option.label}}
         </button>
       </view>
       <input wx:else class="answer-input" value="{{item.inputValue}}" data-number="{{item.number}}" bindinput="inputAnswer" placeholder="填写答案" />

@@ -4,7 +4,7 @@ const storageAdapter = require('../adapters/storage.adapter');
 const MATERIAL_PATHS = {
   writingEm1: '_content/writing-em1/writing-prompts.json',
   writingEm2: '_content/writing-em2/writing-prompts.json',
-  listeningEm2: '_content/listening-em2/listening-sets.json'
+  listeningEm2: '_content/listening-em2/listening-practice.json'
 };
 
 function getResourceDebugSnapshot() {

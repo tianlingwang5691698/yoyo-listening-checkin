@@ -3949,8 +3949,8 @@ module.exports = {
           "options": {
             "A": "She is not familiar with the bus system.",
             "B": "She is tired and not feeling very well.",
-            "C": "Listen to the dialogue and tell whether the following statements are true or false（判断下列句子是否符合你听到的短文内容，符合的用“T”表示，不符合的用“F”表示）（5分）",
-            "D": "Listen to the passage and complete the following sentences（听短文，用听到的单词完成下列句子。每空格限填一词）（10分）"
+            "C": "She always loses her bus ticket.",
+            "D": "She doesn’t know how to take the underground."
           },
           "answer": "A"
         },
@@ -4184,8 +4184,8 @@ module.exports = {
           "options": {
             "A": "Jim saved his report in time.",
             "B": "Jim has just lost his job.",
-            "C": "Listen to the passage and tell whether the following statements are true or false（判断下列句子是否符合你听到的短文内容，符合的用“T”表示，不符合的用“F”表示）（5分）",
-            "D": "Listen to the passage and complete the following sentences（听短文填空，完成下列句子。每空格限填一词）（10分）"
+            "C": "There was a power cut last night.",
+            "D": "Jim³s computer broke down."
           },
           "answer": "C"
         },
@@ -4272,6 +4272,241 @@ module.exports = {
       ]
     },
     {
+      "_id": "sh-em2-2022-徐汇-listening",
+      "title": "2022 上海徐汇二模听力",
+      "year": 2022,
+      "district": "徐汇",
+      "examType": "二模",
+      "stage": "初中",
+      "audioCloudPath": "_content/listening-em2/audio/sh-em2-2022-徐汇-listening.mp3",
+      "transcript": "",
+      "hasAudio": true,
+      "hasTranscript": false,
+      "questionSourceFile": "上海市徐汇区2022届九年级4月质量调研（二模）英语试卷（word原卷版）.docx",
+      "images": [
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-徐汇-listening-image-1.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-徐汇-listening-image-1.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-徐汇-listening-image-2.jpeg",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-徐汇-listening-image-2.jpeg"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-徐汇-listening-image-3.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-徐汇-listening-image-3.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-徐汇-listening-image-4.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-徐汇-listening-image-4.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-徐汇-listening-image-5.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-徐汇-listening-image-5.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-徐汇-listening-image-6.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-徐汇-listening-image-6.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-徐汇-listening-image-7.jpeg",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-徐汇-listening-image-7.jpeg"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-徐汇-listening-image-8.jpeg",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-徐汇-listening-image-8.jpeg"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-徐汇-listening-image-9.jpeg",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-徐汇-listening-image-9.jpeg"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-徐汇-listening-image-10.jpeg",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-徐汇-listening-image-10.jpeg"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-徐汇-listening-image-11.jpeg",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-徐汇-listening-image-11.jpeg"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2022-徐汇-listening-image-12.jpeg",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2022-徐汇-listening-image-12.jpeg"
+        }
+      ],
+      "questions": [
+        {
+          "number": 1,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "F"
+        },
+        {
+          "number": 2,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "E"
+        },
+        {
+          "number": 3,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "C"
+        },
+        {
+          "number": 4,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "A"
+        },
+        {
+          "number": 5,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "D"
+        },
+        {
+          "number": 6,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "The music club.",
+            "B": "The sports club.",
+            "C": "The computer club.",
+            "D": "The art club."
+          },
+          "answer": "D"
+        },
+        {
+          "number": 7,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "63744579.",
+            "B": "63734599.",
+            "C": "63735597.",
+            "D": "63734497."
+          },
+          "answer": "C"
+        },
+        {
+          "number": 8,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Sunny.",
+            "B": "Windy.",
+            "C": "Rainy.",
+            "D": "Cloudy."
+          },
+          "answer": "C"
+        },
+        {
+          "number": 9,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Ice.",
+            "B": "Chocolate.",
+            "C": "Strawberry.",
+            "D": "Nuts."
+          },
+          "answer": "B"
+        },
+        {
+          "number": 10,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "She is too busy to do the shopping.",
+            "B": "There are no cups in the supermarket.",
+            "C": "They don't need to buy a new cup.",
+            "D": "The boy has to fix his broken cup."
+          },
+          "answer": "C"
+        },
+        {
+          "number": 11,
+          "prompt": "Sam found it hard to get a job because he is from Cornwall.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "F"
+        },
+        {
+          "number": 12,
+          "prompt": "Charlotte had trouble in having a good relationship with her family.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "T"
+        },
+        {
+          "number": 13,
+          "prompt": "“Fifteen Cornwall” is a school set up for young people with no future.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "F"
+        },
+        {
+          "number": 14,
+          "prompt": "Only those who have a love for cooking will be given the opportunity.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "F"
+        },
+        {
+          "number": 15,
+          "prompt": "Jamie Oliver has changed lives of some young people in Cornwall.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "T"
+        },
+        {
+          "number": 16,
+          "prompt": "The school magazine is going to be printed _______ _______.",
+          "questionType": "blank",
+          "answer": "in June"
+        },
+        {
+          "number": 17,
+          "prompt": "If you are _______ _______, send in a drawing or painting.",
+          "questionType": "blank",
+          "answer": "an artist"
+        },
+        {
+          "number": 18,
+          "prompt": "Send Tom an email if you are going to _______ _______ or any other event.",
+          "questionType": "blank",
+          "answer": "hold parties"
+        },
+        {
+          "number": 19,
+          "prompt": "The sports page needs an article about the _______ _______ this summer.",
+          "questionType": "blank",
+          "answer": "tennis match"
+        },
+        {
+          "number": 20,
+          "prompt": "The school magazine will be _______ _______ in the library instead of in the shop.",
+          "questionType": "blank",
+          "answer": "on sale"
+        }
+      ]
+    },
+    {
       "_id": "sh-em2-2023-宝山-listening",
       "title": "2023 上海宝山二模听力",
       "year": 2023,
@@ -4313,12 +4548,16 @@ module.exports = {
           "cloudPath": "_content/listening-em2/images/sh-em2-2023-宝山-listening-image-8.png"
         },
         {
-          "localPath": "data/listening-em2/images/sh-em2-2023-宝山-listening-image-10.png",
-          "cloudPath": "_content/listening-em2/images/sh-em2-2023-宝山-listening-image-10.png"
+          "localPath": "data/listening-em2/images/sh-em2-2023-宝山-listening-image-9.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2023-宝山-listening-image-9.png"
         },
         {
           "localPath": "data/listening-em2/images/sh-em2-2023-宝山-listening-image-11.png",
           "cloudPath": "_content/listening-em2/images/sh-em2-2023-宝山-listening-image-11.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2023-宝山-listening-image-12.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2023-宝山-listening-image-12.png"
         }
       ],
       "questions": [
@@ -4407,8 +4646,8 @@ module.exports = {
           "options": {
             "A": "The man really liked this new type of digital camera.",
             "B": "The man has already wasted a lot of money on sightseeing.",
-            "C": "Listen to the dialogue and tell whether the following statements are true or false（判断下列句子是否符合你听到的内容，符合的用“T”表示，不符合的用“F”表示）（5分）",
-            "D": "Listen to the passage and complete the following sentences（听短文完成下列内容，每空格限填一词）（10分）"
+            "C": "The man didn’t like to go sightseeing with the woman.",
+            "D": "The man didn’t want to buy the camera because of the price."
           },
           "answer": "D"
         },
@@ -4630,8 +4869,8 @@ module.exports = {
           "options": {
             "A": "The big sharks.",
             "B": "The film they saw.",
-            "C": "Listen to the dialogue and tell whether the following statements are true or false（判断下列句子是否符合你听到的对话内容，符合的用“T”表示，不符合的用“F”表示）（5分）",
-            "D": "Listen to the passage and complete the following sentences（根据你听到的短文，完成下列句子。每空格限填一词）（10分）"
+            "C": "Their favourite cameras.",
+            "D": "Their favourite sports."
           },
           "answer": "B"
         },
@@ -4713,7 +4952,7 @@ module.exports = {
           "number": 20,
           "prompt": "You can look at things 5 meters away from you and then the ________ ________ tip of your nose.",
           "questionType": "blank",
-          "answer": "focus on Part II"
+          "answer": "focus on"
         }
       ]
     },
@@ -4745,14 +4984,6 @@ module.exports = {
         {
           "localPath": "data/listening-em2/images/sh-em2-2023-浦东-listening-image-4.png",
           "cloudPath": "_content/listening-em2/images/sh-em2-2023-浦东-listening-image-4.png"
-        },
-        {
-          "localPath": "data/listening-em2/images/sh-em2-2023-浦东-listening-image-5.png",
-          "cloudPath": "_content/listening-em2/images/sh-em2-2023-浦东-listening-image-5.png"
-        },
-        {
-          "localPath": "data/listening-em2/images/sh-em2-2023-浦东-listening-image-6.png",
-          "cloudPath": "_content/listening-em2/images/sh-em2-2023-浦东-listening-image-6.png"
         },
         {
           "localPath": "data/listening-em2/images/sh-em2-2023-浦东-listening-image-7.png",
@@ -4865,8 +5096,8 @@ module.exports = {
           "options": {
             "A": "Tom can't do the homework himself.",
             "B": "Alice is good at teaching her child.",
-            "C": "Listen to the passage and tell whether the following statements are true or false（判断下列句子是否符合你听到的短文内容，符合的用“T”表示，不符合的用“F”表示）（5分）",
-            "D": "Listen to the dialogue and complete the following sentences（听对话，用听到的单词完成下列句子。每空格限填一词）（10分）"
+            "C": "Alice feels sorry for Tom's homework.",
+            "D": "Tom and Alice have the same trouble."
           },
           "answer": "D"
         },
@@ -4953,6 +5184,229 @@ module.exports = {
       ]
     },
     {
+      "_id": "sh-em2-2023-黄浦-listening",
+      "title": "2023 上海黄浦二模听力",
+      "year": 2023,
+      "district": "黄浦",
+      "examType": "二模",
+      "stage": "初中",
+      "audioCloudPath": "_content/listening-em2/audio/sh-em2-2023-黄浦-listening.mp3",
+      "transcript": "",
+      "hasAudio": true,
+      "hasTranscript": false,
+      "questionSourceFile": "2023年上海市黄浦区中考二模英语试题.docx",
+      "images": [
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2023-黄浦-listening-image-1.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2023-黄浦-listening-image-1.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2023-黄浦-listening-image-2.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2023-黄浦-listening-image-2.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2023-黄浦-listening-image-6.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2023-黄浦-listening-image-6.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2023-黄浦-listening-image-7.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2023-黄浦-listening-image-7.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2023-黄浦-listening-image-8.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2023-黄浦-listening-image-8.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2023-黄浦-listening-image-9.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2023-黄浦-listening-image-9.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2023-黄浦-listening-image-10.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2023-黄浦-listening-image-10.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2023-黄浦-listening-image-11.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2023-黄浦-listening-image-11.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2023-黄浦-listening-image-12.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2023-黄浦-listening-image-12.png"
+        }
+      ],
+      "questions": [
+        {
+          "number": 1,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "B"
+        },
+        {
+          "number": 2,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "D"
+        },
+        {
+          "number": 3,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "A"
+        },
+        {
+          "number": 4,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "G"
+        },
+        {
+          "number": 5,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "E"
+        },
+        {
+          "number": 6,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "At 7:10.",
+            "B": "At 7:30.",
+            "C": "At 7:50.",
+            "D": "At 8:00."
+          },
+          "answer": "C"
+        },
+        {
+          "number": 7,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "In a shop.",
+            "B": "In an office.",
+            "C": "In a restaurant.",
+            "D": "In a hospital."
+          },
+          "answer": "A"
+        },
+        {
+          "number": 8,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Teacher and student.",
+            "B": "Doctor and patient.",
+            "C": "Husband and wife.",
+            "D": "Father and son."
+          },
+          "answer": "B"
+        },
+        {
+          "number": 9,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Awful.",
+            "B": "Pleasant.",
+            "C": "Foolish.",
+            "D": "Frightening."
+          },
+          "answer": "D"
+        },
+        {
+          "number": 10,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "To see a film.",
+            "B": "To do a part-time job.",
+            "C": "To watch a spider show.",
+            "D": "To visit a history museum."
+          },
+          "answer": "C"
+        },
+        {
+          "number": 11,
+          "prompt": "Rose Clark is checking into a hotel at the front desk.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "T"
+        },
+        {
+          "number": 12,
+          "prompt": "Mr. Clark has booked a single room for three nights by phone.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "F"
+        },
+        {
+          "number": 13,
+          "prompt": "Rose Clark has to fill in her details in the guest book.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "T"
+        },
+        {
+          "number": 14,
+          "prompt": "Someone will take the luggage to Room 306 for Rose Clark.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "T"
+        },
+        {
+          "number": 15,
+          "prompt": "Breakfast is served from 7 to 11 o'clock in the Green Hall.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "F"
+        },
+        {
+          "number": 16,
+          "prompt": "Lucy is giving ______________ _________ at the graduation ceremony.",
+          "questionType": "blank",
+          "answer": "a speech"
+        },
+        {
+          "number": 17,
+          "prompt": "Middle school was a time of discovery __________, and ____________.",
+          "questionType": "blank",
+          "answer": "change, growth"
+        },
+        {
+          "number": 18,
+          "prompt": "The tens have made some progress in the past ________________ ___________.",
+          "questionType": "blank",
+          "answer": "4/four years"
+        },
+        {
+          "number": 19,
+          "prompt": "Lucy encouraged her fellow students to face____________ _______ bravely.",
+          "questionType": "blank",
+          "answer": "new challenges"
+        },
+        {
+          "number": 20,
+          "prompt": "Lucy __________ __________to see all the amazing things in senior high school and beyond.",
+          "questionType": "blank",
+          "answer": "can’t/cannot wait"
+        }
+      ]
+    },
+    {
       "_id": "sh-em2-2024-普陀-listening",
       "title": "2024 上海普陀二模听力",
       "year": 2024,
@@ -4992,6 +5446,10 @@ module.exports = {
         {
           "localPath": "data/listening-em2/images/sh-em2-2024-普陀-listening-image-7.png",
           "cloudPath": "_content/listening-em2/images/sh-em2-2024-普陀-listening-image-7.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2024-普陀-listening-image-8.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2024-普陀-listening-image-8.png"
         },
         {
           "localPath": "data/listening-em2/images/sh-em2-2024-普陀-listening-image-9.png",
@@ -5179,7 +5637,7 @@ module.exports = {
           "number": 20,
           "prompt": "A new runner should start slowly and then work up to faster speed and ___________ ___________.",
           "questionType": "blank",
-          "answer": "longer distance Part II"
+          "answer": "longer distance"
         }
       ]
     }

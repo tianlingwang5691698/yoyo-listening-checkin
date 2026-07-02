@@ -50,6 +50,24 @@ function initCloud() {
   return true;
 }
 
+function normalizeCloudPath(path) {
+  return String(path || '').replace(/^\/+|\/+$/g, '');
+}
+
+function buildCloudFileId(fileId) {
+  const value = String(fileId || '').trim();
+  if (!value || /^cloud:\/\//.test(value) || /^https?:\/\//.test(value)) {
+    return value;
+  }
+  const envId = getCloudEnvId();
+  const bucket = appConfig.cloudBucket || '';
+  const normalizedPath = normalizeCloudPath(value);
+  if (!envId || !bucket || !normalizedPath) {
+    return value;
+  }
+  return `cloud://${envId}.${bucket}/${normalizedPath}`;
+}
+
 function getSyncMode() {
   return initCloud() ? 'cloud' : 'cloud-error';
 }
@@ -62,7 +80,7 @@ async function getTempFileURL(fileId) {
   let response;
   try {
     response = await wx.cloud.getTempFileURL({
-      fileList: [fileId]
+      fileList: [buildCloudFileId(fileId)]
     });
   } catch (error) {
     monitor.logError('cloud', 'getTempFileURL', error, {

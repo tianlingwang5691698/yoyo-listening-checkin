@@ -67,6 +67,18 @@ function buildStages(config) {
   ];
 }
 
+function applyMaterialConfig(pageInstance, moduleId, materialIndex, extraData) {
+  const config = buildMaterials(materialIndex)[moduleId];
+  pageInstance.setData(Object.assign({
+    title: config.title,
+    eyebrow: config.eyebrow,
+    copy: config.copy,
+    itemUnit: config.itemUnit,
+    showCefrEntry: moduleId === 'listening',
+    stages: buildStages(config)
+  }, extraData || {}));
+}
+
 Page({
   data: page.createCloudPageData({
     moduleId: 'listening',
@@ -99,15 +111,10 @@ Page({
       itemUnit: baseConfig.itemUnit,
       showCefrEntry: moduleId === 'listening'
     });
-    const materialIndex = await store.getMaterialIndex();
-    const config = buildMaterials(materialIndex)[moduleId];
-    this.setData({
-      title: config.title,
-      eyebrow: config.eyebrow,
-      copy: config.copy,
-      itemUnit: config.itemUnit,
-      showCefrEntry: moduleId === 'listening',
-      stages: buildStages(config),
+    const materialIndex = await store.getMaterialIndex((freshIndex) => {
+      applyMaterialConfig(this, moduleId, freshIndex);
+    });
+    applyMaterialConfig(this, moduleId, materialIndex, {
       loading: false
     });
   },

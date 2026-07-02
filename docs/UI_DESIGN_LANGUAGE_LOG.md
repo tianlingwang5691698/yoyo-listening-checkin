@@ -163,6 +163,18 @@
 - 每条必须写清楚：板块、文件、改动、设计记录、验证。
 - 后续改 UI 或交互前先看对应板块最近记录，再继续改。
 
+### 2026-07-02 口语独立入口页
+
+- 文件：`app.json`
+- 文件：`pages/home/index.js`
+- 文件：`pages/speaking/index.js`
+- 文件：`pages/speaking/index.wxml`
+- 文件：`pages/speaking/index.wxss`
+- 文件：`pages/speaking/index.json`
+- 改动：首页口语卡片从“暂未开放”改为进入独立口语页；口语页提供短句选择、录音、提交腾讯 SOE 发音评分和本次分项结果。
+- 设计记录：口语首屏只突出一次短句跟读，不堆历史记录；独立口语页不写入听力任务，不改变听力完成/打卡链路。
+- 验证：已执行 `node -c pages/speaking/index.js`、`node -c pages/home/index.js`、`node -c cloudfunctions/yoyo/services/speaking.service.js`。
+
 ### 2026-07-02 首页/我的身份入口隐藏
 
 - 文件：`pages/home/index.js`
@@ -1106,6 +1118,37 @@
 - 文件：`pages/reading/detail/index.js`
 - 改动：阅读提交成功判断不再要求模型学习包来源，只要云端返回题目解析即可展示结果；历史提交记录同样按题目解析显示。
 - 设计记录：提交反馈和模型学习包解耦，学生先看到分数与对错，学习卡按需生成。
+- 验证：已做前端脚本语法检查。
+
+### 2026-07-03 家长日报范围文案
+
+- 文件：`pages/parent/index.wxml`
+- 改动：家长日报列表标题从“最近 30 天”改为“最近 7 天”。
+- 设计记录：家长日报标题必须和实际查询范围一致，避免误导为 30 天。
+- 验证：文案改动，无脚本检查。
+
+### 2026-07-03 二模听力目录刷新
+
+- 文件：`pages/material/index.js`
+- 文件：`cloudfunctions/yoyo/services/catalog.service.js`
+- 改动：考试听力目录改读正式练习 JSON，并在云端刷新返回后重算目录数量。
+- 设计记录：资料目录只展示可进入练习的正式内容，缓存命中后也要静默刷新，避免旧数量停留为 0。
+- 验证：已做前端和云函数脚本语法检查。
+
+### 2026-07-03 二模听力练习可用性修复
+
+- 文件：`pages/material/detail/index.js`
+- 文件：`pages/material/detail/index.wxml`
+- 文件：`domain/cloud/index.js`
+- 改动：听力图片/音频云路径补全为可取临时链接的 fileID，T/F 选项不再重复显示字母。
+- 设计记录：练习页必须优先保证媒体可播放、图片可见、选项文案不挤压错乱。
+- 验证：已重建二模听力练习 JSON，并完成前端脚本和 JSON 校验。
+
+### 2026-07-03 家长首次进入家庭页
+
+- 文件：`pages/family/index.js`
+- 改动：首次直接选择“我是家长”不再进入强制绑定学生 ID 的极简态，家庭页正常显示身份、绑定学生和本机成员信息。
+- 设计记录：家长模式可以先进入家庭页再绑定学生，不要求先经过学生模式。
 - 验证：已做前端脚本语法检查。
 
 ## 后续记录格式

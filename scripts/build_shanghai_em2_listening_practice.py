@@ -132,9 +132,15 @@ def split_listening(text):
 
 def option_map(line):
     opts = {}
+    line = re.split(
+        r'\s+(?=[CD][\).．]\s*Listen to (?:the dialogue|the passage|the conversation|the short passage|the recording))',
+        clean(line),
+        maxsplit=1,
+        flags=re.I,
+    )[0]
     for key, value in re.findall(r'([A-D])[\).．]\s*(.*?)(?=\s+[A-D][\).．]\s*|$)', clean(line)):
         value = clean(value)
-        if value:
+        if value and not re.match(r'Listen to (?:the dialogue|the passage|the conversation|the short passage|the recording)', value, re.I):
             opts[key] = value
     return opts
 
@@ -218,12 +224,13 @@ def extract_listening_answers(text):
                 answers[num] = letter.upper()
 
         blank_pattern = re.compile(
-            r'(1[6-9]|20)\s*[\.．、]\s*(.+?)(?=\s+(?:1[6-9]|20)\s*[\.．、]|\s+Part\s*2|\s+II\.|$)',
+            r'(1[6-9]|20)\s*[\.．、]\s*(.+?)(?=\s+(?:1[6-9]|20|2[1-9])\s*[-\.．、]|\s+Part\s*(?:2|II)|\s+II\.|$)',
             re.I,
         )
         for num, value in blank_pattern.findall(block):
             value = clean(value)
             value = re.sub(r'【解析】.*$', '', value).strip()
+            value = re.sub(r'\s+Part\s*(?:2|II).*$|\s+II\..*$', '', value, flags=re.I).strip()
             if value and len(value) <= 80:
                 answers[int(num)] = value
         if len(answers) == 20:
@@ -252,6 +259,95 @@ def extract_docx_images(path, item_id):
     except Exception:
         return []
     return out
+
+
+def extract_pdf_images(path, item_id):
+    prefix = IMAGE_DIR / f'{item_id}-pdf'
+    for stale in IMAGE_DIR.glob(f'{item_id}-pdf-*'):
+        if stale.is_file():
+            stale.unlink()
+    IMAGE_DIR.mkdir(parents=True, exist_ok=True)
+    proc = subprocess.run(
+        ['pdfimages', '-png', str(path), str(prefix)],
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        check=False,
+    )
+    if proc.returncode != 0:
+        return []
+    out = []
+    for idx, image_path in enumerate(sorted(IMAGE_DIR.glob(f'{item_id}-pdf-*')), 1):
+        if idx > 12:
+            image_path.unlink()
+            continue
+        ext = image_path.suffix.lower() or '.png'
+        final_path = IMAGE_DIR / f'{item_id}-image-{idx}{ext}'
+        if final_path.exists():
+            final_path.unlink()
+        image_path.rename(final_path)
+        out.append({
+            'localPath': str(final_path),
+            'cloudPath': f'_content/listening-em2/images/{final_path.name}'
+        })
+    return out
+
+
+def extract_images(path, item_id):
+    if path.suffix.lower() == '.docx':
+        return extract_docx_images(path, item_id)
+    if path.suffix.lower() == '.pdf':
+        return extract_pdf_images(path, item_id)
+    return []
+
+
+def score_image_source(path, image_count):
+    s = str(path)
+    score = image_count * 10
+    if '原卷' in s or '试卷' in s or '真题卷' in s:
+        score += 30
+    if '解析版' in s:
+        score += 5
+    if '听力文本' in s or '答案' in s or '参考答案' in s:
+        score -= 40
+    if path.suffix.lower() == '.docx':
+        score += 5
+    return score
+
+
+def best_image_sources(keys):
+    best = {}
+    probe_dir = IMAGE_DIR / '_probe'
+    probe_dir.mkdir(parents=True, exist_ok=True)
+    for path in candidate_text_files():
+        if path.suffix.lower() != '.docx':
+            continue
+        year = year_of(path)
+        district = district_of(path)
+        key = (year, district)
+        if key not in keys:
+            continue
+        probe_id = f'probe-{year}-{district}'
+        old_image_dir = globals()['IMAGE_DIR']
+        try:
+            globals()['IMAGE_DIR'] = probe_dir
+            images = extract_images(path, probe_id)
+        finally:
+            globals()['IMAGE_DIR'] = old_image_dir
+        image_count = len(images)
+        for image in images:
+            p = Path(image['localPath'])
+            if p.exists():
+                p.unlink()
+        if image_count < 5:
+            continue
+        score = score_image_source(path, image_count)
+        old = best.get(key)
+        if not old or score > old['score']:
+            best[key] = {'path': path, 'imageCount': image_count, 'score': score}
+    for stale in probe_dir.glob('*'):
+        if stale.is_file():
+            stale.unlink()
+    return best
 
 
 def parse_questions(text):
@@ -337,6 +433,7 @@ def main():
             stale.unlink()
     sources = best_sources()
     answer_sources = best_answer_sources()
+    image_sources = best_image_sources(set(sources) | set(answer_sources))
     items = []
     for item in sets:
         key = (item.get('year'), item.get('district'))
@@ -353,7 +450,10 @@ def main():
             for question in next_item['questions']:
                 if question.get('number') in answers:
                     question['answer'] = answers[question['number']]
-        next_item['images'] = extract_docx_images(source['path'], next_item['_id'])
+        image_source = image_sources.get(key)
+        next_item['images'] = extract_images(image_source['path'], next_item['_id']) if image_source else []
+        if image_source:
+            next_item['imageSourceFile'] = image_source['path'].name
         next_item['hasPictureQuestions'] = bool(next_item['images'])
         if next_item['hasPictureQuestions']:
             existing = {q['number'] for q in next_item['questions']}
@@ -385,6 +485,8 @@ def main():
             'hasAudio': item.get('hasAudio', False),
             'hasTranscript': item.get('hasTranscript', False),
             'questionSourceFile': item.get('questionSourceFile', ''),
+            'answerSourceFile': item.get('answerSourceFile', ''),
+            'imageSourceFile': item.get('imageSourceFile', ''),
             'images': item.get('images', []),
             'questions': item.get('questions', [])
         })

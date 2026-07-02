@@ -9,6 +9,7 @@ function buildQuestions(item) {
     optionsList: Object.keys(question.options || {}).map((key) => ({
       key,
       text: question.options[key],
+      label: question.options[key] === key ? key : `${key} ${question.options[key]}`,
       selected: false
     })),
     inputValue: '',
