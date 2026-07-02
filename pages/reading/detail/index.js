@@ -1264,7 +1264,10 @@ Page({
       this.dictionaryAudioContext.play();
     };
     try {
-      let url = entry.audioUrl || '';
+      let url = canUseDictionaryVoice(word) ? buildDictionaryVoiceUrl(word) : '';
+      if (!url) {
+        url = entry.audioUrl || '';
+      }
       if (!url && entry.audioFileId) {
         url = await store.getTempFileURL(entry.audioFileId);
         if (url) {

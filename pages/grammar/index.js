@@ -2,6 +2,19 @@ const page = require('../../utils/page');
 const store = require('../../utils/store');
 const completed = require('../../utils/completed');
 
+function canUseDictionaryVoice(text) {
+  const value = String(text || '').replace(/\s+/g, ' ').trim();
+  if (!value || value.length > 60 || /[.!?;:]/.test(value)) return false;
+  const words = value.split(' ').filter(Boolean);
+  return words.length >= 1
+    && words.length <= 6
+    && words.every((word) => /^[A-Za-z][A-Za-z'-]{0,30}$/.test(word));
+}
+
+function buildDictionaryVoiceUrl(text) {
+  return `https://dict.youdao.com/dictvoice?audio=${encodeURIComponent(text)}&type=2`;
+}
+
 function buildTopics(grammarData) {
   const source = grammarData || {};
   const questionsByTopic = (source.byTopic || []).reduce((map, group) => {
@@ -632,7 +645,10 @@ Page({
       this.grammarAudioContext.play();
     };
     try {
-      let url = entry.audioUrl || '';
+      let url = canUseDictionaryVoice(word) ? buildDictionaryVoiceUrl(word) : '';
+      if (!url) {
+        url = entry.audioUrl || '';
+      }
       if (!url && entry.audioFileId) {
         url = await store.getTempFileURL(entry.audioFileId);
         if (url) {
@@ -645,7 +661,9 @@ Page({
       playUrl(url);
     } catch (error) {
       this.setData({ dictionaryAudioLoading: false });
-      playUrl(`https://dict.youdao.com/dictvoice?audio=${encodeURIComponent(word)}&type=2`);
+      if (canUseDictionaryVoice(word)) {
+        playUrl(buildDictionaryVoiceUrl(word));
+      }
     }
   }
 });
