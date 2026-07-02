@@ -170,6 +170,18 @@
 - 每条必须写清楚：板块、文件、改动、设计记录、验证。
 - 后续改 UI 或交互前先看对应板块最近记录，再继续改。
 
+### 2026-07-03 家长日报录音播放
+
+- 文件：`cloudfunctions/yoyo/lib/speaking-engine.js`
+- 文件：`pages/parent/detail/index.js`
+- 文件：`pages/parent/detail/index.wxml`
+- 文件：`pages/parent/detail/index.wxss`
+- 文件：`pages/record/index.js`
+- 文件：`pages/home/completed/index.js`
+- 改动：日报详情里的录音播放按钮改为带状态图标的轻量胶囊；支持只有云存储路径的旧录音生成临时播放链接；评分链路有转写时用保守分兜底，避免单段模型失败导致整条记录显示失败。
+- 设计记录：口语/录音回看保留明确按钮，但视觉降噪，不使用整行高权重主按钮。
+- 验证：已做前端和云函数脚本语法检查。
+
 ### 2026-07-02 口语独立入口页
 
 - 文件：`app.json`

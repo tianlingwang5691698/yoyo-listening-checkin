@@ -2,6 +2,7 @@ const store = require('../../utils/store');
 const page = require('../../utils/page');
 const labels = require('../../utils/labels');
 const contracts = require('../../utils/contracts');
+const appConfig = require('../../data/app-config');
 
 const WEEK_LABELS = ['日', '一', '二', '三', '四', '五', '六'];
 const EMPTY_REPORT = {
@@ -13,6 +14,14 @@ const EMPTY_DAY_SUMMARY = {
   statusText: '未完成',
   minutesText: '0 分钟'
 };
+
+function buildCloudFileId(cloudPath) {
+  const normalizedPath = String(cloudPath || '').replace(/^\/+/, '');
+  if (!normalizedPath || !appConfig.cloudEnvId || !appConfig.cloudBucket) {
+    return '';
+  }
+  return `cloud://${appConfig.cloudEnvId}.${appConfig.cloudBucket}/${normalizedPath}`;
+}
 
 function pad(value) {
   return value < 10 ? `0${value}` : String(value);
@@ -530,8 +539,8 @@ Page({
     const attempt = (item.attempts || [])[attemptIndex] || null;
     if (!attempt) return;
     const fileId = audioType === 'feedback'
-      ? (attempt.feedbackAudioFileId || '')
-      : (attempt.answerAudioFileId || '');
+      ? (attempt.feedbackAudioFileId || buildCloudFileId(attempt.feedbackAudioCloudPath))
+      : (attempt.answerAudioFileId || buildCloudFileId(attempt.answerCloudPath));
     if (!fileId) {
       wx.showToast({ title: audioType === 'feedback' ? '暂无建议语音' : '暂无录音', icon: 'none' });
       return;

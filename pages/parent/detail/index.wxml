@@ -68,8 +68,9 @@
           </view>
           <view class="recording-text" wx:if="{{item.studentTranscript}}">孩子回答：{{item.studentTranscript}}</view>
           <view class="recording-text" wx:if="{{item.feedback}}">建议：{{item.feedback}}</view>
-          <button class="player-action attempt-play {{loadingAttemptKey === item.key && playingAttemptKey !== item.key ? 'is-disabled' : ''}}" data-index="{{index}}" bindtap="playSpeakingAttempt">
-            {{playingAttemptKey === item.key ? (pausedAttemptKey === item.key ? '继续播放' : '暂停录音') : '播放录音'}}
+          <button class="attempt-play {{playingAttemptKey === item.key ? 'is-playing' : ''}} {{pausedAttemptKey === item.key ? 'is-paused' : ''}} {{loadingAttemptKey === item.key ? 'is-loading' : ''}}" data-index="{{index}}" bindtap="playSpeakingAttempt">
+            <view class="attempt-play-icon"></view>
+            <text>{{loadingAttemptKey === item.key ? '加载中' : (playingAttemptKey === item.key ? (pausedAttemptKey === item.key ? '继续播放' : '暂停录音') : '播放录音')}}</text>
           </button>
         </view>
       </block>

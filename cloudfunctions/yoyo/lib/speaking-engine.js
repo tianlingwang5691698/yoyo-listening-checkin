@@ -1270,16 +1270,14 @@ async function scoreSpeakingAttempt(payload) {
       }
     }
     if (requireTencentSoeScore && !Number.isFinite(Number(pronunciationScore))) {
-      return {
-        score: 0,
-        pronunciationFluencyScore: 0,
-        contentGrammarScore: 0,
-        transcript,
-        feedback: '腾讯 SOE 发音评分暂时未返回有效分数，请重新提交评分。',
-        status: 'score-pending',
-        error: 'tencent-soe-no-score',
-        errorType: 'pronunciation-score'
-      };
+      pronunciationScore = estimateFluencyScore(transcript);
+      console.warn('[speaking-score-stage]', JSON.stringify({
+        stage: 'tencent-soe-fallback',
+        score: pronunciationScore,
+        taskId: payload.taskId || '',
+        attemptType: payload.attemptType || '',
+        attemptIndex: payload.attemptIndex || 0
+      }));
     }
     console.log('[speaking-score-stage]', JSON.stringify({
       stage: 'content-model-start',
@@ -1339,16 +1337,11 @@ async function scoreSpeakingAttempt(payload) {
     const looseParsed = contentParsed.looseParsed;
     const rawContentScore = contentParsed.rawContentScore;
     if (!Number.isFinite(rawContentScore) || rawContentScore <= 0) {
-      return {
-        score: 0,
-        pronunciationFluencyScore: 0,
-        contentGrammarScore: 0,
-        transcript,
-        feedback: '录音已转写，但评分模型暂时没有返回有效评分，请稍后重试。',
-        status: 'score-pending',
+      const fallback = buildContentFallbackFromTranscript(payload, transcript, Number(pronunciationScore || estimateFluencyScore(transcript)));
+      return Object.assign({}, fallback, {
         error: 'invalid-score-json',
         errorType: 'model-output'
-      };
+      });
     }
     const expressionFallback = clampScore(parsed.expressionFluencyScore, estimateFluencyScore(transcript));
     const expressionScore = Number.isFinite(Number(pronunciationScore))

@@ -1,6 +1,15 @@
 const store = require('../../../utils/store');
 const page = require('../../../utils/page');
 const labels = require('../../../utils/labels');
+const appConfig = require('../../../data/app-config');
+
+function buildCloudFileId(cloudPath) {
+  const normalizedPath = String(cloudPath || '').replace(/^\/+/, '');
+  if (!normalizedPath || !appConfig.cloudEnvId || !appConfig.cloudBucket) {
+    return '';
+  }
+  return `cloud://${appConfig.cloudEnvId}.${appConfig.cloudBucket}/${normalizedPath}`;
+}
 
 function pad(value) {
   return value < 10 ? `0${value}` : String(value);
@@ -455,7 +464,7 @@ Page({
       }
       return;
     }
-    const fileId = String(attempt.answerAudioFileId || '').trim();
+    const fileId = String(attempt.answerAudioFileId || buildCloudFileId(attempt.answerCloudPath)).trim();
     if (!fileId) {
       wx.showToast({ title: '录音暂不可播放', icon: 'none' });
       return;

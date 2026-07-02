@@ -1,5 +1,14 @@
 const page = require('../../../utils/page');
 const store = require('../../../utils/store');
+const appConfig = require('../../../data/app-config');
+
+function buildCloudFileId(cloudPath) {
+  const normalizedPath = String(cloudPath || '').replace(/^\/+/, '');
+  if (!normalizedPath || !appConfig.cloudEnvId || !appConfig.cloudBucket) {
+    return '';
+  }
+  return `cloud://${appConfig.cloudEnvId}.${appConfig.cloudBucket}/${normalizedPath}`;
+}
 
 function todayString() {
   const now = new Date();
@@ -93,8 +102,8 @@ Page({
     const attempt = (item.attempts || [])[attemptIndex] || null;
     if (!attempt) return;
     const fileId = audioType === 'feedback'
-      ? (attempt.feedbackAudioFileId || '')
-      : (attempt.answerAudioFileId || '');
+      ? (attempt.feedbackAudioFileId || buildCloudFileId(attempt.feedbackAudioCloudPath))
+      : (attempt.answerAudioFileId || buildCloudFileId(attempt.answerCloudPath));
     if (!fileId) {
       wx.showToast({ title: audioType === 'feedback' ? '暂无建议语音' : '暂无录音', icon: 'none' });
       return;
