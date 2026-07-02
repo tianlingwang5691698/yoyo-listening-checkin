@@ -434,11 +434,11 @@ async function getLevelOverview(options, onRefresh) {
  * @returns {Promise<TaskDetailData>}
  */
 async function getTaskDetail(category, taskId, options, onRefresh) {
-  return callCloud('getTaskDetail', Object.assign({ category, taskId }, options || {}), contracts.createTaskDetailDefaults(), { onRefresh });
+  return callCloud('getTaskDetail', withSelectedStudent(Object.assign({ category, taskId }, options || {})), contracts.createTaskDetailDefaults(), { onRefresh });
 }
 
 async function getTaskTranscript(category, taskId, options, onRefresh) {
-  return callCloud('getTaskTranscript', Object.assign({ category, taskId }, options || {}), {
+  return callCloud('getTaskTranscript', withSelectedStudent(Object.assign({ category, taskId }, options || {})), {
     task: null,
     scriptSource: null,
     transcriptTrack: null,
@@ -585,7 +585,7 @@ async function rescoreSpeakingAttempt(options) {
 }
 
 async function getSpeakingAttempts(options, onRefresh) {
-  return callCloud('getSpeakingAttempts', options, {
+  return callCloud('getSpeakingAttempts', withSelectedStudent(options), {
     attempts: [],
     summary: {}
   }, { onRefresh });

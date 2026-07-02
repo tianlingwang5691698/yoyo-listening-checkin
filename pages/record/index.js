@@ -5,6 +5,7 @@ const contracts = require('../../utils/contracts');
 const appConfig = require('../../data/app-config');
 
 const WEEK_LABELS = ['日', '一', '二', '三', '四', '五', '六'];
+const LESSON_TASK_SNAPSHOT_KEY = 'lessonTaskSnapshotV1';
 const EMPTY_REPORT = {
   ...contracts.createReportDefaults()
 };
@@ -218,6 +219,13 @@ function markSelectedCells(cells, selectedDate) {
   return (cells || []).map((item) => Object.assign({}, item, {
     isSelected: item.date === selectedDate
   }));
+}
+
+function buildLessonQuery(params) {
+  return Object.keys(params || {})
+    .filter((key) => params[key] !== undefined && params[key] !== null && params[key] !== '')
+    .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`)
+    .join('&');
 }
 
 Page({
@@ -526,8 +534,29 @@ Page({
       return;
     }
     if (item.category && item.taskId) {
+      const report = this.data.selectedDayReport || {};
+      const planDayIndex = Number(report.planDayIndex || item.planDayIndex || 0) || this.data.planDayIndex || '';
+      const targetDate = report.date || this.data.selectedDate || '';
+      try {
+        wx.setStorageSync(LESSON_TASK_SNAPSHOT_KEY, {
+          savedAt: Date.now(),
+          category: item.category,
+          taskId: item.taskId,
+          task: Object.assign({}, item, {
+            targetDate,
+            planDayIndex
+          })
+        });
+      } catch (error) {}
+      const query = buildLessonQuery({
+        category: item.category,
+        taskId: item.taskId,
+        planRunType: 'preview',
+        targetDate,
+        planDayIndex
+      });
       wx.navigateTo({
-        url: `/pages/lesson/index?category=${item.category}&taskId=${item.taskId}`
+        url: `/pages/lesson/index?${query}`
       });
     }
   },
