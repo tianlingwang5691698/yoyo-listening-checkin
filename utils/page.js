@@ -12,6 +12,7 @@ const CLOUD_PAGE_DEFAULTS = {
   currentThemeLabel: '暖白'
 };
 const IDENTITY_CONFIRMED_KEY = 'yoyoIdentityConfirmedV1';
+const IDENTITY_CONFIRMED_V2_KEY = 'yoyoIdentityConfirmedV2';
 
 function createCloudPageData(defaults) {
   return Object.assign({}, CLOUD_PAGE_DEFAULTS, theme.buildThemeData(), defaults || {});
@@ -51,8 +52,10 @@ function setIdentityConfirmed(confirmed) {
   try {
     if (confirmed) {
       wx.setStorageSync(IDENTITY_CONFIRMED_KEY, 'yes');
+      wx.setStorageSync(IDENTITY_CONFIRMED_V2_KEY, 'yes');
     } else {
       wx.removeStorageSync(IDENTITY_CONFIRMED_KEY);
+      wx.removeStorageSync(IDENTITY_CONFIRMED_V2_KEY);
     }
   } catch (error) {}
 }
@@ -63,7 +66,7 @@ function isIdentityConfirmed() {
     return true;
   }
   try {
-    return wx.getStorageSync(IDENTITY_CONFIRMED_KEY) === 'yes';
+    return wx.getStorageSync(IDENTITY_CONFIRMED_V2_KEY) === 'yes';
   } catch (error) {
     return false;
   }
