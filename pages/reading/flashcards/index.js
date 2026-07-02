@@ -331,6 +331,9 @@ function mergeBookProgress(bookLibrary, progressLibrary) {
     const progress = progressMap[item.flashcardKey];
     if (!progress) return item;
     return Object.assign({}, item, {
+      phonetic: item.phonetic || progress.phonetic || '',
+      meaning: item.meaning || progress.meaning || '',
+      example: item.example || progress.example || '',
       status: progress.status || item.status,
       nextReviewDate: progress.nextReviewDate || '',
       reviewStep: progress.reviewStep != null ? progress.reviewStep : item.reviewStep,
