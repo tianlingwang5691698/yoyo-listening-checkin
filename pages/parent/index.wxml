@@ -59,7 +59,7 @@
   </view>
 
   <view class="trend-card section-panel">
-    <view class="section-title type-section-title">最近 30 天</view>
+    <view class="section-title type-section-title">最近 7 天</view>
     <block wx:for="{{recentReports}}" wx:key="reportId">
       <view class="trend-row task-cell is-link" data-date="{{item.date}}" bindtap="openDailyDetail">
         <view>

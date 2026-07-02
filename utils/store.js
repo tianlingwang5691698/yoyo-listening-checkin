@@ -8,6 +8,7 @@ const tempFileUrlCache = {};
 const wordLookupCache = {};
 const CACHE_INDEX_KEY = 'yoyoCloudReadCacheKeysV1';
 const SELECTED_STUDENT_KEY = 'yoyoSelectedStudentTargetV1';
+const LAST_PARENT_STUDENT_KEY = 'yoyoLastParentStudentTargetV1';
 const CACHE_MAX_AGE_MS = 7 * 24 * 60 * 60 * 1000;
 const RECORD_CACHE_MAX_AGE_MS = 2 * 60 * 1000;
 const TEMP_FILE_URL_MAX_AGE_MS = 20 * 60 * 1000;
@@ -85,6 +86,18 @@ function setSelectedStudentTarget(target) {
     wx.setStorageSync(SELECTED_STUDENT_KEY, next);
   }
   return next;
+}
+
+function setLastParentStudentTarget(target) {
+  const next = normalizeStudentTarget(target);
+  if (next.targetFamilyId || next.targetChildId) {
+    wx.setStorageSync(LAST_PARENT_STUDENT_KEY, next);
+  }
+  return next;
+}
+
+function getLastParentStudentTarget() {
+  return normalizeStudentTarget(wx.getStorageSync(LAST_PARENT_STUDENT_KEY) || {});
 }
 
 function clearSelectedStudentTarget() {
@@ -838,7 +851,13 @@ async function setStudyRole(studyRole) {
     clearCloudReadCache();
     return callCloud('setStudyRole', { studyRole, forceSelf: true }, contracts.createFamilyPageDefaults());
   }
-  return callCloud('setStudyRole', withSelectedStudent({ studyRole }), contracts.createFamilyPageDefaults());
+  const lastParentTarget = getLastParentStudentTarget();
+  const payload = lastParentTarget.targetFamilyId || lastParentTarget.targetChildId
+    ? Object.assign({ studyRole }, lastParentTarget)
+    : withSelectedStudent({ studyRole });
+  const data = await callCloud('setStudyRole', payload, contracts.createFamilyPageDefaults());
+  syncSelectedStudentFromData(data);
+  return data;
 }
 
 async function undoLastListened() {
@@ -903,6 +922,7 @@ module.exports = {
   getStudyCompletions,
   getSelectedStudentTarget,
   setSelectedStudentTarget,
+  setLastParentStudentTarget,
   clearSelectedStudentTarget,
   explainGrammarQuestion,
   getFamilyPageData,

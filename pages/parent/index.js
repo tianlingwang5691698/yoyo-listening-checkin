@@ -152,6 +152,7 @@ Page({
       return;
     }
     store.setSelectedStudentTarget(target);
+    store.setLastParentStudentTarget(target);
     this.setData({ selectedStudentIndex: index });
     this.loadParentData();
   },

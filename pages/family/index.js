@@ -39,10 +39,7 @@ Page({
     });
   },
   isChildJoinRequired(data) {
-    const member = (data && data.currentMember) || {};
-    return member.role === 'owner'
-      && member.studyRole === 'parent'
-      && wx.getStorageSync('hasUsedStudentMode') !== 'yes';
+    return false;
   },
   buildStudyRolePresentation(member) {
     const studyRole = member && member.studyRole === 'student' ? 'student' : 'parent';
@@ -170,6 +167,7 @@ Page({
       return;
     }
     store.setSelectedStudentTarget(target);
+    store.setLastParentStudentTarget(target);
     const data = await store.getFamilyPageData();
     this.applyFamilyState(data, {
       childJoinRequired: this.isChildJoinRequired(data)

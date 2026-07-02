@@ -11,15 +11,19 @@ async function setStudyRole(event) {
   const { ctx } = await familyFacade.prepareRequestContext(Object.assign({}, event, {
     action: 'setStudyRole'
   }));
+  const payload = (event && event.payload) || {};
   const studyRole = String((((event && event.payload) || {}).studyRole) || '').trim();
   if (studyRole !== 'student' && studyRole !== 'parent') {
     throw new Error('设备身份不可用');
   }
   await familyFacade.setExclusiveStudyRole(ctx.member, studyRole);
-  if (studyRole === 'student' && ((event && event.payload) || {}).forceSelf) {
+  if (studyRole === 'student' && payload.forceSelf) {
     return familyFacade.reloadFamilyContext(ctx.user.openId, { forceSelf: true });
   }
-  return familyFacade.reloadFamilyContext(ctx.user.openId);
+  return familyFacade.reloadFamilyContext(ctx.user.openId, {
+    targetFamilyId: String(payload.targetFamilyId || '').trim(),
+    targetChildId: String(payload.targetChildId || '').trim()
+  });
 }
 
 async function undoLastListened(event) {
