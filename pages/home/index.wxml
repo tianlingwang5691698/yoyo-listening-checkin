@@ -2,7 +2,7 @@
   <view class="home-titlebar">
     <view class="settings-dot">⚙</view>
     <view class="home-heading">
-      <view class="home-brand type-brand">{{greeting}}，{{child.nickname || '佑佑'}}</view>
+      <view class="home-brand type-brand">{{greeting}}，{{child.nickname || '同学'}}</view>
       <view class="home-subtitle type-caption">{{todayDisplay}} · Day {{planDayIndex}}</view>
     </view>
     <view class="profile-badge">{{profileInitial}}</view>

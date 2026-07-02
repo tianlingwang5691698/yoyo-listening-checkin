@@ -38,7 +38,7 @@ function greetingText() {
 }
 
 function profileInitial(child) {
-  const name = String((child && child.nickname) || 'Y');
+  const name = String((child && (child.avatarText || child.nickname)) || '学');
   return name.slice(0, 1).toUpperCase();
 }
 
@@ -212,7 +212,7 @@ function buildTodayCompletedItems(groupedDailyTasks, readingToday, readingComple
 Page({
   data: page.createCloudPageData({
     child: contracts.createChildDefaults(),
-    profileInitial: 'Y',
+    profileInitial: '学',
     currentMember: contracts.createCurrentMemberDefaults(),
     planDayIndex: 1,
     todayDisplay: todayDisplayText(),

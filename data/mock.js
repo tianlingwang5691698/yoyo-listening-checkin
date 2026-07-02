@@ -24,8 +24,8 @@ function buildCloudFileId(cloudPath) {
 const childProfiles = [
   {
     childId: 'child-yoyo',
-    nickname: '佑佑',
-    avatarText: 'YY',
+    nickname: '同学',
+    avatarText: '学',
     currentLevel: 'A1',
     totalCompleted: 0,
     ageLabel: '启蒙阶段',

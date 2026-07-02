@@ -37,6 +37,21 @@ async function getChild(familyId, deps) {
   if (!child) {
     return null;
   }
+  const shouldMigrateDefaultProfile = String(child.nickname || '').trim() === '佑佑'
+    && (!child.avatarText || String(child.avatarText).trim() === 'YY');
+  if (shouldMigrateDefaultProfile) {
+    const updatedAt = new Date().toISOString();
+    await deps.updateChildById(child._id, {
+      nickname: '同学',
+      avatarText: '学',
+      updatedAt
+    });
+    child = Object.assign({}, child, {
+      nickname: '同学',
+      avatarText: '学',
+      updatedAt
+    });
+  }
   if (!/^\d{6}$/.test(String(child.childLoginCode || ''))) {
     const childLoginCode = await deps.makeUniqueChildLoginCode();
     await deps.updateChildById(child._id, {

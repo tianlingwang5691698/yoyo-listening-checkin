@@ -8,8 +8,8 @@ const bootstrapEngine = require('../lib/bootstrap-engine');
 
 const childTemplate = {
   childId: 'child-yoyo',
-  nickname: '佑佑',
-  avatarText: 'YY',
+  nickname: '同学',
+  avatarText: '学',
   currentLevel: 'A1',
   ageLabel: '启蒙阶段',
   welcomeLine: '今天听三遍，小耳朵慢慢就会越来越灵。'

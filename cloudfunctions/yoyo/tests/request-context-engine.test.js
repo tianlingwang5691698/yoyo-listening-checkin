@@ -84,7 +84,7 @@ test('prepareRequestContext 会传递选中学生上下文', async () => {
   assert.deepEqual(calls, [[
     'bootstrap',
     'open-1',
-    { targetFamilyId: 'family-2', targetChildId: 'child-2' }
+    { targetFamilyId: 'family-2', targetChildId: 'child-2', forceSelf: false }
   ]]);
 });
 

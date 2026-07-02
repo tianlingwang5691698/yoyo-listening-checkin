@@ -67,7 +67,13 @@ function ensureLocalFamilyState() {
 
 function loadLocalFamilyState() {
   ensureLocalFamilyState();
-  return wx.getStorageSync(FAMILY_STORAGE_KEY) || getDefaultFamilyState();
+  const state = wx.getStorageSync(FAMILY_STORAGE_KEY) || getDefaultFamilyState();
+  if (state.child && String(state.child.nickname || '').trim() === '佑佑' && (!state.child.avatarText || String(state.child.avatarText).trim() === 'YY')) {
+    state.child.nickname = '同学';
+    state.child.avatarText = '学';
+    saveLocalFamilyState(state);
+  }
+  return state;
 }
 
 function saveLocalFamilyState(state) {

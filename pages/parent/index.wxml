@@ -1,7 +1,7 @@
 <view class="theme-{{theme}} page-shell parent-page">
   <view class="parent-hero product-hero">
     <view class="product-title type-page-title">日报</view>
-    <view class="product-copy">{{child.nickname || '佑佑'}}</view>
+    <view class="product-copy">{{child.nickname || '同学'}}</view>
     <view class="parent-id">绑定 ID：{{child.childLoginCode || '未绑定'}}</view>
     <picker wx:if="{{studentNames.length > 1}}" mode="selector" range="{{studentNames}}" value="{{selectedStudentIndex}}" bindchange="handleStudentChange">
       <view class="student-switch">切换学生：{{studentNames[selectedStudentIndex]}}</view>

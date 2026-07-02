@@ -9,11 +9,11 @@ function makeChildLoginCode() {
 function buildAvatarTextFromNickname(nickname) {
   const text = String(nickname || '').trim();
   if (!text) {
-    return 'YY';
+    return '学';
   }
   const compact = text.replace(/\s+/g, '');
-  if (compact === '佑佑') {
-    return 'YY';
+  if (compact === '同学') {
+    return '学';
   }
   return compact.slice(0, 2).toUpperCase();
 }
