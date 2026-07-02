@@ -407,7 +407,7 @@ async function getMaterialIndex(options, onRefresh) {
     writingEm2: [],
     listeningEm1: [],
     listeningEm2: []
-  }, { onRefresh: refreshHandler });
+  }, { onRefresh: refreshHandler, useCache: false });
 }
 
 async function getLevelOverview(options, onRefresh) {

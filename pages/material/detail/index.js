@@ -71,7 +71,7 @@ Page({
       item,
       questions: item ? buildQuestions(item) : [],
       studyCompleted,
-      audioLocked: !!(item && item.transcript && !studyCompleted)
+      audioLocked: false
     });
     if (item && item.audioCloudPath) {
       this.prepareAudio(item.audioCloudPath);
@@ -132,10 +132,6 @@ Page({
   },
   toggleAudio() {
     if (this.data.audioLoading || !this.data.audioSrc) return;
-    if (this.data.audioLocked) {
-      this.setData({ studyError: '请先学完文本学习包，再听音频。' });
-      return;
-    }
     if (!this.audio) return;
     if (this.data.isPlaying) {
       this.audio.pause();
