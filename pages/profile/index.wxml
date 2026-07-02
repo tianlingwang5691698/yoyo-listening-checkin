@@ -22,12 +22,12 @@
         <view class="row-copy {{childCodeReady ? '' : 'is-pending'}}">{{childCodeText}}</view>
       </view>
     </view>
-    <view class="profile-role">
-      <view class="row-title">身份</view>
-      <view class="role-switch">
-        <view class="role-chip {{currentMember.studyRole === 'parent' ? 'is-active' : ''}}" data-role="parent" bindtap="switchStudyRole">我是家长</view>
-        <view class="role-chip {{currentMember.studyRole === 'student' ? 'is-active' : ''}}" data-role="student" bindtap="switchStudyRole">我是学生</view>
+    <view class="profile-row" bindtap="openFamilyPage">
+      <view class="row-main">
+        <view class="row-title">身份</view>
+        <view class="row-copy">{{currentMember.studyRole === 'student' ? '学生' : '家长'}}</view>
       </view>
+      <view class="row-arrow">›</view>
     </view>
     <view class="profile-row" bindtap="openParentPage">
       <view class="row-main">

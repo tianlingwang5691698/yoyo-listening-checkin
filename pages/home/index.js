@@ -4,6 +4,7 @@ const contracts = require('../../utils/contracts');
 const labels = require('../../utils/labels');
 const completed = require('../../utils/completed');
 const LEVEL_STAGE_SNAPSHOT_KEY = 'levelStageSnapshotV1';
+const ENTRY_POSTER_DISMISSED_KEY = 'homeEntryPosterDismissedV1';
 
 const VOCABULARY_ITEM_KEYS = [
   'listeningFlashcardItemsV1',
@@ -116,6 +117,14 @@ function getCurrentPhaseKey(planPhaseLabel) {
   if (planPhaseLabel === '阶段二') return 'round-2';
   if (planPhaseLabel === '阶段三') return 'round-3';
   return 'round-1';
+}
+
+function isEntryPosterDismissed() {
+  try {
+    return wx.getStorageSync(ENTRY_POSTER_DISMISSED_KEY) === 'yes';
+  } catch (error) {
+    return false;
+  }
 }
 
 function buildStageSnapshotTaskGroups(groupedDailyTasks) {
@@ -274,7 +283,7 @@ Page({
     this.homePerf = page.startPagePerf('home');
     page.syncTheme(this);
     const tabBar = this.getTabBar && this.getTabBar();
-    const entryPosterVisible = true;
+    const entryPosterVisible = !isEntryPosterDismissed();
     if (tabBar) {
       tabBar.setData({
         selected: 0,
@@ -329,6 +338,9 @@ Page({
     });
   },
   closeEntryPoster() {
+    try {
+      wx.setStorageSync(ENTRY_POSTER_DISMISSED_KEY, 'yes');
+    } catch (error) {}
     const tabBar = this.getTabBar && this.getTabBar();
     if (tabBar) {
       tabBar.setData({ hidden: false });
