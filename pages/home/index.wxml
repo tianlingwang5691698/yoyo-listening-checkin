@@ -18,6 +18,7 @@
   </view>
 
   <view class="mode-reminder" wx:if="{{identityConfirmVisible}}">
+    <view class="mode-reminder-copy">先选择这台手机的使用身份</view>
     <view class="mode-reminder-actions">
       <button class="mode-reminder-action" data-role="parent" bindtap="confirmStudyIdentity">我是家长</button>
       <button class="mode-reminder-action is-primary" data-role="student" bindtap="confirmStudyIdentity">我是学生</button>

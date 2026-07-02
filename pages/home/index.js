@@ -127,6 +127,10 @@ function isEntryPosterDismissed() {
   }
 }
 
+function shouldShowEntryPoster() {
+  return !page.isIdentityConfirmed() && !isEntryPosterDismissed();
+}
+
 function buildStageSnapshotTaskGroups(groupedDailyTasks) {
   return (groupedDailyTasks || []).map((group) => {
     const task = (group.tasks || []).find((item) => !item.completedToday && !item.isPendingAsset)
@@ -283,7 +287,8 @@ Page({
     this.homePerf = page.startPagePerf('home');
     page.syncTheme(this);
     const tabBar = this.getTabBar && this.getTabBar();
-    const entryPosterVisible = !isEntryPosterDismissed();
+    const entryPosterVisible = shouldShowEntryPoster();
+    const identityConfirmVisible = !page.isIdentityConfirmed();
     if (tabBar) {
       tabBar.setData({
         selected: 0,
@@ -296,6 +301,7 @@ Page({
       greeting: greetingText(),
       vocabularySummary: buildVocabularySummary(),
       entryPosterVisible,
+      identityConfirmVisible,
       entryPosterPage: 0
     });
     const data = await store.getDashboard({ view: 'home' }, (fresh) => {
