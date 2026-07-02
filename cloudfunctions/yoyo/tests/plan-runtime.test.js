@@ -36,6 +36,14 @@ test('当天是否已使用补卡按中国日期判断', () => {
   assert.equal(planRuntime.hasCatchupToday(checkins, '2026-04-20'), false);
 });
 
+test('当天完成 Day 74 后继续显示 Day 75', () => {
+  const checkins = [
+    { date: '2026-07-03', planDayIndex: 74, planRunType: 'normal' }
+  ];
+  assert.equal(planRuntime.getPlanDayIndexForDate(checkins, '2026-07-03'), 74);
+  assert.equal(planRuntime.getNextPlanDayIndexForDate(checkins, '2026-07-03'), 75);
+});
+
 test('Unlock1 首轮后循环任务每条只听 1 遍', () => {
   const catalog = Array.from({ length: 24 }, (_, index) => ({
     taskId: `unlock1-${index + 1}`,

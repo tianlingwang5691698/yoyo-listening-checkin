@@ -7,6 +7,7 @@ module.exports = {
   getChildProgressRecords: shared.getChildProgressRecords,
   getCheckins: shared.getCheckins,
   getPlanDayIndexForDate: shared.getPlanDayIndexForDate,
+  getNextPlanDayIndexForDate: shared.getNextPlanDayIndexForDate,
   buildPlanForDay: shared.buildPlanForDay,
   getPeppaReviewCursor: shared.getPeppaReviewCursor,
   getPeppaReviewPlanOptions: shared.getPeppaReviewPlanOptions,

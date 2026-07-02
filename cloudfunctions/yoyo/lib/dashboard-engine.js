@@ -134,7 +134,8 @@ async function getDashboardData(ctx, deps, options = {}) {
       checkins = reconciled.checkins || checkins;
     }
   }
-  const planDayIndex = deps.getPlanDayIndexForDate(checkins, today);
+  const getActivePlanDayIndex = deps.getNextPlanDayIndexForDate || deps.getPlanDayIndexForDate;
+  const planDayIndex = getActivePlanDayIndex(checkins, today);
   const peppaReviewPlanOptions = deps.getPeppaReviewPlanOptions
     ? deps.getPeppaReviewPlanOptions(progressRecords, checkins, ctx.child.childId, today)
     : {};

@@ -244,6 +244,10 @@ function getPlanDayIndexForDate(checkins, date) {
   return planLib.getPlanDayIndexForDate(checkins, date);
 }
 
+function getNextPlanDayIndexForDate(checkins, date) {
+  return planLib.getNextPlanDayIndexForDate(checkins, date);
+}
+
 function getPlanStartDate(ctx, today, checkins) {
   return planLib.getPlanStartDate(ctx, today, checkins);
 }
@@ -491,6 +495,7 @@ async function getDashboardData(ctx, options = {}) {
     getCheckins,
     reconcileCheckins,
     getPlanDayIndexForDate,
+    getNextPlanDayIndexForDate,
     buildPlanForDay,
     getPeppaReviewPlanOptions,
     getPlanCategoryOrder,
@@ -526,6 +531,7 @@ module.exports = {
   getCheckins,
   getPlanDayIndex,
   getPlanDayIndexForDate,
+  getNextPlanDayIndexForDate,
   buildPlanForDay,
   getPeppaReviewCursor,
   getPeppaReviewPlanOptions,

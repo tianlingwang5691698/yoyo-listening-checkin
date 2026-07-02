@@ -160,7 +160,7 @@ async function markTaskListened(event, context) {
   }
   if (planRunType === 'catchup') {
     const normalPlan = study.buildPlanForDay(
-      study.getPlanDayIndexForDate(checkins, today),
+      study.getNextPlanDayIndexForDate(checkins, today),
       study.getPeppaReviewPlanOptions(progressRecords, checkins, ctx.child.childId, today)
     );
     const normalTasks = study.decoratePlanTasks(progressRecords, ctx.child.childId, today, normalPlan, {
@@ -176,7 +176,7 @@ async function markTaskListened(event, context) {
   const todayPlan = study.buildPlanForDay(
     planRunType === 'catchup'
       ? (Number(payload.planDayIndex || 0) || study.getPlanDayIndexForDate(checkins, targetDate))
-      : study.getPlanDayIndexForDate(checkins, today),
+      : study.getNextPlanDayIndexForDate(checkins, today),
     study.getPeppaReviewPlanOptions(progressRecords, checkins, ctx.child.childId, targetDate)
   );
   const categoryTasks = ['newconcept2', 'newconcept3', 'newconcept4'].includes(category)
@@ -246,7 +246,7 @@ async function completeTodayCheckin(event, context) {
   const scope = study.getUserScope(ctx);
   const progressRecords = await study.getChildProgressRecords(scope);
   const checkins = await study.getCheckins(scope);
-  const planDayIndex = study.getPlanDayIndexForDate(checkins, today);
+  const planDayIndex = study.getNextPlanDayIndexForDate(checkins, today);
   const checkin = await study.maybeCreateCheckin(scope, progressRecords, today, {
     planRunType: 'normal',
     planDayIndex

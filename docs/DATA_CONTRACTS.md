@@ -56,7 +56,7 @@ type DashboardData = {
 
 约束：
 
-- `planDayIndex` 表示“今天这一天应执行的计划日”，同日完成打卡后不提前跳次日
+- `planDayIndex` 表示当前应执行的计划日；同日完成一轮后，学习入口继续显示下一计划日
 - `dailyTasks` 是今天实际任务明细
 - `categorySummaries` 是按分类聚合后的摘要
 - `catchupState` 必须始终存在

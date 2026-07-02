@@ -6,15 +6,9 @@ async function getLevelOverview(event) {
   }));
   const payload = (event && event.payload) || {};
   const requestedPhase = String(payload.phase || '').trim();
-  const previewPlanDayIndex = requestedPhase === 'round-2'
-    ? 73
-    : requestedPhase === 'round-1'
-      ? 1
-      : 0;
   const progressRecords = await study.getChildProgressRecords(study.getUserScope(ctx));
-  const previewPlan = previewPlanDayIndex ? study.buildPlanForDay(previewPlanDayIndex) : null;
   const isA1PhaseOverview = requestedPhase === 'round-1' || requestedPhase === 'round-2';
-  const dashboard = await study.getDashboardData(ctx, previewPlan ? {
+  const dashboard = await study.getDashboardData(ctx, {
     includeDailyTasks: false,
     includeHomeTaskGroups: false,
     includeCategorySummaries: false,
@@ -24,7 +18,16 @@ async function getLevelOverview(event) {
     includeUser: false,
     includeFamily: false,
     includeStats: true
-  } : undefined);
+  });
+  const dashboardPhase = study.buildPlanForDay(dashboard.planDayIndex).phase.key;
+  const previewPlanDayIndex = requestedPhase === dashboardPhase
+    ? dashboard.planDayIndex
+    : requestedPhase === 'round-2'
+      ? 73
+      : requestedPhase === 'round-1'
+        ? 1
+        : 0;
+  const previewPlan = previewPlanDayIndex ? study.buildPlanForDay(previewPlanDayIndex) : null;
   const previewTasks = previewPlan
     ? study.decoratePlanTasks(progressRecords, ctx.child.childId, today, previewPlan, {
       planRunType: 'normal',

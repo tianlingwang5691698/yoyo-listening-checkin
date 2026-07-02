@@ -3,7 +3,7 @@ const assert = require('node:assert/strict');
 
 const dashboardEngine = require('../lib/dashboard-engine');
 
-test('当天已打卡时，同日内仍返回当天计划，不提前跳次日', async () => {
+test('当天已打卡时，同日内返回下一天计划', async () => {
   const dashboard = await dashboardEngine.getDashboardData({
     user: {},
     member: {},
@@ -14,10 +14,10 @@ test('当天已打卡时，同日内仍返回当天计划，不提前跳次日',
     getUserScope: () => ({ childId: 'child-1' }),
     getChildProgressRecords: async () => [],
     getCheckins: async () => [{ date: '2026-04-21', planDayIndex: 1 }],
-    getPlanDayIndexForDate: (checkins, date) => {
+    getNextPlanDayIndexForDate: (checkins, date) => {
       assert.equal(date, '2026-04-21');
       assert.equal(checkins[0].date, '2026-04-21');
-      return 1;
+      return 2;
     },
     buildPlanForDay: (dayIndex) => ({
       dayIndex,
@@ -36,7 +36,7 @@ test('当天已打卡时，同日内仍返回当天计划，不提前跳次日',
     getCatalog: () => []
   });
 
-  assert.equal(dashboard.planDayIndex, 1);
+  assert.equal(dashboard.planDayIndex, 2);
   assert.equal(dashboard.planPhaseLabel, '第1轮');
   assert.equal(dashboard.allDailyDone, true);
 });

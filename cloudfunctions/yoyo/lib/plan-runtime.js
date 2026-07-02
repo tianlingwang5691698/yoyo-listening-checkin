@@ -33,6 +33,18 @@ function getPlanDayIndexForDate(checkins, date) {
   return (previousCount % TOTAL_PLAN_DAYS) + 1;
 }
 
+function getNextPlanDayIndexForDate(checkins, date) {
+  const records = Array.isArray(checkins) ? checkins : [];
+  const sameDayRecords = records
+    .filter((item) => item.date === date && String(item.planRunType || 'normal') === 'normal' && item.planDayIndex)
+    .map((item) => Number(item.planDayIndex || 0))
+    .filter(Boolean);
+  if (sameDayRecords.length) {
+    return (Math.max(...sameDayRecords) % TOTAL_PLAN_DAYS) + 1;
+  }
+  return getPlanDayIndexForDate(records, date);
+}
+
 function getDatePart(value) {
   return formatChinaDateFromDate(value) || String(value || '').slice(0, 10);
 }
@@ -161,6 +173,7 @@ module.exports = {
   getPlanCategoryOrder,
   getPlanDayIndex,
   getPlanDayIndexForDate,
+  getNextPlanDayIndexForDate,
   getDatePart,
   getCompletedDateSet,
   getEarliestMissedDate,
