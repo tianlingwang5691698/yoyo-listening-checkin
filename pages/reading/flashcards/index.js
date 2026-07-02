@@ -570,6 +570,10 @@ Page({
       clearTimeout(this.autoSpeakTimer);
       this.autoSpeakTimer = null;
     }
+    if (this.audioPrefetchTimer) {
+      clearTimeout(this.audioPrefetchTimer);
+      this.audioPrefetchTimer = null;
+    }
     if (this.flashcardAudioContext) {
       this.flashcardAudioContext.destroy();
       this.flashcardAudioContext = null;
@@ -959,6 +963,75 @@ Page({
       }
     }, 160);
   },
+  scheduleAudioPrefetchAroundCurrent() {
+    if (this.audioPrefetchTimer) {
+      clearTimeout(this.audioPrefetchTimer);
+      this.audioPrefetchTimer = null;
+    }
+    const cards = this.data.cards || [];
+    const startIndex = Number(this.data.currentIndex || 0) + 1;
+    const nextCards = cards.slice(startIndex, startIndex + 2).filter((item) => item && item.canSpeak);
+    if (!nextCards.length) return;
+    this.audioPrefetchTimer = setTimeout(() => {
+      this.audioPrefetchTimer = null;
+      nextCards.reduce((chain, card) => chain.then(() => this.prefetchCardAudio(card)), Promise.resolve());
+    }, 600);
+  },
+  async prefetchCardAudio(card) {
+    if (!card || !card.canSpeak || !card.flashcardKey) return;
+    this.prefetchingAudioKeys = this.prefetchingAudioKeys || {};
+    if (this.prefetchingAudioKeys[card.flashcardKey]) return;
+    const text = card.word || card.phrase || card.displayText || '';
+    if (!text) return;
+    const localAudioPath = card.audioLocalPath || getLocalAudioPath(card.flashcardKey);
+    if (localFileExists(localAudioPath)) return;
+    this.prefetchingAudioKeys[card.flashcardKey] = true;
+    try {
+      if (card.audioUrl) {
+        const path = await downloadAudioToLocal(card.audioUrl, card.flashcardKey);
+        if (path) this.updateCardAudioCache(card.flashcardKey, { audioLocalPath: path });
+        return;
+      }
+      if (card.audioFileId) {
+        const url = await store.getTempFileURL(card.audioFileId);
+        if (url) {
+          const path = await downloadAudioToLocal(url, card.flashcardKey);
+          if (path) this.updateCardAudioCache(card.flashcardKey, { audioUrl: url, audioLocalPath: path });
+          return;
+        }
+      }
+      const result = await store.synthesizeReadingAudio({ text });
+      let url = result && result.audioUrl ? result.audioUrl : '';
+      const audioFileId = result && result.fileId ? result.fileId : '';
+      const audioCloudPath = result && result.cloudPath ? result.cloudPath : '';
+      if (!url && audioFileId) {
+        url = await store.getTempFileURL(audioFileId);
+      }
+      if (!url) throw new Error('audio-url-empty');
+      if (audioFileId || audioCloudPath) {
+        store.saveFlashcardAudio({
+          flashcardKey: card.flashcardKey,
+          audioFileId,
+          audioCloudPath
+        }).catch(() => {});
+      }
+      const path = await downloadAudioToLocal(url, card.flashcardKey);
+      this.updateCardAudioCache(card.flashcardKey, {
+        audioUrl: url,
+        audioFileId,
+        audioCloudPath,
+        audioLocalPath: path || ''
+      });
+    } catch (error) {
+      if (canUseDictionaryVoice(text)) {
+        const url = buildDictionaryVoiceUrl(text);
+        const path = await downloadAudioToLocal(url, card.flashcardKey);
+        if (path) this.updateCardAudioCache(card.flashcardKey, { audioUrl: url, audioLocalPath: path });
+      }
+    } finally {
+      delete this.prefetchingAudioKeys[card.flashcardKey];
+    }
+  },
   async speakCurrent(options) {
     const silent = !!(options && options.auto);
     const current = this.data.current || {};
@@ -1211,6 +1284,7 @@ Page({
     });
     if (shouldPersist) this.persistActiveSourceState();
     this.scheduleAutoSpeakCurrent();
+    this.scheduleAudioPrefetchAroundCurrent();
   },
   repeatCurrentCard(shouldPersist) {
     const cards = this.data.cards.slice();
@@ -1233,6 +1307,7 @@ Page({
     });
     if (shouldPersist) this.persistActiveSourceState();
     this.scheduleAutoSpeakCurrent();
+    this.scheduleAudioPrefetchAroundCurrent();
   },
   startReview() {
     const cards = buildReviewQueue(this.getFlashcardLibrary(), this.data.settings, this.data.today);
@@ -1258,6 +1333,7 @@ Page({
     this.vocabularySessionStats = null;
     this.lastVocabularyCompletionSyncedReviewed = 0;
     this.scheduleAutoSpeakCurrent();
+    this.scheduleAudioPrefetchAroundCurrent();
   },
   exitReview() {
     this.syncVocabularyCompletion(true);
