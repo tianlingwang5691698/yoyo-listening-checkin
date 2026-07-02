@@ -804,7 +804,7 @@ function buildLocalReadingResult(passage, answers) {
       selected,
       correct,
       answerSentence: answerSentences[index] || answerSentences[0] || null,
-      text: question.analysis || '解析生成中，请稍等。'
+      text: question.analysis || '生成解析中'
     };
   });
   const review = {

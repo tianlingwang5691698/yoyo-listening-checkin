@@ -1157,7 +1157,7 @@ function gradeAnswers(passage, answers) {
       selected,
       answer,
       correct: keyed ? (isChoice ? selected === answer : normalizeText(selected).toLowerCase() === normalizeText(answer).toLowerCase()) : null,
-      analysis: question.analysis || '结合原文判断。'
+      analysis: question.analysis || '生成解析中'
     };
   });
   const totalScore = keyedCount * pointPerQuestion;
