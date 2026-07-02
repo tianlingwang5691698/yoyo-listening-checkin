@@ -153,7 +153,7 @@ Page({
         childJoinRequired: this.isChildJoinRequired(data)
       });
       wx.showToast({
-        title: currentRole === 'student' ? '已进入学生账号' : '已加入孩子记录',
+        title: currentRole === 'student' ? '已登录学生账号' : '已绑定学生',
         icon: 'none'
       });
     } catch (error) {
