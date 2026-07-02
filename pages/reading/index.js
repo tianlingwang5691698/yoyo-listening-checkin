@@ -26,6 +26,8 @@ Page({
     passages: [],
     categoryRoot: null,
     categoryTree: [],
+    directoryLoaded: false,
+    directoryLoading: false,
     navigationLevel: 'root',
     selectedExamType: '二模',
     selectedGroup: null,
@@ -43,15 +45,22 @@ Page({
   }),
   applyReadingHome(data) {
     data = data || {};
-    const categoryTree = data.categoryTree || [];
+    const categoryTree = data.categoryTree || this.data.categoryTree || [];
     const selectedGroup = pickGroup(categoryTree, this.data.selectedExamType);
     const selectedDistrictNode = pickDistrict(selectedGroup, this.data.selectedDistrict);
+    const hasDirectory = !!(categoryTree && categoryTree.length);
+    const nextPassage = data.passage || this.data.passage || null;
+    const nextPassages = data.passages && data.passages.length
+      ? data.passages
+      : (data.passage ? [data.passage] : (this.data.passages || []));
     this.setData(page.buildCloudPageData(this.data, {
       loading: false,
-      passage: data.passage || null,
-      passages: data.passages || (data.passage ? [data.passage] : []),
+      passage: nextPassage,
+      passages: nextPassages,
       categoryRoot: categoryTree[0] || null,
       categoryTree,
+      directoryLoaded: hasDirectory || this.data.directoryLoaded,
+      directoryLoading: false,
       selectedGroup,
       selectedDistrict: selectedDistrictNode ? selectedDistrictNode.key : '',
       selectedDistrictNode,
@@ -63,13 +72,13 @@ Page({
         : (this.data.navigationLevel === 'exam'
           ? ((selectedGroup && selectedGroup.label) || '阅读')
           : `${selectedGroup && selectedGroup.label ? selectedGroup.label : '阅读'} · ${selectedDistrictNode && selectedDistrictNode.label ? selectedDistrictNode.label : ''}`),
-      memoryPlan: data.memoryPlan || null,
-      completedCount: data.completedCount || 0,
-      totalCount: data.totalCount || data.dailyCount || 0,
-      completedToday: !!data.completedToday,
-      latestAttempt: data.latestAttempt || null,
-      dailyCount: data.dailyCount || 0,
-      today: data.today || ''
+      memoryPlan: data.memoryPlan || this.data.memoryPlan || null,
+      completedCount: data.completedCount || this.data.completedCount || 0,
+      totalCount: data.totalCount || data.dailyCount || this.data.totalCount || 0,
+      completedToday: data.completedToday === undefined ? !!this.data.completedToday : !!data.completedToday,
+      latestAttempt: data.latestAttempt || this.data.latestAttempt || null,
+      dailyCount: data.dailyCount || this.data.dailyCount || 0,
+      today: data.today || this.data.today || ''
     }));
   },
   async onShow() {
@@ -93,6 +102,19 @@ Page({
         cacheHit: !!data.__cacheHit,
         passages: (data.passages || []).length
       });
+    }
+  },
+  async loadDirectory() {
+    if (this.data.directoryLoading || this.data.directoryLoaded) {
+      return;
+    }
+    this.setData({ directoryLoading: true });
+    try {
+      const data = await store.getReadingHome({ directoryOnly: true });
+      this.applyReadingHome(data);
+    } catch (error) {
+      this.setData({ directoryLoading: false });
+      wx.showToast({ title: '目录加载失败', icon: 'none' });
     }
   },
   onDirectoryTouchStart(event) {

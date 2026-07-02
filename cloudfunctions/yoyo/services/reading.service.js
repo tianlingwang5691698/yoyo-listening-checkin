@@ -1322,6 +1322,22 @@ async function getReadingHome(event) {
     action: 'getReadingHome'
   }));
   const passages = await loadPassages();
+  const includeDirectory = !!payload.includeDirectory || !!payload.directoryOnly;
+  if (payload.directoryOnly) {
+    const latestByAllPassageId = await getLatestAttemptsByPassageIds(ctx, passages.map((item) => item._id), today);
+    return {
+      today,
+      dailyCount: 0,
+      passage: null,
+      passages: [],
+      categoryTree: buildCategoryTree(passages, latestByAllPassageId),
+      memoryPlan: null,
+      completedCount: 0,
+      totalCount: 0,
+      completedToday: false,
+      latestAttempt: null
+    };
+  }
   const requestedCount = Math.min(
     Math.max(Number(payload.dailyCount || DEFAULT_READING_DAILY_COUNT), 1),
     MAX_READING_DAILY_COUNT
@@ -1329,7 +1345,9 @@ async function getReadingHome(event) {
   const plannedPassages = await pickPlannedPassages(ctx, passages, today, requestedCount);
   const passageIds = plannedPassages.map((item) => item._id);
   const latestByPassageId = await getLatestAttemptsByPassageIds(ctx, passageIds, today);
-  const latestByAllPassageId = await getLatestAttemptsByPassageIds(ctx, passages.map((item) => item._id), today);
+  const latestByAllPassageId = includeDirectory
+    ? await getLatestAttemptsByPassageIds(ctx, passages.map((item) => item._id), today)
+    : {};
   const summaries = plannedPassages.map((item, index) => {
     const latestAttempt = latestByPassageId[item._id] || null;
     return Object.assign(createPassageSummary(item), {
@@ -1346,7 +1364,7 @@ async function getReadingHome(event) {
     dailyCount: summaries.length,
     passage: attachAttemptSummary(createPassageSummary(passage), latestAttempt),
     passages: summaries,
-    categoryTree: buildCategoryTree(passages, latestByAllPassageId),
+    categoryTree: includeDirectory ? buildCategoryTree(passages, latestByAllPassageId) : [],
     memoryPlan: buildMemoryPlan(plannedPassages),
     completedCount,
     totalCount: summaries.length,

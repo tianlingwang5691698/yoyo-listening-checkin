@@ -5,6 +5,33 @@
     <view class="reading-copy">选择一模、二模或真题卷；完成后单词、短语和句型进入当天背诵闪卡。</view>
   </view>
 
+  <view class="reading-card card" wx:if="{{passages.length}}">
+    <view class="reading-card-top">
+      <view class="reading-card-label">今日阅读</view>
+      <view class="reading-card-state">{{completedCount}} / {{totalCount}} 已完成</view>
+    </view>
+    <view class="task-list">
+      <view class="task-row" wx:for="{{passages}}" wx:key="_id" data-passage-id="{{item._id}}" bindtap="openPassage">
+        <view class="task-index">{{index + 1}}</view>
+        <view class="task-main">
+          <view class="task-title">{{item.title}}</view>
+          <view class="task-meta">{{item.meta}} · {{item.questionCount}} 题</view>
+        </view>
+        <view class="task-state {{item.completed ? 'is-done' : ''}}">{{item.completed ? '复习' : '练习'}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="reading-card card" wx:if="{{!categoryRoot}}">
+    <view class="directory-row" bindtap="loadDirectory">
+      <view>
+        <view class="directory-title">全部阅读</view>
+        <view class="directory-meta">{{directoryLoading ? '加载中' : '一模、二模、真题卷'}}</view>
+      </view>
+      <view class="directory-arrow">›</view>
+    </view>
+  </view>
+
   <block wx:if="{{categoryRoot}}">
     <view class="reading-card card">
       <view class="reading-card-top">
@@ -56,6 +83,4 @@
     </view>
 
   </block>
-
-  <view class="empty-state" wx:else>暂无阅读内容。</view>
 </view>
