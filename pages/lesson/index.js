@@ -507,9 +507,12 @@ Page({
     this.innerAudioContext.onPlay(() => {
       this.setData({
         isPlaying: true,
+        audioReady: true,
+        audioResolving: false,
         audioError: '',
         audioErrorText: '',
-        audioErrorDetail: ''
+        audioErrorDetail: '',
+        audioPlaybackMode: this.data.audioPlaybackMode === 'resolving' ? 'ready' : this.data.audioPlaybackMode
       });
     });
     this.innerAudioContext.onPause(() => {
@@ -1449,6 +1452,7 @@ Page({
           audioErrorText: '',
           audioPlaybackMode: 'resolving'
         });
+        this.innerAudioContext.play();
       }
     }
   },
