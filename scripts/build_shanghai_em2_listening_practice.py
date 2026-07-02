@@ -228,7 +228,7 @@ def extract_listening_answers(text):
                 answers[num] = letter.upper()
 
         blank_pattern = re.compile(
-            r'(1[6-9]|20)\s*[\.．、]\s*(.+?)(?=\s+(?:1[6-9]|20|2[1-9])\s*[-\.．、]|\s+Part\s*(?:2|II)|\s+II\.|$)',
+            r'(1[6-9]|20)\s*[\.．、]\s*(.+?)(?=\s+(?:1[6-9]|20|2[1-9]|3[0-9]|4[0-9]|5[0-9])\s*[\.．、]|\s+\d{1,2}\s*-\s*\d{1,2}|\s+【听力原文】|\s+听力原文|\s+Part\s*(?:2|II)|\s+II\.|$)',
             re.I,
         )
         for num, value in blank_pattern.findall(block):
