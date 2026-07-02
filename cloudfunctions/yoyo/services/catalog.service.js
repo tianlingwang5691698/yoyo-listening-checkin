@@ -14,7 +14,7 @@ function getResourceDebugSnapshot() {
 
 async function loadList(path) {
   try {
-    const content = await storageAdapter.downloadCloudJson(path);
+    const content = await storageAdapter.downloadCloudJson(path, { skipCdn: true, skipCache: true });
     return Array.isArray(content) ? content : (content.items || content.prompts || content.sets || []);
   } catch (error) {
     return [];

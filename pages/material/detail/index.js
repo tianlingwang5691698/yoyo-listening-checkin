@@ -1,6 +1,8 @@
 const page = require('../../../utils/page');
 const store = require('../../../utils/store');
 
+const PICTURE_LABELS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+
 function sectionForNumber(number) {
   if (number >= 1 && number <= 5) {
     return { key: 'A', title: 'A. Listen and choose the right picture.' };
@@ -83,6 +85,7 @@ Page({
       { key: 'patterns', label: '句型' }
     ],
     studyCompleted: false,
+    transcriptVisible: false,
     audioLocked: false,
     vocabularyCards: [],
     phraseCards: [],
@@ -148,7 +151,7 @@ Page({
     }, {});
     const item = Object.assign({}, this.data.item, {
       images: (images || []).map((image, index) => Object.assign({}, image, {
-        label: ['A', 'B', 'C', 'D', 'E', 'F'][index] || '',
+        label: image.label || PICTURE_LABELS[index] || String(index + 1),
         src: urls[image.cloudPath] || ''
       }))
     });
@@ -237,7 +240,7 @@ Page({
       this.setData({ studyError: '这套听力暂无文本，暂不能生成。' });
       return;
     }
-    this.setData({ studyLoading: true, studyError: '' });
+    this.setData({ studyLoading: true, studyError: '', transcriptVisible: true });
     const result = await store.getListeningStudyPack(item, { useCache: false });
     const studyPack = result && result.studyPack;
     const hasCards = studyPack

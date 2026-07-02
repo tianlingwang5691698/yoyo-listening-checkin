@@ -114,21 +114,23 @@ function downloadJsonFromCdn(cloudPath) {
   });
 }
 
-async function downloadCloudJson(cloudPath) {
+async function downloadCloudJson(cloudPath, options = {}) {
   const cacheKey = normalizeCloudPath(cloudPath);
   const cached = cacheKey ? jsonCache[cacheKey] : null;
-  if (cached && Date.now() - cached.savedAt < JSON_CACHE_MAX_AGE_MS) {
+  if (!options.skipCache && cached && Date.now() - cached.savedAt < JSON_CACHE_MAX_AGE_MS) {
     return cached.data;
   }
   let data;
-  try {
-    data = await downloadJsonFromCdn(cloudPath);
-    if (cacheKey) {
-      jsonCache[cacheKey] = { savedAt: Date.now(), data };
+  if (!options.skipCdn) {
+    try {
+      data = await downloadJsonFromCdn(cloudPath);
+      if (cacheKey) {
+        jsonCache[cacheKey] = { savedAt: Date.now(), data };
+      }
+      return data;
+    } catch (error) {
+      // fall through
     }
-    return data;
-  } catch (error) {
-    // fall through
   }
   const tempPath = `/tmp/${Date.now()}-${Math.random().toString(36).slice(2, 8)}-${normalizeCloudPath(cloudPath).split('/').pop()}`;
   const fileID = buildCloudFileId(cloudPath);
