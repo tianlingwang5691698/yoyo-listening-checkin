@@ -3,7 +3,6 @@ const dbAdapter = require('../adapters/db.adapter');
 const storageAdapter = require('../adapters/storage.adapter');
 const flashcards = require('./flashcard.service');
 const completion = require('./completion.service');
-const samplePassages = require('../data/reading-passages.sample.json');
 const speakingEngine = require('../lib/speaking-engine');
 const crypto = require('crypto');
 const https = require('https');
@@ -18,6 +17,7 @@ const PASSAGE_LIST_CACHE_MAX_AGE_MS = 10 * 60 * 1000;
 const WORD_DICTIONARY_COLLECTION = 'wordDictionary';
 const READING_CONTENT_PATH = '_content/reading/reading-passages.json';
 const READING_EM1_CONTENT_PATH = '_content/reading-em1/reading-passages.json';
+let samplePassageCache = null;
 
 function todayIndex(today) {
   const start = Date.parse('2026-06-29T00:00:00+08:00');
@@ -62,6 +62,18 @@ async function readCollection(name, limit) {
   }
 }
 
+function loadSamplePassages() {
+  if (samplePassageCache) {
+    return samplePassageCache;
+  }
+  try {
+    samplePassageCache = require('../data/reading-passages.sample.json');
+  } catch (error) {
+    samplePassageCache = [];
+  }
+  return samplePassageCache;
+}
+
 async function findReadingAudioCache(hash) {
   try {
     const result = await dbAdapter.collection(READING_AUDIO_CACHE_COLLECTION)
@@ -98,7 +110,7 @@ async function loadPassages() {
     // Fallback to database/sample content below.
   }
   const cloudPassages = await readCollection('readingPassages', 200);
-  const list = cloudPassages.length ? cloudPassages : samplePassages;
+  const list = cloudPassages.length ? cloudPassages : loadSamplePassages();
   const passages = list.map(normalizePassage).filter((item) => item._id && item.passage);
   passageListCache = { savedAt: Date.now(), passages };
   return passages;
