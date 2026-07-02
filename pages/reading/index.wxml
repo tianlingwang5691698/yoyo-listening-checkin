@@ -37,7 +37,8 @@
         <view class="directory-row" wx:for="{{selectedGroup.districts}}" wx:key="key" data-district="{{item.key}}" bindtap="selectDistrict">
           <view>
             <view class="directory-title">{{item.label}}</view>
-            <view class="directory-meta">{{item.completedCount}} / {{item.count}} 已完成</view>
+            <view class="directory-meta" wx:if="{{item.completionReady}}">{{item.completedCount}} / {{item.count}} 已完成</view>
+            <view class="directory-meta" wx:else>{{item.count}} 篇</view>
           </view>
           <view class="directory-arrow">›</view>
         </view>
@@ -50,7 +51,7 @@
             <view class="task-title">{{item.title}}</view>
             <view class="task-meta">{{item.meta}} · {{item.questionCount}} 题</view>
           </view>
-          <view class="task-state {{item.completed ? 'is-done' : ''}}">{{item.completed ? '复习' : '练习'}}</view>
+          <view class="task-state {{item.completed ? 'is-done' : ''}}">{{item.completionReady ? (item.completed ? '复习' : '练习') : '进入'}}</view>
         </view>
       </view>
     </view>

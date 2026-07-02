@@ -568,6 +568,7 @@ function normalizeExamType(value) {
 }
 
 function buildCategoryTree(passages, latestByPassageId) {
+  const completionReady = !!latestByPassageId;
   const examTypes = ['一模', '二模', '真题'];
   const groups = examTypes.map((examType) => {
     const districtMap = {};
@@ -582,9 +583,10 @@ function buildCategoryTree(passages, latestByPassageId) {
           passages: []
         };
       }
-      const latestAttempt = latestByPassageId && latestByPassageId[passage._id] ? latestByPassageId[passage._id] : null;
+      const latestAttempt = completionReady && latestByPassageId[passage._id] ? latestByPassageId[passage._id] : null;
       districtMap[district].count += 1;
       districtMap[district].passages.push(Object.assign(createPassageSummary(passage), {
+        completionReady,
         completed: !!(latestAttempt && latestAttempt.status === 'completed'),
         latestAttempt
       }));
@@ -597,6 +599,7 @@ function buildCategoryTree(passages, latestByPassageId) {
         key: district,
         label: district,
         count: districtMap[district].count,
+        completionReady,
         completedCount: districtMap[district].passages.filter((item) => item.completed).length,
         passages: districtMap[district].passages
       }))
@@ -1324,13 +1327,12 @@ async function getReadingHome(event) {
   const passages = await loadPassages();
   const includeDirectory = !!payload.includeDirectory || !!payload.directoryOnly;
   if (payload.directoryOnly) {
-    const latestByAllPassageId = await getLatestAttemptsByPassageIds(ctx, passages.map((item) => item._id), today);
     return {
       today,
       dailyCount: 0,
       passage: null,
       passages: [],
-      categoryTree: buildCategoryTree(passages, latestByAllPassageId),
+      categoryTree: buildCategoryTree(passages, null),
       memoryPlan: null,
       completedCount: 0,
       totalCount: 0,
