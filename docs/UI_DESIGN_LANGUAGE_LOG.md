@@ -1242,6 +1242,18 @@
 - 设计记录：记录页追赶和语法页非默认目录不参与首屏请求，避免无意义后台拉取。
 - 验证：已做前端脚本语法检查。
 
+### 2026-07-03 素材索引按模块加载
+
+- 文件：`pages/home/index.js`
+- 文件：`pages/material/index.js`
+- 文件：`pages/writing/detail/index.js`
+- 文件：`pages/parent/detail/index.js`
+- 文件：`utils/store.js`
+- 文件：`cloudfunctions/yoyo/services/catalog.service.js`
+- 改动：首页不再后台预拉素材索引和当日日报；听力/写作目录和写作题回填只请求当前模块素材索引。
+- 设计记录：素材索引按入口模块加载，完成记录按进入记录页/完成页再拉，不在首页或无关模块里提前拉全量列表和日报。
+- 验证：已做前端和云函数脚本语法检查。
+
 ## 后续记录格式
 
 每次 UI/交互改动后追加：

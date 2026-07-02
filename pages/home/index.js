@@ -281,13 +281,6 @@ Page({
       });
     } catch (error) {}
   },
-  async loadTodayReport() {
-    const reportData = await store.getDailyReportByDate(todayString());
-    wx.setStorageSync('todayReportForCompletedV1', reportData.report || null);
-    this.setData({
-      todayCompletedItems: buildTodayCompletedItems.call(this, this.data.groupedDailyTasks, this.data.readingToday, this.data.readingCompleted)
-    });
-  },
   async onShow() {
     this.homePerf = page.startPagePerf('home');
     page.syncTheme(this);
@@ -328,17 +321,13 @@ Page({
     }
     setTimeout(() => {
       Promise.all([
-        this.loadStudyCompletions().catch(() => {}),
-        this.loadTodayReport().catch(() => {})
+        this.loadStudyCompletions().catch(() => {})
       ]).then(() => {
         try {
           wx.setStorageSync('todayCompletedItemsV1', this.data.todayCompletedItems || []);
         } catch (error) {}
       });
     }, 100);
-    setTimeout(() => {
-      store.getMaterialIndex().catch(() => {});
-    }, 500);
   },
   showNextEntryPosterPage() {
     this.setData({

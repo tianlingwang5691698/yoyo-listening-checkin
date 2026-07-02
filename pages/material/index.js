@@ -111,7 +111,7 @@ Page({
       itemUnit: baseConfig.itemUnit,
       showCefrEntry: moduleId === 'listening'
     });
-    const materialIndex = await store.getMaterialIndex((freshIndex) => {
+    const materialIndex = await store.getMaterialIndex({ moduleId }, (freshIndex) => {
       applyMaterialConfig(this, moduleId, freshIndex);
     });
     applyMaterialConfig(this, moduleId, materialIndex, {

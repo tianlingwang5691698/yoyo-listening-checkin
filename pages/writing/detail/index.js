@@ -55,7 +55,7 @@ Page({
       prompt = null;
     }
     if (!prompt || (promptId && prompt._id !== promptId)) {
-      const materialIndex = await store.getMaterialIndex();
+      const materialIndex = await store.getMaterialIndex({ moduleId: 'writing' });
       prompt = findPrompt(materialIndex, promptId);
     }
     this.setData({ prompt });

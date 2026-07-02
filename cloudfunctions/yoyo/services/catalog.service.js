@@ -21,12 +21,15 @@ async function loadList(path) {
   }
 }
 
-async function getMaterialIndex() {
+async function getMaterialIndex(event) {
+  const moduleId = String((event && event.payload && event.payload.moduleId) || '').trim();
+  const shouldLoadWriting = !moduleId || moduleId === 'writing';
+  const shouldLoadListening = !moduleId || moduleId === 'listening';
   const [writingEm1, writingEm2, listeningEm1, listeningEm2] = await Promise.all([
-    loadList(MATERIAL_PATHS.writingEm1),
-    loadList(MATERIAL_PATHS.writingEm2),
-    loadList(MATERIAL_PATHS.listeningEm1),
-    loadList(MATERIAL_PATHS.listeningEm2)
+    shouldLoadWriting ? loadList(MATERIAL_PATHS.writingEm1) : [],
+    shouldLoadWriting ? loadList(MATERIAL_PATHS.writingEm2) : [],
+    shouldLoadListening ? loadList(MATERIAL_PATHS.listeningEm1) : [],
+    shouldLoadListening ? loadList(MATERIAL_PATHS.listeningEm2) : []
   ]);
   return {
     writingEm1,

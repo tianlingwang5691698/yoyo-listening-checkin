@@ -257,7 +257,7 @@ async function hydrateWritingItems(items) {
     return items;
   }
   try {
-    const materialIndex = await store.getMaterialIndex();
+    const materialIndex = await store.getMaterialIndex({ moduleId: 'writing' });
     return (items || []).map((item) => {
       if (item.type !== 'writing' || item.writingPrompt || !item.targetId) {
         return item;

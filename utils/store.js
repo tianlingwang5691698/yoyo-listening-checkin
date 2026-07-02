@@ -394,12 +394,20 @@ async function getDashboard(options, onRefresh) {
   return callCloud('getDashboard', payload.view === 'home' || payload.view === 'record' ? withSelectedStudent(payload) : payload, contracts.createDashboardDefaults(), { onRefresh });
 }
 
-async function getMaterialIndex(onRefresh) {
-  return callCloud('getMaterialIndex', {}, {
+async function getMaterialIndex(options, onRefresh) {
+  let payload = {};
+  let refreshHandler = onRefresh;
+  if (typeof options === 'function') {
+    refreshHandler = options;
+  } else {
+    payload = Object.assign({}, options || {});
+  }
+  return callCloud('getMaterialIndex', payload, {
     writingEm1: [],
     writingEm2: [],
+    listeningEm1: [],
     listeningEm2: []
-  }, { onRefresh });
+  }, { onRefresh: refreshHandler });
 }
 
 async function getLevelOverview(options, onRefresh) {
