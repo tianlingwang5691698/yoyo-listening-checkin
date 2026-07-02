@@ -49,11 +49,20 @@
 
 .audio-button {
   margin-top: 18rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   min-height: 72rpx;
-  border-radius: var(--radius-pill);
+  border-radius: var(--radius-md);
   background: var(--accent-deep);
   color: #fff;
   font-size: var(--font-body-size);
+  font-weight: var(--font-title-weight);
+  line-height: 1;
+}
+
+.audio-button.is-disabled {
+  opacity: 0.42;
 }
 
 .audio-lock-tip {
@@ -163,6 +172,8 @@
   padding: 20rpx;
   border-radius: var(--radius-lg);
   background: var(--surface-subtle);
+  min-width: 0;
+  overflow: hidden;
 }
 
 .picture-grid {
@@ -184,6 +195,8 @@
   font-size: var(--font-body-size);
   line-height: 1.4;
   font-weight: var(--font-title-weight);
+  word-break: break-word;
+  overflow-wrap: anywhere;
 }
 
 .option-list {
@@ -191,15 +204,26 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 12rpx;
+  min-width: 0;
 }
 
 .option-row {
+  margin: 0;
+  width: 100%;
+  min-width: 0;
   min-height: 68rpx;
+  padding: 14rpx 16rpx;
+  box-sizing: border-box;
   border-radius: var(--radius-md);
   background: var(--surface-raised);
   color: var(--text-main);
   font-size: var(--font-body-size);
+  line-height: 1.35;
   text-align: left;
+  white-space: normal;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  overflow: hidden;
 }
 
 .option-row.is-selected {

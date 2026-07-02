@@ -129,6 +129,7 @@ Page({
     this.setData({ item });
   },
   toggleAudio() {
+    if (this.data.audioLoading || !this.data.audioSrc) return;
     if (this.data.audioLocked) {
       this.setData({ studyError: '请先学完文本学习包，再听音频。' });
       return;

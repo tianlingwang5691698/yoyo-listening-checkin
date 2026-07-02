@@ -45,6 +45,10 @@ def district_of(path):
     return ''
 
 
+def display_year_of(source_year):
+    return int(source_year) - 1 if source_year else source_year
+
+
 def iter_docx_text(path):
     doc = Document(path)
     texts = []
@@ -243,19 +247,38 @@ def extract_docx_images(path, item_id):
         return []
     out = []
     try:
-        with zipfile.ZipFile(path) as zf:
-            names = [n for n in zf.namelist() if n.startswith('word/media/')]
-            for idx, name in enumerate(names[:12], 1):
-                ext = Path(name).suffix.lower() or '.png'
-                if ext not in {'.png', '.jpg', '.jpeg', '.gif'}:
-                    continue
-                IMAGE_DIR.mkdir(parents=True, exist_ok=True)
-                out_path = IMAGE_DIR / f'{item_id}-image-{idx}{ext}'
-                out_path.write_bytes(zf.read(name))
-                out.append({
-                    'localPath': str(out_path),
-                    'cloudPath': f'_content/listening-em2/images/{out_path.name}'
-                })
+        doc = Document(path)
+        rel_ids = []
+        in_picture_section = False
+        for paragraph in doc.paragraphs:
+            text = clean(paragraph.text)
+            if re.search(r'Listen and choose the right picture', text, re.I):
+                in_picture_section = True
+            elif in_picture_section and re.search(r'Listen to (?:the dialogue|the conversation|the passage)', text, re.I):
+                break
+            if not in_picture_section:
+                continue
+            rel_ids.extend(paragraph._p.xpath('.//*[local-name()="blip"]/@*[local-name()="embed"]'))
+        for idx, rel_id in enumerate(rel_ids[:12], 1):
+            part = doc.part.related_parts.get(rel_id)
+            if not part:
+                continue
+            ext = {
+                'image/png': '.png',
+                'image/jpeg': '.jpeg',
+                'image/jpg': '.jpg',
+                'image/gif': '.gif',
+            }.get(part.content_type, '.png')
+            IMAGE_DIR.mkdir(parents=True, exist_ok=True)
+            out_path = IMAGE_DIR / f'{item_id}-image-{idx}{ext}'
+            out_path.write_bytes(part.blob)
+            if out_path.stat().st_size <= 512:
+                out_path.unlink()
+                continue
+            out.append({
+                'localPath': str(out_path),
+                'cloudPath': f'_content/listening-em2/images/{out_path.name}'
+            })
     except Exception:
         return []
     return out
@@ -441,6 +464,12 @@ def main():
         if not source:
             continue
         next_item = dict(item)
+        source_year = item.get('year')
+        display_year = display_year_of(source_year)
+        next_item['sourceYear'] = source_year
+        next_item['year'] = display_year
+        next_item['_id'] = f"sh-em2-{display_year}-{item.get('district')}-listening"
+        next_item['title'] = f"{display_year} 上海{item.get('district')}二模听力"
         next_item['questions'] = source['questions']
         next_item['questionSourceFile'] = source['path'].name
         answer_source = answer_sources.get(key)
@@ -477,6 +506,7 @@ def main():
             '_id': item['_id'],
             'title': item['title'],
             'year': item['year'],
+            'sourceYear': item.get('sourceYear'),
             'district': item['district'],
             'examType': item['examType'],
             'stage': item.get('stage', '初中'),
