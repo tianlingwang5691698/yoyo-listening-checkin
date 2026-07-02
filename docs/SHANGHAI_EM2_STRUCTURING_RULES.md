@@ -203,9 +203,13 @@ node -e "const fs=require('fs'),crypto=require('crypto');const id='verb:时态';
 - `_content/listening-em2/audio/`
 - `_content/listening-em2/images/`
 
-每套听力按年份和区县归档，字段保留 `audioCloudPath`、`transcript`、`hasAudio`、`hasTranscript`。2012 原目录标注无音频；若只有“听力文本及参考答案”而无音频，正式上传数据直接剔除。
+每套听力按年份和区县归档，字段保留 `sourceYear`、`year`、`audioCloudPath`、`transcript`、`hasAudio`、`hasTranscript`。原始文件夹年份和实际考试年份不一致时，显示年份统一写成 `sourceYear - 1`，`sourceYear` 只用于追溯原始来源。2012 原目录标注无音频；若只有“听力文本及参考答案”而无音频，正式上传数据直接剔除。
 
 听力练习题必须来自原卷，不允许用 1-20 占位模板。正式练习库只保留同时满足：有音频、有原卷 1-20 题结构、有 A 部分图片题图片。缺图或题目不全的套卷先不进练习入口。
+
+图片清洗只允许抽取 A 部分 `Listen and choose the right picture` 到 B 部分之前的图片。不得把整份 docx 的学科网 logo、阅读图片、网页页眉、二维码或其他素材当作听力图片。A 部分图片抽取不稳定时，该套不进入正式练习入口。
+
+听力文本只收真实听力原文或听力文字稿，可来自答案、听力文本、听力文稿、录音文字稿等文件。仅有答案、解析、题干或“原文略”的文件不能当作 `transcript`；缺真实原文时 `hasTranscript: false`，不人工补写、不跨年借用。
 
 ## 元数据规则
 

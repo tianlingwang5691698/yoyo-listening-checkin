@@ -10,6 +10,7 @@ function buildQuestions(item) {
       key,
       text: question.options[key],
       label: question.options[key] === key ? key : `${key} ${question.options[key]}`,
+      isWide: String(question.options[key] || '').length > 34,
       selected: false
     })),
     inputValue: '',
@@ -122,7 +123,8 @@ Page({
       return map;
     }, {});
     const item = Object.assign({}, this.data.item, {
-      images: (images || []).map((image) => Object.assign({}, image, {
+      images: (images || []).map((image, index) => Object.assign({}, image, {
+        label: ['A', 'B', 'C', 'D', 'E', 'F'][index] || '',
         src: urls[image.cloudPath] || ''
       }))
     });

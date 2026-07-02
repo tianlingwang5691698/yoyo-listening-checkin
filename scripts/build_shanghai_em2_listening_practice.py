@@ -242,6 +242,36 @@ def extract_listening_answers(text):
     return answers
 
 
+def extract_listening_transcript(text):
+    if not text:
+        return ''
+    starts = []
+    for marker in ['听力文稿', '听力文本', '听力文字', '录音稿', '录音文字']:
+        pos = text.find(marker)
+        if pos >= 0:
+            starts.append(pos)
+    q_pos = text.find('Q:')
+    if q_pos >= 0:
+        part_pos = text.rfind('Part 1 Listening', 0, q_pos)
+        if part_pos >= 0:
+            starts.append(part_pos)
+        answer_pos = text.rfind('参考答案', 0, q_pos)
+        if answer_pos >= 0:
+            starts.append(answer_pos)
+    if not starts:
+        return ''
+    source = text[max(starts):]
+    end = re.search(r'Part\s*2|Grammar and Vocabulary|Vocabulary and Grammar|第二部分|II\.\s*Choose', source, re.I)
+    if end:
+        source = source[:end.start()]
+    source = clean(source)
+    if len(source) < 500:
+        return ''
+    if 'Q:' not in source and not re.search(r'\([A-F]\)', source):
+        return ''
+    return source[:12000]
+
+
 def extract_docx_images(path, item_id):
     if path.suffix.lower() != '.docx':
         return []
@@ -437,6 +467,27 @@ def best_answer_sources():
     return best
 
 
+def best_transcript_sources():
+    best = {}
+    for path in candidate_text_files():
+        year = year_of(path)
+        district = district_of(path)
+        if not year or not district:
+            continue
+        text = read_text(path)
+        transcript = extract_listening_transcript(text)
+        if not transcript:
+            continue
+        key = (year, district)
+        score = len(transcript)
+        if any(token in str(path) for token in ['听力文本', '听力原文', '听力文字', '听力文稿', '原文答案']):
+            score += 5000
+        old = best.get(key)
+        if not old or score > old['score']:
+            best[key] = {'path': path, 'transcript': transcript, 'score': score}
+    return best
+
+
 def is_valid_listening_answer_set(answers):
     if not all(num in answers for num in range(1, 11)):
         return False
@@ -456,6 +507,7 @@ def main():
             stale.unlink()
     sources = best_sources()
     answer_sources = best_answer_sources()
+    transcript_sources = best_transcript_sources()
     image_sources = best_image_sources(set(sources) | set(answer_sources))
     items = []
     for item in sets:
@@ -470,6 +522,11 @@ def main():
         next_item['year'] = display_year
         next_item['_id'] = f"sh-em2-{display_year}-{item.get('district')}-listening"
         next_item['title'] = f"{display_year} 上海{item.get('district')}二模听力"
+        transcript_source = transcript_sources.get(key)
+        if transcript_source:
+            next_item['transcriptSourceFile'] = transcript_source['path'].name
+            next_item['transcript'] = transcript_source['transcript']
+            next_item['hasTranscript'] = True
         next_item['questions'] = source['questions']
         next_item['questionSourceFile'] = source['path'].name
         answer_source = answer_sources.get(key)

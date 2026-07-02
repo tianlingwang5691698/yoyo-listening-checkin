@@ -14,16 +14,41 @@
     <view class="audio-error" wx:if="{{audioError}}">{{audioError}}</view>
   </view>
 
+  <view class="question-card card">
+    <view class="question-top">
+      <view class="question-label">答题区</view>
+      <view class="question-state" wx:if="{{submitted}}">{{correctCount}} / {{questions.length}}</view>
+    </view>
+    <view class="picture-grid" wx:if="{{item.images && item.images.length}}">
+      <view class="picture-cell" wx:for="{{item.images}}" wx:key="cloudPath">
+        <image class="picture-item" mode="aspectFit" src="{{item.src}}"></image>
+        <view class="picture-label">{{item.label}}</view>
+      </view>
+    </view>
+    <view class="question-row" wx:for="{{questions}}" wx:key="number">
+      <view class="question-title">{{item.number}}. {{item.prompt}}</view>
+      <view class="option-list" wx:if="{{item.optionsList.length}}">
+        <view class="option-row {{option.isWide ? 'is-wide' : ''}} {{option.selected ? 'is-selected' : ''}}" wx:for="{{item.optionsList}}" wx:for-item="option" wx:key="key" data-number="{{item.number}}" data-option="{{option.key}}" bindtap="selectOption">
+          {{option.label}}
+        </view>
+      </view>
+      <input wx:else class="answer-input" value="{{item.inputValue}}" data-number="{{item.number}}" bindinput="inputAnswer" placeholder="填写答案" />
+      <view class="answer-line" wx:if="{{submitted && item.answer}}">{{item.correct ? '正确' : '订正'}}：{{item.answer}}</view>
+    </view>
+  </view>
+
+  <button class="button-primary submit-button" bindtap="submit">提交听力</button>
+
   <view class="study-card card">
     <view class="question-top">
       <view class="question-label">文本学习</view>
-      <button class="mini-button" loading="{{studyLoading}}" disabled="{{studyLoading}}" bindtap="loadStudyPack">{{studyPack ? '刷新' : '生成'}}</button>
+      <view class="mini-button {{studyLoading ? 'is-disabled' : ''}}" bindtap="loadStudyPack">{{studyPack ? '刷新' : '生成'}}</view>
     </view>
     <view class="transcript-box" wx:if="{{item.transcript}}">{{item.transcript}}</view>
     <view class="empty-line" wx:else>暂无文本</view>
     <view class="study-error" wx:if="{{studyError}}">{{studyError}}</view>
     <view class="study-tabs" wx:if="{{studyPack}}">
-      <button class="study-tab {{activeStudyTab === item.key ? 'is-active' : ''}}" wx:for="{{studyTabs}}" wx:key="key" data-tab="{{item.key}}" bindtap="selectStudyTab">{{item.label}}</button>
+      <view class="study-tab {{activeStudyTab === item.key ? 'is-active' : ''}}" wx:for="{{studyTabs}}" wx:key="key" data-tab="{{item.key}}" bindtap="selectStudyTab">{{item.label}}</view>
     </view>
     <view class="study-list" wx:if="{{studyPack && activeStudyTab === 'vocabulary'}}">
       <view class="study-item" wx:for="{{vocabularyCards}}" wx:key="word">
@@ -48,29 +73,7 @@
         <view class="study-example-meaning" wx:if="{{item.exampleMeaning}}">{{item.exampleMeaning}}</view>
       </view>
     </view>
-    <button class="study-complete-button" wx:if="{{studyPack && !studyCompleted}}" bindtap="completeStudy">已学完，开始听</button>
+    <view class="study-complete-button" wx:if="{{studyPack && !studyCompleted}}" bindtap="completeStudy">已学完，开始听</view>
     <view class="study-done" wx:if="{{studyCompleted}}">已完成文本学习</view>
   </view>
-
-  <view class="question-card card">
-    <view class="question-top">
-      <view class="question-label">答题区</view>
-      <view class="question-state" wx:if="{{submitted}}">{{correctCount}} / {{questions.length}}</view>
-    </view>
-    <view class="picture-grid" wx:if="{{item.images && item.images.length}}">
-      <image class="picture-item" wx:for="{{item.images}}" wx:key="cloudPath" mode="aspectFit" src="{{item.src}}"></image>
-    </view>
-    <view class="question-row" wx:for="{{questions}}" wx:key="number">
-      <view class="question-title">{{item.number}}. {{item.prompt}}</view>
-      <view class="option-list" wx:if="{{item.optionsList.length}}">
-        <button class="option-row {{option.selected ? 'is-selected' : ''}}" wx:for="{{item.optionsList}}" wx:for-item="option" wx:key="key" data-number="{{item.number}}" data-option="{{option.key}}" bindtap="selectOption">
-          {{option.label}}
-        </button>
-      </view>
-      <input wx:else class="answer-input" value="{{item.inputValue}}" data-number="{{item.number}}" bindinput="inputAnswer" placeholder="填写答案" />
-      <view class="answer-line" wx:if="{{submitted && item.answer}}">{{item.correct ? '正确' : '订正'}}：{{item.answer}}</view>
-    </view>
-  </view>
-
-  <button class="button-primary submit-button" bindtap="submit">提交听力</button>
 </view>
