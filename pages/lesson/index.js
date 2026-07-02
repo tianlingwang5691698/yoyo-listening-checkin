@@ -200,6 +200,41 @@ function lessonStudyDoneKey(category, taskId) {
   return `lessonListeningStudyDoneV1:${category || ''}:${taskId || ''}`;
 }
 
+function isSingleWord(text) {
+  return /^[A-Za-z][A-Za-z'-]{0,40}$/.test(String(text || '').trim());
+}
+
+function canUseDictionaryVoice(text) {
+  const value = String(text || '').replace(/\s+/g, ' ').trim();
+  if (!value || value.length > 60 || /[.!?;:]/.test(value)) return false;
+  const words = value.split(' ').filter(Boolean);
+  return words.length >= 1
+    && words.length <= 6
+    && words.every((word) => /^[A-Za-z][A-Za-z'-]{0,30}$/.test(word));
+}
+
+function buildDictionaryVoiceUrls(text) {
+  const encoded = encodeURIComponent(text);
+  return [
+    `https://dict.youdao.com/dictvoice?audio=${encoded}&type=2`,
+    `https://dict.youdao.com/dictvoice?audio=${encoded}&type=1`
+  ];
+}
+
+function normalizeLessonStudyCards(cards, type) {
+  return (cards || []).map((card, index) => {
+    const text = String(type === 'phrase' ? (card.text || card.phrase || '') : type === 'pattern' ? (card.pattern || card.text || '') : (card.word || card.text || '')).trim();
+    return Object.assign({}, card, {
+      groupIndex: card.groupIndex || index + 1,
+      text,
+      word: type === 'word' ? (card.word || text) : card.word,
+      pattern: type === 'pattern' ? (card.pattern || text) : card.pattern,
+      flashcardKey: card.flashcardKey || `${type}:${text}`,
+      canSpeak: canUseDictionaryVoice(text)
+    });
+  });
+}
+
 function recordLessonStudyPackSynced(task, category, taskId) {
   const target = task || {};
   const safeCategory = target.category || category || '';
@@ -329,7 +364,15 @@ Page({
     ],
     lessonVocabularyCards: [],
     lessonPhraseCards: [],
-    lessonPatternCards: []
+    lessonPatternCards: [],
+    speakingWord: '',
+    lessonDictionaryAddedMap: {},
+    dictionaryVisible: false,
+    dictionaryLoading: false,
+    dictionaryAdding: false,
+    dictionaryAudioLoading: false,
+    dictionaryWord: '',
+    dictionaryEntry: null
   }),
   readLessonTaskSnapshot() {
     try {
@@ -554,6 +597,14 @@ Page({
     if (this.speakingAudioContext) {
       this.speakingAudioContext.destroy();
       this.speakingAudioContext = null;
+    }
+    if (this.lessonStudyAudioContext) {
+      this.lessonStudyAudioContext.destroy();
+      this.lessonStudyAudioContext = null;
+    }
+    if (this.dictionaryAudioContext) {
+      this.dictionaryAudioContext.destroy();
+      this.dictionaryAudioContext = null;
     }
   },
   formatTime(totalSeconds) {
@@ -1433,9 +1484,9 @@ Page({
     const pack = studyPack || {};
     this.setData({
       lessonStudyPack: pack,
-      lessonVocabularyCards: pack.vocabularyCards || [],
-      lessonPhraseCards: pack.phraseCards || [],
-      lessonPatternCards: pack.sentencePatternCards || []
+      lessonVocabularyCards: normalizeLessonStudyCards(pack.vocabularyCards || [], 'word'),
+      lessonPhraseCards: normalizeLessonStudyCards(pack.phraseCards || [], 'phrase'),
+      lessonPatternCards: normalizeLessonStudyCards(pack.sentencePatternCards || [], 'pattern')
     });
     recordLessonStudyPackSynced(this.data.task || {}, this.category, this.taskId);
   },
@@ -1492,6 +1543,217 @@ Page({
       lessonAudioLocked: false,
       lessonStudyError: ''
     });
+  },
+  async speakLessonStudyAudio(event) {
+    const type = String(event.currentTarget.dataset.type || 'word');
+    const text = String(event.currentTarget.dataset.text || '').replace(/\s+/g, ' ').trim();
+    const audioKey = `${type}:${text}`;
+    if (!text || this._lessonStudyAudioLoading || !canUseDictionaryVoice(text)) return;
+    const cards = type === 'phrase' ? this.data.lessonPhraseCards : this.data.lessonVocabularyCards;
+    const card = (cards || []).find((item) => (item.word || item.text || item.phrase) === text) || {};
+    this._lessonStudyAudioLoading = true;
+    this.setData({ speakingWord: audioKey });
+    try {
+      const localUrls = [];
+      const cachedUrl = this._lessonStudyAudioUrls && this._lessonStudyAudioUrls[text];
+      if (cachedUrl) localUrls.push(cachedUrl);
+      if (card.audioUrl && card.audioUrl !== cachedUrl) localUrls.push(card.audioUrl);
+      this._lessonStudyAudioFallbackUrls = [];
+      this._lessonStudyAudioFallbackIndex = 0;
+      this._lessonStudyAudioDictionaryFallbackTried = false;
+      this._lessonStudyAudioFileFallbackTried = false;
+      this._lessonStudyAudioFileId = card.audioFileId || '';
+      this._lessonStudyAudioText = text;
+      this._lessonStudyAudioFallbackUrls = localUrls.concat(buildDictionaryVoiceUrls(text));
+      const url = this._lessonStudyAudioFallbackUrls[0];
+      this._lessonStudyAudioUrls = Object.assign({}, this._lessonStudyAudioUrls || {}, { [text]: url });
+      if (!this.lessonStudyAudioContext) {
+        this.lessonStudyAudioContext = wx.createInnerAudioContext();
+        this.lessonStudyAudioContext.obeyMuteSwitch = false;
+        this.lessonStudyAudioContext.onEnded(() => {
+          this.setData({ speakingWord: '' });
+        });
+        this.lessonStudyAudioContext.onError(async () => {
+          const urls = this._lessonStudyAudioFallbackUrls || [];
+          this._lessonStudyAudioFallbackIndex = Number(this._lessonStudyAudioFallbackIndex || 0) + 1;
+          if (this._lessonStudyAudioFallbackIndex < urls.length) {
+            this.lessonStudyAudioContext.src = urls[this._lessonStudyAudioFallbackIndex];
+            this.lessonStudyAudioContext.play();
+            return;
+          }
+          if (!this._lessonStudyAudioFileFallbackTried && this._lessonStudyAudioFileId) {
+            this._lessonStudyAudioFileFallbackTried = true;
+            try {
+              const fileUrl = await store.getTempFileURL(this._lessonStudyAudioFileId);
+              if (fileUrl) {
+                this._lessonStudyAudioUrls = Object.assign({}, this._lessonStudyAudioUrls || {}, { [this._lessonStudyAudioText]: fileUrl });
+                this.lessonStudyAudioContext.src = fileUrl;
+                this.lessonStudyAudioContext.play();
+                return;
+              }
+            } catch (fileError) {}
+          }
+          if (!this._lessonStudyAudioDictionaryFallbackTried && isSingleWord(this._lessonStudyAudioText)) {
+            this._lessonStudyAudioDictionaryFallbackTried = true;
+            try {
+              const audioResult = await store.synthesizeReadingAudio({
+                text: this._lessonStudyAudioText,
+                skipYoudao: true
+              });
+              if (audioResult && audioResult.audioUrl) {
+                this.lessonStudyAudioContext.src = audioResult.audioUrl;
+                this.lessonStudyAudioContext.play();
+                return;
+              }
+            } catch (fallbackError) {}
+          }
+          this.setData({ speakingWord: '' });
+          wx.showToast({ title: '播放失败，稍后再试', icon: 'none' });
+        });
+      }
+      this.lessonStudyAudioContext.stop();
+      this.lessonStudyAudioContext.src = url;
+      this.lessonStudyAudioContext.play();
+    } catch (error) {
+      this.setData({ speakingWord: '' });
+      wx.showToast({ title: '发音失败，稍后重试', icon: 'none' });
+    } finally {
+      this._lessonStudyAudioLoading = false;
+    }
+  },
+  async lookupLessonStudyWord(event) {
+    const word = String(event.currentTarget.dataset.word || event.currentTarget.dataset.text || '').trim();
+    if (!word || this.data.dictionaryLoading) return;
+    if (wx.vibrateShort) {
+      wx.vibrateShort({ type: 'light' });
+    }
+    this.setData({
+      dictionaryVisible: true,
+      dictionaryLoading: true,
+      dictionaryWord: word,
+      dictionaryEntry: null
+    });
+    const localKey = `dictionary:${word.toLowerCase()}`;
+    try {
+      const cached = wx.getStorageSync(localKey);
+      const cacheAge = Date.now() - Number(cached && cached._cachedAt || 0);
+      if (cached && cached.wordLower && cacheAge < 30 * 60 * 1000) {
+        this.setData({ dictionaryEntry: cached, dictionaryLoading: false });
+        return;
+      }
+    } catch (error) {}
+    try {
+      const entry = await store.lookupWord(word);
+      try {
+        wx.setStorageSync(localKey, Object.assign({}, entry, { _cachedAt: Date.now() }));
+      } catch (error) {}
+      this.setData({ dictionaryEntry: entry, dictionaryLoading: false });
+    } catch (error) {
+      this.setData({ dictionaryLoading: false });
+      wx.showToast({ title: '查词失败', icon: 'none' });
+    }
+  },
+  closeDictionary() {
+    this.setData({ dictionaryVisible: false, dictionaryLoading: false, dictionaryAudioLoading: false });
+  },
+  async addDictionaryWordToLibrary() {
+    const entry = this.data.dictionaryEntry || {};
+    const word = entry.word || this.data.dictionaryWord || '';
+    if (!word || this.data.dictionaryAdding) return;
+    this.setData({ dictionaryAdding: true });
+    try {
+      const result = await store.addDictionaryWord(Object.assign({}, entry, { word }));
+      const key = result && result.flashcardKey ? result.flashcardKey : `word:${word}`;
+      this.setData({
+        lessonDictionaryAddedMap: Object.assign({}, this.data.lessonDictionaryAddedMap || {}, { [key]: true, [word]: true })
+      });
+      wx.showToast({ title: '已加入词库', icon: 'none' });
+    } catch (error) {
+      wx.showToast({ title: '加入失败', icon: 'none' });
+    } finally {
+      this.setData({ dictionaryAdding: false });
+    }
+  },
+  async addLessonStudyWordToLibrary(event) {
+    const type = String(event.currentTarget.dataset.type || 'word');
+    const text = String(event.currentTarget.dataset.text || event.currentTarget.dataset.word || '').trim();
+    if (!text || this.data.dictionaryAdding) return;
+    const cards = type === 'phrase' ? this.data.lessonPhraseCards : this.data.lessonVocabularyCards;
+    const card = (cards || []).find((item) => (item.word || item.text || item.phrase) === text) || { word: text, text };
+    this.setData({ dictionaryAdding: true });
+    try {
+      const result = await store.addDictionaryWord(Object.assign({}, card, {
+        word: card.word || card.text || text,
+        text
+      }));
+      const key = result && result.flashcardKey ? result.flashcardKey : (card.flashcardKey || `${type}:${text}`);
+      this.setData({
+        lessonDictionaryAddedMap: Object.assign({}, this.data.lessonDictionaryAddedMap || {}, { [key]: true, [text]: true })
+      });
+      wx.showToast({ title: '已加入词库', icon: 'none' });
+    } catch (error) {
+      wx.showToast({ title: '加入失败', icon: 'none' });
+    } finally {
+      this.setData({ dictionaryAdding: false });
+    }
+  },
+  async playDictionaryWord() {
+    const entry = this.data.dictionaryEntry || {};
+    const word = entry.word || this.data.dictionaryWord || '';
+    if (!word || this.data.dictionaryAudioLoading) return;
+    const playUrl = (url) => {
+      if (!this.dictionaryAudioContext) {
+        this.dictionaryAudioContext = wx.createInnerAudioContext();
+        this.dictionaryAudioContext.obeyMuteSwitch = false;
+        this.dictionaryAudioContext.onEnded(() => {
+          this.setData({ dictionaryAudioLoading: false });
+        });
+        this.dictionaryAudioContext.onError(() => {
+          const urls = this._dictionaryAudioFallbackUrls || [];
+          this._dictionaryAudioFallbackIndex = Number(this._dictionaryAudioFallbackIndex || 0) + 1;
+          if (this._dictionaryAudioFallbackIndex < urls.length) {
+            this.dictionaryAudioContext.src = urls[this._dictionaryAudioFallbackIndex];
+            this.dictionaryAudioContext.play();
+            return;
+          }
+          if (!this._dictionaryAudioFileFallbackTried && this._dictionaryAudioFileId) {
+            this._dictionaryAudioFileFallbackTried = true;
+            store.getTempFileURL(this._dictionaryAudioFileId).then((fileUrl) => {
+              if (fileUrl) {
+                this.dictionaryAudioContext.src = fileUrl;
+                this.dictionaryAudioContext.play();
+                return;
+              }
+              this.setData({ dictionaryAudioLoading: false });
+              wx.showToast({ title: '播放失败，稍后再试', icon: 'none' });
+            }).catch(() => {
+              this.setData({ dictionaryAudioLoading: false });
+              wx.showToast({ title: '播放失败，稍后再试', icon: 'none' });
+            });
+            return;
+          }
+          this.setData({ dictionaryAudioLoading: false });
+          wx.showToast({ title: '播放失败，稍后再试', icon: 'none' });
+        });
+      }
+      this.dictionaryAudioContext.stop();
+      this.dictionaryAudioContext.src = url;
+      this.setData({ dictionaryAudioLoading: true });
+      this.dictionaryAudioContext.play();
+    };
+    try {
+      const urls = [];
+      if (entry.audioUrl) urls.push(entry.audioUrl);
+      if (canUseDictionaryVoice(word)) urls.push(...buildDictionaryVoiceUrls(word));
+      this._dictionaryAudioFileId = entry.audioFileId || '';
+      this._dictionaryAudioFileFallbackTried = false;
+      this._dictionaryAudioFallbackUrls = urls.length ? urls : buildDictionaryVoiceUrls(word);
+      this._dictionaryAudioFallbackIndex = 0;
+      playUrl(this._dictionaryAudioFallbackUrls[0]);
+    } catch (error) {
+      this.setData({ dictionaryAudioLoading: false });
+      wx.showToast({ title: '播放失败，稍后再试', icon: 'none' });
+    }
   },
   async handleAudioEnded() {
     if (!this.data.task || this.data.task.isPendingAsset) {

@@ -31,30 +31,74 @@
       <button class="lesson-study-tab {{lessonStudyTab === item.key ? 'is-active' : ''}}" wx:for="{{lessonStudyTabs}}" wx:key="key" data-tab="{{item.key}}" bindtap="selectLessonStudyTab">{{item.label}}</button>
     </view>
     <view class="lesson-study-list" wx:if="{{lessonStudyPack && lessonStudyTab === 'vocabulary'}}">
-      <view class="lesson-study-item" wx:for="{{lessonVocabularyCards}}" wx:key="word">
-        <view class="lesson-study-title">{{item.word}}</view>
-        <view class="lesson-study-meaning">{{item.meaning}}</view>
-        <view class="lesson-study-example" wx:if="{{item.example}}">{{item.example}}</view>
-        <view class="lesson-study-example" wx:if="{{item.exampleMeaning}}">{{item.exampleMeaning}}</view>
+      <view class="lesson-study-item word-card" wx:for="{{lessonVocabularyCards}}" wx:key="word">
+        <view class="word-head">
+          <view class="word-pronounce {{speakingWord === ('word:' + item.word) ? 'is-speaking' : ''}}" data-type="word" data-text="{{item.word}}" bindtap="speakLessonStudyAudio">
+            <view class="card-title-line">
+              <text class="card-index">{{item.groupIndex}}</text>
+              <text class="word-text">{{item.word}}</text>
+              <text class="sound-wave {{speakingWord === ('word:' + item.word) ? 'is-speaking' : ''}}" wx:if="{{item.canSpeak}}">♪</text>
+            </view>
+            <text class="phonetic" wx:if="{{item.phonetic}}">{{item.phonetic}}</text>
+          </view>
+          <view class="word-actions">
+            <button class="mini-action" data-word="{{item.word}}" catchtap="lookupLessonStudyWord">查词</button>
+            <button class="mini-action strong" data-type="word" data-text="{{item.word}}" catchtap="addLessonStudyWordToLibrary">{{lessonDictionaryAddedMap[item.flashcardKey] || lessonDictionaryAddedMap[item.word] ? '已加入' : '加入'}}</button>
+          </view>
+        </view>
+        <view class="card-meaning">{{item.meaning}}</view>
+        <view class="card-example" wx:if="{{item.example}}">{{item.example}}</view>
+        <view class="card-example-meaning" wx:if="{{item.exampleMeaning}}">{{item.exampleMeaning}}</view>
       </view>
     </view>
     <view class="lesson-study-list" wx:elif="{{lessonStudyPack && lessonStudyTab === 'phrases'}}">
-      <view class="lesson-study-item" wx:for="{{lessonPhraseCards}}" wx:key="text">
-        <view class="lesson-study-title">{{item.text}}</view>
-        <view class="lesson-study-meaning">{{item.meaning}}</view>
-        <view class="lesson-study-example" wx:if="{{item.example}}">{{item.example}}</view>
+      <view class="lesson-study-item phrase-card" wx:for="{{lessonPhraseCards}}" wx:key="text">
+        <view class="word-head">
+          <view class="word-pronounce {{speakingWord === ('phrase:' + item.text) ? 'is-speaking' : ''}}" data-type="phrase" data-text="{{item.text}}" bindtap="speakLessonStudyAudio">
+            <view class="card-title-line">
+              <text class="card-index">{{item.groupIndex}}</text>
+              <text class="phrase-text">{{item.text}}</text>
+              <text class="sound-wave {{speakingWord === ('phrase:' + item.text) ? 'is-speaking' : ''}}" wx:if="{{item.canSpeak}}">♪</text>
+            </view>
+          </view>
+          <view class="word-actions">
+            <button class="mini-action strong" data-type="phrase" data-text="{{item.text}}" catchtap="addLessonStudyWordToLibrary">{{lessonDictionaryAddedMap[item.flashcardKey] || lessonDictionaryAddedMap[item.text] ? '已加入' : '加入'}}</button>
+          </view>
+        </view>
+        <view class="card-meaning">{{item.meaning}}</view>
+        <view class="card-example" wx:if="{{item.example}}">{{item.example}}</view>
       </view>
     </view>
     <view class="lesson-study-list" wx:elif="{{lessonStudyPack}}">
-      <view class="lesson-study-item" wx:for="{{lessonPatternCards}}" wx:key="pattern">
-        <view class="lesson-study-title">{{item.pattern}}</view>
-        <view class="lesson-study-meaning">{{item.meaning}}</view>
-        <view class="lesson-study-example" wx:if="{{item.example}}">{{item.example}}</view>
-        <view class="lesson-study-example" wx:if="{{item.exampleMeaning}}">{{item.exampleMeaning}}</view>
+      <view class="lesson-study-item pattern-card" wx:for="{{lessonPatternCards}}" wx:key="pattern">
+        <view class="card-title-line">
+          <text class="card-index">{{item.groupIndex}}</text>
+          <text class="pattern-text">{{item.pattern}}</text>
+        </view>
+        <view class="card-meaning">{{item.meaning}}</view>
+        <view class="card-example" wx:if="{{item.example}}">{{item.example}}</view>
+        <view class="card-example-meaning" wx:if="{{item.exampleMeaning}}">{{item.exampleMeaning}}</view>
       </view>
     </view>
     <button class="lesson-study-complete" wx:if="{{lessonStudyPack && !lessonStudyCompleted}}" bindtap="completeLessonStudy">已学完，开始听</button>
     <view class="lesson-study-done" wx:if="{{lessonStudyCompleted}}">已完成文本学习</view>
+  </view>
+
+  <view class="dictionary-mask" wx:if="{{dictionaryVisible}}" catchtap="closeDictionary"></view>
+  <view class="dictionary-sheet" wx:if="{{dictionaryVisible}}">
+    <view class="dictionary-head">
+      <view>
+        <view class="dictionary-word">{{dictionaryEntry.word || dictionaryWord}}</view>
+        <view class="dictionary-phonetic" wx:if="{{dictionaryEntry.phonetic}}">/{{dictionaryEntry.phonetic}}/</view>
+      </view>
+      <button class="dictionary-audio {{dictionaryAudioLoading ? 'is-loading' : ''}}" disabled="{{dictionaryLoading || dictionaryAudioLoading}}" bindtap="playDictionaryWord">♪</button>
+    </view>
+    <button class="dictionary-add" loading="{{dictionaryAdding}}" bindtap="addDictionaryWordToLibrary">加入词库</button>
+    <block wx:if="{{!dictionaryLoading}}">
+      <view class="dictionary-definition" wx:for="{{dictionaryEntry.definitions}}" wx:key="*this">· {{item}}</view>
+      <view class="dictionary-empty" wx:if="{{!dictionaryEntry.definitions || !dictionaryEntry.definitions.length}}">暂无释义。</view>
+    </block>
+    <view class="dictionary-loading" wx:else>查词中</view>
   </view>
 
   <view class="section-panel player-card">

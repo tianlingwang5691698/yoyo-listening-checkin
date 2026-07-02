@@ -155,30 +155,175 @@
 
 .lesson-study-list {
   margin-top: 18rpx;
+  display: flex;
+  flex-direction: column;
+  gap: 18rpx;
 }
 
 .lesson-study-item {
-  margin-top: 14rpx;
-  padding: 22rpx;
-  border-radius: 20rpx;
+  padding: 20rpx;
+  border-radius: 18rpx;
+  background: rgba(255, 255, 255, 0.76);
+  border: 1rpx solid rgba(107, 118, 138, 0.08);
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.word-head {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 16rpx;
+}
+
+.word-text,
+.phrase-text,
+.pattern-text {
+  color: var(--text-strong);
+  font-size: var(--font-section-size);
+  line-height: 1.35;
+  font-weight: var(--font-title-weight);
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+.phonetic {
+  display: block;
+  margin-top: 4rpx;
+  color: var(--text-muted);
+  font-size: 24rpx;
+}
+
+.word-pronounce {
+  flex: 1;
+  min-width: 0;
+  border-radius: 18rpx;
+  transition: background-color 0.16s ease, transform 0.16s ease;
+}
+
+.word-pronounce.is-speaking {
+  padding: 8rpx 10rpx;
+  margin: -8rpx -10rpx;
+  background: rgba(46, 95, 168, 0.08);
+  transform: scale(0.99);
+}
+
+.card-title-line {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 10rpx;
+}
+
+.card-index {
+  flex-shrink: 0;
+  min-width: 36rpx;
+  height: 36rpx;
+  border-radius: 999rpx;
   background: var(--surface-subtle);
+  color: var(--accent-deep);
+  font-size: 22rpx;
+  line-height: 36rpx;
+  font-weight: var(--font-title-weight);
+  text-align: center;
+}
+
+.card-title-line .word-text,
+.card-title-line .phrase-text,
+.card-title-line .pattern-text {
+  min-width: 0;
+}
+
+.word-pronounce:active {
+  opacity: 0.66;
+}
+
+.sound-wave {
+  flex-shrink: 0;
+  min-width: 34rpx;
+  height: 34rpx;
+  border-radius: 999rpx;
+  background: var(--accent-deep);
+  color: #fff;
+  font-size: 18rpx;
+  line-height: 34rpx;
+  text-align: center;
+}
+
+.sound-wave.is-speaking {
+  animation: lessonSoundPulse 0.72s ease-in-out infinite;
+}
+
+@keyframes lessonSoundPulse {
+  0% {
+    opacity: 0.55;
+    transform: scale(0.88);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+  100% {
+    opacity: 0.55;
+    transform: scale(0.88);
+  }
+}
+
+.word-actions {
+  flex-shrink: 0;
+  width: 216rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8rpx;
+}
+
+.mini-action {
+  flex: 1;
+  min-width: 0;
+  height: 56rpx;
+  margin: 0;
+  padding: 0 10rpx;
+  border-radius: 999rpx;
+  color: var(--text-muted);
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24rpx;
+  line-height: 1;
+  font-weight: var(--font-title-weight);
+  text-align: center;
   box-sizing: border-box;
 }
 
-.lesson-study-title {
-  color: var(--text-main);
-  font-size: var(--font-body-size);
-  font-weight: var(--font-title-weight);
-  line-height: 1.4;
+.mini-action::after {
+  border: 0;
 }
 
-.lesson-study-meaning,
-.lesson-study-example {
+.mini-action.strong {
+  color: var(--accent-deep);
+  background: var(--accent-soft);
+}
+
+.card-meaning,
+.card-example,
+.card-example-meaning {
   margin-top: 10rpx;
-  color: var(--text-muted);
-  font-size: var(--font-caption-size);
-  line-height: 1.5;
+  color: var(--text-main);
+  font-size: 28rpx;
+  line-height: 1.55;
   word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+.card-example,
+.card-example-meaning {
+  color: var(--text-muted);
 }
 
 .lesson-study-complete {
@@ -197,6 +342,117 @@
 
 .lesson-study-done {
   color: var(--accent-deep);
+}
+
+.dictionary-mask {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 40;
+  background: rgba(20, 24, 31, 0.24);
+}
+
+.dictionary-sheet {
+  position: fixed;
+  left: 24rpx;
+  right: 24rpx;
+  bottom: calc(24rpx + env(safe-area-inset-bottom));
+  z-index: 41;
+  padding: 26rpx;
+  border-radius: 28rpx;
+  background: #ffffff;
+  box-shadow: 0 18rpx 60rpx rgba(28, 36, 52, 0.18);
+}
+
+.dictionary-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20rpx;
+}
+
+.dictionary-word {
+  color: var(--text-strong);
+  font-size: 40rpx;
+  line-height: 1.2;
+  font-weight: var(--font-section-heading-weight);
+}
+
+.dictionary-phonetic {
+  margin-top: 6rpx;
+  color: var(--text-muted);
+  font-size: 26rpx;
+}
+
+.dictionary-audio {
+  flex-shrink: 0;
+  width: 56rpx;
+  min-width: 56rpx;
+  height: 56rpx;
+  margin: 0;
+  padding: 0;
+  border-radius: 999rpx;
+  background: var(--accent-soft);
+  color: var(--accent-deep);
+  font-size: 28rpx;
+  line-height: 56rpx;
+  font-weight: var(--font-title-weight);
+  text-align: center;
+}
+
+.dictionary-audio::after {
+  border: 0;
+}
+
+.dictionary-audio.is-loading {
+  animation: lessonDictionaryAudioPulse 0.72s ease-in-out infinite;
+}
+
+@keyframes lessonDictionaryAudioPulse {
+  0% {
+    opacity: 0.55;
+    transform: scale(0.88);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+  100% {
+    opacity: 0.55;
+    transform: scale(0.88);
+  }
+}
+
+.dictionary-add {
+  width: 100%;
+  height: 64rpx;
+  margin: 22rpx 0 0;
+  border-radius: 999rpx;
+  background: var(--accent);
+  color: #ffffff;
+  font-size: 26rpx;
+  line-height: 64rpx;
+  font-weight: var(--font-title-weight);
+}
+
+.dictionary-add::after {
+  border: 0;
+}
+
+.dictionary-loading,
+.dictionary-empty,
+.dictionary-definition {
+  margin-top: 16rpx;
+  color: var(--text-main);
+  font-size: 28rpx;
+  line-height: 1.55;
+}
+
+.dictionary-loading,
+.dictionary-empty {
+  color: var(--text-muted);
 }
 
 .pass-steps {
