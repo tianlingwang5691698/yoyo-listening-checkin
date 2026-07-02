@@ -477,9 +477,8 @@ Page({
       });
       return;
     }
-    wx.showToast({
-      title: '口语练习暂未开放',
-      icon: 'none'
+    wx.navigateTo({
+      url: '/pages/speaking/index'
     });
   },
   openVocabulary() {
