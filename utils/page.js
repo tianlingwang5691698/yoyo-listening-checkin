@@ -61,10 +61,6 @@ function setIdentityConfirmed(confirmed) {
 }
 
 function isIdentityConfirmed() {
-  const app = getApp();
-  if (app && app.globalData && app.globalData.identityConfirmed) {
-    return true;
-  }
   try {
     return wx.getStorageSync(IDENTITY_CONFIRMED_V2_KEY) === 'yes';
   } catch (error) {

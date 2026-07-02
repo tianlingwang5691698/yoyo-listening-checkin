@@ -131,6 +131,10 @@ function shouldShowEntryPoster() {
   return true;
 }
 
+function shouldShowIdentityConfirm() {
+  return !page.isIdentityConfirmed();
+}
+
 function buildStageSnapshotTaskGroups(groupedDailyTasks) {
   return (groupedDailyTasks || []).map((group) => {
     const task = (group.tasks || []).find((item) => !item.completedToday && !item.isPendingAsset)
@@ -260,7 +264,7 @@ Page({
       listeningSummary: buildListeningSummary(groupedDailyTasks),
       listeningTaskStatus: buildListeningTaskStatus(groupedDailyTasks),
       nextListeningTask: findNextListeningTask(groupedDailyTasks),
-      identityConfirmVisible: !page.isIdentityConfirmed(),
+      identityConfirmVisible: shouldShowIdentityConfirm(),
       modeChangedNoticeVisible,
       homeLoading: false
     }, this.buildStudyModePresentation(data.currentMember))));
@@ -288,7 +292,7 @@ Page({
     page.syncTheme(this);
     const tabBar = this.getTabBar && this.getTabBar();
     const entryPosterVisible = shouldShowEntryPoster();
-    const identityConfirmVisible = !page.isIdentityConfirmed();
+    const identityConfirmVisible = shouldShowIdentityConfirm();
     if (tabBar) {
       tabBar.setData({
         selected: 0,
