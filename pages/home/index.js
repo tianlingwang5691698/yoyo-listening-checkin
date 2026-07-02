@@ -128,7 +128,7 @@ function isEntryPosterDismissed() {
 }
 
 function shouldShowEntryPoster() {
-  return !page.isIdentityConfirmed() && !isEntryPosterDismissed();
+  return true;
 }
 
 function buildStageSnapshotTaskGroups(groupedDailyTasks) {
