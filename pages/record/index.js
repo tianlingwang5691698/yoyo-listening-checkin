@@ -211,80 +211,6 @@ function markSelectedCells(cells, selectedDate) {
   }));
 }
 
-function buildRecentDates(todayKey, days) {
-  const today = parseDateKey(todayKey);
-  const list = [];
-  for (let i = 0; i < days; i += 1) {
-    const date = new Date(today);
-    date.setDate(today.getDate() - i);
-    list.push(getDateKey(date));
-  }
-  return list;
-}
-
-function buildRecentDayItem(report) {
-  const normalized = normalizeReport(report);
-  const summary = buildDaySummary(normalized);
-  return {
-    date: normalized.date || '',
-    label: formatDateLabel(normalized.date || ''),
-    statusText: summary.statusText,
-    countText: `${summary.completedCount} / ${summary.totalCount}`,
-    minutesText: summary.minutesText,
-    isCompleted: summary.completedCount > 0
-  };
-}
-
-function buildRecentDayFastItem(date, heatmapItem, completionCount) {
-  const completed = !!(heatmapItem && heatmapItem.completed);
-  return {
-    date,
-    label: formatDateLabel(date),
-    statusText: completed || completionCount ? '有记录' : '未完成',
-    countText: completionCount ? `${completionCount} 条记录` : (completed ? '已点亮' : '无记录'),
-    minutesText: completed ? '已完成' : '',
-    isCompleted: completed || completionCount > 0
-  };
-}
-
-function buildWritingAttemptItem(item, index) {
-  const attempt = item || {};
-  const createdAt = attempt.createdAt || '';
-  const prompt = attempt.prompt || null;
-  const pending = ['grading-pending', 'grading', 'score-pending'].includes(attempt.status);
-  const failed = attempt.status === 'grading-failed';
-  return Object.assign({}, attempt, {
-    key: attempt.attemptId || `${attempt.promptId || 'writing'}-${createdAt || index}`,
-    prompt,
-    promptText: attempt.promptText || attempt.promptTitle || (prompt && prompt.prompt) || '',
-    dateLabel: attempt.date ? formatDateLabel(attempt.date) : '',
-    timeText: formatClock(createdAt),
-    scoreText: pending ? '批改中' : (failed ? '批改失败' : `${Number(attempt.score || 0)} / ${Number(attempt.totalScore || 20)} 分`),
-    expanded: false
-  });
-}
-
-function buildWritingPromptIndex(materialIndex) {
-  const all = [].concat((materialIndex || {}).writingEm2 || [], (materialIndex || {}).writingEm1 || []);
-  return all.reduce((map, prompt) => {
-    if (prompt && prompt._id) {
-      map[prompt._id] = prompt;
-    }
-    return map;
-  }, {});
-}
-
-function attachWritingPrompts(items, promptIndex) {
-  const byId = promptIndex || {};
-  return (items || []).map((item) => {
-    const prompt = item.prompt || byId[item.promptId] || null;
-    return Object.assign({}, item, {
-      prompt,
-      promptText: item.promptText || (prompt && prompt.prompt) || ''
-    });
-  });
-}
-
 Page({
   monthCache: {},
   monthRequests: {},
@@ -310,16 +236,11 @@ Page({
     selectedDayReport: EMPTY_REPORT,
     selectedDaySummary: EMPTY_DAY_SUMMARY,
     selectedDayLoading: false,
-    recentDays: [],
-    recentDaysLoading: false,
     catchupStatusLabel: '无需追赶',
     catchupStatusClass: 'is-muted',
     catchupCopy: '节奏正常',
     catchupState: contracts.createCatchupStateDefaults(),
-    catchupTasks: [],
-    writingAttempts: [],
-    writingAttemptsLoading: false,
-    writingPromptIndex: null
+    catchupTasks: []
   }),
   async onShow() {
     this.recordPerf = page.startPagePerf('record');
@@ -398,8 +319,6 @@ Page({
       this.preloadAdjacentMonths(calendarYear, calendarMonth);
       Promise.all([
         this.loadSelectedDay(selectedDate).catch(() => {}),
-        this.loadRecentDays().catch(() => {}),
-        this.loadWritingAttempts().catch(() => {}),
         this.loadCatchupTasks().catch(() => {})
       ]).catch(() => {});
     }, 350);
@@ -494,51 +413,6 @@ Page({
     const data = await store.getDailyReportByDate(date, applyData);
     applyData(data);
   },
-  async loadRecentDays() {
-    const dates = buildRecentDates(this.data.todayDate || getDateKey(new Date()), 7);
-    this.setData({ recentDaysLoading: true });
-    try {
-      const completionsData = await store.getStudyCompletions({ days: 7 });
-      const completionCounts = (completionsData.items || []).reduce((map, item) => {
-        const date = item.date || '';
-        if (date) map[date] = (map[date] || 0) + 1;
-        return map;
-      }, {});
-      const monthData = this.getCachedMonthData(this.data.calendarYear, this.data.calendarMonth) || { heatmap: [] };
-      const heatmapMap = (monthData.heatmap || []).reduce((map, item) => {
-        map[item.date] = item;
-        return map;
-      }, {});
-      this.setData({
-        recentDays: dates.map((date) => buildRecentDayFastItem(date, heatmapMap[date], completionCounts[date] || 0)),
-        recentDaysLoading: false
-      });
-    } catch (error) {
-      this.setData({ recentDaysLoading: false });
-    }
-  },
-  async loadWritingAttempts() {
-    this.setData({ writingAttemptsLoading: true });
-    try {
-      const applyData = (data) => {
-        this.setData({
-          writingAttempts: attachWritingPrompts((data.attempts || []).map(buildWritingAttemptItem), this.data.writingPromptIndex),
-          writingAttemptsLoading: false
-        });
-      };
-      const materialIndexPromise = store.getMaterialIndex();
-      const data = await store.getWritingAttempts({ limit: 20 }, applyData);
-      applyData(data);
-      const materialIndex = await materialIndexPromise;
-      const writingPromptIndex = buildWritingPromptIndex(materialIndex);
-      this.setData({
-        writingPromptIndex,
-        writingAttempts: attachWritingPrompts(this.data.writingAttempts, writingPromptIndex)
-      });
-    } catch (error) {
-      this.setData({ writingAttemptsLoading: false });
-    }
-  },
   async loadCatchupTasks() {
     const applyData = (heatmapData) => {
       this.setData(page.buildCloudPageData(this.data, Object.assign({
@@ -604,11 +478,6 @@ Page({
     });
     await this.loadSelectedDay(date);
   },
-  async openRecentDay(event) {
-    const date = event.currentTarget.dataset.date;
-    if (!date) return;
-    await this.goToDate(date);
-  },
   openCatchupTask(event) {
     const category = event.currentTarget.dataset.category;
     const taskId = event.currentTarget.dataset.taskId;
@@ -620,13 +489,6 @@ Page({
     wx.navigateTo({
       url: `/pages/lesson/index?category=${category}&taskId=${taskId}&planRunType=catchup&targetDate=${targetDate}&planDayIndex=${planDayIndex}`
     });
-  },
-  toggleWritingAttempt(event) {
-    const index = Number(event.currentTarget.dataset.index || 0);
-    const items = (this.data.writingAttempts || []).slice();
-    if (!items[index]) return;
-    items[index] = Object.assign({}, items[index], { expanded: !items[index].expanded });
-    this.setData({ writingAttempts: items });
   },
   openReportItem(event) {
     const index = Number(event.currentTarget.dataset.index || 0);
