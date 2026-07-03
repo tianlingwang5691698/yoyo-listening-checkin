@@ -334,7 +334,7 @@ def extract_docx_images(path, item_id):
             if not in_picture_section:
                 continue
             rel_ids.extend(paragraph._p.xpath('.//*[local-name()="blip"]/@*[local-name()="embed"]'))
-        for idx, rel_id in enumerate(rel_ids[:12], 1):
+        for rel_id in rel_ids[:12]:
             part = doc.part.related_parts.get(rel_id)
             if not part:
                 continue
@@ -343,8 +343,11 @@ def extract_docx_images(path, item_id):
                 'image/jpeg': '.jpeg',
                 'image/jpg': '.jpg',
                 'image/gif': '.gif',
-            }.get(part.content_type, '.png')
+            }.get(part.content_type)
+            if not ext:
+                continue
             IMAGE_DIR.mkdir(parents=True, exist_ok=True)
+            idx = len(out) + 1
             out_path = IMAGE_DIR / f'{item_id}-image-{idx}{ext}'
             out_path.write_bytes(part.blob)
             if out_path.stat().st_size <= 512:

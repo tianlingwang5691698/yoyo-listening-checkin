@@ -211,7 +211,7 @@ node -e "const fs=require('fs'),crypto=require('crypto');const id='verb:时态';
 
 听力题目按原卷 A/B/C/D 四段保留分段字段：1-5 为 A 图片题，6-10 为 B 对话选择题，11-15 为 C 判断题，16-20 为 D 填空题。清洗选项时必须过滤 A/B/C/D 段落说明，不能把 `Listen and choose the right picture`、`Listen to the dialogue/passage` 等段落标题识别成选项文本。
 
-图片清洗只允许抽取 A 部分 `Listen and choose the right picture` 到 B 部分之前的图片。不得把整份 docx 的学科网 logo、阅读图片、网页页眉、二维码或其他素材当作听力图片。A 部分图片抽取不稳定时，该套不进入正式练习入口。
+图片清洗只允许抽取 A 部分 `Listen and choose the right picture` 到 B 部分之前的图片。不得把整份 docx 的学科网 logo、阅读图片、网页页眉、二维码或其他素材当作听力图片。只保留小程序可直接显示的 PNG/JPG/GIF；WMF 等不可显示格式必须过滤，不能占用 A/B/C 选项位置。A 部分图片抽取不稳定时，该套不进入正式练习入口。
 
 听力文本只收真实听力原文或听力文字稿，可来自答案、听力文本、听力文稿、录音文字稿等文件。仅有答案、解析、题干或“原文略”的文件不能当作 `transcript`；缺真实原文时 `hasTranscript: false`，不人工补写、不跨年借用。
 

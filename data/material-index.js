@@ -5369,10 +5369,6 @@ module.exports = {
         {
           "localPath": "data/listening-em1/images/sh-em1-2025-宝山-listening-image-6.png",
           "cloudPath": "_content/listening-em1/images/sh-em1-2025-宝山-listening-image-6.png"
-        },
-        {
-          "localPath": "data/listening-em1/images/sh-em1-2025-宝山-listening-image-7.png",
-          "cloudPath": "_content/listening-em1/images/sh-em1-2025-宝山-listening-image-7.png"
         }
       ],
       "questions": [
