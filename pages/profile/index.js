@@ -152,18 +152,6 @@ Page({
     });
   },
   async handleAdminTap() {
-    const now = Date.now();
-    const nextCount = now - Number(this.data.adminLastTapAt || 0) > 1600
-      ? 1
-      : Number(this.data.adminTapCount || 0) + 1;
-    this.setData({
-      adminTapCount: nextCount,
-      adminLastTapAt: now
-    });
-    if (nextCount < 5) {
-      return;
-    }
-    this.setData({ adminTapCount: 0 });
     try {
       const data = await store.getAdminFamilyList();
       if (data && data.isAdmin) {
