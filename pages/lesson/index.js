@@ -1140,6 +1140,9 @@ Page({
           title: normalizedAttempt.scoreErrorType === 'audio-download' ? '录音读取失败，请重录' : '录音已保存，稍后刷新评分',
           icon: 'none'
         });
+        if (!isRepeat) {
+          await this.finishPendingListenAfterSpeaking();
+        }
         return;
       }
       if (isRepeat) {
@@ -1155,7 +1158,8 @@ Page({
         return;
       }
       this.setData({ speakingAttemptIndex: attemptIndex + 1 });
-      wx.showToast({ title: '评分完成，可重录', icon: 'none' });
+      wx.showToast({ title: '评分完成，已计入进度', icon: 'none' });
+      await this.finishPendingListenAfterSpeaking();
     } catch (error) {
       wx.showToast({ title: '提交失败，请重试', icon: 'none' });
     } finally {

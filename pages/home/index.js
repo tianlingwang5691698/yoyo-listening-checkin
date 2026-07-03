@@ -304,6 +304,16 @@ Page({
     });
     return false;
   },
+  ensureIdentityReady() {
+    if (!this.data.identityConfirmVisible) {
+      return true;
+    }
+    wx.showToast({
+      title: '请先选择身份',
+      icon: 'none'
+    });
+    return false;
+  },
   handleNicknameInput(event) {
     this.setData({
       nicknameInput: event.detail.value
@@ -454,13 +464,7 @@ Page({
     }
   },
   openTask(event) {
-    if (this.data.identityConfirmVisible) {
-      wx.showToast({
-        title: '先选择身份',
-        icon: 'none'
-      });
-      return;
-    }
+    if (!this.ensureIdentityReady()) return;
     const category = event.currentTarget.dataset.category;
     const taskId = event.currentTarget.dataset.taskId;
     const disabled = event.currentTarget.dataset.disabled;
@@ -496,13 +500,7 @@ Page({
     }, { source: 'home' });
   },
   openListening() {
-    if (this.data.identityConfirmVisible) {
-      wx.showToast({
-        title: '先选择身份',
-        icon: 'none'
-      });
-      return;
-    }
+    if (!this.ensureIdentityReady()) return;
     if (!this.ensureNicknameReady()) {
       return;
     }
@@ -511,13 +509,7 @@ Page({
     });
   },
   openReading() {
-    if (this.data.identityConfirmVisible) {
-      wx.showToast({
-        title: '先选择身份',
-        icon: 'none'
-      });
-      return;
-    }
+    if (!this.ensureIdentityReady()) return;
     if (!this.ensureNicknameReady()) {
       return;
     }
@@ -526,13 +518,7 @@ Page({
     });
   },
   openGrammar() {
-    if (this.data.identityConfirmVisible) {
-      wx.showToast({
-        title: '先选择身份',
-        icon: 'none'
-      });
-      return;
-    }
+    if (!this.ensureIdentityReady()) return;
     if (!this.ensureNicknameReady()) {
       return;
     }
@@ -541,19 +527,14 @@ Page({
     });
   },
   openTest() {
+    if (!this.ensureIdentityReady()) return;
     wx.showToast({
       title: '测试模块暂未开放',
       icon: 'none'
     });
   },
   openWriting() {
-    if (this.data.identityConfirmVisible) {
-      wx.showToast({
-        title: '先选择身份',
-        icon: 'none'
-      });
-      return;
-    }
+    if (!this.ensureIdentityReady()) return;
     if (!this.ensureNicknameReady()) {
       return;
     }
@@ -562,13 +543,7 @@ Page({
     });
   },
   openSpeaking() {
-    if (this.data.identityConfirmVisible) {
-      wx.showToast({
-        title: '先选择身份',
-        icon: 'none'
-      });
-      return;
-    }
+    if (!this.ensureIdentityReady()) return;
     if (!this.ensureNicknameReady()) {
       return;
     }
@@ -577,13 +552,7 @@ Page({
     });
   },
   openVocabulary() {
-    if (this.data.identityConfirmVisible) {
-      wx.showToast({
-        title: '先选择身份',
-        icon: 'none'
-      });
-      return;
-    }
+    if (!this.ensureIdentityReady()) return;
     if (!this.ensureNicknameReady()) {
       return;
     }
@@ -592,6 +561,7 @@ Page({
     });
   },
   openCompleted() {
+    if (!this.ensureIdentityReady()) return;
     if (!this.ensureNicknameReady()) {
       return;
     }
@@ -617,6 +587,7 @@ Page({
     });
   },
   openFamilyPage() {
+    if (!this.ensureIdentityReady()) return;
     wx.navigateTo({
       url: '/pages/family/index'
     });
