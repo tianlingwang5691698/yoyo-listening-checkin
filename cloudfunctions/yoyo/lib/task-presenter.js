@@ -5,8 +5,14 @@ const CATEGORY_LABELS = {
   newconcept4: 'New Concept 4',
   peppa: 'Peppa',
   unlock1: 'Unlock 1',
+  unlock2: 'Unlock 2',
+  unlock3: 'Unlock 3',
+  unlock4: 'Unlock 4',
   song: 'Songs'
 };
+
+const NEW_CONCEPT_CATEGORIES = ['newconcept1', 'newconcept2', 'newconcept3', 'newconcept4'];
+const UNLOCK_CATEGORIES = ['unlock1', 'unlock2', 'unlock3', 'unlock4'];
 
 function getCategoryLabel(category) {
   return CATEGORY_LABELS[category] || category;
@@ -26,7 +32,7 @@ function getTaskPresentation(task) {
       coverBadge: 'Peppa'
     };
   }
-  if (['newconcept1', 'newconcept2', 'newconcept3', 'newconcept4'].includes(task.category)) {
+  if (NEW_CONCEPT_CATEGORIES.includes(task.category)) {
     const levelNumber = task.category === 'newconcept1' ? 1 : 2;
     return {
       displayTitle: title,
@@ -36,13 +42,15 @@ function getTaskPresentation(task) {
       coverMeta: `New Concept English ${levelNumber}`
     };
   }
-  if (task.category === 'unlock1') {
-    const match = title.match(/Unlock2e_A1_(\d+\.\d+)/i);
+  if (UNLOCK_CATEGORIES.includes(task.category)) {
+    const seriesNumber = task.category.replace('unlock', '') || '1';
+    const levelLabel = task.category === 'unlock1' ? 'A1' : task.category === 'unlock2' ? 'A2' : task.category === 'unlock3' ? 'B1' : 'B2';
+    const match = title.match(/(?:Unlock2e_|UL2v2_)?(?:A1|L2|L3|B2)[_-]*(?:TST_LS_)?(?:U)?(\d+\.\d+)/i);
     return {
       displayTitle: match ? match[1] : title,
-      displaySubtitle: 'A1 Listen & Speak',
+      displaySubtitle: `${levelLabel} Listen & Speak`,
       coverVariant: 'unlock',
-      coverBadge: 'Unlock-1'
+      coverBadge: `Unlock-${seriesNumber}`
     };
   }
   if (task.category === 'song') {
@@ -71,14 +79,14 @@ function getTaskReward(category, progress, task) {
       rewardCopy: progress && progress.completedToday ? '这一集今天已经顺利通关。' : '前两遍盲听，最后一遍带文本高亮。'
     };
   }
-  if (['newconcept1', 'newconcept2', 'newconcept3', 'newconcept4'].includes(category)) {
+  if (NEW_CONCEPT_CATEGORIES.includes(category)) {
     return {
       rewardBadge: category === 'newconcept1' ? 'NCE 1' : 'NCE 2',
       rewardTitle: category === 'newconcept1' ? 'New Concept 1' : 'New Concept 2',
       rewardCopy: progress && progress.completedToday ? '今天这条已经完成。' : '按三遍节奏听，第二遍专心盲听。'
     };
   }
-  if (category === 'unlock1') {
+  if (UNLOCK_CATEGORIES.includes(category)) {
     return {
       rewardBadge: progress && progress.completedToday ? 'UNLOCKED' : `UNLOCK ${nextStep}`,
       rewardTitle: progress && progress.completedToday ? '学习徽章已点亮' : '学习任务线',
@@ -100,12 +108,12 @@ function decorateTask(task, progress, category, deps) {
     getMediaDisplayName
   } = deps;
   if (!task) {
-    const emptyTask = category === 'unlock1'
+    const emptyTask = UNLOCK_CATEGORIES.includes(category)
       ? {
-        taskId: 'unlock1-pending',
-        category: 'unlock1',
-        title: 'Unlock 1',
-        subtitle: '检查云端 Unlock1 目录',
+        taskId: `${category}-pending`,
+        category,
+        title: getCategoryLabel(category),
+        subtitle: `检查云端 ${getCategoryLabel(category)} 目录`,
         audioUrl: '',
         audioCloudPath: '',
         audioFileId: '',
@@ -128,13 +136,13 @@ function decorateTask(task, progress, category, deps) {
       textUnlocked: false,
       completedToday: false,
       isPendingAsset: true,
-      note: category === 'unlock1'
-        ? 'Unlock1 音频暂时未就绪，先检查训练池或云目录。'
+      note: UNLOCK_CATEGORIES.includes(category)
+        ? `${getCategoryLabel(category)} 音频暂时未就绪，先检查云目录。`
         : '把 Songs 音频放进来后，这里就会开始轮换。',
-      rewardBadge: category === 'unlock1' ? 'UNLOCK 1' : 'SONG 1',
-      rewardTitle: category === 'unlock1' ? '学习任务线' : 'Songs 星星线',
-      rewardCopy: category === 'unlock1'
-        ? 'Unlock1 素材恢复后，这条奖励线会继续推进。'
+      rewardBadge: UNLOCK_CATEGORIES.includes(category) ? 'UNLOCK 1' : 'SONG 1',
+      rewardTitle: UNLOCK_CATEGORIES.includes(category) ? '学习任务线' : 'Songs 星星线',
+      rewardCopy: UNLOCK_CATEGORIES.includes(category)
+        ? `${getCategoryLabel(category)} 素材恢复后，这条奖励线会继续推进。`
         : '把 Songs 音频和 bundle 放进来后，这条奖励线就会亮起来。'
     });
   }
@@ -145,7 +153,7 @@ function decorateTask(task, progress, category, deps) {
   const transcriptTrackId = task.transcriptTrackId || null;
   const planPhase = task.planPhase || '';
   const isRound2 = planPhase === 'round-2';
-  const isNewConcept = ['newconcept1', 'newconcept2', 'newconcept3', 'newconcept4'].includes(category);
+  const isNewConcept = NEW_CONCEPT_CATEGORIES.includes(category);
   const supportsQuestionAnswer = isRound2 && isNewConcept;
   const speakingMode = supportsQuestionAnswer
     ? 'nce-question-answer'
@@ -162,7 +170,7 @@ function decorateTask(task, progress, category, deps) {
     audioDisplayName: getMediaDisplayName(task.audioUrl),
     audioCompactTitle: category === 'peppa'
       ? [base.displaySubtitle, base.displayTitle].filter(Boolean).join(' · ')
-      : category === 'unlock1'
+      : UNLOCK_CATEGORIES.includes(category)
         ? [base.coverBadge, base.displayTitle].filter(Boolean).join(' · ')
         : [base.displayTitle, base.displaySubtitle].filter(Boolean).join(' · '),
     playCount: progress.playCount,

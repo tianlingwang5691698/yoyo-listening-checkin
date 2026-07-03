@@ -1378,6 +1378,15 @@
 - 设计记录：记录页“查看”是回看动作，只读历史任务快照，不触发学习写入。
 - 验证：已做前端脚本语法检查。
 
+### 2026-07-03 Unlock2/3/4 级别入口
+
+- 文件：`cloudfunctions/yoyo/services/level.service.js`
+- 文件：`cloudfunctions/yoyo/lib/catalog-engine.js`
+- 文件：`cloudfunctions/yoyo/lib/task-presenter.js`
+- 改动：A2/B1/B2 级别页分别接入 Unlock2/3/4，和 New Concept 并列展示。
+- 设计记录：A2/B1/B2 级别页保持节目入口结构，只展示通过本地清洗且不短于 60 秒的 Unlock 音频。
+- 验证：已做云函数脚本语法检查和关键单测。
+
 ## 后续记录格式
 
 每次 UI/交互改动后追加：

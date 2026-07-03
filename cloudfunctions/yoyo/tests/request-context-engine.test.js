@@ -94,6 +94,10 @@ test('resolveCatalogCategories 对任务详情只刷新请求分类', () => {
     ['unlock1']
   );
   assert.deepEqual(
+    requestContextEngine.resolveCatalogCategories('getTaskDetail', 'unlock2', {}),
+    ['unlock2']
+  );
+  assert.deepEqual(
     requestContextEngine.resolveCatalogCategories('getTaskDetail', 'bad-category', {}),
     []
   );

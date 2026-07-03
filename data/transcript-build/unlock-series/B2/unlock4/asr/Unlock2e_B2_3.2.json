@@ -1,0 +1,109 @@
+{
+  "text": "3.2 1 So this is a very serious disease, isn't it? 2 So this is a very serious disease, isn't it? 3 It's a kind of medicine, isn't it? 4 Governments would need to implement vaccination programs for common diseases, wouldn't they? 5 The government can't force people to have a vaccine, can it? 6 People don't want a contracted disease, do they? 7 During a pandemic, we should stop all flights from countries that are affected, shouldn't we? 8 People who have the flu should stay at home from school or from work, shouldn't they?",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 2000,
+      "text": "3.2"
+    },
+    {
+      "index": 2,
+      "startMs": 2000,
+      "endMs": 4000,
+      "text": "1"
+    },
+    {
+      "index": 3,
+      "startMs": 4000,
+      "endMs": 10000,
+      "text": "So this is a very serious disease, isn't it?"
+    },
+    {
+      "index": 4,
+      "startMs": 10000,
+      "endMs": 12000,
+      "text": "2"
+    },
+    {
+      "index": 5,
+      "startMs": 12000,
+      "endMs": 17000,
+      "text": "So this is a very serious disease, isn't it?"
+    },
+    {
+      "index": 6,
+      "startMs": 17000,
+      "endMs": 19000,
+      "text": "3"
+    },
+    {
+      "index": 7,
+      "startMs": 19000,
+      "endMs": 24000,
+      "text": "It's a kind of medicine, isn't it?"
+    },
+    {
+      "index": 8,
+      "startMs": 24000,
+      "endMs": 26000,
+      "text": "4"
+    },
+    {
+      "index": 9,
+      "startMs": 26000,
+      "endMs": 33000,
+      "text": "Governments would need to implement vaccination programs for common diseases, wouldn't they?"
+    },
+    {
+      "index": 10,
+      "startMs": 33000,
+      "endMs": 35000,
+      "text": "5"
+    },
+    {
+      "index": 11,
+      "startMs": 35000,
+      "endMs": 41000,
+      "text": "The government can't force people to have a vaccine, can it?"
+    },
+    {
+      "index": 12,
+      "startMs": 41000,
+      "endMs": 43000,
+      "text": "6"
+    },
+    {
+      "index": 13,
+      "startMs": 43000,
+      "endMs": 48000,
+      "text": "People don't want a contracted disease, do they?"
+    },
+    {
+      "index": 14,
+      "startMs": 48000,
+      "endMs": 50000,
+      "text": "7"
+    },
+    {
+      "index": 15,
+      "startMs": 51000,
+      "endMs": 58000,
+      "text": "During a pandemic, we should stop all flights from countries that are affected, shouldn't we?"
+    },
+    {
+      "index": 16,
+      "startMs": 58000,
+      "endMs": 60000,
+      "text": "8"
+    },
+    {
+      "index": 17,
+      "startMs": 60000,
+      "endMs": 67000,
+      "text": "People who have the flu should stay at home from school or from work, shouldn't they?"
+    }
+  ],
+  "language": "en",
+  "model": "base"
+}

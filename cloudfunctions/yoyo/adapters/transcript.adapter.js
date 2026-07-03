@@ -76,7 +76,7 @@ function normalizeTranscriptTrack(track, options = {}) {
 }
 
 function shouldLazyTranscriptCategory(category) {
-  return ['newconcept1', 'newconcept2', 'newconcept3', 'newconcept4'].includes(category);
+  return ['newconcept1', 'newconcept2', 'newconcept3', 'newconcept4', 'unlock2', 'unlock3', 'unlock4'].includes(category);
 }
 
 async function getTranscriptTrackMap(category) {
@@ -161,7 +161,7 @@ async function getTranscriptBundle(task) {
     };
   }
   const normalizedTrack = normalizeTranscriptTrack(transcriptTrack, {
-    syncGranularity: task && task.category === 'song' ? 'line' : undefined
+    syncGranularity: task && (task.category === 'song' || ['unlock2', 'unlock3', 'unlock4'].includes(task.category)) ? 'line' : undefined
   });
   return {
     transcriptTrack: normalizedTrack,

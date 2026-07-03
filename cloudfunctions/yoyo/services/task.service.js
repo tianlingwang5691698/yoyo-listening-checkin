@@ -1,5 +1,7 @@
 const study = require('../facades/study.facade');
 
+const STANDALONE_LEVEL_CATEGORIES = ['newconcept2', 'unlock2', 'newconcept3', 'unlock3', 'newconcept4', 'unlock4'];
+
 async function getTaskDetail(event) {
   const { ctx, today } = await study.prepareRequestContext(Object.assign({}, event, {
     action: 'getTaskDetail'
@@ -36,7 +38,7 @@ async function getTaskDetail(event) {
   const targetPlan = (planRunType === 'catchup' || isPreview)
     ? study.buildPlanForDay(targetPlanDayIndex, study.getPeppaReviewPlanOptions(progressRecords, checkins, ctx.child.childId, targetDate))
     : null;
-  const categoryTasks = ['newconcept2', 'newconcept3', 'newconcept4'].includes(payload.category)
+  const categoryTasks = STANDALONE_LEVEL_CATEGORIES.includes(payload.category)
     ? study.decoratePlannedTasks(progressRecords, ctx.child.childId, payload.category, targetDate, await study.resolveStandaloneCategoryTasks(payload.category, ctx.child.childId, targetDate), {
       planRunType: 'level',
       targetDate,
@@ -114,7 +116,7 @@ async function getTaskTranscript(event) {
     category: requestedCategory || ((payload.taskSnapshot && payload.taskSnapshot.category) || ''),
     taskId: String(payload.taskId || ((payload.taskSnapshot && payload.taskSnapshot.taskId) || '')).trim()
   });
-  if (['newconcept2', 'newconcept3', 'newconcept4'].includes(requestedCategory)) {
+  if (STANDALONE_LEVEL_CATEGORIES.includes(requestedCategory)) {
     const standaloneTasks = await study.resolveStandaloneCategoryTasks(requestedCategory, ctx.child.childId, today);
     task = standaloneTasks.find((item) => item.taskId === task.taskId) || standaloneTasks[0] || task;
   }
@@ -179,7 +181,7 @@ async function markTaskListened(event, context) {
       : study.getNextPlanDayIndexForDate(checkins, today),
     study.getPeppaReviewPlanOptions(progressRecords, checkins, ctx.child.childId, targetDate)
   );
-  const categoryTasks = ['newconcept2', 'newconcept3', 'newconcept4'].includes(category)
+  const categoryTasks = STANDALONE_LEVEL_CATEGORIES.includes(category)
     ? study.decoratePlannedTasks(progressRecords, ctx.child.childId, category, targetDate, await study.resolveStandaloneCategoryTasks(category, ctx.child.childId, targetDate), {
       planRunType: 'level',
       targetDate,

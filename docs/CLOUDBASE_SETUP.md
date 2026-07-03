@@ -20,15 +20,22 @@
 - `A1/Peppa`
 - `A1/Unlock1/Unlock1 听口音频 Class Audio`
 - `A1/Super simple songs`
+- `A2/Unlock2/Class Audio`
+- `B1/Unlock3/Class Audio`
+- `B2/Unlock4/Class Audio`
 - `_transcripts/A1/peppa`
 - `_transcripts/A1/unlock1`
 - `_transcripts/A1/songs`
+- `_transcripts/A2/unlock2`
+- `_transcripts/B1/unlock3`
+- `_transcripts/B2/unlock4`
 
 要求：
 
 - `Peppa` 每季独立子目录
 - 音频 `.mp3` 与对应 `.pdf` 尽量放同目录
 - `Unlock1` 音频与脚本 PDF 当前放在 `Unlock1 听口音频 Class Audio` 子目录
+- `Unlock2/3/4` 只上传本地 `data/transcript-build/unlock-series/**/upload-audio-list.txt` 中列出的 `>= 60 秒` 音频
 - `Song` 当前从 `A1/Super simple songs` 递归扫描，至少要有可识别音频
 - transcript 正式文件统一放在 `_transcripts/<level>/<series>/`
 

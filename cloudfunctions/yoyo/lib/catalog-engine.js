@@ -1,5 +1,6 @@
 const { peppaTranscriptBuildStatus } = require('../transcripts/peppa_build_status');
 const { TRANSCRIPT_BUNDLE_PATHS } = require('./constants');
+const unlockSeriesManifests = require('../data/unlock-series-manifests.json');
 const trainingPoolRepository = require('../repositories/training-pool.repository');
 const storageAdapter = require('../adapters/storage.adapter');
 const transcriptAdapter = require('../adapters/transcript.adapter');
@@ -10,6 +11,9 @@ const NEW_CONCEPT2_AUDIO_ROOT = 'A2/NewConcept2-US';
 const NEW_CONCEPT3_AUDIO_ROOT = 'B1/NewConcept3-US';
 const NEW_CONCEPT4_AUDIO_ROOT = 'B2/NewConcept4-US';
 const UNLOCK1_AUDIO_ROOT = 'A1/Unlock1/Unlock1 听口音频Class Audio';
+const UNLOCK2_AUDIO_ROOT = 'A2/Unlock2/Class Audio';
+const UNLOCK3_AUDIO_ROOT = 'B1/Unlock3/Class Audio';
+const UNLOCK4_AUDIO_ROOT = 'B2/Unlock4/Class Audio';
 const UNLOCK1_SCRIPT_PATH = `${UNLOCK1_AUDIO_ROOT}/Unlock 2e Listening and Speaking 1 Scripts.pdf`;
 const UNLOCK1_TRAINING_POOL_COLLECTION = 'unlock1AudioTrainingPool';
 const UNLOCK1_MIN_DURATION_SEC = 60;
@@ -20,6 +24,9 @@ const STORAGE_ROOTS = {
   newconcept4: NEW_CONCEPT4_AUDIO_ROOT,
   peppa: 'A1/Peppa',
   unlock1: UNLOCK1_AUDIO_ROOT,
+  unlock2: UNLOCK2_AUDIO_ROOT,
+  unlock3: UNLOCK3_AUDIO_ROOT,
+  unlock4: UNLOCK4_AUDIO_ROOT,
   song: 'A1/Super simple songs'
 };
 const STORAGE_ROOT_CANDIDATES = {
@@ -29,6 +36,9 @@ const STORAGE_ROOT_CANDIDATES = {
   newconcept4: ['B2/NewConcept3-US/新概念英语（第4册）美音（MP3+LRC）', NEW_CONCEPT4_AUDIO_ROOT, 'B2/NewConcept4', 'B2/New Concept 4', 'B2/new-concept-4-us', 'B2/Newconcept4', 'B2/NewConcept3-US'],
   peppa: [`${STORAGE_ROOTS.peppa}/第1季`, `${STORAGE_ROOTS.peppa}/第2季`, `${STORAGE_ROOTS.peppa}/第3季`, STORAGE_ROOTS.peppa],
   unlock1: [UNLOCK1_AUDIO_ROOT, 'A1/Unlock1'],
+  unlock2: [UNLOCK2_AUDIO_ROOT, 'A2/Unlock2', 'A2/Unlock 2'],
+  unlock3: [UNLOCK3_AUDIO_ROOT, 'B1/Unlock3', 'B1/Unlock 3'],
+  unlock4: [UNLOCK4_AUDIO_ROOT, 'B2/Unlock4', 'B2/Unlock 4'],
   song: [STORAGE_ROOTS.song, 'A1/Super simple song']
 };
 const AUDIO_FILE_PATTERN = /\.(mp3|m4a|aac|wav)$/i;
@@ -169,6 +179,10 @@ const songPlaceholder = {
   textSource: null
 };
 
+const STANDALONE_LEVEL_CATEGORIES = ['newconcept2', 'unlock2', 'newconcept3', 'unlock3', 'newconcept4', 'unlock4'];
+const NEW_CONCEPT_CATEGORIES = ['newconcept1', 'newconcept2', 'newconcept3', 'newconcept4'];
+const UNLOCK_SERIES_CATEGORIES = ['unlock1', 'unlock2', 'unlock3', 'unlock4'];
+
 function slugifyTrackIdPart(value) {
   return String(value || '')
     .trim()
@@ -191,7 +205,7 @@ function getTrackSlugVariants(value) {
 }
 
 function inferNewConceptTaskMeta(category, audioBaseName, index) {
-  if (!['newconcept1', 'newconcept2', 'newconcept3', 'newconcept4'].includes(category)) {
+  if (!NEW_CONCEPT_CATEGORIES.includes(category)) {
     return null;
   }
   const levelNumber = category === 'newconcept1' ? 1 : 2;
@@ -230,6 +244,63 @@ function inferNewConceptTaskMeta(category, audioBaseName, index) {
       filePath: ''
     }
   };
+}
+
+function getUnlockSeriesLevel(category) {
+  if (category === 'unlock1') return 'A1';
+  if (category === 'unlock2') return 'A2';
+  if (category === 'unlock3') return 'B1';
+  if (category === 'unlock4') return 'B2';
+  return '';
+}
+
+function getUnlockSeriesNumber(category) {
+  if (category === 'unlock1') return 1;
+  if (category === 'unlock2') return 2;
+  if (category === 'unlock3') return 3;
+  if (category === 'unlock4') return 4;
+  return 0;
+}
+
+function buildUnlockSeriesTasks(category) {
+  const manifest = unlockSeriesManifests[category] || null;
+  const tracks = Array.isArray(manifest && manifest.tracks) ? manifest.tracks : [];
+  const level = getUnlockSeriesLevel(category);
+  const seriesNumber = getUnlockSeriesNumber(category);
+  return tracks.map((item, index) => {
+    const taskId = `${category}-${index + 1}`;
+    const title = item.title || item.normalizedFileName || taskId;
+    const trackSlug = slugifyTrackIdPart(item.normalizedFileName || title);
+    return {
+      taskId,
+      category,
+      title,
+      subtitle: `Unlock ${seriesNumber} 第 ${index + 1} 条`,
+      audioUrl: buildCloudAssetUrl(item.cloudPath),
+      audioCloudPath: item.cloudPath,
+      audioFileId: buildCloudFileId(item.cloudPath),
+      audioSource: 'static-cloud-url',
+      repeatTarget: 3,
+      durationSec: Number(item.durationSec || 0) || 180,
+      coverTone: index % 2 === 0 ? 'peach' : 'berry',
+      transcriptTrackId: `track-${category}-${trackSlug}`,
+      transcriptTrackCandidates: [
+        `track-${category}-${trackSlug}`,
+        `${category}-${trackSlug}`,
+        title,
+        item.normalizedFileName,
+        item.cloudPath
+      ].filter(Boolean),
+      transcriptStatus: 'pending',
+      transcriptBatch: Math.floor(index / 12) + 1,
+      syncGranularity: 'line',
+      textSource: {
+        sourceType: 'transcript-bundle',
+        title: `${level} Unlock ${seriesNumber} Listening and Speaking`,
+        filePath: ''
+      }
+    };
+  });
 }
 
 function inferPeppaTaskMeta(audioBaseName, cloudPath, index) {
@@ -327,7 +398,7 @@ function findTranscriptTrack(transcriptTrackMap, task) {
 }
 
 function shouldLazyTranscriptCategory(category) {
-  return ['newconcept1', 'newconcept2', 'newconcept3', 'newconcept4'].includes(category);
+  return NEW_CONCEPT_CATEGORIES.includes(category) || ['unlock2', 'unlock3', 'unlock4'].includes(category);
 }
 
 async function getTranscriptBundle(task) {
@@ -347,6 +418,9 @@ function getStaticCatalogMap() {
     newconcept4: [],
     peppa: peppaTasks,
     unlock1: unlockTasks,
+    unlock2: buildUnlockSeriesTasks('unlock2'),
+    unlock3: buildUnlockSeriesTasks('unlock3'),
+    unlock4: buildUnlockSeriesTasks('unlock4'),
     song: songTasks
   };
 }
@@ -473,7 +547,7 @@ async function getDurationTrackMap(category) {
 }
 
 async function getTranscriptDurationLookup(category) {
-  if (!['newconcept1', 'newconcept2', 'newconcept3', 'newconcept4', 'peppa', 'song'].includes(category)) {
+  if (![...NEW_CONCEPT_CATEGORIES, ...UNLOCK_SERIES_CATEGORIES, 'peppa', 'song'].includes(category)) {
     return {};
   }
   const trackMap = await getDurationTrackMap(category);
@@ -693,6 +767,7 @@ async function buildCloudCatalogFromRoot(category, rootPath, staticItems, option
   const staticLookup = buildStaticTaskLookup(staticItems);
   const trainingPool = options && options.trainingPool;
   const useUnlock1TrainingPool = category === 'unlock1' && shouldUseUnlock1TrainingPool(trainingPool);
+  const isFilteredUnlockSeries = UNLOCK_SERIES_CATEGORIES.includes(category);
   const audioEntries = category === 'unlock1'
     ? audioFiles.map((file, index) => {
       const audioBaseName = getBaseName(file.cloudPath);
@@ -718,7 +793,7 @@ async function buildCloudCatalogFromRoot(category, rootPath, staticItems, option
       index,
       matchedStatic: staticLookup[normalizeKey(getBaseName(file.cloudPath))] || null,
       trainingRecord: null
-    }));
+    })).filter((entry) => !isFilteredUnlockSeries || !!entry.matchedStatic);
   const unlock1ExcludedShortCount = category === 'unlock1'
     ? audioFiles.length - audioEntries.length
     : undefined;
@@ -1029,6 +1104,9 @@ const CATEGORY_LABELS = {
   newconcept4: 'New Concept 4',
   peppa: 'Peppa',
   unlock1: 'Unlock 1',
+  unlock2: 'Unlock 2',
+  unlock3: 'Unlock 3',
+  unlock4: 'Unlock 4',
   song: 'Songs'
 };
 
@@ -1038,7 +1116,7 @@ function getCatalog(category) {
   if (category === 'newconcept1') {
     return Object.prototype.hasOwnProperty.call(catalogs, 'newconcept1') ? (catalogs.newconcept1 || []) : staticCatalogs.newconcept1;
   }
-  if (['newconcept2', 'newconcept3', 'newconcept4'].includes(category)) {
+  if (STANDALONE_LEVEL_CATEGORIES.includes(category)) {
     return Object.prototype.hasOwnProperty.call(catalogs, category) ? (catalogs[category] || []) : staticCatalogs[category];
   }
   if (category === 'peppa') {

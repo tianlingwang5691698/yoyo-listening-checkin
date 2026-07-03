@@ -8,6 +8,9 @@ const TRANSCRIPT_BUNDLE_PATHS = {
   newconcept4: ['_transcripts/B2/new-concept-4-us-line/bundle.json', '_transcripts/B2/new-concept-4-us/bundle.json', '_transcripts/B2/newconcept4/bundle.json'],
   peppa: ['_transcripts/A1/peppa/bundle.json', '_transcripts/A1/peppa/S2/bundle.json', '_transcripts/A1/peppa/S3/bundle.json'],
   unlock1: ['_transcripts/A1/unlock1/bundle.json'],
+  unlock2: ['_transcripts/A2/unlock2/bundle.json'],
+  unlock3: ['_transcripts/B1/unlock3/bundle.json'],
+  unlock4: ['_transcripts/B2/unlock4/bundle.json'],
   song: ['_transcripts/A1/songs/bundle.json']
 };
 const STORAGE_ROOTS = {
@@ -17,6 +20,9 @@ const STORAGE_ROOTS = {
   newconcept4: 'B2/NewConcept4-US',
   peppa: 'A1/Peppa',
   unlock1: 'A1/Unlock1/Unlock1 听口音频Class Audio',
+  unlock2: 'A2/Unlock2/Class Audio',
+  unlock3: 'B1/Unlock3/Class Audio',
+  unlock4: 'B2/Unlock4/Class Audio',
   song: 'A1/Super simple songs'
 };
 const REQUIRED_COLLECTIONS = [

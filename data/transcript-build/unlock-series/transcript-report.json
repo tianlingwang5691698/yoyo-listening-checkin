@@ -1,0 +1,37 @@
+{
+  "model": "base",
+  "eligibleCount": 62,
+  "pdfMatchedCount": 32,
+  "asrDraftCount": 30,
+  "remainingManualReviewCount": 0,
+  "processedThisRun": 30,
+  "reports": [
+    {
+      "level": "A2",
+      "series": "unlock2",
+      "eligibleCount": 23,
+      "asrDraftCount": 6,
+      "pdfMatchedCount": 17,
+      "remainingManualReviewCount": 0,
+      "processedThisRun": 6
+    },
+    {
+      "level": "B1",
+      "series": "unlock3",
+      "eligibleCount": 12,
+      "asrDraftCount": 7,
+      "pdfMatchedCount": 5,
+      "remainingManualReviewCount": 0,
+      "processedThisRun": 7
+    },
+    {
+      "level": "B2",
+      "series": "unlock4",
+      "eligibleCount": 27,
+      "asrDraftCount": 17,
+      "pdfMatchedCount": 10,
+      "remainingManualReviewCount": 0,
+      "processedThisRun": 17
+    }
+  ]
+}

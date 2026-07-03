@@ -1,5 +1,13 @@
 const study = require('../facades/study.facade');
 
+const LEVEL_CATEGORY_GROUPS = {
+  A2: ['newconcept2', 'unlock2'],
+  B1: ['newconcept3', 'unlock3'],
+  B2: ['newconcept4', 'unlock4']
+};
+
+const STANDALONE_CATEGORY_IDS = [].concat(LEVEL_CATEGORY_GROUPS.A2, LEVEL_CATEGORY_GROUPS.B1, LEVEL_CATEGORY_GROUPS.B2);
+
 async function getLevelOverview(event) {
   const { ctx, today } = await study.prepareRequestContext(Object.assign({}, event, {
     action: 'getLevelOverview'
@@ -35,11 +43,14 @@ async function getLevelOverview(event) {
       planDayIndex: previewPlanDayIndex
     })
     : [];
-  const standaloneCategoryIds = ['newconcept2', 'newconcept3', 'newconcept4'];
+  const standaloneCategoryIds = STANDALONE_CATEGORY_IDS;
   const standaloneOverviews = isA1PhaseOverview ? {
     newconcept2: { directTasks: [], overview: [] },
+    unlock2: { directTasks: [], overview: [] },
     newconcept3: { directTasks: [], overview: [] },
-    newconcept4: { directTasks: [], overview: [] }
+    unlock3: { directTasks: [], overview: [] },
+    newconcept4: { directTasks: [], overview: [] },
+    unlock4: { directTasks: [], overview: [] }
   } : Object.fromEntries(await Promise.all(standaloneCategoryIds.map(async (categoryId) => {
     const directTasks = await study.resolveStandaloneCategoryTasks(categoryId, ctx.child.childId, today);
     const overview = directTasks.length
@@ -86,16 +97,22 @@ async function getLevelOverview(event) {
         planDayIndex: previewPlan ? previewPlan.dayIndex : dashboard.planDayIndex
       };
     }),
-    a2Categories: standaloneOverviews.newconcept2.overview,
-    b1Categories: standaloneOverviews.newconcept3.overview,
-    b2Categories: standaloneOverviews.newconcept4.overview,
+    a2Categories: LEVEL_CATEGORY_GROUPS.A2.flatMap((categoryId) => standaloneOverviews[categoryId].overview),
+    b1Categories: LEVEL_CATEGORY_GROUPS.B1.flatMap((categoryId) => standaloneOverviews[categoryId].overview),
+    b2Categories: LEVEL_CATEGORY_GROUPS.B2.flatMap((categoryId) => standaloneOverviews[categoryId].overview),
     levelDebug: {
       newconcept2CatalogCount: study.getCatalog('newconcept2').length,
       newconcept2DirectCount: standaloneOverviews.newconcept2.directTasks.length,
+      unlock2CatalogCount: study.getCatalog('unlock2').length,
+      unlock2DirectCount: standaloneOverviews.unlock2.directTasks.length,
       newconcept3CatalogCount: study.getCatalog('newconcept3').length,
       newconcept3DirectCount: standaloneOverviews.newconcept3.directTasks.length,
+      unlock3CatalogCount: study.getCatalog('unlock3').length,
+      unlock3DirectCount: standaloneOverviews.unlock3.directTasks.length,
       newconcept4CatalogCount: study.getCatalog('newconcept4').length,
       newconcept4DirectCount: standaloneOverviews.newconcept4.directTasks.length,
+      unlock4CatalogCount: study.getCatalog('unlock4').length,
+      unlock4DirectCount: standaloneOverviews.unlock4.directTasks.length,
       resourceDebug: study.getResourceDebugSnapshot()
     },
     planDayIndex: previewPlan ? previewPlan.dayIndex : dashboard.planDayIndex,

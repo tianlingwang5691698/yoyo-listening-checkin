@@ -1,5 +1,6 @@
 function resolveCatalogCategories(action, requestedCategory, payload = {}) {
   let catalogCategories = ['newconcept1', 'song'];
+  const knownAudioCategories = ['newconcept1', 'newconcept2', 'unlock2', 'newconcept3', 'unlock3', 'newconcept4', 'unlock4', 'peppa', 'song', 'unlock1'];
   const view = String((payload && payload.view) || '').trim();
   if (action === 'getDashboard') {
     return [];
@@ -9,10 +10,10 @@ function resolveCatalogCategories(action, requestedCategory, payload = {}) {
     if (phase === 'round-1' || phase === 'round-2') {
       return ['newconcept1', 'peppa', 'unlock1', 'song'];
     }
-    return ['newconcept1', 'newconcept2', 'newconcept3', 'newconcept4', 'peppa', 'unlock1', 'song'];
+    return knownAudioCategories;
   }
   if (action === 'getTaskDetail' || action === 'markTaskListened') {
-    if (['newconcept1', 'newconcept2', 'newconcept3', 'newconcept4', 'peppa', 'song', 'unlock1'].includes(requestedCategory)) {
+    if (knownAudioCategories.includes(requestedCategory)) {
       return [requestedCategory];
     }
     return [];

@@ -1,0 +1,115 @@
+{
+  "text": "5.2 1 A It has some beautiful original features. B It looks as though it's about to collapse. 2 A acquiring such an old building could be a huge mistake. B Really? I think the project is going to be a great success. 3 A It would be more of a transformation if we built a modern building made of materials like steel and glass. B Couldn't we do both? We'll maintain more of a connection to the past if we include the old building as part of the new one.",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 2000,
+      "text": "5.2"
+    },
+    {
+      "index": 2,
+      "startMs": 2000,
+      "endMs": 3500,
+      "text": "1"
+    },
+    {
+      "index": 3,
+      "startMs": 3500,
+      "endMs": 5400,
+      "text": "A"
+    },
+    {
+      "index": 4,
+      "startMs": 5400,
+      "endMs": 10600,
+      "text": "It has some beautiful original features."
+    },
+    {
+      "index": 5,
+      "startMs": 10600,
+      "endMs": 12600,
+      "text": "B"
+    },
+    {
+      "index": 6,
+      "startMs": 12600,
+      "endMs": 17600,
+      "text": "It looks as though it's about to collapse."
+    },
+    {
+      "index": 7,
+      "startMs": 17600,
+      "endMs": 19100,
+      "text": "2"
+    },
+    {
+      "index": 8,
+      "startMs": 19100,
+      "endMs": 21000,
+      "text": "A"
+    },
+    {
+      "index": 9,
+      "startMs": 21000,
+      "endMs": 27800,
+      "text": "acquiring such an old building could be a huge mistake."
+    },
+    {
+      "index": 10,
+      "startMs": 27800,
+      "endMs": 29700,
+      "text": "B"
+    },
+    {
+      "index": 11,
+      "startMs": 29700,
+      "endMs": 30700,
+      "text": "Really?"
+    },
+    {
+      "index": 12,
+      "startMs": 30700,
+      "endMs": 36300,
+      "text": "I think the project is going to be a great success."
+    },
+    {
+      "index": 13,
+      "startMs": 36300,
+      "endMs": 37800,
+      "text": "3"
+    },
+    {
+      "index": 14,
+      "startMs": 37800,
+      "endMs": 39700,
+      "text": "A"
+    },
+    {
+      "index": 15,
+      "startMs": 39700,
+      "endMs": 49900,
+      "text": "It would be more of a transformation if we built a modern building made of materials like steel and glass."
+    },
+    {
+      "index": 16,
+      "startMs": 49900,
+      "endMs": 51900,
+      "text": "B"
+    },
+    {
+      "index": 17,
+      "startMs": 51900,
+      "endMs": 53600,
+      "text": "Couldn't we do both?"
+    },
+    {
+      "index": 18,
+      "startMs": 53600,
+      "endMs": 60600,
+      "text": "We'll maintain more of a connection to the past if we include the old building as part of the new one."
+    }
+  ],
+  "language": "en",
+  "model": "base"
+}

@@ -15,6 +15,10 @@ function buildLevelCatalogEntry(category, options = {}, deps) {
 }
 
 async function listDirectAudioTasksForCategory(category, deps) {
+  const catalogTasks = deps.getCatalog(category);
+  if (catalogTasks.length) {
+    return catalogTasks;
+  }
   const roots = deps.storageRootCandidates[category] || [deps.storageRoots[category]];
   for (const rootPath of roots.filter(Boolean)) {
     try {
@@ -55,7 +59,7 @@ async function listDirectAudioTasksForCategory(category, deps) {
 }
 
 async function resolveStandaloneCategoryTasks(category, childId, date, deps) {
-  if (!['newconcept2', 'newconcept3', 'newconcept4'].includes(category)) {
+  if (!['newconcept2', 'unlock2', 'newconcept3', 'unlock3', 'newconcept4', 'unlock4'].includes(category)) {
     return [];
   }
   const tasks = await listDirectAudioTasksForCategory(category, deps);
