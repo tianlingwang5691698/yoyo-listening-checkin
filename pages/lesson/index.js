@@ -822,7 +822,8 @@ Page({
       view: 'lesson',
       planRunType: this.planRunType,
       targetDate: this.targetDate,
-      planDayIndex: this.planDayIndex
+      planDayIndex: this.planDayIndex,
+      taskSnapshot: this.data.task || undefined
     }, (fresh) => this.applyFreshTaskDetail(fresh));
     if (detail && detail.syncMode === 'cloud-error' && hasSnapshotTask) {
       this.setData(page.buildCloudPageData(this.data, {
