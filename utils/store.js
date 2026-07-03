@@ -902,7 +902,14 @@ async function getAdminFamilyList() {
 
 async function getAdminStatus() {
   return callCloud('getAdminStatus', {}, {
-    isAdmin: false
+    isAdmin: false,
+    openId: '',
+    userId: '',
+    adminServiceVersion: '',
+    builtinHit: false,
+    envHit: false,
+    envConfigured: false,
+    envCount: 0
   }, { useCache: false });
 }
 

@@ -114,6 +114,10 @@
   color: var(--text-muted);
 }
 
+.row-copy.is-required {
+  color: var(--accent-deep);
+}
+
 .profile-input {
   margin-top: 8rpx;
   width: 100%;

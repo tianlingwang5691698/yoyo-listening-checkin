@@ -11,8 +11,9 @@
   <view class="profile-list section-panel">
     <view class="profile-row action-row">
       <view class="row-main">
-        <view class="row-title">昵称</view>
+        <view class="row-title">昵称{{nicknameRequired ? '（必填）' : ''}}</view>
         <input class="row-field profile-input" placeholder="孩子昵称" value="{{childNicknameInput}}" bindinput="handleChildNicknameInput" />
+        <view class="row-copy is-required" wx:if="{{nicknameRequired}}">请更换其他名字后继续使用。</view>
       </view>
       <button class="row-action" bindtap="saveChildProfile">保存</button>
     </view>
@@ -36,7 +37,7 @@
       </view>
       <view class="row-arrow">›</view>
     </view>
-    <view class="profile-row" wx:if="{{adminVisible}}" bindtap="openAdminPage">
+    <view class="profile-row" wx:if="{{adminVisible || (currentMember && currentMember.studyRole === 'parent')}}" bindtap="openAdminPage">
       <view class="row-main">
         <view class="row-title">后台</view>
         <view class="row-copy">查看学生与绑定关系</view>

@@ -44,6 +44,12 @@ function profileInitial(child) {
   return name.slice(0, 1).toUpperCase();
 }
 
+function isDefaultChildNickname(child) {
+  const value = String((child && child.nickname) || '').trim();
+  const childLoginCode = String((child && child.childLoginCode) || '').trim();
+  return !!(child && child.nicknameRequired) || !value || ['同学', '我'].includes(value) || (value === '佑佑' && childLoginCode !== '317613');
+}
+
 function buildVocabularySummary() {
   const today = todayString();
   const seen = {};
@@ -239,7 +245,9 @@ Page({
     cloudCompletedItems: [],
     entryPosterVisible: true,
     entryPosterPage: 0,
-    identitySelectedInSession: false
+    identitySelectedInSession: false,
+    nicknameRequired: false,
+    nicknameInput: ''
   }),
   buildStudyModePresentation(member) {
     const studyRole = member && member.studyRole === 'student' ? 'student' : 'parent';
@@ -259,6 +267,8 @@ Page({
       showCloudDebug: data.showCloudDebug,
       syncDebug: data.syncDebug,
       child: data.child,
+      nicknameRequired: isDefaultChildNickname(data.child),
+      nicknameInput: isDefaultChildNickname(data.child) ? '' : ((data.child && data.child.nickname) || ''),
       profileInitial: profileInitial(data.child),
       currentMember: data.currentMember,
       planDayIndex: data.planDayIndex,
@@ -283,6 +293,50 @@ Page({
         todayCompletedItems: buildTodayCompletedItems.call(this, this.data.groupedDailyTasks, this.data.readingToday, this.data.readingCompleted)
       });
     } catch (error) {}
+  },
+  ensureNicknameReady() {
+    if (!this.data.nicknameRequired) {
+      return true;
+    }
+    wx.showToast({
+      title: '请更换其他名字',
+      icon: 'none'
+    });
+    return false;
+  },
+  handleNicknameInput(event) {
+    this.setData({
+      nicknameInput: event.detail.value
+    });
+  },
+  async saveRequiredNickname() {
+    const nickname = String(this.data.nicknameInput || '').trim();
+    if (!nickname || ['同学', '我'].includes(nickname) || (nickname === '佑佑' && String((this.data.child && this.data.child.childLoginCode) || '').trim() !== '317613')) {
+      wx.showToast({
+        title: '请更换其他名字',
+        icon: 'none'
+      });
+      return;
+    }
+    try {
+      const data = await store.updateChildProfile(nickname);
+      const child = data.child || Object.assign({}, this.data.child, { nickname, nicknameRequired: false });
+      this.setData(page.buildCloudPageData(this.data, {
+        child,
+        nicknameInput: child.nickname || nickname,
+        nicknameRequired: isDefaultChildNickname(child),
+        profileInitial: profileInitial(child)
+      }));
+      wx.showToast({
+        title: '昵称已保存',
+        icon: 'none'
+      });
+    } catch (error) {
+      wx.showToast({
+        title: error.message || '保存失败',
+        icon: 'none'
+      });
+    }
   },
   async onShow() {
     this.homePerf = page.startPagePerf('home');
@@ -382,6 +436,8 @@ Page({
         showCloudDebug: data.showCloudDebug,
         syncDebug: data.syncDebug,
         child: data.child,
+        nicknameRequired: isDefaultChildNickname(data.child),
+        nicknameInput: isDefaultChildNickname(data.child) ? '' : ((data.child && data.child.nickname) || ''),
         currentMember: data.currentMember,
         identityConfirmVisible: false,
         modeChangedNoticeVisible: false
@@ -409,6 +465,9 @@ Page({
     const taskId = event.currentTarget.dataset.taskId;
     const disabled = event.currentTarget.dataset.disabled;
     if (!category || disabled === true || disabled === 'true') {
+      return;
+    }
+    if (!this.ensureNicknameReady()) {
       return;
     }
     const query = taskId
@@ -444,6 +503,9 @@ Page({
       });
       return;
     }
+    if (!this.ensureNicknameReady()) {
+      return;
+    }
     wx.navigateTo({
       url: '/pages/material/index?module=listening'
     });
@@ -456,6 +518,9 @@ Page({
       });
       return;
     }
+    if (!this.ensureNicknameReady()) {
+      return;
+    }
     wx.navigateTo({
       url: '/pages/reading/index'
     });
@@ -466,6 +531,9 @@ Page({
         title: '先选择身份',
         icon: 'none'
       });
+      return;
+    }
+    if (!this.ensureNicknameReady()) {
       return;
     }
     wx.navigateTo({
@@ -486,6 +554,9 @@ Page({
       });
       return;
     }
+    if (!this.ensureNicknameReady()) {
+      return;
+    }
     wx.navigateTo({
       url: '/pages/material/index?module=writing'
     });
@@ -496,6 +567,9 @@ Page({
         title: '先选择身份',
         icon: 'none'
       });
+      return;
+    }
+    if (!this.ensureNicknameReady()) {
       return;
     }
     wx.navigateTo({
@@ -510,11 +584,17 @@ Page({
       });
       return;
     }
+    if (!this.ensureNicknameReady()) {
+      return;
+    }
     wx.navigateTo({
       url: '/pages/reading/flashcards/index'
     });
   },
   openCompleted() {
+    if (!this.ensureNicknameReady()) {
+      return;
+    }
     if (this.data.listeningTaskStatus && this.data.listeningTaskStatus.pending) {
       const phase = getCurrentPhaseKey(this.data.planPhaseLabel);
       const taskGroups = buildStageSnapshotTaskGroups(this.data.groupedDailyTasks);

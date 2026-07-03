@@ -2,8 +2,15 @@
   background: var(--surface);
 }
 
+.admin-total {
+  margin-top: 14rpx;
+  color: var(--accent-deep);
+  font-size: var(--font-section-title-size);
+  font-weight: var(--font-title-weight);
+}
+
 .admin-card {
-  padding: 24rpx 0;
+  padding: 28rpx 0;
   border-bottom: 1rpx solid var(--border-soft);
 }
 
@@ -21,17 +28,23 @@
 
 .admin-name {
   color: var(--text-main);
-  font-size: var(--font-section-title-size);
+  font-size: var(--font-card-title-size);
   font-weight: var(--font-title-weight);
 }
 
 .admin-code,
+.admin-family,
 .member-id {
   margin-top: 6rpx;
   color: var(--text-muted);
   font-size: var(--font-caption-size);
   line-height: 1.45;
   word-break: break-all;
+}
+
+.admin-code {
+  color: var(--text-main);
+  font-weight: var(--font-caption-weight);
 }
 
 .admin-count,
@@ -41,6 +54,80 @@
   font-size: var(--font-caption-size);
 }
 
+.admin-subtitle {
+  margin-top: 24rpx;
+  color: var(--text-main);
+  font-size: var(--font-caption-size);
+  font-weight: var(--font-title-weight);
+}
+
+.empty-inline {
+  margin-top: 14rpx;
+  color: var(--text-muted);
+  font-size: var(--font-caption-size);
+}
+
+.admin-error {
+  padding: 28rpx 0 10rpx;
+}
+
+.admin-error-title {
+  color: var(--text-main);
+  font-size: var(--font-section-title-size);
+  font-weight: var(--font-title-weight);
+}
+
+.admin-error-copy {
+  margin-top: 12rpx;
+  color: var(--text-muted);
+  font-size: var(--font-caption-size);
+  line-height: 1.7;
+  word-break: break-all;
+}
+
+.diagnostic-row {
+  min-height: 76rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20rpx;
+  padding: 16rpx 0;
+  border-bottom: 1rpx solid var(--border-soft);
+}
+
+.diagnostic-row:last-child {
+  border-bottom: none;
+}
+
+.diagnostic-label {
+  flex-shrink: 0;
+  color: var(--text-main);
+  font-size: var(--font-caption-size);
+  font-weight: var(--font-title-weight);
+}
+
+.diagnostic-value {
+  min-width: 0;
+  color: var(--text-muted);
+  font-size: var(--font-caption-size);
+  line-height: 1.45;
+  text-align: right;
+  word-break: break-all;
+}
+
+.admin-retry {
+  margin-top: 22rpx;
+  width: 160rpx;
+  height: 60rpx;
+  border-radius: 999rpx;
+  background: var(--control-muted-bg);
+  color: var(--text-main);
+  font-size: var(--font-caption-size);
+  line-height: 60rpx;
+  text-align: center;
+  font-weight: var(--font-title-weight);
+}
+
 .member-row {
   margin-top: 18rpx;
   padding: 18rpx 20rpx;
@@ -48,7 +135,12 @@
   background: var(--surface-subtle);
 }
 
+.member-row.is-muted {
+  background: rgba(47, 43, 39, 0.035);
+}
+
 .member-name {
   color: var(--text-main);
   font-size: var(--font-body-size);
+  font-weight: var(--font-caption-weight);
 }

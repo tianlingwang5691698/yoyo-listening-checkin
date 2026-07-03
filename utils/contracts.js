@@ -165,7 +165,8 @@ function createChildDefaults() {
   return {
     nickname: '',
     avatarText: '',
-    childLoginCode: ''
+    childLoginCode: '',
+    nicknameRequired: true
   };
 }
 

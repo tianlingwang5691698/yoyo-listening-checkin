@@ -170,10 +170,26 @@
 - 每条必须写清楚：板块、文件、改动、设计记录、验证。
 - 后续改 UI 或交互前先看对应板块最近记录，再继续改。
 
+### 2026-07-03 昵称必填门槛
+
+- 文件：`cloudfunctions/yoyo/facades/family.facade.js`
+- 文件：`cloudfunctions/yoyo/lib/family-engine.js`
+- 文件：`utils/contracts.js`
+- 文件：`pages/home/index.js`
+- 文件：`pages/home/index.wxml`
+- 文件：`pages/home/index.wxss`
+- 文件：`pages/profile/index.js`
+- 文件：`pages/profile/index.wxml`
+- 文件：`pages/profile/index.wxss`
+- 改动：默认昵称为空、同学、我时标记为必改；佑佑只允许学生 ID 317613 使用；首页显示必填昵称卡并拦截学习入口；我的页同步提示；云端拒绝保存不合规默认昵称。
+- 设计记录：首次注册和老用户补改都在进入学习前完成，不用弹窗堆叠，使用页面内轻卡片承载。
+- 验证：已做前端和云函数脚本语法检查。
+
 ### 2026-07-03 首页海报身份按钮对齐
 
+- 文件：`pages/home/index.wxml`
 - 文件：`pages/home/index.wxss`
-- 改动：海报底部“我是家长 / 我是学生”按钮去掉小程序默认按钮外边距，固定宽度和盒模型。
+- 改动：海报底部“我是家长 / 我是学生”从 button 改为等宽 view，固定两列网格。
 - 设计记录：身份选择按钮必须在底部两列网格中左右对称，不被 button 默认样式挤出屏幕。
 - 验证：已做页面脚本语法检查。
 
@@ -181,9 +197,12 @@
 
 - 文件：`pages/profile/index.js`
 - 文件：`pages/profile/index.wxml`
+- 文件：`pages/admin/index.js`
+- 文件：`pages/admin/index.wxml`
+- 文件：`pages/admin/index.wxss`
 - 文件：`cloudfunctions/yoyo/services/admin.service.js`
-- 改动：取消顶部隐藏点击入口，改为管理员可见的“后台”列表项；普通用户不显示入口。
-- 设计记录：管理入口放入“我的”页账号类列表，显示前先云端校验 openId，不把后台入口暴露给普通用户。
+- 改动：取消顶部隐藏点击入口，改为“我的”页账号类列表项；管理员 openId 命中或当前页面已是家长模式时直接显示入口；后台页按学生展示家长绑定关系和可复制 ID，并增加云函数版本、openId、白名单命中情况的诊断流程。
+- 设计记录：管理入口进入后台时仍由云端白名单二次校验，非管理员即使看到入口也无法读取后台数据。
 - 验证：已做前端和云函数脚本语法检查。
 
 ### 2026-07-03 隐藏管理员后台

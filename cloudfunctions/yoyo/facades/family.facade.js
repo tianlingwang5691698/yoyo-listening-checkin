@@ -1,6 +1,20 @@
 const shared = require('../services/shared.service');
 const familyContext = require('./family-context.facade');
 
+function isDefaultChildNickname(child) {
+  const next = child || {};
+  const value = String(next.nickname || '').trim();
+  const childLoginCode = String(next.childLoginCode || '').trim();
+  return !value || ['同学', '我'].includes(value) || (value === '佑佑' && childLoginCode !== '317613');
+}
+
+function decorateChild(child) {
+  const next = Object.assign({}, child || {});
+  return Object.assign(next, {
+    nicknameRequired: isDefaultChildNickname(next)
+  });
+}
+
 function buildFamilyContextPayload(ctx) {
   return {
     user: ctx.user,
@@ -8,7 +22,7 @@ function buildFamilyContextPayload(ctx) {
     family: ctx.family,
     currentMember: ctx.member,
     members: ctx.members,
-    child: ctx.child,
+    child: decorateChild(ctx.child),
     studentLinks: ctx.studentLinks || [],
     subscriptionPreference: ctx.subscriptionPreference
   };
@@ -16,7 +30,7 @@ function buildFamilyContextPayload(ctx) {
 
 function buildProfilePayload(ctx, dashboard) {
   return Object.assign({}, buildFamilyContextPayload(ctx), {
-    child: Object.assign({}, ctx.child, (dashboard && dashboard.stats) || {}),
+    child: Object.assign({}, decorateChild(ctx.child), (dashboard && dashboard.stats) || {}),
     level: module.exports.level,
     familyReady: true
   });

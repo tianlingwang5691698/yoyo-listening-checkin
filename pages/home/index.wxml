@@ -17,6 +17,15 @@
     这台手机已切回家长模式
   </view>
 
+  <view class="nickname-required section-panel" wx:if="{{nicknameRequired && !identityConfirmVisible && !entryPosterVisible}}">
+    <view class="section-title type-section-title">设置孩子昵称</view>
+    <view class="section-copy">第一次使用前，请更换其他名字。</view>
+    <view class="nickname-edit-row">
+      <input class="nickname-input" placeholder="例如 佑佑123 / 小宇" value="{{nicknameInput}}" bindinput="handleNicknameInput" />
+      <view class="nickname-save" bindtap="saveRequiredNickname">保存</view>
+    </view>
+  </view>
+
   <view class="mode-reminder" wx:if="{{identityConfirmVisible}}">
     <view class="mode-reminder-copy">先选择这台手机的使用身份</view>
     <view class="mode-reminder-actions">
@@ -116,8 +125,8 @@
     </view>
     <view class="entry-poster-action" wx:if="{{entryPosterPage === 0}}" bindtap="showNextEntryPosterPage">下一页</view>
     <view class="entry-poster-actions" wx:else>
-      <button class="entry-poster-role-action" data-role="parent" bindtap="confirmStudyIdentity">我是家长</button>
-      <button class="entry-poster-role-action is-primary" data-role="student" bindtap="confirmStudyIdentity">我是学生</button>
+      <view class="entry-poster-role-action" data-role="parent" bindtap="confirmStudyIdentity">我是家长</view>
+      <view class="entry-poster-role-action is-primary" data-role="student" bindtap="confirmStudyIdentity">我是学生</view>
     </view>
   </view>
 </view>

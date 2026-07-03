@@ -7,6 +7,9 @@ async function updateChildProfile(familyId, payload, deps) {
   if (!nickname) {
     throw new Error('先填写孩子昵称');
   }
+  if (['同学', '我'].includes(nickname) || (nickname === '佑佑' && String(child.childLoginCode || '').trim() !== '317613')) {
+    throw new Error('请更换其他名字');
+  }
   await deps.updateChildById(child._id, {
     nickname,
     avatarText: deps.buildAvatarTextFromNickname(nickname),

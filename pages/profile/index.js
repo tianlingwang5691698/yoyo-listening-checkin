@@ -2,6 +2,8 @@ const store = require('../../utils/store');
 const page = require('../../utils/page');
 const theme = require('../../utils/theme');
 
+const ADMIN_OPEN_IDS = ['om8JT3Zhqe1zeAiKUGGkU0ACjAWs'];
+
 const DAILY_ENCOURAGEMENTS = [
   ['Small steps count.', '一点点坚持，也会慢慢变强。'],
   ['Your ears are growing.', '今天听见的，都会留下来。'],
@@ -50,10 +52,24 @@ function buildProfilePresentation(data) {
   const child = (data && data.child) || {};
   const childLoginCode = String(child.childLoginCode || '');
   const childCodeReady = /^\d{6}$/.test(childLoginCode);
+  const nickname = String(child.nickname || '').trim();
   return {
     childCodeReady,
-    childCodeText: childCodeReady ? childLoginCode : '未绑定'
+    childCodeText: childCodeReady ? childLoginCode : '未绑定',
+    nicknameRequired: !!child.nicknameRequired || !nickname || ['同学', '我'].includes(nickname) || (nickname === '佑佑' && childLoginCode !== '317613')
   };
+}
+
+function isAdminProfile(data) {
+  const user = (data && (data.currentUser || data.user)) || {};
+  const member = (data && data.currentMember) || {};
+  const ids = [
+    user.openId,
+    member.openId,
+    user.userId,
+    member.userId
+  ].map((item) => String(item || '').trim()).filter(Boolean);
+  return ADMIN_OPEN_IDS.some((openId) => ids.includes(openId) || ids.includes(`user-${openId}`));
 }
 
 Page({
@@ -72,12 +88,16 @@ Page({
     dailyEncouragement: getDailyEncouragement(),
     childCodeReady: false,
     childCodeText: '待同步',
+    nicknameRequired: false,
     adminVisible: false
   }),
   applyProfileData(data) {
     this.setData(page.buildCloudPageData(this.data, Object.assign({}, data, {
       childNicknameInput: (data.child && data.child.nickname) || '',
-      dailyEncouragement: getDailyEncouragement()
+      dailyEncouragement: getDailyEncouragement(),
+      adminVisible: isAdminProfile(data)
+        || (data.currentMember && data.currentMember.studyRole === 'parent')
+        || !!this.data.adminVisible
     }, buildProfilePresentation(data))));
   },
   async onShow() {
@@ -96,9 +116,9 @@ Page({
   async loadAdminStatus() {
     try {
       const data = await store.getAdminStatus();
-      this.setData({ adminVisible: !!(data && data.isAdmin) });
+      this.setData({ adminVisible: !!(data && data.isAdmin) || this.data.adminVisible });
     } catch (error) {
-      this.setData({ adminVisible: false });
+      this.setData({ adminVisible: !!this.data.adminVisible });
     }
   },
   handleChildNicknameInput(event) {
@@ -111,6 +131,13 @@ Page({
     if (!nickname) {
       wx.showToast({
         title: '先输入孩子昵称',
+        icon: 'none'
+      });
+      return;
+    }
+    if (['同学', '我'].includes(nickname) || (nickname === '佑佑' && String((this.data.child && this.data.child.childLoginCode) || '').trim() !== '317613')) {
+      wx.showToast({
+        title: '请更换其他名字',
         icon: 'none'
       });
       return;

@@ -1,26 +1,55 @@
 <view class="theme-{{theme}} page-shell admin-page">
   <view class="admin-hero product-hero">
     <view class="product-title type-page-title">后台</view>
-    <view class="product-copy">{{total}} 个学生</view>
+    <view class="product-copy">学生 ID 与家长绑定关系</view>
+    <view class="admin-total">{{total}} 个学生</view>
   </view>
 
   <view class="section-panel">
-    <view class="section-title type-section-title">学生与绑定</view>
+    <view class="section-title type-section-title">诊断</view>
+    <view class="diagnostic-row" wx:for="{{diagnosticRows}}" wx:key="label" data-value="{{item.value}}" bindtap="copyValue">
+      <view class="diagnostic-label">{{item.label}}</view>
+      <view class="diagnostic-value">{{item.value}}</view>
+    </view>
+  </view>
+
+  <view class="section-panel">
+    <view class="section-title type-section-title">全部学生</view>
     <view class="empty-state" wx:if="{{loading}}">加载中</view>
+    <view class="admin-error" wx:elif="{{errorText}}">
+      <view class="admin-error-title">后台暂时不可用</view>
+      <view class="admin-error-copy">{{errorText}}</view>
+      <view class="admin-error-copy" wx:if="{{currentOpenId}}" data-value="{{currentOpenId}}" bindtap="copyValue">当前微信 openId：{{currentOpenId}}</view>
+      <view class="admin-retry" bindtap="loadAdminData">重试</view>
+    </view>
     <view class="empty-state" wx:elif="{{!rows.length}}">暂无学生</view>
     <block wx:else>
       <view class="admin-card" wx:for="{{rows}}" wx:key="childId">
         <view class="admin-head">
           <view>
             <view class="admin-name">{{item.childNickname || '同学'}}</view>
-            <view class="admin-code">ID：{{item.childLoginCode || '未生成'}}</view>
+            <view class="admin-code" data-value="{{item.childLoginCode}}" bindtap="copyValue">学生 ID：{{item.childLoginCode || '未生成'}}</view>
+            <view class="admin-family" data-value="{{item.familyId}}" bindtap="copyValue">家庭：{{item.familyId}}</view>
           </view>
-          <view class="admin-count">{{item.memberCount}} 人</view>
+          <view class="admin-count">{{item.parentCount}} 位家长</view>
         </view>
-        <view class="member-row" wx:for="{{item.members}}" wx:key="memberId" wx:for-item="member">
+
+        <view class="admin-subtitle">绑定家长</view>
+        <view class="empty-inline" wx:if="{{!item.parentMembers.length}}">暂无家长绑定</view>
+        <view class="member-row" wx:for="{{item.parentMembers}}" wx:key="memberId" wx:for-item="member">
           <view>
             <view class="member-name">{{member.displayName || '未命名'}}</view>
-            <view class="member-id">{{member.userId}}</view>
+            <view class="member-id" data-value="{{member.userId}}" bindtap="copyValue">userId：{{member.userId || '无'}}</view>
+            <view class="member-id" data-value="{{member.openId}}" bindtap="copyValue">openId：{{member.openId || '无'}}</view>
+          </view>
+          <view class="member-role">{{member.roleText}}</view>
+        </view>
+
+        <view class="admin-subtitle" wx:if="{{item.otherMembers.length}}">学生设备</view>
+        <view class="member-row is-muted" wx:for="{{item.otherMembers}}" wx:key="memberId" wx:for-item="member">
+          <view>
+            <view class="member-name">{{member.displayName || '未命名'}}</view>
+            <view class="member-id" data-value="{{member.idText}}" bindtap="copyValue">{{member.idText}}</view>
           </view>
           <view class="member-role">{{member.roleText}}</view>
         </view>
