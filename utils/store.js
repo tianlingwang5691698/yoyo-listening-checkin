@@ -434,7 +434,7 @@ async function getLevelOverview(options, onRefresh) {
  * @returns {Promise<TaskDetailData>}
  */
 async function getTaskDetail(category, taskId, options, onRefresh) {
-  return callCloud('getTaskDetail', withSelectedStudent(Object.assign({ category, taskId }, options || {})), contracts.createTaskDetailDefaults(), { onRefresh });
+  return callCloud('getTaskDetail', withSelectedStudent(Object.assign({ category, taskId }, options || {})), contracts.createTaskDetailDefaults(), { onRefresh, useCache: false });
 }
 
 async function getTaskTranscript(category, taskId, options, onRefresh) {

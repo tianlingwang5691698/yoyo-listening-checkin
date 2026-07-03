@@ -812,15 +812,26 @@ Page({
   },
   async refreshPage() {
     const startedAt = Date.now();
-    this.setData({
-      lessonLoading: true
-    });
+    const hasSnapshotTask = !!this.data.task;
+    if (!hasSnapshotTask) {
+      this.setData({
+        lessonLoading: true
+      });
+    }
     const detail = await store.getTaskDetail(this.category, this.taskId, {
       view: 'lesson',
       planRunType: this.planRunType,
       targetDate: this.targetDate,
       planDayIndex: this.planDayIndex
     }, (fresh) => this.applyFreshTaskDetail(fresh));
+    if (detail && detail.syncMode === 'cloud-error' && hasSnapshotTask) {
+      this.setData(page.buildCloudPageData(this.data, {
+        lessonLoading: false,
+        syncMode: 'cloud',
+        syncDebug: detail.syncDebug || this.data.syncDebug
+      }));
+      return;
+    }
     this.taskId = detail && detail.task ? detail.task.taskId || this.taskId : this.taskId;
     this.planRunType = detail && detail.planRunType ? detail.planRunType : this.planRunType;
     this.targetDate = detail && detail.targetDate ? detail.targetDate : this.targetDate;

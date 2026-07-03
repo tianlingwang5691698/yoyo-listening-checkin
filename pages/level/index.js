@@ -1,6 +1,7 @@
 const store = require('../../utils/store');
 const page = require('../../utils/page');
 const labels = require('../../utils/labels');
+const LESSON_TASK_SNAPSHOT_KEY = 'lessonTaskSnapshotV1';
 
 const LEVEL_TABS = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'].map((levelId) => ({
   levelId,
@@ -75,7 +76,8 @@ function buildStandaloneEntries(categories) {
       stateText: '›',
       stateClass: '',
       disabled: !task.taskId,
-      taskId: task.taskId || ''
+      taskId: task.taskId || '',
+      taskSnapshot: task.taskId ? task : null
     });
   });
 }
@@ -202,6 +204,17 @@ Page({
     const disabled = event.currentTarget.dataset.disabled;
     if (!category || disabled === true || disabled === 'true') {
       return;
+    }
+    const entry = (this.data.programEntries || []).find((item) => item.category === category && item.taskId === taskId) || null;
+    if (entry && entry.taskSnapshot) {
+      try {
+        wx.setStorageSync(LESSON_TASK_SNAPSHOT_KEY, {
+          savedAt: Date.now(),
+          category,
+          taskId,
+          task: entry.taskSnapshot
+        });
+      } catch (error) {}
     }
     wx.navigateTo({
       url: taskId
