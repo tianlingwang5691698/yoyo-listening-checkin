@@ -259,14 +259,6 @@ function buildTranscriptText(lines) {
     .join('\n');
 }
 
-function hasStudyTranscript(task, transcriptPendingLoad, transcriptLines) {
-  return !!(
-    buildTranscriptText(transcriptLines)
-    || transcriptPendingLoad
-    || (task && (task.transcriptTrackId || task.transcriptStatus === 'ready'))
-  );
-}
-
 function buildLessonStudyItem(task, category, taskId, transcript) {
   const target = task || {};
   return {
@@ -356,7 +348,6 @@ Page({
     lessonStudyLoading: false,
     lessonStudyError: '',
     lessonStudyCompleted: false,
-    lessonAudioLocked: false,
     lessonStudyTab: 'vocabulary',
     lessonStudyTabs: [
       { key: 'vocabulary', label: '生词' },
@@ -803,8 +794,7 @@ Page({
       studyWriteAllowed: detail.studyWriteAllowed !== false,
       isPreviewMode: this.planRunType === 'preview',
       studyModeLabel: this.planRunType === 'preview' ? '预览模式' : (detail.currentMember && detail.currentMember.studyRole === 'student' ? '学生设备' : '家长模式'),
-      lessonStudyCompleted: studyCompleted,
-      lessonAudioLocked: hasStudyTranscript(normalizedTask, detail.transcriptPendingLoad, []) && !studyCompleted
+      lessonStudyCompleted: studyCompleted
     }));
     this.prefetchTaskAudio(normalizedTask);
   },
@@ -888,7 +878,6 @@ Page({
       lessonStudyLoading: false,
       lessonStudyError: '',
       lessonStudyCompleted: studyCompleted,
-      lessonAudioLocked: hasStudyTranscript(normalizedTask, detail.transcriptPendingLoad, []) && !studyCompleted,
       lessonStudyTab: 'vocabulary',
       lessonVocabularyCards: [],
       lessonPhraseCards: [],
@@ -1314,8 +1303,7 @@ Page({
       prevLine: null,
       activeLine: null,
       activeWord: null,
-      nextLine: detail.transcriptTrack && detail.transcriptTrack.lines.length ? detail.transcriptTrack.lines[0] : null,
-      lessonAudioLocked: hasStudyTranscript(normalizedTask, !!detail.transcriptPendingLoad, detail.transcriptTrack ? detail.transcriptTrack.lines : []) && !this.data.lessonStudyCompleted
+      nextLine: detail.transcriptTrack && detail.transcriptTrack.lines.length ? detail.transcriptTrack.lines[0] : null
     }));
     await this.updatePassQuestion(normalizedTask, this.data.progress);
     monitor.logPerf('lesson', 'loadTranscript', Date.now() - startedAt, {
@@ -1430,11 +1418,6 @@ Page({
     if (!this.data.task || this.data.task.isPendingAsset || !this.innerAudioContext) {
       return;
     }
-    if (this.data.lessonAudioLocked) {
-      this.setData({ lessonStudyError: '请先学完文本学习包，再听音频。' });
-      wx.showToast({ title: '先学文本学习包', icon: 'none' });
-      return;
-    }
     this.pendingAutoPlay = false;
     this.audioPlayRequested = true;
     if (!this.innerAudioContext.src) {
@@ -1528,8 +1511,7 @@ Page({
     const transcript = buildTranscriptText(lines);
     if (!transcript) {
       this.setData({
-        lessonStudyError: '这条听力暂无文本，暂不能生成。',
-        lessonAudioLocked: false
+        lessonStudyError: '这条听力暂无文本，暂不能生成。'
       });
       return;
     }
@@ -1554,7 +1536,6 @@ Page({
     wx.setStorageSync(lessonStudyDoneKey(task.category || this.category, task.taskId || this.taskId), true);
     this.setData({
       lessonStudyCompleted: true,
-      lessonAudioLocked: false,
       lessonStudyError: ''
     });
   },
@@ -1801,7 +1782,8 @@ Page({
       taskId: this.taskId,
       planRunType: this.planRunType,
       targetDate: this.targetDate,
-      planDayIndex: this.planDayIndex
+      planDayIndex: this.planDayIndex,
+      completeOnListen: true
     });
     if (detail && detail.syncMode === 'cloud-error') {
       wx.showToast({
@@ -1845,7 +1827,6 @@ Page({
       lessonStudyLoading: false,
       lessonStudyError: '',
       lessonStudyCompleted: studyCompleted,
-      lessonAudioLocked: hasStudyTranscript(normalizedTask, detail.transcriptPendingLoad, transcriptLines) && !studyCompleted,
       lessonStudyTab: 'vocabulary',
       lessonVocabularyCards: [],
       lessonPhraseCards: [],

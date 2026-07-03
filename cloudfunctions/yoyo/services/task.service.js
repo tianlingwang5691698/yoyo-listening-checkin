@@ -198,7 +198,10 @@ async function markTaskListened(event, context) {
   if (!task || task.isPendingAsset || task.completedToday) {
     return getTaskDetail({ payload: { category, taskId: payload.taskId, planRunType, targetDate, planDayIndex: todayPlan.dayIndex } });
   }
-  const nextPlayCount = Math.min((task.playCount || 0) + 1, task.repeatTarget);
+  const completeOnListen = payload.completeOnListen === true;
+  const nextPlayCount = completeOnListen
+    ? task.repeatTarget
+    : Math.min((task.playCount || 0) + 1, task.repeatTarget);
   const now = new Date().toISOString();
   const playMoments = Array.isArray(task.playMoments) ? task.playMoments.slice(0, nextPlayCount - 1) : [];
   playMoments.push(now);

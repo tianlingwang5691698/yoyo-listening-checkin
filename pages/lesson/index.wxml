@@ -18,11 +18,75 @@
     </view>
   </view>
 
-  <view class="section-panel lesson-study-card" wx:if="{{lessonAudioLocked || lessonStudyPack || lessonStudyCompleted || transcriptPendingLoad || transcriptLines.length}}">
+  <view class="dictionary-mask" wx:if="{{dictionaryVisible}}" catchtap="closeDictionary"></view>
+  <view class="dictionary-sheet" wx:if="{{dictionaryVisible}}">
+    <view class="dictionary-head">
+      <view>
+        <view class="dictionary-word">{{dictionaryEntry.word || dictionaryWord}}</view>
+        <view class="dictionary-phonetic" wx:if="{{dictionaryEntry.phonetic}}">/{{dictionaryEntry.phonetic}}/</view>
+      </view>
+      <button class="dictionary-audio {{dictionaryAudioLoading ? 'is-loading' : ''}}" disabled="{{dictionaryLoading || dictionaryAudioLoading}}" bindtap="playDictionaryWord">♪</button>
+    </view>
+    <button class="dictionary-add" loading="{{dictionaryAdding}}" bindtap="addDictionaryWordToLibrary">加入词库</button>
+    <block wx:if="{{!dictionaryLoading}}">
+      <view class="dictionary-definition" wx:for="{{dictionaryEntry.definitions}}" wx:key="*this">· {{item}}</view>
+      <view class="dictionary-empty" wx:if="{{!dictionaryEntry.definitions || !dictionaryEntry.definitions.length}}">暂无释义。</view>
+    </block>
+    <view class="dictionary-loading" wx:else>查词中</view>
+  </view>
+
+  <view class="section-panel player-card">
+    <view class="pass-steps">
+      <block wx:for="{{passSteps}}" wx:key="key">
+        <view class="pass-step {{item.done ? 'is-done' : item.current ? 'is-current' : ''}}">{{item.text}}</view>
+      </block>
+    </view>
+    <view class="row-between player-header">
+      <view wx:if="{{!task.isPendingAsset}}">
+        <view class="section-copy error-copy" wx:if="{{audioErrorText}}">{{audioErrorText}}</view>
+        <view class="section-copy" wx:if="{{showCloudDebug && currentAudio && currentAudio.cloudPath}}">云路径：{{currentAudio.cloudPath}}</view>
+        <view class="section-copy" wx:if="{{showCloudDebug && currentAudio && currentAudio.fileID}}">fileId：{{currentAudio.fileID}}</view>
+        <view class="section-copy" wx:if="{{showCloudDebug && currentAudio && currentAudio.src}}">src：{{currentAudio.src}}</view>
+        <view class="section-copy error-copy" wx:if="{{showCloudDebug && audioErrorDetail}}">错误详情：{{audioErrorDetail}}</view>
+      </view>
+    </view>
+    <view class="custom-player" wx:if="{{!task.isPendingAsset}}">
+      <view class="player-panel quest-{{task.category}}">
+        <view class="player-info-block">
+          <view class="player-info-top">
+            <view>
+              <view class="media-title" wx:if="{{currentAudio && currentAudio.title}}">{{currentAudio.title}}</view>
+              <view class="player-status">{{isPlaying ? '正在播放' : (audioReady ? '已暂停' : '等待播放')}}</view>
+            </view>
+          </view>
+        </view>
+        <view class="player-main">
+          <view class="player-toggle {{audioResolving ? 'is-loading' : ''}}" bindtap="toggleAudio">
+            <view class="player-toggle-icon {{isPlaying ? 'is-pause' : 'is-play'}}"></view>
+          </view>
+        </view>
+        <view class="player-progress">
+          <view class="player-progress-meta">
+            <view class="player-progress-label">{{isPlaying ? '播放中' : audioReady ? '已暂停' : '等待播放'}}</view>
+            <view class="player-time">{{currentTimeLabel}} / {{durationLabel}}</view>
+          </view>
+          <view class="progress-rail player-progress-track">
+            <view class="progress-rail-fill player-progress-fill quest-fill-{{task.category}}" style="width: {{progressPercent}}%;"></view>
+          </view>
+        </view>
+        <view class="player-actions action-row">
+          <button class="player-action player-action-rewind {{canRewind ? '' : 'is-disabled'}}" bindtap="rewindAudio">5 秒</button>
+          <button class="player-action player-rate-toggle" bindtap="togglePlaybackRate">×{{playbackRateText}}</button>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="section-panel lesson-study-card" wx:if="{{lessonStudyPack || lessonStudyCompleted || transcriptPendingLoad || transcriptLines.length}}">
     <view class="row-between transcript-header">
       <view>
         <view class="section-title type-section-title">文本学习</view>
-        <view class="section-copy" wx:if="{{lessonAudioLocked}}">学完生词、短语和句型后再听音频。</view>
+        <view class="section-copy">听完后可选择生成学习包。</view>
       </view>
       <button class="pill transcript-pill" loading="{{lessonStudyLoading}}" disabled="{{lessonStudyLoading}}" bindtap="loadLessonStudyPack">{{lessonStudyPack ? '刷新' : '生成'}}</button>
     </view>
@@ -80,72 +144,7 @@
         <view class="card-example-meaning" wx:if="{{item.exampleMeaning}}">{{item.exampleMeaning}}</view>
       </view>
     </view>
-    <button class="lesson-study-complete" wx:if="{{lessonStudyPack && !lessonStudyCompleted}}" bindtap="completeLessonStudy">已学完，开始听</button>
     <view class="lesson-study-done" wx:if="{{lessonStudyCompleted}}">已完成文本学习</view>
-  </view>
-
-  <view class="dictionary-mask" wx:if="{{dictionaryVisible}}" catchtap="closeDictionary"></view>
-  <view class="dictionary-sheet" wx:if="{{dictionaryVisible}}">
-    <view class="dictionary-head">
-      <view>
-        <view class="dictionary-word">{{dictionaryEntry.word || dictionaryWord}}</view>
-        <view class="dictionary-phonetic" wx:if="{{dictionaryEntry.phonetic}}">/{{dictionaryEntry.phonetic}}/</view>
-      </view>
-      <button class="dictionary-audio {{dictionaryAudioLoading ? 'is-loading' : ''}}" disabled="{{dictionaryLoading || dictionaryAudioLoading}}" bindtap="playDictionaryWord">♪</button>
-    </view>
-    <button class="dictionary-add" loading="{{dictionaryAdding}}" bindtap="addDictionaryWordToLibrary">加入词库</button>
-    <block wx:if="{{!dictionaryLoading}}">
-      <view class="dictionary-definition" wx:for="{{dictionaryEntry.definitions}}" wx:key="*this">· {{item}}</view>
-      <view class="dictionary-empty" wx:if="{{!dictionaryEntry.definitions || !dictionaryEntry.definitions.length}}">暂无释义。</view>
-    </block>
-    <view class="dictionary-loading" wx:else>查词中</view>
-  </view>
-
-  <view class="section-panel player-card">
-    <view class="pass-steps">
-      <block wx:for="{{passSteps}}" wx:key="key">
-        <view class="pass-step {{item.done ? 'is-done' : item.current ? 'is-current' : ''}}">{{item.text}}</view>
-      </block>
-    </view>
-    <view class="row-between player-header">
-      <view wx:if="{{!task.isPendingAsset}}">
-        <view class="section-copy error-copy" wx:if="{{audioErrorText}}">{{audioErrorText}}</view>
-        <view class="section-copy" wx:if="{{showCloudDebug && currentAudio && currentAudio.cloudPath}}">云路径：{{currentAudio.cloudPath}}</view>
-        <view class="section-copy" wx:if="{{showCloudDebug && currentAudio && currentAudio.fileID}}">fileId：{{currentAudio.fileID}}</view>
-        <view class="section-copy" wx:if="{{showCloudDebug && currentAudio && currentAudio.src}}">src：{{currentAudio.src}}</view>
-        <view class="section-copy error-copy" wx:if="{{showCloudDebug && audioErrorDetail}}">错误详情：{{audioErrorDetail}}</view>
-      </view>
-    </view>
-    <view class="custom-player" wx:if="{{!task.isPendingAsset}}">
-      <view class="player-panel quest-{{task.category}}">
-        <view class="player-info-block">
-          <view class="player-info-top">
-            <view>
-              <view class="media-title" wx:if="{{currentAudio && currentAudio.title}}">{{currentAudio.title}}</view>
-              <view class="player-status">{{lessonAudioLocked ? '先学文本' : (isPlaying ? '正在播放' : (audioReady ? '已暂停' : '等待播放'))}}</view>
-            </view>
-          </view>
-        </view>
-        <view class="player-main">
-          <view class="player-toggle {{audioResolving ? 'is-loading' : ''}}" bindtap="toggleAudio">
-            <view class="player-toggle-icon {{isPlaying ? 'is-pause' : 'is-play'}}"></view>
-          </view>
-        </view>
-        <view class="player-progress">
-          <view class="player-progress-meta">
-            <view class="player-progress-label">{{lessonAudioLocked ? '先学文本' : (isPlaying ? '播放中' : audioReady ? '已暂停' : '等待播放')}}</view>
-            <view class="player-time">{{currentTimeLabel}} / {{durationLabel}}</view>
-          </view>
-          <view class="progress-rail player-progress-track">
-            <view class="progress-rail-fill player-progress-fill quest-fill-{{task.category}}" style="width: {{progressPercent}}%;"></view>
-          </view>
-        </view>
-        <view class="player-actions action-row">
-          <button class="player-action player-action-rewind {{canRewind ? '' : 'is-disabled'}}" bindtap="rewindAudio">5 秒</button>
-          <button class="player-action player-rate-toggle" bindtap="togglePlaybackRate">×{{playbackRateText}}</button>
-        </view>
-      </view>
-    </view>
   </view>
 
   <view class="section-panel transcript-card" wx:if="{{progress && (progress.transcriptVisible || transcriptManualVisible)}}">
