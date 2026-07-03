@@ -4,6 +4,7 @@ const snapshotStore = require('../../utils/snapshot');
 
 const LISTENING_SET_SNAPSHOT_KEY = 'currentListeningSetV1';
 const WRITING_PROMPT_SNAPSHOT_KEY = 'currentWritingPromptV1';
+const MATERIAL_HOME_SNAPSHOT_KEY = 'materialHomeSnapshotV1';
 
 function buildMaterials(materialIndex) {
   return {
@@ -115,12 +116,25 @@ Page({
       itemUnit: baseConfig.itemUnit,
       showCefrEntry: moduleId === 'listening'
     });
+    const snapshot = snapshotStore.read(MATERIAL_HOME_SNAPSHOT_KEY, {
+      id: moduleId,
+      maxAgeMs: 10 * 60 * 1000
+    });
+    if (snapshot && snapshot.materialIndex) {
+      applyMaterialConfig(this, moduleId, snapshot.materialIndex, {
+        loading: false
+      });
+    }
     const materialIndex = await store.getMaterialIndex({ moduleId }, (freshIndex) => {
       applyMaterialConfig(this, moduleId, freshIndex);
+      snapshotStore.write(MATERIAL_HOME_SNAPSHOT_KEY, moduleId, { materialIndex: freshIndex }, { source: `material-${moduleId}` });
     });
     applyMaterialConfig(this, moduleId, materialIndex, {
       loading: false
     });
+    if (materialIndex && materialIndex.syncMode !== 'cloud-error') {
+      snapshotStore.write(MATERIAL_HOME_SNAPSHOT_KEY, moduleId, { materialIndex }, { source: `material-${moduleId}` });
+    }
   },
   onShow() {
     page.syncTheme(this);

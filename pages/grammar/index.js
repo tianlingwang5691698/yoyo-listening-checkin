@@ -4,6 +4,7 @@ const completed = require('../../utils/completed');
 const snapshotStore = require('../../utils/snapshot');
 
 const GRAMMAR_TOPIC_SNAPSHOT_KEY = 'grammarTopicSnapshotV1';
+const GRAMMAR_HOME_SNAPSHOT_KEY = 'grammarHomeSnapshotV1';
 
 function canUseDictionaryVoice(text) {
   const value = String(text || '').replace(/\s+/g, ' ').trim();
@@ -215,6 +216,19 @@ Page({
   },
   async onLoad() {
     this.grammarPerf = page.startPagePerf('grammar');
+    const snapshot = snapshotStore.read(GRAMMAR_HOME_SNAPSHOT_KEY, {
+      id: 'home',
+      maxAgeMs: 10 * 60 * 1000
+    });
+    if (snapshot && Array.isArray(snapshot.stages)) {
+      this.setData({
+        stages: snapshot.stages,
+        em2Topics: snapshot.em2Topics || [],
+        em1Topics: snapshot.em1Topics || [],
+        em1Loaded: true,
+        em1Loading: false
+      });
+    }
     let em2Data = null;
     let em1Data = null;
     try {
@@ -229,6 +243,13 @@ Page({
     const em2Topics = buildTopics(em2Data);
     const em1Topics = buildTopics(em1Data);
     const stages = buildStages(em2Topics, em1Topics);
+    if (stages.length) {
+      snapshotStore.write(GRAMMAR_HOME_SNAPSHOT_KEY, 'home', {
+        stages,
+        em2Topics,
+        em1Topics
+      }, { source: 'grammar-home' });
+    }
     this.setData({
       stages,
       em2Topics,

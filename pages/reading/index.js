@@ -2,6 +2,7 @@ const store = require('../../utils/store');
 const page = require('../../utils/page');
 const snapshotStore = require('../../utils/snapshot');
 const READING_PASSAGE_SNAPSHOT_KEY = 'readingPassageSnapshotV1';
+const READING_HOME_SNAPSHOT_KEY = 'readingHomeSnapshotV1';
 
 function pickGroup(categoryTree, selectedExamType) {
   const root = categoryTree && categoryTree[0] ? categoryTree[0] : null;
@@ -84,9 +85,20 @@ Page({
     if (!page.requireIdentityConfirmed()) {
       return;
     }
-    this.setData({ loading: true });
+    const snapshot = snapshotStore.read(READING_HOME_SNAPSHOT_KEY, {
+      id: 'directory',
+      maxAgeMs: 10 * 60 * 1000
+    });
+    if (snapshot) {
+      this.applyReadingHome(snapshot);
+    } else {
+      this.setData({ loading: true });
+    }
     const data = await store.getReadingHome({ directoryOnly: true }, (fresh) => {
       this.applyReadingHome(fresh);
+      if (fresh && fresh.syncMode !== 'cloud-error') {
+        snapshotStore.write(READING_HOME_SNAPSHOT_KEY, 'directory', fresh, { source: 'reading-home' });
+      }
       if (this.readingPerf) {
         this.readingPerf.mark('cloudRefresh', {
           groups: (((fresh.categoryTree || [])[0] || {}).groups || []).length
@@ -94,6 +106,9 @@ Page({
       }
     });
     this.applyReadingHome(data);
+    if (data && data.syncMode !== 'cloud-error') {
+      snapshotStore.write(READING_HOME_SNAPSHOT_KEY, 'directory', data, { source: 'reading-home' });
+    }
     if (this.readingPerf) {
       this.readingPerf.ready('pageReady', {
         cacheHit: !!data.__cacheHit,
