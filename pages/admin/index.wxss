@@ -1,0 +1,54 @@
+.admin-hero {
+  background: var(--surface);
+}
+
+.admin-card {
+  padding: 24rpx 0;
+  border-bottom: 1rpx solid var(--border-soft);
+}
+
+.admin-card:last-child {
+  border-bottom: none;
+}
+
+.admin-head,
+.member-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20rpx;
+}
+
+.admin-name {
+  color: var(--text-main);
+  font-size: var(--font-section-title-size);
+  font-weight: var(--font-title-weight);
+}
+
+.admin-code,
+.member-id {
+  margin-top: 6rpx;
+  color: var(--text-muted);
+  font-size: var(--font-caption-size);
+  line-height: 1.45;
+  word-break: break-all;
+}
+
+.admin-count,
+.member-role {
+  flex-shrink: 0;
+  color: var(--accent-deep);
+  font-size: var(--font-caption-size);
+}
+
+.member-row {
+  margin-top: 18rpx;
+  padding: 18rpx 20rpx;
+  border-radius: 8rpx;
+  background: var(--surface-subtle);
+}
+
+.member-name {
+  color: var(--text-main);
+  font-size: var(--font-body-size);
+}

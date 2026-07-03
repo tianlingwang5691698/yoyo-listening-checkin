@@ -1,5 +1,5 @@
 <view class="theme-{{theme}} page-shell profile-page">
-  <view class="profile-hero product-hero">
+  <view class="profile-hero product-hero" bindtap="handleAdminTap">
     <view class="profile-name">{{child.nickname || '同学'}}</view>
     <view class="product-copy">{{dailyEncouragement.english}}</view>
     <view class="profile-cn">{{dailyEncouragement.chinese}}</view>

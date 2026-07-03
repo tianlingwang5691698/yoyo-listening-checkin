@@ -892,6 +892,14 @@ async function updateChildProfile(nickname) {
   return callCloud('updateChildProfile', withSelectedStudent({ nickname }), contracts.createFamilyPageDefaults());
 }
 
+async function getAdminFamilyList() {
+  return callCloud('getAdminFamilyList', {}, {
+    isAdmin: false,
+    rows: [],
+    total: 0
+  }, { useCache: false });
+}
+
 module.exports = {
   ensureState,
   getMaterialIndex,
@@ -951,5 +959,6 @@ module.exports = {
   setStudyRole,
   undoLastListened,
   updateSubscription,
-  updateChildProfile
+  updateChildProfile,
+  getAdminFamilyList
 };

@@ -358,6 +358,7 @@ const grammarService = require('./services/grammar.service');
 const completionService = require('./services/completion.service');
 const writingService = require('./services/writing.service');
 const flashcardService = require('./services/flashcard.service');
+const adminService = require('./services/admin.service');
 const monitor = require('./lib/monitor');
 
 if (!taskService.__autoCheckinAfterListeningPatch) {
@@ -439,7 +440,8 @@ const actionMap = {
   gradeWritingAttempt: writingService.gradeWritingAttempt,
   getWritingAttempts: writingService.getWritingAttempts,
   recordStudyCompletion: completionService.recordStudyCompletion,
-  getStudyCompletions: completionService.getStudyCompletions
+  getStudyCompletions: completionService.getStudyCompletions,
+  getAdminFamilyList: adminService.getAdminFamilyList
 };
 
 const MONITORED_ACTIONS = new Set([

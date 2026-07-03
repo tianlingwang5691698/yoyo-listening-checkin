@@ -1,0 +1,30 @@
+<view class="theme-{{theme}} page-shell admin-page">
+  <view class="admin-hero product-hero">
+    <view class="product-title type-page-title">后台</view>
+    <view class="product-copy">{{total}} 个学生</view>
+  </view>
+
+  <view class="section-panel">
+    <view class="section-title type-section-title">学生与绑定</view>
+    <view class="empty-state" wx:if="{{loading}}">加载中</view>
+    <view class="empty-state" wx:elif="{{!rows.length}}">暂无学生</view>
+    <block wx:else>
+      <view class="admin-card" wx:for="{{rows}}" wx:key="childId">
+        <view class="admin-head">
+          <view>
+            <view class="admin-name">{{item.childNickname || '同学'}}</view>
+            <view class="admin-code">ID：{{item.childLoginCode || '未生成'}}</view>
+          </view>
+          <view class="admin-count">{{item.memberCount}} 人</view>
+        </view>
+        <view class="member-row" wx:for="{{item.members}}" wx:key="memberId" wx:for-item="member">
+          <view>
+            <view class="member-name">{{member.displayName || '未命名'}}</view>
+            <view class="member-id">{{member.userId}}</view>
+          </view>
+          <view class="member-role">{{member.roleText}}</view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
