@@ -426,12 +426,18 @@ function getSourceCacheFilePath(sourceId) {
   return `${wx.env.USER_DATA_PATH}/flashcard-source-${encodeURIComponent(sourceId || 'all')}.json`;
 }
 
+function isStaleBookCache(sourceId, data) {
+  if (!isBookSource(sourceId) || !data || !Array.isArray(data.library) || !data.library.length) return false;
+  return !data.library.some((item) => item && item.phonetic);
+}
+
 function readSourceCache(sourceId) {
   const filePath = getSourceCacheFilePath(sourceId);
   if (filePath) {
     try {
       const cached = JSON.parse(wx.getFileSystemManager().readFileSync(filePath, 'utf8'));
       if (cached && Date.now() - Number(cached.cachedAt || 0) <= FLASHCARD_SOURCE_CACHE_TTL) {
+        if (isStaleBookCache(sourceId, cached.data)) return null;
         return cached.data || null;
       }
     } catch (error) {}
@@ -439,6 +445,7 @@ function readSourceCache(sourceId) {
   try {
     const cached = wx.getStorageSync(getSourceCacheKey(sourceId));
     if (!cached || Date.now() - Number(cached.cachedAt || 0) > FLASHCARD_SOURCE_CACHE_TTL) return null;
+    if (isStaleBookCache(sourceId, cached.data)) return null;
     return cached.data || null;
   } catch (error) {
     return null;
