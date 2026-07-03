@@ -72,8 +72,7 @@ Page({
     dailyEncouragement: getDailyEncouragement(),
     childCodeReady: false,
     childCodeText: '待同步',
-    adminTapCount: 0,
-    adminLastTapAt: 0
+    adminVisible: false
   }),
   applyProfileData(data) {
     this.setData(page.buildCloudPageData(this.data, Object.assign({}, data, {
@@ -92,6 +91,15 @@ Page({
     }
     const data = await store.getProfileData((fresh) => this.applyProfileData(fresh));
     this.applyProfileData(data);
+    this.loadAdminStatus();
+  },
+  async loadAdminStatus() {
+    try {
+      const data = await store.getAdminStatus();
+      this.setData({ adminVisible: !!(data && data.isAdmin) });
+    } catch (error) {
+      this.setData({ adminVisible: false });
+    }
   },
   handleChildNicknameInput(event) {
     this.setData({
@@ -151,17 +159,8 @@ Page({
       url: '/pages/family/index'
     });
   },
-  async handleAdminTap() {
-    try {
-      const data = await store.getAdminFamilyList();
-      if (data && data.isAdmin) {
-        wx.navigateTo({ url: '/pages/admin/index' });
-        return;
-      }
-      wx.showToast({ title: '无权限', icon: 'none' });
-    } catch (error) {
-      wx.showToast({ title: '无权限', icon: 'none' });
-    }
+  openAdminPage() {
+    wx.navigateTo({ url: '/pages/admin/index' });
   },
   switchTheme(event) {
     const nextTheme = theme.setTheme(event.currentTarget.dataset.theme);

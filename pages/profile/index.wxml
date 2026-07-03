@@ -1,5 +1,5 @@
 <view class="theme-{{theme}} page-shell profile-page">
-  <view class="profile-hero product-hero" bindtap="handleAdminTap">
+  <view class="profile-hero product-hero">
     <view class="profile-name">{{child.nickname || '同学'}}</view>
     <view class="product-copy">{{dailyEncouragement.english}}</view>
     <view class="profile-cn">{{dailyEncouragement.chinese}}</view>
@@ -33,6 +33,13 @@
       <view class="row-main">
         <view class="row-title">家庭与账号</view>
         <view class="row-copy">{{currentMember.studyRole === 'student' ? '学生' : '家长'}} · {{syncMode === 'cloud' ? '已接通' : '待同步'}}</view>
+      </view>
+      <view class="row-arrow">›</view>
+    </view>
+    <view class="profile-row" wx:if="{{adminVisible}}" bindtap="openAdminPage">
+      <view class="row-main">
+        <view class="row-title">后台</view>
+        <view class="row-copy">查看学生与绑定关系</view>
       </view>
       <view class="row-arrow">›</view>
     </view>

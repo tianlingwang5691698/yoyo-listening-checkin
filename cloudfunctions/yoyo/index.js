@@ -441,6 +441,7 @@ const actionMap = {
   getWritingAttempts: writingService.getWritingAttempts,
   recordStudyCompletion: completionService.recordStudyCompletion,
   getStudyCompletions: completionService.getStudyCompletions,
+  getAdminStatus: adminService.getAdminStatus,
   getAdminFamilyList: adminService.getAdminFamilyList
 };
 

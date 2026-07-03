@@ -17,6 +17,10 @@ function assertAdmin(openId) {
   }
 }
 
+function isAdminOpenId(openId) {
+  return !!openId && getAdminOpenIds().includes(openId);
+}
+
 async function listAll(collectionName) {
   const pageSize = 100;
   const rows = [];
@@ -80,6 +84,14 @@ async function getAdminFamilyList() {
   };
 }
 
+async function getAdminStatus() {
+  const wxContext = getWXContext();
+  return {
+    isAdmin: isAdminOpenId(wxContext.OPENID)
+  };
+}
+
 module.exports = {
+  getAdminStatus,
   getAdminFamilyList
 };

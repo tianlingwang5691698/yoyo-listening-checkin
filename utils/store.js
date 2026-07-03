@@ -900,6 +900,12 @@ async function getAdminFamilyList() {
   }, { useCache: false });
 }
 
+async function getAdminStatus() {
+  return callCloud('getAdminStatus', {}, {
+    isAdmin: false
+  }, { useCache: false });
+}
+
 module.exports = {
   ensureState,
   getMaterialIndex,
@@ -960,5 +966,6 @@ module.exports = {
   undoLastListened,
   updateSubscription,
   updateChildProfile,
+  getAdminStatus,
   getAdminFamilyList
 };
