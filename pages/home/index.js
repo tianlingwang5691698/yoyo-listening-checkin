@@ -3,6 +3,7 @@ const page = require('../../utils/page');
 const contracts = require('../../utils/contracts');
 const labels = require('../../utils/labels');
 const completed = require('../../utils/completed');
+const snapshotStore = require('../../utils/snapshot');
 const LEVEL_STAGE_SNAPSHOT_KEY = 'levelStageSnapshotV1';
 const LESSON_TASK_SNAPSHOT_KEY = 'lessonTaskSnapshotV1';
 const ENTRY_POSTER_DISMISSED_KEY = 'homeEntryPosterDismissedV1';
@@ -428,14 +429,12 @@ Page({
         || group.nextTask)
       : null;
     if (!task) return;
-    try {
-      wx.setStorageSync(LESSON_TASK_SNAPSHOT_KEY, {
-        savedAt: Date.now(),
-        category,
-        taskId: taskId || task.taskId || '',
-        task
-      });
-    } catch (error) {}
+    const safeTaskId = taskId || task.taskId || '';
+    snapshotStore.write(LESSON_TASK_SNAPSHOT_KEY, `${category}:${safeTaskId}`, {
+      category,
+      taskId: safeTaskId,
+      task
+    }, { source: 'home' });
   },
   openListening() {
     if (this.data.identityConfirmVisible) {

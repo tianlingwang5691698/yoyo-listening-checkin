@@ -1,5 +1,6 @@
 const store = require('../../utils/store');
 const page = require('../../utils/page');
+const snapshotStore = require('../../utils/snapshot');
 const READING_PASSAGE_SNAPSHOT_KEY = 'readingPassageSnapshotV1';
 
 function pickGroup(categoryTree, selectedExamType) {
@@ -199,12 +200,7 @@ Page({
     const passages = (this.data.selectedDistrictNode && this.data.selectedDistrictNode.passages) || this.data.passages || [];
     const passage = passages.find((item) => item && item._id === targetPassageId) || fallbackPassage;
     if (passage && passage._id === targetPassageId) {
-      try {
-        wx.setStorageSync(READING_PASSAGE_SNAPSHOT_KEY, {
-          savedAt: Date.now(),
-          passage
-        });
-      } catch (error) {}
+      snapshotStore.write(READING_PASSAGE_SNAPSHOT_KEY, targetPassageId, { passage }, { source: 'reading' });
     }
     wx.navigateTo({
       url: `/pages/reading/detail/index?passageId=${targetPassageId}`

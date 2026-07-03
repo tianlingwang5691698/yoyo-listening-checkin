@@ -1,6 +1,7 @@
 const store = require('../../../utils/store');
 const page = require('../../../utils/page');
 const completed = require('../../../utils/completed');
+const snapshotStore = require('../../../utils/snapshot');
 
 const STUDY_PACK_STORAGE_PREFIX = 'readingStudyPack:';
 const READING_PASSAGE_SNAPSHOT_KEY = 'readingPassageSnapshotV1';
@@ -690,14 +691,12 @@ function mergePhoneStudyPack(passageId, studyPack) {
 }
 
 function getPassageSnapshot(passageId) {
-  try {
-    const cached = wx.getStorageSync(READING_PASSAGE_SNAPSHOT_KEY) || null;
-    const passage = cached && cached.passage;
-    if (passage && passage._id === passageId) {
-      return passage;
-    }
-  } catch (error) {}
-  return null;
+  const snapshot = snapshotStore.read(READING_PASSAGE_SNAPSHOT_KEY, {
+    id: passageId,
+    maxAgeMs: 5 * 60 * 1000
+  });
+  const passage = snapshot && snapshot.passage;
+  return passage && passage._id === passageId ? passage : null;
 }
 
 function getUnfamiliarMap() {

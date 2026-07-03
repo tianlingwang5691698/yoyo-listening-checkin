@@ -1,6 +1,7 @@
 const store = require('../../utils/store');
 const page = require('../../utils/page');
 const labels = require('../../utils/labels');
+const snapshotStore = require('../../utils/snapshot');
 const LESSON_TASK_SNAPSHOT_KEY = 'lessonTaskSnapshotV1';
 
 const LEVEL_TABS = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'].map((levelId) => ({
@@ -207,14 +208,11 @@ Page({
     }
     const entry = (this.data.programEntries || []).find((item) => item.category === category && item.taskId === taskId) || null;
     if (entry && entry.taskSnapshot) {
-      try {
-        wx.setStorageSync(LESSON_TASK_SNAPSHOT_KEY, {
-          savedAt: Date.now(),
-          category,
-          taskId,
-          task: entry.taskSnapshot
-        });
-      } catch (error) {}
+      snapshotStore.write(LESSON_TASK_SNAPSHOT_KEY, `${category}:${taskId || ''}`, {
+        category,
+        taskId,
+        task: entry.taskSnapshot
+      }, { source: 'level' });
     }
     wx.navigateTo({
       url: taskId

@@ -1396,6 +1396,20 @@
 - 设计记录：课程详情首屏优先展示上一页已有课程信息；云端刷新失败时不覆盖成错误页，云端刷新请求携带当前任务快照兜底。
 - 验证：已做前端脚本语法检查。
 
+### 2026-07-03 通用详情快照
+
+- 文件：`utils/snapshot.js`
+- 文件：`pages/home/index.js`
+- 文件：`pages/level/index.js`
+- 文件：`pages/level-stage/index.js`
+- 文件：`pages/lesson/index.js`
+- 文件：`pages/record/index.js`
+- 文件：`pages/reading/index.js`
+- 文件：`pages/reading/detail/index.js`
+- 改动：课程详情和阅读详情统一使用本地快照先渲染，再后台刷新云端数据。
+- 设计记录：列表页已有信息必须可作为详情页首屏快照；快照读写记录性能日志，过期后自动丢弃。
+- 验证：已做前端脚本语法检查、快照工具单测和关键云函数单测。
+
 ## 后续记录格式
 
 每次 UI/交互改动后追加：

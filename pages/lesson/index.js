@@ -4,6 +4,7 @@ const appConfig = require('../../data/app-config');
 const page = require('../../utils/page');
 const labels = require('../../utils/labels');
 const monitor = require('../../utils/monitor');
+const snapshotStore = require('../../utils/snapshot');
 const LESSON_TASK_SNAPSHOT_KEY = 'lessonTaskSnapshotV1';
 const LESSON_TASK_SNAPSHOT_MAX_AGE_MS = 2 * 60 * 1000;
 
@@ -375,22 +376,19 @@ Page({
     dictionaryEntry: null
   }),
   readLessonTaskSnapshot() {
-    try {
-      const snapshot = wx.getStorageSync(LESSON_TASK_SNAPSHOT_KEY) || null;
-      if (!snapshot || Date.now() - Number(snapshot.savedAt || 0) > LESSON_TASK_SNAPSHOT_MAX_AGE_MS) {
-        return null;
-      }
-      const task = snapshot.task || null;
-      if (!task || String(task.category || snapshot.category || '') !== this.category) {
-        return null;
-      }
-      if (this.taskId && String(task.taskId || snapshot.taskId || '') !== this.taskId) {
-        return null;
-      }
-      return task;
-    } catch (error) {
+    const id = `${this.category || ''}:${this.taskId || ''}`;
+    const snapshot = snapshotStore.read(LESSON_TASK_SNAPSHOT_KEY, {
+      id,
+      maxAgeMs: LESSON_TASK_SNAPSHOT_MAX_AGE_MS
+    });
+    const task = snapshot && snapshot.task ? snapshot.task : null;
+    if (!task || String(task.category || snapshot.category || '') !== this.category) {
       return null;
     }
+    if (this.taskId && String(task.taskId || snapshot.taskId || '') !== this.taskId) {
+      return null;
+    }
+    return task;
   },
   applyTaskSnapshot(task) {
     const normalizedTask = labels.normalizeTask(task);

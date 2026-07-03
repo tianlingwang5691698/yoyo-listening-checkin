@@ -2,6 +2,7 @@ const store = require('../../utils/store');
 const page = require('../../utils/page');
 const labels = require('../../utils/labels');
 const contracts = require('../../utils/contracts');
+const snapshotStore = require('../../utils/snapshot');
 const appConfig = require('../../data/app-config');
 
 const WEEK_LABELS = ['日', '一', '二', '三', '四', '五', '六'];
@@ -537,17 +538,14 @@ Page({
       const report = this.data.selectedDayReport || {};
       const planDayIndex = Number(report.planDayIndex || item.planDayIndex || 0) || this.data.planDayIndex || '';
       const targetDate = report.date || this.data.selectedDate || '';
-      try {
-        wx.setStorageSync(LESSON_TASK_SNAPSHOT_KEY, {
-          savedAt: Date.now(),
-          category: item.category,
-          taskId: item.taskId,
-          task: Object.assign({}, item, {
-            targetDate,
-            planDayIndex
-          })
-        });
-      } catch (error) {}
+      snapshotStore.write(LESSON_TASK_SNAPSHOT_KEY, `${item.category}:${item.taskId}`, {
+        category: item.category,
+        taskId: item.taskId,
+        task: Object.assign({}, item, {
+          targetDate,
+          planDayIndex
+        })
+      }, { source: 'record' });
       const query = buildLessonQuery({
         category: item.category,
         taskId: item.taskId,
