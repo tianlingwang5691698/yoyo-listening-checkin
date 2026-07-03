@@ -33,7 +33,7 @@ function getTaskPresentation(task) {
     };
   }
   if (NEW_CONCEPT_CATEGORIES.includes(task.category)) {
-    const levelNumber = task.category === 'newconcept1' ? 1 : 2;
+    const levelNumber = task.category.replace('newconcept', '') || '1';
     return {
       displayTitle: title,
       displaySubtitle: `New Concept English ${levelNumber}`,
@@ -108,7 +108,8 @@ function decorateTask(task, progress, category, deps) {
     getMediaDisplayName
   } = deps;
   if (!task) {
-    const emptyTask = UNLOCK_CATEGORIES.includes(category)
+    const isAudioCourse = UNLOCK_CATEGORIES.includes(category) || NEW_CONCEPT_CATEGORIES.includes(category);
+    const emptyTask = isAudioCourse
       ? {
         taskId: `${category}-pending`,
         category,
@@ -136,12 +137,12 @@ function decorateTask(task, progress, category, deps) {
       textUnlocked: false,
       completedToday: false,
       isPendingAsset: true,
-      note: UNLOCK_CATEGORIES.includes(category)
+      note: isAudioCourse
         ? `${getCategoryLabel(category)} 音频暂时未就绪，先检查云目录。`
         : '把 Songs 音频放进来后，这里就会开始轮换。',
-      rewardBadge: UNLOCK_CATEGORIES.includes(category) ? 'UNLOCK 1' : 'SONG 1',
-      rewardTitle: UNLOCK_CATEGORIES.includes(category) ? '学习任务线' : 'Songs 星星线',
-      rewardCopy: UNLOCK_CATEGORIES.includes(category)
+      rewardBadge: isAudioCourse ? getCategoryLabel(category) : 'SONG 1',
+      rewardTitle: isAudioCourse ? '学习任务线' : 'Songs 星星线',
+      rewardCopy: isAudioCourse
         ? `${getCategoryLabel(category)} 素材恢复后，这条奖励线会继续推进。`
         : '把 Songs 音频和 bundle 放进来后，这条奖励线就会亮起来。'
     });

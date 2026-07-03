@@ -302,7 +302,8 @@ async function resolveStandaloneCategoryTasks(category, childId, date) {
     getBaseName,
     inferNewConceptTaskMeta,
     buildCloudTask,
-    buildCloudAssetUrl
+    buildCloudAssetUrl,
+    getCatalog
   });
 }
 

@@ -208,10 +208,10 @@ function inferNewConceptTaskMeta(category, audioBaseName, index) {
   if (!NEW_CONCEPT_CATEGORIES.includes(category)) {
     return null;
   }
-  const levelNumber = category === 'newconcept1' ? 1 : 2;
-  const levelId = category === 'newconcept1' ? 'A1' : 'A2';
-  const seriesSlug = category === 'newconcept1' ? 'new-concept-1-us' : 'new-concept-2';
-  const shortSeriesSlug = category === 'newconcept1' ? 'nce1-us' : 'nce2';
+  const levelNumber = category.replace('newconcept', '') || '1';
+  const levelId = category === 'newconcept1' ? 'A1' : category === 'newconcept2' ? 'A2' : category === 'newconcept3' ? 'B1' : 'B2';
+  const seriesSlug = category === 'newconcept1' ? 'new-concept-1-us' : `new-concept-${levelNumber}`;
+  const shortSeriesSlug = category === 'newconcept1' ? 'nce1-us' : `nce${levelNumber}`;
   const audioSlugs = getTrackSlugVariants(audioBaseName);
   const audioSlug = audioSlugs[0] || '';
   const ordinal = String(index + 1).padStart(3, '0');
