@@ -88,11 +88,13 @@ function getStageSnapshot(phase) {
     id: phase,
     maxAgeMs: 5 * 60 * 1000
   });
-  return snapshot && Array.isArray(snapshot.taskGroups) && snapshot.taskGroups.length ? snapshot : null;
+  if (!snapshot || !Array.isArray(snapshot.taskGroups) || !snapshot.taskGroups.length) return null;
+  return snapshot.taskGroups.some((item) => !item.disabled) ? snapshot : null;
 }
 
 function writeStageSnapshot(phase, data) {
   if (!phase || !data || !Array.isArray(data.taskGroups) || !data.taskGroups.length) return;
+  if (!data.taskGroups.some((item) => !item.disabled)) return;
   snapshotStore.write(LEVEL_STAGE_SNAPSHOT_KEY, phase, Object.assign({}, data, { phase }), {
     source: 'level-stage'
   });
@@ -110,20 +112,21 @@ Page({
   }),
   applyOverview(data, phase, levelId) {
     const categories = (data.categories || []).map(labels.normalizeCategory);
-    const hasTaskGroups = shouldShowTaskGroups(phase) && categories.length > 0;
+    const displayPhase = data.planPhase || phase;
+    const hasTaskGroups = shouldShowTaskGroups(displayPhase) && categories.length > 0;
     const taskGroups = hasTaskGroups ? buildTaskGroups(categories) : [];
     const totalMinutes = getDurationMinutes(taskGroups.reduce((sum, item) => sum + item.durationSec, 0));
     const nextData = {
       levelId,
-      phase,
-      stage: STAGES[phase] || STAGES['round-1'],
+      phase: displayPhase,
+      stage: STAGES[displayPhase] || STAGES['round-1'],
       taskGroups,
       totalMinutesText: totalMinutes ? `${totalMinutes} 分钟` : '待生成',
       hasTaskGroups,
       hydrated: true
     };
     this.setData(page.buildCloudPageData(this.data, nextData));
-    writeStageSnapshot(phase, nextData);
+    writeStageSnapshot(displayPhase, nextData);
   },
   async onLoad(query) {
     page.syncTheme(this);

@@ -27,20 +27,12 @@ async function getLevelOverview(event) {
     includeFamily: false,
     includeStats: true
   });
-  const dashboardPhase = study.buildPlanForDay(dashboard.planDayIndex).phase.key;
-  const previewPlanDayIndex = requestedPhase === dashboardPhase
-    ? dashboard.planDayIndex
-    : requestedPhase === 'round-2'
-      ? 73
-      : requestedPhase === 'round-1'
-        ? 1
-        : 0;
-  const previewPlan = previewPlanDayIndex ? study.buildPlanForDay(previewPlanDayIndex) : null;
-  const previewTasks = previewPlan
-    ? study.decoratePlanTasks(progressRecords, ctx.child.childId, today, previewPlan, {
+  const todayPlan = study.buildPlanForDay(dashboard.planDayIndex);
+  const todayTasks = isA1PhaseOverview
+    ? study.decoratePlanTasks(progressRecords, ctx.child.childId, today, todayPlan, {
       planRunType: 'normal',
       targetDate: today,
-      planDayIndex: previewPlanDayIndex
+      planDayIndex: dashboard.planDayIndex
     })
     : [];
   const standaloneCategoryIds = STANDALONE_CATEGORY_IDS;
@@ -66,6 +58,9 @@ async function getLevelOverview(event) {
       : [study.buildLevelCatalogEntry(categoryId, { limit: 1 })];
     return [categoryId, { directTasks, overview }];
   })));
+  const overviewCategoryIds = isA1PhaseOverview
+    ? Object.keys(todayPlan.byCategory || {})
+    : ['newconcept1', 'peppa', 'unlock1', 'song'];
   return {
     user: ctx.user,
     currentUser: ctx.user,
@@ -73,11 +68,11 @@ async function getLevelOverview(event) {
     child: ctx.child,
     level: study.level,
     stats: dashboard.stats,
-    categories: ['newconcept1', 'peppa', 'unlock1', 'song'].map((category) => {
-      const categoryTasks = previewPlan
-        ? previewTasks.filter((item) => item.category === category)
+    categories: overviewCategoryIds.map((category) => {
+      const categoryTasks = isA1PhaseOverview
+        ? todayTasks.filter((item) => item.category === category)
         : [];
-      const task = previewPlan
+      const task = isA1PhaseOverview
         ? study.buildCategorySummary(categoryTasks, category)
         : (dashboard.categorySummaries || []).find((item) => item.category === category);
       const fallbackTask = study.buildCategorySummary([], category);
@@ -93,8 +88,8 @@ async function getLevelOverview(event) {
         plannedDurationSec: categoryTasks.reduce((sum, item) => (
           sum + (Number(item.durationSec || 0) * Number(item.repeatTarget || 1))
         ), 0),
-        planRunType: previewPlan ? 'preview' : 'normal',
-        planDayIndex: previewPlan ? previewPlan.dayIndex : dashboard.planDayIndex
+        planRunType: 'normal',
+        planDayIndex: dashboard.planDayIndex
       };
     }),
     a2Categories: LEVEL_CATEGORY_GROUPS.A2.flatMap((categoryId) => standaloneOverviews[categoryId].overview),
@@ -115,8 +110,9 @@ async function getLevelOverview(event) {
       unlock4DirectCount: standaloneOverviews.unlock4.directTasks.length,
       resourceDebug: study.getResourceDebugSnapshot()
     },
-    planDayIndex: previewPlan ? previewPlan.dayIndex : dashboard.planDayIndex,
-    planPhaseLabel: previewPlan ? previewPlan.phase.label : dashboard.planPhaseLabel
+    planDayIndex: dashboard.planDayIndex,
+    planPhase: todayPlan.phase.key,
+    planPhaseLabel: todayPlan.phase.label || dashboard.planPhaseLabel
   };
 }
 
