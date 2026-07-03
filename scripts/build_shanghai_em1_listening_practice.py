@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import json
+import hashlib
 import shutil
 from pathlib import Path
 
@@ -165,7 +166,8 @@ def best_audio_sources():
 
 def local_cloud_path(item_id, path):
     ext = path.suffix.lower() or '.mp3'
-    local = AUDIO_DIR / f'{item_id}{ext}'
+    digest = hashlib.md5(path.read_bytes()).hexdigest()[:8]
+    local = AUDIO_DIR / f'{item_id}-{digest}{ext}'
     AUDIO_DIR.mkdir(parents=True, exist_ok=True)
     shutil.copy2(path, local)
     return str(local.relative_to(ROOT)), f'_content/listening-em1/audio/{local.name}'

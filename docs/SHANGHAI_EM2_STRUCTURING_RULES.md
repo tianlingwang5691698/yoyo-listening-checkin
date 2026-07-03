@@ -233,6 +233,8 @@ node -e "const fs=require('fs'),crypto=require('crypto');const id='verb:时态';
 
 一模听力沿用二模听力清洗准入：必须同时具备音频、原卷题目、20 题答案、A 部分图片题图片。A 部分图片只从 `Listen and choose the right picture` 到 B 部分之前抽取；文本只收真实听力原文或文字稿，不人工补写。
 
+一模音频上传时文件名必须带内容指纹，例如 `sh-em1-2025-普陀-listening-651d8aa3.mp3`。不要复用旧的同名音频路径覆盖上传，否则小程序临时链接或缓存可能继续播放旧年份音频。
+
 ## 元数据规则
 
 - `浦东新区` 统一为 `浦东`
