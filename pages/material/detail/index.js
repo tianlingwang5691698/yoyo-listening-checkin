@@ -1,7 +1,9 @@
 const page = require('../../../utils/page');
 const store = require('../../../utils/store');
+const snapshotStore = require('../../../utils/snapshot');
 
 const PICTURE_LABELS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+const LISTENING_SET_SNAPSHOT_KEY = 'currentListeningSetV1';
 
 function sectionForNumber(number) {
   if (number >= 1 && number <= 5) {
@@ -92,7 +94,13 @@ Page({
     sentencePatternCards: []
   }),
   onLoad() {
-    const item = wx.getStorageSync('currentListeningSetV1') || null;
+    const legacyItem = wx.getStorageSync('currentListeningSetV1') || null;
+    const itemId = legacyItem && (legacyItem._id || legacyItem.id || '');
+    const snapshot = itemId ? snapshotStore.read(LISTENING_SET_SNAPSHOT_KEY, {
+      id: itemId,
+      maxAgeMs: 5 * 60 * 1000
+    }) : null;
+    const item = (snapshot && snapshot.item) || legacyItem || null;
     const studyCompleted = item ? !!wx.getStorageSync(studyDoneKey(item)) : false;
     this.setData({
       item,

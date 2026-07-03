@@ -1,5 +1,9 @@
 const page = require('../../utils/page');
 const store = require('../../utils/store');
+const snapshotStore = require('../../utils/snapshot');
+
+const LISTENING_SET_SNAPSHOT_KEY = 'currentListeningSetV1';
+const WRITING_PROMPT_SNAPSHOT_KEY = 'currentWritingPromptV1';
 
 function buildMaterials(materialIndex) {
   return {
@@ -204,6 +208,7 @@ Page({
     if (this.data.moduleId === 'listening') {
       if (item) {
         wx.setStorageSync('currentListeningSetV1', item);
+        snapshotStore.write(LISTENING_SET_SNAPSHOT_KEY, item._id || item.id || '', { item }, { source: 'material-listening' });
         wx.navigateTo({
           url: '/pages/material/detail/index'
         });
@@ -212,6 +217,7 @@ Page({
     }
     if (item) {
       wx.setStorageSync('currentWritingPromptV1', item);
+      snapshotStore.write(WRITING_PROMPT_SNAPSHOT_KEY, item._id || item.id || '', { prompt: item }, { source: 'material-writing' });
       wx.navigateTo({
         url: `/pages/writing/detail/index?id=${encodeURIComponent(item._id || '')}`
       });

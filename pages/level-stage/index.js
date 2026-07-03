@@ -84,20 +84,18 @@ function shouldShowTaskGroups(phase) {
 }
 
 function getStageSnapshot(phase) {
-  try {
-    const snapshot = wx.getStorageSync(LEVEL_STAGE_SNAPSHOT_KEY) || null;
-    if (snapshot && snapshot.phase === phase && Array.isArray(snapshot.taskGroups) && snapshot.taskGroups.length) {
-      return snapshot;
-    }
-  } catch (error) {}
-  return null;
+  const snapshot = snapshotStore.read(LEVEL_STAGE_SNAPSHOT_KEY, {
+    id: phase,
+    maxAgeMs: 5 * 60 * 1000
+  });
+  return snapshot && Array.isArray(snapshot.taskGroups) && snapshot.taskGroups.length ? snapshot : null;
 }
 
-function writeStageSnapshot(phase, snapshot) {
-  if (!phase || !snapshot || !Array.isArray(snapshot.taskGroups) || !snapshot.taskGroups.length) return;
-  try {
-    wx.setStorageSync(LEVEL_STAGE_SNAPSHOT_KEY, Object.assign({}, snapshot, { phase }));
-  } catch (error) {}
+function writeStageSnapshot(phase, data) {
+  if (!phase || !data || !Array.isArray(data.taskGroups) || !data.taskGroups.length) return;
+  snapshotStore.write(LEVEL_STAGE_SNAPSHOT_KEY, phase, Object.assign({}, data, { phase }), {
+    source: 'level-stage'
+  });
 }
 
 Page({

@@ -1,6 +1,9 @@
 const page = require('../../../utils/page');
 const store = require('../../../utils/store');
 const completed = require('../../../utils/completed');
+const snapshotStore = require('../../../utils/snapshot');
+
+const WRITING_PROMPT_SNAPSHOT_KEY = 'currentWritingPromptV1';
 
 function findPrompt(materialIndex, promptId) {
   const all = [].concat((materialIndex || {}).writingEm2 || [], (materialIndex || {}).writingEm1 || []);
@@ -49,10 +52,15 @@ Page({
   async onLoad(options) {
     const promptId = decodeURIComponent((options && options.id) || '');
     let prompt = null;
+    const snapshot = promptId ? snapshotStore.read(WRITING_PROMPT_SNAPSHOT_KEY, {
+      id: promptId,
+      maxAgeMs: 5 * 60 * 1000
+    }) : null;
+    prompt = snapshot && snapshot.prompt ? snapshot.prompt : null;
     try {
-      prompt = wx.getStorageSync('currentWritingPromptV1') || null;
+      prompt = prompt || wx.getStorageSync('currentWritingPromptV1') || null;
     } catch (error) {
-      prompt = null;
+      prompt = prompt || null;
     }
     if (!prompt || (promptId && prompt._id !== promptId)) {
       const materialIndex = await store.getMaterialIndex({ moduleId: 'writing' });

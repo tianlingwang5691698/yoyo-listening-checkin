@@ -519,14 +519,11 @@ Page({
       const phase = getCurrentPhaseKey(this.data.planPhaseLabel);
       const taskGroups = buildStageSnapshotTaskGroups(this.data.groupedDailyTasks);
       const totalMinutes = taskGroups.reduce((sum, item) => sum + Number(item.minutes || 0), 0);
-      try {
-        wx.setStorageSync(LEVEL_STAGE_SNAPSHOT_KEY, {
-          phase,
-          savedAt: Date.now(),
-          taskGroups,
-          totalMinutesText: totalMinutes ? `${totalMinutes} 分钟` : '待生成'
-        });
-      } catch (error) {}
+      snapshotStore.write(LEVEL_STAGE_SNAPSHOT_KEY, phase, {
+        phase,
+        taskGroups,
+        totalMinutesText: totalMinutes ? `${totalMinutes} 分钟` : '待生成'
+      }, { source: 'home-stage' });
       wx.navigateTo({
         url: `/pages/level-stage/index?levelId=A1&phase=${phase}`
       });

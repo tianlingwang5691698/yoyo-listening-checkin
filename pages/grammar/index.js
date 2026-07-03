@@ -1,6 +1,9 @@
 const page = require('../../utils/page');
 const store = require('../../utils/store');
 const completed = require('../../utils/completed');
+const snapshotStore = require('../../utils/snapshot');
+
+const GRAMMAR_TOPIC_SNAPSHOT_KEY = 'grammarTopicSnapshotV1';
 
 function canUseDictionaryVoice(text) {
   const value = String(text || '').replace(/\s+/g, ' ').trim();
@@ -389,6 +392,14 @@ Page({
     }
     let topicQuestions = selectedTopic ? (selectedTopic.questions || []) : [];
     const sourceTopicId = selectedTopic ? (selectedTopic.sourceTopicId || topicId) : topicId;
+    const snapshotId = `${this.data.selectedExamId || 'grammar'}:${sourceTopicId}`;
+    const topicSnapshot = !topicQuestions.length ? snapshotStore.read(GRAMMAR_TOPIC_SNAPSHOT_KEY, {
+      id: snapshotId,
+      maxAgeMs: 10 * 60 * 1000
+    }) : null;
+    if (!topicQuestions.length && topicSnapshot && Array.isArray(topicSnapshot.questions)) {
+      topicQuestions = topicSnapshot.questions;
+    }
     const shouldLoadRemote = selectedTopic && !topicQuestions.length && this.data.mode !== 'wrong';
     const shouldLoadProgress = selectedTopic && this.data.mode !== 'wrong';
     if (topicQuestions.length) {
@@ -411,6 +422,9 @@ Page({
     ]);
     if (topicResult) {
       topicQuestions = topicResult.questions || [];
+      snapshotStore.write(GRAMMAR_TOPIC_SNAPSHOT_KEY, snapshotId, {
+        questions: topicQuestions
+      }, { source: 'grammar-topic' });
     }
     let nextIndex = 0;
     if (progressResult) {
