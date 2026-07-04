@@ -16,6 +16,10 @@
       },
       {
         "type": "folder",
+        "value": "output"
+      },
+      {
+        "type": "folder",
         "value": "cloudfunctions"
       },
       {
@@ -41,6 +45,10 @@
       {
         "type": "folder",
         "value": "data/imports"
+      },
+      {
+        "type": "folder",
+        "value": "data/dictionary-import"
       },
       {
         "type": "folder",

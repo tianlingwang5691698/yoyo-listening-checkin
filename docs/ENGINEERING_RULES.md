@@ -272,3 +272,23 @@ new Date().toISOString().slice(0, 10)
 - 后续同类需求是否更容易接着做
 
 如果只是“眼前能跑”，但会让结构更乱，那不算正确方案。
+
+## 15. 小程序上传包边界
+
+上传包只放运行时必需文件，不放工程过程产物。
+
+必须长期排除：
+
+- `cloudfunctions/`、`cloudfunctions-dev/`
+- `docs/`、`scripts/`
+- `output/`、`tmp/`
+- `.cloudbase/`、`.github/`
+- `data/dictionary-import/`
+- 各类素材清洗、上传、导入的中间产物
+
+规则：
+
+- 生成物、导入物、素材中间文件只能作为本地工程资产或云端上传源，不进入小程序主包。
+- 主包超过 2MB 时，先查 `project.config.json -> packOptions.ignore`，不要优先删业务页面。
+- 新增任何批处理输出目录时，必须同步加入上传忽略规则。
+- 提交发版前要用微信开发者工具“代码质量 / 主包大小”确认没有混入非运行时内容。

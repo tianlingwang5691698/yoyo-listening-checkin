@@ -96,6 +96,9 @@ Mini Program Upload Note: 3.0.1
 
 ### 8. 上传代码
 
+- 上传前必须先看“代码质量 / 主包大小”；主包超过 2MB 时先查 `project.config.json -> packOptions.ignore`
+- `output/`、`tmp/`、`docs/`、`scripts/`、`cloudfunctions/`、`cloudfunctions-dev/`、`data/dictionary-import/` 和各类素材生成目录不得进入小程序主包
+- 上传失败如果提示 `source size exceed max limit 2MB`，优先判断为生成物或导入物混入，不先删业务代码
 - 上传当前可提审版本
 - 记录版本号与说明
 - 记录本次使用的 Git tag

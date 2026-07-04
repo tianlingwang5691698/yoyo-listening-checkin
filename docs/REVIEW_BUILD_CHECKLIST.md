@@ -7,7 +7,8 @@
   - `showCloudDebug` 已为 `false`
 - 云函数仍然指向正式环境
 - 关键真机链路已在内部基线版通过
-- 上传包配置已忽略 `docs`、`README.md`、`.cloudbase`、`scripts` 和本地私有配置
+- 上传包配置已忽略 `docs`、`README.md`、`.cloudbase`、`scripts`、`output`、`tmp`、`cloudfunctions`、`cloudfunctions-dev`、`data/dictionary-import` 和本地私有配置
+- 主包大小必须低于 2MB；若超限，先检查生成物、导入词典、素材中间产物是否混入，不通过删除业务页面降包
 - 上传前使用合法域名校验，避免体验版误带开发态配置
 
 ## 页面文案检查
