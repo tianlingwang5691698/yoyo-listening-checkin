@@ -25,8 +25,8 @@
     </view>
     <view class="picture-grid" wx:elif="{{item.images && item.images.length}}">
       <view class="picture-cell" wx:for="{{item.images}}" wx:key="cloudPath">
-        <image class="picture-item" mode="aspectFit" src="{{item.src}}"></image>
         <view class="picture-label">{{item.label}}</view>
+        <image class="picture-item" mode="aspectFit" src="{{item.src}}"></image>
       </view>
     </view>
     <view class="question-row" wx:for="{{questions}}" wx:key="number">
