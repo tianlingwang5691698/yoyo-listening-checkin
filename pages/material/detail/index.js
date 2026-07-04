@@ -67,6 +67,14 @@ function recordListeningStudyPackSynced(item) {
   });
 }
 
+function withImageDisplayMode(item) {
+  if (!item) return item;
+  const images = item.images || [];
+  return Object.assign({}, item, {
+    imageDisplayMode: images.length === 1 ? 'composite' : 'grid'
+  });
+}
+
 Page({
   data: page.createCloudPageData({
     item: null,
@@ -100,7 +108,7 @@ Page({
       id: itemId,
       maxAgeMs: 5 * 60 * 1000
     }) : null;
-    const item = (snapshot && snapshot.item) || legacyItem || null;
+    const item = withImageDisplayMode((snapshot && snapshot.item) || legacyItem || null);
     const studyCompleted = item ? !!wx.getStorageSync(studyDoneKey(item)) : false;
     this.setData({
       item,
@@ -157,12 +165,12 @@ Page({
       map[entry.cloudPath] = entry.url || '';
       return map;
     }, {});
-    const item = Object.assign({}, this.data.item, {
+    const item = withImageDisplayMode(Object.assign({}, this.data.item, {
       images: (images || []).map((image, index) => Object.assign({}, image, {
         label: image.label || PICTURE_LABELS[index] || String(index + 1),
         src: urls[image.cloudPath] || ''
       }))
-    });
+    }));
     this.setData({ item });
   },
   toggleAudio() {
