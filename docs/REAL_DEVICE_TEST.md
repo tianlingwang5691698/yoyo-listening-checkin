@@ -23,6 +23,13 @@
 - 创建一份测试记录，建议直接复制 [docs/REAL_DEVICE_TEST_LOG_TEMPLATE.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/REAL_DEVICE_TEST_LOG_TEMPLATE.md)
 - 若涉及版本升级或规则变更，发版前同时执行 [docs/LEGACY_USER_COMPATIBILITY_CHECKLIST.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/LEGACY_USER_COMPATIBILITY_CHECKLIST.md)
 
+## 听力口语录音规则
+
+- A1 阶段二回答评分必须用手机真机验证，不接受微信开发者工具录音作为通过依据。
+- 录音评分只接受腾讯 ASR 可识别的真实音频格式；若日志 `magic` 为 `1a45dfa3`，说明实际是 `webm`，不能按 `mp3` 送 ASR。
+- 学生录音评分写入学习记录和家长日报；家长录音走 `preview` 试做评分，只返回结果，不写入学生记录。
+- 线上真实用户必须发布新版小程序包后才会生效；仅部署云函数不会更新家长手机上的旧客户端逻辑。
+
 ## 第一轮：开发者真机自测
 
 ### 用例 1：首次启动与云初始化

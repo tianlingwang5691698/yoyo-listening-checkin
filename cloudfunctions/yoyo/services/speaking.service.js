@@ -13,6 +13,7 @@ function normalizeAttemptPayload(payload) {
     attemptType: String(payload.attemptType || '').trim(),
     attemptIndex: Number(payload.attemptIndex || 0),
     sentenceIndex: Number(payload.sentenceIndex || 0),
+    audioFormat: String(payload.audioFormat || 'mp3').trim().replace(/[^a-z0-9]/gi, '').toLowerCase() || 'mp3',
     questionText: String(payload.questionText || '').trim(),
     promptText: String(payload.promptText || '').trim(),
     answerAudioFileId: String(payload.answerAudioFileId || '').trim(),
@@ -61,6 +62,7 @@ async function createSpeakingUploadUrl(event) {
   }
   const scope = study.getUserScope(ctx);
   const now = Date.now();
+  const audioFormat = ['mp3', 'aac', 'm4a'].includes(attempt.audioFormat) ? attempt.audioFormat : 'mp3';
   const cloudPath = [
     '_speaking',
     scope.familyId,
@@ -68,7 +70,7 @@ async function createSpeakingUploadUrl(event) {
     attempt.date || today,
     attempt.category,
     attempt.taskId,
-    `${attempt.attemptType || 'attempt'}-${attempt.attemptIndex || 0}-${attempt.sentenceIndex || 0}-${now}.mp3`
+    `${attempt.attemptType || 'attempt'}-${attempt.attemptIndex || 0}-${attempt.sentenceIndex || 0}-${now}.${audioFormat}`
   ].join('/');
   return {
     cloudPath,
@@ -148,7 +150,23 @@ async function submitSpeakingAttempt(event) {
     createdAt: now,
     updatedAt: now
   });
+  if (attempt.planRunType === 'preview') {
+    const previewAttempt = formatAttemptForClient(Object.assign({}, record, {
+      attemptId: `preview-${Date.now()}`,
+      resultRole: '试做'
+    }));
+    return {
+      attempt: previewAttempt,
+      attempts: [previewAttempt],
+      summary: speakingEngine.summarizeAttempts([previewAttempt])
+    };
+  }
   const attemptId = await attemptRepository.add(record);
+  try {
+    await study.upsertDailyReport(scope, record.date);
+  } catch (error) {
+    console.warn('[speaking-report-upsert-failed]', String(error && error.message || error || ''));
+  }
   const attempts = await attemptRepository.findBestAndLatestByTask(scope, {
     date: record.date,
     category: record.category,
@@ -252,6 +270,11 @@ async function rescoreSpeakingAttempt(event) {
     updatedAt: now
   };
   await attemptRepository.update(attemptId, patch);
+  try {
+    await study.upsertDailyReport(scope, existing.date || today);
+  } catch (error) {
+    console.warn('[speaking-report-upsert-failed]', String(error && error.message || error || ''));
+  }
   const attempts = await attemptRepository.findBestAndLatestByTask(scope, {
     date: existing.date || today,
     category: existing.category,

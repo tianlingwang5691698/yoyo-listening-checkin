@@ -552,7 +552,7 @@ async function markTaskListened(options) {
 }
 
 async function createSpeakingUploadUrl(options) {
-  return callCloud('createSpeakingUploadUrl', options, {
+  return callCloud('createSpeakingUploadUrl', withSelectedStudent(options || {}), {
     cloudPath: '',
     fileId: ''
   });
@@ -563,7 +563,7 @@ async function uploadSpeakingAudio(cloudPath, filePath) {
 }
 
 async function submitSpeakingAttempt(options) {
-  return callCloud('submitSpeakingAttempt', options, {
+  return callCloud('submitSpeakingAttempt', withSelectedStudent(options || {}), {
     attempt: null,
     attempts: [],
     summary: {}
@@ -571,13 +571,13 @@ async function submitSpeakingAttempt(options) {
 }
 
 async function evaluateSpeakingPronunciation(options) {
-  return callCloud('evaluateSpeakingPronunciation', options, {
+  return callCloud('evaluateSpeakingPronunciation', withSelectedStudent(options || {}), {
     pronunciation: null
   });
 }
 
 async function rescoreSpeakingAttempt(options) {
-  return callCloud('rescoreSpeakingAttempt', options, {
+  return callCloud('rescoreSpeakingAttempt', withSelectedStudent(options || {}), {
     attempt: null,
     attempts: [],
     summary: {}

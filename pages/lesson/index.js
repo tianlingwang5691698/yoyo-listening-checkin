@@ -1049,20 +1049,40 @@ Page({
     this.setData({ speakingSubmitting: true });
     try {
       if (this.planRunType === 'preview' || !this.isStudyWriteAllowed()) {
-        const attempts = (this.data.speakingAttempts || []).concat([{
+        const upload = await store.createSpeakingUploadUrl({
+          category: this.category,
+          taskId: task.taskId,
+          targetDate: this.targetDate,
+          planRunType: 'preview',
+          planDayIndex: this.planDayIndex,
+          attemptType,
+          attemptIndex,
+          sentenceIndex
+        });
+        const fileId = await store.uploadSpeakingAudio(upload.cloudPath, this.data.speakingTempFilePath);
+        const result = await store.submitSpeakingAttempt({
+          category: this.category,
+          taskId: task.taskId,
+          targetDate: this.targetDate,
+          planRunType: 'preview',
+          planDayIndex: this.planDayIndex,
           attemptType,
           attemptIndex,
           sentenceIndex,
           questionText: this.data.speakingQuestionText,
           promptText: isRepeat ? sentence.text : this.data.speakingQuestionText,
-          localAudioPath: this.data.speakingTempFilePath,
-          answerDurationMs: this.data.speakingRecordDurationMs,
-          answerDurationText: this.data.speakingRecordDurationText,
-          score: Math.max(70, Math.min(95, 82 + ((attemptIndex + sentenceIndex) % 9))),
-          feedback: isRepeat ? '试做评分：发音流程可继续检查。' : '试做评分：回答流程可继续检查。',
-          status: 'preview',
-          createdAt: new Date().toISOString()
-        }]);
+          answerAudioFileId: fileId || upload.fileId,
+          answerCloudPath: upload.cloudPath,
+          answerDurationMs: this.data.speakingRecordDurationMs
+        });
+        if (!result || result.cloudError || !result.attempt) {
+          wx.showToast({ title: '试做评分失败', icon: 'none' });
+          return;
+        }
+        const previewAttempt = Object.assign({}, normalizeSpeakingAttempts([result.attempt])[0] || result.attempt, {
+          localAudioPath: this.data.speakingTempFilePath
+        });
+        const attempts = (this.data.speakingAttempts || []).concat([previewAttempt]);
         const repeated = {};
         attempts.filter((item) => item.attemptType === 'unlock_sentence_repeat').forEach((item) => {
           repeated[item.sentenceIndex] = true;
@@ -1086,11 +1106,11 @@ Page({
               activeRepeatLine: (this.data.repeatLines || [])[nextIndex] || null
             });
           }
-          wx.showToast({ title: '试做评分完成', icon: 'none' });
+          wx.showToast({ title: '云端试做评分完成', icon: 'none' });
           return;
         }
         this.setData({ speakingAttemptIndex: attemptIndex + 1 });
-        wx.showToast({ title: '评分完成，可重录', icon: 'none' });
+        wx.showToast({ title: '云端评分完成，可重录', icon: 'none' });
         return;
       }
       const upload = await store.createSpeakingUploadUrl({

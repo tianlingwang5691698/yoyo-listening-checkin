@@ -470,10 +470,15 @@ async function transcribeAudioByTencentAsr(audioBuffer, payload) {
     }
   });
   const inferredFormat = inferAudioFormat(audioBuffer);
-  const voiceFormat = String(process.env.TENCENT_ASR_VOICE_FORMAT || inferredFormat || 'mp3').trim();
-  if (voiceFormat === 'webm') {
-    throw new Error('unsupported-webm-audio-use-real-device');
+  if (inferredFormat === 'webm') {
+    console.error('[speaking-tencent-asr-unsupported-format]', JSON.stringify({
+      inferredFormat,
+      bytes: audioBuffer && audioBuffer.length ? audioBuffer.length : 0,
+      magic: Buffer.isBuffer(audioBuffer) ? audioBuffer.slice(0, 12).toString('hex') : ''
+    }));
+    throw new Error('录音格式为webm，腾讯ASR不支持；请用手机真机录音，或改为支持webm转码后再评分');
   }
+  const voiceFormat = String(process.env.TENCENT_ASR_VOICE_FORMAT || inferredFormat || 'mp3').trim();
   const baseRequest = {
     EngSerViceType: String(process.env.TENCENT_ASR_ENGINE || '16k_en').trim(),
     VoiceFormat: voiceFormat,
@@ -481,47 +486,43 @@ async function transcribeAudioByTencentAsr(audioBuffer, payload) {
     SubServiceType: 2,
     UsrAudioKey: `yoyo-${Date.now()}`
   };
-  const audioUrl = await storageAdapter.getTempFileURL(
-    payload && payload.answerAudioFileId,
-    payload && payload.answerCloudPath
-  );
   console.log('[speaking-tencent-asr-input]', JSON.stringify({
     bytes: audioBuffer && audioBuffer.length ? audioBuffer.length : 0,
     voiceFormat,
     magic: Buffer.isBuffer(audioBuffer) ? audioBuffer.slice(0, 12).toString('hex') : '',
-    hasUrl: !!audioUrl,
     answerAudioFileId: payload && payload.answerAudioFileId ? 'yes' : 'no',
     answerCloudPath: payload && payload.answerCloudPath ? 'yes' : 'no'
   }));
-  if (audioUrl) {
-    try {
-      const urlResult = await client.SentenceRecognition(Object.assign({}, baseRequest, {
-        SourceType: 0,
-        Url: audioUrl
-      }));
-      const urlTranscript = normalizeText(urlResult && urlResult.Result);
-      if (urlTranscript) {
-        return urlTranscript;
-      }
-      console.warn('[speaking-tencent-asr-url-empty]', JSON.stringify({
-        requestId: urlResult && urlResult.RequestId ? urlResult.RequestId : '',
-        voiceFormat
-      }));
-    } catch (error) {
-      console.error('[speaking-tencent-asr-url-failed]', JSON.stringify({
-        message: String(error && error.message || error || '')
-      }));
-    }
-  }
   if (!audioBuffer || !audioBuffer.length) {
     throw new Error('tencent-asr-empty-audio-buffer');
   }
-  const result = await client.SentenceRecognition(Object.assign({}, baseRequest, {
-    SourceType: 1,
-    Data: audioBuffer.toString('base64'),
-    DataLen: audioBuffer.length
-  }));
-  return normalizeText(result && result.Result);
+  try {
+    const result = await client.SentenceRecognition(Object.assign({}, baseRequest, {
+      SourceType: 1,
+      Data: audioBuffer.toString('base64'),
+      DataLen: audioBuffer.length
+    }));
+    return normalizeText(result && result.Result);
+  } catch (bufferError) {
+    console.error('[speaking-tencent-asr-buffer-failed]', JSON.stringify({
+      message: String(bufferError && bufferError.message || bufferError || ''),
+      voiceFormat,
+      bytes: audioBuffer.length,
+      magic: audioBuffer.slice(0, 12).toString('hex')
+    }));
+    const audioUrl = await storageAdapter.getTempFileURL(
+      payload && payload.answerAudioFileId,
+      payload && payload.answerCloudPath
+    );
+    if (!audioUrl) {
+      throw bufferError;
+    }
+    const urlResult = await client.SentenceRecognition(Object.assign({}, baseRequest, {
+      SourceType: 0,
+      Url: audioUrl
+    }));
+    return normalizeText(urlResult && urlResult.Result);
+  }
 }
 
 function isChatAudioTranscribeModel(model) {
