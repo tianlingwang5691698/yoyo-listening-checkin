@@ -51,6 +51,10 @@ function normalizePassage(item) {
   };
 }
 
+function hasUsableReadingQuestions(passage) {
+  return !!(passage && Array.isArray(passage.questions) && passage.questions.length > 0);
+}
+
 async function readCollection(name, limit) {
   try {
     const result = await dbAdapter.collection(name)
@@ -102,7 +106,7 @@ async function loadPassages() {
       }
     }
     if (cloudStoragePassages.length) {
-      const passages = cloudStoragePassages.map(normalizePassage).filter((item) => item._id && item.passage);
+      const passages = cloudStoragePassages.map(normalizePassage).filter((item) => item._id && item.passage && hasUsableReadingQuestions(item));
       passageListCache = { savedAt: Date.now(), passages };
       return passages;
     }
@@ -111,7 +115,7 @@ async function loadPassages() {
   }
   const cloudPassages = await readCollection('readingPassages', 200);
   const list = cloudPassages.length ? cloudPassages : loadSamplePassages();
-  const passages = list.map(normalizePassage).filter((item) => item._id && item.passage);
+  const passages = list.map(normalizePassage).filter((item) => item._id && item.passage && hasUsableReadingQuestions(item));
   passageListCache = { savedAt: Date.now(), passages };
   return passages;
 }

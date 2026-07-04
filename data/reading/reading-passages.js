@@ -1536,6 +1536,18 @@ module.exports = [
           "C": "However",
           "D": "Finally"
         }
+      },
+      {
+        "number": 85,
+        "prompt": "99. Write at least 60 words about the topic \"My classmates and my class\". (以“我的同学我的班”为题写一篇不少于60个词的短文，标点符号不占格。） 1. How do you get along with your classmates? 2. What have you done with your classmates? (Give at least 2 examples) 3. What do you think of your class? 1. My brother has a pet fish and he never forgets to feed it once a day. -'OF) 2. Julia, do you want the balloon I got from the party? (D) 3. Henry practised kicking the ball very hard after he joined the school team. (E) 4. Although I won't leave until next month, Mother has begun to pack everything for me. (G) 5. Helen succeeded in training the dog to do many things under her orders. (A) 6. Lisa, you've played computer games too much, and now you have to wear thick glasses. (C) 7. M: Did you have eggs and noodles for breakfast, Nancy? 8. W: Don't stay at home, Ben. You need some outdoor activities like playing tennis and cycling. 9. W: Do you walk to school everyday, Peter? 10. M: Is Alice watching TV or listening to music now? 11. M: Welcome to my family for home stay! 12. W: Good afternoon. What can I do for you? 13. Wt When will the meeting begin? 14. M: There are many lovely animals in the zoo. Shall we go to see the funny monkeys first? 15. W: Turn right here, please. 16. M: Grandma, yesterday evening Dad promised he would give up smoking. 41. D 42. A 43. B 44. C 45. D 46. C 47. D 48. A 49. B 50. A 65. produce 66. choice 94. Twenty-two. 95. She liked to listen to her favourite radio programme. 96. No, it didn't. 97. Dorothy Price gave sleeping pills to them. 98. (Any reasonable answers are acceptable.)",
+        "answer": "C",
+        "questionType": "choice",
+        "options": {
+          "A": "Listen and choose the right picture (根据你听到的内容，选出相应的图片)",
+          "B": "80. B 81. C 82. A 83. D 84. A 85. C",
+          "C": "86. rules 87. forever 88. angry 89. still 90. hated 91. how 92. world",
+          "D": "93. They lived the little village of Milford in Derbyshire."
+        }
       }
     ],
     "answerSentences": [],
@@ -8421,6 +8433,18 @@ module.exports = [
           "B": "An Australian Family",
           "C": "A Locust Plague",
           "D": "Animals in Australia"
+        }
+      },
+      {
+        "number": 80,
+        "prompt": "88. Did Kyle start his trade with a house? 89. Where does Kyle come from? 90. How do young people start their trading activities? 91. Why do some traders like face-to-face trading? 92. What has the girl in Beijing got after several trades? 93. According to Kyle’s words, why are these trades popular among young people？ 94. Write a composition in at least 60 words according to the situation given. (根据所给情景写一篇短文，字数不得少于60词) 1. Vegetables are good for people’s health. (3”) 2. Tom enjoys riding a bicycle at weekends. (3”) 3. Sherry would like to be a singer in the future. (3”) 4. Serious pollution is making the earth sick. (3”) 5. Susan and her husband got married in a church. (3”) 6. Nick was going over his lessons this time yesterday. (3”) 7. M: When did you post the mail? 8. M: I’ve had a headache for several days. I don’t know what’s wrong. 9. M: Could you tell me more details about the volunteers? 10. W: A wonderful movie, isn’t it? The story touched me. 11. W: How long does it take to travel to the airport by bus? 12. W: Good afternoon. Can I help you? 13. M: I’ve heard that many people applied for the job. I feel worried. 14. W: The conference started 10 minutes ago. Where were you? 24. returned to 25. in March 36. D 37. B 38. C 39. A 40. C 41. B 42. D 43. C 44. A 45. D 58. forgetful 59. dancer 60. lost 61. solution 85. difficulty(ies) 86.encourages 87. guest 89. Canada. 90. (They start their trading activities) by setting up websites. 91. Because they don’t have to worry about who is going to pay for the delivery. 92. A piano. 93. Because they can get what they need/ they can get things (that are) useful to them.",
+        "answer": "B",
+        "questionType": "choice",
+        "options": {
+          "A": "1. B 2. F 3. H 4. A 5. C 6. E",
+          "B": "75. B 76. A 77. C 78. D 79. D 80. B",
+          "C": "81. happier 82. foreign 83. share/see 84. besides",
+          "D": "88. No."
         }
       }
     ],
@@ -18755,6 +18779,366 @@ module.exports = [
     "difficultyLabel": "表达输出"
   },
   {
+    "_id": "sh-em2-2019-a-05-hongkou",
+    "title": "2019 上海虹口二模阅读 A",
+    "year": 2019,
+    "city": "上海",
+    "district": "虹口",
+    "examType": "二模",
+    "section": "A",
+    "sourceType": "shanghai-mock",
+    "sourceFile": "上海市虹口区2019届九年级4月质量调研（二模）英语试题及答案（word解析版）---已校对.docx",
+    "passage": "A. Inline skating marathon\n30 km on wheels\n@ Bradgate Park, Sun 29 July\nStarts 10 a.m.\nRegister at www.inlineskatemarathonjuly.com\nB. sci-fi festival\nSat 28 July\n12 p.m. - 12 a.m. at the Phoenix Arts Centre\nAdmission: £15 children & seniors, £20 adults\nC. Oliver! The musical\nAt The Curve Theatre, Rutland Street\nTues 31 July - Sun 12 Aug\nTickets available at The Curve Theatre ticket office.\nD. Rugby: Leicester Tigers vs Nottingham Giants\nPre-league friendly match\nSat 25 August\nKick-off at 3:00 p.m.\nCity Stadium\nE. New multi-screen cinema\nOpens Sat 28 July\n12 screens with digital sound and 3D projection systems\nCine Paradise, Victory Square, Nottingham, NT1 3BR\nFor full listings check www.cineparadise-notts.co.uk\nF. Medieval market\nShepton town square\nThurs - Sun\n10 a.m. - 11 p.m.\nTraditional crafts, food, sports and games",
+    "questions": [
+      {
+        "number": 69,
+        "prompt": "You have to register(注册) for ________ online first.",
+        "options": {
+          "A": "the sci-fi festival",
+          "B": "the rugby match",
+          "C": "the musical \"Oliver\"",
+          "D": "the inline skating marathon"
+        },
+        "answer": "D",
+        "questionType": "choice",
+        "analysis": "Inline skating marathon 广告中写有 Register at www.inlineskatemarathonjuly.com。"
+      },
+      {
+        "number": 70,
+        "prompt": "Mr. and Mrs. Smith want to go to sci-fi festival with their 8-year-old son. They will pay _________.",
+        "options": {
+          "A": "£35",
+          "B": "£50",
+          "C": "£55",
+          "D": "£60"
+        },
+        "answer": "C",
+        "questionType": "choice",
+        "analysis": "sci-fi festival 票价为儿童 £15，成人 £20，两名成人加一名儿童共 £55。"
+      },
+      {
+        "number": 71,
+        "prompt": "The date for both the new cinema opening and the sci-fi festival is _________.",
+        "options": {
+          "A": "28 July",
+          "B": "29 July",
+          "C": "31 July",
+          "D": "25 August"
+        },
+        "answer": "A",
+        "questionType": "choice",
+        "analysis": "sci-fi festival 和 new multi-screen cinema 都在 Sat 28 July。"
+      },
+      {
+        "number": 72,
+        "prompt": "You can learn about the culture and customs of people many years ago at _________.",
+        "options": {
+          "A": "Bradgate Park",
+          "B": "Shepton town square",
+          "C": "Victory Square",
+          "D": "Rutland Street"
+        },
+        "answer": "B",
+        "questionType": "choice",
+        "analysis": "Medieval market 在 Shepton town square，内容是传统工艺、食物、运动和游戏。"
+      },
+      {
+        "number": 73,
+        "prompt": "The website www.cineparadise-notts.co.uk may provide _________.",
+        "options": {
+          "A": "popular sports and games",
+          "B": "traditional crafts and local foods",
+          "C": "the latest films from Hollywood",
+          "D": "wonderful musical performances"
+        },
+        "answer": "C",
+        "questionType": "choice",
+        "analysis": "该网址出现在 New multi-screen cinema 广告中，用于查看电影排片。"
+      },
+      {
+        "number": 74,
+        "prompt": "You can read the material above probably in the _________ section of a newspaper.",
+        "options": {
+          "A": "sports",
+          "B": "news",
+          "C": "business",
+          "D": "advertisement"
+        },
+        "answer": "D",
+        "questionType": "choice",
+        "analysis": "材料由多则活动广告组成，属于 advertisement 版块。"
+      }
+    ],
+    "answerSentences": [
+      {
+        "label": "答案句 1",
+        "text": "Register at www.inlineskatemarathonjuly.com"
+      },
+      {
+        "label": "答案句 2",
+        "text": "Admission: £15 children & seniors, £20 adults"
+      },
+      {
+        "label": "答案句 3",
+        "text": "sci-fi festival Sat 28 July; New multi-screen cinema Opens Sat 28 July"
+      },
+      {
+        "label": "答案句 4",
+        "text": "Medieval market, Shepton town square"
+      },
+      {
+        "label": "答案句 5",
+        "text": "For full listings check www.cineparadise-notts.co.uk"
+      },
+      {
+        "label": "答案句 6",
+        "text": "The material is a group of event advertisements."
+      }
+    ],
+    "phrases": [
+      {
+        "phrase": "fi festival with their",
+        "meaning": "阅读高频表达"
+      },
+      {
+        "phrase": "the date for both the new",
+        "meaning": "阅读高频表达"
+      },
+      {
+        "phrase": "you can learn about the culture and",
+        "meaning": "阅读高频表达"
+      },
+      {
+        "phrase": "the latest films from hollywood d",
+        "meaning": "阅读高频表达"
+      }
+    ],
+    "vocabulary": [
+      {
+        "word": "register",
+        "meaning": "结合原文理解"
+      },
+      {
+        "word": "online",
+        "meaning": "结合原文理解"
+      },
+      {
+        "word": "first",
+        "meaning": "结合原文理解"
+      },
+      {
+        "word": "sci-fi",
+        "meaning": "结合原文理解"
+      },
+      {
+        "word": "festival",
+        "meaning": "结合原文理解"
+      },
+      {
+        "word": "rugby",
+        "meaning": "结合原文理解"
+      },
+      {
+        "word": "match",
+        "meaning": "结合原文理解"
+      },
+      {
+        "word": "musical",
+        "meaning": "结合原文理解"
+      }
+    ],
+    "status": "sample-key-reviewed",
+    "createdAt": "2026-06-28T17:29:57.969Z",
+    "sentencePatterns": [],
+    "sectionLabel": "阅读选择",
+    "difficultyLevel": 1,
+    "difficultyLabel": "基础理解"
+  },
+  {
+    "_id": "sh-em2-2019-b-05-hongkou",
+    "title": "2019 上海虹口二模阅读 B",
+    "year": 2019,
+    "city": "上海",
+    "district": "虹口",
+    "examType": "二模",
+    "section": "B",
+    "sourceType": "shanghai-mock",
+    "sourceFile": "上海市虹口区2019届九年级4月质量调研（二模）英语试题及答案（word解析版）---已校对.docx",
+    "passage": "I have always admired students who hand their homework in on time and never forget to do it. I admit. I’m terrible at getting myself organized! But 75 I’ve started keeping a small study diary. I write down everything I need to do and when it needs to be done by. Then I write a reminder a few days before the date just in case. It’s 76.\nSo do you have other tips for getting organized as well? Post a comment (评论) below.\n— Amy\nGood question, Amy. I always spend about five minutes 77 the day tidying up the desktop on my computer. I make a backup (备份) of important documents. I delete things I don’t need any more and put everything into the correct folder before going to bed.\nA calendar is something I would recommend that will keep you get track on further exams and just have your whole day even more organized.\nHi, Amy. My tip is to have a big 78 in your bedroom, divided into different sections. I’ve got one. It’s white. I’ve got a section for each school subject and another one for other things. I write reminders and stick them on it and I make sure I look at it every day. The best part is when I 79 some reminders with new ones!\nMy tip as an organized student is 80 your day well. I mean you should put the things in a correct order: 1. important & urgent (急迫的) 2. important & not urgent 3. unimportant & urgent 4. unimportant & not urgent. By putting things in each order, I know which subject I should start with and what to do later.",
+    "questions": [
+      {
+        "number": 75,
+        "prompt": "75",
+        "options": {
+          "A": "immediately",
+          "B": "recently",
+          "C": "directly",
+          "D": "properly"
+        },
+        "answer": "B",
+        "questionType": "choice",
+        "analysis": "根据句意，Amy 最近开始记学习日记。"
+      },
+      {
+        "number": 76,
+        "prompt": "76",
+        "options": {
+          "A": "amusing",
+          "B": "boring",
+          "C": "helpful",
+          "D": "useless"
+        },
+        "answer": "C",
+        "questionType": "choice",
+        "analysis": "It 指代前面的方法，这个方法很有用。"
+      },
+      {
+        "number": 77,
+        "prompt": "77",
+        "options": {
+          "A": "at the end of",
+          "B": "in the middle of",
+          "C": "at the beginning of",
+          "D": "in the late afternoon of"
+        },
+        "answer": "A",
+        "questionType": "choice",
+        "analysis": "睡觉前整理电脑桌面，对应 at the end of the day。"
+      },
+      {
+        "number": 78,
+        "prompt": "78",
+        "options": {
+          "A": "shelf",
+          "B": "screen",
+          "C": "board",
+          "D": "poster"
+        },
+        "answer": "C",
+        "questionType": "choice",
+        "analysis": "后文说 write reminders and stick them on it，可推断是 board。"
+      },
+      {
+        "number": 79,
+        "prompt": "79",
+        "options": {
+          "A": "enrich",
+          "B": "mix",
+          "C": "match",
+          "D": "cover"
+        },
+        "answer": "D",
+        "questionType": "choice",
+        "analysis": "用新的提醒覆盖旧的提醒。"
+      },
+      {
+        "number": 80,
+        "prompt": "80",
+        "options": {
+          "A": "planning",
+          "B": "considering",
+          "C": "predicting",
+          "D": "checking"
+        },
+        "answer": "A",
+        "questionType": "choice",
+        "analysis": "后文讲按重要/紧急程度排序，是 planning your day well。"
+      }
+    ],
+    "answerSentences": [
+      {
+        "label": "答案句 1",
+        "text": "But recently I’ve started keeping a small study diary."
+      },
+      {
+        "label": "答案句 2",
+        "text": "I write down everything I need to do and when it needs to be done by."
+      },
+      {
+        "label": "答案句 3",
+        "text": "I always spend about five minutes at the end of the day tidying up the desktop on my computer."
+      },
+      {
+        "label": "答案句 4",
+        "text": "My tip is to have a big board in your bedroom."
+      },
+      {
+        "label": "答案句 5",
+        "text": "The best part is when I cover some reminders with new ones!"
+      },
+      {
+        "label": "答案句 6",
+        "text": "My tip as an organized student is planning your day well."
+      }
+    ],
+    "phrases": [
+      {
+        "phrase": "a few days before the date just",
+        "meaning": "阅读高频表达"
+      },
+      {
+        "phrase": "have other tips for getting organized as",
+        "meaning": "阅读高频表达"
+      },
+      {
+        "phrase": "i always spend about five minutes",
+        "meaning": "阅读高频表达"
+      },
+      {
+        "phrase": "the correct folder before going to bed",
+        "meaning": "阅读高频表达"
+      },
+      {
+        "phrase": "got a section for each school subject",
+        "meaning": "阅读高频表达"
+      },
+      {
+        "phrase": "and another one for other things",
+        "meaning": "阅读高频表达"
+      }
+    ],
+    "vocabulary": [
+      {
+        "word": "always",
+        "meaning": "结合原文理解"
+      },
+      {
+        "word": "admired",
+        "meaning": "结合原文理解"
+      },
+      {
+        "word": "students",
+        "meaning": "结合原文理解"
+      },
+      {
+        "word": "homework",
+        "meaning": "结合原文理解"
+      },
+      {
+        "word": "never",
+        "meaning": "结合原文理解"
+      },
+      {
+        "word": "forget",
+        "meaning": "结合原文理解"
+      },
+      {
+        "word": "admit",
+        "meaning": "结合原文理解"
+      },
+      {
+        "word": "terrible",
+        "meaning": "结合原文理解"
+      }
+    ],
+    "status": "sample-key-reviewed",
+    "createdAt": "2026-06-28T17:29:58.059Z",
+    "sentencePatterns": [],
+    "sectionLabel": "完形填空",
+    "difficultyLevel": 2,
+    "difficultyLabel": "语境词汇"
+  },
+  {
     "_id": "sh-em2-2019-虹口-reading-d",
     "title": "2019 上海虹口二模阅读 D",
     "year": 2019,
@@ -19401,6 +19785,190 @@ module.exports = [
     "sectionLabel": "回答问题",
     "difficultyLevel": 4,
     "difficultyLabel": "表达输出"
+  },
+  {
+    "_id": "sh-em2-2019-a-10-qingpu",
+    "title": "2019 上海青浦二模阅读 A",
+    "year": 2019,
+    "city": "上海",
+    "district": "青浦",
+    "examType": "二模",
+    "section": "A",
+    "sourceType": "shanghai-mock",
+    "sourceFile": "上海市青浦区2019届九年级4月质量调研（二模）英语试题及答案（word解析版）---已校对.docx",
+    "passage": "A. Choose the best answer（根据以下内容，选择最恰当的答案）（12分）\nGriffith Observatory (天文台)\nGriffith Observatory gives you the chance to become an observer. You can\n-- learn how people explore our local star, the sun.\n-- observe what causes day and night, seasons.\n-- use telescopes to observe the space.\n-- get a ticket for an amazing show about the universe.\n• HOURS OF OPERATION\nGriffith Observatory is open six days a week. Free admission (进入) to building, exhibits, and grounds.\nTuesday-Friday 1:00 p.m.– 10:00 p.m.\nSaturday-Sunday 10:00 a.m. – 10:00 p.m.\nMonday closed\n• SAMUEL PLANETARIUM THEATER\nThe Samuel Planetarium (天文馆) Theater offers 8 half-hour shows each day. There are usually three different shows from which to choose.\nCheck the website or information desks for each day’s showtimes. The tickets are only available on the day of the show and must be bought at the observatory. There is only a nominal charge (收费) to see a planetarium show.\nAdults $5.00 Children (5-12years old) $1.00\nStudents $2.00 Seniors (60 years and older) $3.00\n• PUBLIC TELESCOPES\nFree public telescopes are available each evening when skies are clear (except the Zeiss telescope on the roof). All observing must be completed by 9:00 p.m.\n( )69. According to the passage, what can visitors do in Griffith Observatory?\nA) To know something about telescopes. B) To watch movies about the seasons.\nC) To learn how people explore the sun. D) To observe what causes the space.\n( )70. You may stay there from 10:00 a.m. to 10:00 p.m. if you go to Griffith Observatory on .\nA) Sunday B) Monday C) Tuesday D) Friday\n( )71. The underlined word “nominal” probably means “ ”.\nA) high B) small C) monthly D) average\n( )72. Which of the following statements about the Samuel Planetarium Theater is true?\nA) It offers eight half-hour different shows every day.\nB) You can check the guide book for each day’s showtimes.\nC) People over 60 years old can get the tickets for free.\nD) The tickets are only available on the day of the show.\n( )73. Visitors can look through the public telescopes to observe the sky _______.\nA) after 9:00 p.m. B) on clear days C) for free D) on the roof\n( )74. The writer’s purpose of this passage is ______.\nA) to introduce their studies B) to provide some information\nC) to describe the observatory D) to make some suggestions",
+    "questions": [
+      {
+        "number": 69,
+        "prompt": "According to the passage, what can visitors do in Griffith Observatory?",
+        "options": {
+          "A": "To know something about telescopes.",
+          "B": "To watch movies about the seasons.",
+          "C": "To learn how people explore the sun.",
+          "D": "To observe what causes the space."
+        },
+        "answer": "C",
+        "questionType": "choice",
+        "analysis": "原文写有 learn how people explore our local star, the sun。"
+      },
+      {
+        "number": 70,
+        "prompt": "You may stay there from 10:00 a.m. to 10:00 p.m. if you go to Griffith Observatory on ________.",
+        "options": {
+          "A": "Sunday",
+          "B": "Monday",
+          "C": "Tuesday",
+          "D": "Friday"
+        },
+        "answer": "A",
+        "questionType": "choice",
+        "analysis": "营业时间中 Saturday-Sunday 为 10:00 a.m. - 10:00 p.m.。"
+      },
+      {
+        "number": 71,
+        "prompt": "The underlined word \"nominal\" probably means \"________\".",
+        "options": {
+          "A": "high",
+          "B": "small",
+          "C": "monthly",
+          "D": "average"
+        },
+        "answer": "B",
+        "questionType": "choice",
+        "analysis": "后文列出的票价较低，nominal charge 表示少量收费。"
+      },
+      {
+        "number": 72,
+        "prompt": "Which of the following statements about the Samuel Planetarium Theater is true?",
+        "options": {
+          "A": "It offers eight half-hour different shows every day.",
+          "B": "You can check the guide book for each day’s showtimes.",
+          "C": "People over 60 years old can get the tickets for free.",
+          "D": "The tickets are only available on the day of the show."
+        },
+        "answer": "D",
+        "questionType": "choice",
+        "analysis": "原文写 The tickets are only available on the day of the show。"
+      },
+      {
+        "number": 73,
+        "prompt": "Visitors can look through the public telescopes to observe the sky ________.",
+        "options": {
+          "A": "after 9:00 p.m.",
+          "B": "on clear days",
+          "C": "for free",
+          "D": "on the roof"
+        },
+        "answer": "C",
+        "questionType": "choice",
+        "analysis": "原文写 Free public telescopes are available each evening when skies are clear。"
+      },
+      {
+        "number": 74,
+        "prompt": "The writer’s purpose of this passage is ________.",
+        "options": {
+          "A": "to introduce their studies",
+          "B": "to provide some information",
+          "C": "to describe the observatory",
+          "D": "to make some suggestions"
+        },
+        "answer": "B",
+        "questionType": "choice",
+        "analysis": "全文提供 Griffith Observatory 的开放时间、剧场票价和公共望远镜等信息。"
+      }
+    ],
+    "answerSentences": [
+      {
+        "label": "答案句 1",
+        "text": "learn how people explore our local star, the sun."
+      },
+      {
+        "label": "答案句 2",
+        "text": "Saturday-Sunday 10:00 a.m. - 10:00 p.m."
+      },
+      {
+        "label": "答案句 3",
+        "text": "There is only a nominal charge to see a planetarium show."
+      },
+      {
+        "label": "答案句 4",
+        "text": "The tickets are only available on the day of the show."
+      },
+      {
+        "label": "答案句 5",
+        "text": "Free public telescopes are available each evening when skies are clear."
+      },
+      {
+        "label": "答案句 6",
+        "text": "The passage provides information about Griffith Observatory."
+      }
+    ],
+    "phrases": [
+      {
+        "phrase": "get a ticket for an amazing show",
+        "meaning": "阅读高频表达"
+      },
+      {
+        "phrase": "three different shows from which to choose",
+        "meaning": "阅读高频表达"
+      },
+      {
+        "phrase": "or information desks for each day",
+        "meaning": "阅读高频表达"
+      },
+      {
+        "phrase": "to know something about telescopes",
+        "meaning": "阅读高频表达"
+      },
+      {
+        "phrase": "to watch movies about the seasons",
+        "meaning": "阅读高频表达"
+      },
+      {
+        "phrase": "may stay there from",
+        "meaning": "阅读高频表达"
+      }
+    ],
+    "vocabulary": [
+      {
+        "word": "choose",
+        "meaning": "结合原文理解"
+      },
+      {
+        "word": "answer",
+        "meaning": "结合原文理解"
+      },
+      {
+        "word": "griffith",
+        "meaning": "结合原文理解"
+      },
+      {
+        "word": "observatory",
+        "meaning": "结合原文理解"
+      },
+      {
+        "word": "gives",
+        "meaning": "结合原文理解"
+      },
+      {
+        "word": "chance",
+        "meaning": "结合原文理解"
+      },
+      {
+        "word": "become",
+        "meaning": "结合原文理解"
+      },
+      {
+        "word": "observer",
+        "meaning": "结合原文理解"
+      }
+    ],
+    "status": "sample-key-reviewed",
+    "createdAt": "2026-06-28T17:29:57.971Z",
+    "sentencePatterns": [],
+    "sectionLabel": "阅读选择",
+    "difficultyLevel": 1,
+    "difficultyLabel": "基础理解"
   },
   {
     "_id": "sh-em2-2019-静安-reading-b",
