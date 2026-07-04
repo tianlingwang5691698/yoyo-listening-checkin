@@ -262,6 +262,10 @@ Page({
     const item = this.data.item;
     if (!item || this.data.studyLoading) return;
     if (!String(item.transcript || '').trim()) {
+      if (this.data.answerSummary) {
+        this.setData({ transcriptVisible: true, studyError: '' });
+        return;
+      }
       this.setData({ studyError: '这套听力暂无文本，暂不能生成。' });
       return;
     }
