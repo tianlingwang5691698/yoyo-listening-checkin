@@ -156,7 +156,7 @@ def split_listening(text):
     start = re.search(r'Part\s*1\s+Listening|Listening Comprehension|Listening comprehension', text, re.I)
     if not start:
         return ''
-    end = re.search(r'Part\s*2|Grammar and Vocabulary|Vocabulary and Grammar|第二部分', text[start.start():], re.I)
+    end = re.search(r'【答案】|参考答案|答案[:：]|Part\s*2|Grammar and Vocabulary|Vocabulary and Grammar|第二部分', text[start.start():], re.I)
     if end:
         return text[start.start():start.start() + end.start()]
     return text[start.start():]
@@ -286,8 +286,15 @@ def parse_blanks(lines):
 
 
 def extract_listening_answers(text):
-    answers = {}
     candidates = []
+    tail_answer = None
+    for last_num in (25, 20):
+        marker = re.search(rf'(?<!\d){last_num}[\.．]\s*.+?(?:【答案】|参考答案|答案[:：])', text, re.S)
+        if marker:
+            tail_answer = marker
+            break
+    if tail_answer:
+        candidates.append(text[tail_answer.end():tail_answer.end() + 1800])
     for marker in re.finditer(r'【答案】|参考答案|答案[:：]', text):
         block = text[marker.end():marker.end() + 3500]
         if re.search(r'1\s*-\s*5|1\s*-\s*6|6\s*-\s*10|7\s*-\s*14|11\s*-\s*15|15\s*-\s*20|16[\.．、]|1\s*[\.．、]\s*[A-H]', block, re.I):
@@ -298,7 +305,9 @@ def extract_listening_answers(text):
     if not candidates:
         candidates = [text[:2500]]
 
+    best_answers = {}
     for raw_block in candidates:
+        answers = {}
         block = re.split(
             r'英语听力文字|听力文字|听力原文|Part\s*2|Vocabulary and Grammar|第二部分|II\.\s*(?:Choose|Vocabulary)',
             raw_block,
@@ -311,7 +320,7 @@ def extract_listening_answers(text):
             start = int(start)
             end = int(end)
             letters = re.sub(r'[^A-HТTF]', '', letters.upper()).replace('Т', 'T')
-            if 1 <= start <= end <= 20 and end - start + 1 == len(letters):
+            if 1 <= start <= end <= 25 and end - start + 1 == len(letters):
                 for offset, letter in enumerate(letters):
                     answers[start + offset] = letter
 
@@ -342,8 +351,10 @@ def extract_listening_answers(text):
             if value and len(value) <= 80:
                 answers[num] = value
         if is_valid_listening_answer_set(answers):
-            break
-    return answers
+            return answers
+        if len(answers) > len(best_answers):
+            best_answers = answers
+    return best_answers
 
 
 def extract_listening_transcript(text):
@@ -540,7 +551,10 @@ def parse_questions(text):
     questions.extend(parse_choice(lines))
     questions.extend(parse_true_false(lines))
     questions.extend(parse_blanks(lines))
-    return sorted(apply_question_sections(questions), key=lambda x: x['number'])
+    deduped = {}
+    for question in questions:
+        deduped.setdefault(question['number'], question)
+    return sorted(apply_question_sections(list(deduped.values())), key=lambda x: x['number'])
 
 
 def picture_questions(count=5):
@@ -617,7 +631,7 @@ def best_transcript_sources():
 
 
 def is_valid_listening_answer_set(answers):
-    if all(num in answers for num in range(1, 15)):
+    if any(num in answers for num in range(21, 26)) and all(num in answers for num in range(1, 15)):
         tf_count = sum(1 for num in range(15, 21) if str(answers.get(num, '')).upper() in {'T', 'F'})
         blank_count = sum(
             1 for num in range(21, 26)
