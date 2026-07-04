@@ -436,8 +436,11 @@ Page({
           }
         });
       });
-      this.recorderManager.onError(() => {
+      this.recorderManager.onError(async () => {
         this.setData({ speakingRecording: false });
+        if (await this.finishPendingListenAfterSpeakingFailure('录音失败，按听力完成')) {
+          return;
+        }
         wx.showToast({ title: '录音失败，请重试', icon: 'none' });
       });
     }
@@ -1005,7 +1008,11 @@ Page({
     await this.ensureTranscriptLoadedForSpeaking();
     this.setData({ transcriptManualVisible: true });
   },
-  startSpeakingRecord() {
+  async startSpeakingRecord() {
+    if (!this.recorderManager) {
+      await this.finishPendingListenAfterSpeakingFailure('无法录音，按听力完成');
+      return;
+    }
     if (!this.recorderManager || this.data.speakingRecording) {
       return;
     }
@@ -1018,13 +1025,18 @@ Page({
       speakingRecordStartedAt: Date.now(),
       speakingRecording: true
     });
-    this.recorderManager.start({
-      duration: 60000,
-      sampleRate: 16000,
-      numberOfChannels: 1,
-      encodeBitRate: 48000,
-      format: 'mp3'
-    });
+    try {
+      this.recorderManager.start({
+        duration: 60000,
+        sampleRate: 16000,
+        numberOfChannels: 1,
+        encodeBitRate: 48000,
+        format: 'mp3'
+      });
+    } catch (error) {
+      this.setData({ speakingRecording: false });
+      await this.finishPendingListenAfterSpeakingFailure('录音启动失败，按听力完成');
+    }
   },
   stopSpeakingRecord() {
     if (this.recorderManager && this.data.speakingRecording) {
@@ -1076,6 +1088,9 @@ Page({
           answerDurationMs: this.data.speakingRecordDurationMs
         });
         if (!result || result.cloudError || !result.attempt) {
+          if (await this.finishPendingListenAfterSpeakingFailure('评分失败，按听力完成')) {
+            return;
+          }
           wx.showToast({ title: '试做评分失败', icon: 'none' });
           return;
         }
@@ -1140,6 +1155,9 @@ Page({
         answerDurationMs: this.data.speakingRecordDurationMs
       });
       if (!result || result.cloudError || !result.attempt) {
+        if (await this.finishPendingListenAfterSpeakingFailure('评分失败，按听力完成')) {
+          return;
+        }
         wx.showToast({ title: '评分失败，请看云函数日志', icon: 'none' });
         return;
       }
@@ -1160,9 +1178,7 @@ Page({
           title: normalizedAttempt.scoreErrorType === 'audio-download' ? '录音读取失败，请重录' : '录音已保存，稍后刷新评分',
           icon: 'none'
         });
-        if (!isRepeat) {
-          await this.finishPendingListenAfterSpeaking();
-        }
+        await this.finishPendingListenAfterSpeaking();
         return;
       }
       if (isRepeat) {
@@ -1181,10 +1197,29 @@ Page({
       wx.showToast({ title: '评分完成，已计入进度', icon: 'none' });
       await this.finishPendingListenAfterSpeaking();
     } catch (error) {
+      if (await this.finishPendingListenAfterSpeakingFailure('提交失败，按听力完成')) {
+        return;
+      }
       wx.showToast({ title: '提交失败，请重试', icon: 'none' });
     } finally {
       this.setData({ speakingSubmitting: false });
     }
+  },
+  async finishPendingListenAfterSpeakingFailure(title) {
+    if (!this.data.pendingListenAfterSpeaking) {
+      return false;
+    }
+    this.setData({
+      speakingSubmitting: false,
+      speakingRecording: false
+    });
+    wx.showToast({ title: title || '口语失败，按听力完成', icon: 'none' });
+    try {
+      await this.finishPendingListenAfterSpeaking();
+    } catch (error) {
+      wx.showToast({ title: '听力进度同步失败', icon: 'none' });
+    }
+    return true;
   },
   async finishPendingListenAfterSpeaking() {
     if (!this.data.pendingListenAfterSpeaking) {
