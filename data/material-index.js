@@ -3822,14 +3822,14 @@ module.exports = {
   ],
   "listeningEm2": [
     {
-      "_id": "sh-em2-2019-嘉定-listening",
-      "title": "2019 上海嘉定二模听力",
-      "year": 2019,
+      "_id": "sh-em2-2020-嘉定-listening",
+      "title": "2020 上海嘉定二模听力",
+      "year": 2020,
       "sourceYear": 2020,
       "district": "嘉定",
       "examType": "二模",
       "stage": "初中",
-      "audioCloudPath": "_content/listening-em2/audio/sh-em2-2019-嘉定-listening.mp3",
+      "audioCloudPath": "_content/listening-em2/audio/sh-em2-2020-嘉定-listening.mp3",
       "transcript": "",
       "hasAudio": true,
       "hasTranscript": false,
@@ -4115,17 +4115,19 @@ module.exports = {
           "sectionKey": "D",
           "sectionTitle": "D. Listen and complete the sentences."
         }
-      ]
+      ],
+      "audioFile": "sh-em2-2020-嘉定-listening.mp3",
+      "audioLocalPath": "data/listening-em2/audio/sh-em2-2020-嘉定-listening.mp3"
     },
     {
-      "_id": "sh-em2-2019-宝山-listening",
-      "title": "2019 上海宝山二模听力",
-      "year": 2019,
+      "_id": "sh-em2-2020-宝山-listening",
+      "title": "2020 上海宝山二模听力",
+      "year": 2020,
       "sourceYear": 2020,
       "district": "宝山",
       "examType": "二模",
       "stage": "初中",
-      "audioCloudPath": "_content/listening-em2/audio/sh-em2-2019-宝山-listening.mp3",
+      "audioCloudPath": "_content/listening-em2/audio/sh-em2-2020-宝山-listening.mp3",
       "transcript": "听力文字 Part 1 I.Listening Comprehension(听力理解）（共30分） A.Listen and choose the right picture(根据你听到的内容，选出相应的图片》（6分） 1.We must take good care of the Earth because it's our home.(C) 2.The children celebrated Johnny's ninth birthday with a party.(F) 3.Most of the students took an active part in Mr.White's class.(B) 4.The taxi driver is so careful that he has never broken any traffic rules.(A) 5.Do you think it is a good idea to raise a pet dog?(G) 6.How amazing it is to go back to school after the winter holidays!(H) B.Listen to the dialogue and choose the best answer to the question you hear(根据你听到的 对话和问题，选择最恰当的答案）（8分） 7.W:Would you like some coffee or tea? M:Neither.Just some water,please. W:OK,just a moment,please. Q:What does the man want to have?(C) 8.W:Long time on see,Eric..What have you been doing lately? M:Nothing special.I'm driving for a private company. Q:What does Eric do now?(C) 9.M:Would you please hurry up? The play starts at 7:30. W:Don't worry.We still have 20 minutes left. Q:What time is it now?(D) 10.M:Excuse me,Miss.Is there still time for a cup of coffee on this flight? W:Yes,but you will have to drink it fast, because we will be landing in ten minutes. Q:Where are the two speakers?(B) 11.M:Hi,Mary.Can I borrow your bike? W:Sorry,my sister is going to the library this afternoon.She wants to use it. Q:How will Mary's sister go to the library?(A) 12.M:I heard that you went abroad last month. W:Yes,I had a wonderful time. M:Tell me something about your trip. W:I spent two days in Italy,three in France,and five in Germany. Q:How long did the woman stay abroad?(D) 13.W:Tom,would you please tidy up your things?They are all over the living room floor. M:Just a second.I'm on the phone at the moment. W:OK.But do it as soon as you hang up. M: No problem. Q: Who might the two speakers be? (B) 14. W: I need to talk to someone who knows Tokyo well. I'm told you used to live there. M: Yes, that's true, But I was really young at that time. Q: What does the man mean? (D)) C. Listen to the passage and tell whether the following statements are true or false.（判断下列句子是否符合你听到的短文内容，符合的用“T”表示，不符合的用表示）（6 分） Danny learned a very important lesson from the last typhoon. He and his friends decided it would be cool to go to the beach to watch the big waves when the typhoon was coming. They didn't want the police to see them, so they hid among some rocks. As the typhoon came nearer, the waves became larger and larger, When one big wave came, one of the boys was washed into the ocean. He couldn't even swim! Luckily, the police saw him and saved him, even though they had to put their own lives at risk. Now Danny has a very different idea about- big storms. They may be exciting to watch, but they are also very dangerous. Danny learned that we must respect the great power of nature. When a typhoon comes now, Danny and his friends stay inside where it is safe. (15. F 16. F 17. T 18. F 19. F 20.T) D.Listen to the passage and fill in the blanks(听短文填空，完成下列句子。每空格限填一 词）（10分) Do you think it is very important to be on time? Some people think it's no big deal if they're late for a date or an appointment.What difference does half an hour make after all? Your real friends won't mind if you're late,will they? This thinking is wrong,for the following reasons. Being on time is showing respect to others.Time is one thing no one can buy.This means that everyone's time is precious to both us and others.Being on time shows others that we understand and appreciate the value of everyone's time. Being on time is also an important social skill,Meetings and appointments are set to start at certain time for everybody's convenience. Being late may actually result in someone losing his or her job.Polite and successful people know the real meaning of not being late. 21.big deal 22.won't mind 23.showing respect 24. social skill 25. real meaning",
       "hasAudio": true,
       "hasTranscript": true,
@@ -4411,17 +4413,19 @@ module.exports = {
           "sectionKey": "D",
           "sectionTitle": "D. Listen and complete the sentences."
         }
-      ]
+      ],
+      "audioFile": "sh-em2-2020-宝山-listening.mp3",
+      "audioLocalPath": "data/listening-em2/audio/sh-em2-2020-宝山-listening.mp3"
     },
     {
-      "_id": "sh-em2-2019-崇明-listening",
-      "title": "2019 上海崇明二模听力",
-      "year": 2019,
+      "_id": "sh-em2-2020-崇明-listening",
+      "title": "2020 上海崇明二模听力",
+      "year": 2020,
       "sourceYear": 2020,
       "district": "崇明",
       "examType": "二模",
       "stage": "初中",
-      "audioCloudPath": "_content/listening-em2/audio/sh-em2-2019-崇明-listening.mp3",
+      "audioCloudPath": "_content/listening-em2/audio/sh-em2-2020-崇明-listening.mp3",
       "transcript": "听力文字 Part 1 A. 1.It is great fun to take a walk at the beach in summer.(D) 2.All the students are required to wear uniforms in our school.(B) 3.The fire burnt the forest and caused the death of many animals.(E) 4.They moved into a new flat in the city center last weekend.(C) 5.We need plenty of vegetables and fruit every day to keep fit.(F) 6.The astronauts are going to explore a new planet in space.(H) B. 7. M When did you get your parcel yesterday? W: It should be here at 4 o'clock, but I finally got it an hour later. Q: When did the woman get her parcel yesterday? (B) 8. M: How can we go back home? It's too late to take the last underground. W: Let's call a taxi. Look! There's one available over there. Q: How will they go back home? (A) 9. W: Excuse me13. M Sandy, can you walk the dog after breakfast? W: I'm afraid I can't, dear. I'll have to drive Lucy to school. After that. I need to do some shopping for our dinner tonight. Q: What's the probable relationship between the two speakers? (A) 10. W: What did you think of the winter holiday, Luke? M: It was too boring. All I can do is to stay at home. Q: How did Luke feel during the winter holiday? (C) 11. W: I always take lots of photos during a journey. What about you, Mike? M: I don't like taking photos or buying gifts. I like to talk with local people. I can know something about local customs in this way. Q: What does Mike like to do during a journey? (D) 12. M Can I keep your book for another two weeks, Alice? W: Why? You have finished reading it, haven't you? M: Yes. But my teacher advises me to copy some nice sentences in the book. Q: Why does the boy want to keep the book for another two weeks? (C) 13. M Sandy, can you walk the dog after breakfast? W: I'm afraid I can't, dear. I'll have to drive Lucy to school. After that, I need to do some shopping for our dinner tonight. Q: What's the probable relationship between the two speakers? (D) 14. W: Peter, you're late again! M: I'm sorry, Mrs. White. But just now I went to meet our business partner, Mr. Bennet,you know. W: Of course I know Mr. Bennet well. I've just made a phone call to him. He is on holiday in Hawaii now. Q: What can we learn from the dialogue? (B) C. Joseph is a middle school student from North Carolina, U.S. Several weeks ago, when he was playing football near a church, he accidentally kicked the ball through a church window and broke it. There were no people around, but instead of running away, Joseph called the police and reported what had happened. He also visited the pastor of the church and told him that he would pay for the broken window. He even offered to work in the church to make up for the damage he had caused. Both the pastor and the police officer were greatly touched by his honesty. The pastor told Joseph that there was no need for him to work in the church. The police officer came to his school. had lunch with him and brought him a gift as an award for his honesty. The school was proud of Joseph and gave him an award, too. No one told Joseph what to do after he broke the window. He just did the right thing. He has won everyone's respect for his honesty. (T F F T F T) D. After I graduated from the police academy, I couldn't wait to do my best to save the world. However, I found out on my first day that I still had a lot to learn. That morning, I arrived at the police station early. At 7 a.m., I went into my office and waited for new orders. Suddenly. I realized that I hadn't brought my walkie-talkie. I went back to my locker, but I couldn't open it. I saw a long stick 1ying next to the lockers and used it to hit the door. The locker opened, but I was amazed that it was empty. I thought I was going to be in trouble for losing my walkie-talkie on my first day. It turned out that I broke into the wrong locker. I went to my boss to admit my mistake. He told me to ask next time. I knew he was thinking,“You are a silly newcomer!” After lunch, I received a call for an alarm at a building. This could be a theft. We arrived at the scene and found a closed company building. It was surrounded by a two-meter-high fence on the top. The owner was away. I offered to help. I climbed the fence and got up to the top. But I found I was afraid of heights. All of my colleagues laughed and helped me come down at last. 21. waited for 22. long stick 23. was empty 24. after lunch 25. two/2metres(meters)",
       "hasAudio": true,
       "hasTranscript": true,
@@ -4707,17 +4711,19 @@ module.exports = {
           "sectionKey": "D",
           "sectionTitle": "D. Listen and complete the sentences."
         }
-      ]
+      ],
+      "audioFile": "sh-em2-2020-崇明-listening.mp3",
+      "audioLocalPath": "data/listening-em2/audio/sh-em2-2020-崇明-listening.mp3"
     },
     {
-      "_id": "sh-em2-2019-普陀-listening",
-      "title": "2019 上海普陀二模听力",
-      "year": 2019,
+      "_id": "sh-em2-2020-普陀-listening",
+      "title": "2020 上海普陀二模听力",
+      "year": 2020,
       "sourceYear": 2020,
       "district": "普陀",
       "examType": "二模",
       "stage": "初中",
-      "audioCloudPath": "_content/listening-em2/audio/sh-em2-2019-普陀-listening.mp3",
+      "audioCloudPath": "_content/listening-em2/audio/sh-em2-2020-普陀-listening.mp3",
       "transcript": "听力文字 A. 根据你听到的内容, 选出相应的图片，在选择题区域相应的空格内用 2B 铅笔填涂。每个句子念两遍。 1. It’s a good habit to wash hands before meals.(C) 2. Jo went swimming with her cousins last weekend. (D) 3. Recycling paper is a good way to protect the environment. (F) 4. Tony has learned to get dressed by himself after he gets up.(G) 5. Wendy is having a video conference with some other teachers in the meeting room. (A) 6. The reporter is asking the actor some questions about his new film. (B) B. 根据你听到的对话和问题，选出最恰当的答案，在选择题区域相应的空格内用 2B 铅笔填涂。对话和问题都念两遍。 7. M: Would you please hurry up? The play will start at 6:30. W: Don’t worry. It's 6:00 now. We still have 30minutes. Q: What time is it now? (A) 8. W: I like Chinese food best. The moon cake is my favorite food. M: The moon cake is too sweet. I like jiaozi and fried rice. Q: What Chinese food does the woman like best? (B) 9. M: Hi, Debbie.The robot in your home looks so cool. He's watering the flowers on the shelf. W: Yeah, he can also clean the rooms for us when we go out. Q: How does the robot help the woman? (C) 10. W: Good afternoon, sir. Can I help you? M: Yeah. I'd like 2 cokes, a fruit salad and a super pizza, please. W: OK. What size of the pizza do you prefer? M: Large, please. Q: Where does this dialogue probably take place? (D) 11. M: Tina, look at the tree in front of the teaching building.It's as tall as the building. W: Yes, George. I remember it was short when we first met nine years ago. M: How time flies! At that time, we were six and now we are fifteen. Q: When did Tina and George meet for the first time? (C) 12. M: I like the photo you put on your desk. The background seems so familiar. Did you take this photo in Guangzhou or Shenzhen? W: Neither. I took it in Xiamen, a city in Fujian. Q: Where did the woman take the photo? (D) 13. W: Have you ever attended any online lectures? M: Yes. And some of them are free to us. we can learn knowledge about our favourite subjects and some other interesting things like writing books and making films. Q: What are the two speakers talking about? (A) 14. M: Lily, you work too hard in the kitchen.Shall we buy a bigger oven? W: Thank you, dear! It's not a bad plan. But we don’t have enough space in the kitchen. Q: What does Lily probably mean? (B) C. 判断下列句子是否符合你听到的短文内容，符合的用“T”表示，不符合的用“F”表示，在选择题区域相应的空格内用 2B 铅笔填涂。短文念两遍。 Last summer, Teddy got a job in a company near her mum’s neighbourhood. He decided to stay with his mun for some time. During that time, Teddy usually helped his mum do some housework and bought some food. After the first week, Teddy found that the food was finished off very quickly. Then he began keeping an eye on his mum. To his surprise, he found his mum put some food into a paper bag and went out with it every morning. Teddy decided to follow his mum. He saw his mum taking the food to the street children, talking and playing with them． One day, Teddy talked to a neighbour and found out his mum was well-known in that area. The street children liked her and even thought of her as their own mother. When Teddy’s mum got home, Teddy gave her a big hug and told her she didn't need to keep it a secret. Then Teddy's mum told him something about the children. Some of them lived with grandparents in small houses. Others even slept on the street. For years, she helped the poor children by giving them food. After Teddy's mum told him everything, Teddy was so moved by how kind his mum was. His mum helped others in need. As her son, Teddy was so proud. Teddy continued to buy food for his mum after that. But every time, he added one more bag for his mum's other children． （15. T 16. F 17. F 18. T 19. F 20. T ） D. 根据你听到的内容，完成下列句子，每空格限填一词。在非选择题区域相应的空格内用黑墨水钢笔或黑色水笔填写。短文念两遍。 Every museum has something attractive. If we follow the steps below, we can make the most of our time at the museum. There are so many different kinds of museums, so finding one that we like is the first step we need to do. It's easy for us to choose one and start our enjoyable visit! Second, do some research online. On the website of a museum, we may know history of it or some special classes for teenagers. Planning breaks in our visit is also important. When we walk around, standing here and studying things there, we may become quite tired. So it is important to take breaks. It is a good chance for us to think of what we have seen and what else we might want to do then. What’s more, think about the cost and food. Then we can decide whether to eat there. Finally, we had better take friends with us when we visit a museum. It is usually a lot more fun when we are with someone else at a museum. We can talk over what we are seeing. A friend also brings another way of thinking when we talk about the things in the museum. (21. first step 22. special classes 23. quite tired 24. eat there 25. take friends)",
       "hasAudio": true,
       "hasTranscript": true,
@@ -5031,17 +5037,19 @@ module.exports = {
           "sectionKey": "D",
           "sectionTitle": "D. Listen and complete the sentences."
         }
-      ]
+      ],
+      "audioFile": "sh-em2-2020-普陀-listening.mp3",
+      "audioLocalPath": "data/listening-em2/audio/sh-em2-2020-普陀-listening.mp3"
     },
     {
-      "_id": "sh-em2-2019-杨浦-listening",
-      "title": "2019 上海杨浦二模听力",
-      "year": 2019,
+      "_id": "sh-em2-2020-杨浦-listening",
+      "title": "2020 上海杨浦二模听力",
+      "year": 2020,
       "sourceYear": 2020,
       "district": "杨浦",
       "examType": "二模",
       "stage": "初中",
-      "audioCloudPath": "_content/listening-em2/audio/sh-em2-2019-杨浦-listening.mp3",
+      "audioCloudPath": "_content/listening-em2/audio/sh-em2-2020-杨浦-listening.mp3",
       "transcript": "听力文字 Part 1 A. Listen and choose the right picture (根据你听到的内容，选出相应的图片) 1. Let’s go roller skating after class, shall we? (D) 2. Claude Monet is one of my favourite artists. (F) 3. Paper cutting is still used as a New Year decoration. (C) 4. Who is going to give the lecture this afternoon? (H) 5. The greenhouse lets sunlight in and keeps heat from getting out. (A) 6. The wildfires have caused great damage to the forests. (E) B. Listen to the dialogue and choose the best answer to the question you hear (根据你听到的对话和问题，选出最恰当的答案) 7.W: Oh no! We haven’t got any milk! Tom, can you go to the shop, please? M: Yes, but it’s half past five now. What time does it close? W: At six. But it’s a 15-minute walk, so you’ll have to go now. Q: What time does the shop close? (C) 8.W: It’s hot, isn’t it? M: Yes, very hot and no wind. The weather report says the temperature will keep the same until next Thursday. Q: What will the weather be like next Monday? (A) 9. W: OK. Everyone put your books in your bag or under your desk. We’re going to do a vocabulary test. M: Shall I put this dictionary on the bookshelf? W: No, can you leave it on that table near the door, please? M: OK. Q: Where does the boy put the dictionary? (D) 10. W: Three adults and a child for the six-o’clock show of Murder at Midnight, please. M: Would you like to see it in 3D? W: No, just the regular type, please. And we’d like to sit in the middle, if possible. Q: Where does the dialogue probably take place? (C) 11.W: Do you need a ride to the theatre? I can pick you up at seven. M: Thanks, but I have a meeting at five. I’ll stay in town to get supper and then walk to the theatre. Q: How will the man go to the theatre? (D) 12. W: What do you think of the book Last Chances? M: Normally, it takes me ages to finish a book but I only started this one three nights ago. As soon as I read the first page, I couldn’t put it down – I just had to find out what happened next. Q: What does the man think of the book Last Chances? (A) 13. W: Hi Jim. I thought you were training for the badminton game. Have you still got a problem with your leg? M: That’s ok now. I cut my fingers when I was helping my grandad in his garden, and now it’s too painful to hold my badminton racket. I can’t even put my sports shoes on. Q: What does Jim have trouble with? (B) 14. W: I’ll see you in the office. M: Better still, let’s meet in the Zoo Café to have a little nice talk. W: Good idea, and I’d love to have a drink there. Q: What are the speakers talking about? (B) C. Listen to the passage and tell whether the following statements are true or false (判断下列句子是否符合你听到的短文内容, 符合的用“T”表示，不符合的用“F”表示): (6分) Betty Jones was only eight years old when she first tried playing the drums. This was during a lunchtime music club at school, which she only went to because it was cold and rainy. At the same time her friends were in the playground playing baseball – a sport that Betty hated. Of all the musical instruments that the teacher had in the music room, the drums were the most interesting to Betty. She thought it was cool that there were many different shapes and sizes of drums, and she wanted to hit them, to see what they sounded like. Now Betty is fourteen and gives concerts around the country. She also has her own YouTube channel and gets over a million hits a year. What’s amazing is that Betty hasn’t ever been to a drum lesson. ‘You can learn anything on the Internet, so I’ve never felt it was important for me to take classes,’ explains Betty. Giving concerts wasn’t easy for Betty at the beginning because usually she only played drums alone in her bedroom when she came home from school. At her first concert, she played in a band with adults. She could feel hundreds of pairs of eyes looking at her, and that made her feel frightened. So, does Betty enjoy being famous now? ‘I didn’t plan to be famous,’ she says. ‘All I want is to show others what I love. I don’t think I’m someone special. I just want everyone to have a great time at my concerts.’ 15. F 16. T 17. F 18. T 19. T 20. F D. Listen to the dialogue and complete the following sentences (听对话，完成下列内容，每空格限填一词): (10分) W: Wow! It’s such a beautiful day! The sky is so blue. M: I guess… It’s been nice all summer, so I don’t notice it as much. Maybe I’m getting spoiled! W: I wasn’t expecting it to be like this. My dad came here a few years ago and he said the air quality was really bad. M: He was not wrong. It used to be terrible. In summer, you’d often get thick smog covering the whole city, but it’s improved greatly in the last ten years or so. W: What changed? M: I think it was driven by people’s attitudes. Ten years ago, few people were keen on environmental issues, but nowadays there’s much more awareness of things like air quality and how it can affect your health. W: Sure, but that can’t be the only reason. M: Well, no. The local government also brought in new laws and rules. They introduced limits on driving in the city centre, made it illegal to use wood or coal fires for heating, and moved a lot of heavy industry away from the city. W: It’s impressive that they could make such a big change in a short time. Ten years isn’t long for these things. M: True, but there’s still more to do. It can still get hazy in winter. They’re putting more money and effort into basic systems and services such as public transport, roads and bridges, though, so I think it’ll carry on getting better. 21.air quality 22.was driven 23. keen on 24.heavy industry 25.basic systems",
       "hasAudio": true,
       "hasTranscript": true,
@@ -5327,17 +5335,19 @@ module.exports = {
           "sectionKey": "D",
           "sectionTitle": "D. Listen and complete the sentences."
         }
-      ]
+      ],
+      "audioFile": "sh-em2-2020-杨浦-listening.mp3",
+      "audioLocalPath": "data/listening-em2/audio/sh-em2-2020-杨浦-listening.mp3"
     },
     {
-      "_id": "sh-em2-2019-松江-listening",
-      "title": "2019 上海松江二模听力",
-      "year": 2019,
+      "_id": "sh-em2-2020-松江-listening",
+      "title": "2020 上海松江二模听力",
+      "year": 2020,
       "sourceYear": 2020,
       "district": "松江",
       "examType": "二模",
       "stage": "初中",
-      "audioCloudPath": "_content/listening-em2/audio/sh-em2-2019-松江-listening.mp3",
+      "audioCloudPath": "_content/listening-em2/audio/sh-em2-2020-松江-listening.mp3",
       "transcript": "",
       "hasAudio": true,
       "hasTranscript": false,
@@ -5651,12 +5661,14 @@ module.exports = {
           "sectionKey": "D",
           "sectionTitle": "D. Listen and complete the sentences."
         }
-      ]
+      ],
+      "audioFile": "sh-em2-2020-松江-listening.mp3",
+      "audioLocalPath": "data/listening-em2/audio/sh-em2-2020-松江-listening.mp3"
     },
     {
-      "_id": "sh-em2-2019-浦东-listening",
-      "title": "2019 上海浦东二模听力",
-      "year": 2019,
+      "_id": "sh-em2-2020-浦东-listening",
+      "title": "2020 上海浦东二模听力",
+      "year": 2020,
       "sourceYear": 2020,
       "district": "浦东",
       "examType": "二模",
@@ -5947,17 +5959,19 @@ module.exports = {
           "sectionKey": "D",
           "sectionTitle": "D. Listen and complete the sentences."
         }
-      ]
+      ],
+      "audioFile": "sh-em2-2020-浦东-listening.mp3",
+      "audioLocalPath": "data/listening-em2/audio/sh-em2-2020-浦东-listening.mp3"
     },
     {
-      "_id": "sh-em2-2019-虹口-listening",
-      "title": "2019 上海虹口二模听力",
-      "year": 2019,
+      "_id": "sh-em2-2020-虹口-listening",
+      "title": "2020 上海虹口二模听力",
+      "year": 2020,
       "sourceYear": 2020,
       "district": "虹口",
       "examType": "二模",
       "stage": "初中",
-      "audioCloudPath": "_content/listening-em2/audio/sh-em2-2019-虹口-listening.mp3",
+      "audioCloudPath": "_content/listening-em2/audio/sh-em2-2020-虹口-listening.mp3",
       "transcript": "",
       "hasAudio": true,
       "hasTranscript": false,
@@ -6255,17 +6269,19 @@ module.exports = {
           "sectionKey": "D",
           "sectionTitle": "D. Listen and complete the sentences."
         }
-      ]
+      ],
+      "audioFile": "sh-em2-2020-虹口-listening.mp3",
+      "audioLocalPath": "data/listening-em2/audio/sh-em2-2020-虹口-listening.mp3"
     },
     {
-      "_id": "sh-em2-2019-金山-listening",
-      "title": "2019 上海金山二模听力",
-      "year": 2019,
+      "_id": "sh-em2-2020-金山-listening",
+      "title": "2020 上海金山二模听力",
+      "year": 2020,
       "sourceYear": 2020,
       "district": "金山",
       "examType": "二模",
       "stage": "初中",
-      "audioCloudPath": "_content/listening-em2/audio/sh-em2-2019-金山-listening.mp3",
+      "audioCloudPath": "_content/listening-em2/audio/sh-em2-2020-金山-listening.mp3",
       "transcript": "参考答案 L. Listening Comprehension〔听力理解) A. Listen and choose the right picture.(根据你听到的句子,选出相应的图片。)(6分) 1. Nowadays, Chinese people are changing their eating habits. 2. How many medical workers were sent to Wuhan to help fight the disease? 3. Good parents always provide support for their children. 4. Students are looking forward to having lessons at school. 5. Hello, this is Jessica! May I speak to Tom, please? 6. You had better wash your hands at once after you come back. B. Listen to the dialogue and choose the best answer to the question you hear.(根据你听到的对话和问句,选出最恰当的答案。)(8分) 7. W: Hello! Do you have any bananas? M: Sure. You come just in time. Look at these, they've just arrived and very fresh. W: Lovely! Can I get 20 of them? Q: what does the woman want to buy? 8. W: We are running out of toilet paper. Shall we take a bus to buy some in the supermarket? M: Maybe not? I am afraid of taking any public transportation now. No subway, no taxi,no… W: Then, let's go there by bike. Q: How are they going to the supermarket? 9. W: Did you go to a japanese restaurant yesterday? M: No, why do you think so? W: You posted so many pictures of Japanese food on your WeChat！ M: Oh! My mom made them. She went to Japan 3 years ago and stayed there for a year. Q: When did the boy's mother go to Japan? 10. W: Hi. Johnson can you translate this medicine instruction for me? M: Let me have a look. Oh, it's in Japanese. I only know a little English and French. Maybe we can look for the same product on taobao for the translation. Q: Which language is the medicine instruction written in? 11. M: Would you like some tea or milk? W: I like both, but today I feel so hot. I’d prefer something cold. M: Then what about some iced fruit punch? W: Thats good. Q: Which drink do you think the girl want to have now? 12. W: Tom, go to the store downstairs to buy some salt for me. I'm cooking some fish soup. M: Which kind of salt? The normal salt or the sea salt? W:I don’t mind. Come on! I need some immediately. M: Ok. I'll be back in no time. Q: Where does this dialogue probably happen? 13. W: Can you come to my party peter? M: When is it? W: Sunday afternoon. M: I'd love to come but I need to see my dentist this Sunday. Q: What's the man going to do this Sunday? 14.W: Andy, you should drink more water if you want to get better! M: Oh! My mom said the same this morning! But I really don’t like drinking water. I’d prefer some Cola. W: Soft drinks are not allowed at school and they are also bad for your health! M: Ok, then I will take your advice, Miss Zhou. Q: What's the relationship between them? C. Listen to the passage and tell whether the following statements are true or false.(判断下列句子是否符合你所听到的短文内容,符合的用“T”表示,不符合的用“F”表示。)(6分) Hello, everyone! My name is Bob Smith, a professional manager, working in a private company. I'm mainly responsible for technology, quality and customer communication. I'm always busy all day. I work six days a week, from Monday to Saturday. Sometimes on Sunday, I have to work overtime, but I love my work. I get up at 5 a.m. and work on the computer until 6 o'clock. I leave home early so that I can get to my office on time. It takes me one hour in my car. I start my work at about 7: 45. In the morning, I usually check and answer some E-mails from our customers. At 10 o'clock, I have a meeting about the product quality. In the afternoon, I usually meet some customers or go to the factories. I get off work at 5o'clock. Then dinner is around 6:30 p. m. After dinner my wife and I usually play with kids until 8:30. After the kids go to sleep, we usually talk and watch television until 10. Then I start working on the computer till one or two o'clock. Although I am tired I still think I am a lucky man with my kids and wife around me. D. Listen to the passage and complete the sentences..(听短文,完成句子,每空格限填一词。)(10) Are you used to getting takeaway ( 外卖) delivered to your home these days? Do you know the first pizza delivery in history took place in Italy nearly 140 years ago? In 1878, Queen Margherita became the first queen of Italy. She was tired of eating\"unusual meals and wanted to eat\"common\"food. At that time, Raffaele Esposito, the most famous pizza chef was asked to deliver a pizza to the queen. He prepared a pizza with tomatoes, cheese and basil -the red tomatoes, white cheese and green basil standing for the colors of Italys new national flag. As soon as the pizza was out of the oven, he quickly delivered it to the queen himself. The queen had never eaten pizza before and said it was one of the best things she'd ever eaten. Esposito named the pizza after the queen, and it has been served (供应)in nearly every pizza restaurant in the world ever since. Today, pizza remains one of the world's most popular fast foods. In 1973, Us pizza company. Domino's pizza promised to deliver its pizzas in 30 minutes or less-if the pizza was late, it would be free. 参考答案 Part 1 listening(第一部分听力) l. Listening Comprehension〔听力理解)(共30分) A: 1.C 2.E 3.H 4.F 5.A 6.D B: 7.B 8.D 9.C 10.B 11.D 12.A 13.B 14.D C: 15.T 16.F 17.F 18.F 19.T 20.T D: 21. in 1878 22. common food 23 out of 24. most popular 25 was late",
       "hasAudio": true,
       "hasTranscript": true,
@@ -6579,17 +6595,19 @@ module.exports = {
           "sectionKey": "D",
           "sectionTitle": "D. Listen and complete the sentences."
         }
-      ]
+      ],
+      "audioFile": "sh-em2-2020-金山-listening.mp3",
+      "audioLocalPath": "data/listening-em2/audio/sh-em2-2020-金山-listening.mp3"
     },
     {
-      "_id": "sh-em2-2019-长宁-listening",
-      "title": "2019 上海长宁二模听力",
-      "year": 2019,
+      "_id": "sh-em2-2020-长宁-listening",
+      "title": "2020 上海长宁二模听力",
+      "year": 2020,
       "sourceYear": 2020,
       "district": "长宁",
       "examType": "二模",
       "stage": "初中",
-      "audioCloudPath": "_content/listening-em2/audio/sh-em2-2019-长宁-listening.mp3",
+      "audioCloudPath": "_content/listening-em2/audio/sh-em2-2020-长宁-listening.mp3",
       "transcript": "听力文字 A. Listen and choose the right picture.(根据你听到的内容,选出相应的图) 1. Hainan Island is a good place to visit in Spring Festival in China. (C) 2. Both Peter and Mary enjoy working as community volunteers. (H) 3. The manager asked Tom some questions during the job interview. (B) 4. People must fasten their safety belts while taking a taxi. (E) 5. It's a bad habit to throw rubbish everywhere on the ground. (A) 6. Lily goes to the club to play volleyball once a week. (D) B. Listen to the dialogue and choose the best answer to the question you hear (根据你听到的 对话和问题，选择最恰当的答案)(8 分) 7. W: Can I help you, sir? M: Yes. please. I'm looking for a silk scarf for my mother W: How about this one? It is very nice Q: Where does the dialogue probably take place? (D) 8. W: Mike. I hear that you collect different sizes and shapes of stones. M: I used to. but now I'm interested in coins. Do you want to have a look at my new collections? Q: What does Mike collect now? (A) 9. W: Does your school newspaper come out weekly or daily? M: It appears every Tuesday. O: How often does the school newspaper come out? (C) 10. W: How will you get to the airport? M: I have no idea. Taking a bus is much cheaper. I may go there on a bus w: You'd better not. Today is Monday. Buses are crowded and taxis are hard to call. You can take the underground. M: OK, I'll take your advice. Q: How will the man probably go to the airport? (B) 11. W: What's wrong with you, Jack? Are you nervous about your exam? You look so sad M: I've lost my new i-phone on my way to school today. It was given by my parents. W: I'm sorry to hear that. Cheer up! Be careful next time Q: How did Jack feel today? (A) 12. W: How do you like the dishes in our restaurant? M: Well. The food is very delicious. I think I'll come here again Q: What's the probable relationship between the two speakers? (D) 13. W: Do you know when the famous reporter will give us alecture on science and development? M: I'm sorry I have no idea. You can have a look at that notice. There is a timetable in it. Q: What will the reporter do? (B) 14. W: Gary, I bought a painting just now. Isn't it wonderful? M: Well. I can't tell what it is about. I am not a fan of these funny images like you. Q: What information can you get from the dialogue? (C) C. Listen to the passage and tell whether the following statements are true or false.（判断下列句子是否符合你听到的短文内容，符合的用“T”表示，不符合的用表示）（6 分） Something really terrible happened when I was going to the concert last Saturday. I was riding my bicycle along the street when I saw a woman standing outside one of the boutique shops. She was carrying lots of shopping bags. I had just passed the crossing when she suddenly stepped into the road without looking. I didn't hit her. but I fell off my bicycle. I was really scared because I banged my head and hurt my arm when I fell. It's a good thing I was wearing a crash helmet, so I wasn't badly hurt! The woman came over to me while I was sitting on the road. I expected her to apologize but she began shouting at me. I felt extremely angry! She had caused the accident. She didn't even apologize! In the end. her friend told her to calm down, and she went away. To be honest, I think she should pay for the damage to my bicycle. My bicycle wheel was broken so I had to catch the bus to the concert. It seemed to take hours! Finally, I got to the Arts Centre. Meanwhile, my friends were all very worried about me, but luckily I wasn't badly hurt and I was still able to play my saxophone! 15.T 16.F 17.T 18.F 19.T 20.F Listen to the passage and fill in the blanks (听空，完成下列句子。每限填一词)(10 分) American architect Macy did not want to borrow money from the bank for her house. She decided to build a small home for herself, her daughter and her dog. To save money, she did most of the hard work herself. The small house is only about 18 square metres in size. It only cost her $11,400 to complete. And it has everything she needs in a home. It is comfortable and large enough for her family. The house is connected to electricity and has unusual hanging lights. This small house is easy to keep cool with one ceiling fan in the middle of the 1ong room.It also has fully equipped kitchen. The pots and pans hang on the wall. Macy and her partners easily cook many dinners in this space. She has managed to put a washing machine too. The king-size bed is built above a full set of cupboards. This saves space and looks attractive. There is a special ladder to climb onto the bed. This makes it safe and easy to use. Two comfortable chairs fit closely in an area next to the bed. Visitors can enjoy time here. Another big advantage of this small house is that bills for electricity and water are cheap. Macy can save money every month. 21.18/eighteen square 22.large enough 23.keep cool 24.save money 25.bills for 26.D 27.A 28.B 29. B 30.C 31.B 32. A 33.A 34.C 35. D 36B 37 C 38 D 39 A 40D 41C 42 D 43 A 44 C 45 B 46.C 47.D 48. A 49. B 50.E 51.A 52.D 53.C 54. himself 55. nine 56. strawberries 57. physical 58. disadvantage 59. operate 60. beginning 61. correctly 62. didn't have 63. What kind 64. was awarded 65. the way 66. what, thought 67. cheaper than 68.The young man is working on a project to help protect the environment these days. 69. D 70.B 71.D 72. A 73.B 74.C 75. B 76.D 77.A 78.C 79.D 80. A 81. spent 82. hurt 83. speed 84. team 85. safely 86. where 87. dangerous/difficult 88. One morning before Easter./Nearly Easter./ Before Easter. / A few days before Easter. 89. She kissed and held Judy and she also carried her around. 90. She felt upset/ sad /unhappy/.. 91. Her mother's preference for Judy. / Helen's jealousy. / Her mother's too much care for Judy. /... 92. Because she wanted to apologize to Judy and wanted her younger sister to forgive her. // Because she expected to get on well on her sister again. /.... 93. I am happy to hear from you. Let's forget the past and 1ook forward to the beautiful future.（本题内容+逻辑性共占 2 分，表达准确占 1 分）",
       "hasAudio": true,
       "hasTranscript": true,
@@ -6879,17 +6897,19 @@ module.exports = {
           "sectionKey": "D",
           "sectionTitle": "D. Listen and complete the sentences."
         }
-      ]
+      ],
+      "audioFile": "sh-em2-2020-长宁-listening.mp3",
+      "audioLocalPath": "data/listening-em2/audio/sh-em2-2020-长宁-listening.mp3"
     },
     {
-      "_id": "sh-em2-2019-闵行-listening",
-      "title": "2019 上海闵行二模听力",
-      "year": 2019,
+      "_id": "sh-em2-2020-闵行-listening",
+      "title": "2020 上海闵行二模听力",
+      "year": 2020,
       "sourceYear": 2020,
       "district": "闵行",
       "examType": "二模",
       "stage": "初中",
-      "audioCloudPath": "_content/listening-em2/audio/sh-em2-2019-闵行-listening.mp3",
+      "audioCloudPath": "_content/listening-em2/audio/sh-em2-2020-闵行-listening.mp3",
       "transcript": "听力文字 Part 1 I. A. 1. Sam was still awake at late night worrying about his job. (D) 2. After coughing or sneezing, wash your hands with soap and water. (G) 3. The children enjoy reading books with lots of pictures in them. (B) 4. After Jack finished eating and drinking, he went for a walk in the park. (F) 5. My brother often watches the news on TV to see what’s happening in the world. (H) 6. Unluckily, millions of animals lost their lives in the recent Australia Forest Fires. (E) B. 7. W: Do you like swimming or going fishing in your free time, Jack? M: Neither. I have little interest in them. I enjoy playing chess. Q: What activity is Jack interested in? (C) 8. W: Where did you go just now, Peter? The party has already started. M: To the kitchen. I tried to find a bin to put some waste in. Q: Where was Peter just now? (B) 9. W: Our friends are leaving for London tomorrow morning, dear. Can you drive them to the airport? M: There is something wrong with my car today. I will call them a taxi, instead. Q: How will their friends go to the airport tomorrow morning? (C) 10. M: Hi, Gina! I’m organizing a hiking trip. Would you like to come along? W: Thank you, Max. I’d love to. When are you going? M: Next Saturday. We’re going to climb Mountain Sunrise. How about bringing some friends? W: What a pity! I’m going to the concert with my parents on that day. I’ve already booked the tickets. Q: Why won’t Gina go for a hiking trip with Sam next Saturday? (B) 11. W: Could you help me choose some ties for my husband. They’re for his birthday, so I’d like to find something really nice. M: Are you interested in these, madam? They fit men well. W: Oh, good. I’ll take two of them. Q: Who might the two speakers be? (D) 12. W: Jerry, what time will you meet your classmates in the Century Park tomorrow morning? M: At nine o’clock. W: Oh, then when are you going to set out? M: Two hours before we meet. It will take me some time to get there. Q: When is Jerry leaving for the Century Park? (B) 13. W: How was your weekend, Mike? M: Fantastic! My friend Peter had a party in his house. It was great. He passed his college exam, so he was really happy. How about you, Jane? W: I reviewed my lessons at home. And then I visited my uncle in the countryside. Q: What are they talking about? (C) 14. M: Tim, Peter and I are going to pay a visit to Japan this summer holiday. Would you like to join us? W: Well, I’d like to if I can afford it. Q: What does the girl mean? (D) C. When Betty became the president of the volunteer club in her high school, she thought her classmates should do something to help the old people in the nursing home nearby their school. According to a local newspaper, this nursing home was in need of financial help, so Betty decided to hold an event where all the money they raised would go toward the old. They came up with the idea of running a market at school on a Saturday. The event lasted from 9: 00 a.m. until 5: 00 p.m. Since it was meaningful, everyone in the club worked to make the event a success. In the weeks before the event, the club members put up posters to encourage their fellow students and teachers to donate anything they did not want, such as old clothes, unused electrical appliances, and second-hand furniture. To add variety to the market, they sold lemonade and hot dogs. In getting the news of the event out, they made as much use of social media as possible to reduce any costs. Since one person’s rubbish is another person’s gold, the market attracted a lot of buyers. Most importantly, it helped Betty and her club members raise lots of money for the old. 15. T 16. F 17. F 18. F 19. T 20. T D. My first job was as a waiter. I did it when I first left school. It was fun, really, but it was very hard work. I had to work long hours and of course I was always on my feet! It wasn’t very challenging – I had to remember the customers’ orders, but that was all, really. And I didn’t get paid holidays, so that wasn’t good. So after about five months, I got a job as a shop assistant in a bookstore. I enjoyed that because I like books and I really like talking to people about them. I was very good at the job, and later, I was promoted to store manager. That was great! I got on-the-job training about management. I was happy because I started a career well, I thought I was. After two years, the bookstore closed because there wasn’t enough business. Now I’ve got a few more years’ experience and I work as a department manager. The pay is fantastic and the work is quite interesting. I guess you can say I’m successful. But you know what? Sometimes I miss being a waiter and just having jokes with the customers! 21. long hours 22. 5 / five months 23. talking to 24. enough business 25. quite interesting （",
       "hasAudio": true,
       "hasTranscript": true,
@@ -7175,17 +7195,19 @@ module.exports = {
           "sectionKey": "D",
           "sectionTitle": "D. Listen and complete the sentences."
         }
-      ]
+      ],
+      "audioFile": "sh-em2-2020-闵行-listening.mp3",
+      "audioLocalPath": "data/listening-em2/audio/sh-em2-2020-闵行-listening.mp3"
     },
     {
-      "_id": "sh-em2-2019-青浦-listening",
-      "title": "2019 上海青浦二模听力",
-      "year": 2019,
+      "_id": "sh-em2-2020-青浦-listening",
+      "title": "2020 上海青浦二模听力",
+      "year": 2020,
       "sourceYear": 2020,
       "district": "青浦",
       "examType": "二模",
       "stage": "初中",
-      "audioCloudPath": "_content/listening-em2/audio/sh-em2-2019-青浦-listening.mp3",
+      "audioCloudPath": "_content/listening-em2/audio/sh-em2-2020-青浦-listening.mp3",
       "transcript": "",
       "hasAudio": true,
       "hasTranscript": false,
@@ -7471,17 +7493,19 @@ module.exports = {
           "sectionKey": "D",
           "sectionTitle": "D. Listen and complete the sentences."
         }
-      ]
+      ],
+      "audioFile": "sh-em2-2020-青浦-listening.mp3",
+      "audioLocalPath": "data/listening-em2/audio/sh-em2-2020-青浦-listening.mp3"
     },
     {
-      "_id": "sh-em2-2019-静安-listening",
-      "title": "2019 上海静安二模听力",
-      "year": 2019,
+      "_id": "sh-em2-2020-静安-listening",
+      "title": "2020 上海静安二模听力",
+      "year": 2020,
       "sourceYear": 2020,
       "district": "静安",
       "examType": "二模",
       "stage": "初中",
-      "audioCloudPath": "_content/listening-em2/audio/sh-em2-2019-静安-listening.mp3",
+      "audioCloudPath": "_content/listening-em2/audio/sh-em2-2020-静安-listening.mp3",
       "transcript": "",
       "hasAudio": true,
       "hasTranscript": false,
@@ -7795,17 +7819,19 @@ module.exports = {
           "sectionKey": "D",
           "sectionTitle": "D. Listen and complete the sentences."
         }
-      ]
+      ],
+      "audioFile": "sh-em2-2020-静安-listening.mp3",
+      "audioLocalPath": "data/listening-em2/audio/sh-em2-2020-静安-listening.mp3"
     },
     {
-      "_id": "sh-em2-2019-黄浦-listening",
-      "title": "2019 上海黄浦二模听力",
-      "year": 2019,
+      "_id": "sh-em2-2020-黄浦-listening",
+      "title": "2020 上海黄浦二模听力",
+      "year": 2020,
       "sourceYear": 2020,
       "district": "黄浦",
       "examType": "二模",
       "stage": "初中",
-      "audioCloudPath": "_content/listening-em2/audio/sh-em2-2019-黄浦-listening.mp3",
+      "audioCloudPath": "_content/listening-em2/audio/sh-em2-2020-黄浦-listening.mp3",
       "transcript": "听力文字 I.Listening Comprehension(听力理解）（共30分） A.Listen and chose the right picture(根据你听到的内容，选出相应的图片）： 1.Catherine deals with a lot of problems on the computer every day.(E) 2.How happy Lucy is to go home with George and Kitty after class!(F) 3.While Mike is doing his homework,Mum is reading a book beside him.(A) 4.It is pleasant for Angela and Grandma to sit on the sofa and watch TV.(H) 5.Alice,Jack and William are enjoying their roles in the school short play.(B) 6.Tom and Paul have been good friends since they studied in the same class.(C) B.Listen to the dialogue and choose the best answer to the question you hear(根据你听到的 对话和问题，选出最恰当的答案）： 7.M:Morning,Mum.What's for breakfast? W:I've prepared cakes, bread, noodles and dumplings. M:Great!Dumplings are my favourite. Q:What does the boy like to eat best?(D) 8.W:The rain has finally stopped. M:I hope it will be sunny tomorrow,too.We are going for a school camping trip. W:The weather report says it's going to be windy tomorrow. Q:What's the weather like tomorrow?(C) 9.W:Where are you from,Johnson? M:I'm from Australia I went to study in England after I graduated from middle school. W:Do you still live in England? M:No,I live in America with my wife now,and we hope to start our business in China soon. Q:Where does Johnson live now?(B) 10.M:Are you in the singing club,Shelley? W:Yes. M:How often do you practice there? W:Twice a week. We meet on Tuesday and Friday afternoons, but we'll take part in a competition this Saturday. Q:When will the competition take place?(A) 11.M:Hi,remember me? W:Sure,you bought a pair of sports shoes yesterday. M:Yes,but they are too big for my daughter,Can I exchange them? Q:Where does this dialogue probably take place?(B) 12.W:Charles, could you help me carry the books to the classroom? M:All right,Miss Li. Q:Who might the two speakers be?(C) 13.W:Jim,I heard that you had moved into a new house.Didn't you like your old one? M:Yes,I did.But my neighbours hold parties very often and their dog makes much noise at night. W:Oh,I see. Q:Why did Jim move into a new flat?(A) 14.M:Look,there's a new type of camera.Shall we buy one? W:How much is it? M:9,000 yuan. W:It sounds like a waste of money.We seldom go traveling Q:What does the woman mean?(D) C.Listen to the passage and tell whether the ftollowing statements are true or false(判断下列 句子是否符合你听到的内容，符合的用“\"表示，不符合的用“F”表示)： In France,lunch is an important meal of the day.Students can get lunch at school or go home for lunch. Lunch is usually one to two hours long.Teachers always tell the students to take time to taste the food and enjoy their meals.Students have to pay for the cafeteria lunch.They have to pay for half,and the school pays for the other half. Usually, lunch has vegetables, salad, meat, fish, eggs, bread, noodles, rice, soup, fruit and ice-cream. The school sends one week's menu to students' parents and the menu is different each day.But the lunch must have vegetables,fish and eggs.And each student an have five dishes for lunch.Becky is a French student and she always has lunch at school.Like most students in her school,she thinks the cafeteria lunch is tasty and delicious. (15.F 16.T 17.F 18.F 19.T20.T) Listen to the passage and fill in the blanks (听空，完成下列句子。每限填一词)(10 分) Denny and Cindy are talking on the phone. Cindy:Hello. Denny:Hello.Can I speak to Cindy,please? Cindy:Speaking. Denny: Oh, Cindy. Where have you been? I've tried to call you on your mobile phone all day. Cindy: I'm sorry. I was shopping in City Supermarket. You know how noisy City Supermarket is. I must have missed your calls. Oh, why did you call me? Denny: I wanted to ask you to go shopping with me, Well, did you buy anything? Cindy: Oh yes, lots of things. I bought a jacket, two silk skirts. I also bought a Hello Doggy hair band. Denny: A Hello Doggy hair band? But you have short hair! What do you need a hair band for? And didn't you say you hated Hello Doggy? Cindy: I know, but it was really good value ( only 30 dollars. That's half price. I can give it to somebody who likes Hello Doggy. Denny: Who are you going to give it to? Cindy: Hmm... I'm still thinking. If I can't think of anyone, I'll start growing my hair. Then I can use it myself. OK, my parents are back. I'll talk to you later. Bye. Denny: Bye. (21. all day 22. City Supermarket 23. silk skirts 24. 30 dollars 25. start growing)",
       "hasAudio": true,
       "hasTranscript": true,
@@ -8091,7 +8117,9 @@ module.exports = {
           "sectionKey": "D",
           "sectionTitle": "D. Listen and complete the sentences."
         }
-      ]
+      ],
+      "audioFile": "sh-em2-2020-黄浦-listening.mp3",
+      "audioLocalPath": "data/listening-em2/audio/sh-em2-2020-黄浦-listening.mp3"
     },
     {
       "_id": "sh-em2-2021-徐汇-listening",

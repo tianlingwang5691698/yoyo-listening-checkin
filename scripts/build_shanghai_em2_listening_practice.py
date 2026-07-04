@@ -54,6 +54,8 @@ def district_of(path):
 
 
 def display_year_of(source_year):
+    if int(source_year or 0) == 2020:
+        return 2020
     return int(source_year) - 1 if source_year else source_year
 
 

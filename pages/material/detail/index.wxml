@@ -21,7 +21,7 @@
     </view>
     <view class="section-heading" wx:if="{{item.images && item.images.length}}">A. Listen and choose the right picture.</view>
     <view class="picture-composite" wx:if="{{item.imageDisplayMode === 'composite'}}">
-      <image class="picture-composite-item" mode="widthFix" src="{{item.images[0].src}}"></image>
+      <image class="picture-composite-item" mode="aspectFit" src="{{item.images[0].src}}"></image>
     </view>
     <view class="picture-grid" wx:elif="{{item.images && item.images.length}}">
       <view class="picture-cell" wx:for="{{item.images}}" wx:key="cloudPath">

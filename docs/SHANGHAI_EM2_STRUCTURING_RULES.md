@@ -205,7 +205,7 @@ node -e "const fs=require('fs'),crypto=require('crypto');const id='verb:时态';
 
 云存储路径必须逐字符核对，文件夹名和文件名前后不能有空格。上传后必须用 HTTPS 地址验证 `listening-practice.json` 返回 200；如果返回 404，优先检查是否建成了 `_content/listening-em1/ listening-practice.json`、`_content/ listening-em1/` 这类带空格路径。
 
-每套听力按年份和区县归档，字段保留 `sourceYear`、`year`、`audioCloudPath`、`transcript`、`hasAudio`、`hasTranscript`。原始文件夹年份和实际考试年份不一致时，显示年份写成 `sourceYear - 1`，`sourceYear` 只用于追溯原始来源；音频路径也必须跟随显示年份映射，不能出现 2022 套卷链接 2023 音频。2012 原目录标注无音频；若只有“听力文本及参考答案”而无音频，正式上传数据直接剔除。
+每套听力按年份和区县归档，字段保留 `sourceYear`、`year`、`audioCloudPath`、`transcript`、`hasAudio`、`hasTranscript`。原始文件夹年份和实际考试年份不一致时，优先按音频实际年份和原卷学年结束年份显示：如 `2019-2020` 学年卷且音频为 2020，则 `year` 写 2020；其他明确届别/源目录领先一年的素材才按 `sourceYear - 1`。`sourceYear` 只用于追溯原始来源；音频路径也必须跟随显示年份映射，不能出现 2022 套卷链接 2023 音频。2012 原目录标注无音频；若只有“听力文本及参考答案”而无音频，正式上传数据直接剔除。
 
 听力练习题必须来自原卷，不允许用 1-20 占位模板。正式练习库只保留同时满足：有音频、有原卷 1-20 题结构、有 A 部分图片题图片。缺图或题目不全的套卷先不进练习入口。
 
