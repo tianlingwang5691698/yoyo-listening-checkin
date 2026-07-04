@@ -211,7 +211,7 @@ node -e "const fs=require('fs'),crypto=require('crypto');const id='verb:时态';
 
 听力题目按原卷 A/B/C/D 四段保留分段字段：1-5 为 A 图片题，6-10 为 B 对话选择题，11-15 为 C 判断题，16-20 为 D 填空题。清洗选项时必须过滤 A/B/C/D 段落说明，不能把 `Listen and choose the right picture`、`Listen to the dialogue/passage` 等段落标题识别成选项文本。
 
-图片清洗只允许抽取 A 部分 `Listen and choose the right picture` 到 B 部分之前的图片。不得把整份 docx 的学科网 logo、阅读图片、网页页眉、二维码或其他素材当作听力图片。只保留小程序可直接显示的 PNG/JPG/GIF；WMF 等不可显示格式必须过滤，不能占用 A/B/C 选项位置。A 部分图片抽取不稳定时，该套不进入正式练习入口。
+图片清洗从 A 部分 `Listen and choose the right picture` 开始，到 Part 2 之前结束；A 部分图片必须保留，B/C/D 部分若原卷有听力配图也必须保留。不得把整份 docx 的学科网 logo、阅读图片、网页页眉、二维码或其他素材当作听力图片。只保留小程序可直接显示的 PNG/JPG/GIF；WMF 等不可显示格式必须过滤，不能占用 A/B/C 选项位置。A 部分图片抽取不稳定时，该套不进入正式练习入口。
 
 听力文本只收真实听力原文或听力文字稿，可来自答案、听力文本、听力文稿、录音文字稿等文件。仅有答案、解析、题干或“原文略”的文件不能当作 `transcript`；缺真实原文时 `hasTranscript: false`，不人工补写、不跨年借用。
 
@@ -233,7 +233,11 @@ node -e "const fs=require('fs'),crypto=require('crypto');const id='verb:时态';
 
 一模听力沿用二模听力清洗准入：必须同时具备音频、原卷题目、20 题答案、A 部分图片题图片。A 部分图片只从 `Listen and choose the right picture` 到 B 部分之前抽取；文本只收真实听力原文或文字稿，不人工补写。
 
+一模听力同样按 `displayYear = sourceYear - 1` 对齐实际考试年。比如 `2025届` 一模素材实际对应 2024 学年/2024 音频，不能挂到 2025 展示年；若 2025 展示年缺 2026 源里的对应音频，该区县先不进入练习库。
+
 一模音频上传时文件名必须带内容指纹，例如 `sh-em1-2025-普陀-listening-651d8aa3.mp3`。不要复用旧的同名音频路径覆盖上传，否则小程序临时链接或缓存可能继续播放旧年份音频。
+
+本地重清洗时，一模只读源目录里的 `一模` 分支并输出到 `data/listening-em1`；二模只读源目录里的 `二模` 分支并输出到 `data/listening-em2`。一模、二模不得互相借音频、图片、题目或文本。
 
 ## 元数据规则
 

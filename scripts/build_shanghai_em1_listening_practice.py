@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import json
 import hashlib
+import os
 import shutil
 from pathlib import Path
 
@@ -8,12 +9,15 @@ import build_shanghai_em2_listening_practice as em2
 
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE_ROOTS = [
+DEFAULT_SOURCE_ROOTS = [
     Path('/Users/wangtianlong/工作/未命名文件夹/3. 上海中考英语一模二模（12-24）/一模'),
-    Path('/Users/wangtianlong/工作/未命名文件夹/6. 2025年上海一模'),
-    Path('/Users/wangtianlong/工作/未命名文件夹/8.2026年上海一模'),
 ]
-TARGETS = {(2025, '宝山'), (2025, '普陀')}
+SOURCE_ROOTS = [
+    Path(p)
+    for p in os.environ.get('SH_EM1_LISTENING_SOURCE_ROOTS', '').split(':')
+    if p
+] or DEFAULT_SOURCE_ROOTS
+TARGETS = None
 OUT_DIR = ROOT / 'data' / 'listening-em1'
 IMAGE_DIR = OUT_DIR / 'images'
 AUDIO_DIR = OUT_DIR / 'audio'
@@ -25,8 +29,21 @@ MATERIAL_JS = ROOT / 'data' / 'material-index.js'
 
 
 def is_em1_path(path):
-    s = str(path)
-    return '一模' in s and '二模' not in s and '英语' in s
+    parts = [str(part) for part in Path(path).parts]
+    if not any('一模' in part for part in parts):
+        return False
+    return not any(('二模' in part and '一模二模' not in part) for part in parts)
+
+
+def display_year_of(path):
+    source_year = em2.year_of(path)
+    if source_year:
+        return source_year - 1
+    return source_year
+
+
+def source_key(path):
+    return (display_year_of(path), em2.district_of(path))
 
 
 def candidate_text_files():
@@ -70,8 +87,8 @@ def with_em1_image_dir(fn, *args):
 def best_sources():
     best = {}
     for path in candidate_text_files():
-        key = (em2.year_of(path), em2.district_of(path))
-        if key not in TARGETS:
+        key = source_key(path)
+        if TARGETS and key not in TARGETS:
             continue
         text = em2.read_text(path)
         questions = em2.parse_questions(text)
@@ -87,8 +104,8 @@ def best_sources():
 def best_answer_sources():
     best = {}
     for path in candidate_text_files():
-        key = (em2.year_of(path), em2.district_of(path))
-        if key not in TARGETS:
+        key = source_key(path)
+        if TARGETS and key not in TARGETS:
             continue
         text = em2.read_text(path)
         answers = em2.extract_listening_answers(text)
@@ -106,8 +123,8 @@ def best_answer_sources():
 def best_transcript_sources():
     best = {}
     for path in candidate_text_files():
-        key = (em2.year_of(path), em2.district_of(path))
-        if key not in TARGETS:
+        key = source_key(path)
+        if TARGETS and key not in TARGETS:
             continue
         text = em2.read_text(path)
         transcript = em2.extract_listening_transcript(text)
@@ -129,7 +146,7 @@ def best_image_sources(keys):
     for path in candidate_text_files():
         if path.suffix.lower() != '.docx':
             continue
-        key = (em2.year_of(path), em2.district_of(path))
+        key = source_key(path)
         if key not in keys:
             continue
         old_dir = em2.IMAGE_DIR
@@ -158,8 +175,8 @@ def best_image_sources(keys):
 def best_audio_sources():
     best = {}
     for path in candidate_audio_files():
-        key = (em2.year_of(path), em2.district_of(path))
-        if key in TARGETS and key not in best:
+        key = source_key(path)
+        if (not TARGETS or key in TARGETS) and key not in best:
             best[key] = path
     return best
 
@@ -218,7 +235,8 @@ def main():
     audio_sources = best_audio_sources()
 
     items = []
-    candidates = sorted(TARGETS)
+    rejected = []
+    candidates = sorted(TARGETS or (set(sources) | set(answer_sources) | set(image_sources) | set(audio_sources)))
     for year, district in candidates:
         key = (year, district)
         source = sources.get(key)
@@ -226,8 +244,23 @@ def main():
         image_source = image_sources.get(key)
         audio_source = audio_sources.get(key)
         if not (source and answer_source and image_source and audio_source):
+            rejected.append({
+                'year': year,
+                'district': district,
+                'reasons': [
+                    reason
+                    for reason, exists in [
+                        ('missing-question-source', bool(source)),
+                        ('missing-answer-source', bool(answer_source)),
+                        ('missing-image-source', bool(image_source)),
+                        ('missing-audio-source', bool(audio_source)),
+                    ]
+                    if not exists
+                ]
+            })
             continue
         item_id = f'sh-em1-{year}-{district}-listening'
+        source_year = em2.year_of(source['path']) or year + 1
         audio_local, audio_cloud = local_cloud_path(item_id, audio_source)
         questions = source['questions']
         answers = answer_source['answers']
@@ -244,7 +277,7 @@ def main():
             '_id': item_id,
             'title': f'{year} 上海{district}一模听力',
             'year': year,
-            'sourceYear': year,
+            'sourceYear': source_year,
             'city': '上海',
             'district': district,
             'examType': '一模',
@@ -263,6 +296,18 @@ def main():
         })
 
     PRACTICE_OUT.write_text(json.dumps(items, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+    REJECTED_OUT.write_text(json.dumps(rejected, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+    reason_counts = {}
+    for item in rejected:
+        for reason in item.get('reasons', []):
+            reason_counts[reason] = reason_counts.get(reason, 0) + 1
+    REPORT_OUT.write_text(json.dumps({
+        'targetCount': len(candidates),
+        'acceptedCount': len(items),
+        'rejectedCount': len(rejected),
+        'reasonCounts': dict(sorted(reason_counts.items())),
+        'note': '一模源文件按展示年份=源年份-1匹配；缺少 2026 源对应的 2025 实际宝山/普陀音频时不入库。'
+    }, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     material = json.loads(MATERIAL_JSON.read_text(encoding='utf-8'))
     material['listeningEm1'] = [slim_item(item) for item in items]
     MATERIAL_JSON.write_text(json.dumps(material, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')

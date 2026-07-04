@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import json
+import os
 import re
 import subprocess
 import zipfile
@@ -13,16 +14,23 @@ from docx.text.paragraph import Paragraph
 
 from build_shanghai_em1_reading_upload import DISTRICTS, clean
 
-ROOTS = [
+DEFAULT_ROOTS = [
     Path('/Users/wangtianlong/工作/未命名文件夹/3. 上海中考英语一模二模（12-24）'),
     Path('/Users/wangtianlong/工作/未命名文件夹/7. 2025年上海二模/英语'),
     Path('/Users/wangtianlong/工作/未命名文件夹/9.2026年上海二模'),
 ]
+ROOTS = [
+    Path(p)
+    for p in os.environ.get('SH_EM2_LISTENING_SOURCE_ROOTS', '').split(':')
+    if p
+] or DEFAULT_ROOTS
+USE_IMPORT_TEXTS = not os.environ.get('SH_EM2_LISTENING_SOURCE_ROOTS')
 OUT_DIR = Path('data/listening-em2')
 IMAGE_DIR = OUT_DIR / 'images'
 PRACTICE_OUT = OUT_DIR / 'listening-practice.json'
 INDEX_OUT = Path('data/material-index.js')
 INDEX_JSON_OUT = Path('data/material-index.json')
+SOFFICE = Path('/Users/wangtianlong/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/soffice')
 
 
 def is_em2_path(path):
@@ -118,8 +126,9 @@ def candidate_text_files():
                 if any(bad in s for bad in ['答案纸', '答题纸', '答题卡']):
                     continue
                 files.append(path)
-    for path in Path('data/imports').glob('shanghai-em2-*/work/*.txt'):
-        files.append(path)
+    if USE_IMPORT_TEXTS:
+        for path in Path('data/imports').glob('shanghai-em2-*/work/*.txt'):
+            files.append(path)
     return sorted(files)
 
 
@@ -166,8 +175,28 @@ def option_map(line):
     return opts
 
 
-def section_for_number(number):
+def section_for_number(number, mode='20'):
     number = int(number)
+    if mode == '25':
+        if 1 <= number <= 6:
+            return {
+                'sectionKey': 'A',
+                'sectionTitle': 'A. Listen and choose the right picture.'
+            }
+        if 7 <= number <= 14:
+            return {
+                'sectionKey': 'B',
+                'sectionTitle': 'B. Listen and choose the best answer.'
+            }
+        if 15 <= number <= 20:
+            return {
+                'sectionKey': 'C',
+                'sectionTitle': 'C. Listen and tell whether the statements are true or false.'
+            }
+        return {
+            'sectionKey': 'D',
+            'sectionTitle': 'D. Listen and complete the sentences.'
+        }
     if 1 <= number <= 5:
         return {
             'sectionKey': 'A',
@@ -194,16 +223,23 @@ def apply_question_section(question):
     return question
 
 
+def apply_question_sections(questions):
+    mode = '25' if any(int(q.get('number') or 0) > 20 for q in questions) else '20'
+    for question in questions:
+        question.update(section_for_number(question.get('number', 0), mode))
+    return questions
+
+
 def parse_choice(lines):
     questions = []
     current = None
     for line in lines:
         m = re.match(r'^(\d{1,2})[\.．]\s*(.+)', line)
-        if m and 6 <= int(m.group(1)) <= 10:
+        if m and 6 <= int(m.group(1)) <= 14:
             if current:
                 questions.append(current)
             num = int(m.group(1))
-            current = apply_question_section({'number': num, 'prompt': 'Listen and choose the best answer.', 'questionType': 'choice', 'options': {}, 'answer': ''})
+            current = {'number': num, 'prompt': 'Listen and choose the best answer.', 'questionType': 'choice', 'options': {}, 'answer': ''}
             opts = option_map(line)
             current['options'].update(opts)
             continue
@@ -219,29 +255,31 @@ def parse_choice(lines):
 def parse_true_false(lines):
     questions = []
     for line in lines:
-        m = re.match(r'^(1[1-5])[\.．]\s*(.+)', line)
+        m = re.match(r'^(1[1-9]|20)[\.．]?\s*(.+)', line)
         if m:
+            if option_map(line):
+                continue
             questions.append({
                 'number': int(m.group(1)),
                 'prompt': clean(m.group(2)),
                 'questionType': 'truefalse',
                 'options': {'T': 'T', 'F': 'F'},
                 'answer': ''
-            } | section_for_number(int(m.group(1))))
+            })
     return questions
 
 
 def parse_blanks(lines):
     questions = []
     for line in lines:
-        m = re.match(r'^(1[6-9]|20)[\.．]\s*(.+)', line)
-        if m and re.search(r'_{3,}|__+', m.group(2)):
+        m = re.match(r'^(1[6-9]|2[0-5])[\.．]\s*(.+)', line)
+        if m and (int(m.group(1)) >= 21 or re.search(r'_{3,}|__+', m.group(2))):
             questions.append({
                 'number': int(m.group(1)),
                 'prompt': clean(m.group(2)),
                 'questionType': 'blank',
                 'answer': ''
-            } | section_for_number(int(m.group(1))))
+            })
     return questions
 
 
@@ -250,39 +288,58 @@ def extract_listening_answers(text):
     candidates = []
     for marker in re.finditer(r'【答案】|参考答案|答案[:：]', text):
         block = text[marker.end():marker.end() + 3500]
-        if re.search(r'1\s*-\s*5|6\s*-\s*10|11\s*-\s*15|16[\.．、]', block):
+        if re.search(r'1\s*-\s*5|1\s*-\s*6|6\s*-\s*10|7\s*-\s*14|11\s*-\s*15|15\s*-\s*20|16[\.．、]|1\s*[\.．、]\s*[A-H]', block, re.I):
             candidates.append(block)
+    head = text[:2500]
+    if re.search(r'Listening Comprehension|Listening comprehension|听力理解', head, re.I) and re.search(r'\b1\s*-\s*6\b|\b1\s*[\.．、]', head):
+        candidates.insert(0, head)
     if not candidates:
         candidates = [text[:2500]]
 
     for raw_block in candidates:
-        block = re.split(r'Part\s*2|Vocabulary and Grammar|第二部分|II\.', raw_block, maxsplit=1, flags=re.I)[0]
+        block = re.split(
+            r'英语听力文字|听力文字|听力原文|Part\s*2|Vocabulary and Grammar|第二部分|II\.\s*(?:Choose|Vocabulary)',
+            raw_block,
+            maxsplit=1,
+            flags=re.I,
+        )[0]
         block = clean(block)
 
-        for start, end, letters in re.findall(r'(\d{1,2})\s*-\s*(\d{1,2})\s*([A-GTFacgtf]{2,})', block):
+        for start, end, letters in re.findall(r'(\d{1,2})\s*-\s*(\d{1,2})\s*([A-HТTF](?:[\s\u00a0]*[A-HТTF])*)', block, flags=re.I):
             start = int(start)
             end = int(end)
-            letters = letters.upper()
+            letters = re.sub(r'[^A-HТTF]', '', letters.upper()).replace('Т', 'T')
             if 1 <= start <= end <= 20 and end - start + 1 == len(letters):
                 for offset, letter in enumerate(letters):
                     answers[start + offset] = letter
 
-        for num, letter in re.findall(r'\b(\d{1,2})\s*[\.．、]\s*([A-GTF])\b', block, flags=re.I):
+        for num, letter in re.findall(r'(?<!\d)(\d{1,2})\s*[\.．、]\s*\(([A-HТTF])\)', block, flags=re.I):
             num = int(num)
-            if 1 <= num <= 15:
-                answers[num] = letter.upper()
+            if 1 <= num <= 20:
+                answers[num] = letter.upper().replace('Т', 'T')
+        for num, letter in re.findall(r'(?<!\d)(\d{1,2})\s*[\.．、]\s*([A-HТTF])(?=\s*\d{1,2}\s*[\.．、]|\s*$)', block, flags=re.I):
+            num = int(num)
+            if 1 <= num <= 20:
+                answers[num] = letter.upper().replace('Т', 'T')
+        for num, letter in re.findall(r'(?<!\d)(\d{1,2})\s*[\.．、]\s*([A-HТTF])(?=\s+[A-D][：:]|\s+Part|\s*$)', block, flags=re.I):
+            num = int(num)
+            if 1 <= num <= 20:
+                answers[num] = letter.upper().replace('Т', 'T')
 
         blank_pattern = re.compile(
-            r'(1[6-9]|20)\s*[\.．、]\s*(.+?)(?=\s+(?:1[6-9]|20|2[1-9]|3[0-9]|4[0-9]|5[0-9])\s*[\.．、]|\s+\d{1,2}\s*-\s*\d{1,2}|\s+【听力原文】|\s+听力原文|\s+Part\s*(?:2|II)|\s+II\.|$)',
+            r'(1[6-9]|2[0-5])\s*[\.．、]?\s*(.+?)(?=\s+(?:1[6-9]|2[0-5]|2[6-9]|3[0-9]|4[0-9]|5[0-9])\s*[\.．、]?|\s+\d{1,2}\s*-\s*\d{1,2}|\s+英语听力文字|\s+听力文字|\s+【听力原文】|\s+听力原文|\s+Part\s*(?:2|II)|\s+II\.|$)',
             re.I,
         )
         for num, value in blank_pattern.findall(block):
+            num = int(num)
+            if str(answers.get(num, '')).upper() in set('ABCDEFGHTF'):
+                continue
             value = clean(value)
             value = re.sub(r'【解析】.*$', '', value).strip()
             value = re.sub(r'\s+Part\s*(?:2|II).*$|\s+II\..*$', '', value, flags=re.I).strip()
             if value and len(value) <= 80:
-                answers[int(num)] = value
-        if len(answers) == 20:
+                answers[num] = value
+        if is_valid_listening_answer_set(answers):
             break
     return answers
 
@@ -324,14 +381,14 @@ def extract_docx_images(path, item_id):
     try:
         doc = Document(path)
         rel_ids = []
-        in_picture_section = False
+        in_listening_image_section = False
         for paragraph in doc.paragraphs:
             text = clean(paragraph.text)
             if re.search(r'Listen and choose the right picture', text, re.I):
-                in_picture_section = True
-            elif in_picture_section and re.search(r'Listen to (?:the dialogue|the conversation|the passage)', text, re.I):
+                in_listening_image_section = True
+            elif in_listening_image_section and re.search(r'Part\s*2|Grammar and Vocabulary|Vocabulary and Grammar|第二部分', text, re.I):
                 break
-            if not in_picture_section:
+            if not in_listening_image_section:
                 continue
             rel_ids.extend(paragraph._p.xpath('.//*[local-name()="blip"]/@*[local-name()="embed"]'))
         for rel_id in rel_ids[:12]:
@@ -360,6 +417,24 @@ def extract_docx_images(path, item_id):
     except Exception:
         return []
     return out
+
+
+def convert_doc_to_docx(path, item_id):
+    if path.suffix.lower() != '.doc' or not SOFFICE.exists():
+        return None
+    out_dir = IMAGE_DIR / '_converted-docx'
+    out_dir.mkdir(parents=True, exist_ok=True)
+    before = {p.name for p in out_dir.glob('*.docx')}
+    subprocess.run(
+        [str(SOFFICE), '--headless', '--convert-to', 'docx', '--outdir', str(out_dir), str(path)],
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        check=False,
+    )
+    converted = [p for p in out_dir.glob('*.docx') if p.name not in before]
+    if not converted:
+        converted = sorted(out_dir.glob(f'{path.stem}*.docx'), key=lambda p: p.stat().st_mtime, reverse=True)
+    return converted[0] if converted else None
 
 
 def extract_pdf_images(path, item_id):
@@ -394,6 +469,9 @@ def extract_pdf_images(path, item_id):
 
 
 def extract_images(path, item_id):
+    if path.suffix.lower() == '.doc':
+        converted = convert_doc_to_docx(path, item_id)
+        return extract_docx_images(converted, item_id) if converted else []
     if path.suffix.lower() == '.docx':
         return extract_docx_images(path, item_id)
     if path.suffix.lower() == '.pdf':
@@ -420,7 +498,7 @@ def best_image_sources(keys):
     probe_dir = IMAGE_DIR / '_probe'
     probe_dir.mkdir(parents=True, exist_ok=True)
     for path in candidate_text_files():
-        if path.suffix.lower() != '.docx':
+        if path.suffix.lower() not in {'.doc', '.docx'}:
             continue
         year = year_of(path)
         district = district_of(path)
@@ -439,7 +517,7 @@ def best_image_sources(keys):
             p = Path(image['localPath'])
             if p.exists():
                 p.unlink()
-        if image_count < 5:
+        if image_count < 1:
             continue
         score = score_image_source(path, image_count)
         old = best.get(key)
@@ -460,16 +538,16 @@ def parse_questions(text):
     questions.extend(parse_choice(lines))
     questions.extend(parse_true_false(lines))
     questions.extend(parse_blanks(lines))
-    return sorted(questions, key=lambda x: x['number'])
+    return sorted(apply_question_sections(questions), key=lambda x: x['number'])
 
 
-def picture_questions():
+def picture_questions(count=5):
     return [{
         'number': number,
         'prompt': 'Listen and choose the right picture.',
         'questionType': 'picture',
         'answer': ''
-    } | section_for_number(number) for number in range(1, 6)]
+    } | section_for_number(number, '25' if count == 6 else '20') for number in range(1, count + 1)]
 
 
 def best_sources():
@@ -537,6 +615,13 @@ def best_transcript_sources():
 
 
 def is_valid_listening_answer_set(answers):
+    if all(num in answers for num in range(1, 15)):
+        tf_count = sum(1 for num in range(15, 21) if str(answers.get(num, '')).upper() in {'T', 'F'})
+        blank_count = sum(
+            1 for num in range(21, 26)
+            if answers.get(num) and str(answers[num]).upper() not in set('ABCDEFGHTF')
+        )
+        return tf_count >= 4 and blank_count >= 3
     if not all(num in answers for num in range(1, 11)):
         return False
     tf_count = sum(1 for num in range(11, 16) if str(answers.get(num, '')).upper() in {'T', 'F'})
@@ -592,12 +677,13 @@ def main():
         next_item['hasPictureQuestions'] = bool(next_item['images'])
         if next_item['hasPictureQuestions']:
             existing = {q['number'] for q in next_item['questions']}
-            next_item['questions'] = picture_questions() + [q for q in next_item['questions'] if q['number'] not in existing or q['number'] > 5]
+            picture_count = 6 if any(q.get('number') == 25 for q in next_item['questions']) else 5
+            next_item['questions'] = picture_questions(picture_count) + [q for q in next_item['questions'] if q['number'] > picture_count]
             if answer_source:
                 for question in next_item['questions']:
                     if question.get('number') in answers:
                         question['answer'] = answers[question['number']]
-        if next_item['hasPictureQuestions'] and len(next_item['questions']) == 20:
+        if next_item['hasPictureQuestions'] and len(next_item['questions']) in {20, 25}:
             items.append(next_item)
     used_images = {Path(image['localPath']).name for item in items for image in item.get('images', [])}
     for image_path in IMAGE_DIR.glob('*'):

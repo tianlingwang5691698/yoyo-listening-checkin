@@ -3822,9 +3822,4298 @@ module.exports = {
   ],
   "listeningEm2": [
     {
+      "_id": "sh-em2-2019-嘉定-listening",
+      "title": "2019 上海嘉定二模听力",
+      "year": 2019,
+      "sourceYear": 2020,
+      "district": "嘉定",
+      "examType": "二模",
+      "stage": "初中",
+      "audioCloudPath": "_content/listening-em2/audio/sh-em2-2019-嘉定-listening.mp3",
+      "transcript": "",
+      "hasAudio": true,
+      "hasTranscript": false,
+      "questionSourceFile": "2020年上海市嘉定区中考二模英语试题（原卷版）.doc",
+      "answerSourceFile": "2020年上海市嘉定区中考二模英语试题（解析版）.doc",
+      "imageSourceFile": "2020年上海市嘉定区中考二模英语试题（原卷版）.doc",
+      "images": [
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2019-嘉定-listening-image-1.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2019-嘉定-listening-image-1.png"
+        }
+      ],
+      "questions": [
+        {
+          "number": 1,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "C",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
+        },
+        {
+          "number": 2,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "H",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
+        },
+        {
+          "number": 3,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "A",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
+        },
+        {
+          "number": 4,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "G",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
+        },
+        {
+          "number": 5,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "E",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
+        },
+        {
+          "number": 6,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "D",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
+        },
+        {
+          "number": 7,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "One cup a day.",
+            "B": "Two cups a day.",
+            "C": "Three cups a day.",
+            "D": "Four cups a day."
+          },
+          "answer": "C",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 8,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Cloudy.",
+            "B": "Rainy.",
+            "C": "Sunny.",
+            "D": "Windy."
+          },
+          "answer": "A",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 9,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Wednesday.",
+            "B": "Tuesday.",
+            "C": "Thursday.",
+            "D": "Friday."
+          },
+          "answer": "B",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 10,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Doctor and patient.",
+            "B": "Boss and secretary.",
+            "C": "Shop assistant and customer.",
+            "D": "Teacher and student."
+          },
+          "answer": "D",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 11,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "A size five and a half.",
+            "B": "A size six.",
+            "C": "A size seven and a half.",
+            "D": "A size seven."
+          },
+          "answer": "C",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 12,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Swimming.",
+            "B": "Playing volleyball.",
+            "C": "Skating",
+            "D": "Watching TV."
+          },
+          "answer": "B",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 13,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "10 minutes.",
+            "B": "20 minutes.",
+            "C": "30 minutes.",
+            "D": "40 minutes."
+          },
+          "answer": "D",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 14,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "It will cool down soon.",
+            "B": "It has been hot for a long time.",
+            "C": "The forecast is wrong.",
+            "D": "They usually have hot summers"
+          },
+          "answer": "B",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 15,
+          "prompt": "Nowadays very few students travel and make money in other countries at the same time.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "F",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
+        },
+        {
+          "number": 16,
+          "prompt": "Some companies can help you get a job and plan for your trip in another country.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "T",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
+        },
+        {
+          "number": 17,
+          "prompt": "Disneyland in the United States is also a place you can work for money.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "T",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
+        },
+        {
+          "number": 18,
+          "prompt": "As a student,you can only work for one month for your working holiday.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "F",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
+        },
+        {
+          "number": 19,
+          "prompt": "You'd better bring a credit card with you to pay for extra things.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "T",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
+        },
+        {
+          "number": 20,
+          "prompt": "It is necessary to make several copies of some important documents(证件）.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "T",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
+        },
+        {
+          "number": 21,
+          "prompt": "The reporter asks Lucy how she's paying for her ______ ________.",
+          "questionType": "blank",
+          "answer": "college education",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
+        },
+        {
+          "number": 22,
+          "prompt": "Lucy works at a hotel for about ______ ________ a week to earn some money.",
+          "questionType": "blank",
+          "answer": "twelve /12 hours",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
+        },
+        {
+          "number": 23,
+          "prompt": "The money Lucy earns helps to pay for the meals ______ ________ and also something for her daily life.",
+          "questionType": "blank",
+          "answer": "at noon",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
+        },
+        {
+          "number": 24,
+          "prompt": "Lucy doesn't borrow money and ______ ________ goes to the movies for fun.",
+          "questionType": "blank",
+          "answer": "hardly ever",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
+        },
+        {
+          "number": 25,
+          "prompt": "To save money,Lucy usually buys some ______ ________ in second-hand shops.",
+          "questionType": "blank",
+          "answer": "cheap clothes",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
+        }
+      ]
+    },
+    {
+      "_id": "sh-em2-2019-宝山-listening",
+      "title": "2019 上海宝山二模听力",
+      "year": 2019,
+      "sourceYear": 2020,
+      "district": "宝山",
+      "examType": "二模",
+      "stage": "初中",
+      "audioCloudPath": "_content/listening-em2/audio/sh-em2-2019-宝山-listening.mp3",
+      "transcript": "听力文字 Part 1 I.Listening Comprehension(听力理解）（共30分） A.Listen and choose the right picture(根据你听到的内容，选出相应的图片》（6分） 1.We must take good care of the Earth because it's our home.(C) 2.The children celebrated Johnny's ninth birthday with a party.(F) 3.Most of the students took an active part in Mr.White's class.(B) 4.The taxi driver is so careful that he has never broken any traffic rules.(A) 5.Do you think it is a good idea to raise a pet dog?(G) 6.How amazing it is to go back to school after the winter holidays!(H) B.Listen to the dialogue and choose the best answer to the question you hear(根据你听到的 对话和问题，选择最恰当的答案）（8分） 7.W:Would you like some coffee or tea? M:Neither.Just some water,please. W:OK,just a moment,please. Q:What does the man want to have?(C) 8.W:Long time on see,Eric..What have you been doing lately? M:Nothing special.I'm driving for a private company. Q:What does Eric do now?(C) 9.M:Would you please hurry up? The play starts at 7:30. W:Don't worry.We still have 20 minutes left. Q:What time is it now?(D) 10.M:Excuse me,Miss.Is there still time for a cup of coffee on this flight? W:Yes,but you will have to drink it fast, because we will be landing in ten minutes. Q:Where are the two speakers?(B) 11.M:Hi,Mary.Can I borrow your bike? W:Sorry,my sister is going to the library this afternoon.She wants to use it. Q:How will Mary's sister go to the library?(A) 12.M:I heard that you went abroad last month. W:Yes,I had a wonderful time. M:Tell me something about your trip. W:I spent two days in Italy,three in France,and five in Germany. Q:How long did the woman stay abroad?(D) 13.W:Tom,would you please tidy up your things?They are all over the living room floor. M:Just a second.I'm on the phone at the moment. W:OK.But do it as soon as you hang up. M: No problem. Q: Who might the two speakers be? (B) 14. W: I need to talk to someone who knows Tokyo well. I'm told you used to live there. M: Yes, that's true, But I was really young at that time. Q: What does the man mean? (D)) C. Listen to the passage and tell whether the following statements are true or false.（判断下列句子是否符合你听到的短文内容，符合的用“T”表示，不符合的用表示）（6 分） Danny learned a very important lesson from the last typhoon. He and his friends decided it would be cool to go to the beach to watch the big waves when the typhoon was coming. They didn't want the police to see them, so they hid among some rocks. As the typhoon came nearer, the waves became larger and larger, When one big wave came, one of the boys was washed into the ocean. He couldn't even swim! Luckily, the police saw him and saved him, even though they had to put their own lives at risk. Now Danny has a very different idea about- big storms. They may be exciting to watch, but they are also very dangerous. Danny learned that we must respect the great power of nature. When a typhoon comes now, Danny and his friends stay inside where it is safe. (15. F 16. F 17. T 18. F 19. F 20.T) D.Listen to the passage and fill in the blanks(听短文填空，完成下列句子。每空格限填一 词）（10分) Do you think it is very important to be on time? Some people think it's no big deal if they're late for a date or an appointment.What difference does half an hour make after all? Your real friends won't mind if you're late,will they? This thinking is wrong,for the following reasons. Being on time is showing respect to others.Time is one thing no one can buy.This means that everyone's time is precious to both us and others.Being on time shows others that we understand and appreciate the value of everyone's time. Being on time is also an important social skill,Meetings and appointments are set to start at certain time for everybody's convenience. Being late may actually result in someone losing his or her job.Polite and successful people know the real meaning of not being late. 21.big deal 22.won't mind 23.showing respect 24. social skill 25. real meaning",
+      "hasAudio": true,
+      "hasTranscript": true,
+      "questionSourceFile": "2020年上海市宝山区中考二模英语试题（原卷版）.doc",
+      "answerSourceFile": "2020年上海市宝山区中考二模英语试题（解析版+听力原文）.doc",
+      "imageSourceFile": "2020年上海市宝山区中考二模英语试题（原卷版）.doc",
+      "images": [
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2019-宝山-listening-image-1.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2019-宝山-listening-image-1.png"
+        }
+      ],
+      "questions": [
+        {
+          "number": 1,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "C",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
+        },
+        {
+          "number": 2,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "F",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
+        },
+        {
+          "number": 3,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "B",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
+        },
+        {
+          "number": 4,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "A",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
+        },
+        {
+          "number": 5,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "G",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
+        },
+        {
+          "number": 6,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "H",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
+        },
+        {
+          "number": 7,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Coffee.",
+            "B": "Tea.",
+            "C": "Water.",
+            "D": "Juice."
+          },
+          "answer": "C",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 8,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "A businessman.",
+            "B": "A teacher.",
+            "C": "A driver.",
+            "D": "A tour guide."
+          },
+          "answer": "C",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 9,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "7:20.",
+            "B": "7:50.",
+            "C": "7:00.",
+            "D": "7:10."
+          },
+          "answer": "D",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 10,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "In the restaurant.",
+            "B": "On the plane.",
+            "C": "At the airport.",
+            "D": "In the coffee shop."
+          },
+          "answer": "B",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 11,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "By bicycle.",
+            "B": "By bus.",
+            "C": "On foot.",
+            "D": "By underground."
+          },
+          "answer": "A",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 12,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "For two days.",
+            "B": "For three days.",
+            "C": "For five days.",
+            "D": "For ten days."
+          },
+          "answer": "D",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 13,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Customer and shop assistant.",
+            "B": "Mother and son.",
+            "C": "Clerk and manager.",
+            "D": "Teacher and student."
+          },
+          "answer": "B",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 14,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "He can ask someone else to help the woman.",
+            "B": "He moved to Tokyo when he was young.",
+            "C": "He can show the woman around Tokyo himself.",
+            "D": "He can hardly provide any useful information."
+          },
+          "answer": "D",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 15,
+          "prompt": "Danny and his friends decided to go to the beach because they wanted to learn something about the typhoon.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "F",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
+        },
+        {
+          "number": 16,
+          "prompt": "They hid among some rocks in order not to be seen by their parents.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "F",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
+        },
+        {
+          "number": 17,
+          "prompt": "One of the boys was washed into the ocean by the big wave when the typhoon came nearer.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "T",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
+        },
+        {
+          "number": 18,
+          "prompt": "Luckily, the police saw the boy and saved him even though they couldn't swim.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "F",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
+        },
+        {
+          "number": 19,
+          "prompt": "Danny used to believe watching big storms on the beach could be very dangerous.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "F",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
+        },
+        {
+          "number": 20,
+          "prompt": "From now on, Danny and his friends will never go to the beach when a typhoon comes.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "T",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
+        },
+        {
+          "number": 21,
+          "prompt": "Some people think it's no ______ ______ if they're late for a date or an appointment (约定).",
+          "questionType": "blank",
+          "answer": "big deal",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
+        },
+        {
+          "number": 22,
+          "prompt": "Ifs wrong to think that your real friends ______ ______ if you're late.",
+          "questionType": "blank",
+          "answer": "won’t mind",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
+        },
+        {
+          "number": 23,
+          "prompt": "Being on time is ______ ______ to others. Time is one thing no one can buy.",
+          "questionType": "blank",
+          "answer": "showing respect",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
+        },
+        {
+          "number": 24,
+          "prompt": "Being on time is also an important ______ ______.",
+          "questionType": "blank",
+          "answer": "social skill",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
+        },
+        {
+          "number": 25,
+          "prompt": "Polite and successful people know the ______ ______ of not being late.",
+          "questionType": "blank",
+          "answer": "real meaning",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
+        }
+      ]
+    },
+    {
+      "_id": "sh-em2-2019-崇明-listening",
+      "title": "2019 上海崇明二模听力",
+      "year": 2019,
+      "sourceYear": 2020,
+      "district": "崇明",
+      "examType": "二模",
+      "stage": "初中",
+      "audioCloudPath": "_content/listening-em2/audio/sh-em2-2019-崇明-listening.mp3",
+      "transcript": "听力文字 Part 1 A. 1.It is great fun to take a walk at the beach in summer.(D) 2.All the students are required to wear uniforms in our school.(B) 3.The fire burnt the forest and caused the death of many animals.(E) 4.They moved into a new flat in the city center last weekend.(C) 5.We need plenty of vegetables and fruit every day to keep fit.(F) 6.The astronauts are going to explore a new planet in space.(H) B. 7. M When did you get your parcel yesterday? W: It should be here at 4 o'clock, but I finally got it an hour later. Q: When did the woman get her parcel yesterday? (B) 8. M: How can we go back home? It's too late to take the last underground. W: Let's call a taxi. Look! There's one available over there. Q: How will they go back home? (A) 9. W: Excuse me13. M Sandy, can you walk the dog after breakfast? W: I'm afraid I can't, dear. I'll have to drive Lucy to school. After that. I need to do some shopping for our dinner tonight. Q: What's the probable relationship between the two speakers? (A) 10. W: What did you think of the winter holiday, Luke? M: It was too boring. All I can do is to stay at home. Q: How did Luke feel during the winter holiday? (C) 11. W: I always take lots of photos during a journey. What about you, Mike? M: I don't like taking photos or buying gifts. I like to talk with local people. I can know something about local customs in this way. Q: What does Mike like to do during a journey? (D) 12. M Can I keep your book for another two weeks, Alice? W: Why? You have finished reading it, haven't you? M: Yes. But my teacher advises me to copy some nice sentences in the book. Q: Why does the boy want to keep the book for another two weeks? (C) 13. M Sandy, can you walk the dog after breakfast? W: I'm afraid I can't, dear. I'll have to drive Lucy to school. After that, I need to do some shopping for our dinner tonight. Q: What's the probable relationship between the two speakers? (D) 14. W: Peter, you're late again! M: I'm sorry, Mrs. White. But just now I went to meet our business partner, Mr. Bennet,you know. W: Of course I know Mr. Bennet well. I've just made a phone call to him. He is on holiday in Hawaii now. Q: What can we learn from the dialogue? (B) C. Joseph is a middle school student from North Carolina, U.S. Several weeks ago, when he was playing football near a church, he accidentally kicked the ball through a church window and broke it. There were no people around, but instead of running away, Joseph called the police and reported what had happened. He also visited the pastor of the church and told him that he would pay for the broken window. He even offered to work in the church to make up for the damage he had caused. Both the pastor and the police officer were greatly touched by his honesty. The pastor told Joseph that there was no need for him to work in the church. The police officer came to his school. had lunch with him and brought him a gift as an award for his honesty. The school was proud of Joseph and gave him an award, too. No one told Joseph what to do after he broke the window. He just did the right thing. He has won everyone's respect for his honesty. (T F F T F T) D. After I graduated from the police academy, I couldn't wait to do my best to save the world. However, I found out on my first day that I still had a lot to learn. That morning, I arrived at the police station early. At 7 a.m., I went into my office and waited for new orders. Suddenly. I realized that I hadn't brought my walkie-talkie. I went back to my locker, but I couldn't open it. I saw a long stick 1ying next to the lockers and used it to hit the door. The locker opened, but I was amazed that it was empty. I thought I was going to be in trouble for losing my walkie-talkie on my first day. It turned out that I broke into the wrong locker. I went to my boss to admit my mistake. He told me to ask next time. I knew he was thinking,“You are a silly newcomer!” After lunch, I received a call for an alarm at a building. This could be a theft. We arrived at the scene and found a closed company building. It was surrounded by a two-meter-high fence on the top. The owner was away. I offered to help. I climbed the fence and got up to the top. But I found I was afraid of heights. All of my colleagues laughed and helped me come down at last. 21. waited for 22. long stick 23. was empty 24. after lunch 25. two/2metres(meters)",
+      "hasAudio": true,
+      "hasTranscript": true,
+      "questionSourceFile": "2020年上海市崇明区中考二模英语试题（原卷版）.doc",
+      "answerSourceFile": "2020年上海市崇明区中考二模英语试题（解析版+听力原文）.doc",
+      "imageSourceFile": "2020年上海市崇明区中考二模英语试题（原卷版）.doc",
+      "images": [
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2019-崇明-listening-image-1.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2019-崇明-listening-image-1.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2019-崇明-listening-image-2.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2019-崇明-listening-image-2.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2019-崇明-listening-image-3.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2019-崇明-listening-image-3.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2019-崇明-listening-image-4.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2019-崇明-listening-image-4.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2019-崇明-listening-image-5.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2019-崇明-listening-image-5.png"
+        }
+      ],
+      "questions": [
+        {
+          "number": 1,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "D",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
+        },
+        {
+          "number": 2,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "B",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
+        },
+        {
+          "number": 3,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "E",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
+        },
+        {
+          "number": 4,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "C",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
+        },
+        {
+          "number": 5,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "F",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
+        },
+        {
+          "number": 6,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "H",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
+        },
+        {
+          "number": 7,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "4:00.",
+            "B": "5:00",
+            "C": "6:00.",
+            "D": "7:00."
+          },
+          "answer": "B",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 8,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "By taxi.",
+            "B": "On foot.",
+            "C": "By underground.",
+            "D": "By bus."
+          },
+          "answer": "A",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 9,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "In a department store",
+            "B": "In a lift",
+            "C": "In a post office.",
+            "D": "In a library."
+          },
+          "answer": "A",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 10,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Excited.",
+            "B": "Surprised",
+            "C": "Bored.",
+            "D": "Embarrassed."
+          },
+          "answer": "C",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 11,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Buy gifts for friends",
+            "B": "Take lots of photos",
+            "C": "Stay in the hotel.",
+            "D": "Talk with local people."
+          },
+          "answer": "D",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 12,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "To write an article",
+            "B": "To read it again.",
+            "C": "To copy some nice sentences.",
+            "D": "To lend it to his teacher."
+          },
+          "answer": "C",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 13,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Teacher and student.",
+            "B": "Waitress and customer.",
+            "C": "Manager and secretary.",
+            "D": "Husband and wife."
+          },
+          "answer": "D",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 14,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Peter met Mr. Bennet just now.",
+            "B": "Peter is telling a lie to Mrs. White.",
+            "C": "Mr. Bennet is making a phone call now.",
+            "D": "Mrs. White doesn't know Mr. Bennet."
+          },
+          "answer": "B",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 15,
+          "prompt": "Joseph broke a church window when playing football near it.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "T",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
+        },
+        {
+          "number": 16,
+          "prompt": "Joseph called the police and the pastor (牧师) of the church to report the matter.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "F",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
+        },
+        {
+          "number": 17,
+          "prompt": "Joseph was asked to work in the church to make up for the damage.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "F",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
+        },
+        {
+          "number": 18,
+          "prompt": "Both the pastor and the police officer were greatly touched after hearing what Joseph had said.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "T",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
+        },
+        {
+          "number": 19,
+          "prompt": "The pastor of the church accepted Joseph's offer.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "F",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
+        },
+        {
+          "number": 20,
+          "prompt": "Joseph received awards from both the police officer and his school.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "T",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
+        },
+        {
+          "number": 21,
+          "prompt": "The writer went into his office at 7 am. and _______ _______ new orders.",
+          "questionType": "blank",
+          "answer": "waited for",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
+        },
+        {
+          "number": 22,
+          "prompt": "The writer saw a _______ _______ lying next to the lockers and used it to hit the door.",
+          "questionType": "blank",
+          "answer": "long stick",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
+        },
+        {
+          "number": 23,
+          "prompt": "The writer was amazed that the locker _______ _______ .His walkie-talkie wasn't there.",
+          "questionType": "blank",
+          "answer": "was empty",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
+        },
+        {
+          "number": 24,
+          "prompt": "The writer received a call for an alarm at a building _______ _______ .",
+          "questionType": "blank",
+          "answer": "after lunch",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
+        },
+        {
+          "number": 25,
+          "prompt": "The fence that surrounded (环绕) the closed company building was _______ _______ high.",
+          "questionType": "blank",
+          "answer": "two/2metres(meters)",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
+        }
+      ]
+    },
+    {
+      "_id": "sh-em2-2019-普陀-listening",
+      "title": "2019 上海普陀二模听力",
+      "year": 2019,
+      "sourceYear": 2020,
+      "district": "普陀",
+      "examType": "二模",
+      "stage": "初中",
+      "audioCloudPath": "_content/listening-em2/audio/sh-em2-2019-普陀-listening.mp3",
+      "transcript": "听力文字 A. 根据你听到的内容, 选出相应的图片，在选择题区域相应的空格内用 2B 铅笔填涂。每个句子念两遍。 1. It’s a good habit to wash hands before meals.(C) 2. Jo went swimming with her cousins last weekend. (D) 3. Recycling paper is a good way to protect the environment. (F) 4. Tony has learned to get dressed by himself after he gets up.(G) 5. Wendy is having a video conference with some other teachers in the meeting room. (A) 6. The reporter is asking the actor some questions about his new film. (B) B. 根据你听到的对话和问题，选出最恰当的答案，在选择题区域相应的空格内用 2B 铅笔填涂。对话和问题都念两遍。 7. M: Would you please hurry up? The play will start at 6:30. W: Don’t worry. It's 6:00 now. We still have 30minutes. Q: What time is it now? (A) 8. W: I like Chinese food best. The moon cake is my favorite food. M: The moon cake is too sweet. I like jiaozi and fried rice. Q: What Chinese food does the woman like best? (B) 9. M: Hi, Debbie.The robot in your home looks so cool. He's watering the flowers on the shelf. W: Yeah, he can also clean the rooms for us when we go out. Q: How does the robot help the woman? (C) 10. W: Good afternoon, sir. Can I help you? M: Yeah. I'd like 2 cokes, a fruit salad and a super pizza, please. W: OK. What size of the pizza do you prefer? M: Large, please. Q: Where does this dialogue probably take place? (D) 11. M: Tina, look at the tree in front of the teaching building.It's as tall as the building. W: Yes, George. I remember it was short when we first met nine years ago. M: How time flies! At that time, we were six and now we are fifteen. Q: When did Tina and George meet for the first time? (C) 12. M: I like the photo you put on your desk. The background seems so familiar. Did you take this photo in Guangzhou or Shenzhen? W: Neither. I took it in Xiamen, a city in Fujian. Q: Where did the woman take the photo? (D) 13. W: Have you ever attended any online lectures? M: Yes. And some of them are free to us. we can learn knowledge about our favourite subjects and some other interesting things like writing books and making films. Q: What are the two speakers talking about? (A) 14. M: Lily, you work too hard in the kitchen.Shall we buy a bigger oven? W: Thank you, dear! It's not a bad plan. But we don’t have enough space in the kitchen. Q: What does Lily probably mean? (B) C. 判断下列句子是否符合你听到的短文内容，符合的用“T”表示，不符合的用“F”表示，在选择题区域相应的空格内用 2B 铅笔填涂。短文念两遍。 Last summer, Teddy got a job in a company near her mum’s neighbourhood. He decided to stay with his mun for some time. During that time, Teddy usually helped his mum do some housework and bought some food. After the first week, Teddy found that the food was finished off very quickly. Then he began keeping an eye on his mum. To his surprise, he found his mum put some food into a paper bag and went out with it every morning. Teddy decided to follow his mum. He saw his mum taking the food to the street children, talking and playing with them． One day, Teddy talked to a neighbour and found out his mum was well-known in that area. The street children liked her and even thought of her as their own mother. When Teddy’s mum got home, Teddy gave her a big hug and told her she didn't need to keep it a secret. Then Teddy's mum told him something about the children. Some of them lived with grandparents in small houses. Others even slept on the street. For years, she helped the poor children by giving them food. After Teddy's mum told him everything, Teddy was so moved by how kind his mum was. His mum helped others in need. As her son, Teddy was so proud. Teddy continued to buy food for his mum after that. But every time, he added one more bag for his mum's other children． （15. T 16. F 17. F 18. T 19. F 20. T ） D. 根据你听到的内容，完成下列句子，每空格限填一词。在非选择题区域相应的空格内用黑墨水钢笔或黑色水笔填写。短文念两遍。 Every museum has something attractive. If we follow the steps below, we can make the most of our time at the museum. There are so many different kinds of museums, so finding one that we like is the first step we need to do. It's easy for us to choose one and start our enjoyable visit! Second, do some research online. On the website of a museum, we may know history of it or some special classes for teenagers. Planning breaks in our visit is also important. When we walk around, standing here and studying things there, we may become quite tired. So it is important to take breaks. It is a good chance for us to think of what we have seen and what else we might want to do then. What’s more, think about the cost and food. Then we can decide whether to eat there. Finally, we had better take friends with us when we visit a museum. It is usually a lot more fun when we are with someone else at a museum. We can talk over what we are seeing. A friend also brings another way of thinking when we talk about the things in the museum. (21. first step 22. special classes 23. quite tired 24. eat there 25. take friends)",
+      "hasAudio": true,
+      "hasTranscript": true,
+      "questionSourceFile": "2020年上海市普陀区中考二模英语试题（原卷版）.doc",
+      "answerSourceFile": "2020年上海市普陀区中考二模英语试题（解析版+听力原文）.doc",
+      "imageSourceFile": "2020年上海市普陀区中考二模英语试题（原卷版）.doc",
+      "images": [
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2019-普陀-listening-image-1.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2019-普陀-listening-image-1.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2019-普陀-listening-image-2.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2019-普陀-listening-image-2.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2019-普陀-listening-image-3.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2019-普陀-listening-image-3.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2019-普陀-listening-image-4.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2019-普陀-listening-image-4.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2019-普陀-listening-image-5.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2019-普陀-listening-image-5.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2019-普陀-listening-image-6.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2019-普陀-listening-image-6.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2019-普陀-listening-image-7.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2019-普陀-listening-image-7.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2019-普陀-listening-image-8.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2019-普陀-listening-image-8.png"
+        }
+      ],
+      "questions": [
+        {
+          "number": 1,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "C",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
+        },
+        {
+          "number": 2,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "D",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
+        },
+        {
+          "number": 3,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "F",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
+        },
+        {
+          "number": 4,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "G",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
+        },
+        {
+          "number": 5,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "A",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
+        },
+        {
+          "number": 6,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "B",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
+        },
+        {
+          "number": 7,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "6:00.",
+            "B": "6:13.",
+            "C": "6:30.",
+            "D": "7:00."
+          },
+          "answer": "A",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 8,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Pudding.",
+            "B": "Moon cakes.",
+            "C": "Jiaozi.",
+            "D": "Fried rice."
+          },
+          "answer": "B",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 9,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "By building shelves.",
+            "B": "By planting trees.",
+            "C": "By cleaning rooms.",
+            "D": "By boiling water."
+          },
+          "answer": "C",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 10,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "In the garden.",
+            "B": "At a shoe shop.",
+            "C": "At the bank.",
+            "D": "In a restaurant."
+          },
+          "answer": "D",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 11,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Six years ago.",
+            "B": "Seven years ago.",
+            "C": "Nine years ago.",
+            "D": "Fifteen years ago."
+          },
+          "answer": "C",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 12,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "In Guangzhou.",
+            "B": "In Shenzhen.",
+            "C": "In Fuzhou.",
+            "D": "In Xiamen."
+          },
+          "answer": "D",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 13,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Online lectures.",
+            "B": "Favourite subjects.",
+            "C": "Writing books.",
+            "D": "Making films."
+          },
+          "answer": "A",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 14,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "She is glad that they will have a new oven.",
+            "B": "She thinks a bigger oven takes too much space.",
+            "C": "She’s afraid that a new oven will be too small.",
+            "D": "She believes it is necessary to buy a bigger oven."
+          },
+          "answer": "B",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 15,
+          "prompt": "When Teddy stayed with his mum, he often bought some food for her.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "T",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
+        },
+        {
+          "number": 16,
+          "prompt": "Teddy found the food was finished off very quickly after a month.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "F",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
+        },
+        {
+          "number": 17,
+          "prompt": "Teddy knew the food was for the street children after he phoned his mum.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "F",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
+        },
+        {
+          "number": 18,
+          "prompt": "The street children thought of Teddy’s mum as their own mother.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "T",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
+        },
+        {
+          "number": 19,
+          "prompt": "Teddy felt a little worried about his mum after she told him everything.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "F",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
+        },
+        {
+          "number": 20,
+          "prompt": "Finally, Teddy continued to buy food to help the poor street children.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "T",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
+        },
+        {
+          "number": 21,
+          "prompt": "Finding a museum we like is the ________ ________ we need to do.",
+          "questionType": "blank",
+          "answer": "first step",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
+        },
+        {
+          "number": 22,
+          "prompt": "On the website of a museum, we may know its history or some ________ _______ for teenagers.",
+          "questionType": "blank",
+          "answer": "special classes",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
+        },
+        {
+          "number": 23,
+          "prompt": "We may become ________ ________, so it is important to have breaks.",
+          "questionType": "blank",
+          "answer": "quite tired",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
+        },
+        {
+          "number": 24,
+          "prompt": "Think about the cost and food. Then we can decide whether to ________ ________.",
+          "questionType": "blank",
+          "answer": "eat there",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
+        },
+        {
+          "number": 25,
+          "prompt": "We had better ________ ________ with us when we visit a museum.",
+          "questionType": "blank",
+          "answer": "take friends",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
+        }
+      ]
+    },
+    {
+      "_id": "sh-em2-2019-杨浦-listening",
+      "title": "2019 上海杨浦二模听力",
+      "year": 2019,
+      "sourceYear": 2020,
+      "district": "杨浦",
+      "examType": "二模",
+      "stage": "初中",
+      "audioCloudPath": "_content/listening-em2/audio/sh-em2-2019-杨浦-listening.mp3",
+      "transcript": "听力文字 Part 1 A. Listen and choose the right picture (根据你听到的内容，选出相应的图片) 1. Let’s go roller skating after class, shall we? (D) 2. Claude Monet is one of my favourite artists. (F) 3. Paper cutting is still used as a New Year decoration. (C) 4. Who is going to give the lecture this afternoon? (H) 5. The greenhouse lets sunlight in and keeps heat from getting out. (A) 6. The wildfires have caused great damage to the forests. (E) B. Listen to the dialogue and choose the best answer to the question you hear (根据你听到的对话和问题，选出最恰当的答案) 7.W: Oh no! We haven’t got any milk! Tom, can you go to the shop, please? M: Yes, but it’s half past five now. What time does it close? W: At six. But it’s a 15-minute walk, so you’ll have to go now. Q: What time does the shop close? (C) 8.W: It’s hot, isn’t it? M: Yes, very hot and no wind. The weather report says the temperature will keep the same until next Thursday. Q: What will the weather be like next Monday? (A) 9. W: OK. Everyone put your books in your bag or under your desk. We’re going to do a vocabulary test. M: Shall I put this dictionary on the bookshelf? W: No, can you leave it on that table near the door, please? M: OK. Q: Where does the boy put the dictionary? (D) 10. W: Three adults and a child for the six-o’clock show of Murder at Midnight, please. M: Would you like to see it in 3D? W: No, just the regular type, please. And we’d like to sit in the middle, if possible. Q: Where does the dialogue probably take place? (C) 11.W: Do you need a ride to the theatre? I can pick you up at seven. M: Thanks, but I have a meeting at five. I’ll stay in town to get supper and then walk to the theatre. Q: How will the man go to the theatre? (D) 12. W: What do you think of the book Last Chances? M: Normally, it takes me ages to finish a book but I only started this one three nights ago. As soon as I read the first page, I couldn’t put it down – I just had to find out what happened next. Q: What does the man think of the book Last Chances? (A) 13. W: Hi Jim. I thought you were training for the badminton game. Have you still got a problem with your leg? M: That’s ok now. I cut my fingers when I was helping my grandad in his garden, and now it’s too painful to hold my badminton racket. I can’t even put my sports shoes on. Q: What does Jim have trouble with? (B) 14. W: I’ll see you in the office. M: Better still, let’s meet in the Zoo Café to have a little nice talk. W: Good idea, and I’d love to have a drink there. Q: What are the speakers talking about? (B) C. Listen to the passage and tell whether the following statements are true or false (判断下列句子是否符合你听到的短文内容, 符合的用“T”表示，不符合的用“F”表示): (6分) Betty Jones was only eight years old when she first tried playing the drums. This was during a lunchtime music club at school, which she only went to because it was cold and rainy. At the same time her friends were in the playground playing baseball – a sport that Betty hated. Of all the musical instruments that the teacher had in the music room, the drums were the most interesting to Betty. She thought it was cool that there were many different shapes and sizes of drums, and she wanted to hit them, to see what they sounded like. Now Betty is fourteen and gives concerts around the country. She also has her own YouTube channel and gets over a million hits a year. What’s amazing is that Betty hasn’t ever been to a drum lesson. ‘You can learn anything on the Internet, so I’ve never felt it was important for me to take classes,’ explains Betty. Giving concerts wasn’t easy for Betty at the beginning because usually she only played drums alone in her bedroom when she came home from school. At her first concert, she played in a band with adults. She could feel hundreds of pairs of eyes looking at her, and that made her feel frightened. So, does Betty enjoy being famous now? ‘I didn’t plan to be famous,’ she says. ‘All I want is to show others what I love. I don’t think I’m someone special. I just want everyone to have a great time at my concerts.’ 15. F 16. T 17. F 18. T 19. T 20. F D. Listen to the dialogue and complete the following sentences (听对话，完成下列内容，每空格限填一词): (10分) W: Wow! It’s such a beautiful day! The sky is so blue. M: I guess… It’s been nice all summer, so I don’t notice it as much. Maybe I’m getting spoiled! W: I wasn’t expecting it to be like this. My dad came here a few years ago and he said the air quality was really bad. M: He was not wrong. It used to be terrible. In summer, you’d often get thick smog covering the whole city, but it’s improved greatly in the last ten years or so. W: What changed? M: I think it was driven by people’s attitudes. Ten years ago, few people were keen on environmental issues, but nowadays there’s much more awareness of things like air quality and how it can affect your health. W: Sure, but that can’t be the only reason. M: Well, no. The local government also brought in new laws and rules. They introduced limits on driving in the city centre, made it illegal to use wood or coal fires for heating, and moved a lot of heavy industry away from the city. W: It’s impressive that they could make such a big change in a short time. Ten years isn’t long for these things. M: True, but there’s still more to do. It can still get hazy in winter. They’re putting more money and effort into basic systems and services such as public transport, roads and bridges, though, so I think it’ll carry on getting better. 21.air quality 22.was driven 23. keen on 24.heavy industry 25.basic systems",
+      "hasAudio": true,
+      "hasTranscript": true,
+      "questionSourceFile": "2020年上海市杨浦区中考二模英语试题（原卷版）.doc",
+      "answerSourceFile": "2020年上海市杨浦区中考二模英语试题（解析版+听力原文）.doc",
+      "imageSourceFile": "2020年上海市杨浦区中考二模英语试题（原卷版）.doc",
+      "images": [
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2019-杨浦-listening-image-1.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2019-杨浦-listening-image-1.png"
+        }
+      ],
+      "questions": [
+        {
+          "number": 1,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "D",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
+        },
+        {
+          "number": 2,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "F",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
+        },
+        {
+          "number": 3,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "C",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
+        },
+        {
+          "number": 4,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "H",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
+        },
+        {
+          "number": 5,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "A",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
+        },
+        {
+          "number": 6,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "E",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
+        },
+        {
+          "number": 7,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "5:30.",
+            "B": "5:45.",
+            "C": "6:00.",
+            "D": "6:15."
+          },
+          "answer": "C",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 8,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Hot.",
+            "B": "Cool.",
+            "C": "Windy.",
+            "D": "Rainy."
+          },
+          "answer": "A",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 9,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "In the bag.",
+            "B": "Under the desk.",
+            "C": "On the bookshelf.",
+            "D": "On the table."
+          },
+          "answer": "D",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 10,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "At the bank.",
+            "B": "At the restaurant.",
+            "C": "At the cinema.",
+            "D": "At the police station."
+          },
+          "answer": "C",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 11,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "By car.",
+            "B": "By subway.",
+            "C": "By bus.",
+            "D": "On foot."
+          },
+          "answer": "D",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 12,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Exciting.",
+            "B": "Funny.",
+            "C": "Strange.",
+            "D": "Boring."
+          },
+          "answer": "A",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 13,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "His leg.",
+            "B": "His fingers.",
+            "C": "His back.",
+            "D": "His feet."
+          },
+          "answer": "B",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 14,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "What to drink.",
+            "B": "Where to meet.",
+            "C": "When to leave.",
+            "D": "Who to talk with."
+          },
+          "answer": "B",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 15,
+          "prompt": "Betty Jones has been playing the drum for eight years.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "F",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
+        },
+        {
+          "number": 16,
+          "prompt": "Betty went to the music club because she had nothing better to do one lunchtime.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "T",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
+        },
+        {
+          "number": 17,
+          "prompt": "In the music room Betty tried all the musical instruments and fell in love with the drums.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "F",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
+        },
+        {
+          "number": 18,
+          "prompt": "Betty has always thought that she doesn't need any dram lessons.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "T",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
+        },
+        {
+          "number": 19,
+          "prompt": "At her first concert, Betty felt frightened because many people were watching her.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "T",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
+        },
+        {
+          "number": 20,
+          "prompt": "From the passage we learn that being a young drummer makes Betty feel special,",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "F",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
+        },
+        {
+          "number": 21,
+          "prompt": "According to the woman's dad, the _______ ________ was really bad a a few years ago.",
+          "questionType": "blank",
+          "answer": "air quality",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
+        },
+        {
+          "number": 22,
+          "prompt": "The man thinks the change _______ ________ by people's attitudes",
+          "questionType": "blank",
+          "answer": "was driven",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
+        },
+        {
+          "number": 23,
+          "prompt": "Ten years ago, few people were _______ ________ environmental issues,but nowadays there’s much more awareness.",
+          "questionType": "blank",
+          "answer": "keen on",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
+        },
+        {
+          "number": 24,
+          "prompt": "The local government moved a lot of _______ ________ away from the city.",
+          "questionType": "blank",
+          "answer": "heavy industry",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
+        },
+        {
+          "number": 25,
+          "prompt": "The government is putting more money and effort into _______ ________ and services,",
+          "questionType": "blank",
+          "answer": "basic systems",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
+        }
+      ]
+    },
+    {
+      "_id": "sh-em2-2019-松江-listening",
+      "title": "2019 上海松江二模听力",
+      "year": 2019,
+      "sourceYear": 2020,
+      "district": "松江",
+      "examType": "二模",
+      "stage": "初中",
+      "audioCloudPath": "_content/listening-em2/audio/sh-em2-2019-松江-listening.mp3",
+      "transcript": "",
+      "hasAudio": true,
+      "hasTranscript": false,
+      "questionSourceFile": "2020年上海市松江区中考二模英语试题（原卷版）.doc",
+      "answerSourceFile": "2020年上海市松江区中考二模英语试题（解析版）.doc",
+      "imageSourceFile": "2020年上海市松江区中考二模英语试题（原卷版）.doc",
+      "images": [
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2019-松江-listening-image-1.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2019-松江-listening-image-1.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2019-松江-listening-image-2.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2019-松江-listening-image-2.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2019-松江-listening-image-3.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2019-松江-listening-image-3.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2019-松江-listening-image-4.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2019-松江-listening-image-4.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2019-松江-listening-image-5.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2019-松江-listening-image-5.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2019-松江-listening-image-6.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2019-松江-listening-image-6.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2019-松江-listening-image-7.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2019-松江-listening-image-7.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2019-松江-listening-image-8.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2019-松江-listening-image-8.png"
+        }
+      ],
+      "questions": [
+        {
+          "number": 1,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "E",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
+        },
+        {
+          "number": 2,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "D",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
+        },
+        {
+          "number": 3,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "C",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
+        },
+        {
+          "number": 4,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "A",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
+        },
+        {
+          "number": 5,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "B",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
+        },
+        {
+          "number": 6,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "H",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
+        },
+        {
+          "number": 7,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "On foot.",
+            "B": "By car.",
+            "C": "By taxi.",
+            "D": "By bus."
+          },
+          "answer": "B",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 8,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "May 20th.",
+            "B": "June 1st.",
+            "C": "June 3rd.",
+            "D": "July 3rd."
+          },
+          "answer": "C",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 9,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Dancing and painting.",
+            "B": "Dancing and gardening.",
+            "C": "Singing and painting.",
+            "D": "Singing and gardening."
+          },
+          "answer": "C",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 10,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "In a hospital.",
+            "B": "At a restaurant.",
+            "C": "At an airport.",
+            "D": "In a department store."
+          },
+          "answer": "A",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 11,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "delicious.",
+            "B": "strong.",
+            "C": "unpleasant.",
+            "D": "smelly."
+          },
+          "answer": "A",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 12,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "One.",
+            "B": "Two.",
+            "C": "Three.",
+            "D": "Four."
+          },
+          "answer": "D",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 13,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Because she got up too late.",
+            "B": "Because she mistook the lecture time.",
+            "C": "Because she was hosting a show at that time.",
+            "D": "Because she was delayed by the heavy traffic."
+          },
+          "answer": "B",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 14,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "She has never been to Central Hotel.",
+            "B": "She desires to go to Central Hotel again.",
+            "C": "Her experience in Central Hotel was exciting.",
+            "D": "She doesn’t suggest him going to Central Hotel."
+          },
+          "answer": "D",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 15,
+          "prompt": "Those young people who like eating strawberries are called “strawberry kids”.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "F",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
+        },
+        {
+          "number": 16,
+          "prompt": "Parents and schools are the main reasons for many students’ easy breakdown.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "T",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
+        },
+        {
+          "number": 17,
+          "prompt": "Liu Yue began to feel uncertain about his ability after his mother pointed out his wrong doing.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "F",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
+        },
+        {
+          "number": 18,
+          "prompt": "Students are advised to ask for help as soon as they meet with trouble.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "F",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
+        },
+        {
+          "number": 19,
+          "prompt": "Taking an active part in sports and social activities will make students strong in mind.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "T",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
+        },
+        {
+          "number": 20,
+          "prompt": "Growing up is a life process both with happiness and pains.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "T",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
+        },
+        {
+          "number": 21,
+          "prompt": "Tim thought the traffic in Italy was horrible because of the _______ _______.",
+          "questionType": "blank",
+          "answer": "crazy drivers",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
+        },
+        {
+          "number": 22,
+          "prompt": "On a rainy day Tim climbed to ________ ________ of the Leaning Tower of Pisa.",
+          "questionType": "blank",
+          "answer": "the top",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
+        },
+        {
+          "number": 23,
+          "prompt": "In Florence there were beautiful old buildings, impressive churches and ________ ________.",
+          "questionType": "blank",
+          "answer": "wonderful museums",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
+        },
+        {
+          "number": 24,
+          "prompt": "Many Italians ________ ________ very well, which impressed Tim a lot.",
+          "questionType": "blank",
+          "answer": "spoke English",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
+        },
+        {
+          "number": 25,
+          "prompt": "Italy is really a land ________ ________ with great food and wine.",
+          "questionType": "blank",
+          "answer": "of fashion",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
+        }
+      ]
+    },
+    {
+      "_id": "sh-em2-2019-浦东-listening",
+      "title": "2019 上海浦东二模听力",
+      "year": 2019,
+      "sourceYear": 2020,
+      "district": "浦东",
+      "examType": "二模",
+      "stage": "初中",
+      "audioCloudPath": "_content/listening-em2/audio/sh-em2-2020-浦东-listening.mp3",
+      "transcript": "听力文字 A. Listen and choose the right picture (根据你听到的内容，选出相应的图片): 1. Pollution becomes serious because of the growing number of cars.(E) 2. You look sad, Betty. What’s the matter with you?(F) 3. The reporter said that the forest fire was caused by some cigarette ends. (D) 4.How can we deal with the massive mountains of rubbish? (A) 5.Little Tony is painting the fence happily, isn’t he? (G) 6. The lucky twins will have an educational visit to France next month. (H) B. Listen to the dialogue and choose the best answer to the question you hear (根据你听到的对话和问题，选出最恰当的答案): 7. M:All the students in my class think sports are good for health. W: I think so, but different people have different sports. Some like swimming, some like running. And the old had better do some walking. Q: Which sport is better for the old? (C) 8. W: You’re always so busy with your work. M: I went to bed at half past twelve last night, and I had to get up at five thirty this morning. Q: How long did the man sleep last night? (B) 9. M: Did you go to the Ocean Park yesterday, Jane? W: Yes. It was so crowded that I could hardly see anything there. M: Did your teacher go with you? W: Yes. We all went there except Tim. Q: Who didn’t visit the Ocean Park yesterday?(C) 10. M: Mum, look at those fresh cherries. Shall we get some? W: No, we are here to buy some meat and vegetables. We still have some cherries at home. Q: Where does this conversation probably take place? (A) 11. M: It’s a fine day today. Let’s go for a picnic. W: Can you prepare some food now? I have to finish this e-mail first. Q: What is the woman doing? (D) 12. W: It’s getting warmer and warmer day by day. I’ll wear my new skirt tomorrow. M: But it’s still quite freezing in the morning and in the evening. Q: What season is it now? (A) 13. W: Shall we go to see a film or just stay at home watching TV tonight? M: You are the boss. Q: What does the man mean? (D) 14. M: Is that the reception desk? W: Yes, sir. What can I do for you? M: This is Room 705. The air conditioner in my room doesn’t work. W: I’m sorry, sir. I’ll have that taken care of immediately. Q: What will the woman do next? (B) C. Listen to the dialogue and tell whether the following statements are true or false (判断下列句子是否符合你听到的对话内容, 符合的用“T”表示，不符合的用“F”表示): This is a story about Socrates. He was famous for his knowledge and personality in ancient Europe. One day he met a friend in the street. W: Hello Great Socrates, do you know what I just heard about your best student? M: Wait a minute, before you tell me anything about my student, I’d like you to pass a little test. You need to answer three questions. W: Three questions? M: That’s right. Before you talk to me about my student, it might be a good idea to take a moment and think over what you are going to say. W: It sounds interesting. M: The first question is about truth. Are you sure that what you are going to tell me is true? W: No, actually I just heard about it and… M: All right, so you don’t know if it’s true or not. M: Now let’s try the second question. It’s about goodness. Is the thing about my student good? W: No, it’s not good. M: So, you want to tell me something bad about him, but you are not certainly sure it’s true. M: You may still pass the test, because there is one question left. It’s about usefulness. Is what you want to tell me useful to me? W: No, not really. M: Well, if it is neither true nor good, nor even useful, do you still think I need to know about it? D．Listen to the passage and complete the following sentences. (听短文，完成下列内容。每空格限填一词) Monkeys are very smart animals. In fact, some of them even go to college! The monkeys in Thailand are sent to the training school by farmers to learn an important job: how to pick fruits from tall trees. The trainer says it takes a few months. For the first month, he just lets the monkey play. He shows the monkey how to take the fruit from a box. Then the trainer uses a rope to control the monkey’s work. When the trainer pulls the rope, the monkey goes faster. Later, he brings the monkey to a tree and lets him learn how to pick the fruits from the tree. Monkeys have helped the farmers to pick fruits for more than a hundred years. If people climb up those trees, they may fall and die. Many farmers say they couldn’t earn the money without help from their monkeys. They are so valuable that farmers never leave them home alone. Mr. Lee’s three-year-old monkey assists with his work. Mr. Lee also lends the monkey to other farmers to earn extra money. He usually ties the monkey to a fruit tree near the house and gives rice to it. The monkey can live to be 13 years old. So, he has ten more years that he can work.",
+      "hasAudio": true,
+      "hasTranscript": true,
+      "questionSourceFile": "2020年上海市浦东新区中考二模英语试题（原卷版）.doc",
+      "answerSourceFile": "2020年上海市浦东新区中考二模英语试题（解析版+听力原文）.doc",
+      "imageSourceFile": "2020年上海市浦东新区中考二模英语试题（原卷版）.doc",
+      "images": [
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2019-浦东-listening-image-1.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2019-浦东-listening-image-1.png"
+        }
+      ],
+      "questions": [
+        {
+          "number": 1,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "E",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
+        },
+        {
+          "number": 2,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "F",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
+        },
+        {
+          "number": 3,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "D",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
+        },
+        {
+          "number": 4,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "A",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
+        },
+        {
+          "number": 5,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "G",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
+        },
+        {
+          "number": 6,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "H",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
+        },
+        {
+          "number": 7,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Swimming.",
+            "B": "Running.",
+            "C": "Walking.",
+            "D": "Skiing."
+          },
+          "answer": "C",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 8,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Four hours.",
+            "B": "Five hours.",
+            "C": "Six hours.",
+            "D": "Seven hours."
+          },
+          "answer": "B",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 9,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Jane.",
+            "B": "Jane’s teacher.",
+            "C": "Tim.",
+            "D": "Tim and Jane."
+          },
+          "answer": "C",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 10,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "At a supermarket.",
+            "B": "At home.",
+            "C": "At a restaurant.",
+            "D": "At a hospital."
+          },
+          "answer": "A",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 11,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Having a picnic.",
+            "B": "Preparing food.",
+            "C": "Waiting for an e-mail.",
+            "D": "Writing an e-mail."
+          },
+          "answer": "D",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 12,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Early spring.",
+            "B": "Late summer.",
+            "C": "Late autumn.",
+            "D": "Early winter."
+          },
+          "answer": "A",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 13,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "He prefers to see a film.",
+            "B": "He doesn’t like the girl’s idea.",
+            "C": "He prefers to watch TV.",
+            "D": "He wants the girl to make the decision."
+          },
+          "answer": "D",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 14,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "She’ll take care of the man by herself.",
+            "B": "She’ll ask someone to repair the air conditioner.",
+            "C": "She’ll call the reception desk.",
+            "D": "She’ll clean Room 705 immediately."
+          },
+          "answer": "B",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 15,
+          "prompt": "The lady wanted to tell Socrates something about his student.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "T",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
+        },
+        {
+          "number": 16,
+          "prompt": "Socrates asked the lady three questions as a little test.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "T",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
+        },
+        {
+          "number": 17,
+          "prompt": "The lady was not sure the thing about Socrates’s student was true.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "T",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
+        },
+        {
+          "number": 18,
+          "prompt": "Socrates wanted to know something bad about his student.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "F",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
+        },
+        {
+          "number": 19,
+          "prompt": "The lady believed what she would say was quite useful to Socrates.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "F",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
+        },
+        {
+          "number": 20,
+          "prompt": "Socrates was not interested in the news of his student after the test.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "T",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
+        },
+        {
+          "number": 21,
+          "prompt": "Trainers teach monkeys how to pick fruits from ________ ________ at the training school.",
+          "questionType": "blank",
+          "answer": "tall trees",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
+        },
+        {
+          "number": 22,
+          "prompt": "The monkey trainer uses________ ________in order to control the monkey’s work.",
+          "questionType": "blank",
+          "answer": "a rope",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
+        },
+        {
+          "number": 23,
+          "prompt": "Monkeys have picked fruits for farmers for more than a ________ ________ in Thailand.",
+          "questionType": "blank",
+          "answer": "hundred years",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
+        },
+        {
+          "number": 24,
+          "prompt": "Farmers would not be able to earn the money ________ ________ from their monkeys.",
+          "questionType": "blank",
+          "answer": "without help",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
+        },
+        {
+          "number": 25,
+          "prompt": "Mr. Lee ________ ________ to the monkey to eat and ties it to a tree near the house.",
+          "questionType": "blank",
+          "answer": "gives rice",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
+        }
+      ]
+    },
+    {
+      "_id": "sh-em2-2019-虹口-listening",
+      "title": "2019 上海虹口二模听力",
+      "year": 2019,
+      "sourceYear": 2020,
+      "district": "虹口",
+      "examType": "二模",
+      "stage": "初中",
+      "audioCloudPath": "_content/listening-em2/audio/sh-em2-2019-虹口-listening.mp3",
+      "transcript": "",
+      "hasAudio": true,
+      "hasTranscript": false,
+      "questionSourceFile": "2020年上海市虹口区中考二模英语试题（原卷版）.doc",
+      "answerSourceFile": "2020年上海市虹口区中考二模英语试题（解析版）.doc",
+      "imageSourceFile": "2020年上海市虹口区中考二模英语试题（原卷版）.doc",
+      "images": [
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2019-虹口-listening-image-1.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2019-虹口-listening-image-1.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2019-虹口-listening-image-2.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2019-虹口-listening-image-2.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2019-虹口-listening-image-3.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2019-虹口-listening-image-3.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2019-虹口-listening-image-4.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2019-虹口-listening-image-4.png"
+        }
+      ],
+      "questions": [
+        {
+          "number": 1,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "C",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
+        },
+        {
+          "number": 2,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "H",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
+        },
+        {
+          "number": 3,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "A",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
+        },
+        {
+          "number": 4,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "F",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
+        },
+        {
+          "number": 5,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "G",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
+        },
+        {
+          "number": 6,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "D",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
+        },
+        {
+          "number": 7,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "7:00.",
+            "B": "7:30.",
+            "C": "8:00.",
+            "D": "8:30."
+          },
+          "answer": "B",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 8,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Japan.",
+            "B": "France.",
+            "C": "Italy.",
+            "D": "Canada."
+          },
+          "answer": "D",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 9,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "By car.",
+            "B": "By train.",
+            "C": "By plane.",
+            "D": "By ship."
+          },
+          "answer": "C",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 10,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Excited.",
+            "B": "Satisfied.",
+            "C": "Frightened.",
+            "D": "Surprised."
+          },
+          "answer": "D",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 11,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "In a school library.",
+            "B": "At a gift shop",
+            "C": "In a travel agency.",
+            "D": "At a graduation party."
+          },
+          "answer": "B",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 12,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Bring some dessert.",
+            "B": "Take Michael to the party.",
+            "C": "Buy a box of chocolate.",
+            "D": "Give Michael a bigger dinner."
+          },
+          "answer": "A",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 13,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "To say\"hello”to the doctor.",
+            "B": "To tell the doctor she'll ask for leave.",
+            "C": "To tell the doctor she'll be late.",
+            "D": "To ask the doctor to repair her car."
+          },
+          "answer": "C",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 14,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "He doesn't like the movie.",
+            "B": "He had no time to watch the movie.",
+            "C": "He couldn't afford the movie.",
+            "D": "He prefers staying home to watching the movie."
+          },
+          "answer": "A",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 15,
+          "prompt": "The new king was determined to learn all the wisdom of the world to rule his kingdom.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "T",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
+        },
+        {
+          "number": 16,
+          "prompt": "In the first five years the wise men returned with their camels (骆驼) carrying 500 books.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "F",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
+        },
+        {
+          "number": 17,
+          "prompt": "The king didn't know how to start, so he ordered the wise men to read the books to him.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "F",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
+        },
+        {
+          "number": 18,
+          "prompt": "When the king was troubled with many problems, he took great interest in reading the 50 books.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "F",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
+        },
+        {
+          "number": 19,
+          "prompt": "The wise men succeeded in shortening the 50 books into one book and presented it to the king.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "T",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
+        },
+        {
+          "number": 20,
+          "prompt": "The story tells us wisdom doesn't come by itself and if there is no action, there can be no gain.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "T",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
+        },
+        {
+          "number": 21,
+          "prompt": "After one year and ________ ________ views, Nicholson, the kitten and the bicycle are famous.",
+          "questionType": "blank",
+          "answer": "128 million",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
+        },
+        {
+          "number": 22,
+          "prompt": "The chance between Nicholson and the kitten has ________ ________ a book, to be announced tomorrow.",
+          "questionType": "blank",
+          "answer": "led to",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
+        },
+        {
+          "number": 23,
+          "prompt": "Nicholson gave up his job in Dunbar and left on a round-the-world ________ ________.",
+          "questionType": "blank",
+          "answer": "bike ride",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
+        },
+        {
+          "number": 24,
+          "prompt": "The kitten was named “Nala” by Nicholson, after ________ ________ in The Lion King.",
+          "questionType": "blank",
+          "answer": "a character",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
+        },
+        {
+          "number": 25,
+          "prompt": "Nicholson now devotes(致力于) his travels to rescuing cats and helping them ________ ________.",
+          "questionType": "blank",
+          "answer": "find homes",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
+        }
+      ]
+    },
+    {
+      "_id": "sh-em2-2019-金山-listening",
+      "title": "2019 上海金山二模听力",
+      "year": 2019,
+      "sourceYear": 2020,
+      "district": "金山",
+      "examType": "二模",
+      "stage": "初中",
+      "audioCloudPath": "_content/listening-em2/audio/sh-em2-2019-金山-listening.mp3",
+      "transcript": "参考答案 L. Listening Comprehension〔听力理解) A. Listen and choose the right picture.(根据你听到的句子,选出相应的图片。)(6分) 1. Nowadays, Chinese people are changing their eating habits. 2. How many medical workers were sent to Wuhan to help fight the disease? 3. Good parents always provide support for their children. 4. Students are looking forward to having lessons at school. 5. Hello, this is Jessica! May I speak to Tom, please? 6. You had better wash your hands at once after you come back. B. Listen to the dialogue and choose the best answer to the question you hear.(根据你听到的对话和问句,选出最恰当的答案。)(8分) 7. W: Hello! Do you have any bananas? M: Sure. You come just in time. Look at these, they've just arrived and very fresh. W: Lovely! Can I get 20 of them? Q: what does the woman want to buy? 8. W: We are running out of toilet paper. Shall we take a bus to buy some in the supermarket? M: Maybe not? I am afraid of taking any public transportation now. No subway, no taxi,no… W: Then, let's go there by bike. Q: How are they going to the supermarket? 9. W: Did you go to a japanese restaurant yesterday? M: No, why do you think so? W: You posted so many pictures of Japanese food on your WeChat！ M: Oh! My mom made them. She went to Japan 3 years ago and stayed there for a year. Q: When did the boy's mother go to Japan? 10. W: Hi. Johnson can you translate this medicine instruction for me? M: Let me have a look. Oh, it's in Japanese. I only know a little English and French. Maybe we can look for the same product on taobao for the translation. Q: Which language is the medicine instruction written in? 11. M: Would you like some tea or milk? W: I like both, but today I feel so hot. I’d prefer something cold. M: Then what about some iced fruit punch? W: Thats good. Q: Which drink do you think the girl want to have now? 12. W: Tom, go to the store downstairs to buy some salt for me. I'm cooking some fish soup. M: Which kind of salt? The normal salt or the sea salt? W:I don’t mind. Come on! I need some immediately. M: Ok. I'll be back in no time. Q: Where does this dialogue probably happen? 13. W: Can you come to my party peter? M: When is it? W: Sunday afternoon. M: I'd love to come but I need to see my dentist this Sunday. Q: What's the man going to do this Sunday? 14.W: Andy, you should drink more water if you want to get better! M: Oh! My mom said the same this morning! But I really don’t like drinking water. I’d prefer some Cola. W: Soft drinks are not allowed at school and they are also bad for your health! M: Ok, then I will take your advice, Miss Zhou. Q: What's the relationship between them? C. Listen to the passage and tell whether the following statements are true or false.(判断下列句子是否符合你所听到的短文内容,符合的用“T”表示,不符合的用“F”表示。)(6分) Hello, everyone! My name is Bob Smith, a professional manager, working in a private company. I'm mainly responsible for technology, quality and customer communication. I'm always busy all day. I work six days a week, from Monday to Saturday. Sometimes on Sunday, I have to work overtime, but I love my work. I get up at 5 a.m. and work on the computer until 6 o'clock. I leave home early so that I can get to my office on time. It takes me one hour in my car. I start my work at about 7: 45. In the morning, I usually check and answer some E-mails from our customers. At 10 o'clock, I have a meeting about the product quality. In the afternoon, I usually meet some customers or go to the factories. I get off work at 5o'clock. Then dinner is around 6:30 p. m. After dinner my wife and I usually play with kids until 8:30. After the kids go to sleep, we usually talk and watch television until 10. Then I start working on the computer till one or two o'clock. Although I am tired I still think I am a lucky man with my kids and wife around me. D. Listen to the passage and complete the sentences..(听短文,完成句子,每空格限填一词。)(10) Are you used to getting takeaway ( 外卖) delivered to your home these days? Do you know the first pizza delivery in history took place in Italy nearly 140 years ago? In 1878, Queen Margherita became the first queen of Italy. She was tired of eating\"unusual meals and wanted to eat\"common\"food. At that time, Raffaele Esposito, the most famous pizza chef was asked to deliver a pizza to the queen. He prepared a pizza with tomatoes, cheese and basil -the red tomatoes, white cheese and green basil standing for the colors of Italys new national flag. As soon as the pizza was out of the oven, he quickly delivered it to the queen himself. The queen had never eaten pizza before and said it was one of the best things she'd ever eaten. Esposito named the pizza after the queen, and it has been served (供应)in nearly every pizza restaurant in the world ever since. Today, pizza remains one of the world's most popular fast foods. In 1973, Us pizza company. Domino's pizza promised to deliver its pizzas in 30 minutes or less-if the pizza was late, it would be free. 参考答案 Part 1 listening(第一部分听力) l. Listening Comprehension〔听力理解)(共30分) A: 1.C 2.E 3.H 4.F 5.A 6.D B: 7.B 8.D 9.C 10.B 11.D 12.A 13.B 14.D C: 15.T 16.F 17.F 18.F 19.T 20.T D: 21. in 1878 22. common food 23 out of 24. most popular 25 was late",
+      "hasAudio": true,
+      "hasTranscript": true,
+      "questionSourceFile": "2020年上海市金山区中考二模英语试题（原卷版）.doc",
+      "answerSourceFile": "2020年上海市金山区中考二模英语试题答案+听力原文.doc",
+      "imageSourceFile": "2020年上海市金山区中考二模英语试题（原卷版）.doc",
+      "images": [
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2019-金山-listening-image-1.jpeg",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2019-金山-listening-image-1.jpeg"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2019-金山-listening-image-2.jpeg",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2019-金山-listening-image-2.jpeg"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2019-金山-listening-image-3.jpeg",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2019-金山-listening-image-3.jpeg"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2019-金山-listening-image-4.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2019-金山-listening-image-4.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2019-金山-listening-image-5.jpeg",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2019-金山-listening-image-5.jpeg"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2019-金山-listening-image-6.jpeg",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2019-金山-listening-image-6.jpeg"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2019-金山-listening-image-7.jpeg",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2019-金山-listening-image-7.jpeg"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2019-金山-listening-image-8.jpeg",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2019-金山-listening-image-8.jpeg"
+        }
+      ],
+      "questions": [
+        {
+          "number": 1,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "C",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
+        },
+        {
+          "number": 2,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "E",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
+        },
+        {
+          "number": 3,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "H",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
+        },
+        {
+          "number": 4,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "F",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
+        },
+        {
+          "number": 5,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "A",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
+        },
+        {
+          "number": 6,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "D",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
+        },
+        {
+          "number": 7,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Apples.",
+            "B": "Bananas.",
+            "C": "Grapes.",
+            "D": "Strawberries."
+          },
+          "answer": "B",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 8,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "By bus.",
+            "B": "By subway.",
+            "C": "By taxi.",
+            "D": "By bike."
+          },
+          "answer": "D",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 9,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Yesterday.",
+            "B": "1 year ago.",
+            "C": "3 years ago.",
+            "D": "5 years ago."
+          },
+          "answer": "C",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 10,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Chinese.",
+            "B": "Japanese.",
+            "C": "English.",
+            "D": "French."
+          },
+          "answer": "B",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 11,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Tea.",
+            "B": "Milk.",
+            "C": "Both tea and milk.",
+            "D": "Iced fruit punch."
+          },
+          "answer": "D",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 12,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "At home.",
+            "B": "In a store.",
+            "C": "In a book shop.",
+            "D": "In the classroom."
+          },
+          "answer": "A",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 13,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Stay at home.",
+            "B": "See the dentist.",
+            "C": "Do his homework.",
+            "D": "Go to the girl’s party."
+          },
+          "answer": "B",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 14,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Brother and sister.",
+            "B": "Mother and son.",
+            "C": "Doctor and patient.",
+            "D": "Teacher and student."
+          },
+          "answer": "D",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 15,
+          "prompt": "Bob Smith works as a professional manager in a private company.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "T",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
+        },
+        {
+          "number": 16,
+          "prompt": "Every week he works for five days, from Monday to Friday.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "F",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
+        },
+        {
+          "number": 17,
+          "prompt": "Bob Smith starts his work at 8:30 after an hour’s ride in his car.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "F",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
+        },
+        {
+          "number": 18,
+          "prompt": "In the afternoon, he usually checks and answers some E-mails from his customers.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "F",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
+        },
+        {
+          "number": 19,
+          "prompt": "After dinner, Bob and his wife usually play with their kids until 8:30.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "T",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
+        },
+        {
+          "number": 20,
+          "prompt": "Bob thinks he himself is a lucky man, though he is very tired.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "T",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
+        },
+        {
+          "number": 21,
+          "prompt": "Queen Margherita became the first queen of Italy .",
+          "questionType": "blank",
+          "answer": "in",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
+        },
+        {
+          "number": 22,
+          "prompt": "She wanted to eat “ ” because she was tired of eating “unusual” meals.",
+          "questionType": "blank",
+          "answer": "common food",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
+        },
+        {
+          "number": 23,
+          "prompt": "As soon as the pizza was the oven, he quickly delivered it to the queen himself.",
+          "questionType": "blank",
+          "answer": "out of",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
+        },
+        {
+          "number": 24,
+          "prompt": "Today, pizza remains one of the world’s fast foods.",
+          "questionType": "blank",
+          "answer": "most popular",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
+        },
+        {
+          "number": 25,
+          "prompt": "In 1973, Domino’s Pizza promised if the pizza , it would be free.",
+          "questionType": "blank",
+          "answer": "was late",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
+        }
+      ]
+    },
+    {
+      "_id": "sh-em2-2019-长宁-listening",
+      "title": "2019 上海长宁二模听力",
+      "year": 2019,
+      "sourceYear": 2020,
+      "district": "长宁",
+      "examType": "二模",
+      "stage": "初中",
+      "audioCloudPath": "_content/listening-em2/audio/sh-em2-2019-长宁-listening.mp3",
+      "transcript": "听力文字 A. Listen and choose the right picture.(根据你听到的内容,选出相应的图) 1. Hainan Island is a good place to visit in Spring Festival in China. (C) 2. Both Peter and Mary enjoy working as community volunteers. (H) 3. The manager asked Tom some questions during the job interview. (B) 4. People must fasten their safety belts while taking a taxi. (E) 5. It's a bad habit to throw rubbish everywhere on the ground. (A) 6. Lily goes to the club to play volleyball once a week. (D) B. Listen to the dialogue and choose the best answer to the question you hear (根据你听到的 对话和问题，选择最恰当的答案)(8 分) 7. W: Can I help you, sir? M: Yes. please. I'm looking for a silk scarf for my mother W: How about this one? It is very nice Q: Where does the dialogue probably take place? (D) 8. W: Mike. I hear that you collect different sizes and shapes of stones. M: I used to. but now I'm interested in coins. Do you want to have a look at my new collections? Q: What does Mike collect now? (A) 9. W: Does your school newspaper come out weekly or daily? M: It appears every Tuesday. O: How often does the school newspaper come out? (C) 10. W: How will you get to the airport? M: I have no idea. Taking a bus is much cheaper. I may go there on a bus w: You'd better not. Today is Monday. Buses are crowded and taxis are hard to call. You can take the underground. M: OK, I'll take your advice. Q: How will the man probably go to the airport? (B) 11. W: What's wrong with you, Jack? Are you nervous about your exam? You look so sad M: I've lost my new i-phone on my way to school today. It was given by my parents. W: I'm sorry to hear that. Cheer up! Be careful next time Q: How did Jack feel today? (A) 12. W: How do you like the dishes in our restaurant? M: Well. The food is very delicious. I think I'll come here again Q: What's the probable relationship between the two speakers? (D) 13. W: Do you know when the famous reporter will give us alecture on science and development? M: I'm sorry I have no idea. You can have a look at that notice. There is a timetable in it. Q: What will the reporter do? (B) 14. W: Gary, I bought a painting just now. Isn't it wonderful? M: Well. I can't tell what it is about. I am not a fan of these funny images like you. Q: What information can you get from the dialogue? (C) C. Listen to the passage and tell whether the following statements are true or false.（判断下列句子是否符合你听到的短文内容，符合的用“T”表示，不符合的用表示）（6 分） Something really terrible happened when I was going to the concert last Saturday. I was riding my bicycle along the street when I saw a woman standing outside one of the boutique shops. She was carrying lots of shopping bags. I had just passed the crossing when she suddenly stepped into the road without looking. I didn't hit her. but I fell off my bicycle. I was really scared because I banged my head and hurt my arm when I fell. It's a good thing I was wearing a crash helmet, so I wasn't badly hurt! The woman came over to me while I was sitting on the road. I expected her to apologize but she began shouting at me. I felt extremely angry! She had caused the accident. She didn't even apologize! In the end. her friend told her to calm down, and she went away. To be honest, I think she should pay for the damage to my bicycle. My bicycle wheel was broken so I had to catch the bus to the concert. It seemed to take hours! Finally, I got to the Arts Centre. Meanwhile, my friends were all very worried about me, but luckily I wasn't badly hurt and I was still able to play my saxophone! 15.T 16.F 17.T 18.F 19.T 20.F Listen to the passage and fill in the blanks (听空，完成下列句子。每限填一词)(10 分) American architect Macy did not want to borrow money from the bank for her house. She decided to build a small home for herself, her daughter and her dog. To save money, she did most of the hard work herself. The small house is only about 18 square metres in size. It only cost her $11,400 to complete. And it has everything she needs in a home. It is comfortable and large enough for her family. The house is connected to electricity and has unusual hanging lights. This small house is easy to keep cool with one ceiling fan in the middle of the 1ong room.It also has fully equipped kitchen. The pots and pans hang on the wall. Macy and her partners easily cook many dinners in this space. She has managed to put a washing machine too. The king-size bed is built above a full set of cupboards. This saves space and looks attractive. There is a special ladder to climb onto the bed. This makes it safe and easy to use. Two comfortable chairs fit closely in an area next to the bed. Visitors can enjoy time here. Another big advantage of this small house is that bills for electricity and water are cheap. Macy can save money every month. 21.18/eighteen square 22.large enough 23.keep cool 24.save money 25.bills for 26.D 27.A 28.B 29. B 30.C 31.B 32. A 33.A 34.C 35. D 36B 37 C 38 D 39 A 40D 41C 42 D 43 A 44 C 45 B 46.C 47.D 48. A 49. B 50.E 51.A 52.D 53.C 54. himself 55. nine 56. strawberries 57. physical 58. disadvantage 59. operate 60. beginning 61. correctly 62. didn't have 63. What kind 64. was awarded 65. the way 66. what, thought 67. cheaper than 68.The young man is working on a project to help protect the environment these days. 69. D 70.B 71.D 72. A 73.B 74.C 75. B 76.D 77.A 78.C 79.D 80. A 81. spent 82. hurt 83. speed 84. team 85. safely 86. where 87. dangerous/difficult 88. One morning before Easter./Nearly Easter./ Before Easter. / A few days before Easter. 89. She kissed and held Judy and she also carried her around. 90. She felt upset/ sad /unhappy/.. 91. Her mother's preference for Judy. / Helen's jealousy. / Her mother's too much care for Judy. /... 92. Because she wanted to apologize to Judy and wanted her younger sister to forgive her. // Because she expected to get on well on her sister again. /.... 93. I am happy to hear from you. Let's forget the past and 1ook forward to the beautiful future.（本题内容+逻辑性共占 2 分，表达准确占 1 分）",
+      "hasAudio": true,
+      "hasTranscript": true,
+      "questionSourceFile": "2020年上海市长宁区中考二模英语试题（原卷版）.docx",
+      "answerSourceFile": "2020年上海市长宁区中考二模英语试题答案+听力原文.docx",
+      "imageSourceFile": "2020年上海市长宁区中考二模英语试题（原卷版）.docx",
+      "images": [
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2019-长宁-listening-image-1.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2019-长宁-listening-image-1.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2019-长宁-listening-image-2.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2019-长宁-listening-image-2.png"
+        }
+      ],
+      "questions": [
+        {
+          "number": 1,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "C",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
+        },
+        {
+          "number": 2,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "H",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
+        },
+        {
+          "number": 3,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "B",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
+        },
+        {
+          "number": 4,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "E",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
+        },
+        {
+          "number": 5,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "A",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
+        },
+        {
+          "number": 6,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "D",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
+        },
+        {
+          "number": 7,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "In the library.",
+            "B": "In a booking office",
+            "C": "At home.",
+            "D": "In a shop."
+          },
+          "answer": "D",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 8,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Coins.",
+            "B": "Stamps",
+            "C": "Kites.",
+            "D": "Stones."
+          },
+          "answer": "A",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 9,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Once a day.",
+            "B": "Twice a day.",
+            "C": "Once a week.",
+            "D": "Twice a week"
+          },
+          "answer": "C",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 10,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "By bus",
+            "B": "By underground.",
+            "C": "By taxi.",
+            "D": "By bike."
+          },
+          "answer": "B",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 11,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Sad.",
+            "B": "Cheerful.",
+            "C": "Embarrassed.",
+            "D": "Nervous."
+          },
+          "answer": "A",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 12,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Teacher and student.",
+            "B": "Host and guest.",
+            "C": "Husband and wife",
+            "D": "Waiter and customer."
+          },
+          "answer": "D",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 13,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Look at a timetable.",
+            "B": "Give a lecture.",
+            "C": "Prepare for a notice.",
+            "D": "Talk about school life."
+          },
+          "answer": "B",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 14,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "The woman knows nothing about the painting",
+            "B": "The man likes the painting very much.",
+            "C": "The woman thinks the painting is wonderful.",
+            "D": "The man has a talent for painting."
+          },
+          "answer": "C",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 15,
+          "prompt": "The story happened on the writer's way to the concert last Saturday.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "T",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
+        },
+        {
+          "number": 16,
+          "prompt": "A woman hit the writer when she rushed out of one of the boutique shops (精品店).",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "F",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
+        },
+        {
+          "number": 17,
+          "prompt": "The writer was lucky not to be badly hurt because of wearing a crash helmet (头盔)",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "T",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
+        },
+        {
+          "number": 18,
+          "prompt": "The woman immediately said sorry to the writer instead of shouting at him.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "F",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
+        },
+        {
+          "number": 19,
+          "prompt": "The woman didn't pay for the damage to the writer's bicycle but went away.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "T",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
+        },
+        {
+          "number": 20,
+          "prompt": "It took the writer several hours to enjoy the saxophone played by his friends.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "F",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
+        },
+        {
+          "number": 21,
+          "prompt": "Macy's small house is only about _____ _______ meters in size",
+          "questionType": "blank",
+          "answer": "18/eighteen square",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
+        },
+        {
+          "number": 22,
+          "prompt": "The small house is comfortable and _____ _______ for Macy's family to live in",
+          "questionType": "blank",
+          "answer": "large enough",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
+        },
+        {
+          "number": 23,
+          "prompt": "The small house is easy to _____ _______ with one ceiling fan in the middle of the long room.",
+          "questionType": "blank",
+          "answer": "keep cool",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
+        },
+        {
+          "number": 24,
+          "prompt": "The bed is built above a full set of cupboards and this _____ _______ and looks attractive.",
+          "questionType": "blank",
+          "answer": "save money",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
+        },
+        {
+          "number": 25,
+          "prompt": "Another big advantage of this small house is that _____ _______ electricity and water are cheap.",
+          "questionType": "blank",
+          "answer": "bills for",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
+        }
+      ]
+    },
+    {
+      "_id": "sh-em2-2019-闵行-listening",
+      "title": "2019 上海闵行二模听力",
+      "year": 2019,
+      "sourceYear": 2020,
+      "district": "闵行",
+      "examType": "二模",
+      "stage": "初中",
+      "audioCloudPath": "_content/listening-em2/audio/sh-em2-2019-闵行-listening.mp3",
+      "transcript": "听力文字 Part 1 I. A. 1. Sam was still awake at late night worrying about his job. (D) 2. After coughing or sneezing, wash your hands with soap and water. (G) 3. The children enjoy reading books with lots of pictures in them. (B) 4. After Jack finished eating and drinking, he went for a walk in the park. (F) 5. My brother often watches the news on TV to see what’s happening in the world. (H) 6. Unluckily, millions of animals lost their lives in the recent Australia Forest Fires. (E) B. 7. W: Do you like swimming or going fishing in your free time, Jack? M: Neither. I have little interest in them. I enjoy playing chess. Q: What activity is Jack interested in? (C) 8. W: Where did you go just now, Peter? The party has already started. M: To the kitchen. I tried to find a bin to put some waste in. Q: Where was Peter just now? (B) 9. W: Our friends are leaving for London tomorrow morning, dear. Can you drive them to the airport? M: There is something wrong with my car today. I will call them a taxi, instead. Q: How will their friends go to the airport tomorrow morning? (C) 10. M: Hi, Gina! I’m organizing a hiking trip. Would you like to come along? W: Thank you, Max. I’d love to. When are you going? M: Next Saturday. We’re going to climb Mountain Sunrise. How about bringing some friends? W: What a pity! I’m going to the concert with my parents on that day. I’ve already booked the tickets. Q: Why won’t Gina go for a hiking trip with Sam next Saturday? (B) 11. W: Could you help me choose some ties for my husband. They’re for his birthday, so I’d like to find something really nice. M: Are you interested in these, madam? They fit men well. W: Oh, good. I’ll take two of them. Q: Who might the two speakers be? (D) 12. W: Jerry, what time will you meet your classmates in the Century Park tomorrow morning? M: At nine o’clock. W: Oh, then when are you going to set out? M: Two hours before we meet. It will take me some time to get there. Q: When is Jerry leaving for the Century Park? (B) 13. W: How was your weekend, Mike? M: Fantastic! My friend Peter had a party in his house. It was great. He passed his college exam, so he was really happy. How about you, Jane? W: I reviewed my lessons at home. And then I visited my uncle in the countryside. Q: What are they talking about? (C) 14. M: Tim, Peter and I are going to pay a visit to Japan this summer holiday. Would you like to join us? W: Well, I’d like to if I can afford it. Q: What does the girl mean? (D) C. When Betty became the president of the volunteer club in her high school, she thought her classmates should do something to help the old people in the nursing home nearby their school. According to a local newspaper, this nursing home was in need of financial help, so Betty decided to hold an event where all the money they raised would go toward the old. They came up with the idea of running a market at school on a Saturday. The event lasted from 9: 00 a.m. until 5: 00 p.m. Since it was meaningful, everyone in the club worked to make the event a success. In the weeks before the event, the club members put up posters to encourage their fellow students and teachers to donate anything they did not want, such as old clothes, unused electrical appliances, and second-hand furniture. To add variety to the market, they sold lemonade and hot dogs. In getting the news of the event out, they made as much use of social media as possible to reduce any costs. Since one person’s rubbish is another person’s gold, the market attracted a lot of buyers. Most importantly, it helped Betty and her club members raise lots of money for the old. 15. T 16. F 17. F 18. F 19. T 20. T D. My first job was as a waiter. I did it when I first left school. It was fun, really, but it was very hard work. I had to work long hours and of course I was always on my feet! It wasn’t very challenging – I had to remember the customers’ orders, but that was all, really. And I didn’t get paid holidays, so that wasn’t good. So after about five months, I got a job as a shop assistant in a bookstore. I enjoyed that because I like books and I really like talking to people about them. I was very good at the job, and later, I was promoted to store manager. That was great! I got on-the-job training about management. I was happy because I started a career well, I thought I was. After two years, the bookstore closed because there wasn’t enough business. Now I’ve got a few more years’ experience and I work as a department manager. The pay is fantastic and the work is quite interesting. I guess you can say I’m successful. But you know what? Sometimes I miss being a waiter and just having jokes with the customers! 21. long hours 22. 5 / five months 23. talking to 24. enough business 25. quite interesting （",
+      "hasAudio": true,
+      "hasTranscript": true,
+      "questionSourceFile": "2020年上海市闵行区中考英语二模试题（原卷版）.doc",
+      "answerSourceFile": "2020年上海市闵行区中考英语二模试题（解析版+听力原文）.doc",
+      "imageSourceFile": "2020年上海市闵行区中考英语二模试题（原卷版）.doc",
+      "images": [
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2019-闵行-listening-image-1.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2019-闵行-listening-image-1.png"
+        }
+      ],
+      "questions": [
+        {
+          "number": 1,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "D",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
+        },
+        {
+          "number": 2,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "G",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
+        },
+        {
+          "number": 3,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "B",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
+        },
+        {
+          "number": 4,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "F",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
+        },
+        {
+          "number": 5,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "H",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
+        },
+        {
+          "number": 6,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "E",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
+        },
+        {
+          "number": 7,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Running.",
+            "B": "Going fishing.",
+            "C": "Playing chess.",
+            "D": "Swimming"
+          },
+          "answer": "C",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 8,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "At the party.",
+            "B": "In the kitchen.",
+            "C": "In the classroom.",
+            "D": "On the playground."
+          },
+          "answer": "B",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 9,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "By car.",
+            "B": "By underground.",
+            "C": "By taxi.",
+            "D": "By bus"
+          },
+          "answer": "C",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 10,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "She's going to climb a mountain.",
+            "B": "She's going to a concert.",
+            "C": "She's going to visit friends.",
+            "D": "She's going to book film tickets."
+          },
+          "answer": "B",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 11,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Policeman and driver.",
+            "B": "Husband and wife.",
+            "C": "Teacher and student.",
+            "D": "Shop assistant and customer."
+          },
+          "answer": "D",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 12,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "At 6 a.m.",
+            "B": "At 7 a.m.",
+            "C": "At 9a.m.",
+            "D": "At 11 a.m."
+          },
+          "answer": "B",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 13,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Peter's house.",
+            "B": "Life in the country.",
+            "C": "Their weekend.",
+            "D": "Jane's lessons."
+          },
+          "answer": "C",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 14,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "She doesn't want to visit Japan.",
+            "B": "She has already been to Japan.",
+            "C": "The visit isn't available now.",
+            "D": "She may not pay for the visit."
+          },
+          "answer": "D",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 15,
+          "prompt": "Betty and her club members wanted to raise some money to help the nursing home.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "T",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
+        },
+        {
+          "number": 16,
+          "prompt": "The club members decided to run a market at school on a Sunday morning.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "F",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
+        },
+        {
+          "number": 17,
+          "prompt": "To add variety to the market, the club members put up posters at school.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "F",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
+        },
+        {
+          "number": 18,
+          "prompt": "Only old clothes and unused electrical appliances were sold in the market.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "F",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
+        },
+        {
+          "number": 19,
+          "prompt": "The social media helped the club to spread the news of the event.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "T",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
+        },
+        {
+          "number": 20,
+          "prompt": "What the club members did for the event turned out to be a success.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "T",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
+        },
+        {
+          "number": 21,
+          "prompt": "To earn money, I had to work _______ _______ as a waiter.",
+          "questionType": "blank",
+          "answer": "long hours",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
+        },
+        {
+          "number": 22,
+          "prompt": "After about _______ _______ I got a job in a bookstore.",
+          "questionType": "blank",
+          "answer": "5 / five months",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
+        },
+        {
+          "number": 23,
+          "prompt": "I really like _______ _______ people about books.",
+          "questionType": "blank",
+          "answer": "talking to",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
+        },
+        {
+          "number": 24,
+          "prompt": "The bookstore closed because there wasn't _______ _______.",
+          "questionType": "blank",
+          "answer": "enough business",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
+        },
+        {
+          "number": 25,
+          "prompt": "The pay as a department manager is fantastic and the work is _______ _______ .",
+          "questionType": "blank",
+          "answer": "quite interesting",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
+        }
+      ]
+    },
+    {
+      "_id": "sh-em2-2019-青浦-listening",
+      "title": "2019 上海青浦二模听力",
+      "year": 2019,
+      "sourceYear": 2020,
+      "district": "青浦",
+      "examType": "二模",
+      "stage": "初中",
+      "audioCloudPath": "_content/listening-em2/audio/sh-em2-2019-青浦-listening.mp3",
+      "transcript": "",
+      "hasAudio": true,
+      "hasTranscript": false,
+      "questionSourceFile": "2020年上海市青浦区中考二模英语试题（原卷版）.doc",
+      "answerSourceFile": "2020年上海市青浦区中考二模英语试题（解析版）.doc",
+      "imageSourceFile": "2020年上海市青浦区中考二模英语试题（原卷版）.doc",
+      "images": [
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2019-青浦-listening-image-1.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2019-青浦-listening-image-1.png"
+        }
+      ],
+      "questions": [
+        {
+          "number": 1,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "B",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
+        },
+        {
+          "number": 2,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "G",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
+        },
+        {
+          "number": 3,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "H",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
+        },
+        {
+          "number": 4,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "A",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
+        },
+        {
+          "number": 5,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "F",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
+        },
+        {
+          "number": 6,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "D",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
+        },
+        {
+          "number": 7,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "To have a break.",
+            "B": "To cut the vegetables.",
+            "C": "To wash the dishes.",
+            "D": "To clean the table."
+          },
+          "answer": "B",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 8,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Geography.",
+            "B": "Physics.",
+            "C": "English.",
+            "D": "Science."
+          },
+          "answer": "C",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 9,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "At home.",
+            "B": "At school.",
+            "C": "At the supermarket.",
+            "D": "At the restaurant."
+          },
+          "answer": "A",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 10,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "By underground.",
+            "B": "By light rail.",
+            "C": "By bike.",
+            "D": "By bus."
+          },
+          "answer": "D",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 11,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "10minutes.",
+            "B": "15 minutes.",
+            "C": "30 minutes.",
+            "D": "8minutes."
+          },
+          "answer": "B",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 12,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "The restaurant was quite near.",
+            "B": "The restaurant was worthless.",
+            "C": "They often drive very far for lunch.",
+            "D": "They really enjoyed the meal."
+          },
+          "answer": "D",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 13,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "She can buy a cup of coffee for free.",
+            "B": "She can use a free laptop.",
+            "C": "She can surf the internet for free.",
+            "D": "She can provide free Wi-fi."
+          },
+          "answer": "C",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 14,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "The one with short dark hair.",
+            "B": "The tall one with blond hair.",
+            "C": "The one with long curly hair.",
+            "D": "The short one with brown hair."
+          },
+          "answer": "A",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 15,
+          "prompt": "Van Gogh sold a lot of paintings in low prices when he was alive.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "F",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
+        },
+        {
+          "number": 16,
+          "prompt": "Although Vincent van Gogh was deaf,he still enjoyed painting.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "F",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
+        },
+        {
+          "number": 17,
+          "prompt": "The bright colors in his paintings show the warmth of life.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "T",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
+        },
+        {
+          "number": 18,
+          "prompt": "Van Gogh was often in the hospital,but he still created his best paintings.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "T",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
+        },
+        {
+          "number": 19,
+          "prompt": "Finally,in 1890,Vincent van Gogh became a successful artist.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "F",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
+        },
+        {
+          "number": 20,
+          "prompt": "Known as a great artist today,Van Gogh lived a short and sad life.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "T",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
+        },
+        {
+          "number": 21,
+          "prompt": "Johnny is _______ _______ the entrance exam these days.",
+          "questionType": "blank",
+          "answer": "preparing for",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
+        },
+        {
+          "number": 22,
+          "prompt": "A few years ago,the city _______ _______ after eleven o'clock.",
+          "questionType": "blank",
+          "answer": "was quiet",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
+        },
+        {
+          "number": 23,
+          "prompt": "The people often leave the club at _______ _______ in the morning.",
+          "questionType": "blank",
+          "answer": "three/3 o clock",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
+        },
+        {
+          "number": 24,
+          "prompt": "Johnny closes the bedroom window to _______ _______ the noise.",
+          "questionType": "blank",
+          "answer": "keep off",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
+        },
+        {
+          "number": 25,
+          "prompt": "Since his way is of _______ _______ Johnny writes the letter for help.",
+          "questionType": "blank",
+          "answer": "little use",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
+        }
+      ]
+    },
+    {
+      "_id": "sh-em2-2019-静安-listening",
+      "title": "2019 上海静安二模听力",
+      "year": 2019,
+      "sourceYear": 2020,
+      "district": "静安",
+      "examType": "二模",
+      "stage": "初中",
+      "audioCloudPath": "_content/listening-em2/audio/sh-em2-2019-静安-listening.mp3",
+      "transcript": "",
+      "hasAudio": true,
+      "hasTranscript": false,
+      "questionSourceFile": "2020年上海市静安区中考二模英语试题（原卷版）.doc",
+      "answerSourceFile": "2020年上海市静安区中考二模英语试题（解析版）.doc",
+      "imageSourceFile": "2020年上海市静安区中考二模英语试题（原卷版）.doc",
+      "images": [
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2019-静安-listening-image-1.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2019-静安-listening-image-1.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2019-静安-listening-image-2.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2019-静安-listening-image-2.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2019-静安-listening-image-3.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2019-静安-listening-image-3.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2019-静安-listening-image-4.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2019-静安-listening-image-4.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2019-静安-listening-image-5.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2019-静安-listening-image-5.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2019-静安-listening-image-6.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2019-静安-listening-image-6.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2019-静安-listening-image-7.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2019-静安-listening-image-7.png"
+        },
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2019-静安-listening-image-8.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2019-静安-listening-image-8.png"
+        }
+      ],
+      "questions": [
+        {
+          "number": 1,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "E",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
+        },
+        {
+          "number": 2,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "C",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
+        },
+        {
+          "number": 3,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "A",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
+        },
+        {
+          "number": 4,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "F",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
+        },
+        {
+          "number": 5,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "B",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
+        },
+        {
+          "number": 6,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "H",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
+        },
+        {
+          "number": 7,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Windy.",
+            "B": "Cloudy",
+            "C": "Sunny.",
+            "D": "Rainy."
+          },
+          "answer": "C",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 8,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Expensive.",
+            "B": "Boring.",
+            "C": "Amazing",
+            "D": "Exciting."
+          },
+          "answer": "B",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 9,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "The blue one.",
+            "B": "The red one.",
+            "C": "The yellow one.",
+            "D": "The while one."
+          },
+          "answer": "A",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 10,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Every day.",
+            "B": "Once a month.",
+            "C": "Twice a week",
+            "D": "Once a week."
+          },
+          "answer": "D",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 11,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "At the bus stop.",
+            "B": "At the airport.",
+            "C": "At the railway station.",
+            "D": "At the hospital."
+          },
+          "answer": "B",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 12,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "To ask for a cake.",
+            "B": "To welcome him.",
+            "C": "To say thanks.",
+            "D": "To repair his bike."
+          },
+          "answer": "C",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 13,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Senior clerk.",
+            "B": "Senior engineer.",
+            "C": "Shop assistant.",
+            "D": "Assistant manager"
+          },
+          "answer": "D",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 14,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Susan failed in a French test.",
+            "B": "Susan isn't healthy today.",
+            "C": "Susan will go to France.",
+            "D": "Susan lost her job."
+          },
+          "answer": "A",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 15,
+          "prompt": "Carnegie's public speaking programmes and books were world famous.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "T",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
+        },
+        {
+          "number": 16,
+          "prompt": "Carnegie thought \"To talk before a group of people was the thing someone fared most\".",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "T",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
+        },
+        {
+          "number": 17,
+          "prompt": "Carnegie's family wasn’t rich,so he had to do a lot of work instead of going to school.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "F",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
+        },
+        {
+          "number": 18,
+          "prompt": "In his childhood, Carnegie used to feed the pigs and wash dishes at four every morning.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "F",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
+        },
+        {
+          "number": 19,
+          "prompt": "Confidence and practice made Carnegie get prizes in 12 debating contests in the college.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "F",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
+        },
+        {
+          "number": 20,
+          "prompt": "The Dale Carnegie Course has encouraged and helped millions of people start a new life.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "T",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
+        },
+        {
+          "number": 21,
+          "prompt": "Golden Hills is a perfect base for visiting _______ _______ like Leeds and Harrogate.",
+          "questionType": "blank",
+          "answer": "nearby places",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
+        },
+        {
+          "number": 22,
+          "prompt": "For guests who are _______ _______ a physical challenge,we can help organize activities.",
+          "questionType": "blank",
+          "answer": "looking for",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
+        },
+        {
+          "number": 23,
+          "prompt": "On Mondays and Wednesdays,it's karaoke. And _______ _______ is for different quizzes.",
+          "questionType": "blank",
+          "answer": "Tuesday night",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
+        },
+        {
+          "number": 24,
+          "prompt": "If you don't want to _______ _______ , snacks are available all day at the bar.",
+          "questionType": "blank",
+          "answer": "cook yourself",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
+        },
+        {
+          "number": 25,
+          "prompt": "Our team has _______ _______ members, including a general manager and a deputy manager.",
+          "questionType": "blank",
+          "answer": "20/twenty smart",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
+        }
+      ]
+    },
+    {
+      "_id": "sh-em2-2019-黄浦-listening",
+      "title": "2019 上海黄浦二模听力",
+      "year": 2019,
+      "sourceYear": 2020,
+      "district": "黄浦",
+      "examType": "二模",
+      "stage": "初中",
+      "audioCloudPath": "_content/listening-em2/audio/sh-em2-2019-黄浦-listening.mp3",
+      "transcript": "听力文字 I.Listening Comprehension(听力理解）（共30分） A.Listen and chose the right picture(根据你听到的内容，选出相应的图片）： 1.Catherine deals with a lot of problems on the computer every day.(E) 2.How happy Lucy is to go home with George and Kitty after class!(F) 3.While Mike is doing his homework,Mum is reading a book beside him.(A) 4.It is pleasant for Angela and Grandma to sit on the sofa and watch TV.(H) 5.Alice,Jack and William are enjoying their roles in the school short play.(B) 6.Tom and Paul have been good friends since they studied in the same class.(C) B.Listen to the dialogue and choose the best answer to the question you hear(根据你听到的 对话和问题，选出最恰当的答案）： 7.M:Morning,Mum.What's for breakfast? W:I've prepared cakes, bread, noodles and dumplings. M:Great!Dumplings are my favourite. Q:What does the boy like to eat best?(D) 8.W:The rain has finally stopped. M:I hope it will be sunny tomorrow,too.We are going for a school camping trip. W:The weather report says it's going to be windy tomorrow. Q:What's the weather like tomorrow?(C) 9.W:Where are you from,Johnson? M:I'm from Australia I went to study in England after I graduated from middle school. W:Do you still live in England? M:No,I live in America with my wife now,and we hope to start our business in China soon. Q:Where does Johnson live now?(B) 10.M:Are you in the singing club,Shelley? W:Yes. M:How often do you practice there? W:Twice a week. We meet on Tuesday and Friday afternoons, but we'll take part in a competition this Saturday. Q:When will the competition take place?(A) 11.M:Hi,remember me? W:Sure,you bought a pair of sports shoes yesterday. M:Yes,but they are too big for my daughter,Can I exchange them? Q:Where does this dialogue probably take place?(B) 12.W:Charles, could you help me carry the books to the classroom? M:All right,Miss Li. Q:Who might the two speakers be?(C) 13.W:Jim,I heard that you had moved into a new house.Didn't you like your old one? M:Yes,I did.But my neighbours hold parties very often and their dog makes much noise at night. W:Oh,I see. Q:Why did Jim move into a new flat?(A) 14.M:Look,there's a new type of camera.Shall we buy one? W:How much is it? M:9,000 yuan. W:It sounds like a waste of money.We seldom go traveling Q:What does the woman mean?(D) C.Listen to the passage and tell whether the ftollowing statements are true or false(判断下列 句子是否符合你听到的内容，符合的用“\"表示，不符合的用“F”表示)： In France,lunch is an important meal of the day.Students can get lunch at school or go home for lunch. Lunch is usually one to two hours long.Teachers always tell the students to take time to taste the food and enjoy their meals.Students have to pay for the cafeteria lunch.They have to pay for half,and the school pays for the other half. Usually, lunch has vegetables, salad, meat, fish, eggs, bread, noodles, rice, soup, fruit and ice-cream. The school sends one week's menu to students' parents and the menu is different each day.But the lunch must have vegetables,fish and eggs.And each student an have five dishes for lunch.Becky is a French student and she always has lunch at school.Like most students in her school,she thinks the cafeteria lunch is tasty and delicious. (15.F 16.T 17.F 18.F 19.T20.T) Listen to the passage and fill in the blanks (听空，完成下列句子。每限填一词)(10 分) Denny and Cindy are talking on the phone. Cindy:Hello. Denny:Hello.Can I speak to Cindy,please? Cindy:Speaking. Denny: Oh, Cindy. Where have you been? I've tried to call you on your mobile phone all day. Cindy: I'm sorry. I was shopping in City Supermarket. You know how noisy City Supermarket is. I must have missed your calls. Oh, why did you call me? Denny: I wanted to ask you to go shopping with me, Well, did you buy anything? Cindy: Oh yes, lots of things. I bought a jacket, two silk skirts. I also bought a Hello Doggy hair band. Denny: A Hello Doggy hair band? But you have short hair! What do you need a hair band for? And didn't you say you hated Hello Doggy? Cindy: I know, but it was really good value ( only 30 dollars. That's half price. I can give it to somebody who likes Hello Doggy. Denny: Who are you going to give it to? Cindy: Hmm... I'm still thinking. If I can't think of anyone, I'll start growing my hair. Then I can use it myself. OK, my parents are back. I'll talk to you later. Bye. Denny: Bye. (21. all day 22. City Supermarket 23. silk skirts 24. 30 dollars 25. start growing)",
+      "hasAudio": true,
+      "hasTranscript": true,
+      "questionSourceFile": "2020年上海市黄浦区中考二模英语试题（原卷版）.doc",
+      "answerSourceFile": "2020年上海市黄浦区中考二模英语试题（解析版+听力原文）.doc",
+      "imageSourceFile": "2020年上海市黄浦区中考二模英语试题（原卷版）.doc",
+      "images": [
+        {
+          "localPath": "data/listening-em2/images/sh-em2-2019-黄浦-listening-image-1.png",
+          "cloudPath": "_content/listening-em2/images/sh-em2-2019-黄浦-listening-image-1.png"
+        }
+      ],
+      "questions": [
+        {
+          "number": 1,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "E",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
+        },
+        {
+          "number": 2,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "F",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
+        },
+        {
+          "number": 3,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "A",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
+        },
+        {
+          "number": 4,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "H",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
+        },
+        {
+          "number": 5,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "B",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
+        },
+        {
+          "number": 6,
+          "prompt": "Listen and choose the right picture.",
+          "questionType": "picture",
+          "answer": "C",
+          "sectionKey": "A",
+          "sectionTitle": "A. Listen and choose the right picture."
+        },
+        {
+          "number": 7,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Cakes.",
+            "B": "Bread.",
+            "C": "Noodles.",
+            "D": "Dumplings."
+          },
+          "answer": "D",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 8,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Sunny.",
+            "B": "Rainy.",
+            "C": "Windy.",
+            "D": "Cloudy."
+          },
+          "answer": "C",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 9,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "In England.",
+            "B": "In America.",
+            "C": "In Australia.",
+            "D": "In China."
+          },
+          "answer": "B",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 10,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "On Saturday.",
+            "B": "On Tuesday.",
+            "C": "On Thursday.",
+            "D": "On Friday."
+          },
+          "answer": "A",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 11,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "In a library.",
+            "B": "In a shop.",
+            "C": "In a school.",
+            "D": "In a restaurant."
+          },
+          "answer": "B",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 12,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Nurse and patient.",
+            "B": "Customer and clerk.",
+            "C": "Teacher and student.",
+            "D": "Husband and wife."
+          },
+          "answer": "C",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 13,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "Because he hated the noise.",
+            "B": "Because he wanted to have a dog.",
+            "C": "Because he disliked his old flat.",
+            "D": "Because he wanted to give more parties."
+          },
+          "answer": "A",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 14,
+          "prompt": "Listen and choose the best answer.",
+          "questionType": "choice",
+          "options": {
+            "A": "She likes this type of camera.",
+            "B": "She doesn't have money for travelling",
+            "C": "She has wasted a lot of money.",
+            "D": "She doesn't want to buy the camera."
+          },
+          "answer": "D",
+          "sectionKey": "B",
+          "sectionTitle": "B. Listen and choose the best answer."
+        },
+        {
+          "number": 15,
+          "prompt": "Lunch is important and all the students must get lunch at school in France.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "F",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
+        },
+        {
+          "number": 16,
+          "prompt": "Students usually spend one to two hours tasting the food during lunch time.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "T",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
+        },
+        {
+          "number": 17,
+          "prompt": "The school pays for the cafeteria lunch instead of the students themselves.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "F",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
+        },
+        {
+          "number": 18,
+          "prompt": "Becky's school provides students with a lot of food except ice-cream.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "F",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
+        },
+        {
+          "number": 19,
+          "prompt": "Although menu is different each day,it must have vegetables,fish and eggs.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "T",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
+        },
+        {
+          "number": 20,
+          "prompt": "Most students in Becky's school enjoy having lunch at school in the cafeteria.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "T",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
+        },
+        {
+          "number": 21,
+          "prompt": "Denny has tried to call Cindy on her mobile phone ________ _______.",
+          "questionType": "blank",
+          "answer": "all day",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
+        },
+        {
+          "number": 22,
+          "prompt": "Cindy was shopping in ________ _______ when Denny called her.",
+          "questionType": "blank",
+          "answer": "City Supermarket",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
+        },
+        {
+          "number": 23,
+          "prompt": "Cindy bought a jacket,two ________ _______ and a Hello Doggy hair band(带).",
+          "questionType": "blank",
+          "answer": "silk skirts",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
+        },
+        {
+          "number": 24,
+          "prompt": "The Hello Doggy hair band was really good value and costs ________ _______.",
+          "questionType": "blank",
+          "answer": "30 dollars",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
+        },
+        {
+          "number": 25,
+          "prompt": "Cindy might ________ _______ her hair in order to use the Hello Doggy hair band.",
+          "questionType": "blank",
+          "answer": "start growing",
+          "sectionKey": "D",
+          "sectionTitle": "D. Listen and complete the sentences."
+        }
+      ]
+    },
+    {
       "_id": "sh-em2-2021-徐汇-listening",
       "title": "2021 上海徐汇二模听力",
       "year": 2021,
+      "sourceYear": 2022,
       "district": "徐汇",
       "examType": "二模",
       "stage": "初中",
@@ -3833,6 +8122,8 @@ module.exports = {
       "hasAudio": true,
       "hasTranscript": true,
       "questionSourceFile": "上海市徐汇区2022届九年级4月质量调研（二模）英语试卷（word原卷版）.docx",
+      "answerSourceFile": "上海市徐汇区2022届九年级4月质量调研（二模）英语答案.docx",
+      "imageSourceFile": "精品解析：2022年上海市徐汇区中考二模英语试题（含听力）（原卷版）.docx",
       "images": [
         {
           "localPath": "data/listening-em2/images/sh-em2-2021-徐汇-listening-image-1.png",
@@ -4076,6 +8367,7 @@ module.exports = {
       "_id": "sh-em2-2022-宝山-listening",
       "title": "2022 上海宝山二模听力",
       "year": 2022,
+      "sourceYear": 2023,
       "district": "宝山",
       "examType": "二模",
       "stage": "初中",
@@ -4084,6 +8376,8 @@ module.exports = {
       "hasAudio": true,
       "hasTranscript": true,
       "questionSourceFile": "精品解析：2023年上海市宝山区中考二模英语试题（解析版）.docx",
+      "answerSourceFile": "上海市宝山区2023届九年级4月质量调研（二模）英语答案.docx",
+      "imageSourceFile": "精品解析：2023年上海市宝山区中考二模英语试题（解析版）.docx",
       "images": [
         {
           "localPath": "data/listening-em2/images/sh-em2-2022-宝山-listening-image-1.png",
@@ -4327,6 +8621,7 @@ module.exports = {
       "_id": "sh-em2-2022-浦东-listening",
       "title": "2022 上海浦东二模听力",
       "year": 2022,
+      "sourceYear": 2023,
       "district": "浦东",
       "examType": "二模",
       "stage": "初中",
@@ -4335,6 +8630,8 @@ module.exports = {
       "hasAudio": true,
       "hasTranscript": true,
       "questionSourceFile": "上海市浦东新区2023年中考英语二模试卷.docx",
+      "answerSourceFile": "上海市浦东新区2023届九年级4月质量调研（二模）英语答案.docx",
+      "imageSourceFile": "精品解析：2023年上海市浦东新区中考二模英语试题（解析版）.docx",
       "images": [
         {
           "localPath": "data/listening-em2/images/sh-em2-2022-浦东-listening-image-1.png",
@@ -4578,6 +8875,7 @@ module.exports = {
       "_id": "sh-em2-2022-黄浦-listening",
       "title": "2022 上海黄浦二模听力",
       "year": 2022,
+      "sourceYear": 2023,
       "district": "黄浦",
       "examType": "二模",
       "stage": "初中",
@@ -4586,6 +8884,8 @@ module.exports = {
       "hasAudio": true,
       "hasTranscript": false,
       "questionSourceFile": "2023年上海市黄浦区中考二模英语试题.docx",
+      "answerSourceFile": "上海市黄浦区2023届九年级4月质量调研（二模）英语答案.docx",
+      "imageSourceFile": "精品解析：2023年上海市黄浦区中考二模英语试题（含听力）（解析版）.docx",
       "images": [
         {
           "localPath": "data/listening-em2/images/sh-em2-2022-黄浦-listening-image-1.png",
@@ -4833,6 +9133,7 @@ module.exports = {
       "_id": "sh-em2-2023-普陀-listening",
       "title": "2023 上海普陀二模听力",
       "year": 2023,
+      "sourceYear": 2024,
       "district": "普陀",
       "examType": "二模",
       "stage": "初中",
@@ -4841,6 +9142,8 @@ module.exports = {
       "hasAudio": true,
       "hasTranscript": true,
       "questionSourceFile": "精品解析：2024年上海市普陀区中考二模英语试题（解析版）.docx",
+      "answerSourceFile": "普陀区听力文本及参考答案.docx",
+      "imageSourceFile": "精品解析：2024年上海市普陀区中考二模英语试题（解析版）.docx",
       "images": [
         {
           "localPath": "data/listening-em2/images/sh-em2-2023-普陀-listening-image-1.png",
@@ -5084,6 +9387,7 @@ module.exports = {
       "_id": "sh-em2-2025-嘉定-listening",
       "title": "2025 上海嘉定二模听力",
       "year": 2025,
+      "sourceYear": 2026,
       "district": "嘉定",
       "examType": "二模",
       "stage": "初中",
@@ -5092,6 +9396,8 @@ module.exports = {
       "hasAudio": true,
       "hasTranscript": true,
       "questionSourceFile": "06 嘉定区二模英语听力.docx",
+      "answerSourceFile": "06 嘉定区二模英语听力.docx",
+      "imageSourceFile": "06 嘉定区二模英语听力.docx",
       "images": [
         {
           "localPath": "data/listening-em2/images/sh-em2-2025-嘉定-listening-image-1.png",
@@ -5334,41 +9640,42 @@ module.exports = {
   ],
   "listeningEm1": [
     {
-      "_id": "sh-em1-2025-宝山-listening",
-      "title": "2025 上海宝山一模听力",
-      "year": 2025,
+      "_id": "sh-em1-2022-宝山-listening",
+      "title": "2022 上海宝山一模听力",
+      "year": 2022,
+      "sourceYear": 2023,
       "district": "宝山",
       "examType": "一模",
       "stage": "初中",
-      "audioCloudPath": "_content/listening-em1/audio/sh-em1-2025-宝山-listening-335dc7a0.mp3",
-      "transcript": "参考答案 Part 1 I.Listening Comprehension(听力理解) A.Listen and choose the right picture(根据你听到的内容，选出相应的图片) 1.Jason and his friend met at the gate of a museum yesterday afternoon. 2.In order to keep fit,my uncle goes jogging in the woods every day. 3.My little sister is fond of paper cutting,a traditional skill in China. 4.The quiet corner of the library helps me concentrate well. 5.Some students are preparing a report about mountains and rivers in the geography club. B.Listen to the dialogue and choose the best answer to the question you hear(根据你听到的对 话和问题，选出最恰当的答案) 6. M: Do you have any travel plan,Susan? W: I've been to China before.I hope I can visit some other Asian countries like Singapore,Thailand and Japan next year. Q: Which country has Susan been to? 7. M: Do you have any books about space? W: Yes,they're in the science section. M: Great.How many books can I borrow at a time? W: Up to three books,for a month. Q: Where does this dialogue probably take place? 8. W: Jason,your room is such a mess.Can you clean it up right now? M: I'll do it after I finish my homework,I promise. W: All right,but don't forget! Q: What's the possible relationship between the two speakers? 9. W: Today is New Year's Eve.Are you planning anything special? M: Not really.I don't enjoy the celebrations much.I'd rather stay at home and relax. W: That's fine.Everyone celebrates differently. Q: How does the man feel about the celebrations? 10. W: Would you like to play basketball with us this weekend,John? M: I'd love to,Mary.But I've already promised to help my brother with his project. W: What a pity!Maybe next time. Q: What can we learn from the dialogue? C. Listen to the passage and tell whether the following statements are true or false(判断下列句子是否符合你听到的内容，符合的用“T”表示，不符合的用“F”表示) In a bright and colourful world of engines,there lived a little blue engine.Though it was small,it had big dreams!One day,all the engines received the most important task of the year:delivering toys to children who lived on the other side of a high mountain. \"The mountain is too high,and the task is too hard.We can't do it,\"said the powerful,bigger engines.One by one,they refused to help.But the little blue engine was different.It believed in itself and accepted the task bravely.\"I can do it,\"the little blue engine said,eventhough the other engines laughed at it. The little blue engine started its journey.As it climbed up the mountain,it kept saying to itself,“I think I can.I think I can.”The climb was really hard,but the little engine never gave up.Finally,it reached the top of the mountain!On the other side,it delivered all the toys to the children waiting below. The little blue engine's success brought joy to all the children,and it has proved that when we believe in ourselves,we can achieve even the hardest tasks! D .Listen to the passage and complete the following sentences(听短文，完成下列内容，每空格限填一词) Good afternoon!My name is David Lance and I'm an astronaut.Right now,I am at a space station.Today,I'll tell you a little about life in space. In the mornings,I like to take showers.But I can't take a normal shower.Do you know why?There isn't enough water at the space station!So,I have to use a wet cloth to clean myself.Astronauts also eat three times a day at the space station.There are a lot of snacks and drinks,too,But the food and drinks are different from those on Earth.They are usually frozen or dried.This is because our trips are very long.We don't want our food to go bad in space! Next,we take exercise every day to make our bodies strong.Astronauts float in space, so we don't use a lot of our muscles.There is a bicycle at the space station.It helps us keep our bodies healthy. We all go to sleep after we finish our work.But we don't sleep in beds.We have sleeping bags on the walls.They keep us from floating away during our sleep!As you can see,life in space is different from life on Earth.And being an astronaut is a difficult job. It's quite common for us to work at the space station for several months.But the space research we do is very important to people on Earth! Part 1 I. A)1.C 2.F 3.D 4.A 5.B B)6.A 7.C 8.B 9.D 10.C C)11.F 12.F 13.T 14.T 15.T D)16.clean himself 17.different from 18.take exercise 19.sleeping bags 20.quite common",
+      "audioCloudPath": "_content/listening-em1/audio/sh-em1-2022-宝山-listening-3fbb23fb.mp3",
+      "transcript": "",
       "hasAudio": true,
-      "hasTranscript": true,
-      "questionSourceFile": "2025届宝山区初三一模英语试卷.pdf",
+      "hasTranscript": false,
+      "questionSourceFile": "精品解析：2023年上海市宝山区中考一模英语试题（原卷版）.docx",
       "images": [
         {
-          "localPath": "data/listening-em1/images/sh-em1-2025-宝山-listening-image-1.png",
-          "cloudPath": "_content/listening-em1/images/sh-em1-2025-宝山-listening-image-1.png"
+          "localPath": "data/listening-em1/images/sh-em1-2022-宝山-listening-image-1.png",
+          "cloudPath": "_content/listening-em1/images/sh-em1-2022-宝山-listening-image-1.png"
         },
         {
-          "localPath": "data/listening-em1/images/sh-em1-2025-宝山-listening-image-2.png",
-          "cloudPath": "_content/listening-em1/images/sh-em1-2025-宝山-listening-image-2.png"
+          "localPath": "data/listening-em1/images/sh-em1-2022-宝山-listening-image-2.png",
+          "cloudPath": "_content/listening-em1/images/sh-em1-2022-宝山-listening-image-2.png"
         },
         {
-          "localPath": "data/listening-em1/images/sh-em1-2025-宝山-listening-image-3.png",
-          "cloudPath": "_content/listening-em1/images/sh-em1-2025-宝山-listening-image-3.png"
+          "localPath": "data/listening-em1/images/sh-em1-2022-宝山-listening-image-3.png",
+          "cloudPath": "_content/listening-em1/images/sh-em1-2022-宝山-listening-image-3.png"
         },
         {
-          "localPath": "data/listening-em1/images/sh-em1-2025-宝山-listening-image-4.png",
-          "cloudPath": "_content/listening-em1/images/sh-em1-2025-宝山-listening-image-4.png"
+          "localPath": "data/listening-em1/images/sh-em1-2022-宝山-listening-image-4.png",
+          "cloudPath": "_content/listening-em1/images/sh-em1-2022-宝山-listening-image-4.png"
         },
         {
-          "localPath": "data/listening-em1/images/sh-em1-2025-宝山-listening-image-5.png",
-          "cloudPath": "_content/listening-em1/images/sh-em1-2025-宝山-listening-image-5.png"
+          "localPath": "data/listening-em1/images/sh-em1-2022-宝山-listening-image-5.png",
+          "cloudPath": "_content/listening-em1/images/sh-em1-2022-宝山-listening-image-5.png"
         },
         {
-          "localPath": "data/listening-em1/images/sh-em1-2025-宝山-listening-image-6.png",
-          "cloudPath": "_content/listening-em1/images/sh-em1-2025-宝山-listening-image-6.png"
+          "localPath": "data/listening-em1/images/sh-em1-2022-宝山-listening-image-6.png",
+          "cloudPath": "_content/listening-em1/images/sh-em1-2022-宝山-listening-image-6.png"
         }
       ],
       "questions": [
@@ -5376,7 +9683,7 @@ module.exports = {
           "number": 1,
           "prompt": "Listen and choose the right picture.",
           "questionType": "picture",
-          "answer": "C",
+          "answer": "D",
           "sectionKey": "A",
           "sectionTitle": "A. Listen and choose the right picture."
         },
@@ -5384,7 +9691,7 @@ module.exports = {
           "number": 2,
           "prompt": "Listen and choose the right picture.",
           "questionType": "picture",
-          "answer": "F",
+          "answer": "A",
           "sectionKey": "A",
           "sectionTitle": "A. Listen and choose the right picture."
         },
@@ -5392,7 +9699,7 @@ module.exports = {
           "number": 3,
           "prompt": "Listen and choose the right picture.",
           "questionType": "picture",
-          "answer": "D",
+          "answer": "B",
           "sectionKey": "A",
           "sectionTitle": "A. Listen and choose the right picture."
         },
@@ -5400,247 +9707,12 @@ module.exports = {
           "number": 4,
           "prompt": "Listen and choose the right picture.",
           "questionType": "picture",
-          "answer": "A",
+          "answer": "F",
           "sectionKey": "A",
           "sectionTitle": "A. Listen and choose the right picture."
         },
         {
           "number": 5,
-          "prompt": "Listen and choose the right picture.",
-          "questionType": "picture",
-          "answer": "B",
-          "sectionKey": "A",
-          "sectionTitle": "A. Listen and choose the right picture."
-        },
-        {
-          "number": 6,
-          "prompt": "Listen and choose the best answer.",
-          "questionType": "choice",
-          "options": {
-            "A": "China.",
-            "B": "Singapore.",
-            "C": "Thailand.",
-            "D": "Japan."
-          },
-          "answer": "A",
-          "sectionKey": "B",
-          "sectionTitle": "B. Listen and choose the best answer."
-        },
-        {
-          "number": 7,
-          "prompt": "Listen and choose the best answer.",
-          "questionType": "choice",
-          "options": {
-            "A": "In a museum.",
-            "B": "In a supermarket.",
-            "C": "In a library.",
-            "D": "In a book shop."
-          },
-          "answer": "C",
-          "sectionKey": "B",
-          "sectionTitle": "B. Listen and choose the best answer."
-        },
-        {
-          "number": 8,
-          "prompt": "Listen and choose the best answer.",
-          "questionType": "choice",
-          "options": {
-            "A": "Teacher and student.",
-            "B": "Mother and son.",
-            "C": "Doctor and patient.",
-            "D": "Manager and secretary."
-          },
-          "answer": "B",
-          "sectionKey": "B",
-          "sectionTitle": "B. Listen and choose the best answer."
-        },
-        {
-          "number": 9,
-          "prompt": "Listen and choose the best answer.",
-          "questionType": "choice",
-          "options": {
-            "A": "Excited.",
-            "B": "Worried.",
-            "C": "Disappointed.",
-            "D": "Uninterested."
-          },
-          "answer": "D",
-          "sectionKey": "B",
-          "sectionTitle": "B. Listen and choose the best answer."
-        },
-        {
-          "number": 10,
-          "prompt": "Listen and choose the best answer.",
-          "questionType": "choice",
-          "options": {
-            "A": "John has agreed to play basketball.",
-            "B": "John’s brother is going to play basketball.",
-            "C": "John has promised to help his brother.",
-            "D": "Mary is asking John to help with her project."
-          },
-          "answer": "C",
-          "sectionKey": "B",
-          "sectionTitle": "B. Listen and choose the best answer."
-        },
-        {
-          "number": 11,
-          "prompt": "The little blue engine was the smallest engine in the world of engines.",
-          "questionType": "truefalse",
-          "options": {
-            "T": "T",
-            "F": "F"
-          },
-          "answer": "F",
-          "sectionKey": "C",
-          "sectionTitle": "C. Listen and tell whether the statements are true or false."
-        },
-        {
-          "number": 12,
-          "prompt": "All the bigger engines agreed to help with the toy delivery task.",
-          "questionType": "truefalse",
-          "options": {
-            "T": "T",
-            "F": "F"
-          },
-          "answer": "F",
-          "sectionKey": "C",
-          "sectionTitle": "C. Listen and tell whether the statements are true or false."
-        },
-        {
-          "number": 13,
-          "prompt": "The little blue engine was laughed at by the other engines for accepting the task.",
-          "questionType": "truefalse",
-          "options": {
-            "T": "T",
-            "F": "F"
-          },
-          "answer": "T",
-          "sectionKey": "C",
-          "sectionTitle": "C. Listen and tell whether the statements are true or false."
-        },
-        {
-          "number": 14,
-          "prompt": "The little blue engine didn’t give up until it reached the top of the mountain.",
-          "questionType": "truefalse",
-          "options": {
-            "T": "T",
-            "F": "F"
-          },
-          "answer": "T",
-          "sectionKey": "C",
-          "sectionTitle": "C. Listen and tell whether the statements are true or false."
-        },
-        {
-          "number": 15,
-          "prompt": "From the story, we can learn that believing in ourselves is the key to success.",
-          "questionType": "truefalse",
-          "options": {
-            "T": "T",
-            "F": "F"
-          },
-          "answer": "T",
-          "sectionKey": "C",
-          "sectionTitle": "C. Listen and tell whether the statements are true or false."
-        },
-        {
-          "number": 16,
-          "prompt": "David uses a wet cloth to _______ _______ because there isn’t enough water at the space station.",
-          "questionType": "blank",
-          "answer": "clean himself",
-          "sectionKey": "D",
-          "sectionTitle": "D. Listen and complete the sentences."
-        },
-        {
-          "number": 17,
-          "prompt": "Astronauts eat three times a day. But the food and drinks are _______ _______ those on Earth.",
-          "questionType": "blank",
-          "answer": "different from",
-          "sectionKey": "D",
-          "sectionTitle": "D. Listen and complete the sentences."
-        },
-        {
-          "number": 18,
-          "prompt": "To keep their bodies strong and healthy, astronauts _______ _______ every day.",
-          "questionType": "blank",
-          "answer": "take exercise",
-          "sectionKey": "D",
-          "sectionTitle": "D. Listen and complete the sentences."
-        },
-        {
-          "number": 19,
-          "prompt": "Astronauts usually sleep in _______ _______ on the walls to avoid floating away.",
-          "questionType": "blank",
-          "answer": "sleeping bags",
-          "sectionKey": "D",
-          "sectionTitle": "D. Listen and complete the sentences."
-        },
-        {
-          "number": 20,
-          "prompt": "It’s ______ _______ for astronauts to work at the space station for several months.",
-          "questionType": "blank",
-          "answer": "quite common",
-          "sectionKey": "D",
-          "sectionTitle": "D. Listen and complete the sentences."
-        }
-      ]
-    },
-    {
-      "_id": "sh-em1-2025-普陀-listening",
-      "title": "2025 上海普陀一模听力",
-      "year": 2025,
-      "district": "普陀",
-      "examType": "一模",
-      "stage": "初中",
-      "audioCloudPath": "_content/listening-em1/audio/sh-em1-2025-普陀-listening-651d8aa3.mp3",
-      "transcript": "参考答案） Part I I. A. 1. F 2. A 3. E 4. B 5. C B. 6. B 7. D 8. D 9. A 10. C C. 11. F 12. F 13. T 14. F 15. T D. 16. keeping safe 17. closely connected 18. accept yourself 19. social backgrounds 20. among animals Part II II. 21. B 22. A 23. D 24. C 25. D 26. B 27. C 28. D 29. C 30. A 31. D 32. B 33. B 34. C 35. A III. 36. E 37. C 38. B 39. A 40. B 41. E 42. D 43. A IV. 44. speeches 45. third 46. ours 47. successful 48. helpless 49. safety 50. mainly 51. enable V. 52. Did drive 53. How does 54. when to 55. too to 56. I was 57. was broken 58. The poor service of the restaurant made John complain a lot. Part III VI. ( A ) 59. B 60. D 61. B 62. C 63. A 64. D ( B ) 65. B 66. A 67. C 68. A 69. B 70. D ( C ) 71. Amazing 72. flight/flying 73. rarely 74. produces 75. love 76. lose 77. control ( D ) 78. His face./His appearance. It refers to “pretending not to see other people’s reaction when they see August”. August (himself)./August./Himself. He felt excited and worried/nervous. Because he had a lot of surgeries and he used to get sick a lot. The title not only shows August really wants to be seen as an ordinary kid(表达主人公内心渴望), but also makes the readers think about what it really means to be ordinary (引发读者思考)./realize that people like August should be treated like ordinary people.（挑战刻板印象） VII. 84. 略 2024学年度第一学期期末九年级自适应练习 英语学科（听力录音） 根据你听到的内容, 选出相应的图片，在选择题区域相应的空格内用2B铅笔填涂。每个句子念两遍。 It is important for us to see the dentist regularly. (F) Stop! Don’t create a lot of mess in your room! (A) Keeping a diary is a good way to improve our memory. (E) Mr. Jones escaped from the prison last night. (B) Sound effects can make a story more exciting. (C) 根据你听到的对话和问题，选出最恰当的答案，在选择题区域相应的空格内用2B铅笔填涂。对话和问题都念两遍。 M: Who will go hiking with us this Saturday? W: Peter will have to finish his history report. Mary and Lisa are not interested in sports. Only Danny will go. Q: Who will go hiking with the two speakers this Saturday? (请再听一遍) (B) W: What’s the date today? M: It’s July 5th. Why did you ask? W: Fiona’s birthday is three days away. Q: When is Fiona’s birthday? (请再听一遍) (D) W: Why were you late for the meeting today? I had left a message with your secretary about the time change. M: She has a poor short-term memory. And it’s a headache for me. Q: Why was the man late for the meeting? (请再听一遍) (D) W: Excuse me, can you sit down? I paid 800 dollars to see my favourite band performing in front of me, not to see the back of your head! M: Sorry, Madam. I’m just too excited to stay seated. Q: What are the two speakers probably doing? (请再听一遍) (A) W: Judy won the first prize in the school writing competition. I’m so proud of her. M: I’m not surprised. She’s your daughter. Q: What does the man mean? (请再听一遍) (C) 判断下列句子是否符合你听到的对话内容，符合的用“T”表示，不符合的用“F”表示，在选择题区域相应的空格内用2B铅笔填涂。对话念两遍。 M: This is police office. Can I help you? W: Oh, my god. Someone has broken into my house. It’s a total mess! M: Madam. Please calm down. Can you tell me your name and address, please? W: Sorry, I’m Mary Brown, and I live at 45 Green Lane. M: OK. Ms Brown. Is there anything important missing? W: That’s the strange part. Nothing expensive seems to be gone. My laptop, jewellery, cash—all still here. Just my new novel. It was written by hand. I’ve been working on it for months. It’s just gone. M: Can you tell me what it looks like? W: It was in a black notebook with a picture of roses on the cover. M: Got it. Do you have any idea who might have taken it? W: I can’t think of anyone. But... wait, there was one person who had been really interested in my work. A fan, maybe? He asked a lot of questions about my new novel and even tried to get into my house a few times. M: That's helpful information. Can you give us a description or any details about this person? W: He’s tall, always wears a baseball hat, and about 40 years old. I’ve seen him around the neighborhood a few times. M: Got it. Ms. Brown. We’ll send someone to check things out and look for clues. Don’t touch anything until our police officer arrives. 11. F 12.F 13. T 14. F 15. T D. 根据你听到的短文，完成下列句子，每空格限填一词。在非选择题区域相应的空格内用黑墨水钢笔或黑色水笔填写。短文念两遍。 Love is a feeling that has been around forever. It goes across different places, people, and even animals. There are different kinds of love, and everyone shows it in their own way. One kind of love is family love. This is the love between family members. It’s about taking care of and keeping safe the people who are related to you. Another kind is friend love. It makes you and your friends closely connected. It’s about respecting, admiring, and caring for each other. But there’s also self-love. It means you like and accept yourself, even your mistakes. It’s important to love yourself before you can love other people. But we show love in many different ways. That’s because we have different social backgrounds. In some places, people show love by doing things for others, while in other places, people say nice things to show love. Love isn’t just for people. It can also be found among animals. When you see how a mother bear protects her babies, or how a dog is always loyal to its owner, you know love is everywhere. So, remember, love comes in many forms and everyone experiences it in their own way. That’s what makes love so amazing. keeping safe 17. closely connected 18. accept yourself 19. social backgrounds 20. among animals 第一部分 “听力测试” 到此结束。请同学们继续答题。 微信号：Minzimin001 路华教育",
-      "hasAudio": true,
-      "hasTranscript": true,
-      "questionSourceFile": "2025年上海市普陀区中考一模英语试题（解析版）.docx",
-      "images": [
-        {
-          "localPath": "data/listening-em1/images/sh-em1-2025-普陀-listening-image-1.png",
-          "cloudPath": "_content/listening-em1/images/sh-em1-2025-普陀-listening-image-1.png"
-        },
-        {
-          "localPath": "data/listening-em1/images/sh-em1-2025-普陀-listening-image-2.png",
-          "cloudPath": "_content/listening-em1/images/sh-em1-2025-普陀-listening-image-2.png"
-        },
-        {
-          "localPath": "data/listening-em1/images/sh-em1-2025-普陀-listening-image-3.png",
-          "cloudPath": "_content/listening-em1/images/sh-em1-2025-普陀-listening-image-3.png"
-        },
-        {
-          "localPath": "data/listening-em1/images/sh-em1-2025-普陀-listening-image-4.png",
-          "cloudPath": "_content/listening-em1/images/sh-em1-2025-普陀-listening-image-4.png"
-        },
-        {
-          "localPath": "data/listening-em1/images/sh-em1-2025-普陀-listening-image-5.png",
-          "cloudPath": "_content/listening-em1/images/sh-em1-2025-普陀-listening-image-5.png"
-        },
-        {
-          "localPath": "data/listening-em1/images/sh-em1-2025-普陀-listening-image-6.png",
-          "cloudPath": "_content/listening-em1/images/sh-em1-2025-普陀-listening-image-6.png"
-        }
-      ],
-      "questions": [
-        {
-          "number": 1,
-          "prompt": "Listen and choose the right picture.",
-          "questionType": "picture",
-          "answer": "F",
-          "sectionKey": "A",
-          "sectionTitle": "A. Listen and choose the right picture."
-        },
-        {
-          "number": 2,
-          "prompt": "Listen and choose the right picture.",
-          "questionType": "picture",
-          "answer": "A",
-          "sectionKey": "A",
-          "sectionTitle": "A. Listen and choose the right picture."
-        },
-        {
-          "number": 3,
           "prompt": "Listen and choose the right picture.",
           "questionType": "picture",
           "answer": "E",
@@ -5648,32 +9720,16 @@ module.exports = {
           "sectionTitle": "A. Listen and choose the right picture."
         },
         {
-          "number": 4,
-          "prompt": "Listen and choose the right picture.",
-          "questionType": "picture",
-          "answer": "B",
-          "sectionKey": "A",
-          "sectionTitle": "A. Listen and choose the right picture."
-        },
-        {
-          "number": 5,
-          "prompt": "Listen and choose the right picture.",
-          "questionType": "picture",
-          "answer": "C",
-          "sectionKey": "A",
-          "sectionTitle": "A. Listen and choose the right picture."
-        },
-        {
           "number": 6,
           "prompt": "Listen and choose the best answer.",
           "questionType": "choice",
           "options": {
-            "A": "Peter.",
-            "B": "Danny.",
-            "C": "Mary.",
-            "D": "Lisa."
+            "A": "By bus.",
+            "B": "By bike.",
+            "C": "By car.",
+            "D": "On foot."
           },
-          "answer": "B",
+          "answer": "D",
           "sectionKey": "B",
           "sectionTitle": "B. Listen and choose the best answer."
         },
@@ -5682,12 +9738,12 @@ module.exports = {
           "prompt": "Listen and choose the best answer.",
           "questionType": "choice",
           "options": {
-            "A": "July 2nd.",
-            "B": "July 3rd.",
-            "C": "July 5t.",
-            "D": "July 8th."
+            "A": "Orange juice.",
+            "B": "Milk.",
+            "C": "Tea.",
+            "D": "Coffee."
           },
-          "answer": "D",
+          "answer": "A",
           "sectionKey": "B",
           "sectionTitle": "B. Listen and choose the best answer."
         },
@@ -5696,10 +9752,10 @@ module.exports = {
           "prompt": "Listen and choose the best answer.",
           "questionType": "choice",
           "options": {
-            "A": "He had a headache.",
-            "B": "He had a poor memory.",
-            "C": "He got up late.",
-            "D": "He didn’t get the message."
+            "A": "Two yuan.",
+            "B": "Five yuan.",
+            "C": "Six yuan.",
+            "D": "Ten yuan."
           },
           "answer": "D",
           "sectionKey": "B",
@@ -5710,12 +9766,12 @@ module.exports = {
           "prompt": "Listen and choose the best answer.",
           "questionType": "choice",
           "options": {
-            "A": "Enjoying a live concert.",
-            "B": "Seeing an exciting film.",
-            "C": "Watching a football match.",
-            "D": "Dancing at a party."
+            "A": "In the restaurant.",
+            "B": "In the zoo.",
+            "C": "In the pet shop.",
+            "D": "In the park."
           },
-          "answer": "A",
+          "answer": "C",
           "sectionKey": "B",
           "sectionTitle": "B. Listen and choose the best answer."
         },
@@ -5724,30 +9780,30 @@ module.exports = {
           "prompt": "Listen and choose the best answer.",
           "questionType": "choice",
           "options": {
-            "A": "Judy didn’t deserve to win.",
-            "B": "Judy looks like her mother a lot.",
-            "C": "Judy’s good at writing like her mother.",
-            "D": "Judy’s mother is too proud."
+            "A": "Because her mother didn't let her watch it.",
+            "B": "Because she didn't like the basketball match.",
+            "C": "Because there was something wrong with her television.",
+            "D": "Because she was busy preparing for her oral English test."
           },
-          "answer": "C",
+          "answer": "D",
           "sectionKey": "B",
           "sectionTitle": "B. Listen and choose the best answer."
         },
         {
           "number": 11,
-          "prompt": "Someone broke into Mary Brown’s office at 45 Green Lane.",
+          "prompt": "Tim was a polite waiter and he was very busy.",
           "questionType": "truefalse",
           "options": {
             "T": "T",
             "F": "F"
           },
-          "answer": "F",
+          "answer": "T",
           "sectionKey": "C",
           "sectionTitle": "C. Listen and tell whether the statements are true or false."
         },
         {
           "number": 12,
-          "prompt": "Mary’s laptop, jewellery, cash and her favourite novel were missing.",
+          "prompt": "The new customer gave his order without studying the menu.",
           "questionType": "truefalse",
           "options": {
             "T": "T",
@@ -5759,7 +9815,7 @@ module.exports = {
         },
         {
           "number": 13,
-          "prompt": "The novel was in a black notebook with a picture of roses on the cover.",
+          "prompt": "At first the customer felt hot in the small restaurant.",
           "questionType": "truefalse",
           "options": {
             "T": "T",
@@ -5771,19 +9827,7 @@ module.exports = {
         },
         {
           "number": 14,
-          "prompt": "A tall man in his twenties with a baseball hat might be the thief.",
-          "questionType": "truefalse",
-          "options": {
-            "T": "T",
-            "F": "F"
-          },
-          "answer": "F",
-          "sectionKey": "C",
-          "sectionTitle": "C. Listen and tell whether the statements are true or false."
-        },
-        {
-          "number": 15,
-          "prompt": "This case was probably caused by a crazy novel fan’s great interest.",
+          "prompt": "The customer wanted to let the manager know that Tim couldn't do anything right.",
           "questionType": "truefalse",
           "options": {
             "T": "T",
@@ -5794,42 +9838,54 @@ module.exports = {
           "sectionTitle": "C. Listen and tell whether the statements are true or false."
         },
         {
+          "number": 15,
+          "prompt": "There was something wrong with the air-conditioner in the small restaurant.",
+          "questionType": "truefalse",
+          "options": {
+            "T": "T",
+            "F": "F"
+          },
+          "answer": "F",
+          "sectionKey": "C",
+          "sectionTitle": "C. Listen and tell whether the statements are true or false."
+        },
+        {
           "number": 16,
-          "prompt": "Family love is about taking care of and ________ ________ the people who are related to you.",
+          "prompt": "Conan Doyle ________ ________ be a doctor but he was not successful.",
           "questionType": "blank",
-          "answer": "keeping safe",
+          "answer": "used",
           "sectionKey": "D",
           "sectionTitle": "D. Listen and complete the sentences."
         },
         {
           "number": 17,
-          "prompt": "Friend love makes you and your friends ________ ________.",
+          "prompt": "Conan Doyle really ________ ________, so he began to write detective stories.",
           "questionType": "blank",
-          "answer": "closely connected",
+          "answer": "liked writing",
           "sectionKey": "D",
           "sectionTitle": "D. Listen and complete the sentences."
         },
         {
           "number": 18,
-          "prompt": "Self-love means you like and ________ ________,even your mistakes.",
+          "prompt": "The character of Sherlock Holmes was based on Bell, one of Conan Doyle's ________ ________.",
           "questionType": "blank",
-          "answer": "accept yourself",
+          "answer": "university teachers",
           "sectionKey": "D",
           "sectionTitle": "D. Listen and complete the sentences."
         },
         {
           "number": 19,
-          "prompt": "We show love in different ways because of different ________ ________.",
+          "prompt": "If you want to know more about Sherlock Holmes, you can ________ ________ through the Internet.",
           "questionType": "blank",
-          "answer": "social backgrounds",
+          "answer": "find to information",
           "sectionKey": "D",
           "sectionTitle": "D. Listen and complete the sentences."
         },
         {
           "number": 20,
-          "prompt": "Love is not just for people, and it can also be found ________ ________.",
+          "prompt": "Don't forget to have a look at the museum about Sherlock Holmes if you have ________ ________ to visit London.",
           "questionType": "blank",
-          "answer": "among animals",
+          "answer": "a chance",
           "sectionKey": "D",
           "sectionTitle": "D. Listen and complete the sentences."
         }

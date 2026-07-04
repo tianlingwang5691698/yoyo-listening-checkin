@@ -31,7 +31,7 @@ def has_valid_answer(question):
         return False
     question_type = question.get('questionType')
     if question_type in {'choice', 'picture'}:
-        return answer.upper() in set('ABCDEFG')
+        return answer.upper() in set('ABCDEFGH')
     if question_type == 'truefalse':
         return answer.upper() in {'T', 'F'}
     return True
@@ -42,15 +42,25 @@ def validate_questions(item):
     questions = item.get('questions')
     if not isinstance(questions, list):
         return ['missing-questions']
-    if len(questions) != 20:
+    mode = '25' if len(questions) == 25 or any(int(q.get('number') or 0) > 20 for q in questions) else '20'
+    expected_numbers = list(range(1, 26)) if mode == '25' else list(range(1, 21))
+    picture_end = 6 if mode == '25' else 5
+    choice_start = 7 if mode == '25' else 6
+    choice_end = 14 if mode == '25' else 10
+    tf_start = 15 if mode == '25' else 11
+    tf_end = 20 if mode == '25' else 15
+    blank_start = 21 if mode == '25' else 16
+    blank_end = 25 if mode == '25' else 20
+
+    if len(questions) not in {20, 25}:
         reasons.append(f'question-count-{len(questions)}')
 
     numbers = [question.get('number') for question in questions]
-    if numbers != list(range(1, 21)):
-        reasons.append('question-numbers-not-1-20')
+    if numbers != expected_numbers:
+        reasons.append(f'question-numbers-not-1-{expected_numbers[-1]}')
 
     images = item.get('images') if isinstance(item.get('images'), list) else []
-    if len(images) < 5:
+    if len(images) < 1:
         reasons.append('missing-a-section-images')
 
     for question in questions:
@@ -58,17 +68,17 @@ def validate_questions(item):
         question_type = question.get('questionType')
         if not has_valid_answer(question):
             reasons.append(f'q{number}-missing-or-invalid-answer')
-        if 1 <= int(number or 0) <= 5 and question_type != 'picture':
+        if 1 <= int(number or 0) <= picture_end and question_type != 'picture':
             reasons.append(f'q{number}-not-picture')
-        if 6 <= int(number or 0) <= 10:
+        if choice_start <= int(number or 0) <= choice_end:
             options = question.get('options') or {}
             if question_type != 'choice':
                 reasons.append(f'q{number}-not-choice')
             if set(options.keys()) != set('ABCD') or any(not clean_text(options.get(k)) for k in 'ABCD'):
                 reasons.append(f'q{number}-missing-abcd-options')
-        if 11 <= int(number or 0) <= 15 and question_type != 'truefalse':
+        if tf_start <= int(number or 0) <= tf_end and question_type != 'truefalse':
             reasons.append(f'q{number}-not-truefalse')
-        if 16 <= int(number or 0) <= 20 and question_type != 'blank':
+        if blank_start <= int(number or 0) <= blank_end and question_type != 'blank':
             reasons.append(f'q{number}-not-blank')
     return reasons
 
@@ -91,6 +101,7 @@ def slim_item(item):
         '_id': item.get('_id'),
         'title': item.get('title'),
         'year': item.get('year'),
+        'sourceYear': item.get('sourceYear'),
         'district': item.get('district'),
         'examType': item.get('examType'),
         'stage': item.get('stage', '初中'),

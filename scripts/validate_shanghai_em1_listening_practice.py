@@ -34,6 +34,12 @@ def write_json(path, data):
 
 def main():
     items = json.loads(PRACTICE_PATH.read_text(encoding='utf-8'))
+    pre_rejected = []
+    if REJECTED_PATH.exists():
+        try:
+            pre_rejected = json.loads(REJECTED_PATH.read_text(encoding='utf-8'))
+        except Exception:
+            pre_rejected = []
     accepted = []
     rejected = []
     reason_counts = {}
@@ -53,18 +59,22 @@ def main():
         else:
             accepted.append(item)
     write_json(PRACTICE_PATH, accepted)
-    write_json(REJECTED_PATH, rejected)
+    all_rejected = pre_rejected + rejected
+    write_json(REJECTED_PATH, all_rejected)
+    for item in pre_rejected:
+        for reason in item.get('reasons', []):
+            reason_counts[reason] = reason_counts.get(reason, 0) + 1
     write_json(REPORT_PATH, {
         'sourceCount': len(items),
         'acceptedCount': len(accepted),
-        'rejectedCount': len(rejected),
+        'rejectedCount': len(all_rejected),
         'reasonCounts': dict(sorted(reason_counts.items())),
     })
     material = json.loads(MATERIAL_JSON.read_text(encoding='utf-8'))
     material['listeningEm1'] = [base.slim_item(item) for item in accepted]
     write_json(MATERIAL_JSON, material)
     MATERIAL_JS.write_text('module.exports = ' + json.dumps(material, ensure_ascii=False, indent=2) + ';\n', encoding='utf-8')
-    print(json.dumps({'accepted': len(accepted), 'rejected': len(rejected), 'reasonCounts': reason_counts}, ensure_ascii=False, indent=2))
+    print(json.dumps({'accepted': len(accepted), 'rejected': len(all_rejected), 'reasonCounts': reason_counts}, ensure_ascii=False, indent=2))
     if rejected:
         sys.exit(1)
 

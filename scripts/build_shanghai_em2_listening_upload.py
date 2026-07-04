@@ -8,11 +8,16 @@ from pathlib import Path
 from build_shanghai_em1_reading_upload import DISTRICTS, clean, read_text
 
 
-ROOTS = [
+DEFAULT_ROOTS = [
     Path('/Users/wangtianlong/工作/未命名文件夹/3. 上海中考英语一模二模（12-24）'),
     Path('/Users/wangtianlong/工作/未命名文件夹/7. 2025年上海二模/英语'),
     Path('/Users/wangtianlong/工作/未命名文件夹/9.2026年上海二模'),
 ]
+ROOTS = [
+    Path(p)
+    for p in os.environ.get('SH_EM2_LISTENING_SOURCE_ROOTS', '').split(':')
+    if p
+] or DEFAULT_ROOTS
 FORMAL_OUT = Path('data/imports/shanghai-em2-2012-2026/formal')
 UPLOAD_OUT = Path('data/listening-em2')
 AUDIO_OUT = UPLOAD_OUT / 'audio'
