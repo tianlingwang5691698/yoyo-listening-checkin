@@ -75,6 +75,13 @@ function withImageDisplayMode(item) {
   });
 }
 
+function buildAnswerSummary(item) {
+  return (item && item.questions || [])
+    .filter((question) => question.answer)
+    .map((question) => `${question.number}.${question.answer}`)
+    .join('  ');
+}
+
 Page({
   data: page.createCloudPageData({
     item: null,
@@ -97,6 +104,7 @@ Page({
     studyCompleted: false,
     transcriptVisible: false,
     audioLocked: false,
+    answerSummary: '',
     vocabularyCards: [],
     phraseCards: [],
     sentencePatternCards: []
@@ -113,6 +121,7 @@ Page({
     this.setData({
       item,
       questions: item ? buildQuestions(item) : [],
+      answerSummary: item ? buildAnswerSummary(item) : '',
       studyCompleted,
       audioLocked: false
     });

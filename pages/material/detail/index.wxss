@@ -104,6 +104,27 @@
   margin-top: 14rpx;
 }
 
+.answer-summary-box {
+  margin-top: 16rpx;
+  padding: 18rpx;
+  border-radius: var(--radius-md);
+  background: var(--surface-subtle);
+}
+
+.answer-summary-title {
+  color: var(--accent-deep);
+  font-size: var(--font-caption-size);
+  font-weight: var(--font-title-weight);
+}
+
+.answer-summary-text {
+  margin-top: 8rpx;
+  color: var(--text-main);
+  font-size: var(--font-caption-size);
+  line-height: 1.55;
+  word-break: break-word;
+}
+
 .study-tabs {
   margin-top: 18rpx;
   display: grid;

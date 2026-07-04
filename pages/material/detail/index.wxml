@@ -52,6 +52,10 @@
     <view class="transcript-box" wx:if="{{transcriptVisible && item.transcript}}">{{item.transcript}}</view>
     <view class="empty-line" wx:elif="{{!transcriptVisible && item.transcript}}">点击生成后显示参考文本。</view>
     <view class="empty-line" wx:else>暂无文本</view>
+    <view class="answer-summary-box" wx:if="{{transcriptVisible && answerSummary}}">
+      <view class="answer-summary-title">参考答案</view>
+      <view class="answer-summary-text">{{answerSummary}}</view>
+    </view>
     <view class="study-error" wx:if="{{studyError}}">{{studyError}}</view>
     <view class="study-tabs" wx:if="{{studyPack}}">
       <view class="study-tab {{activeStudyTab === item.key ? 'is-active' : ''}}" wx:for="{{studyTabs}}" wx:key="key" data-tab="{{item.key}}" bindtap="selectStudyTab">{{item.label}}</view>
