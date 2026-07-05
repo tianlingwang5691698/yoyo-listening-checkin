@@ -441,7 +441,7 @@ async function getListeningPlanOverview(options, onRefresh) {
     planSource: 'fixed-yoyo',
     isYoyoFixedPlan: false,
     fixedPlan: null
-  }, { onRefresh });
+  }, { onRefresh, useCache: false });
 }
 
 async function getListeningMaterialDetail(options, onRefresh) {
@@ -454,7 +454,7 @@ async function getListeningMaterialDetail(options, onRefresh) {
     tasks: [],
     activePlan: null,
     selectedMaterial: null
-  }, { onRefresh });
+  }, { onRefresh, useCache: false });
 }
 
 async function saveListeningPlanMaterial(options) {

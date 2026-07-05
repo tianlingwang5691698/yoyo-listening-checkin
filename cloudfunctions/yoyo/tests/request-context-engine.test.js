@@ -103,6 +103,21 @@ test('resolveCatalogCategories 对任务详情只刷新请求分类', () => {
   );
 });
 
+test('resolveCatalogCategories 对听力计划按级别刷新素材', () => {
+  assert.deepEqual(
+    requestContextEngine.resolveCatalogCategories('getListeningPlanOverview', '', { levelId: 'A2' }),
+    ['peppa', 'newconcept2', 'unlock2']
+  );
+  assert.deepEqual(
+    requestContextEngine.resolveCatalogCategories('getListeningPlanOverview', '', { levelId: 'B1' }),
+    ['newconcept3', 'unlock3']
+  );
+  assert.deepEqual(
+    requestContextEngine.resolveCatalogCategories('getListeningMaterialDetail', 'newconcept4', {}),
+    ['newconcept4']
+  );
+});
+
 test('resolveCatalogCategories 阅读学习包不刷新音频目录', () => {
   assert.deepEqual(
     requestContextEngine.resolveCatalogCategories('getReadingStudyPack', '', {}),

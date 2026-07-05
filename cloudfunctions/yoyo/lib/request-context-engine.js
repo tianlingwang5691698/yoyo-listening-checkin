@@ -12,6 +12,18 @@ function resolveCatalogCategories(action, requestedCategory, payload = {}) {
     }
     return knownAudioCategories;
   }
+  if (action === 'getListeningPlanOverview') {
+    const levelId = String((payload && payload.levelId) || 'A1').trim();
+    if (levelId === 'Pre A1') return ['song'];
+    if (levelId === 'A1') return ['newconcept1', 'unlock1', 'peppa'];
+    if (levelId === 'A2') return ['peppa', 'newconcept2', 'unlock2'];
+    if (levelId === 'B1') return ['newconcept3', 'unlock3'];
+    if (levelId === 'B2') return ['newconcept4', 'unlock4'];
+    return [];
+  }
+  if (action === 'getListeningMaterialDetail') {
+    return knownAudioCategories.includes(requestedCategory) ? [requestedCategory] : [];
+  }
   if (action === 'getTaskDetail' || action === 'markTaskListened') {
     if (knownAudioCategories.includes(requestedCategory)) {
       return [requestedCategory];
