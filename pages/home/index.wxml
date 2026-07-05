@@ -46,7 +46,7 @@
     <view class="study-area-card card" bindtap="openListening">
       <view class="study-area-icon">🎧</view>
       <view class="study-area-title">听力</view>
-      <view class="study-area-meta">初三一模/二模</view>
+      <view class="study-area-meta">{{listeningSummary}}</view>
     </view>
     <view class="study-area-card card" bindtap="openReading">
       <view class="study-area-icon">📚</view>
@@ -75,7 +75,7 @@
     </view>
   </view>
 
-  <view class="empty-state" wx:if="{{!homeLoading && !hasGroupedTasks && syncMode !== 'cloud-error'}}">暂无今日任务。</view>
+  <view class="empty-state" wx:if="{{!homeLoading && !hasGroupedTasks && syncMode !== 'cloud-error'}}">{{needsListeningPlanSetup ? '先设置听力计划。' : '暂无今日任务。'}}</view>
 
   <view class="entry-poster" wx:if="{{entryPosterVisible}}">
     <view class="entry-poster-skip" bindtap="closeEntryPoster">跳过</view>

@@ -53,6 +53,21 @@ function studyDoneKey(item) {
   return `listeningStudyDoneV1:${item && (item._id || item.id || '')}`;
 }
 
+function hasListeningStudyCards(studyPack) {
+  return studyPack
+    && ((studyPack.vocabularyCards || []).length
+      || (studyPack.phraseCards || []).length
+      || (studyPack.sentencePatternCards || []).length);
+}
+
+function getListeningStudyError(result) {
+  const message = result && result.cloudError && result.cloudError.message;
+  if (message) {
+    return `生成成功但本次返回异常：${message}`;
+  }
+  return '生成失败，稍后重试。';
+}
+
 function recordListeningStudyPackSynced(item) {
   if (!item) return;
   const targetId = String(item._id || item.id || item.audioCloudPath || item.title || '').trim();
@@ -271,17 +286,22 @@ Page({
     }
     this.setData({ studyLoading: true, studyError: '', transcriptVisible: true });
     const result = await store.getListeningStudyPack(item, { useCache: false });
-    const studyPack = result && result.studyPack;
-    const hasCards = studyPack
-      && ((studyPack.vocabularyCards || []).length || (studyPack.phraseCards || []).length || (studyPack.sentencePatternCards || []).length);
-    if (hasCards) {
+    let studyPack = result && result.studyPack;
+    if (hasListeningStudyCards(studyPack)) {
+      this.applyStudyPack(studyPack);
+      this.setData({ studyLoading: false });
+      return;
+    }
+    const cachedResult = await store.getListeningStudyPack(item, { cacheOnly: true, useCache: false });
+    studyPack = cachedResult && cachedResult.studyPack;
+    if (hasListeningStudyCards(studyPack)) {
       this.applyStudyPack(studyPack);
       this.setData({ studyLoading: false });
       return;
     }
     this.setData({
       studyLoading: false,
-      studyError: '生成失败，稍后重试。'
+      studyError: getListeningStudyError(result)
     });
   }
 });

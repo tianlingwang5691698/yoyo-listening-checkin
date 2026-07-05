@@ -5,13 +5,19 @@ function getPlanMaterial(plan, category) {
   return ((plan && plan.materials) || []).find((item) => item.category === category) || null;
 }
 
+function decorateActivePlan(plan) {
+  return listeningPlanEngine.decoratePlan(plan, {
+    getCatalog: study.getPlanCatalog
+  });
+}
+
 async function getListeningPlanOverview(event) {
   const { ctx } = await study.prepareRequestContext(Object.assign({}, event, {
     action: 'getListeningPlanOverview'
   }));
   const payload = (event && event.payload) || {};
   const selectedLevel = listeningPlanEngine.normalizeLevelId(payload.levelId || 'A1');
-  const activePlan = await study.getActiveListeningPlan(ctx);
+  const activePlan = decorateActivePlan(await study.getActiveListeningPlan(ctx));
   const materials = study.buildListeningPlanMaterials(selectedLevel).map((item) => Object.assign({}, item, {
     selected: !!getPlanMaterial(activePlan, item.category)
   }));
@@ -52,7 +58,7 @@ async function getListeningMaterialDetail(event) {
   const category = String(payload.category || '').trim();
   const levelId = listeningPlanEngine.normalizeLevelId(payload.levelId || 'A1');
   const tasks = await study.resolveStandaloneCategoryTasks(category, ctx.child.childId, today);
-  const activePlan = await study.getActiveListeningPlan(ctx);
+  const activePlan = decorateActivePlan(await study.getActiveListeningPlan(ctx));
   const selectedMaterial = getPlanMaterial(activePlan, category);
   return {
     currentMember: ctx.member,
@@ -77,15 +83,28 @@ async function saveListeningPlanMaterial(event) {
     action: 'saveListeningPlanMaterial'
   }));
   const payload = (event && event.payload) || {};
-  const plan = await study.saveListeningPlanMaterial(ctx, payload);
+  const plan = decorateActivePlan(await study.saveListeningPlanMaterial(ctx, payload));
   return {
     saved: true,
     activePlan: plan
   };
 }
 
+async function removeListeningPlanMaterial(event) {
+  const { ctx } = await study.prepareRequestContext(Object.assign({}, event, {
+    action: 'removeListeningPlanMaterial'
+  }));
+  const payload = (event && event.payload) || {};
+  const plan = decorateActivePlan(await study.removeListeningPlanMaterial(ctx, payload));
+  return {
+    removed: true,
+    activePlan: plan && plan.active !== false ? plan : null
+  };
+}
+
 module.exports = {
   getListeningPlanOverview,
   getListeningMaterialDetail,
-  saveListeningPlanMaterial
+  saveListeningPlanMaterial,
+  removeListeningPlanMaterial
 };

@@ -4,10 +4,10 @@
     <view class="type-caption level-subtitle">选择级别和听力素材</view>
   </view>
 
-  <view class="test-card">
+  <view class="test-card" bindtap="openPlanSettings">
     <view class="test-title">听力计划</view>
-    <view class="test-copy">素材、集数、每日数量</view>
-    <view class="test-action">{{activePlan ? '已设置' : '设置计划'}}</view>
+    <view class="test-copy">{{planSummaryText}}</view>
+    <view class="test-action">设置计划</view>
   </view>
 
   <view class="fixed-card" wx:if="{{isYoyoFixedPlan}}" bindtap="openFixedStage">
@@ -25,6 +25,8 @@
       </view>
     </block>
   </view>
+
+  <view class="loading-card" wx:if="{{levelLoading}}">正在加载 {{selectedLevel}}</view>
 
   <view class="stage-list">
     <block wx:for="{{materials}}" wx:key="category">

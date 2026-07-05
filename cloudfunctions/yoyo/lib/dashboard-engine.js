@@ -28,6 +28,8 @@ function decorateHomeTask(task) {
     isPendingAsset: !!task.isPendingAsset,
     completedToday: !!task.completedToday,
     textType: getHomeTextType(task),
+    durationSec: Number(task.durationSec || 0),
+    repeatTarget,
     progressText: `${task.playCount || 0}/${repeatTarget} 遍`
   };
 }
@@ -89,6 +91,9 @@ function buildHomeTaskGroups(dailyTasks, planDayIndex, deps, categoryOrder) {
     const activeTasks = categoryTasks.filter((item) => !item.isPendingAsset);
     const completedCount = activeTasks.filter((item) => item.completedToday).length;
     const totalCount = activeTasks.length || categoryTasks.length;
+    const durationSec = activeTasks.reduce((sum, item) => (
+      sum + (Number(item.durationSec || 0) * Number(item.repeatTarget || 1))
+    ), 0);
     const nextTask = categoryTasks.find((item) => !item.isPendingAsset && !item.completedToday) || categoryTasks[0];
     const allDone = completedCount === totalCount;
     const pending = nextTask && nextTask.isPendingAsset;
@@ -98,6 +103,8 @@ function buildHomeTaskGroups(dailyTasks, planDayIndex, deps, categoryOrder) {
       completedCount,
       totalCount,
       progressPercent: totalCount ? Math.round((completedCount / totalCount) * 100) : 0,
+      durationSec,
+      minutes: durationSec ? Math.max(1, Math.round(durationSec / 60)) : 0,
       nextTask,
       programSubtitle: allDone
         ? '今日完成'
@@ -138,22 +145,36 @@ async function getDashboardData(ctx, deps, options = {}) {
     ? await deps.getActiveListeningPlan(ctx)
     : null;
   const useCustomListeningPlan = !!(activeListeningPlan && activeListeningPlan.active !== false);
+  const useFixedYoyoPlan = !useCustomListeningPlan && !!(deps.isYoyoChild && deps.isYoyoChild(ctx.child));
+  const hasListeningPlan = useCustomListeningPlan || useFixedYoyoPlan;
   const getActivePlanDayIndex = deps.getNextPlanDayIndexForDate || deps.getPlanDayIndexForDate;
   const planDayIndex = useCustomListeningPlan
     ? deps.getCustomPlanDayIndex(checkins, today, activeListeningPlan)
-    : getActivePlanDayIndex(checkins, today);
+    : useFixedYoyoPlan
+      ? getActivePlanDayIndex(checkins, today)
+      : 1;
   const peppaReviewPlanOptions = deps.getPeppaReviewPlanOptions
     ? deps.getPeppaReviewPlanOptions(progressRecords, checkins, ctx.child.childId, today)
     : {};
   const todayPlan = useCustomListeningPlan
     ? deps.buildListeningPlanForDay(activeListeningPlan, planDayIndex)
-    : deps.buildPlanForDay(
-      planDayIndex,
-      peppaReviewPlanOptions
-    );
+    : useFixedYoyoPlan
+      ? deps.buildPlanForDay(
+        planDayIndex,
+        peppaReviewPlanOptions
+      )
+      : {
+        dayIndex: 1,
+        phase: { key: 'none', label: '未设置' },
+        byCategory: {},
+        flatTasks: [],
+        categoryOrder: []
+      };
   const planCategoryOrder = useCustomListeningPlan
     ? (todayPlan.categoryOrder || Object.keys(todayPlan.byCategory || {}))
-    : deps.getPlanCategoryOrder(planDayIndex);
+    : useFixedYoyoPlan
+      ? deps.getPlanCategoryOrder(planDayIndex)
+      : [];
   const shouldBuildDailyTasks = includeDailyTasks || includeCategorySummaries || includeCatchupState || includeTaskProgressSummary;
   const baseDailyTasks = shouldBuildDailyTasks
     ? (useCustomListeningPlan
@@ -161,13 +182,17 @@ async function getDashboardData(ctx, deps, options = {}) {
         planRunType: 'normal',
         listeningPlanId: activeListeningPlan.planId || activeListeningPlan._id || ''
       })
-      : deps.decoratePlanTasks(progressRecords, ctx.child.childId, today, todayPlan, {
-        planRunType: 'normal'
-      }))
+      : useFixedYoyoPlan
+        ? deps.decoratePlanTasks(progressRecords, ctx.child.childId, today, todayPlan, {
+          planRunType: 'normal'
+        })
+        : [])
     : [];
   const dailyTasks = useCustomListeningPlan
     ? applyCheckinCompletion(baseDailyTasks, checkins, today)
-    : appendTodayPeppaReviewProgress(applyCheckinCompletion(baseDailyTasks, checkins, today), progressRecords, ctx.child.childId, today, deps);
+    : useFixedYoyoPlan
+      ? appendTodayPeppaReviewProgress(applyCheckinCompletion(baseDailyTasks, checkins, today), progressRecords, ctx.child.childId, today, deps)
+      : baseDailyTasks;
   const categorySummaries = includeCategorySummaries
     ? buildCategorySummariesFromDailyTasks(dailyTasks, planDayIndex, deps, planCategoryOrder)
     : [];
@@ -182,6 +207,7 @@ async function getDashboardData(ctx, deps, options = {}) {
     ? (activeTaskCount > 0 && activeTaskCount === completedTaskCountToday)
     : false;
   const catchupState = includeCatchupState && !useCustomListeningPlan
+    && useFixedYoyoPlan
     ? deps.buildCatchupState(checkins, today, deps.getPlanStartDate(ctx, today, checkins), todayDone)
     : undefined;
   const result = {
@@ -193,9 +219,11 @@ async function getDashboardData(ctx, deps, options = {}) {
     planDayIndex,
     planPhase: todayPlan.phase.key,
     planPhaseLabel: todayPlan.phase.label,
-    planSource: useCustomListeningPlan ? 'custom-listening' : 'fixed-yoyo',
+    planSource: useCustomListeningPlan ? 'custom-listening' : (useFixedYoyoPlan ? 'fixed-yoyo' : 'none'),
     listeningPlan: activeListeningPlan || null,
-    isYoyoFixedPlan: !useCustomListeningPlan && !!(deps.isYoyoChild && deps.isYoyoChild(ctx.child))
+    hasListeningPlan,
+    needsListeningPlanSetup: !hasListeningPlan,
+    isYoyoFixedPlan: useFixedYoyoPlan
   };
   if (includeUser) {
     result.user = ctx.user;

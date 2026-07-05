@@ -46,6 +46,25 @@ function buildMaterialEntries(levelId, deps) {
   });
 }
 
+function getPlanMaterialDuration(catalog, startNo, endNo, dailyCount, repeatTarget) {
+  const rangeTasks = (catalog || []).slice(Math.max(0, startNo - 1), Math.max(startNo, endNo));
+  const knownDurations = rangeTasks
+    .map((item) => Number(item && item.durationSec || 0))
+    .filter((value) => Number.isFinite(value) && value > 0);
+  const rangeDurationSec = Math.round(knownDurations.reduce((sum, value) => sum + value, 0));
+  const effectiveDailyCount = Math.min(Math.max(1, Number(dailyCount || 1)), rangeTasks.length || 1);
+  const averageDurationSec = knownDurations.length ? rangeDurationSec / knownDurations.length : 0;
+  return {
+    rangeCount: rangeTasks.length,
+    knownDurationCount: knownDurations.length,
+    durationReady: !!rangeTasks.length && knownDurations.length === rangeTasks.length,
+    rangeDurationSec,
+    estimatedDailyDurationSec: averageDurationSec
+      ? Math.round(averageDurationSec * effectiveDailyCount * Math.max(1, Number(repeatTarget || 1)))
+      : 0
+  };
+}
+
 function normalizePlanMaterial(input, deps) {
   const category = String(input && input.category || '').trim();
   const definition = getMaterial(category);
@@ -59,22 +78,41 @@ function normalizePlanMaterial(input, deps) {
   }
   const startNo = Math.max(1, Math.min(totalCount, Number(input.startNo || 1)));
   const endNo = Math.max(startNo, Math.min(totalCount, Number(input.endNo || totalCount)));
-  return {
+  const dailyCount = Math.max(1, Math.min(20, Number(input.dailyCount || 1)));
+  const repeatTarget = Math.max(1, Math.min(10, Number(input.repeatTarget || 3)));
+  return Object.assign({
     levelId: normalizeLevelId(input.levelId || definition.levelIds[0]),
     category,
     title: definition.title,
     startNo,
     endNo,
-    dailyCount: Math.max(1, Math.min(20, Number(input.dailyCount || 1))),
-    repeatTarget: Math.max(1, Math.min(10, Number(input.repeatTarget || 3))),
+    dailyCount,
+    repeatTarget,
     totalCount,
     enabled: true
-  };
+  }, getPlanMaterialDuration(catalog, startNo, endNo, dailyCount, repeatTarget));
+}
+
+function decoratePlan(plan, deps) {
+  if (!plan) {
+    return null;
+  }
+  return Object.assign({}, plan, {
+    materials: (Array.isArray(plan.materials) ? plan.materials : [])
+      .map((item) => normalizePlanMaterial(item, deps))
+      .filter(Boolean)
+  });
 }
 
 function mergePlanMaterial(plan, material) {
   const existing = Array.isArray(plan && plan.materials) ? plan.materials : [];
   return existing.filter((item) => item.category !== material.category).concat([material]);
+}
+
+function removePlanMaterial(plan, category) {
+  const targetCategory = String(category || '').trim();
+  const existing = Array.isArray(plan && plan.materials) ? plan.materials : [];
+  return existing.filter((item) => item && item.category !== targetCategory);
 }
 
 function getCustomPlanDayIndex(checkins, date, planId) {
@@ -159,7 +197,9 @@ module.exports = {
   buildLevelTabs,
   buildMaterialEntries,
   normalizePlanMaterial,
+  decoratePlan,
   mergePlanMaterial,
+  removePlanMaterial,
   getCustomPlanDayIndex,
   buildPlanForDay,
   decoratePlanTasks

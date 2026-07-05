@@ -30,10 +30,10 @@ const STORAGE_ROOTS = {
   song: 'A1/Super simple songs'
 };
 const STORAGE_ROOT_CANDIDATES = {
-  newconcept1: [NEW_CONCEPT1_AUDIO_ROOT, 'A1/NewConcept1', 'A1/New Concept 1', 'A1/new-concept-1-us'],
-  newconcept2: ['A2/NewConcept2-US/新概念英语（第2册）美音（MP3+LRC）', 'A2/NewConcept2-US/新概念英语（第二册）美音（MP3+LRC）', NEW_CONCEPT2_AUDIO_ROOT, 'A2/NewConcept2', 'A2/New Concept 2', 'A2/new-concept-2-us', 'A2/Newconcept2'],
-  newconcept3: ['B1/NewConcept3-US/新概念英语（第3册）美音（MP3+LRC）', 'B1/NewConcept3-US/新概念英语（第三册）美音（MP3+LRC）', NEW_CONCEPT3_AUDIO_ROOT, 'B1/NewConcept3', 'B1/New Concept 3', 'B1/new-concept-3-us', 'B1/Newconcept3'],
-  newconcept4: ['B2/NewConcept4-US/新概念英语（第4册）美音（MP3+LRC）', 'B2/NewConcept4-US/新概念英语（第四册）美音（MP3+LRC）', 'B2/NewConcept3-US/新概念英语（第4册）美音（MP3+LRC）', NEW_CONCEPT4_AUDIO_ROOT, 'B2/NewConcept4', 'B2/New Concept 4', 'B2/new-concept-4-us', 'B2/Newconcept4', 'B2/NewConcept3-US'],
+  newconcept1: [NEW_CONCEPT1_AUDIO_ROOT, `${NEW_CONCEPT1_AUDIO_ROOT}/新概念英语（第1册）美音（MP3+LRC）`, `${NEW_CONCEPT1_AUDIO_ROOT}/新概念英语（第一册）美音（MP3+LRC）`, 'A1/NewConcept1', 'A1/New Concept 1', 'A1/new-concept-1-us'],
+  newconcept2: [NEW_CONCEPT2_AUDIO_ROOT, 'A2/NewConcept2-US/新概念英语（第2册）美音（MP3+LRC）', 'A2/NewConcept2-US/新概念英语（第二册）美音（MP3+LRC）', 'A2/NewConcept2-US/新概念英语第二册', 'A2/NewConcept2', 'A2/New Concept 2', 'A2/new-concept-2-us', 'A2/Newconcept2'],
+  newconcept3: [NEW_CONCEPT3_AUDIO_ROOT, 'B1/NewConcept3-US/新概念英语（第3册）美音（MP3+LRC）', 'B1/NewConcept3-US/新概念英语（第三册）美音（MP3+LRC）', 'B1/NewConcept3-US/新概念英语第三册', 'B1/NewConcept3', 'B1/New Concept 3', 'B1/new-concept-3-us', 'B1/Newconcept3'],
+  newconcept4: [NEW_CONCEPT4_AUDIO_ROOT, 'B2/NewConcept4-US/新概念英语（第4册）美音（MP3+LRC）', 'B2/NewConcept4-US/新概念英语（第四册）美音（MP3+LRC）', 'B2/NewConcept4-US/新概念英语第四册', 'B2/NewConcept4', 'B2/New Concept 4', 'B2/new-concept-4-us', 'B2/Newconcept4', 'B2/NewConcept3-US', 'B2/NewConcept3-US/新概念英语（第4册）美音（MP3+LRC）'],
   peppa: [`${STORAGE_ROOTS.peppa}/第1季`, `${STORAGE_ROOTS.peppa}/第2季`, `${STORAGE_ROOTS.peppa}/第3季`, STORAGE_ROOTS.peppa],
   unlock1: [UNLOCK1_AUDIO_ROOT, 'A1/Unlock1'],
   unlock2: [UNLOCK2_AUDIO_ROOT, 'A2/Unlock2', 'A2/Unlock 2'],
@@ -42,6 +42,15 @@ const STORAGE_ROOT_CANDIDATES = {
   song: [STORAGE_ROOTS.song, 'A1/Super simple song']
 };
 const AUDIO_FILE_PATTERN = /\.(mp3|m4a|aac|wav)$/i;
+const NEW_CONCEPT_AUDIO_MIN_SIZE = 100 * 1024;
+const NON_AUDIO_FILE_PATTERN = /\.(lrc|srt|vtt|txt|json|pdf|jpg|jpeg|png|webp)$/i;
+const RUNTIME_CATALOG_TTL_MS = 10 * 60 * 1000;
+const NEW_CONCEPT_DISCOVERY_ROOTS = {
+  newconcept1: ['A1'],
+  newconcept2: ['A2'],
+  newconcept3: ['B1'],
+  newconcept4: ['B2']
+};
 let runtimeCatalogs = null;
 let runtimeCatalogExpiresAt = 0;
 let runtimeCatalogDebug = null;
@@ -457,8 +466,59 @@ function getFileExt(path) {
   return match ? match[1].toLowerCase() : '';
 }
 
+function isAudioStorageFile(category, item) {
+  const cloudPath = item && item.cloudPath;
+  if (AUDIO_FILE_PATTERN.test(cloudPath)) {
+    return true;
+  }
+  if (!NEW_CONCEPT_CATEGORIES.includes(category) || NON_AUDIO_FILE_PATTERN.test(cloudPath)) {
+    return false;
+  }
+  return Number((item && item.size) || 0) >= NEW_CONCEPT_AUDIO_MIN_SIZE;
+}
+
 function normalizeKey(value) {
   return String(value || '').trim().toLowerCase();
+}
+
+function normalizePathSearchText(value) {
+  return normalizeCloudPath(value)
+    .toLowerCase()
+    .replace(/\s+/g, '')
+    .replace(/[_-]+/g, '')
+    .replace(/[()（）【】\[\]{}]/g, '');
+}
+
+function getChineseNumber(value) {
+  return {
+    1: '一',
+    2: '二',
+    3: '三',
+    4: '四'
+  }[String(value)] || String(value);
+}
+
+function isNewConceptPathForCategory(category, cloudPath) {
+  if (!NEW_CONCEPT_CATEGORIES.includes(category)) {
+    return false;
+  }
+  const levelNumber = category.replace('newconcept', '') || '1';
+  const chineseNumber = getChineseNumber(levelNumber);
+  const text = normalizePathSearchText(cloudPath);
+  return [
+    `newconcept${levelNumber}`,
+    `newconcept${levelNumber}us`,
+    `newconceptenglish${levelNumber}`,
+    `newconceptenglish${levelNumber}us`,
+    `newconcept-${levelNumber}`,
+    `nce${levelNumber}`,
+    `新概念英语第${levelNumber}册`,
+    `新概念英语第${chineseNumber}册`,
+    `新概念第${levelNumber}册`,
+    `新概念第${chineseNumber}册`,
+    `新概念${levelNumber}`,
+    `新概念${chineseNumber}`
+  ].some((term) => text.includes(normalizePathSearchText(term)));
 }
 
 function normalizeUnlock1Unit(value) {
@@ -759,7 +819,11 @@ function sortFilesByPath(left, right) {
 async function buildCloudCatalogFromRoot(category, rootPath, staticItems, options) {
   const files = await listDirectoryFiles(rootPath);
   const durationLookup = (options && options.durationLookup) || {};
-  const audioFiles = files.filter((item) => AUDIO_FILE_PATTERN.test(item.cloudPath)).sort(sortFilesByPath);
+  const pathFilter = options && typeof options.pathFilter === 'function' ? options.pathFilter : null;
+  const audioFiles = files
+    .filter((item) => isAudioStorageFile(category, item))
+    .filter((item) => !pathFilter || pathFilter(item))
+    .sort(sortFilesByPath);
   const pdfByFolder = {};
   files.filter((item) => /\.pdf$/i.test(item.cloudPath)).forEach((item) => {
     pdfByFolder[getParentFolder(item.cloudPath)] = item;
@@ -865,6 +929,8 @@ async function buildCloudCatalogFromRoot(category, rootPath, staticItems, option
       rawStorageShape: (storageDebugShapes[normalizeCloudPath(rootPath)] || []).join(','),
       scanMode: 'manager-scan',
       scanError: '',
+      pathFilter: pathFilter ? 'newconcept-discovery' : '',
+      audioFallbackMode: NEW_CONCEPT_CATEGORIES.includes(category) ? 'extension-or-size' : 'extension',
       listMode: category === 'unlock1'
         ? (useUnlock1TrainingPool ? 'training-pool' : 'catalog-fallback')
         : 'manager-scan',
@@ -974,6 +1040,33 @@ async function buildCloudCatalogForCategory(category, staticItems) {
       errors.push(`${rootPath}: ${formatStorageError(error)}`);
     }
   }
+  if (NEW_CONCEPT_CATEGORIES.includes(category)) {
+    const discoveryRoots = NEW_CONCEPT_DISCOVERY_ROOTS[category] || [];
+    for (const rootPath of discoveryRoots) {
+      try {
+        const result = await buildCloudCatalogFromRoot(category, rootPath, staticItems, {
+          trainingPool,
+          durationLookup,
+          pathFilter: (item) => isNewConceptPathForCategory(category, item.cloudPath)
+        });
+        if (result.tasks.length) {
+          return {
+            tasks: result.tasks,
+            debug: Object.assign({}, result.debug, {
+              selectedRoot: rootPath,
+              rootCandidates: roots.concat(discoveryRoots),
+              scanMode: 'manager-discovery',
+              listMode: 'manager-discovery',
+              emptyRoots: emptyScans.map((item) => item.root)
+            })
+          };
+        }
+        emptyScans.push(result.debug);
+      } catch (error) {
+        errors.push(`${rootPath}: ${formatStorageError(error)}`);
+      }
+    }
+  }
   return {
     tasks: [],
     debug: {
@@ -1059,7 +1152,13 @@ async function refreshRuntimeCatalogs(force, categories) {
   const startedAt = Date.now();
   const now = Date.now();
   const targetCategories = Array.from(new Set((categories && categories.length ? categories : ['newconcept1', 'peppa', 'unlock1', 'song']).filter(Boolean)));
-  const hasAllRequested = runtimeCatalogs && targetCategories.every((category) => Array.isArray(runtimeCatalogs[category]));
+  const hasAllRequested = runtimeCatalogs && targetCategories.every((category) => {
+    const catalog = runtimeCatalogs[category];
+    if (!Array.isArray(catalog)) {
+      return false;
+    }
+    return !NEW_CONCEPT_CATEGORIES.includes(category) || catalog.length > 0;
+  });
   if (!force && hasAllRequested && runtimeCatalogExpiresAt > now) {
     return runtimeCatalogs;
   }
@@ -1078,6 +1177,8 @@ async function refreshRuntimeCatalogs(force, categories) {
         : (result.tasks.length ? result.tasks : staticUnlock1Filtered);
     } else if (category === 'peppa') {
       nextCatalogs.peppa = result.tasks.length ? result.tasks : staticMap.peppa;
+    } else if (NEW_CONCEPT_CATEGORIES.includes(category)) {
+      nextCatalogs[category] = result.tasks.length ? result.tasks : (nextCatalogs[category] || staticMap[category] || []);
     } else {
       nextCatalogs[category] = result.tasks;
     }
@@ -1085,7 +1186,7 @@ async function refreshRuntimeCatalogs(force, categories) {
   });
   runtimeCatalogs = nextCatalogs;
   runtimeCatalogDebug = summarizeRuntimeCatalogDebug(nextDebug);
-  runtimeCatalogExpiresAt = now + 5 * 60 * 1000;
+  runtimeCatalogExpiresAt = now + RUNTIME_CATALOG_TTL_MS;
   monitor.logPerf('cloudfn', 'refreshRuntimeCatalogs', Date.now() - startedAt, {
     categories: targetCategories.join(',')
   });

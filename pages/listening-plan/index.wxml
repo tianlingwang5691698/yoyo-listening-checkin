@@ -1,0 +1,74 @@
+<view class="theme-{{theme}} page-shell listening-plan-page">
+  <view class="plan-header">
+    <view class="type-caption">听力计划</view>
+    <view class="plan-title type-page-title">设置计划</view>
+    <view class="type-caption">{{selectedLevel}} · 选择素材和范围</view>
+  </view>
+
+  <view class="fixed-card" wx:if="{{isYoyoFixedPlan}}" bindtap="openFixedStage">
+    <view>
+      <view class="stage-row-title">佑佑当前计划</view>
+      <view class="stage-row-meta type-caption">A1 · {{fixedPlan.planPhaseLabel || '阶段二'}} · 固定计划继续保留</view>
+    </view>
+    <view class="stage-row-state">查看</view>
+  </view>
+
+  <view class="selected-card">
+    <view>
+      <view class="selected-title">听力计划</view>
+      <view class="selected-copy type-caption">{{planSummaryText}}</view>
+    </view>
+    <view class="selected-total">{{dailyTotal}}</view>
+  </view>
+
+  <view class="selected-list" wx:if="{{selectedRows.length}}">
+    <block wx:for="{{selectedRows}}" wx:key="category">
+      <view class="selected-row" data-category="{{item.category}}" data-level-id="{{item.levelId}}" bindtap="openMaterial">
+        <view class="selected-row-main">
+          <view class="selected-row-title">{{item.title}}</view>
+          <view class="selected-row-meta type-caption">{{item.meta}}</view>
+        </view>
+        <view class="selected-row-action">编辑</view>
+      </view>
+    </block>
+  </view>
+
+  <view class="empty-plan" wx:if="{{!selectedRows.length}}">
+    <view class="empty-plan-title">还没有听力计划</view>
+    <view class="empty-plan-copy type-caption">先从下面添加一个素材。</view>
+  </view>
+
+  <view class="section-label">添加素材</view>
+
+  <view class="level-tabs">
+    <block wx:for="{{levelTabs}}" wx:key="levelId">
+      <view class="level-tab {{item.active ? 'is-active' : ''}} {{item.enabled ? '' : 'is-disabled'}}" data-enabled="{{item.enabled}}" data-level-id="{{item.levelId}}" bindtap="chooseLevel">
+        {{item.levelId}}
+      </view>
+    </block>
+  </view>
+
+  <view class="loading-card" wx:if="{{levelLoading}}">正在加载 {{selectedLevel}}</view>
+
+  <view class="stage-list">
+    <block wx:for="{{materials}}" wx:key="category">
+      <view class="stage-row {{item.disabled ? 'is-disabled' : ''}}" data-category="{{item.category}}" data-level-id="{{item.levelId}}" data-disabled="{{item.disabled}}" bindtap="openMaterial">
+        <view class="stage-row-main">
+          <view class="stage-row-title">{{item.title}}</view>
+          <view class="stage-row-meta type-caption">{{item.countText}}</view>
+        </view>
+        <view class="stage-row-state">{{item.stateText}}</view>
+      </view>
+    </block>
+  </view>
+
+  <view class="empty-add" wx:if="{{!levelLoading && !materials.length}}">
+    <view class="empty-plan-title">当前级别都已加入</view>
+    <view class="empty-plan-copy type-caption">可以切换级别继续添加。</view>
+  </view>
+
+  <view class="plan-actions">
+    <view class="plan-action clear {{selectedRows.length ? '' : 'is-disabled'}}" bindtap="clearPlan">清空计划</view>
+    <view class="plan-action done" bindtap="finishPlan">完成</view>
+  </view>
+</view>

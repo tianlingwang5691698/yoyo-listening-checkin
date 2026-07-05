@@ -33,35 +33,55 @@ function formatEstimatedDuration(seconds) {
 }
 
 function buildMaterialRows(materials, activePlan) {
-  return (materials || []).map((item) => Object.assign({}, item, {
-    countText: item.totalCount ? `${item.totalCount} 条` : '待加入',
-    stateText: getPlanMaterial(activePlan, item.category) || item.selected ? '已选' : (item.enabled ? '›' : '等待'),
-    disabled: !item.enabled
+  return (materials || []).filter((item) => !getPlanMaterial(activePlan, item.category)).map((item) => {
+    return Object.assign({}, item, {
+      countText: item.totalCount ? `${item.totalCount} 条` : '待加入',
+      stateText: item.enabled ? '添加' : '等待',
+      disabled: !item.enabled
+    });
+  });
+}
+
+function buildSelectedRows(activePlan) {
+  return ((activePlan && activePlan.materials) || []).filter((item) => item && item.enabled !== false).map((item) => ({
+    category: item.category || '',
+    levelId: item.levelId || 'A1',
+    title: item.title || item.category || '听力素材',
+    meta: `${item.startNo || 1}-${item.endNo || item.totalCount || 1} · 每天 ${item.dailyCount || 1} 条 · ${item.repeatTarget || 3} 遍 · ${Number(item.estimatedDailyDurationSec || 0) > 0 ? `每日约 ${formatEstimatedDuration(item.estimatedDailyDurationSec)}` : '时长待生成'}`,
+    estimatedDailyDurationSec: Number(item.estimatedDailyDurationSec || 0),
+    dailyCount: Number(item.dailyCount || 1)
   }));
 }
 
 function buildPlanSummary(activePlan) {
-  const materials = ((activePlan && activePlan.materials) || []).filter((item) => item && item.enabled !== false);
-  const dailyTotal = materials.reduce((sum, item) => sum + Number(item.dailyCount || 0), 0);
-  const durationTotal = materials.reduce((sum, item) => sum + Number(item.estimatedDailyDurationSec || 0), 0);
-  const durationText = durationTotal > 0 ? ` · 预计 ${formatEstimatedDuration(durationTotal)}` : ' · 时长待生成';
-  return materials.length ? `已选 ${materials.length} 个素材 · 每天 ${dailyTotal} 条${durationText}` : '素材、集数、每日数量';
+  const selectedRows = buildSelectedRows(activePlan);
+  const dailyTotal = selectedRows.reduce((sum, item) => sum + Number(item.dailyCount || 0), 0);
+  const durationTotal = selectedRows.reduce((sum, item) => sum + Number(item.estimatedDailyDurationSec || 0), 0);
+  const durationText = durationTotal > 0 ? ` · 预计 ${formatEstimatedDuration(durationTotal)}` : (selectedRows.length ? ' · 时长待生成' : '');
+  return {
+    selectedRows,
+    selectedCount: selectedRows.length,
+    dailyTotal,
+    durationTotal,
+    summaryText: selectedRows.length ? `已选 ${selectedRows.length} 个素材 · 每天 ${dailyTotal} 条${durationText}` : '还没有选择素材'
+  };
 }
 
 Page({
   overviewCache: {},
   overviewRequests: {},
   data: page.createCloudPageData({
-    child: null,
-    stats: {},
     selectedLevel: 'A1',
     levelTabs: FALLBACK_LEVEL_TABS,
     materials: [],
+    selectedRows: [],
+    selectedCount: 0,
+    dailyTotal: 0,
+    planSummaryText: '还没有选择素材',
     activePlan: null,
-    planSummaryText: '素材、集数、每日数量',
-    planSource: 'fixed-yoyo',
     isYoyoFixedPlan: false,
     fixedPlan: null,
+    clearing: false,
     levelLoading: false
   }),
   hasActivePlanField(data) {
@@ -89,12 +109,17 @@ Page({
   },
   applyOverview(data, expectedLevel) {
     const selectedLevel = expectedLevel || data.selectedLevel || this.data.selectedLevel || 'A1';
+    const activePlan = data.activePlan || null;
+    const planSummary = buildPlanSummary(activePlan);
     this.setData(page.buildCloudPageData(this.data, Object.assign({}, data, {
       selectedLevel,
       levelTabs: buildLevelTabs(data.levelTabs, selectedLevel),
-      materials: buildMaterialRows(data.materials || [], data.activePlan || null),
-      activePlan: data.activePlan || null,
-      planSummaryText: buildPlanSummary(data.activePlan || null),
+      materials: buildMaterialRows(data.materials || [], activePlan),
+      selectedRows: planSummary.selectedRows,
+      selectedCount: planSummary.selectedCount,
+      dailyTotal: planSummary.dailyTotal,
+      planSummaryText: planSummary.summaryText,
+      activePlan,
       fixedPlan: data.fixedPlan || null,
       isYoyoFixedPlan: !!data.isYoyoFixedPlan,
       levelLoading: false
@@ -138,12 +163,16 @@ Page({
     }
     return data;
   },
+  async onLoad(query) {
+    page.syncTheme(this);
+    const levelId = query.levelId || 'A1';
+    this.setData({
+      selectedLevel: levelId,
+      levelTabs: buildLevelTabs(this.data.levelTabs, levelId)
+    });
+  },
   async onShow() {
     page.syncTheme(this);
-    const tabBar = this.getTabBar && this.getTabBar();
-    if (tabBar) {
-      tabBar.setData({ selected: 1 });
-    }
     if (!page.requireIdentityConfirmed()) {
       return;
     }
@@ -162,12 +191,6 @@ Page({
     });
     this.loadOverview(levelId);
   },
-  openPlanSettings() {
-    const levelId = this.data.selectedLevel || 'A1';
-    wx.navigateTo({
-      url: `/pages/listening-plan/index?levelId=${encodeURIComponent(levelId)}`
-    });
-  },
   openMaterial(event) {
     const category = event.currentTarget.dataset.category;
     const levelId = event.currentTarget.dataset.levelId || this.data.selectedLevel || 'A1';
@@ -177,6 +200,41 @@ Page({
     }
     wx.navigateTo({
       url: `/pages/listening-material/index?levelId=${encodeURIComponent(levelId)}&category=${encodeURIComponent(category)}`
+    });
+  },
+  finishPlan() {
+    wx.navigateBack({ delta: 1 });
+  },
+  clearPlan() {
+    if (!this.data.selectedRows.length || this.data.clearing) {
+      return;
+    }
+    wx.showModal({
+      title: '清空计划',
+      content: '清空后今日听力计划会重新设置。',
+      confirmText: '清空',
+      confirmColor: '#C47A32',
+      success: async (res) => {
+        if (!res.confirm) {
+          return;
+        }
+        this.setData({ clearing: true });
+        try {
+          for (const item of this.data.selectedRows) {
+            const result = await store.removeListeningPlanMaterial({ category: item.category });
+            if (result && result.syncMode === 'cloud-error') {
+              throw new Error((result.cloudError && result.cloudError.message) || '清空失败');
+            }
+          }
+          await this.loadOverview(this.data.selectedLevel || 'A1');
+          wx.showToast({ title: '已清空', icon: 'none' });
+        } catch (error) {
+          wx.showToast({ title: '清空失败', icon: 'none' });
+          console.warn('[listening-plan-clear-error]', error && (error.message || error.errMsg) || error);
+        } finally {
+          this.setData({ clearing: false });
+        }
+      }
     });
   },
   openFixedStage() {

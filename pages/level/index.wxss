@@ -75,6 +75,16 @@
   background: var(--surface-glass);
 }
 
+.loading-card {
+  margin: 0 0 18rpx;
+  padding: 24rpx 28rpx;
+  border-radius: var(--radius-xl);
+  background: var(--surface-glass);
+  color: var(--text-muted);
+  font-size: var(--font-caption-size);
+  font-weight: var(--font-section-weight);
+}
+
 .fixed-card {
   margin: 0 0 22rpx;
   padding: 24rpx 28rpx;

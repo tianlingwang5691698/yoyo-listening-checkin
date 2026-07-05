@@ -14,6 +14,7 @@ test('当天已打卡时，同日内返回下一天计划', async () => {
     getUserScope: () => ({ childId: 'child-1' }),
     getChildProgressRecords: async () => [],
     getCheckins: async () => [{ date: '2026-04-21', planDayIndex: 1 }],
+    isYoyoChild: () => true,
     getNextPlanDayIndexForDate: (checkins, date) => {
       assert.equal(date, '2026-04-21');
       assert.equal(checkins[0].date, '2026-04-21');
@@ -41,6 +42,49 @@ test('当天已打卡时，同日内返回下一天计划', async () => {
   assert.equal(dashboard.allDailyDone, true);
 });
 
+test('非佑佑且未设置自定义计划时不生成固定听力任务', async () => {
+  const dashboard = await dashboardEngine.getDashboardData({
+    user: {},
+    member: {},
+    family: {},
+    child: { childId: 'child-2', childLoginCode: '888888' }
+  }, {
+    getTodayString: () => '2026-07-05',
+    getUserScope: () => ({ childId: 'child-2' }),
+    getChildProgressRecords: async () => [],
+    getCheckins: async () => [],
+    getActiveListeningPlan: async () => null,
+    isYoyoChild: () => false,
+    getPlanDayIndexForDate: () => 1,
+    getNextPlanDayIndexForDate: () => 1,
+    buildPlanForDay: () => {
+      throw new Error('普通学生无计划时不应生成固定计划');
+    },
+    getPlanCategoryOrder: () => ['peppa'],
+    decoratePlanTasks: () => {
+      throw new Error('普通学生无计划时不应装饰固定任务');
+    },
+    buildCategorySummary: () => ({}),
+    buildStats: () => ({ streakDays: 0 }),
+    buildCatchupState: () => ({}),
+    getPlanStartDate: () => '',
+    getCatalog: () => [],
+    getCategoryLabel: () => 'Peppa'
+  }, {
+    includeDailyTasks: true,
+    includeHomeTaskGroups: true,
+    includeCategorySummaries: false,
+    includeCatchupState: false,
+    includePlanDebug: false,
+    includeTaskProgressSummary: true
+  });
+
+  assert.equal(dashboard.planSource, 'none');
+  assert.equal(dashboard.needsListeningPlanSetup, true);
+  assert.equal(dashboard.groupedDailyTasks.length, 0);
+  assert.equal(dashboard.activeTaskCount, 0);
+});
+
 test('home view 任务分组不返回首页不用的大字段', async () => {
   const dashboard = await dashboardEngine.getDashboardData({
     user: { userId: 'user-1' },
@@ -52,6 +96,7 @@ test('home view 任务分组不返回首页不用的大字段', async () => {
     getUserScope: () => ({ childId: 'child-1' }),
     getChildProgressRecords: async () => [],
     getCheckins: async () => [],
+    isYoyoChild: () => true,
     getPlanDayIndexForDate: () => 1,
     buildPlanForDay: (dayIndex) => ({
       dayIndex,
@@ -71,6 +116,7 @@ test('home view 任务分组不返回首页不用的大字段', async () => {
       displayTitle: 'Peppa 1',
       playCount: 1,
       repeatTarget: 3,
+      durationSec: 120,
       completedToday: false,
       isPendingAsset: false,
       audioUrl: 'https://large-audio.example.com/file.mp3',
@@ -104,12 +150,15 @@ test('home view 任务分组不返回首页不用的大字段', async () => {
   assert.equal(task.audioCloudPath, undefined);
   assert.equal(task.transcriptTrack, undefined);
   assert.equal(task.rewardCopy, undefined);
+  assert.equal(dashboard.groupedDailyTasks[0].durationSec, 360);
   assert.deepEqual(Object.keys(task).sort(), [
     'category',
     'completedToday',
     'displayTitle',
+    'durationSec',
     'isPendingAsset',
     'progressText',
+    'repeatTarget',
     'taskId',
     'textType',
     'title'
@@ -127,6 +176,7 @@ test('缺失昨日打卡时，dashboard 先使用修复后的 checkins 再计算
     getUserScope: () => ({ childId: 'child-1' }),
     getChildProgressRecords: async () => [],
     getCheckins: async () => [],
+    isYoyoChild: () => true,
     reconcileCheckins: async (_scope, progressRecords, checkins) => ({
       progressRecords,
       checkins: checkins.concat([{ date: '2026-04-20', planDayIndex: 1 }])
@@ -168,6 +218,7 @@ test('已有当天打卡记录时，home 进度按整日完成兜底', async () 
     getUserScope: () => ({ childId: 'child-1' }),
     getChildProgressRecords: async () => [],
     getCheckins: async () => [{ date: '2026-05-07', completedCategories: ['peppa'] }],
+    isYoyoChild: () => true,
     getPlanDayIndexForDate: () => 21,
     buildPlanForDay: (dayIndex) => ({
       dayIndex,
@@ -224,6 +275,7 @@ test('home view 显示当天 Peppa 旧集完成记录', async () => {
       completedToday: true
     }],
     getCheckins: async () => [{ date: '2026-05-08' }],
+    isYoyoChild: () => true,
     getPlanDayIndexForDate: () => 22,
     buildPlanForDay: (dayIndex) => ({
       dayIndex,

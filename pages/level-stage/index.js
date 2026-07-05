@@ -23,6 +23,12 @@ const STAGES = {
     stageText: '阶段三',
     title: '听力组合 C',
     hint: '多种材料累积 A1 听力时长。'
+  },
+  custom: {
+    levelId: '听力',
+    stageText: '今日',
+    title: '今日计划',
+    hint: '按你保存的素材顺序完成今天的听力。'
   }
 };
 
@@ -53,23 +59,53 @@ function getDurationMinutes(durationSec) {
   return durationSec > 0 ? Math.max(1, Math.round(durationSec / 60)) : 0;
 }
 
+function getTaskTitle(task) {
+  if (!task || task.isPendingAsset) {
+    return '等待素材';
+  }
+  return task.audioCompactTitle || task.displayTitle || task.title || '未命名任务';
+}
+
+function buildTaskRows(category) {
+  const fallbackTask = labels.normalizeTask(category.todayTask || {});
+  const sourceTasks = Array.isArray(category.tasks) && category.tasks.length
+    ? category.tasks
+    : (fallbackTask && fallbackTask.taskId ? [fallbackTask] : []);
+  return sourceTasks.map((source, index) => {
+    const task = labels.normalizeTask(source || {});
+    return {
+      taskId: task.taskId || '',
+      title: getTaskTitle(task),
+      meta: [getTextType(task), task.playStepText ? `进度 ${task.playStepText}` : ''].filter(Boolean).join(' · '),
+      orderText: task.planSlotIndex ? `${task.planSlotIndex}` : `${index + 1}`,
+      completedToday: !!task.completedToday,
+      stateText: task.completedToday ? '完成' : '开始',
+      taskSnapshot: task,
+      disabled: !!task.isPendingAsset
+    };
+  });
+}
+
 function buildTaskGroups(categories) {
   return (categories || []).map((category) => {
     const task = labels.normalizeTask(category.todayTask || {});
+    const tasks = buildTaskRows(category);
     const taskCount = Number(category.todayTaskCount || task.plannedTaskCount || 0);
     const durationSec = getTaskDurationSec(task, category.plannedDurationSec);
     const minutes = getDurationMinutes(durationSec);
     const disabled = !!(category.isPendingAsset || task.isPendingAsset);
     return {
+      groupKey: category.category,
       category: category.category,
       categoryLabel: labels.getCategoryDisplayLabel(category.category, category.categoryLabel),
       title: task.displayTitle || task.title || '等待素材',
-      taskCountText: taskCount ? `${taskCount} 个任务` : '',
+      taskCountText: taskCount ? `${taskCount} 个任务` : (tasks.length ? `${tasks.length} 个任务` : ''),
       textType: getTextType(task),
       minutesText: minutes ? `${minutes} 分钟` : '待生成',
       minutes,
       durationSec,
       taskId: task.taskId || '',
+      tasks,
       taskSnapshot: task,
       disabled,
       stateText: task.completedToday ? '完成' : disabled ? '等待' : '›',
@@ -80,7 +116,7 @@ function buildTaskGroups(categories) {
 }
 
 function shouldShowTaskGroups(phase) {
-  return phase === 'round-1' || phase === 'round-2';
+  return phase === 'round-1' || phase === 'round-2' || phase === 'custom';
 }
 
 function getStageSnapshot(phase) {
@@ -89,7 +125,9 @@ function getStageSnapshot(phase) {
     maxAgeMs: 5 * 60 * 1000
   });
   if (!snapshot || !Array.isArray(snapshot.taskGroups) || !snapshot.taskGroups.length) return null;
-  return snapshot.taskGroups.some((item) => !item.disabled) ? snapshot : null;
+  return snapshot.taskGroups.some((item) => !item.disabled && Array.isArray(item.tasks) && item.tasks.length)
+    ? snapshot
+    : null;
 }
 
 function writeStageSnapshot(phase, data) {
@@ -106,6 +144,7 @@ Page({
     phase: 'round-1',
     stage: STAGES['round-1'],
     taskGroups: [],
+    expandedGroupKey: '',
     totalMinutesText: '待生成',
     hasTaskGroups: false,
     hydrated: false
@@ -116,11 +155,15 @@ Page({
     const hasTaskGroups = shouldShowTaskGroups(displayPhase) && categories.length > 0;
     const taskGroups = hasTaskGroups ? buildTaskGroups(categories) : [];
     const totalMinutes = getDurationMinutes(taskGroups.reduce((sum, item) => sum + item.durationSec, 0));
+    const expandedGroupKey = taskGroups.some((item) => item.groupKey === this.data.expandedGroupKey)
+      ? this.data.expandedGroupKey
+      : '';
     const nextData = {
       levelId,
       phase: displayPhase,
       stage: STAGES[displayPhase] || STAGES['round-1'],
       taskGroups,
+      expandedGroupKey,
       totalMinutesText: totalMinutes ? `${totalMinutes} 分钟` : '待生成',
       hasTaskGroups,
       hydrated: true
@@ -136,6 +179,7 @@ Page({
       levelId,
       phase,
       stage: STAGES[phase] || STAGES['round-1'],
+      expandedGroupKey: '',
       hydrated: false
     }));
     const snapshot = getStageSnapshot(phase);
@@ -145,6 +189,7 @@ Page({
         phase,
         stage: STAGES[phase] || STAGES['round-1'],
         taskGroups: snapshot.taskGroups,
+        expandedGroupKey: '',
         totalMinutesText: snapshot.totalMinutesText || '待生成',
         hasTaskGroups: true,
         hydrated: true
@@ -156,21 +201,33 @@ Page({
   onShow() {
     page.syncTheme(this);
   },
-  openTask(event) {
-    const category = event.currentTarget.dataset.category;
-    const taskId = event.currentTarget.dataset.taskId;
-    const disabled = event.currentTarget.dataset.disabled;
-    const planRunType = event.currentTarget.dataset.planRunType || 'normal';
-    const planDayIndex = event.currentTarget.dataset.planDayIndex || '';
-    if (!category || disabled === true || disabled === 'true') {
+  toggleTaskGroup(event) {
+    const groupIndex = Number(event.currentTarget.dataset.groupIndex || 0);
+    const taskGroup = (this.data.taskGroups || [])[groupIndex];
+    if (!taskGroup || taskGroup.disabled) {
       return;
     }
-    const taskGroup = (this.data.taskGroups || []).find((item) => item.category === category && item.taskId === taskId) || null;
-    if (taskGroup && taskGroup.taskSnapshot) {
-      snapshotStore.write(LESSON_TASK_SNAPSHOT_KEY, `${category}:${taskId || ''}`, {
+    this.setData({
+      expandedGroupKey: this.data.expandedGroupKey === taskGroup.groupKey ? '' : taskGroup.groupKey
+    });
+  },
+  openTask(event) {
+    const groupIndex = Number(event.currentTarget.dataset.groupIndex || 0);
+    const taskIndex = Number(event.currentTarget.dataset.taskIndex || 0);
+    const taskGroup = (this.data.taskGroups || [])[groupIndex];
+    const taskRow = taskGroup && (taskGroup.tasks || [])[taskIndex];
+    if (!taskGroup || !taskRow || taskGroup.disabled || taskRow.disabled) {
+      return;
+    }
+    const category = taskGroup.category;
+    const taskId = taskRow.taskId;
+    const planRunType = taskGroup.planRunType || 'normal';
+    const planDayIndex = taskGroup.planDayIndex || '';
+    if (taskRow.taskSnapshot) {
+      snapshotStore.write(LESSON_TASK_SNAPSHOT_KEY, `${category}:${taskId}`, {
         category,
         taskId,
-        task: taskGroup.taskSnapshot
+        task: taskRow.taskSnapshot
       }, { source: 'level-stage' });
     }
     const previewQuery = planRunType === 'preview'

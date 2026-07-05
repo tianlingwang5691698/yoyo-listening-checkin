@@ -425,6 +425,31 @@ async function saveListeningPlanMaterial(ctx, payload) {
   return listeningPlanRepository.upsertActive(scope, next);
 }
 
+async function removeListeningPlanMaterial(ctx, payload) {
+  const scope = getUserScope(ctx);
+  const current = await getActiveListeningPlanByScope(scope);
+  const category = String(payload && payload.category || '').trim();
+  if (!category) {
+    throw new Error('请选择要取消的听力素材');
+  }
+  if (!current) {
+    return null;
+  }
+  const materials = listeningPlanEngine.removePlanMaterial(current, category);
+  if (!materials.length) {
+    return listeningPlanRepository.deactivateActive(scope);
+  }
+  const next = {
+    planId: current.planId || `${scope.familyId}_${scope.childId}_custom_listening`,
+    planSource: 'custom-listening',
+    title: current.title || '我的听力计划',
+    startDate: current.startDate || getTodayString(),
+    materials,
+    createdAt: current.createdAt || new Date().toISOString()
+  };
+  return listeningPlanRepository.upsertActive(scope, next);
+}
+
 function buildEmptyProgress() {
   return taskEngine.buildEmptyProgress();
 }
@@ -618,6 +643,7 @@ module.exports = {
   getActiveListeningPlan,
   getActiveListeningPlanByScope,
   saveListeningPlanMaterial,
+  removeListeningPlanMaterial,
   buildListeningPlanMaterials,
   getCustomPlanDayIndex,
   buildListeningPlanForDay,

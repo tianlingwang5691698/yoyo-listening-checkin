@@ -1780,6 +1780,144 @@
 - 设计记录：佑佑 317613 默认固定阶段计划不迁移；其他学生优先用自定义听力计划，素材预览不计入打卡。
 - 验证：已跑云函数测试和页面脚本语法检查。
 
+### 2026-07-05 听力素材计划控件
+
+- 文件：`pages/listening-material/index.js`
+- 文件：`pages/listening-material/index.wxml`
+- 文件：`pages/listening-material/index.wxss`
+- 改动：起止集数、每日数量和遍数增加步进微调；保存计划改为卡片底部对称 action view。
+- 设计记录：长范围用滑块，精确集数用步进；主操作嵌入卡片底部，不使用突兀按钮。
+- 验证：已做页面脚本语法检查。
+
+### 2026-07-05 佑佑阶段任务展开
+
+- 文件：`cloudfunctions/yoyo/services/level.service.js`
+- 文件：`utils/labels.js`
+- 文件：`pages/level-stage/index.js`
+- 文件：`pages/level-stage/index.wxml`
+- 文件：`pages/level-stage/index.wxss`
+- 改动：佑佑阶段页材料行先展开当天具体集数，再点击单条进入学习。
+- 设计记录：阶段页保留摘要，具体任务按需展开，避免直接跳到未选择的下一步。
+- 验证：已做云函数和页面脚本语法检查，并通过云函数全量测试。
+
+### 2026-07-05 听力计划预览加速
+
+- 文件：`cloudfunctions/yoyo/lib/catalog-engine.js`
+- 文件：`utils/store.js`
+- 改动：New Concept 按真实云存储目录优先扫描，B2 优先 `B2/NewConcept4-US` 并保留旧目录兜底；听力计划预览恢复短缓存；佑佑阶段页不再读取旧阶段缓存；读缓存版本升级避免继续显示旧的“待加入”；New Concept 额外按文件大小识别音频，避免混放 LRC 时漏掉 B1/B2 音频；云函数不再把 New Concept 空数组当作有效运行时缓存。
+- 设计记录：级别切换先使用短缓存快速展示，再后台刷新；素材不存在时不把已缓存的 New Concept 目录覆盖为空。
+- 验证：已做脚本语法检查，并通过云函数全量测试。
+
+### 2026-07-05 听力计划设置入口
+
+- 文件：`app.json`
+- 文件：`pages/level/index.js`
+- 文件：`pages/level/index.wxml`
+- 文件：`pages/listening-plan/index.js`
+- 文件：`pages/listening-plan/index.wxml`
+- 文件：`pages/listening-plan/index.wxss`
+- 改动：音频页「听力计划」卡片跳转到独立设置页；设置页先选级别，再进入对应素材设置。
+- 设计记录：音频页保留素材浏览，计划设置收敛到独立流程；佑佑固定计划只读展示，不影响自定义计划入口。
+- 验证：已做页面脚本语法检查。
+
+### 2026-07-05 首页听力计划状态
+
+- 文件：`cloudfunctions/yoyo/lib/dashboard-engine.js`
+- 文件：`cloudfunctions/yoyo/services/level.service.js`
+- 文件：`pages/home/index.js`
+- 文件：`pages/home/index.wxml`
+- 文件：`pages/level-stage/index.js`
+- 改动：非佑佑学生没有自定义计划时，首页显示“设置计划”；保存计划后首页按自定义计划展示今日任务并进入今日计划页。
+- 设计记录：首页主任务必须反映真实听力计划状态；未设置计划不展示继续学习，自定义计划不套用 A1 阶段命名。
+- 验证：已做页面和云函数脚本语法检查。
+
+### 2026-07-05 听力混合计划展示
+
+- 文件：`pages/listening-plan/index.js`
+- 文件：`pages/listening-plan/index.wxml`
+- 文件：`pages/listening-plan/index.wxss`
+- 文件：`pages/level/index.js`
+- 文件：`pages/level/index.wxml`
+- 文件：`cloudfunctions/yoyo/tests/plan-runtime.test.js`
+- 改动：计划设置页展示全部已选素材、每日总条数；音频页顶部同步显示混合计划摘要。
+- 设计记录：自定义听力计划按多素材组合呈现，已选状态不只依赖当前级别列表。
+- 验证：已补自定义计划多素材混合生成任务测试。
+
+### 2026-07-05 听力计划保存后即时刷新
+
+- 文件：`pages/listening-material/index.js`
+- 文件：`pages/level/index.js`
+- 文件：`cloudfunctions/yoyo/repositories/listening-plan.repository.js`
+- 改动：素材保存后用返回的 activePlan 立即刷新上一页并返回；支持从设置页和音频页两种入口即时更新已选状态；云端 active 计划按最新更新时间读取。
+- 设计记录：保存计划是即时反馈动作，不能让用户返回后仍看到旧组合或当前级别未标“已选”。
+- 验证：已做页面和云函数脚本语法检查。
+
+### 2026-07-05 听力素材取消计划
+
+- 文件：`pages/listening-material/index.js`
+- 文件：`pages/listening-material/index.wxml`
+- 文件：`pages/listening-material/index.wxss`
+- 文件：`cloudfunctions/yoyo/lib/listening-plan-engine.js`
+- 文件：`cloudfunctions/yoyo/services/listening-plan.service.js`
+- 文件：`cloudfunctions/yoyo/services/shared.service.js`
+- 文件：`cloudfunctions/yoyo/repositories/listening-plan.repository.js`
+- 文件：`utils/store.js`
+- 改动：已选素材详情页增加取消计划；保存后校验返回 plan 是否包含当前素材，未生效时提示上传云函数。
+- 设计记录：素材设置必须有保存和取消两个明确动作；取消到空计划时关闭自定义计划。
+- 验证：已补自定义计划取消单个素材测试。
+
+### 2026-07-05 听力保存云函数错误断点
+
+- 文件：`pages/listening-material/index.js`
+- 改动：保存计划调试区区分 `cloud-error` 和 activePlan 缺素材，并写出 `cloudError.message`、`syncDebug.reason`、`syncDebug.envId`。
+- 设计记录：测试提示只展示已锁定链路代码点；云函数调用失败优先锁定调用链，不误判为计划合并问题。
+- 验证：已做页面脚本语法检查。
+
+### 2026-07-05 听力计划极简版式
+
+- 文件：`pages/listening-plan/index.js`
+- 文件：`pages/listening-plan/index.wxml`
+- 文件：`pages/listening-plan/index.wxss`
+- 改动：设置页拆成“听力计划”和“添加素材”，已选素材只在上方显示，底部固定清空和完成。
+- 设计记录：计划页只保留当前结果、添加入口、完成动作；已选素材不在可选列表重复出现。
+- 验证：已做页面脚本语法检查。
+
+### 2026-07-05 听力级别快照加载
+
+- 文件：`pages/level/index.js`
+- 文件：`pages/level/index.wxml`
+- 文件：`pages/level/index.wxss`
+- 文件：`pages/listening-plan/index.js`
+- 文件：`pages/listening-plan/index.wxml`
+- 文件：`pages/listening-plan/index.wxss`
+- 文件：`utils/store.js`
+- 改动：音频页和设置计划页切换级别改为快照优先、按需加载、后台刷新；首次无快照时显示轻量加载态。
+- 设计记录：切级别不等待全量云端扫描；已加载级别作为页面快照即时展示，云端返回只更新当前级别。
+- 验证：已做页面脚本语法检查。
+
+### 2026-07-06 听力计划时长展示
+
+- 文件：`cloudfunctions/yoyo/lib/listening-plan-engine.js`
+- 文件：`cloudfunctions/yoyo/lib/dashboard-engine.js`
+- 文件：`cloudfunctions/yoyo/services/listening-plan.service.js`
+- 文件：`pages/listening-material/index.js`
+- 文件：`pages/listening-material/index.wxml`
+- 文件：`pages/listening-material/index.wxss`
+- 文件：`pages/listening-plan/index.js`
+- 文件：`pages/level/index.js`
+- 文件：`pages/home/index.js`
+- 改动：素材设置页、设置计划页、音频页和首页今日任务展示真实音频时长与预计每日总时长。
+- 设计记录：时长只放在计划决策点；单条显示精确时长，总计划显示预计分钟，缺少时长时显示“时长待生成”。
+- 验证：已做页面和云函数脚本语法检查。
+
+### 2026-07-06 听力学习包返回兜底
+
+- 文件：`pages/lesson/index.js`
+- 文件：`pages/material/detail/index.js`
+- 改动：听力学习包首次请求未返回卡片时，立即二次读取云端缓存；仍失败时显示具体返回异常。
+- 设计记录：生成中断不能停在无反馈状态；已生成内容优先展示，错误只作为兜底提示。
+- 验证：已做页面脚本语法检查。
+
 ## 后续记录格式
 
 每次 UI/交互改动后追加：

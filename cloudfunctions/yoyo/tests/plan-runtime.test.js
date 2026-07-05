@@ -3,6 +3,7 @@ const assert = require('node:assert/strict');
 
 const planRuntime = require('../lib/plan-runtime');
 const planEngine = require('../lib/plan-engine');
+const listeningPlanEngine = require('../lib/listening-plan-engine');
 
 test('补卡起点取首次成功打卡日期', () => {
   const checkins = [
@@ -42,6 +43,39 @@ test('当天完成 Day 74 后继续显示 Day 75', () => {
   ];
   assert.equal(planRuntime.getPlanDayIndexForDate(checkins, '2026-07-03'), 74);
   assert.equal(planRuntime.getNextPlanDayIndexForDate(checkins, '2026-07-03'), 75);
+});
+
+test('自定义听力计划支持多个素材混合生成任务', () => {
+  const catalogs = {
+    newconcept3: Array.from({ length: 10 }, (_, index) => ({ taskId: `nce3-${index + 1}`, category: 'newconcept3' })),
+    unlock3: Array.from({ length: 10 }, (_, index) => ({ taskId: `unlock3-${index + 1}`, category: 'unlock3' }))
+  };
+  const plan = listeningPlanEngine.buildPlanForDay({
+    planId: 'plan-1',
+    materials: [
+      { levelId: 'B1', category: 'newconcept3', startNo: 1, endNo: 10, dailyCount: 1, repeatTarget: 3 },
+      { levelId: 'B1', category: 'unlock3', startNo: 1, endNo: 10, dailyCount: 1, repeatTarget: 2 }
+    ]
+  }, 1, {
+    getCatalog: (category) => catalogs[category] || []
+  });
+
+  assert.deepEqual(plan.categoryOrder, ['newconcept3', 'unlock3']);
+  assert.deepEqual(Object.keys(plan.byCategory), ['newconcept3', 'unlock3']);
+  assert.equal(plan.flatTasks.length, 2);
+  assert.equal(plan.byCategory.newconcept3[0].taskId, 'nce3-1');
+  assert.equal(plan.byCategory.unlock3[0].taskId, 'unlock3-1');
+});
+
+test('自定义听力计划支持取消单个素材', () => {
+  const nextMaterials = listeningPlanEngine.removePlanMaterial({
+    materials: [
+      { category: 'newconcept4', dailyCount: 1 },
+      { category: 'unlock4', dailyCount: 2 }
+    ]
+  }, 'unlock4');
+
+  assert.deepEqual(nextMaterials, [{ category: 'newconcept4', dailyCount: 1 }]);
 });
 
 test('Unlock1 首轮后循环任务每条只听 1 遍', () => {

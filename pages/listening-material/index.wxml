@@ -7,32 +7,65 @@
 
   <view class="plan-card card">
     <view class="plan-row">
-      <view>
+      <view class="plan-head">
         <view class="plan-label type-caption">开始集数</view>
-        <view class="plan-value">{{startNo}}</view>
+        <view class="stepper">
+          <view class="step-control" data-field="startNo" data-delta="-1" bindtap="stepValue">−</view>
+          <view class="plan-value">{{startNo}}</view>
+          <view class="step-control" data-field="startNo" data-delta="1" bindtap="stepValue">+</view>
+        </view>
       </view>
       <slider min="1" max="{{sliderMax}}" value="{{startNo}}" activeColor="#C47A2C" block-size="18" bindchange="changeStart" />
     </view>
     <view class="plan-row">
-      <view>
+      <view class="plan-head">
         <view class="plan-label type-caption">结束集数</view>
-        <view class="plan-value">{{endNo}}</view>
+        <view class="stepper">
+          <view class="step-control" data-field="endNo" data-delta="-1" bindtap="stepValue">−</view>
+          <view class="plan-value">{{endNo}}</view>
+          <view class="step-control" data-field="endNo" data-delta="1" bindtap="stepValue">+</view>
+        </view>
       </view>
       <slider min="1" max="{{sliderMax}}" value="{{endNo}}" activeColor="#C47A2C" block-size="18" bindchange="changeEnd" />
     </view>
     <view class="plan-grid">
       <view>
         <view class="plan-label type-caption">每天几条</view>
-        <view class="plan-value">{{dailyCount}}</view>
+        <view class="stepper is-compact">
+          <view class="step-control" data-field="dailyCount" data-delta="-1" bindtap="stepValue">−</view>
+          <view class="plan-value">{{dailyCount}}</view>
+          <view class="step-control" data-field="dailyCount" data-delta="1" bindtap="stepValue">+</view>
+        </view>
         <slider min="1" max="10" value="{{dailyCount}}" activeColor="#C47A2C" block-size="18" bindchange="changeDailyCount" />
       </view>
       <view>
         <view class="plan-label type-caption">每条几遍</view>
-        <view class="plan-value">{{repeatTarget}}</view>
+        <view class="stepper is-compact">
+          <view class="step-control" data-field="repeatTarget" data-delta="-1" bindtap="stepValue">−</view>
+          <view class="plan-value">{{repeatTarget}}</view>
+          <view class="step-control" data-field="repeatTarget" data-delta="1" bindtap="stepValue">+</view>
+        </view>
         <slider min="1" max="5" value="{{repeatTarget}}" activeColor="#C47A2C" block-size="18" bindchange="changeRepeatTarget" />
       </view>
     </view>
-    <button class="save-button" loading="{{saving}}" bindtap="savePlan">保存计划</button>
+    <view class="plan-actions">
+      <view>
+        <view class="action-title">计划范围</view>
+        <view class="action-copy type-caption">{{startNo}} - {{endNo}} · 每天 {{dailyCount}} 条</view>
+        <view class="action-duration type-caption">{{planDurationText}}</view>
+      </view>
+      <view class="action-controls">
+        <view wx:if="{{isSelected}}" class="cancel-action {{saving ? 'is-saving' : ''}}" bindtap="cancelPlan">{{saving ? '处理中' : '取消计划'}}</view>
+        <view class="save-action {{saving ? 'is-saving' : ''}}" bindtap="savePlan">{{saving ? '保存中' : (isSelected ? '保存修改' : '保存计划')}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="debug-card" wx:if="{{debugLines.length}}">
+    <view class="debug-title">调试断点</view>
+    <block wx:for="{{debugLines}}" wx:key="*this">
+      <text class="debug-line" selectable="true">{{item}}</text>
+    </block>
   </view>
 
   <view class="task-list">
@@ -43,6 +76,7 @@
           <view class="task-title">{{item.title}}</view>
           <view class="task-subtitle type-caption">{{item.subtitle || item.durationText}}</view>
         </view>
+        <view class="task-duration">{{item.exactDurationText}}</view>
         <view class="task-state">›</view>
       </view>
     </block>

@@ -268,6 +268,21 @@ function buildLessonStudyItem(task, category, taskId, transcript) {
   };
 }
 
+function hasLessonStudyCards(studyPack) {
+  return studyPack
+    && ((studyPack.vocabularyCards || []).length
+      || (studyPack.phraseCards || []).length
+      || (studyPack.sentencePatternCards || []).length);
+}
+
+function getLessonStudyError(result) {
+  const message = result && result.cloudError && result.cloudError.message;
+  if (message) {
+    return `生成成功但本次返回异常：${message}`;
+  }
+  return '生成失败，稍后重试。';
+}
+
 Page({
   data: page.createCloudPageData({
     child: null,
@@ -1626,17 +1641,22 @@ Page({
     }
     this.setData({ lessonStudyLoading: true, lessonStudyError: '' });
     const result = await store.getListeningStudyPack(buildLessonStudyItem(task, this.category, this.taskId, transcript), { useCache: false });
-    const studyPack = result && result.studyPack;
-    const hasCards = studyPack
-      && ((studyPack.vocabularyCards || []).length || (studyPack.phraseCards || []).length || (studyPack.sentencePatternCards || []).length);
-    if (hasCards) {
+    let studyPack = result && result.studyPack;
+    if (hasLessonStudyCards(studyPack)) {
+      this.applyLessonStudyPack(studyPack);
+      this.setData({ lessonStudyLoading: false });
+      return;
+    }
+    const cachedResult = await store.getListeningStudyPack(buildLessonStudyItem(task, this.category, this.taskId, ''), { cacheOnly: true, useCache: false });
+    studyPack = cachedResult && cachedResult.studyPack;
+    if (hasLessonStudyCards(studyPack)) {
       this.applyLessonStudyPack(studyPack);
       this.setData({ lessonStudyLoading: false });
       return;
     }
     this.setData({
       lessonStudyLoading: false,
-      lessonStudyError: '生成失败，稍后重试。'
+      lessonStudyError: getLessonStudyError(result)
     });
   },
   completeLessonStudy() {

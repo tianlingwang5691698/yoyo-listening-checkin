@@ -72,7 +72,8 @@ function normalizeCategory(category) {
   return Object.assign({}, category, {
     categoryLabel,
     displayCategoryLabel: categoryLabel,
-    todayTask: normalizeTask(category.todayTask)
+    todayTask: normalizeTask(category.todayTask),
+    tasks: normalizeTaskList(category.tasks || [])
   });
 }
 

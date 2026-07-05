@@ -9,6 +9,7 @@ module.exports = {
   getActiveListeningPlan: shared.getActiveListeningPlan,
   getActiveListeningPlanByScope: shared.getActiveListeningPlanByScope,
   saveListeningPlanMaterial: shared.saveListeningPlanMaterial,
+  removeListeningPlanMaterial: shared.removeListeningPlanMaterial,
   buildListeningPlanMaterials: shared.buildListeningPlanMaterials,
   getCustomPlanDayIndex: shared.getCustomPlanDayIndex,
   buildListeningPlanForDay: shared.buildListeningPlanForDay,

@@ -75,7 +75,8 @@ function buildVocabularySummary() {
   };
 }
 
-function buildListeningSummary(groupedDailyTasks) {
+function buildListeningSummary(groupedDailyTasks, options = {}) {
+  if (options.needsListeningPlanSetup) return '设置听力计划';
   const groups = groupedDailyTasks || [];
   const total = groups.reduce((sum, item) => sum + Number(item.totalCount || 0), 0);
   const completed = groups.reduce((sum, item) => sum + Number(item.completedCount || 0), 0);
@@ -85,7 +86,42 @@ function buildListeningSummary(groupedDailyTasks) {
   return `${completed}/${total || groups.length} 完成 · ${(nextGroup && nextGroup.categoryLabel) || '继续'}`;
 }
 
-function buildListeningTaskStatus(groupedDailyTasks) {
+function formatEstimatedDuration(seconds) {
+  const value = Number(seconds || 0);
+  if (value <= 0) {
+    return '时长待生成';
+  }
+  const minutes = Math.max(1, Math.round(value / 60));
+  if (minutes < 60) {
+    return `${minutes} 分钟`;
+  }
+  const hours = Math.floor(minutes / 60);
+  const rest = minutes % 60;
+  return `${hours} 小时${rest ? `${rest} 分钟` : ''}`;
+}
+
+function getListeningDurationSec(groupedDailyTasks) {
+  return (groupedDailyTasks || []).reduce((sum, group) => {
+    const groupDuration = Number(group && group.durationSec || 0);
+    if (groupDuration > 0) {
+      return sum + groupDuration;
+    }
+    return sum + ((group && group.tasks) || []).reduce((taskSum, task) => (
+      taskSum + (Number(task.durationSec || 0) * Number(task.repeatTarget || 1))
+    ), 0);
+  }, 0);
+}
+
+function buildListeningTaskStatus(groupedDailyTasks, options = {}) {
+  if (options.needsListeningPlanSetup) {
+    return {
+      title: '今日任务',
+      copy: '先设置听力计划',
+      action: '设置计划 →',
+      pending: false,
+      setupRequired: true
+    };
+  }
   const groups = groupedDailyTasks || [];
   const total = groups.reduce((sum, item) => sum + Number(item.totalCount || 0), 0);
   const completed = groups.reduce((sum, item) => sum + Number(item.completedCount || 0), 0);
@@ -93,16 +129,20 @@ function buildListeningTaskStatus(groupedDailyTasks) {
     return {
       title: '今日任务',
       copy: '暂无今日听力任务',
-      action: '查看',
-      pending: false
+      action: '设置计划 →',
+      pending: false,
+      setupRequired: true
     };
   }
   const pending = completed < total;
+  const durationSec = getListeningDurationSec(groups);
+  const durationText = durationSec > 0 ? `预计 ${formatEstimatedDuration(durationSec)}` : '时长待生成';
   return {
     title: '今日任务',
-    copy: `听力 ${completed}/${total} · ${pending ? '待完成' : '已完成'}`,
+    copy: `听力 ${completed}/${total} · ${durationText} · ${pending ? '待完成' : '已完成'}`,
     action: pending ? '继续学习 →' : '查看记录',
-    pending
+    pending,
+    setupRequired: false
   };
 }
 
@@ -150,6 +190,16 @@ function buildStageSnapshotTaskGroups(groupedDailyTasks) {
       || group.nextTask
       || {};
     const disabled = !!(task.isPendingAsset || group.isPendingAsset);
+    const tasks = (group.tasks || []).map((sourceTask, index) => ({
+      taskId: sourceTask.taskId || '',
+      title: sourceTask.displayTitle || sourceTask.title || group.programSubtitle || '',
+      meta: [sourceTask.textType || group.textType || '', sourceTask.progressText ? `进度 ${sourceTask.progressText}` : ''].filter(Boolean).join(' · '),
+      orderText: sourceTask.planSlotIndex ? `${sourceTask.planSlotIndex}` : `${index + 1}`,
+      completedToday: !!sourceTask.completedToday,
+      stateText: sourceTask.completedToday ? '完成' : '开始',
+      taskSnapshot: sourceTask,
+      disabled: !!sourceTask.isPendingAsset
+    }));
     return {
       category: task.category || group.category || '',
       categoryLabel: group.categoryLabel || task.categoryLabel || '',
@@ -160,6 +210,7 @@ function buildStageSnapshotTaskGroups(groupedDailyTasks) {
       minutes: Number(group.minutes || 0),
       durationSec: Number(group.durationSec || 0),
       taskId: task.taskId || '',
+      tasks,
       taskSnapshot: task,
       disabled,
       stateText: task.completedToday ? '完成' : disabled ? '等待' : '›',
@@ -229,6 +280,8 @@ Page({
     planPhaseLabel: '第1轮',
     groupedDailyTasks: [],
     hasGroupedTasks: false,
+    planSource: 'none',
+    needsListeningPlanSetup: false,
     studyRole: 'parent',
     identityConfirmVisible: true,
     modeChangedNoticeVisible: false,
@@ -261,6 +314,7 @@ Page({
     const modeChangedNoticeVisible = previousStudyRole === 'student' && nextStudyRole === 'parent';
     wx.setStorageSync('lastStudyRole', nextStudyRole);
     const groupedDailyTasks = labels.normalizeHomeTaskGroups(data.groupedDailyTasks || []);
+    const needsListeningPlanSetup = !!data.needsListeningPlanSetup || data.planSource === 'none';
     this.setData(page.buildCloudPageData(this.data, Object.assign({}, {
       syncMode: data.syncMode,
       isReviewBuild: data.isReviewBuild,
@@ -273,10 +327,12 @@ Page({
       currentMember: data.currentMember,
       planDayIndex: data.planDayIndex,
       planPhaseLabel: data.planPhaseLabel,
+      planSource: data.planSource || 'none',
+      needsListeningPlanSetup,
       groupedDailyTasks,
       hasGroupedTasks: !!groupedDailyTasks.length,
-      listeningSummary: buildListeningSummary(groupedDailyTasks),
-      listeningTaskStatus: buildListeningTaskStatus(groupedDailyTasks),
+      listeningSummary: buildListeningSummary(groupedDailyTasks, { needsListeningPlanSetup }),
+      listeningTaskStatus: buildListeningTaskStatus(groupedDailyTasks, { needsListeningPlanSetup }),
       nextListeningTask: findNextListeningTask(groupedDailyTasks),
       identityConfirmVisible: !this.data.identitySelectedInSession,
       modeChangedNoticeVisible,
@@ -565,8 +621,16 @@ Page({
     if (!this.ensureNicknameReady()) {
       return;
     }
+    if (this.data.listeningTaskStatus && this.data.listeningTaskStatus.setupRequired) {
+      wx.navigateTo({
+        url: '/pages/listening-plan/index?levelId=A1'
+      });
+      return;
+    }
     if (this.data.listeningTaskStatus && this.data.listeningTaskStatus.pending) {
-      const phase = getCurrentPhaseKey(this.data.planPhaseLabel);
+      const phase = this.data.planSource === 'custom-listening'
+        ? 'custom'
+        : getCurrentPhaseKey(this.data.planPhaseLabel);
       const taskGroups = buildStageSnapshotTaskGroups(this.data.groupedDailyTasks);
       const totalMinutes = taskGroups.reduce((sum, item) => sum + Number(item.minutes || 0), 0);
       snapshotStore.write(LEVEL_STAGE_SNAPSHOT_KEY, phase, {
@@ -575,7 +639,7 @@ Page({
         totalMinutesText: totalMinutes ? `${totalMinutes} 分钟` : '待生成'
       }, { source: 'home-stage' });
       wx.navigateTo({
-        url: `/pages/level-stage/index?levelId=A1&phase=${phase}`
+        url: `/pages/level-stage/index?levelId=${phase === 'custom' ? 'custom' : 'A1'}&phase=${phase}`
       });
       return;
     }

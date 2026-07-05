@@ -6,11 +6,12 @@ const inflightTempFileUrlRequests = {};
 const memoryCloudCache = {};
 const tempFileUrlCache = {};
 const wordLookupCache = {};
-const CACHE_INDEX_KEY = 'yoyoCloudReadCacheKeysV1';
+const CACHE_INDEX_KEY = 'yoyoCloudReadCacheKeysV2';
 const SELECTED_STUDENT_KEY = 'yoyoSelectedStudentTargetV1';
 const LAST_PARENT_STUDENT_KEY = 'yoyoLastParentStudentTargetV1';
 const CACHE_MAX_AGE_MS = 7 * 24 * 60 * 60 * 1000;
 const RECORD_CACHE_MAX_AGE_MS = 2 * 60 * 1000;
+const LISTENING_PLAN_CACHE_MAX_AGE_MS = 10 * 60 * 1000;
 const TEMP_FILE_URL_MAX_AGE_MS = 20 * 60 * 1000;
 const WORD_LOOKUP_MAX_AGE_MS = 30 * 60 * 1000;
 let cloudReadCacheVersion = 0;
@@ -21,6 +22,7 @@ const MUTATION_ACTIONS = {
   saveFlashcardAudio: true,
   markTaskListened: true,
   saveListeningPlanMaterial: true,
+  removeListeningPlanMaterial: true,
   submitSpeakingAttempt: true,
   evaluateSpeakingPronunciation: true,
   rescoreSpeakingAttempt: true,
@@ -45,7 +47,7 @@ const READ_CACHE_CONFIG = {
   getDashboard: { persist: true },
   getMaterialIndex: { persist: true },
   getLevelOverview: { persist: true },
-  getListeningPlanOverview: { persist: true },
+  getListeningPlanOverview: { persist: true, maxAgeMs: LISTENING_PLAN_CACHE_MAX_AGE_MS },
   getListeningMaterialDetail: { persist: true },
   getTaskDetail: { persist: true },
   getTaskTranscript: { persist: false },
@@ -263,7 +265,7 @@ function hashText(value) {
 }
 
 function getReadCacheKey(action, payload) {
-  return `yoyoCloudReadCacheV1:${action}:${hashText(JSON.stringify(payload || {}))}`;
+  return `yoyoCloudReadCacheV2:${action}:${hashText(JSON.stringify(payload || {}))}`;
 }
 
 function getCachedCloudResult(action, payload) {
@@ -427,7 +429,7 @@ async function getLevelOverview(options, onRefresh) {
     a2Categories: [],
     b1Categories: [],
     b2Categories: []
-  }, { onRefresh });
+  }, { onRefresh, useCache: false });
 }
 
 async function getListeningPlanOverview(options, onRefresh) {
@@ -441,7 +443,7 @@ async function getListeningPlanOverview(options, onRefresh) {
     planSource: 'fixed-yoyo',
     isYoyoFixedPlan: false,
     fixedPlan: null
-  }, { onRefresh, useCache: false });
+  }, { onRefresh });
 }
 
 async function getListeningMaterialDetail(options, onRefresh) {
@@ -460,6 +462,13 @@ async function getListeningMaterialDetail(options, onRefresh) {
 async function saveListeningPlanMaterial(options) {
   return callCloud('saveListeningPlanMaterial', withSelectedStudent(Object.assign({}, options || {})), {
     saved: false,
+    activePlan: null
+  }, { useCache: false });
+}
+
+async function removeListeningPlanMaterial(options) {
+  return callCloud('removeListeningPlanMaterial', withSelectedStudent(Object.assign({}, options || {})), {
+    removed: false,
     activePlan: null
   }, { useCache: false });
 }
@@ -961,6 +970,7 @@ module.exports = {
   getListeningPlanOverview,
   getListeningMaterialDetail,
   saveListeningPlanMaterial,
+  removeListeningPlanMaterial,
   getProfileData,
   getTaskDetail,
   getTaskTranscript,

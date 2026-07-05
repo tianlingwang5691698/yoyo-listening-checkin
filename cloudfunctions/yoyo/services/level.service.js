@@ -17,7 +17,7 @@ async function getLevelOverview(event) {
   const progressRecords = await study.getChildProgressRecords(study.getUserScope(ctx));
   const isA1PhaseOverview = requestedPhase === 'round-1' || requestedPhase === 'round-2';
   const dashboard = await study.getDashboardData(ctx, {
-    includeDailyTasks: false,
+    includeDailyTasks: requestedPhase === 'custom',
     includeHomeTaskGroups: false,
     includeCategorySummaries: false,
     includeCatchupState: false,
@@ -27,6 +27,51 @@ async function getLevelOverview(event) {
     includeFamily: false,
     includeStats: true
   });
+  if (requestedPhase === 'custom') {
+    const dailyTasks = dashboard.planSource === 'custom-listening' ? (dashboard.dailyTasks || []) : [];
+    const categoryIds = [];
+    dailyTasks.forEach((task) => {
+      if (task.category && !categoryIds.includes(task.category)) {
+        categoryIds.push(task.category);
+      }
+    });
+    return {
+      user: ctx.user,
+      currentUser: ctx.user,
+      currentMember: ctx.member,
+      child: ctx.child,
+      level: study.level,
+      stats: dashboard.stats,
+      categories: categoryIds.map((category) => {
+        const categoryTasks = dailyTasks.filter((item) => item.category === category);
+        const todayTask = study.buildCategorySummary(categoryTasks, category);
+        return {
+          category,
+          categoryLabel: study.getCategoryLabel(category),
+          totalCount: study.getPlanCatalog(category).length,
+          completedCount: categoryTasks.filter((item) => item.completedToday).length,
+          todayTask,
+          tasks: categoryTasks,
+          isPendingAsset: todayTask.isPendingAsset,
+          todayTaskCount: todayTask.plannedTaskCount || categoryTasks.length,
+          plannedDurationSec: categoryTasks.reduce((sum, item) => (
+            sum + (Number(item.durationSec || 0) * Number(item.repeatTarget || 1))
+          ), 0),
+          planRunType: 'normal',
+          planDayIndex: dashboard.planDayIndex
+        };
+      }),
+      a2Categories: [],
+      b1Categories: [],
+      b2Categories: [],
+      levelDebug: {
+        resourceDebug: study.getResourceDebugSnapshot()
+      },
+      planDayIndex: dashboard.planDayIndex,
+      planPhase: dashboard.planPhase,
+      planPhaseLabel: dashboard.planPhaseLabel
+    };
+  }
   const todayPlan = study.buildPlanForDay(dashboard.planDayIndex);
   const todayTasks = isA1PhaseOverview
     ? study.decoratePlanTasks(progressRecords, ctx.child.childId, today, todayPlan, {
@@ -83,6 +128,7 @@ async function getLevelOverview(event) {
         totalCount: study.getPlanCatalog(category).length,
         completedCount: (dashboard.stats.completedTasks || 0),
         todayTask,
+        tasks: categoryTasks,
         isPendingAsset: todayTask.isPendingAsset,
         todayTaskCount: todayTask.plannedTaskCount || 0,
         plannedDurationSec: categoryTasks.reduce((sum, item) => (
