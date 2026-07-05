@@ -1,6 +1,7 @@
 const study = require('../facades/study.facade');
 
 const STANDALONE_LEVEL_CATEGORIES = ['newconcept2', 'unlock2', 'newconcept3', 'unlock3', 'newconcept4', 'unlock4'];
+const CATALOG_BROWSE_CATEGORIES = ['song', 'newconcept1', 'unlock1', 'peppa', 'newconcept2', 'unlock2', 'newconcept3', 'unlock3', 'newconcept4', 'unlock4'];
 
 async function getTaskDetail(event) {
   const { ctx, today } = await study.prepareRequestContext(Object.assign({}, event, {
@@ -12,6 +13,7 @@ async function getTaskDetail(event) {
   let planRunType = String(payload.planRunType || 'normal');
   let targetDate = String(payload.targetDate || today).slice(0, 10);
   const isPreview = planRunType === 'preview';
+  const isCatalogBrowse = isPreview && String(payload.source || '') === 'catalog' && CATALOG_BROWSE_CATEGORIES.includes(payload.category);
   const dashboard = await study.getDashboardData(ctx, isPreview ? {
     includeDailyTasks: false,
     includeHomeTaskGroups: false,
@@ -35,10 +37,18 @@ async function getTaskDetail(event) {
   const progressRecords = await study.getChildProgressRecords(study.getUserScope(ctx));
   const scope = study.getUserScope(ctx);
   const checkins = await study.getCheckins(scope);
-  const targetPlan = (planRunType === 'catchup' || isPreview)
+  const targetPlan = (planRunType === 'catchup' || (isPreview && !isCatalogBrowse))
     ? study.buildPlanForDay(targetPlanDayIndex, study.getPeppaReviewPlanOptions(progressRecords, checkins, ctx.child.childId, targetDate))
     : null;
-  const categoryTasks = STANDALONE_LEVEL_CATEGORIES.includes(payload.category)
+  const categoryTasks = isCatalogBrowse
+    ? study.decoratePlannedTasks(progressRecords, ctx.child.childId, payload.category, targetDate, await study.resolveStandaloneCategoryTasks(payload.category, ctx.child.childId, targetDate), {
+      planRunType: 'preview',
+      targetDate,
+      planDayIndex: 1
+    })
+    : dashboard.planSource === 'custom-listening' && planRunType === 'normal'
+      ? dashboard.dailyTasks.filter((item) => item.category === payload.category)
+      : STANDALONE_LEVEL_CATEGORIES.includes(payload.category)
     ? study.decoratePlannedTasks(progressRecords, ctx.child.childId, payload.category, targetDate, await study.resolveStandaloneCategoryTasks(payload.category, ctx.child.childId, targetDate), {
       planRunType: 'level',
       targetDate,
@@ -175,13 +185,28 @@ async function markTaskListened(event, context) {
       throw new Error('请先完成当前计划后，再追赶一批任务');
     }
   }
-  const todayPlan = study.buildPlanForDay(
-    planRunType === 'catchup'
-      ? (Number(payload.planDayIndex || 0) || study.getPlanDayIndexForDate(checkins, targetDate))
-      : study.getNextPlanDayIndexForDate(checkins, today),
-    study.getPeppaReviewPlanOptions(progressRecords, checkins, ctx.child.childId, targetDate)
-  );
-  const categoryTasks = STANDALONE_LEVEL_CATEGORIES.includes(category)
+  const activeListeningPlan = planRunType === 'normal'
+    ? await study.getActiveListeningPlan(ctx)
+    : null;
+  const useCustomListeningPlan = !!(activeListeningPlan && activeListeningPlan.active !== false);
+  const todayPlan = useCustomListeningPlan
+    ? study.buildListeningPlanForDay(
+      activeListeningPlan,
+      study.getCustomPlanDayIndex(checkins, targetDate, activeListeningPlan)
+    )
+    : study.buildPlanForDay(
+      planRunType === 'catchup'
+        ? (Number(payload.planDayIndex || 0) || study.getPlanDayIndexForDate(checkins, targetDate))
+        : study.getNextPlanDayIndexForDate(checkins, today),
+      study.getPeppaReviewPlanOptions(progressRecords, checkins, ctx.child.childId, targetDate)
+    );
+  const categoryTasks = useCustomListeningPlan
+    ? study.decorateListeningPlanTasks(progressRecords, ctx.child.childId, targetDate, todayPlan, {
+      planRunType,
+      targetDate,
+      listeningPlanId: activeListeningPlan.planId || activeListeningPlan._id || ''
+    }).filter((item) => item.category === category)
+    : STANDALONE_LEVEL_CATEGORIES.includes(category)
     ? study.decoratePlannedTasks(progressRecords, ctx.child.childId, category, targetDate, await study.resolveStandaloneCategoryTasks(category, ctx.child.childId, targetDate), {
       planRunType: 'level',
       targetDate,
@@ -222,6 +247,8 @@ async function markTaskListened(event, context) {
     textUnlocked: nextPlayCount >= task.repeatTarget - 1,
     completedToday: nextPlayCount >= task.repeatTarget,
     planDayIndex: todayPlan.dayIndex,
+    planSource: useCustomListeningPlan ? 'custom-listening' : 'fixed-yoyo',
+    listeningPlanId: useCustomListeningPlan ? (activeListeningPlan.planId || activeListeningPlan._id || '') : '',
     planRunType,
     targetDate,
     makeupForDate: planRunType === 'catchup' ? targetDate : '',
@@ -235,7 +262,10 @@ async function markTaskListened(event, context) {
     const nextProgressRecords = await study.getChildProgressRecords(scope);
     await study.maybeCreateCheckin(scope, nextProgressRecords, targetDate, {
       planRunType,
-      planDayIndex: todayPlan.dayIndex
+      planDayIndex: todayPlan.dayIndex,
+      todayPlan: useCustomListeningPlan ? todayPlan : undefined,
+      planSource: useCustomListeningPlan ? 'custom-listening' : 'fixed-yoyo',
+      listeningPlanId: useCustomListeningPlan ? (activeListeningPlan.planId || activeListeningPlan._id || '') : ''
     });
   }
   return getTaskDetail({ payload: { category, planRunType, targetDate, planDayIndex: todayPlan.dayIndex } });
@@ -251,10 +281,20 @@ async function completeTodayCheckin(event, context) {
   const scope = study.getUserScope(ctx);
   const progressRecords = await study.getChildProgressRecords(scope);
   const checkins = await study.getCheckins(scope);
-  const planDayIndex = study.getNextPlanDayIndexForDate(checkins, today);
+  const activeListeningPlan = await study.getActiveListeningPlan(ctx);
+  const useCustomListeningPlan = !!(activeListeningPlan && activeListeningPlan.active !== false);
+  const planDayIndex = useCustomListeningPlan
+    ? study.getCustomPlanDayIndex(checkins, today, activeListeningPlan)
+    : study.getNextPlanDayIndexForDate(checkins, today);
+  const todayPlan = useCustomListeningPlan
+    ? study.buildListeningPlanForDay(activeListeningPlan, planDayIndex)
+    : undefined;
   const checkin = await study.maybeCreateCheckin(scope, progressRecords, today, {
     planRunType: 'normal',
-    planDayIndex
+    planDayIndex,
+    todayPlan,
+    planSource: useCustomListeningPlan ? 'custom-listening' : 'fixed-yoyo',
+    listeningPlanId: useCustomListeningPlan ? (activeListeningPlan.planId || activeListeningPlan._id || '') : ''
   });
   if (!checkin) {
     throw new Error('今天还没全部听完');

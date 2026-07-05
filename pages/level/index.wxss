@@ -8,7 +8,7 @@
 
 .level-tabs {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 8rpx;
   margin-bottom: 18rpx;
 }
@@ -73,6 +73,17 @@
   border-radius: var(--radius-xl);
   overflow: hidden;
   background: var(--surface-glass);
+}
+
+.fixed-card {
+  margin: 0 0 22rpx;
+  padding: 24rpx 28rpx;
+  border-radius: var(--radius-xl);
+  background: var(--accent-soft);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18rpx;
 }
 
 .stage-row {

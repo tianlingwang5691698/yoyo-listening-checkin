@@ -4,8 +4,8 @@
 
 ## 当前版本
 
-- 稳定回退点：`5.4.1`
-- 当前云函数版本：`cloudfunctions/yoyo/package.json -> 5.4.1`
+- 稳定回退点：`6.0.0`
+- 当前云函数版本：`cloudfunctions/yoyo/package.json -> 6.0.0`
 
 ## 当前目标
 

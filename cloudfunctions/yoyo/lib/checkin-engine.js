@@ -5,13 +5,13 @@ async function maybeCreateCheckin(scope, progressRecords, date, options = {}, de
   const peppaReviewPlanOptions = deps.getPeppaReviewPlanOptions
     ? deps.getPeppaReviewPlanOptions(progressRecords, checkins, scope.childId, date)
     : {};
-  const todayPlan = deps.buildPlanForDay(
+  const todayPlan = options.todayPlan || deps.buildPlanForDay(
     planDayIndex,
     peppaReviewPlanOptions
   );
   const plannedTasks = todayPlan.flatTasks;
   const activeTasks = plannedTasks.filter((task) => !task.isPendingAsset);
-  const allDone = activeTasks.every((task, index) => {
+  const allDone = activeTasks.length > 0 && activeTasks.every((task, index) => {
     const progress = deps.getTaskProgressForDate(
       progressRecords,
       scope.childId,
@@ -41,6 +41,8 @@ async function maybeCreateCheckin(scope, progressRecords, date, options = {}, de
     completedCategories: Array.from(new Set(activeTasks.map((task) => task.category))),
     planDayIndex: todayPlan.dayIndex,
     planPhase: todayPlan.phase.key,
+    planSource: options.planSource || 'fixed-yoyo',
+    listeningPlanId: options.listeningPlanId || '',
     planRunType,
     makeupForDate: planRunType === 'catchup' ? date : ''
   };

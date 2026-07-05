@@ -354,6 +354,7 @@ const catalogService = require('./services/catalog.service');
 const speakingService = require('./services/speaking.service');
 const readingService = require('./services/reading.service');
 const listeningService = require('./services/listening.service');
+const listeningPlanService = require('./services/listening-plan.service');
 const grammarService = require('./services/grammar.service');
 const completionService = require('./services/completion.service');
 const writingService = require('./services/writing.service');
@@ -392,6 +393,9 @@ const actionMap = {
   getMaterialIndex: catalogService.getMaterialIndex,
   getDashboard: dashboardService.getDashboard,
   getLevelOverview: levelService.getLevelOverview,
+  getListeningPlanOverview: listeningPlanService.getListeningPlanOverview,
+  getListeningMaterialDetail: listeningPlanService.getListeningMaterialDetail,
+  saveListeningPlanMaterial: listeningPlanService.saveListeningPlanMaterial,
   getTaskDetail: taskService.getTaskDetail,
   getTaskTranscript: taskService.getTaskTranscript,
   markTaskListened: taskService.markTaskListened,
@@ -448,6 +452,9 @@ const actionMap = {
 const MONITORED_ACTIONS = new Set([
   'getDashboard',
   'getMaterialIndex',
+  'getListeningPlanOverview',
+  'getListeningMaterialDetail',
+  'saveListeningPlanMaterial',
   'getTaskDetail',
   'getTaskTranscript',
   'markTaskListened',

@@ -71,7 +71,9 @@ function decoratePlannedTasks(progressRecords, childId, category, date, tasks, o
     return Object.assign({}, decorateTask(plannedTask, progress, category), {
       planRunType: options.planRunType || 'normal',
       targetDate: options.targetDate || date,
-      planDayIndex: plannedTask.planDayIndex
+      planDayIndex: plannedTask.planDayIndex,
+      planSource: options.planSource || plannedTask.planSource || '',
+      listeningPlanId: options.listeningPlanId || plannedTask.listeningPlanId || ''
     });
   });
 }

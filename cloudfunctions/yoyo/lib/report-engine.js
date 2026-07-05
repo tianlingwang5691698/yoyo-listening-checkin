@@ -4,18 +4,35 @@ async function upsertDailyReport(scope, date, deps) {
   const startedAt = Date.now();
   const progressRecords = await deps.getChildProgressRecords(scope);
   const checkins = await deps.getCheckins(scope);
+  const activeListeningPlan = deps.getActiveListeningPlanByScope
+    ? await deps.getActiveListeningPlanByScope(scope)
+    : null;
+  const useCustomListeningPlan = !!(activeListeningPlan && activeListeningPlan.active !== false);
   const planOptions = deps.getPeppaReviewPlanOptions
     ? deps.getPeppaReviewPlanOptions(progressRecords, checkins, scope.childId, date)
     : {};
-  const todayPlan = deps.buildPlanForDay(deps.getPlanDayIndexForDate(checkins, date), planOptions);
+  const planDayIndex = useCustomListeningPlan
+    ? deps.getCustomPlanDayIndex(checkins, date, activeListeningPlan)
+    : deps.getPlanDayIndexForDate(checkins, date);
+  const todayPlan = useCustomListeningPlan
+    ? deps.buildListeningPlanForDay(activeListeningPlan, planDayIndex)
+    : deps.buildPlanForDay(planDayIndex, planOptions);
   const checkin = checkins.find((item) => item.date === date) || null;
-  const groupedTasks = deps.getPlanCategoryOrder(todayPlan.dayIndex).map((category) => ({
+  const categoryOrder = useCustomListeningPlan
+    ? (todayPlan.categoryOrder || Object.keys(todayPlan.byCategory || {}))
+    : deps.getPlanCategoryOrder(todayPlan.dayIndex);
+  const groupedTasks = categoryOrder.map((category) => ({
     category,
-    tasks: deps.decoratePlannedTasks(progressRecords, scope.childId, category, date, todayPlan.byCategory[category] || [], {
-      planRunType: 'normal',
-      targetDate: date,
-      planDayIndex: todayPlan.dayIndex
-    })
+    tasks: useCustomListeningPlan
+      ? deps.decorateListeningPlanTasks(progressRecords, scope.childId, date, todayPlan, {
+        planRunType: 'normal',
+        listeningPlanId: activeListeningPlan.planId || activeListeningPlan._id || ''
+      }).filter((item) => item.category === category)
+      : deps.decoratePlannedTasks(progressRecords, scope.childId, category, date, todayPlan.byCategory[category] || [], {
+        planRunType: 'normal',
+        targetDate: date,
+        planDayIndex: todayPlan.dayIndex
+      })
   }));
   const items = groupedTasks.flatMap((group) => group.tasks.map((task) => {
     const repeatTarget = task.repeatTarget || 3;
@@ -78,6 +95,8 @@ async function upsertDailyReport(scope, date, deps) {
     streakSnapshot: (checkin || {}).streakSnapshot || 0,
     planDayIndex: todayPlan.dayIndex,
     planPhase: todayPlan.phase.key,
+    planSource: useCustomListeningPlan ? 'custom-listening' : 'fixed-yoyo',
+    listeningPlanId: useCustomListeningPlan ? (activeListeningPlan.planId || activeListeningPlan._id || '') : '',
     items,
     speakingAttempts,
     completionItems: completionItems.map((item) => Object.assign({}, item, {

@@ -1,0 +1,50 @@
+<view class="theme-{{theme}} page-shell material-page">
+  <view class="material-hero card">
+    <view class="type-caption">{{levelId}}</view>
+    <view class="material-title type-page-title">{{categoryLabel}}</view>
+    <view class="type-caption">共 {{totalCount}} 条</view>
+  </view>
+
+  <view class="plan-card card">
+    <view class="plan-row">
+      <view>
+        <view class="plan-label type-caption">开始集数</view>
+        <view class="plan-value">{{startNo}}</view>
+      </view>
+      <slider min="1" max="{{sliderMax}}" value="{{startNo}}" activeColor="#C47A2C" block-size="18" bindchange="changeStart" />
+    </view>
+    <view class="plan-row">
+      <view>
+        <view class="plan-label type-caption">结束集数</view>
+        <view class="plan-value">{{endNo}}</view>
+      </view>
+      <slider min="1" max="{{sliderMax}}" value="{{endNo}}" activeColor="#C47A2C" block-size="18" bindchange="changeEnd" />
+    </view>
+    <view class="plan-grid">
+      <view>
+        <view class="plan-label type-caption">每天几条</view>
+        <view class="plan-value">{{dailyCount}}</view>
+        <slider min="1" max="10" value="{{dailyCount}}" activeColor="#C47A2C" block-size="18" bindchange="changeDailyCount" />
+      </view>
+      <view>
+        <view class="plan-label type-caption">每条几遍</view>
+        <view class="plan-value">{{repeatTarget}}</view>
+        <slider min="1" max="5" value="{{repeatTarget}}" activeColor="#C47A2C" block-size="18" bindchange="changeRepeatTarget" />
+      </view>
+    </view>
+    <button class="save-button" loading="{{saving}}" bindtap="savePlan">保存计划</button>
+  </view>
+
+  <view class="task-list">
+    <block wx:for="{{tasks}}" wx:key="taskId">
+      <view class="task-row card" data-index="{{index}}" bindtap="openTask">
+        <view class="task-no">{{item.itemNo}}</view>
+        <view class="task-main">
+          <view class="task-title">{{item.title}}</view>
+          <view class="task-subtitle type-caption">{{item.subtitle || item.durationText}}</view>
+        </view>
+        <view class="task-state">›</view>
+      </view>
+    </block>
+  </view>
+</view>

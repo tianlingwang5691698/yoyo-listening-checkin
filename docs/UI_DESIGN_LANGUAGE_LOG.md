@@ -1771,6 +1771,15 @@
 - 设计记录：家长日报先显示轻量结果，点开后再加载原题、解析、短语含义和例句。
 - 验证：已查 265565 的 `studyCompletedItems` 与 `readingStudyPacks`。
 
+### 2026-07-05 自定义听力计划
+
+- 文件：`pages/level/index.js`
+- 文件：`pages/listening-material/index.js`
+- 文件：`cloudfunctions/yoyo/services/listening-plan.service.js`
+- 改动：音频页按 Pre A1-A2 等级展示素材，素材详情可查看每一条并设置起止、每日数量和遍数。
+- 设计记录：佑佑 317613 默认固定阶段计划不迁移；其他学生优先用自定义听力计划，素材预览不计入打卡。
+- 验证：已跑云函数测试和页面脚本语法检查。
+
 ## 后续记录格式
 
 每次 UI/交互改动后追加：

@@ -5,6 +5,7 @@ const progressRepository = require('../repositories/progress.repository');
 const checkinRepository = require('../repositories/checkin.repository');
 const reportRepository = require('../repositories/report.repository');
 const attemptRepository = require('../repositories/attempt.repository');
+const listeningPlanRepository = require('../repositories/listening-plan.repository');
 const dateLib = require('../lib/china-date');
 const taskPresenter = require('../lib/task-presenter');
 const planLib = require('../lib/plan-runtime');
@@ -17,6 +18,7 @@ const levelEngine = require('../lib/level-engine');
 const requestContextEngine = require('../lib/request-context-engine');
 const monitor = require('../lib/monitor');
 const catalogEngine = require('../lib/catalog-engine');
+const listeningPlanEngine = require('../lib/listening-plan-engine');
 const familyContextFacade = require('../facades/family-context.facade');
 const { collection } = require('../adapters/db.adapter');
 const { isMissingCollectionError } = require('../lib/errors');
@@ -54,6 +56,10 @@ const level = {
   name: 'A1 纯音频听力',
   description: '每天三项音频任务，前两遍盲听，第三遍再看文本。'
 };
+
+function isYoyoChild(child) {
+  return String(child && child.childLoginCode || '').trim() === '317613';
+}
 
 const STORAGE_ROOTS = catalogEngine.STORAGE_ROOTS;
 const STORAGE_ROOT_CANDIDATES = catalogEngine.STORAGE_ROOT_CANDIDATES;
@@ -225,6 +231,14 @@ async function getCheckins(scope) {
   return checkinRepository.findByScope(scope);
 }
 
+async function getActiveListeningPlanByScope(scope) {
+  return listeningPlanRepository.findActiveByScope(scope);
+}
+
+async function getActiveListeningPlan(ctx) {
+  return getActiveListeningPlanByScope(getUserScope(ctx));
+}
+
 async function getCompletionItemsByDate(scope, date) {
   const result = await collection('studyCompletedItems').where({
     familyId: scope.familyId,
@@ -358,11 +372,57 @@ function buildPlanForDay(dayIndex, options = {}) {
   }, options);
 }
 
+function getCustomPlanDayIndex(checkins, date, plan) {
+  return listeningPlanEngine.getCustomPlanDayIndex(checkins, date, plan && (plan.planId || plan._id || ''));
+}
+
+function buildListeningPlanForDay(plan, dayIndex) {
+  return listeningPlanEngine.buildPlanForDay(plan, dayIndex, {
+    getCatalog
+  });
+}
+
 function decoratePlanTasks(progressRecords, childId, date, plan, options = {}) {
   return planEngine.decoratePlanTasks(progressRecords, childId, date, plan, options, {
     decoratePlannedTasks,
     planLib
   });
+}
+
+function decorateListeningPlanTasks(progressRecords, childId, date, plan, options = {}) {
+  return listeningPlanEngine.decoratePlanTasks(progressRecords, childId, date, plan, options, {
+    decoratePlannedTasks
+  });
+}
+
+function buildListeningPlanMaterials(levelId) {
+  return listeningPlanEngine.buildMaterialEntries(levelId, {
+    getCatalog
+  });
+}
+
+async function saveListeningPlanMaterial(ctx, payload) {
+  const scope = getUserScope(ctx);
+  const current = await getActiveListeningPlanByScope(scope);
+  const material = listeningPlanEngine.normalizePlanMaterial(payload, {
+    getCatalog
+  });
+  if (!material) {
+    throw new Error('请选择有效听力素材');
+  }
+  const now = new Date().toISOString();
+  const planId = current && current.planId
+    ? current.planId
+    : `${scope.familyId}_${scope.childId}_custom_listening`;
+  const next = {
+    planId,
+    planSource: 'custom-listening',
+    title: '我的听力计划',
+    startDate: current && current.startDate ? current.startDate : getTodayString(),
+    materials: listeningPlanEngine.mergePlanMaterial(current, material),
+    createdAt: current && current.createdAt ? current.createdAt : now
+  };
+  return listeningPlanRepository.upsertActive(scope, next);
 }
 
 function buildEmptyProgress() {
@@ -415,6 +475,7 @@ async function reconcileCheckins(scope, progressRecords, checkins, today) {
         && item.date
         && item.date <= today
         && String(item.planRunType || 'normal') === 'normal'
+        && String(item.planSource || 'fixed-yoyo') !== 'custom-listening'
         && (item.completedToday || Number(item.playCount || 0) >= Number(item.repeatTarget || 3))
     ))
     .map((item) => item.date)))
@@ -491,6 +552,10 @@ async function upsertDailyReport(scope, date) {
     getChildProgressRecords,
     getCheckins,
     buildPlanForDay,
+    getActiveListeningPlanByScope,
+    getCustomPlanDayIndex,
+    buildListeningPlanForDay,
+    decorateListeningPlanTasks,
     getPeppaReviewPlanOptions,
     getPlanDayIndexForDate,
     getPlanCategoryOrder,
@@ -509,10 +574,15 @@ async function getDashboardData(ctx, options = {}) {
     getUserScope,
     getChildProgressRecords,
     getCheckins,
+    getActiveListeningPlan,
+    isYoyoChild,
     reconcileCheckins,
     getPlanDayIndexForDate,
     getNextPlanDayIndexForDate,
     buildPlanForDay,
+    getCustomPlanDayIndex,
+    buildListeningPlanForDay,
+    decorateListeningPlanTasks,
     getPeppaReviewPlanOptions,
     getPlanCategoryOrder,
     decoratePlannedTasks,
@@ -545,6 +615,14 @@ module.exports = {
   getUserScope,
   getChildProgressRecords,
   getCheckins,
+  getActiveListeningPlan,
+  getActiveListeningPlanByScope,
+  saveListeningPlanMaterial,
+  buildListeningPlanMaterials,
+  getCustomPlanDayIndex,
+  buildListeningPlanForDay,
+  decorateListeningPlanTasks,
+  isYoyoChild,
   getCompletionItemsByDate,
   getPlanDayIndex,
   getPlanDayIndexForDate,

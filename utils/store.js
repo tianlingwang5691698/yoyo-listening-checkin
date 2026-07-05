@@ -20,6 +20,7 @@ const MUTATION_ACTIONS = {
   addDictionaryBook: true,
   saveFlashcardAudio: true,
   markTaskListened: true,
+  saveListeningPlanMaterial: true,
   submitSpeakingAttempt: true,
   evaluateSpeakingPronunciation: true,
   rescoreSpeakingAttempt: true,
@@ -44,6 +45,8 @@ const READ_CACHE_CONFIG = {
   getDashboard: { persist: true },
   getMaterialIndex: { persist: true },
   getLevelOverview: { persist: true },
+  getListeningPlanOverview: { persist: true },
+  getListeningMaterialDetail: { persist: true },
   getTaskDetail: { persist: true },
   getTaskTranscript: { persist: false },
   getSpeakingAttempts: { persist: false },
@@ -425,6 +428,40 @@ async function getLevelOverview(options, onRefresh) {
     b1Categories: [],
     b2Categories: []
   }, { onRefresh });
+}
+
+async function getListeningPlanOverview(options, onRefresh) {
+  return callCloud('getListeningPlanOverview', withSelectedStudent(Object.assign({}, options || {})), {
+    child: null,
+    stats: contracts.createStatsDefaults(),
+    selectedLevel: 'A1',
+    levelTabs: [],
+    materials: [],
+    activePlan: null,
+    planSource: 'fixed-yoyo',
+    isYoyoFixedPlan: false,
+    fixedPlan: null
+  }, { onRefresh });
+}
+
+async function getListeningMaterialDetail(options, onRefresh) {
+  return callCloud('getListeningMaterialDetail', withSelectedStudent(Object.assign({}, options || {})), {
+    child: null,
+    category: '',
+    levelId: 'A1',
+    categoryLabel: '',
+    totalCount: 0,
+    tasks: [],
+    activePlan: null,
+    selectedMaterial: null
+  }, { onRefresh });
+}
+
+async function saveListeningPlanMaterial(options) {
+  return callCloud('saveListeningPlanMaterial', withSelectedStudent(Object.assign({}, options || {})), {
+    saved: false,
+    activePlan: null
+  }, { useCache: false });
 }
 
 /**
@@ -921,6 +958,9 @@ module.exports = {
   getMonthHeatmap,
   getDailyReportByDate,
   getLevelOverview,
+  getListeningPlanOverview,
+  getListeningMaterialDetail,
+  saveListeningPlanMaterial,
   getProfileData,
   getTaskDetail,
   getTaskTranscript,

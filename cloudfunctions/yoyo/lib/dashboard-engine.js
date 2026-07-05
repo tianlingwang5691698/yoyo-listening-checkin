@@ -1,5 +1,5 @@
-function buildCategorySummariesFromDailyTasks(dailyTasks, planDayIndex, deps) {
-  return deps.getPlanCategoryOrder(planDayIndex).map((category) => {
+function buildCategorySummariesFromDailyTasks(dailyTasks, planDayIndex, deps, categoryOrder) {
+  return (categoryOrder || deps.getPlanCategoryOrder(planDayIndex)).map((category) => {
     const categoryTasks = (dailyTasks || []).filter((item) => item.category === category);
     return deps.buildCategorySummary(categoryTasks, category);
   });
@@ -80,8 +80,8 @@ function appendTodayPeppaReviewProgress(dailyTasks, progressRecords, childId, to
   return (dailyTasks || []).concat(reviewTasks);
 }
 
-function buildHomeTaskGroups(dailyTasks, planDayIndex, deps) {
-  return deps.getPlanCategoryOrder(planDayIndex).map((category) => {
+function buildHomeTaskGroups(dailyTasks, planDayIndex, deps, categoryOrder) {
+  return (categoryOrder || deps.getPlanCategoryOrder(planDayIndex)).map((category) => {
     const categoryTasks = (dailyTasks || []).filter((item) => item.category === category).map(decorateHomeTask);
     if (!categoryTasks.length) {
       return null;
@@ -134,23 +134,42 @@ async function getDashboardData(ctx, deps, options = {}) {
       checkins = reconciled.checkins || checkins;
     }
   }
+  const activeListeningPlan = deps.getActiveListeningPlan
+    ? await deps.getActiveListeningPlan(ctx)
+    : null;
+  const useCustomListeningPlan = !!(activeListeningPlan && activeListeningPlan.active !== false);
   const getActivePlanDayIndex = deps.getNextPlanDayIndexForDate || deps.getPlanDayIndexForDate;
-  const planDayIndex = getActivePlanDayIndex(checkins, today);
+  const planDayIndex = useCustomListeningPlan
+    ? deps.getCustomPlanDayIndex(checkins, today, activeListeningPlan)
+    : getActivePlanDayIndex(checkins, today);
   const peppaReviewPlanOptions = deps.getPeppaReviewPlanOptions
     ? deps.getPeppaReviewPlanOptions(progressRecords, checkins, ctx.child.childId, today)
     : {};
-  const todayPlan = deps.buildPlanForDay(
-    planDayIndex,
-    peppaReviewPlanOptions
-  );
+  const todayPlan = useCustomListeningPlan
+    ? deps.buildListeningPlanForDay(activeListeningPlan, planDayIndex)
+    : deps.buildPlanForDay(
+      planDayIndex,
+      peppaReviewPlanOptions
+    );
+  const planCategoryOrder = useCustomListeningPlan
+    ? (todayPlan.categoryOrder || Object.keys(todayPlan.byCategory || {}))
+    : deps.getPlanCategoryOrder(planDayIndex);
   const shouldBuildDailyTasks = includeDailyTasks || includeCategorySummaries || includeCatchupState || includeTaskProgressSummary;
-  const dailyTasks = appendTodayPeppaReviewProgress(applyCheckinCompletion(shouldBuildDailyTasks
-    ? deps.decoratePlanTasks(progressRecords, ctx.child.childId, today, todayPlan, {
-      planRunType: 'normal'
-    })
-    : [], checkins, today), progressRecords, ctx.child.childId, today, deps);
+  const baseDailyTasks = shouldBuildDailyTasks
+    ? (useCustomListeningPlan
+      ? deps.decorateListeningPlanTasks(progressRecords, ctx.child.childId, today, todayPlan, {
+        planRunType: 'normal',
+        listeningPlanId: activeListeningPlan.planId || activeListeningPlan._id || ''
+      })
+      : deps.decoratePlanTasks(progressRecords, ctx.child.childId, today, todayPlan, {
+        planRunType: 'normal'
+      }))
+    : [];
+  const dailyTasks = useCustomListeningPlan
+    ? applyCheckinCompletion(baseDailyTasks, checkins, today)
+    : appendTodayPeppaReviewProgress(applyCheckinCompletion(baseDailyTasks, checkins, today), progressRecords, ctx.child.childId, today, deps);
   const categorySummaries = includeCategorySummaries
-    ? buildCategorySummariesFromDailyTasks(dailyTasks, planDayIndex, deps)
+    ? buildCategorySummariesFromDailyTasks(dailyTasks, planDayIndex, deps, planCategoryOrder)
     : [];
   const stats = deps.buildStats(progressRecords, checkins, ctx.child.childId);
   const activeTaskCount = includeTaskProgressSummary || includeCatchupState
@@ -162,7 +181,7 @@ async function getDashboardData(ctx, deps, options = {}) {
   const todayDone = (includeTaskProgressSummary || includeCatchupState)
     ? (activeTaskCount > 0 && activeTaskCount === completedTaskCountToday)
     : false;
-  const catchupState = includeCatchupState
+  const catchupState = includeCatchupState && !useCustomListeningPlan
     ? deps.buildCatchupState(checkins, today, deps.getPlanStartDate(ctx, today, checkins), todayDone)
     : undefined;
   const result = {
@@ -173,7 +192,10 @@ async function getDashboardData(ctx, deps, options = {}) {
     }),
     planDayIndex,
     planPhase: todayPlan.phase.key,
-    planPhaseLabel: todayPlan.phase.label
+    planPhaseLabel: todayPlan.phase.label,
+    planSource: useCustomListeningPlan ? 'custom-listening' : 'fixed-yoyo',
+    listeningPlan: activeListeningPlan || null,
+    isYoyoFixedPlan: !useCustomListeningPlan && !!(deps.isYoyoChild && deps.isYoyoChild(ctx.child))
   };
   if (includeUser) {
     result.user = ctx.user;
@@ -195,7 +217,7 @@ async function getDashboardData(ctx, deps, options = {}) {
     result.dailyTasks = dailyTasks;
   }
   if (includeHomeTaskGroups) {
-    result.groupedDailyTasks = buildHomeTaskGroups(dailyTasks, planDayIndex, deps);
+    result.groupedDailyTasks = buildHomeTaskGroups(dailyTasks, planDayIndex, deps, planCategoryOrder);
   }
   if (includeCategorySummaries) {
     result.categorySummaries = categorySummaries;
@@ -205,14 +227,15 @@ async function getDashboardData(ctx, deps, options = {}) {
   }
   if (includePlanDebug) {
     result.planDebug = {
-      day1Categories: deps.getPlanCategoryOrder(planDayIndex),
+      day1Categories: planCategoryOrder,
+      planSource: result.planSource,
       catalogCounts: {
         newconcept1: deps.getCatalog('newconcept1').length,
         peppa: deps.getCatalog('peppa').length,
         unlock1: deps.getCatalog('unlock1').length,
         song: deps.getCatalog('song').length
       },
-      todayTaskCounts: deps.getPlanCategoryOrder(planDayIndex).reduce((acc, category) => {
+      todayTaskCounts: planCategoryOrder.reduce((acc, category) => {
         acc[category] = (todayPlan.byCategory[category] || []).length;
         return acc;
       }, {})

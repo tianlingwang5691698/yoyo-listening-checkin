@@ -1,153 +1,53 @@
 const store = require('../../utils/store');
 const page = require('../../utils/page');
-const labels = require('../../utils/labels');
-const snapshotStore = require('../../utils/snapshot');
-const LESSON_TASK_SNAPSHOT_KEY = 'lessonTaskSnapshotV1';
 
-const LEVEL_TABS = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'].map((levelId) => ({
+const FALLBACK_LEVEL_TABS = ['Pre A1', 'A1', 'A2', 'B1', 'B2', 'C1', 'C2'].map((levelId) => ({
   levelId,
-  enabled: ['A1', 'A2', 'B1', 'B2'].includes(levelId),
-  stateText: ['A1', 'A2', 'B1', 'B2'].includes(levelId) ? '' : '未开放'
+  enabled: levelId !== 'C1' && levelId !== 'C2',
+  active: levelId === 'A1',
+  stateText: levelId === 'C1' || levelId === 'C2' ? '未开放' : ''
 }));
 
-const PHASE_LABELS = {
-  '第1轮': '听力组合 A',
-  '阶段二': '听力组合 B',
-  '阶段三': '听力组合 C'
-};
-
-const STAGE_GROUPS = [
-  {
-    phaseLabel: '第1轮',
-    phaseKey: 'round-1',
-    stageText: '阶段一',
-    title: '听力组合 A',
-    hint: '累积 A1 听力时长。',
-  },
-  {
-    phaseLabel: '阶段二',
-    phaseKey: 'round-2',
-    stageText: '阶段二',
-    title: '听力组合 B',
-    hint: '累积 A1 听力时长。',
-  },
-  {
-    phaseLabel: '阶段三',
-    phaseKey: 'round-3',
-    stageText: '阶段三',
-    title: '听力组合 C',
-    hint: '累积 A1 听力时长。',
-  }
-];
-
-function getTextType(task) {
-  if (!task || task.isPendingAsset) {
-    return '等待';
-  }
-  if (task.transcriptTrackId) {
-    return task.syncGranularity === 'line' ? '句级' : '逐词';
-  }
-  if (task.transcriptStatus === 'pending') {
-    return '暂无文本';
-  }
-  return '纯听力';
-}
-
-function buildProgramEntries(categories) {
-  return (categories || []).map((category) => {
-    const task = category.todayTask || {};
-    const disabled = !!(category.isPendingAsset || task.isPendingAsset);
-    return Object.assign({}, category, {
-      title: task.displayTitle || task.title || '等待素材',
-      textType: getTextType(task),
-      stateText: task.completedToday ? '完成' : disabled ? '等待' : '›',
-      stateClass: task.completedToday ? 'is-done' : disabled ? 'is-waiting' : '',
-      disabled,
-      taskId: task.taskId || ''
-    });
-  });
-}
-
-function buildStandaloneEntries(categories) {
-  return (categories || []).map((category) => {
-    const task = category.todayTask || {};
-    return Object.assign({}, category, {
-      title: task.displayTitle || task.title || '等待素材',
-      textType: getTextType(task),
-      stateText: '›',
-      stateClass: '',
-      disabled: !task.taskId,
-      taskId: task.taskId || '',
-      taskSnapshot: task.taskId ? task : null
-    });
-  });
-}
-
-function buildLevelTabs(selectedLevel) {
-  return LEVEL_TABS.map((item) => Object.assign({}, item, {
+function buildLevelTabs(tabs, selectedLevel) {
+  return (tabs && tabs.length ? tabs : FALLBACK_LEVEL_TABS).map((item) => Object.assign({}, item, {
     active: item.levelId === selectedLevel
   }));
 }
 
-function buildCurrentStage(data) {
-  const stage = STAGE_GROUPS.find((item) => item.phaseLabel === data.planPhaseLabel) || STAGE_GROUPS[0];
-  return {
-    levelId: 'A1',
-    label: PHASE_LABELS[data.planPhaseLabel] || stage.title,
-    stageText: stage.stageText,
-    hint: stage.hint,
-    phaseKey: stage.phaseKey
-  };
-}
-
-function buildStageGroups(data) {
-  return STAGE_GROUPS.map((stage) => Object.assign({}, stage, {
-    active: stage.phaseLabel === data.planPhaseLabel
+function buildMaterialRows(materials) {
+  return (materials || []).map((item) => Object.assign({}, item, {
+    countText: item.totalCount ? `${item.totalCount} 条` : '待加入',
+    stateText: item.selected ? '已选' : (item.enabled ? '›' : '等待'),
+    disabled: !item.enabled
   }));
 }
 
 Page({
   data: page.createCloudPageData({
     child: null,
-    level: null,
     stats: {},
-    planDayIndex: 1,
-    planPhaseLabel: '第1轮',
-    categories: [],
-    a2Categories: [],
-    b1Categories: [],
-    b2Categories: [],
-    levelDebug: null,
-    levelTabs: LEVEL_TABS,
     selectedLevel: 'A1',
-    currentStage: {
-      levelId: 'A1',
-      label: '听力组合 A',
-      stageText: '阶段一',
-      hint: '累积 A1 听力时长。',
-      phaseKey: 'round-1'
-    },
-    stageGroups: STAGE_GROUPS,
-    programEntries: []
+    levelTabs: FALLBACK_LEVEL_TABS,
+    materials: [],
+    activePlan: null,
+    planSource: 'fixed-yoyo',
+    isYoyoFixedPlan: false,
+    fixedPlan: null
   }),
   applyOverview(data) {
-    const categories = (data.categories || []).map(labels.normalizeCategory);
-    const a2Categories = (data.a2Categories || []).map(labels.normalizeCategory);
-    const b1Categories = (data.b1Categories || []).map(labels.normalizeCategory);
-    const b2Categories = (data.b2Categories || []).map(labels.normalizeCategory);
+    const selectedLevel = data.selectedLevel || this.data.selectedLevel || 'A1';
     this.setData(page.buildCloudPageData(this.data, Object.assign({}, data, {
-      categories,
-      a2Categories,
-      b1Categories,
-      b2Categories,
-      levelDebug: data.levelDebug || null,
-      levelTabs: buildLevelTabs(this.data.selectedLevel || 'A1'),
-      currentStage: buildCurrentStage(data),
-      stageGroups: buildStageGroups(data),
-      programEntries: ['A2', 'B1', 'B2'].includes(this.data.selectedLevel || 'A1')
-        ? buildStandaloneEntries((this.data.selectedLevel || 'A1') === 'A2' ? a2Categories : ((this.data.selectedLevel || 'A1') === 'B1' ? b1Categories : b2Categories))
-        : buildProgramEntries(categories)
+      selectedLevel,
+      levelTabs: buildLevelTabs(data.levelTabs, selectedLevel),
+      materials: buildMaterialRows(data.materials || []),
+      activePlan: data.activePlan || null,
+      fixedPlan: data.fixedPlan || null,
+      isYoyoFixedPlan: !!data.isYoyoFixedPlan
     })));
+  },
+  async loadOverview(levelId) {
+    const data = await store.getListeningPlanOverview({ levelId }, (fresh) => this.applyOverview(fresh));
+    this.applyOverview(data);
   },
   async onShow() {
     page.syncTheme(this);
@@ -158,66 +58,37 @@ Page({
     if (!page.requireIdentityConfirmed()) {
       return;
     }
-    const data = await store.getLevelOverview({}, (fresh) => this.applyOverview(fresh));
-    this.applyOverview(data);
+    await this.loadOverview(this.data.selectedLevel || 'A1');
   },
-  chooseLevel(event) {
+  async chooseLevel(event) {
     const enabled = event.currentTarget.dataset.enabled;
     const levelId = event.currentTarget.dataset.levelId || 'A1';
     if (enabled === false || enabled === 'false') {
-      wx.showToast({
-        title: '暂未开放',
-        icon: 'none'
-      });
+      wx.showToast({ title: '暂未开放', icon: 'none' });
       return;
     }
-    const selectedLevel = ['A2', 'B1', 'B2'].includes(levelId) ? levelId : 'A1';
     this.setData({
-      selectedLevel,
-      levelTabs: buildLevelTabs(selectedLevel),
-      programEntries: selectedLevel === 'A2'
-        ? buildStandaloneEntries(this.data.a2Categories)
-        : selectedLevel === 'B1'
-          ? buildStandaloneEntries(this.data.b1Categories)
-          : selectedLevel === 'B2'
-            ? buildStandaloneEntries(this.data.b2Categories)
-            : buildProgramEntries(this.data.categories)
+      selectedLevel: levelId,
+      levelTabs: buildLevelTabs(this.data.levelTabs, levelId)
     });
+    await this.loadOverview(levelId);
   },
-  openStage(event) {
-    const phase = event.currentTarget.dataset.phase;
-    if (!phase) {
-      return;
-    }
-    wx.navigateTo({
-      url: `/pages/level-stage/index?levelId=A1&phase=${phase}`
-    });
-  },
-  openTest() {
-    wx.showToast({
-      title: '测试模块暂未开放',
-      icon: 'none'
-    });
-  },
-  openTask(event) {
+  openMaterial(event) {
     const category = event.currentTarget.dataset.category;
-    const taskId = event.currentTarget.dataset.taskId;
+    const levelId = event.currentTarget.dataset.levelId || this.data.selectedLevel || 'A1';
     const disabled = event.currentTarget.dataset.disabled;
     if (!category || disabled === true || disabled === 'true') {
       return;
     }
-    const entry = (this.data.programEntries || []).find((item) => item.category === category && item.taskId === taskId) || null;
-    if (entry && entry.taskSnapshot) {
-      snapshotStore.write(LESSON_TASK_SNAPSHOT_KEY, `${category}:${taskId || ''}`, {
-        category,
-        taskId,
-        task: entry.taskSnapshot
-      }, { source: 'level' });
-    }
     wx.navigateTo({
-      url: taskId
-        ? `/pages/lesson/index?category=${category}&taskId=${taskId}`
-        : `/pages/lesson/index?category=${category}`
+      url: `/pages/listening-material/index?levelId=${encodeURIComponent(levelId)}&category=${encodeURIComponent(category)}`
+    });
+  },
+  openFixedStage() {
+    const fixedPlan = this.data.fixedPlan || {};
+    const phase = fixedPlan.planPhase || 'round-2';
+    wx.navigateTo({
+      url: `/pages/level-stage/index?levelId=A1&phase=${phase}`
     });
   }
 });

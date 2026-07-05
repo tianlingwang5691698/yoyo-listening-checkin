@@ -6,6 +6,13 @@ module.exports = {
   getUserScope: shared.getUserScope,
   getChildProgressRecords: shared.getChildProgressRecords,
   getCheckins: shared.getCheckins,
+  getActiveListeningPlan: shared.getActiveListeningPlan,
+  getActiveListeningPlanByScope: shared.getActiveListeningPlanByScope,
+  saveListeningPlanMaterial: shared.saveListeningPlanMaterial,
+  buildListeningPlanMaterials: shared.buildListeningPlanMaterials,
+  getCustomPlanDayIndex: shared.getCustomPlanDayIndex,
+  buildListeningPlanForDay: shared.buildListeningPlanForDay,
+  decorateListeningPlanTasks: shared.decorateListeningPlanTasks,
   getCompletionItemsByDate: shared.getCompletionItemsByDate,
   getPlanDayIndexForDate: shared.getPlanDayIndexForDate,
   getNextPlanDayIndexForDate: shared.getNextPlanDayIndexForDate,
@@ -34,5 +41,6 @@ module.exports = {
   reconcileCheckins: shared.reconcileCheckins,
   saveProgressRecord: shared.saveProgressRecord,
   getResourceDebugSnapshot: shared.getResourceDebugSnapshot,
+  isYoyoChild: shared.isYoyoChild,
   level: shared.level
 };

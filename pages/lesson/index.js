@@ -461,6 +461,7 @@ Page({
     this.category = query.category || 'peppa';
     this.taskId = query.taskId || '';
     this.planRunType = query.planRunType || 'normal';
+    this.source = query.source || '';
     this.targetDate = query.targetDate || '';
     this.planDayIndex = query.planDayIndex || '';
     this.pendingAutoPlay = false;
@@ -857,6 +858,7 @@ Page({
       planRunType: this.planRunType,
       targetDate: this.targetDate,
       planDayIndex: this.planDayIndex,
+      source: this.source,
       taskSnapshot: this.data.task || undefined
     }, (fresh) => this.applyFreshTaskDetail(fresh));
     if (detail && detail.syncMode === 'cloud-error' && hasSnapshotTask) {
