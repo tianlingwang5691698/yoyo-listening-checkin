@@ -623,6 +623,13 @@
   font-weight: var(--font-title-weight);
   line-height: 68rpx;
   text-align: center;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, opacity 0.12s ease, background-color 0.12s ease;
+}
+
+.player-action:active {
+  transform: translateY(2rpx) scale(0.97);
+  box-shadow: inset 0 4rpx 10rpx rgba(47, 43, 39, 0.12);
+  opacity: 0.9;
 }
 
 .completion-card-mask {
@@ -996,6 +1003,11 @@
 .record-action.is-recording {
   background: #f65252;
   color: #fff;
+}
+
+.record-action.is-recording:active {
+  transform: translateY(2rpx) scale(0.96);
+  box-shadow: inset 0 6rpx 12rpx rgba(120, 20, 20, 0.18);
 }
 
 .record-action.is-ready,

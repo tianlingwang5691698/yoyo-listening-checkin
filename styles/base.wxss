@@ -10,10 +10,22 @@ button {
   margin: 0;
   padding: 0;
   line-height: 1.2;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, opacity 0.12s ease;
 }
 
 button::after {
   border: none;
+}
+
+button:active {
+  transform: translateY(2rpx) scale(0.97);
+  opacity: 0.9;
+}
+
+button[disabled]:active,
+button.is-disabled:active {
+  transform: none;
+  opacity: 0.55;
 }
 
 .page-shell {
