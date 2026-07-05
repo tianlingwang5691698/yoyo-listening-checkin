@@ -6,6 +6,7 @@ module.exports = {
   getUserScope: shared.getUserScope,
   getChildProgressRecords: shared.getChildProgressRecords,
   getCheckins: shared.getCheckins,
+  getCompletionItemsByDate: shared.getCompletionItemsByDate,
   getPlanDayIndexForDate: shared.getPlanDayIndexForDate,
   getNextPlanDayIndexForDate: shared.getNextPlanDayIndexForDate,
   buildPlanForDay: shared.buildPlanForDay,

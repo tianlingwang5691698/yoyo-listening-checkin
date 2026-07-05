@@ -1746,6 +1746,23 @@
 - 设计记录：口语评分是听后练习，不阻断每日听力打卡主线。
 - 验证：已做页面脚本语法检查。
 
+### 2026-07-05 后台阅读活跃与家长昵称
+
+- 文件：`cloudfunctions/yoyo/services/admin.service.js`
+- 改动：后台活跃统计加入阅读完成记录；绑定家长按成员角色展示，王天龙绑定其他学生时显示真实昵称。
+- 设计记录：后台学习数以真实完成行为为准，家长关系不因历史占位昵称被隐藏。
+- 验证：已查线上 `studyCompletedItems` 与 317613 绑定数据。
+
+### 2026-07-05 家长日报完成记录
+
+- 文件：`pages/parent/index.wxml`
+- 文件：`pages/parent/index.js`
+- 文件：`pages/parent/detail/index.js`
+- 文件：`cloudfunctions/yoyo/services/report.service.js`
+- 改动：家长日报和最近记录展示听力、阅读、语法、写作完成内容，详情页直接展示云端完成内容。
+- 设计记录：家长视角能看到孩子当天真实完成了什么；日历点亮仍只按原听力打卡规则。
+- 验证：已补日报 completionItems 测试。
+
 ## 后续记录格式
 
 每次 UI/交互改动后追加：

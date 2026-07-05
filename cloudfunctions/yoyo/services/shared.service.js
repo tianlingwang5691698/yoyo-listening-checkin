@@ -225,6 +225,15 @@ async function getCheckins(scope) {
   return checkinRepository.findByScope(scope);
 }
 
+async function getCompletionItemsByDate(scope, date) {
+  const result = await collection('studyCompletedItems').where({
+    familyId: scope.familyId,
+    childId: scope.childId,
+    date
+  }).orderBy('updatedAt', 'desc').limit(100).get();
+  return result && result.data ? result.data : [];
+}
+
 const addDays = dateLib.addDays;
 const getTodayString = dateLib.getTodayString;
 const computeStreak = dateLib.computeStreak;
@@ -488,6 +497,7 @@ async function upsertDailyReport(scope, date) {
     decoratePlannedTasks,
     getCatalog,
     findAttemptsByDate: (nextScope, nextDate) => attemptRepository.findByDate(nextScope, nextDate),
+    findCompletionItemsByDate: getCompletionItemsByDate,
     findFamilyMembersByFamilyId: (familyId) => familyRepository.findMembersByFamilyId(familyId),
     upsertReport: (nextScope, nextDate, report) => reportRepository.upsert(nextScope, nextDate, report)
   });
@@ -535,6 +545,7 @@ module.exports = {
   getUserScope,
   getChildProgressRecords,
   getCheckins,
+  getCompletionItemsByDate,
   getPlanDayIndex,
   getPlanDayIndexForDate,
   getNextPlanDayIndexForDate,

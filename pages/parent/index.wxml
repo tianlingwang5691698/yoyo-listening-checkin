@@ -26,7 +26,7 @@
     <view class="row-between report-head">
       <view>
         <view class="section-title type-section-title">今日</view>
-        <view class="section-copy">{{todayReport.completedCategories.length || 0}} 项 · {{todayReport.totalMinutes || 0}} 分钟</view>
+        <view class="section-copy">{{todayReport.totalCompletedCount || 0}} 项 · {{todayReport.totalMinutes || 0}} 分钟</view>
       </view>
       <view class="detail-link" data-date="{{todayReport.date}}" bindtap="openDailyDetail">查看</view>
     </view>
@@ -74,7 +74,7 @@
       <view class="trend-row task-cell is-link" data-date="{{item.date}}" bindtap="openDailyDetail">
         <view>
           <view class="trend-date">{{item.dateLabel}}</view>
-          <view class="trend-copy">{{item.completedCategories.length ? '完成 ' + item.completedCategories.length + ' 项' : '无记录'}}</view>
+          <view class="trend-copy">{{item.totalCompletedCount ? '完成 ' + item.totalCompletedCount + ' 项' : '无记录'}}</view>
         </view>
         <view class="trend-side">
           <view class="trend-badge">{{item.totalMinutes}} 分钟</view>

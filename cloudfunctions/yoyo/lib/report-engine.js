@@ -35,6 +35,7 @@ async function upsertDailyReport(scope, date, deps) {
     };
   }));
   const attempts = deps.findAttemptsByDate ? await deps.findAttemptsByDate(scope, date) : [];
+  const completionItems = deps.findCompletionItemsByDate ? await deps.findCompletionItemsByDate(scope, date) : [];
   const speakingAttempts = attempts.map((item) => ({
     attemptId: item._id || item.attemptId || '',
     category: item.category || '',
@@ -79,6 +80,9 @@ async function upsertDailyReport(scope, date, deps) {
     planPhase: todayPlan.phase.key,
     items,
     speakingAttempts,
+    completionItems: completionItems.map((item) => Object.assign({}, item, {
+      id: item.recordId || item._id || ''
+    })),
     pushStatus: 'in-app-ready',
     inAppVisible: true,
     updatedAt: new Date().toISOString()

@@ -1,6 +1,10 @@
 const study = require('../facades/study.facade');
 const reportRepository = require('../repositories/report.repository');
 
+function needsCompletionRefresh(report) {
+  return !report || !Array.isArray(report.completionItems);
+}
+
 async function getHeatmap(event) {
   const { ctx, today } = await study.prepareRequestContext(Object.assign({}, event, {
     action: 'getHeatmap'
@@ -111,7 +115,7 @@ async function getDailyReportByDate(event) {
   const scope = study.getUserScope(ctx);
   if (date !== today && !payload.force) {
     const existing = await reportRepository.findByScopeAndDate(scope, date);
-    if (existing) {
+    if (existing && !needsCompletionRefresh(existing)) {
       return { report: existing };
     }
   }
@@ -130,7 +134,7 @@ async function getParentDashboard(event) {
   for (let i = 0; i < days; i += 1) {
     const date = study.addDays(today, -i);
     const existing = i === 0 ? null : await reportRepository.findByScopeAndDate(scope, date);
-    recentReports.push(existing || await study.upsertDailyReport(scope, date));
+    recentReports.push(existing && !needsCompletionRefresh(existing) ? existing : await study.upsertDailyReport(scope, date));
   }
   return {
     user: ctx.user,

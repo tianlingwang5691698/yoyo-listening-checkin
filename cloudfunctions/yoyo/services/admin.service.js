@@ -2,7 +2,7 @@ const { collection } = require('../adapters/db.adapter');
 const { getWXContext } = require('../adapters/wx-context.adapter');
 
 const BUILTIN_ADMIN_OPEN_IDS = ['om8JT3Zhqe1zeAiKUGGkU0ACjAWs'];
-const ADMIN_SERVICE_VERSION = 'admin-student-login-aggregate-20260704-1400';
+const ADMIN_SERVICE_VERSION = 'admin-completion-aggregate-20260705-1725';
 const WANG_TIANLONG_OPEN_ID = 'om8JT3Zhqe1zeAiKUGGkU0ACjAWs';
 
 function normalizeAdminId(value) {
@@ -96,7 +96,7 @@ function shouldHideOwnerChildForBoundParent(child, familyMembers, parentBoundFam
 function isBindingParent(member) {
   return member
     && member.role === 'parent'
-    && String(member.displayName || '').trim() !== '学生设备';
+    && member.studyRole !== 'student';
 }
 
 function shouldHideInactiveDefaultYoyo(child, active, bindingParents) {
@@ -117,7 +117,7 @@ function isGenericMemberName(value) {
 }
 
 function getMemberDisplayName(member, user, ownerChildNameByOpenId) {
-  if (member && member.openId === WANG_TIANLONG_OPEN_ID && member.role === 'owner') {
+  if (member && member.openId === WANG_TIANLONG_OPEN_ID) {
     return '王天龙';
   }
   const displayName = String((member && member.displayName) || '').trim();
@@ -182,14 +182,15 @@ async function getAdminFamilyList() {
   const wxContext = getWXContext();
   assertAdmin(wxContext.OPENID);
 
-  const [children, members, families, users, checkins, progressRecords, attempts] = await Promise.all([
+  const [children, members, families, users, checkins, progressRecords, attempts, completedItems] = await Promise.all([
     listAll('children'),
     listAll('familyMembers'),
     listAll('families'),
     listAll('users'),
     listAll('dailyCheckins'),
     listAll('dailyTaskProgress'),
-    listAll('taskAttempts')
+    listAll('taskAttempts'),
+    listAll('studyCompletedItems')
   ]);
   const familiesById = indexBy(families, 'familyId');
   const usersByOpenId = indexBy(users, 'openId');
@@ -204,7 +205,8 @@ async function getAdminFamilyList() {
   const activityByScope = mergeActivityMaps([
     buildActivityByScope(checkins),
     buildActivityByScope(progressRecords),
-    buildActivityByScope(attempts)
+    buildActivityByScope(attempts),
+    buildActivityByScope(completedItems)
   ]);
   const parentBoundFamilyIdsByOpenId = members.reduce((map, member) => {
     const openId = String(member && member.openId || '');

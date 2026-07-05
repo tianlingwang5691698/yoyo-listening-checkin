@@ -93,9 +93,15 @@ function buildCompletionDays(items) {
 
 function normalizeReport(report) {
   const safeReport = report || {};
+  const completionItems = normalizeCompletionItems(safeReport.completionItems || []);
+  const completedCategories = safeReport.completedCategories || [];
   return Object.assign({}, safeReport, {
     dateLabel: formatDateLabel(safeReport.date),
-    items: (safeReport.items || []).map(labels.normalizeReportItem)
+    items: (safeReport.items || []).map(labels.normalizeReportItem),
+    completionItems,
+    completedCategories,
+    completedContentCount: completionItems.length,
+    totalCompletedCount: completedCategories.length + completionItems.length
   });
 }
 

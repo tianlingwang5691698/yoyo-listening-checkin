@@ -302,16 +302,17 @@ function normalizeReport(report) {
   const speakingAttempts = (safeReport.speakingAttempts || []).map(normalizeSpeakingAttempt);
   const speakingSummary = buildSpeakingSummary(speakingAttempts);
   const completedCount = items.filter((item) => item.completedToday).length;
+  const completionItems = (safeReport.completionItems || []).map(normalizeCompletionItem);
   return {
     date: safeReport.date || '',
     dateLabel: formatDateLabel(safeReport.date),
     totalMinutes: safeReport.totalMinutes || 0,
-    completedCount,
-    totalCount: items.length,
+    completedCount: completedCount + completionItems.length,
+    totalCount: items.length + completionItems.length,
     items,
     speakingAttempts,
     speakingSummary,
-    completionItems: []
+    completionItems
   };
 }
 
@@ -389,11 +390,14 @@ Page({
     }
     store.getDailyReportByDate(this.data.date).then((reportData) => {
       const report = normalizeReport(reportData.report);
+      const currentCompletionItems = this.data.report.completionItems || [];
+      const completionItems = report.completionItems.length ? report.completionItems : currentCompletionItems;
       this.setData(page.buildCloudPageData(this.data, {
         date: this.data.date,
         report: Object.assign({}, report, {
-          completionItems: this.data.report.completionItems || []
-        })
+          completionItems
+        }),
+        completionItemsLoaded: this.data.completionItemsLoaded || report.completionItems.length > 0
       }));
     }).catch(() => {});
   },

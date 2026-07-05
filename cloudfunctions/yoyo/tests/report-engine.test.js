@@ -193,3 +193,41 @@ test('日报生成包含当天 Peppa 复听任务和时长', async () => {
   assert.equal(report.items.some((item) => item.taskId === 'peppa-1__review_20_1'), true);
   assert.equal(report.totalMinutes, 35);
 });
+
+test('日报生成包含阅读写作完成内容', async () => {
+  const report = await reportEngine.upsertDailyReport({
+    familyId: 'family-1',
+    childId: 'child-1',
+    userId: 'user-1',
+    openId: 'open-1',
+    memberId: 'member-1'
+  }, '2026-07-05', {
+    getChildProgressRecords: async () => [],
+    getCheckins: async () => [],
+    buildPlanForDay: () => ({
+      dayIndex: 1,
+      phase: { key: 'round-1' },
+      byCategory: {}
+    }),
+    getPlanDayIndexForDate: () => 1,
+    getPlanCategoryOrder: () => [],
+    decoratePlannedTasks: () => [],
+    getCatalog: () => [],
+    findCompletionItemsByDate: async () => [{
+      recordId: 'reading-1',
+      type: 'reading',
+      title: '阅读练习',
+      completedToday: true
+    }, {
+      recordId: 'writing-1',
+      type: 'writing',
+      title: '写作批改',
+      completedToday: true
+    }],
+    findFamilyMembersByFamilyId: async () => [],
+    upsertReport: async () => {}
+  });
+
+  assert.equal(report.completionItems.length, 2);
+  assert.deepEqual(report.completionItems.map((item) => item.id), ['reading-1', 'writing-1']);
+});
