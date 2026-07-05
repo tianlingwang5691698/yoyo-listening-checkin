@@ -31,9 +31,9 @@ const STORAGE_ROOTS = {
 };
 const STORAGE_ROOT_CANDIDATES = {
   newconcept1: [NEW_CONCEPT1_AUDIO_ROOT, 'A1/NewConcept1', 'A1/New Concept 1', 'A1/new-concept-1-us'],
-  newconcept2: [NEW_CONCEPT2_AUDIO_ROOT, 'A2/NewConcept2', 'A2/New Concept 2', 'A2/new-concept-2-us', 'A2/Newconcept2'],
-  newconcept3: [NEW_CONCEPT3_AUDIO_ROOT, 'B1/NewConcept3', 'B1/New Concept 3', 'B1/new-concept-3-us', 'B1/Newconcept3'],
-  newconcept4: ['B2/NewConcept3-US/新概念英语（第4册）美音（MP3+LRC）', NEW_CONCEPT4_AUDIO_ROOT, 'B2/NewConcept4', 'B2/New Concept 4', 'B2/new-concept-4-us', 'B2/Newconcept4', 'B2/NewConcept3-US'],
+  newconcept2: ['A2/NewConcept2-US/新概念英语（第2册）美音（MP3+LRC）', 'A2/NewConcept2-US/新概念英语（第二册）美音（MP3+LRC）', NEW_CONCEPT2_AUDIO_ROOT, 'A2/NewConcept2', 'A2/New Concept 2', 'A2/new-concept-2-us', 'A2/Newconcept2'],
+  newconcept3: ['B1/NewConcept3-US/新概念英语（第3册）美音（MP3+LRC）', 'B1/NewConcept3-US/新概念英语（第三册）美音（MP3+LRC）', NEW_CONCEPT3_AUDIO_ROOT, 'B1/NewConcept3', 'B1/New Concept 3', 'B1/new-concept-3-us', 'B1/Newconcept3'],
+  newconcept4: ['B2/NewConcept4-US/新概念英语（第4册）美音（MP3+LRC）', 'B2/NewConcept4-US/新概念英语（第四册）美音（MP3+LRC）', 'B2/NewConcept3-US/新概念英语（第4册）美音（MP3+LRC）', NEW_CONCEPT4_AUDIO_ROOT, 'B2/NewConcept4', 'B2/New Concept 4', 'B2/new-concept-4-us', 'B2/Newconcept4', 'B2/NewConcept3-US'],
   peppa: [`${STORAGE_ROOTS.peppa}/第1季`, `${STORAGE_ROOTS.peppa}/第2季`, `${STORAGE_ROOTS.peppa}/第3季`, STORAGE_ROOTS.peppa],
   unlock1: [UNLOCK1_AUDIO_ROOT, 'A1/Unlock1'],
   unlock2: [UNLOCK2_AUDIO_ROOT, 'A2/Unlock2', 'A2/Unlock 2'],
