@@ -134,7 +134,7 @@
             </view>
             <view class="report-state {{item.completedToday ? 'is-done' : ''}}">
               <view>{{item.type === 'speaking' ? '查看' : (item.completedToday ? '完成' : '等待')}}</view>
-              <view class="report-progress">{{item.playCount}} / {{item.repeatTarget}}</view>
+              <view class="report-progress">{{item.isStudyCompletion ? item.progressText : (item.playCount + ' / ' + item.repeatTarget)}}</view>
             </view>
           </view>
 

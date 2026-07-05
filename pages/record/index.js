@@ -202,6 +202,37 @@ function normalizeReport(report) {
   });
 }
 
+function normalizeCompletionItem(item) {
+  const safeItem = item || {};
+  const type = String(safeItem.type || '');
+  const typeLabels = {
+    vocabulary: '词汇',
+    reading: '阅读',
+    grammar: '语法',
+    writing: '写作'
+  };
+  return {
+    id: safeItem.id || safeItem.recordId || `${type}:${safeItem.targetId || ''}`,
+    type,
+    categoryLabel: typeLabels[type] || safeItem.meta || '完成记录',
+    title: safeItem.title || typeLabels[type] || '完成记录',
+    progressText: safeItem.progressText || safeItem.meta || '已完成',
+    completedToday: safeItem.completedToday !== false,
+    playCount: '',
+    repeatTarget: '',
+    isStudyCompletion: true,
+    latestAttempt: safeItem.latestAttempt || null
+  };
+}
+
+function mergeReportWithCompletions(report, completions) {
+  const normalizedReport = normalizeReport(report);
+  const completionItems = (completions || []).map(normalizeCompletionItem);
+  return Object.assign({}, normalizedReport, {
+    items: (normalizedReport.items || []).concat(completionItems)
+  });
+}
+
 function buildDaySummary(report) {
   const safeReport = report || EMPTY_REPORT;
   const items = safeReport.items || [];
@@ -423,16 +454,36 @@ Page({
     this.setData({
       selectedDayLoading: true
     });
-    const applyData = (data) => {
+    let reportData = null;
+    let completionData = null;
+    const applyData = () => {
+      if (!reportData) {
+        return;
+      }
+      const selectedDayReport = mergeReportWithCompletions(
+        reportData && reportData.report,
+        completionData && completionData.items
+      );
       this.setData({
-        selectedDayReport: normalizeReport(data.report),
-        selectedDaySummary: buildDaySummary(normalizeReport(data.report)),
+        selectedDayReport,
+        selectedDaySummary: buildDaySummary(selectedDayReport),
         selectedDayLoading: false,
         selectedDateLabel: formatDateLabel(date)
       });
     };
-    const data = await store.getDailyReportByDate(date, applyData);
-    applyData(data);
+    const [data, completions] = await Promise.all([
+      store.getDailyReportByDate(date, (fresh) => {
+        reportData = fresh;
+        applyData();
+      }),
+      store.getStudyCompletions({ date }, (freshCompletions) => {
+        completionData = freshCompletions;
+        applyData();
+      })
+    ]);
+    reportData = data;
+    completionData = completions;
+    applyData();
   },
   async loadCatchupTasks() {
     if (!this.data.catchupState || !this.data.catchupState.canCatchup || this.data.catchupTasksLoading) {

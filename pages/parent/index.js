@@ -8,7 +8,8 @@ const MODULES = [
   { key: 'speaking', label: '口语' },
   { key: 'reading', label: '阅读' },
   { key: 'grammar', label: '语法' },
-  { key: 'writing', label: '写作' }
+  { key: 'writing', label: '写作' },
+  { key: 'vocabulary', label: '词汇' }
 ];
 
 function formatDateLabel(dateKey) {
@@ -22,8 +23,15 @@ function getTypeLabel(type) {
   if (type === 'reading' || type === 'reading-study') return '阅读';
   if (type === 'grammar') return '语法';
   if (type === 'writing') return '写作';
+  if (type === 'vocabulary') return '词汇';
   if (type === 'speaking') return '口语';
   return '听力';
+}
+
+function getModuleKey(type) {
+  if (type === 'reading-study') return 'reading';
+  if (type === 'vocabulary') return 'vocabulary';
+  return type;
 }
 
 function buildModuleStats(reports, completionItems) {
@@ -35,6 +43,15 @@ function buildModuleStats(reports, completionItems) {
     next[item.key] = item;
     return next;
   }, {});
+  const countedCompletionIds = {};
+  const appendCompletion = (item) => {
+    const key = getModuleKey(item.type);
+    const id = item.id || item.recordId || `${item.date || ''}:${item.type || ''}:${item.targetId || ''}`;
+    if (!map[key] || countedCompletionIds[id]) return;
+    countedCompletionIds[id] = true;
+    map[key].count += 1;
+    map[key].latestTitle = item.title || item.meta || map[key].latestTitle;
+  };
   (reports || []).forEach((report) => {
     (report.items || []).forEach((item) => {
       if (item.completedToday && map.listening) {
@@ -48,14 +65,9 @@ function buildModuleStats(reports, completionItems) {
         map.speaking.latestTitle = item.questionText || '录音评分';
       }
     });
+    (report.completionItems || []).forEach(appendCompletion);
   });
-  (completionItems || []).forEach((item) => {
-    const key = item.type === 'reading-study' ? 'reading' : item.type;
-    if (map[key]) {
-      map[key].count += 1;
-      map[key].latestTitle = item.title || item.meta || map[key].latestTitle;
-    }
-  });
+  (completionItems || []).forEach(appendCompletion);
   return stats;
 }
 
