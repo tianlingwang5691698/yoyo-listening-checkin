@@ -1763,6 +1763,14 @@
 - 设计记录：家长视角能看到孩子当天真实完成了什么；日历点亮仍只按原听力打卡规则。
 - 验证：已补日报 completionItems 测试。
 
+### 2026-07-05 家长日报阅读详情展开
+
+- 文件：`pages/parent/detail/index.js`
+- 文件：`pages/parent/detail/index.wxml`
+- 改动：阅读记录展开时补拉完整题目解析；短语学习记录展开时补拉短语卡片。
+- 设计记录：家长日报先显示轻量结果，点开后再加载原题、解析、短语含义和例句。
+- 验证：已查 265565 的 `studyCompletedItems` 与 `readingStudyPacks`。
+
 ## 后续记录格式
 
 每次 UI/交互改动后追加：

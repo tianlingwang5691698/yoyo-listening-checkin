@@ -103,6 +103,7 @@
           <view class="recording-meta" wx:if="{{item.correctText}}">答题：{{item.correctText}}</view>
           <button class="detail-toggle" data-key="{{item.key}}" catchtap="toggleCompletionDetail">{{item.expanded ? '收起详情' : '查看原题和分析'}}</button>
           <block wx:if="{{item.expanded}}">
+            <view class="detail-empty-time" wx:if="{{item.detailLoading}}">加载详情中</view>
             <view class="source-passage" wx:if="{{item.passage && item.passage.passage}}">
               <view class="question-review-title">原文</view>
               <view class="recording-text">{{item.passage.passage}}</view>
@@ -126,6 +127,14 @@
               <view class="question-review-title">参考范文</view>
               <view class="recording-text">{{item.polishedVersion}}</view>
             </view>
+            <block wx:if="{{item.phraseCards.length}}">
+              <view class="question-review" wx:for="{{item.phraseCards}}" wx:key="key" wx:for-item="phrase">
+                <view class="question-review-title">{{phrase.phrase}}</view>
+                <view class="recording-text" wx:if="{{phrase.meaning}}">含义：{{phrase.meaning}}</view>
+                <view class="recording-text" wx:if="{{phrase.example}}">例句：{{phrase.example}}</view>
+                <view class="recording-text" wx:if="{{phrase.exampleMeaning}}">译文：{{phrase.exampleMeaning}}</view>
+              </view>
+            </block>
             <block wx:if="{{item.grammarQuestions.length}}">
               <view class="question-review" wx:for="{{item.grammarQuestions}}" wx:key="key" wx:for-item="question">
                 <view class="question-review-title">第 {{question.number}} 题 · {{question.isCorrect ? '正确' : '订正'}} · 答案 {{question.answer}}</view>

@@ -111,6 +111,64 @@ function getCompletionTypeLabel(type) {
   return '完成';
 }
 
+function normalizePhraseCards(cards) {
+  return (cards || []).map((card, index) => ({
+    key: card.id || card.phrase || card.text || `phrase-${index}`,
+    phrase: card.phrase || card.text || '',
+    meaning: card.meaning || card.translation || '',
+    example: card.example || '',
+    exampleMeaning: card.exampleMeaning || card.exampleTranslation || ''
+  }));
+}
+
+function isPlaceholderAnalysis(value) {
+  return !String(value || '').trim() || String(value || '').includes('生成解析中');
+}
+
+function mergeStudyPackIntoAttempt(attempt, studyPack) {
+  const nextAttempt = Object.assign({}, attempt || {});
+  const review = Object.assign({}, nextAttempt.review || {});
+  const pack = studyPack || {};
+  const analyses = pack.questionAnalyses || pack.analysis || [];
+  const answerSentenceByNumber = analyses.reduce((map, item) => {
+    if (item && item.number !== undefined && item.answerSentence) {
+      map[String(item.number)] = {
+        number: item.number,
+        text: item.answerSentence,
+        translation: item.answerSentenceTranslation || ''
+      };
+    }
+    return map;
+  }, {});
+  const analysisByNumber = analyses.reduce((map, item) => {
+    if (item && item.number !== undefined && item.number !== null) {
+      map[String(item.number)] = item;
+    }
+    return map;
+  }, {});
+  const currentAnalysis = Array.isArray(review.analysis) ? review.analysis : [];
+  review.analysis = currentAnalysis.length ? currentAnalysis.map((item) => {
+    const model = analysisByNumber[String(item.number)] || {};
+    return Object.assign({}, item, {
+      answer: item.answer || model.answer || '',
+      answerSentence: answerSentenceByNumber[String(item.number)] || item.answerSentence || null,
+      text: isPlaceholderAnalysis(item.text || item.analysis || item.explanation) && model.analysis ? model.analysis : (item.text || item.analysis || item.explanation || '')
+    });
+  }) : analyses.map((item) => ({
+    number: item.number,
+    answer: item.answer || '',
+    selected: item.selected || '',
+    correct: item.correct,
+    answerSentence: answerSentenceByNumber[String(item.number)] || null,
+    text: item.analysis || ''
+  }));
+  review.phraseCards = pack.phraseCards || review.phraseCards || [];
+  review.vocabularyCards = pack.vocabularyCards || review.vocabularyCards || [];
+  review.sentencePatternCards = pack.sentencePatternCards || review.sentencePatternCards || [];
+  nextAttempt.review = review;
+  return nextAttempt;
+}
+
 function normalizeCompletionItem(item, index) {
   const safeItem = item || {};
   const latestAttempt = safeItem.latestAttempt || {};
@@ -124,6 +182,7 @@ function normalizeCompletionItem(item, index) {
   const reviewSuggestions = Array.isArray(review.suggestions) ? review.suggestions : [];
   const grammarQuestions = Array.isArray(latestAttempt.questions) ? latestAttempt.questions : [];
   const passage = latestAttempt.passage || null;
+  const phraseCards = normalizePhraseCards(review.phraseCards || review.phrases || []);
   const readingAnalysisByNumber = (Array.isArray(review.analysis) ? review.analysis : []).reduce((map, analysis) => {
     if (analysis && analysis.number !== undefined && analysis.number !== null) {
       map[String(analysis.number)] = analysis;
@@ -173,6 +232,7 @@ function normalizeCompletionItem(item, index) {
     reviewProblemsText: reviewProblems.join('；'),
     reviewSuggestions,
     reviewSuggestionsText: reviewSuggestions.join('；'),
+    phraseCards,
     grammarCorrections: Array.isArray(review.grammarCorrections) ? review.grammarCorrections : [],
     polishedVersion: review.polishedVersion || '',
     passage,
@@ -210,13 +270,36 @@ async function hydrateReadingItems(items) {
       return item;
     }
     try {
-      const data = await store.getReadingPassage({ passageId: item.passageId });
-      const latestAttempt = data.latestAttempt || item.latestAttempt || {};
+      const [passageData, packData] = await Promise.all([
+        store.getReadingPassage({ passageId: item.passageId }),
+        store.getReadingStudyPack({ passageId: item.passageId, section: 'questions', useCache: false })
+      ]);
+      const baseAttempt = item.latestAttempt || (passageData && passageData.latestAttempt) || {};
+      const latestAttempt = packData && packData.studyPack
+        ? mergeStudyPackIntoAttempt(baseAttempt, packData.studyPack)
+        : baseAttempt;
       return normalizeCompletionItem(Object.assign({}, item, {
         latestAttempt: Object.assign({}, latestAttempt, {
-          passage: data.passage || null
+          passage: (passageData && passageData.passage) || null
         })
       }), 0);
+    } catch (error) {
+      return item;
+    }
+  }));
+  return nextItems;
+}
+
+async function hydrateReadingStudyItems(items) {
+  const nextItems = await Promise.all((items || []).map(async (item) => {
+    if (item.type !== 'reading-study' || item.phraseCards && item.phraseCards.length || !item.passageId) {
+      return item;
+    }
+    try {
+      const section = item.section || 'phrases';
+      const data = await store.getReadingStudyPack({ passageId: item.passageId, section, useCache: false });
+      const latestAttempt = mergeStudyPackIntoAttempt(item.latestAttempt || {}, data.studyPack || {});
+      return normalizeCompletionItem(Object.assign({}, item, { latestAttempt }), 0);
     } catch (error) {
       return item;
     }
@@ -284,13 +367,14 @@ async function hydrateWritingItems(items) {
 function needsCompletionHydration(item) {
   if (!item) return false;
   if (item.type === 'reading' && !item.passage && item.passageId) return true;
+  if (item.type === 'reading-study' && !(item.phraseCards && item.phraseCards.length) && item.passageId) return true;
   if (item.type === 'grammar' && !(item.grammarQuestions && item.grammarQuestions.length) && item.topicId) return true;
   if (item.type === 'writing' && !item.writingPrompt && item.targetId) return true;
   return false;
 }
 
 async function hydrateCompletionItem(item) {
-  const items = await hydrateWritingItems(await hydrateGrammarItems(await hydrateReadingItems([item])));
+  const items = await hydrateWritingItems(await hydrateGrammarItems(await hydrateReadingStudyItems(await hydrateReadingItems([item]))));
   return items[0] || item;
 }
 
