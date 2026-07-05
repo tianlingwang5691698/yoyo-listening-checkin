@@ -105,7 +105,7 @@ async function recordGrammarWrong(event) {
   const { ctx } = await study.prepareRequestContext(Object.assign({}, event, {
     action: 'recordGrammarWrong'
   }));
-  if (study.normalizeStudyRole(ctx.member) !== 'student') {
+  if (!study.isStudyWriteAllowed(ctx)) {
     return { saved: false, reason: 'preview-role' };
   }
   const now = new Date().toISOString();
@@ -221,7 +221,7 @@ async function recordGrammarProgress(event) {
   const { ctx } = await study.prepareRequestContext(Object.assign({}, event, {
     action: 'recordGrammarProgress'
   }));
-  if (study.normalizeStudyRole(ctx.member) !== 'student') {
+  if (!study.isStudyWriteAllowed(ctx)) {
     return { saved: false, reason: 'preview-role' };
   }
   const now = new Date().toISOString();

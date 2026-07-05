@@ -4,7 +4,7 @@ const dbAdapter = require('../adapters/db.adapter');
 const COLLECTION = 'studyCompletedItems';
 
 async function upsertStudyCompletion(ctx, today, payload) {
-  if (study.normalizeStudyRole(ctx.member) !== 'student') {
+  if (!study.isStudyWriteAllowed(ctx)) {
     return { saved: false, reason: 'preview-role' };
   }
   const type = String(payload.type || '').trim();

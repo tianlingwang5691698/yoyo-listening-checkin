@@ -1492,7 +1492,7 @@ async function submitReadingAttempt(event) {
     createdAt: new Date().toISOString(),
     updatedAt: new Date().toISOString()
   };
-  if (study.normalizeStudyRole(ctx.member) === 'student') {
+  if (study.isStudyWriteAllowed(ctx)) {
     try {
       const created = await dbAdapter.collection('readingAttempts').add({
         data: attempt
@@ -1522,7 +1522,7 @@ async function submitReadingAttempt(event) {
     passage,
     attempt,
     review,
-    studyWriteAllowed: study.normalizeStudyRole(ctx.member) === 'student'
+    studyWriteAllowed: study.isStudyWriteAllowed(ctx)
   };
 }
 

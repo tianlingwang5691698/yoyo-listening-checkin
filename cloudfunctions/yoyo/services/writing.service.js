@@ -191,7 +191,7 @@ async function submitWritingAttempt(event) {
     updatedAt: now
   };
   let attemptId = '';
-  if (study.normalizeStudyRole(ctx.member) !== 'student') {
+  if (!study.isStudyWriteAllowed(ctx)) {
     const review = await gradeWriting(prompt, essay);
     return {
       prompt: {

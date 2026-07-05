@@ -28,6 +28,7 @@ module.exports = {
   buildCatchupState: shared.buildCatchupState,
   getPlanStartDate: shared.getPlanStartDate,
   normalizeStudyRole: shared.normalizeStudyRole,
+  isStudyWriteAllowed: shared.isStudyWriteAllowed,
   maybeCreateCheckin: shared.maybeCreateCheckin,
   reconcileCheckins: shared.reconcileCheckins,
   saveProgressRecord: shared.saveProgressRecord,

@@ -57,7 +57,7 @@ async function createSpeakingUploadUrl(event) {
   const attempt = normalizeAttemptPayload(Object.assign({}, payload, {
     targetDate: payload.targetDate || today
   }));
-  if (attempt.planRunType !== 'preview' && study.normalizeStudyRole(ctx.member) !== 'student') {
+  if (attempt.planRunType !== 'preview' && !study.isStudyWriteAllowed(ctx)) {
     throw new Error('家长模式不上传录音');
   }
   const scope = study.getUserScope(ctx);
@@ -86,7 +86,7 @@ async function submitSpeakingAttempt(event) {
   const attempt = normalizeAttemptPayload(Object.assign({}, payload, {
     targetDate: payload.targetDate || today
   }));
-  if (attempt.planRunType !== 'preview' && study.normalizeStudyRole(ctx.member) !== 'student') {
+  if (attempt.planRunType !== 'preview' && !study.isStudyWriteAllowed(ctx)) {
     throw new Error('家长模式不计入训练');
   }
   const scope = study.getUserScope(ctx);
@@ -162,10 +162,12 @@ async function submitSpeakingAttempt(event) {
     };
   }
   const attemptId = await attemptRepository.add(record);
-  try {
-    await study.upsertDailyReport(scope, record.date);
-  } catch (error) {
-    console.warn('[speaking-report-upsert-failed]', String(error && error.message || error || ''));
+  if (study.normalizeStudyRole(ctx.member) === 'student') {
+    try {
+      await study.upsertDailyReport(scope, record.date);
+    } catch (error) {
+      console.warn('[speaking-report-upsert-failed]', String(error && error.message || error || ''));
+    }
   }
   const attempts = await attemptRepository.findBestAndLatestByTask(scope, {
     date: record.date,
@@ -189,7 +191,7 @@ async function evaluateSpeakingPronunciation(event) {
     targetDate: payload.targetDate || today,
     promptText: payload.promptText || payload.refText || payload.questionText
   }));
-  if (attempt.planRunType !== 'preview' && study.normalizeStudyRole(ctx.member) !== 'student') {
+  if (attempt.planRunType !== 'preview' && !study.isStudyWriteAllowed(ctx)) {
     throw new Error('家长模式不进行口语评分');
   }
   const result = await speakingEngine.evaluateSpeakingPronunciation(Object.assign({}, attempt, {
@@ -232,7 +234,7 @@ async function rescoreSpeakingAttempt(event) {
   if (!existing || existing.familyId !== scope.familyId || existing.childId !== scope.childId) {
     throw new Error('录音记录不存在');
   }
-  if (existing.planRunType !== 'preview' && study.normalizeStudyRole(ctx.member) !== 'student') {
+  if (existing.planRunType !== 'preview' && !study.isStudyWriteAllowed(ctx)) {
     throw new Error('家长模式不计入训练');
   }
   const attempt = normalizeAttemptPayload(Object.assign({}, existing, {

@@ -170,6 +170,30 @@
 - 每条必须写清楚：板块、文件、改动、设计记录、验证。
 - 后续改 UI 或交互前先看对应板块最近记录，再继续改。
 
+### 2026-07-05 绑定家长代做孩子练习
+
+- 文件：`utils/store.js`
+- 文件：`cloudfunctions/yoyo/services/shared.service.js`
+- 文件：`cloudfunctions/yoyo/facades/study.facade.js`
+- 文件：`cloudfunctions/yoyo/services/task.service.js`
+- 文件：`cloudfunctions/yoyo/services/speaking.service.js`
+- 文件：`cloudfunctions/yoyo/services/reading.service.js`
+- 文件：`cloudfunctions/yoyo/services/writing.service.js`
+- 文件：`cloudfunctions/yoyo/services/grammar.service.js`
+- 文件：`cloudfunctions/yoyo/services/completion.service.js`
+- 文件：`cloudfunctions/yoyo/services/flashcard.service.js`
+- 改动：绑定家长选中学生后，练习、口语评分、阅读、写作、语法、词汇和学习包记录按选中学生写入；日报和打卡仍只由学生身份触发。
+- 设计记录：绑定家长可代孩子完成同一套学习动作，但不把家长设备本身纳入学生日报入口。
+- 验证：已做前端/云函数脚本语法检查，并通过云函数全量测试。
+
+### 2026-07-05 新概念录音权限保护
+
+- 文件：`app.json`
+- 文件：`pages/lesson/index.js`
+- 改动：补充麦克风授权说明；新概念录音前主动检查录音权限；录音不可用、拒权或启动失败时不再自动把任务按听力完成跳过。
+- 设计记录：新概念回答问题必须让学生可重试录音，不能因为权限失败直接跳过回答流程。
+- 验证：已做前端脚本语法检查、app.json JSON 校验，并通过云函数全量测试。
+
 ### 2026-07-04 后台隐藏家长本机学生 ID
 
 - 文件：`cloudfunctions/yoyo/services/admin.service.js`

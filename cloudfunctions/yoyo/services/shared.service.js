@@ -170,6 +170,11 @@ function normalizeStudyRole(member) {
   return familyContextFacade.normalizeStudyRole(member);
 }
 
+function isStudyWriteAllowed(ctx) {
+  const member = ctx && ctx.member;
+  return normalizeStudyRole(member) === 'student' || (member && member.role === 'parent');
+}
+
 async function getLightweightContext(openId, target) {
   return familyContextFacade.getLightweightContext(openId, target);
 }
@@ -553,6 +558,7 @@ module.exports = {
   buildCatchupState,
   getPlanStartDate,
   normalizeStudyRole,
+  isStudyWriteAllowed,
   maybeCreateCheckin,
   reconcileCheckins,
   saveProgressRecord,

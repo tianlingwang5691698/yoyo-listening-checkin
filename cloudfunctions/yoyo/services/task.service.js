@@ -95,8 +95,8 @@ async function getTaskDetail(event) {
     transcriptPendingLoad: true,
     todayRecord,
     history,
-    studyWriteAllowed: !isPreview && study.normalizeStudyRole(ctx.member) === 'student',
-    studyWriteMessage: isPreview ? '预览模式，不计入打卡' : (study.normalizeStudyRole(ctx.member) === 'student' ? '' : '家长模式，不计入打卡'),
+    studyWriteAllowed: !isPreview && study.isStudyWriteAllowed(ctx),
+    studyWriteMessage: isPreview ? '预览模式，不计入打卡' : (study.isStudyWriteAllowed(ctx) ? '' : '家长模式，不计入打卡'),
     checkinReady
   };
   if (!isLessonView) {
@@ -151,7 +151,7 @@ async function markTaskListened(event, context) {
       }
     );
   }
-  if (study.normalizeStudyRole(ctx.member) !== 'student') {
+  if (!study.isStudyWriteAllowed(ctx)) {
     return Object.assign(
       await getTaskDetail({ payload: { category, taskId: payload.taskId, planRunType, targetDate, planDayIndex: payload.planDayIndex } }),
       {
@@ -228,10 +228,10 @@ async function markTaskListened(event, context) {
     updatedAt: now
   };
   await study.saveProgressRecord(record);
-  if (planRunType === 'normal' || planRunType === 'catchup') {
+  if ((planRunType === 'normal' || planRunType === 'catchup') && study.normalizeStudyRole(ctx.member) === 'student') {
     await study.upsertDailyReport(scope, targetDate);
   }
-  if (planRunType === 'normal' || planRunType === 'catchup') {
+  if ((planRunType === 'normal' || planRunType === 'catchup') && study.normalizeStudyRole(ctx.member) === 'student') {
     const nextProgressRecords = await study.getChildProgressRecords(scope);
     await study.maybeCreateCheckin(scope, nextProgressRecords, targetDate, {
       planRunType,

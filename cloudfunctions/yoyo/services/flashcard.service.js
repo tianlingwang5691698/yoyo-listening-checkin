@@ -141,7 +141,7 @@ function cardsFromStudyPack(studyPack) {
 }
 
 async function upsertStudyPackFlashcards(ctx, today, source, studyPack) {
-  if (!ctx || study.normalizeStudyRole(ctx.member) !== 'student') {
+  if (!ctx || !study.isStudyWriteAllowed(ctx)) {
     return { saved: false, reason: 'preview-role', count: 0 };
   }
   const items = cardsFromStudyPack(studyPack);

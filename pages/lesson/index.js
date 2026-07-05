@@ -411,6 +411,52 @@ Page({
     const currentMember = this.data.currentMember || {};
     return currentMember.studyRole === 'student';
   },
+  async ensureRecordPermission() {
+    if (!wx.getSetting || !wx.authorize) {
+      return true;
+    }
+    const setting = await new Promise((resolve) => {
+      wx.getSetting({
+        success: resolve,
+        fail: () => resolve({ authSetting: {} })
+      });
+    });
+    const authSetting = (setting && setting.authSetting) || {};
+    if (authSetting['scope.record']) {
+      return true;
+    }
+    const openRecordSetting = async () => {
+      const confirmed = await new Promise((resolve) => {
+        wx.showModal({
+          title: '需要麦克风权限',
+          content: '允许麦克风后才能录音评分。',
+          confirmText: '去开启',
+          success: (res) => resolve(!!res.confirm),
+          fail: () => resolve(false)
+        });
+      });
+      if (!confirmed || !wx.openSetting) {
+        return false;
+      }
+      const opened = await new Promise((resolve) => {
+        wx.openSetting({
+          success: resolve,
+          fail: () => resolve({ authSetting: {} })
+        });
+      });
+      return !!(opened && opened.authSetting && opened.authSetting['scope.record']);
+    };
+    if (authSetting['scope.record'] === false) {
+      return openRecordSetting();
+    }
+    return new Promise((resolve) => {
+      wx.authorize({
+        scope: 'scope.record',
+        success: () => resolve(true),
+        fail: async () => resolve(await openRecordSetting())
+      });
+    });
+  },
   onLoad(query) {
     this.category = query.category || 'peppa';
     this.taskId = query.taskId || '';
@@ -436,12 +482,9 @@ Page({
           }
         });
       });
-      this.recorderManager.onError(async () => {
+      this.recorderManager.onError(() => {
         this.setData({ speakingRecording: false });
-        if (await this.finishPendingListenAfterSpeakingFailure('录音失败，按听力完成')) {
-          return;
-        }
-        wx.showToast({ title: '录音失败，请重试', icon: 'none' });
+        wx.showToast({ title: '录音失败，请检查麦克风权限', icon: 'none' });
       });
     }
     this.audioErrorTimer = null;
@@ -1010,10 +1053,15 @@ Page({
   },
   async startSpeakingRecord() {
     if (!this.recorderManager) {
-      await this.finishPendingListenAfterSpeakingFailure('无法录音，按听力完成');
+      wx.showToast({ title: '当前微信不支持录音', icon: 'none' });
       return;
     }
     if (!this.recorderManager || this.data.speakingRecording) {
+      return;
+    }
+    const allowed = await this.ensureRecordPermission();
+    if (!allowed) {
+      wx.showToast({ title: '请允许麦克风后再录音', icon: 'none' });
       return;
     }
     this.setData({
@@ -1035,7 +1083,7 @@ Page({
       });
     } catch (error) {
       this.setData({ speakingRecording: false });
-      await this.finishPendingListenAfterSpeakingFailure('录音启动失败，按听力完成');
+      wx.showToast({ title: '录音启动失败，请检查麦克风权限', icon: 'none' });
     }
   },
   stopSpeakingRecord() {

@@ -467,7 +467,7 @@ async function getListeningStudyPack(item, options, onRefresh) {
 }
 
 async function getFlashcardReview(onRefresh) {
-  return callCloud('getFlashcardReview', {}, {
+  return callCloud('getFlashcardReview', withSelectedStudent({}), {
     today: '',
     settings: { newLimit: 10, reviewLimit: 20 },
     library: [],
@@ -481,7 +481,7 @@ async function getFlashcardReview(onRefresh) {
 }
 
 async function getFlashcardDue(onRefresh) {
-  return callCloud('getFlashcardDue', {}, {
+  return callCloud('getFlashcardDue', withSelectedStudent({}), {
     today: '',
     settings: { newLimit: 10, reviewLimit: 20 },
     library: [],
@@ -496,11 +496,11 @@ async function getFlashcardDue(onRefresh) {
 }
 
 async function updateFlashcardReview(flashcardKey, result, card) {
-  return callCloud('updateFlashcardReview', { flashcardKey, result, card: card || null }, { saved: false }, { useCache: false });
+  return callCloud('updateFlashcardReview', withSelectedStudent({ flashcardKey, result, card: card || null }), { saved: false }, { useCache: false });
 }
 
 async function saveFlashcardSettings(settings) {
-  return callCloud('saveFlashcardSettings', settings || {}, {
+  return callCloud('saveFlashcardSettings', withSelectedStudent(settings || {}), {
     settings: Object.assign({ newLimit: 10, reviewLimit: 20 }, settings || {})
   }, { useCache: false });
 }
@@ -510,7 +510,7 @@ async function addDictionaryBook(level, options) {
 }
 
 async function saveFlashcardAudio(options) {
-  return callCloud('saveFlashcardAudio', options || {}, { saved: false }, { useCache: false });
+  return callCloud('saveFlashcardAudio', withSelectedStudent(options || {}), { saved: false }, { useCache: false });
 }
 
 async function getTempFileURL(fileId) {
@@ -734,7 +734,7 @@ async function addDictionaryWord(entry) {
 }
 
 async function submitReadingAttempt(options) {
-  return callCloud('submitReadingAttempt', Object.assign({}, options || {}), {
+  return callCloud('submitReadingAttempt', withSelectedStudent(options || {}), {
     passage: null,
     attempt: null,
     review: null
@@ -742,7 +742,7 @@ async function submitReadingAttempt(options) {
 }
 
 async function submitWritingAttempt(options) {
-  return callCloud('submitWritingAttempt', Object.assign({}, options || {}), {
+  return callCloud('submitWritingAttempt', withSelectedStudent(options || {}), {
     prompt: null,
     attempt: null,
     review: null
@@ -781,7 +781,7 @@ async function getGrammarTopic(topicId, options) {
 }
 
 async function recordGrammarWrong(question, selectedAnswer) {
-  return callCloud('recordGrammarWrong', { question, selectedAnswer }, { saved: false }, { useCache: false });
+  return callCloud('recordGrammarWrong', withSelectedStudent({ question, selectedAnswer }), { saved: false }, { useCache: false });
 }
 
 async function getGrammarWrongBook() {
@@ -800,11 +800,11 @@ async function getGrammarProgress(topicId) {
 }
 
 async function recordGrammarProgress(topicId, nextIndex) {
-  return callCloud('recordGrammarProgress', { topicId, nextIndex }, { saved: false }, { useCache: false });
+  return callCloud('recordGrammarProgress', withSelectedStudent({ topicId, nextIndex }), { saved: false }, { useCache: false });
 }
 
 async function recordStudyCompletion(item) {
-  return callCloud('recordStudyCompletion', Object.assign({}, item || {}), { saved: false }, { useCache: false });
+  return callCloud('recordStudyCompletion', withSelectedStudent(item || {}), { saved: false }, { useCache: false });
 }
 
 async function getStudyCompletions(options, onRefresh) {

@@ -16,6 +16,7 @@ test('契约工厂返回完整默认结构', () => {
       nickname: '',
       avatarText: '',
       childLoginCode: '',
+      nicknameRequired: true,
       welcomeLine: '云端数据暂时不可用，请稍后重试。'
     },
     stats: {
@@ -49,7 +50,8 @@ test('契约工厂返回完整默认结构', () => {
   assert.deepEqual(contracts.createChildDefaults(), {
     nickname: '',
     avatarText: '',
-    childLoginCode: ''
+    childLoginCode: '',
+    nicknameRequired: true
   });
 
   assert.deepEqual(contracts.createStatsDefaults(), {
