@@ -255,6 +255,53 @@ test('已有当天打卡记录时，home 进度按整日完成兜底', async () 
   assert.equal(dashboard.groupedDailyTasks[1].tasks[0].progressText, '3/3 遍');
 });
 
+test('自定义计划已有当天打卡后新增任务不按旧 checkin 兜底完成', async () => {
+  const dashboard = await dashboardEngine.getDashboardData({
+    user: {},
+    member: { studyRole: 'student' },
+    family: {},
+    child: { childId: 'child-1', childLoginCode: '888888' }
+  }, {
+    getTodayString: () => '2026-07-06',
+    getUserScope: () => ({ childId: 'child-1' }),
+    getChildProgressRecords: async () => [],
+    getCheckins: async () => [{ date: '2026-07-06', planSource: 'custom-listening', planDayIndex: 1 }],
+    getActiveListeningPlan: async () => ({ active: true, planId: 'plan-1', materials: [] }),
+    isYoyoChild: () => false,
+    getCustomPlanDayIndex: () => 1,
+    buildListeningPlanForDay: () => ({
+      dayIndex: 1,
+      phase: { key: 'custom', label: '自定义' },
+      byCategory: { unlock4: [] },
+      categoryOrder: ['unlock4']
+    }),
+    decorateListeningPlanTasks: () => [
+      { category: 'unlock4', taskId: 'u1', playCount: 3, repeatTarget: 3, completedToday: true, isPendingAsset: false },
+      { category: 'unlock4', taskId: 'u2', playCount: 0, repeatTarget: 3, completedToday: false, isPendingAsset: false }
+    ],
+    getPlanCategoryOrder: () => ['unlock4'],
+    buildCategorySummary: () => ({}),
+    buildStats: () => ({ streakDays: 1 }),
+    buildCatchupState: () => ({ canCatchup: false }),
+    getPlanStartDate: () => '',
+    getCatalog: () => [],
+    getCategoryLabel: (category) => category
+  }, {
+    includeDailyTasks: true,
+    includeHomeTaskGroups: true,
+    includeCategorySummaries: false,
+    includeCatchupState: false,
+    includePlanDebug: false,
+    includeTaskProgressSummary: true
+  });
+
+  assert.equal(dashboard.planSource, 'custom-listening');
+  assert.equal(dashboard.allDailyDone, false);
+  assert.equal(dashboard.completedTaskCountToday, 1);
+  assert.equal(dashboard.activeTaskCount, 2);
+  assert.equal(dashboard.groupedDailyTasks[0].completedCount, 1);
+});
+
 test('home view 显示当天 Peppa 旧集完成记录', async () => {
   const dashboard = await dashboardEngine.getDashboardData({
     user: {},

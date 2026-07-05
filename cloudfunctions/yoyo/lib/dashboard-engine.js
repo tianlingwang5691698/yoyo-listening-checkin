@@ -189,7 +189,7 @@ async function getDashboardData(ctx, deps, options = {}) {
         : [])
     : [];
   const dailyTasks = useCustomListeningPlan
-    ? applyCheckinCompletion(baseDailyTasks, checkins, today)
+    ? baseDailyTasks
     : useFixedYoyoPlan
       ? appendTodayPeppaReviewProgress(applyCheckinCompletion(baseDailyTasks, checkins, today), progressRecords, ctx.child.childId, today, deps)
       : baseDailyTasks;

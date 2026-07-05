@@ -36,7 +36,7 @@ async function upsertDailyReport(scope, date, deps) {
   }));
   const items = groupedTasks.flatMap((group) => group.tasks.map((task) => {
     const repeatTarget = task.repeatTarget || 3;
-    const completedByCheckin = !!checkin;
+    const completedByCheckin = !!checkin && !useCustomListeningPlan;
     const completedToday = !!task.completedToday || completedByCheckin;
     return {
       category: group.category,

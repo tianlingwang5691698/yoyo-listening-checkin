@@ -138,6 +138,43 @@ test('已有 partial completedCategories 的打卡日仍按整日完成修复日
   assert.equal(report.items.every((item) => item.playCount === 3), true);
 });
 
+test('自定义计划日报不按旧 checkin 兜底完成新增任务', async () => {
+  const report = await reportEngine.upsertDailyReport({
+    familyId: 'family-1',
+    childId: 'child-1',
+    userId: 'user-1',
+    openId: 'open-1',
+    memberId: 'member-1'
+  }, '2026-07-06', {
+    getChildProgressRecords: async () => [],
+    getCheckins: async () => [{ date: '2026-07-06', planSource: 'custom-listening' }],
+    getActiveListeningPlanByScope: async () => ({ active: true, planId: 'plan-1', materials: [] }),
+    getCustomPlanDayIndex: () => 1,
+    buildListeningPlanForDay: () => ({
+      dayIndex: 1,
+      phase: { key: 'custom' },
+      byCategory: { unlock4: [] },
+      categoryOrder: ['unlock4']
+    }),
+    decorateListeningPlanTasks: () => [
+      { category: 'unlock4', categoryLabel: 'Unlock 4', taskId: 'u1', audioCompactTitle: '1.1', playCount: 3, repeatTarget: 3, completedToday: true },
+      { category: 'unlock4', categoryLabel: 'Unlock 4', taskId: 'u2', audioCompactTitle: '1.2', playCount: 0, repeatTarget: 3, completedToday: false }
+    ],
+    getCatalog: () => [
+      { taskId: 'u1', durationSec: 60, repeatTarget: 3 },
+      { taskId: 'u2', durationSec: 60, repeatTarget: 3 }
+    ],
+    findFamilyMembersByFamilyId: async () => [],
+    upsertReport: async () => {}
+  });
+
+  assert.equal(report.planSource, 'custom-listening');
+  assert.equal(report.items.length, 2);
+  assert.equal(report.items[0].completedToday, true);
+  assert.equal(report.items[1].completedToday, false);
+  assert.equal(report.items[1].playCount, 0);
+});
+
 test('日报生成包含当天 Peppa 复听任务和时长', async () => {
   const report = await reportEngine.upsertDailyReport({
     familyId: 'family-1',

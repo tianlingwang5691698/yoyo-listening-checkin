@@ -5,6 +5,39 @@ function needsCompletionRefresh(report) {
   return !report || !Array.isArray(report.completionItems);
 }
 
+async function getTodayListeningCompletion(ctx, today, records, progressRecords) {
+  const activePlan = await study.getActiveListeningPlan(ctx);
+  const useCustomListeningPlan = !!(activePlan && activePlan.active !== false);
+  if (useCustomListeningPlan) {
+    const planDayIndex = study.getCustomPlanDayIndex(records, today, activePlan);
+    const todayPlan = study.buildListeningPlanForDay(activePlan, planDayIndex);
+    const tasks = study.decorateListeningPlanTasks(progressRecords, ctx.child.childId, today, todayPlan, {
+      planRunType: 'normal',
+      listeningPlanId: activePlan.planId || activePlan._id || ''
+    }).filter((item) => !item.isPendingAsset);
+    return {
+      dynamic: true,
+      done: tasks.length > 0 && tasks.every((item) => item.completedToday)
+    };
+  }
+  const todayPlan = study.buildPlanForDay(study.getPlanDayIndexForDate(records, today));
+  const todayTasks = study.decoratePlanTasks(progressRecords, ctx.child.childId, today, todayPlan, {
+    planRunType: 'normal'
+  });
+  const hasTodayCheckin = records.some((item) => item.date === today && String(item.planRunType || 'normal') === 'normal');
+  return {
+    dynamic: false,
+    done: hasTodayCheckin || (todayTasks.length > 0 && todayTasks.every((item) => item.completedToday))
+  };
+}
+
+function getHeatmapCount(date, today, rawCount, todayCompletion) {
+  if (date === today && todayCompletion && todayCompletion.dynamic) {
+    return todayCompletion.done ? Math.max(rawCount, 1) : 0;
+  }
+  return rawCount;
+}
+
 async function getHeatmap(event) {
   const { ctx, today } = await study.prepareRequestContext(Object.assign({}, event, {
     action: 'getHeatmap'
@@ -22,12 +55,8 @@ async function getHeatmap(event) {
   records.forEach((item) => {
     counts[item.date] = (counts[item.date] || 0) + 1;
   });
-  const todayPlan = study.buildPlanForDay(study.getPlanDayIndexForDate(records, today));
-  const todayTasks = study.decoratePlanTasks(progressRecords, ctx.child.childId, today, todayPlan, {
-    planRunType: 'normal'
-  });
-  const hasTodayCheckin = records.some((item) => item.date === today && String(item.planRunType || 'normal') === 'normal');
-  const todayDone = hasTodayCheckin || (todayTasks.length > 0 && todayTasks.every((item) => item.completedToday));
+  const todayCompletion = await getTodayListeningCompletion(ctx, today, records, progressRecords);
+  const todayDone = todayCompletion.done;
   const catchupState = study.buildCatchupState(records, today, study.getPlanStartDate(ctx, today, records), todayDone);
   const catchupPlan = catchupState.canCatchup ? study.buildPlanForDay(catchupState.planDayIndex) : null;
   const catchupTasks = catchupPlan
@@ -38,7 +67,7 @@ async function getHeatmap(event) {
   const heatmap = [];
   for (let i = days - 1; i >= 0; i -= 1) {
     const date = study.addDays(today, -i);
-    const count = counts[date] || 0;
+    const count = getHeatmapCount(date, today, counts[date] || 0, todayCompletion);
     heatmap.push({
       date,
       shortDate: date.slice(5),
@@ -76,18 +105,14 @@ async function getMonthHeatmap(event) {
       counts[item.date] = (counts[item.date] || 0) + 1;
     }
   });
-  const todayPlan = study.buildPlanForDay(study.getPlanDayIndexForDate(records, today));
-  const todayTasks = study.decoratePlanTasks(progressRecords, ctx.child.childId, today, todayPlan, {
-    planRunType: 'normal'
-  });
-  const hasTodayCheckin = records.some((item) => item.date === today && String(item.planRunType || 'normal') === 'normal');
-  const todayDone = hasTodayCheckin || (todayTasks.length > 0 && todayTasks.every((item) => item.completedToday));
+  const todayCompletion = await getTodayListeningCompletion(ctx, today, records, progressRecords);
+  const todayDone = todayCompletion.done;
   const catchupState = study.buildCatchupState(records, today, study.getPlanStartDate(ctx, today, records), todayDone);
   const daysInMonth = new Date(year, month, 0).getDate();
   const heatmap = [];
   for (let day = 1; day <= daysInMonth; day += 1) {
     const date = `${monthText}-${String(day).padStart(2, '0')}`;
-    const count = counts[date] || 0;
+    const count = getHeatmapCount(date, today, counts[date] || 0, todayCompletion);
     heatmap.push({
       date,
       shortDate: date.slice(5),
