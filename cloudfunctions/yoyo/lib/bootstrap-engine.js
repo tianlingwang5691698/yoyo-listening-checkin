@@ -1,3 +1,9 @@
+const WANG_TIANLONG_OPEN_ID = 'om8JT3Zhqe1zeAiKUGGkU0ACjAWs';
+
+function getOwnerDisplayName(openId) {
+  return openId === WANG_TIANLONG_OPEN_ID ? '王天龙' : '我';
+}
+
 async function ensureUser(openId, deps) {
   if (!openId) {
     const error = new Error('登录状态暂时不可用，请稍后再试');
@@ -7,11 +13,14 @@ async function ensureUser(openId, deps) {
   const now = new Date().toISOString();
   const existing = await deps.findUserByOpenId(openId);
   if (existing) {
+    const loginCount = Number(existing.loginCount || 0) + 1;
     await deps.updateUserById(existing._id, {
+      loginCount,
       lastLoginAt: now,
       updatedAt: now
     });
     return Object.assign({}, existing, {
+      loginCount,
       lastLoginAt: now,
       updatedAt: now
     });
@@ -24,6 +33,7 @@ async function ensureUser(openId, deps) {
     avatarUrl: '',
     phoneNumberMasked: '',
     phoneBound: false,
+    loginCount: 1,
     createdAt: now,
     updatedAt: now,
     lastLoginAt: now
@@ -131,7 +141,7 @@ async function ensureBootstrap(openId, deps, target) {
       openId,
       role: 'owner',
       studyRole: 'student',
-      displayName: '我',
+      displayName: getOwnerDisplayName(openId),
       subscriptionEnabled: false,
       joinedFamilyAt: now,
       createdAt: now
@@ -154,6 +164,14 @@ async function ensureBootstrap(openId, deps, target) {
       userId: user.userId
     });
     member = Object.assign({}, member, { userId: user.userId });
+  }
+  const ownerDisplayName = getOwnerDisplayName(openId);
+  if (member.role === 'owner' && member.displayName !== ownerDisplayName) {
+    await deps.updateMemberById(member._id, {
+      displayName: ownerDisplayName,
+      updatedAt: new Date().toISOString()
+    });
+    member = Object.assign({}, member, { displayName: ownerDisplayName });
   }
   if (!member.studyRole) {
     const studyRole = deps.normalizeStudyRole(member);

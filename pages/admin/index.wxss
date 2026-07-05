@@ -18,6 +18,36 @@
   border-bottom: none;
 }
 
+.section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20rpx;
+}
+
+.admin-tabs {
+  flex-shrink: 0;
+  display: flex;
+  gap: 8rpx;
+  padding: 6rpx;
+  border-radius: 8rpx;
+  background: var(--surface-subtle);
+}
+
+.admin-tab {
+  padding: 10rpx 14rpx;
+  border-radius: 6rpx;
+  color: var(--text-muted);
+  font-size: var(--font-caption-size);
+  line-height: 1;
+}
+
+.admin-tab.is-active {
+  background: var(--surface);
+  color: var(--accent-deep);
+  font-weight: var(--font-caption-weight);
+}
+
 .admin-head,
 .member-row {
   display: flex;
@@ -30,6 +60,13 @@
   color: var(--text-main);
   font-size: var(--font-card-title-size);
   font-weight: var(--font-title-weight);
+}
+
+.admin-activity {
+  margin-top: 6rpx;
+  color: var(--text-muted);
+  font-size: var(--font-caption-size);
+  line-height: 1.45;
 }
 
 .admin-code,
@@ -47,6 +84,18 @@
   font-weight: var(--font-caption-weight);
 }
 
+.detail-toggle {
+  flex-shrink: 0;
+  color: var(--accent-deep);
+  font-size: var(--font-caption-size);
+  font-weight: var(--font-caption-weight);
+}
+
+.detail-toggle.is-inline {
+  display: inline-block;
+  margin-top: 8rpx;
+}
+
 .admin-count,
 .member-role {
   flex-shrink: 0;
@@ -54,11 +103,43 @@
   font-size: var(--font-caption-size);
 }
 
+.admin-side {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8rpx;
+}
+
 .admin-subtitle {
   margin-top: 24rpx;
   color: var(--text-main);
   font-size: var(--font-caption-size);
   font-weight: var(--font-title-weight);
+}
+
+.admin-simple-row {
+  min-height: 58rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20rpx;
+  padding-top: 16rpx;
+}
+
+.admin-simple-label {
+  flex-shrink: 0;
+  color: var(--text-muted);
+  font-size: var(--font-caption-size);
+}
+
+.admin-simple-value {
+  min-width: 0;
+  color: var(--text-main);
+  font-size: var(--font-caption-size);
+  font-weight: var(--font-caption-weight);
+  text-align: right;
+  word-break: break-all;
 }
 
 .empty-inline {

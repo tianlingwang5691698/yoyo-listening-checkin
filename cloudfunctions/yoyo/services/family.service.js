@@ -42,6 +42,20 @@ async function joinFamily(event) {
   return familyFacade.reloadFamilyContext(ctx.user.openId, { targetFamilyId: target.familyId });
 }
 
+function isDefaultNickname(child) {
+  const nickname = String(child && child.nickname || '').trim();
+  const childLoginCode = String(child && child.childLoginCode || '').trim();
+  return !nickname || ['同学', '我'].includes(nickname) || (nickname === '佑佑' && childLoginCode !== '317613');
+}
+
+async function getSelfChildNickname(openId) {
+  const ownFamily = await familyRepository.findFamilyByOwnerOpenId(openId);
+  if (!ownFamily || !ownFamily.familyId) return '';
+  const ownChild = await childRepository.findByFamilyId(ownFamily.familyId);
+  if (isDefaultNickname(ownChild)) return '';
+  return String(ownChild && ownChild.nickname || '').trim();
+}
+
 async function joinFamilyByChildCode(event) {
   const { ctx } = await familyFacade.prepareRequestContext(Object.assign({}, event, {
     action: 'joinFamilyByChildCode'
@@ -56,7 +70,16 @@ async function joinFamilyByChildCode(event) {
     throw new Error('没有找到这个孩子 ID');
   }
   const targetStudyRole = String(payload.studyRole || '').trim() === 'student' ? 'student' : 'parent';
-  const displayName = String(payload.displayName || '').trim() || (targetStudyRole === 'student' ? '学生设备' : '新家长');
+  let displayName = String(payload.displayName || '').trim();
+  if (!displayName && targetStudyRole === 'parent') {
+    displayName = await getSelfChildNickname(ctx.user.openId);
+    if (!displayName) {
+      throw new Error('请先设置本机学生昵称，再绑定孩子 ID');
+    }
+  }
+  if (!displayName) {
+    displayName = '学生设备';
+  }
   await familyFacade.upsertFamilyMemberForFamily(ctx.user.openId, ctx.user.userId, targetChild.familyId, displayName);
   if (targetStudyRole === 'student') {
     const joinedCtx = await familyFacade.ensureBootstrap(ctx.user.openId, {
