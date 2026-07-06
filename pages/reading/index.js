@@ -89,6 +89,7 @@ Page({
       id: 'directory',
       maxAgeMs: 10 * 60 * 1000
     });
+    const hasSnapshot = !!snapshot;
     if (snapshot) {
       this.applyReadingHome(snapshot);
     } else {
@@ -105,7 +106,11 @@ Page({
         });
       }
     });
-    this.applyReadingHome(data);
+    if (data && data.syncMode !== 'cloud-error') {
+      this.applyReadingHome(data);
+    } else if (!hasSnapshot) {
+      this.applyReadingHome(data);
+    }
     if (data && data.syncMode !== 'cloud-error') {
       snapshotStore.write(READING_HOME_SNAPSHOT_KEY, 'directory', data, { source: 'reading-home' });
     }

@@ -138,21 +138,24 @@ Page({
   async onLoad(options) {
     const moduleId = options && options.module === 'writing' ? 'writing' : 'listening';
     const baseConfig = buildMaterials({})[moduleId];
-    this.setData({
-      moduleId,
-      title: baseConfig.title,
-      eyebrow: baseConfig.eyebrow,
-      copy: baseConfig.copy,
-      itemUnit: baseConfig.itemUnit,
-      showCefrEntry: moduleId === 'listening'
-    });
     const snapshot = snapshotStore.read(MATERIAL_HOME_SNAPSHOT_KEY, {
       id: moduleId,
       maxAgeMs: 10 * 60 * 1000
     });
     if (snapshot && snapshot.materialIndex) {
       applyMaterialConfig(this, moduleId, snapshot.materialIndex, {
+        moduleId,
         loading: false
+      });
+    } else {
+      this.setData({
+        moduleId,
+        title: baseConfig.title,
+        eyebrow: baseConfig.eyebrow,
+        copy: baseConfig.copy,
+        itemUnit: baseConfig.itemUnit,
+        showCefrEntry: moduleId === 'listening',
+        loading: true
       });
     }
     const materialIndex = await store.getMaterialIndex({ moduleId }, (freshIndex) => {
@@ -251,27 +254,10 @@ Page({
     const item = (this.data.items || []).find((row) => row._id === itemId);
     if (this.data.moduleId === 'listening') {
       if (item) {
-        const result = await store.getMaterialItem({
-          moduleId: 'listening',
-          itemId: item._id || item.id || ''
-        });
-        const fullItem = result && result.item ? result.item : null;
-        if (!fullItem) {
-          const debugLines = [
-            `DEBUG: pages/material.openItem -> store.getMaterialItem -> cloud.getMaterialItem -> itemId=${item._id || item.id || ''}`,
-            `DEBUG: pages/material.openItem -> result.item=missing, syncMode=${(result && result.syncMode) || 'missing'}, targetChildId=N/A`
-          ];
-          if (result && (result.cloudError || result.syncDebug)) {
-            debugLines.push(`DEBUG: pages/material.openItem -> cloudError.message=${(result.cloudError && result.cloudError.message) || ''}, syncDebug.reason=${(result.syncDebug && result.syncDebug.reason) || ''}`);
-          }
-          console.warn(debugLines.join('\n'));
-          this.setData({ debugLines });
-          return;
-        }
-        wx.setStorageSync('currentListeningSetV1', fullItem);
-        snapshotStore.write(LISTENING_SET_SNAPSHOT_KEY, fullItem._id || fullItem.id || '', { item: fullItem }, { source: 'material-listening' });
+        wx.setStorageSync('currentListeningSetV1', item);
+        snapshotStore.write(LISTENING_SET_SNAPSHOT_KEY, item._id || item.id || '', { item }, { source: 'material-listening' });
         wx.navigateTo({
-          url: '/pages/material/detail/index'
+          url: `/pages/material/detail/index?itemId=${encodeURIComponent(item._id || item.id || '')}`
         });
       }
       return;

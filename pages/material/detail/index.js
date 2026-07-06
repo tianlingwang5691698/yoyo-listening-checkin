@@ -147,9 +147,9 @@ Page({
     phraseCards: [],
     sentencePatternCards: []
   }),
-  onLoad() {
+  onLoad(options = {}) {
     const legacyItem = wx.getStorageSync('currentListeningSetV1') || null;
-    const itemId = legacyItem && (legacyItem._id || legacyItem.id || '');
+    const itemId = String(options.itemId || (legacyItem && (legacyItem._id || legacyItem.id || '')) || '').trim();
     const snapshot = itemId ? snapshotStore.read(LISTENING_SET_SNAPSHOT_KEY, {
       id: itemId,
       maxAgeMs: 5 * 60 * 1000
@@ -171,6 +171,9 @@ Page({
     }
     if (item) {
       this.loadCachedStudyPack(item);
+    }
+    if (itemId) {
+      this.hydrateListeningItem(itemId);
     }
   },
   onShow() {
@@ -286,6 +289,30 @@ Page({
       }))
     }));
     this.setData({ item });
+  },
+  async hydrateListeningItem(itemId) {
+    try {
+      const result = await store.getMaterialItem({
+        moduleId: 'listening',
+        itemId
+      });
+      const fullItem = withImageDisplayMode(result && result.item ? result.item : null);
+      if (!fullItem) return;
+      wx.setStorageSync('currentListeningSetV1', fullItem);
+      snapshotStore.write(LISTENING_SET_SNAPSHOT_KEY, fullItem._id || fullItem.id || itemId, { item: fullItem }, { source: 'material-listening-detail' });
+      this.setData({
+        item: Object.assign({}, this.data.item || {}, fullItem),
+        questions: buildQuestions(fullItem),
+        answerSummary: buildAnswerSummary(fullItem)
+      });
+      if (fullItem.audioCloudPath && !this.data.audioSrc && !this.data.audioLoading) {
+        this.prepareAudio(fullItem.audioCloudPath);
+      }
+      if (fullItem.images && fullItem.images.length) {
+        this.prepareImages(fullItem.images);
+      }
+      this.loadCachedStudyPack(fullItem);
+    } catch (error) {}
   },
   toggleAudio() {
     if (this.data.audioLoading || !this.data.audioSrc) return;

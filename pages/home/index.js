@@ -7,6 +7,7 @@ const LEVEL_STAGE_SNAPSHOT_KEY = 'levelStageSnapshotV1';
 const LESSON_TASK_SNAPSHOT_KEY = 'lessonTaskSnapshotV1';
 const ENTRY_POSTER_DISMISSED_KEY = 'homeEntryPosterDismissedV1';
 const TODAY_COMPLETED_CACHE_KEY = 'todayCompletedItemsV1';
+const HOME_DASHBOARD_SNAPSHOT_KEY = 'homeDashboardSnapshotV1';
 
 const VOCABULARY_ITEM_KEYS = [
   'listeningFlashcardItemsV1',
@@ -176,6 +177,14 @@ function buildStageSnapshotId(child, phase) {
     target.targetFamilyId || 'self',
     target.targetChildId || target.childLoginCode || 'self',
     phase || 'round-1'
+  ].join(':');
+}
+
+function buildHomeDashboardSnapshotId(child) {
+  const target = buildCompletedCacheTarget(child);
+  return [
+    target.targetFamilyId || 'self',
+    target.targetChildId || target.childLoginCode || 'self'
   ].join(':');
 }
 
@@ -361,6 +370,9 @@ Page({
     wx.setStorageSync('lastStudyRole', nextStudyRole);
     const groupedDailyTasks = labels.normalizeHomeTaskGroups(data.groupedDailyTasks || []);
     const needsListeningPlanSetup = !!data.needsListeningPlanSetup || data.planSource === 'none';
+    if (data && data.syncMode !== 'cloud-error' && data.child && groupedDailyTasks.length) {
+      snapshotStore.write(HOME_DASHBOARD_SNAPSHOT_KEY, buildHomeDashboardSnapshotId(data.child), data, { source: 'home-dashboard' });
+    }
     this.setData(page.buildCloudPageData(this.data, Object.assign({}, {
       syncMode: data.syncMode,
       isReviewBuild: data.isReviewBuild,
@@ -534,8 +546,21 @@ Page({
         title: nextRole === 'student' ? '已进入学生设备' : '已进入家长模式',
         icon: 'none'
       });
-      this.setData({ homeLoading: true });
-      await this.refreshHomeDashboard();
+      const snapshot = snapshotStore.read(HOME_DASHBOARD_SNAPSHOT_KEY, {
+        id: buildHomeDashboardSnapshotId(data.child),
+        maxAgeMs: 10 * 60 * 1000
+      });
+      if (snapshot) {
+        this.applyDashboard(Object.assign({}, snapshot, {
+          child: data.child || snapshot.child,
+          currentMember: data.currentMember || snapshot.currentMember
+        }));
+      } else {
+        this.setData({ homeLoading: true });
+      }
+      this.refreshHomeDashboard().catch(() => {
+        this.setData({ homeLoading: false });
+      });
     } catch (error) {
       wx.showToast({
         title: '已本机切换，云端稍后同步',

@@ -243,6 +243,9 @@ Page({
     const em2Topics = buildTopics(em2Data);
     const em1Topics = buildTopics(em1Data);
     const stages = buildStages(em2Topics, em1Topics);
+    const nextStages = stages.length || !(snapshot && Array.isArray(snapshot.stages)) ? stages : snapshot.stages;
+    const nextEm2Topics = stages.length ? em2Topics : (snapshot && snapshot.em2Topics) || [];
+    const nextEm1Topics = stages.length ? em1Topics : (snapshot && snapshot.em1Topics) || [];
     if (stages.length) {
       snapshotStore.write(GRAMMAR_HOME_SNAPSHOT_KEY, 'home', {
         stages,
@@ -251,9 +254,9 @@ Page({
       }, { source: 'grammar-home' });
     }
     this.setData({
-      stages,
-      em2Topics,
-      em1Topics,
+      stages: nextStages,
+      em2Topics: nextEm2Topics,
+      em1Topics: nextEm1Topics,
       em1Loaded: true,
       em1Loading: false,
       topics: [],

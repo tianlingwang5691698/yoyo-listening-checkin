@@ -172,6 +172,19 @@
 - 每条必须写清楚：板块、文件、改动、设计记录、验证。
 - 后续改 UI 或交互前先看对应板块最近记录，再继续改。
 
+### 2026-07-06 首页身份与材料入口首动作快照
+
+- 文件：`pages/home/index.js`
+- 文件：`pages/material/index.js`
+- 文件：`pages/material/detail/index.js`
+- 文件：`pages/reading/index.js`
+- 文件：`pages/grammar/index.js`
+- 文件：`docs/PAGE_LOADING_QUALITY_STANDARD.md`
+- 改动：首页 dashboard 按目标学生写入快照，选择身份后先显示对应学生今日任务快照再后台刷新；听力套卷点击不再等待完整题目，先用列表音频字段进入详情并后台补完整套卷。
+- 补充：材料入口有快照时不再先渲染空配置；阅读/语法入口保留快照首屏，避免慢刷新或空结果造成列表闪烁。
+- 设计记录：首页身份切换的首动作是看到对应学生今日任务；材料听力详情的首动作是播放音频，题目、图片、学习包属于后续补齐。
+- 验证：已做相关页面脚本语法检查。
+
 ### 2026-07-06 全局首动作快照性能规则
 
 - 文件：`docs/PAGE_LOADING_QUALITY_STANDARD.md`
