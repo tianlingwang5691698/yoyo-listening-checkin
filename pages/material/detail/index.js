@@ -472,7 +472,7 @@ Page({
       if (correct) correctCount += 1;
       return Object.assign({}, question, { checked: true, correct });
     });
-    this.setData({ questions, submitted: true, correctCount });
+    this.setData({ questions, submitted: true, correctCount, transcriptVisible: false, studyError: '' });
   },
   completeStudy() {
     const item = this.data.item;
@@ -509,6 +509,10 @@ Page({
   async loadStudyPack() {
     const item = this.data.item;
     if (!item || this.data.studyLoading) return;
+    if (!this.data.submitted) {
+      this.setData({ studyError: this.data.answerSummary ? '提交听力后可查看参考答案并生成文本学习。' : '提交听力后再生成文本学习。' });
+      return;
+    }
     if (!String(item.transcript || '').trim()) {
       if (this.data.answerSummary) {
         this.setData({ transcriptVisible: true, studyError: '' });

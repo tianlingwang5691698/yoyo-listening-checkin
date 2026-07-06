@@ -47,6 +47,30 @@ function buildProgressFromTask(task) {
   };
 }
 
+function buildSnapshotHydrationDebug(reason, detail, ctx) {
+  const value = [
+    reason,
+    `category=${detail.category || ''}`,
+    `taskId=${detail.taskId || ''}`,
+    `planDayIndex=${detail.planDayIndex || 0}`,
+    `targetChildId=${(ctx.child && ctx.child.childId) || ''}`,
+    `targetFamilyId=${(ctx.family && ctx.family.familyId) || ''}`
+  ].filter(Boolean).join('；');
+  return {
+    showCloudDebug: true,
+    syncDebug: {
+      mode: 'cloud',
+      show: true,
+      reason,
+      publicReason: '',
+      resourceLines: [
+        `DEBUG: pages/lesson.refreshPage -> store.getTaskDetail -> cloud.getTaskDetail -> snapshotHydration：${value}`
+      ],
+      text: `DEBUG: pages/lesson.refreshPage -> store.getTaskDetail -> cloud.getTaskDetail -> snapshotHydration：${value}`
+    }
+  };
+}
+
 async function getTaskDetail(event) {
   const { ctx, today } = await study.prepareRequestContext(Object.assign({}, event, {
     action: 'getTaskDetail'
@@ -58,20 +82,59 @@ async function getTaskDetail(event) {
   let targetDate = String(payload.targetDate || today).slice(0, 10);
   const snapshotTask = isLessonView ? normalizeTaskSnapshot(payload.taskSnapshot, payload) : null;
   if (snapshotTask && hasTaskAudioSource(snapshotTask)) {
-    const planDayIndex = Number(payload.planDayIndex || snapshotTask.planDayIndex || 0);
-    return {
+    let hydratedTask = snapshotTask;
+    let planDayIndex = Number(payload.planDayIndex || snapshotTask.planDayIndex || 0);
+    let hydrationDebug = null;
+    if (planRunType === 'normal' && String(payload.source || '') !== 'catalog') {
+      try {
+        const dashboard = await study.getDashboardData(ctx, {
+          includeDailyTasks: true,
+          includeHomeTaskGroups: false,
+          includeCategorySummaries: false,
+          includeCatchupState: false,
+          includePlanDebug: false,
+          includeTaskProgressSummary: false,
+          includeUser: false,
+          includeFamily: false,
+          includeStats: false
+        });
+        const canonicalTask = (dashboard.dailyTasks || []).find((item) => (
+          item.category === snapshotTask.category && item.taskId === snapshotTask.taskId
+        ));
+        if (canonicalTask && hasTaskAudioSource(canonicalTask)) {
+          hydratedTask = canonicalTask;
+          planDayIndex = Number(dashboard.planDayIndex || canonicalTask.planDayIndex || planDayIndex || 0);
+        } else {
+          hydrationDebug = buildSnapshotHydrationDebug('canonical-task-missing', {
+            category: snapshotTask.category,
+            taskId: snapshotTask.taskId,
+            planDayIndex,
+            dailyTaskCount: (dashboard.dailyTasks || []).length
+          }, ctx);
+        }
+      } catch (error) {
+        hydrationDebug = buildSnapshotHydrationDebug(`dashboard-load-failed:${error.message || String(error)}`, {
+          category: snapshotTask.category,
+          taskId: snapshotTask.taskId,
+          planDayIndex
+        }, ctx);
+      }
+    }
+    return Object.assign({
+      showCloudDebug: false,
+      syncDebug: null,
       currentMember: ctx.member,
       child: ctx.child,
-      task: snapshotTask,
-      progress: buildProgressFromTask(snapshotTask),
-      categoryTasks: [snapshotTask],
+      task: hydratedTask,
+      progress: buildProgressFromTask(hydratedTask),
+      categoryTasks: [hydratedTask],
       categoryTaskCount: 1,
-      categoryCompletedCount: snapshotTask.completedToday ? 1 : 0,
+      categoryCompletedCount: hydratedTask.completedToday ? 1 : 0,
       planDayIndex,
-      planPhaseLabel: snapshotTask.planPhaseLabel || '',
+      planPhaseLabel: hydratedTask.planPhaseLabel || '',
       planRunType,
       targetDate,
-      scriptSource: snapshotTask.textSource || null,
+      scriptSource: hydratedTask.textSource || null,
       transcriptTrack: null,
       transcriptLines: [],
       transcriptPendingLoad: true,
@@ -80,7 +143,7 @@ async function getTaskDetail(event) {
       studyWriteAllowed: planRunType !== 'preview' && study.isStudyWriteAllowed(ctx),
       studyWriteMessage: planRunType === 'preview' ? '预览模式，不计入打卡' : (study.isStudyWriteAllowed(ctx) ? '' : '家长模式，不计入打卡'),
       checkinReady: false
-    };
+    }, hydrationDebug || {});
   }
   const isPreview = planRunType === 'preview';
   const isCatalogBrowse = isPreview && String(payload.source || '') === 'catalog' && CATALOG_BROWSE_CATEGORIES.includes(payload.category);
