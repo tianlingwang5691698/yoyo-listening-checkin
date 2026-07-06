@@ -3,6 +3,7 @@ const assert = require('node:assert/strict');
 
 const reportService = require('../services/report.service');
 const study = require('../facades/study.facade');
+const reportRepository = require('../repositories/report.repository');
 
 test('getMonthHeatmap 会先使用修复后的 checkins 计算点亮状态', async (t) => {
   t.mock.method(study, 'prepareRequestContext', async () => ({
@@ -74,4 +75,34 @@ test('自定义计划当天新增未完成任务后，热力图今天不被旧 c
   assert.equal(todayCell.count, 0);
   assert.equal(todayCell.completed, false);
   assert.equal(result.catchupState.todayDone, false);
+});
+
+test('getParentDashboard summaryOnly 不等待完整 dashboard', async (t) => {
+  t.mock.method(study, 'prepareRequestContext', async () => ({
+    ctx: {
+      user: { openid: 'parent-1' },
+      member: { role: 'parent' },
+      family: { familyId: 'family-1' },
+      child: { childId: 'child-1' },
+      members: [],
+      studentLinks: []
+    },
+    today: '2026-07-06'
+  }));
+  t.mock.method(study, 'getUserScope', () => ({ familyId: 'family-1', childId: 'child-1' }));
+  t.mock.method(study, 'getDashboardData', async () => {
+    throw new Error('summaryOnly should not call getDashboardData');
+  });
+  t.mock.method(reportRepository, 'findByScopeAndDate', async (_scope, date) => ({
+    date,
+    completionItems: [{ type: 'writing', title: '作文练习' }]
+  }));
+
+  const result = await reportService.getParentDashboard({
+    payload: { days: 7, summaryOnly: true }
+  });
+
+  assert.equal(result.recentReports.length, 7);
+  assert.equal(result.moduleStats.writing.count, 7);
+  assert.deepEqual(result.stats, {});
 });

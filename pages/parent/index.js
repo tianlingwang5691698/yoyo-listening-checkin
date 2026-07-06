@@ -2,6 +2,10 @@ const store = require('../../utils/store');
 const page = require('../../utils/page');
 const labels = require('../../utils/labels');
 const contracts = require('../../utils/contracts');
+const snapshotStore = require('../../utils/snapshot');
+
+const PARENT_DASHBOARD_SNAPSHOT_KEY = 'parentDashboardSnapshotV1';
+const PARENT_DASHBOARD_SNAPSHOT_MAX_AGE_MS = 10 * 60 * 1000;
 
 const MODULES = [
   { key: 'listening', label: '听力' },
@@ -134,6 +138,15 @@ function normalizeParentData(data) {
   });
 }
 
+function getParentDashboardSnapshotId() {
+  const target = store.getSelectedStudentTarget();
+  return `${target.targetFamilyId || 'self'}:${target.targetChildId || 'self'}`;
+}
+
+function hasParentDashboardSummary(data) {
+  return !!(data && (data.todayReport || (data.recentReports || []).length || data.moduleStats));
+}
+
 Page({
   data: page.createCloudPageData({
     family: {},
@@ -146,15 +159,45 @@ Page({
     studentNames: [],
     selectedStudentIndex: 0
   }),
+  parentDashboardLoadSeq: 0,
   applyParentData(data) {
     this.setData(page.buildCloudPageData(this.data, normalizeParentData(data)));
+  },
+  applyParentSnapshot(snapshotId) {
+    const snapshot = snapshotStore.read(PARENT_DASHBOARD_SNAPSHOT_KEY, {
+      id: snapshotId,
+      maxAgeMs: PARENT_DASHBOARD_SNAPSHOT_MAX_AGE_MS
+    });
+    if (hasParentDashboardSummary(snapshot)) {
+      this.applyParentData(snapshot);
+      return true;
+    }
+    return false;
+  },
+  saveParentSnapshot(snapshotId, data) {
+    if (!hasParentDashboardSummary(data) || data.syncMode === 'cloud-error') {
+      return;
+    }
+    snapshotStore.write(PARENT_DASHBOARD_SNAPSHOT_KEY, snapshotId, data, {
+      source: 'parent-dashboard-summary'
+    });
   },
   onShow() {
     page.syncTheme(this);
     this.loadParentData();
   },
   loadParentData() {
-    store.getParentDashboard({ days: 7, summaryOnly: true }, (fresh) => this.applyParentData(fresh)).then((data) => {
+    const loadSeq = this.parentDashboardLoadSeq + 1;
+    this.parentDashboardLoadSeq = loadSeq;
+    const snapshotId = getParentDashboardSnapshotId();
+    this.applyParentSnapshot(snapshotId);
+    store.getParentDashboard({ days: 7, summaryOnly: true }, (fresh) => {
+      if (loadSeq !== this.parentDashboardLoadSeq) return;
+      this.saveParentSnapshot(snapshotId, fresh);
+      this.applyParentData(fresh);
+    }).then((data) => {
+      if (loadSeq !== this.parentDashboardLoadSeq) return;
+      this.saveParentSnapshot(snapshotId, data);
       this.applyParentData(data);
     });
   },
@@ -168,7 +211,9 @@ Page({
     store.setLastParentStudentTarget(target);
     this.setData({
       selectedStudentIndex: index,
-      completionItems: []
+      completionItems: [],
+      moduleStats: buildModuleStats([], []),
+      recentReports: []
     });
     this.loadParentData();
   },

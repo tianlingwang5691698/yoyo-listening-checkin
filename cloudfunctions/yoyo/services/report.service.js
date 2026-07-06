@@ -154,15 +154,23 @@ async function getParentDashboard(event) {
   }));
   const days = Math.max(7, Math.min(Number((event && event.payload && event.payload.days) || 7), 30));
   const summaryOnly = !!(event && event.payload && event.payload.summaryOnly);
-  const dashboard = await study.getDashboardData(ctx);
+  const dashboard = summaryOnly ? { stats: {} } : await study.getDashboardData(ctx);
   const scope = study.getUserScope(ctx);
-  const recentReports = [];
+  const dates = [];
   for (let i = 0; i < days; i += 1) {
     const date = study.addDays(today, -i);
-    const existing = await reportRepository.findByScopeAndDate(scope, date);
-    if (summaryOnly) {
-      recentReports.push(existing || { date });
-    } else {
+    dates.push(date);
+  }
+  const recentReports = summaryOnly
+    ? await Promise.all(dates.map(async (date) => {
+      const existing = await reportRepository.findByScopeAndDate(scope, date);
+      return existing || { date };
+    }))
+    : [];
+  if (!summaryOnly) {
+    for (let i = 0; i < dates.length; i += 1) {
+      const date = dates[i];
+      const existing = await reportRepository.findByScopeAndDate(scope, date);
       recentReports.push(existing && !needsCompletionRefresh(existing) ? existing : await study.upsertDailyReport(scope, date));
     }
   }
