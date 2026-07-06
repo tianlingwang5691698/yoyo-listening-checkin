@@ -92,13 +92,26 @@ function normalizeReport(report) {
   });
 }
 
+function summarizeReport(report) {
+  const raw = report || {};
+  const safeReport = normalizeReport(report);
+  return Object.assign({}, safeReport, {
+    items: [],
+    speakingAttempts: [],
+    completionItems: [],
+    completedContentCount: Number(raw.completedContentCount || safeReport.completedContentCount || 0),
+    speakingAttemptCount: Number(raw.speakingAttemptCount || (safeReport.speakingAttempts || []).length || 0),
+    totalCompletedCount: Number(raw.totalCompletedCount || safeReport.totalCompletedCount || 0)
+  });
+}
+
 function normalizeParentData(data) {
-  const recentReports = (data.recentReports || []).map(normalizeReport);
-  const completionItems = normalizeCompletionItems(data.completionItems || []);
+  const recentReports = (data.recentReports || []).map(summarizeReport);
+  const completionItems = [];
   const studentLinks = data.studentLinks || [];
   const selectedStudentIndex = Math.max(0, studentLinks.findIndex((item) => item && item.isCurrent));
   return Object.assign({}, data, {
-    todayReport: normalizeReport(data.todayReport),
+    todayReport: summarizeReport(data.todayReport),
     recentReports,
     completionItems,
     moduleStats: buildModuleStats(recentReports, completionItems),
@@ -128,7 +141,7 @@ Page({
     this.loadParentData();
   },
   loadParentData() {
-    store.getParentDashboard({ days: 7 }, (fresh) => this.applyParentData(fresh)).then((data) => {
+    store.getParentDashboard({ days: 7, summaryOnly: true }, (fresh) => this.applyParentData(fresh)).then((data) => {
       this.applyParentData(data);
     });
   },

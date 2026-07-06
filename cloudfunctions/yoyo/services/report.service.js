@@ -153,14 +153,39 @@ async function getParentDashboard(event) {
     action: 'getParentDashboard'
   }));
   const days = Math.max(7, Math.min(Number((event && event.payload && event.payload.days) || 7), 30));
+  const summaryOnly = !!(event && event.payload && event.payload.summaryOnly);
   const dashboard = await study.getDashboardData(ctx);
   const scope = study.getUserScope(ctx);
   const recentReports = [];
   for (let i = 0; i < days; i += 1) {
     const date = study.addDays(today, -i);
-    const existing = i === 0 ? null : await reportRepository.findByScopeAndDate(scope, date);
-    recentReports.push(existing && !needsCompletionRefresh(existing) ? existing : await study.upsertDailyReport(scope, date));
+    const existing = await reportRepository.findByScopeAndDate(scope, date);
+    if (summaryOnly) {
+      recentReports.push(existing || { date });
+    } else {
+      recentReports.push(existing && !needsCompletionRefresh(existing) ? existing : await study.upsertDailyReport(scope, date));
+    }
   }
+  const summarizeReport = (report) => {
+    if (!summaryOnly || !report) {
+      return report;
+    }
+    return {
+      reportId: report.reportId || '',
+      date: report.date || '',
+      completedCategories: report.completedCategories || [],
+      totalMinutes: Number(report.totalMinutes || 0),
+      streakSnapshot: Number(report.streakSnapshot || 0),
+      planDayIndex: Number(report.planDayIndex || 0),
+      planPhase: report.planPhase || '',
+      planSource: report.planSource || '',
+      listeningPlanId: report.listeningPlanId || '',
+      completedContentCount: (report.completionItems || []).length,
+      speakingAttemptCount: (report.speakingAttempts || []).length,
+      totalCompletedCount: (report.completedCategories || []).length + (report.completionItems || []).length,
+      updatedAt: report.updatedAt || ''
+    };
+  };
   return {
     user: ctx.user,
     currentUser: ctx.user,
@@ -168,8 +193,8 @@ async function getParentDashboard(event) {
     family: ctx.family,
     child: ctx.child,
     stats: dashboard.stats,
-    todayReport: recentReports[0],
-    recentReports,
+    todayReport: summarizeReport(recentReports[0]),
+    recentReports: recentReports.map(summarizeReport),
     members: ctx.members,
     studentLinks: ctx.studentLinks || [],
     subscriptionPreference: ctx.subscriptionPreference

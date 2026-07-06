@@ -30,15 +30,6 @@
       </view>
       <view class="detail-link" data-date="{{todayReport.date}}" bindtap="openDailyDetail">查看</view>
     </view>
-    <block wx:for="{{todayReport.items}}" wx:key="category">
-      <view class="report-item task-cell">
-        <view>
-          <view class="report-title">{{item.categoryLabel}}</view>
-          <view class="report-copy">{{item.title}}</view>
-        </view>
-        <view class="report-progress {{item.completedToday ? 'is-done' : ''}}">{{item.playCount}} / {{item.repeatTarget}}</view>
-      </view>
-    </block>
   </view>
 
   <view class="trend-card section-panel">

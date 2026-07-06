@@ -1,4 +1,4 @@
-<view class="theme-{{theme}} page-shell material-page">
+<view class="theme-{{theme}} page-shell material-page" wx:if="{{pageReady}}">
   <view class="material-hero card">
     <view class="material-eyebrow">{{eyebrow}}</view>
     <view class="material-title">{{title}}</view>

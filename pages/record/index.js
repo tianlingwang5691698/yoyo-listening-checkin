@@ -294,6 +294,7 @@ Page({
     selectedDateLabel: '',
     selectedDayReport: EMPTY_REPORT,
     selectedDaySummary: EMPTY_DAY_SUMMARY,
+    selectedDayLoaded: false,
     selectedDayLoading: false,
     catchupStatusLabel: '无需追赶',
     catchupStatusClass: 'is-muted',
@@ -333,7 +334,12 @@ Page({
         heatmap: [],
         catchupState: snapshot.catchupState || this.data.catchupState
       };
-      this.setData(page.buildCloudPageData(this.data, snapshot));
+      this.setData(page.buildCloudPageData(this.data, Object.assign({}, snapshot, {
+        selectedDayLoaded: false,
+        selectedDayLoading: false,
+        selectedDayReport: EMPTY_REPORT,
+        selectedDaySummary: EMPTY_DAY_SUMMARY
+      })));
       this.scheduleDeferredLoads(calendarYear, calendarMonth, selectedDate);
     }
     const [dashboard, heatmapData] = await Promise.all([
@@ -357,6 +363,10 @@ Page({
       todayDate: getDateKey(today),
       selectedDate,
       selectedDateLabel: formatDateLabel(selectedDate),
+      selectedDayLoaded: false,
+      selectedDayLoading: false,
+      selectedDayReport: EMPTY_REPORT,
+      selectedDaySummary: EMPTY_DAY_SUMMARY,
       monthCells: buildMonthCells(calendarYear, calendarMonth, heatmapData.heatmap, selectedDate, heatmapData.catchupState),
       catchupState: heatmapData.catchupState,
       catchupTasks: [],
@@ -400,9 +410,6 @@ Page({
     this.deferredLoadTimer = setTimeout(() => {
       this.deferredLoadTimer = null;
       this.preloadAdjacentMonths(calendarYear, calendarMonth);
-      Promise.all([
-        this.loadSelectedDay(selectedDate).catch(() => {})
-      ]).catch(() => {});
     }, 350);
   },
   getCachedMonthData(year, month) {
@@ -468,6 +475,10 @@ Page({
       calendarTitle: `${year}年${month}月`,
       selectedDate,
       selectedDateLabel: formatDateLabel(selectedDate),
+      selectedDayLoaded: false,
+      selectedDayLoading: false,
+      selectedDayReport: EMPTY_REPORT,
+      selectedDaySummary: EMPTY_DAY_SUMMARY,
       monthCells: buildMonthCells(year, month, cachedData.heatmap, selectedDate, this.data.catchupState)
     }, buildCatchupPresentation(this.data.catchupState))));
     const heatmapData = await this.getMonthHeatmapCached(year, month, { force: true });
@@ -480,7 +491,13 @@ Page({
     }, buildCatchupPresentation(heatmapData.catchupState))));
     this.preloadAdjacentMonths(year, month);
   },
-  async loadSelectedDay(date) {
+  async loadSelectedDay(input) {
+    const date = typeof input === 'string'
+      ? input
+      : (input && input.currentTarget && input.currentTarget.dataset && input.currentTarget.dataset.date) || this.data.selectedDate;
+    if (!date || this.data.selectedDayLoading) {
+      return;
+    }
     this.setData({
       selectedDayLoading: true
     });
@@ -497,6 +514,7 @@ Page({
       this.setData({
         selectedDayReport,
         selectedDaySummary: buildDaySummary(selectedDayReport),
+        selectedDayLoaded: true,
         selectedDayLoading: false,
         selectedDateLabel: formatDateLabel(date)
       });
@@ -559,7 +577,6 @@ Page({
       ? getDateKey(today)
       : `${nextYear}-${pad(nextMonth)}-01`;
     await this.loadCalendar(nextYear, nextMonth, selectedDate);
-    await this.loadSelectedDay(selectedDate);
   },
   async pickDate(event) {
     const date = event.detail.value;
@@ -577,7 +594,6 @@ Page({
     const year = target.getFullYear();
     const month = target.getMonth() + 1;
     await this.loadCalendar(year, month, date);
-    await this.loadSelectedDay(date);
   },
   async selectDate(event) {
     const date = event.currentTarget.dataset.date;
@@ -587,9 +603,12 @@ Page({
     this.setData({
       selectedDate: date,
       selectedDateLabel: formatDateLabel(date),
+      selectedDayLoaded: false,
+      selectedDayLoading: false,
+      selectedDayReport: EMPTY_REPORT,
+      selectedDaySummary: EMPTY_DAY_SUMMARY,
       monthCells: markSelectedCells(this.data.monthCells, date)
     });
-    await this.loadSelectedDay(date);
   },
   openCatchupTask(event) {
     const category = event.currentTarget.dataset.category;

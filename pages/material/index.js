@@ -133,7 +133,8 @@ Page({
     items: [],
     expandedItemId: '',
     debugLines: [],
-    loading: true
+    loading: true,
+    pageReady: false
   }),
   async onLoad(options) {
     const moduleId = options && options.module === 'writing' ? 'writing' : 'listening';
@@ -145,7 +146,8 @@ Page({
     if (snapshot && snapshot.materialIndex) {
       applyMaterialConfig(this, moduleId, snapshot.materialIndex, {
         moduleId,
-        loading: false
+        loading: false,
+        pageReady: true
       });
     } else {
       this.setData({
@@ -155,7 +157,8 @@ Page({
         copy: baseConfig.copy,
         itemUnit: baseConfig.itemUnit,
         showCefrEntry: moduleId === 'listening',
-        loading: true
+        loading: true,
+        pageReady: true
       });
     }
     const hasSnapshot = !!(snapshot && snapshot.materialIndex);
