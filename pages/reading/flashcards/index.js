@@ -123,11 +123,13 @@ function normalizeCard(item, index) {
   const type = item.type || (item.pattern ? 'pattern' : (item.phrase ? 'phrase' : 'word'));
   const displayText = item.text || item.word || item.phrase || item.pattern || '';
   const phoneticBody = getPhoneticBody(item.phonetic);
+  const displayPhonetic = phoneticBody ? `/${phoneticBody}/` : '';
   return Object.assign({}, item, {
     type,
     displayText,
     phonetic: formatPhonetic(item.phonetic),
     phoneticBody,
+    displayPhonetic,
     canSpeak: (type === 'word' || type === 'phrase') && canUseDictionaryVoice(item.word || item.phrase || displayText),
     typeLabel: TYPE_LABELS[type] || '生词',
     index: index + 1
@@ -253,9 +255,10 @@ function buildPlanSummary(library, settings) {
 }
 
 function buildPhoneticPreview(library) {
-  const first = (library || []).find((item) => item && (item.phoneticBody || item.phonetic));
+  const first = (library || []).find((item) => item && (item.displayPhonetic || item.phoneticBody || item.phonetic));
   if (!first) return '';
-  return `${first.displayText || first.word || first.text || ''} /${first.phoneticBody || getPhoneticBody(first.phonetic)}/`.trim();
+  const body = first.phoneticBody || getPhoneticBody(first.phonetic);
+  return `${first.displayText || first.word || first.text || ''} ${first.displayPhonetic || (body ? `/${body}/` : '')}`.trim();
 }
 
 function addDaysString(today, days) {
@@ -744,7 +747,11 @@ Page({
     const activeSourceId = this.data.activeSourceId || '';
     const cached = readSourceCache(activeSourceId);
     if (cached && !keepReviewSession) {
-      this.applyFlashcardData(Object.assign({}, cached, { loading: false }));
+      const cachedData = this.buildFlashcardData(Object.assign({}, cached, { __cacheHit: true }), activeSourceId, cached);
+      this.applyFlashcardData(Object.assign({}, cachedData, {
+        loading: false
+      }));
+      writeSourceCache(activeSourceId, cachedData);
       if (this.flashcardPerf) {
         this.flashcardPerf.ready('pageReady', {
           cacheHit: true,

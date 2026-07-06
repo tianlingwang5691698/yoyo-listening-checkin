@@ -124,9 +124,7 @@
           </view>
           <view class="vocab-item card" wx:for="{{group.items}}" wx:key="flashcardKey" wx:for-item="item">
             <view class="vocab-text">{{item.displayText}}</view>
-            <view class="vocab-phonetic" wx:if="{{item.phoneticBody || item.phonetic}}">
-              <text>/</text><text>{{item.phoneticBody || item.phonetic}}</text><text>/</text>
-            </view>
+            <view class="vocab-phonetic" wx:if="{{item.displayPhonetic}}">{{item.displayPhonetic}}</view>
             <view class="vocab-meaning">{{item.meaning || item.translation || '暂无释义'}}</view>
             <view class="vocab-example" wx:if="{{item.example}}">{{item.example}}</view>
           </view>
@@ -155,9 +153,7 @@
           <view class="study-speak {{audioLoading ? 'is-loading' : ''}}" wx:if="{{current.canSpeak}}" bindtap="speakCurrent">♪</view>
         </view>
         <view class="study-pron">
-          <view class="study-phonetic" wx:if="{{current.phoneticBody || current.phonetic}}">
-            <text>/</text><text>{{current.phoneticBody || current.phonetic}}</text><text>/</text>
-          </view>
+          <view class="study-phonetic" wx:if="{{current.displayPhonetic}}">{{current.displayPhonetic}}</view>
         </view>
       </view>
       <view class="study-back {{cardRevealed ? '' : 'is-placeholder'}}">
