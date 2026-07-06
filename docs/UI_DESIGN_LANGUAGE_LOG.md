@@ -2270,6 +2270,16 @@
 - 设计记录：测试阶段素材详情缺标题、音频或题目时，页面必须显示具体链路断点。
 - 验证：已做页面和云函数脚本语法检查、diff 空白检查。
 
+### 2026-07-07 词汇书音标调试断点
+
+- 文件：`pages/reading/flashcards/index.js`
+- 文件：`pages/reading/flashcards/index.wxml`
+- 文件：`pages/reading/flashcards/index.wxss`
+- 文件：`utils/store.js`
+- 改动：初中词汇书列表显示音标；进入词汇书时写出云存储 JSON、phonetic、缓存和 target debug；词书写云端补 selected target。
+- 设计记录：测试阶段词汇书字段异常必须在页面给可复制链路断点；词库浏览态也要显示音标，不只在单张背诵卡显示。
+- 验证：已拉取线上初中词汇 JSON 确认 1690/1690 条有 `/.../`；已做页面和 store 脚本语法检查。
+
 ## 后续记录格式
 
 每次 UI/交互改动后追加：

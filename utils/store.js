@@ -563,7 +563,7 @@ async function saveFlashcardSettings(settings) {
 }
 
 async function addDictionaryBook(level, options) {
-  return callCloud('addDictionaryBook', Object.assign({ level }, options || {}), { saved: false }, { useCache: false });
+  return callCloud('addDictionaryBook', withSelectedStudent(Object.assign({ level }, options || {})), { saved: false }, { useCache: false });
 }
 
 async function saveFlashcardAudio(options) {

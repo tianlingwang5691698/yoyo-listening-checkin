@@ -115,13 +115,19 @@ function formatPhonetic(value) {
   return text ? `/${text}/` : '';
 }
 
+function getPhoneticBody(value) {
+  return String(value || '').trim().replace(/^[/\[]+|[/\]]+$/g, '');
+}
+
 function normalizeCard(item, index) {
   const type = item.type || (item.pattern ? 'pattern' : (item.phrase ? 'phrase' : 'word'));
   const displayText = item.text || item.word || item.phrase || item.pattern || '';
+  const phoneticBody = getPhoneticBody(item.phonetic);
   return Object.assign({}, item, {
     type,
     displayText,
     phonetic: formatPhonetic(item.phonetic),
+    phoneticBody,
     canSpeak: (type === 'word' || type === 'phrase') && canUseDictionaryVoice(item.word || item.phrase || displayText),
     typeLabel: TYPE_LABELS[type] || '生词',
     index: index + 1
@@ -244,6 +250,12 @@ function buildPlanSummary(library, settings) {
     fresh,
     todayPlan: Number((settings && settings.newLimit) || 0) + Number((settings && settings.reviewLimit) || 0)
   };
+}
+
+function buildPhoneticPreview(library) {
+  const first = (library || []).find((item) => item && (item.phoneticBody || item.phonetic));
+  if (!first) return '';
+  return `${first.displayText || first.word || first.text || ''} /${first.phoneticBody || getPhoneticBody(first.phonetic)}/`.trim();
 }
 
 function addDaysString(today, days) {
@@ -513,6 +525,53 @@ function buildBookCard(entry, book, index) {
   }, index);
 }
 
+function getTargetDebugText() {
+  const target = store.getSelectedStudentTarget ? store.getSelectedStudentTarget() : {};
+  return [
+    `targetChildId=${target.targetChildId || ''}`,
+    `targetFamilyId=${target.targetFamilyId || ''}`
+  ].join('；');
+}
+
+function buildBookDebugLines(stage, book, options) {
+  const data = options || {};
+  const rows = data.rows || [];
+  const cards = data.cards || [];
+  const firstRow = rows[0] || {};
+  const firstCard = cards[0] || {};
+  const firstWithPhonetic = cards.find((item) => item && item.phonetic) || null;
+  const phoneticCount = cards.filter((item) => item && item.phonetic).length;
+  const cloudPath = book.cloudPath || '';
+  const baseUrl = String(appConfig.cloudAssetBaseUrl || '').replace(/\/+$/, '');
+  const url = baseUrl && cloudPath ? `${baseUrl}/${cloudPath}` : '';
+  const lines = [
+    `DEBUG: reading/flashcards.importDictionaryBook -> store.none -> cloudStorage.${cloudPath || 'empty'} -> phonetic：${firstCard.phonetic || 'missing'}`,
+    `stage=${stage}；level=${book.level || ''}；sourceId=${getBookSourceId(book.level)}；cacheHit=${data.cacheHit ? 'true' : 'false'}`,
+    `rows=${rows.length || data.rowCount || 0}；rendered=${cards.length || data.cardCount || 0}；phoneticCount=${phoneticCount || data.phoneticCount || 0}`,
+    `firstRow.word=${firstRow.word || firstRow.wordLower || firstCard.word || ''}；firstRow.phonetic=${firstRow.phonetic || ''}；firstCard.phonetic=${firstCard.phonetic || ''}`,
+    `sample.word=${(firstWithPhonetic && firstWithPhonetic.word) || ''}；sample.phonetic=${(firstWithPhonetic && firstWithPhonetic.phonetic) || ''}`,
+    `${getTargetDebugText()}；url=${url}`
+  ];
+  if (data.error) {
+    lines.push(`cloudError.message=${data.error.message || data.error.errMsg || String(data.error)}`);
+    lines.push('锁定修复点：pages/reading/flashcards/index.js loadBookCardsFromStorage 或 data/app-config.js cloudAssetBaseUrl/cloudPath。');
+  } else if (!phoneticCount && cards.length) {
+    lines.push('锁定修复点：云存储词汇书 JSON phonetic 字段缺失，或 buildBookCard 未映射 phonetic。');
+  } else if (!rows.length && !cards.length) {
+    lines.push('链路断点：准备读取云存储词汇书 JSON。');
+  } else {
+    lines.push('链路断点：云存储 JSON 已返回 phonetic；若页面仍看不到，查 WXML 渲染或旧缓存。');
+  }
+  return lines;
+}
+
+function shouldShowBookDebug(lines) {
+  return (lines || []).some((line) => (
+    String(line || '').indexOf('锁定修复点') >= 0
+    || String(line || '').indexOf('cloudError.message=') === 0
+  ));
+}
+
 function canUseDictionaryVoice(text) {
   const value = String(text || '').replace(/\s+/g, ' ').trim();
   if (!value || value.length > 60 || /[.!?;:]/.test(value)) return false;
@@ -545,6 +604,7 @@ Page({
     importingBook: '',
     activeSourceId: '',
     activeSourceTitle: '我的词库',
+    phoneticPreview: '',
     isBookPlan: false,
     isUnlimitedPlan: false,
     dueCount: 0,
@@ -574,7 +634,8 @@ Page({
     audioPlaying: false,
     audioCompleted: true,
     navStyle: '',
-    pageTopStyle: ''
+    pageTopStyle: '',
+    flashcardDebugLines: []
   }),
   onUnload() {
     this.flushReviewQueue(true);
@@ -660,6 +721,7 @@ Page({
       isBookPlan: isBookSource(activeSourceId),
       isUnlimitedPlan: false,
       planSummary,
+      phoneticPreview: buildPhoneticPreview(library),
       progress: demoMode
         ? { total: library.length, mastered: 0, reviewing: 0, fresh: library.length }
         : {
@@ -748,15 +810,23 @@ Page({
     if (!level || this.data.importingBook) return;
     const sourceId = getBookSourceId(level);
     const book = normalizeBook((this.data.dictionaryBooks || []).find((item) => item.level === level) || { level });
+    const cached = readSourceCache(sourceId);
     this.setData({
       sourceMode: 'library',
       mode: 'library',
       activeSourceId: sourceId,
       activeSourceTitle: book.title || '词汇书',
-      importingBook: book.imported ? '' : level
+      importingBook: book.imported ? '' : level,
+      flashcardDebugLines: []
     });
-    const cached = readSourceCache(sourceId);
     if (cached) {
+      const cachedLines = buildBookDebugLines('cache', book, {
+        cacheHit: true,
+        cards: cached.library || [],
+        cardCount: (cached.library || []).length
+      });
+      this.setData({ flashcardDebugLines: shouldShowBookDebug(cachedLines) ? cachedLines : [] });
+      console.log(cachedLines.join('\n'));
       await this.loadCards();
     } else {
       this.setFlashcardLibrary([]);
@@ -771,7 +841,14 @@ Page({
     let ready = !!cached;
     if (!cached) {
       try {
-        const localCards = await loadBookCardsFromStorage(book);
+        const baseUrl = String(appConfig.cloudAssetBaseUrl || '').replace(/\/+$/, '');
+        const cloudPath = String(book.cloudPath || '').replace(/^\/+/, '');
+        const rows = await requestJson(`${baseUrl}/${encodeURI(cloudPath)}`);
+        if (!Array.isArray(rows)) throw new Error('dictionary-book-json-invalid');
+        const localCards = rows.map((entry, index) => buildBookCard(entry, book, index)).filter((item) => item.word);
+        const debugLines = buildBookDebugLines('cloud-json', book, { rows, cards: localCards });
+        this.setData({ flashcardDebugLines: shouldShowBookDebug(debugLines) ? debugLines : [] });
+        console.log(debugLines.join('\n'));
         const sourceSettings = readPlanSettings(sourceId, this.data.settings);
         const effectiveSettings = getEffectiveSettings(sourceSettings, localCards, sourceId);
         const limitOptions = buildLimitOptions(localCards.length);
@@ -798,6 +875,7 @@ Page({
           isBookPlan: true,
           isUnlimitedPlan: false,
           planSummary,
+          phoneticPreview: buildPhoneticPreview(localCards),
           progress: {
             total: localCards.length,
             mastered: 0,
@@ -818,6 +896,9 @@ Page({
           }
         }).catch(() => {});
       } catch (error) {
+        const debugLines = buildBookDebugLines('error', book, { error });
+        this.setData({ flashcardDebugLines: debugLines });
+        console.warn(debugLines.join('\n'));
         wx.showToast({ title: '词书读取失败', icon: 'none' });
       }
     }

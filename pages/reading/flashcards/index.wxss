@@ -672,6 +672,20 @@
   line-height: 1.25;
 }
 
+.vocab-phonetic {
+  margin-top: 6rpx;
+  color: rgba(36, 42, 44, 0.55);
+  font-size: var(--font-caption-size);
+  line-height: var(--line-caption);
+}
+
+.phonetic-preview {
+  margin-top: 6rpx;
+  color: rgba(36, 42, 44, 0.56);
+  font-size: var(--font-caption-size);
+  line-height: var(--line-caption);
+}
+
 .vocab-meaning,
 .vocab-example {
   margin-top: 12rpx;
@@ -682,6 +696,21 @@
 
 .vocab-example {
   color: var(--text-muted);
+}
+
+.flashcard-debug {
+  margin-top: 16rpx;
+  padding: 18rpx 20rpx;
+  border-radius: 8rpx;
+  background: rgba(36, 42, 44, 0.05);
+  color: rgba(36, 42, 44, 0.72);
+  font-size: 22rpx;
+  line-height: 1.45;
+}
+
+.flashcard-debug text {
+  display: block;
+  word-break: break-all;
 }
 
 .review-metrics {

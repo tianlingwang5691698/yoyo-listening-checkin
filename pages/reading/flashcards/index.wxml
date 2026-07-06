@@ -42,6 +42,7 @@
       <view>
         <view class="progress-title">总词汇 {{planSummary.total}} <text wx:if="{{demoMode}}" class="demo-tag">演示</text></view>
         <view class="progress-copy">{{activeSourceTitle}}</view>
+        <view class="phonetic-preview" wx:if="{{phoneticPreview}}">{{phoneticPreview}}</view>
       </view>
       <view class="plan-actions">
         <view class="source-back" bindtap="backToBookshelf">书库</view>
@@ -69,6 +70,9 @@
     </view>
     </view>
     <button class="start-review" bindtap="startReview">开始背诵</button>
+    <view class="flashcard-debug" wx:if="{{flashcardDebugLines.length}}">
+      <text selectable="{{true}}" wx:for="{{flashcardDebugLines}}" wx:key="*this">{{item}}</text>
+    </view>
     <view class="sublevel-actions">
       <view bindtap="togglePlanSettings">调整计划</view>
       <view bindtap="toggleLibraryVisible">{{libraryVisible ? '收起词库' : '查看词库'}}</view>
@@ -120,6 +124,9 @@
           </view>
           <view class="vocab-item card" wx:for="{{group.items}}" wx:key="flashcardKey" wx:for-item="item">
             <view class="vocab-text">{{item.displayText}}</view>
+            <view class="vocab-phonetic" wx:if="{{item.phoneticBody || item.phonetic}}">
+              <text>/</text><text>{{item.phoneticBody || item.phonetic}}</text><text>/</text>
+            </view>
             <view class="vocab-meaning">{{item.meaning || item.translation || '暂无释义'}}</view>
             <view class="vocab-example" wx:if="{{item.example}}">{{item.example}}</view>
           </view>
@@ -148,7 +155,9 @@
           <view class="study-speak {{audioLoading ? 'is-loading' : ''}}" wx:if="{{current.canSpeak}}" bindtap="speakCurrent">♪</view>
         </view>
         <view class="study-pron">
-          <text class="study-phonetic" wx:if="{{current.phonetic}}">{{current.phonetic}}</text>
+          <view class="study-phonetic" wx:if="{{current.phoneticBody || current.phonetic}}">
+            <text>/</text><text>{{current.phoneticBody || current.phonetic}}</text><text>/</text>
+          </view>
         </view>
       </view>
       <view class="study-back {{cardRevealed ? '' : 'is-placeholder'}}">
