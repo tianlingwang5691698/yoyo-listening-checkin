@@ -30,6 +30,10 @@ function decorateHomeTask(task) {
     textType: getHomeTextType(task),
     durationSec: Number(task.durationSec || 0),
     repeatTarget,
+    audioUrl: task.audioUrl || '',
+    audioCloudPath: task.audioCloudPath || '',
+    audioFileId: task.audioFileId || '',
+    audioSource: task.audioSource || '',
     progressText: `${task.playCount || 0}/${repeatTarget} 遍`
   };
 }

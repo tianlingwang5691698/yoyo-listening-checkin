@@ -85,7 +85,7 @@ test('非佑佑且未设置自定义计划时不生成固定听力任务', async
   assert.equal(dashboard.activeTaskCount, 0);
 });
 
-test('home view 任务分组不返回首页不用的大字段', async () => {
+test('home view 任务分组保留播放字段但不返回大字段', async () => {
   const dashboard = await dashboardEngine.getDashboardData({
     user: { userId: 'user-1' },
     member: { memberId: 'member-1', studyRole: 'student' },
@@ -121,6 +121,8 @@ test('home view 任务分组不返回首页不用的大字段', async () => {
       isPendingAsset: false,
       audioUrl: 'https://large-audio.example.com/file.mp3',
       audioCloudPath: 'A1/Peppa/file.mp3',
+      audioFileId: 'cloud://env.bucket/A1/Peppa/file.mp3',
+      audioSource: 'static-cloud-url',
       transcriptTrack: { lines: new Array(100).fill({ text: 'large' }) },
       rewardCopy: 'large reward copy'
     }],
@@ -146,12 +148,18 @@ test('home view 任务分组不返回首页不用的大字段', async () => {
   assert.equal(dashboard.family, undefined);
   assert.equal(dashboard.stats, undefined);
   assert.equal(dashboard.dailyTasks, undefined);
-  assert.equal(task.audioUrl, undefined);
-  assert.equal(task.audioCloudPath, undefined);
+  assert.equal(task.audioUrl, 'https://large-audio.example.com/file.mp3');
+  assert.equal(task.audioCloudPath, 'A1/Peppa/file.mp3');
+  assert.equal(task.audioFileId, 'cloud://env.bucket/A1/Peppa/file.mp3');
+  assert.equal(task.audioSource, 'static-cloud-url');
   assert.equal(task.transcriptTrack, undefined);
   assert.equal(task.rewardCopy, undefined);
   assert.equal(dashboard.groupedDailyTasks[0].durationSec, 360);
   assert.deepEqual(Object.keys(task).sort(), [
+    'audioCloudPath',
+    'audioFileId',
+    'audioSource',
+    'audioUrl',
     'category',
     'completedToday',
     'displayTitle',

@@ -172,6 +172,15 @@
 - 每条必须写清楚：板块、文件、改动、设计记录、验证。
 - 后续改 UI 或交互前先看对应板块最近记录，再继续改。
 
+### 2026-07-06 今日完成 Unlock 快照音频字段
+
+- 文件：`cloudfunctions/yoyo/lib/dashboard-engine.js`
+- 文件：`cloudfunctions/yoyo/tests/dashboard-engine.test.js`
+- 文件：`docs/PAGE_LOADING_QUALITY_STANDARD.md`
+- 改动：首页 `home view` 的任务分组保留云端返回的 `audioUrl/audioCloudPath/audioFileId/audioSource`，今日完成缓存里的 Unlock 任务不再丢播放字段。
+- 设计记录：快照只能承接云端真实字段；为控制首页体积，只剥离 transcript、reward 等大字段，不能剥离播放器必需字段。
+- 验证：已做 dashboard、request-context、catalog、report 测试。
+
 ### 2026-07-06 听力回看云端音频字段
 
 - 文件：`cloudfunctions/yoyo/lib/report-engine.js`
