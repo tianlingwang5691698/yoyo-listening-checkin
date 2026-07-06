@@ -2,7 +2,7 @@ const { collection } = require('../adapters/db.adapter');
 const { getWXContext } = require('../adapters/wx-context.adapter');
 
 const BUILTIN_ADMIN_OPEN_IDS = ['om8JT3Zhqe1zeAiKUGGkU0ACjAWs'];
-const ADMIN_SERVICE_VERSION = 'admin-completion-aggregate-20260705-1725';
+const ADMIN_SERVICE_VERSION = 'admin-parent-can-also-student-20260706-1830';
 const WANG_TIANLONG_OPEN_ID = 'om8JT3Zhqe1zeAiKUGGkU0ACjAWs';
 
 function normalizeAdminId(value) {
@@ -80,19 +80,6 @@ function indexBy(list, key) {
   }, {});
 }
 
-function shouldHideOwnerChildForBoundParent(child, familyMembers, parentBoundFamilyIdsByOpenId) {
-  const ownerMember = (familyMembers || []).find((member) => {
-    return member
-      && member.role === 'owner'
-      && (member.studyRole === 'student' || !member.studyRole)
-      && member.openId;
-  });
-  if (!ownerMember) return false;
-  if (ownerMember.studyRole === 'parent') return true;
-  const boundFamilyIds = parentBoundFamilyIdsByOpenId[String(ownerMember.openId || '')] || [];
-  return boundFamilyIds.some((familyId) => familyId && familyId !== String(child.familyId || ''));
-}
-
 function isBindingParent(member) {
   return member
     && member.role === 'parent'
@@ -101,15 +88,6 @@ function isBindingParent(member) {
 
 function shouldHideInactiveDefaultYoyo(child, active, bindingParents) {
   return !active && String(child && child.nickname || '').trim() === '佑佑' && !(bindingParents || []).length;
-}
-
-function getOwnerMember(familyMembers) {
-  return (familyMembers || []).find((member) => {
-    return member
-      && member.role === 'owner'
-      && (member.studyRole === 'student' || !member.studyRole)
-      && member.openId;
-  }) || null;
 }
 
 function isGenericMemberName(value) {
@@ -208,23 +186,9 @@ async function getAdminFamilyList() {
     buildActivityByScope(attempts),
     buildActivityByScope(completedItems)
   ]);
-  const parentBoundFamilyIdsByOpenId = members.reduce((map, member) => {
-    const openId = String(member && member.openId || '');
-    const familyId = String(member && member.familyId || '');
-    if (openId && familyId && isBindingParent(member)) {
-      if (!map[openId]) map[openId] = [];
-      map[openId].push(familyId);
-    }
-    return map;
-  }, {});
-
   const rows = children.map((child) => {
     const familyId = String(child.familyId || '');
     const familyMembers = members.filter((member) => String(member.familyId || '') === familyId);
-    if (shouldHideOwnerChildForBoundParent(child, familyMembers, parentBoundFamilyIdsByOpenId)) {
-      return null;
-    }
-    const ownerMember = getOwnerMember(familyMembers);
     const loginSummary = buildStudentLoginSummary(familyMembers, usersByOpenId);
     const activity = activityByScope[getScopeKey(familyId, child.childId || child._id || '')] || { count: 0, lastActivityAt: '' };
     const loginCount = Number(loginSummary.loginCount || 0);
@@ -235,8 +199,6 @@ async function getAdminFamilyList() {
     if (shouldHideInactiveDefaultYoyo(child, active, bindingParents)) {
       return null;
     }
-    const boundFamilyIds = ownerMember ? (parentBoundFamilyIdsByOpenId[String(ownerMember.openId || '')] || []) : [];
-    const hasBoundOtherChild = boundFamilyIds.some((boundFamilyId) => boundFamilyId && boundFamilyId !== familyId);
     return {
       childId: child.childId || child._id || '',
       childLoginCode: child.childLoginCode || '',
@@ -247,7 +209,7 @@ async function getAdminFamilyList() {
       lastActivityAt: activity.lastActivityAt,
       lastSeenAt,
       active,
-      userRoleText: hasBoundOtherChild ? '家长' : '学生',
+      userRoleText: '学生',
       familyId,
       inviteCode: (familiesById[familyId] && familiesById[familyId].inviteCode) || '',
       members: familyMembers.map((member) => {
