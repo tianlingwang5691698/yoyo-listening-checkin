@@ -145,3 +145,24 @@
 .attempt-button::after {
   border: 0;
 }
+
+.debug-card {
+  margin-top: 28rpx;
+  padding: 22rpx;
+  border-radius: 18rpx;
+  background: rgba(45, 38, 31, 0.08);
+  color: var(--text-main);
+  font-size: 22rpx;
+  line-height: 1.5;
+}
+
+.debug-title {
+  margin-bottom: 10rpx;
+  color: var(--text-strong);
+  font-weight: 800;
+}
+
+.debug-line {
+  margin-top: 8rpx;
+  word-break: break-all;
+}

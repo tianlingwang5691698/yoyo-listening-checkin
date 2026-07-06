@@ -2,6 +2,9 @@ const store = require('../../../utils/store');
 const page = require('../../../utils/page');
 const labels = require('../../../utils/labels');
 const appConfig = require('../../../data/app-config');
+const snapshotStore = require('../../../utils/snapshot');
+const LESSON_TASK_SNAPSHOT_KEY = 'lessonTaskSnapshotV1';
+const LESSON_STUDY_PACK_SNAPSHOT_KEY = 'lessonStudyPackSnapshotV1';
 
 function buildCloudFileId(cloudPath) {
   const normalizedPath = String(cloudPath || '').replace(/^\/+/, '');
@@ -106,9 +109,97 @@ function buildSpeakingSummary(attempts) {
 
 function getCompletionTypeLabel(type) {
   if (type === 'reading' || type === 'reading-study') return '阅读';
+  if (type === 'listening' || type === 'listening-study') return '听力';
   if (type === 'grammar') return '语法';
   if (type === 'writing') return '写作';
   return '完成';
+}
+
+function isListeningStudyCompletion(item) {
+  const source = item || {};
+  const id = String(source.id || source.recordId || '').trim();
+  return source.type === 'listening-study'
+    || id.indexOf('listening-study:') === 0
+    || source.title === '听力学习包';
+}
+
+function parseListeningStudyTarget(item) {
+  const source = item || {};
+  const rawId = String(source.id || source.recordId || '').replace(/^listening-study:/, '');
+  const targetId = String(source.targetId || rawId || '').trim();
+  const parts = targetId.split(':').filter(Boolean);
+  return {
+    category: source.category || parts[0] || '',
+    taskId: source.taskId || parts[1] || ''
+  };
+}
+
+function writeListeningStudySnapshot(item) {
+  const source = item || {};
+  const category = String(source.category || '').trim();
+  const taskId = String(source.taskId || '').trim();
+  if (!category || !taskId) return false;
+  const task = Object.assign({}, source.taskSnapshot || {}, {
+    category,
+    taskId,
+    title: source.meta || source.title || source.targetId || '听力课程',
+    displayTitle: source.meta || source.title || source.targetId || '听力课程',
+    audioTitle: source.meta || source.title || source.targetId || '听力课程',
+    completedToday: true,
+    playCount: 1,
+    repeatTarget: 1,
+    currentPass: 1,
+    textUnlocked: true,
+    transcriptVisible: true
+  });
+  return snapshotStore.write(LESSON_TASK_SNAPSHOT_KEY, `${category}:${taskId}`, {
+    category,
+    taskId,
+    task
+  }, { source: 'parent-detail-listening-study' });
+}
+
+function hasStudyPackCards(studyPack) {
+  return studyPack
+    && ((studyPack.vocabularyCards || []).length
+      || (studyPack.phraseCards || []).length
+      || (studyPack.sentencePatternCards || []).length);
+}
+
+function getListeningStudyCacheIds(item) {
+  const source = item || {};
+  const ids = [
+    source.category && source.taskId ? `lesson-${source.category}-${source.taskId}` : '',
+    source.targetId,
+    String(source.id || source.recordId || '').replace(/^listening-study:/, '')
+  ].map((value) => String(value || '').trim()).filter(Boolean);
+  return Array.from(new Set(ids));
+}
+
+async function writeListeningStudyPackSnapshot(item) {
+  const source = item || {};
+  const category = String(source.category || '').trim();
+  const taskId = String(source.taskId || '').trim();
+  if (!category || !taskId) return false;
+  const cacheIds = getListeningStudyCacheIds(source);
+  for (let index = 0; index < cacheIds.length; index += 1) {
+    const cacheId = cacheIds[index];
+    try {
+      const result = await store.getListeningStudyPack({
+        _id: cacheId,
+        id: cacheId,
+        title: source.meta || source.title || source.targetId || '听力课程'
+      }, { cacheOnly: true, useCache: false });
+      const studyPack = result && result.studyPack;
+      if (hasStudyPackCards(studyPack)) {
+        return snapshotStore.write(LESSON_STUDY_PACK_SNAPSHOT_KEY, `${category}:${taskId}`, {
+          studyPack,
+          listeningId: cacheId
+        }, { source: 'parent-detail-listening-study-pack' });
+      }
+    } catch (error) {}
+  }
+  return false;
 }
 
 function normalizePhraseCards(cards) {
@@ -171,6 +262,8 @@ function mergeStudyPackIntoAttempt(attempt, studyPack) {
 
 function normalizeCompletionItem(item, index) {
   const safeItem = item || {};
+  const isListeningStudyPack = isListeningStudyCompletion(safeItem);
+  const listeningTarget = isListeningStudyPack ? parseListeningStudyTarget(safeItem) : {};
   const latestAttempt = safeItem.latestAttempt || {};
   const review = latestAttempt.review || {};
   const questionResults = Array.isArray(latestAttempt.questionResults) ? latestAttempt.questionResults : [];
@@ -218,9 +311,13 @@ function normalizeCompletionItem(item, index) {
   return Object.assign({}, safeItem, {
     key: safeItem.id || safeItem.recordId || `${safeItem.type || 'item'}-${index}`,
     typeLabel: getCompletionTypeLabel(safeItem.type),
+    isListeningStudyPack,
+    category: safeItem.category || listeningTarget.category || '',
+    taskId: safeItem.taskId || listeningTarget.taskId || '',
     title: safeItem.title || safeItem.meta || '完成记录',
     meta: safeItem.meta || '',
     progressText: safeItem.progressText || (totalScore ? `${score}/${totalScore} 分` : '完成'),
+    detailActionText: isListeningStudyPack ? '查看学习包' : '查看原题和分析',
     scoreText: totalScore ? `${score}/${totalScore} 分` : '',
     correctText: totalCount ? `${correctCount}/${totalCount} 题` : '',
     reviewSummary: review.summary || review.feedback || '',
@@ -512,6 +609,18 @@ Page({
     const key = event.currentTarget.dataset.key || '';
     if (!key) return;
     const current = (this.data.report.completionItems || []).find((item) => item.key === key);
+    if (current && current.isListeningStudyPack) {
+      if (!current.category || !current.taskId) {
+        wx.showToast({ title: '学习包缺少任务定位', icon: 'none' });
+        return;
+      }
+      writeListeningStudySnapshot(current);
+      await writeListeningStudyPackSnapshot(current);
+      wx.navigateTo({
+        url: `/pages/lesson/index?category=${encodeURIComponent(current.category)}&taskId=${encodeURIComponent(current.taskId)}&focus=study&studyPackDone=1&targetDate=${encodeURIComponent(this.data.date || '')}`
+      });
+      return;
+    }
     const willExpand = current ? !current.expanded : false;
     const shouldHydrate = willExpand && needsCompletionHydration(current);
     const items = (this.data.report.completionItems || []).map((item) => Object.assign({}, item, {

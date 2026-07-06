@@ -82,13 +82,13 @@
     </view>
   </view>
 
-  <view class="section-panel lesson-study-card" wx:if="{{lessonStudyPack || lessonStudyCompleted || transcriptPendingLoad || transcriptLines.length || lessonStudyError}}">
+  <view id="lesson-study-card" class="section-panel lesson-study-card" wx:if="{{lessonStudyPack || lessonStudyCompleted || transcriptPendingLoad || transcriptLines.length || lessonStudyError}}">
     <view class="row-between transcript-header">
       <view>
         <view class="section-title type-section-title">文本学习</view>
-        <view class="section-copy">听完后可选择生成学习包。</view>
+        <view class="section-copy">{{lessonStudyPack ? '学习包已生成。' : (lessonStudyCompleted ? '学习包已生成，点击同步查看。' : '听完后可选择生成学习包。')}}</view>
       </view>
-      <button class="pill transcript-pill" loading="{{lessonStudyLoading}}" disabled="{{lessonStudyLoading}}" bindtap="loadLessonStudyPack">{{lessonStudyPack ? '刷新' : '生成'}}</button>
+      <button class="pill transcript-pill" loading="{{lessonStudyLoading}}" disabled="{{lessonStudyLoading || lessonStudyPack}}" bindtap="loadLessonStudyPack">{{lessonStudyPack ? '已生成' : (lessonStudyCompleted ? '同步' : '生成')}}</button>
     </view>
     <view class="study-error" wx:if="{{lessonStudyError}}">{{lessonStudyError}}</view>
     <view class="lesson-study-tabs" wx:if="{{lessonStudyPack}}">

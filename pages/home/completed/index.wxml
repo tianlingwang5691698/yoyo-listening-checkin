@@ -42,4 +42,9 @@
   </view>
 
   <view class="empty-state" wx:else>今天还没有完成记录。</view>
+
+  <view class="debug-card" wx:if="{{debugLines.length}}">
+    <view class="debug-title">调试断点</view>
+    <view class="debug-line" wx:for="{{debugLines}}" wx:key="*this">{{item}}</view>
+  </view>
 </view>

@@ -46,6 +46,7 @@ const MUTATION_ACTIONS = {
 const READ_CACHE_CONFIG = {
   getDashboard: { persist: true },
   getMaterialIndex: { persist: true },
+  getMaterialItem: { persist: true },
   getLevelOverview: { persist: true },
   getListeningPlanOverview: { persist: true, maxAgeMs: LISTENING_PLAN_CACHE_MAX_AGE_MS },
   getListeningMaterialDetail: { persist: true },
@@ -413,6 +414,12 @@ async function getMaterialIndex(options, onRefresh) {
     listeningEm1: [],
     listeningEm2: []
   }, { onRefresh: refreshHandler, useCache: false });
+}
+
+async function getMaterialItem(options, onRefresh) {
+  return callCloud('getMaterialItem', Object.assign({}, options || {}), {
+    item: null
+  }, { onRefresh, useCache: false });
 }
 
 async function getLevelOverview(options, onRefresh) {
@@ -962,6 +969,7 @@ async function getAdminStatus() {
 module.exports = {
   ensureState,
   getMaterialIndex,
+  getMaterialItem,
   getDashboard,
   getHeatmap,
   getMonthHeatmap,

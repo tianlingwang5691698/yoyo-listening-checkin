@@ -6,6 +6,7 @@ const labels = require('../../utils/labels');
 const monitor = require('../../utils/monitor');
 const snapshotStore = require('../../utils/snapshot');
 const LESSON_TASK_SNAPSHOT_KEY = 'lessonTaskSnapshotV1';
+const LESSON_STUDY_PACK_SNAPSHOT_KEY = 'lessonStudyPackSnapshotV1';
 const LESSON_TASK_SNAPSHOT_MAX_AGE_MS = 2 * 60 * 1000;
 
 function buildCloudFileId(cloudPath) {
@@ -396,6 +397,27 @@ Page({
     }
     return task;
   },
+  readLessonStudyPackSnapshot() {
+    const id = `${this.category || ''}:${this.taskId || ''}`;
+    const snapshot = snapshotStore.read(LESSON_STUDY_PACK_SNAPSHOT_KEY, {
+      id,
+      maxAgeMs: LESSON_TASK_SNAPSHOT_MAX_AGE_MS
+    });
+    return snapshot && hasLessonStudyCards(snapshot.studyPack) ? snapshot.studyPack : null;
+  },
+  applyLessonStudyPackSnapshot() {
+    const studyPack = this.readLessonStudyPackSnapshot();
+    if (!studyPack) return false;
+    this.applyLessonStudyPack(studyPack);
+    return true;
+  },
+  isLessonStudyCompletedForTask(task) {
+    const target = task || {};
+    return !!this.studyPackDone
+      || !!target.lessonStudyCompleted
+      || !!this.data.lessonStudyCompleted
+      || !!wx.getStorageSync(lessonStudyDoneKey(target.category || this.category, target.taskId || this.taskId));
+  },
   applyTaskSnapshot(task) {
     const normalizedTask = labels.normalizeTask(task);
     if (!normalizedTask) return;
@@ -418,7 +440,8 @@ Page({
       audioSource: normalizedTask.audioSource || 'none',
       audioReady: false,
       audioResolving: false,
-      audioPlaybackMode: 'idle'
+      audioPlaybackMode: 'idle',
+      lessonStudyCompleted: this.isLessonStudyCompletedForTask(normalizedTask)
     }));
     this.prefetchTaskAudio(normalizedTask);
   },
@@ -477,6 +500,8 @@ Page({
     this.taskId = query.taskId || '';
     this.planRunType = query.planRunType || 'normal';
     this.source = query.source || '';
+    this.focus = query.focus || '';
+    this.studyPackDone = query.studyPackDone === '1';
     this.targetDate = query.targetDate || '';
     this.planDayIndex = query.planDayIndex || '';
     this.pendingAutoPlay = false;
@@ -615,6 +640,10 @@ Page({
     const snapshotTask = this.readLessonTaskSnapshot();
     if (snapshotTask) {
       this.applyTaskSnapshot(snapshotTask);
+      if (this.focus === 'study') {
+        this.applyLessonStudyPackSnapshot();
+        this.loadCachedLessonStudyPack(snapshotTask).catch(() => {});
+      }
     }
   },
   async onShow() {
@@ -838,9 +867,7 @@ Page({
     this.targetDate = detail.targetDate || this.targetDate;
     this.planDayIndex = detail.planDayIndex ? String(detail.planDayIndex) : this.planDayIndex;
     const normalizedTask = labels.normalizeTask(detail.task);
-    const studyCompleted = normalizedTask
-      ? !!wx.getStorageSync(lessonStudyDoneKey(normalizedTask.category || this.category, normalizedTask.taskId || this.taskId))
-      : false;
+    const studyCompleted = normalizedTask ? this.isLessonStudyCompletedForTask(normalizedTask) : false;
     this.setData(page.buildCloudPageData(this.data, {
       syncMode: detail.syncMode,
       isReviewBuild: detail.isReviewBuild,
@@ -890,9 +917,7 @@ Page({
     this.planDayIndex = detail && detail.planDayIndex ? String(detail.planDayIndex) : this.planDayIndex;
     const normalizedTask = labels.normalizeTask(detail.task);
     const previewAudio = buildCurrentAudio(normalizedTask, '', 'idle');
-    const studyCompleted = normalizedTask
-      ? !!wx.getStorageSync(lessonStudyDoneKey(normalizedTask.category || this.category, normalizedTask.taskId || this.taskId))
-      : false;
+    const studyCompleted = normalizedTask ? this.isLessonStudyCompletedForTask(normalizedTask) : false;
     this.setData(page.buildCloudPageData(this.data, {
       syncMode: detail.syncMode,
       isReviewBuild: detail.isReviewBuild,
@@ -1601,6 +1626,15 @@ Page({
   selectLessonStudyTab(event) {
     this.setData({ lessonStudyTab: event.currentTarget.dataset.tab || 'vocabulary' });
   },
+  scrollToLessonStudy() {
+    if (!wx.pageScrollTo) return;
+    setTimeout(() => {
+      wx.pageScrollTo({
+        selector: '#lesson-study-card',
+        duration: 220
+      });
+    }, 120);
+  },
   applyLessonStudyPack(studyPack) {
     const pack = studyPack || {};
     this.setData({
@@ -1608,6 +1642,10 @@ Page({
       lessonVocabularyCards: normalizeLessonStudyCards(pack.vocabularyCards || [], 'word'),
       lessonPhraseCards: normalizeLessonStudyCards(pack.phraseCards || [], 'phrase'),
       lessonPatternCards: normalizeLessonStudyCards(pack.sentencePatternCards || [], 'pattern')
+    }, () => {
+      if (this.focus === 'study') {
+        this.scrollToLessonStudy();
+      }
     });
     recordLessonStudyPackSynced(this.data.task || {}, this.category, this.taskId);
   },
@@ -1622,11 +1660,23 @@ Page({
       && ((studyPack.vocabularyCards || []).length || (studyPack.phraseCards || []).length || (studyPack.sentencePatternCards || []).length);
     if (hasCards) {
       this.applyLessonStudyPack(studyPack);
+      return true;
     }
+    return this.applyLessonStudyPackSnapshot();
   },
   async loadLessonStudyPack() {
     if (this.data.lessonStudyLoading) return;
+    if (this.data.lessonStudyPack) return;
     const task = this.data.task || {};
+    if (this.data.lessonStudyCompleted && !this.data.lessonStudyPack) {
+      this.setData({ lessonStudyLoading: true, lessonStudyError: '' });
+      const restored = await this.loadCachedLessonStudyPack(task);
+      this.setData({ lessonStudyLoading: false });
+      if (!restored) {
+        this.setData({ lessonStudyError: '学习包已生成，但本页没有命中缓存；不会重新生成，请稍后从日报再试。' });
+      }
+      return;
+    }
     let lines = this.data.transcriptLines || [];
     if (!buildTranscriptText(lines) && this.data.transcriptPendingLoad) {
       await this.loadTranscript();
@@ -1926,9 +1976,7 @@ Page({
     this.targetDate = detail && detail.targetDate ? detail.targetDate : this.targetDate;
     this.planDayIndex = detail && detail.planDayIndex ? String(detail.planDayIndex) : this.planDayIndex;
     const normalizedTask = labels.normalizeTask(detail.task);
-    const studyCompleted = normalizedTask
-      ? !!wx.getStorageSync(lessonStudyDoneKey(normalizedTask.category || this.category, normalizedTask.taskId || this.taskId))
-      : false;
+    const studyCompleted = normalizedTask ? this.isLessonStudyCompletedForTask(normalizedTask) : false;
     const transcriptLines = detail.transcriptTrack ? detail.transcriptTrack.lines : [];
     this.setData(page.buildCloudPageData(this.data, {
       child: detail.child,

@@ -79,11 +79,11 @@
   </view>
 
   <view class="section-panel">
-    <view class="section-title type-section-title">阅读/语法/写作</view>
+    <view class="section-title type-section-title">学习内容</view>
     <view class="lazy-load-row task-cell is-link" wx:if="{{!completionItemsLoaded}}" bindtap="loadCompletionItems">
       <view>
-        <view class="detail-title">查看阅读、语法、写作</view>
-        <view class="detail-copy">按需加载当天完成内容和摘要。</view>
+        <view class="detail-title">查看学习内容</view>
+        <view class="detail-copy">按需加载当天学习包、阅读、语法、写作等记录。</view>
       </view>
       <view class="lazy-load-side">
         <view class="lazy-load-badge">{{completionItemsLoading ? '加载中' : '查看'}}</view>
@@ -101,7 +101,7 @@
             <view class="recording-score">{{item.scoreText || item.progressText}}</view>
           </view>
           <view class="recording-meta" wx:if="{{item.correctText}}">答题：{{item.correctText}}</view>
-          <button class="detail-toggle" data-key="{{item.key}}" catchtap="toggleCompletionDetail">{{item.expanded ? '收起详情' : '查看原题和分析'}}</button>
+          <button class="detail-toggle" data-key="{{item.key}}" catchtap="toggleCompletionDetail">{{item.isListeningStudyPack ? item.detailActionText : (item.expanded ? '收起详情' : item.detailActionText)}}</button>
           <block wx:if="{{item.expanded}}">
             <view class="detail-empty-time" wx:if="{{item.detailLoading}}">加载详情中</view>
             <view class="source-passage" wx:if="{{item.passage && item.passage.passage}}">
@@ -160,6 +160,6 @@
         </view>
       </block>
     </block>
-    <view class="empty-state" wx:else>这一天还没有阅读、语法、写作记录。</view>
+    <view class="empty-state" wx:else>这一天还没有学习内容记录。</view>
   </view>
 </view>

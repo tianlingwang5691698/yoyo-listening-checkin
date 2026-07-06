@@ -2,11 +2,11 @@ const store = require('../../utils/store');
 const page = require('../../utils/page');
 const contracts = require('../../utils/contracts');
 const labels = require('../../utils/labels');
-const completed = require('../../utils/completed');
 const snapshotStore = require('../../utils/snapshot');
 const LEVEL_STAGE_SNAPSHOT_KEY = 'levelStageSnapshotV1';
 const LESSON_TASK_SNAPSHOT_KEY = 'lessonTaskSnapshotV1';
 const ENTRY_POSTER_DISMISSED_KEY = 'homeEntryPosterDismissedV1';
+const TODAY_COMPLETED_CACHE_KEY = 'todayCompletedItemsV1';
 
 const VOCABULARY_ITEM_KEYS = [
   'listeningFlashcardItemsV1',
@@ -220,7 +220,7 @@ function buildStageSnapshotTaskGroups(groupedDailyTasks) {
   });
 }
 
-function buildTodayCompletedItems(groupedDailyTasks, readingToday, readingCompleted) {
+function buildTodayCompletedItems(groupedDailyTasks) {
   let speakingAttempts = [];
   try {
     const report = wx.getStorageSync('todayReportForCompletedV1') || null;
@@ -242,6 +242,7 @@ function buildTodayCompletedItems(groupedDailyTasks, readingToday, readingComple
           category: task.category || group.category || '',
           taskId: task.taskId || '',
           progressText: task.progressText || '',
+          taskSnapshot: task,
           attempts,
           completedToday: true
         });
@@ -249,24 +250,51 @@ function buildTodayCompletedItems(groupedDailyTasks, readingToday, readingComple
     });
     return list;
   }, []);
-  if (readingCompleted && readingToday) {
-    listeningItems.push({
-      type: 'reading',
-      title: readingToday.title || '阅读',
-      meta: '阅读',
-      passageId: readingToday._id || '',
-      completedToday: true,
-      latestAttempt: readingToday.latestAttempt || null
-    });
-  }
-  const extraItems = (this && this.data && this.data.cloudCompletedItems) || completed.getTodayCompletedItems();
   const seen = {};
-  return listeningItems.concat(extraItems).filter((item) => {
-    const key = item.id || `${item.type}:${item.title}:${item.passageId || item.topicId || ''}`;
+  return listeningItems.filter((item) => {
+    const key = item.id || `${item.type}:${item.category || ''}:${item.taskId || ''}:${item.title || ''}`;
     if (seen[key]) return false;
     seen[key] = true;
     return true;
   });
+}
+
+function buildCompletedCacheTarget(child) {
+  const source = child || {};
+  return {
+    targetFamilyId: String(source.familyId || '').trim(),
+    targetChildId: String(source.childId || '').trim(),
+    childLoginCode: String(source.childLoginCode || '').trim()
+  };
+}
+
+function isListeningCompletedCacheItem(item) {
+  return item
+    && (item.type === 'listening' || item.type === 'speaking')
+    && !!item.category
+    && !!item.taskId;
+}
+
+function writeTodayCompletedCache(child, items) {
+  try {
+    wx.setStorageSync(TODAY_COMPLETED_CACHE_KEY, {
+      date: todayString(),
+      target: buildCompletedCacheTarget(child),
+      items: (items || []).filter(isListeningCompletedCacheItem)
+    });
+  } catch (error) {}
+}
+
+function buildCompletedUrl(child) {
+  const target = buildCompletedCacheTarget(child);
+  const query = [
+    `date=${todayString()}`,
+    'scope=listening',
+    target.targetFamilyId ? `targetFamilyId=${encodeURIComponent(target.targetFamilyId)}` : '',
+    target.targetChildId ? `targetChildId=${encodeURIComponent(target.targetChildId)}` : '',
+    target.childLoginCode ? `childLoginCode=${encodeURIComponent(target.childLoginCode)}` : ''
+  ].filter(Boolean).join('&');
+  return `/pages/home/completed/index?${query}`;
 }
 
 Page({
@@ -295,7 +323,6 @@ Page({
     readingSummary: '进入阅读',
     vocabularySummary: buildVocabularySummary(),
     todayCompletedItems: [],
-    cloudCompletedItems: [],
     entryPosterVisible: true,
     entryPosterPage: 0,
     identitySelectedInSession: false,
@@ -334,21 +361,12 @@ Page({
       listeningSummary: buildListeningSummary(groupedDailyTasks, { needsListeningPlanSetup }),
       listeningTaskStatus: buildListeningTaskStatus(groupedDailyTasks, { needsListeningPlanSetup }),
       nextListeningTask: findNextListeningTask(groupedDailyTasks),
+      todayCompletedItems: buildTodayCompletedItems(groupedDailyTasks),
       identityConfirmVisible: !this.data.identitySelectedInSession,
       modeChangedNoticeVisible,
       homeLoading: false
     }, this.buildStudyModePresentation(data.currentMember))));
     return groupedDailyTasks;
-  },
-  async loadStudyCompletions() {
-    try {
-      const data = await store.getStudyCompletions({ date: todayString() });
-      const items = data && Array.isArray(data.items) ? data.items : [];
-      this.setData({
-        cloudCompletedItems: items,
-        todayCompletedItems: buildTodayCompletedItems.call(this, this.data.groupedDailyTasks, this.data.readingToday, this.data.readingCompleted)
-      });
-    } catch (error) {}
   },
   ensureNicknameReady() {
     if (!this.data.nicknameRequired) {
@@ -443,13 +461,7 @@ Page({
       });
     }
     setTimeout(() => {
-      Promise.all([
-        this.loadStudyCompletions().catch(() => {})
-      ]).then(() => {
-        try {
-          wx.setStorageSync('todayCompletedItemsV1', this.data.todayCompletedItems || []);
-        } catch (error) {}
-      });
+      writeTodayCompletedCache(this.data.child, this.data.todayCompletedItems || []);
     }, 100);
   },
   showNextEntryPosterPage() {
@@ -643,11 +655,9 @@ Page({
       });
       return;
     }
-    try {
-      wx.setStorageSync('todayCompletedItemsV1', this.data.todayCompletedItems || []);
-    } catch (error) {}
+    writeTodayCompletedCache(this.data.child, this.data.todayCompletedItems || []);
     wx.navigateTo({
-      url: '/pages/home/completed/index'
+      url: buildCompletedUrl(this.data.child)
     });
   },
   openFamilyPage() {

@@ -74,14 +74,43 @@ function buildStages(config) {
 
 function applyMaterialConfig(pageInstance, moduleId, materialIndex, extraData) {
   const config = buildMaterials(materialIndex)[moduleId];
+  const debugLines = buildMaterialDebug(moduleId, materialIndex);
   pageInstance.setData(Object.assign({
     title: config.title,
     eyebrow: config.eyebrow,
     copy: config.copy,
     itemUnit: config.itemUnit,
     showCefrEntry: moduleId === 'listening',
-    stages: buildStages(config)
+    stages: buildStages(config),
+    debugLines
   }, extraData || {}));
+}
+
+function buildMaterialDebug(moduleId, materialIndex) {
+  const index = materialIndex || {};
+  const counts = {
+    listeningEm1: (index.listeningEm1 || []).length,
+    listeningEm2: (index.listeningEm2 || []).length,
+    writingEm1: (index.writingEm1 || []).length,
+    writingEm2: (index.writingEm2 || []).length
+  };
+  const targetCounts = moduleId === 'listening'
+    ? counts.listeningEm1 + counts.listeningEm2
+    : counts.writingEm1 + counts.writingEm2;
+  if (targetCounts > 0 && index.syncMode !== 'cloud-error') {
+    return [];
+  }
+  const syncDebug = index.syncDebug || {};
+  const lines = [
+    `DEBUG: pages/material.onLoad -> store.getMaterialIndex -> cloud.getMaterialIndex -> moduleId=${moduleId}`,
+    `DEBUG: pages/material.applyMaterialConfig -> materialIndex.listeningEm1=${counts.listeningEm1}, listeningEm2=${counts.listeningEm2}, writingEm1=${counts.writingEm1}, writingEm2=${counts.writingEm2}`,
+    `DEBUG: pages/material.applyMaterialConfig -> syncMode=${index.syncMode || 'missing'}, envId=${(syncDebug && syncDebug.envId) || 'missing'}, targetChildId=N/A`
+  ];
+  if (index.cloudError || syncDebug.reason) {
+    lines.push(`DEBUG: pages/material.onLoad -> cloudError.message=${(index.cloudError && index.cloudError.message) || ''}, syncDebug.reason=${syncDebug.reason || ''}`);
+  }
+  console.warn(lines.join('\n'));
+  return lines;
 }
 
 Page({
@@ -103,6 +132,7 @@ Page({
     selectedDistrictNode: null,
     items: [],
     expandedItemId: '',
+    debugLines: [],
     loading: true
   }),
   async onLoad(options) {
@@ -216,13 +246,30 @@ Page({
       expandedItemId: ''
     });
   },
-  openItem(event) {
+  async openItem(event) {
     const itemId = event.currentTarget.dataset.itemId || '';
     const item = (this.data.items || []).find((row) => row._id === itemId);
     if (this.data.moduleId === 'listening') {
       if (item) {
-        wx.setStorageSync('currentListeningSetV1', item);
-        snapshotStore.write(LISTENING_SET_SNAPSHOT_KEY, item._id || item.id || '', { item }, { source: 'material-listening' });
+        const result = await store.getMaterialItem({
+          moduleId: 'listening',
+          itemId: item._id || item.id || ''
+        });
+        const fullItem = result && result.item ? result.item : null;
+        if (!fullItem) {
+          const debugLines = [
+            `DEBUG: pages/material.openItem -> store.getMaterialItem -> cloud.getMaterialItem -> itemId=${item._id || item.id || ''}`,
+            `DEBUG: pages/material.openItem -> result.item=missing, syncMode=${(result && result.syncMode) || 'missing'}, targetChildId=N/A`
+          ];
+          if (result && (result.cloudError || result.syncDebug)) {
+            debugLines.push(`DEBUG: pages/material.openItem -> cloudError.message=${(result.cloudError && result.cloudError.message) || ''}, syncDebug.reason=${(result.syncDebug && result.syncDebug.reason) || ''}`);
+          }
+          console.warn(debugLines.join('\n'));
+          this.setData({ debugLines });
+          return;
+        }
+        wx.setStorageSync('currentListeningSetV1', fullItem);
+        snapshotStore.write(LISTENING_SET_SNAPSHOT_KEY, fullItem._id || fullItem.id || '', { item: fullItem }, { source: 'material-listening' });
         wx.navigateTo({
           url: '/pages/material/detail/index'
         });

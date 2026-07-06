@@ -21,6 +21,10 @@
     </view>
   </view>
 
+  <view class="material-debug" wx:if="{{debugLines.length}}">
+    <view class="material-debug-line" wx:for="{{debugLines}}" wx:key="*this">{{item}}</view>
+  </view>
+
   <view class="material-card card" wx:if="{{!selectedStageId}}">
     <view class="material-card-top">
       <view class="material-card-label">{{showCefrEntry ? '考试听力' : '学段'}}</view>

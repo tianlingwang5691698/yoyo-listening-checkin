@@ -157,3 +157,12 @@
 4. 结论：`Object.assign({}, existing, ...)` 把数据库文档 `_id` 带进 `update({ data })`，CloudBase 禁止更新 `_id`。
 5. 修复：repository update 前统一移除 `_id`，返回给前端时再补回 `_id`。
 6. 是否需要发版：需要上传部署 `yoyo` 云函数。
+
+### 2026-07-06 首页查看记录进入其他内容
+
+1. 现象：首页今日任务完成后点“查看记录”，进入“今日完成”但内容可能不是当前学生。
+2. 账号：986209。
+3. 查询：`pages/home/index.js openCompleted/buildCompletedUrl`、`pages/home/completed/index.js onShow/filterItemsByScope`、`todayCompletedItemsV1`、`getStudyCompletions`。
+4. 结论：完成页先读本机缓存 `todayCompletedItemsV1`，缓存没有按 `targetChildId/date` 隔离；同时首页“今日任务”的查看记录是听力入口，但完成页会展示 `getStudyCompletions` 返回的 `vocabulary/listening-study`。
+5. 修复：首页写入带 `date + target` 的完成缓存，并带 `scope=listening` 进入完成页；写入缓存和完成页过滤都只保留 `type=listening/speaking + category + taskId` 的播放任务；学习包、词汇、阅读记录放到记录/日报，不进入今日任务完成页；缺缓存时在页面 debug 区写出缓存链路断点。
+6. 是否需要发版：前端改动，需要发布小程序。
