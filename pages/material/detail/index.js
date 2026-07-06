@@ -116,6 +116,54 @@ function getAudioSource(item) {
   return item && (item.audioCloudPath || item.audioFileId || item.audioUrl || '');
 }
 
+function unwrapListeningItem(value) {
+  const item = value && value.item ? value.item : value;
+  if (!item) return null;
+  return item;
+}
+
+function getListeningItemId(item) {
+  const target = unwrapListeningItem(item);
+  return String(target && (target._id || target.id || target.audioCloudPath || target.title) || '').trim();
+}
+
+function decodeItemId(value) {
+  const text = String(value || '').trim();
+  if (!text) return '';
+  try {
+    return decodeURIComponent(text);
+  } catch (error) {
+    return text;
+  }
+}
+
+function buildDetailDebugLines(context) {
+  const item = unwrapListeningItem(context.item);
+  const result = context.result || {};
+  const syncDebug = result.syncDebug || {};
+  const itemId = String(context.itemId || getListeningItemId(item) || '').trim();
+  const hasTitle = !!(item && item.title);
+  const hasAudio = !!getAudioSource(item);
+  const questionCount = item && Array.isArray(item.questions) ? item.questions.length : 0;
+  const shouldShow = context.force || !hasTitle || !hasAudio || !questionCount || result.syncMode === 'cloud-error';
+  if (!shouldShow) return [];
+  const lines = [
+    `DEBUG: pages/material/detail.onLoad -> snapshot.currentListeningSetV1 -> itemId=${itemId || 'missing'}, title=${hasTitle ? 'yes' : 'missing'}, audio=${hasAudio ? 'yes' : 'missing'}, questions=${questionCount}, targetChildId=N/A`,
+    `DEBUG: pages/material/detail.hydrateListeningItem -> store.getMaterialItem -> cloud.getMaterialItem -> result.item=${result.item ? 'yes' : 'missing'}, syncMode=${result.syncMode || 'unknown'}, envId=${syncDebug.envId || 'missing'}`
+  ];
+  if (result.cloudError || syncDebug.reason) {
+    lines.push(`DEBUG: pages/material/detail.hydrateListeningItem -> cloudError.message=${(result.cloudError && result.cloudError.message) || ''}, syncDebug.reason=${syncDebug.reason || ''}`);
+  }
+  if (!hasAudio) {
+    lines.push('链路断点：列表快照或云端素材缺少 audioCloudPath/audioFileId/audioUrl，播放器只能显示 00:00。');
+  }
+  if (!questionCount) {
+    lines.push('链路断点：云端 getMaterialItem 未返回 questions，答题区为空。');
+  }
+  console.warn(lines.join('\n'));
+  return lines;
+}
+
 Page({
   data: page.createCloudPageData({
     item: null,
@@ -149,23 +197,30 @@ Page({
     answerSummary: '',
     vocabularyCards: [],
     phraseCards: [],
-    sentencePatternCards: []
+    sentencePatternCards: [],
+    debugLines: []
   }),
   onLoad(options = {}) {
-    const legacyItem = wx.getStorageSync('currentListeningSetV1') || null;
-    const itemId = String(options.itemId || (legacyItem && (legacyItem._id || legacyItem.id || '')) || '').trim();
+    const legacyItem = unwrapListeningItem(wx.getStorageSync('currentListeningSetV1') || null);
+    const itemId = decodeItemId(options.itemId || getListeningItemId(legacyItem) || '');
     const snapshot = itemId ? snapshotStore.read(LISTENING_SET_SNAPSHOT_KEY, {
       id: itemId,
       maxAgeMs: 5 * 60 * 1000
     }) : null;
-    const item = withImageDisplayMode((snapshot && snapshot.item) || legacyItem || null);
+    const item = withImageDisplayMode(unwrapListeningItem(snapshot) || legacyItem || null);
     const studyCompleted = item ? !!wx.getStorageSync(studyDoneKey(item)) : false;
     this.setData({
       item,
       questions: item ? buildQuestions(item) : [],
       answerSummary: item ? buildAnswerSummary(item) : '',
       studyCompleted,
-      audioLocked: false
+      audioLocked: false,
+      debugLines: itemId ? [] : buildDetailDebugLines({
+        item,
+        itemId,
+        result: {},
+        force: !item
+      })
     });
     const audioSource = getAudioSource(item);
     if (audioSource) {
@@ -301,14 +356,25 @@ Page({
         moduleId: 'listening',
         itemId
       });
-      const fullItem = withImageDisplayMode(result && result.item ? result.item : null);
-      if (!fullItem) return;
+      const fullItem = withImageDisplayMode(unwrapListeningItem(result));
+      if (!fullItem || !getListeningItemId(fullItem)) {
+        this.setData({
+          debugLines: buildDetailDebugLines({
+            item: this.data.item,
+            itemId,
+            result,
+            force: true
+          })
+        });
+        return;
+      }
       wx.setStorageSync('currentListeningSetV1', fullItem);
-      snapshotStore.write(LISTENING_SET_SNAPSHOT_KEY, fullItem._id || fullItem.id || itemId, { item: fullItem }, { source: 'material-listening-detail' });
+      snapshotStore.write(LISTENING_SET_SNAPSHOT_KEY, getListeningItemId(fullItem) || itemId, { item: fullItem }, { source: 'material-listening-detail' });
       this.setData({
         item: Object.assign({}, this.data.item || {}, fullItem),
         questions: buildQuestions(fullItem),
-        answerSummary: buildAnswerSummary(fullItem)
+        answerSummary: buildAnswerSummary(fullItem),
+        debugLines: []
       });
       const audioSource = getAudioSource(fullItem);
       if (audioSource && !this.data.audioSrc && !this.data.audioLoading) {
@@ -318,7 +384,14 @@ Page({
         this.prepareImages(fullItem.images);
       }
       this.loadCachedStudyPack(fullItem);
-    } catch (error) {}
+    } catch (error) {
+      this.setData({
+        debugLines: [
+          `DEBUG: pages/material/detail.hydrateListeningItem -> store.getMaterialItem -> cloud.getMaterialItem -> exception=${error && error.message ? error.message : String(error)}, itemId=${itemId || 'missing'}, targetChildId=N/A`,
+          '链路断点：getMaterialItem 调用异常，详情只能使用上一页快照。'
+        ]
+      });
+    }
   },
   toggleAudio() {
     if (this.data.audioLoading || !this.data.audioSrc) return;

@@ -16,6 +16,21 @@
   margin-top: 24rpx;
 }
 
+.detail-debug {
+  margin-top: 20rpx;
+  padding: 18rpx;
+  border: 1rpx dashed rgba(144, 91, 45, 0.35);
+  border-radius: var(--radius-md);
+  background: rgba(255, 250, 242, 0.92);
+}
+
+.detail-debug-line {
+  color: var(--accent-deep);
+  font-size: 22rpx;
+  line-height: 1.5;
+  word-break: break-all;
+}
+
 .detail-eyebrow,
 .detail-copy,
 .question-label,

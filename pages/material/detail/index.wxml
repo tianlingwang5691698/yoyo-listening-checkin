@@ -5,6 +5,10 @@
     <view class="detail-copy">{{item.year}} · {{item.district}} · {{item.examType}}</view>
   </view>
 
+  <view class="detail-debug" wx:if="{{debugLines.length}}">
+    <view class="detail-debug-line" wx:for="{{debugLines}}" wx:key="*this">{{item}}</view>
+  </view>
+
   <view class="audio-card card">
     <view class="audio-head">
       <view class="audio-copy">

@@ -2259,6 +2259,17 @@
 - 设计记录：日报模块分析属于首屏摘要，必须先可见，详情数据按点击查看再加载。
 - 验证：已做页面和云函数脚本语法检查、服务测试和 diff 空白检查。
 
+### 2026-07-07 听力练习详情调试断点
+
+- 文件：`pages/material/index.js`
+- 文件：`pages/material/detail/index.js`
+- 文件：`pages/material/detail/index.wxml`
+- 文件：`pages/material/detail/index.wxss`
+- 文件：`cloudfunctions/yoyo/services/catalog.service.js`
+- 改动：听力练习详情兼容旧快照包裹结构，展示素材链路 DEBUG，并用素材真实字段兜底回源。
+- 设计记录：测试阶段素材详情缺标题、音频或题目时，页面必须显示具体链路断点。
+- 验证：已做页面和云函数脚本语法检查、diff 空白检查。
+
 ## 后续记录格式
 
 每次 UI/交互改动后追加：

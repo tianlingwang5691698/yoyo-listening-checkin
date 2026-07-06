@@ -43,11 +43,17 @@ function groupByDistrict(items) {
       };
     }
     map[district].count += 1;
+    const materialItemId = getMaterialItemId(item) || `${district}:${map[district].count}`;
     map[district].items.push(Object.assign({}, item, {
-      stableId: item && (item._id || item.id || `${district}:${map[district].count}`)
+      stableId: materialItemId,
+      materialItemId
     }));
   });
   return Object.keys(map).sort().map((key) => map[key]);
+}
+
+function getMaterialItemId(item) {
+  return String(item && (item._id || item.id || item.stableId || item.audioCloudPath || item.title) || '').trim();
 }
 
 function buildStages(config) {
@@ -278,13 +284,14 @@ Page({
   },
   async openItem(event) {
     const itemId = event.currentTarget.dataset.itemId || '';
-    const item = (this.data.items || []).find((row) => String(row._id || row.id || '') === String(itemId));
+    const item = (this.data.items || []).find((row) => getMaterialItemId(row) === String(itemId));
     if (this.data.moduleId === 'listening') {
       if (item) {
+        const targetId = getMaterialItemId(item);
         wx.setStorageSync('currentListeningSetV1', item);
-        snapshotStore.write(LISTENING_SET_SNAPSHOT_KEY, item._id || item.id || '', { item }, { source: 'material-listening' });
+        snapshotStore.write(LISTENING_SET_SNAPSHOT_KEY, targetId, { item }, { source: 'material-listening' });
         wx.navigateTo({
-          url: `/pages/material/detail/index?itemId=${encodeURIComponent(item._id || item.id || '')}`
+          url: `/pages/material/detail/index?itemId=${encodeURIComponent(targetId)}`
         });
       }
       return;

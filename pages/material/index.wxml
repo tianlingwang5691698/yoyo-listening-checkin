@@ -81,12 +81,12 @@
       <view class="directory-back-icon" bindtap="backToDistricts">‹ 区县</view>
     </view>
     <view class="task-list">
-      <view class="task-row" wx:for="{{items}}" wx:key="stableId" data-item-id="{{item._id || item.id}}" bindtap="openItem">
+      <view class="task-row" wx:for="{{items}}" wx:key="stableId" data-item-id="{{item.materialItemId}}" bindtap="openItem">
         <view class="task-index">{{index + 1}}</view>
         <view class="task-main">
           <view class="task-title">{{item.title}}</view>
           <view class="task-meta">{{item.year}} · {{item.district}} · {{item.examType}}</view>
-          <view class="material-detail" wx:if="{{expandedItemId === (item._id || item.id)}}">
+          <view class="material-detail" wx:if="{{expandedItemId === item.materialItemId}}">
             <view wx:if="{{moduleId === 'writing'}}">{{item.prompt}}</view>
             <view wx:else>
               <view>音频：{{item.audioCloudPath}}</view>

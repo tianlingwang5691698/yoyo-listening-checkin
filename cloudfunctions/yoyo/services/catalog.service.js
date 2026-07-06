@@ -61,7 +61,13 @@ async function getMaterialIndex(event) {
 async function getMaterialItem(event) {
   const payload = (event && event.payload) || {};
   const moduleId = String(payload.moduleId || '').trim();
-  const itemId = String(payload.itemId || '').trim();
+  const rawItemId = String(payload.itemId || '').trim();
+  let itemId = rawItemId;
+  try {
+    itemId = decodeURIComponent(rawItemId);
+  } catch (error) {
+    itemId = rawItemId;
+  }
   if (!itemId) {
     return { item: null };
   }
@@ -69,7 +75,12 @@ async function getMaterialItem(event) {
     ? [MATERIAL_PATHS.listeningEm1, MATERIAL_PATHS.listeningEm2]
     : [MATERIAL_PATHS.writingEm1, MATERIAL_PATHS.writingEm2];
   const lists = await Promise.all(paths.map(loadList));
-  const item = lists.flat().find((row) => row && String(row._id || row.id || '') === itemId) || null;
+  const item = lists.flat().find((row) => row && [
+    row._id,
+    row.id,
+    row.audioCloudPath,
+    row.title
+  ].some((value) => String(value || '').trim() === itemId)) || null;
   return { item };
 }
 
