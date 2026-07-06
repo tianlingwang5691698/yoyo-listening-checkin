@@ -128,13 +128,14 @@ async function getDashboardData(ctx, deps, options = {}) {
   const includeUser = options.includeUser !== false;
   const includeFamily = options.includeFamily !== false;
   const includeStats = options.includeStats !== false;
+  const includeChildStats = options.includeChildStats !== false;
   const today = deps.getTodayString();
   const scope = deps.getUserScope(ctx);
   let [progressRecords, checkins] = await Promise.all([
     deps.getChildProgressRecords(scope),
     deps.getCheckins(scope)
   ]);
-  if (deps.reconcileCheckins) {
+  if (options.reconcileCheckins !== false && deps.reconcileCheckins) {
     const reconciled = await deps.reconcileCheckins(scope, progressRecords, checkins, today);
     if (reconciled) {
       progressRecords = reconciled.progressRecords || progressRecords;
@@ -196,7 +197,9 @@ async function getDashboardData(ctx, deps, options = {}) {
   const categorySummaries = includeCategorySummaries
     ? buildCategorySummariesFromDailyTasks(dailyTasks, planDayIndex, deps, planCategoryOrder)
     : [];
-  const stats = deps.buildStats(progressRecords, checkins, ctx.child.childId);
+  const stats = (includeStats || includeChildStats)
+    ? deps.buildStats(progressRecords, checkins, ctx.child.childId)
+    : { streakDays: 0 };
   const activeTaskCount = includeTaskProgressSummary || includeCatchupState
     ? dailyTasks.filter((item) => !item.isPendingAsset).length
     : 0;
@@ -213,8 +216,8 @@ async function getDashboardData(ctx, deps, options = {}) {
   const result = {
     currentMember: ctx.member,
     child: Object.assign({}, ctx.child, {
-      totalCompleted: checkins.length,
-      streakDays: stats.streakDays
+      totalCompleted: includeChildStats ? checkins.length : Number(ctx.child.totalCompleted || 0),
+      streakDays: includeChildStats ? stats.streakDays : Number(ctx.child.streakDays || 0)
     }),
     planDayIndex,
     planPhase: todayPlan.phase.key,

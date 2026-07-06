@@ -11,7 +11,9 @@ function resolveDashboardOptions(view) {
       includeTaskProgressSummary: true,
       includeUser: false,
       includeFamily: false,
-      includeStats: false
+      includeStats: false,
+      includeChildStats: false,
+      reconcileCheckins: false
     };
   }
   if (view === 'record') {

@@ -188,6 +188,15 @@
 - 设计记录：测试期口语评分失败必须显示链路断点，方便区分开发者工具录音为空、上传失败和云端下载失败。
 - 验证：已做页面脚本语法检查。
 
+### 2026-07-06 首页身份切换后任务刷新
+
+- 文件：`pages/home/index.js`
+- 文件：`cloudfunctions/yoyo/services/dashboard.service.js`
+- 文件：`cloudfunctions/yoyo/lib/dashboard-engine.js`
+- 改动：选择家长/学生身份成功后立即重新拉首页任务；首页 dashboard 跳过历史打卡补偿和孩子统计，减少首屏无关计算。
+- 设计记录：首页首屏只保证身份、今日任务和模块入口准确，不在首屏做历史补偿类工作。
+- 验证：已做前端和云函数脚本语法检查。
+
 ### 2026-07-06 资料听力目录调试链路
 
 - 文件：`pages/material/index.js`

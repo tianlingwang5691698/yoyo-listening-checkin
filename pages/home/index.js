@@ -445,18 +445,9 @@ Page({
       entryPosterPage: entryPosterVisible ? 0 : this.data.entryPosterPage,
       identitySelectedInSession
     });
-    const data = await store.getDashboard({ view: 'home' }, (fresh) => {
-      const groups = this.applyDashboard(fresh);
-      if (this.homePerf) {
-        this.homePerf.mark('cloudRefresh', {
-          groups: groups.length
-        });
-      }
-    });
-    const groupedDailyTasks = this.applyDashboard(data);
+    const groupedDailyTasks = await this.refreshHomeDashboard();
     if (this.homePerf) {
       this.homePerf.ready('pageReady', {
-        cacheHit: !!data.__cacheHit,
         groups: groupedDailyTasks.length
       });
     }
@@ -524,12 +515,25 @@ Page({
         title: nextRole === 'student' ? '已进入学生设备' : '已进入家长模式',
         icon: 'none'
       });
+      this.setData({ homeLoading: true });
+      await this.refreshHomeDashboard();
     } catch (error) {
       wx.showToast({
         title: '已本机切换，云端稍后同步',
         icon: 'none'
       });
     }
+  },
+  async refreshHomeDashboard() {
+    const data = await store.getDashboard({ view: 'home' }, (fresh) => {
+      const groups = this.applyDashboard(fresh);
+      if (this.homePerf) {
+        this.homePerf.mark('cloudRefresh', {
+          groups: groups.length
+        });
+      }
+    });
+    return this.applyDashboard(data);
   },
   openTask(event) {
     if (!this.ensureIdentityReady()) return;
