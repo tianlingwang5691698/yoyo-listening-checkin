@@ -13,7 +13,16 @@ function getCategoryDisplayLabel(category, label) {
     return 'Peppa';
   }
   if (category === 'unlock1') {
-    return 'Unlock 1';
+    return 'Unlock 1 课本';
+  }
+  if (category === 'unlock2') {
+    return 'Unlock 2 课本';
+  }
+  if (category === 'unlock3') {
+    return 'Unlock 3 练习册';
+  }
+  if (category === 'unlock4') {
+    return 'Unlock 4 课本';
   }
   if (category === 'newconcept1') {
     return 'New Concept 1';

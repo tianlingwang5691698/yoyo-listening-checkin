@@ -151,7 +151,7 @@ const unlockTasks = unlockAudioFiles.map((item, index) => {
     taskId,
     category: 'unlock1',
     title: item[0],
-    subtitle: `Unlock 1 第 ${index + 1} 条`,
+    subtitle: `Unlock 1 课本 第 ${index + 1} 条`,
     audioUrl: buildCloudAssetUrl(`${UNLOCK1_AUDIO_ROOT}/${item[0]}.mp3`),
     audioCloudPath: `${UNLOCK1_AUDIO_ROOT}/${item[0]}.mp3`,
     audioFileId: buildCloudFileId(`${UNLOCK1_AUDIO_ROOT}/${item[0]}.mp3`),
@@ -191,6 +191,7 @@ const songPlaceholder = {
 const STANDALONE_LEVEL_CATEGORIES = ['newconcept2', 'unlock2', 'newconcept3', 'unlock3', 'newconcept4', 'unlock4'];
 const NEW_CONCEPT_CATEGORIES = ['newconcept1', 'newconcept2', 'newconcept3', 'newconcept4'];
 const UNLOCK_SERIES_CATEGORIES = ['unlock1', 'unlock2', 'unlock3', 'unlock4'];
+const UNLOCK_WORKBOOK_CATEGORIES = ['unlock3'];
 
 function slugifyTrackIdPart(value) {
   return String(value || '')
@@ -271,9 +272,57 @@ function getUnlockSeriesNumber(category) {
   return 0;
 }
 
+function isUnlockWorkbookCategory(category) {
+  return UNLOCK_WORKBOOK_CATEGORIES.includes(category);
+}
+
+function getUnlockMaterialType(category) {
+  return isUnlockWorkbookCategory(category) ? '练习册' : '课本';
+}
+
+function parseUnlockAudioOrder(value, options = {}) {
+  const baseName = getBaseName(value).replace(/\.[^.]+$/i, '');
+  const upper = baseName.toUpperCase();
+  const allowTermTests = !!options.allowTermTests;
+  if (allowTermTests && (/\bMID\b|_MID_|-MID-/.test(upper))) {
+    const tailMatch = upper.match(/(?:MID[_-])?(\d+)$/);
+    return { group: 4.5, unit: 4, track: 500 + Number((tailMatch && tailMatch[1]) || 0), special: 1 };
+  }
+  if (allowTermTests && (/\bEND\b|_END_|-END-/.test(upper))) {
+    const tailMatch = upper.match(/(?:END[_-])?(\d+)$/);
+    return { group: 99, unit: 99, track: Number((tailMatch && tailMatch[1]) || 0), special: 2 };
+  }
+  const unitMatch = upper.match(/(?:^|[_\s-])U0*(\d+)(?:[_\s-]|$)/);
+  const unit = unitMatch ? Number(unitMatch[1]) : 0;
+  const numberMatches = Array.from(upper.matchAll(/(?:^|[_\s-])(\d+)\.(\d+)(?:[_\s-]|$)/g));
+  const numberMatch = numberMatches[numberMatches.length - 1] || null;
+  const inferredUnit = unit || Number((numberMatch && numberMatch[1]) || 0);
+  const track = Number((numberMatch && numberMatch[2]) || 0);
+  if (inferredUnit > 0) {
+    return { group: inferredUnit, unit: inferredUnit, track, special: 0 };
+  }
+  return { group: 999, unit: 999, track: 999, special: 9 };
+}
+
+function compareUnlockAudioOrder(leftValue, rightValue, category) {
+  const options = { allowTermTests: isUnlockWorkbookCategory(category) };
+  const left = parseUnlockAudioOrder(leftValue, options);
+  const right = parseUnlockAudioOrder(rightValue, options);
+  return (left.group - right.group)
+    || (left.unit - right.unit)
+    || (left.special - right.special)
+    || (left.track - right.track);
+}
+
 function buildUnlockSeriesTasks(category) {
   const manifest = unlockSeriesManifests[category] || null;
-  const tracks = Array.isArray(manifest && manifest.tracks) ? manifest.tracks : [];
+  const tracks = (Array.isArray(manifest && manifest.tracks) ? manifest.tracks : []).slice().sort((left, right) => (
+    compareUnlockAudioOrder(left.normalizedFileName || left.title, right.normalizedFileName || right.title, category)
+      || String(left.normalizedFileName || left.title || '').localeCompare(String(right.normalizedFileName || right.title || ''), 'zh-Hans-CN', {
+        numeric: true,
+        sensitivity: 'base'
+      })
+  ));
   const level = getUnlockSeriesLevel(category);
   const seriesNumber = getUnlockSeriesNumber(category);
   return tracks.map((item, index) => {
@@ -284,7 +333,7 @@ function buildUnlockSeriesTasks(category) {
       taskId,
       category,
       title,
-      subtitle: `Unlock ${seriesNumber} 第 ${index + 1} 条`,
+      subtitle: `Unlock ${seriesNumber} ${getUnlockMaterialType(category)} 第 ${index + 1} 条`,
       audioUrl: buildCloudAssetUrl(item.cloudPath),
       audioCloudPath: item.cloudPath,
       audioFileId: buildCloudFileId(item.cloudPath),
@@ -809,8 +858,16 @@ function buildCloudTask(baseTask, overrides) {
   });
 }
 
-function sortFilesByPath(left, right) {
-  return normalizeCloudPath(left.cloudPath).localeCompare(normalizeCloudPath(right.cloudPath), 'zh-Hans-CN', {
+function sortFilesByPath(left, right, category) {
+  const leftPath = normalizeCloudPath(left.cloudPath);
+  const rightPath = normalizeCloudPath(right.cloudPath);
+  if (UNLOCK_SERIES_CATEGORIES.includes(category)) {
+    const unlockOrder = compareUnlockAudioOrder(leftPath, rightPath, category);
+    if (unlockOrder) {
+      return unlockOrder;
+    }
+  }
+  return leftPath.localeCompare(rightPath, 'zh-Hans-CN', {
     numeric: true,
     sensitivity: 'base'
   });
@@ -823,7 +880,7 @@ async function buildCloudCatalogFromRoot(category, rootPath, staticItems, option
   const audioFiles = files
     .filter((item) => isAudioStorageFile(category, item))
     .filter((item) => !pathFilter || pathFilter(item))
-    .sort(sortFilesByPath);
+    .sort((left, right) => sortFilesByPath(left, right, category));
   const pdfByFolder = {};
   files.filter((item) => /\.pdf$/i.test(item.cloudPath)).forEach((item) => {
     pdfByFolder[getParentFolder(item.cloudPath)] = item;
@@ -1204,10 +1261,10 @@ const CATEGORY_LABELS = {
   newconcept3: 'New Concept 3',
   newconcept4: 'New Concept 4',
   peppa: 'Peppa',
-  unlock1: 'Unlock 1',
-  unlock2: 'Unlock 2',
-  unlock3: 'Unlock 3',
-  unlock4: 'Unlock 4',
+  unlock1: 'Unlock 1 课本',
+  unlock2: 'Unlock 2 课本',
+  unlock3: 'Unlock 3 练习册',
+  unlock4: 'Unlock 4 课本',
   song: 'Songs'
 };
 
@@ -1237,6 +1294,7 @@ module.exports = {
   AUDIO_FILE_PATTERN,
   STORAGE_ROOTS,
   STORAGE_ROOT_CANDIDATES,
+  CATEGORY_LABELS,
   buildCloudAssetUrl,
   getBaseName,
   listDirectoryFiles,

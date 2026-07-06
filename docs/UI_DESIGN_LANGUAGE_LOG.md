@@ -170,6 +170,16 @@
 - 每条必须写清楚：板块、文件、改动、设计记录、验证。
 - 后续改 UI 或交互前先看对应板块最近记录，再继续改。
 
+### 2026-07-06 听力素材 Unlock 课本/练习册标识
+
+- 文件：`cloudfunctions/yoyo/lib/catalog-engine.js`
+- 文件：`cloudfunctions/yoyo/lib/task-presenter.js`
+- 文件：`cloudfunctions/yoyo/lib/listening-plan-engine.js`
+- 文件：`utils/labels.js`
+- 改动：Unlock 1/2/4 显示为第二版课本，Unlock 3 显示为练习册；期中/期末听力排序只作用于 Unlock 3 练习册素材。
+- 设计记录：素材列表、计划设置、任务徽章统一暴露“课本/练习册”属性，避免只显示 Unlock 编号造成误解。
+- 验证：已做云函数和前端脚本语法检查，并通过 catalog 与 plan-runtime 测试。
+
 ### 2026-07-06 家长日报词汇模块统计
 
 - 文件：`pages/parent/index.js`

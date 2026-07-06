@@ -4,15 +4,16 @@ const CATEGORY_LABELS = {
   newconcept3: 'New Concept 3',
   newconcept4: 'New Concept 4',
   peppa: 'Peppa',
-  unlock1: 'Unlock 1',
-  unlock2: 'Unlock 2',
-  unlock3: 'Unlock 3',
-  unlock4: 'Unlock 4',
+  unlock1: 'Unlock 1 课本',
+  unlock2: 'Unlock 2 课本',
+  unlock3: 'Unlock 3 练习册',
+  unlock4: 'Unlock 4 课本',
   song: 'Songs'
 };
 
 const NEW_CONCEPT_CATEGORIES = ['newconcept1', 'newconcept2', 'newconcept3', 'newconcept4'];
 const UNLOCK_CATEGORIES = ['unlock1', 'unlock2', 'unlock3', 'unlock4'];
+const UNLOCK_WORKBOOK_CATEGORIES = ['unlock3'];
 
 function getCategoryLabel(category) {
   return CATEGORY_LABELS[category] || category;
@@ -45,12 +46,13 @@ function getTaskPresentation(task) {
   if (UNLOCK_CATEGORIES.includes(task.category)) {
     const seriesNumber = task.category.replace('unlock', '') || '1';
     const levelLabel = task.category === 'unlock1' ? 'A1' : task.category === 'unlock2' ? 'A2' : task.category === 'unlock3' ? 'B1' : 'B2';
+    const materialType = UNLOCK_WORKBOOK_CATEGORIES.includes(task.category) ? '练习册' : '课本';
     const match = title.match(/(?:Unlock2e_|UL2v2_)?(?:A1|L2|L3|B2)[_-]*(?:TST_LS_)?(?:U)?(\d+\.\d+)/i);
     return {
       displayTitle: match ? match[1] : title,
-      displaySubtitle: `${levelLabel} Listen & Speak`,
+      displaySubtitle: `${levelLabel} ${materialType}听力`,
       coverVariant: 'unlock',
-      coverBadge: `Unlock-${seriesNumber}`
+      coverBadge: `Unlock ${seriesNumber} ${materialType}`
     };
   }
   if (task.category === 'song') {
