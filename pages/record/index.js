@@ -7,6 +7,7 @@ const appConfig = require('../../data/app-config');
 
 const WEEK_LABELS = ['日', '一', '二', '三', '四', '五', '六'];
 const LESSON_TASK_SNAPSHOT_KEY = 'lessonTaskSnapshotV1';
+const RECORD_HOME_SNAPSHOT_KEY = 'recordHomeSnapshotV1';
 const EMPTY_REPORT = {
   ...contracts.createReportDefaults()
 };
@@ -35,6 +36,15 @@ function getDateKey(date) {
 
 function getMonthKey(year, month) {
   return `${year}-${pad(month)}`;
+}
+
+function getTargetSnapshotPart() {
+  const target = store.getSelectedStudentTarget ? store.getSelectedStudentTarget() : {};
+  return `${target.targetFamilyId || 'self'}:${target.targetChildId || 'self'}`;
+}
+
+function getRecordHomeSnapshotId(year, month) {
+  return `${getTargetSnapshotPart()}:${getMonthKey(year, month)}`;
 }
 
 function parseDateKey(dateKey) {
@@ -313,6 +323,19 @@ Page({
     const selectedDate = this.data.selectedDate || getDateKey(today);
     const calendarYear = this.data.calendarYear || today.getFullYear();
     const calendarMonth = this.data.calendarMonth || today.getMonth() + 1;
+    const snapshotId = getRecordHomeSnapshotId(calendarYear, calendarMonth);
+    const snapshot = snapshotStore.read(RECORD_HOME_SNAPSHOT_KEY, {
+      id: snapshotId,
+      maxAgeMs: 10 * 60 * 1000
+    });
+    if (snapshot) {
+      this.monthCache[getMonthKey(calendarYear, calendarMonth)] = snapshot.heatmapData || {
+        heatmap: [],
+        catchupState: snapshot.catchupState || this.data.catchupState
+      };
+      this.setData(page.buildCloudPageData(this.data, snapshot));
+      this.scheduleDeferredLoads(calendarYear, calendarMonth, selectedDate);
+    }
     const [dashboard, heatmapData] = await Promise.all([
       store.getDashboard({ view: 'record' }, (fresh) => {
         const freshState = Object.assign({}, fresh, {
@@ -347,6 +370,13 @@ Page({
       buildMetric(nextState.stats, this.data.metricMode),
       catchupPresentation
     )));
+    snapshotStore.write(RECORD_HOME_SNAPSHOT_KEY, snapshotId, Object.assign(
+      {},
+      nextState,
+      buildMetric(nextState.stats, this.data.metricMode),
+      catchupPresentation,
+      { heatmapData }
+    ), { source: 'record-home' });
     if (this.recordPerf) {
       this.recordPerf.ready('pageReady', {
         dashboardCacheHit: !!dashboard.__cacheHit,

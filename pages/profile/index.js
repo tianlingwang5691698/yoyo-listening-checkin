@@ -1,8 +1,10 @@
 const store = require('../../utils/store');
 const page = require('../../utils/page');
 const theme = require('../../utils/theme');
+const snapshotStore = require('../../utils/snapshot');
 
 const ADMIN_OPEN_IDS = ['om8JT3Zhqe1zeAiKUGGkU0ACjAWs'];
+const PROFILE_SNAPSHOT_KEY = 'profileHomeSnapshotV1';
 
 const DAILY_ENCOURAGEMENTS = [
   ['Small steps count.', '一点点坚持，也会慢慢变强。'],
@@ -92,6 +94,9 @@ Page({
     adminVisible: false
   }),
   applyProfileData(data) {
+    if (data && data.syncMode !== 'cloud-error') {
+      snapshotStore.write(PROFILE_SNAPSHOT_KEY, 'profile', data, { source: 'profile-home' });
+    }
     this.setData(page.buildCloudPageData(this.data, Object.assign({}, data, {
       childNicknameInput: (data.child && data.child.nickname) || '',
       dailyEncouragement: getDailyEncouragement(),
@@ -108,6 +113,13 @@ Page({
     }
     if (!page.requireIdentityConfirmed()) {
       return;
+    }
+    const snapshot = snapshotStore.read(PROFILE_SNAPSHOT_KEY, {
+      id: 'profile',
+      maxAgeMs: 10 * 60 * 1000
+    });
+    if (snapshot) {
+      this.applyProfileData(snapshot);
     }
     const data = await store.getProfileData((fresh) => this.applyProfileData(fresh));
     this.applyProfileData(data);

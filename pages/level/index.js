@@ -137,7 +137,7 @@ Page({
       this.applyOverview(cached, nextLevel);
     }
     if (!cached && !options.prefetch) {
-      this.setData({ levelLoading: true, materials: [] });
+      this.setData({ levelLoading: true });
     }
     if (!this.overviewRequests[nextLevel]) {
       const request = store.getListeningPlanOverview({ levelId: nextLevel }, (fresh) => this.applyOverviewIfCurrent(fresh, nextLevel));
