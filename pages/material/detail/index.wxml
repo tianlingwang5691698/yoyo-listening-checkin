@@ -6,10 +6,34 @@
   </view>
 
   <view class="audio-card card">
-    <view class="audio-title">{{audioLocked ? '先学文本' : (isPlaying ? '正在播放' : '听力音频')}}</view>
+    <view class="audio-head">
+      <view class="audio-copy">
+        <view class="audio-title">{{audioLocked ? '先学文本' : '听力音频'}}</view>
+        <view class="audio-subtitle">{{audioLocked ? '学完文本后再听音频' : (audioLoading ? '音频准备中' : (audioError ? '音频不可用' : (isPlaying ? '正在播放' : '可暂停和拖动进度')))}}</view>
+      </view>
+      <view class="audio-time">{{audioCurrentText}} / {{audioDurationText}}</view>
+    </view>
     <view class="audio-lock-tip" wx:if="{{audioLocked}}">学完生词、短语和句型后再听音频。</view>
-    <view class="audio-button {{audioLoading || !audioSrc || audioLocked ? 'is-disabled' : ''}}" bindtap="toggleAudio">
-      {{isPlaying ? '暂停' : '播放'}}
+    <view class="audio-player {{audioLoading || !audioSrc ? 'is-disabled' : ''}}" wx:else>
+      <slider
+        class="audio-slider"
+        min="0"
+        max="{{audioSliderMax}}"
+        value="{{audioProgress}}"
+        activeColor="#C47A2C"
+        backgroundColor="#E8DED1"
+        block-size="16"
+        disabled="{{audioLoading || !audioSrc}}"
+        bindchanging="changingAudioProgress"
+        bindchange="changeAudioProgress"
+      />
+      <view class="audio-controls">
+        <view class="audio-step {{audioLoading || !audioSrc ? 'is-disabled' : ''}}" data-delta="-15" hover-class="is-pressed" hover-start-time="0" hover-stay-time="120" bindtap="seekAudio">-15秒</view>
+        <view class="audio-main {{audioLoading || !audioSrc ? 'is-disabled' : ''}}" hover-class="is-pressed" hover-start-time="0" hover-stay-time="120" bindtap="toggleAudio">
+          {{audioLoading ? '加载中' : (isPlaying ? '暂停' : (audioEnded ? '重播' : '播放'))}}
+        </view>
+        <view class="audio-step {{audioLoading || !audioSrc ? 'is-disabled' : ''}}" data-delta="15" hover-class="is-pressed" hover-start-time="0" hover-stay-time="120" bindtap="seekAudio">+15秒</view>
+      </view>
     </view>
     <view class="audio-error" wx:if="{{audioError}}">{{audioError}}</view>
   </view>

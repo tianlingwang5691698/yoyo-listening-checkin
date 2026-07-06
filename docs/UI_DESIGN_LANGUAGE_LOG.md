@@ -1937,6 +1937,33 @@
 - 设计记录：生成中断不能停在无反馈状态；已生成内容优先展示，错误只作为兜底提示。
 - 验证：已做页面脚本语法检查。
 
+### 2026-07-06 考试听力播放器
+
+- 文件：`pages/material/detail/index.js`
+- 文件：`pages/material/detail/index.wxml`
+- 文件：`pages/material/detail/index.wxss`
+- 改动：听力练习页从单一播放按钮升级为播放器，支持播放/暂停、前后 15 秒、拖动进度和当前/总时长。
+- 设计记录：考试听力播放器只保留完成听题必需控制，主播放键居中，时间与进度始终可见。
+- 验证：已做页面脚本语法检查和 diff 空白检查。
+
+### 2026-07-06 考试听力播放器触感
+
+- 文件：`pages/material/detail/index.js`
+- 文件：`pages/material/detail/index.wxml`
+- 文件：`pages/material/detail/index.wxss`
+- 改动：播放器控制区改为更轻的 view 控件样式，增加凹陷按压态，并把拖动精度提升到 1000 档。
+- 设计记录：播放器按钮避免整块矩形压迫感；轻操作用胶囊按钮，主操作保持居中但保留按下反馈。
+- 验证：已做页面脚本语法检查和 diff 空白检查。
+
+### 2026-07-06 考试听力播放器按键距离
+
+- 文件：`pages/material/detail/index.js`
+- 文件：`pages/material/detail/index.wxml`
+- 文件：`pages/material/detail/index.wxss`
+- 改动：撤掉震动反馈，按钮组改为居中紧凑布局，并用下沉和内阴影表达按下状态。
+- 设计记录：播放器控制键不贴边分散；三个高频按钮保持在拇指短距离移动范围内。
+- 验证：已做页面脚本语法检查和 diff 空白检查。
+
 ## 后续记录格式
 
 每次 UI/交互改动后追加：
