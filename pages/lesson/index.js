@@ -371,9 +371,16 @@ function recordLessonStudyPackSynced(task, category, taskId) {
     id: `listening-study:${targetId}`,
     type: 'listening',
     targetId,
+    category: safeCategory,
+    taskId: safeTaskId,
     title: '听力学习包',
     meta: target.displayTitle || target.title || target.audioTitle || '听力课程',
-    progressText: '学习包已生成'
+    progressText: '学习包已生成',
+    audioUrl: target.audioUrl || '',
+    audioCloudPath: target.audioCloudPath || '',
+    audioFileId: target.audioFileId || '',
+    audioSource: target.audioSource || '',
+    taskSnapshot: target
   });
 }
 

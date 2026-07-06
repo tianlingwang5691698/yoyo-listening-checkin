@@ -569,6 +569,17 @@ Page({
     }
     const targetDate = this.data.catchupState.missedDate || '';
     const planDayIndex = this.data.catchupState.planDayIndex || '';
+    const task = (this.data.catchupTasks || []).find((item) => item.category === category && item.taskId === taskId);
+    if (task) {
+      snapshotStore.write(LESSON_TASK_SNAPSHOT_KEY, `${category}:${taskId}`, {
+        category,
+        taskId,
+        task: Object.assign({}, task, {
+          targetDate,
+          planDayIndex
+        })
+      }, { source: 'record-catchup' });
+    }
     wx.navigateTo({
       url: `/pages/lesson/index?category=${category}&taskId=${taskId}&planRunType=catchup&targetDate=${targetDate}&planDayIndex=${planDayIndex}`
     });
@@ -592,7 +603,7 @@ Page({
       snapshotStore.write(LESSON_TASK_SNAPSHOT_KEY, `${item.category}:${item.taskId}`, {
         category: item.category,
         taskId: item.taskId,
-        task: Object.assign({}, item, {
+        task: Object.assign({}, item.taskSnapshot || {}, item, {
           targetDate,
           planDayIndex
         })

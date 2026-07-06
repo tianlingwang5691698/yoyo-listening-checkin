@@ -1,5 +1,43 @@
 const monitor = require('./monitor');
 
+function buildTaskSnapshot(task) {
+  const source = task || {};
+  return {
+    category: source.category || '',
+    categoryLabel: source.categoryLabel || '',
+    taskId: source.taskId || '',
+    originalTaskId: source.originalTaskId || '',
+    title: source.title || '',
+    displayTitle: source.displayTitle || '',
+    displaySubtitle: source.displaySubtitle || '',
+    audioTitle: source.audioTitle || '',
+    audioCompactTitle: source.audioCompactTitle || '',
+    audioUrl: source.audioUrl || '',
+    audioCloudPath: source.audioCloudPath || '',
+    audioFileId: source.audioFileId || '',
+    audioSource: source.audioSource || '',
+    durationSec: Number(source.durationSec || 0),
+    repeatTarget: Number(source.repeatTarget || 3),
+    playCount: Number(source.playCount || 0),
+    playStepText: source.playStepText || '',
+    currentPass: Number(source.currentPass || 1),
+    completedToday: !!source.completedToday,
+    textUnlocked: !!source.textUnlocked,
+    transcriptVisible: !!source.transcriptVisible,
+    transcriptTrackId: source.transcriptTrackId || '',
+    transcriptStatus: source.transcriptStatus || '',
+    syncGranularity: source.syncGranularity || '',
+    textSource: source.textSource || null,
+    coverTone: source.coverTone || '',
+    coverVariant: source.coverVariant || '',
+    coverBadge: source.coverBadge || '',
+    coverMeta: source.coverMeta || '',
+    planRunType: source.planRunType || '',
+    planDayIndex: source.planDayIndex || 0,
+    speakingMode: source.speakingMode || ''
+  };
+}
+
 async function upsertDailyReport(scope, date, deps) {
   const startedAt = Date.now();
   const progressRecords = await deps.getChildProgressRecords(scope);
@@ -44,6 +82,11 @@ async function upsertDailyReport(scope, date, deps) {
       taskId: task.taskId,
       originalTaskId: task.originalTaskId || '',
       title: task.audioCompactTitle || task.displayTitle || task.title,
+      audioUrl: task.audioUrl || '',
+      audioCloudPath: task.audioCloudPath || '',
+      audioFileId: task.audioFileId || '',
+      audioSource: task.audioSource || '',
+      taskSnapshot: buildTaskSnapshot(task),
       playCount: completedToday ? Math.max(task.playCount || 0, repeatTarget) : (task.playCount || 0),
       playMoments: Array.isArray(task.playMoments) ? task.playMoments : [],
       repeatTarget,

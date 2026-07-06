@@ -172,6 +172,18 @@
 - 每条必须写清楚：板块、文件、改动、设计记录、验证。
 - 后续改 UI 或交互前先看对应板块最近记录，再继续改。
 
+### 2026-07-06 听力回看云端音频字段
+
+- 文件：`cloudfunctions/yoyo/lib/report-engine.js`
+- 文件：`cloudfunctions/yoyo/services/completion.service.js`
+- 文件：`pages/lesson/index.js`
+- 文件：`pages/parent/detail/index.js`
+- 文件：`pages/record/index.js`
+- 文件：`docs/PAGE_LOADING_QUALITY_STANDARD.md`
+- 改动：日报、完成记录、家长详情和记录追赶入口保留云端任务快照里的 `audioUrl/audioCloudPath/audioFileId/audioSource`，回看 Unlock 时先用云端快照渲染播放器。
+- 设计记录：听力回看不能只保存标题和完成状态；播放器可用性优先于学习包、口语记录和完成明细。
+- 验证：已用 SDK 查线上 Unlock 云存储和云函数返回字段；已做页面/云函数脚本语法检查，并通过 request-context、catalog、report 测试。
+
 ### 2026-07-06 今日完成查看任务播放器优先
 
 - 文件：`pages/home/completed/index.js`

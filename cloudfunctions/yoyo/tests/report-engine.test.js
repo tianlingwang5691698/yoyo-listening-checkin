@@ -26,7 +26,20 @@ test('日报生成已完成分类和总时长', async () => {
     getPlanCategoryOrder: () => ['peppa', 'song'],
     decoratePlannedTasks: (_progressRecords, _childId, category) => {
       if (category === 'peppa') {
-        return [{ categoryLabel: 'Peppa', taskId: 'peppa-1', audioCompactTitle: 'Peppa Ep1', playCount: 3, repeatTarget: 3, completedToday: true, updatedAt: '2026-04-21T10:00:00.000Z' }];
+        return [{
+          category: 'peppa',
+          categoryLabel: 'Peppa',
+          taskId: 'peppa-1',
+          audioCompactTitle: 'Peppa Ep1',
+          audioUrl: 'https://example.com/peppa-1.mp3',
+          audioCloudPath: 'A1/Peppa/第1季/S101 Muddy Puddles.mp3',
+          audioFileId: 'cloud://env.bucket/A1/Peppa/第1季/S101 Muddy Puddles.mp3',
+          audioSource: 'static-cloud-url',
+          playCount: 3,
+          repeatTarget: 3,
+          completedToday: true,
+          updatedAt: '2026-04-21T10:00:00.000Z'
+        }];
       }
       return [{ categoryLabel: 'Songs', taskId: 'song-1', audioCompactTitle: 'Song 1', playCount: 1, repeatTarget: 3, completedToday: false, updatedAt: '2026-04-21T11:00:00.000Z' }];
     },
@@ -44,6 +57,8 @@ test('日报生成已完成分类和总时长', async () => {
 
   assert.deepEqual(report.completedCategories, ['peppa', 'song']);
   assert.equal(report.totalMinutes, 9);
+  assert.equal(report.items[0].audioCloudPath, 'A1/Peppa/第1季/S101 Muddy Puddles.mp3');
+  assert.equal(report.items[0].taskSnapshot.audioSource, 'static-cloud-url');
   assert.equal(saved.reportId, 'family-1_child-1_2026-04-21');
 });
 

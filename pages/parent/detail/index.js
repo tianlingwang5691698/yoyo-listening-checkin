@@ -136,8 +136,9 @@ function parseListeningStudyTarget(item) {
 
 function writeListeningStudySnapshot(item) {
   const source = item || {};
-  const category = String(source.category || '').trim();
-  const taskId = String(source.taskId || '').trim();
+  const target = parseListeningStudyTarget(source);
+  const category = String(source.category || target.category || '').trim();
+  const taskId = String(source.taskId || target.taskId || '').trim();
   if (!category || !taskId) return false;
   const task = Object.assign({}, source.taskSnapshot || {}, {
     category,
@@ -145,6 +146,10 @@ function writeListeningStudySnapshot(item) {
     title: source.meta || source.title || source.targetId || '听力课程',
     displayTitle: source.meta || source.title || source.targetId || '听力课程',
     audioTitle: source.meta || source.title || source.targetId || '听力课程',
+    audioUrl: source.audioUrl || (source.taskSnapshot && source.taskSnapshot.audioUrl) || '',
+    audioCloudPath: source.audioCloudPath || (source.taskSnapshot && source.taskSnapshot.audioCloudPath) || '',
+    audioFileId: source.audioFileId || (source.taskSnapshot && source.taskSnapshot.audioFileId) || buildCloudFileId(source.audioCloudPath || (source.taskSnapshot && source.taskSnapshot.audioCloudPath) || ''),
+    audioSource: source.audioSource || (source.taskSnapshot && source.taskSnapshot.audioSource) || '',
     completedToday: true,
     playCount: 1,
     repeatTarget: 1,
@@ -168,8 +173,9 @@ function hasStudyPackCards(studyPack) {
 
 function getListeningStudyCacheIds(item) {
   const source = item || {};
+  const target = parseListeningStudyTarget(source);
   const ids = [
-    source.category && source.taskId ? `lesson-${source.category}-${source.taskId}` : '',
+    target.category && target.taskId ? `lesson-${target.category}-${target.taskId}` : '',
     source.targetId,
     String(source.id || source.recordId || '').replace(/^listening-study:/, '')
   ].map((value) => String(value || '').trim()).filter(Boolean);
@@ -178,8 +184,9 @@ function getListeningStudyCacheIds(item) {
 
 async function writeListeningStudyPackSnapshot(item) {
   const source = item || {};
-  const category = String(source.category || '').trim();
-  const taskId = String(source.taskId || '').trim();
+  const target = parseListeningStudyTarget(source);
+  const category = String(source.category || target.category || '').trim();
+  const taskId = String(source.taskId || target.taskId || '').trim();
   if (!category || !taskId) return false;
   const cacheIds = getListeningStudyCacheIds(source);
   for (let index = 0; index < cacheIds.length; index += 1) {

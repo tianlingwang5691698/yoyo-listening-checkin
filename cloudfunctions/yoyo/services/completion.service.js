@@ -9,6 +9,10 @@ async function upsertStudyCompletion(ctx, today, payload) {
   }
   const type = String(payload.type || '').trim();
   const targetId = String(payload.targetId || payload.passageId || payload.topicId || '').trim();
+  const targetParts = targetId.split(':').filter(Boolean);
+  const taskSnapshot = payload.taskSnapshot && typeof payload.taskSnapshot === 'object'
+    ? payload.taskSnapshot
+    : null;
   if (!type || !targetId) {
     return { saved: false, reason: 'missing-target' };
   }
@@ -32,12 +36,19 @@ async function upsertStudyCompletion(ctx, today, payload) {
     date,
     type,
     targetId,
+    category: String(payload.category || (taskSnapshot && taskSnapshot.category) || targetParts[0] || ''),
+    taskId: String(payload.taskId || (taskSnapshot && taskSnapshot.taskId) || targetParts[1] || ''),
     passageId: String(payload.passageId || ''),
     topicId: String(payload.topicId || ''),
     section,
     title: String(payload.title || ''),
     meta: String(payload.meta || ''),
     progressText: String(payload.progressText || ''),
+    audioUrl: String(payload.audioUrl || (taskSnapshot && taskSnapshot.audioUrl) || ''),
+    audioCloudPath: String(payload.audioCloudPath || (taskSnapshot && taskSnapshot.audioCloudPath) || ''),
+    audioFileId: String(payload.audioFileId || (taskSnapshot && taskSnapshot.audioFileId) || ''),
+    audioSource: String(payload.audioSource || (taskSnapshot && taskSnapshot.audioSource) || ''),
+    taskSnapshot,
     latestAttempt: payload.latestAttempt || null,
     completedToday: true,
     updatedAt: now
