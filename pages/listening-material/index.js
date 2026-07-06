@@ -53,6 +53,10 @@ function buildRows(tasks) {
   }));
 }
 
+function hasAudioFields(task) {
+  return !!(task && (task.audioUrl || task.audioCloudPath || task.audioFileId || task.audioSource));
+}
+
 function clamp(value, min, max) {
   return Math.max(min, Math.min(max, Number(value || min)));
 }
@@ -197,12 +201,19 @@ Page({
     const levelId = query.levelId || 'A1';
     this.setData({ category, levelId });
     const snapshotId = getDetailSnapshotId(levelId, category);
+    const target = store.getSelectedStudentTarget ? store.getSelectedStudentTarget() : {};
+    const cachedDetail = store.getCachedReadResult
+      ? store.getCachedReadResult('getListeningMaterialDetail', Object.assign({ category, levelId }, target))
+      : null;
     const snapshot = snapshotStore.read(MATERIAL_DETAIL_SNAPSHOT_KEY, {
       id: snapshotId,
       maxAgeMs: SNAPSHOT_MAX_AGE_MS
     });
     if (snapshot) {
       this.applyDetail(snapshot);
+    } else if (cachedDetail) {
+      rememberDetailSnapshot(snapshotId, cachedDetail, 'listening-material-cache');
+      this.applyDetail(cachedDetail);
     }
     const data = await store.getListeningMaterialDetail({ category, levelId }, (fresh) => {
       rememberDetailSnapshot(snapshotId, fresh, 'listening-material-refresh');
@@ -372,6 +383,10 @@ Page({
     const index = Number(event.currentTarget.dataset.index || 0);
     const task = (this.data.tasks || [])[index];
     if (!task || !task.taskId) {
+      return;
+    }
+    if (!hasAudioFields(task.taskSnapshot)) {
+      wx.showToast({ title: '音频字段同步中', icon: 'none' });
       return;
     }
     snapshotStore.write(LESSON_TASK_SNAPSHOT_KEY, `${task.category}:${task.taskId}`, {

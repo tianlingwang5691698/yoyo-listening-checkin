@@ -203,6 +203,16 @@
 - 设计记录：点击反馈要像真实按键，轻微下沉、柔和回弹，不用快速闪烁或强烈变暗。
 - 验证：已做样式 diff 检查。
 
+### 2026-07-06 写作入口与音频素材快照收紧
+
+- 文件：`utils/store.js`
+- 文件：`pages/material/index.js`
+- 文件：`pages/listening-material/index.js`
+- 文件：`docs/PAGE_LOADING_QUALITY_STANDARD.md`
+- 改动：开放同步读取 store 真实缓存；写作/材料入口先同步读 `getMaterialIndex` 缓存；音频分级素材详情恢复 `getListeningMaterialDetail` 缓存首显，并在进入课程前校验云端音频字段。
+- 设计记录：列表首屏不能等 Promise 微任务；素材进入播放器前必须有云端真实音频字段，不能靠前端猜。
+- 验证：已做页面脚本语法检查。
+
 ### 2026-07-06 全局首动作快照性能规则
 
 - 文件：`docs/PAGE_LOADING_QUALITY_STANDARD.md`

@@ -293,6 +293,10 @@ function getCachedCloudResult(action, payload) {
   return entry.data;
 }
 
+function getCachedReadResult(action, payload) {
+  return getCachedCloudResult(action, payload || {});
+}
+
 function cacheCloudResult(action, payload, data) {
   const config = READ_CACHE_CONFIG[action];
   if (!config || !data || data.syncMode === 'cloud-error') {
@@ -436,7 +440,7 @@ async function getLevelOverview(options, onRefresh) {
     a2Categories: [],
     b1Categories: [],
     b2Categories: []
-  }, { onRefresh, useCache: false });
+  }, { onRefresh });
 }
 
 async function getListeningPlanOverview(options, onRefresh) {
@@ -463,7 +467,7 @@ async function getListeningMaterialDetail(options, onRefresh) {
     tasks: [],
     activePlan: null,
     selectedMaterial: null
-  }, { onRefresh, useCache: false });
+  }, { onRefresh });
 }
 
 async function saveListeningPlanMaterial(options) {
@@ -1017,6 +1021,7 @@ module.exports = {
   recordGrammarProgress,
   recordStudyCompletion,
   getStudyCompletions,
+  getCachedReadResult,
   getSelectedStudentTarget,
   setSelectedStudentTarget,
   setLastParentStudentTarget,

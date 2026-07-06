@@ -143,8 +143,12 @@ Page({
       id: moduleId,
       maxAgeMs: 10 * 60 * 1000
     });
-    if (snapshot && snapshot.materialIndex) {
-      applyMaterialConfig(this, moduleId, snapshot.materialIndex, {
+    const cachedMaterialIndex = !(snapshot && snapshot.materialIndex) && store.getCachedReadResult
+      ? store.getCachedReadResult('getMaterialIndex', { moduleId })
+      : null;
+    const firstMaterialIndex = (snapshot && snapshot.materialIndex) || cachedMaterialIndex;
+    if (firstMaterialIndex) {
+      applyMaterialConfig(this, moduleId, firstMaterialIndex, {
         moduleId,
         loading: false,
         pageReady: true
