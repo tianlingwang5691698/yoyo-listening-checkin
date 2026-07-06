@@ -110,12 +110,18 @@ function getNavLayout() {
   }
 }
 
+function formatPhonetic(value) {
+  const text = String(value || '').trim().replace(/^[/\[]+|[/\]]+$/g, '');
+  return text ? `/${text}/` : '';
+}
+
 function normalizeCard(item, index) {
   const type = item.type || (item.pattern ? 'pattern' : (item.phrase ? 'phrase' : 'word'));
   const displayText = item.text || item.word || item.phrase || item.pattern || '';
   return Object.assign({}, item, {
     type,
     displayText,
+    phonetic: formatPhonetic(item.phonetic),
     canSpeak: (type === 'word' || type === 'phrase') && canUseDictionaryVoice(item.word || item.phrase || displayText),
     typeLabel: TYPE_LABELS[type] || '生词',
     index: index + 1
