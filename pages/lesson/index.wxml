@@ -82,7 +82,7 @@
     </view>
   </view>
 
-  <view class="section-panel lesson-study-card" wx:if="{{lessonStudyPack || lessonStudyCompleted || transcriptPendingLoad || transcriptLines.length}}">
+  <view class="section-panel lesson-study-card" wx:if="{{lessonStudyPack || lessonStudyCompleted || transcriptPendingLoad || transcriptLines.length || lessonStudyError}}">
     <view class="row-between transcript-header">
       <view>
         <view class="section-title type-section-title">文本学习</view>
