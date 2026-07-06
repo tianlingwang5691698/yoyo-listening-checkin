@@ -191,6 +191,18 @@
 - 设计记录：首页身份切换的首动作是看到对应学生今日任务；材料听力详情的首动作是播放音频，题目、图片、学习包属于后续补齐。
 - 验证：已做相关页面脚本语法检查。
 
+### 2026-07-06 全局轻柔按压反馈
+
+- 文件：`styles/base.wxss`
+- 文件：`pages/home/completed/index.wxss`
+- 文件：`pages/material/detail/index.wxml`
+- 文件：`pages/material/detail/index.wxss`
+- 文件：`pages/lesson/index.wxss`
+- 文件：`pages/reading/detail/index.wxss`
+- 改动：全局按钮、列表行、卡片、轻按钮统一使用更浅的 `translateY(1rpx) scale(0.992)` 按压反馈，过渡改为 0.22s；移除今日完成卡片骤暗 `opacity: 0.72`；播放器 hover 停留时间调到 180ms。
+- 设计记录：点击反馈要像真实按键，轻微下沉、柔和回弹，不用快速闪烁或强烈变暗。
+- 验证：已做样式 diff 检查。
+
 ### 2026-07-06 全局首动作快照性能规则
 
 - 文件：`docs/PAGE_LOADING_QUALITY_STANDARD.md`

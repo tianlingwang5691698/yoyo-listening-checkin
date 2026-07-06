@@ -118,17 +118,17 @@
 
 .audio-step.is-pressed,
 .audio-main.is-pressed {
-  transform: translateY(3rpx) scale(0.985);
+  transform: translateY(1rpx) scale(0.992);
 }
 
 .audio-step.is-pressed {
   background: #ead8c4;
-  box-shadow: inset 0 5rpx 10rpx rgba(154, 96, 36, 0.18);
+  box-shadow: inset 0 3rpx 8rpx rgba(154, 96, 36, 0.12);
 }
 
 .audio-main.is-pressed {
   background: #8f5b25;
-  box-shadow: inset 0 6rpx 12rpx rgba(68, 38, 14, 0.26);
+  box-shadow: inset 0 3rpx 8rpx rgba(68, 38, 14, 0.18);
 }
 
 .audio-player.is-disabled,

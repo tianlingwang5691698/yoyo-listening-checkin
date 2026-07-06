@@ -28,11 +28,11 @@
         bindchange="changeAudioProgress"
       />
       <view class="audio-controls">
-        <view class="audio-step {{audioLoading || !audioSrc ? 'is-disabled' : ''}}" data-delta="-15" hover-class="is-pressed" hover-start-time="0" hover-stay-time="120" bindtap="seekAudio">-15秒</view>
-        <view class="audio-main {{audioLoading || !audioSrc ? 'is-disabled' : ''}}" hover-class="is-pressed" hover-start-time="0" hover-stay-time="120" bindtap="toggleAudio">
+        <view class="audio-step {{audioLoading || !audioSrc ? 'is-disabled' : ''}}" data-delta="-15" hover-class="is-pressed" hover-start-time="20" hover-stay-time="180" bindtap="seekAudio">-15秒</view>
+        <view class="audio-main {{audioLoading || !audioSrc ? 'is-disabled' : ''}}" hover-class="is-pressed" hover-start-time="20" hover-stay-time="180" bindtap="toggleAudio">
           {{audioLoading ? '加载中' : (isPlaying ? '暂停' : (audioEnded ? '重播' : '播放'))}}
         </view>
-        <view class="audio-step {{audioLoading || !audioSrc ? 'is-disabled' : ''}}" data-delta="15" hover-class="is-pressed" hover-start-time="0" hover-stay-time="120" bindtap="seekAudio">+15秒</view>
+        <view class="audio-step {{audioLoading || !audioSrc ? 'is-disabled' : ''}}" data-delta="15" hover-class="is-pressed" hover-start-time="20" hover-stay-time="180" bindtap="seekAudio">+15秒</view>
       </view>
     </view>
     <view class="audio-error" wx:if="{{audioError}}">{{audioError}}</view>

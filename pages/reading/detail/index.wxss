@@ -124,7 +124,7 @@
   border-right: 1rpx solid rgba(107, 118, 138, 0.08);
   border-bottom: 1rpx solid rgba(107, 118, 138, 0.08);
   box-shadow: none;
-  transition: transform 0.12s ease, background 0.12s ease, box-shadow 0.12s ease;
+  transition: transform 0.22s cubic-bezier(0.2, 0.8, 0.2, 1), background 0.18s ease, box-shadow 0.22s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .highlight-button:nth-child(3n) {
@@ -137,7 +137,8 @@
 
 .highlight-button:active,
 .review-tab:active {
-  transform: scale(0.97);
+  transform: translateY(1rpx) scale(0.992);
+  opacity: 0.96;
 }
 
 .highlight-button.is-active {
@@ -848,7 +849,8 @@
 }
 
 .word-pronounce:active {
-  opacity: 0.66;
+  opacity: 0.9;
+  transform: translateY(1rpx) scale(0.992);
 }
 
 .sound-wave {

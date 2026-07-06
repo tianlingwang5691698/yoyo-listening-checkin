@@ -10,7 +10,8 @@ button {
   margin: 0;
   padding: 0;
   line-height: 1.2;
-  transition: transform 0.12s ease, box-shadow 0.12s ease, opacity 0.12s ease;
+  transition: transform 0.22s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.22s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.18s ease, background-color 0.18s ease;
+  will-change: transform;
 }
 
 button::after {
@@ -18,14 +19,109 @@ button::after {
 }
 
 button:active {
-  transform: translateY(2rpx) scale(0.97);
-  opacity: 0.9;
+  transform: translateY(1rpx) scale(0.992);
+  opacity: 0.96;
 }
 
 button[disabled]:active,
 button.is-disabled:active {
   transform: none;
   opacity: 0.55;
+}
+
+.card,
+.task-cell,
+.directory-row,
+.task-row,
+.stage-row,
+.report-row,
+.catchup-row,
+.profile-row,
+.student-row,
+.trend-row,
+.completed-card,
+.completed-row-main,
+.study-area-card,
+.wordbook-card,
+.test-card,
+.fixed-card,
+.selected-row,
+.episode-row,
+.task-group-row,
+.program-card,
+.level-tab,
+.metric-tab,
+.grammar-action,
+.highlight-button,
+.review-tab,
+.study-tab,
+.theme-chip,
+.detail-link,
+.row-action,
+.mini-button,
+.mini-action,
+.player-action,
+.plan-action,
+.step-control,
+.stepper-btn,
+.choice-action,
+.start-review,
+.admin-tab,
+.admin-retry,
+.detail-toggle,
+.lazy-load-row,
+.audio-step,
+.audio-main {
+  transition: transform 0.22s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.22s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.18s ease, background-color 0.18s ease;
+  will-change: transform;
+}
+
+.task-cell:active,
+.directory-row:active,
+.task-row:active,
+.stage-row:active,
+.report-row:active,
+.catchup-row:active,
+.profile-row:active,
+.student-row:active,
+.trend-row:active,
+.completed-card:active,
+.completed-row-main:active,
+.study-area-card:active,
+.wordbook-card:active,
+.test-card:active,
+.fixed-card:active,
+.selected-row:active,
+.episode-row:active,
+.task-group-row:active,
+.program-card:active,
+.level-tab:active,
+.metric-tab:active,
+.grammar-action:active,
+.highlight-button:active,
+.review-tab:active,
+.study-tab:active,
+.theme-chip:active,
+.detail-link:active,
+.row-action:active,
+.mini-button:active,
+.mini-action:active,
+.player-action:active,
+.plan-action:active,
+.step-control:active,
+.stepper-btn:active,
+.choice-action:active,
+.start-review:active,
+.admin-tab:active,
+.admin-retry:active,
+.detail-toggle:active,
+.lazy-load-row:active,
+.audio-step:active,
+.audio-main:active,
+.audio-step.is-pressed,
+.audio-main.is-pressed {
+  transform: translateY(1rpx) scale(0.992);
+  opacity: 0.96;
 }
 
 .page-shell {
