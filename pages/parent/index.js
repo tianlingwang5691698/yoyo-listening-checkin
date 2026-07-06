@@ -42,6 +42,19 @@ function buildModuleStats(reports, completionItems) {
     next[item.key] = item;
     return next;
   }, {});
+  const applySummaryStats = (summaryStats) => {
+    Object.keys(summaryStats || {}).forEach((key) => {
+      if (!map[key]) return;
+      map[key].count += Number((summaryStats[key] && summaryStats[key].count) || 0);
+      if (summaryStats[key] && summaryStats[key].latestTitle && summaryStats[key].latestTitle !== '暂无记录') {
+        map[key].latestTitle = summaryStats[key].latestTitle;
+      }
+    });
+  };
+  if ((reports || []).some((report) => report && report.moduleStats)) {
+    (reports || []).forEach((report) => applySummaryStats(report && report.moduleStats));
+    return stats;
+  }
   const countedCompletionIds = {};
   const appendCompletion = (item) => {
     const key = getModuleKey(item.type);
@@ -114,7 +127,7 @@ function normalizeParentData(data) {
     todayReport: summarizeReport(data.todayReport),
     recentReports,
     completionItems,
-    moduleStats: buildModuleStats(recentReports, completionItems),
+    moduleStats: data.moduleStats ? buildModuleStats([{ moduleStats: data.moduleStats }], []) : buildModuleStats(recentReports, completionItems),
     studentLinks,
     selectedStudentIndex,
     studentNames: studentLinks.map((item) => item.nickname || item.childLoginCode || '学生')

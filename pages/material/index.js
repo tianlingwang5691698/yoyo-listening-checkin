@@ -86,6 +86,14 @@ function applyMaterialConfig(pageInstance, moduleId, materialIndex, extraData) {
   }, extraData || {}));
 }
 
+function hasMaterialContent(moduleId, materialIndex) {
+  const index = materialIndex || {};
+  if (moduleId === 'listening') {
+    return !!((index.listeningEm1 || []).length || (index.listeningEm2 || []).length);
+  }
+  return !!((index.writingEm1 || []).length || (index.writingEm2 || []).length);
+}
+
 function buildMaterialDebug(moduleId, materialIndex) {
   const index = materialIndex || {};
   const counts = {
@@ -143,10 +151,11 @@ Page({
       id: moduleId,
       maxAgeMs: 10 * 60 * 1000
     });
-    const cachedMaterialIndex = !(snapshot && snapshot.materialIndex) && store.getCachedReadResult
+    const snapshotIndex = snapshot && hasMaterialContent(moduleId, snapshot.materialIndex) ? snapshot.materialIndex : null;
+    const cachedMaterialIndex = !snapshotIndex && store.getCachedReadResult
       ? store.getCachedReadResult('getMaterialIndex', { moduleId })
       : null;
-    const firstMaterialIndex = (snapshot && snapshot.materialIndex) || cachedMaterialIndex;
+    const firstMaterialIndex = snapshotIndex || (hasMaterialContent(moduleId, cachedMaterialIndex) ? cachedMaterialIndex : null);
     if (firstMaterialIndex) {
       applyMaterialConfig(this, moduleId, firstMaterialIndex, {
         moduleId,
@@ -165,14 +174,14 @@ Page({
         pageReady: true
       });
     }
-    const hasSnapshot = !!(snapshot && snapshot.materialIndex);
+    const hasSnapshot = !!firstMaterialIndex;
     const materialIndex = await store.getMaterialIndex({ moduleId }, (freshIndex) => {
-      if (freshIndex && freshIndex.syncMode !== 'cloud-error') {
+      if (freshIndex && freshIndex.syncMode !== 'cloud-error' && hasMaterialContent(moduleId, freshIndex)) {
         applyMaterialConfig(this, moduleId, freshIndex);
+        snapshotStore.write(MATERIAL_HOME_SNAPSHOT_KEY, moduleId, { materialIndex: freshIndex }, { source: `material-${moduleId}` });
       }
-      snapshotStore.write(MATERIAL_HOME_SNAPSHOT_KEY, moduleId, { materialIndex: freshIndex }, { source: `material-${moduleId}` });
     });
-    if (materialIndex && materialIndex.syncMode !== 'cloud-error') {
+    if (materialIndex && materialIndex.syncMode !== 'cloud-error' && hasMaterialContent(moduleId, materialIndex)) {
       applyMaterialConfig(this, moduleId, materialIndex, {
         loading: false
       });
@@ -181,7 +190,7 @@ Page({
         loading: false
       });
     }
-    if (materialIndex && materialIndex.syncMode !== 'cloud-error') {
+    if (materialIndex && materialIndex.syncMode !== 'cloud-error' && hasMaterialContent(moduleId, materialIndex)) {
       snapshotStore.write(MATERIAL_HOME_SNAPSHOT_KEY, moduleId, { materialIndex }, { source: `material-${moduleId}` });
     }
   },

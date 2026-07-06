@@ -208,8 +208,11 @@
 - 文件：`utils/store.js`
 - 文件：`pages/material/index.js`
 - 文件：`pages/listening-material/index.js`
+- 文件：`pages/parent/index.js`
+- 文件：`cloudfunctions/yoyo/services/report.service.js`
 - 文件：`docs/PAGE_LOADING_QUALITY_STANDARD.md`
 - 改动：开放同步读取 store 真实缓存；写作/材料入口先同步读 `getMaterialIndex` 缓存；音频分级素材详情恢复 `getListeningMaterialDetail` 缓存首显，并在进入课程前校验云端音频字段。
+- 补充：材料入口禁止空目录覆盖已有快照；日报摘要模式返回模块统计，模块分析不依赖完整日报明细。
 - 设计记录：列表首屏不能等 Promise 微任务；素材进入播放器前必须有云端真实音频字段，不能靠前端猜。
 - 验证：已做页面脚本语法检查。
 

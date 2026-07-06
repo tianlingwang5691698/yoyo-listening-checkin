@@ -170,6 +170,32 @@ async function getParentDashboard(event) {
     if (!summaryOnly || !report) {
       return report;
     }
+    const moduleStats = {
+      listening: { count: 0, latestTitle: '暂无记录' },
+      speaking: { count: 0, latestTitle: '暂无记录' },
+      reading: { count: 0, latestTitle: '暂无记录' },
+      grammar: { count: 0, latestTitle: '暂无记录' },
+      writing: { count: 0, latestTitle: '暂无记录' },
+      vocabulary: { count: 0, latestTitle: '暂无记录' }
+    };
+    (report.items || []).forEach((item) => {
+      if (item && item.completedToday) {
+        moduleStats.listening.count += 1;
+        moduleStats.listening.latestTitle = item.title || item.categoryLabel || moduleStats.listening.latestTitle;
+      }
+    });
+    (report.speakingAttempts || []).forEach((item) => {
+      moduleStats.speaking.count += 1;
+      moduleStats.speaking.latestTitle = item.questionText || '录音评分';
+    });
+    (report.completionItems || []).forEach((item) => {
+      const type = item && item.type === 'reading-study' ? 'reading' : (item && item.type) || '';
+      const key = type === 'vocabulary' ? 'vocabulary' : type;
+      if (moduleStats[key]) {
+        moduleStats[key].count += 1;
+        moduleStats[key].latestTitle = item.title || item.meta || moduleStats[key].latestTitle;
+      }
+    });
     return {
       reportId: report.reportId || '',
       date: report.date || '',
@@ -183,9 +209,27 @@ async function getParentDashboard(event) {
       completedContentCount: (report.completionItems || []).length,
       speakingAttemptCount: (report.speakingAttempts || []).length,
       totalCompletedCount: (report.completedCategories || []).length + (report.completionItems || []).length,
+      moduleStats,
       updatedAt: report.updatedAt || ''
     };
   };
+  const mergeModuleStats = (reports) => {
+    const merged = {};
+    (reports || []).forEach((report) => {
+      const stats = (report && report.moduleStats) || {};
+      Object.keys(stats).forEach((key) => {
+        if (!merged[key]) {
+          merged[key] = { count: 0, latestTitle: '暂无记录' };
+        }
+        merged[key].count += Number((stats[key] && stats[key].count) || 0);
+        if (stats[key] && stats[key].latestTitle && stats[key].latestTitle !== '暂无记录') {
+          merged[key].latestTitle = stats[key].latestTitle;
+        }
+      });
+    });
+    return merged;
+  };
+  const summarizedReports = recentReports.map(summarizeReport);
   return {
     user: ctx.user,
     currentUser: ctx.user,
@@ -193,8 +237,9 @@ async function getParentDashboard(event) {
     family: ctx.family,
     child: ctx.child,
     stats: dashboard.stats,
-    todayReport: summarizeReport(recentReports[0]),
-    recentReports: recentReports.map(summarizeReport),
+    todayReport: summarizedReports[0],
+    recentReports: summarizedReports,
+    moduleStats: summaryOnly ? mergeModuleStats(summarizedReports) : null,
     members: ctx.members,
     studentLinks: ctx.studentLinks || [],
     subscriptionPreference: ctx.subscriptionPreference
