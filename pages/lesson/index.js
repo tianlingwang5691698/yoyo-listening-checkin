@@ -1248,6 +1248,15 @@ Page({
           })
         ]);
         this.setData({ speakingDebugLines: uploadDebugLines });
+        const submitStartDebugLines = uploadDebugLines.concat([
+          buildSpeakingDebugLine('submitSpeakingRecord', {
+            storeAction: 'submitSpeakingAttempt',
+            cloudAction: 'submitSpeakingAttempt',
+            field: 'request',
+            value: `started, answerAudioFileId=${fileId || upload.fileId ? 'present' : 'missing'}, answerCloudPath=${upload.cloudPath || 'missing'}, targetChildId=N/A`
+          })
+        ]);
+        this.setData({ speakingDebugLines: submitStartDebugLines });
         const result = await store.submitSpeakingAttempt({
           category: this.category,
           taskId: task.taskId,
@@ -1265,7 +1274,7 @@ Page({
           answerDurationMs: this.data.speakingRecordDurationMs
         });
         this.setData({
-          speakingDebugLines: uploadDebugLines.concat([
+          speakingDebugLines: submitStartDebugLines.concat([
             buildSpeakingDebugLine('submitSpeakingRecord', {
               storeAction: 'submitSpeakingAttempt',
               cloudAction: 'submitSpeakingAttempt',
@@ -1345,6 +1354,15 @@ Page({
         })
       ]);
       this.setData({ speakingDebugLines: uploadDebugLines });
+      const submitStartDebugLines = uploadDebugLines.concat([
+        buildSpeakingDebugLine('submitSpeakingRecord', {
+          storeAction: 'submitSpeakingAttempt',
+          cloudAction: 'submitSpeakingAttempt',
+          field: 'request',
+          value: `started, answerAudioFileId=${fileId || upload.fileId ? 'present' : 'missing'}, answerCloudPath=${upload.cloudPath || 'missing'}, targetChildId=N/A`
+        })
+      ]);
+      this.setData({ speakingDebugLines: submitStartDebugLines });
       const result = await store.submitSpeakingAttempt({
         category: this.category,
         taskId: task.taskId,
@@ -1362,7 +1380,7 @@ Page({
         answerDurationMs: this.data.speakingRecordDurationMs
       });
       this.setData({
-        speakingDebugLines: uploadDebugLines.concat([
+        speakingDebugLines: submitStartDebugLines.concat([
           buildSpeakingDebugLine('submitSpeakingRecord', {
             storeAction: 'submitSpeakingAttempt',
             cloudAction: 'submitSpeakingAttempt',
@@ -1414,6 +1432,17 @@ Page({
       wx.showToast({ title: '评分完成，已计入进度', icon: 'none' });
       await this.finishPendingListenAfterSpeaking();
     } catch (error) {
+      const errorMessage = (error && (error.errMsg || error.message)) || String(error || '');
+      this.setData({
+        speakingDebugLines: (this.data.speakingDebugLines || []).concat([
+          buildSpeakingDebugLine('submitSpeakingRecord', {
+            storeAction: 'submitSpeakingAttempt',
+            cloudAction: 'submitSpeakingAttempt',
+            field: 'exception',
+            value: errorMessage || 'unknown'
+          })
+        ])
+      });
       if (await this.finishPendingListenAfterSpeakingFailure('提交失败，按听力完成')) {
         return;
       }
