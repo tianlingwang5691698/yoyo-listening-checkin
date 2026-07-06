@@ -4,6 +4,7 @@ const labels = require('../../utils/labels');
 const snapshotStore = require('../../utils/snapshot');
 const LEVEL_STAGE_SNAPSHOT_KEY = 'levelStageSnapshotV1';
 const LESSON_TASK_SNAPSHOT_KEY = 'lessonTaskSnapshotV1';
+const LEVEL_STAGE_SNAPSHOT_MAX_AGE_MS = 24 * 60 * 60 * 1000;
 
 const STAGES = {
   'round-1': {
@@ -108,6 +109,7 @@ function buildTaskGroups(categories) {
       tasks,
       taskSnapshot: task,
       disabled,
+      expanded: category.expanded !== false,
       stateText: task.completedToday ? '完成' : disabled ? '等待' : '›',
       planRunType: category.planRunType || 'normal',
       planDayIndex: category.planDayIndex || 0
@@ -115,14 +117,20 @@ function buildTaskGroups(categories) {
   });
 }
 
+function normalizeStageTaskGroups(taskGroups) {
+  return (taskGroups || []).map((item) => Object.assign({}, item, {
+    expanded: item.expanded !== false
+  }));
+}
+
 function shouldShowTaskGroups(phase) {
   return phase === 'round-1' || phase === 'round-2' || phase === 'custom';
 }
 
-function getStageSnapshot(phase) {
+function getStageSnapshot(snapshotId) {
   const snapshot = snapshotStore.read(LEVEL_STAGE_SNAPSHOT_KEY, {
-    id: phase,
-    maxAgeMs: 5 * 60 * 1000
+    id: snapshotId,
+    maxAgeMs: LEVEL_STAGE_SNAPSHOT_MAX_AGE_MS
   });
   if (!snapshot || !Array.isArray(snapshot.taskGroups) || !snapshot.taskGroups.length) return null;
   return snapshot.taskGroups.some((item) => !item.disabled && Array.isArray(item.tasks) && item.tasks.length)
@@ -130,10 +138,10 @@ function getStageSnapshot(phase) {
     : null;
 }
 
-function writeStageSnapshot(phase, data) {
-  if (!phase || !data || !Array.isArray(data.taskGroups) || !data.taskGroups.length) return;
+function writeStageSnapshot(snapshotId, phase, data) {
+  if (!snapshotId || !phase || !data || !Array.isArray(data.taskGroups) || !data.taskGroups.length) return;
   if (!data.taskGroups.some((item) => !item.disabled)) return;
-  snapshotStore.write(LEVEL_STAGE_SNAPSHOT_KEY, phase, Object.assign({}, data, { phase }), {
+  snapshotStore.write(LEVEL_STAGE_SNAPSHOT_KEY, snapshotId, Object.assign({}, data, { phase }), {
     source: 'level-stage'
   });
 }
@@ -149,14 +157,25 @@ Page({
     hasTaskGroups: false,
     hydrated: false
   }),
-  applyOverview(data, phase, levelId) {
+  applyOverview(data, phase, levelId, preferredExpandedGroupKey, snapshotId) {
     const categories = (data.categories || []).map(labels.normalizeCategory);
     const displayPhase = data.planPhase || phase;
     const hasTaskGroups = shouldShowTaskGroups(displayPhase) && categories.length > 0;
-    const taskGroups = hasTaskGroups ? buildTaskGroups(categories) : [];
+    const expandedState = {};
+    (this.data.taskGroups || []).forEach((item) => {
+      if (item && item.groupKey) {
+        expandedState[item.groupKey] = item.expanded !== false;
+      }
+    });
+    const taskGroups = hasTaskGroups ? buildTaskGroups(categories).map((item) => Object.assign({}, item, {
+      expanded: Object.prototype.hasOwnProperty.call(expandedState, item.groupKey)
+        ? expandedState[item.groupKey]
+        : true
+    })) : [];
     const totalMinutes = getDurationMinutes(taskGroups.reduce((sum, item) => sum + item.durationSec, 0));
-    const expandedGroupKey = taskGroups.some((item) => item.groupKey === this.data.expandedGroupKey)
-      ? this.data.expandedGroupKey
+    const currentExpandedGroupKey = preferredExpandedGroupKey || this.data.expandedGroupKey;
+    const expandedGroupKey = taskGroups.some((item) => item.groupKey === currentExpandedGroupKey)
+      ? currentExpandedGroupKey
       : '';
     const nextData = {
       levelId,
@@ -169,34 +188,49 @@ Page({
       hydrated: true
     };
     this.setData(page.buildCloudPageData(this.data, nextData));
-    writeStageSnapshot(displayPhase, nextData);
+    writeStageSnapshot(snapshotId || displayPhase, displayPhase, nextData);
   },
   async onLoad(query) {
     page.syncTheme(this);
     const phase = query.phase || 'round-1';
     const levelId = query.levelId || 'A1';
+    const preferredExpandedGroupKey = query.expand || '';
+    const snapshotId = query.snapshotId || phase;
+    const fastMode = query.fast === '1';
     this.setData(page.buildCloudPageData(this.data, {
       levelId,
       phase,
       stage: STAGES[phase] || STAGES['round-1'],
-      expandedGroupKey: '',
+      expandedGroupKey: preferredExpandedGroupKey,
       hydrated: false
     }));
-    const snapshot = getStageSnapshot(phase);
+    const snapshot = getStageSnapshot(snapshotId) || getStageSnapshot(phase);
     if (snapshot) {
       this.setData(page.buildCloudPageData(this.data, {
         levelId,
         phase,
         stage: STAGES[phase] || STAGES['round-1'],
-        taskGroups: snapshot.taskGroups,
-        expandedGroupKey: '',
+        taskGroups: normalizeStageTaskGroups(snapshot.taskGroups),
+        expandedGroupKey: preferredExpandedGroupKey || snapshot.expandedGroupKey || '',
         totalMinutesText: snapshot.totalMinutesText || '待生成',
         hasTaskGroups: true,
         hydrated: true
       }));
     }
-    const data = await store.getLevelOverview({ phase }, (fresh) => this.applyOverview(fresh, phase, levelId));
-    this.applyOverview(data, phase, levelId);
+    const refresh = async () => {
+      const data = await store.getLevelOverview({ phase }, (fresh) => this.applyOverview(fresh, phase, levelId, preferredExpandedGroupKey, snapshotId));
+      this.applyOverview(data, phase, levelId, preferredExpandedGroupKey, snapshotId);
+    };
+    if (snapshot && fastMode) {
+      return;
+    }
+    if (snapshot) {
+      setTimeout(() => {
+        refresh().catch(() => {});
+      }, 1200);
+      return;
+    }
+    await refresh();
   },
   onShow() {
     page.syncTheme(this);
@@ -208,12 +242,10 @@ Page({
       return;
     }
     this.setData({
-      expandedGroupKey: this.data.expandedGroupKey === taskGroup.groupKey ? '' : taskGroup.groupKey
+      [`taskGroups[${groupIndex}].expanded`]: taskGroup.expanded === false
     });
   },
-  openTask(event) {
-    const groupIndex = Number(event.currentTarget.dataset.groupIndex || 0);
-    const taskIndex = Number(event.currentTarget.dataset.taskIndex || 0);
+  openTaskByIndex(groupIndex, taskIndex) {
     const taskGroup = (this.data.taskGroups || [])[groupIndex];
     const taskRow = taskGroup && (taskGroup.tasks || [])[taskIndex];
     if (!taskGroup || !taskRow || taskGroup.disabled || taskRow.disabled) {
@@ -238,5 +270,10 @@ Page({
         ? `/pages/lesson/index?category=${category}&taskId=${taskId}${previewQuery}`
         : `/pages/lesson/index?category=${category}${previewQuery}`
     });
+  },
+  openTask(event) {
+    const groupIndex = Number(event.currentTarget.dataset.groupIndex || 0);
+    const taskIndex = Number(event.currentTarget.dataset.taskIndex || 0);
+    this.openTaskByIndex(groupIndex, taskIndex);
   }
 });

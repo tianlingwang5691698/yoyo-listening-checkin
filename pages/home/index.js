@@ -161,6 +161,24 @@ function findNextListeningTask(groupedDailyTasks) {
   return null;
 }
 
+function findNextListeningGroupKey(groupedDailyTasks) {
+  const next = findNextListeningTask(groupedDailyTasks);
+  if (next && next.category) {
+    return next.category;
+  }
+  const firstGroup = (groupedDailyTasks || []).find((item) => item && item.category);
+  return firstGroup ? firstGroup.category : '';
+}
+
+function buildStageSnapshotId(child, phase) {
+  const target = buildCompletedCacheTarget(child);
+  return [
+    target.targetFamilyId || 'self',
+    target.targetChildId || target.childLoginCode || 'self',
+    phase || 'round-1'
+  ].join(':');
+}
+
 function getCurrentPhaseKey(planPhaseLabel) {
   if (planPhaseLabel === '阶段二') return 'round-2';
   if (planPhaseLabel === '阶段三') return 'round-3';
@@ -213,6 +231,7 @@ function buildStageSnapshotTaskGroups(groupedDailyTasks) {
       tasks,
       taskSnapshot: task,
       disabled,
+      expanded: true,
       stateText: task.completedToday ? '完成' : disabled ? '等待' : '›',
       planRunType: task.planRunType || group.planRunType || 'normal',
       planDayIndex: task.planDayIndex || group.planDayIndex || 0
@@ -649,13 +668,22 @@ Page({
         : getCurrentPhaseKey(this.data.planPhaseLabel);
       const taskGroups = buildStageSnapshotTaskGroups(this.data.groupedDailyTasks);
       const totalMinutes = taskGroups.reduce((sum, item) => sum + Number(item.minutes || 0), 0);
+      const expandedGroupKey = findNextListeningGroupKey(this.data.groupedDailyTasks);
+      const snapshotId = buildStageSnapshotId(this.data.child, phase);
+      snapshotStore.write(LEVEL_STAGE_SNAPSHOT_KEY, snapshotId, {
+        phase,
+        taskGroups,
+        totalMinutesText: totalMinutes ? `${totalMinutes} 分钟` : '待生成',
+        expandedGroupKey
+      }, { source: 'home-stage' });
       snapshotStore.write(LEVEL_STAGE_SNAPSHOT_KEY, phase, {
         phase,
         taskGroups,
-        totalMinutesText: totalMinutes ? `${totalMinutes} 分钟` : '待生成'
-      }, { source: 'home-stage' });
+        totalMinutesText: totalMinutes ? `${totalMinutes} 分钟` : '待生成',
+        expandedGroupKey
+      }, { source: 'home-stage-legacy' });
       wx.navigateTo({
-        url: `/pages/level-stage/index?levelId=${phase === 'custom' ? 'custom' : 'A1'}&phase=${phase}`
+        url: `/pages/level-stage/index?levelId=${phase === 'custom' ? 'custom' : 'A1'}&phase=${phase}&fast=1&snapshotId=${encodeURIComponent(snapshotId)}${expandedGroupKey ? `&expand=${encodeURIComponent(expandedGroupKey)}` : ''}`
       });
       return;
     }

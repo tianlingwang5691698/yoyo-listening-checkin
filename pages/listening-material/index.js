@@ -4,6 +4,8 @@ const labels = require('../../utils/labels');
 const snapshotStore = require('../../utils/snapshot');
 
 const LESSON_TASK_SNAPSHOT_KEY = 'lessonTaskSnapshotV1';
+const MATERIAL_DETAIL_SNAPSHOT_KEY = 'listeningMaterialDetailSnapshotV1';
+const SNAPSHOT_MAX_AGE_MS = 24 * 60 * 60 * 1000;
 
 function formatDuration(seconds) {
   const value = Number(seconds || 0);
@@ -57,6 +59,22 @@ function clamp(value, min, max) {
 
 function getPlanMaterials(plan) {
   return Array.isArray(plan && plan.materials) ? plan.materials : [];
+}
+
+function getTargetSnapshotPart() {
+  const target = store.getSelectedStudentTarget ? store.getSelectedStudentTarget() : {};
+  return `${target.targetFamilyId || 'self'}:${target.targetChildId || 'self'}`;
+}
+
+function getDetailSnapshotId(levelId, category) {
+  return `${getTargetSnapshotPart()}:${levelId || 'A1'}:${category || ''}`;
+}
+
+function rememberDetailSnapshot(snapshotId, data, source) {
+  if (!data || data.syncMode === 'cloud-error' || !Array.isArray(data.tasks)) {
+    return;
+  }
+  snapshotStore.write(MATERIAL_DETAIL_SNAPSHOT_KEY, snapshotId, data, { source });
 }
 
 function hasPlanMaterial(plan, category) {
@@ -178,7 +196,22 @@ Page({
     const category = query.category || '';
     const levelId = query.levelId || 'A1';
     this.setData({ category, levelId });
-    const data = await store.getListeningMaterialDetail({ category, levelId }, (fresh) => this.applyDetail(fresh));
+    const snapshotId = getDetailSnapshotId(levelId, category);
+    const snapshot = snapshotStore.read(MATERIAL_DETAIL_SNAPSHOT_KEY, {
+      id: snapshotId,
+      maxAgeMs: SNAPSHOT_MAX_AGE_MS
+    });
+    if (snapshot) {
+      this.applyDetail(snapshot);
+    }
+    const data = await store.getListeningMaterialDetail({ category, levelId }, (fresh) => {
+      rememberDetailSnapshot(snapshotId, fresh, 'listening-material-refresh');
+      this.applyDetail(fresh);
+    });
+    if (data && data.syncMode === 'cloud-error' && snapshot) {
+      return;
+    }
+    rememberDetailSnapshot(snapshotId, data, 'listening-material-load');
     this.applyDetail(data);
   },
   onShow() {
@@ -220,6 +253,14 @@ Page({
     }
     if (previous.route !== 'pages/listening-plan/index' && previous.route !== 'pages/level/index') {
       return;
+    }
+    if (typeof previous.syncCachedActivePlan === 'function') {
+      previous.syncCachedActivePlan(activePlan || null);
+    }
+    if (typeof previous.rememberOverview === 'function') {
+      previous.rememberOverview(previous.data && previous.data.selectedLevel, Object.assign({}, previous.data || {}, {
+        activePlan: activePlan || null
+      }));
     }
     previous.applyOverview(Object.assign({}, previous.data || {}, {
       activePlan: activePlan || null

@@ -20,11 +20,11 @@
         </view>
         <view class="group-side">
           <view class="group-minutes type-caption">{{item.minutesText}}</view>
-          <view class="group-state">{{expandedGroupKey === item.groupKey ? '收起' : item.stateText}}</view>
+          <view class="group-state">{{item.expanded ? '收起' : item.stateText}}</view>
         </view>
       </view>
 
-      <view class="episode-list" wx:if="{{expandedGroupKey === item.groupKey}}">
+      <view class="episode-list" wx:if="{{item.expanded}}">
         <block wx:for="{{item.tasks}}" wx:for-item="task" wx:for-index="taskIndex" wx:key="taskId">
           <view class="episode-row {{task.completedToday ? 'is-done' : ''}}" data-group-index="{{groupIndex}}" data-task-index="{{taskIndex}}" catchtap="openTask">
             <view class="episode-order">{{task.orderText}}</view>

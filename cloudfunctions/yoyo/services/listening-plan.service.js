@@ -5,7 +5,12 @@ function getPlanMaterial(plan, category) {
   return ((plan && plan.materials) || []).find((item) => item.category === category) || null;
 }
 
-function decorateActivePlan(plan) {
+function decorateActivePlan(plan, options = {}) {
+  if (options.summaryOnly) {
+    return listeningPlanEngine.decoratePlanSummary(plan, {
+      getCatalogSummary: study.getCatalogSummary
+    });
+  }
   return listeningPlanEngine.decoratePlan(plan, {
     getCatalog: study.getPlanCatalog
   });
@@ -17,35 +22,24 @@ async function getListeningPlanOverview(event) {
   }));
   const payload = (event && event.payload) || {};
   const selectedLevel = listeningPlanEngine.normalizeLevelId(payload.levelId || 'A1');
-  const activePlan = decorateActivePlan(await study.getActiveListeningPlan(ctx));
+  const activePlan = decorateActivePlan(await study.getActiveListeningPlan(ctx), { summaryOnly: true });
   const materials = study.buildListeningPlanMaterials(selectedLevel).map((item) => Object.assign({}, item, {
     selected: !!getPlanMaterial(activePlan, item.category)
   }));
-  const dashboard = await study.getDashboardData(ctx, {
-    includeDailyTasks: false,
-    includeHomeTaskGroups: false,
-    includeCategorySummaries: false,
-    includeCatchupState: false,
-    includePlanDebug: false,
-    includeTaskProgressSummary: false,
-    includeUser: false,
-    includeFamily: false,
-    includeStats: true
-  });
   return {
     currentMember: ctx.member,
     child: ctx.child,
-    stats: dashboard.stats,
+    stats: {},
     selectedLevel,
     levelTabs: listeningPlanEngine.buildLevelTabs(selectedLevel),
     materials,
     activePlan,
-    planSource: dashboard.planSource || 'fixed-yoyo',
-    isYoyoFixedPlan: !!dashboard.isYoyoFixedPlan,
+    planSource: activePlan ? 'custom-listening' : 'fixed-yoyo',
+    isYoyoFixedPlan: !activePlan && study.isYoyoChild(ctx.child),
     fixedPlan: {
-      planDayIndex: dashboard.planDayIndex,
-      planPhase: dashboard.planPhase,
-      planPhaseLabel: dashboard.planPhaseLabel
+      planDayIndex: 1,
+      planPhase: 'round-2',
+      planPhaseLabel: '阶段二'
     }
   };
 }

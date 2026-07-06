@@ -1,5 +1,9 @@
 const store = require('../../utils/store');
 const page = require('../../utils/page');
+const snapshotStore = require('../../utils/snapshot');
+
+const OVERVIEW_SNAPSHOT_KEY = 'listeningPlanOverviewSnapshotV2';
+const SNAPSHOT_MAX_AGE_MS = 24 * 60 * 60 * 1000;
 
 const FALLBACK_LEVEL_TABS = ['Pre A1', 'A1', 'A2', 'B1', 'B2', 'C1', 'C2'].map((levelId) => ({
   levelId,
@@ -67,6 +71,15 @@ function buildPlanSummary(activePlan) {
   };
 }
 
+function getTargetSnapshotPart() {
+  const target = store.getSelectedStudentTarget ? store.getSelectedStudentTarget() : {};
+  return `${target.targetFamilyId || 'self'}:${target.targetChildId || 'self'}`;
+}
+
+function getOverviewSnapshotId(levelId) {
+  return `${getTargetSnapshotPart()}:${levelId || 'A1'}`;
+}
+
 Page({
   overviewCache: {},
   overviewRequests: {},
@@ -92,6 +105,9 @@ Page({
       this.overviewCache[levelId] = Object.assign({}, this.overviewCache[levelId], {
         activePlan: activePlan || null
       });
+      snapshotStore.write(OVERVIEW_SNAPSHOT_KEY, getOverviewSnapshotId(levelId), this.overviewCache[levelId], {
+        source: 'listening-plan-active'
+      });
     });
   },
   rememberOverview(levelId, data) {
@@ -104,6 +120,9 @@ Page({
     if (Array.isArray(data.materials)) {
       this.overviewCache[levelId] = Object.assign({}, data, {
         selectedLevel: levelId
+      });
+      snapshotStore.write(OVERVIEW_SNAPSHOT_KEY, getOverviewSnapshotId(levelId), this.overviewCache[levelId], {
+        source: 'listening-plan-overview'
       });
     }
   },
@@ -133,8 +152,13 @@ Page({
   },
   async loadOverview(levelId, options = {}) {
     const nextLevel = levelId || 'A1';
-    const cached = this.overviewCache[nextLevel];
+    const snapshot = snapshotStore.read(OVERVIEW_SNAPSHOT_KEY, {
+      id: getOverviewSnapshotId(nextLevel),
+      maxAgeMs: SNAPSHOT_MAX_AGE_MS
+    });
+    const cached = this.overviewCache[nextLevel] || snapshot;
     if (cached && !options.prefetch) {
+      this.overviewCache[nextLevel] = cached;
       this.applyOverview(cached, nextLevel);
     }
     if (!cached && !options.prefetch) {

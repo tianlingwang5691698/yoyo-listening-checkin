@@ -3,6 +3,50 @@ const study = require('../facades/study.facade');
 const STANDALONE_LEVEL_CATEGORIES = ['newconcept2', 'unlock2', 'newconcept3', 'unlock3', 'newconcept4', 'unlock4'];
 const CATALOG_BROWSE_CATEGORIES = ['song', 'newconcept1', 'unlock1', 'peppa', 'newconcept2', 'unlock2', 'newconcept3', 'unlock3', 'newconcept4', 'unlock4'];
 
+function normalizeTaskSnapshot(snapshot, payload) {
+  if (!snapshot || typeof snapshot !== 'object') {
+    return null;
+  }
+  const taskId = String(snapshot.taskId || '').trim();
+  const category = String(snapshot.category || '').trim();
+  if (!taskId || !category) {
+    return null;
+  }
+  if (payload.taskId && taskId !== String(payload.taskId || '').trim()) {
+    return null;
+  }
+  if (payload.category && category !== String(payload.category || '').trim()) {
+    return null;
+  }
+  return Object.assign({}, snapshot, {
+    category,
+    taskId
+  });
+}
+
+function hasTaskAudioSource(task) {
+  return !!(task && (
+    task.isPendingAsset
+    || task.audioUrl
+    || task.audioCloudPath
+    || task.audioFileId
+  ));
+}
+
+function buildProgressFromTask(task) {
+  const repeatTarget = Number(task.repeatTarget || 3);
+  const playCount = Number(task.playCount || 0);
+  return {
+    playCount,
+    playStepText: task.playStepText || `${playCount}/${repeatTarget}`,
+    currentPass: Number(task.currentPass || Math.min(playCount + 1, repeatTarget) || 1),
+    repeatTarget,
+    textUnlocked: !!task.textUnlocked,
+    transcriptVisible: !!task.transcriptVisible,
+    completedToday: !!task.completedToday
+  };
+}
+
 async function getTaskDetail(event) {
   const { ctx, today } = await study.prepareRequestContext(Object.assign({}, event, {
     action: 'getTaskDetail'
@@ -12,6 +56,32 @@ async function getTaskDetail(event) {
   const isLessonView = view === 'lesson';
   let planRunType = String(payload.planRunType || 'normal');
   let targetDate = String(payload.targetDate || today).slice(0, 10);
+  const snapshotTask = isLessonView ? normalizeTaskSnapshot(payload.taskSnapshot, payload) : null;
+  if (snapshotTask && hasTaskAudioSource(snapshotTask)) {
+    const planDayIndex = Number(payload.planDayIndex || snapshotTask.planDayIndex || 0);
+    return {
+      currentMember: ctx.member,
+      child: ctx.child,
+      task: snapshotTask,
+      progress: buildProgressFromTask(snapshotTask),
+      categoryTasks: [snapshotTask],
+      categoryTaskCount: 1,
+      categoryCompletedCount: snapshotTask.completedToday ? 1 : 0,
+      planDayIndex,
+      planPhaseLabel: snapshotTask.planPhaseLabel || '',
+      planRunType,
+      targetDate,
+      scriptSource: snapshotTask.textSource || null,
+      transcriptTrack: null,
+      transcriptLines: [],
+      transcriptPendingLoad: true,
+      todayRecord: null,
+      history: [],
+      studyWriteAllowed: planRunType !== 'preview' && study.isStudyWriteAllowed(ctx),
+      studyWriteMessage: planRunType === 'preview' ? '预览模式，不计入打卡' : (study.isStudyWriteAllowed(ctx) ? '' : '家长模式，不计入打卡'),
+      checkinReady: false
+    };
+  }
   const isPreview = planRunType === 'preview';
   const isCatalogBrowse = isPreview && String(payload.source || '') === 'catalog' && CATALOG_BROWSE_CATEGORIES.includes(payload.category);
   const dashboard = await study.getDashboardData(ctx, isPreview ? {

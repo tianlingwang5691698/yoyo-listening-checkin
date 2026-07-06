@@ -91,6 +91,8 @@
 - 今日听力任务是主线任务：未完成时首页显示“今日待完成”。
 - 听力记录展开后要能看到任务、答题情况和分析。
 - 从今日任务进入听力页必须先用任务快照渲染页面，并后台预取音频链接，不能把页面和播放都卡在云端请求上。
+- 今日完成和阶段页里的已完成听力仍然可回看；缺音频字段的快照必须回源补完整任务。
+- 从今日完成点“查看任务”进入课程页时，播放器音频预加载优先于学习包、口语记录和问题区加载。
 
 ### 阅读页
 
@@ -170,6 +172,30 @@
 - 每条必须写清楚：板块、文件、改动、设计记录、验证。
 - 后续改 UI 或交互前先看对应板块最近记录，再继续改。
 
+### 2026-07-06 今日完成查看任务播放器优先
+
+- 文件：`pages/home/completed/index.js`
+- 文件：`pages/lesson/index.js`
+- 改动：今日完成点“查看任务”时带上进入时间；课程页先加载播放器音频，学习包、口语记录和问题区后台加载；控制台输出从点击到播放的 `lesson-route` 性能点。
+- 设计记录：课程页首屏以播放器可用为先，附属学习模块不能阻塞音频。
+- 验证：已做页面脚本语法检查，并通过 request-context 与 catalog 测试。
+
+### 2026-07-06 音频页等级切换快照
+
+- 文件：`pages/level/index.js`
+- 文件：`pages/listening-plan/index.js`
+- 文件：`pages/listening-material/index.js`
+- 文件：`pages/level-stage/index.js`
+- 文件：`pages/lesson/index.js`
+- 文件：`cloudfunctions/yoyo/services/listening-plan.service.js`
+- 文件：`cloudfunctions/yoyo/services/task.service.js`
+- 文件：`cloudfunctions/yoyo/lib/request-context-engine.js`
+- 文件：`cloudfunctions/yoyo/lib/catalog-engine.js`
+- 文件：`cloudfunctions/yoyo/lib/listening-plan-engine.js`
+- 改动：音频页、阶段页、课程详情页读取本地快照先渲染；继续学习进入阶段页默认展开全部分组，每条任务整行可点，且首页快照直开时不再二次请求云端；云端 `getListeningPlanOverview/getLevelOverview` 改为不首屏扫描素材目录；课程详情带 task 快照时不刷新/扫描素材目录，不再打开时强制加载 transcript。
+- 设计记录：家长查看继续学习时，首页已拿到当前孩子任务，阶段页直接使用该快照并展示所有条目；学生可自主选择先完成哪一条。
+- 验证：已做前端脚本语法检查、云函数脚本语法检查，并通过 request-context 与 plan-runtime 测试。
+
 ### 2026-07-06 新概念素材回答评分入口
 
 - 文件：`pages/lesson/index.js`
@@ -196,6 +222,39 @@
 - 改动：选择家长/学生身份成功后立即重新拉首页任务；首页 dashboard 跳过历史打卡补偿和孩子统计，减少首屏无关计算。
 - 设计记录：首页首屏只保证身份、今日任务和模块入口准确，不在首屏做历史补偿类工作。
 - 验证：已做前端和云函数脚本语法检查。
+
+### 2026-07-06 开发者工具录音格式适配
+
+- 文件：`pages/lesson/index.js`
+- 文件：`cloudfunctions/yoyo/services/speaking.service.js`
+- 文件：`cloudfunctions/yoyo/lib/speaking-engine.js`
+- 改动：微信开发者工具录音优先使用 `aac`，真机继续使用 `mp3`；云端评分按实际音频格式上传转写，开发者工具优先用腾讯 ASR 模型转写，并把模型判空归类为音频转写问题。
+- 设计记录：真机录音链路保持不变，开发者工具只切换模型转写路线，不做本地假分。
+- 验证：已做前端和云函数脚本语法检查。
+
+### 2026-07-06 回退开发者工具录音适配
+
+- 文件：`pages/lesson/index.js`
+- 文件：`cloudfunctions/yoyo/services/speaking.service.js`
+- 文件：`cloudfunctions/yoyo/lib/speaking-engine.js`
+- 改动：撤回开发者工具 `aac/wav` 和 ASR 优先路由，录音评分恢复统一 `mp3` 稳定链路；云端上传地址也锁定 `mp3`，保留 `audio-transcript` 错误归类。
+- 设计记录：优先恢复真机稳定可用，开发者工具录音评分另行隔离处理，不能影响正式录音链路。
+- 验证：已做前端和云函数脚本语法检查。
+
+### 2026-07-06 真机口语评分恢复
+
+- 文件：`cloudfunctions/yoyo/services/speaking.service.js`
+- 文件：`cloudfunctions/yoyo/lib/speaking-engine.js`
+- 改动：真机评分默认只走一个模型转写链路，不再被旧 `TENCENT_ASR_ENABLED` 开关切到 ASR；评分结果返回不再同步等待反馈语音合成；模型请求默认 12 秒且不连环重试，模型异常只返回待评分，不做本地分。
+- 设计记录：先保证真机录音上传后能尽快拿到模型评分结果，开发者工具兼容不进入主链路。
+- 验证：已做云函数脚本语法检查。
+
+### 2026-07-06 口语评分调试显示收敛
+
+- 文件：`pages/lesson/index.js`
+- 改动：口语评分提交过程中不再展示 debug 链路；只有评分失败、异常或待评分时才显示原因，评分成功后保持隐藏。
+- 设计记录：学生正常录音评分过程只看状态，不显示技术链路；失败时再暴露断点。
+- 验证：已做页面脚本语法检查。
 
 ### 2026-07-06 资料听力目录调试链路
 
@@ -2101,6 +2160,20 @@
 - 改动：已生成但本页未显示卡片时，按钮改为“同步”，只读快照/缓存并显示学习包。
 - 设计记录：已生成但未展示时不能禁用入口；同步查看只读缓存，不能触发模型生成。
 - 验证：已做页面脚本语法检查和 diff 空白检查。
+
+### 2026-07-06 词汇音标格式兜底
+
+- 文件：`pages/reading/flashcards/index.js`
+- 改动：词汇闪卡渲染前统一把音标格式化为 `/.../`，兼容真机旧缓存。
+- 设计记录：音标展示必须稳定带边界符号，不能受缓存版本影响。
+- 验证：已做页面脚本语法检查。
+
+### 2026-07-06 口语评分成功后隐藏调试
+
+- 文件：`pages/lesson/index.js`
+- 改动：口语评分成功返回后清空页面 DEBUG，只在评分 pending 或失败时保留链路信息。
+- 设计记录：调试信息只服务异常定位，成功态只展示学生可理解的评分反馈。
+- 验证：已做页面脚本语法检查。
 
 ## 后续记录格式
 

@@ -6,7 +6,7 @@ const inflightTempFileUrlRequests = {};
 const memoryCloudCache = {};
 const tempFileUrlCache = {};
 const wordLookupCache = {};
-const CACHE_INDEX_KEY = 'yoyoCloudReadCacheKeysV2';
+const CACHE_INDEX_KEY = 'yoyoCloudReadCacheKeysV3';
 const SELECTED_STUDENT_KEY = 'yoyoSelectedStudentTargetV1';
 const LAST_PARENT_STUDENT_KEY = 'yoyoLastParentStudentTargetV1';
 const CACHE_MAX_AGE_MS = 7 * 24 * 60 * 60 * 1000;
@@ -266,7 +266,7 @@ function hashText(value) {
 }
 
 function getReadCacheKey(action, payload) {
-  return `yoyoCloudReadCacheV2:${action}:${hashText(JSON.stringify(payload || {}))}`;
+  return `yoyoCloudReadCacheV3:${action}:${hashText(JSON.stringify(payload || {}))}`;
 }
 
 function getCachedCloudResult(action, payload) {

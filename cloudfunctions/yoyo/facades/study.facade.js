@@ -11,6 +11,7 @@ module.exports = {
   saveListeningPlanMaterial: shared.saveListeningPlanMaterial,
   removeListeningPlanMaterial: shared.removeListeningPlanMaterial,
   buildListeningPlanMaterials: shared.buildListeningPlanMaterials,
+  getCatalogSummary: shared.getCatalogSummary,
   getCustomPlanDayIndex: shared.getCustomPlanDayIndex,
   buildListeningPlanForDay: shared.buildListeningPlanForDay,
   decorateListeningPlanTasks: shared.decorateListeningPlanTasks,

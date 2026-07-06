@@ -102,6 +102,10 @@ function getCatalog(category) {
   return catalogEngine.getCatalog(category);
 }
 
+function getCatalogSummary(category) {
+  return catalogEngine.getCatalogSummary(category);
+}
+
 async function getTranscriptBundle(task) {
   return catalogEngine.getTranscriptBundle(task);
 }
@@ -397,7 +401,7 @@ function decorateListeningPlanTasks(progressRecords, childId, date, plan, option
 
 function buildListeningPlanMaterials(levelId) {
   return listeningPlanEngine.buildMaterialEntries(levelId, {
-    getCatalog
+    getCatalogSummary
   });
 }
 
@@ -661,6 +665,7 @@ module.exports = {
   resolveStandaloneCategoryTasks,
   buildCategorySummary,
   getPlanCatalog,
+  getCatalogSummary,
   getCatalog,
   getCategoryLabel,
   addDays,

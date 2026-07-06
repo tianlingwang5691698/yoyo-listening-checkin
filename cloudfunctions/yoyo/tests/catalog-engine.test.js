@@ -65,6 +65,21 @@ test('Unlock3 静态目录同样按教材顺序输出', () => {
   assert.equal(endIndex, titles.length - 2);
 });
 
+test('New Concept 2-4 摘要有兜底数量', () => {
+  assert.deepEqual(catalogEngine.getCatalogSummary('newconcept2'), {
+    totalCount: 96,
+    enabled: true
+  });
+  assert.deepEqual(catalogEngine.getCatalogSummary('newconcept3'), {
+    totalCount: 60,
+    enabled: true
+  });
+  assert.deepEqual(catalogEngine.getCatalogSummary('newconcept4'), {
+    totalCount: 48,
+    enabled: true
+  });
+});
+
 test('Unlock 分类标签区分课本和练习册', () => {
   const catalogLabels = catalogEngine.CATEGORY_LABELS;
   const planTitles = Object.fromEntries(listeningPlanEngine.MATERIALS

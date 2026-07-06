@@ -7,8 +7,14 @@ const monitor = require('../../utils/monitor');
 const snapshotStore = require('../../utils/snapshot');
 const LESSON_TASK_SNAPSHOT_KEY = 'lessonTaskSnapshotV1';
 const LESSON_STUDY_PACK_SNAPSHOT_KEY = 'lessonStudyPackSnapshotV1';
-const LESSON_TASK_SNAPSHOT_MAX_AGE_MS = 2 * 60 * 1000;
+const LESSON_TASK_SNAPSHOT_MAX_AGE_MS = 24 * 60 * 60 * 1000;
 const NEW_CONCEPT_CATEGORIES = ['newconcept1', 'newconcept2', 'newconcept3', 'newconcept4'];
+const NEW_CONCEPT_AUDIO_ROOTS = {
+  newconcept1: 'A1/NewConcept1-US',
+  newconcept2: 'A2/NewConcept2-US',
+  newconcept3: 'B1/NewConcept3-US',
+  newconcept4: 'B2/NewConcept4-US'
+};
 
 function buildCloudFileId(cloudPath) {
   const normalizedPath = String(cloudPath || '').replace(/^\/+/, '');
@@ -16,6 +22,103 @@ function buildCloudFileId(cloudPath) {
     return '';
   }
   return `cloud://${appConfig.cloudEnvId}.${appConfig.cloudBucket}/${normalizedPath}`;
+}
+
+function encodeUrlPathSegment(segment) {
+  try {
+    return encodeURIComponent(decodeURIComponent(segment)).replace(/'/g, '%27');
+  } catch (error) {
+    return encodeURIComponent(segment).replace(/'/g, '%27');
+  }
+}
+
+function buildCloudAssetUrl(cloudPath) {
+  const baseUrl = String(appConfig.cloudAssetBaseUrl || '').replace(/\/+$/, '');
+  const normalizedPath = String(cloudPath || '').replace(/^\/+|\/+$/g, '');
+  if (!baseUrl || !normalizedPath) {
+    return '';
+  }
+  const encodedPath = normalizedPath
+    .split('/')
+    .map(encodeUrlPathSegment)
+    .join('/');
+  return `${baseUrl}/${encodedPath}`;
+}
+
+function getCloudPathFromFileId(fileId) {
+  const value = String(fileId || '').trim();
+  if (!/^cloud:\/\//.test(value)) {
+    return '';
+  }
+  return value.replace(/^cloud:\/\/[^/]+\//, '').replace(/^\/+|\/+$/g, '');
+}
+
+function getTaskTextTitle(task) {
+  return labels.decodeHtmlEntities(String(
+    (task && (task.audioTitle || task.title || task.displayTitle || task.audioCompactTitle))
+    || ''
+  )).trim();
+}
+
+function inferPeppaAudioCloudPath(task) {
+  const title = getTaskTextTitle(task);
+  const taskId = String((task && task.taskId) || '').trim();
+  let season = 0;
+  let episode = 0;
+  const titleCode = title.match(/^S(\d)(\d{2})\s+(.+)$/i);
+  if (titleCode) {
+    season = Number(titleCode[1]);
+    episode = Number(titleCode[2]);
+    return `A1/Peppa/第${season}季/${title}.mp3`;
+  }
+  const s1Match = taskId.match(/^peppa-(\d+)$/);
+  const seasonMatch = taskId.match(/^peppa-s(\d+)-(\d+)$/);
+  if (s1Match) {
+    season = 1;
+    episode = Number(s1Match[1]);
+  } else if (seasonMatch) {
+    season = Number(seasonMatch[1]);
+    episode = Number(seasonMatch[2]);
+  }
+  if (!season || !episode || !title) {
+    return '';
+  }
+  return `A1/Peppa/第${season}季/S${season}${String(episode).padStart(2, '0')} ${title}.mp3`;
+}
+
+function inferNewConceptAudioCloudPath(task) {
+  const category = String((task && task.category) || '').trim();
+  const root = NEW_CONCEPT_AUDIO_ROOTS[category] || '';
+  const title = getTaskTextTitle(task);
+  if (!root || !title) {
+    return '';
+  }
+  const match = title.match(/^(\d{3}&\d{3})\s*(?:[-–—－]\s*)?(.+)$/);
+  if (!match) {
+    return '';
+  }
+  const fileTitle = `${match[1]}－${String(match[2] || '').trim().replace(/'/g, '&#39;')}.mp3`;
+  return `${root}/${fileTitle}`;
+}
+
+function inferTaskAudioCloudPath(task) {
+  const category = String((task && task.category) || '').trim();
+  if (category === 'peppa') {
+    return inferPeppaAudioCloudPath(task);
+  }
+  if (NEW_CONCEPT_CATEGORIES.includes(category)) {
+    return inferNewConceptAudioCloudPath(task);
+  }
+  return '';
+}
+
+function hasTaskAudioSource(task) {
+  return !!(task && (
+    task.isPendingAsset
+    || task.audioUrl
+    || task.audioCloudPath
+    || task.audioFileId
+  ));
 }
 
 function getDisplayNameFromPath(path) {
@@ -40,13 +143,7 @@ function normalizePlayableUrl(url) {
   const rawPath = matched[2] || '';
   const encodedPath = rawPath
     .split('/')
-    .map((segment) => {
-      try {
-        return encodeURIComponent(decodeURIComponent(segment));
-      } catch (error) {
-        return encodeURIComponent(segment);
-      }
-    })
+    .map(encodeUrlPathSegment)
     .join('/');
   return `${origin}/${encodedPath}${queryPart}`;
 }
@@ -410,6 +507,13 @@ Page({
     dictionaryWord: '',
     dictionaryEntry: null
   }),
+  markLessonRoute(step, meta) {
+    const startedAt = Number(this.routeStartedAt || 0) || Date.now();
+    monitor.logPerf('lesson-route', step, Date.now() - startedAt, Object.assign({
+      category: this.category || '',
+      taskId: this.taskId || ''
+    }, meta || {}));
+  },
   readLessonTaskSnapshot() {
     const id = `${this.category || ''}:${this.taskId || ''}`;
     const snapshot = snapshotStore.read(LESSON_TASK_SNAPSHOT_KEY, {
@@ -471,6 +575,9 @@ Page({
       audioPlaybackMode: 'idle',
       lessonStudyCompleted: this.isLessonStudyCompletedForTask(normalizedTask)
     }));
+    this.markLessonRoute('snapshotRendered', {
+      hasAudio: hasTaskAudioSource(normalizedTask) ? 'yes' : 'no'
+    });
     this.prefetchTaskAudio(normalizedTask);
   },
   isStudyWriteAllowed() {
@@ -526,6 +633,7 @@ Page({
   onLoad(query) {
     this.category = query.category || 'peppa';
     this.taskId = query.taskId || '';
+    this.routeStartedAt = Number(query.routeStartedAt || 0) || Date.now();
     this.planRunType = query.planRunType || 'normal';
     this.source = query.source || '';
     this.focus = query.focus || '';
@@ -536,6 +644,7 @@ Page({
     this.checkinConfirmShowing = false;
     this.audioPlayRequested = false;
     this.pendingSpeakingAfterListen = null;
+    this.markLessonRoute('onLoad');
     this.recorderManager = wx.getRecorderManager ? wx.getRecorderManager() : null;
     if (this.recorderManager) {
       this.recorderManager.onStop((result) => {
@@ -590,6 +699,9 @@ Page({
         audioPlaybackMode: 'ready',
         durationLabel: this.formatTime(Math.floor(durationFromContext || taskDuration))
       });
+      this.markLessonRoute('audioCanplay', {
+        duration: Math.floor(durationFromContext || taskDuration || 0)
+      });
       if (this.pendingAutoPlay) {
         this.pendingAutoPlay = false;
         this.audioPlayRequested = true;
@@ -618,6 +730,7 @@ Page({
         audioErrorDetail: '',
         audioPlaybackMode: this.data.audioPlaybackMode === 'resolving' ? 'ready' : this.data.audioPlaybackMode
       });
+      this.markLessonRoute('audioPlay');
     });
     this.innerAudioContext.onPause(() => {
       this.setData({ isPlaying: false });
@@ -672,6 +785,8 @@ Page({
         this.applyLessonStudyPackSnapshot();
         this.loadCachedLessonStudyPack(snapshotTask).catch(() => {});
       }
+    } else {
+      this.markLessonRoute('snapshotMiss');
     }
   },
   async onShow() {
@@ -749,8 +864,25 @@ Page({
         audioResolveError: ''
       });
     }
-    const audioFileId = task.audioFileId || buildCloudFileId(task.audioCloudPath);
+    const audioCloudPath = String(task.audioCloudPath || getCloudPathFromFileId(task.audioFileId) || inferTaskAudioCloudPath(task) || '').trim();
+    const audioFileId = task.audioFileId || buildCloudFileId(audioCloudPath);
     let audioResolveError = '';
+    const fallbackAudioUrl = String(task.audioUrl || buildCloudAssetUrl(audioCloudPath) || '').trim();
+    if (fallbackAudioUrl) {
+      monitor.logPerf('lesson', 'resolveTaskAudio', Date.now() - startedAt, {
+        category: task.category,
+        taskId: task.taskId,
+        mode: 'static-cloud-url',
+        from: task.audioUrl ? 'audioUrl' : (audioCloudPath ? 'cloudPath' : '')
+      });
+      return Object.assign({}, task, {
+        audioUrl: fallbackAudioUrl,
+        audioCloudPath,
+        audioFileId,
+        audioSource: task.audioSource || 'static-cloud-url',
+        audioResolveError
+      });
+    }
     if (audioFileId) {
       try {
         const tempUrl = await store.getTempFileURL(audioFileId);
@@ -774,11 +906,13 @@ Page({
     monitor.logPerf('lesson', 'resolveTaskAudio', Date.now() - startedAt, {
       category: task.category,
       taskId: task.taskId,
-      mode: audioResolveError ? 'static-fallback' : (task.audioUrl ? 'static-cloud-url' : 'missing')
+      mode: audioResolveError ? 'static-fallback' : 'missing'
     });
     return Object.assign({}, task, {
+      audioUrl: '',
+      audioCloudPath,
       audioFileId,
-      audioSource: task.audioSource || (task.audioUrl ? 'static-cloud-url' : 'none'),
+      audioSource: task.audioSource || 'none',
       audioResolveError
     });
   },
@@ -855,9 +989,16 @@ Page({
       return;
     }
     this.audioPrefetchKey = prefetchKey;
+    this.markLessonRoute('audioResolveStart', {
+      hasAudio: hasTaskAudioSource(task) ? 'yes' : 'no'
+    });
     try {
       const resolvedTask = await this.resolveTaskAudio(task);
       if (!resolvedTask || resolvedTask.isPendingAsset || !resolvedTask.audioUrl || this.audioPrefetchKey !== prefetchKey) {
+        this.markLessonRoute('audioMissing', {
+          hasTask: resolvedTask ? 'yes' : 'no',
+          hasUrl: resolvedTask && resolvedTask.audioUrl ? 'yes' : 'no'
+        });
         this.audioPrefetchKey = '';
         return;
       }
@@ -870,6 +1011,10 @@ Page({
         this.innerAudioContext.stop();
         this.innerAudioContext.src = playableUrl;
         this.innerAudioContext.playbackRate = 1;
+        this.markLessonRoute('audioSrcSet', {
+          source: playbackMode,
+          duration: Number(resolvedTask.durationSec || 0)
+        });
       }
       if (this.data.task && this.data.task.taskId === resolvedTask.taskId) {
         this.setData({
@@ -884,6 +1029,9 @@ Page({
       }
     } catch (error) {
       this.audioPrefetchKey = '';
+      this.markLessonRoute('audioResolveFailed', {
+        error: (error && (error.errMsg || error.message)) || String(error || '')
+      });
     }
   },
   applyFreshTaskDetail(detail) {
@@ -917,6 +1065,9 @@ Page({
   },
   async refreshPage() {
     const startedAt = Date.now();
+    this.markLessonRoute('detailRequestStart', {
+      hasSnapshot: this.data.task ? 'yes' : 'no'
+    });
     const hasSnapshotTask = !!this.data.task;
     if (!hasSnapshotTask) {
       this.setData({
@@ -929,8 +1080,12 @@ Page({
       targetDate: this.targetDate,
       planDayIndex: this.planDayIndex,
       source: this.source,
-      taskSnapshot: this.data.task || undefined
+      taskSnapshot: hasTaskAudioSource(this.data.task) ? this.data.task : undefined
     }, (fresh) => this.applyFreshTaskDetail(fresh));
+    this.markLessonRoute('detailLoaded', {
+      hasTask: detail && detail.task ? 'yes' : 'no',
+      hasAudio: detail && detail.task && hasTaskAudioSource(detail.task) ? 'yes' : 'no'
+    });
     if (detail && detail.syncMode === 'cloud-error' && hasSnapshotTask) {
       this.setData(page.buildCloudPageData(this.data, {
         lessonLoading: false,
@@ -1000,12 +1155,8 @@ Page({
       lessonPatternCards: []
     }));
     if (normalizedTask) {
-      await this.loadCachedLessonStudyPack(normalizedTask);
-    }
-    await this.refreshSpeakingAttempts(normalizedTask);
-    await this.updatePassQuestion(normalizedTask, detail.progress);
-    if (normalizedTask) {
       this.prefetchTaskAudio(normalizedTask);
+      this.loadLessonSecondaryData(normalizedTask, detail.progress);
       monitor.logPerf('lesson', 'refreshPage', Date.now() - startedAt, {
         category: this.category,
         taskId: this.taskId
@@ -1015,6 +1166,19 @@ Page({
     if (this.innerAudioContext) {
       this.innerAudioContext.stop();
     }
+  },
+  async loadLessonSecondaryData(task, progress) {
+    const startedAt = Date.now();
+    await Promise.allSettled([
+      this.loadCachedLessonStudyPack(task),
+      this.refreshSpeakingAttempts(task),
+      this.updatePassQuestion(task, progress)
+    ]);
+    monitor.logPerf('lesson', 'secondaryData', Date.now() - startedAt, {
+      category: this.category,
+      taskId: this.taskId
+    });
+    this.markLessonRoute('secondaryLoaded');
   },
   getQuestionFromLines(lines, options = {}) {
     const items = lines || [];
@@ -1076,7 +1240,14 @@ Page({
       return;
     }
     const explicitQuestionMode = targetTask.speakingMode === 'nce-question-answer';
-    const lines = explicitQuestionMode ? await this.ensureTranscriptLoadedForSpeaking() : (this.data.transcriptLines || []);
+    if (explicitQuestionMode && !(this.data.transcriptLines || []).length) {
+      this.setData({
+        passQuestionVisible: true,
+        passQuestionText: targetTask.questionText || targetTask.passQuestionText || '听完问题后录音回答'
+      });
+      return;
+    }
+    const lines = this.data.transcriptLines || [];
     const questionText = this.getQuestionFromLines(lines, { requireAnswerCue: !explicitQuestionMode });
     const enabledByText = isNewConceptTask(targetTask, this.category) && questionText && hasAnswerQuestionCue(lines);
     if (!explicitQuestionMode && !enabledByText) {
@@ -1206,6 +1377,7 @@ Page({
     const attemptIndex = isRepeat ? 1 : this.data.speakingAttemptIndex;
     const sentenceIndex = isRepeat ? this.data.repeatActiveIndex + 1 : 0;
     this.setData({ speakingSubmitting: true });
+    let speakingFailureDebugLines = [];
     try {
       const localFileInfo = await getLocalFileInfo(this.data.speakingTempFilePath);
       const baseDebugLines = [
@@ -1216,7 +1388,8 @@ Page({
           value: `path=${this.data.speakingTempFilePath || 'missing'}, size=${localFileInfo.size}, error=${localFileInfo.error || 'none'}`
         })
       ];
-      this.setData({ speakingDebugLines: baseDebugLines });
+      speakingFailureDebugLines = baseDebugLines;
+      this.setData({ speakingDebugLines: [] });
       if (this.planRunType === 'preview' || !this.isStudyWriteAllowed()) {
         const upload = await store.createSpeakingUploadUrl({
           category: this.category,
@@ -1228,18 +1401,17 @@ Page({
           attemptIndex,
           sentenceIndex
         });
-        this.setData({
-          speakingDebugLines: baseDebugLines.concat([
-            buildSpeakingDebugLine('submitSpeakingRecord', {
-              storeAction: 'createSpeakingUploadUrl',
-              cloudAction: 'createSpeakingUploadUrl',
-              field: 'uploadTarget',
-              value: `cloudPath=${upload.cloudPath || 'missing'}, fileId=${upload.fileId ? 'present' : 'missing'}`
-            })
-          ])
-        });
+        const uploadTargetDebugLines = baseDebugLines.concat([
+          buildSpeakingDebugLine('submitSpeakingRecord', {
+            storeAction: 'createSpeakingUploadUrl',
+            cloudAction: 'createSpeakingUploadUrl',
+            field: 'uploadTarget',
+            value: `cloudPath=${upload.cloudPath || 'missing'}, fileId=${upload.fileId ? 'present' : 'missing'}`
+          })
+        ]);
+        speakingFailureDebugLines = uploadTargetDebugLines;
         const fileId = await store.uploadSpeakingAudio(upload.cloudPath, this.data.speakingTempFilePath);
-        const uploadDebugLines = this.data.speakingDebugLines.concat([
+        const uploadDebugLines = uploadTargetDebugLines.concat([
           buildSpeakingDebugLine('submitSpeakingRecord', {
             storeAction: 'uploadSpeakingAudio',
             cloudAction: 'wx.cloud.uploadFile',
@@ -1247,7 +1419,7 @@ Page({
             value: `fileId=${fileId ? 'present' : 'missing'}`
           })
         ]);
-        this.setData({ speakingDebugLines: uploadDebugLines });
+        speakingFailureDebugLines = uploadDebugLines;
         const submitStartDebugLines = uploadDebugLines.concat([
           buildSpeakingDebugLine('submitSpeakingRecord', {
             storeAction: 'submitSpeakingAttempt',
@@ -1256,7 +1428,7 @@ Page({
             value: `started, answerAudioFileId=${fileId || upload.fileId ? 'present' : 'missing'}, answerCloudPath=${upload.cloudPath || 'missing'}, targetChildId=N/A`
           })
         ]);
-        this.setData({ speakingDebugLines: submitStartDebugLines });
+        speakingFailureDebugLines = submitStartDebugLines;
         const result = await store.submitSpeakingAttempt({
           category: this.category,
           taskId: task.taskId,
@@ -1273,17 +1445,17 @@ Page({
           answerCloudPath: upload.cloudPath,
           answerDurationMs: this.data.speakingRecordDurationMs
         });
-        this.setData({
-          speakingDebugLines: submitStartDebugLines.concat([
-            buildSpeakingDebugLine('submitSpeakingRecord', {
-              storeAction: 'submitSpeakingAttempt',
-              cloudAction: 'submitSpeakingAttempt',
-              field: 'attempt',
-              value: `status=${result && result.attempt ? result.attempt.status || 'missing' : 'missing'}, scoreErrorType=${result && result.attempt ? result.attempt.scoreErrorType || 'none' : 'missing'}, scoreError=${result && result.attempt ? result.attempt.scoreError || 'none' : ((result && result.cloudError && result.cloudError.message) || 'missing')}`
-            })
-          ])
-        });
+        const resultDebugLines = submitStartDebugLines.concat([
+          buildSpeakingDebugLine('submitSpeakingRecord', {
+            storeAction: 'submitSpeakingAttempt',
+            cloudAction: 'submitSpeakingAttempt',
+            field: 'attempt',
+            value: `status=${result && result.attempt ? result.attempt.status || 'missing' : 'missing'}, scoreErrorType=${result && result.attempt ? result.attempt.scoreErrorType || 'none' : 'missing'}, scoreError=${result && result.attempt ? result.attempt.scoreError || 'none' : ((result && result.cloudError && result.cloudError.message) || 'missing')}`
+          })
+        ]);
+        speakingFailureDebugLines = resultDebugLines;
         if (!result || result.cloudError || !result.attempt) {
+          this.setData({ speakingDebugLines: resultDebugLines });
           if (await this.finishPendingListenAfterSpeakingFailure('评分失败，按听力完成')) {
             return;
           }
@@ -1307,7 +1479,8 @@ Page({
           speakingRecordDurationMs: 0,
           speakingRecordDurationText: '',
           speakingPromptText: attempts[attempts.length - 1].feedback,
-          speakingCanContinue: !isRepeat && canContinueAfterSpeaking(attempts)
+          speakingCanContinue: !isRepeat && canContinueAfterSpeaking(attempts),
+          speakingDebugLines: []
         });
         if (isRepeat) {
           if (this.data.repeatActiveIndex < (this.data.repeatLines || []).length - 1) {
@@ -1334,18 +1507,17 @@ Page({
         attemptIndex,
         sentenceIndex
       });
-      this.setData({
-        speakingDebugLines: baseDebugLines.concat([
-          buildSpeakingDebugLine('submitSpeakingRecord', {
-            storeAction: 'createSpeakingUploadUrl',
-            cloudAction: 'createSpeakingUploadUrl',
-            field: 'uploadTarget',
-            value: `cloudPath=${upload.cloudPath || 'missing'}, fileId=${upload.fileId ? 'present' : 'missing'}`
-          })
-        ])
-      });
+      const uploadTargetDebugLines = baseDebugLines.concat([
+        buildSpeakingDebugLine('submitSpeakingRecord', {
+          storeAction: 'createSpeakingUploadUrl',
+          cloudAction: 'createSpeakingUploadUrl',
+          field: 'uploadTarget',
+          value: `cloudPath=${upload.cloudPath || 'missing'}, fileId=${upload.fileId ? 'present' : 'missing'}`
+        })
+      ]);
+      speakingFailureDebugLines = uploadTargetDebugLines;
       const fileId = await store.uploadSpeakingAudio(upload.cloudPath, this.data.speakingTempFilePath);
-      const uploadDebugLines = this.data.speakingDebugLines.concat([
+      const uploadDebugLines = uploadTargetDebugLines.concat([
         buildSpeakingDebugLine('submitSpeakingRecord', {
           storeAction: 'uploadSpeakingAudio',
           cloudAction: 'wx.cloud.uploadFile',
@@ -1353,7 +1525,7 @@ Page({
           value: `fileId=${fileId ? 'present' : 'missing'}`
         })
       ]);
-      this.setData({ speakingDebugLines: uploadDebugLines });
+      speakingFailureDebugLines = uploadDebugLines;
       const submitStartDebugLines = uploadDebugLines.concat([
         buildSpeakingDebugLine('submitSpeakingRecord', {
           storeAction: 'submitSpeakingAttempt',
@@ -1362,7 +1534,7 @@ Page({
           value: `started, answerAudioFileId=${fileId || upload.fileId ? 'present' : 'missing'}, answerCloudPath=${upload.cloudPath || 'missing'}, targetChildId=N/A`
         })
       ]);
-      this.setData({ speakingDebugLines: submitStartDebugLines });
+      speakingFailureDebugLines = submitStartDebugLines;
       const result = await store.submitSpeakingAttempt({
         category: this.category,
         taskId: task.taskId,
@@ -1379,17 +1551,17 @@ Page({
         answerCloudPath: upload.cloudPath,
         answerDurationMs: this.data.speakingRecordDurationMs
       });
-      this.setData({
-        speakingDebugLines: submitStartDebugLines.concat([
-          buildSpeakingDebugLine('submitSpeakingRecord', {
-            storeAction: 'submitSpeakingAttempt',
-            cloudAction: 'submitSpeakingAttempt',
-            field: 'attempt',
-            value: `status=${result && result.attempt ? result.attempt.status || 'missing' : 'missing'}, scoreErrorType=${result && result.attempt ? result.attempt.scoreErrorType || 'none' : 'missing'}, scoreError=${result && result.attempt ? result.attempt.scoreError || 'none' : ((result && result.cloudError && result.cloudError.message) || 'missing')}`
-          })
-        ])
-      });
+      const resultDebugLines = submitStartDebugLines.concat([
+        buildSpeakingDebugLine('submitSpeakingRecord', {
+          storeAction: 'submitSpeakingAttempt',
+          cloudAction: 'submitSpeakingAttempt',
+          field: 'attempt',
+          value: `status=${result && result.attempt ? result.attempt.status || 'missing' : 'missing'}, scoreErrorType=${result && result.attempt ? result.attempt.scoreErrorType || 'none' : 'missing'}, scoreError=${result && result.attempt ? result.attempt.scoreError || 'none' : ((result && result.cloudError && result.cloudError.message) || 'missing')}`
+        })
+      ]);
+      speakingFailureDebugLines = resultDebugLines;
       if (!result || result.cloudError || !result.attempt) {
+        this.setData({ speakingDebugLines: resultDebugLines });
         if (await this.finishPendingListenAfterSpeakingFailure('评分失败，按听力完成')) {
           return;
         }
@@ -1406,7 +1578,8 @@ Page({
         speakingRecordDurationMs: 0,
         speakingRecordDurationText: '',
         speakingPromptText: normalizedAttempt && normalizedAttempt.feedback ? normalizedAttempt.feedback : '',
-        speakingCanContinue: !isRepeat && canContinueAfterSpeaking(normalizedAttempts)
+        speakingCanContinue: !isRepeat && canContinueAfterSpeaking(normalizedAttempts),
+        speakingDebugLines: normalizedAttempt && normalizedAttempt.status === 'score-pending' ? resultDebugLines : []
       });
       if (normalizedAttempt && normalizedAttempt.status === 'score-pending') {
         wx.showToast({
@@ -1434,7 +1607,7 @@ Page({
     } catch (error) {
       const errorMessage = (error && (error.errMsg || error.message)) || String(error || '');
       this.setData({
-        speakingDebugLines: (this.data.speakingDebugLines || []).concat([
+        speakingDebugLines: (speakingFailureDebugLines || []).concat([
           buildSpeakingDebugLine('submitSpeakingRecord', {
             storeAction: 'submitSpeakingAttempt',
             cloudAction: 'submitSpeakingAttempt',
@@ -1725,6 +1898,10 @@ Page({
     }
     this.pendingAutoPlay = false;
     this.audioPlayRequested = true;
+    this.markLessonRoute('playTap', {
+      hasSrc: this.innerAudioContext.src ? 'yes' : 'no',
+      ready: this.data.audioReady ? 'yes' : 'no'
+    });
     if (!this.innerAudioContext.src) {
       this.pendingAutoPlay = true;
       await this.syncPlayer(this.data.task);

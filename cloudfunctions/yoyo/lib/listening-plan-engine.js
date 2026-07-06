@@ -35,15 +35,49 @@ function buildLevelTabs(selectedLevel) {
 function buildMaterialEntries(levelId, deps) {
   const targetLevel = normalizeLevelId(levelId);
   return MATERIALS.filter((item) => item.levelIds.includes(targetLevel)).map((item) => {
-    const catalog = deps.getCatalog(item.category) || [];
+    const summary = deps.getCatalogSummary
+      ? deps.getCatalogSummary(item.category)
+      : { totalCount: (deps.getCatalog(item.category) || []).length };
+    const totalCount = Number(summary && summary.totalCount || 0);
     return {
       levelId: targetLevel,
       category: item.category,
       title: item.title,
-      totalCount: catalog.length,
-      enabled: catalog.length > 0
+      totalCount,
+      enabled: summary && Object.prototype.hasOwnProperty.call(summary, 'enabled') ? !!summary.enabled : totalCount > 0
     };
   });
+}
+
+function normalizePlanMaterialSummary(input, deps) {
+  const category = String(input && input.category || '').trim();
+  const definition = getMaterial(category);
+  if (!definition) {
+    return null;
+  }
+  const summary = deps.getCatalogSummary ? deps.getCatalogSummary(category) : {};
+  const totalCount = Number((summary && summary.totalCount) || input.totalCount || 0);
+  if (!totalCount) {
+    return null;
+  }
+  const startNo = Math.max(1, Math.min(totalCount, Number(input.startNo || 1)));
+  const endNo = Math.max(startNo, Math.min(totalCount, Number(input.endNo || totalCount)));
+  return {
+    levelId: normalizeLevelId(input.levelId || definition.levelIds[0]),
+    category,
+    title: input.title || definition.title,
+    startNo,
+    endNo,
+    dailyCount: Math.max(1, Math.min(20, Number(input.dailyCount || 1))),
+    repeatTarget: Math.max(1, Math.min(10, Number(input.repeatTarget || 3))),
+    totalCount,
+    enabled: input.enabled !== false,
+    rangeCount: Number(input.rangeCount || Math.max(0, endNo - startNo + 1)),
+    knownDurationCount: Number(input.knownDurationCount || 0),
+    durationReady: !!input.durationReady,
+    rangeDurationSec: Number(input.rangeDurationSec || 0),
+    estimatedDailyDurationSec: Number(input.estimatedDailyDurationSec || 0)
+  };
 }
 
 function getPlanMaterialDuration(catalog, startNo, endNo, dailyCount, repeatTarget) {
@@ -100,6 +134,17 @@ function decoratePlan(plan, deps) {
   return Object.assign({}, plan, {
     materials: (Array.isArray(plan.materials) ? plan.materials : [])
       .map((item) => normalizePlanMaterial(item, deps))
+      .filter(Boolean)
+  });
+}
+
+function decoratePlanSummary(plan, deps) {
+  if (!plan) {
+    return null;
+  }
+  return Object.assign({}, plan, {
+    materials: (Array.isArray(plan.materials) ? plan.materials : [])
+      .map((item) => normalizePlanMaterialSummary(item, deps))
       .filter(Boolean)
   });
 }
@@ -198,6 +243,7 @@ module.exports = {
   buildMaterialEntries,
   normalizePlanMaterial,
   decoratePlan,
+  decoratePlanSummary,
   mergePlanMaterial,
   removePlanMaterial,
   getCustomPlanDayIndex,

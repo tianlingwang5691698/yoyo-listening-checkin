@@ -51,6 +51,12 @@ const NEW_CONCEPT_DISCOVERY_ROOTS = {
   newconcept3: ['B1'],
   newconcept4: ['B2']
 };
+const FALLBACK_CATALOG_COUNTS = {
+  newconcept1: 76,
+  newconcept2: 96,
+  newconcept3: 60,
+  newconcept4: 48
+};
 let runtimeCatalogs = null;
 let runtimeCatalogExpiresAt = 0;
 let runtimeCatalogDebug = null;
@@ -1289,6 +1295,29 @@ function getCatalog(category) {
   return [];
 }
 
+function getCatalogSummary(category) {
+  const catalogs = runtimeCatalogs || {};
+  const runtimeCatalog = catalogs[category];
+  if (Array.isArray(runtimeCatalog)) {
+    if (!runtimeCatalog.length && NEW_CONCEPT_CATEGORIES.includes(category) && FALLBACK_CATALOG_COUNTS[category]) {
+      return {
+        totalCount: Number(FALLBACK_CATALOG_COUNTS[category] || 0),
+        enabled: true
+      };
+    }
+    return {
+      totalCount: runtimeCatalog.length,
+      enabled: runtimeCatalog.length > 0
+    };
+  }
+  const staticCatalog = getStaticCatalogMap()[category] || [];
+  const totalCount = staticCatalog.length || Number(FALLBACK_CATALOG_COUNTS[category] || 0);
+  return {
+    totalCount,
+    enabled: totalCount > 0
+  };
+}
+
 
 module.exports = {
   AUDIO_FILE_PATTERN,
@@ -1305,6 +1334,7 @@ module.exports = {
   refreshRuntimeCatalogs,
   getResourceDebugSnapshot,
   getCatalog,
+  getCatalogSummary,
   getTranscriptBundle,
   songPlaceholder
 };

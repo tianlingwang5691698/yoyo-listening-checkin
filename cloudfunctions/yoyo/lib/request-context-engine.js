@@ -1,3 +1,12 @@
+function hasTaskAudioSource(task) {
+  return !!(task && (
+    task.isPendingAsset
+    || task.audioUrl
+    || task.audioCloudPath
+    || task.audioFileId
+  ));
+}
+
 function resolveCatalogCategories(action, requestedCategory, payload = {}) {
   let catalogCategories = ['newconcept1', 'song'];
   const knownAudioCategories = ['newconcept1', 'newconcept2', 'unlock2', 'newconcept3', 'unlock3', 'newconcept4', 'unlock4', 'peppa', 'song', 'unlock1'];
@@ -8,23 +17,20 @@ function resolveCatalogCategories(action, requestedCategory, payload = {}) {
   if (action === 'getLevelOverview') {
     const phase = String((payload && payload.phase) || '').trim();
     if (phase === 'round-1' || phase === 'round-2') {
-      return ['newconcept1', 'peppa', 'unlock1', 'song'];
+      return [];
     }
     return knownAudioCategories;
   }
   if (action === 'getListeningPlanOverview') {
-    const levelId = String((payload && payload.levelId) || 'A1').trim();
-    if (levelId === 'Pre A1') return ['song'];
-    if (levelId === 'A1') return ['newconcept1', 'unlock1', 'peppa'];
-    if (levelId === 'A2') return ['peppa', 'newconcept2', 'unlock2'];
-    if (levelId === 'B1') return ['newconcept3', 'unlock3'];
-    if (levelId === 'B2') return ['newconcept4', 'unlock4'];
     return [];
   }
   if (action === 'getListeningMaterialDetail') {
     return knownAudioCategories.includes(requestedCategory) ? [requestedCategory] : [];
   }
   if (action === 'getTaskDetail' || action === 'markTaskListened') {
+    if (action === 'getTaskDetail' && view === 'lesson' && payload && hasTaskAudioSource(payload.taskSnapshot)) {
+      return [];
+    }
     if (knownAudioCategories.includes(requestedCategory)) {
       return [requestedCategory];
     }

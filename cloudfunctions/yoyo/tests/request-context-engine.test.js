@@ -103,14 +103,45 @@ test('resolveCatalogCategories 对任务详情只刷新请求分类', () => {
   );
 });
 
-test('resolveCatalogCategories 对听力计划按级别刷新素材', () => {
+test('resolveCatalogCategories 课程详情有快照时不刷新素材目录', () => {
+  assert.deepEqual(
+    requestContextEngine.resolveCatalogCategories('getTaskDetail', 'newconcept1', {
+      view: 'lesson',
+      taskSnapshot: {
+        category: 'newconcept1',
+        taskId: 'newconcept1-73',
+        audioCloudPath: 'A1/NewConcept1-US/L073.mp3'
+      }
+    }),
+    []
+  );
+});
+
+test('resolveCatalogCategories 课程详情缺音频快照时刷新当前分类', () => {
+  assert.deepEqual(
+    requestContextEngine.resolveCatalogCategories('getTaskDetail', 'newconcept1', {
+      view: 'lesson',
+      taskSnapshot: { category: 'newconcept1', taskId: 'newconcept1-73' }
+    }),
+    ['newconcept1']
+  );
+});
+
+test('resolveCatalogCategories 阶段页不刷新素材目录', () => {
+  assert.deepEqual(
+    requestContextEngine.resolveCatalogCategories('getLevelOverview', '', { phase: 'round-2' }),
+    []
+  );
+});
+
+test('resolveCatalogCategories 听力计划首屏不刷新素材目录', () => {
   assert.deepEqual(
     requestContextEngine.resolveCatalogCategories('getListeningPlanOverview', '', { levelId: 'A2' }),
-    ['peppa', 'newconcept2', 'unlock2']
+    []
   );
   assert.deepEqual(
     requestContextEngine.resolveCatalogCategories('getListeningPlanOverview', '', { levelId: 'B1' }),
-    ['newconcept3', 'unlock3']
+    []
   );
   assert.deepEqual(
     requestContextEngine.resolveCatalogCategories('getListeningMaterialDetail', 'newconcept4', {}),
