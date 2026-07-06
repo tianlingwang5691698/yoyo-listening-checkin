@@ -31,7 +31,7 @@
 }
 
 .module-card {
-  min-height: 150rpx;
+  min-height: 112rpx;
   padding: 18rpx;
   border-radius: 16rpx;
   background: var(--surface-subtle);
@@ -39,14 +39,21 @@
 }
 
 .module-count {
+  margin-top: 10rpx;
   color: var(--text-main);
   font-size: 38rpx;
   line-height: 1.1;
   font-weight: var(--font-section-heading-weight);
 }
 
+.module-unit {
+  margin-left: 6rpx;
+  color: var(--text-muted);
+  font-size: var(--font-caption-size);
+  font-weight: var(--font-title-weight);
+}
+
 .module-label {
-  margin-top: 8rpx;
   color: var(--text-main);
   font-size: var(--font-control-size);
   font-weight: var(--font-title-weight);

@@ -5,6 +5,48 @@ function needsCompletionRefresh(report) {
   return !report || !Array.isArray(report.completionItems);
 }
 
+function getLatestAttempt(item) {
+  return (item && item.latestAttempt) || {};
+}
+
+function getGrammarQuestionCount(item) {
+  const attempt = getLatestAttempt(item);
+  const answeredCount = Number(attempt.answeredCount || 0);
+  if (answeredCount > 0) return answeredCount;
+  if (Array.isArray(attempt.questions)) return attempt.questions.length;
+  return 1;
+}
+
+function getVocabularyWordCount(item) {
+  const attempt = getLatestAttempt(item);
+  const reviewed = Number(attempt.reviewed || 0);
+  return reviewed > 0 ? reviewed : 1;
+}
+
+function buildTodayLearningStats(report) {
+  const stats = {
+    listening: { value: Number((report && report.totalMinutes) || 0), unit: '分钟', label: '听力时长', copy: '今日听力用时' },
+    reading: { value: 0, unit: '篇', label: '阅读完成', copy: '完成阅读' },
+    grammar: { value: 0, unit: '题', label: '语法练习', copy: '完成练习' },
+    writing: { value: 0, unit: '篇', label: '写作提交', copy: '完成作文' },
+    vocabulary: { value: 0, unit: '个', label: '单词背诵', copy: '背诵单词' },
+    speaking: { value: (report && report.speakingAttempts || []).length, unit: '次', label: '口语练习', copy: '完成录音' }
+  };
+  (report && report.completionItems || []).forEach((item) => {
+    const type = item && item.type;
+    if (type === 'reading') {
+      stats.reading.value += 1;
+    } else if (type === 'grammar') {
+      stats.grammar.value += getGrammarQuestionCount(item);
+    } else if (type === 'writing') {
+      stats.writing.value += 1;
+    } else if (type === 'vocabulary') {
+      stats.vocabulary.value += getVocabularyWordCount(item);
+    }
+  });
+  return stats;
+}
+
 async function getTodayListeningCompletion(ctx, today, records, progressRecords) {
   const activePlan = await study.getActiveListeningPlan(ctx);
   const useCustomListeningPlan = !!(activePlan && activePlan.active !== false);
@@ -152,7 +194,7 @@ async function getParentDashboard(event) {
   const { ctx, today } = await study.prepareRequestContext(Object.assign({}, event, {
     action: 'getParentDashboard'
   }));
-  const days = Math.max(7, Math.min(Number((event && event.payload && event.payload.days) || 7), 30));
+  const days = Math.max(1, Math.min(Number((event && event.payload && event.payload.days) || 7), 30));
   const summaryOnly = !!(event && event.payload && event.payload.summaryOnly);
   const dashboard = summaryOnly ? { stats: {} } : await study.getDashboardData(ctx);
   const scope = study.getUserScope(ctx);
@@ -163,6 +205,9 @@ async function getParentDashboard(event) {
   }
   const recentReports = summaryOnly
     ? await Promise.all(dates.map(async (date) => {
+      if (date === today) {
+        return await study.upsertDailyReport(scope, date);
+      }
       const existing = await reportRepository.findByScopeAndDate(scope, date);
       return existing || { date };
     }))
@@ -238,6 +283,7 @@ async function getParentDashboard(event) {
     return merged;
   };
   const summarizedReports = recentReports.map(summarizeReport);
+  const todayLearningStats = buildTodayLearningStats(summarizedReports[0]);
   return {
     user: ctx.user,
     currentUser: ctx.user,
@@ -247,7 +293,8 @@ async function getParentDashboard(event) {
     stats: dashboard.stats,
     todayReport: summarizedReports[0],
     recentReports: summarizedReports,
-    moduleStats: summaryOnly ? mergeModuleStats(summarizedReports) : null,
+    moduleStats: summaryOnly ? todayLearningStats : null,
+    todayLearningStats,
     members: ctx.members,
     studentLinks: ctx.studentLinks || [],
     subscriptionPreference: ctx.subscriptionPreference

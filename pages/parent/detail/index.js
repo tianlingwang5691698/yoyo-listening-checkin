@@ -164,11 +164,16 @@ function writeListeningStudySnapshot(item) {
   }, { source: 'parent-detail-listening-study' });
 }
 
-function hasStudyPackCards(studyPack) {
+function hasCompleteStudyPackCards(studyPack) {
   return studyPack
-    && ((studyPack.vocabularyCards || []).length
-      || (studyPack.phraseCards || []).length
-      || (studyPack.sentencePatternCards || []).length);
+    && (studyPack.vocabularyCards || []).length
+    && (studyPack.phraseCards || []).length
+    && (studyPack.sentencePatternCards || []).length;
+}
+
+function itemHasCompleteStudyPack(item) {
+  const review = item && item.latestAttempt && item.latestAttempt.review || {};
+  return hasCompleteStudyPackCards(review);
 }
 
 function getListeningStudyCacheIds(item) {
@@ -198,7 +203,7 @@ async function writeListeningStudyPackSnapshot(item) {
         title: source.meta || source.title || source.targetId || '听力课程'
       }, { cacheOnly: true, useCache: false });
       const studyPack = result && result.studyPack;
-      if (hasStudyPackCards(studyPack)) {
+      if (hasCompleteStudyPackCards(studyPack)) {
         return snapshotStore.write(LESSON_STUDY_PACK_SNAPSHOT_KEY, `${category}:${taskId}`, {
           studyPack,
           listeningId: cacheId
@@ -368,6 +373,41 @@ function normalizeCompletionItem(item, index) {
   });
 }
 
+function shouldShowCompletionItem(item) {
+  const type = String((item && item.type) || '');
+  if (type === 'vocabulary') return false;
+  if (isListeningStudyCompletion(item)) return itemHasCompleteStudyPack(item);
+  return ['reading', 'grammar', 'writing'].includes(type);
+}
+
+async function listeningStudyHasCompletePack(item) {
+  if (!isListeningStudyCompletion(item)) return false;
+  if (itemHasCompleteStudyPack(item)) return true;
+  const cacheIds = getListeningStudyCacheIds(item);
+  for (let index = 0; index < cacheIds.length; index += 1) {
+    const cacheId = cacheIds[index];
+    try {
+      const result = await store.getListeningStudyPack({
+        _id: cacheId,
+        id: cacheId,
+        title: item.meta || item.title || item.targetId || '听力课程'
+      }, { cacheOnly: true, useCache: false });
+      if (hasCompleteStudyPackCards(result && result.studyPack)) return true;
+    } catch (error) {}
+  }
+  return false;
+}
+
+async function filterVisibleCompletionItems(items) {
+  const checks = await Promise.all((items || []).map(async (item) => {
+    if (isListeningStudyCompletion(item)) {
+      return await listeningStudyHasCompletePack(item);
+    }
+    return shouldShowCompletionItem(item);
+  }));
+  return (items || []).filter((item, index) => checks[index]);
+}
+
 async function hydrateReadingItems(items) {
   const nextItems = await Promise.all((items || []).map(async (item) => {
     if (item.type !== 'reading' || item.passage || !item.passageId) {
@@ -490,7 +530,7 @@ function normalizeReport(report) {
   const speakingAttempts = (safeReport.speakingAttempts || []).map(normalizeSpeakingAttempt);
   const speakingSummary = buildSpeakingSummary(speakingAttempts);
   const completedCount = items.filter((item) => item.completedToday).length;
-  const completionItems = (safeReport.completionItems || []).map(normalizeCompletionItem);
+  const completionItems = (safeReport.completionItems || []).filter(shouldShowCompletionItem).map(normalizeCompletionItem);
   return {
     date: safeReport.date || '',
     dateLabel: formatDateLabel(safeReport.date),
@@ -579,13 +619,12 @@ Page({
     store.getDailyReportByDate(this.data.date).then((reportData) => {
       const report = normalizeReport(reportData.report);
       const currentCompletionItems = this.data.report.completionItems || [];
-      const completionItems = report.completionItems.length ? report.completionItems : currentCompletionItems;
       this.setData(page.buildCloudPageData(this.data, {
         date: this.data.date,
         report: Object.assign({}, report, {
-          completionItems
+          completionItems: this.data.completionItemsLoaded ? (report.completionItems.length ? report.completionItems : currentCompletionItems) : []
         }),
-        completionItemsLoaded: this.data.completionItemsLoaded || report.completionItems.length > 0
+        completionItemsLoaded: this.data.completionItemsLoaded
       }));
     }).catch(() => {});
   },
@@ -594,19 +633,20 @@ Page({
       return;
     }
     this.setData({ completionItemsLoading: true });
-    const applyCompletionItems = (items) => {
+    const applyCompletionItems = async (items) => {
+      const visibleItems = await filterVisibleCompletionItems(items || []);
       const report = this.data.report || {};
       this.setData(page.buildCloudPageData(this.data, {
         completionItemsLoaded: true,
         completionItemsLoading: false,
         report: Object.assign({}, report, {
-          completionItems: (items || []).map(normalizeCompletionItem)
+          completionItems: visibleItems.map(normalizeCompletionItem)
         })
       }));
     };
     try {
       const data = await store.getStudyCompletions({ date: this.data.date }, (fresh) => applyCompletionItems(fresh.items || []));
-      applyCompletionItems((data && data.items) || []);
+      await applyCompletionItems((data && data.items) || []);
     } catch (error) {
       this.setData({ completionItemsLoading: false });
       wx.showToast({ title: '记录加载失败', icon: 'none' });

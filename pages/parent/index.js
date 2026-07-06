@@ -4,16 +4,16 @@ const labels = require('../../utils/labels');
 const contracts = require('../../utils/contracts');
 const snapshotStore = require('../../utils/snapshot');
 
-const PARENT_DASHBOARD_SNAPSHOT_KEY = 'parentDashboardSnapshotV1';
+const PARENT_DASHBOARD_SNAPSHOT_KEY = 'parentDashboardSnapshotV3';
 const PARENT_DASHBOARD_SNAPSHOT_MAX_AGE_MS = 10 * 60 * 1000;
 
 const MODULES = [
-  { key: 'listening', label: '听力' },
-  { key: 'speaking', label: '口语' },
-  { key: 'reading', label: '阅读' },
-  { key: 'grammar', label: '语法' },
-  { key: 'writing', label: '写作' },
-  { key: 'vocabulary', label: '词汇' }
+  { key: 'listening', label: '听力时长', unit: '分钟', copy: '今日听力用时' },
+  { key: 'reading', label: '阅读完成', unit: '篇', copy: '完成阅读' },
+  { key: 'grammar', label: '语法练习', unit: '题', copy: '完成练习' },
+  { key: 'writing', label: '写作提交', unit: '篇', copy: '完成作文' },
+  { key: 'vocabulary', label: '单词背诵', unit: '个', copy: '背诵单词' },
+  { key: 'speaking', label: '口语练习', unit: '次', copy: '完成录音' }
 ];
 function formatDateLabel(dateKey) {
   const parts = String(dateKey || '').split('-').map(Number);
@@ -40,7 +40,9 @@ function getModuleKey(type) {
 function buildModuleStats(reports, completionItems) {
   const stats = MODULES.map((item) => Object.assign({}, item, {
     count: 0,
-    latestTitle: '暂无记录'
+    value: 0,
+    latestTitle: item.copy,
+    displayCopy: item.copy
   }));
   const map = stats.reduce((next, item) => {
     next[item.key] = item;
@@ -49,8 +51,13 @@ function buildModuleStats(reports, completionItems) {
   const applySummaryStats = (summaryStats) => {
     Object.keys(summaryStats || {}).forEach((key) => {
       if (!map[key]) return;
-      map[key].count += Number((summaryStats[key] && summaryStats[key].count) || 0);
-      if (summaryStats[key] && summaryStats[key].latestTitle && summaryStats[key].latestTitle !== '暂无记录') {
+      const incoming = summaryStats[key] || {};
+      map[key].count += Number(incoming.value == null ? incoming.count : incoming.value) || 0;
+      map[key].value = map[key].count;
+      map[key].unit = incoming.unit || map[key].unit;
+      map[key].label = incoming.label || map[key].label;
+      map[key].displayCopy = incoming.copy || incoming.latestTitle || map[key].displayCopy;
+      if (incoming.latestTitle && incoming.latestTitle !== '暂无记录') {
         map[key].latestTitle = summaryStats[key].latestTitle;
       }
     });
@@ -66,19 +73,25 @@ function buildModuleStats(reports, completionItems) {
     if (!map[key] || countedCompletionIds[id]) return;
     countedCompletionIds[id] = true;
     map[key].count += 1;
+    map[key].value = map[key].count;
     map[key].latestTitle = item.title || item.meta || map[key].latestTitle;
+    map[key].displayCopy = map[key].latestTitle;
   };
   (reports || []).forEach((report) => {
     (report.items || []).forEach((item) => {
       if (item.completedToday && map.listening) {
         map.listening.count += 1;
+        map.listening.value = map.listening.count;
         map.listening.latestTitle = item.title || item.categoryLabel || map.listening.latestTitle;
+        map.listening.displayCopy = map.listening.latestTitle;
       }
     });
     (report.speakingAttempts || []).forEach((item) => {
       if (map.speaking) {
         map.speaking.count += 1;
+        map.speaking.value = map.speaking.count;
         map.speaking.latestTitle = item.questionText || '录音评分';
+        map.speaking.displayCopy = map.speaking.latestTitle;
       }
     });
     (report.completionItems || []).forEach(appendCompletion);
@@ -131,7 +144,7 @@ function normalizeParentData(data) {
     todayReport: summarizeReport(data.todayReport),
     recentReports,
     completionItems,
-    moduleStats: data.moduleStats ? buildModuleStats([{ moduleStats: data.moduleStats }], []) : buildModuleStats(recentReports, completionItems),
+    moduleStats: data.todayLearningStats || data.moduleStats ? buildModuleStats([{ moduleStats: data.todayLearningStats || data.moduleStats }], []) : buildModuleStats(recentReports.slice(0, 1), completionItems),
     studentLinks,
     selectedStudentIndex,
     studentNames: studentLinks.map((item) => item.nickname || item.childLoginCode || '学生')
@@ -157,7 +170,9 @@ Page({
     moduleStats: buildModuleStats([], []),
     studentLinks: [],
     studentNames: [],
-    selectedStudentIndex: 0
+    selectedStudentIndex: 0,
+    recentExpanded: false,
+    recentLoading: false
   }),
   parentDashboardLoadSeq: 0,
   applyParentData(data) {
@@ -191,7 +206,7 @@ Page({
     this.parentDashboardLoadSeq = loadSeq;
     const snapshotId = getParentDashboardSnapshotId();
     this.applyParentSnapshot(snapshotId);
-    store.getParentDashboard({ days: 7, summaryOnly: true }, (fresh) => {
+    store.getParentDashboard({ days: 1, summaryOnly: true, statsVersion: 'today-learning-v1' }, (fresh) => {
       if (loadSeq !== this.parentDashboardLoadSeq) return;
       this.saveParentSnapshot(snapshotId, fresh);
       this.applyParentData(fresh);
@@ -213,9 +228,29 @@ Page({
       selectedStudentIndex: index,
       completionItems: [],
       moduleStats: buildModuleStats([], []),
-      recentReports: []
+      recentReports: [],
+      recentExpanded: false,
+      recentLoading: false
     });
     this.loadParentData();
+  },
+  loadRecentReports() {
+    if (this.data.recentLoading) return;
+    if (this.data.recentExpanded) {
+      this.setData({ recentExpanded: false });
+      return;
+    }
+    this.setData({ recentLoading: true });
+    store.getParentDashboard({ days: 7, summaryOnly: true, statsVersion: 'today-learning-v1' }).then((data) => {
+      const normalized = normalizeParentData(data);
+      this.setData({
+        recentReports: normalized.recentReports,
+        recentExpanded: true,
+        recentLoading: false
+      });
+    }).catch(() => {
+      this.setData({ recentLoading: false });
+    });
   },
   openDailyDetail(event) {
     const date = event.currentTarget.dataset.date;
