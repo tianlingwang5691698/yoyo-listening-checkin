@@ -11,6 +11,7 @@ const FALLBACK_LEVEL_TABS = ['Pre A1', 'A1', 'A2', 'B1', 'B2', 'C1', 'C2'].map((
   active: levelId === 'A1',
   stateText: levelId === 'C1' || levelId === 'C2' ? '未开放' : ''
 }));
+const DEFAULT_FIRST_LEVEL = 'A1';
 
 function buildLevelTabs(tabs, selectedLevel) {
   return (tabs && tabs.length ? tabs : FALLBACK_LEVEL_TABS).map((item) => Object.assign({}, item, {
@@ -136,7 +137,7 @@ Page({
       this.overviewCache[nextLevel] = cached;
       this.applyOverview(cached, nextLevel);
     }
-    if (!cached && !options.prefetch) {
+    if (!cached && !options.prefetch && !(this.data.materials || []).length) {
       this.setData({ levelLoading: true });
     }
     if (!this.overviewRequests[nextLevel]) {
@@ -171,7 +172,13 @@ Page({
     if (!page.requireIdentityConfirmed()) {
       return;
     }
-    await this.loadOverview(this.data.selectedLevel || 'A1');
+    const firstLevel = this.data.selectedLevel || DEFAULT_FIRST_LEVEL;
+    await this.loadOverview(firstLevel);
+    (this.data.levelTabs || FALLBACK_LEVEL_TABS).forEach((tab) => {
+      if (tab && tab.enabled && tab.levelId !== firstLevel) {
+        this.loadOverview(tab.levelId, { prefetch: true }).catch(() => {});
+      }
+    });
   },
   async chooseLevel(event) {
     const enabled = event.currentTarget.dataset.enabled;

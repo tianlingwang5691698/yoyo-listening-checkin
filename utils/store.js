@@ -413,13 +413,13 @@ async function getMaterialIndex(options, onRefresh) {
     writingEm2: [],
     listeningEm1: [],
     listeningEm2: []
-  }, { onRefresh: refreshHandler, useCache: false });
+  }, { onRefresh: refreshHandler });
 }
 
 async function getMaterialItem(options, onRefresh) {
   return callCloud('getMaterialItem', Object.assign({}, options || {}), {
     item: null
-  }, { onRefresh, useCache: false });
+  }, { onRefresh });
 }
 
 async function getLevelOverview(options, onRefresh) {
@@ -668,7 +668,7 @@ async function getProfileData(onRefresh) {
     currentUser: {},
     currentMember: {},
     subscriptionPreference: null
-  }, { onRefresh, useCache: false });
+  }, { onRefresh });
 }
 
 async function getHeatmap(days, onRefresh) {

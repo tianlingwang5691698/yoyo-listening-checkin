@@ -158,13 +158,22 @@ Page({
         loading: true
       });
     }
+    const hasSnapshot = !!(snapshot && snapshot.materialIndex);
     const materialIndex = await store.getMaterialIndex({ moduleId }, (freshIndex) => {
-      applyMaterialConfig(this, moduleId, freshIndex);
+      if (freshIndex && freshIndex.syncMode !== 'cloud-error') {
+        applyMaterialConfig(this, moduleId, freshIndex);
+      }
       snapshotStore.write(MATERIAL_HOME_SNAPSHOT_KEY, moduleId, { materialIndex: freshIndex }, { source: `material-${moduleId}` });
     });
-    applyMaterialConfig(this, moduleId, materialIndex, {
-      loading: false
-    });
+    if (materialIndex && materialIndex.syncMode !== 'cloud-error') {
+      applyMaterialConfig(this, moduleId, materialIndex, {
+        loading: false
+      });
+    } else if (!hasSnapshot) {
+      applyMaterialConfig(this, moduleId, materialIndex, {
+        loading: false
+      });
+    }
     if (materialIndex && materialIndex.syncMode !== 'cloud-error') {
       snapshotStore.write(MATERIAL_HOME_SNAPSHOT_KEY, moduleId, { materialIndex }, { source: `material-${moduleId}` });
     }

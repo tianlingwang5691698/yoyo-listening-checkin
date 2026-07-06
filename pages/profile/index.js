@@ -75,6 +75,7 @@ function isAdminProfile(data) {
 }
 
 Page({
+  profileSnapshotData: null,
   data: page.createCloudPageData({
     child: {},
     level: {},
@@ -94,13 +95,16 @@ Page({
     adminVisible: false
   }),
   applyProfileData(data) {
+    const profileData = Object.assign({}, data || {});
+    this.profileSnapshotData = profileData;
     if (data && data.syncMode !== 'cloud-error') {
-      snapshotStore.write(PROFILE_SNAPSHOT_KEY, 'profile', data, { source: 'profile-home' });
+      snapshotStore.write(PROFILE_SNAPSHOT_KEY, 'profile', profileData, { source: 'profile-home' });
     }
     this.setData(page.buildCloudPageData(this.data, Object.assign({}, data, {
       childNicknameInput: (data.child && data.child.nickname) || '',
       dailyEncouragement: getDailyEncouragement(),
-      adminVisible: isAdminProfile(data)
+      adminVisible: !!(data && data.isAdmin)
+        || isAdminProfile(data)
         || (data.currentMember && data.currentMember.studyRole === 'parent')
         || !!this.data.adminVisible
     }, buildProfilePresentation(data))));
@@ -128,7 +132,13 @@ Page({
   async loadAdminStatus() {
     try {
       const data = await store.getAdminStatus();
-      this.setData({ adminVisible: !!(data && data.isAdmin) || this.data.adminVisible });
+      const adminVisible = !!(data && data.isAdmin) || this.data.adminVisible;
+      this.setData({ adminVisible });
+      const profileData = Object.assign({}, this.profileSnapshotData || {}, {
+        isAdmin: !!(data && data.isAdmin)
+      });
+      this.profileSnapshotData = profileData;
+      snapshotStore.write(PROFILE_SNAPSHOT_KEY, 'profile', profileData, { source: 'profile-admin' });
     } catch (error) {
       this.setData({ adminVisible: !!this.data.adminVisible });
     }
