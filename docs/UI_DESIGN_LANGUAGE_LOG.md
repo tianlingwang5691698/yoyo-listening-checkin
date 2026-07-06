@@ -170,6 +170,24 @@
 - 每条必须写清楚：板块、文件、改动、设计记录、验证。
 - 后续改 UI 或交互前先看对应板块最近记录，再继续改。
 
+### 2026-07-06 新概念素材回答评分入口
+
+- 文件：`pages/lesson/index.js`
+- 文件：`cloudfunctions/yoyo/services/speaking.service.js`
+- 文件：`cloudfunctions/yoyo/lib/speaking-engine.js`
+- 改动：New Concept 1/2/3/4 课程文本加载后，如识别到 `Answer this/these question(s)`，显示回答问题评分入口；提交评分时带当前任务快照，云端按对应文本评分。
+- 设计记录：素材列表不强制每条录音，只有文本明确含回答问题时给学生手动选择评分。
+- 验证：已做前端和云函数脚本语法检查。
+
+### 2026-07-06 口语评分录音链路调试
+
+- 文件：`pages/lesson/index.js`
+- 文件：`pages/lesson/index.wxml`
+- 文件：`pages/lesson/index.wxss`
+- 改动：回答评分提交时在页面写出本地录音文件大小、上传目标、上传结果和云端评分返回字段。
+- 设计记录：测试期口语评分失败必须显示链路断点，方便区分开发者工具录音为空、上传失败和云端下载失败。
+- 验证：已做页面脚本语法检查。
+
 ### 2026-07-06 资料听力目录调试链路
 
 - 文件：`pages/material/index.js`

@@ -49,6 +49,24 @@ async function resolveTaskForPayload(ctx, attempt, today) {
   return tasks.find((item) => item.taskId === attempt.taskId) || tasks[0] || null;
 }
 
+function normalizeTaskSnapshot(snapshot, attempt) {
+  if (!snapshot || typeof snapshot !== 'object') {
+    return null;
+  }
+  const taskId = String(snapshot.taskId || '').trim();
+  if (taskId && taskId !== attempt.taskId) {
+    return null;
+  }
+  const category = String(snapshot.category || '').trim();
+  if (category && category !== attempt.category) {
+    return null;
+  }
+  return Object.assign({}, snapshot, {
+    category: attempt.category || category,
+    taskId: attempt.taskId || taskId
+  });
+}
+
 async function createSpeakingUploadUrl(event) {
   const { ctx, today } = await study.prepareRequestContext(Object.assign({}, event, {
     action: 'createSpeakingUploadUrl'
@@ -90,7 +108,7 @@ async function submitSpeakingAttempt(event) {
     throw new Error('家长模式不计入训练');
   }
   const scope = study.getUserScope(ctx);
-  const task = await resolveTaskForPayload(ctx, attempt, today);
+  const task = normalizeTaskSnapshot(payload.taskSnapshot, attempt) || await resolveTaskForPayload(ctx, attempt, today);
   let questionMeta = null;
   let sourceText = '';
   if (attempt.attemptType === 'nce_question_answer') {

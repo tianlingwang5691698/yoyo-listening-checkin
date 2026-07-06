@@ -259,7 +259,7 @@ function postAudio(url, headers, body) {
 
 function findQuestionFromTranscript(track) {
   const lines = Array.isArray(track && track.lines) ? track.lines : [];
-  const cueIndex = lines.findIndex((line) => /answer this question/i.test(String(line.text || '')));
+  const cueIndex = lines.findIndex((line) => /answer (?:this|these) questions?/i.test(String(line.text || '')));
   const question = lines.find((line, index) => (
     index > cueIndex && /[?？]\s*$/.test(String(line.text || '').trim())
   )) || lines.find((line) => /[?？]\s*$/.test(String(line.text || '').trim()));
@@ -278,7 +278,7 @@ function buildSourceTextFromTranscript(track) {
   return lines
     .map((line) => normalizeText(line && line.text))
     .filter(Boolean)
-    .filter((text) => !/answer this question/i.test(text))
+    .filter((text) => !/answer (?:this|these) questions?/i.test(text))
     .join('\n')
     .slice(0, 4000);
 }

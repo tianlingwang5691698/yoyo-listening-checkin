@@ -8,6 +8,7 @@ const snapshotStore = require('../../utils/snapshot');
 const LESSON_TASK_SNAPSHOT_KEY = 'lessonTaskSnapshotV1';
 const LESSON_STUDY_PACK_SNAPSHOT_KEY = 'lessonStudyPackSnapshotV1';
 const LESSON_TASK_SNAPSHOT_MAX_AGE_MS = 2 * 60 * 1000;
+const NEW_CONCEPT_CATEGORIES = ['newconcept1', 'newconcept2', 'newconcept3', 'newconcept4'];
 
 function buildCloudFileId(cloudPath) {
   const normalizedPath = String(cloudPath || '').replace(/^\/+/, '');
@@ -75,6 +76,32 @@ function buildCurrentAudio(task, playableUrl, playbackMode) {
     playbackMode: String(playbackMode || 'idle').trim(),
     taskId: String(task.taskId || '').trim()
   };
+}
+
+function isNewConceptTask(task, fallbackCategory) {
+  return NEW_CONCEPT_CATEGORIES.includes(String((task && task.category) || fallbackCategory || '').trim());
+}
+
+function hasAnswerQuestionCue(lines) {
+  return (lines || []).some((line) => /answer (?:this|these) questions?/i.test(String(line && line.text || '')));
+}
+
+function getLocalFileInfo(filePath) {
+  return new Promise((resolve) => {
+    if (!filePath || !wx.getFileInfo) {
+      resolve({ size: -1, error: filePath ? 'wx.getFileInfo unavailable' : 'missing filePath' });
+      return;
+    }
+    wx.getFileInfo({
+      filePath,
+      success: (res) => resolve({ size: Number(res.size || 0), error: '' }),
+      fail: (error) => resolve({ size: -1, error: (error && error.errMsg) || String(error || '') })
+    });
+  });
+}
+
+function buildSpeakingDebugLine(step, detail) {
+  return `DEBUG: pages/lesson.${step} -> store.${detail.storeAction} -> cloud.${detail.cloudAction} -> ${detail.field}：${detail.value}`;
 }
 
 function buildPassSteps(progress) {
@@ -352,6 +379,7 @@ Page({
     speakingScoreDetail: { visible: false, pronunciationFluencyScore: 0, contentGrammarScore: 0 },
     speakingRescoringKey: '',
     speakingCanContinue: false,
+    speakingDebugLines: [],
     pendingListenAfterSpeaking: false,
     repeatLines: [],
     repeatActiveIndex: 0,
@@ -988,9 +1016,12 @@ Page({
       this.innerAudioContext.stop();
     }
   },
-  getQuestionFromLines(lines) {
+  getQuestionFromLines(lines, options = {}) {
     const items = lines || [];
-    const cueIndex = items.findIndex((line) => /answer this question/i.test(String(line.text || '')));
+    const cueIndex = items.findIndex((line) => /answer (?:this|these) questions?/i.test(String(line.text || '')));
+    if (options.requireAnswerCue && cueIndex < 0) {
+      return '';
+    }
     const question = items.find((line, index) => index > cueIndex && /[?？]\s*$/.test(String(line.text || '').trim()))
       || items.find((line) => /[?？]\s*$/.test(String(line.text || '').trim()));
     return question ? question.text : '';
@@ -1037,15 +1068,32 @@ Page({
   async updatePassQuestion(task, progress) {
     const targetTask = task || this.data.task || {};
     const currentPass = Number((progress && progress.currentPass) || (this.data.progress && this.data.progress.currentPass) || 1);
-    if (targetTask.speakingMode !== 'nce-question-answer' || !currentPass) {
+    if (!currentPass) {
       this.setData({
         passQuestionVisible: false,
         passQuestionText: ''
       });
       return;
     }
-    const lines = await this.ensureTranscriptLoadedForSpeaking();
-    const questionText = this.getQuestionFromLines(lines);
+    const explicitQuestionMode = targetTask.speakingMode === 'nce-question-answer';
+    const lines = explicitQuestionMode ? await this.ensureTranscriptLoadedForSpeaking() : (this.data.transcriptLines || []);
+    const questionText = this.getQuestionFromLines(lines, { requireAnswerCue: !explicitQuestionMode });
+    const enabledByText = isNewConceptTask(targetTask, this.category) && questionText && hasAnswerQuestionCue(lines);
+    if (!explicitQuestionMode && !enabledByText) {
+      this.setData({
+        passQuestionVisible: false,
+        passQuestionText: ''
+      });
+      return;
+    }
+    if (!explicitQuestionMode) {
+      const nextTask = Object.assign({}, targetTask, {
+        speakingMode: 'nce-question-answer',
+        questionAnswerRequired: true
+      });
+      this.setData({ task: nextTask });
+      await this.refreshSpeakingAttempts(nextTask);
+    }
     this.setData({
       passQuestionVisible: true,
       passQuestionText: questionText || '听完问题后录音回答'
@@ -1054,15 +1102,24 @@ Page({
   async openSpeakingPanelForPass(passNumber) {
     const task = this.data.task || {};
     const lines = await this.ensureTranscriptLoadedForSpeaking();
-    if (task.speakingMode === 'nce-question-answer') {
+    const questionText = this.data.passQuestionText || this.getQuestionFromLines(lines, {
+      requireAnswerCue: task.speakingMode !== 'nce-question-answer'
+    });
+    const canQuestionAnswer = task.speakingMode === 'nce-question-answer'
+      || (isNewConceptTask(task, this.category) && questionText && hasAnswerQuestionCue(lines));
+    if (canQuestionAnswer) {
       const attemptCount = (this.data.speakingAttempts || [])
         .filter((item) => item.attemptType === 'nce_question_answer')
         .length;
+      const nextTask = task.speakingMode === 'nce-question-answer'
+        ? task
+        : Object.assign({}, task, { speakingMode: 'nce-question-answer', questionAnswerRequired: true });
       this.setData({
+        task: nextTask,
         speakingPanelVisible: true,
-        speakingMode: task.speakingMode,
+        speakingMode: 'nce-question-answer',
         speakingAttemptIndex: attemptCount + 1,
-        speakingQuestionText: this.data.passQuestionText || this.getQuestionFromLines(lines),
+        speakingQuestionText: questionText,
         speakingPromptText: '',
         speakingTempFilePath: '',
         speakingCanContinue: false,
@@ -1150,6 +1207,16 @@ Page({
     const sentenceIndex = isRepeat ? this.data.repeatActiveIndex + 1 : 0;
     this.setData({ speakingSubmitting: true });
     try {
+      const localFileInfo = await getLocalFileInfo(this.data.speakingTempFilePath);
+      const baseDebugLines = [
+        buildSpeakingDebugLine('submitSpeakingRecord', {
+          storeAction: 'uploadSpeakingAudio',
+          cloudAction: 'wx.cloud.uploadFile',
+          field: 'localFile',
+          value: `path=${this.data.speakingTempFilePath || 'missing'}, size=${localFileInfo.size}, error=${localFileInfo.error || 'none'}`
+        })
+      ];
+      this.setData({ speakingDebugLines: baseDebugLines });
       if (this.planRunType === 'preview' || !this.isStudyWriteAllowed()) {
         const upload = await store.createSpeakingUploadUrl({
           category: this.category,
@@ -1161,7 +1228,26 @@ Page({
           attemptIndex,
           sentenceIndex
         });
+        this.setData({
+          speakingDebugLines: baseDebugLines.concat([
+            buildSpeakingDebugLine('submitSpeakingRecord', {
+              storeAction: 'createSpeakingUploadUrl',
+              cloudAction: 'createSpeakingUploadUrl',
+              field: 'uploadTarget',
+              value: `cloudPath=${upload.cloudPath || 'missing'}, fileId=${upload.fileId ? 'present' : 'missing'}`
+            })
+          ])
+        });
         const fileId = await store.uploadSpeakingAudio(upload.cloudPath, this.data.speakingTempFilePath);
+        const uploadDebugLines = this.data.speakingDebugLines.concat([
+          buildSpeakingDebugLine('submitSpeakingRecord', {
+            storeAction: 'uploadSpeakingAudio',
+            cloudAction: 'wx.cloud.uploadFile',
+            field: 'uploadResult',
+            value: `fileId=${fileId ? 'present' : 'missing'}`
+          })
+        ]);
+        this.setData({ speakingDebugLines: uploadDebugLines });
         const result = await store.submitSpeakingAttempt({
           category: this.category,
           taskId: task.taskId,
@@ -1173,9 +1259,20 @@ Page({
           sentenceIndex,
           questionText: this.data.speakingQuestionText,
           promptText: isRepeat ? sentence.text : this.data.speakingQuestionText,
+          taskSnapshot: task,
           answerAudioFileId: fileId || upload.fileId,
           answerCloudPath: upload.cloudPath,
           answerDurationMs: this.data.speakingRecordDurationMs
+        });
+        this.setData({
+          speakingDebugLines: uploadDebugLines.concat([
+            buildSpeakingDebugLine('submitSpeakingRecord', {
+              storeAction: 'submitSpeakingAttempt',
+              cloudAction: 'submitSpeakingAttempt',
+              field: 'attempt',
+              value: `status=${result && result.attempt ? result.attempt.status || 'missing' : 'missing'}, scoreErrorType=${result && result.attempt ? result.attempt.scoreErrorType || 'none' : 'missing'}, scoreError=${result && result.attempt ? result.attempt.scoreError || 'none' : ((result && result.cloudError && result.cloudError.message) || 'missing')}`
+            })
+          ])
         });
         if (!result || result.cloudError || !result.attempt) {
           if (await this.finishPendingListenAfterSpeakingFailure('评分失败，按听力完成')) {
@@ -1228,7 +1325,26 @@ Page({
         attemptIndex,
         sentenceIndex
       });
+      this.setData({
+        speakingDebugLines: baseDebugLines.concat([
+          buildSpeakingDebugLine('submitSpeakingRecord', {
+            storeAction: 'createSpeakingUploadUrl',
+            cloudAction: 'createSpeakingUploadUrl',
+            field: 'uploadTarget',
+            value: `cloudPath=${upload.cloudPath || 'missing'}, fileId=${upload.fileId ? 'present' : 'missing'}`
+          })
+        ])
+      });
       const fileId = await store.uploadSpeakingAudio(upload.cloudPath, this.data.speakingTempFilePath);
+      const uploadDebugLines = this.data.speakingDebugLines.concat([
+        buildSpeakingDebugLine('submitSpeakingRecord', {
+          storeAction: 'uploadSpeakingAudio',
+          cloudAction: 'wx.cloud.uploadFile',
+          field: 'uploadResult',
+          value: `fileId=${fileId ? 'present' : 'missing'}`
+        })
+      ]);
+      this.setData({ speakingDebugLines: uploadDebugLines });
       const result = await store.submitSpeakingAttempt({
         category: this.category,
         taskId: task.taskId,
@@ -1240,9 +1356,20 @@ Page({
         sentenceIndex,
         questionText: this.data.speakingQuestionText,
         promptText: isRepeat ? sentence.text : this.data.speakingQuestionText,
+        taskSnapshot: task,
         answerAudioFileId: fileId || upload.fileId,
         answerCloudPath: upload.cloudPath,
         answerDurationMs: this.data.speakingRecordDurationMs
+      });
+      this.setData({
+        speakingDebugLines: uploadDebugLines.concat([
+          buildSpeakingDebugLine('submitSpeakingRecord', {
+            storeAction: 'submitSpeakingAttempt',
+            cloudAction: 'submitSpeakingAttempt',
+            field: 'attempt',
+            value: `status=${result && result.attempt ? result.attempt.status || 'missing' : 'missing'}, scoreErrorType=${result && result.attempt ? result.attempt.scoreErrorType || 'none' : 'missing'}, scoreError=${result && result.attempt ? result.attempt.scoreError || 'none' : ((result && result.cloudError && result.cloudError.message) || 'missing')}`
+          })
+        ])
       });
       if (!result || result.cloudError || !result.attempt) {
         if (await this.finishPendingListenAfterSpeakingFailure('评分失败，按听力完成')) {

@@ -990,6 +990,20 @@
   font-size: 24rpx;
 }
 
+.speaking-debug {
+  padding: 16rpx;
+  border: 1rpx dashed rgba(144, 91, 45, 0.35);
+  border-radius: 14rpx;
+  background: rgba(255, 250, 242, 0.92);
+}
+
+.speaking-debug-line {
+  color: var(--accent-deep);
+  font-size: 22rpx;
+  line-height: 1.5;
+  word-break: break-all;
+}
+
 .record-status.is-recording {
   background: rgba(246, 82, 82, 0.12);
   color: #c73333;

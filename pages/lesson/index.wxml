@@ -275,6 +275,9 @@
     <view class="record-status {{speakingRecording ? 'is-recording' : (speakingTempFilePath ? 'is-ready' : '')}}">
       {{speakingSubmitting ? '录音已结束，正在自动评分' : (speakingRecording ? '正在录音，答完后点停止' : (speakingTempFilePath ? ('已录制 ' + speakingRecordDurationText) : '点开始录音，结束后自动评分'))}}
     </view>
+    <view class="speaking-debug" wx:if="{{speakingDebugLines.length}}">
+      <view class="speaking-debug-line" wx:for="{{speakingDebugLines}}" wx:key="*this">{{item}}</view>
+    </view>
 
     <view class="score-board" wx:if="{{speakingSummary.scoredCount}}">
       <view class="score-item">
