@@ -1971,6 +1971,17 @@
 - 设计记录：学生列表表达学生账号，绑定关系表达家长身份，两种角色可并存。
 - 验证：已做云函数脚本语法检查。
 
+### 2026-07-06 听力学习包超时提示
+
+- 文件：`pages/lesson/index.js`
+- 文件：`pages/material/detail/index.js`
+- 文件：`domain/cloud/index.js`
+- 文件：`cloudfunctions/yoyo/services/listening.service.js`
+- 文件：`cloudbaserc.json`
+- 改动：学习包未拿到卡片时不再提示生成成功；前端和云函数生成链路最长等待 180 秒。
+- 设计记录：学习包生成结果必须以实际卡片为准，允许慢生成，但不能把失败说成成功。
+- 验证：已做页面和云函数脚本语法检查。
+
 ## 后续记录格式
 
 每次 UI/交互改动后追加：

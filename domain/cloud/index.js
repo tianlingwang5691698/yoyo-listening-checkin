@@ -104,7 +104,7 @@ async function callYoyo(action, payload) {
   try {
     let timeoutMs = 12000;
     if (action === 'getReadingStudyPack' || action === 'getListeningStudyPack' || action === 'gradeWritingAttempt') {
-      timeoutMs = 120000;
+      timeoutMs = 180000;
     } else if (action === 'submitSpeakingAttempt' || action === 'evaluateSpeakingPronunciation' || action === 'submitReadingAttempt' || action === 'explainGrammarQuestion') {
       timeoutMs = 70000;
     } else if (action === 'synthesizeReadingAudio' || action === 'getGrammarTopic' || action === 'addDictionaryBook') {

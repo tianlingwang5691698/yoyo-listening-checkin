@@ -169,7 +169,7 @@ async function buildStudyPackWithModel(item) {
         { role: 'user', content: prompt }
       ],
       temperature: 0.2
-    }, 110000);
+    }, 150000);
     const studyPack = normalizeStudyPack(Object.assign({}, parseJsonText(extractMessageText(response)) || {}, {
       source: `model:${model}`
     }));

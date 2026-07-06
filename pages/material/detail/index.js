@@ -64,7 +64,7 @@ function hasListeningStudyCards(studyPack) {
 function getListeningStudyError(result) {
   const message = result && result.cloudError && result.cloudError.message;
   if (message) {
-    return `生成成功但本次返回异常：${message}`;
+    return `生成超时，未拿到学习包，请稍后重试：${message}`;
   }
   return '生成失败，稍后重试。';
 }

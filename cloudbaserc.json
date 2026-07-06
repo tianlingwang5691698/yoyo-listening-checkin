@@ -1,0 +1,13 @@
+{
+  "version": "2.0",
+  "envId": "youshengenglish-6glk12rd6c6e719b",
+  "functionRoot": "./cloudfunctions",
+  "functions": [
+    {
+      "name": "yoyo",
+      "timeout": 180,
+      "memorySize": 512,
+      "runtime": "Nodejs16.13"
+    }
+  ]
+}
