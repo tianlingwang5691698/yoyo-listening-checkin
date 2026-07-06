@@ -505,15 +505,20 @@ async function saveFlashcardAudio(event) {
 async function addDictionaryWord(event) {
   const payload = (event && event.payload) || {};
   const { ctx, today } = await study.prepareRequestContext(Object.assign({}, event, { action: 'addDictionaryWord' }));
-  const word = normalizeText(payload.word || payload.text);
-  if (!word) return { saved: false };
+  const type = normalizeType(payload.type || (payload.pattern ? 'pattern' : (payload.phrase ? 'phrase' : 'word')));
+  const text = cardText(payload, type);
+  if (!text) return { saved: false };
   const definitions = Array.isArray(payload.definitions) ? payload.definitions : [];
+  const sourceType = normalizeText(payload.sourceType) || 'dictionary';
   const record = makeFlashcard(ctx, today, {
-    sourceType: 'dictionary',
-    sourceId: word.toLowerCase(),
-    title: '项目词典'
-  }, 'word', {
-    word,
+    sourceType,
+    sourceId: normalizeText(payload.sourceId) || (sourceType === 'dictionary' ? text.toLowerCase() : ''),
+    title: normalizeText(payload.sourceTitle || payload.title) || (sourceType === 'dictionary' ? '项目词典' : '')
+  }, type, {
+    word: type === 'word' ? text : '',
+    phrase: type === 'phrase' ? text : '',
+    text,
+    pattern: type === 'pattern' ? text : '',
     phonetic: payload.phonetic || '',
     meaning: payload.meaning || definitions.join('；'),
     example: payload.example || '',
@@ -534,8 +539,12 @@ async function addDictionaryWord(event) {
   if (current && current._id) {
     await dbAdapter.collection(COLLECTION).doc(current._id).update({
       data: {
+        sourceTitle: data.sourceTitle || current.sourceTitle || '',
+        sourceId: data.sourceId || current.sourceId || '',
         phonetic: data.phonetic || current.phonetic || '',
         meaning: data.meaning || current.meaning || '',
+        example: data.example || current.example || '',
+        exampleMeaning: data.exampleMeaning || current.exampleMeaning || '',
         audioFileId: data.audioFileId || current.audioFileId || '',
         audioCloudPath: data.audioCloudPath || current.audioCloudPath || '',
         updatedAt: data.updatedAt

@@ -1,7 +1,6 @@
 const study = require('../facades/study.facade');
 const dbAdapter = require('../adapters/db.adapter');
 const storageAdapter = require('../adapters/storage.adapter');
-const flashcards = require('./flashcard.service');
 const completion = require('./completion.service');
 const speakingEngine = require('../lib/speaking-engine');
 const crypto = require('crypto');
@@ -1436,11 +1435,6 @@ async function getReadingStudyPack(event) {
   }
   if (cached && hasStudyPackSection(cached, section, passage)) {
     const studyPack = normalizeStudyPack(cached, passage);
-    await flashcards.upsertStudyPackFlashcards(ctx, today, {
-      sourceType: 'reading',
-      sourceId: passage._id,
-      title: passage.title || ''
-    }, studyPack);
     return {
       passageId: passage._id,
       section,
@@ -1450,11 +1444,6 @@ async function getReadingStudyPack(event) {
   const generatedPack = await buildLearningPackWithModel(passage, section);
   const studyPack = mergeStudyPacks(cached, generatedPack, passage);
   await saveStudyPack(passage, studyPack);
-  await flashcards.upsertStudyPackFlashcards(ctx, today, {
-    sourceType: 'reading',
-    sourceId: passage._id,
-    title: passage.title || ''
-  }, studyPack);
   return {
     passageId: passage._id,
     section,

@@ -24,12 +24,12 @@
   <view class="speaking-card card">
     <view class="prompt-label">问题</view>
     <view class="prompt-text">{{activeExercise.prompt}}</view>
-    <button class="listen-button" bindtap="playQuestion">{{questionLoading ? '准备播放' : (questionPlaying ? '停止播放' : '听问题')}}</button>
+    <button class="listen-button" hover-class="is-pressed" hover-start-time="20" hover-stay-time="180" bindtap="playQuestion">{{questionLoading ? '准备播放' : (questionPlaying ? '停止播放' : '听问题')}}</button>
     <view class="record-line {{recording ? 'is-recording' : (tempFilePath ? 'is-ready' : '')}}">
       {{submitting ? '松手了，正在评分' : (recording ? '正在回答，松手提交' : (tempFilePath ? ('已录制 ' + recordDurationText) : '按住下方按钮回答'))}}
     </view>
     <view class="record-actions">
-      <button class="hold-button {{recording ? 'is-recording' : ''}} {{submitting ? 'is-disabled' : ''}}" bindtouchstart="holdToRecordStart" bindtouchend="holdToRecordEnd" bindtouchcancel="holdToRecordEnd">
+      <button class="hold-button {{recording ? 'is-recording' : ''}} {{submitting ? 'is-disabled' : ''}}" hover-class="is-pressed" hover-start-time="20" hover-stay-time="180" bindtouchstart="holdToRecordStart" bindtouchend="holdToRecordEnd" bindtouchcancel="holdToRecordEnd">
         {{recording ? '松手评分' : (submitting ? '评分中' : '按住回答')}}
       </button>
     </view>

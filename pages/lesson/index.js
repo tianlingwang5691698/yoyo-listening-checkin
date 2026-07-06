@@ -2192,13 +2192,22 @@ Page({
     const type = String(event.currentTarget.dataset.type || 'word');
     const text = String(event.currentTarget.dataset.text || event.currentTarget.dataset.word || '').trim();
     if (!text || this.data.dictionaryAdding) return;
-    const cards = type === 'phrase' ? this.data.lessonPhraseCards : this.data.lessonVocabularyCards;
-    const card = (cards || []).find((item) => (item.word || item.text || item.phrase) === text) || { word: text, text };
+    const cards = type === 'phrase'
+      ? this.data.lessonPhraseCards
+      : (type === 'pattern' ? this.data.lessonPatternCards : this.data.lessonVocabularyCards);
+    const card = (cards || []).find((item) => (item.word || item.text || item.phrase || item.pattern) === text) || { word: text, text, pattern: text };
+    const task = this.data.task || {};
     this.setData({ dictionaryAdding: true });
     try {
       const result = await store.addDictionaryWord(Object.assign({}, card, {
-        word: card.word || card.text || text,
-        text
+        type,
+        word: type === 'word' ? (card.word || card.text || text) : '',
+        phrase: type === 'phrase' ? (card.text || card.phrase || text) : '',
+        text,
+        pattern: type === 'pattern' ? (card.pattern || text) : '',
+        sourceType: 'listening',
+        sourceId: task.taskId || this.taskId || '',
+        sourceTitle: task.title || task.displayTitle || ''
       }));
       const key = result && result.flashcardKey ? result.flashcardKey : (card.flashcardKey || `${type}:${text}`);
       this.setData({

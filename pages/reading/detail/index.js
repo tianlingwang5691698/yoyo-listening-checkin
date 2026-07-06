@@ -896,7 +896,8 @@ Page({
     dictionaryLoading: false,
     dictionaryAudioLoading: false,
     dictionaryWord: '',
-    dictionaryEntry: null
+    dictionaryEntry: null,
+    studyDictionaryAddedMap: {}
   }),
   onUnload() {
     if (this.readingAudioContext) {
@@ -1234,6 +1235,41 @@ Page({
     this.setData({ dictionaryAdding: true });
     try {
       await store.addDictionaryWord(Object.assign({}, entry, { word }));
+      wx.showToast({ title: '已加入词库', icon: 'none' });
+    } catch (error) {
+      wx.showToast({ title: '加入失败', icon: 'none' });
+    } finally {
+      this.setData({ dictionaryAdding: false });
+    }
+  },
+  getReadingStudyCard(type, text) {
+    const list = type === 'phrase'
+      ? this.data.phraseCards
+      : (type === 'pattern' ? this.data.sentencePatternCards : this.data.wordCards);
+    return (list || []).find((item) => String(item.word || item.text || item.phrase || item.pattern || '') === text) || null;
+  },
+  async addStudyCardToLibrary(event) {
+    const type = String(event.currentTarget.dataset.type || 'word');
+    const text = String(event.currentTarget.dataset.text || event.currentTarget.dataset.word || '').trim();
+    if (!text || this.data.dictionaryAdding) return;
+    const card = this.getReadingStudyCard(type, text) || { word: text, text, pattern: text };
+    const passage = this.data.passage || {};
+    this.setData({ dictionaryAdding: true });
+    try {
+      const result = await store.addDictionaryWord(Object.assign({}, card, {
+        type,
+        word: type === 'word' ? (card.word || text) : '',
+        phrase: type === 'phrase' ? (card.text || card.phrase || text) : '',
+        text,
+        pattern: type === 'pattern' ? (card.pattern || text) : '',
+        sourceType: 'reading',
+        sourceId: passage._id || this.data.passageId || '',
+        sourceTitle: passage.title || ''
+      }));
+      const key = result && result.flashcardKey ? result.flashcardKey : `${type}:${text}`;
+      this.setData({
+        studyDictionaryAddedMap: Object.assign({}, this.data.studyDictionaryAddedMap || {}, { [key]: true, [text]: true })
+      });
       wx.showToast({ title: '已加入词库', icon: 'none' });
     } catch (error) {
       wx.showToast({ title: '加入失败', icon: 'none' });

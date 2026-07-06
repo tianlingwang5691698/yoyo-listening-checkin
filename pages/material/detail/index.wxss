@@ -263,10 +263,26 @@
   background: var(--surface-subtle);
 }
 
+.study-item-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16rpx;
+}
+
 .study-title {
   color: var(--text-strong);
   font-size: var(--font-body-size);
   font-weight: var(--font-title-weight);
+  min-width: 0;
+  word-break: break-word;
+}
+
+.study-add {
+  flex: 0 0 auto;
+  min-width: 104rpx;
+  min-height: 50rpx;
+  font-size: 22rpx;
 }
 
 .study-meaning,

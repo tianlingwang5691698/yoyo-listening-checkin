@@ -171,11 +171,11 @@
       <view class="flashcard-actions">
         <block wx:if="{{cardRevealed}}">
           <button class="choice-action placeholder" disabled="{{true}}"></button>
-          <button class="choice-action strong {{audioLoading || audioPlaying ? 'is-disabled' : ''}}" disabled="{{audioLoading || audioPlaying}}" bindtap="commitCurrentCard">下一个</button>
+          <button class="choice-action strong {{audioLoading || audioPlaying ? 'is-disabled' : ''}}" disabled="{{audioLoading || audioPlaying}}" hover-class="is-pressed" hover-start-time="20" hover-stay-time="180" bindtap="commitCurrentCard">下一个</button>
         </block>
         <block wx:else>
-          <button class="choice-action weak" bindtap="markUnfamiliar">不认识</button>
-          <button class="choice-action strong" bindtap="markRemembered">我认识</button>
+          <button class="choice-action weak" hover-class="is-pressed" hover-start-time="20" hover-stay-time="180" bindtap="markUnfamiliar">不认识</button>
+          <button class="choice-action strong" hover-class="is-pressed" hover-start-time="20" hover-stay-time="180" bindtap="markRemembered">我认识</button>
         </block>
       </view>
     </view>

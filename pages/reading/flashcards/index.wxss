@@ -968,6 +968,14 @@
   font-weight: var(--font-title-weight);
   line-height: 88rpx;
   box-shadow: none;
+  transition: transform 0.22s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.22s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.18s ease, background-color 0.18s ease;
+  will-change: transform;
+}
+
+.choice-action:active,
+.choice-action.is-pressed {
+  transform: translateY(1rpx) scale(0.992);
+  opacity: 0.96;
 }
 
 .choice-action.weak {

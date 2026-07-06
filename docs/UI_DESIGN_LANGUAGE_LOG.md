@@ -2307,6 +2307,40 @@
 - 设计记录：听力练习顺序必须是先完成答题提交，再进入答案和文本学习，避免学生先看材料。
 - 验证：已做页面脚本语法检查和 diff 空白检查。
 
+### 2026-07-07 学习包手动加入词库
+
+- 文件：`cloudfunctions/yoyo/services/listening.service.js`
+- 文件：`cloudfunctions/yoyo/services/reading.service.js`
+- 文件：`cloudfunctions/yoyo/services/flashcard.service.js`
+- 文件：`pages/material/detail/index.js`
+- 文件：`pages/material/detail/index.wxml`
+- 文件：`pages/material/detail/index.wxss`
+- 文件：`pages/reading/detail/index.js`
+- 文件：`pages/reading/detail/index.wxml`
+- 文件：`pages/lesson/index.js`
+- 文件：`pages/lesson/index.wxml`
+- 改动：学习包生成只展示，不自动写入词库；学生可逐条把单词、短语、句型加入我的词库。
+- 设计记录：我的词库必须来自学生明确选择，学习包内容不默认进入。
+- 验证：已做相关页面和云函数脚本语法检查、diff 空白检查。
+
+### 2026-07-07 口语按键轻柔反馈
+
+- 文件：`pages/speaking/index.wxml`
+- 文件：`pages/speaking/index.wxss`
+- 文件：`pages/lesson/index.wxml`
+- 文件：`pages/lesson/index.wxss`
+- 改动：口语听问题、按住回答、开始/停止录音、播放录音和播放建议统一使用轻柔按压反馈。
+- 设计记录：口语录音和回放属于高频动作，按压反馈必须与全局按钮一致，轻微下沉、柔和回弹。
+- 验证：已做口语和课程页脚本语法检查、diff 空白检查。
+
+### 2026-07-07 词汇背诵按键轻柔反馈
+
+- 文件：`pages/reading/flashcards/index.wxml`
+- 文件：`pages/reading/flashcards/index.wxss`
+- 改动：背诵态“不认识 / 我认识 / 下一个”显式使用全局轻柔按压反馈。
+- 设计记录：背诵选择是高频动作，反馈必须轻微下沉、柔和回弹，避免快速闪烁。
+- 验证：已做词汇页脚本语法检查、diff 空白检查。
+
 ## 后续记录格式
 
 每次 UI/交互改动后追加：

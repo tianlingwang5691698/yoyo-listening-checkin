@@ -512,7 +512,7 @@ async function getListeningStudyPack(item, options, onRefresh) {
     item,
     cacheOnly: !!opts.cacheOnly
   };
-  return callCloud('getListeningStudyPack', payload, {
+  return callCloud('getListeningStudyPack', withSelectedStudent(payload), {
     listeningId: payload.listeningId || '',
     studyPack: {
       vocabularyCards: [],
@@ -722,7 +722,7 @@ async function getParentDashboard(options, onRefresh) {
 }
 
 async function getReadingHome(options, onRefresh) {
-  return callCloud('getReadingHome', Object.assign({}, options || {}), {
+  return callCloud('getReadingHome', withSelectedStudent(Object.assign({}, options || {})), {
     today: '',
     dailyCount: 0,
     passage: null,
@@ -737,7 +737,7 @@ async function getReadingHome(options, onRefresh) {
 }
 
 async function getReadingPassage(options, onRefresh) {
-  return callCloud('getReadingPassage', Object.assign({}, options || {}), {
+  return callCloud('getReadingPassage', withSelectedStudent(Object.assign({}, options || {})), {
     today: '',
     passage: null,
     latestAttempt: null
@@ -748,7 +748,7 @@ async function getReadingStudyPack(options, onRefresh) {
   const opts = Object.assign({}, options || {});
   const useCache = opts.useCache !== false;
   delete opts.useCache;
-  return callCloud('getReadingStudyPack', opts, {
+  return callCloud('getReadingStudyPack', withSelectedStudent(opts), {
     passageId: '',
     studyPack: null
   }, { onRefresh, useCache });
@@ -787,7 +787,7 @@ async function lookupWord(word) {
 }
 
 async function addDictionaryWord(entry) {
-  return callCloud('addDictionaryWord', entry || {}, { saved: false }, { useCache: false });
+  return callCloud('addDictionaryWord', withSelectedStudent(entry || {}), { saved: false }, { useCache: false });
 }
 
 async function submitReadingAttempt(options) {

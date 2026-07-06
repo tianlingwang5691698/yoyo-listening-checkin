@@ -92,7 +92,10 @@
     </view>
     <view class="study-list" wx:if="{{submitted && studyPack && activeStudyTab === 'vocabulary'}}">
       <view class="study-item" wx:for="{{vocabularyCards}}" wx:key="word">
-        <view class="study-title">{{item.word}}</view>
+        <view class="study-item-head">
+          <view class="study-title">{{item.word}}</view>
+          <button class="mini-button study-add" data-type="word" data-text="{{item.word}}" bindtap="addStudyCardToLibrary">{{studyDictionaryAddedMap[item.flashcardKey] || studyDictionaryAddedMap[item.word] ? '已加入' : '加入'}}</button>
+        </view>
         <view class="study-meaning">{{item.meaning}}</view>
         <view class="study-example" wx:if="{{item.example}}">{{item.example}}</view>
         <view class="study-example-meaning" wx:if="{{item.exampleMeaning}}">{{item.exampleMeaning}}</view>
@@ -100,14 +103,20 @@
     </view>
     <view class="study-list" wx:elif="{{submitted && studyPack && activeStudyTab === 'phrases'}}">
       <view class="study-item" wx:for="{{phraseCards}}" wx:key="text">
-        <view class="study-title">{{item.text}}</view>
+        <view class="study-item-head">
+          <view class="study-title">{{item.text}}</view>
+          <button class="mini-button study-add" data-type="phrase" data-text="{{item.text}}" bindtap="addStudyCardToLibrary">{{studyDictionaryAddedMap[item.flashcardKey] || studyDictionaryAddedMap[item.text] ? '已加入' : '加入'}}</button>
+        </view>
         <view class="study-meaning">{{item.meaning}}</view>
         <view class="study-example" wx:if="{{item.example}}">{{item.example}}</view>
       </view>
     </view>
     <view class="study-list" wx:elif="{{submitted && studyPack}}">
       <view class="study-item" wx:for="{{sentencePatternCards}}" wx:key="pattern">
-        <view class="study-title">{{item.pattern}}</view>
+        <view class="study-item-head">
+          <view class="study-title">{{item.pattern}}</view>
+          <button class="mini-button study-add" data-type="pattern" data-text="{{item.pattern}}" bindtap="addStudyCardToLibrary">{{studyDictionaryAddedMap[item.flashcardKey] || studyDictionaryAddedMap[item.pattern] ? '已加入' : '加入'}}</button>
+        </view>
         <view class="study-meaning">{{item.meaning}}</view>
         <view class="study-example" wx:if="{{item.example}}">{{item.example}}</view>
         <view class="study-example-meaning" wx:if="{{item.exampleMeaning}}">{{item.exampleMeaning}}</view>
