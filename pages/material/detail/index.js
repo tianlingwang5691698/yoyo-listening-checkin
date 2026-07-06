@@ -112,6 +112,10 @@ function buildAnswerSummary(item) {
     .join('  ');
 }
 
+function getAudioSource(item) {
+  return item && (item.audioCloudPath || item.audioFileId || item.audioUrl || '');
+}
+
 Page({
   data: page.createCloudPageData({
     item: null,
@@ -163,8 +167,9 @@ Page({
       studyCompleted,
       audioLocked: false
     });
-    if (item && item.audioCloudPath) {
-      this.prepareAudio(item.audioCloudPath);
+    const audioSource = getAudioSource(item);
+    if (audioSource) {
+      this.prepareAudio(audioSource);
     }
     if (item && item.images && item.images.length) {
       this.prepareImages(item.images);
@@ -305,8 +310,9 @@ Page({
         questions: buildQuestions(fullItem),
         answerSummary: buildAnswerSummary(fullItem)
       });
-      if (fullItem.audioCloudPath && !this.data.audioSrc && !this.data.audioLoading) {
-        this.prepareAudio(fullItem.audioCloudPath);
+      const audioSource = getAudioSource(fullItem);
+      if (audioSource && !this.data.audioSrc && !this.data.audioLoading) {
+        this.prepareAudio(audioSource);
       }
       if (fullItem.images && fullItem.images.length) {
         this.prepareImages(fullItem.images);

@@ -31,7 +31,10 @@ function slimMaterialItem(item) {
     district: item && item.district,
     examType: item && item.examType,
     stage: item && item.stage,
+    audioUrl: item && item.audioUrl,
     audioCloudPath: item && item.audioCloudPath,
+    audioFileId: item && item.audioFileId,
+    audioSource: item && item.audioSource,
     hasAudio: !!(item && item.hasAudio),
     hasTranscript: !!(item && item.hasTranscript)
   };

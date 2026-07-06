@@ -43,7 +43,9 @@ function groupByDistrict(items) {
       };
     }
     map[district].count += 1;
-    map[district].items.push(item);
+    map[district].items.push(Object.assign({}, item, {
+      stableId: item && (item._id || item.id || `${district}:${map[district].count}`)
+    }));
   });
   return Object.keys(map).sort().map((key) => map[key]);
 }
@@ -276,7 +278,7 @@ Page({
   },
   async openItem(event) {
     const itemId = event.currentTarget.dataset.itemId || '';
-    const item = (this.data.items || []).find((row) => row._id === itemId);
+    const item = (this.data.items || []).find((row) => String(row._id || row.id || '') === String(itemId));
     if (this.data.moduleId === 'listening') {
       if (item) {
         wx.setStorageSync('currentListeningSetV1', item);
@@ -291,7 +293,7 @@ Page({
       wx.setStorageSync('currentWritingPromptV1', item);
       snapshotStore.write(WRITING_PROMPT_SNAPSHOT_KEY, item._id || item.id || '', { prompt: item }, { source: 'material-writing' });
       wx.navigateTo({
-        url: `/pages/writing/detail/index?id=${encodeURIComponent(item._id || '')}`
+        url: `/pages/writing/detail/index?id=${encodeURIComponent(item._id || item.id || '')}`
       });
       return;
     }
