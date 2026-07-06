@@ -22,6 +22,16 @@ function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
+function getSpeakingHttpTimeoutMs() {
+  const value = Number(process.env.SPEAKING_MODEL_HTTP_TIMEOUT_MS || 12000);
+  return Math.max(5000, Math.min(22000, Number.isFinite(value) ? value : 12000));
+}
+
+function getSpeakingRetryCount() {
+  const value = Number(process.env.SPEAKING_MODEL_RETRY_COUNT || 1);
+  return Math.max(1, Math.min(3, Number.isFinite(value) ? value : 1));
+}
+
 function clampScore(value, fallback) {
   const score = Number(value);
   if (!Number.isFinite(score)) {
@@ -50,7 +60,7 @@ function postJson(url, headers, body) {
         'content-type': 'application/json',
         'content-length': Buffer.byteLength(payload)
       }),
-      timeout: 22000
+      timeout: getSpeakingHttpTimeoutMs()
     }, (response) => {
       let text = '';
       response.setEncoding('utf8');
@@ -113,12 +123,13 @@ function parseJsonResponseBody(text) {
 
 async function postJsonWithRetry(url, headers, body, label) {
   let lastError = null;
-  for (let attempt = 1; attempt <= 3; attempt += 1) {
+  const maxAttempts = getSpeakingRetryCount();
+  for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
     try {
       return await postJson(url, headers, body);
     } catch (error) {
       lastError = error;
-      if (!isRetryableScoreError(error) || attempt === 3) {
+      if (!isRetryableScoreError(error) || attempt === maxAttempts) {
         break;
       }
       console.warn('[speaking-score-retry]', JSON.stringify({
@@ -173,7 +184,7 @@ function postMultipart(url, headers, fields, file) {
         'content-type': `multipart/form-data; boundary=${boundary}`,
         'content-length': payload.length
       }),
-      timeout: 22000
+      timeout: getSpeakingHttpTimeoutMs()
     }, (response) => {
       let text = '';
       response.setEncoding('utf8');
@@ -214,6 +225,9 @@ function getSpeakingErrorType(error) {
   const message = String(error && error.message || error || '');
   if (/storage|downloadFile|fileID|cloudPath|ENOENT|not\s*found/i.test(message)) {
     return 'audio-download';
+  }
+  if (/audio data empty|empty audio|empty-transcript|no speech|silence/i.test(message)) {
+    return 'audio-transcript';
   }
   if (/transcribe-http|score-http|429|upstream|负载|timeout|ECONNRESET|ETIMEDOUT/i.test(message)) {
     return 'model-busy';
@@ -1113,27 +1127,15 @@ function parseContentScoreData(data) {
   };
 }
 
-function buildContentFallbackFromTranscript(payload, transcript, audioScore) {
-  const answer = normalizeText(transcript);
-  const question = normalizeText(payload.promptText || payload.questionText);
-  const contentScore = answer ? Math.max(60, Math.min(88, Math.round(72 + (answer.length % 12)))) : 45;
-  return {
-    score: Math.max(0, Math.min(100, Math.round((contentScore * 0.8) + (audioScore * 0.2)))),
-    pronunciationFluencyScore: Math.round(audioScore),
-    contentGrammarScore: contentScore,
-    transcript: answer,
-    feedback: buildTemplateFeedback(payload.attemptType, payload.attemptIndex, question),
-    status: 'scored-local'
-  };
-}
-
 async function scoreSpeakingAttempt(payload) {
   const endpoint = String(process.env.SPEAKING_SCORE_ENDPOINT || '').trim();
   const transcribeEndpoint = normalizeTranscribeEndpoint(process.env.SPEAKING_TRANSCRIBE_ENDPOINT || inferTranscribeEndpoint(endpoint)).trim();
   const apiKey = String(process.env.SPEAKING_SCORE_API_KEY || '').trim();
   const transcribeModel = String(process.env.SPEAKING_TRANSCRIBE_MODEL || 'gpt-4o-transcribe').trim();
   const contentModel = getEnvValue(['SPEAKING_CONTENT_SCORE_MODEL', 'SPEAKING_CONTENT_SCORE_MODE', 'SPEAKING_SCORE_PREFERRED_MODEL']) || 'doubao-seed-2-1-pro-260628';
-  const fallbackContentModel = getEnvValue(['SPEAKING_SCORE_FALLBACK_MODEL', 'SPEAKING_SCORE_FALLBACK_MODE', 'SPEAKING_CONTENT_SCORE_FALLBACK_MODEL', 'SPEAKING_CONTENT_SCORE_FALLBACK_MODE']);
+  const fallbackContentModel = String(process.env.SPEAKING_CONTENT_ALLOW_FALLBACK || '').trim() === '1'
+    ? getEnvValue(['SPEAKING_SCORE_FALLBACK_MODEL', 'SPEAKING_SCORE_FALLBACK_MODE', 'SPEAKING_CONTENT_SCORE_FALLBACK_MODEL', 'SPEAKING_CONTENT_SCORE_FALLBACK_MODE'])
+    : '';
   const audioTranscribeModels = [
     process.env.SPEAKING_AUDIO_TRANSCRIBE_MODEL
   ]
@@ -1143,15 +1145,14 @@ async function scoreSpeakingAttempt(payload) {
   const chatAudioTranscribeModels = audioTranscribeModels.filter(isChatAudioTranscribeModel);
   const standardAudioTranscribeModels = audioTranscribeModels.filter((model) => !isChatAudioTranscribeModel(model) && !isTencentAsrModel(model));
   const transcribeProvider = String(process.env.SPEAKING_TRANSCRIBE_PROVIDER || '').trim();
-  const tencentAsrModels = (
-    transcribeProvider === 'tencent-asr'
-    || String(process.env.TENCENT_ASR_ENABLED || '').trim() === '1'
-    || audioTranscribeModels.some(isTencentAsrModel)
-  ) ? ['tencent-asr'] : [];
+  const tencentAsrModels = transcribeProvider === 'tencent-asr' ? ['tencent-asr'] : [];
   const allowTencentAsrFallback = String(process.env.TENCENT_ASR_ALLOW_FALLBACK || '').trim() === '1';
+  const allowTranscribeFallback = String(process.env.SPEAKING_TRANSCRIBE_ALLOW_FALLBACK || '').trim() === '1';
   const transcribeModels = transcribeProvider === 'tencent-asr' && !allowTencentAsrFallback
     ? ['tencent-asr']
-    : Array.from(new Set(tencentAsrModels.concat(chatAudioTranscribeModels, standardAudioTranscribeModels, [transcribeModel]).filter(Boolean)));
+    : (allowTranscribeFallback
+      ? Array.from(new Set(tencentAsrModels.concat(chatAudioTranscribeModels, standardAudioTranscribeModels, [transcribeModel]).filter(Boolean)))
+      : [transcribeModel].filter(Boolean));
   if (!endpoint || !transcribeEndpoint) {
     return {
       score: 0,
@@ -1338,11 +1339,16 @@ async function scoreSpeakingAttempt(payload) {
     const looseParsed = contentParsed.looseParsed;
     const rawContentScore = contentParsed.rawContentScore;
     if (!Number.isFinite(rawContentScore) || rawContentScore <= 0) {
-      const fallback = buildContentFallbackFromTranscript(payload, transcript, Number(pronunciationScore || estimateFluencyScore(transcript)));
-      return Object.assign({}, fallback, {
+      return {
+        score: 0,
+        pronunciationFluencyScore: 0,
+        contentGrammarScore: 0,
+        transcript,
+        feedback: '模型评分暂时失败，录音已保存，请重新提交评分。',
+        status: 'score-pending',
         error: 'invalid-score-json',
         errorType: 'model-output'
-      });
+      };
     }
     const expressionFallback = clampScore(parsed.expressionFluencyScore, estimateFluencyScore(transcript));
     const expressionScore = Number.isFinite(Number(pronunciationScore))

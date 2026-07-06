@@ -13,7 +13,7 @@ function normalizeAttemptPayload(payload) {
     attemptType: String(payload.attemptType || '').trim(),
     attemptIndex: Number(payload.attemptIndex || 0),
     sentenceIndex: Number(payload.sentenceIndex || 0),
-    audioFormat: String(payload.audioFormat || 'mp3').trim().replace(/[^a-z0-9]/gi, '').toLowerCase() || 'mp3',
+    audioFormat: 'mp3',
     questionText: String(payload.questionText || '').trim(),
     promptText: String(payload.promptText || '').trim(),
     answerAudioFileId: String(payload.answerAudioFileId || '').trim(),
@@ -80,7 +80,7 @@ async function createSpeakingUploadUrl(event) {
   }
   const scope = study.getUserScope(ctx);
   const now = Date.now();
-  const audioFormat = ['mp3', 'aac', 'm4a'].includes(attempt.audioFormat) ? attempt.audioFormat : 'mp3';
+  const audioFormat = 'mp3';
   const cloudPath = [
     '_speaking',
     scope.familyId,
@@ -127,7 +127,7 @@ async function submitSpeakingAttempt(event) {
   }));
   const now = new Date().toISOString();
   let feedbackAudio = null;
-  if (scoreResult.feedback && scoreResult.status === 'scored') {
+  if (scoreResult.feedback && scoreResult.status === 'scored' && String(process.env.SPEAKING_TTS_SYNC || '').trim() === '1') {
     try {
       feedbackAudio = await speakingEngine.synthesizeFeedbackAudio(scoreResult.feedback, [
         '_speaking_feedback',
