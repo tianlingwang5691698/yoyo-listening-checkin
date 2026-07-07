@@ -605,8 +605,8 @@ Page({
     }
     const confirmed = await new Promise((resolve) => {
       wx.showModal({
-        title: '需要麦克风权限',
-        content: '请在手机系统设置里允许微信使用麦克风。',
+        title: '需要本机麦克风权限',
+        content: '请在本机系统设置里允许微信使用麦克风：iPhone / 安卓手机 / Windows / macOS。',
         confirmText: '去设置',
         success: (res) => resolve(!!res.confirm),
         fail: () => resolve(false)
