@@ -116,6 +116,7 @@ services -> facades -> lib/*-engine -> repositories/adapters
 - `dailyCheckins`
 - `dailyReports`
 - `subscriptionPreferences`
+- `deviceStudySessions`
 - `unlock1AudioTrainingPool`
 
 说明：

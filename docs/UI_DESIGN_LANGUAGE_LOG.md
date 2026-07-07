@@ -144,6 +144,7 @@
 - 家长可查看绑定孩子的全部完成内容和分析。
 - 家长日报里的完成内容先显示摘要，点开后看详情。
 - 家长入口选择后隐藏“我是家长 / 我是学生”切换卡。
+- 老绑定用户如果缺少本人昵称或与孩子的关系，进入家庭页必须先补齐；保存后成员显示为“本人昵称 · 关系”。
 - 家长页首屏只拉孩子信息、今日日报和最近 7 天日报摘要；90 天完成内容、当天阅读/语法/写作、原题/解析和录音临时链接都必须按需加载。
 - 家长日报详情先展示听力/口语日报；阅读/语法/写作完成内容由用户点击后再拉，单条原题和分析继续在展开时补齐。
 
@@ -2390,6 +2391,27 @@
 - 改动：课程详情页只有学生身份且云端允许写进度时显示“训练中”；家长/预览听音频显示“试听中”，听完只轻提示“试听完成”。
 - 设计记录：家长身份听音频属于试听，不进入打卡训练态；“训练中”只用于学生打卡记录链路。
 - 验证：已做课程页和云函数脚本语法检查、身份测试、diff 空白检查。
+
+### 2026-07-07 设备级身份
+
+- 文件：`utils/store.js`
+- 文件：`cloudfunctions/yoyo/services/identity.service.js`
+- 文件：`cloudfunctions/yoyo/services/shared.service.js`
+- 文件：`cloudfunctions/yoyo/lib/request-context-engine.js`
+- 文件：`cloudfunctions/yoyo/repositories/device-session.repository.js`
+- 改动：每台设备生成隐藏 `deviceId`，云端按 `openId + deviceId + familyId + childId` 保存家长/学生身份。
+- 设计记录：同一微信多设备身份互不覆盖；学生设备进入训练与打卡，家长设备进入查看与试听。
+- 验证：已做前端/云函数脚本语法检查、身份测试、diff 空白检查。
+
+### 2026-07-07 绑定关系显示名
+
+- 文件：`pages/identity/index.wxml`
+- 文件：`pages/family/index.wxml`
+- 文件：`cloudfunctions/yoyo/services/family.service.js`
+- 文件：`cloudfunctions/yoyo/lib/family-engine.js`
+- 改动：孩子 ID 绑定显示为“绑定账号自己的学生昵称 · 和孩子关系”，并保存昵称与关系字段。
+- 设计记录：绑定列表必须同时说明“谁绑定了”和“与学生是什么关系”，避免只显示设备或单一称呼。
+- 验证：已做页面和云函数脚本语法检查、身份测试、diff 空白检查。
 
 ## 后续记录格式
 

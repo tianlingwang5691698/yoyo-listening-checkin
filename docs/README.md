@@ -78,4 +78,5 @@
   - `dailyCheckins`
   - `dailyReports`
   - `subscriptionPreferences`
+  - `deviceStudySessions`
   - `unlock1AudioTrainingPool`

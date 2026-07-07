@@ -9,6 +9,8 @@ const wordLookupCache = {};
 const CACHE_INDEX_KEY = 'yoyoCloudReadCacheKeysV3';
 const SELECTED_STUDENT_KEY = 'yoyoSelectedStudentTargetV1';
 const LAST_PARENT_STUDENT_KEY = 'yoyoLastParentStudentTargetV1';
+const DEVICE_ID_KEY = 'yoyoDeviceIdV1';
+const DEVICE_STUDY_ROLE_KEY = 'yoyoDeviceStudyRoleV1';
 const CACHE_MAX_AGE_MS = 7 * 24 * 60 * 60 * 1000;
 const RECORD_CACHE_MAX_AGE_MS = 2 * 60 * 1000;
 const LISTENING_PLAN_CACHE_MAX_AGE_MS = 10 * 60 * 1000;
@@ -37,6 +39,7 @@ const MUTATION_ACTIONS = {
   refreshInviteCode: true,
   joinFamily: true,
   joinFamilyByChildCode: true,
+  updateBindingProfile: true,
   leaveFamily: true,
   setStudyRole: true,
   undoLastListened: true,
@@ -73,6 +76,55 @@ const READ_CACHE_CONFIG = {
   getWritingAttempts: { persist: true },
   explainGrammarQuestion: { persist: false }
 };
+
+function normalizeStudyRoleValue(role) {
+  return String(role || '').trim() === 'student' ? 'student' : 'parent';
+}
+
+function makeDeviceId() {
+  return `dev_${Date.now().toString(36)}_${Math.random().toString(36).slice(2, 10)}`;
+}
+
+function getDeviceId() {
+  try {
+    let deviceId = String(wx.getStorageSync(DEVICE_ID_KEY) || '').trim();
+    if (!deviceId) {
+      deviceId = makeDeviceId();
+      wx.setStorageSync(DEVICE_ID_KEY, deviceId);
+    }
+    return deviceId;
+  } catch (error) {
+    return '';
+  }
+}
+
+function getDeviceStudyRole() {
+  try {
+    return normalizeStudyRoleValue(wx.getStorageSync(DEVICE_STUDY_ROLE_KEY) || wx.getStorageSync('lastStudyRole') || 'parent');
+  } catch (error) {
+    return 'parent';
+  }
+}
+
+function setDeviceStudyRole(studyRole) {
+  const nextRole = normalizeStudyRoleValue(studyRole);
+  try {
+    wx.setStorageSync(DEVICE_STUDY_ROLE_KEY, nextRole);
+    wx.setStorageSync('lastStudyRole', nextRole);
+  } catch (error) {}
+  return nextRole;
+}
+
+function withDeviceContext(action, payload) {
+  const next = Object.assign({}, payload || {});
+  const deviceId = String(next.deviceId || getDeviceId()).trim();
+  const deviceStudyRole = normalizeStudyRoleValue(next.deviceStudyRole || next.studyRole || getDeviceStudyRole());
+  if (deviceId) {
+    next.deviceId = deviceId;
+  }
+  next.deviceStudyRole = deviceStudyRole;
+  return next;
+}
 
 function normalizeStudentTarget(target) {
   const next = target || {};
@@ -294,7 +346,7 @@ function getCachedCloudResult(action, payload) {
 }
 
 function getCachedReadResult(action, payload) {
-  return getCachedCloudResult(action, payload || {});
+  return getCachedCloudResult(action, withDeviceContext(action, payload || {}));
 }
 
 function cacheCloudResult(action, payload, data) {
@@ -358,16 +410,17 @@ async function callCloudFresh(action, payload, defaults) {
 }
 
 async function callCloud(action, payload, defaults, options = {}) {
+  const cloudPayload = withDeviceContext(action, payload);
   if (MUTATION_ACTIONS[action]) {
     clearCloudReadCache();
   }
   const cacheVersion = cloudReadCacheVersion;
-  const cached = options.useCache === false ? null : getCachedCloudResult(action, payload);
+  const cached = options.useCache === false ? null : getCachedCloudResult(action, cloudPayload);
   if (cached) {
-    callCloudFresh(action, payload, defaults).then((fresh) => {
+    callCloudFresh(action, cloudPayload, defaults).then((fresh) => {
       if (fresh && fresh.syncMode !== 'cloud-error') {
         if (cacheVersion === cloudReadCacheVersion) {
-          cacheCloudResult(action, payload, fresh);
+          cacheCloudResult(action, cloudPayload, fresh);
         }
         if (typeof options.onRefresh === 'function') {
           options.onRefresh(fresh);
@@ -376,10 +429,10 @@ async function callCloud(action, payload, defaults, options = {}) {
     });
     return Object.assign({}, cached, { __cacheHit: true });
   }
-  const result = await callCloudFresh(action, payload, defaults);
+  const result = await callCloudFresh(action, cloudPayload, defaults);
   if (READ_CACHE_CONFIG[action]) {
     if (cacheVersion === cloudReadCacheVersion) {
-      cacheCloudResult(action, payload, result);
+      cacheCloudResult(action, cloudPayload, result);
     }
   } else if (result && result.syncMode !== 'cloud-error') {
     clearCloudReadCache();
@@ -904,6 +957,15 @@ async function joinFamilyByChildCode(childLoginCode, displayName, options = {}) 
   return data;
 }
 
+async function updateBindingProfile(selfChildNickname, relationName) {
+  const data = await callCloud('updateBindingProfile', withSelectedStudent({
+    selfChildNickname,
+    relationName
+  }), contracts.createFamilyPageDefaults());
+  syncSelectedStudentFromData(data);
+  return data;
+}
+
 async function leaveFamily() {
   const data = await callCloud('leaveFamily', withSelectedStudent({}), contracts.createFamilyPageDefaults());
   syncSelectedStudentFromData(data);
@@ -911,16 +973,17 @@ async function leaveFamily() {
 }
 
 async function setStudyRole(studyRole) {
+  const deviceStudyRole = setDeviceStudyRole(studyRole);
   if (studyRole === 'student') {
     clearSelectedStudentTarget();
     clearCloudReadCache();
-    return callCloud('setStudyRole', { studyRole, forceSelf: true }, contracts.createFamilyPageDefaults());
+    return callCloud('setStudyRole', { studyRole, deviceStudyRole, forceSelf: true }, contracts.createFamilyPageDefaults());
   }
   const lastParentTarget = getLastParentStudentTarget();
   const hasLastParentTarget = !!(lastParentTarget.targetFamilyId || lastParentTarget.targetChildId);
   const payload = hasLastParentTarget
-    ? Object.assign({ studyRole }, lastParentTarget)
-    : withSelectedStudent({ studyRole });
+    ? Object.assign({ studyRole, deviceStudyRole }, lastParentTarget)
+    : withSelectedStudent({ studyRole, deviceStudyRole });
   let data = await callCloud('setStudyRole', payload, contracts.createFamilyPageDefaults());
   syncSelectedStudentFromData(data);
   if (!hasLastParentTarget) {
@@ -1022,6 +1085,8 @@ module.exports = {
   recordStudyCompletion,
   getStudyCompletions,
   getCachedReadResult,
+  getDeviceId,
+  getDeviceStudyRole,
   getSelectedStudentTarget,
   setSelectedStudentTarget,
   setLastParentStudentTarget,
@@ -1031,6 +1096,7 @@ module.exports = {
   refreshInviteCode,
   joinFamily,
   joinFamilyByChildCode,
+  updateBindingProfile,
   leaveFamily,
   setStudyRole,
   undoLastListened,

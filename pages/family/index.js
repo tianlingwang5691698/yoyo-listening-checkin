@@ -16,6 +16,9 @@ Page({
     childCodeInput: '',
     inviteInput: '',
     joinName: '',
+    bindingNicknameInput: '',
+    bindingRelationInput: '',
+    bindingProfileRequired: false,
     studyRoleLabel: '家长',
     studyRoleActionText: '切换',
     undoingLastListened: false,
@@ -23,10 +26,14 @@ Page({
   }),
   applyFamilyState(data, extra) {
     const studentCards = this.buildStudentCards(data);
+    const bindingInputs = this.buildBindingProfileInputs(data);
     this.setData(page.buildCloudPageData(this.data, Object.assign({}, data, this.buildStudyRolePresentation((data || {}).currentMember), {
       memberCards: this.buildMemberCards((data || {}).members, (data || {}).currentMember),
       studentCards,
-      studentCountText: studentCards.length ? `已绑定 ${studentCards.length} 人` : ''
+      studentCountText: studentCards.length ? `已绑定 ${studentCards.length} 人` : '',
+      bindingProfileRequired: this.isBindingProfileRequired(data),
+      bindingNicknameInput: bindingInputs.selfChildNickname,
+      bindingRelationInput: bindingInputs.relationName
     }, extra || {})));
   },
   async onShow() {
@@ -40,6 +47,20 @@ Page({
   },
   isChildJoinRequired(data) {
     return false;
+  },
+  isBindingProfileRequired(data) {
+    const member = (data && data.currentMember) || {};
+    if (!member.memberId || member.role === 'owner') {
+      return false;
+    }
+    return !String(member.selfChildNickname || '').trim() || !String(member.relationName || '').trim();
+  },
+  buildBindingProfileInputs(data) {
+    const member = (data && data.currentMember) || {};
+    return {
+      selfChildNickname: String(member.selfChildNickname || '').trim(),
+      relationName: String(member.relationName || '').trim()
+    };
   },
   buildStudyRolePresentation(member) {
     const studyRole = member && member.studyRole === 'student' ? 'student' : 'parent';
@@ -93,6 +114,49 @@ Page({
     this.setData({
       joinName: event.detail.value
     });
+  },
+  handleBindingNicknameInput(event) {
+    this.setData({
+      bindingNicknameInput: event.detail.value
+    });
+  },
+  handleBindingRelationInput(event) {
+    this.setData({
+      bindingRelationInput: event.detail.value
+    });
+  },
+  async saveBindingProfile() {
+    const selfChildNickname = String(this.data.bindingNicknameInput || '').trim();
+    const relationName = String(this.data.bindingRelationInput || '').trim();
+    if (!selfChildNickname || ['同学', '我'].includes(selfChildNickname)) {
+      wx.showToast({
+        title: '先填写你的昵称',
+        icon: 'none'
+      });
+      return;
+    }
+    if (!relationName) {
+      wx.showToast({
+        title: '先填写和孩子的关系',
+        icon: 'none'
+      });
+      return;
+    }
+    try {
+      const data = await store.updateBindingProfile(selfChildNickname, relationName);
+      this.applyFamilyState(data, {
+        bindingProfileRequired: this.isBindingProfileRequired(data)
+      });
+      wx.showToast({
+        title: '已更新',
+        icon: 'none'
+      });
+    } catch (error) {
+      wx.showToast({
+        title: error.message || '更新失败',
+        icon: 'none'
+      });
+    }
   },
   async refreshInviteCode() {
     const data = await store.refreshInviteCode();

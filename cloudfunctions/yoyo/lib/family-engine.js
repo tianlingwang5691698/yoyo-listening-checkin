@@ -35,17 +35,27 @@ async function setExclusiveStudyRole(member, studyRole, deps) {
   });
 }
 
-async function upsertFamilyMemberForFamily(openId, userId, familyId, displayName, deps) {
+async function upsertFamilyMemberForFamily(openId, userId, familyId, displayName, options = {}, deps) {
+  if (!deps) {
+    deps = options;
+    options = {};
+  }
   const memberRecords = await deps.findMembersByOpenId(openId);
   let joinedMemberId = '';
   const existingMember = memberRecords.find((item) => item.familyId === familyId);
   const now = new Date().toISOString();
+  const bindingProfile = {
+    selfChildNickname: String(options.selfChildNickname || '').trim(),
+    relationName: String(options.relationName || '').trim()
+  };
   if (existingMember) {
     joinedMemberId = existingMember.memberId;
     await deps.updateMemberById(existingMember._id, {
       userId,
       familyId,
       displayName,
+      selfChildNickname: bindingProfile.selfChildNickname,
+      relationName: bindingProfile.relationName,
       role: existingMember.role || 'parent',
       studyRole: deps.normalizeStudyRole(existingMember),
       joinedFamilyAt: existingMember.joinedFamilyAt || existingMember.createdAt || now,
@@ -61,6 +71,8 @@ async function upsertFamilyMemberForFamily(openId, userId, familyId, displayName
       role: 'parent',
       studyRole: 'parent',
       displayName,
+      selfChildNickname: bindingProfile.selfChildNickname,
+      relationName: bindingProfile.relationName,
       subscriptionEnabled: false,
       joinedFamilyAt: now,
       createdAt: now

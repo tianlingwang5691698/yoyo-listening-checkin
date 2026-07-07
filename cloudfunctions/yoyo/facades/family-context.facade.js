@@ -141,8 +141,8 @@ async function setExclusiveStudyRole(member, studyRole) {
   });
 }
 
-async function upsertFamilyMemberForFamily(openId, userId, familyId, displayName) {
-  return familyEngine.upsertFamilyMemberForFamily(openId, userId, familyId, displayName, {
+async function upsertFamilyMemberForFamily(openId, userId, familyId, displayName, options) {
+  return familyEngine.upsertFamilyMemberForFamily(openId, userId, familyId, displayName, options || {}, {
     findMembersByOpenId: (nextOpenId) => familyRepository.findMembersByOpenId(nextOpenId),
     updateMemberById: (id, data) => familyRepository.updateMemberById(id, data),
     createMember: (data) => familyRepository.createMember(data),

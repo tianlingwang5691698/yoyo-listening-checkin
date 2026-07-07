@@ -160,6 +160,36 @@ test('setStudyRole 返回 currentMember 而不是 member', async (t) => {
   assert.equal(result.member, undefined);
 });
 
+test('setStudyRole 带 deviceId 时只写设备身份', async (t) => {
+  let exclusiveCalled = false;
+  let saved = null;
+  t.mock.method(familyFacade, 'prepareRequestContext', async () => ({
+    ctx: {
+      user: { openId: 'open-1' },
+      family: { familyId: 'family-self' },
+      member: { memberId: 'member-1', role: 'owner', studyRole: 'student' },
+      members: [{ memberId: 'member-1' }],
+      child: { childId: 'child-1', childLoginCode: '123456' },
+      subscriptionPreference: { dailyReportEnabled: false }
+    }
+  }));
+  t.mock.method(familyFacade, 'setExclusiveStudyRole', async () => {
+    exclusiveCalled = true;
+  });
+  t.mock.method(familyFacade, 'saveDeviceStudyRole', async (_ctx, payload, studyRole) => {
+    saved = { deviceId: payload.deviceId, studyRole };
+  });
+
+  const result = await identityService.setStudyRole({
+    payload: { studyRole: 'parent', deviceId: 'dev-phone' }
+  });
+
+  assert.equal(exclusiveCalled, false);
+  assert.deepEqual(saved, { deviceId: 'dev-phone', studyRole: 'parent' });
+  assert.equal(result.currentMember.studyRole, 'parent');
+  assert.equal(result.currentMember.deviceId, 'dev-phone');
+});
+
 test('joinFamilyByChildCode 会进入孩子记录', async (t) => {
   const calls = [];
   t.mock.method(familyFacade, 'prepareRequestContext', async () => ({
@@ -172,6 +202,12 @@ test('joinFamilyByChildCode 会进入孩子记录', async (t) => {
     return { familyId: 'family-child' };
   });
   t.mock.method(familyRepository, 'findMembersByOpenId', async () => []);
+  t.mock.method(familyRepository, 'findFamilyByOwnerOpenId', async () => ({ familyId: 'family-self' }));
+  t.mock.method(childRepository, 'findByFamilyId', async () => ({
+    familyId: 'family-self',
+    nickname: '王天龙',
+    childLoginCode: '986209'
+  }));
   t.mock.method(familyFacade, 'upsertFamilyMemberForFamily', async (openId, userId, familyId, displayName) => {
     calls.push(['join', openId, userId, familyId, displayName]);
   });
@@ -190,7 +226,88 @@ test('joinFamilyByChildCode 会进入孩子记录', async (t) => {
 
   assert.equal(result.family.familyId, 'family-child');
   assert.equal(result.currentMember.role, 'parent');
-  assert.deepEqual(calls, [['join', 'open-1', 'user-1', 'family-child', '妈妈']]);
+  assert.deepEqual(calls, [['join', 'open-1', 'user-1', 'family-child', '王天龙 · 妈妈']]);
+});
+
+test('joinFamilyByChildCode 组合本机孩子昵称和关系称呼', async (t) => {
+  const calls = [];
+  t.mock.method(familyFacade, 'prepareRequestContext', async () => ({
+    ctx: {
+      user: { openId: 'open-1', userId: 'user-1' }
+    }
+  }));
+  t.mock.method(childRepository, 'findByLoginCode', async () => ({ familyId: 'family-child' }));
+  t.mock.method(familyRepository, 'findMembersByOpenId', async () => []);
+  t.mock.method(familyRepository, 'findFamilyByOwnerOpenId', async () => ({ familyId: 'family-self' }));
+  t.mock.method(childRepository, 'findByFamilyId', async (familyId) => ({
+    familyId,
+    nickname: '王天龙',
+    childLoginCode: '986209'
+  }));
+  t.mock.method(familyFacade, 'upsertFamilyMemberForFamily', async (_openId, _userId, _familyId, displayName) => {
+    calls.push(displayName);
+  });
+  t.mock.method(familyFacade, 'ensureBootstrap', async () => ({
+    user: { openId: 'open-1', userId: 'user-1' },
+    family: { familyId: 'family-child' },
+    member: { memberId: 'member-1', role: 'parent', studyRole: 'student' },
+    members: [{ memberId: 'member-1' }],
+    child: { childLoginCode: '123456' },
+    subscriptionPreference: { dailyReportEnabled: false }
+  }));
+  t.mock.method(familyFacade, 'setExclusiveStudyRole', async () => {});
+
+  await familyService.joinFamilyByChildCode({
+    payload: { childLoginCode: '123456', studyRole: 'student', displayName: '老师' }
+  });
+
+  assert.deepEqual(calls, ['王天龙 · 老师']);
+});
+
+test('joinFamilyByChildCode 无本机学生昵称时拒绝绑定', async (t) => {
+  t.mock.method(familyFacade, 'prepareRequestContext', async () => ({
+    ctx: {
+      user: { openId: 'open-1', userId: 'user-1' }
+    }
+  }));
+  t.mock.method(childRepository, 'findByLoginCode', async () => ({ familyId: 'family-child' }));
+  t.mock.method(familyRepository, 'findMembersByOpenId', async () => []);
+  t.mock.method(familyRepository, 'findFamilyByOwnerOpenId', async () => ({ familyId: 'family-self' }));
+  t.mock.method(childRepository, 'findByFamilyId', async () => ({
+    familyId: 'family-self',
+    nickname: '同学',
+    childLoginCode: '986209'
+  }));
+
+  await assert.rejects(
+    familyService.joinFamilyByChildCode({
+      payload: { childLoginCode: '123456', studyRole: 'student' }
+    }),
+    /请先选择我是学生并设置昵称/
+  );
+});
+
+test('joinFamilyByChildCode 无关系称呼时拒绝绑定', async (t) => {
+  t.mock.method(familyFacade, 'prepareRequestContext', async () => ({
+    ctx: {
+      user: { openId: 'open-1', userId: 'user-1' }
+    }
+  }));
+  t.mock.method(childRepository, 'findByLoginCode', async () => ({ familyId: 'family-child' }));
+  t.mock.method(familyRepository, 'findMembersByOpenId', async () => []);
+  t.mock.method(familyRepository, 'findFamilyByOwnerOpenId', async () => ({ familyId: 'family-self' }));
+  t.mock.method(childRepository, 'findByFamilyId', async () => ({
+    familyId: 'family-self',
+    nickname: '王天龙',
+    childLoginCode: '986209'
+  }));
+
+  await assert.rejects(
+    familyService.joinFamilyByChildCode({
+      payload: { childLoginCode: '123456', studyRole: 'parent' }
+    }),
+    /请输入和孩子的关系/
+  );
 });
 
 test('joinFamilyByChildCode 禁止绑定自己的孩子 ID', async (t) => {
@@ -211,6 +328,107 @@ test('joinFamilyByChildCode 禁止绑定自己的孩子 ID', async (t) => {
     }),
     /不能绑定自己的孩子 ID/
   );
+});
+
+test('joinFamilyByChildCode 已绑定家长可重新补齐关系', async (t) => {
+  const calls = [];
+  t.mock.method(familyFacade, 'prepareRequestContext', async () => ({
+    ctx: {
+      user: { openId: 'open-1', userId: 'user-1' }
+    }
+  }));
+  t.mock.method(childRepository, 'findByLoginCode', async () => ({
+    familyId: 'family-child',
+    childId: 'child-1'
+  }));
+  t.mock.method(familyRepository, 'findMembersByOpenId', async () => [{
+    _id: 'member-doc-1',
+    memberId: 'member-1',
+    openId: 'open-1',
+    familyId: 'family-child',
+    role: 'parent'
+  }]);
+  t.mock.method(familyRepository, 'findFamilyByOwnerOpenId', async () => ({ familyId: 'family-self' }));
+  t.mock.method(childRepository, 'findByFamilyId', async () => ({
+    familyId: 'family-self',
+    nickname: '王天龙',
+    childLoginCode: '986209'
+  }));
+  t.mock.method(familyFacade, 'upsertFamilyMemberForFamily', async (_openId, _userId, _familyId, displayName, options) => {
+    calls.push({ displayName, options });
+  });
+  t.mock.method(familyFacade, 'ensureBootstrap', async () => ({
+    user: { openId: 'open-1', userId: 'user-1' },
+    family: { familyId: 'family-child' },
+    member: { memberId: 'member-1', role: 'parent', studyRole: 'parent' },
+    members: [{ memberId: 'member-1' }],
+    child: { childId: 'child-1', childLoginCode: '123456' },
+    subscriptionPreference: { dailyReportEnabled: false }
+  }));
+
+  await familyService.joinFamilyByChildCode({
+    payload: { childLoginCode: '123456', displayName: '妈妈' }
+  });
+
+  assert.equal(calls[0].displayName, '王天龙 · 妈妈');
+  assert.deepEqual(calls[0].options, {
+    selfChildNickname: '王天龙',
+    relationName: '妈妈'
+  });
+});
+
+test('updateBindingProfile 更新自己的昵称和当前绑定关系', async (t) => {
+  const memberUpdates = [];
+  let childProfileUpdate = null;
+  t.mock.method(familyFacade, 'prepareRequestContext', async () => ({
+    ctx: {
+      user: { openId: 'open-1', userId: 'user-1' },
+      member: {
+        _id: 'member-doc-1',
+        memberId: 'member-1',
+        familyId: 'family-child',
+        role: 'parent'
+      },
+      child: {
+        childId: 'child-1'
+      }
+    }
+  }));
+  t.mock.method(familyFacade, 'ensureBootstrap', async () => ({
+    family: { familyId: 'family-self' },
+    child: { nickname: '同学' }
+  }));
+  t.mock.method(familyFacade, 'updateChildProfile', async (familyId, payload) => {
+    childProfileUpdate = { familyId, payload };
+  });
+  t.mock.method(familyRepository, 'updateMemberById', async (id, data) => {
+    memberUpdates.push({ id, data });
+  });
+  t.mock.method(familyFacade, 'reloadFamilyContext', async (_openId, target) => ({
+    currentMember: {
+      displayName: '王天龙 · 妈妈',
+      selfChildNickname: '王天龙',
+      relationName: '妈妈'
+    },
+    target
+  }));
+
+  const result = await familyService.updateBindingProfile({
+    payload: { selfChildNickname: '王天龙', relationName: '妈妈' }
+  });
+
+  assert.deepEqual(childProfileUpdate, {
+    familyId: 'family-self',
+    payload: { nickname: '王天龙' }
+  });
+  assert.equal(memberUpdates[0].id, 'member-doc-1');
+  assert.equal(memberUpdates[0].data.displayName, '王天龙 · 妈妈');
+  assert.equal(memberUpdates[0].data.selfChildNickname, '王天龙');
+  assert.equal(memberUpdates[0].data.relationName, '妈妈');
+  assert.deepEqual(result.target, {
+    targetFamilyId: 'family-child',
+    targetChildId: 'child-1'
+  });
 });
 
 test('老师绑定新学生时保留原有学生绑定', async () => {

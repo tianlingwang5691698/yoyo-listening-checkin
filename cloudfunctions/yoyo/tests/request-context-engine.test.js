@@ -88,6 +88,37 @@ test('prepareRequestContext 会传递选中学生上下文', async () => {
   ]]);
 });
 
+test('prepareRequestContext 会把设备身份应用到上下文', async () => {
+  const calls = [];
+  const result = await requestContextEngine.prepareRequestContext({
+    action: 'getTaskDetail',
+    payload: {
+      category: 'peppa',
+      deviceId: 'dev-1',
+      deviceStudyRole: 'student'
+    }
+  }, {
+    refreshRuntimeCatalogs: async () => {},
+    getWXContext: () => ({ OPENID: 'open-1' }),
+    ensureBootstrap: async (openId) => ({
+      user: { openId },
+      member: { memberId: 'member-1', studyRole: 'parent' },
+      family: { familyId: 'family-1' },
+      child: { childId: 'child-1' }
+    }),
+    applyDeviceStudyRole: async (ctx, payload, action) => {
+      calls.push(['deviceRole', payload.deviceId, payload.deviceStudyRole, action]);
+      return Object.assign({}, ctx, {
+        member: Object.assign({}, ctx.member, { studyRole: 'student' })
+      });
+    },
+    getTodayString: () => '2026-04-21'
+  });
+
+  assert.deepEqual(calls, [['deviceRole', 'dev-1', 'student', 'getTaskDetail']]);
+  assert.equal(result.ctx.member.studyRole, 'student');
+});
+
 test('resolveCatalogCategories 对任务详情只刷新请求分类', () => {
   assert.deepEqual(
     requestContextEngine.resolveCatalogCategories('getTaskDetail', 'unlock1', {}),

@@ -55,12 +55,18 @@ async function getSelfChildNickname(openId) {
   return String(ownChild && ownChild.nickname || '').trim();
 }
 
+function buildBindingDisplayName(selfChildNickname, relationName) {
+  const selfName = String(selfChildNickname || '').trim();
+  const relation = String(relationName || '').trim();
+  return relation ? `${selfName} · ${relation}` : selfName;
+}
+
 async function assertNotBindingOwnChild(openId, targetFamilyId) {
   const currentMembers = await familyRepository.findMembersByOpenId(openId);
-  const alreadyInTargetFamily = (currentMembers || []).some((member) => (
+  const existingMember = (currentMembers || []).find((member) => (
     String(member && member.familyId || '') === String(targetFamilyId || '')
   ));
-  if (alreadyInTargetFamily) {
+  if (existingMember && (existingMember.role === 'owner' || !existingMember.role)) {
     throw new Error('不能绑定自己的孩子 ID，请让另一个微信账号绑定');
   }
 }
@@ -80,17 +86,22 @@ async function joinFamilyByChildCode(event) {
   }
   await assertNotBindingOwnChild(ctx.user.openId, targetChild.familyId);
   const targetStudyRole = String(payload.studyRole || '').trim() === 'student' ? 'student' : 'parent';
-  let displayName = String(payload.displayName || '').trim();
-  if (!displayName && targetStudyRole === 'parent') {
-    displayName = await getSelfChildNickname(ctx.user.openId);
-    if (!displayName) {
-      throw new Error('请先设置本机学生昵称，再绑定孩子 ID');
-    }
+  let relationName = String(payload.displayName || payload.relationName || '').trim();
+  const selfChildNickname = await getSelfChildNickname(ctx.user.openId);
+  if (!selfChildNickname) {
+    throw new Error('请先选择我是学生并设置昵称，再绑定孩子 ID');
   }
-  if (!displayName) {
-    displayName = '学生设备';
+  if (!relationName && targetStudyRole === 'student') {
+    relationName = '学生';
   }
-  await familyFacade.upsertFamilyMemberForFamily(ctx.user.openId, ctx.user.userId, targetChild.familyId, displayName);
+  if (!relationName) {
+    throw new Error('请输入和孩子的关系，例如 妈妈 / 爸爸 / 老师');
+  }
+  const displayName = buildBindingDisplayName(selfChildNickname, relationName);
+  await familyFacade.upsertFamilyMemberForFamily(ctx.user.openId, ctx.user.userId, targetChild.familyId, displayName, {
+    selfChildNickname,
+    relationName
+  });
   if (targetStudyRole === 'student') {
     const joinedCtx = await familyFacade.ensureBootstrap(ctx.user.openId, {
       targetFamilyId: targetChild.familyId,
@@ -110,6 +121,37 @@ async function updateChildProfile(event) {
   }));
   await familyFacade.updateChildProfile(ctx.family.familyId, (event && event.payload) || {});
   return familyFacade.reloadFamilyContext(ctx.user.openId);
+}
+
+async function updateBindingProfile(event) {
+  const { ctx } = await familyFacade.prepareRequestContext(Object.assign({}, event, {
+    action: 'updateBindingProfile'
+  }));
+  const member = ctx.member || {};
+  if (!member._id || member.role === 'owner') {
+    throw new Error('当前没有需要补齐的绑定关系');
+  }
+  const payload = (event && event.payload) || {};
+  const selfChildNickname = String(payload.selfChildNickname || payload.nickname || '').trim();
+  const relationName = String(payload.relationName || payload.displayName || '').trim();
+  if (!selfChildNickname || ['同学', '我'].includes(selfChildNickname)) {
+    throw new Error('请先填写你的昵称');
+  }
+  if (!relationName) {
+    throw new Error('请输入和孩子的关系，例如 妈妈 / 爸爸 / 老师');
+  }
+  const selfCtx = await familyFacade.ensureBootstrap(ctx.user.openId, { forceSelf: true });
+  await familyFacade.updateChildProfile(selfCtx.family.familyId, { nickname: selfChildNickname });
+  await familyRepository.updateMemberById(member._id, {
+    displayName: buildBindingDisplayName(selfChildNickname, relationName),
+    selfChildNickname,
+    relationName,
+    updatedAt: new Date().toISOString()
+  });
+  return familyFacade.reloadFamilyContext(ctx.user.openId, {
+    targetFamilyId: member.familyId,
+    targetChildId: (ctx.child && ctx.child.childId) || ''
+  });
 }
 
 async function updateSubscription(event) {
@@ -149,6 +191,7 @@ module.exports = {
   refreshInviteCode,
   joinFamily,
   joinFamilyByChildCode,
+  updateBindingProfile,
   updateChildProfile,
   updateSubscription,
   leaveFamily

@@ -50,6 +50,7 @@ module.exports = {
   leaveCurrentFamily: familyContext.leaveCurrentFamily,
   normalizeStudyRole: familyContext.normalizeStudyRole,
   clearTodayUnconfirmedListens: shared.clearTodayUnconfirmedListens,
+  saveDeviceStudyRole: shared.saveDeviceStudyRole,
   buildFamilyContextPayload,
   buildProfilePayload,
   reloadFamilyContext,

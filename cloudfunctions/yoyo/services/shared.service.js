@@ -6,6 +6,7 @@ const checkinRepository = require('../repositories/checkin.repository');
 const reportRepository = require('../repositories/report.repository');
 const attemptRepository = require('../repositories/attempt.repository');
 const listeningPlanRepository = require('../repositories/listening-plan.repository');
+const deviceSessionRepository = require('../repositories/device-session.repository');
 const dateLib = require('../lib/china-date');
 const taskPresenter = require('../lib/task-presenter');
 const planLib = require('../lib/plan-runtime');
@@ -40,7 +41,8 @@ const REQUIRED_COLLECTIONS = [
   'dailyCheckins',
   'dailyReports',
   'subscriptionPreferences',
-  'taskAttempts'
+  'taskAttempts',
+  'deviceStudySessions'
 ];
 const childTemplate = {
   childId: 'child-yoyo',
@@ -183,6 +185,45 @@ function normalizeStudyRole(member) {
 function isStudyWriteAllowed(ctx) {
   const member = ctx && ctx.member;
   return normalizeStudyRole(member) === 'student';
+}
+
+function normalizeDeviceStudyRole(studyRole) {
+  return String(studyRole || '').trim() === 'student' ? 'student' : 'parent';
+}
+
+async function applyDeviceStudyRole(ctx, payload, action) {
+  const deviceId = deviceSessionRepository.normalizeDeviceId(payload && payload.deviceId);
+  if (!ctx || !ctx.member || !ctx.user || !ctx.family || !ctx.child || !deviceId) {
+    return ctx;
+  }
+  const session = await deviceSessionRepository.findByDevice(
+    ctx.user.openId,
+    deviceId,
+    ctx.family.familyId,
+    ctx.child.childId
+  );
+  const requestRole = action === 'setStudyRole' && payload && payload.deviceStudyRole
+    ? normalizeDeviceStudyRole(payload.deviceStudyRole)
+    : '';
+  const studyRole = session && session.studyRole
+    ? normalizeDeviceStudyRole(session.studyRole)
+    : (requestRole || normalizeStudyRole(ctx.member));
+  return Object.assign({}, ctx, {
+    member: Object.assign({}, ctx.member, {
+      studyRole,
+      deviceStudyRole: studyRole,
+      deviceId
+    }),
+    deviceSession: session || null
+  });
+}
+
+async function saveDeviceStudyRole(ctx, payload, studyRole) {
+  const deviceId = deviceSessionRepository.normalizeDeviceId(payload && payload.deviceId);
+  if (!ctx || !deviceId) {
+    return null;
+  }
+  return deviceSessionRepository.upsertDeviceRole(getUserScope(ctx), deviceId, studyRole);
 }
 
 async function getLightweightContext(openId, target) {
@@ -633,7 +674,8 @@ async function prepareRequestContext(event) {
     getWXContext,
     getLightweightContext,
     ensureBootstrap,
-    getTodayString
+    getTodayString,
+    applyDeviceStudyRole
   });
 }
 
@@ -682,6 +724,7 @@ module.exports = {
   maybeCreateCheckin,
   reconcileCheckins,
   saveProgressRecord,
+  saveDeviceStudyRole,
   level,
   getLightweightContext,
   ensureBootstrap,

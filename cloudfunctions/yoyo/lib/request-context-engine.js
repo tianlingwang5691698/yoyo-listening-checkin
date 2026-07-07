@@ -39,7 +39,7 @@ function resolveCatalogCategories(action, requestedCategory, payload = {}) {
   if (action === 'getTaskTranscript') {
     return [];
   }
-  if (['getFamilyPage', 'refreshInviteCode', 'joinFamily', 'joinFamilyByChildCode', 'leaveFamily', 'updateChildProfile', 'setStudyRole', 'updateSubscription', 'bootstrap', 'getReadingHome', 'getReadingPassage', 'getReadingStudyPack', 'synthesizeReadingAudio', 'submitReadingAttempt', 'getFlashcardDue', 'submitWritingAttempt', 'gradeWritingAttempt', 'getWritingAttempts', 'recordStudyCompletion', 'getStudyCompletions'].includes(action)) {
+  if (['getFamilyPage', 'refreshInviteCode', 'joinFamily', 'joinFamilyByChildCode', 'updateBindingProfile', 'leaveFamily', 'updateChildProfile', 'setStudyRole', 'updateSubscription', 'bootstrap', 'getReadingHome', 'getReadingPassage', 'getReadingStudyPack', 'synthesizeReadingAudio', 'submitReadingAttempt', 'getFlashcardDue', 'submitWritingAttempt', 'gradeWritingAttempt', 'getWritingAttempts', 'recordStudyCompletion', 'getStudyCompletions'].includes(action)) {
     return [];
   }
   return catalogCategories;
@@ -61,7 +61,10 @@ async function prepareRequestContext(event, deps) {
   const lightweightCtx = action === 'getDashboard' && view === 'home' && deps.getLightweightContext
     ? await deps.getLightweightContext(OPENID, target)
     : null;
-  const ctx = lightweightCtx || await deps.ensureBootstrap(OPENID, target);
+  let ctx = lightweightCtx || await deps.ensureBootstrap(OPENID, target);
+  if (deps.applyDeviceStudyRole) {
+    ctx = await deps.applyDeviceStudyRole(ctx, payload, action);
+  }
   return {
     action,
     requestedCategory,

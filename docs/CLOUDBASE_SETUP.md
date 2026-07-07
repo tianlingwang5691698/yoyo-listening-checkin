@@ -109,6 +109,7 @@
 - `dailyCheckins`
 - `dailyReports`
 - `subscriptionPreferences`
+- `deviceStudySessions`
 - `unlock1AudioTrainingPool`
 
 ## Transcript 正式上传路径
