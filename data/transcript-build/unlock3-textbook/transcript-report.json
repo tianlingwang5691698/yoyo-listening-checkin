@@ -1,0 +1,32 @@
+{
+  "cleanReport": {
+    "level": "B1",
+    "series": "unlock3",
+    "book": "Unlock 3",
+    "audioDir": "/Users/wangtianlong/工作/01_教学与备考/unlock 第二版/L3/Unlock 3 LS/Unlock3-听说教材配套音频",
+    "scriptPdf": "/Users/wangtianlong/工作/01_教学与备考/unlock 第二版/L3/Unlock 3 LS/Unlock 2e LS3 Scripts.pdf",
+    "cloudAudioRoot": "B1/Unlock3/Class Audio",
+    "transcriptCloudPath": "_transcripts/B1/unlock3/bundle.json",
+    "minDurationSec": 60,
+    "audioCount": 52,
+    "eligibleCount": 28,
+    "excludedShortCount": 24,
+    "duplicateCount": 0,
+    "unknownCodeCount": 0,
+    "scriptTextChars": 93243,
+    "scriptTextLines": 1296
+  },
+  "transcriptReport": {
+    "level": "B1",
+    "series": "unlock3",
+    "book": "Unlock 3",
+    "eligibleCount": 28,
+    "bundleTrackCount": 28,
+    "missingAsrCount": 0,
+    "missingAudioTitles": [],
+    "transcriptStatus": "asr_medium_aligned",
+    "asrModel": "medium"
+  },
+  "processedThisRun": 27,
+  "outputDir": "data/transcript-build/unlock3-textbook/B1/unlock3"
+}

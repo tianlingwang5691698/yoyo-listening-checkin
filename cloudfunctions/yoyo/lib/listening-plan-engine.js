@@ -8,6 +8,7 @@ const MATERIALS = [
   { category: 'newconcept2', levelIds: ['A2'], title: 'New Concept 2' },
   { category: 'unlock2', levelIds: ['A2'], title: 'Unlock 2 课本' },
   { category: 'newconcept3', levelIds: ['B1'], title: 'New Concept 3' },
+  { category: 'unlock3textbook', levelIds: ['B1'], title: 'Unlock 3 课本' },
   { category: 'unlock3', levelIds: ['B1'], title: 'Unlock 3 练习册' },
   { category: 'newconcept4', levelIds: ['B2'], title: 'New Concept 4' },
   { category: 'unlock4', levelIds: ['B2'], title: 'Unlock 4 课本' }

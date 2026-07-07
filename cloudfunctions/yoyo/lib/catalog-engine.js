@@ -12,6 +12,7 @@ const NEW_CONCEPT3_AUDIO_ROOT = 'B1/NewConcept3-US';
 const NEW_CONCEPT4_AUDIO_ROOT = 'B2/NewConcept4-US';
 const UNLOCK1_AUDIO_ROOT = 'A1/Unlock1/Unlock1 听口音频Class Audio';
 const UNLOCK2_AUDIO_ROOT = 'A2/Unlock2/Class Audio';
+const UNLOCK3_TEXTBOOK_AUDIO_ROOT = 'B1/Unlock3/Textbook Audio';
 const UNLOCK3_AUDIO_ROOT = 'B1/Unlock3/Class Audio';
 const UNLOCK4_AUDIO_ROOT = 'B2/Unlock4/Class Audio';
 const UNLOCK1_SCRIPT_PATH = `${UNLOCK1_AUDIO_ROOT}/Unlock 2e Listening and Speaking 1 Scripts.pdf`;
@@ -25,6 +26,7 @@ const STORAGE_ROOTS = {
   peppa: 'A1/Peppa',
   unlock1: UNLOCK1_AUDIO_ROOT,
   unlock2: UNLOCK2_AUDIO_ROOT,
+  unlock3textbook: UNLOCK3_TEXTBOOK_AUDIO_ROOT,
   unlock3: UNLOCK3_AUDIO_ROOT,
   unlock4: UNLOCK4_AUDIO_ROOT,
   song: 'A1/Super simple songs'
@@ -37,6 +39,7 @@ const STORAGE_ROOT_CANDIDATES = {
   peppa: [`${STORAGE_ROOTS.peppa}/第1季`, `${STORAGE_ROOTS.peppa}/第2季`, `${STORAGE_ROOTS.peppa}/第3季`, STORAGE_ROOTS.peppa],
   unlock1: [UNLOCK1_AUDIO_ROOT, 'A1/Unlock1'],
   unlock2: [UNLOCK2_AUDIO_ROOT, 'A2/Unlock2', 'A2/Unlock 2'],
+  unlock3textbook: [UNLOCK3_TEXTBOOK_AUDIO_ROOT, 'B1/Unlock3/Textbook Audio'],
   unlock3: [UNLOCK3_AUDIO_ROOT, 'B1/Unlock3', 'B1/Unlock 3'],
   unlock4: [UNLOCK4_AUDIO_ROOT, 'B2/Unlock4', 'B2/Unlock 4'],
   song: [STORAGE_ROOTS.song, 'A1/Super simple song']
@@ -194,9 +197,9 @@ const songPlaceholder = {
   textSource: null
 };
 
-const STANDALONE_LEVEL_CATEGORIES = ['newconcept2', 'unlock2', 'newconcept3', 'unlock3', 'newconcept4', 'unlock4'];
+const STANDALONE_LEVEL_CATEGORIES = ['newconcept2', 'unlock2', 'newconcept3', 'unlock3textbook', 'unlock3', 'newconcept4', 'unlock4'];
 const NEW_CONCEPT_CATEGORIES = ['newconcept1', 'newconcept2', 'newconcept3', 'newconcept4'];
-const UNLOCK_SERIES_CATEGORIES = ['unlock1', 'unlock2', 'unlock3', 'unlock4'];
+const UNLOCK_SERIES_CATEGORIES = ['unlock1', 'unlock2', 'unlock3textbook', 'unlock3', 'unlock4'];
 const UNLOCK_WORKBOOK_CATEGORIES = ['unlock3'];
 
 function slugifyTrackIdPart(value) {
@@ -265,6 +268,7 @@ function inferNewConceptTaskMeta(category, audioBaseName, index) {
 function getUnlockSeriesLevel(category) {
   if (category === 'unlock1') return 'A1';
   if (category === 'unlock2') return 'A2';
+  if (category === 'unlock3textbook') return 'B1';
   if (category === 'unlock3') return 'B1';
   if (category === 'unlock4') return 'B2';
   return '';
@@ -273,6 +277,7 @@ function getUnlockSeriesLevel(category) {
 function getUnlockSeriesNumber(category) {
   if (category === 'unlock1') return 1;
   if (category === 'unlock2') return 2;
+  if (category === 'unlock3textbook') return 3;
   if (category === 'unlock3') return 3;
   if (category === 'unlock4') return 4;
   return 0;
@@ -462,7 +467,7 @@ function findTranscriptTrack(transcriptTrackMap, task) {
 }
 
 function shouldLazyTranscriptCategory(category) {
-  return NEW_CONCEPT_CATEGORIES.includes(category) || ['unlock2', 'unlock3', 'unlock4'].includes(category);
+  return NEW_CONCEPT_CATEGORIES.includes(category) || ['unlock2', 'unlock3textbook', 'unlock3', 'unlock4'].includes(category);
 }
 
 async function getTranscriptBundle(task) {
@@ -483,6 +488,7 @@ function getStaticCatalogMap() {
     peppa: peppaTasks,
     unlock1: unlockTasks,
     unlock2: buildUnlockSeriesTasks('unlock2'),
+    unlock3textbook: buildUnlockSeriesTasks('unlock3textbook'),
     unlock3: buildUnlockSeriesTasks('unlock3'),
     unlock4: buildUnlockSeriesTasks('unlock4'),
     song: songTasks
@@ -1269,6 +1275,7 @@ const CATEGORY_LABELS = {
   peppa: 'Peppa',
   unlock1: 'Unlock 1 课本',
   unlock2: 'Unlock 2 课本',
+  unlock3textbook: 'Unlock 3 课本',
   unlock3: 'Unlock 3 练习册',
   unlock4: 'Unlock 4 课本',
   song: 'Songs'

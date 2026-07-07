@@ -2,7 +2,7 @@ const study = require('../facades/study.facade');
 
 const LEVEL_CATEGORY_GROUPS = {
   A2: ['newconcept2', 'unlock2'],
-  B1: ['newconcept3', 'unlock3'],
+  B1: ['newconcept3', 'unlock3textbook', 'unlock3'],
   B2: ['newconcept4', 'unlock4']
 };
 
@@ -85,6 +85,7 @@ async function getLevelOverview(event) {
     newconcept2: { directTasks: [], overview: [] },
     unlock2: { directTasks: [], overview: [] },
     newconcept3: { directTasks: [], overview: [] },
+    unlock3textbook: { directTasks: [], overview: [] },
     unlock3: { directTasks: [], overview: [] },
     newconcept4: { directTasks: [], overview: [] },
     unlock4: { directTasks: [], overview: [] }
@@ -148,6 +149,8 @@ async function getLevelOverview(event) {
       unlock2DirectCount: standaloneOverviews.unlock2.directTasks.length,
       newconcept3CatalogCount: study.getCatalog('newconcept3').length,
       newconcept3DirectCount: standaloneOverviews.newconcept3.directTasks.length,
+      unlock3TextbookCatalogCount: study.getCatalog('unlock3textbook').length,
+      unlock3TextbookDirectCount: standaloneOverviews.unlock3textbook.directTasks.length,
       unlock3CatalogCount: study.getCatalog('unlock3').length,
       unlock3DirectCount: standaloneOverviews.unlock3.directTasks.length,
       newconcept4CatalogCount: study.getCatalog('newconcept4').length,

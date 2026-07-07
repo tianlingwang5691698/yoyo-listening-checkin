@@ -1,7 +1,7 @@
 const study = require('../facades/study.facade');
 
-const STANDALONE_LEVEL_CATEGORIES = ['newconcept2', 'unlock2', 'newconcept3', 'unlock3', 'newconcept4', 'unlock4'];
-const CATALOG_BROWSE_CATEGORIES = ['song', 'newconcept1', 'unlock1', 'peppa', 'newconcept2', 'unlock2', 'newconcept3', 'unlock3', 'newconcept4', 'unlock4'];
+const STANDALONE_LEVEL_CATEGORIES = ['newconcept2', 'unlock2', 'newconcept3', 'unlock3textbook', 'unlock3', 'newconcept4', 'unlock4'];
+const CATALOG_BROWSE_CATEGORIES = ['song', 'newconcept1', 'unlock1', 'peppa', 'newconcept2', 'unlock2', 'newconcept3', 'unlock3textbook', 'unlock3', 'newconcept4', 'unlock4'];
 
 function normalizeTaskSnapshot(snapshot, payload) {
   if (!snapshot || typeof snapshot !== 'object') {

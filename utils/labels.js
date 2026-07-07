@@ -18,6 +18,9 @@ function getCategoryDisplayLabel(category, label) {
   if (category === 'unlock2') {
     return 'Unlock 2 课本';
   }
+  if (category === 'unlock3textbook') {
+    return 'Unlock 3 课本';
+  }
   if (category === 'unlock3') {
     return 'Unlock 3 练习册';
   }
