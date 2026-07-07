@@ -591,92 +591,12 @@ Page({
     const currentMember = this.data.currentMember || {};
     return currentMember.studyRole === 'student';
   },
-  async ensureRecordPermission() {
-    const microphoneAuthorized = wx.getAppAuthorizeSetting
-      ? ((wx.getAppAuthorizeSetting() || {}).microphoneAuthorized || '')
-      : '';
-    if (microphoneAuthorized === 'authorized' || microphoneAuthorized === 'not determined' || !microphoneAuthorized) {
-      const recordPermission = await this.readRecordScopePermission();
-      if (recordPermission === true) {
-        return true;
-      }
-      if (recordPermission === false) {
-        const confirmed = await new Promise((resolve) => {
-          wx.showModal({
-            title: '需要录音授权',
-            content: '本机麦克风已开启，但当前小程序录音授权被拒绝。请在小程序设置里打开麦克风。',
-            confirmText: '去设置',
-            success: (res) => resolve(!!res.confirm),
-            fail: () => resolve(false)
-          });
-        });
-        if (!confirmed || !wx.openSetting) {
-          return false;
-        }
-        const opened = await new Promise((resolve) => {
-          wx.openSetting({
-            success: resolve,
-            fail: () => resolve({ authSetting: {} })
-          });
-        });
-        return !!(opened && opened.authSetting && opened.authSetting['scope.record']);
-      }
-      if (!wx.authorize) {
-        return true;
-      }
-      return new Promise((resolve) => {
-        wx.authorize({
-          scope: 'scope.record',
-          success: () => resolve(true),
-          fail: () => resolve(false)
-        });
-      });
-    }
-    if (microphoneAuthorized !== 'denied' || !wx.openAppAuthorizeSetting) {
-      return true;
-    }
-    const confirmed = await new Promise((resolve) => {
-      wx.showModal({
-        title: '需要本机麦克风权限',
-        content: '请在本机系统设置里允许微信使用麦克风：iPhone / 安卓手机 / Windows / macOS。',
-        confirmText: '去设置',
-        success: (res) => resolve(!!res.confirm),
-        fail: () => resolve(false)
-      });
-    });
-    if (!confirmed) {
-      return false;
-    }
-    await new Promise((resolve) => {
-      wx.openAppAuthorizeSetting({
-        success: resolve,
-        fail: resolve
-      });
-    });
-    const latestSetting = wx.getAppAuthorizeSetting ? (wx.getAppAuthorizeSetting() || {}) : {};
-    return latestSetting.microphoneAuthorized !== 'denied';
-  },
-  async readRecordScopePermission() {
-    if (!wx.getSetting) {
-      return undefined;
-    }
-    const setting = await new Promise((resolve) => {
-      wx.getSetting({
-        success: resolve,
-        fail: () => resolve({ authSetting: {} })
-      });
-    });
-    const authSetting = (setting && setting.authSetting) || {};
-    return authSetting['scope.record'];
-  },
-  async buildRecordDebugLines(source, error, extra) {
-    const appSetting = wx.getAppAuthorizeSetting ? (wx.getAppAuthorizeSetting() || {}) : {};
-    const recordPermission = await this.readRecordScopePermission();
+  buildRecordDebugLines(source, error, extra) {
     const errMsg = error && error.errMsg ? error.errMsg : (error && error.message ? error.message : String(error || 'unknown'));
     const audioWasPlaying = extra && extra.audioWasPlaying ? 'yes' : 'no';
     return [
       `DEBUG: pages/lesson.startSpeakingRecord -> ${source} -> errMsg=${errMsg}`,
-      `DEBUG: pages/lesson.startSpeakingRecord -> permission -> systemMicrophone=${appSetting.microphoneAuthorized || 'unknown'}, scope.record=${String(recordPermission)}, audioWasPlaying=${audioWasPlaying}`
+      `DEBUG: pages/lesson.startSpeakingRecord -> recorderManager.start -> audioWasPlaying=${audioWasPlaying}`
     ];
   },
   onLoad(query) {
@@ -709,8 +629,8 @@ Page({
           }
         });
       });
-      this.recorderManager.onError(async (error) => {
-        const debugLines = await this.buildRecordDebugLines('recorderManager.onError', error, {
+      this.recorderManager.onError((error) => {
+        const debugLines = this.buildRecordDebugLines('recorderManager.onError', error, {
           audioWasPlaying: this.recordStartAudioWasPlaying
         });
         this.setData({
@@ -1384,15 +1304,6 @@ Page({
     if (!this.recorderManager || this.data.speakingRecording) {
       return;
     }
-    const allowed = await this.ensureRecordPermission();
-    if (!allowed) {
-      const debugLines = await this.buildRecordDebugLines('ensureRecordPermission', { errMsg: 'permission-not-allowed' }, {
-        audioWasPlaying: this.data.isPlaying
-      });
-      this.setData({ speakingDebugLines: debugLines });
-      wx.showToast({ title: '请允许录音后再试', icon: 'none' });
-      return;
-    }
     this.recordStartAudioWasPlaying = !!this.data.isPlaying;
     if (this.innerAudioContext && this.data.isPlaying) {
       this.innerAudioContext.pause();
@@ -1420,7 +1331,7 @@ Page({
         format: 'mp3'
       });
     } catch (error) {
-      const debugLines = await this.buildRecordDebugLines('recorderManager.start.catch', error, {
+      const debugLines = this.buildRecordDebugLines('recorderManager.start.catch', error, {
         audioWasPlaying: this.recordStartAudioWasPlaying
       });
       this.setData({
