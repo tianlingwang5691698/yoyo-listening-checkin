@@ -399,6 +399,31 @@ Page({
     }, this.buildStudyModePresentation(data.currentMember))));
     return groupedDailyTasks;
   },
+  applyFastDashboardSnapshot(nextRole) {
+    const selectedTarget = store.getSelectedStudentTarget ? store.getSelectedStudentTarget() : {};
+    const payloads = [
+      Object.assign({ view: 'home' }, selectedTarget || {}),
+      { view: 'home' }
+    ];
+    for (let index = 0; index < payloads.length; index += 1) {
+      const cached = store.getCachedReadResult ? store.getCachedReadResult('getDashboard', payloads[index]) : null;
+      if (cached && cached.child && (cached.groupedDailyTasks || []).length) {
+        this.applyDashboard(Object.assign({}, cached, {
+          currentMember: Object.assign({}, cached.currentMember || {}, { studyRole: nextRole })
+        }));
+        return true;
+      }
+    }
+    const currentGroups = this.data.groupedDailyTasks || [];
+    if (this.data.child && currentGroups.length) {
+      this.applyDashboard(Object.assign({}, this.data, {
+        currentMember: Object.assign({}, this.data.currentMember || {}, { studyRole: nextRole }),
+        groupedDailyTasks: currentGroups
+      }));
+      return true;
+    }
+    return false;
+  },
   ensureNicknameReady() {
     if (!this.data.nicknameRequired) {
       return true;
@@ -526,8 +551,15 @@ Page({
       identityConfirmVisible: false,
       modeChangedNoticeVisible: false,
       entryPosterVisible: false,
-      identitySelectedInSession: true
+      identitySelectedInSession: true,
+      homeLoading: false
     }, this.buildStudyModePresentation({ studyRole: nextRole })));
+    const fastPainted = this.applyFastDashboardSnapshot(nextRole);
+    wx.showToast({
+      title: nextRole === 'student' ? '已进入学生设备' : '已进入家长模式',
+      icon: 'none',
+      duration: 900
+    });
     try {
       const data = await store.setStudyRole(nextRole);
       this.setData(page.buildCloudPageData(this.data, Object.assign({}, {
@@ -542,10 +574,6 @@ Page({
         identityConfirmVisible: false,
         modeChangedNoticeVisible: false
       }, this.buildStudyModePresentation(data.currentMember))));
-      wx.showToast({
-        title: nextRole === 'student' ? '已进入学生设备' : '已进入家长模式',
-        icon: 'none'
-      });
       const snapshot = snapshotStore.read(HOME_DASHBOARD_SNAPSHOT_KEY, {
         id: buildHomeDashboardSnapshotId(data.child),
         maxAgeMs: 10 * 60 * 1000
@@ -555,7 +583,7 @@ Page({
           child: data.child || snapshot.child,
           currentMember: data.currentMember || snapshot.currentMember
         }));
-      } else {
+      } else if (!fastPainted) {
         this.setData({ homeLoading: true });
       }
       this.refreshHomeDashboard().catch(() => {
