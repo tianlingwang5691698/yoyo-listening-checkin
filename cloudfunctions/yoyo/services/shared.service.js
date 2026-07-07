@@ -182,7 +182,7 @@ function normalizeStudyRole(member) {
 
 function isStudyWriteAllowed(ctx) {
   const member = ctx && ctx.member;
-  return normalizeStudyRole(member) === 'student' || (member && member.role === 'parent');
+  return normalizeStudyRole(member) === 'student';
 }
 
 async function getLightweightContext(openId, target) {

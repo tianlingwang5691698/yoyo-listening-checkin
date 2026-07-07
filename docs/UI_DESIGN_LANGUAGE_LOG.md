@@ -2368,6 +2368,29 @@
 - 设计记录：首页身份切换的第一反馈必须轻，首屏列表优先展示已有真实缓存，不等待身份接口串行返回。
 - 验证：已做页面脚本语法检查、diff 空白检查。
 
+### 2026-07-07 我的页与音频页首显性能收口
+
+- 文件：`pages/profile/index.js`
+- 文件：`pages/profile/index.wxml`
+- 文件：`pages/profile/index.wxss`
+- 文件：`pages/level/index.js`
+- 文件：`pages/level/index.wxml`
+- 文件：`pages/level/index.wxss`
+- 文件：`cloudfunctions/yoyo/services/family.service.js`
+- 改动：撤掉真机调试可见断点；保留我的页快照/缓存首显后延迟后台刷新；保留音频页手动切换 level 时已有真实缓存直接首显、随后静默刷新。
+- 补充：`getProfileData` 收窄为只返回身份页字段，不再等待 dashboard 统计。
+- 设计记录：验证完成后不保留页面 debug 区；首屏必须按真实快照/缓存先展示，云端刷新只做后台校准。
+- 验证：已做页面脚本语法检查、diff 空白检查。
+
+### 2026-07-07 家长音频试听态
+
+- 文件：`pages/lesson/index.js`
+- 文件：`pages/lesson/index.wxml`
+- 文件：`cloudfunctions/yoyo/services/shared.service.js`
+- 改动：课程详情页只有学生身份且云端允许写进度时显示“训练中”；家长/预览听音频显示“试听中”，听完只轻提示“试听完成”。
+- 设计记录：家长身份听音频属于试听，不进入打卡训练态；“训练中”只用于学生打卡记录链路。
+- 验证：已做课程页和云函数脚本语法检查、身份测试、diff 空白检查。
+
 ## 后续记录格式
 
 每次 UI/交互改动后追加：

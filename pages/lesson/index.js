@@ -415,10 +415,26 @@ function getLessonStudyError(result) {
   return '生成失败，稍后重试。';
 }
 
+function isLessonTrainingMode(member, planRunType, cloudStudyWriteAllowed) {
+  return String(planRunType || 'normal') !== 'preview'
+    && cloudStudyWriteAllowed !== false
+    && String((member && member.studyRole) || '') === 'student';
+}
+
+function buildLocalMemberFromLastRole() {
+  let role = '';
+  try {
+    role = wx.getStorageSync('lastStudyRole') || '';
+  } catch (error) {}
+  return {
+    studyRole: role === 'student' ? 'student' : 'parent'
+  };
+}
+
 Page({
   data: page.createCloudPageData({
     child: null,
-    currentMember: {},
+    currentMember: { studyRole: 'parent' },
     task: null,
     stats: {},
     todayRecord: null,
@@ -456,8 +472,8 @@ Page({
     audioErrorDetail: '',
     audioPlaybackMode: 'idle',
     currentAudio: null,
-    studyWriteAllowed: true,
-    studyModeLabel: '学生设备',
+    studyWriteAllowed: false,
+    studyModeLabel: '家长模式',
     isPreviewMode: false,
     checkinReady: false,
     transcriptPendingLoad: false,
@@ -588,8 +604,7 @@ Page({
     this.prefetchTaskAudio(normalizedTask);
   },
   isStudyWriteAllowed() {
-    const currentMember = this.data.currentMember || {};
-    return currentMember.studyRole === 'student';
+    return isLessonTrainingMode(this.data.currentMember, this.planRunType, this.data.studyWriteAllowed);
   },
   buildRecordDebugLines(source, error, extra) {
     const errMsg = error && error.errMsg ? error.errMsg : (error && error.message ? error.message : String(error || 'unknown'));
@@ -598,6 +613,17 @@ Page({
       `DEBUG: pages/lesson.startSpeakingRecord -> ${source} -> errMsg=${errMsg}`,
       `DEBUG: pages/lesson.startSpeakingRecord -> recorderManager.start -> audioWasPlaying=${audioWasPlaying}`
     ];
+  },
+  async ensureRecorderPrivacyAuthorized() {
+    if (!wx.requirePrivacyAuthorize) {
+      return true;
+    }
+    return new Promise((resolve) => {
+      wx.requirePrivacyAuthorize({
+        success: () => resolve(true),
+        fail: () => resolve(false)
+      });
+    });
   },
   onLoad(query) {
     this.category = query.category || 'peppa';
@@ -613,6 +639,14 @@ Page({
     this.checkinConfirmShowing = false;
     this.audioPlayRequested = false;
     this.pendingSpeakingAfterListen = null;
+    const localMember = buildLocalMemberFromLastRole();
+    this.setData({
+      currentMember: localMember,
+      studyWriteAllowed: isLessonTrainingMode(localMember, this.planRunType, true),
+      studyModeLabel: this.planRunType === 'preview'
+        ? '预览模式'
+        : (localMember.studyRole === 'student' ? '学生设备' : '家长模式')
+    });
     this.markLessonRoute('onLoad');
     this.recorderManager = wx.getRecorderManager ? wx.getRecorderManager() : null;
     if (this.recorderManager) {
@@ -637,7 +671,11 @@ Page({
           speakingRecording: false,
           speakingDebugLines: debugLines
         });
-        wx.showToast({ title: '录音失败，查看下方调试信息', icon: 'none' });
+        const errMsg = error && error.errMsg ? error.errMsg : '';
+        wx.showToast({
+          title: errMsg.indexOf('privacy api banned') >= 0 ? '请先同意隐私授权' : '录音失败，查看下方调试信息',
+          icon: 'none'
+        });
       });
     }
     this.audioErrorTimer = null;
@@ -1019,6 +1057,7 @@ Page({
     this.planDayIndex = detail.planDayIndex ? String(detail.planDayIndex) : this.planDayIndex;
     const normalizedTask = labels.normalizeTask(detail.task);
     const studyCompleted = normalizedTask ? this.isLessonStudyCompletedForTask(normalizedTask) : false;
+    const studyWriteAllowed = isLessonTrainingMode(detail.currentMember, this.planRunType, detail.studyWriteAllowed);
     this.setData(page.buildCloudPageData(this.data, {
       syncMode: detail.syncMode,
       isReviewBuild: detail.isReviewBuild,
@@ -1031,7 +1070,7 @@ Page({
       passSteps: buildPassSteps(detail.progress),
       transcriptManualVisible: false,
       currentMember: detail.currentMember,
-      studyWriteAllowed: detail.studyWriteAllowed !== false,
+      studyWriteAllowed,
       isPreviewMode: this.planRunType === 'preview',
       studyModeLabel: this.planRunType === 'preview' ? '预览模式' : (detail.currentMember && detail.currentMember.studyRole === 'student' ? '学生设备' : '家长模式'),
       lessonStudyCompleted: studyCompleted
@@ -1076,6 +1115,7 @@ Page({
     const normalizedTask = labels.normalizeTask(detail.task);
     const previewAudio = buildCurrentAudio(normalizedTask, '', 'idle');
     const studyCompleted = normalizedTask ? this.isLessonStudyCompletedForTask(normalizedTask) : false;
+    const studyWriteAllowed = isLessonTrainingMode(detail.currentMember, this.planRunType, detail.studyWriteAllowed);
     this.setData(page.buildCloudPageData(this.data, {
       syncMode: detail.syncMode,
       isReviewBuild: detail.isReviewBuild,
@@ -1095,7 +1135,7 @@ Page({
       transcriptManualVisible: false,
       transcriptSyncGranularity: 'word',
       currentMember: detail.currentMember,
-      studyWriteAllowed: detail.studyWriteAllowed !== false,
+      studyWriteAllowed,
       isPreviewMode: this.planRunType === 'preview',
       studyModeLabel: this.planRunType === 'preview' ? '预览模式' : (detail.currentMember && detail.currentMember.studyRole === 'student' ? '学生设备' : '家长模式'),
       currentTimeMs: 0,
@@ -1302,6 +1342,16 @@ Page({
       return;
     }
     if (!this.recorderManager || this.data.speakingRecording) {
+      return;
+    }
+    const privacyAuthorized = await this.ensureRecorderPrivacyAuthorized();
+    if (!privacyAuthorized) {
+      this.setData({
+        speakingDebugLines: this.buildRecordDebugLines('requirePrivacyAuthorize', { errMsg: 'privacy-not-authorized' }, {
+          audioWasPlaying: this.data.isPlaying
+        })
+      });
+      wx.showToast({ title: '请先同意隐私授权', icon: 'none' });
       return;
     }
     this.recordStartAudioWasPlaying = !!this.data.isPlaying;
@@ -2305,6 +2355,7 @@ Page({
     const normalizedTask = labels.normalizeTask(detail.task);
     const studyCompleted = normalizedTask ? this.isLessonStudyCompletedForTask(normalizedTask) : false;
     const transcriptLines = detail.transcriptTrack ? detail.transcriptTrack.lines : [];
+    const studyWriteAllowed = isLessonTrainingMode(detail.currentMember, this.planRunType, detail.studyWriteAllowed);
     this.setData(page.buildCloudPageData(this.data, {
       child: detail.child,
       task: normalizedTask,
@@ -2318,7 +2369,7 @@ Page({
       transcriptSyncGranularity: detail.transcriptTrack ? (detail.transcriptTrack.syncGranularity || 'word') : 'word',
       history: detail.history,
       currentMember: detail.currentMember,
-      studyWriteAllowed: detail.studyWriteAllowed !== false,
+      studyWriteAllowed,
       studyModeLabel: detail.currentMember && detail.currentMember.studyRole === 'student' ? '学生设备' : '家长模式',
       checkinReady: !!detail.checkinReady,
       transcriptPendingLoad: !!detail.transcriptPendingLoad,

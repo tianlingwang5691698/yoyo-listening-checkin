@@ -2,7 +2,7 @@
   <view class="lesson-hero product-hero tone-{{task.coverTone}} cover-variant-{{task.coverVariant}}">
     <view class="lesson-hero-top">
       <view class="pill">{{task.coverBadge || task.categoryLabel}}</view>
-      <view class="status-badge {{studyWriteAllowed ? (task.completedToday ? '' : 'is-warn') : 'is-muted'}}">{{studyWriteAllowed ? (task.completedToday ? '完成' : '训练中') : '试听'}}</view>
+      <view class="status-badge {{studyWriteAllowed ? (task.completedToday ? '' : 'is-warn') : 'is-muted'}}">{{studyWriteAllowed ? (task.completedToday ? '完成' : '训练中') : '试听中'}}</view>
     </view>
     <view class="lesson-title type-page-title">{{(currentAudio && currentAudio.title) || task.displayTitle || task.title}}</view>
     <view class="lesson-mode" wx:if="{{!studyWriteAllowed}}">{{isPreviewMode ? '预览模式 · 不计入打卡' : '家长模式 · 不计入打卡'}}</view>
