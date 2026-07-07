@@ -592,50 +592,37 @@ Page({
     return currentMember.studyRole === 'student';
   },
   async ensureRecordPermission() {
-    if (!wx.getSetting || !wx.authorize) {
+    if (!wx.getAppAuthorizeSetting) {
       return true;
     }
-    const setting = await new Promise((resolve) => {
-      wx.getSetting({
+    const appSetting = wx.getAppAuthorizeSetting() || {};
+    const microphoneAuthorized = appSetting.microphoneAuthorized;
+    if (microphoneAuthorized === 'authorized' || microphoneAuthorized === 'not determined' || !microphoneAuthorized) {
+      return true;
+    }
+    if (microphoneAuthorized !== 'denied' || !wx.openAppAuthorizeSetting) {
+      return true;
+    }
+    const confirmed = await new Promise((resolve) => {
+      wx.showModal({
+        title: '需要麦克风权限',
+        content: '请在手机系统设置里允许微信使用麦克风。',
+        confirmText: '去设置',
+        success: (res) => resolve(!!res.confirm),
+        fail: () => resolve(false)
+      });
+    });
+    if (!confirmed) {
+      return false;
+    }
+    await new Promise((resolve) => {
+      wx.openAppAuthorizeSetting({
         success: resolve,
-        fail: () => resolve({ authSetting: {} })
+        fail: resolve
       });
     });
-    const authSetting = (setting && setting.authSetting) || {};
-    if (authSetting['scope.record']) {
-      return true;
-    }
-    const openRecordSetting = async () => {
-      const confirmed = await new Promise((resolve) => {
-        wx.showModal({
-          title: '需要麦克风权限',
-          content: '允许麦克风后才能录音评分。',
-          confirmText: '去开启',
-          success: (res) => resolve(!!res.confirm),
-          fail: () => resolve(false)
-        });
-      });
-      if (!confirmed || !wx.openSetting) {
-        return false;
-      }
-      const opened = await new Promise((resolve) => {
-        wx.openSetting({
-          success: resolve,
-          fail: () => resolve({ authSetting: {} })
-        });
-      });
-      return !!(opened && opened.authSetting && opened.authSetting['scope.record']);
-    };
-    if (authSetting['scope.record'] === false) {
-      return openRecordSetting();
-    }
-    return new Promise((resolve) => {
-      wx.authorize({
-        scope: 'scope.record',
-        success: () => resolve(true),
-        fail: async () => resolve(await openRecordSetting())
-      });
-    });
+    const latestSetting = wx.getAppAuthorizeSetting ? (wx.getAppAuthorizeSetting() || {}) : {};
+    return latestSetting.microphoneAuthorized !== 'denied';
   },
   onLoad(query) {
     this.category = query.category || 'peppa';
