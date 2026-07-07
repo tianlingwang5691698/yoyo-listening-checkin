@@ -4,12 +4,6 @@ const appConfig = require('../../../data/app-config');
 const snapshotStore = require('../../../utils/snapshot');
 const TODAY_COMPLETED_CACHE_KEY = 'todayCompletedItemsV1';
 const LESSON_TASK_SNAPSHOT_KEY = 'lessonTaskSnapshotV1';
-const NEW_CONCEPT_AUDIO_ROOTS = {
-  newconcept1: 'A1/NewConcept1-US',
-  newconcept2: 'A2/NewConcept2-US',
-  newconcept3: 'B1/NewConcept3-US',
-  newconcept4: 'B2/NewConcept4-US'
-};
 
 function buildCloudFileId(cloudPath) {
   const normalizedPath = String(cloudPath || '').replace(/^\/+/, '');
@@ -17,52 +11,6 @@ function buildCloudFileId(cloudPath) {
     return '';
   }
   return `cloud://${appConfig.cloudEnvId}.${appConfig.cloudBucket}/${normalizedPath}`;
-}
-
-function decodeHtmlEntities(value) {
-  return String(value || '')
-    .replace(/&#39;|&apos;|&#x27;/gi, '\'')
-    .replace(/&#34;|&quot;/gi, '"')
-    .replace(/&amp;/gi, '&');
-}
-
-function getTaskTextTitle(task, item) {
-  return decodeHtmlEntities(String(
-    (task && (task.audioTitle || task.title || task.displayTitle || task.audioCompactTitle))
-    || (item && item.title)
-    || ''
-  )).trim();
-}
-
-function inferPeppaAudioCloudPath(task, item) {
-  const title = getTaskTextTitle(task, item);
-  const taskId = String((task && task.taskId) || (item && item.taskId) || '').trim();
-  const titleCode = title.match(/^S(\d)(\d{2})\s+(.+)$/i);
-  if (titleCode) {
-    return `A1/Peppa/第${Number(titleCode[1])}季/${title}.mp3`;
-  }
-  const s1Match = taskId.match(/^peppa-(\d+)$/);
-  const seasonMatch = taskId.match(/^peppa-s(\d+)-(\d+)$/);
-  const season = s1Match ? 1 : (seasonMatch ? Number(seasonMatch[1]) : 0);
-  const episode = s1Match ? Number(s1Match[1]) : (seasonMatch ? Number(seasonMatch[2]) : 0);
-  if (!season || !episode || !title) return '';
-  return `A1/Peppa/第${season}季/S${season}${String(episode).padStart(2, '0')} ${title}.mp3`;
-}
-
-function inferNewConceptAudioCloudPath(task, item) {
-  const category = String((task && task.category) || (item && item.category) || '').trim();
-  const root = NEW_CONCEPT_AUDIO_ROOTS[category] || '';
-  const title = getTaskTextTitle(task, item);
-  const match = title.match(/^(\d{3}&\d{3})\s*(?:[-–—－]\s*)?(.+)$/);
-  if (!root || !match) return '';
-  return `${root}/${match[1]}－${String(match[2] || '').trim().replace(/'/g, '&#39;')}.mp3`;
-}
-
-function inferAudioCloudPath(task, item) {
-  const category = String((task && task.category) || (item && item.category) || '').trim();
-  if (category === 'peppa') return inferPeppaAudioCloudPath(task, item);
-  if (NEW_CONCEPT_AUDIO_ROOTS[category]) return inferNewConceptAudioCloudPath(task, item);
-  return '';
 }
 
 function todayString() {
@@ -195,8 +143,6 @@ function writeLessonTaskSnapshot(item) {
   const taskId = String((item && item.taskId) || '').trim();
   const sourceTask = (item && (item.taskSnapshot || item.task)) || {};
   if (!category || !taskId) return false;
-  const inferredAudioCloudPath = sourceTask.audioCloudPath || inferAudioCloudPath(sourceTask, item);
-  const inferredAudioFileId = sourceTask.audioFileId || buildCloudFileId(inferredAudioCloudPath);
   snapshotStore.write(LESSON_TASK_SNAPSHOT_KEY, `${category}:${taskId}`, {
     category,
     taskId,
@@ -206,8 +152,10 @@ function writeLessonTaskSnapshot(item) {
       title: sourceTask.title || item.title || '',
       displayTitle: sourceTask.displayTitle || item.title || '',
       categoryLabel: sourceTask.categoryLabel || item.meta || '',
-      audioCloudPath: inferredAudioCloudPath || sourceTask.audioCloudPath || '',
-      audioFileId: inferredAudioFileId || sourceTask.audioFileId || '',
+      audioUrl: sourceTask.audioUrl || '',
+      audioCloudPath: sourceTask.audioCloudPath || '',
+      audioFileId: sourceTask.audioFileId || '',
+      audioSource: sourceTask.audioSource || '',
       playCount: Number(sourceTask.playCount || 1),
       repeatTarget: Number(sourceTask.repeatTarget || 1),
       completedToday: true

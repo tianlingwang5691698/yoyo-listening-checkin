@@ -544,7 +544,7 @@ async function removeListeningPlanMaterial(options) {
  * @returns {Promise<TaskDetailData>}
  */
 async function getTaskDetail(category, taskId, options, onRefresh) {
-  return callCloud('getTaskDetail', withSelectedStudent(Object.assign({ category, taskId }, options || {})), contracts.createTaskDetailDefaults(), { onRefresh, useCache: false });
+  return callCloud('getTaskDetail', withSelectedStudent(Object.assign({ category, taskId }, options || {})), contracts.createTaskDetailDefaults(), { onRefresh });
 }
 
 async function getTaskTranscript(category, taskId, options, onRefresh) {
@@ -932,7 +932,14 @@ async function explainGrammarQuestion(question, options = {}) {
  * @returns {Promise<FamilyPageData>}
  */
 async function getFamilyPageData(onRefresh) {
-  const data = await callCloud('getFamilyPage', withSelectedStudent({}), contracts.createFamilyPageDefaults(), { onRefresh, useCache: false });
+  const data = await callCloud('getFamilyPage', withSelectedStudent({}), contracts.createFamilyPageDefaults(), {
+    onRefresh: (fresh) => {
+      syncSelectedStudentFromData(fresh);
+      if (typeof onRefresh === 'function') {
+        onRefresh(fresh);
+      }
+    }
+  });
   syncSelectedStudentFromData(data);
   return data;
 }
