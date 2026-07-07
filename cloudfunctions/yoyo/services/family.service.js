@@ -7,8 +7,7 @@ async function getProfileData(event) {
   const { ctx } = await familyFacade.prepareRequestContext(Object.assign({}, event, {
     action: 'getProfileData'
   }));
-  const dashboard = await familyFacade.getDashboardData(ctx);
-  return familyFacade.buildProfilePayload(ctx, dashboard);
+  return familyFacade.buildProfilePayload(ctx, null);
 }
 
 async function getFamilyPage(event) {
@@ -56,6 +55,16 @@ async function getSelfChildNickname(openId) {
   return String(ownChild && ownChild.nickname || '').trim();
 }
 
+async function assertNotBindingOwnChild(openId, targetFamilyId) {
+  const currentMembers = await familyRepository.findMembersByOpenId(openId);
+  const alreadyInTargetFamily = (currentMembers || []).some((member) => (
+    String(member && member.familyId || '') === String(targetFamilyId || '')
+  ));
+  if (alreadyInTargetFamily) {
+    throw new Error('不能绑定自己的孩子 ID，请让另一个微信账号绑定');
+  }
+}
+
 async function joinFamilyByChildCode(event) {
   const { ctx } = await familyFacade.prepareRequestContext(Object.assign({}, event, {
     action: 'joinFamilyByChildCode'
@@ -69,6 +78,7 @@ async function joinFamilyByChildCode(event) {
   if (!targetChild || !targetChild.familyId) {
     throw new Error('没有找到这个孩子 ID');
   }
+  await assertNotBindingOwnChild(ctx.user.openId, targetChild.familyId);
   const targetStudyRole = String(payload.studyRole || '').trim() === 'student' ? 'student' : 'parent';
   let displayName = String(payload.displayName || '').trim();
   if (!displayName && targetStudyRole === 'parent') {

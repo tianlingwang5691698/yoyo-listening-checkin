@@ -8,6 +8,7 @@ const identityService = require('../services/identity.service');
 const familyFacade = require('../facades/family.facade');
 const studyFacade = require('../facades/study.facade');
 const childRepository = require('../repositories/child.repository');
+const familyRepository = require('../repositories/family.repository');
 const familyEngine = require('../lib/family-engine');
 const bootstrapEngine = require('../lib/bootstrap-engine');
 
@@ -170,6 +171,7 @@ test('joinFamilyByChildCode 会进入孩子记录', async (t) => {
     assert.equal(childLoginCode, '123456');
     return { familyId: 'family-child' };
   });
+  t.mock.method(familyRepository, 'findMembersByOpenId', async () => []);
   t.mock.method(familyFacade, 'upsertFamilyMemberForFamily', async (openId, userId, familyId, displayName) => {
     calls.push(['join', openId, userId, familyId, displayName]);
   });
@@ -189,6 +191,26 @@ test('joinFamilyByChildCode 会进入孩子记录', async (t) => {
   assert.equal(result.family.familyId, 'family-child');
   assert.equal(result.currentMember.role, 'parent');
   assert.deepEqual(calls, [['join', 'open-1', 'user-1', 'family-child', '妈妈']]);
+});
+
+test('joinFamilyByChildCode 禁止绑定自己的孩子 ID', async (t) => {
+  t.mock.method(familyFacade, 'prepareRequestContext', async () => ({
+    ctx: {
+      user: { openId: 'open-1', userId: 'user-1' }
+    }
+  }));
+  t.mock.method(childRepository, 'findByLoginCode', async () => ({ familyId: 'family-self' }));
+  t.mock.method(familyRepository, 'findMembersByOpenId', async () => [{
+    openId: 'open-1',
+    familyId: 'family-self'
+  }]);
+
+  await assert.rejects(
+    familyService.joinFamilyByChildCode({
+      payload: { childLoginCode: '123456', displayName: '妈妈' }
+    }),
+    /不能绑定自己的孩子 ID/
+  );
 });
 
 test('老师绑定新学生时保留原有学生绑定', async () => {
@@ -262,7 +284,9 @@ test('getDashboard 按 view 返回不同 shape', async (t) => {
     includeTaskProgressSummary: true,
     includeUser: false,
     includeFamily: false,
-    includeStats: false
+    includeStats: false,
+    includeChildStats: false,
+    reconcileCheckins: false
   });
   assert.deepEqual(recordResult, {
     includeDailyTasks: false,
