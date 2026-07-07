@@ -135,8 +135,3 @@
   font-size: var(--font-caption-size);
   font-weight: var(--font-title-weight);
 }
-
-.stage-debug {
-  padding: 20rpx 28rpx 24rpx;
-  color: var(--text-muted);
-}

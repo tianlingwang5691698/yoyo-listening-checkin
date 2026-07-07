@@ -132,16 +132,25 @@ Page({
       id: getOverviewSnapshotId(nextLevel),
       maxAgeMs: SNAPSHOT_MAX_AGE_MS
     });
-    const cached = this.overviewCache[nextLevel] || snapshot;
+    const memoryCached = this.overviewCache[nextLevel] || null;
+    const cached = memoryCached || snapshot;
     if (cached && !options.prefetch) {
       this.overviewCache[nextLevel] = cached;
       this.applyOverview(cached, nextLevel);
+      if (options.interactive) {
+        setTimeout(() => {
+          this.loadOverview(nextLevel, { prefetch: true }).catch(() => {});
+        }, 600);
+        return cached;
+      }
     }
     if (!cached && !options.prefetch && !(this.data.materials || []).length) {
       this.setData({ levelLoading: true });
     }
     if (!this.overviewRequests[nextLevel]) {
-      const request = store.getListeningPlanOverview({ levelId: nextLevel }, (fresh) => this.applyOverviewIfCurrent(fresh, nextLevel));
+      const request = store.getListeningPlanOverview({ levelId: nextLevel }, (fresh) => {
+        this.applyOverviewIfCurrent(fresh, nextLevel);
+      });
       this.overviewRequests[nextLevel] = request.then((data) => {
         delete this.overviewRequests[nextLevel];
         return data;
@@ -191,7 +200,7 @@ Page({
       selectedLevel: levelId,
       levelTabs: buildLevelTabs(this.data.levelTabs, levelId)
     });
-    this.loadOverview(levelId);
+    this.loadOverview(levelId, { interactive: true });
   },
   openPlanSettings() {
     const levelId = this.data.selectedLevel || 'A1';

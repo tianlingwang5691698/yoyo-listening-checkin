@@ -148,12 +148,22 @@ Page({
     });
     if (snapshot && hasDisplayableProfile(snapshot)) {
       this.applyProfileData(snapshot);
+      setTimeout(() => {
+        store.getProfileData((fresh) => this.applyProfileData(fresh)).catch(() => {});
+        this.loadAdminStatus();
+      }, 600);
+      return;
     } else {
       const cachedProfile = store.getCachedReadResult
         ? store.getCachedReadResult('getProfileData', store.getSelectedStudentTarget ? store.getSelectedStudentTarget() : {})
         : null;
       if (cachedProfile && hasDisplayableProfile(cachedProfile)) {
         this.applyProfileData(cachedProfile);
+        setTimeout(() => {
+          store.getProfileData((fresh) => this.applyProfileData(fresh)).catch(() => {});
+          this.loadAdminStatus();
+        }, 600);
+        return;
       }
     }
     const data = await store.getProfileData((fresh) => this.applyProfileData(fresh));
