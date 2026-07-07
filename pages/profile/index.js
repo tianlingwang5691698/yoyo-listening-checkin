@@ -5,6 +5,7 @@ const snapshotStore = require('../../utils/snapshot');
 
 const ADMIN_OPEN_IDS = ['om8JT3Zhqe1zeAiKUGGkU0ACjAWs'];
 const PROFILE_SNAPSHOT_KEY = 'profileHomeSnapshotV1';
+const PROFILE_SNAPSHOT_MAX_AGE_MS = 7 * 24 * 60 * 60 * 1000;
 
 const DAILY_ENCOURAGEMENTS = [
   ['Small steps count.', '一点点坚持，也会慢慢变强。'],
@@ -62,6 +63,26 @@ function buildProfilePresentation(data) {
   };
 }
 
+function buildCurrentProfileSnapshotId() {
+  const target = store.getSelectedStudentTarget ? store.getSelectedStudentTarget() : {};
+  const familyId = String((target && target.targetFamilyId) || '').trim();
+  const childId = String((target && target.targetChildId) || '').trim();
+  if (familyId || childId) {
+    return `target:${familyId}:${childId}`;
+  }
+  return 'self';
+}
+
+function hasDisplayableProfile(data) {
+  const child = (data && data.child) || {};
+  const nickname = String(child.nickname || '').trim();
+  const childLoginCode = String(child.childLoginCode || '').trim();
+  if (!nickname || ['同学', '我'].includes(nickname) || (nickname === '佑佑' && childLoginCode !== '317613')) {
+    return false;
+  }
+  return true;
+}
+
 function isAdminProfile(data) {
   const user = (data && (data.currentUser || data.user)) || {};
   const member = (data && data.currentMember) || {};
@@ -92,15 +113,17 @@ Page({
     childCodeReady: false,
     childCodeText: '待同步',
     nicknameRequired: false,
+    profileHydrated: false,
     adminVisible: false
   }),
   applyProfileData(data) {
     const profileData = Object.assign({}, data || {});
     this.profileSnapshotData = profileData;
     if (data && data.syncMode !== 'cloud-error') {
-      snapshotStore.write(PROFILE_SNAPSHOT_KEY, 'profile', profileData, { source: 'profile-home' });
+      snapshotStore.write(PROFILE_SNAPSHOT_KEY, buildCurrentProfileSnapshotId(), profileData, { source: 'profile-home' });
     }
     this.setData(page.buildCloudPageData(this.data, Object.assign({}, data, {
+      profileHydrated: true,
       childNicknameInput: (data.child && data.child.nickname) || '',
       dailyEncouragement: getDailyEncouragement(),
       adminVisible: !!(data && data.isAdmin)
@@ -118,12 +141,20 @@ Page({
     if (!page.requireIdentityConfirmed()) {
       return;
     }
+    const snapshotId = buildCurrentProfileSnapshotId();
     const snapshot = snapshotStore.read(PROFILE_SNAPSHOT_KEY, {
-      id: 'profile',
-      maxAgeMs: 10 * 60 * 1000
+      id: snapshotId,
+      maxAgeMs: PROFILE_SNAPSHOT_MAX_AGE_MS
     });
-    if (snapshot) {
+    if (snapshot && hasDisplayableProfile(snapshot)) {
       this.applyProfileData(snapshot);
+    } else {
+      const cachedProfile = store.getCachedReadResult
+        ? store.getCachedReadResult('getProfileData', store.getSelectedStudentTarget ? store.getSelectedStudentTarget() : {})
+        : null;
+      if (cachedProfile && hasDisplayableProfile(cachedProfile)) {
+        this.applyProfileData(cachedProfile);
+      }
     }
     const data = await store.getProfileData((fresh) => this.applyProfileData(fresh));
     this.applyProfileData(data);
@@ -138,7 +169,7 @@ Page({
         isAdmin: !!(data && data.isAdmin)
       });
       this.profileSnapshotData = profileData;
-      snapshotStore.write(PROFILE_SNAPSHOT_KEY, 'profile', profileData, { source: 'profile-admin' });
+      snapshotStore.write(PROFILE_SNAPSHOT_KEY, buildCurrentProfileSnapshotId(), profileData, { source: 'profile-admin' });
     } catch (error) {
       this.setData({ adminVisible: !!this.data.adminVisible });
     }
@@ -166,9 +197,9 @@ Page({
     }
     try {
       const data = await store.updateChildProfile(nickname);
-      this.setData(page.buildCloudPageData(this.data, Object.assign({}, data, {
+      this.applyProfileData(Object.assign({}, data, {
         childNicknameInput: (data.child && data.child.nickname) || nickname
-      }, buildProfilePresentation(data))));
+      }));
       wx.showToast({
         title: '昵称已更新',
         icon: 'none'
