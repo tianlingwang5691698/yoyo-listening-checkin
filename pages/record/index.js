@@ -257,6 +257,22 @@ function buildDaySummary(report) {
   };
 }
 
+function buildCalendarDaySummary(heatmap, date) {
+  const record = (heatmap || []).find((item) => item && item.date === date) || {};
+  const count = Number(record.count || 0);
+  const completed = !!record.completed || count > 0;
+  if (!completed) {
+    return EMPTY_DAY_SUMMARY;
+  }
+  const completedCount = Math.max(count, 1);
+  return {
+    completedCount,
+    totalCount: completedCount,
+    statusText: '已完成',
+    minutesText: '待加载'
+  };
+}
+
 function markSelectedCells(cells, selectedDate) {
   return (cells || []).map((item) => Object.assign({}, item, {
     isSelected: item.date === selectedDate
@@ -334,11 +350,12 @@ Page({
         heatmap: [],
         catchupState: snapshot.catchupState || this.data.catchupState
       };
+      const snapshotHeatmap = (snapshot.heatmapData && snapshot.heatmapData.heatmap) || [];
       this.setData(page.buildCloudPageData(this.data, Object.assign({}, snapshot, {
         selectedDayLoaded: false,
         selectedDayLoading: false,
         selectedDayReport: EMPTY_REPORT,
-        selectedDaySummary: EMPTY_DAY_SUMMARY
+        selectedDaySummary: buildCalendarDaySummary(snapshotHeatmap, selectedDate)
       })));
       this.scheduleDeferredLoads(calendarYear, calendarMonth, selectedDate);
     }
@@ -366,7 +383,7 @@ Page({
       selectedDayLoaded: false,
       selectedDayLoading: false,
       selectedDayReport: EMPTY_REPORT,
-      selectedDaySummary: EMPTY_DAY_SUMMARY,
+      selectedDaySummary: buildCalendarDaySummary(heatmapData.heatmap, selectedDate),
       monthCells: buildMonthCells(calendarYear, calendarMonth, heatmapData.heatmap, selectedDate, heatmapData.catchupState),
       catchupState: heatmapData.catchupState,
       catchupTasks: [],
@@ -461,9 +478,13 @@ Page({
   },
   refreshMonthCellsFromCache() {
     const heatmapData = this.getCachedMonthData(this.data.calendarYear, this.data.calendarMonth) || { heatmap: [] };
-    this.setData({
+    const nextState = {
       monthCells: buildMonthCells(this.data.calendarYear, this.data.calendarMonth, heatmapData.heatmap, this.data.selectedDate, this.data.catchupState)
-    });
+    };
+    if (!this.data.selectedDayLoaded) {
+      nextState.selectedDaySummary = buildCalendarDaySummary(heatmapData.heatmap, this.data.selectedDate);
+    }
+    this.setData(nextState);
   },
   async loadCalendar(year, month, selectedDate) {
     this.calendarLoadVersion += 1;
@@ -478,7 +499,7 @@ Page({
       selectedDayLoaded: false,
       selectedDayLoading: false,
       selectedDayReport: EMPTY_REPORT,
-      selectedDaySummary: EMPTY_DAY_SUMMARY,
+      selectedDaySummary: buildCalendarDaySummary(cachedData.heatmap, selectedDate),
       monthCells: buildMonthCells(year, month, cachedData.heatmap, selectedDate, this.data.catchupState)
     }, buildCatchupPresentation(this.data.catchupState))));
     const heatmapData = await this.getMonthHeatmapCached(year, month, { force: true });
@@ -487,6 +508,7 @@ Page({
     }
     this.setData(page.buildCloudPageData(this.data, Object.assign({
       monthCells: buildMonthCells(year, month, heatmapData.heatmap, selectedDate, heatmapData.catchupState),
+      selectedDaySummary: buildCalendarDaySummary(heatmapData.heatmap, selectedDate),
       catchupState: heatmapData.catchupState
     }, buildCatchupPresentation(heatmapData.catchupState))));
     this.preloadAdjacentMonths(year, month);
@@ -606,7 +628,7 @@ Page({
       selectedDayLoaded: false,
       selectedDayLoading: false,
       selectedDayReport: EMPTY_REPORT,
-      selectedDaySummary: EMPTY_DAY_SUMMARY,
+      selectedDaySummary: buildCalendarDaySummary((this.getCachedMonthData(this.data.calendarYear, this.data.calendarMonth) || {}).heatmap, date),
       monthCells: markSelectedCells(this.data.monthCells, date)
     });
   },
