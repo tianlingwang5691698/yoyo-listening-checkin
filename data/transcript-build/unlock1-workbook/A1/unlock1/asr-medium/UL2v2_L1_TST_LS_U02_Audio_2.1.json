@@ -1,0 +1,1297 @@
+{
+  "model": "medium",
+  "language": "en",
+  "text": "Track 2.1 In the winter this country is very cold and there is a lot of snow There are high mountains and in winter they are beautiful The snow is white and the sky is blue because it is very sunny The forest is green all year Track 3.2 This is an island near the equator and the climate is hot all year There are two seasons rainy and dry In the rainy season it rains every day and there are a lot of black clouds In the dry season the sky is blue and it's very sunny My country has four seasons My favorite is spring Because there are flowers everywhere and it's very green In the summer it is hot and dry There are storms in autumn and it's rainy and windy But the trees are beautiful The leaves are red yellow and orange and the sky is blue Winter is cold and there is snow Track 4.3 This country is hot all year and it rains about one week a year It's very dry and sunny In the summer the temperature can reach 50 degrees centigrade There is a big desert with a lot of sand but no trees People live by the sea and there are big parks in the towns",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 2320,
+      "text": "Track 2.1",
+      "words": [
+        {
+          "word": "Track",
+          "start": 0.0,
+          "end": 0.72
+        },
+        {
+          "word": "2",
+          "start": 0.72,
+          "end": 1.28
+        },
+        {
+          "word": ".1",
+          "start": 1.28,
+          "end": 2.32
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 3440,
+      "endMs": 9740,
+      "text": "In the winter this country is very cold and there is a lot of snow",
+      "words": [
+        {
+          "word": "In",
+          "start": 3.4400000000000004,
+          "end": 4.28
+        },
+        {
+          "word": "the",
+          "start": 4.28,
+          "end": 4.52
+        },
+        {
+          "word": "winter",
+          "start": 4.52,
+          "end": 4.92
+        },
+        {
+          "word": "this",
+          "start": 4.92,
+          "end": 5.6
+        },
+        {
+          "word": "country",
+          "start": 5.6,
+          "end": 6.08
+        },
+        {
+          "word": "is",
+          "start": 6.08,
+          "end": 6.46
+        },
+        {
+          "word": "very",
+          "start": 6.46,
+          "end": 6.94
+        },
+        {
+          "word": "cold",
+          "start": 6.94,
+          "end": 7.42
+        },
+        {
+          "word": "and",
+          "start": 7.42,
+          "end": 8.04
+        },
+        {
+          "word": "there",
+          "start": 8.04,
+          "end": 8.32
+        },
+        {
+          "word": "is",
+          "start": 8.32,
+          "end": 8.56
+        },
+        {
+          "word": "a",
+          "start": 8.56,
+          "end": 8.72
+        },
+        {
+          "word": "lot",
+          "start": 8.72,
+          "end": 8.96
+        },
+        {
+          "word": "of",
+          "start": 8.96,
+          "end": 9.38
+        },
+        {
+          "word": "snow",
+          "start": 9.38,
+          "end": 9.74
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 10400,
+      "endMs": 14840,
+      "text": "There are high mountains and in winter they are beautiful",
+      "words": [
+        {
+          "word": "There",
+          "start": 10.4,
+          "end": 10.96
+        },
+        {
+          "word": "are",
+          "start": 10.96,
+          "end": 11.34
+        },
+        {
+          "word": "high",
+          "start": 11.34,
+          "end": 11.66
+        },
+        {
+          "word": "mountains",
+          "start": 11.66,
+          "end": 12.26
+        },
+        {
+          "word": "and",
+          "start": 12.26,
+          "end": 12.78
+        },
+        {
+          "word": "in",
+          "start": 12.78,
+          "end": 12.94
+        },
+        {
+          "word": "winter",
+          "start": 12.94,
+          "end": 13.36
+        },
+        {
+          "word": "they",
+          "start": 13.36,
+          "end": 13.72
+        },
+        {
+          "word": "are",
+          "start": 13.72,
+          "end": 14.0
+        },
+        {
+          "word": "beautiful",
+          "start": 14.0,
+          "end": 14.84
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 14840,
+      "endMs": 20700,
+      "text": "The snow is white and the sky is blue because it is very sunny",
+      "words": [
+        {
+          "word": "The",
+          "start": 14.84,
+          "end": 15.68
+        },
+        {
+          "word": "snow",
+          "start": 15.68,
+          "end": 16.22
+        },
+        {
+          "word": "is",
+          "start": 16.22,
+          "end": 16.72
+        },
+        {
+          "word": "white",
+          "start": 16.72,
+          "end": 17.04
+        },
+        {
+          "word": "and",
+          "start": 17.04,
+          "end": 17.58
+        },
+        {
+          "word": "the",
+          "start": 17.58,
+          "end": 17.84
+        },
+        {
+          "word": "sky",
+          "start": 17.84,
+          "end": 18.18
+        },
+        {
+          "word": "is",
+          "start": 18.18,
+          "end": 18.56
+        },
+        {
+          "word": "blue",
+          "start": 18.56,
+          "end": 18.84
+        },
+        {
+          "word": "because",
+          "start": 18.84,
+          "end": 19.38
+        },
+        {
+          "word": "it",
+          "start": 19.38,
+          "end": 19.54
+        },
+        {
+          "word": "is",
+          "start": 19.54,
+          "end": 19.82
+        },
+        {
+          "word": "very",
+          "start": 19.82,
+          "end": 20.3
+        },
+        {
+          "word": "sunny",
+          "start": 20.3,
+          "end": 20.7
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 21320,
+      "endMs": 23960,
+      "text": "The forest is green all year",
+      "words": [
+        {
+          "word": "The",
+          "start": 21.32,
+          "end": 22.04
+        },
+        {
+          "word": "forest",
+          "start": 22.04,
+          "end": 22.5
+        },
+        {
+          "word": "is",
+          "start": 22.5,
+          "end": 22.84
+        },
+        {
+          "word": "green",
+          "start": 22.84,
+          "end": 23.24
+        },
+        {
+          "word": "all",
+          "start": 23.24,
+          "end": 23.84
+        },
+        {
+          "word": "year",
+          "start": 23.84,
+          "end": 24.259999999999998
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "startMs": 29000,
+      "endMs": 29880,
+      "text": "Track 3.2",
+      "words": [
+        {
+          "word": "Track",
+          "start": 29.0,
+          "end": 29.88
+        },
+        {
+          "word": "3",
+          "start": 29.88,
+          "end": 29.88
+        },
+        {
+          "word": ".2",
+          "start": 29.88,
+          "end": 29.88
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "startMs": 29880,
+      "endMs": 35560,
+      "text": "This is an island near the equator and the climate is hot all year",
+      "words": [
+        {
+          "word": "This",
+          "start": 29.88,
+          "end": 29.88
+        },
+        {
+          "word": "is",
+          "start": 29.88,
+          "end": 30.32
+        },
+        {
+          "word": "an",
+          "start": 30.32,
+          "end": 30.58
+        },
+        {
+          "word": "island",
+          "start": 30.58,
+          "end": 31.0
+        },
+        {
+          "word": "near",
+          "start": 31.0,
+          "end": 31.4
+        },
+        {
+          "word": "the",
+          "start": 31.4,
+          "end": 31.76
+        },
+        {
+          "word": "equator",
+          "start": 31.76,
+          "end": 32.24
+        },
+        {
+          "word": "and",
+          "start": 32.24,
+          "end": 33.1
+        },
+        {
+          "word": "the",
+          "start": 33.1,
+          "end": 33.38
+        },
+        {
+          "word": "climate",
+          "start": 33.38,
+          "end": 33.86
+        },
+        {
+          "word": "is",
+          "start": 33.86,
+          "end": 34.28
+        },
+        {
+          "word": "hot",
+          "start": 34.28,
+          "end": 34.62
+        },
+        {
+          "word": "all",
+          "start": 34.62,
+          "end": 35.16
+        },
+        {
+          "word": "year",
+          "start": 35.16,
+          "end": 35.56
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "startMs": 36380,
+      "endMs": 38440,
+      "text": "There are two seasons",
+      "words": [
+        {
+          "word": "There",
+          "start": 36.38,
+          "end": 36.9
+        },
+        {
+          "word": "are",
+          "start": 36.9,
+          "end": 37.34
+        },
+        {
+          "word": "two",
+          "start": 37.34,
+          "end": 37.7
+        },
+        {
+          "word": "seasons",
+          "start": 37.7,
+          "end": 38.44
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "startMs": 38440,
+      "endMs": 40800,
+      "text": "rainy and dry",
+      "words": [
+        {
+          "word": "rainy",
+          "start": 38.44,
+          "end": 39.42
+        },
+        {
+          "word": "and",
+          "start": 39.42,
+          "end": 40.16
+        },
+        {
+          "word": "dry",
+          "start": 40.16,
+          "end": 40.8
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "startMs": 41340,
+      "endMs": 49080,
+      "text": "In the rainy season it rains every day and there are a lot of black clouds",
+      "words": [
+        {
+          "word": "In",
+          "start": 41.34,
+          "end": 42.08
+        },
+        {
+          "word": "the",
+          "start": 42.08,
+          "end": 42.42
+        },
+        {
+          "word": "rainy",
+          "start": 42.42,
+          "end": 42.76
+        },
+        {
+          "word": "season",
+          "start": 42.76,
+          "end": 43.32
+        },
+        {
+          "word": "it",
+          "start": 43.32,
+          "end": 44.0
+        },
+        {
+          "word": "rains",
+          "start": 44.0,
+          "end": 44.38
+        },
+        {
+          "word": "every",
+          "start": 44.38,
+          "end": 45.06
+        },
+        {
+          "word": "day",
+          "start": 45.06,
+          "end": 45.48
+        },
+        {
+          "word": "and",
+          "start": 45.48,
+          "end": 46.1
+        },
+        {
+          "word": "there",
+          "start": 46.1,
+          "end": 46.38
+        },
+        {
+          "word": "are",
+          "start": 46.38,
+          "end": 46.76
+        },
+        {
+          "word": "a",
+          "start": 46.76,
+          "end": 47.1
+        },
+        {
+          "word": "lot",
+          "start": 47.1,
+          "end": 47.44
+        },
+        {
+          "word": "of",
+          "start": 47.44,
+          "end": 47.86
+        },
+        {
+          "word": "black",
+          "start": 47.86,
+          "end": 48.32
+        },
+        {
+          "word": "clouds",
+          "start": 48.32,
+          "end": 49.08
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "startMs": 49760,
+      "endMs": 55980,
+      "text": "In the dry season the sky is blue and it's very sunny",
+      "words": [
+        {
+          "word": "In",
+          "start": 49.76,
+          "end": 50.48
+        },
+        {
+          "word": "the",
+          "start": 50.48,
+          "end": 50.72
+        },
+        {
+          "word": "dry",
+          "start": 50.72,
+          "end": 51.08
+        },
+        {
+          "word": "season",
+          "start": 51.08,
+          "end": 51.68
+        },
+        {
+          "word": "the",
+          "start": 51.68,
+          "end": 52.26
+        },
+        {
+          "word": "sky",
+          "start": 52.26,
+          "end": 52.8
+        },
+        {
+          "word": "is",
+          "start": 52.8,
+          "end": 53.18
+        },
+        {
+          "word": "blue",
+          "start": 53.18,
+          "end": 53.6
+        },
+        {
+          "word": "and",
+          "start": 53.6,
+          "end": 54.4
+        },
+        {
+          "word": "it's",
+          "start": 54.4,
+          "end": 54.76
+        },
+        {
+          "word": "very",
+          "start": 54.76,
+          "end": 55.42
+        },
+        {
+          "word": "sunny",
+          "start": 55.42,
+          "end": 55.98
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "startMs": 60260,
+      "endMs": 64000,
+      "text": "My country has four seasons",
+      "words": [
+        {
+          "word": "My",
+          "start": 60.260000000000005,
+          "end": 61.38
+        },
+        {
+          "word": "country",
+          "start": 61.38,
+          "end": 62.06
+        },
+        {
+          "word": "has",
+          "start": 62.06,
+          "end": 62.78
+        },
+        {
+          "word": "four",
+          "start": 62.78,
+          "end": 63.34
+        },
+        {
+          "word": "seasons",
+          "start": 63.34,
+          "end": 64.0
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "startMs": 64720,
+      "endMs": 66960,
+      "text": "My favorite is spring",
+      "words": [
+        {
+          "word": "My",
+          "start": 64.72,
+          "end": 65.42
+        },
+        {
+          "word": "favorite",
+          "start": 65.42,
+          "end": 66.02
+        },
+        {
+          "word": "is",
+          "start": 66.02,
+          "end": 66.42
+        },
+        {
+          "word": "spring",
+          "start": 66.42,
+          "end": 66.96
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "startMs": 66960,
+      "endMs": 72400,
+      "text": "Because there are flowers everywhere and it's very green",
+      "words": [
+        {
+          "word": "Because",
+          "start": 66.96,
+          "end": 68.0
+        },
+        {
+          "word": "there",
+          "start": 68.0,
+          "end": 68.38
+        },
+        {
+          "word": "are",
+          "start": 68.38,
+          "end": 68.66
+        },
+        {
+          "word": "flowers",
+          "start": 68.66,
+          "end": 69.24
+        },
+        {
+          "word": "everywhere",
+          "start": 69.24,
+          "end": 70.08
+        },
+        {
+          "word": "and",
+          "start": 70.08,
+          "end": 71.0
+        },
+        {
+          "word": "it's",
+          "start": 71.0,
+          "end": 71.4
+        },
+        {
+          "word": "very",
+          "start": 71.4,
+          "end": 71.8
+        },
+        {
+          "word": "green",
+          "start": 71.8,
+          "end": 72.4
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "startMs": 73200,
+      "endMs": 76700,
+      "text": "In the summer it is hot and dry",
+      "words": [
+        {
+          "word": "In",
+          "start": 73.2,
+          "end": 73.9
+        },
+        {
+          "word": "the",
+          "start": 73.9,
+          "end": 74.18
+        },
+        {
+          "word": "summer",
+          "start": 74.18,
+          "end": 74.54
+        },
+        {
+          "word": "it",
+          "start": 74.54,
+          "end": 75.18
+        },
+        {
+          "word": "is",
+          "start": 75.18,
+          "end": 75.48
+        },
+        {
+          "word": "hot",
+          "start": 75.48,
+          "end": 75.84
+        },
+        {
+          "word": "and",
+          "start": 75.84,
+          "end": 76.3
+        },
+        {
+          "word": "dry",
+          "start": 76.3,
+          "end": 76.7
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "startMs": 77460,
+      "endMs": 81960,
+      "text": "There are storms in autumn and it's rainy and windy",
+      "words": [
+        {
+          "word": "There",
+          "start": 77.46000000000001,
+          "end": 78.02
+        },
+        {
+          "word": "are",
+          "start": 78.02,
+          "end": 78.34
+        },
+        {
+          "word": "storms",
+          "start": 78.34,
+          "end": 78.86
+        },
+        {
+          "word": "in",
+          "start": 78.86,
+          "end": 79.18
+        },
+        {
+          "word": "autumn",
+          "start": 79.18,
+          "end": 79.66
+        },
+        {
+          "word": "and",
+          "start": 79.66,
+          "end": 80.42
+        },
+        {
+          "word": "it's",
+          "start": 80.42,
+          "end": 80.82
+        },
+        {
+          "word": "rainy",
+          "start": 80.82,
+          "end": 81.1
+        },
+        {
+          "word": "and",
+          "start": 81.1,
+          "end": 81.58
+        },
+        {
+          "word": "windy",
+          "start": 81.58,
+          "end": 81.96
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "startMs": 81960,
+      "endMs": 84780,
+      "text": "But the trees are beautiful",
+      "words": [
+        {
+          "word": "But",
+          "start": 81.96,
+          "end": 82.92
+        },
+        {
+          "word": "the",
+          "start": 82.92,
+          "end": 83.22
+        },
+        {
+          "word": "trees",
+          "start": 83.22,
+          "end": 83.62
+        },
+        {
+          "word": "are",
+          "start": 83.62,
+          "end": 83.92
+        },
+        {
+          "word": "beautiful",
+          "start": 83.92,
+          "end": 84.78
+        }
+      ]
+    },
+    {
+      "index": 18,
+      "startMs": 85300,
+      "endMs": 91540,
+      "text": "The leaves are red yellow and orange and the sky is blue",
+      "words": [
+        {
+          "word": "The",
+          "start": 85.3,
+          "end": 85.96
+        },
+        {
+          "word": "leaves",
+          "start": 85.96,
+          "end": 86.42
+        },
+        {
+          "word": "are",
+          "start": 86.42,
+          "end": 86.72
+        },
+        {
+          "word": "red",
+          "start": 86.72,
+          "end": 87.3
+        },
+        {
+          "word": "yellow",
+          "start": 87.3,
+          "end": 87.98
+        },
+        {
+          "word": "and",
+          "start": 87.98,
+          "end": 88.8
+        },
+        {
+          "word": "orange",
+          "start": 88.8,
+          "end": 89.36
+        },
+        {
+          "word": "and",
+          "start": 89.36,
+          "end": 90.3
+        },
+        {
+          "word": "the",
+          "start": 90.3,
+          "end": 90.54
+        },
+        {
+          "word": "sky",
+          "start": 90.54,
+          "end": 91.0
+        },
+        {
+          "word": "is",
+          "start": 91.0,
+          "end": 91.4
+        },
+        {
+          "word": "blue",
+          "start": 91.4,
+          "end": 91.9
+        }
+      ]
+    },
+    {
+      "index": 19,
+      "startMs": 92620,
+      "endMs": 95980,
+      "text": "Winter is cold and there is snow",
+      "words": [
+        {
+          "word": "Winter",
+          "start": 92.62,
+          "end": 93.62
+        },
+        {
+          "word": "is",
+          "start": 93.62,
+          "end": 94.18
+        },
+        {
+          "word": "cold",
+          "start": 94.18,
+          "end": 94.7
+        },
+        {
+          "word": "and",
+          "start": 94.7,
+          "end": 95.3
+        },
+        {
+          "word": "there",
+          "start": 95.3,
+          "end": 95.56
+        },
+        {
+          "word": "is",
+          "start": 95.56,
+          "end": 95.82
+        },
+        {
+          "word": "snow",
+          "start": 95.82,
+          "end": 96.32
+        }
+      ]
+    },
+    {
+      "index": 20,
+      "startMs": 100720,
+      "endMs": 101680,
+      "text": "Track 4.3",
+      "words": [
+        {
+          "word": "Track",
+          "start": 100.72,
+          "end": 101.68
+        },
+        {
+          "word": "4",
+          "start": 101.68,
+          "end": 101.68
+        },
+        {
+          "word": ".3",
+          "start": 101.68,
+          "end": 101.68
+        }
+      ]
+    },
+    {
+      "index": 21,
+      "startMs": 101680,
+      "endMs": 107640,
+      "text": "This country is hot all year and it rains about one week a year",
+      "words": [
+        {
+          "word": "This",
+          "start": 101.68,
+          "end": 101.68
+        },
+        {
+          "word": "country",
+          "start": 101.68,
+          "end": 102.28
+        },
+        {
+          "word": "is",
+          "start": 102.28,
+          "end": 102.92
+        },
+        {
+          "word": "hot",
+          "start": 102.92,
+          "end": 103.28
+        },
+        {
+          "word": "all",
+          "start": 103.28,
+          "end": 103.76
+        },
+        {
+          "word": "year",
+          "start": 103.76,
+          "end": 104.08
+        },
+        {
+          "word": "and",
+          "start": 104.08,
+          "end": 104.7
+        },
+        {
+          "word": "it",
+          "start": 104.7,
+          "end": 105.04
+        },
+        {
+          "word": "rains",
+          "start": 105.04,
+          "end": 105.42
+        },
+        {
+          "word": "about",
+          "start": 105.42,
+          "end": 106.06
+        },
+        {
+          "word": "one",
+          "start": 106.06,
+          "end": 106.64
+        },
+        {
+          "word": "week",
+          "start": 106.64,
+          "end": 106.94
+        },
+        {
+          "word": "a",
+          "start": 106.94,
+          "end": 107.26
+        },
+        {
+          "word": "year",
+          "start": 107.26,
+          "end": 107.64
+        }
+      ]
+    },
+    {
+      "index": 22,
+      "startMs": 107640,
+      "endMs": 110860,
+      "text": "It's very dry and sunny",
+      "words": [
+        {
+          "word": "It's",
+          "start": 107.64,
+          "end": 108.94
+        },
+        {
+          "word": "very",
+          "start": 108.94,
+          "end": 109.4
+        },
+        {
+          "word": "dry",
+          "start": 109.4,
+          "end": 109.8
+        },
+        {
+          "word": "and",
+          "start": 109.8,
+          "end": 110.44
+        },
+        {
+          "word": "sunny",
+          "start": 110.44,
+          "end": 110.86
+        }
+      ]
+    },
+    {
+      "index": 23,
+      "startMs": 110860,
+      "endMs": 116300,
+      "text": "In the summer the temperature can reach 50 degrees centigrade",
+      "words": [
+        {
+          "word": "In",
+          "start": 110.86,
+          "end": 111.92
+        },
+        {
+          "word": "the",
+          "start": 111.92,
+          "end": 112.18
+        },
+        {
+          "word": "summer",
+          "start": 112.18,
+          "end": 112.62
+        },
+        {
+          "word": "the",
+          "start": 112.62,
+          "end": 113.04
+        },
+        {
+          "word": "temperature",
+          "start": 113.04,
+          "end": 113.64
+        },
+        {
+          "word": "can",
+          "start": 113.64,
+          "end": 114.12
+        },
+        {
+          "word": "reach",
+          "start": 114.12,
+          "end": 114.58
+        },
+        {
+          "word": "50",
+          "start": 114.58,
+          "end": 115.08
+        },
+        {
+          "word": "degrees",
+          "start": 115.08,
+          "end": 115.66
+        },
+        {
+          "word": "centigrade",
+          "start": 115.66,
+          "end": 116.3
+        }
+      ]
+    },
+    {
+      "index": 24,
+      "startMs": 117080,
+      "endMs": 122800,
+      "text": "There is a big desert with a lot of sand but no trees",
+      "words": [
+        {
+          "word": "There",
+          "start": 117.08,
+          "end": 117.8
+        },
+        {
+          "word": "is",
+          "start": 117.8,
+          "end": 118.28
+        },
+        {
+          "word": "a",
+          "start": 118.28,
+          "end": 118.44
+        },
+        {
+          "word": "big",
+          "start": 118.44,
+          "end": 118.64
+        },
+        {
+          "word": "desert",
+          "start": 118.64,
+          "end": 119.22
+        },
+        {
+          "word": "with",
+          "start": 119.22,
+          "end": 119.82
+        },
+        {
+          "word": "a",
+          "start": 119.82,
+          "end": 120.0
+        },
+        {
+          "word": "lot",
+          "start": 120.0,
+          "end": 120.12
+        },
+        {
+          "word": "of",
+          "start": 120.12,
+          "end": 120.52
+        },
+        {
+          "word": "sand",
+          "start": 120.52,
+          "end": 120.92
+        },
+        {
+          "word": "but",
+          "start": 120.92,
+          "end": 121.68
+        },
+        {
+          "word": "no",
+          "start": 121.68,
+          "end": 122.18
+        },
+        {
+          "word": "trees",
+          "start": 122.18,
+          "end": 122.8
+        }
+      ]
+    },
+    {
+      "index": 25,
+      "startMs": 122800,
+      "endMs": 128680,
+      "text": "People live by the sea and there are big parks in the towns",
+      "words": [
+        {
+          "word": "People",
+          "start": 122.8,
+          "end": 123.96
+        },
+        {
+          "word": "live",
+          "start": 123.96,
+          "end": 124.44
+        },
+        {
+          "word": "by",
+          "start": 124.44,
+          "end": 124.8
+        },
+        {
+          "word": "the",
+          "start": 124.8,
+          "end": 125.06
+        },
+        {
+          "word": "sea",
+          "start": 125.06,
+          "end": 125.34
+        },
+        {
+          "word": "and",
+          "start": 125.34,
+          "end": 126.18
+        },
+        {
+          "word": "there",
+          "start": 126.18,
+          "end": 126.54
+        },
+        {
+          "word": "are",
+          "start": 126.54,
+          "end": 126.82
+        },
+        {
+          "word": "big",
+          "start": 126.82,
+          "end": 127.08
+        },
+        {
+          "word": "parks",
+          "start": 127.08,
+          "end": 127.7
+        },
+        {
+          "word": "in",
+          "start": 127.7,
+          "end": 128.06
+        },
+        {
+          "word": "the",
+          "start": 128.06,
+          "end": 128.26
+        },
+        {
+          "word": "towns",
+          "start": 128.26,
+          "end": 128.68
+        }
+      ]
+    }
+  ]
+}

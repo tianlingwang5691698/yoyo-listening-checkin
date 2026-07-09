@@ -1,0 +1,1388 @@
+{
+  "model": "medium",
+  "language": "en",
+  "text": "Mid-course test, track 2. I live in Cairo, in Egypt. Cairo is a very busy city with many people. The River Nile is in Cairo and there are many bridges over the river. But a very famous bridge is the Kasser el-Nil bridge. Cairo has many old buildings and also lots of new buildings. There is a university near the river and many shopping centers, hotels and beautiful parks. At weekends I go with my family to a park next to a big hotel and relax all afternoon. The weather in Cairo is very hot and dry in the summer. And there are sandstorms that come from the desert. In the winter it rains a little but it is still hot. My hometown is in Switzerland. It is small, beautiful and very busy. In the winter we have a lot of snow and it is very cold. But the sky is blue and it is sunny. The summer in the mountains isn't very hot and it rains. But the forests are green. Lots of people come to my town and walk in the mountains or ski in the snow. The town has two hotels, a lot of restaurants and a train station. We also have a supermarket and a park with an old monument in it. Next to the park is a library and there is a little cafe behind it. I go there every Saturday to have coffee.",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 3200,
+      "text": "Mid-course test, track 2.",
+      "words": [
+        {
+          "word": "Mid",
+          "start": 0.0,
+          "end": 0.74
+        },
+        {
+          "word": "-course",
+          "start": 0.74,
+          "end": 1.12
+        },
+        {
+          "word": "test,",
+          "start": 1.12,
+          "end": 1.74
+        },
+        {
+          "word": "track",
+          "start": 2.36,
+          "end": 2.56
+        },
+        {
+          "word": "2.",
+          "start": 2.56,
+          "end": 3.2
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 5340,
+      "endMs": 7320,
+      "text": "I live in Cairo, in Egypt.",
+      "words": [
+        {
+          "word": "I",
+          "start": 5.34,
+          "end": 5.34
+        },
+        {
+          "word": "live",
+          "start": 5.34,
+          "end": 5.68
+        },
+        {
+          "word": "in",
+          "start": 5.68,
+          "end": 6.08
+        },
+        {
+          "word": "Cairo,",
+          "start": 6.08,
+          "end": 6.44
+        },
+        {
+          "word": "in",
+          "start": 6.66,
+          "end": 6.88
+        },
+        {
+          "word": "Egypt.",
+          "start": 6.88,
+          "end": 7.32
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 8280,
+      "endMs": 11700,
+      "text": "Cairo is a very busy city with many people.",
+      "words": [
+        {
+          "word": "Cairo",
+          "start": 8.28,
+          "end": 8.7
+        },
+        {
+          "word": "is",
+          "start": 8.7,
+          "end": 8.92
+        },
+        {
+          "word": "a",
+          "start": 8.92,
+          "end": 9.16
+        },
+        {
+          "word": "very",
+          "start": 9.16,
+          "end": 9.54
+        },
+        {
+          "word": "busy",
+          "start": 9.54,
+          "end": 9.88
+        },
+        {
+          "word": "city",
+          "start": 9.88,
+          "end": 10.34
+        },
+        {
+          "word": "with",
+          "start": 10.34,
+          "end": 10.7
+        },
+        {
+          "word": "many",
+          "start": 10.7,
+          "end": 11.04
+        },
+        {
+          "word": "people.",
+          "start": 11.04,
+          "end": 11.7
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 12800,
+      "endMs": 17200,
+      "text": "The River Nile is in Cairo and there are many bridges over the river.",
+      "words": [
+        {
+          "word": "The",
+          "start": 12.8,
+          "end": 12.92
+        },
+        {
+          "word": "River",
+          "start": 12.92,
+          "end": 13.2
+        },
+        {
+          "word": "Nile",
+          "start": 13.2,
+          "end": 13.56
+        },
+        {
+          "word": "is",
+          "start": 13.56,
+          "end": 13.78
+        },
+        {
+          "word": "in",
+          "start": 13.78,
+          "end": 14.06
+        },
+        {
+          "word": "Cairo",
+          "start": 14.06,
+          "end": 14.52
+        },
+        {
+          "word": "and",
+          "start": 14.52,
+          "end": 14.94
+        },
+        {
+          "word": "there",
+          "start": 14.94,
+          "end": 15.14
+        },
+        {
+          "word": "are",
+          "start": 15.14,
+          "end": 15.36
+        },
+        {
+          "word": "many",
+          "start": 15.36,
+          "end": 15.78
+        },
+        {
+          "word": "bridges",
+          "start": 15.78,
+          "end": 16.24
+        },
+        {
+          "word": "over",
+          "start": 16.24,
+          "end": 16.7
+        },
+        {
+          "word": "the",
+          "start": 16.7,
+          "end": 16.9
+        },
+        {
+          "word": "river.",
+          "start": 16.9,
+          "end": 17.2
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 18100,
+      "endMs": 22700,
+      "text": "But a very famous bridge is the Kasser el-Nil bridge.",
+      "words": [
+        {
+          "word": "But",
+          "start": 18.1,
+          "end": 18.36
+        },
+        {
+          "word": "a",
+          "start": 18.36,
+          "end": 18.74
+        },
+        {
+          "word": "very",
+          "start": 18.74,
+          "end": 19.06
+        },
+        {
+          "word": "famous",
+          "start": 19.06,
+          "end": 19.52
+        },
+        {
+          "word": "bridge",
+          "start": 19.52,
+          "end": 19.98
+        },
+        {
+          "word": "is",
+          "start": 19.98,
+          "end": 20.6
+        },
+        {
+          "word": "the",
+          "start": 20.6,
+          "end": 20.86
+        },
+        {
+          "word": "Kasser",
+          "start": 20.86,
+          "end": 21.32
+        },
+        {
+          "word": "el",
+          "start": 21.32,
+          "end": 21.8
+        },
+        {
+          "word": "-Nil",
+          "start": 21.8,
+          "end": 22.04
+        },
+        {
+          "word": "bridge.",
+          "start": 22.04,
+          "end": 22.7
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "startMs": 24040,
+      "endMs": 28280,
+      "text": "Cairo has many old buildings and also lots of new buildings.",
+      "words": [
+        {
+          "word": "Cairo",
+          "start": 24.04,
+          "end": 24.56
+        },
+        {
+          "word": "has",
+          "start": 24.56,
+          "end": 24.86
+        },
+        {
+          "word": "many",
+          "start": 24.86,
+          "end": 25.24
+        },
+        {
+          "word": "old",
+          "start": 25.24,
+          "end": 25.64
+        },
+        {
+          "word": "buildings",
+          "start": 25.64,
+          "end": 26.14
+        },
+        {
+          "word": "and",
+          "start": 26.14,
+          "end": 26.72
+        },
+        {
+          "word": "also",
+          "start": 26.72,
+          "end": 27.12
+        },
+        {
+          "word": "lots",
+          "start": 27.12,
+          "end": 27.4
+        },
+        {
+          "word": "of",
+          "start": 27.4,
+          "end": 27.66
+        },
+        {
+          "word": "new",
+          "start": 27.66,
+          "end": 27.84
+        },
+        {
+          "word": "buildings.",
+          "start": 27.84,
+          "end": 28.28
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "startMs": 28960,
+      "endMs": 35460,
+      "text": "There is a university near the river and many shopping centers, hotels and beautiful parks.",
+      "words": [
+        {
+          "word": "There",
+          "start": 28.9,
+          "end": 29.24
+        },
+        {
+          "word": "is",
+          "start": 29.24,
+          "end": 29.5
+        },
+        {
+          "word": "a",
+          "start": 29.5,
+          "end": 29.68
+        },
+        {
+          "word": "university",
+          "start": 29.68,
+          "end": 30.4
+        },
+        {
+          "word": "near",
+          "start": 30.4,
+          "end": 30.86
+        },
+        {
+          "word": "the",
+          "start": 30.86,
+          "end": 31.16
+        },
+        {
+          "word": "river",
+          "start": 31.16,
+          "end": 31.48
+        },
+        {
+          "word": "and",
+          "start": 31.48,
+          "end": 32.02
+        },
+        {
+          "word": "many",
+          "start": 32.02,
+          "end": 32.38
+        },
+        {
+          "word": "shopping",
+          "start": 32.38,
+          "end": 32.74
+        },
+        {
+          "word": "centers,",
+          "start": 32.74,
+          "end": 33.38
+        },
+        {
+          "word": "hotels",
+          "start": 33.68,
+          "end": 34.2
+        },
+        {
+          "word": "and",
+          "start": 34.2,
+          "end": 34.5
+        },
+        {
+          "word": "beautiful",
+          "start": 34.5,
+          "end": 35.02
+        },
+        {
+          "word": "parks.",
+          "start": 35.02,
+          "end": 35.46
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "startMs": 36340,
+      "endMs": 42800,
+      "text": "At weekends I go with my family to a park next to a big hotel and relax all afternoon.",
+      "words": [
+        {
+          "word": "At",
+          "start": 36.34,
+          "end": 36.64
+        },
+        {
+          "word": "weekends",
+          "start": 36.64,
+          "end": 37.08
+        },
+        {
+          "word": "I",
+          "start": 37.08,
+          "end": 37.44
+        },
+        {
+          "word": "go",
+          "start": 37.44,
+          "end": 37.66
+        },
+        {
+          "word": "with",
+          "start": 37.66,
+          "end": 37.86
+        },
+        {
+          "word": "my",
+          "start": 37.86,
+          "end": 38.08
+        },
+        {
+          "word": "family",
+          "start": 38.08,
+          "end": 38.46
+        },
+        {
+          "word": "to",
+          "start": 38.46,
+          "end": 38.8
+        },
+        {
+          "word": "a",
+          "start": 38.8,
+          "end": 38.98
+        },
+        {
+          "word": "park",
+          "start": 38.98,
+          "end": 39.22
+        },
+        {
+          "word": "next",
+          "start": 39.22,
+          "end": 39.64
+        },
+        {
+          "word": "to",
+          "start": 39.64,
+          "end": 39.9
+        },
+        {
+          "word": "a",
+          "start": 39.9,
+          "end": 40.06
+        },
+        {
+          "word": "big",
+          "start": 40.06,
+          "end": 40.26
+        },
+        {
+          "word": "hotel",
+          "start": 40.26,
+          "end": 40.74
+        },
+        {
+          "word": "and",
+          "start": 40.74,
+          "end": 41.34
+        },
+        {
+          "word": "relax",
+          "start": 41.34,
+          "end": 41.8
+        },
+        {
+          "word": "all",
+          "start": 41.8,
+          "end": 42.26
+        },
+        {
+          "word": "afternoon.",
+          "start": 42.26,
+          "end": 42.8
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "startMs": 44180,
+      "endMs": 48400,
+      "text": "The weather in Cairo is very hot and dry in the summer.",
+      "words": [
+        {
+          "word": "The",
+          "start": 44.18,
+          "end": 44.46
+        },
+        {
+          "word": "weather",
+          "start": 44.46,
+          "end": 44.92
+        },
+        {
+          "word": "in",
+          "start": 44.92,
+          "end": 45.3
+        },
+        {
+          "word": "Cairo",
+          "start": 45.3,
+          "end": 45.6
+        },
+        {
+          "word": "is",
+          "start": 45.6,
+          "end": 46.0
+        },
+        {
+          "word": "very",
+          "start": 46.0,
+          "end": 46.48
+        },
+        {
+          "word": "hot",
+          "start": 46.48,
+          "end": 46.84
+        },
+        {
+          "word": "and",
+          "start": 46.84,
+          "end": 47.34
+        },
+        {
+          "word": "dry",
+          "start": 47.34,
+          "end": 47.64
+        },
+        {
+          "word": "in",
+          "start": 47.64,
+          "end": 47.88
+        },
+        {
+          "word": "the",
+          "start": 47.88,
+          "end": 48.1
+        },
+        {
+          "word": "summer.",
+          "start": 48.1,
+          "end": 48.4
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "startMs": 49000,
+      "endMs": 52100,
+      "text": "And there are sandstorms that come from the desert.",
+      "words": [
+        {
+          "word": "And",
+          "start": 49.0,
+          "end": 49.3
+        },
+        {
+          "word": "there",
+          "start": 49.3,
+          "end": 49.5
+        },
+        {
+          "word": "are",
+          "start": 49.5,
+          "end": 49.86
+        },
+        {
+          "word": "sandstorms",
+          "start": 49.86,
+          "end": 50.72
+        },
+        {
+          "word": "that",
+          "start": 50.72,
+          "end": 50.94
+        },
+        {
+          "word": "come",
+          "start": 50.94,
+          "end": 51.22
+        },
+        {
+          "word": "from",
+          "start": 51.22,
+          "end": 51.5
+        },
+        {
+          "word": "the",
+          "start": 51.5,
+          "end": 51.76
+        },
+        {
+          "word": "desert.",
+          "start": 51.76,
+          "end": 52.1
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "startMs": 53100,
+      "endMs": 57580,
+      "text": "In the winter it rains a little but it is still hot.",
+      "words": [
+        {
+          "word": "In",
+          "start": 53.1,
+          "end": 53.4
+        },
+        {
+          "word": "the",
+          "start": 53.4,
+          "end": 53.68
+        },
+        {
+          "word": "winter",
+          "start": 53.68,
+          "end": 54.12
+        },
+        {
+          "word": "it",
+          "start": 54.12,
+          "end": 54.7
+        },
+        {
+          "word": "rains",
+          "start": 54.7,
+          "end": 55.04
+        },
+        {
+          "word": "a",
+          "start": 55.04,
+          "end": 55.38
+        },
+        {
+          "word": "little",
+          "start": 55.38,
+          "end": 55.68
+        },
+        {
+          "word": "but",
+          "start": 55.68,
+          "end": 56.18
+        },
+        {
+          "word": "it",
+          "start": 56.18,
+          "end": 56.42
+        },
+        {
+          "word": "is",
+          "start": 56.42,
+          "end": 56.76
+        },
+        {
+          "word": "still",
+          "start": 56.76,
+          "end": 57.1
+        },
+        {
+          "word": "hot.",
+          "start": 57.1,
+          "end": 57.58
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "startMs": 59320,
+      "endMs": 62160,
+      "text": "My hometown is in Switzerland.",
+      "words": [
+        {
+          "word": "My",
+          "start": 59.32,
+          "end": 60.12
+        },
+        {
+          "word": "hometown",
+          "start": 60.12,
+          "end": 60.72
+        },
+        {
+          "word": "is",
+          "start": 60.72,
+          "end": 61.3
+        },
+        {
+          "word": "in",
+          "start": 61.3,
+          "end": 61.6
+        },
+        {
+          "word": "Switzerland.",
+          "start": 61.6,
+          "end": 62.16
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "startMs": 62440,
+      "endMs": 66040,
+      "text": "It is small, beautiful and very busy.",
+      "words": [
+        {
+          "word": "It",
+          "start": 62.44,
+          "end": 62.96
+        },
+        {
+          "word": "is",
+          "start": 62.96,
+          "end": 63.24
+        },
+        {
+          "word": "small,",
+          "start": 63.24,
+          "end": 63.72
+        },
+        {
+          "word": "beautiful",
+          "start": 63.9,
+          "end": 64.48
+        },
+        {
+          "word": "and",
+          "start": 64.48,
+          "end": 65.18
+        },
+        {
+          "word": "very",
+          "start": 65.18,
+          "end": 65.64
+        },
+        {
+          "word": "busy.",
+          "start": 65.64,
+          "end": 66.04
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "startMs": 66980,
+      "endMs": 71660,
+      "text": "In the winter we have a lot of snow and it is very cold.",
+      "words": [
+        {
+          "word": "In",
+          "start": 66.98,
+          "end": 67.28
+        },
+        {
+          "word": "the",
+          "start": 67.28,
+          "end": 67.48
+        },
+        {
+          "word": "winter",
+          "start": 67.48,
+          "end": 67.88
+        },
+        {
+          "word": "we",
+          "start": 67.88,
+          "end": 68.44
+        },
+        {
+          "word": "have",
+          "start": 68.44,
+          "end": 68.82
+        },
+        {
+          "word": "a",
+          "start": 68.82,
+          "end": 68.9
+        },
+        {
+          "word": "lot",
+          "start": 68.9,
+          "end": 69.14
+        },
+        {
+          "word": "of",
+          "start": 69.14,
+          "end": 69.42
+        },
+        {
+          "word": "snow",
+          "start": 69.42,
+          "end": 69.8
+        },
+        {
+          "word": "and",
+          "start": 69.8,
+          "end": 70.5
+        },
+        {
+          "word": "it",
+          "start": 70.5,
+          "end": 70.7
+        },
+        {
+          "word": "is",
+          "start": 70.7,
+          "end": 70.9
+        },
+        {
+          "word": "very",
+          "start": 70.9,
+          "end": 71.24
+        },
+        {
+          "word": "cold.",
+          "start": 71.24,
+          "end": 71.66
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "startMs": 72200,
+      "endMs": 75340,
+      "text": "But the sky is blue and it is sunny.",
+      "words": [
+        {
+          "word": "But",
+          "start": 72.2,
+          "end": 72.54
+        },
+        {
+          "word": "the",
+          "start": 72.54,
+          "end": 72.8
+        },
+        {
+          "word": "sky",
+          "start": 72.8,
+          "end": 73.22
+        },
+        {
+          "word": "is",
+          "start": 73.22,
+          "end": 73.7
+        },
+        {
+          "word": "blue",
+          "start": 73.7,
+          "end": 74.14
+        },
+        {
+          "word": "and",
+          "start": 74.14,
+          "end": 74.62
+        },
+        {
+          "word": "it",
+          "start": 74.62,
+          "end": 74.8
+        },
+        {
+          "word": "is",
+          "start": 74.8,
+          "end": 75.04
+        },
+        {
+          "word": "sunny.",
+          "start": 75.04,
+          "end": 75.34
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "startMs": 76500,
+      "endMs": 80920,
+      "text": "The summer in the mountains isn't very hot and it rains.",
+      "words": [
+        {
+          "word": "The",
+          "start": 76.5,
+          "end": 76.72
+        },
+        {
+          "word": "summer",
+          "start": 76.72,
+          "end": 77.16
+        },
+        {
+          "word": "in",
+          "start": 77.16,
+          "end": 77.54
+        },
+        {
+          "word": "the",
+          "start": 77.54,
+          "end": 77.74
+        },
+        {
+          "word": "mountains",
+          "start": 77.74,
+          "end": 78.38
+        },
+        {
+          "word": "isn't",
+          "start": 78.38,
+          "end": 78.94
+        },
+        {
+          "word": "very",
+          "start": 78.94,
+          "end": 79.4
+        },
+        {
+          "word": "hot",
+          "start": 79.4,
+          "end": 79.82
+        },
+        {
+          "word": "and",
+          "start": 79.82,
+          "end": 80.24
+        },
+        {
+          "word": "it",
+          "start": 80.24,
+          "end": 80.54
+        },
+        {
+          "word": "rains.",
+          "start": 80.54,
+          "end": 80.92
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "startMs": 81380,
+      "endMs": 83200,
+      "text": "But the forests are green.",
+      "words": [
+        {
+          "word": "But",
+          "start": 81.38,
+          "end": 81.78
+        },
+        {
+          "word": "the",
+          "start": 81.78,
+          "end": 82.1
+        },
+        {
+          "word": "forests",
+          "start": 82.1,
+          "end": 82.52
+        },
+        {
+          "word": "are",
+          "start": 82.52,
+          "end": 82.82
+        },
+        {
+          "word": "green.",
+          "start": 82.82,
+          "end": 83.2
+        }
+      ]
+    },
+    {
+      "index": 18,
+      "startMs": 84000,
+      "endMs": 90820,
+      "text": "Lots of people come to my town and walk in the mountains or ski in the snow.",
+      "words": [
+        {
+          "word": "Lots",
+          "start": 84.0,
+          "end": 84.44
+        },
+        {
+          "word": "of",
+          "start": 84.44,
+          "end": 84.72
+        },
+        {
+          "word": "people",
+          "start": 84.72,
+          "end": 85.14
+        },
+        {
+          "word": "come",
+          "start": 85.14,
+          "end": 85.5
+        },
+        {
+          "word": "to",
+          "start": 85.5,
+          "end": 85.74
+        },
+        {
+          "word": "my",
+          "start": 85.74,
+          "end": 86.04
+        },
+        {
+          "word": "town",
+          "start": 86.04,
+          "end": 86.44
+        },
+        {
+          "word": "and",
+          "start": 86.44,
+          "end": 87.12
+        },
+        {
+          "word": "walk",
+          "start": 87.12,
+          "end": 87.64
+        },
+        {
+          "word": "in",
+          "start": 87.64,
+          "end": 87.9
+        },
+        {
+          "word": "the",
+          "start": 87.9,
+          "end": 88.08
+        },
+        {
+          "word": "mountains",
+          "start": 88.08,
+          "end": 88.78
+        },
+        {
+          "word": "or",
+          "start": 88.78,
+          "end": 89.5
+        },
+        {
+          "word": "ski",
+          "start": 89.5,
+          "end": 89.98
+        },
+        {
+          "word": "in",
+          "start": 89.98,
+          "end": 90.24
+        },
+        {
+          "word": "the",
+          "start": 90.24,
+          "end": 90.48
+        },
+        {
+          "word": "snow.",
+          "start": 90.48,
+          "end": 90.82
+        }
+      ]
+    },
+    {
+      "index": 19,
+      "startMs": 91920,
+      "endMs": 97600,
+      "text": "The town has two hotels, a lot of restaurants and a train station.",
+      "words": [
+        {
+          "word": "The",
+          "start": 91.92,
+          "end": 92.04
+        },
+        {
+          "word": "town",
+          "start": 92.04,
+          "end": 92.42
+        },
+        {
+          "word": "has",
+          "start": 92.42,
+          "end": 93.0
+        },
+        {
+          "word": "two",
+          "start": 93.0,
+          "end": 93.34
+        },
+        {
+          "word": "hotels,",
+          "start": 93.34,
+          "end": 94.04
+        },
+        {
+          "word": "a",
+          "start": 94.56,
+          "end": 94.58
+        },
+        {
+          "word": "lot",
+          "start": 94.58,
+          "end": 94.82
+        },
+        {
+          "word": "of",
+          "start": 94.82,
+          "end": 95.14
+        },
+        {
+          "word": "restaurants",
+          "start": 95.14,
+          "end": 95.72
+        },
+        {
+          "word": "and",
+          "start": 95.72,
+          "end": 96.54
+        },
+        {
+          "word": "a",
+          "start": 96.54,
+          "end": 96.86
+        },
+        {
+          "word": "train",
+          "start": 96.86,
+          "end": 97.1
+        },
+        {
+          "word": "station.",
+          "start": 97.1,
+          "end": 97.6
+        }
+      ]
+    },
+    {
+      "index": 20,
+      "startMs": 98560,
+      "endMs": 104720,
+      "text": "We also have a supermarket and a park with an old monument in it.",
+      "words": [
+        {
+          "word": "We",
+          "start": 98.56,
+          "end": 98.78
+        },
+        {
+          "word": "also",
+          "start": 98.78,
+          "end": 99.32
+        },
+        {
+          "word": "have",
+          "start": 99.32,
+          "end": 99.68
+        },
+        {
+          "word": "a",
+          "start": 99.68,
+          "end": 99.96
+        },
+        {
+          "word": "supermarket",
+          "start": 99.96,
+          "end": 100.64
+        },
+        {
+          "word": "and",
+          "start": 100.64,
+          "end": 101.74
+        },
+        {
+          "word": "a",
+          "start": 101.74,
+          "end": 102.02
+        },
+        {
+          "word": "park",
+          "start": 102.02,
+          "end": 102.42
+        },
+        {
+          "word": "with",
+          "start": 102.42,
+          "end": 102.82
+        },
+        {
+          "word": "an",
+          "start": 102.82,
+          "end": 103.1
+        },
+        {
+          "word": "old",
+          "start": 103.1,
+          "end": 103.44
+        },
+        {
+          "word": "monument",
+          "start": 103.44,
+          "end": 104.02
+        },
+        {
+          "word": "in",
+          "start": 104.02,
+          "end": 104.24
+        },
+        {
+          "word": "it.",
+          "start": 104.24,
+          "end": 104.72
+        }
+      ]
+    },
+    {
+      "index": 21,
+      "startMs": 105460,
+      "endMs": 111420,
+      "text": "Next to the park is a library and there is a little cafe behind it.",
+      "words": [
+        {
+          "word": "Next",
+          "start": 105.46,
+          "end": 105.78
+        },
+        {
+          "word": "to",
+          "start": 105.78,
+          "end": 106.0
+        },
+        {
+          "word": "the",
+          "start": 106.0,
+          "end": 106.2
+        },
+        {
+          "word": "park",
+          "start": 106.2,
+          "end": 106.58
+        },
+        {
+          "word": "is",
+          "start": 106.58,
+          "end": 107.16
+        },
+        {
+          "word": "a",
+          "start": 107.16,
+          "end": 107.36
+        },
+        {
+          "word": "library",
+          "start": 107.36,
+          "end": 107.9
+        },
+        {
+          "word": "and",
+          "start": 107.9,
+          "end": 108.86
+        },
+        {
+          "word": "there",
+          "start": 108.86,
+          "end": 109.26
+        },
+        {
+          "word": "is",
+          "start": 109.26,
+          "end": 109.56
+        },
+        {
+          "word": "a",
+          "start": 109.56,
+          "end": 109.6
+        },
+        {
+          "word": "little",
+          "start": 109.6,
+          "end": 110.0
+        },
+        {
+          "word": "cafe",
+          "start": 110.0,
+          "end": 110.42
+        },
+        {
+          "word": "behind",
+          "start": 110.42,
+          "end": 111.0
+        },
+        {
+          "word": "it.",
+          "start": 111.0,
+          "end": 111.42
+        }
+      ]
+    },
+    {
+      "index": 22,
+      "startMs": 111420,
+      "endMs": 114540,
+      "text": "I go there every Saturday to have coffee.",
+      "words": [
+        {
+          "word": "I",
+          "start": 111.42,
+          "end": 112.06
+        },
+        {
+          "word": "go",
+          "start": 112.06,
+          "end": 112.28
+        },
+        {
+          "word": "there",
+          "start": 112.28,
+          "end": 112.66
+        },
+        {
+          "word": "every",
+          "start": 112.66,
+          "end": 113.06
+        },
+        {
+          "word": "Saturday",
+          "start": 113.06,
+          "end": 113.48
+        },
+        {
+          "word": "to",
+          "start": 113.48,
+          "end": 113.96
+        },
+        {
+          "word": "have",
+          "start": 113.96,
+          "end": 114.14
+        },
+        {
+          "word": "coffee.",
+          "start": 114.14,
+          "end": 114.54
+        }
+      ]
+    }
+  ]
+}

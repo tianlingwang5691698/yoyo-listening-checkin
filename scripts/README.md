@@ -124,6 +124,9 @@ _transcripts/
 - 音频文件名来自 canonical map 的 `fileName`
 - 默认音频扩展名是 `mp3`
 - 默认 WhisperX 使用英文 `--language en`
+- 句级 bundle 也必须使用真实 ASR 时间轴：优先 WhisperX 词级时间，或 Whisper `word_timestamps`；不要按句子长度/字符数平均分配音频时长
+- 官方听力文本和 ASR 不一致时，正文以官方文本为准；ASR 只做时间轴和漏句核对，补句必须写入清洗报告或 `scriptPatches`
+- 上传前抽查每条音频首句、末句和中间段，确认 track label 没进 transcript，高亮时间不落在报幕上
 - 默认在 CPU 上跑 `base` 模型
 - `python-bin` 会优先尝试显式参数，再尝试 `~/whisper-env/bin/python`，再退回系统 `python3.12` / `python3`
 - `vendor-dir` 默认使用当前 `output-root/vendor312`

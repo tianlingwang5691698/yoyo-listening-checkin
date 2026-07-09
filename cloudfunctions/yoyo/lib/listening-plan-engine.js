@@ -4,6 +4,7 @@ const MATERIALS = [
   { category: 'song', levelIds: ['Pre A1'], title: 'Songs' },
   { category: 'newconcept1', levelIds: ['A1'], title: 'New Concept 1' },
   { category: 'unlock1', levelIds: ['A1'], title: 'Unlock 1 课本' },
+  { category: 'unlock1workbook', levelIds: ['A1'], title: 'Unlock 1 练习册' },
   { category: 'peppa', levelIds: ['A1', 'A2'], title: 'Peppa' },
   { category: 'newconcept2', levelIds: ['A2'], title: 'New Concept 2' },
   { category: 'unlock2', levelIds: ['A2'], title: 'Unlock 2 课本' },

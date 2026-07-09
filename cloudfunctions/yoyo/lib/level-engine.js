@@ -59,7 +59,7 @@ async function listDirectAudioTasksForCategory(category, deps) {
 }
 
 async function resolveStandaloneCategoryTasks(category, childId, date, deps) {
-  if (!['newconcept1', 'unlock1', 'peppa', 'song', 'newconcept2', 'unlock2', 'newconcept3', 'unlock3textbook', 'unlock3', 'newconcept4', 'unlock4'].includes(category)) {
+  if (!['newconcept1', 'unlock1', 'unlock1workbook', 'peppa', 'song', 'newconcept2', 'unlock2', 'newconcept3', 'unlock3textbook', 'unlock3', 'newconcept4', 'unlock4'].includes(category)) {
     return [];
   }
   const tasks = await listDirectAudioTasksForCategory(category, deps);

@@ -15,6 +15,9 @@ function getCategoryDisplayLabel(category, label) {
   if (category === 'unlock1') {
     return 'Unlock 1 课本';
   }
+  if (category === 'unlock1workbook') {
+    return 'Unlock 1 练习册';
+  }
   if (category === 'unlock2') {
     return 'Unlock 2 课本';
   }

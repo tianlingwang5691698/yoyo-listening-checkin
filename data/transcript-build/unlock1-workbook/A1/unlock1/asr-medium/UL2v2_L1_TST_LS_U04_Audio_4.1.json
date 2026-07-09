@@ -1,0 +1,1260 @@
+{
+  "model": "medium",
+  "language": "en",
+  "text": "Track 4.1 Welcome to Renton and I hope you enjoy your stay here. I'm going to give you some directions so you can find your way around while you are here. We're outside the train station now and in front of us is a historical monument. You can enjoy the sun in our lovely park. It's behind the small shopping centre next to the cafe. There are lots of trees and flowers and a very old fountain in the middle. There is a food court in the shopping centre and you can buy your food here. As you can see, there is a department store opposite the station. Where's the bank? The bank is next to the library. Go down Wood Street, past the museum, turn right and the bank is between the library and the cinema. Where's the university? That's over the river. Walk down Ship Street next to the shopping centre. You can see the river at the end of the street and a bridge to the right. Go over the bridge and the university campus is in front of you. I have maps of the town with me or you can download the app. Renton is a beautiful town and it's very safe too. I hope you enjoy your time here. Thank you.",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 2000,
+      "text": "Track 4.1",
+      "words": [
+        {
+          "word": "Track",
+          "start": 0.0,
+          "end": 0.72
+        },
+        {
+          "word": "4",
+          "start": 0.72,
+          "end": 1.3
+        },
+        {
+          "word": ".1",
+          "start": 1.3,
+          "end": 2.0
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 5240,
+      "endMs": 10340,
+      "text": "Welcome to Renton and I hope you enjoy your stay here.",
+      "words": [
+        {
+          "word": "Welcome",
+          "start": 5.239999999999999,
+          "end": 5.96
+        },
+        {
+          "word": "to",
+          "start": 5.96,
+          "end": 6.36
+        },
+        {
+          "word": "Renton",
+          "start": 6.36,
+          "end": 6.84
+        },
+        {
+          "word": "and",
+          "start": 6.84,
+          "end": 7.94
+        },
+        {
+          "word": "I",
+          "start": 7.94,
+          "end": 8.22
+        },
+        {
+          "word": "hope",
+          "start": 8.22,
+          "end": 8.46
+        },
+        {
+          "word": "you",
+          "start": 8.46,
+          "end": 8.84
+        },
+        {
+          "word": "enjoy",
+          "start": 8.84,
+          "end": 9.14
+        },
+        {
+          "word": "your",
+          "start": 9.14,
+          "end": 9.6
+        },
+        {
+          "word": "stay",
+          "start": 9.6,
+          "end": 9.82
+        },
+        {
+          "word": "here.",
+          "start": 9.82,
+          "end": 10.34
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 11640,
+      "endMs": 18040,
+      "text": "I'm going to give you some directions so you can find your way around while you are here.",
+      "words": [
+        {
+          "word": "I'm",
+          "start": 11.64,
+          "end": 11.98
+        },
+        {
+          "word": "going",
+          "start": 11.98,
+          "end": 12.14
+        },
+        {
+          "word": "to",
+          "start": 12.14,
+          "end": 12.34
+        },
+        {
+          "word": "give",
+          "start": 12.34,
+          "end": 12.48
+        },
+        {
+          "word": "you",
+          "start": 12.48,
+          "end": 12.72
+        },
+        {
+          "word": "some",
+          "start": 12.72,
+          "end": 12.96
+        },
+        {
+          "word": "directions",
+          "start": 12.96,
+          "end": 13.68
+        },
+        {
+          "word": "so",
+          "start": 13.68,
+          "end": 14.48
+        },
+        {
+          "word": "you",
+          "start": 14.48,
+          "end": 14.7
+        },
+        {
+          "word": "can",
+          "start": 14.7,
+          "end": 15.06
+        },
+        {
+          "word": "find",
+          "start": 15.06,
+          "end": 15.32
+        },
+        {
+          "word": "your",
+          "start": 15.32,
+          "end": 15.58
+        },
+        {
+          "word": "way",
+          "start": 15.58,
+          "end": 15.92
+        },
+        {
+          "word": "around",
+          "start": 15.92,
+          "end": 16.6
+        },
+        {
+          "word": "while",
+          "start": 16.6,
+          "end": 17.12
+        },
+        {
+          "word": "you",
+          "start": 17.12,
+          "end": 17.38
+        },
+        {
+          "word": "are",
+          "start": 17.38,
+          "end": 17.62
+        },
+        {
+          "word": "here.",
+          "start": 17.62,
+          "end": 18.04
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 19420,
+      "endMs": 25180,
+      "text": "We're outside the train station now and in front of us is a historical monument.",
+      "words": [
+        {
+          "word": "We're",
+          "start": 19.42,
+          "end": 19.7
+        },
+        {
+          "word": "outside",
+          "start": 19.7,
+          "end": 20.3
+        },
+        {
+          "word": "the",
+          "start": 20.3,
+          "end": 20.66
+        },
+        {
+          "word": "train",
+          "start": 20.66,
+          "end": 20.92
+        },
+        {
+          "word": "station",
+          "start": 20.92,
+          "end": 21.38
+        },
+        {
+          "word": "now",
+          "start": 21.38,
+          "end": 21.84
+        },
+        {
+          "word": "and",
+          "start": 21.84,
+          "end": 22.42
+        },
+        {
+          "word": "in",
+          "start": 22.42,
+          "end": 22.72
+        },
+        {
+          "word": "front",
+          "start": 22.72,
+          "end": 22.9
+        },
+        {
+          "word": "of",
+          "start": 22.9,
+          "end": 23.1
+        },
+        {
+          "word": "us",
+          "start": 23.1,
+          "end": 23.4
+        },
+        {
+          "word": "is",
+          "start": 23.4,
+          "end": 23.76
+        },
+        {
+          "word": "a",
+          "start": 23.76,
+          "end": 23.92
+        },
+        {
+          "word": "historical",
+          "start": 23.92,
+          "end": 24.6
+        },
+        {
+          "word": "monument.",
+          "start": 24.6,
+          "end": 25.18
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 26180,
+      "endMs": 29460,
+      "text": "You can enjoy the sun in our lovely park.",
+      "words": [
+        {
+          "word": "You",
+          "start": 26.18,
+          "end": 26.66
+        },
+        {
+          "word": "can",
+          "start": 26.66,
+          "end": 26.94
+        },
+        {
+          "word": "enjoy",
+          "start": 26.94,
+          "end": 27.34
+        },
+        {
+          "word": "the",
+          "start": 27.34,
+          "end": 27.64
+        },
+        {
+          "word": "sun",
+          "start": 27.64,
+          "end": 27.94
+        },
+        {
+          "word": "in",
+          "start": 27.94,
+          "end": 28.26
+        },
+        {
+          "word": "our",
+          "start": 28.26,
+          "end": 28.52
+        },
+        {
+          "word": "lovely",
+          "start": 28.52,
+          "end": 28.98
+        },
+        {
+          "word": "park.",
+          "start": 28.98,
+          "end": 29.46
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "startMs": 30260,
+      "endMs": 34540,
+      "text": "It's behind the small shopping centre next to the cafe.",
+      "words": [
+        {
+          "word": "It's",
+          "start": 30.259999999999998,
+          "end": 30.96
+        },
+        {
+          "word": "behind",
+          "start": 30.96,
+          "end": 31.42
+        },
+        {
+          "word": "the",
+          "start": 31.42,
+          "end": 31.74
+        },
+        {
+          "word": "small",
+          "start": 31.74,
+          "end": 32.06
+        },
+        {
+          "word": "shopping",
+          "start": 32.06,
+          "end": 32.46
+        },
+        {
+          "word": "centre",
+          "start": 32.46,
+          "end": 33.0
+        },
+        {
+          "word": "next",
+          "start": 33.0,
+          "end": 33.72
+        },
+        {
+          "word": "to",
+          "start": 33.72,
+          "end": 34.0
+        },
+        {
+          "word": "the",
+          "start": 34.0,
+          "end": 34.18
+        },
+        {
+          "word": "cafe.",
+          "start": 34.18,
+          "end": 34.54
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "startMs": 35920,
+      "endMs": 41380,
+      "text": "There are lots of trees and flowers and a very old fountain in the middle.",
+      "words": [
+        {
+          "word": "There",
+          "start": 35.92,
+          "end": 36.1
+        },
+        {
+          "word": "are",
+          "start": 36.1,
+          "end": 36.3
+        },
+        {
+          "word": "lots",
+          "start": 36.3,
+          "end": 36.62
+        },
+        {
+          "word": "of",
+          "start": 36.62,
+          "end": 36.82
+        },
+        {
+          "word": "trees",
+          "start": 36.82,
+          "end": 37.32
+        },
+        {
+          "word": "and",
+          "start": 37.32,
+          "end": 37.72
+        },
+        {
+          "word": "flowers",
+          "start": 37.72,
+          "end": 38.26
+        },
+        {
+          "word": "and",
+          "start": 38.26,
+          "end": 38.9
+        },
+        {
+          "word": "a",
+          "start": 38.9,
+          "end": 39.12
+        },
+        {
+          "word": "very",
+          "start": 39.12,
+          "end": 39.42
+        },
+        {
+          "word": "old",
+          "start": 39.42,
+          "end": 39.74
+        },
+        {
+          "word": "fountain",
+          "start": 39.74,
+          "end": 40.34
+        },
+        {
+          "word": "in",
+          "start": 40.34,
+          "end": 40.84
+        },
+        {
+          "word": "the",
+          "start": 40.84,
+          "end": 41.04
+        },
+        {
+          "word": "middle.",
+          "start": 41.04,
+          "end": 41.38
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "startMs": 42700,
+      "endMs": 47920,
+      "text": "There is a food court in the shopping centre and you can buy your food here.",
+      "words": [
+        {
+          "word": "There",
+          "start": 42.7,
+          "end": 42.9
+        },
+        {
+          "word": "is",
+          "start": 42.9,
+          "end": 43.18
+        },
+        {
+          "word": "a",
+          "start": 43.18,
+          "end": 43.46
+        },
+        {
+          "word": "food",
+          "start": 43.46,
+          "end": 43.74
+        },
+        {
+          "word": "court",
+          "start": 43.74,
+          "end": 44.1
+        },
+        {
+          "word": "in",
+          "start": 44.1,
+          "end": 44.38
+        },
+        {
+          "word": "the",
+          "start": 44.38,
+          "end": 44.6
+        },
+        {
+          "word": "shopping",
+          "start": 44.6,
+          "end": 44.96
+        },
+        {
+          "word": "centre",
+          "start": 44.96,
+          "end": 45.48
+        },
+        {
+          "word": "and",
+          "start": 45.48,
+          "end": 46.16
+        },
+        {
+          "word": "you",
+          "start": 46.16,
+          "end": 46.34
+        },
+        {
+          "word": "can",
+          "start": 46.34,
+          "end": 46.58
+        },
+        {
+          "word": "buy",
+          "start": 46.58,
+          "end": 46.84
+        },
+        {
+          "word": "your",
+          "start": 46.84,
+          "end": 47.18
+        },
+        {
+          "word": "food",
+          "start": 47.18,
+          "end": 47.42
+        },
+        {
+          "word": "here.",
+          "start": 47.42,
+          "end": 47.92
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "startMs": 49260,
+      "endMs": 54060,
+      "text": "As you can see, there is a department store opposite the station.",
+      "words": [
+        {
+          "word": "As",
+          "start": 49.26,
+          "end": 49.56
+        },
+        {
+          "word": "you",
+          "start": 49.56,
+          "end": 49.76
+        },
+        {
+          "word": "can",
+          "start": 49.76,
+          "end": 50.1
+        },
+        {
+          "word": "see,",
+          "start": 50.1,
+          "end": 50.5
+        },
+        {
+          "word": "there",
+          "start": 50.86,
+          "end": 51.06
+        },
+        {
+          "word": "is",
+          "start": 51.06,
+          "end": 51.32
+        },
+        {
+          "word": "a",
+          "start": 51.32,
+          "end": 51.52
+        },
+        {
+          "word": "department",
+          "start": 51.52,
+          "end": 52.06
+        },
+        {
+          "word": "store",
+          "start": 52.06,
+          "end": 52.64
+        },
+        {
+          "word": "opposite",
+          "start": 52.64,
+          "end": 53.3
+        },
+        {
+          "word": "the",
+          "start": 53.3,
+          "end": 53.64
+        },
+        {
+          "word": "station.",
+          "start": 53.64,
+          "end": 54.06
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "startMs": 54760,
+      "endMs": 56000,
+      "text": "Where's the bank?",
+      "words": [
+        {
+          "word": "Where's",
+          "start": 54.76,
+          "end": 55.24
+        },
+        {
+          "word": "the",
+          "start": 55.24,
+          "end": 55.52
+        },
+        {
+          "word": "bank?",
+          "start": 55.52,
+          "end": 56.0
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "startMs": 56760,
+      "endMs": 59180,
+      "text": "The bank is next to the library.",
+      "words": [
+        {
+          "word": "The",
+          "start": 56.76,
+          "end": 57.04
+        },
+        {
+          "word": "bank",
+          "start": 57.04,
+          "end": 57.5
+        },
+        {
+          "word": "is",
+          "start": 57.5,
+          "end": 57.92
+        },
+        {
+          "word": "next",
+          "start": 57.92,
+          "end": 58.28
+        },
+        {
+          "word": "to",
+          "start": 58.28,
+          "end": 58.48
+        },
+        {
+          "word": "the",
+          "start": 58.48,
+          "end": 58.64
+        },
+        {
+          "word": "library.",
+          "start": 58.64,
+          "end": 59.18
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "startMs": 60000,
+      "endMs": 68960,
+      "text": "Go down Wood Street, past the museum, turn right and the bank is between the library and the cinema.",
+      "words": [
+        {
+          "word": "Go",
+          "start": 60.0,
+          "end": 60.52
+        },
+        {
+          "word": "down",
+          "start": 60.52,
+          "end": 60.88
+        },
+        {
+          "word": "Wood",
+          "start": 60.88,
+          "end": 61.18
+        },
+        {
+          "word": "Street,",
+          "start": 61.18,
+          "end": 61.7
+        },
+        {
+          "word": "past",
+          "start": 62.16,
+          "end": 62.52
+        },
+        {
+          "word": "the",
+          "start": 62.52,
+          "end": 62.74
+        },
+        {
+          "word": "museum,",
+          "start": 62.74,
+          "end": 63.32
+        },
+        {
+          "word": "turn",
+          "start": 64.16,
+          "end": 64.4
+        },
+        {
+          "word": "right",
+          "start": 64.4,
+          "end": 64.88
+        },
+        {
+          "word": "and",
+          "start": 64.88,
+          "end": 65.46
+        },
+        {
+          "word": "the",
+          "start": 65.46,
+          "end": 65.64
+        },
+        {
+          "word": "bank",
+          "start": 65.64,
+          "end": 66.1
+        },
+        {
+          "word": "is",
+          "start": 66.1,
+          "end": 66.44
+        },
+        {
+          "word": "between",
+          "start": 66.44,
+          "end": 66.8
+        },
+        {
+          "word": "the",
+          "start": 66.8,
+          "end": 67.1
+        },
+        {
+          "word": "library",
+          "start": 67.1,
+          "end": 67.6
+        },
+        {
+          "word": "and",
+          "start": 67.6,
+          "end": 68.24
+        },
+        {
+          "word": "the",
+          "start": 68.24,
+          "end": 68.5
+        },
+        {
+          "word": "cinema.",
+          "start": 68.5,
+          "end": 68.96
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "startMs": 69880,
+      "endMs": 71160,
+      "text": "Where's the university?",
+      "words": [
+        {
+          "word": "Where's",
+          "start": 69.88,
+          "end": 70.22
+        },
+        {
+          "word": "the",
+          "start": 70.22,
+          "end": 70.48
+        },
+        {
+          "word": "university?",
+          "start": 70.48,
+          "end": 71.16
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "startMs": 72000,
+      "endMs": 73420,
+      "text": "That's over the river.",
+      "words": [
+        {
+          "word": "That's",
+          "start": 72.0,
+          "end": 72.62
+        },
+        {
+          "word": "over",
+          "start": 72.62,
+          "end": 72.88
+        },
+        {
+          "word": "the",
+          "start": 72.88,
+          "end": 73.1
+        },
+        {
+          "word": "river.",
+          "start": 73.1,
+          "end": 73.42
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "startMs": 74440,
+      "endMs": 77680,
+      "text": "Walk down Ship Street next to the shopping centre.",
+      "words": [
+        {
+          "word": "Walk",
+          "start": 74.44,
+          "end": 74.76
+        },
+        {
+          "word": "down",
+          "start": 74.76,
+          "end": 75.18
+        },
+        {
+          "word": "Ship",
+          "start": 75.18,
+          "end": 75.48
+        },
+        {
+          "word": "Street",
+          "start": 75.48,
+          "end": 76.06
+        },
+        {
+          "word": "next",
+          "start": 76.06,
+          "end": 76.6
+        },
+        {
+          "word": "to",
+          "start": 76.6,
+          "end": 76.8
+        },
+        {
+          "word": "the",
+          "start": 76.8,
+          "end": 76.96
+        },
+        {
+          "word": "shopping",
+          "start": 76.96,
+          "end": 77.18
+        },
+        {
+          "word": "centre.",
+          "start": 77.18,
+          "end": 77.68
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "startMs": 78620,
+      "endMs": 83420,
+      "text": "You can see the river at the end of the street and a bridge to the right.",
+      "words": [
+        {
+          "word": "You",
+          "start": 78.62,
+          "end": 78.8
+        },
+        {
+          "word": "can",
+          "start": 78.8,
+          "end": 79.08
+        },
+        {
+          "word": "see",
+          "start": 79.08,
+          "end": 79.26
+        },
+        {
+          "word": "the",
+          "start": 79.26,
+          "end": 79.52
+        },
+        {
+          "word": "river",
+          "start": 79.52,
+          "end": 79.8
+        },
+        {
+          "word": "at",
+          "start": 79.8,
+          "end": 80.08
+        },
+        {
+          "word": "the",
+          "start": 80.08,
+          "end": 80.3
+        },
+        {
+          "word": "end",
+          "start": 80.3,
+          "end": 80.5
+        },
+        {
+          "word": "of",
+          "start": 80.5,
+          "end": 80.7
+        },
+        {
+          "word": "the",
+          "start": 80.7,
+          "end": 80.92
+        },
+        {
+          "word": "street",
+          "start": 80.92,
+          "end": 81.2
+        },
+        {
+          "word": "and",
+          "start": 81.2,
+          "end": 81.84
+        },
+        {
+          "word": "a",
+          "start": 81.84,
+          "end": 82.08
+        },
+        {
+          "word": "bridge",
+          "start": 82.08,
+          "end": 82.52
+        },
+        {
+          "word": "to",
+          "start": 82.52,
+          "end": 82.88
+        },
+        {
+          "word": "the",
+          "start": 82.88,
+          "end": 83.06
+        },
+        {
+          "word": "right.",
+          "start": 83.06,
+          "end": 83.42
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "startMs": 84520,
+      "endMs": 89420,
+      "text": "Go over the bridge and the university campus is in front of you.",
+      "words": [
+        {
+          "word": "Go",
+          "start": 84.52,
+          "end": 84.82
+        },
+        {
+          "word": "over",
+          "start": 84.82,
+          "end": 85.08
+        },
+        {
+          "word": "the",
+          "start": 85.08,
+          "end": 85.34
+        },
+        {
+          "word": "bridge",
+          "start": 85.34,
+          "end": 85.7
+        },
+        {
+          "word": "and",
+          "start": 85.7,
+          "end": 86.36
+        },
+        {
+          "word": "the",
+          "start": 86.36,
+          "end": 86.66
+        },
+        {
+          "word": "university",
+          "start": 86.66,
+          "end": 87.28
+        },
+        {
+          "word": "campus",
+          "start": 87.28,
+          "end": 88.02
+        },
+        {
+          "word": "is",
+          "start": 88.02,
+          "end": 88.52
+        },
+        {
+          "word": "in",
+          "start": 88.52,
+          "end": 88.78
+        },
+        {
+          "word": "front",
+          "start": 88.78,
+          "end": 89.0
+        },
+        {
+          "word": "of",
+          "start": 89.0,
+          "end": 89.22
+        },
+        {
+          "word": "you.",
+          "start": 89.22,
+          "end": 89.42
+        }
+      ]
+    },
+    {
+      "index": 18,
+      "startMs": 90640,
+      "endMs": 95960,
+      "text": "I have maps of the town with me or you can download the app.",
+      "words": [
+        {
+          "word": "I",
+          "start": 90.55999999999999,
+          "end": 90.96
+        },
+        {
+          "word": "have",
+          "start": 90.96,
+          "end": 91.24
+        },
+        {
+          "word": "maps",
+          "start": 91.24,
+          "end": 91.64
+        },
+        {
+          "word": "of",
+          "start": 91.64,
+          "end": 91.88
+        },
+        {
+          "word": "the",
+          "start": 91.88,
+          "end": 92.1
+        },
+        {
+          "word": "town",
+          "start": 92.1,
+          "end": 92.34
+        },
+        {
+          "word": "with",
+          "start": 92.34,
+          "end": 92.66
+        },
+        {
+          "word": "me",
+          "start": 92.66,
+          "end": 93.1
+        },
+        {
+          "word": "or",
+          "start": 93.1,
+          "end": 93.64
+        },
+        {
+          "word": "you",
+          "start": 93.64,
+          "end": 93.82
+        },
+        {
+          "word": "can",
+          "start": 93.82,
+          "end": 94.16
+        },
+        {
+          "word": "download",
+          "start": 94.16,
+          "end": 94.78
+        },
+        {
+          "word": "the",
+          "start": 94.78,
+          "end": 95.06
+        },
+        {
+          "word": "app.",
+          "start": 95.06,
+          "end": 95.96
+        }
+      ]
+    },
+    {
+      "index": 19,
+      "startMs": 97120,
+      "endMs": 101700,
+      "text": "Renton is a beautiful town and it's very safe too.",
+      "words": [
+        {
+          "word": "Renton",
+          "start": 97.12,
+          "end": 97.44
+        },
+        {
+          "word": "is",
+          "start": 97.44,
+          "end": 97.86
+        },
+        {
+          "word": "a",
+          "start": 97.86,
+          "end": 98.08
+        },
+        {
+          "word": "beautiful",
+          "start": 98.08,
+          "end": 98.56
+        },
+        {
+          "word": "town",
+          "start": 98.56,
+          "end": 99.14
+        },
+        {
+          "word": "and",
+          "start": 99.14,
+          "end": 99.94
+        },
+        {
+          "word": "it's",
+          "start": 99.94,
+          "end": 100.34
+        },
+        {
+          "word": "very",
+          "start": 100.34,
+          "end": 100.74
+        },
+        {
+          "word": "safe",
+          "start": 100.74,
+          "end": 101.18
+        },
+        {
+          "word": "too.",
+          "start": 101.18,
+          "end": 101.7
+        }
+      ]
+    },
+    {
+      "index": 20,
+      "startMs": 102920,
+      "endMs": 105060,
+      "text": "I hope you enjoy your time here.",
+      "words": [
+        {
+          "word": "I",
+          "start": 102.92,
+          "end": 103.14
+        },
+        {
+          "word": "hope",
+          "start": 103.14,
+          "end": 103.36
+        },
+        {
+          "word": "you",
+          "start": 103.36,
+          "end": 103.66
+        },
+        {
+          "word": "enjoy",
+          "start": 103.66,
+          "end": 103.96
+        },
+        {
+          "word": "your",
+          "start": 103.96,
+          "end": 104.3
+        },
+        {
+          "word": "time",
+          "start": 104.3,
+          "end": 104.56
+        },
+        {
+          "word": "here.",
+          "start": 104.56,
+          "end": 105.06
+        }
+      ]
+    },
+    {
+      "index": 21,
+      "startMs": 105740,
+      "endMs": 106580,
+      "text": "Thank you.",
+      "words": [
+        {
+          "word": "Thank",
+          "start": 105.74,
+          "end": 106.08
+        },
+        {
+          "word": "you.",
+          "start": 106.08,
+          "end": 106.58
+        }
+      ]
+    }
+  ]
+}

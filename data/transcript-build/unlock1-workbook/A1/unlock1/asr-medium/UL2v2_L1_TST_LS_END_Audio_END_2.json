@@ -1,0 +1,1509 @@
+{
+  "model": "medium",
+  "language": "en",
+  "text": "End of course test, track two. Hi Haru, I hear you have a new job. Yes, I'm going to work as a ranger. What's that? It's a person who helps care for nature. So you help animals? Not really, although I have to make sure the places they live in are safe. It's my dream job and that's why I went to university. There is one problem though. What's that? Well, it's in the countryside so I have to leave my hometown. I'm not sure I want to do that. Where is the job? In Turwick. It's more than a hundred kilometers away so I have to move and live on my own. Do you have to find somewhere to live? No, one of the good things about this job is that it has a cabin. What's that? Is it like a stone house? No, it's a small wooden house that I can live in while I work for the company. When I leave I have to find another place to live. Is the money good? It's okay, but not great. I will earn enough to buy all my food, but I don't think I can afford to go out very much or come home often. I think I'll be very busy so I won't have much free time. Do you think you'll be lonely? You won't have any friends there. I know, but I enjoy being alone too. Well, we can all come and visit you in the holidays. That would be great!",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 3000,
+      "text": "End of course test, track two.",
+      "words": [
+        {
+          "word": "End",
+          "start": 0.0,
+          "end": 0.64
+        },
+        {
+          "word": "of",
+          "start": 0.64,
+          "end": 0.88
+        },
+        {
+          "word": "course",
+          "start": 0.88,
+          "end": 1.14
+        },
+        {
+          "word": "test,",
+          "start": 1.14,
+          "end": 1.7
+        },
+        {
+          "word": "track",
+          "start": 2.24,
+          "end": 2.44
+        },
+        {
+          "word": "two.",
+          "start": 2.44,
+          "end": 3.0
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 5080,
+      "endMs": 8340,
+      "text": "Hi Haru, I hear you have a new job.",
+      "words": [
+        {
+          "word": "Hi",
+          "start": 5.08,
+          "end": 5.3
+        },
+        {
+          "word": "Haru,",
+          "start": 5.3,
+          "end": 5.86
+        },
+        {
+          "word": "I",
+          "start": 6.24,
+          "end": 6.68
+        },
+        {
+          "word": "hear",
+          "start": 6.68,
+          "end": 6.96
+        },
+        {
+          "word": "you",
+          "start": 6.96,
+          "end": 7.26
+        },
+        {
+          "word": "have",
+          "start": 7.26,
+          "end": 7.52
+        },
+        {
+          "word": "a",
+          "start": 7.52,
+          "end": 7.7
+        },
+        {
+          "word": "new",
+          "start": 7.7,
+          "end": 7.9
+        },
+        {
+          "word": "job.",
+          "start": 7.9,
+          "end": 8.34
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 8940,
+      "endMs": 12120,
+      "text": "Yes, I'm going to work as a ranger.",
+      "words": [
+        {
+          "word": "Yes,",
+          "start": 8.94,
+          "end": 9.38
+        },
+        {
+          "word": "I'm",
+          "start": 9.78,
+          "end": 10.2
+        },
+        {
+          "word": "going",
+          "start": 10.2,
+          "end": 10.54
+        },
+        {
+          "word": "to",
+          "start": 10.54,
+          "end": 10.88
+        },
+        {
+          "word": "work",
+          "start": 10.88,
+          "end": 11.14
+        },
+        {
+          "word": "as",
+          "start": 11.14,
+          "end": 11.44
+        },
+        {
+          "word": "a",
+          "start": 11.44,
+          "end": 11.6
+        },
+        {
+          "word": "ranger.",
+          "start": 11.6,
+          "end": 12.12
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 12940,
+      "endMs": 13680,
+      "text": "What's that?",
+      "words": [
+        {
+          "word": "What's",
+          "start": 12.94,
+          "end": 13.34
+        },
+        {
+          "word": "that?",
+          "start": 13.34,
+          "end": 13.68
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 14240,
+      "endMs": 17140,
+      "text": "It's a person who helps care for nature.",
+      "words": [
+        {
+          "word": "It's",
+          "start": 14.24,
+          "end": 14.68
+        },
+        {
+          "word": "a",
+          "start": 14.68,
+          "end": 14.78
+        },
+        {
+          "word": "person",
+          "start": 14.78,
+          "end": 15.28
+        },
+        {
+          "word": "who",
+          "start": 15.28,
+          "end": 15.68
+        },
+        {
+          "word": "helps",
+          "start": 15.68,
+          "end": 15.96
+        },
+        {
+          "word": "care",
+          "start": 15.96,
+          "end": 16.34
+        },
+        {
+          "word": "for",
+          "start": 16.34,
+          "end": 16.62
+        },
+        {
+          "word": "nature.",
+          "start": 16.62,
+          "end": 17.14
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "startMs": 17960,
+      "endMs": 19420,
+      "text": "So you help animals?",
+      "words": [
+        {
+          "word": "So",
+          "start": 17.96,
+          "end": 18.26
+        },
+        {
+          "word": "you",
+          "start": 18.26,
+          "end": 18.54
+        },
+        {
+          "word": "help",
+          "start": 18.54,
+          "end": 18.82
+        },
+        {
+          "word": "animals?",
+          "start": 18.82,
+          "end": 19.42
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "startMs": 19820,
+      "endMs": 25760,
+      "text": "Not really, although I have to make sure the places they live in are safe.",
+      "words": [
+        {
+          "word": "Not",
+          "start": 19.82,
+          "end": 20.28
+        },
+        {
+          "word": "really,",
+          "start": 20.28,
+          "end": 20.82
+        },
+        {
+          "word": "although",
+          "start": 21.46,
+          "end": 21.78
+        },
+        {
+          "word": "I",
+          "start": 21.78,
+          "end": 22.12
+        },
+        {
+          "word": "have",
+          "start": 22.12,
+          "end": 22.38
+        },
+        {
+          "word": "to",
+          "start": 22.38,
+          "end": 22.6
+        },
+        {
+          "word": "make",
+          "start": 22.6,
+          "end": 22.84
+        },
+        {
+          "word": "sure",
+          "start": 22.84,
+          "end": 23.22
+        },
+        {
+          "word": "the",
+          "start": 23.22,
+          "end": 23.52
+        },
+        {
+          "word": "places",
+          "start": 23.52,
+          "end": 23.86
+        },
+        {
+          "word": "they",
+          "start": 23.86,
+          "end": 24.32
+        },
+        {
+          "word": "live",
+          "start": 24.32,
+          "end": 24.64
+        },
+        {
+          "word": "in",
+          "start": 24.64,
+          "end": 24.94
+        },
+        {
+          "word": "are",
+          "start": 24.94,
+          "end": 25.28
+        },
+        {
+          "word": "safe.",
+          "start": 25.28,
+          "end": 25.76
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "startMs": 26560,
+      "endMs": 31080,
+      "text": "It's my dream job and that's why I went to university.",
+      "words": [
+        {
+          "word": "It's",
+          "start": 26.560000000000002,
+          "end": 27.08
+        },
+        {
+          "word": "my",
+          "start": 27.08,
+          "end": 27.4
+        },
+        {
+          "word": "dream",
+          "start": 27.4,
+          "end": 27.88
+        },
+        {
+          "word": "job",
+          "start": 27.88,
+          "end": 28.36
+        },
+        {
+          "word": "and",
+          "start": 28.36,
+          "end": 28.94
+        },
+        {
+          "word": "that's",
+          "start": 28.94,
+          "end": 29.34
+        },
+        {
+          "word": "why",
+          "start": 29.34,
+          "end": 29.62
+        },
+        {
+          "word": "I",
+          "start": 29.62,
+          "end": 29.78
+        },
+        {
+          "word": "went",
+          "start": 29.78,
+          "end": 30.06
+        },
+        {
+          "word": "to",
+          "start": 30.06,
+          "end": 30.32
+        },
+        {
+          "word": "university.",
+          "start": 30.32,
+          "end": 31.08
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "startMs": 32180,
+      "endMs": 34060,
+      "text": "There is one problem though.",
+      "words": [
+        {
+          "word": "There",
+          "start": 32.18,
+          "end": 32.42
+        },
+        {
+          "word": "is",
+          "start": 32.42,
+          "end": 32.7
+        },
+        {
+          "word": "one",
+          "start": 32.7,
+          "end": 33.02
+        },
+        {
+          "word": "problem",
+          "start": 33.02,
+          "end": 33.58
+        },
+        {
+          "word": "though.",
+          "start": 33.58,
+          "end": 34.06
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "startMs": 34600,
+      "endMs": 35380,
+      "text": "What's that?",
+      "words": [
+        {
+          "word": "What's",
+          "start": 34.6,
+          "end": 35.08
+        },
+        {
+          "word": "that?",
+          "start": 35.08,
+          "end": 35.38
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "startMs": 36160,
+      "endMs": 41100,
+      "text": "Well, it's in the countryside so I have to leave my hometown.",
+      "words": [
+        {
+          "word": "Well,",
+          "start": 36.16,
+          "end": 36.6
+        },
+        {
+          "word": "it's",
+          "start": 37.12,
+          "end": 37.36
+        },
+        {
+          "word": "in",
+          "start": 37.36,
+          "end": 37.6
+        },
+        {
+          "word": "the",
+          "start": 37.6,
+          "end": 37.78
+        },
+        {
+          "word": "countryside",
+          "start": 37.78,
+          "end": 38.46
+        },
+        {
+          "word": "so",
+          "start": 38.46,
+          "end": 39.24
+        },
+        {
+          "word": "I",
+          "start": 39.24,
+          "end": 39.52
+        },
+        {
+          "word": "have",
+          "start": 39.52,
+          "end": 39.76
+        },
+        {
+          "word": "to",
+          "start": 39.76,
+          "end": 40.02
+        },
+        {
+          "word": "leave",
+          "start": 40.02,
+          "end": 40.22
+        },
+        {
+          "word": "my",
+          "start": 40.22,
+          "end": 40.52
+        },
+        {
+          "word": "hometown.",
+          "start": 40.52,
+          "end": 41.1
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "startMs": 41940,
+      "endMs": 44480,
+      "text": "I'm not sure I want to do that.",
+      "words": [
+        {
+          "word": "I'm",
+          "start": 41.94,
+          "end": 42.44
+        },
+        {
+          "word": "not",
+          "start": 42.44,
+          "end": 42.74
+        },
+        {
+          "word": "sure",
+          "start": 42.74,
+          "end": 43.04
+        },
+        {
+          "word": "I",
+          "start": 43.04,
+          "end": 43.24
+        },
+        {
+          "word": "want",
+          "start": 43.24,
+          "end": 43.44
+        },
+        {
+          "word": "to",
+          "start": 43.44,
+          "end": 43.72
+        },
+        {
+          "word": "do",
+          "start": 43.72,
+          "end": 43.94
+        },
+        {
+          "word": "that.",
+          "start": 43.94,
+          "end": 44.48
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "startMs": 45140,
+      "endMs": 46340,
+      "text": "Where is the job?",
+      "words": [
+        {
+          "word": "Where",
+          "start": 45.14,
+          "end": 45.54
+        },
+        {
+          "word": "is",
+          "start": 45.54,
+          "end": 45.88
+        },
+        {
+          "word": "the",
+          "start": 45.88,
+          "end": 46.06
+        },
+        {
+          "word": "job?",
+          "start": 46.06,
+          "end": 46.34
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "startMs": 47240,
+      "endMs": 48300,
+      "text": "In Turwick.",
+      "words": [
+        {
+          "word": "In",
+          "start": 47.24,
+          "end": 47.74
+        },
+        {
+          "word": "Turwick.",
+          "start": 47.74,
+          "end": 48.3
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "startMs": 49500,
+      "endMs": 55240,
+      "text": "It's more than a hundred kilometers away so I have to move and live on my own.",
+      "words": [
+        {
+          "word": "It's",
+          "start": 49.5,
+          "end": 49.7
+        },
+        {
+          "word": "more",
+          "start": 49.7,
+          "end": 50.04
+        },
+        {
+          "word": "than",
+          "start": 50.04,
+          "end": 50.4
+        },
+        {
+          "word": "a",
+          "start": 50.4,
+          "end": 50.62
+        },
+        {
+          "word": "hundred",
+          "start": 50.62,
+          "end": 51.04
+        },
+        {
+          "word": "kilometers",
+          "start": 51.04,
+          "end": 51.72
+        },
+        {
+          "word": "away",
+          "start": 51.72,
+          "end": 52.22
+        },
+        {
+          "word": "so",
+          "start": 52.22,
+          "end": 52.76
+        },
+        {
+          "word": "I",
+          "start": 52.76,
+          "end": 53.0
+        },
+        {
+          "word": "have",
+          "start": 53.0,
+          "end": 53.24
+        },
+        {
+          "word": "to",
+          "start": 53.24,
+          "end": 53.5
+        },
+        {
+          "word": "move",
+          "start": 53.5,
+          "end": 53.78
+        },
+        {
+          "word": "and",
+          "start": 53.78,
+          "end": 54.04
+        },
+        {
+          "word": "live",
+          "start": 54.04,
+          "end": 54.28
+        },
+        {
+          "word": "on",
+          "start": 54.28,
+          "end": 54.52
+        },
+        {
+          "word": "my",
+          "start": 54.52,
+          "end": 54.78
+        },
+        {
+          "word": "own.",
+          "start": 54.78,
+          "end": 55.24
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "startMs": 55760,
+      "endMs": 58480,
+      "text": "Do you have to find somewhere to live?",
+      "words": [
+        {
+          "word": "Do",
+          "start": 55.76,
+          "end": 56.42
+        },
+        {
+          "word": "you",
+          "start": 56.42,
+          "end": 56.62
+        },
+        {
+          "word": "have",
+          "start": 56.62,
+          "end": 56.86
+        },
+        {
+          "word": "to",
+          "start": 56.86,
+          "end": 57.18
+        },
+        {
+          "word": "find",
+          "start": 57.18,
+          "end": 57.52
+        },
+        {
+          "word": "somewhere",
+          "start": 57.52,
+          "end": 57.92
+        },
+        {
+          "word": "to",
+          "start": 57.92,
+          "end": 58.22
+        },
+        {
+          "word": "live?",
+          "start": 58.22,
+          "end": 58.48
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "startMs": 59280,
+      "endMs": 64380,
+      "text": "No, one of the good things about this job is that it has a cabin.",
+      "words": [
+        {
+          "word": "No,",
+          "start": 59.28,
+          "end": 59.64
+        },
+        {
+          "word": "one",
+          "start": 60.24,
+          "end": 60.48
+        },
+        {
+          "word": "of",
+          "start": 60.48,
+          "end": 60.7
+        },
+        {
+          "word": "the",
+          "start": 60.7,
+          "end": 60.9
+        },
+        {
+          "word": "good",
+          "start": 60.9,
+          "end": 61.12
+        },
+        {
+          "word": "things",
+          "start": 61.12,
+          "end": 61.58
+        },
+        {
+          "word": "about",
+          "start": 61.58,
+          "end": 61.92
+        },
+        {
+          "word": "this",
+          "start": 61.92,
+          "end": 62.26
+        },
+        {
+          "word": "job",
+          "start": 62.26,
+          "end": 62.6
+        },
+        {
+          "word": "is",
+          "start": 62.6,
+          "end": 63.0
+        },
+        {
+          "word": "that",
+          "start": 63.0,
+          "end": 63.28
+        },
+        {
+          "word": "it",
+          "start": 63.28,
+          "end": 63.42
+        },
+        {
+          "word": "has",
+          "start": 63.42,
+          "end": 63.78
+        },
+        {
+          "word": "a",
+          "start": 63.78,
+          "end": 63.98
+        },
+        {
+          "word": "cabin.",
+          "start": 63.98,
+          "end": 64.38
+        }
+      ]
+    },
+    {
+      "index": 18,
+      "startMs": 64960,
+      "endMs": 68020,
+      "text": "What's that? Is it like a stone house?",
+      "words": [
+        {
+          "word": "What's",
+          "start": 64.96,
+          "end": 65.26
+        },
+        {
+          "word": "that?",
+          "start": 65.26,
+          "end": 65.66
+        },
+        {
+          "word": "Is",
+          "start": 66.14,
+          "end": 66.4
+        },
+        {
+          "word": "it",
+          "start": 66.4,
+          "end": 66.68
+        },
+        {
+          "word": "like",
+          "start": 66.68,
+          "end": 67.08
+        },
+        {
+          "word": "a",
+          "start": 67.08,
+          "end": 67.4
+        },
+        {
+          "word": "stone",
+          "start": 67.4,
+          "end": 67.66
+        },
+        {
+          "word": "house?",
+          "start": 67.66,
+          "end": 68.02
+        }
+      ]
+    },
+    {
+      "index": 19,
+      "startMs": 68680,
+      "endMs": 74820,
+      "text": "No, it's a small wooden house that I can live in while I work for the company.",
+      "words": [
+        {
+          "word": "No,",
+          "start": 68.68,
+          "end": 69.24
+        },
+        {
+          "word": "it's",
+          "start": 69.72,
+          "end": 70.12
+        },
+        {
+          "word": "a",
+          "start": 70.12,
+          "end": 70.4
+        },
+        {
+          "word": "small",
+          "start": 70.4,
+          "end": 70.74
+        },
+        {
+          "word": "wooden",
+          "start": 70.74,
+          "end": 71.12
+        },
+        {
+          "word": "house",
+          "start": 71.12,
+          "end": 71.62
+        },
+        {
+          "word": "that",
+          "start": 71.62,
+          "end": 71.98
+        },
+        {
+          "word": "I",
+          "start": 71.98,
+          "end": 72.2
+        },
+        {
+          "word": "can",
+          "start": 72.2,
+          "end": 72.44
+        },
+        {
+          "word": "live",
+          "start": 72.44,
+          "end": 72.74
+        },
+        {
+          "word": "in",
+          "start": 72.74,
+          "end": 73.0
+        },
+        {
+          "word": "while",
+          "start": 73.0,
+          "end": 73.3
+        },
+        {
+          "word": "I",
+          "start": 73.3,
+          "end": 73.62
+        },
+        {
+          "word": "work",
+          "start": 73.62,
+          "end": 73.82
+        },
+        {
+          "word": "for",
+          "start": 73.82,
+          "end": 74.08
+        },
+        {
+          "word": "the",
+          "start": 74.08,
+          "end": 74.26
+        },
+        {
+          "word": "company.",
+          "start": 74.26,
+          "end": 74.82
+        }
+      ]
+    },
+    {
+      "index": 20,
+      "startMs": 75700,
+      "endMs": 79440,
+      "text": "When I leave I have to find another place to live.",
+      "words": [
+        {
+          "word": "When",
+          "start": 75.7,
+          "end": 75.94
+        },
+        {
+          "word": "I",
+          "start": 75.94,
+          "end": 76.26
+        },
+        {
+          "word": "leave",
+          "start": 76.26,
+          "end": 76.62
+        },
+        {
+          "word": "I",
+          "start": 76.62,
+          "end": 77.06
+        },
+        {
+          "word": "have",
+          "start": 77.06,
+          "end": 77.36
+        },
+        {
+          "word": "to",
+          "start": 77.36,
+          "end": 77.64
+        },
+        {
+          "word": "find",
+          "start": 77.64,
+          "end": 77.88
+        },
+        {
+          "word": "another",
+          "start": 77.88,
+          "end": 78.32
+        },
+        {
+          "word": "place",
+          "start": 78.32,
+          "end": 78.74
+        },
+        {
+          "word": "to",
+          "start": 78.74,
+          "end": 79.08
+        },
+        {
+          "word": "live.",
+          "start": 79.08,
+          "end": 79.44
+        }
+      ]
+    },
+    {
+      "index": 21,
+      "startMs": 80100,
+      "endMs": 81160,
+      "text": "Is the money good?",
+      "words": [
+        {
+          "word": "Is",
+          "start": 80.1,
+          "end": 80.4
+        },
+        {
+          "word": "the",
+          "start": 80.4,
+          "end": 80.6
+        },
+        {
+          "word": "money",
+          "start": 80.6,
+          "end": 80.84
+        },
+        {
+          "word": "good?",
+          "start": 80.84,
+          "end": 81.16
+        }
+      ]
+    },
+    {
+      "index": 22,
+      "startMs": 81620,
+      "endMs": 84180,
+      "text": "It's okay, but not great.",
+      "words": [
+        {
+          "word": "It's",
+          "start": 81.62,
+          "end": 82.1
+        },
+        {
+          "word": "okay,",
+          "start": 82.1,
+          "end": 82.6
+        },
+        {
+          "word": "but",
+          "start": 82.88,
+          "end": 83.32
+        },
+        {
+          "word": "not",
+          "start": 83.32,
+          "end": 83.72
+        },
+        {
+          "word": "great.",
+          "start": 83.72,
+          "end": 84.18
+        }
+      ]
+    },
+    {
+      "index": 23,
+      "startMs": 84780,
+      "endMs": 87680,
+      "text": "I will earn enough to buy all my food,",
+      "words": [
+        {
+          "word": "I",
+          "start": 84.78,
+          "end": 85.14
+        },
+        {
+          "word": "will",
+          "start": 85.14,
+          "end": 85.5
+        },
+        {
+          "word": "earn",
+          "start": 85.5,
+          "end": 85.78
+        },
+        {
+          "word": "enough",
+          "start": 85.78,
+          "end": 86.2
+        },
+        {
+          "word": "to",
+          "start": 86.2,
+          "end": 86.44
+        },
+        {
+          "word": "buy",
+          "start": 86.44,
+          "end": 86.7
+        },
+        {
+          "word": "all",
+          "start": 86.7,
+          "end": 86.98
+        },
+        {
+          "word": "my",
+          "start": 86.98,
+          "end": 87.22
+        },
+        {
+          "word": "food,",
+          "start": 87.22,
+          "end": 87.68
+        }
+      ]
+    },
+    {
+      "index": 24,
+      "startMs": 88020,
+      "endMs": 93940,
+      "text": "but I don't think I can afford to go out very much or come home often.",
+      "words": [
+        {
+          "word": "but",
+          "start": 88.02,
+          "end": 88.4
+        },
+        {
+          "word": "I",
+          "start": 88.4,
+          "end": 88.82
+        },
+        {
+          "word": "don't",
+          "start": 88.82,
+          "end": 89.18
+        },
+        {
+          "word": "think",
+          "start": 89.18,
+          "end": 89.44
+        },
+        {
+          "word": "I",
+          "start": 89.44,
+          "end": 89.6
+        },
+        {
+          "word": "can",
+          "start": 89.6,
+          "end": 89.82
+        },
+        {
+          "word": "afford",
+          "start": 89.82,
+          "end": 90.28
+        },
+        {
+          "word": "to",
+          "start": 90.28,
+          "end": 90.7
+        },
+        {
+          "word": "go",
+          "start": 90.7,
+          "end": 90.92
+        },
+        {
+          "word": "out",
+          "start": 90.92,
+          "end": 91.34
+        },
+        {
+          "word": "very",
+          "start": 91.34,
+          "end": 91.78
+        },
+        {
+          "word": "much",
+          "start": 91.78,
+          "end": 92.28
+        },
+        {
+          "word": "or",
+          "start": 92.28,
+          "end": 92.74
+        },
+        {
+          "word": "come",
+          "start": 92.74,
+          "end": 93.08
+        },
+        {
+          "word": "home",
+          "start": 93.08,
+          "end": 93.44
+        },
+        {
+          "word": "often.",
+          "start": 93.44,
+          "end": 93.94
+        }
+      ]
+    },
+    {
+      "index": 25,
+      "startMs": 94980,
+      "endMs": 99720,
+      "text": "I think I'll be very busy so I won't have much free time.",
+      "words": [
+        {
+          "word": "I",
+          "start": 94.98,
+          "end": 95.18
+        },
+        {
+          "word": "think",
+          "start": 95.18,
+          "end": 95.48
+        },
+        {
+          "word": "I'll",
+          "start": 95.48,
+          "end": 95.68
+        },
+        {
+          "word": "be",
+          "start": 95.68,
+          "end": 95.9
+        },
+        {
+          "word": "very",
+          "start": 95.9,
+          "end": 96.28
+        },
+        {
+          "word": "busy",
+          "start": 96.28,
+          "end": 96.86
+        },
+        {
+          "word": "so",
+          "start": 96.86,
+          "end": 97.44
+        },
+        {
+          "word": "I",
+          "start": 97.44,
+          "end": 97.78
+        },
+        {
+          "word": "won't",
+          "start": 97.78,
+          "end": 98.06
+        },
+        {
+          "word": "have",
+          "start": 98.06,
+          "end": 98.34
+        },
+        {
+          "word": "much",
+          "start": 98.34,
+          "end": 98.64
+        },
+        {
+          "word": "free",
+          "start": 98.64,
+          "end": 99.02
+        },
+        {
+          "word": "time.",
+          "start": 99.02,
+          "end": 99.72
+        }
+      ]
+    },
+    {
+      "index": 26,
+      "startMs": 100500,
+      "endMs": 104840,
+      "text": "Do you think you'll be lonely? You won't have any friends there.",
+      "words": [
+        {
+          "word": "Do",
+          "start": 100.5,
+          "end": 100.74
+        },
+        {
+          "word": "you",
+          "start": 100.74,
+          "end": 100.92
+        },
+        {
+          "word": "think",
+          "start": 100.92,
+          "end": 101.18
+        },
+        {
+          "word": "you'll",
+          "start": 101.18,
+          "end": 101.42
+        },
+        {
+          "word": "be",
+          "start": 101.42,
+          "end": 101.82
+        },
+        {
+          "word": "lonely?",
+          "start": 101.82,
+          "end": 102.3
+        },
+        {
+          "word": "You",
+          "start": 102.88,
+          "end": 103.04
+        },
+        {
+          "word": "won't",
+          "start": 103.04,
+          "end": 103.34
+        },
+        {
+          "word": "have",
+          "start": 103.34,
+          "end": 103.7
+        },
+        {
+          "word": "any",
+          "start": 103.7,
+          "end": 104.0
+        },
+        {
+          "word": "friends",
+          "start": 104.0,
+          "end": 104.38
+        },
+        {
+          "word": "there.",
+          "start": 104.38,
+          "end": 104.84
+        }
+      ]
+    },
+    {
+      "index": 27,
+      "startMs": 105440,
+      "endMs": 109060,
+      "text": "I know, but I enjoy being alone too.",
+      "words": [
+        {
+          "word": "I",
+          "start": 105.44,
+          "end": 105.76
+        },
+        {
+          "word": "know,",
+          "start": 105.76,
+          "end": 106.18
+        },
+        {
+          "word": "but",
+          "start": 106.52,
+          "end": 106.9
+        },
+        {
+          "word": "I",
+          "start": 106.9,
+          "end": 107.34
+        },
+        {
+          "word": "enjoy",
+          "start": 107.34,
+          "end": 107.64
+        },
+        {
+          "word": "being",
+          "start": 107.64,
+          "end": 108.06
+        },
+        {
+          "word": "alone",
+          "start": 108.06,
+          "end": 108.54
+        },
+        {
+          "word": "too.",
+          "start": 108.54,
+          "end": 109.06
+        }
+      ]
+    },
+    {
+      "index": 28,
+      "startMs": 109740,
+      "endMs": 113400,
+      "text": "Well, we can all come and visit you in the holidays.",
+      "words": [
+        {
+          "word": "Well,",
+          "start": 109.74,
+          "end": 110.2
+        },
+        {
+          "word": "we",
+          "start": 110.54,
+          "end": 110.72
+        },
+        {
+          "word": "can",
+          "start": 110.72,
+          "end": 110.96
+        },
+        {
+          "word": "all",
+          "start": 110.96,
+          "end": 111.26
+        },
+        {
+          "word": "come",
+          "start": 111.26,
+          "end": 111.58
+        },
+        {
+          "word": "and",
+          "start": 111.58,
+          "end": 111.94
+        },
+        {
+          "word": "visit",
+          "start": 111.94,
+          "end": 112.26
+        },
+        {
+          "word": "you",
+          "start": 112.26,
+          "end": 112.54
+        },
+        {
+          "word": "in",
+          "start": 112.54,
+          "end": 112.78
+        },
+        {
+          "word": "the",
+          "start": 112.78,
+          "end": 112.96
+        },
+        {
+          "word": "holidays.",
+          "start": 112.96,
+          "end": 113.4
+        }
+      ]
+    },
+    {
+      "index": 29,
+      "startMs": 113400,
+      "endMs": 115700,
+      "text": "That would be great!",
+      "words": [
+        {
+          "word": "That",
+          "start": 113.4,
+          "end": 114.48
+        },
+        {
+          "word": "would",
+          "start": 114.48,
+          "end": 114.76
+        },
+        {
+          "word": "be",
+          "start": 114.76,
+          "end": 115.12
+        },
+        {
+          "word": "great!",
+          "start": 115.12,
+          "end": 115.7
+        }
+      ]
+    }
+  ]
+}

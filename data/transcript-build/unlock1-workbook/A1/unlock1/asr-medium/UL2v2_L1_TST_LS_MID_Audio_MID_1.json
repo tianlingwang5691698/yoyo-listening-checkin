@@ -1,0 +1,1429 @@
+{
+  "model": "medium",
+  "language": "en",
+  "text": "Mid-course test, track one. OK. Today I want you to tell the class about your family at home. Marius, do you have a brother or sister? Yes, I have a brother. He's 14 and he loves football and basketball, and he goes to the gym on Saturday mornings with our father. They both love exercise, but I don't. I like to play computer games. Yes, we know you do. What about you, Clara? I have a big sister and a little brother. My sister Katja likes school. She does her homework after school and then she reads books about science. She wants to study science at university. My brother is five years old and watches TV every evening after school. Sofia, do you have a brother? No, I have one sister Rosa. She's 23 and lives in Mexico with my grandparents. She's at university in Mexico City. Rosa wants to be a doctor and work in a hospital. She goes online and chats to my mother every evening, but she's very busy so they don't chat for a long time. And Jason, what about your family? My parents live in Beijing in China. My father is a chef and he works in a restaurant in the city centre. My mother is a school teacher. They are both very busy, but my mother texts me every day. Do you have any brothers or sisters, Jason? No, I don't.",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 3200,
+      "text": "Mid-course test, track one.",
+      "words": [
+        {
+          "word": "Mid",
+          "start": 0.0,
+          "end": 0.78
+        },
+        {
+          "word": "-course",
+          "start": 0.78,
+          "end": 1.18
+        },
+        {
+          "word": "test,",
+          "start": 1.18,
+          "end": 1.84
+        },
+        {
+          "word": "track",
+          "start": 2.36,
+          "end": 2.58
+        },
+        {
+          "word": "one.",
+          "start": 2.58,
+          "end": 3.2
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 5440,
+      "endMs": 11160,
+      "text": "OK. Today I want you to tell the class about your family at home.",
+      "words": [
+        {
+          "word": "OK.",
+          "start": 5.44,
+          "end": 5.58
+        },
+        {
+          "word": "Today",
+          "start": 6.44,
+          "end": 6.98
+        },
+        {
+          "word": "I",
+          "start": 6.98,
+          "end": 7.48
+        },
+        {
+          "word": "want",
+          "start": 7.48,
+          "end": 7.76
+        },
+        {
+          "word": "you",
+          "start": 7.76,
+          "end": 8.0
+        },
+        {
+          "word": "to",
+          "start": 8.0,
+          "end": 8.2
+        },
+        {
+          "word": "tell",
+          "start": 8.2,
+          "end": 8.36
+        },
+        {
+          "word": "the",
+          "start": 8.36,
+          "end": 8.66
+        },
+        {
+          "word": "class",
+          "start": 8.66,
+          "end": 8.98
+        },
+        {
+          "word": "about",
+          "start": 8.98,
+          "end": 9.44
+        },
+        {
+          "word": "your",
+          "start": 9.44,
+          "end": 9.78
+        },
+        {
+          "word": "family",
+          "start": 9.78,
+          "end": 10.36
+        },
+        {
+          "word": "at",
+          "start": 10.36,
+          "end": 10.74
+        },
+        {
+          "word": "home.",
+          "start": 10.74,
+          "end": 11.16
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 12500,
+      "endMs": 15780,
+      "text": "Marius, do you have a brother or sister?",
+      "words": [
+        {
+          "word": "Marius,",
+          "start": 12.5,
+          "end": 12.96
+        },
+        {
+          "word": "do",
+          "start": 13.68,
+          "end": 13.92
+        },
+        {
+          "word": "you",
+          "start": 13.92,
+          "end": 14.2
+        },
+        {
+          "word": "have",
+          "start": 14.2,
+          "end": 14.4
+        },
+        {
+          "word": "a",
+          "start": 14.4,
+          "end": 14.62
+        },
+        {
+          "word": "brother",
+          "start": 14.62,
+          "end": 14.98
+        },
+        {
+          "word": "or",
+          "start": 14.98,
+          "end": 15.3
+        },
+        {
+          "word": "sister?",
+          "start": 15.3,
+          "end": 15.78
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 16640,
+      "endMs": 18700,
+      "text": "Yes, I have a brother.",
+      "words": [
+        {
+          "word": "Yes,",
+          "start": 16.64,
+          "end": 17.2
+        },
+        {
+          "word": "I",
+          "start": 17.2,
+          "end": 17.82
+        },
+        {
+          "word": "have",
+          "start": 17.82,
+          "end": 18.12
+        },
+        {
+          "word": "a",
+          "start": 18.12,
+          "end": 18.34
+        },
+        {
+          "word": "brother.",
+          "start": 18.34,
+          "end": 18.7
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 19500,
+      "endMs": 23840,
+      "text": "He's 14 and he loves football and basketball,",
+      "words": [
+        {
+          "word": "He's",
+          "start": 19.5,
+          "end": 19.98
+        },
+        {
+          "word": "14",
+          "start": 19.98,
+          "end": 20.62
+        },
+        {
+          "word": "and",
+          "start": 20.62,
+          "end": 21.12
+        },
+        {
+          "word": "he",
+          "start": 21.12,
+          "end": 21.5
+        },
+        {
+          "word": "loves",
+          "start": 21.5,
+          "end": 21.82
+        },
+        {
+          "word": "football",
+          "start": 21.82,
+          "end": 22.5
+        },
+        {
+          "word": "and",
+          "start": 22.5,
+          "end": 23.08
+        },
+        {
+          "word": "basketball,",
+          "start": 23.08,
+          "end": 23.84
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "startMs": 24260,
+      "endMs": 28400,
+      "text": "and he goes to the gym on Saturday mornings with our father.",
+      "words": [
+        {
+          "word": "and",
+          "start": 24.26,
+          "end": 24.62
+        },
+        {
+          "word": "he",
+          "start": 24.62,
+          "end": 24.86
+        },
+        {
+          "word": "goes",
+          "start": 24.86,
+          "end": 25.14
+        },
+        {
+          "word": "to",
+          "start": 25.14,
+          "end": 25.36
+        },
+        {
+          "word": "the",
+          "start": 25.36,
+          "end": 25.58
+        },
+        {
+          "word": "gym",
+          "start": 25.58,
+          "end": 25.86
+        },
+        {
+          "word": "on",
+          "start": 25.86,
+          "end": 26.24
+        },
+        {
+          "word": "Saturday",
+          "start": 26.24,
+          "end": 26.7
+        },
+        {
+          "word": "mornings",
+          "start": 26.7,
+          "end": 27.32
+        },
+        {
+          "word": "with",
+          "start": 27.32,
+          "end": 27.7
+        },
+        {
+          "word": "our",
+          "start": 27.7,
+          "end": 28.0
+        },
+        {
+          "word": "father.",
+          "start": 28.0,
+          "end": 28.4
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "startMs": 29200,
+      "endMs": 33400,
+      "text": "They both love exercise, but I don't.",
+      "words": [
+        {
+          "word": "They",
+          "start": 29.08,
+          "end": 29.52
+        },
+        {
+          "word": "both",
+          "start": 29.52,
+          "end": 30.12
+        },
+        {
+          "word": "love",
+          "start": 30.12,
+          "end": 30.74
+        },
+        {
+          "word": "exercise,",
+          "start": 30.74,
+          "end": 31.54
+        },
+        {
+          "word": "but",
+          "start": 32.0,
+          "end": 32.44
+        },
+        {
+          "word": "I",
+          "start": 32.44,
+          "end": 32.86
+        },
+        {
+          "word": "don't.",
+          "start": 32.86,
+          "end": 33.4
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "startMs": 34000,
+      "endMs": 36480,
+      "text": "I like to play computer games.",
+      "words": [
+        {
+          "word": "I",
+          "start": 34.0,
+          "end": 34.32
+        },
+        {
+          "word": "like",
+          "start": 34.32,
+          "end": 34.64
+        },
+        {
+          "word": "to",
+          "start": 34.64,
+          "end": 34.96
+        },
+        {
+          "word": "play",
+          "start": 34.96,
+          "end": 35.14
+        },
+        {
+          "word": "computer",
+          "start": 35.14,
+          "end": 35.8
+        },
+        {
+          "word": "games.",
+          "start": 35.8,
+          "end": 36.48
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "startMs": 37200,
+      "endMs": 39040,
+      "text": "Yes, we know you do.",
+      "words": [
+        {
+          "word": "Yes,",
+          "start": 37.2,
+          "end": 37.64
+        },
+        {
+          "word": "we",
+          "start": 37.64,
+          "end": 38.08
+        },
+        {
+          "word": "know",
+          "start": 38.08,
+          "end": 38.42
+        },
+        {
+          "word": "you",
+          "start": 38.42,
+          "end": 38.74
+        },
+        {
+          "word": "do.",
+          "start": 38.74,
+          "end": 39.04
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "startMs": 40100,
+      "endMs": 41520,
+      "text": "What about you, Clara?",
+      "words": [
+        {
+          "word": "What",
+          "start": 40.1,
+          "end": 40.32
+        },
+        {
+          "word": "about",
+          "start": 40.32,
+          "end": 40.68
+        },
+        {
+          "word": "you,",
+          "start": 40.68,
+          "end": 41.14
+        },
+        {
+          "word": "Clara?",
+          "start": 41.18,
+          "end": 41.52
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "startMs": 42420,
+      "endMs": 46240,
+      "text": "I have a big sister and a little brother.",
+      "words": [
+        {
+          "word": "I",
+          "start": 42.42,
+          "end": 42.78
+        },
+        {
+          "word": "have",
+          "start": 42.78,
+          "end": 43.32
+        },
+        {
+          "word": "a",
+          "start": 43.32,
+          "end": 43.68
+        },
+        {
+          "word": "big",
+          "start": 43.68,
+          "end": 44.04
+        },
+        {
+          "word": "sister",
+          "start": 44.04,
+          "end": 44.58
+        },
+        {
+          "word": "and",
+          "start": 44.58,
+          "end": 45.3
+        },
+        {
+          "word": "a",
+          "start": 45.3,
+          "end": 45.54
+        },
+        {
+          "word": "little",
+          "start": 45.54,
+          "end": 45.76
+        },
+        {
+          "word": "brother.",
+          "start": 45.76,
+          "end": 46.24
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "startMs": 47100,
+      "endMs": 49500,
+      "text": "My sister Katja likes school.",
+      "words": [
+        {
+          "word": "My",
+          "start": 47.1,
+          "end": 47.52
+        },
+        {
+          "word": "sister",
+          "start": 47.52,
+          "end": 48.12
+        },
+        {
+          "word": "Katja",
+          "start": 48.12,
+          "end": 48.6
+        },
+        {
+          "word": "likes",
+          "start": 48.6,
+          "end": 48.98
+        },
+        {
+          "word": "school.",
+          "start": 48.98,
+          "end": 49.5
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "startMs": 50360,
+      "endMs": 55980,
+      "text": "She does her homework after school and then she reads books about science.",
+      "words": [
+        {
+          "word": "She",
+          "start": 50.36,
+          "end": 50.68
+        },
+        {
+          "word": "does",
+          "start": 50.68,
+          "end": 51.02
+        },
+        {
+          "word": "her",
+          "start": 51.02,
+          "end": 51.38
+        },
+        {
+          "word": "homework",
+          "start": 51.38,
+          "end": 51.98
+        },
+        {
+          "word": "after",
+          "start": 51.98,
+          "end": 52.54
+        },
+        {
+          "word": "school",
+          "start": 52.54,
+          "end": 52.94
+        },
+        {
+          "word": "and",
+          "start": 52.94,
+          "end": 53.46
+        },
+        {
+          "word": "then",
+          "start": 53.46,
+          "end": 53.8
+        },
+        {
+          "word": "she",
+          "start": 53.8,
+          "end": 54.1
+        },
+        {
+          "word": "reads",
+          "start": 54.1,
+          "end": 54.42
+        },
+        {
+          "word": "books",
+          "start": 54.42,
+          "end": 54.86
+        },
+        {
+          "word": "about",
+          "start": 54.86,
+          "end": 55.36
+        },
+        {
+          "word": "science.",
+          "start": 55.36,
+          "end": 55.98
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "startMs": 55980,
+      "endMs": 59760,
+      "text": "She wants to study science at university.",
+      "words": [
+        {
+          "word": "She",
+          "start": 55.98,
+          "end": 56.02
+        },
+        {
+          "word": "wants",
+          "start": 56.02,
+          "end": 57.46
+        },
+        {
+          "word": "to",
+          "start": 57.46,
+          "end": 57.78
+        },
+        {
+          "word": "study",
+          "start": 57.78,
+          "end": 58.18
+        },
+        {
+          "word": "science",
+          "start": 58.18,
+          "end": 58.7
+        },
+        {
+          "word": "at",
+          "start": 58.7,
+          "end": 58.98
+        },
+        {
+          "word": "university.",
+          "start": 58.98,
+          "end": 59.76
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "startMs": 61300,
+      "endMs": 67960,
+      "text": "My brother is five years old and watches TV every evening after school.",
+      "words": [
+        {
+          "word": "My",
+          "start": 61.3,
+          "end": 61.3
+        },
+        {
+          "word": "brother",
+          "start": 61.3,
+          "end": 61.84
+        },
+        {
+          "word": "is",
+          "start": 61.84,
+          "end": 62.28
+        },
+        {
+          "word": "five",
+          "start": 62.28,
+          "end": 62.78
+        },
+        {
+          "word": "years",
+          "start": 62.78,
+          "end": 63.08
+        },
+        {
+          "word": "old",
+          "start": 63.08,
+          "end": 63.7
+        },
+        {
+          "word": "and",
+          "start": 63.7,
+          "end": 64.3
+        },
+        {
+          "word": "watches",
+          "start": 64.3,
+          "end": 64.74
+        },
+        {
+          "word": "TV",
+          "start": 64.74,
+          "end": 65.4
+        },
+        {
+          "word": "every",
+          "start": 65.4,
+          "end": 66.02
+        },
+        {
+          "word": "evening",
+          "start": 66.02,
+          "end": 66.58
+        },
+        {
+          "word": "after",
+          "start": 66.58,
+          "end": 67.06
+        },
+        {
+          "word": "school.",
+          "start": 67.06,
+          "end": 67.96
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "startMs": 69440,
+      "endMs": 71720,
+      "text": "Sofia, do you have a brother?",
+      "words": [
+        {
+          "word": "Sofia,",
+          "start": 69.44,
+          "end": 69.8
+        },
+        {
+          "word": "do",
+          "start": 70.58,
+          "end": 70.8
+        },
+        {
+          "word": "you",
+          "start": 70.8,
+          "end": 71.06
+        },
+        {
+          "word": "have",
+          "start": 71.06,
+          "end": 71.28
+        },
+        {
+          "word": "a",
+          "start": 71.28,
+          "end": 71.44
+        },
+        {
+          "word": "brother?",
+          "start": 71.44,
+          "end": 71.72
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "startMs": 72720,
+      "endMs": 75440,
+      "text": "No, I have one sister Rosa.",
+      "words": [
+        {
+          "word": "No,",
+          "start": 72.72,
+          "end": 73.12
+        },
+        {
+          "word": "I",
+          "start": 73.5,
+          "end": 73.62
+        },
+        {
+          "word": "have",
+          "start": 73.62,
+          "end": 73.9
+        },
+        {
+          "word": "one",
+          "start": 73.9,
+          "end": 74.24
+        },
+        {
+          "word": "sister",
+          "start": 74.24,
+          "end": 74.86
+        },
+        {
+          "word": "Rosa.",
+          "start": 74.86,
+          "end": 75.44
+        }
+      ]
+    },
+    {
+      "index": 18,
+      "startMs": 76740,
+      "endMs": 80480,
+      "text": "She's 23 and lives in Mexico with my grandparents.",
+      "words": [
+        {
+          "word": "She's",
+          "start": 76.74,
+          "end": 77.06
+        },
+        {
+          "word": "23",
+          "start": 77.06,
+          "end": 77.7
+        },
+        {
+          "word": "and",
+          "start": 77.7,
+          "end": 78.26
+        },
+        {
+          "word": "lives",
+          "start": 78.26,
+          "end": 78.48
+        },
+        {
+          "word": "in",
+          "start": 78.48,
+          "end": 78.66
+        },
+        {
+          "word": "Mexico",
+          "start": 78.66,
+          "end": 79.18
+        },
+        {
+          "word": "with",
+          "start": 79.18,
+          "end": 79.64
+        },
+        {
+          "word": "my",
+          "start": 79.64,
+          "end": 79.92
+        },
+        {
+          "word": "grandparents.",
+          "start": 79.92,
+          "end": 80.48
+        }
+      ]
+    },
+    {
+      "index": 19,
+      "startMs": 81560,
+      "endMs": 84260,
+      "text": "She's at university in Mexico City.",
+      "words": [
+        {
+          "word": "She's",
+          "start": 81.56,
+          "end": 82.0
+        },
+        {
+          "word": "at",
+          "start": 82.0,
+          "end": 82.18
+        },
+        {
+          "word": "university",
+          "start": 82.18,
+          "end": 82.9
+        },
+        {
+          "word": "in",
+          "start": 82.9,
+          "end": 83.26
+        },
+        {
+          "word": "Mexico",
+          "start": 83.26,
+          "end": 83.76
+        },
+        {
+          "word": "City.",
+          "start": 83.76,
+          "end": 84.26
+        }
+      ]
+    },
+    {
+      "index": 20,
+      "startMs": 84860,
+      "endMs": 88400,
+      "text": "Rosa wants to be a doctor and work in a hospital.",
+      "words": [
+        {
+          "word": "Rosa",
+          "start": 84.86,
+          "end": 85.5
+        },
+        {
+          "word": "wants",
+          "start": 85.5,
+          "end": 85.9
+        },
+        {
+          "word": "to",
+          "start": 85.9,
+          "end": 86.08
+        },
+        {
+          "word": "be",
+          "start": 86.08,
+          "end": 86.26
+        },
+        {
+          "word": "a",
+          "start": 86.26,
+          "end": 86.4
+        },
+        {
+          "word": "doctor",
+          "start": 86.4,
+          "end": 86.8
+        },
+        {
+          "word": "and",
+          "start": 86.8,
+          "end": 87.26
+        },
+        {
+          "word": "work",
+          "start": 87.26,
+          "end": 87.56
+        },
+        {
+          "word": "in",
+          "start": 87.56,
+          "end": 87.8
+        },
+        {
+          "word": "a",
+          "start": 87.8,
+          "end": 87.94
+        },
+        {
+          "word": "hospital.",
+          "start": 87.94,
+          "end": 88.4
+        }
+      ]
+    },
+    {
+      "index": 21,
+      "startMs": 89280,
+      "endMs": 92720,
+      "text": "She goes online and chats to my mother every evening,",
+      "words": [
+        {
+          "word": "She",
+          "start": 89.28,
+          "end": 89.4
+        },
+        {
+          "word": "goes",
+          "start": 89.4,
+          "end": 89.68
+        },
+        {
+          "word": "online",
+          "start": 89.68,
+          "end": 90.26
+        },
+        {
+          "word": "and",
+          "start": 90.26,
+          "end": 90.58
+        },
+        {
+          "word": "chats",
+          "start": 90.58,
+          "end": 90.84
+        },
+        {
+          "word": "to",
+          "start": 90.84,
+          "end": 91.08
+        },
+        {
+          "word": "my",
+          "start": 91.08,
+          "end": 91.3
+        },
+        {
+          "word": "mother",
+          "start": 91.3,
+          "end": 91.56
+        },
+        {
+          "word": "every",
+          "start": 91.56,
+          "end": 92.18
+        },
+        {
+          "word": "evening,",
+          "start": 92.18,
+          "end": 92.72
+        }
+      ]
+    },
+    {
+      "index": 22,
+      "startMs": 93140,
+      "endMs": 97080,
+      "text": "but she's very busy so they don't chat for a long time.",
+      "words": [
+        {
+          "word": "but",
+          "start": 93.14,
+          "end": 93.52
+        },
+        {
+          "word": "she's",
+          "start": 93.52,
+          "end": 93.8
+        },
+        {
+          "word": "very",
+          "start": 93.8,
+          "end": 94.18
+        },
+        {
+          "word": "busy",
+          "start": 94.18,
+          "end": 94.62
+        },
+        {
+          "word": "so",
+          "start": 94.62,
+          "end": 95.1
+        },
+        {
+          "word": "they",
+          "start": 95.1,
+          "end": 95.28
+        },
+        {
+          "word": "don't",
+          "start": 95.28,
+          "end": 95.52
+        },
+        {
+          "word": "chat",
+          "start": 95.52,
+          "end": 95.8
+        },
+        {
+          "word": "for",
+          "start": 95.8,
+          "end": 96.08
+        },
+        {
+          "word": "a",
+          "start": 96.08,
+          "end": 96.26
+        },
+        {
+          "word": "long",
+          "start": 96.26,
+          "end": 96.56
+        },
+        {
+          "word": "time.",
+          "start": 96.56,
+          "end": 97.08
+        }
+      ]
+    },
+    {
+      "index": 23,
+      "startMs": 98400,
+      "endMs": 101020,
+      "text": "And Jason, what about your family?",
+      "words": [
+        {
+          "word": "And",
+          "start": 98.4,
+          "end": 98.5
+        },
+        {
+          "word": "Jason,",
+          "start": 98.5,
+          "end": 98.9
+        },
+        {
+          "word": "what",
+          "start": 99.7,
+          "end": 99.96
+        },
+        {
+          "word": "about",
+          "start": 99.96,
+          "end": 100.26
+        },
+        {
+          "word": "your",
+          "start": 100.26,
+          "end": 100.6
+        },
+        {
+          "word": "family?",
+          "start": 100.6,
+          "end": 101.02
+        }
+      ]
+    },
+    {
+      "index": 24,
+      "startMs": 101980,
+      "endMs": 105280,
+      "text": "My parents live in Beijing in China.",
+      "words": [
+        {
+          "word": "My",
+          "start": 101.98,
+          "end": 102.36
+        },
+        {
+          "word": "parents",
+          "start": 102.36,
+          "end": 102.9
+        },
+        {
+          "word": "live",
+          "start": 102.9,
+          "end": 103.32
+        },
+        {
+          "word": "in",
+          "start": 103.32,
+          "end": 103.78
+        },
+        {
+          "word": "Beijing",
+          "start": 103.78,
+          "end": 104.34
+        },
+        {
+          "word": "in",
+          "start": 104.34,
+          "end": 104.88
+        },
+        {
+          "word": "China.",
+          "start": 104.88,
+          "end": 105.28
+        }
+      ]
+    },
+    {
+      "index": 25,
+      "startMs": 105980,
+      "endMs": 110920,
+      "text": "My father is a chef and he works in a restaurant in the city centre.",
+      "words": [
+        {
+          "word": "My",
+          "start": 105.98,
+          "end": 106.34
+        },
+        {
+          "word": "father",
+          "start": 106.34,
+          "end": 106.78
+        },
+        {
+          "word": "is",
+          "start": 106.78,
+          "end": 107.2
+        },
+        {
+          "word": "a",
+          "start": 107.2,
+          "end": 107.44
+        },
+        {
+          "word": "chef",
+          "start": 107.44,
+          "end": 107.72
+        },
+        {
+          "word": "and",
+          "start": 107.72,
+          "end": 108.26
+        },
+        {
+          "word": "he",
+          "start": 108.26,
+          "end": 108.5
+        },
+        {
+          "word": "works",
+          "start": 108.5,
+          "end": 108.78
+        },
+        {
+          "word": "in",
+          "start": 108.78,
+          "end": 109.06
+        },
+        {
+          "word": "a",
+          "start": 109.06,
+          "end": 109.16
+        },
+        {
+          "word": "restaurant",
+          "start": 109.16,
+          "end": 109.68
+        },
+        {
+          "word": "in",
+          "start": 109.68,
+          "end": 110.1
+        },
+        {
+          "word": "the",
+          "start": 110.1,
+          "end": 110.26
+        },
+        {
+          "word": "city",
+          "start": 110.26,
+          "end": 110.52
+        },
+        {
+          "word": "centre.",
+          "start": 110.52,
+          "end": 110.92
+        }
+      ]
+    },
+    {
+      "index": 26,
+      "startMs": 111920,
+      "endMs": 114060,
+      "text": "My mother is a school teacher.",
+      "words": [
+        {
+          "word": "My",
+          "start": 111.75999999999999,
+          "end": 112.16
+        },
+        {
+          "word": "mother",
+          "start": 112.16,
+          "end": 112.66
+        },
+        {
+          "word": "is",
+          "start": 112.66,
+          "end": 113.1
+        },
+        {
+          "word": "a",
+          "start": 113.1,
+          "end": 113.34
+        },
+        {
+          "word": "school",
+          "start": 113.34,
+          "end": 113.62
+        },
+        {
+          "word": "teacher.",
+          "start": 113.62,
+          "end": 114.06
+        }
+      ]
+    },
+    {
+      "index": 27,
+      "startMs": 114800,
+      "endMs": 119400,
+      "text": "They are both very busy, but my mother texts me every day.",
+      "words": [
+        {
+          "word": "They",
+          "start": 114.8,
+          "end": 114.94
+        },
+        {
+          "word": "are",
+          "start": 114.94,
+          "end": 115.22
+        },
+        {
+          "word": "both",
+          "start": 115.22,
+          "end": 115.46
+        },
+        {
+          "word": "very",
+          "start": 115.46,
+          "end": 115.8
+        },
+        {
+          "word": "busy,",
+          "start": 115.8,
+          "end": 116.28
+        },
+        {
+          "word": "but",
+          "start": 116.44,
+          "end": 116.78
+        },
+        {
+          "word": "my",
+          "start": 116.78,
+          "end": 117.04
+        },
+        {
+          "word": "mother",
+          "start": 117.04,
+          "end": 117.38
+        },
+        {
+          "word": "texts",
+          "start": 117.38,
+          "end": 117.94
+        },
+        {
+          "word": "me",
+          "start": 117.94,
+          "end": 118.46
+        },
+        {
+          "word": "every",
+          "start": 118.46,
+          "end": 118.84
+        },
+        {
+          "word": "day.",
+          "start": 118.84,
+          "end": 119.4
+        }
+      ]
+    },
+    {
+      "index": 28,
+      "startMs": 120400,
+      "endMs": 123680,
+      "text": "Do you have any brothers or sisters, Jason?",
+      "words": [
+        {
+          "word": "Do",
+          "start": 120.4,
+          "end": 120.42
+        },
+        {
+          "word": "you",
+          "start": 120.42,
+          "end": 120.84
+        },
+        {
+          "word": "have",
+          "start": 120.84,
+          "end": 121.24
+        },
+        {
+          "word": "any",
+          "start": 121.24,
+          "end": 121.78
+        },
+        {
+          "word": "brothers",
+          "start": 121.78,
+          "end": 122.18
+        },
+        {
+          "word": "or",
+          "start": 122.18,
+          "end": 122.56
+        },
+        {
+          "word": "sisters,",
+          "start": 122.56,
+          "end": 123.16
+        },
+        {
+          "word": "Jason?",
+          "start": 123.46,
+          "end": 123.68
+        }
+      ]
+    },
+    {
+      "index": 29,
+      "startMs": 124700,
+      "endMs": 125820,
+      "text": "No, I don't.",
+      "words": [
+        {
+          "word": "No,",
+          "start": 124.7,
+          "end": 125.1
+        },
+        {
+          "word": "I",
+          "start": 125.1,
+          "end": 125.34
+        },
+        {
+          "word": "don't.",
+          "start": 125.34,
+          "end": 125.82
+        }
+      ]
+    }
+  ]
+}

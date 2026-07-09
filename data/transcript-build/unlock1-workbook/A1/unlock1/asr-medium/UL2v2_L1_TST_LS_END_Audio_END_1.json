@@ -1,0 +1,1444 @@
+{
+  "model": "medium",
+  "language": "en",
+  "text": "End of course test, track one. Where did you go on your holiday? I took a bus across America from New York to San Francisco. It took 18 days and it was so interesting. Wasn't it boring on the bus? No. We didn't stay on the bus all the time. We went to two national parks, Yosemite and the Grand Canyon. I think Yosemite was better than the Grand Canyon because there were fewer people. There were over 500 when I was at the Grand Canyon. There's a bridge made of glass and you can stand on it and look down at the river. I know it's not dangerous but I felt uncomfortable standing on it and didn't really like it. Was it hot? Yes, but it rained too. I didn't like that. But Yosemite Park was amazing. There were lots of trees so it was very green and not too hot. I loved it there. Where did you go next? To San Francisco. You should go there. It has lots of unusual shops and fantastic food. One pizza restaurant made 30 different kinds of pizza and they weren't like the fast food pizzas we get here. More like the ones my grandmother cooked at home. Did you stay in a hotel? Yes, in San Francisco we did. It was cheap and small. There were only six rooms and the other people staying there were nice. The city is amazing. I think you should visit too. You'd love it.",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 3000,
+      "text": "End of course test, track one.",
+      "words": [
+        {
+          "word": "End",
+          "start": 0.0,
+          "end": 0.64
+        },
+        {
+          "word": "of",
+          "start": 0.64,
+          "end": 0.9
+        },
+        {
+          "word": "course",
+          "start": 0.9,
+          "end": 1.16
+        },
+        {
+          "word": "test,",
+          "start": 1.16,
+          "end": 1.78
+        },
+        {
+          "word": "track",
+          "start": 2.34,
+          "end": 2.52
+        },
+        {
+          "word": "one.",
+          "start": 2.52,
+          "end": 3.0
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 4720,
+      "endMs": 7460,
+      "text": "Where did you go on your holiday?",
+      "words": [
+        {
+          "word": "Where",
+          "start": 4.720000000000001,
+          "end": 5.5
+        },
+        {
+          "word": "did",
+          "start": 5.5,
+          "end": 5.8
+        },
+        {
+          "word": "you",
+          "start": 5.8,
+          "end": 6.02
+        },
+        {
+          "word": "go",
+          "start": 6.02,
+          "end": 6.32
+        },
+        {
+          "word": "on",
+          "start": 6.32,
+          "end": 6.56
+        },
+        {
+          "word": "your",
+          "start": 6.56,
+          "end": 6.86
+        },
+        {
+          "word": "holiday?",
+          "start": 6.86,
+          "end": 7.46
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 8280,
+      "endMs": 13340,
+      "text": "I took a bus across America from New York to San Francisco.",
+      "words": [
+        {
+          "word": "I",
+          "start": 8.28,
+          "end": 8.56
+        },
+        {
+          "word": "took",
+          "start": 8.56,
+          "end": 8.8
+        },
+        {
+          "word": "a",
+          "start": 8.8,
+          "end": 9.1
+        },
+        {
+          "word": "bus",
+          "start": 9.1,
+          "end": 9.5
+        },
+        {
+          "word": "across",
+          "start": 9.5,
+          "end": 10.04
+        },
+        {
+          "word": "America",
+          "start": 10.04,
+          "end": 10.66
+        },
+        {
+          "word": "from",
+          "start": 10.66,
+          "end": 11.26
+        },
+        {
+          "word": "New",
+          "start": 11.26,
+          "end": 11.62
+        },
+        {
+          "word": "York",
+          "start": 11.62,
+          "end": 12.02
+        },
+        {
+          "word": "to",
+          "start": 12.02,
+          "end": 12.34
+        },
+        {
+          "word": "San",
+          "start": 12.34,
+          "end": 12.72
+        },
+        {
+          "word": "Francisco.",
+          "start": 12.72,
+          "end": 13.34
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 14160,
+      "endMs": 18420,
+      "text": "It took 18 days and it was so interesting.",
+      "words": [
+        {
+          "word": "It",
+          "start": 14.16,
+          "end": 14.5
+        },
+        {
+          "word": "took",
+          "start": 14.5,
+          "end": 14.86
+        },
+        {
+          "word": "18",
+          "start": 14.86,
+          "end": 15.58
+        },
+        {
+          "word": "days",
+          "start": 15.58,
+          "end": 16.2
+        },
+        {
+          "word": "and",
+          "start": 16.2,
+          "end": 16.56
+        },
+        {
+          "word": "it",
+          "start": 16.56,
+          "end": 16.76
+        },
+        {
+          "word": "was",
+          "start": 16.76,
+          "end": 17.12
+        },
+        {
+          "word": "so",
+          "start": 17.12,
+          "end": 17.56
+        },
+        {
+          "word": "interesting.",
+          "start": 17.56,
+          "end": 18.42
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 19460,
+      "endMs": 21660,
+      "text": "Wasn't it boring on the bus?",
+      "words": [
+        {
+          "word": "Wasn't",
+          "start": 19.46,
+          "end": 19.88
+        },
+        {
+          "word": "it",
+          "start": 19.88,
+          "end": 20.24
+        },
+        {
+          "word": "boring",
+          "start": 20.24,
+          "end": 20.72
+        },
+        {
+          "word": "on",
+          "start": 20.72,
+          "end": 21.02
+        },
+        {
+          "word": "the",
+          "start": 21.02,
+          "end": 21.26
+        },
+        {
+          "word": "bus?",
+          "start": 21.26,
+          "end": 21.66
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "startMs": 22260,
+      "endMs": 26620,
+      "text": "No. We didn't stay on the bus all the time.",
+      "words": [
+        {
+          "word": "No.",
+          "start": 22.26,
+          "end": 22.84
+        },
+        {
+          "word": "We",
+          "start": 23.5,
+          "end": 23.92
+        },
+        {
+          "word": "didn't",
+          "start": 23.92,
+          "end": 24.38
+        },
+        {
+          "word": "stay",
+          "start": 24.38,
+          "end": 24.72
+        },
+        {
+          "word": "on",
+          "start": 24.72,
+          "end": 25.0
+        },
+        {
+          "word": "the",
+          "start": 25.0,
+          "end": 25.2
+        },
+        {
+          "word": "bus",
+          "start": 25.2,
+          "end": 25.54
+        },
+        {
+          "word": "all",
+          "start": 25.54,
+          "end": 26.02
+        },
+        {
+          "word": "the",
+          "start": 26.02,
+          "end": 26.28
+        },
+        {
+          "word": "time.",
+          "start": 26.28,
+          "end": 26.62
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "startMs": 26620,
+      "endMs": 32880,
+      "text": "We went to two national parks, Yosemite and the Grand Canyon.",
+      "words": [
+        {
+          "word": "We",
+          "start": 26.62,
+          "end": 27.62
+        },
+        {
+          "word": "went",
+          "start": 27.62,
+          "end": 28.12
+        },
+        {
+          "word": "to",
+          "start": 28.12,
+          "end": 28.42
+        },
+        {
+          "word": "two",
+          "start": 28.42,
+          "end": 28.86
+        },
+        {
+          "word": "national",
+          "start": 28.86,
+          "end": 29.44
+        },
+        {
+          "word": "parks,",
+          "start": 29.44,
+          "end": 30.14
+        },
+        {
+          "word": "Yosemite",
+          "start": 30.58,
+          "end": 31.12
+        },
+        {
+          "word": "and",
+          "start": 31.12,
+          "end": 31.7
+        },
+        {
+          "word": "the",
+          "start": 31.7,
+          "end": 32.02
+        },
+        {
+          "word": "Grand",
+          "start": 32.02,
+          "end": 32.34
+        },
+        {
+          "word": "Canyon.",
+          "start": 32.34,
+          "end": 32.88
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "startMs": 34460,
+      "endMs": 40240,
+      "text": "I think Yosemite was better than the Grand Canyon because there were fewer people.",
+      "words": [
+        {
+          "word": "I",
+          "start": 34.46,
+          "end": 34.6
+        },
+        {
+          "word": "think",
+          "start": 34.6,
+          "end": 34.9
+        },
+        {
+          "word": "Yosemite",
+          "start": 34.9,
+          "end": 35.72
+        },
+        {
+          "word": "was",
+          "start": 35.72,
+          "end": 36.02
+        },
+        {
+          "word": "better",
+          "start": 36.02,
+          "end": 36.56
+        },
+        {
+          "word": "than",
+          "start": 36.56,
+          "end": 36.82
+        },
+        {
+          "word": "the",
+          "start": 36.82,
+          "end": 37.12
+        },
+        {
+          "word": "Grand",
+          "start": 37.12,
+          "end": 37.44
+        },
+        {
+          "word": "Canyon",
+          "start": 37.44,
+          "end": 37.9
+        },
+        {
+          "word": "because",
+          "start": 37.9,
+          "end": 38.58
+        },
+        {
+          "word": "there",
+          "start": 38.58,
+          "end": 38.82
+        },
+        {
+          "word": "were",
+          "start": 38.82,
+          "end": 39.08
+        },
+        {
+          "word": "fewer",
+          "start": 39.08,
+          "end": 39.46
+        },
+        {
+          "word": "people.",
+          "start": 39.46,
+          "end": 40.24
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "startMs": 41220,
+      "endMs": 45660,
+      "text": "There were over 500 when I was at the Grand Canyon.",
+      "words": [
+        {
+          "word": "There",
+          "start": 41.22,
+          "end": 41.44
+        },
+        {
+          "word": "were",
+          "start": 41.44,
+          "end": 41.76
+        },
+        {
+          "word": "over",
+          "start": 41.76,
+          "end": 42.42
+        },
+        {
+          "word": "500",
+          "start": 42.42,
+          "end": 43.3
+        },
+        {
+          "word": "when",
+          "start": 43.3,
+          "end": 43.74
+        },
+        {
+          "word": "I",
+          "start": 43.74,
+          "end": 43.98
+        },
+        {
+          "word": "was",
+          "start": 43.98,
+          "end": 44.2
+        },
+        {
+          "word": "at",
+          "start": 44.2,
+          "end": 44.48
+        },
+        {
+          "word": "the",
+          "start": 44.48,
+          "end": 44.72
+        },
+        {
+          "word": "Grand",
+          "start": 44.72,
+          "end": 45.1
+        },
+        {
+          "word": "Canyon.",
+          "start": 45.1,
+          "end": 45.66
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "startMs": 47000,
+      "endMs": 53040,
+      "text": "There's a bridge made of glass and you can stand on it and look down at the river.",
+      "words": [
+        {
+          "word": "There's",
+          "start": 47.0,
+          "end": 47.4
+        },
+        {
+          "word": "a",
+          "start": 47.4,
+          "end": 47.66
+        },
+        {
+          "word": "bridge",
+          "start": 47.66,
+          "end": 47.96
+        },
+        {
+          "word": "made",
+          "start": 47.96,
+          "end": 48.3
+        },
+        {
+          "word": "of",
+          "start": 48.3,
+          "end": 48.52
+        },
+        {
+          "word": "glass",
+          "start": 48.52,
+          "end": 49.06
+        },
+        {
+          "word": "and",
+          "start": 49.06,
+          "end": 49.66
+        },
+        {
+          "word": "you",
+          "start": 49.66,
+          "end": 49.88
+        },
+        {
+          "word": "can",
+          "start": 49.88,
+          "end": 50.26
+        },
+        {
+          "word": "stand",
+          "start": 50.26,
+          "end": 50.54
+        },
+        {
+          "word": "on",
+          "start": 50.54,
+          "end": 50.78
+        },
+        {
+          "word": "it",
+          "start": 50.78,
+          "end": 51.14
+        },
+        {
+          "word": "and",
+          "start": 51.14,
+          "end": 51.56
+        },
+        {
+          "word": "look",
+          "start": 51.56,
+          "end": 51.86
+        },
+        {
+          "word": "down",
+          "start": 51.86,
+          "end": 52.28
+        },
+        {
+          "word": "at",
+          "start": 52.28,
+          "end": 52.5
+        },
+        {
+          "word": "the",
+          "start": 52.5,
+          "end": 52.7
+        },
+        {
+          "word": "river.",
+          "start": 52.7,
+          "end": 53.04
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "startMs": 53040,
+      "endMs": 61040,
+      "text": "I know it's not dangerous but I felt uncomfortable standing on it and didn't really like it.",
+      "words": [
+        {
+          "word": "I",
+          "start": 53.04,
+          "end": 54.22
+        },
+        {
+          "word": "know",
+          "start": 54.22,
+          "end": 54.52
+        },
+        {
+          "word": "it's",
+          "start": 54.52,
+          "end": 54.9
+        },
+        {
+          "word": "not",
+          "start": 54.9,
+          "end": 55.12
+        },
+        {
+          "word": "dangerous",
+          "start": 55.12,
+          "end": 55.8
+        },
+        {
+          "word": "but",
+          "start": 55.8,
+          "end": 56.46
+        },
+        {
+          "word": "I",
+          "start": 56.46,
+          "end": 56.88
+        },
+        {
+          "word": "felt",
+          "start": 56.88,
+          "end": 57.12
+        },
+        {
+          "word": "uncomfortable",
+          "start": 57.12,
+          "end": 58.1
+        },
+        {
+          "word": "standing",
+          "start": 58.1,
+          "end": 58.72
+        },
+        {
+          "word": "on",
+          "start": 58.72,
+          "end": 58.98
+        },
+        {
+          "word": "it",
+          "start": 58.98,
+          "end": 59.38
+        },
+        {
+          "word": "and",
+          "start": 59.38,
+          "end": 59.8
+        },
+        {
+          "word": "didn't",
+          "start": 59.8,
+          "end": 60.26
+        },
+        {
+          "word": "really",
+          "start": 60.26,
+          "end": 60.62
+        },
+        {
+          "word": "like",
+          "start": 60.62,
+          "end": 61.0
+        },
+        {
+          "word": "it.",
+          "start": 61.0,
+          "end": 61.42
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "startMs": 62440,
+      "endMs": 63340,
+      "text": "Was it hot?",
+      "words": [
+        {
+          "word": "Was",
+          "start": 62.44,
+          "end": 62.5
+        },
+        {
+          "word": "it",
+          "start": 62.5,
+          "end": 62.9
+        },
+        {
+          "word": "hot?",
+          "start": 62.9,
+          "end": 63.34
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "startMs": 64020,
+      "endMs": 68880,
+      "text": "Yes, but it rained too. I didn't like that.",
+      "words": [
+        {
+          "word": "Yes,",
+          "start": 64.02,
+          "end": 64.52
+        },
+        {
+          "word": "but",
+          "start": 64.9,
+          "end": 65.28
+        },
+        {
+          "word": "it",
+          "start": 65.28,
+          "end": 65.68
+        },
+        {
+          "word": "rained",
+          "start": 65.68,
+          "end": 66.04
+        },
+        {
+          "word": "too.",
+          "start": 66.04,
+          "end": 66.66
+        },
+        {
+          "word": "I",
+          "start": 67.28,
+          "end": 67.6
+        },
+        {
+          "word": "didn't",
+          "start": 67.6,
+          "end": 67.94
+        },
+        {
+          "word": "like",
+          "start": 67.94,
+          "end": 68.3
+        },
+        {
+          "word": "that.",
+          "start": 68.3,
+          "end": 68.88
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "startMs": 69640,
+      "endMs": 72040,
+      "text": "But Yosemite Park was amazing.",
+      "words": [
+        {
+          "word": "But",
+          "start": 69.64,
+          "end": 70.06
+        },
+        {
+          "word": "Yosemite",
+          "start": 70.06,
+          "end": 70.76
+        },
+        {
+          "word": "Park",
+          "start": 70.76,
+          "end": 71.24
+        },
+        {
+          "word": "was",
+          "start": 71.24,
+          "end": 71.78
+        },
+        {
+          "word": "amazing.",
+          "start": 71.78,
+          "end": 72.2
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "startMs": 73620,
+      "endMs": 81520,
+      "text": "There were lots of trees so it was very green and not too hot. I loved it there.",
+      "words": [
+        {
+          "word": "There",
+          "start": 73.62,
+          "end": 73.8
+        },
+        {
+          "word": "were",
+          "start": 73.8,
+          "end": 74.1
+        },
+        {
+          "word": "lots",
+          "start": 74.1,
+          "end": 74.44
+        },
+        {
+          "word": "of",
+          "start": 74.44,
+          "end": 74.7
+        },
+        {
+          "word": "trees",
+          "start": 74.7,
+          "end": 75.18
+        },
+        {
+          "word": "so",
+          "start": 75.18,
+          "end": 75.88
+        },
+        {
+          "word": "it",
+          "start": 75.88,
+          "end": 76.1
+        },
+        {
+          "word": "was",
+          "start": 76.1,
+          "end": 76.38
+        },
+        {
+          "word": "very",
+          "start": 76.38,
+          "end": 76.9
+        },
+        {
+          "word": "green",
+          "start": 76.9,
+          "end": 77.3
+        },
+        {
+          "word": "and",
+          "start": 77.3,
+          "end": 77.98
+        },
+        {
+          "word": "not",
+          "start": 77.98,
+          "end": 78.38
+        },
+        {
+          "word": "too",
+          "start": 78.38,
+          "end": 78.76
+        },
+        {
+          "word": "hot.",
+          "start": 78.76,
+          "end": 79.18
+        },
+        {
+          "word": "I",
+          "start": 79.96,
+          "end": 80.52
+        },
+        {
+          "word": "loved",
+          "start": 80.52,
+          "end": 80.82
+        },
+        {
+          "word": "it",
+          "start": 80.82,
+          "end": 81.12
+        },
+        {
+          "word": "there.",
+          "start": 81.12,
+          "end": 81.52
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "startMs": 82520,
+      "endMs": 84680,
+      "text": "Where did you go next?",
+      "words": [
+        {
+          "word": "Where",
+          "start": 82.52,
+          "end": 82.98
+        },
+        {
+          "word": "did",
+          "start": 82.98,
+          "end": 83.24
+        },
+        {
+          "word": "you",
+          "start": 83.24,
+          "end": 83.48
+        },
+        {
+          "word": "go",
+          "start": 83.48,
+          "end": 83.86
+        },
+        {
+          "word": "next?",
+          "start": 83.86,
+          "end": 84.68
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "startMs": 85060,
+      "endMs": 88720,
+      "text": "To San Francisco. You should go there.",
+      "words": [
+        {
+          "word": "To",
+          "start": 85.06,
+          "end": 85.36
+        },
+        {
+          "word": "San",
+          "start": 85.36,
+          "end": 85.66
+        },
+        {
+          "word": "Francisco.",
+          "start": 85.66,
+          "end": 86.38
+        },
+        {
+          "word": "You",
+          "start": 87.54,
+          "end": 87.7
+        },
+        {
+          "word": "should",
+          "start": 87.7,
+          "end": 87.96
+        },
+        {
+          "word": "go",
+          "start": 87.96,
+          "end": 88.32
+        },
+        {
+          "word": "there.",
+          "start": 88.32,
+          "end": 88.72
+        }
+      ]
+    },
+    {
+      "index": 18,
+      "startMs": 89560,
+      "endMs": 94340,
+      "text": "It has lots of unusual shops and fantastic food.",
+      "words": [
+        {
+          "word": "It",
+          "start": 89.56,
+          "end": 89.76
+        },
+        {
+          "word": "has",
+          "start": 89.76,
+          "end": 90.04
+        },
+        {
+          "word": "lots",
+          "start": 90.04,
+          "end": 90.4
+        },
+        {
+          "word": "of",
+          "start": 90.4,
+          "end": 90.68
+        },
+        {
+          "word": "unusual",
+          "start": 90.68,
+          "end": 91.48
+        },
+        {
+          "word": "shops",
+          "start": 91.48,
+          "end": 92.06
+        },
+        {
+          "word": "and",
+          "start": 92.06,
+          "end": 92.72
+        },
+        {
+          "word": "fantastic",
+          "start": 92.72,
+          "end": 93.68
+        },
+        {
+          "word": "food.",
+          "start": 93.68,
+          "end": 94.34
+        }
+      ]
+    },
+    {
+      "index": 19,
+      "startMs": 95380,
+      "endMs": 104540,
+      "text": "One pizza restaurant made 30 different kinds of pizza and they weren't like the fast food pizzas we get here.",
+      "words": [
+        {
+          "word": "One",
+          "start": 95.38,
+          "end": 95.74
+        },
+        {
+          "word": "pizza",
+          "start": 95.74,
+          "end": 96.22
+        },
+        {
+          "word": "restaurant",
+          "start": 96.22,
+          "end": 96.92
+        },
+        {
+          "word": "made",
+          "start": 96.92,
+          "end": 97.46
+        },
+        {
+          "word": "30",
+          "start": 97.46,
+          "end": 98.2
+        },
+        {
+          "word": "different",
+          "start": 98.2,
+          "end": 98.82
+        },
+        {
+          "word": "kinds",
+          "start": 98.82,
+          "end": 99.16
+        },
+        {
+          "word": "of",
+          "start": 99.16,
+          "end": 99.38
+        },
+        {
+          "word": "pizza",
+          "start": 99.38,
+          "end": 99.92
+        },
+        {
+          "word": "and",
+          "start": 99.92,
+          "end": 100.74
+        },
+        {
+          "word": "they",
+          "start": 100.74,
+          "end": 101.04
+        },
+        {
+          "word": "weren't",
+          "start": 101.04,
+          "end": 101.36
+        },
+        {
+          "word": "like",
+          "start": 101.36,
+          "end": 101.8
+        },
+        {
+          "word": "the",
+          "start": 101.8,
+          "end": 102.16
+        },
+        {
+          "word": "fast",
+          "start": 102.16,
+          "end": 102.5
+        },
+        {
+          "word": "food",
+          "start": 102.5,
+          "end": 102.96
+        },
+        {
+          "word": "pizzas",
+          "start": 102.96,
+          "end": 103.38
+        },
+        {
+          "word": "we",
+          "start": 103.38,
+          "end": 103.72
+        },
+        {
+          "word": "get",
+          "start": 103.72,
+          "end": 104.02
+        },
+        {
+          "word": "here.",
+          "start": 104.02,
+          "end": 104.54
+        }
+      ]
+    },
+    {
+      "index": 20,
+      "startMs": 105100,
+      "endMs": 108580,
+      "text": "More like the ones my grandmother cooked at home.",
+      "words": [
+        {
+          "word": "More",
+          "start": 105.1,
+          "end": 105.44
+        },
+        {
+          "word": "like",
+          "start": 105.44,
+          "end": 105.8
+        },
+        {
+          "word": "the",
+          "start": 105.8,
+          "end": 106.02
+        },
+        {
+          "word": "ones",
+          "start": 106.02,
+          "end": 106.26
+        },
+        {
+          "word": "my",
+          "start": 106.26,
+          "end": 106.64
+        },
+        {
+          "word": "grandmother",
+          "start": 106.64,
+          "end": 107.26
+        },
+        {
+          "word": "cooked",
+          "start": 107.26,
+          "end": 107.8
+        },
+        {
+          "word": "at",
+          "start": 107.8,
+          "end": 108.16
+        },
+        {
+          "word": "home.",
+          "start": 108.16,
+          "end": 108.58
+        }
+      ]
+    },
+    {
+      "index": 21,
+      "startMs": 108580,
+      "endMs": 111440,
+      "text": "Did you stay in a hotel?",
+      "words": [
+        {
+          "word": "Did",
+          "start": 108.58,
+          "end": 109.72
+        },
+        {
+          "word": "you",
+          "start": 109.72,
+          "end": 110.08
+        },
+        {
+          "word": "stay",
+          "start": 110.08,
+          "end": 110.44
+        },
+        {
+          "word": "in",
+          "start": 110.44,
+          "end": 110.68
+        },
+        {
+          "word": "a",
+          "start": 110.68,
+          "end": 110.82
+        },
+        {
+          "word": "hotel?",
+          "start": 110.82,
+          "end": 111.44
+        }
+      ]
+    },
+    {
+      "index": 22,
+      "startMs": 112300,
+      "endMs": 117200,
+      "text": "Yes, in San Francisco we did. It was cheap and small.",
+      "words": [
+        {
+          "word": "Yes,",
+          "start": 112.3,
+          "end": 112.8
+        },
+        {
+          "word": "in",
+          "start": 113.04,
+          "end": 113.32
+        },
+        {
+          "word": "San",
+          "start": 113.32,
+          "end": 113.64
+        },
+        {
+          "word": "Francisco",
+          "start": 113.64,
+          "end": 114.18
+        },
+        {
+          "word": "we",
+          "start": 114.18,
+          "end": 114.52
+        },
+        {
+          "word": "did.",
+          "start": 114.52,
+          "end": 114.84
+        },
+        {
+          "word": "It",
+          "start": 115.52,
+          "end": 115.76
+        },
+        {
+          "word": "was",
+          "start": 115.76,
+          "end": 116.04
+        },
+        {
+          "word": "cheap",
+          "start": 116.04,
+          "end": 116.4
+        },
+        {
+          "word": "and",
+          "start": 116.4,
+          "end": 116.82
+        },
+        {
+          "word": "small.",
+          "start": 116.82,
+          "end": 117.2
+        }
+      ]
+    },
+    {
+      "index": 23,
+      "startMs": 118000,
+      "endMs": 122840,
+      "text": "There were only six rooms and the other people staying there were nice.",
+      "words": [
+        {
+          "word": "There",
+          "start": 118.0,
+          "end": 118.2
+        },
+        {
+          "word": "were",
+          "start": 118.2,
+          "end": 118.44
+        },
+        {
+          "word": "only",
+          "start": 118.44,
+          "end": 118.88
+        },
+        {
+          "word": "six",
+          "start": 118.88,
+          "end": 119.22
+        },
+        {
+          "word": "rooms",
+          "start": 119.22,
+          "end": 119.66
+        },
+        {
+          "word": "and",
+          "start": 119.66,
+          "end": 120.38
+        },
+        {
+          "word": "the",
+          "start": 120.38,
+          "end": 120.7
+        },
+        {
+          "word": "other",
+          "start": 120.7,
+          "end": 120.94
+        },
+        {
+          "word": "people",
+          "start": 120.94,
+          "end": 121.38
+        },
+        {
+          "word": "staying",
+          "start": 121.38,
+          "end": 121.68
+        },
+        {
+          "word": "there",
+          "start": 121.68,
+          "end": 122.06
+        },
+        {
+          "word": "were",
+          "start": 122.06,
+          "end": 122.36
+        },
+        {
+          "word": "nice.",
+          "start": 122.36,
+          "end": 122.84
+        }
+      ]
+    },
+    {
+      "index": 24,
+      "startMs": 123780,
+      "endMs": 131240,
+      "text": "The city is amazing. I think you should visit too. You'd love it.",
+      "words": [
+        {
+          "word": "The",
+          "start": 123.78,
+          "end": 124.02
+        },
+        {
+          "word": "city",
+          "start": 124.02,
+          "end": 124.46
+        },
+        {
+          "word": "is",
+          "start": 124.46,
+          "end": 125.02
+        },
+        {
+          "word": "amazing.",
+          "start": 125.02,
+          "end": 125.9
+        },
+        {
+          "word": "I",
+          "start": 126.82,
+          "end": 127.1
+        },
+        {
+          "word": "think",
+          "start": 127.1,
+          "end": 127.42
+        },
+        {
+          "word": "you",
+          "start": 127.42,
+          "end": 127.84
+        },
+        {
+          "word": "should",
+          "start": 127.84,
+          "end": 128.16
+        },
+        {
+          "word": "visit",
+          "start": 128.16,
+          "end": 128.62
+        },
+        {
+          "word": "too.",
+          "start": 128.62,
+          "end": 129.14
+        },
+        {
+          "word": "You'd",
+          "start": 129.76,
+          "end": 130.46
+        },
+        {
+          "word": "love",
+          "start": 130.46,
+          "end": 130.72
+        },
+        {
+          "word": "it.",
+          "start": 130.72,
+          "end": 131.24
+        }
+      ]
+    }
+  ]
+}

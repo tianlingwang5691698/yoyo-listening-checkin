@@ -5,6 +5,7 @@ const CATEGORY_LABELS = {
   newconcept4: 'New Concept 4',
   peppa: 'Peppa',
   unlock1: 'Unlock 1 课本',
+  unlock1workbook: 'Unlock 1 练习册',
   unlock2: 'Unlock 2 课本',
   unlock3textbook: 'Unlock 3 课本',
   unlock3: 'Unlock 3 练习册',
@@ -13,8 +14,8 @@ const CATEGORY_LABELS = {
 };
 
 const NEW_CONCEPT_CATEGORIES = ['newconcept1', 'newconcept2', 'newconcept3', 'newconcept4'];
-const UNLOCK_CATEGORIES = ['unlock1', 'unlock2', 'unlock3textbook', 'unlock3', 'unlock4'];
-const UNLOCK_WORKBOOK_CATEGORIES = ['unlock3'];
+const UNLOCK_CATEGORIES = ['unlock1', 'unlock1workbook', 'unlock2', 'unlock3textbook', 'unlock3', 'unlock4'];
+const UNLOCK_WORKBOOK_CATEGORIES = ['unlock1workbook', 'unlock3'];
 
 function getCategoryLabel(category) {
   return CATEGORY_LABELS[category] || category;
@@ -45,10 +46,10 @@ function getTaskPresentation(task) {
     };
   }
   if (UNLOCK_CATEGORIES.includes(task.category)) {
-    const seriesNumber = task.category === 'unlock3textbook' ? '3' : (task.category.replace('unlock', '') || '1');
-    const levelLabel = task.category === 'unlock1' ? 'A1' : task.category === 'unlock2' ? 'A2' : (task.category === 'unlock3' || task.category === 'unlock3textbook') ? 'B1' : 'B2';
+    const seriesNumber = task.category === 'unlock1workbook' ? '1' : task.category === 'unlock3textbook' ? '3' : (task.category.replace('unlock', '') || '1');
+    const levelLabel = (task.category === 'unlock1' || task.category === 'unlock1workbook') ? 'A1' : task.category === 'unlock2' ? 'A2' : (task.category === 'unlock3' || task.category === 'unlock3textbook') ? 'B1' : 'B2';
     const materialType = UNLOCK_WORKBOOK_CATEGORIES.includes(task.category) ? '练习册' : '课本';
-    const match = title.match(/(?:Unlock2e_|UL2v2_)?(?:A1|L2|L3|B2)[_-]*(?:TST_LS_)?(?:U)?(\d+\.\d+)/i);
+    const match = title.match(/(?:Unlock2e_|UL2v2_)?(?:A1|L1|L2|L3|B2)[_-]*(?:TST_LS_)?(?:U)?(\d+\.\d+)/i);
     return {
       displayTitle: match ? match[1] : title,
       displaySubtitle: `${levelLabel} ${materialType}听力`,

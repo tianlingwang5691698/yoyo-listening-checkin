@@ -32,10 +32,20 @@
 - transcript 只收真实听力原文；没有真实原文就标记缺失。
 - 音频文件名新增时必须带内容指纹，避免缓存播放旧文件。
 
+## 音频句级 transcript bundle
+
+- 句级 bundle 的时间轴必须来自 ASR/WhisperX/Whisper `word_timestamps` 等真实音频时间；禁止按句子长度、字符数或平均比例硬摊整段音频。
+- 官方文本优先作为 transcript 正文，ASR 只用于时间轴和漏句核对；若音频存在官方文本缺句，必须在清洗报告或 `scriptPatches` 中记录来源。
+- 每条音频必须抽查首句、末句和至少 1 个中间段：文本内容要与当前音频一致，首句时间不能落在 `Track 1.1` 等报幕标签上。
+- 生成后必须检查：每条 ASR 有 word/segment 时间、`startMs/endMs` 单调不重叠、最后一句 `endMs == durationMs`、轨道顺序和音频文件一一对应。
+- 已上线 bundle 修正时走新增路径或兼容路径，不直接覆盖旧线上可用 bundle，除非明确确认不会影响线上用户。
+
 ## 语法
 
 - 题目必须有年份、区县、模考类型和来源。
 - 选择题必须有 A-D 选项和答案。
+- `prompt` 只保留题干，不能残留 `A) ... B) ... C) ... D) ...`、`A. ...`、`A、...` 等选项文本；选项只能出现在 `options` 字段。
+- 清洗后必须检查题干选项重复，尤其覆盖 `A)works`、`A) works`、`A. works`、`A、works` 等无空格/有空格格式。
 - 分类只能使用固定 topic，不自创分类。
 - 细分 topic 文件必须拆分，避免单接口超过 1MB。
 
@@ -55,6 +65,17 @@
 ## 验证
 
 - JSON 必须可解析。
+- 选择题题干不得重复展示选项；语法题上传前必须抽查页面展示或用脚本统计 `badPrompt=0`。
 - 正式库数量不得因本次清洗下降。
 - rejected/clean-report 必须说明剔除原因。
 - 上传前按 `docs/CLOUDBASE_SETUP.md` 的增量上传铁律合并。
+
+## 双栏 PDF / 答案听力文本
+
+- 双栏 PDF 不直接用 `pdftotext` 结果入库；必须优先找同源 Word/docx 或可保序文本。
+- 若只能用 PDF，必须抽查栏序：不能把右栏续段提前混入左栏正文。
+- 纯页眉、页脚、版权、页码、音轨标记（如 `1.1`、`MID 1`、`END 1`）不得进入 transcript。
+- 答案区、Model Language、Speaking Test 说明不得混入听力正文。
+- Mid-level 多段音频按正文分界拆分，放在 U4 和 U5 之间；End-of-level 放在最后。
+- ASR 只作时间轴/核对参考；正式 transcript 文本优先使用官方听力文本。
+- 清洗后必须检查：`trackCount`、`lineCount`、空文本、异常音轨号、时间轴单调、最后一句 `endMs == durationMs`。

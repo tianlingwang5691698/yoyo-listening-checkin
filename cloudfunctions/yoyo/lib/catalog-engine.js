@@ -11,6 +11,7 @@ const NEW_CONCEPT2_AUDIO_ROOT = 'A2/NewConcept2-US';
 const NEW_CONCEPT3_AUDIO_ROOT = 'B1/NewConcept3-US';
 const NEW_CONCEPT4_AUDIO_ROOT = 'B2/NewConcept4-US';
 const UNLOCK1_AUDIO_ROOT = 'A1/Unlock1/Unlock1 听口音频Class Audio';
+const UNLOCK1_WORKBOOK_AUDIO_ROOT = 'A1/unlock1 练习册/Audio';
 const UNLOCK2_AUDIO_ROOT = 'A2/Unlock2/Class Audio';
 const UNLOCK3_TEXTBOOK_AUDIO_ROOT = 'B1/Unlock3/Textbook Audio';
 const UNLOCK3_AUDIO_ROOT = 'B1/Unlock3/Class Audio';
@@ -25,6 +26,7 @@ const STORAGE_ROOTS = {
   newconcept4: NEW_CONCEPT4_AUDIO_ROOT,
   peppa: 'A1/Peppa',
   unlock1: UNLOCK1_AUDIO_ROOT,
+  unlock1workbook: UNLOCK1_WORKBOOK_AUDIO_ROOT,
   unlock2: UNLOCK2_AUDIO_ROOT,
   unlock3textbook: UNLOCK3_TEXTBOOK_AUDIO_ROOT,
   unlock3: UNLOCK3_AUDIO_ROOT,
@@ -38,6 +40,7 @@ const STORAGE_ROOT_CANDIDATES = {
   newconcept4: [NEW_CONCEPT4_AUDIO_ROOT, 'B2/NewConcept4-US/新概念英语（第4册）美音（MP3+LRC）', 'B2/NewConcept4-US/新概念英语（第四册）美音（MP3+LRC）', 'B2/NewConcept4-US/新概念英语第四册', 'B2/NewConcept4', 'B2/New Concept 4', 'B2/new-concept-4-us', 'B2/Newconcept4', 'B2/NewConcept3-US', 'B2/NewConcept3-US/新概念英语（第4册）美音（MP3+LRC）'],
   peppa: [`${STORAGE_ROOTS.peppa}/第1季`, `${STORAGE_ROOTS.peppa}/第2季`, `${STORAGE_ROOTS.peppa}/第3季`, STORAGE_ROOTS.peppa],
   unlock1: [UNLOCK1_AUDIO_ROOT, 'A1/Unlock1'],
+  unlock1workbook: [UNLOCK1_WORKBOOK_AUDIO_ROOT, 'A1/unlock1 练习册'],
   unlock2: [UNLOCK2_AUDIO_ROOT, 'A2/Unlock2', 'A2/Unlock 2'],
   unlock3textbook: [UNLOCK3_TEXTBOOK_AUDIO_ROOT, 'B1/Unlock3/Textbook Audio'],
   unlock3: [UNLOCK3_AUDIO_ROOT, 'B1/Unlock3', 'B1/Unlock 3'],
@@ -197,10 +200,10 @@ const songPlaceholder = {
   textSource: null
 };
 
-const STANDALONE_LEVEL_CATEGORIES = ['newconcept2', 'unlock2', 'newconcept3', 'unlock3textbook', 'unlock3', 'newconcept4', 'unlock4'];
+const STANDALONE_LEVEL_CATEGORIES = ['unlock1workbook', 'newconcept2', 'unlock2', 'newconcept3', 'unlock3textbook', 'unlock3', 'newconcept4', 'unlock4'];
 const NEW_CONCEPT_CATEGORIES = ['newconcept1', 'newconcept2', 'newconcept3', 'newconcept4'];
-const UNLOCK_SERIES_CATEGORIES = ['unlock1', 'unlock2', 'unlock3textbook', 'unlock3', 'unlock4'];
-const UNLOCK_WORKBOOK_CATEGORIES = ['unlock3'];
+const UNLOCK_SERIES_CATEGORIES = ['unlock1', 'unlock1workbook', 'unlock2', 'unlock3textbook', 'unlock3', 'unlock4'];
+const UNLOCK_WORKBOOK_CATEGORIES = ['unlock1workbook', 'unlock3'];
 
 function slugifyTrackIdPart(value) {
   return String(value || '')
@@ -267,6 +270,7 @@ function inferNewConceptTaskMeta(category, audioBaseName, index) {
 
 function getUnlockSeriesLevel(category) {
   if (category === 'unlock1') return 'A1';
+  if (category === 'unlock1workbook') return 'A1';
   if (category === 'unlock2') return 'A2';
   if (category === 'unlock3textbook') return 'B1';
   if (category === 'unlock3') return 'B1';
@@ -276,6 +280,7 @@ function getUnlockSeriesLevel(category) {
 
 function getUnlockSeriesNumber(category) {
   if (category === 'unlock1') return 1;
+  if (category === 'unlock1workbook') return 1;
   if (category === 'unlock2') return 2;
   if (category === 'unlock3textbook') return 3;
   if (category === 'unlock3') return 3;
@@ -340,6 +345,7 @@ function buildUnlockSeriesTasks(category) {
     const taskId = `${category}-${index + 1}`;
     const title = item.title || item.normalizedFileName || taskId;
     const trackSlug = slugifyTrackIdPart(item.normalizedFileName || title);
+    const transcriptTrackId = item.transcriptTrackId || `track-${category}-${trackSlug}`;
     return {
       taskId,
       category,
@@ -352,8 +358,9 @@ function buildUnlockSeriesTasks(category) {
       repeatTarget: 3,
       durationSec: Number(item.durationSec || 0) || 180,
       coverTone: index % 2 === 0 ? 'peach' : 'berry',
-      transcriptTrackId: `track-${category}-${trackSlug}`,
+      transcriptTrackId,
       transcriptTrackCandidates: [
+        transcriptTrackId,
         `track-${category}-${trackSlug}`,
         `${category}-${trackSlug}`,
         title,
@@ -467,7 +474,7 @@ function findTranscriptTrack(transcriptTrackMap, task) {
 }
 
 function shouldLazyTranscriptCategory(category) {
-  return NEW_CONCEPT_CATEGORIES.includes(category) || ['unlock2', 'unlock3textbook', 'unlock3', 'unlock4'].includes(category);
+  return NEW_CONCEPT_CATEGORIES.includes(category) || ['unlock1workbook', 'unlock2', 'unlock3textbook', 'unlock3', 'unlock4'].includes(category);
 }
 
 async function getTranscriptBundle(task) {
@@ -487,6 +494,7 @@ function getStaticCatalogMap() {
     newconcept4: [],
     peppa: peppaTasks,
     unlock1: unlockTasks,
+    unlock1workbook: buildUnlockSeriesTasks('unlock1workbook'),
     unlock2: buildUnlockSeriesTasks('unlock2'),
     unlock3textbook: buildUnlockSeriesTasks('unlock3textbook'),
     unlock3: buildUnlockSeriesTasks('unlock3'),
@@ -1220,7 +1228,7 @@ function mergeCatalogDebug(...debugEntries) {
 async function refreshRuntimeCatalogs(force, categories) {
   const startedAt = Date.now();
   const now = Date.now();
-  const targetCategories = Array.from(new Set((categories && categories.length ? categories : ['newconcept1', 'peppa', 'unlock1', 'song']).filter(Boolean)));
+  const targetCategories = Array.from(new Set((categories && categories.length ? categories : ['newconcept1', 'peppa', 'unlock1', 'unlock1workbook', 'song']).filter(Boolean)));
   const hasAllRequested = runtimeCatalogs && targetCategories.every((category) => {
     const catalog = runtimeCatalogs[category];
     if (!Array.isArray(catalog)) {
@@ -1266,7 +1274,7 @@ function getResourceDebugSnapshot() {
   return Object.assign({}, runtimeCatalogDebug || summarizeRuntimeCatalogDebug({}));
 }
 
-const CATEGORY_ORDER = ['newconcept1', 'peppa', 'unlock1', 'song', 'newconcept2'];
+const CATEGORY_ORDER = ['newconcept1', 'peppa', 'unlock1', 'unlock1workbook', 'song', 'newconcept2'];
 const CATEGORY_LABELS = {
   newconcept1: 'New Concept 1',
   newconcept2: 'New Concept 2',
@@ -1274,6 +1282,7 @@ const CATEGORY_LABELS = {
   newconcept4: 'New Concept 4',
   peppa: 'Peppa',
   unlock1: 'Unlock 1 课本',
+  unlock1workbook: 'Unlock 1 练习册',
   unlock2: 'Unlock 2 课本',
   unlock3textbook: 'Unlock 3 课本',
   unlock3: 'Unlock 3 练习册',
