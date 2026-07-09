@@ -89,14 +89,6 @@ Page({
       });
     }
   },
-  copyValue(event) {
-    const value = String(event.currentTarget.dataset.value || '').trim();
-    if (!value) return;
-    wx.setClipboardData({
-      data: value,
-      success: () => wx.showToast({ title: '已复制', icon: 'none' })
-    });
-  },
   toggleRowExpanded(event) {
     const index = Number(event.currentTarget.dataset.index);
     if (Number.isNaN(index)) return;

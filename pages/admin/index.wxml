@@ -35,7 +35,7 @@
         </view>
 
         <view wx:if="{{item.expanded}}">
-          <view class="admin-simple-row" data-value="{{item.childLoginCode}}" bindtap="copyValue">
+          <view class="admin-simple-row">
             <view class="admin-simple-label">ID</view>
             <view class="admin-simple-value">{{item.childLoginCode || '未生成'}}</view>
           </view>
