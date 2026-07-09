@@ -49,6 +49,15 @@ function getRecordHomeSnapshotId(year, month) {
   return `${getTargetSnapshotPart()}:${getMonthKey(year, month)}`;
 }
 
+function isValidRecordSnapshot(snapshot, targetPart, year, month) {
+  return !!(snapshot
+    && snapshot.targetPart === targetPart
+    && Number(snapshot.calendarYear || 0) === Number(year || 0)
+    && Number(snapshot.calendarMonth || 0) === Number(month || 0)
+    && snapshot.heatmapData
+    && Array.isArray(snapshot.heatmapData.heatmap));
+}
+
 function parseDateKey(dateKey) {
   const parts = String(dateKey || '').split('-').map(Number);
   return new Date(parts[0], (parts[1] || 1) - 1, parts[2] || 1);
@@ -95,6 +104,44 @@ function buildMetric(stats, mode) {
   };
 }
 
+function buildHeatmapStatsFallback(heatmap) {
+  const rows = (heatmap || []).filter((item) => item && (item.completed || Number(item.count || 0) > 0));
+  if (!rows.length) {
+    return null;
+  }
+  const completedDateMap = rows.reduce((map, item) => {
+    map[item.date] = true;
+    return map;
+  }, {});
+  let streakDays = 0;
+  let cursor = new Date();
+  while (completedDateMap[getDateKey(cursor)]) {
+    streakDays += 1;
+    cursor = new Date(cursor.getFullYear(), cursor.getMonth(), cursor.getDate() - 1);
+  }
+  const completedTasks = rows.reduce((sum, item) => sum + Math.max(1, Number(item.count || 0)), 0);
+  return {
+    streakDays,
+    completedDays: rows.length,
+    completedLessons: rows.length,
+    completedTasks,
+    totalMinutes: 0,
+    heatmapFallback: true
+  };
+}
+
+function mergeStatsWithHeatmap(stats, heatmap) {
+  const safeStats = stats || {};
+  const hasStats = Number(safeStats.completedDays || 0) > 0
+    || Number(safeStats.completedTasks || 0) > 0
+    || Number(safeStats.streakDays || 0) > 0
+    || Number(safeStats.totalMinutes || 0) > 0;
+  if (hasStats) {
+    return safeStats;
+  }
+  return buildHeatmapStatsFallback(heatmap) || safeStats;
+}
+
 function formatDuration(minutes) {
   const totalMinutes = Math.max(0, Number(minutes || 0));
   const hours = Math.floor(totalMinutes / 60);
@@ -106,6 +153,13 @@ function formatDuration(minutes) {
     return `${hours}小时`;
   }
   return `${restMinutes}分钟`;
+}
+
+function formatStatsDuration(stats) {
+  if (stats && stats.heatmapFallback && !Number(stats.totalMinutes || 0)) {
+    return '待同步';
+  }
+  return formatDuration((stats || {}).totalMinutes);
 }
 
 function buildCatchupPresentation(catchupState) {
@@ -326,6 +380,8 @@ Page({
   }),
   async onShow() {
     this.recordPerf = page.startPagePerf('record');
+    const loadSeq = (this.recordLoadSeq || 0) + 1;
+    this.recordLoadSeq = loadSeq;
     page.syncTheme(this);
     const tabBar = this.getTabBar && this.getTabBar();
     if (tabBar) {
@@ -344,12 +400,18 @@ Page({
     const selectedDate = this.data.selectedDate || getDateKey(today);
     const calendarYear = this.data.calendarYear || today.getFullYear();
     const calendarMonth = this.data.calendarMonth || today.getMonth() + 1;
+    const targetPart = getTargetSnapshotPart();
+    if (targetPart !== this.lastRecordTargetPart) {
+      this.monthCache = {};
+      this.monthRequests = {};
+      this.lastRecordTargetPart = targetPart;
+    }
     const snapshotId = getRecordHomeSnapshotId(calendarYear, calendarMonth);
     const snapshot = snapshotStore.read(RECORD_HOME_SNAPSHOT_KEY, {
       id: snapshotId,
       maxAgeMs: 10 * 60 * 1000
     });
-    if (snapshot) {
+    if (isValidRecordSnapshot(snapshot, targetPart, calendarYear, calendarMonth)) {
       this.monthCache[getMonthKey(calendarYear, calendarMonth)] = snapshot.heatmapData || {
         heatmap: [],
         catchupState: snapshot.catchupState || this.data.catchupState
@@ -362,61 +424,95 @@ Page({
         selectedDaySummary: buildCalendarDaySummary(snapshotHeatmap, selectedDate)
       })));
       this.scheduleDeferredLoads(calendarYear, calendarMonth, selectedDate);
+      if (this.recordPerf) {
+        this.recordPerf.ready('pageReady', {
+          source: 'snapshot',
+          cells: (this.data.monthCells || []).length
+        });
+      }
+    } else {
+      const emptyStats = contracts.createStatsDefaults();
+      this.setData(page.buildCloudPageData(this.data, Object.assign({
+        stats: emptyStats,
+        totalDurationText: '0分钟',
+        calendarYear,
+        calendarMonth,
+        calendarTitle: `${calendarYear}年${calendarMonth}月`,
+        todayDate: getDateKey(today),
+        selectedDate,
+        selectedDateLabel: formatDateLabel(selectedDate),
+        selectedDayLoaded: false,
+        selectedDayLoading: false,
+        selectedDayReport: EMPTY_REPORT,
+        selectedDaySummary: EMPTY_DAY_SUMMARY,
+        monthCells: [],
+        catchupState: contracts.createCatchupStateDefaults(),
+        catchupTasks: [],
+        catchupTasksLoaded: false,
+        catchupTasksLoading: false
+      }, buildMetric(emptyStats, this.data.metricMode), buildCatchupPresentation(contracts.createCatchupStateDefaults()))));
     }
-    const [dashboard, heatmapData] = await Promise.all([
+    Promise.all([
       store.getDashboard({ view: 'record' }, (fresh) => {
+        if (loadSeq !== this.recordLoadSeq) return;
+        const cachedHeatmap = this.getCachedMonthData(calendarYear, calendarMonth);
+        const nextStats = mergeStatsWithHeatmap(fresh.stats, cachedHeatmap && cachedHeatmap.heatmap);
         const freshState = Object.assign({}, fresh, {
-          totalDurationText: formatDuration((fresh.stats || {}).totalMinutes),
+          stats: nextStats,
+          totalDurationText: formatStatsDuration(nextStats),
           planDayIndex: fresh.planDayIndex || 1
         });
         this.setData(page.buildCloudPageData(this.data, Object.assign({}, freshState, buildMetric(freshState.stats, this.data.metricMode))));
       }),
       this.getMonthHeatmapCached(calendarYear, calendarMonth, { force: true })
-    ]);
-    const catchupPresentation = buildCatchupPresentation(heatmapData.catchupState);
-    const nextState = Object.assign({}, dashboard, {
-      child: dashboard.child,
-      stats: dashboard.stats,
-      totalDurationText: formatDuration((dashboard.stats || {}).totalMinutes),
-      calendarYear,
-      calendarMonth,
-      calendarTitle: `${calendarYear}年${calendarMonth}月`,
-      todayDate: getDateKey(today),
-      selectedDate,
-      selectedDateLabel: formatDateLabel(selectedDate),
-      selectedDayLoaded: false,
-      selectedDayLoading: false,
-      selectedDayReport: EMPTY_REPORT,
-      selectedDaySummary: buildCalendarDaySummary(heatmapData.heatmap, selectedDate),
-      monthCells: buildMonthCells(calendarYear, calendarMonth, heatmapData.heatmap, selectedDate, heatmapData.catchupState),
-      catchupState: heatmapData.catchupState,
-      catchupTasks: [],
-      catchupTasksLoaded: false,
-      catchupTasksLoading: false,
-      planDayIndex: dashboard.planDayIndex || 1
-    });
-    this.setData(page.buildCloudPageData(this.data, Object.assign(
-      {},
-      nextState,
-      buildMetric(nextState.stats, this.data.metricMode),
-      catchupPresentation
-    )));
-    this.showStreakMilestoneIfNeeded(nextState.stats);
-    snapshotStore.write(RECORD_HOME_SNAPSHOT_KEY, snapshotId, Object.assign(
-      {},
-      nextState,
-      buildMetric(nextState.stats, this.data.metricMode),
-      catchupPresentation,
-      { heatmapData }
-    ), { source: 'record-home' });
-    if (this.recordPerf) {
-      this.recordPerf.ready('pageReady', {
-        dashboardCacheHit: !!dashboard.__cacheHit,
-        heatmapCacheHit: !!heatmapData.__cacheHit,
-        cells: nextState.monthCells.length
+    ]).then(([dashboard, heatmapData]) => {
+      if (loadSeq !== this.recordLoadSeq) return;
+      const catchupPresentation = buildCatchupPresentation(heatmapData.catchupState);
+      const nextStats = mergeStatsWithHeatmap(dashboard.stats, heatmapData.heatmap);
+      const nextState = Object.assign({}, dashboard, {
+        child: dashboard.child,
+        stats: nextStats,
+        totalDurationText: formatStatsDuration(nextStats),
+        calendarYear,
+        calendarMonth,
+        calendarTitle: `${calendarYear}年${calendarMonth}月`,
+        todayDate: getDateKey(today),
+        selectedDate,
+        selectedDateLabel: formatDateLabel(selectedDate),
+        selectedDayLoaded: false,
+        selectedDayLoading: false,
+        selectedDayReport: EMPTY_REPORT,
+        selectedDaySummary: buildCalendarDaySummary(heatmapData.heatmap, selectedDate),
+        monthCells: buildMonthCells(calendarYear, calendarMonth, heatmapData.heatmap, selectedDate, heatmapData.catchupState),
+        catchupState: heatmapData.catchupState,
+        catchupTasks: [],
+        catchupTasksLoaded: false,
+        catchupTasksLoading: false,
+        planDayIndex: dashboard.planDayIndex || 1
       });
-    }
-    this.scheduleDeferredLoads(calendarYear, calendarMonth, selectedDate);
+      this.setData(page.buildCloudPageData(this.data, Object.assign(
+        {},
+        nextState,
+        buildMetric(nextState.stats, this.data.metricMode),
+        catchupPresentation
+      )));
+      this.showStreakMilestoneIfNeeded(nextState.stats);
+      snapshotStore.write(RECORD_HOME_SNAPSHOT_KEY, snapshotId, Object.assign(
+        {},
+        nextState,
+        buildMetric(nextState.stats, this.data.metricMode),
+        catchupPresentation,
+        { heatmapData, targetPart }
+      ), { source: 'record-home' });
+      if (this.recordPerf) {
+        this.recordPerf.ready('pageReady', {
+          dashboardCacheHit: !!dashboard.__cacheHit,
+          heatmapCacheHit: !!heatmapData.__cacheHit,
+          cells: nextState.monthCells.length
+        });
+      }
+      this.scheduleDeferredLoads(calendarYear, calendarMonth, selectedDate);
+    }).catch(() => {});
   },
   onHide() {
     this.clearDeferredLoads();
