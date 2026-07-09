@@ -12,6 +12,30 @@ const FALLBACK_LEVEL_TABS = ['Pre A1', 'A1', 'A2', 'B1', 'B2', 'C1', 'C2'].map((
   stateText: levelId === 'C1' || levelId === 'C2' ? '未开放' : ''
 }));
 const DEFAULT_FIRST_LEVEL = 'A1';
+const LEVEL_MATERIALS = {
+  'Pre A1': [
+    { category: 'song', title: 'Songs' }
+  ],
+  A1: [
+    { category: 'newconcept1', title: 'New Concept 1' },
+    { category: 'unlock1', title: 'Unlock 1 课本' },
+    { category: 'peppa', title: 'Peppa' }
+  ],
+  A2: [
+    { category: 'peppa', title: 'Peppa' },
+    { category: 'newconcept2', title: 'New Concept 2' },
+    { category: 'unlock2', title: 'Unlock 2 课本' }
+  ],
+  B1: [
+    { category: 'newconcept3', title: 'New Concept 3' },
+    { category: 'unlock3textbook', title: 'Unlock 3 课本' },
+    { category: 'unlock3', title: 'Unlock 3 练习册' }
+  ],
+  B2: [
+    { category: 'newconcept4', title: 'New Concept 4' },
+    { category: 'unlock4', title: 'Unlock 4 课本' }
+  ]
+};
 
 function buildLevelTabs(tabs, selectedLevel) {
   return (tabs && tabs.length ? tabs : FALLBACK_LEVEL_TABS).map((item) => Object.assign({}, item, {
@@ -39,10 +63,33 @@ function formatEstimatedDuration(seconds) {
 
 function buildMaterialRows(materials, activePlan) {
   return (materials || []).map((item) => Object.assign({}, item, {
-    countText: item.totalCount ? `${item.totalCount} 条` : '待加入',
+    countText: item.optimistic ? '同步中' : (item.totalCount ? `${item.totalCount} 条` : '待加入'),
     stateText: getPlanMaterial(activePlan, item.category) || item.selected ? '已选' : (item.enabled ? '›' : '等待'),
     disabled: !item.enabled
   }));
+}
+
+function buildFallbackOverview(levelId, currentData) {
+  const selectedLevel = levelId || 'A1';
+  const activePlan = currentData.activePlan || null;
+  return {
+    child: currentData.child || null,
+    stats: currentData.stats || {},
+    selectedLevel,
+    levelTabs: buildLevelTabs(currentData.levelTabs, selectedLevel),
+    materials: (LEVEL_MATERIALS[selectedLevel] || []).map((item) => ({
+      levelId: selectedLevel,
+      category: item.category,
+      title: item.title,
+      totalCount: 0,
+      enabled: true,
+      optimistic: true
+    })),
+    activePlan,
+    planSource: currentData.planSource || 'fixed-yoyo',
+    isYoyoFixedPlan: !!currentData.isYoyoFixedPlan,
+    fixedPlan: currentData.fixedPlan || null
+  };
 }
 
 function buildPlanSummary(activePlan) {
@@ -144,7 +191,8 @@ Page({
         return cached;
       }
     }
-    if (!cached && !options.prefetch && !(this.data.materials || []).length) {
+    if (!cached && !options.prefetch) {
+      this.applyOverview(buildFallbackOverview(nextLevel, this.data), nextLevel);
       this.setData({ levelLoading: true });
     }
     if (!this.overviewRequests[nextLevel]) {
@@ -182,12 +230,13 @@ Page({
       return;
     }
     const firstLevel = this.data.selectedLevel || DEFAULT_FIRST_LEVEL;
-    await this.loadOverview(firstLevel);
+    const firstRequest = this.loadOverview(firstLevel);
     (this.data.levelTabs || FALLBACK_LEVEL_TABS).forEach((tab) => {
       if (tab && tab.enabled && tab.levelId !== firstLevel) {
         this.loadOverview(tab.levelId, { prefetch: true }).catch(() => {});
       }
     });
+    await firstRequest;
   },
   async chooseLevel(event) {
     const enabled = event.currentTarget.dataset.enabled;
