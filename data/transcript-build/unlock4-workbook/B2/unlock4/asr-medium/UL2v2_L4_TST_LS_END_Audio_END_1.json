@@ -1,0 +1,4025 @@
+{
+  "model": "medium",
+  "language": "en",
+  "text": "End of course test, track one. Good afternoon. It's great to see you all here today. I'm Sandy Dickinson and I'm going to focus on three important construction innovations. Before we begin, however, I'd just like to mention that my company, Innovators Construct, will be at next week's Architectural Design Conference in London, where I'll be launching our energy-saving underfloor heating product. Please do come along to the event if you can. Right, so let's get started. First, I'd like to talk to you about a concept called Digital Twins. A digital twin is basically a computer-made copy of an asset, which can be an object, a system or a process. It uses a computer program that takes real-world data about the asset and predicts how that data will affect the asset. This means that the digital twin can show us how the asset will perform without the need to test it in the real world. How can the digital twin help construction projects? Well, it can include all the information from design through to construction and then operation. Because the digital twin can analyze data as it arrives, it helps project managers to make early decisions and avoid unexpected costs. Or, if additional costs are necessary, it allows project managers to remain in control throughout the cycle of the project. The digital twin was implemented for the Thames Estuary Flood Management Project, where it analyzed 70 years of historical data. By getting data up to 25 years faster than other more historical methods, it transformed the way developers and architects work together. Next, I want to talk to you about augmented reality. Augmented reality technology has come a long way since it was invented in 1968 by Ivan Sutherland. He was a computer graphics engineer as well as a teacher, and he developed the first augmented reality display system with the help of his students. Augmented reality technologies, like smart glasses, give you an interactive experience that mixes the real world with a computer-made one. For example, this means you can look at a house that is being built right now, but the glasses can show you what it will look like when it is finished. It is a three-dimensional, or 3D, example of reality, and is quite amazing. Using AR technology, we can put the potential customers directly inside a building at the design stage. Furthermore, when working on site, engineers wearing smart glasses see where there are electrical wires hidden behind walls. The AR technology, in this example, would act as a safety or alarm system. Finally, I want to talk about robots. For many of us, robots are a thing of films. Most of us have seen R2-D2 or C-3PO in George Lucas' Star Wars. These lovable robots with different personalities and behaviors were, and still are, popular with cinema fans today. Robots are already in use today within the construction industry in a range of shapes and sizes. They can lay bricks, move materials, and 3D print, among other things. However, the way of the future is swarm robotics, a new experimental technology that is developing very fast. What is swarm robotics? Simply put, swarm robotics is a multi-robot system which consists of a large number of simple, individual robots. Think of it like a family of bees, called a swarm, that work individually but for the benefit of the whole family. One of the advantages of swarm robotics is that it can be designed to work on large-scale projects, and they are a self-organizing network, making them extremely efficient. Several companies have started working on the next stage of robots and robot networks, which is the development of mobility, the ability to move from one place to another. This is positive news for architecture, design, and construction industries, as the ability to use robots on rough ground, which is hilly or rocky, for example, would be a huge step forward from where we are now. Right, well, that's all we have time for today. I think you'll agree from these innovations that this is by far the most exciting time to be involved in the construction industry as a developer, engineer, or architect. Thank you. Now, any questions?",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 3040,
+      "text": "End of course test, track one.",
+      "words": [
+        {
+          "word": "End",
+          "start": 0.0,
+          "end": 0.62
+        },
+        {
+          "word": "of",
+          "start": 0.62,
+          "end": 0.9
+        },
+        {
+          "word": "course",
+          "start": 0.9,
+          "end": 1.2
+        },
+        {
+          "word": "test,",
+          "start": 1.2,
+          "end": 1.82
+        },
+        {
+          "word": "track",
+          "start": 2.3,
+          "end": 2.52
+        },
+        {
+          "word": "one.",
+          "start": 2.52,
+          "end": 3.04
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 5000,
+      "endMs": 8880,
+      "text": "Good afternoon. It's great to see you all here today.",
+      "words": [
+        {
+          "word": "Good",
+          "start": 5.0,
+          "end": 5.32
+        },
+        {
+          "word": "afternoon.",
+          "start": 5.32,
+          "end": 5.96
+        },
+        {
+          "word": "It's",
+          "start": 6.52,
+          "end": 6.96
+        },
+        {
+          "word": "great",
+          "start": 6.96,
+          "end": 7.48
+        },
+        {
+          "word": "to",
+          "start": 7.48,
+          "end": 7.76
+        },
+        {
+          "word": "see",
+          "start": 7.76,
+          "end": 7.94
+        },
+        {
+          "word": "you",
+          "start": 7.94,
+          "end": 8.12
+        },
+        {
+          "word": "all",
+          "start": 8.12,
+          "end": 8.28
+        },
+        {
+          "word": "here",
+          "start": 8.28,
+          "end": 8.52
+        },
+        {
+          "word": "today.",
+          "start": 8.52,
+          "end": 8.88
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 9320,
+      "endMs": 15640,
+      "text": "I'm Sandy Dickinson and I'm going to focus on three important construction innovations.",
+      "words": [
+        {
+          "word": "I'm",
+          "start": 9.32,
+          "end": 10.06
+        },
+        {
+          "word": "Sandy",
+          "start": 10.06,
+          "end": 10.4
+        },
+        {
+          "word": "Dickinson",
+          "start": 10.4,
+          "end": 10.9
+        },
+        {
+          "word": "and",
+          "start": 10.9,
+          "end": 11.62
+        },
+        {
+          "word": "I'm",
+          "start": 11.62,
+          "end": 12.08
+        },
+        {
+          "word": "going",
+          "start": 12.08,
+          "end": 12.26
+        },
+        {
+          "word": "to",
+          "start": 12.26,
+          "end": 12.5
+        },
+        {
+          "word": "focus",
+          "start": 12.5,
+          "end": 12.88
+        },
+        {
+          "word": "on",
+          "start": 12.88,
+          "end": 13.2
+        },
+        {
+          "word": "three",
+          "start": 13.2,
+          "end": 13.68
+        },
+        {
+          "word": "important",
+          "start": 13.68,
+          "end": 14.4
+        },
+        {
+          "word": "construction",
+          "start": 14.4,
+          "end": 15.04
+        },
+        {
+          "word": "innovations.",
+          "start": 15.04,
+          "end": 15.64
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 16840,
+      "endMs": 23000,
+      "text": "Before we begin, however, I'd just like to mention that my company, Innovators Construct,",
+      "words": [
+        {
+          "word": "Before",
+          "start": 16.84,
+          "end": 17.16
+        },
+        {
+          "word": "we",
+          "start": 17.16,
+          "end": 17.44
+        },
+        {
+          "word": "begin,",
+          "start": 17.44,
+          "end": 17.78
+        },
+        {
+          "word": "however,",
+          "start": 18.06,
+          "end": 18.38
+        },
+        {
+          "word": "I'd",
+          "start": 18.76,
+          "end": 19.18
+        },
+        {
+          "word": "just",
+          "start": 19.18,
+          "end": 19.46
+        },
+        {
+          "word": "like",
+          "start": 19.46,
+          "end": 19.66
+        },
+        {
+          "word": "to",
+          "start": 19.66,
+          "end": 19.88
+        },
+        {
+          "word": "mention",
+          "start": 19.88,
+          "end": 20.18
+        },
+        {
+          "word": "that",
+          "start": 20.18,
+          "end": 20.42
+        },
+        {
+          "word": "my",
+          "start": 20.42,
+          "end": 20.72
+        },
+        {
+          "word": "company,",
+          "start": 20.72,
+          "end": 21.34
+        },
+        {
+          "word": "Innovators",
+          "start": 21.8,
+          "end": 22.28
+        },
+        {
+          "word": "Construct,",
+          "start": 22.28,
+          "end": 23.0
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 23380,
+      "endMs": 27360,
+      "text": "will be at next week's Architectural Design Conference in London,",
+      "words": [
+        {
+          "word": "will",
+          "start": 23.38,
+          "end": 23.54
+        },
+        {
+          "word": "be",
+          "start": 23.54,
+          "end": 23.78
+        },
+        {
+          "word": "at",
+          "start": 23.78,
+          "end": 24.04
+        },
+        {
+          "word": "next",
+          "start": 24.04,
+          "end": 24.38
+        },
+        {
+          "word": "week's",
+          "start": 24.38,
+          "end": 24.9
+        },
+        {
+          "word": "Architectural",
+          "start": 24.9,
+          "end": 25.6
+        },
+        {
+          "word": "Design",
+          "start": 25.6,
+          "end": 26.04
+        },
+        {
+          "word": "Conference",
+          "start": 26.04,
+          "end": 26.6
+        },
+        {
+          "word": "in",
+          "start": 26.6,
+          "end": 26.88
+        },
+        {
+          "word": "London,",
+          "start": 26.88,
+          "end": 27.36
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "startMs": 27360,
+      "endMs": 32360,
+      "text": "where I'll be launching our energy-saving underfloor heating product.",
+      "words": [
+        {
+          "word": "where",
+          "start": 27.36,
+          "end": 28.16
+        },
+        {
+          "word": "I'll",
+          "start": 28.16,
+          "end": 28.52
+        },
+        {
+          "word": "be",
+          "start": 28.52,
+          "end": 28.76
+        },
+        {
+          "word": "launching",
+          "start": 28.76,
+          "end": 29.12
+        },
+        {
+          "word": "our",
+          "start": 29.12,
+          "end": 29.68
+        },
+        {
+          "word": "energy",
+          "start": 29.68,
+          "end": 30.1
+        },
+        {
+          "word": "-saving",
+          "start": 30.1,
+          "end": 30.64
+        },
+        {
+          "word": "underfloor",
+          "start": 30.64,
+          "end": 31.54
+        },
+        {
+          "word": "heating",
+          "start": 31.54,
+          "end": 31.88
+        },
+        {
+          "word": "product.",
+          "start": 31.88,
+          "end": 32.36
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "startMs": 33060,
+      "endMs": 35920,
+      "text": "Please do come along to the event if you can.",
+      "words": [
+        {
+          "word": "Please",
+          "start": 33.06,
+          "end": 33.44
+        },
+        {
+          "word": "do",
+          "start": 33.44,
+          "end": 33.88
+        },
+        {
+          "word": "come",
+          "start": 33.88,
+          "end": 34.1
+        },
+        {
+          "word": "along",
+          "start": 34.1,
+          "end": 34.34
+        },
+        {
+          "word": "to",
+          "start": 34.34,
+          "end": 34.58
+        },
+        {
+          "word": "the",
+          "start": 34.58,
+          "end": 34.72
+        },
+        {
+          "word": "event",
+          "start": 34.72,
+          "end": 35.02
+        },
+        {
+          "word": "if",
+          "start": 35.02,
+          "end": 35.32
+        },
+        {
+          "word": "you",
+          "start": 35.32,
+          "end": 35.56
+        },
+        {
+          "word": "can.",
+          "start": 35.56,
+          "end": 35.92
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "startMs": 37020,
+      "endMs": 39240,
+      "text": "Right, so let's get started.",
+      "words": [
+        {
+          "word": "Right,",
+          "start": 37.02,
+          "end": 37.42
+        },
+        {
+          "word": "so",
+          "start": 37.66,
+          "end": 38.12
+        },
+        {
+          "word": "let's",
+          "start": 38.12,
+          "end": 38.54
+        },
+        {
+          "word": "get",
+          "start": 38.54,
+          "end": 38.8
+        },
+        {
+          "word": "started.",
+          "start": 38.8,
+          "end": 39.24
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "startMs": 40160,
+      "endMs": 45120,
+      "text": "First, I'd like to talk to you about a concept called Digital Twins.",
+      "words": [
+        {
+          "word": "First,",
+          "start": 40.16,
+          "end": 40.7
+        },
+        {
+          "word": "I'd",
+          "start": 40.78,
+          "end": 41.16
+        },
+        {
+          "word": "like",
+          "start": 41.16,
+          "end": 41.28
+        },
+        {
+          "word": "to",
+          "start": 41.28,
+          "end": 41.5
+        },
+        {
+          "word": "talk",
+          "start": 41.5,
+          "end": 41.7
+        },
+        {
+          "word": "to",
+          "start": 41.7,
+          "end": 41.84
+        },
+        {
+          "word": "you",
+          "start": 41.84,
+          "end": 42.16
+        },
+        {
+          "word": "about",
+          "start": 42.16,
+          "end": 42.42
+        },
+        {
+          "word": "a",
+          "start": 42.42,
+          "end": 42.68
+        },
+        {
+          "word": "concept",
+          "start": 42.68,
+          "end": 43.12
+        },
+        {
+          "word": "called",
+          "start": 43.12,
+          "end": 43.74
+        },
+        {
+          "word": "Digital",
+          "start": 43.74,
+          "end": 44.5
+        },
+        {
+          "word": "Twins.",
+          "start": 44.5,
+          "end": 45.12
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "startMs": 46100,
+      "endMs": 51380,
+      "text": "A digital twin is basically a computer-made copy of an asset,",
+      "words": [
+        {
+          "word": "A",
+          "start": 46.1,
+          "end": 46.38
+        },
+        {
+          "word": "digital",
+          "start": 46.38,
+          "end": 46.78
+        },
+        {
+          "word": "twin",
+          "start": 46.78,
+          "end": 47.04
+        },
+        {
+          "word": "is",
+          "start": 47.04,
+          "end": 47.68
+        },
+        {
+          "word": "basically",
+          "start": 47.68,
+          "end": 48.4
+        },
+        {
+          "word": "a",
+          "start": 48.4,
+          "end": 48.8
+        },
+        {
+          "word": "computer",
+          "start": 48.8,
+          "end": 49.4
+        },
+        {
+          "word": "-made",
+          "start": 49.4,
+          "end": 49.78
+        },
+        {
+          "word": "copy",
+          "start": 49.78,
+          "end": 50.34
+        },
+        {
+          "word": "of",
+          "start": 50.34,
+          "end": 50.6
+        },
+        {
+          "word": "an",
+          "start": 50.6,
+          "end": 50.96
+        },
+        {
+          "word": "asset,",
+          "start": 50.96,
+          "end": 51.38
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "startMs": 51900,
+      "endMs": 55820,
+      "text": "which can be an object, a system or a process.",
+      "words": [
+        {
+          "word": "which",
+          "start": 51.9,
+          "end": 51.92
+        },
+        {
+          "word": "can",
+          "start": 51.92,
+          "end": 52.14
+        },
+        {
+          "word": "be",
+          "start": 52.14,
+          "end": 52.36
+        },
+        {
+          "word": "an",
+          "start": 52.36,
+          "end": 52.6
+        },
+        {
+          "word": "object,",
+          "start": 52.6,
+          "end": 53.12
+        },
+        {
+          "word": "a",
+          "start": 53.56,
+          "end": 53.84
+        },
+        {
+          "word": "system",
+          "start": 53.84,
+          "end": 54.28
+        },
+        {
+          "word": "or",
+          "start": 54.28,
+          "end": 54.92
+        },
+        {
+          "word": "a",
+          "start": 54.92,
+          "end": 55.28
+        },
+        {
+          "word": "process.",
+          "start": 55.28,
+          "end": 55.82
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "startMs": 55820,
+      "endMs": 62460,
+      "text": "It uses a computer program that takes real-world data about the asset",
+      "words": [
+        {
+          "word": "It",
+          "start": 55.82,
+          "end": 57.1
+        },
+        {
+          "word": "uses",
+          "start": 57.1,
+          "end": 57.68
+        },
+        {
+          "word": "a",
+          "start": 57.68,
+          "end": 57.98
+        },
+        {
+          "word": "computer",
+          "start": 57.98,
+          "end": 58.52
+        },
+        {
+          "word": "program",
+          "start": 58.52,
+          "end": 59.04
+        },
+        {
+          "word": "that",
+          "start": 59.04,
+          "end": 59.46
+        },
+        {
+          "word": "takes",
+          "start": 59.46,
+          "end": 59.9
+        },
+        {
+          "word": "real",
+          "start": 59.9,
+          "end": 60.48
+        },
+        {
+          "word": "-world",
+          "start": 60.48,
+          "end": 60.8
+        },
+        {
+          "word": "data",
+          "start": 60.8,
+          "end": 61.28
+        },
+        {
+          "word": "about",
+          "start": 61.28,
+          "end": 61.84
+        },
+        {
+          "word": "the",
+          "start": 61.84,
+          "end": 62.18
+        },
+        {
+          "word": "asset",
+          "start": 62.18,
+          "end": 62.46
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "startMs": 62460,
+      "endMs": 67100,
+      "text": "and predicts how that data will affect the asset.",
+      "words": [
+        {
+          "word": "and",
+          "start": 62.46,
+          "end": 63.18
+        },
+        {
+          "word": "predicts",
+          "start": 63.18,
+          "end": 64.0
+        },
+        {
+          "word": "how",
+          "start": 64.0,
+          "end": 64.34
+        },
+        {
+          "word": "that",
+          "start": 64.34,
+          "end": 64.72
+        },
+        {
+          "word": "data",
+          "start": 64.72,
+          "end": 65.16
+        },
+        {
+          "word": "will",
+          "start": 65.16,
+          "end": 65.54
+        },
+        {
+          "word": "affect",
+          "start": 65.54,
+          "end": 66.22
+        },
+        {
+          "word": "the",
+          "start": 66.22,
+          "end": 66.66
+        },
+        {
+          "word": "asset.",
+          "start": 66.66,
+          "end": 67.1
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "startMs": 68360,
+      "endMs": 73980,
+      "text": "This means that the digital twin can show us how the asset will perform",
+      "words": [
+        {
+          "word": "This",
+          "start": 68.36,
+          "end": 68.72
+        },
+        {
+          "word": "means",
+          "start": 68.72,
+          "end": 69.2
+        },
+        {
+          "word": "that",
+          "start": 69.2,
+          "end": 69.62
+        },
+        {
+          "word": "the",
+          "start": 69.62,
+          "end": 70.02
+        },
+        {
+          "word": "digital",
+          "start": 70.02,
+          "end": 70.34
+        },
+        {
+          "word": "twin",
+          "start": 70.34,
+          "end": 70.66
+        },
+        {
+          "word": "can",
+          "start": 70.66,
+          "end": 71.18
+        },
+        {
+          "word": "show",
+          "start": 71.18,
+          "end": 71.52
+        },
+        {
+          "word": "us",
+          "start": 71.52,
+          "end": 71.88
+        },
+        {
+          "word": "how",
+          "start": 71.88,
+          "end": 72.36
+        },
+        {
+          "word": "the",
+          "start": 72.36,
+          "end": 72.8
+        },
+        {
+          "word": "asset",
+          "start": 72.8,
+          "end": 73.06
+        },
+        {
+          "word": "will",
+          "start": 73.06,
+          "end": 73.4
+        },
+        {
+          "word": "perform",
+          "start": 73.4,
+          "end": 73.98
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "startMs": 73980,
+      "endMs": 78040,
+      "text": "without the need to test it in the real world.",
+      "words": [
+        {
+          "word": "without",
+          "start": 73.98,
+          "end": 75.0
+        },
+        {
+          "word": "the",
+          "start": 75.0,
+          "end": 75.42
+        },
+        {
+          "word": "need",
+          "start": 75.42,
+          "end": 75.66
+        },
+        {
+          "word": "to",
+          "start": 75.66,
+          "end": 76.02
+        },
+        {
+          "word": "test",
+          "start": 76.02,
+          "end": 76.34
+        },
+        {
+          "word": "it",
+          "start": 76.34,
+          "end": 76.74
+        },
+        {
+          "word": "in",
+          "start": 76.74,
+          "end": 76.98
+        },
+        {
+          "word": "the",
+          "start": 76.98,
+          "end": 77.22
+        },
+        {
+          "word": "real",
+          "start": 77.22,
+          "end": 77.56
+        },
+        {
+          "word": "world.",
+          "start": 77.56,
+          "end": 78.04
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "startMs": 79260,
+      "endMs": 82820,
+      "text": "How can the digital twin help construction projects?",
+      "words": [
+        {
+          "word": "How",
+          "start": 79.26,
+          "end": 79.48
+        },
+        {
+          "word": "can",
+          "start": 79.48,
+          "end": 79.86
+        },
+        {
+          "word": "the",
+          "start": 79.86,
+          "end": 80.18
+        },
+        {
+          "word": "digital",
+          "start": 80.18,
+          "end": 80.6
+        },
+        {
+          "word": "twin",
+          "start": 80.6,
+          "end": 81.02
+        },
+        {
+          "word": "help",
+          "start": 81.02,
+          "end": 81.6
+        },
+        {
+          "word": "construction",
+          "start": 81.6,
+          "end": 82.28
+        },
+        {
+          "word": "projects?",
+          "start": 82.28,
+          "end": 82.82
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "startMs": 82820,
+      "endMs": 90820,
+      "text": "Well, it can include all the information from design through to construction and then operation.",
+      "words": [
+        {
+          "word": "Well,",
+          "start": 82.82,
+          "end": 84.1
+        },
+        {
+          "word": "it",
+          "start": 84.42,
+          "end": 84.7
+        },
+        {
+          "word": "can",
+          "start": 84.7,
+          "end": 84.94
+        },
+        {
+          "word": "include",
+          "start": 84.94,
+          "end": 85.46
+        },
+        {
+          "word": "all",
+          "start": 85.46,
+          "end": 85.94
+        },
+        {
+          "word": "the",
+          "start": 85.94,
+          "end": 86.16
+        },
+        {
+          "word": "information",
+          "start": 86.16,
+          "end": 86.78
+        },
+        {
+          "word": "from",
+          "start": 86.78,
+          "end": 87.16
+        },
+        {
+          "word": "design",
+          "start": 87.16,
+          "end": 87.84
+        },
+        {
+          "word": "through",
+          "start": 87.84,
+          "end": 88.46
+        },
+        {
+          "word": "to",
+          "start": 88.46,
+          "end": 88.74
+        },
+        {
+          "word": "construction",
+          "start": 88.74,
+          "end": 89.4
+        },
+        {
+          "word": "and",
+          "start": 89.4,
+          "end": 90.08
+        },
+        {
+          "word": "then",
+          "start": 90.08,
+          "end": 90.56
+        },
+        {
+          "word": "operation.",
+          "start": 90.56,
+          "end": 91.04
+        }
+      ]
+    },
+    {
+      "index": 18,
+      "startMs": 92720,
+      "endMs": 97000,
+      "text": "Because the digital twin can analyze data as it arrives,",
+      "words": [
+        {
+          "word": "Because",
+          "start": 92.72,
+          "end": 93.02
+        },
+        {
+          "word": "the",
+          "start": 93.02,
+          "end": 93.38
+        },
+        {
+          "word": "digital",
+          "start": 93.38,
+          "end": 93.76
+        },
+        {
+          "word": "twin",
+          "start": 93.76,
+          "end": 94.06
+        },
+        {
+          "word": "can",
+          "start": 94.06,
+          "end": 94.62
+        },
+        {
+          "word": "analyze",
+          "start": 94.62,
+          "end": 95.1
+        },
+        {
+          "word": "data",
+          "start": 95.1,
+          "end": 95.66
+        },
+        {
+          "word": "as",
+          "start": 95.66,
+          "end": 96.12
+        },
+        {
+          "word": "it",
+          "start": 96.12,
+          "end": 96.42
+        },
+        {
+          "word": "arrives,",
+          "start": 96.42,
+          "end": 97.0
+        }
+      ]
+    },
+    {
+      "index": 19,
+      "startMs": 97680,
+      "endMs": 103700,
+      "text": "it helps project managers to make early decisions and avoid unexpected costs.",
+      "words": [
+        {
+          "word": "it",
+          "start": 97.68,
+          "end": 97.92
+        },
+        {
+          "word": "helps",
+          "start": 97.92,
+          "end": 98.3
+        },
+        {
+          "word": "project",
+          "start": 98.3,
+          "end": 98.92
+        },
+        {
+          "word": "managers",
+          "start": 98.92,
+          "end": 99.32
+        },
+        {
+          "word": "to",
+          "start": 99.32,
+          "end": 99.86
+        },
+        {
+          "word": "make",
+          "start": 99.86,
+          "end": 100.1
+        },
+        {
+          "word": "early",
+          "start": 100.1,
+          "end": 100.5
+        },
+        {
+          "word": "decisions",
+          "start": 100.5,
+          "end": 101.1
+        },
+        {
+          "word": "and",
+          "start": 101.1,
+          "end": 101.64
+        },
+        {
+          "word": "avoid",
+          "start": 101.64,
+          "end": 102.14
+        },
+        {
+          "word": "unexpected",
+          "start": 102.14,
+          "end": 102.98
+        },
+        {
+          "word": "costs.",
+          "start": 102.98,
+          "end": 103.7
+        }
+      ]
+    },
+    {
+      "index": 20,
+      "startMs": 104380,
+      "endMs": 106820,
+      "text": "Or, if additional costs are necessary,",
+      "words": [
+        {
+          "word": "Or,",
+          "start": 104.38,
+          "end": 104.84
+        },
+        {
+          "word": "if",
+          "start": 104.98,
+          "end": 105.38
+        },
+        {
+          "word": "additional",
+          "start": 105.38,
+          "end": 105.92
+        },
+        {
+          "word": "costs",
+          "start": 105.92,
+          "end": 106.36
+        },
+        {
+          "word": "are",
+          "start": 106.36,
+          "end": 106.8
+        },
+        {
+          "word": "necessary,",
+          "start": 106.8,
+          "end": 107.28
+        }
+      ]
+    },
+    {
+      "index": 21,
+      "startMs": 107280,
+      "endMs": 113840,
+      "text": "it allows project managers to remain in control throughout the cycle of the project.",
+      "words": [
+        {
+          "word": "it",
+          "start": 107.28,
+          "end": 108.16
+        },
+        {
+          "word": "allows",
+          "start": 108.16,
+          "end": 108.68
+        },
+        {
+          "word": "project",
+          "start": 108.68,
+          "end": 109.24
+        },
+        {
+          "word": "managers",
+          "start": 109.24,
+          "end": 109.66
+        },
+        {
+          "word": "to",
+          "start": 109.66,
+          "end": 110.02
+        },
+        {
+          "word": "remain",
+          "start": 110.02,
+          "end": 110.44
+        },
+        {
+          "word": "in",
+          "start": 110.44,
+          "end": 110.84
+        },
+        {
+          "word": "control",
+          "start": 110.84,
+          "end": 111.42
+        },
+        {
+          "word": "throughout",
+          "start": 111.42,
+          "end": 112.08
+        },
+        {
+          "word": "the",
+          "start": 112.08,
+          "end": 112.48
+        },
+        {
+          "word": "cycle",
+          "start": 112.48,
+          "end": 112.86
+        },
+        {
+          "word": "of",
+          "start": 112.86,
+          "end": 113.2
+        },
+        {
+          "word": "the",
+          "start": 113.2,
+          "end": 113.4
+        },
+        {
+          "word": "project.",
+          "start": 113.4,
+          "end": 113.84
+        }
+      ]
+    },
+    {
+      "index": 22,
+      "startMs": 115000,
+      "endMs": 120240,
+      "text": "The digital twin was implemented for the Thames Estuary Flood Management Project,",
+      "words": [
+        {
+          "word": "The",
+          "start": 115.0,
+          "end": 115.2
+        },
+        {
+          "word": "digital",
+          "start": 115.2,
+          "end": 115.66
+        },
+        {
+          "word": "twin",
+          "start": 115.66,
+          "end": 115.9
+        },
+        {
+          "word": "was",
+          "start": 115.9,
+          "end": 116.32
+        },
+        {
+          "word": "implemented",
+          "start": 116.32,
+          "end": 117.1
+        },
+        {
+          "word": "for",
+          "start": 117.1,
+          "end": 117.5
+        },
+        {
+          "word": "the",
+          "start": 117.5,
+          "end": 117.66
+        },
+        {
+          "word": "Thames",
+          "start": 117.66,
+          "end": 118.0
+        },
+        {
+          "word": "Estuary",
+          "start": 118.0,
+          "end": 118.64
+        },
+        {
+          "word": "Flood",
+          "start": 118.64,
+          "end": 119.18
+        },
+        {
+          "word": "Management",
+          "start": 119.18,
+          "end": 119.62
+        },
+        {
+          "word": "Project,",
+          "start": 119.62,
+          "end": 120.24
+        }
+      ]
+    },
+    {
+      "index": 23,
+      "startMs": 120480,
+      "endMs": 124160,
+      "text": "where it analyzed 70 years of historical data.",
+      "words": [
+        {
+          "word": "where",
+          "start": 120.48,
+          "end": 120.7
+        },
+        {
+          "word": "it",
+          "start": 120.7,
+          "end": 121.08
+        },
+        {
+          "word": "analyzed",
+          "start": 121.08,
+          "end": 121.6
+        },
+        {
+          "word": "70",
+          "start": 121.6,
+          "end": 122.28
+        },
+        {
+          "word": "years",
+          "start": 122.28,
+          "end": 122.74
+        },
+        {
+          "word": "of",
+          "start": 122.74,
+          "end": 123.08
+        },
+        {
+          "word": "historical",
+          "start": 123.08,
+          "end": 123.6
+        },
+        {
+          "word": "data.",
+          "start": 123.6,
+          "end": 124.16
+        }
+      ]
+    },
+    {
+      "index": 24,
+      "startMs": 125300,
+      "endMs": 131580,
+      "text": "By getting data up to 25 years faster than other more historical methods,",
+      "words": [
+        {
+          "word": "By",
+          "start": 125.3,
+          "end": 125.64
+        },
+        {
+          "word": "getting",
+          "start": 125.64,
+          "end": 125.98
+        },
+        {
+          "word": "data",
+          "start": 125.98,
+          "end": 126.52
+        },
+        {
+          "word": "up",
+          "start": 126.52,
+          "end": 126.88
+        },
+        {
+          "word": "to",
+          "start": 126.88,
+          "end": 127.24
+        },
+        {
+          "word": "25",
+          "start": 127.24,
+          "end": 128.18
+        },
+        {
+          "word": "years",
+          "start": 128.18,
+          "end": 128.68
+        },
+        {
+          "word": "faster",
+          "start": 128.68,
+          "end": 129.2
+        },
+        {
+          "word": "than",
+          "start": 129.2,
+          "end": 129.78
+        },
+        {
+          "word": "other",
+          "start": 129.78,
+          "end": 130.14
+        },
+        {
+          "word": "more",
+          "start": 130.14,
+          "end": 130.48
+        },
+        {
+          "word": "historical",
+          "start": 130.48,
+          "end": 131.08
+        },
+        {
+          "word": "methods,",
+          "start": 131.08,
+          "end": 131.58
+        }
+      ]
+    },
+    {
+      "index": 25,
+      "startMs": 131580,
+      "endMs": 136540,
+      "text": "it transformed the way developers and architects work together.",
+      "words": [
+        {
+          "word": "it",
+          "start": 131.58,
+          "end": 132.32
+        },
+        {
+          "word": "transformed",
+          "start": 132.32,
+          "end": 133.12
+        },
+        {
+          "word": "the",
+          "start": 133.12,
+          "end": 133.4
+        },
+        {
+          "word": "way",
+          "start": 133.4,
+          "end": 133.74
+        },
+        {
+          "word": "developers",
+          "start": 133.74,
+          "end": 134.34
+        },
+        {
+          "word": "and",
+          "start": 134.34,
+          "end": 134.9
+        },
+        {
+          "word": "architects",
+          "start": 134.9,
+          "end": 135.44
+        },
+        {
+          "word": "work",
+          "start": 135.44,
+          "end": 135.9
+        },
+        {
+          "word": "together.",
+          "start": 135.9,
+          "end": 136.54
+        }
+      ]
+    },
+    {
+      "index": 26,
+      "startMs": 138280,
+      "endMs": 142560,
+      "text": "Next, I want to talk to you about augmented reality.",
+      "words": [
+        {
+          "word": "Next,",
+          "start": 138.28,
+          "end": 138.62
+        },
+        {
+          "word": "I",
+          "start": 138.98,
+          "end": 139.14
+        },
+        {
+          "word": "want",
+          "start": 139.14,
+          "end": 139.46
+        },
+        {
+          "word": "to",
+          "start": 139.46,
+          "end": 139.64
+        },
+        {
+          "word": "talk",
+          "start": 139.64,
+          "end": 139.88
+        },
+        {
+          "word": "to",
+          "start": 139.88,
+          "end": 139.96
+        },
+        {
+          "word": "you",
+          "start": 139.96,
+          "end": 140.36
+        },
+        {
+          "word": "about",
+          "start": 140.36,
+          "end": 140.96
+        },
+        {
+          "word": "augmented",
+          "start": 140.96,
+          "end": 141.76
+        },
+        {
+          "word": "reality.",
+          "start": 141.76,
+          "end": 142.56
+        }
+      ]
+    },
+    {
+      "index": 27,
+      "startMs": 144060,
+      "endMs": 151980,
+      "text": "Augmented reality technology has come a long way since it was invented in 1968 by Ivan Sutherland.",
+      "words": [
+        {
+          "word": "Augmented",
+          "start": 144.06,
+          "end": 144.64
+        },
+        {
+          "word": "reality",
+          "start": 144.64,
+          "end": 145.28
+        },
+        {
+          "word": "technology",
+          "start": 145.28,
+          "end": 145.98
+        },
+        {
+          "word": "has",
+          "start": 145.98,
+          "end": 146.36
+        },
+        {
+          "word": "come",
+          "start": 146.36,
+          "end": 146.68
+        },
+        {
+          "word": "a",
+          "start": 146.68,
+          "end": 147.12
+        },
+        {
+          "word": "long",
+          "start": 147.12,
+          "end": 147.36
+        },
+        {
+          "word": "way",
+          "start": 147.36,
+          "end": 147.76
+        },
+        {
+          "word": "since",
+          "start": 147.76,
+          "end": 148.04
+        },
+        {
+          "word": "it",
+          "start": 148.04,
+          "end": 148.24
+        },
+        {
+          "word": "was",
+          "start": 148.24,
+          "end": 148.48
+        },
+        {
+          "word": "invented",
+          "start": 148.48,
+          "end": 148.92
+        },
+        {
+          "word": "in",
+          "start": 148.92,
+          "end": 149.22
+        },
+        {
+          "word": "1968",
+          "start": 149.22,
+          "end": 150.3
+        },
+        {
+          "word": "by",
+          "start": 150.3,
+          "end": 150.94
+        },
+        {
+          "word": "Ivan",
+          "start": 150.94,
+          "end": 151.38
+        },
+        {
+          "word": "Sutherland.",
+          "start": 151.38,
+          "end": 151.98
+        }
+      ]
+    },
+    {
+      "index": 28,
+      "startMs": 153080,
+      "endMs": 157440,
+      "text": "He was a computer graphics engineer as well as a teacher,",
+      "words": [
+        {
+          "word": "He",
+          "start": 153.08,
+          "end": 153.32
+        },
+        {
+          "word": "was",
+          "start": 153.32,
+          "end": 153.66
+        },
+        {
+          "word": "a",
+          "start": 153.66,
+          "end": 154.0
+        },
+        {
+          "word": "computer",
+          "start": 154.0,
+          "end": 154.42
+        },
+        {
+          "word": "graphics",
+          "start": 154.42,
+          "end": 154.92
+        },
+        {
+          "word": "engineer",
+          "start": 154.92,
+          "end": 155.64
+        },
+        {
+          "word": "as",
+          "start": 155.64,
+          "end": 156.44
+        },
+        {
+          "word": "well",
+          "start": 156.44,
+          "end": 156.64
+        },
+        {
+          "word": "as",
+          "start": 156.64,
+          "end": 156.78
+        },
+        {
+          "word": "a",
+          "start": 156.78,
+          "end": 157.02
+        },
+        {
+          "word": "teacher,",
+          "start": 157.02,
+          "end": 157.44
+        }
+      ]
+    },
+    {
+      "index": 29,
+      "startMs": 157440,
+      "endMs": 164800,
+      "text": "and he developed the first augmented reality display system with the help of his students.",
+      "words": [
+        {
+          "word": "and",
+          "start": 157.44,
+          "end": 158.3
+        },
+        {
+          "word": "he",
+          "start": 158.3,
+          "end": 158.54
+        },
+        {
+          "word": "developed",
+          "start": 158.54,
+          "end": 159.02
+        },
+        {
+          "word": "the",
+          "start": 159.02,
+          "end": 159.4
+        },
+        {
+          "word": "first",
+          "start": 159.4,
+          "end": 159.84
+        },
+        {
+          "word": "augmented",
+          "start": 159.84,
+          "end": 160.56
+        },
+        {
+          "word": "reality",
+          "start": 160.56,
+          "end": 161.24
+        },
+        {
+          "word": "display",
+          "start": 161.24,
+          "end": 161.76
+        },
+        {
+          "word": "system",
+          "start": 161.76,
+          "end": 162.26
+        },
+        {
+          "word": "with",
+          "start": 162.26,
+          "end": 162.86
+        },
+        {
+          "word": "the",
+          "start": 162.86,
+          "end": 163.08
+        },
+        {
+          "word": "help",
+          "start": 163.08,
+          "end": 163.38
+        },
+        {
+          "word": "of",
+          "start": 163.38,
+          "end": 163.64
+        },
+        {
+          "word": "his",
+          "start": 163.64,
+          "end": 163.86
+        },
+        {
+          "word": "students.",
+          "start": 163.86,
+          "end": 164.8
+        }
+      ]
+    },
+    {
+      "index": 30,
+      "startMs": 166440,
+      "endMs": 170300,
+      "text": "Augmented reality technologies, like smart glasses,",
+      "words": [
+        {
+          "word": "Augmented",
+          "start": 166.44,
+          "end": 166.86
+        },
+        {
+          "word": "reality",
+          "start": 166.86,
+          "end": 167.44
+        },
+        {
+          "word": "technologies,",
+          "start": 167.44,
+          "end": 168.18
+        },
+        {
+          "word": "like",
+          "start": 168.8,
+          "end": 169.08
+        },
+        {
+          "word": "smart",
+          "start": 169.08,
+          "end": 169.74
+        },
+        {
+          "word": "glasses,",
+          "start": 169.74,
+          "end": 170.3
+        }
+      ]
+    },
+    {
+      "index": 31,
+      "startMs": 170800,
+      "endMs": 176880,
+      "text": "give you an interactive experience that mixes the real world with a computer-made one.",
+      "words": [
+        {
+          "word": "give",
+          "start": 170.8,
+          "end": 171.06
+        },
+        {
+          "word": "you",
+          "start": 171.06,
+          "end": 171.42
+        },
+        {
+          "word": "an",
+          "start": 171.42,
+          "end": 171.88
+        },
+        {
+          "word": "interactive",
+          "start": 171.88,
+          "end": 172.34
+        },
+        {
+          "word": "experience",
+          "start": 172.34,
+          "end": 173.1
+        },
+        {
+          "word": "that",
+          "start": 173.1,
+          "end": 173.6
+        },
+        {
+          "word": "mixes",
+          "start": 173.6,
+          "end": 174.0
+        },
+        {
+          "word": "the",
+          "start": 174.0,
+          "end": 174.4
+        },
+        {
+          "word": "real",
+          "start": 174.4,
+          "end": 174.66
+        },
+        {
+          "word": "world",
+          "start": 174.66,
+          "end": 175.08
+        },
+        {
+          "word": "with",
+          "start": 175.08,
+          "end": 175.46
+        },
+        {
+          "word": "a",
+          "start": 175.46,
+          "end": 175.84
+        },
+        {
+          "word": "computer",
+          "start": 175.84,
+          "end": 176.24
+        },
+        {
+          "word": "-made",
+          "start": 176.24,
+          "end": 176.48
+        },
+        {
+          "word": "one.",
+          "start": 176.48,
+          "end": 176.88
+        }
+      ]
+    },
+    {
+      "index": 32,
+      "startMs": 177800,
+      "endMs": 183280,
+      "text": "For example, this means you can look at a house that is being built right now,",
+      "words": [
+        {
+          "word": "For",
+          "start": 177.8,
+          "end": 178.08
+        },
+        {
+          "word": "example,",
+          "start": 178.08,
+          "end": 178.64
+        },
+        {
+          "word": "this",
+          "start": 178.98,
+          "end": 179.26
+        },
+        {
+          "word": "means",
+          "start": 179.26,
+          "end": 179.64
+        },
+        {
+          "word": "you",
+          "start": 179.64,
+          "end": 179.8
+        },
+        {
+          "word": "can",
+          "start": 179.8,
+          "end": 180.04
+        },
+        {
+          "word": "look",
+          "start": 180.04,
+          "end": 180.32
+        },
+        {
+          "word": "at",
+          "start": 180.32,
+          "end": 180.6
+        },
+        {
+          "word": "a",
+          "start": 180.6,
+          "end": 180.76
+        },
+        {
+          "word": "house",
+          "start": 180.76,
+          "end": 181.1
+        },
+        {
+          "word": "that",
+          "start": 181.1,
+          "end": 181.38
+        },
+        {
+          "word": "is",
+          "start": 181.38,
+          "end": 181.56
+        },
+        {
+          "word": "being",
+          "start": 181.56,
+          "end": 181.94
+        },
+        {
+          "word": "built",
+          "start": 181.94,
+          "end": 182.4
+        },
+        {
+          "word": "right",
+          "start": 182.4,
+          "end": 182.92
+        },
+        {
+          "word": "now,",
+          "start": 182.92,
+          "end": 183.28
+        }
+      ]
+    },
+    {
+      "index": 33,
+      "startMs": 183280,
+      "endMs": 188100,
+      "text": "but the glasses can show you what it will look like when it is finished.",
+      "words": [
+        {
+          "word": "but",
+          "start": 183.28,
+          "end": 183.84
+        },
+        {
+          "word": "the",
+          "start": 183.84,
+          "end": 184.18
+        },
+        {
+          "word": "glasses",
+          "start": 184.18,
+          "end": 184.74
+        },
+        {
+          "word": "can",
+          "start": 184.74,
+          "end": 185.16
+        },
+        {
+          "word": "show",
+          "start": 185.16,
+          "end": 185.4
+        },
+        {
+          "word": "you",
+          "start": 185.4,
+          "end": 185.68
+        },
+        {
+          "word": "what",
+          "start": 185.68,
+          "end": 185.88
+        },
+        {
+          "word": "it",
+          "start": 185.88,
+          "end": 186.02
+        },
+        {
+          "word": "will",
+          "start": 186.02,
+          "end": 186.24
+        },
+        {
+          "word": "look",
+          "start": 186.24,
+          "end": 186.46
+        },
+        {
+          "word": "like",
+          "start": 186.46,
+          "end": 186.96
+        },
+        {
+          "word": "when",
+          "start": 186.96,
+          "end": 187.2
+        },
+        {
+          "word": "it",
+          "start": 187.2,
+          "end": 187.42
+        },
+        {
+          "word": "is",
+          "start": 187.42,
+          "end": 187.72
+        },
+        {
+          "word": "finished.",
+          "start": 187.72,
+          "end": 188.1
+        }
+      ]
+    },
+    {
+      "index": 34,
+      "startMs": 189100,
+      "endMs": 196720,
+      "text": "It is a three-dimensional, or 3D, example of reality, and is quite amazing.",
+      "words": [
+        {
+          "word": "It",
+          "start": 189.1,
+          "end": 189.22
+        },
+        {
+          "word": "is",
+          "start": 189.22,
+          "end": 189.44
+        },
+        {
+          "word": "a",
+          "start": 189.44,
+          "end": 189.72
+        },
+        {
+          "word": "three",
+          "start": 189.72,
+          "end": 189.98
+        },
+        {
+          "word": "-dimensional,",
+          "start": 189.98,
+          "end": 190.66
+        },
+        {
+          "word": "or",
+          "start": 190.96,
+          "end": 191.34
+        },
+        {
+          "word": "3D,",
+          "start": 191.34,
+          "end": 192.04
+        },
+        {
+          "word": "example",
+          "start": 192.48,
+          "end": 193.02
+        },
+        {
+          "word": "of",
+          "start": 193.02,
+          "end": 193.48
+        },
+        {
+          "word": "reality,",
+          "start": 193.48,
+          "end": 194.12
+        },
+        {
+          "word": "and",
+          "start": 194.76,
+          "end": 194.88
+        },
+        {
+          "word": "is",
+          "start": 194.88,
+          "end": 195.26
+        },
+        {
+          "word": "quite",
+          "start": 195.26,
+          "end": 195.72
+        },
+        {
+          "word": "amazing.",
+          "start": 195.72,
+          "end": 196.72
+        }
+      ]
+    },
+    {
+      "index": 35,
+      "startMs": 198460,
+      "endMs": 207220,
+      "text": "Using AR technology, we can put the potential customers directly inside a building at the design stage.",
+      "words": [
+        {
+          "word": "Using",
+          "start": 198.46,
+          "end": 198.96
+        },
+        {
+          "word": "AR",
+          "start": 198.96,
+          "end": 199.76
+        },
+        {
+          "word": "technology,",
+          "start": 199.76,
+          "end": 200.54
+        },
+        {
+          "word": "we",
+          "start": 201.12,
+          "end": 201.32
+        },
+        {
+          "word": "can",
+          "start": 201.32,
+          "end": 201.6
+        },
+        {
+          "word": "put",
+          "start": 201.6,
+          "end": 201.92
+        },
+        {
+          "word": "the",
+          "start": 201.92,
+          "end": 202.14
+        },
+        {
+          "word": "potential",
+          "start": 202.14,
+          "end": 202.7
+        },
+        {
+          "word": "customers",
+          "start": 202.7,
+          "end": 203.36
+        },
+        {
+          "word": "directly",
+          "start": 203.36,
+          "end": 204.3
+        },
+        {
+          "word": "inside",
+          "start": 204.3,
+          "end": 204.98
+        },
+        {
+          "word": "a",
+          "start": 204.98,
+          "end": 205.22
+        },
+        {
+          "word": "building",
+          "start": 205.22,
+          "end": 205.6
+        },
+        {
+          "word": "at",
+          "start": 205.6,
+          "end": 206.1
+        },
+        {
+          "word": "the",
+          "start": 206.1,
+          "end": 206.36
+        },
+        {
+          "word": "design",
+          "start": 206.36,
+          "end": 206.7
+        },
+        {
+          "word": "stage.",
+          "start": 206.7,
+          "end": 207.22
+        }
+      ]
+    },
+    {
+      "index": 36,
+      "startMs": 207220,
+      "endMs": 218380,
+      "text": "Furthermore, when working on site, engineers wearing smart glasses see where there are electrical wires hidden behind walls.",
+      "words": [
+        {
+          "word": "Furthermore,",
+          "start": 207.22,
+          "end": 208.84
+        },
+        {
+          "word": "when",
+          "start": 209.5,
+          "end": 209.64
+        },
+        {
+          "word": "working",
+          "start": 209.64,
+          "end": 210.1
+        },
+        {
+          "word": "on",
+          "start": 210.1,
+          "end": 210.48
+        },
+        {
+          "word": "site,",
+          "start": 210.48,
+          "end": 210.92
+        },
+        {
+          "word": "engineers",
+          "start": 211.7,
+          "end": 212.04
+        },
+        {
+          "word": "wearing",
+          "start": 212.04,
+          "end": 212.64
+        },
+        {
+          "word": "smart",
+          "start": 212.64,
+          "end": 213.22
+        },
+        {
+          "word": "glasses",
+          "start": 213.22,
+          "end": 213.82
+        },
+        {
+          "word": "see",
+          "start": 213.82,
+          "end": 214.7
+        },
+        {
+          "word": "where",
+          "start": 214.7,
+          "end": 215.24
+        },
+        {
+          "word": "there",
+          "start": 215.24,
+          "end": 215.5
+        },
+        {
+          "word": "are",
+          "start": 215.5,
+          "end": 215.72
+        },
+        {
+          "word": "electrical",
+          "start": 215.72,
+          "end": 216.26
+        },
+        {
+          "word": "wires",
+          "start": 216.26,
+          "end": 216.74
+        },
+        {
+          "word": "hidden",
+          "start": 216.74,
+          "end": 217.28
+        },
+        {
+          "word": "behind",
+          "start": 217.28,
+          "end": 217.76
+        },
+        {
+          "word": "walls.",
+          "start": 217.76,
+          "end": 218.38
+        }
+      ]
+    },
+    {
+      "index": 37,
+      "startMs": 219420,
+      "endMs": 225840,
+      "text": "The AR technology, in this example, would act as a safety or alarm system.",
+      "words": [
+        {
+          "word": "The",
+          "start": 219.42,
+          "end": 219.62
+        },
+        {
+          "word": "AR",
+          "start": 219.62,
+          "end": 220.04
+        },
+        {
+          "word": "technology,",
+          "start": 220.04,
+          "end": 220.76
+        },
+        {
+          "word": "in",
+          "start": 220.9,
+          "end": 221.24
+        },
+        {
+          "word": "this",
+          "start": 221.24,
+          "end": 221.48
+        },
+        {
+          "word": "example,",
+          "start": 221.48,
+          "end": 222.0
+        },
+        {
+          "word": "would",
+          "start": 222.44,
+          "end": 222.68
+        },
+        {
+          "word": "act",
+          "start": 222.68,
+          "end": 223.06
+        },
+        {
+          "word": "as",
+          "start": 223.06,
+          "end": 223.34
+        },
+        {
+          "word": "a",
+          "start": 223.34,
+          "end": 223.64
+        },
+        {
+          "word": "safety",
+          "start": 223.64,
+          "end": 224.12
+        },
+        {
+          "word": "or",
+          "start": 224.12,
+          "end": 224.9
+        },
+        {
+          "word": "alarm",
+          "start": 224.9,
+          "end": 225.28
+        },
+        {
+          "word": "system.",
+          "start": 225.28,
+          "end": 225.84
+        }
+      ]
+    },
+    {
+      "index": 38,
+      "startMs": 228080,
+      "endMs": 231320,
+      "text": "Finally, I want to talk about robots.",
+      "words": [
+        {
+          "word": "Finally,",
+          "start": 228.08,
+          "end": 228.58
+        },
+        {
+          "word": "I",
+          "start": 229.22,
+          "end": 229.46
+        },
+        {
+          "word": "want",
+          "start": 229.46,
+          "end": 229.7
+        },
+        {
+          "word": "to",
+          "start": 229.7,
+          "end": 229.92
+        },
+        {
+          "word": "talk",
+          "start": 229.92,
+          "end": 230.2
+        },
+        {
+          "word": "about",
+          "start": 230.2,
+          "end": 230.68
+        },
+        {
+          "word": "robots.",
+          "start": 230.68,
+          "end": 231.32
+        }
+      ]
+    },
+    {
+      "index": 39,
+      "startMs": 232180,
+      "endMs": 235380,
+      "text": "For many of us, robots are a thing of films.",
+      "words": [
+        {
+          "word": "For",
+          "start": 232.18,
+          "end": 232.44
+        },
+        {
+          "word": "many",
+          "start": 232.44,
+          "end": 232.84
+        },
+        {
+          "word": "of",
+          "start": 232.84,
+          "end": 233.08
+        },
+        {
+          "word": "us,",
+          "start": 233.08,
+          "end": 233.44
+        },
+        {
+          "word": "robots",
+          "start": 233.74,
+          "end": 234.06
+        },
+        {
+          "word": "are",
+          "start": 234.06,
+          "end": 234.46
+        },
+        {
+          "word": "a",
+          "start": 234.46,
+          "end": 234.58
+        },
+        {
+          "word": "thing",
+          "start": 234.58,
+          "end": 234.72
+        },
+        {
+          "word": "of",
+          "start": 234.72,
+          "end": 235.02
+        },
+        {
+          "word": "films.",
+          "start": 235.02,
+          "end": 235.38
+        }
+      ]
+    },
+    {
+      "index": 40,
+      "startMs": 235380,
+      "endMs": 242820,
+      "text": "Most of us have seen R2-D2 or C-3PO in George Lucas' Star Wars.",
+      "words": [
+        {
+          "word": "Most",
+          "start": 235.38,
+          "end": 236.52
+        },
+        {
+          "word": "of",
+          "start": 236.52,
+          "end": 236.74
+        },
+        {
+          "word": "us",
+          "start": 236.74,
+          "end": 236.98
+        },
+        {
+          "word": "have",
+          "start": 236.98,
+          "end": 237.2
+        },
+        {
+          "word": "seen",
+          "start": 237.2,
+          "end": 237.56
+        },
+        {
+          "word": "R2",
+          "start": 237.56,
+          "end": 238.28
+        },
+        {
+          "word": "-D2",
+          "start": 238.28,
+          "end": 238.9
+        },
+        {
+          "word": "or",
+          "start": 238.9,
+          "end": 239.4
+        },
+        {
+          "word": "C",
+          "start": 239.4,
+          "end": 239.78
+        },
+        {
+          "word": "-3PO",
+          "start": 239.78,
+          "end": 240.34
+        },
+        {
+          "word": "in",
+          "start": 240.34,
+          "end": 240.86
+        },
+        {
+          "word": "George",
+          "start": 240.86,
+          "end": 241.26
+        },
+        {
+          "word": "Lucas'",
+          "start": 241.26,
+          "end": 241.7
+        },
+        {
+          "word": "Star",
+          "start": 241.98,
+          "end": 242.34
+        },
+        {
+          "word": "Wars.",
+          "start": 242.34,
+          "end": 242.82
+        }
+      ]
+    },
+    {
+      "index": 41,
+      "startMs": 243840,
+      "endMs": 253160,
+      "text": "These lovable robots with different personalities and behaviors were, and still are, popular with cinema fans today.",
+      "words": [
+        {
+          "word": "These",
+          "start": 243.84,
+          "end": 244.3
+        },
+        {
+          "word": "lovable",
+          "start": 244.3,
+          "end": 244.74
+        },
+        {
+          "word": "robots",
+          "start": 244.74,
+          "end": 245.28
+        },
+        {
+          "word": "with",
+          "start": 245.28,
+          "end": 245.88
+        },
+        {
+          "word": "different",
+          "start": 245.88,
+          "end": 246.46
+        },
+        {
+          "word": "personalities",
+          "start": 246.46,
+          "end": 247.3
+        },
+        {
+          "word": "and",
+          "start": 247.3,
+          "end": 247.84
+        },
+        {
+          "word": "behaviors",
+          "start": 247.84,
+          "end": 248.38
+        },
+        {
+          "word": "were,",
+          "start": 248.38,
+          "end": 249.16
+        },
+        {
+          "word": "and",
+          "start": 249.34,
+          "end": 249.7
+        },
+        {
+          "word": "still",
+          "start": 249.7,
+          "end": 250.04
+        },
+        {
+          "word": "are,",
+          "start": 250.04,
+          "end": 250.46
+        },
+        {
+          "word": "popular",
+          "start": 250.84,
+          "end": 251.22
+        },
+        {
+          "word": "with",
+          "start": 251.22,
+          "end": 251.58
+        },
+        {
+          "word": "cinema",
+          "start": 251.58,
+          "end": 252.02
+        },
+        {
+          "word": "fans",
+          "start": 252.02,
+          "end": 252.42
+        },
+        {
+          "word": "today.",
+          "start": 252.42,
+          "end": 253.16
+        }
+      ]
+    },
+    {
+      "index": 42,
+      "startMs": 254460,
+      "endMs": 261180,
+      "text": "Robots are already in use today within the construction industry in a range of shapes and sizes.",
+      "words": [
+        {
+          "word": "Robots",
+          "start": 254.46,
+          "end": 254.84
+        },
+        {
+          "word": "are",
+          "start": 254.84,
+          "end": 255.18
+        },
+        {
+          "word": "already",
+          "start": 255.18,
+          "end": 255.78
+        },
+        {
+          "word": "in",
+          "start": 255.78,
+          "end": 256.1
+        },
+        {
+          "word": "use",
+          "start": 256.1,
+          "end": 256.28
+        },
+        {
+          "word": "today",
+          "start": 256.28,
+          "end": 256.72
+        },
+        {
+          "word": "within",
+          "start": 256.72,
+          "end": 257.24
+        },
+        {
+          "word": "the",
+          "start": 257.24,
+          "end": 257.56
+        },
+        {
+          "word": "construction",
+          "start": 257.56,
+          "end": 257.96
+        },
+        {
+          "word": "industry",
+          "start": 257.96,
+          "end": 258.56
+        },
+        {
+          "word": "in",
+          "start": 258.56,
+          "end": 259.1
+        },
+        {
+          "word": "a",
+          "start": 259.1,
+          "end": 259.32
+        },
+        {
+          "word": "range",
+          "start": 259.32,
+          "end": 259.56
+        },
+        {
+          "word": "of",
+          "start": 259.56,
+          "end": 259.86
+        },
+        {
+          "word": "shapes",
+          "start": 259.86,
+          "end": 260.22
+        },
+        {
+          "word": "and",
+          "start": 260.22,
+          "end": 260.66
+        },
+        {
+          "word": "sizes.",
+          "start": 260.66,
+          "end": 261.18
+        }
+      ]
+    },
+    {
+      "index": 43,
+      "startMs": 261180,
+      "endMs": 268240,
+      "text": "They can lay bricks, move materials, and 3D print, among other things.",
+      "words": [
+        {
+          "word": "They",
+          "start": 261.18,
+          "end": 262.3
+        },
+        {
+          "word": "can",
+          "start": 262.3,
+          "end": 262.58
+        },
+        {
+          "word": "lay",
+          "start": 262.58,
+          "end": 262.86
+        },
+        {
+          "word": "bricks,",
+          "start": 262.86,
+          "end": 263.38
+        },
+        {
+          "word": "move",
+          "start": 263.94,
+          "end": 264.12
+        },
+        {
+          "word": "materials,",
+          "start": 264.12,
+          "end": 264.8
+        },
+        {
+          "word": "and",
+          "start": 265.5,
+          "end": 265.94
+        },
+        {
+          "word": "3D",
+          "start": 265.94,
+          "end": 266.62
+        },
+        {
+          "word": "print,",
+          "start": 266.62,
+          "end": 267.04
+        },
+        {
+          "word": "among",
+          "start": 267.38,
+          "end": 267.42
+        },
+        {
+          "word": "other",
+          "start": 267.42,
+          "end": 267.72
+        },
+        {
+          "word": "things.",
+          "start": 267.72,
+          "end": 268.24
+        }
+      ]
+    },
+    {
+      "index": 44,
+      "startMs": 269180,
+      "endMs": 279380,
+      "text": "However, the way of the future is swarm robotics, a new experimental technology that is developing very fast.",
+      "words": [
+        {
+          "word": "However,",
+          "start": 269.18,
+          "end": 269.72
+        },
+        {
+          "word": "the",
+          "start": 270.2,
+          "end": 270.42
+        },
+        {
+          "word": "way",
+          "start": 270.42,
+          "end": 270.7
+        },
+        {
+          "word": "of",
+          "start": 270.7,
+          "end": 270.98
+        },
+        {
+          "word": "the",
+          "start": 270.98,
+          "end": 271.18
+        },
+        {
+          "word": "future",
+          "start": 271.18,
+          "end": 271.56
+        },
+        {
+          "word": "is",
+          "start": 271.56,
+          "end": 272.36
+        },
+        {
+          "word": "swarm",
+          "start": 272.36,
+          "end": 273.08
+        },
+        {
+          "word": "robotics,",
+          "start": 273.08,
+          "end": 273.76
+        },
+        {
+          "word": "a",
+          "start": 274.48,
+          "end": 274.8
+        },
+        {
+          "word": "new",
+          "start": 274.8,
+          "end": 275.2
+        },
+        {
+          "word": "experimental",
+          "start": 275.2,
+          "end": 276.1
+        },
+        {
+          "word": "technology",
+          "start": 276.1,
+          "end": 276.8
+        },
+        {
+          "word": "that",
+          "start": 276.8,
+          "end": 277.3
+        },
+        {
+          "word": "is",
+          "start": 277.3,
+          "end": 277.58
+        },
+        {
+          "word": "developing",
+          "start": 277.58,
+          "end": 278.06
+        },
+        {
+          "word": "very",
+          "start": 278.06,
+          "end": 278.8
+        },
+        {
+          "word": "fast.",
+          "start": 278.8,
+          "end": 279.38
+        }
+      ]
+    },
+    {
+      "index": 45,
+      "startMs": 280660,
+      "endMs": 282420,
+      "text": "What is swarm robotics?",
+      "words": [
+        {
+          "word": "What",
+          "start": 280.66,
+          "end": 280.82
+        },
+        {
+          "word": "is",
+          "start": 280.82,
+          "end": 281.34
+        },
+        {
+          "word": "swarm",
+          "start": 281.34,
+          "end": 281.84
+        },
+        {
+          "word": "robotics?",
+          "start": 281.84,
+          "end": 282.42
+        }
+      ]
+    },
+    {
+      "index": 46,
+      "startMs": 282420,
+      "endMs": 292440,
+      "text": "Simply put, swarm robotics is a multi-robot system which consists of a large number of simple, individual robots.",
+      "words": [
+        {
+          "word": "Simply",
+          "start": 282.42,
+          "end": 283.76
+        },
+        {
+          "word": "put,",
+          "start": 283.76,
+          "end": 284.38
+        },
+        {
+          "word": "swarm",
+          "start": 284.76,
+          "end": 285.08
+        },
+        {
+          "word": "robotics",
+          "start": 285.08,
+          "end": 285.7
+        },
+        {
+          "word": "is",
+          "start": 285.7,
+          "end": 286.06
+        },
+        {
+          "word": "a",
+          "start": 286.06,
+          "end": 286.34
+        },
+        {
+          "word": "multi",
+          "start": 286.34,
+          "end": 286.74
+        },
+        {
+          "word": "-robot",
+          "start": 286.74,
+          "end": 287.18
+        },
+        {
+          "word": "system",
+          "start": 287.18,
+          "end": 287.62
+        },
+        {
+          "word": "which",
+          "start": 287.62,
+          "end": 288.16
+        },
+        {
+          "word": "consists",
+          "start": 288.16,
+          "end": 288.72
+        },
+        {
+          "word": "of",
+          "start": 288.72,
+          "end": 289.14
+        },
+        {
+          "word": "a",
+          "start": 289.14,
+          "end": 289.3
+        },
+        {
+          "word": "large",
+          "start": 289.3,
+          "end": 289.58
+        },
+        {
+          "word": "number",
+          "start": 289.58,
+          "end": 290.02
+        },
+        {
+          "word": "of",
+          "start": 290.02,
+          "end": 290.4
+        },
+        {
+          "word": "simple,",
+          "start": 290.4,
+          "end": 290.86
+        },
+        {
+          "word": "individual",
+          "start": 291.44,
+          "end": 291.86
+        },
+        {
+          "word": "robots.",
+          "start": 291.86,
+          "end": 292.44
+        }
+      ]
+    },
+    {
+      "index": 47,
+      "startMs": 293320,
+      "endMs": 301180,
+      "text": "Think of it like a family of bees, called a swarm, that work individually but for the benefit of the whole family.",
+      "words": [
+        {
+          "word": "Think",
+          "start": 293.32,
+          "end": 293.62
+        },
+        {
+          "word": "of",
+          "start": 293.62,
+          "end": 293.8
+        },
+        {
+          "word": "it",
+          "start": 293.8,
+          "end": 294.02
+        },
+        {
+          "word": "like",
+          "start": 294.02,
+          "end": 294.22
+        },
+        {
+          "word": "a",
+          "start": 294.22,
+          "end": 294.38
+        },
+        {
+          "word": "family",
+          "start": 294.38,
+          "end": 294.8
+        },
+        {
+          "word": "of",
+          "start": 294.8,
+          "end": 295.06
+        },
+        {
+          "word": "bees,",
+          "start": 295.06,
+          "end": 295.46
+        },
+        {
+          "word": "called",
+          "start": 295.82,
+          "end": 296.1
+        },
+        {
+          "word": "a",
+          "start": 296.1,
+          "end": 296.38
+        },
+        {
+          "word": "swarm,",
+          "start": 296.38,
+          "end": 296.66
+        },
+        {
+          "word": "that",
+          "start": 297.08,
+          "end": 297.44
+        },
+        {
+          "word": "work",
+          "start": 297.44,
+          "end": 297.76
+        },
+        {
+          "word": "individually",
+          "start": 297.76,
+          "end": 298.4
+        },
+        {
+          "word": "but",
+          "start": 298.4,
+          "end": 299.02
+        },
+        {
+          "word": "for",
+          "start": 299.02,
+          "end": 299.26
+        },
+        {
+          "word": "the",
+          "start": 299.26,
+          "end": 299.56
+        },
+        {
+          "word": "benefit",
+          "start": 299.56,
+          "end": 299.92
+        },
+        {
+          "word": "of",
+          "start": 299.92,
+          "end": 300.2
+        },
+        {
+          "word": "the",
+          "start": 300.2,
+          "end": 300.4
+        },
+        {
+          "word": "whole",
+          "start": 300.4,
+          "end": 300.66
+        },
+        {
+          "word": "family.",
+          "start": 300.66,
+          "end": 301.18
+        }
+      ]
+    },
+    {
+      "index": 48,
+      "startMs": 302560,
+      "endMs": 309180,
+      "text": "One of the advantages of swarm robotics is that it can be designed to work on large-scale projects,",
+      "words": [
+        {
+          "word": "One",
+          "start": 302.56,
+          "end": 302.76
+        },
+        {
+          "word": "of",
+          "start": 302.76,
+          "end": 302.94
+        },
+        {
+          "word": "the",
+          "start": 302.94,
+          "end": 303.18
+        },
+        {
+          "word": "advantages",
+          "start": 303.18,
+          "end": 303.8
+        },
+        {
+          "word": "of",
+          "start": 303.8,
+          "end": 304.08
+        },
+        {
+          "word": "swarm",
+          "start": 304.08,
+          "end": 304.4
+        },
+        {
+          "word": "robotics",
+          "start": 304.4,
+          "end": 304.92
+        },
+        {
+          "word": "is",
+          "start": 304.92,
+          "end": 305.52
+        },
+        {
+          "word": "that",
+          "start": 305.52,
+          "end": 305.74
+        },
+        {
+          "word": "it",
+          "start": 305.74,
+          "end": 305.86
+        },
+        {
+          "word": "can",
+          "start": 305.86,
+          "end": 306.06
+        },
+        {
+          "word": "be",
+          "start": 306.06,
+          "end": 306.32
+        },
+        {
+          "word": "designed",
+          "start": 306.32,
+          "end": 306.76
+        },
+        {
+          "word": "to",
+          "start": 306.76,
+          "end": 307.08
+        },
+        {
+          "word": "work",
+          "start": 307.08,
+          "end": 307.38
+        },
+        {
+          "word": "on",
+          "start": 307.38,
+          "end": 307.72
+        },
+        {
+          "word": "large",
+          "start": 307.72,
+          "end": 308.12
+        },
+        {
+          "word": "-scale",
+          "start": 308.12,
+          "end": 308.5
+        },
+        {
+          "word": "projects,",
+          "start": 308.5,
+          "end": 309.18
+        }
+      ]
+    },
+    {
+      "index": 49,
+      "startMs": 309180,
+      "endMs": 314600,
+      "text": "and they are a self-organizing network, making them extremely efficient.",
+      "words": [
+        {
+          "word": "and",
+          "start": 309.18,
+          "end": 309.68
+        },
+        {
+          "word": "they",
+          "start": 309.68,
+          "end": 309.84
+        },
+        {
+          "word": "are",
+          "start": 309.84,
+          "end": 310.14
+        },
+        {
+          "word": "a",
+          "start": 310.14,
+          "end": 310.4
+        },
+        {
+          "word": "self",
+          "start": 310.4,
+          "end": 310.76
+        },
+        {
+          "word": "-organizing",
+          "start": 310.76,
+          "end": 311.38
+        },
+        {
+          "word": "network,",
+          "start": 311.38,
+          "end": 311.98
+        },
+        {
+          "word": "making",
+          "start": 312.26,
+          "end": 312.64
+        },
+        {
+          "word": "them",
+          "start": 312.64,
+          "end": 313.02
+        },
+        {
+          "word": "extremely",
+          "start": 313.02,
+          "end": 313.88
+        },
+        {
+          "word": "efficient.",
+          "start": 313.88,
+          "end": 314.6
+        }
+      ]
+    },
+    {
+      "index": 50,
+      "startMs": 316220,
+      "endMs": 321660,
+      "text": "Several companies have started working on the next stage of robots and robot networks,",
+      "words": [
+        {
+          "word": "Several",
+          "start": 316.22,
+          "end": 316.6
+        },
+        {
+          "word": "companies",
+          "start": 316.6,
+          "end": 317.18
+        },
+        {
+          "word": "have",
+          "start": 317.18,
+          "end": 317.46
+        },
+        {
+          "word": "started",
+          "start": 317.46,
+          "end": 317.84
+        },
+        {
+          "word": "working",
+          "start": 317.84,
+          "end": 318.32
+        },
+        {
+          "word": "on",
+          "start": 318.32,
+          "end": 318.58
+        },
+        {
+          "word": "the",
+          "start": 318.58,
+          "end": 318.78
+        },
+        {
+          "word": "next",
+          "start": 318.78,
+          "end": 319.2
+        },
+        {
+          "word": "stage",
+          "start": 319.2,
+          "end": 319.6
+        },
+        {
+          "word": "of",
+          "start": 319.6,
+          "end": 319.9
+        },
+        {
+          "word": "robots",
+          "start": 319.9,
+          "end": 320.32
+        },
+        {
+          "word": "and",
+          "start": 320.32,
+          "end": 320.78
+        },
+        {
+          "word": "robot",
+          "start": 320.78,
+          "end": 321.18
+        },
+        {
+          "word": "networks,",
+          "start": 321.18,
+          "end": 321.66
+        }
+      ]
+    },
+    {
+      "index": 51,
+      "startMs": 322120,
+      "endMs": 327880,
+      "text": "which is the development of mobility, the ability to move from one place to another.",
+      "words": [
+        {
+          "word": "which",
+          "start": 322.12,
+          "end": 322.24
+        },
+        {
+          "word": "is",
+          "start": 322.24,
+          "end": 322.54
+        },
+        {
+          "word": "the",
+          "start": 322.54,
+          "end": 322.74
+        },
+        {
+          "word": "development",
+          "start": 322.74,
+          "end": 323.26
+        },
+        {
+          "word": "of",
+          "start": 323.26,
+          "end": 323.6
+        },
+        {
+          "word": "mobility,",
+          "start": 323.6,
+          "end": 324.16
+        },
+        {
+          "word": "the",
+          "start": 324.84,
+          "end": 325.02
+        },
+        {
+          "word": "ability",
+          "start": 325.02,
+          "end": 325.46
+        },
+        {
+          "word": "to",
+          "start": 325.46,
+          "end": 325.82
+        },
+        {
+          "word": "move",
+          "start": 325.82,
+          "end": 326.16
+        },
+        {
+          "word": "from",
+          "start": 326.16,
+          "end": 326.5
+        },
+        {
+          "word": "one",
+          "start": 326.5,
+          "end": 326.8
+        },
+        {
+          "word": "place",
+          "start": 326.8,
+          "end": 327.12
+        },
+        {
+          "word": "to",
+          "start": 327.12,
+          "end": 327.48
+        },
+        {
+          "word": "another.",
+          "start": 327.48,
+          "end": 327.88
+        }
+      ]
+    },
+    {
+      "index": 52,
+      "startMs": 329060,
+      "endMs": 334580,
+      "text": "This is positive news for architecture, design, and construction industries,",
+      "words": [
+        {
+          "word": "This",
+          "start": 329.06,
+          "end": 329.36
+        },
+        {
+          "word": "is",
+          "start": 329.36,
+          "end": 329.8
+        },
+        {
+          "word": "positive",
+          "start": 329.8,
+          "end": 330.32
+        },
+        {
+          "word": "news",
+          "start": 330.32,
+          "end": 330.76
+        },
+        {
+          "word": "for",
+          "start": 330.76,
+          "end": 331.14
+        },
+        {
+          "word": "architecture,",
+          "start": 331.14,
+          "end": 331.96
+        },
+        {
+          "word": "design,",
+          "start": 332.28,
+          "end": 332.74
+        },
+        {
+          "word": "and",
+          "start": 333.18,
+          "end": 333.44
+        },
+        {
+          "word": "construction",
+          "start": 333.44,
+          "end": 333.98
+        },
+        {
+          "word": "industries,",
+          "start": 333.98,
+          "end": 334.58
+        }
+      ]
+    },
+    {
+      "index": 53,
+      "startMs": 334580,
+      "endMs": 344500,
+      "text": "as the ability to use robots on rough ground, which is hilly or rocky, for example, would be a huge step forward from where we are now.",
+      "words": [
+        {
+          "word": "as",
+          "start": 334.58,
+          "end": 335.12
+        },
+        {
+          "word": "the",
+          "start": 335.12,
+          "end": 335.38
+        },
+        {
+          "word": "ability",
+          "start": 335.38,
+          "end": 335.88
+        },
+        {
+          "word": "to",
+          "start": 335.88,
+          "end": 336.28
+        },
+        {
+          "word": "use",
+          "start": 336.28,
+          "end": 336.56
+        },
+        {
+          "word": "robots",
+          "start": 336.56,
+          "end": 337.02
+        },
+        {
+          "word": "on",
+          "start": 337.02,
+          "end": 337.34
+        },
+        {
+          "word": "rough",
+          "start": 337.34,
+          "end": 337.58
+        },
+        {
+          "word": "ground,",
+          "start": 337.58,
+          "end": 338.1
+        },
+        {
+          "word": "which",
+          "start": 338.5,
+          "end": 338.66
+        },
+        {
+          "word": "is",
+          "start": 338.66,
+          "end": 339.0
+        },
+        {
+          "word": "hilly",
+          "start": 339.0,
+          "end": 339.24
+        },
+        {
+          "word": "or",
+          "start": 339.24,
+          "end": 339.54
+        },
+        {
+          "word": "rocky,",
+          "start": 339.54,
+          "end": 339.9
+        },
+        {
+          "word": "for",
+          "start": 339.96,
+          "end": 340.2
+        },
+        {
+          "word": "example,",
+          "start": 340.2,
+          "end": 340.72
+        },
+        {
+          "word": "would",
+          "start": 341.18,
+          "end": 341.34
+        },
+        {
+          "word": "be",
+          "start": 341.34,
+          "end": 341.64
+        },
+        {
+          "word": "a",
+          "start": 341.64,
+          "end": 341.98
+        },
+        {
+          "word": "huge",
+          "start": 341.98,
+          "end": 342.34
+        },
+        {
+          "word": "step",
+          "start": 342.34,
+          "end": 342.64
+        },
+        {
+          "word": "forward",
+          "start": 342.64,
+          "end": 343.12
+        },
+        {
+          "word": "from",
+          "start": 343.12,
+          "end": 343.36
+        },
+        {
+          "word": "where",
+          "start": 343.36,
+          "end": 343.6
+        },
+        {
+          "word": "we",
+          "start": 343.6,
+          "end": 343.78
+        },
+        {
+          "word": "are",
+          "start": 343.78,
+          "end": 344.0
+        },
+        {
+          "word": "now.",
+          "start": 344.0,
+          "end": 344.5
+        }
+      ]
+    },
+    {
+      "index": 54,
+      "startMs": 346280,
+      "endMs": 349360,
+      "text": "Right, well, that's all we have time for today.",
+      "words": [
+        {
+          "word": "Right,",
+          "start": 346.28,
+          "end": 346.62
+        },
+        {
+          "word": "well,",
+          "start": 347.04,
+          "end": 347.44
+        },
+        {
+          "word": "that's",
+          "start": 347.46,
+          "end": 347.84
+        },
+        {
+          "word": "all",
+          "start": 347.84,
+          "end": 348.12
+        },
+        {
+          "word": "we",
+          "start": 348.12,
+          "end": 348.28
+        },
+        {
+          "word": "have",
+          "start": 348.28,
+          "end": 348.46
+        },
+        {
+          "word": "time",
+          "start": 348.46,
+          "end": 348.72
+        },
+        {
+          "word": "for",
+          "start": 348.72,
+          "end": 348.96
+        },
+        {
+          "word": "today.",
+          "start": 348.96,
+          "end": 349.36
+        }
+      ]
+    },
+    {
+      "index": 55,
+      "startMs": 350000,
+      "endMs": 362080,
+      "text": "I think you'll agree from these innovations that this is by far the most exciting time to be involved in the construction industry as a developer, engineer, or architect.",
+      "words": [
+        {
+          "word": "I",
+          "start": 350.0,
+          "end": 350.22
+        },
+        {
+          "word": "think",
+          "start": 350.22,
+          "end": 350.46
+        },
+        {
+          "word": "you'll",
+          "start": 350.46,
+          "end": 350.76
+        },
+        {
+          "word": "agree",
+          "start": 350.76,
+          "end": 351.04
+        },
+        {
+          "word": "from",
+          "start": 351.04,
+          "end": 351.38
+        },
+        {
+          "word": "these",
+          "start": 351.38,
+          "end": 351.78
+        },
+        {
+          "word": "innovations",
+          "start": 351.78,
+          "end": 352.44
+        },
+        {
+          "word": "that",
+          "start": 352.44,
+          "end": 353.02
+        },
+        {
+          "word": "this",
+          "start": 353.02,
+          "end": 353.3
+        },
+        {
+          "word": "is",
+          "start": 353.3,
+          "end": 353.54
+        },
+        {
+          "word": "by",
+          "start": 353.54,
+          "end": 353.76
+        },
+        {
+          "word": "far",
+          "start": 353.76,
+          "end": 354.02
+        },
+        {
+          "word": "the",
+          "start": 354.02,
+          "end": 354.38
+        },
+        {
+          "word": "most",
+          "start": 354.38,
+          "end": 354.78
+        },
+        {
+          "word": "exciting",
+          "start": 354.78,
+          "end": 355.58
+        },
+        {
+          "word": "time",
+          "start": 355.58,
+          "end": 356.0
+        },
+        {
+          "word": "to",
+          "start": 356.0,
+          "end": 356.24
+        },
+        {
+          "word": "be",
+          "start": 356.24,
+          "end": 356.52
+        },
+        {
+          "word": "involved",
+          "start": 356.52,
+          "end": 357.02
+        },
+        {
+          "word": "in",
+          "start": 357.02,
+          "end": 357.36
+        },
+        {
+          "word": "the",
+          "start": 357.36,
+          "end": 357.54
+        },
+        {
+          "word": "construction",
+          "start": 357.54,
+          "end": 358.02
+        },
+        {
+          "word": "industry",
+          "start": 358.02,
+          "end": 358.6
+        },
+        {
+          "word": "as",
+          "start": 358.6,
+          "end": 358.98
+        },
+        {
+          "word": "a",
+          "start": 358.98,
+          "end": 359.24
+        },
+        {
+          "word": "developer,",
+          "start": 359.24,
+          "end": 359.7
+        },
+        {
+          "word": "engineer,",
+          "start": 360.28,
+          "end": 360.7
+        },
+        {
+          "word": "or",
+          "start": 361.22,
+          "end": 361.6
+        },
+        {
+          "word": "architect.",
+          "start": 361.6,
+          "end": 362.08
+        }
+      ]
+    },
+    {
+      "index": 56,
+      "startMs": 362080,
+      "endMs": 366420,
+      "text": "Thank you. Now, any questions?",
+      "words": [
+        {
+          "word": "Thank",
+          "start": 362.08,
+          "end": 363.28
+        },
+        {
+          "word": "you.",
+          "start": 363.28,
+          "end": 363.98
+        },
+        {
+          "word": "Now,",
+          "start": 364.68,
+          "end": 364.9
+        },
+        {
+          "word": "any",
+          "start": 365.6,
+          "end": 365.86
+        },
+        {
+          "word": "questions?",
+          "start": 365.86,
+          "end": 366.42
+        }
+      ]
+    }
+  ]
+}

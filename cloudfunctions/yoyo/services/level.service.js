@@ -3,7 +3,7 @@ const study = require('../facades/study.facade');
 const LEVEL_CATEGORY_GROUPS = {
   A2: ['newconcept2', 'unlock2', 'unlock2workbook'],
   B1: ['newconcept3', 'unlock3textbook', 'unlock3'],
-  B2: ['newconcept4', 'unlock4']
+  B2: ['newconcept4', 'unlock4', 'unlock4workbook']
 };
 
 const STANDALONE_CATEGORY_IDS = [].concat(LEVEL_CATEGORY_GROUPS.A2, LEVEL_CATEGORY_GROUPS.B1, LEVEL_CATEGORY_GROUPS.B2);
@@ -89,7 +89,8 @@ async function getLevelOverview(event) {
     unlock3textbook: { directTasks: [], overview: [] },
     unlock3: { directTasks: [], overview: [] },
     newconcept4: { directTasks: [], overview: [] },
-    unlock4: { directTasks: [], overview: [] }
+    unlock4: { directTasks: [], overview: [] },
+    unlock4workbook: { directTasks: [], overview: [] }
   } : Object.fromEntries(await Promise.all(standaloneCategoryIds.map(async (categoryId) => {
     const directTasks = await study.resolveStandaloneCategoryTasks(categoryId, ctx.child.childId, today);
     const overview = directTasks.length
@@ -160,6 +161,8 @@ async function getLevelOverview(event) {
       newconcept4DirectCount: standaloneOverviews.newconcept4.directTasks.length,
       unlock4CatalogCount: study.getCatalog('unlock4').length,
       unlock4DirectCount: standaloneOverviews.unlock4.directTasks.length,
+      unlock4WorkbookCatalogCount: study.getCatalog('unlock4workbook').length,
+      unlock4WorkbookDirectCount: standaloneOverviews.unlock4workbook.directTasks.length,
       resourceDebug: study.getResourceDebugSnapshot()
     },
     planDayIndex: dashboard.planDayIndex,

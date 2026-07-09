@@ -11,12 +11,13 @@ const CATEGORY_LABELS = {
   unlock3textbook: 'Unlock 3 课本',
   unlock3: 'Unlock 3 练习册',
   unlock4: 'Unlock 4 课本',
+  unlock4workbook: 'Unlock 4 练习册',
   song: 'Songs'
 };
 
 const NEW_CONCEPT_CATEGORIES = ['newconcept1', 'newconcept2', 'newconcept3', 'newconcept4'];
-const UNLOCK_CATEGORIES = ['unlock1', 'unlock1workbook', 'unlock2', 'unlock2workbook', 'unlock3textbook', 'unlock3', 'unlock4'];
-const UNLOCK_WORKBOOK_CATEGORIES = ['unlock1workbook', 'unlock2workbook', 'unlock3'];
+const UNLOCK_CATEGORIES = ['unlock1', 'unlock1workbook', 'unlock2', 'unlock2workbook', 'unlock3textbook', 'unlock3', 'unlock4', 'unlock4workbook'];
+const UNLOCK_WORKBOOK_CATEGORIES = ['unlock1workbook', 'unlock2workbook', 'unlock3', 'unlock4workbook'];
 
 function getCategoryLabel(category) {
   return CATEGORY_LABELS[category] || category;
@@ -47,10 +48,10 @@ function getTaskPresentation(task) {
     };
   }
   if (UNLOCK_CATEGORIES.includes(task.category)) {
-    const seriesNumber = task.category === 'unlock1workbook' ? '1' : task.category === 'unlock2workbook' ? '2' : task.category === 'unlock3textbook' ? '3' : (task.category.replace('unlock', '') || '1');
+    const seriesNumber = task.category === 'unlock1workbook' ? '1' : task.category === 'unlock2workbook' ? '2' : task.category === 'unlock3textbook' ? '3' : task.category === 'unlock4workbook' ? '4' : (task.category.replace('unlock', '') || '1');
     const levelLabel = (task.category === 'unlock1' || task.category === 'unlock1workbook') ? 'A1' : (task.category === 'unlock2' || task.category === 'unlock2workbook') ? 'A2' : (task.category === 'unlock3' || task.category === 'unlock3textbook') ? 'B1' : 'B2';
     const materialType = UNLOCK_WORKBOOK_CATEGORIES.includes(task.category) ? '练习册' : '课本';
-    const match = title.match(/(?:Unlock2e_|UL2v2_)?(?:A1|L1|L2|L3|B2)[_-]*(?:TST_LS_)?(?:U)?(\d+\.\d+)/i);
+    const match = title.match(/(?:Unlock2e_|UL2v2_)?(?:A1|L1|L2|L3|L4|B2)[_-]*(?:TST_LS_)?(?:U)?(\d+\.\d+)/i);
     return {
       displayTitle: match ? match[1] : title,
       displaySubtitle: `${levelLabel} ${materialType}听力`,

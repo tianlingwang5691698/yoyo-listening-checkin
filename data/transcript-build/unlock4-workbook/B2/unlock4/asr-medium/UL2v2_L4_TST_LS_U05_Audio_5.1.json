@@ -1,0 +1,707 @@
+{
+  "model": "medium",
+  "language": "en",
+  "text": "Track 5.1 I'm not happy with this work at all. I think the builders decided to cut corners. I'm sure they used the cheapest materials they could find. Taking care of my brother when he was sick wasn't a bed of roses. He cried a lot and when he wasn't crying he was constantly asking for things. Rob, can I have a snack? Rob, bring me my red car. Rob, I'm bored. I'm not sure your idea works. I'm sorry, but I think we need to go back to the drawing board. We need to revisit the original idea. I've been sitting in this traffic jam for two hours and time is money. I earn £40 an hour, so I've just lost £80.",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 2000,
+      "text": "Track 5.1",
+      "words": [
+        {
+          "word": "Track",
+          "start": 0.0,
+          "end": 0.7
+        },
+        {
+          "word": "5",
+          "start": 0.7,
+          "end": 1.24
+        },
+        {
+          "word": ".1",
+          "start": 1.24,
+          "end": 2.0
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 3700,
+      "endMs": 9240,
+      "text": "I'm not happy with this work at all. I think the builders decided to cut corners.",
+      "words": [
+        {
+          "word": "I'm",
+          "start": 3.6999999999999993,
+          "end": 4.34
+        },
+        {
+          "word": "not",
+          "start": 4.34,
+          "end": 4.54
+        },
+        {
+          "word": "happy",
+          "start": 4.54,
+          "end": 4.88
+        },
+        {
+          "word": "with",
+          "start": 4.88,
+          "end": 5.1
+        },
+        {
+          "word": "this",
+          "start": 5.1,
+          "end": 5.34
+        },
+        {
+          "word": "work",
+          "start": 5.34,
+          "end": 5.56
+        },
+        {
+          "word": "at",
+          "start": 5.56,
+          "end": 5.84
+        },
+        {
+          "word": "all.",
+          "start": 5.84,
+          "end": 6.1
+        },
+        {
+          "word": "I",
+          "start": 6.74,
+          "end": 7.0
+        },
+        {
+          "word": "think",
+          "start": 7.0,
+          "end": 7.24
+        },
+        {
+          "word": "the",
+          "start": 7.24,
+          "end": 7.5
+        },
+        {
+          "word": "builders",
+          "start": 7.5,
+          "end": 7.76
+        },
+        {
+          "word": "decided",
+          "start": 7.76,
+          "end": 8.26
+        },
+        {
+          "word": "to",
+          "start": 8.26,
+          "end": 8.48
+        },
+        {
+          "word": "cut",
+          "start": 8.48,
+          "end": 8.7
+        },
+        {
+          "word": "corners.",
+          "start": 8.7,
+          "end": 9.24
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 9960,
+      "endMs": 12840,
+      "text": "I'm sure they used the cheapest materials they could find.",
+      "words": [
+        {
+          "word": "I'm",
+          "start": 9.96,
+          "end": 10.14
+        },
+        {
+          "word": "sure",
+          "start": 10.14,
+          "end": 10.4
+        },
+        {
+          "word": "they",
+          "start": 10.4,
+          "end": 10.74
+        },
+        {
+          "word": "used",
+          "start": 10.74,
+          "end": 11.0
+        },
+        {
+          "word": "the",
+          "start": 11.0,
+          "end": 11.24
+        },
+        {
+          "word": "cheapest",
+          "start": 11.24,
+          "end": 11.66
+        },
+        {
+          "word": "materials",
+          "start": 11.66,
+          "end": 12.22
+        },
+        {
+          "word": "they",
+          "start": 12.22,
+          "end": 12.44
+        },
+        {
+          "word": "could",
+          "start": 12.44,
+          "end": 12.7
+        },
+        {
+          "word": "find.",
+          "start": 12.7,
+          "end": 13.02
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 15720,
+      "endMs": 19820,
+      "text": "Taking care of my brother when he was sick wasn't a bed of roses.",
+      "words": [
+        {
+          "word": "Taking",
+          "start": 15.72,
+          "end": 15.78
+        },
+        {
+          "word": "care",
+          "start": 15.78,
+          "end": 16.22
+        },
+        {
+          "word": "of",
+          "start": 16.22,
+          "end": 16.42
+        },
+        {
+          "word": "my",
+          "start": 16.42,
+          "end": 16.66
+        },
+        {
+          "word": "brother",
+          "start": 16.66,
+          "end": 17.08
+        },
+        {
+          "word": "when",
+          "start": 17.08,
+          "end": 17.44
+        },
+        {
+          "word": "he",
+          "start": 17.44,
+          "end": 17.68
+        },
+        {
+          "word": "was",
+          "start": 17.68,
+          "end": 18.0
+        },
+        {
+          "word": "sick",
+          "start": 18.0,
+          "end": 18.3
+        },
+        {
+          "word": "wasn't",
+          "start": 18.3,
+          "end": 18.9
+        },
+        {
+          "word": "a",
+          "start": 18.9,
+          "end": 19.06
+        },
+        {
+          "word": "bed",
+          "start": 19.06,
+          "end": 19.16
+        },
+        {
+          "word": "of",
+          "start": 19.16,
+          "end": 19.34
+        },
+        {
+          "word": "roses.",
+          "start": 19.34,
+          "end": 19.82
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 20460,
+      "endMs": 26200,
+      "text": "He cried a lot and when he wasn't crying he was constantly asking for things.",
+      "words": [
+        {
+          "word": "He",
+          "start": 20.46,
+          "end": 20.8
+        },
+        {
+          "word": "cried",
+          "start": 20.8,
+          "end": 21.16
+        },
+        {
+          "word": "a",
+          "start": 21.16,
+          "end": 21.36
+        },
+        {
+          "word": "lot",
+          "start": 21.36,
+          "end": 21.78
+        },
+        {
+          "word": "and",
+          "start": 21.78,
+          "end": 22.44
+        },
+        {
+          "word": "when",
+          "start": 22.44,
+          "end": 22.66
+        },
+        {
+          "word": "he",
+          "start": 22.66,
+          "end": 22.94
+        },
+        {
+          "word": "wasn't",
+          "start": 22.94,
+          "end": 23.3
+        },
+        {
+          "word": "crying",
+          "start": 23.3,
+          "end": 23.84
+        },
+        {
+          "word": "he",
+          "start": 23.84,
+          "end": 24.16
+        },
+        {
+          "word": "was",
+          "start": 24.16,
+          "end": 24.44
+        },
+        {
+          "word": "constantly",
+          "start": 24.44,
+          "end": 24.96
+        },
+        {
+          "word": "asking",
+          "start": 24.96,
+          "end": 25.48
+        },
+        {
+          "word": "for",
+          "start": 25.48,
+          "end": 25.78
+        },
+        {
+          "word": "things.",
+          "start": 25.78,
+          "end": 26.2
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "startMs": 26200,
+      "endMs": 32280,
+      "text": "Rob, can I have a snack? Rob, bring me my red car. Rob, I'm bored.",
+      "words": [
+        {
+          "word": "Rob,",
+          "start": 26.2,
+          "end": 27.16
+        },
+        {
+          "word": "can",
+          "start": 27.24,
+          "end": 27.42
+        },
+        {
+          "word": "I",
+          "start": 27.42,
+          "end": 27.54
+        },
+        {
+          "word": "have",
+          "start": 27.54,
+          "end": 27.72
+        },
+        {
+          "word": "a",
+          "start": 27.72,
+          "end": 28.02
+        },
+        {
+          "word": "snack?",
+          "start": 28.02,
+          "end": 28.34
+        },
+        {
+          "word": "Rob,",
+          "start": 28.7,
+          "end": 29.18
+        },
+        {
+          "word": "bring",
+          "start": 29.3,
+          "end": 29.5
+        },
+        {
+          "word": "me",
+          "start": 29.5,
+          "end": 29.68
+        },
+        {
+          "word": "my",
+          "start": 29.68,
+          "end": 29.86
+        },
+        {
+          "word": "red",
+          "start": 29.86,
+          "end": 30.12
+        },
+        {
+          "word": "car.",
+          "start": 30.12,
+          "end": 30.52
+        },
+        {
+          "word": "Rob,",
+          "start": 30.82,
+          "end": 31.28
+        },
+        {
+          "word": "I'm",
+          "start": 31.42,
+          "end": 31.66
+        },
+        {
+          "word": "bored.",
+          "start": 31.66,
+          "end": 32.28
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "startMs": 34640,
+      "endMs": 41260,
+      "text": "I'm not sure your idea works. I'm sorry, but I think we need to go back to the drawing board.",
+      "words": [
+        {
+          "word": "I'm",
+          "start": 34.64,
+          "end": 34.96
+        },
+        {
+          "word": "not",
+          "start": 34.96,
+          "end": 35.32
+        },
+        {
+          "word": "sure",
+          "start": 35.32,
+          "end": 35.64
+        },
+        {
+          "word": "your",
+          "start": 35.64,
+          "end": 36.02
+        },
+        {
+          "word": "idea",
+          "start": 36.02,
+          "end": 36.28
+        },
+        {
+          "word": "works.",
+          "start": 36.28,
+          "end": 36.86
+        },
+        {
+          "word": "I'm",
+          "start": 37.54,
+          "end": 37.88
+        },
+        {
+          "word": "sorry,",
+          "start": 37.88,
+          "end": 38.22
+        },
+        {
+          "word": "but",
+          "start": 38.58,
+          "end": 38.9
+        },
+        {
+          "word": "I",
+          "start": 38.9,
+          "end": 39.1
+        },
+        {
+          "word": "think",
+          "start": 39.1,
+          "end": 39.28
+        },
+        {
+          "word": "we",
+          "start": 39.28,
+          "end": 39.44
+        },
+        {
+          "word": "need",
+          "start": 39.44,
+          "end": 39.66
+        },
+        {
+          "word": "to",
+          "start": 39.66,
+          "end": 39.74
+        },
+        {
+          "word": "go",
+          "start": 39.74,
+          "end": 39.98
+        },
+        {
+          "word": "back",
+          "start": 39.98,
+          "end": 40.2
+        },
+        {
+          "word": "to",
+          "start": 40.2,
+          "end": 40.38
+        },
+        {
+          "word": "the",
+          "start": 40.38,
+          "end": 40.62
+        },
+        {
+          "word": "drawing",
+          "start": 40.62,
+          "end": 40.88
+        },
+        {
+          "word": "board.",
+          "start": 40.88,
+          "end": 41.26
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "startMs": 41880,
+      "endMs": 44400,
+      "text": "We need to revisit the original idea.",
+      "words": [
+        {
+          "word": "We",
+          "start": 41.88,
+          "end": 42.04
+        },
+        {
+          "word": "need",
+          "start": 42.04,
+          "end": 42.32
+        },
+        {
+          "word": "to",
+          "start": 42.32,
+          "end": 42.52
+        },
+        {
+          "word": "revisit",
+          "start": 42.52,
+          "end": 43.0
+        },
+        {
+          "word": "the",
+          "start": 43.0,
+          "end": 43.42
+        },
+        {
+          "word": "original",
+          "start": 43.42,
+          "end": 43.86
+        },
+        {
+          "word": "idea.",
+          "start": 43.86,
+          "end": 44.4
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "startMs": 46300,
+      "endMs": 51240,
+      "text": "I've been sitting in this traffic jam for two hours and time is money.",
+      "words": [
+        {
+          "word": "I've",
+          "start": 46.3,
+          "end": 46.84
+        },
+        {
+          "word": "been",
+          "start": 46.84,
+          "end": 47.16
+        },
+        {
+          "word": "sitting",
+          "start": 47.16,
+          "end": 47.54
+        },
+        {
+          "word": "in",
+          "start": 47.54,
+          "end": 47.68
+        },
+        {
+          "word": "this",
+          "start": 47.68,
+          "end": 48.02
+        },
+        {
+          "word": "traffic",
+          "start": 48.02,
+          "end": 48.4
+        },
+        {
+          "word": "jam",
+          "start": 48.4,
+          "end": 48.62
+        },
+        {
+          "word": "for",
+          "start": 48.62,
+          "end": 48.88
+        },
+        {
+          "word": "two",
+          "start": 48.88,
+          "end": 49.2
+        },
+        {
+          "word": "hours",
+          "start": 49.2,
+          "end": 49.74
+        },
+        {
+          "word": "and",
+          "start": 49.74,
+          "end": 50.16
+        },
+        {
+          "word": "time",
+          "start": 50.16,
+          "end": 50.54
+        },
+        {
+          "word": "is",
+          "start": 50.54,
+          "end": 50.84
+        },
+        {
+          "word": "money.",
+          "start": 50.84,
+          "end": 51.24
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "startMs": 51240,
+      "endMs": 55920,
+      "text": "I earn £40 an hour, so I've just lost £80.",
+      "words": [
+        {
+          "word": "I",
+          "start": 51.24,
+          "end": 52.26
+        },
+        {
+          "word": "earn",
+          "start": 52.26,
+          "end": 52.54
+        },
+        {
+          "word": "£40",
+          "start": 52.54,
+          "end": 53.2
+        },
+        {
+          "word": "an",
+          "start": 53.2,
+          "end": 53.5
+        },
+        {
+          "word": "hour,",
+          "start": 53.5,
+          "end": 53.88
+        },
+        {
+          "word": "so",
+          "start": 54.14,
+          "end": 54.38
+        },
+        {
+          "word": "I've",
+          "start": 54.38,
+          "end": 54.56
+        },
+        {
+          "word": "just",
+          "start": 54.56,
+          "end": 54.88
+        },
+        {
+          "word": "lost",
+          "start": 54.88,
+          "end": 55.26
+        },
+        {
+          "word": "£80.",
+          "start": 55.26,
+          "end": 55.92
+        }
+      ]
+    }
+  ]
+}

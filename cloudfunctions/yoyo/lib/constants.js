@@ -14,6 +14,7 @@ const TRANSCRIPT_BUNDLE_PATHS = {
   unlock3textbook: ['_transcripts/B1/unlock3-textbook/bundle.json'],
   unlock3: ['_transcripts/B1/unlock3/bundle.json'],
   unlock4: ['_transcripts/B2/unlock4/bundle.json'],
+  unlock4workbook: ['_transcripts/B2/unlock4/workbook-bundle-wordaligned-v1.json'],
   song: ['_transcripts/A1/songs/bundle.json']
 };
 const STORAGE_ROOTS = {
@@ -29,6 +30,7 @@ const STORAGE_ROOTS = {
   unlock3textbook: 'B1/Unlock3/Textbook Audio',
   unlock3: 'B1/Unlock3/Class Audio',
   unlock4: 'B2/Unlock4/Class Audio',
+  unlock4workbook: 'B2/unlock4 练习册/Audio',
   song: 'A1/Super simple songs'
 };
 const REQUIRED_COLLECTIONS = [

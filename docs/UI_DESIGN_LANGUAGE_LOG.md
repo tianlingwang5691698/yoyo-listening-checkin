@@ -2660,6 +2660,15 @@
 - 设计记录：口语评分链路会串行经过录音下载、转写、可选 SOE、内容模型和记录写入；前端等待必须低于云函数 180 秒上限但不能早于云端正常返回。
 - 验证：已做脚本语法检查。
 
+### 2026-07-09 Unlock4 练习册入口
+
+- 文件：`cloudfunctions/yoyo/lib/listening-plan-engine.js`
+- 文件：`cloudfunctions/yoyo/lib/task-presenter.js`
+- 文件：`utils/labels.js`
+- 改动：B2 音频材料新增 Unlock 4 练习册独立入口，课本和练习册标签分开展示。
+- 设计记录：同级别同系列的课本/练习册必须作为独立材料项出现，不能合并到课本目录里。
+- 验证：已做 catalog、request-context、level-engine  focused tests。
+
 ## 后续记录格式
 
 ### 2026-07-09 首页今日完成调试信息收口

@@ -13,7 +13,8 @@ const MATERIALS = [
   { category: 'unlock3textbook', levelIds: ['B1'], title: 'Unlock 3 课本' },
   { category: 'unlock3', levelIds: ['B1'], title: 'Unlock 3 练习册' },
   { category: 'newconcept4', levelIds: ['B2'], title: 'New Concept 4' },
-  { category: 'unlock4', levelIds: ['B2'], title: 'Unlock 4 课本' }
+  { category: 'unlock4', levelIds: ['B2'], title: 'Unlock 4 课本' },
+  { category: 'unlock4workbook', levelIds: ['B2'], title: 'Unlock 4 练习册' }
 ];
 
 function normalizeLevelId(value) {

@@ -178,6 +178,10 @@ test('resolveCatalogCategories 听力计划首屏不刷新素材目录', () => {
     requestContextEngine.resolveCatalogCategories('getListeningMaterialDetail', 'newconcept4', {}),
     ['newconcept4']
   );
+  assert.deepEqual(
+    requestContextEngine.resolveCatalogCategories('getListeningMaterialDetail', 'unlock4workbook', {}),
+    ['unlock4workbook']
+  );
 });
 
 test('resolveCatalogCategories 阅读学习包不刷新音频目录', () => {

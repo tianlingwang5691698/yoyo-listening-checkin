@@ -33,6 +33,9 @@ function getCategoryDisplayLabel(category, label) {
   if (category === 'unlock4') {
     return 'Unlock 4 课本';
   }
+  if (category === 'unlock4workbook') {
+    return 'Unlock 4 练习册';
+  }
   if (category === 'newconcept1') {
     return 'New Concept 1';
   }
