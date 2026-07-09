@@ -10,12 +10,17 @@
         <view class="board-head">
           <view></view><view></view><view></view>
         </view>
-        <view class="sentence-line line-main"></view>
-        <view class="sentence-line line-soft"></view>
+        <view class="syntax-track">
+          <view class="syntax-node">主语</view>
+          <view class="syntax-link"></view>
+          <view class="syntax-node is-core">谓语</view>
+          <view class="syntax-link"></view>
+          <view class="syntax-node">宾语</view>
+        </view>
         <view class="grammar-tags">
-          <view>主语</view>
-          <view>谓语</view>
-          <view>宾语</view>
+          <view>Subject</view>
+          <view>Verb</view>
+          <view>Object</view>
         </view>
         <view class="explain-card">
           <view class="explain-mark"></view>
