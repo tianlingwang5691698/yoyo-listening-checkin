@@ -86,6 +86,24 @@
 
 ## 已知案例
 
+### 2026-07-09 写作批改 review=null 后更新失败
+
+1. 现象：写作提交后停在“批改中”，页面 debug 显示 `cloud.gradeWritingAttempt -> review：missing`，云函数报 `document.update:fail ... Cannot create field 'content' in element {review: null}`。
+2. 账号：不限定账号。
+3. 查询：`writingAttempts` 新建记录里 `review=null`；`gradeWritingAttempt` 生成 review 后直接 `update({ review })`。
+4. 结论：CloudBase 更新对象字段时会按嵌套路径写入，旧值为 `review=null` 时不能创建 `review.content`。
+5. 修复：云函数 `writing.service.js` 更新 review 时使用 `db.command.set(review)` 整体替换。
+6. 是否需要发版：需要上传部署 `yoyo` 云函数；前端不需要重新改。
+
+### 2026-07-09 词汇书入口 request fail url not in domain list
+
+1. 现象：线上真实词汇入口点击初中词汇书后只显示演示 3 词，并出现 `request:fail url not in domain list` debug。
+2. 账号：child-yoyo / family-1776427951478。
+3. 查询：前端 debug 锁定 `pages/reading/flashcards/index.js importDictionaryBook -> cloudStorage.dictionary_books/word-dictionary-junior.json`。
+4. 结论：小程序端直接 `wx.request` 云存储 CDN 域名，被正式版 request 合法域名拦截。
+5. 修复：新增云函数 `getDictionaryBook` 服务端读取云存储 JSON；前端词汇书入口改走 `store.getDictionaryBook`。
+6. 是否需要发版：需要部署 `yoyo` 云函数，并重新发布小程序前端。
+
 ### 2026-07-05 绑定 317613 后跳到本机新概念 1
 
 1. 现象：正式版绑定 317613 后仍跳到本机默认新概念任务。

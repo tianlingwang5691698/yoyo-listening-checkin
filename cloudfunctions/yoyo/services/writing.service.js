@@ -273,16 +273,17 @@ async function gradeWritingAttempt(event) {
       }
     });
     const review = await gradeWriting(prompt, attempt.essay || '');
+    const command = dbAdapter.getCommand();
     const patch = {
       score: review.score,
       totalScore: review.totalScore,
-      review,
+      review: command.set(review),
       status: 'graded',
       gradedAt: new Date().toISOString(),
       updatedAt: new Date().toISOString()
     };
     await dbAdapter.collection(COLLECTION).doc(attemptId).update({ data: patch });
-    const formatted = formatAttempt(Object.assign({}, attempt, patch, { _id: attemptId }));
+    const formatted = formatAttempt(Object.assign({}, attempt, patch, { review, _id: attemptId }));
     await saveWritingCompletion(ctx, attempt.date || today, prompt, formatted, `${review.score}/${review.totalScore} 分`);
     return {
       attempt: formatted,
