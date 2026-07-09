@@ -193,7 +193,7 @@ Page({
     const nickname = String(this.data.childNicknameInput || '').trim();
     if (!nickname) {
       wx.showToast({
-        title: '先输入孩子昵称',
+        title: '请设置昵称',
         icon: 'none'
       });
       return;

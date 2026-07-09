@@ -28,7 +28,7 @@
       </view>
       <view class="row-main">
         <view class="row-title">昵称{{nicknameRequired ? '（必填）' : ''}}</view>
-        <input class="row-field profile-input" placeholder="孩子昵称" value="{{childNicknameInput}}" bindinput="handleChildNicknameInput" />
+        <input class="row-field profile-input" placeholder="昵称" value="{{childNicknameInput}}" bindinput="handleChildNicknameInput" />
         <view class="row-copy is-required" wx:if="{{nicknameRequired}}">请更换其他名字后继续使用。</view>
       </view>
       <button class="row-action primary-action" bindtap="saveChildProfile">保存</button>

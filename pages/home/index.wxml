@@ -26,8 +26,8 @@
   </view>
 
   <view class="nickname-required section-panel" wx:if="{{nicknameRequired && !identityConfirmVisible && !entryPosterVisible}}">
-    <view class="section-title type-section-title">设置孩子昵称</view>
-    <view class="section-copy">第一次使用前，请更换其他名字。</view>
+    <view class="section-title type-section-title">请设置昵称</view>
+    <view class="section-copy">第一次使用前，请设置一个常用昵称。</view>
     <view class="nickname-edit-row">
       <input class="nickname-input" placeholder="例如 佑佑123 / 小宇" value="{{nicknameInput}}" bindinput="handleNicknameInput" />
       <view class="nickname-save" bindtap="saveRequiredNickname">保存</view>
