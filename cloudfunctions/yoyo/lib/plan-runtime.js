@@ -72,6 +72,15 @@ function hasCatchupToday(checkins, today) {
   return (Array.isArray(checkins) ? checkins : []).some((item) => item.planRunType === 'catchup' && getDatePart(item.completedAt) === today);
 }
 
+function getCatchupPlanDayIndex(checkins, today, todayDone) {
+  const records = Array.isArray(checkins) ? checkins : [];
+  const hasNormalToday = records.some((item) => (
+    item.date === today && String(item.planRunType || 'normal') === 'normal'
+  ));
+  const completedCount = records.length + (todayDone && !hasNormalToday ? 1 : 0);
+  return (completedCount % TOTAL_PLAN_DAYS) + 1;
+}
+
 function getPlanStartDate(ctx, today, checkins) {
   const records = (Array.isArray(checkins) ? checkins : [])
     .map((item) => String(item.date || '').slice(0, 10))
@@ -84,7 +93,7 @@ function buildCatchupState(checkins, today, planStartDate, todayDone) {
   const missedDate = getEarliestMissedDate(checkins, today, planStartDate);
   const usedToday = hasCatchupToday(checkins, today);
   const canCatchup = !!(todayDone && missedDate && !usedToday);
-  const planDayIndex = canCatchup ? getPlanDayIndexForDate(checkins, missedDate) : 0;
+  const planDayIndex = canCatchup ? getCatchupPlanDayIndex(checkins, today, todayDone) : 0;
   return {
     canCatchup,
     missedDate,
@@ -178,6 +187,7 @@ module.exports = {
   getCompletedDateSet,
   getEarliestMissedDate,
   hasCatchupToday,
+  getCatchupPlanDayIndex,
   getPlanStartDate,
   buildCatchupState,
   buildLoopingIndices,

@@ -14,19 +14,26 @@ test('补卡起点取首次成功打卡日期', () => {
   assert.equal(planRuntime.getPlanStartDate({}, '2026-04-20', []), '');
 });
 
-test('补卡只定位首次打卡之后漏掉的日期，并返回漏卡当天计划日', () => {
+test('补卡点亮最早漏日，但任务继续推进到下一计划日', () => {
   const checkins = [
     { date: '2026-04-20', planDayIndex: 1, completedAt: '2026-04-20T12:00:00.000Z', planRunType: 'normal' },
-    { date: '2026-04-22', planDayIndex: 3, completedAt: '2026-04-22T12:00:00.000Z', planRunType: 'normal' }
+    { date: '2026-04-22', planDayIndex: 2, completedAt: '2026-04-22T12:00:00.000Z', planRunType: 'normal' }
   ];
   const state = planRuntime.buildCatchupState(checkins, '2026-04-22', '2026-04-20', true);
   assert.deepEqual(state, {
     canCatchup: true,
     missedDate: '2026-04-21',
-    planDayIndex: 2,
+    planDayIndex: 3,
     usedToday: false,
     reason: 'ready'
   });
+});
+
+test('当天任务已完成但打卡记录未入库时，补卡任务仍按完成后下一天推进', () => {
+  const checkins = [
+    { date: '2026-04-20', planDayIndex: 1, completedAt: '2026-04-20T12:00:00.000Z', planRunType: 'normal' }
+  ];
+  assert.equal(planRuntime.getCatchupPlanDayIndex(checkins, '2026-04-22', true), 3);
 });
 
 test('当天是否已使用补卡按中国日期判断', () => {
