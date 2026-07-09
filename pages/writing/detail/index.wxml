@@ -16,6 +16,9 @@
       <button class="submit-button" loading="{{submitting}}" disabled="{{submitting}}" bindtap="submitEssay">提交批改</button>
     </view>
     <view class="error-text" wx:if="{{errorText}}">{{errorText}}</view>
+    <view class="writing-debug" wx:if="{{writingDebugLines.length}}">
+      <text selectable="{{true}}" wx:for="{{writingDebugLines}}" wx:key="*this">{{item}}</text>
+    </view>
   </view>
 
   <view class="card review-card" wx:if="{{grading}}">

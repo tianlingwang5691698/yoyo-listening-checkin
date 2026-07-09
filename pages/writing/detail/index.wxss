@@ -120,6 +120,21 @@
   color: #c95742;
 }
 
+.writing-debug {
+  margin-top: 16rpx;
+  padding: 14rpx 16rpx;
+  border-radius: 14rpx;
+  background: rgba(255, 250, 242, 0.92);
+  color: #8f5b2f;
+  font-size: 22rpx;
+  line-height: 1.5;
+  word-break: break-all;
+}
+
+.writing-debug text {
+  display: block;
+}
+
 .score {
   margin-top: 8rpx;
   color: #178a53;

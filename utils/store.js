@@ -948,7 +948,7 @@ async function submitWritingAttempt(options) {
 }
 
 async function gradeWritingAttempt(attemptId) {
-  return callCloud('gradeWritingAttempt', { attemptId }, {
+  return callCloud('gradeWritingAttempt', withSelectedStudent({ attemptId }), {
     attempt: null,
     review: null,
     pending: true

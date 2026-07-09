@@ -49,6 +49,7 @@ Page({
     grading: false,
     review: null,
     reviewCelebrating: false,
+    writingDebugLines: [],
     errorText: ''
   }),
   async onLoad(options) {
@@ -82,7 +83,8 @@ Page({
     this.setData({
       essayText,
       wordCount: countWords(essayText),
-      errorText: ''
+      errorText: '',
+      writingDebugLines: []
     });
   },
   onEditorFocus() {
@@ -104,8 +106,19 @@ Page({
       wx.showToast({ title: '先写完整一点', icon: 'none' });
       return;
     }
+    const minWords = Number(prompt.minWords || 60) || 60;
+    const wordCount = countWords(essay);
+    if (wordCount < minWords) {
+      this.setData({
+        wordCount,
+        errorText: `还差一点，至少写 ${minWords} 词后再提交。`,
+        writingDebugLines: []
+      });
+      wx.showToast({ title: `至少 ${minWords} 词`, icon: 'none' });
+      return;
+    }
     this.reviewEffectPlayed = false;
-    this.setData({ submitting: true, errorText: '', reviewCelebrating: false });
+    this.setData({ submitting: true, errorText: '', reviewCelebrating: false, writingDebugLines: [] });
     try {
       const result = await store.submitWritingAttempt({ prompt, promptId: prompt._id, essay });
       if (result && result.syncMode === 'cloud-error') {
@@ -141,8 +154,15 @@ Page({
           prompt
         };
         completed.addCompletedItem(item);
-      }).catch(() => {
-        this.setData({ grading: false, errorText: '批改失败，可以稍后在记录里查看或重新提交。' });
+      }).catch((error) => {
+        this.setData({
+          grading: false,
+          errorText: '批改失败，可以再点一次提交。',
+          writingDebugLines: [
+            `DEBUG: pages/writing/detail.submitEssay -> store.gradeWritingAttempt -> cloud.gradeWritingAttempt -> review：missing`,
+            `attemptId=${attemptId || 'missing'}；cloudError.message=${error && error.message ? error.message : String(error || '')}`
+          ]
+        });
       });
       const item = {
         id: `${completed.todayString()}:writing:${prompt._id}`,
@@ -156,7 +176,13 @@ Page({
       };
       completed.addCompletedItem(item);
     } catch (error) {
-      this.setData({ errorText: '批改失败，可以再点一次提交。' });
+      this.setData({
+        errorText: '批改失败，可以再点一次提交。',
+        writingDebugLines: [
+          `DEBUG: pages/writing/detail.submitEssay -> store.submitWritingAttempt -> cloud.submitWritingAttempt -> attempt：missing`,
+          `cloudError.message=${error && error.message ? error.message : String(error || '')}`
+        ]
+      });
       wx.showToast({ title: '批改失败，可重试', icon: 'none' });
     } finally {
       this.setData({ submitting: false });
