@@ -66,6 +66,12 @@ function buildTimeLines(item) {
   return [];
 }
 
+function getProgressPercent(playCount, repeatTarget) {
+  const total = Number(repeatTarget || 0);
+  if (!total) return 0;
+  return Math.max(0, Math.min(100, Math.round((Number(playCount || 0) * 100) / total)));
+}
+
 function formatDuration(ms) {
   const seconds = Math.max(0, Math.round(Number(ms || 0) / 1000));
   return seconds ? `${seconds}秒` : '';
@@ -525,7 +531,8 @@ async function hydrateCompletionItem(item) {
 function normalizeReport(report) {
   const safeReport = report || {};
   const items = (safeReport.items || []).map((item) => Object.assign({}, labels.normalizeReportItem(item), {
-    timeLines: buildTimeLines(item)
+    timeLines: buildTimeLines(item),
+    progressPercent: getProgressPercent(item.playCount, item.repeatTarget)
   }));
   const speakingAttempts = (safeReport.speakingAttempts || []).map(normalizeSpeakingAttempt);
   const speakingSummary = buildSpeakingSummary(speakingAttempts);

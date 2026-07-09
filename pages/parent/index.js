@@ -122,6 +122,22 @@ function normalizeReport(report) {
   });
 }
 
+function buildParentSummary(todayReport, moduleStats) {
+  const completedCount = Number(todayReport && todayReport.totalCompletedCount) || 0;
+  const minutes = Number(todayReport && todayReport.totalMinutes) || 0;
+  const activeModules = (moduleStats || [])
+    .filter((item) => Number(item.value == null ? item.count : item.value) > 0)
+    .map((item) => String(item.label || '').replace(/时长|完成|练习|提交|背诵/g, ''))
+    .filter(Boolean)
+    .slice(0, 3);
+  const title = completedCount > 0 ? '今天有稳定推进' : '今天还没有完成记录';
+  const copy = completedCount > 0
+    ? `已完成 ${completedCount} 项${minutes ? `，学习约 ${minutes} 分钟` : ''}。`
+    : '晚一点完成后，这里会显示今日学习情况。';
+  const detail = activeModules.length ? `${activeModules.join('、')}有记录。` : '先关注今天的主线任务即可。';
+  return { title, copy, detail };
+}
+
 function summarizeReport(report) {
   const raw = report || {};
   const safeReport = normalizeReport(report);
@@ -140,11 +156,14 @@ function normalizeParentData(data) {
   const completionItems = [];
   const studentLinks = data.studentLinks || [];
   const selectedStudentIndex = Math.max(0, studentLinks.findIndex((item) => item && item.isCurrent));
+  const todayReport = summarizeReport(data.todayReport);
+  const moduleStats = data.todayLearningStats || data.moduleStats ? buildModuleStats([{ moduleStats: data.todayLearningStats || data.moduleStats }], []) : buildModuleStats(recentReports.slice(0, 1), completionItems);
   return Object.assign({}, data, {
-    todayReport: summarizeReport(data.todayReport),
+    todayReport,
     recentReports,
     completionItems,
-    moduleStats: data.todayLearningStats || data.moduleStats ? buildModuleStats([{ moduleStats: data.todayLearningStats || data.moduleStats }], []) : buildModuleStats(recentReports.slice(0, 1), completionItems),
+    moduleStats,
+    parentSummary: buildParentSummary(todayReport, moduleStats),
     studentLinks,
     selectedStudentIndex,
     studentNames: studentLinks.map((item) => item.nickname || item.childLoginCode || '学生')
@@ -165,6 +184,7 @@ Page({
     family: {},
     child: contracts.createChildDefaults(),
     todayReport: contracts.createReportDefaults(),
+    parentSummary: buildParentSummary(contracts.createReportDefaults(), buildModuleStats([], [])),
     recentReports: [],
     completionItems: [],
     moduleStats: buildModuleStats([], []),

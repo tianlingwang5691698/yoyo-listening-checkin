@@ -47,8 +47,8 @@ const DEMO_FLASHCARDS = [
 ];
 
 const DEFAULT_DICTIONARY_BOOKS = [
-  { level: 'junior', title: '新东方 初中英语词汇词根+联想记忆法：乱序版', imported: 0, cloudPath: 'dictionary_books/word-dictionary-junior.json' },
-  { level: 'senior', title: '高中英语词汇 乱序', imported: 0, cloudPath: 'dictionary_books/word-dictionary-senior.json' }
+  { level: 'junior', title: '初中英语词汇 乱序', coverMark: '初', imported: 0, cloudPath: 'dictionary_books/word-dictionary-junior.json' },
+  { level: 'senior', title: '高中英语词汇 乱序', coverMark: '高', imported: 0, cloudPath: 'dictionary_books/word-dictionary-senior.json' }
 ];
 const FLASHCARD_SOURCE_CACHE_PREFIX = 'flashcardSourceCache:';
 const FLASHCARD_SOURCE_CACHE_TTL = 7 * 24 * 60 * 60 * 1000;
@@ -427,6 +427,8 @@ function writePlanSettings(sourceId, settings) {
 function normalizeBook(book) {
   const fallback = DEFAULT_DICTIONARY_BOOKS.find((item) => item.level === book.level) || {};
   return Object.assign({}, fallback, book, {
+    title: fallback.title || book.title || '词汇书',
+    coverMark: fallback.coverMark || book.coverMark || '',
     sourceId: getBookSourceId(book.level)
   });
 }

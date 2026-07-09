@@ -220,65 +220,62 @@ Page({
       id: 'home',
       maxAgeMs: 10 * 60 * 1000
     });
+    let em2Topics = [];
+    let em1Topics = [];
+    let readyReported = false;
+    const reportReady = (source) => {
+      if (readyReported || !this.grammarPerf) return;
+      readyReported = true;
+      this.grammarPerf.ready('pageReady', {
+        source,
+        stages: (this.data.stages || []).length
+      });
+    };
+    const applyHomeTopics = (source) => {
+      const stages = buildStages(em2Topics, em1Topics);
+      if (stages.length) {
+        snapshotStore.write(GRAMMAR_HOME_SNAPSHOT_KEY, 'home', {
+          stages,
+          em2Topics,
+          em1Topics
+        }, { source: 'grammar-home' });
+      }
+      const selectedStage = this.data.selectedStageId
+        ? stages.find((item) => item.stageId === this.data.selectedStageId) || null
+        : this.data.selectedStage;
+      this.setData({
+        stages,
+        em2Topics,
+        em1Topics,
+        em1Loaded: !!em1Topics.length,
+        em1Loading: false,
+        selectedStage,
+        exams: selectedStage ? (selectedStage.exams || []) : this.data.exams
+      });
+      reportReady(source);
+    };
     if (snapshot && Array.isArray(snapshot.stages)) {
+      em2Topics = snapshot.em2Topics || [];
+      em1Topics = snapshot.em1Topics || [];
       this.setData({
         stages: snapshot.stages,
-        em2Topics: snapshot.em2Topics || [],
-        em1Topics: snapshot.em1Topics || [],
+        em2Topics,
+        em1Topics,
         em1Loaded: true,
         em1Loading: false
       });
+      reportReady('snapshot');
     }
-    let em2Data = null;
-    let em1Data = null;
-    try {
-      [em2Data, em1Data] = await Promise.all([
-        store.getGrammarHome({ examId: 'em2' }),
-        store.getGrammarHome({ examId: 'em1' })
-      ]);
-    } catch (error) {
-      em2Data = null;
-      em1Data = null;
-    }
-    const em2Topics = buildTopics(em2Data);
-    const em1Topics = buildTopics(em1Data);
-    const stages = buildStages(em2Topics, em1Topics);
-    const nextStages = stages.length || !(snapshot && Array.isArray(snapshot.stages)) ? stages : snapshot.stages;
-    const nextEm2Topics = stages.length ? em2Topics : (snapshot && snapshot.em2Topics) || [];
-    const nextEm1Topics = stages.length ? em1Topics : (snapshot && snapshot.em1Topics) || [];
-    if (stages.length) {
-      snapshotStore.write(GRAMMAR_HOME_SNAPSHOT_KEY, 'home', {
-        stages,
-        em2Topics,
-        em1Topics
-      }, { source: 'grammar-home' });
-    }
-    this.setData({
-      stages: nextStages,
-      em2Topics: nextEm2Topics,
-      em1Topics: nextEm1Topics,
-      em1Loaded: true,
-      em1Loading: false,
-      topics: [],
-      selectedStageId: '',
-      selectedStage: null,
-      exams: [],
-      selectedExamId: '',
-      selectedExam: null,
-      selectedCategoryId: '',
-      selectedCategory: null,
-      selectedTopicId: '',
-      selectedTopic: null,
-      selectedQuestions: [],
-      selectedTopicOffset: 0
-    });
-    if (this.grammarPerf) {
-      this.grammarPerf.ready('pageReady', {
-        em2CacheHit: !!(em2Data && em2Data.__cacheHit),
-        em1CacheHit: !!(em1Data && em1Data.__cacheHit),
-        stages: stages.length
-      });
-    }
+    Promise.all([
+      store.getGrammarHome({ examId: 'em2' }).then((data) => {
+        em2Topics = buildTopics(data);
+        applyHomeTopics(data && data.__cacheHit ? 'em2-cache' : 'em2-cloud');
+      }).catch(() => {}),
+      store.getGrammarHome({ examId: 'em1' }).then((data) => {
+        em1Topics = buildTopics(data);
+        applyHomeTopics(data && data.__cacheHit ? 'em1-cache' : 'em1-cloud');
+      }).catch(() => {})
+    ]).then(() => reportReady('empty')).catch(() => reportReady('empty'));
   },
   onShow() {
     page.syncTheme(this);

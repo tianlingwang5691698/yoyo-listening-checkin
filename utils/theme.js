@@ -1,7 +1,7 @@
 const THEME_STORAGE_KEY = 'uiTheme';
 
 const THEMES = [
-  { key: 'warm', label: '统一' }
+  { key: 'warm', label: '雾蓝玻璃' }
 ];
 
 const THEME_MAP = THEMES.reduce((map, item) => {
@@ -10,7 +10,7 @@ const THEME_MAP = THEMES.reduce((map, item) => {
 }, {});
 
 const WINDOW_COLORS = {
-  warm: { backgroundColor: '#F6F2EA', frontColor: '#000000' }
+  warm: { backgroundColor: '#F6FBFD', frontColor: '#000000' }
 };
 
 function normalizeTheme(value) {

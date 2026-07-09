@@ -1,164 +1,239 @@
 <view class="theme-{{theme}} page-shell parent-detail-page">
-  <view class="product-hero detail-hero">
-    <view class="product-title type-page-title">{{report.dateLabel || '日报详情'}}</view>
-    <view class="product-copy">{{report.completedCount}} / {{report.totalCount}} 项 · {{report.totalMinutes}} 分钟</view>
+  <view class="report-hero">
+    <view class="hero-glow"></view>
+    <view class="hero-head">
+      <view>
+        <view class="hero-kicker">家庭观察日报</view>
+        <view class="hero-title">{{report.dateLabel || '日报详情'}}</view>
+      </view>
+      <view class="hero-orbit">
+        <text></text>
+        <text></text>
+        <text></text>
+      </view>
+    </view>
+    <view class="hero-copy">今天留下了 {{report.completedCount || 0}} 个学习动作，累计 {{report.totalMinutes || 0}} 分钟。</view>
+    <view class="hero-metrics">
+      <view class="metric-pill">
+        <view class="metric-value">{{report.completedCount || 0}}</view>
+        <view class="metric-label">完成内容</view>
+      </view>
+      <view class="metric-pill is-soft">
+        <view class="metric-value">{{report.totalCount || 0}}</view>
+        <view class="metric-label">计划视野</view>
+      </view>
+      <view class="metric-pill is-warm">
+        <view class="metric-value">{{report.totalMinutes || 0}}</view>
+        <view class="metric-label">学习分钟</view>
+      </view>
+    </view>
     <view class="sync-debug {{syncMode === 'cloud' ? 'is-cloud' : 'is-local'}}" wx:if="{{showCloudDebug && syncDebug && syncDebug.show}}">
       {{syncDebug.text}}
     </view>
   </view>
 
-  <view class="section-panel">
-    <view class="section-title type-section-title">任务完成情况</view>
+  <view class="rhythm-panel">
+    <view class="panel-head">
+      <view>
+        <view class="section-kicker">Study Rhythm</view>
+        <view class="section-title type-section-title">学习节奏</view>
+      </view>
+      <view class="panel-note">{{report.items.length || 0}} 个任务</view>
+    </view>
     <block wx:if="{{report.items.length}}">
-      <block wx:for="{{report.items}}" wx:key="category">
-        <view class="detail-row task-cell">
-          <view class="detail-main">
-            <view class="detail-title">{{item.categoryLabel}}</view>
-            <view class="detail-copy">{{item.title}}</view>
-            <block wx:if="{{item.timeLines.length}}">
-              <block wx:for="{{item.timeLines}}" wx:key="key" wx:for-item="time">
-                <view class="detail-time-row">
-                  <view class="detail-time-label">{{time.label}}</view>
-                  <view class="detail-time-value">{{time.timeText}}</view>
-                </view>
-              </block>
-            </block>
-            <view class="detail-empty-time" wx:else>还没有完成时间记录</view>
+      <view class="rhythm-canvas">
+        <view class="rhythm-track"></view>
+        <view class="rhythm-node {{item.completedToday ? 'is-done' : ''}}" wx:for="{{report.items}}" wx:key="category">
+          <view class="node-mark">
+            <text></text>
           </view>
-          <view class="detail-side">
-            <view class="detail-status {{item.completedToday ? 'is-done' : ''}}">{{item.completedToday ? '完成' : '未完成'}}</view>
-            <view class="detail-progress">{{item.playCount}} / {{item.repeatTarget}}</view>
+          <view class="node-card">
+            <view class="node-top">
+              <view>
+                <view class="node-label">{{item.categoryLabel}}</view>
+                <view class="node-title">{{item.title}}</view>
+              </view>
+              <view class="node-status">{{item.completedToday ? '完成' : '待完成'}}</view>
+            </view>
+            <view class="sound-pass">
+              <view class="pass-bar" style="width: {{item.progressPercent || 0}}%;"></view>
+            </view>
+            <view class="pass-copy">听读 {{item.playCount || 0}} / {{item.repeatTarget || 0}} 遍</view>
+            <view class="time-cluster" wx:if="{{item.timeLines.length}}">
+              <view class="time-chip" wx:for="{{item.timeLines}}" wx:key="key" wx:for-item="time">
+                <text>{{time.label}}</text>
+                <text>{{time.timeText}}</text>
+              </view>
+            </view>
+            <view class="quiet-note" wx:else>还没有完成时间记录</view>
           </view>
         </view>
-      </block>
+      </view>
     </block>
     <view class="empty-state" wx:else>这一天还没有记录。</view>
   </view>
 
-  <view class="section-panel">
-    <view class="section-title type-section-title">录音记录</view>
+  <view class="voice-panel">
+    <view class="panel-head">
+      <view>
+        <view class="section-kicker">Voice Archive</view>
+        <view class="section-title type-section-title">声音档案</view>
+      </view>
+      <view class="panel-note">{{report.speakingSummary.scoredCount || 0}} / {{report.speakingSummary.totalCount || 0}} 已评分</view>
+    </view>
     <block wx:if="{{report.speakingAttempts.length}}">
-      <view class="recording-summary">
-        <view class="recording-summary-item">
-          <view class="recording-summary-value">{{report.speakingSummary.averageScore || 0}}</view>
-          <view class="recording-summary-label">平均分</view>
+      <view class="voice-summary">
+        <view class="voice-ring">
+          <view class="voice-score">{{report.speakingSummary.averageScore || 0}}</view>
+          <view class="voice-label">平均分</view>
         </view>
-        <view class="recording-summary-item">
-          <view class="recording-summary-value">{{report.speakingSummary.latestScore || 0}}</view>
-          <view class="recording-summary-label">最近得分</view>
+        <view class="voice-bands">
+          <text></text>
+          <text></text>
+          <text></text>
+          <text></text>
+          <text></text>
         </view>
-        <view class="recording-summary-item">
-          <view class="recording-summary-value">{{report.speakingSummary.scoredCount || 0}}/{{report.speakingSummary.totalCount || 0}}</view>
-          <view class="recording-summary-label">已评分</view>
+        <view class="voice-latest">
+          <view>最近得分</view>
+          <text>{{report.speakingSummary.latestScore || 0}}</text>
         </view>
       </view>
-      <block wx:for="{{report.speakingAttempts}}" wx:key="key">
-        <view class="recording-row">
-          <view class="row-between recording-head">
+      <view class="voice-stack">
+        <view class="voice-card" wx:for="{{report.speakingAttempts}}" wx:key="key">
+          <view class="voice-card-head">
             <view>
-              <view class="detail-title">{{item.title}}</view>
-              <view class="detail-copy">{{item.questionText}}</view>
+              <view class="node-label">{{item.title}}</view>
+              <view class="node-title">{{item.questionText}}</view>
             </view>
-            <view class="recording-score">{{item.scoreText}}</view>
+            <view class="voice-badge">{{item.scoreText}}</view>
           </view>
-          <view class="recording-score-detail" wx:if="{{item.scoreDetailText}}">{{item.scoreDetailText}}</view>
-          <view class="recording-meta">
+          <view class="voice-detail" wx:if="{{item.scoreDetailText}}">{{item.scoreDetailText}}</view>
+          <view class="voice-meta">
             <text wx:if="{{item.answerDurationText}}">录音 {{item.answerDurationText}}</text>
             <text wx:if="{{item.createdTimeText}}"> · {{item.createdTimeText}}</text>
           </view>
-          <view class="recording-text" wx:if="{{item.studentTranscript}}">孩子回答：{{item.studentTranscript}}</view>
-          <view class="recording-text" wx:if="{{item.feedback}}">建议：{{item.feedback}}</view>
+          <view class="voice-quote" wx:if="{{item.studentTranscript}}">{{item.studentTranscript}}</view>
+          <view class="voice-advice" wx:if="{{item.feedback}}">{{item.feedback}}</view>
           <button class="attempt-play {{playingAttemptKey === item.key ? 'is-playing' : ''}} {{pausedAttemptKey === item.key ? 'is-paused' : ''}} {{loadingAttemptKey === item.key ? 'is-loading' : ''}}" data-index="{{index}}" bindtap="playSpeakingAttempt">
             <view class="attempt-play-icon"></view>
             <text>{{loadingAttemptKey === item.key ? '加载中' : (playingAttemptKey === item.key ? (pausedAttemptKey === item.key ? '继续播放' : '暂停录音') : '播放录音')}}</text>
           </button>
         </view>
-      </block>
+      </view>
     </block>
     <view class="empty-state" wx:else>这一天还没有录音。</view>
   </view>
 
-  <view class="section-panel">
-    <view class="section-title type-section-title">学习内容</view>
-    <view class="lazy-load-row task-cell is-link" wx:if="{{!completionItemsLoaded}}" bindtap="loadCompletionItems">
+  <view class="content-panel">
+    <view class="panel-head">
       <view>
-        <view class="detail-title">查看学习内容</view>
-        <view class="detail-copy">按需加载当天阅读、语法、写作和已生成学习包。</view>
+        <view class="section-kicker">Learning Dossier</view>
+        <view class="section-title type-section-title">内容档案</view>
       </view>
-      <view class="lazy-load-side">
-        <view class="lazy-load-badge">{{completionItemsLoading ? '加载中' : '查看'}}</view>
-        <view class="lazy-load-arrow">›</view>
+      <view class="panel-note">按需查看</view>
+    </view>
+    <view class="load-dossier" wx:if="{{!completionItemsLoaded}}" bindtap="loadCompletionItems">
+      <view class="dossier-spine"></view>
+      <view>
+        <view class="node-title">打开当天内容案卷</view>
+        <view class="quiet-note">阅读、语法、写作和学习包会在这里展开。</view>
       </view>
+      <view class="load-action">{{completionItemsLoading ? '加载中' : '打开'}}</view>
     </view>
     <block wx:elif="{{report.completionItems.length}}">
-      <block wx:for="{{report.completionItems}}" wx:key="key">
-        <view class="study-record-row">
-          <view class="row-between recording-head">
+      <view class="dossier-grid">
+        <view class="study-dossier tone-{{item.type}}" wx:for="{{report.completionItems}}" wx:key="key">
+          <view class="dossier-head">
             <view>
-              <view class="detail-title">{{item.typeLabel}} · {{item.title}}</view>
-              <view class="detail-copy">{{item.meta}}</view>
+              <view class="node-label">{{item.typeLabel}}</view>
+              <view class="node-title">{{item.title}}</view>
             </view>
-            <view class="recording-score">{{item.scoreText || item.progressText}}</view>
+            <view class="voice-badge">{{item.scoreText || item.progressText}}</view>
           </view>
-          <view class="recording-meta" wx:if="{{item.correctText}}">答题：{{item.correctText}}</view>
+          <view class="quiet-note">{{item.meta}}</view>
+          <view class="answer-chip" wx:if="{{item.correctText}}">答题 {{item.correctText}}</view>
           <button class="detail-toggle" data-key="{{item.key}}" catchtap="toggleCompletionDetail">{{item.isListeningStudyPack ? item.detailActionText : (item.expanded ? '收起详情' : item.detailActionText)}}</button>
           <block wx:if="{{item.expanded}}">
-            <view class="detail-empty-time" wx:if="{{item.detailLoading}}">加载详情中</view>
-            <view class="source-passage" wx:if="{{item.passage && item.passage.passage}}">
-              <view class="question-review-title">原文</view>
-              <view class="recording-text">{{item.passage.passage}}</view>
+            <view class="detail-loading" wx:if="{{item.detailLoading}}">加载详情中</view>
+            <view class="detail-sheet" wx:if="{{item.passage && item.passage.passage}}">
+              <view class="sheet-title">原文</view>
+              <view class="sheet-copy">{{item.passage.passage}}</view>
             </view>
-            <view class="source-passage" wx:if="{{item.writingPrompt && item.writingPrompt.prompt}}">
-              <view class="question-review-title">作文题目</view>
-              <view class="recording-text">{{item.writingPrompt.prompt}}</view>
+            <view class="detail-sheet" wx:if="{{item.writingPrompt && item.writingPrompt.prompt}}">
+              <view class="sheet-title">作文题目</view>
+              <view class="sheet-copy">{{item.writingPrompt.prompt}}</view>
             </view>
-            <view class="source-passage" wx:if="{{item.essay}}">
-              <view class="question-review-title">学生作文</view>
-              <view class="recording-text">{{item.essay}}</view>
+            <view class="detail-sheet" wx:if="{{item.essay}}">
+              <view class="sheet-title">学生作文</view>
+              <view class="sheet-copy">{{item.essay}}</view>
             </view>
-            <view class="recording-text" wx:if="{{item.reviewSummary}}">分析：{{item.reviewSummary}}</view>
-            <view class="recording-text" wx:if="{{item.reviewContent}}">内容：{{item.reviewContent}}</view>
-            <view class="recording-text" wx:if="{{item.reviewLanguage}}">语言：{{item.reviewLanguage}}</view>
-            <view class="recording-text" wx:if="{{item.reviewStructure}}">结构：{{item.reviewStructure}}</view>
-            <view class="recording-text" wx:if="{{item.reviewSpelling}}">拼写：{{item.reviewSpelling}}</view>
-            <view class="recording-text" wx:if="{{item.reviewProblemsText}}">问题：{{item.reviewProblemsText}}</view>
-            <view class="recording-text" wx:if="{{item.reviewSuggestionsText}}">建议：{{item.reviewSuggestionsText}}</view>
-            <view class="source-passage" wx:if="{{item.polishedVersion}}">
-              <view class="question-review-title">参考范文</view>
-              <view class="recording-text">{{item.polishedVersion}}</view>
+            <view class="analysis-grid">
+              <view class="analysis-card" wx:if="{{item.reviewSummary}}">
+                <view class="sheet-title">分析</view>
+                <view class="sheet-copy">{{item.reviewSummary}}</view>
+              </view>
+              <view class="analysis-card" wx:if="{{item.reviewContent}}">
+                <view class="sheet-title">内容</view>
+                <view class="sheet-copy">{{item.reviewContent}}</view>
+              </view>
+              <view class="analysis-card" wx:if="{{item.reviewLanguage}}">
+                <view class="sheet-title">语言</view>
+                <view class="sheet-copy">{{item.reviewLanguage}}</view>
+              </view>
+              <view class="analysis-card" wx:if="{{item.reviewStructure}}">
+                <view class="sheet-title">结构</view>
+                <view class="sheet-copy">{{item.reviewStructure}}</view>
+              </view>
+              <view class="analysis-card" wx:if="{{item.reviewSpelling}}">
+                <view class="sheet-title">拼写</view>
+                <view class="sheet-copy">{{item.reviewSpelling}}</view>
+              </view>
+              <view class="analysis-card" wx:if="{{item.reviewProblemsText}}">
+                <view class="sheet-title">问题</view>
+                <view class="sheet-copy">{{item.reviewProblemsText}}</view>
+              </view>
+              <view class="analysis-card" wx:if="{{item.reviewSuggestionsText}}">
+                <view class="sheet-title">建议</view>
+                <view class="sheet-copy">{{item.reviewSuggestionsText}}</view>
+              </view>
+            </view>
+            <view class="detail-sheet" wx:if="{{item.polishedVersion}}">
+              <view class="sheet-title">参考范文</view>
+              <view class="sheet-copy">{{item.polishedVersion}}</view>
             </view>
             <block wx:if="{{item.phraseCards.length}}">
-              <view class="question-review" wx:for="{{item.phraseCards}}" wx:key="key" wx:for-item="phrase">
-                <view class="question-review-title">{{phrase.phrase}}</view>
-                <view class="recording-text" wx:if="{{phrase.meaning}}">含义：{{phrase.meaning}}</view>
-                <view class="recording-text" wx:if="{{phrase.example}}">例句：{{phrase.example}}</view>
-                <view class="recording-text" wx:if="{{phrase.exampleMeaning}}">译文：{{phrase.exampleMeaning}}</view>
+              <view class="mini-card" wx:for="{{item.phraseCards}}" wx:key="key" wx:for-item="phrase">
+                <view class="sheet-title">{{phrase.phrase}}</view>
+                <view class="sheet-copy" wx:if="{{phrase.meaning}}">含义：{{phrase.meaning}}</view>
+                <view class="sheet-copy" wx:if="{{phrase.example}}">例句：{{phrase.example}}</view>
+                <view class="sheet-copy" wx:if="{{phrase.exampleMeaning}}">译文：{{phrase.exampleMeaning}}</view>
               </view>
             </block>
             <block wx:if="{{item.grammarQuestions.length}}">
-              <view class="question-review" wx:for="{{item.grammarQuestions}}" wx:key="key" wx:for-item="question">
-                <view class="question-review-title">第 {{question.number}} 题 · {{question.isCorrect ? '正确' : '订正'}} · 答案 {{question.answer}}</view>
-                <view class="recording-text">{{question.prompt}}</view>
-                <view class="recording-text" wx:for="{{question.optionsList}}" wx:key="key" wx:for-item="option">{{option.key}}. {{option.text}}</view>
-                <view class="recording-text">孩子选择：{{question.selectedAnswer || '旧记录未保存选择'}}</view>
-                <view class="recording-text" wx:if="{{question.explanation && question.explanation.explanation}}">分析：{{question.explanation.explanation}}</view>
-                <view class="recording-text" wx:if="{{question.explanation && question.explanation.elimination}}">{{question.explanation.elimination}}</view>
+              <view class="question-card" wx:for="{{item.grammarQuestions}}" wx:key="key" wx:for-item="question">
+                <view class="sheet-title">第 {{question.number}} 题 · {{question.isCorrect ? '正确' : '订正'}} · 答案 {{question.answer}}</view>
+                <view class="sheet-copy">{{question.prompt}}</view>
+                <view class="sheet-copy" wx:for="{{question.optionsList}}" wx:key="key" wx:for-item="option">{{option.key}}. {{option.text}}</view>
+                <view class="sheet-copy">孩子选择：{{question.selectedAnswer || '旧记录未保存选择'}}</view>
+                <view class="sheet-copy" wx:if="{{question.explanation && question.explanation.explanation}}">分析：{{question.explanation.explanation}}</view>
+                <view class="sheet-copy" wx:if="{{question.explanation && question.explanation.elimination}}">{{question.explanation.elimination}}</view>
               </view>
             </block>
             <block wx:if="{{item.readingQuestions.length}}">
-              <view class="question-review" wx:for="{{item.readingQuestions}}" wx:key="key" wx:for-item="question">
-                <view class="question-review-title">第 {{question.number}} 题 · {{question.correct ? '正确' : '订正'}} · 答案 {{question.answer}}</view>
-                <view class="recording-text" wx:if="{{question.prompt}}">{{question.prompt}}</view>
-                <view class="recording-text" wx:for="{{question.optionsList}}" wx:key="key" wx:for-item="option">{{option.key}}. {{option.text}}</view>
-                <view class="recording-text" wx:if="{{question.selectedAnswer}}">孩子选择：{{question.selectedAnswer}}</view>
-                <view class="recording-text" wx:if="{{question.analysis}}">{{question.analysis}}</view>
-                <view class="recording-text" wx:if="{{question.answerSentence && question.answerSentence.text}}">定位句：{{question.answerSentence.text}}</view>
-                <view class="recording-text" wx:if="{{question.answerSentence && question.answerSentence.translation}}">译文：{{question.answerSentence.translation}}</view>
+              <view class="question-card" wx:for="{{item.readingQuestions}}" wx:key="key" wx:for-item="question">
+                <view class="sheet-title">第 {{question.number}} 题 · {{question.correct ? '正确' : '订正'}} · 答案 {{question.answer}}</view>
+                <view class="sheet-copy" wx:if="{{question.prompt}}">{{question.prompt}}</view>
+                <view class="sheet-copy" wx:for="{{question.optionsList}}" wx:key="key" wx:for-item="option">{{option.key}}. {{option.text}}</view>
+                <view class="sheet-copy" wx:if="{{question.selectedAnswer}}">孩子选择：{{question.selectedAnswer}}</view>
+                <view class="sheet-copy" wx:if="{{question.analysis}}">{{question.analysis}}</view>
+                <view class="sheet-copy" wx:if="{{question.answerSentence && question.answerSentence.text}}">定位句：{{question.answerSentence.text}}</view>
+                <view class="sheet-copy" wx:if="{{question.answerSentence && question.answerSentence.translation}}">译文：{{question.answerSentence.translation}}</view>
               </view>
             </block>
           </block>
         </view>
-      </block>
+      </view>
     </block>
     <view class="empty-state" wx:else>这一天还没有学习内容记录。</view>
   </view>

@@ -56,9 +56,6 @@
     <view class="row-between player-header">
       <view wx:if="{{!task.isPendingAsset}}">
         <view class="section-copy error-copy" wx:if="{{audioErrorText}}">{{audioErrorText}}</view>
-        <view class="section-copy" wx:if="{{showCloudDebug && currentAudio && currentAudio.cloudPath}}">云路径：{{currentAudio.cloudPath}}</view>
-        <view class="section-copy" wx:if="{{showCloudDebug && currentAudio && currentAudio.fileID}}">fileId：{{currentAudio.fileID}}</view>
-        <view class="section-copy" wx:if="{{showCloudDebug && currentAudio && currentAudio.src}}">src：{{currentAudio.src}}</view>
         <view class="section-copy error-copy" wx:if="{{showCloudDebug && audioErrorDetail}}">错误详情：{{audioErrorDetail}}</view>
       </view>
     </view>
@@ -71,6 +68,15 @@
               <view class="player-status">{{isPlaying ? '正在播放' : (audioReady ? '已暂停' : '等待播放')}}</view>
             </view>
           </view>
+        </view>
+        <view class="player-wave">
+          <view class="{{isPlaying ? 'is-active' : ''}}"></view>
+          <view class="{{isPlaying ? 'is-active' : ''}}"></view>
+          <view class="{{isPlaying ? 'is-active' : ''}}"></view>
+          <view class="{{isPlaying ? 'is-active' : ''}}"></view>
+          <view class="{{isPlaying ? 'is-active' : ''}}"></view>
+          <view class="{{isPlaying ? 'is-active' : ''}}"></view>
+          <view class="{{isPlaying ? 'is-active' : ''}}"></view>
         </view>
         <view class="player-main">
           <view class="player-toggle {{audioResolving ? 'is-loading' : ''}}" bindtap="toggleAudio">

@@ -1,10 +1,4 @@
 <view class="theme-{{theme}} page-shell listening-detail-page">
-  <view class="detail-hero card">
-    <view class="detail-eyebrow">听力练习</view>
-    <view class="detail-title">{{item.title}}</view>
-    <view class="detail-copy">{{item.year}} · {{item.district}} · {{item.examType}}</view>
-  </view>
-
   <view class="detail-debug" wx:if="{{debugLines.length}}">
     <view class="detail-debug-line" wx:for="{{debugLines}}" wx:key="*this">{{item}}</view>
   </view>
@@ -12,6 +6,9 @@
   <view class="audio-card card">
     <view class="audio-head">
       <view class="audio-copy">
+        <view class="detail-eyebrow">听力练习</view>
+        <view class="detail-title">{{item.title}}</view>
+        <view class="detail-copy">{{item.year}} · {{item.district}} · {{item.examType}}</view>
         <view class="audio-title">{{audioLocked ? '先学文本' : '听力音频'}}</view>
         <view class="audio-subtitle">{{audioLocked ? '学完文本后再听音频' : (audioLoading ? '音频准备中' : (audioError ? '音频不可用' : (isPlaying ? '正在播放' : '可暂停和拖动进度')))}}</view>
       </view>
@@ -19,13 +16,28 @@
     </view>
     <view class="audio-lock-tip" wx:if="{{audioLocked}}">学完生词、短语和句型后再听音频。</view>
     <view class="audio-player {{audioLoading || !audioSrc ? 'is-disabled' : ''}}" wx:else>
+      <view class="audio-stage">
+        <view class="audio-orbit">
+          <view class="audio-main {{audioLoading || !audioSrc ? 'is-disabled' : ''}}" hover-class="is-pressed" hover-start-time="20" hover-stay-time="180" bindtap="toggleAudio">
+            {{audioLoading ? '加载' : (isPlaying ? '暂停' : (audioEnded ? '重播' : '播放'))}}
+          </view>
+        </view>
+        <view class="audio-bars">
+          <view class="{{isPlaying ? 'is-active' : ''}}"></view>
+          <view class="{{isPlaying ? 'is-active' : ''}}"></view>
+          <view class="{{isPlaying ? 'is-active' : ''}}"></view>
+          <view class="{{isPlaying ? 'is-active' : ''}}"></view>
+          <view class="{{isPlaying ? 'is-active' : ''}}"></view>
+          <view class="{{isPlaying ? 'is-active' : ''}}"></view>
+        </view>
+      </view>
       <slider
         class="audio-slider"
         min="0"
         max="{{audioSliderMax}}"
         value="{{audioProgress}}"
-        activeColor="#C47A2C"
-        backgroundColor="#E8DED1"
+        activeColor="#86AAA1"
+        backgroundColor="#BFD7E8"
         block-size="16"
         disabled="{{audioLoading || !audioSrc}}"
         bindchanging="changingAudioProgress"
@@ -33,16 +45,13 @@
       />
       <view class="audio-controls">
         <view class="audio-step {{audioLoading || !audioSrc ? 'is-disabled' : ''}}" data-delta="-15" hover-class="is-pressed" hover-start-time="20" hover-stay-time="180" bindtap="seekAudio">-15秒</view>
-        <view class="audio-main {{audioLoading || !audioSrc ? 'is-disabled' : ''}}" hover-class="is-pressed" hover-start-time="20" hover-stay-time="180" bindtap="toggleAudio">
-          {{audioLoading ? '加载中' : (isPlaying ? '暂停' : (audioEnded ? '重播' : '播放'))}}
-        </view>
         <view class="audio-step {{audioLoading || !audioSrc ? 'is-disabled' : ''}}" data-delta="15" hover-class="is-pressed" hover-start-time="20" hover-stay-time="180" bindtap="seekAudio">+15秒</view>
       </view>
     </view>
     <view class="audio-error" wx:if="{{audioError}}">{{audioError}}</view>
   </view>
 
-  <view class="question-card card">
+  <view class="question-card paper-drawer card">
     <view class="question-top">
       <view class="question-label">答题区</view>
       <view class="question-state" wx:if="{{submitted}}">{{correctCount}} / {{questions.length}}</view>
@@ -72,7 +81,7 @@
 
   <button class="button-primary submit-button" bindtap="submit">提交听力</button>
 
-  <view class="study-card card">
+  <view class="study-card floating-study-card card">
     <view class="question-top">
       <view class="question-label">文本学习</view>
       <view class="mini-button {{studyLoading ? 'is-disabled' : ''}}" wx:if="{{submitted}}" bindtap="loadStudyPack">{{studyPack ? '刷新' : '生成'}}</view>

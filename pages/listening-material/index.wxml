@@ -1,5 +1,6 @@
 <view class="theme-{{theme}} page-shell material-page">
   <view class="material-hero card">
+    <view class="material-wave-mark"><text></text><text></text><text></text><text></text><text></text></view>
     <view class="type-caption">{{levelId}}</view>
     <view class="material-title type-page-title">{{categoryLabel}}</view>
     <view class="type-caption">共 {{totalCount}} 条</view>
@@ -15,7 +16,7 @@
           <view class="step-control" data-field="startNo" data-delta="1" bindtap="stepValue">+</view>
         </view>
       </view>
-      <slider min="1" max="{{sliderMax}}" value="{{startNo}}" activeColor="#C47A2C" block-size="18" bindchange="changeStart" />
+      <slider min="1" max="{{sliderMax}}" value="{{startNo}}" activeColor="#86AAA1" backgroundColor="rgba(141, 183, 212, 0.22)" block-color="#F6FBFD" block-size="18" bindchange="changeStart" />
     </view>
     <view class="plan-row">
       <view class="plan-head">
@@ -26,7 +27,7 @@
           <view class="step-control" data-field="endNo" data-delta="1" bindtap="stepValue">+</view>
         </view>
       </view>
-      <slider min="1" max="{{sliderMax}}" value="{{endNo}}" activeColor="#C47A2C" block-size="18" bindchange="changeEnd" />
+      <slider min="1" max="{{sliderMax}}" value="{{endNo}}" activeColor="#86AAA1" backgroundColor="rgba(141, 183, 212, 0.22)" block-color="#F6FBFD" block-size="18" bindchange="changeEnd" />
     </view>
     <view class="plan-grid">
       <view>
@@ -36,7 +37,7 @@
           <view class="plan-value">{{dailyCount}}</view>
           <view class="step-control" data-field="dailyCount" data-delta="1" bindtap="stepValue">+</view>
         </view>
-        <slider min="1" max="10" value="{{dailyCount}}" activeColor="#C47A2C" block-size="18" bindchange="changeDailyCount" />
+        <slider min="1" max="10" value="{{dailyCount}}" activeColor="#86AAA1" backgroundColor="rgba(141, 183, 212, 0.22)" block-color="#F6FBFD" block-size="18" bindchange="changeDailyCount" />
       </view>
       <view>
         <view class="plan-label type-caption">每条几遍</view>
@@ -45,7 +46,7 @@
           <view class="plan-value">{{repeatTarget}}</view>
           <view class="step-control" data-field="repeatTarget" data-delta="1" bindtap="stepValue">+</view>
         </view>
-        <slider min="1" max="5" value="{{repeatTarget}}" activeColor="#C47A2C" block-size="18" bindchange="changeRepeatTarget" />
+        <slider min="1" max="5" value="{{repeatTarget}}" activeColor="#86AAA1" backgroundColor="rgba(141, 183, 212, 0.22)" block-color="#F6FBFD" block-size="18" bindchange="changeRepeatTarget" />
       </view>
     </view>
     <view class="plan-actions">
@@ -72,6 +73,7 @@
     <block wx:for="{{tasks}}" wx:key="taskId">
       <view class="task-row card" data-index="{{index}}" bindtap="openTask">
         <view class="task-no">{{item.itemNo}}</view>
+        <view class="task-wavelet"><text></text><text></text><text></text></view>
         <view class="task-main">
           <view class="task-title">{{item.title}}</view>
           <view class="task-subtitle type-caption">{{item.subtitle || item.durationText}}</view>

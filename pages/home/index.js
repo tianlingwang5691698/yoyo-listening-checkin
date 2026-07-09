@@ -8,6 +8,7 @@ const LESSON_TASK_SNAPSHOT_KEY = 'lessonTaskSnapshotV1';
 const ENTRY_POSTER_DISMISSED_KEY = 'homeEntryPosterDismissedV1';
 const TODAY_COMPLETED_CACHE_KEY = 'todayCompletedItemsV1';
 const HOME_DASHBOARD_SNAPSHOT_KEY = 'homeDashboardSnapshotV1';
+const MATERIAL_HOME_SNAPSHOT_KEY = 'materialHomeSnapshotV1';
 
 const VOCABULARY_ITEM_KEYS = [
   'listeningFlashcardItemsV1',
@@ -76,6 +77,18 @@ function buildVocabularySummary() {
   };
 }
 
+function hasListeningMaterialContent(materialIndex) {
+  const index = materialIndex || {};
+  return !!((index.listeningEm1 || []).length || (index.listeningEm2 || []).length);
+}
+
+function writeListeningMaterialSnapshot(materialIndex, source) {
+  if (!materialIndex || materialIndex.syncMode === 'cloud-error' || !hasListeningMaterialContent(materialIndex)) {
+    return;
+  }
+  snapshotStore.write(MATERIAL_HOME_SNAPSHOT_KEY, 'listening', { materialIndex }, { source });
+}
+
 function buildListeningSummary(groupedDailyTasks, options = {}) {
   if (options.needsListeningPlanSetup) return '设置听力计划';
   const groups = groupedDailyTasks || [];
@@ -113,12 +126,46 @@ function getListeningDurationSec(groupedDailyTasks) {
   }, 0);
 }
 
+function getCompletedListeningDurationSec(groupedDailyTasks) {
+  return (groupedDailyTasks || []).reduce((sum, group) => (
+    sum + ((group && group.tasks) || []).reduce((taskSum, task) => {
+      if (!task || !task.completedToday) return taskSum;
+      return taskSum + (Number(task.durationSec || 0) * Number(task.repeatTarget || 1));
+    }, 0)
+  ), 0);
+}
+
+function formatHoursFromMinutes(minutes) {
+  const value = Number(minutes || 0);
+  return (Math.round((value / 60) * 10) / 10).toFixed(1);
+}
+
+function buildHomeVisualMetrics(groupedDailyTasks, options = {}) {
+  const stats = options.stats || {};
+  const goalMinutes = Math.round(getListeningDurationSec(groupedDailyTasks) / 60) || 0;
+  const doneMinutes = Math.round(getCompletedListeningDurationSec(groupedDailyTasks) / 60);
+  const safeGoal = Math.max(0, goalMinutes);
+  const safeDone = safeGoal > 0 ? Math.min(safeGoal, Math.max(0, doneMinutes)) : 0;
+  const progressPercent = safeGoal > 0 ? Math.round((safeDone / safeGoal) * 100) : 0;
+  return {
+    todayGoalMinutes: safeGoal,
+    todayDoneMinutes: safeDone,
+    todayProgressPercent: progressPercent,
+    todayProgressStyle: `background: conic-gradient(#86aaa1 ${progressPercent}%, rgba(134, 170, 161, 0.22) 0);`,
+    streakDaysText: String(Number(stats.streakDays || 0)),
+    completedTasksText: String(Number(stats.completedTasks || 0)),
+    totalStudyHoursText: formatHoursFromMinutes(stats.totalMinutes || 0)
+  };
+}
+
 function buildListeningTaskStatus(groupedDailyTasks, options = {}) {
   if (options.needsListeningPlanSetup) {
     return {
       title: '今日任务',
-      copy: '先设置听力计划',
-      action: '设置计划 →',
+      copy: '还没有听力计划 · 先选择素材和节奏',
+      primaryLine: '还没有听力计划',
+      secondaryLine: '先选择素材和节奏',
+      action: '设置计划',
       pending: false,
       setupRequired: true
     };
@@ -129,8 +176,10 @@ function buildListeningTaskStatus(groupedDailyTasks, options = {}) {
   if (!groups.length || !total) {
     return {
       title: '今日任务',
-      copy: '暂无今日听力任务',
-      action: '设置计划 →',
+      copy: '暂无今日听力任务 · 可重新设置计划',
+      primaryLine: '暂无今日听力任务',
+      secondaryLine: '可重新设置计划',
+      action: '设置计划',
       pending: false,
       setupRequired: true
     };
@@ -141,7 +190,9 @@ function buildListeningTaskStatus(groupedDailyTasks, options = {}) {
   return {
     title: '今日任务',
     copy: `听力 ${completed}/${total} · ${durationText} · ${pending ? '待完成' : '已完成'}`,
-    action: pending ? '继续学习 →' : '查看记录',
+    primaryLine: `听力 ${completed}/${total}`,
+    secondaryLine: `${durationText} · ${pending ? '待完成' : '已完成'}`,
+    action: pending ? '继续学习' : '查看记录',
     pending,
     setupRequired: false
   };
@@ -330,6 +381,7 @@ Page({
     child: contracts.createChildDefaults(),
     profileInitial: '学',
     currentMember: contracts.createCurrentMemberDefaults(),
+    stats: contracts.createStatsDefaults(),
     planDayIndex: 1,
     todayDisplay: todayDisplayText(),
     greeting: greetingText(),
@@ -350,6 +402,14 @@ Page({
     nextListeningTask: null,
     readingSummary: '进入阅读',
     vocabularySummary: buildVocabularySummary(),
+    todayGoalMinutes: 0,
+    todayDoneMinutes: 0,
+    todayProgressPercent: 0,
+    todayProgressStyle: 'background: conic-gradient(#86aaa1 0%, rgba(134, 170, 161, 0.22) 0);',
+    streakDaysText: '0',
+    completedTasksText: '0',
+    totalStudyHoursText: '0.0',
+    waveBars: ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14', '15', '16', '17', '18'],
     todayCompletedItems: [],
     entryPosterVisible: true,
     entryPosterPage: 0,
@@ -383,6 +443,7 @@ Page({
       nicknameInput: isDefaultChildNickname(data.child) ? '' : ((data.child && data.child.nickname) || ''),
       profileInitial: profileInitial(data.child),
       currentMember: data.currentMember,
+      stats: data.stats || contracts.createStatsDefaults(),
       planDayIndex: data.planDayIndex,
       planPhaseLabel: data.planPhaseLabel,
       planSource: data.planSource || 'none',
@@ -393,6 +454,7 @@ Page({
       listeningTaskStatus: buildListeningTaskStatus(groupedDailyTasks, { needsListeningPlanSetup }),
       nextListeningTask: findNextListeningTask(groupedDailyTasks),
       todayCompletedItems: buildTodayCompletedItems(groupedDailyTasks),
+      ...buildHomeVisualMetrics(groupedDailyTasks, { stats: data.stats || contracts.createStatsDefaults() }),
       identityConfirmVisible: !this.data.identitySelectedInSession,
       modeChangedNoticeVisible,
       homeLoading: false
@@ -510,6 +572,9 @@ Page({
     setTimeout(() => {
       writeTodayCompletedCache(this.data.child, this.data.todayCompletedItems || []);
     }, 100);
+    setTimeout(() => {
+      this.prefetchListeningMaterialHome();
+    }, 200);
   },
   showNextEntryPosterPage() {
     this.setData({
@@ -607,6 +672,20 @@ Page({
     });
     return this.applyDashboard(data);
   },
+  prefetchListeningMaterialHome() {
+    const cached = store.getCachedReadResult
+      ? store.getCachedReadResult('getMaterialIndex', { moduleId: 'listening' })
+      : null;
+    if (hasListeningMaterialContent(cached)) {
+      writeListeningMaterialSnapshot(cached, 'home-listening-cache');
+      return;
+    }
+    store.getMaterialIndex({ moduleId: 'listening' }, (freshIndex) => {
+      writeListeningMaterialSnapshot(freshIndex, 'home-listening-refresh');
+    }).then((materialIndex) => {
+      writeListeningMaterialSnapshot(materialIndex, 'home-listening-prefetch');
+    }).catch(() => {});
+  },
   openTask(event) {
     if (!this.ensureIdentityReady()) return;
     const category = event.currentTarget.dataset.category;
@@ -648,6 +727,7 @@ Page({
     if (!this.ensureNicknameReady()) {
       return;
     }
+    this.prefetchListeningMaterialHome();
     wx.navigateTo({
       url: '/pages/material/index?module=listening'
     });

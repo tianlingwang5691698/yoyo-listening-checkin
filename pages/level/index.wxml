@@ -5,6 +5,9 @@
   </view>
 
   <view class="test-card" bindtap="openPlanSettings">
+    <view class="audio-track-mark">
+      <text></text><text></text><text></text><text></text>
+    </view>
     <view class="test-title">听力计划</view>
     <view class="test-copy">{{planSummaryText}}</view>
     <view class="test-action">设置计划</view>
@@ -28,9 +31,11 @@
 
   <view class="loading-card" wx:if="{{levelLoading && !materials.length}}">正在加载 {{selectedLevel}}</view>
 
-  <view class="stage-list">
+  <view class="stage-channel">
+    <view class="channel-rail"></view>
     <block wx:for="{{materials}}" wx:key="category">
       <view class="stage-row {{item.disabled ? 'is-disabled' : ''}}" data-category="{{item.category}}" data-level-id="{{item.levelId}}" data-disabled="{{item.disabled}}" bindtap="openMaterial">
+        <view class="stage-wave"><text></text><text></text><text></text></view>
         <view>
           <view class="stage-row-title">{{item.title}}</view>
           <view class="stage-row-meta type-caption">{{item.countText}}</view>

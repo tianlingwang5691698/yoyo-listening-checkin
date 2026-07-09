@@ -1,54 +1,95 @@
 <view class="theme-{{theme}} page-shell parent-page">
-  <view class="parent-hero product-hero">
-    <view class="product-title type-page-title">日报</view>
-    <view class="product-copy">{{child.nickname || '同学'}}</view>
-    <view class="parent-id">绑定 ID：{{child.childLoginCode || '未绑定'}}</view>
-    <picker wx:if="{{studentNames.length > 1}}" mode="selector" range="{{studentNames}}" value="{{selectedStudentIndex}}" bindchange="handleStudentChange">
-      <view class="student-switch">切换学生：{{studentNames[selectedStudentIndex]}}</view>
-    </picker>
+  <view class="parent-hero">
+    <view class="parent-identity">
+      <view>
+        <view class="parent-kicker">家庭观察</view>
+        <view class="parent-title">日报</view>
+      </view>
+      <view class="family-orbit">
+        <text></text>
+        <text></text>
+        <text></text>
+      </view>
+    </view>
+    <view class="child-line">
+      <view>
+        <view class="child-name">{{child.nickname || '同学'}}</view>
+        <view class="child-code">学号：{{child.childLoginCode || '未绑定'}}</view>
+      </view>
+      <picker wx:if="{{studentNames.length > 1}}" mode="selector" range="{{studentNames}}" value="{{selectedStudentIndex}}" bindchange="handleStudentChange">
+        <view class="student-switch">切换学生：{{studentNames[selectedStudentIndex]}}</view>
+      </picker>
+    </view>
     <view class="sync-debug {{syncMode === 'cloud' ? 'is-cloud' : 'is-local'}}" wx:if="{{showCloudDebug && syncDebug && syncDebug.show}}">
       {{syncDebug.text}}
     </view>
   </view>
 
-  <view class="section-panel">
-    <view class="section-title type-section-title">今日学习量</view>
-    <view class="module-grid">
-      <view class="module-card" wx:for="{{moduleStats}}" wx:key="key">
-        <view class="module-label">{{item.label}}</view>
-        <view class="module-count">{{item.value || item.count}}<text class="module-unit">{{item.unit}}</text></view>
+  <view class="daily-brief">
+    <view class="brief-head">
+      <view>
+        <view class="brief-kicker">今日结论</view>
+        <view class="brief-title">{{parentSummary.title}}</view>
       </view>
+      <view class="brief-date">{{todayReport.dateLabel || '今日'}}</view>
     </view>
+    <view class="brief-copy">{{parentSummary.copy}}</view>
+    <view class="brief-note">{{parentSummary.detail}}</view>
+    <view class="brief-progress">
+      <view class="progress-node is-active"></view>
+      <view class="progress-line"></view>
+      <view class="progress-node {{todayReport.totalCompletedCount ? 'is-active' : ''}}"></view>
+      <view class="progress-line"></view>
+      <view class="progress-node {{todayReport.totalMinutes ? 'is-active' : ''}}"></view>
+    </view>
+    <view class="brief-action" data-date="{{todayReport.date}}" bindtap="openDailyDetail">查看学习档案</view>
   </view>
 
-  <view class="report-card section-panel">
-    <view class="row-between report-head">
+  <view class="insight-panel">
+    <view class="panel-head">
       <view>
-        <view class="section-title type-section-title">今日</view>
+        <view class="section-title type-section-title">学习画像</view>
         <view class="section-copy">{{todayReport.totalCompletedCount || 0}} 项 · {{todayReport.totalMinutes || 0}} 分钟</view>
       </view>
-      <view class="detail-link" data-date="{{todayReport.date}}" bindtap="openDailyDetail">查看</view>
+    </view>
+    <view class="insight-map">
+      <view class="insight-card module-{{item.key}}" wx:for="{{moduleStats}}" wx:key="key">
+        <view class="insight-symbol">
+          <text></text>
+          <text></text>
+          <text></text>
+        </view>
+        <view class="module-label">{{item.label}}</view>
+        <view class="module-count">{{item.value || item.count}}<text class="module-unit">{{item.unit}}</text></view>
+        <view class="module-copy">{{item.displayCopy || item.copy}}</view>
+      </view>
     </view>
   </view>
 
-  <view class="trend-card section-panel">
-    <view class="row-between report-head">
-      <view class="section-title type-section-title">最近 7 天</view>
+  <view class="today-archive" data-date="{{todayReport.date}}" bindtap="openDailyDetail">
+    <view class="archive-ribbon"></view>
+    <view>
+      <view class="archive-title">今日明细</view>
+      <view class="archive-copy">{{todayReport.totalCompletedCount || 0}} 项完成内容，按学习动作整理。</view>
+    </view>
+    <view class="archive-link">查看</view>
+  </view>
+
+  <view class="trend-card">
+    <view class="trend-head">
+      <view>
+        <view class="section-title type-section-title">最近 7 天</view>
+        <view class="section-copy">看节奏，不看压力。</view>
+      </view>
       <view class="detail-link" bindtap="loadRecentReports">{{recentLoading ? '加载中' : (recentExpanded ? '收起' : '查看')}}</view>
     </view>
-    <block wx:if="{{recentExpanded}}">
-      <block wx:for="{{recentReports}}" wx:key="reportId">
-        <view class="trend-row task-cell is-link" data-date="{{item.date}}" bindtap="openDailyDetail">
-          <view>
-            <view class="trend-date">{{item.dateLabel}}</view>
-            <view class="trend-copy">{{item.totalCompletedCount ? '完成 ' + item.totalCompletedCount + ' 项' : '无记录'}}</view>
-          </view>
-          <view class="trend-side">
-            <view class="trend-badge">{{item.totalMinutes}} 分钟</view>
-            <view class="trend-arrow">›</view>
-          </view>
-        </view>
-      </block>
-    </block>
+    <view class="rhythm-strip" wx:if="{{recentExpanded}}">
+      <view class="rhythm-day {{item.totalCompletedCount ? 'is-active' : ''}}" wx:for="{{recentReports}}" wx:key="reportId" data-date="{{item.date}}" bindtap="openDailyDetail">
+        <view class="rhythm-dot"></view>
+        <view class="rhythm-date">{{item.dateLabel}}</view>
+        <view class="rhythm-copy">{{item.totalCompletedCount ? item.totalCompletedCount + ' 项' : '无记录'}}</view>
+        <view class="rhythm-minutes">{{item.totalMinutes || 0}} 分钟</view>
+      </view>
+    </view>
   </view>
 </view>

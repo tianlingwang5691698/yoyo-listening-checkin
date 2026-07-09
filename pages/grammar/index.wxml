@@ -1,22 +1,49 @@
 <view class="theme-{{theme}} page-shell grammar-page">
-  <view class="grammar-hero card">
-    <view class="grammar-eyebrow">英语语法</view>
-    <view class="grammar-title">考点分类</view>
-    <view class="grammar-copy">按难度和考点练习单选题。</view>
+  <view class="grammar-hero">
+    <view class="grammar-hero-main">
+      <view class="grammar-eyebrow">英语语法</view>
+      <view class="grammar-title">把一句话讲明白</view>
+      <view class="grammar-copy">从主谓宾到从句，陪孩子看懂每个考点为什么这样选。</view>
+    </view>
+    <view class="grammar-hero-visual">
+      <view class="grammar-board">
+        <view class="board-head">
+          <view></view><view></view><view></view>
+        </view>
+        <view class="sentence-line line-main"></view>
+        <view class="sentence-line line-soft"></view>
+        <view class="grammar-tags">
+          <view>主语</view>
+          <view>谓语</view>
+          <view>宾语</view>
+        </view>
+        <view class="explain-card">
+          <view class="explain-mark"></view>
+          <view class="explain-lines">
+            <view></view>
+            <view></view>
+          </view>
+        </view>
+      </view>
+    </view>
     <view class="grammar-actions">
       <view class="grammar-action {{mode === 'topics' ? 'is-active' : ''}}" bindtap="openTopicBook">考点分类</view>
       <view class="grammar-action {{mode === 'wrong' ? 'is-active' : ''}}" bindtap="openWrongBook">错题集</view>
     </view>
   </view>
 
-  <view class="grammar-card card" wx:if="{{!selectedStageId && !selectedExamId && !selectedCategoryId && !selectedTopicId}}">
+  <view class="grammar-card directory-card" wx:if="{{!selectedStageId && !selectedExamId && !selectedCategoryId && !selectedTopicId}}">
     <view class="grammar-card-top">
       <view class="grammar-card-label">{{mode === 'wrong' ? '错题难度' : '语法难度'}}</view>
-      <view class="grammar-card-state">{{stages.length}} 类</view>
+      <view class="grammar-card-state">{{stages.length}} 组</view>
     </view>
-    <view class="directory-list">
-      <view class="directory-row" wx:for="{{stages}}" wx:key="stageId" data-stage-id="{{item.stageId}}" bindtap="selectStage">
-        <view>
+    <view class="directory-map">
+      <view class="directory-row map-node" wx:for="{{stages}}" wx:key="stageId" data-stage-id="{{item.stageId}}" bindtap="selectStage">
+        <view class="directory-mark">
+          <view class="mark-dot"></view>
+          <view class="mark-branch"></view>
+        </view>
+        <view class="directory-content">
           <view class="directory-title">{{item.stage}}</view>
           <view class="directory-meta">{{item.count}} 题</view>
         </view>
@@ -25,14 +52,18 @@
     </view>
   </view>
 
-  <view class="grammar-card card" wx:elif="{{selectedStageId && !selectedExamId && !selectedCategoryId && !selectedTopicId}}">
+  <view class="grammar-card directory-card" wx:elif="{{selectedStageId && !selectedExamId && !selectedCategoryId && !selectedTopicId}}">
     <view class="grammar-card-top">
       <view class="grammar-card-label">{{selectedStage.stage}}</view>
       <view class="directory-back-icon" bindtap="backToTopics">‹ 难度</view>
     </view>
-    <view class="directory-list">
-      <view class="directory-row" wx:for="{{exams}}" wx:key="examId" data-exam-id="{{item.examId}}" bindtap="selectExam">
-        <view>
+    <view class="directory-map">
+      <view class="directory-row map-node" wx:for="{{exams}}" wx:key="examId" data-exam-id="{{item.examId}}" bindtap="selectExam">
+        <view class="directory-mark">
+          <view class="mark-dot"></view>
+          <view class="mark-branch"></view>
+        </view>
+        <view class="directory-content">
           <view class="directory-title">{{item.exam}}</view>
           <view class="directory-meta">{{item.count}} 题</view>
         </view>
@@ -41,14 +72,18 @@
     </view>
   </view>
 
-  <view class="grammar-card card" wx:elif="{{selectedExamId && !selectedCategoryId && !selectedTopicId}}">
+  <view class="grammar-card directory-card" wx:elif="{{selectedExamId && !selectedCategoryId && !selectedTopicId}}">
     <view class="grammar-card-top">
       <view class="grammar-card-label">{{selectedStage.stage}} · {{selectedExam.exam}}</view>
       <view class="directory-back-icon" bindtap="backToStageCategories">‹ 模考</view>
     </view>
-    <view class="directory-list">
-      <view class="directory-row" wx:for="{{topics}}" wx:key="topicId" data-topic-id="{{item.topicId}}" bindtap="selectTopic">
-        <view>
+    <view class="directory-map">
+      <view class="directory-row map-node" wx:for="{{topics}}" wx:key="topicId" data-topic-id="{{item.topicId}}" bindtap="selectTopic">
+        <view class="directory-mark">
+          <view class="mark-dot"></view>
+          <view class="mark-branch"></view>
+        </view>
+        <view class="directory-content">
           <view class="directory-title">{{item.topic}}</view>
           <view class="directory-meta">{{item.count}} 题</view>
         </view>
@@ -57,14 +92,18 @@
     </view>
   </view>
 
-  <view class="grammar-card card" wx:elif="{{selectedCategoryId && !selectedTopicId}}">
+  <view class="grammar-card directory-card" wx:elif="{{selectedCategoryId && !selectedTopicId}}">
     <view class="grammar-card-top">
       <view class="grammar-card-label">{{selectedCategory.topic}}</view>
       <view class="directory-back-icon" bindtap="backToExamCategories">‹ 大类</view>
     </view>
-    <view class="directory-list">
-      <view class="directory-row" wx:for="{{selectedCategory.children}}" wx:key="topicId" data-topic-id="{{item.topicId}}" bindtap="selectTopic">
-        <view>
+    <view class="directory-map">
+      <view class="directory-row map-node" wx:for="{{selectedCategory.children}}" wx:key="topicId" data-topic-id="{{item.topicId}}" bindtap="selectTopic">
+        <view class="directory-mark">
+          <view class="mark-dot"></view>
+          <view class="mark-branch"></view>
+        </view>
+        <view class="directory-content">
           <view class="directory-title">{{item.topic}}</view>
           <view class="directory-meta">{{item.count}} 题</view>
         </view>
@@ -73,30 +112,40 @@
     </view>
   </view>
 
-  <view class="grammar-card card" wx:else>
+  <view class="grammar-card practice-card" wx:else>
     <view class="grammar-card-top">
-      <view class="grammar-card-label">{{selectedTopic.topic}} · {{answeredCount}} / {{selectedQuestions.length}}</view>
+      <view>
+        <view class="grammar-card-label">{{selectedTopic.topic}}</view>
+        <view class="practice-progress">{{answeredCount}} / {{selectedQuestions.length}}</view>
+      </view>
       <view class="directory-back-icon" bindtap="backToCategory">‹ 细分</view>
     </view>
     <view class="directory-meta" wx:if="{{selectedTopicOffset > 0}}">已自动接着第 {{selectedTopicOffset + 1}} 题开始。</view>
     <view class="directory-meta" wx:if="{{selectedQuestions.length === 0}}">本考点已做完。</view>
     <view class="question-list">
       <view class="question-row" wx:for="{{selectedQuestions}}" wx:key="_id">
-        <view class="question-meta">第 {{item.sequenceNumber}} 题 · {{item.year}} · {{item.district}} · 原卷第 {{item.number}} 题</view>
+        <view class="diagnostic-head">
+          <view class="question-meta">第 {{item.sequenceNumber}} 题 · {{item.year}} · {{item.district}} · 原卷第 {{item.number}} 题</view>
+          <view class="diagnostic-scale">
+            <view></view><view></view><view></view><view></view><view></view>
+          </view>
+        </view>
         <view class="question-prompt" wx:if="{{!item.isAnswered}}">{{item.prompt}}</view>
         <view class="question-prompt token-line" wx:else>
           <text wx:for="{{item.promptTokens}}" wx:key="id" wx:for-item="token" class="{{token.word ? 'lookup-token' : ''}}" data-question-id="{{item._id}}" data-word="{{token.word}}" catchtap="openDictionaryWord">{{token.text}}</text>
         </view>
         <view class="option-grid">
           <view class="option-item {{option.selected ? 'is-selected' : ''}} {{option.correct ? 'is-correct' : ''}} {{option.wrong ? 'is-wrong' : ''}}" wx:for="{{item.optionsList}}" wx:for-item="option" wx:key="key" data-question-id="{{item._id}}" data-option="{{option.key}}" bindtap="selectOption">
-            <text>{{option.key}}. </text>
-            <block wx:if="{{!item.isAnswered}}">{{option.text}}</block>
-            <block wx:else>
-              <text wx:for="{{option.tokens}}" wx:key="id" wx:for-item="token" class="{{token.word ? 'lookup-token' : ''}}" data-question-id="{{item._id}}" data-word="{{token.word}}" catchtap="openDictionaryWord">{{token.text}}</text>
-            </block>
+            <view class="option-key">{{option.key}}</view>
+            <view class="option-text">
+              <block wx:if="{{!item.isAnswered}}">{{option.text}}</block>
+              <block wx:else>
+                <text wx:for="{{option.tokens}}" wx:key="id" wx:for-item="token" class="{{token.word ? 'lookup-token' : ''}}" data-question-id="{{item._id}}" data-word="{{token.word}}" catchtap="openDictionaryWord">{{token.text}}</text>
+              </block>
+            </view>
           </view>
         </view>
-        <view class="answer-line" wx:if="{{item.isAnswered}}">
+        <view class="answer-line {{item.isCorrect ? 'is-correct' : 'is-wrong'}}" wx:if="{{item.isAnswered}}">
           <text wx:if="{{item.answer}}">{{item.isCorrect ? '答对了' : '答错了'}} · 标准答案：{{item.answer}}</text>
           <text wx:else>无标准答案。</text>
         </view>

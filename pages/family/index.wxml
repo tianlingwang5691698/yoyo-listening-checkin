@@ -1,5 +1,15 @@
 <view class="theme-{{theme}} page-shell family-page">
+  <view class="family-atmosphere">
+    <view class="light-ray ray-one"></view>
+    <view class="light-ray ray-two"></view>
+  </view>
+
   <view class="family-hero product-hero">
+    <view class="family-map">
+      <view class="family-node node-parent">家</view>
+      <view class="family-link"></view>
+      <view class="family-node node-child">学</view>
+    </view>
     <view class="product-title type-page-title">家庭</view>
     <view class="product-copy">{{syncMode === 'cloud' ? '已接通' : '待同步'}}</view>
     <view class="sync-debug {{syncMode === 'cloud' ? 'is-cloud' : 'is-local'}}" wx:if="{{showCloudDebug && syncDebug && syncDebug.show}}">
@@ -7,33 +17,34 @@
     </view>
   </view>
 
-  <view class="family-list section-panel binding-repair" wx:if="{{bindingProfileRequired}}">
+  <view class="binding-repair relation-panel glass-panel" wx:if="{{bindingProfileRequired}}">
     <view class="section-title">补齐绑定信息</view>
     <view class="student-hint">请输入你的昵称和与孩子的关系，保存后会显示为“昵称 · 关系”。</view>
-    <view class="family-row action-row">
+    <view class="family-row action-row input-card">
       <view class="row-main">
         <view class="row-title">你的昵称</view>
         <input class="row-field family-input" placeholder="例如 王天龙" value="{{bindingNicknameInput}}" bindinput="handleBindingNicknameInput" />
       </view>
     </view>
-    <view class="family-row action-row">
+    <view class="family-row action-row input-card">
       <view class="row-main">
         <view class="row-title">关系</view>
         <input class="row-field family-input" placeholder="例如 妈妈 / 爸爸 / 老师" value="{{bindingRelationInput}}" bindinput="handleBindingRelationInput" />
       </view>
-      <button class="row-action row-action-wide" bindtap="saveBindingProfile">保存</button>
+      <button class="row-action row-action-wide primary-action" bindtap="saveBindingProfile">保存</button>
     </view>
   </view>
 
-  <view class="family-list section-panel" wx:if="{{!bindingProfileRequired}}">
-    <view class="section-title">身份</view>
-    <view class="family-row action-row" wx:if="{{!childJoinRequired}}">
+  <view class="relation-panel glass-panel" wx:if="{{!bindingProfileRequired}}">
+    <view class="section-title">账号身份</view>
+    <view class="family-row action-row identity-strip" wx:if="{{!childJoinRequired}}">
+      <view class="role-orb"></view>
       <view class="row-main">
         <view class="row-copy">{{studyRoleLabel}}</view>
       </view>
       <button class="row-action" bindtap="toggleStudyRole">{{studyRoleActionText}}</button>
     </view>
-    <view class="family-row action-row" wx:if="{{!childJoinRequired && currentMember && currentMember.studyRole === 'student'}}">
+    <view class="family-row action-row code-strip" wx:if="{{!childJoinRequired && currentMember && currentMember.studyRole === 'student'}}">
       <view class="row-main">
         <view class="row-title">学号</view>
         <view class="row-copy">{{child.childLoginCode || '待同步'}}</view>
@@ -41,33 +52,36 @@
     </view>
   </view>
 
-  <view class="family-list section-panel" wx:if="{{!bindingProfileRequired && !childJoinRequired && currentMember && currentMember.studyRole === 'parent' && studentCards.length}}">
+  <view class="student-board glass-panel" wx:if="{{!bindingProfileRequired && !childJoinRequired && currentMember && currentMember.studyRole === 'parent' && studentCards.length}}">
     <view class="section-head">
       <view class="section-title">绑定学生</view>
       <view class="section-count">{{studentCountText}}</view>
     </view>
     <view class="student-hint">已绑定的学生在这里，点学生姓名即可切换查看记录。</view>
-    <block wx:for="{{studentCards}}" wx:key="familyId">
-      <view class="student-row {{item.isCurrent ? 'is-current' : ''}}" data-index="{{index}}" bindtap="selectStudent">
-        <view class="row-main">
-          <view class="row-title">{{item.nickname}}</view>
-          <view class="row-copy">ID：{{item.childLoginCode || '待同步'}}</view>
+    <view class="student-track">
+      <block wx:for="{{studentCards}}" wx:key="familyId">
+        <view class="student-row student-card {{item.isCurrent ? 'is-current' : ''}}" data-index="{{index}}" bindtap="selectStudent">
+          <view class="student-avatar">学</view>
+          <view class="row-main">
+            <view class="row-title">{{item.nickname}}</view>
+            <view class="row-copy">学号：{{item.childLoginCode || '待同步'}}</view>
+          </view>
+          <view class="student-current" wx:if="{{item.isCurrent}}">当前</view>
         </view>
-        <view class="student-current" wx:if="{{item.isCurrent}}">当前</view>
-      </view>
-    </block>
-    <view class="student-hint" wx:if="{{studentCards.length === 1}}">继续在下面输入孩子 ID，可添加更多学生。</view>
+      </block>
+    </view>
+    <view class="student-hint" wx:if="{{studentCards.length === 1}}">继续在下面输入学号，可添加更多学生。</view>
   </view>
 
-  <view class="family-list section-panel" wx:if="{{!bindingProfileRequired && currentMember}}">
+  <view class="join-panel glass-panel" wx:if="{{!bindingProfileRequired && currentMember}}">
     <view class="section-title">{{currentMember.studyRole === 'student' ? '登录其他学生账号' : '绑定学生'}}</view>
-    <view class="family-row action-row">
+    <view class="family-row action-row input-card">
       <view class="row-main">
-        <input class="row-field family-input" type="number" maxlength="6" placeholder="{{currentMember.studyRole === 'student' ? '学生ID' : '孩子ID'}}" value="{{childCodeInput}}" bindinput="handleChildCodeInput" />
+        <input class="row-field family-input" type="number" maxlength="6" placeholder="学号" value="{{childCodeInput}}" bindinput="handleChildCodeInput" />
       </view>
-      <button class="row-action" bindtap="joinFamilyByChildCode">{{currentMember.studyRole === 'student' ? '登录' : '绑定'}}</button>
+      <button class="row-action primary-action" bindtap="joinFamilyByChildCode">{{currentMember.studyRole === 'student' ? '登录' : '绑定'}}</button>
     </view>
-    <view class="family-row action-row" wx:if="{{currentMember.studyRole !== 'student'}}">
+    <view class="family-row action-row input-card" wx:if="{{currentMember.studyRole !== 'student'}}">
       <view class="row-main">
         <view class="row-title">关系</view>
         <input class="row-field family-input" placeholder="例如 妈妈 / 爸爸 / 老师" value="{{joinName}}" bindinput="handleJoinNameInput" />
@@ -76,18 +90,20 @@
     </view>
   </view>
 
-  <view class="family-list section-panel" wx:if="{{!bindingProfileRequired && !childJoinRequired && currentMember && currentMember.studyRole === 'parent'}}">
-    <view class="section-title">清误</view>
-    <view class="family-row action-row">
-      <view class="row-main">
-        <view class="row-copy">清掉今天误记播放</view>
+  <view class="care-actions" wx:if="{{!bindingProfileRequired && !childJoinRequired && currentMember && currentMember.studyRole === 'parent'}}">
+    <view class="mini-panel glass-panel">
+      <view class="section-title">修正今日记录</view>
+      <view class="family-row action-row">
+        <view class="row-main">
+          <view class="row-copy">撤回今天误记的一次播放</view>
+        </view>
+        <button class="row-action row-action-wide row-action-warn {{undoingLastListened ? 'is-disabled' : ''}}" bindtap="undoLastListened">撤回</button>
       </view>
-      <button class="row-action row-action-wide row-action-warn {{undoingLastListened ? 'is-disabled' : ''}}" bindtap="undoLastListened">清掉</button>
     </view>
   </view>
 
-  <view class="family-list section-panel" wx:if="{{!bindingProfileRequired && currentMember && currentMember.studyRole === 'parent' && currentMember.role !== 'owner'}}">
-    <view class="section-title">解绑</view>
+  <view class="mini-panel glass-panel" wx:if="{{!bindingProfileRequired && currentMember && currentMember.studyRole === 'parent' && currentMember.role !== 'owner'}}">
+    <view class="section-title">解除绑定</view>
     <view class="family-row action-row">
       <view class="row-main">
         <view class="row-copy">解除当前绑定</view>
@@ -96,15 +112,18 @@
     </view>
   </view>
 
-  <view class="member-card section-panel" wx:if="{{!bindingProfileRequired && !childJoinRequired}}">
+  <view class="member-card glass-panel" wx:if="{{!bindingProfileRequired && !childJoinRequired}}">
     <view class="section-title">成员</view>
-    <block wx:for="{{memberCards}}" wx:key="memberId">
-      <view class="member-row {{item.isCurrentDevice ? 'is-current-device' : ''}}">
-        <view class="row-main">
-          <view class="member-name">{{item.displayName}}</view>
+    <view class="member-constellation">
+      <block wx:for="{{memberCards}}" wx:key="memberId">
+        <view class="member-row member-node {{item.isCurrentDevice ? 'is-current-device' : ''}}">
+          <view class="member-dot"></view>
+          <view class="row-main">
+            <view class="member-name">{{item.displayName}}</view>
+          </view>
+          <view class="member-role type-caption" wx:if="{{item.isCurrentDevice}}">本机</view>
         </view>
-        <view class="member-role type-caption" wx:if="{{item.isCurrentDevice}}">本机</view>
-      </view>
-    </block>
+      </block>
+    </view>
   </view>
 </view>

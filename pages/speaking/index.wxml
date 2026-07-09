@@ -1,58 +1,80 @@
 <view class="theme-{{theme}} page-shell speaking-page">
-  <view class="speaking-hero card">
-    <view class="speaking-eyebrow">英语口语</view>
-    <view class="speaking-title">听到问题，按住回答</view>
-    <view class="speaking-copy">松手后自动评分，只看这次录音。</view>
+  <view class="speaking-header">
+    <view class="speaking-title">口语练习</view>
+    <view class="speaking-copy">听清题目，按住回答。</view>
   </view>
 
-  <view class="speaking-card card">
-    <view class="speaking-card-top">
-      <view class="speaking-card-label">今日练习</view>
-      <view class="speaking-card-state">SOE 评分</view>
+  <view class="voice-cabin card">
+    <view class="cabin-glow"></view>
+    <view class="prompt-panel">
+      <view class="prompt-label">今日题目</view>
+      <view class="prompt-text">{{activeExercise.prompt}}</view>
+      <view class="prompt-actions">
+        <view class="prompt-tag">{{activeExercise.title}}</view>
+        <button class="listen-button" hover-class="is-pressed" hover-start-time="20" hover-stay-time="180" bindtap="playQuestion">{{questionLoading ? '准备播放' : (questionPlaying ? '停止播放' : '听问题')}}</button>
+      </view>
     </view>
-    <view class="exercise-list">
-      <view class="exercise-row {{activeId === item.id ? 'is-active' : ''}}" wx:for="{{exercises}}" wx:key="id" data-id="{{item.id}}" bindtap="selectExercise">
-        <view class="exercise-main">
+
+    <view class="task-dial">
+      <view class="task-node {{activeId === item.id ? 'is-active' : ''}}" wx:for="{{exercises}}" wx:key="id" data-id="{{item.id}}" bindtap="selectExercise">
+        <view class="node-pulse"></view>
+        <view class="node-copy">
           <view class="exercise-title">{{item.title}}</view>
           <view class="exercise-meta">{{item.meta}}</view>
         </view>
-        <view class="exercise-check">{{activeId === item.id ? '✓' : '›'}}</view>
       </view>
     </view>
-  </view>
 
-  <view class="speaking-card card">
-    <view class="prompt-label">问题</view>
-    <view class="prompt-text">{{activeExercise.prompt}}</view>
-    <button class="listen-button" hover-class="is-pressed" hover-start-time="20" hover-stay-time="180" bindtap="playQuestion">{{questionLoading ? '准备播放' : (questionPlaying ? '停止播放' : '听问题')}}</button>
-    <view class="record-line {{recording ? 'is-recording' : (tempFilePath ? 'is-ready' : '')}}">
-      {{submitting ? '松手了，正在评分' : (recording ? '正在回答，松手提交' : (tempFilePath ? ('已录制 ' + recordDurationText) : '按住下方按钮回答'))}}
-    </view>
-    <view class="record-actions">
+    <view class="record-orbit {{recording ? 'is-recording' : (submitting ? 'is-submitting' : '')}}">
+      <view class="breath-ring ring-outer"></view>
+      <view class="breath-ring ring-mid"></view>
+      <view class="mic-sound-circle">
+        <view class="mic-stem"></view>
+      </view>
+      <view class="wave-field">
+        <view class="wave-bar bar-one"></view>
+        <view class="wave-bar bar-two"></view>
+        <view class="wave-bar bar-three"></view>
+        <view class="wave-bar bar-four"></view>
+        <view class="wave-bar bar-five"></view>
+      </view>
       <button class="hold-button {{recording ? 'is-recording' : ''}} {{submitting ? 'is-disabled' : ''}}" hover-class="is-pressed" hover-start-time="20" hover-stay-time="180" bindtouchstart="holdToRecordStart" bindtouchend="holdToRecordEnd" bindtouchcancel="holdToRecordEnd">
         {{recording ? '松手评分' : (submitting ? '评分中' : '按住回答')}}
       </button>
     </view>
+
+    <view class="record-line {{recording ? 'is-recording' : (tempFilePath ? 'is-ready' : '')}}">
+      {{submitting ? '正在评分' : (recording ? '正在回答' : (tempFilePath ? ('已录制 ' + recordDurationText) : '准备录音'))}}
+    </view>
     <view class="error-text" wx:if="{{errorText}}">{{errorText}}</view>
   </view>
 
-  <view class="speaking-card card score-card {{resultCelebrating ? 'is-celebrating' : ''}}" wx:if="{{result}}">
+  <view class="score-card card {{resultCelebrating ? 'is-celebrating' : ''}}" wx:if="{{result}}">
     <view class="speaking-card-top">
       <view class="speaking-card-label">本次结果</view>
       <view class="speaking-card-state">{{result.score || 0}} 分</view>
     </view>
-    <view class="score-grid">
+    <view class="score-meters">
       <view class="score-item">
-        <view class="score-value">{{result.accuracy || 0}}</view>
-        <view class="score-label">准确度</view>
+        <view class="score-row">
+          <view class="score-label">准确度</view>
+          <view class="score-value">{{result.accuracy || 0}}</view>
+        </view>
+        <view class="meter-track"><view class="meter-fill" style="width: {{result.accuracy || 0}}%;"></view></view>
       </view>
       <view class="score-item">
-        <view class="score-value">{{result.fluency || 0}}</view>
-        <view class="score-label">流利度</view>
+        <view class="score-row">
+          <view class="score-label">流利度</view>
+          <view class="score-value">{{result.fluency || 0}}</view>
+        </view>
+        <view class="meter-track"><view class="meter-fill" style="width: {{result.fluency || 0}}%;"></view></view>
       </view>
       <view class="score-item">
-        <view class="score-value">{{result.completion || 0}}</view>
-        <view class="score-label">完整度</view>
+        <view class="score-row">
+          <view class="score-label">完整度</view>
+          <view class="score-value">{{result.completion || 0}}</view>
+        </view>
+        <view class="meter-track"><view class="meter-fill" style="width: {{result.completion || 0}}%;"></view></view>
       </view>
     </view>
   </view>

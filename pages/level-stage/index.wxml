@@ -1,5 +1,6 @@
 <view class="theme-{{theme}} page-shell level-stage-page">
   <view class="stage-hero card">
+    <view class="stage-orbit"><text></text><text></text><text></text></view>
     <view class="type-caption">{{stage.levelId}} · {{stage.stageText}}</view>
     <view class="stage-title type-page-title">{{stage.title}}</view>
     <view class="stage-hint type-caption">{{stage.hint}}</view>
@@ -14,6 +15,7 @@
     <block wx:for="{{taskGroups}}" wx:for-index="groupIndex" wx:key="groupKey">
     <view class="task-group-card card {{item.disabled ? 'is-disabled' : ''}}">
       <view class="task-group-row" data-group-index="{{groupIndex}}" bindtap="toggleTaskGroup">
+        <view class="group-track"><text></text><text></text><text></text></view>
         <view>
           <view class="group-name">{{item.categoryLabel}}</view>
           <view class="group-meta type-caption">{{item.taskCountText}} · {{item.title}} · {{item.textType}}</view>

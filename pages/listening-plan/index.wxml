@@ -14,6 +14,7 @@
   </view>
 
   <view class="selected-card">
+    <view class="plan-wave-mark"><text></text><text></text><text></text></view>
     <view>
       <view class="selected-title">听力计划</view>
       <view class="selected-copy type-caption">{{planSummaryText}}</view>

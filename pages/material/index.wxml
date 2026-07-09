@@ -1,54 +1,73 @@
 <view class="theme-{{theme}} page-shell material-page" wx:if="{{pageReady}}">
-  <view class="material-hero card">
-    <view class="material-eyebrow">{{eyebrow}}</view>
-    <view class="material-title">{{title}}</view>
-    <view class="material-copy">{{copy}}</view>
+  <view class="material-hero card {{moduleId === 'writing' ? 'is-writing' : 'is-listening'}}">
+    <view class="material-hero-copy">
+      <view class="material-eyebrow">{{eyebrow}}</view>
+      <view class="material-title">{{title}}</view>
+      <view class="material-copy">{{copy}}</view>
+    </view>
+    <view class="material-wave" wx:if="{{moduleId !== 'writing'}}">
+      <view class="material-wave-bar is-one"></view>
+      <view class="material-wave-bar is-two"></view>
+      <view class="material-wave-bar is-three"></view>
+      <view class="material-wave-bar is-four"></view>
+      <view class="material-wave-bar is-five"></view>
+    </view>
+    <view class="material-paper-mark" wx:else>
+      <view class="paper-corner"></view>
+      <view class="paper-line line-one"></view>
+      <view class="paper-line line-two"></view>
+      <view class="paper-line line-three"></view>
+      <view class="pencil-stroke"></view>
+    </view>
   </view>
 
-  <view class="material-card card" wx:if="{{showCefrEntry && !selectedStageId}}">
+  <view class="material-card material-channel-card card" wx:if="{{showCefrEntry && !selectedStageId}}">
     <view class="material-card-top">
       <view class="material-card-label">欧标听力</view>
       <view class="material-card-state">A1-C2</view>
     </view>
-    <view class="directory-list">
-      <view class="directory-row" bindtap="openCefrListening">
-        <view>
+    <scroll-view class="channel-rail" scroll-x="{{true}}" enable-flex="{{true}}">
+      <view class="directory-row channel-tile" bindtap="openCefrListening">
+        <view class="directory-orb">A</view>
+        <view class="directory-main">
           <view class="directory-title">A1-C2 听力内容</view>
-          <view class="directory-meta">原有听力课程继续在这里</view>
+          <view class="directory-meta">课程音频库</view>
         </view>
         <view class="directory-arrow">›</view>
       </view>
-    </view>
+    </scroll-view>
   </view>
 
   <view class="material-debug" wx:if="{{debugLines.length}}">
     <view class="material-debug-line" wx:for="{{debugLines}}" wx:key="*this">{{item}}</view>
   </view>
 
-  <view class="material-card card" wx:if="{{!selectedStageId}}">
+  <view class="material-card material-channel-card card" wx:if="{{!selectedStageId}}">
     <view class="material-card-top">
       <view class="material-card-label">{{showCefrEntry ? '考试听力' : '学段'}}</view>
       <view class="material-card-state">{{stages.length}} 类</view>
     </view>
-    <view class="directory-list">
-      <view class="directory-row" wx:for="{{stages}}" wx:key="stageId" data-stage-id="{{item.stageId}}" bindtap="selectStage">
-        <view>
+    <scroll-view class="channel-rail" scroll-x="{{true}}" enable-flex="{{true}}">
+      <view class="directory-row channel-tile stage-tile" wx:for="{{stages}}" wx:key="stageId" data-stage-id="{{item.stageId}}" bindtap="selectStage">
+        <view class="directory-orb">{{index + 1}}</view>
+        <view class="directory-main">
           <view class="directory-title">{{item.stage}}</view>
           <view class="directory-meta">{{item.count}} {{itemUnit}}</view>
         </view>
         <view class="directory-arrow">›</view>
       </view>
-    </view>
+    </scroll-view>
   </view>
 
-  <view class="material-card card" wx:elif="{{selectedStageId && !selectedExamId}}">
+  <view class="material-card drawer-card card" wx:elif="{{selectedStageId && !selectedExamId}}">
     <view class="material-card-top">
       <view class="material-card-label">{{selectedStage.stage}}</view>
       <view class="directory-back-icon" bindtap="backToStages">‹ 学段</view>
     </view>
-    <view class="directory-list">
-      <view class="directory-row" wx:for="{{exams}}" wx:key="examId" data-exam-id="{{item.examId}}" bindtap="selectExam">
-        <view>
+    <view class="drawer-stack">
+      <view class="directory-row drawer-row" wx:for="{{exams}}" wx:key="examId" data-exam-id="{{item.examId}}" bindtap="selectExam">
+        <view class="directory-orb">{{index + 1}}</view>
+        <view class="directory-main">
           <view class="directory-title">{{item.exam}}</view>
           <view class="directory-meta">{{item.count}} {{itemUnit}}</view>
         </view>
@@ -58,14 +77,15 @@
     <view class="empty-state" wx:if="{{!exams.length}}">暂无内容。</view>
   </view>
 
-  <view class="material-card card" wx:elif="{{selectedExamId && !selectedDistrict}}">
+  <view class="material-card drawer-card card" wx:elif="{{selectedExamId && !selectedDistrict}}">
     <view class="material-card-top">
       <view class="material-card-label">{{selectedStage.stage}} · {{selectedExam.exam}}</view>
       <view class="directory-back-icon" bindtap="backToExams">‹ 模考</view>
     </view>
-    <view class="directory-list">
-      <view class="directory-row" wx:for="{{districts}}" wx:key="district" data-district="{{item.district}}" bindtap="selectDistrict">
-        <view>
+    <view class="drawer-stack">
+      <view class="directory-row drawer-row" wx:for="{{districts}}" wx:key="district" data-district="{{item.district}}" bindtap="selectDistrict">
+        <view class="directory-orb">{{index + 1}}</view>
+        <view class="directory-main">
           <view class="directory-title">{{item.district}}</view>
           <view class="directory-meta">{{item.count}} {{itemUnit}}</view>
         </view>
@@ -75,21 +95,25 @@
     <view class="empty-state" wx:if="{{!districts.length}}">暂无内容。</view>
   </view>
 
-  <view class="material-card card" wx:else>
+  <view class="material-card program-card card" wx:else>
     <view class="material-card-top">
       <view class="material-card-label">{{selectedExam.exam}} · {{selectedDistrict}}</view>
       <view class="directory-back-icon" bindtap="backToDistricts">‹ 区县</view>
     </view>
-    <view class="task-list">
-      <view class="task-row" wx:for="{{items}}" wx:key="stableId" data-item-id="{{item.materialItemId}}" bindtap="openItem">
-        <view class="task-index">{{index + 1}}</view>
+    <view class="program-stack">
+      <view class="task-row program-drawer" wx:for="{{items}}" wx:key="stableId" data-item-id="{{item.materialItemId}}" bindtap="openItem">
+        <view class="task-wave">
+          <view></view>
+          <view></view>
+          <view></view>
+        </view>
         <view class="task-main">
           <view class="task-title">{{item.title}}</view>
           <view class="task-meta">{{item.year}} · {{item.district}} · {{item.examType}}</view>
           <view class="material-detail" wx:if="{{expandedItemId === item.materialItemId}}">
             <view wx:if="{{moduleId === 'writing'}}">{{item.prompt}}</view>
             <view wx:else>
-              <view>音频：{{item.audioCloudPath}}</view>
+              <view>音频已收录</view>
               <view wx:if="{{item.transcript}}">文本：{{item.transcript}}</view>
             </view>
           </view>
