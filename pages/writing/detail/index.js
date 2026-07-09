@@ -106,19 +106,9 @@ Page({
       wx.showToast({ title: '先写完整一点', icon: 'none' });
       return;
     }
-    const minWords = Number(prompt.minWords || 60) || 60;
     const wordCount = countWords(essay);
-    if (wordCount < minWords) {
-      this.setData({
-        wordCount,
-        errorText: `还差一点，至少写 ${minWords} 词后再提交。`,
-        writingDebugLines: []
-      });
-      wx.showToast({ title: `至少 ${minWords} 词`, icon: 'none' });
-      return;
-    }
     this.reviewEffectPlayed = false;
-    this.setData({ submitting: true, errorText: '', reviewCelebrating: false, writingDebugLines: [] });
+    this.setData({ submitting: true, wordCount, errorText: '', reviewCelebrating: false, writingDebugLines: [] });
     try {
       const result = await store.submitWritingAttempt({ prompt, promptId: prompt._id, essay });
       if (result && result.syncMode === 'cloud-error') {

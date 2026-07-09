@@ -188,15 +188,15 @@
 - 每条必须写清楚：板块、文件、改动、设计记录、验证。
 - 后续改 UI 或交互前先看对应板块最近记录，再继续改。
 
-### 2026-07-09 写作批改 target 与词数校验修复
+### 2026-07-09 写作批改 target 与短文提交修复
 
 - 板块：写作页
 - 文件：`utils/store.js`
 - 文件：`pages/writing/detail/index.js`
 - 文件：`pages/writing/detail/index.wxml`
 - 文件：`pages/writing/detail/index.wxss`
-- 改动：`gradeWritingAttempt` 补带当前学生 target；作文提交前按题目 `minWords` 校验；批改失败时在页面写出提交/批改链路 debug。
-- 设计记录：写作结果未返回前不播放完成音和旁白；太短作文不进入批改中，避免用户误以为卡住。
+- 改动：`gradeWritingAttempt` 补带当前学生 target；允许少于 `minWords` 的短文提交，由批改模型按题目规则扣分；批改失败时在页面写出提交/批改链路 debug。
+- 设计记录：写作结果未返回前不播放完成音和旁白；短文不前端拦截，交给批改结果解释得分。
 - 验证：已做 `node --check utils/store.js`、`node --check pages/writing/detail/index.js`。
 
 ### 2026-07-09 阅读写作英文旁白接入
