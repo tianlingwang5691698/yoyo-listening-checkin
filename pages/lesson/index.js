@@ -5,6 +5,7 @@ const page = require('../../utils/page');
 const labels = require('../../utils/labels');
 const monitor = require('../../utils/monitor');
 const snapshotStore = require('../../utils/snapshot');
+const effects = require('../../utils/effects');
 const LESSON_TASK_SNAPSHOT_KEY = 'lessonTaskSnapshotV1';
 const LESSON_STUDY_PACK_SNAPSHOT_KEY = 'lessonStudyPackSnapshotV1';
 const LESSON_TASK_SNAPSHOT_MAX_AGE_MS = 24 * 60 * 60 * 1000;
@@ -22,6 +23,14 @@ function buildCloudFileId(cloudPath) {
     return '';
   }
   return `cloud://${appConfig.cloudEnvId}.${appConfig.cloudBucket}/${normalizedPath}`;
+}
+
+function getFlashcardTargetDebugText() {
+  const target = store.getSelectedStudentTarget ? store.getSelectedStudentTarget() : {};
+  return [
+    `targetChildId=${target.targetChildId || ''}`,
+    `targetFamilyId=${target.targetFamilyId || ''}`
+  ].join('；');
 }
 
 function encodeUrlPathSegment(segment) {
@@ -524,12 +533,14 @@ Page({
     lessonPatternCards: [],
     speakingWord: '',
     lessonDictionaryAddedMap: {},
+    flashcardAddDebugLines: [],
     dictionaryVisible: false,
     dictionaryLoading: false,
     dictionaryAdding: false,
     dictionaryAudioLoading: false,
     dictionaryWord: '',
-    dictionaryEntry: null
+    dictionaryEntry: null,
+    lessonCelebrateVisible: false
   }),
   markLessonRoute(step, meta) {
     const startedAt = Number(this.routeStartedAt || 0) || Date.now();
@@ -868,6 +879,10 @@ Page({
     if (this.completionCardTimer) {
       clearTimeout(this.completionCardTimer);
       this.completionCardTimer = null;
+    }
+    if (this.lessonCelebrateTimer) {
+      clearTimeout(this.lessonCelebrateTimer);
+      this.lessonCelebrateTimer = null;
     }
     if (this.audioErrorTimer) {
       clearTimeout(this.audioErrorTimer);
@@ -2254,10 +2269,17 @@ Page({
       const result = await store.addDictionaryWord(Object.assign({}, entry, { word }));
       const key = result && result.flashcardKey ? result.flashcardKey : `word:${word}`;
       this.setData({
-        lessonDictionaryAddedMap: Object.assign({}, this.data.lessonDictionaryAddedMap || {}, { [key]: true, [word]: true })
+        lessonDictionaryAddedMap: Object.assign({}, this.data.lessonDictionaryAddedMap || {}, { [key]: true, [word]: true }),
+        flashcardAddDebugLines: []
       });
       wx.showToast({ title: '已加入词库', icon: 'none' });
     } catch (error) {
+      this.setData({
+        flashcardAddDebugLines: [
+          `DEBUG: lesson.addDictionaryWordToLibrary -> store.addDictionaryWord -> cloud.addDictionaryWord.saved：false`,
+          `${getFlashcardTargetDebugText()}；cloudError.message=${error && error.message ? error.message : String(error)}`
+        ]
+      });
       wx.showToast({ title: '加入失败', icon: 'none' });
     } finally {
       this.setData({ dictionaryAdding: false });
@@ -2286,10 +2308,17 @@ Page({
       }));
       const key = result && result.flashcardKey ? result.flashcardKey : (card.flashcardKey || `${type}:${text}`);
       this.setData({
-        lessonDictionaryAddedMap: Object.assign({}, this.data.lessonDictionaryAddedMap || {}, { [key]: true, [text]: true })
+        lessonDictionaryAddedMap: Object.assign({}, this.data.lessonDictionaryAddedMap || {}, { [key]: true, [text]: true }),
+        flashcardAddDebugLines: []
       });
       wx.showToast({ title: '已加入词库', icon: 'none' });
     } catch (error) {
+      this.setData({
+        flashcardAddDebugLines: [
+          `DEBUG: lesson.addLessonStudyWordToLibrary -> store.addDictionaryWord -> cloud.addDictionaryWord.saved：false`,
+          `${getFlashcardTargetDebugText()}；type=${type}；text=${text}；cloudError.message=${error && error.message ? error.message : String(error)}`
+        ]
+      });
       wx.showToast({ title: '加入失败', icon: 'none' });
     } finally {
       this.setData({ dictionaryAdding: false });
@@ -2379,6 +2408,7 @@ Page({
       await this.markPreviewTaskListened();
       return;
     }
+    const wasCompleted = !!(this.data.progress && this.data.progress.completedToday);
     const detail = await store.markTaskListened({
       childId: this.data.child.childId,
       category: this.category,
@@ -2437,6 +2467,9 @@ Page({
     await this.loadCachedLessonStudyPack(normalizedTask);
     await this.updatePassQuestion(normalizedTask, detail.progress);
     await this.syncPlayer(normalizedTask);
+    if (!wasCompleted && detail.progress && detail.progress.completedToday) {
+      this.showLessonCompletionEffect();
+    }
     wx.showToast({
       title: detail.progress.completedToday ? `${normalizedTask.categoryLabel} 今天完成` : `已完成第 ${detail.progress.playCount} 遍`,
       icon: 'none'
@@ -2444,6 +2477,17 @@ Page({
     if (detail.checkinReady) {
       this.promptCompleteTodayCheckin();
     }
+  },
+  showLessonCompletionEffect() {
+    if (this.lessonCelebrateTimer) {
+      clearTimeout(this.lessonCelebrateTimer);
+    }
+    effects.playComplete({ voiceKey: 'listeningComplete' });
+    this.setData({ lessonCelebrateVisible: true });
+    this.lessonCelebrateTimer = setTimeout(() => {
+      this.lessonCelebrateTimer = null;
+      this.setData({ lessonCelebrateVisible: false });
+    }, 1800);
   },
   async markPreviewTaskListened() {
     const currentProgress = this.data.progress || {};

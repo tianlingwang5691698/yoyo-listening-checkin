@@ -1,5 +1,6 @@
 const page = require('../../utils/page');
 const store = require('../../utils/store');
+const effects = require('../../utils/effects');
 
 const EXERCISES = [
   {
@@ -41,6 +42,7 @@ Page({
     questionPlaying: false,
     questionLoading: false,
     result: null,
+    resultCelebrating: false,
     errorText: ''
   }),
 
@@ -97,6 +99,10 @@ Page({
     if (this.questionAudioContext) {
       this.questionAudioContext.destroy();
       this.questionAudioContext = null;
+    }
+    if (this.resultEffectTimer) {
+      clearTimeout(this.resultEffectTimer);
+      this.resultEffectTimer = null;
     }
   },
 
@@ -215,6 +221,9 @@ Page({
         result: response.pronunciation || null,
         tempFilePath: ''
       });
+      if (response.pronunciation) {
+        this.playScoreEffect();
+      }
     } catch (error) {
       this.setData({
         errorText: '评分暂时没有成功，请稍后再试。'
@@ -222,5 +231,16 @@ Page({
     } finally {
       this.setData({ submitting: false });
     }
+  },
+  playScoreEffect() {
+    if (this.resultEffectTimer) {
+      clearTimeout(this.resultEffectTimer);
+    }
+    effects.playComplete();
+    this.setData({ resultCelebrating: true });
+    this.resultEffectTimer = setTimeout(() => {
+      this.resultEffectTimer = null;
+      this.setData({ resultCelebrating: false });
+    }, 1500);
   }
 });

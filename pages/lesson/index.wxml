@@ -16,6 +16,11 @@
         </block>
       </block>
     </view>
+    <view class="sync-debug is-local" wx:if="{{flashcardAddDebugLines.length}}">
+      <block wx:for="{{flashcardAddDebugLines}}" wx:key="*this">
+        <view class="sync-debug-line"><text selectable="{{true}}">{{item}}</text></view>
+      </block>
+    </view>
   </view>
 
   <view class="dictionary-mask" wx:if="{{dictionaryVisible}}" catchtap="closeDictionary"></view>
@@ -36,6 +41,13 @@
   </view>
 
   <view class="section-panel player-card">
+    <view class="lesson-complete-effect" wx:if="{{lessonCelebrateVisible}}">
+      <view class="lesson-complete-ring"></view>
+      <view class="lesson-complete-mark">完成</view>
+      <view class="lesson-complete-spark spark-one"></view>
+      <view class="lesson-complete-spark spark-two"></view>
+      <view class="lesson-complete-spark spark-three"></view>
+    </view>
     <view class="pass-steps">
       <block wx:for="{{passSteps}}" wx:key="key">
         <view class="pass-step {{item.done ? 'is-done' : item.current ? 'is-current' : ''}}">{{item.text}}</view>

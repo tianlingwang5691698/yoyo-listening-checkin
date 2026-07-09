@@ -83,6 +83,7 @@
 - 多任务子行必须使用阻止冒泡的点击方式。
 - 首页节目卡点击进入当前节目任务。
 - 课程页播放、回退、倍速、结束计数、transcript 高亮是核心链路，UI 改动不能破坏。
+- 完成/奖励音效按 [SOUND_EFFECTS_GUIDELINES.md](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/docs/SOUND_EFFECTS_GUIDELINES.md) 执行，普通按钮不加音效。
 
 ## 使用方式
 

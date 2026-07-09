@@ -145,7 +145,18 @@
       <view><text>本轮新词</text><text>{{newDueCount}}/{{settings.newLimit}}</text></view>
       <view><text>待学习</text><text>{{total}}</text></view>
     </view>
-    <view class="study-card {{cardChoice === 'unfamiliar' ? 'is-unfamiliar' : ''}} {{cardChoice === 'easy' ? 'is-easy' : ''}}" wx:if="{{current}}">
+    <view class="review-complete-card card" wx:if="{{reviewCompleted}}">
+      <view class="confetti-layer">
+        <text wx:for="{{['1','2','3','4','5','6','7','8','9','10','11','12']}}" wx:key="*this" class="confetti confetti-{{item}}"></text>
+      </view>
+      <view class="celebrate-burst">
+        <text></text><text></text><text></text><text></text><text></text><text></text>
+      </view>
+      <view class="complete-badge">完成</view>
+      <view class="complete-title">今天词汇完成啦</view>
+      <button class="complete-action" hover-class="is-pressed" hover-start-time="20" hover-stay-time="180" bindtap="exitReview">返回词库</button>
+    </view>
+    <view class="study-card {{cardChoice === 'unfamiliar' ? 'is-unfamiliar' : ''}} {{cardChoice === 'easy' ? 'is-easy' : ''}}" wx:elif="{{current}}">
       <view class="study-card-head">
         <view class="study-age">{{current.typeLabel}}</view>
         <view class="study-word-row">

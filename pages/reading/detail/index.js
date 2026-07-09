@@ -2,6 +2,7 @@ const store = require('../../../utils/store');
 const page = require('../../../utils/page');
 const completed = require('../../../utils/completed');
 const snapshotStore = require('../../../utils/snapshot');
+const effects = require('../../../utils/effects');
 
 const STUDY_PACK_STORAGE_PREFIX = 'readingStudyPack:';
 const READING_PASSAGE_SNAPSHOT_KEY = 'readingPassageSnapshotV1';
@@ -888,6 +889,7 @@ Page({
     unfamiliarMap: {},
     scoreText: '',
     reviewSummary: '',
+    readingCelebrating: false,
     submitted: false,
     showReviewDetails: false,
     hasScore: false,
@@ -900,6 +902,10 @@ Page({
     studyDictionaryAddedMap: {}
   }),
   onUnload() {
+    if (this.readingEffectTimer) {
+      clearTimeout(this.readingEffectTimer);
+      this.readingEffectTimer = null;
+    }
     if (this.readingAudioContext) {
       this.readingAudioContext.destroy();
       this.readingAudioContext = null;
@@ -1394,7 +1400,8 @@ Page({
       wx.showToast({ title: '先完成题目', icon: 'none' });
       return;
     }
-    this.setData({ submitting: true });
+    this.readingEffectPlayed = false;
+    this.setData({ submitting: true, readingCelebrating: false });
     this.setData({ analysisErrorText: '' });
     try {
       const result = await store.submitReadingAttempt({
@@ -1417,6 +1424,7 @@ Page({
         hasScore: !!result.attempt && result.attempt.score !== null && result.attempt.score !== undefined
       });
       this.applyReview(result.review);
+      this.playReadingCompleteEffect();
       recordReadingCompleted(this.data.passage, result.attempt);
       if (result.studyWriteAllowed !== false) {
         addReviewFlashcards(result.review);
@@ -1442,5 +1450,18 @@ Page({
   },
   retrySubmit() {
     this.submit();
+  },
+  playReadingCompleteEffect() {
+    if (this.readingEffectPlayed) return;
+    this.readingEffectPlayed = true;
+    if (this.readingEffectTimer) {
+      clearTimeout(this.readingEffectTimer);
+    }
+    effects.playComplete({ voiceKey: 'readingComplete' });
+    this.setData({ readingCelebrating: true });
+    this.readingEffectTimer = setTimeout(() => {
+      this.readingEffectTimer = null;
+      this.setData({ readingCelebrating: false });
+    }, 1600);
   }
 });

@@ -15,6 +15,85 @@
   overflow: hidden;
 }
 
+.reading-result-card {
+  position: relative;
+}
+
+.reading-result-card.is-celebrating {
+  animation: readingResultLift 0.82s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.reading-result-effect {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.reading-effect-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 140rpx;
+  background: linear-gradient(100deg, transparent 0%, rgba(255, 255, 255, 0.78) 48%, transparent 100%);
+  transform: translateX(-160rpx);
+  animation: readingResultShine 1.05s ease-out forwards;
+}
+
+.reading-effect-dot {
+  position: absolute;
+  width: 14rpx;
+  height: 14rpx;
+  border-radius: 999rpx;
+  background: var(--accent);
+  opacity: 0;
+  animation: readingResultDot 1.12s ease-out forwards;
+}
+
+.reading-effect-dot.dot-one {
+  top: 26rpx;
+  right: 56rpx;
+}
+
+.reading-effect-dot.dot-two {
+  top: 54rpx;
+  right: 28rpx;
+  background: #2e5fa8;
+  animation-delay: 0.1s;
+}
+
+@keyframes readingResultLift {
+  0% {
+    transform: translateY(10rpx);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes readingResultShine {
+  0% {
+    transform: translateX(-160rpx);
+  }
+  100% {
+    transform: translateX(720rpx);
+  }
+}
+
+@keyframes readingResultDot {
+  0% {
+    opacity: 0;
+    transform: translateY(10rpx) scale(0.8);
+  }
+  35% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-24rpx) scale(1);
+  }
+}
+
 .passage-meta {
   color: var(--text-muted);
   font-size: var(--font-caption-size);

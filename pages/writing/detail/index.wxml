@@ -23,7 +23,12 @@
     <view class="review-block">作文已保存，系统正在批改。可以停留等待，也可以稍后到成长记录查看。</view>
   </view>
 
-  <view class="card review-card" wx:if="{{review}}">
+  <view class="card review-card {{reviewCelebrating ? 'is-celebrating' : ''}}" wx:if="{{review}}">
+    <view class="review-effect" wx:if="{{reviewCelebrating}}">
+      <view class="review-effect-dot dot-one"></view>
+      <view class="review-effect-dot dot-two"></view>
+      <view class="review-effect-dot dot-three"></view>
+    </view>
     <view class="review-top">
       <view>
         <view class="section-title">批改结果</view>

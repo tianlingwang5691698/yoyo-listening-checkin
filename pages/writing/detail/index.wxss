@@ -144,6 +144,74 @@
   line-height: 1.65;
 }
 
+.review-card {
+  position: relative;
+}
+
+.review-card.is-celebrating {
+  animation: writingReviewLift 0.9s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.review-effect {
+  position: absolute;
+  top: 18rpx;
+  right: 26rpx;
+  width: 120rpx;
+  height: 90rpx;
+  pointer-events: none;
+}
+
+.review-effect-dot {
+  position: absolute;
+  width: 16rpx;
+  height: 16rpx;
+  border-radius: 999rpx;
+  background: #178a53;
+  animation: writingReviewDot 1.2s ease-out forwards;
+}
+
+.dot-one {
+  left: 8rpx;
+  bottom: 10rpx;
+}
+
+.dot-two {
+  left: 52rpx;
+  bottom: 18rpx;
+  background: #e98264;
+  animation-delay: 0.08s;
+}
+
+.dot-three {
+  right: 6rpx;
+  bottom: 8rpx;
+  background: #c47a2c;
+  animation-delay: 0.14s;
+}
+
+@keyframes writingReviewLift {
+  0% {
+    transform: translateY(12rpx);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes writingReviewDot {
+  0% {
+    opacity: 0;
+    transform: translateY(0) scale(0.7);
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-72rpx) scale(1);
+  }
+}
+
 .list-title {
   margin-bottom: 8rpx;
   color: #111827;

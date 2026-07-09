@@ -36,7 +36,7 @@
     <view class="error-text" wx:if="{{errorText}}">{{errorText}}</view>
   </view>
 
-  <view class="speaking-card card" wx:if="{{result}}">
+  <view class="speaking-card card score-card {{resultCelebrating ? 'is-celebrating' : ''}}" wx:if="{{result}}">
     <view class="speaking-card-top">
       <view class="speaking-card-label">本次结果</view>
       <view class="speaking-card-state">{{result.score || 0}} 分</view>

@@ -53,6 +53,68 @@
   margin-top: 28rpx;
 }
 
+.record-hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.streak-milestone {
+  position: absolute;
+  top: 128rpx;
+  right: 32rpx;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.streak-milestone-ring {
+  position: absolute;
+  inset: -20rpx;
+  border-radius: 999rpx;
+  border: 2rpx solid rgba(196, 122, 44, 0.38);
+  animation: streakRing 1.7s ease-out forwards;
+}
+
+.streak-milestone-badge {
+  position: relative;
+  padding: 14rpx 22rpx;
+  border-radius: 999rpx;
+  background: rgba(255, 255, 255, 0.94);
+  color: var(--accent-deep);
+  font-size: var(--font-caption-size);
+  font-weight: var(--font-title-weight);
+  box-shadow: 0 16rpx 36rpx rgba(93, 70, 48, 0.14);
+  animation: streakBadge 1.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+@keyframes streakRing {
+  0% {
+    opacity: 0;
+    transform: scale(0.72);
+  }
+  28% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.48);
+  }
+}
+
+@keyframes streakBadge {
+  0% {
+    opacity: 0;
+    transform: translateY(12rpx) scale(0.9);
+  }
+  24% {
+    opacity: 1;
+    transform: translateY(0) scale(1.04);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-6rpx) scale(1);
+  }
+}
+
 .metric-value {
   color: var(--text-strong);
   font-size: var(--font-display-size);

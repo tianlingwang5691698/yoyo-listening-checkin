@@ -188,6 +188,132 @@
 - 每条必须写清楚：板块、文件、改动、设计记录、验证。
 - 后续改 UI 或交互前先看对应板块最近记录，再继续改。
 
+### 2026-07-09 阅读写作英文旁白接入
+
+- 板块：阅读页、写作页
+- 文件：`assets/audio/voice/reading-complete-nice-reading.mp3`
+- 文件：`assets/audio/voice/writing-complete-nice-writing.mp3`
+- 文件：`assets/audio/voice/tests/reading-complete-nice-reading.wav`
+- 文件：`assets/audio/voice/tests/reading-complete-nice-reading.mp3`
+- 文件：`assets/audio/voice/tests/writing-complete-nice-writing.wav`
+- 文件：`assets/audio/voice/tests/writing-complete-nice-writing.mp3`
+- 文件：`utils/effects.js`
+- 文件：`pages/reading/detail/index.js`
+- 文件：`pages/reading/detail/index.wxml`
+- 文件：`pages/reading/detail/index.wxss`
+- 文件：`pages/writing/detail/index.js`
+- 文件：`docs/SOUND_EFFECTS_GUIDELINES.md`
+- 改动：新增 `Nice reading.`、`Nice writing.` 两条英文奖励旁白；阅读解析完成加入结果卡扫光动效和旁白，写作批改完成旁白从纯音效升级为 `Nice writing.`。
+- 设计记录：阅读/写作只在整体结果首次出现时奖励，不按题目对错或分数高低播放旁白。
+- 验证：已做 `node --check utils/effects.js`、`node --check pages/reading/detail/index.js`、`node --check pages/writing/detail/index.js`。
+
+### 2026-07-09 英文奖励旁白页面接入
+
+- 板块：全局音效
+- 文件：`utils/effects.js`
+- 文件：`assets/audio/voice/flashcard-complete-great-work.mp3`
+- 文件：`assets/audio/voice/listening-complete-great-listening.mp3`
+- 文件：`assets/audio/voice/streak-milestone-you-did-it.mp3`
+- 文件：`pages/reading/flashcards/index.js`
+- 文件：`pages/lesson/index.js`
+- 文件：`pages/record/index.js`
+- 文件：`docs/SOUND_EFFECTS_GUIDELINES.md`
+- 改动：把 3 条测试英文旁白提升为正式素材，并接入词汇完成、听力完成、连续打卡里程碑。
+- 设计记录：旁白延迟约 0.45 秒播放，避开完成音效主峰；仍不用于写作、口语、普通按钮和主音频播放中。
+- 验证：已做 `node --check utils/effects.js`、`node --check pages/reading/flashcards/index.js`、`node --check pages/lesson/index.js`、`node --check pages/record/index.js`。
+
+### 2026-07-09 英文奖励旁白测试音色
+
+- 板块：全局音效
+- 文件：`assets/audio/voice/tests/flashcard-complete-great-work.wav`
+- 文件：`assets/audio/voice/tests/flashcard-complete-great-work.mp3`
+- 文件：`assets/audio/voice/tests/listening-complete-great-listening.wav`
+- 文件：`assets/audio/voice/tests/listening-complete-great-listening.mp3`
+- 文件：`assets/audio/voice/tests/streak-milestone-you-did-it.wav`
+- 文件：`assets/audio/voice/tests/streak-milestone-you-did-it.mp3`
+- 文件：`docs/SOUND_EFFECTS_GUIDELINES.md`
+- 改动：用本地 Chatterbox 生成 3 条英文奖励旁白测试音色，并转出 MP3 测试版。
+- 设计记录：旁白仅用于完成奖励测试，不替代课程原音、单词发音、录音或口语回放。
+- 验证：已用 `ffprobe` 检查时长，3 条均为约 1 秒。
+
+### 2026-07-09 全项目完成态特效第一版
+
+- 板块：全局交互
+- 文件：`utils/effects.js`
+- 文件：`pages/lesson/index.js`
+- 文件：`pages/lesson/index.wxml`
+- 文件：`pages/lesson/index.wxss`
+- 文件：`pages/writing/detail/index.js`
+- 文件：`pages/writing/detail/index.wxml`
+- 文件：`pages/writing/detail/index.wxss`
+- 文件：`pages/speaking/index.js`
+- 文件：`pages/speaking/index.wxml`
+- 文件：`pages/speaking/index.wxss`
+- 文件：`pages/record/index.js`
+- 文件：`pages/record/index.wxml`
+- 文件：`pages/record/index.wxss`
+- 改动：新增统一完成音效工具，并在听力完成、写作批改完成、口语评分完成、连续打卡里程碑加入克制动效和一次性完成音。
+- 设计记录：只在结果首次出现或里程碑触发，不进入普通按钮、答题过程、录音中或音频播放中。
+- 验证：已做 `node --check utils/effects.js`、`node --check pages/lesson/index.js`、`node --check pages/writing/detail/index.js`、`node --check pages/speaking/index.js`、`node --check pages/record/index.js`。
+
+### 2026-07-09 全项目特效音效设计地图
+
+- 板块：全局设计规范
+- 文件：`docs/SOUND_EFFECTS_GUIDELINES.md`
+- 文件：`assets/README.md`
+- 文件：`assets/audio/voice/.gitkeep`
+- 改动：补充全项目可用特效/音效场景，新增英文原音短旁白使用边界和素材目录约定。
+- 设计记录：特效只服务完成、里程碑和结果出现；英文旁白只做短奖励/引导，不覆盖课程原音、发音、录音和口语回放。
+- 验证：文档规范改动，无运行检查。
+
+### 2026-07-09 词汇完成音效接入
+
+- 板块：词汇板块
+- 文件：`assets/audio/sfx/flashcard-complete-chime.mp3`
+- 文件：`pages/reading/flashcards/index.js`
+- 改动：下载 Mixkit `Achievement bell` 作为词汇完成音效，完成礼花页出现时播放一次。
+- 设计记录：完成音效只在本轮复习结束时触发，尊重系统静音，不覆盖词卡发音播放。
+- 验证：已做 `node --check pages/reading/flashcards/index.js`，并检查音频文件类型。
+
+### 2026-07-09 完成音效工具规范
+
+- 板块：全局设计规范
+- 文件：`docs/SOUND_EFFECTS_GUIDELINES.md`
+- 文件：`docs/DESIGN_STYLE_REQUIREMENTS.md`
+- 文件：`assets/README.md`
+- 文件：`assets/audio/sfx/.gitkeep`
+- 改动：新增 ElevenLabs Sound Effects 作为完成/奖励音效首选工具，并规定生成时长、风格、存放路径和接入规则。
+- 设计记录：音效只用于明确完成奖励，不进入普通按钮反馈；完成音效要轻、短、可被操作打断。
+- 验证：文档规范改动，无运行检查。
+
+### 2026-07-09 词汇复习完成礼花页
+
+- 板块：词汇板块
+- 文件：`pages/reading/flashcards/index.js`
+- 文件：`pages/reading/flashcards/index.wxml`
+- 文件：`pages/reading/flashcards/index.wxss`
+- 改动：本轮最后一张词卡完成后显示完成页，含礼花彩带、放射欢呼动效和“返回词库”按钮；有复习回队列时等最后一次完成再出现。
+- 设计记录：结束态必须给明确奖励和返回路径，不再停留在“今天没有复习”的空态。
+- 验证：已做 `node --check pages/reading/flashcards/index.js`。
+
+### 2026-07-09 词汇进度条持续流光
+
+- 板块：词汇板块
+- 文件：`pages/reading/flashcards/index.wxss`
+- 改动：词汇首页进度条改为底轨微呼吸、填充流光和右端光点持续动效。
+- 设计记录：进度反馈要更明确但不干扰背诵主按钮，动效只作用在条形进度本身。
+- 验证：已检查相关样式 diff。
+
+### 2026-07-09 学习包加入词库 target debug
+
+- 板块：词汇板块
+- 文件：`pages/lesson/index.js`
+- 文件：`pages/lesson/index.wxml`
+- 文件：`pages/reading/flashcards/index.js`
+- 改动：学习包加入词库成功后写入按当前 target 隔离的本地待同步卡片并刷新我的词库展示；成功不显示 debug，失败才显示写入链路；我的词库为空时显示空库链路断点，不再显示演示词。
+- 设计记录：加入成功后本机必须立刻可见且不能串孩子，云端全量词库刷新可随后同步，空真实库不能用演示数据混淆。
+- 验证：已做相关 JS 语法检查。
+
 ### 2026-07-09 学习包加入词库真实成功校验
 
 - 板块：词汇板块

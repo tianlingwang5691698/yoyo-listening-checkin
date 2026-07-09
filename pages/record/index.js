@@ -4,6 +4,7 @@ const labels = require('../../utils/labels');
 const contracts = require('../../utils/contracts');
 const snapshotStore = require('../../utils/snapshot');
 const appConfig = require('../../data/app-config');
+const effects = require('../../utils/effects');
 
 const WEEK_LABELS = ['日', '一', '二', '三', '四', '五', '六'];
 const LESSON_TASK_SNAPSHOT_KEY = 'lessonTaskSnapshotV1';
@@ -17,6 +18,7 @@ const EMPTY_DAY_SUMMARY = {
   statusText: '未完成',
   minutesText: '0 分钟'
 };
+const STREAK_MILESTONES = [3, 7, 14, 30, 60, 100];
 
 function buildCloudFileId(cloudPath) {
   const normalizedPath = String(cloudPath || '').replace(/^\/+/, '');
@@ -318,7 +320,9 @@ Page({
     catchupState: contracts.createCatchupStateDefaults(),
     catchupTasks: [],
     catchupTasksLoaded: false,
-    catchupTasksLoading: false
+    catchupTasksLoading: false,
+    streakMilestoneVisible: false,
+    streakMilestoneLabel: ''
   }),
   async onShow() {
     this.recordPerf = page.startPagePerf('record');
@@ -397,6 +401,7 @@ Page({
       buildMetric(nextState.stats, this.data.metricMode),
       catchupPresentation
     )));
+    this.showStreakMilestoneIfNeeded(nextState.stats);
     snapshotStore.write(RECORD_HOME_SNAPSHOT_KEY, snapshotId, Object.assign(
       {},
       nextState,
@@ -415,6 +420,32 @@ Page({
   },
   onHide() {
     this.clearDeferredLoads();
+    this.clearMilestoneTimer();
+  },
+  clearMilestoneTimer() {
+    if (this.milestoneTimer) {
+      clearTimeout(this.milestoneTimer);
+      this.milestoneTimer = null;
+    }
+  },
+  showStreakMilestoneIfNeeded(stats) {
+    const streak = Number((stats && stats.streakDays) || 0);
+    if (!STREAK_MILESTONES.includes(streak)) return;
+    const key = `streakMilestoneSfx:${getTargetSnapshotPart()}:${streak}`;
+    try {
+      if (wx.getStorageSync(key)) return;
+      wx.setStorageSync(key, true);
+    } catch (error) {}
+    this.clearMilestoneTimer();
+    effects.playComplete({ voiceKey: 'streakMilestone' });
+    this.setData({
+      streakMilestoneVisible: true,
+      streakMilestoneLabel: `连续 ${streak} 天`
+    });
+    this.milestoneTimer = setTimeout(() => {
+      this.milestoneTimer = null;
+      this.setData({ streakMilestoneVisible: false });
+    }, 2200);
   },
   clearDeferredLoads() {
     if (this.deferredLoadTimer) {

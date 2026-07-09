@@ -11,6 +11,12 @@
 - `assets/audio/Peppa/第1季/S101 Muddy Puddles.mp3`
 - `assets/audio/unlock1/Unlock2e_A1_1.2.mp3`
 - `assets/audio/songs/song-d1.mp3`
+- `assets/audio/sfx/flashcard-complete-chime.mp3`
+- `assets/audio/voice/flashcard-complete-great-work.mp3`
+
+音效生成和接入规范见：
+
+- `docs/SOUND_EFFECTS_GUIDELINES.md`
 
 脚本 PDF 建议放在：
 

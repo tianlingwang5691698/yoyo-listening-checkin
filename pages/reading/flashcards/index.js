@@ -1,5 +1,6 @@
 const page = require('../../../utils/page');
 const store = require('../../../utils/store');
+const effects = require('../../../utils/effects');
 
 const TYPE_LABELS = {
   all: '全部',
@@ -55,6 +56,7 @@ const FLASHCARD_SOURCE_CACHE_VERSION_KEY = 'flashcardSourceCacheVersion';
 const FLASHCARD_PLAN_SETTINGS_PREFIX = 'flashcardPlanSettings:';
 const FLASHCARD_CHECKIN_DAYS_KEY = 'flashcardCheckinDays';
 const FLASHCARD_AUDIO_CACHE_PREFIX = 'flashcard-audio-';
+const COMPLETION_SFX_SRC = '/assets/audio/sfx/flashcard-complete-chime.mp3';
 
 const LIMIT_MIN = 5;
 const LIMIT_DEFAULT_MAX = 500;
@@ -579,6 +581,32 @@ function shouldShowBookDebug(lines) {
   ));
 }
 
+function buildLibraryDebugLines(data, activeSourceId, library) {
+  if (activeSourceId || (library || []).length) return [];
+  const syncMode = (data && data.syncMode) || '';
+  const target = getTargetDebugText();
+  return [
+    `DEBUG: reading/flashcards.loadCards -> store.getFlashcardReview -> cloud.getFlashcardReview.library：${(library || []).length}`,
+    `${target}；syncMode=${syncMode || 'unknown'}；partial=${data && data.partial ? 'true' : 'false'}`,
+    '链路断点：我的词库云端真实返回为空；请回到加入页查看 addDictionaryWord 的 target child 是否一致。'
+  ];
+}
+
+function mergePendingFlashcards(library) {
+  const pending = store.getPendingFlashcards ? store.getPendingFlashcards() : [];
+  if (!pending.length) return library || [];
+  const map = {};
+  (library || []).forEach((item) => {
+    if (item && item.flashcardKey) map[item.flashcardKey] = item;
+  });
+  pending.forEach((item) => {
+    if (item && item.flashcardKey && !map[item.flashcardKey]) {
+      map[item.flashcardKey] = item;
+    }
+  });
+  return Object.keys(map).map((key) => map[key]);
+}
+
 function canUseDictionaryVoice(text) {
   const value = String(text || '').replace(/\s+/g, ' ').trim();
   if (!value || value.length > 60 || /[.!?;:]/.test(value)) return false;
@@ -631,6 +659,7 @@ Page({
     limitScrollTop: 0,
     reviewDone: 0,
     reviewSessionTotal: 0,
+    reviewCompleted: false,
     cardRevealed: false,
     cardChoice: '',
     previousCardChoice: '',
@@ -659,6 +688,10 @@ Page({
       this.flashcardAudioContext.destroy();
       this.flashcardAudioContext = null;
     }
+    if (this.completionSfxContext) {
+      this.completionSfxContext.destroy();
+      this.completionSfxContext = null;
+    }
   },
   onShow() {
     this.flashcardPerf = page.startPagePerf('flashcards');
@@ -685,9 +718,12 @@ Page({
     }));
   },
   buildFlashcardData(data, activeSourceId, cached) {
-    const rawLibrary = data.partial ? (data.library || []) : (data.library && data.library.length ? data.library : DEMO_FLASHCARDS);
+    const rawLibrary = data && Array.isArray(data.library) ? data.library : [];
     let library = filterBySource(rawLibrary, activeSourceId).map(normalizeCard);
-    let demoMode = rawLibrary === DEMO_FLASHCARDS;
+    if (!activeSourceId) {
+      library = mergePendingFlashcards(library).map(normalizeCard);
+    }
+    let demoMode = false;
     const settings = {
       newLimit: normalizeLimit((data.settings || {}).newLimit == null ? 10 : data.settings.newLimit),
       reviewLimit: normalizeLimit((data.settings || {}).reviewLimit == null ? 20 : data.settings.reviewLimit)
@@ -742,6 +778,7 @@ Page({
       logs: data.logs || [],
       dictionaryBooks: (data.dictionaryBooks && data.dictionaryBooks.length ? data.dictionaryBooks : DEFAULT_DICTIONARY_BOOKS).map(normalizeBook),
       demoMode,
+      flashcardDebugLines: buildLibraryDebugLines(data, activeSourceId, library),
       loading: false
     };
   },
@@ -1048,6 +1085,17 @@ Page({
     this.flashcardAudioContext.src = url;
     this.setData({ audioPlaying: true, audioCompleted: false });
     this.flashcardAudioContext.play();
+  },
+  playCompletionSfx() {
+    if (this.data.audioPlaying || this.data.audioLoading) return;
+    if (!this.completionSfxContext) {
+      this.completionSfxContext = wx.createInnerAudioContext();
+      this.completionSfxContext.obeyMuteSwitch = true;
+    }
+    this.completionSfxContext.stop();
+    this.completionSfxContext.src = COMPLETION_SFX_SRC;
+    this.completionSfxContext.play();
+    effects.playVoice('flashcardComplete', { delayMs: 450 });
   },
   scheduleAutoSpeakCurrent() {
     if (this.autoSpeakTimer) {
@@ -1387,12 +1435,14 @@ Page({
     const nextIndex = Math.min(this.data.currentIndex, Math.max(cards.length - 1, 0));
     const nextCard = cards[nextIndex] || null;
     const reviewDone = Math.min(Number(this.data.reviewDone || 0) + 1, Number(this.data.reviewSessionTotal || 0));
+    const reviewCompleted = !nextCard && reviewDone >= Number(this.data.reviewSessionTotal || 0);
     this.setData({
       cards,
       currentIndex: nextIndex,
       current: nextCard,
       total: cards.length,
       reviewDone,
+      reviewCompleted,
       cardRevealed: false,
       cardChoice: '',
       previousCardChoice: '',
@@ -1401,6 +1451,12 @@ Page({
       empty: !this.getFlashcardLibrary().length
     });
     if (shouldPersist) this.persistActiveSourceState();
+    if (reviewCompleted) {
+      this.syncVocabularyCompletion(true);
+      this.flushReviewQueue(true);
+      this.playCompletionSfx();
+      return;
+    }
     this.scheduleAutoSpeakCurrent();
     this.scheduleAudioPrefetchAroundCurrent();
   },
@@ -1438,6 +1494,7 @@ Page({
       current,
       reviewDone: 0,
       reviewSessionTotal: cards.length,
+      reviewCompleted: false,
       total: cards.length,
       dueCount: cards.length,
       newDueCount: cards.filter((item) => item.status === 'new').length,
@@ -1455,7 +1512,8 @@ Page({
   },
   exitReview() {
     this.syncVocabularyCompletion(true);
-    this.setData({ mode: 'library' });
+    this.flushReviewQueue(true);
+    this.setData({ mode: 'library', reviewCompleted: false });
   },
   async markRemembered() {
     if (!this.data.cardRevealed) {

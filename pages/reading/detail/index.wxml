@@ -56,7 +56,12 @@
       </view>
     </view>
 
-    <view class="review-card card" wx:if="{{submitted}}">
+    <view class="review-card card reading-result-card {{readingCelebrating ? 'is-celebrating' : ''}}" wx:if="{{submitted}}">
+      <view class="reading-result-effect" wx:if="{{readingCelebrating}}">
+        <view class="reading-effect-line"></view>
+        <view class="reading-effect-dot dot-one"></view>
+        <view class="reading-effect-dot dot-two"></view>
+      </view>
       <view class="review-score" wx:if="{{hasScore}}">{{scoreText}}</view>
       <view class="review-score" wx:else>已完成</view>
       <view class="review-copy">{{reviewSummary || '解析已生成。'}}</view>

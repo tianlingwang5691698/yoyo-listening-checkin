@@ -187,6 +187,46 @@
   gap: 14rpx;
 }
 
+.score-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.score-card.is-celebrating::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, 0.72) 46%, transparent 70%);
+  transform: translateX(-100%);
+  animation: speakingScoreShine 1.1s ease-out forwards;
+}
+
+.score-card.is-celebrating .score-value {
+  animation: speakingScorePop 0.62s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@keyframes speakingScoreShine {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes speakingScorePop {
+  0% {
+    transform: scale(0.86);
+  }
+  54% {
+    transform: scale(1.08);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 .score-item {
   min-height: 112rpx;
   border-radius: var(--radius-lg);

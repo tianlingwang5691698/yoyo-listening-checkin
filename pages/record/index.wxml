@@ -20,6 +20,11 @@
       </view>
     </view>
 
+    <view class="streak-milestone" wx:if="{{streakMilestoneVisible}}">
+      <view class="streak-milestone-ring"></view>
+      <view class="streak-milestone-badge">{{streakMilestoneLabel}}</view>
+    </view>
+
     <view class="summary-row">
       <view class="summary-item">
         <view class="summary-value-wrap">

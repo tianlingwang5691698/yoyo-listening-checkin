@@ -80,6 +80,114 @@
   margin-top: 24rpx;
 }
 
+.player-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.lesson-complete-effect {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lesson-complete-ring {
+  position: absolute;
+  width: 210rpx;
+  height: 210rpx;
+  border-radius: 999rpx;
+  border: 2rpx solid rgba(23, 138, 83, 0.34);
+  animation: lessonCompleteRing 1.45s ease-out forwards;
+}
+
+.lesson-complete-mark {
+  min-width: 118rpx;
+  height: 118rpx;
+  border-radius: 999rpx;
+  background: rgba(23, 138, 83, 0.94);
+  color: #fff;
+  font-size: 30rpx;
+  line-height: 118rpx;
+  font-weight: var(--font-title-weight);
+  text-align: center;
+  box-shadow: 0 18rpx 38rpx rgba(23, 138, 83, 0.24);
+  animation: lessonCompletePop 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.lesson-complete-spark {
+  position: absolute;
+  width: 10rpx;
+  height: 54rpx;
+  border-radius: 999rpx;
+  background: rgba(233, 130, 100, 0.9);
+  transform-origin: center bottom;
+  animation: lessonCompleteSpark 1.2s ease-out forwards;
+}
+
+.spark-one {
+  transform: translate(-120rpx, -48rpx) rotate(-28deg);
+}
+
+.spark-two {
+  background: rgba(196, 122, 44, 0.9);
+  transform: translate(124rpx, -62rpx) rotate(28deg);
+  animation-delay: 0.08s;
+}
+
+.spark-three {
+  background: rgba(46, 95, 168, 0.72);
+  transform: translate(0, -112rpx);
+  animation-delay: 0.14s;
+}
+
+@keyframes lessonCompleteRing {
+  0% {
+    opacity: 0;
+    transform: scale(0.52);
+  }
+  25% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.42);
+  }
+}
+
+@keyframes lessonCompletePop {
+  0% {
+    opacity: 0;
+    transform: scale(0.74);
+  }
+  24% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+}
+
+@keyframes lessonCompleteSpark {
+  0% {
+    opacity: 0;
+    height: 0;
+  }
+  25% {
+    opacity: 1;
+    height: 54rpx;
+  }
+  100% {
+    opacity: 0;
+    height: 10rpx;
+  }
+}
+
 .lesson-study-card {
   overflow: hidden;
 }
