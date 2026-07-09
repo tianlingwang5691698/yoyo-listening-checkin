@@ -376,6 +376,22 @@ async function addDictionaryBook(event) {
   };
 }
 
+async function getDictionaryBook(event) {
+  const payload = (event && event.payload) || {};
+  const level = normalizeText(payload.level).toLowerCase();
+  const book = DICTIONARY_BOOKS.find((item) => item.level === level);
+  if (!book) throw new Error('dictionary-book-invalid');
+  const entries = await storageAdapter.downloadCloudJson(book.cloudPath);
+  const rows = Array.isArray(entries) ? entries : [];
+  return {
+    level,
+    title: book.title,
+    cloudPath: book.cloudPath,
+    total: rows.length,
+    rows
+  };
+}
+
 async function updateFlashcardReview(event) {
   const payload = (event && event.payload) || {};
   const { ctx, today } = await study.prepareRequestContext(Object.assign({}, event, { action: 'updateFlashcardReview' }));
@@ -564,5 +580,6 @@ module.exports = {
   saveSettings,
   saveFlashcardAudio,
   addDictionaryBook,
+  getDictionaryBook,
   addDictionaryWord
 };

@@ -16,6 +16,7 @@ const RECORD_CACHE_MAX_AGE_MS = 2 * 60 * 1000;
 const LISTENING_PLAN_CACHE_MAX_AGE_MS = 10 * 60 * 1000;
 const TEMP_FILE_URL_MAX_AGE_MS = 20 * 60 * 1000;
 const WORD_LOOKUP_MAX_AGE_MS = 30 * 60 * 1000;
+const FLASHCARD_SOURCE_CACHE_VERSION_KEY = 'flashcardSourceCacheVersion';
 let cloudReadCacheVersion = 0;
 const MUTATION_ACTIONS = {
   updateFlashcardReview: true,
@@ -69,6 +70,7 @@ const READ_CACHE_CONFIG = {
   getListeningStudyPack: { persist: true },
   getFlashcardDue: { persist: true },
   getFlashcardReview: { persist: true },
+  getDictionaryBook: { persist: false },
   getGrammarHome: { persist: true },
   getGrammarTopic: { persist: true },
   getGrammarWrongBook: { persist: true },
@@ -383,6 +385,12 @@ function clearCloudReadCache() {
   }
 }
 
+function bumpFlashcardSourceCacheVersion() {
+  try {
+    wx.setStorageSync(FLASHCARD_SOURCE_CACHE_VERSION_KEY, Date.now());
+  } catch (error) {}
+}
+
 async function callCloudFresh(action, payload, defaults) {
   const inflightKey = READ_CACHE_CONFIG[action]
     ? `${action}:${JSON.stringify(payload || {})}`
@@ -619,6 +627,16 @@ async function addDictionaryBook(level, options) {
   return callCloud('addDictionaryBook', withSelectedStudent(Object.assign({ level }, options || {})), { saved: false }, { useCache: false });
 }
 
+async function getDictionaryBook(level) {
+  return callCloud('getDictionaryBook', { level }, {
+    level,
+    title: '',
+    cloudPath: '',
+    total: 0,
+    rows: []
+  });
+}
+
 async function saveFlashcardAudio(options) {
   return callCloud('saveFlashcardAudio', withSelectedStudent(options || {}), { saved: false }, { useCache: false });
 }
@@ -840,7 +858,15 @@ async function lookupWord(word) {
 }
 
 async function addDictionaryWord(entry) {
-  return callCloud('addDictionaryWord', withSelectedStudent(entry || {}), { saved: false }, { useCache: false });
+  const result = await callCloud('addDictionaryWord', withSelectedStudent(entry || {}), { saved: false }, { useCache: false });
+  if (!result || result.saved !== true) {
+    const message = result && result.cloudError && result.cloudError.message
+      ? result.cloudError.message
+      : 'addDictionaryWord-not-saved';
+    throw new Error(message);
+  }
+  bumpFlashcardSourceCacheVersion();
+  return result;
 }
 
 async function submitReadingAttempt(options) {
@@ -1062,6 +1088,7 @@ module.exports = {
   updateFlashcardReview,
   saveFlashcardSettings,
   addDictionaryBook,
+  getDictionaryBook,
   saveFlashcardAudio,
   getTempFileURL,
   markTaskListened,

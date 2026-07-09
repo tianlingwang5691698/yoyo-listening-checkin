@@ -1,6 +1,5 @@
 const page = require('../../../utils/page');
 const store = require('../../../utils/store');
-const appConfig = require('../../../data/app-config');
 
 const TYPE_LABELS = {
   all: '全部',
@@ -52,6 +51,7 @@ const DEFAULT_DICTIONARY_BOOKS = [
 ];
 const FLASHCARD_SOURCE_CACHE_PREFIX = 'flashcardSourceCache:';
 const FLASHCARD_SOURCE_CACHE_TTL = 7 * 24 * 60 * 60 * 1000;
+const FLASHCARD_SOURCE_CACHE_VERSION_KEY = 'flashcardSourceCacheVersion';
 const FLASHCARD_PLAN_SETTINGS_PREFIX = 'flashcardPlanSettings:';
 const FLASHCARD_CHECKIN_DAYS_KEY = 'flashcardCheckinDays';
 const FLASHCARD_AUDIO_CACHE_PREFIX = 'flashcard-audio-';
@@ -430,12 +430,18 @@ function normalizeBook(book) {
 }
 
 async function loadBookCardsFromStorage(book) {
-  const baseUrl = String(appConfig.cloudAssetBaseUrl || '').replace(/\/+$/, '');
-  const cloudPath = String(book.cloudPath || '').replace(/^\/+/, '');
-  if (!baseUrl || !cloudPath) throw new Error('dictionary-book-url-empty');
-  const rows = await requestJson(`${baseUrl}/${encodeURI(cloudPath)}`);
+  const response = await store.getDictionaryBook(book.level);
+  if (response && response.syncMode === 'cloud-error') {
+    const error = new Error((response.cloudError && response.cloudError.message) || 'getDictionaryBook-cloud-error');
+    error.cloudError = response.cloudError;
+    throw error;
+  }
+  const rows = response && Array.isArray(response.rows) ? response.rows : [];
   if (!Array.isArray(rows)) throw new Error('dictionary-book-json-invalid');
-  return rows.map((entry, index) => buildBookCard(entry, book, index)).filter((item) => item.word);
+  return {
+    rows,
+    cards: rows.map((entry, index) => buildBookCard(entry, book, index)).filter((item) => item.word)
+  };
 }
 
 function getSourceCacheKey(sourceId) {
@@ -445,6 +451,19 @@ function getSourceCacheKey(sourceId) {
 function getSourceCacheFilePath(sourceId) {
   if (!wx.getFileSystemManager || !wx.env || !wx.env.USER_DATA_PATH) return '';
   return `${wx.env.USER_DATA_PATH}/flashcard-source-${encodeURIComponent(sourceId || 'all')}.json`;
+}
+
+function getFlashcardSourceCacheVersion() {
+  try {
+    return Number(wx.getStorageSync(FLASHCARD_SOURCE_CACHE_VERSION_KEY) || 0);
+  } catch (error) {
+    return 0;
+  }
+}
+
+function isStaleSourceCache(cached) {
+  const version = getFlashcardSourceCacheVersion();
+  return version && Number((cached && cached.version) || 0) < version;
 }
 
 function isStaleBookCache(sourceId, data) {
@@ -458,6 +477,7 @@ function readSourceCache(sourceId) {
     try {
       const cached = JSON.parse(wx.getFileSystemManager().readFileSync(filePath, 'utf8'));
       if (cached && Date.now() - Number(cached.cachedAt || 0) <= FLASHCARD_SOURCE_CACHE_TTL) {
+        if (isStaleSourceCache(cached)) return null;
         if (isStaleBookCache(sourceId, cached.data)) return null;
         return cached.data || null;
       }
@@ -466,6 +486,7 @@ function readSourceCache(sourceId) {
   try {
     const cached = wx.getStorageSync(getSourceCacheKey(sourceId));
     if (!cached || Date.now() - Number(cached.cachedAt || 0) > FLASHCARD_SOURCE_CACHE_TTL) return null;
+    if (isStaleSourceCache(cached)) return null;
     if (isStaleBookCache(sourceId, cached.data)) return null;
     return cached.data || null;
   } catch (error) {
@@ -479,6 +500,7 @@ function writeSourceCache(sourceId, data) {
     try {
       wx.getFileSystemManager().writeFileSync(filePath, JSON.stringify({
         cachedAt: Date.now(),
+        version: getFlashcardSourceCacheVersion(),
         data
       }), 'utf8');
       return;
@@ -487,26 +509,10 @@ function writeSourceCache(sourceId, data) {
   try {
     wx.setStorageSync(getSourceCacheKey(sourceId), {
       cachedAt: Date.now(),
+      version: getFlashcardSourceCacheVersion(),
       data
     });
   } catch (error) {}
-}
-
-function requestJson(url) {
-  return new Promise((resolve, reject) => {
-    wx.request({
-      url,
-      method: 'GET',
-      success(response) {
-        if (response.statusCode >= 200 && response.statusCode < 300) {
-          resolve(response.data);
-          return;
-        }
-        reject(new Error(`http-${response.statusCode || 0}`));
-      },
-      fail: reject
-    });
-  });
 }
 
 function buildBookCard(entry, book, index) {
@@ -545,19 +551,17 @@ function buildBookDebugLines(stage, book, options) {
   const firstWithPhonetic = cards.find((item) => item && item.phonetic) || null;
   const phoneticCount = cards.filter((item) => item && item.phonetic).length;
   const cloudPath = book.cloudPath || '';
-  const baseUrl = String(appConfig.cloudAssetBaseUrl || '').replace(/\/+$/, '');
-  const url = baseUrl && cloudPath ? `${baseUrl}/${cloudPath}` : '';
   const lines = [
-    `DEBUG: reading/flashcards.importDictionaryBook -> store.none -> cloudStorage.${cloudPath || 'empty'} -> phonetic：${firstCard.phonetic || 'missing'}`,
+    `DEBUG: reading/flashcards.importDictionaryBook -> store.getDictionaryBook -> cloud.getDictionaryBook.${cloudPath || 'empty'} -> phonetic：${firstCard.phonetic || 'missing'}`,
     `stage=${stage}；level=${book.level || ''}；sourceId=${getBookSourceId(book.level)}；cacheHit=${data.cacheHit ? 'true' : 'false'}`,
     `rows=${rows.length || data.rowCount || 0}；rendered=${cards.length || data.cardCount || 0}；phoneticCount=${phoneticCount || data.phoneticCount || 0}`,
     `firstRow.word=${firstRow.word || firstRow.wordLower || firstCard.word || ''}；firstRow.phonetic=${firstRow.phonetic || ''}；firstCard.phonetic=${firstCard.phonetic || ''}`,
     `sample.word=${(firstWithPhonetic && firstWithPhonetic.word) || ''}；sample.phonetic=${(firstWithPhonetic && firstWithPhonetic.phonetic) || ''}`,
-    `${getTargetDebugText()}；url=${url}`
+    `${getTargetDebugText()}；cloudPath=${cloudPath}`
   ];
   if (data.error) {
     lines.push(`cloudError.message=${data.error.message || data.error.errMsg || String(data.error)}`);
-    lines.push('锁定修复点：pages/reading/flashcards/index.js loadBookCardsFromStorage 或 data/app-config.js cloudAssetBaseUrl/cloudPath。');
+    lines.push('锁定修复点：cloudfunctions/yoyo/services/flashcard.service.js getDictionaryBook 或 storage.adapter.downloadCloudJson。');
   } else if (!phoneticCount && cards.length) {
     lines.push('锁定修复点：云存储词汇书 JSON phonetic 字段缺失，或 buildBookCard 未映射 phonetic。');
   } else if (!rows.length && !cards.length) {
@@ -848,11 +852,9 @@ Page({
     let ready = !!cached;
     if (!cached) {
       try {
-        const baseUrl = String(appConfig.cloudAssetBaseUrl || '').replace(/\/+$/, '');
-        const cloudPath = String(book.cloudPath || '').replace(/^\/+/, '');
-        const rows = await requestJson(`${baseUrl}/${encodeURI(cloudPath)}`);
-        if (!Array.isArray(rows)) throw new Error('dictionary-book-json-invalid');
-        const localCards = rows.map((entry, index) => buildBookCard(entry, book, index)).filter((item) => item.word);
+        const bookData = await loadBookCardsFromStorage(book);
+        const rows = bookData.rows || [];
+        const localCards = bookData.cards || [];
         const debugLines = buildBookDebugLines('cloud-json', book, { rows, cards: localCards });
         this.setData({ flashcardDebugLines: shouldShowBookDebug(debugLines) ? debugLines : [] });
         console.log(debugLines.join('\n'));
