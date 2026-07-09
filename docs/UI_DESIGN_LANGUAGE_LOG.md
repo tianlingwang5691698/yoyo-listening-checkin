@@ -178,6 +178,15 @@
 - 每条必须写清楚：板块、文件、改动、设计记录、验证。
 - 后续改 UI 或交互前先看对应板块最近记录，再继续改。
 
+### 2026-07-09 课程页录音隐私授权弹层
+
+- 文件：`pages/lesson/index.js`
+- 文件：`pages/lesson/index.wxml`
+- 文件：`pages/lesson/index.wxss`
+- 改动：录音隐私拦截时改为页内弹层，提供微信 `agreePrivacyAuthorization` 同意按钮；同意后自动继续启动录音。
+- 设计记录：录音授权必须给可完成动作，不能只打开隐私指引；弹层保持单一主动作“同意并开始”。
+- 验证：已做 `node --check pages/lesson/index.js`。
+
 ### 2026-07-07 新概念系统麦克风授权入口
 
 - 文件：`app.json`

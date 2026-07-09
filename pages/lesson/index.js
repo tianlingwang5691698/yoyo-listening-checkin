@@ -500,6 +500,7 @@ Page({
     speakingRescoringKey: '',
     speakingCanContinue: false,
     speakingDebugLines: [],
+    recorderPrivacyVisible: false,
     pendingListenAfterSpeaking: false,
     repeatLines: [],
     repeatActiveIndex: 0,
@@ -603,6 +604,7 @@ Page({
     });
     this.prefetchTaskAudio(normalizedTask);
   },
+  noop() {},
   isStudyWriteAllowed() {
     return isLessonTrainingMode(this.data.currentMember, this.planRunType, this.data.studyWriteAllowed);
   },
@@ -614,13 +616,54 @@ Page({
       `DEBUG: pages/lesson.startSpeakingRecord -> recorderManager.start -> audioWasPlaying=${audioWasPlaying}`
     ];
   },
+  isRecorderPrivacyBanned(error) {
+    const errMsg = error && error.errMsg ? error.errMsg : (error && error.message ? error.message : String(error || ''));
+    return errMsg.indexOf('privacy api banned') >= 0;
+  },
+  showRecorderPrivacyGuide() {
+    this.pendingRecordAfterPrivacy = true;
+    this.setData({
+      recorderPrivacyVisible: true,
+      speakingDebugLines: []
+    });
+  },
+  hideRecorderPrivacyGuide() {
+    this.pendingRecordAfterPrivacy = false;
+    this.setData({ recorderPrivacyVisible: false });
+  },
+  openRecorderPrivacyContract() {
+    if (!wx.openPrivacyContract) {
+      return;
+    }
+    wx.openPrivacyContract({
+      fail: () => wx.showToast({ title: '隐私指引暂不可打开', icon: 'none' })
+    });
+  },
+  handleAgreePrivacyAuthorization(event) {
+    const errMsg = String(event && event.detail && event.detail.errMsg || '');
+    if (errMsg && errMsg.indexOf(':ok') < 0) {
+      wx.showToast({ title: '请先同意录音用途', icon: 'none' });
+      return;
+    }
+    this.recorderPrivacyAuthorized = true;
+    const shouldStart = !!this.pendingRecordAfterPrivacy;
+    this.pendingRecordAfterPrivacy = false;
+    this.setData({ recorderPrivacyVisible: false }, () => {
+      if (shouldStart) {
+        this.startSpeakingRecord();
+      }
+    });
+  },
   async ensureRecorderPrivacyAuthorized() {
-    if (!wx.requirePrivacyAuthorize) {
+    if (this.recorderPrivacyAuthorized || !wx.requirePrivacyAuthorize) {
       return true;
     }
     return new Promise((resolve) => {
       wx.requirePrivacyAuthorize({
-        success: () => resolve(true),
+        success: () => {
+          this.recorderPrivacyAuthorized = true;
+          resolve(true);
+        },
         fail: () => resolve(false)
       });
     });
@@ -664,18 +707,19 @@ Page({
         });
       });
       this.recorderManager.onError((error) => {
+        const privacyBanned = this.isRecorderPrivacyBanned(error);
         const debugLines = this.buildRecordDebugLines('recorderManager.onError', error, {
           audioWasPlaying: this.recordStartAudioWasPlaying
         });
         this.setData({
           speakingRecording: false,
-          speakingDebugLines: debugLines
+          speakingDebugLines: privacyBanned ? [] : debugLines
         });
-        const errMsg = error && error.errMsg ? error.errMsg : '';
-        wx.showToast({
-          title: errMsg.indexOf('privacy api banned') >= 0 ? '请先同意隐私授权' : '录音失败，查看下方调试信息',
-          icon: 'none'
-        });
+        if (privacyBanned) {
+          this.showRecorderPrivacyGuide();
+        } else {
+          wx.showToast({ title: '录音失败，查看下方调试信息', icon: 'none' });
+        }
       });
     }
     this.audioErrorTimer = null;
@@ -1347,11 +1391,9 @@ Page({
     const privacyAuthorized = await this.ensureRecorderPrivacyAuthorized();
     if (!privacyAuthorized) {
       this.setData({
-        speakingDebugLines: this.buildRecordDebugLines('requirePrivacyAuthorize', { errMsg: 'privacy-not-authorized' }, {
-          audioWasPlaying: this.data.isPlaying
-        })
+        speakingDebugLines: []
       });
-      wx.showToast({ title: '请先同意隐私授权', icon: 'none' });
+      this.showRecorderPrivacyGuide();
       return;
     }
     this.recordStartAudioWasPlaying = !!this.data.isPlaying;
@@ -1381,14 +1423,19 @@ Page({
         format: 'mp3'
       });
     } catch (error) {
+      const privacyBanned = this.isRecorderPrivacyBanned(error);
       const debugLines = this.buildRecordDebugLines('recorderManager.start.catch', error, {
         audioWasPlaying: this.recordStartAudioWasPlaying
       });
       this.setData({
         speakingRecording: false,
-        speakingDebugLines: debugLines
+        speakingDebugLines: privacyBanned ? [] : debugLines
       });
-      wx.showToast({ title: '录音启动失败，查看下方调试信息', icon: 'none' });
+      if (privacyBanned) {
+        this.showRecorderPrivacyGuide();
+      } else {
+        wx.showToast({ title: '录音启动失败，查看下方调试信息', icon: 'none' });
+      }
     }
   },
   stopSpeakingRecord() {

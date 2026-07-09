@@ -1041,6 +1041,58 @@
   opacity: 0.55;
 }
 
+.privacy-mask {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  padding: 48rpx;
+  background: rgba(47, 43, 39, 0.46);
+}
+
+.privacy-dialog {
+  width: 100%;
+  max-width: 620rpx;
+  padding: 36rpx 32rpx 32rpx;
+  border-radius: 24rpx;
+  background: #fff;
+  box-shadow: 0 24rpx 60rpx rgba(47, 43, 39, 0.18);
+}
+
+.privacy-title {
+  color: var(--text-main);
+  font-size: 34rpx;
+  font-weight: var(--font-title-weight);
+  text-align: center;
+}
+
+.privacy-copy {
+  margin-top: 20rpx;
+  color: var(--text-muted);
+  font-size: 28rpx;
+  line-height: 1.55;
+  text-align: center;
+}
+
+.privacy-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14rpx;
+  margin-top: 30rpx;
+}
+
+.privacy-actions .player-action {
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 0 12rpx;
+}
+
+.privacy-primary {
+  grid-column: 1 / -1;
+}
+
 .attempt-play {
   justify-self: stretch;
 }

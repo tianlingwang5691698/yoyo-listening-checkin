@@ -335,6 +335,18 @@
     </view>
   </view>
 
+  <view class="privacy-mask" wx:if="{{recorderPrivacyVisible}}" catchtap="hideRecorderPrivacyGuide">
+    <view class="privacy-dialog" catchtap="noop">
+      <view class="privacy-title">需要录音授权</view>
+      <view class="privacy-copy">回答评分需要使用麦克风录音。请同意隐私保护指引里的录音用途后开始录音。</view>
+      <view class="privacy-actions">
+        <button class="player-action" bindtap="hideRecorderPrivacyGuide">稍后</button>
+        <button class="player-action" bindtap="openRecorderPrivacyContract">查看指引</button>
+        <button class="player-action primary privacy-primary" open-type="agreePrivacyAuthorization" bindagreeprivacyauthorization="handleAgreePrivacyAuthorization">同意并开始</button>
+      </view>
+    </view>
+  </view>
+
 </view>
 
 <view class="theme-{{theme}} page-shell lesson-page" wx:elif="{{syncMode === 'cloud-error'}}">
