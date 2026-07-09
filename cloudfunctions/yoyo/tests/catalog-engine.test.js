@@ -89,6 +89,7 @@ test('Unlock 分类标签区分课本和练习册', () => {
   assert.equal(catalogLabels.unlock1, 'Unlock 1 课本');
   assert.equal(catalogLabels.unlock1workbook, 'Unlock 1 练习册');
   assert.equal(catalogLabels.unlock2, 'Unlock 2 课本');
+  assert.equal(catalogLabels.unlock2workbook, 'Unlock 2 练习册');
   assert.equal(catalogLabels.unlock3textbook, 'Unlock 3 课本');
   assert.equal(catalogLabels.unlock3, 'Unlock 3 练习册');
   assert.equal(catalogLabels.unlock4, 'Unlock 4 课本');
@@ -96,11 +97,13 @@ test('Unlock 分类标签区分课本和练习册', () => {
     unlock1: 'Unlock 1 课本',
     unlock1workbook: 'Unlock 1 练习册',
     unlock2: 'Unlock 2 课本',
+    unlock2workbook: 'Unlock 2 练习册',
     unlock3textbook: 'Unlock 3 课本',
     unlock3: 'Unlock 3 练习册',
     unlock4: 'Unlock 4 课本'
   });
   assert.equal(taskPresenter.getCategoryLabel('unlock1workbook'), 'Unlock 1 练习册');
+  assert.equal(taskPresenter.getCategoryLabel('unlock2workbook'), 'Unlock 2 练习册');
   assert.equal(taskPresenter.getCategoryLabel('unlock3'), 'Unlock 3 练习册');
   assert.equal(labels.getCategoryDisplayLabel('unlock4'), 'Unlock 4 课本');
 });

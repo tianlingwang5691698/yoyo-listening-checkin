@@ -4,6 +4,11 @@
 
 ## UI 总纲规则
 
+### 2026-07-09 Unlock2 课本/练习册拆分入口
+
+- 改动：A2 级别新增 `Unlock 2 练习册` 独立入口，保留 `Unlock 2 课本` 原入口；练习册使用独立云存储音频目录和 transcript bundle。
+- 设计记录：只增量增加素材入口，不改原 `Unlock 2 课本` 路径、数量和展示；练习册 Mid Term / End Term 按测试位置排序。
+
 ### 2026-07-09 Unlock1 课本/练习册拆分入口
 
 - 改动：A1 级别新增 `Unlock 1 练习册` 独立入口，保留 `Unlock 1 课本` 原入口；练习册使用独立云存储音频目录和 transcript bundle。

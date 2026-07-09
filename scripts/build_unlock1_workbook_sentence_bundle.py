@@ -231,6 +231,7 @@ def allocate_lines_word_aligned(track_id, sentences, duration_sec, asr_data):
     words = asr_words(asr_data or {})
     if not official_tokens or not words:
         return allocate_lines(track_id, sentences, duration_sec)
+    first_content_start_ms = next((word["startMs"] for word in words if word["startMs"] > 2500), words[0]["startMs"])
 
     matcher = SequenceMatcher(
         None,
@@ -262,7 +263,7 @@ def allocate_lines_word_aligned(track_id, sentences, duration_sec, asr_data):
         start = cursor
         while cursor < len(sentences) and cursor not in ranges:
             cursor += 1
-        previous_end = ranges[start - 1][1] if start > 0 and start - 1 in ranges else 0
+        previous_end = ranges[start - 1][1] if start > 0 and start - 1 in ranges else first_content_start_ms
         next_start = ranges[cursor][0] if cursor < len(sentences) and cursor in ranges else duration_ms
         ranges.update(allocate_unmatched(sentences, list(range(start, cursor)), previous_end, next_start))
 

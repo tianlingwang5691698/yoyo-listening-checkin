@@ -1,6 +1,6 @@
 const study = require('../facades/study.facade');
 
-const STANDALONE_LEVEL_CATEGORIES = ['unlock1workbook', 'newconcept2', 'unlock2', 'newconcept3', 'unlock3textbook', 'unlock3', 'newconcept4', 'unlock4'];
+const STANDALONE_LEVEL_CATEGORIES = ['unlock1workbook', 'newconcept2', 'unlock2', 'unlock2workbook', 'newconcept3', 'unlock3textbook', 'unlock3', 'newconcept4', 'unlock4'];
 
 async function getTaskTranscript(event) {
   const { ctx, requestedCategory, today } = await study.prepareRequestContext(Object.assign({}, event, {

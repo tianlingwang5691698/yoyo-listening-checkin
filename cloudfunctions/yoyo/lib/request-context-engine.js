@@ -9,7 +9,7 @@ function hasTaskAudioSource(task) {
 
 function resolveCatalogCategories(action, requestedCategory, payload = {}) {
   let catalogCategories = ['newconcept1', 'song'];
-  const knownAudioCategories = ['newconcept1', 'newconcept2', 'unlock2', 'newconcept3', 'unlock3textbook', 'unlock3', 'newconcept4', 'unlock4', 'peppa', 'song', 'unlock1', 'unlock1workbook'];
+  const knownAudioCategories = ['newconcept1', 'newconcept2', 'unlock2', 'unlock2workbook', 'newconcept3', 'unlock3textbook', 'unlock3', 'newconcept4', 'unlock4', 'peppa', 'song', 'unlock1', 'unlock1workbook'];
   const view = String((payload && payload.view) || '').trim();
   if (action === 'getDashboard') {
     return [];
