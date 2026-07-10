@@ -1,4 +1,20 @@
-const COMPLETE_SFX_SRC = '/assets/audio/sfx/flashcard-complete-chime.mp3';
+const COMPLETE_SFX_VARIANTS = [
+  {
+    src: '/assets/audio/sfx/flashcard-complete-chime.mp3',
+    includesVoice: false
+  },
+  {
+    src: '/assets/audio/sfx/completion-warm-bloom-you-did-it.mp3',
+    includesVoice: true
+  },
+  {
+    src: '/assets/audio/sfx/completion-solo-chord-you-nailed-it.mp3',
+    includesVoice: true
+  }
+];
+const DEVICE_STUDY_ROLE_KEY = 'yoyoDeviceStudyRoleV1';
+const SELECTED_STUDENT_KEY = 'yoyoSelectedStudentTargetV1';
+const COMPLETION_PLAYED_PREFIX = 'yoyoCompletionEffectPlayedV1:';
 const VOICE_SRC_MAP = {
   flashcardComplete: '/assets/audio/voice/flashcard-complete-great-work.mp3',
   listeningComplete: '/assets/audio/voice/listening-complete-great-listening.mp3',
@@ -15,11 +31,65 @@ function canUseAudio() {
   return typeof wx !== 'undefined' && wx.createInnerAudioContext;
 }
 
+function todayKey() {
+  const now = new Date();
+  const month = String(now.getMonth() + 1).padStart(2, '0');
+  const day = String(now.getDate()).padStart(2, '0');
+  return `${now.getFullYear()}-${month}-${day}`;
+}
+
+function isStudentDevice() {
+  if (typeof wx === 'undefined' || !wx.getStorageSync) return false;
+  try {
+    return String(wx.getStorageSync(DEVICE_STUDY_ROLE_KEY) || wx.getStorageSync('lastStudyRole') || '') === 'student';
+  } catch (error) {
+    return false;
+  }
+}
+
+function getStudentScope() {
+  try {
+    const target = wx.getStorageSync(SELECTED_STUDENT_KEY) || {};
+    return String(target.targetChildId || target.childId || 'self');
+  } catch (error) {
+    return 'self';
+  }
+}
+
+function claimOnce(onceKey) {
+  const normalizedKey = String(onceKey || '').trim();
+  if (!normalizedKey) return true;
+  const storageKey = `${COMPLETION_PLAYED_PREFIX}${getStudentScope()}:${normalizedKey}`;
+  try {
+    if (wx.getStorageSync(storageKey)) return false;
+    wx.setStorageSync(storageKey, true);
+  } catch (error) {}
+  return true;
+}
+
+function canPlayReward(options) {
+  const settings = options || {};
+  if (settings.studentOnly !== false && !isStudentDevice()) return false;
+  return claimOnce(settings.onceKey);
+}
+
+function pickCompleteVariant() {
+  const index = Math.floor(Math.random() * COMPLETE_SFX_VARIANTS.length);
+  return COMPLETE_SFX_VARIANTS[index] || COMPLETE_SFX_VARIANTS[0];
+}
+
+function clearVoiceTimer() {
+  if (!voiceTimer) return;
+  clearTimeout(voiceTimer);
+  voiceTimer = null;
+}
+
 function getCompleteAudioContext() {
   if (!canUseAudio()) return null;
   if (!completeAudioContext) {
     completeAudioContext = wx.createInnerAudioContext();
     completeAudioContext.obeyMuteSwitch = true;
+    completeAudioContext.volume = 0.55;
   }
   return completeAudioContext;
 }
@@ -29,30 +99,33 @@ function getVoiceAudioContext() {
   if (!voiceAudioContext) {
     voiceAudioContext = wx.createInnerAudioContext();
     voiceAudioContext.obeyMuteSwitch = true;
+    voiceAudioContext.volume = 0.65;
   }
   return voiceAudioContext;
 }
 
 function playComplete(options) {
+  if (!canPlayReward(options)) return false;
   const audio = getCompleteAudioContext();
-  if (!audio) return;
+  if (!audio) return false;
+  const variant = pickCompleteVariant();
   try {
     audio.stop();
-    audio.src = COMPLETE_SFX_SRC;
+    audio.src = variant.src;
     audio.play();
   } catch (error) {}
-  if (options && options.voiceKey) {
-    playVoice(options.voiceKey, { delayMs: options.voiceDelayMs || 450 });
+  if (variant.includesVoice) {
+    clearVoiceTimer();
+  } else if (options && options.voiceKey) {
+    playVoice(options.voiceKey, { delayMs: options.voiceDelayMs || 1000 });
   }
+  return true;
 }
 
 function playVoice(voiceKey, options) {
   const src = VOICE_SRC_MAP[voiceKey];
-  if (!src) return;
-  if (voiceTimer) {
-    clearTimeout(voiceTimer);
-    voiceTimer = null;
-  }
+  if (!src || !canPlayReward(options)) return false;
+  clearVoiceTimer();
   const delayMs = Math.max(0, Number((options && options.delayMs) || 0));
   voiceTimer = setTimeout(() => {
     voiceTimer = null;
@@ -64,13 +137,11 @@ function playVoice(voiceKey, options) {
       audio.play();
     } catch (error) {}
   }, delayMs);
+  return true;
 }
 
 function destroy() {
-  if (voiceTimer) {
-    clearTimeout(voiceTimer);
-    voiceTimer = null;
-  }
+  clearVoiceTimer();
   if (completeAudioContext) {
     try {
       completeAudioContext.destroy();
@@ -88,5 +159,6 @@ function destroy() {
 module.exports = {
   playComplete,
   playVoice,
+  todayKey,
   destroy
 };

@@ -15,7 +15,7 @@
 
 | 场景 | 视觉特效 | 音效 | 规则 |
 | --- | --- | --- | --- |
-| 词汇复习完成 | 礼花、彩带、完成卡 | 短促亮色 chime | 已接入；只在整轮结束播放一次 |
+| 词汇复习完成 | 礼花、彩带、完成卡 | 柔和暖色长尾提示音 | 已接入；只在整轮结束播放一次 |
 | 今日听力完成 | 轻微勾选扩散、进度归位 | 很轻的完成铃 | 已接入；不盖过课程音频 |
 | 连续打卡里程碑 | 小印章/徽章浮现 | 温暖短铃 | 已接入；仅 3/7/14/30/60/100 天触发 |
 | 学习包加入词库成功 | 图标轻跳、入库动线 | 默认无声 | 批量加入成功可用极轻 tick |
@@ -30,7 +30,7 @@
 - 普通按钮点击、tab 切换、列表展开。
 - 课程音频播放中、录音中、口语回放中、单词发音中。
 - 每张卡、每道题、每次滑动都触发音效。
-- 长音效、循环音效、需要用户等待的音效。
+- 超过 4.5 秒、循环或需要用户等待的音效。
 
 ## 英文原音旁白
 
@@ -50,8 +50,9 @@
 
 ## 生成要求
 
-- 时长：`0.4s - 0.8s`
-- 风格：轻、亮、短，不刺耳。
+- 时长：`2.8s - 4.2s`
+- 风格：暖、轻、舒缓，带 `0.2s - 0.35s` 渐入和自然长尾，不刺耳。
+- 响度：素材峰值不高于 `-12 dB`，小程序播放音量建议 `0.55` 以下。
 - 文件：优先 `mp3`，需要低延迟时可用 `wav`。
 - 存放：`assets/audio/sfx/`
 - 命名：`模块-场景-用途.ext`
@@ -60,7 +61,7 @@
 ## 推荐提示词
 
 ```text
-short cheerful mobile app success chime with tiny confetti sparkle, warm and gentle, 0.6 seconds
+soft warm mobile app completion tone, slow three-note rise, gentle attack, natural long tail, calm and child-friendly, 3.5 seconds
 ```
 
 ## 接入规则
@@ -75,7 +76,7 @@ short cheerful mobile app success chime with tiny confetti sparkle, warm and gen
 ### 词汇复习完成
 
 - 文件：`assets/audio/sfx/flashcard-complete-chime.mp3`
-- 来源：Mixkit `Achievement bell`
+- 来源：本地合成的 C 大调上行四音提示音
 - 用途：词汇复习完成礼花页出现时播放一次。
 - 接入：`pages/reading/flashcards/index.js`
 - 记录：`docs/UI_DESIGN_LANGUAGE_LOG.md` 的 `2026-07-09 词汇完成音效接入`
@@ -83,10 +84,18 @@ short cheerful mobile app success chime with tiny confetti sparkle, warm and gen
 ### 全局完成态第一版
 
 - 文件：`assets/audio/sfx/flashcard-complete-chime.mp3`
-- 来源：Mixkit `Achievement bell`
+- 来源：本地合成的 C 大调上行四音提示音
 - 用途：听力整条完成、写作批改结果出现、口语评分结果出现、连续打卡里程碑出现时播放一次。
 - 接入：`utils/effects.js`、`pages/lesson/index.js`、`pages/writing/detail/index.js`、`pages/speaking/index.js`、`pages/record/index.js`
 - 记录：`docs/UI_DESIGN_LANGUAGE_LOG.md` 的 `2026-07-09 全项目完成态特效第一版`
+
+### 全局完成态随机鼓励组
+
+- 文件：`assets/audio/sfx/flashcard-complete-chime.mp3`
+- 文件：`assets/audio/sfx/completion-warm-bloom-you-did-it.mp3`
+- 文件：`assets/audio/sfx/completion-solo-chord-you-nailed-it.mp3`
+- 用途：学生端首次完成时从三种克制鼓励中随机播放；后两种已内含英文旁白，不再叠加模块旁白。
+- 规则：家长端、刷新、重进和当天同内容重复完成不播放。
 
 ## 旁白测试音色
 
