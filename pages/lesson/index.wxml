@@ -1,4 +1,271 @@
-<view class="theme-{{theme}} page-shell lesson-page" wx:if="{{task}}">
+<view class="theme-{{theme}} page-shell lesson-page audio-turntable-page" wx:if="{{theme === 'library' && task}}">
+  <view class="audio-sleeve">
+    <view class="audio-sleeve-top">
+      <view class="audio-sleeve-badge">{{task.coverBadge || task.categoryLabel}}</view>
+      <view class="audio-sleeve-status {{studyWriteAllowed ? (task.completedToday ? '' : 'is-warn') : 'is-muted'}}">{{studyWriteAllowed ? (task.completedToday ? '完成' : '训练中') : '试听中'}}</view>
+    </view>
+    <view class="audio-sleeve-title">{{(currentAudio && currentAudio.title) || task.displayTitle || task.title}}</view>
+    <view class="audio-sleeve-mode" wx:if="{{!studyWriteAllowed}}">{{isPreviewMode ? '预览模式 · 不计入打卡' : '家长模式 · 不计入打卡'}}</view>
+    <view class="audio-sleeve-copy" wx:if="{{task.displaySubtitle}}">{{task.displaySubtitle}}</view>
+    <view class="audio-sleeve-copy" wx:elif="{{task.coverMeta}}">{{task.coverMeta}}</view>
+    <view class="audio-debug-note {{syncMode === 'cloud' ? 'is-cloud' : 'is-local'}}" wx:if="{{showCloudDebug && syncDebug && syncDebug.show}}">
+      {{syncDebug.text}}
+      <block wx:if="{{syncDebug.resourceLines && syncDebug.resourceLines.length}}">
+        <block wx:for="{{syncDebug.resourceLines}}" wx:key="*this">
+          <view class="audio-debug-line">{{item}}</view>
+        </block>
+      </block>
+    </view>
+    <view class="audio-debug-note is-local" wx:if="{{flashcardAddDebugLines.length}}">
+      <block wx:for="{{flashcardAddDebugLines}}" wx:key="*this">
+        <view class="audio-debug-line"><text selectable="{{true}}">{{item}}</text></view>
+      </block>
+    </view>
+  </view>
+
+  <view class="audio-dictionary-mask" wx:if="{{dictionaryVisible}}" catchtap="closeDictionary"></view>
+  <view class="audio-dictionary-sheet" wx:if="{{dictionaryVisible}}">
+    <view class="audio-dictionary-head">
+      <view>
+        <view class="audio-dictionary-word">{{dictionaryEntry.word || dictionaryWord}}</view>
+        <view class="audio-dictionary-phonetic" wx:if="{{dictionaryEntry.phonetic}}">/{{dictionaryEntry.phonetic}}/</view>
+      </view>
+      <button class="audio-dictionary-audio {{dictionaryAudioLoading ? 'is-loading' : ''}}" disabled="{{dictionaryLoading || dictionaryAudioLoading}}" bindtap="playDictionaryWord"></button>
+    </view>
+    <button class="audio-dictionary-add" loading="{{dictionaryAdding}}" bindtap="addDictionaryWordToLibrary">加入词库</button>
+    <block wx:if="{{!dictionaryLoading}}">
+      <view class="audio-dictionary-definition" wx:for="{{dictionaryEntry.definitions}}" wx:key="*this">· {{item}}</view>
+      <view class="audio-dictionary-empty" wx:if="{{!dictionaryEntry.definitions || !dictionaryEntry.definitions.length}}">暂无释义。</view>
+    </block>
+    <view class="audio-dictionary-loading" wx:else>查词中</view>
+  </view>
+
+  <view class="audio-turntable">
+    <view class="audio-complete-effect" wx:if="{{lessonCelebrateVisible}}">
+      <view class="audio-complete-arm"></view>
+      <view class="audio-complete-mark">完成</view>
+    </view>
+    <view class="audio-record-stage {{isPlaying ? 'is-playing' : ''}} {{task.isPendingAsset ? 'is-pending' : ''}}">
+      <view class="audio-record-disc">
+        <view class="audio-record-center">
+          <view class="audio-record-title" wx:if="{{currentAudio && currentAudio.title}}">{{currentAudio.title}}</view>
+          <view class="audio-record-status">{{isPlaying ? '正在播放' : (audioReady ? '已暂停' : '等待播放')}}</view>
+        </view>
+        <view class="audio-pass-ring">
+          <block wx:for="{{passSteps}}" wx:key="key">
+            <view class="audio-pass-step {{item.done ? 'is-done' : item.current ? 'is-current' : ''}}">{{item.text}}</view>
+          </block>
+        </view>
+      </view>
+      <view class="audio-tonearm"></view>
+    </view>
+    <view class="audio-error-stamp" wx:if="{{!task.isPendingAsset && audioErrorText}}">{{audioErrorText}}</view>
+    <view class="audio-error-stamp" wx:if="{{!task.isPendingAsset && showCloudDebug && audioErrorDetail}}">错误详情：{{audioErrorDetail}}</view>
+    <view class="audio-pending-stamp" wx:if="{{task.isPendingAsset}}">素材暂不可用</view>
+    <view class="audio-play-row" wx:if="{{!task.isPendingAsset}}">
+      <view class="audio-play-button {{audioResolving ? 'is-loading' : ''}}" bindtap="toggleAudio">
+        <view class="audio-play-icon {{isPlaying ? 'is-pause' : 'is-play'}}"></view>
+      </view>
+    </view>
+    <view class="audio-time-slip" wx:if="{{!task.isPendingAsset}}">
+      <view class="audio-time-meta">
+        <view>{{isPlaying ? '播放中' : audioReady ? '已暂停' : '等待播放'}}</view>
+        <view>{{currentTimeLabel}} / {{durationLabel}}</view>
+      </view>
+      <view class="audio-progress-rail">
+        <view class="audio-progress-fill" style="width: {{progressPercent}}%;"></view>
+      </view>
+    </view>
+    <view class="audio-switch-row" wx:if="{{!task.isPendingAsset}}">
+      <button class="audio-switch {{canRewind ? '' : 'is-disabled'}}" bindtap="rewindAudio">5 秒</button>
+      <button class="audio-switch" bindtap="togglePlaybackRate">×{{playbackRateText}}</button>
+    </view>
+  </view>
+
+  <view id="lesson-study-card" class="audio-study-drawer" wx:if="{{lessonStudyPack || lessonStudyCompleted || transcriptPendingLoad || transcriptLines.length || lessonStudyError}}">
+    <view class="audio-section-head">
+      <view>
+        <view class="audio-section-title">文本学习</view>
+        <view class="audio-section-copy">{{lessonStudyPack ? '学习包已生成。' : (lessonStudyCompleted ? '学习包已生成，点击同步查看。' : '听完后可选择生成学习包。')}}</view>
+      </view>
+      <button class="audio-paper-action" loading="{{lessonStudyLoading}}" disabled="{{lessonStudyLoading || lessonStudyPack}}" bindtap="loadLessonStudyPack">{{lessonStudyPack ? '已生成' : (lessonStudyCompleted ? '同步' : '生成')}}</button>
+    </view>
+    <view class="audio-study-error" wx:if="{{lessonStudyError}}">{{lessonStudyError}}</view>
+    <view class="audio-study-tabs" wx:if="{{lessonStudyPack}}">
+      <button class="audio-study-tab {{lessonStudyTab === item.key ? 'is-active' : ''}}" wx:for="{{lessonStudyTabs}}" wx:key="key" data-tab="{{item.key}}" bindtap="selectLessonStudyTab">{{item.label}}</button>
+    </view>
+    <view class="audio-study-list" wx:if="{{lessonStudyPack && lessonStudyTab === 'vocabulary'}}">
+      <view class="audio-study-item" wx:for="{{lessonVocabularyCards}}" wx:key="word">
+        <view class="audio-study-item-head">
+          <view class="audio-study-pronounce {{speakingWord === ('word:' + item.word) ? 'is-speaking' : ''}}" data-type="word" data-text="{{item.word}}" bindtap="speakLessonStudyAudio">
+            <view class="audio-study-title"><text class="audio-study-index">{{item.groupIndex}}</text><text>{{item.word}}</text><text class="audio-sound-pin {{speakingWord === ('word:' + item.word) ? 'is-speaking' : ''}}" wx:if="{{item.canSpeak}}"></text></view>
+            <text class="audio-study-phonetic" wx:if="{{item.phonetic}}">{{item.phonetic}}</text>
+          </view>
+          <view class="audio-study-actions">
+            <button class="audio-mini-action" data-word="{{item.word}}" catchtap="lookupLessonStudyWord">查词</button>
+            <button class="audio-mini-action is-strong" data-type="word" data-text="{{item.word}}" catchtap="addLessonStudyWordToLibrary">{{lessonDictionaryAddedMap[item.flashcardKey] || lessonDictionaryAddedMap[item.word] ? '已加入' : '加入'}}</button>
+          </view>
+        </view>
+        <view class="audio-study-meaning">{{item.meaning}}</view>
+        <view class="audio-study-example" wx:if="{{item.example}}">{{item.example}}</view>
+        <view class="audio-study-example" wx:if="{{item.exampleMeaning}}">{{item.exampleMeaning}}</view>
+      </view>
+    </view>
+    <view class="audio-study-list" wx:elif="{{lessonStudyPack && lessonStudyTab === 'phrases'}}">
+      <view class="audio-study-item" wx:for="{{lessonPhraseCards}}" wx:key="text">
+        <view class="audio-study-item-head">
+          <view class="audio-study-pronounce {{speakingWord === ('phrase:' + item.text) ? 'is-speaking' : ''}}" data-type="phrase" data-text="{{item.text}}" bindtap="speakLessonStudyAudio">
+            <view class="audio-study-title"><text class="audio-study-index">{{item.groupIndex}}</text><text>{{item.text}}</text><text class="audio-sound-pin {{speakingWord === ('phrase:' + item.text) ? 'is-speaking' : ''}}" wx:if="{{item.canSpeak}}"></text></view>
+          </view>
+          <view class="audio-study-actions">
+            <button class="audio-mini-action is-strong" data-type="phrase" data-text="{{item.text}}" catchtap="addLessonStudyWordToLibrary">{{lessonDictionaryAddedMap[item.flashcardKey] || lessonDictionaryAddedMap[item.text] ? '已加入' : '加入'}}</button>
+          </view>
+        </view>
+        <view class="audio-study-meaning">{{item.meaning}}</view>
+        <view class="audio-study-example" wx:if="{{item.example}}">{{item.example}}</view>
+      </view>
+    </view>
+    <view class="audio-study-list" wx:elif="{{lessonStudyPack}}">
+      <view class="audio-study-item" wx:for="{{lessonPatternCards}}" wx:key="pattern">
+        <view class="audio-study-item-head">
+          <view class="audio-study-title"><text class="audio-study-index">{{item.groupIndex}}</text><text>{{item.pattern}}</text></view>
+          <view class="audio-study-actions">
+            <button class="audio-mini-action is-strong" data-type="pattern" data-text="{{item.pattern}}" catchtap="addLessonStudyWordToLibrary">{{lessonDictionaryAddedMap[item.flashcardKey] || lessonDictionaryAddedMap[item.pattern] ? '已加入' : '加入'}}</button>
+          </view>
+        </view>
+        <view class="audio-study-meaning">{{item.meaning}}</view>
+        <view class="audio-study-example" wx:if="{{item.example}}">{{item.example}}</view>
+        <view class="audio-study-example" wx:if="{{item.exampleMeaning}}">{{item.exampleMeaning}}</view>
+      </view>
+    </view>
+    <view class="audio-study-done" wx:if="{{lessonStudyCompleted}}">已完成文本学习</view>
+  </view>
+
+  <view class="audio-transcript-tape" wx:if="{{progress && (progress.transcriptVisible || transcriptManualVisible)}}">
+    <view class="audio-section-head">
+      <view><view class="audio-section-title">文本</view></view>
+      <button class="audio-paper-action" wx:if="{{transcriptPendingLoad && !transcriptLines.length}}" bindtap="loadTranscript">查看文本</button>
+      <view class="audio-paper-action is-label" wx:elif="{{!transcriptLines.length}}">{{transcriptLoadFailed ? '加载失败' : '暂无文本'}}</view>
+    </view>
+    <view class="audio-tape-lines" wx:if="{{transcriptLines.length}}">
+      <view class="audio-tape-line is-side {{prevLine ? 'is-ready' : 'is-empty'}}" wx:if="{{prevLine}}" data-index="{{activeLineIndex - 1}}" bindtap="seekToLine">{{prevLine.text}}</view>
+      <view class="audio-tape-line is-side is-empty" wx:else> </view>
+      <view class="audio-tape-line is-active" wx:if="{{activeLine}}" data-index="{{activeLineIndex}}" bindtap="seekToLine">
+        <block wx:if="{{transcriptSyncGranularity === 'word' && activeLine.words && activeLine.words.length}}">
+          <text class="audio-transcript-word {{index === activeWordIndex ? 'is-active' : ''}}" wx:for="{{activeLine.words}}" wx:key="wordId">{{item.text}} </text>
+        </block>
+        <block wx:else>{{activeLine.text}}</block>
+      </view>
+      <view class="audio-tape-line is-active is-empty" wx:else>音频开始后，这一句会在这里突出显示。</view>
+      <view class="audio-tape-line is-side {{nextLine ? 'is-ready is-disabled' : 'is-empty'}}" wx:if="{{nextLine}}" data-index="{{activeLineIndex + 1}}" bindtap="seekToLine">{{nextLine.text}}</view>
+      <view class="audio-tape-line is-side is-empty" wx:else> </view>
+    </view>
+    <view class="audio-tape-empty" wx:elif="{{transcriptPendingLoad}}">需要时再查看文本</view>
+    <view class="audio-tape-empty" wx:elif="{{transcriptLoadFailed}}">文本加载失败，可稍后再试</view>
+    <view class="audio-tape-empty" wx:else>暂无文本</view>
+  </view>
+
+  <view class="audio-transcript-tape" wx:elif="{{task.speakingMode === 'nce-question-answer'}}">
+    <view class="audio-tape-empty">
+      <view>文本已隐藏</view>
+      <button class="audio-switch" bindtap="showTranscriptOnDemand">查看文本</button>
+    </view>
+  </view>
+
+  <view class="audio-transcript-tape" wx:else>
+    <view class="audio-tape-empty">这一遍先盲听</view>
+  </view>
+
+  <view class="audio-speaking-card" wx:if="{{passQuestionVisible && !speakingPanelVisible}}">
+    <view class="audio-section-head">
+      <view>
+        <view class="audio-section-title">本遍问题</view>
+        <view class="audio-section-copy">{{passQuestionText || '听问题后准备回答'}}</view>
+      </view>
+      <button class="audio-paper-action is-strong" bindtap="startQuestionAnswerNow">开始回答</button>
+    </view>
+  </view>
+
+  <view class="audio-speaking-card" wx:if="{{speakingPanelVisible}}">
+    <view class="audio-section-head">
+      <view>
+        <view class="audio-section-title">{{speakingMode === 'unlock-sentence-repeat' ? '跟读评分' : '回答评分'}}</view>
+        <view class="audio-section-copy" wx:if="{{speakingMode === 'nce-question-answer'}}">{{speakingQuestionText || '听问题后录音回答'}}</view>
+        <view class="audio-section-copy" wx:else>第 {{repeatActiveIndex + 1}} / {{repeatLines.length}} 句</view>
+      </view>
+      <view class="audio-sleeve-badge">录音</view>
+    </view>
+    <view class="audio-repeat-list" wx:if="{{speakingMode === 'unlock-sentence-repeat'}}">
+      <block wx:for="{{repeatLines}}" wx:key="lineId">
+        <view class="audio-repeat-chip {{index === repeatActiveIndex ? 'is-active' : ''}}" data-index="{{index}}" bindtap="switchRepeatLine">{{index + 1}}</view>
+      </block>
+    </view>
+    <view class="audio-speaking-prompt" wx:if="{{speakingMode === 'unlock-sentence-repeat' && activeRepeatLine}}">{{activeRepeatLine.text}}</view>
+    <view class="audio-speaking-feedback" wx:if="{{speakingPromptText}}">{{speakingPromptText}}</view>
+    <view class="audio-score-dimensions" wx:if="{{speakingMode === 'nce-question-answer' && speakingScoreDetail.visible}}">
+      <view class="audio-score-dimension"><view>{{speakingScoreDetail.pronunciationFluencyScore}}</view><text>发音流畅</text></view>
+      <view class="audio-score-dimension"><view>{{speakingScoreDetail.contentGrammarScore}}</view><text>内容语法评分</text></view>
+    </view>
+    <view class="audio-speaking-actions">
+      <button class="audio-paper-action is-strong {{speakingTempFilePath ? 'is-ready' : ''}}" wx:if="{{!speakingRecording}}" hover-class="is-pressed" hover-start-time="20" hover-stay-time="180" bindtap="startSpeakingRecord">{{speakingTempFilePath ? '重录' : '开始录音'}}</button>
+      <button class="audio-paper-action is-recording" wx:else hover-class="is-pressed" hover-start-time="20" hover-stay-time="180" bindtap="stopSpeakingRecord">停止录音</button>
+      <button class="audio-paper-action is-strong" wx:if="{{speakingMode === 'nce-question-answer' && speakingCanContinue}}" hover-class="is-pressed" hover-start-time="20" hover-stay-time="180" bindtap="continueAfterSpeakingFeedback">满意，继续</button>
+      <button class="audio-paper-action" wx:if="{{speakingMode === 'unlock-sentence-repeat'}}" hover-class="is-pressed" hover-start-time="20" hover-stay-time="180" bindtap="completeUnlockRepeat">完成跟读</button>
+    </view>
+    <view class="audio-record-status {{speakingRecording ? 'is-recording' : (speakingTempFilePath ? 'is-ready' : '')}}">
+      {{speakingSubmitting ? '录音已结束，正在自动评分' : (speakingRecording ? '正在录音，答完后点停止' : (speakingTempFilePath ? ('已录制 ' + speakingRecordDurationText) : '点开始录音，结束后自动评分'))}}
+    </view>
+    <view class="audio-debug-note is-local" wx:if="{{speakingDebugLines.length}}">
+      <view class="audio-debug-line" wx:for="{{speakingDebugLines}}" wx:key="*this">{{item}}</view>
+    </view>
+    <view class="audio-score-board" wx:if="{{speakingSummary.scoredCount}}">
+      <view class="audio-score-item"><view>{{speakingSummary.bestScore || 0}}</view><text>最佳</text></view>
+      <view class="audio-score-item"><view>{{speakingSummary.latestScore || 0}}</view><text>最近</text></view>
+    </view>
+    <view class="audio-attempt-list" wx:if="{{speakingMode === 'nce-question-answer' && speakingAttempts.length}}">
+      <view class="audio-attempt-card" wx:for="{{speakingAttempts}}" wx:key="createdAt">
+        <view class="audio-attempt-head">
+          <view>
+            <view class="audio-attempt-title">{{item.resultRole || ('第 ' + item.attemptIndex + ' 次')}}</view>
+            <view class="audio-attempt-meta" wx:if="{{item.answerDurationText}}">录音 {{item.answerDurationText}}</view>
+          </view>
+          <view class="audio-attempt-score">{{item.status === 'score-pending' ? '待评分' : ((item.score || 0) + ' 分')}}</view>
+        </view>
+        <view class="audio-attempt-sub" wx:if="{{item.pronunciationFluencyScore || item.contentGrammarScore}}">发音流畅 {{item.pronunciationFluencyScore || 0}} / 内容语法 {{item.contentGrammarScore || 0}}</view>
+        <view class="audio-attempt-transcript" wx:if="{{item.studentTranscript}}">学生回答：{{item.studentTranscript}}</view>
+        <view class="audio-attempt-feedback">{{item.feedback || '暂无建议'}}</view>
+        <view class="audio-attempt-feedback" wx:if="{{item.scoreErrorType || item.scoreError}}">错误：{{item.scoreErrorType || 'unknown'}} {{item.scoreError || ''}}</view>
+        <view class="audio-speaking-actions">
+          <button class="audio-paper-action" data-index="{{index}}" data-audio-type="answer" hover-class="is-pressed" hover-start-time="20" hover-stay-time="180" bindtap="playSpeakingAttempt">{{speakingPlayingAttemptKey === ('answer-' + item.attemptType + '-' + item.attemptIndex + '-' + item.sentenceIndex + '-' + index) ? (speakingPausedAttemptKey === ('answer-' + item.attemptType + '-' + item.attemptIndex + '-' + item.sentenceIndex + '-' + index) ? '继续录音' : '暂停录音') : '播放录音'}}</button>
+          <button class="audio-paper-action" wx:if="{{item.status === 'score-pending' && item.attemptId}}" data-index="{{index}}" hover-class="is-pressed" hover-start-time="20" hover-stay-time="180" bindtap="rescoreSpeakingAttempt">{{speakingRescoringKey === item.attemptId ? '评分中' : '重新评分'}}</button>
+          <button class="audio-paper-action" wx:if="{{item.feedbackAudioFileId || item.feedbackAudioCloudPath}}" data-index="{{index}}" data-audio-type="feedback" hover-class="is-pressed" hover-start-time="20" hover-stay-time="180" bindtap="playSpeakingAttempt">{{speakingPlayingAttemptKey === ('feedback-' + item.attemptType + '-' + item.attemptIndex + '-' + item.sentenceIndex + '-' + index) ? (speakingPausedAttemptKey === ('feedback-' + item.attemptType + '-' + item.attemptIndex + '-' + item.sentenceIndex + '-' + index) ? '继续建议' : '暂停建议') : '播放建议'}}</button>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="audio-completion-mask" wx:if="{{completionCardVisible}}">
+    <view class="audio-completion-card">
+      <view class="audio-completion-title">Great job today!</view>
+      <view class="audio-completion-copy">今天也认真完成了，真不错。</view>
+      <view class="audio-completion-status">今天打卡完成</view>
+    </view>
+  </view>
+
+  <view class="audio-privacy-mask" wx:if="{{recorderPrivacyVisible}}" catchtap="hideRecorderPrivacyGuide">
+    <view class="audio-privacy-dialog" catchtap="noop">
+      <view class="audio-privacy-title">需要录音授权</view>
+      <view class="audio-privacy-copy">回答评分需要使用麦克风录音。请同意隐私保护指引里的录音用途后开始录音。</view>
+      <view class="audio-privacy-actions">
+        <button class="audio-paper-action" bindtap="hideRecorderPrivacyGuide">稍后</button>
+        <button class="audio-paper-action" bindtap="openRecorderPrivacyContract">查看指引</button>
+        <button class="audio-paper-action is-strong audio-privacy-primary" open-type="agreePrivacyAuthorization" bindagreeprivacyauthorization="handleAgreePrivacyAuthorization">同意并开始</button>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="theme-{{theme}} page-shell lesson-page" wx:elif="{{task}}">
   <view class="lesson-hero product-hero tone-{{task.coverTone}} cover-variant-{{task.coverVariant}}">
     <view class="lesson-hero-top">
       <view class="pill">{{task.coverBadge || task.categoryLabel}}</view>
@@ -365,6 +632,28 @@
     </view>
   </view>
 
+</view>
+
+<view class="theme-{{theme}} page-shell lesson-page audio-turntable-page" wx:elif="{{theme === 'library' && syncMode === 'cloud-error'}}">
+  <view class="audio-error-folder">
+    <view class="audio-sleeve-badge">云端</view>
+    <view class="audio-error-title">课程暂时不可用</view>
+    <view class="audio-error-copy">学习内容暂时没有同步成功，请稍后再试。</view>
+    <view class="audio-debug-note is-local" wx:if="{{showCloudDebug && syncDebug && syncDebug.show}}">
+      {{syncDebug.text}}
+      <block wx:if="{{syncDebug.resourceLines && syncDebug.resourceLines.length}}">
+        <block wx:for="{{syncDebug.resourceLines}}" wx:key="*this">
+          <view class="audio-debug-line">{{item}}</view>
+        </block>
+      </block>
+    </view>
+  </view>
+
+  <view class="audio-error-receipt">
+    <view class="audio-error-badge">服务异常</view>
+    <view class="audio-error-subtitle">请稍后再重试</view>
+    <view class="audio-error-copy">{{(syncDebug && (syncDebug.publicReason || syncDebug.reason)) || '云端服务暂时不可用，请稍后再试。'}}</view>
+  </view>
 </view>
 
 <view class="theme-{{theme}} page-shell lesson-page" wx:elif="{{syncMode === 'cloud-error'}}">

@@ -92,6 +92,11 @@ Page({
     const hasSnapshot = !!snapshot;
     if (snapshot) {
       this.applyReadingHome(snapshot);
+      this.readingPerf.ready('pageReady', {
+        source: 'snapshot',
+        cacheHit: true,
+        groups: ((((snapshot.categoryTree || [])[0] || {}).groups) || []).length
+      });
     } else {
       this.setData({ loading: true });
     }

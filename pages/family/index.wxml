@@ -1,4 +1,102 @@
 <view class="theme-{{theme}} page-shell family-page">
+  <view wx:if="{{theme === 'library'}}" class="library-family">
+    <view class="library-folder-cover">
+      <view>
+        <view class="library-kicker">Family Dossier</view>
+        <view class="library-title">家庭与账号</view>
+      </view>
+      <view class="library-stamp {{syncMode === 'cloud' ? 'is-ok' : ''}}">{{syncMode === 'cloud' ? '已接通' : '待同步'}}</view>
+    </view>
+    <view class="library-debug {{syncMode === 'cloud' ? 'is-cloud' : 'is-local'}}" wx:if="{{showCloudDebug && syncDebug && syncDebug.show}}">
+      {{syncDebug.text}}
+    </view>
+
+    <view class="library-folder-sheet is-repair" wx:if="{{bindingProfileRequired}}">
+      <view class="library-title small">补齐绑定信息</view>
+      <view class="library-copy">请输入你的昵称和与孩子的关系，保存后会显示为“昵称 · 关系”。</view>
+      <view class="library-field-label">你的昵称</view>
+      <input class="library-input" placeholder="例如 王天龙" value="{{bindingNicknameInput}}" bindinput="handleBindingNicknameInput" />
+      <view class="library-field-label">关系</view>
+      <input class="library-input" placeholder="例如 妈妈 / 爸爸 / 老师" value="{{bindingRelationInput}}" bindinput="handleBindingRelationInput" />
+      <button class="library-primary full" bindtap="saveBindingProfile">保存</button>
+    </view>
+
+    <block wx:else>
+      <view class="library-folder-sheet">
+        <view class="library-card-head" wx:if="{{!childJoinRequired}}">
+          <view>
+            <view class="library-kicker">身份页签</view>
+            <view class="library-title small">{{studyRoleLabel}}</view>
+          </view>
+          <button class="library-secondary" bindtap="toggleStudyRole">{{studyRoleActionText}}</button>
+        </view>
+        <view class="library-reader-code" wx:if="{{!childJoinRequired && currentMember && currentMember.studyRole === 'student'}}">
+          <view class="library-kicker">读者证编号</view>
+          <view class="reader-number compact">{{child.childLoginCode || '待同步'}}</view>
+        </view>
+      </view>
+
+      <view class="library-folder-sheet" wx:if="{{!childJoinRequired && currentMember && currentMember.studyRole === 'parent' && studentCards.length}}">
+        <view class="library-card-head">
+          <view>
+            <view class="library-kicker">家庭借阅关系</view>
+            <view class="library-title small">绑定学生</view>
+          </view>
+          <view class="library-stamp">{{studentCountText}}</view>
+        </view>
+        <view class="library-copy">已绑定的学生在这里，点学生姓名即可切换查看记录。</view>
+        <block wx:for="{{studentCards}}" wx:key="familyId">
+          <view class="borrower-card {{item.isCurrent ? 'is-current' : ''}}" data-index="{{index}}" bindtap="selectStudent">
+            <view class="borrower-mark">学</view>
+            <view class="entry-main">
+              <view class="entry-title">{{item.nickname}}</view>
+              <view class="entry-copy">学号：{{item.childLoginCode || '待同步'}}</view>
+            </view>
+            <view class="library-stamp is-ok" wx:if="{{item.isCurrent}}">当前</view>
+          </view>
+        </block>
+        <view class="library-copy" wx:if="{{studentCards.length === 1}}">继续在下面输入学号，可添加更多学生。</view>
+      </view>
+
+      <view class="library-reader-form" wx:if="{{currentMember}}">
+        <view class="library-title small">{{currentMember.studyRole === 'student' ? '登录其他学生账号' : '绑定学生'}}</view>
+        <input class="reader-code-input compact" type="number" maxlength="6" placeholder="学号" value="{{childCodeInput}}" bindinput="handleChildCodeInput" />
+        <view wx:if="{{currentMember.studyRole !== 'student'}}">
+          <view class="library-field-label">关系</view>
+          <input class="library-input" placeholder="例如 妈妈 / 爸爸 / 老师" value="{{joinName}}" bindinput="handleJoinNameInput" />
+        </view>
+        <button class="library-primary full" bindtap="joinFamilyByChildCode">{{currentMember.studyRole === 'student' ? '登录' : '绑定'}}</button>
+      </view>
+
+      <view class="library-danger" wx:if="{{!childJoinRequired && currentMember && currentMember.studyRole === 'parent'}}">
+        <view class="danger-copy">
+          <view class="library-title small">修正今日记录</view>
+          <view class="library-copy">撤回今天误记的一次播放</view>
+        </view>
+        <button class="library-danger-button {{undoingLastListened ? 'is-disabled' : ''}}" bindtap="undoLastListened">撤回</button>
+      </view>
+
+      <view class="library-danger is-envelope" wx:if="{{currentMember && currentMember.studyRole === 'parent' && currentMember.role !== 'owner'}}">
+        <view class="danger-copy">
+          <view class="library-title small">解除绑定</view>
+          <view class="library-copy">解除当前绑定</view>
+        </view>
+        <button class="library-danger-button" bindtap="leaveFamily">退出</button>
+      </view>
+
+      <view class="library-folder-sheet" wx:if="{{!childJoinRequired}}">
+        <view class="library-title small">成员</view>
+        <block wx:for="{{memberCards}}" wx:key="memberId">
+          <view class="member-index {{item.isCurrentDevice ? 'is-current-device' : ''}}">
+            <view class="entry-title">{{item.displayName}}</view>
+            <view class="library-stamp is-ok" wx:if="{{item.isCurrentDevice}}">本机</view>
+          </view>
+        </block>
+      </view>
+    </block>
+  </view>
+
+  <block wx:else>
   <view class="family-atmosphere">
     <view class="light-ray ray-one"></view>
     <view class="light-ray ray-two"></view>
@@ -126,4 +224,5 @@
       </block>
     </view>
   </view>
+  </block>
 </view>

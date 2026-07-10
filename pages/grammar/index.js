@@ -228,6 +228,7 @@ Page({
       readyReported = true;
       this.grammarPerf.ready('pageReady', {
         source,
+        cacheHit: source === 'snapshot' || source.endsWith('-cache'),
         stages: (this.data.stages || []).length
       });
     };
@@ -267,11 +268,23 @@ Page({
       reportReady('snapshot');
     }
     Promise.all([
-      store.getGrammarHome({ examId: 'em2' }).then((data) => {
+      store.getGrammarHome({ examId: 'em2' }, (fresh) => {
+        em2Topics = buildTopics(fresh);
+        applyHomeTopics('em2-refresh');
+        if (this.grammarPerf) {
+          this.grammarPerf.mark('cloudRefresh', { examId: 'em2', topics: em2Topics.length });
+        }
+      }).then((data) => {
         em2Topics = buildTopics(data);
         applyHomeTopics(data && data.__cacheHit ? 'em2-cache' : 'em2-cloud');
       }).catch(() => {}),
-      store.getGrammarHome({ examId: 'em1' }).then((data) => {
+      store.getGrammarHome({ examId: 'em1' }, (fresh) => {
+        em1Topics = buildTopics(fresh);
+        applyHomeTopics('em1-refresh');
+        if (this.grammarPerf) {
+          this.grammarPerf.mark('cloudRefresh', { examId: 'em1', topics: em1Topics.length });
+        }
+      }).then((data) => {
         em1Topics = buildTopics(data);
         applyHomeTopics(data && data.__cacheHit ? 'em1-cache' : 'em1-cloud');
       }).catch(() => {})

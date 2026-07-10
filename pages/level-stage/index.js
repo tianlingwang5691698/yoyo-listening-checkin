@@ -110,7 +110,7 @@ function buildTaskGroups(categories) {
       taskSnapshot: task,
       disabled,
       expanded: category.expanded !== false,
-      stateText: task.completedToday ? '完成' : disabled ? '等待' : '›',
+      stateText: task.completedToday ? '完成' : disabled ? '未开放' : '›',
       planRunType: category.planRunType || 'normal',
       planDayIndex: category.planDayIndex || 0
     };
@@ -191,6 +191,7 @@ Page({
     writeStageSnapshot(snapshotId || displayPhase, displayPhase, nextData);
   },
   async onLoad(query) {
+    this.levelStagePerf = page.startPagePerf('level-stage');
     page.syncTheme(this);
     const phase = query.phase || 'round-1';
     const levelId = query.levelId || 'A1';
@@ -216,10 +217,22 @@ Page({
         hasTaskGroups: true,
         hydrated: true
       }));
+      this.levelStagePerf.ready('pageReady', {
+        source: 'snapshot',
+        cacheHit: true,
+        phase,
+        groups: (snapshot.taskGroups || []).length
+      });
     }
     const refresh = async () => {
-      const data = await store.getLevelOverview({ phase }, (fresh) => this.applyOverview(fresh, phase, levelId, preferredExpandedGroupKey, snapshotId));
+      const data = await store.getLevelOverview({ phase }, (fresh) => {
+        this.applyOverview(fresh, phase, levelId, preferredExpandedGroupKey, snapshotId);
+        if (this.levelStagePerf) {
+          this.levelStagePerf.mark('cloudRefresh', { phase, groups: (fresh.categories || []).length });
+        }
+      });
       this.applyOverview(data, phase, levelId, preferredExpandedGroupKey, snapshotId);
+      return data;
     };
     if (snapshot && fastMode) {
       return;
@@ -230,7 +243,16 @@ Page({
       }, 1200);
       return;
     }
-    await refresh();
+    const data = await refresh();
+    this.levelStagePerf.ready('pageReady', {
+      source: data && data.__cacheHit ? 'cache' : (data && data.syncMode === 'cloud-error' ? 'error' : 'cloud'),
+      cacheHit: !!(data && data.__cacheHit),
+      phase,
+      groups: ((data && data.categories) || []).length
+    });
+    if (data && !data.__cacheHit && data.syncMode !== 'cloud-error') {
+      this.levelStagePerf.mark('cloudRefresh', { phase, groups: (data.categories || []).length });
+    }
   },
   onShow() {
     page.syncTheme(this);

@@ -172,12 +172,16 @@ async function upsertStudyPackFlashcards(ctx, today, source, studyPack) {
 }
 
 async function getSettings(ctx) {
-  const result = await dbAdapter.collection(SETTINGS_COLLECTION)
-    .where({ familyId: ctx.family.familyId, childId: ctx.child.childId })
-    .limit(1)
-    .get();
-  const row = result && result.data && result.data[0];
-  return Object.assign({}, row || {}, normalizeSettings(row || DEFAULT_SETTINGS));
+  try {
+    const result = await dbAdapter.collection(SETTINGS_COLLECTION)
+      .where({ familyId: ctx.family.familyId, childId: ctx.child.childId })
+      .limit(1)
+      .get();
+    const row = result && result.data && result.data[0];
+    return Object.assign({}, row || {}, normalizeSettings(row || DEFAULT_SETTINGS));
+  } catch (error) {
+    return normalizeSettings(DEFAULT_SETTINGS);
+  }
 }
 
 async function saveSettings(event) {
@@ -190,17 +194,21 @@ async function saveSettings(event) {
     reviewLimit: normalizeLimit(payload.reviewLimit, DEFAULT_SETTINGS.reviewLimit),
     updatedAt: new Date().toISOString()
   };
-  const result = await dbAdapter.collection(SETTINGS_COLLECTION)
-    .where({ familyId: settings.familyId, childId: settings.childId })
-    .limit(1)
-    .get();
-  const current = result && result.data && result.data[0];
-  if (current && current._id) {
-    await dbAdapter.collection(SETTINGS_COLLECTION).doc(current._id).update({ data: settings });
-  } else {
-    await dbAdapter.collection(SETTINGS_COLLECTION).add({ data: Object.assign({}, settings, { createdAt: settings.updatedAt }) });
+  try {
+    const result = await dbAdapter.collection(SETTINGS_COLLECTION)
+      .where({ familyId: settings.familyId, childId: settings.childId })
+      .limit(1)
+      .get();
+    const current = result && result.data && result.data[0];
+    if (current && current._id) {
+      await dbAdapter.collection(SETTINGS_COLLECTION).doc(current._id).update({ data: settings });
+    } else {
+      await dbAdapter.collection(SETTINGS_COLLECTION).add({ data: Object.assign({}, settings, { createdAt: settings.updatedAt }) });
+    }
+    return { settings, persisted: true };
+  } catch (error) {
+    return { settings, persisted: false };
   }
-  return { settings };
 }
 
 function isDue(item, today) {

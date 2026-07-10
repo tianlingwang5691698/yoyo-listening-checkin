@@ -698,8 +698,16 @@ Page({
   onShow() {
     this.flashcardPerf = page.startPagePerf('flashcards');
     page.syncTheme(this);
-    this.setData(getNavLayout());
-    if (this.data.mode === 'review') return;
+    this.setData(getNavLayout(), () => {
+      if (this.flashcardPerf) {
+        this.flashcardPerf.ready('pageReady', {
+          cacheHit: this.data.mode === 'review',
+          source: this.data.mode === 'review' ? 'session' : 'static-library',
+          total: this.getFlashcardLibrary().length
+        });
+      }
+    });
+    if (this.data.mode === 'review' || this.data.sourceMode === 'bookshelf') return;
     this.loadCards();
   },
   getFlashcardLibrary() {

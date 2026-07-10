@@ -58,3 +58,149 @@
   text-align: center;
   letter-spacing: 0;
 }
+
+.theme-library.identity-page {
+  padding: 56rpx 28rpx 150rpx;
+  background: linear-gradient(135deg, #faf5ea 0%, #f3e8d4 100%);
+  color: #14283a;
+}
+
+.library-pass-head,
+.reader-application,
+.reader-pass,
+.library-role-tab {
+  border-radius: 8px;
+  border: 1rpx solid rgba(184, 149, 98, 0.42);
+  box-shadow: 0 6rpx 18rpx rgba(43, 33, 27, 0.12);
+  box-sizing: border-box;
+}
+
+.library-pass-head {
+  padding: 34rpx 30rpx;
+  background: #2b211b;
+}
+
+.library-kicker {
+  color: #b89562;
+  font-size: 22rpx;
+  line-height: 1.3;
+  font-weight: 600;
+}
+
+.library-title {
+  margin-top: 10rpx;
+  color: #faf5ea;
+  font-family: "Songti SC", serif;
+  font-size: 48rpx;
+  line-height: 1.16;
+  font-weight: 600;
+}
+
+.library-copy {
+  margin-top: 14rpx;
+  color: rgba(250, 245, 234, 0.78);
+  font-size: 26rpx;
+  line-height: 1.55;
+}
+
+.library-role-tabs {
+  margin-top: 22rpx;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16rpx;
+}
+
+.library-role-tab {
+  min-height: 144rpx;
+  padding: 22rpx;
+  background: #faf5ea;
+}
+
+.library-role-tab.is-active {
+  border-color: #b89562;
+  background: #f3e8d4;
+}
+
+.library-role-tab .role-title {
+  color: #14283a;
+  font-size: 30rpx;
+}
+
+.library-role-tab .role-copy {
+  color: #6f675f;
+}
+
+.reader-application,
+.reader-pass {
+  margin-top: 22rpx;
+  padding: 30rpx;
+  background:
+    linear-gradient(90deg, rgba(184, 149, 98, 0.14) 0 2rpx, transparent 2rpx),
+    #f3e8d4;
+}
+
+.reader-card-label {
+  color: #6f675f;
+  font-size: 22rpx;
+  font-weight: 600;
+}
+
+.reader-card-title {
+  margin-top: 10rpx;
+  color: #14283a;
+  font-size: 34rpx;
+  line-height: 1.25;
+  font-weight: 600;
+}
+
+.reader-code-input,
+.reader-relation-input {
+  width: 100%;
+  height: 78rpx;
+  margin-top: 22rpx;
+  padding: 0 22rpx;
+  border-radius: 8px;
+  background: #faf5ea;
+  color: #14283a;
+  font-size: 28rpx;
+  box-sizing: border-box;
+}
+
+.reader-code-input {
+  text-align: center;
+  font-size: 38rpx;
+  font-weight: 600;
+}
+
+.reader-number {
+  margin-top: 22rpx;
+  padding: 26rpx 18rpx;
+  border-radius: 8px;
+  border: 2rpx solid #b89562;
+  color: #14283a;
+  font-size: 56rpx;
+  line-height: 1;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 0;
+}
+
+.reader-pass .library-copy {
+  color: #6f675f;
+}
+
+.library-primary {
+  width: 100%;
+  height: 70rpx;
+  margin: 24rpx 0 0;
+  border-radius: 8px;
+  background: #14283a;
+  color: #faf5ea;
+  font-size: 26rpx;
+  line-height: 70rpx;
+  font-weight: 600;
+}
+
+.library-primary::after {
+  border: none;
+}

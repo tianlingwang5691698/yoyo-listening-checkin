@@ -1,3 +1,199 @@
+<block wx:if="{{theme === 'library'}}">
+  <view class="library-vocab-nav theme-{{theme}}" style="{{navStyle}}">
+    <view class="library-vocab-back" bindtap="handlePageBack">‹</view>
+    <view class="library-vocab-nav-title">词汇</view>
+  </view>
+
+  <view class="theme-{{theme}} page-shell flashcard-page library-vocab-page {{mode === 'review' ? 'is-review' : ''}}" style="{{pageTopStyle}}">
+    <block wx:if="{{sourceMode === 'bookshelf'}}">
+      <view class="library-vocab-shelf-head">
+        <view class="library-vocab-head-copy">
+          <view class="library-vocab-title">我的词汇书库</view>
+          <view class="library-vocab-subtitle">选择词库，继续今天的背诵</view>
+        </view>
+        <view class="library-vocab-head-books">
+          <text class="library-vocab-head-book spine-one"></text>
+          <text class="library-vocab-head-book spine-two"></text>
+          <text class="library-vocab-head-book spine-three"></text>
+          <text class="library-vocab-index-slip"></text>
+        </view>
+      </view>
+
+      <view class="library-vocab-bookwall">
+        <view class="library-vocab-book library-vocab-book-all" bindtap="useAllVocabulary">
+          <view class="library-vocab-spine-mark">库</view>
+          <view class="library-vocab-book-body">
+            <view class="library-vocab-book-title">我的词库</view>
+            <view class="library-vocab-book-meta">阅读、语法和已加入的生词</view>
+          </view>
+          <view class="library-vocab-book-stamp">记忆栈</view>
+          <view class="library-vocab-book-arrow"></view>
+        </view>
+        <view class="library-vocab-book book-{{item.level}} {{importingBook === item.level ? 'is-loading' : ''}}" wx:for="{{dictionaryBooks}}" wx:key="level" bindtap="importDictionaryBook" data-level="{{item.level}}">
+          <view class="library-vocab-spine-mark">{{item.coverMark}}</view>
+          <view class="library-vocab-book-body">
+            <view class="library-vocab-book-title">{{item.title}}</view>
+            <view class="library-vocab-book-meta" wx:if="{{item.imported}}">{{item.imported}} 个有进度</view>
+            <view class="library-vocab-book-meta" wx:else>词卡组</view>
+          </view>
+          <view class="library-vocab-book-stamp">词卡组</view>
+          <view class="library-vocab-book-arrow"></view>
+        </view>
+      </view>
+    </block>
+
+    <block wx:else>
+      <block wx:if="{{mode === 'library'}}">
+        <view class="library-vocab-drawer">
+          <view class="library-vocab-drawer-head">
+            <view class="library-vocab-head-copy">
+              <view class="library-vocab-title">{{activeSourceTitle || '我的词库'}} <text wx:if="{{demoMode}}" class="library-vocab-demo">演示</text></view>
+              <view class="library-vocab-subtitle">已学 {{planSummary.learned}} / {{planSummary.total}} · 打卡 {{vocabCheckinDays}} 天</view>
+              <view class="library-vocab-phonetic" wx:if="{{phoneticPreview}}">{{phoneticPreview}}</view>
+            </view>
+            <view class="library-vocab-return" bindtap="backToBookshelf">书库</view>
+          </view>
+          <view class="library-vocab-ruler">
+            <view class="library-vocab-ruler-fill {{planSummary.learnedPercent === 0 ? 'is-zero' : ''}}" style="width: {{planSummary.learnedPercent}}%;"></view>
+          </view>
+          <view class="library-vocab-counts">
+            <view><text>{{planSummary.fresh}}</text><text>新词</text></view>
+            <view><text>{{planSummary.reviewing}}</text><text>复习中</text></view>
+            <view><text>{{planSummary.mastered}}</text><text>掌握</text></view>
+          </view>
+        </view>
+
+        <button class="library-vocab-start {{empty || loading ? 'is-disabled' : ''}}" disabled="{{empty || loading}}" hover-class="is-pressed" hover-start-time="20" hover-stay-time="180" bindtap="startReview">开始背诵</button>
+        <view class="flashcard-debug library-vocab-debug" wx:if="{{flashcardDebugLines.length}}">
+          <text selectable="{{true}}" wx:for="{{flashcardDebugLines}}" wx:key="*this">{{item}}</text>
+        </view>
+
+        <view class="library-vocab-handles">
+          <view bindtap="togglePlanSettings">调整计划</view>
+          <view bindtap="toggleLibraryVisible">{{libraryVisible ? '收起词库' : '查看词库'}}</view>
+        </view>
+
+        <view class="library-vocab-plan" wx:if="{{planSettingsVisible}}">
+          <view class="library-vocab-ledger">
+            <view class="library-vocab-limit" wx:if="{{!isUnlimitedPlan}}">
+              <text class="library-vocab-limit-label">今日新学</text>
+              <view class="stepper library-vocab-stepper">
+                <view class="stepper-btn {{settings.newLimit <= 5 ? 'disabled' : ''}}" bindtap="changeLimit" bindlongpress="changeLimit" data-field="newLimit" data-delta="-5" data-long-delta="-25">-</view>
+                <view class="stepper-picker" bindtap="openLimitPicker" data-field="newLimit">
+                  <text class="stepper-value">{{settings.newLimit}}</text>
+                </view>
+                <view class="stepper-btn {{settings.newLimit >= planLimitMax ? 'disabled' : ''}}" bindtap="changeLimit" bindlongpress="changeLimit" data-field="newLimit" data-delta="5" data-long-delta="25">+</view>
+              </view>
+            </view>
+            <view class="library-vocab-limit" wx:if="{{!isUnlimitedPlan}}">
+              <text class="library-vocab-limit-label">今日复习</text>
+              <view class="stepper library-vocab-stepper">
+                <view class="stepper-btn {{settings.reviewLimit <= 5 ? 'disabled' : ''}}" bindtap="changeLimit" bindlongpress="changeLimit" data-field="reviewLimit" data-delta="-5" data-long-delta="-25">-</view>
+                <view class="stepper-picker" bindtap="openLimitPicker" data-field="reviewLimit">
+                  <text class="stepper-value">{{settings.reviewLimit}}</text>
+                </view>
+                <view class="stepper-btn {{settings.reviewLimit >= planLimitMax ? 'disabled' : ''}}" bindtap="changeLimit" bindlongpress="changeLimit" data-field="reviewLimit" data-delta="5" data-long-delta="25">+</view>
+              </view>
+            </view>
+          </view>
+          <view class="review-log library-vocab-log" wx:if="{{logs.length}}">
+            <view class="library-vocab-section-title">最近</view>
+            <view class="log-row" wx:for="{{logs}}" wx:key="_id">
+              <text>{{item.text}}</text>
+              <text>{{item.result === 'remembered' ? '认识' : '不熟'}}</text>
+            </view>
+          </view>
+        </view>
+
+        <block wx:if="{{libraryVisible}}">
+          <view class="library-vocab-index" wx:if="{{libraryGroups.length}}">
+            <view class="library-vocab-group" wx:for="{{libraryGroups}}" wx:key="type" wx:for-item="group">
+              <view class="library-vocab-tab">
+                <text>{{group.label}}</text>
+                <text>{{group.count}}</text>
+              </view>
+              <view class="library-vocab-row" wx:for="{{group.items}}" wx:key="flashcardKey" wx:for-item="item">
+                <view class="library-vocab-row-main">
+                  <view class="library-vocab-row-word">{{item.displayText}}</view>
+                  <view class="library-vocab-row-phonetic" wx:if="{{item.displayPhonetic}}">{{item.displayPhonetic}}</view>
+                </view>
+                <view class="library-vocab-row-meaning">{{item.meaning || item.translation || '暂无释义'}}</view>
+                <view class="library-vocab-row-example" wx:if="{{item.example}}">{{item.example}}</view>
+              </view>
+            </view>
+          </view>
+          <view class="empty-state library-vocab-empty" wx:else>暂无词汇。</view>
+        </block>
+      </block>
+
+      <block wx:if="{{mode === 'review'}}">
+        <view class="library-vocab-review-head">
+          <view class="library-vocab-review-exit" bindtap="exitReview">词库</view>
+          <view class="library-vocab-review-progress">{{current ? reviewDone + 1 : reviewDone}} / {{reviewSessionTotal || total}}</view>
+          <view></view>
+        </view>
+        <view class="library-vocab-complete" wx:if="{{reviewCompleted}}">
+          <view class="library-vocab-archive"><text></text><text></text><text></text></view>
+          <view class="library-vocab-complete-stamp">完成</view>
+          <view class="library-vocab-complete-title">今天词汇完成啦</view>
+          <button class="library-vocab-complete-action" hover-class="is-pressed" hover-start-time="20" hover-stay-time="180" bindtap="exitReview">返回词库</button>
+        </view>
+        <view class="library-vocab-card tone-{{current.type}} {{cardChoice === 'unfamiliar' ? 'is-unfamiliar' : ''}} {{cardChoice === 'easy' ? 'is-easy' : ''}}" wx:elif="{{current}}">
+          <view class="library-vocab-card-tag">{{current.typeLabel}}</view>
+          <view class="library-vocab-card-face">
+            <view class="library-vocab-word-wrap">
+              <view class="library-vocab-study-word" bindtap="speakCurrent">{{current.displayText}}</view>
+              <view class="library-vocab-study-speak {{audioLoading ? 'is-loading' : ''}}" wx:if="{{current.canSpeak}}" bindtap="speakCurrent">听</view>
+            </view>
+            <view class="library-vocab-study-phonetic" wx:if="{{current.displayPhonetic}}">{{current.displayPhonetic}}</view>
+          </view>
+          <view class="library-vocab-answer {{cardRevealed ? '' : 'is-placeholder'}}">
+            <view class="library-vocab-answer-head">
+              <view class="study-choice-tag {{cardChoice}}">{{cardChoice === 'unfamiliar' ? '不认识' : (cardChoice === 'easy' ? '太简单' : '我认识')}}</view>
+              <view class="study-easy-action" wx:if="{{cardChoice !== 'easy'}}" bindtap="markTooEasy">标记为太简单</view>
+              <view class="study-easy-action" wx:else bindtap="undoTooEasy">撤销</view>
+            </view>
+            <view class="library-vocab-meaning">{{current.meaning || current.translation || '暂无释义'}}</view>
+            <view class="library-vocab-example" wx:if="{{current.example}}">
+              <view>{{current.example}}</view>
+              <view wx:if="{{current.exampleMeaning}}">{{current.exampleMeaning}}</view>
+            </view>
+          </view>
+          <view class="library-vocab-actions">
+            <block wx:if="{{cardRevealed}}">
+              <button class="library-vocab-action placeholder" disabled="{{true}}"></button>
+              <button class="library-vocab-action strong {{audioLoading || audioPlaying ? 'is-disabled' : ''}}" disabled="{{audioLoading || audioPlaying}}" hover-class="is-pressed" hover-start-time="20" hover-stay-time="180" bindtap="commitCurrentCard">下一个</button>
+            </block>
+            <block wx:else>
+              <button class="library-vocab-action weak" hover-class="is-pressed" hover-start-time="20" hover-stay-time="180" bindtap="markUnfamiliar">不认识</button>
+              <button class="library-vocab-action strong" hover-class="is-pressed" hover-start-time="20" hover-stay-time="180" bindtap="markRemembered">我认识</button>
+            </block>
+          </view>
+        </view>
+        <view class="empty-state library-vocab-empty" wx:else>今天没有复习。</view>
+      </block>
+    </block>
+
+    <view class="limit-picker-mask library-vocab-picker-mask" wx:if="{{limitPickerVisible}}" catchtap="closeLimitPicker">
+      <view class="limit-picker-sheet library-vocab-picker" catchtap="noop">
+        <view class="limit-picker-head">
+          <view class="limit-picker-action" bindtap="closeLimitPicker">取消</view>
+          <view class="limit-picker-title">{{limitPickerTitle}}</view>
+          <view class="limit-picker-action confirm" bindtap="confirmLimit">确定</view>
+        </view>
+        <view class="limit-picker-wheel">
+          <scroll-view class="limit-picker-view" scroll-y="{{true}}" enhanced="{{true}}" bounces="{{true}}" show-scrollbar="{{false}}" scroll-top="{{limitScrollTop}}" bindscroll="scrollLimit">
+            <view class="limit-picker-list">
+              <view class="limit-picker-item {{index === selectedLimitIndex ? 'selected' : ''}}" wx:for="{{limitOptions}}" wx:key="*this" bindtap="tapLimitOption" data-index="{{index}}">{{item}}</view>
+            </view>
+          </scroll-view>
+        </view>
+      </view>
+    </view>
+  </view>
+</block>
+
+<block wx:else>
 <view class="flashcard-nav theme-{{theme}}" style="{{navStyle}}">
   <view class="flashcard-back" bindtap="handlePageBack">‹</view>
   <view class="flashcard-nav-title">词汇</view>
@@ -142,7 +338,7 @@
             </view>
           </view>
         </view>
-        <view class="empty-state" wx:else>{{importingBook ? '正在建立计划。' : '暂无词汇。'}}</view>
+        <view class="empty-state" wx:else>暂无词汇。</view>
       </block>
     </block>
 
@@ -219,3 +415,4 @@
     </view>
   </view>
 </view>
+</block>

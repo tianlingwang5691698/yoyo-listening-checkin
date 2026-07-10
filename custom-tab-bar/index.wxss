@@ -187,3 +187,37 @@
   font-size: 22rpx;
   line-height: 1;
 }
+
+.custom-tabbar.theme-library {
+  left: 30rpx;
+  right: 30rpx;
+  height: 106rpx;
+  padding: 8rpx 10rpx;
+  border: 1rpx solid rgba(184, 149, 98, 0.42);
+  border-radius: 8rpx;
+  background: rgba(20, 40, 58, 0.96);
+  box-shadow: 0 12rpx 30rpx rgba(43, 33, 27, 0.22);
+  backdrop-filter: none;
+}
+
+.custom-tabbar.theme-library .tabbar-item {
+  height: 88rpx;
+  gap: 6rpx;
+  color: rgba(250, 245, 234, 0.66);
+  font-family: "Songti SC", "STSong", serif;
+}
+
+.custom-tabbar.theme-library .tabbar-item.is-active {
+  color: #f1cf95;
+}
+
+.custom-tabbar.theme-library .tabbar-item.is-active .tabbar-icon {
+  filter: none;
+}
+
+.custom-tabbar.theme-library .tabbar-item.is-active .tabbar-icon::after {
+  width: 22rpx;
+  margin-left: -11rpx;
+  border-radius: 0;
+  background: #f1cf95;
+}

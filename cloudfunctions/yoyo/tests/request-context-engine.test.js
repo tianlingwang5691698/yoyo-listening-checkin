@@ -63,6 +63,32 @@ test('prepareRequestContext 首页优先使用轻量上下文', async () => {
   assert.deepEqual(result.ctx.child.childId, 'child-yoyo');
 });
 
+test('prepareRequestContext 听力素材首屏使用轻量上下文', async () => {
+  const calls = [];
+  const result = await requestContextEngine.prepareRequestContext({
+    action: 'getListeningPlanOverview',
+    payload: { levelId: 'A1' }
+  }, {
+    refreshRuntimeCatalogs: async (force, categories) => calls.push(['refresh', force, categories]),
+    getWXContext: () => ({ OPENID: 'open-1' }),
+    getLightweightContext: async (openId) => {
+      calls.push(['lightweight', openId]);
+      return { user: { openId }, child: { childId: 'child-yoyo' } };
+    },
+    ensureBootstrap: async () => {
+      calls.push(['bootstrap']);
+      return {};
+    },
+    getTodayString: () => '2026-04-21'
+  });
+
+  assert.deepEqual(calls, [
+    ['refresh', false, []],
+    ['lightweight', 'open-1']
+  ]);
+  assert.deepEqual(result.ctx.child.childId, 'child-yoyo');
+});
+
 test('prepareRequestContext 会传递选中学生上下文', async () => {
   const calls = [];
   await requestContextEngine.prepareRequestContext({

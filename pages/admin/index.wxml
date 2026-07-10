@@ -1,50 +1,109 @@
 <view class="theme-{{theme}} page-shell admin-page">
-  <view class="admin-hero product-hero">
-    <view class="product-title type-page-title">后台</view>
-    <view class="product-copy">默认显示多次登录的活跃用户</view>
-    <view class="admin-total">{{activeTotal}} 个活跃用户</view>
-  </view>
-
-  <view class="section-panel">
-    <view class="section-head">
-      <view class="section-title type-section-title">{{listMode === 'inactive' ? '不活跃用户' : '活跃用户'}}</view>
-      <view class="admin-tabs">
-        <view class="admin-tab {{listMode === 'active' ? 'is-active' : ''}}" data-mode="active" bindtap="switchListMode">活跃 {{activeTotal}}</view>
-        <view class="admin-tab {{listMode === 'inactive' ? 'is-active' : ''}}" data-mode="inactive" bindtap="switchListMode">不活跃 {{inactiveTotal}}</view>
+  <view wx:if="{{theme === 'library'}}" class="library-admin">
+    <view class="library-ledger-head">
+      <view>
+        <view class="library-kicker">Admin Ledger</view>
+        <view class="library-title">管理档案</view>
+        <view class="library-copy">默认显示多次登录的活跃用户</view>
       </view>
+      <view class="ledger-total">{{activeTotal}} 个活跃用户</view>
     </view>
-    <view class="empty-state" wx:if="{{loading}}">加载中</view>
-    <view class="admin-error" wx:elif="{{errorText}}">
-      <view class="admin-error-title">后台暂时不可用</view>
-      <view class="admin-error-copy">{{errorText}}</view>
-      <view class="admin-retry" bindtap="loadAdminData">重试</view>
-    </view>
-    <view class="empty-state" wx:elif="{{!visibleRows.length}}">暂无用户</view>
-    <block wx:else>
-      <view class="admin-card" wx:for="{{visibleRows}}" wx:key="childId" wx:for-index="rowIndex">
-        <view class="admin-head">
-          <view>
-            <view class="admin-name">{{item.childNickname || '同学'}}</view>
-            <view class="admin-activity">{{item.activityText}}</view>
-          </view>
-          <view class="admin-side">
-            <view class="member-role">{{item.userRoleText || '学生'}}</view>
-            <view class="admin-count" wx:if="{{item.parentCount}}">{{item.parentCount}} 位家长</view>
-            <view class="detail-toggle" data-index="{{rowIndex}}" bindtap="toggleRowExpanded">{{item.expanded ? '收起' : '展开'}}</view>
-          </view>
-        </view>
 
-        <view wx:if="{{item.expanded}}">
-          <view class="admin-simple-row">
-            <view class="admin-simple-label">ID</view>
-            <view class="admin-simple-value">{{item.childLoginCode || '未生成'}}</view>
-          </view>
-          <view class="admin-simple-row" wx:if="{{item.parentNames}}">
-            <view class="admin-simple-label">家长</view>
-            <view class="admin-simple-value">{{item.parentNames}}</view>
-          </view>
+    <view class="library-ledger">
+      <view class="library-card-head">
+        <view class="library-title small">{{listMode === 'inactive' ? '不活跃用户' : '活跃用户'}}</view>
+        <view class="ledger-tabs">
+          <view class="ledger-tab {{listMode === 'active' ? 'is-active' : ''}}" data-mode="active" bindtap="switchListMode">活跃 {{activeTotal}}</view>
+          <view class="ledger-tab {{listMode === 'inactive' ? 'is-active' : ''}}" data-mode="inactive" bindtap="switchListMode">不活跃 {{inactiveTotal}}</view>
         </view>
       </view>
-    </block>
+      <view class="admin-skeleton" wx:if="{{loading}}">
+        <view></view><view></view><view></view>
+      </view>
+      <view class="library-admin-error" wx:elif="{{errorText}}">
+        <view class="entry-title">后台暂时不可用</view>
+        <view class="entry-copy">{{errorText}}</view>
+        <view class="library-link" bindtap="loadAdminData">重试</view>
+      </view>
+      <view class="library-empty" wx:elif="{{!visibleRows.length}}">暂无用户</view>
+      <block wx:else>
+        <view class="ledger-row" wx:for="{{visibleRows}}" wx:key="childId" wx:for-index="rowIndex">
+          <view class="library-card-head">
+            <view class="entry-main">
+              <view class="entry-title">{{item.childNickname || '同学'}}</view>
+              <view class="entry-copy">{{item.activityText}}</view>
+            </view>
+            <view class="ledger-side">
+              <view class="library-stamp">{{item.userRoleText || '学生'}}</view>
+              <view class="entry-copy" wx:if="{{item.parentCount}}">{{item.parentCount}} 位家长</view>
+              <view class="library-link" data-index="{{rowIndex}}" bindtap="toggleRowExpanded">{{item.expanded ? '收起' : '展开'}}</view>
+            </view>
+          </view>
+          <view wx:if="{{item.expanded}}">
+            <view class="ledger-detail-row">
+              <view>ID</view>
+              <text>{{item.childLoginCode || '未生成'}}</text>
+            </view>
+            <view class="ledger-detail-row" wx:if="{{item.parentNames}}">
+              <view>家长</view>
+              <text>{{item.parentNames}}</text>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
   </view>
+
+  <block wx:else>
+    <view class="admin-hero product-hero">
+      <view class="product-title type-page-title">后台</view>
+      <view class="product-copy">默认显示多次登录的活跃用户</view>
+      <view class="admin-total">{{activeTotal}} 个活跃用户</view>
+    </view>
+
+    <view class="section-panel">
+      <view class="section-head">
+        <view class="section-title type-section-title">{{listMode === 'inactive' ? '不活跃用户' : '活跃用户'}}</view>
+        <view class="admin-tabs">
+          <view class="admin-tab {{listMode === 'active' ? 'is-active' : ''}}" data-mode="active" bindtap="switchListMode">活跃 {{activeTotal}}</view>
+          <view class="admin-tab {{listMode === 'inactive' ? 'is-active' : ''}}" data-mode="inactive" bindtap="switchListMode">不活跃 {{inactiveTotal}}</view>
+        </view>
+      </view>
+    <view class="admin-skeleton" wx:if="{{loading}}">
+      <view></view><view></view><view></view>
+    </view>
+      <view class="admin-error" wx:elif="{{errorText}}">
+        <view class="admin-error-title">后台暂时不可用</view>
+        <view class="admin-error-copy">{{errorText}}</view>
+        <view class="admin-retry" bindtap="loadAdminData">重试</view>
+      </view>
+      <view class="empty-state" wx:elif="{{!visibleRows.length}}">暂无用户</view>
+      <block wx:else>
+        <view class="admin-card" wx:for="{{visibleRows}}" wx:key="childId" wx:for-index="rowIndex">
+          <view class="admin-head">
+            <view>
+              <view class="admin-name">{{item.childNickname || '同学'}}</view>
+              <view class="admin-activity">{{item.activityText}}</view>
+            </view>
+            <view class="admin-side">
+              <view class="member-role">{{item.userRoleText || '学生'}}</view>
+              <view class="admin-count" wx:if="{{item.parentCount}}">{{item.parentCount}} 位家长</view>
+              <view class="detail-toggle" data-index="{{rowIndex}}" bindtap="toggleRowExpanded">{{item.expanded ? '收起' : '展开'}}</view>
+            </view>
+          </view>
+
+          <view wx:if="{{item.expanded}}">
+            <view class="admin-simple-row">
+              <view class="admin-simple-label">ID</view>
+              <view class="admin-simple-value">{{item.childLoginCode || '未生成'}}</view>
+            </view>
+            <view class="admin-simple-row" wx:if="{{item.parentNames}}">
+              <view class="admin-simple-label">家长</view>
+              <view class="admin-simple-value">{{item.parentNames}}</view>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </block>
 </view>

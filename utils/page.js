@@ -100,7 +100,14 @@ function startPagePerf(scope) {
     ready(name, meta) {
       if (readyLogged) return;
       readyLogged = true;
-      monitor.logPerf(scope, name || 'pageReady', Date.now() - startedAt, meta || {});
+      const durationMs = Date.now() - startedAt;
+      const metricName = name || 'pageReady';
+      const readyMeta = Object.assign({}, meta || {});
+      if (metricName === 'pageReady') {
+        readyMeta.targetMs = readyMeta.cacheHit ? 300 : 1200;
+        readyMeta.withinTarget = durationMs < readyMeta.targetMs;
+      }
+      monitor.logPerf(scope, metricName, durationMs, readyMeta);
     },
     mark(name, meta) {
       monitor.logPerf(scope, name, Date.now() - startedAt, meta || {});

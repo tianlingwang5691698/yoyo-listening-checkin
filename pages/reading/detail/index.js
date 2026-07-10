@@ -449,7 +449,7 @@ function withGroupIndexes(items) {
 
 function normalizeAnalysisText(text) {
   const value = String(text || '').trim();
-  if (!value || value === '结合原文判断。' || value === '结合原文判断' || value === '解析生成中，请稍等。') {
+  if (!value || value === '结合原文判断。' || value === '结合原文判断' || /^解析.*请稍等。$/.test(value)) {
     return '生成解析中';
   }
   return value;
@@ -916,18 +916,40 @@ Page({
     }
   },
   async onLoad(options) {
+    this.readingDetailPerf = page.startPagePerf('reading-detail');
     page.syncTheme(this);
     const passageId = options && options.passageId ? String(options.passageId) : '';
     this.setData({ passageId });
     const snapshot = getPassageSnapshot(passageId);
     if (snapshot) {
       this.applyPassage({ passage: snapshot, latestAttempt: null });
+      this.readingDetailPerf.ready('pageReady', {
+        source: 'snapshot',
+        cacheHit: true,
+        passageId
+      });
     }
-    await this.loadPassage(passageId);
+    await this.loadPassage(passageId, !!snapshot);
   },
-  async loadPassage(passageId) {
-    const data = await store.getReadingPassage({ passageId }, (fresh) => this.applyPassage(fresh));
+  async loadPassage(passageId, hasSnapshot) {
+    const data = await store.getReadingPassage({ passageId }, (fresh) => {
+      this.applyPassage(fresh);
+      if (this.readingDetailPerf) {
+        this.readingDetailPerf.mark('cloudRefresh', { passageId, hasPassage: !!(fresh && fresh.passage) });
+      }
+    });
     this.applyPassage(data && data.passage ? data : { passage: null, latestAttempt: null });
+    if (this.readingDetailPerf && !hasSnapshot) {
+      this.readingDetailPerf.ready('pageReady', {
+        source: data && data.__cacheHit ? 'cache' : (data && data.syncMode === 'cloud-error' ? 'error' : 'cloud'),
+        cacheHit: !!(data && data.__cacheHit),
+        passageId,
+        hasPassage: !!(data && data.passage)
+      });
+      if (data && !data.__cacheHit && data.syncMode !== 'cloud-error') {
+        this.readingDetailPerf.mark('cloudRefresh', { passageId, hasPassage: !!data.passage });
+      }
+    }
   },
   applyPassage(data) {
     if (!data || !data.passage) {

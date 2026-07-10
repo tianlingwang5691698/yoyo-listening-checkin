@@ -1,81 +1,174 @@
-<view class="theme-{{theme}} page-shell reading-page" bindtouchstart="onDirectoryTouchStart" bindtouchend="onDirectoryTouchEnd">
-  <view class="reading-atmosphere">
-    <view class="reading-light light-one"></view>
-    <view class="reading-light light-two"></view>
-    <view class="reading-line line-one"></view>
-    <view class="reading-line line-two"></view>
-  </view>
+<block wx:if="{{theme === 'library'}}">
+  <view class="theme-{{theme}} page-shell library-reading-page" bindtouchstart="onDirectoryTouchStart" bindtouchend="onDirectoryTouchEnd">
+    <view class="library-room-glow"></view>
 
-  <view class="reading-hero">
-    <view class="hero-pages">
-      <view class="hero-page hero-page-back"></view>
-      <view class="hero-page hero-page-front">
-        <view class="hero-page-line line-short"></view>
-        <view class="hero-page-line"></view>
-        <view class="hero-page-line"></view>
-      </view>
-    </view>
-    <view class="reading-eyebrow">中考阅读</view>
-    <view class="reading-title">选择一篇好好读</view>
-    <view class="reading-copy">一模、二模、真题卷</view>
-  </view>
-
-  <block wx:if="{{categoryRoot}}">
-    <view class="reading-card">
-      <view class="reading-card-top">
-        <view class="reading-card-label">
-          <text>{{selectedHeader}}</text>
-        </view>
-        <view class="reading-card-state" wx:if="{{isRootLevel}}">{{categoryRoot.count}} 篇</view>
-        <view class="directory-back-icon" wx:else bindtap="backOneLevel">‹ 上一级</view>
-      </view>
-
-      <view class="reading-breadcrumb" wx:if="{{!isRootLevel}}">
-        <text bindtap="backToRoot">中考阅读</text>
-        <text> / </text>
-        <text wx:if="{{isExamLevel}}">{{selectedGroup.label}}</text>
-        <text wx:if="{{isDistrictLevel}}" bindtap="backToExam">{{selectedGroup.label}}</text>
-        <text wx:if="{{isDistrictLevel}}"> / {{selectedDistrictNode.label}}</text>
-      </view>
-
-      <view class="paper-group-grid" wx:if="{{isRootLevel}}">
-        <view class="directory-row paper-group-panel" wx:for="{{categoryRoot.groups}}" wx:key="key" data-exam-type="{{item.key}}" bindtap="selectExamType">
-          <view class="directory-mark paper-stack-mark">
-            <view class="paper-stack-line"></view>
-            <view class="paper-stack-line"></view>
-          </view>
-          <view class="directory-main">
-            <view class="directory-title">{{item.label}}</view>
-            <view class="directory-meta">{{item.districts.length}} 个区 · {{item.count}} 篇</view>
-          </view>
-          <view class="directory-arrow">›</view>
+    <view class="library-catalogue-cover">
+      <view class="catalogue-spine"></view>
+      <view class="catalogue-pages">
+        <view class="catalogue-page page-back"></view>
+        <view class="catalogue-page page-mid"></view>
+        <view class="catalogue-page page-front">
+          <view class="catalogue-rule short"></view>
+          <view class="catalogue-rule"></view>
+          <view class="catalogue-rule"></view>
         </view>
       </view>
-
-      <view class="district-drawer-list" wx:elif="{{isExamLevel}}">
-        <view class="directory-row district-drawer" wx:for="{{selectedGroup.districts}}" wx:key="key" data-district="{{item.key}}" bindtap="selectDistrict">
-          <view class="directory-mark drawer-tab"></view>
-          <view class="directory-main">
-            <view class="directory-title">{{item.label}}</view>
-            <view class="directory-meta" wx:if="{{item.completionReady}}">{{item.completedCount}} / {{item.count}} 已完成</view>
-            <view class="directory-meta" wx:else>{{item.count}} 篇</view>
-          </view>
-          <view class="directory-arrow">›</view>
-        </view>
+      <view class="catalogue-copy">
+        <view class="catalogue-kicker">中考阅读</view>
+        <view class="catalogue-title">选择一篇好好读</view>
+        <view class="catalogue-subtitle">一模、二模、真题卷</view>
       </view>
-
-      <view class="reading-sheet-list" wx:elif="{{isDistrictLevel}}">
-        <view class="task-row reading-sheet" wx:for="{{selectedDistrictNode.passages}}" wx:key="_id" data-passage-id="{{item._id}}" bindtap="openPassage">
-          <view class="sheet-fold"></view>
-          <view class="task-index">{{index + 1}}</view>
-          <view class="task-main">
-            <view class="task-title">{{item.title}}</view>
-            <view class="task-meta">{{item.meta}} · {{item.questionCount}} 题</view>
-          </view>
-          <view class="task-state {{item.completed ? 'is-done' : ''}}">{{item.completionReady ? (item.completed ? '复习' : '练习') : '进入'}}</view>
-        </view>
-      </view>
+      <view class="catalogue-page-tag">READ</view>
     </view>
 
-  </block>
-</view>
+    <view class="library-index-panel">
+      <view class="library-index-head">
+        <view>
+          <view class="library-index-label">{{selectedHeader}}</view>
+          <view class="library-breadcrumb" wx:if="{{!isRootLevel}}">
+            <text bindtap="backToRoot">中考阅读</text>
+            <text> / </text>
+            <text wx:if="{{isExamLevel}}">{{selectedGroup.label}}</text>
+            <text wx:if="{{isDistrictLevel}}" bindtap="backToExam">{{selectedGroup.label}}</text>
+            <text wx:if="{{isDistrictLevel}}"> / {{selectedDistrictNode.label}}</text>
+          </view>
+        </view>
+        <view class="library-index-count" wx:if="{{isRootLevel && categoryRoot}}">{{categoryRoot.count}} 篇</view>
+        <view class="library-index-back" wx:elif="{{!isRootLevel}}" bindtap="backOneLevel">‹ 上一级</view>
+      </view>
+
+      <view class="library-skeleton" wx:if="{{loading && !categoryRoot}}">
+        <view class="skeleton-title"></view>
+        <view class="skeleton-slip"></view>
+        <view class="skeleton-slip"></view>
+        <view class="skeleton-slip short"></view>
+      </view>
+
+      <block wx:elif="{{categoryRoot}}">
+        <view class="library-root-ledger" wx:if="{{isRootLevel}}">
+          <view class="library-ledger-row" wx:for="{{categoryRoot.groups}}" wx:key="key" data-exam-type="{{item.key}}" bindtap="selectExamType">
+            <view class="ledger-tab">{{index + 1}}</view>
+            <view class="ledger-body">
+              <view class="ledger-title">{{item.label}}</view>
+              <view class="ledger-meta">{{item.districts.length}} 个区 · {{item.count}} 篇</view>
+            </view>
+            <view class="ledger-corner">进入</view>
+          </view>
+        </view>
+
+        <view class="library-drawer-list" wx:elif="{{isExamLevel}}">
+          <view class="library-drawer-row" wx:for="{{selectedGroup.districts}}" wx:key="key" data-district="{{item.key}}" bindtap="selectDistrict">
+            <view class="drawer-rail"></view>
+            <view class="drawer-body">
+              <view class="drawer-title">{{item.label}}</view>
+              <view class="drawer-meta" wx:if="{{item.completionReady}}">{{item.completedCount}} / {{item.count}} 已完成</view>
+              <view class="drawer-meta" wx:else>{{item.count}} 篇</view>
+            </view>
+            <view class="drawer-arrow">›</view>
+          </view>
+        </view>
+
+        <view class="library-paper-index" wx:elif="{{isDistrictLevel}}">
+          <view class="library-paper-row" wx:for="{{selectedDistrictNode.passages}}" wx:key="_id" data-passage-id="{{item._id}}" bindtap="openPassage">
+            <view class="paper-row-number">{{index + 1}}</view>
+            <view class="paper-row-main">
+              <view class="paper-row-title">{{item.title}}</view>
+              <view class="paper-row-meta">{{item.meta}} · {{item.questionCount}} 题</view>
+            </view>
+            <view class="paper-row-tag {{item.completed ? 'is-done' : ''}}">{{item.completionReady ? (item.completed ? '复习' : '练习') : '进入'}}</view>
+          </view>
+        </view>
+      </block>
+
+      <view class="library-empty-catalogue" wx:else>
+        <view class="empty-book-mark"></view>
+        <view>{{syncMode === 'cloud-error' ? '目录加载失败' : '暂无阅读内容。'}}</view>
+        <button wx:if="{{syncMode === 'cloud-error'}}" bindtap="loadDirectory">重试</button>
+      </view>
+    </view>
+  </view>
+</block>
+
+<block wx:else>
+  <view class="theme-{{theme}} page-shell reading-page" bindtouchstart="onDirectoryTouchStart" bindtouchend="onDirectoryTouchEnd">
+    <view class="reading-atmosphere">
+      <view class="reading-light light-one"></view>
+      <view class="reading-light light-two"></view>
+      <view class="reading-line line-one"></view>
+      <view class="reading-line line-two"></view>
+    </view>
+
+    <view class="reading-hero">
+      <view class="hero-pages">
+        <view class="hero-page hero-page-back"></view>
+        <view class="hero-page hero-page-front">
+          <view class="hero-page-line line-short"></view>
+          <view class="hero-page-line"></view>
+          <view class="hero-page-line"></view>
+        </view>
+      </view>
+      <view class="reading-eyebrow">中考阅读</view>
+      <view class="reading-title">选择一篇好好读</view>
+      <view class="reading-copy">一模、二模、真题卷</view>
+    </view>
+
+    <block wx:if="{{categoryRoot}}">
+      <view class="reading-card">
+        <view class="reading-card-top">
+          <view class="reading-card-label">
+            <text>{{selectedHeader}}</text>
+          </view>
+          <view class="reading-card-state" wx:if="{{isRootLevel}}">{{categoryRoot.count}} 篇</view>
+          <view class="directory-back-icon" wx:else bindtap="backOneLevel">‹ 上一级</view>
+        </view>
+
+        <view class="reading-breadcrumb" wx:if="{{!isRootLevel}}">
+          <text bindtap="backToRoot">中考阅读</text>
+          <text> / </text>
+          <text wx:if="{{isExamLevel}}">{{selectedGroup.label}}</text>
+          <text wx:if="{{isDistrictLevel}}" bindtap="backToExam">{{selectedGroup.label}}</text>
+          <text wx:if="{{isDistrictLevel}}"> / {{selectedDistrictNode.label}}</text>
+        </view>
+
+        <view class="paper-group-grid" wx:if="{{isRootLevel}}">
+          <view class="directory-row paper-group-panel" wx:for="{{categoryRoot.groups}}" wx:key="key" data-exam-type="{{item.key}}" bindtap="selectExamType">
+            <view class="directory-mark paper-stack-mark">
+              <view class="paper-stack-line"></view>
+              <view class="paper-stack-line"></view>
+            </view>
+            <view class="directory-main">
+              <view class="directory-title">{{item.label}}</view>
+              <view class="directory-meta">{{item.districts.length}} 个区 · {{item.count}} 篇</view>
+            </view>
+            <view class="directory-arrow">›</view>
+          </view>
+        </view>
+
+        <view class="district-drawer-list" wx:elif="{{isExamLevel}}">
+          <view class="directory-row district-drawer" wx:for="{{selectedGroup.districts}}" wx:key="key" data-district="{{item.key}}" bindtap="selectDistrict">
+            <view class="directory-mark drawer-tab"></view>
+            <view class="directory-main">
+              <view class="directory-title">{{item.label}}</view>
+              <view class="directory-meta" wx:if="{{item.completionReady}}">{{item.completedCount}} / {{item.count}} 已完成</view>
+              <view class="directory-meta" wx:else>{{item.count}} 篇</view>
+            </view>
+            <view class="directory-arrow">›</view>
+          </view>
+        </view>
+
+        <view class="reading-sheet-list" wx:elif="{{isDistrictLevel}}">
+          <view class="task-row reading-sheet" wx:for="{{selectedDistrictNode.passages}}" wx:key="_id" data-passage-id="{{item._id}}" bindtap="openPassage">
+            <view class="sheet-fold"></view>
+            <view class="task-index">{{index + 1}}</view>
+            <view class="task-main">
+              <view class="task-title">{{item.title}}</view>
+              <view class="task-meta">{{item.meta}} · {{item.questionCount}} 题</view>
+            </view>
+            <view class="task-state {{item.completed ? 'is-done' : ''}}">{{item.completionReady ? (item.completed ? '复习' : '练习') : '进入'}}</view>
+          </view>
+        </view>
+      </view>
+
+    </block>
+  </view>
+</block>

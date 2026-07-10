@@ -1,4 +1,119 @@
-<view class="theme-{{theme}} page-shell writing-page">
+<view class="theme-{{theme}} page-shell writing-page writing-library-page" wx:if="{{theme === 'library'}}">
+  <block wx:if="{{prompt}}">
+    <view class="library-writing-file-head">
+      <view class="library-file-meta">{{prompt.examType}} · {{prompt.district}}</view>
+      <view class="library-file-title">{{prompt.title}}</view>
+      <view class="library-file-rules">
+        <text>不少于 {{prompt.minWords || 60}} 词</text>
+        <text>满分 {{prompt.score || 20}} 分</text>
+      </view>
+    </view>
+
+    <view class="library-prompt-sheet">
+      <view class="library-paper-fold"></view>
+      <view class="library-sheet-binding">
+        <view></view>
+        <view></view>
+        <view></view>
+      </view>
+      <view class="library-sheet-head">
+        <view class="library-section-title">题目纸</view>
+        <view class="library-proof-small">原题</view>
+      </view>
+      <view class="library-prompt-text">{{prompt.prompt}}</view>
+    </view>
+
+    <view class="library-manuscript-editor">
+      <view class="library-editor-head">
+        <view>
+          <view class="library-section-title">稿纸编辑区</view>
+          <view class="library-editor-subtitle">把思路分成清楚的段落写下来</view>
+        </view>
+        <view class="library-word-tag">{{wordCount}} 词</view>
+      </view>
+      <view class="library-letter-paper {{editorFocused ? 'is-focused' : ''}}">
+        <view class="library-paper-margin"></view>
+        <view class="library-paragraph-rule"></view>
+        <textarea class="library-essay-input" value="{{essayText}}" maxlength="5000" cursor-spacing="180" cursor-color="#B89562" show-confirm-bar="{{true}}" placeholder="在这里安静写下你的作文" bindinput="onEssayInput" bindfocus="onEditorFocus" bindblur="onEditorBlur"></textarea>
+      </view>
+      <button class="library-submit-button" loading="{{submitting}}" disabled="{{submitting}}" bindtap="submitEssay">提交批改</button>
+      <view class="library-editor-note" wx:if="{{errorText}}">{{errorText}}</view>
+      <view class="library-writing-debug" wx:if="{{writingDebugLines.length}}">
+        <view class="library-debug-title">馆藏校验单</view>
+        <text selectable="{{true}}" wx:for="{{writingDebugLines}}" wx:key="*this">{{item}}</text>
+      </view>
+    </view>
+
+    <view class="library-review-letter library-review-pending" wx:if="{{grading}}">
+      <view class="library-report-ruler"></view>
+      <view class="library-section-title">正在批改</view>
+      <view class="library-review-note">作文已保存，稍后会生成批改报告。</view>
+      <view class="library-proof-runner"></view>
+    </view>
+
+    <view class="library-review-letter {{reviewCelebrating ? 'is-celebrating' : ''}}" wx:if="{{review}}">
+      <view class="library-report-ruler"></view>
+      <view class="library-review-effect" wx:if="{{reviewCelebrating}}">
+        <view class="library-ink-dot dot-one"></view>
+        <view class="library-ink-dot dot-two"></view>
+        <view class="library-ink-dot dot-three"></view>
+      </view>
+      <view class="library-review-top">
+        <view>
+          <view class="library-section-title">批改回函</view>
+          <view class="library-score">{{review.score}} / {{review.totalScore || prompt.score || 20}} 分</view>
+        </view>
+        <view class="library-level">{{review.level}}</view>
+      </view>
+      <view class="library-review-summary" wx:if="{{review.summary}}">{{review.summary}}</view>
+      <view class="library-review-grid">
+        <view class="library-review-section" wx:if="{{review.content}}">
+          <view class="library-review-label">内容</view>
+          <view>{{review.content}}</view>
+        </view>
+        <view class="library-review-section" wx:if="{{review.structure}}">
+          <view class="library-review-label">结构</view>
+          <view>{{review.structure}}</view>
+        </view>
+        <view class="library-review-section" wx:if="{{review.language}}">
+          <view class="library-review-label">语言</view>
+          <view>{{review.language}}</view>
+        </view>
+        <view class="library-review-section" wx:if="{{review.spelling}}">
+          <view class="library-review-label">拼写标点</view>
+          <view>{{review.spelling}}</view>
+        </view>
+      </view>
+      <view class="library-review-section is-list" wx:if="{{review.problems.length}}">
+        <view class="library-review-label">可优化处</view>
+        <view wx:for="{{review.problems}}" wx:key="*this">· {{item}}</view>
+      </view>
+      <view class="library-review-section is-list" wx:if="{{review.suggestions.length}}">
+        <view class="library-review-label">建议</view>
+        <view wx:for="{{review.suggestions}}" wx:key="*this">· {{item}}</view>
+      </view>
+      <view class="library-review-section is-list" wx:if="{{review.grammarCorrections.length}}">
+        <view class="library-review-label">句子打磨</view>
+        <view class="library-correction" wx:for="{{review.grammarCorrections}}" wx:key="original">
+          <view class="library-original">原句：{{item.original}}</view>
+          <view class="library-revised">改为：{{item.corrected}}</view>
+          <view class="library-reason">原因：{{item.reason}}</view>
+        </view>
+      </view>
+      <view class="library-polished-paper" wx:if="{{review.polishedVersion}}">
+        <view class="library-review-label">参考改写</view>
+        <view>{{review.polishedVersion}}</view>
+      </view>
+    </view>
+  </block>
+
+  <view class="library-empty-file" wx:else>
+    <view class="library-section-title">作文题加载失败。</view>
+    <view class="library-empty-copy">暂无可编辑的作文题。</view>
+  </view>
+</view>
+
+<view class="theme-{{theme}} page-shell writing-page" wx:else>
   <view class="writing-hero">
     <view class="eyebrow">{{prompt.examType}} · {{prompt.district}}</view>
     <view class="title">{{prompt.title}}</view>

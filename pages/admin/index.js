@@ -54,39 +54,76 @@ Page({
     total: 0
   }),
   onShow() {
+    this.adminPerf = page.startPagePerf('admin');
     page.syncTheme(this);
     this.loadAdminData();
   },
+  applyAdminData(data) {
+    if (!data || !data.isAdmin) return false;
+    const rows = normalizeRows(data.rows);
+    const groups = splitRows(rows);
+    this.setData(page.buildCloudPageData(this.data, {
+      loading: false,
+      errorText: '',
+      rows,
+      activeRows: groups.activeRows,
+      inactiveRows: groups.inactiveRows,
+      visibleRows: this.data.listMode === 'inactive' ? groups.inactiveRows : groups.activeRows,
+      activeTotal: groups.activeRows.length,
+      inactiveTotal: groups.inactiveRows.length,
+      total: data.total || 0
+    }));
+    return true;
+  },
   async loadAdminData() {
-    this.setData({ loading: true, errorText: '' });
+    const cached = store.getCachedReadResult ? store.getCachedReadResult('getAdminFamilyList', {}) : null;
+    const hasCached = this.applyAdminData(cached);
+    if (hasCached && this.adminPerf) {
+      this.adminPerf.ready('pageReady', {
+        source: 'cache',
+        cacheHit: true,
+        rows: (cached.rows || []).length
+      });
+    } else {
+      this.setData({ loading: true, errorText: '' });
+    }
     try {
-      const data = await store.getAdminFamilyList();
+      const data = await store.getAdminFamilyList((fresh) => {
+        this.applyAdminData(fresh);
+        if (this.adminPerf) {
+          this.adminPerf.mark('cloudRefresh', { rows: (fresh.rows || []).length });
+        }
+      });
       if (!data || !data.isAdmin) {
         const cloudMessage = data && data.cloudError && data.cloudError.message;
         this.setData({
           loading: false,
           errorText: cloudMessage || '当前微信没有后台权限，或云函数还没有部署最新版本。'
         });
+        if (this.adminPerf) {
+          this.adminPerf.ready('pageReady', { source: 'error', cacheHit: false, rows: 0 });
+        }
         return;
       }
-      const rows = normalizeRows(data.rows);
-      const groups = splitRows(rows);
-      this.setData(page.buildCloudPageData(this.data, {
-        loading: false,
-        errorText: '',
-        rows,
-        activeRows: groups.activeRows,
-        inactiveRows: groups.inactiveRows,
-        visibleRows: this.data.listMode === 'inactive' ? groups.inactiveRows : groups.activeRows,
-        activeTotal: groups.activeRows.length,
-        inactiveTotal: groups.inactiveRows.length,
-        total: data.total || 0
-      }));
+      this.applyAdminData(data);
+      if (!hasCached && this.adminPerf) {
+        this.adminPerf.ready('pageReady', {
+          source: data.__cacheHit ? 'cache' : 'cloud',
+          cacheHit: !!data.__cacheHit,
+          rows: (data.rows || []).length
+        });
+      }
+      if (!data.__cacheHit && this.adminPerf) {
+        this.adminPerf.mark('cloudRefresh', { rows: (data.rows || []).length });
+      }
     } catch (error) {
       this.setData({
         loading: false,
         errorText: (error && (error.message || error.errMsg)) || '后台数据加载失败，请重新部署 yoyo 云函数后再试。'
       });
+      if (this.adminPerf) {
+        this.adminPerf.ready('pageReady', { source: 'error', cacheHit: false, rows: 0 });
+      }
     }
   },
   toggleRowExpanded(event) {

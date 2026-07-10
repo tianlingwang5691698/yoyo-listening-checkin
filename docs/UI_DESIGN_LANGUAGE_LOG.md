@@ -269,6 +269,94 @@
 - 设计记录：保留主题注册、页面主题类和 slider token 框架，后续可以接入页面结构完全不同的新主题。
 - 验证：旧设备保存的 `classic` 会经主题规范化自动回落到 `warm`。
 
+### 2026-07-10 第二主题图书馆静谧设计启动
+
+- 板块：全局主题
+- 文件：`docs/LIBRARY_THEME_DESIGN_SPEC.md`
+- 改动：新增第二套可切换主题 `library / 图书馆静谧` 的完整设计规范、页面归属和逐页交付要求。
+- 设计记录：新主题使用 `themeId + pageSkin`，允许每页独立布局和图案，但业务数据、路由、状态与性能规则必须复用。
+- 设计记录：雾蓝玻璃继续作为默认主题；图书馆静谧所有页面完成并验收后，才恢复主题切换入口。
+- 验证：已覆盖听力、阅读、语法、词汇、写作、口语、音频、成长、我的九个模块及其真实页面。
+
+### 2026-07-10 图书馆静谧九模块设计完成
+
+- 板块：第二主题全站设计
+- 文件：`docs/design/library-theme/`
+- 改动：完成首页基准图、九个模块逐页规范、九张多屏视觉板和统一实施顺序。
+- 设计记录：第二主题切换必须同时改变页面结构、入口形式、图案、材质、状态呈现和信息层级；禁止只替换颜色或继续复用雾蓝玻璃卡片骨架。
+- 设计记录：每个模块保持独立母题，所有请求、数据、状态、缓存、路由和性能链路继续复用现有实现。
+- 验证：九个模块均覆盖真实页面及加载、空、正常、完成、错误状态；设计文件位于已排除上传的 `docs` 目录。
+
+### 2026-07-10 图书馆静谧主题运行时接入
+
+- 板块：全局主题与导航
+- 文件：`utils/theme.js`
+- 文件：`styles/theme-current.wxss`
+- 文件：`styles/themes/library.wxss`
+- 文件：`custom-tab-bar/index.wxss`
+- 改动：注册 `library / 图书馆静谧` 第二主题，新增独立 token、窗口色与书脊式底部导航。
+- 设计记录：主题 token 只挂载在 `.theme-library`，不得写到全局 `page` 选择器，确保雾蓝玻璃不被新主题覆盖。
+- 验证：主题切换契约、全页 JS 语法和微信开发者工具编译通过。
+
+### 2026-07-10 图书馆静谧首页与听力
+
+- 板块：首页、听力
+- 文件：`pages/home/index.wxml`
+- 文件：`pages/home/index.wxss`
+- 文件：`pages/material/index.wxml`
+- 文件：`pages/material/detail/index.wxml`
+- 文件：`pages/listening-plan/index.wxml`
+- 文件：`pages/listening-material/index.wxml`
+- 改动：新增书房扉页、羊皮纸今日听力、声音书签目录、黄铜时间轴、范围尺和墨蓝练习台。
+- 设计记录：`library` 使用独立 WXML 分支；原雾蓝玻璃结构与听力数据、计划、答题、播放链路不变。
+- 验证：相关 JS 语法检查与开发者工具编译通过。
+
+### 2026-07-10 图书馆静谧阅读、语法与词汇
+
+- 板块：阅读、语法、词汇
+- 文件：`pages/reading/index.wxml`
+- 文件：`pages/reading/detail/index.wxml`
+- 文件：`pages/grammar/index.wxml`
+- 文件：`pages/reading/flashcards/index.wxml`
+- 改动：新增馆藏目录与跨栏文章纸、句法字模与校样解析、书脊词库与索引抽屉。
+- 设计记录：阅读保留原文、答案、解析和学习包；语法主谓宾文字优先于装饰；词卡操作区保持稳定高度。
+- 验证：相关 JS 语法检查与开发者工具编译通过。
+
+### 2026-07-10 图书馆静谧写作与口语
+
+- 板块：写作、口语
+- 文件：`pages/writing/detail/index.wxml`
+- 文件：`pages/speaking/index.wxml`
+- 改动：新增档案柜稿件入口、题目纸/稿纸/批改回函，以及阅览室录音台、麦克风、回放槽与结果页。
+- 设计记录：批改、录音、评分、权限失败和空状态均沿用既有真实字段与操作，不用伪数据补齐视觉。
+- 验证：相关 JS 语法检查与开发者工具编译通过。
+
+### 2026-07-10 图书馆静谧音频与成长
+
+- 板块：音频、成长
+- 文件：`pages/level/index.wxml`
+- 文件：`pages/level-stage/index.wxml`
+- 文件：`pages/lesson/index.wxml`
+- 文件：`pages/record/index.wxml`
+- 文件：`pages/home/completed/index.wxml`
+- 改动：新增唱片目录、章节索引册、桌面唱机、借阅记录册、日期索引和今日归还单。
+- 设计记录：播放器、学习包、累计时长、热力图、快照优先与按需加载均复用既有链路；成长页不使用圆环仪表盘。
+- 验证：相关 JS 语法检查与开发者工具编译通过。
+
+### 2026-07-10 图书馆静谧我的与主题切换
+
+- 板块：我的、身份、家庭、日报、管理
+- 文件：`pages/profile/index.wxml`
+- 文件：`pages/profile/index.js`
+- 文件：`pages/identity/index.wxml`
+- 文件：`pages/family/index.wxml`
+- 文件：`pages/parent/index.wxml`
+- 文件：`pages/parent/detail/index.wxml`
+- 文件：`pages/admin/index.wxml`
+- 改动：新增读者证、藏书票、家庭档案夹、日报信笺和管理员台账；“我的”页在两套主题下都可切换“雾蓝玻璃 / 图书馆静谧”。
+- 设计记录：切换仅更新本地主题偏好和页面主题数据，不能影响身份、绑定关系、缓存目标或业务数据。
+- 验证：`profile` JS 语法检查、主题切换契约和开发者工具编译通过。
+
 ### 2026-07-09 首页雾蓝科技感定稿
 
 - 板块：首页
@@ -3133,3 +3221,32 @@
 - 设计记录：本次新增或修正的视觉/交互规则。
 - 验证：实际跑过的检查。
 ```
+
+### 2026-07-10 全入口首屏性能验收
+
+- 文件：`utils/page.js`、`pages/material/index.js`、`pages/level/index.js`、`pages/reading/index.js`、`pages/grammar/index.js`、`pages/record/index.js`、`pages/profile/index.js`
+- 文件：`pages/material/index.wxml`、`pages/material/index.wxss`、`pages/material/detail/index.wxml`、`pages/level/index.wxml`、`pages/grammar/index.wxml`、`pages/record/index.wxml`、`pages/profile/index.wxml`、`pages/profile/index.wxss`
+- 改动：补齐听力/写作、音频、阅读、我的入口的 `pageReady`、`cacheHit`、`cloudRefresh` 埋点和自动门槛判断；音频/成长页移除等待文案，材料页和我的页冷启动显示稳定骨架。
+- 设计记录：入口速度必须能区分快照、缓存、云端和失败来源；冷启动不显示空主体或“加载中/同步中”等等待文案。
+- 验证：已做相关页面脚本语法、等待文案、WXSS 结构、快照测试和云函数全量测试。
+
+### 2026-07-10 全页面加载性能收口
+
+- 文件：`pages/**/index.js`、`pages/**/index.wxml`、`utils/page.js`、`utils/store.js`
+- 改动：22 个注册页面全部接入 `pageReady` 性能埋点和自动门槛判断；二级页补齐快照、持久缓存或静态首显；后台列表加入短缓存。
+- 设计记录：所有页面都必须可量化区分缓存与冷启动，缓存目标小于 300ms、冷启动目标小于 1200ms；页面与次级操作不显示等待文案，状态通过稳定骨架、按钮禁用或已有内容表达。
+- 验证：全页面埋点覆盖 22/22；全局等待文案和 `showLoading` 扫描为 0；页面脚本语法检查通过；快照测试 2/2、云函数测试 73/73 通过。
+
+### 2026-07-10 阅读入口预取加速
+
+- 文件：`pages/home/index.js`、`pages/reading/index.wxml`
+- 改动：首页稳定后后台预取阅读目录并写入快照，进入阅读时再次确保预取；目录骨架移除等待文案。
+- 设计记录：首页入口页的重目录在用户点击前预取，页面跳转优先命中真实云端快照。
+- 验证：阅读首次实测暴露 2901ms 不达标后完成修复，需重新编译复测快照首显。
+
+### 2026-07-10 全入口实机复测收口
+
+- 文件：`pages/home/index.js`、`pages/level/index.js`、`pages/record/index.js`、`pages/profile/index.js`、`pages/material/index.js`、`pages/reading/flashcards/index.js`、`pages/speaking/index.wxml`
+- 改动：首页预取阅读、音频、成长和我的首屏数据；音频、材料、成长、个人快照按模块/身份分区；词汇书库改为静态首显，去除非必要云端刷新与等待文案。
+- 设计记录：首屏埋点以“首个可操作内容已渲染”为准，云端刷新不阻断已有快照或本地入口。
+- 验证：开发者工具实测阅读 23ms、语法 701ms、词汇 21ms、写作 938ms、听力 4ms、口语 19ms、音频 9ms、成长 7ms、我的 6ms，均通过首屏门槛。

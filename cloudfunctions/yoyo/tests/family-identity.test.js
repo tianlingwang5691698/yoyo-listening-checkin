@@ -310,7 +310,7 @@ test('joinFamilyByChildCode 无关系称呼时拒绝绑定', async (t) => {
   );
 });
 
-test('joinFamilyByChildCode 禁止绑定自己的孩子 ID', async (t) => {
+test('joinFamilyByChildCode 禁止绑定自己的学号', async (t) => {
   t.mock.method(familyFacade, 'prepareRequestContext', async () => ({
     ctx: {
       user: { openId: 'open-1', userId: 'user-1' }
@@ -326,7 +326,7 @@ test('joinFamilyByChildCode 禁止绑定自己的孩子 ID', async (t) => {
     familyService.joinFamilyByChildCode({
       payload: { childLoginCode: '123456', displayName: '妈妈' }
     }),
-    /不能绑定自己的孩子 ID/
+    /不能绑定自己的学号/
   );
 });
 
@@ -514,7 +514,9 @@ test('getDashboard 按 view 返回不同 shape', async (t) => {
     includePlanDebug: false,
     includeTaskProgressSummary: false,
     includeUser: false,
-    includeFamily: false
+    includeFamily: false,
+    statsOnly: true,
+    reconcileCheckins: false
   });
 });
 

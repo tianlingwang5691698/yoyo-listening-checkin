@@ -63,8 +63,8 @@ function formatEstimatedDuration(seconds) {
 
 function buildMaterialRows(materials, activePlan) {
   return (materials || []).map((item) => Object.assign({}, item, {
-    countText: item.optimistic ? '同步中' : (item.totalCount ? `${item.totalCount} 条` : '待加入'),
-    stateText: getPlanMaterial(activePlan, item.category) || item.selected ? '已选' : (item.enabled ? '›' : '等待'),
+    countText: item.totalCount ? `${item.totalCount} 条` : '可进入',
+    stateText: getPlanMaterial(activePlan, item.category) || item.selected ? '已选' : (item.enabled ? '›' : '未开放'),
     disabled: !item.enabled
   }));
 }
@@ -109,9 +109,21 @@ function getOverviewSnapshotId(levelId) {
   return `${getTargetSnapshotPart()}:${levelId || 'A1'}`;
 }
 
+function getOverviewSnapshotKey(levelId) {
+  return `${OVERVIEW_SNAPSHOT_KEY}:${getOverviewSnapshotId(levelId)}`;
+}
+
 Page({
   overviewCache: {},
   overviewRequests: {},
+  markLevelCloudRefresh(data, levelId) {
+    if (!this.levelPerf || this.levelCloudRefreshLogged) return;
+    this.levelCloudRefreshLogged = true;
+    this.levelPerf.mark('cloudRefresh', {
+      levelId,
+      materials: ((data && data.materials) || []).length
+    });
+  },
   data: page.createCloudPageData({
     child: null,
     stats: {},
@@ -133,7 +145,7 @@ Page({
       this.overviewCache[levelId] = Object.assign({}, this.overviewCache[levelId], {
         activePlan: activePlan || null
       });
-      snapshotStore.write(OVERVIEW_SNAPSHOT_KEY, getOverviewSnapshotId(levelId), this.overviewCache[levelId], {
+      snapshotStore.write(getOverviewSnapshotKey(levelId), getOverviewSnapshotId(levelId), this.overviewCache[levelId], {
         source: 'level-active'
       });
     });
@@ -149,7 +161,7 @@ Page({
       this.overviewCache[levelId] = Object.assign({}, data, {
         selectedLevel: levelId
       });
-      snapshotStore.write(OVERVIEW_SNAPSHOT_KEY, getOverviewSnapshotId(levelId), this.overviewCache[levelId], {
+      snapshotStore.write(getOverviewSnapshotKey(levelId), getOverviewSnapshotId(levelId), this.overviewCache[levelId], {
         source: 'level-overview'
       });
     }
@@ -175,7 +187,10 @@ Page({
   },
   async loadOverview(levelId, options = {}) {
     const nextLevel = levelId || 'A1';
-    const snapshot = snapshotStore.read(OVERVIEW_SNAPSHOT_KEY, {
+    const snapshot = snapshotStore.read(getOverviewSnapshotKey(nextLevel), {
+      id: getOverviewSnapshotId(nextLevel),
+      maxAgeMs: SNAPSHOT_MAX_AGE_MS
+    }) || snapshotStore.read(OVERVIEW_SNAPSHOT_KEY, {
       id: getOverviewSnapshotId(nextLevel),
       maxAgeMs: SNAPSHOT_MAX_AGE_MS
     });
@@ -198,6 +213,9 @@ Page({
     if (!this.overviewRequests[nextLevel]) {
       const request = store.getListeningPlanOverview({ levelId: nextLevel }, (fresh) => {
         this.applyOverviewIfCurrent(fresh, nextLevel);
+        if (!options.prefetch) {
+          this.markLevelCloudRefresh(fresh, nextLevel);
+        }
       });
       this.overviewRequests[nextLevel] = request.then((data) => {
         delete this.overviewRequests[nextLevel];
@@ -221,6 +239,8 @@ Page({
     return data;
   },
   async onShow() {
+    this.levelPerf = page.startPagePerf('level');
+    this.levelCloudRefreshLogged = false;
     page.syncTheme(this);
     const tabBar = this.getTabBar && this.getTabBar();
     if (tabBar) {
@@ -230,13 +250,42 @@ Page({
       return;
     }
     const firstLevel = this.data.selectedLevel || DEFAULT_FIRST_LEVEL;
+    const memoryCached = this.overviewCache[firstLevel] || null;
+    const snapshot = memoryCached ? null : (
+      snapshotStore.read(getOverviewSnapshotKey(firstLevel), {
+        id: getOverviewSnapshotId(firstLevel),
+        maxAgeMs: SNAPSHOT_MAX_AGE_MS
+      }) || snapshotStore.read(OVERVIEW_SNAPSHOT_KEY, {
+        id: getOverviewSnapshotId(firstLevel),
+        maxAgeMs: SNAPSHOT_MAX_AGE_MS
+      })
+    );
     const firstRequest = this.loadOverview(firstLevel);
+    if (memoryCached || snapshot) {
+      this.levelPerf.ready('pageReady', {
+        source: memoryCached ? 'memory' : 'snapshot',
+        cacheHit: true,
+        levelId: firstLevel,
+        materials: ((memoryCached || snapshot).materials || []).length
+      });
+    } else {
+      await new Promise((resolve) => wx.nextTick(resolve));
+      this.levelPerf.ready('pageReady', {
+        source: 'fallback',
+        cacheHit: false,
+        levelId: firstLevel,
+        materials: (this.data.materials || []).length
+      });
+    }
     (this.data.levelTabs || FALLBACK_LEVEL_TABS).forEach((tab) => {
       if (tab && tab.enabled && tab.levelId !== firstLevel) {
         this.loadOverview(tab.levelId, { prefetch: true }).catch(() => {});
       }
     });
-    await firstRequest;
+    const firstData = await firstRequest;
+    if (firstData && !firstData.__cacheHit && firstData.syncMode !== 'cloud-error') {
+      this.markLevelCloudRefresh(firstData, firstLevel);
+    }
   },
   async chooseLevel(event) {
     const enabled = event.currentTarget.dataset.enabled;

@@ -86,8 +86,10 @@ async function getHeatmap(event) {
   }));
   const days = Number((event && event.payload && event.payload.days) || 28);
   const scope = study.getUserScope(ctx);
-  let records = await study.getCheckins(scope);
-  let progressRecords = await study.getChildProgressRecords(scope);
+  let [records, progressRecords] = await Promise.all([
+    study.getCheckins(scope),
+    study.getChildProgressRecords(scope)
+  ]);
   if (study.reconcileCheckins) {
     const reconciled = await study.reconcileCheckins(scope, progressRecords, records, today);
     records = reconciled.checkins || records;
@@ -134,8 +136,10 @@ async function getMonthHeatmap(event) {
   const month = Number((event && event.payload && event.payload.month) || today.slice(5, 7));
   const monthText = `${year}-${String(month).padStart(2, '0')}`;
   const scope = study.getUserScope(ctx);
-  let records = await study.getCheckins(scope);
-  let progressRecords = await study.getChildProgressRecords(scope);
+  let [records, progressRecords] = await Promise.all([
+    study.getCheckins(scope),
+    study.getChildProgressRecords(scope)
+  ]);
   if (study.reconcileCheckins) {
     const reconciled = await study.reconcileCheckins(scope, progressRecords, records, today);
     records = reconciled.checkins || records;
@@ -283,7 +287,7 @@ async function getParentDashboard(event) {
     return merged;
   };
   const summarizedReports = recentReports.map(summarizeReport);
-  const todayLearningStats = buildTodayLearningStats(summarizedReports[0]);
+  const todayLearningStats = buildTodayLearningStats(recentReports[0]);
   return {
     user: ctx.user,
     currentUser: ctx.user,

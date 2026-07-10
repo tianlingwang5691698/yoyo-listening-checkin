@@ -93,6 +93,10 @@ test('getParentDashboard summaryOnly 不等待完整 dashboard', async (t) => {
   t.mock.method(study, 'getDashboardData', async () => {
     throw new Error('summaryOnly should not call getDashboardData');
   });
+  t.mock.method(study, 'upsertDailyReport', async (_scope, date) => ({
+    date,
+    completionItems: [{ type: 'writing', title: '作文练习' }]
+  }));
   t.mock.method(reportRepository, 'findByScopeAndDate', async (_scope, date) => ({
     date,
     completionItems: [{ type: 'writing', title: '作文练习' }]
@@ -103,6 +107,6 @@ test('getParentDashboard summaryOnly 不等待完整 dashboard', async (t) => {
   });
 
   assert.equal(result.recentReports.length, 7);
-  assert.equal(result.moduleStats.writing.count, 7);
+  assert.equal(result.moduleStats.writing.value, 1);
   assert.deepEqual(result.stats, {});
 });

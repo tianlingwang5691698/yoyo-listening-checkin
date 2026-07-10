@@ -1,7 +1,8 @@
 const THEME_STORAGE_KEY = 'uiTheme';
 
 const THEMES = [
-  { key: 'warm', label: '雾蓝玻璃' }
+  { key: 'warm', label: '雾蓝玻璃' },
+  { key: 'library', label: '图书馆静谧' }
 ];
 
 const THEME_MAP = THEMES.reduce((map, item) => {
@@ -10,7 +11,8 @@ const THEME_MAP = THEMES.reduce((map, item) => {
 }, {});
 
 const WINDOW_COLORS = {
-  warm: { backgroundColor: '#F6FBFD', frontColor: '#000000' }
+  warm: { backgroundColor: '#F6FBFD', frontColor: '#000000' },
+  library: { backgroundColor: '#FAF5EA', frontColor: '#000000' }
 };
 
 const SLIDER_COLORS = {
@@ -18,6 +20,11 @@ const SLIDER_COLORS = {
     activeColor: '#86AAA1',
     backgroundColor: 'rgba(141, 183, 212, 0.22)',
     blockColor: '#F6FBFD'
+  },
+  library: {
+    activeColor: '#B89562',
+    backgroundColor: 'rgba(184, 149, 98, 0.22)',
+    blockColor: '#FAF5EA'
   }
 };
 

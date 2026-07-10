@@ -11,6 +11,28 @@ const FALLBACK_LEVEL_TABS = ['Pre A1', 'A1', 'A2', 'B1', 'B2', 'C1', 'C2'].map((
   active: levelId === 'A1',
   stateText: levelId === 'C1' || levelId === 'C2' ? '未开放' : ''
 }));
+const FALLBACK_MATERIALS = {
+  'Pre A1': [{ category: 'song', title: 'Songs' }],
+  A1: [
+    { category: 'newconcept1', title: 'New Concept 1' },
+    { category: 'unlock1', title: 'Unlock 1 课本' },
+    { category: 'peppa', title: 'Peppa' }
+  ],
+  A2: [
+    { category: 'peppa', title: 'Peppa' },
+    { category: 'newconcept2', title: 'New Concept 2' },
+    { category: 'unlock2', title: 'Unlock 2 课本' }
+  ],
+  B1: [
+    { category: 'newconcept3', title: 'New Concept 3' },
+    { category: 'unlock3textbook', title: 'Unlock 3 课本' },
+    { category: 'unlock3', title: 'Unlock 3 练习册' }
+  ],
+  B2: [
+    { category: 'newconcept4', title: 'New Concept 4' },
+    { category: 'unlock4', title: 'Unlock 4 课本' }
+  ]
+};
 
 function buildLevelTabs(tabs, selectedLevel) {
   return (tabs && tabs.length ? tabs : FALLBACK_LEVEL_TABS).map((item) => Object.assign({}, item, {
@@ -39,8 +61,8 @@ function formatEstimatedDuration(seconds) {
 function buildMaterialRows(materials, activePlan) {
   return (materials || []).filter((item) => !getPlanMaterial(activePlan, item.category)).map((item) => {
     return Object.assign({}, item, {
-      countText: item.totalCount ? `${item.totalCount} 条` : '待加入',
-      stateText: item.enabled ? '添加' : '等待',
+      countText: item.totalCount ? `${item.totalCount} 条` : '可进入',
+      stateText: item.enabled ? '添加' : '未开放',
       disabled: !item.enabled
     });
   });
@@ -78,6 +100,22 @@ function getTargetSnapshotPart() {
 
 function getOverviewSnapshotId(levelId) {
   return `${getTargetSnapshotPart()}:${levelId || 'A1'}`;
+}
+
+function buildFallbackOverview(levelId, currentData) {
+  const selectedLevel = levelId || 'A1';
+  return {
+    selectedLevel,
+    levelTabs: buildLevelTabs(currentData.levelTabs, selectedLevel),
+    materials: (FALLBACK_MATERIALS[selectedLevel] || []).map((item) => Object.assign({}, item, {
+      levelId: selectedLevel,
+      totalCount: 0,
+      enabled: true
+    })),
+    activePlan: currentData.activePlan || null,
+    isYoyoFixedPlan: !!currentData.isYoyoFixedPlan,
+    fixedPlan: currentData.fixedPlan || null
+  };
 }
 
 Page({
@@ -162,10 +200,16 @@ Page({
       this.applyOverview(cached, nextLevel);
     }
     if (!cached && !options.prefetch) {
-      this.setData({ levelLoading: true, materials: [] });
+      this.applyOverview(buildFallbackOverview(nextLevel, this.data), nextLevel);
+      this.setData({ levelLoading: true });
     }
     if (!this.overviewRequests[nextLevel]) {
-      const request = store.getListeningPlanOverview({ levelId: nextLevel }, (fresh) => this.applyOverviewIfCurrent(fresh, nextLevel));
+      const request = store.getListeningPlanOverview({ levelId: nextLevel }, (fresh) => {
+        this.applyOverviewIfCurrent(fresh, nextLevel);
+        if (!options.prefetch && this.listeningPlanPerf) {
+          this.listeningPlanPerf.mark('cloudRefresh', { levelId: nextLevel, materials: (fresh.materials || []).length });
+        }
+      });
       this.overviewRequests[nextLevel] = request.then((data) => {
         delete this.overviewRequests[nextLevel];
         return data;
@@ -196,11 +240,39 @@ Page({
     });
   },
   async onShow() {
+    this.listeningPlanPerf = page.startPagePerf('listening-plan');
     page.syncTheme(this);
     if (!page.requireIdentityConfirmed()) {
       return;
     }
-    await this.loadOverview(this.data.selectedLevel || 'A1');
+    const levelId = this.data.selectedLevel || 'A1';
+    const memoryCached = this.overviewCache[levelId] || null;
+    const snapshot = memoryCached ? null : snapshotStore.read(OVERVIEW_SNAPSHOT_KEY, {
+      id: getOverviewSnapshotId(levelId),
+      maxAgeMs: SNAPSHOT_MAX_AGE_MS
+    });
+    const request = this.loadOverview(levelId);
+    if (memoryCached || snapshot) {
+      const first = memoryCached || snapshot;
+      this.listeningPlanPerf.ready('pageReady', {
+        source: memoryCached ? 'memory' : 'snapshot',
+        cacheHit: true,
+        levelId,
+        materials: (first.materials || []).length
+      });
+    }
+    const data = await request;
+    if (!memoryCached && !snapshot) {
+      this.listeningPlanPerf.ready('pageReady', {
+        source: data && data.__cacheHit ? 'cache' : (data && data.syncMode === 'cloud-error' ? 'fallback' : 'cloud'),
+        cacheHit: !!(data && data.__cacheHit),
+        levelId,
+        materials: ((data && data.materials) || this.data.materials || []).length
+      });
+      if (data && !data.__cacheHit && data.syncMode !== 'cloud-error') {
+        this.listeningPlanPerf.mark('cloudRefresh', { levelId, materials: (data.materials || []).length });
+      }
+    }
   },
   async chooseLevel(event) {
     const enabled = event.currentTarget.dataset.enabled;

@@ -1,4 +1,128 @@
-<view class="theme-{{theme}} page-shell speaking-page">
+<view class="theme-{{theme}} page-shell library-speaking-page" wx:if="{{theme === 'library'}}">
+  <view class="library-speaking-header">
+    <view>
+      <view class="library-speaking-kicker">阅览室口语角</view>
+      <view class="library-speaking-title">口语练习</view>
+      <view class="library-speaking-copy">听清题目，按住回答。</view>
+    </view>
+    <view class="library-reading-lamp">
+      <view class="library-lamp-shade"></view>
+      <view class="library-lamp-light"></view>
+      <view class="library-lamp-neck"></view>
+      <view class="library-lamp-base"></view>
+    </view>
+  </view>
+
+  <block wx:if="{{activeExercise && exercises.length}}">
+    <view class="library-prompt-sheet {{recording ? 'is-muted' : ''}}">
+      <view class="library-sheet-rule"></view>
+      <view class="library-prompt-head">
+        <view>
+          <view class="library-prompt-label">今日题目</view>
+          <view class="library-prompt-text">{{activeExercise.prompt}}</view>
+        </view>
+        <button class="library-listen-button {{questionPlaying ? 'is-playing' : ''}} {{questionLoading ? 'is-loading' : ''}}" hover-class="is-pressed" hover-start-time="20" hover-stay-time="180" bindtap="playQuestion">{{questionLoading ? '准备播放' : (questionPlaying ? '停止播放' : '听问题')}}</button>
+      </view>
+      <view class="library-prompt-meta">{{activeExercise.title}} · {{activeExercise.meta}}</view>
+      <view class="library-playback-slot {{questionPlaying || questionLoading ? 'is-active' : ''}}">
+        <view class="library-slot-bar is-one"></view>
+        <view class="library-slot-bar is-two"></view>
+        <view class="library-slot-bar is-three"></view>
+        <view class="library-slot-bar is-four"></view>
+        <view class="library-slot-bar is-five"></view>
+      </view>
+    </view>
+
+    <view class="library-task-tabs {{recording ? 'is-muted' : ''}}">
+      <view class="library-task-tab {{activeId === item.id ? 'is-active' : ''}}" wx:for="{{exercises}}" wx:key="id" data-id="{{item.id}}" bindtap="selectExercise">
+        <view class="library-tab-title">{{item.title}}</view>
+        <view class="library-tab-meta">{{item.meta}}</view>
+      </view>
+    </view>
+
+    <view class="library-record-desk {{recording ? 'is-recording' : ''}} {{submitting ? 'is-submitting' : ''}} {{tempFilePath ? 'is-ready' : ''}}">
+      <view class="library-desk-grain"></view>
+      <view class="library-breath-scale">
+        <view class="library-tick tick-1"></view>
+        <view class="library-tick tick-2"></view>
+        <view class="library-tick tick-3"></view>
+        <view class="library-tick tick-4"></view>
+        <view class="library-tick tick-5"></view>
+        <view class="library-tick tick-6"></view>
+        <view class="library-tick tick-7"></view>
+        <view class="library-tick tick-8"></view>
+        <view class="library-tick tick-9"></view>
+        <view class="library-tick tick-10"></view>
+        <view class="library-tick tick-11"></view>
+        <view class="library-tick tick-12"></view>
+      </view>
+      <view class="library-brass-mic">
+        <view class="library-mic-head"></view>
+        <view class="library-mic-yoke"></view>
+        <view class="library-mic-stem"></view>
+        <view class="library-mic-foot"></view>
+      </view>
+      <view class="library-voice-slot">
+        <view class="library-voice-line is-a"></view>
+        <view class="library-voice-line is-b"></view>
+        <view class="library-voice-line is-c"></view>
+        <view class="library-voice-line is-d"></view>
+        <view class="library-voice-line is-e"></view>
+      </view>
+      <view class="library-proof-ruler" wx:if="{{submitting}}"></view>
+      <button class="library-hold-button {{recording ? 'is-recording' : ''}} {{submitting ? 'is-disabled' : ''}}" hover-class="is-pressed" hover-start-time="20" hover-stay-time="180" bindtouchstart="holdToRecordStart" bindtouchend="holdToRecordEnd" bindtouchcancel="holdToRecordEnd">
+        {{recording ? '松手评分' : (submitting ? '评分中' : '按住回答')}}
+      </button>
+    </view>
+
+    <view class="library-record-note {{recording ? 'is-recording' : (tempFilePath ? 'is-ready' : '')}}">
+      {{submitting ? '评分中' : (recording ? '录音中' : (tempFilePath ? ('已录制 ' + recordDurationText) : '开始录音'))}}
+    </view>
+    <view class="library-error-note" wx:if="{{errorText}}">{{errorText}}</view>
+
+    <view class="library-score-sheet {{resultCelebrating ? 'is-celebrating' : ''}}" wx:if="{{result}}">
+      <view class="library-score-top">
+        <view>
+          <view class="library-score-label">本次结果</view>
+          <view class="library-score-value">{{result.score || 0}} 分</view>
+        </view>
+        <view class="library-score-stamp">声纹批注</view>
+      </view>
+      <view class="library-score-rulers">
+        <view class="library-score-ruler">
+          <view class="library-ruler-head">
+            <view class="library-ruler-label">准确度</view>
+            <view class="library-ruler-value">{{result.accuracy || 0}}</view>
+          </view>
+          <view class="library-ruler-track"><view class="library-ruler-fill" style="height: {{result.accuracy || 0}}%;"></view></view>
+        </view>
+        <view class="library-score-ruler">
+          <view class="library-ruler-head">
+            <view class="library-ruler-label">流利度</view>
+            <view class="library-ruler-value">{{result.fluency || 0}}</view>
+          </view>
+          <view class="library-ruler-track"><view class="library-ruler-fill" style="height: {{result.fluency || 0}}%;"></view></view>
+        </view>
+        <view class="library-score-ruler">
+          <view class="library-ruler-head">
+            <view class="library-ruler-label">完整度</view>
+            <view class="library-ruler-value">{{result.completion || 0}}</view>
+          </view>
+          <view class="library-ruler-track"><view class="library-ruler-fill" style="height: {{result.completion || 0}}%;"></view></view>
+        </view>
+      </view>
+    </view>
+  </block>
+
+  <view class="library-speaking-empty" wx:else>
+    <view class="library-empty-box">
+      <view class="library-empty-mic"></view>
+    </view>
+    <view class="library-empty-title">暂无口语题目。</view>
+  </view>
+</view>
+
+<view class="theme-{{theme}} page-shell speaking-page" wx:else>
   <view class="speaking-header">
     <view class="speaking-title">口语练习</view>
     <view class="speaking-copy">听清题目，按住回答。</view>
@@ -44,7 +168,7 @@
     </view>
 
     <view class="record-line {{recording ? 'is-recording' : (tempFilePath ? 'is-ready' : '')}}">
-      {{submitting ? '正在评分' : (recording ? '正在回答' : (tempFilePath ? ('已录制 ' + recordDurationText) : '准备录音'))}}
+      {{submitting ? '评分中' : (recording ? '录音中' : (tempFilePath ? ('已录制 ' + recordDurationText) : '开始录音'))}}
     </view>
     <view class="error-text" wx:if="{{errorText}}">{{errorText}}</view>
   </view>

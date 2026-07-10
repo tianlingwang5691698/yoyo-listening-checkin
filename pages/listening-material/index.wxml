@@ -1,4 +1,88 @@
-<view class="theme-{{theme}} page-shell material-page">
+<view class="theme-{{theme}} page-shell library-material-setting-page" wx:if="{{theme === 'library'}}">
+  <view class="library-volume-head">
+    <view class="library-eyebrow">{{levelId}}</view>
+    <view class="library-volume-title">{{categoryLabel}}</view>
+    <view class="library-muted" wx:if="{{totalCount}}">共 {{totalCount}} 条</view>
+    <view class="library-muted" wx:else>馆藏整理中</view>
+  </view>
+
+  <view class="library-form-paper">
+    <view class="library-range-title">黄铜范围尺</view>
+    <view class="library-range-summary">{{startNo}} - {{endNo}}</view>
+    <view class="library-range-row">
+      <view class="library-form-label">开始集数</view>
+      <view class="library-stepper">
+        <view class="library-step" data-field="startNo" data-delta="-1" bindtap="stepValue">−</view>
+        <view class="library-value">{{startNo}}</view>
+        <view class="library-step" data-field="startNo" data-delta="1" bindtap="stepValue">+</view>
+      </view>
+      <slider class="library-slider" min="1" max="{{sliderMax}}" value="{{startNo}}" activeColor="#B89562" backgroundColor="rgba(184,149,98,.22)" block-color="#14283A" block-size="18" bindchange="changeStart" />
+    </view>
+    <view class="library-range-row">
+      <view class="library-form-label">结束集数</view>
+      <view class="library-stepper">
+        <view class="library-step" data-field="endNo" data-delta="-1" bindtap="stepValue">−</view>
+        <view class="library-value">{{endNo}}</view>
+        <view class="library-step" data-field="endNo" data-delta="1" bindtap="stepValue">+</view>
+      </view>
+      <slider class="library-slider" min="1" max="{{sliderMax}}" value="{{endNo}}" activeColor="#B89562" backgroundColor="rgba(184,149,98,.22)" block-color="#14283A" block-size="18" bindchange="changeEnd" />
+    </view>
+
+    <view class="library-rhythm-grid">
+      <view class="library-rhythm-cell">
+        <view class="library-form-label">每天几条</view>
+        <view class="library-stepper">
+          <view class="library-step" data-field="dailyCount" data-delta="-1" bindtap="stepValue">−</view>
+          <view class="library-value">{{dailyCount}}</view>
+          <view class="library-step" data-field="dailyCount" data-delta="1" bindtap="stepValue">+</view>
+        </view>
+        <slider class="library-slider" min="1" max="10" value="{{dailyCount}}" activeColor="#B89562" backgroundColor="rgba(184,149,98,.22)" block-color="#14283A" block-size="18" bindchange="changeDailyCount" />
+      </view>
+      <view class="library-rhythm-cell">
+        <view class="library-form-label">每条几遍</view>
+        <view class="library-stepper">
+          <view class="library-step" data-field="repeatTarget" data-delta="-1" bindtap="stepValue">−</view>
+          <view class="library-value">{{repeatTarget}}</view>
+          <view class="library-step" data-field="repeatTarget" data-delta="1" bindtap="stepValue">+</view>
+        </view>
+        <slider class="library-slider" min="1" max="5" value="{{repeatTarget}}" activeColor="#B89562" backgroundColor="rgba(184,149,98,.22)" block-color="#14283A" block-size="18" bindchange="changeRepeatTarget" />
+      </view>
+    </view>
+
+    <view class="library-signature">
+      <view>
+        <view class="library-row-title">计划范围</view>
+        <view class="library-muted">{{startNo}} - {{endNo}} · 每天 {{dailyCount}} 条</view>
+        <view class="library-muted">{{planDurationText}}</view>
+      </view>
+      <view class="library-signature-actions" wx:if="{{totalCount}}">
+        <view wx:if="{{isSelected}}" class="library-cancel {{saving ? 'is-saving' : ''}}" bindtap="cancelPlan">取消计划</view>
+        <view class="library-save {{saving ? 'is-saving' : ''}}" bindtap="savePlan">{{saving ? '保存中' : (isSelected ? '保存修改' : '保存计划')}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="library-debug-note" wx:if="{{debugLines.length}}">
+    <view class="library-debug-title">调试断点</view>
+    <text class="library-debug-line" wx:for="{{debugLines}}" wx:key="*this" selectable="true">{{item}}</text>
+  </view>
+
+  <view class="library-record-list">
+    <view class="library-section-title">唱片目录</view>
+    <view class="library-record-row" wx:for="{{tasks}}" wx:key="taskId" data-index="{{index}}" bindtap="openTask">
+      <view class="library-record-no">{{item.itemNo}}</view>
+      <view class="library-row-main">
+        <view class="library-row-title">{{item.title}}</view>
+        <view class="library-muted">{{item.subtitle || item.durationText}}</view>
+      </view>
+      <view class="library-duration">{{item.exactDurationText}}</view>
+      <view class="library-arrow">›</view>
+    </view>
+    <view class="library-empty-slip" wx:if="{{!totalCount}}">暂无听力素材</view>
+  </view>
+</view>
+
+<view class="theme-{{theme}} page-shell material-page" wx:else>
   <view class="material-hero card">
     <view class="material-wave-mark"><text></text><text></text><text></text><text></text><text></text></view>
     <view class="type-caption">{{levelId}}</view>
@@ -56,7 +140,7 @@
         <view class="action-duration type-caption">{{planDurationText}}</view>
       </view>
       <view class="action-controls">
-        <view wx:if="{{isSelected}}" class="cancel-action {{saving ? 'is-saving' : ''}}" bindtap="cancelPlan">{{saving ? '处理中' : '取消计划'}}</view>
+        <view wx:if="{{isSelected}}" class="cancel-action {{saving ? 'is-saving' : ''}}" bindtap="cancelPlan">取消计划</view>
         <view class="save-action {{saving ? 'is-saving' : ''}}" bindtap="savePlan">{{saving ? '保存中' : (isSelected ? '保存修改' : '保存计划')}}</view>
       </view>
     </view>

@@ -180,6 +180,7 @@ Page({
     });
   },
   async onShow() {
+    this.completedPerf = page.startPagePerf('home-completed');
     page.syncTheme(this);
     const date = this.data.date || todayString();
     const target = normalizeTarget(this.data.target || store.getSelectedStudentTarget());
@@ -195,6 +196,11 @@ Page({
         items: normalizeItems(cachedDisplayItems),
         debugLines
       });
+      this.completedPerf.ready('pageReady', {
+        source: 'cache',
+        cacheHit: true,
+        items: cachedDisplayItems.length
+      });
       return;
     }
     if (cachedDisplayItems.length) {
@@ -202,9 +208,20 @@ Page({
         items: normalizeItems(cachedDisplayItems),
         debugLines
       });
+      this.completedPerf.ready('pageReady', {
+        source: 'cache',
+        cacheHit: true,
+        items: cachedDisplayItems.length
+      });
     }
     try {
-      const data = await store.getStudyCompletions(Object.assign({ date }, target));
+      const data = await store.getStudyCompletions(Object.assign({ date }, target), (fresh) => {
+        const freshItems = filterItemsByScope((fresh && fresh.items) || [], scope);
+        this.setData({ items: normalizeItems(freshItems.length ? freshItems : cachedDisplayItems) });
+        if (this.completedPerf) {
+          this.completedPerf.mark('cloudRefresh', { items: freshItems.length });
+        }
+      });
       const cloudItems = data && Array.isArray(data.items) ? data.items : [];
       const cloudDisplayItems = filterItemsByScope(cloudItems, scope);
       debugLines = debugLines.concat(buildDebugLines(scope, date, target, 'cloud', cloudItems, cloudDisplayItems));
@@ -215,6 +232,14 @@ Page({
         items: normalizeItems(items),
         debugLines
       });
+      this.completedPerf.ready('pageReady', {
+        source: data && data.__cacheHit ? 'cache' : 'cloud',
+        cacheHit: !!(data && data.__cacheHit),
+        items: items.length
+      });
+      if (data && !data.__cacheHit) {
+        this.completedPerf.mark('cloudRefresh', { items: cloudDisplayItems.length });
+      }
     } catch (error) {
       if (!cachedDisplayItems.length) {
         this.setData({
@@ -222,6 +247,11 @@ Page({
           debugLines
         });
       }
+      this.completedPerf.ready('pageReady', {
+        source: 'error',
+        cacheHit: false,
+        items: cachedDisplayItems.length
+      });
     }
   },
   openItem(event) {

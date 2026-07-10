@@ -31,7 +31,7 @@ async function makeUniqueChildLoginCode() {
       return childLoginCode;
     }
   }
-  throw new Error('孩子 ID 生成失败，请稍后再试');
+  throw new Error('学号生成失败，请稍后再试');
 }
 
 function buildAvatarTextFromNickname(nickname) {

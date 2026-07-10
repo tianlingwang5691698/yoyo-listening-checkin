@@ -53,27 +53,43 @@ Page({
     errorText: ''
   }),
   async onLoad(options) {
+    this.writingPerf = page.startPagePerf('writing-detail');
     const promptId = decodeURIComponent((options && options.id) || '');
     let prompt = null;
+    let source = 'cloud';
     const snapshot = promptId ? snapshotStore.read(WRITING_PROMPT_SNAPSHOT_KEY, {
       id: promptId,
       maxAgeMs: 5 * 60 * 1000
     }) : null;
     prompt = snapshot && snapshot.prompt ? snapshot.prompt : null;
+    if (prompt) source = 'snapshot';
     try {
-      prompt = prompt || wx.getStorageSync('currentWritingPromptV1') || null;
+      const storedPrompt = wx.getStorageSync('currentWritingPromptV1') || null;
+      if (!prompt && storedPrompt) source = 'storage';
+      prompt = prompt || storedPrompt;
     } catch (error) {
       prompt = prompt || null;
     }
     if (!prompt || (promptId && prompt._id !== promptId) || !prompt.prompt) {
       const result = await store.getMaterialItem({ moduleId: 'writing', itemId: promptId });
       prompt = (result && result.item) || null;
+      source = result && result.__cacheHit ? 'cache' : 'cloud';
     }
     if (!prompt || (promptId && prompt._id !== promptId)) {
       const materialIndex = await store.getMaterialIndex({ moduleId: 'writing' });
       prompt = findPrompt(materialIndex, promptId);
+      source = materialIndex && materialIndex.__cacheHit ? 'cache' : 'cloud';
     }
     this.setData({ prompt });
+    this.writingPerf.ready('pageReady', {
+      source,
+      cacheHit: source === 'snapshot' || source === 'storage' || source === 'cache',
+      promptId,
+      hasPrompt: !!prompt
+    });
+    if (source === 'cloud') {
+      this.writingPerf.mark('cloudRefresh', { promptId, hasPrompt: !!prompt });
+    }
   },
   onShow() {
     page.syncTheme(this);

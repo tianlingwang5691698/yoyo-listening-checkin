@@ -49,6 +49,10 @@ function getRecordHomeSnapshotId(year, month) {
   return `${getTargetSnapshotPart()}:${getMonthKey(year, month)}`;
 }
 
+function getRecordHomeSnapshotKey(year, month) {
+  return `${RECORD_HOME_SNAPSHOT_KEY}:${getRecordHomeSnapshotId(year, month)}`;
+}
+
 function isValidRecordSnapshot(snapshot, targetPart, year, month) {
   return !!(snapshot
     && snapshot.targetPart === targetPart
@@ -429,9 +433,12 @@ Page({
       this.lastRecordTargetPart = targetPart;
     }
     const snapshotId = getRecordHomeSnapshotId(calendarYear, calendarMonth);
-    const snapshot = snapshotStore.read(RECORD_HOME_SNAPSHOT_KEY, {
+    const snapshot = snapshotStore.read(getRecordHomeSnapshotKey(calendarYear, calendarMonth), {
       id: snapshotId,
-      maxAgeMs: 10 * 60 * 1000
+      maxAgeMs: 7 * 24 * 60 * 60 * 1000
+    }) || snapshotStore.read(RECORD_HOME_SNAPSHOT_KEY, {
+      id: snapshotId,
+      maxAgeMs: 7 * 24 * 60 * 60 * 1000
     });
     if (isValidRecordSnapshot(snapshot, targetPart, calendarYear, calendarMonth)) {
       this.monthCache[getMonthKey(calendarYear, calendarMonth)] = snapshot.heatmapData || {
@@ -452,6 +459,7 @@ Page({
       if (this.recordPerf) {
         this.recordPerf.ready('pageReady', {
           source: 'snapshot',
+          cacheHit: true,
           cells: (this.data.monthCells || []).length
         });
       }
@@ -631,7 +639,7 @@ Page({
         catchupPresentation
       )));
       this.showStreakMilestoneIfNeeded(nextState.stats);
-      snapshotStore.write(RECORD_HOME_SNAPSHOT_KEY, snapshotId, Object.assign(
+      snapshotStore.write(getRecordHomeSnapshotKey(calendarYear, calendarMonth), snapshotId, Object.assign(
         {},
         nextState,
         buildMetric(nextState.stats, this.data.metricMode),
@@ -640,6 +648,7 @@ Page({
       ), { source: 'record-home' });
       if (this.recordPerf) {
         this.recordPerf.ready('pageReady', {
+          cacheHit: !!dashboard.__cacheHit && !!heatmapData.__cacheHit,
           dashboardCacheHit: !!dashboard.__cacheHit,
           heatmapCacheHit: !!heatmapData.__cacheHit,
           cells: nextState.monthCells.length

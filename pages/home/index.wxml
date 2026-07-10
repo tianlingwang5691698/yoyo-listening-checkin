@@ -1,4 +1,89 @@
-<view class="theme-{{theme}} page-shell home-page">
+<view wx:if="{{theme === 'library'}}" class="theme-library page-shell library-home-page">
+  <view class="library-home-shelf"></view>
+  <view class="library-home-header">
+    <view>
+      <view class="library-home-kicker">同学的英语小耳朵</view>
+      <view class="library-home-date">{{todayDisplay}} · Day {{planDayIndex}}</view>
+    </view>
+    <view class="library-home-mark">藏</view>
+  </view>
+
+  <view class="library-home-greeting">{{greeting}}，{{child.nickname || '同学'}}</view>
+
+  <view class="library-status-slip" wx:if="{{!homeLoading && syncMode === 'cloud-error'}}">
+    <view>馆藏服务暂时不可用</view>
+    <text>{{(syncDebug && (syncDebug.publicReason || syncDebug.reason)) || '学习数据暂时没有同步成功，请稍后再试。'}}</text>
+  </view>
+
+  <view class="library-nickname-sheet" wx:if="{{nicknameRequired && !identityConfirmVisible && !entryPosterVisible}}">
+    <view class="library-sheet-title">请设置昵称</view>
+    <view class="library-sheet-copy">用一个常用昵称开始今天的学习。</view>
+    <view class="library-sheet-edit">
+      <input class="library-nickname-input" placeholder="输入昵称" value="{{nicknameInput}}" bindinput="handleNicknameInput" />
+      <view class="library-sheet-save" bindtap="saveRequiredNickname">保存</view>
+    </view>
+  </view>
+
+  <view class="library-listening-sheet {{listeningTaskStatus.setupRequired ? 'is-empty' : ''}}" bindtap="openCompleted">
+    <view class="library-sheet-margin">今日卷</view>
+    <view class="library-listening-copy">
+      <view class="library-listening-title">今日听力</view>
+      <view class="library-listening-lead">先听懂一点，<br />再继续学习</view>
+      <view class="library-listening-action">{{listeningTaskStatus.action}} <text>›</text></view>
+    </view>
+    <view class="library-audio-notes">
+      <view class="library-audio-note"><text>01</text><view>It's a beautiful day to start learning.</view></view>
+      <view class="library-audio-note"><text>02</text><view>Let's listen carefully and understand.</view></view>
+      <view class="library-audio-note"><text>03</text><view>让我们认真倾听并理解。</view></view>
+    </view>
+    <view class="library-wave-rule">
+      <view wx:for="{{waveBars}}" wx:key="*this" class="library-wave-bar library-wave-{{item}}"></view>
+    </view>
+    <view class="library-listening-goal">
+      <view class="library-goal-label">{{listeningTaskStatus.setupRequired ? '计划状态' : '今日目标'}}</view>
+      <view wx:if="{{listeningTaskStatus.setupRequired}}" class="library-goal-value">待设置</view>
+      <view wx:else class="library-goal-value">{{todayDoneMinutes}} / {{todayGoalMinutes}} 分钟</view>
+    </view>
+  </view>
+
+  <view class="library-section-heading">
+    <view>学习目录</view>
+    <text>六个入口</text>
+  </view>
+  <view class="library-module-index">
+    <view class="library-module-row is-listening" bindtap="openListening"><text class="library-module-number">01</text><view><view>听力</view><text>声音书签</text></view><text class="library-module-arrow">›</text></view>
+    <view class="library-module-row is-reading" bindtap="openReading"><text class="library-module-number">02</text><view><view>阅读</view><text>馆藏文章</text></view><text class="library-module-arrow">›</text></view>
+    <view class="library-module-row is-grammar" bindtap="openGrammar"><text class="library-module-number">03</text><view><view>语法</view><text>句法字模</text></view><text class="library-module-arrow">›</text></view>
+    <view class="library-module-row is-vocabulary" bindtap="openVocabulary"><text class="library-module-number">04</text><view><view>词汇</view><text>索引词库</text></view><text class="library-module-arrow">›</text></view>
+    <view class="library-module-row is-writing" bindtap="openWriting"><text class="library-module-number">05</text><view><view>写作</view><text>编辑稿纸</text></view><text class="library-module-arrow">›</text></view>
+    <view class="library-module-row is-speaking" bindtap="openSpeaking"><text class="library-module-number">06</text><view><view>口语</view><text>阅览室录音台</text></view><text class="library-module-arrow">›</text></view>
+  </view>
+
+  <view class="library-empty-note" wx:if="{{!homeLoading && !hasGroupedTasks && syncMode !== 'cloud-error'}}">{{needsListeningPlanSetup ? '先设置听力计划。' : '暂无今日任务。'}}</view>
+
+  <view class="library-identity-overlay" wx:if="{{entryPosterVisible}}">
+    <view class="library-poster-skip" bindtap="closeEntryPoster">跳过</view>
+    <view class="library-poster-spine">同学的英语小耳朵</view>
+    <block wx:if="{{entryPosterPage === 0}}">
+      <view class="library-poster-title">先听见，<br />再理解。</view>
+      <view class="library-poster-copy">每天留一点安静时间，让声音慢慢变成听得懂的英语。</view>
+    </block>
+    <block wx:else>
+      <view class="library-poster-title is-guide">选择使用身份</view>
+      <view class="library-poster-copy">家长可绑定并查看学习档案；学生使用本机学号开始学习。</view>
+    </block>
+    <view class="library-poster-dots"><view class="{{entryPosterPage === 0 ? 'is-active' : ''}}"></view><view class="{{entryPosterPage === 1 ? 'is-active' : ''}}"></view></view>
+    <view class="library-poster-next" wx:if="{{entryPosterPage === 0}}" bindtap="showNextEntryPosterPage">下一页</view>
+    <view class="library-poster-actions" wx:else><button data-role="parent" bindtap="confirmStudyIdentity">我是家长</button><button class="is-primary" data-role="student" bindtap="confirmStudyIdentity">我是学生</button></view>
+  </view>
+
+  <view class="library-mode-sheet" wx:if="{{identityConfirmVisible && !entryPosterVisible}}">
+    <view>先选择这台手机的使用身份</view>
+    <view><button data-role="parent" bindtap="confirmStudyIdentity">我是家长</button><button class="is-primary" data-role="student" bindtap="confirmStudyIdentity">我是学生</button></view>
+  </view>
+</view>
+
+<view wx:else class="theme-{{theme}} page-shell home-page">
   <view class="home-atmosphere">
     <view class="light-ray ray-one"></view>
     <view class="light-ray ray-two"></view>

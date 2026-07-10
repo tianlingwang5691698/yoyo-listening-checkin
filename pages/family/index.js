@@ -37,13 +37,41 @@ Page({
     }, extra || {})));
   },
   async onShow() {
+    this.familyPerf = page.startPagePerf('family');
     page.syncTheme(this);
-    const data = await store.getFamilyPageData((fresh) => this.applyFamilyState(fresh, {
-      childJoinRequired: this.isChildJoinRequired(fresh)
-    }));
+    const target = store.getSelectedStudentTarget ? store.getSelectedStudentTarget() : {};
+    const cached = store.getCachedReadResult ? store.getCachedReadResult('getFamilyPage', target) : null;
+    if (cached) {
+      this.applyFamilyState(cached, {
+        childJoinRequired: this.isChildJoinRequired(cached)
+      });
+      this.familyPerf.ready('pageReady', {
+        source: 'cache',
+        cacheHit: true,
+        members: (cached.members || []).length
+      });
+    }
+    const data = await store.getFamilyPageData((fresh) => {
+      this.applyFamilyState(fresh, {
+        childJoinRequired: this.isChildJoinRequired(fresh)
+      });
+      if (this.familyPerf) {
+        this.familyPerf.mark('cloudRefresh', { members: (fresh.members || []).length });
+      }
+    });
     this.applyFamilyState(data, {
       childJoinRequired: this.isChildJoinRequired(data)
     });
+    if (!cached) {
+      this.familyPerf.ready('pageReady', {
+        source: data && data.__cacheHit ? 'cache' : (data && data.syncMode === 'cloud-error' ? 'error' : 'cloud'),
+        cacheHit: !!(data && data.__cacheHit),
+        members: ((data && data.members) || []).length
+      });
+    }
+    if (data && !data.__cacheHit && data.syncMode !== 'cloud-error') {
+      this.familyPerf.mark('cloudRefresh', { members: (data.members || []).length });
+    }
   },
   isChildJoinRequired(data) {
     return false;
@@ -194,7 +222,7 @@ Page({
   async joinFamilyByChildCode() {
     if (!/^\d{6}$/.test(String(this.data.childCodeInput || ''))) {
       wx.showToast({
-        title: '请输入 6 位孩子 ID',
+        title: '请输入 6 位学号',
         icon: 'none'
       });
       return;

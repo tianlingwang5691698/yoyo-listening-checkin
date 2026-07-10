@@ -67,7 +67,7 @@ async function assertNotBindingOwnChild(openId, targetFamilyId) {
     String(member && member.familyId || '') === String(targetFamilyId || '')
   ));
   if (existingMember && (existingMember.role === 'owner' || !existingMember.role)) {
-    throw new Error('不能绑定自己的孩子 ID，请让另一个微信账号绑定');
+    throw new Error('不能绑定自己的学号，请让另一个微信账号绑定');
   }
 }
 
@@ -78,18 +78,18 @@ async function joinFamilyByChildCode(event) {
   const payload = (event && event.payload) || {};
   const childLoginCode = String(payload.childLoginCode || '').replace(/\D/g, '').slice(0, 6);
   if (!/^\d{6}$/.test(childLoginCode)) {
-    throw new Error('请输入 6 位孩子 ID');
+    throw new Error('请输入 6 位学号');
   }
   const targetChild = await childRepository.findByLoginCode(childLoginCode);
   if (!targetChild || !targetChild.familyId) {
-    throw new Error('没有找到这个孩子 ID');
+    throw new Error('没有找到这个学号');
   }
   await assertNotBindingOwnChild(ctx.user.openId, targetChild.familyId);
   const targetStudyRole = String(payload.studyRole || '').trim() === 'student' ? 'student' : 'parent';
   let relationName = String(payload.displayName || payload.relationName || '').trim();
   const selfChildNickname = await getSelfChildNickname(ctx.user.openId);
   if (!selfChildNickname) {
-    throw new Error('请先选择我是学生并设置昵称，再绑定孩子 ID');
+    throw new Error('请先选择我是学生并设置昵称，再绑定学号');
   }
   if (!relationName && targetStudyRole === 'student') {
     relationName = '学生';

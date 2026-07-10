@@ -196,6 +196,7 @@ Page({
     this.setData(page.buildCloudPageData(this.data, Object.assign({}, nextData, buildDurationSummary(nextData))));
   },
   async onLoad(query) {
+    this.listeningMaterialPerf = page.startPagePerf('listening-material');
     page.syncTheme(this);
     const category = query.category || '';
     const levelId = query.levelId || 'A1';
@@ -215,15 +216,40 @@ Page({
       rememberDetailSnapshot(snapshotId, cachedDetail, 'listening-material-cache');
       this.applyDetail(cachedDetail);
     }
+    const initialDetail = snapshot || cachedDetail;
+    if (initialDetail) {
+      this.listeningMaterialPerf.ready('pageReady', {
+        source: snapshot ? 'snapshot' : 'cache',
+        cacheHit: true,
+        levelId,
+        category,
+        tasks: (initialDetail.tasks || []).length
+      });
+    }
     const data = await store.getListeningMaterialDetail({ category, levelId }, (fresh) => {
       rememberDetailSnapshot(snapshotId, fresh, 'listening-material-refresh');
       this.applyDetail(fresh);
+      if (this.listeningMaterialPerf) {
+        this.listeningMaterialPerf.mark('cloudRefresh', { levelId, category, tasks: (fresh.tasks || []).length });
+      }
     });
     if (data && data.syncMode === 'cloud-error' && snapshot) {
       return;
     }
     rememberDetailSnapshot(snapshotId, data, 'listening-material-load');
     this.applyDetail(data);
+    if (!initialDetail) {
+      this.listeningMaterialPerf.ready('pageReady', {
+        source: data && data.__cacheHit ? 'cache' : (data && data.syncMode === 'cloud-error' ? 'error' : 'cloud'),
+        cacheHit: !!(data && data.__cacheHit),
+        levelId,
+        category,
+        tasks: ((data && data.tasks) || []).length
+      });
+      if (data && !data.__cacheHit && data.syncMode !== 'cloud-error') {
+        this.listeningMaterialPerf.mark('cloudRefresh', { levelId, category, tasks: (data.tasks || []).length });
+      }
+    }
   },
   onShow() {
     page.syncTheme(this);
@@ -386,7 +412,7 @@ Page({
       return;
     }
     if (!hasAudioFields(task.taskSnapshot)) {
-      wx.showToast({ title: '音频字段同步中', icon: 'none' });
+      wx.showToast({ title: '音频暂不可用', icon: 'none' });
       return;
     }
     snapshotStore.write(LESSON_TASK_SNAPSHOT_KEY, `${task.category}:${task.taskId}`, {

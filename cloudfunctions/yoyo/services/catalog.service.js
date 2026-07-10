@@ -14,11 +14,27 @@ function getResourceDebugSnapshot() {
 
 async function loadList(path) {
   try {
-    const content = await storageAdapter.downloadCloudJson(path, { skipCache: true });
+    const content = await storageAdapter.downloadCloudJson(path);
     return Array.isArray(content) ? content : (content.items || content.prompts || content.sets || []);
   } catch (error) {
     return [];
   }
+}
+
+function slimWritingItem(item) {
+  return {
+    _id: item && item._id,
+    id: item && item.id,
+    title: item && item.title,
+    year: item && item.year,
+    city: item && item.city,
+    district: item && item.district,
+    examType: item && item.examType,
+    stage: item && item.stage,
+    category: item && item.category,
+    minWords: item && item.minWords,
+    score: item && item.score
+  };
 }
 
 function slimMaterialItem(item) {
@@ -51,8 +67,8 @@ async function getMaterialIndex(event) {
     shouldLoadListening ? loadList(MATERIAL_PATHS.listeningEm2) : []
   ]);
   return {
-    writingEm1,
-    writingEm2,
+    writingEm1: writingEm1.map(slimWritingItem),
+    writingEm2: writingEm2.map(slimWritingItem),
     listeningEm1: listeningEm1.map(slimMaterialItem),
     listeningEm2: listeningEm2.map(slimMaterialItem)
   };

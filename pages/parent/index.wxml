@@ -1,4 +1,77 @@
 <view class="theme-{{theme}} page-shell parent-page">
+  <view wx:if="{{theme === 'library'}}" class="library-parent">
+    <view class="library-letter-head">
+      <view>
+        <view class="library-kicker">家庭观察</view>
+        <view class="library-title">日报</view>
+      </view>
+      <view class="letter-date">{{todayReport.dateLabel || '今日'}}</view>
+    </view>
+    <view class="letter-child-line">
+      <view>
+        <view class="entry-title">{{child.nickname || '同学'}}</view>
+        <view class="entry-copy">学号：{{child.childLoginCode || '未绑定'}}</view>
+      </view>
+      <picker wx:if="{{studentNames.length > 1}}" mode="selector" range="{{studentNames}}" value="{{selectedStudentIndex}}" bindchange="handleStudentChange">
+        <view class="library-bookmark">切换学生：{{studentNames[selectedStudentIndex]}}</view>
+      </picker>
+    </view>
+    <view class="library-debug {{syncMode === 'cloud' ? 'is-cloud' : 'is-local'}}" wx:if="{{showCloudDebug && syncDebug && syncDebug.show}}">
+      {{syncDebug.text}}
+    </view>
+
+    <view class="library-letter">
+      <view class="library-kicker">今日结论</view>
+      <view class="letter-title">{{parentSummary.title}}</view>
+      <view class="letter-copy">{{parentSummary.copy}}</view>
+      <view class="letter-note">{{parentSummary.detail}}</view>
+      <view class="library-primary inline" data-date="{{todayReport.date}}" bindtap="openDailyDetail">查看学习档案</view>
+    </view>
+
+    <view class="library-module-panel">
+      <view class="library-card-head">
+        <view>
+          <view class="library-title small">学习画像</view>
+          <view class="library-copy">{{todayReport.totalCompletedCount || 0}} 项 · {{todayReport.totalMinutes || 0}} 分钟</view>
+        </view>
+      </view>
+      <view class="library-module-grid">
+        <view class="library-module-ticket module-{{item.key}}" wx:for="{{moduleStats}}" wx:key="key">
+          <view class="ticket-label">{{item.label}}</view>
+          <view class="ticket-value">{{item.value || item.count}}<text>{{item.unit}}</text></view>
+          <view class="ticket-copy">{{item.displayCopy || item.copy}}</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="library-archive-link" data-date="{{todayReport.date}}" bindtap="openDailyDetail">
+      <view class="archive-tab"></view>
+      <view class="entry-main">
+        <view class="entry-title">今日明细</view>
+        <view class="entry-copy">{{todayReport.totalCompletedCount || 0}} 项完成内容，按学习动作整理。</view>
+      </view>
+      <view class="entry-arrow">查看</view>
+    </view>
+
+    <view class="library-module-panel">
+      <view class="library-card-head">
+        <view>
+          <view class="library-title small">最近 7 天</view>
+          <view class="library-copy">看节奏，不看压力。</view>
+        </view>
+        <view class="library-link" bindtap="loadRecentReports">{{recentExpanded ? '收起' : '查看'}}</view>
+      </view>
+      <view class="library-date-stamps" wx:if="{{recentExpanded}}">
+        <view class="date-stamp {{item.totalCompletedCount ? 'is-active' : ''}}" wx:for="{{recentReports}}" wx:key="reportId" data-date="{{item.date}}" bindtap="openDailyDetail">
+          <view class="date-label">{{item.dateLabel}}</view>
+          <view class="date-copy">{{item.totalCompletedCount ? item.totalCompletedCount + ' 项' : '无记录'}}</view>
+          <view class="date-copy">{{item.totalMinutes || 0}} 分钟</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <block wx:else>
   <view class="parent-hero">
     <view class="parent-identity">
       <view>
@@ -81,7 +154,7 @@
         <view class="section-title type-section-title">最近 7 天</view>
         <view class="section-copy">看节奏，不看压力。</view>
       </view>
-      <view class="detail-link" bindtap="loadRecentReports">{{recentLoading ? '加载中' : (recentExpanded ? '收起' : '查看')}}</view>
+      <view class="detail-link" bindtap="loadRecentReports">{{recentExpanded ? '收起' : '查看'}}</view>
     </view>
     <view class="rhythm-strip" wx:if="{{recentExpanded}}">
       <view class="rhythm-day {{item.totalCompletedCount ? 'is-active' : ''}}" wx:for="{{recentReports}}" wx:key="reportId" data-date="{{item.date}}" bindtap="openDailyDetail">
@@ -92,4 +165,5 @@
       </view>
     </view>
   </view>
+  </block>
 </view>

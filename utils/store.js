@@ -77,6 +77,7 @@ const READ_CACHE_CONFIG = {
   getGrammarWrongBook: { persist: true },
   getGrammarProgress: { persist: true },
   getWritingAttempts: { persist: true },
+  getAdminFamilyList: { persist: true, maxAgeMs: RECORD_CACHE_MAX_AGE_MS },
   explainGrammarQuestion: { persist: false }
 };
 
@@ -1113,12 +1114,12 @@ async function updateChildProfile(nickname) {
   return callCloud('updateChildProfile', withSelectedStudent({ nickname }), contracts.createFamilyPageDefaults());
 }
 
-async function getAdminFamilyList() {
+async function getAdminFamilyList(onRefresh) {
   return callCloud('getAdminFamilyList', {}, {
     isAdmin: false,
     rows: [],
     total: 0
-  }, { useCache: false });
+  }, { onRefresh });
 }
 
 async function getAdminStatus() {

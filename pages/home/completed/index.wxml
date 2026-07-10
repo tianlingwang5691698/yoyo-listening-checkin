@@ -1,3 +1,65 @@
+<block wx:if="{{theme === 'library'}}">
+  <view class="theme-{{theme}} page-shell completed-page library-return-page">
+    <view class="library-return-header">
+      <view>
+        <view class="library-return-kicker">今日归还单</view>
+        <view class="library-return-title">今日完成</view>
+        <view class="library-return-copy">{{items.length}} 项已完成</view>
+      </view>
+      <view class="library-return-seal">
+        <view>{{items.length}}</view>
+        <text>项</text>
+      </view>
+    </view>
+
+    <view class="library-return-list" wx:if="{{items.length}}">
+      <view class="library-return-slip" wx:for="{{items}}" wx:key="index">
+        <view class="library-return-row" data-index="{{index}}" bindtap="openItem">
+          <view class="library-return-index">{{item.index}}</view>
+          <view class="library-return-main">
+            <view class="library-return-type">{{item.typeLabel}}</view>
+            <view class="library-return-item-title">{{item.title}}</view>
+            <view class="library-return-meta">{{item.meta}}</view>
+            <view class="library-return-meta" wx:if="{{item.type === 'reading' && item.latestAttempt}}">
+              得分 {{item.latestAttempt.score || 0}} / {{item.latestAttempt.totalScore || (item.latestAttempt.totalCount * 2) || 0}} 分
+            </view>
+            <view class="library-return-meta" wx:elif="{{item.type === 'speaking' && item.attemptCount}}">
+              最近 {{item.latestAttemptScore}} 分 · {{item.attemptCount}} 次回答
+            </view>
+            <view class="library-return-meta" wx:elif="{{item.progressText}}">{{item.progressText}}</view>
+          </view>
+          <view class="library-return-action">{{item.actionText}}</view>
+        </view>
+
+        <view class="library-return-attempts" wx:if="{{item.expanded}}">
+          <view class="library-return-attempt" wx:for="{{item.attempts}}" wx:key="attemptId" wx:for-item="attempt" wx:for-index="attemptIndex">
+            <view class="library-return-attempt-head">
+              <view>{{attempt.displayTitle}}</view>
+              <text>{{attempt.scoreText}}</text>
+            </view>
+            <view class="library-return-attempt-copy">发音流畅 {{attempt.pronunciationFluencyScore || 0}} / 内容语法 {{attempt.contentGrammarScore || 0}}</view>
+            <view class="library-return-attempt-copy" wx:if="{{attempt.questionText}}">问题：{{attempt.questionText}}</view>
+            <view class="library-return-attempt-copy" wx:if="{{attempt.studentTranscript}}">回答：{{attempt.studentTranscript}}</view>
+            <view class="library-return-attempt-feedback">{{attempt.feedback || '暂无分析'}}</view>
+            <view class="library-return-attempt-actions">
+              <button data-item-index="{{index}}" data-attempt-index="{{attemptIndex}}" data-audio-type="answer" bindtap="playAttempt">播放回答</button>
+              <button wx:if="{{attempt.feedbackAudioFileId}}" data-item-index="{{index}}" data-attempt-index="{{attemptIndex}}" data-audio-type="feedback" bindtap="playAttempt">播放分析</button>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="library-return-empty" wx:else>今天还没有完成记录。</view>
+
+    <view class="library-return-debug" wx:if="{{showCloudDebug && debugLines.length}}">
+      <view class="library-return-debug-title">馆藏校验单</view>
+      <view class="library-return-debug-line" wx:for="{{debugLines}}" wx:key="*this">{{item}}</view>
+    </view>
+  </view>
+</block>
+
+<block wx:else>
 <view class="theme-{{theme}} page-shell completed-page">
   <view class="completed-hero">
     <view class="completed-hero-glow"></view>
@@ -69,3 +131,4 @@
     <view class="debug-line" wx:for="{{debugLines}}" wx:key="*this">{{item}}</view>
   </view>
 </view>
+</block>

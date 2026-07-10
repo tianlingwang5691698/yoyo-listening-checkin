@@ -1,70 +1,169 @@
 <view class="theme-{{theme}} page-shell profile-page">
-  <view class="profile-atmosphere">
-    <view class="light-ray ray-one"></view>
-    <view class="light-ray ray-two"></view>
-  </view>
-
-  <view class="profile-hero product-hero">
-    <view class="identity-pattern">
-      <view class="identity-ring ring-one"></view>
-      <view class="identity-ring ring-two"></view>
-      <view class="identity-core">学</view>
+  <view wx:if="{{theme === 'library'}}" class="library-profile">
+    <view class="library-bookplate">
+      <view class="bookplate-stamp">
+        <view class="stamp-label">EX LIBRIS</view>
+        <view class="stamp-mark">{{currentMember.studyRole === 'parent' ? '家' : '学'}}</view>
+      </view>
+      <view class="bookplate-main" wx:if="{{profileHydrated}}">
+        <view class="bookplate-kicker">我的藏书票</view>
+        <view class="bookplate-name">{{child.nickname || '同学'}}</view>
+        <view class="bookplate-code" wx:if="{{currentMember && currentMember.studyRole === 'student'}}">读者证 {{childCodeText}}</view>
+        <view class="bookplate-code" wx:else>{{currentMember.studyRole === 'student' ? '学生' : '家长'}} · {{syncMode === 'cloud' ? '已接通' : '待同步'}}</view>
+        <view class="bookplate-quote">{{dailyEncouragement.english}}</view>
+        <view class="bookplate-cn">{{dailyEncouragement.chinese}}</view>
+      </view>
+      <view class="bookplate-main" wx:else>
+        <view class="library-skeleton title"></view>
+        <view class="library-skeleton line"></view>
+        <view class="library-skeleton short"></view>
+      </view>
     </view>
-    <view class="profile-name">{{profileHydrated ? (child.nickname || '同学') : ''}}</view>
-    <view class="product-copy">{{dailyEncouragement.english}}</view>
-    <view class="profile-cn">{{dailyEncouragement.chinese}}</view>
-    <view class="sync-debug {{syncMode === 'cloud' ? 'is-cloud' : 'is-local'}}" wx:if="{{showCloudDebug && syncDebug && syncDebug.show}}">
+
+    <view class="library-note is-error" wx:if="{{profileHydrated && syncMode === 'cloud-error'}}">档案暂时无法同步</view>
+    <view class="library-debug {{syncMode === 'cloud' ? 'is-cloud' : 'is-local'}}" wx:if="{{showCloudDebug && syncDebug && syncDebug.show}}">
       {{syncDebug.text}}
     </view>
+
+    <view class="library-signature" wx:if="{{profileHydrated}}">
+      <view class="library-card-head">
+        <view>
+          <view class="library-kicker">签名栏</view>
+          <view class="library-title">昵称{{nicknameRequired ? '（必填）' : ''}}</view>
+        </view>
+        <button class="library-primary" bindtap="saveChildProfile">保存</button>
+      </view>
+      <input class="library-input" placeholder="昵称" value="{{childNicknameInput}}" bindinput="handleChildNicknameInput" />
+      <view class="library-note is-error" wx:if="{{nicknameRequired}}">请更换其他名字后继续使用。</view>
+    </view>
+    <view class="library-signature is-loading" wx:else>
+      <view class="library-skeleton line"></view>
+      <view class="library-skeleton input"></view>
+    </view>
+
+    <view class="library-entries" wx:if="{{profileHydrated}}">
+      <view class="library-entry entry-letter" bindtap="openParentPage">
+        <view class="entry-mark">信笺</view>
+        <view class="entry-main">
+          <view class="entry-title">日报</view>
+          <view class="entry-copy">查看打卡</view>
+        </view>
+        <view class="entry-arrow">›</view>
+      </view>
+      <view class="library-entry entry-dossier" bindtap="openFamilyPage">
+        <view class="entry-mark">档案</view>
+        <view class="entry-main">
+          <view class="entry-title">家庭与账号</view>
+          <view class="entry-copy">{{currentMember.studyRole === 'student' ? '学生' : '家长'}} · {{syncMode === 'cloud' ? '已接通' : '待同步'}}</view>
+        </view>
+        <view class="entry-arrow">›</view>
+      </view>
+      <view class="library-entry entry-ledger" wx:if="{{adminVisible || (currentMember && currentMember.studyRole === 'parent')}}" bindtap="openAdminPage">
+        <view class="entry-mark">台账</view>
+        <view class="entry-main">
+          <view class="entry-title">管理</view>
+          <view class="entry-copy">查看学生与绑定关系</view>
+        </view>
+        <view class="entry-arrow">›</view>
+      </view>
+    </view>
+
+    <view class="library-appearance">
+      <view class="library-card-head">
+        <view>
+          <view class="library-kicker">外观</view>
+          <view class="library-title">主题</view>
+        </view>
+      </view>
+      <view class="theme-choice-row">
+        <view class="theme-choice" data-theme="warm" bindtap="switchTheme">雾蓝玻璃</view>
+        <view class="theme-choice is-active" data-theme="library" bindtap="switchTheme">图书馆静谧</view>
+      </view>
+    </view>
   </view>
 
-  <view class="profile-board" wx:if="{{profileHydrated}}">
-    <view class="identity-card glass-panel">
-      <view class="name-emblem">
-        <view class="emblem-page"></view>
-        <view class="emblem-line line-one"></view>
-        <view class="emblem-line line-two"></view>
-        <view class="emblem-dot"></view>
-      </view>
-      <view class="row-main">
-        <view class="row-title">昵称{{nicknameRequired ? '（必填）' : ''}}</view>
-        <input class="row-field profile-input" placeholder="昵称" value="{{childNicknameInput}}" bindinput="handleChildNicknameInput" />
-        <view class="row-copy is-required" wx:if="{{nicknameRequired}}">请更换其他名字后继续使用。</view>
-      </view>
-      <button class="row-action primary-action" bindtap="saveChildProfile">保存</button>
+  <block wx:else>
+    <view class="profile-atmosphere">
+      <view class="light-ray ray-one"></view>
+      <view class="light-ray ray-two"></view>
     </view>
 
-    <view class="student-code-card glass-panel" wx:if="{{currentMember && currentMember.studyRole === 'student'}}">
-      <view class="code-label">学号</view>
-      <view class="code-value {{childCodeReady ? '' : 'is-pending'}}">{{childCodeText}}</view>
-    </view>
-
-    <view class="account-orbit glass-panel">
-      <view class="profile-row account-card" bindtap="openParentPage">
-        <view class="account-dot"></view>
-        <view class="row-main">
-          <view class="row-title">日报</view>
-          <view class="row-copy">查看打卡</view>
-        </view>
-        <view class="row-arrow">›</view>
+    <view class="profile-hero product-hero">
+      <view class="identity-pattern">
+        <view class="identity-ring ring-one"></view>
+        <view class="identity-ring ring-two"></view>
+        <view class="identity-core">学</view>
       </view>
-      <view class="profile-row account-card is-featured" bindtap="openFamilyPage">
-        <view class="account-dot"></view>
-        <view class="row-main">
-          <view class="row-title">家庭与账号</view>
-          <view class="row-copy">{{currentMember.studyRole === 'student' ? '学生' : '家长'}} · {{syncMode === 'cloud' ? '已接通' : '待同步'}}</view>
-        </view>
-        <view class="row-arrow">›</view>
-      </view>
-      <view class="profile-row account-card" wx:if="{{adminVisible || (currentMember && currentMember.studyRole === 'parent')}}" bindtap="openAdminPage">
-        <view class="account-dot"></view>
-        <view class="row-main">
-          <view class="row-title">管理</view>
-          <view class="row-copy">查看学生与绑定关系</view>
-        </view>
-        <view class="row-arrow">›</view>
+      <view class="profile-name" wx:if="{{profileHydrated}}">{{child.nickname || '同学'}}</view>
+      <view class="profile-name-skeleton" wx:else></view>
+      <view class="product-copy">{{dailyEncouragement.english}}</view>
+      <view class="profile-cn">{{dailyEncouragement.chinese}}</view>
+      <view class="sync-debug {{syncMode === 'cloud' ? 'is-cloud' : 'is-local'}}" wx:if="{{showCloudDebug && syncDebug && syncDebug.show}}">
+        {{syncDebug.text}}
       </view>
     </view>
 
-  </view>
+    <view class="profile-board" wx:if="{{profileHydrated}}">
+      <view class="identity-card glass-panel">
+        <view class="name-emblem">
+          <view class="emblem-page"></view>
+          <view class="emblem-line line-one"></view>
+          <view class="emblem-line line-two"></view>
+          <view class="emblem-dot"></view>
+        </view>
+        <view class="row-main">
+          <view class="row-title">昵称{{nicknameRequired ? '（必填）' : ''}}</view>
+          <input class="row-field profile-input" placeholder="昵称" value="{{childNicknameInput}}" bindinput="handleChildNicknameInput" />
+          <view class="row-copy is-required" wx:if="{{nicknameRequired}}">请更换其他名字后继续使用。</view>
+        </view>
+        <button class="row-action primary-action" bindtap="saveChildProfile">保存</button>
+      </view>
+
+      <view class="student-code-card glass-panel" wx:if="{{currentMember && currentMember.studyRole === 'student'}}">
+        <view class="code-label">学号</view>
+        <view class="code-value {{childCodeReady ? '' : 'is-pending'}}">{{childCodeText}}</view>
+      </view>
+
+      <view class="account-orbit glass-panel">
+        <view class="profile-row account-card" bindtap="openParentPage">
+          <view class="account-dot"></view>
+          <view class="row-main">
+            <view class="row-title">日报</view>
+            <view class="row-copy">查看打卡</view>
+          </view>
+          <view class="row-arrow">›</view>
+        </view>
+        <view class="profile-row account-card is-featured" bindtap="openFamilyPage">
+          <view class="account-dot"></view>
+          <view class="row-main">
+            <view class="row-title">家庭与账号</view>
+            <view class="row-copy">{{currentMember.studyRole === 'student' ? '学生' : '家长'}} · {{syncMode === 'cloud' ? '已接通' : '待同步'}}</view>
+          </view>
+          <view class="row-arrow">›</view>
+        </view>
+        <view class="profile-row account-card" wx:if="{{adminVisible || (currentMember && currentMember.studyRole === 'parent')}}" bindtap="openAdminPage">
+          <view class="account-dot"></view>
+          <view class="row-main">
+            <view class="row-title">管理</view>
+            <view class="row-copy">查看学生与绑定关系</view>
+          </view>
+          <view class="row-arrow">›</view>
+        </view>
+      </view>
+
+    </view>
+    <view class="profile-board profile-board-skeleton" wx:else>
+      <view class="profile-skeleton-card is-primary"></view>
+      <view class="profile-skeleton-card"></view>
+      <view class="profile-skeleton-card is-short"></view>
+    </view>
+    <view class="profile-theme-switcher">
+      <view class="profile-theme-label">主题</view>
+      <view class="profile-theme-options">
+        <view class="profile-theme-option is-active" data-theme="warm" bindtap="switchTheme">雾蓝玻璃</view>
+        <view class="profile-theme-option" data-theme="library" bindtap="switchTheme">图书馆静谧</view>
+      </view>
+    </view>
+  </block>
+
 </view>

@@ -58,7 +58,12 @@ async function prepareRequestContext(event, deps) {
     targetChildId: String(payload.targetChildId || '').trim(),
     forceSelf: !!payload.forceSelf
   };
-  const lightweightCtx = action === 'getDashboard' && (view === 'home' || view === 'record') && deps.getLightweightContext
+  const useLightweightContext = (
+    (action === 'getDashboard' && (view === 'home' || view === 'record'))
+    || action === 'getListeningPlanOverview'
+    || action === 'getMonthHeatmap'
+  );
+  const lightweightCtx = useLightweightContext && deps.getLightweightContext
     ? await deps.getLightweightContext(OPENID, target)
     : null;
   let ctx = lightweightCtx || await deps.ensureBootstrap(OPENID, target);

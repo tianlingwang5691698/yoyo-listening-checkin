@@ -618,21 +618,52 @@ Page({
       this.audioContext = null;
     }
   },
+  applyReportData(reportData) {
+    const report = normalizeReport(reportData && reportData.report);
+    const currentCompletionItems = this.data.report.completionItems || [];
+    this.setData(page.buildCloudPageData(this.data, {
+      date: this.data.date,
+      report: Object.assign({}, report, {
+        completionItems: this.data.completionItemsLoaded ? (report.completionItems.length ? report.completionItems : currentCompletionItems) : []
+      }),
+      completionItemsLoaded: this.data.completionItemsLoaded
+    }));
+  },
   onShow() {
+    this.parentDetailPerf = page.startPagePerf('parent-detail');
     page.syncTheme(this);
     if (!page.requireIdentityConfirmed()) {
       return;
     }
-    store.getDailyReportByDate(this.data.date).then((reportData) => {
-      const report = normalizeReport(reportData.report);
-      const currentCompletionItems = this.data.report.completionItems || [];
-      this.setData(page.buildCloudPageData(this.data, {
-        date: this.data.date,
-        report: Object.assign({}, report, {
-          completionItems: this.data.completionItemsLoaded ? (report.completionItems.length ? report.completionItems : currentCompletionItems) : []
-        }),
-        completionItemsLoaded: this.data.completionItemsLoaded
-      }));
+    const target = store.getSelectedStudentTarget ? store.getSelectedStudentTarget() : {};
+    const cached = store.getCachedReadResult
+      ? store.getCachedReadResult('getDailyReportByDate', Object.assign({ date: this.data.date }, target))
+      : null;
+    if (cached) {
+      this.applyReportData(cached);
+      this.parentDetailPerf.ready('pageReady', {
+        source: 'cache',
+        cacheHit: true,
+        date: this.data.date
+      });
+    }
+    store.getDailyReportByDate(this.data.date, (fresh) => {
+      this.applyReportData(fresh);
+      if (this.parentDetailPerf) {
+        this.parentDetailPerf.mark('cloudRefresh', { date: this.data.date });
+      }
+    }).then((reportData) => {
+      this.applyReportData(reportData);
+      if (!cached && this.parentDetailPerf) {
+        this.parentDetailPerf.ready('pageReady', {
+          source: reportData && reportData.__cacheHit ? 'cache' : (reportData && reportData.syncMode === 'cloud-error' ? 'error' : 'cloud'),
+          cacheHit: !!(reportData && reportData.__cacheHit),
+          date: this.data.date
+        });
+      }
+      if (reportData && !reportData.__cacheHit && reportData.syncMode !== 'cloud-error' && this.parentDetailPerf) {
+        this.parentDetailPerf.mark('cloudRefresh', { date: this.data.date });
+      }
     }).catch(() => {});
   },
   async loadCompletionItems() {

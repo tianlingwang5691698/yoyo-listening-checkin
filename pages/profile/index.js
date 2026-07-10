@@ -1,6 +1,7 @@
 const store = require('../../utils/store');
 const page = require('../../utils/page');
 const snapshotStore = require('../../utils/snapshot');
+const themeUtil = require('../../utils/theme');
 
 const ADMIN_OPEN_IDS = ['om8JT3Zhqe1zeAiKUGGkU0ACjAWs'];
 const PROFILE_SNAPSHOT_KEY = 'profileHomeSnapshotV1';
@@ -72,6 +73,10 @@ function buildCurrentProfileSnapshotId() {
   return 'self';
 }
 
+function getCurrentProfileSnapshotKey() {
+  return `${PROFILE_SNAPSHOT_KEY}:${buildCurrentProfileSnapshotId()}`;
+}
+
 function hasDisplayableProfile(data) {
   const child = (data && data.child) || {};
   const nickname = String(child.nickname || '').trim();
@@ -96,6 +101,13 @@ function isAdminProfile(data) {
 
 Page({
   profileSnapshotData: null,
+  markProfileCloudRefresh(data) {
+    if (!this.profilePerf || this.profileCloudRefreshLogged) return;
+    this.profileCloudRefreshLogged = true;
+    this.profilePerf.mark('cloudRefresh', {
+      hydrated: hasDisplayableProfile(data)
+    });
+  },
   data: page.createCloudPageData({
     child: {},
     level: {},
@@ -119,7 +131,7 @@ Page({
     const profileData = Object.assign({}, data || {});
     this.profileSnapshotData = profileData;
     if (data && data.syncMode !== 'cloud-error') {
-      snapshotStore.write(PROFILE_SNAPSHOT_KEY, buildCurrentProfileSnapshotId(), profileData, { source: 'profile-home' });
+      snapshotStore.write(getCurrentProfileSnapshotKey(), buildCurrentProfileSnapshotId(), profileData, { source: 'profile-home' });
     }
     this.setData(page.buildCloudPageData(this.data, Object.assign({}, data, {
       profileHydrated: true,
@@ -132,6 +144,8 @@ Page({
     }, buildProfilePresentation(data))));
   },
   async onShow() {
+    this.profilePerf = page.startPagePerf('profile');
+    this.profileCloudRefreshLogged = false;
     page.syncTheme(this);
     const tabBar = this.getTabBar && this.getTabBar();
     if (tabBar) {
@@ -141,14 +155,25 @@ Page({
       return;
     }
     const snapshotId = buildCurrentProfileSnapshotId();
-    const snapshot = snapshotStore.read(PROFILE_SNAPSHOT_KEY, {
+    const snapshot = snapshotStore.read(getCurrentProfileSnapshotKey(), {
+      id: snapshotId,
+      maxAgeMs: PROFILE_SNAPSHOT_MAX_AGE_MS
+    }) || snapshotStore.read(PROFILE_SNAPSHOT_KEY, {
       id: snapshotId,
       maxAgeMs: PROFILE_SNAPSHOT_MAX_AGE_MS
     });
     if (snapshot && hasDisplayableProfile(snapshot)) {
       this.applyProfileData(snapshot);
+      this.profilePerf.ready('pageReady', {
+        source: 'snapshot',
+        cacheHit: true,
+        hydrated: true
+      });
       setTimeout(() => {
-        store.getProfileData((fresh) => this.applyProfileData(fresh)).catch(() => {});
+        store.getProfileData((fresh) => {
+          this.applyProfileData(fresh);
+          this.markProfileCloudRefresh(fresh);
+        }).catch(() => {});
         this.loadAdminStatus();
       }, 600);
       return;
@@ -158,15 +183,34 @@ Page({
         : null;
       if (cachedProfile && hasDisplayableProfile(cachedProfile)) {
         this.applyProfileData(cachedProfile);
+        this.profilePerf.ready('pageReady', {
+          source: 'cache',
+          cacheHit: true,
+          hydrated: true
+        });
         setTimeout(() => {
-          store.getProfileData((fresh) => this.applyProfileData(fresh)).catch(() => {});
+          store.getProfileData((fresh) => {
+            this.applyProfileData(fresh);
+            this.markProfileCloudRefresh(fresh);
+          }).catch(() => {});
           this.loadAdminStatus();
         }, 600);
         return;
       }
     }
-    const data = await store.getProfileData((fresh) => this.applyProfileData(fresh));
+    const data = await store.getProfileData((fresh) => {
+      this.applyProfileData(fresh);
+      this.markProfileCloudRefresh(fresh);
+    });
     this.applyProfileData(data);
+    this.profilePerf.ready('pageReady', {
+      source: data && data.__cacheHit ? 'cache' : (data && data.syncMode === 'cloud-error' ? 'error' : 'cloud'),
+      cacheHit: !!(data && data.__cacheHit),
+      hydrated: hasDisplayableProfile(data)
+    });
+    if (data && !data.__cacheHit && data.syncMode !== 'cloud-error') {
+      this.markProfileCloudRefresh(data);
+    }
     this.loadAdminStatus();
   },
   async loadAdminStatus() {
@@ -178,7 +222,7 @@ Page({
         isAdmin: !!(data && data.isAdmin)
       });
       this.profileSnapshotData = profileData;
-      snapshotStore.write(PROFILE_SNAPSHOT_KEY, buildCurrentProfileSnapshotId(), profileData, { source: 'profile-admin' });
+      snapshotStore.write(getCurrentProfileSnapshotKey(), buildCurrentProfileSnapshotId(), profileData, { source: 'profile-admin' });
     } catch (error) {
       this.setData({ adminVisible: !!this.data.adminVisible });
     }
@@ -250,5 +294,10 @@ Page({
   },
   openAdminPage() {
     wx.navigateTo({ url: '/pages/admin/index' });
+  },
+  switchTheme(event) {
+    const nextTheme = event.currentTarget.dataset.theme || 'warm';
+    themeUtil.setTheme(nextTheme);
+    page.syncTheme(this);
   }
 });

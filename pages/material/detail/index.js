@@ -203,6 +203,7 @@ Page({
     dictionaryAdding: false
   }),
   onLoad(options = {}) {
+    this.materialDetailPerf = page.startPagePerf('material-detail');
     const legacyItem = unwrapListeningItem(wx.getStorageSync('currentListeningSetV1') || null);
     const itemId = decodeItemId(options.itemId || getListeningItemId(legacyItem) || '');
     const snapshot = itemId ? snapshotStore.read(LISTENING_SET_SNAPSHOT_KEY, {
@@ -224,6 +225,14 @@ Page({
         force: !item
       })
     });
+    if (item) {
+      this.materialDetailPerf.ready('pageReady', {
+        source: snapshot ? 'snapshot' : 'storage',
+        cacheHit: true,
+        itemId,
+        hasAudio: !!getAudioSource(item)
+      });
+    }
     const audioSource = getAudioSource(item);
     if (audioSource) {
       this.prepareAudio(audioSource);
@@ -378,6 +387,18 @@ Page({
         answerSummary: buildAnswerSummary(fullItem),
         debugLines: []
       });
+      if (this.materialDetailPerf) {
+        this.materialDetailPerf.ready('pageReady', {
+          source: result && result.__cacheHit ? 'cache' : 'cloud',
+          cacheHit: !!(result && result.__cacheHit),
+          itemId,
+          hasAudio: !!getAudioSource(fullItem)
+        });
+        this.materialDetailPerf.mark('cloudRefresh', {
+          itemId,
+          hasAudio: !!getAudioSource(fullItem)
+        });
+      }
       const audioSource = getAudioSource(fullItem);
       if (audioSource && !this.data.audioSrc && !this.data.audioLoading) {
         this.prepareAudio(audioSource);
@@ -387,6 +408,14 @@ Page({
       }
       this.loadCachedStudyPack(fullItem);
     } catch (error) {
+      if (this.materialDetailPerf) {
+        this.materialDetailPerf.ready('pageReady', {
+          source: 'error',
+          cacheHit: false,
+          itemId,
+          hasAudio: false
+        });
+      }
       this.setData({
         debugLines: [
           `DEBUG: pages/material/detail.hydrateListeningItem -> store.getMaterialItem -> cloud.getMaterialItem -> exception=${error && error.message ? error.message : String(error)}, itemId=${itemId || 'missing'}, targetChildId=N/A`,

@@ -9,6 +9,8 @@ const ENTRY_POSTER_DISMISSED_KEY = 'homeEntryPosterDismissedV1';
 const TODAY_COMPLETED_CACHE_KEY = 'todayCompletedItemsV1';
 const HOME_DASHBOARD_SNAPSHOT_KEY = 'homeDashboardSnapshotV1';
 const MATERIAL_HOME_SNAPSHOT_KEY = 'materialHomeSnapshotV1';
+const LISTENING_PLAN_OVERVIEW_SNAPSHOT_KEY = 'listeningPlanOverviewSnapshotV2';
+const PROFILE_SNAPSHOT_KEY = 'profileHomeSnapshotV1';
 
 const VOCABULARY_ITEM_KEYS = [
   'listeningFlashcardItemsV1',
@@ -82,11 +84,36 @@ function hasListeningMaterialContent(materialIndex) {
   return !!((index.listeningEm1 || []).length || (index.listeningEm2 || []).length);
 }
 
-function writeListeningMaterialSnapshot(materialIndex, source) {
-  if (!materialIndex || materialIndex.syncMode === 'cloud-error' || !hasListeningMaterialContent(materialIndex)) {
+function hasWritingMaterialContent(materialIndex) {
+  const index = materialIndex || {};
+  return !!((index.writingEm1 || []).length || (index.writingEm2 || []).length);
+}
+
+function getMaterialHomeSnapshotKey(moduleId) {
+  return `${MATERIAL_HOME_SNAPSHOT_KEY}:${moduleId}`;
+}
+
+function writeMaterialHomeSnapshots(materialIndex, source) {
+  if (!materialIndex || materialIndex.syncMode === 'cloud-error') {
     return;
   }
-  snapshotStore.write(MATERIAL_HOME_SNAPSHOT_KEY, 'listening', { materialIndex }, { source });
+  if (hasListeningMaterialContent(materialIndex)) {
+    snapshotStore.write(getMaterialHomeSnapshotKey('listening'), 'listening', { materialIndex }, { source });
+  }
+  if (hasWritingMaterialContent(materialIndex)) {
+    snapshotStore.write(getMaterialHomeSnapshotKey('writing'), 'writing', { materialIndex }, { source });
+  }
+}
+
+function getListeningOverviewSnapshotId(levelId) {
+  const target = store.getSelectedStudentTarget ? store.getSelectedStudentTarget() : {};
+  return `${target.targetFamilyId || 'self'}:${target.targetChildId || 'self'}:${levelId || 'A1'}`;
+}
+
+function writeListeningOverviewSnapshot(data, levelId, source) {
+  if (!data || data.syncMode === 'cloud-error' || !(data.materials || []).length) return;
+  const snapshotId = getListeningOverviewSnapshotId(levelId);
+  snapshotStore.write(`${LISTENING_PLAN_OVERVIEW_SNAPSHOT_KEY}:${snapshotId}`, snapshotId, data, { source });
 }
 
 function buildListeningSummary(groupedDailyTasks, options = {}) {
@@ -574,7 +601,17 @@ Page({
     }, 100);
     setTimeout(() => {
       this.prefetchListeningMaterialHome();
+      this.prefetchReadingHome();
     }, 200);
+    setTimeout(() => {
+      this.prefetchListeningOverview();
+    }, 800);
+    setTimeout(() => {
+      this.prefetchRecordHome();
+    }, 1200);
+    setTimeout(() => {
+      this.prefetchProfileHome();
+    }, 1600);
   },
   showNextEntryPosterPage() {
     this.setData({
@@ -626,7 +663,13 @@ Page({
       duration: 900
     });
     try {
-      const data = await store.setStudyRole(nextRole);
+      const roleRequest = store.setStudyRole(nextRole);
+      setTimeout(() => {
+        this.prefetchListeningOverview();
+        this.prefetchRecordHome();
+        this.prefetchProfileHome();
+      }, nextRole === 'student' ? 0 : 1200);
+      const data = await roleRequest;
       this.setData(page.buildCloudPageData(this.data, Object.assign({}, {
         syncMode: data.syncMode,
         isReviewBuild: data.isReviewBuild,
@@ -677,13 +720,86 @@ Page({
       ? store.getCachedReadResult('getMaterialIndex', { moduleId: 'listening' })
       : null;
     if (hasListeningMaterialContent(cached)) {
-      writeListeningMaterialSnapshot(cached, 'home-listening-cache');
+      writeMaterialHomeSnapshots(cached, 'home-material-cache');
       return;
     }
     store.getMaterialIndex({ moduleId: 'listening' }, (freshIndex) => {
-      writeListeningMaterialSnapshot(freshIndex, 'home-listening-refresh');
+      writeMaterialHomeSnapshots(freshIndex, 'home-material-refresh');
     }).then((materialIndex) => {
-      writeListeningMaterialSnapshot(materialIndex, 'home-listening-prefetch');
+      writeMaterialHomeSnapshots(materialIndex, 'home-material-prefetch');
+    }).catch(() => {});
+  },
+  prefetchReadingHome() {
+    const snapshot = snapshotStore.read('readingHomeSnapshotV1', {
+      id: 'directory',
+      maxAgeMs: 10 * 60 * 1000
+    });
+    if (snapshot && ((snapshot.categoryTree || [])[0] || {}).count) {
+      return;
+    }
+    store.getReadingHome({ directoryOnly: true }, (fresh) => {
+      if (fresh && fresh.syncMode !== 'cloud-error' && ((fresh.categoryTree || [])[0] || {}).count) {
+        snapshotStore.write('readingHomeSnapshotV1', 'directory', fresh, { source: 'home-reading-refresh' });
+      }
+    }).then((data) => {
+      if (data && data.syncMode !== 'cloud-error' && ((data.categoryTree || [])[0] || {}).count) {
+        snapshotStore.write('readingHomeSnapshotV1', 'directory', data, { source: 'home-reading-prefetch' });
+      }
+    }).catch(() => {});
+  },
+  prefetchListeningOverview() {
+    const levelId = 'A1';
+    const snapshotId = getListeningOverviewSnapshotId(levelId);
+    const snapshot = snapshotStore.read(`${LISTENING_PLAN_OVERVIEW_SNAPSHOT_KEY}:${snapshotId}`, {
+      id: snapshotId,
+      maxAgeMs: 24 * 60 * 60 * 1000
+    });
+    if (snapshot && (snapshot.materials || []).length) return;
+    store.getListeningPlanOverview({ levelId }, (fresh) => {
+      writeListeningOverviewSnapshot(fresh, levelId, 'home-level-refresh');
+    }).then((data) => {
+      writeListeningOverviewSnapshot(data, levelId, 'home-level-prefetch');
+    }).catch(() => {});
+  },
+  prefetchRecordHome() {
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = now.getMonth() + 1;
+    const target = store.getSelectedStudentTarget ? store.getSelectedStudentTarget() : {};
+    const dashboardPayload = Object.assign({ view: 'record' }, target);
+    const heatmapPayload = Object.assign({ year, month }, target);
+    const dashboardCached = store.getCachedReadResult
+      ? store.getCachedReadResult('getDashboard', dashboardPayload)
+      : null;
+    const heatmapCached = store.getCachedReadResult
+      ? store.getCachedReadResult('getMonthHeatmap', heatmapPayload)
+      : null;
+    if (!dashboardCached) {
+      store.getDashboard({ view: 'record' }).catch(() => {});
+    }
+    if (!heatmapCached) {
+      store.getMonthHeatmap(year, month).catch(() => {});
+    }
+  },
+  prefetchProfileHome() {
+    const target = store.getSelectedStudentTarget ? store.getSelectedStudentTarget() : {};
+    const familyId = String((target && target.targetFamilyId) || '').trim();
+    const childId = String((target && target.targetChildId) || '').trim();
+    const snapshotId = familyId || childId ? `target:${familyId}:${childId}` : 'self';
+    const snapshotKey = `${PROFILE_SNAPSHOT_KEY}:${snapshotId}`;
+    const snapshot = snapshotStore.read(snapshotKey, {
+      id: snapshotId,
+      maxAgeMs: 7 * 24 * 60 * 60 * 1000
+    });
+    if (snapshot && snapshot.child && snapshot.child.nickname) return;
+    store.getProfileData((fresh) => {
+      if (fresh && fresh.syncMode !== 'cloud-error' && fresh.child) {
+        snapshotStore.write(snapshotKey, snapshotId, fresh, { source: 'home-profile-refresh' });
+      }
+    }).then((data) => {
+      if (data && data.syncMode !== 'cloud-error' && data.child) {
+        snapshotStore.write(snapshotKey, snapshotId, data, { source: 'home-profile-prefetch' });
+      }
     }).catch(() => {});
   },
   openTask(event) {
@@ -737,6 +853,7 @@ Page({
     if (!this.ensureNicknameReady()) {
       return;
     }
+    this.prefetchReadingHome();
     wx.navigateTo({
       url: '/pages/reading/index'
     });

@@ -613,6 +613,15 @@ Page({
     this.markLessonRoute('snapshotRendered', {
       hasAudio: hasTaskAudioSource(normalizedTask) ? 'yes' : 'no'
     });
+    if (this.lessonPerf) {
+      this.lessonPerf.ready('pageReady', {
+        source: 'snapshot',
+        cacheHit: true,
+        category: this.category,
+        taskId: this.taskId,
+        hasAudio: hasTaskAudioSource(normalizedTask)
+      });
+    }
     this.prefetchTaskAudio(normalizedTask);
   },
   noop() {},
@@ -680,6 +689,7 @@ Page({
     });
   },
   onLoad(query) {
+    this.lessonPerf = page.startPagePerf('lesson');
     this.category = query.category || 'peppa';
     this.taskId = query.taskId || '';
     this.routeStartedAt = Number(query.routeStartedAt || 0) || Date.now();
@@ -863,7 +873,23 @@ Page({
       this.setData({ lessonLoading: false });
       return;
     }
-    await this.refreshPage();
+    const detail = await this.refreshPage();
+    if (this.lessonPerf) {
+      this.lessonPerf.ready('pageReady', {
+        source: detail && detail.__cacheHit ? 'cache' : (detail && detail.syncMode === 'cloud-error' ? 'error' : 'cloud'),
+        cacheHit: !!(detail && detail.__cacheHit),
+        category: this.category,
+        taskId: this.taskId,
+        hasAudio: !!(detail && detail.task && hasTaskAudioSource(detail.task))
+      });
+      if (detail && !detail.__cacheHit && detail.syncMode !== 'cloud-error') {
+        this.lessonPerf.mark('cloudRefresh', {
+          category: this.category,
+          taskId: this.taskId,
+          hasAudio: !!(detail.task && hasTaskAudioSource(detail.task))
+        });
+      }
+    }
   },
   onHide() {
     if (this.innerAudioContext) {
@@ -1154,7 +1180,16 @@ Page({
       planDayIndex: this.planDayIndex,
       source: this.source,
       taskSnapshot: hasTaskAudioSource(this.data.task) ? this.data.task : undefined
-    }, (fresh) => this.applyFreshTaskDetail(fresh));
+    }, (fresh) => {
+      this.applyFreshTaskDetail(fresh);
+      if (this.lessonPerf) {
+        this.lessonPerf.mark('cloudRefresh', {
+          category: this.category,
+          taskId: this.taskId,
+          hasAudio: !!(fresh && fresh.task && hasTaskAudioSource(fresh.task))
+        });
+      }
+    });
     this.markLessonRoute('detailLoaded', {
       hasTask: detail && detail.task ? 'yes' : 'no',
       hasAudio: detail && detail.task && hasTaskAudioSource(detail.task) ? 'yes' : 'no'
@@ -1165,7 +1200,7 @@ Page({
         syncMode: 'cloud',
         syncDebug: detail.syncDebug || this.data.syncDebug
       }));
-      return;
+      return detail;
     }
     this.taskId = detail && detail.task ? detail.task.taskId || this.taskId : this.taskId;
     this.planRunType = detail && detail.planRunType ? detail.planRunType : this.planRunType;
@@ -1235,11 +1270,12 @@ Page({
         category: this.category,
         taskId: this.taskId
       });
-      return;
+      return detail;
     }
     if (this.innerAudioContext) {
       this.innerAudioContext.stop();
     }
+    return detail;
   },
   async loadLessonSecondaryData(task, progress) {
     const startedAt = Date.now();

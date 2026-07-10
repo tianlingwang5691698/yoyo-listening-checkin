@@ -47,6 +47,7 @@ Page({
   }),
 
   onLoad() {
+    this.speakingPerf = page.startPagePerf('speaking');
     page.syncTheme(this);
     this.recorderManager = wx.getRecorderManager();
     this.recorderManager.onStop((res) => {
@@ -85,6 +86,11 @@ Page({
         questionLoading: false,
         errorText: '问题播放失败，请稍后再试。'
       });
+    });
+    this.speakingPerf.ready('pageReady', {
+      source: 'static',
+      cacheHit: true,
+      exercises: EXERCISES.length
     });
   },
 

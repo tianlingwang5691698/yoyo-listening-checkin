@@ -16,9 +16,28 @@ Page({
     })));
   },
   async onShow() {
+    this.identityPerf = page.startPagePerf('identity');
     page.syncTheme(this);
-    const data = await store.getProfileData((fresh) => this.applyProfileData(fresh));
+    this.identityPerf.ready('pageReady', {
+      source: 'static',
+      cacheHit: true,
+      role: this.data.role
+    });
+    const target = store.getSelectedStudentTarget ? store.getSelectedStudentTarget() : {};
+    const cached = store.getCachedReadResult ? store.getCachedReadResult('getProfileData', target) : null;
+    if (cached) {
+      this.applyProfileData(cached);
+    }
+    const data = await store.getProfileData((fresh) => {
+      this.applyProfileData(fresh);
+      if (this.identityPerf) {
+        this.identityPerf.mark('cloudRefresh', { hasChild: !!(fresh && fresh.child) });
+      }
+    });
     this.applyProfileData(data);
+    if (data && !data.__cacheHit) {
+      this.identityPerf.mark('cloudRefresh', { hasChild: !!data.child });
+    }
   },
   chooseRole(event) {
     const role = event.currentTarget.dataset.role || 'parent';
@@ -40,7 +59,7 @@ Page({
     }
     if (!/^\d{6}$/.test(String(this.data.childCode || ''))) {
       wx.showToast({
-        title: '请输入 6 位孩子 ID',
+        title: '请输入 6 位学号',
         icon: 'none'
       });
       return;

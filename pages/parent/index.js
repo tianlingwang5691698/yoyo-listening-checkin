@@ -218,6 +218,7 @@ Page({
     });
   },
   onShow() {
+    this.parentPerf = page.startPagePerf('parent');
     page.syncTheme(this);
     this.loadParentData();
   },
@@ -225,15 +226,35 @@ Page({
     const loadSeq = this.parentDashboardLoadSeq + 1;
     this.parentDashboardLoadSeq = loadSeq;
     const snapshotId = getParentDashboardSnapshotId();
-    this.applyParentSnapshot(snapshotId);
+    const hasSnapshot = this.applyParentSnapshot(snapshotId);
+    if (hasSnapshot && this.parentPerf) {
+      this.parentPerf.ready('pageReady', {
+        source: 'snapshot',
+        cacheHit: true,
+        reports: (this.data.recentReports || []).length
+      });
+    }
     store.getParentDashboard({ days: 1, summaryOnly: true, statsVersion: 'today-learning-v1' }, (fresh) => {
       if (loadSeq !== this.parentDashboardLoadSeq) return;
       this.saveParentSnapshot(snapshotId, fresh);
       this.applyParentData(fresh);
+      if (this.parentPerf) {
+        this.parentPerf.mark('cloudRefresh', { reports: (fresh.recentReports || []).length });
+      }
     }).then((data) => {
       if (loadSeq !== this.parentDashboardLoadSeq) return;
       this.saveParentSnapshot(snapshotId, data);
       this.applyParentData(data);
+      if (!hasSnapshot && this.parentPerf) {
+        this.parentPerf.ready('pageReady', {
+          source: data && data.__cacheHit ? 'cache' : (data && data.syncMode === 'cloud-error' ? 'error' : 'cloud'),
+          cacheHit: !!(data && data.__cacheHit),
+          reports: ((data && data.recentReports) || []).length
+        });
+      }
+      if (data && !data.__cacheHit && data.syncMode !== 'cloud-error' && this.parentPerf) {
+        this.parentPerf.mark('cloudRefresh', { reports: (data.recentReports || []).length });
+      }
     });
   },
   handleStudentChange(event) {

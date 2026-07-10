@@ -1,47 +1,107 @@
 <view class="theme-{{theme}} page-shell level-page">
-  <view class="level-header">
-    <view class="type-page-title">音频</view>
-    <view class="type-caption level-subtitle">选择级别和听力素材</view>
-  </view>
-
-  <view class="test-card" bindtap="openPlanSettings">
-    <view class="audio-track-mark">
-      <text></text><text></text><text></text><text></text>
-    </view>
-    <view class="test-title">听力计划</view>
-    <view class="test-copy">{{planSummaryText}}</view>
-    <view class="test-action">设置计划</view>
-  </view>
-
-  <view class="fixed-card" wx:if="{{isYoyoFixedPlan}}" bindtap="openFixedStage">
-    <view>
-      <view class="stage-row-title">佑佑当前计划</view>
-      <view class="stage-row-meta type-caption">A1 · {{fixedPlan.planPhaseLabel || '阶段二'}} · 不受自定义选择影响</view>
-    </view>
-    <view class="stage-row-state">查看</view>
-  </view>
-
-  <view class="level-tabs">
-    <block wx:for="{{levelTabs}}" wx:key="levelId">
-      <view class="level-tab {{item.active ? 'is-active' : ''}} {{item.enabled ? '' : 'is-disabled'}}" data-enabled="{{item.enabled}}" data-level-id="{{item.levelId}}" bindtap="chooseLevel">
-        {{item.levelId}}
+  <block wx:if="{{theme === 'library'}}">
+    <view class="audio-library-head">
+      <view>
+        <view class="audio-library-kicker">声音档案室</view>
+        <view class="audio-library-title">音频</view>
+        <view class="audio-library-subtitle">选择级别和听力素材</view>
       </view>
-    </block>
-  </view>
+      <view class="audio-library-record-edge"></view>
+    </view>
 
-  <view class="loading-card" wx:if="{{levelLoading && !materials.length}}">正在加载 {{selectedLevel}}</view>
+    <view class="audio-plan-ticket" bindtap="openPlanSettings">
+      <view>
+        <view class="audio-plan-label">听力计划</view>
+        <view class="audio-plan-copy">{{planSummaryText}}</view>
+      </view>
+      <view class="audio-plan-action">设置计划</view>
+    </view>
 
-  <view class="stage-channel">
-    <view class="channel-rail"></view>
-    <block wx:for="{{materials}}" wx:key="category">
-      <view class="stage-row {{item.disabled ? 'is-disabled' : ''}}" data-category="{{item.category}}" data-level-id="{{item.levelId}}" data-disabled="{{item.disabled}}" bindtap="openMaterial">
-        <view class="stage-wave"><text></text><text></text><text></text></view>
-        <view>
-          <view class="stage-row-title">{{item.title}}</view>
-          <view class="stage-row-meta type-caption">{{item.countText}}</view>
+    <view class="audio-fixed-bookmark" wx:if="{{isYoyoFixedPlan}}" bindtap="openFixedStage">
+      <view>
+        <view class="audio-bookmark-title">佑佑当前计划</view>
+        <view class="audio-bookmark-meta">A1 · {{fixedPlan.planPhaseLabel || '阶段二'}} · 不受自定义选择影响</view>
+      </view>
+      <view class="audio-bookmark-action">查看</view>
+    </view>
+
+    <view class="audio-index-tabs">
+      <block wx:for="{{levelTabs}}" wx:key="levelId">
+        <view class="audio-index-tab {{item.active ? 'is-active' : ''}} {{item.enabled ? '' : 'is-disabled'}}" data-enabled="{{item.enabled}}" data-level-id="{{item.levelId}}" bindtap="chooseLevel">
+          {{item.levelId}}
         </view>
-        <view class="stage-row-state">{{item.stateText}}</view>
+      </block>
+    </view>
+
+    <view class="audio-catalog-cabinet">
+      <view class="audio-catalog-error" wx:if="{{syncMode === 'cloud-error'}}">内容暂时没有同步成功，请稍后再试</view>
+      <block wx:if="{{levelLoading && !materials.length}}">
+        <view class="audio-loading-note"></view>
+        <view class="audio-spine-row is-skeleton"></view>
+        <view class="audio-spine-row is-skeleton is-short"></view>
+        <view class="audio-spine-row is-skeleton"></view>
+      </block>
+      <block wx:elif="{{materials.length}}">
+        <block wx:for="{{materials}}" wx:key="category">
+          <view class="audio-spine-row {{item.disabled ? 'is-disabled' : ''}} {{item.stateText === '已选' ? 'is-selected' : ''}}" data-category="{{item.category}}" data-level-id="{{item.levelId}}" data-disabled="{{item.disabled}}" bindtap="openMaterial">
+            <view class="audio-spine-mark"></view>
+            <view class="audio-spine-main">
+              <view class="audio-spine-title">{{item.title}}</view>
+              <view class="audio-spine-meta">{{item.countText}}</view>
+            </view>
+            <view class="audio-spine-state">{{item.stateText}}</view>
+          </view>
+        </block>
+      </block>
+      <view class="audio-empty-drawer" wx:else>
+        <view class="audio-empty-title">该级别暂时没有听力素材</view>
       </view>
-    </block>
-  </view>
+    </view>
+  </block>
+
+  <block wx:else>
+    <view class="level-header">
+      <view class="type-page-title">音频</view>
+      <view class="type-caption level-subtitle">选择级别和听力素材</view>
+    </view>
+
+    <view class="test-card" bindtap="openPlanSettings">
+      <view class="audio-track-mark">
+        <text></text><text></text><text></text><text></text>
+      </view>
+      <view class="test-title">听力计划</view>
+      <view class="test-copy">{{planSummaryText}}</view>
+      <view class="test-action">设置计划</view>
+    </view>
+
+    <view class="fixed-card" wx:if="{{isYoyoFixedPlan}}" bindtap="openFixedStage">
+      <view>
+        <view class="stage-row-title">佑佑当前计划</view>
+        <view class="stage-row-meta type-caption">A1 · {{fixedPlan.planPhaseLabel || '阶段二'}} · 不受自定义选择影响</view>
+      </view>
+      <view class="stage-row-state">查看</view>
+    </view>
+
+    <view class="level-tabs">
+      <block wx:for="{{levelTabs}}" wx:key="levelId">
+        <view class="level-tab {{item.active ? 'is-active' : ''}} {{item.enabled ? '' : 'is-disabled'}}" data-enabled="{{item.enabled}}" data-level-id="{{item.levelId}}" bindtap="chooseLevel">
+          {{item.levelId}}
+        </view>
+      </block>
+    </view>
+
+    <view class="stage-channel">
+      <view class="channel-rail"></view>
+      <block wx:for="{{materials}}" wx:key="category">
+        <view class="stage-row {{item.disabled ? 'is-disabled' : ''}}" data-category="{{item.category}}" data-level-id="{{item.levelId}}" data-disabled="{{item.disabled}}" bindtap="openMaterial">
+          <view class="stage-wave"><text></text><text></text><text></text></view>
+          <view>
+            <view class="stage-row-title">{{item.title}}</view>
+            <view class="stage-row-meta type-caption">{{item.countText}}</view>
+          </view>
+          <view class="stage-row-state">{{item.stateText}}</view>
+        </view>
+      </block>
+    </view>
+  </block>
 </view>

@@ -6,6 +6,10 @@ const LISTENING_SET_SNAPSHOT_KEY = 'currentListeningSetV1';
 const WRITING_PROMPT_SNAPSHOT_KEY = 'currentWritingPromptV1';
 const MATERIAL_HOME_SNAPSHOT_KEY = 'materialHomeSnapshotV1';
 
+function getMaterialHomeSnapshotKey(moduleId) {
+  return `${MATERIAL_HOME_SNAPSHOT_KEY}:${moduleId}`;
+}
+
 function buildMaterials(materialIndex) {
   return {
     writing: {
@@ -102,6 +106,14 @@ function hasMaterialContent(moduleId, materialIndex) {
   return !!((index.writingEm1 || []).length || (index.writingEm2 || []).length);
 }
 
+function countMaterialItems(moduleId, materialIndex) {
+  const index = materialIndex || {};
+  if (moduleId === 'listening') {
+    return (index.listeningEm1 || []).length + (index.listeningEm2 || []).length;
+  }
+  return (index.writingEm1 || []).length + (index.writingEm2 || []).length;
+}
+
 function buildMaterialDebug(moduleId, materialIndex) {
   const index = materialIndex || {};
   const counts = {
@@ -154,8 +166,12 @@ Page({
   }),
   async onLoad(options) {
     const moduleId = options && options.module === 'writing' ? 'writing' : 'listening';
+    this.materialPerf = page.startPagePerf(`material-${moduleId}`);
     const baseConfig = buildMaterials({})[moduleId];
-    const snapshot = snapshotStore.read(MATERIAL_HOME_SNAPSHOT_KEY, {
+    const snapshot = snapshotStore.read(getMaterialHomeSnapshotKey(moduleId), {
+      id: moduleId,
+      maxAgeMs: 10 * 60 * 1000
+    }) || snapshotStore.read(MATERIAL_HOME_SNAPSHOT_KEY, {
       id: moduleId,
       maxAgeMs: 10 * 60 * 1000
     });
@@ -169,6 +185,11 @@ Page({
         moduleId,
         loading: false,
         pageReady: true
+      });
+      this.materialPerf.ready('pageReady', {
+        source: snapshotIndex ? 'snapshot' : 'cache',
+        cacheHit: true,
+        items: countMaterialItems(moduleId, firstMaterialIndex)
       });
     } else {
       this.setData({
@@ -186,7 +207,12 @@ Page({
     const materialIndex = await store.getMaterialIndex({ moduleId }, (freshIndex) => {
       if (freshIndex && freshIndex.syncMode !== 'cloud-error' && hasMaterialContent(moduleId, freshIndex)) {
         applyMaterialConfig(this, moduleId, freshIndex);
-        snapshotStore.write(MATERIAL_HOME_SNAPSHOT_KEY, moduleId, { materialIndex: freshIndex }, { source: `material-${moduleId}` });
+        snapshotStore.write(getMaterialHomeSnapshotKey(moduleId), moduleId, { materialIndex: freshIndex }, { source: `material-${moduleId}` });
+        if (this.materialPerf) {
+          this.materialPerf.mark('cloudRefresh', {
+            items: countMaterialItems(moduleId, freshIndex)
+          });
+        }
       }
     });
     if (materialIndex && materialIndex.syncMode !== 'cloud-error' && hasMaterialContent(moduleId, materialIndex)) {
@@ -199,7 +225,19 @@ Page({
       });
     }
     if (materialIndex && materialIndex.syncMode !== 'cloud-error' && hasMaterialContent(moduleId, materialIndex)) {
-      snapshotStore.write(MATERIAL_HOME_SNAPSHOT_KEY, moduleId, { materialIndex }, { source: `material-${moduleId}` });
+      snapshotStore.write(getMaterialHomeSnapshotKey(moduleId), moduleId, { materialIndex }, { source: `material-${moduleId}` });
+    }
+    if (this.materialPerf && !firstMaterialIndex) {
+      this.materialPerf.ready('pageReady', {
+        source: materialIndex && materialIndex.__cacheHit ? 'cache' : (materialIndex && materialIndex.syncMode === 'cloud-error' ? 'error' : 'cloud'),
+        cacheHit: !!(materialIndex && materialIndex.__cacheHit),
+        items: countMaterialItems(moduleId, materialIndex)
+      });
+      if (materialIndex && !materialIndex.__cacheHit && materialIndex.syncMode !== 'cloud-error') {
+        this.materialPerf.mark('cloudRefresh', {
+          items: countMaterialItems(moduleId, materialIndex)
+        });
+      }
     }
   },
   onShow() {
