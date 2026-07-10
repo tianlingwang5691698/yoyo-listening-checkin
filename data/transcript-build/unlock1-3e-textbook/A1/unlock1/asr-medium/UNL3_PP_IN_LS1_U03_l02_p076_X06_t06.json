@@ -1,0 +1,583 @@
+{
+  "model": "medium",
+  "language": "en",
+  "text": "3.6 This is Rabia. She's from Turkey. She takes the bus to the university every day. The bus comes at 7.30. Rabia arrives at 8.30. She has a biology class at 9 on Tuesday and Thursday. On Wednesday she has lunch with her friends at 12.30. On Thursday Rabia has an English class at 3 o'clock in the afternoon. She goes to the cinema with her family on Friday evening. On Saturday she exercises in the morning. On Sunday she does her homework in the evening. She has a busy week.",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 1640,
+      "text": "3.6",
+      "words": [
+        {
+          "word": "3",
+          "start": 0.0,
+          "end": 0.58
+        },
+        {
+          "word": ".6",
+          "start": 0.58,
+          "end": 1.64
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 2800,
+      "endMs": 6940,
+      "text": "This is Rabia. She's from Turkey.",
+      "words": [
+        {
+          "word": "This",
+          "start": 2.8000000000000003,
+          "end": 3.46
+        },
+        {
+          "word": "is",
+          "start": 3.46,
+          "end": 4.06
+        },
+        {
+          "word": "Rabia.",
+          "start": 4.06,
+          "end": 4.68
+        },
+        {
+          "word": "She's",
+          "start": 5.46,
+          "end": 5.88
+        },
+        {
+          "word": "from",
+          "start": 5.88,
+          "end": 6.18
+        },
+        {
+          "word": "Turkey.",
+          "start": 6.18,
+          "end": 6.94
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 8100,
+      "endMs": 12100,
+      "text": "She takes the bus to the university every day.",
+      "words": [
+        {
+          "word": "She",
+          "start": 8.1,
+          "end": 8.2
+        },
+        {
+          "word": "takes",
+          "start": 8.2,
+          "end": 8.64
+        },
+        {
+          "word": "the",
+          "start": 8.64,
+          "end": 8.94
+        },
+        {
+          "word": "bus",
+          "start": 8.94,
+          "end": 9.4
+        },
+        {
+          "word": "to",
+          "start": 9.4,
+          "end": 9.66
+        },
+        {
+          "word": "the",
+          "start": 9.66,
+          "end": 9.86
+        },
+        {
+          "word": "university",
+          "start": 9.86,
+          "end": 10.78
+        },
+        {
+          "word": "every",
+          "start": 10.78,
+          "end": 11.56
+        },
+        {
+          "word": "day.",
+          "start": 11.56,
+          "end": 12.1
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 13060,
+      "endMs": 15640,
+      "text": "The bus comes at 7.30.",
+      "words": [
+        {
+          "word": "The",
+          "start": 13.06,
+          "end": 13.12
+        },
+        {
+          "word": "bus",
+          "start": 13.12,
+          "end": 13.42
+        },
+        {
+          "word": "comes",
+          "start": 13.42,
+          "end": 13.94
+        },
+        {
+          "word": "at",
+          "start": 13.94,
+          "end": 14.64
+        },
+        {
+          "word": "7",
+          "start": 14.64,
+          "end": 15.06
+        },
+        {
+          "word": ".30.",
+          "start": 15.06,
+          "end": 15.64
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 16900,
+      "endMs": 19720,
+      "text": "Rabia arrives at 8.30.",
+      "words": [
+        {
+          "word": "Rabia",
+          "start": 16.9,
+          "end": 17.52
+        },
+        {
+          "word": "arrives",
+          "start": 17.52,
+          "end": 18.16
+        },
+        {
+          "word": "at",
+          "start": 18.16,
+          "end": 18.74
+        },
+        {
+          "word": "8",
+          "start": 18.74,
+          "end": 19.12
+        },
+        {
+          "word": ".30.",
+          "start": 19.12,
+          "end": 19.72
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "startMs": 21020,
+      "endMs": 27280,
+      "text": "She has a biology class at 9 on Tuesday and Thursday.",
+      "words": [
+        {
+          "word": "She",
+          "start": 21.02,
+          "end": 21.3
+        },
+        {
+          "word": "has",
+          "start": 21.3,
+          "end": 21.82
+        },
+        {
+          "word": "a",
+          "start": 21.82,
+          "end": 22.12
+        },
+        {
+          "word": "biology",
+          "start": 22.12,
+          "end": 22.54
+        },
+        {
+          "word": "class",
+          "start": 22.54,
+          "end": 23.28
+        },
+        {
+          "word": "at",
+          "start": 23.28,
+          "end": 23.82
+        },
+        {
+          "word": "9",
+          "start": 23.82,
+          "end": 24.28
+        },
+        {
+          "word": "on",
+          "start": 24.28,
+          "end": 25.06
+        },
+        {
+          "word": "Tuesday",
+          "start": 25.06,
+          "end": 25.92
+        },
+        {
+          "word": "and",
+          "start": 25.92,
+          "end": 26.62
+        },
+        {
+          "word": "Thursday.",
+          "start": 26.62,
+          "end": 27.28
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "startMs": 28280,
+      "endMs": 34120,
+      "text": "On Wednesday she has lunch with her friends at 12.30.",
+      "words": [
+        {
+          "word": "On",
+          "start": 28.28,
+          "end": 28.76
+        },
+        {
+          "word": "Wednesday",
+          "start": 28.76,
+          "end": 29.42
+        },
+        {
+          "word": "she",
+          "start": 29.42,
+          "end": 30.28
+        },
+        {
+          "word": "has",
+          "start": 30.28,
+          "end": 30.64
+        },
+        {
+          "word": "lunch",
+          "start": 30.64,
+          "end": 31.08
+        },
+        {
+          "word": "with",
+          "start": 31.08,
+          "end": 31.3
+        },
+        {
+          "word": "her",
+          "start": 31.3,
+          "end": 31.7
+        },
+        {
+          "word": "friends",
+          "start": 31.7,
+          "end": 32.2
+        },
+        {
+          "word": "at",
+          "start": 32.2,
+          "end": 33.02
+        },
+        {
+          "word": "12",
+          "start": 33.02,
+          "end": 33.48
+        },
+        {
+          "word": ".30.",
+          "start": 33.48,
+          "end": 34.12
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "startMs": 35380,
+      "endMs": 42140,
+      "text": "On Thursday Rabia has an English class at 3 o'clock in the afternoon.",
+      "words": [
+        {
+          "word": "On",
+          "start": 35.38,
+          "end": 35.56
+        },
+        {
+          "word": "Thursday",
+          "start": 35.56,
+          "end": 36.66
+        },
+        {
+          "word": "Rabia",
+          "start": 36.66,
+          "end": 37.42
+        },
+        {
+          "word": "has",
+          "start": 37.42,
+          "end": 37.84
+        },
+        {
+          "word": "an",
+          "start": 37.84,
+          "end": 38.18
+        },
+        {
+          "word": "English",
+          "start": 38.18,
+          "end": 38.56
+        },
+        {
+          "word": "class",
+          "start": 38.56,
+          "end": 39.22
+        },
+        {
+          "word": "at",
+          "start": 39.22,
+          "end": 39.94
+        },
+        {
+          "word": "3",
+          "start": 39.94,
+          "end": 40.42
+        },
+        {
+          "word": "o",
+          "start": 40.42,
+          "end": 40.54
+        },
+        {
+          "word": "'clock",
+          "start": 40.54,
+          "end": 40.84
+        },
+        {
+          "word": "in",
+          "start": 40.84,
+          "end": 41.12
+        },
+        {
+          "word": "the",
+          "start": 41.12,
+          "end": 41.34
+        },
+        {
+          "word": "afternoon.",
+          "start": 41.34,
+          "end": 42.14
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "startMs": 43340,
+      "endMs": 48220,
+      "text": "She goes to the cinema with her family on Friday evening.",
+      "words": [
+        {
+          "word": "She",
+          "start": 43.34,
+          "end": 43.64
+        },
+        {
+          "word": "goes",
+          "start": 43.64,
+          "end": 44.06
+        },
+        {
+          "word": "to",
+          "start": 44.06,
+          "end": 44.38
+        },
+        {
+          "word": "the",
+          "start": 44.38,
+          "end": 44.64
+        },
+        {
+          "word": "cinema",
+          "start": 44.64,
+          "end": 45.06
+        },
+        {
+          "word": "with",
+          "start": 45.06,
+          "end": 45.48
+        },
+        {
+          "word": "her",
+          "start": 45.48,
+          "end": 45.82
+        },
+        {
+          "word": "family",
+          "start": 45.82,
+          "end": 46.32
+        },
+        {
+          "word": "on",
+          "start": 46.32,
+          "end": 47.1
+        },
+        {
+          "word": "Friday",
+          "start": 47.1,
+          "end": 47.56
+        },
+        {
+          "word": "evening.",
+          "start": 47.56,
+          "end": 48.22
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "startMs": 49600,
+      "endMs": 53340,
+      "text": "On Saturday she exercises in the morning.",
+      "words": [
+        {
+          "word": "On",
+          "start": 49.6,
+          "end": 49.88
+        },
+        {
+          "word": "Saturday",
+          "start": 49.88,
+          "end": 50.58
+        },
+        {
+          "word": "she",
+          "start": 50.58,
+          "end": 51.5
+        },
+        {
+          "word": "exercises",
+          "start": 51.5,
+          "end": 52.2
+        },
+        {
+          "word": "in",
+          "start": 52.2,
+          "end": 52.68
+        },
+        {
+          "word": "the",
+          "start": 52.68,
+          "end": 52.84
+        },
+        {
+          "word": "morning.",
+          "start": 52.84,
+          "end": 53.34
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "startMs": 53340,
+      "endMs": 58440,
+      "text": "On Sunday she does her homework in the evening.",
+      "words": [
+        {
+          "word": "On",
+          "start": 53.34,
+          "end": 54.74
+        },
+        {
+          "word": "Sunday",
+          "start": 54.74,
+          "end": 55.26
+        },
+        {
+          "word": "she",
+          "start": 55.26,
+          "end": 55.98
+        },
+        {
+          "word": "does",
+          "start": 55.98,
+          "end": 56.3
+        },
+        {
+          "word": "her",
+          "start": 56.3,
+          "end": 56.66
+        },
+        {
+          "word": "homework",
+          "start": 56.66,
+          "end": 57.28
+        },
+        {
+          "word": "in",
+          "start": 57.28,
+          "end": 57.76
+        },
+        {
+          "word": "the",
+          "start": 57.76,
+          "end": 57.96
+        },
+        {
+          "word": "evening.",
+          "start": 57.96,
+          "end": 58.44
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "startMs": 59720,
+      "endMs": 61620,
+      "text": "She has a busy week.",
+      "words": [
+        {
+          "word": "She",
+          "start": 59.72,
+          "end": 59.94
+        },
+        {
+          "word": "has",
+          "start": 59.94,
+          "end": 60.4
+        },
+        {
+          "word": "a",
+          "start": 60.4,
+          "end": 60.86
+        },
+        {
+          "word": "busy",
+          "start": 60.86,
+          "end": 61.16
+        },
+        {
+          "word": "week.",
+          "start": 61.16,
+          "end": 61.62
+        }
+      ]
+    }
+  ]
+}

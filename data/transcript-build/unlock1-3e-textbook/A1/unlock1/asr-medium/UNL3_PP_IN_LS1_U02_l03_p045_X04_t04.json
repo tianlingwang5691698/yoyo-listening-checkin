@@ -1,0 +1,660 @@
+{
+  "model": "medium",
+  "language": "en",
+  "text": "2.4 1. The weather this afternoon in Riyadh is sunny with a high temperature of 22 degrees. 2. The weather in Tabuk is very different. It's snowy and the temperature is unlikely to go above zero until much later. 3. In Istanbul today, it's cloudy with warm temperatures of 24 degrees. Tomorrow, on the other hand. 4. It's windy this afternoon in Shanghai, but temperatures are quite high at around 27 degrees. 5. In the Japanese capital of Tokyo today, it's stormy. So, try not to go out if you want to. 6. Over in Sapporo, temperatures are only around 9 degrees today and it's likely to be rainy.",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 1900,
+      "text": "2.4",
+      "words": [
+        {
+          "word": "2",
+          "start": 0.0,
+          "end": 0.46
+        },
+        {
+          "word": ".4",
+          "start": 0.46,
+          "end": 1.9
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 1900,
+      "endMs": 3380,
+      "text": "1.",
+      "words": [
+        {
+          "word": "1.",
+          "start": 1.9,
+          "end": 3.38
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 4080,
+      "endMs": 11140,
+      "text": "The weather this afternoon in Riyadh is sunny with a high temperature of 22 degrees.",
+      "words": [
+        {
+          "word": "weather",
+          "start": 4.08,
+          "end": 4.42
+        },
+        {
+          "word": "this",
+          "start": 4.42,
+          "end": 4.84
+        },
+        {
+          "word": "afternoon",
+          "start": 4.84,
+          "end": 5.44
+        },
+        {
+          "word": "in",
+          "start": 5.44,
+          "end": 5.88
+        },
+        {
+          "word": "Riyadh",
+          "start": 5.88,
+          "end": 6.4
+        },
+        {
+          "word": "is",
+          "start": 6.4,
+          "end": 7.04
+        },
+        {
+          "word": "sunny",
+          "start": 7.04,
+          "end": 7.4
+        },
+        {
+          "word": "with",
+          "start": 7.4,
+          "end": 7.94
+        },
+        {
+          "word": "a",
+          "start": 7.94,
+          "end": 8.18
+        },
+        {
+          "word": "high",
+          "start": 8.18,
+          "end": 8.42
+        },
+        {
+          "word": "temperature",
+          "start": 8.42,
+          "end": 9.08
+        },
+        {
+          "word": "of",
+          "start": 9.08,
+          "end": 9.54
+        },
+        {
+          "word": "22",
+          "start": 9.54,
+          "end": 10.12
+        },
+        {
+          "word": "degrees.",
+          "start": 10.12,
+          "end": 11.14
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 15300,
+      "endMs": 15700,
+      "text": "2.",
+      "words": [
+        {
+          "word": "2.",
+          "start": 15.3,
+          "end": 15.7
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 16940,
+      "endMs": 26220,
+      "text": "The weather in Tabuk is very different. It's snowy and the temperature is unlikely to go above zero until much later.",
+      "words": [
+        {
+          "word": "The",
+          "start": 16.94,
+          "end": 17.02
+        },
+        {
+          "word": "weather",
+          "start": 17.02,
+          "end": 17.4
+        },
+        {
+          "word": "in",
+          "start": 17.4,
+          "end": 17.74
+        },
+        {
+          "word": "Tabuk",
+          "start": 17.74,
+          "end": 18.18
+        },
+        {
+          "word": "is",
+          "start": 18.18,
+          "end": 18.54
+        },
+        {
+          "word": "very",
+          "start": 18.54,
+          "end": 19.0
+        },
+        {
+          "word": "different.",
+          "start": 19.0,
+          "end": 19.46
+        },
+        {
+          "word": "It's",
+          "start": 20.02,
+          "end": 20.54
+        },
+        {
+          "word": "snowy",
+          "start": 20.54,
+          "end": 21.26
+        },
+        {
+          "word": "and",
+          "start": 21.26,
+          "end": 21.44
+        },
+        {
+          "word": "the",
+          "start": 21.44,
+          "end": 21.68
+        },
+        {
+          "word": "temperature",
+          "start": 21.68,
+          "end": 22.14
+        },
+        {
+          "word": "is",
+          "start": 22.14,
+          "end": 22.54
+        },
+        {
+          "word": "unlikely",
+          "start": 22.54,
+          "end": 23.0
+        },
+        {
+          "word": "to",
+          "start": 23.0,
+          "end": 23.3
+        },
+        {
+          "word": "go",
+          "start": 23.3,
+          "end": 23.46
+        },
+        {
+          "word": "above",
+          "start": 23.46,
+          "end": 23.78
+        },
+        {
+          "word": "zero",
+          "start": 23.78,
+          "end": 24.32
+        },
+        {
+          "word": "until",
+          "start": 24.32,
+          "end": 24.8
+        },
+        {
+          "word": "much",
+          "start": 24.8,
+          "end": 25.46
+        },
+        {
+          "word": "later.",
+          "start": 25.46,
+          "end": 26.22
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "startMs": 26720,
+      "endMs": 27640,
+      "text": "3.",
+      "words": [
+        {
+          "word": "3.",
+          "start": 26.72,
+          "end": 27.64
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "startMs": 27640,
+      "endMs": 37640,
+      "text": "In Istanbul today, it's cloudy with warm temperatures of 24 degrees. Tomorrow, on the other hand.",
+      "words": [
+        {
+          "word": "In",
+          "start": 27.64,
+          "end": 28.9
+        },
+        {
+          "word": "Istanbul",
+          "start": 28.9,
+          "end": 29.6
+        },
+        {
+          "word": "today,",
+          "start": 29.6,
+          "end": 30.16
+        },
+        {
+          "word": "it's",
+          "start": 30.64,
+          "end": 30.92
+        },
+        {
+          "word": "cloudy",
+          "start": 30.92,
+          "end": 31.34
+        },
+        {
+          "word": "with",
+          "start": 31.34,
+          "end": 32.02
+        },
+        {
+          "word": "warm",
+          "start": 32.02,
+          "end": 32.52
+        },
+        {
+          "word": "temperatures",
+          "start": 32.52,
+          "end": 33.18
+        },
+        {
+          "word": "of",
+          "start": 33.18,
+          "end": 33.68
+        },
+        {
+          "word": "24",
+          "start": 33.68,
+          "end": 34.24
+        },
+        {
+          "word": "degrees.",
+          "start": 34.24,
+          "end": 35.08
+        },
+        {
+          "word": "Tomorrow,",
+          "start": 35.6,
+          "end": 36.22
+        },
+        {
+          "word": "on",
+          "start": 36.36,
+          "end": 36.82
+        },
+        {
+          "word": "the",
+          "start": 36.82,
+          "end": 37.02
+        },
+        {
+          "word": "other",
+          "start": 37.02,
+          "end": 37.3
+        },
+        {
+          "word": "hand.",
+          "start": 37.3,
+          "end": 37.78
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "startMs": 39940,
+      "endMs": 40320,
+      "text": "4.",
+      "words": [
+        {
+          "word": "4.",
+          "start": 39.94,
+          "end": 40.32
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "startMs": 41400,
+      "endMs": 47980,
+      "text": "It's windy this afternoon in Shanghai, but temperatures are quite high at around 27 degrees.",
+      "words": [
+        {
+          "word": "It's",
+          "start": 41.4,
+          "end": 41.76
+        },
+        {
+          "word": "windy",
+          "start": 41.76,
+          "end": 42.06
+        },
+        {
+          "word": "this",
+          "start": 42.06,
+          "end": 42.44
+        },
+        {
+          "word": "afternoon",
+          "start": 42.44,
+          "end": 42.92
+        },
+        {
+          "word": "in",
+          "start": 42.92,
+          "end": 43.24
+        },
+        {
+          "word": "Shanghai,",
+          "start": 43.24,
+          "end": 43.72
+        },
+        {
+          "word": "but",
+          "start": 44.2,
+          "end": 44.38
+        },
+        {
+          "word": "temperatures",
+          "start": 44.38,
+          "end": 44.86
+        },
+        {
+          "word": "are",
+          "start": 44.86,
+          "end": 45.26
+        },
+        {
+          "word": "quite",
+          "start": 45.26,
+          "end": 45.6
+        },
+        {
+          "word": "high",
+          "start": 45.6,
+          "end": 45.96
+        },
+        {
+          "word": "at",
+          "start": 45.96,
+          "end": 46.26
+        },
+        {
+          "word": "around",
+          "start": 46.26,
+          "end": 46.58
+        },
+        {
+          "word": "27",
+          "start": 46.58,
+          "end": 47.28
+        },
+        {
+          "word": "degrees.",
+          "start": 47.28,
+          "end": 47.98
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "startMs": 49740,
+      "endMs": 50700,
+      "text": "5.",
+      "words": [
+        {
+          "word": "5.",
+          "start": 49.74,
+          "end": 50.7
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "startMs": 50700,
+      "endMs": 61480,
+      "text": "In the Japanese capital of Tokyo today, it's stormy. So, try not to go out if you want to.",
+      "words": [
+        {
+          "word": "In",
+          "start": 50.7,
+          "end": 51.94
+        },
+        {
+          "word": "the",
+          "start": 51.94,
+          "end": 52.26
+        },
+        {
+          "word": "Japanese",
+          "start": 52.26,
+          "end": 52.92
+        },
+        {
+          "word": "capital",
+          "start": 52.92,
+          "end": 53.42
+        },
+        {
+          "word": "of",
+          "start": 53.42,
+          "end": 53.76
+        },
+        {
+          "word": "Tokyo",
+          "start": 53.76,
+          "end": 54.16
+        },
+        {
+          "word": "today,",
+          "start": 54.16,
+          "end": 54.68
+        },
+        {
+          "word": "it's",
+          "start": 55.38,
+          "end": 55.82
+        },
+        {
+          "word": "stormy.",
+          "start": 55.82,
+          "end": 56.72
+        },
+        {
+          "word": "So,",
+          "start": 57.16,
+          "end": 57.34
+        },
+        {
+          "word": "try",
+          "start": 57.68,
+          "end": 58.0
+        },
+        {
+          "word": "not",
+          "start": 58.0,
+          "end": 58.3
+        },
+        {
+          "word": "to",
+          "start": 58.3,
+          "end": 58.48
+        },
+        {
+          "word": "go",
+          "start": 58.48,
+          "end": 58.72
+        },
+        {
+          "word": "out",
+          "start": 58.72,
+          "end": 59.16
+        },
+        {
+          "word": "if",
+          "start": 59.16,
+          "end": 59.42
+        },
+        {
+          "word": "you",
+          "start": 59.42,
+          "end": 60.2
+        },
+        {
+          "word": "want",
+          "start": 60.2,
+          "end": 61.28
+        },
+        {
+          "word": "to.",
+          "start": 61.28,
+          "end": 61.48
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "startMs": 61480,
+      "endMs": 62240,
+      "text": "6.",
+      "words": [
+        {
+          "word": "6.",
+          "start": 61.48,
+          "end": 62.24
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "startMs": 63320,
+      "endMs": 69960,
+      "text": "Over in Sapporo, temperatures are only around 9 degrees today and it's likely to be rainy.",
+      "words": [
+        {
+          "word": "Over",
+          "start": 63.32,
+          "end": 63.68
+        },
+        {
+          "word": "in",
+          "start": 63.68,
+          "end": 64.04
+        },
+        {
+          "word": "Sapporo,",
+          "start": 64.04,
+          "end": 64.86
+        },
+        {
+          "word": "temperatures",
+          "start": 65.22,
+          "end": 65.6
+        },
+        {
+          "word": "are",
+          "start": 65.6,
+          "end": 65.84
+        },
+        {
+          "word": "only",
+          "start": 65.84,
+          "end": 66.24
+        },
+        {
+          "word": "around",
+          "start": 66.24,
+          "end": 66.7
+        },
+        {
+          "word": "9",
+          "start": 66.7,
+          "end": 67.06
+        },
+        {
+          "word": "degrees",
+          "start": 67.06,
+          "end": 67.52
+        },
+        {
+          "word": "today",
+          "start": 67.52,
+          "end": 67.98
+        },
+        {
+          "word": "and",
+          "start": 67.98,
+          "end": 68.44
+        },
+        {
+          "word": "it's",
+          "start": 68.44,
+          "end": 68.74
+        },
+        {
+          "word": "likely",
+          "start": 68.74,
+          "end": 69.08
+        },
+        {
+          "word": "to",
+          "start": 69.08,
+          "end": 69.36
+        },
+        {
+          "word": "be",
+          "start": 69.36,
+          "end": 69.64
+        },
+        {
+          "word": "rainy.",
+          "start": 69.64,
+          "end": 69.96
+        }
+      ]
+    }
+  ],
+  "sanitization": {
+    "removedInvalidWordCount": 1,
+    "rule": "drop_word_when_end_lte_start_or_start_negative"
+  }
+}

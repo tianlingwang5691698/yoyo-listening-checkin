@@ -1,0 +1,3283 @@
+{
+  "reviewTrackIds": [],
+  "tracks": [
+    {
+      "trackId": "track-unlock1-3e-u01-t01",
+      "officialTokenCoverage": 0.8095,
+      "asrTokenCoverage": 0.8095,
+      "officialTokenCount": 21,
+      "asrTokenCount": 21,
+      "status": "pass",
+      "first": {
+        "text": "1",
+        "startMs": 3780,
+        "endMs": 5020
+      },
+      "middle": {
+        "text": "Narrator: 6",
+        "startMs": 28400,
+        "endMs": 29800
+      },
+      "last": {
+        "text": "Man: college",
+        "startMs": 50600,
+        "endMs": 54020
+      },
+      "asrHeadTokens": [
+        "1",
+        "introduce",
+        "2",
+        "please",
+        "3",
+        "peru",
+        "4",
+        "turkey",
+        "5",
+        "20",
+        "6",
+        "18"
+      ],
+      "asrTailTokens": [
+        "20",
+        "6",
+        "18",
+        "7",
+        "study",
+        "8",
+        "business",
+        "9",
+        "computer",
+        "10",
+        "college",
+        "6"
+      ]
+    },
+    {
+      "trackId": "track-unlock1-3e-u01-t02",
+      "officialTokenCoverage": 0.8955,
+      "asrTokenCoverage": 0.916,
+      "officialTokenCount": 134,
+      "asrTokenCount": 131,
+      "status": "pass",
+      "first": {
+        "text": "Carlos: Hi, hello.",
+        "startMs": 2240,
+        "endMs": 3580
+      },
+      "middle": {
+        "text": "Nehir is 19.",
+        "startMs": 43900,
+        "endMs": 44840
+      },
+      "last": {
+        "text": "Kerry: Thank you, Nehir.",
+        "startMs": 81280,
+        "endMs": 84317
+      },
+      "asrHeadTokens": [
+        "hi",
+        "hello",
+        "i'm",
+        "carlos",
+        "i'm",
+        "going",
+        "to",
+        "tell",
+        "you",
+        "about",
+        "coco",
+        "she"
+      ],
+      "asrTailTokens": [
+        "doctor",
+        "carlos",
+        "wants",
+        "to",
+        "study",
+        "computer",
+        "science",
+        "at",
+        "university",
+        "thank",
+        "you",
+        "nihir"
+      ]
+    },
+    {
+      "trackId": "track-unlock1-3e-u01-t03",
+      "officialTokenCoverage": 0.9167,
+      "asrTokenCoverage": 0.9429,
+      "officialTokenCount": 72,
+      "asrTokenCount": 70,
+      "status": "pass",
+      "first": {
+        "text": "A",
+        "startMs": 3300,
+        "endMs": 4200
+      },
+      "middle": {
+        "text": "Are you from Sydney?",
+        "startMs": 26000,
+        "endMs": 27740
+      },
+      "last": {
+        "text": "We’re all English.",
+        "startMs": 45080,
+        "endMs": 48393
+      },
+      "asrHeadTokens": [
+        "a",
+        "is",
+        "your",
+        "best",
+        "friend",
+        "yasemin",
+        "her",
+        "name",
+        "miral",
+        "how",
+        "old",
+        "is"
+      ],
+      "asrTailTokens": [
+        "melbourne",
+        "are",
+        "your",
+        "parents",
+        "english",
+        "yes",
+        "and",
+        "my",
+        "sisters",
+        "we're",
+        "all",
+        "english"
+      ]
+    },
+    {
+      "trackId": "track-unlock1-3e-u01-t04",
+      "officialTokenCoverage": 1.0,
+      "asrTokenCoverage": 1.0,
+      "officialTokenCount": 6,
+      "asrTokenCount": 6,
+      "status": "pass",
+      "first": {
+        "text": "Man: writer",
+        "startMs": 2540,
+        "endMs": 3960
+      },
+      "middle": {
+        "text": "actor",
+        "startMs": 9720,
+        "endMs": 10680
+      },
+      "last": {
+        "text": "scientist",
+        "startMs": 14800,
+        "endMs": 17367
+      },
+      "asrHeadTokens": [
+        "writer",
+        "teacher",
+        "businessperson",
+        "actor",
+        "chef",
+        "scientist"
+      ],
+      "asrTailTokens": [
+        "writer",
+        "teacher",
+        "businessperson",
+        "actor",
+        "chef",
+        "scientist"
+      ]
+    },
+    {
+      "trackId": "track-unlock1-3e-u01-t05",
+      "officialTokenCoverage": 0.9966,
+      "asrTokenCoverage": 0.9932,
+      "officialTokenCount": 294,
+      "asrTokenCount": 295,
+      "status": "pass",
+      "first": {
+        "text": "Kazue: Good morning, everyone!",
+        "startMs": 2580,
+        "endMs": 4360
+      },
+      "middle": {
+        "text": "But Naomi is better.",
+        "startMs": 64520,
+        "endMs": 66140
+      },
+      "last": {
+        "text": "They have two children.",
+        "startMs": 152080,
+        "endMs": 155317
+      },
+      "asrHeadTokens": [
+        "good",
+        "morning",
+        "everyone",
+        "my",
+        "name",
+        "kazue",
+        "hi",
+        "morning",
+        "hello",
+        "so",
+        "i'm",
+        "going"
+      ],
+      "asrTailTokens": [
+        "british",
+        "but",
+        "his",
+        "wife",
+        "is",
+        "from",
+        "the",
+        "us",
+        "they",
+        "have",
+        "two",
+        "children"
+      ]
+    },
+    {
+      "trackId": "track-unlock1-3e-u01-t06",
+      "officialTokenCoverage": 0.9375,
+      "asrTokenCoverage": 0.8571,
+      "officialTokenCount": 32,
+      "asrTokenCount": 35,
+      "status": "pass",
+      "first": {
+        "text": "1",
+        "startMs": 2500,
+        "endMs": 3340
+      },
+      "middle": {
+        "text": "Narrator: 3",
+        "startMs": 18540,
+        "endMs": 19260
+      },
+      "last": {
+        "text": "Woman: He’s a famous Japanese writer.",
+        "startMs": 26680,
+        "endMs": 30661
+      },
+      "asrHeadTokens": [
+        "1",
+        "i'm",
+        "going",
+        "to",
+        "tell",
+        "you",
+        "about",
+        "a",
+        "famous",
+        "person",
+        "from",
+        "mexico"
+      ],
+      "asrTailTokens": [
+        "haruki",
+        "murakami",
+        "4",
+        "he",
+        "a",
+        "famous",
+        "japanese",
+        "writer",
+        "he",
+        "of",
+        "famous",
+        "mexican"
+      ]
+    },
+    {
+      "trackId": "track-unlock1-3e-u01-t07",
+      "officialTokenCoverage": 1.0,
+      "asrTokenCoverage": 1.0,
+      "officialTokenCount": 10,
+      "asrTokenCount": 10,
+      "status": "pass",
+      "first": {
+        "text": "Woman: designer",
+        "startMs": 2300,
+        "endMs": 3760
+      },
+      "middle": {
+        "text": "a famous designer",
+        "startMs": 7500,
+        "endMs": 9980
+      },
+      "last": {
+        "text": "She’s a famous designer.",
+        "startMs": 10500,
+        "endMs": 15211
+      },
+      "asrHeadTokens": [
+        "designer",
+        "famous",
+        "designer",
+        "a",
+        "famous",
+        "designer",
+        "she",
+        "a",
+        "famous",
+        "designer"
+      ],
+      "asrTailTokens": [
+        "designer",
+        "famous",
+        "designer",
+        "a",
+        "famous",
+        "designer",
+        "she",
+        "a",
+        "famous",
+        "designer"
+      ]
+    },
+    {
+      "trackId": "track-unlock1-3e-u01-t08",
+      "officialTokenCoverage": 0.8542,
+      "asrTokenCoverage": 0.8542,
+      "officialTokenCount": 48,
+      "asrTokenCount": 48,
+      "status": "pass",
+      "first": {
+        "text": "1",
+        "startMs": 3520,
+        "endMs": 4000
+      },
+      "middle": {
+        "text": "Man: Karim’s father is Mohammed Abdel Aziz.",
+        "startMs": 29200,
+        "endMs": 32520
+      },
+      "last": {
+        "text": "Man: She’s an actor.",
+        "startMs": 50480,
+        "endMs": 53383
+      },
+      "asrHeadTokens": [
+        "1",
+        "i'm",
+        "going",
+        "to",
+        "tell",
+        "you",
+        "about",
+        "two",
+        "famous",
+        "people",
+        "from",
+        "egypt"
+      ],
+      "asrTailTokens": [
+        "film",
+        "director",
+        "6",
+        "kareem",
+        "aunt",
+        "is",
+        "samira",
+        "musin",
+        "7",
+        "she",
+        "an",
+        "actor"
+      ]
+    },
+    {
+      "trackId": "track-unlock1-3e-u02-t01",
+      "officialTokenCoverage": 0.963,
+      "asrTokenCoverage": 0.9811,
+      "officialTokenCount": 54,
+      "asrTokenCount": 53,
+      "status": "pass",
+      "first": {
+        "text": "1",
+        "startMs": 5180,
+        "endMs": 5660
+      },
+      "middle": {
+        "text": "Lynn: I love the red and orange colours of the trees in the autumn.",
+        "startMs": 21600,
+        "endMs": 27100
+      },
+      "last": {
+        "text": "Munira: The temperature in my city is around nine degrees.",
+        "startMs": 38180,
+        "endMs": 44717
+      },
+      "asrHeadTokens": [
+        "1",
+        "it",
+        "good",
+        "to",
+        "live",
+        "in",
+        "a",
+        "place",
+        "where",
+        "the",
+        "weather",
+        "is"
+      ],
+      "asrTailTokens": [
+        "are",
+        "dark",
+        "5",
+        "the",
+        "temperature",
+        "in",
+        "my",
+        "city",
+        "is",
+        "around",
+        "9",
+        "degrees"
+      ]
+    },
+    {
+      "trackId": "track-unlock1-3e-u02-t02",
+      "officialTokenCoverage": 0.9543,
+      "asrTokenCoverage": 0.9621,
+      "officialTokenCount": 372,
+      "asrTokenCount": 369,
+      "status": "pass",
+      "first": {
+        "text": "Munira: Hello, everybody!",
+        "startMs": 2360,
+        "endMs": 3980
+      },
+      "middle": {
+        "text": "Lynn: Yeah, I am.",
+        "startMs": 109980,
+        "endMs": 111680
+      },
+      "last": {
+        "text": "There’s a …",
+        "startMs": 199840,
+        "endMs": 203087
+      },
+      "asrHeadTokens": [
+        "hello",
+        "everybody",
+        "thanks",
+        "for",
+        "helping",
+        "me",
+        "with",
+        "my",
+        "work",
+        "that",
+        "okay",
+        "thanks"
+      ],
+      "asrTailTokens": [
+        "yes",
+        "i",
+        "go",
+        "there",
+        "a",
+        "lot",
+        "i",
+        "can",
+        "send",
+        "you",
+        "a",
+        "photo"
+      ]
+    },
+    {
+      "trackId": "track-unlock1-3e-u02-t03",
+      "officialTokenCoverage": 0.9794,
+      "asrTokenCoverage": 0.9744,
+      "officialTokenCount": 194,
+      "asrTokenCount": 195,
+      "status": "pass",
+      "first": {
+        "text": "1",
+        "startMs": 2100,
+        "endMs": 3420
+      },
+      "middle": {
+        "text": "Narrator: 4",
+        "startMs": 53420,
+        "endMs": 54260
+      },
+      "last": {
+        "text": "In May each year, people take the flowers and use them in perfume and in tea.",
+        "startMs": 101680,
+        "endMs": 110661
+      },
+      "asrHeadTokens": [
+        "1",
+        "maasin",
+        "rum",
+        "in",
+        "india",
+        "is",
+        "sometimes",
+        "a",
+        "very",
+        "wet",
+        "place",
+        "the"
+      ],
+      "asrTailTokens": [
+        "people",
+        "take",
+        "the",
+        "flowers",
+        "and",
+        "use",
+        "them",
+        "in",
+        "perfume",
+        "and",
+        "in",
+        "tea"
+      ]
+    },
+    {
+      "trackId": "track-unlock1-3e-u02-t04",
+      "officialTokenCoverage": 0.9189,
+      "asrTokenCoverage": 0.9533,
+      "officialTokenCount": 111,
+      "asrTokenCount": 107,
+      "status": "pass",
+      "first": {
+        "text": "1",
+        "startMs": 1900,
+        "endMs": 3380
+      },
+      "middle": {
+        "text": "Tomorrow, on the other hand …",
+        "startMs": 35600,
+        "endMs": 37780
+      },
+      "last": {
+        "text": "This will continue for …",
+        "startMs": 69960,
+        "endMs": 73979
+      },
+      "asrHeadTokens": [
+        "1",
+        "weather",
+        "this",
+        "afternoon",
+        "in",
+        "riyadh",
+        "is",
+        "sunny",
+        "with",
+        "a",
+        "high",
+        "temperature"
+      ],
+      "asrTailTokens": [
+        "are",
+        "only",
+        "around",
+        "9",
+        "degrees",
+        "today",
+        "and",
+        "it",
+        "likely",
+        "to",
+        "be",
+        "rainy"
+      ]
+    },
+    {
+      "trackId": "track-unlock1-3e-u02-t05",
+      "officialTokenCoverage": 1.0,
+      "asrTokenCoverage": 0.9286,
+      "officialTokenCount": 39,
+      "asrTokenCount": 42,
+      "status": "pass",
+      "first": {
+        "text": "1",
+        "startMs": 2260,
+        "endMs": 3240
+      },
+      "middle": {
+        "text": "Narrator: 4",
+        "startMs": 19700,
+        "endMs": 20520
+      },
+      "last": {
+        "text": "Woman: There’s a dark sky.",
+        "startMs": 32880,
+        "endMs": 37594
+      },
+      "asrHeadTokens": [
+        "1",
+        "there",
+        "is",
+        "a",
+        "lot",
+        "of",
+        "wind",
+        "2",
+        "there",
+        "are",
+        "a",
+        "lot"
+      ],
+      "asrTailTokens": [
+        "5",
+        "there",
+        "is",
+        "a",
+        "red",
+        "sun",
+        "6",
+        "there",
+        "is",
+        "a",
+        "dark",
+        "sky"
+      ]
+    },
+    {
+      "trackId": "track-unlock1-3e-u02-t06",
+      "officialTokenCoverage": 0.9474,
+      "asrTokenCoverage": 0.96,
+      "officialTokenCount": 228,
+      "asrTokenCount": 225,
+      "status": "pass",
+      "first": {
+        "text": "Daniela: OK, so, good morning, everybody.",
+        "startMs": 3840,
+        "endMs": 6540
+      },
+      "middle": {
+        "text": "OK, so, I’m Altan.",
+        "startMs": 75400,
+        "endMs": 77120
+      },
+      "last": {
+        "text": "Here’s another photo of the park …",
+        "startMs": 128160,
+        "endMs": 131787
+      },
+      "asrHeadTokens": [
+        "okay",
+        "so",
+        "good",
+        "morning",
+        "everybody",
+        "i'm",
+        "daniela",
+        "okay",
+        "so",
+        "i'm",
+        "going",
+        "to"
+      ],
+      "asrTailTokens": [
+        "lot",
+        "of",
+        "people",
+        "go",
+        "there",
+        "here",
+        "is",
+        "another",
+        "photo",
+        "of",
+        "the",
+        "park"
+      ]
+    },
+    {
+      "trackId": "track-unlock1-3e-u02-t07",
+      "officialTokenCoverage": 0.9333,
+      "asrTokenCoverage": 0.9333,
+      "officialTokenCount": 45,
+      "asrTokenCount": 45,
+      "status": "pass",
+      "first": {
+        "text": "1",
+        "startMs": 2640,
+        "endMs": 3620
+      },
+      "middle": {
+        "text": "Altan: Hello, everybody!",
+        "startMs": 26060,
+        "endMs": 27260
+      },
+      "last": {
+        "text": "Altan: Here’s another photo of the park.",
+        "startMs": 38920,
+        "endMs": 42719
+      },
+      "asrHeadTokens": [
+        "1",
+        "good",
+        "morning",
+        "everybody",
+        "2",
+        "i'm",
+        "going",
+        "to",
+        "talk",
+        "about",
+        "two",
+        "photos"
+      ],
+      "asrTailTokens": [
+        "samsun",
+        "is",
+        "in",
+        "turkey",
+        "6",
+        "here",
+        "is",
+        "another",
+        "photo",
+        "of",
+        "the",
+        "park"
+      ]
+    },
+    {
+      "trackId": "track-unlock1-3e-u02-t08",
+      "officialTokenCoverage": 0.9873,
+      "asrTokenCoverage": 0.9873,
+      "officialTokenCount": 79,
+      "asrTokenCount": 79,
+      "status": "pass",
+      "first": {
+        "text": "Keiko: OK so I’m from Japan.",
+        "startMs": 4120,
+        "endMs": 6600
+      },
+      "middle": {
+        "text": "I love putting on a coat and going outside at that time of year.",
+        "startMs": 23140,
+        "endMs": 28140
+      },
+      "last": {
+        "text": "I don’t like doing things in hot weather.",
+        "startMs": 40840,
+        "endMs": 45966
+      },
+      "asrHeadTokens": [
+        "okay",
+        "so",
+        "i'm",
+        "from",
+        "japan",
+        "there",
+        "are",
+        "four",
+        "seasons",
+        "and",
+        "i",
+        "like"
+      ],
+      "asrTailTokens": [
+        "have",
+        "parties",
+        "under",
+        "them",
+        "i",
+        "don't",
+        "like",
+        "doing",
+        "things",
+        "in",
+        "hot",
+        "weather"
+      ]
+    },
+    {
+      "trackId": "track-unlock1-3e-u02-t09",
+      "officialTokenCoverage": 0.9919,
+      "asrTokenCoverage": 0.9919,
+      "officialTokenCount": 123,
+      "asrTokenCount": 123,
+      "status": "pass",
+      "first": {
+        "text": "Khaled: Hello, everybody!",
+        "startMs": 2640,
+        "endMs": 4080
+      },
+      "middle": {
+        "text": "Right, so where is this place?",
+        "startMs": 27980,
+        "endMs": 30680
+      },
+      "last": {
+        "text": "It’s a beautiful place and I want to go there.",
+        "startMs": 56840,
+        "endMs": 62178
+      },
+      "asrHeadTokens": [
+        "hello",
+        "everybody",
+        "okay",
+        "so",
+        "i'm",
+        "khaled",
+        "i'm",
+        "from",
+        "port",
+        "said",
+        "in",
+        "egypt"
+      ],
+      "asrTailTokens": [
+        "any",
+        "snow",
+        "it",
+        "a",
+        "beautiful",
+        "place",
+        "and",
+        "i",
+        "want",
+        "to",
+        "go",
+        "there"
+      ]
+    },
+    {
+      "trackId": "track-unlock1-3e-u03-t01",
+      "officialTokenCoverage": 1.0,
+      "asrTokenCoverage": 1.0,
+      "officialTokenCount": 15,
+      "asrTokenCount": 15,
+      "status": "pass",
+      "first": {
+        "text": "Man: What’s your name?",
+        "startMs": 4520,
+        "endMs": 5980
+      },
+      "middle": {
+        "text": "Man: Are you from London?",
+        "startMs": 9640,
+        "endMs": 10800
+      },
+      "last": {
+        "text": "I’m from Manchester.",
+        "startMs": 12400,
+        "endMs": 15560
+      },
+      "asrHeadTokens": [
+        "what",
+        "your",
+        "name",
+        "my",
+        "name",
+        "is",
+        "jennifer",
+        "are",
+        "you",
+        "from",
+        "london",
+        "no"
+      ],
+      "asrTailTokens": [
+        "my",
+        "name",
+        "is",
+        "jennifer",
+        "are",
+        "you",
+        "from",
+        "london",
+        "no",
+        "i'm",
+        "from",
+        "manchester"
+      ]
+    },
+    {
+      "trackId": "track-unlock1-3e-u03-t02",
+      "officialTokenCoverage": 0.8727,
+      "asrTokenCoverage": 1.0,
+      "officialTokenCount": 55,
+      "asrTokenCount": 48,
+      "status": "pass",
+      "first": {
+        "text": "1",
+        "startMs": 3300,
+        "endMs": 4120
+      },
+      "middle": {
+        "text": "Narrator: 4",
+        "startMs": 20120,
+        "endMs": 20940
+      },
+      "last": {
+        "text": "[rising]",
+        "startMs": 36800,
+        "endMs": 38632
+      },
+      "asrHeadTokens": [
+        "1",
+        "what",
+        "do",
+        "you",
+        "like",
+        "to",
+        "watch",
+        "on",
+        "tv",
+        "2",
+        "many",
+        "hours"
+      ],
+      "asrTailTokens": [
+        "people",
+        "to",
+        "exercise",
+        "6",
+        "do",
+        "you",
+        "like",
+        "to",
+        "go",
+        "online",
+        "and",
+        "shop"
+      ]
+    },
+    {
+      "trackId": "track-unlock1-3e-u03-t03",
+      "officialTokenCoverage": 0.9542,
+      "asrTokenCoverage": 0.9783,
+      "officialTokenCount": 284,
+      "asrTokenCount": 277,
+      "status": "pass",
+      "first": {
+        "text": "Teacher: Good morning, everybody.",
+        "startMs": 2300,
+        "endMs": 4680
+      },
+      "middle": {
+        "text": "How many hours do you think teenagers need?",
+        "startMs": 71580,
+        "endMs": 74860
+      },
+      "last": {
+        "text": "… Well, let’s think of some things teenagers need to do to stay healthy and do well in their courses …",
+        "startMs": 151000,
+        "endMs": 160449
+      },
+      "asrHeadTokens": [
+        "good",
+        "morning",
+        "everybody",
+        "hello",
+        "hi",
+        "so",
+        "today",
+        "we're",
+        "going",
+        "to",
+        "look",
+        "at"
+      ],
+      "asrTailTokens": [
+        "need",
+        "to",
+        "do",
+        "to",
+        "stay",
+        "healthy",
+        "and",
+        "do",
+        "well",
+        "in",
+        "their",
+        "courses"
+      ]
+    },
+    {
+      "trackId": "track-unlock1-3e-u03-t04",
+      "officialTokenCoverage": 1.0,
+      "asrTokenCoverage": 1.0,
+      "officialTokenCount": 44,
+      "asrTokenCount": 44,
+      "status": "pass",
+      "first": {
+        "text": "1",
+        "startMs": 2980,
+        "endMs": 3580
+      },
+      "middle": {
+        "text": "Woman 1: Can I have a few minutes of your time?",
+        "startMs": 13000,
+        "endMs": 15660
+      },
+      "last": {
+        "text": "Man 2: No, I’m afraid I don’t.",
+        "startMs": 24560,
+        "endMs": 27771
+      },
+      "asrHeadTokens": [
+        "1",
+        "excuse",
+        "me",
+        "i'd",
+        "like",
+        "to",
+        "ask",
+        "you",
+        "a",
+        "question",
+        "of",
+        "course"
+      ],
+      "asrTailTokens": [
+        "have",
+        "a",
+        "minute",
+        "to",
+        "talk",
+        "to",
+        "me",
+        "no",
+        "i'm",
+        "afraid",
+        "i",
+        "don't"
+      ]
+    },
+    {
+      "trackId": "track-unlock1-3e-u03-t05",
+      "officialTokenCoverage": 0.9567,
+      "asrTokenCoverage": 0.9636,
+      "officialTokenCount": 277,
+      "asrTokenCount": 275,
+      "status": "pass",
+      "first": {
+        "text": "April: Good morning!",
+        "startMs": 3320,
+        "endMs": 4620
+      },
+      "middle": {
+        "text": "I’d like to be a scientist.",
+        "startMs": 64180,
+        "endMs": 65600
+      },
+      "last": {
+        "text": "OK, so …",
+        "startMs": 153300,
+        "endMs": 155522
+      },
+      "asrHeadTokens": [
+        "good",
+        "morning",
+        "can",
+        "i",
+        "ask",
+        "you",
+        "sorry",
+        "sorry",
+        "no",
+        "time",
+        "no",
+        "time"
+      ],
+      "asrTailTokens": [
+        "kind",
+        "of",
+        "thing",
+        "i",
+        "think",
+        "i",
+        "know",
+        "what",
+        "you",
+        "mean",
+        "okay",
+        "so"
+      ]
+    },
+    {
+      "trackId": "track-unlock1-3e-u03-t06",
+      "officialTokenCoverage": 0.9468,
+      "asrTokenCoverage": 0.9468,
+      "officialTokenCount": 94,
+      "asrTokenCount": 94,
+      "status": "pass",
+      "first": {
+        "text": "Woman: This is Rabia.",
+        "startMs": 2800,
+        "endMs": 4680
+      },
+      "middle": {
+        "text": "On Wednesday, she has lunch with her friends at 12:30.",
+        "startMs": 28280,
+        "endMs": 34120
+      },
+      "last": {
+        "text": "She has a busy week.",
+        "startMs": 59720,
+        "endMs": 63449
+      },
+      "asrHeadTokens": [
+        "this",
+        "is",
+        "rabia",
+        "she",
+        "from",
+        "turkey",
+        "she",
+        "takes",
+        "the",
+        "bus",
+        "to",
+        "the"
+      ],
+      "asrTailTokens": [
+        "she",
+        "does",
+        "her",
+        "homework",
+        "in",
+        "the",
+        "evening",
+        "she",
+        "has",
+        "a",
+        "busy",
+        "week"
+      ]
+    },
+    {
+      "trackId": "track-unlock1-3e-u03-t07",
+      "officialTokenCoverage": 1.0,
+      "asrTokenCoverage": 1.0,
+      "officialTokenCount": 7,
+      "asrTokenCount": 7,
+      "status": "pass",
+      "first": {
+        "text": "Man: texts",
+        "startMs": 3960,
+        "endMs": 4660
+      },
+      "middle": {
+        "text": "Woman: goes",
+        "startMs": 12780,
+        "endMs": 14180
+      },
+      "last": {
+        "text": "Man: chooses",
+        "startMs": 23100,
+        "endMs": 26507
+      },
+      "asrHeadTokens": [
+        "texts",
+        "sleeps",
+        "needs",
+        "goes",
+        "studies",
+        "watches",
+        "chooses"
+      ],
+      "asrTailTokens": [
+        "texts",
+        "sleeps",
+        "needs",
+        "goes",
+        "studies",
+        "watches",
+        "chooses"
+      ]
+    },
+    {
+      "trackId": "track-unlock1-3e-u03-t08",
+      "officialTokenCoverage": 1.0,
+      "asrTokenCoverage": 1.0,
+      "officialTokenCount": 16,
+      "asrTokenCount": 16,
+      "status": "pass",
+      "first": {
+        "text": "1",
+        "startMs": 2620,
+        "endMs": 4000
+      },
+      "middle": {
+        "text": "Narrator: 5",
+        "startMs": 22580,
+        "endMs": 23980
+      },
+      "last": {
+        "text": "Man: laughs",
+        "startMs": 40880,
+        "endMs": 43365
+      },
+      "asrHeadTokens": [
+        "1",
+        "gets",
+        "2",
+        "wears",
+        "3",
+        "misses",
+        "4",
+        "has",
+        "5",
+        "teaches",
+        "6",
+        "takes"
+      ],
+      "asrTailTokens": [
+        "3",
+        "misses",
+        "4",
+        "has",
+        "5",
+        "teaches",
+        "6",
+        "takes",
+        "7",
+        "plays",
+        "8",
+        "laughs"
+      ]
+    },
+    {
+      "trackId": "track-unlock1-3e-u04-t01",
+      "officialTokenCoverage": 0.8519,
+      "asrTokenCoverage": 0.8519,
+      "officialTokenCount": 27,
+      "asrTokenCount": 27,
+      "status": "pass",
+      "first": {
+        "text": "1",
+        "startMs": 3760,
+        "endMs": 5800
+      },
+      "middle": {
+        "text": "Narrator: 3",
+        "startMs": 15300,
+        "endMs": 19440
+      },
+      "last": {
+        "text": "Woman: The library is here.",
+        "startMs": 25320,
+        "endMs": 28790
+      },
+      "asrHeadTokens": [
+        "one",
+        "where",
+        "is",
+        "this",
+        "photo",
+        "from",
+        "two",
+        "there",
+        "a",
+        "shop",
+        "here",
+        "and"
+      ],
+      "asrTailTokens": [
+        "three",
+        "yes",
+        "that",
+        "a",
+        "bank",
+        "over",
+        "there",
+        "four",
+        "the",
+        "library",
+        "is",
+        "here"
+      ]
+    },
+    {
+      "trackId": "track-unlock1-3e-u04-t02",
+      "officialTokenCoverage": 0.9895,
+      "asrTokenCoverage": 0.993,
+      "officialTokenCount": 286,
+      "asrTokenCount": 285,
+      "status": "pass",
+      "first": {
+        "text": "Salesperson: Hello, everyone.",
+        "startMs": 2780,
+        "endMs": 4140
+      },
+      "middle": {
+        "text": "Also, this app learns a lot about you.",
+        "startMs": 63860,
+        "endMs": 67320
+      },
+      "last": {
+        "text": "Just download it to your phone and start using it today!",
+        "startMs": 124020,
+        "endMs": 129737
+      },
+      "asrHeadTokens": [
+        "hello",
+        "everyone",
+        "thanks",
+        "for",
+        "coming",
+        "to",
+        "our",
+        "presentation",
+        "our",
+        "new",
+        "app",
+        "does"
+      ],
+      "asrTailTokens": [
+        "use",
+        "just",
+        "download",
+        "it",
+        "to",
+        "your",
+        "phone",
+        "and",
+        "start",
+        "using",
+        "it",
+        "today"
+      ]
+    },
+    {
+      "trackId": "track-unlock1-3e-u04-t03",
+      "officialTokenCoverage": 0.931,
+      "asrTokenCoverage": 0.9076,
+      "officialTokenCount": 116,
+      "asrTokenCount": 119,
+      "status": "pass",
+      "first": {
+        "text": "1",
+        "startMs": 3860,
+        "endMs": 3861
+      },
+      "middle": {
+        "text": "Narrator: 5",
+        "startMs": 38760,
+        "endMs": 41740
+      },
+      "last": {
+        "text": "It’s behind the bank.",
+        "startMs": 75700,
+        "endMs": 79621
+      },
+      "asrHeadTokens": [
+        "four",
+        "point",
+        "three",
+        "one",
+        "where",
+        "the",
+        "library",
+        "is",
+        "it",
+        "near",
+        "here",
+        "yes"
+      ],
+      "asrTailTokens": [
+        "you",
+        "know",
+        "where",
+        "the",
+        "train",
+        "station",
+        "is",
+        "yes",
+        "it",
+        "behind",
+        "the",
+        "bank"
+      ]
+    },
+    {
+      "trackId": "track-unlock1-3e-u04-t04",
+      "officialTokenCoverage": 0.969,
+      "asrTokenCoverage": 0.9757,
+      "officialTokenCount": 290,
+      "asrTokenCount": 288,
+      "status": "pass",
+      "first": {
+        "text": "1",
+        "startMs": 3260,
+        "endMs": 3261
+      },
+      "middle": {
+        "text": "OK, now I’m lost.",
+        "startMs": 87960,
+        "endMs": 90560
+      },
+      "last": {
+        "text": "Now, everyone, work with a partner and practise asking for and giving directions for the next map which, is a hospital – I don’t want you to get lost!",
+        "startMs": 148500,
+        "endMs": 164347
+      },
+      "asrHeadTokens": [
+        "ok",
+        "class",
+        "you",
+        "now",
+        "know",
+        "your",
+        "way",
+        "around",
+        "campus",
+        "but",
+        "i",
+        "know"
+      ],
+      "asrTailTokens": [
+        "map",
+        "which",
+        "is",
+        "a",
+        "hospital",
+        "i",
+        "don't",
+        "want",
+        "you",
+        "to",
+        "get",
+        "lost"
+      ]
+    },
+    {
+      "trackId": "track-unlock1-3e-u04-t05",
+      "officialTokenCoverage": 0.9577,
+      "asrTokenCoverage": 0.9577,
+      "officialTokenCount": 71,
+      "asrTokenCount": 71,
+      "status": "pass",
+      "first": {
+        "text": "1",
+        "startMs": 2240,
+        "endMs": 3220
+      },
+      "middle": {
+        "text": "Narrator: 5",
+        "startMs": 29780,
+        "endMs": 30580
+      },
+      "last": {
+        "text": "It’s behind that school.",
+        "startMs": 52220,
+        "endMs": 55797
+      },
+      "asrHeadTokens": [
+        "1",
+        "it",
+        "opposite",
+        "the",
+        "business",
+        "school",
+        "2",
+        "the",
+        "fountain",
+        "is",
+        "in",
+        "green"
+      ],
+      "asrTailTokens": [
+        "8",
+        "the",
+        "bike",
+        "is",
+        "there",
+        "on",
+        "the",
+        "left",
+        "it",
+        "behind",
+        "that",
+        "school"
+      ]
+    },
+    {
+      "trackId": "track-unlock1-3e-u04-t06",
+      "officialTokenCoverage": 1.0,
+      "asrTokenCoverage": 1.0,
+      "officialTokenCount": 43,
+      "asrTokenCount": 43,
+      "status": "pass",
+      "first": {
+        "text": "1",
+        "startMs": 3240,
+        "endMs": 4000
+      },
+      "middle": {
+        "text": "Woman: How do I get to the Language Centre?",
+        "startMs": 16880,
+        "endMs": 19220
+      },
+      "last": {
+        "text": "Is it near here?",
+        "startMs": 33260,
+        "endMs": 36129
+      },
+      "asrHeadTokens": [
+        "1",
+        "where",
+        "the",
+        "supermarket",
+        "2",
+        "is",
+        "the",
+        "physics",
+        "building",
+        "near",
+        "here",
+        "3"
+      ],
+      "asrTailTokens": [
+        "building",
+        "5",
+        "i'm",
+        "looking",
+        "for",
+        "the",
+        "maths",
+        "building",
+        "is",
+        "it",
+        "near",
+        "here"
+      ]
+    },
+    {
+      "trackId": "track-unlock1-3e-u04-t07",
+      "officialTokenCoverage": 1.0,
+      "asrTokenCoverage": 1.0,
+      "officialTokenCount": 8,
+      "asrTokenCount": 8,
+      "status": "pass",
+      "first": {
+        "text": "Woman: Maths building",
+        "startMs": 5760,
+        "endMs": 7360
+      },
+      "middle": {
+        "text": "Woman: Language Centre",
+        "startMs": 12200,
+        "endMs": 15540
+      },
+      "last": {
+        "text": "Man: Student Centre",
+        "startMs": 17540,
+        "endMs": 21374
+      },
+      "asrHeadTokens": [
+        "maths",
+        "building",
+        "physics",
+        "building",
+        "language",
+        "centre",
+        "student",
+        "centre"
+      ],
+      "asrTailTokens": [
+        "maths",
+        "building",
+        "physics",
+        "building",
+        "language",
+        "centre",
+        "student",
+        "centre"
+      ]
+    },
+    {
+      "trackId": "track-unlock1-3e-u04-t08",
+      "officialTokenCoverage": 1.0,
+      "asrTokenCoverage": 1.0,
+      "officialTokenCount": 39,
+      "asrTokenCount": 39,
+      "status": "pass",
+      "first": {
+        "text": "1",
+        "startMs": 2220,
+        "endMs": 3460
+      },
+      "middle": {
+        "text": "I think I’m lost.",
+        "startMs": 15540,
+        "endMs": 17040
+      },
+      "last": {
+        "text": "How do I get to the Language Centre?",
+        "startMs": 25760,
+        "endMs": 30006
+      },
+      "asrHeadTokens": [
+        "1",
+        "excuse",
+        "me",
+        "can",
+        "you",
+        "tell",
+        "me",
+        "how",
+        "to",
+        "get",
+        "to",
+        "the"
+      ],
+      "asrTailTokens": [
+        "here",
+        "3",
+        "excuse",
+        "me",
+        "how",
+        "do",
+        "i",
+        "get",
+        "to",
+        "the",
+        "language",
+        "centre"
+      ]
+    },
+    {
+      "trackId": "track-unlock1-3e-u04-t09",
+      "officialTokenCoverage": 0.9722,
+      "asrTokenCoverage": 0.5,
+      "officialTokenCount": 36,
+      "asrTokenCount": 70,
+      "status": "pass",
+      "first": {
+        "text": "1",
+        "startMs": 2240,
+        "endMs": 4000
+      },
+      "middle": {
+        "text": "I think I’m lost.",
+        "startMs": 35040,
+        "endMs": 36400
+      },
+      "last": {
+        "text": "Can you tell me how to get to the supermarket?",
+        "startMs": 45960,
+        "endMs": 61509
+      },
+      "asrHeadTokens": [
+        "1",
+        "excuse",
+        "me",
+        "where",
+        "the",
+        "student",
+        "center",
+        "please",
+        "excuse",
+        "me",
+        "where",
+        "the"
+      ],
+      "asrTailTokens": [
+        "me",
+        "can",
+        "you",
+        "tell",
+        "me",
+        "how",
+        "to",
+        "get",
+        "to",
+        "the",
+        "supermarket",
+        "you"
+      ]
+    },
+    {
+      "trackId": "track-unlock1-3e-u05-t01",
+      "officialTokenCoverage": 1.0,
+      "asrTokenCoverage": 1.0,
+      "officialTokenCount": 22,
+      "asrTokenCount": 22,
+      "status": "pass",
+      "first": {
+        "text": "Woman: I have two computers.",
+        "startMs": 4540,
+        "endMs": 6840
+      },
+      "middle": {
+        "text": "Man: He has two jobs.",
+        "startMs": 13100,
+        "endMs": 14640
+      },
+      "last": {
+        "text": "He has to get up at 5.30.",
+        "startMs": 16300,
+        "endMs": 20370
+      },
+      "asrHeadTokens": [
+        "i",
+        "have",
+        "two",
+        "computers",
+        "i",
+        "have",
+        "to",
+        "work",
+        "on",
+        "mondays",
+        "he",
+        "has"
+      ],
+      "asrTailTokens": [
+        "he",
+        "has",
+        "two",
+        "jobs",
+        "he",
+        "has",
+        "to",
+        "get",
+        "up",
+        "at",
+        "5",
+        "30"
+      ]
+    },
+    {
+      "trackId": "track-unlock1-3e-u05-t02",
+      "officialTokenCoverage": 1.0,
+      "asrTokenCoverage": 1.0,
+      "officialTokenCount": 52,
+      "asrTokenCount": 52,
+      "status": "pass",
+      "first": {
+        "text": "1",
+        "startMs": 2060,
+        "endMs": 3240
+      },
+      "middle": {
+        "text": "Man: He has to study at university.",
+        "startMs": 20720,
+        "endMs": 23160
+      },
+      "last": {
+        "text": "Man: You have to do four subjects.",
+        "startMs": 40240,
+        "endMs": 45043
+      },
+      "asrHeadTokens": [
+        "1",
+        "i",
+        "have",
+        "to",
+        "choose",
+        "a",
+        "course",
+        "2",
+        "i",
+        "have",
+        "two",
+        "questions"
+      ],
+      "asrTailTokens": [
+        "to",
+        "decide",
+        "what",
+        "to",
+        "do",
+        "7",
+        "you",
+        "have",
+        "to",
+        "do",
+        "four",
+        "subjects"
+      ]
+    },
+    {
+      "trackId": "track-unlock1-3e-u05-t03",
+      "officialTokenCoverage": 0.99,
+      "asrTokenCoverage": 0.9867,
+      "officialTokenCount": 299,
+      "asrTokenCount": 300,
+      "status": "pass",
+      "first": {
+        "text": "Adviser: Come in!",
+        "startMs": 2360,
+        "endMs": 3800
+      },
+      "middle": {
+        "text": "Adviser: I see.",
+        "startMs": 68720,
+        "endMs": 69440
+      },
+      "last": {
+        "text": "Then you can go to university later when you know what …",
+        "startMs": 151460,
+        "endMs": 157678
+      },
+      "asrHeadTokens": [
+        "come",
+        "in",
+        "hello",
+        "it",
+        "uh",
+        "i'm",
+        "beatrice",
+        "ah",
+        "yes",
+        "beatrice",
+        "please",
+        "come"
+      ],
+      "asrTailTokens": [
+        "you",
+        "can",
+        "go",
+        "to",
+        "university",
+        "later",
+        "when",
+        "you",
+        "know",
+        "what",
+        "you",
+        "want"
+      ]
+    },
+    {
+      "trackId": "track-unlock1-3e-u05-t04",
+      "officialTokenCoverage": 0.9787,
+      "asrTokenCoverage": 1.0,
+      "officialTokenCount": 47,
+      "asrTokenCount": 46,
+      "status": "pass",
+      "first": {
+        "text": "1",
+        "startMs": 1940,
+        "endMs": 3040
+      },
+      "middle": {
+        "text": "Narrator: 4",
+        "startMs": 19480,
+        "endMs": 20240
+      },
+      "last": {
+        "text": "Woman: My teacher has a university degree.",
+        "startMs": 34060,
+        "endMs": 38637
+      },
+      "asrHeadTokens": [
+        "1",
+        "have",
+        "to",
+        "work",
+        "at",
+        "the",
+        "weekend",
+        "2",
+        "i",
+        "have",
+        "two",
+        "jobs"
+      ],
+      "asrTailTokens": [
+        "teacher",
+        "has",
+        "to",
+        "speak",
+        "english",
+        "6",
+        "my",
+        "teacher",
+        "has",
+        "a",
+        "university",
+        "degree"
+      ]
+    },
+    {
+      "trackId": "track-unlock1-3e-u05-t05",
+      "officialTokenCoverage": 1.0,
+      "asrTokenCoverage": 1.0,
+      "officialTokenCount": 24,
+      "asrTokenCount": 24,
+      "status": "pass",
+      "first": {
+        "text": "1",
+        "startMs": 2320,
+        "endMs": 3680
+      },
+      "middle": {
+        "text": "Narrator: 7",
+        "startMs": 28040,
+        "endMs": 29540
+      },
+      "last": {
+        "text": "Man: bad",
+        "startMs": 50580,
+        "endMs": 53829
+      },
+      "asrHeadTokens": [
+        "1",
+        "boring",
+        "2",
+        "interesting",
+        "3",
+        "safe",
+        "4",
+        "easy",
+        "5",
+        "difficult",
+        "6",
+        "nice"
+      ],
+      "asrTailTokens": [
+        "7",
+        "big",
+        "8",
+        "small",
+        "9",
+        "good",
+        "10",
+        "important",
+        "11",
+        "hard",
+        "12",
+        "bad"
+      ]
+    },
+    {
+      "trackId": "track-unlock1-3e-u05-t06",
+      "officialTokenCoverage": 0.9782,
+      "asrTokenCoverage": 0.9782,
+      "officialTokenCount": 321,
+      "asrTokenCount": 321,
+      "status": "pass",
+      "first": {
+        "text": "Emma: Morning, Paul!",
+        "startMs": 2700,
+        "endMs": 3880
+      },
+      "middle": {
+        "text": "Paul: That’s really good.",
+        "startMs": 87020,
+        "endMs": 88280
+      },
+      "last": {
+        "text": "Emma: Thanks very much!",
+        "startMs": 168100,
+        "endMs": 171086
+      },
+      "asrHeadTokens": [
+        "morning",
+        "paul",
+        "how",
+        "are",
+        "you",
+        "today",
+        "i'm",
+        "fine",
+        "thanks",
+        "emma",
+        "good",
+        "good"
+      ],
+      "asrTailTokens": [
+        "write",
+        "to",
+        "lucy",
+        "and",
+        "tell",
+        "her",
+        "the",
+        "good",
+        "news",
+        "thanks",
+        "very",
+        "much"
+      ]
+    },
+    {
+      "trackId": "track-unlock1-3e-u05-t07",
+      "officialTokenCoverage": 1.0,
+      "asrTokenCoverage": 1.0,
+      "officialTokenCount": 40,
+      "asrTokenCount": 40,
+      "status": "pass",
+      "first": {
+        "text": "1",
+        "startMs": 1940,
+        "endMs": 3140
+      },
+      "middle": {
+        "text": "Narrator: 3",
+        "startMs": 16060,
+        "endMs": 16920
+      },
+      "last": {
+        "text": "Man: A doctor has to be kinder than a chef.",
+        "startMs": 24220,
+        "endMs": 29312
+      },
+      "asrHeadTokens": [
+        "1",
+        "my",
+        "fitness",
+        "instructor",
+        "is",
+        "stronger",
+        "than",
+        "me",
+        "2",
+        "working",
+        "as",
+        "a"
+      ],
+      "asrTailTokens": [
+        "a",
+        "builder",
+        "4",
+        "a",
+        "doctor",
+        "has",
+        "to",
+        "be",
+        "kinder",
+        "than",
+        "a",
+        "chef"
+      ]
+    },
+    {
+      "trackId": "track-unlock1-3e-u05-t08",
+      "officialTokenCoverage": 1.0,
+      "asrTokenCoverage": 1.0,
+      "officialTokenCount": 34,
+      "asrTokenCount": 34,
+      "status": "pass",
+      "first": {
+        "text": "1",
+        "startMs": 2300,
+        "endMs": 3760
+      },
+      "middle": {
+        "text": "Narrator: 3",
+        "startMs": 16540,
+        "endMs": 17620
+      },
+      "last": {
+        "text": "Woman: Morena has a job in a small hospital.",
+        "startMs": 27200,
+        "endMs": 31500
+      },
+      "asrHeadTokens": [
+        "1",
+        "nurses",
+        "have",
+        "to",
+        "work",
+        "hard",
+        "2",
+        "the",
+        "sports",
+        "centre",
+        "nurse",
+        "has"
+      ],
+      "asrTailTokens": [
+        "in",
+        "a",
+        "hospital",
+        "4",
+        "morena",
+        "has",
+        "a",
+        "job",
+        "in",
+        "a",
+        "small",
+        "hospital"
+      ]
+    },
+    {
+      "trackId": "track-unlock1-3e-u05-t09",
+      "officialTokenCoverage": 0.9793,
+      "asrTokenCoverage": 0.9861,
+      "officialTokenCount": 145,
+      "asrTokenCount": 144,
+      "status": "pass",
+      "first": {
+        "text": "Man: OK, everyone, we need to make a decision about where to take Lucy for dinner.",
+        "startMs": 3860,
+        "endMs": 8980
+      },
+      "middle": {
+        "text": "And the seafood place is wonderful, but not everyone likes fish.",
+        "startMs": 35880,
+        "endMs": 41060
+      },
+      "last": {
+        "text": "Is everyone OK with this decision?",
+        "startMs": 65200,
+        "endMs": 70193
+      },
+      "asrHeadTokens": [
+        "okay",
+        "everyone",
+        "we",
+        "need",
+        "to",
+        "make",
+        "a",
+        "decision",
+        "about",
+        "where",
+        "to",
+        "take"
+      ],
+      "asrTailTokens": [
+        "but",
+        "this",
+        "is",
+        "an",
+        "important",
+        "dinner",
+        "is",
+        "everyone",
+        "okay",
+        "with",
+        "this",
+        "decision"
+      ]
+    },
+    {
+      "trackId": "track-unlock1-3e-u06-t01",
+      "officialTokenCoverage": 1.0,
+      "asrTokenCoverage": 1.0,
+      "officialTokenCount": 25,
+      "asrTokenCount": 25,
+      "status": "pass",
+      "first": {
+        "text": "1",
+        "startMs": 4280,
+        "endMs": 5720
+      },
+      "middle": {
+        "text": "Narrator: 4",
+        "startMs": 22520,
+        "endMs": 23760
+      },
+      "last": {
+        "text": "Man: What about the UK?",
+        "startMs": 36640,
+        "endMs": 39924
+      },
+      "asrHeadTokens": [
+        "1",
+        "an",
+        "author",
+        "of",
+        "many",
+        "books",
+        "2",
+        "i",
+        "help",
+        "architects",
+        "3",
+        "for"
+      ],
+      "asrTailTokens": [
+        "4",
+        "good",
+        "ideas",
+        "5",
+        "restaurants",
+        "in",
+        "london",
+        "6",
+        "what",
+        "about",
+        "the",
+        "uk"
+      ]
+    },
+    {
+      "trackId": "track-unlock1-3e-u06-t02",
+      "officialTokenCoverage": 0.8931,
+      "asrTokenCoverage": 0.9626,
+      "officialTokenCount": 346,
+      "asrTokenCount": 321,
+      "status": "pass",
+      "first": {
+        "text": "Paul: Good evening.",
+        "startMs": 2480,
+        "endMs": 3780
+      },
+      "middle": {
+        "text": "How interesting!",
+        "startMs": 94260,
+        "endMs": 95720
+      },
+      "last": {
+        "text": "Dr Thompson: Well, that’s another …",
+        "startMs": 209780,
+        "endMs": 214376
+      },
+      "asrHeadTokens": [
+        "good",
+        "evening",
+        "i'm",
+        "paul",
+        "clark",
+        "and",
+        "welcome",
+        "to",
+        "think",
+        "design",
+        "have",
+        "a"
+      ],
+      "asrTailTokens": [
+        "the",
+        "tables",
+        "and",
+        "chairs",
+        "are",
+        "traditional",
+        "or",
+        "modern",
+        "for",
+        "example",
+        "well",
+        "that"
+      ]
+    },
+    {
+      "trackId": "track-unlock1-3e-u06-t03",
+      "officialTokenCoverage": 1.0,
+      "asrTokenCoverage": 1.0,
+      "officialTokenCount": 7,
+      "asrTokenCount": 7,
+      "status": "pass",
+      "first": {
+        "text": "Man: armchair",
+        "startMs": 4260,
+        "endMs": 5660
+      },
+      "middle": {
+        "text": "Woman: bookcase",
+        "startMs": 13120,
+        "endMs": 13880
+      },
+      "last": {
+        "text": "Man: sofa",
+        "startMs": 21920,
+        "endMs": 25290
+      },
+      "asrHeadTokens": [
+        "armchair",
+        "table",
+        "chair",
+        "bookcase",
+        "lamp",
+        "desk",
+        "sofa"
+      ],
+      "asrTailTokens": [
+        "armchair",
+        "table",
+        "chair",
+        "bookcase",
+        "lamp",
+        "desk",
+        "sofa"
+      ]
+    },
+    {
+      "trackId": "track-unlock1-3e-u06-t04",
+      "officialTokenCoverage": 1.0,
+      "asrTokenCoverage": 1.0,
+      "officialTokenCount": 7,
+      "asrTokenCount": 7,
+      "status": "pass",
+      "first": {
+        "text": "Woman: comfortable",
+        "startMs": 2540,
+        "endMs": 3960
+      },
+      "middle": {
+        "text": "Man: metal",
+        "startMs": 12320,
+        "endMs": 13720
+      },
+      "last": {
+        "text": "Woman: wooden",
+        "startMs": 22920,
+        "endMs": 25478
+      },
+      "asrHeadTokens": [
+        "comfortable",
+        "glass",
+        "leather",
+        "metal",
+        "plastic",
+        "uncomfortable",
+        "wooden"
+      ],
+      "asrTailTokens": [
+        "comfortable",
+        "glass",
+        "leather",
+        "metal",
+        "plastic",
+        "uncomfortable",
+        "wooden"
+      ]
+    },
+    {
+      "trackId": "track-unlock1-3e-u06-t05",
+      "officialTokenCoverage": 0.9608,
+      "asrTokenCoverage": 0.9755,
+      "officialTokenCount": 332,
+      "asrTokenCount": 327,
+      "status": "pass",
+      "first": {
+        "text": "Dale: … thanks for the coffee, Hakan!",
+        "startMs": 2680,
+        "endMs": 4840
+      },
+      "middle": {
+        "text": "Hakan: Hmm, I’m not sure.",
+        "startMs": 84980,
+        "endMs": 86460
+      },
+      "last": {
+        "text": "It will all be new and beautiful.",
+        "startMs": 179060,
+        "endMs": 183230
+      },
+      "asrHeadTokens": [
+        "thanks",
+        "for",
+        "the",
+        "coffee",
+        "hakan",
+        "very",
+        "nice",
+        "yes",
+        "it",
+        "good",
+        "turkish",
+        "coffee"
+      ],
+      "asrTailTokens": [
+        "we",
+        "can",
+        "have",
+        "comfortable",
+        "chairs",
+        "it",
+        "will",
+        "all",
+        "be",
+        "new",
+        "and",
+        "beautiful"
+      ]
+    },
+    {
+      "trackId": "track-unlock1-3e-u06-t06",
+      "officialTokenCoverage": 0.9748,
+      "asrTokenCoverage": 0.9873,
+      "officialTokenCount": 159,
+      "asrTokenCount": 157,
+      "status": "pass",
+      "first": {
+        "text": "1",
+        "startMs": 2980,
+        "endMs": 3740
+      },
+      "middle": {
+        "text": "Hakan: The park?",
+        "startMs": 45200,
+        "endMs": 45840
+      },
+      "last": {
+        "text": "Big windows are good.",
+        "startMs": 89540,
+        "endMs": 92603
+      },
+      "asrHeadTokens": [
+        "1",
+        "ok",
+        "so",
+        "we",
+        "need",
+        "a",
+        "place",
+        "for",
+        "our",
+        "new",
+        "office",
+        "what"
+      ],
+      "asrTailTokens": [
+        "big",
+        "windows",
+        "what",
+        "about",
+        "you",
+        "yes",
+        "i",
+        "agree",
+        "big",
+        "windows",
+        "are",
+        "good"
+      ]
+    },
+    {
+      "trackId": "track-unlock1-3e-u07-t01",
+      "officialTokenCoverage": 0.6522,
+      "asrTokenCoverage": 0.6818,
+      "officialTokenCount": 23,
+      "asrTokenCount": 22,
+      "status": "pass",
+      "first": {
+        "text": "Man: Fifteen thousand pounds every month?",
+        "startMs": 6180,
+        "endMs": 7640
+      },
+      "middle": {
+        "text": "Sixteen?",
+        "startMs": 15240,
+        "endMs": 18800
+      },
+      "last": {
+        "text": "Woman: No, sixty.",
+        "startMs": 24360,
+        "endMs": 27526
+      },
+      "asrHeadTokens": [
+        "15",
+        "000",
+        "every",
+        "month",
+        "17",
+        "million",
+        "sorry",
+        "how",
+        "many",
+        "children",
+        "16",
+        "we"
+      ],
+      "asrTailTokens": [
+        "16",
+        "we",
+        "feed",
+        "60",
+        "children",
+        "from",
+        "poor",
+        "families",
+        "here",
+        "50",
+        "no",
+        "60"
+      ]
+    },
+    {
+      "trackId": "track-unlock1-3e-u07-t02",
+      "officialTokenCoverage": 0.6105,
+      "asrTokenCoverage": 0.6988,
+      "officialTokenCount": 95,
+      "asrTokenCount": 83,
+      "status": "pass",
+      "first": {
+        "text": "1",
+        "startMs": 3100,
+        "endMs": 4900
+      },
+      "middle": {
+        "text": "Narrator: 3",
+        "startMs": 28640,
+        "endMs": 35200
+      },
+      "last": {
+        "text": "A: No, fifteen thousand – not fifty.",
+        "startMs": 60000,
+        "endMs": 65459
+      },
+      "asrHeadTokens": [
+        "seven",
+        "point",
+        "two",
+        "one",
+        "is",
+        "the",
+        "number",
+        "of",
+        "people",
+        "there",
+        "about",
+        "70"
+      ],
+      "asrTailTokens": [
+        "that",
+        "true",
+        "50",
+        "000",
+        "tons",
+        "every",
+        "month",
+        "no",
+        "15",
+        "000",
+        "not",
+        "50"
+      ]
+    },
+    {
+      "trackId": "track-unlock1-3e-u07-t03",
+      "officialTokenCoverage": 0.9426,
+      "asrTokenCoverage": 0.972,
+      "officialTokenCount": 331,
+      "asrTokenCount": 321,
+      "status": "pass",
+      "first": {
+        "text": "Teacher: OK, everyone.",
+        "startMs": 2060,
+        "endMs": 4320
+      },
+      "middle": {
+        "text": "Fifty years ago, my grandmother cooked traditional dishes at home every day.",
+        "startMs": 88500,
+        "endMs": 95840
+      },
+      "last": {
+        "text": "Now that we have so many foods available from around the world, do you think it’s good or bad for our traditions?",
+        "startMs": 185420,
+        "endMs": 199718
+      },
+      "asrHeadTokens": [
+        "ok",
+        "everyone",
+        "so",
+        "today",
+        "i'd",
+        "like",
+        "to",
+        "talk",
+        "about",
+        "traditions",
+        "and",
+        "food"
+      ],
+      "asrTailTokens": [
+        "the",
+        "world",
+        "do",
+        "you",
+        "think",
+        "it",
+        "good",
+        "or",
+        "bad",
+        "for",
+        "our",
+        "traditions"
+      ]
+    },
+    {
+      "trackId": "track-unlock1-3e-u07-t04",
+      "officialTokenCoverage": 0.9941,
+      "asrTokenCoverage": 0.9941,
+      "officialTokenCount": 340,
+      "asrTokenCount": 340,
+      "status": "pass",
+      "first": {
+        "text": "Noura: Hello!",
+        "startMs": 2720,
+        "endMs": 3480
+      },
+      "middle": {
+        "text": "58% of people eat the same as they did one year ago.",
+        "startMs": 88760,
+        "endMs": 93400
+      },
+      "last": {
+        "text": "What do you think?",
+        "startMs": 174540,
+        "endMs": 177539
+      },
+      "asrHeadTokens": [
+        "hello",
+        "i'm",
+        "noora",
+        "today",
+        "i'm",
+        "going",
+        "to",
+        "tell",
+        "you",
+        "about",
+        "the",
+        "results"
+      ],
+      "asrTailTokens": [
+        "of",
+        "us",
+        "don't",
+        "feel",
+        "happy",
+        "about",
+        "eating",
+        "it",
+        "what",
+        "do",
+        "you",
+        "think"
+      ]
+    },
+    {
+      "trackId": "track-unlock1-3e-u07-t05",
+      "officialTokenCoverage": 0.9848,
+      "asrTokenCoverage": 0.9848,
+      "officialTokenCount": 66,
+      "asrTokenCount": 66,
+      "status": "pass",
+      "first": {
+        "text": "Noura: Hello!",
+        "startMs": 2880,
+        "endMs": 3500
+      },
+      "middle": {
+        "text": "A lot of people in the past liked to eat meat.",
+        "startMs": 14760,
+        "endMs": 18320
+      },
+      "last": {
+        "text": "There were three questions in my survey ...",
+        "startMs": 30120,
+        "endMs": 35135
+      },
+      "asrHeadTokens": [
+        "hello",
+        "i'm",
+        "noora",
+        "today",
+        "i'm",
+        "going",
+        "to",
+        "tell",
+        "you",
+        "about",
+        "the",
+        "results"
+      ],
+      "asrTailTokens": [
+        "this",
+        "is",
+        "an",
+        "interesting",
+        "topic",
+        "there",
+        "were",
+        "three",
+        "questions",
+        "in",
+        "my",
+        "survey"
+      ]
+    },
+    {
+      "trackId": "track-unlock1-3e-u07-t06",
+      "officialTokenCoverage": 0.9859,
+      "asrTokenCoverage": 0.9859,
+      "officialTokenCount": 71,
+      "asrTokenCount": 71,
+      "status": "pass",
+      "first": {
+        "text": "Tomoko: Good morning!",
+        "startMs": 2840,
+        "endMs": 4060
+      },
+      "middle": {
+        "text": "Ahmed: Hello, everybody!",
+        "startMs": 23440,
+        "endMs": 24760
+      },
+      "last": {
+        "text": "I think this is a good topic.",
+        "startMs": 37980,
+        "endMs": 41597
+      },
+      "asrHeadTokens": [
+        "good",
+        "morning",
+        "i'm",
+        "tomoko",
+        "i'm",
+        "going",
+        "to",
+        "tell",
+        "you",
+        "about",
+        "the",
+        "results"
+      ],
+      "asrTailTokens": [
+        "three",
+        "questions",
+        "in",
+        "my",
+        "survey",
+        "i",
+        "think",
+        "this",
+        "is",
+        "a",
+        "good",
+        "topic"
+      ]
+    },
+    {
+      "trackId": "track-unlock1-3e-u07-t07",
+      "officialTokenCoverage": 1.0,
+      "asrTokenCoverage": 1.0,
+      "officialTokenCount": 7,
+      "asrTokenCount": 7,
+      "status": "pass",
+      "first": {
+        "text": "Man: question",
+        "startMs": 2640,
+        "endMs": 4160
+      },
+      "middle": {
+        "text": "Woman: UK",
+        "startMs": 9920,
+        "endMs": 11080
+      },
+      "last": {
+        "text": "Man: four",
+        "startMs": 16760,
+        "endMs": 19290
+      },
+      "asrHeadTokens": [
+        "question",
+        "survey",
+        "result",
+        "uk",
+        "popular",
+        "minute",
+        "four"
+      ],
+      "asrTailTokens": [
+        "question",
+        "survey",
+        "result",
+        "uk",
+        "popular",
+        "minute",
+        "four"
+      ]
+    },
+    {
+      "trackId": "track-unlock1-3e-u07-t08",
+      "officialTokenCoverage": 1.0,
+      "asrTokenCoverage": 1.0,
+      "officialTokenCount": 34,
+      "asrTokenCount": 34,
+      "status": "pass",
+      "first": {
+        "text": "1",
+        "startMs": 1860,
+        "endMs": 3040
+      },
+      "middle": {
+        "text": "Narrator: 3",
+        "startMs": 17040,
+        "endMs": 17880
+      },
+      "last": {
+        "text": "Man: People had 80 minutes for lunch.",
+        "startMs": 25840,
+        "endMs": 30091
+      },
+      "asrHeadTokens": [
+        "1",
+        "i'm",
+        "going",
+        "to",
+        "tell",
+        "you",
+        "about",
+        "the",
+        "results",
+        "of",
+        "my",
+        "survey"
+      ],
+      "asrTailTokens": [
+        "are",
+        "fast",
+        "food",
+        "restaurants",
+        "popular",
+        "4",
+        "people",
+        "had",
+        "80",
+        "minutes",
+        "for",
+        "lunch"
+      ]
+    },
+    {
+      "trackId": "track-unlock1-3e-u07-t09",
+      "officialTokenCoverage": 0.9877,
+      "asrTokenCoverage": 1.0,
+      "officialTokenCount": 81,
+      "asrTokenCount": 80,
+      "status": "pass",
+      "first": {
+        "text": "1",
+        "startMs": 1940,
+        "endMs": 3100
+      },
+      "middle": {
+        "text": "Narrator: 4",
+        "startMs": 30640,
+        "endMs": 31140
+      },
+      "last": {
+        "text": "Woman: So, when you look here, 22% of people say ‘no’.",
+        "startMs": 50120,
+        "endMs": 58238
+      },
+      "asrHeadTokens": [
+        "1",
+        "my",
+        "first",
+        "question",
+        "was",
+        "how",
+        "often",
+        "do",
+        "you",
+        "eat",
+        "meat",
+        "2"
+      ],
+      "asrTailTokens": [
+        "meat",
+        "6",
+        "so",
+        "when",
+        "you",
+        "look",
+        "here",
+        "22",
+        "of",
+        "people",
+        "say",
+        "no"
+      ]
+    },
+    {
+      "trackId": "track-unlock1-3e-u08-t01",
+      "officialTokenCoverage": 0.2381,
+      "asrTokenCoverage": 0.8333,
+      "officialTokenCount": 21,
+      "asrTokenCount": 6,
+      "status": "pass",
+      "first": {
+        "text": "Man: 1238 [twelve thirty-eight]",
+        "startMs": 7640,
+        "endMs": 9040
+      },
+      "middle": {
+        "text": "Man: 1923 [nineteen twenty-three]",
+        "startMs": 16120,
+        "endMs": 17520
+      },
+      "last": {
+        "text": "Man: 2005 [two thousand and five]",
+        "startMs": 26620,
+        "endMs": 30224
+      },
+      "asrHeadTokens": [
+        "1238",
+        "1868",
+        "1923",
+        "1996",
+        "2005",
+        "ona"
+      ],
+      "asrTailTokens": [
+        "1238",
+        "1868",
+        "1923",
+        "1996",
+        "2005",
+        "ona"
+      ]
+    },
+    {
+      "trackId": "track-unlock1-3e-u08-t02",
+      "officialTokenCoverage": 0.2632,
+      "asrTokenCoverage": 0.8333,
+      "officialTokenCount": 19,
+      "asrTokenCount": 6,
+      "status": "pass",
+      "first": {
+        "text": "Woman: 1435 [fourteen thirty-five]",
+        "startMs": 2300,
+        "endMs": 4680
+      },
+      "middle": {
+        "text": "Woman: 1949 [nineteen forty-nine]",
+        "startMs": 15940,
+        "endMs": 18040
+      },
+      "last": {
+        "text": "Woman: 2017 [twenty seventeen]",
+        "startMs": 36520,
+        "endMs": 39212
+      },
+      "asrHeadTokens": [
+        "1435",
+        "1749",
+        "1949",
+        "1953",
+        "1953",
+        "2017"
+      ],
+      "asrTailTokens": [
+        "1435",
+        "1749",
+        "1949",
+        "1953",
+        "1953",
+        "2017"
+      ]
+    },
+    {
+      "trackId": "track-unlock1-3e-u08-t03",
+      "officialTokenCoverage": 0.9876,
+      "asrTokenCoverage": 0.995,
+      "officialTokenCount": 403,
+      "asrTokenCount": 400,
+      "status": "pass",
+      "first": {
+        "text": "Steve: Hi!",
+        "startMs": 2580,
+        "endMs": 3300
+      },
+      "middle": {
+        "text": "Steve: So, Transport for London started in 2000, and in 2003, we introduced the Oyster Card.",
+        "startMs": 87200,
+        "endMs": 94060
+      },
+      "last": {
+        "text": "Because it’s very fast and easy!",
+        "startMs": 181700,
+        "endMs": 186210
+      },
+      "asrHeadTokens": [
+        "hi",
+        "good",
+        "morning",
+        "thank",
+        "you",
+        "for",
+        "asking",
+        "me",
+        "here",
+        "today",
+        "ok",
+        "so"
+      ],
+      "asrTailTokens": [
+        "pay",
+        "as",
+        "you",
+        "go",
+        "journeys",
+        "why",
+        "because",
+        "it",
+        "very",
+        "fast",
+        "and",
+        "easy"
+      ]
+    },
+    {
+      "trackId": "track-unlock1-3e-u08-t04",
+      "officialTokenCoverage": 0.9891,
+      "asrTokenCoverage": 0.9855,
+      "officialTokenCount": 275,
+      "asrTokenCount": 276,
+      "status": "pass",
+      "first": {
+        "text": "Teacher: OK, so work with your partner.",
+        "startMs": 4120,
+        "endMs": 6100
+      },
+      "middle": {
+        "text": "This is expensive for people.",
+        "startMs": 66640,
+        "endMs": 69460
+      },
+      "last": {
+        "text": "And, because there are a lot of bad drivers, it can help stop accidents.",
+        "startMs": 141720,
+        "endMs": 150519
+      },
+      "asrHeadTokens": [
+        "okay",
+        "so",
+        "work",
+        "with",
+        "your",
+        "partner",
+        "five",
+        "minutes",
+        "hi",
+        "hello",
+        "i'm",
+        "sorry"
+      ],
+      "asrTailTokens": [
+        "there",
+        "are",
+        "a",
+        "lot",
+        "of",
+        "bad",
+        "drivers",
+        "it",
+        "can",
+        "help",
+        "stop",
+        "accidents"
+      ]
+    },
+    {
+      "trackId": "track-unlock1-3e-u08-t05",
+      "officialTokenCoverage": 0.986,
+      "asrTokenCoverage": 0.9592,
+      "officialTokenCount": 143,
+      "asrTokenCount": 147,
+      "status": "pass",
+      "first": {
+        "text": "Iman: Now in the city of Dubai, they are working hard to find solutions for their traffic problems because there are too many cars.",
+        "startMs": 2720,
+        "endMs": 13120
+      },
+      "middle": {
+        "text": "It’s too hot!",
+        "startMs": 40400,
+        "endMs": 41660
+      },
+      "last": {
+        "text": "Next, I want to talk about …",
+        "startMs": 73500,
+        "endMs": 79638
+      },
+      "asrHeadTokens": [
+        "now",
+        "in",
+        "the",
+        "city",
+        "of",
+        "dubai",
+        "they",
+        "are",
+        "working",
+        "hard",
+        "to",
+        "find"
+      ],
+      "asrTailTokens": [
+        "don't",
+        "drive",
+        "next",
+        "i",
+        "want",
+        "to",
+        "talk",
+        "about",
+        "the",
+        "congestion",
+        "problems",
+        "in"
+      ]
+    },
+    {
+      "trackId": "track-unlock1-3e-u08-t06",
+      "officialTokenCoverage": 1.0,
+      "asrTokenCoverage": 1.0,
+      "officialTokenCount": 87,
+      "asrTokenCount": 87,
+      "status": "pass",
+      "first": {
+        "text": "Iman: More and more people are living in cities rather than in the countryside.",
+        "startMs": 3120,
+        "endMs": 7740
+      },
+      "middle": {
+        "text": "This means the cars can’t move.",
+        "startMs": 24700,
+        "endMs": 27380
+      },
+      "last": {
+        "text": "Also, the smog is very bad in some places.",
+        "startMs": 39380,
+        "endMs": 45176
+      },
+      "asrHeadTokens": [
+        "more",
+        "and",
+        "more",
+        "people",
+        "are",
+        "living",
+        "in",
+        "cities",
+        "rather",
+        "than",
+        "in",
+        "the"
+      ],
+      "asrTailTokens": [
+        "expensive",
+        "for",
+        "people",
+        "also",
+        "the",
+        "smog",
+        "is",
+        "very",
+        "bad",
+        "in",
+        "some",
+        "places"
+      ]
+    },
+    {
+      "trackId": "track-unlock1-3e-u08-t07",
+      "officialTokenCoverage": 1.0,
+      "asrTokenCoverage": 1.0,
+      "officialTokenCount": 75,
+      "asrTokenCount": 75,
+      "status": "pass",
+      "first": {
+        "text": "Steve: Each passenger waited to buy a ticket and then they went to the gate.",
+        "startMs": 2300,
+        "endMs": 7440
+      },
+      "middle": {
+        "text": "They needed to carry it with them until their journey finished.",
+        "startMs": 15620,
+        "endMs": 18880
+      },
+      "last": {
+        "text": "And this was the Oyster Card.",
+        "startMs": 27940,
+        "endMs": 31630
+      },
+      "asrHeadTokens": [
+        "each",
+        "passenger",
+        "waited",
+        "to",
+        "buy",
+        "a",
+        "ticket",
+        "and",
+        "then",
+        "they",
+        "went",
+        "to"
+      ],
+      "asrTailTokens": [
+        "we",
+        "wanted",
+        "a",
+        "faster",
+        "ticket",
+        "system",
+        "and",
+        "this",
+        "was",
+        "the",
+        "oyster",
+        "card"
+      ]
+    },
+    {
+      "trackId": "track-unlock1-3e-u08-t08",
+      "officialTokenCoverage": 1.0,
+      "asrTokenCoverage": 1.0,
+      "officialTokenCount": 12,
+      "asrTokenCount": 12,
+      "status": "pass",
+      "first": {
+        "text": "Woman: happened",
+        "startMs": 2820,
+        "endMs": 3980
+      },
+      "middle": {
+        "text": "Woman: asked",
+        "startMs": 22820,
+        "endMs": 24220
+      },
+      "last": {
+        "text": "Man: started",
+        "startMs": 38580,
+        "endMs": 40480
+      },
+      "asrHeadTokens": [
+        "happened",
+        "changed",
+        "visited",
+        "guessed",
+        "needed",
+        "waited",
+        "asked",
+        "helped",
+        "showed",
+        "watched",
+        "opened",
+        "started"
+      ],
+      "asrTailTokens": [
+        "happened",
+        "changed",
+        "visited",
+        "guessed",
+        "needed",
+        "waited",
+        "asked",
+        "helped",
+        "showed",
+        "watched",
+        "opened",
+        "started"
+      ]
+    }
+  ]
+}

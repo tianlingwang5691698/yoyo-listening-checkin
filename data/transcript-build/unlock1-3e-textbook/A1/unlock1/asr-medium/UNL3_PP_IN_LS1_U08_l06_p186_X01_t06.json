@@ -1,0 +1,516 @@
+{
+  "model": "medium",
+  "language": "en",
+  "text": "8.6. More and more people are living in cities rather than in the countryside. This means that cities have a lot of traffic problems because many people use their cars to go to work or school or the shops or whatever. Many cities often have gridlock on the streets. This means the cars can't move. With all of these cars on the roads, it takes more time and petrol to travel around the city. This is expensive for people. Also, the smog is very bad in some places.",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 1640,
+      "text": "8.6.",
+      "words": [
+        {
+          "word": "8",
+          "start": 0.0,
+          "end": 0.58
+        },
+        {
+          "word": ".6.",
+          "start": 0.58,
+          "end": 1.64
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 3120,
+      "endMs": 7740,
+      "text": "More and more people are living in cities rather than in the countryside.",
+      "words": [
+        {
+          "word": "More",
+          "start": 3.12,
+          "end": 3.38
+        },
+        {
+          "word": "and",
+          "start": 3.38,
+          "end": 3.6
+        },
+        {
+          "word": "more",
+          "start": 3.6,
+          "end": 3.88
+        },
+        {
+          "word": "people",
+          "start": 3.88,
+          "end": 4.28
+        },
+        {
+          "word": "are",
+          "start": 4.28,
+          "end": 4.56
+        },
+        {
+          "word": "living",
+          "start": 4.56,
+          "end": 4.8
+        },
+        {
+          "word": "in",
+          "start": 4.8,
+          "end": 5.14
+        },
+        {
+          "word": "cities",
+          "start": 5.14,
+          "end": 5.6
+        },
+        {
+          "word": "rather",
+          "start": 5.6,
+          "end": 6.34
+        },
+        {
+          "word": "than",
+          "start": 6.34,
+          "end": 6.64
+        },
+        {
+          "word": "in",
+          "start": 6.64,
+          "end": 6.84
+        },
+        {
+          "word": "the",
+          "start": 6.84,
+          "end": 7.04
+        },
+        {
+          "word": "countryside.",
+          "start": 7.04,
+          "end": 7.74
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 8940,
+      "endMs": 19720,
+      "text": "This means that cities have a lot of traffic problems because many people use their cars to go to work or school or the shops or whatever.",
+      "words": [
+        {
+          "word": "This",
+          "start": 8.94,
+          "end": 9.28
+        },
+        {
+          "word": "means",
+          "start": 9.28,
+          "end": 9.64
+        },
+        {
+          "word": "that",
+          "start": 9.64,
+          "end": 10.04
+        },
+        {
+          "word": "cities",
+          "start": 10.04,
+          "end": 10.42
+        },
+        {
+          "word": "have",
+          "start": 10.42,
+          "end": 10.82
+        },
+        {
+          "word": "a",
+          "start": 10.82,
+          "end": 10.96
+        },
+        {
+          "word": "lot",
+          "start": 10.96,
+          "end": 11.22
+        },
+        {
+          "word": "of",
+          "start": 11.22,
+          "end": 11.54
+        },
+        {
+          "word": "traffic",
+          "start": 11.54,
+          "end": 11.92
+        },
+        {
+          "word": "problems",
+          "start": 11.92,
+          "end": 12.5
+        },
+        {
+          "word": "because",
+          "start": 12.5,
+          "end": 13.3
+        },
+        {
+          "word": "many",
+          "start": 13.3,
+          "end": 13.76
+        },
+        {
+          "word": "people",
+          "start": 13.76,
+          "end": 14.2
+        },
+        {
+          "word": "use",
+          "start": 14.2,
+          "end": 14.5
+        },
+        {
+          "word": "their",
+          "start": 14.5,
+          "end": 14.84
+        },
+        {
+          "word": "cars",
+          "start": 14.84,
+          "end": 15.28
+        },
+        {
+          "word": "to",
+          "start": 15.28,
+          "end": 15.72
+        },
+        {
+          "word": "go",
+          "start": 15.72,
+          "end": 15.94
+        },
+        {
+          "word": "to",
+          "start": 15.94,
+          "end": 16.2
+        },
+        {
+          "word": "work",
+          "start": 16.2,
+          "end": 16.62
+        },
+        {
+          "word": "or",
+          "start": 16.62,
+          "end": 17.08
+        },
+        {
+          "word": "school",
+          "start": 17.08,
+          "end": 17.58
+        },
+        {
+          "word": "or",
+          "start": 17.58,
+          "end": 18.08
+        },
+        {
+          "word": "the",
+          "start": 18.08,
+          "end": 18.28
+        },
+        {
+          "word": "shops",
+          "start": 18.28,
+          "end": 18.72
+        },
+        {
+          "word": "or",
+          "start": 18.72,
+          "end": 19.26
+        },
+        {
+          "word": "whatever.",
+          "start": 19.26,
+          "end": 19.72
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 20660,
+      "endMs": 23960,
+      "text": "Many cities often have gridlock on the streets.",
+      "words": [
+        {
+          "word": "Many",
+          "start": 20.66,
+          "end": 21.06
+        },
+        {
+          "word": "cities",
+          "start": 21.06,
+          "end": 21.56
+        },
+        {
+          "word": "often",
+          "start": 21.56,
+          "end": 22.04
+        },
+        {
+          "word": "have",
+          "start": 22.04,
+          "end": 22.46
+        },
+        {
+          "word": "gridlock",
+          "start": 22.46,
+          "end": 22.98
+        },
+        {
+          "word": "on",
+          "start": 22.98,
+          "end": 23.3
+        },
+        {
+          "word": "the",
+          "start": 23.3,
+          "end": 23.6
+        },
+        {
+          "word": "streets.",
+          "start": 23.6,
+          "end": 23.96
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 24700,
+      "endMs": 27380,
+      "text": "This means the cars can't move.",
+      "words": [
+        {
+          "word": "This",
+          "start": 24.7,
+          "end": 25.12
+        },
+        {
+          "word": "means",
+          "start": 25.12,
+          "end": 25.58
+        },
+        {
+          "word": "the",
+          "start": 25.58,
+          "end": 25.98
+        },
+        {
+          "word": "cars",
+          "start": 25.98,
+          "end": 26.26
+        },
+        {
+          "word": "can't",
+          "start": 26.26,
+          "end": 26.94
+        },
+        {
+          "word": "move.",
+          "start": 26.94,
+          "end": 27.38
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "startMs": 27380,
+      "endMs": 35300,
+      "text": "With all of these cars on the roads, it takes more time and petrol to travel around the city.",
+      "words": [
+        {
+          "word": "With",
+          "start": 27.38,
+          "end": 28.58
+        },
+        {
+          "word": "all",
+          "start": 28.58,
+          "end": 28.98
+        },
+        {
+          "word": "of",
+          "start": 28.98,
+          "end": 29.2
+        },
+        {
+          "word": "these",
+          "start": 29.2,
+          "end": 29.44
+        },
+        {
+          "word": "cars",
+          "start": 29.44,
+          "end": 29.86
+        },
+        {
+          "word": "on",
+          "start": 29.86,
+          "end": 30.16
+        },
+        {
+          "word": "the",
+          "start": 30.16,
+          "end": 30.38
+        },
+        {
+          "word": "roads,",
+          "start": 30.38,
+          "end": 30.72
+        },
+        {
+          "word": "it",
+          "start": 31.22,
+          "end": 31.3
+        },
+        {
+          "word": "takes",
+          "start": 31.3,
+          "end": 31.68
+        },
+        {
+          "word": "more",
+          "start": 31.68,
+          "end": 32.1
+        },
+        {
+          "word": "time",
+          "start": 32.1,
+          "end": 32.46
+        },
+        {
+          "word": "and",
+          "start": 32.46,
+          "end": 32.96
+        },
+        {
+          "word": "petrol",
+          "start": 32.96,
+          "end": 33.42
+        },
+        {
+          "word": "to",
+          "start": 33.42,
+          "end": 33.94
+        },
+        {
+          "word": "travel",
+          "start": 33.94,
+          "end": 34.34
+        },
+        {
+          "word": "around",
+          "start": 34.34,
+          "end": 34.78
+        },
+        {
+          "word": "the",
+          "start": 34.78,
+          "end": 35.04
+        },
+        {
+          "word": "city.",
+          "start": 35.04,
+          "end": 35.3
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "startMs": 36180,
+      "endMs": 38360,
+      "text": "This is expensive for people.",
+      "words": [
+        {
+          "word": "This",
+          "start": 36.18,
+          "end": 36.46
+        },
+        {
+          "word": "is",
+          "start": 36.46,
+          "end": 36.82
+        },
+        {
+          "word": "expensive",
+          "start": 36.82,
+          "end": 37.58
+        },
+        {
+          "word": "for",
+          "start": 37.58,
+          "end": 37.86
+        },
+        {
+          "word": "people.",
+          "start": 37.86,
+          "end": 38.36
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "startMs": 39380,
+      "endMs": 43300,
+      "text": "Also, the smog is very bad in some places.",
+      "words": [
+        {
+          "word": "Also,",
+          "start": 39.38,
+          "end": 39.88
+        },
+        {
+          "word": "the",
+          "start": 40.2,
+          "end": 40.58
+        },
+        {
+          "word": "smog",
+          "start": 40.58,
+          "end": 41.0
+        },
+        {
+          "word": "is",
+          "start": 41.0,
+          "end": 41.36
+        },
+        {
+          "word": "very",
+          "start": 41.36,
+          "end": 41.82
+        },
+        {
+          "word": "bad",
+          "start": 41.82,
+          "end": 42.24
+        },
+        {
+          "word": "in",
+          "start": 42.24,
+          "end": 42.6
+        },
+        {
+          "word": "some",
+          "start": 42.6,
+          "end": 42.84
+        },
+        {
+          "word": "places.",
+          "start": 42.84,
+          "end": 43.3
+        }
+      ]
+    }
+  ]
+}

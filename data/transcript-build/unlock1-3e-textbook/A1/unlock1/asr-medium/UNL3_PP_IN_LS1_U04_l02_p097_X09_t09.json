@@ -1,0 +1,519 @@
+{
+  "model": "medium",
+  "language": "en",
+  "text": "4.9 1 Excuse me Where's the Student Center, please Excuse me, where's the student center, please? 2 Excuse me I think I'm lost How do I get to the chemistry building Excuse me, I think I'm lost. How do I get to the chemistry building? 3 Excuse me Can you tell me How to get to the supermarket Excuse me, can you tell me how to get to the supermarket? You",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 2240,
+      "text": "4.9",
+      "words": [
+        {
+          "word": "4",
+          "start": 0.0,
+          "end": 0.62
+        },
+        {
+          "word": ".9",
+          "start": 0.62,
+          "end": 2.24
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 2240,
+      "endMs": 4000,
+      "text": "1",
+      "words": [
+        {
+          "word": "1",
+          "start": 2.24,
+          "end": 4.0
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 4720,
+      "endMs": 6340,
+      "text": "Excuse me",
+      "words": [
+        {
+          "word": "Excuse",
+          "start": 4.58,
+          "end": 5.28
+        },
+        {
+          "word": "me",
+          "start": 5.28,
+          "end": 6.34
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 7400,
+      "endMs": 9220,
+      "text": "Where's the",
+      "words": [
+        {
+          "word": "Where's",
+          "start": 7.4,
+          "end": 8.2
+        },
+        {
+          "word": "the",
+          "start": 8.2,
+          "end": 9.22
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 10340,
+      "endMs": 12480,
+      "text": "Student Center, please",
+      "words": [
+        {
+          "word": "Student",
+          "start": 10.180000000000001,
+          "end": 10.88
+        },
+        {
+          "word": "Center,",
+          "start": 10.88,
+          "end": 11.28
+        },
+        {
+          "word": "please",
+          "start": 11.4,
+          "end": 12.48
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "startMs": 13920,
+      "endMs": 17020,
+      "text": "Excuse me, where's the student center, please?",
+      "words": [
+        {
+          "word": "Excuse",
+          "start": 13.780000000000001,
+          "end": 14.48
+        },
+        {
+          "word": "me,",
+          "start": 14.48,
+          "end": 15.28
+        },
+        {
+          "word": "where's",
+          "start": 15.48,
+          "end": 15.84
+        },
+        {
+          "word": "the",
+          "start": 15.84,
+          "end": 16.08
+        },
+        {
+          "word": "student",
+          "start": 16.08,
+          "end": 16.4
+        },
+        {
+          "word": "center,",
+          "start": 16.4,
+          "end": 16.82
+        },
+        {
+          "word": "please?",
+          "start": 16.82,
+          "end": 17.52
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "startMs": 20120,
+      "endMs": 20680,
+      "text": "2",
+      "words": [
+        {
+          "word": "2",
+          "start": 20.12,
+          "end": 20.68
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "startMs": 21680,
+      "endMs": 23100,
+      "text": "Excuse me",
+      "words": [
+        {
+          "word": "Excuse",
+          "start": 21.560000000000002,
+          "end": 22.26
+        },
+        {
+          "word": "me",
+          "start": 22.26,
+          "end": 23.1
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "startMs": 24200,
+      "endMs": 25920,
+      "text": "I think I'm lost",
+      "words": [
+        {
+          "word": "I",
+          "start": 24.080000000000002,
+          "end": 24.78
+        },
+        {
+          "word": "think",
+          "start": 24.78,
+          "end": 25.02
+        },
+        {
+          "word": "I'm",
+          "start": 25.02,
+          "end": 25.36
+        },
+        {
+          "word": "lost",
+          "start": 25.36,
+          "end": 25.92
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "startMs": 27480,
+      "endMs": 28900,
+      "text": "How do I get to",
+      "words": [
+        {
+          "word": "How",
+          "start": 27.3,
+          "end": 28.0
+        },
+        {
+          "word": "do",
+          "start": 28.0,
+          "end": 28.16
+        },
+        {
+          "word": "I",
+          "start": 28.16,
+          "end": 28.26
+        },
+        {
+          "word": "get",
+          "start": 28.26,
+          "end": 28.54
+        },
+        {
+          "word": "to",
+          "start": 28.54,
+          "end": 28.9
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "startMs": 30140,
+      "endMs": 32740,
+      "text": "the chemistry building",
+      "words": [
+        {
+          "word": "the",
+          "start": 30.140000000000004,
+          "end": 30.98
+        },
+        {
+          "word": "chemistry",
+          "start": 30.98,
+          "end": 31.44
+        },
+        {
+          "word": "building",
+          "start": 31.44,
+          "end": 32.74
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "startMs": 33660,
+      "endMs": 39120,
+      "text": "Excuse me, I think I'm lost. How do I get to the chemistry building?",
+      "words": [
+        {
+          "word": "Excuse",
+          "start": 33.660000000000004,
+          "end": 34.5
+        },
+        {
+          "word": "me,",
+          "start": 34.5,
+          "end": 34.98
+        },
+        {
+          "word": "I",
+          "start": 35.04,
+          "end": 35.36
+        },
+        {
+          "word": "think",
+          "start": 35.36,
+          "end": 35.62
+        },
+        {
+          "word": "I'm",
+          "start": 35.62,
+          "end": 35.94
+        },
+        {
+          "word": "lost.",
+          "start": 35.94,
+          "end": 36.4
+        },
+        {
+          "word": "How",
+          "start": 36.96,
+          "end": 37.2
+        },
+        {
+          "word": "do",
+          "start": 37.2,
+          "end": 37.38
+        },
+        {
+          "word": "I",
+          "start": 37.38,
+          "end": 37.44
+        },
+        {
+          "word": "get",
+          "start": 37.44,
+          "end": 37.66
+        },
+        {
+          "word": "to",
+          "start": 37.66,
+          "end": 37.82
+        },
+        {
+          "word": "the",
+          "start": 37.82,
+          "end": 38.04
+        },
+        {
+          "word": "chemistry",
+          "start": 38.04,
+          "end": 38.46
+        },
+        {
+          "word": "building?",
+          "start": 38.46,
+          "end": 39.12
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "startMs": 41760,
+      "endMs": 42240,
+      "text": "3",
+      "words": [
+        {
+          "word": "3",
+          "start": 41.76,
+          "end": 42.24
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "startMs": 43400,
+      "endMs": 44900,
+      "text": "Excuse me",
+      "words": [
+        {
+          "word": "Excuse",
+          "start": 43.4,
+          "end": 43.88
+        },
+        {
+          "word": "me",
+          "start": 43.88,
+          "end": 44.9
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "startMs": 45960,
+      "endMs": 48100,
+      "text": "Can you tell me",
+      "words": [
+        {
+          "word": "Can",
+          "start": 45.96,
+          "end": 46.5
+        },
+        {
+          "word": "you",
+          "start": 46.5,
+          "end": 46.76
+        },
+        {
+          "word": "tell",
+          "start": 46.76,
+          "end": 46.98
+        },
+        {
+          "word": "me",
+          "start": 46.98,
+          "end": 48.1
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "startMs": 48960,
+      "endMs": 51280,
+      "text": "How to get to",
+      "words": [
+        {
+          "word": "How",
+          "start": 48.96,
+          "end": 49.54
+        },
+        {
+          "word": "to",
+          "start": 49.54,
+          "end": 49.78
+        },
+        {
+          "word": "get",
+          "start": 49.78,
+          "end": 50.08
+        },
+        {
+          "word": "to",
+          "start": 50.08,
+          "end": 51.28
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "startMs": 51880,
+      "endMs": 53320,
+      "text": "the supermarket",
+      "words": [
+        {
+          "word": "the",
+          "start": 51.879999999999995,
+          "end": 52.48
+        },
+        {
+          "word": "supermarket",
+          "start": 52.48,
+          "end": 53.32
+        }
+      ]
+    },
+    {
+      "index": 18,
+      "startMs": 55180,
+      "endMs": 59560,
+      "text": "Excuse me, can you tell me how to get to the supermarket?",
+      "words": [
+        {
+          "word": "Excuse",
+          "start": 55.18000000000001,
+          "end": 56.02
+        },
+        {
+          "word": "me,",
+          "start": 56.02,
+          "end": 56.76
+        },
+        {
+          "word": "can",
+          "start": 57.18,
+          "end": 57.34
+        },
+        {
+          "word": "you",
+          "start": 57.34,
+          "end": 57.56
+        },
+        {
+          "word": "tell",
+          "start": 57.56,
+          "end": 57.74
+        },
+        {
+          "word": "me",
+          "start": 57.74,
+          "end": 57.92
+        },
+        {
+          "word": "how",
+          "start": 57.92,
+          "end": 58.1
+        },
+        {
+          "word": "to",
+          "start": 58.1,
+          "end": 58.26
+        },
+        {
+          "word": "get",
+          "start": 58.26,
+          "end": 58.5
+        },
+        {
+          "word": "to",
+          "start": 58.5,
+          "end": 58.64
+        },
+        {
+          "word": "the",
+          "start": 58.64,
+          "end": 58.98
+        },
+        {
+          "word": "supermarket?",
+          "start": 58.98,
+          "end": 59.56
+        }
+      ]
+    },
+    {
+      "index": 19,
+      "startMs": 60000,
+      "endMs": 61340,
+      "text": "You",
+      "words": [
+        {
+          "word": "You",
+          "start": 60.0,
+          "end": 61.34
+        }
+      ]
+    }
+  ]
+}

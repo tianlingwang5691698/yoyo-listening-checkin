@@ -1,0 +1,116 @@
+{
+  "model": "medium",
+  "language": "en",
+  "text": "3.7 texts sleeps needs goes studies watches chooses",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 1600,
+      "text": "3.7",
+      "words": [
+        {
+          "word": "3",
+          "start": 0.0,
+          "end": 0.56
+        },
+        {
+          "word": ".7",
+          "start": 0.56,
+          "end": 1.6
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 3960,
+      "endMs": 4100,
+      "text": "texts",
+      "words": [
+        {
+          "word": "texts",
+          "start": 3.9600000000000004,
+          "end": 4.66
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 6220,
+      "endMs": 7620,
+      "text": "sleeps",
+      "words": [
+        {
+          "word": "sleeps",
+          "start": 6.220000000000001,
+          "end": 7.62
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 9640,
+      "endMs": 11040,
+      "text": "needs",
+      "words": [
+        {
+          "word": "needs",
+          "start": 9.639999999999999,
+          "end": 11.04
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 12780,
+      "endMs": 14180,
+      "text": "goes",
+      "words": [
+        {
+          "word": "goes",
+          "start": 12.78,
+          "end": 14.18
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "startMs": 16400,
+      "endMs": 17800,
+      "text": "studies",
+      "words": [
+        {
+          "word": "studies",
+          "start": 16.400000000000002,
+          "end": 17.8
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "startMs": 19780,
+      "endMs": 21180,
+      "text": "watches",
+      "words": [
+        {
+          "word": "watches",
+          "start": 19.78,
+          "end": 21.18
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "startMs": 23100,
+      "endMs": 24500,
+      "text": "chooses",
+      "words": [
+        {
+          "word": "chooses",
+          "start": 23.1,
+          "end": 24.5
+        }
+      ]
+    }
+  ]
+}

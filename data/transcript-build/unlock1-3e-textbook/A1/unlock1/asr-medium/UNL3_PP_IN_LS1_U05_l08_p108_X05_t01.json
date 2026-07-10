@@ -1,0 +1,161 @@
+{
+  "model": "medium",
+  "language": "en",
+  "text": "Unit 5, 5.1 I have two computers. I have to work on Mondays. He has two jobs. He has to get up at 5.30.",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 3660,
+      "text": "Unit 5, 5.1",
+      "words": [
+        {
+          "word": "Unit",
+          "start": 0.0,
+          "end": 0.62
+        },
+        {
+          "word": "5,",
+          "start": 0.62,
+          "end": 1.72
+        },
+        {
+          "word": "5",
+          "start": 2.56,
+          "end": 2.7
+        },
+        {
+          "word": ".1",
+          "start": 2.7,
+          "end": 3.66
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 4540,
+      "endMs": 10640,
+      "text": "I have two computers. I have to work on Mondays.",
+      "words": [
+        {
+          "word": "I",
+          "start": 4.54,
+          "end": 5.3
+        },
+        {
+          "word": "have",
+          "start": 5.3,
+          "end": 5.68
+        },
+        {
+          "word": "two",
+          "start": 5.68,
+          "end": 6.06
+        },
+        {
+          "word": "computers.",
+          "start": 6.06,
+          "end": 6.84
+        },
+        {
+          "word": "I",
+          "start": 8.56,
+          "end": 8.74
+        },
+        {
+          "word": "have",
+          "start": 8.74,
+          "end": 8.96
+        },
+        {
+          "word": "to",
+          "start": 8.96,
+          "end": 9.22
+        },
+        {
+          "word": "work",
+          "start": 9.22,
+          "end": 9.5
+        },
+        {
+          "word": "on",
+          "start": 9.5,
+          "end": 9.78
+        },
+        {
+          "word": "Mondays.",
+          "start": 9.78,
+          "end": 10.64
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 13100,
+      "endMs": 18460,
+      "text": "He has two jobs. He has to get up at 5.30.",
+      "words": [
+        {
+          "word": "He",
+          "start": 13.1,
+          "end": 13.34
+        },
+        {
+          "word": "has",
+          "start": 13.34,
+          "end": 13.72
+        },
+        {
+          "word": "two",
+          "start": 13.72,
+          "end": 14.1
+        },
+        {
+          "word": "jobs.",
+          "start": 14.1,
+          "end": 14.64
+        },
+        {
+          "word": "He",
+          "start": 16.3,
+          "end": 16.54
+        },
+        {
+          "word": "has",
+          "start": 16.54,
+          "end": 16.84
+        },
+        {
+          "word": "to",
+          "start": 16.84,
+          "end": 17.0
+        },
+        {
+          "word": "get",
+          "start": 17.0,
+          "end": 17.12
+        },
+        {
+          "word": "up",
+          "start": 17.12,
+          "end": 17.38
+        },
+        {
+          "word": "at",
+          "start": 17.38,
+          "end": 17.66
+        },
+        {
+          "word": "5",
+          "start": 17.66,
+          "end": 17.98
+        },
+        {
+          "word": ".30.",
+          "start": 17.98,
+          "end": 18.46
+        }
+      ]
+    }
+  ]
+}

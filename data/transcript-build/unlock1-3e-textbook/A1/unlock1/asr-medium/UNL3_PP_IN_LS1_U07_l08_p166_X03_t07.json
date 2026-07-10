@@ -1,0 +1,116 @@
+{
+  "model": "medium",
+  "language": "en",
+  "text": "7.7 question survey result UK popular minute four",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 2000,
+      "text": "7.7",
+      "words": [
+        {
+          "word": "7",
+          "start": 0.0,
+          "end": 0.58
+        },
+        {
+          "word": ".7",
+          "start": 0.58,
+          "end": 2.0
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 2640,
+      "endMs": 4160,
+      "text": "question",
+      "words": [
+        {
+          "word": "question",
+          "start": 2.64,
+          "end": 4.16
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 5200,
+      "endMs": 6380,
+      "text": "survey",
+      "words": [
+        {
+          "word": "survey",
+          "start": 5.2,
+          "end": 6.38
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 7560,
+      "endMs": 8600,
+      "text": "result",
+      "words": [
+        {
+          "word": "result",
+          "start": 7.5600000000000005,
+          "end": 8.6
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 9920,
+      "endMs": 11080,
+      "text": "UK",
+      "words": [
+        {
+          "word": "UK",
+          "start": 9.92,
+          "end": 11.08
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "startMs": 12240,
+      "endMs": 13280,
+      "text": "popular",
+      "words": [
+        {
+          "word": "popular",
+          "start": 12.24,
+          "end": 13.28
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "startMs": 14480,
+      "endMs": 15500,
+      "text": "minute",
+      "words": [
+        {
+          "word": "minute",
+          "start": 14.48,
+          "end": 15.5
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "startMs": 16800,
+      "endMs": 17460,
+      "text": "four",
+      "words": [
+        {
+          "word": "four",
+          "start": 16.76,
+          "end": 17.46
+        }
+      ]
+    }
+  ]
+}

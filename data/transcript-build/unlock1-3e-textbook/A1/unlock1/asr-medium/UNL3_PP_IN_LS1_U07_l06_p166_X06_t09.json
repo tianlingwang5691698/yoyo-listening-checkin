@@ -1,0 +1,536 @@
+{
+  "model": "medium",
+  "language": "en",
+  "text": "7.9 1 My first question was, how often do you eat meat? 2 You can see here that 19% of people eat it every day. 3 In one survey I looked at, in the past only 4% of people didn't eat meat. 4 My second question was, do you eat more or less meat than in the past? 5 My last question was, do you want to eat less meat? 6 So, when you look here, 22% of people say no.",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 1940,
+      "text": "7.9",
+      "words": [
+        {
+          "word": "7",
+          "start": 0.0,
+          "end": 0.7
+        },
+        {
+          "word": ".9",
+          "start": 0.7,
+          "end": 1.94
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 1940,
+      "endMs": 3100,
+      "text": "1",
+      "words": [
+        {
+          "word": "1",
+          "start": 1.94,
+          "end": 3.1
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 4000,
+      "endMs": 8960,
+      "text": "My first question was, how often do you eat meat?",
+      "words": [
+        {
+          "word": "My",
+          "start": 3.9799999999999995,
+          "end": 4.5
+        },
+        {
+          "word": "first",
+          "start": 4.5,
+          "end": 5.02
+        },
+        {
+          "word": "question",
+          "start": 5.02,
+          "end": 5.54
+        },
+        {
+          "word": "was,",
+          "start": 5.54,
+          "end": 6.1
+        },
+        {
+          "word": "how",
+          "start": 6.56,
+          "end": 6.84
+        },
+        {
+          "word": "often",
+          "start": 6.84,
+          "end": 7.5
+        },
+        {
+          "word": "do",
+          "start": 7.5,
+          "end": 7.92
+        },
+        {
+          "word": "you",
+          "start": 7.92,
+          "end": 8.14
+        },
+        {
+          "word": "eat",
+          "start": 8.14,
+          "end": 8.5
+        },
+        {
+          "word": "meat?",
+          "start": 8.5,
+          "end": 8.96
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 10580,
+      "endMs": 11620,
+      "text": "2",
+      "words": [
+        {
+          "word": "2",
+          "start": 10.58,
+          "end": 11.62
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 11620,
+      "endMs": 18120,
+      "text": "You can see here that 19% of people eat it every day.",
+      "words": [
+        {
+          "word": "You",
+          "start": 11.62,
+          "end": 12.7
+        },
+        {
+          "word": "can",
+          "start": 12.7,
+          "end": 13.04
+        },
+        {
+          "word": "see",
+          "start": 13.04,
+          "end": 13.26
+        },
+        {
+          "word": "here",
+          "start": 13.26,
+          "end": 13.7
+        },
+        {
+          "word": "that",
+          "start": 13.7,
+          "end": 14.32
+        },
+        {
+          "word": "19",
+          "start": 14.32,
+          "end": 15.04
+        },
+        {
+          "word": "%",
+          "start": 15.04,
+          "end": 15.52
+        },
+        {
+          "word": "of",
+          "start": 15.52,
+          "end": 15.78
+        },
+        {
+          "word": "people",
+          "start": 15.78,
+          "end": 16.3
+        },
+        {
+          "word": "eat",
+          "start": 16.3,
+          "end": 16.78
+        },
+        {
+          "word": "it",
+          "start": 16.78,
+          "end": 17.1
+        },
+        {
+          "word": "every",
+          "start": 17.1,
+          "end": 17.58
+        },
+        {
+          "word": "day.",
+          "start": 17.58,
+          "end": 18.12
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "startMs": 19920,
+      "endMs": 20640,
+      "text": "3",
+      "words": [
+        {
+          "word": "3",
+          "start": 19.92,
+          "end": 20.64
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "startMs": 20640,
+      "endMs": 28920,
+      "text": "In one survey I looked at, in the past only 4% of people didn't eat meat.",
+      "words": [
+        {
+          "word": "In",
+          "start": 20.64,
+          "end": 21.8
+        },
+        {
+          "word": "one",
+          "start": 21.8,
+          "end": 22.2
+        },
+        {
+          "word": "survey",
+          "start": 22.2,
+          "end": 22.66
+        },
+        {
+          "word": "I",
+          "start": 22.66,
+          "end": 22.9
+        },
+        {
+          "word": "looked",
+          "start": 22.9,
+          "end": 23.18
+        },
+        {
+          "word": "at,",
+          "start": 23.18,
+          "end": 23.56
+        },
+        {
+          "word": "in",
+          "start": 23.96,
+          "end": 24.04
+        },
+        {
+          "word": "the",
+          "start": 24.04,
+          "end": 24.3
+        },
+        {
+          "word": "past",
+          "start": 24.3,
+          "end": 24.72
+        },
+        {
+          "word": "only",
+          "start": 24.72,
+          "end": 25.5
+        },
+        {
+          "word": "4",
+          "start": 25.5,
+          "end": 26.02
+        },
+        {
+          "word": "%",
+          "start": 26.02,
+          "end": 26.34
+        },
+        {
+          "word": "of",
+          "start": 26.34,
+          "end": 26.56
+        },
+        {
+          "word": "people",
+          "start": 26.56,
+          "end": 27.1
+        },
+        {
+          "word": "didn't",
+          "start": 27.1,
+          "end": 27.66
+        },
+        {
+          "word": "eat",
+          "start": 27.66,
+          "end": 27.96
+        },
+        {
+          "word": "meat.",
+          "start": 27.96,
+          "end": 28.92
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "startMs": 30640,
+      "endMs": 31140,
+      "text": "4",
+      "words": [
+        {
+          "word": "4",
+          "start": 30.64,
+          "end": 31.14
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "startMs": 31140,
+      "endMs": 38320,
+      "text": "My second question was, do you eat more or less meat than in the past?",
+      "words": [
+        {
+          "word": "My",
+          "start": 31.14,
+          "end": 32.38
+        },
+        {
+          "word": "second",
+          "start": 32.38,
+          "end": 32.9
+        },
+        {
+          "word": "question",
+          "start": 32.9,
+          "end": 33.36
+        },
+        {
+          "word": "was,",
+          "start": 33.36,
+          "end": 33.86
+        },
+        {
+          "word": "do",
+          "start": 34.52,
+          "end": 34.72
+        },
+        {
+          "word": "you",
+          "start": 34.72,
+          "end": 34.96
+        },
+        {
+          "word": "eat",
+          "start": 34.96,
+          "end": 35.26
+        },
+        {
+          "word": "more",
+          "start": 35.26,
+          "end": 35.72
+        },
+        {
+          "word": "or",
+          "start": 35.72,
+          "end": 36.2
+        },
+        {
+          "word": "less",
+          "start": 36.2,
+          "end": 36.58
+        },
+        {
+          "word": "meat",
+          "start": 36.58,
+          "end": 36.96
+        },
+        {
+          "word": "than",
+          "start": 36.96,
+          "end": 37.42
+        },
+        {
+          "word": "in",
+          "start": 37.42,
+          "end": 37.68
+        },
+        {
+          "word": "the",
+          "start": 37.68,
+          "end": 37.92
+        },
+        {
+          "word": "past?",
+          "start": 37.92,
+          "end": 38.32
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "startMs": 40240,
+      "endMs": 41080,
+      "text": "5",
+      "words": [
+        {
+          "word": "5",
+          "start": 40.24,
+          "end": 41.08
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "startMs": 41640,
+      "endMs": 46860,
+      "text": "My last question was, do you want to eat less meat?",
+      "words": [
+        {
+          "word": "My",
+          "start": 41.64,
+          "end": 42.38
+        },
+        {
+          "word": "last",
+          "start": 42.38,
+          "end": 42.88
+        },
+        {
+          "word": "question",
+          "start": 42.88,
+          "end": 43.36
+        },
+        {
+          "word": "was,",
+          "start": 43.36,
+          "end": 43.8
+        },
+        {
+          "word": "do",
+          "start": 44.4,
+          "end": 44.68
+        },
+        {
+          "word": "you",
+          "start": 44.68,
+          "end": 44.9
+        },
+        {
+          "word": "want",
+          "start": 44.9,
+          "end": 45.1
+        },
+        {
+          "word": "to",
+          "start": 45.1,
+          "end": 45.4
+        },
+        {
+          "word": "eat",
+          "start": 45.4,
+          "end": 45.74
+        },
+        {
+          "word": "less",
+          "start": 45.74,
+          "end": 46.28
+        },
+        {
+          "word": "meat?",
+          "start": 46.28,
+          "end": 46.86
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "startMs": 48540,
+      "endMs": 48860,
+      "text": "6",
+      "words": [
+        {
+          "word": "6",
+          "start": 48.54,
+          "end": 49.04
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "startMs": 50120,
+      "endMs": 56420,
+      "text": "So, when you look here, 22% of people say no.",
+      "words": [
+        {
+          "word": "So,",
+          "start": 50.12,
+          "end": 51.12
+        },
+        {
+          "word": "when",
+          "start": 51.62,
+          "end": 51.86
+        },
+        {
+          "word": "you",
+          "start": 51.86,
+          "end": 52.1
+        },
+        {
+          "word": "look",
+          "start": 52.1,
+          "end": 52.36
+        },
+        {
+          "word": "here,",
+          "start": 52.36,
+          "end": 52.94
+        },
+        {
+          "word": "22",
+          "start": 53.76,
+          "end": 54.0
+        },
+        {
+          "word": "%",
+          "start": 54.0,
+          "end": 54.6
+        },
+        {
+          "word": "of",
+          "start": 54.6,
+          "end": 54.84
+        },
+        {
+          "word": "people",
+          "start": 54.84,
+          "end": 55.48
+        },
+        {
+          "word": "say",
+          "start": 55.48,
+          "end": 55.98
+        },
+        {
+          "word": "no.",
+          "start": 55.98,
+          "end": 56.42
+        }
+      ]
+    }
+  ]
+}

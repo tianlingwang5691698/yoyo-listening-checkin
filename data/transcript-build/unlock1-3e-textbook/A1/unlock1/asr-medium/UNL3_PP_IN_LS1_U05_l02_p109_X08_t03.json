@@ -1,0 +1,1721 @@
+{
+  "model": "medium",
+  "language": "en",
+  "text": "5.3 Come in. Hello. It's uh, I'm Beatrice. Ah, yes, Beatrice. Please come in. Take a seat. Thank you. So, how can I help you? Well, I want to go to university next year. Uh-huh. I have to choose a subject to study, but I don't know what to do. I need your advice. Should I go to medical school or should I go to music college? Should I be a doctor, a musician? I'm not sure what the best option is. Hmm. Those are good questions. Tell me about music school. Well, there aren't many jobs for musicians. Well, OK, I'm sorry. That's not true. There are a lot of jobs in music, but it's a hard life. They work hard, but many musicians don't earn a lot of money. I see. And what about medical school? Ah, a doctor's life. It's a good job. It's not boring. And you can earn good money and help people. Yes, that's true. But, I don't know. Medical school's difficult. You have to work hard. Hmm. What do your parents say? Well, my mother thinks I should go to medical school. Why? Oh, because my grades are good. I have good grades in science and English. And what about your father? He says I can be a doctor or an engineer or, well, anything, I guess. What do you think? What should I do? Well, you're a good student and you have good grades. But for now, I think you should get a job. What? Why? Listen, I don't think you should go to university now because you don't know if you want to be a musician or a doctor or an engineer. I think you should get a job. Then you can go to university later when you know what you want.",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 2360,
+      "text": "5.3",
+      "words": [
+        {
+          "word": "5",
+          "start": 0.0,
+          "end": 0.64
+        },
+        {
+          "word": ".3",
+          "start": 0.64,
+          "end": 2.36
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 2360,
+      "endMs": 7960,
+      "text": "Come in. Hello. It's uh, I'm Beatrice.",
+      "words": [
+        {
+          "word": "Come",
+          "start": 2.36,
+          "end": 3.18
+        },
+        {
+          "word": "in.",
+          "start": 3.18,
+          "end": 3.8
+        },
+        {
+          "word": "Hello.",
+          "start": 4.24,
+          "end": 4.58
+        },
+        {
+          "word": "It's",
+          "start": 5.44,
+          "end": 6.14
+        },
+        {
+          "word": "uh,",
+          "start": 6.14,
+          "end": 6.7
+        },
+        {
+          "word": "I'm",
+          "start": 6.92,
+          "end": 7.32
+        },
+        {
+          "word": "Beatrice.",
+          "start": 7.32,
+          "end": 7.96
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 8400,
+      "endMs": 12660,
+      "text": "Ah, yes, Beatrice. Please come in. Take a seat.",
+      "words": [
+        {
+          "word": "Ah,",
+          "start": 8.4,
+          "end": 8.82
+        },
+        {
+          "word": "yes,",
+          "start": 8.88,
+          "end": 9.22
+        },
+        {
+          "word": "Beatrice.",
+          "start": 9.36,
+          "end": 10.08
+        },
+        {
+          "word": "Please",
+          "start": 10.72,
+          "end": 11.08
+        },
+        {
+          "word": "come",
+          "start": 11.08,
+          "end": 11.44
+        },
+        {
+          "word": "in.",
+          "start": 11.44,
+          "end": 11.86
+        },
+        {
+          "word": "Take",
+          "start": 11.98,
+          "end": 12.22
+        },
+        {
+          "word": "a",
+          "start": 12.22,
+          "end": 12.4
+        },
+        {
+          "word": "seat.",
+          "start": 12.4,
+          "end": 12.66
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 13000,
+      "endMs": 13880,
+      "text": "Thank you.",
+      "words": [
+        {
+          "word": "Thank",
+          "start": 13.0,
+          "end": 13.34
+        },
+        {
+          "word": "you.",
+          "start": 13.34,
+          "end": 13.88
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 14320,
+      "endMs": 16180,
+      "text": "So, how can I help you?",
+      "words": [
+        {
+          "word": "So,",
+          "start": 14.32,
+          "end": 14.82
+        },
+        {
+          "word": "how",
+          "start": 15.08,
+          "end": 15.24
+        },
+        {
+          "word": "can",
+          "start": 15.24,
+          "end": 15.44
+        },
+        {
+          "word": "I",
+          "start": 15.44,
+          "end": 15.58
+        },
+        {
+          "word": "help",
+          "start": 15.58,
+          "end": 15.78
+        },
+        {
+          "word": "you?",
+          "start": 15.78,
+          "end": 16.18
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "startMs": 16640,
+      "endMs": 20820,
+      "text": "Well, I want to go to university next year.",
+      "words": [
+        {
+          "word": "Well,",
+          "start": 16.64,
+          "end": 17.26
+        },
+        {
+          "word": "I",
+          "start": 17.52,
+          "end": 18.18
+        },
+        {
+          "word": "want",
+          "start": 18.18,
+          "end": 18.52
+        },
+        {
+          "word": "to",
+          "start": 18.52,
+          "end": 18.72
+        },
+        {
+          "word": "go",
+          "start": 18.72,
+          "end": 18.96
+        },
+        {
+          "word": "to",
+          "start": 18.96,
+          "end": 19.2
+        },
+        {
+          "word": "university",
+          "start": 19.2,
+          "end": 19.9
+        },
+        {
+          "word": "next",
+          "start": 19.9,
+          "end": 20.42
+        },
+        {
+          "word": "year.",
+          "start": 20.42,
+          "end": 20.82
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "startMs": 21040,
+      "endMs": 21800,
+      "text": "Uh-huh.",
+      "words": [
+        {
+          "word": "Uh",
+          "start": 21.04,
+          "end": 21.26
+        },
+        {
+          "word": "-huh.",
+          "start": 21.26,
+          "end": 21.8
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "startMs": 22140,
+      "endMs": 29260,
+      "text": "I have to choose a subject to study, but I don't know what to do. I need your advice.",
+      "words": [
+        {
+          "word": "I",
+          "start": 22.14,
+          "end": 22.46
+        },
+        {
+          "word": "have",
+          "start": 22.46,
+          "end": 22.8
+        },
+        {
+          "word": "to",
+          "start": 22.8,
+          "end": 23.04
+        },
+        {
+          "word": "choose",
+          "start": 23.04,
+          "end": 23.26
+        },
+        {
+          "word": "a",
+          "start": 23.26,
+          "end": 23.46
+        },
+        {
+          "word": "subject",
+          "start": 23.46,
+          "end": 23.96
+        },
+        {
+          "word": "to",
+          "start": 23.96,
+          "end": 24.34
+        },
+        {
+          "word": "study,",
+          "start": 24.34,
+          "end": 24.76
+        },
+        {
+          "word": "but",
+          "start": 25.26,
+          "end": 25.7
+        },
+        {
+          "word": "I",
+          "start": 25.7,
+          "end": 25.92
+        },
+        {
+          "word": "don't",
+          "start": 25.92,
+          "end": 26.1
+        },
+        {
+          "word": "know",
+          "start": 26.1,
+          "end": 26.3
+        },
+        {
+          "word": "what",
+          "start": 26.3,
+          "end": 26.52
+        },
+        {
+          "word": "to",
+          "start": 26.52,
+          "end": 26.76
+        },
+        {
+          "word": "do.",
+          "start": 26.76,
+          "end": 27.16
+        },
+        {
+          "word": "I",
+          "start": 27.76,
+          "end": 28.06
+        },
+        {
+          "word": "need",
+          "start": 28.06,
+          "end": 28.34
+        },
+        {
+          "word": "your",
+          "start": 28.34,
+          "end": 28.62
+        },
+        {
+          "word": "advice.",
+          "start": 28.62,
+          "end": 29.26
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "startMs": 29260,
+      "endMs": 42220,
+      "text": "Should I go to medical school or should I go to music college? Should I be a doctor, a musician? I'm not sure what the best option is.",
+      "words": [
+        {
+          "word": "Should",
+          "start": 29.26,
+          "end": 30.32
+        },
+        {
+          "word": "I",
+          "start": 30.32,
+          "end": 30.54
+        },
+        {
+          "word": "go",
+          "start": 30.54,
+          "end": 30.78
+        },
+        {
+          "word": "to",
+          "start": 30.78,
+          "end": 30.98
+        },
+        {
+          "word": "medical",
+          "start": 30.98,
+          "end": 31.5
+        },
+        {
+          "word": "school",
+          "start": 31.5,
+          "end": 32.1
+        },
+        {
+          "word": "or",
+          "start": 32.1,
+          "end": 32.84
+        },
+        {
+          "word": "should",
+          "start": 32.84,
+          "end": 33.1
+        },
+        {
+          "word": "I",
+          "start": 33.1,
+          "end": 33.3
+        },
+        {
+          "word": "go",
+          "start": 33.3,
+          "end": 33.56
+        },
+        {
+          "word": "to",
+          "start": 33.56,
+          "end": 33.78
+        },
+        {
+          "word": "music",
+          "start": 33.78,
+          "end": 34.26
+        },
+        {
+          "word": "college?",
+          "start": 34.26,
+          "end": 34.82
+        },
+        {
+          "word": "Should",
+          "start": 35.62,
+          "end": 35.76
+        },
+        {
+          "word": "I",
+          "start": 35.76,
+          "end": 36.02
+        },
+        {
+          "word": "be",
+          "start": 36.02,
+          "end": 36.18
+        },
+        {
+          "word": "a",
+          "start": 36.18,
+          "end": 36.5
+        },
+        {
+          "word": "doctor,",
+          "start": 36.5,
+          "end": 36.98
+        },
+        {
+          "word": "a",
+          "start": 37.56,
+          "end": 37.84
+        },
+        {
+          "word": "musician?",
+          "start": 37.84,
+          "end": 38.54
+        },
+        {
+          "word": "I'm",
+          "start": 39.36,
+          "end": 39.58
+        },
+        {
+          "word": "not",
+          "start": 39.58,
+          "end": 39.92
+        },
+        {
+          "word": "sure",
+          "start": 39.92,
+          "end": 40.22
+        },
+        {
+          "word": "what",
+          "start": 40.22,
+          "end": 40.44
+        },
+        {
+          "word": "the",
+          "start": 40.44,
+          "end": 40.72
+        },
+        {
+          "word": "best",
+          "start": 40.72,
+          "end": 41.06
+        },
+        {
+          "word": "option",
+          "start": 41.06,
+          "end": 41.5
+        },
+        {
+          "word": "is.",
+          "start": 41.5,
+          "end": 42.22
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "startMs": 42600,
+      "endMs": 47760,
+      "text": "Hmm. Those are good questions. Tell me about music school.",
+      "words": [
+        {
+          "word": "Hmm.",
+          "start": 42.6,
+          "end": 43.12
+        },
+        {
+          "word": "Those",
+          "start": 43.46,
+          "end": 43.84
+        },
+        {
+          "word": "are",
+          "start": 43.84,
+          "end": 44.22
+        },
+        {
+          "word": "good",
+          "start": 44.22,
+          "end": 44.48
+        },
+        {
+          "word": "questions.",
+          "start": 44.48,
+          "end": 45.14
+        },
+        {
+          "word": "Tell",
+          "start": 46.02,
+          "end": 46.28
+        },
+        {
+          "word": "me",
+          "start": 46.28,
+          "end": 46.52
+        },
+        {
+          "word": "about",
+          "start": 46.52,
+          "end": 46.96
+        },
+        {
+          "word": "music",
+          "start": 46.96,
+          "end": 47.44
+        },
+        {
+          "word": "school.",
+          "start": 47.44,
+          "end": 47.76
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "startMs": 47760,
+      "endMs": 68400,
+      "text": "Well, there aren't many jobs for musicians. Well, OK, I'm sorry. That's not true. There are a lot of jobs in music, but it's a hard life. They work hard, but many musicians don't earn a lot of money.",
+      "words": [
+        {
+          "word": "Well,",
+          "start": 47.76,
+          "end": 49.08
+        },
+        {
+          "word": "there",
+          "start": 49.26,
+          "end": 49.74
+        },
+        {
+          "word": "aren't",
+          "start": 49.74,
+          "end": 50.18
+        },
+        {
+          "word": "many",
+          "start": 50.18,
+          "end": 50.62
+        },
+        {
+          "word": "jobs",
+          "start": 50.62,
+          "end": 51.06
+        },
+        {
+          "word": "for",
+          "start": 51.06,
+          "end": 51.4
+        },
+        {
+          "word": "musicians.",
+          "start": 51.4,
+          "end": 52.1
+        },
+        {
+          "word": "Well,",
+          "start": 53.0,
+          "end": 53.44
+        },
+        {
+          "word": "OK,",
+          "start": 53.64,
+          "end": 54.18
+        },
+        {
+          "word": "I'm",
+          "start": 54.48,
+          "end": 55.02
+        },
+        {
+          "word": "sorry.",
+          "start": 55.02,
+          "end": 55.38
+        },
+        {
+          "word": "That's",
+          "start": 56.02,
+          "end": 56.5
+        },
+        {
+          "word": "not",
+          "start": 56.5,
+          "end": 56.78
+        },
+        {
+          "word": "true.",
+          "start": 56.78,
+          "end": 57.16
+        },
+        {
+          "word": "There",
+          "start": 57.82,
+          "end": 58.1
+        },
+        {
+          "word": "are",
+          "start": 58.1,
+          "end": 58.4
+        },
+        {
+          "word": "a",
+          "start": 58.4,
+          "end": 58.52
+        },
+        {
+          "word": "lot",
+          "start": 58.52,
+          "end": 58.72
+        },
+        {
+          "word": "of",
+          "start": 58.72,
+          "end": 58.94
+        },
+        {
+          "word": "jobs",
+          "start": 58.94,
+          "end": 59.28
+        },
+        {
+          "word": "in",
+          "start": 59.28,
+          "end": 59.56
+        },
+        {
+          "word": "music,",
+          "start": 59.56,
+          "end": 60.1
+        },
+        {
+          "word": "but",
+          "start": 60.38,
+          "end": 60.9
+        },
+        {
+          "word": "it's",
+          "start": 60.9,
+          "end": 61.26
+        },
+        {
+          "word": "a",
+          "start": 61.26,
+          "end": 61.4
+        },
+        {
+          "word": "hard",
+          "start": 61.4,
+          "end": 61.76
+        },
+        {
+          "word": "life.",
+          "start": 61.76,
+          "end": 62.36
+        },
+        {
+          "word": "They",
+          "start": 62.94,
+          "end": 63.26
+        },
+        {
+          "word": "work",
+          "start": 63.26,
+          "end": 63.66
+        },
+        {
+          "word": "hard,",
+          "start": 63.66,
+          "end": 64.32
+        },
+        {
+          "word": "but",
+          "start": 64.88,
+          "end": 65.26
+        },
+        {
+          "word": "many",
+          "start": 65.26,
+          "end": 65.62
+        },
+        {
+          "word": "musicians",
+          "start": 65.62,
+          "end": 66.38
+        },
+        {
+          "word": "don't",
+          "start": 66.38,
+          "end": 66.96
+        },
+        {
+          "word": "earn",
+          "start": 66.96,
+          "end": 67.34
+        },
+        {
+          "word": "a",
+          "start": 67.34,
+          "end": 67.52
+        },
+        {
+          "word": "lot",
+          "start": 67.52,
+          "end": 67.76
+        },
+        {
+          "word": "of",
+          "start": 67.76,
+          "end": 68.02
+        },
+        {
+          "word": "money.",
+          "start": 68.02,
+          "end": 68.4
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "startMs": 68720,
+      "endMs": 71980,
+      "text": "I see. And what about medical school?",
+      "words": [
+        {
+          "word": "I",
+          "start": 68.72,
+          "end": 69.04
+        },
+        {
+          "word": "see.",
+          "start": 69.04,
+          "end": 69.44
+        },
+        {
+          "word": "And",
+          "start": 70.06,
+          "end": 70.5
+        },
+        {
+          "word": "what",
+          "start": 70.5,
+          "end": 70.78
+        },
+        {
+          "word": "about",
+          "start": 70.78,
+          "end": 71.1
+        },
+        {
+          "word": "medical",
+          "start": 71.1,
+          "end": 71.62
+        },
+        {
+          "word": "school?",
+          "start": 71.62,
+          "end": 71.98
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "startMs": 71980,
+      "endMs": 83460,
+      "text": "Ah, a doctor's life. It's a good job. It's not boring. And you can earn good money and help people.",
+      "words": [
+        {
+          "word": "Ah,",
+          "start": 71.98,
+          "end": 73.2
+        },
+        {
+          "word": "a",
+          "start": 73.52,
+          "end": 73.84
+        },
+        {
+          "word": "doctor's",
+          "start": 73.84,
+          "end": 74.66
+        },
+        {
+          "word": "life.",
+          "start": 74.66,
+          "end": 75.08
+        },
+        {
+          "word": "It's",
+          "start": 75.86,
+          "end": 76.32
+        },
+        {
+          "word": "a",
+          "start": 76.32,
+          "end": 76.52
+        },
+        {
+          "word": "good",
+          "start": 76.52,
+          "end": 76.78
+        },
+        {
+          "word": "job.",
+          "start": 76.78,
+          "end": 77.36
+        },
+        {
+          "word": "It's",
+          "start": 77.9,
+          "end": 78.4
+        },
+        {
+          "word": "not",
+          "start": 78.4,
+          "end": 78.7
+        },
+        {
+          "word": "boring.",
+          "start": 78.7,
+          "end": 79.32
+        },
+        {
+          "word": "And",
+          "start": 80.12,
+          "end": 80.38
+        },
+        {
+          "word": "you",
+          "start": 80.38,
+          "end": 80.56
+        },
+        {
+          "word": "can",
+          "start": 80.56,
+          "end": 80.82
+        },
+        {
+          "word": "earn",
+          "start": 80.82,
+          "end": 81.08
+        },
+        {
+          "word": "good",
+          "start": 81.08,
+          "end": 81.42
+        },
+        {
+          "word": "money",
+          "start": 81.42,
+          "end": 81.98
+        },
+        {
+          "word": "and",
+          "start": 81.98,
+          "end": 82.48
+        },
+        {
+          "word": "help",
+          "start": 82.48,
+          "end": 82.8
+        },
+        {
+          "word": "people.",
+          "start": 82.8,
+          "end": 83.46
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "startMs": 84120,
+      "endMs": 85260,
+      "text": "Yes, that's true.",
+      "words": [
+        {
+          "word": "Yes,",
+          "start": 84.12,
+          "end": 84.32
+        },
+        {
+          "word": "that's",
+          "start": 84.34,
+          "end": 84.8
+        },
+        {
+          "word": "true.",
+          "start": 84.8,
+          "end": 85.26
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "startMs": 86000,
+      "endMs": 93720,
+      "text": "But, I don't know. Medical school's difficult. You have to work hard.",
+      "words": [
+        {
+          "word": "But,",
+          "start": 86.0,
+          "end": 86.5
+        },
+        {
+          "word": "I",
+          "start": 87.3,
+          "end": 87.92
+        },
+        {
+          "word": "don't",
+          "start": 87.92,
+          "end": 88.32
+        },
+        {
+          "word": "know.",
+          "start": 88.32,
+          "end": 88.8
+        },
+        {
+          "word": "Medical",
+          "start": 89.7,
+          "end": 90.1
+        },
+        {
+          "word": "school's",
+          "start": 90.1,
+          "end": 90.7
+        },
+        {
+          "word": "difficult.",
+          "start": 90.7,
+          "end": 91.38
+        },
+        {
+          "word": "You",
+          "start": 91.98,
+          "end": 92.2
+        },
+        {
+          "word": "have",
+          "start": 92.2,
+          "end": 92.44
+        },
+        {
+          "word": "to",
+          "start": 92.44,
+          "end": 92.66
+        },
+        {
+          "word": "work",
+          "start": 92.66,
+          "end": 93.08
+        },
+        {
+          "word": "hard.",
+          "start": 93.08,
+          "end": 93.72
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "startMs": 94760,
+      "endMs": 97420,
+      "text": "Hmm. What do your parents say?",
+      "words": [
+        {
+          "word": "What",
+          "start": 95.76,
+          "end": 96.0
+        },
+        {
+          "word": "do",
+          "start": 96.0,
+          "end": 96.2
+        },
+        {
+          "word": "your",
+          "start": 96.2,
+          "end": 96.54
+        },
+        {
+          "word": "parents",
+          "start": 96.54,
+          "end": 97.0
+        },
+        {
+          "word": "say?",
+          "start": 97.0,
+          "end": 97.42
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "startMs": 97420,
+      "endMs": 102520,
+      "text": "Well, my mother thinks I should go to medical school.",
+      "words": [
+        {
+          "word": "Well,",
+          "start": 97.42,
+          "end": 98.6
+        },
+        {
+          "word": "my",
+          "start": 99.12,
+          "end": 99.2
+        },
+        {
+          "word": "mother",
+          "start": 99.2,
+          "end": 99.84
+        },
+        {
+          "word": "thinks",
+          "start": 99.84,
+          "end": 100.32
+        },
+        {
+          "word": "I",
+          "start": 100.32,
+          "end": 100.56
+        },
+        {
+          "word": "should",
+          "start": 100.56,
+          "end": 100.8
+        },
+        {
+          "word": "go",
+          "start": 100.8,
+          "end": 101.12
+        },
+        {
+          "word": "to",
+          "start": 101.12,
+          "end": 101.32
+        },
+        {
+          "word": "medical",
+          "start": 101.32,
+          "end": 101.86
+        },
+        {
+          "word": "school.",
+          "start": 101.86,
+          "end": 102.52
+        }
+      ]
+    },
+    {
+      "index": 18,
+      "startMs": 102980,
+      "endMs": 103340,
+      "text": "Why?",
+      "words": [
+        {
+          "word": "Why?",
+          "start": 102.98,
+          "end": 103.34
+        }
+      ]
+    },
+    {
+      "index": 19,
+      "startMs": 104060,
+      "endMs": 110420,
+      "text": "Oh, because my grades are good. I have good grades in science and English.",
+      "words": [
+        {
+          "word": "Oh,",
+          "start": 104.06,
+          "end": 104.42
+        },
+        {
+          "word": "because",
+          "start": 104.76,
+          "end": 105.14
+        },
+        {
+          "word": "my",
+          "start": 105.14,
+          "end": 105.44
+        },
+        {
+          "word": "grades",
+          "start": 105.44,
+          "end": 105.8
+        },
+        {
+          "word": "are",
+          "start": 105.8,
+          "end": 106.04
+        },
+        {
+          "word": "good.",
+          "start": 106.04,
+          "end": 106.32
+        },
+        {
+          "word": "I",
+          "start": 106.94,
+          "end": 107.18
+        },
+        {
+          "word": "have",
+          "start": 107.18,
+          "end": 107.46
+        },
+        {
+          "word": "good",
+          "start": 107.46,
+          "end": 107.8
+        },
+        {
+          "word": "grades",
+          "start": 107.8,
+          "end": 108.3
+        },
+        {
+          "word": "in",
+          "start": 108.3,
+          "end": 108.78
+        },
+        {
+          "word": "science",
+          "start": 108.78,
+          "end": 109.44
+        },
+        {
+          "word": "and",
+          "start": 109.44,
+          "end": 109.88
+        },
+        {
+          "word": "English.",
+          "start": 109.88,
+          "end": 110.42
+        }
+      ]
+    },
+    {
+      "index": 20,
+      "startMs": 111020,
+      "endMs": 112600,
+      "text": "And what about your father?",
+      "words": [
+        {
+          "word": "And",
+          "start": 111.02,
+          "end": 111.34
+        },
+        {
+          "word": "what",
+          "start": 111.34,
+          "end": 111.62
+        },
+        {
+          "word": "about",
+          "start": 111.62,
+          "end": 111.98
+        },
+        {
+          "word": "your",
+          "start": 111.98,
+          "end": 112.22
+        },
+        {
+          "word": "father?",
+          "start": 112.22,
+          "end": 112.6
+        }
+      ]
+    },
+    {
+      "index": 21,
+      "startMs": 113240,
+      "endMs": 124880,
+      "text": "He says I can be a doctor or an engineer or, well, anything, I guess. What do you think? What should I do?",
+      "words": [
+        {
+          "word": "He",
+          "start": 113.24,
+          "end": 113.64
+        },
+        {
+          "word": "says",
+          "start": 113.64,
+          "end": 114.06
+        },
+        {
+          "word": "I",
+          "start": 114.06,
+          "end": 114.3
+        },
+        {
+          "word": "can",
+          "start": 114.3,
+          "end": 114.58
+        },
+        {
+          "word": "be",
+          "start": 114.58,
+          "end": 114.86
+        },
+        {
+          "word": "a",
+          "start": 114.86,
+          "end": 115.04
+        },
+        {
+          "word": "doctor",
+          "start": 115.04,
+          "end": 115.54
+        },
+        {
+          "word": "or",
+          "start": 115.54,
+          "end": 116.18
+        },
+        {
+          "word": "an",
+          "start": 116.18,
+          "end": 116.54
+        },
+        {
+          "word": "engineer",
+          "start": 116.54,
+          "end": 117.04
+        },
+        {
+          "word": "or,",
+          "start": 117.04,
+          "end": 118.2
+        },
+        {
+          "word": "well,",
+          "start": 118.5,
+          "end": 119.3
+        },
+        {
+          "word": "anything,",
+          "start": 119.56,
+          "end": 120.06
+        },
+        {
+          "word": "I",
+          "start": 120.06,
+          "end": 120.28
+        },
+        {
+          "word": "guess.",
+          "start": 120.28,
+          "end": 120.68
+        },
+        {
+          "word": "What",
+          "start": 121.76,
+          "end": 122.0
+        },
+        {
+          "word": "do",
+          "start": 122.0,
+          "end": 122.26
+        },
+        {
+          "word": "you",
+          "start": 122.26,
+          "end": 122.58
+        },
+        {
+          "word": "think?",
+          "start": 122.58,
+          "end": 122.98
+        },
+        {
+          "word": "What",
+          "start": 123.66,
+          "end": 123.9
+        },
+        {
+          "word": "should",
+          "start": 123.9,
+          "end": 124.08
+        },
+        {
+          "word": "I",
+          "start": 124.08,
+          "end": 124.4
+        },
+        {
+          "word": "do?",
+          "start": 124.4,
+          "end": 124.88
+        }
+      ]
+    },
+    {
+      "index": 22,
+      "startMs": 124880,
+      "endMs": 134060,
+      "text": "Well, you're a good student and you have good grades. But for now, I think you should get a job.",
+      "words": [
+        {
+          "word": "Well,",
+          "start": 124.88,
+          "end": 126.0
+        },
+        {
+          "word": "you're",
+          "start": 126.66,
+          "end": 127.04
+        },
+        {
+          "word": "a",
+          "start": 127.04,
+          "end": 127.16
+        },
+        {
+          "word": "good",
+          "start": 127.16,
+          "end": 127.5
+        },
+        {
+          "word": "student",
+          "start": 127.5,
+          "end": 128.14
+        },
+        {
+          "word": "and",
+          "start": 128.14,
+          "end": 128.7
+        },
+        {
+          "word": "you",
+          "start": 128.7,
+          "end": 129.02
+        },
+        {
+          "word": "have",
+          "start": 129.02,
+          "end": 129.24
+        },
+        {
+          "word": "good",
+          "start": 129.24,
+          "end": 129.6
+        },
+        {
+          "word": "grades.",
+          "start": 129.6,
+          "end": 130.12
+        },
+        {
+          "word": "But",
+          "start": 130.76,
+          "end": 131.1
+        },
+        {
+          "word": "for",
+          "start": 131.1,
+          "end": 131.38
+        },
+        {
+          "word": "now,",
+          "start": 131.38,
+          "end": 131.8
+        },
+        {
+          "word": "I",
+          "start": 132.3,
+          "end": 132.56
+        },
+        {
+          "word": "think",
+          "start": 132.56,
+          "end": 132.84
+        },
+        {
+          "word": "you",
+          "start": 132.84,
+          "end": 133.02
+        },
+        {
+          "word": "should",
+          "start": 133.02,
+          "end": 133.22
+        },
+        {
+          "word": "get",
+          "start": 133.22,
+          "end": 133.5
+        },
+        {
+          "word": "a",
+          "start": 133.5,
+          "end": 133.64
+        },
+        {
+          "word": "job.",
+          "start": 133.64,
+          "end": 134.06
+        }
+      ]
+    },
+    {
+      "index": 23,
+      "startMs": 134600,
+      "endMs": 136320,
+      "text": "What? Why?",
+      "words": [
+        {
+          "word": "What?",
+          "start": 134.6,
+          "end": 135.1
+        },
+        {
+          "word": "Why?",
+          "start": 135.8,
+          "end": 136.32
+        }
+      ]
+    },
+    {
+      "index": 24,
+      "startMs": 137420,
+      "endMs": 148220,
+      "text": "Listen, I don't think you should go to university now because you don't know if you want to be a musician or a doctor or an engineer.",
+      "words": [
+        {
+          "word": "Listen,",
+          "start": 137.42000000000002,
+          "end": 138.06
+        },
+        {
+          "word": "I",
+          "start": 138.58,
+          "end": 138.86
+        },
+        {
+          "word": "don't",
+          "start": 138.86,
+          "end": 139.28
+        },
+        {
+          "word": "think",
+          "start": 139.28,
+          "end": 139.5
+        },
+        {
+          "word": "you",
+          "start": 139.5,
+          "end": 139.66
+        },
+        {
+          "word": "should",
+          "start": 139.66,
+          "end": 139.86
+        },
+        {
+          "word": "go",
+          "start": 139.86,
+          "end": 140.18
+        },
+        {
+          "word": "to",
+          "start": 140.18,
+          "end": 140.44
+        },
+        {
+          "word": "university",
+          "start": 140.44,
+          "end": 141.1
+        },
+        {
+          "word": "now",
+          "start": 141.1,
+          "end": 141.72
+        },
+        {
+          "word": "because",
+          "start": 141.72,
+          "end": 142.26
+        },
+        {
+          "word": "you",
+          "start": 142.26,
+          "end": 142.6
+        },
+        {
+          "word": "don't",
+          "start": 142.6,
+          "end": 143.0
+        },
+        {
+          "word": "know",
+          "start": 143.0,
+          "end": 143.34
+        },
+        {
+          "word": "if",
+          "start": 143.34,
+          "end": 143.6
+        },
+        {
+          "word": "you",
+          "start": 143.6,
+          "end": 143.78
+        },
+        {
+          "word": "want",
+          "start": 143.78,
+          "end": 144.04
+        },
+        {
+          "word": "to",
+          "start": 144.04,
+          "end": 144.26
+        },
+        {
+          "word": "be",
+          "start": 144.26,
+          "end": 144.54
+        },
+        {
+          "word": "a",
+          "start": 144.54,
+          "end": 144.74
+        },
+        {
+          "word": "musician",
+          "start": 144.74,
+          "end": 145.38
+        },
+        {
+          "word": "or",
+          "start": 145.38,
+          "end": 145.92
+        },
+        {
+          "word": "a",
+          "start": 145.92,
+          "end": 146.14
+        },
+        {
+          "word": "doctor",
+          "start": 146.14,
+          "end": 146.56
+        },
+        {
+          "word": "or",
+          "start": 146.56,
+          "end": 147.44
+        },
+        {
+          "word": "an",
+          "start": 147.44,
+          "end": 147.8
+        },
+        {
+          "word": "engineer.",
+          "start": 147.8,
+          "end": 148.22
+        }
+      ]
+    },
+    {
+      "index": 25,
+      "startMs": 149200,
+      "endMs": 156760,
+      "text": "I think you should get a job. Then you can go to university later when you know what you want.",
+      "words": [
+        {
+          "word": "I",
+          "start": 149.2,
+          "end": 149.46
+        },
+        {
+          "word": "think",
+          "start": 149.46,
+          "end": 149.78
+        },
+        {
+          "word": "you",
+          "start": 149.78,
+          "end": 150.04
+        },
+        {
+          "word": "should",
+          "start": 150.04,
+          "end": 150.24
+        },
+        {
+          "word": "get",
+          "start": 150.24,
+          "end": 150.5
+        },
+        {
+          "word": "a",
+          "start": 150.5,
+          "end": 150.64
+        },
+        {
+          "word": "job.",
+          "start": 150.64,
+          "end": 151.02
+        },
+        {
+          "word": "Then",
+          "start": 151.46,
+          "end": 151.78
+        },
+        {
+          "word": "you",
+          "start": 151.78,
+          "end": 151.98
+        },
+        {
+          "word": "can",
+          "start": 151.98,
+          "end": 152.2
+        },
+        {
+          "word": "go",
+          "start": 152.2,
+          "end": 152.5
+        },
+        {
+          "word": "to",
+          "start": 152.5,
+          "end": 152.72
+        },
+        {
+          "word": "university",
+          "start": 152.72,
+          "end": 153.54
+        },
+        {
+          "word": "later",
+          "start": 153.54,
+          "end": 154.18
+        },
+        {
+          "word": "when",
+          "start": 154.18,
+          "end": 154.68
+        },
+        {
+          "word": "you",
+          "start": 154.68,
+          "end": 154.9
+        },
+        {
+          "word": "know",
+          "start": 154.9,
+          "end": 155.26
+        },
+        {
+          "word": "what",
+          "start": 155.26,
+          "end": 155.54
+        },
+        {
+          "word": "you",
+          "start": 155.54,
+          "end": 156.44
+        },
+        {
+          "word": "want.",
+          "start": 156.44,
+          "end": 156.76
+        }
+      ]
+    }
+  ],
+  "sanitization": {
+    "removedInvalidWordCount": 1,
+    "rule": "drop_word_when_end_lte_start_or_start_negative"
+  }
+}

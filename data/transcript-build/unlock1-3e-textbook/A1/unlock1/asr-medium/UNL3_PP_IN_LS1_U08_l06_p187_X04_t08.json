@@ -1,0 +1,181 @@
+{
+  "model": "medium",
+  "language": "en",
+  "text": "8.8 happened changed visited guessed needed waited asked helped showed watched opened started",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 2000,
+      "text": "8.8",
+      "words": [
+        {
+          "word": "8",
+          "start": 0.0,
+          "end": 0.54
+        },
+        {
+          "word": ".8",
+          "start": 0.54,
+          "end": 2.0
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 2820,
+      "endMs": 3980,
+      "text": "happened",
+      "words": [
+        {
+          "word": "happened",
+          "start": 2.82,
+          "end": 3.98
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 6460,
+      "endMs": 7860,
+      "text": "changed",
+      "words": [
+        {
+          "word": "changed",
+          "start": 6.460000000000001,
+          "end": 7.86
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 9400,
+      "endMs": 10800,
+      "text": "visited",
+      "words": [
+        {
+          "word": "visited",
+          "start": 9.4,
+          "end": 10.8
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 12640,
+      "endMs": 14040,
+      "text": "guessed",
+      "words": [
+        {
+          "word": "guessed",
+          "start": 12.639999999999999,
+          "end": 14.04
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "startMs": 16100,
+      "endMs": 17500,
+      "text": "needed",
+      "words": [
+        {
+          "word": "needed",
+          "start": 16.1,
+          "end": 17.5
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "startMs": 19240,
+      "endMs": 20640,
+      "text": "waited",
+      "words": [
+        {
+          "word": "waited",
+          "start": 19.240000000000002,
+          "end": 20.64
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "startMs": 22820,
+      "endMs": 24220,
+      "text": "asked",
+      "words": [
+        {
+          "word": "asked",
+          "start": 22.82,
+          "end": 24.22
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "startMs": 26000,
+      "endMs": 26980,
+      "text": "helped",
+      "words": [
+        {
+          "word": "helped",
+          "start": 26.0,
+          "end": 26.98
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "startMs": 29260,
+      "endMs": 29940,
+      "text": "showed",
+      "words": [
+        {
+          "word": "showed",
+          "start": 29.26,
+          "end": 29.96
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "startMs": 32820,
+      "endMs": 34220,
+      "text": "watched",
+      "words": [
+        {
+          "word": "watched",
+          "start": 32.82,
+          "end": 34.22
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "startMs": 36120,
+      "endMs": 37520,
+      "text": "opened",
+      "words": [
+        {
+          "word": "opened",
+          "start": 36.120000000000005,
+          "end": 37.52
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "startMs": 38580,
+      "endMs": 40320,
+      "text": "started",
+      "words": [
+        {
+          "word": "started",
+          "start": 38.58,
+          "end": 40.32
+        }
+      ]
+    }
+  ]
+}

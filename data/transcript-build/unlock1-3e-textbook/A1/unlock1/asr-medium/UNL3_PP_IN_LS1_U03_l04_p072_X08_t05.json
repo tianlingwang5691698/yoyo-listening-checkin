@@ -1,0 +1,1443 @@
+{
+  "model": "medium",
+  "language": "en",
+  "text": "Good morning! Can I ask you... Sorry, sorry, no time, no time. Excuse me, do you have... Sorry, can't stop, that's my bus. Excuse me, can I have a few minutes of your time? Er, yes, sure. Great! My name's April, I'm a university student and I'm asking people questions about their lifestyle. I'd like to thank you for watching. I'd like to ask you some questions. Is that okay? Yes, no problem. I'm Jumana. Great! Nice to meet you Jumana. Okay, so... well, I'll just start then. Okay, so do you live with your parents? Yes. And do you work or study? Oh, I study. I'm a student. And what do you study? I study biology. I'd like to be a scientist. Hmm. Okay. And do you have a busy lifestyle? Yes. I think so. I have a lot of homework. I see. Okay. And what things do you do to relax? Well, I go to a gym. I exercise a lot. Really? Yes. I am happy when I exercise. Yes, I know what you mean. And when do you go to the gym? Oh, every day. Every day? Wow! Okay, and what other things do you do? Do you go to the cinema, for example? No, not really. I watch films on my computer at home. I see. And what about your friends? When do you go out with them? Oh, well, I have some friends at the gym, but I also go out on Saturday afternoons. We go to a cafe and have some coffee and talk about... Well, we talk about life, people we know, that kind of thing. I think I know what you mean. Okay, so...",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 3320,
+      "endMs": 31100,
+      "text": "Good morning! Can I ask you... Sorry, sorry, no time, no time. Excuse me, do you have... Sorry, can't stop, that's my bus. Excuse me, can I have a few minutes of your time? Er, yes, sure. Great! My name's April, I'm a university student and I'm asking people questions about their lifestyle. I'd like to thank you for watching.",
+      "words": [
+        {
+          "word": "Good",
+          "start": 3.3200000000000007,
+          "end": 4.0600000000000005
+        },
+        {
+          "word": "morning!",
+          "start": 4.0600000000000005,
+          "end": 4.62
+        },
+        {
+          "word": "Can",
+          "start": 5.26,
+          "end": 5.48
+        },
+        {
+          "word": "I",
+          "start": 5.48,
+          "end": 5.66
+        },
+        {
+          "word": "ask",
+          "start": 5.66,
+          "end": 6.0
+        },
+        {
+          "word": "you...",
+          "start": 6.0,
+          "end": 6.16
+        },
+        {
+          "word": "Sorry,",
+          "start": 6.16,
+          "end": 6.46
+        },
+        {
+          "word": "sorry,",
+          "start": 6.82,
+          "end": 7.16
+        },
+        {
+          "word": "no",
+          "start": 7.26,
+          "end": 7.46
+        },
+        {
+          "word": "time,",
+          "start": 7.46,
+          "end": 7.76
+        },
+        {
+          "word": "no",
+          "start": 7.98,
+          "end": 8.26
+        },
+        {
+          "word": "time.",
+          "start": 8.26,
+          "end": 8.8
+        },
+        {
+          "word": "Excuse",
+          "start": 9.54,
+          "end": 9.879999999999999
+        },
+        {
+          "word": "me,",
+          "start": 9.879999999999999,
+          "end": 10.54
+        },
+        {
+          "word": "do",
+          "start": 10.86,
+          "end": 11.1
+        },
+        {
+          "word": "you",
+          "start": 11.1,
+          "end": 11.32
+        },
+        {
+          "word": "have...",
+          "start": 11.32,
+          "end": 11.34
+        },
+        {
+          "word": "Sorry,",
+          "start": 11.34,
+          "end": 11.7
+        },
+        {
+          "word": "can't",
+          "start": 11.82,
+          "end": 12.22
+        },
+        {
+          "word": "stop,",
+          "start": 12.22,
+          "end": 12.52
+        },
+        {
+          "word": "that's",
+          "start": 12.56,
+          "end": 12.8
+        },
+        {
+          "word": "my",
+          "start": 12.8,
+          "end": 12.98
+        },
+        {
+          "word": "bus.",
+          "start": 12.98,
+          "end": 13.46
+        },
+        {
+          "word": "Excuse",
+          "start": 14.66,
+          "end": 15.14
+        },
+        {
+          "word": "me,",
+          "start": 15.14,
+          "end": 15.66
+        },
+        {
+          "word": "can",
+          "start": 16.14,
+          "end": 16.36
+        },
+        {
+          "word": "I",
+          "start": 16.36,
+          "end": 16.58
+        },
+        {
+          "word": "have",
+          "start": 16.58,
+          "end": 16.78
+        },
+        {
+          "word": "a",
+          "start": 16.78,
+          "end": 17.0
+        },
+        {
+          "word": "few",
+          "start": 17.0,
+          "end": 17.14
+        },
+        {
+          "word": "minutes",
+          "start": 17.14,
+          "end": 17.439999999999998
+        },
+        {
+          "word": "of",
+          "start": 17.439999999999998,
+          "end": 17.64
+        },
+        {
+          "word": "your",
+          "start": 17.64,
+          "end": 17.939999999999998
+        },
+        {
+          "word": "time?",
+          "start": 17.939999999999998,
+          "end": 18.34
+        },
+        {
+          "word": "Er,",
+          "start": 19.02,
+          "end": 19.66
+        },
+        {
+          "word": "yes,",
+          "start": 19.8,
+          "end": 20.24
+        },
+        {
+          "word": "sure.",
+          "start": 20.7,
+          "end": 21.1
+        },
+        {
+          "word": "Great!",
+          "start": 21.48,
+          "end": 22.02
+        },
+        {
+          "word": "My",
+          "start": 22.78,
+          "end": 23.04
+        },
+        {
+          "word": "name's",
+          "start": 23.04,
+          "end": 23.5
+        },
+        {
+          "word": "April,",
+          "start": 23.5,
+          "end": 23.96
+        },
+        {
+          "word": "I'm",
+          "start": 24.76,
+          "end": 25.06
+        },
+        {
+          "word": "a",
+          "start": 25.06,
+          "end": 25.22
+        },
+        {
+          "word": "university",
+          "start": 25.22,
+          "end": 25.94
+        },
+        {
+          "word": "student",
+          "start": 25.94,
+          "end": 26.56
+        },
+        {
+          "word": "and",
+          "start": 26.56,
+          "end": 27.12
+        },
+        {
+          "word": "I'm",
+          "start": 27.12,
+          "end": 27.54
+        },
+        {
+          "word": "asking",
+          "start": 27.54,
+          "end": 27.92
+        },
+        {
+          "word": "people",
+          "start": 27.92,
+          "end": 28.48
+        },
+        {
+          "word": "questions",
+          "start": 28.48,
+          "end": 29.22
+        },
+        {
+          "word": "about",
+          "start": 29.22,
+          "end": 29.7
+        },
+        {
+          "word": "their",
+          "start": 29.7,
+          "end": 30.12
+        },
+        {
+          "word": "lifestyle.",
+          "start": 30.12,
+          "end": 30.76
+        },
+        {
+          "word": "I'd",
+          "start": 30.76,
+          "end": 30.78
+        },
+        {
+          "word": "watching.",
+          "start": 30.78,
+          "end": 31.1
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 31220,
+      "endMs": 58760,
+      "text": "I'd like to ask you some questions. Is that okay? Yes, no problem. I'm Jumana. Great! Nice to meet you Jumana. Okay, so... well, I'll just start then. Okay, so do you live with your parents? Yes. And do you work or study? Oh, I study.",
+      "words": [
+        {
+          "word": "I'd",
+          "start": 31.22,
+          "end": 32.02
+        },
+        {
+          "word": "like",
+          "start": 32.02,
+          "end": 32.2
+        },
+        {
+          "word": "to",
+          "start": 32.2,
+          "end": 32.44
+        },
+        {
+          "word": "ask",
+          "start": 32.44,
+          "end": 32.7
+        },
+        {
+          "word": "you",
+          "start": 32.7,
+          "end": 32.92
+        },
+        {
+          "word": "some",
+          "start": 32.92,
+          "end": 33.14
+        },
+        {
+          "word": "questions.",
+          "start": 33.14,
+          "end": 33.8
+        },
+        {
+          "word": "Is",
+          "start": 34.5,
+          "end": 34.78
+        },
+        {
+          "word": "that",
+          "start": 34.78,
+          "end": 35.06
+        },
+        {
+          "word": "okay?",
+          "start": 35.06,
+          "end": 35.38
+        },
+        {
+          "word": "Yes,",
+          "start": 35.96,
+          "end": 36.28
+        },
+        {
+          "word": "no",
+          "start": 36.78,
+          "end": 36.94
+        },
+        {
+          "word": "problem.",
+          "start": 36.94,
+          "end": 37.28
+        },
+        {
+          "word": "I'm",
+          "start": 37.9,
+          "end": 38.2
+        },
+        {
+          "word": "Jumana.",
+          "start": 38.2,
+          "end": 38.7
+        },
+        {
+          "word": "Great!",
+          "start": 39.28,
+          "end": 39.78
+        },
+        {
+          "word": "Nice",
+          "start": 40.58,
+          "end": 40.92
+        },
+        {
+          "word": "to",
+          "start": 40.92,
+          "end": 41.16
+        },
+        {
+          "word": "meet",
+          "start": 41.16,
+          "end": 41.3
+        },
+        {
+          "word": "you",
+          "start": 41.3,
+          "end": 41.5
+        },
+        {
+          "word": "Jumana.",
+          "start": 41.5,
+          "end": 42.18
+        },
+        {
+          "word": "Okay,",
+          "start": 42.86,
+          "end": 43.26
+        },
+        {
+          "word": "so...",
+          "start": 43.86,
+          "end": 45.14
+        },
+        {
+          "word": "well,",
+          "start": 45.14,
+          "end": 46.64
+        },
+        {
+          "word": "I'll",
+          "start": 47.379999999999995,
+          "end": 47.64
+        },
+        {
+          "word": "just",
+          "start": 47.64,
+          "end": 48.08
+        },
+        {
+          "word": "start",
+          "start": 48.08,
+          "end": 48.480000000000004
+        },
+        {
+          "word": "then.",
+          "start": 48.480000000000004,
+          "end": 48.94
+        },
+        {
+          "word": "Okay,",
+          "start": 50.0,
+          "end": 50.8
+        },
+        {
+          "word": "so",
+          "start": 51.7,
+          "end": 52.14
+        },
+        {
+          "word": "do",
+          "start": 52.14,
+          "end": 52.34
+        },
+        {
+          "word": "you",
+          "start": 52.34,
+          "end": 52.44
+        },
+        {
+          "word": "live",
+          "start": 52.44,
+          "end": 52.64
+        },
+        {
+          "word": "with",
+          "start": 52.64,
+          "end": 52.92
+        },
+        {
+          "word": "your",
+          "start": 52.92,
+          "end": 53.32
+        },
+        {
+          "word": "parents?",
+          "start": 53.32,
+          "end": 53.86
+        },
+        {
+          "word": "Yes.",
+          "start": 54.120000000000005,
+          "end": 54.64
+        },
+        {
+          "word": "And",
+          "start": 55.14,
+          "end": 55.519999999999996
+        },
+        {
+          "word": "do",
+          "start": 55.519999999999996,
+          "end": 55.78
+        },
+        {
+          "word": "you",
+          "start": 55.78,
+          "end": 56.06
+        },
+        {
+          "word": "work",
+          "start": 56.06,
+          "end": 56.44
+        },
+        {
+          "word": "or",
+          "start": 56.44,
+          "end": 56.980000000000004
+        },
+        {
+          "word": "study?",
+          "start": 56.980000000000004,
+          "end": 57.44
+        },
+        {
+          "word": "Oh,",
+          "start": 57.44,
+          "end": 58.1
+        },
+        {
+          "word": "I",
+          "start": 58.260000000000005,
+          "end": 58.42
+        },
+        {
+          "word": "study.",
+          "start": 58.42,
+          "end": 58.760000000000005
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 58820,
+      "endMs": 86800,
+      "text": "I'm a student. And what do you study? I study biology. I'd like to be a scientist. Hmm. Okay. And do you have a busy lifestyle? Yes. I think so. I have a lot of homework. I see. Okay. And what things do you do to relax? Well, I go to a gym.",
+      "words": [
+        {
+          "word": "I'm",
+          "start": 58.82,
+          "end": 59.42
+        },
+        {
+          "word": "a",
+          "start": 59.42,
+          "end": 59.62
+        },
+        {
+          "word": "student.",
+          "start": 59.62,
+          "end": 59.98
+        },
+        {
+          "word": "And",
+          "start": 60.56,
+          "end": 60.96
+        },
+        {
+          "word": "what",
+          "start": 60.96,
+          "end": 61.22
+        },
+        {
+          "word": "do",
+          "start": 61.22,
+          "end": 61.4
+        },
+        {
+          "word": "you",
+          "start": 61.4,
+          "end": 61.6
+        },
+        {
+          "word": "study?",
+          "start": 61.6,
+          "end": 61.92
+        },
+        {
+          "word": "I",
+          "start": 62.480000000000004,
+          "end": 62.54
+        },
+        {
+          "word": "study",
+          "start": 62.54,
+          "end": 62.92
+        },
+        {
+          "word": "biology.",
+          "start": 62.92,
+          "end": 63.5
+        },
+        {
+          "word": "I'd",
+          "start": 64.18,
+          "end": 64.38
+        },
+        {
+          "word": "like",
+          "start": 64.38,
+          "end": 64.5
+        },
+        {
+          "word": "to",
+          "start": 64.5,
+          "end": 64.66
+        },
+        {
+          "word": "be",
+          "start": 64.66,
+          "end": 64.82
+        },
+        {
+          "word": "a",
+          "start": 64.82,
+          "end": 65.06
+        },
+        {
+          "word": "scientist.",
+          "start": 65.06,
+          "end": 65.6
+        },
+        {
+          "word": "Okay.",
+          "start": 67.28,
+          "end": 67.6
+        },
+        {
+          "word": "And",
+          "start": 68.18,
+          "end": 68.66
+        },
+        {
+          "word": "do",
+          "start": 68.66,
+          "end": 68.96000000000001
+        },
+        {
+          "word": "you",
+          "start": 68.96000000000001,
+          "end": 69.3
+        },
+        {
+          "word": "have",
+          "start": 69.3,
+          "end": 69.56
+        },
+        {
+          "word": "a",
+          "start": 69.56,
+          "end": 69.84
+        },
+        {
+          "word": "busy",
+          "start": 69.84,
+          "end": 70.24
+        },
+        {
+          "word": "lifestyle?",
+          "start": 70.24,
+          "end": 70.9
+        },
+        {
+          "word": "Yes.",
+          "start": 71.62,
+          "end": 72.2
+        },
+        {
+          "word": "I",
+          "start": 72.68,
+          "end": 72.96000000000001
+        },
+        {
+          "word": "think",
+          "start": 72.96000000000001,
+          "end": 73.32
+        },
+        {
+          "word": "so.",
+          "start": 73.32,
+          "end": 73.72
+        },
+        {
+          "word": "I",
+          "start": 74.2,
+          "end": 74.52
+        },
+        {
+          "word": "have",
+          "start": 74.52,
+          "end": 74.76
+        },
+        {
+          "word": "a",
+          "start": 74.76,
+          "end": 74.96000000000001
+        },
+        {
+          "word": "lot",
+          "start": 74.96000000000001,
+          "end": 75.16
+        },
+        {
+          "word": "of",
+          "start": 75.16,
+          "end": 75.44
+        },
+        {
+          "word": "homework.",
+          "start": 75.44,
+          "end": 75.84
+        },
+        {
+          "word": "I",
+          "start": 76.88,
+          "end": 77.08
+        },
+        {
+          "word": "see.",
+          "start": 77.08,
+          "end": 77.58
+        },
+        {
+          "word": "Okay.",
+          "start": 78.4,
+          "end": 78.92
+        },
+        {
+          "word": "And",
+          "start": 79.24,
+          "end": 79.86
+        },
+        {
+          "word": "what",
+          "start": 79.86,
+          "end": 80.56
+        },
+        {
+          "word": "things",
+          "start": 80.56,
+          "end": 81.06
+        },
+        {
+          "word": "do",
+          "start": 81.06,
+          "end": 81.36
+        },
+        {
+          "word": "you",
+          "start": 81.36,
+          "end": 81.64
+        },
+        {
+          "word": "do",
+          "start": 81.64,
+          "end": 81.98
+        },
+        {
+          "word": "to",
+          "start": 81.98,
+          "end": 82.52
+        },
+        {
+          "word": "relax?",
+          "start": 82.52,
+          "end": 83.08
+        },
+        {
+          "word": "Well,",
+          "start": 84.4,
+          "end": 84.92
+        },
+        {
+          "word": "go",
+          "start": 85.82,
+          "end": 86.08
+        },
+        {
+          "word": "to",
+          "start": 86.08,
+          "end": 86.32
+        },
+        {
+          "word": "a",
+          "start": 86.32,
+          "end": 86.52
+        },
+        {
+          "word": "gym.",
+          "start": 86.52,
+          "end": 86.8
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 87740,
+      "endMs": 114920,
+      "text": "I exercise a lot. Really? Yes. I am happy when I exercise. Yes, I know what you mean. And when do you go to the gym? Oh, every day. Every day? Wow! Okay, and what other things do you do? Do you go to the cinema, for example?",
+      "words": [
+        {
+          "word": "I",
+          "start": 87.74,
+          "end": 87.92
+        },
+        {
+          "word": "exercise",
+          "start": 87.92,
+          "end": 88.62
+        },
+        {
+          "word": "a",
+          "start": 88.62,
+          "end": 88.94
+        },
+        {
+          "word": "lot.",
+          "start": 88.94,
+          "end": 89.48
+        },
+        {
+          "word": "Really?",
+          "start": 89.78,
+          "end": 90.28
+        },
+        {
+          "word": "Yes.",
+          "start": 90.82,
+          "end": 91.36
+        },
+        {
+          "word": "I",
+          "start": 91.84,
+          "end": 92.1
+        },
+        {
+          "word": "am",
+          "start": 92.1,
+          "end": 92.32
+        },
+        {
+          "word": "happy",
+          "start": 92.32,
+          "end": 92.7
+        },
+        {
+          "word": "when",
+          "start": 92.7,
+          "end": 92.96
+        },
+        {
+          "word": "I",
+          "start": 92.96,
+          "end": 93.32
+        },
+        {
+          "word": "exercise.",
+          "start": 93.32,
+          "end": 93.98
+        },
+        {
+          "word": "Yes,",
+          "start": 94.42,
+          "end": 94.84
+        },
+        {
+          "word": "I",
+          "start": 95.38,
+          "end": 95.72
+        },
+        {
+          "word": "know",
+          "start": 95.72,
+          "end": 95.96000000000001
+        },
+        {
+          "word": "what",
+          "start": 95.96000000000001,
+          "end": 96.14
+        },
+        {
+          "word": "you",
+          "start": 96.14,
+          "end": 96.32
+        },
+        {
+          "word": "mean.",
+          "start": 96.32,
+          "end": 96.78
+        },
+        {
+          "word": "And",
+          "start": 97.68,
+          "end": 98.38
+        },
+        {
+          "word": "when",
+          "start": 98.38,
+          "end": 99.03999999999999
+        },
+        {
+          "word": "do",
+          "start": 99.03999999999999,
+          "end": 99.3
+        },
+        {
+          "word": "you",
+          "start": 99.3,
+          "end": 99.42
+        },
+        {
+          "word": "go",
+          "start": 99.42,
+          "end": 99.66
+        },
+        {
+          "word": "to",
+          "start": 99.66,
+          "end": 99.84
+        },
+        {
+          "word": "the",
+          "start": 99.84,
+          "end": 100.0
+        },
+        {
+          "word": "gym?",
+          "start": 100.0,
+          "end": 100.26
+        },
+        {
+          "word": "Oh,",
+          "start": 100.92,
+          "end": 101.52
+        },
+        {
+          "word": "every",
+          "start": 101.96000000000001,
+          "end": 102.28
+        },
+        {
+          "word": "day.",
+          "start": 102.28,
+          "end": 102.7
+        },
+        {
+          "word": "Every",
+          "start": 103.3,
+          "end": 103.76
+        },
+        {
+          "word": "day?",
+          "start": 103.76,
+          "end": 104.26
+        },
+        {
+          "word": "Wow!",
+          "start": 105.03999999999999,
+          "end": 105.68
+        },
+        {
+          "word": "Okay,",
+          "start": 106.42,
+          "end": 106.9
+        },
+        {
+          "word": "and",
+          "start": 107.46000000000001,
+          "end": 108.14
+        },
+        {
+          "word": "what",
+          "start": 108.14,
+          "end": 109.12
+        },
+        {
+          "word": "other",
+          "start": 109.12,
+          "end": 109.56
+        },
+        {
+          "word": "things",
+          "start": 109.56,
+          "end": 110.18
+        },
+        {
+          "word": "do",
+          "start": 110.18,
+          "end": 110.58
+        },
+        {
+          "word": "you",
+          "start": 110.58,
+          "end": 110.84
+        },
+        {
+          "word": "do?",
+          "start": 110.84,
+          "end": 111.3
+        },
+        {
+          "word": "Do",
+          "start": 112.0,
+          "end": 112.32
+        },
+        {
+          "word": "you",
+          "start": 112.32,
+          "end": 112.62
+        },
+        {
+          "word": "go",
+          "start": 112.62,
+          "end": 112.92
+        },
+        {
+          "word": "to",
+          "start": 112.92,
+          "end": 113.16
+        },
+        {
+          "word": "the",
+          "start": 113.16,
+          "end": 113.42
+        },
+        {
+          "word": "cinema,",
+          "start": 113.42,
+          "end": 113.98
+        },
+        {
+          "word": "for",
+          "start": 114.08,
+          "end": 114.46000000000001
+        },
+        {
+          "word": "example?",
+          "start": 114.46000000000001,
+          "end": 114.92
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 115740,
+      "endMs": 142780,
+      "text": "No, not really. I watch films on my computer at home. I see. And what about your friends? When do you go out with them? Oh, well, I have some friends at the gym, but I also go out on Saturday afternoons. We go to a cafe and have some coffee and talk about... Well,",
+      "words": [
+        {
+          "word": "No,",
+          "start": 115.74,
+          "end": 116.18
+        },
+        {
+          "word": "not",
+          "start": 116.38,
+          "end": 116.72
+        },
+        {
+          "word": "really.",
+          "start": 116.72,
+          "end": 117.16
+        },
+        {
+          "word": "I",
+          "start": 117.88,
+          "end": 118.3
+        },
+        {
+          "word": "watch",
+          "start": 118.3,
+          "end": 118.8
+        },
+        {
+          "word": "films",
+          "start": 118.8,
+          "end": 119.38
+        },
+        {
+          "word": "on",
+          "start": 119.38,
+          "end": 119.78
+        },
+        {
+          "word": "my",
+          "start": 119.78,
+          "end": 120.06
+        },
+        {
+          "word": "computer",
+          "start": 120.06,
+          "end": 120.56
+        },
+        {
+          "word": "at",
+          "start": 120.56,
+          "end": 120.96
+        },
+        {
+          "word": "home.",
+          "start": 120.96,
+          "end": 121.26
+        },
+        {
+          "word": "I",
+          "start": 121.86,
+          "end": 122.1
+        },
+        {
+          "word": "see.",
+          "start": 122.1,
+          "end": 122.42
+        },
+        {
+          "word": "And",
+          "start": 123.53999999999999,
+          "end": 124.0
+        },
+        {
+          "word": "what",
+          "start": 124.0,
+          "end": 124.68
+        },
+        {
+          "word": "about",
+          "start": 124.68,
+          "end": 125.12
+        },
+        {
+          "word": "your",
+          "start": 125.12,
+          "end": 125.5
+        },
+        {
+          "word": "friends?",
+          "start": 125.5,
+          "end": 126.03999999999999
+        },
+        {
+          "word": "When",
+          "start": 126.94,
+          "end": 127.26
+        },
+        {
+          "word": "do",
+          "start": 127.26,
+          "end": 127.52
+        },
+        {
+          "word": "you",
+          "start": 127.52,
+          "end": 127.7
+        },
+        {
+          "word": "go",
+          "start": 127.7,
+          "end": 127.98
+        },
+        {
+          "word": "out",
+          "start": 127.98,
+          "end": 128.36
+        },
+        {
+          "word": "with",
+          "start": 128.36,
+          "end": 128.6
+        },
+        {
+          "word": "them?",
+          "start": 128.6,
+          "end": 128.98
+        },
+        {
+          "word": "Oh,",
+          "start": 129.78,
+          "end": 130.28
+        },
+        {
+          "word": "well,",
+          "start": 130.46,
+          "end": 131.1
+        },
+        {
+          "word": "I",
+          "start": 131.52,
+          "end": 131.68
+        },
+        {
+          "word": "have",
+          "start": 131.68,
+          "end": 131.96
+        },
+        {
+          "word": "some",
+          "start": 131.96,
+          "end": 132.36
+        },
+        {
+          "word": "friends",
+          "start": 132.36,
+          "end": 132.68
+        },
+        {
+          "word": "at",
+          "start": 132.68,
+          "end": 132.98
+        },
+        {
+          "word": "the",
+          "start": 132.98,
+          "end": 133.22
+        },
+        {
+          "word": "gym,",
+          "start": 133.22,
+          "end": 133.52
+        },
+        {
+          "word": "but",
+          "start": 133.96,
+          "end": 134.24
+        },
+        {
+          "word": "I",
+          "start": 134.24,
+          "end": 134.52
+        },
+        {
+          "word": "also",
+          "start": 134.52,
+          "end": 134.8
+        },
+        {
+          "word": "go",
+          "start": 134.8,
+          "end": 135.0
+        },
+        {
+          "word": "out",
+          "start": 135.0,
+          "end": 135.32
+        },
+        {
+          "word": "on",
+          "start": 135.32,
+          "end": 135.57999999999998
+        },
+        {
+          "word": "Saturday",
+          "start": 135.57999999999998,
+          "end": 136.06
+        },
+        {
+          "word": "afternoons.",
+          "start": 136.06,
+          "end": 136.88
+        },
+        {
+          "word": "We",
+          "start": 137.2,
+          "end": 137.38
+        },
+        {
+          "word": "go",
+          "start": 137.38,
+          "end": 137.57999999999998
+        },
+        {
+          "word": "to",
+          "start": 137.57999999999998,
+          "end": 137.82
+        },
+        {
+          "word": "a",
+          "start": 137.82,
+          "end": 137.94
+        },
+        {
+          "word": "cafe",
+          "start": 137.94,
+          "end": 138.34
+        },
+        {
+          "word": "and",
+          "start": 138.34,
+          "end": 139.0
+        },
+        {
+          "word": "have",
+          "start": 139.0,
+          "end": 139.18
+        },
+        {
+          "word": "some",
+          "start": 139.18,
+          "end": 139.5
+        },
+        {
+          "word": "coffee",
+          "start": 139.5,
+          "end": 139.86
+        },
+        {
+          "word": "and",
+          "start": 139.86,
+          "end": 140.38
+        },
+        {
+          "word": "talk",
+          "start": 140.38,
+          "end": 140.8
+        },
+        {
+          "word": "about...",
+          "start": 140.8,
+          "end": 141.5
+        },
+        {
+          "word": "Well,",
+          "start": 142.3,
+          "end": 142.78
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "startMs": 143280,
+      "endMs": 153900,
+      "text": "we talk about life, people we know, that kind of thing. I think I know what you mean. Okay, so...",
+      "words": [
+        {
+          "word": "we",
+          "start": 143.28,
+          "end": 143.56
+        },
+        {
+          "word": "talk",
+          "start": 143.56,
+          "end": 143.82
+        },
+        {
+          "word": "about",
+          "start": 143.82,
+          "end": 144.3
+        },
+        {
+          "word": "life,",
+          "start": 144.3,
+          "end": 144.84
+        },
+        {
+          "word": "people",
+          "start": 145.14,
+          "end": 145.44
+        },
+        {
+          "word": "we",
+          "start": 145.44,
+          "end": 145.74
+        },
+        {
+          "word": "know,",
+          "start": 145.74,
+          "end": 146.18
+        },
+        {
+          "word": "that",
+          "start": 146.74,
+          "end": 147.0
+        },
+        {
+          "word": "kind",
+          "start": 147.0,
+          "end": 147.24
+        },
+        {
+          "word": "of",
+          "start": 147.24,
+          "end": 147.5
+        },
+        {
+          "word": "thing.",
+          "start": 147.5,
+          "end": 147.8
+        },
+        {
+          "word": "I",
+          "start": 148.62,
+          "end": 148.88
+        },
+        {
+          "word": "think",
+          "start": 148.88,
+          "end": 149.18
+        },
+        {
+          "word": "I",
+          "start": 149.18,
+          "end": 149.5
+        },
+        {
+          "word": "know",
+          "start": 149.5,
+          "end": 149.78
+        },
+        {
+          "word": "what",
+          "start": 149.78,
+          "end": 150.0
+        },
+        {
+          "word": "you",
+          "start": 150.0,
+          "end": 150.3
+        },
+        {
+          "word": "mean.",
+          "start": 150.3,
+          "end": 150.78
+        },
+        {
+          "word": "Okay,",
+          "start": 152.7,
+          "end": 153.3
+        },
+        {
+          "word": "so...",
+          "start": 153.3,
+          "end": 153.9
+        }
+      ]
+    }
+  ],
+  "strategy": "overlapping_30s_chunks_condition_off",
+  "chunkStartsSec": [
+    2.0,
+    30.0,
+    58.0,
+    86.0,
+    114.0,
+    142.0
+  ],
+  "sanitization": {
+    "removedInvalidWordCount": 7,
+    "rule": "drop_word_when_end_lte_start_or_start_negative"
+  }
+}

@@ -1,0 +1,776 @@
+{
+  "model": "medium",
+  "language": "en",
+  "text": "2.9 Hello, everybody! Okay, so I'm Khaled. I'm from Port Said in Egypt. Today I'm going to talk about a place I love. Here's my first photo. You can see there's a big mountain. There's a lot of snow and there are trees. The trees are orange and red because it's autumn. Right, so where is this place? It's in Japan. This is Mount Fuji. Here's another photo of the mountain in the summer. There's a path and you can see there are people there. It's very sunny and there are white clouds below. You can only walk up the mountain in the summer. In that season it's hot and there isn't any snow. It's a beautiful place and I want to go there.",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 1440,
+      "text": "2.9",
+      "words": [
+        {
+          "word": "2",
+          "start": 0.0,
+          "end": 0.48
+        },
+        {
+          "word": ".9",
+          "start": 0.48,
+          "end": 1.44
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 2640,
+      "endMs": 4080,
+      "text": "Hello, everybody!",
+      "words": [
+        {
+          "word": "Hello,",
+          "start": 2.6400000000000023,
+          "end": 3.360000000000001
+        },
+        {
+          "word": "everybody!",
+          "start": 3.360000000000001,
+          "end": 4.08
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 4620,
+      "endMs": 6240,
+      "text": "Okay, so I'm Khaled.",
+      "words": [
+        {
+          "word": "Okay,",
+          "start": 4.62,
+          "end": 4.96
+        },
+        {
+          "word": "so",
+          "start": 5.26,
+          "end": 5.48
+        },
+        {
+          "word": "I'm",
+          "start": 5.48,
+          "end": 5.78
+        },
+        {
+          "word": "Khaled.",
+          "start": 5.78,
+          "end": 6.24
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 6800,
+      "endMs": 8800,
+      "text": "I'm from Port Said in Egypt.",
+      "words": [
+        {
+          "word": "I'm",
+          "start": 6.8,
+          "end": 6.98
+        },
+        {
+          "word": "from",
+          "start": 6.98,
+          "end": 7.26
+        },
+        {
+          "word": "Port",
+          "start": 7.26,
+          "end": 7.68
+        },
+        {
+          "word": "Said",
+          "start": 7.68,
+          "end": 8.06
+        },
+        {
+          "word": "in",
+          "start": 8.06,
+          "end": 8.38
+        },
+        {
+          "word": "Egypt.",
+          "start": 8.38,
+          "end": 8.8
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 9820,
+      "endMs": 12920,
+      "text": "Today I'm going to talk about a place I love.",
+      "words": [
+        {
+          "word": "Today",
+          "start": 9.82,
+          "end": 10.2
+        },
+        {
+          "word": "I'm",
+          "start": 10.2,
+          "end": 10.52
+        },
+        {
+          "word": "going",
+          "start": 10.52,
+          "end": 10.78
+        },
+        {
+          "word": "to",
+          "start": 10.78,
+          "end": 10.98
+        },
+        {
+          "word": "talk",
+          "start": 10.98,
+          "end": 11.22
+        },
+        {
+          "word": "about",
+          "start": 11.22,
+          "end": 11.5
+        },
+        {
+          "word": "a",
+          "start": 11.5,
+          "end": 11.84
+        },
+        {
+          "word": "place",
+          "start": 11.84,
+          "end": 12.14
+        },
+        {
+          "word": "I",
+          "start": 12.14,
+          "end": 12.58
+        },
+        {
+          "word": "love.",
+          "start": 12.58,
+          "end": 12.92
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "startMs": 13820,
+      "endMs": 15440,
+      "text": "Here's my first photo.",
+      "words": [
+        {
+          "word": "Here's",
+          "start": 13.82,
+          "end": 14.22
+        },
+        {
+          "word": "my",
+          "start": 14.22,
+          "end": 14.52
+        },
+        {
+          "word": "first",
+          "start": 14.52,
+          "end": 14.94
+        },
+        {
+          "word": "photo.",
+          "start": 14.94,
+          "end": 15.44
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "startMs": 16420,
+      "endMs": 18740,
+      "text": "You can see there's a big mountain.",
+      "words": [
+        {
+          "word": "You",
+          "start": 16.42,
+          "end": 16.68
+        },
+        {
+          "word": "can",
+          "start": 16.68,
+          "end": 17.0
+        },
+        {
+          "word": "see",
+          "start": 17.0,
+          "end": 17.34
+        },
+        {
+          "word": "there's",
+          "start": 17.34,
+          "end": 17.72
+        },
+        {
+          "word": "a",
+          "start": 17.72,
+          "end": 17.94
+        },
+        {
+          "word": "big",
+          "start": 17.94,
+          "end": 18.2
+        },
+        {
+          "word": "mountain.",
+          "start": 18.2,
+          "end": 18.74
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "startMs": 19700,
+      "endMs": 22620,
+      "text": "There's a lot of snow and there are trees.",
+      "words": [
+        {
+          "word": "There's",
+          "start": 19.7,
+          "end": 20.2
+        },
+        {
+          "word": "a",
+          "start": 20.2,
+          "end": 20.42
+        },
+        {
+          "word": "lot",
+          "start": 20.42,
+          "end": 20.62
+        },
+        {
+          "word": "of",
+          "start": 20.62,
+          "end": 20.9
+        },
+        {
+          "word": "snow",
+          "start": 20.9,
+          "end": 21.3
+        },
+        {
+          "word": "and",
+          "start": 21.3,
+          "end": 21.66
+        },
+        {
+          "word": "there",
+          "start": 21.66,
+          "end": 21.88
+        },
+        {
+          "word": "are",
+          "start": 21.88,
+          "end": 22.12
+        },
+        {
+          "word": "trees.",
+          "start": 22.12,
+          "end": 22.62
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "startMs": 23660,
+      "endMs": 27020,
+      "text": "The trees are orange and red because it's autumn.",
+      "words": [
+        {
+          "word": "The",
+          "start": 23.66,
+          "end": 23.92
+        },
+        {
+          "word": "trees",
+          "start": 23.92,
+          "end": 24.38
+        },
+        {
+          "word": "are",
+          "start": 24.38,
+          "end": 24.76
+        },
+        {
+          "word": "orange",
+          "start": 24.76,
+          "end": 25.16
+        },
+        {
+          "word": "and",
+          "start": 25.16,
+          "end": 25.5
+        },
+        {
+          "word": "red",
+          "start": 25.5,
+          "end": 25.86
+        },
+        {
+          "word": "because",
+          "start": 25.86,
+          "end": 26.38
+        },
+        {
+          "word": "it's",
+          "start": 26.38,
+          "end": 26.72
+        },
+        {
+          "word": "autumn.",
+          "start": 26.72,
+          "end": 27.02
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "startMs": 27980,
+      "endMs": 30680,
+      "text": "Right, so where is this place?",
+      "words": [
+        {
+          "word": "Right,",
+          "start": 27.98,
+          "end": 28.66
+        },
+        {
+          "word": "so",
+          "start": 29.0,
+          "end": 29.44
+        },
+        {
+          "word": "where",
+          "start": 29.44,
+          "end": 29.8
+        },
+        {
+          "word": "is",
+          "start": 29.8,
+          "end": 30.04
+        },
+        {
+          "word": "this",
+          "start": 30.04,
+          "end": 30.28
+        },
+        {
+          "word": "place?",
+          "start": 30.28,
+          "end": 30.68
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "startMs": 31480,
+      "endMs": 32680,
+      "text": "It's in Japan.",
+      "words": [
+        {
+          "word": "It's",
+          "start": 31.48,
+          "end": 31.96
+        },
+        {
+          "word": "in",
+          "start": 31.96,
+          "end": 32.14
+        },
+        {
+          "word": "Japan.",
+          "start": 32.14,
+          "end": 32.68
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "startMs": 33500,
+      "endMs": 35300,
+      "text": "This is Mount Fuji.",
+      "words": [
+        {
+          "word": "This",
+          "start": 33.5,
+          "end": 34.06
+        },
+        {
+          "word": "is",
+          "start": 34.06,
+          "end": 34.52
+        },
+        {
+          "word": "Mount",
+          "start": 34.52,
+          "end": 34.88
+        },
+        {
+          "word": "Fuji.",
+          "start": 34.88,
+          "end": 35.3
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "startMs": 36700,
+      "endMs": 39320,
+      "text": "Here's another photo of the mountain in the summer.",
+      "words": [
+        {
+          "word": "Here's",
+          "start": 36.7,
+          "end": 37.1
+        },
+        {
+          "word": "another",
+          "start": 37.1,
+          "end": 37.46
+        },
+        {
+          "word": "photo",
+          "start": 37.46,
+          "end": 37.86
+        },
+        {
+          "word": "of",
+          "start": 37.86,
+          "end": 38.08
+        },
+        {
+          "word": "the",
+          "start": 38.08,
+          "end": 38.26
+        },
+        {
+          "word": "mountain",
+          "start": 38.26,
+          "end": 38.58
+        },
+        {
+          "word": "in",
+          "start": 38.58,
+          "end": 38.8
+        },
+        {
+          "word": "the",
+          "start": 38.8,
+          "end": 39.02
+        },
+        {
+          "word": "summer.",
+          "start": 39.02,
+          "end": 39.32
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "startMs": 40580,
+      "endMs": 43920,
+      "text": "There's a path and you can see there are people there.",
+      "words": [
+        {
+          "word": "There's",
+          "start": 40.58,
+          "end": 41.02
+        },
+        {
+          "word": "a",
+          "start": 41.02,
+          "end": 41.26
+        },
+        {
+          "word": "path",
+          "start": 41.26,
+          "end": 41.64
+        },
+        {
+          "word": "and",
+          "start": 41.64,
+          "end": 41.88
+        },
+        {
+          "word": "you",
+          "start": 41.88,
+          "end": 42.04
+        },
+        {
+          "word": "can",
+          "start": 42.04,
+          "end": 42.42
+        },
+        {
+          "word": "see",
+          "start": 42.42,
+          "end": 42.7
+        },
+        {
+          "word": "there",
+          "start": 42.7,
+          "end": 42.98
+        },
+        {
+          "word": "are",
+          "start": 42.98,
+          "end": 43.18
+        },
+        {
+          "word": "people",
+          "start": 43.18,
+          "end": 43.48
+        },
+        {
+          "word": "there.",
+          "start": 43.48,
+          "end": 43.92
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "startMs": 44520,
+      "endMs": 48080,
+      "text": "It's very sunny and there are white clouds below.",
+      "words": [
+        {
+          "word": "It's",
+          "start": 44.52,
+          "end": 45.08
+        },
+        {
+          "word": "very",
+          "start": 45.08,
+          "end": 45.5
+        },
+        {
+          "word": "sunny",
+          "start": 45.5,
+          "end": 45.84
+        },
+        {
+          "word": "and",
+          "start": 45.84,
+          "end": 46.46
+        },
+        {
+          "word": "there",
+          "start": 46.46,
+          "end": 46.7
+        },
+        {
+          "word": "are",
+          "start": 46.7,
+          "end": 46.92
+        },
+        {
+          "word": "white",
+          "start": 46.92,
+          "end": 47.14
+        },
+        {
+          "word": "clouds",
+          "start": 47.14,
+          "end": 47.6
+        },
+        {
+          "word": "below.",
+          "start": 47.6,
+          "end": 48.08
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "startMs": 49040,
+      "endMs": 52060,
+      "text": "You can only walk up the mountain in the summer.",
+      "words": [
+        {
+          "word": "You",
+          "start": 49.04,
+          "end": 49.28
+        },
+        {
+          "word": "can",
+          "start": 49.28,
+          "end": 49.58
+        },
+        {
+          "word": "only",
+          "start": 49.58,
+          "end": 49.94
+        },
+        {
+          "word": "walk",
+          "start": 49.94,
+          "end": 50.28
+        },
+        {
+          "word": "up",
+          "start": 50.28,
+          "end": 50.54
+        },
+        {
+          "word": "the",
+          "start": 50.54,
+          "end": 50.8
+        },
+        {
+          "word": "mountain",
+          "start": 50.8,
+          "end": 51.16
+        },
+        {
+          "word": "in",
+          "start": 51.16,
+          "end": 51.46
+        },
+        {
+          "word": "the",
+          "start": 51.46,
+          "end": 51.7
+        },
+        {
+          "word": "summer.",
+          "start": 51.7,
+          "end": 52.06
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "startMs": 52980,
+      "endMs": 56060,
+      "text": "In that season it's hot and there isn't any snow.",
+      "words": [
+        {
+          "word": "In",
+          "start": 52.98,
+          "end": 53.3
+        },
+        {
+          "word": "that",
+          "start": 53.3,
+          "end": 53.52
+        },
+        {
+          "word": "season",
+          "start": 53.52,
+          "end": 53.9
+        },
+        {
+          "word": "it's",
+          "start": 53.9,
+          "end": 54.24
+        },
+        {
+          "word": "hot",
+          "start": 54.24,
+          "end": 54.56
+        },
+        {
+          "word": "and",
+          "start": 54.56,
+          "end": 54.74
+        },
+        {
+          "word": "there",
+          "start": 54.74,
+          "end": 55.06
+        },
+        {
+          "word": "isn't",
+          "start": 55.06,
+          "end": 55.34
+        },
+        {
+          "word": "any",
+          "start": 55.34,
+          "end": 55.66
+        },
+        {
+          "word": "snow.",
+          "start": 55.66,
+          "end": 56.06
+        }
+      ]
+    },
+    {
+      "index": 18,
+      "startMs": 56840,
+      "endMs": 60360,
+      "text": "It's a beautiful place and I want to go there.",
+      "words": [
+        {
+          "word": "It's",
+          "start": 56.839999999999996,
+          "end": 57.44
+        },
+        {
+          "word": "a",
+          "start": 57.44,
+          "end": 57.6
+        },
+        {
+          "word": "beautiful",
+          "start": 57.6,
+          "end": 58.1
+        },
+        {
+          "word": "place",
+          "start": 58.1,
+          "end": 58.66
+        },
+        {
+          "word": "and",
+          "start": 58.66,
+          "end": 59.32
+        },
+        {
+          "word": "I",
+          "start": 59.32,
+          "end": 59.54
+        },
+        {
+          "word": "want",
+          "start": 59.54,
+          "end": 59.7
+        },
+        {
+          "word": "to",
+          "start": 59.7,
+          "end": 59.92
+        },
+        {
+          "word": "go",
+          "start": 59.92,
+          "end": 60.06
+        },
+        {
+          "word": "there.",
+          "start": 60.06,
+          "end": 60.36
+        }
+      ]
+    }
+  ]
+}

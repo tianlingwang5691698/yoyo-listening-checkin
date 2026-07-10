@@ -1,0 +1,234 @@
+{
+  "model": "medium",
+  "language": "en",
+  "text": "Unit 4, 4.1 One Where is this photo from? Two There's a shop here and a library there. Three Yes, that's a bank over there. Four The library is here.",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 3000,
+      "text": "Unit 4, 4.1",
+      "words": [
+        {
+          "word": "Unit",
+          "start": 0.0,
+          "end": 0.58
+        },
+        {
+          "word": "4,",
+          "start": 0.58,
+          "end": 1.48
+        },
+        {
+          "word": "4",
+          "start": 1.96,
+          "end": 2.26
+        },
+        {
+          "word": ".1",
+          "start": 2.26,
+          "end": 3.0
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 3760,
+      "endMs": 5000,
+      "text": "One",
+      "words": [
+        {
+          "word": "One",
+          "start": 3.76,
+          "end": 5.0
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 5840,
+      "endMs": 7840,
+      "text": "Where is this photo from?",
+      "words": [
+        {
+          "word": "Where",
+          "start": 5.800000000000001,
+          "end": 6.32
+        },
+        {
+          "word": "is",
+          "start": 6.32,
+          "end": 6.58
+        },
+        {
+          "word": "this",
+          "start": 6.58,
+          "end": 6.88
+        },
+        {
+          "word": "photo",
+          "start": 6.88,
+          "end": 7.32
+        },
+        {
+          "word": "from?",
+          "start": 7.32,
+          "end": 7.84
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 10320,
+      "endMs": 11140,
+      "text": "Two",
+      "words": [
+        {
+          "word": "Two",
+          "start": 10.32,
+          "end": 11.14
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 12000,
+      "endMs": 15300,
+      "text": "There's a shop here and a library there.",
+      "words": [
+        {
+          "word": "There's",
+          "start": 12.0,
+          "end": 12.54
+        },
+        {
+          "word": "a",
+          "start": 12.54,
+          "end": 12.64
+        },
+        {
+          "word": "shop",
+          "start": 12.64,
+          "end": 12.92
+        },
+        {
+          "word": "here",
+          "start": 12.92,
+          "end": 13.44
+        },
+        {
+          "word": "and",
+          "start": 13.44,
+          "end": 14.0
+        },
+        {
+          "word": "a",
+          "start": 14.0,
+          "end": 14.24
+        },
+        {
+          "word": "library",
+          "start": 14.24,
+          "end": 14.66
+        },
+        {
+          "word": "there.",
+          "start": 14.66,
+          "end": 15.3
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "startMs": 17740,
+      "endMs": 18460,
+      "text": "Three",
+      "words": [
+        {
+          "word": "Three",
+          "start": 17.74,
+          "end": 18.46
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "startMs": 19480,
+      "endMs": 21360,
+      "text": "Yes, that's a bank over there.",
+      "words": [
+        {
+          "word": "Yes,",
+          "start": 19.44,
+          "end": 19.96
+        },
+        {
+          "word": "that's",
+          "start": 19.96,
+          "end": 20.32
+        },
+        {
+          "word": "a",
+          "start": 20.32,
+          "end": 20.42
+        },
+        {
+          "word": "bank",
+          "start": 20.42,
+          "end": 20.6
+        },
+        {
+          "word": "over",
+          "start": 20.6,
+          "end": 20.86
+        },
+        {
+          "word": "there.",
+          "start": 20.86,
+          "end": 21.36
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "startMs": 23620,
+      "endMs": 24440,
+      "text": "Four",
+      "words": [
+        {
+          "word": "Four",
+          "start": 23.62,
+          "end": 24.44
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "startMs": 25520,
+      "endMs": 27020,
+      "text": "The library is here.",
+      "words": [
+        {
+          "word": "The",
+          "start": 25.32,
+          "end": 25.84
+        },
+        {
+          "word": "library",
+          "start": 25.84,
+          "end": 26.32
+        },
+        {
+          "word": "is",
+          "start": 26.32,
+          "end": 26.66
+        },
+        {
+          "word": "here.",
+          "start": 26.66,
+          "end": 27.02
+        }
+      ]
+    }
+  ]
+}

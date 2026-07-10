@@ -1,0 +1,103 @@
+{
+  "model": "medium",
+  "language": "en",
+  "text": "1.4 writer teacher businessperson actor chef scientist",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 2000,
+      "text": "1.4",
+      "words": [
+        {
+          "word": "1",
+          "start": 0.0,
+          "end": 0.52
+        },
+        {
+          "word": ".4",
+          "start": 0.52,
+          "end": 2.0
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 2540,
+      "endMs": 3960,
+      "text": "writer",
+      "words": [
+        {
+          "word": "writer",
+          "start": 2.54,
+          "end": 3.96
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 5000,
+      "endMs": 5800,
+      "text": "teacher",
+      "words": [
+        {
+          "word": "teacher",
+          "start": 5.0,
+          "end": 5.8
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 7560,
+      "endMs": 8960,
+      "text": "businessperson",
+      "words": [
+        {
+          "word": "businessperson",
+          "start": 7.5600000000000005,
+          "end": 8.96
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 9720,
+      "endMs": 10680,
+      "text": "actor",
+      "words": [
+        {
+          "word": "actor",
+          "start": 9.72,
+          "end": 10.68
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "startMs": 11800,
+      "endMs": 12820,
+      "text": "chef",
+      "words": [
+        {
+          "word": "chef",
+          "start": 11.8,
+          "end": 12.82
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "startMs": 14800,
+      "endMs": 15500,
+      "text": "scientist",
+      "words": [
+        {
+          "word": "scientist",
+          "start": 14.8,
+          "end": 15.5
+        }
+      ]
+    }
+  ]
+}

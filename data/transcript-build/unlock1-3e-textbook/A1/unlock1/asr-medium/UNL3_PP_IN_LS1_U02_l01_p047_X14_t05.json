@@ -1,0 +1,331 @@
+{
+  "model": "medium",
+  "language": "en",
+  "text": "2.5 1 There is a lot of wind. 2 There are a lot of beautiful colours in the sky. 3 There's a storm. 4 There are white clouds in the sky. 5 There is a red sun. 6 There is a dark sky.",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 2260,
+      "text": "2.5",
+      "words": [
+        {
+          "word": "2",
+          "start": 0.0,
+          "end": 0.52
+        },
+        {
+          "word": ".5",
+          "start": 0.52,
+          "end": 2.26
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 2260,
+      "endMs": 3240,
+      "text": "1",
+      "words": [
+        {
+          "word": "1",
+          "start": 2.26,
+          "end": 3.24
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 4000,
+      "endMs": 5820,
+      "text": "There is a lot of wind.",
+      "words": [
+        {
+          "word": "There",
+          "start": 3.7200000000000015,
+          "end": 4.28
+        },
+        {
+          "word": "is",
+          "start": 4.28,
+          "end": 4.56
+        },
+        {
+          "word": "a",
+          "start": 4.56,
+          "end": 4.7
+        },
+        {
+          "word": "lot",
+          "start": 4.7,
+          "end": 4.94
+        },
+        {
+          "word": "of",
+          "start": 4.94,
+          "end": 5.26
+        },
+        {
+          "word": "wind.",
+          "start": 5.26,
+          "end": 5.82
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 7740,
+      "endMs": 8420,
+      "text": "2",
+      "words": [
+        {
+          "word": "2",
+          "start": 7.74,
+          "end": 8.42
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 9000,
+      "endMs": 13040,
+      "text": "There are a lot of beautiful colours in the sky.",
+      "words": [
+        {
+          "word": "There",
+          "start": 8.96,
+          "end": 9.52
+        },
+        {
+          "word": "are",
+          "start": 9.52,
+          "end": 9.86
+        },
+        {
+          "word": "a",
+          "start": 9.86,
+          "end": 9.96
+        },
+        {
+          "word": "lot",
+          "start": 9.96,
+          "end": 10.22
+        },
+        {
+          "word": "of",
+          "start": 10.22,
+          "end": 10.56
+        },
+        {
+          "word": "beautiful",
+          "start": 10.56,
+          "end": 11.22
+        },
+        {
+          "word": "colours",
+          "start": 11.22,
+          "end": 11.88
+        },
+        {
+          "word": "in",
+          "start": 11.88,
+          "end": 12.22
+        },
+        {
+          "word": "the",
+          "start": 12.22,
+          "end": 12.48
+        },
+        {
+          "word": "sky.",
+          "start": 12.48,
+          "end": 13.04
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "startMs": 14620,
+      "endMs": 15580,
+      "text": "3",
+      "words": [
+        {
+          "word": "3",
+          "start": 14.62,
+          "end": 15.58
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "startMs": 15580,
+      "endMs": 17760,
+      "text": "There's a storm.",
+      "words": [
+        {
+          "word": "There's",
+          "start": 15.58,
+          "end": 16.98
+        },
+        {
+          "word": "a",
+          "start": 16.98,
+          "end": 17.28
+        },
+        {
+          "word": "storm.",
+          "start": 17.28,
+          "end": 17.76
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "startMs": 19700,
+      "endMs": 20520,
+      "text": "4",
+      "words": [
+        {
+          "word": "4",
+          "start": 19.7,
+          "end": 20.52
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "startMs": 20520,
+      "endMs": 24660,
+      "text": "There are white clouds in the sky.",
+      "words": [
+        {
+          "word": "There",
+          "start": 20.52,
+          "end": 21.82
+        },
+        {
+          "word": "are",
+          "start": 21.82,
+          "end": 22.2
+        },
+        {
+          "word": "white",
+          "start": 22.2,
+          "end": 22.68
+        },
+        {
+          "word": "clouds",
+          "start": 22.68,
+          "end": 23.44
+        },
+        {
+          "word": "in",
+          "start": 23.44,
+          "end": 23.9
+        },
+        {
+          "word": "the",
+          "start": 23.9,
+          "end": 24.14
+        },
+        {
+          "word": "sky.",
+          "start": 24.14,
+          "end": 24.66
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "startMs": 26520,
+      "endMs": 27340,
+      "text": "5",
+      "words": [
+        {
+          "word": "5",
+          "start": 26.52,
+          "end": 27.34
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "startMs": 27340,
+      "endMs": 30160,
+      "text": "There is a red sun.",
+      "words": [
+        {
+          "word": "There",
+          "start": 27.34,
+          "end": 28.66
+        },
+        {
+          "word": "is",
+          "start": 28.66,
+          "end": 28.92
+        },
+        {
+          "word": "a",
+          "start": 28.92,
+          "end": 29.1
+        },
+        {
+          "word": "red",
+          "start": 29.1,
+          "end": 29.48
+        },
+        {
+          "word": "sun.",
+          "start": 29.48,
+          "end": 30.16
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "startMs": 32140,
+      "endMs": 32340,
+      "text": "6",
+      "words": [
+        {
+          "word": "6",
+          "start": 32.14,
+          "end": 32.76
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "startMs": 32880,
+      "endMs": 35660,
+      "text": "There is a dark sky.",
+      "words": [
+        {
+          "word": "There",
+          "start": 32.88,
+          "end": 34.18
+        },
+        {
+          "word": "is",
+          "start": 34.18,
+          "end": 34.48
+        },
+        {
+          "word": "a",
+          "start": 34.48,
+          "end": 34.68
+        },
+        {
+          "word": "dark",
+          "start": 34.68,
+          "end": 35.04
+        },
+        {
+          "word": "sky.",
+          "start": 35.04,
+          "end": 35.66
+        }
+      ]
+    }
+  ]
+}

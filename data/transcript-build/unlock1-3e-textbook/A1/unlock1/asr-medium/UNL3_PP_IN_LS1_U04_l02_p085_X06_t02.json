@@ -1,0 +1,1664 @@
+{
+  "model": "medium",
+  "language": "en",
+  "text": "Hello everyone! Thanks for coming to our presentation. Our new app does lots of things to help busy people. It's like a normal map on your smartphone, but a lot better. On a map, the directions sometimes look good, but the map doesn't know that the roads are busy with cars or that there are other problems. Our map is different. People who use our app can send information about problems, like traffic jams. Let me show you how it works. Look at this screenshot. We are here, and my favorite Italian restaurant is there. But there's a traffic jam here because of some roadworks. So these are the best directions to the restaurant. It takes just 15 minutes to go there by car. Also, this app learns a lot about you. It knows what kinds of food you like and what time of day you usually eat. And it learns about what cafes and restaurants are popular with other people where you live. It sends you messages when you are near these places and shows you their location. Just in time for lunch. Finally, do you sometimes wait for your friends? It's bad when you don't know where they are. Well, with this app, just share your locations with each other, and the app can send messages to you. The messages tell you if your friends are on time or if they are late. It tells you how many more minutes before they arrive. This is good when your friends are in a car or on a bike and don't want to stop to use their phones. Our app is easy to use. Just download it to your phone and start using it today.",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 2780,
+      "endMs": 4140,
+      "text": "Hello everyone!",
+      "words": [
+        {
+          "word": "Hello",
+          "start": 2.7800000000000002,
+          "end": 3.46
+        },
+        {
+          "word": "everyone!",
+          "start": 3.46,
+          "end": 4.14
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 4640,
+      "endMs": 6540,
+      "text": "Thanks for coming to our presentation.",
+      "words": [
+        {
+          "word": "Thanks",
+          "start": 4.64,
+          "end": 4.94
+        },
+        {
+          "word": "for",
+          "start": 4.94,
+          "end": 5.1
+        },
+        {
+          "word": "coming",
+          "start": 5.1,
+          "end": 5.4
+        },
+        {
+          "word": "to",
+          "start": 5.4,
+          "end": 5.6
+        },
+        {
+          "word": "our",
+          "start": 5.6,
+          "end": 5.9
+        },
+        {
+          "word": "presentation.",
+          "start": 5.9,
+          "end": 6.54
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 7300,
+      "endMs": 10960,
+      "text": "Our new app does lots of things to help busy people.",
+      "words": [
+        {
+          "word": "Our",
+          "start": 7.3,
+          "end": 7.6
+        },
+        {
+          "word": "new",
+          "start": 7.6,
+          "end": 7.94
+        },
+        {
+          "word": "app",
+          "start": 7.94,
+          "end": 8.26
+        },
+        {
+          "word": "does",
+          "start": 8.26,
+          "end": 8.66
+        },
+        {
+          "word": "lots",
+          "start": 8.66,
+          "end": 9.02
+        },
+        {
+          "word": "of",
+          "start": 9.02,
+          "end": 9.34
+        },
+        {
+          "word": "things",
+          "start": 9.34,
+          "end": 9.68
+        },
+        {
+          "word": "to",
+          "start": 9.68,
+          "end": 9.92
+        },
+        {
+          "word": "help",
+          "start": 9.92,
+          "end": 10.1
+        },
+        {
+          "word": "busy",
+          "start": 10.1,
+          "end": 10.44
+        },
+        {
+          "word": "people.",
+          "start": 10.44,
+          "end": 10.96
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 11640,
+      "endMs": 16180,
+      "text": "It's like a normal map on your smartphone, but a lot better.",
+      "words": [
+        {
+          "word": "It's",
+          "start": 11.64,
+          "end": 11.92
+        },
+        {
+          "word": "like",
+          "start": 11.92,
+          "end": 12.22
+        },
+        {
+          "word": "a",
+          "start": 12.22,
+          "end": 12.56
+        },
+        {
+          "word": "normal",
+          "start": 12.56,
+          "end": 13.02
+        },
+        {
+          "word": "map",
+          "start": 13.02,
+          "end": 13.4
+        },
+        {
+          "word": "on",
+          "start": 13.4,
+          "end": 13.7
+        },
+        {
+          "word": "your",
+          "start": 13.7,
+          "end": 13.98
+        },
+        {
+          "word": "smartphone,",
+          "start": 13.98,
+          "end": 14.54
+        },
+        {
+          "word": "but",
+          "start": 15.06,
+          "end": 15.28
+        },
+        {
+          "word": "a",
+          "start": 15.28,
+          "end": 15.5
+        },
+        {
+          "word": "lot",
+          "start": 15.5,
+          "end": 15.74
+        },
+        {
+          "word": "better.",
+          "start": 15.74,
+          "end": 16.18
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 17800,
+      "endMs": 24760,
+      "text": "On a map, the directions sometimes look good, but the map doesn't know that the roads are",
+      "words": [
+        {
+          "word": "On",
+          "start": 17.8,
+          "end": 18.0
+        },
+        {
+          "word": "a",
+          "start": 18.0,
+          "end": 18.2
+        },
+        {
+          "word": "map,",
+          "start": 18.2,
+          "end": 18.56
+        },
+        {
+          "word": "the",
+          "start": 18.94,
+          "end": 19.12
+        },
+        {
+          "word": "directions",
+          "start": 19.12,
+          "end": 19.7
+        },
+        {
+          "word": "sometimes",
+          "start": 19.7,
+          "end": 20.6
+        },
+        {
+          "word": "look",
+          "start": 20.6,
+          "end": 20.88
+        },
+        {
+          "word": "good,",
+          "start": 20.88,
+          "end": 21.34
+        },
+        {
+          "word": "but",
+          "start": 21.62,
+          "end": 21.9
+        },
+        {
+          "word": "the",
+          "start": 21.9,
+          "end": 22.18
+        },
+        {
+          "word": "map",
+          "start": 22.18,
+          "end": 22.48
+        },
+        {
+          "word": "doesn't",
+          "start": 22.48,
+          "end": 22.94
+        },
+        {
+          "word": "know",
+          "start": 22.94,
+          "end": 23.38
+        },
+        {
+          "word": "that",
+          "start": 23.38,
+          "end": 23.72
+        },
+        {
+          "word": "the",
+          "start": 23.72,
+          "end": 24.06
+        },
+        {
+          "word": "roads",
+          "start": 24.06,
+          "end": 24.38
+        },
+        {
+          "word": "are",
+          "start": 24.38,
+          "end": 24.76
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "startMs": 24760,
+      "endMs": 28320,
+      "text": "busy with cars or that there are other problems.",
+      "words": [
+        {
+          "word": "busy",
+          "start": 24.76,
+          "end": 25.02
+        },
+        {
+          "word": "with",
+          "start": 25.02,
+          "end": 25.3
+        },
+        {
+          "word": "cars",
+          "start": 25.3,
+          "end": 25.84
+        },
+        {
+          "word": "or",
+          "start": 25.84,
+          "end": 26.5
+        },
+        {
+          "word": "that",
+          "start": 26.5,
+          "end": 26.82
+        },
+        {
+          "word": "there",
+          "start": 26.82,
+          "end": 27.1
+        },
+        {
+          "word": "are",
+          "start": 27.1,
+          "end": 27.36
+        },
+        {
+          "word": "other",
+          "start": 27.36,
+          "end": 27.68
+        },
+        {
+          "word": "problems.",
+          "start": 27.68,
+          "end": 28.32
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "startMs": 29040,
+      "endMs": 30660,
+      "text": "Our map is different.",
+      "words": [
+        {
+          "word": "Our",
+          "start": 29.04,
+          "end": 29.48
+        },
+        {
+          "word": "map",
+          "start": 29.48,
+          "end": 29.74
+        },
+        {
+          "word": "is",
+          "start": 29.74,
+          "end": 30.12
+        },
+        {
+          "word": "different.",
+          "start": 30.12,
+          "end": 30.66
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "startMs": 31520,
+      "endMs": 38060,
+      "text": "People who use our app can send information about problems, like traffic jams.",
+      "words": [
+        {
+          "word": "People",
+          "start": 31.52,
+          "end": 31.94
+        },
+        {
+          "word": "who",
+          "start": 31.94,
+          "end": 32.3
+        },
+        {
+          "word": "use",
+          "start": 32.3,
+          "end": 32.62
+        },
+        {
+          "word": "our",
+          "start": 32.62,
+          "end": 32.96
+        },
+        {
+          "word": "app",
+          "start": 32.96,
+          "end": 33.34
+        },
+        {
+          "word": "can",
+          "start": 33.34,
+          "end": 33.88
+        },
+        {
+          "word": "send",
+          "start": 33.88,
+          "end": 34.26
+        },
+        {
+          "word": "information",
+          "start": 34.26,
+          "end": 35.08
+        },
+        {
+          "word": "about",
+          "start": 35.08,
+          "end": 35.62
+        },
+        {
+          "word": "problems,",
+          "start": 35.62,
+          "end": 36.42
+        },
+        {
+          "word": "like",
+          "start": 36.8,
+          "end": 37.06
+        },
+        {
+          "word": "traffic",
+          "start": 37.06,
+          "end": 37.54
+        },
+        {
+          "word": "jams.",
+          "start": 37.54,
+          "end": 38.06
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "startMs": 39020,
+      "endMs": 41160,
+      "text": "Let me show you how it works.",
+      "words": [
+        {
+          "word": "Let",
+          "start": 39.02,
+          "end": 39.42
+        },
+        {
+          "word": "me",
+          "start": 39.42,
+          "end": 39.74
+        },
+        {
+          "word": "show",
+          "start": 39.74,
+          "end": 40.02
+        },
+        {
+          "word": "you",
+          "start": 40.02,
+          "end": 40.3
+        },
+        {
+          "word": "how",
+          "start": 40.3,
+          "end": 40.5
+        },
+        {
+          "word": "it",
+          "start": 40.5,
+          "end": 40.76
+        },
+        {
+          "word": "works.",
+          "start": 40.76,
+          "end": 41.16
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "startMs": 41820,
+      "endMs": 43240,
+      "text": "Look at this screenshot.",
+      "words": [
+        {
+          "word": "Look",
+          "start": 41.82,
+          "end": 42.12
+        },
+        {
+          "word": "at",
+          "start": 42.12,
+          "end": 42.38
+        },
+        {
+          "word": "this",
+          "start": 42.38,
+          "end": 42.66
+        },
+        {
+          "word": "screenshot.",
+          "start": 42.66,
+          "end": 43.24
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "startMs": 44100,
+      "endMs": 48700,
+      "text": "We are here, and my favorite Italian restaurant is there.",
+      "words": [
+        {
+          "word": "We",
+          "start": 44.1,
+          "end": 44.54
+        },
+        {
+          "word": "are",
+          "start": 44.54,
+          "end": 44.86
+        },
+        {
+          "word": "here,",
+          "start": 44.86,
+          "end": 45.32
+        },
+        {
+          "word": "and",
+          "start": 45.62,
+          "end": 45.88
+        },
+        {
+          "word": "my",
+          "start": 45.88,
+          "end": 46.2
+        },
+        {
+          "word": "favorite",
+          "start": 46.2,
+          "end": 46.7
+        },
+        {
+          "word": "Italian",
+          "start": 46.7,
+          "end": 47.24
+        },
+        {
+          "word": "restaurant",
+          "start": 47.24,
+          "end": 47.9
+        },
+        {
+          "word": "is",
+          "start": 47.9,
+          "end": 48.24
+        },
+        {
+          "word": "there.",
+          "start": 48.24,
+          "end": 48.7
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "startMs": 49420,
+      "endMs": 53780,
+      "text": "But there's a traffic jam here because of some roadworks.",
+      "words": [
+        {
+          "word": "But",
+          "start": 49.42,
+          "end": 49.84
+        },
+        {
+          "word": "there's",
+          "start": 49.84,
+          "end": 50.32
+        },
+        {
+          "word": "a",
+          "start": 50.32,
+          "end": 50.62
+        },
+        {
+          "word": "traffic",
+          "start": 50.62,
+          "end": 51.02
+        },
+        {
+          "word": "jam",
+          "start": 51.02,
+          "end": 51.3
+        },
+        {
+          "word": "here",
+          "start": 51.3,
+          "end": 51.88
+        },
+        {
+          "word": "because",
+          "start": 51.88,
+          "end": 52.38
+        },
+        {
+          "word": "of",
+          "start": 52.38,
+          "end": 52.64
+        },
+        {
+          "word": "some",
+          "start": 52.64,
+          "end": 52.96
+        },
+        {
+          "word": "roadworks.",
+          "start": 52.96,
+          "end": 53.78
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "startMs": 54500,
+      "endMs": 58220,
+      "text": "So these are the best directions to the restaurant.",
+      "words": [
+        {
+          "word": "So",
+          "start": 54.5,
+          "end": 54.98
+        },
+        {
+          "word": "these",
+          "start": 54.98,
+          "end": 55.44
+        },
+        {
+          "word": "are",
+          "start": 55.44,
+          "end": 55.7
+        },
+        {
+          "word": "the",
+          "start": 55.7,
+          "end": 56.06
+        },
+        {
+          "word": "best",
+          "start": 56.06,
+          "end": 56.46
+        },
+        {
+          "word": "directions",
+          "start": 56.46,
+          "end": 57.14
+        },
+        {
+          "word": "to",
+          "start": 57.14,
+          "end": 57.48
+        },
+        {
+          "word": "the",
+          "start": 57.48,
+          "end": 57.68
+        },
+        {
+          "word": "restaurant.",
+          "start": 57.68,
+          "end": 58.22
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "startMs": 58880,
+      "endMs": 62620,
+      "text": "It takes just 15 minutes to go there by car.",
+      "words": [
+        {
+          "word": "It",
+          "start": 58.78,
+          "end": 59.12
+        },
+        {
+          "word": "takes",
+          "start": 59.12,
+          "end": 59.5
+        },
+        {
+          "word": "just",
+          "start": 59.5,
+          "end": 60.02
+        },
+        {
+          "word": "15",
+          "start": 60.02,
+          "end": 60.58
+        },
+        {
+          "word": "minutes",
+          "start": 60.58,
+          "end": 61.06
+        },
+        {
+          "word": "to",
+          "start": 61.06,
+          "end": 61.32
+        },
+        {
+          "word": "go",
+          "start": 61.32,
+          "end": 61.5
+        },
+        {
+          "word": "there",
+          "start": 61.5,
+          "end": 61.8
+        },
+        {
+          "word": "by",
+          "start": 61.8,
+          "end": 62.12
+        },
+        {
+          "word": "car.",
+          "start": 62.12,
+          "end": 62.62
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "startMs": 63860,
+      "endMs": 67320,
+      "text": "Also, this app learns a lot about you.",
+      "words": [
+        {
+          "word": "Also,",
+          "start": 63.86,
+          "end": 64.36
+        },
+        {
+          "word": "this",
+          "start": 64.8,
+          "end": 65.06
+        },
+        {
+          "word": "app",
+          "start": 65.06,
+          "end": 65.4
+        },
+        {
+          "word": "learns",
+          "start": 65.4,
+          "end": 65.94
+        },
+        {
+          "word": "a",
+          "start": 65.94,
+          "end": 66.22
+        },
+        {
+          "word": "lot",
+          "start": 66.22,
+          "end": 66.48
+        },
+        {
+          "word": "about",
+          "start": 66.48,
+          "end": 66.88
+        },
+        {
+          "word": "you.",
+          "start": 66.88,
+          "end": 67.32
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "startMs": 67980,
+      "endMs": 72700,
+      "text": "It knows what kinds of food you like and what time of day you usually eat.",
+      "words": [
+        {
+          "word": "It",
+          "start": 67.98,
+          "end": 68.2
+        },
+        {
+          "word": "knows",
+          "start": 68.2,
+          "end": 68.5
+        },
+        {
+          "word": "what",
+          "start": 68.5,
+          "end": 68.78
+        },
+        {
+          "word": "kinds",
+          "start": 68.78,
+          "end": 69.04
+        },
+        {
+          "word": "of",
+          "start": 69.04,
+          "end": 69.22
+        },
+        {
+          "word": "food",
+          "start": 69.22,
+          "end": 69.48
+        },
+        {
+          "word": "you",
+          "start": 69.48,
+          "end": 69.76
+        },
+        {
+          "word": "like",
+          "start": 69.76,
+          "end": 70.06
+        },
+        {
+          "word": "and",
+          "start": 70.06,
+          "end": 70.44
+        },
+        {
+          "word": "what",
+          "start": 70.44,
+          "end": 70.72
+        },
+        {
+          "word": "time",
+          "start": 70.72,
+          "end": 71.0
+        },
+        {
+          "word": "of",
+          "start": 71.0,
+          "end": 71.26
+        },
+        {
+          "word": "day",
+          "start": 71.26,
+          "end": 71.52
+        },
+        {
+          "word": "you",
+          "start": 71.52,
+          "end": 71.8
+        },
+        {
+          "word": "usually",
+          "start": 71.8,
+          "end": 72.24
+        },
+        {
+          "word": "eat.",
+          "start": 72.24,
+          "end": 72.7
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "startMs": 73020,
+      "endMs": 79180,
+      "text": "And it learns about what cafes and restaurants are popular with other people where you live.",
+      "words": [
+        {
+          "word": "And",
+          "start": 73.02,
+          "end": 73.48
+        },
+        {
+          "word": "it",
+          "start": 73.48,
+          "end": 73.62
+        },
+        {
+          "word": "learns",
+          "start": 73.62,
+          "end": 74.0
+        },
+        {
+          "word": "about",
+          "start": 74.0,
+          "end": 74.46
+        },
+        {
+          "word": "what",
+          "start": 74.46,
+          "end": 74.88
+        },
+        {
+          "word": "cafes",
+          "start": 74.88,
+          "end": 75.24
+        },
+        {
+          "word": "and",
+          "start": 75.24,
+          "end": 75.74
+        },
+        {
+          "word": "restaurants",
+          "start": 75.74,
+          "end": 76.08
+        },
+        {
+          "word": "are",
+          "start": 76.08,
+          "end": 76.48
+        },
+        {
+          "word": "popular",
+          "start": 76.48,
+          "end": 77.08
+        },
+        {
+          "word": "with",
+          "start": 77.08,
+          "end": 77.64
+        },
+        {
+          "word": "other",
+          "start": 77.64,
+          "end": 78.0
+        },
+        {
+          "word": "people",
+          "start": 78.0,
+          "end": 78.42
+        },
+        {
+          "word": "where",
+          "start": 78.42,
+          "end": 78.68
+        },
+        {
+          "word": "you",
+          "start": 78.68,
+          "end": 78.94
+        },
+        {
+          "word": "live.",
+          "start": 78.94,
+          "end": 79.18
+        }
+      ]
+    },
+    {
+      "index": 18,
+      "startMs": 80040,
+      "endMs": 85100,
+      "text": "It sends you messages when you are near these places and shows you their location.",
+      "words": [
+        {
+          "word": "It",
+          "start": 80.04,
+          "end": 80.32
+        },
+        {
+          "word": "sends",
+          "start": 80.32,
+          "end": 80.6
+        },
+        {
+          "word": "you",
+          "start": 80.6,
+          "end": 80.88
+        },
+        {
+          "word": "messages",
+          "start": 80.88,
+          "end": 81.38
+        },
+        {
+          "word": "when",
+          "start": 81.38,
+          "end": 81.58
+        },
+        {
+          "word": "you",
+          "start": 81.58,
+          "end": 81.78
+        },
+        {
+          "word": "are",
+          "start": 81.78,
+          "end": 81.94
+        },
+        {
+          "word": "near",
+          "start": 81.94,
+          "end": 82.18
+        },
+        {
+          "word": "these",
+          "start": 82.18,
+          "end": 82.46
+        },
+        {
+          "word": "places",
+          "start": 82.46,
+          "end": 82.9
+        },
+        {
+          "word": "and",
+          "start": 82.9,
+          "end": 83.56
+        },
+        {
+          "word": "shows",
+          "start": 83.56,
+          "end": 83.88
+        },
+        {
+          "word": "you",
+          "start": 83.88,
+          "end": 84.14
+        },
+        {
+          "word": "their",
+          "start": 84.14,
+          "end": 84.34
+        },
+        {
+          "word": "location.",
+          "start": 84.34,
+          "end": 85.1
+        }
+      ]
+    },
+    {
+      "index": 19,
+      "startMs": 85660,
+      "endMs": 87320,
+      "text": "Just in time for lunch.",
+      "words": [
+        {
+          "word": "Just",
+          "start": 85.66,
+          "end": 86.02
+        },
+        {
+          "word": "in",
+          "start": 86.02,
+          "end": 86.36
+        },
+        {
+          "word": "time",
+          "start": 86.36,
+          "end": 86.64
+        },
+        {
+          "word": "for",
+          "start": 86.64,
+          "end": 86.92
+        },
+        {
+          "word": "lunch.",
+          "start": 86.92,
+          "end": 87.32
+        }
+      ]
+    },
+    {
+      "index": 20,
+      "startMs": 88440,
+      "endMs": 92160,
+      "text": "Finally, do you sometimes wait for your friends?",
+      "words": [
+        {
+          "word": "Finally,",
+          "start": 88.44,
+          "end": 89.04
+        },
+        {
+          "word": "do",
+          "start": 89.66,
+          "end": 89.86
+        },
+        {
+          "word": "you",
+          "start": 89.86,
+          "end": 90.14
+        },
+        {
+          "word": "sometimes",
+          "start": 90.14,
+          "end": 90.74
+        },
+        {
+          "word": "wait",
+          "start": 90.74,
+          "end": 91.24
+        },
+        {
+          "word": "for",
+          "start": 91.24,
+          "end": 91.5
+        },
+        {
+          "word": "your",
+          "start": 91.5,
+          "end": 91.8
+        },
+        {
+          "word": "friends?",
+          "start": 91.8,
+          "end": 92.16
+        }
+      ]
+    },
+    {
+      "index": 21,
+      "startMs": 93160,
+      "endMs": 95440,
+      "text": "It's bad when you don't know where they are.",
+      "words": [
+        {
+          "word": "It's",
+          "start": 93.16,
+          "end": 93.46
+        },
+        {
+          "word": "bad",
+          "start": 93.46,
+          "end": 93.82
+        },
+        {
+          "word": "when",
+          "start": 93.82,
+          "end": 93.96
+        },
+        {
+          "word": "you",
+          "start": 93.96,
+          "end": 94.16
+        },
+        {
+          "word": "don't",
+          "start": 94.16,
+          "end": 94.42
+        },
+        {
+          "word": "know",
+          "start": 94.42,
+          "end": 94.62
+        },
+        {
+          "word": "where",
+          "start": 94.62,
+          "end": 94.8
+        },
+        {
+          "word": "they",
+          "start": 94.8,
+          "end": 95.0
+        },
+        {
+          "word": "are.",
+          "start": 95.0,
+          "end": 95.44
+        }
+      ]
+    },
+    {
+      "index": 22,
+      "startMs": 96120,
+      "endMs": 100520,
+      "text": "Well, with this app, just share your locations with each other,",
+      "words": [
+        {
+          "word": "Well,",
+          "start": 96.12,
+          "end": 96.46
+        },
+        {
+          "word": "with",
+          "start": 96.94,
+          "end": 97.18
+        },
+        {
+          "word": "this",
+          "start": 97.18,
+          "end": 97.4
+        },
+        {
+          "word": "app,",
+          "start": 97.4,
+          "end": 97.78
+        },
+        {
+          "word": "just",
+          "start": 98.08,
+          "end": 98.44
+        },
+        {
+          "word": "share",
+          "start": 98.44,
+          "end": 98.8
+        },
+        {
+          "word": "your",
+          "start": 98.8,
+          "end": 99.06
+        },
+        {
+          "word": "locations",
+          "start": 99.06,
+          "end": 99.64
+        },
+        {
+          "word": "with",
+          "start": 99.64,
+          "end": 99.88
+        },
+        {
+          "word": "each",
+          "start": 99.88,
+          "end": 100.14
+        },
+        {
+          "word": "other,",
+          "start": 100.14,
+          "end": 100.52
+        }
+      ]
+    },
+    {
+      "index": 23,
+      "startMs": 100860,
+      "endMs": 102900,
+      "text": "and the app can send messages to you.",
+      "words": [
+        {
+          "word": "and",
+          "start": 100.86,
+          "end": 100.94
+        },
+        {
+          "word": "the",
+          "start": 100.94,
+          "end": 101.1
+        },
+        {
+          "word": "app",
+          "start": 101.1,
+          "end": 101.4
+        },
+        {
+          "word": "can",
+          "start": 101.4,
+          "end": 101.66
+        },
+        {
+          "word": "send",
+          "start": 101.66,
+          "end": 101.84
+        },
+        {
+          "word": "messages",
+          "start": 101.84,
+          "end": 102.28
+        },
+        {
+          "word": "to",
+          "start": 102.28,
+          "end": 102.52
+        },
+        {
+          "word": "you.",
+          "start": 102.52,
+          "end": 102.9
+        }
+      ]
+    },
+    {
+      "index": 24,
+      "startMs": 103340,
+      "endMs": 107900,
+      "text": "The messages tell you if your friends are on time or if they are late.",
+      "words": [
+        {
+          "word": "The",
+          "start": 103.34,
+          "end": 103.56
+        },
+        {
+          "word": "messages",
+          "start": 103.56,
+          "end": 103.9
+        },
+        {
+          "word": "tell",
+          "start": 103.9,
+          "end": 104.22
+        },
+        {
+          "word": "you",
+          "start": 104.22,
+          "end": 104.42
+        },
+        {
+          "word": "if",
+          "start": 104.42,
+          "end": 104.52
+        },
+        {
+          "word": "your",
+          "start": 104.52,
+          "end": 104.82
+        },
+        {
+          "word": "friends",
+          "start": 104.82,
+          "end": 105.06
+        },
+        {
+          "word": "are",
+          "start": 105.06,
+          "end": 105.3
+        },
+        {
+          "word": "on",
+          "start": 105.3,
+          "end": 105.66
+        },
+        {
+          "word": "time",
+          "start": 105.66,
+          "end": 106.2
+        },
+        {
+          "word": "or",
+          "start": 106.2,
+          "end": 106.72
+        },
+        {
+          "word": "if",
+          "start": 106.72,
+          "end": 107.02
+        },
+        {
+          "word": "they",
+          "start": 107.02,
+          "end": 107.28
+        },
+        {
+          "word": "are",
+          "start": 107.28,
+          "end": 107.54
+        },
+        {
+          "word": "late.",
+          "start": 107.54,
+          "end": 107.9
+        }
+      ]
+    },
+    {
+      "index": 25,
+      "startMs": 108400,
+      "endMs": 112260,
+      "text": "It tells you how many more minutes before they arrive.",
+      "words": [
+        {
+          "word": "It",
+          "start": 108.4,
+          "end": 108.64
+        },
+        {
+          "word": "tells",
+          "start": 108.64,
+          "end": 108.8
+        },
+        {
+          "word": "you",
+          "start": 108.8,
+          "end": 109.1
+        },
+        {
+          "word": "how",
+          "start": 109.1,
+          "end": 109.32
+        },
+        {
+          "word": "many",
+          "start": 109.32,
+          "end": 109.54
+        },
+        {
+          "word": "more",
+          "start": 109.54,
+          "end": 109.84
+        },
+        {
+          "word": "minutes",
+          "start": 109.84,
+          "end": 110.32
+        },
+        {
+          "word": "before",
+          "start": 110.32,
+          "end": 111.02
+        },
+        {
+          "word": "they",
+          "start": 111.02,
+          "end": 111.62
+        },
+        {
+          "word": "arrive.",
+          "start": 111.62,
+          "end": 112.26
+        }
+      ]
+    },
+    {
+      "index": 26,
+      "startMs": 113220,
+      "endMs": 117120,
+      "text": "This is good when your friends are in a car or on a bike",
+      "words": [
+        {
+          "word": "This",
+          "start": 113.22,
+          "end": 113.56
+        },
+        {
+          "word": "is",
+          "start": 113.56,
+          "end": 113.88
+        },
+        {
+          "word": "good",
+          "start": 113.88,
+          "end": 114.2
+        },
+        {
+          "word": "when",
+          "start": 114.2,
+          "end": 114.38
+        },
+        {
+          "word": "your",
+          "start": 114.38,
+          "end": 114.7
+        },
+        {
+          "word": "friends",
+          "start": 114.7,
+          "end": 115.02
+        },
+        {
+          "word": "are",
+          "start": 115.02,
+          "end": 115.3
+        },
+        {
+          "word": "in",
+          "start": 115.3,
+          "end": 115.5
+        },
+        {
+          "word": "a",
+          "start": 115.5,
+          "end": 115.7
+        },
+        {
+          "word": "car",
+          "start": 115.7,
+          "end": 116.02
+        },
+        {
+          "word": "or",
+          "start": 116.02,
+          "end": 116.36
+        },
+        {
+          "word": "on",
+          "start": 116.36,
+          "end": 116.68
+        },
+        {
+          "word": "a",
+          "start": 116.68,
+          "end": 116.8
+        },
+        {
+          "word": "bike",
+          "start": 116.8,
+          "end": 117.12
+        }
+      ]
+    },
+    {
+      "index": 27,
+      "startMs": 117120,
+      "endMs": 120320,
+      "text": "and don't want to stop to use their phones.",
+      "words": [
+        {
+          "word": "and",
+          "start": 117.12,
+          "end": 117.68
+        },
+        {
+          "word": "don't",
+          "start": 117.68,
+          "end": 118.02
+        },
+        {
+          "word": "want",
+          "start": 118.02,
+          "end": 118.38
+        },
+        {
+          "word": "to",
+          "start": 118.38,
+          "end": 118.76
+        },
+        {
+          "word": "stop",
+          "start": 118.76,
+          "end": 119.06
+        },
+        {
+          "word": "to",
+          "start": 119.06,
+          "end": 119.38
+        },
+        {
+          "word": "use",
+          "start": 119.38,
+          "end": 119.54
+        },
+        {
+          "word": "their",
+          "start": 119.54,
+          "end": 119.82
+        },
+        {
+          "word": "phones.",
+          "start": 119.82,
+          "end": 120.32
+        }
+      ]
+    },
+    {
+      "index": 28,
+      "startMs": 121560,
+      "endMs": 123560,
+      "text": "Our app is easy to use.",
+      "words": [
+        {
+          "word": "Our",
+          "start": 121.56,
+          "end": 121.72
+        },
+        {
+          "word": "app",
+          "start": 121.72,
+          "end": 122.08
+        },
+        {
+          "word": "is",
+          "start": 122.08,
+          "end": 122.48
+        },
+        {
+          "word": "easy",
+          "start": 122.48,
+          "end": 122.82
+        },
+        {
+          "word": "to",
+          "start": 122.82,
+          "end": 123.16
+        },
+        {
+          "word": "use.",
+          "start": 123.16,
+          "end": 123.56
+        }
+      ]
+    },
+    {
+      "index": 29,
+      "startMs": 124020,
+      "endMs": 127800,
+      "text": "Just download it to your phone and start using it today.",
+      "words": [
+        {
+          "word": "Just",
+          "start": 124.02,
+          "end": 124.46
+        },
+        {
+          "word": "download",
+          "start": 124.46,
+          "end": 124.9
+        },
+        {
+          "word": "it",
+          "start": 124.9,
+          "end": 125.1
+        },
+        {
+          "word": "to",
+          "start": 125.1,
+          "end": 125.24
+        },
+        {
+          "word": "your",
+          "start": 125.24,
+          "end": 125.44
+        },
+        {
+          "word": "phone",
+          "start": 125.44,
+          "end": 125.8
+        },
+        {
+          "word": "and",
+          "start": 125.8,
+          "end": 126.28
+        },
+        {
+          "word": "start",
+          "start": 126.28,
+          "end": 126.6
+        },
+        {
+          "word": "using",
+          "start": 126.6,
+          "end": 127.0
+        },
+        {
+          "word": "it",
+          "start": 127.0,
+          "end": 127.42
+        },
+        {
+          "word": "today.",
+          "start": 127.42,
+          "end": 127.8
+        }
+      ]
+    }
+  ]
+}

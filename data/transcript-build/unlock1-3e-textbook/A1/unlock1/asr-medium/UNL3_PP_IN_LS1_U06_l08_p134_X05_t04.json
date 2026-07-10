@@ -1,0 +1,116 @@
+{
+  "model": "medium",
+  "language": "en",
+  "text": "6.4 comfortable glass leather metal plastic uncomfortable wooden",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 2000,
+      "text": "6.4",
+      "words": [
+        {
+          "word": "6",
+          "start": 0.0,
+          "end": 0.56
+        },
+        {
+          "word": ".4",
+          "start": 0.56,
+          "end": 2.0
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 2540,
+      "endMs": 3960,
+      "text": "comfortable",
+      "words": [
+        {
+          "word": "comfortable",
+          "start": 2.54,
+          "end": 3.96
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 5920,
+      "endMs": 7320,
+      "text": "glass",
+      "words": [
+        {
+          "word": "glass",
+          "start": 5.92,
+          "end": 7.32
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 9000,
+      "endMs": 10400,
+      "text": "leather",
+      "words": [
+        {
+          "word": "leather",
+          "start": 9.0,
+          "end": 10.4
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 12320,
+      "endMs": 13720,
+      "text": "metal",
+      "words": [
+        {
+          "word": "metal",
+          "start": 12.32,
+          "end": 13.72
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "startMs": 16000,
+      "endMs": 16880,
+      "text": "plastic",
+      "words": [
+        {
+          "word": "plastic",
+          "start": 16.0,
+          "end": 16.88
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "startMs": 19260,
+      "endMs": 20660,
+      "text": "uncomfortable",
+      "words": [
+        {
+          "word": "uncomfortable",
+          "start": 19.26,
+          "end": 20.66
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "startMs": 23000,
+      "endMs": 23620,
+      "text": "wooden",
+      "words": [
+        {
+          "word": "wooden",
+          "start": 22.92,
+          "end": 23.62
+        }
+      ]
+    }
+  ]
+}

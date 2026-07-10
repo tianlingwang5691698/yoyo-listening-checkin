@@ -1,0 +1,142 @@
+{
+  "model": "medium",
+  "language": "en",
+  "text": "Unit 3, 3.1 What's your name? My name is Jennifer. Are you from London? No, I'm from Manchester.",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 3800,
+      "text": "Unit 3, 3.1",
+      "words": [
+        {
+          "word": "Unit",
+          "start": 0.0,
+          "end": 0.62
+        },
+        {
+          "word": "3,",
+          "start": 0.62,
+          "end": 1.48
+        },
+        {
+          "word": "3",
+          "start": 2.16,
+          "end": 2.36
+        },
+        {
+          "word": ".1",
+          "start": 2.36,
+          "end": 3.8
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 4520,
+      "endMs": 5980,
+      "text": "What's your name?",
+      "words": [
+        {
+          "word": "What's",
+          "start": 4.5200000000000005,
+          "end": 5.28
+        },
+        {
+          "word": "your",
+          "start": 5.28,
+          "end": 5.52
+        },
+        {
+          "word": "name?",
+          "start": 5.52,
+          "end": 5.98
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 6840,
+      "endMs": 8500,
+      "text": "My name is Jennifer.",
+      "words": [
+        {
+          "word": "My",
+          "start": 6.84,
+          "end": 7.16
+        },
+        {
+          "word": "name",
+          "start": 7.16,
+          "end": 7.6
+        },
+        {
+          "word": "is",
+          "start": 7.6,
+          "end": 8.02
+        },
+        {
+          "word": "Jennifer.",
+          "start": 8.02,
+          "end": 8.5
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 9640,
+      "endMs": 10800,
+      "text": "Are you from London?",
+      "words": [
+        {
+          "word": "Are",
+          "start": 9.64,
+          "end": 9.88
+        },
+        {
+          "word": "you",
+          "start": 9.88,
+          "end": 10.1
+        },
+        {
+          "word": "from",
+          "start": 10.1,
+          "end": 10.34
+        },
+        {
+          "word": "London?",
+          "start": 10.34,
+          "end": 10.8
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 11600,
+      "endMs": 13640,
+      "text": "No, I'm from Manchester.",
+      "words": [
+        {
+          "word": "No,",
+          "start": 11.6,
+          "end": 11.98
+        },
+        {
+          "word": "I'm",
+          "start": 12.4,
+          "end": 12.78
+        },
+        {
+          "word": "from",
+          "start": 12.78,
+          "end": 13.0
+        },
+        {
+          "word": "Manchester.",
+          "start": 13.0,
+          "end": 13.64
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,227 @@
+{
+  "model": "medium",
+  "language": "en",
+  "text": "7.8 1. I'm going to tell you about the results of my survey. 2. There were four questions about food and culture. 3. Are fast food restaurants popular? 4. People had 80 minutes for lunch.",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 1860,
+      "text": "7.8",
+      "words": [
+        {
+          "word": "7",
+          "start": 0.0,
+          "end": 0.72
+        },
+        {
+          "word": ".8",
+          "start": 0.72,
+          "end": 1.86
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 1860,
+      "endMs": 7120,
+      "text": "1. I'm going to tell you about the results of my survey.",
+      "words": [
+        {
+          "word": "1.",
+          "start": 1.86,
+          "end": 3.04
+        },
+        {
+          "word": "I'm",
+          "start": 4.28,
+          "end": 4.44
+        },
+        {
+          "word": "going",
+          "start": 4.44,
+          "end": 4.64
+        },
+        {
+          "word": "to",
+          "start": 4.64,
+          "end": 4.92
+        },
+        {
+          "word": "tell",
+          "start": 4.92,
+          "end": 5.08
+        },
+        {
+          "word": "you",
+          "start": 5.08,
+          "end": 5.26
+        },
+        {
+          "word": "about",
+          "start": 5.26,
+          "end": 5.5
+        },
+        {
+          "word": "the",
+          "start": 5.5,
+          "end": 5.78
+        },
+        {
+          "word": "results",
+          "start": 5.78,
+          "end": 6.12
+        },
+        {
+          "word": "of",
+          "start": 6.12,
+          "end": 6.32
+        },
+        {
+          "word": "my",
+          "start": 6.32,
+          "end": 6.6
+        },
+        {
+          "word": "survey.",
+          "start": 6.6,
+          "end": 7.12
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 9500,
+      "endMs": 14540,
+      "text": "2. There were four questions about food and culture.",
+      "words": [
+        {
+          "word": "2.",
+          "start": 9.499999999999996,
+          "end": 10.34
+        },
+        {
+          "word": "There",
+          "start": 11.4,
+          "end": 11.64
+        },
+        {
+          "word": "were",
+          "start": 11.64,
+          "end": 11.94
+        },
+        {
+          "word": "four",
+          "start": 11.94,
+          "end": 12.26
+        },
+        {
+          "word": "questions",
+          "start": 12.26,
+          "end": 12.94
+        },
+        {
+          "word": "about",
+          "start": 12.94,
+          "end": 13.38
+        },
+        {
+          "word": "food",
+          "start": 13.38,
+          "end": 13.7
+        },
+        {
+          "word": "and",
+          "start": 13.7,
+          "end": 14.04
+        },
+        {
+          "word": "culture.",
+          "start": 14.04,
+          "end": 14.54
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 17040,
+      "endMs": 21340,
+      "text": "3. Are fast food restaurants popular?",
+      "words": [
+        {
+          "word": "3.",
+          "start": 17.039999999999996,
+          "end": 17.88
+        },
+        {
+          "word": "Are",
+          "start": 19.0,
+          "end": 19.36
+        },
+        {
+          "word": "fast",
+          "start": 19.36,
+          "end": 19.78
+        },
+        {
+          "word": "food",
+          "start": 19.78,
+          "end": 20.06
+        },
+        {
+          "word": "restaurants",
+          "start": 20.06,
+          "end": 20.62
+        },
+        {
+          "word": "popular?",
+          "start": 20.62,
+          "end": 21.34
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 23580,
+      "endMs": 28180,
+      "text": "4. People had 80 minutes for lunch.",
+      "words": [
+        {
+          "word": "4.",
+          "start": 23.580000000000002,
+          "end": 24.46
+        },
+        {
+          "word": "People",
+          "start": 25.84,
+          "end": 26.24
+        },
+        {
+          "word": "had",
+          "start": 26.24,
+          "end": 26.64
+        },
+        {
+          "word": "80",
+          "start": 26.64,
+          "end": 27.08
+        },
+        {
+          "word": "minutes",
+          "start": 27.08,
+          "end": 27.48
+        },
+        {
+          "word": "for",
+          "start": 27.48,
+          "end": 27.74
+        },
+        {
+          "word": "lunch.",
+          "start": 27.74,
+          "end": 28.18
+        }
+      ]
+    }
+  ]
+}

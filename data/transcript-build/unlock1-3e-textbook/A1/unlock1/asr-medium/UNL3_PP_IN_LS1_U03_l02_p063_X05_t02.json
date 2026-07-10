@@ -1,0 +1,325 @@
+{
+  "model": "medium",
+  "language": "en",
+  "text": "3.2 1 What do you like to watch on TV? 2. How many hours do you sleep every night? 3. Who do you usually text? 4. Do you play video games? 5. Do you think it's important for people to exercise? 6. Do you like to go online and shop?",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 2260,
+      "text": "3.2",
+      "words": [
+        {
+          "word": "3",
+          "start": 0.0,
+          "end": 0.6
+        },
+        {
+          "word": ".2",
+          "start": 0.6,
+          "end": 2.26
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 3300,
+      "endMs": 4120,
+      "text": "1",
+      "words": [
+        {
+          "word": "1",
+          "start": 3.3,
+          "end": 4.12
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 4120,
+      "endMs": 6640,
+      "text": "What do you like to watch on TV?",
+      "words": [
+        {
+          "word": "What",
+          "start": 4.12,
+          "end": 4.3
+        },
+        {
+          "word": "do",
+          "start": 4.3,
+          "end": 4.52
+        },
+        {
+          "word": "you",
+          "start": 4.52,
+          "end": 4.68
+        },
+        {
+          "word": "like",
+          "start": 4.68,
+          "end": 5.04
+        },
+        {
+          "word": "to",
+          "start": 5.04,
+          "end": 5.34
+        },
+        {
+          "word": "watch",
+          "start": 5.34,
+          "end": 5.58
+        },
+        {
+          "word": "on",
+          "start": 5.58,
+          "end": 5.98
+        },
+        {
+          "word": "TV?",
+          "start": 5.98,
+          "end": 6.64
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 8500,
+      "endMs": 12560,
+      "text": "2. How many hours do you sleep every night?",
+      "words": [
+        {
+          "word": "2.",
+          "start": 8.5,
+          "end": 9.32
+        },
+        {
+          "word": "many",
+          "start": 10.32,
+          "end": 10.62
+        },
+        {
+          "word": "hours",
+          "start": 10.62,
+          "end": 11.04
+        },
+        {
+          "word": "do",
+          "start": 11.04,
+          "end": 11.28
+        },
+        {
+          "word": "you",
+          "start": 11.28,
+          "end": 11.5
+        },
+        {
+          "word": "sleep",
+          "start": 11.5,
+          "end": 11.78
+        },
+        {
+          "word": "every",
+          "start": 11.78,
+          "end": 12.16
+        },
+        {
+          "word": "night?",
+          "start": 12.16,
+          "end": 12.56
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 14360,
+      "endMs": 18220,
+      "text": "3. Who do you usually text?",
+      "words": [
+        {
+          "word": "3.",
+          "start": 14.36,
+          "end": 15.18
+        },
+        {
+          "word": "Who",
+          "start": 16.22,
+          "end": 16.46
+        },
+        {
+          "word": "do",
+          "start": 16.46,
+          "end": 16.68
+        },
+        {
+          "word": "you",
+          "start": 16.68,
+          "end": 16.94
+        },
+        {
+          "word": "usually",
+          "start": 16.94,
+          "end": 17.58
+        },
+        {
+          "word": "text?",
+          "start": 17.58,
+          "end": 18.22
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "startMs": 20120,
+      "endMs": 23520,
+      "text": "4. Do you play video games?",
+      "words": [
+        {
+          "word": "4.",
+          "start": 20.12,
+          "end": 20.94
+        },
+        {
+          "word": "Do",
+          "start": 21.8,
+          "end": 21.98
+        },
+        {
+          "word": "you",
+          "start": 21.98,
+          "end": 22.24
+        },
+        {
+          "word": "play",
+          "start": 22.24,
+          "end": 22.5
+        },
+        {
+          "word": "video",
+          "start": 22.5,
+          "end": 23.02
+        },
+        {
+          "word": "games?",
+          "start": 23.02,
+          "end": 23.52
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "startMs": 25460,
+      "endMs": 31080,
+      "text": "5. Do you think it's important for people to exercise?",
+      "words": [
+        {
+          "word": "5.",
+          "start": 25.46,
+          "end": 26.22
+        },
+        {
+          "word": "Do",
+          "start": 27.44,
+          "end": 27.54
+        },
+        {
+          "word": "you",
+          "start": 27.54,
+          "end": 27.78
+        },
+        {
+          "word": "think",
+          "start": 27.78,
+          "end": 28.04
+        },
+        {
+          "word": "it's",
+          "start": 28.04,
+          "end": 28.5
+        },
+        {
+          "word": "important",
+          "start": 28.5,
+          "end": 29.24
+        },
+        {
+          "word": "for",
+          "start": 29.24,
+          "end": 29.64
+        },
+        {
+          "word": "people",
+          "start": 29.64,
+          "end": 30.02
+        },
+        {
+          "word": "to",
+          "start": 30.02,
+          "end": 30.44
+        },
+        {
+          "word": "exercise?",
+          "start": 30.44,
+          "end": 31.08
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "startMs": 33120,
+      "endMs": 36800,
+      "text": "6. Do you like to go online and shop?",
+      "words": [
+        {
+          "word": "6.",
+          "start": 33.120000000000005,
+          "end": 33.88
+        },
+        {
+          "word": "Do",
+          "start": 34.88,
+          "end": 35.08
+        },
+        {
+          "word": "you",
+          "start": 35.08,
+          "end": 35.26
+        },
+        {
+          "word": "like",
+          "start": 35.26,
+          "end": 35.5
+        },
+        {
+          "word": "to",
+          "start": 35.5,
+          "end": 35.68
+        },
+        {
+          "word": "go",
+          "start": 35.68,
+          "end": 35.88
+        },
+        {
+          "word": "online",
+          "start": 35.88,
+          "end": 36.18
+        },
+        {
+          "word": "and",
+          "start": 36.18,
+          "end": 36.54
+        },
+        {
+          "word": "shop?",
+          "start": 36.54,
+          "end": 36.8
+        }
+      ]
+    }
+  ],
+  "sanitization": {
+    "removedInvalidWordCount": 1,
+    "rule": "drop_word_when_end_lte_start_or_start_negative"
+  }
+}

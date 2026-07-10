@@ -1,0 +1,107 @@
+{
+  "model": "medium",
+  "language": "en",
+  "text": "1.7 designer famous designer a famous designer she's a famous designer",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 2300,
+      "text": "1.7",
+      "words": [
+        {
+          "word": "1",
+          "start": 0.0,
+          "end": 0.42
+        },
+        {
+          "word": ".7",
+          "start": 0.42,
+          "end": 2.3
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 2300,
+      "endMs": 3760,
+      "text": "designer",
+      "words": [
+        {
+          "word": "designer",
+          "start": 2.3,
+          "end": 3.76
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 4500,
+      "endMs": 6800,
+      "text": "famous designer",
+      "words": [
+        {
+          "word": "famous",
+          "start": 4.5,
+          "end": 5.66
+        },
+        {
+          "word": "designer",
+          "start": 5.66,
+          "end": 6.8
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 7500,
+      "endMs": 9980,
+      "text": "a famous designer",
+      "words": [
+        {
+          "word": "a",
+          "start": 7.5,
+          "end": 8.44
+        },
+        {
+          "word": "famous",
+          "start": 8.44,
+          "end": 9.02
+        },
+        {
+          "word": "designer",
+          "start": 9.02,
+          "end": 9.98
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 10500,
+      "endMs": 13360,
+      "text": "she's a famous designer",
+      "words": [
+        {
+          "word": "she's",
+          "start": 10.5,
+          "end": 11.92
+        },
+        {
+          "word": "a",
+          "start": 11.92,
+          "end": 12.14
+        },
+        {
+          "word": "famous",
+          "start": 12.14,
+          "end": 12.66
+        },
+        {
+          "word": "designer",
+          "start": 12.66,
+          "end": 13.36
+        }
+      ]
+    }
+  ]
+}

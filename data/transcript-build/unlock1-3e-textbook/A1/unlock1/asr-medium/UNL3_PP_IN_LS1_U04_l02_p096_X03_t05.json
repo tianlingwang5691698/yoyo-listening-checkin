@@ -1,0 +1,508 @@
+{
+  "model": "medium",
+  "language": "en",
+  "text": "4.5 1 It's opposite the business school 2 The fountain is in green square 3 Go through Alpha Park to the student center 4 The bike is in front of that big fountain there on the right 5 Okay then, so we're at the language school 6 Go along French Road 7 There's a cafe next to the train station 8 The bike is there on the left. It's behind that school",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 2240,
+      "text": "4.5",
+      "words": [
+        {
+          "word": "4",
+          "start": 0.0,
+          "end": 0.58
+        },
+        {
+          "word": ".5",
+          "start": 0.58,
+          "end": 2.24
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 2240,
+      "endMs": 3220,
+      "text": "1",
+      "words": [
+        {
+          "word": "1",
+          "start": 2.24,
+          "end": 3.22
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 3220,
+      "endMs": 6340,
+      "text": "It's opposite the business school",
+      "words": [
+        {
+          "word": "It's",
+          "start": 3.22,
+          "end": 4.62
+        },
+        {
+          "word": "opposite",
+          "start": 4.62,
+          "end": 5.02
+        },
+        {
+          "word": "the",
+          "start": 5.02,
+          "end": 5.3
+        },
+        {
+          "word": "business",
+          "start": 5.3,
+          "end": 5.68
+        },
+        {
+          "word": "school",
+          "start": 5.68,
+          "end": 6.34
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 7940,
+      "endMs": 8820,
+      "text": "2",
+      "words": [
+        {
+          "word": "2",
+          "start": 7.939999999999998,
+          "end": 8.82
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 8820,
+      "endMs": 12340,
+      "text": "The fountain is in green square",
+      "words": [
+        {
+          "word": "The",
+          "start": 8.82,
+          "end": 9.92
+        },
+        {
+          "word": "fountain",
+          "start": 9.92,
+          "end": 10.5
+        },
+        {
+          "word": "is",
+          "start": 10.5,
+          "end": 10.96
+        },
+        {
+          "word": "in",
+          "start": 10.96,
+          "end": 11.38
+        },
+        {
+          "word": "green",
+          "start": 11.38,
+          "end": 11.66
+        },
+        {
+          "word": "square",
+          "start": 11.66,
+          "end": 12.34
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "startMs": 14060,
+      "endMs": 14940,
+      "text": "3",
+      "words": [
+        {
+          "word": "3",
+          "start": 14.059999999999997,
+          "end": 14.94
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "startMs": 15460,
+      "endMs": 18880,
+      "text": "Go through Alpha Park to the student center",
+      "words": [
+        {
+          "word": "Go",
+          "start": 15.46,
+          "end": 16.16
+        },
+        {
+          "word": "through",
+          "start": 16.16,
+          "end": 16.6
+        },
+        {
+          "word": "Alpha",
+          "start": 16.6,
+          "end": 17.04
+        },
+        {
+          "word": "Park",
+          "start": 17.04,
+          "end": 17.46
+        },
+        {
+          "word": "to",
+          "start": 17.46,
+          "end": 17.72
+        },
+        {
+          "word": "the",
+          "start": 17.72,
+          "end": 17.98
+        },
+        {
+          "word": "student",
+          "start": 17.98,
+          "end": 18.24
+        },
+        {
+          "word": "center",
+          "start": 18.24,
+          "end": 18.88
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "startMs": 20440,
+      "endMs": 21320,
+      "text": "4",
+      "words": [
+        {
+          "word": "4",
+          "start": 20.439999999999998,
+          "end": 21.32
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "startMs": 21920,
+      "endMs": 27880,
+      "text": "The bike is in front of that big fountain there on the right",
+      "words": [
+        {
+          "word": "The",
+          "start": 21.92,
+          "end": 22.56
+        },
+        {
+          "word": "bike",
+          "start": 22.56,
+          "end": 23.0
+        },
+        {
+          "word": "is",
+          "start": 23.0,
+          "end": 23.44
+        },
+        {
+          "word": "in",
+          "start": 23.44,
+          "end": 23.7
+        },
+        {
+          "word": "front",
+          "start": 23.7,
+          "end": 23.9
+        },
+        {
+          "word": "of",
+          "start": 23.9,
+          "end": 24.2
+        },
+        {
+          "word": "that",
+          "start": 24.2,
+          "end": 24.54
+        },
+        {
+          "word": "big",
+          "start": 24.54,
+          "end": 24.86
+        },
+        {
+          "word": "fountain",
+          "start": 24.86,
+          "end": 25.5
+        },
+        {
+          "word": "there",
+          "start": 25.5,
+          "end": 26.52
+        },
+        {
+          "word": "on",
+          "start": 26.52,
+          "end": 27.22
+        },
+        {
+          "word": "the",
+          "start": 27.22,
+          "end": 27.48
+        },
+        {
+          "word": "right",
+          "start": 27.48,
+          "end": 27.88
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "startMs": 29780,
+      "endMs": 30580,
+      "text": "5",
+      "words": [
+        {
+          "word": "5",
+          "start": 29.78,
+          "end": 30.58
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "startMs": 31480,
+      "endMs": 34800,
+      "text": "Okay then, so we're at the language school",
+      "words": [
+        {
+          "word": "Okay",
+          "start": 31.480000000000004,
+          "end": 32.28
+        },
+        {
+          "word": "then,",
+          "start": 32.28,
+          "end": 32.8
+        },
+        {
+          "word": "so",
+          "start": 32.92,
+          "end": 33.18
+        },
+        {
+          "word": "we're",
+          "start": 33.18,
+          "end": 33.4
+        },
+        {
+          "word": "at",
+          "start": 33.4,
+          "end": 33.56
+        },
+        {
+          "word": "the",
+          "start": 33.56,
+          "end": 33.84
+        },
+        {
+          "word": "language",
+          "start": 33.84,
+          "end": 34.22
+        },
+        {
+          "word": "school",
+          "start": 34.22,
+          "end": 34.8
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "startMs": 36840,
+      "endMs": 37640,
+      "text": "6",
+      "words": [
+        {
+          "word": "6",
+          "start": 36.84,
+          "end": 37.64
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "startMs": 37640,
+      "endMs": 40320,
+      "text": "Go along French Road",
+      "words": [
+        {
+          "word": "Go",
+          "start": 37.64,
+          "end": 38.74
+        },
+        {
+          "word": "along",
+          "start": 38.74,
+          "end": 39.2
+        },
+        {
+          "word": "French",
+          "start": 39.2,
+          "end": 39.78
+        },
+        {
+          "word": "Road",
+          "start": 39.78,
+          "end": 40.32
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "startMs": 42040,
+      "endMs": 42840,
+      "text": "7",
+      "words": [
+        {
+          "word": "7",
+          "start": 42.040000000000006,
+          "end": 42.84
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "startMs": 43880,
+      "endMs": 46380,
+      "text": "There's a cafe next to the train station",
+      "words": [
+        {
+          "word": "There's",
+          "start": 43.879999999999995,
+          "end": 44.34
+        },
+        {
+          "word": "a",
+          "start": 44.34,
+          "end": 44.5
+        },
+        {
+          "word": "cafe",
+          "start": 44.5,
+          "end": 44.86
+        },
+        {
+          "word": "next",
+          "start": 44.86,
+          "end": 45.28
+        },
+        {
+          "word": "to",
+          "start": 45.28,
+          "end": 45.5
+        },
+        {
+          "word": "the",
+          "start": 45.5,
+          "end": 45.7
+        },
+        {
+          "word": "train",
+          "start": 45.7,
+          "end": 45.9
+        },
+        {
+          "word": "station",
+          "start": 45.9,
+          "end": 46.38
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "startMs": 48020,
+      "endMs": 48820,
+      "text": "8",
+      "words": [
+        {
+          "word": "8",
+          "start": 48.02,
+          "end": 48.82
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "startMs": 49880,
+      "endMs": 53940,
+      "text": "The bike is there on the left. It's behind that school",
+      "words": [
+        {
+          "word": "The",
+          "start": 49.64,
+          "end": 50.04
+        },
+        {
+          "word": "bike",
+          "start": 50.04,
+          "end": 50.38
+        },
+        {
+          "word": "is",
+          "start": 50.38,
+          "end": 50.68
+        },
+        {
+          "word": "there",
+          "start": 50.68,
+          "end": 50.98
+        },
+        {
+          "word": "on",
+          "start": 50.98,
+          "end": 51.26
+        },
+        {
+          "word": "the",
+          "start": 51.26,
+          "end": 51.46
+        },
+        {
+          "word": "left.",
+          "start": 51.46,
+          "end": 51.76
+        },
+        {
+          "word": "It's",
+          "start": 52.22,
+          "end": 52.56
+        },
+        {
+          "word": "behind",
+          "start": 52.56,
+          "end": 53.04
+        },
+        {
+          "word": "that",
+          "start": 53.04,
+          "end": 53.44
+        },
+        {
+          "word": "school",
+          "start": 53.44,
+          "end": 53.94
+        }
+      ]
+    }
+  ]
+}

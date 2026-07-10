@@ -1,0 +1,227 @@
+{
+  "model": "medium",
+  "language": "en",
+  "text": "5.8 1. Nurses have to work hard. 2. The Sports Centre nurse has to speak another language. 3. Morena and Darren have experience in a hospital. 4. Morena has a job in a small hospital.",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 2300,
+      "text": "5.8",
+      "words": [
+        {
+          "word": "5",
+          "start": 0.0,
+          "end": 0.54
+        },
+        {
+          "word": ".8",
+          "start": 0.54,
+          "end": 2.3
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 2300,
+      "endMs": 6640,
+      "text": "1. Nurses have to work hard.",
+      "words": [
+        {
+          "word": "1.",
+          "start": 2.3,
+          "end": 3.76
+        },
+        {
+          "word": "Nurses",
+          "start": 4.74,
+          "end": 5.34
+        },
+        {
+          "word": "have",
+          "start": 5.34,
+          "end": 5.58
+        },
+        {
+          "word": "to",
+          "start": 5.58,
+          "end": 5.8
+        },
+        {
+          "word": "work",
+          "start": 5.8,
+          "end": 6.08
+        },
+        {
+          "word": "hard.",
+          "start": 6.08,
+          "end": 6.64
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 9060,
+      "endMs": 14320,
+      "text": "2. The Sports Centre nurse has to speak another language.",
+      "words": [
+        {
+          "word": "2.",
+          "start": 9.06,
+          "end": 9.84
+        },
+        {
+          "word": "The",
+          "start": 10.82,
+          "end": 11.1
+        },
+        {
+          "word": "Sports",
+          "start": 11.1,
+          "end": 11.44
+        },
+        {
+          "word": "Centre",
+          "start": 11.44,
+          "end": 11.9
+        },
+        {
+          "word": "nurse",
+          "start": 11.9,
+          "end": 12.36
+        },
+        {
+          "word": "has",
+          "start": 12.36,
+          "end": 12.68
+        },
+        {
+          "word": "to",
+          "start": 12.68,
+          "end": 13.0
+        },
+        {
+          "word": "speak",
+          "start": 13.0,
+          "end": 13.24
+        },
+        {
+          "word": "another",
+          "start": 13.24,
+          "end": 13.58
+        },
+        {
+          "word": "language.",
+          "start": 13.58,
+          "end": 14.32
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 16540,
+      "endMs": 22560,
+      "text": "3. Morena and Darren have experience in a hospital.",
+      "words": [
+        {
+          "word": "3.",
+          "start": 16.54,
+          "end": 17.62
+        },
+        {
+          "word": "Morena",
+          "start": 18.92,
+          "end": 19.34
+        },
+        {
+          "word": "and",
+          "start": 19.34,
+          "end": 19.72
+        },
+        {
+          "word": "Darren",
+          "start": 19.72,
+          "end": 20.14
+        },
+        {
+          "word": "have",
+          "start": 20.14,
+          "end": 20.88
+        },
+        {
+          "word": "experience",
+          "start": 20.88,
+          "end": 21.64
+        },
+        {
+          "word": "in",
+          "start": 21.64,
+          "end": 21.82
+        },
+        {
+          "word": "a",
+          "start": 21.82,
+          "end": 21.94
+        },
+        {
+          "word": "hospital.",
+          "start": 21.94,
+          "end": 22.56
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 25140,
+      "endMs": 29620,
+      "text": "4. Morena has a job in a small hospital.",
+      "words": [
+        {
+          "word": "4.",
+          "start": 25.14,
+          "end": 25.7
+        },
+        {
+          "word": "Morena",
+          "start": 27.2,
+          "end": 27.56
+        },
+        {
+          "word": "has",
+          "start": 27.56,
+          "end": 27.84
+        },
+        {
+          "word": "a",
+          "start": 27.84,
+          "end": 28.08
+        },
+        {
+          "word": "job",
+          "start": 28.08,
+          "end": 28.3
+        },
+        {
+          "word": "in",
+          "start": 28.3,
+          "end": 28.54
+        },
+        {
+          "word": "a",
+          "start": 28.54,
+          "end": 28.7
+        },
+        {
+          "word": "small",
+          "start": 28.7,
+          "end": 28.98
+        },
+        {
+          "word": "hospital.",
+          "start": 28.98,
+          "end": 29.62
+        }
+      ]
+    }
+  ]
+}

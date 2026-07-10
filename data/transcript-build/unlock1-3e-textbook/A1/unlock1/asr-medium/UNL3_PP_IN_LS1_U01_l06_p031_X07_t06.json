@@ -1,0 +1,292 @@
+{
+  "model": "medium",
+  "language": "en",
+  "text": "1.6 1. I'm going to tell you about a famous person from Mexico. 2. Ana Garcia is a famous Mexican chef. 3. This is Haruki Murakami. 4. He's a famous Japanese writer. He's a famous Mexican artist. He has a hobby of painting paintings. He is a famous Mexican painter.",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 1900,
+      "text": "1.6",
+      "words": [
+        {
+          "word": "1",
+          "start": 0.0,
+          "end": 0.52
+        },
+        {
+          "word": ".6",
+          "start": 0.52,
+          "end": 1.9
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 2500,
+      "endMs": 3340,
+      "text": "1.",
+      "words": [
+        {
+          "word": "1.",
+          "start": 2.5,
+          "end": 3.34
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 4540,
+      "endMs": 8060,
+      "text": "I'm going to tell you about a famous person from Mexico.",
+      "words": [
+        {
+          "word": "I'm",
+          "start": 4.54,
+          "end": 4.7
+        },
+        {
+          "word": "going",
+          "start": 4.7,
+          "end": 4.9
+        },
+        {
+          "word": "to",
+          "start": 4.9,
+          "end": 5.18
+        },
+        {
+          "word": "tell",
+          "start": 5.18,
+          "end": 5.38
+        },
+        {
+          "word": "you",
+          "start": 5.38,
+          "end": 5.72
+        },
+        {
+          "word": "about",
+          "start": 5.72,
+          "end": 5.96
+        },
+        {
+          "word": "a",
+          "start": 5.96,
+          "end": 6.2
+        },
+        {
+          "word": "famous",
+          "start": 6.2,
+          "end": 6.62
+        },
+        {
+          "word": "person",
+          "start": 6.62,
+          "end": 7.1
+        },
+        {
+          "word": "from",
+          "start": 7.1,
+          "end": 7.36
+        },
+        {
+          "word": "Mexico.",
+          "start": 7.36,
+          "end": 8.06
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 10580,
+      "endMs": 11660,
+      "text": "2.",
+      "words": [
+        {
+          "word": "2.",
+          "start": 10.580000000000002,
+          "end": 11.66
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 12560,
+      "endMs": 15840,
+      "text": "Ana Garcia is a famous Mexican chef.",
+      "words": [
+        {
+          "word": "Ana",
+          "start": 12.56,
+          "end": 12.8
+        },
+        {
+          "word": "Garcia",
+          "start": 12.8,
+          "end": 13.34
+        },
+        {
+          "word": "is",
+          "start": 13.34,
+          "end": 14.0
+        },
+        {
+          "word": "a",
+          "start": 14.0,
+          "end": 14.2
+        },
+        {
+          "word": "famous",
+          "start": 14.2,
+          "end": 14.7
+        },
+        {
+          "word": "Mexican",
+          "start": 14.7,
+          "end": 15.3
+        },
+        {
+          "word": "chef.",
+          "start": 15.3,
+          "end": 15.84
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "startMs": 18540,
+      "endMs": 19260,
+      "text": "3.",
+      "words": [
+        {
+          "word": "3.",
+          "start": 18.54,
+          "end": 19.26
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "startMs": 20300,
+      "endMs": 22360,
+      "text": "This is Haruki Murakami.",
+      "words": [
+        {
+          "word": "This",
+          "start": 20.3,
+          "end": 20.66
+        },
+        {
+          "word": "is",
+          "start": 20.66,
+          "end": 21.02
+        },
+        {
+          "word": "Haruki",
+          "start": 21.02,
+          "end": 21.58
+        },
+        {
+          "word": "Murakami.",
+          "start": 21.58,
+          "end": 22.36
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "startMs": 24760,
+      "endMs": 25640,
+      "text": "4.",
+      "words": [
+        {
+          "word": "4.",
+          "start": 24.76,
+          "end": 25.64
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "startMs": 26680,
+      "endMs": 28840,
+      "text": "He's a famous Japanese writer.",
+      "words": [
+        {
+          "word": "He's",
+          "start": 26.68,
+          "end": 27.08
+        },
+        {
+          "word": "a",
+          "start": 27.08,
+          "end": 27.12
+        },
+        {
+          "word": "famous",
+          "start": 27.12,
+          "end": 27.66
+        },
+        {
+          "word": "Japanese",
+          "start": 27.66,
+          "end": 28.28
+        },
+        {
+          "word": "writer.",
+          "start": 28.28,
+          "end": 28.84
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "startMs": 30280,
+      "endMs": 30300,
+      "text": "He's a famous Mexican artist.",
+      "words": [
+        {
+          "word": "He's",
+          "start": 30.28,
+          "end": 30.3
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "startMs": 30380,
+      "endMs": 30500,
+      "text": "He has a hobby of painting paintings.",
+      "words": [
+        {
+          "word": "of",
+          "start": 30.38,
+          "end": 30.5
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "startMs": 30500,
+      "endMs": 30640,
+      "text": "He is a famous Mexican painter.",
+      "words": [
+        {
+          "word": "famous",
+          "start": 30.5,
+          "end": 30.52
+        },
+        {
+          "word": "Mexican",
+          "start": 30.52,
+          "end": 30.64
+        }
+      ]
+    }
+  ],
+  "sanitization": {
+    "removedInvalidWordCount": 14,
+    "rule": "drop_word_when_end_lte_start_or_start_negative"
+  }
+}

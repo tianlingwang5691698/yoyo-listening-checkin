@@ -1,0 +1,116 @@
+{
+  "model": "medium",
+  "language": "en",
+  "text": "6.3 armchair table chair bookcase lamp desk sofa",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 1500,
+      "text": "6.3",
+      "words": [
+        {
+          "word": "6",
+          "start": 0.0,
+          "end": 0.56
+        },
+        {
+          "word": ".3",
+          "start": 0.56,
+          "end": 1.5
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 4260,
+      "endMs": 5660,
+      "text": "armchair",
+      "words": [
+        {
+          "word": "armchair",
+          "start": 4.26,
+          "end": 5.66
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 5660,
+      "endMs": 7500,
+      "text": "table",
+      "words": [
+        {
+          "word": "table",
+          "start": 5.66,
+          "end": 7.5
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 9160,
+      "endMs": 10560,
+      "text": "chair",
+      "words": [
+        {
+          "word": "chair",
+          "start": 9.16,
+          "end": 10.56
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 13120,
+      "endMs": 13880,
+      "text": "bookcase",
+      "words": [
+        {
+          "word": "bookcase",
+          "start": 13.12,
+          "end": 13.88
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "startMs": 15660,
+      "endMs": 17060,
+      "text": "lamp",
+      "words": [
+        {
+          "word": "lamp",
+          "start": 15.659999999999998,
+          "end": 17.06
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "startMs": 18780,
+      "endMs": 20180,
+      "text": "desk",
+      "words": [
+        {
+          "word": "desk",
+          "start": 18.78,
+          "end": 20.18
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "startMs": 21920,
+      "endMs": 23320,
+      "text": "sofa",
+      "words": [
+        {
+          "word": "sofa",
+          "start": 21.92,
+          "end": 23.32
+        }
+      ]
+    }
+  ]
+}

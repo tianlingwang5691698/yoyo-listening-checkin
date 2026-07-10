@@ -1,0 +1,79 @@
+{
+  "model": "medium",
+  "language": "en",
+  "text": "Maths building Physics building Language centre Student centre",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 5760,
+      "endMs": 7360,
+      "text": "Maths building",
+      "words": [
+        {
+          "word": "Maths",
+          "start": 5.76,
+          "end": 7.16
+        },
+        {
+          "word": "building",
+          "start": 7.16,
+          "end": 7.36
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 7360,
+      "endMs": 11000,
+      "text": "Physics building",
+      "words": [
+        {
+          "word": "Physics",
+          "start": 7.36,
+          "end": 8.48
+        },
+        {
+          "word": "building",
+          "start": 8.48,
+          "end": 11.0
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 12200,
+      "endMs": 15540,
+      "text": "Language centre",
+      "words": [
+        {
+          "word": "Language",
+          "start": 12.2,
+          "end": 13.72
+        },
+        {
+          "word": "centre",
+          "start": 13.72,
+          "end": 15.54
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 17540,
+      "endMs": 19700,
+      "text": "Student centre",
+      "words": [
+        {
+          "word": "Student",
+          "start": 17.540000000000003,
+          "end": 18.94
+        },
+        {
+          "word": "centre",
+          "start": 18.94,
+          "end": 19.7
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,320 @@
+{
+  "model": "medium",
+  "language": "en",
+  "text": "4.6 1 Where's the supermarket? 2 Is the physics building near here? 3 How do I get to the language centre? 4 Can you tell me how to get to the history building? 5 I'm looking for the maths building. Is it near here?",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 2260,
+      "text": "4.6",
+      "words": [
+        {
+          "word": "4",
+          "start": 0.0,
+          "end": 0.56
+        },
+        {
+          "word": ".6",
+          "start": 0.56,
+          "end": 2.26
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 3240,
+      "endMs": 4000,
+      "text": "1",
+      "words": [
+        {
+          "word": "1",
+          "start": 3.2399999999999984,
+          "end": 4.0
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 4000,
+      "endMs": 6160,
+      "text": "Where's the supermarket?",
+      "words": [
+        {
+          "word": "Where's",
+          "start": 4.0,
+          "end": 5.12
+        },
+        {
+          "word": "the",
+          "start": 5.12,
+          "end": 5.5
+        },
+        {
+          "word": "supermarket?",
+          "start": 5.5,
+          "end": 6.16
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 8840,
+      "endMs": 9600,
+      "text": "2",
+      "words": [
+        {
+          "word": "2",
+          "start": 8.84,
+          "end": 9.6
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 10360,
+      "endMs": 12720,
+      "text": "Is the physics building near here?",
+      "words": [
+        {
+          "word": "Is",
+          "start": 10.36,
+          "end": 10.94
+        },
+        {
+          "word": "the",
+          "start": 10.94,
+          "end": 11.22
+        },
+        {
+          "word": "physics",
+          "start": 11.22,
+          "end": 11.54
+        },
+        {
+          "word": "building",
+          "start": 11.54,
+          "end": 11.96
+        },
+        {
+          "word": "near",
+          "start": 11.96,
+          "end": 12.34
+        },
+        {
+          "word": "here?",
+          "start": 12.34,
+          "end": 12.72
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "startMs": 15220,
+      "endMs": 15980,
+      "text": "3",
+      "words": [
+        {
+          "word": "3",
+          "start": 15.22,
+          "end": 15.98
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "startMs": 16880,
+      "endMs": 19220,
+      "text": "How do I get to the language centre?",
+      "words": [
+        {
+          "word": "How",
+          "start": 16.88,
+          "end": 17.4
+        },
+        {
+          "word": "do",
+          "start": 17.4,
+          "end": 17.58
+        },
+        {
+          "word": "I",
+          "start": 17.58,
+          "end": 17.7
+        },
+        {
+          "word": "get",
+          "start": 17.7,
+          "end": 17.96
+        },
+        {
+          "word": "to",
+          "start": 17.96,
+          "end": 18.14
+        },
+        {
+          "word": "the",
+          "start": 18.14,
+          "end": 18.34
+        },
+        {
+          "word": "language",
+          "start": 18.34,
+          "end": 18.72
+        },
+        {
+          "word": "centre?",
+          "start": 18.72,
+          "end": 19.22
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "startMs": 21900,
+      "endMs": 22660,
+      "text": "4",
+      "words": [
+        {
+          "word": "4",
+          "start": 21.9,
+          "end": 22.66
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "startMs": 23440,
+      "endMs": 26100,
+      "text": "Can you tell me how to get to the history building?",
+      "words": [
+        {
+          "word": "Can",
+          "start": 23.44,
+          "end": 23.98
+        },
+        {
+          "word": "you",
+          "start": 23.98,
+          "end": 24.2
+        },
+        {
+          "word": "tell",
+          "start": 24.2,
+          "end": 24.38
+        },
+        {
+          "word": "me",
+          "start": 24.38,
+          "end": 24.56
+        },
+        {
+          "word": "how",
+          "start": 24.56,
+          "end": 24.76
+        },
+        {
+          "word": "to",
+          "start": 24.76,
+          "end": 24.92
+        },
+        {
+          "word": "get",
+          "start": 24.92,
+          "end": 25.08
+        },
+        {
+          "word": "to",
+          "start": 25.08,
+          "end": 25.22
+        },
+        {
+          "word": "the",
+          "start": 25.22,
+          "end": 25.36
+        },
+        {
+          "word": "history",
+          "start": 25.36,
+          "end": 25.68
+        },
+        {
+          "word": "building?",
+          "start": 25.68,
+          "end": 26.1
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "startMs": 28680,
+      "endMs": 29440,
+      "text": "5",
+      "words": [
+        {
+          "word": "5",
+          "start": 28.68,
+          "end": 29.44
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "startMs": 30460,
+      "endMs": 34280,
+      "text": "I'm looking for the maths building. Is it near here?",
+      "words": [
+        {
+          "word": "I'm",
+          "start": 30.46,
+          "end": 31.0
+        },
+        {
+          "word": "looking",
+          "start": 31.0,
+          "end": 31.28
+        },
+        {
+          "word": "for",
+          "start": 31.28,
+          "end": 31.54
+        },
+        {
+          "word": "the",
+          "start": 31.54,
+          "end": 31.78
+        },
+        {
+          "word": "maths",
+          "start": 31.78,
+          "end": 32.0
+        },
+        {
+          "word": "building.",
+          "start": 32.0,
+          "end": 32.54
+        },
+        {
+          "word": "Is",
+          "start": 33.26,
+          "end": 33.46
+        },
+        {
+          "word": "it",
+          "start": 33.46,
+          "end": 33.7
+        },
+        {
+          "word": "near",
+          "start": 33.7,
+          "end": 33.92
+        },
+        {
+          "word": "here?",
+          "start": 33.92,
+          "end": 34.28
+        }
+      ]
+    }
+  ]
+}

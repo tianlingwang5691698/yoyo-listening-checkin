@@ -1,0 +1,880 @@
+{
+  "model": "medium",
+  "language": "en",
+  "text": "1.2 Hi, hello, I'm Carlos. I'm going to tell you about Coco. She's a student in our class. She's 18 and she's from Japan. Her family's from Sapporo. Her father's a teacher. She wants to study English at university. Alright, thank you, Carlos. So, Coco, it's your turn. Please introduce the student next to you. Hi, I'm going to tell you about Nihia. Nihia is 19. She's from Turkey. She has a brother. Her family has a hotel. Her mother and father are the managers. Nihia wants to study business at university. Thank you, Coco. Nihir, your turn. Hello, I'm going to tell you about Carlos. He's 19. He's from Peru. His father's an engineer and his mother is a doctor. Carlos wants to study computer science at university. Thank you, Nihir.",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 1400,
+      "text": "1.2",
+      "words": [
+        {
+          "word": "1",
+          "start": 0.0,
+          "end": 0.52
+        },
+        {
+          "word": ".2",
+          "start": 0.52,
+          "end": 1.4000000000000001
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 2240,
+      "endMs": 5440,
+      "text": "Hi, hello, I'm Carlos.",
+      "words": [
+        {
+          "word": "Hi,",
+          "start": 2.24,
+          "end": 2.8
+        },
+        {
+          "word": "hello,",
+          "start": 3.04,
+          "end": 3.58
+        },
+        {
+          "word": "I'm",
+          "start": 4.3,
+          "end": 4.82
+        },
+        {
+          "word": "Carlos.",
+          "start": 4.82,
+          "end": 5.44
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 6480,
+      "endMs": 9140,
+      "text": "I'm going to tell you about Coco.",
+      "words": [
+        {
+          "word": "I'm",
+          "start": 6.48,
+          "end": 6.88
+        },
+        {
+          "word": "going",
+          "start": 6.88,
+          "end": 7.12
+        },
+        {
+          "word": "to",
+          "start": 7.12,
+          "end": 7.46
+        },
+        {
+          "word": "tell",
+          "start": 7.46,
+          "end": 7.7
+        },
+        {
+          "word": "you",
+          "start": 7.7,
+          "end": 8.1
+        },
+        {
+          "word": "about",
+          "start": 8.1,
+          "end": 8.64
+        },
+        {
+          "word": "Coco.",
+          "start": 8.64,
+          "end": 9.14
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 10080,
+      "endMs": 12600,
+      "text": "She's a student in our class.",
+      "words": [
+        {
+          "word": "She's",
+          "start": 10.08,
+          "end": 10.58
+        },
+        {
+          "word": "a",
+          "start": 10.58,
+          "end": 10.84
+        },
+        {
+          "word": "student",
+          "start": 10.84,
+          "end": 11.32
+        },
+        {
+          "word": "in",
+          "start": 11.32,
+          "end": 11.7
+        },
+        {
+          "word": "our",
+          "start": 11.7,
+          "end": 12.06
+        },
+        {
+          "word": "class.",
+          "start": 12.06,
+          "end": 12.6
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 13680,
+      "endMs": 17160,
+      "text": "She's 18 and she's from Japan.",
+      "words": [
+        {
+          "word": "She's",
+          "start": 13.68,
+          "end": 14.16
+        },
+        {
+          "word": "18",
+          "start": 14.16,
+          "end": 14.84
+        },
+        {
+          "word": "and",
+          "start": 14.84,
+          "end": 15.72
+        },
+        {
+          "word": "she's",
+          "start": 15.72,
+          "end": 16.2
+        },
+        {
+          "word": "from",
+          "start": 16.2,
+          "end": 16.5
+        },
+        {
+          "word": "Japan.",
+          "start": 16.5,
+          "end": 17.16
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "startMs": 18160,
+      "endMs": 20440,
+      "text": "Her family's from Sapporo.",
+      "words": [
+        {
+          "word": "Her",
+          "start": 18.16,
+          "end": 18.5
+        },
+        {
+          "word": "family's",
+          "start": 18.5,
+          "end": 19.24
+        },
+        {
+          "word": "from",
+          "start": 19.24,
+          "end": 19.7
+        },
+        {
+          "word": "Sapporo.",
+          "start": 19.7,
+          "end": 20.44
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "startMs": 21660,
+      "endMs": 23260,
+      "text": "Her father's a teacher.",
+      "words": [
+        {
+          "word": "Her",
+          "start": 21.66,
+          "end": 22.0
+        },
+        {
+          "word": "father's",
+          "start": 22.0,
+          "end": 22.6
+        },
+        {
+          "word": "a",
+          "start": 22.6,
+          "end": 22.8
+        },
+        {
+          "word": "teacher.",
+          "start": 22.8,
+          "end": 23.26
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "startMs": 24300,
+      "endMs": 27440,
+      "text": "She wants to study English at university.",
+      "words": [
+        {
+          "word": "She",
+          "start": 24.3,
+          "end": 24.68
+        },
+        {
+          "word": "wants",
+          "start": 24.68,
+          "end": 25.04
+        },
+        {
+          "word": "to",
+          "start": 25.04,
+          "end": 25.44
+        },
+        {
+          "word": "study",
+          "start": 25.44,
+          "end": 25.76
+        },
+        {
+          "word": "English",
+          "start": 25.76,
+          "end": 26.34
+        },
+        {
+          "word": "at",
+          "start": 26.34,
+          "end": 26.72
+        },
+        {
+          "word": "university.",
+          "start": 26.72,
+          "end": 27.44
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "startMs": 28360,
+      "endMs": 31020,
+      "text": "Alright, thank you, Carlos.",
+      "words": [
+        {
+          "word": "Alright,",
+          "start": 28.360000000000003,
+          "end": 29.18
+        },
+        {
+          "word": "thank",
+          "start": 29.92,
+          "end": 30.32
+        },
+        {
+          "word": "you,",
+          "start": 30.32,
+          "end": 30.6
+        },
+        {
+          "word": "Carlos.",
+          "start": 30.78,
+          "end": 31.02
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "startMs": 32800,
+      "endMs": 34980,
+      "text": "So, Coco, it's your turn.",
+      "words": [
+        {
+          "word": "So,",
+          "start": 32.8,
+          "end": 32.94
+        },
+        {
+          "word": "Coco,",
+          "start": 33.16,
+          "end": 33.26
+        },
+        {
+          "word": "it's",
+          "start": 33.86,
+          "end": 34.2
+        },
+        {
+          "word": "your",
+          "start": 34.2,
+          "end": 34.54
+        },
+        {
+          "word": "turn.",
+          "start": 34.54,
+          "end": 34.98
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "startMs": 35660,
+      "endMs": 38740,
+      "text": "Please introduce the student next to you.",
+      "words": [
+        {
+          "word": "Please",
+          "start": 35.66,
+          "end": 36.16
+        },
+        {
+          "word": "introduce",
+          "start": 36.16,
+          "end": 36.82
+        },
+        {
+          "word": "the",
+          "start": 36.82,
+          "end": 37.12
+        },
+        {
+          "word": "student",
+          "start": 37.12,
+          "end": 37.56
+        },
+        {
+          "word": "next",
+          "start": 37.56,
+          "end": 38.04
+        },
+        {
+          "word": "to",
+          "start": 38.04,
+          "end": 38.22
+        },
+        {
+          "word": "you.",
+          "start": 38.22,
+          "end": 38.74
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "startMs": 39080,
+      "endMs": 42460,
+      "text": "Hi, I'm going to tell you about Nihia.",
+      "words": [
+        {
+          "word": "Hi,",
+          "start": 39.08,
+          "end": 39.4
+        },
+        {
+          "word": "I'm",
+          "start": 39.96,
+          "end": 40.58
+        },
+        {
+          "word": "going",
+          "start": 40.58,
+          "end": 40.78
+        },
+        {
+          "word": "to",
+          "start": 40.78,
+          "end": 41.04
+        },
+        {
+          "word": "tell",
+          "start": 41.04,
+          "end": 41.26
+        },
+        {
+          "word": "you",
+          "start": 41.26,
+          "end": 41.54
+        },
+        {
+          "word": "about",
+          "start": 41.54,
+          "end": 41.98
+        },
+        {
+          "word": "Nihia.",
+          "start": 41.98,
+          "end": 42.46
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "startMs": 43360,
+      "endMs": 44840,
+      "text": "Nihia is 19.",
+      "words": [
+        {
+          "word": "Nihia",
+          "start": 43.36,
+          "end": 43.9
+        },
+        {
+          "word": "is",
+          "start": 43.9,
+          "end": 44.24
+        },
+        {
+          "word": "19.",
+          "start": 44.24,
+          "end": 44.84
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "startMs": 45440,
+      "endMs": 46840,
+      "text": "She's from Turkey.",
+      "words": [
+        {
+          "word": "She's",
+          "start": 45.44,
+          "end": 45.86
+        },
+        {
+          "word": "from",
+          "start": 45.86,
+          "end": 46.2
+        },
+        {
+          "word": "Turkey.",
+          "start": 46.2,
+          "end": 46.84
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "startMs": 47600,
+      "endMs": 48560,
+      "text": "She has a brother.",
+      "words": [
+        {
+          "word": "She",
+          "start": 47.6,
+          "end": 47.78
+        },
+        {
+          "word": "has",
+          "start": 47.78,
+          "end": 48.04
+        },
+        {
+          "word": "a",
+          "start": 48.04,
+          "end": 48.26
+        },
+        {
+          "word": "brother.",
+          "start": 48.26,
+          "end": 48.56
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "startMs": 49420,
+      "endMs": 51220,
+      "text": "Her family has a hotel.",
+      "words": [
+        {
+          "word": "Her",
+          "start": 49.42,
+          "end": 49.64
+        },
+        {
+          "word": "family",
+          "start": 49.64,
+          "end": 50.18
+        },
+        {
+          "word": "has",
+          "start": 50.18,
+          "end": 50.64
+        },
+        {
+          "word": "a",
+          "start": 50.64,
+          "end": 50.9
+        },
+        {
+          "word": "hotel.",
+          "start": 50.9,
+          "end": 51.22
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "startMs": 52260,
+      "endMs": 54780,
+      "text": "Her mother and father are the managers.",
+      "words": [
+        {
+          "word": "Her",
+          "start": 52.26,
+          "end": 52.52
+        },
+        {
+          "word": "mother",
+          "start": 52.52,
+          "end": 52.96
+        },
+        {
+          "word": "and",
+          "start": 52.96,
+          "end": 53.3
+        },
+        {
+          "word": "father",
+          "start": 53.3,
+          "end": 53.74
+        },
+        {
+          "word": "are",
+          "start": 53.74,
+          "end": 54.1
+        },
+        {
+          "word": "the",
+          "start": 54.1,
+          "end": 54.36
+        },
+        {
+          "word": "managers.",
+          "start": 54.36,
+          "end": 54.78
+        }
+      ]
+    },
+    {
+      "index": 18,
+      "startMs": 55840,
+      "endMs": 59360,
+      "text": "Nihia wants to study business at university.",
+      "words": [
+        {
+          "word": "Nihia",
+          "start": 55.839999999999996,
+          "end": 56.62
+        },
+        {
+          "word": "wants",
+          "start": 56.62,
+          "end": 56.9
+        },
+        {
+          "word": "to",
+          "start": 56.9,
+          "end": 57.14
+        },
+        {
+          "word": "study",
+          "start": 57.14,
+          "end": 57.5
+        },
+        {
+          "word": "business",
+          "start": 57.5,
+          "end": 58.1
+        },
+        {
+          "word": "at",
+          "start": 58.1,
+          "end": 58.48
+        },
+        {
+          "word": "university.",
+          "start": 58.48,
+          "end": 59.36
+        }
+      ]
+    },
+    {
+      "index": 19,
+      "startMs": 60400,
+      "endMs": 61240,
+      "text": "Thank you, Coco.",
+      "words": [
+        {
+          "word": "Thank",
+          "start": 60.4,
+          "end": 60.58
+        },
+        {
+          "word": "you,",
+          "start": 60.58,
+          "end": 60.88
+        },
+        {
+          "word": "Coco.",
+          "start": 60.88,
+          "end": 61.24
+        }
+      ]
+    },
+    {
+      "index": 20,
+      "startMs": 62340,
+      "endMs": 64460,
+      "text": "Nihir, your turn.",
+      "words": [
+        {
+          "word": "Nihir,",
+          "start": 62.339999999999996,
+          "end": 63.12
+        },
+        {
+          "word": "your",
+          "start": 63.52,
+          "end": 63.98
+        },
+        {
+          "word": "turn.",
+          "start": 63.98,
+          "end": 64.46
+        }
+      ]
+    },
+    {
+      "index": 21,
+      "startMs": 65400,
+      "endMs": 68320,
+      "text": "Hello, I'm going to tell you about Carlos.",
+      "words": [
+        {
+          "word": "Hello,",
+          "start": 65.4,
+          "end": 65.78
+        },
+        {
+          "word": "I'm",
+          "start": 66.32,
+          "end": 66.64
+        },
+        {
+          "word": "going",
+          "start": 66.64,
+          "end": 66.86
+        },
+        {
+          "word": "to",
+          "start": 66.86,
+          "end": 67.14
+        },
+        {
+          "word": "tell",
+          "start": 67.14,
+          "end": 67.3
+        },
+        {
+          "word": "you",
+          "start": 67.3,
+          "end": 67.46
+        },
+        {
+          "word": "about",
+          "start": 67.46,
+          "end": 67.76
+        },
+        {
+          "word": "Carlos.",
+          "start": 67.76,
+          "end": 68.32
+        }
+      ]
+    },
+    {
+      "index": 22,
+      "startMs": 69020,
+      "endMs": 69940,
+      "text": "He's 19.",
+      "words": [
+        {
+          "word": "He's",
+          "start": 69.02,
+          "end": 69.32
+        },
+        {
+          "word": "19.",
+          "start": 69.32,
+          "end": 69.94
+        }
+      ]
+    },
+    {
+      "index": 23,
+      "startMs": 70580,
+      "endMs": 71640,
+      "text": "He's from Peru.",
+      "words": [
+        {
+          "word": "He's",
+          "start": 70.58,
+          "end": 70.88
+        },
+        {
+          "word": "from",
+          "start": 70.88,
+          "end": 71.12
+        },
+        {
+          "word": "Peru.",
+          "start": 71.12,
+          "end": 71.64
+        }
+      ]
+    },
+    {
+      "index": 24,
+      "startMs": 72320,
+      "endMs": 75960,
+      "text": "His father's an engineer and his mother is a doctor.",
+      "words": [
+        {
+          "word": "His",
+          "start": 72.32,
+          "end": 72.64
+        },
+        {
+          "word": "father's",
+          "start": 72.64,
+          "end": 73.2
+        },
+        {
+          "word": "an",
+          "start": 73.2,
+          "end": 73.48
+        },
+        {
+          "word": "engineer",
+          "start": 73.48,
+          "end": 73.9
+        },
+        {
+          "word": "and",
+          "start": 73.9,
+          "end": 74.58
+        },
+        {
+          "word": "his",
+          "start": 74.58,
+          "end": 74.86
+        },
+        {
+          "word": "mother",
+          "start": 74.86,
+          "end": 75.1
+        },
+        {
+          "word": "is",
+          "start": 75.1,
+          "end": 75.38
+        },
+        {
+          "word": "a",
+          "start": 75.38,
+          "end": 75.5
+        },
+        {
+          "word": "doctor.",
+          "start": 75.5,
+          "end": 75.96
+        }
+      ]
+    },
+    {
+      "index": 25,
+      "startMs": 76880,
+      "endMs": 80280,
+      "text": "Carlos wants to study computer science at university.",
+      "words": [
+        {
+          "word": "Carlos",
+          "start": 76.88,
+          "end": 77.22
+        },
+        {
+          "word": "wants",
+          "start": 77.22,
+          "end": 77.54
+        },
+        {
+          "word": "to",
+          "start": 77.54,
+          "end": 77.8
+        },
+        {
+          "word": "study",
+          "start": 77.8,
+          "end": 78.1
+        },
+        {
+          "word": "computer",
+          "start": 78.1,
+          "end": 78.72
+        },
+        {
+          "word": "science",
+          "start": 78.72,
+          "end": 79.26
+        },
+        {
+          "word": "at",
+          "start": 79.26,
+          "end": 79.54
+        },
+        {
+          "word": "university.",
+          "start": 79.54,
+          "end": 80.28
+        }
+      ]
+    },
+    {
+      "index": 26,
+      "startMs": 81280,
+      "endMs": 82540,
+      "text": "Thank you, Nihir.",
+      "words": [
+        {
+          "word": "Thank",
+          "start": 81.28,
+          "end": 81.74
+        },
+        {
+          "word": "you,",
+          "start": 81.74,
+          "end": 81.94
+        },
+        {
+          "word": "Nihir.",
+          "start": 81.94,
+          "end": 82.54
+        }
+      ]
+    }
+  ]
+}

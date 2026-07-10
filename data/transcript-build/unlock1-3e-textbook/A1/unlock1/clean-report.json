@@ -1,0 +1,30 @@
+{
+  "trackCount": 66,
+  "sourceAudioCount": 66,
+  "expectedTrackCount": 66,
+  "excludedShortAudioCount": 0,
+  "minDurationSec": 0.0,
+  "asrDevice": "cpu",
+  "lineCount": 1337,
+  "officialScriptTrackCount": 66,
+  "asrDoneCount": 66,
+  "removedInvalidAsrWordCount": 34,
+  "missingTextCount": 0,
+  "alignmentReviewTrackIds": [],
+  "chunkedAsrTrackIds": [
+    "track-unlock1-3e-u03-t05"
+  ],
+  "emptyTrackIds": [],
+  "emptyLineTrackIds": [],
+  "timingErrorTrackIds": [],
+  "lastEndMismatchTrackIds": [],
+  "trackLabelOverlapIds": [],
+  "asrWordTrackCount": 66,
+  "readyForUpload": true,
+  "outputs": {
+    "bundle": "data/transcript-build/unlock1-3e-textbook/A1/unlock1/bundle-draft.json",
+    "manifest": "data/transcript-build/unlock1-3e-textbook/A1/unlock1/manifest.json",
+    "report": "data/transcript-build/unlock1-3e-textbook/A1/unlock1/clean-report.json",
+    "alignmentAudit": "data/transcript-build/unlock1-3e-textbook/A1/unlock1/alignment-audit.json"
+  }
+}

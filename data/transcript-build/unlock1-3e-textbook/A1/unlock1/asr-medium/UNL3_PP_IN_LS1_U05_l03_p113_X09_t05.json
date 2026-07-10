@@ -1,0 +1,337 @@
+{
+  "model": "medium",
+  "language": "en",
+  "text": "5.5 1 boring 2 interesting 3 safe 4 easy 5 difficult 6 nice 7 big 8 small 9 good 10 important 11 hard 12 bad",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 2320,
+      "text": "5.5",
+      "words": [
+        {
+          "word": "5",
+          "start": 0.0,
+          "end": 0.68
+        },
+        {
+          "word": ".5",
+          "start": 0.68,
+          "end": 2.32
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 2320,
+      "endMs": 3680,
+      "text": "1",
+      "words": [
+        {
+          "word": "1",
+          "start": 2.32,
+          "end": 3.68
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 3680,
+      "endMs": 4980,
+      "text": "boring",
+      "words": [
+        {
+          "word": "boring",
+          "start": 3.68,
+          "end": 4.98
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 6600,
+      "endMs": 7620,
+      "text": "2",
+      "words": [
+        {
+          "word": "2",
+          "start": 6.6000000000000005,
+          "end": 7.62
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 8400,
+      "endMs": 9240,
+      "text": "interesting",
+      "words": [
+        {
+          "word": "interesting",
+          "start": 8.4,
+          "end": 9.24
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "startMs": 10800,
+      "endMs": 12200,
+      "text": "3",
+      "words": [
+        {
+          "word": "3",
+          "start": 10.799999999999999,
+          "end": 12.2
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "startMs": 12200,
+      "endMs": 13540,
+      "text": "safe",
+      "words": [
+        {
+          "word": "safe",
+          "start": 12.2,
+          "end": 13.54
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "startMs": 15140,
+      "endMs": 16540,
+      "text": "4",
+      "words": [
+        {
+          "word": "4",
+          "start": 15.139999999999999,
+          "end": 16.54
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "startMs": 16540,
+      "endMs": 17780,
+      "text": "easy",
+      "words": [
+        {
+          "word": "easy",
+          "start": 16.54,
+          "end": 17.78
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "startMs": 19260,
+      "endMs": 20660,
+      "text": "5",
+      "words": [
+        {
+          "word": "5",
+          "start": 19.26,
+          "end": 20.66
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "startMs": 21720,
+      "endMs": 22460,
+      "text": "difficult",
+      "words": [
+        {
+          "word": "difficult",
+          "start": 21.72,
+          "end": 22.46
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "startMs": 23960,
+      "endMs": 25360,
+      "text": "6",
+      "words": [
+        {
+          "word": "6",
+          "start": 23.96,
+          "end": 25.36
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "startMs": 26040,
+      "endMs": 27040,
+      "text": "nice",
+      "words": [
+        {
+          "word": "nice",
+          "start": 26.04,
+          "end": 27.04
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "startMs": 28040,
+      "endMs": 29540,
+      "text": "7",
+      "words": [
+        {
+          "word": "7",
+          "start": 28.04,
+          "end": 29.54
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "startMs": 29540,
+      "endMs": 31320,
+      "text": "big",
+      "words": [
+        {
+          "word": "big",
+          "start": 29.54,
+          "end": 31.32
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "startMs": 32040,
+      "endMs": 33660,
+      "text": "8",
+      "words": [
+        {
+          "word": "8",
+          "start": 32.04,
+          "end": 33.66
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "startMs": 33660,
+      "endMs": 35360,
+      "text": "small",
+      "words": [
+        {
+          "word": "small",
+          "start": 33.66,
+          "end": 35.36
+        }
+      ]
+    },
+    {
+      "index": 18,
+      "startMs": 36040,
+      "endMs": 38140,
+      "text": "9",
+      "words": [
+        {
+          "word": "9",
+          "start": 36.04,
+          "end": 38.14
+        }
+      ]
+    },
+    {
+      "index": 19,
+      "startMs": 38140,
+      "endMs": 39340,
+      "text": "good",
+      "words": [
+        {
+          "word": "good",
+          "start": 38.14,
+          "end": 39.34
+        }
+      ]
+    },
+    {
+      "index": 20,
+      "startMs": 40040,
+      "endMs": 42000,
+      "text": "10",
+      "words": [
+        {
+          "word": "10",
+          "start": 40.04,
+          "end": 42.0
+        }
+      ]
+    },
+    {
+      "index": 21,
+      "startMs": 42000,
+      "endMs": 43840,
+      "text": "important",
+      "words": [
+        {
+          "word": "important",
+          "start": 42.0,
+          "end": 43.84
+        }
+      ]
+    },
+    {
+      "index": 22,
+      "startMs": 43840,
+      "endMs": 46320,
+      "text": "11",
+      "words": [
+        {
+          "word": "11",
+          "start": 43.84,
+          "end": 46.32
+        }
+      ]
+    },
+    {
+      "index": 23,
+      "startMs": 46320,
+      "endMs": 47860,
+      "text": "hard",
+      "words": [
+        {
+          "word": "hard",
+          "start": 46.32,
+          "end": 47.86
+        }
+      ]
+    },
+    {
+      "index": 24,
+      "startMs": 49040,
+      "endMs": 50580,
+      "text": "12",
+      "words": [
+        {
+          "word": "12",
+          "start": 49.04,
+          "end": 50.58
+        }
+      ]
+    },
+    {
+      "index": 25,
+      "startMs": 50580,
+      "endMs": 51920,
+      "text": "bad",
+      "words": [
+        {
+          "word": "bad",
+          "start": 50.58,
+          "end": 51.92
+        }
+      ]
+    }
+  ]
+}

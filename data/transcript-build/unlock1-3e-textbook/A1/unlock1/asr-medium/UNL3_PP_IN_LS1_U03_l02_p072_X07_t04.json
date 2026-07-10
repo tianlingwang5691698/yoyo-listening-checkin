@@ -1,0 +1,317 @@
+{
+  "model": "medium",
+  "language": "en",
+  "text": "3.4 1 Excuse me, I'd like to ask you a question. Of course, that's fine. 2 Can I have a few minutes of your time? Sure, no problem. 3 Sorry, but do you have a minute to talk to me? No, I'm afraid I don't.",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 2220,
+      "text": "3.4",
+      "words": [
+        {
+          "word": "3",
+          "start": 0.0,
+          "end": 0.54
+        },
+        {
+          "word": ".4",
+          "start": 0.54,
+          "end": 2.22
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 2980,
+      "endMs": 3580,
+      "text": "1",
+      "words": [
+        {
+          "word": "1",
+          "start": 2.9799999999999986,
+          "end": 3.58
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 4260,
+      "endMs": 7600,
+      "text": "Excuse me, I'd like to ask you a question.",
+      "words": [
+        {
+          "word": "Excuse",
+          "start": 4.259999999999999,
+          "end": 4.86
+        },
+        {
+          "word": "me,",
+          "start": 4.86,
+          "end": 5.32
+        },
+        {
+          "word": "I'd",
+          "start": 5.76,
+          "end": 6.16
+        },
+        {
+          "word": "like",
+          "start": 6.16,
+          "end": 6.3
+        },
+        {
+          "word": "to",
+          "start": 6.3,
+          "end": 6.54
+        },
+        {
+          "word": "ask",
+          "start": 6.54,
+          "end": 6.74
+        },
+        {
+          "word": "you",
+          "start": 6.74,
+          "end": 6.96
+        },
+        {
+          "word": "a",
+          "start": 6.96,
+          "end": 7.1
+        },
+        {
+          "word": "question.",
+          "start": 7.1,
+          "end": 7.6
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 8320,
+      "endMs": 9780,
+      "text": "Of course, that's fine.",
+      "words": [
+        {
+          "word": "Of",
+          "start": 8.32,
+          "end": 8.46
+        },
+        {
+          "word": "course,",
+          "start": 8.46,
+          "end": 8.84
+        },
+        {
+          "word": "that's",
+          "start": 9.02,
+          "end": 9.32
+        },
+        {
+          "word": "fine.",
+          "start": 9.32,
+          "end": 9.78
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 11740,
+      "endMs": 12340,
+      "text": "2",
+      "words": [
+        {
+          "word": "2",
+          "start": 11.74,
+          "end": 12.34
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "startMs": 13000,
+      "endMs": 15660,
+      "text": "Can I have a few minutes of your time?",
+      "words": [
+        {
+          "word": "Can",
+          "start": 13.0,
+          "end": 13.46
+        },
+        {
+          "word": "I",
+          "start": 13.46,
+          "end": 13.76
+        },
+        {
+          "word": "have",
+          "start": 13.76,
+          "end": 14.04
+        },
+        {
+          "word": "a",
+          "start": 14.04,
+          "end": 14.3
+        },
+        {
+          "word": "few",
+          "start": 14.3,
+          "end": 14.46
+        },
+        {
+          "word": "minutes",
+          "start": 14.46,
+          "end": 14.86
+        },
+        {
+          "word": "of",
+          "start": 14.86,
+          "end": 15.08
+        },
+        {
+          "word": "your",
+          "start": 15.08,
+          "end": 15.36
+        },
+        {
+          "word": "time?",
+          "start": 15.36,
+          "end": 15.66
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "startMs": 16240,
+      "endMs": 17820,
+      "text": "Sure, no problem.",
+      "words": [
+        {
+          "word": "Sure,",
+          "start": 16.24,
+          "end": 16.7
+        },
+        {
+          "word": "no",
+          "start": 17.06,
+          "end": 17.34
+        },
+        {
+          "word": "problem.",
+          "start": 17.34,
+          "end": 17.82
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "startMs": 20040,
+      "endMs": 20640,
+      "text": "3",
+      "words": [
+        {
+          "word": "3",
+          "start": 20.04,
+          "end": 20.64
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "startMs": 21380,
+      "endMs": 24220,
+      "text": "Sorry, but do you have a minute to talk to me?",
+      "words": [
+        {
+          "word": "Sorry,",
+          "start": 21.38,
+          "end": 21.98
+        },
+        {
+          "word": "but",
+          "start": 22.34,
+          "end": 22.52
+        },
+        {
+          "word": "do",
+          "start": 22.52,
+          "end": 22.68
+        },
+        {
+          "word": "you",
+          "start": 22.68,
+          "end": 22.82
+        },
+        {
+          "word": "have",
+          "start": 22.82,
+          "end": 23.02
+        },
+        {
+          "word": "a",
+          "start": 23.02,
+          "end": 23.16
+        },
+        {
+          "word": "minute",
+          "start": 23.16,
+          "end": 23.3
+        },
+        {
+          "word": "to",
+          "start": 23.3,
+          "end": 23.6
+        },
+        {
+          "word": "talk",
+          "start": 23.6,
+          "end": 23.76
+        },
+        {
+          "word": "to",
+          "start": 23.76,
+          "end": 23.92
+        },
+        {
+          "word": "me?",
+          "start": 23.92,
+          "end": 24.22
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "startMs": 24560,
+      "endMs": 26160,
+      "text": "No, I'm afraid I don't.",
+      "words": [
+        {
+          "word": "No,",
+          "start": 24.56,
+          "end": 24.92
+        },
+        {
+          "word": "I'm",
+          "start": 24.92,
+          "end": 25.14
+        },
+        {
+          "word": "afraid",
+          "start": 25.14,
+          "end": 25.44
+        },
+        {
+          "word": "I",
+          "start": 25.44,
+          "end": 25.66
+        },
+        {
+          "word": "don't.",
+          "start": 25.66,
+          "end": 26.16
+        }
+      ]
+    }
+  ]
+}

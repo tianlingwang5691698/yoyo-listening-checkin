@@ -1,0 +1,377 @@
+{
+  "model": "medium",
+  "language": "en",
+  "text": "1.8 1. I'm going to tell you about two famous people from Egypt. 2. Kareem Abdul Aziz is a famous actor. 3. Carmen Sulaimans, a famous singer. 4. Kareem's father is Mohammed Abdul Aziz. 5. He's a film director. 6. Kareem's aunt is Samira Musin. 7. She's an actor.",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 2060,
+      "text": "1.8",
+      "words": [
+        {
+          "word": "1",
+          "start": 0.0,
+          "end": 0.52
+        },
+        {
+          "word": ".8",
+          "start": 0.52,
+          "end": 2.06
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 3520,
+      "endMs": 3600,
+      "text": "1.",
+      "words": [
+        {
+          "word": "1.",
+          "start": 3.5199999999999996,
+          "end": 4.0
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 4560,
+      "endMs": 8920,
+      "text": "I'm going to tell you about two famous people from Egypt.",
+      "words": [
+        {
+          "word": "I'm",
+          "start": 4.56,
+          "end": 4.78
+        },
+        {
+          "word": "going",
+          "start": 4.78,
+          "end": 5.18
+        },
+        {
+          "word": "to",
+          "start": 5.18,
+          "end": 5.52
+        },
+        {
+          "word": "tell",
+          "start": 5.52,
+          "end": 5.72
+        },
+        {
+          "word": "you",
+          "start": 5.72,
+          "end": 6.08
+        },
+        {
+          "word": "about",
+          "start": 6.08,
+          "end": 6.42
+        },
+        {
+          "word": "two",
+          "start": 6.42,
+          "end": 6.9
+        },
+        {
+          "word": "famous",
+          "start": 6.9,
+          "end": 7.36
+        },
+        {
+          "word": "people",
+          "start": 7.36,
+          "end": 7.84
+        },
+        {
+          "word": "from",
+          "start": 7.84,
+          "end": 8.12
+        },
+        {
+          "word": "Egypt.",
+          "start": 8.12,
+          "end": 8.92
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 11440,
+      "endMs": 12400,
+      "text": "2.",
+      "words": [
+        {
+          "word": "2.",
+          "start": 11.44,
+          "end": 12.4
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 13400,
+      "endMs": 16660,
+      "text": "Kareem Abdul Aziz is a famous actor.",
+      "words": [
+        {
+          "word": "Kareem",
+          "start": 13.4,
+          "end": 13.78
+        },
+        {
+          "word": "Abdul",
+          "start": 13.78,
+          "end": 14.26
+        },
+        {
+          "word": "Aziz",
+          "start": 14.26,
+          "end": 14.82
+        },
+        {
+          "word": "is",
+          "start": 14.82,
+          "end": 15.36
+        },
+        {
+          "word": "a",
+          "start": 15.36,
+          "end": 15.54
+        },
+        {
+          "word": "famous",
+          "start": 15.54,
+          "end": 16.02
+        },
+        {
+          "word": "actor.",
+          "start": 16.02,
+          "end": 16.66
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "startMs": 19280,
+      "endMs": 20100,
+      "text": "3.",
+      "words": [
+        {
+          "word": "3.",
+          "start": 19.28,
+          "end": 20.1
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "startMs": 21440,
+      "endMs": 24120,
+      "text": "Carmen Sulaimans, a famous singer.",
+      "words": [
+        {
+          "word": "Carmen",
+          "start": 21.44,
+          "end": 21.72
+        },
+        {
+          "word": "Sulaimans,",
+          "start": 21.72,
+          "end": 22.62
+        },
+        {
+          "word": "a",
+          "start": 22.92,
+          "end": 23.1
+        },
+        {
+          "word": "famous",
+          "start": 23.1,
+          "end": 23.56
+        },
+        {
+          "word": "singer.",
+          "start": 23.56,
+          "end": 24.12
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "startMs": 26520,
+      "endMs": 27320,
+      "text": "4.",
+      "words": [
+        {
+          "word": "4.",
+          "start": 26.52,
+          "end": 27.32
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "startMs": 28280,
+      "endMs": 32520,
+      "text": "Kareem's father is Mohammed Abdul Aziz.",
+      "words": [
+        {
+          "word": "Kareem's",
+          "start": 28.28,
+          "end": 29.2
+        },
+        {
+          "word": "father",
+          "start": 29.2,
+          "end": 29.88
+        },
+        {
+          "word": "is",
+          "start": 29.88,
+          "end": 30.44
+        },
+        {
+          "word": "Mohammed",
+          "start": 30.44,
+          "end": 31.12
+        },
+        {
+          "word": "Abdul",
+          "start": 31.12,
+          "end": 31.62
+        },
+        {
+          "word": "Aziz.",
+          "start": 31.62,
+          "end": 32.52
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "startMs": 35220,
+      "endMs": 35540,
+      "text": "5.",
+      "words": [
+        {
+          "word": "5.",
+          "start": 35.22,
+          "end": 35.54
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "startMs": 36900,
+      "endMs": 38320,
+      "text": "He's a film director.",
+      "words": [
+        {
+          "word": "He's",
+          "start": 36.9,
+          "end": 37.14
+        },
+        {
+          "word": "a",
+          "start": 37.14,
+          "end": 37.3
+        },
+        {
+          "word": "film",
+          "start": 37.3,
+          "end": 37.6
+        },
+        {
+          "word": "director.",
+          "start": 37.6,
+          "end": 38.32
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "startMs": 40660,
+      "endMs": 41640,
+      "text": "6.",
+      "words": [
+        {
+          "word": "6.",
+          "start": 40.66,
+          "end": 41.64
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "startMs": 42800,
+      "endMs": 45940,
+      "text": "Kareem's aunt is Samira Musin.",
+      "words": [
+        {
+          "word": "Kareem's",
+          "start": 42.8,
+          "end": 43.52
+        },
+        {
+          "word": "aunt",
+          "start": 43.52,
+          "end": 43.94
+        },
+        {
+          "word": "is",
+          "start": 43.94,
+          "end": 44.62
+        },
+        {
+          "word": "Samira",
+          "start": 44.62,
+          "end": 45.34
+        },
+        {
+          "word": "Musin.",
+          "start": 45.34,
+          "end": 45.94
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "startMs": 48500,
+      "endMs": 49240,
+      "text": "7.",
+      "words": [
+        {
+          "word": "7.",
+          "start": 48.5,
+          "end": 49.24
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "startMs": 50480,
+      "endMs": 51500,
+      "text": "She's an actor.",
+      "words": [
+        {
+          "word": "She's",
+          "start": 50.48,
+          "end": 50.86
+        },
+        {
+          "word": "an",
+          "start": 50.86,
+          "end": 51.06
+        },
+        {
+          "word": "actor.",
+          "start": 51.06,
+          "end": 51.5
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,308 @@
+{
+  "model": "medium",
+  "language": "en",
+  "text": "Unit 1, 1.1 1 Introduce 2 Please 3 Peru 4 Turkey 5 20 6 18 7 Study 8 Business 9 Computer 10 College 6",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 3000,
+      "text": "Unit 1, 1.1",
+      "words": [
+        {
+          "word": "Unit",
+          "start": 0.0,
+          "end": 0.66
+        },
+        {
+          "word": "1,",
+          "start": 0.66,
+          "end": 1.46
+        },
+        {
+          "word": "1",
+          "start": 1.84,
+          "end": 2.12
+        },
+        {
+          "word": ".1",
+          "start": 2.12,
+          "end": 3.0
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 3780,
+      "endMs": 5020,
+      "text": "1",
+      "words": [
+        {
+          "word": "1",
+          "start": 3.78,
+          "end": 5.02
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 6700,
+      "endMs": 7000,
+      "text": "Introduce",
+      "words": [
+        {
+          "word": "Introduce",
+          "start": 6.699999999999999,
+          "end": 7.3999999999999995
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 8620,
+      "endMs": 10020,
+      "text": "2",
+      "words": [
+        {
+          "word": "2",
+          "start": 8.62,
+          "end": 10.02
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 10020,
+      "endMs": 11960,
+      "text": "Please",
+      "words": [
+        {
+          "word": "Please",
+          "start": 10.02,
+          "end": 11.96
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "startMs": 14220,
+      "endMs": 15000,
+      "text": "3",
+      "words": [
+        {
+          "word": "3",
+          "start": 14.219999999999999,
+          "end": 15.0
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "startMs": 15620,
+      "endMs": 16560,
+      "text": "Peru",
+      "words": [
+        {
+          "word": "Peru",
+          "start": 15.62,
+          "end": 16.56
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "startMs": 18820,
+      "endMs": 20220,
+      "text": "4",
+      "words": [
+        {
+          "word": "4",
+          "start": 18.82,
+          "end": 20.22
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "startMs": 21000,
+      "endMs": 21660,
+      "text": "Turkey",
+      "words": [
+        {
+          "word": "Turkey",
+          "start": 20.96,
+          "end": 21.66
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "startMs": 23540,
+      "endMs": 24940,
+      "text": "5",
+      "words": [
+        {
+          "word": "5",
+          "start": 23.540000000000003,
+          "end": 24.94
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "startMs": 26000,
+      "endMs": 26840,
+      "text": "20",
+      "words": [
+        {
+          "word": "20",
+          "start": 26.0,
+          "end": 26.84
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "startMs": 28400,
+      "endMs": 29800,
+      "text": "6",
+      "words": [
+        {
+          "word": "6",
+          "start": 28.400000000000002,
+          "end": 29.8
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "startMs": 29800,
+      "endMs": 29840,
+      "text": "18",
+      "words": [
+        {
+          "word": "18",
+          "start": 29.8,
+          "end": 30.5
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "startMs": 34080,
+      "endMs": 35480,
+      "text": "7",
+      "words": [
+        {
+          "word": "7",
+          "start": 34.08,
+          "end": 35.48
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "startMs": 35480,
+      "endMs": 36980,
+      "text": "Study",
+      "words": [
+        {
+          "word": "Study",
+          "start": 35.48,
+          "end": 36.98
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "startMs": 39060,
+      "endMs": 40460,
+      "text": "8",
+      "words": [
+        {
+          "word": "8",
+          "start": 39.06,
+          "end": 40.46
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "startMs": 40460,
+      "endMs": 42380,
+      "text": "Business",
+      "words": [
+        {
+          "word": "Business",
+          "start": 40.46,
+          "end": 42.38
+        }
+      ]
+    },
+    {
+      "index": 18,
+      "startMs": 44040,
+      "endMs": 45440,
+      "text": "9",
+      "words": [
+        {
+          "word": "9",
+          "start": 44.04,
+          "end": 45.44
+        }
+      ]
+    },
+    {
+      "index": 19,
+      "startMs": 45440,
+      "endMs": 47240,
+      "text": "Computer",
+      "words": [
+        {
+          "word": "Computer",
+          "start": 45.44,
+          "end": 47.24
+        }
+      ]
+    },
+    {
+      "index": 20,
+      "startMs": 49200,
+      "endMs": 50600,
+      "text": "10",
+      "words": [
+        {
+          "word": "10",
+          "start": 49.2,
+          "end": 50.6
+        }
+      ]
+    },
+    {
+      "index": 21,
+      "startMs": 50600,
+      "endMs": 52120,
+      "text": "College",
+      "words": [
+        {
+          "word": "College",
+          "start": 50.6,
+          "end": 52.12
+        }
+      ]
+    },
+    {
+      "index": 22,
+      "startMs": 52120,
+      "endMs": 54000,
+      "text": "6",
+      "words": [
+        {
+          "word": "6",
+          "start": 52.12,
+          "end": 54.0
+        }
+      ]
+    }
+  ]
+}

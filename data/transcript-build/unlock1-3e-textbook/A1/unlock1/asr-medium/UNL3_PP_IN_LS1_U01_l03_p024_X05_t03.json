@@ -1,0 +1,523 @@
+{
+  "model": "medium",
+  "language": "en",
+  "text": "1.3 A Who is your best friend, Yasemin? Her name's Miral. How old is she? She's 20. Is she from Turkey? Yes, but she isn't from Ankara like me. She's from Izmir. B Excuse me, Kerry. Are you from Sydney? No, no, I'm not from Australia. I'm from England. But my grandparents are Australian. They're not from Sydney. They're from Melbourne. Are your parents English? Yes, and my sisters. We're all English.",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 1940,
+      "text": "1.3",
+      "words": [
+        {
+          "word": "1",
+          "start": 0.0,
+          "end": 0.52
+        },
+        {
+          "word": ".3",
+          "start": 0.52,
+          "end": 1.94
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 3300,
+      "endMs": 4200,
+      "text": "A",
+      "words": [
+        {
+          "word": "A",
+          "start": 3.3000000000000016,
+          "end": 4.2
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 4200,
+      "endMs": 6500,
+      "text": "Who is your best friend, Yasemin?",
+      "words": [
+        {
+          "word": "is",
+          "start": 4.2,
+          "end": 4.44
+        },
+        {
+          "word": "your",
+          "start": 4.44,
+          "end": 4.74
+        },
+        {
+          "word": "best",
+          "start": 4.74,
+          "end": 5.12
+        },
+        {
+          "word": "friend,",
+          "start": 5.12,
+          "end": 5.76
+        },
+        {
+          "word": "Yasemin?",
+          "start": 6.04,
+          "end": 6.5
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 7080,
+      "endMs": 9160,
+      "text": "Her name's Miral.",
+      "words": [
+        {
+          "word": "Her",
+          "start": 7.08,
+          "end": 7.3
+        },
+        {
+          "word": "name's",
+          "start": 7.3,
+          "end": 8.04
+        },
+        {
+          "word": "Miral.",
+          "start": 8.04,
+          "end": 9.16
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 9640,
+      "endMs": 10980,
+      "text": "How old is she?",
+      "words": [
+        {
+          "word": "How",
+          "start": 9.64,
+          "end": 9.82
+        },
+        {
+          "word": "old",
+          "start": 9.82,
+          "end": 10.28
+        },
+        {
+          "word": "is",
+          "start": 10.28,
+          "end": 10.58
+        },
+        {
+          "word": "she?",
+          "start": 10.58,
+          "end": 10.98
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "startMs": 11580,
+      "endMs": 12680,
+      "text": "She's 20.",
+      "words": [
+        {
+          "word": "She's",
+          "start": 11.58,
+          "end": 12.06
+        },
+        {
+          "word": "20.",
+          "start": 12.06,
+          "end": 12.68
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "startMs": 13280,
+      "endMs": 14640,
+      "text": "Is she from Turkey?",
+      "words": [
+        {
+          "word": "Is",
+          "start": 13.28,
+          "end": 13.46
+        },
+        {
+          "word": "she",
+          "start": 13.46,
+          "end": 13.72
+        },
+        {
+          "word": "from",
+          "start": 13.72,
+          "end": 14.02
+        },
+        {
+          "word": "Turkey?",
+          "start": 14.02,
+          "end": 14.64
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "startMs": 15160,
+      "endMs": 18720,
+      "text": "Yes, but she isn't from Ankara like me.",
+      "words": [
+        {
+          "word": "Yes,",
+          "start": 15.16,
+          "end": 15.62
+        },
+        {
+          "word": "but",
+          "start": 15.9,
+          "end": 16.28
+        },
+        {
+          "word": "she",
+          "start": 16.28,
+          "end": 16.6
+        },
+        {
+          "word": "isn't",
+          "start": 16.6,
+          "end": 17.08
+        },
+        {
+          "word": "from",
+          "start": 17.08,
+          "end": 17.46
+        },
+        {
+          "word": "Ankara",
+          "start": 17.46,
+          "end": 17.94
+        },
+        {
+          "word": "like",
+          "start": 17.94,
+          "end": 18.26
+        },
+        {
+          "word": "me.",
+          "start": 18.26,
+          "end": 18.72
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "startMs": 19160,
+      "endMs": 20600,
+      "text": "She's from Izmir.",
+      "words": [
+        {
+          "word": "She's",
+          "start": 19.16,
+          "end": 19.54
+        },
+        {
+          "word": "from",
+          "start": 19.54,
+          "end": 19.84
+        },
+        {
+          "word": "Izmir.",
+          "start": 19.84,
+          "end": 20.6
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "startMs": 22820,
+      "endMs": 23080,
+      "text": "B",
+      "words": [
+        {
+          "word": "B",
+          "start": 22.82,
+          "end": 23.27
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "startMs": 23720,
+      "endMs": 27740,
+      "text": "Excuse me, Kerry. Are you from Sydney?",
+      "words": [
+        {
+          "word": "Excuse",
+          "start": 23.72,
+          "end": 24.68
+        },
+        {
+          "word": "me,",
+          "start": 24.68,
+          "end": 25.08
+        },
+        {
+          "word": "Kerry.",
+          "start": 25.3,
+          "end": 25.46
+        },
+        {
+          "word": "Are",
+          "start": 26.0,
+          "end": 26.58
+        },
+        {
+          "word": "you",
+          "start": 26.58,
+          "end": 26.92
+        },
+        {
+          "word": "from",
+          "start": 26.92,
+          "end": 27.32
+        },
+        {
+          "word": "Sydney?",
+          "start": 27.32,
+          "end": 27.74
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "startMs": 27740,
+      "endMs": 31120,
+      "text": "No, no, I'm not from Australia.",
+      "words": [
+        {
+          "word": "No,",
+          "start": 27.74,
+          "end": 28.64
+        },
+        {
+          "word": "no,",
+          "start": 29.06,
+          "end": 29.48
+        },
+        {
+          "word": "I'm",
+          "start": 29.76,
+          "end": 30.0
+        },
+        {
+          "word": "not",
+          "start": 30.0,
+          "end": 30.3
+        },
+        {
+          "word": "from",
+          "start": 30.3,
+          "end": 30.56
+        },
+        {
+          "word": "Australia.",
+          "start": 30.56,
+          "end": 31.12
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "startMs": 31680,
+      "endMs": 32820,
+      "text": "I'm from England.",
+      "words": [
+        {
+          "word": "I'm",
+          "start": 31.68,
+          "end": 32.04
+        },
+        {
+          "word": "from",
+          "start": 32.04,
+          "end": 32.32
+        },
+        {
+          "word": "England.",
+          "start": 32.32,
+          "end": 32.82
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "startMs": 33420,
+      "endMs": 35820,
+      "text": "But my grandparents are Australian.",
+      "words": [
+        {
+          "word": "But",
+          "start": 33.42,
+          "end": 33.66
+        },
+        {
+          "word": "my",
+          "start": 33.66,
+          "end": 34.02
+        },
+        {
+          "word": "grandparents",
+          "start": 34.02,
+          "end": 34.72
+        },
+        {
+          "word": "are",
+          "start": 34.72,
+          "end": 35.34
+        },
+        {
+          "word": "Australian.",
+          "start": 35.34,
+          "end": 35.82
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "startMs": 36600,
+      "endMs": 37900,
+      "text": "They're not from Sydney.",
+      "words": [
+        {
+          "word": "They're",
+          "start": 36.6,
+          "end": 36.86
+        },
+        {
+          "word": "not",
+          "start": 36.86,
+          "end": 37.12
+        },
+        {
+          "word": "from",
+          "start": 37.12,
+          "end": 37.46
+        },
+        {
+          "word": "Sydney.",
+          "start": 37.46,
+          "end": 37.9
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "startMs": 38480,
+      "endMs": 39520,
+      "text": "They're from Melbourne.",
+      "words": [
+        {
+          "word": "They're",
+          "start": 38.48,
+          "end": 38.76
+        },
+        {
+          "word": "from",
+          "start": 38.76,
+          "end": 38.98
+        },
+        {
+          "word": "Melbourne.",
+          "start": 38.98,
+          "end": 39.52
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "startMs": 40260,
+      "endMs": 41760,
+      "text": "Are your parents English?",
+      "words": [
+        {
+          "word": "Are",
+          "start": 40.26,
+          "end": 40.42
+        },
+        {
+          "word": "your",
+          "start": 40.42,
+          "end": 40.7
+        },
+        {
+          "word": "parents",
+          "start": 40.7,
+          "end": 41.14
+        },
+        {
+          "word": "English?",
+          "start": 41.14,
+          "end": 41.76
+        }
+      ]
+    },
+    {
+      "index": 18,
+      "startMs": 42700,
+      "endMs": 44600,
+      "text": "Yes, and my sisters.",
+      "words": [
+        {
+          "word": "Yes,",
+          "start": 42.7,
+          "end": 43.14
+        },
+        {
+          "word": "and",
+          "start": 43.52,
+          "end": 43.86
+        },
+        {
+          "word": "my",
+          "start": 43.86,
+          "end": 44.16
+        },
+        {
+          "word": "sisters.",
+          "start": 44.16,
+          "end": 44.6
+        }
+      ]
+    },
+    {
+      "index": 19,
+      "startMs": 45080,
+      "endMs": 46460,
+      "text": "We're all English.",
+      "words": [
+        {
+          "word": "We're",
+          "start": 45.08,
+          "end": 45.5
+        },
+        {
+          "word": "all",
+          "start": 45.5,
+          "end": 45.92
+        },
+        {
+          "word": "English.",
+          "start": 45.92,
+          "end": 46.46
+        }
+      ]
+    }
+  ],
+  "sanitization": {
+    "removedInvalidWordCount": 1,
+    "rule": "drop_word_when_end_lte_start_or_start_negative"
+  }
+}

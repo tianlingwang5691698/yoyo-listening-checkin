@@ -1,0 +1,141 @@
+{
+  "model": "medium",
+  "language": "en",
+  "text": "8.2 14.35 17.49 19.49 19.53 19.53 2017 2017",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 1500,
+      "text": "8.2",
+      "words": [
+        {
+          "word": "8",
+          "start": 0.0,
+          "end": 0.56
+        },
+        {
+          "word": ".2",
+          "start": 0.56,
+          "end": 1.5
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 2300,
+      "endMs": 4680,
+      "text": "14.35",
+      "words": [
+        {
+          "word": "14",
+          "start": 2.3,
+          "end": 3.5
+        },
+        {
+          "word": ".35",
+          "start": 3.5,
+          "end": 4.68
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 9500,
+      "endMs": 11320,
+      "text": "17.49",
+      "words": [
+        {
+          "word": "17",
+          "start": 9.5,
+          "end": 10.9
+        },
+        {
+          "word": ".49",
+          "start": 10.9,
+          "end": 11.6
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 15940,
+      "endMs": 17900,
+      "text": "19.49",
+      "words": [
+        {
+          "word": "19",
+          "start": 15.94,
+          "end": 17.34
+        },
+        {
+          "word": ".49",
+          "start": 17.34,
+          "end": 18.04
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 21960,
+      "endMs": 24200,
+      "text": "19.53",
+      "words": [
+        {
+          "word": "19",
+          "start": 21.96,
+          "end": 23.36
+        },
+        {
+          "word": ".53",
+          "start": 23.36,
+          "end": 24.2
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "startMs": 29480,
+      "endMs": 31520,
+      "text": "19.53",
+      "words": [
+        {
+          "word": "19",
+          "start": 29.48,
+          "end": 30.88
+        },
+        {
+          "word": ".53",
+          "start": 30.88,
+          "end": 31.52
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "startMs": 31520,
+      "endMs": 31540,
+      "text": "2017",
+      "words": [
+        {
+          "word": "2017",
+          "start": 31.52,
+          "end": 31.54
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "startMs": 37000,
+      "endMs": 37220,
+      "text": "2017",
+      "words": [
+        {
+          "word": "2017",
+          "start": 36.519999999999996,
+          "end": 37.22
+        }
+      ]
+    }
+  ]
+}

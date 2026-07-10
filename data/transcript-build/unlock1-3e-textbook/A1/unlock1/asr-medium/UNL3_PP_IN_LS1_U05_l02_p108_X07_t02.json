@@ -1,0 +1,397 @@
+{
+  "model": "medium",
+  "language": "en",
+  "text": "5.2 1 I have to choose a course. 2 I have two questions to ask you. 3 You have to work on Saturdays. 4 He has to study at university. 5 He has two options, maths or biology. 6 She has to decide what to do. 7 You have to do four subjects.",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 2060,
+      "text": "5.2",
+      "words": [
+        {
+          "word": "5",
+          "start": 0.0,
+          "end": 0.56
+        },
+        {
+          "word": ".2",
+          "start": 0.56,
+          "end": 2.06
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 2060,
+      "endMs": 3240,
+      "text": "1",
+      "words": [
+        {
+          "word": "1",
+          "start": 2.06,
+          "end": 3.24
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 3240,
+      "endMs": 6180,
+      "text": "I have to choose a course.",
+      "words": [
+        {
+          "word": "I",
+          "start": 3.24,
+          "end": 4.08
+        },
+        {
+          "word": "have",
+          "start": 4.08,
+          "end": 4.46
+        },
+        {
+          "word": "to",
+          "start": 4.46,
+          "end": 4.76
+        },
+        {
+          "word": "choose",
+          "start": 4.76,
+          "end": 5.16
+        },
+        {
+          "word": "a",
+          "start": 5.16,
+          "end": 5.48
+        },
+        {
+          "word": "course.",
+          "start": 5.48,
+          "end": 6.18
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 7900,
+      "endMs": 8620,
+      "text": "2",
+      "words": [
+        {
+          "word": "2",
+          "start": 7.9,
+          "end": 8.62
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 9240,
+      "endMs": 12440,
+      "text": "I have two questions to ask you.",
+      "words": [
+        {
+          "word": "I",
+          "start": 9.02,
+          "end": 9.68
+        },
+        {
+          "word": "have",
+          "start": 9.68,
+          "end": 9.96
+        },
+        {
+          "word": "two",
+          "start": 9.96,
+          "end": 10.28
+        },
+        {
+          "word": "questions",
+          "start": 10.28,
+          "end": 10.9
+        },
+        {
+          "word": "to",
+          "start": 10.9,
+          "end": 11.22
+        },
+        {
+          "word": "ask",
+          "start": 11.22,
+          "end": 11.5
+        },
+        {
+          "word": "you.",
+          "start": 11.5,
+          "end": 12.44
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "startMs": 13740,
+      "endMs": 14620,
+      "text": "3",
+      "words": [
+        {
+          "word": "3",
+          "start": 13.74,
+          "end": 14.62
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "startMs": 15240,
+      "endMs": 18280,
+      "text": "You have to work on Saturdays.",
+      "words": [
+        {
+          "word": "You",
+          "start": 15.04,
+          "end": 15.7
+        },
+        {
+          "word": "have",
+          "start": 15.7,
+          "end": 15.98
+        },
+        {
+          "word": "to",
+          "start": 15.98,
+          "end": 16.26
+        },
+        {
+          "word": "work",
+          "start": 16.26,
+          "end": 16.5
+        },
+        {
+          "word": "on",
+          "start": 16.5,
+          "end": 16.98
+        },
+        {
+          "word": "Saturdays.",
+          "start": 16.98,
+          "end": 18.28
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "startMs": 19540,
+      "endMs": 20380,
+      "text": "4",
+      "words": [
+        {
+          "word": "4",
+          "start": 19.54,
+          "end": 20.38
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "startMs": 20940,
+      "endMs": 23160,
+      "text": "He has to study at university.",
+      "words": [
+        {
+          "word": "He",
+          "start": 20.72,
+          "end": 21.38
+        },
+        {
+          "word": "has",
+          "start": 21.38,
+          "end": 21.64
+        },
+        {
+          "word": "to",
+          "start": 21.64,
+          "end": 21.88
+        },
+        {
+          "word": "study",
+          "start": 21.88,
+          "end": 22.12
+        },
+        {
+          "word": "at",
+          "start": 22.12,
+          "end": 22.4
+        },
+        {
+          "word": "university.",
+          "start": 22.4,
+          "end": 23.16
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "startMs": 24840,
+      "endMs": 26040,
+      "text": "5",
+      "words": [
+        {
+          "word": "5",
+          "start": 24.84,
+          "end": 26.04
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "startMs": 26040,
+      "endMs": 31480,
+      "text": "He has two options, maths or biology.",
+      "words": [
+        {
+          "word": "He",
+          "start": 26.04,
+          "end": 26.78
+        },
+        {
+          "word": "has",
+          "start": 26.78,
+          "end": 27.74
+        },
+        {
+          "word": "two",
+          "start": 27.74,
+          "end": 28.2
+        },
+        {
+          "word": "options,",
+          "start": 28.2,
+          "end": 28.88
+        },
+        {
+          "word": "maths",
+          "start": 29.32,
+          "end": 29.76
+        },
+        {
+          "word": "or",
+          "start": 29.76,
+          "end": 30.48
+        },
+        {
+          "word": "biology.",
+          "start": 30.48,
+          "end": 31.48
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "startMs": 33480,
+      "endMs": 34120,
+      "text": "6",
+      "words": [
+        {
+          "word": "6",
+          "start": 33.48,
+          "end": 34.12
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "startMs": 34120,
+      "endMs": 37700,
+      "text": "She has to decide what to do.",
+      "words": [
+        {
+          "word": "She",
+          "start": 34.12,
+          "end": 35.36
+        },
+        {
+          "word": "has",
+          "start": 35.36,
+          "end": 35.76
+        },
+        {
+          "word": "to",
+          "start": 35.76,
+          "end": 36.0
+        },
+        {
+          "word": "decide",
+          "start": 36.0,
+          "end": 36.5
+        },
+        {
+          "word": "what",
+          "start": 36.5,
+          "end": 36.86
+        },
+        {
+          "word": "to",
+          "start": 36.86,
+          "end": 37.12
+        },
+        {
+          "word": "do.",
+          "start": 37.12,
+          "end": 37.7
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "startMs": 39480,
+      "endMs": 40240,
+      "text": "7",
+      "words": [
+        {
+          "word": "7",
+          "start": 39.48,
+          "end": 40.24
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "startMs": 40240,
+      "endMs": 43060,
+      "text": "You have to do four subjects.",
+      "words": [
+        {
+          "word": "You",
+          "start": 40.24,
+          "end": 41.28
+        },
+        {
+          "word": "have",
+          "start": 41.28,
+          "end": 41.54
+        },
+        {
+          "word": "to",
+          "start": 41.54,
+          "end": 41.72
+        },
+        {
+          "word": "do",
+          "start": 41.72,
+          "end": 41.94
+        },
+        {
+          "word": "four",
+          "start": 41.94,
+          "end": 42.38
+        },
+        {
+          "word": "subjects.",
+          "start": 42.38,
+          "end": 43.06
+        }
+      ]
+    }
+  ]
+}

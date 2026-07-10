@@ -1,0 +1,169 @@
+{
+  "model": "medium",
+  "language": "en",
+  "text": "3.8 1. Gets 2. Wears 3. Misses 4. Has 5. Teaches 6. Takes 7. Plays 8. Laughs",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 2000,
+      "text": "3.8",
+      "words": [
+        {
+          "word": "3",
+          "start": 0.0,
+          "end": 0.58
+        },
+        {
+          "word": ".8",
+          "start": 0.58,
+          "end": 2.0
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 2620,
+      "endMs": 5500,
+      "text": "1. Gets",
+      "words": [
+        {
+          "word": "1.",
+          "start": 2.62,
+          "end": 4.0
+        },
+        {
+          "word": "Gets",
+          "start": 4.84,
+          "end": 5.5
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 7760,
+      "endMs": 10920,
+      "text": "2. Wears",
+      "words": [
+        {
+          "word": "2.",
+          "start": 7.76,
+          "end": 8.58
+        },
+        {
+          "word": "Wears",
+          "start": 9.78,
+          "end": 10.92
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 12320,
+      "endMs": 16540,
+      "text": "3. Misses",
+      "words": [
+        {
+          "word": "3.",
+          "start": 12.32,
+          "end": 13.72
+        },
+        {
+          "word": "Misses",
+          "start": 15.14,
+          "end": 16.54
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 17760,
+      "endMs": 20640,
+      "text": "4. Has",
+      "words": [
+        {
+          "word": "4.",
+          "start": 17.76,
+          "end": 18.86
+        },
+        {
+          "word": "Has",
+          "start": 20.02,
+          "end": 20.64
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "startMs": 22580,
+      "endMs": 26520,
+      "text": "5. Teaches",
+      "words": [
+        {
+          "word": "5.",
+          "start": 22.580000000000002,
+          "end": 23.98
+        },
+        {
+          "word": "Teaches",
+          "start": 25.22,
+          "end": 26.52
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "startMs": 27920,
+      "endMs": 31140,
+      "text": "6. Takes",
+      "words": [
+        {
+          "word": "6.",
+          "start": 27.92,
+          "end": 29.32
+        },
+        {
+          "word": "Takes",
+          "start": 30.62,
+          "end": 31.14
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "startMs": 33260,
+      "endMs": 36280,
+      "text": "7. Plays",
+      "words": [
+        {
+          "word": "7.",
+          "start": 33.26,
+          "end": 34.66
+        },
+        {
+          "word": "Plays",
+          "start": 35.94,
+          "end": 36.64
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "startMs": 38220,
+      "endMs": 41420,
+      "text": "8. Laughs",
+      "words": [
+        {
+          "word": "8.",
+          "start": 38.22,
+          "end": 39.62
+        },
+        {
+          "word": "Laughs",
+          "start": 40.88,
+          "end": 41.42
+        }
+      ]
+    }
+  ]
+}

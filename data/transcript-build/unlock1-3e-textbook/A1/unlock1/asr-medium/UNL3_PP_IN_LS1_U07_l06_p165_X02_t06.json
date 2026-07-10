@@ -1,0 +1,452 @@
+{
+  "model": "medium",
+  "language": "en",
+  "text": "7.6 Good morning. I'm Tomoko. I'm going to tell you about the results of my survey. There were five questions in my survey. My topic was traditional Japanese food. I think this is an interesting topic. Hello everybody. I'm Ahmad. I'm going to tell you about the results of my survey. My topic was fast food in Jeddah. There were three questions in my survey. I think this is a good topic.",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 2300,
+      "text": "7.6",
+      "words": [
+        {
+          "word": "7",
+          "start": 0.0,
+          "end": 0.62
+        },
+        {
+          "word": ".6",
+          "start": 0.62,
+          "end": 2.3
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 2840,
+      "endMs": 10340,
+      "text": "Good morning. I'm Tomoko. I'm going to tell you about the results of my survey.",
+      "words": [
+        {
+          "word": "Good",
+          "start": 2.84,
+          "end": 3.46
+        },
+        {
+          "word": "morning.",
+          "start": 3.46,
+          "end": 4.06
+        },
+        {
+          "word": "I'm",
+          "start": 4.64,
+          "end": 5.28
+        },
+        {
+          "word": "Tomoko.",
+          "start": 5.28,
+          "end": 5.82
+        },
+        {
+          "word": "I'm",
+          "start": 6.62,
+          "end": 6.92
+        },
+        {
+          "word": "going",
+          "start": 6.92,
+          "end": 7.2
+        },
+        {
+          "word": "to",
+          "start": 7.2,
+          "end": 7.52
+        },
+        {
+          "word": "tell",
+          "start": 7.52,
+          "end": 7.74
+        },
+        {
+          "word": "you",
+          "start": 7.74,
+          "end": 8.14
+        },
+        {
+          "word": "about",
+          "start": 8.14,
+          "end": 8.6
+        },
+        {
+          "word": "the",
+          "start": 8.6,
+          "end": 8.9
+        },
+        {
+          "word": "results",
+          "start": 8.9,
+          "end": 9.34
+        },
+        {
+          "word": "of",
+          "start": 9.34,
+          "end": 9.66
+        },
+        {
+          "word": "my",
+          "start": 9.66,
+          "end": 9.98
+        },
+        {
+          "word": "survey.",
+          "start": 9.98,
+          "end": 10.34
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 11400,
+      "endMs": 13840,
+      "text": "There were five questions in my survey.",
+      "words": [
+        {
+          "word": "There",
+          "start": 11.4,
+          "end": 11.54
+        },
+        {
+          "word": "were",
+          "start": 11.54,
+          "end": 11.78
+        },
+        {
+          "word": "five",
+          "start": 11.78,
+          "end": 12.24
+        },
+        {
+          "word": "questions",
+          "start": 12.24,
+          "end": 12.92
+        },
+        {
+          "word": "in",
+          "start": 12.92,
+          "end": 13.18
+        },
+        {
+          "word": "my",
+          "start": 13.18,
+          "end": 13.5
+        },
+        {
+          "word": "survey.",
+          "start": 13.5,
+          "end": 13.84
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 14640,
+      "endMs": 21380,
+      "text": "My topic was traditional Japanese food. I think this is an interesting topic.",
+      "words": [
+        {
+          "word": "My",
+          "start": 14.64,
+          "end": 15.04
+        },
+        {
+          "word": "topic",
+          "start": 15.04,
+          "end": 15.5
+        },
+        {
+          "word": "was",
+          "start": 15.5,
+          "end": 16.02
+        },
+        {
+          "word": "traditional",
+          "start": 16.02,
+          "end": 16.8
+        },
+        {
+          "word": "Japanese",
+          "start": 16.8,
+          "end": 17.56
+        },
+        {
+          "word": "food.",
+          "start": 17.56,
+          "end": 18.02
+        },
+        {
+          "word": "I",
+          "start": 18.64,
+          "end": 18.9
+        },
+        {
+          "word": "think",
+          "start": 18.9,
+          "end": 19.28
+        },
+        {
+          "word": "this",
+          "start": 19.28,
+          "end": 19.66
+        },
+        {
+          "word": "is",
+          "start": 19.66,
+          "end": 19.92
+        },
+        {
+          "word": "an",
+          "start": 19.92,
+          "end": 20.18
+        },
+        {
+          "word": "interesting",
+          "start": 20.18,
+          "end": 20.84
+        },
+        {
+          "word": "topic.",
+          "start": 20.84,
+          "end": 21.38
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 23440,
+      "endMs": 24760,
+      "text": "Hello everybody.",
+      "words": [
+        {
+          "word": "Hello",
+          "start": 23.44,
+          "end": 23.96
+        },
+        {
+          "word": "everybody.",
+          "start": 23.96,
+          "end": 24.76
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "startMs": 25640,
+      "endMs": 26600,
+      "text": "I'm Ahmad.",
+      "words": [
+        {
+          "word": "I'm",
+          "start": 25.64,
+          "end": 26.2
+        },
+        {
+          "word": "Ahmad.",
+          "start": 26.2,
+          "end": 26.6
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "startMs": 27220,
+      "endMs": 30600,
+      "text": "I'm going to tell you about the results of my survey.",
+      "words": [
+        {
+          "word": "I'm",
+          "start": 27.22,
+          "end": 27.82
+        },
+        {
+          "word": "going",
+          "start": 27.82,
+          "end": 27.94
+        },
+        {
+          "word": "to",
+          "start": 27.94,
+          "end": 28.16
+        },
+        {
+          "word": "tell",
+          "start": 28.16,
+          "end": 28.38
+        },
+        {
+          "word": "you",
+          "start": 28.38,
+          "end": 28.76
+        },
+        {
+          "word": "about",
+          "start": 28.76,
+          "end": 29.02
+        },
+        {
+          "word": "the",
+          "start": 29.02,
+          "end": 29.28
+        },
+        {
+          "word": "results",
+          "start": 29.28,
+          "end": 29.64
+        },
+        {
+          "word": "of",
+          "start": 29.64,
+          "end": 29.94
+        },
+        {
+          "word": "my",
+          "start": 29.94,
+          "end": 30.18
+        },
+        {
+          "word": "survey.",
+          "start": 30.18,
+          "end": 30.6
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "startMs": 31560,
+      "endMs": 33980,
+      "text": "My topic was fast food in Jeddah.",
+      "words": [
+        {
+          "word": "My",
+          "start": 31.56,
+          "end": 31.68
+        },
+        {
+          "word": "topic",
+          "start": 31.68,
+          "end": 32.02
+        },
+        {
+          "word": "was",
+          "start": 32.02,
+          "end": 32.4
+        },
+        {
+          "word": "fast",
+          "start": 32.4,
+          "end": 32.82
+        },
+        {
+          "word": "food",
+          "start": 32.82,
+          "end": 33.12
+        },
+        {
+          "word": "in",
+          "start": 33.12,
+          "end": 33.44
+        },
+        {
+          "word": "Jeddah.",
+          "start": 33.44,
+          "end": 33.98
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "startMs": 35000,
+      "endMs": 36940,
+      "text": "There were three questions in my survey.",
+      "words": [
+        {
+          "word": "There",
+          "start": 35.0,
+          "end": 35.1
+        },
+        {
+          "word": "were",
+          "start": 35.1,
+          "end": 35.32
+        },
+        {
+          "word": "three",
+          "start": 35.32,
+          "end": 35.62
+        },
+        {
+          "word": "questions",
+          "start": 35.62,
+          "end": 36.1
+        },
+        {
+          "word": "in",
+          "start": 36.1,
+          "end": 36.34
+        },
+        {
+          "word": "my",
+          "start": 36.34,
+          "end": 36.64
+        },
+        {
+          "word": "survey.",
+          "start": 36.64,
+          "end": 36.94
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "startMs": 37980,
+      "endMs": 39740,
+      "text": "I think this is a good topic.",
+      "words": [
+        {
+          "word": "I",
+          "start": 37.98,
+          "end": 38.18
+        },
+        {
+          "word": "think",
+          "start": 38.18,
+          "end": 38.44
+        },
+        {
+          "word": "this",
+          "start": 38.44,
+          "end": 38.8
+        },
+        {
+          "word": "is",
+          "start": 38.8,
+          "end": 39.1
+        },
+        {
+          "word": "a",
+          "start": 39.1,
+          "end": 39.26
+        },
+        {
+          "word": "good",
+          "start": 39.26,
+          "end": 39.4
+        },
+        {
+          "word": "topic.",
+          "start": 39.4,
+          "end": 39.74
+        }
+      ]
+    }
+  ]
+}

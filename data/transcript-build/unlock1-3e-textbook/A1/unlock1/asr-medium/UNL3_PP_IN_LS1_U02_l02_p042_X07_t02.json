@@ -1,0 +1,2322 @@
+{
+  "model": "medium",
+  "language": "en",
+  "text": "2.2 Hello everybody! Thanks for helping me with my work. That's okay. Thanks for sending those photos, Keiko. No problem, Munira. Okay. I want to write about how people feel about the seasons. Is it good to live in a place where the weather is always the same? Or better to have four different seasons? Keiko, you're in Singapore. Yeah. I'm near the equator. The temperature is the same all year, around 30 degrees Celsius. There isn't winter, spring, or autumn. It's like summer every day. But between November and February, it's very wet. It's the rainy season. I don't like it. It's very different from the weather in Japan. Do you like the weather in Japan, Keiko? Okay. So, I'm from Japan. There are four seasons, and I like that. I like wearing different clothes at different times of the year. I'm from Tokyo, and the weather in Tokyo gets cold in winter. I love putting on a coat and going outside at that time of year. My favorite season is spring. In Japan, you can see pink flowers on the trees, and people have parties under them. I don't like doing things in hot weather. What about where you live, Lin? You're in Scotland. Yeah, I am. Keiko, is it 30 degrees where you are now? Yes. Wow. It's only 13 degrees here. It feels cold, but it's summer. The temperature doesn't change much here. It's usually between 5 and 15 degrees. But there are four seasons here in Scotland. For me, autumn is best. I love the red and orange colors of the trees in the autumn. I don't like winter in my country. Winter is long, and the nights are dark. It's dark early. Right now, it gets dark late. I love that. What about you, Munira? Well, there are four seasons in my country, Saudi. I don't like the summer because it's always very hot. Winters are short. The temperature in my city is around 9 degrees. There's snow in my country, but not much. But I love snow. There's a shopping center here with snow inside it every day. What? A shopping center? Yes, I go there a lot. I can send you a photo.",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 2360,
+      "text": "2.2",
+      "words": [
+        {
+          "word": "2",
+          "start": 0.0,
+          "end": 0.5
+        },
+        {
+          "word": ".2",
+          "start": 0.5,
+          "end": 2.36
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 2360,
+      "endMs": 3980,
+      "text": "Hello everybody!",
+      "words": [
+        {
+          "word": "Hello",
+          "start": 2.36,
+          "end": 3.1
+        },
+        {
+          "word": "everybody!",
+          "start": 3.1,
+          "end": 3.98
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 4840,
+      "endMs": 7120,
+      "text": "Thanks for helping me with my work.",
+      "words": [
+        {
+          "word": "Thanks",
+          "start": 4.84,
+          "end": 5.24
+        },
+        {
+          "word": "for",
+          "start": 5.24,
+          "end": 5.44
+        },
+        {
+          "word": "helping",
+          "start": 5.44,
+          "end": 5.84
+        },
+        {
+          "word": "me",
+          "start": 5.84,
+          "end": 6.18
+        },
+        {
+          "word": "with",
+          "start": 6.18,
+          "end": 6.38
+        },
+        {
+          "word": "my",
+          "start": 6.38,
+          "end": 6.72
+        },
+        {
+          "word": "work.",
+          "start": 6.72,
+          "end": 7.12
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 7920,
+      "endMs": 8760,
+      "text": "That's okay.",
+      "words": [
+        {
+          "word": "That's",
+          "start": 7.92,
+          "end": 8.42
+        },
+        {
+          "word": "okay.",
+          "start": 8.42,
+          "end": 8.76
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 9240,
+      "endMs": 11820,
+      "text": "Thanks for sending those photos, Keiko.",
+      "words": [
+        {
+          "word": "Thanks",
+          "start": 9.24,
+          "end": 9.58
+        },
+        {
+          "word": "for",
+          "start": 9.58,
+          "end": 9.86
+        },
+        {
+          "word": "sending",
+          "start": 9.86,
+          "end": 10.3
+        },
+        {
+          "word": "those",
+          "start": 10.3,
+          "end": 10.7
+        },
+        {
+          "word": "photos,",
+          "start": 10.7,
+          "end": 11.24
+        },
+        {
+          "word": "Keiko.",
+          "start": 11.56,
+          "end": 11.82
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "startMs": 12500,
+      "endMs": 14100,
+      "text": "No problem, Munira.",
+      "words": [
+        {
+          "word": "No",
+          "start": 12.5,
+          "end": 12.88
+        },
+        {
+          "word": "problem,",
+          "start": 12.88,
+          "end": 13.46
+        },
+        {
+          "word": "Munira.",
+          "start": 13.78,
+          "end": 14.1
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "startMs": 14820,
+      "endMs": 15220,
+      "text": "Okay.",
+      "words": [
+        {
+          "word": "Okay.",
+          "start": 14.82,
+          "end": 15.22
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "startMs": 16060,
+      "endMs": 20320,
+      "text": "I want to write about how people feel about the seasons.",
+      "words": [
+        {
+          "word": "I",
+          "start": 16.06,
+          "end": 16.38
+        },
+        {
+          "word": "want",
+          "start": 16.38,
+          "end": 16.74
+        },
+        {
+          "word": "to",
+          "start": 16.74,
+          "end": 17.06
+        },
+        {
+          "word": "write",
+          "start": 17.06,
+          "end": 17.28
+        },
+        {
+          "word": "about",
+          "start": 17.28,
+          "end": 17.66
+        },
+        {
+          "word": "how",
+          "start": 17.66,
+          "end": 18.04
+        },
+        {
+          "word": "people",
+          "start": 18.04,
+          "end": 18.56
+        },
+        {
+          "word": "feel",
+          "start": 18.56,
+          "end": 19.04
+        },
+        {
+          "word": "about",
+          "start": 19.04,
+          "end": 19.5
+        },
+        {
+          "word": "the",
+          "start": 19.5,
+          "end": 19.82
+        },
+        {
+          "word": "seasons.",
+          "start": 19.82,
+          "end": 20.32
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "startMs": 21100,
+      "endMs": 26000,
+      "text": "Is it good to live in a place where the weather is always the same?",
+      "words": [
+        {
+          "word": "Is",
+          "start": 21.1,
+          "end": 21.36
+        },
+        {
+          "word": "it",
+          "start": 21.36,
+          "end": 21.76
+        },
+        {
+          "word": "good",
+          "start": 21.76,
+          "end": 22.14
+        },
+        {
+          "word": "to",
+          "start": 22.14,
+          "end": 22.54
+        },
+        {
+          "word": "live",
+          "start": 22.54,
+          "end": 22.94
+        },
+        {
+          "word": "in",
+          "start": 22.94,
+          "end": 23.16
+        },
+        {
+          "word": "a",
+          "start": 23.16,
+          "end": 23.4
+        },
+        {
+          "word": "place",
+          "start": 23.4,
+          "end": 23.68
+        },
+        {
+          "word": "where",
+          "start": 23.68,
+          "end": 23.94
+        },
+        {
+          "word": "the",
+          "start": 23.94,
+          "end": 24.18
+        },
+        {
+          "word": "weather",
+          "start": 24.18,
+          "end": 24.46
+        },
+        {
+          "word": "is",
+          "start": 24.46,
+          "end": 24.86
+        },
+        {
+          "word": "always",
+          "start": 24.86,
+          "end": 25.28
+        },
+        {
+          "word": "the",
+          "start": 25.28,
+          "end": 25.6
+        },
+        {
+          "word": "same?",
+          "start": 25.6,
+          "end": 26.0
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "startMs": 26000,
+      "endMs": 30280,
+      "text": "Or better to have four different seasons?",
+      "words": [
+        {
+          "word": "Or",
+          "start": 26.0,
+          "end": 26.94
+        },
+        {
+          "word": "better",
+          "start": 26.94,
+          "end": 27.8
+        },
+        {
+          "word": "to",
+          "start": 27.8,
+          "end": 28.14
+        },
+        {
+          "word": "have",
+          "start": 28.14,
+          "end": 28.34
+        },
+        {
+          "word": "four",
+          "start": 28.34,
+          "end": 28.9
+        },
+        {
+          "word": "different",
+          "start": 28.9,
+          "end": 29.44
+        },
+        {
+          "word": "seasons?",
+          "start": 29.44,
+          "end": 30.28
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "startMs": 31100,
+      "endMs": 33320,
+      "text": "Keiko, you're in Singapore.",
+      "words": [
+        {
+          "word": "Keiko,",
+          "start": 31.1,
+          "end": 31.44
+        },
+        {
+          "word": "you're",
+          "start": 31.98,
+          "end": 32.44
+        },
+        {
+          "word": "in",
+          "start": 32.44,
+          "end": 32.76
+        },
+        {
+          "word": "Singapore.",
+          "start": 32.76,
+          "end": 33.32
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "startMs": 34140,
+      "endMs": 36580,
+      "text": "Yeah. I'm near the equator.",
+      "words": [
+        {
+          "word": "Yeah.",
+          "start": 34.14,
+          "end": 34.62
+        },
+        {
+          "word": "I'm",
+          "start": 35.16,
+          "end": 35.54
+        },
+        {
+          "word": "near",
+          "start": 35.54,
+          "end": 35.84
+        },
+        {
+          "word": "the",
+          "start": 35.84,
+          "end": 36.16
+        },
+        {
+          "word": "equator.",
+          "start": 36.16,
+          "end": 36.58
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "startMs": 37360,
+      "endMs": 42560,
+      "text": "The temperature is the same all year, around 30 degrees Celsius.",
+      "words": [
+        {
+          "word": "The",
+          "start": 37.36,
+          "end": 37.5
+        },
+        {
+          "word": "temperature",
+          "start": 37.5,
+          "end": 38.08
+        },
+        {
+          "word": "is",
+          "start": 38.08,
+          "end": 38.32
+        },
+        {
+          "word": "the",
+          "start": 38.32,
+          "end": 38.64
+        },
+        {
+          "word": "same",
+          "start": 38.64,
+          "end": 39.0
+        },
+        {
+          "word": "all",
+          "start": 39.0,
+          "end": 39.64
+        },
+        {
+          "word": "year,",
+          "start": 39.64,
+          "end": 40.02
+        },
+        {
+          "word": "around",
+          "start": 40.56,
+          "end": 40.96
+        },
+        {
+          "word": "30",
+          "start": 40.96,
+          "end": 41.52
+        },
+        {
+          "word": "degrees",
+          "start": 41.52,
+          "end": 42.04
+        },
+        {
+          "word": "Celsius.",
+          "start": 42.04,
+          "end": 42.56
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "startMs": 43440,
+      "endMs": 46320,
+      "text": "There isn't winter, spring, or autumn.",
+      "words": [
+        {
+          "word": "There",
+          "start": 43.44,
+          "end": 43.72
+        },
+        {
+          "word": "isn't",
+          "start": 43.72,
+          "end": 44.06
+        },
+        {
+          "word": "winter,",
+          "start": 44.06,
+          "end": 44.62
+        },
+        {
+          "word": "spring,",
+          "start": 45.0,
+          "end": 45.48
+        },
+        {
+          "word": "or",
+          "start": 45.64,
+          "end": 46.06
+        },
+        {
+          "word": "autumn.",
+          "start": 46.06,
+          "end": 46.32
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "startMs": 46940,
+      "endMs": 49480,
+      "text": "It's like summer every day.",
+      "words": [
+        {
+          "word": "It's",
+          "start": 46.94,
+          "end": 47.36
+        },
+        {
+          "word": "like",
+          "start": 47.36,
+          "end": 47.74
+        },
+        {
+          "word": "summer",
+          "start": 47.74,
+          "end": 48.24
+        },
+        {
+          "word": "every",
+          "start": 48.24,
+          "end": 49.02
+        },
+        {
+          "word": "day.",
+          "start": 49.02,
+          "end": 49.48
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "startMs": 50000,
+      "endMs": 54740,
+      "text": "But between November and February, it's very wet.",
+      "words": [
+        {
+          "word": "But",
+          "start": 50.0,
+          "end": 50.6
+        },
+        {
+          "word": "between",
+          "start": 50.6,
+          "end": 51.28
+        },
+        {
+          "word": "November",
+          "start": 51.28,
+          "end": 51.92
+        },
+        {
+          "word": "and",
+          "start": 51.92,
+          "end": 52.28
+        },
+        {
+          "word": "February,",
+          "start": 52.28,
+          "end": 52.94
+        },
+        {
+          "word": "it's",
+          "start": 53.34,
+          "end": 53.78
+        },
+        {
+          "word": "very",
+          "start": 53.78,
+          "end": 54.42
+        },
+        {
+          "word": "wet.",
+          "start": 54.42,
+          "end": 54.74
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "startMs": 54740,
+      "endMs": 57160,
+      "text": "It's the rainy season.",
+      "words": [
+        {
+          "word": "It's",
+          "start": 54.74,
+          "end": 55.9
+        },
+        {
+          "word": "the",
+          "start": 55.9,
+          "end": 56.2
+        },
+        {
+          "word": "rainy",
+          "start": 56.2,
+          "end": 56.52
+        },
+        {
+          "word": "season.",
+          "start": 56.52,
+          "end": 57.16
+        }
+      ]
+    },
+    {
+      "index": 18,
+      "startMs": 57680,
+      "endMs": 59420,
+      "text": "I don't like it.",
+      "words": [
+        {
+          "word": "I",
+          "start": 57.68,
+          "end": 58.02
+        },
+        {
+          "word": "don't",
+          "start": 58.02,
+          "end": 58.42
+        },
+        {
+          "word": "like",
+          "start": 58.42,
+          "end": 58.8
+        },
+        {
+          "word": "it.",
+          "start": 58.8,
+          "end": 59.42
+        }
+      ]
+    },
+    {
+      "index": 19,
+      "startMs": 59740,
+      "endMs": 63300,
+      "text": "It's very different from the weather in Japan.",
+      "words": [
+        {
+          "word": "It's",
+          "start": 59.74,
+          "end": 60.16
+        },
+        {
+          "word": "very",
+          "start": 60.16,
+          "end": 60.72
+        },
+        {
+          "word": "different",
+          "start": 60.72,
+          "end": 61.38
+        },
+        {
+          "word": "from",
+          "start": 61.38,
+          "end": 61.8
+        },
+        {
+          "word": "the",
+          "start": 61.8,
+          "end": 62.14
+        },
+        {
+          "word": "weather",
+          "start": 62.14,
+          "end": 62.4
+        },
+        {
+          "word": "in",
+          "start": 62.4,
+          "end": 62.66
+        },
+        {
+          "word": "Japan.",
+          "start": 62.66,
+          "end": 63.3
+        }
+      ]
+    },
+    {
+      "index": 20,
+      "startMs": 64300,
+      "endMs": 66820,
+      "text": "Do you like the weather in Japan, Keiko?",
+      "words": [
+        {
+          "word": "Do",
+          "start": 64.3,
+          "end": 64.4
+        },
+        {
+          "word": "you",
+          "start": 64.4,
+          "end": 64.64
+        },
+        {
+          "word": "like",
+          "start": 64.64,
+          "end": 64.96
+        },
+        {
+          "word": "the",
+          "start": 64.96,
+          "end": 65.2
+        },
+        {
+          "word": "weather",
+          "start": 65.2,
+          "end": 65.46
+        },
+        {
+          "word": "in",
+          "start": 65.46,
+          "end": 65.78
+        },
+        {
+          "word": "Japan,",
+          "start": 65.78,
+          "end": 66.34
+        },
+        {
+          "word": "Keiko?",
+          "start": 66.64,
+          "end": 66.82
+        }
+      ]
+    },
+    {
+      "index": 21,
+      "startMs": 67480,
+      "endMs": 70400,
+      "text": "Okay. So, I'm from Japan.",
+      "words": [
+        {
+          "word": "Okay.",
+          "start": 67.48,
+          "end": 68.0
+        },
+        {
+          "word": "So,",
+          "start": 68.46,
+          "end": 68.92
+        },
+        {
+          "word": "I'm",
+          "start": 69.28,
+          "end": 69.6
+        },
+        {
+          "word": "from",
+          "start": 69.6,
+          "end": 69.9
+        },
+        {
+          "word": "Japan.",
+          "start": 69.9,
+          "end": 70.4
+        }
+      ]
+    },
+    {
+      "index": 22,
+      "startMs": 71020,
+      "endMs": 74160,
+      "text": "There are four seasons, and I like that.",
+      "words": [
+        {
+          "word": "There",
+          "start": 71.02,
+          "end": 71.26
+        },
+        {
+          "word": "are",
+          "start": 71.26,
+          "end": 71.52
+        },
+        {
+          "word": "four",
+          "start": 71.52,
+          "end": 71.9
+        },
+        {
+          "word": "seasons,",
+          "start": 71.9,
+          "end": 72.46
+        },
+        {
+          "word": "and",
+          "start": 72.5,
+          "end": 73.12
+        },
+        {
+          "word": "I",
+          "start": 73.12,
+          "end": 73.46
+        },
+        {
+          "word": "like",
+          "start": 73.46,
+          "end": 73.74
+        },
+        {
+          "word": "that.",
+          "start": 73.74,
+          "end": 74.16
+        }
+      ]
+    },
+    {
+      "index": 23,
+      "startMs": 74820,
+      "endMs": 78980,
+      "text": "I like wearing different clothes at different times of the year.",
+      "words": [
+        {
+          "word": "I",
+          "start": 74.82,
+          "end": 75.2
+        },
+        {
+          "word": "like",
+          "start": 75.2,
+          "end": 75.5
+        },
+        {
+          "word": "wearing",
+          "start": 75.5,
+          "end": 75.86
+        },
+        {
+          "word": "different",
+          "start": 75.86,
+          "end": 76.44
+        },
+        {
+          "word": "clothes",
+          "start": 76.44,
+          "end": 77.02
+        },
+        {
+          "word": "at",
+          "start": 77.02,
+          "end": 77.3
+        },
+        {
+          "word": "different",
+          "start": 77.3,
+          "end": 77.74
+        },
+        {
+          "word": "times",
+          "start": 77.74,
+          "end": 78.2
+        },
+        {
+          "word": "of",
+          "start": 78.2,
+          "end": 78.4
+        },
+        {
+          "word": "the",
+          "start": 78.4,
+          "end": 78.62
+        },
+        {
+          "word": "year.",
+          "start": 78.62,
+          "end": 78.98
+        }
+      ]
+    },
+    {
+      "index": 24,
+      "startMs": 79820,
+      "endMs": 84640,
+      "text": "I'm from Tokyo, and the weather in Tokyo gets cold in winter.",
+      "words": [
+        {
+          "word": "I'm",
+          "start": 79.82,
+          "end": 80.18
+        },
+        {
+          "word": "from",
+          "start": 80.18,
+          "end": 80.42
+        },
+        {
+          "word": "Tokyo,",
+          "start": 80.42,
+          "end": 80.92
+        },
+        {
+          "word": "and",
+          "start": 81.38,
+          "end": 81.6
+        },
+        {
+          "word": "the",
+          "start": 81.6,
+          "end": 81.84
+        },
+        {
+          "word": "weather",
+          "start": 81.84,
+          "end": 82.12
+        },
+        {
+          "word": "in",
+          "start": 82.12,
+          "end": 82.48
+        },
+        {
+          "word": "Tokyo",
+          "start": 82.48,
+          "end": 82.88
+        },
+        {
+          "word": "gets",
+          "start": 82.88,
+          "end": 83.32
+        },
+        {
+          "word": "cold",
+          "start": 83.32,
+          "end": 83.96
+        },
+        {
+          "word": "in",
+          "start": 83.96,
+          "end": 84.24
+        },
+        {
+          "word": "winter.",
+          "start": 84.24,
+          "end": 84.64
+        }
+      ]
+    },
+    {
+      "index": 25,
+      "startMs": 84640,
+      "endMs": 90700,
+      "text": "I love putting on a coat and going outside at that time of year.",
+      "words": [
+        {
+          "word": "I",
+          "start": 84.64,
+          "end": 85.74
+        },
+        {
+          "word": "love",
+          "start": 85.74,
+          "end": 86.26
+        },
+        {
+          "word": "putting",
+          "start": 86.26,
+          "end": 86.7
+        },
+        {
+          "word": "on",
+          "start": 86.7,
+          "end": 87.0
+        },
+        {
+          "word": "a",
+          "start": 87.0,
+          "end": 87.34
+        },
+        {
+          "word": "coat",
+          "start": 87.34,
+          "end": 87.74
+        },
+        {
+          "word": "and",
+          "start": 87.74,
+          "end": 88.12
+        },
+        {
+          "word": "going",
+          "start": 88.12,
+          "end": 88.42
+        },
+        {
+          "word": "outside",
+          "start": 88.42,
+          "end": 89.24
+        },
+        {
+          "word": "at",
+          "start": 89.24,
+          "end": 89.48
+        },
+        {
+          "word": "that",
+          "start": 89.48,
+          "end": 89.84
+        },
+        {
+          "word": "time",
+          "start": 89.84,
+          "end": 90.04
+        },
+        {
+          "word": "of",
+          "start": 90.04,
+          "end": 90.32
+        },
+        {
+          "word": "year.",
+          "start": 90.32,
+          "end": 90.7
+        }
+      ]
+    },
+    {
+      "index": 26,
+      "startMs": 91540,
+      "endMs": 93820,
+      "text": "My favorite season is spring.",
+      "words": [
+        {
+          "word": "My",
+          "start": 91.54,
+          "end": 91.84
+        },
+        {
+          "word": "favorite",
+          "start": 91.84,
+          "end": 92.4
+        },
+        {
+          "word": "season",
+          "start": 92.4,
+          "end": 92.82
+        },
+        {
+          "word": "is",
+          "start": 92.82,
+          "end": 93.28
+        },
+        {
+          "word": "spring.",
+          "start": 93.28,
+          "end": 93.82
+        }
+      ]
+    },
+    {
+      "index": 27,
+      "startMs": 94620,
+      "endMs": 98740,
+      "text": "In Japan, you can see pink flowers on the trees,",
+      "words": [
+        {
+          "word": "In",
+          "start": 94.62,
+          "end": 94.84
+        },
+        {
+          "word": "Japan,",
+          "start": 94.84,
+          "end": 95.4
+        },
+        {
+          "word": "you",
+          "start": 95.86,
+          "end": 96.06
+        },
+        {
+          "word": "can",
+          "start": 96.06,
+          "end": 96.4
+        },
+        {
+          "word": "see",
+          "start": 96.4,
+          "end": 96.7
+        },
+        {
+          "word": "pink",
+          "start": 96.7,
+          "end": 97.18
+        },
+        {
+          "word": "flowers",
+          "start": 97.18,
+          "end": 97.72
+        },
+        {
+          "word": "on",
+          "start": 97.72,
+          "end": 98.02
+        },
+        {
+          "word": "the",
+          "start": 98.02,
+          "end": 98.34
+        },
+        {
+          "word": "trees,",
+          "start": 98.34,
+          "end": 98.74
+        }
+      ]
+    },
+    {
+      "index": 28,
+      "startMs": 98840,
+      "endMs": 101620,
+      "text": "and people have parties under them.",
+      "words": [
+        {
+          "word": "and",
+          "start": 98.84,
+          "end": 99.62
+        },
+        {
+          "word": "people",
+          "start": 99.62,
+          "end": 100.0
+        },
+        {
+          "word": "have",
+          "start": 100.0,
+          "end": 100.4
+        },
+        {
+          "word": "parties",
+          "start": 100.4,
+          "end": 100.92
+        },
+        {
+          "word": "under",
+          "start": 100.92,
+          "end": 101.32
+        },
+        {
+          "word": "them.",
+          "start": 101.32,
+          "end": 101.62
+        }
+      ]
+    },
+    {
+      "index": 29,
+      "startMs": 102400,
+      "endMs": 105240,
+      "text": "I don't like doing things in hot weather.",
+      "words": [
+        {
+          "word": "I",
+          "start": 102.4,
+          "end": 102.74
+        },
+        {
+          "word": "don't",
+          "start": 102.74,
+          "end": 103.12
+        },
+        {
+          "word": "like",
+          "start": 103.12,
+          "end": 103.44
+        },
+        {
+          "word": "doing",
+          "start": 103.44,
+          "end": 103.84
+        },
+        {
+          "word": "things",
+          "start": 103.84,
+          "end": 104.24
+        },
+        {
+          "word": "in",
+          "start": 104.24,
+          "end": 104.54
+        },
+        {
+          "word": "hot",
+          "start": 104.54,
+          "end": 104.82
+        },
+        {
+          "word": "weather.",
+          "start": 104.82,
+          "end": 105.24
+        }
+      ]
+    },
+    {
+      "index": 30,
+      "startMs": 105600,
+      "endMs": 107540,
+      "text": "What about where you live, Lin?",
+      "words": [
+        {
+          "word": "What",
+          "start": 105.6,
+          "end": 105.94
+        },
+        {
+          "word": "about",
+          "start": 105.94,
+          "end": 106.3
+        },
+        {
+          "word": "where",
+          "start": 106.3,
+          "end": 106.6
+        },
+        {
+          "word": "you",
+          "start": 106.6,
+          "end": 106.98
+        },
+        {
+          "word": "live,",
+          "start": 106.98,
+          "end": 107.22
+        },
+        {
+          "word": "Lin?",
+          "start": 107.46,
+          "end": 107.54
+        }
+      ]
+    },
+    {
+      "index": 31,
+      "startMs": 108020,
+      "endMs": 109300,
+      "text": "You're in Scotland.",
+      "words": [
+        {
+          "word": "You're",
+          "start": 108.02,
+          "end": 108.52
+        },
+        {
+          "word": "in",
+          "start": 108.52,
+          "end": 108.8
+        },
+        {
+          "word": "Scotland.",
+          "start": 108.8,
+          "end": 109.3
+        }
+      ]
+    },
+    {
+      "index": 32,
+      "startMs": 109980,
+      "endMs": 111680,
+      "text": "Yeah, I am.",
+      "words": [
+        {
+          "word": "Yeah,",
+          "start": 109.98,
+          "end": 110.42
+        },
+        {
+          "word": "I",
+          "start": 110.52,
+          "end": 110.84
+        },
+        {
+          "word": "am.",
+          "start": 110.84,
+          "end": 111.68
+        }
+      ]
+    },
+    {
+      "index": 33,
+      "startMs": 111680,
+      "endMs": 116000,
+      "text": "Keiko, is it 30 degrees where you are now?",
+      "words": [
+        {
+          "word": "Keiko,",
+          "start": 111.68,
+          "end": 112.62
+        },
+        {
+          "word": "is",
+          "start": 113.06,
+          "end": 113.32
+        },
+        {
+          "word": "it",
+          "start": 113.32,
+          "end": 113.64
+        },
+        {
+          "word": "30",
+          "start": 113.64,
+          "end": 114.06
+        },
+        {
+          "word": "degrees",
+          "start": 114.06,
+          "end": 114.76
+        },
+        {
+          "word": "where",
+          "start": 114.76,
+          "end": 115.18
+        },
+        {
+          "word": "you",
+          "start": 115.18,
+          "end": 115.38
+        },
+        {
+          "word": "are",
+          "start": 115.38,
+          "end": 115.64
+        },
+        {
+          "word": "now?",
+          "start": 115.64,
+          "end": 116.0
+        }
+      ]
+    },
+    {
+      "index": 34,
+      "startMs": 116800,
+      "endMs": 117340,
+      "text": "Yes.",
+      "words": [
+        {
+          "word": "Yes.",
+          "start": 116.8,
+          "end": 117.34
+        }
+      ]
+    },
+    {
+      "index": 35,
+      "startMs": 118280,
+      "endMs": 121820,
+      "text": "Wow. It's only 13 degrees here.",
+      "words": [
+        {
+          "word": "Wow.",
+          "start": 118.28,
+          "end": 118.54
+        },
+        {
+          "word": "It's",
+          "start": 119.04,
+          "end": 119.34
+        },
+        {
+          "word": "only",
+          "start": 119.34,
+          "end": 119.84
+        },
+        {
+          "word": "13",
+          "start": 119.84,
+          "end": 120.7
+        },
+        {
+          "word": "degrees",
+          "start": 120.7,
+          "end": 121.32
+        },
+        {
+          "word": "here.",
+          "start": 121.32,
+          "end": 121.82
+        }
+      ]
+    },
+    {
+      "index": 36,
+      "startMs": 122280,
+      "endMs": 124740,
+      "text": "It feels cold, but it's summer.",
+      "words": [
+        {
+          "word": "It",
+          "start": 122.28,
+          "end": 122.48
+        },
+        {
+          "word": "feels",
+          "start": 122.48,
+          "end": 122.86
+        },
+        {
+          "word": "cold,",
+          "start": 122.86,
+          "end": 123.48
+        },
+        {
+          "word": "but",
+          "start": 123.8,
+          "end": 124.04
+        },
+        {
+          "word": "it's",
+          "start": 124.04,
+          "end": 124.38
+        },
+        {
+          "word": "summer.",
+          "start": 124.38,
+          "end": 124.74
+        }
+      ]
+    },
+    {
+      "index": 37,
+      "startMs": 125500,
+      "endMs": 128200,
+      "text": "The temperature doesn't change much here.",
+      "words": [
+        {
+          "word": "The",
+          "start": 125.5,
+          "end": 125.8
+        },
+        {
+          "word": "temperature",
+          "start": 125.8,
+          "end": 126.34
+        },
+        {
+          "word": "doesn't",
+          "start": 126.34,
+          "end": 126.82
+        },
+        {
+          "word": "change",
+          "start": 126.82,
+          "end": 127.38
+        },
+        {
+          "word": "much",
+          "start": 127.38,
+          "end": 127.72
+        },
+        {
+          "word": "here.",
+          "start": 127.72,
+          "end": 128.2
+        }
+      ]
+    },
+    {
+      "index": 38,
+      "startMs": 128600,
+      "endMs": 132180,
+      "text": "It's usually between 5 and 15 degrees.",
+      "words": [
+        {
+          "word": "It's",
+          "start": 128.6,
+          "end": 129.08
+        },
+        {
+          "word": "usually",
+          "start": 129.08,
+          "end": 129.52
+        },
+        {
+          "word": "between",
+          "start": 129.52,
+          "end": 130.1
+        },
+        {
+          "word": "5",
+          "start": 130.1,
+          "end": 130.72
+        },
+        {
+          "word": "and",
+          "start": 130.72,
+          "end": 130.94
+        },
+        {
+          "word": "15",
+          "start": 130.94,
+          "end": 131.54
+        },
+        {
+          "word": "degrees.",
+          "start": 131.54,
+          "end": 132.18
+        }
+      ]
+    },
+    {
+      "index": 39,
+      "startMs": 132500,
+      "endMs": 136040,
+      "text": "But there are four seasons here in Scotland.",
+      "words": [
+        {
+          "word": "But",
+          "start": 132.5,
+          "end": 133.14
+        },
+        {
+          "word": "there",
+          "start": 133.14,
+          "end": 133.4
+        },
+        {
+          "word": "are",
+          "start": 133.4,
+          "end": 133.74
+        },
+        {
+          "word": "four",
+          "start": 133.74,
+          "end": 134.18
+        },
+        {
+          "word": "seasons",
+          "start": 134.18,
+          "end": 134.76
+        },
+        {
+          "word": "here",
+          "start": 134.76,
+          "end": 135.26
+        },
+        {
+          "word": "in",
+          "start": 135.26,
+          "end": 135.56
+        },
+        {
+          "word": "Scotland.",
+          "start": 135.56,
+          "end": 136.04
+        }
+      ]
+    },
+    {
+      "index": 40,
+      "startMs": 136960,
+      "endMs": 139240,
+      "text": "For me, autumn is best.",
+      "words": [
+        {
+          "word": "For",
+          "start": 136.96,
+          "end": 137.16
+        },
+        {
+          "word": "me,",
+          "start": 137.16,
+          "end": 137.86
+        },
+        {
+          "word": "autumn",
+          "start": 138.28,
+          "end": 138.5
+        },
+        {
+          "word": "is",
+          "start": 138.5,
+          "end": 138.86
+        },
+        {
+          "word": "best.",
+          "start": 138.86,
+          "end": 139.24
+        }
+      ]
+    },
+    {
+      "index": 41,
+      "startMs": 139240,
+      "endMs": 145120,
+      "text": "I love the red and orange colors of the trees in the autumn.",
+      "words": [
+        {
+          "word": "I",
+          "start": 139.24,
+          "end": 140.04
+        },
+        {
+          "word": "love",
+          "start": 140.04,
+          "end": 140.6
+        },
+        {
+          "word": "the",
+          "start": 140.6,
+          "end": 140.86
+        },
+        {
+          "word": "red",
+          "start": 140.86,
+          "end": 141.28
+        },
+        {
+          "word": "and",
+          "start": 141.28,
+          "end": 141.74
+        },
+        {
+          "word": "orange",
+          "start": 141.74,
+          "end": 142.36
+        },
+        {
+          "word": "colors",
+          "start": 142.36,
+          "end": 142.96
+        },
+        {
+          "word": "of",
+          "start": 142.96,
+          "end": 143.2
+        },
+        {
+          "word": "the",
+          "start": 143.2,
+          "end": 143.66
+        },
+        {
+          "word": "trees",
+          "start": 143.66,
+          "end": 144.1
+        },
+        {
+          "word": "in",
+          "start": 144.1,
+          "end": 144.48
+        },
+        {
+          "word": "the",
+          "start": 144.48,
+          "end": 144.7
+        },
+        {
+          "word": "autumn.",
+          "start": 144.7,
+          "end": 145.12
+        }
+      ]
+    },
+    {
+      "index": 42,
+      "startMs": 146160,
+      "endMs": 148620,
+      "text": "I don't like winter in my country.",
+      "words": [
+        {
+          "word": "don't",
+          "start": 146.16,
+          "end": 146.48
+        },
+        {
+          "word": "like",
+          "start": 146.48,
+          "end": 146.86
+        },
+        {
+          "word": "winter",
+          "start": 146.86,
+          "end": 147.42
+        },
+        {
+          "word": "in",
+          "start": 147.42,
+          "end": 147.78
+        },
+        {
+          "word": "my",
+          "start": 147.78,
+          "end": 148.12
+        },
+        {
+          "word": "country.",
+          "start": 148.12,
+          "end": 148.62
+        }
+      ]
+    },
+    {
+      "index": 43,
+      "startMs": 149500,
+      "endMs": 152860,
+      "text": "Winter is long, and the nights are dark.",
+      "words": [
+        {
+          "word": "Winter",
+          "start": 149.5,
+          "end": 149.96
+        },
+        {
+          "word": "is",
+          "start": 149.96,
+          "end": 150.38
+        },
+        {
+          "word": "long,",
+          "start": 150.38,
+          "end": 150.84
+        },
+        {
+          "word": "and",
+          "start": 151.28,
+          "end": 151.46
+        },
+        {
+          "word": "the",
+          "start": 151.46,
+          "end": 151.64
+        },
+        {
+          "word": "nights",
+          "start": 151.64,
+          "end": 151.94
+        },
+        {
+          "word": "are",
+          "start": 151.94,
+          "end": 152.38
+        },
+        {
+          "word": "dark.",
+          "start": 152.38,
+          "end": 152.86
+        }
+      ]
+    },
+    {
+      "index": 44,
+      "startMs": 153460,
+      "endMs": 154760,
+      "text": "It's dark early.",
+      "words": [
+        {
+          "word": "It's",
+          "start": 153.46,
+          "end": 153.9
+        },
+        {
+          "word": "dark",
+          "start": 153.9,
+          "end": 154.24
+        },
+        {
+          "word": "early.",
+          "start": 154.24,
+          "end": 154.76
+        }
+      ]
+    },
+    {
+      "index": 45,
+      "startMs": 155600,
+      "endMs": 158240,
+      "text": "Right now, it gets dark late.",
+      "words": [
+        {
+          "word": "Right",
+          "start": 155.6,
+          "end": 155.9
+        },
+        {
+          "word": "now,",
+          "start": 155.9,
+          "end": 156.38
+        },
+        {
+          "word": "it",
+          "start": 156.56,
+          "end": 156.78
+        },
+        {
+          "word": "gets",
+          "start": 156.78,
+          "end": 157.2
+        },
+        {
+          "word": "dark",
+          "start": 157.2,
+          "end": 157.66
+        },
+        {
+          "word": "late.",
+          "start": 157.66,
+          "end": 158.24
+        }
+      ]
+    },
+    {
+      "index": 46,
+      "startMs": 158640,
+      "endMs": 159880,
+      "text": "I love that.",
+      "words": [
+        {
+          "word": "I",
+          "start": 158.64,
+          "end": 159.06
+        },
+        {
+          "word": "love",
+          "start": 159.06,
+          "end": 159.42
+        },
+        {
+          "word": "that.",
+          "start": 159.42,
+          "end": 159.88
+        }
+      ]
+    },
+    {
+      "index": 47,
+      "startMs": 160860,
+      "endMs": 162600,
+      "text": "What about you, Munira?",
+      "words": [
+        {
+          "word": "What",
+          "start": 160.86,
+          "end": 161.16
+        },
+        {
+          "word": "about",
+          "start": 161.16,
+          "end": 161.5
+        },
+        {
+          "word": "you,",
+          "start": 161.5,
+          "end": 162.1
+        },
+        {
+          "word": "Munira?",
+          "start": 162.28,
+          "end": 162.6
+        }
+      ]
+    },
+    {
+      "index": 48,
+      "startMs": 163320,
+      "endMs": 167680,
+      "text": "Well, there are four seasons in my country, Saudi.",
+      "words": [
+        {
+          "word": "Well,",
+          "start": 163.32,
+          "end": 163.94
+        },
+        {
+          "word": "there",
+          "start": 164.28,
+          "end": 164.56
+        },
+        {
+          "word": "are",
+          "start": 164.56,
+          "end": 164.92
+        },
+        {
+          "word": "four",
+          "start": 164.92,
+          "end": 165.38
+        },
+        {
+          "word": "seasons",
+          "start": 165.38,
+          "end": 165.96
+        },
+        {
+          "word": "in",
+          "start": 165.96,
+          "end": 166.32
+        },
+        {
+          "word": "my",
+          "start": 166.32,
+          "end": 166.7
+        },
+        {
+          "word": "country,",
+          "start": 166.7,
+          "end": 167.2
+        },
+        {
+          "word": "Saudi.",
+          "start": 167.5,
+          "end": 167.68
+        }
+      ]
+    },
+    {
+      "index": 49,
+      "startMs": 167680,
+      "endMs": 172580,
+      "text": "I don't like the summer because it's always very hot.",
+      "words": [
+        {
+          "word": "I",
+          "start": 167.68,
+          "end": 168.62
+        },
+        {
+          "word": "don't",
+          "start": 168.62,
+          "end": 169.04
+        },
+        {
+          "word": "like",
+          "start": 169.04,
+          "end": 169.38
+        },
+        {
+          "word": "the",
+          "start": 169.38,
+          "end": 169.66
+        },
+        {
+          "word": "summer",
+          "start": 169.66,
+          "end": 169.94
+        },
+        {
+          "word": "because",
+          "start": 169.94,
+          "end": 170.42
+        },
+        {
+          "word": "it's",
+          "start": 170.42,
+          "end": 170.78
+        },
+        {
+          "word": "always",
+          "start": 170.78,
+          "end": 171.3
+        },
+        {
+          "word": "very",
+          "start": 171.3,
+          "end": 171.82
+        },
+        {
+          "word": "hot.",
+          "start": 171.82,
+          "end": 172.58
+        }
+      ]
+    },
+    {
+      "index": 50,
+      "startMs": 173200,
+      "endMs": 174400,
+      "text": "Winters are short.",
+      "words": [
+        {
+          "word": "Winters",
+          "start": 173.2,
+          "end": 173.58
+        },
+        {
+          "word": "are",
+          "start": 173.58,
+          "end": 174.06
+        },
+        {
+          "word": "short.",
+          "start": 174.06,
+          "end": 174.4
+        }
+      ]
+    },
+    {
+      "index": 51,
+      "startMs": 175000,
+      "endMs": 179120,
+      "text": "The temperature in my city is around 9 degrees.",
+      "words": [
+        {
+          "word": "The",
+          "start": 175.0,
+          "end": 175.2
+        },
+        {
+          "word": "temperature",
+          "start": 175.2,
+          "end": 175.8
+        },
+        {
+          "word": "in",
+          "start": 175.8,
+          "end": 176.14
+        },
+        {
+          "word": "my",
+          "start": 176.14,
+          "end": 176.5
+        },
+        {
+          "word": "city",
+          "start": 176.5,
+          "end": 176.86
+        },
+        {
+          "word": "is",
+          "start": 176.86,
+          "end": 177.32
+        },
+        {
+          "word": "around",
+          "start": 177.32,
+          "end": 177.82
+        },
+        {
+          "word": "9",
+          "start": 177.82,
+          "end": 178.48
+        },
+        {
+          "word": "degrees.",
+          "start": 178.48,
+          "end": 179.12
+        }
+      ]
+    },
+    {
+      "index": 52,
+      "startMs": 179480,
+      "endMs": 182840,
+      "text": "There's snow in my country, but not much.",
+      "words": [
+        {
+          "word": "There's",
+          "start": 179.48,
+          "end": 180.0
+        },
+        {
+          "word": "snow",
+          "start": 180.0,
+          "end": 180.38
+        },
+        {
+          "word": "in",
+          "start": 180.38,
+          "end": 180.6
+        },
+        {
+          "word": "my",
+          "start": 180.6,
+          "end": 180.92
+        },
+        {
+          "word": "country,",
+          "start": 180.92,
+          "end": 181.42
+        },
+        {
+          "word": "but",
+          "start": 181.48,
+          "end": 181.9
+        },
+        {
+          "word": "not",
+          "start": 181.9,
+          "end": 182.4
+        },
+        {
+          "word": "much.",
+          "start": 182.4,
+          "end": 182.84
+        }
+      ]
+    },
+    {
+      "index": 53,
+      "startMs": 183380,
+      "endMs": 184940,
+      "text": "But I love snow.",
+      "words": [
+        {
+          "word": "But",
+          "start": 183.38,
+          "end": 183.7
+        },
+        {
+          "word": "I",
+          "start": 183.7,
+          "end": 184.02
+        },
+        {
+          "word": "love",
+          "start": 184.02,
+          "end": 184.44
+        },
+        {
+          "word": "snow.",
+          "start": 184.44,
+          "end": 184.94
+        }
+      ]
+    },
+    {
+      "index": 54,
+      "startMs": 185820,
+      "endMs": 190260,
+      "text": "There's a shopping center here with snow inside it every day.",
+      "words": [
+        {
+          "word": "There's",
+          "start": 185.82,
+          "end": 186.16
+        },
+        {
+          "word": "a",
+          "start": 186.16,
+          "end": 186.44
+        },
+        {
+          "word": "shopping",
+          "start": 186.44,
+          "end": 186.68
+        },
+        {
+          "word": "center",
+          "start": 186.68,
+          "end": 187.1
+        },
+        {
+          "word": "here",
+          "start": 187.1,
+          "end": 187.44
+        },
+        {
+          "word": "with",
+          "start": 187.44,
+          "end": 187.74
+        },
+        {
+          "word": "snow",
+          "start": 187.74,
+          "end": 188.24
+        },
+        {
+          "word": "inside",
+          "start": 188.24,
+          "end": 188.8
+        },
+        {
+          "word": "it",
+          "start": 188.8,
+          "end": 189.26
+        },
+        {
+          "word": "every",
+          "start": 189.26,
+          "end": 189.76
+        },
+        {
+          "word": "day.",
+          "start": 189.76,
+          "end": 190.26
+        }
+      ]
+    },
+    {
+      "index": 55,
+      "startMs": 190920,
+      "endMs": 193540,
+      "text": "What? A shopping center?",
+      "words": [
+        {
+          "word": "What?",
+          "start": 190.92,
+          "end": 191.4
+        },
+        {
+          "word": "A",
+          "start": 192.04,
+          "end": 192.46
+        },
+        {
+          "word": "shopping",
+          "start": 192.46,
+          "end": 192.86
+        },
+        {
+          "word": "center?",
+          "start": 192.86,
+          "end": 193.54
+        }
+      ]
+    },
+    {
+      "index": 56,
+      "startMs": 194900,
+      "endMs": 197740,
+      "text": "Yes, I go there a lot.",
+      "words": [
+        {
+          "word": "Yes,",
+          "start": 194.9,
+          "end": 195.54
+        },
+        {
+          "word": "I",
+          "start": 196.24,
+          "end": 196.48
+        },
+        {
+          "word": "go",
+          "start": 196.48,
+          "end": 196.74
+        },
+        {
+          "word": "there",
+          "start": 196.74,
+          "end": 197.08
+        },
+        {
+          "word": "a",
+          "start": 197.08,
+          "end": 197.36
+        },
+        {
+          "word": "lot.",
+          "start": 197.36,
+          "end": 197.74
+        }
+      ]
+    },
+    {
+      "index": 57,
+      "startMs": 198320,
+      "endMs": 199840,
+      "text": "I can send you a photo.",
+      "words": [
+        {
+          "word": "I",
+          "start": 198.32,
+          "end": 198.48
+        },
+        {
+          "word": "can",
+          "start": 198.48,
+          "end": 198.8
+        },
+        {
+          "word": "send",
+          "start": 198.8,
+          "end": 199.04
+        },
+        {
+          "word": "you",
+          "start": 199.04,
+          "end": 199.26
+        },
+        {
+          "word": "a",
+          "start": 199.26,
+          "end": 199.46
+        },
+        {
+          "word": "photo.",
+          "start": 199.46,
+          "end": 199.84
+        }
+      ]
+    }
+  ],
+  "sanitization": {
+    "removedInvalidWordCount": 1,
+    "rule": "drop_word_when_end_lte_start_or_start_negative"
+  }
+}

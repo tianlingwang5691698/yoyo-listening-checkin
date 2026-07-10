@@ -1,0 +1,346 @@
+{
+  "model": "medium",
+  "language": "en",
+  "text": "2.7 1 Good morning everybody. 2 I'm going to talk about two photos of a place in spring. 3 Okay, so here's my first photo. 4 Hello everybody, I'm Altan. 5 I'm from Samsun. Samsun is in Turkey. 6 Here is another photo of the park.",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 2060,
+      "text": "2.7",
+      "words": [
+        {
+          "word": "2",
+          "start": 0.0,
+          "end": 0.48
+        },
+        {
+          "word": ".7",
+          "start": 0.48,
+          "end": 2.06
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 2640,
+      "endMs": 3620,
+      "text": "1",
+      "words": [
+        {
+          "word": "1",
+          "start": 2.64,
+          "end": 3.62
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 3620,
+      "endMs": 6260,
+      "text": "Good morning everybody.",
+      "words": [
+        {
+          "word": "Good",
+          "start": 3.62,
+          "end": 4.7
+        },
+        {
+          "word": "morning",
+          "start": 4.7,
+          "end": 5.34
+        },
+        {
+          "word": "everybody.",
+          "start": 5.34,
+          "end": 6.26
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 8380,
+      "endMs": 9080,
+      "text": "2",
+      "words": [
+        {
+          "word": "2",
+          "start": 8.38,
+          "end": 9.08
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 9080,
+      "endMs": 15560,
+      "text": "I'm going to talk about two photos of a place in spring.",
+      "words": [
+        {
+          "word": "I'm",
+          "start": 9.08,
+          "end": 10.28
+        },
+        {
+          "word": "going",
+          "start": 10.28,
+          "end": 10.56
+        },
+        {
+          "word": "to",
+          "start": 10.56,
+          "end": 11.16
+        },
+        {
+          "word": "talk",
+          "start": 11.16,
+          "end": 11.46
+        },
+        {
+          "word": "about",
+          "start": 11.46,
+          "end": 12.08
+        },
+        {
+          "word": "two",
+          "start": 12.08,
+          "end": 12.5
+        },
+        {
+          "word": "photos",
+          "start": 12.5,
+          "end": 13.26
+        },
+        {
+          "word": "of",
+          "start": 13.26,
+          "end": 14.0
+        },
+        {
+          "word": "a",
+          "start": 14.0,
+          "end": 14.22
+        },
+        {
+          "word": "place",
+          "start": 14.22,
+          "end": 14.6
+        },
+        {
+          "word": "in",
+          "start": 14.6,
+          "end": 15.1
+        },
+        {
+          "word": "spring.",
+          "start": 15.1,
+          "end": 15.56
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "startMs": 17500,
+      "endMs": 18400,
+      "text": "3",
+      "words": [
+        {
+          "word": "3",
+          "start": 17.5,
+          "end": 18.4
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "startMs": 19040,
+      "endMs": 22780,
+      "text": "Okay, so here's my first photo.",
+      "words": [
+        {
+          "word": "Okay,",
+          "start": 19.04,
+          "end": 19.7
+        },
+        {
+          "word": "so",
+          "start": 20.14,
+          "end": 20.76
+        },
+        {
+          "word": "here's",
+          "start": 20.76,
+          "end": 21.38
+        },
+        {
+          "word": "my",
+          "start": 21.38,
+          "end": 21.76
+        },
+        {
+          "word": "first",
+          "start": 21.76,
+          "end": 22.28
+        },
+        {
+          "word": "photo.",
+          "start": 22.28,
+          "end": 22.78
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "startMs": 24740,
+      "endMs": 25540,
+      "text": "4",
+      "words": [
+        {
+          "word": "4",
+          "start": 24.74,
+          "end": 25.54
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "startMs": 26120,
+      "endMs": 28420,
+      "text": "Hello everybody, I'm Altan.",
+      "words": [
+        {
+          "word": "Hello",
+          "start": 26.060000000000002,
+          "end": 26.68
+        },
+        {
+          "word": "everybody,",
+          "start": 26.68,
+          "end": 27.26
+        },
+        {
+          "word": "I'm",
+          "start": 27.64,
+          "end": 27.96
+        },
+        {
+          "word": "Altan.",
+          "start": 27.96,
+          "end": 28.42
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "startMs": 30400,
+      "endMs": 31120,
+      "text": "5",
+      "words": [
+        {
+          "word": "5",
+          "start": 30.4,
+          "end": 31.12
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "startMs": 32000,
+      "endMs": 35400,
+      "text": "I'm from Samsun. Samsun is in Turkey.",
+      "words": [
+        {
+          "word": "I'm",
+          "start": 32.0,
+          "end": 32.42
+        },
+        {
+          "word": "from",
+          "start": 32.42,
+          "end": 32.62
+        },
+        {
+          "word": "Samsun.",
+          "start": 32.62,
+          "end": 33.28
+        },
+        {
+          "word": "Samsun",
+          "start": 33.64,
+          "end": 34.26
+        },
+        {
+          "word": "is",
+          "start": 34.26,
+          "end": 34.62
+        },
+        {
+          "word": "in",
+          "start": 34.62,
+          "end": 34.88
+        },
+        {
+          "word": "Turkey.",
+          "start": 34.88,
+          "end": 35.4
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "startMs": 37400,
+      "endMs": 38060,
+      "text": "6",
+      "words": [
+        {
+          "word": "6",
+          "start": 37.4,
+          "end": 38.06
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "startMs": 38960,
+      "endMs": 40920,
+      "text": "Here is another photo of the park.",
+      "words": [
+        {
+          "word": "Here",
+          "start": 38.92,
+          "end": 39.28
+        },
+        {
+          "word": "is",
+          "start": 39.28,
+          "end": 39.62
+        },
+        {
+          "word": "another",
+          "start": 39.62,
+          "end": 39.94
+        },
+        {
+          "word": "photo",
+          "start": 39.94,
+          "end": 40.3
+        },
+        {
+          "word": "of",
+          "start": 40.3,
+          "end": 40.54
+        },
+        {
+          "word": "the",
+          "start": 40.54,
+          "end": 40.7
+        },
+        {
+          "word": "park.",
+          "start": 40.7,
+          "end": 40.92
+        }
+      ]
+    }
+  ]
+}

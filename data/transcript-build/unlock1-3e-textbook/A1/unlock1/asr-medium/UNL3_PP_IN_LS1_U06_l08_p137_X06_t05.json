@@ -1,0 +1,1956 @@
+{
+  "model": "medium",
+  "language": "en",
+  "text": "6.5 Thanks for the coffee Hakan. Very nice. Yes, it's good Turkish coffee. Okay then, should we start? Yes, I think so. Okay, so we need a place for our new office. What about here? Where? The city centre. What do you think? Well, it's a good place. It's near some good roads, but I don't think we should go there. Oh, why not? Because the buildings in the centre are very old. They're cold in winter and hot in summer, and they're very noisy. They're uncomfortable places. Oh, I see. That's not good. No, and the buildings there are expensive. Really? Yes. My sister's a lawyer and her office is in the centre. She likes her job, but she doesn't like her building. Okay, so not there then. What about here? The park? Yes. It's quiet and it's not far from a big road. What do you think? I'm not sure. It's pretty far from the centre. What about here? Near the train station? The train station is good. It's good for travel. But I think we should go with the park. The buildings near the train station aren't cheap. They're not? No, they're really expensive. Okay, let's go with the park. I'm happy with that. Now, what about the design? I think we should have a modern design with big windows. What about you? Yes, I agree. Big windows are good. What about the walls? What colour do you think we should paint the walls? What about blue? Blue's a good colour, but I'm not sure. Blue can make people feel cold. Yes, that's true. What about yellow? Because it's a warm and sunny colour. Yes, you're right. Yellow's a good colour. Okay, so what's next? Ah, okay, furniture. So, what do you think? Well, I think we should have modern desks and chairs. The desks can be made of metal and wood. Then we can have comfortable chairs. It will all be new and beautiful.",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 1840,
+      "text": "6.5",
+      "words": [
+        {
+          "word": "6",
+          "start": 0.0,
+          "end": 0.64
+        },
+        {
+          "word": ".5",
+          "start": 0.64,
+          "end": 1.84
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 2680,
+      "endMs": 6380,
+      "text": "Thanks for the coffee Hakan. Very nice.",
+      "words": [
+        {
+          "word": "Thanks",
+          "start": 2.6799999999999993,
+          "end": 3.48
+        },
+        {
+          "word": "for",
+          "start": 3.48,
+          "end": 3.72
+        },
+        {
+          "word": "the",
+          "start": 3.72,
+          "end": 3.92
+        },
+        {
+          "word": "coffee",
+          "start": 3.92,
+          "end": 4.28
+        },
+        {
+          "word": "Hakan.",
+          "start": 4.28,
+          "end": 4.84
+        },
+        {
+          "word": "Very",
+          "start": 5.5,
+          "end": 5.82
+        },
+        {
+          "word": "nice.",
+          "start": 5.82,
+          "end": 6.38
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 7060,
+      "endMs": 9620,
+      "text": "Yes, it's good Turkish coffee.",
+      "words": [
+        {
+          "word": "Yes,",
+          "start": 7.06,
+          "end": 7.46
+        },
+        {
+          "word": "it's",
+          "start": 7.72,
+          "end": 8.02
+        },
+        {
+          "word": "good",
+          "start": 8.02,
+          "end": 8.4
+        },
+        {
+          "word": "Turkish",
+          "start": 8.4,
+          "end": 9.04
+        },
+        {
+          "word": "coffee.",
+          "start": 9.04,
+          "end": 9.62
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 10540,
+      "endMs": 12860,
+      "text": "Okay then, should we start?",
+      "words": [
+        {
+          "word": "Okay",
+          "start": 10.54,
+          "end": 10.88
+        },
+        {
+          "word": "then,",
+          "start": 10.88,
+          "end": 11.42
+        },
+        {
+          "word": "should",
+          "start": 11.94,
+          "end": 12.18
+        },
+        {
+          "word": "we",
+          "start": 12.18,
+          "end": 12.5
+        },
+        {
+          "word": "start?",
+          "start": 12.5,
+          "end": 12.86
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 13360,
+      "endMs": 15160,
+      "text": "Yes, I think so.",
+      "words": [
+        {
+          "word": "Yes,",
+          "start": 13.36,
+          "end": 13.88
+        },
+        {
+          "word": "I",
+          "start": 13.88,
+          "end": 14.44
+        },
+        {
+          "word": "think",
+          "start": 14.44,
+          "end": 14.7
+        },
+        {
+          "word": "so.",
+          "start": 14.7,
+          "end": 15.16
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "startMs": 16140,
+      "endMs": 20480,
+      "text": "Okay, so we need a place for our new office.",
+      "words": [
+        {
+          "word": "Okay,",
+          "start": 16.14,
+          "end": 16.54
+        },
+        {
+          "word": "so",
+          "start": 17.12,
+          "end": 17.58
+        },
+        {
+          "word": "we",
+          "start": 17.58,
+          "end": 17.96
+        },
+        {
+          "word": "need",
+          "start": 17.96,
+          "end": 18.26
+        },
+        {
+          "word": "a",
+          "start": 18.26,
+          "end": 18.56
+        },
+        {
+          "word": "place",
+          "start": 18.56,
+          "end": 18.88
+        },
+        {
+          "word": "for",
+          "start": 18.88,
+          "end": 19.22
+        },
+        {
+          "word": "our",
+          "start": 19.22,
+          "end": 19.5
+        },
+        {
+          "word": "new",
+          "start": 19.5,
+          "end": 19.82
+        },
+        {
+          "word": "office.",
+          "start": 19.82,
+          "end": 20.48
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "startMs": 21400,
+      "endMs": 22520,
+      "text": "What about here?",
+      "words": [
+        {
+          "word": "What",
+          "start": 21.4,
+          "end": 21.74
+        },
+        {
+          "word": "about",
+          "start": 21.74,
+          "end": 22.1
+        },
+        {
+          "word": "here?",
+          "start": 22.1,
+          "end": 22.52
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "startMs": 23100,
+      "endMs": 23560,
+      "text": "Where?",
+      "words": [
+        {
+          "word": "Where?",
+          "start": 23.1,
+          "end": 23.56
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "startMs": 24260,
+      "endMs": 26860,
+      "text": "The city centre. What do you think?",
+      "words": [
+        {
+          "word": "The",
+          "start": 24.26,
+          "end": 24.5
+        },
+        {
+          "word": "city",
+          "start": 24.5,
+          "end": 24.84
+        },
+        {
+          "word": "centre.",
+          "start": 24.84,
+          "end": 25.28
+        },
+        {
+          "word": "What",
+          "start": 26.0,
+          "end": 26.26
+        },
+        {
+          "word": "do",
+          "start": 26.26,
+          "end": 26.44
+        },
+        {
+          "word": "you",
+          "start": 26.44,
+          "end": 26.62
+        },
+        {
+          "word": "think?",
+          "start": 26.62,
+          "end": 26.86
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "startMs": 26860,
+      "endMs": 35400,
+      "text": "Well, it's a good place. It's near some good roads, but I don't think we should go there.",
+      "words": [
+        {
+          "word": "Well,",
+          "start": 26.86,
+          "end": 27.8
+        },
+        {
+          "word": "it's",
+          "start": 28.36,
+          "end": 28.62
+        },
+        {
+          "word": "a",
+          "start": 28.62,
+          "end": 28.78
+        },
+        {
+          "word": "good",
+          "start": 28.78,
+          "end": 28.98
+        },
+        {
+          "word": "place.",
+          "start": 28.98,
+          "end": 29.64
+        },
+        {
+          "word": "It's",
+          "start": 30.26,
+          "end": 30.68
+        },
+        {
+          "word": "near",
+          "start": 30.68,
+          "end": 31.06
+        },
+        {
+          "word": "some",
+          "start": 31.06,
+          "end": 31.56
+        },
+        {
+          "word": "good",
+          "start": 31.56,
+          "end": 31.92
+        },
+        {
+          "word": "roads,",
+          "start": 31.92,
+          "end": 32.42
+        },
+        {
+          "word": "but",
+          "start": 32.9,
+          "end": 33.26
+        },
+        {
+          "word": "I",
+          "start": 33.26,
+          "end": 33.96
+        },
+        {
+          "word": "don't",
+          "start": 33.96,
+          "end": 34.2
+        },
+        {
+          "word": "think",
+          "start": 34.2,
+          "end": 34.34
+        },
+        {
+          "word": "we",
+          "start": 34.34,
+          "end": 34.5
+        },
+        {
+          "word": "should",
+          "start": 34.5,
+          "end": 34.64
+        },
+        {
+          "word": "go",
+          "start": 34.64,
+          "end": 34.9
+        },
+        {
+          "word": "there.",
+          "start": 34.9,
+          "end": 35.4
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "startMs": 35920,
+      "endMs": 37580,
+      "text": "Oh, why not?",
+      "words": [
+        {
+          "word": "Oh,",
+          "start": 35.92,
+          "end": 36.3
+        },
+        {
+          "word": "why",
+          "start": 36.94,
+          "end": 37.24
+        },
+        {
+          "word": "not?",
+          "start": 37.24,
+          "end": 37.58
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "startMs": 38460,
+      "endMs": 45640,
+      "text": "Because the buildings in the centre are very old. They're cold in winter and hot in summer,",
+      "words": [
+        {
+          "word": "Because",
+          "start": 38.46,
+          "end": 38.76
+        },
+        {
+          "word": "the",
+          "start": 38.76,
+          "end": 39.1
+        },
+        {
+          "word": "buildings",
+          "start": 39.1,
+          "end": 39.54
+        },
+        {
+          "word": "in",
+          "start": 39.54,
+          "end": 39.82
+        },
+        {
+          "word": "the",
+          "start": 39.82,
+          "end": 40.0
+        },
+        {
+          "word": "centre",
+          "start": 40.0,
+          "end": 40.28
+        },
+        {
+          "word": "are",
+          "start": 40.28,
+          "end": 40.74
+        },
+        {
+          "word": "very",
+          "start": 40.74,
+          "end": 41.12
+        },
+        {
+          "word": "old.",
+          "start": 41.12,
+          "end": 41.76
+        },
+        {
+          "word": "They're",
+          "start": 42.3,
+          "end": 42.76
+        },
+        {
+          "word": "cold",
+          "start": 42.76,
+          "end": 43.2
+        },
+        {
+          "word": "in",
+          "start": 43.2,
+          "end": 43.54
+        },
+        {
+          "word": "winter",
+          "start": 43.54,
+          "end": 43.9
+        },
+        {
+          "word": "and",
+          "start": 43.9,
+          "end": 44.56
+        },
+        {
+          "word": "hot",
+          "start": 44.56,
+          "end": 44.9
+        },
+        {
+          "word": "in",
+          "start": 44.9,
+          "end": 45.28
+        },
+        {
+          "word": "summer,",
+          "start": 45.28,
+          "end": 45.64
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "startMs": 45920,
+      "endMs": 50320,
+      "text": "and they're very noisy. They're uncomfortable places.",
+      "words": [
+        {
+          "word": "and",
+          "start": 45.92,
+          "end": 46.26
+        },
+        {
+          "word": "they're",
+          "start": 46.26,
+          "end": 46.66
+        },
+        {
+          "word": "very",
+          "start": 46.66,
+          "end": 47.16
+        },
+        {
+          "word": "noisy.",
+          "start": 47.16,
+          "end": 47.6
+        },
+        {
+          "word": "They're",
+          "start": 48.36,
+          "end": 48.96
+        },
+        {
+          "word": "uncomfortable",
+          "start": 48.96,
+          "end": 49.64
+        },
+        {
+          "word": "places.",
+          "start": 49.64,
+          "end": 50.32
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "startMs": 50900,
+      "endMs": 54260,
+      "text": "Oh, I see. That's not good.",
+      "words": [
+        {
+          "word": "Oh,",
+          "start": 50.9,
+          "end": 51.44
+        },
+        {
+          "word": "I",
+          "start": 51.44,
+          "end": 51.98
+        },
+        {
+          "word": "see.",
+          "start": 51.98,
+          "end": 52.42
+        },
+        {
+          "word": "That's",
+          "start": 53.04,
+          "end": 53.62
+        },
+        {
+          "word": "not",
+          "start": 53.62,
+          "end": 53.92
+        },
+        {
+          "word": "good.",
+          "start": 53.92,
+          "end": 54.26
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "startMs": 54260,
+      "endMs": 58560,
+      "text": "No, and the buildings there are expensive.",
+      "words": [
+        {
+          "word": "No,",
+          "start": 54.26,
+          "end": 55.02
+        },
+        {
+          "word": "and",
+          "start": 55.02,
+          "end": 55.76
+        },
+        {
+          "word": "the",
+          "start": 55.76,
+          "end": 56.12
+        },
+        {
+          "word": "buildings",
+          "start": 56.12,
+          "end": 56.62
+        },
+        {
+          "word": "there",
+          "start": 56.62,
+          "end": 57.1
+        },
+        {
+          "word": "are",
+          "start": 57.1,
+          "end": 57.58
+        },
+        {
+          "word": "expensive.",
+          "start": 57.58,
+          "end": 58.56
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "startMs": 59060,
+      "endMs": 59400,
+      "text": "Really?",
+      "words": [
+        {
+          "word": "Really?",
+          "start": 59.06,
+          "end": 59.4
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "startMs": 59900,
+      "endMs": 64800,
+      "text": "Yes. My sister's a lawyer and her office is in the centre.",
+      "words": [
+        {
+          "word": "Yes.",
+          "start": 59.9,
+          "end": 60.44
+        },
+        {
+          "word": "My",
+          "start": 60.92,
+          "end": 61.26
+        },
+        {
+          "word": "sister's",
+          "start": 61.26,
+          "end": 61.94
+        },
+        {
+          "word": "a",
+          "start": 61.94,
+          "end": 62.14
+        },
+        {
+          "word": "lawyer",
+          "start": 62.14,
+          "end": 62.48
+        },
+        {
+          "word": "and",
+          "start": 62.48,
+          "end": 63.12
+        },
+        {
+          "word": "her",
+          "start": 63.12,
+          "end": 63.5
+        },
+        {
+          "word": "office",
+          "start": 63.5,
+          "end": 63.88
+        },
+        {
+          "word": "is",
+          "start": 63.88,
+          "end": 64.14
+        },
+        {
+          "word": "in",
+          "start": 64.14,
+          "end": 64.3
+        },
+        {
+          "word": "the",
+          "start": 64.3,
+          "end": 64.44
+        },
+        {
+          "word": "centre.",
+          "start": 64.44,
+          "end": 64.8
+        }
+      ]
+    },
+    {
+      "index": 18,
+      "startMs": 65700,
+      "endMs": 68960,
+      "text": "She likes her job, but she doesn't like her building.",
+      "words": [
+        {
+          "word": "She",
+          "start": 65.7,
+          "end": 65.92
+        },
+        {
+          "word": "likes",
+          "start": 65.92,
+          "end": 66.24
+        },
+        {
+          "word": "her",
+          "start": 66.24,
+          "end": 66.54
+        },
+        {
+          "word": "job,",
+          "start": 66.54,
+          "end": 66.88
+        },
+        {
+          "word": "but",
+          "start": 67.12,
+          "end": 67.46
+        },
+        {
+          "word": "she",
+          "start": 67.46,
+          "end": 67.72
+        },
+        {
+          "word": "doesn't",
+          "start": 67.72,
+          "end": 67.98
+        },
+        {
+          "word": "like",
+          "start": 67.98,
+          "end": 68.24
+        },
+        {
+          "word": "her",
+          "start": 68.24,
+          "end": 68.56
+        },
+        {
+          "word": "building.",
+          "start": 68.56,
+          "end": 68.96
+        }
+      ]
+    },
+    {
+      "index": 19,
+      "startMs": 69840,
+      "endMs": 73060,
+      "text": "Okay, so not there then.",
+      "words": [
+        {
+          "word": "Okay,",
+          "start": 69.84,
+          "end": 70.6
+        },
+        {
+          "word": "so",
+          "start": 71.2,
+          "end": 71.82
+        },
+        {
+          "word": "not",
+          "start": 71.82,
+          "end": 72.18
+        },
+        {
+          "word": "there",
+          "start": 72.18,
+          "end": 72.5
+        },
+        {
+          "word": "then.",
+          "start": 72.5,
+          "end": 73.06
+        }
+      ]
+    },
+    {
+      "index": 20,
+      "startMs": 74520,
+      "endMs": 76120,
+      "text": "What about here?",
+      "words": [
+        {
+          "word": "What",
+          "start": 74.52000000000001,
+          "end": 75.28
+        },
+        {
+          "word": "about",
+          "start": 75.28,
+          "end": 75.72
+        },
+        {
+          "word": "here?",
+          "start": 75.72,
+          "end": 76.12
+        }
+      ]
+    },
+    {
+      "index": 21,
+      "startMs": 76600,
+      "endMs": 77240,
+      "text": "The park?",
+      "words": [
+        {
+          "word": "The",
+          "start": 76.6,
+          "end": 76.86
+        },
+        {
+          "word": "park?",
+          "start": 76.86,
+          "end": 77.24
+        }
+      ]
+    },
+    {
+      "index": 22,
+      "startMs": 77700,
+      "endMs": 83900,
+      "text": "Yes. It's quiet and it's not far from a big road. What do you think?",
+      "words": [
+        {
+          "word": "Yes.",
+          "start": 77.7,
+          "end": 78.28
+        },
+        {
+          "word": "It's",
+          "start": 78.76,
+          "end": 79.08
+        },
+        {
+          "word": "quiet",
+          "start": 79.08,
+          "end": 79.58
+        },
+        {
+          "word": "and",
+          "start": 79.58,
+          "end": 80.36
+        },
+        {
+          "word": "it's",
+          "start": 80.36,
+          "end": 80.66
+        },
+        {
+          "word": "not",
+          "start": 80.66,
+          "end": 80.96
+        },
+        {
+          "word": "far",
+          "start": 80.96,
+          "end": 81.34
+        },
+        {
+          "word": "from",
+          "start": 81.34,
+          "end": 81.54
+        },
+        {
+          "word": "a",
+          "start": 81.54,
+          "end": 81.76
+        },
+        {
+          "word": "big",
+          "start": 81.76,
+          "end": 81.96
+        },
+        {
+          "word": "road.",
+          "start": 81.96,
+          "end": 82.38
+        },
+        {
+          "word": "What",
+          "start": 83.06,
+          "end": 83.26
+        },
+        {
+          "word": "do",
+          "start": 83.26,
+          "end": 83.42
+        },
+        {
+          "word": "you",
+          "start": 83.42,
+          "end": 83.6
+        },
+        {
+          "word": "think?",
+          "start": 83.6,
+          "end": 83.9
+        }
+      ]
+    },
+    {
+      "index": 23,
+      "startMs": 84980,
+      "endMs": 93160,
+      "text": "I'm not sure. It's pretty far from the centre. What about here? Near the train station?",
+      "words": [
+        {
+          "word": "I'm",
+          "start": 84.98,
+          "end": 85.42
+        },
+        {
+          "word": "not",
+          "start": 85.42,
+          "end": 85.9
+        },
+        {
+          "word": "sure.",
+          "start": 85.9,
+          "end": 86.46
+        },
+        {
+          "word": "It's",
+          "start": 86.84,
+          "end": 87.28
+        },
+        {
+          "word": "pretty",
+          "start": 87.28,
+          "end": 87.78
+        },
+        {
+          "word": "far",
+          "start": 87.78,
+          "end": 88.28
+        },
+        {
+          "word": "from",
+          "start": 88.28,
+          "end": 88.62
+        },
+        {
+          "word": "the",
+          "start": 88.62,
+          "end": 88.9
+        },
+        {
+          "word": "centre.",
+          "start": 88.9,
+          "end": 89.3
+        },
+        {
+          "word": "What",
+          "start": 90.1,
+          "end": 90.48
+        },
+        {
+          "word": "about",
+          "start": 90.48,
+          "end": 90.78
+        },
+        {
+          "word": "here?",
+          "start": 90.78,
+          "end": 91.28
+        },
+        {
+          "word": "Near",
+          "start": 91.82,
+          "end": 92.16
+        },
+        {
+          "word": "the",
+          "start": 92.16,
+          "end": 92.58
+        },
+        {
+          "word": "train",
+          "start": 92.58,
+          "end": 92.78
+        },
+        {
+          "word": "station?",
+          "start": 92.78,
+          "end": 93.16
+        }
+      ]
+    },
+    {
+      "index": 24,
+      "startMs": 93860,
+      "endMs": 101280,
+      "text": "The train station is good. It's good for travel. But I think we should go with the park.",
+      "words": [
+        {
+          "word": "The",
+          "start": 93.86,
+          "end": 94.12
+        },
+        {
+          "word": "train",
+          "start": 94.12,
+          "end": 94.46
+        },
+        {
+          "word": "station",
+          "start": 94.46,
+          "end": 94.96
+        },
+        {
+          "word": "is",
+          "start": 94.96,
+          "end": 95.28
+        },
+        {
+          "word": "good.",
+          "start": 95.28,
+          "end": 95.68
+        },
+        {
+          "word": "It's",
+          "start": 96.12,
+          "end": 96.6
+        },
+        {
+          "word": "good",
+          "start": 96.6,
+          "end": 96.82
+        },
+        {
+          "word": "for",
+          "start": 96.82,
+          "end": 97.06
+        },
+        {
+          "word": "travel.",
+          "start": 97.06,
+          "end": 97.54
+        },
+        {
+          "word": "But",
+          "start": 98.22,
+          "end": 98.64
+        },
+        {
+          "word": "I",
+          "start": 98.64,
+          "end": 99.14
+        },
+        {
+          "word": "think",
+          "start": 99.14,
+          "end": 99.42
+        },
+        {
+          "word": "we",
+          "start": 99.42,
+          "end": 99.66
+        },
+        {
+          "word": "should",
+          "start": 99.66,
+          "end": 99.86
+        },
+        {
+          "word": "go",
+          "start": 99.86,
+          "end": 100.26
+        },
+        {
+          "word": "with",
+          "start": 100.26,
+          "end": 100.52
+        },
+        {
+          "word": "the",
+          "start": 100.52,
+          "end": 100.84
+        },
+        {
+          "word": "park.",
+          "start": 100.84,
+          "end": 101.28
+        }
+      ]
+    },
+    {
+      "index": 25,
+      "startMs": 102100,
+      "endMs": 105320,
+      "text": "The buildings near the train station aren't cheap.",
+      "words": [
+        {
+          "word": "The",
+          "start": 102.1,
+          "end": 102.34
+        },
+        {
+          "word": "buildings",
+          "start": 102.34,
+          "end": 102.82
+        },
+        {
+          "word": "near",
+          "start": 102.82,
+          "end": 103.26
+        },
+        {
+          "word": "the",
+          "start": 103.26,
+          "end": 103.58
+        },
+        {
+          "word": "train",
+          "start": 103.58,
+          "end": 103.88
+        },
+        {
+          "word": "station",
+          "start": 103.88,
+          "end": 104.36
+        },
+        {
+          "word": "aren't",
+          "start": 104.36,
+          "end": 104.88
+        },
+        {
+          "word": "cheap.",
+          "start": 104.88,
+          "end": 105.32
+        }
+      ]
+    },
+    {
+      "index": 26,
+      "startMs": 105740,
+      "endMs": 106500,
+      "text": "They're not?",
+      "words": [
+        {
+          "word": "They're",
+          "start": 105.74,
+          "end": 106.1
+        },
+        {
+          "word": "not?",
+          "start": 106.1,
+          "end": 106.5
+        }
+      ]
+    },
+    {
+      "index": 27,
+      "startMs": 106860,
+      "endMs": 109340,
+      "text": "No, they're really expensive.",
+      "words": [
+        {
+          "word": "No,",
+          "start": 106.86,
+          "end": 107.42
+        },
+        {
+          "word": "they're",
+          "start": 107.7,
+          "end": 108.12
+        },
+        {
+          "word": "really",
+          "start": 108.12,
+          "end": 108.6
+        },
+        {
+          "word": "expensive.",
+          "start": 108.6,
+          "end": 109.34
+        }
+      ]
+    },
+    {
+      "index": 28,
+      "startMs": 109340,
+      "endMs": 117040,
+      "text": "Okay, let's go with the park. I'm happy with that. Now, what about the design?",
+      "words": [
+        {
+          "word": "Okay,",
+          "start": 109.34,
+          "end": 110.4
+        },
+        {
+          "word": "let's",
+          "start": 110.92,
+          "end": 111.3
+        },
+        {
+          "word": "go",
+          "start": 111.3,
+          "end": 111.64
+        },
+        {
+          "word": "with",
+          "start": 111.64,
+          "end": 111.84
+        },
+        {
+          "word": "the",
+          "start": 111.84,
+          "end": 112.14
+        },
+        {
+          "word": "park.",
+          "start": 112.14,
+          "end": 112.5
+        },
+        {
+          "word": "I'm",
+          "start": 112.96,
+          "end": 113.48
+        },
+        {
+          "word": "happy",
+          "start": 113.48,
+          "end": 113.84
+        },
+        {
+          "word": "with",
+          "start": 113.84,
+          "end": 114.12
+        },
+        {
+          "word": "that.",
+          "start": 114.12,
+          "end": 114.42
+        },
+        {
+          "word": "Now,",
+          "start": 114.84,
+          "end": 115.4
+        },
+        {
+          "word": "what",
+          "start": 115.56,
+          "end": 115.8
+        },
+        {
+          "word": "about",
+          "start": 115.8,
+          "end": 116.22
+        },
+        {
+          "word": "the",
+          "start": 116.22,
+          "end": 116.48
+        },
+        {
+          "word": "design?",
+          "start": 116.48,
+          "end": 117.04
+        }
+      ]
+    },
+    {
+      "index": 29,
+      "startMs": 117540,
+      "endMs": 123140,
+      "text": "I think we should have a modern design with big windows. What about you?",
+      "words": [
+        {
+          "word": "I",
+          "start": 117.54,
+          "end": 117.74
+        },
+        {
+          "word": "think",
+          "start": 117.74,
+          "end": 118.0
+        },
+        {
+          "word": "we",
+          "start": 118.0,
+          "end": 118.18
+        },
+        {
+          "word": "should",
+          "start": 118.18,
+          "end": 118.38
+        },
+        {
+          "word": "have",
+          "start": 118.38,
+          "end": 118.8
+        },
+        {
+          "word": "a",
+          "start": 118.8,
+          "end": 119.06
+        },
+        {
+          "word": "modern",
+          "start": 119.06,
+          "end": 119.46
+        },
+        {
+          "word": "design",
+          "start": 119.46,
+          "end": 120.06
+        },
+        {
+          "word": "with",
+          "start": 120.06,
+          "end": 120.62
+        },
+        {
+          "word": "big",
+          "start": 120.62,
+          "end": 121.0
+        },
+        {
+          "word": "windows.",
+          "start": 121.0,
+          "end": 121.6
+        },
+        {
+          "word": "What",
+          "start": 122.2,
+          "end": 122.46
+        },
+        {
+          "word": "about",
+          "start": 122.46,
+          "end": 122.8
+        },
+        {
+          "word": "you?",
+          "start": 122.8,
+          "end": 123.14
+        }
+      ]
+    },
+    {
+      "index": 30,
+      "startMs": 123620,
+      "endMs": 132640,
+      "text": "Yes, I agree. Big windows are good. What about the walls? What colour do you think we should paint",
+      "words": [
+        {
+          "word": "Yes,",
+          "start": 123.62,
+          "end": 124.12
+        },
+        {
+          "word": "I",
+          "start": 124.12,
+          "end": 124.6
+        },
+        {
+          "word": "agree.",
+          "start": 124.6,
+          "end": 125.02
+        },
+        {
+          "word": "Big",
+          "start": 125.7,
+          "end": 125.96
+        },
+        {
+          "word": "windows",
+          "start": 125.96,
+          "end": 126.42
+        },
+        {
+          "word": "are",
+          "start": 126.42,
+          "end": 126.72
+        },
+        {
+          "word": "good.",
+          "start": 126.72,
+          "end": 127.04
+        },
+        {
+          "word": "What",
+          "start": 128.12,
+          "end": 128.5
+        },
+        {
+          "word": "about",
+          "start": 128.5,
+          "end": 128.86
+        },
+        {
+          "word": "the",
+          "start": 128.86,
+          "end": 129.22
+        },
+        {
+          "word": "walls?",
+          "start": 129.22,
+          "end": 129.8
+        },
+        {
+          "word": "What",
+          "start": 130.62,
+          "end": 130.86
+        },
+        {
+          "word": "colour",
+          "start": 130.86,
+          "end": 131.2
+        },
+        {
+          "word": "do",
+          "start": 131.2,
+          "end": 131.4
+        },
+        {
+          "word": "you",
+          "start": 131.4,
+          "end": 131.56
+        },
+        {
+          "word": "think",
+          "start": 131.56,
+          "end": 131.78
+        },
+        {
+          "word": "we",
+          "start": 131.78,
+          "end": 132.02
+        },
+        {
+          "word": "should",
+          "start": 132.02,
+          "end": 132.24
+        },
+        {
+          "word": "paint",
+          "start": 132.24,
+          "end": 132.64
+        }
+      ]
+    },
+    {
+      "index": 31,
+      "startMs": 132640,
+      "endMs": 133380,
+      "text": "the walls?",
+      "words": [
+        {
+          "word": "the",
+          "start": 132.64,
+          "end": 132.9
+        },
+        {
+          "word": "walls?",
+          "start": 132.9,
+          "end": 133.38
+        }
+      ]
+    },
+    {
+      "index": 32,
+      "startMs": 133980,
+      "endMs": 135900,
+      "text": "What about blue?",
+      "words": [
+        {
+          "word": "What",
+          "start": 133.98,
+          "end": 134.74
+        },
+        {
+          "word": "about",
+          "start": 134.74,
+          "end": 135.44
+        },
+        {
+          "word": "blue?",
+          "start": 135.44,
+          "end": 135.9
+        }
+      ]
+    },
+    {
+      "index": 33,
+      "startMs": 136460,
+      "endMs": 143400,
+      "text": "Blue's a good colour, but I'm not sure. Blue can make people feel cold.",
+      "words": [
+        {
+          "word": "Blue's",
+          "start": 136.46,
+          "end": 137.1
+        },
+        {
+          "word": "a",
+          "start": 137.1,
+          "end": 137.22
+        },
+        {
+          "word": "good",
+          "start": 137.22,
+          "end": 137.44
+        },
+        {
+          "word": "colour,",
+          "start": 137.44,
+          "end": 137.9
+        },
+        {
+          "word": "but",
+          "start": 138.3,
+          "end": 138.8
+        },
+        {
+          "word": "I'm",
+          "start": 138.8,
+          "end": 139.32
+        },
+        {
+          "word": "not",
+          "start": 139.32,
+          "end": 139.74
+        },
+        {
+          "word": "sure.",
+          "start": 139.74,
+          "end": 140.22
+        },
+        {
+          "word": "Blue",
+          "start": 141.0,
+          "end": 141.3
+        },
+        {
+          "word": "can",
+          "start": 141.3,
+          "end": 141.74
+        },
+        {
+          "word": "make",
+          "start": 141.74,
+          "end": 141.98
+        },
+        {
+          "word": "people",
+          "start": 141.98,
+          "end": 142.38
+        },
+        {
+          "word": "feel",
+          "start": 142.38,
+          "end": 142.76
+        },
+        {
+          "word": "cold.",
+          "start": 142.76,
+          "end": 143.4
+        }
+      ]
+    },
+    {
+      "index": 34,
+      "startMs": 144640,
+      "endMs": 151640,
+      "text": "Yes, that's true. What about yellow? Because it's a warm and sunny colour.",
+      "words": [
+        {
+          "word": "Yes,",
+          "start": 144.64,
+          "end": 145.32
+        },
+        {
+          "word": "that's",
+          "start": 145.42,
+          "end": 146.12
+        },
+        {
+          "word": "true.",
+          "start": 146.12,
+          "end": 146.58
+        },
+        {
+          "word": "What",
+          "start": 147.34,
+          "end": 147.54
+        },
+        {
+          "word": "about",
+          "start": 147.54,
+          "end": 147.98
+        },
+        {
+          "word": "yellow?",
+          "start": 147.98,
+          "end": 148.56
+        },
+        {
+          "word": "Because",
+          "start": 149.1,
+          "end": 149.54
+        },
+        {
+          "word": "it's",
+          "start": 149.54,
+          "end": 150.14
+        },
+        {
+          "word": "a",
+          "start": 150.14,
+          "end": 150.3
+        },
+        {
+          "word": "warm",
+          "start": 150.3,
+          "end": 150.56
+        },
+        {
+          "word": "and",
+          "start": 150.56,
+          "end": 150.92
+        },
+        {
+          "word": "sunny",
+          "start": 150.92,
+          "end": 151.18
+        },
+        {
+          "word": "colour.",
+          "start": 151.18,
+          "end": 151.64
+        }
+      ]
+    },
+    {
+      "index": 35,
+      "startMs": 152200,
+      "endMs": 163340,
+      "text": "Yes, you're right. Yellow's a good colour. Okay, so what's next? Ah, okay, furniture.",
+      "words": [
+        {
+          "word": "Yes,",
+          "start": 152.2,
+          "end": 152.86
+        },
+        {
+          "word": "you're",
+          "start": 153.0,
+          "end": 153.2
+        },
+        {
+          "word": "right.",
+          "start": 153.2,
+          "end": 153.72
+        },
+        {
+          "word": "Yellow's",
+          "start": 154.42,
+          "end": 155.08
+        },
+        {
+          "word": "a",
+          "start": 155.08,
+          "end": 155.22
+        },
+        {
+          "word": "good",
+          "start": 155.22,
+          "end": 155.42
+        },
+        {
+          "word": "colour.",
+          "start": 155.42,
+          "end": 155.84
+        },
+        {
+          "word": "Okay,",
+          "start": 156.58,
+          "end": 157.06
+        },
+        {
+          "word": "so",
+          "start": 157.84,
+          "end": 158.42
+        },
+        {
+          "word": "what's",
+          "start": 158.42,
+          "end": 159.06
+        },
+        {
+          "word": "next?",
+          "start": 159.06,
+          "end": 159.54
+        },
+        {
+          "word": "Ah,",
+          "start": 160.62,
+          "end": 160.88
+        },
+        {
+          "word": "okay,",
+          "start": 161.4,
+          "end": 162.06
+        },
+        {
+          "word": "furniture.",
+          "start": 162.66,
+          "end": 163.34
+        }
+      ]
+    },
+    {
+      "index": 36,
+      "startMs": 164300,
+      "endMs": 166140,
+      "text": "So, what do you think?",
+      "words": [
+        {
+          "word": "So,",
+          "start": 164.3,
+          "end": 164.78
+        },
+        {
+          "word": "what",
+          "start": 165.22,
+          "end": 165.44
+        },
+        {
+          "word": "do",
+          "start": 165.44,
+          "end": 165.6
+        },
+        {
+          "word": "you",
+          "start": 165.6,
+          "end": 165.84
+        },
+        {
+          "word": "think?",
+          "start": 165.84,
+          "end": 166.14
+        }
+      ]
+    },
+    {
+      "index": 37,
+      "startMs": 166620,
+      "endMs": 174440,
+      "text": "Well, I think we should have modern desks and chairs. The desks can be made of metal and wood.",
+      "words": [
+        {
+          "word": "Well,",
+          "start": 166.62,
+          "end": 167.08
+        },
+        {
+          "word": "I",
+          "start": 167.34,
+          "end": 167.62
+        },
+        {
+          "word": "think",
+          "start": 167.62,
+          "end": 167.84
+        },
+        {
+          "word": "we",
+          "start": 167.84,
+          "end": 168.02
+        },
+        {
+          "word": "should",
+          "start": 168.02,
+          "end": 168.18
+        },
+        {
+          "word": "have",
+          "start": 168.18,
+          "end": 168.6
+        },
+        {
+          "word": "modern",
+          "start": 168.6,
+          "end": 169.06
+        },
+        {
+          "word": "desks",
+          "start": 169.06,
+          "end": 169.6
+        },
+        {
+          "word": "and",
+          "start": 169.6,
+          "end": 169.88
+        },
+        {
+          "word": "chairs.",
+          "start": 169.88,
+          "end": 170.38
+        },
+        {
+          "word": "The",
+          "start": 171.08,
+          "end": 171.26
+        },
+        {
+          "word": "desks",
+          "start": 171.26,
+          "end": 171.98
+        },
+        {
+          "word": "can",
+          "start": 171.98,
+          "end": 172.24
+        },
+        {
+          "word": "be",
+          "start": 172.24,
+          "end": 172.5
+        },
+        {
+          "word": "made",
+          "start": 172.5,
+          "end": 172.84
+        },
+        {
+          "word": "of",
+          "start": 172.84,
+          "end": 173.26
+        },
+        {
+          "word": "metal",
+          "start": 173.26,
+          "end": 173.7
+        },
+        {
+          "word": "and",
+          "start": 173.7,
+          "end": 174.14
+        },
+        {
+          "word": "wood.",
+          "start": 174.14,
+          "end": 174.44
+        }
+      ]
+    },
+    {
+      "index": 38,
+      "startMs": 175240,
+      "endMs": 181360,
+      "text": "Then we can have comfortable chairs. It will all be new and beautiful.",
+      "words": [
+        {
+          "word": "Then",
+          "start": 175.24,
+          "end": 175.64
+        },
+        {
+          "word": "we",
+          "start": 175.64,
+          "end": 176.28
+        },
+        {
+          "word": "can",
+          "start": 176.28,
+          "end": 176.52
+        },
+        {
+          "word": "have",
+          "start": 176.52,
+          "end": 176.9
+        },
+        {
+          "word": "comfortable",
+          "start": 176.9,
+          "end": 177.52
+        },
+        {
+          "word": "chairs.",
+          "start": 177.52,
+          "end": 178.08
+        },
+        {
+          "word": "It",
+          "start": 179.06,
+          "end": 179.28
+        },
+        {
+          "word": "will",
+          "start": 179.28,
+          "end": 179.48
+        },
+        {
+          "word": "all",
+          "start": 179.48,
+          "end": 179.76
+        },
+        {
+          "word": "be",
+          "start": 179.76,
+          "end": 180.0
+        },
+        {
+          "word": "new",
+          "start": 180.0,
+          "end": 180.36
+        },
+        {
+          "word": "and",
+          "start": 180.36,
+          "end": 180.86
+        },
+        {
+          "word": "beautiful.",
+          "start": 180.86,
+          "end": 181.36
+        }
+      ]
+    }
+  ]
+}

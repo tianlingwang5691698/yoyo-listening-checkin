@@ -1,0 +1,307 @@
+{
+  "model": "medium",
+  "language": "en",
+  "text": "5.4 1. I have to work at the weekend 2. I have two jobs 3. I don't have to get up early every day 4. My teacher doesn't have to work in the summer 5. My teacher has to speak English 6. My teacher has a university degree",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 1940,
+      "text": "5.4",
+      "words": [
+        {
+          "word": "5",
+          "start": 0.0,
+          "end": 0.66
+        },
+        {
+          "word": ".4",
+          "start": 0.66,
+          "end": 1.94
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 1940,
+      "endMs": 6180,
+      "text": "1. I have to work at the weekend",
+      "words": [
+        {
+          "word": "1.",
+          "start": 1.94,
+          "end": 3.04
+        },
+        {
+          "word": "have",
+          "start": 4.28,
+          "end": 4.56
+        },
+        {
+          "word": "to",
+          "start": 4.56,
+          "end": 4.88
+        },
+        {
+          "word": "work",
+          "start": 4.88,
+          "end": 5.14
+        },
+        {
+          "word": "at",
+          "start": 5.14,
+          "end": 5.38
+        },
+        {
+          "word": "the",
+          "start": 5.38,
+          "end": 5.58
+        },
+        {
+          "word": "weekend",
+          "start": 5.58,
+          "end": 6.18
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 7820,
+      "endMs": 10880,
+      "text": "2. I have two jobs",
+      "words": [
+        {
+          "word": "2.",
+          "start": 7.820000000000002,
+          "end": 8.58
+        },
+        {
+          "word": "I",
+          "start": 9.54,
+          "end": 9.9
+        },
+        {
+          "word": "have",
+          "start": 9.9,
+          "end": 10.24
+        },
+        {
+          "word": "two",
+          "start": 10.24,
+          "end": 10.62
+        },
+        {
+          "word": "jobs",
+          "start": 10.62,
+          "end": 10.999999999999998
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 13100,
+      "endMs": 17260,
+      "text": "3. I don't have to get up early every day",
+      "words": [
+        {
+          "word": "3.",
+          "start": 13.100000000000001,
+          "end": 13.86
+        },
+        {
+          "word": "I",
+          "start": 14.82,
+          "end": 15.26
+        },
+        {
+          "word": "don't",
+          "start": 15.26,
+          "end": 15.58
+        },
+        {
+          "word": "have",
+          "start": 15.58,
+          "end": 15.86
+        },
+        {
+          "word": "to",
+          "start": 15.86,
+          "end": 16.02
+        },
+        {
+          "word": "get",
+          "start": 16.02,
+          "end": 16.12
+        },
+        {
+          "word": "up",
+          "start": 16.12,
+          "end": 16.36
+        },
+        {
+          "word": "early",
+          "start": 16.36,
+          "end": 16.74
+        },
+        {
+          "word": "every",
+          "start": 16.74,
+          "end": 17.18
+        },
+        {
+          "word": "day",
+          "start": 17.18,
+          "end": 17.56
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 19480,
+      "endMs": 23960,
+      "text": "4. My teacher doesn't have to work in the summer",
+      "words": [
+        {
+          "word": "4.",
+          "start": 19.48,
+          "end": 20.24
+        },
+        {
+          "word": "My",
+          "start": 21.18,
+          "end": 21.52
+        },
+        {
+          "word": "teacher",
+          "start": 21.52,
+          "end": 22.08
+        },
+        {
+          "word": "doesn't",
+          "start": 22.08,
+          "end": 22.5
+        },
+        {
+          "word": "have",
+          "start": 22.5,
+          "end": 22.84
+        },
+        {
+          "word": "to",
+          "start": 22.84,
+          "end": 23.12
+        },
+        {
+          "word": "work",
+          "start": 23.12,
+          "end": 23.44
+        },
+        {
+          "word": "in",
+          "start": 23.44,
+          "end": 23.66
+        },
+        {
+          "word": "the",
+          "start": 23.66,
+          "end": 23.86
+        },
+        {
+          "word": "summer",
+          "start": 23.86,
+          "end": 24.24
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "startMs": 26220,
+      "endMs": 29980,
+      "text": "5. My teacher has to speak English",
+      "words": [
+        {
+          "word": "5.",
+          "start": 26.220000000000002,
+          "end": 26.98
+        },
+        {
+          "word": "My",
+          "start": 27.98,
+          "end": 28.38
+        },
+        {
+          "word": "teacher",
+          "start": 28.38,
+          "end": 28.82
+        },
+        {
+          "word": "has",
+          "start": 28.82,
+          "end": 29.1
+        },
+        {
+          "word": "to",
+          "start": 29.1,
+          "end": 29.4
+        },
+        {
+          "word": "speak",
+          "start": 29.4,
+          "end": 29.6
+        },
+        {
+          "word": "English",
+          "start": 29.6,
+          "end": 29.98
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "startMs": 31580,
+      "endMs": 36760,
+      "text": "6. My teacher has a university degree",
+      "words": [
+        {
+          "word": "6.",
+          "start": 31.58,
+          "end": 32.82
+        },
+        {
+          "word": "My",
+          "start": 34.06,
+          "end": 34.2
+        },
+        {
+          "word": "teacher",
+          "start": 34.2,
+          "end": 34.78
+        },
+        {
+          "word": "has",
+          "start": 34.78,
+          "end": 35.14
+        },
+        {
+          "word": "a",
+          "start": 35.14,
+          "end": 35.36
+        },
+        {
+          "word": "university",
+          "start": 35.36,
+          "end": 36.1
+        },
+        {
+          "word": "degree",
+          "start": 36.1,
+          "end": 36.76
+        }
+      ]
+    }
+  ],
+  "sanitization": {
+    "removedInvalidWordCount": 1,
+    "rule": "drop_word_when_end_lte_start_or_start_negative"
+  }
+}

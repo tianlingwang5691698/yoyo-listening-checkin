@@ -1,0 +1,419 @@
+{
+  "model": "medium",
+  "language": "en",
+  "text": "7.5 Hello, I'm Noora. Today, I'm going to tell you about the results of my survey. My questions were on the topic of eating meat. A lot of people in the past liked to eat meat. Is this still the same? Or do we want to eat more food that comes from plants? I think this is an interesting topic. There were three questions in my survey.",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 2300,
+      "text": "7.5",
+      "words": [
+        {
+          "word": "7",
+          "start": 0.0,
+          "end": 0.68
+        },
+        {
+          "word": ".5",
+          "start": 0.68,
+          "end": 2.3
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 2880,
+      "endMs": 5120,
+      "text": "Hello, I'm Noora.",
+      "words": [
+        {
+          "word": "Hello,",
+          "start": 2.88,
+          "end": 3.5
+        },
+        {
+          "word": "I'm",
+          "start": 3.94,
+          "end": 4.36
+        },
+        {
+          "word": "Noora.",
+          "start": 4.36,
+          "end": 5.12
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 5420,
+      "endMs": 9700,
+      "text": "Today, I'm going to tell you about the results of my survey.",
+      "words": [
+        {
+          "word": "Today,",
+          "start": 5.42,
+          "end": 5.92
+        },
+        {
+          "word": "I'm",
+          "start": 6.2,
+          "end": 6.58
+        },
+        {
+          "word": "going",
+          "start": 6.58,
+          "end": 6.74
+        },
+        {
+          "word": "to",
+          "start": 6.74,
+          "end": 6.96
+        },
+        {
+          "word": "tell",
+          "start": 6.96,
+          "end": 7.16
+        },
+        {
+          "word": "you",
+          "start": 7.16,
+          "end": 7.56
+        },
+        {
+          "word": "about",
+          "start": 7.56,
+          "end": 7.88
+        },
+        {
+          "word": "the",
+          "start": 7.88,
+          "end": 8.14
+        },
+        {
+          "word": "results",
+          "start": 8.14,
+          "end": 8.56
+        },
+        {
+          "word": "of",
+          "start": 8.56,
+          "end": 8.86
+        },
+        {
+          "word": "my",
+          "start": 8.86,
+          "end": 9.16
+        },
+        {
+          "word": "survey.",
+          "start": 9.16,
+          "end": 9.7
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 10540,
+      "endMs": 13940,
+      "text": "My questions were on the topic of eating meat.",
+      "words": [
+        {
+          "word": "My",
+          "start": 10.54,
+          "end": 10.78
+        },
+        {
+          "word": "questions",
+          "start": 10.78,
+          "end": 11.44
+        },
+        {
+          "word": "were",
+          "start": 11.44,
+          "end": 11.88
+        },
+        {
+          "word": "on",
+          "start": 11.88,
+          "end": 12.12
+        },
+        {
+          "word": "the",
+          "start": 12.12,
+          "end": 12.36
+        },
+        {
+          "word": "topic",
+          "start": 12.36,
+          "end": 12.78
+        },
+        {
+          "word": "of",
+          "start": 12.78,
+          "end": 13.2
+        },
+        {
+          "word": "eating",
+          "start": 13.2,
+          "end": 13.54
+        },
+        {
+          "word": "meat.",
+          "start": 13.54,
+          "end": 13.94
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 14760,
+      "endMs": 18320,
+      "text": "A lot of people in the past liked to eat meat.",
+      "words": [
+        {
+          "word": "A",
+          "start": 14.76,
+          "end": 14.96
+        },
+        {
+          "word": "lot",
+          "start": 14.96,
+          "end": 15.16
+        },
+        {
+          "word": "of",
+          "start": 15.16,
+          "end": 15.38
+        },
+        {
+          "word": "people",
+          "start": 15.38,
+          "end": 15.74
+        },
+        {
+          "word": "in",
+          "start": 15.74,
+          "end": 15.94
+        },
+        {
+          "word": "the",
+          "start": 15.94,
+          "end": 16.24
+        },
+        {
+          "word": "past",
+          "start": 16.24,
+          "end": 16.78
+        },
+        {
+          "word": "liked",
+          "start": 16.78,
+          "end": 17.3
+        },
+        {
+          "word": "to",
+          "start": 17.3,
+          "end": 17.7
+        },
+        {
+          "word": "eat",
+          "start": 17.7,
+          "end": 17.88
+        },
+        {
+          "word": "meat.",
+          "start": 17.88,
+          "end": 18.32
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "startMs": 18820,
+      "endMs": 20640,
+      "text": "Is this still the same?",
+      "words": [
+        {
+          "word": "Is",
+          "start": 18.82,
+          "end": 19.38
+        },
+        {
+          "word": "this",
+          "start": 19.38,
+          "end": 19.7
+        },
+        {
+          "word": "still",
+          "start": 19.7,
+          "end": 20.08
+        },
+        {
+          "word": "the",
+          "start": 20.08,
+          "end": 20.36
+        },
+        {
+          "word": "same?",
+          "start": 20.36,
+          "end": 20.64
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "startMs": 21320,
+      "endMs": 25360,
+      "text": "Or do we want to eat more food that comes from plants?",
+      "words": [
+        {
+          "word": "Or",
+          "start": 21.32,
+          "end": 21.76
+        },
+        {
+          "word": "do",
+          "start": 21.76,
+          "end": 22.18
+        },
+        {
+          "word": "we",
+          "start": 22.18,
+          "end": 22.34
+        },
+        {
+          "word": "want",
+          "start": 22.34,
+          "end": 22.62
+        },
+        {
+          "word": "to",
+          "start": 22.62,
+          "end": 22.82
+        },
+        {
+          "word": "eat",
+          "start": 22.82,
+          "end": 22.96
+        },
+        {
+          "word": "more",
+          "start": 22.96,
+          "end": 23.32
+        },
+        {
+          "word": "food",
+          "start": 23.32,
+          "end": 23.8
+        },
+        {
+          "word": "that",
+          "start": 23.8,
+          "end": 24.12
+        },
+        {
+          "word": "comes",
+          "start": 24.12,
+          "end": 24.44
+        },
+        {
+          "word": "from",
+          "start": 24.44,
+          "end": 24.86
+        },
+        {
+          "word": "plants?",
+          "start": 24.86,
+          "end": 25.36
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "startMs": 26040,
+      "endMs": 29100,
+      "text": "I think this is an interesting topic.",
+      "words": [
+        {
+          "word": "I",
+          "start": 26.04,
+          "end": 26.46
+        },
+        {
+          "word": "think",
+          "start": 26.46,
+          "end": 26.86
+        },
+        {
+          "word": "this",
+          "start": 26.86,
+          "end": 27.34
+        },
+        {
+          "word": "is",
+          "start": 27.34,
+          "end": 27.62
+        },
+        {
+          "word": "an",
+          "start": 27.62,
+          "end": 27.9
+        },
+        {
+          "word": "interesting",
+          "start": 27.9,
+          "end": 28.52
+        },
+        {
+          "word": "topic.",
+          "start": 28.52,
+          "end": 29.1
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "startMs": 30120,
+      "endMs": 33320,
+      "text": "There were three questions in my survey.",
+      "words": [
+        {
+          "word": "There",
+          "start": 30.12,
+          "end": 30.94
+        },
+        {
+          "word": "were",
+          "start": 30.94,
+          "end": 31.24
+        },
+        {
+          "word": "three",
+          "start": 31.24,
+          "end": 31.64
+        },
+        {
+          "word": "questions",
+          "start": 31.64,
+          "end": 32.3
+        },
+        {
+          "word": "in",
+          "start": 32.3,
+          "end": 32.6
+        },
+        {
+          "word": "my",
+          "start": 32.6,
+          "end": 32.9
+        },
+        {
+          "word": "survey.",
+          "start": 32.9,
+          "end": 33.32
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,208 @@
+{
+  "model": "medium",
+  "language": "en",
+  "text": "Unit 6, 6.1 1. An author of many books. 2. I help architects. 3. For example... 4. Good ideas. 5. Restaurants in London. 6. What about the UK?",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 4280,
+      "text": "Unit 6, 6.1",
+      "words": [
+        {
+          "word": "Unit",
+          "start": 0.0,
+          "end": 0.64
+        },
+        {
+          "word": "6,",
+          "start": 0.64,
+          "end": 1.72
+        },
+        {
+          "word": "6",
+          "start": 2.5,
+          "end": 2.7
+        },
+        {
+          "word": ".1",
+          "start": 2.7,
+          "end": 4.28
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 4280,
+      "endMs": 8860,
+      "text": "1. An author of many books.",
+      "words": [
+        {
+          "word": "1.",
+          "start": 4.28,
+          "end": 5.72
+        },
+        {
+          "word": "An",
+          "start": 6.82,
+          "end": 6.9
+        },
+        {
+          "word": "author",
+          "start": 6.9,
+          "end": 7.36
+        },
+        {
+          "word": "of",
+          "start": 7.36,
+          "end": 7.8
+        },
+        {
+          "word": "many",
+          "start": 7.8,
+          "end": 8.1
+        },
+        {
+          "word": "books.",
+          "start": 8.1,
+          "end": 8.86
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 11480,
+      "endMs": 14680,
+      "text": "2. I help architects.",
+      "words": [
+        {
+          "word": "2.",
+          "start": 11.48,
+          "end": 11.98
+        },
+        {
+          "word": "I",
+          "start": 13.1,
+          "end": 13.46
+        },
+        {
+          "word": "help",
+          "start": 13.46,
+          "end": 13.76
+        },
+        {
+          "word": "architects.",
+          "start": 13.76,
+          "end": 14.68
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 17260,
+      "endMs": 22520,
+      "text": "3. For example...",
+      "words": [
+        {
+          "word": "3.",
+          "start": 17.26,
+          "end": 18.18
+        },
+        {
+          "word": "For",
+          "start": 19.28,
+          "end": 19.54
+        },
+        {
+          "word": "example...",
+          "start": 19.54,
+          "end": 22.52
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 22520,
+      "endMs": 25980,
+      "text": "4. Good ideas.",
+      "words": [
+        {
+          "word": "4.",
+          "start": 22.52,
+          "end": 23.76
+        },
+        {
+          "word": "Good",
+          "start": 24.86,
+          "end": 25.22
+        },
+        {
+          "word": "ideas.",
+          "start": 25.22,
+          "end": 25.98
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "startMs": 27740,
+      "endMs": 32200,
+      "text": "5. Restaurants in London.",
+      "words": [
+        {
+          "word": "5.",
+          "start": 27.740000000000002,
+          "end": 29.14
+        },
+        {
+          "word": "Restaurants",
+          "start": 30.9,
+          "end": 31.28
+        },
+        {
+          "word": "in",
+          "start": 31.28,
+          "end": 31.48
+        },
+        {
+          "word": "London.",
+          "start": 31.48,
+          "end": 32.2
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "startMs": 34660,
+      "endMs": 37980,
+      "text": "6. What about the UK?",
+      "words": [
+        {
+          "word": "6.",
+          "start": 34.66,
+          "end": 35.48
+        },
+        {
+          "word": "What",
+          "start": 36.64,
+          "end": 36.86
+        },
+        {
+          "word": "about",
+          "start": 36.86,
+          "end": 37.26
+        },
+        {
+          "word": "the",
+          "start": 37.26,
+          "end": 37.54
+        },
+        {
+          "word": "UK?",
+          "start": 37.54,
+          "end": 37.98
+        }
+      ]
+    }
+  ]
+}
