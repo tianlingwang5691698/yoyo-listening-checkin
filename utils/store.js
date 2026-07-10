@@ -470,7 +470,12 @@ async function ensureState() {
  */
 async function getDashboard(options, onRefresh) {
   const payload = Object.assign({}, options || {});
-  return callCloud('getDashboard', payload.view === 'home' || payload.view === 'record' ? withSelectedStudent(payload) : payload, contracts.createDashboardDefaults(), { onRefresh });
+  const forceRefresh = payload.forceRefresh === true;
+  delete payload.forceRefresh;
+  return callCloud('getDashboard', payload.view === 'home' || payload.view === 'record' ? withSelectedStudent(payload) : payload, contracts.createDashboardDefaults(), {
+    onRefresh,
+    useCache: !forceRefresh
+  });
 }
 
 async function getMaterialIndex(options, onRefresh) {

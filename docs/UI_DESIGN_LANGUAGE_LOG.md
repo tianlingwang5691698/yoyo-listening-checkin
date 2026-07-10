@@ -205,6 +205,14 @@
 - 每条必须写清楚：板块、文件、改动、设计记录、验证。
 - 后续改 UI 或交互前先看对应板块最近记录，再继续改。
 
+### 2026-07-10 首页今日听力真实时长
+
+- 板块：首页
+- 文件：`pages/home/index.js`、`utils/store.js`、`cloudfunctions/yoyo/services/dashboard.service.js`、`cloudfunctions/yoyo/services/shared.service.js`、`cloudfunctions/yoyo/lib/dashboard-engine.js`、`docs/PAGE_LOADING_QUALITY_STANDARD.md`
+- 改动：首页每次显示时强制刷新 dashboard；完成分钟改用云端当日日报 `totalMinutes`，目标分钟改用当日日报任务快照计算，不再读已打卡后的下一计划日。
+- 设计记录：分母仍表示今日计划时长，分子表示已完成的真实音频时长，超额完成可显示大于目标值。
+- 验证：本次提交基线云函数 74 项测试全部通过，JS 语法和 diff 检查通过；线上 317613 当日日报实测目标与完成均为 31 分钟。
+
 ### 2026-07-10 首页学习报告真实统计恢复
 
 - 板块：首页

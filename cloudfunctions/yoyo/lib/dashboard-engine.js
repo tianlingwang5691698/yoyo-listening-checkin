@@ -122,6 +122,17 @@ function buildHomeTaskGroups(dailyTasks, planDayIndex, deps, categoryOrder) {
   }).filter(Boolean);
 }
 
+function getReportGoalMinutes(report) {
+  const items = report && Array.isArray(report.items) ? report.items : [];
+  const durations = items.map((item) => {
+    const snapshot = item.taskSnapshot || {};
+    const durationSec = Number(snapshot.durationSec || item.durationSec || 0);
+    const repeatTarget = Number(item.repeatTarget || snapshot.repeatTarget || 1);
+    return durationSec > 0 ? Math.round((durationSec * repeatTarget) / 60) : 0;
+  }).filter((minutes) => minutes > 0);
+  return durations.length ? durations.reduce((sum, minutes) => sum + minutes, 0) : null;
+}
+
 async function getDashboardData(ctx, deps, options = {}) {
   const perfStartedAt = Date.now();
   const perfDebug = options.includePerfDebug ? {
@@ -146,13 +157,17 @@ async function getDashboardData(ctx, deps, options = {}) {
   const includeFamily = options.includeFamily !== false;
   const includeStats = options.includeStats !== false;
   const includeChildStats = options.includeChildStats !== false;
+  const includeTodayListeningMinutes = !!options.includeTodayListeningMinutes;
   const today = deps.getTodayString();
   const scope = deps.getUserScope(ctx);
   markPerf('setup', perfStartedAt);
   const recordsStartedAt = Date.now();
-  let [progressRecords, checkins] = await Promise.all([
+  let [progressRecords, checkins, todayReport] = await Promise.all([
     deps.getChildProgressRecords(scope),
-    deps.getCheckins(scope)
+    deps.getCheckins(scope),
+    includeTodayListeningMinutes && deps.getDailyReport
+      ? deps.getDailyReport(scope, today)
+      : null
   ]);
   markPerf('records', recordsStartedAt);
   if (options.reconcileCheckins !== false && deps.reconcileCheckins) {
@@ -284,6 +299,10 @@ async function getDashboardData(ctx, deps, options = {}) {
     needsListeningPlanSetup: !hasListeningPlan,
     isYoyoFixedPlan: useFixedYoyoPlan
   };
+  if (includeTodayListeningMinutes) {
+    result.todayListeningMinutes = todayReport ? Number(todayReport.totalMinutes || 0) : null;
+    result.todayListeningGoalMinutes = getReportGoalMinutes(todayReport);
+  }
   if (includeUser) {
     result.user = ctx.user;
     result.currentUser = ctx.user;

@@ -141,6 +141,8 @@ function createDashboardDefaults() {
     categorySummaries: [],
     activeTaskCount: 0,
     completedTaskCountToday: 0,
+    todayListeningMinutes: null,
+    todayListeningGoalMinutes: null,
     allDailyDone: false,
     catchupState: createCatchupStateDefaults()
   };

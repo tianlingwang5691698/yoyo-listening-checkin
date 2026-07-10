@@ -184,3 +184,12 @@
 4. 结论：完成页先读本机缓存 `todayCompletedItemsV1`，缓存没有按 `targetChildId/date` 隔离；同时首页“今日任务”的查看记录是听力入口，但完成页会展示 `getStudyCompletions` 返回的 `vocabulary/listening-study`。
 5. 修复：首页写入带 `date + target` 的完成缓存，并带 `scope=listening` 进入完成页；写入缓存和完成页过滤都只保留 `type=listening/speaking + category + taskId` 的播放任务；学习包、词汇、阅读记录放到记录/日报，不进入今日任务完成页；缺缓存时在页面 debug 区写出缓存链路断点。
 6. 是否需要发版：前端改动，需要发布小程序。
+
+### 2026-07-10 首页今日目标长时间不更新
+
+1. 现象：首页显示 25/25 分钟，与当日真实听力记录不符。
+2. 账号：317613。
+3. 查询：`dailyTaskProgress` 当日 11 条全完成；`dailyCheckins` 已打卡；`dailyReports.totalMinutes=31`，任务快照目标合计也为 31 分钟。
+4. 结论：首页 `getDashboard` 可命中 7 天持久缓存；已打卡后 dashboard 的任务分组已切到下一计划日，且前端将完成分钟封顶到目标值。
+5. 修复：首页每次 `onShow` 强制刷新 dashboard；完成分钟读当日日报，目标分钟读当日日报任务快照。
+6. 是否需要发版：需部署 `yoyo` 云函数，并重新发布小程序前端。

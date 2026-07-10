@@ -180,11 +180,21 @@ function formatHoursFromMinutes(minutes) {
 
 function buildHomeVisualMetrics(groupedDailyTasks, options = {}) {
   const stats = options.stats || {};
-  const goalMinutes = Math.round(getListeningDurationSec(groupedDailyTasks) / 60) || 0;
-  const doneMinutes = Math.round(getCompletedListeningDurationSec(groupedDailyTasks) / 60);
+  const hasCloudGoalMinutes = options.todayListeningGoalMinutes !== undefined
+    && options.todayListeningGoalMinutes !== null
+    && Number.isFinite(Number(options.todayListeningGoalMinutes));
+  const goalMinutes = hasCloudGoalMinutes
+    ? Math.max(0, Math.round(Number(options.todayListeningGoalMinutes)))
+    : (Math.round(getListeningDurationSec(groupedDailyTasks) / 60) || 0);
+  const hasCloudTodayMinutes = options.todayListeningMinutes !== undefined
+    && options.todayListeningMinutes !== null
+    && Number.isFinite(Number(options.todayListeningMinutes));
+  const doneMinutes = hasCloudTodayMinutes
+    ? Math.max(0, Math.round(Number(options.todayListeningMinutes)))
+    : Math.round(getCompletedListeningDurationSec(groupedDailyTasks) / 60);
   const safeGoal = Math.max(0, goalMinutes);
-  const safeDone = safeGoal > 0 ? Math.min(safeGoal, Math.max(0, doneMinutes)) : 0;
-  const progressPercent = safeGoal > 0 ? Math.round((safeDone / safeGoal) * 100) : 0;
+  const safeDone = Math.max(0, doneMinutes);
+  const progressPercent = safeGoal > 0 ? Math.min(100, Math.round((safeDone / safeGoal) * 100)) : 0;
   return {
     todayGoalMinutes: safeGoal,
     todayDoneMinutes: safeDone,
@@ -493,7 +503,11 @@ Page({
       listeningTaskStatus: buildListeningTaskStatus(groupedDailyTasks, { needsListeningPlanSetup }),
       nextListeningTask: findNextListeningTask(groupedDailyTasks),
       todayCompletedItems: buildTodayCompletedItems(groupedDailyTasks),
-      ...buildHomeVisualMetrics(groupedDailyTasks, { stats: data.stats || contracts.createStatsDefaults() }),
+      ...buildHomeVisualMetrics(groupedDailyTasks, {
+        stats: data.stats || contracts.createStatsDefaults(),
+        todayListeningMinutes: data.todayListeningMinutes,
+        todayListeningGoalMinutes: data.todayListeningGoalMinutes
+      }),
       identityConfirmVisible: !this.data.identitySelectedInSession,
       modeChangedNoticeVisible,
       homeLoading: false
@@ -730,7 +744,14 @@ Page({
     }
   },
   async refreshHomeDashboard() {
-    const data = await store.getDashboard({ view: 'home' }, (fresh) => {
+    const target = store.getSelectedStudentTarget ? store.getSelectedStudentTarget() : {};
+    const cached = store.getCachedReadResult
+      ? store.getCachedReadResult('getDashboard', Object.assign({ view: 'home' }, target))
+      : null;
+    if (cached && cached.child && (cached.groupedDailyTasks || []).length) {
+      this.applyDashboard(cached);
+    }
+    const data = await store.getDashboard({ view: 'home', forceRefresh: true }, (fresh) => {
       const groups = this.applyDashboard(fresh);
       if (this.homePerf) {
         this.homePerf.mark('cloudRefresh', {

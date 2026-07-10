@@ -504,6 +504,7 @@ test('getDashboard 按 view 返回不同 shape', async (t) => {
     includeFamily: false,
     includeStats: false,
     includeChildStats: false,
+    includeTodayListeningMinutes: true,
     reconcileCheckins: false
   });
   assert.deepEqual(recordResult, {

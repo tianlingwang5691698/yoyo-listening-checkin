@@ -13,6 +13,7 @@ function resolveDashboardOptions(view) {
       includeFamily: false,
       includeStats: false,
       includeChildStats: false,
+      includeTodayListeningMinutes: true,
       reconcileCheckins: false
     };
   }

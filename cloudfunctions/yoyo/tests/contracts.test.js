@@ -37,6 +37,8 @@ test('契约工厂返回完整默认结构', () => {
     categorySummaries: [],
     activeTaskCount: 0,
     completedTaskCountToday: 0,
+    todayListeningMinutes: null,
+    todayListeningGoalMinutes: null,
     allDailyDone: false,
     catchupState: {
       canCatchup: false,

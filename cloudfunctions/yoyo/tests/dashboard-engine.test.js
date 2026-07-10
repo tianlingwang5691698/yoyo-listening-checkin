@@ -96,6 +96,13 @@ test('home view 任务分组保留播放字段但不返回大字段', async () =
     getUserScope: () => ({ childId: 'child-1' }),
     getChildProgressRecords: async () => [],
     getCheckins: async () => [],
+    getDailyReport: async () => ({
+      totalMinutes: 31,
+      items: [
+        { repeatTarget: 1, taskSnapshot: { durationSec: 900 } },
+        { repeatTarget: 1, taskSnapshot: { durationSec: 960 } }
+      ]
+    }),
     isYoyoChild: () => true,
     getPlanDayIndexForDate: () => 1,
     buildPlanForDay: (dayIndex) => ({
@@ -140,13 +147,16 @@ test('home view 任务分组保留播放字段但不返回大字段', async () =
     includeTaskProgressSummary: true,
     includeUser: false,
     includeFamily: false,
-    includeStats: false
+    includeStats: false,
+    includeTodayListeningMinutes: true
   });
 
   const task = dashboard.groupedDailyTasks[0].tasks[0];
   assert.equal(dashboard.user, undefined);
   assert.equal(dashboard.family, undefined);
   assert.equal(dashboard.stats, undefined);
+  assert.equal(dashboard.todayListeningMinutes, 31);
+  assert.equal(dashboard.todayListeningGoalMinutes, 31);
   assert.equal(dashboard.dailyTasks, undefined);
   assert.equal(task.audioUrl, 'https://large-audio.example.com/file.mp3');
   assert.equal(task.audioCloudPath, 'A1/Peppa/file.mp3');

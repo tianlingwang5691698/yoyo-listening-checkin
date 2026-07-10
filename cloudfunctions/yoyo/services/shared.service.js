@@ -644,6 +644,7 @@ async function getDashboardData(ctx, options = {}) {
     getUserScope,
     getChildProgressRecords,
     getCheckins,
+    getDailyReport: (scope, date) => reportRepository.findByScopeAndDate(scope, date),
     getActiveListeningPlan,
     isYoyoChild,
     reconcileCheckins,
