@@ -5,6 +5,7 @@ const snapshotStore = require('../../utils/snapshot');
 const LISTENING_SET_SNAPSHOT_KEY = 'currentListeningSetV1';
 const WRITING_PROMPT_SNAPSHOT_KEY = 'currentWritingPromptV1';
 const MATERIAL_HOME_SNAPSHOT_KEY = 'materialHomeSnapshotV1';
+const MATERIAL_HOME_SNAPSHOT_MAX_AGE_MS = 7 * 24 * 60 * 60 * 1000;
 
 function getMaterialHomeSnapshotKey(moduleId) {
   return `${MATERIAL_HOME_SNAPSHOT_KEY}:${moduleId}`;
@@ -170,10 +171,10 @@ Page({
     const baseConfig = buildMaterials({})[moduleId];
     const snapshot = snapshotStore.read(getMaterialHomeSnapshotKey(moduleId), {
       id: moduleId,
-      maxAgeMs: 10 * 60 * 1000
+      maxAgeMs: MATERIAL_HOME_SNAPSHOT_MAX_AGE_MS
     }) || snapshotStore.read(MATERIAL_HOME_SNAPSHOT_KEY, {
       id: moduleId,
-      maxAgeMs: 10 * 60 * 1000
+      maxAgeMs: MATERIAL_HOME_SNAPSHOT_MAX_AGE_MS
     });
     const snapshotIndex = snapshot && hasMaterialContent(moduleId, snapshot.materialIndex) ? snapshot.materialIndex : null;
     const cachedMaterialIndex = !snapshotIndex && store.getCachedReadResult

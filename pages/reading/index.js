@@ -3,6 +3,7 @@ const page = require('../../utils/page');
 const snapshotStore = require('../../utils/snapshot');
 const READING_PASSAGE_SNAPSHOT_KEY = 'readingPassageSnapshotV1';
 const READING_HOME_SNAPSHOT_KEY = 'readingHomeSnapshotV1';
+const READING_HOME_SNAPSHOT_MAX_AGE_MS = 7 * 24 * 60 * 60 * 1000;
 
 function pickGroup(categoryTree, selectedExamType) {
   const root = categoryTree && categoryTree[0] ? categoryTree[0] : null;
@@ -87,7 +88,7 @@ Page({
     }
     const snapshot = snapshotStore.read(READING_HOME_SNAPSHOT_KEY, {
       id: 'directory',
-      maxAgeMs: 10 * 60 * 1000
+      maxAgeMs: READING_HOME_SNAPSHOT_MAX_AGE_MS
     });
     const hasSnapshot = !!snapshot;
     if (snapshot) {

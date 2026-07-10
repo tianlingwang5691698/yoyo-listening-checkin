@@ -3,7 +3,7 @@
     <view class="library-desk-light"></view>
 
     <view class="library-loading-paper" wx:if="{{loading && !passage}}">
-      <view class="loading-paper-title">正在取阅文章</view>
+      <view class="loading-paper-title"></view>
       <view class="loading-paper-line"></view>
       <view class="loading-paper-line"></view>
       <view class="loading-paper-line short"></view>

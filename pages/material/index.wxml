@@ -59,7 +59,7 @@
       <view class="library-skeleton-line"></view>
       <view class="library-skeleton-line"></view>
       <view class="library-skeleton-line"></view>
-      <view class="library-empty-text">正在整理馆藏</view>
+      <view class="library-empty-text"></view>
     </view>
 
     <view class="library-index-list" wx:elif="{{!selectedStageId}}">

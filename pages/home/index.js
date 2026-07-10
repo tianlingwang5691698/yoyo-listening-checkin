@@ -43,6 +43,17 @@ function greetingText() {
   return '晚上好';
 }
 
+function buildHomeNavStyle() {
+  try {
+    const system = wx.getSystemInfoSync ? wx.getSystemInfoSync() : {};
+    const statusBarHeight = Number(system.statusBarHeight || 22);
+    const contentTop = Math.ceil(statusBarHeight + 20);
+    return `padding-top:${contentTop}px;`;
+  } catch (error) {
+    return 'padding-top:42px;';
+  }
+}
+
 function profileInitial(child) {
   const name = String((child && (child.avatarText || child.nickname)) || '学');
   return name.slice(0, 1).toUpperCase();
@@ -442,7 +453,8 @@ Page({
     entryPosterPage: 0,
     identitySelectedInSession: false,
     nicknameRequired: false,
-    nicknameInput: ''
+    nicknameInput: '',
+    homeNavStyle: buildHomeNavStyle()
   }),
   buildStudyModePresentation(member) {
     const studyRole = member && member.studyRole === 'student' ? 'student' : 'parent';
@@ -570,6 +582,12 @@ Page({
   async onShow() {
     this.homePerf = page.startPagePerf('home');
     page.syncTheme(this);
+    if (this.data.theme === 'library') {
+      wx.setNavigationBarColor({
+        frontColor: '#ffffff',
+        backgroundColor: '#1c140f'
+      });
+    }
     const tabBar = this.getTabBar && this.getTabBar();
     const identitySelectedInSession = !!this.data.identitySelectedInSession;
     const entryPosterVisible = !identitySelectedInSession && shouldShowEntryPoster();
@@ -584,6 +602,7 @@ Page({
       homeLoading: true,
       todayDisplay: todayDisplayText(),
       greeting: greetingText(),
+      homeNavStyle: buildHomeNavStyle(),
       vocabularySummary: buildVocabularySummary(),
       entryPosterVisible,
       identityConfirmVisible,
@@ -603,6 +622,12 @@ Page({
       this.prefetchListeningMaterialHome();
       this.prefetchReadingHome();
     }, 200);
+    setTimeout(() => {
+      this.prefetchWritingMaterialHome();
+    }, 400);
+    setTimeout(() => {
+      this.prefetchGrammarHome();
+    }, 600);
     setTimeout(() => {
       this.prefetchListeningOverview();
     }, 800);
@@ -729,10 +754,39 @@ Page({
       writeMaterialHomeSnapshots(materialIndex, 'home-material-prefetch');
     }).catch(() => {});
   },
+  prefetchWritingMaterialHome() {
+    const snapshot = snapshotStore.read(getMaterialHomeSnapshotKey('writing'), {
+      id: 'writing',
+      maxAgeMs: 7 * 24 * 60 * 60 * 1000
+    });
+    if (snapshot && hasWritingMaterialContent(snapshot.materialIndex)) return;
+    const cached = store.getCachedReadResult
+      ? store.getCachedReadResult('getMaterialIndex', { moduleId: 'writing' })
+      : null;
+    if (hasWritingMaterialContent(cached)) {
+      writeMaterialHomeSnapshots(cached, 'home-writing-cache');
+      return;
+    }
+    store.getMaterialIndex({ moduleId: 'writing' }, (freshIndex) => {
+      writeMaterialHomeSnapshots(freshIndex, 'home-writing-refresh');
+    }).then((materialIndex) => {
+      writeMaterialHomeSnapshots(materialIndex, 'home-writing-prefetch');
+    }).catch(() => {});
+  },
+  prefetchGrammarHome() {
+    const examIds = ['em2', 'em1'];
+    examIds.forEach((examId) => {
+      const cached = store.getCachedReadResult
+        ? store.getCachedReadResult('getGrammarHome', { examId })
+        : null;
+      if (cached && (cached.topicTypes || []).length) return;
+      store.getGrammarHome({ examId }).catch(() => {});
+    });
+  },
   prefetchReadingHome() {
     const snapshot = snapshotStore.read('readingHomeSnapshotV1', {
       id: 'directory',
-      maxAgeMs: 10 * 60 * 1000
+      maxAgeMs: 7 * 24 * 60 * 60 * 1000
     });
     if (snapshot && ((snapshot.categoryTree || [])[0] || {}).count) {
       return;

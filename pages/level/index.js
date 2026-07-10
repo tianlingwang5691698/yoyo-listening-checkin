@@ -116,6 +116,20 @@ function getOverviewSnapshotKey(levelId) {
 Page({
   overviewCache: {},
   overviewRequests: {},
+  scheduleSecondaryLevelPrefetch(firstLevel) {
+    if (this.secondaryPrefetchTimer) {
+      clearTimeout(this.secondaryPrefetchTimer);
+    }
+    const levels = (this.data.levelTabs || FALLBACK_LEVEL_TABS)
+      .filter((tab) => tab && tab.enabled && tab.levelId !== firstLevel)
+      .map((tab) => tab.levelId);
+    this.secondaryPrefetchTimer = setTimeout(() => {
+      this.secondaryPrefetchTimer = null;
+      levels.reduce((chain, levelId) => (
+        chain.then(() => this.loadOverview(levelId, { prefetch: true }).catch(() => null))
+      ), Promise.resolve());
+    }, 800);
+  },
   markLevelCloudRefresh(data, levelId) {
     if (!this.levelPerf || this.levelCloudRefreshLogged) return;
     this.levelCloudRefreshLogged = true;
@@ -277,14 +291,16 @@ Page({
         materials: (this.data.materials || []).length
       });
     }
-    (this.data.levelTabs || FALLBACK_LEVEL_TABS).forEach((tab) => {
-      if (tab && tab.enabled && tab.levelId !== firstLevel) {
-        this.loadOverview(tab.levelId, { prefetch: true }).catch(() => {});
-      }
-    });
     const firstData = await firstRequest;
     if (firstData && !firstData.__cacheHit && firstData.syncMode !== 'cloud-error') {
       this.markLevelCloudRefresh(firstData, firstLevel);
+    }
+    this.scheduleSecondaryLevelPrefetch(firstLevel);
+  },
+  onHide() {
+    if (this.secondaryPrefetchTimer) {
+      clearTimeout(this.secondaryPrefetchTimer);
+      this.secondaryPrefetchTimer = null;
     }
   },
   async chooseLevel(event) {

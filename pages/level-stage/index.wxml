@@ -16,7 +16,7 @@
 
     <block wx:if="{{!hydrated && !hasTaskGroups}}">
       <view class="audio-index-loading">
-        <view class="audio-index-loading-title">正在整理章节索引</view>
+        <view class="audio-index-loading-title"></view>
         <view class="audio-index-loading-line"></view>
         <view class="audio-index-loading-line is-short"></view>
         <view class="audio-index-loading-line"></view>

@@ -5,6 +5,7 @@ const snapshotStore = require('../../utils/snapshot');
 
 const GRAMMAR_TOPIC_SNAPSHOT_KEY = 'grammarTopicSnapshotV1';
 const GRAMMAR_HOME_SNAPSHOT_KEY = 'grammarHomeSnapshotV1';
+const GRAMMAR_HOME_SNAPSHOT_MAX_AGE_MS = 7 * 24 * 60 * 60 * 1000;
 
 function canUseDictionaryVoice(text) {
   const value = String(text || '').replace(/\s+/g, ' ').trim();
@@ -218,7 +219,7 @@ Page({
     this.grammarPerf = page.startPagePerf('grammar');
     const snapshot = snapshotStore.read(GRAMMAR_HOME_SNAPSHOT_KEY, {
       id: 'home',
-      maxAgeMs: 10 * 60 * 1000
+      maxAgeMs: GRAMMAR_HOME_SNAPSHOT_MAX_AGE_MS
     });
     let em2Topics = [];
     let em1Topics = [];
