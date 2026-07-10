@@ -66,16 +66,5 @@
       </view>
     </view>
 
-    <view class="profile-theme glass-panel">
-      <view class="theme-head">
-        <view class="row-main">
-          <view class="row-title">界面风格</view>
-          <view class="row-copy">{{currentThemeLabel}}</view>
-        </view>
-      </view>
-      <view class="theme-switch">
-        <view wx:for="{{themeOptions}}" wx:key="key" class="theme-chip {{theme === item.key ? 'is-active' : ''}}" data-theme="{{item.key}}" catchtap="switchTheme">{{item.label}}</view>
-      </view>
-    </view>
   </view>
 </view>

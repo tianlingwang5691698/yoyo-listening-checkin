@@ -344,44 +344,6 @@
   line-height: 1;
 }
 
-.profile-theme {
-  margin-top: 18rpx;
-  padding: 28rpx 24rpx 24rpx;
-}
-
-.theme-head {
-  display: flex;
-  align-items: center;
-}
-
-.theme-switch {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 12rpx;
-  margin-top: 22rpx;
-}
-
-.theme-chip {
-  min-width: 0;
-  height: 64rpx;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 999rpx;
-  background: rgba(255, 255, 255, 0.56);
-  border: 1rpx solid rgba(141, 183, 212, 0.18);
-  color: #607087;
-  font-size: 24rpx;
-  font-weight: 500;
-}
-
-.theme-chip.is-active {
-  background: rgba(242, 161, 142, 0.22);
-  border-color: rgba(223, 127, 104, 0.28);
-  color: #17314f;
-  font-weight: 600;
-}
-
 .sync-debug {
   margin-top: 18rpx;
   padding: 14rpx 18rpx;

@@ -13,6 +13,14 @@ const WINDOW_COLORS = {
   warm: { backgroundColor: '#F6FBFD', frontColor: '#000000' }
 };
 
+const SLIDER_COLORS = {
+  warm: {
+    activeColor: '#86AAA1',
+    backgroundColor: 'rgba(141, 183, 212, 0.22)',
+    blockColor: '#F6FBFD'
+  }
+};
+
 function normalizeTheme(value) {
   return THEME_MAP[value] ? value : 'warm';
 }
@@ -57,7 +65,8 @@ function buildThemeData(value) {
     theme: currentTheme,
     themeClass: getThemeClass(currentTheme),
     themeOptions: getThemeOptions(),
-    currentThemeLabel: getThemeLabel(currentTheme)
+    currentThemeLabel: getThemeLabel(currentTheme),
+    themeSlider: SLIDER_COLORS[currentTheme] || SLIDER_COLORS.warm
   };
 }
 

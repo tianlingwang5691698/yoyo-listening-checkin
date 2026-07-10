@@ -9,7 +9,7 @@ const CLOUD_PAGE_DEFAULTS = {
   theme: 'warm',
   themeClass: 'theme-warm',
   themeOptions: theme.getThemeOptions(),
-  currentThemeLabel: '暖白'
+  currentThemeLabel: '雾蓝玻璃'
 };
 const IDENTITY_CONFIRMED_KEY = 'yoyoIdentityConfirmedV1';
 const IDENTITY_CONFIRMED_V2_KEY = 'yoyoIdentityConfirmedV2';

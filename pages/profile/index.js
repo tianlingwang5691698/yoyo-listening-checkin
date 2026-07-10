@@ -1,6 +1,5 @@
 const store = require('../../utils/store');
 const page = require('../../utils/page');
-const theme = require('../../utils/theme');
 const snapshotStore = require('../../utils/snapshot');
 
 const ADMIN_OPEN_IDS = ['om8JT3Zhqe1zeAiKUGGkU0ACjAWs'];
@@ -251,14 +250,5 @@ Page({
   },
   openAdminPage() {
     wx.navigateTo({ url: '/pages/admin/index' });
-  },
-  switchTheme(event) {
-    const nextTheme = theme.setTheme(event.currentTarget.dataset.theme);
-    const themeData = page.syncTheme(this);
-    this.setData(themeData);
-    wx.showToast({
-      title: `${theme.getThemeLabel(nextTheme)}主题`,
-      icon: 'none'
-    });
   }
 });
