@@ -1373,7 +1373,7 @@
   z-index: 3;
   left: 44rpx;
   bottom: 38rpx;
-  width: 236rpx;
+  width: 300rpx;
   height: 116rpx;
   padding: 26rpx 28rpx;
   border-radius: 28rpx;
@@ -1385,6 +1385,11 @@
   border: 1rpx solid rgba(255, 255, 255, 0.78);
   box-shadow: 0 12rpx 30rpx rgba(82, 115, 143, 0.08);
   backdrop-filter: blur(16rpx);
+}
+
+.goal-chip > view:first-child {
+  min-width: 0;
+  flex: 1;
 }
 
 .goal-label {
@@ -1399,6 +1404,7 @@
   font-size: 34rpx;
   line-height: 1;
   font-weight: 600;
+  white-space: nowrap;
 }
 
 .goal-value text {
@@ -1413,6 +1419,7 @@
 
 .goal-ring {
   position: relative;
+  flex: 0 0 50rpx;
   width: 50rpx;
   height: 50rpx;
   border-radius: 50%;
