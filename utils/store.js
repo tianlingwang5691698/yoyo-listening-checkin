@@ -393,66 +393,6 @@ function bumpFlashcardSourceCacheVersion() {
   } catch (error) {}
 }
 
-function getPendingTargetKey() {
-  const target = getSelectedStudentTarget();
-  return `${target.targetFamilyId || 'self'}:${target.targetChildId || 'self'}`;
-}
-
-function getPendingFlashcards() {
-  const targetKey = getPendingTargetKey();
-  try {
-    const rows = wx.getStorageSync(PENDING_FLASHCARDS_KEY) || [];
-    return Array.isArray(rows) ? rows.filter((item) => !item.targetKey || item.targetKey === targetKey) : [];
-  } catch (error) {
-    return [];
-  }
-}
-
-function makePendingFlashcard(entry, result) {
-  const card = entry || {};
-  const type = ['word', 'phrase', 'pattern'].includes(card.type) ? card.type : 'word';
-  const text = String(card.text || card.word || card.phrase || card.pattern || '').replace(/\s+/g, ' ').trim();
-  if (!text || !result || !result.flashcardKey) return null;
-  return {
-    flashcardKey: result.flashcardKey,
-    sourceType: card.sourceType || 'dictionary',
-    sourceId: card.sourceId || '',
-    sourceTitle: card.sourceTitle || card.title || '',
-    type,
-    text,
-    word: type === 'word' ? text : '',
-    phrase: type === 'phrase' ? text : '',
-    pattern: type === 'pattern' ? text : '',
-    phonetic: card.phonetic || '',
-    meaning: card.meaning || (Array.isArray(card.definitions) ? card.definitions.join('；') : ''),
-    example: card.example || '',
-    exampleMeaning: card.exampleMeaning || '',
-    status: 'new',
-    familiarLevel: 'new',
-    reviewStep: 0,
-    nextReviewDate: '',
-    pendingSync: true,
-    targetKey: getPendingTargetKey(),
-    createdAt: new Date().toISOString()
-  };
-}
-
-function addPendingFlashcard(entry, result) {
-  const pending = makePendingFlashcard(entry, result);
-  if (!pending) return;
-  let rows = [];
-  try {
-    const current = wx.getStorageSync(PENDING_FLASHCARDS_KEY) || [];
-    rows = Array.isArray(current) ? current : [];
-  } catch (error) {
-    rows = [];
-  }
-  rows = rows.filter((item) => item && item.flashcardKey !== pending.flashcardKey);
-  try {
-    wx.setStorageSync(PENDING_FLASHCARDS_KEY, [pending].concat(rows).slice(0, 200));
-  } catch (error) {}
-}
-
 async function callCloudFresh(action, payload, defaults) {
   const inflightKey = READ_CACHE_CONFIG[action]
     ? `${action}:${JSON.stringify(payload || {})}`
@@ -653,7 +593,7 @@ async function getListeningStudyPack(item, options, onRefresh) {
 }
 
 async function getFlashcardReview(onRefresh) {
-  return callCloud('getFlashcardReview', withSelectedStudent({}), {
+  const result = await callCloud('getFlashcardReview', withSelectedStudent({}), {
     today: '',
     settings: { newLimit: 10, reviewLimit: 20 },
     library: [],
@@ -663,7 +603,13 @@ async function getFlashcardReview(onRefresh) {
     dueCount: 0,
     newDueCount: 0,
     reviewDueCount: 0
-  }, { onRefresh });
+  }, { onRefresh, useCache: false });
+  if (result && result.syncMode === 'cloud') {
+    try {
+      wx.removeStorageSync(PENDING_FLASHCARDS_KEY);
+    } catch (error) {}
+  }
+  return result;
 }
 
 async function getFlashcardDue(onRefresh) {
@@ -933,7 +879,6 @@ async function addDictionaryWord(entry) {
       : 'addDictionaryWord-not-saved';
     throw new Error(message);
   }
-  addPendingFlashcard(entry || {}, result);
   bumpFlashcardSourceCacheVersion();
   return result;
 }
@@ -1188,7 +1133,6 @@ module.exports = {
   recordStudyCompletion,
   getStudyCompletions,
   getCachedReadResult,
-  getPendingFlashcards,
   getDeviceId,
   getDeviceStudyRole,
   getSelectedStudentTarget,

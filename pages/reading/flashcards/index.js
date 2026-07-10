@@ -594,21 +594,6 @@ function buildLibraryDebugLines(data, activeSourceId, library) {
   ];
 }
 
-function mergePendingFlashcards(library) {
-  const pending = store.getPendingFlashcards ? store.getPendingFlashcards() : [];
-  if (!pending.length) return library || [];
-  const map = {};
-  (library || []).forEach((item) => {
-    if (item && item.flashcardKey) map[item.flashcardKey] = item;
-  });
-  pending.forEach((item) => {
-    if (item && item.flashcardKey && !map[item.flashcardKey]) {
-      map[item.flashcardKey] = item;
-    }
-  });
-  return Object.keys(map).map((key) => map[key]);
-}
-
 function canUseDictionaryVoice(text) {
   const value = String(text || '').replace(/\s+/g, ' ').trim();
   if (!value || value.length > 60 || /[.!?;:]/.test(value)) return false;
@@ -730,9 +715,6 @@ Page({
   buildFlashcardData(data, activeSourceId, cached) {
     const rawLibrary = data && Array.isArray(data.library) ? data.library : [];
     let library = filterBySource(rawLibrary, activeSourceId).map(normalizeCard);
-    if (!activeSourceId) {
-      library = mergePendingFlashcards(library).map(normalizeCard);
-    }
     let demoMode = false;
     const settings = {
       newLimit: normalizeLimit((data.settings || {}).newLimit == null ? 10 : data.settings.newLimit),
@@ -796,7 +778,7 @@ Page({
     const keepReviewSession = this.data.mode === 'review';
     this.setData({ loading: true });
     const activeSourceId = this.data.activeSourceId || '';
-    const cached = readSourceCache(activeSourceId);
+    const cached = activeSourceId ? readSourceCache(activeSourceId) : null;
     if (cached && !keepReviewSession) {
       const cachedData = this.buildFlashcardData(Object.assign({}, cached, { __cacheHit: true }), activeSourceId, cached);
       this.applyFlashcardData(Object.assign({}, cachedData, {
@@ -831,7 +813,7 @@ Page({
       });
       return;
     }
-    const data = activeSourceId ? await store.getFlashcardReview() : await store.getFlashcardDue();
+    const data = await store.getFlashcardReview();
     const nextData = this.buildFlashcardData(data, activeSourceId, cached);
     if (keepReviewSession) {
       this.setData({
@@ -846,15 +828,6 @@ Page({
     }
     this.applyFlashcardData(nextData);
     writeSourceCache(activeSourceId, nextData);
-    if (!activeSourceId && data && data.partial) {
-      store.getFlashcardReview().then((fresh) => {
-        if (fresh && fresh.syncMode !== 'cloud-error' && this.data.mode !== 'review' && !(this.data.activeSourceId || '')) {
-          const freshData = this.buildFlashcardData(fresh, activeSourceId, nextData);
-          this.applyFlashcardData(freshData);
-          writeSourceCache(activeSourceId, freshData);
-        }
-      }).catch(() => {});
-    }
     if (this.flashcardPerf) {
       this.flashcardPerf.ready('pageReady', {
         cacheHit: !!data.__cacheHit,
