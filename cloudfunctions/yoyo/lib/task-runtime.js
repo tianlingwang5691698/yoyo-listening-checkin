@@ -90,12 +90,27 @@ function buildCategorySummary(categoryTasks, category, deps) {
   });
 }
 
-function getProgressDurationMinutes(item, deps) {
+function buildDurationLookup(records, deps) {
   const { getCatalog } = deps;
+  const categories = Array.from(new Set((records || []).map((item) => item.category).filter(Boolean)));
+  return categories.reduce((lookup, category) => {
+    lookup[category] = (getCatalog(category) || []).reduce((map, task) => {
+      map[task.taskId] = task;
+      return map;
+    }, {});
+    return lookup;
+  }, {});
+}
+
+function getProgressDurationMinutes(item, durationLookup) {
+  const lookup = durationLookup && durationLookup.getCatalog
+    ? buildDurationLookup([item], durationLookup)
+    : durationLookup;
   const taskId = item.originalTaskId || item.taskId;
-  const task = getCatalog(item.category).find((entry) => entry.taskId === taskId);
+  const task = lookup && lookup[item.category] ? lookup[item.category][taskId] : null;
   const repeatTarget = Number(item.repeatTarget || (task && task.repeatTarget) || 3);
-  return task ? Math.round((Number(task.durationSec || 0) * repeatTarget) / 60) : 0;
+  const durationSec = Number(item.durationSec || (task && task.durationSec) || 0);
+  return durationSec ? Math.round((durationSec * repeatTarget) / 60) : 0;
 }
 
 function buildStats(progressRecords, checkins, childId, deps) {
@@ -103,8 +118,9 @@ function buildStats(progressRecords, checkins, childId, deps) {
   const completedProgress = (progressRecords || [])
     .filter((item) => item.childId === childId)
     .map(normalizeProgressRecord)
-    .filter((item) => item.completedToday);
-  const totalMinutes = completedProgress.reduce((sum, item) => sum + getProgressDurationMinutes(item, deps), 0);
+    .filter((item) => item.completedToday || Number(item.playCount || 0) >= Number(item.repeatTarget || 3));
+  const durationLookup = buildDurationLookup(completedProgress, deps);
+  const totalMinutes = completedProgress.reduce((sum, item) => sum + getProgressDurationMinutes(item, durationLookup), 0);
   const today = getTodayString();
   const latestCheckin = (checkins || []).slice().sort((a, b) => {
     const left = String(a.completedAt || a.date || '');

@@ -59,6 +59,13 @@
     </view>
   </view>
 
+  <view class="record-debug" wx:if="{{showCloudDebug && recordDebugLines.length}}">
+    <view class="record-debug-title">调试断点</view>
+    <block wx:for="{{recordDebugLines}}" wx:key="*this">
+      <text class="record-debug-line" selectable="{{true}}">{{item}}</text>
+    </block>
+  </view>
+
   <view class="calendar-card section-panel heatmap-card">
     <view class="section-head">
       <view>

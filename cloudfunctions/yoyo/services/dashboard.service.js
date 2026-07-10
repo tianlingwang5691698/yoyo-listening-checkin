@@ -25,7 +25,9 @@ function resolveDashboardOptions(view) {
       includePlanDebug: false,
       includeTaskProgressSummary: false,
       includeUser: false,
-      includeFamily: false
+      includeFamily: false,
+      statsOnly: true,
+      reconcileCheckins: false
     };
   }
   return {};
@@ -36,7 +38,13 @@ async function getDashboard(event) {
     action: 'getDashboard'
   }));
   const view = String((((event && event.payload) || {}).view) || '').trim();
-  return study.getDashboardData(ctx, resolveDashboardOptions(view));
+  const payload = (event && event.payload) || {};
+  const options = resolveDashboardOptions(view);
+  if (payload.debug) {
+    options.includePerfDebug = true;
+    options.perfView = view;
+  }
+  return study.getDashboardData(ctx, options);
 }
 
 module.exports = {

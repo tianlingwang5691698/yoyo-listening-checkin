@@ -123,6 +123,19 @@ function buildHomeTaskGroups(dailyTasks, planDayIndex, deps, categoryOrder) {
 }
 
 async function getDashboardData(ctx, deps, options = {}) {
+  const perfStartedAt = Date.now();
+  const perfDebug = options.includePerfDebug ? {
+    action: 'getDashboard',
+    view: options.perfView || '',
+    familyId: ctx && ctx.family && ctx.family.familyId || '',
+    childId: ctx && ctx.child && ctx.child.childId || '',
+    stages: {}
+  } : null;
+  const markPerf = (name, startedAt) => {
+    if (perfDebug) {
+      perfDebug.stages[name] = Date.now() - startedAt;
+    }
+  };
   const includeDailyTasks = options.includeDailyTasks !== false;
   const includeHomeTaskGroups = !!options.includeHomeTaskGroups;
   const includeCategorySummaries = options.includeCategorySummaries !== false;
@@ -135,20 +148,27 @@ async function getDashboardData(ctx, deps, options = {}) {
   const includeChildStats = options.includeChildStats !== false;
   const today = deps.getTodayString();
   const scope = deps.getUserScope(ctx);
+  markPerf('setup', perfStartedAt);
+  const recordsStartedAt = Date.now();
   let [progressRecords, checkins] = await Promise.all([
     deps.getChildProgressRecords(scope),
     deps.getCheckins(scope)
   ]);
+  markPerf('records', recordsStartedAt);
   if (options.reconcileCheckins !== false && deps.reconcileCheckins) {
+    const reconcileStartedAt = Date.now();
     const reconciled = await deps.reconcileCheckins(scope, progressRecords, checkins, today);
     if (reconciled) {
       progressRecords = reconciled.progressRecords || progressRecords;
       checkins = reconciled.checkins || checkins;
     }
+    markPerf('reconcile', reconcileStartedAt);
   }
+  const activePlanStartedAt = Date.now();
   const activeListeningPlan = deps.getActiveListeningPlan
     ? await deps.getActiveListeningPlan(ctx)
     : null;
+  markPerf('activePlan', activePlanStartedAt);
   const useCustomListeningPlan = !!(activeListeningPlan && activeListeningPlan.active !== false);
   const useFixedYoyoPlan = !useCustomListeningPlan && !!(deps.isYoyoChild && deps.isYoyoChild(ctx.child));
   const hasListeningPlan = useCustomListeningPlan || useFixedYoyoPlan;
@@ -201,9 +221,41 @@ async function getDashboardData(ctx, deps, options = {}) {
   const categorySummaries = includeCategorySummaries
     ? buildCategorySummariesFromDailyTasks(dailyTasks, planDayIndex, deps, planCategoryOrder)
     : [];
+  const statsStartedAt = Date.now();
   const stats = (includeStats || includeChildStats)
     ? deps.buildStats(progressRecords, checkins, ctx.child.childId)
     : { streakDays: 0 };
+  markPerf('stats', statsStartedAt);
+  if (options.statsOnly) {
+    const result = {
+      currentMember: ctx.member,
+      child: Object.assign({}, ctx.child, {
+        totalCompleted: includeChildStats ? checkins.length : Number(ctx.child.totalCompleted || 0),
+        streakDays: includeChildStats ? stats.streakDays : Number(ctx.child.streakDays || 0)
+      }),
+      planDayIndex: 1,
+      planPhase: 'none',
+      planPhaseLabel: '未设置',
+      planSource: 'stats-only',
+      listeningPlan: null,
+      hasListeningPlan: false,
+      needsListeningPlanSetup: false,
+      isYoyoFixedPlan: false,
+      stats
+    };
+    if (perfDebug) {
+      perfDebug.totalMs = Date.now() - perfStartedAt;
+      perfDebug.progressRecordCount = progressRecords.length;
+      perfDebug.checkinCount = checkins.length;
+      perfDebug.stats = {
+        completedTasks: Number((stats && stats.completedTasks) || 0),
+        completedDays: Number((stats && stats.completedDays) || 0),
+        totalMinutes: Number((stats && stats.totalMinutes) || 0)
+      };
+      result.perfDebug = perfDebug;
+    }
+    return result;
+  }
   const activeTaskCount = includeTaskProgressSummary || includeCatchupState
     ? dailyTasks.filter((item) => !item.isPendingAsset).length
     : 0;
@@ -278,6 +330,17 @@ async function getDashboardData(ctx, deps, options = {}) {
   }
   if (includeCatchupState) {
     result.catchupState = catchupState;
+  }
+  if (perfDebug) {
+    perfDebug.totalMs = Date.now() - perfStartedAt;
+    perfDebug.progressRecordCount = progressRecords.length;
+    perfDebug.checkinCount = checkins.length;
+    perfDebug.stats = {
+      completedTasks: Number((stats && stats.completedTasks) || 0),
+      completedDays: Number((stats && stats.completedDays) || 0),
+      totalMinutes: Number((stats && stats.totalMinutes) || 0)
+    };
+    result.perfDebug = perfDebug;
   }
   return result;
 }

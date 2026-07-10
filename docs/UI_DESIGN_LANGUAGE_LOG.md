@@ -151,7 +151,7 @@
 - 职责：学习记录、连续/累计、热力图、历史回看。
 - 进入成长页先显示本地快照/月历缓存，云端刷新后台补齐，不能用强制刷新挡住首屏。
 - 成长页快照必须带当前学生目标标记；目标不一致或旧快照缺标记时不能用于首屏。
-- 成长页顶部统计优先用云端 `dashboard.stats`；当 stats 为 0 但月历热力已有真实点亮时，只用热力图兜底天数和任务数，时长无来源时显示待同步。
+- 成长页顶部统计优先用云端 `dashboard.stats`；当 stats 为 0 但月历热力已有真实点亮时，只用热力图兜底天数和任务数，时长无来源时显示 0 分钟并输出链路 debug。
 - 可以承载数据，但不能做控制台。
 - 大数字只用于真正核心指标。
 - 所有记录先摘要，点击后展开完整详情。
@@ -218,8 +218,18 @@
 
 - 板块：成长
 - 文件：`pages/record/index.js`
+- 文件：`pages/record/index.wxml`
+- 文件：`pages/record/index.wxss`
 - 文件：`utils/store.js`
+- 文件：`cloudfunctions/yoyo/services/dashboard.service.js`
+- 文件：`cloudfunctions/yoyo/lib/dashboard-engine.js`
+- 改动：成长页增加 dashboard、月历热力和前端合并链路 debug，记录客户端耗时、云端 dashboard 分段耗时、目标学号和关键返回字段。
 - 改动：成长页 dashboard 强制刷新；全局 dashboard 缓存有效期从 7 天收敛到记录页缓存时长，避免绑定学号后继续显示旧的 0 统计。
+- 改动：累计时长不再显示“待同步”；调试期成长页强制展示 debug，便于真机直接复制链路。
+- 改动：云端统计兼容老记录，`playCount >= repeatTarget` 即按完成记录参与累计时长计算。
+- 改动：成长页 `getDashboard(view=record)` 改为 stats-only 轻量链路，跳过计划和任务生成；前端 dashboard/monthHeatmap 超时放宽到 30 秒，避免 12 秒默认 0 覆盖真实数据。
+- 改动：累计时长统计按分类预建任务时长索引，避免每条记录反复扫描 catalog；调试区恢复为仅 debug 开关显示。
+- 设计记录：累计时长异常先定位真实云端返回和当前 target 是否一致；修复确认后撤掉页面 debug。
 - 设计记录：成长页核心指标必须跟随当前绑定学号实时更新，不能用旧缓存制造“本地状态”的误导。
 - 验证：已做记录页脚本语法检查、store 脚本语法检查和 diff 空白检查。
 

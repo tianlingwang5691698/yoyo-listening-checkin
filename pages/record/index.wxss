@@ -46,6 +46,29 @@
   backdrop-filter: blur(18rpx);
 }
 
+.record-debug {
+  margin: 18rpx 28rpx 0;
+  padding: 20rpx 22rpx;
+  border: 1rpx solid rgba(141, 183, 212, 0.24);
+  border-radius: 24rpx;
+  background: rgba(255, 255, 255, 0.68);
+  color: var(--text-muted);
+  font-size: var(--font-caption-size);
+  line-height: 1.55;
+  box-shadow: 0 14rpx 34rpx rgba(78, 112, 139, 0.08);
+}
+
+.record-debug-title {
+  color: var(--text-main);
+  font-weight: 700;
+}
+
+.record-debug-line {
+  display: block;
+  margin-top: 10rpx;
+  word-break: break-all;
+}
+
 .record-hero {
   min-height: 548rpx;
   background:

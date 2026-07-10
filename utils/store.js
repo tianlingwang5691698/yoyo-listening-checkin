@@ -460,12 +460,18 @@ async function callCloudFresh(action, payload, defaults) {
     return inflightCloudRequests[inflightKey];
   }
   const request = (async () => {
+    const startedAt = Date.now();
     try {
       const result = await cloud.callYoyo(action, payload);
-      return Object.assign(buildSyncMeta('cloud', null, result.resourceDebug), result, { __cacheHit: false });
+      return Object.assign(buildSyncMeta('cloud', null, result.resourceDebug), result, {
+        __cacheHit: false,
+        __elapsedMs: Date.now() - startedAt
+      });
     } catch (error) {
       monitor.logError('store', action, error, { reason: formatCloudReason(error) });
-      return buildCloudErrorPayload(action, error, defaults);
+      return Object.assign(buildCloudErrorPayload(action, error, defaults), {
+        __elapsedMs: Date.now() - startedAt
+      });
     } finally {
       if (inflightKey) {
         delete inflightCloudRequests[inflightKey];

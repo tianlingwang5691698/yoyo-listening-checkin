@@ -157,9 +157,30 @@ function formatDuration(minutes) {
 
 function formatStatsDuration(stats) {
   if (stats && stats.heatmapFallback && !Number(stats.totalMinutes || 0)) {
-    return '待同步';
+    return '0分钟';
   }
   return formatDuration((stats || {}).totalMinutes);
+}
+
+function buildRecordDebugLine(stage, detail) {
+  const target = store.getSelectedStudentTarget ? store.getSelectedStudentTarget() : {};
+  const safeDetail = detail || {};
+  return [
+    `DEBUG: pages/record.onShow -> store.${stage} -> cloud.${safeDetail.action || stage}`,
+    `字段：${safeDetail.field || 'stats.totalMinutes'}=${safeDetail.value}`,
+    `耗时：client=${safeDetail.clientMs || 0}ms cloud=${safeDetail.cloudMs || 0}ms`,
+    `targetChildId=${target.targetChildId || safeDetail.childId || 'self'}`
+  ].join('；');
+}
+
+function buildRecordPendingDebugLine(stage, startedAt) {
+  return buildRecordDebugLine(stage, {
+    action: stage,
+    field: 'pending',
+    value: 'waiting',
+    clientMs: Date.now() - startedAt,
+    cloudMs: 0
+  });
 }
 
 function buildCatchupPresentation(catchupState) {
@@ -375,6 +396,7 @@ Page({
     catchupTasks: [],
     catchupTasksLoaded: false,
     catchupTasksLoading: false,
+    recordDebugLines: [],
     streakMilestoneVisible: false,
     streakMilestoneLabel: ''
   }),
@@ -418,6 +440,9 @@ Page({
       };
       const snapshotHeatmap = (snapshot.heatmapData && snapshot.heatmapData.heatmap) || [];
       this.setData(page.buildCloudPageData(this.data, Object.assign({}, snapshot, {
+        totalDurationText: snapshot.totalDurationText === '待同步'
+          ? formatStatsDuration(snapshot.stats)
+          : snapshot.totalDurationText,
         selectedDayLoaded: false,
         selectedDayLoading: false,
         selectedDayReport: EMPTY_REPORT,
@@ -445,15 +470,33 @@ Page({
         selectedDayLoading: false,
         selectedDayReport: EMPTY_REPORT,
         selectedDaySummary: EMPTY_DAY_SUMMARY,
-        monthCells: [],
+        monthCells: buildMonthCells(calendarYear, calendarMonth, [], selectedDate, contracts.createCatchupStateDefaults()),
         catchupState: contracts.createCatchupStateDefaults(),
         catchupTasks: [],
         catchupTasksLoaded: false,
         catchupTasksLoading: false
       }, buildMetric(emptyStats, this.data.metricMode), buildCatchupPresentation(contracts.createCatchupStateDefaults()))));
     }
-    Promise.all([
-      store.getDashboard({ view: 'record' }, (fresh) => {
+    const dashboardStartedAt = Date.now();
+    const heatmapStartedAt = Date.now();
+    this.clearRecordDebugTimer();
+    this.setData({
+      recordDebugLines: [
+        buildRecordPendingDebugLine('getDashboard', dashboardStartedAt),
+        buildRecordPendingDebugLine('getMonthHeatmap', heatmapStartedAt)
+      ]
+    });
+    this.recordDebugTimer = setTimeout(() => {
+      if (loadSeq !== this.recordLoadSeq) return;
+      this.recordDebugTimer = null;
+      this.setData({
+        recordDebugLines: [
+          buildRecordPendingDebugLine('getDashboard', dashboardStartedAt),
+          buildRecordPendingDebugLine('getMonthHeatmap', heatmapStartedAt)
+        ]
+      });
+    }, 3000);
+    const dashboardPromise = store.getDashboard({ view: 'record', debug: true }, (fresh) => {
         if (loadSeq !== this.recordLoadSeq) return;
         const cachedHeatmap = this.getCachedMonthData(calendarYear, calendarMonth);
         const nextStats = mergeStatsWithHeatmap(fresh.stats, cachedHeatmap && cachedHeatmap.heatmap);
@@ -463,16 +506,107 @@ Page({
           planDayIndex: fresh.planDayIndex || 1
         });
         this.setData(page.buildCloudPageData(this.data, Object.assign({}, freshState, buildMetric(freshState.stats, this.data.metricMode))));
-      }),
-      this.getMonthHeatmapCached(calendarYear, calendarMonth, { force: true })
+      });
+    const heatmapPromise = this.getMonthHeatmapCached(calendarYear, calendarMonth, { force: true });
+    dashboardPromise.then((dashboard) => {
+      if (loadSeq !== this.recordLoadSeq) return;
+      const dashboardPerf = (dashboard && dashboard.perfDebug) || {};
+      const dashboardStages = dashboardPerf.stages || {};
+      const cachedHeatmap = this.getCachedMonthData(calendarYear, calendarMonth);
+      const nextStats = mergeStatsWithHeatmap(dashboard.stats, cachedHeatmap && cachedHeatmap.heatmap);
+      this.setData(page.buildCloudPageData(this.data, Object.assign({}, dashboard, {
+        stats: nextStats,
+        totalDurationText: formatStatsDuration(nextStats),
+        recordDebugLines: [
+          buildRecordDebugLine('getDashboard', {
+            action: 'getDashboard',
+            field: 'stats.totalMinutes',
+            value: Number((dashboard.stats && dashboard.stats.totalMinutes) || 0),
+            clientMs: dashboard.__elapsedMs || (Date.now() - dashboardStartedAt),
+            cloudMs: dashboardPerf.totalMs || 0,
+            childId: dashboardPerf.childId || ''
+          }),
+          buildRecordDebugLine('getDashboard', {
+            action: 'getDashboard',
+            field: 'perf.stages',
+            value: `records=${dashboardStages.records || 0}ms activePlan=${dashboardStages.activePlan || 0}ms stats=${dashboardStages.stats || 0}ms`,
+            clientMs: dashboard.__elapsedMs || (Date.now() - dashboardStartedAt),
+            cloudMs: dashboardPerf.totalMs || 0,
+            childId: dashboardPerf.childId || ''
+          }),
+          buildRecordPendingDebugLine('getMonthHeatmap', heatmapStartedAt)
+        ]
+      }, buildMetric(nextStats, this.data.metricMode))));
+    }).catch(() => {});
+    heatmapPromise.then((heatmapData) => {
+      if (loadSeq !== this.recordLoadSeq) return;
+      const nextStats = mergeStatsWithHeatmap(this.data.stats, heatmapData.heatmap);
+      this.setData(page.buildCloudPageData(this.data, Object.assign({
+        stats: nextStats,
+        totalDurationText: formatStatsDuration(nextStats),
+        selectedDaySummary: buildCalendarDaySummary(heatmapData.heatmap, selectedDate),
+        monthCells: buildMonthCells(calendarYear, calendarMonth, heatmapData.heatmap, selectedDate, heatmapData.catchupState),
+        catchupState: heatmapData.catchupState,
+        recordDebugLines: [
+          buildRecordDebugLine('getMonthHeatmap', {
+            action: 'getMonthHeatmap',
+            field: 'heatmap.length',
+            value: (heatmapData.heatmap || []).length,
+            clientMs: heatmapData.__elapsedMs || (Date.now() - heatmapStartedAt),
+            cloudMs: 0
+          })
+        ]
+      }, buildMetric(nextStats, this.data.metricMode), buildCatchupPresentation(heatmapData.catchupState))));
+    }).catch(() => {});
+    Promise.all([
+      dashboardPromise,
+      heatmapPromise
     ]).then(([dashboard, heatmapData]) => {
       if (loadSeq !== this.recordLoadSeq) return;
+      this.clearRecordDebugTimer();
       const catchupPresentation = buildCatchupPresentation(heatmapData.catchupState);
       const nextStats = mergeStatsWithHeatmap(dashboard.stats, heatmapData.heatmap);
+      const dashboardPerf = (dashboard && dashboard.perfDebug) || {};
+      const dashboardStages = dashboardPerf.stages || {};
+      const debugLines = [
+        buildRecordDebugLine('getDashboard', {
+          action: 'getDashboard',
+          field: 'stats.totalMinutes',
+          value: Number((dashboard.stats && dashboard.stats.totalMinutes) || 0),
+          clientMs: dashboard.__elapsedMs || (Date.now() - dashboardStartedAt),
+          cloudMs: dashboardPerf.totalMs || 0,
+          childId: dashboardPerf.childId || ''
+        }),
+        buildRecordDebugLine('getDashboard', {
+          action: 'getDashboard',
+          field: 'perf.stages',
+          value: `records=${dashboardStages.records || 0}ms activePlan=${dashboardStages.activePlan || 0}ms stats=${dashboardStages.stats || 0}ms`,
+          clientMs: dashboard.__elapsedMs || (Date.now() - dashboardStartedAt),
+          cloudMs: dashboardPerf.totalMs || 0,
+          childId: dashboardPerf.childId || ''
+        }),
+        buildRecordDebugLine('getMonthHeatmap', {
+          action: 'getMonthHeatmap',
+          field: 'heatmap.length',
+          value: (heatmapData.heatmap || []).length,
+          clientMs: heatmapData.__elapsedMs || (Date.now() - heatmapStartedAt),
+          cloudMs: 0,
+          childId: dashboardPerf.childId || ''
+        }),
+        buildRecordDebugLine('mergeStatsWithHeatmap', {
+          action: 'front.mergeStatsWithHeatmap',
+          field: 'display.totalDurationText',
+          value: formatStatsDuration(nextStats),
+          clientMs: Date.now() - dashboardStartedAt,
+          cloudMs: dashboardPerf.totalMs || 0,
+          childId: dashboardPerf.childId || ''
+        })
+      ];
       const nextState = Object.assign({}, dashboard, {
         child: dashboard.child,
         stats: nextStats,
         totalDurationText: formatStatsDuration(nextStats),
+        recordDebugLines: debugLines,
         calendarYear,
         calendarMonth,
         calendarTitle: `${calendarYear}年${calendarMonth}月`,
@@ -512,11 +646,31 @@ Page({
         });
       }
       this.scheduleDeferredLoads(calendarYear, calendarMonth, selectedDate);
-    }).catch(() => {});
+    }).catch((error) => {
+      this.clearRecordDebugTimer();
+      this.setData({
+        recordDebugLines: [
+          buildRecordDebugLine('recordLoad', {
+            action: 'Promise.all',
+            field: 'error',
+            value: String((error && (error.message || error.errMsg)) || error || 'unknown'),
+            clientMs: Date.now() - dashboardStartedAt,
+            cloudMs: 0
+          })
+        ]
+      });
+    });
   },
   onHide() {
     this.clearDeferredLoads();
     this.clearMilestoneTimer();
+    this.clearRecordDebugTimer();
+  },
+  clearRecordDebugTimer() {
+    if (this.recordDebugTimer) {
+      clearTimeout(this.recordDebugTimer);
+      this.recordDebugTimer = null;
+    }
   },
   clearMilestoneTimer() {
     if (this.milestoneTimer) {
@@ -574,6 +728,7 @@ Page({
       this.monthCache[key] = {
         heatmap: safeData.heatmap || [],
         catchupState: safeData.catchupState || this.data.catchupState,
+        __elapsedMs: safeData.__elapsedMs || 0,
         __cacheHit: !!safeData.__cacheHit
       };
       if (this.data.calendarYear === year && this.data.calendarMonth === month) {
