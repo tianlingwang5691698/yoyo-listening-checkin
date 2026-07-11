@@ -45,3 +45,13 @@ test('阅读英文正确与作答标签保持小号单行', () => {
   const wxss = fs.readFileSync(path.join(root, 'pages/reading/detail/index.wxss'), 'utf8');
   assert.match(wxss, /\.language-en \.option-badge[\s\S]*?font-size: 16rpx[\s\S]*?white-space: nowrap/);
 });
+
+test('阅读学生每次成功提交都能看到并听到完成反馈', () => {
+  const wxss = fs.readFileSync(path.join(root, 'pages/reading/detail/index.wxss'), 'utf8');
+  assert.match(readingDetailSource, /playReadingCompleteEffect\(result\.studyWriteAllowed !== false\)/);
+  assert.match(readingDetailSource, /playReadingCompleteEffect\(rewardAllowed\)[\s\S]*?studentOnly: false/);
+  const effectsSource = fs.readFileSync(path.join(root, 'utils/effects.js'), 'utf8');
+  assert.match(effectsSource, /playVoice\(options\.voiceKey,[\s\S]*?studentOnly: options\.studentOnly/);
+  assert.doesNotMatch(readingDetailSource, /onceKey: `reading:/);
+  assert.match(wxss, /\.reading-result-effect[\s\S]*?position: fixed[\s\S]*?z-index: 90/);
+});

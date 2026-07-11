@@ -1571,7 +1571,7 @@ Page({
         hasScore: !!result.attempt && result.attempt.score !== null && result.attempt.score !== undefined
       });
       this.applyReview(result.review);
-      this.playReadingCompleteEffect();
+      this.playReadingCompleteEffect(result.studyWriteAllowed !== false);
       recordReadingCompleted(this.data.passage, result.attempt);
       if (result.studyWriteAllowed !== false) {
         addReviewFlashcards(result.review);
@@ -1598,21 +1598,20 @@ Page({
   retrySubmit() {
     this.submit();
   },
-  playReadingCompleteEffect() {
-    if (this.readingEffectPlayed) return;
+  playReadingCompleteEffect(rewardAllowed) {
+    if (!rewardAllowed || this.readingEffectPlayed) return;
     this.readingEffectPlayed = true;
     if (this.readingEffectTimer) {
       clearTimeout(this.readingEffectTimer);
     }
-    const passageId = (this.data.passage && this.data.passage._id) || 'current';
     effects.playComplete({
       voiceKey: 'readingComplete',
-      onceKey: `reading:${effects.todayKey()}:${passageId}`
+      studentOnly: false
     });
     this.setData({ readingCelebrating: true });
     this.readingEffectTimer = setTimeout(() => {
       this.readingEffectTimer = null;
       this.setData({ readingCelebrating: false });
-    }, 1600);
+    }, 2000);
   }
 });

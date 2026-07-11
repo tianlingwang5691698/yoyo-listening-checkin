@@ -629,23 +629,24 @@
 }
 
 .reading-result-effect {
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
   pointer-events: none;
   overflow: hidden;
+  z-index: 90;
 }
 
 .reading-effect-line {
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 140rpx;
+  width: 180rpx;
   background: linear-gradient(100deg, transparent 0%, rgba(255, 255, 255, 0.78) 48%, transparent 100%);
   transform: translateX(-160rpx);
-  animation: readingResultShine 1.05s ease-out forwards;
+  animation: readingResultShine 1.25s ease-out forwards;
 }
 
 .reading-effect-dot {
@@ -659,13 +660,13 @@
 }
 
 .reading-effect-dot.dot-one {
-  top: 26rpx;
-  right: 56rpx;
+  top: 24%;
+  right: 18%;
 }
 
 .reading-effect-dot.dot-two {
-  top: 54rpx;
-  right: 28rpx;
+  top: 32%;
+  right: 10%;
   background: #8db7d4;
   animation-delay: 0.1s;
 }
@@ -684,7 +685,7 @@
     transform: translateX(-160rpx);
   }
   100% {
-    transform: translateX(720rpx);
+    transform: translateX(900rpx);
   }
 }
 

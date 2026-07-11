@@ -117,7 +117,10 @@ function playComplete(options) {
   if (variant.includesVoice) {
     clearVoiceTimer();
   } else if (options && options.voiceKey) {
-    playVoice(options.voiceKey, { delayMs: options.voiceDelayMs || 1000 });
+    playVoice(options.voiceKey, {
+      delayMs: options.voiceDelayMs || 1000,
+      studentOnly: options.studentOnly
+    });
   }
   return true;
 }
