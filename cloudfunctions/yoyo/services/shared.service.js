@@ -422,7 +422,7 @@ function buildPlanForDay(dayIndex, options = {}) {
 }
 
 function getCustomPlanDayIndex(checkins, date, plan) {
-  return listeningPlanEngine.getCustomPlanDayIndex(checkins, date, plan && (plan.planId || plan._id || ''));
+  return listeningPlanEngine.getCustomPlanDayIndex(checkins, date);
 }
 
 function buildListeningPlanForDay(plan, dayIndex) {
@@ -652,6 +652,7 @@ async function getDashboardData(ctx, options = {}) {
     getCheckins,
     getDailyReport: (scope, date) => reportRepository.findByScopeAndDate(scope, date),
     getActiveListeningPlan,
+    refreshRuntimeCatalogs,
     isYoyoChild,
     reconcileCheckins,
     getPlanDayIndexForDate,

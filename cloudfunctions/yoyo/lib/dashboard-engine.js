@@ -250,6 +250,14 @@ async function getDashboardData(ctx, deps, options = {}) {
   const useCustomListeningPlan = !!(activeListeningPlan && activeListeningPlan.active !== false);
   const useFixedYoyoPlan = !useCustomListeningPlan && !!(deps.isYoyoChild && deps.isYoyoChild(ctx.child));
   const hasListeningPlan = useCustomListeningPlan || useFixedYoyoPlan;
+  if (useCustomListeningPlan && deps.refreshRuntimeCatalogs) {
+    const planCategories = Array.from(new Set((activeListeningPlan.materials || [])
+      .filter((item) => item && item.enabled !== false && item.category)
+      .map((item) => item.category)));
+    if (planCategories.length) {
+      await deps.refreshRuntimeCatalogs(false, planCategories);
+    }
+  }
   const getActivePlanDayIndex = deps.getNextPlanDayIndexForDate || deps.getPlanDayIndexForDate;
   const planDayIndex = useCustomListeningPlan
     ? deps.getCustomPlanDayIndex(checkins, today, activeListeningPlan)
@@ -354,6 +362,7 @@ async function getDashboardData(ctx, deps, options = {}) {
       streakDays: includeChildStats ? stats.streakDays : Number(ctx.child.streakDays || 0)
     }),
     planDayIndex,
+    checkinDayCount: new Set((checkins || []).map((item) => String(item.date || '')).filter(Boolean)).size,
     planPhase: todayPlan.phase.key,
     planPhaseLabel: todayPlan.phase.label,
     planSource: useCustomListeningPlan ? 'custom-listening' : (useFixedYoyoPlan ? 'fixed-yoyo' : 'none'),

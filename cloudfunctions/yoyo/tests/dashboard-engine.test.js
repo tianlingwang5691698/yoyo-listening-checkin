@@ -71,6 +71,52 @@ test('首页只读取今日进度和复听所需历史进度', async () => {
   assert.equal(fullProgressReads, 0);
 });
 
+test('首页 Day 使用累计打卡日数而不是计划日', async () => {
+  const dashboard = await dashboardEngine.getDashboardData({
+    member: {}, child: { childId: 'child-1' }
+  }, {
+    getTodayString: () => '2026-07-11',
+    getUserScope: () => ({ childId: 'child-1' }),
+    getChildProgressRecords: async () => [],
+    getCheckins: async () => [
+      { date: '2026-07-06' },
+      { date: '2026-07-09' },
+      { date: '2026-07-09', planRunType: 'catchup' }
+    ],
+    getActiveListeningPlan: async () => null,
+    isYoyoChild: () => false,
+    getPlanDayIndexForDate: () => 9,
+    getNextPlanDayIndexForDate: () => 9,
+    getCatalog: () => [],
+    getPeppaReviewPlanOptions: () => ({}),
+    buildStats: () => ({ streakDays: 0 })
+  }, { includeDailyTasks: false, includeCategorySummaries: false, includeCatchupState: false, includePlanDebug: false, includeTaskProgressSummary: false });
+
+  assert.equal(dashboard.planDayIndex, 1);
+  assert.equal(dashboard.checkinDayCount, 2);
+});
+
+test('自定义计划生成任务前加载当前素材目录', async () => {
+  let loadedCategories = [];
+  const plan = { planId: 'plan-1', active: true, materials: [{ category: 'newconcept1', enabled: true }] };
+  await dashboardEngine.getDashboardData({ member: {}, child: { childId: 'child-1' } }, {
+    getTodayString: () => '2026-07-11',
+    getUserScope: () => ({ childId: 'child-1' }),
+    getChildProgressRecords: async () => [],
+    getCheckins: async () => [],
+    getActiveListeningPlan: async () => plan,
+    refreshRuntimeCatalogs: async (_force, categories) => { loadedCategories = categories; },
+    getCatalog: () => [],
+    isYoyoChild: () => false,
+    getCustomPlanDayIndex: () => 1,
+    buildListeningPlanForDay: () => ({ dayIndex: 1, phase: { key: 'custom', label: '自定义' }, byCategory: {}, flatTasks: [], categoryOrder: [] }),
+    decorateListeningPlanTasks: () => [],
+    buildStats: () => ({ streakDays: 0 })
+  }, { includeDailyTasks: false, includeCategorySummaries: false, includeCatchupState: false, includePlanDebug: false, includeTaskProgressSummary: false });
+
+  assert.deepEqual(loadedCategories, ['newconcept1']);
+});
+
 test('当天已打卡时，同日内返回下一天计划', async () => {
   const dashboard = await dashboardEngine.getDashboardData({
     user: {},

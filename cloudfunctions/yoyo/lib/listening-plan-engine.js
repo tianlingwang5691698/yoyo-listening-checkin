@@ -168,14 +168,11 @@ function removePlanMaterial(plan, category) {
   return existing.filter((item) => item && item.category !== targetCategory);
 }
 
-function getCustomPlanDayIndex(checkins, date, planId) {
-  const records = (Array.isArray(checkins) ? checkins : [])
-    .filter((item) => String(item.planSource || '') === 'custom-listening' && (!planId || item.listeningPlanId === planId));
-  const sameDay = records.find((item) => item.date === date && item.planDayIndex);
-  if (sameDay) {
-    return Number(sameDay.planDayIndex || 1) || 1;
-  }
-  return records.filter((item) => String(item.date || '') < date).length + 1;
+function getCustomPlanDayIndex(checkins, date) {
+  const completedDates = new Set((Array.isArray(checkins) ? checkins : [])
+    .map((item) => String((item && item.date) || ''))
+    .filter((itemDate) => itemDate && itemDate < date));
+  return completedDates.size + 1;
 }
 
 function buildPlanForDay(plan, dayIndex, deps) {

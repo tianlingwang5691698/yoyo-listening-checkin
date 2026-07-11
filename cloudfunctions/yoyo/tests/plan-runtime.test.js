@@ -74,6 +74,17 @@ test('自定义听力计划支持多个素材混合生成任务', () => {
   assert.equal(plan.byCategory.unlock3[0].taskId, 'unlock3-1');
 });
 
+test('自定义计划 Day 只按历史打卡日期累计', () => {
+  const checkins = [
+    { date: '2026-07-06', completedAt: '2026-07-06T12:00:00.000Z', planSource: 'custom-listening', listeningPlanId: 'plan-1', planDayIndex: 1 },
+    { date: '2026-07-09', completedAt: '2026-07-09T12:00:00.000Z', planSource: 'fixed-yoyo', listeningPlanId: '', planDayIndex: 2 },
+    { date: '2026-07-09', completedAt: '2026-07-09T13:00:00.000Z', planRunType: 'catchup' }
+  ];
+
+  assert.equal(listeningPlanEngine.getCustomPlanDayIndex(checkins, '2026-07-11'), 3);
+  assert.equal(listeningPlanEngine.getCustomPlanDayIndex(checkins, '2026-07-20'), 3);
+});
+
 test('自定义听力计划支持取消单个素材', () => {
   const nextMaterials = listeningPlanEngine.removePlanMaterial({
     materials: [

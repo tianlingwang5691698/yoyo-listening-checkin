@@ -1,5 +1,12 @@
 # 小程序设计语言与改动记录
 
+### 2026-07-11 首页 Day 与听力计划解耦
+
+- 文件：`pages/home/index.js`、`pages/home/index.wxml`、`cloudfunctions/yoyo/lib/dashboard-engine.js`、`cloudfunctions/yoyo/services/shared.service.js`
+- 改动：首页 Day 改为历史日报打卡日数；首页按当前计划加载对应素材目录后生成任务。
+- 设计记录：日期旁 Day 只表达学生真实打卡天数；修改计划、暂停或中断未打卡都不重置 Day，未打卡日也不推进 Day。
+- 验证：补充 dashboard 打卡天数与自定义计划目录加载回归测试。
+
 后续 UI/交互改动先读本文，再看 `PRODUCT_DESIGN_RULES.md`、`DESIGN_STYLE_REQUIREMENTS.md` 和 `UI_CHANGE_CHECKLIST.md`。
 
 ## UI 总纲规则

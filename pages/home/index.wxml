@@ -129,7 +129,7 @@
       <view class="home-brand type-brand">{{greeting}}{{texts.greetingSeparator}}{{child.nickname || texts.classmate}}</view>
       <view class="home-subtitle type-caption">
         <view class="calendar-mark"></view>
-        <text>{{todayDisplay}} · Day {{planDayIndex}}</text>
+        <text>{{todayDisplay}} · Day {{checkinDayCount}}</text>
       </view>
     </view>
   </view>
