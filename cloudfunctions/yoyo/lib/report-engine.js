@@ -133,7 +133,14 @@ async function upsertDailyReport(scope, date, deps) {
       }
       const taskId = item.originalTaskId || item.taskId;
       const task = deps.getCatalog(item.category).find((entry) => entry.taskId === taskId);
-      return task ? sum + Math.round((task.durationSec * item.repeatTarget) / 60) : sum;
+      const durationSec = Number(
+        (item.taskSnapshot && item.taskSnapshot.durationSec)
+        || (task && task.durationSec)
+        || 0
+      );
+      return durationSec > 0
+        ? sum + Math.round((durationSec * item.repeatTarget) / 60)
+        : sum;
     }, 0),
     streakSnapshot: (checkin || {}).streakSnapshot || 0,
     planDayIndex: todayPlan.dayIndex,

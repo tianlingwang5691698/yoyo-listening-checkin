@@ -14,6 +14,7 @@ function resolveDashboardOptions(view) {
       includeStats: false,
       includeChildStats: false,
       includeTodayListeningMinutes: true,
+      progressScope: 'home',
       reconcileCheckins: false
     };
   }
@@ -45,7 +46,17 @@ async function getDashboard(event) {
     options.includePerfDebug = true;
     options.perfView = view;
   }
-  return study.getDashboardData(ctx, options);
+  const scope = study.getUserScope(ctx);
+  const shouldLoadCumulativeMinutes = view === 'record'
+    && scope && scope.familyId && scope.childId;
+  const [dashboard, cumulativeMinutes] = await Promise.all([
+    study.getDashboardData(ctx, options),
+    shouldLoadCumulativeMinutes ? study.getCumulativeListeningMinutes(scope) : null
+  ]);
+  if (view === 'record' && dashboard.stats && cumulativeMinutes !== null && cumulativeMinutes !== undefined) {
+    dashboard.stats.totalMinutes = Math.max(0, Number(cumulativeMinutes || 0));
+  }
+  return dashboard;
 }
 
 module.exports = {

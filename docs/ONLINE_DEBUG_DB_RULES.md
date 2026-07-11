@@ -86,6 +86,15 @@
 
 ## 已知案例
 
+### 2026-07-11 成长页累计听力时长偏低
+
+1. 现象：家长绑定 317613 后，成长页累计时长小于线上真实累计值。
+2. 账号：317613 / family-1776427951478 / child-yoyo。
+3. 查询：dailyTaskProgress=540，其中 535 条完成但均无 durationSec；dailyReports=110，按 103 个日期去重后的 totalMinutes=3453（57 小时 33 分）。
+4. 结论：getDashboard(view=record) 只用当前内存听力目录反查历史任务时长；目录未刷新且历史 newconcept/song 等任务不在内存目录，累计只得到 1854 分钟。
+5. 修复：成长页累计时长改用 dailyReports 的轻量字段按日期去重汇总并作为权威值；查询与原 dashboard 并行。新任务进度固化 `durationSec`，日报按“音频时长 × 完成遍数”计算，不按页面停留时间计算。
+6. 是否需要发版：需部署 yoyo 云函数；前端不需要重新发布。
+
 ### 2026-07-11 词库刷新返回体超过 1MB
 
 1. 现象：词库本地缓存可显示，但后台 `getFlashcardReview` 刷新约 10 秒后报 `response size exceeded 1048576 bytes`。

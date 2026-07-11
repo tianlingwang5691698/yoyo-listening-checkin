@@ -249,6 +249,17 @@ test('resolveCatalogCategories 听力计划首屏不刷新素材目录', () => {
   );
 });
 
+test('resolveCatalogCategories 首页和成长热力图不刷新素材目录', () => {
+  assert.deepEqual(
+    requestContextEngine.resolveCatalogCategories('getDashboard', '', { view: 'home' }),
+    []
+  );
+  assert.deepEqual(
+    requestContextEngine.resolveCatalogCategories('getMonthHeatmap', '', {}),
+    []
+  );
+});
+
 test('resolveCatalogCategories 阅读学习包不刷新音频目录', () => {
   assert.deepEqual(
     requestContextEngine.resolveCatalogCategories('getReadingStudyPack', '', {}),

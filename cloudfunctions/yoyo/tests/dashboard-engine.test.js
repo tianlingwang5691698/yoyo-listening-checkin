@@ -3,6 +3,74 @@ const assert = require('node:assert/strict');
 
 const dashboardEngine = require('../lib/dashboard-engine');
 
+test('成长统计只计数完成进度而不加载全量进度和计划', async () => {
+  let fullProgressReads = 0;
+  let activePlanReads = 0;
+  const dashboard = await dashboardEngine.getDashboardData({
+    member: { role: 'parent' },
+    child: { childId: 'child-1' }
+  }, {
+    getTodayString: () => '2026-07-11',
+    getUserScope: () => ({ familyId: 'family-1', childId: 'child-1' }),
+    getChildProgressRecords: async () => { fullProgressReads += 1; return []; },
+    getCompletedProgressCount: async () => 535,
+    getCheckins: async () => [{ date: '2026-07-10' }],
+    getActiveListeningPlan: async () => { activePlanReads += 1; return null; },
+    buildStats: (_progress, checkins) => ({
+      streakDays: 1,
+      completedDays: checkins.length,
+      completedLessons: checkins.length,
+      completedTasks: 0,
+      totalMinutes: 0
+    })
+  }, { statsOnly: true });
+
+  assert.equal(dashboard.stats.completedTasks, 535);
+  assert.equal(fullProgressReads, 0);
+  assert.equal(activePlanReads, 0);
+});
+
+test('首页只读取今日进度和复听所需历史进度', async () => {
+  let fullProgressReads = 0;
+  let homeProgressReads = 0;
+  await dashboardEngine.getDashboardData({
+    member: { role: 'student' },
+    child: { childId: 'child-1' }
+  }, {
+    getTodayString: () => '2026-07-11',
+    getUserScope: () => ({ familyId: 'family-1', childId: 'child-1' }),
+    getChildProgressRecords: async () => { fullProgressReads += 1; return []; },
+    getHomeProgressRecords: async () => { homeProgressReads += 1; return []; },
+    getCheckins: async () => [],
+    getDailyReport: async () => null,
+    getActiveListeningPlan: async () => null,
+    isYoyoChild: () => false,
+    getNextPlanDayIndexForDate: () => 1,
+    getPlanDayIndexForDate: () => 1,
+    getPeppaReviewPlanOptions: () => ({}),
+    buildPlanForDay: () => ({ dayIndex: 1, phase: { key: 'none', label: '未设置' }, byCategory: {}, flatTasks: [], categoryOrder: [] }),
+    getPlanCategoryOrder: () => [],
+    decoratePlanTasks: () => [],
+    buildStats: () => ({ streakDays: 0 })
+  }, {
+    includeDailyTasks: false,
+    includeHomeTaskGroups: true,
+    includeCategorySummaries: false,
+    includeCatchupState: false,
+    includePlanDebug: false,
+    includeTaskProgressSummary: true,
+    includeUser: false,
+    includeFamily: false,
+    includeStats: false,
+    includeChildStats: false,
+    includeTodayListeningMinutes: true,
+    progressScope: 'home',
+    reconcileCheckins: false
+  });
+  assert.equal(homeProgressReads, 1);
+  assert.equal(fullProgressReads, 0);
+});
+
 test('当天已打卡时，同日内返回下一天计划', async () => {
   const dashboard = await dashboardEngine.getDashboardData({
     user: {},

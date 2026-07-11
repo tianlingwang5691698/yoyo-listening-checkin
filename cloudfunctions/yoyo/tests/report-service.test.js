@@ -25,7 +25,7 @@ test('getMonthHeatmap 会先使用修复后的 checkins 计算点亮状态', asy
   t.mock.method(study, 'getPlanStartDate', () => '2026-04-19');
 
   const result = await reportService.getMonthHeatmap({
-    payload: { year: 2026, month: 4 }
+    payload: { year: 2026, month: 4, reconcile: true }
   });
 
   const day19 = result.heatmap.find((item) => item.date === '2026-04-19');
@@ -34,6 +34,7 @@ test('getMonthHeatmap 会先使用修复后的 checkins 计算点亮状态', asy
 });
 
 test('自定义计划当天新增未完成任务后，热力图今天不被旧 checkin 点亮', async (t) => {
+  let reconcileCalls = 0;
   t.mock.method(study, 'prepareRequestContext', async () => ({
     ctx: { child: { childId: 'child-1' } },
     today: '2026-07-06'
@@ -41,10 +42,11 @@ test('自定义计划当天新增未完成任务后，热力图今天不被旧 c
   t.mock.method(study, 'getUserScope', () => ({ childId: 'child-1' }));
   t.mock.method(study, 'getCheckins', async () => [{ date: '2026-07-06', planSource: 'custom-listening', planDayIndex: 1 }]);
   t.mock.method(study, 'getChildProgressRecords', async () => []);
-  t.mock.method(study, 'reconcileCheckins', async (_scope, progressRecords, checkins) => ({
-    progressRecords,
-    checkins
-  }));
+  t.mock.method(study, 'getChildProgressRecordsByDate', async () => []);
+  t.mock.method(study, 'reconcileCheckins', async (_scope, progressRecords, checkins) => {
+    reconcileCalls += 1;
+    return { progressRecords, checkins };
+  });
   t.mock.method(study, 'getActiveListeningPlan', async () => ({ active: true, planId: 'plan-1', materials: [] }));
   t.mock.method(study, 'getCustomPlanDayIndex', () => 1);
   t.mock.method(study, 'buildListeningPlanForDay', () => ({
@@ -75,6 +77,7 @@ test('自定义计划当天新增未完成任务后，热力图今天不被旧 c
   assert.equal(todayCell.count, 0);
   assert.equal(todayCell.completed, false);
   assert.equal(result.catchupState.todayDone, false);
+  assert.equal(reconcileCalls, 0);
 });
 
 test('getParentDashboard summaryOnly 不等待完整 dashboard', async (t) => {

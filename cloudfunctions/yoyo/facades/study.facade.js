@@ -3,8 +3,10 @@ const shared = require('../services/shared.service');
 module.exports = {
   prepareRequestContext: shared.prepareRequestContext,
   getDashboardData: (ctx, options) => shared.getDashboardData(ctx, options),
+  getCumulativeListeningMinutes: (scope) => shared.getCumulativeListeningMinutes(scope),
   getUserScope: shared.getUserScope,
   getChildProgressRecords: shared.getChildProgressRecords,
+  getChildProgressRecordsByDate: shared.getChildProgressRecordsByDate,
   getCheckins: shared.getCheckins,
   getActiveListeningPlan: shared.getActiveListeningPlan,
   getActiveListeningPlanByScope: shared.getActiveListeningPlanByScope,

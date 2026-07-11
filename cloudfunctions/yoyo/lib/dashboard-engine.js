@@ -161,13 +161,62 @@ async function getDashboardData(ctx, deps, options = {}) {
   const today = deps.getTodayString();
   const scope = deps.getUserScope(ctx);
   markPerf('setup', perfStartedAt);
+  if (options.statsOnly && deps.getCompletedProgressCount) {
+    const statsStartedAt = Date.now();
+    const [checkins, completedTasks] = await Promise.all([
+      deps.getCheckins(scope),
+      deps.getCompletedProgressCount(scope)
+    ]);
+    const stats = deps.buildStats([], checkins, ctx.child.childId);
+    stats.completedTasks = Number(completedTasks || 0);
+    markPerf('stats', statsStartedAt);
+    const result = {
+      currentMember: ctx.member,
+      child: Object.assign({}, ctx.child, {
+        totalCompleted: checkins.length,
+        streakDays: stats.streakDays
+      }),
+      planDayIndex: 1,
+      planPhase: 'none',
+      planPhaseLabel: '未设置',
+      planSource: 'stats-only',
+      listeningPlan: null,
+      hasListeningPlan: false,
+      needsListeningPlanSetup: false,
+      isYoyoFixedPlan: false,
+      stats
+    };
+    if (perfDebug) {
+      perfDebug.totalMs = Date.now() - perfStartedAt;
+      perfDebug.progressRecordCount = completedTasks;
+      perfDebug.checkinCount = checkins.length;
+      perfDebug.stats = {
+        completedTasks: stats.completedTasks,
+        completedDays: stats.completedDays,
+        totalMinutes: stats.totalMinutes
+      };
+      result.perfDebug = perfDebug;
+    }
+    return result;
+  }
   const recordsStartedAt = Date.now();
-  let [progressRecords, checkins, todayReport] = await Promise.all([
-    deps.getChildProgressRecords(scope),
+  const activePlanStartedAt = Date.now();
+  const activePlanPromise = deps.getActiveListeningPlan
+    ? Promise.resolve(deps.getActiveListeningPlan(ctx)).then((plan) => {
+      markPerf('activePlan', activePlanStartedAt);
+      return plan;
+    })
+    : null;
+  const progressPromise = options.progressScope === 'home' && deps.getHomeProgressRecords
+    ? deps.getHomeProgressRecords(scope, today)
+    : deps.getChildProgressRecords(scope);
+  let [progressRecords, checkins, todayReport, activeListeningPlan] = await Promise.all([
+    progressPromise,
     deps.getCheckins(scope),
     includeTodayListeningMinutes && deps.getDailyReport
       ? deps.getDailyReport(scope, today)
-      : null
+      : null,
+    activePlanPromise
   ]);
   markPerf('records', recordsStartedAt);
   if (options.reconcileCheckins !== false && deps.reconcileCheckins) {
@@ -179,11 +228,6 @@ async function getDashboardData(ctx, deps, options = {}) {
     }
     markPerf('reconcile', reconcileStartedAt);
   }
-  const activePlanStartedAt = Date.now();
-  const activeListeningPlan = deps.getActiveListeningPlan
-    ? await deps.getActiveListeningPlan(ctx)
-    : null;
-  markPerf('activePlan', activePlanStartedAt);
   const useCustomListeningPlan = !!(activeListeningPlan && activeListeningPlan.active !== false);
   const useFixedYoyoPlan = !useCustomListeningPlan && !!(deps.isYoyoChild && deps.isYoyoChild(ctx.child));
   const hasListeningPlan = useCustomListeningPlan || useFixedYoyoPlan;

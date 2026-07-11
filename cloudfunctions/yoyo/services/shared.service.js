@@ -272,6 +272,10 @@ async function getChildProgressRecords(scope) {
   return progressRepository.findByScope(scope);
 }
 
+async function getChildProgressRecordsByDate(scope, date) {
+  return progressRepository.findByScopeAndDate(scope, date);
+}
+
 async function getCheckins(scope) {
   return checkinRepository.findByScope(scope);
 }
@@ -643,6 +647,8 @@ async function getDashboardData(ctx, options = {}) {
     getTodayString,
     getUserScope,
     getChildProgressRecords,
+    getHomeProgressRecords: (scope, date) => progressRepository.findForHome(scope, date),
+    getCompletedProgressCount: (scope) => progressRepository.countCompletedByScope(scope),
     getCheckins,
     getDailyReport: (scope, date) => reportRepository.findByScopeAndDate(scope, date),
     getActiveListeningPlan,
@@ -668,6 +674,10 @@ async function getDashboardData(ctx, options = {}) {
   }, options);
 }
 
+async function getCumulativeListeningMinutes(scope) {
+  return reportRepository.getCumulativeMinutes(scope);
+}
+
 async function prepareRequestContext(event) {
   return requestContextEngine.prepareRequestContext(event, {
     refreshRuntimeCatalogs,
@@ -684,8 +694,10 @@ module.exports = {
   getResourceDebugSnapshot,
   prepareRequestContext,
   getDashboardData,
+  getCumulativeListeningMinutes,
   getUserScope,
   getChildProgressRecords,
+  getChildProgressRecordsByDate,
   getCheckins,
   getActiveListeningPlan,
   getActiveListeningPlanByScope,

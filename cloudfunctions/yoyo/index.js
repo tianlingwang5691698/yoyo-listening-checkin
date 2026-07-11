@@ -346,7 +346,7 @@ async function scoreSpeakingAttemptLegacy(payload) {
 const monitor = require('./lib/monitor');
 
 const servicePaths = {
-  dashboard: './services/dashboard.service',
+  dashboard: './services/dashboard-router.service',
   level: './services/level.service',
   task: './services/task.service',
   family: './services/family.service',
@@ -355,6 +355,7 @@ const servicePaths = {
   catalog: './services/catalog.service',
   speaking: './services/speaking.service',
   readingHome: './services/reading-home.service',
+  recordHome: './services/record-home.service',
   reading: './services/reading.service',
   listening: './services/listening.service',
   listeningPlan: './services/listening-plan.service',
@@ -439,7 +440,7 @@ const actionMap = {
   undoLastListened: serviceAction('identity', 'undoLastListened'),
   updateSubscription: serviceAction('family', 'updateSubscription'),
   getHeatmap: serviceAction('report', 'getHeatmap'),
-  getMonthHeatmap: serviceAction('report', 'getMonthHeatmap'),
+  getMonthHeatmap: serviceAction('recordHome', 'getMonthHeatmap'),
   getDailyReportByDate: serviceAction('report', 'getDailyReportByDate'),
   getParentDashboard: serviceAction('report', 'getParentDashboard'),
   getReadingHome: serviceAction('readingHome', 'getReadingHome'),
@@ -563,6 +564,8 @@ exports.main = async (event, context) => {
   }
 
   const skipResourceDebug = [
+    'getDashboard',
+    'getMonthHeatmap',
     'getReadingHome',
     'getReadingPassage',
     'getReadingStudyPack',

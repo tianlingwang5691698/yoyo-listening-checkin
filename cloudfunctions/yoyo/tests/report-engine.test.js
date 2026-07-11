@@ -35,6 +35,7 @@ test('日报生成已完成分类和总时长', async () => {
           audioCloudPath: 'A1/Peppa/第1季/S101 Muddy Puddles.mp3',
           audioFileId: 'cloud://env.bucket/A1/Peppa/第1季/S101 Muddy Puddles.mp3',
           audioSource: 'static-cloud-url',
+          durationSec: 180,
           playCount: 3,
           repeatTarget: 3,
           completedToday: true,
@@ -56,7 +57,7 @@ test('日报生成已完成分类和总时长', async () => {
   });
 
   assert.deepEqual(report.completedCategories, ['peppa', 'song']);
-  assert.equal(report.totalMinutes, 9);
+  assert.equal(report.totalMinutes, 12);
   assert.equal(report.items[0].audioCloudPath, 'A1/Peppa/第1季/S101 Muddy Puddles.mp3');
   assert.equal(report.items[0].taskSnapshot.audioSource, 'static-cloud-url');
   assert.equal(saved.reportId, 'family-1_child-1_2026-04-21');

@@ -11,7 +11,7 @@ function resolveCatalogCategories(action, requestedCategory, payload = {}) {
   let catalogCategories = ['newconcept1', 'song'];
   const knownAudioCategories = ['newconcept1', 'newconcept2', 'unlock2', 'unlock2thirdedition', 'unlock2workbook', 'newconcept3', 'unlock3textbook', 'unlock3thirdedition', 'unlock3', 'newconcept4', 'unlock4', 'unlock4thirdedition', 'unlock4workbook', 'peppa', 'song', 'unlock1', 'unlock1thirdedition', 'unlock1workbook'];
   const view = String((payload && payload.view) || '').trim();
-  if (action === 'getDashboard') {
+  if (action === 'getDashboard' || action === 'getMonthHeatmap') {
     return [];
   }
   if (action === 'getLevelOverview') {

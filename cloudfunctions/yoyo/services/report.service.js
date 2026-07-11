@@ -47,8 +47,10 @@ function buildTodayLearningStats(report) {
   return stats;
 }
 
-async function getTodayListeningCompletion(ctx, today, records, progressRecords) {
-  const activePlan = await study.getActiveListeningPlan(ctx);
+async function getTodayListeningCompletion(ctx, today, records, progressRecords, prefetchedActivePlan) {
+  const activePlan = prefetchedActivePlan === undefined
+    ? await study.getActiveListeningPlan(ctx)
+    : prefetchedActivePlan;
   const useCustomListeningPlan = !!(activePlan && activePlan.active !== false);
   if (useCustomListeningPlan) {
     const planDayIndex = study.getCustomPlanDayIndex(records, today, activePlan);
@@ -86,9 +88,10 @@ async function getHeatmap(event) {
   }));
   const days = Number((event && event.payload && event.payload.days) || 28);
   const scope = study.getUserScope(ctx);
-  let [records, progressRecords] = await Promise.all([
+  let [records, progressRecords, activePlan] = await Promise.all([
     study.getCheckins(scope),
-    study.getChildProgressRecords(scope)
+    study.getChildProgressRecords(scope),
+    study.getActiveListeningPlan(ctx)
   ]);
   if (study.reconcileCheckins) {
     const reconciled = await study.reconcileCheckins(scope, progressRecords, records, today);
@@ -99,7 +102,7 @@ async function getHeatmap(event) {
   records.forEach((item) => {
     counts[item.date] = (counts[item.date] || 0) + 1;
   });
-  const todayCompletion = await getTodayListeningCompletion(ctx, today, records, progressRecords);
+  const todayCompletion = await getTodayListeningCompletion(ctx, today, records, progressRecords, activePlan);
   const todayDone = todayCompletion.done;
   const catchupState = study.buildCatchupState(records, today, study.getPlanStartDate(ctx, today, records), todayDone);
   const catchupPlan = catchupState.canCatchup ? study.buildPlanForDay(catchupState.planDayIndex) : null;
@@ -136,11 +139,16 @@ async function getMonthHeatmap(event) {
   const month = Number((event && event.payload && event.payload.month) || today.slice(5, 7));
   const monthText = `${year}-${String(month).padStart(2, '0')}`;
   const scope = study.getUserScope(ctx);
-  let [records, progressRecords] = await Promise.all([
+  const shouldReconcile = !!(event && event.payload && event.payload.reconcile);
+  const progressPromise = shouldReconcile
+    ? study.getChildProgressRecords(scope)
+    : study.getChildProgressRecordsByDate(scope, today);
+  let [records, progressRecords, activePlan] = await Promise.all([
     study.getCheckins(scope),
-    study.getChildProgressRecords(scope)
+    progressPromise,
+    study.getActiveListeningPlan(ctx)
   ]);
-  if (study.reconcileCheckins) {
+  if (shouldReconcile && study.reconcileCheckins) {
     const reconciled = await study.reconcileCheckins(scope, progressRecords, records, today);
     records = reconciled.checkins || records;
     progressRecords = reconciled.progressRecords || progressRecords;
@@ -151,7 +159,7 @@ async function getMonthHeatmap(event) {
       counts[item.date] = (counts[item.date] || 0) + 1;
     }
   });
-  const todayCompletion = await getTodayListeningCompletion(ctx, today, records, progressRecords);
+  const todayCompletion = await getTodayListeningCompletion(ctx, today, records, progressRecords, activePlan);
   const todayDone = todayCompletion.done;
   const catchupState = study.buildCatchupState(records, today, study.getPlanStartDate(ctx, today, records), todayDone);
   const daysInMonth = new Date(year, month, 0).getDate();

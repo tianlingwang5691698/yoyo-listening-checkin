@@ -377,6 +377,7 @@ async function markTaskListened(event, context) {
     playCount: nextPlayCount,
     playMoments,
     repeatTarget: task.repeatTarget,
+    durationSec: Math.max(0, Number(task.durationSec || 0)),
     textUnlocked: nextPlayCount >= task.repeatTarget - 1,
     completedToday: nextPlayCount >= task.repeatTarget,
     planDayIndex: todayPlan.dayIndex,
