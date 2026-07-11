@@ -597,34 +597,34 @@
 }
 
 .option-item.is-correct {
-  border-color: rgba(61, 132, 116, 0.62);
-  background: rgba(103, 176, 158, 0.2);
-  color: #2f7569;
+  border-color: rgba(39, 121, 101, 0.82);
+  background: rgba(78, 169, 147, 0.34);
+  color: #195f52;
 }
 
 .option-item.is-correct .option-key {
-  background: rgba(61, 132, 116, 0.22);
-  color: #2f7569;
+  background: rgba(39, 121, 101, 0.34);
+  color: #195f52;
 }
 
 .option-item.is-correct .option-text {
-  color: #2f7569;
+  color: #195f52;
   text-decoration: none;
 }
 
 .option-item.is-wrong {
-  border-color: rgba(190, 78, 61, 0.58);
-  background: rgba(232, 119, 96, 0.2);
-  color: #b44f3f;
+  border-color: rgba(180, 61, 45, 0.8);
+  background: rgba(226, 96, 72, 0.32);
+  color: #96382b;
 }
 
 .option-item.is-wrong .option-key {
-  background: rgba(190, 78, 61, 0.18);
-  color: #b44f3f;
+  background: rgba(180, 61, 45, 0.3);
+  color: #96382b;
 }
 
 .option-item.is-wrong .option-text {
-  color: #b44f3f;
+  color: #96382b;
   text-decoration: none;
 }
 
@@ -1388,22 +1388,22 @@
 }
 
 .library-option.is-correct {
-  border-color: rgba(85, 122, 76, 0.76);
-  background: rgba(116, 153, 105, 0.2);
+  border-color: rgba(65, 111, 57, 0.88);
+  background: rgba(104, 148, 92, 0.34);
 }
 
 .library-option.is-correct .library-option-text {
-  color: #3f6d3a;
+  color: #2f5d2b;
   text-decoration: none;
 }
 
 .library-option.is-wrong {
-  border-color: rgba(163, 67, 56, 0.68);
-  background: rgba(181, 84, 70, 0.16);
+  border-color: rgba(151, 53, 43, 0.84);
+  background: rgba(181, 75, 60, 0.3);
 }
 
 .library-option.is-wrong .library-option-text {
-  color: #a34338;
+  color: #873229;
   text-decoration: none;
 }
 

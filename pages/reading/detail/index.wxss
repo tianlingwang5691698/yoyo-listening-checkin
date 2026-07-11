@@ -1796,85 +1796,92 @@
 
 .reading-detail .highlight-word.is-active,
 .reading-detail .review-tab.is-active.tab-word {
-  background: rgba(93, 157, 139, 0.18);
-  color: #315f55;
+  background: rgba(62, 151, 126, 0.34);
+  color: #174f43;
 }
 .reading-detail .highlight-phrase.is-active,
 .reading-detail .review-tab.is-active.tab-phrase {
-  background: rgba(91, 137, 188, 0.18);
-  color: #315b8c;
+  background: rgba(72, 124, 184, 0.34);
+  color: #214f83;
 }
 .reading-detail .highlight-pattern.is-active,
 .reading-detail .review-tab.is-active.tab-pattern {
-  background: rgba(135, 101, 176, 0.17);
-  color: #65468c;
+  background: rgba(128, 84, 174, 0.32);
+  color: #53327e;
 }
 .reading-detail .highlight-answer.is-active {
-  background: rgba(220, 132, 105, 0.2);
-  color: #994e3b;
+  background: rgba(215, 105, 75, 0.34);
+  color: #873522;
 }
 
 .reading-detail .word-card {
-  background: rgba(231, 244, 239, 0.82);
-  border-color: rgba(93, 157, 139, 0.34);
+  background: #dcefe8;
+  border-color: rgba(62, 151, 126, 0.58);
 }
 .reading-detail .phrase-card {
-  background: rgba(232, 241, 251, 0.82);
-  border-color: rgba(91, 137, 188, 0.34);
+  background: #ddeaf7;
+  border-color: rgba(72, 124, 184, 0.58);
 }
 .reading-detail .pattern-card {
-  background: rgba(242, 235, 249, 0.84);
-  border-color: rgba(135, 101, 176, 0.32);
+  background: #ebe0f4;
+  border-color: rgba(128, 84, 174, 0.56);
 }
-.reading-detail .word-card .card-index { background: rgba(93, 157, 139, 0.18); color: #315f55; }
-.reading-detail .phrase-card .card-index { background: rgba(91, 137, 188, 0.18); color: #315b8c; }
-.reading-detail .pattern-card .card-index { background: rgba(135, 101, 176, 0.18); color: #65468c; }
+.reading-detail .word-card .card-index { background: rgba(62, 151, 126, 0.32); color: #174f43; }
+.reading-detail .phrase-card .card-index { background: rgba(72, 124, 184, 0.32); color: #214f83; }
+.reading-detail .pattern-card .card-index { background: rgba(128, 84, 174, 0.3); color: #53327e; }
 .reading-detail .answer-sentence,
 .reading-detail .cloze-evidence {
-  background: rgba(252, 235, 229, 0.78);
-  border-left-color: rgba(220, 132, 105, 0.72);
+  background: #f6dcd3;
+  border-left-color: rgba(198, 78, 49, 0.82);
 }
 .reading-detail .answer-sentence-label,
 .reading-detail .cloze-evidence-label,
 .reading-detail .answer-sentence-text,
-.reading-detail .cloze-evidence-text { color: #994e3b; }
+.reading-detail .cloze-evidence-text { color: #873522; }
+.reading-detail .segment-word { background: rgba(62, 151, 126, 0.28); color: #174f43; }
+.reading-detail .segment-phrase { background: rgba(72, 124, 184, 0.28); color: #214f83; }
+.reading-detail .segment-answer { background: rgba(215, 105, 75, 0.3); color: #873522; }
 .reading-detail .segment-pattern {
-  background: rgba(135, 101, 176, 0.16);
-  color: #65468c;
-  box-shadow: inset 0 -2rpx 0 rgba(135, 101, 176, 0.24);
+  background: rgba(128, 84, 174, 0.28);
+  color: #53327e;
+  box-shadow: inset 0 -2rpx 0 rgba(128, 84, 174, 0.38);
 }
 
 .library-reading-detail .highlight-word { color: #a9c09b; }
 .library-reading-detail .highlight-phrase { color: #9bbbd0; }
 .library-reading-detail .highlight-pattern { color: #d5b475; }
 .library-reading-detail .highlight-answer { color: #d79a8d; }
-.library-reading-detail .library-answer-index .highlight-word.is-active { background: rgba(127, 153, 111, 0.28); color: #edf4e8; }
-.library-reading-detail .library-answer-index .highlight-phrase.is-active { background: rgba(65, 100, 123, 0.34); color: #edf5fa; }
-.library-reading-detail .library-answer-index .highlight-pattern.is-active { background: rgba(184, 149, 98, 0.3); color: #fff5df; }
-.library-reading-detail .library-answer-index .highlight-answer.is-active { background: rgba(154, 95, 85, 0.34); color: #fff0ec; }
+.library-reading-detail .library-answer-index .highlight-word.is-active { background: rgba(101, 135, 83, 0.5); color: #ffffff; }
+.library-reading-detail .library-answer-index .highlight-phrase.is-active { background: rgba(45, 84, 110, 0.54); color: #ffffff; }
+.library-reading-detail .library-answer-index .highlight-pattern.is-active { background: rgba(169, 122, 54, 0.54); color: #ffffff; }
+.library-reading-detail .library-answer-index .highlight-answer.is-active { background: rgba(145, 66, 55, 0.56); color: #ffffff; }
 
 .library-reading-detail .review-tab.tab-word { color: #5f734f; }
 .library-reading-detail .review-tab.tab-phrase { color: #34586f; }
 .library-reading-detail .review-tab.tab-pattern { color: #906526; }
-.library-reading-detail .review-tab.is-active.tab-word { background: rgba(127, 153, 111, 0.2); color: #4f6442; }
-.library-reading-detail .review-tab.is-active.tab-phrase { background: rgba(65, 100, 123, 0.18); color: #294a60; }
-.library-reading-detail .review-tab.is-active.tab-pattern { background: rgba(184, 149, 98, 0.22); color: #76501d; }
-.library-reading-detail .word-card { background: rgba(231, 237, 222, 0.78); border-color: rgba(127, 153, 111, 0.42); }
-.library-reading-detail .phrase-card { background: rgba(225, 234, 239, 0.8); border-color: rgba(65, 100, 123, 0.36); }
-.library-reading-detail .pattern-card { background: rgba(245, 234, 211, 0.82); border-color: rgba(184, 149, 98, 0.46); }
+.library-reading-detail .review-tab.is-active.tab-word { background: rgba(101, 135, 83, 0.32); color: #354d2c; }
+.library-reading-detail .review-tab.is-active.tab-phrase { background: rgba(45, 84, 110, 0.3); color: #173b52; }
+.library-reading-detail .review-tab.is-active.tab-pattern { background: rgba(169, 122, 54, 0.32); color: #65420e; }
+.library-reading-detail .word-card { background: #dfe8d5; border-color: rgba(101, 135, 83, 0.68); }
+.library-reading-detail .phrase-card { background: #d9e5eb; border-color: rgba(45, 84, 110, 0.62); }
+.library-reading-detail .pattern-card { background: #efdfbd; border-color: rgba(169, 122, 54, 0.68); }
 .library-reading-detail .word-text { color: #526747; }
 .library-reading-detail .phrase-text { color: #294a60; }
 .library-reading-detail .pattern-text { color: #76501d; }
-.library-reading-detail .word-card .card-index { background: rgba(127, 153, 111, 0.2); color: #526747; }
-.library-reading-detail .phrase-card .card-index { background: rgba(65, 100, 123, 0.18); color: #294a60; }
-.library-reading-detail .pattern-card .card-index { background: rgba(184, 149, 98, 0.22); color: #76501d; }
+.library-reading-detail .word-card .card-index { background: rgba(101, 135, 83, 0.34); color: #354d2c; }
+.library-reading-detail .phrase-card .card-index { background: rgba(45, 84, 110, 0.32); color: #173b52; }
+.library-reading-detail .pattern-card .card-index { background: rgba(169, 122, 54, 0.34); color: #65420e; }
 .library-reading-detail .answer-sentence,
 .library-reading-detail .cloze-evidence {
-  background: rgba(238, 219, 210, 0.68);
-  border-left-color: rgba(154, 95, 85, 0.76);
-  color: #84483f;
+  background: #ead0c8;
+  border-left-color: rgba(145, 66, 55, 0.86);
+  color: #74362e;
 }
 .library-reading-detail .answer-sentence-label,
 .library-reading-detail .cloze-evidence-label,
 .library-reading-detail .answer-sentence-text,
-.library-reading-detail .cloze-evidence-text { color: #84483f; }
+.library-reading-detail .cloze-evidence-text { color: #74362e; }
+.library-reading-detail .segment-word { background: rgba(101, 135, 83, 0.3); color: #354d2c; }
+.library-reading-detail .segment-phrase { background: rgba(45, 84, 110, 0.28); color: #173b52; }
+.library-reading-detail .segment-pattern { background: rgba(169, 122, 54, 0.3); color: #65420e; }
+.library-reading-detail .segment-answer { background: rgba(145, 66, 55, 0.3); color: #74362e; }
