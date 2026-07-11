@@ -67,7 +67,19 @@
 
         <view class="vocab-preview-notice" wx:if="{{previewMode}}">{{texts.parentPreview}}</view>
 
-        <button class="library-vocab-start {{empty || loading ? 'is-disabled' : ''}}" disabled="{{empty || loading}}" hover-class="is-pressed" hover-start-time="20" hover-stay-time="180" bindtap="startReview">{{previewMode ? texts.previewStart : texts.start}}</button>
+        <view class="today-repeat-panel library-today-repeat" wx:if="{{!previewMode && !cards.length && todayRepeatTotal}}">
+          <view class="today-repeat-copy">
+            <view class="today-repeat-title">{{texts.repeatTitle}}</view>
+            <view class="today-repeat-note">{{texts.repeatCopy}}</view>
+          </view>
+          <view class="today-repeat-controls">
+            <view class="today-repeat-step" data-delta="-1" bindtap="changeRepeatLimit">−</view>
+            <view class="today-repeat-value"><text>{{repeatLimit}}</text><text>/ {{todayRepeatTotal}} {{texts.repeatUnit}}</text></view>
+            <view class="today-repeat-step" data-delta="1" bindtap="changeRepeatLimit">+</view>
+          </view>
+          <button class="today-repeat-action library-vocab-start" hover-class="is-pressed" bindtap="startTodayRepeat">{{texts.startRepeat}}</button>
+        </view>
+        <button wx:else class="library-vocab-start {{empty || loading ? 'is-disabled' : ''}}" disabled="{{empty || loading}}" hover-class="is-pressed" hover-start-time="20" hover-stay-time="180" bindtap="startReview">{{previewMode ? texts.previewStart : texts.start}}</button>
         <view class="flashcard-debug library-vocab-debug" wx:if="{{flashcardDebugLines.length}}">
           <text selectable="{{true}}" wx:for="{{flashcardDebugLines}}" wx:key="*this">{{item}}</text>
         </view>
@@ -143,7 +155,7 @@
           <view class="celebrate-burst"><text></text><text></text><text></text><text></text><text></text><text></text></view>
           <view class="library-vocab-archive"><text></text><text></text><text></text></view>
           <view class="library-vocab-complete-stamp">{{texts.complete}}</view>
-          <view class="library-vocab-complete-title">{{texts.completeTitle}}</view>
+          <view class="library-vocab-complete-title">{{repeatMode ? texts.repeatCompleteTitle : texts.completeTitle}}</view>
           <view class="complete-summary library-vocab-complete-summary">
             <view class="complete-summary-item"><text class="complete-summary-label">{{texts.completeNew}}</text><text class="complete-summary-value">{{newDueCount}}</text></view>
             <view class="complete-summary-item"><text class="complete-summary-label">{{texts.completeReview}}</text><text class="complete-summary-value">{{reviewDueCount}}</text></view>
@@ -285,7 +297,19 @@
 
       <view class="vocab-preview-notice" wx:if="{{previewMode}}">{{texts.parentPreview}}</view>
 
-      <button class="start-review {{empty || loading ? 'is-disabled' : ''}}" disabled="{{empty || loading}}" bindtap="startReview">{{previewMode ? texts.previewStart : texts.start}}</button>
+      <view class="today-repeat-panel" wx:if="{{!previewMode && !cards.length && todayRepeatTotal}}">
+        <view class="today-repeat-copy">
+          <view class="today-repeat-title">{{texts.repeatTitle}}</view>
+          <view class="today-repeat-note">{{texts.repeatCopy}}</view>
+        </view>
+        <view class="today-repeat-controls">
+          <view class="today-repeat-step" data-delta="-1" bindtap="changeRepeatLimit">−</view>
+          <view class="today-repeat-value"><text>{{repeatLimit}}</text><text>/ {{todayRepeatTotal}} {{texts.repeatUnit}}</text></view>
+          <view class="today-repeat-step" data-delta="1" bindtap="changeRepeatLimit">+</view>
+        </view>
+        <button class="today-repeat-action start-review" bindtap="startTodayRepeat">{{texts.startRepeat}}</button>
+      </view>
+      <button wx:else class="start-review {{empty || loading ? 'is-disabled' : ''}}" disabled="{{empty || loading}}" bindtap="startReview">{{previewMode ? texts.previewStart : texts.start}}</button>
       <view class="flashcard-debug" wx:if="{{flashcardDebugLines.length}}">
         <text selectable="{{true}}" wx:for="{{flashcardDebugLines}}" wx:key="*this">{{item}}</text>
       </view>
@@ -376,7 +400,7 @@
         <view class="celebrate-burst"><text></text><text></text><text></text><text></text><text></text><text></text></view>
         <view class="complete-stack"><text></text><text></text><text></text></view>
         <view class="complete-badge">{{texts.complete}}</view>
-        <view class="complete-title">{{texts.completeTitle}}</view>
+        <view class="complete-title">{{repeatMode ? texts.repeatCompleteTitle : texts.completeTitle}}</view>
         <view class="complete-summary">
           <view class="complete-summary-item"><text class="complete-summary-label">{{texts.completeNew}}</text><text class="complete-summary-value">{{newDueCount}}</text></view>
           <view class="complete-summary-item"><text class="complete-summary-label">{{texts.completeReview}}</text><text class="complete-summary-value">{{reviewDueCount}}</text></view>

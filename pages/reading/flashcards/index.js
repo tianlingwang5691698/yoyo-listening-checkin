@@ -337,6 +337,16 @@ function buildReviewQueue(library, settings, today) {
   return buildDueCards(library || [], settings || {}, today || '');
 }
 
+function buildTodayPracticeCards(library, today) {
+  return (library || []).filter((item) => (
+    item.firstLearnedDate === today || item.lastReviewDate === today
+  ));
+}
+
+function getDefaultRepeatLimit(total) {
+  return Math.min(10, Math.max(1, Number(total || 0)));
+}
+
 function mergeCachedCardState(library, cachedLibrary) {
   const cachedMap = (cachedLibrary || []).reduce((map, item) => {
     if (item && item.flashcardKey) map[item.flashcardKey] = item;
@@ -646,6 +656,9 @@ Page({
     currentIndex: 0,
     total: 0,
     empty: false,
+    repeatMode: false,
+    todayRepeatTotal: 0,
+    repeatLimit: 1,
     stats: { all: 0, word: 0, phrase: 0, pattern: 0 },
     progress: { total: 0, mastered: 0, reviewing: 0, fresh: 0 },
     planSummary: { total: 0, learned: 0, learnedPercent: 0, boatPercent: 4, mastered: 0, reviewing: 0, fresh: 0, todayPlan: 0 },
@@ -836,6 +849,7 @@ Page({
       ? buildDueCards(library, effectiveSettings, data.today)
       : ((data.cards && data.cards.length ? data.cards : rawLibrary).map(normalizeCard)));
     const planSummary = buildPlanSummary(library, effectiveSettings);
+    const todayRepeatTotal = buildTodayPracticeCards(library, data.today).length;
     return {
       library,
       libraryGroups: [],
@@ -844,6 +858,9 @@ Page({
       current: cards[0] || null,
       total: cards.length,
       empty: !library.length,
+      repeatMode: false,
+      todayRepeatTotal,
+      repeatLimit: getDefaultRepeatLimit(todayRepeatTotal),
       stats: countByType(library),
       dueCount: cards.length,
       newDueCount: cards.filter((item) => item.status === 'new').length,
@@ -1571,8 +1588,15 @@ Page({
     });
     if (shouldPersist) this.persistActiveSourceState();
     if (reviewCompleted) {
-      this.syncVocabularyCompletion(true);
-      this.flushReviewQueue(true);
+      const todayRepeatTotal = buildTodayPracticeCards(this.getFlashcardLibrary(), this.data.today).length;
+      this.setData({
+        todayRepeatTotal,
+        repeatLimit: Math.min(Math.max(1, Number(this.data.repeatLimit || 1)), Math.max(1, todayRepeatTotal))
+      });
+      if (!this.data.repeatMode) {
+        this.syncVocabularyCompletion(true);
+        this.flushReviewQueue(true);
+      }
       this.playCompletionSfx();
       return;
     }
@@ -1624,6 +1648,7 @@ Page({
       reviewDone: 0,
       reviewSessionTotal: cards.length,
       reviewCompleted: false,
+      repeatMode: false,
       total: cards.length,
       dueCount: cards.length,
       newDueCount: cards.filter((item) => item.status === 'new').length,
@@ -1641,8 +1666,10 @@ Page({
     this.scheduleAudioPrefetchAroundCurrent();
   },
   exitReview() {
-    this.syncVocabularyCompletion(true);
-    this.flushReviewQueue(true);
+    if (!this.data.repeatMode) {
+      this.syncVocabularyCompletion(true);
+      this.flushReviewQueue(true);
+    }
     if (this.data.previewMode && this.previewSourceSnapshot) {
       const snapshot = this.previewSourceSnapshot;
       this.previewSourceSnapshot = null;
@@ -1653,7 +1680,40 @@ Page({
       }));
       return;
     }
-    this.setData({ mode: 'library', reviewCompleted: false });
+    this.setData({ mode: 'library', reviewCompleted: false, repeatMode: false });
+  },
+  changeRepeatLimit(event) {
+    const total = Math.max(1, Number(this.data.todayRepeatTotal || 1));
+    const delta = Number(event.currentTarget.dataset.delta || 0);
+    this.setData({ repeatLimit: Math.max(1, Math.min(total, Number(this.data.repeatLimit || 1) + delta)) });
+  },
+  startTodayRepeat() {
+    const available = buildTodayPracticeCards(this.getFlashcardLibrary(), this.data.today);
+    const limit = Math.max(1, Math.min(available.length, Number(this.data.repeatLimit || 1)));
+    const cards = available.slice(0, limit);
+    const current = cards[0] || null;
+    if (!current) return;
+    this.setData({
+      sourceMode: 'library',
+      mode: 'review',
+      repeatMode: true,
+      cards,
+      currentIndex: 0,
+      current,
+      reviewDone: 0,
+      reviewSessionTotal: cards.length,
+      reviewCompleted: false,
+      total: cards.length,
+      newDueCount: 0,
+      reviewDueCount: cards.length,
+      cardRevealed: false,
+      cardChoice: '',
+      previousCardChoice: '',
+      audioPlaying: false,
+      audioCompleted: isAudioCompletedForCard(current)
+    });
+    this.scheduleAutoSpeakCurrent();
+    this.scheduleAudioPrefetchAroundCurrent();
   },
   async markRemembered() {
     if (!this.data.cardRevealed) {
@@ -1687,6 +1747,14 @@ Page({
     if (!current || !current.flashcardKey) return;
     if (this.data.audioLoading || this.data.audioPlaying) return;
     const nextResult = typeof result === 'string' ? result : (this.data.cardChoice || 'remembered');
+    if (this.data.repeatMode) {
+      if (nextResult === 'unfamiliar') {
+        this.repeatCurrentCard(false);
+      } else {
+        this.advanceVisibleCards(false);
+      }
+      return;
+    }
     if (!this.data.previewMode) {
       const checkinDays = writeVocabularyCheckinDay(this.data.today);
       this.setData({

@@ -27,8 +27,21 @@ test('pageReady uses the 200ms cache and 800ms cold hard limits', () => {
 
 test('成长页后台统计强制读取云端权威值，避免旧缓存覆盖累计时长', () => {
   const source = fs.readFileSync(path.join(root, 'pages/record/index.js'), 'utf8');
-  assert.match(source, /store\.getDashboard\(\{ view: 'record', debug: true, forceRefresh: true \}/);
+  const template = fs.readFileSync(path.join(root, 'pages/record/index.wxml'), 'utf8');
+  assert.match(source, /async function getFreshRecordDashboard\(\)/);
+  assert.match(source, /cloud\.callYoyo\('getDashboard', Object\.assign\(\{/);
+  assert.match(source, /const dashboardPromise = getFreshRecordDashboard\(\)/);
+  assert.doesNotMatch(source, /store\.getDashboard\(\{ view: 'record'/);
   assert.match(source, /pending && hasActivity[\s\S]*?tr\('syncingDuration'\)/);
+  assert.match(source, /function buildDisplayStats\(stats, options\)/);
+  assert.match(source, /RECORD_HOME_SNAPSHOT_KEY = 'recordHomeSnapshotV2'/);
+  assert.match(source, /\{ heatmapData, targetPart, recordDebugLines: \[\] \}/);
+  assert.match(source, /env=\$\{appConfig\.cloudEnvId\}/);
+  assert.equal((template.match(/stats\.totalDurationText \|\| totalDurationText/g) || []).length, 2);
+  assert.equal((template.match(/showCloudDebug && recordDebugLines\.length/g) || []).length, 2);
+  const storeSource = fs.readFileSync(path.join(root, 'utils/store.js'), 'utf8');
+  assert.match(storeSource, /yoyoCloudReadCacheKeysV4/);
+  assert.match(storeSource, /yoyoCloudReadCacheV4:/);
   const catalog = require('../utils/i18n-catalog-account').record;
   assert.equal(catalog['zh-CN'].syncingDuration, '同步中');
   assert.equal(catalog.en.syncingDuration, 'Syncing');

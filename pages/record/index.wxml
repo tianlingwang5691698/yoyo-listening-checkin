@@ -35,7 +35,7 @@
           <text>{{texts.totalDays}}</text>
         </view>
         <view class="library-stat-cell">
-          <view>{{totalDurationText}}</view>
+          <view>{{stats.totalDurationText || totalDurationText}}</view>
           <text>{{texts.totalDuration}}</text>
         </view>
         <view class="library-stat-cell">
@@ -224,7 +224,7 @@
       </view>
       <view class="summary-item">
         <view class="summary-value-wrap">
-          <view class="summary-value is-duration">{{totalDurationText}}</view>
+          <view class="summary-value is-duration">{{stats.totalDurationText || totalDurationText}}</view>
         </view>
         <view class="summary-label">{{texts.totalDuration}}</view>
       </view>

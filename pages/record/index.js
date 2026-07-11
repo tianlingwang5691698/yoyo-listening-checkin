@@ -1,4 +1,5 @@
 const store = require('../../utils/store');
+const cloud = require('../../domain/cloud/index');
 const page = require('../../utils/page');
 const labels = require('../../utils/labels');
 const contracts = require('../../utils/contracts');
@@ -20,7 +21,7 @@ function formatText(text, values) {
 }
 function getWeekLabels() { return ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'].map(tr); }
 const LESSON_TASK_SNAPSHOT_KEY = 'lessonTaskSnapshotV1';
-const RECORD_HOME_SNAPSHOT_KEY = 'recordHomeSnapshotV1';
+const RECORD_HOME_SNAPSHOT_KEY = 'recordHomeSnapshotV2';
 const EMPTY_REPORT = {
   ...contracts.createReportDefaults()
 };
@@ -181,6 +182,27 @@ function formatStatsDuration(stats, options) {
   return formatDuration((stats || {}).totalMinutes);
 }
 
+function buildDisplayStats(stats, options) {
+  const nextStats = Object.assign({}, stats || {});
+  nextStats.totalDurationText = formatStatsDuration(nextStats, options);
+  return nextStats;
+}
+
+async function getFreshRecordDashboard() {
+  const startedAt = Date.now();
+  const target = store.getSelectedStudentTarget ? store.getSelectedStudentTarget() : {};
+  const result = await cloud.callYoyo('getDashboard', Object.assign({
+    view: 'record',
+    debug: true,
+    deviceId: store.getDeviceId(),
+    deviceStudyRole: store.getDeviceStudyRole()
+  }, target));
+  return Object.assign({ syncMode: 'cloud' }, result || {}, {
+    __cacheHit: false,
+    __elapsedMs: Date.now() - startedAt
+  });
+}
+
 function buildRecordDebugLine(stage, detail) {
   const target = store.getSelectedStudentTarget ? store.getSelectedStudentTarget() : {};
   const safeDetail = detail || {};
@@ -188,7 +210,8 @@ function buildRecordDebugLine(stage, detail) {
     `DEBUG: pages/record.onShow -> store.${stage} -> cloud.${safeDetail.action || stage}`,
     `字段：${safeDetail.field || 'stats.totalMinutes'}=${safeDetail.value}`,
     `耗时：client=${safeDetail.clientMs || 0}ms cloud=${safeDetail.cloudMs || 0}ms`,
-    `targetChildId=${target.targetChildId || safeDetail.childId || 'self'}`
+    `targetChildId=${target.targetChildId || safeDetail.childId || 'self'}`,
+    `env=${appConfig.cloudEnvId}`
   ].join('；');
 }
 
@@ -484,8 +507,10 @@ Page({
         catchupState: snapshot.catchupState || this.data.catchupState
       };
       const snapshotHeatmap = (snapshot.heatmapData && snapshot.heatmapData.heatmap) || [];
+      const snapshotStats = buildDisplayStats(snapshot.stats, { pending: true });
       this.setData(page.buildCloudPageData(this.data, Object.assign({}, snapshot, {
-        totalDurationText: formatStatsDuration(snapshot.stats, { pending: true }),
+        stats: snapshotStats,
+        totalDurationText: snapshotStats.totalDurationText,
         selectedDayLoaded: false,
         selectedDayLoading: false,
         selectedDayReport: EMPTY_REPORT,
@@ -503,7 +528,7 @@ Page({
       const emptyStats = contracts.createStatsDefaults();
       this.setData(page.buildCloudPageData(this.data, Object.assign({
         stats: emptyStats,
-        totalDurationText: tr('zeroMinutes').replace(' ', ''),
+        totalDurationText: tr('syncingDuration'),
         calendarYear,
         calendarMonth,
         calendarTitle: formatText(tr('calendarTitle'), { year: calendarYear, month: calendarMonth }),
@@ -546,27 +571,17 @@ Page({
         ]
       });
     }, 3000);
-    const dashboardPromise = store.getDashboard({ view: 'record', debug: true, forceRefresh: true }, (fresh) => {
-        if (loadSeq !== this.recordLoadSeq) return;
-        const cachedHeatmap = this.getCachedMonthData(calendarYear, calendarMonth);
-        const nextStats = mergeStatsWithHeatmap(fresh.stats, cachedHeatmap && cachedHeatmap.heatmap);
-        const freshState = Object.assign({}, fresh, {
-          stats: nextStats,
-          totalDurationText: formatStatsDuration(nextStats),
-          planDayIndex: fresh.planDayIndex || 1
-        });
-        this.setData(page.buildCloudPageData(this.data, Object.assign({}, freshState, buildMetric(freshState.stats, this.data.metricMode))));
-      });
+    const dashboardPromise = getFreshRecordDashboard();
     const heatmapPromise = this.getMonthHeatmapCached(calendarYear, calendarMonth, { force: true });
     dashboardPromise.then((dashboard) => {
       if (loadSeq !== this.recordLoadSeq) return;
       const dashboardPerf = (dashboard && dashboard.perfDebug) || {};
       const dashboardStages = dashboardPerf.stages || {};
       const cachedHeatmap = this.getCachedMonthData(calendarYear, calendarMonth);
-      const nextStats = mergeStatsWithHeatmap(dashboard.stats, cachedHeatmap && cachedHeatmap.heatmap);
+      const nextStats = buildDisplayStats(mergeStatsWithHeatmap(dashboard.stats, cachedHeatmap && cachedHeatmap.heatmap));
       this.setData(page.buildCloudPageData(this.data, Object.assign({}, dashboard, {
         stats: nextStats,
-        totalDurationText: formatStatsDuration(nextStats),
+        totalDurationText: nextStats.totalDurationText,
         recordDebugLines: [
           buildRecordDebugLine('getDashboard', {
             action: 'getDashboard',
@@ -590,10 +605,10 @@ Page({
     }).catch(() => {});
     heatmapPromise.then((heatmapData) => {
       if (loadSeq !== this.recordLoadSeq) return;
-      const nextStats = mergeStatsWithHeatmap(this.data.stats, heatmapData.heatmap);
+      const nextStats = buildDisplayStats(mergeStatsWithHeatmap(this.data.stats, heatmapData.heatmap));
       this.setData(page.buildCloudPageData(this.data, Object.assign({
         stats: nextStats,
-        totalDurationText: formatStatsDuration(nextStats),
+        totalDurationText: nextStats.totalDurationText,
         selectedDaySummary: buildCalendarDaySummary(heatmapData.heatmap, selectedDate),
         monthCells: buildMonthCells(calendarYear, calendarMonth, heatmapData.heatmap, selectedDate, heatmapData.catchupState),
         catchupState: heatmapData.catchupState,
@@ -615,7 +630,7 @@ Page({
       if (loadSeq !== this.recordLoadSeq) return;
       this.clearRecordDebugTimer();
       const catchupPresentation = buildCatchupPresentation(heatmapData.catchupState);
-      const nextStats = mergeStatsWithHeatmap(dashboard.stats, heatmapData.heatmap);
+      const nextStats = buildDisplayStats(mergeStatsWithHeatmap(dashboard.stats, heatmapData.heatmap));
       const dashboardPerf = (dashboard && dashboard.perfDebug) || {};
       const dashboardStages = dashboardPerf.stages || {};
       const debugLines = [
@@ -646,7 +661,7 @@ Page({
         buildRecordDebugLine('mergeStatsWithHeatmap', {
           action: 'front.mergeStatsWithHeatmap',
           field: 'display.totalDurationText',
-          value: formatStatsDuration(nextStats),
+          value: nextStats.totalDurationText,
           clientMs: Date.now() - dashboardStartedAt,
           cloudMs: dashboardPerf.totalMs || 0,
           childId: dashboardPerf.childId || ''
@@ -655,7 +670,7 @@ Page({
       const nextState = Object.assign({}, dashboard, {
         child: dashboard.child,
         stats: nextStats,
-        totalDurationText: formatStatsDuration(nextStats),
+        totalDurationText: nextStats.totalDurationText,
         recordDebugLines: debugLines,
         calendarYear,
         calendarMonth,
@@ -686,7 +701,7 @@ Page({
         nextState,
         buildMetric(nextState.stats, this.data.metricMode),
         catchupPresentation,
-        { heatmapData, targetPart }
+        { heatmapData, targetPart, recordDebugLines: [] }
       ), { source: 'record-home' });
       if (this.recordPerf) {
         this.recordPerf.mark('cloudRefresh', {

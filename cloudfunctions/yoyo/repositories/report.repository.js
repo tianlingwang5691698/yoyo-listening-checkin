@@ -1,4 +1,4 @@
-const { collection, getCommand } = require('../adapters/db.adapter');
+const { collection } = require('../adapters/db.adapter');
 
 function dailyReports() {
   return collection('dailyReports');
@@ -27,18 +27,6 @@ function sumCumulativeMinutes(reports) {
 }
 
 async function getCumulativeMinutes(scope) {
-  try {
-    const aggregate = getCommand().aggregate;
-    const result = await dailyReports().aggregate()
-      .match({ familyId: scope.familyId, childId: scope.childId })
-      .group({ _id: '$date', minutes: aggregate.max('$totalMinutes') })
-      .group({ _id: null, totalMinutes: aggregate.sum('$minutes') })
-      .end();
-    const row = result && result.data && result.data[0];
-    return row ? Math.max(0, Number(row.totalMinutes || 0)) : null;
-  } catch (error) {
-    // Older environments can fall back to projected pagination.
-  }
   const reports = [];
   const pageSize = 100;
   for (let skip = 0; ; skip += pageSize) {
