@@ -7,9 +7,10 @@ const root = path.resolve(__dirname, '..');
 
 test('all registered pages report pageReady performance', () => {
   const app = JSON.parse(fs.readFileSync(path.join(root, 'app.json'), 'utf8'));
+  const subPackages = app.subPackages || app.subpackages || [];
   const pages = [
     ...(app.pages || []),
-    ...((app.subpackages || []).flatMap((sub) => (sub.pages || []).map((page) => `${sub.root}/${page}`)))
+    ...(subPackages.flatMap((sub) => (sub.pages || []).map((page) => `${sub.root}/${page}`)))
   ];
   const missing = pages.filter((pagePath) => {
     const source = fs.readFileSync(path.join(root, `${pagePath}.js`), 'utf8');
