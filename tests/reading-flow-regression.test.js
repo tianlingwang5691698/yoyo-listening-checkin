@@ -115,6 +115,18 @@ test('阅读英文正确与作答标签保持小号单行', () => {
   assert.match(wxss, /\.language-en \.option-badge[\s\S]*?font-size: 16rpx[\s\S]*?white-space: nowrap/);
 });
 
+test('阅读标准答案与正确项保持同一绿色语义', () => {
+  const detailTemplate = fs.readFileSync(path.join(root, 'pages/reading/detail/index.wxml'), 'utf8');
+  const detailStyle = fs.readFileSync(path.join(root, 'pages/reading/detail/index.wxss'), 'utf8');
+  const historyTemplate = fs.readFileSync(path.join(root, 'pages/practice-history/index.wxml'), 'utf8');
+  const historyStyle = fs.readFileSync(path.join(root, 'pages/practice-history/index.wxss'), 'utf8');
+  assert.equal((detailTemplate.match(/cloze-answer-box is-standard-answer/g) || []).length, 2);
+  assert.match(detailStyle, /\.cloze-answer-box\.is-standard-answer \{[\s\S]*?background: rgba\(134, 170, 161, 0\.18\)/);
+  assert.equal((historyTemplate.match(/class="history-standard-answer"/g) || []).length, 2);
+  assert.match(historyStyle, /\.history-standard-answer \{[\s\S]*?background: rgba\(134, 170, 161, 0\.18\)/);
+  assert.match(historyStyle, /\.theme-library \.history-standard-answer,[\s\S]*?background: rgba\(127, 140, 120, 0\.18\)/);
+});
+
 test('阅读生词、短语、句型和答案句在两套主题使用独立颜色', () => {
   const wxml = fs.readFileSync(path.join(root, 'pages/reading/detail/index.wxml'), 'utf8');
   const wxss = fs.readFileSync(path.join(root, 'pages/reading/detail/index.wxss'), 'utf8');

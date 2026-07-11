@@ -171,7 +171,10 @@
               </view>
             </view>
             <view class="library-answer-line {{item.isCorrect ? 'is-correct' : 'is-wrong'}}" wx:if="{{item.isAnswered}}">
-              <text wx:if="{{item.answer}}">{{item.isCorrect ? texts.correct : texts.wrong}} · {{texts.standardAnswer}}{{item.answer}}</text>
+              <block wx:if="{{item.answer}}">
+                <text class="answer-result">{{item.isCorrect ? texts.correct : texts.wrong}}</text>
+                <text class="standard-answer">{{texts.standardAnswer}}{{item.answer}}</text>
+              </block>
               <text wx:else>{{texts.noAnswer}}</text>
             </view>
             <view class="library-explain-actions" wx:if="{{item.isAnswered && !item.explanation && !item.explaining}}">
@@ -373,7 +376,10 @@
           </view>
         </view>
         <view class="answer-line {{item.isCorrect ? 'is-correct' : 'is-wrong'}}" wx:if="{{item.isAnswered}}">
-          <text wx:if="{{item.answer}}">{{item.isCorrect ? texts.correct : texts.wrong}} · {{texts.standardAnswer}}{{item.answer}}</text>
+          <block wx:if="{{item.answer}}">
+            <text class="answer-result">{{item.isCorrect ? texts.correct : texts.wrong}}</text>
+            <text class="standard-answer">{{texts.standardAnswer}}{{item.answer}}</text>
+          </block>
           <text wx:else>{{texts.noAnswer}}</text>
         </view>
         <view class="grammar-explain-actions" wx:if="{{item.isAnswered && !item.explanation && !item.explaining}}">

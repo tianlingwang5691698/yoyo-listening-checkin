@@ -829,6 +829,11 @@
   background: rgba(255, 255, 255, 0.76);
 }
 
+.cloze-answer-box.is-standard-answer {
+  border: 1rpx solid rgba(134, 170, 161, 0.78);
+  background: rgba(134, 170, 161, 0.18);
+}
+
 .cloze-answer-label {
   color: #728196;
   font-size: 22rpx;
@@ -1466,6 +1471,11 @@
 .library-reading-detail .analysis-state.is-correct,
 .library-reading-detail .cloze-review-state.is-correct {
   color: var(--lib-accent-moss);
+}
+
+.library-reading-detail .cloze-answer-box.is-standard-answer {
+  border-color: var(--lib-accent-moss);
+  background: rgba(127, 140, 120, 0.14);
 }
 
 .library-reading-detail .cloze-inline-input.is-wrong,

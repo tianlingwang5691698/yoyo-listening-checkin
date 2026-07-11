@@ -100,7 +100,7 @@
                 <view class="cloze-answer-label">{{texts.yourAnswer}}</view>
                 <view class="cloze-answer-value {{item.isCorrect ? 'is-correct' : 'is-wrong'}}">{{item.selectedDisplay || texts.emptyAnswer}}</view>
               </view>
-              <view class="cloze-answer-box">
+              <view class="cloze-answer-box is-standard-answer">
                 <view class="cloze-answer-label">{{texts.correctAnswer}}</view>
                 <view class="cloze-answer-value is-correct">{{item.answerDisplay || texts.pending}}</view>
               </view>
@@ -371,7 +371,7 @@
                 <view class="cloze-answer-label">{{texts.yourAnswer}}</view>
                 <view class="cloze-answer-value {{item.isCorrect ? 'is-correct' : 'is-wrong'}}">{{item.selectedDisplay || texts.emptyAnswer}}</view>
               </view>
-              <view class="cloze-answer-box">
+              <view class="cloze-answer-box is-standard-answer">
                 <view class="cloze-answer-label">{{texts.correctAnswer}}</view>
                 <view class="cloze-answer-value is-correct">{{item.answerDisplay || texts.pending}}</view>
               </view>

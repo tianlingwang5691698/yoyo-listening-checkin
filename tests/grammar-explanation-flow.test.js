@@ -37,3 +37,10 @@ test('语法提交后只用颜色区分正确与错误，不显示文字线', ()
   assert.match(wxss, /\.lookup-token \{[\s\S]*?border-bottom: 0;[\s\S]*?text-decoration: none/);
   assert.match(wxss, /\.library-lookup-token \{[\s\S]*?border-bottom: 0;[\s\S]*?text-decoration: none/);
 });
+
+test('语法标准答案始终使用正确项绿色背景', () => {
+  const wxss = fs.readFileSync(path.join(root, 'pages/grammar/index.wxss'), 'utf8');
+  assert.equal((template.match(/class="standard-answer"/g) || []).length, 2);
+  assert.match(wxss, /\.answer-line \.standard-answer \{[\s\S]*?background: rgba\(78, 169, 147, 0\.34\);[\s\S]*?color: #195f52/);
+  assert.match(wxss, /\.library-answer-line \.standard-answer \{[\s\S]*?background: rgba\(104, 148, 92, 0\.34\);[\s\S]*?color: #2f5d2b/);
+});

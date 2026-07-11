@@ -47,7 +47,10 @@
               <text>{{option.key}}. {{option.text}}</text>
               <text wx:if="{{option.isSelected}}">{{texts.childAnswer}}</text>
             </view>
-            <view class="history-answer {{question.correct ? 'is-correct' : 'is-wrong'}}">{{texts.childAnswerLabel}}{{question.selected || texts.unanswered}} · {{texts.correctAnswer}}{{question.answer || texts.none}}</view>
+            <view class="history-answer {{question.correct ? 'is-correct' : 'is-wrong'}}">
+              <text class="history-answer-result">{{texts.childAnswerLabel}}{{question.selected || texts.unanswered}}</text>
+              <text class="history-standard-answer">{{texts.correctAnswer}}{{question.answer || texts.none}}</text>
+            </view>
             <view class="history-analysis" wx:if="{{question.analysis}}">{{question.analysis}}</view>
             <view class="history-wrong-action {{question.inWrongBook ? 'is-added' : ''}}" wx:if="{{viewMode === 'history' && !question.correct}}" data-record-id="{{item.id}}" data-question-id="{{question.questionId}}" bindtap="addWrongQuestion">{{question.inWrongBook ? texts.added : (question.addingWrong ? texts.adding : texts.add)}}</view>
           </view>
@@ -61,7 +64,10 @@
               <text>{{option.key}}. {{option.text}}</text>
               <text wx:if="{{option.isSelected}}">{{texts.childAnswer}}</text>
             </view>
-            <view class="history-answer {{question.correct ? 'is-correct' : 'is-wrong'}}">{{texts.childAnswerLabel}}{{question.selected || texts.unanswered}} · {{texts.correctAnswer}}{{question.answer || texts.none}}</view>
+            <view class="history-answer {{question.correct ? 'is-correct' : 'is-wrong'}}">
+              <text class="history-answer-result">{{texts.childAnswerLabel}}{{question.selected || texts.unanswered}}</text>
+              <text class="history-standard-answer">{{texts.correctAnswer}}{{question.answer || texts.none}}</text>
+            </view>
             <view class="history-analysis" wx:if="{{question.analysis}}">{{question.analysis}}</view>
             <view class="history-ai-status" wx:elif="{{question.analysisStatus}}">{{question.analysisStatus}}</view>
             <view class="history-explain-action" wx:else data-record-id="{{item.id}}" data-question-id="{{question.questionId}}" bindtap="loadGrammarExplanation">{{question.explaining ? texts.explanationLoading : texts.viewExplanation}}</view>
