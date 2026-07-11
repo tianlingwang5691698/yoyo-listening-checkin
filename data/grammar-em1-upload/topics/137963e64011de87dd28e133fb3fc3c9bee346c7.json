@@ -1,0 +1,87 @@
+{
+  "topicId": "logic:time",
+  "topic": "时间",
+  "questions": [
+    {
+      "_id": "sh-em1-2016-闵行-grammar-choice-q39",
+      "sourceSetId": "sh-em1-2016-闵行-grammar-choice",
+      "year": 2016,
+      "city": "上海",
+      "district": "闵行",
+      "examType": "一模",
+      "sourceFile": "上海市闵行区2016届九年级上学期期末（一模）质量监控英语试题及答案（word版）.doc",
+      "number": 39,
+      "prompt": "I knew nothing of the murder case ______ I read the newspaper report last night.",
+      "options": {
+        "A": "when",
+        "B": "because",
+        "C": "until",
+        "D": "since"
+      },
+      "answer": "C",
+      "categoryId": "logic",
+      "category": "连词逻辑类",
+      "subtopicId": "logic:time",
+      "subtopic": "时间",
+      "topicId": "logic:time",
+      "topic": "时间",
+      "stage": "初中",
+      "questionType": "grammar-choice",
+      "topicReason": "not...until表示直到……才，考查时间逻辑连接。"
+    },
+    {
+      "_id": "sh-em1-2021-奉贤-grammar-choice-q26",
+      "sourceSetId": "sh-em1-2021-奉贤-grammar-choice",
+      "year": 2021,
+      "city": "上海",
+      "district": "奉贤",
+      "examType": "一模",
+      "sourceFile": "上海市奉贤区2020-2021学年九年级上学期期末（一模）英语试题（解析版）.doc",
+      "number": 26,
+      "prompt": "Smiling is the best policy. People will smile back ________ you smile at them.",
+      "options": {
+        "A": "unless",
+        "B": "although",
+        "C": "until",
+        "D": "when"
+      },
+      "answer": "D",
+      "categoryId": "logic",
+      "category": "连词逻辑类",
+      "subtopicId": "logic:time",
+      "subtopic": "时间",
+      "topicId": "logic:time",
+      "topic": "时间",
+      "stage": "初中",
+      "questionType": "grammar-choice",
+      "topicReason": "考查时间状语从句连词when，表示“当你微笑时”。"
+    },
+    {
+      "_id": "sh-em1-2026-浦东-grammar-choice-q30",
+      "sourceSetId": "sh-em1-2026-浦东-grammar-choice",
+      "year": 2026,
+      "city": "上海",
+      "district": "浦东",
+      "examType": "一模",
+      "sourceFile": "2026上海浦东初三一模英语试卷（解析版）.docx",
+      "number": 30,
+      "prompt": "________ John has something unknown, he often does some research after class.",
+      "options": {
+        "A": "Until",
+        "B": "Before",
+        "C": "Although",
+        "D": "When"
+      },
+      "answer": "D",
+      "categoryId": "logic",
+      "category": "连词逻辑类",
+      "subtopicId": "logic:time",
+      "subtopic": "时间",
+      "topicId": "logic:time",
+      "topic": "时间",
+      "stage": "初中",
+      "questionType": "grammar-choice",
+      "topicReason": "考查 when 引导时间关系，表示“当……时”。"
+    }
+  ]
+}

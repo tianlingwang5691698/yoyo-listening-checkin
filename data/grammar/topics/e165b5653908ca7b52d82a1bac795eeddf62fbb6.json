@@ -1,0 +1,87 @@
+{
+  "topicId": "sentence:inversion",
+  "topic": "倒装",
+  "questions": [
+    {
+      "_id": "sh-em2-2012-浦东-grammar-choice-q43",
+      "sourceSetId": "sh-em2-2012-浦东-grammar-choice",
+      "year": 2012,
+      "city": "上海",
+      "district": "浦东",
+      "examType": "二模",
+      "sourceFile": "上海市浦东新区2012届九年级4月质量调研（二模）英语试题及答案（word版）.doc",
+      "number": 43,
+      "prompt": "---Peter hasn’t been abroad before. He knows little about western culture. --- ________ .",
+      "options": {
+        "A": "So have I.",
+        "B": "So do I.",
+        "C": "Neither have I.",
+        "D": "Neither do I."
+      },
+      "answer": "C",
+      "topicId": "sentence:inversion",
+      "topic": "倒装",
+      "stage": "初中",
+      "questionType": "grammar-choice",
+      "categoryId": "sentence",
+      "category": "句型结构类",
+      "subtopicId": "sentence:inversion",
+      "subtopic": "倒装",
+      "topicReason": "考查 neither + 助动词 + 主语 表示前面否定情况也适用于后者。"
+    },
+    {
+      "_id": "sh-em2-2014-静安青浦-grammar-choice-q42",
+      "sourceSetId": "sh-em2-2014-静安青浦-grammar-choice",
+      "year": 2014,
+      "city": "上海",
+      "district": "静安青浦",
+      "examType": "二模",
+      "sourceFile": "上海市静安、青浦区2014届九年级4月质量调研（二模）英语试题及答案（word版）.doc",
+      "number": 42,
+      "prompt": "Mr. Black’s always proud of his students’ excellent work. Mrs. Brown.",
+      "options": {
+        "A": "Neither has",
+        "B": "So has",
+        "C": "Neither is",
+        "D": "So is"
+      },
+      "answer": "D",
+      "topicId": "sentence:inversion",
+      "topic": "倒装",
+      "stage": "初中",
+      "questionType": "grammar-choice",
+      "categoryId": "sentence",
+      "category": "句型结构类",
+      "subtopicId": "sentence:inversion",
+      "subtopic": "倒装",
+      "topicReason": "考查 so + be/助动词/情态动词 + 主语，表示前者情况也适用于后者。"
+    },
+    {
+      "_id": "sh-em2-2024-长宁-grammar-choice-q29",
+      "sourceSetId": "sh-em2-2024-长宁-grammar-choice",
+      "year": 2024,
+      "city": "上海",
+      "district": "长宁",
+      "examType": "二模",
+      "sourceFile": "精品解析：2024年上海市长宁区中考二模英语试题（含听力）（解析版）.docx",
+      "number": 29,
+      "prompt": "We can’t find this kind of materials in our country, ________ they.",
+      "options": {
+        "A": "so can",
+        "B": "neither can",
+        "C": "so do",
+        "D": "neither do"
+      },
+      "answer": "B",
+      "topicId": "sentence:inversion",
+      "topic": "倒装",
+      "stage": "初中",
+      "questionType": "grammar-choice",
+      "categoryId": "sentence",
+      "category": "句型结构类",
+      "subtopicId": "sentence:inversion",
+      "subtopic": "倒装",
+      "topicReason": "前句为否定，后句用 neither + 助动词 + 主语，考查倒装结构。"
+    }
+  ]
+}

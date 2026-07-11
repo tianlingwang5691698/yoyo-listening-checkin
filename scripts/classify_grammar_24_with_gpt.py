@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import json
+import hashlib
 import os
 import re
 import sys
@@ -9,41 +10,20 @@ import urllib.request
 from pathlib import Path
 
 
-OUT = Path('data/grammar')
+OUT = Path(os.environ.get('GRAMMAR_OUT') or 'data/grammar')
 QUESTIONS = OUT / 'shanghai-em2-grammar-questions.json'
 TYPES = OUT / 'grammar-topic-types.json'
+TAXONOMY = OUT / 'grammar-topic-taxonomy.json'
 PROGRESS = OUT / 'gpt-classification-24-progress.json'
 BATCH_SIZE = int(os.environ.get('GRAMMAR_BATCH_SIZE', '20'))
 START_AT = int(os.environ.get('GRAMMAR_START_AT', '0'))
 
-
-LEGACY_TOPIC = {
-    '冠词': ('article', '冠词'),
-    '名词': ('noun', '名词'),
-    '代词': ('pronoun', '代词'),
-    '数词': ('numeral', '数词'),
-    '介词': ('preposition', '介词'),
-    '形容词副词': ('adjective-adverb', '形容词副词'),
-    '词义与短语辨析': ('word-phrase', '词义与短语辨析'),
-    '时态': ('verb-tense-voice', '时态语态'),
-    '语态': ('verb-tense-voice', '时态语态'),
-    '情态动词': ('modal-verb', '情态动词'),
-    '非谓语': ('non-finite-verb', '非谓语动词'),
-    '主谓一致': ('verb-agreement', '主谓一致'),
-    '宾语从句': ('conjunction-clause', '连词与从句'),
-    '状语从句': ('conjunction-clause', '连词与从句'),
-    '定语从句': ('conjunction-clause', '连词与从句'),
-    '固定句型': ('sentence-pattern', '句型结构'),
-    '感叹句': ('sentence-pattern', '句型结构'),
-    '反意疑问句': ('sentence-pattern', '句型结构'),
-    '倒装': ('sentence-pattern', '句型结构'),
-    '并列': ('conjunction-clause', '连词与从句'),
-    '转折': ('conjunction-clause', '连词与从句'),
-    '原因': ('conjunction-clause', '连词与从句'),
-    '条件': ('conjunction-clause', '连词与从句'),
-    '时间': ('conjunction-clause', '连词与从句'),
-    '让步': ('conjunction-clause', '连词与从句'),
-    '日常口语表达': ('communicative', '情景交际'),
+SUBTOPIC_ALIASES = {
+    'phonetics:underlined-pronunciation': 'lexical:phonetics-underlined-pronunciation',
+    'phonetics:phonetic-symbol': 'lexical:phonetics-symbol',
+    'phonetics:intonation': 'lexical:phonetics-intonation',
+    'culture:common-knowledge': 'communicative:culture-common-knowledge',
+    'other:manual-review': 'lexical:manual-review',
 }
 
 
@@ -128,7 +108,7 @@ def message_text(response):
 
 
 def load_taxonomy():
-    groups = json.loads(TYPES.read_text(encoding='utf-8'))
+    groups = json.loads((Path(env('GRAMMAR_TAXONOMY')) if env('GRAMMAR_TAXONOMY') else TAXONOMY if TAXONOMY.exists() else TYPES).read_text(encoding='utf-8'))
     rows = []
     for group in groups:
         for child in group.get('children') or []:
@@ -154,10 +134,10 @@ def classify_batch(url, key, model_name, batch, taxonomy):
     } for item in batch]
     prompt = '\n'.join([
         '你是上海中考英语语法教研老师。请把每道单选题直接归入一个细分考点。',
-        '只能使用下面 subtopicId，不要自创分类：',
+        '只能使用下面 subtopicId；如果现有考点不够，需要先人工扩展 taxonomy 文件，不要在本次返回中临时自创：',
         allowed,
         '返回 JSON，不要 Markdown。格式：{"items":[{"id":"","subtopicId":"","reason":""}]}',
-        '分类原则：按真正考查点分类，不按选项表面词乱分；优先判断学生答题时必须掌握的语法点；词组、动词短语、词义辨析归“词义与短语辨析”；交际问答归“日常口语表达”。',
+        '分类原则：按真正考查点分类，不按选项表面词乱分；优先判断学生答题时必须掌握的语法点；题干和正确答案能确定更细考点时，必须选更细考点；确实无法判断才选“其他-需人工复核”。',
         json.dumps(payload_items, ensure_ascii=False),
     ])
     response = post_json_with_retry(url, key, {
@@ -185,14 +165,16 @@ def apply_classification(items, rows, taxonomy_by_id):
     by_id = {item['_id']: item for item in items}
     for row in rows:
         item = by_id.get(row.get('id'))
-        meta = taxonomy_by_id.get(row.get('subtopicId'))
+        subtopic_id = SUBTOPIC_ALIASES.get(row.get('subtopicId'), row.get('subtopicId'))
+        meta = taxonomy_by_id.get(subtopic_id)
         if not item or not meta:
             continue
         item['categoryId'] = meta['categoryId']
         item['category'] = meta['category']
         item['subtopicId'] = meta['subtopicId']
         item['subtopic'] = meta['subtopic']
-        item['topicId'], item['topic'] = LEGACY_TOPIC.get(meta['subtopic'], (meta['subtopicId'], meta['subtopic']))
+        item['topicId'] = meta['subtopicId']
+        item['topic'] = meta['subtopic']
         item['topicReason'] = str(row.get('reason') or '').strip()
 
 
@@ -227,7 +209,6 @@ def write_outputs(items, taxonomy):
             'topic': category,
             'count': len(category_questions),
             'children': children,
-            'questions': category_questions,
         })
 
     for name, payload in {
@@ -238,6 +219,17 @@ def write_outputs(items, taxonomy):
         text = json.dumps(payload, ensure_ascii=False, indent=2)
         (OUT / f'{name}.json').write_text(text, encoding='utf-8')
         (OUT / f'{name}.js').write_text(f'module.exports = {text};\n', encoding='utf-8')
+    topic_dir = OUT / 'topics'
+    topic_dir.mkdir(parents=True, exist_ok=True)
+    for stale in topic_dir.glob('*.json'):
+        stale.unlink()
+    for group in groups:
+        name = hashlib.sha1(group['topicId'].encode('utf-8')).hexdigest() + '.json'
+        (topic_dir / name).write_text(json.dumps({
+            'topicId': group['topicId'],
+            'topic': group['topic'],
+            'questions': group['questions'],
+        }, ensure_ascii=False, indent=2), encoding='utf-8')
     return topic_types
 
 

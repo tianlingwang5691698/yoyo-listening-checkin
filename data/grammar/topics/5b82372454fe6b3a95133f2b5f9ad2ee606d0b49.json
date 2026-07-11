@@ -1,0 +1,60 @@
+{
+  "topicId": "verb:past-future",
+  "topic": "过去将来时",
+  "questions": [
+    {
+      "_id": "sh-em2-2014-松江-grammar-choice-q43",
+      "sourceSetId": "sh-em2-2014-松江-grammar-choice",
+      "year": 2014,
+      "city": "上海",
+      "district": "松江",
+      "examType": "二模",
+      "sourceFile": "上海市松江区2014届九年级4月质量调研（二模）英语试题及答案（word版）.doc",
+      "number": 43,
+      "prompt": "He told us that the insurance company _______ him 500,000 yuan if his car was stolen.",
+      "options": {
+        "A": "will pay",
+        "B": "paid",
+        "C": "has paid",
+        "D": "would pay"
+      },
+      "answer": "D",
+      "topicId": "verb:past-future",
+      "topic": "过去将来时",
+      "stage": "初中",
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:past-future",
+      "subtopic": "过去将来时",
+      "topicReason": "主句为过去时 told，从句中表示过去视角下将来要发生的动作，用 would pay。"
+    },
+    {
+      "_id": "sh-em2-2018-虹口-grammar-choice-q37",
+      "sourceSetId": "sh-em2-2018-虹口-grammar-choice",
+      "year": 2018,
+      "city": "上海",
+      "district": "虹口",
+      "examType": "二模",
+      "sourceFile": "上海市虹口区2018届九年级4月质量调研（二模）英语试题及答案（word版）.doc",
+      "number": 37,
+      "prompt": "He said that he ________ to teach kids in the orphanage (孤儿院) after he graduated from school.",
+      "options": {
+        "A": "will volunteer",
+        "B": "would volunteer",
+        "C": "has volunteered",
+        "D": "is volunteering"
+      },
+      "answer": "B",
+      "topicId": "verb:past-future",
+      "topic": "过去将来时",
+      "stage": "初中",
+      "questionType": "grammar-choice",
+      "categoryId": "verb",
+      "category": "动词类",
+      "subtopicId": "verb:past-future",
+      "subtopic": "过去将来时",
+      "topicReason": "主句为said，宾语从句中after he graduated之后的将来动作需用过去将来时would volunteer。"
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "topicId": "logic:purpose-result",
+  "topic": "目的结果",
+  "questions": [
+    {
+      "_id": "sh-em1-2016-嘉定-grammar-choice-q30",
+      "sourceSetId": "sh-em1-2016-嘉定-grammar-choice",
+      "year": 2016,
+      "city": "上海",
+      "district": "嘉定",
+      "examType": "一模",
+      "sourceFile": "上海市嘉定区2016届九年级上学期期末（一模）质量监控英语试题及答案（word版）.doc",
+      "number": 30,
+      "prompt": "A: What would some students like to do after finishing their education? B: They would like to start to work ______ they needn't depend on their parents.",
+      "options": {
+        "A": "assoonas",
+        "B": "although",
+        "C": "if",
+        "D": "sothat"
+      },
+      "answer": "D",
+      "categoryId": "logic",
+      "category": "连词逻辑类",
+      "subtopicId": "logic:purpose-result",
+      "subtopic": "目的结果",
+      "topicId": "logic:purpose-result",
+      "topic": "目的结果",
+      "stage": "初中",
+      "questionType": "grammar-choice",
+      "topicReason": "they needn't depend on their parents说明工作目的，so that表示“以便”。"
+    },
+    {
+      "_id": "sh-em1-2021-虹口-grammar-choice-q35",
+      "sourceSetId": "sh-em1-2021-虹口-grammar-choice",
+      "year": 2021,
+      "city": "上海",
+      "district": "虹口",
+      "examType": "一模",
+      "sourceFile": "上海市虹口区2020-2021学年九年级上学期期末（一模）英语试题（解析版）.doc",
+      "number": 35,
+      "prompt": "We are encouraged to plant more trees _______ our country will be greener and more beautiful.",
+      "options": {
+        "A": "until",
+        "B": "unless",
+        "C": "so that",
+        "D": "as long as"
+      },
+      "answer": "C",
+      "categoryId": "logic",
+      "category": "连词逻辑类",
+      "subtopicId": "logic:purpose-result",
+      "subtopic": "目的结果",
+      "topicId": "logic:purpose-result",
+      "topic": "目的结果",
+      "stage": "初中",
+      "questionType": "grammar-choice",
+      "topicReason": "空格后表示“以便/为了”，考查目的结果连词 so that。"
+    },
+    {
+      "_id": "sh-em1-2022-崇明-grammar-choice-q13",
+      "sourceSetId": "sh-em1-2022-崇明-grammar-choice",
+      "year": 2022,
+      "city": "上海",
+      "district": "崇明",
+      "examType": "一模",
+      "sourceFile": "上海市崇明区2022届九年级上学期期末（一模）质量监控英语试卷（Word解析版 ）.docx",
+      "number": 13,
+      "prompt": "She burned all the letters ________ her husband would never read them.",
+      "options": {
+        "A": "so that",
+        "B": "until",
+        "C": "unless",
+        "D": "while"
+      },
+      "answer": "A",
+      "categoryId": "logic",
+      "category": "连词逻辑类",
+      "subtopicId": "logic:purpose-result",
+      "subtopic": "目的结果",
+      "topicId": "logic:purpose-result",
+      "topic": "目的结果",
+      "stage": "初中",
+      "questionType": "grammar-choice",
+      "topicReason": "考查 so that 引导目的状语从句。"
+    }
+  ]
+}

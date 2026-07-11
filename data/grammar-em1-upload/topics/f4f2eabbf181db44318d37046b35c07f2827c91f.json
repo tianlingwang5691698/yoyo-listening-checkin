@@ -1,0 +1,33 @@
+{
+  "topicId": "lexical:phonetics-intonation",
+  "topic": "语音辨析-语调",
+  "questions": [
+    {
+      "_id": "sh-em1-2014-长宁-grammar-choice-q27",
+      "sourceSetId": "sh-em1-2014-长宁-grammar-choice",
+      "year": 2014,
+      "city": "上海",
+      "district": "长宁",
+      "examType": "一模",
+      "sourceFile": "上海市长宁区2014届九年级上学期期末（一模）质量监控英语试题及答案（word版）.doc",
+      "number": 27,
+      "prompt": "Which of the following is right?",
+      "options": {
+        "A": "Betty, do you know our new class teacher? ↘",
+        "B": "Yes, of course. ↗",
+        "C": "What does he look like? ↘",
+        "D": "He is thin but short. ↗"
+      },
+      "answer": "C",
+      "categoryId": "lexical",
+      "category": "词法类",
+      "subtopicId": "lexical:phonetics-intonation",
+      "subtopic": "语音辨析-语调",
+      "topicId": "lexical:phonetics-intonation",
+      "topic": "语音辨析-语调",
+      "stage": "初中",
+      "questionType": "grammar-choice",
+      "topicReason": "人工复核后按真实考点归类"
+    }
+  ]
+}

@@ -41,7 +41,11 @@
       { "topicId": "lexical:preposition-collocation", "topic": "介词-固定搭配" },
       { "topicId": "lexical:numeral", "topic": "数词" },
       { "topicId": "lexical:word-formation", "topic": "词形转换" },
-      { "topicId": "lexical:word-phrase", "topic": "词义与短语辨析" }
+      { "topicId": "lexical:word-phrase", "topic": "词义与短语辨析" },
+      { "topicId": "lexical:phonetics-underlined-pronunciation", "topic": "语音辨析-划线发音" },
+      { "topicId": "lexical:phonetics-symbol", "topic": "语音辨析-音标" },
+      { "topicId": "lexical:phonetics-intonation", "topic": "语音辨析-语调" },
+      { "topicId": "lexical:manual-review", "topic": "其他-需人工复核" }
     ]
   },
   {
@@ -90,30 +94,8 @@
       { "topicId": "communicative:thanks-apology-wish", "topic": "感谢道歉祝愿" },
       { "topicId": "communicative:agreement-disagreement", "topic": "同意不同意" },
       { "topicId": "communicative:praise-congratulation", "topic": "表扬祝贺回应" },
-      { "topicId": "communicative:daily-scenario", "topic": "电话购物问路等场景" }
-    ]
-  },
-  {
-    "topicId": "phonetics",
-    "topic": "语音类",
-    "children": [
-      { "topicId": "phonetics:underlined-pronunciation", "topic": "划线部分发音辨析" },
-      { "topicId": "phonetics:phonetic-symbol", "topic": "音标识别" },
-      { "topicId": "phonetics:intonation", "topic": "语调" }
-    ]
-  },
-  {
-    "topicId": "culture",
-    "topic": "文化常识类",
-    "children": [
-      { "topicId": "culture:common-knowledge", "topic": "英语文化常识" }
-    ]
-  },
-  {
-    "topicId": "other",
-    "topic": "待复核类",
-    "children": [
-      { "topicId": "other:manual-review", "topic": "综合辨析-需人工复核" }
+      { "topicId": "communicative:daily-scenario", "topic": "电话购物问路等场景" },
+      { "topicId": "communicative:culture-common-knowledge", "topic": "文化常识-其他" }
     ]
   }
 ]
