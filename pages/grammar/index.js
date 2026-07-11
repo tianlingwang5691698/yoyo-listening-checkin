@@ -118,6 +118,7 @@ function buildQuestion(item, index) {
     isAnswered: false,
     isCorrect: false,
     explaining: false,
+    explanationError: '',
     explanation: null,
     optionsList
   });
@@ -669,6 +670,7 @@ Page({
     }, () => {
       this.setData({ answeredCount });
       recordGrammarCompleted(this.data, answeredCount);
+      this.loadExplanationById(questionId);
     });
     try {
       const questionIndex = nextQuestions.findIndex((item) => item._id === questionId);
@@ -698,28 +700,36 @@ Page({
     }
   }
   ,
-  async loadExplanation(event) {
-    const questionId = event.currentTarget.dataset.questionId;
+  loadExplanation(event) {
+    const questionId = event && event.currentTarget ? event.currentTarget.dataset.questionId : '';
+    return this.loadExplanationById(questionId);
+  },
+  async loadExplanationById(questionId, options = {}) {
+    const force = !!options.force;
     const question = (this.data.selectedQuestions || []).find((item) => item._id === questionId);
-    if (!question || question.explanation) {
+    if (!question || question.explaining || (!force && question.explanation)) {
       return;
     }
     this.setData({
       selectedQuestions: (this.data.selectedQuestions || []).map((item) => Object.assign({}, item, {
-        explaining: item._id === questionId ? true : item.explaining
+        explaining: item._id === questionId ? true : item.explaining,
+        explanationError: item._id === questionId ? '' : item.explanationError
       }))
     });
     try {
-      const result = await store.explainGrammarQuestion(question);
-      const explanation = result && result.explanation ? result.explanation : {
-        answer: question.answer || '',
-        topic: question.topic || question.subtopic || '语法',
-        explanation: result && result.cloudError ? `${text('explainUnavailable', '讲解暂不可用，请稍后再试。')} ${result.cloudError.message}` : text('explainUnavailable', '讲解暂不可用，请稍后再试。'),
-        elimination: ''
-      };
+      const result = await store.explainGrammarQuestion(question, {
+        force,
+        personalOnly: !!options.personalOnly
+      });
+      const explanation = result && result.explanation;
+      const source = String((result && result.source) || (explanation && explanation.source) || '');
+      if (!explanation || !String(explanation.explanation || '').trim() || source === 'fallback' || (result && (result.error || result.cloudError))) {
+        throw new Error((result && result.error) || (result && result.cloudError && result.cloudError.message) || 'grammar-explanation-unavailable');
+      }
       this.setData({
         selectedQuestions: (this.data.selectedQuestions || []).map((item) => Object.assign({}, item, {
           explaining: item._id === questionId ? false : item.explaining,
+          explanationError: item._id === questionId ? '' : item.explanationError,
           explanation: item._id === questionId ? explanation : item.explanation
         }))
       }, () => {
@@ -730,49 +740,14 @@ Page({
       this.setData({
         selectedQuestions: (this.data.selectedQuestions || []).map((item) => Object.assign({}, item, {
           explaining: item._id === questionId ? false : item.explaining,
-          explanation: item._id === questionId ? {
-            answer: question.answer || '',
-            topic: question.topic || question.subtopic || '语法',
-            explanation: text('explainUnavailable', '讲解暂不可用，请稍后再试。'),
-            elimination: ''
-          } : item.explanation
+          explanationError: item._id === questionId ? text('explainUnavailable', '讲解暂不可用，请稍后再试。') : item.explanationError
         }))
-      }, () => {
-        recordGrammarCompleted(this.data, this.data.answeredCount);
-        this.queueCurrentGrammarProgress();
       });
     }
   },
-  async regenerateExplanation(event) {
-    const questionId = event.currentTarget.dataset.questionId;
-    const question = (this.data.selectedQuestions || []).find((item) => item._id === questionId);
-    if (!question) {
-      return;
-    }
-    this.setData({
-      selectedQuestions: (this.data.selectedQuestions || []).map((item) => Object.assign({}, item, {
-        explaining: item._id === questionId ? true : item.explaining
-      }))
-    });
-    try {
-      const result = await store.explainGrammarQuestion(question, { force: true });
-      const explanation = result && result.explanation ? result.explanation : question.explanation;
-      this.setData({
-        selectedQuestions: (this.data.selectedQuestions || []).map((item) => Object.assign({}, item, {
-          explaining: item._id === questionId ? false : item.explaining,
-          explanation: item._id === questionId ? explanation : item.explanation
-        }))
-      }, () => {
-        recordGrammarCompleted(this.data, this.data.answeredCount);
-        this.queueCurrentGrammarProgress();
-      });
-    } catch (error) {
-      this.setData({
-        selectedQuestions: (this.data.selectedQuestions || []).map((item) => Object.assign({}, item, {
-          explaining: item._id === questionId ? false : item.explaining
-        }))
-      });
-    }
+  regenerateExplanation(event) {
+    const questionId = event && event.currentTarget ? event.currentTarget.dataset.questionId : '';
+    return this.loadExplanationById(questionId, { force: true, personalOnly: true });
   },
   async openDictionaryWord(event) {
     const word = String(event.currentTarget.dataset.word || '').trim();

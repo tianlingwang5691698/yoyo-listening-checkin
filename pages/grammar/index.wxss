@@ -658,6 +658,13 @@
   color: #416a63;
 }
 
+.grammar-explain-error {
+  margin-top: 12rpx;
+  color: #9d6558;
+  font-size: 22rpx;
+  line-height: 1.5;
+}
+
 .inline-analysis {
   margin-top: 16rpx;
   padding: 20rpx;
@@ -1454,6 +1461,13 @@
 
 .library-analysis-loading view:nth-child(3) {
   animation-delay: 0.28s;
+}
+
+.library-explain-error {
+  margin-top: 14rpx;
+  color: var(--library-grammar-error);
+  font-size: 23rpx;
+  line-height: 1.55;
 }
 
 .library-analysis {

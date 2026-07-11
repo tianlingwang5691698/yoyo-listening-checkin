@@ -1419,6 +1419,46 @@ async function getReadingPassage(event) {
   };
 }
 
+async function savePersonalQuestionStudyPack(ctx, today, passage, studyPack, attemptId) {
+  if (!attemptId || !study.isStudyWriteAllowed(ctx)) {
+    throw new Error('reading-personal-analysis-attempt-required');
+  }
+  const result = await dbAdapter.collection('readingAttempts').doc(attemptId).get();
+  const attempt = result && result.data ? result.data : null;
+  if (!attempt
+    || attempt.familyId !== ctx.family.familyId
+    || attempt.childId !== ctx.child.childId
+    || attempt.passageId !== passage._id) {
+    throw new Error('reading-personal-analysis-attempt-not-found');
+  }
+  const review = keepQuestionReviewOnly(buildReview(passage, {
+    questionResults: Array.isArray(attempt.questionResults) ? attempt.questionResults : []
+  }, studyPack));
+  const now = new Date().toISOString();
+  const command = dbAdapter.getCommand();
+  await dbAdapter.collection('readingAttempts').doc(attemptId).update({
+    data: {
+      review: command.set(review),
+      updatedAt: now
+    }
+  });
+  const personalAttempt = Object.assign({}, attempt, {
+    _id: attemptId,
+    review,
+    updatedAt: now
+  });
+  await completion.upsertStudyCompletion(ctx, attempt.date || today, {
+    type: 'reading',
+    targetId: passage._id,
+    passageId: passage._id,
+    title: passage.title || '阅读练习',
+    meta: passage.year ? `${passage.year} · ${passage.district || ''}` : '阅读',
+    progressText: `${Number(attempt.score || 0)}/${Number(attempt.totalScore || 0)} 分`,
+    latestAttempt: personalAttempt
+  });
+  return { review, attempt: personalAttempt };
+}
+
 async function getReadingStudyPack(event) {
   const payload = (event && event.payload) || {};
   const { ctx, today } = await study.prepareRequestContext(Object.assign({}, event, {
@@ -1451,6 +1491,7 @@ async function getReadingStudyPack(event) {
   const section = String(payload.section || 'cards');
   const cacheOnly = !!payload.cacheOnly;
   const force = !!payload.force;
+  const personalOnly = !!payload.personalOnly;
   const cached = await getCachedStudyPack(passage);
   if (section === 'questions') {
     const cachedPack = cached ? normalizeStudyPack(cached, passage) : null;
@@ -1469,6 +1510,26 @@ async function getReadingStudyPack(event) {
         studyPack: null,
         cached: false,
         cacheMiss: true
+      };
+    }
+    if (force && personalOnly) {
+      const studyPack = await buildStudyPackWithModel(passage);
+      const personal = await savePersonalQuestionStudyPack(
+        ctx,
+        today,
+        passage,
+        studyPack,
+        String(payload.attemptId || '')
+      );
+      return {
+        passageId: passage._id,
+        section,
+        studyPack,
+        review: personal.review,
+        attempt: personal.attempt,
+        cached: false,
+        persisted: true,
+        personalOnly: true
       };
     }
     const result = await getOrCreateStudyPack(passage, cached, force);

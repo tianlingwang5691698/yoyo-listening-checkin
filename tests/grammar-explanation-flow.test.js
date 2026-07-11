@@ -1,0 +1,29 @@
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const path = require('node:path');
+const test = require('node:test');
+
+const root = path.resolve(__dirname, '..');
+const source = fs.readFileSync(path.join(root, 'pages/grammar/index.js'), 'utf8');
+const template = fs.readFileSync(path.join(root, 'pages/grammar/index.wxml'), 'utf8');
+const storeSource = fs.readFileSync(path.join(root, 'utils/store.js'), 'utf8');
+const serviceSource = fs.readFileSync(path.join(root, 'cloudfunctions/yoyo/services/grammar.service.js'), 'utf8');
+
+test('语法答题后自动加载缓存优先的 AI 讲解', () => {
+  assert.match(source, /recordGrammarCompleted\(this\.data, answeredCount\);\s*this\.loadExplanationById\(questionId\);/);
+  assert.match(source, /store\.explainGrammarQuestion\(question, \{[\s\S]*?force,[\s\S]*?personalOnly:/);
+  assert.match(source, /regenerateExplanation[\s\S]*?loadExplanationById\(questionId, \{ force: true, personalOnly: true \}\)/);
+});
+
+test('语法失败兜底不冒充完整 AI 讲解', () => {
+  assert.match(source, /source === 'fallback'/);
+  assert.match(source, /explanationError:[\s\S]*?explainUnavailable/);
+  assert.equal((template.match(/wx:if="\{\{item\.explanationError\}\}"/g) || []).length, 2);
+});
+
+test('语法重新讲只写当前学生进度，不覆盖公共解析', () => {
+  assert.match(storeSource, /personalOnly:\s*Boolean\(options\.personalOnly\)/);
+  assert.match(serviceSource, /const personalOnly = Boolean\(payload\.personalOnly\)/);
+  assert.match(serviceSource, /personalOnly \? false : await saveExplanation/);
+  assert.match(serviceSource, /persisted: !personalOnly/);
+});

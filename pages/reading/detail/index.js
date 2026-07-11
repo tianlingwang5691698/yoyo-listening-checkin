@@ -594,7 +594,16 @@ function isModelReview(review) {
   if (!review) {
     return false;
   }
-  return !!(review.analysis || []).length;
+  const analyses = review.analysis || [];
+  return !!analyses.length && analyses.every((item) => {
+    const analysisText = String((item && (item.text || item.analysis)) || '').trim();
+    return !!analysisText
+      && analysisText !== '结合原文判断。'
+      && analysisText !== '结合原文判断'
+      && analysisText !== '生成解析中'
+      && !/^解析.*请稍等。?$/.test(analysisText)
+      && analysisText !== '点击“查看 AI 解析”后按需加载';
+  });
 }
 
 function isCardStudyPack(studyPack) {
@@ -1003,7 +1012,8 @@ Page({
       : review;
     const passage = normalizePassage(data.passage, answers, submitted, mergedReview);
     const activeHighlight = submitted ? (this.data.activeHighlight === 'none' ? 'answer' : this.data.activeHighlight) : this.data.activeHighlight;
-    const questionAnalysisReady = !!(cachedPack && cachedPack.studyPack && isQuestionStudyPack(cachedPack.studyPack));
+    const questionAnalysisReady = isModelReview(mergedReview)
+      || !!(cachedPack && cachedPack.studyPack && isQuestionStudyPack(cachedPack.studyPack));
     this.setData(page.buildCloudPageData(this.data, {
       loading: false,
       passage,
@@ -1097,11 +1107,13 @@ Page({
       this._studyPackLoading = false;
     }
   },
-  async ensureQuestionAnalysis(passageId) {
+  async ensureQuestionAnalysis(passageId, options = {}) {
     if (!passageId || this._questionAnalysisLoading) {
       return;
     }
-    const cached = getPhoneStudyPack(passageId);
+    const force = !!options.force;
+    const personalOnly = !!options.personalOnly;
+    const cached = force ? null : getPhoneStudyPack(passageId);
     if (cached && cached.studyPack && isQuestionStudyPack(cached.studyPack)) {
       this.applyReview(mergeStudyPackIntoReview(this.data.review, cached.studyPack));
       this.setData({
@@ -1117,7 +1129,15 @@ Page({
       readingDebugLines: []
     });
     try {
-      const result = await store.getReadingStudyPack({ passageId, section: 'questions', useCache: false });
+      const attemptId = this.data.attempt && (this.data.attempt.attemptId || this.data.attempt._id) || '';
+      const result = await store.getReadingStudyPack({
+        passageId,
+        section: 'questions',
+        force,
+        personalOnly,
+        attemptId,
+        useCache: false
+      });
       if (result && result.syncMode === 'cloud-error') {
         const target = store.getSelectedStudentTarget ? store.getSelectedStudentTarget() : {};
         const syncDebug = result.syncDebug || {};
@@ -1133,11 +1153,16 @@ Page({
       }
       const studyPack = result && result.studyPack ? result.studyPack : null;
       if (studyPack && isQuestionStudyPack(studyPack)) {
-        mergePhoneStudyPack(passageId, studyPack);
+        if (!personalOnly) {
+          mergePhoneStudyPack(passageId, studyPack);
+        }
         this.applyReview(mergeStudyPackIntoReview(this.data.review, studyPack));
         this.setData({
           questionAnalysisReady: true,
-          questionAnalysisMessage: result.cached ? text('analysisReady', '已从云端加载 AI 解析') : text('analysisReady', 'AI 解析已生成并保存到云端')
+          attempt: result && result.attempt ? result.attempt : this.data.attempt,
+          questionAnalysisMessage: personalOnly
+            ? text('personalAnalysisReady', '个人解析已生成')
+            : (result.cached ? text('analysisReady', '已从云端加载 AI 解析') : text('analysisReady', 'AI 解析已生成并保存到云端'))
         });
       }
     } catch (error) {
@@ -1148,8 +1173,10 @@ Page({
     }
   },
   requestQuestionAnalysis() {
-    if (this.data.questionAnalysisReady || this.data.questionAnalysisLoading) return;
-    this.ensureQuestionAnalysis(this.data.passage && this.data.passage._id);
+    if (this.data.questionAnalysisLoading) return;
+    this.ensureQuestionAnalysis(this.data.passage && this.data.passage._id, this.data.questionAnalysisReady
+      ? { force: true, personalOnly: true }
+      : {});
   },
   async ensureStudySection(section) {
     const passageId = this.data.passage && this.data.passage._id;

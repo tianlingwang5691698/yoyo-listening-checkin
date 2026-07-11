@@ -182,6 +182,7 @@
               <view></view>
               <view></view>
             </view>
+            <view class="library-explain-error" wx:if="{{item.explanationError}}">{{item.explanationError}}</view>
             <view class="library-analysis" wx:if="{{item.explanation}}">
               <view class="library-analysis-head">
                 <text>{{item.explanation.topic}}</text>
@@ -378,6 +379,7 @@
         <view class="grammar-explain-actions" wx:if="{{item.isAnswered && !item.explanation && !item.explaining}}">
           <view class="grammar-explain-action" data-question-id="{{item._id}}" bindtap="loadExplanation">{{texts.explain}}</view>
         </view>
+        <view class="grammar-explain-error" wx:if="{{item.explanationError}}">{{item.explanationError}}</view>
         <view class="analysis-item inline-analysis" wx:if="{{item.explanation}}">
           <view class="analysis-head">
             <text>{{item.explanation.topic}}</text>

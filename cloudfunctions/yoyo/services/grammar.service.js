@@ -541,6 +541,7 @@ async function explainGrammarQuestion(event) {
   const question = payload.question || event.question || {};
   const force = Boolean(payload.force);
   const cacheOnly = Boolean(payload.cacheOnly);
+  const personalOnly = Boolean(payload.personalOnly);
   if (!question._id) {
     return { explanation: null, source: 'skipped-no-question' };
   }
@@ -595,13 +596,14 @@ async function explainGrammarQuestion(event) {
       elimination: parsed.elimination || '',
       source: `model:${model}`
     };
-    const saved = await saveExplanation(question, explanation, model);
-    if (!saved) throw new Error('grammar-explain-save-failed');
+    const saved = personalOnly ? false : await saveExplanation(question, explanation, model);
+    if (!personalOnly && !saved) throw new Error('grammar-explain-save-failed');
     return {
       explanation,
       source: `model:${model}`,
       cached: false,
-      persisted: true
+      persisted: !personalOnly,
+      personalOnly
     };
   } catch (error) {
     console.error('[grammar-explain] failed', error && error.message ? error.message : error);

@@ -999,7 +999,12 @@ async function getStudyCompletionDetail(recordId) {
 }
 
 async function explainGrammarQuestion(question, options = {}) {
-  return callCloud('explainGrammarQuestion', { question, force: Boolean(options.force), cacheOnly: Boolean(options.cacheOnly) }, {
+  return callCloud('explainGrammarQuestion', {
+    question,
+    force: Boolean(options.force),
+    cacheOnly: Boolean(options.cacheOnly),
+    personalOnly: Boolean(options.personalOnly)
+  }, {
     explanation: null,
     source: ''
   }, { useCache: false });
