@@ -354,6 +354,7 @@ const servicePaths = {
   identity: './services/identity.service',
   catalog: './services/catalog.service',
   speaking: './services/speaking.service',
+  readingHome: './services/reading-home.service',
   reading: './services/reading.service',
   listening: './services/listening.service',
   listeningPlan: './services/listening-plan.service',
@@ -441,7 +442,7 @@ const actionMap = {
   getMonthHeatmap: serviceAction('report', 'getMonthHeatmap'),
   getDailyReportByDate: serviceAction('report', 'getDailyReportByDate'),
   getParentDashboard: serviceAction('report', 'getParentDashboard'),
-  getReadingHome: serviceAction('reading', 'getReadingHome'),
+  getReadingHome: serviceAction('readingHome', 'getReadingHome'),
   getReadingPassage: serviceAction('reading', 'getReadingPassage'),
   getReadingStudyPack: serviceAction('reading', 'getReadingStudyPack'),
   getListeningStudyPack: serviceAction('listening', 'getListeningStudyPack'),
@@ -561,9 +562,12 @@ exports.main = async (event, context) => {
     return result;
   }
 
-  const finalResult = Object.assign({}, result, {
-    resourceDebug: result.resourceDebug || getService('catalog').getResourceDebugSnapshot()
-  });
+  const skipResourceDebug = ['getReadingHome', 'getReadingPassage', 'getReadingStudyPack'].includes(action);
+  const finalResult = skipResourceDebug
+    ? result
+    : Object.assign({}, result, {
+      resourceDebug: result.resourceDebug || getService('catalog').getResourceDebugSnapshot()
+    });
   if (MONITORED_ACTIONS.has(action)) {
     const payloadSize = Buffer.byteLength(JSON.stringify(finalResult), 'utf8');
     monitor.logPerf('cloudfn', action, durationMs, { payload: `${payloadSize}B` });

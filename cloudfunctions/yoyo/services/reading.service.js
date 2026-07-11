@@ -2,7 +2,6 @@ const study = require('../facades/study.facade');
 const dbAdapter = require('../adapters/db.adapter');
 const storageAdapter = require('../adapters/storage.adapter');
 const completion = require('./completion.service');
-const speakingEngine = require('../lib/speaking-engine');
 const crypto = require('crypto');
 const https = require('https');
 
@@ -15,9 +14,13 @@ const studyPackBuildPromises = {};
 let passageListCache = null;
 const PASSAGE_LIST_CACHE_MAX_AGE_MS = 10 * 60 * 1000;
 const WORD_DICTIONARY_COLLECTION = 'wordDictionary';
+const READING_PASSAGE_COLLECTION = 'readingPassages';
 const READING_CONTENT_PATH = '_content/reading/reading-passages.json';
 const READING_EM1_CONTENT_PATH = '_content/reading-em1/reading-passages.json';
+const MIN_DATABASE_READING_PASSAGE_COUNT = 778;
 let samplePassageCache = null;
+let passageDirectoryCache = null;
+let bundledPassageDirectory = null;
 
 function todayIndex(today) {
   const start = Date.parse('2026-06-29T00:00:00+08:00');
@@ -127,6 +130,91 @@ async function loadPassages() {
   return passages;
 }
 
+function normalizePassageDirectoryItem(item) {
+  const passage = item || {};
+  return {
+    _id: String(passage._id || ''),
+    title: String(passage.title || ''),
+    year: passage.year || '',
+    district: String(passage.district || ''),
+    examType: String(passage.examType || ''),
+    section: String(passage.section || ''),
+    sectionLabel: String(passage.sectionLabel || ''),
+    difficultyLevel: Number(passage.difficultyLevel || 0),
+    difficultyLabel: String(passage.difficultyLabel || ''),
+    questionCount: Number(passage.questionCount || (passage.questions || []).length || 0),
+    status: String(passage.status || 'sample')
+  };
+}
+
+function loadBundledPassageDirectory() {
+  if (bundledPassageDirectory) return bundledPassageDirectory;
+  try {
+    const raw = require('../data/reading-directory.json');
+    const passages = (Array.isArray(raw) ? raw : [])
+      .map(normalizePassageDirectoryItem)
+      .filter((item) => item._id && item.title && item.questionCount > 0);
+    bundledPassageDirectory = passages.length >= MIN_DATABASE_READING_PASSAGE_COUNT ? passages : [];
+  } catch (error) {
+    bundledPassageDirectory = [];
+  }
+  return bundledPassageDirectory;
+}
+
+async function loadPassageDirectory() {
+  if (passageDirectoryCache && Date.now() - passageDirectoryCache.savedAt < PASSAGE_LIST_CACHE_MAX_AGE_MS) {
+    return passageDirectoryCache.passages;
+  }
+  const bundled = loadBundledPassageDirectory();
+  if (bundled.length >= MIN_DATABASE_READING_PASSAGE_COUNT) {
+    passageDirectoryCache = { savedAt: Date.now(), passages: bundled };
+    return bundled;
+  }
+  try {
+    const result = await dbAdapter.collection(READING_PASSAGE_COLLECTION)
+      .field({
+        _id: true,
+        title: true,
+        year: true,
+        district: true,
+        examType: true,
+        section: true,
+        sectionLabel: true,
+        difficultyLevel: true,
+        difficultyLabel: true,
+        questionCount: true,
+        status: true
+      })
+      .limit(1000)
+      .get();
+    const passages = ((result && result.data) || [])
+      .map(normalizePassageDirectoryItem)
+      .filter((item) => item._id && item.title && item.questionCount > 0);
+    if (passages.length >= MIN_DATABASE_READING_PASSAGE_COUNT) {
+      passageDirectoryCache = { savedAt: Date.now(), passages };
+      return passages;
+    }
+  } catch (error) {
+    // Keep the old cloud-storage content available until the collection is fully imported.
+  }
+  const passages = (await loadPassages()).map(normalizePassageDirectoryItem);
+  passageDirectoryCache = { savedAt: Date.now(), passages };
+  return passages;
+}
+
+async function getDatabasePassageById(passageId) {
+  if (!passageId) return null;
+  try {
+    const result = await dbAdapter.collection(READING_PASSAGE_COLLECTION).doc(passageId).get();
+    const raw = result && result.data;
+    const row = Array.isArray(raw) ? raw[0] : raw;
+    const passage = row ? normalizePassage(row) : null;
+    return passage && passage._id && passage.passage && hasUsableReadingQuestions(passage) ? passage : null;
+  } catch (error) {
+    return null;
+  }
+}
+
 async function getDailyPlan(ctx, today) {
   try {
     const result = await dbAdapter.collection('readingDailyPlans')
@@ -207,6 +295,10 @@ async function pickPlannedPassage(ctx, passages, today) {
 }
 
 async function findPassageById(passageId, today) {
+  const databasePassage = await getDatabasePassageById(passageId);
+  if (databasePassage) {
+    return databasePassage;
+  }
   const passages = await loadPassages();
   if (passageId) {
     const matched = passages.find((item) => item._id === passageId);
@@ -225,7 +317,7 @@ function createPassageSummary(passage) {
     _id: passage._id,
     title: passage.title,
     meta: [passage.year, passage.district, passage.examType, passage.sectionLabel || passage.section, passage.difficultyLabel].filter(Boolean).join(' · '),
-    questionCount: passage.questions.length,
+    questionCount: Number(passage.questionCount || (passage.questions || []).length || 0),
     status: passage.status
   };
 }
@@ -1348,14 +1440,10 @@ async function getLatestAttempt(ctx, passageId, today) {
 
 async function getReadingHome(event) {
   const payload = (event && event.payload) || {};
-  const { ctx, today } = await study.prepareRequestContext(Object.assign({}, event, {
-    action: 'getReadingHome'
-  }));
-  const passages = await loadPassages();
-  const includeDirectory = !!payload.includeDirectory || !!payload.directoryOnly;
   if (payload.directoryOnly) {
+    const passages = await loadPassageDirectory();
     return {
-      today,
+      today: study.getTodayString(),
       dailyCount: 0,
       passage: null,
       passages: [],
@@ -1367,6 +1455,11 @@ async function getReadingHome(event) {
       latestAttempt: null
     };
   }
+  const { ctx, today } = await study.prepareRequestContext(Object.assign({}, event, {
+    action: 'getReadingHome'
+  }));
+  const passages = await loadPassages();
+  const includeDirectory = !!payload.includeDirectory || !!payload.directoryOnly;
   const requestedCount = Math.min(
     Math.max(Number(payload.dailyCount || DEFAULT_READING_DAILY_COUNT), 1),
     MAX_READING_DAILY_COUNT
@@ -1404,12 +1497,15 @@ async function getReadingHome(event) {
 
 async function getReadingPassage(event) {
   const payload = (event && event.payload) || {};
-  const { ctx, today } = await study.prepareRequestContext(Object.assign({}, event, {
+  const passageId = String(payload.passageId || '');
+  const contextPromise = study.prepareRequestContext(Object.assign({}, event, {
     action: 'getReadingPassage'
   }));
-  const passages = await loadPassages();
-  const passage = payload.passageId
-    ? passages.find((item) => item._id === String(payload.passageId || '')) || pickDailyPassage(passages, today)
+  const passagePromise = passageId ? findPassageById(passageId, study.getTodayString()) : null;
+  const { ctx, today } = await contextPromise;
+  const passages = passageId ? null : await loadPassages();
+  const passage = passageId
+    ? await passagePromise
     : await pickPlannedPassage(ctx, passages, today);
   const latestAttempt = passage ? await getLatestAttempt(ctx, passage._id, today) : null;
   return {
