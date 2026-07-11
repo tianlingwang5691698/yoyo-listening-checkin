@@ -670,35 +670,75 @@
   margin-top: 24rpx;
 }
 
-.library-play-ring {
+.library-vinyl-stage {
   position: relative;
-  margin: 0 auto 22rpx;
-  width: 190rpx;
-  height: 190rpx;
-  border-radius: 50%;
-  background:
-    repeating-conic-gradient(from -10deg, rgba(184, 149, 98, 0.75) 0deg 3deg, transparent 3deg 11deg),
-    radial-gradient(circle, rgba(243, 232, 212, 0.18) 0 48%, rgba(184, 149, 98, 0.32) 49% 100%);
+  height: 218rpx;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+.library-play-ring {
+  position: relative;
+  margin: 0;
+  width: 190rpx;
+  height: 190rpx;
+  border: 2rpx solid #050504;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, #c39a5f 0 17rpx, #5a3d25 18rpx 24rpx, transparent 25rpx),
+    repeating-radial-gradient(circle, #090908 0 4rpx, #211e1b 5rpx 8rpx, #0b0a09 9rpx 13rpx);
+  box-shadow: inset 0 0 24rpx rgba(255, 255, 255, 0.05), 0 14rpx 28rpx rgba(0, 0, 0, 0.28);
+}
+
+.library-turntable.is-playing .library-play-ring {
+  animation: libraryVinylSpin 8s linear infinite;
+}
+
+@keyframes libraryVinylSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
 .library-needle {
   position: absolute;
-  right: 150rpx;
-  top: 8rpx;
-  width: 96rpx;
-  height: 4rpx;
+  z-index: 3;
+  right: 76rpx;
+  top: 20rpx;
+  width: 110rpx;
+  height: 8rpx;
   border-radius: 999rpx;
   background: #b89562;
-  transform: rotate(28deg);
+  transform: rotate(12deg) translateY(-14rpx);
   transform-origin: right center;
+  opacity: 0.72;
+  transition: transform 320ms ease, opacity 220ms ease;
+}
+
+.library-needle::after {
+  content: "";
+  position: absolute;
+  left: -10rpx;
+  top: -7rpx;
+  width: 22rpx;
+  height: 22rpx;
+  border-radius: 3rpx;
+  background: #ead8b8;
+}
+
+.library-turntable.is-playing .library-needle {
+  transform: rotate(40deg);
+  opacity: 1;
 }
 
 .library-play-button {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  top: 50%;
   width: 124rpx;
   height: 124rpx;
+  margin: -62rpx 0 0 -62rpx;
   border-radius: 50%;
   background: #f3e8d4;
   color: #14283a;
@@ -1051,3 +1091,7 @@
   font-size: var(--font-caption-size);
   font-weight: 600;
 }
+.language-en button,
+.language-en view,
+.language-en text { overflow-wrap: break-word; word-break: normal; }
+.language-en .audio-title { font-size: 38rpx; line-height: 1.16; }

@@ -1,6 +1,56 @@
 const store = require('../../utils/store');
 const page = require('../../utils/page');
 const contracts = require('../../utils/contracts');
+const snapshotStore = require('../../utils/snapshot');
+const i18n = require('../../utils/i18n');
+const accountCatalog = require('../../utils/i18n-catalog-account');
+
+const PROFILE_SNAPSHOT_KEY = 'profileHomeSnapshotV1';
+
+function buildCurrentProfileSnapshotId() {
+  const target = store.getSelectedStudentTarget ? store.getSelectedStudentTarget() : {};
+  const familyId = String((target && target.targetFamilyId) || '').trim();
+  const childId = String((target && target.targetChildId) || '').trim();
+  return familyId || childId ? `target:${familyId}:${childId}` : 'self';
+}
+
+function isNicknameRequired(child) {
+  const current = child || {};
+  const nickname = String(current.nickname || '').trim();
+  const childLoginCode = String(current.childLoginCode || '').trim();
+  return !!current.nicknameRequired
+    || !nickname
+    || ['同学', '我'].includes(nickname)
+    || (nickname === '佑佑' && childLoginCode !== '317613');
+}
+
+function buildTexts() {
+  return Object.keys(accountCatalog.family['zh-CN']).reduce((texts, key) => {
+    texts[key] = i18n.getPageText('family', key);
+    return texts;
+  }, {});
+}
+
+function formatText(text, values) {
+  return Object.keys(values || {}).reduce((result, key) => result.replace(new RegExp(`\\{${key}\\}`, 'g'), values[key]), String(text || ''));
+}
+
+function buildIdentityNicknamePresentation(data, texts) {
+  const source = data || {};
+  const member = source.currentMember || {};
+  const isParent = member.studyRole !== 'student';
+  const isBoundParent = isParent && member.role !== 'owner';
+  const nickname = isBoundParent
+    ? String(member.selfChildNickname || '').trim()
+    : String((source.child && source.child.nickname) || '').trim();
+  return {
+    identityNicknameInput: nickname,
+    identityNicknameLabel: isParent ? texts.myNickname : texts.studentNickname,
+    identityNicknameRequired: isBoundParent
+      ? !nickname || ['同学', '我'].includes(nickname)
+      : isNicknameRequired(source.child)
+  };
+}
 
 Page({
   data: page.createCloudPageData({
@@ -18,19 +68,26 @@ Page({
     joinName: '',
     bindingNicknameInput: '',
     bindingRelationInput: '',
+    identityNicknameInput: '',
+    identityNicknameLabel: i18n.getPageText('family', 'myNickname'),
+    identityNicknameRequired: false,
+    savingIdentityNickname: false,
+    nicknameSaveDebug: '',
     bindingProfileRequired: false,
-    studyRoleLabel: '家长',
-    studyRoleActionText: '切换',
+    studyRoleLabel: i18n.getPageText('family', 'parent'),
+    studyRoleActionText: i18n.getPageText('family', 'switched'),
     undoingLastListened: false,
-    childJoinRequired: false
+    childJoinRequired: false,
+    texts: buildTexts(),
+    language: i18n.getLanguage()
   }),
   applyFamilyState(data, extra) {
     const studentCards = this.buildStudentCards(data);
     const bindingInputs = this.buildBindingProfileInputs(data);
-    this.setData(page.buildCloudPageData(this.data, Object.assign({}, data, this.buildStudyRolePresentation((data || {}).currentMember), {
+    this.setData(page.buildCloudPageData(this.data, Object.assign({}, data, this.buildStudyRolePresentation((data || {}).currentMember), buildIdentityNicknamePresentation(data, this.data.texts), {
       memberCards: this.buildMemberCards((data || {}).members, (data || {}).currentMember),
       studentCards,
-      studentCountText: studentCards.length ? `已绑定 ${studentCards.length} 人` : '',
+      studentCountText: studentCards.length ? formatText(this.data.texts.boundCount, { count: studentCards.length }) : '',
       bindingProfileRequired: this.isBindingProfileRequired(data),
       bindingNicknameInput: bindingInputs.selfChildNickname,
       bindingRelationInput: bindingInputs.relationName
@@ -39,6 +96,9 @@ Page({
   async onShow() {
     this.familyPerf = page.startPagePerf('family');
     page.syncTheme(this);
+    const texts = buildTexts();
+    this.setData({ texts, language: i18n.getLanguage() });
+    wx.setNavigationBarTitle({ title: texts.navTitle });
     const target = store.getSelectedStudentTarget ? store.getSelectedStudentTarget() : {};
     const cached = store.getCachedReadResult ? store.getCachedReadResult('getFamilyPage', target) : null;
     if (cached) {
@@ -49,6 +109,13 @@ Page({
         source: 'cache',
         cacheHit: true,
         members: (cached.members || []).length
+      });
+    } else {
+      await new Promise((resolve) => wx.nextTick(resolve));
+      this.familyPerf.ready('pageReady', {
+        source: 'fallback',
+        cacheHit: false,
+        members: 0
       });
     }
     const data = await store.getFamilyPageData((fresh) => {
@@ -63,14 +130,11 @@ Page({
       childJoinRequired: this.isChildJoinRequired(data)
     });
     if (!cached) {
-      this.familyPerf.ready('pageReady', {
+      this.familyPerf.mark('cloudRefresh', {
         source: data && data.__cacheHit ? 'cache' : (data && data.syncMode === 'cloud-error' ? 'error' : 'cloud'),
         cacheHit: !!(data && data.__cacheHit),
         members: ((data && data.members) || []).length
       });
-    }
-    if (data && !data.__cacheHit && data.syncMode !== 'cloud-error') {
-      this.familyPerf.mark('cloudRefresh', { members: (data.members || []).length });
     }
   },
   isChildJoinRequired(data) {
@@ -93,8 +157,8 @@ Page({
   buildStudyRolePresentation(member) {
     const studyRole = member && member.studyRole === 'student' ? 'student' : 'parent';
     return {
-      studyRoleLabel: studyRole === 'student' ? '学生' : '家长',
-      studyRoleActionText: '切换'
+      studyRoleLabel: studyRole === 'student' ? this.data.texts.student : this.data.texts.parent,
+      studyRoleActionText: this.data.texts.switched
     };
   },
   buildMemberCards(members, currentMember) {
@@ -113,7 +177,7 @@ Page({
     const fallback = child && (child.childLoginCode || child.nickname) ? [{
       familyId: (data.family && data.family.familyId) || child.familyId || '',
       childId: child.childId || '',
-      nickname: child.nickname || '学生',
+      nickname: child.nickname || this.data.texts.defaultStudent,
       childLoginCode: child.childLoginCode || '',
       isCurrent: true
     }] : [];
@@ -122,7 +186,7 @@ Page({
       return {
         familyId: item.familyId,
         childId: item.childId,
-        nickname: item.nickname || '学生',
+        nickname: item.nickname || this.data.texts.defaultStudent,
         childLoginCode: item.childLoginCode || '',
         isCurrent: !!item.isCurrent
       };
@@ -153,19 +217,67 @@ Page({
       bindingRelationInput: event.detail.value
     });
   },
+  handleIdentityNicknameInput(event) {
+    this.setData({ identityNicknameInput: event.detail.value });
+  },
+  async saveIdentityNickname() {
+    if (this.data.savingIdentityNickname) return;
+    const nickname = String(this.data.identityNicknameInput || '').trim();
+    const member = this.data.currentMember || {};
+    const isBoundParent = member.studyRole !== 'student' && member.role !== 'owner';
+    const childLoginCode = String((this.data.child && this.data.child.childLoginCode) || '').trim();
+    if (!nickname) {
+      wx.showToast({ title: this.data.texts.enterNickname, icon: 'none' });
+      return;
+    }
+    if (['同学', '我'].includes(nickname) || (!isBoundParent && nickname === '佑佑' && childLoginCode !== '317613')) {
+      wx.showToast({ title: this.data.texts.chooseAnotherNickname, icon: 'none' });
+      return;
+    }
+    this.setData({ savingIdentityNickname: true, nicknameSaveDebug: '' });
+    try {
+      const data = isBoundParent
+        ? await store.updateBindingProfile(nickname, String(member.relationName || '').trim())
+        : await store.updateChildProfile(nickname);
+      const savedNickname = isBoundParent
+        ? String((data && data.currentMember && data.currentMember.selfChildNickname) || '').trim()
+        : String((data && data.child && data.child.nickname) || '').trim();
+      if (!data || data.syncMode === 'cloud-error' || savedNickname !== nickname) {
+        const target = store.getSelectedStudentTarget ? store.getSelectedStudentTarget() : {};
+        const cloudMessage = data && data.cloudError && data.cloudError.message;
+        const syncDebug = (data && data.syncDebug) || {};
+        const action = isBoundParent ? 'updateBindingProfile' : 'updateChildProfile';
+        const error = new Error(cloudMessage || '云端未返回新昵称');
+        error.debugText = `DEBUG: family.saveIdentityNickname -> store.${action} -> cloud.${action} -> nickname：${savedNickname || '缺失'}；expected=${nickname}；targetChildId=${target.targetChildId || '缺失'}；cloudError.message=${cloudMessage || '无'}；syncDebug.reason=${syncDebug.reason || '无'}；syncDebug.envId=${syncDebug.envId || '无'}`;
+        throw error;
+      }
+      this.applyFamilyState(data, { savingIdentityNickname: false, nicknameSaveDebug: '' });
+      if (!isBoundParent) {
+        const snapshotId = buildCurrentProfileSnapshotId();
+        snapshotStore.write(`${PROFILE_SNAPSHOT_KEY}:${snapshotId}`, snapshotId, data, { source: 'family-profile-save' });
+      }
+      wx.showToast({ title: this.data.texts.nicknameUpdated, icon: 'none' });
+    } catch (error) {
+      this.setData({
+        savingIdentityNickname: false,
+        nicknameSaveDebug: error.debugText || `DEBUG: family.saveIdentityNickname -> store -> cloud -> 异常：${error.message || '未知'}`
+      });
+      wx.showToast({ title: this.data.texts.updateFailed, icon: 'none' });
+    }
+  },
   async saveBindingProfile() {
     const selfChildNickname = String(this.data.bindingNicknameInput || '').trim();
     const relationName = String(this.data.bindingRelationInput || '').trim();
     if (!selfChildNickname || ['同学', '我'].includes(selfChildNickname)) {
       wx.showToast({
-        title: '先填写你的昵称',
+        title: this.data.texts.enterOwnNickname,
         icon: 'none'
       });
       return;
     }
     if (!relationName) {
       wx.showToast({
-        title: '先填写和孩子的关系',
+        title: this.data.texts.enterRelation,
         icon: 'none'
       });
       return;
@@ -176,12 +288,12 @@ Page({
         bindingProfileRequired: this.isBindingProfileRequired(data)
       });
       wx.showToast({
-        title: '已更新',
+        title: this.data.texts.updated,
         icon: 'none'
       });
     } catch (error) {
       wx.showToast({
-        title: error.message || '更新失败',
+        title: this.data.texts.updateFailed,
         icon: 'none'
       });
     }
@@ -190,14 +302,14 @@ Page({
     const data = await store.refreshInviteCode();
     this.setData(page.buildCloudPageData(this.data, data));
     wx.showToast({
-      title: '邀请码已刷新',
+      title: this.data.texts.inviteRefreshed,
       icon: 'none'
     });
   },
   async joinFamily() {
     if (!this.data.inviteInput) {
       wx.showToast({
-        title: '先输入邀请码',
+        title: this.data.texts.enterInvite,
         icon: 'none'
       });
       return;
@@ -209,12 +321,12 @@ Page({
         joinName: ''
       })));
       wx.showToast({
-        title: '已加入家庭',
+        title: this.data.texts.joinedFamily,
         icon: 'none'
       });
     } catch (error) {
       wx.showToast({
-        title: error.message || '加入失败',
+        title: this.data.texts.joinFailed,
         icon: 'none'
       });
     }
@@ -222,7 +334,7 @@ Page({
   async joinFamilyByChildCode() {
     if (!/^\d{6}$/.test(String(this.data.childCodeInput || ''))) {
       wx.showToast({
-        title: '请输入 6 位学号',
+        title: this.data.texts.enterSixDigitId,
         icon: 'none'
       });
       return;
@@ -242,12 +354,12 @@ Page({
         childJoinRequired: this.isChildJoinRequired(data)
       });
       wx.showToast({
-        title: currentRole === 'student' ? '已登录学生账号' : '已绑定学生',
+        title: currentRole === 'student' ? this.data.texts.studentLoggedIn : this.data.texts.studentBound,
         icon: 'none'
       });
     } catch (error) {
       wx.showToast({
-        title: error.message || '绑定失败',
+        title: this.data.texts.bindFailed,
         icon: 'none'
       });
     }
@@ -265,16 +377,16 @@ Page({
       childJoinRequired: this.isChildJoinRequired(data)
     });
     wx.showToast({
-      title: '已切换学生',
+      title: this.data.texts.studentSwitched,
       icon: 'none'
     });
   },
   async leaveFamily() {
     const confirmed = await new Promise((resolve) => {
       wx.showModal({
-        title: '退出孩子记录？',
-        content: '退出后，这个微信将不再连接当前孩子记录。',
-        confirmText: '退出',
+        title: this.data.texts.exitTitle,
+        content: this.data.texts.exitContent,
+        confirmText: this.data.texts.exit,
         confirmColor: '#b45e40',
         success: (res) => resolve(!!res.confirm),
         fail: () => resolve(false)
@@ -292,12 +404,12 @@ Page({
         childJoinRequired: this.isChildJoinRequired(data)
       });
       wx.showToast({
-        title: '已退出孩子记录',
+        title: this.data.texts.exited,
         icon: 'none'
       });
     } catch (error) {
       wx.showToast({
-        title: error.message || '退出失败',
+        title: this.data.texts.exitFailed,
         icon: 'none'
       });
     }
@@ -316,7 +428,7 @@ Page({
         childJoinRequired: this.isChildJoinRequired(data)
       });
       wx.showToast({
-        title: nextRole === 'student' ? '已切到学生' : '已切到家长',
+        title: nextRole === 'student' ? this.data.texts.switchedStudent : this.data.texts.switchedParent,
         icon: 'none'
       });
       if (nextRole === 'student') {
@@ -326,7 +438,7 @@ Page({
       }
     } catch (error) {
       wx.showToast({
-        title: error.message || '切换失败',
+        title: this.data.texts.switchFailed,
         icon: 'none'
       });
     }
@@ -337,10 +449,10 @@ Page({
     }
     const choice = await new Promise((resolve) => {
       wx.showModal({
-        title: '清掉多记播放？',
-        content: '今天还没打卡，可以清掉家长误记的播放次数。',
-        cancelText: '不用',
-        confirmText: '清掉',
+        title: this.data.texts.clearPlayTitle,
+        content: this.data.texts.clearPlayContent,
+        cancelText: this.data.texts.notNow,
+        confirmText: this.data.texts.clear,
         confirmColor: '#b45e40',
         success: (res) => resolve(res.confirm ? 'clear' : ''),
         fail: () => resolve('')
@@ -357,13 +469,13 @@ Page({
       });
       const cleared = data.cleared || {};
       wx.showToast({
-        title: cleared.playCount ? '已清掉多记播放' : '已处理',
+        title: cleared.playCount ? this.data.texts.playCleared : this.data.texts.handled,
         icon: 'none'
       });
     } catch (error) {
       this.setData({ undoingLastListened: false });
       wx.showToast({
-        title: error.message || '撤回失败',
+        title: this.data.texts.undoFailed,
         icon: 'none'
       });
     }

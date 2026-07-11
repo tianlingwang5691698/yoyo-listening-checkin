@@ -3,6 +3,7 @@ const page = require('../../utils/page');
 const contracts = require('../../utils/contracts');
 const labels = require('../../utils/labels');
 const snapshotStore = require('../../utils/snapshot');
+const i18n = require('../../utils/i18n');
 const LEVEL_STAGE_SNAPSHOT_KEY = 'levelStageSnapshotV1';
 const LESSON_TASK_SNAPSHOT_KEY = 'lessonTaskSnapshotV1';
 const ENTRY_POSTER_DISMISSED_KEY = 'homeEntryPosterDismissedV1';
@@ -20,6 +21,11 @@ const VOCABULARY_ITEM_KEYS = [
   'speakingFlashcardItemsV1'
 ];
 
+function t(key, variables) {
+  const template = i18n.getPageText('home', key);
+  return Object.keys(variables || {}).reduce((text, name) => text.replace(new RegExp(`\\{${name}\\}`, 'g'), variables[name]), template);
+}
+
 function todayString() {
   const now = new Date();
   const year = now.getFullYear();
@@ -32,15 +38,15 @@ function todayDisplayText() {
   const now = new Date();
   const month = now.getMonth() + 1;
   const day = now.getDate();
-  const week = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'][now.getDay()];
-  return `${month}月${day}日（${week}）`;
+  const week = t(`weekday${now.getDay()}`);
+  return t('dateDisplay', { month, day, week });
 }
 
 function greetingText() {
   const hour = new Date().getHours();
-  if (hour < 11) return '上午好';
-  if (hour < 18) return '下午好';
-  return '晚上好';
+  if (hour < 11) return t('morningGreeting');
+  if (hour < 18) return t('afternoonGreeting');
+  return t('eveningGreeting');
 }
 
 function buildHomeNavStyle() {
@@ -128,28 +134,28 @@ function writeListeningOverviewSnapshot(data, levelId, source) {
 }
 
 function buildListeningSummary(groupedDailyTasks, options = {}) {
-  if (options.needsListeningPlanSetup) return '设置听力计划';
+  if (options.needsListeningPlanSetup) return t('setupListeningPlan');
   const groups = groupedDailyTasks || [];
   const total = groups.reduce((sum, item) => sum + Number(item.totalCount || 0), 0);
   const completed = groups.reduce((sum, item) => sum + Number(item.completedCount || 0), 0);
   const nextGroup = groups.find((item) => Number(item.completedCount || 0) < Number(item.totalCount || 0));
-  if (!groups.length) return '进入听力';
-  if (total > 0 && completed >= total) return '今日已完成';
-  return `${completed}/${total || groups.length} 完成 · ${(nextGroup && nextGroup.categoryLabel) || '继续'}`;
+  if (!groups.length) return t('enterListening');
+  if (total > 0 && completed >= total) return t('completedToday');
+  return t('listeningProgress', { completed, total: total || groups.length, next: (nextGroup && nextGroup.categoryLabel) || t('continue') });
 }
 
 function formatEstimatedDuration(seconds) {
   const value = Number(seconds || 0);
   if (value <= 0) {
-    return '时长待生成';
+    return t('durationPending');
   }
   const minutes = Math.max(1, Math.round(value / 60));
   if (minutes < 60) {
-    return `${minutes} 分钟`;
+    return t('minutes', { minutes });
   }
   const hours = Math.floor(minutes / 60);
   const rest = minutes % 60;
-  return `${hours} 小时${rest ? `${rest} 分钟` : ''}`;
+  return t('hoursMinutes', { hours, minutes: rest ? t('minutes', { minutes: rest }) : '' });
 }
 
 function getListeningDurationSec(groupedDailyTasks) {
@@ -200,6 +206,7 @@ function buildHomeVisualMetrics(groupedDailyTasks, options = {}) {
     todayDoneMinutes: safeDone,
     todayProgressPercent: progressPercent,
     todayProgressStyle: `background: conic-gradient(#86aaa1 ${progressPercent}%, rgba(134, 170, 161, 0.22) 0);`,
+    libraryProgressStyle: `background: conic-gradient(#9b7746 ${progressPercent}%, rgba(184, 149, 98, 0.2) 0);`,
     streakDaysText: String(Number(stats.streakDays || 0)),
     completedTasksText: String(Number(stats.completedTasks || 0)),
     totalStudyHoursText: formatHoursFromMinutes(stats.totalMinutes || 0)
@@ -209,11 +216,11 @@ function buildHomeVisualMetrics(groupedDailyTasks, options = {}) {
 function buildListeningTaskStatus(groupedDailyTasks, options = {}) {
   if (options.needsListeningPlanSetup) {
     return {
-      title: '今日任务',
-      copy: '还没有听力计划 · 先选择素材和节奏',
-      primaryLine: '还没有听力计划',
-      secondaryLine: '先选择素材和节奏',
-      action: '设置计划',
+      title: t('todayTask'),
+      copy: t('noListeningPlanCopy'),
+      primaryLine: t('noListeningPlan'),
+      secondaryLine: t('chooseMaterialRhythm'),
+      action: t('setupPlan'),
       pending: false,
       setupRequired: true
     };
@@ -223,24 +230,24 @@ function buildListeningTaskStatus(groupedDailyTasks, options = {}) {
   const completed = groups.reduce((sum, item) => sum + Number(item.completedCount || 0), 0);
   if (!groups.length || !total) {
     return {
-      title: '今日任务',
-      copy: '暂无今日听力任务 · 可重新设置计划',
-      primaryLine: '暂无今日听力任务',
-      secondaryLine: '可重新设置计划',
-      action: '设置计划',
+      title: t('todayTask'),
+      copy: t('noListeningTaskCopy'),
+      primaryLine: t('noListeningTask'),
+      secondaryLine: t('resetPlanHint'),
+      action: t('setupPlan'),
       pending: false,
       setupRequired: true
     };
   }
   const pending = completed < total;
   const durationSec = getListeningDurationSec(groups);
-  const durationText = durationSec > 0 ? `预计 ${formatEstimatedDuration(durationSec)}` : '时长待生成';
+  const durationText = durationSec > 0 ? t('estimatedDuration', { duration: formatEstimatedDuration(durationSec) }) : t('durationPending');
   return {
-    title: '今日任务',
-    copy: `听力 ${completed}/${total} · ${durationText} · ${pending ? '待完成' : '已完成'}`,
-    primaryLine: `听力 ${completed}/${total}`,
-    secondaryLine: `${durationText} · ${pending ? '待完成' : '已完成'}`,
-    action: pending ? '继续学习' : '查看记录',
+    title: t('todayTask'),
+    copy: t('taskStatusCopy', { completed, total, duration: durationText, status: pending ? t('pending') : t('completed') }),
+    primaryLine: t('listeningCount', { completed, total }),
+    secondaryLine: t('durationStatus', { duration: durationText, status: pending ? t('pending') : t('completed') }),
+    action: pending ? t('continueLearning') : t('viewRecords'),
     pending,
     setupRequired: false
   };
@@ -319,10 +326,10 @@ function buildStageSnapshotTaskGroups(groupedDailyTasks) {
     const tasks = (group.tasks || []).map((sourceTask, index) => ({
       taskId: sourceTask.taskId || '',
       title: sourceTask.displayTitle || sourceTask.title || group.programSubtitle || '',
-      meta: [sourceTask.textType || group.textType || '', sourceTask.progressText ? `进度 ${sourceTask.progressText}` : ''].filter(Boolean).join(' · '),
+      meta: [sourceTask.textType || group.textType || '', sourceTask.progressText ? t('progress', { progress: sourceTask.progressText }) : ''].filter(Boolean).join(' · '),
       orderText: sourceTask.planSlotIndex ? `${sourceTask.planSlotIndex}` : `${index + 1}`,
       completedToday: !!sourceTask.completedToday,
-      stateText: sourceTask.completedToday ? '完成' : '开始',
+      stateText: sourceTask.completedToday ? t('completed') : t('start'),
       taskSnapshot: sourceTask,
       disabled: !!sourceTask.isPendingAsset
     }));
@@ -330,7 +337,7 @@ function buildStageSnapshotTaskGroups(groupedDailyTasks) {
       category: task.category || group.category || '',
       categoryLabel: group.categoryLabel || task.categoryLabel || '',
       title: task.displayTitle || task.title || group.programSubtitle || '',
-      taskCountText: Number(group.totalCount || 0) ? `${Number(group.totalCount || 0)} 个任务` : '',
+      taskCountText: Number(group.totalCount || 0) ? t('taskCount', { count: Number(group.totalCount || 0) }) : '',
       textType: task.textType || group.textType || '',
       minutesText: group.minutesText || '',
       minutes: Number(group.minutes || 0),
@@ -340,7 +347,7 @@ function buildStageSnapshotTaskGroups(groupedDailyTasks) {
       taskSnapshot: task,
       disabled,
       expanded: true,
-      stateText: task.completedToday ? '完成' : disabled ? '等待' : '›',
+      stateText: task.completedToday ? t('completed') : disabled ? t('waiting') : '›',
       planRunType: task.planRunType || group.planRunType || 'normal',
       planDayIndex: task.planDayIndex || group.planDayIndex || 0
     };
@@ -365,7 +372,7 @@ function buildTodayCompletedItems(groupedDailyTasks) {
         list.push({
           type: attempts.length ? 'speaking' : 'listening',
           title: task.displayTitle || task.title || group.categoryLabel,
-          meta: attempts.length ? '回答评分' : (group.categoryLabel || task.category || '听力'),
+          meta: attempts.length ? t('answerScoring') : (group.categoryLabel || task.category || t('listening')),
           category: task.category || group.category || '',
           taskId: task.taskId || '',
           progressText: task.progressText || '',
@@ -427,13 +434,13 @@ function buildCompletedUrl(child) {
 Page({
   data: page.createCloudPageData({
     child: contracts.createChildDefaults(),
-    profileInitial: '学',
+    profileInitial: t('studentInitial'),
     currentMember: contracts.createCurrentMemberDefaults(),
     stats: contracts.createStatsDefaults(),
     planDayIndex: 1,
     todayDisplay: todayDisplayText(),
     greeting: greetingText(),
-    planPhaseLabel: '第1轮',
+    planPhaseLabel: t('round1'),
     groupedDailyTasks: [],
     hasGroupedTasks: false,
     planSource: 'none',
@@ -442,18 +449,23 @@ Page({
     identityConfirmVisible: true,
     modeChangedNoticeVisible: false,
     homeLoading: true,
+    homeDataReady: false,
+    homeDataTarget: '',
     readingLoading: true,
     readingToday: null,
     readingCompleted: false,
-    listeningSummary: '进入听力',
+    listeningSummary: t('enterListening'),
     listeningTaskStatus: buildListeningTaskStatus([]),
     nextListeningTask: null,
-    readingSummary: '进入阅读',
+    readingSummary: t('enterReading'),
+    language: i18n.getLanguage(),
+    texts: i18n.getPageTexts('home'),
     vocabularySummary: buildVocabularySummary(),
     todayGoalMinutes: 0,
     todayDoneMinutes: 0,
     todayProgressPercent: 0,
     todayProgressStyle: 'background: conic-gradient(#86aaa1 0%, rgba(134, 170, 161, 0.22) 0);',
+    libraryProgressStyle: 'background: conic-gradient(#9b7746 0%, rgba(184, 149, 98, 0.2) 0);',
     streakDaysText: '0',
     completedTasksText: '0',
     totalStudyHoursText: '0.0',
@@ -473,13 +485,24 @@ Page({
     };
   },
   applyDashboard(data) {
+    const currentTarget = store.getSelectedStudentTarget ? store.getSelectedStudentTarget() : {};
+    const currentTargetPart = `${currentTarget.targetFamilyId || 'self'}:${currentTarget.targetChildId || 'self'}`;
+    if (data && data.syncMode === 'cloud-error' && this.data.homeDataReady && this.data.homeDataTarget === currentTargetPart) {
+      this.setData({
+        syncMode: data.syncMode,
+        syncDebug: data.syncDebug,
+        showCloudDebug: data.showCloudDebug,
+        homeLoading: false
+      });
+      return this.data.groupedDailyTasks || [];
+    }
     const nextStudyRole = data.currentMember && data.currentMember.studyRole === 'student' ? 'student' : 'parent';
     const previousStudyRole = wx.getStorageSync('lastStudyRole') || '';
     const modeChangedNoticeVisible = previousStudyRole === 'student' && nextStudyRole === 'parent';
     wx.setStorageSync('lastStudyRole', nextStudyRole);
     const groupedDailyTasks = labels.normalizeHomeTaskGroups(data.groupedDailyTasks || []);
     const needsListeningPlanSetup = !!data.needsListeningPlanSetup || data.planSource === 'none';
-    if (data && data.syncMode !== 'cloud-error' && data.child && groupedDailyTasks.length) {
+    if (data && data.syncMode !== 'cloud-error' && data.child) {
       snapshotStore.write(HOME_DASHBOARD_SNAPSHOT_KEY, buildHomeDashboardSnapshotId(data.child), data, { source: 'home-dashboard' });
     }
     this.setData(page.buildCloudPageData(this.data, Object.assign({}, {
@@ -510,7 +533,9 @@ Page({
       }),
       identityConfirmVisible: !this.data.identitySelectedInSession,
       modeChangedNoticeVisible,
-      homeLoading: false
+      homeLoading: false,
+      homeDataReady: data.syncMode !== 'cloud-error',
+      homeDataTarget: currentTargetPart
     }, this.buildStudyModePresentation(data.currentMember))));
     return groupedDailyTasks;
   },
@@ -522,7 +547,7 @@ Page({
     ];
     for (let index = 0; index < payloads.length; index += 1) {
       const cached = store.getCachedReadResult ? store.getCachedReadResult('getDashboard', payloads[index]) : null;
-      if (cached && cached.child && (cached.groupedDailyTasks || []).length) {
+      if (cached && cached.child && cached.syncMode !== 'cloud-error') {
         this.applyDashboard(Object.assign({}, cached, {
           currentMember: Object.assign({}, cached.currentMember || {}, { studyRole: nextRole })
         }));
@@ -530,7 +555,7 @@ Page({
       }
     }
     const currentGroups = this.data.groupedDailyTasks || [];
-    if (this.data.child && currentGroups.length) {
+    if (this.data.homeDataReady && this.data.child) {
       this.applyDashboard(Object.assign({}, this.data, {
         currentMember: Object.assign({}, this.data.currentMember || {}, { studyRole: nextRole }),
         groupedDailyTasks: currentGroups
@@ -544,7 +569,7 @@ Page({
       return true;
     }
     wx.showToast({
-      title: '请更换其他名字',
+      title: t('changeNickname'),
       icon: 'none'
     });
     return false;
@@ -554,7 +579,7 @@ Page({
       return true;
     }
     wx.showToast({
-      title: '请先选择身份',
+      title: t('chooseIdentity'),
       icon: 'none'
     });
     return false;
@@ -568,7 +593,7 @@ Page({
     const nickname = String(this.data.nicknameInput || '').trim();
     if (!nickname || ['同学', '我'].includes(nickname) || (nickname === '佑佑' && String((this.data.child && this.data.child.childLoginCode) || '').trim() !== '317613')) {
       wx.showToast({
-        title: '请更换其他名字',
+        title: t('changeNickname'),
         icon: 'none'
       });
       return;
@@ -583,39 +608,58 @@ Page({
         profileInitial: profileInitial(child)
       }));
       wx.showToast({
-        title: '昵称已保存',
+        title: t('nicknameSaved'),
         icon: 'none'
       });
     } catch (error) {
       wx.showToast({
-        title: error.message || '保存失败',
+        title: error.message || t('saveFailed'),
         icon: 'none'
       });
     }
   },
   async onShow() {
-    this.homePerf = page.startPagePerf('home');
-    page.syncTheme(this);
-    if (this.data.theme === 'library') {
-      wx.setNavigationBarColor({
-        frontColor: '#ffffff',
-        backgroundColor: '#1c140f'
-      });
-    }
+    const homePerf = page.startPagePerf('home');
+    this.homePerf = homePerf;
+    page.syncTheme(this, {
+      windowColors: (currentTheme) => currentTheme === 'library'
+        ? { frontColor: '#ffffff', backgroundColor: '#1c140f' }
+        : null
+    });
+    const language = i18n.getLanguage();
+    const texts = i18n.getPageTexts('home', language);
+    wx.setNavigationBarTitle({ title: texts.navTitle });
     const tabBar = this.getTabBar && this.getTabBar();
     const identitySelectedInSession = !!this.data.identitySelectedInSession;
     const entryPosterVisible = !identitySelectedInSession && shouldShowEntryPoster();
     const identityConfirmVisible = !identitySelectedInSession && shouldShowIdentityConfirm();
+    const selectedTarget = store.getSelectedStudentTarget ? store.getSelectedStudentTarget() : {};
+    const selectedTargetPart = `${selectedTarget.targetFamilyId || 'self'}:${selectedTarget.targetChildId || 'self'}`;
+    const memoryReady = this.data.homeDataReady && this.data.homeDataTarget === selectedTargetPart;
+    const cachedDashboard = store.getCachedReadResult
+      ? store.getCachedReadResult('getDashboard', Object.assign({ view: 'home' }, selectedTarget))
+      : null;
+    const cacheReady = !!(cachedDashboard && cachedDashboard.syncMode !== 'cloud-error' && cachedDashboard.child);
+    if (!memoryReady && cacheReady) {
+      this.applyDashboard(cachedDashboard);
+    } else if (!memoryReady) {
+      this.setData({ homeDataReady: false, homeDataTarget: selectedTargetPart });
+    }
     if (tabBar) {
-      tabBar.setData({
-        selected: 0,
-        hidden: entryPosterVisible
-      });
+      const tabBarData = {};
+      if (tabBar.data.selected !== 0) tabBarData.selected = 0;
+      if (tabBar.data.hidden !== entryPosterVisible) tabBarData.hidden = entryPosterVisible;
+      if (Object.keys(tabBarData).length) tabBar.setData(tabBarData);
     }
     this.setData({
-      homeLoading: true,
+      texts,
+      language,
+      planDayText: t('dayLabel', { day: this.data.planDayIndex }),
+      homeLoading: !memoryReady && !cacheReady,
       todayDisplay: todayDisplayText(),
       greeting: greetingText(),
+      listeningSummary: buildListeningSummary(this.data.groupedDailyTasks, { needsListeningPlanSetup: this.data.needsListeningPlanSetup }),
+      listeningTaskStatus: buildListeningTaskStatus(this.data.groupedDailyTasks, { needsListeningPlanSetup: this.data.needsListeningPlanSetup }),
       homeNavStyle: buildHomeNavStyle(),
       vocabularySummary: buildVocabularySummary(),
       entryPosterVisible,
@@ -623,18 +667,22 @@ Page({
       entryPosterPage: entryPosterVisible ? 0 : this.data.entryPosterPage,
       identitySelectedInSession
     });
-    const groupedDailyTasks = await this.refreshHomeDashboard();
-    if (this.homePerf) {
-      this.homePerf.ready('pageReady', {
-        groups: groupedDailyTasks.length
-      });
-    }
+    await new Promise((resolve) => wx.nextTick(resolve));
+    homePerf.ready('pageReady', {
+      cacheHit: memoryReady || cacheReady,
+      source: memoryReady ? 'memory' : (cacheReady ? 'cache' : 'skeleton'),
+      groups: (this.data.groupedDailyTasks || []).length
+    });
+    this.refreshHomeDashboard({ skipCache: true, perf: homePerf }).catch(() => {
+      this.setData({ homeLoading: false });
+    });
     setTimeout(() => {
       writeTodayCompletedCache(this.data.child, this.data.todayCompletedItems || []);
     }, 100);
     setTimeout(() => {
       this.prefetchListeningMaterialHome();
       this.prefetchReadingHome();
+      this.prefetchVocabularyHome();
     }, 200);
     setTimeout(() => {
       this.prefetchWritingMaterialHome();
@@ -697,7 +745,7 @@ Page({
     }, this.buildStudyModePresentation({ studyRole: nextRole })));
     const fastPainted = this.applyFastDashboardSnapshot(nextRole);
     wx.showToast({
-      title: nextRole === 'student' ? '已进入学生设备' : '已进入家长模式',
+      title: nextRole === 'student' ? t('enteredStudent') : t('enteredParent'),
       icon: 'none',
       duration: 900
     });
@@ -707,6 +755,7 @@ Page({
         this.prefetchListeningOverview();
         this.prefetchRecordHome();
         this.prefetchProfileHome();
+        this.prefetchVocabularyHome();
       }, nextRole === 'student' ? 0 : 1200);
       const data = await roleRequest;
       this.setData(page.buildCloudPageData(this.data, Object.assign({}, {
@@ -738,28 +787,35 @@ Page({
       });
     } catch (error) {
       wx.showToast({
-        title: '已本机切换，云端稍后同步',
+        title: t('localSwitched'),
         icon: 'none'
       });
     }
   },
-  async refreshHomeDashboard() {
+  async refreshHomeDashboard(options = {}) {
     const target = store.getSelectedStudentTarget ? store.getSelectedStudentTarget() : {};
     const cached = store.getCachedReadResult
       ? store.getCachedReadResult('getDashboard', Object.assign({ view: 'home' }, target))
       : null;
-    if (cached && cached.child && (cached.groupedDailyTasks || []).length) {
+    if (!options.skipCache && cached && cached.child) {
       this.applyDashboard(cached);
     }
     const data = await store.getDashboard({ view: 'home', forceRefresh: true }, (fresh) => {
       const groups = this.applyDashboard(fresh);
-      if (this.homePerf) {
-        this.homePerf.mark('cloudRefresh', {
+      if (options.perf || this.homePerf) {
+        (options.perf || this.homePerf).mark('cloudRefresh', {
           groups: groups.length
         });
       }
     });
-    return this.applyDashboard(data);
+    const groups = this.applyDashboard(data);
+    if (options.perf || this.homePerf) {
+      (options.perf || this.homePerf).mark('cloudRefresh', {
+        groups: groups.length,
+        dataFresh: data.syncMode === 'cloud'
+      });
+    }
+    return groups;
   },
   prefetchListeningMaterialHome() {
     const cached = store.getCachedReadResult
@@ -821,6 +877,9 @@ Page({
         snapshotStore.write('readingHomeSnapshotV1', 'directory', data, { source: 'home-reading-prefetch' });
       }
     }).catch(() => {});
+  },
+  prefetchVocabularyHome() {
+    store.getFlashcardReview({ scope: 'personal' }).catch(() => {});
   },
   prefetchListeningOverview() {
     const levelId = 'A1';
@@ -945,7 +1004,7 @@ Page({
   openTest() {
     if (!this.ensureIdentityReady()) return;
     wx.showToast({
-      title: '测试模块暂未开放',
+      title: t('testUnavailable'),
       icon: 'none'
     });
   },
@@ -981,6 +1040,7 @@ Page({
     if (!this.ensureNicknameReady()) {
       return;
     }
+    if (!this.data.homeDataReady) return;
     if (this.data.listeningTaskStatus && this.data.listeningTaskStatus.setupRequired) {
       wx.navigateTo({
         url: '/pages/listening-plan/index?levelId=A1'
@@ -998,13 +1058,13 @@ Page({
       snapshotStore.write(LEVEL_STAGE_SNAPSHOT_KEY, snapshotId, {
         phase,
         taskGroups,
-        totalMinutesText: totalMinutes ? `${totalMinutes} 分钟` : '待生成',
+        totalMinutesText: totalMinutes ? t('minutes', { minutes: totalMinutes }) : t('durationPending'),
         expandedGroupKey
       }, { source: 'home-stage' });
       snapshotStore.write(LEVEL_STAGE_SNAPSHOT_KEY, phase, {
         phase,
         taskGroups,
-        totalMinutesText: totalMinutes ? `${totalMinutes} 分钟` : '待生成',
+        totalMinutesText: totalMinutes ? t('minutes', { minutes: totalMinutes }) : t('durationPending'),
         expandedGroupKey
       }, { source: 'home-stage-legacy' });
       wx.navigateTo({
@@ -1025,13 +1085,13 @@ Page({
   },
   onShareAppMessage() {
     return {
-      title: '佑声英语',
+      title: t('brandTitle'),
       path: '/pages/home/index'
     };
   },
   onShareTimeline() {
     return {
-      title: '佑声英语',
+      title: t('brandTitle'),
       query: ''
     };
   }

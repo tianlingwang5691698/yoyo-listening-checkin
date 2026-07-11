@@ -1,4 +1,4 @@
-<view class="theme-{{theme}} page-shell library-detail-page" wx:if="{{theme === 'library'}}">
+<view class="theme-{{theme}} language-{{language}} page-shell library-detail-page" wx:if="{{theme === 'library'}}">
   <view class="library-debug-note" wx:if="{{debugLines.length}}">
     <view class="library-debug-line" wx:for="{{debugLines}}" wx:key="*this">{{item}}</view>
   </view>
@@ -6,20 +6,21 @@
   <view class="library-listening-desk">
     <view class="library-desk-head">
       <view class="library-desk-copy">
-        <view class="library-eyebrow">听力练习</view>
+        <view class="library-eyebrow">{{texts.title}}</view>
         <view class="library-detail-title">{{item.title}}</view>
         <view class="library-muted">{{item.year}} · {{item.district}} · {{item.examType}}</view>
-        <view class="library-audio-state">{{audioLocked ? '先学文本' : (audioError ? '音频不可用' : (isPlaying ? '正在播放' : '听力音频'))}}</view>
+        <view class="library-audio-state">{{audioLocked ? texts.learnFirst : (audioError ? texts.audioUnavailable : texts.audio)}}</view>
       </view>
       <view class="library-time-chip">{{audioCurrentText}} / {{audioDurationText}}</view>
     </view>
 
-    <view class="library-lock-tip" wx:if="{{audioLocked}}">学完生词、短语和句型后再听音频。</view>
-    <view class="library-turntable {{audioLoading || !audioSrc ? 'is-disabled' : ''}}" wx:else>
-      <view class="library-needle"></view>
-      <view class="library-play-ring">
+    <view class="library-lock-tip" wx:if="{{audioLocked}}">{{texts.lockTip}}</view>
+    <view class="library-turntable {{isPlaying ? 'is-playing' : ''}} {{audioLoading || !audioSrc ? 'is-disabled' : ''}}" wx:else>
+      <view class="library-vinyl-stage">
+        <view class="library-needle"></view>
+        <view class="library-play-ring"></view>
         <view class="library-play-button {{audioLoading || !audioSrc ? 'is-disabled' : ''}}" hover-class="is-pressed" hover-start-time="20" hover-stay-time="180" bindtap="toggleAudio">
-          {{isPlaying ? '暂停' : (audioEnded ? '重播' : '播放')}}
+          {{isPlaying ? texts.pause : (audioEnded ? texts.replay : texts.play)}}
         </view>
       </view>
       <slider
@@ -36,8 +37,8 @@
         bindchange="changeAudioProgress"
       />
       <view class="library-audio-controls">
-        <view class="library-audio-step {{audioLoading || !audioSrc ? 'is-disabled' : ''}}" data-delta="-15" hover-class="is-pressed" hover-start-time="20" hover-stay-time="180" bindtap="seekAudio">-15秒</view>
-        <view class="library-audio-step {{audioLoading || !audioSrc ? 'is-disabled' : ''}}" data-delta="15" hover-class="is-pressed" hover-start-time="20" hover-stay-time="180" bindtap="seekAudio">+15秒</view>
+        <view class="library-audio-step {{audioLoading || !audioSrc ? 'is-disabled' : ''}}" data-delta="-15" hover-class="is-pressed" hover-start-time="20" hover-stay-time="180" bindtap="seekAudio">-15{{texts.seconds}}</view>
+        <view class="library-audio-step {{audioLoading || !audioSrc ? 'is-disabled' : ''}}" data-delta="15" hover-class="is-pressed" hover-start-time="20" hover-stay-time="180" bindtap="seekAudio">+15{{texts.seconds}}</view>
       </view>
     </view>
     <view class="library-audio-error" wx:if="{{audioError}}">{{audioError}}</view>
@@ -45,7 +46,7 @@
 
   <view class="library-question-paper">
     <view class="library-paper-head">
-      <view class="library-paper-title">答题册</view>
+      <view class="library-paper-title">{{texts.answerSheet}}</view>
       <view class="library-score" wx:if="{{submitted}}">{{correctCount}} / {{questions.length}}</view>
     </view>
     <view class="library-section-heading" wx:if="{{item.images && item.images.length}}">A. Listen and choose the right picture.</view>
@@ -66,26 +67,26 @@
           {{option.label}}
         </view>
       </view>
-      <input wx:else class="library-answer-input" value="{{item.inputValue}}" data-number="{{item.number}}" bindinput="inputAnswer" placeholder="填写答案" />
-      <view class="library-answer-line" wx:if="{{submitted && item.answer}}">{{item.correct ? '正确' : '订正'}}：{{item.answer}}</view>
+      <input wx:else class="library-answer-input" value="{{item.inputValue}}" data-number="{{item.number}}" bindinput="inputAnswer" placeholder="{{texts.answerPlaceholder}}" />
+      <view class="library-answer-line" wx:if="{{submitted && item.answer}}">{{item.correct ? texts.correct : texts.correction}}: {{item.answer}}</view>
     </view>
-    <view class="library-empty-line" wx:if="{{!questions.length}}">暂无题目</view>
+    <view class="library-empty-line" wx:if="{{!questions.length}}">{{texts.noQuestions}}</view>
   </view>
 
-  <button class="library-submit-button" wx:if="{{!submitted}}" bindtap="submit">提交听力</button>
+  <button class="library-submit-button" wx:if="{{!submitted}}" bindtap="submit">{{texts.submit}}</button>
 
   <view class="library-study-margin">
     <view class="library-paper-head">
-      <view class="library-paper-title">转写边注</view>
-      <view class="library-mini-button {{studyLoading ? 'is-disabled' : ''}}" wx:if="{{submitted}}" bindtap="loadStudyPack">{{studyPack ? '刷新' : '生成'}}</view>
+      <view class="library-paper-title">{{texts.notes}}</view>
+      <view class="library-mini-button {{studyLoading ? 'is-disabled' : ''}}" wx:if="{{submitted}}" bindtap="loadStudyPack">{{studyPack ? texts.refresh : texts.generate}}</view>
     </view>
-    <view class="library-empty-line" wx:if="{{!submitted && answerSummary}}">本套有参考答案，提交听力后可查看。</view>
-    <view class="library-empty-line" wx:elif="{{!submitted}}">本套暂无参考答案，提交听力后可继续练习。</view>
+    <view class="library-empty-line" wx:if="{{!submitted && answerSummary}}">{{texts.answerAvailable}}</view>
+    <view class="library-empty-line" wx:elif="{{!submitted}}">{{texts.noAnswer}}</view>
     <view class="library-transcript-box" wx:elif="{{transcriptVisible && item.transcript}}">{{item.transcript}}</view>
-    <view class="library-empty-line" wx:elif="{{item.transcript}}">点击生成后显示参考文本。</view>
-    <view class="library-empty-line" wx:else>暂无文本</view>
+    <view class="library-empty-line" wx:elif="{{item.transcript}}">{{texts.generateTranscript}}</view>
+    <view class="library-empty-line" wx:else>{{texts.noTranscript}}</view>
     <view class="library-answer-summary" wx:if="{{submitted && answerSummary}}">
-      <view class="library-summary-title">参考答案</view>
+      <view class="library-summary-title">{{texts.referenceAnswer}}</view>
       <view class="library-summary-text">{{answerSummary}}</view>
     </view>
     <view class="library-study-error" wx:if="{{studyError}}">{{studyError}}</view>
@@ -96,7 +97,7 @@
       <view class="library-study-item" wx:for="{{vocabularyCards}}" wx:key="word">
         <view class="library-study-head">
           <view class="library-study-title">{{item.word}}</view>
-          <button class="library-mini-button library-study-add" data-type="word" data-text="{{item.word}}" bindtap="addStudyCardToLibrary">{{studyDictionaryAddedMap[item.flashcardKey] || studyDictionaryAddedMap[item.word] ? '已加入' : '加入'}}</button>
+          <button class="library-mini-button library-study-add" data-type="word" data-text="{{item.word}}" bindtap="addStudyCardToLibrary">{{studyDictionaryAddedMap[item.flashcardKey] || studyDictionaryAddedMap[item.word] ? texts.added : texts.add}}</button>
         </view>
         <view class="library-study-meaning">{{item.meaning}}</view>
         <view class="library-study-example" wx:if="{{item.example}}">{{item.example}}</view>
@@ -107,7 +108,7 @@
       <view class="library-study-item" wx:for="{{phraseCards}}" wx:key="text">
         <view class="library-study-head">
           <view class="library-study-title">{{item.text}}</view>
-          <button class="library-mini-button library-study-add" data-type="phrase" data-text="{{item.text}}" bindtap="addStudyCardToLibrary">{{studyDictionaryAddedMap[item.flashcardKey] || studyDictionaryAddedMap[item.text] ? '已加入' : '加入'}}</button>
+          <button class="library-mini-button library-study-add" data-type="phrase" data-text="{{item.text}}" bindtap="addStudyCardToLibrary">{{studyDictionaryAddedMap[item.flashcardKey] || studyDictionaryAddedMap[item.text] ? texts.added : texts.add}}</button>
         </view>
         <view class="library-study-meaning">{{item.meaning}}</view>
         <view class="library-study-example" wx:if="{{item.example}}">{{item.example}}</view>
@@ -117,19 +118,19 @@
       <view class="library-study-item" wx:for="{{sentencePatternCards}}" wx:key="pattern">
         <view class="library-study-head">
           <view class="library-study-title">{{item.pattern}}</view>
-          <button class="library-mini-button library-study-add" data-type="pattern" data-text="{{item.pattern}}" bindtap="addStudyCardToLibrary">{{studyDictionaryAddedMap[item.flashcardKey] || studyDictionaryAddedMap[item.pattern] ? '已加入' : '加入'}}</button>
+          <button class="library-mini-button library-study-add" data-type="pattern" data-text="{{item.pattern}}" bindtap="addStudyCardToLibrary">{{studyDictionaryAddedMap[item.flashcardKey] || studyDictionaryAddedMap[item.pattern] ? texts.added : texts.add}}</button>
         </view>
         <view class="library-study-meaning">{{item.meaning}}</view>
         <view class="library-study-example" wx:if="{{item.example}}">{{item.example}}</view>
         <view class="library-study-example" wx:if="{{item.exampleMeaning}}">{{item.exampleMeaning}}</view>
       </view>
     </view>
-    <view class="library-study-complete" wx:if="{{submitted && studyPack && !studyCompleted}}" bindtap="completeStudy">已学完，开始听</view>
-    <view class="library-study-done" wx:if="{{submitted && studyCompleted}}">已完成文本学习</view>
+    <view class="library-study-complete" wx:if="{{submitted && studyPack && !studyCompleted}}" bindtap="completeStudy">{{texts.finishStudy}}</view>
+    <view class="library-study-done" wx:if="{{submitted && studyCompleted}}">{{texts.studyDone}}</view>
   </view>
 </view>
 
-<view class="theme-{{theme}} page-shell listening-detail-page" wx:else>
+<view class="theme-{{theme}} language-{{language}} page-shell listening-detail-page" wx:else>
   <view class="detail-debug" wx:if="{{debugLines.length}}">
     <view class="detail-debug-line" wx:for="{{debugLines}}" wx:key="*this">{{item}}</view>
   </view>
@@ -137,20 +138,20 @@
   <view class="audio-card card">
     <view class="audio-head">
       <view class="audio-copy">
-        <view class="detail-eyebrow">听力练习</view>
+        <view class="detail-eyebrow">{{texts.title}}</view>
         <view class="detail-title">{{item.title}}</view>
         <view class="detail-copy">{{item.year}} · {{item.district}} · {{item.examType}}</view>
-        <view class="audio-title">{{audioLocked ? '先学文本' : '听力音频'}}</view>
-        <view class="audio-subtitle">{{audioLocked ? '学完文本后再听音频' : (audioError ? '音频不可用' : (isPlaying ? '正在播放' : '可暂停和拖动进度'))}}</view>
+        <view class="audio-title">{{audioLocked ? texts.learnFirst : texts.audio}}</view>
+        <view class="audio-subtitle">{{audioLocked ? texts.studyAfter : (audioError ? texts.audioUnavailable : (isPlaying ? texts.playing : texts.audioControls))}}</view>
       </view>
       <view class="audio-time">{{audioCurrentText}} / {{audioDurationText}}</view>
     </view>
-    <view class="audio-lock-tip" wx:if="{{audioLocked}}">学完生词、短语和句型后再听音频。</view>
+    <view class="audio-lock-tip" wx:if="{{audioLocked}}">{{texts.lockTip}}</view>
     <view class="audio-player {{audioLoading || !audioSrc ? 'is-disabled' : ''}}" wx:else>
       <view class="audio-stage">
         <view class="audio-orbit">
           <view class="audio-main {{audioLoading || !audioSrc ? 'is-disabled' : ''}}" hover-class="is-pressed" hover-start-time="20" hover-stay-time="180" bindtap="toggleAudio">
-            {{audioLoading ? '加载' : (isPlaying ? '暂停' : (audioEnded ? '重播' : '播放'))}}
+            {{audioLoading ? texts.loading : (isPlaying ? texts.pause : (audioEnded ? texts.replay : texts.play))}}
           </view>
         </view>
         <view class="audio-bars">
@@ -176,8 +177,8 @@
         bindchange="changeAudioProgress"
       />
       <view class="audio-controls">
-        <view class="audio-step {{audioLoading || !audioSrc ? 'is-disabled' : ''}}" data-delta="-15" hover-class="is-pressed" hover-start-time="20" hover-stay-time="180" bindtap="seekAudio">-15秒</view>
-        <view class="audio-step {{audioLoading || !audioSrc ? 'is-disabled' : ''}}" data-delta="15" hover-class="is-pressed" hover-start-time="20" hover-stay-time="180" bindtap="seekAudio">+15秒</view>
+        <view class="audio-step {{audioLoading || !audioSrc ? 'is-disabled' : ''}}" data-delta="-15" hover-class="is-pressed" hover-start-time="20" hover-stay-time="180" bindtap="seekAudio">-15{{texts.seconds}}</view>
+        <view class="audio-step {{audioLoading || !audioSrc ? 'is-disabled' : ''}}" data-delta="15" hover-class="is-pressed" hover-start-time="20" hover-stay-time="180" bindtap="seekAudio">+15{{texts.seconds}}</view>
       </view>
     </view>
     <view class="audio-error" wx:if="{{audioError}}">{{audioError}}</view>
@@ -185,7 +186,7 @@
 
   <view class="question-card paper-drawer card">
     <view class="question-top">
-      <view class="question-label">答题区</view>
+      <view class="question-label">{{texts.answerArea}}</view>
       <view class="question-state" wx:if="{{submitted}}">{{correctCount}} / {{questions.length}}</view>
     </view>
     <view class="section-heading" wx:if="{{item.images && item.images.length}}">A. Listen and choose the right picture.</view>
@@ -206,25 +207,25 @@
           {{option.label}}
         </view>
       </view>
-      <input wx:else class="answer-input" value="{{item.inputValue}}" data-number="{{item.number}}" bindinput="inputAnswer" placeholder="填写答案" />
-      <view class="answer-line" wx:if="{{submitted && item.answer}}">{{item.correct ? '正确' : '订正'}}：{{item.answer}}</view>
+      <input wx:else class="answer-input" value="{{item.inputValue}}" data-number="{{item.number}}" bindinput="inputAnswer" placeholder="{{texts.answerPlaceholder}}" />
+      <view class="answer-line" wx:if="{{submitted && item.answer}}">{{item.correct ? texts.correct : texts.correction}}: {{item.answer}}</view>
     </view>
   </view>
 
-  <button class="button-primary submit-button" bindtap="submit">提交听力</button>
+  <button class="button-primary submit-button" bindtap="submit">{{texts.submit}}</button>
 
   <view class="study-card floating-study-card card">
     <view class="question-top">
-      <view class="question-label">文本学习</view>
-      <view class="mini-button {{studyLoading ? 'is-disabled' : ''}}" wx:if="{{submitted}}" bindtap="loadStudyPack">{{studyPack ? '刷新' : '生成'}}</view>
+      <view class="question-label">{{texts.textStudy}}</view>
+      <view class="mini-button {{studyLoading ? 'is-disabled' : ''}}" wx:if="{{submitted}}" bindtap="loadStudyPack">{{studyPack ? texts.refresh : texts.generate}}</view>
     </view>
-    <view class="empty-line" wx:if="{{!submitted && answerSummary}}">本套有参考答案，提交听力后可查看。</view>
-    <view class="empty-line" wx:elif="{{!submitted}}">本套暂无参考答案，提交听力后可继续练习。</view>
+    <view class="empty-line" wx:if="{{!submitted && answerSummary}}">{{texts.answerAvailable}}</view>
+    <view class="empty-line" wx:elif="{{!submitted}}">{{texts.noAnswer}}</view>
     <view class="transcript-box" wx:elif="{{transcriptVisible && item.transcript}}">{{item.transcript}}</view>
-    <view class="empty-line" wx:elif="{{item.transcript}}">点击生成后显示参考文本。</view>
-    <view class="empty-line" wx:else>暂无文本</view>
+    <view class="empty-line" wx:elif="{{item.transcript}}">{{texts.generateTranscript}}</view>
+    <view class="empty-line" wx:else>{{texts.noTranscript}}</view>
     <view class="answer-summary-box" wx:if="{{submitted && answerSummary}}">
-      <view class="answer-summary-title">参考答案</view>
+      <view class="answer-summary-title">{{texts.referenceAnswer}}</view>
       <view class="answer-summary-text">{{answerSummary}}</view>
     </view>
     <view class="study-error" wx:if="{{studyError}}">{{studyError}}</view>
@@ -235,7 +236,7 @@
       <view class="study-item" wx:for="{{vocabularyCards}}" wx:key="word">
         <view class="study-item-head">
           <view class="study-title">{{item.word}}</view>
-          <button class="mini-button study-add" data-type="word" data-text="{{item.word}}" bindtap="addStudyCardToLibrary">{{studyDictionaryAddedMap[item.flashcardKey] || studyDictionaryAddedMap[item.word] ? '已加入' : '加入'}}</button>
+          <button class="mini-button study-add" data-type="word" data-text="{{item.word}}" bindtap="addStudyCardToLibrary">{{studyDictionaryAddedMap[item.flashcardKey] || studyDictionaryAddedMap[item.word] ? texts.added : texts.add}}</button>
         </view>
         <view class="study-meaning">{{item.meaning}}</view>
         <view class="study-example" wx:if="{{item.example}}">{{item.example}}</view>
@@ -246,7 +247,7 @@
       <view class="study-item" wx:for="{{phraseCards}}" wx:key="text">
         <view class="study-item-head">
           <view class="study-title">{{item.text}}</view>
-          <button class="mini-button study-add" data-type="phrase" data-text="{{item.text}}" bindtap="addStudyCardToLibrary">{{studyDictionaryAddedMap[item.flashcardKey] || studyDictionaryAddedMap[item.text] ? '已加入' : '加入'}}</button>
+          <button class="mini-button study-add" data-type="phrase" data-text="{{item.text}}" bindtap="addStudyCardToLibrary">{{studyDictionaryAddedMap[item.flashcardKey] || studyDictionaryAddedMap[item.text] ? texts.added : texts.add}}</button>
         </view>
         <view class="study-meaning">{{item.meaning}}</view>
         <view class="study-example" wx:if="{{item.example}}">{{item.example}}</view>
@@ -256,14 +257,14 @@
       <view class="study-item" wx:for="{{sentencePatternCards}}" wx:key="pattern">
         <view class="study-item-head">
           <view class="study-title">{{item.pattern}}</view>
-          <button class="mini-button study-add" data-type="pattern" data-text="{{item.pattern}}" bindtap="addStudyCardToLibrary">{{studyDictionaryAddedMap[item.flashcardKey] || studyDictionaryAddedMap[item.pattern] ? '已加入' : '加入'}}</button>
+          <button class="mini-button study-add" data-type="pattern" data-text="{{item.pattern}}" bindtap="addStudyCardToLibrary">{{studyDictionaryAddedMap[item.flashcardKey] || studyDictionaryAddedMap[item.pattern] ? texts.added : texts.add}}</button>
         </view>
         <view class="study-meaning">{{item.meaning}}</view>
         <view class="study-example" wx:if="{{item.example}}">{{item.example}}</view>
         <view class="study-example-meaning" wx:if="{{item.exampleMeaning}}">{{item.exampleMeaning}}</view>
       </view>
     </view>
-    <view class="study-complete-button" wx:if="{{submitted && studyPack && !studyCompleted}}" bindtap="completeStudy">已学完，开始听</view>
-    <view class="study-done" wx:if="{{submitted && studyCompleted}}">已完成文本学习</view>
+    <view class="study-complete-button" wx:if="{{submitted && studyPack && !studyCompleted}}" bindtap="completeStudy">{{texts.finishStudy}}</view>
+    <view class="study-done" wx:if="{{submitted && studyCompleted}}">{{texts.studyDone}}</view>
   </view>
 </view>

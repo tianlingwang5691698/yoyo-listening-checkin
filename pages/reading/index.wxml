@@ -1,5 +1,5 @@
 <block wx:if="{{theme === 'library'}}">
-  <view class="theme-{{theme}} page-shell library-reading-page" bindtouchstart="onDirectoryTouchStart" bindtouchend="onDirectoryTouchEnd">
+  <view class="theme-{{theme}} language-{{language}} page-shell library-reading-page" bindtouchstart="onDirectoryTouchStart" bindtouchend="onDirectoryTouchEnd">
     <view class="library-room-glow"></view>
 
     <view class="library-catalogue-cover">
@@ -14,11 +14,16 @@
         </view>
       </view>
       <view class="catalogue-copy">
-        <view class="catalogue-kicker">中考阅读</view>
-        <view class="catalogue-title">选择一篇好好读</view>
-        <view class="catalogue-subtitle">一模、二模、真题卷</view>
+        <view class="catalogue-kicker">{{texts.eyebrow}}</view>
+        <view class="catalogue-title">{{texts.title}}</view>
+        <view class="catalogue-subtitle">{{texts.subtitle}}</view>
       </view>
       <view class="catalogue-page-tag">READ</view>
+    </view>
+
+    <view class="reading-history-tabs is-library">
+      <view class="reading-history-tab is-active">{{texts.directory}}</view>
+      <view class="reading-history-tab" bindtap="openPracticeHistory">{{texts.history}}</view>
     </view>
 
     <view class="library-index-panel">
@@ -26,15 +31,15 @@
         <view>
           <view class="library-index-label">{{selectedHeader}}</view>
           <view class="library-breadcrumb" wx:if="{{!isRootLevel}}">
-            <text bindtap="backToRoot">中考阅读</text>
+            <text bindtap="backToRoot">{{texts.eyebrow}}</text>
             <text> / </text>
             <text wx:if="{{isExamLevel}}">{{selectedGroup.label}}</text>
             <text wx:if="{{isDistrictLevel}}" bindtap="backToExam">{{selectedGroup.label}}</text>
             <text wx:if="{{isDistrictLevel}}"> / {{selectedDistrictNode.label}}</text>
           </view>
         </view>
-        <view class="library-index-count" wx:if="{{isRootLevel && categoryRoot}}">{{categoryRoot.count}} 篇</view>
-        <view class="library-index-back" wx:elif="{{!isRootLevel}}" bindtap="backOneLevel">‹ 上一级</view>
+        <view class="library-index-count" wx:if="{{isRootLevel && categoryRoot}}">{{categoryRoot.count}}{{texts.articleUnit}}</view>
+        <view class="library-index-back" wx:elif="{{!isRootLevel}}" bindtap="backOneLevel">{{texts.back}}</view>
       </view>
 
       <view class="library-skeleton" wx:if="{{loading && !categoryRoot}}">
@@ -50,9 +55,9 @@
             <view class="ledger-tab">{{index + 1}}</view>
             <view class="ledger-body">
               <view class="ledger-title">{{item.label}}</view>
-              <view class="ledger-meta">{{item.districts.length}} 个区 · {{item.count}} 篇</view>
+              <view class="ledger-meta">{{item.districts.length}}{{texts.districtUnit}} · {{item.count}}{{texts.articleUnit}}</view>
             </view>
-            <view class="ledger-corner">进入</view>
+            <view class="ledger-corner">{{texts.enter}}</view>
           </view>
         </view>
 
@@ -61,8 +66,8 @@
             <view class="drawer-rail"></view>
             <view class="drawer-body">
               <view class="drawer-title">{{item.label}}</view>
-              <view class="drawer-meta" wx:if="{{item.completionReady}}">{{item.completedCount}} / {{item.count}} 已完成</view>
-              <view class="drawer-meta" wx:else>{{item.count}} 篇</view>
+              <view class="drawer-meta" wx:if="{{item.completionReady}}">{{item.completedCount}} / {{item.count}} {{texts.completed}}</view>
+              <view class="drawer-meta" wx:else>{{item.count}}{{texts.articleUnit}}</view>
             </view>
             <view class="drawer-arrow">›</view>
           </view>
@@ -73,24 +78,24 @@
             <view class="paper-row-number">{{index + 1}}</view>
             <view class="paper-row-main">
               <view class="paper-row-title">{{item.title}}</view>
-              <view class="paper-row-meta">{{item.meta}} · {{item.questionCount}} 题</view>
+              <view class="paper-row-meta">{{item.meta}} · {{item.questionCount}}{{texts.questionUnit}}</view>
             </view>
-            <view class="paper-row-tag {{item.completed ? 'is-done' : ''}}">{{item.completionReady ? (item.completed ? '复习' : '练习') : '进入'}}</view>
+            <view class="paper-row-tag {{item.completed ? 'is-done' : ''}}">{{item.completionReady ? (item.completed ? texts.review : texts.practice) : texts.enter}}</view>
           </view>
         </view>
       </block>
 
       <view class="library-empty-catalogue" wx:else>
         <view class="empty-book-mark"></view>
-        <view>{{syncMode === 'cloud-error' ? '目录加载失败' : '暂无阅读内容。'}}</view>
-        <button wx:if="{{syncMode === 'cloud-error'}}" bindtap="loadDirectory">重试</button>
+        <view>{{syncMode === 'cloud-error' ? texts.loadFailed : texts.empty}}</view>
+        <button wx:if="{{syncMode === 'cloud-error'}}" bindtap="loadDirectory">{{texts.retry}}</button>
       </view>
     </view>
   </view>
 </block>
 
 <block wx:else>
-  <view class="theme-{{theme}} page-shell reading-page" bindtouchstart="onDirectoryTouchStart" bindtouchend="onDirectoryTouchEnd">
+  <view class="theme-{{theme}} language-{{language}} page-shell reading-page" bindtouchstart="onDirectoryTouchStart" bindtouchend="onDirectoryTouchEnd">
     <view class="reading-atmosphere">
       <view class="reading-light light-one"></view>
       <view class="reading-light light-two"></view>
@@ -107,9 +112,14 @@
           <view class="hero-page-line"></view>
         </view>
       </view>
-      <view class="reading-eyebrow">中考阅读</view>
-      <view class="reading-title">选择一篇好好读</view>
-      <view class="reading-copy">一模、二模、真题卷</view>
+      <view class="reading-eyebrow">{{texts.eyebrow}}</view>
+      <view class="reading-title">{{texts.title}}</view>
+      <view class="reading-copy">{{texts.subtitle}}</view>
+    </view>
+
+    <view class="reading-history-tabs">
+      <view class="reading-history-tab is-active">{{texts.directory}}</view>
+      <view class="reading-history-tab" bindtap="openPracticeHistory">{{texts.history}}</view>
     </view>
 
     <block wx:if="{{categoryRoot}}">
@@ -118,12 +128,12 @@
           <view class="reading-card-label">
             <text>{{selectedHeader}}</text>
           </view>
-          <view class="reading-card-state" wx:if="{{isRootLevel}}">{{categoryRoot.count}} 篇</view>
-          <view class="directory-back-icon" wx:else bindtap="backOneLevel">‹ 上一级</view>
+          <view class="reading-card-state" wx:if="{{isRootLevel}}">{{categoryRoot.count}}{{texts.articleUnit}}</view>
+          <view class="directory-back-icon" wx:else bindtap="backOneLevel">{{texts.back}}</view>
         </view>
 
         <view class="reading-breadcrumb" wx:if="{{!isRootLevel}}">
-          <text bindtap="backToRoot">中考阅读</text>
+          <text bindtap="backToRoot">{{texts.eyebrow}}</text>
           <text> / </text>
           <text wx:if="{{isExamLevel}}">{{selectedGroup.label}}</text>
           <text wx:if="{{isDistrictLevel}}" bindtap="backToExam">{{selectedGroup.label}}</text>
@@ -138,7 +148,7 @@
             </view>
             <view class="directory-main">
               <view class="directory-title">{{item.label}}</view>
-              <view class="directory-meta">{{item.districts.length}} 个区 · {{item.count}} 篇</view>
+              <view class="directory-meta">{{item.districts.length}}{{texts.districtUnit}} · {{item.count}}{{texts.articleUnit}}</view>
             </view>
             <view class="directory-arrow">›</view>
           </view>
@@ -149,8 +159,8 @@
             <view class="directory-mark drawer-tab"></view>
             <view class="directory-main">
               <view class="directory-title">{{item.label}}</view>
-              <view class="directory-meta" wx:if="{{item.completionReady}}">{{item.completedCount}} / {{item.count}} 已完成</view>
-              <view class="directory-meta" wx:else>{{item.count}} 篇</view>
+              <view class="directory-meta" wx:if="{{item.completionReady}}">{{item.completedCount}} / {{item.count}} {{texts.completed}}</view>
+              <view class="directory-meta" wx:else>{{item.count}}{{texts.articleUnit}}</view>
             </view>
             <view class="directory-arrow">›</view>
           </view>
@@ -162,9 +172,9 @@
             <view class="task-index">{{index + 1}}</view>
             <view class="task-main">
               <view class="task-title">{{item.title}}</view>
-              <view class="task-meta">{{item.meta}} · {{item.questionCount}} 题</view>
+              <view class="task-meta">{{item.meta}} · {{item.questionCount}}{{texts.questionUnit}}</view>
             </view>
-            <view class="task-state {{item.completed ? 'is-done' : ''}}">{{item.completionReady ? (item.completed ? '复习' : '练习') : '进入'}}</view>
+            <view class="task-state {{item.completed ? 'is-done' : ''}}">{{item.completionReady ? (item.completed ? texts.review : texts.practice) : texts.enter}}</view>
           </view>
         </view>
       </view>

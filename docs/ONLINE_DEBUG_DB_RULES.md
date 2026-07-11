@@ -86,6 +86,15 @@
 
 ## 已知案例
 
+### 2026-07-11 词库刷新返回体超过 1MB
+
+1. 现象：词库本地缓存可显示，但后台 `getFlashcardReview` 刷新约 10 秒后报 `response size exceeded 1048576 bytes`。
+2. 账号：`child-yoyo / family-1776427951478`。
+3. 查询：`pages/reading/flashcards.loadCards -> store.getFlashcardReview -> cloud.getFlashcardReview.library`返回全量卡片、`reviewSchedule`、身份和时间字段。
+4. 结论：云接口未按个人词库/词书拆分，并返回首屏不需要的大字段，超过云函数 1MB 响应限制。
+5. 修复：`getFlashcardReview` 支持 `scope=personal / sourceId`，查询只投影卡片展示与进度字段，并改用轻量请求上下文。
+6. 是否需要发版：需部署 `yoyo` 云函数，并重新发布小程序前端。
+
 ### 2026-07-09 写作批改 review=null 后更新失败
 
 1. 现象：写作提交后停在“批改中”，页面 debug 显示 `cloud.gradeWritingAttempt -> review：missing`，云函数报 `document.update:fail ... Cannot create field 'content' in element {review: null}`。

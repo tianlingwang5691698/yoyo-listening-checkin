@@ -1,4 +1,4 @@
-<view class="theme-{{theme}} page-shell level-stage-page">
+<view class="theme-{{theme}} page-shell level-stage-page language-{{language}}">
   <block wx:if="{{theme === 'library'}}">
     <view class="audio-index-cover">
       <view>
@@ -7,12 +7,12 @@
         <view class="audio-index-hint">{{stage.hint}}</view>
       </view>
       <view class="audio-index-stamp">
-        <view>预计总时长</view>
+        <view>{{texts.estimatedTotal}}</view>
         <text>{{totalMinutesText}}</text>
       </view>
     </view>
 
-    <view class="audio-index-note" wx:if="{{syncMode === 'cloud-error' && hasTaskGroups}}">正在使用最近内容</view>
+    <view class="audio-index-note" wx:if="{{syncMode === 'cloud-error' && hasTaskGroups}}">{{texts.usingRecent}}</view>
 
     <block wx:if="{{!hydrated && !hasTaskGroups}}">
       <view class="audio-index-loading">
@@ -35,7 +35,7 @@
               </view>
               <view class="audio-index-side">
                 <view class="audio-index-minutes">{{item.minutesText}}</view>
-                <view class="audio-index-state">{{item.expanded ? '收起' : item.stateText}}</view>
+                <view class="audio-index-state">{{item.expanded ? texts.collapse : item.stateText}}</view>
               </view>
             </view>
 
@@ -57,8 +57,8 @@
     </block>
 
     <view class="audio-index-empty" wx:else>
-      <view class="audio-index-empty-title">{{syncMode === 'cloud-error' ? '内容暂时没有同步成功' : '暂时没有组合'}}</view>
-      <view class="audio-index-empty-copy">{{syncMode === 'cloud-error' ? '请稍后再试' : '后续会加入新的 A1 听力材料。'}}</view>
+      <view class="audio-index-empty-title">{{syncMode === 'cloud-error' ? texts.syncFailed : texts.noCombo}}</view>
+      <view class="audio-index-empty-copy">{{syncMode === 'cloud-error' ? texts.retryLater : texts.moreComing}}</view>
     </view>
   </block>
 
@@ -71,7 +71,7 @@
     </view>
 
     <view class="stage-total card">
-      <view class="total-label type-caption">预计总时长</view>
+      <view class="total-label type-caption">{{texts.estimatedTotal}}</view>
       <view class="total-value">{{totalMinutesText}}</view>
     </view>
 
@@ -86,7 +86,7 @@
           </view>
           <view class="group-side">
             <view class="group-minutes type-caption">{{item.minutesText}}</view>
-            <view class="group-state">{{item.expanded ? '收起' : item.stateText}}</view>
+            <view class="group-state">{{item.expanded ? texts.collapse : item.stateText}}</view>
           </view>
         </view>
 
@@ -107,8 +107,8 @@
     </block>
 
     <view class="empty-combo card" wx:elif="{{hydrated}}">
-      <view class="empty-title">暂时没有组合</view>
-      <view class="empty-copy type-caption">后续会加入新的 A1 听力材料。</view>
+      <view class="empty-title">{{texts.noCombo}}</view>
+      <view class="empty-copy type-caption">{{texts.moreComing}}</view>
     </view>
   </block>
 </view>

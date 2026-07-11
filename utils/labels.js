@@ -13,10 +13,16 @@ function getCategoryDisplayLabel(category, label) {
     return 'Peppa';
   }
   if (category === 'unlock1') {
-    return 'Unlock 1 课本';
+    return 'Unlock 1 听口 第二版';
+  }
+  if (category === 'unlock1thirdedition') {
+    return 'Unlock 1 听口 第三版';
+  }
+  if (category === 'unlock2thirdedition') {
+    return 'Unlock 2 听口 第三版';
   }
   if (category === 'unlock1workbook') {
-    return 'Unlock 1 练习册';
+    return 'Unlock 1 听口 练习册 第二版';
   }
   if (category === 'unlock2') {
     return 'Unlock 2 课本';
@@ -25,13 +31,19 @@ function getCategoryDisplayLabel(category, label) {
     return 'Unlock 2 练习册';
   }
   if (category === 'unlock3textbook') {
-    return 'Unlock 3 课本';
+    return 'Unlock3 听口 第二版';
+  }
+  if (category === 'unlock3thirdedition') {
+    return 'Unlock3 听口 第三版';
   }
   if (category === 'unlock3') {
-    return 'Unlock 3 练习册';
+    return 'Unlock3 听口练习册 第二版';
   }
   if (category === 'unlock4') {
     return 'Unlock 4 课本';
+  }
+  if (category === 'unlock4thirdedition') {
+    return 'Unlock 4 听口 第三版';
   }
   if (category === 'unlock4workbook') {
     return 'Unlock 4 练习册';

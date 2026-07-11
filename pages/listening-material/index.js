@@ -2,41 +2,47 @@ const store = require('../../utils/store');
 const page = require('../../utils/page');
 const labels = require('../../utils/labels');
 const snapshotStore = require('../../utils/snapshot');
+const i18n = require('../../utils/i18n');
 
 const LESSON_TASK_SNAPSHOT_KEY = 'lessonTaskSnapshotV1';
 const MATERIAL_DETAIL_SNAPSHOT_KEY = 'listeningMaterialDetailSnapshotV1';
 const SNAPSHOT_MAX_AGE_MS = 24 * 60 * 60 * 1000;
 
+function t(key, variables) {
+  const template = i18n.getPageText('listeningMaterial', key);
+  return Object.keys(variables || {}).reduce((text, name) => text.replace(new RegExp(`\\{${name}\\}`, 'g'), variables[name]), template);
+}
+
 function formatDuration(seconds) {
   const value = Number(seconds || 0);
-  return value > 0 ? `${Math.max(1, Math.round(value / 60))} 分钟` : '音频';
+  return value > 0 ? `${Math.max(1, Math.round(value / 60))} ${t('minute')}` : t('audio');
 }
 
 function formatExactDuration(seconds) {
   const value = Math.round(Number(seconds || 0));
   if (value <= 0) {
-    return '时长待生成';
+    return t('durationPending');
   }
   const minutes = Math.floor(value / 60);
   const sec = value % 60;
   if (!minutes) {
-    return `${sec}秒`;
+    return `${sec} ${t('second')}`;
   }
-  return sec ? `${minutes}分${sec}秒` : `${minutes}分钟`;
+  return sec ? `${minutes} ${t('minute')} ${sec} ${t('second')}` : `${minutes} ${t('minute')}`;
 }
 
 function formatEstimatedDuration(seconds) {
   const value = Number(seconds || 0);
   if (value <= 0) {
-    return '时长待生成';
+    return t('durationPending');
   }
   const minutes = Math.max(1, Math.round(value / 60));
   if (minutes < 60) {
-    return `预计每日 ${minutes} 分钟`;
+    return `${t('estimatedDaily')} ${minutes} ${t('minute')}`;
   }
   const hours = Math.floor(minutes / 60);
   const rest = minutes % 60;
-  return `预计每日 ${hours} 小时${rest ? `${rest} 分钟` : ''}`;
+  return `${t('estimatedDaily')} ${hours} ${t('hour')}${rest ? ` ${rest} ${t('minute')}` : ''}`;
 }
 
 function buildRows(tasks) {
@@ -44,7 +50,7 @@ function buildRows(tasks) {
     itemNo: task.itemNo,
     category: task.category,
     taskId: task.taskId,
-    title: labels.decodeHtmlEntities(task.displayTitle || task.title || `第 ${task.itemNo} 条`),
+    title: labels.decodeHtmlEntities(task.displayTitle || task.title || t('itemNo', { n: task.itemNo })),
     subtitle: labels.decodeHtmlEntities(task.audioCompactTitle || task.subtitle || ''),
     durationSec: Number(task.durationSec || 0),
     durationText: formatDuration(task.durationSec),
@@ -97,14 +103,14 @@ function buildDurationSummary(data) {
     .filter((value) => Number.isFinite(value) && value > 0);
   if (!durations.length) {
     return {
-      planDurationText: '时长待生成',
+      planDurationText: t('durationPending'),
       durationReady: false
     };
   }
   const rangeDurationSec = durations.reduce((sum, value) => sum + value, 0);
   const effectiveDailyCount = Math.min(Math.max(1, dailyCount), rangeTasks.length || 1);
   const estimatedSec = (rangeDurationSec / durations.length) * effectiveDailyCount * Math.max(1, repeatTarget);
-  const partialText = durations.length < rangeTasks.length ? ' · 部分待生成' : '';
+  const partialText = durations.length < rangeTasks.length ? ` · ${t('partialPending')}` : '';
   return {
     planDurationText: `${formatEstimatedDuration(estimatedSec)}${partialText}`,
     durationReady: durations.length === rangeTasks.length
@@ -173,9 +179,11 @@ Page({
     selectedMaterial: null,
     isSelected: false,
     debugLines: [],
-    planDurationText: '时长待生成',
+    planDurationText: t('durationPending'),
     durationReady: false,
-    saving: false
+    saving: false,
+    language: i18n.getLanguage(),
+    texts: i18n.getPageTexts('listeningMaterial')
   }),
   applyDetail(data) {
     const totalCount = Number(data.totalCount || 0);
@@ -191,7 +199,9 @@ Page({
       dailyCount: Number(selected.dailyCount || 1),
       repeatTarget: Number(selected.repeatTarget || 3),
       selectedMaterial: data.selectedMaterial || null,
-      isSelected: !!data.selectedMaterial
+      isSelected: !!data.selectedMaterial,
+      totalCountText: t('total', { count: totalCount }),
+      dailyCountText: t('dailyItems', { count: Number(selected.dailyCount || 1) })
     });
     this.setData(page.buildCloudPageData(this.data, Object.assign({}, nextData, buildDurationSummary(nextData))));
   },
@@ -225,6 +235,15 @@ Page({
         category,
         tasks: (initialDetail.tasks || []).length
       });
+    } else {
+      await new Promise((resolve) => wx.nextTick(resolve));
+      this.listeningMaterialPerf.ready('pageReady', {
+        source: 'fallback',
+        cacheHit: false,
+        levelId,
+        category,
+        tasks: 0
+      });
     }
     const data = await store.getListeningMaterialDetail({ category, levelId }, (fresh) => {
       rememberDetailSnapshot(snapshotId, fresh, 'listening-material-refresh');
@@ -239,7 +258,7 @@ Page({
     rememberDetailSnapshot(snapshotId, data, 'listening-material-load');
     this.applyDetail(data);
     if (!initialDetail) {
-      this.listeningMaterialPerf.ready('pageReady', {
+      this.listeningMaterialPerf.mark('cloudRefresh', {
         source: data && data.__cacheHit ? 'cache' : (data && data.syncMode === 'cloud-error' ? 'error' : 'cloud'),
         cacheHit: !!(data && data.__cacheHit),
         levelId,
@@ -253,6 +272,16 @@ Page({
   },
   onShow() {
     page.syncTheme(this);
+    const language = i18n.getLanguage();
+    const texts = i18n.getPageTexts('listeningMaterial', language);
+    wx.setNavigationBarTitle({ title: texts.navTitle });
+    this.setData(Object.assign({
+      language,
+      texts,
+      tasks: buildRows((this.data.tasks || []).map((item) => item.taskSnapshot || item)),
+      totalCountText: t('total', { count: this.data.totalCount }),
+      dailyCountText: t('dailyItems', { count: this.data.dailyCount })
+    }, buildDurationSummary(this.data)));
   },
   changeStart(event) {
     const startNo = clamp(event.detail.value, 1, this.data.sliderMax);
@@ -276,7 +305,7 @@ Page({
   },
   changeDailyCount(event) {
     const nextData = Object.assign({}, this.data, { dailyCount: clamp(event.detail.value, 1, 10) });
-    this.setData(Object.assign({ dailyCount: nextData.dailyCount }, buildDurationSummary(nextData)));
+    this.setData(Object.assign({ dailyCount: nextData.dailyCount, dailyCountText: t('dailyItems', { count: nextData.dailyCount }) }, buildDurationSummary(nextData)));
   },
   changeRepeatTarget(event) {
     const nextData = Object.assign({}, this.data, { repeatTarget: clamp(event.detail.value, 1, 5) });
@@ -367,7 +396,7 @@ Page({
       this.syncCurrentSelection(result.activePlan);
       this.syncPreviousPlanPage(result.activePlan);
       this.setData({ debugLines: [] });
-      wx.showToast({ title: '计划已保存', icon: 'none' });
+      wx.showToast({ title: t('planSaved'), icon: 'none' });
       setTimeout(() => {
         wx.navigateBack({ delta: 1 });
       }, 350);
@@ -375,7 +404,7 @@ Page({
       const debugLines = buildErrorDebugLines('savePlan', error, this.data);
       console.warn('[listening-plan-save-error]', debugLines.join('\n'));
       this.setData({ debugLines });
-      wx.showToast({ title: '保存失败', icon: 'none' });
+      wx.showToast({ title: t('saveFailed'), icon: 'none' });
     } finally {
       this.setData({ saving: false });
     }
@@ -392,7 +421,7 @@ Page({
       this.syncCurrentSelection(result.activePlan);
       this.syncPreviousPlanPage(result.activePlan);
       this.setData({ debugLines: [] });
-      wx.showToast({ title: '已取消', icon: 'none' });
+      wx.showToast({ title: t('cancelled'), icon: 'none' });
       setTimeout(() => {
         wx.navigateBack({ delta: 1 });
       }, 350);
@@ -400,7 +429,7 @@ Page({
       const debugLines = buildErrorDebugLines('cancelPlan', error, this.data);
       console.warn('[listening-plan-cancel-error]', debugLines.join('\n'));
       this.setData({ debugLines });
-      wx.showToast({ title: '取消失败', icon: 'none' });
+      wx.showToast({ title: t('cancelFailed'), icon: 'none' });
     } finally {
       this.setData({ saving: false });
     }
@@ -412,7 +441,7 @@ Page({
       return;
     }
     if (!hasAudioFields(task.taskSnapshot)) {
-      wx.showToast({ title: '音频暂不可用', icon: 'none' });
+      wx.showToast({ title: t('audioUnavailable'), icon: 'none' });
       return;
     }
     snapshotStore.write(LESSON_TASK_SNAPSHOT_KEY, `${task.category}:${task.taskId}`, {

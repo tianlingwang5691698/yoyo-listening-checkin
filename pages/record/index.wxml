@@ -1,29 +1,29 @@
 <block wx:if="{{theme === 'library'}}">
-  <view class="theme-{{theme}} page-shell record-page library-growth-page">
+  <view class="theme-{{theme}} language-{{language}} page-shell record-page library-growth-page">
     <view class="library-growth-shelf"></view>
 
     <view class="library-growth-ledger">
       <view class="library-ledger-top">
         <view>
-          <view class="library-growth-kicker">成长档案</view>
-          <view class="library-growth-title">成长轨迹</view>
+          <view class="library-growth-kicker">{{texts.archive}}</view>
+          <view class="library-growth-title">{{texts.title}}</view>
         </view>
-        <view class="library-sync-seal">{{syncMode === 'cloud' ? '已同步' : '本地状态'}}</view>
+        <view class="library-sync-seal">{{syncMode === 'cloud' ? texts.synced : texts.localState}}</view>
       </view>
 
       <view class="library-metric-tabs">
-        <view class="library-metric-tab {{metricMode === 'streak' ? 'is-active' : ''}}" data-mode="streak" bindtap="switchMetric">连续</view>
-        <view class="library-metric-tab {{metricMode === 'total' ? 'is-active' : ''}}" data-mode="total" bindtap="switchMetric">累计</view>
+        <view class="library-metric-tab {{metricMode === 'streak' ? 'is-active' : ''}}" data-mode="streak" bindtap="switchMetric">{{texts.streak}}</view>
+        <view class="library-metric-tab {{metricMode === 'total' ? 'is-active' : ''}}" data-mode="total" bindtap="switchMetric">{{texts.total}}</view>
       </view>
 
       <view class="library-ledger-hero">
         <view>
           <view class="library-hero-number">{{heroMetricValue}}</view>
-          <view class="library-hero-label">{{heroMetricLabel}}天</view>
+          <view class="library-hero-label">{{heroMetricLabel}}{{texts.daySuffix}}</view>
         </view>
         <view class="library-archive-stamp">
           <view>{{stats.completedTasks || 0}}</view>
-          <text>任务</text>
+          <text>{{texts.task}}</text>
         </view>
       </view>
 
@@ -32,21 +32,21 @@
       <view class="library-ledger-stats">
         <view class="library-stat-cell">
           <view>{{stats.completedDays || 0}}</view>
-          <text>累计天数</text>
+          <text>{{texts.totalDays}}</text>
         </view>
         <view class="library-stat-cell">
           <view>{{totalDurationText}}</view>
-          <text>累计时长</text>
+          <text>{{texts.totalDuration}}</text>
         </view>
         <view class="library-stat-cell">
           <view>{{stats.completedTasks || 0}}</view>
-          <text>完成任务</text>
+          <text>{{texts.completedTasks}}</text>
         </view>
       </view>
     </view>
 
     <view class="library-debug-slip" wx:if="{{showCloudDebug && recordDebugLines.length}}">
-      <view class="library-debug-title">馆藏校验单</view>
+      <view class="library-debug-title">{{texts.debugLibrary}}</view>
       <block wx:for="{{recordDebugLines}}" wx:key="*this">
         <text class="library-debug-line" selectable="{{true}}">{{item}}</text>
       </block>
@@ -55,8 +55,8 @@
     <view class="library-date-index">
       <view class="library-section-head">
         <view>
-          <view class="library-section-title">日期索引</view>
-          <view class="library-section-copy">{{syncMode === 'cloud' ? '每天一格，记录被点亮。' : '正在使用最近内容'}}</view>
+          <view class="library-section-title">{{texts.dateIndex}}</view>
+          <view class="library-section-copy">{{syncMode === 'cloud' ? texts.calendarCopy : texts.recentContent}}</view>
         </view>
       </view>
       <view class="library-month-bar">
@@ -82,13 +82,13 @@
           </view>
         </block>
       </view>
-      <view class="library-index-hint">点日期查看当天记录</view>
+      <view class="library-index-hint">{{texts.tapDate}}</view>
     </view>
 
     <view class="library-catchup-slip" wx:if="{{catchupState.canCatchup}}">
       <view class="library-section-head">
         <view>
-          <view class="library-section-title">追赶借阅条</view>
+          <view class="library-section-title">{{texts.catchupStrip}}</view>
           <view class="library-section-copy">{{catchupCopy}}</view>
         </view>
         <view class="library-sync-seal">{{catchupStatusLabel}}</view>
@@ -96,10 +96,10 @@
       <view class="library-catchup-row" wx:if="{{!catchupTasksLoaded}}" bindtap="loadCatchupTasks">
         <view class="library-bookmark-pin"></view>
         <view>
-          <view class="library-row-title">查看追赶任务</view>
-          <view class="library-row-copy">按需加载可补做的真实任务。</view>
+          <view class="library-row-title">{{texts.viewCatchup}}</view>
+          <view class="library-row-copy">{{texts.catchupLoadCopy}}</view>
         </view>
-        <view class="library-row-action">查看</view>
+        <view class="library-row-action">{{texts.view}}</view>
       </view>
       <block wx:for="{{catchupTasks}}" wx:key="taskId">
         <view class="library-catchup-row {{item.completedToday ? 'is-done' : ''}}" data-category="{{item.category}}" data-task-id="{{item.taskId}}" bindtap="openCatchupTask">
@@ -108,7 +108,7 @@
             <view class="library-row-title">{{item.categoryLabel}}</view>
             <view class="library-row-copy">{{item.displayTitle || item.title}}</view>
           </view>
-          <view class="library-row-action">{{item.completedToday ? '已点亮' : '继续'}}</view>
+          <view class="library-row-action">{{item.completedToday ? texts.lit : texts.continue}}</view>
         </view>
       </block>
     </view>
@@ -116,13 +116,13 @@
     <view class="library-dossier">
       <view class="library-section-head">
         <view>
-          <view class="library-section-title">成长档案袋</view>
+          <view class="library-section-title">{{texts.dossier}}</view>
           <view class="library-section-copy">{{selectedDateLabel}} · {{selectedDaySummary.statusText}}</view>
         </view>
         <view class="library-dossier-meta">
           <view>{{selectedDaySummary.minutesText}}</view>
           <text>{{selectedDaySummary.completedCount}} / {{selectedDaySummary.totalCount}}</text>
-          <view class="library-row-action" wx:if="{{!selectedDayLoaded}}" bindtap="loadSelectedDay" data-date="{{selectedDate}}">查看</view>
+          <view class="library-row-action" wx:if="{{!selectedDayLoaded}}" bindtap="loadSelectedDay" data-date="{{selectedDate}}">{{texts.view}}</view>
         </view>
       </view>
 
@@ -136,7 +136,7 @@
                   <view class="library-row-title">{{item.categoryLabel}}</view>
                   <view class="library-row-copy">{{item.title}}</view>
                   <view class="library-row-copy" wx:if="{{item.type === 'speaking' && item.attemptCount}}">
-                    最近 {{item.latestAttemptScore}} 分 · {{item.attemptCount}} 次回答
+                    {{texts.recentPrefix}}{{item.latestAttemptScore}}{{texts.scoreJoin}}{{item.attemptCount}}{{texts.answerCountSuffix}}
                   </view>
                   <view class="library-report-times" wx:if="{{item.timeLines && item.timeLines.length}}">
                     <block wx:for="{{item.timeLines}}" wx:key="key" wx:for-item="time">
@@ -145,7 +145,7 @@
                   </view>
                 </view>
                 <view class="library-report-state {{item.completedToday ? 'is-done' : ''}}">
-                  <view>{{item.type === 'speaking' ? '查看' : (item.completedToday ? '完成' : '等待')}}</view>
+                  <view>{{item.type === 'speaking' ? texts.view : (item.completedToday ? texts.completed : texts.wait)}}</view>
                   <text>{{item.isStudyCompletion ? item.progressText : (item.playCount + ' / ' + item.repeatTarget)}}</text>
                 </view>
               </view>
@@ -156,13 +156,13 @@
                     <view>{{attempt.displayTitle}}</view>
                     <text>{{attempt.scoreText}}</text>
                   </view>
-                  <view class="library-attempt-copy">发音流畅 {{attempt.pronunciationFluencyScore || 0}} / 内容语法 {{attempt.contentGrammarScore || 0}}</view>
-                  <view class="library-attempt-copy" wx:if="{{attempt.questionText}}">问题：{{attempt.questionText}}</view>
-                  <view class="library-attempt-copy" wx:if="{{attempt.studentTranscript}}">回答：{{attempt.studentTranscript}}</view>
-                  <view class="library-attempt-feedback">{{attempt.feedback || '暂无分析'}}</view>
+                  <view class="library-attempt-copy">{{texts.pronunciationLabel}} {{attempt.pronunciationFluencyScore || 0}} / {{texts.contentLabel}} {{attempt.contentGrammarScore || 0}}</view>
+                  <view class="library-attempt-copy" wx:if="{{attempt.questionText}}">{{texts.questionPrefix}}{{attempt.questionText}}</view>
+                  <view class="library-attempt-copy" wx:if="{{attempt.studentTranscript}}">{{texts.answerPrefix}}{{attempt.studentTranscript}}</view>
+                  <view class="library-attempt-feedback">{{attempt.feedback || texts.noAnalysis}}</view>
                   <view class="library-attempt-actions">
-                    <button data-item-index="{{index}}" data-attempt-index="{{attemptIndex}}" data-audio-type="answer" bindtap="playAttempt">播放回答</button>
-                    <button wx:if="{{attempt.feedbackAudioFileId}}" data-item-index="{{index}}" data-attempt-index="{{attemptIndex}}" data-audio-type="feedback" bindtap="playAttempt">播放分析</button>
+                    <button data-item-index="{{index}}" data-attempt-index="{{attemptIndex}}" data-audio-type="answer" bindtap="playAttempt">{{texts.playAnswer}}</button>
+                    <button wx:if="{{attempt.feedbackAudioFileId}}" data-item-index="{{index}}" data-attempt-index="{{attemptIndex}}" data-audio-type="feedback" bindtap="playAttempt">{{texts.playAnalysis}}</button>
                   </view>
                 </view>
               </view>
@@ -170,13 +170,13 @@
           </block>
         </view>
       </block>
-      <view class="library-empty-dossier" wx:elif="{{selectedDayLoaded}}">这一天还没有记录。</view>
+      <view class="library-empty-dossier" wx:elif="{{selectedDayLoaded}}">{{texts.noDayRecord}}</view>
     </view>
   </view>
 </block>
 
 <block wx:else>
-<view class="theme-{{theme}} page-shell record-page">
+<view class="theme-{{theme}} language-{{language}} page-shell record-page">
   <view class="record-hero product-hero">
     <view class="growth-hero-glow"></view>
     <view class="growth-hero-pattern">
@@ -188,21 +188,21 @@
     </view>
     <view class="record-hero-top">
       <view>
-        <view class="record-eyebrow">成长</view>
-        <view class="record-title type-page-title">成长轨迹</view>
+        <view class="record-eyebrow">{{texts.growth}}</view>
+        <view class="record-title type-page-title">{{texts.title}}</view>
       </view>
-      <view class="status-badge">{{syncMode === 'cloud' ? '已同步' : '本地状态'}}</view>
+      <view class="status-badge">{{syncMode === 'cloud' ? texts.synced : texts.localState}}</view>
     </view>
 
     <view class="metric-switch">
-      <view class="metric-tab {{metricMode === 'streak' ? 'is-active' : ''}}" data-mode="streak" bindtap="switchMetric">连续</view>
-      <view class="metric-tab {{metricMode === 'total' ? 'is-active' : ''}}" data-mode="total" bindtap="switchMetric">累计</view>
+      <view class="metric-tab {{metricMode === 'streak' ? 'is-active' : ''}}" data-mode="streak" bindtap="switchMetric">{{texts.streak}}</view>
+      <view class="metric-tab {{metricMode === 'total' ? 'is-active' : ''}}" data-mode="total" bindtap="switchMetric">{{texts.total}}</view>
     </view>
 
     <view class="metric-board">
       <view>
         <view class="metric-value">{{heroMetricValue}}</view>
-        <view class="metric-label">{{heroMetricLabel}}天</view>
+        <view class="metric-label">{{heroMetricLabel}}{{texts.daySuffix}}</view>
       </view>
       <view class="metric-orbit">
         <view class="orbit-ring"></view>
@@ -220,25 +220,25 @@
         <view class="summary-value-wrap">
           <view class="summary-value">{{stats.completedDays || 0}}</view>
         </view>
-        <view class="summary-label">累计天数</view>
+        <view class="summary-label">{{texts.totalDays}}</view>
       </view>
       <view class="summary-item">
         <view class="summary-value-wrap">
           <view class="summary-value is-duration">{{totalDurationText}}</view>
         </view>
-        <view class="summary-label">累计时长</view>
+        <view class="summary-label">{{texts.totalDuration}}</view>
       </view>
       <view class="summary-item">
         <view class="summary-value-wrap">
           <view class="summary-value">{{stats.completedTasks || 0}}</view>
         </view>
-        <view class="summary-label">完成任务</view>
+        <view class="summary-label">{{texts.completedTasks}}</view>
       </view>
     </view>
   </view>
 
   <view class="record-debug" wx:if="{{showCloudDebug && recordDebugLines.length}}">
-    <view class="record-debug-title">调试断点</view>
+    <view class="record-debug-title">{{texts.debugPoint}}</view>
     <block wx:for="{{recordDebugLines}}" wx:key="*this">
       <text class="record-debug-line" selectable="{{true}}">{{item}}</text>
     </block>
@@ -247,8 +247,8 @@
   <view class="calendar-card section-panel heatmap-card">
     <view class="section-head">
       <view>
-        <view class="type-section-title">日历热力</view>
-        <view class="section-copy">每天一格，记录被点亮。</view>
+        <view class="type-section-title">{{texts.calendarHeatmap}}</view>
+        <view class="section-copy">{{texts.calendarCopy}}</view>
       </view>
     </view>
     <view class="calendar-slide">
@@ -278,7 +278,7 @@
     </view>
     <view class="calendar-swipe-hint">
       <view class="swipe-mark"></view>
-      <view class="swipe-copy">点日期查看当天记录</view>
+      <view class="swipe-copy">{{texts.tapDate}}</view>
       <view class="swipe-mark"></view>
     </view>
   </view>
@@ -286,9 +286,9 @@
   <view class="catchup section-panel growth-track">
     <view class="row-between">
       <view>
-        <view class="type-section-title">学习轨迹</view>
+        <view class="type-section-title">{{texts.learningTrack}}</view>
         <view class="section-copy">{{catchupCopy}}</view>
-        <view class="catchup-purpose">完成真实任务，点亮漏掉的一天。</view>
+        <view class="catchup-purpose">{{texts.catchupPurpose}}</view>
       </view>
       <view class="status-badge {{catchupStatusClass}}">{{catchupStatusLabel}}</view>
     </view>
@@ -297,11 +297,11 @@
         <view class="catchup-row track-node" wx:if="{{!catchupTasksLoaded}}" bindtap="loadCatchupTasks">
           <view class="track-pin"></view>
           <view class="track-main">
-            <view class="track-label">追赶任务</view>
-            <view class="catchup-title">查看追赶任务</view>
-            <view class="catchup-copy">按需加载可补做的真实任务。</view>
+            <view class="track-label">{{texts.catchupStrip}}</view>
+            <view class="catchup-title">{{texts.viewCatchup}}</view>
+            <view class="catchup-copy">{{texts.catchupLoadCopy}}</view>
           </view>
-          <view class="catchup-state">查看</view>
+          <view class="catchup-state">{{texts.view}}</view>
         </view>
         <block wx:for="{{catchupTasks}}" wx:key="taskId">
           <view class="catchup-row track-node {{item.completedToday ? 'is-done' : ''}}" data-category="{{item.category}}" data-task-id="{{item.taskId}}" bindtap="openCatchupTask">
@@ -311,7 +311,7 @@
               <view class="catchup-title">{{item.categoryLabel}}</view>
               <view class="catchup-copy">{{item.displayTitle || item.title}}</view>
             </view>
-            <view class="catchup-state">{{item.completedToday ? '已点亮' : '继续'}}</view>
+            <view class="catchup-state">{{item.completedToday ? texts.lit : texts.continue}}</view>
           </view>
         </block>
       </view>
@@ -321,13 +321,13 @@
   <view class="day-card section-panel growth-report">
     <view class="row-between report-head">
       <view>
-        <view class="type-section-title">报告卡</view>
+        <view class="type-section-title">{{texts.reportCard}}</view>
         <view class="section-copy">{{selectedDateLabel}} · {{selectedDaySummary.statusText}}</view>
       </view>
       <view class="day-meta">
         <view class="pill">{{selectedDaySummary.minutesText}}</view>
         <view class="day-count">{{selectedDaySummary.completedCount}} / {{selectedDaySummary.totalCount}}</view>
-        <view class="detail-link" wx:if="{{!selectedDayLoaded}}" bindtap="loadSelectedDay" data-date="{{selectedDate}}">查看</view>
+        <view class="detail-link" wx:if="{{!selectedDayLoaded}}" bindtap="loadSelectedDay" data-date="{{selectedDate}}">{{texts.view}}</view>
       </view>
     </view>
 
@@ -345,7 +345,7 @@
                 <view class="report-title">{{item.categoryLabel}}</view>
                 <view class="report-copy">{{item.title}}</view>
                 <view class="report-copy" wx:if="{{item.type === 'speaking' && item.attemptCount}}">
-                  最近 {{item.latestAttemptScore}} 分 · {{item.attemptCount}} 次回答
+                  {{texts.recentPrefix}}{{item.latestAttemptScore}}{{texts.scoreJoin}}{{item.attemptCount}}{{texts.answerCountSuffix}}
                 </view>
                 <view class="report-times" wx:if="{{item.timeLines && item.timeLines.length}}">
                   <block wx:for="{{item.timeLines}}" wx:key="key" wx:for-item="time">
@@ -354,7 +354,7 @@
                 </view>
               </view>
               <view class="report-state {{item.completedToday ? 'is-done' : ''}}">
-                <view>{{item.type === 'speaking' ? '查看' : (item.completedToday ? '完成' : '等待')}}</view>
+                <view>{{item.type === 'speaking' ? texts.view : (item.completedToday ? texts.completed : texts.wait)}}</view>
                 <view class="report-progress">{{item.isStudyCompletion ? item.progressText : (item.playCount + ' / ' + item.repeatTarget)}}</view>
               </view>
             </view>
@@ -365,13 +365,13 @@
                   <view class="attempt-title">{{attempt.displayTitle}}</view>
                   <view class="attempt-score">{{attempt.scoreText}}</view>
                 </view>
-                <view class="attempt-subscore">发音流畅 {{attempt.pronunciationFluencyScore || 0}} / 内容语法 {{attempt.contentGrammarScore || 0}}</view>
-                <view class="attempt-text" wx:if="{{attempt.questionText}}">问题：{{attempt.questionText}}</view>
-                <view class="attempt-text" wx:if="{{attempt.studentTranscript}}">回答：{{attempt.studentTranscript}}</view>
-                <view class="attempt-feedback">{{attempt.feedback || '暂无分析'}}</view>
+                <view class="attempt-subscore">{{texts.pronunciationLabel}} {{attempt.pronunciationFluencyScore || 0}} / {{texts.contentLabel}} {{attempt.contentGrammarScore || 0}}</view>
+                <view class="attempt-text" wx:if="{{attempt.questionText}}">{{texts.questionPrefix}}{{attempt.questionText}}</view>
+                <view class="attempt-text" wx:if="{{attempt.studentTranscript}}">{{texts.answerPrefix}}{{attempt.studentTranscript}}</view>
+                <view class="attempt-feedback">{{attempt.feedback || texts.noAnalysis}}</view>
                 <view class="attempt-actions">
-                  <button class="attempt-button" data-item-index="{{index}}" data-attempt-index="{{attemptIndex}}" data-audio-type="answer" bindtap="playAttempt">播放回答</button>
-                  <button class="attempt-button" wx:if="{{attempt.feedbackAudioFileId}}" data-item-index="{{index}}" data-attempt-index="{{attemptIndex}}" data-audio-type="feedback" bindtap="playAttempt">播放分析</button>
+                  <button class="attempt-button" data-item-index="{{index}}" data-attempt-index="{{attemptIndex}}" data-audio-type="answer" bindtap="playAttempt">{{texts.playAnswer}}</button>
+                  <button class="attempt-button" wx:if="{{attempt.feedbackAudioFileId}}" data-item-index="{{index}}" data-attempt-index="{{attemptIndex}}" data-audio-type="feedback" bindtap="playAttempt">{{texts.playAnalysis}}</button>
                 </view>
               </view>
             </view>
@@ -379,7 +379,7 @@
         </block>
       </view>
     </block>
-    <view class="empty-state" wx:elif="{{selectedDayLoaded}}">这一天还没有记录。</view>
+    <view class="empty-state" wx:elif="{{selectedDayLoaded}}">{{texts.noDayRecord}}</view>
   </view>
 </view>
 </block>

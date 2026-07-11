@@ -1,6 +1,9 @@
 const store = require('../../utils/store');
 const page = require('../../utils/page');
 const snapshotStore = require('../../utils/snapshot');
+const i18n = require('../../utils/i18n');
+
+const text = (key, fallback) => i18n.getPageText('reading', key, undefined, fallback);
 const READING_PASSAGE_SNAPSHOT_KEY = 'readingPassageSnapshotV1';
 const READING_HOME_SNAPSHOT_KEY = 'readingHomeSnapshotV1';
 const READING_HOME_SNAPSHOT_MAX_AGE_MS = 7 * 24 * 60 * 60 * 1000;
@@ -32,7 +35,7 @@ Page({
     directoryLoaded: false,
     directoryLoading: false,
     navigationLevel: 'root',
-    selectedExamType: '二模',
+    selectedExamType: text('subtitle', '二模'),
     selectedGroup: null,
     selectedDistrict: '',
     selectedDistrictNode: null,
@@ -42,7 +45,7 @@ Page({
     isRootLevel: true,
     isExamLevel: false,
     isDistrictLevel: false,
-    selectedHeader: '中考阅读',
+    selectedHeader: text('eyebrow', '中考阅读'),
     completedToday: false,
     latestAttempt: null
   }),
@@ -67,10 +70,10 @@ Page({
       isExamLevel: this.data.navigationLevel === 'exam',
       isDistrictLevel: this.data.navigationLevel === 'district',
       selectedHeader: this.data.navigationLevel === 'root'
-        ? ((categoryTree[0] && categoryTree[0].label) || '中考阅读')
+        ? ((categoryTree[0] && categoryTree[0].label) || text('eyebrow', '中考阅读'))
         : (this.data.navigationLevel === 'exam'
-          ? ((selectedGroup && selectedGroup.label) || '阅读')
-          : `${selectedGroup && selectedGroup.label ? selectedGroup.label : '阅读'} · ${selectedDistrictNode && selectedDistrictNode.label ? selectedDistrictNode.label : ''}`),
+          ? ((selectedGroup && selectedGroup.label) || text('navTitle', '阅读'))
+          : `${selectedGroup && selectedGroup.label ? selectedGroup.label : text('navTitle', '阅读')} · ${selectedDistrictNode && selectedDistrictNode.label ? selectedDistrictNode.label : ''}`),
       memoryPlan: data.memoryPlan || this.data.memoryPlan || null,
       completedCount: data.completedCount || this.data.completedCount || 0,
       totalCount: data.totalCount || data.dailyCount || this.data.totalCount || 0,
@@ -84,6 +87,12 @@ Page({
     this.readingPerf = page.startPagePerf('reading-home');
     page.syncTheme(this);
     if (!page.requireIdentityConfirmed()) {
+      await new Promise((resolve) => wx.nextTick(resolve));
+      this.readingPerf.ready('pageReady', {
+        source: 'identity-blocked',
+        cacheHit: true,
+        groups: 0
+      });
       return;
     }
     const snapshot = snapshotStore.read(READING_HOME_SNAPSHOT_KEY, {
@@ -100,6 +109,12 @@ Page({
       });
     } else {
       this.setData({ loading: true });
+      await new Promise((resolve) => wx.nextTick(resolve));
+      this.readingPerf.ready('pageReady', {
+        source: 'fallback',
+        cacheHit: false,
+        groups: 0
+      });
     }
     const data = await store.getReadingHome({ directoryOnly: true }, (fresh) => {
       this.applyReadingHome(fresh);
@@ -121,11 +136,16 @@ Page({
       snapshotStore.write(READING_HOME_SNAPSHOT_KEY, 'directory', data, { source: 'reading-home' });
     }
     if (this.readingPerf) {
-      this.readingPerf.ready('pageReady', {
+      this.readingPerf.mark('cloudRefresh', {
         cacheHit: !!data.__cacheHit,
         groups: (((data.categoryTree || [])[0] || {}).groups || []).length
       });
     }
+  },
+  openPracticeHistory() {
+    wx.navigateTo({
+      url: '/pages/practice-history/index?type=reading'
+    });
   },
   async loadDirectory() {
     if (this.data.directoryLoading || this.data.directoryLoaded) {
@@ -137,7 +157,7 @@ Page({
       this.applyReadingHome(data);
     } catch (error) {
       this.setData({ directoryLoading: false });
-      wx.showToast({ title: '目录加载失败', icon: 'none' });
+      wx.showToast({ title: text('loadFailed', '目录加载失败'), icon: 'none' });
     }
   },
   onDirectoryTouchStart(event) {
@@ -170,7 +190,7 @@ Page({
       isRootLevel: false,
       isExamLevel: true,
       isDistrictLevel: false,
-      selectedHeader: selectedGroup && selectedGroup.label ? selectedGroup.label : '阅读'
+      selectedHeader: selectedGroup && selectedGroup.label ? selectedGroup.label : text('navTitle', '阅读')
     });
   },
   selectDistrict(event) {
@@ -183,7 +203,7 @@ Page({
       isRootLevel: false,
       isExamLevel: false,
       isDistrictLevel: true,
-      selectedHeader: `${this.data.selectedGroup && this.data.selectedGroup.label ? this.data.selectedGroup.label : '阅读'} · ${selectedDistrictNode && selectedDistrictNode.label ? selectedDistrictNode.label : district}`
+      selectedHeader: `${this.data.selectedGroup && this.data.selectedGroup.label ? this.data.selectedGroup.label : text('navTitle', '阅读')} · ${selectedDistrictNode && selectedDistrictNode.label ? selectedDistrictNode.label : district}`
     });
   },
   backToRoot() {
@@ -193,7 +213,7 @@ Page({
       isRootLevel: true,
       isExamLevel: false,
       isDistrictLevel: false,
-      selectedHeader: this.data.categoryRoot && this.data.categoryRoot.label ? this.data.categoryRoot.label : '中考阅读'
+      selectedHeader: this.data.categoryRoot && this.data.categoryRoot.label ? this.data.categoryRoot.label : text('eyebrow', '中考阅读')
     });
   },
   backToExam() {
@@ -202,7 +222,7 @@ Page({
       isRootLevel: false,
       isExamLevel: true,
       isDistrictLevel: false,
-      selectedHeader: this.data.selectedGroup && this.data.selectedGroup.label ? this.data.selectedGroup.label : '阅读'
+      selectedHeader: this.data.selectedGroup && this.data.selectedGroup.label ? this.data.selectedGroup.label : text('navTitle', '阅读')
     });
   },
   backOneLevel() {

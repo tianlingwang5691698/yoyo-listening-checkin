@@ -1,15 +1,29 @@
 const store = require('../../utils/store');
 const page = require('../../utils/page');
 const snapshotStore = require('../../utils/snapshot');
+const i18n = require('../../utils/i18n');
 
 const OVERVIEW_SNAPSHOT_KEY = 'listeningPlanOverviewSnapshotV2';
 const SNAPSHOT_MAX_AGE_MS = 24 * 60 * 60 * 1000;
+
+function t(key, variables) {
+  const template = i18n.getPageText('level', key);
+  return Object.keys(variables || {}).reduce((text, name) => text.replace(new RegExp(`\\{${name}\\}`, 'g'), variables[name]), template);
+}
+
+function localizeMaterialTitle(title) {
+  return String(title || '')
+    .replace(/听口练习册 第二版/g, t('listeningWorkbook2'))
+    .replace(/听口 第三版/g, t('listening3'))
+    .replace(/听口 第二版/g, t('listening2'))
+    .replace(/课本/g, t('textbook'));
+}
 
 const FALLBACK_LEVEL_TABS = ['Pre A1', 'A1', 'A2', 'B1', 'B2', 'C1', 'C2'].map((levelId) => ({
   levelId,
   enabled: levelId !== 'C1' && levelId !== 'C2',
   active: levelId === 'A1',
-  stateText: levelId === 'C1' || levelId === 'C2' ? '未开放' : ''
+  stateText: levelId === 'C1' || levelId === 'C2' ? t('unavailable') : ''
 }));
 const DEFAULT_FIRST_LEVEL = 'A1';
 const LEVEL_MATERIALS = {
@@ -18,7 +32,7 @@ const LEVEL_MATERIALS = {
   ],
   A1: [
     { category: 'newconcept1', title: 'New Concept 1' },
-    { category: 'unlock1', title: 'Unlock 1 课本' },
+    { category: 'unlock1', title: 'Unlock 1 听口 第二版' },
     { category: 'peppa', title: 'Peppa' }
   ],
   A2: [
@@ -28,12 +42,14 @@ const LEVEL_MATERIALS = {
   ],
   B1: [
     { category: 'newconcept3', title: 'New Concept 3' },
-    { category: 'unlock3textbook', title: 'Unlock 3 课本' },
-    { category: 'unlock3', title: 'Unlock 3 练习册' }
+    { category: 'unlock3textbook', title: 'Unlock3 听口 第二版' },
+    { category: 'unlock3thirdedition', title: 'Unlock3 听口 第三版' },
+    { category: 'unlock3', title: 'Unlock3 听口练习册 第二版' }
   ],
   B2: [
     { category: 'newconcept4', title: 'New Concept 4' },
-    { category: 'unlock4', title: 'Unlock 4 课本' }
+    { category: 'unlock4', title: 'Unlock 4 课本' },
+    { category: 'unlock4thirdedition', title: 'Unlock 4 听口 第三版' }
   ]
 };
 
@@ -50,23 +66,28 @@ function getPlanMaterial(activePlan, category) {
 function formatEstimatedDuration(seconds) {
   const value = Number(seconds || 0);
   if (value <= 0) {
-    return '时长待生成';
+    return t('durationPending');
   }
   const minutes = Math.max(1, Math.round(value / 60));
   if (minutes < 60) {
-    return `${minutes} 分钟`;
+    return `${minutes} ${t('minute')}`;
   }
   const hours = Math.floor(minutes / 60);
   const rest = minutes % 60;
-  return `${hours} 小时${rest ? `${rest} 分钟` : ''}`;
+  return `${hours} ${t('hour')}${rest ? ` ${rest} ${t('minute')}` : ''}`;
 }
 
 function buildMaterialRows(materials, activePlan) {
-  return (materials || []).map((item) => Object.assign({}, item, {
-    countText: item.totalCount ? `${item.totalCount} 条` : '可进入',
-    stateText: getPlanMaterial(activePlan, item.category) || item.selected ? '已选' : (item.enabled ? '›' : '未开放'),
-    disabled: !item.enabled
-  }));
+  return (materials || []).map((item) => {
+    const selected = !!(getPlanMaterial(activePlan, item.category) || item.selected);
+    return Object.assign({}, item, {
+      title: localizeMaterialTitle(item.title),
+      countText: item.totalCount ? `${item.totalCount} ${t('items')}` : t('enterable'),
+      stateText: selected ? t('selected') : (item.enabled ? '›' : t('unavailable')),
+      selected,
+      disabled: !item.enabled
+    });
+  });
 }
 
 function buildFallbackOverview(levelId, currentData) {
@@ -96,8 +117,8 @@ function buildPlanSummary(activePlan) {
   const materials = ((activePlan && activePlan.materials) || []).filter((item) => item && item.enabled !== false);
   const dailyTotal = materials.reduce((sum, item) => sum + Number(item.dailyCount || 0), 0);
   const durationTotal = materials.reduce((sum, item) => sum + Number(item.estimatedDailyDurationSec || 0), 0);
-  const durationText = durationTotal > 0 ? ` · 预计 ${formatEstimatedDuration(durationTotal)}` : ' · 时长待生成';
-  return materials.length ? `已选 ${materials.length} 个素材 · 每天 ${dailyTotal} 条${durationText}` : '素材、集数、每日数量';
+  const durationText = durationTotal > 0 ? ` · ${t('estimated')} ${formatEstimatedDuration(durationTotal)}` : ` · ${t('durationPending')}`;
+  return materials.length ? `${t('selectedMaterials', { count: materials.length, daily: dailyTotal })}${durationText}` : t('planPlaceholder');
 }
 
 function getTargetSnapshotPart() {
@@ -145,11 +166,13 @@ Page({
     levelTabs: FALLBACK_LEVEL_TABS,
     materials: [],
     activePlan: null,
-    planSummaryText: '素材、集数、每日数量',
+    planSummaryText: t('planPlaceholder'),
     planSource: 'fixed-yoyo',
     isYoyoFixedPlan: false,
     fixedPlan: null,
-    levelLoading: false
+    levelLoading: false,
+    language: i18n.getLanguage(),
+    texts: i18n.getPageTexts('level')
   }),
   hasActivePlanField(data) {
     return Object.prototype.hasOwnProperty.call(data || {}, 'activePlan');
@@ -256,8 +279,13 @@ Page({
     this.levelPerf = page.startPagePerf('level');
     this.levelCloudRefreshLogged = false;
     page.syncTheme(this);
+    const language = i18n.getLanguage();
+    const texts = i18n.getPageTexts('level', language);
+    wx.setNavigationBarTitle({ title: texts.navTitle });
+    this.setData({ language, texts });
+    if (this.data.materials.length) this.applyOverview(this.data, this.data.selectedLevel);
     const tabBar = this.getTabBar && this.getTabBar();
-    if (tabBar) {
+    if (tabBar && tabBar.data.selected !== 1) {
       tabBar.setData({ selected: 1 });
     }
     if (!page.requireIdentityConfirmed()) {
@@ -307,7 +335,7 @@ Page({
     const enabled = event.currentTarget.dataset.enabled;
     const levelId = event.currentTarget.dataset.levelId || 'A1';
     if (enabled === false || enabled === 'false') {
-      wx.showToast({ title: '暂未开放', icon: 'none' });
+      wx.showToast({ title: t('temporarilyUnavailable'), icon: 'none' });
       return;
     }
     this.setData({

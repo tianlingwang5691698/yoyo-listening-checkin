@@ -1,6 +1,9 @@
 const page = require('../../../utils/page');
 const store = require('../../../utils/store');
 const snapshotStore = require('../../../utils/snapshot');
+const i18n = require('../../../utils/i18n');
+
+const text = (key, fallback) => i18n.getPageText('materialDetail', key, undefined, fallback);
 
 const PICTURE_LABELS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 const LISTENING_SET_SNAPSHOT_KEY = 'currentListeningSetV1';
@@ -64,9 +67,9 @@ function hasListeningStudyCards(studyPack) {
 function getListeningStudyError(result) {
   const message = result && result.cloudError && result.cloudError.message;
   if (message) {
-    return `生成超时，未拿到学习包，请稍后重试：${message}`;
+    return `${text('generate', '生成')} failed: ${message}`;
   }
-  return '生成失败，稍后重试。';
+  return `${text('generate', '生成')} failed`;
 }
 
 function formatAudioTime(seconds) {
@@ -91,9 +94,9 @@ function recordListeningStudyPackSynced(item) {
     id: `listening-study:${targetId}`,
     type: 'listening',
     targetId,
-    title: '听力学习包',
+    title: text('textStudy', '听力学习包'),
     meta: item.title || item.displayTitle || item.audioTitle || '听力',
-    progressText: '学习包已生成'
+    progressText: text('generate', '学习包已生成')
   });
 }
 
@@ -155,10 +158,10 @@ function buildDetailDebugLines(context) {
     lines.push(`DEBUG: pages/material/detail.hydrateListeningItem -> cloudError.message=${(result.cloudError && result.cloudError.message) || ''}, syncDebug.reason=${syncDebug.reason || ''}`);
   }
   if (!hasAudio) {
-    lines.push('链路断点：列表快照或云端素材缺少 audioCloudPath/audioFileId/audioUrl，播放器只能显示 00:00。');
+    lines.push('DEBUG: Snapshot or cloud material is missing audioCloudPath/audioFileId/audioUrl; the player can only show 00:00.');
   }
   if (!questionCount) {
-    lines.push('链路断点：云端 getMaterialItem 未返回 questions，答题区为空。');
+    lines.push('DEBUG: getMaterialItem returned no questions; the answer area is empty.');
   }
   console.warn(lines.join('\n'));
   return lines;
@@ -187,9 +190,9 @@ Page({
     studyError: '',
     activeStudyTab: 'vocabulary',
     studyTabs: [
-      { key: 'vocabulary', label: '生词' },
-      { key: 'phrases', label: '短语' },
-      { key: 'patterns', label: '句型' }
+      { key: 'vocabulary', label: text('vocabulary', '生词') },
+      { key: 'phrases', label: text('phrases', '短语') },
+      { key: 'patterns', label: text('patterns', '句型') }
     ],
     studyCompleted: false,
     transcriptVisible: false,
@@ -231,6 +234,16 @@ Page({
         cacheHit: true,
         itemId,
         hasAudio: !!getAudioSource(item)
+      });
+    } else {
+      wx.nextTick(() => {
+        if (!this.materialDetailPerf) return;
+        this.materialDetailPerf.ready('pageReady', {
+          source: 'fallback',
+          cacheHit: false,
+          itemId,
+          hasAudio: false
+        });
       });
     }
     const audioSource = getAudioSource(item);
@@ -290,7 +303,7 @@ Page({
     try {
       const src = await store.getTempFileURL(cloudPath);
       if (!src) {
-        this.setData({ audioLoading: false, audioError: '音频暂时无法加载' });
+        this.setData({ audioLoading: false, audioError: text('audioLoadFailed', '音频暂时无法加载') });
         return;
       }
       this.audio = wx.createInnerAudioContext();
@@ -320,11 +333,11 @@ Page({
       this.audio.onError(() => this.setData({
         isPlaying: false,
         audioLoading: false,
-        audioError: '音频播放失败'
+        audioError: text('audioPlayFailed', '音频播放失败')
       }));
       this.setData({ audioSrc: src, audioLoading: false });
     } catch (error) {
-      this.setData({ audioLoading: false, audioError: '音频暂时无法加载' });
+      this.setData({ audioLoading: false, audioError: text('audioLoadFailed', '音频暂时无法加载') });
     }
   },
   updateAudioProgress(current, duration, force) {
@@ -388,7 +401,7 @@ Page({
         debugLines: []
       });
       if (this.materialDetailPerf) {
-        this.materialDetailPerf.ready('pageReady', {
+        this.materialDetailPerf.mark('cloudRefresh', {
           source: result && result.__cacheHit ? 'cache' : 'cloud',
           cacheHit: !!(result && result.__cacheHit),
           itemId,
@@ -409,7 +422,7 @@ Page({
       this.loadCachedStudyPack(fullItem);
     } catch (error) {
       if (this.materialDetailPerf) {
-        this.materialDetailPerf.ready('pageReady', {
+        this.materialDetailPerf.mark('cloudRefresh', {
           source: 'error',
           cacheHit: false,
           itemId,
@@ -419,7 +432,7 @@ Page({
       this.setData({
         debugLines: [
           `DEBUG: pages/material/detail.hydrateListeningItem -> store.getMaterialItem -> cloud.getMaterialItem -> exception=${error && error.message ? error.message : String(error)}, itemId=${itemId || 'missing'}, targetChildId=N/A`,
-          '链路断点：getMaterialItem 调用异常，详情只能使用上一页快照。'
+          'DEBUG: getMaterialItem failed; detail is using the previous-page snapshot.'
         ]
       });
     }
@@ -556,9 +569,9 @@ Page({
       this.setData({
         studyDictionaryAddedMap: Object.assign({}, this.data.studyDictionaryAddedMap || {}, { [key]: true, [text]: true })
       });
-      wx.showToast({ title: '已加入词库', icon: 'none' });
+      wx.showToast({ title: text('addSuccess', '已加入词库'), icon: 'none' });
     } catch (error) {
-      wx.showToast({ title: '加入失败', icon: 'none' });
+      wx.showToast({ title: text('addFailed', '加入失败'), icon: 'none' });
     } finally {
       this.setData({ dictionaryAdding: false });
     }
@@ -576,7 +589,7 @@ Page({
     const item = this.data.item;
     if (!item || this.data.studyLoading) return;
     if (!this.data.submitted) {
-      this.setData({ studyError: this.data.answerSummary ? '提交听力后可查看参考答案并生成文本学习。' : '提交听力后再生成文本学习。' });
+      this.setData({ studyError: this.data.answerSummary ? text('answerAvailable', '提交听力后可查看参考答案并生成文本学习。') : text('submit', '提交听力后再生成文本学习。') });
       return;
     }
     if (!String(item.transcript || '').trim()) {
@@ -584,7 +597,7 @@ Page({
         this.setData({ transcriptVisible: true, studyError: '' });
         return;
       }
-      this.setData({ studyError: '这套听力暂无文本，暂不能生成。' });
+      this.setData({ studyError: text('noTranscript', '这套听力暂无文本，暂不能生成。') });
       return;
     }
     this.setData({ studyLoading: true, studyError: '', transcriptVisible: true });

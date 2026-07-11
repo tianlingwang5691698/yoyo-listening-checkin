@@ -956,3 +956,8 @@
     transform: translateY(-68rpx) scale(1);
   }
 }
+.language-en button,
+.language-en view,
+.language-en text { overflow-wrap: break-word; word-break: normal; }
+.language-en .section-title,
+.language-en .library-section-title { font-size: 36rpx; line-height: 1.16; }

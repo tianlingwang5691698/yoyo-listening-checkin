@@ -1,0 +1,119 @@
+<view class="theme-{{theme}} language-{{language}} page-shell practice-history-page history-{{type}}">
+  <view class="history-hero">
+    <view class="history-eyebrow">{{config.eyebrow}}</view>
+    <view class="history-title">{{config.title}}</view>
+    <view class="history-copy">{{config.copy}}</view>
+    <view class="history-archive-mark" wx:if="{{theme === 'library'}}">
+      <view class="history-archive-number">{{type === 'reading' ? 'R' : (type === 'grammar' ? 'G' : 'W')}}</view>
+      <text>ARCHIVE</text>
+    </view>
+  </view>
+
+  <view class="history-tabs" wx:if="{{type !== 'writing'}}">
+    <view class="history-tab {{viewMode === 'history' ? 'is-active' : ''}}" bindtap="openHistory">{{texts.history}}</view>
+    <view class="history-tab {{viewMode === 'wrong' ? 'is-active' : ''}}" bindtap="openWrongBook">{{texts.wrongBook}}</view>
+  </view>
+
+  <view class="history-debug" wx:if="{{debugLines.length}}">
+    <text selectable="{{true}}" wx:for="{{debugLines}}" wx:key="*this">{{item}}</text>
+  </view>
+
+  <view class="history-list" wx:if="{{records.length}}">
+    <view class="history-record {{expandedId === item.id ? 'is-expanded' : ''}}" wx:for="{{records}}" wx:key="id">
+      <view class="history-summary" data-id="{{item.id}}" bindtap="toggleRecord">
+        <view class="history-record-stamp" wx:if="{{theme === 'library'}}">{{type === 'reading' ? 'R' : (type === 'grammar' ? 'G' : 'W')}}</view>
+        <view class="history-summary-main">
+          <view class="history-record-title">{{item.title}}</view>
+          <view class="history-record-meta">{{item.dateLabel}} · {{item.meta}}</view>
+        </view>
+        <view class="history-result">{{item.summary}}</view>
+        <view class="history-arrow">{{expandedId === item.id ? '−' : '›'}}</view>
+      </view>
+
+      <view class="history-detail" wx:if="{{expandedId === item.id}}">
+        <view class="history-loading" wx:if="{{item.detailLoading}}">{{texts.loadingOriginal}}</view>
+
+        <block wx:if="{{type === 'reading' && item.detailReady}}">
+          <view class="history-section" wx:if="{{item.passageText}}">
+            <view class="history-section-title">{{texts.original}}</view>
+            <view class="history-passage">{{item.passageText}}</view>
+          </view>
+          <view class="history-ai-row" data-id="{{item.id}}" bindtap="loadReadingCachedAnalysis">{{item.aiAnalysisLoaded ? texts.analysisLoaded : (item.aiAnalysisLoading ? texts.analysisLoading : texts.viewAnalysis)}}</view>
+          <view class="history-ai-status" wx:if="{{item.aiAnalysisStatus}}">{{item.aiAnalysisStatus}}</view>
+          <view class="history-question" wx:for="{{item.detailQuestions}}" wx:key="number" wx:for-item="question">
+            <view class="history-question-no">{{texts.questionPrefix}}{{question.number}}{{texts.questionSuffix}}</view>
+            <view class="history-question-prompt">{{question.prompt}}</view>
+            <view class="history-option {{option.isAnswer ? 'is-answer' : ''}} {{option.isSelected && !option.isAnswer ? 'is-selected-wrong' : ''}}" wx:for="{{question.optionsList}}" wx:key="key" wx:for-item="option">
+              <text>{{option.key}}. {{option.text}}</text>
+              <text wx:if="{{option.isSelected}}">{{texts.childAnswer}}</text>
+            </view>
+            <view class="history-answer {{question.correct ? 'is-correct' : 'is-wrong'}}">{{texts.childAnswerLabel}}{{question.selected || texts.unanswered}} · {{texts.correctAnswer}}{{question.answer || texts.none}}</view>
+            <view class="history-analysis" wx:if="{{question.analysis}}">{{question.analysis}}</view>
+            <view class="history-wrong-action {{question.inWrongBook ? 'is-added' : ''}}" wx:if="{{viewMode === 'history' && !question.correct}}" data-record-id="{{item.id}}" data-question-id="{{question.questionId}}" bindtap="addWrongQuestion">{{question.inWrongBook ? texts.added : (question.addingWrong ? texts.adding : texts.add)}}</view>
+          </view>
+        </block>
+
+        <block wx:if="{{type === 'grammar'}}">
+          <view class="history-question" wx:for="{{item.detailQuestions}}" wx:key="number" wx:for-item="question">
+            <view class="history-question-no">{{texts.questionPrefix}}{{question.number}}{{texts.questionSuffix}}</view>
+            <view class="history-question-prompt">{{question.prompt}}</view>
+            <view class="history-option {{option.isAnswer ? 'is-answer' : ''}} {{option.isSelected && !option.isAnswer ? 'is-selected-wrong' : ''}}" wx:for="{{question.optionsList}}" wx:key="key" wx:for-item="option">
+              <text>{{option.key}}. {{option.text}}</text>
+              <text wx:if="{{option.isSelected}}">{{texts.childAnswer}}</text>
+            </view>
+            <view class="history-answer {{question.correct ? 'is-correct' : 'is-wrong'}}">{{texts.childAnswerLabel}}{{question.selected || texts.unanswered}} · {{texts.correctAnswer}}{{question.answer || texts.none}}</view>
+            <view class="history-analysis" wx:if="{{question.analysis}}">{{question.analysis}}</view>
+            <view class="history-ai-status" wx:elif="{{question.analysisStatus}}">{{question.analysisStatus}}</view>
+            <view class="history-explain-action" wx:else data-record-id="{{item.id}}" data-question-id="{{question.questionId}}" bindtap="loadGrammarExplanation">{{question.explaining ? texts.explanationLoading : texts.viewExplanation}}</view>
+            <view class="history-wrong-action {{question.inWrongBook ? 'is-added' : ''}}" wx:if="{{viewMode === 'history' && !question.correct}}" data-record-id="{{item.id}}" data-question-id="{{question.questionId}}" bindtap="addWrongQuestion">{{question.inWrongBook ? texts.added : (question.addingWrong ? texts.adding : texts.add)}}</view>
+          </view>
+        </block>
+
+        <block wx:if="{{type === 'writing' && item.detailReady}}">
+          <view class="history-section">
+            <view class="history-section-title">{{texts.prompt}}</view>
+            <view class="history-writing-text">{{item.attempt.prompt || item.title}}</view>
+          </view>
+          <view class="history-section">
+            <view class="history-section-title">{{texts.essay}}</view>
+            <view class="history-writing-text">{{item.attempt.essay}}</view>
+          </view>
+          <view class="history-section" wx:if="{{item.attempt.review.summary}}">
+            <view class="history-section-title">{{texts.report}}</view>
+            <view class="history-analysis">{{item.attempt.review.summary}}</view>
+            <view class="history-review-row" wx:if="{{item.attempt.review.content}}"><text>{{texts.content}}</text><view>{{item.attempt.review.content}}</view></view>
+            <view class="history-review-row" wx:if="{{item.attempt.review.structure}}"><text>{{texts.structure}}</text><view>{{item.attempt.review.structure}}</view></view>
+            <view class="history-review-row" wx:if="{{item.attempt.review.language}}"><text>{{texts.language}}</text><view>{{item.attempt.review.language}}</view></view>
+            <view class="history-review-row" wx:if="{{item.attempt.review.spelling}}"><text>{{texts.spelling}}</text><view>{{item.attempt.review.spelling}}</view></view>
+          </view>
+          <view class="history-section" wx:if="{{item.attempt.review.problems.length}}">
+            <view class="history-section-title">{{texts.improvements}}</view>
+            <view class="history-list-line" wx:for="{{item.attempt.review.problems}}" wx:key="*this">· {{item}}</view>
+          </view>
+          <view class="history-section" wx:if="{{item.attempt.review.suggestions.length}}">
+            <view class="history-section-title">{{texts.advice}}</view>
+            <view class="history-list-line" wx:for="{{item.attempt.review.suggestions}}" wx:key="*this">· {{item}}</view>
+          </view>
+          <view class="history-section" wx:if="{{item.attempt.review.grammarCorrections.length}}">
+            <view class="history-section-title">{{texts.polish}}</view>
+            <view class="history-correction" wx:for="{{item.attempt.review.grammarCorrections}}" wx:key="original">
+              <view>{{texts.originalSentence}}{{item.original}}</view>
+              <view>{{texts.revisedSentence}}{{item.corrected}}</view>
+              <view>{{texts.reason}}{{item.reason}}</view>
+            </view>
+          </view>
+          <view class="history-section" wx:if="{{item.attempt.review.polishedVersion}}">
+            <view class="history-section-title">{{texts.rewrite}}</view>
+            <view class="history-writing-text">{{item.attempt.review.polishedVersion}}</view>
+          </view>
+        </block>
+      </view>
+    </view>
+  </view>
+
+  <view class="history-loading history-empty" wx:elif="{{loading}}">{{texts.loading}}</view>
+  <view class="history-empty" wx:elif="{{!debugLines.length}}">
+    <view class="history-empty-title">{{viewMode === 'wrong' ? texts.noWrong : config.empty}}</view>
+    <view class="history-empty-copy">{{texts.emptyCopy}}</view>
+  </view>
+</view>

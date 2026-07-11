@@ -1,12 +1,15 @@
 const page = require('../../../utils/page');
 const store = require('../../../utils/store');
 const effects = require('../../../utils/effects');
+const i18n = require('../../../utils/i18n');
+
+const text = (key, fallback) => i18n.getPageText('flashcards', key, undefined, fallback);
 
 const TYPE_LABELS = {
-  all: '全部',
-  word: '生词',
-  phrase: '短语',
-  pattern: '句型'
+  all: text('all', '全部'),
+  word: text('word', '生词'),
+  phrase: text('phrase', '短语'),
+  pattern: text('pattern', '句型')
 };
 
 const DEMO_FLASHCARDS = [
@@ -47,8 +50,8 @@ const DEMO_FLASHCARDS = [
 ];
 
 const DEFAULT_DICTIONARY_BOOKS = [
-  { level: 'junior', title: '初中英语词汇 乱序', coverMark: '初', imported: 0, cloudPath: 'dictionary_books/word-dictionary-junior.json' },
-  { level: 'senior', title: '高中英语词汇 乱序', coverMark: '高', imported: 0, cloudPath: 'dictionary_books/word-dictionary-senior.json' }
+  { level: 'junior', title: text('juniorBook', '初中英语词汇 乱序'), coverMark: text('juniorMark', '初'), imported: 0, cloudPath: 'dictionary_books/word-dictionary-junior.json' },
+  { level: 'senior', title: text('seniorBook', '高中英语词汇 乱序'), coverMark: text('seniorMark', '高'), imported: 0, cloudPath: 'dictionary_books/word-dictionary-senior.json' }
 ];
 const FLASHCARD_SOURCE_CACHE_PREFIX = 'flashcardSourceCache:';
 const FLASHCARD_SOURCE_CACHE_TTL = 7 * 24 * 60 * 60 * 1000;
@@ -56,7 +59,6 @@ const FLASHCARD_SOURCE_CACHE_VERSION_KEY = 'flashcardSourceCacheVersion';
 const FLASHCARD_PLAN_SETTINGS_PREFIX = 'flashcardPlanSettings:';
 const FLASHCARD_CHECKIN_DAYS_KEY = 'flashcardCheckinDays';
 const FLASHCARD_AUDIO_CACHE_PREFIX = 'flashcard-audio-';
-const COMPLETION_SFX_SRC = '/assets/audio/sfx/flashcard-complete-chime.mp3';
 
 const LIMIT_MIN = 5;
 const LIMIT_DEFAULT_MAX = 500;
@@ -133,7 +135,7 @@ function normalizeCard(item, index) {
     phoneticBody,
     displayPhonetic,
     canSpeak: (type === 'word' || type === 'phrase') && canUseDictionaryVoice(item.word || item.phrase || displayText),
-    typeLabel: TYPE_LABELS[type] || '生词',
+    typeLabel: TYPE_LABELS[type] || text('word', '生词'),
     index: index + 1
   });
 }
@@ -407,7 +409,9 @@ function downloadAudioToLocal(url, flashcardKey) {
 }
 
 function getPlanSettingsKey(sourceId) {
-  return `${FLASHCARD_PLAN_SETTINGS_PREFIX}${sourceId || 'all'}`;
+  const target = store.getSelectedStudentTarget ? store.getSelectedStudentTarget() : {};
+  const targetPart = `${target.targetFamilyId || 'self'}:${target.targetChildId || 'self'}`;
+  return `${FLASHCARD_PLAN_SETTINGS_PREFIX}${targetPart}:${sourceId || 'all'}`;
 }
 
 function readPlanSettings(sourceId, fallback) {
@@ -427,7 +431,7 @@ function writePlanSettings(sourceId, settings) {
 function normalizeBook(book) {
   const fallback = DEFAULT_DICTIONARY_BOOKS.find((item) => item.level === book.level) || {};
   return Object.assign({}, fallback, book, {
-    title: fallback.title || book.title || '词汇书',
+    title: fallback.title || book.title || text('wordBook', '词汇书'),
     coverMark: fallback.coverMark || book.coverMark || '',
     sourceId: getBookSourceId(book.level)
   });
@@ -449,12 +453,16 @@ async function loadBookCardsFromStorage(book) {
 }
 
 function getSourceCacheKey(sourceId) {
-  return `${FLASHCARD_SOURCE_CACHE_PREFIX}${sourceId || 'all'}`;
+  const target = store.getSelectedStudentTarget ? store.getSelectedStudentTarget() : {};
+  const targetPart = `${target.targetFamilyId || 'self'}:${target.targetChildId || 'self'}`;
+  return `${FLASHCARD_SOURCE_CACHE_PREFIX}${targetPart}:${sourceId || 'all'}`;
 }
 
 function getSourceCacheFilePath(sourceId) {
   if (!wx.getFileSystemManager || !wx.env || !wx.env.USER_DATA_PATH) return '';
-  return `${wx.env.USER_DATA_PATH}/flashcard-source-${encodeURIComponent(sourceId || 'all')}.json`;
+  const target = store.getSelectedStudentTarget ? store.getSelectedStudentTarget() : {};
+  const targetPart = `${target.targetFamilyId || 'self'}:${target.targetChildId || 'self'}`;
+  return `${wx.env.USER_DATA_PATH}/flashcard-source-${encodeURIComponent(`${targetPart}:${sourceId || 'all'}`)}.json`;
 }
 
 function getFlashcardSourceCacheVersion() {
@@ -565,20 +573,20 @@ function buildBookDebugLines(stage, book, options) {
   ];
   if (data.error) {
     lines.push(`cloudError.message=${data.error.message || data.error.errMsg || String(data.error)}`);
-    lines.push('锁定修复点：cloudfunctions/yoyo/services/flashcard.service.js getDictionaryBook 或 storage.adapter.downloadCloudJson。');
+    lines.push('FIX: Check getDictionaryBook in flashcard.service.js or storage.adapter.downloadCloudJson.');
   } else if (!phoneticCount && cards.length) {
-    lines.push('锁定修复点：云存储词汇书 JSON phonetic 字段缺失，或 buildBookCard 未映射 phonetic。');
+    lines.push('FIX: The cloud word-book JSON lacks phonetic, or buildBookCard did not map it.');
   } else if (!rows.length && !cards.length) {
-    lines.push('链路断点：准备读取云存储词汇书 JSON。');
+    lines.push('DEBUG: Preparing to read the cloud word-book JSON.');
   } else {
-    lines.push('链路断点：云存储 JSON 已返回 phonetic；若页面仍看不到，查 WXML 渲染或旧缓存。');
+    lines.push('DEBUG: Cloud JSON returned phonetic; check WXML rendering or stale cache if it is still missing.');
   }
   return lines;
 }
 
 function shouldShowBookDebug(lines) {
   return (lines || []).some((line) => (
-    String(line || '').indexOf('锁定修复点') >= 0
+    String(line || '').indexOf('FIX:') >= 0
     || String(line || '').indexOf('cloudError.message=') === 0
   ));
 }
@@ -586,11 +594,14 @@ function shouldShowBookDebug(lines) {
 function buildLibraryDebugLines(data, activeSourceId, library) {
   if (activeSourceId || (library || []).length) return [];
   const syncMode = (data && data.syncMode) || '';
+  if (syncMode !== 'cloud-error') return [];
   const target = getTargetDebugText();
+  const cloudError = (data && data.cloudError) || {};
+  const syncDebug = (data && data.syncDebug) || {};
   return [
     `DEBUG: reading/flashcards.loadCards -> store.getFlashcardReview -> cloud.getFlashcardReview.library：${(library || []).length}`,
-    `${target}；syncMode=${syncMode || 'unknown'}；partial=${data && data.partial ? 'true' : 'false'}`,
-    '链路断点：我的词库云端真实返回为空；请回到加入页查看 addDictionaryWord 的 target child 是否一致。'
+    `${target}；syncMode=${syncMode}；cloudError.message=${cloudError.message || syncDebug.reason || 'unknown'}；envId=${syncDebug.envId || 'unknown'}`,
+    'DEBUG: Cloud vocabulary failed. Check store.getFlashcardReview and cloud.getFlashcardReview.'
   ];
 }
 
@@ -625,7 +636,7 @@ Page({
     dictionaryBooks: DEFAULT_DICTIONARY_BOOKS,
     importingBook: '',
     activeSourceId: '',
-    activeSourceTitle: '我的词库',
+    activeSourceTitle: text('myLibrary', '我的词库'),
     phoneticPreview: '',
     isBookPlan: false,
     isUnlimitedPlan: false,
@@ -672,20 +683,25 @@ Page({
       clearTimeout(this.audioPrefetchTimer);
       this.audioPrefetchTimer = null;
     }
+    if (this.sourcePrefetchTimer) {
+      clearTimeout(this.sourcePrefetchTimer);
+      this.sourcePrefetchTimer = null;
+    }
     if (this.flashcardAudioContext) {
       this.flashcardAudioContext.destroy();
       this.flashcardAudioContext = null;
-    }
-    if (this.completionSfxContext) {
-      this.completionSfxContext.destroy();
-      this.completionSfxContext = null;
     }
   },
   onShow() {
     this.flashcardPerf = page.startPagePerf('flashcards');
     page.syncTheme(this);
     this.setData(Object.assign({}, getNavLayout(), {
-      previewMode: store.getDeviceStudyRole() !== 'student'
+      previewMode: store.getDeviceStudyRole() !== 'student',
+      dictionaryBooks: (this.data.dictionaryBooks || DEFAULT_DICTIONARY_BOOKS).map((book) => Object.assign({}, book, {
+        title: book.level === 'senior' ? text('seniorBook', book.title) : text('juniorBook', book.title),
+        coverMark: book.level === 'senior' ? text('seniorMark', book.coverMark) : text('juniorMark', book.coverMark)
+      })),
+      activeSourceTitle: this.data.activeSourceId ? this.data.activeSourceTitle : text('myLibrary', '我的词库')
     }), () => {
       if (this.flashcardPerf) {
         this.flashcardPerf.ready('pageReady', {
@@ -695,7 +711,11 @@ Page({
         });
       }
     });
-    if (this.data.mode === 'review' || this.data.sourceMode === 'bookshelf') return;
+    if (this.data.mode === 'review') return;
+    if (this.data.sourceMode === 'bookshelf') {
+      this.prefetchVocabularySources();
+      return;
+    }
     this.loadCards();
   },
   getFlashcardLibrary() {
@@ -714,6 +734,67 @@ Page({
       library: [],
       libraryGroups: this.getRenderedLibraryGroups(library)
     }));
+  },
+  startSourcePerf(sourceId) {
+    this.sourcePerfId = sourceId || 'all';
+    this.sourcePerf = page.startPagePerf(`flashcards-data:${this.sourcePerfId}`);
+  },
+  markSourceReady(meta) {
+    if (!this.sourcePerf) return;
+    this.sourcePerf.ready('pageReady', Object.assign({
+      sourceId: this.sourcePerfId
+    }, meta || {}));
+  },
+  markSourceCloudRefresh(meta) {
+    if (!this.sourcePerf) return;
+    this.sourcePerf.mark('cloudRefresh', Object.assign({
+      sourceId: this.sourcePerfId
+    }, meta || {}));
+  },
+  prefetchVocabularySources() {
+    const target = store.getSelectedStudentTarget ? store.getSelectedStudentTarget() : {};
+    const targetPart = `${target.targetFamilyId || 'self'}:${target.targetChildId || 'self'}`;
+    const cacheVocabularyProgress = (data) => {
+      const currentTarget = store.getSelectedStudentTarget ? store.getSelectedStudentTarget() : {};
+      const currentTargetPart = `${currentTarget.targetFamilyId || 'self'}:${currentTarget.targetChildId || 'self'}`;
+      if (!data || data.syncMode === 'cloud-error' || currentTargetPart !== targetPart) return;
+      writeSourceCache('', this.buildFlashcardData(data, '', readSourceCache('')));
+      DEFAULT_DICTIONARY_BOOKS.forEach((sourceBook) => {
+        const sourceId = getBookSourceId(sourceBook.level);
+        const cachedBook = readSourceCache(sourceId);
+        if (cachedBook && (cachedBook.library || []).length) {
+          writeSourceCache(sourceId, this.buildFlashcardData(data, sourceId, cachedBook));
+        }
+      });
+    };
+    const reviewRequest = store.getFlashcardReview({ scope: 'personal' }, cacheVocabularyProgress);
+    reviewRequest.then(cacheVocabularyProgress).catch(() => {});
+    if (this.sourcePrefetchTimer) clearTimeout(this.sourcePrefetchTimer);
+    this.sourcePrefetchTimer = setTimeout(async () => {
+      this.sourcePrefetchTimer = null;
+      for (let index = 0; index < DEFAULT_DICTIONARY_BOOKS.length; index += 1) {
+        const book = normalizeBook(DEFAULT_DICTIONARY_BOOKS[index]);
+        const sourceId = getBookSourceId(book.level);
+        if (readSourceCache(sourceId)) continue;
+        try {
+          const bookData = await loadBookCardsFromStorage(book);
+          const currentTarget = store.getSelectedStudentTarget ? store.getSelectedStudentTarget() : {};
+          const currentTargetPart = `${currentTarget.targetFamilyId || 'self'}:${currentTarget.targetChildId || 'self'}`;
+          if (currentTargetPart !== targetPart) return;
+          const baseCache = {
+            library: bookData.cards || [],
+            settings: readPlanSettings(sourceId, this.data.settings),
+            today: effects.todayKey(),
+            logs: [],
+            dictionaryBooks: this.data.dictionaryBooks
+          };
+          const reviewData = await store.getFlashcardReview({ sourceId }).catch(() => null);
+          writeSourceCache(sourceId, reviewData && reviewData.syncMode !== 'cloud-error'
+            ? this.buildFlashcardData(reviewData, sourceId, baseCache)
+            : baseCache);
+        } catch (error) {}
+      }
+    }, 500);
   },
   buildFlashcardData(data, activeSourceId, cached) {
     const rawLibrary = data && Array.isArray(data.library) ? data.library : [];
@@ -781,13 +862,21 @@ Page({
     const keepReviewSession = this.data.mode === 'review';
     this.setData({ loading: true });
     const activeSourceId = this.data.activeSourceId || '';
-    const cached = activeSourceId ? readSourceCache(activeSourceId) : null;
+    const reviewOptions = isBookSource(activeSourceId)
+      ? { sourceId: activeSourceId }
+      : { scope: 'personal' };
+    const cached = readSourceCache(activeSourceId);
     if (cached && !keepReviewSession) {
       const cachedData = this.buildFlashcardData(Object.assign({}, cached, { __cacheHit: true }), activeSourceId, cached);
       this.applyFlashcardData(Object.assign({}, cachedData, {
         loading: false
       }));
       writeSourceCache(activeSourceId, cachedData);
+      this.markSourceReady({
+        cacheHit: true,
+        source: 'source-cache',
+        total: (cached.library || []).length
+      });
       if (this.flashcardPerf) {
         this.flashcardPerf.ready('pageReady', {
           cacheHit: true,
@@ -795,7 +884,7 @@ Page({
           total: (cached.library || []).length
         });
       }
-      store.getFlashcardReview((fresh) => {
+      store.getFlashcardReview(reviewOptions, (fresh) => {
         if (this.data.mode !== 'review' && (this.data.activeSourceId || '') === activeSourceId) {
           const freshData = this.buildFlashcardData(fresh, activeSourceId, cached);
           this.applyFlashcardData(freshData);
@@ -806,6 +895,7 @@ Page({
               total: freshData.library.length
             });
           }
+          this.markSourceCloudRefresh({ total: freshData.library.length });
         }
       }).then((fresh) => {
         if (fresh && !fresh.__cacheHit && fresh.syncMode !== 'cloud-error' && this.data.mode !== 'review' && (this.data.activeSourceId || '') === activeSourceId) {
@@ -816,7 +906,14 @@ Page({
       });
       return;
     }
-    const data = await store.getFlashcardReview();
+    const data = await store.getFlashcardReview(reviewOptions, (fresh) => {
+      if (this.data.mode !== 'review' && (this.data.activeSourceId || '') === activeSourceId) {
+        const freshData = this.buildFlashcardData(fresh, activeSourceId, cached);
+        this.applyFlashcardData(freshData);
+        writeSourceCache(activeSourceId, freshData);
+        this.markSourceCloudRefresh({ total: freshData.library.length });
+      }
+    });
     const nextData = this.buildFlashcardData(data, activeSourceId, cached);
     if (keepReviewSession) {
       this.setData({
@@ -831,6 +928,11 @@ Page({
     }
     this.applyFlashcardData(nextData);
     writeSourceCache(activeSourceId, nextData);
+    this.markSourceReady({
+      cacheHit: !!data.__cacheHit,
+      source: data.__cacheHit ? 'cloud-cache' : 'cloud',
+      total: nextData.library.length
+    });
     if (this.flashcardPerf) {
       this.flashcardPerf.ready('pageReady', {
         cacheHit: !!data.__cacheHit,
@@ -843,13 +945,14 @@ Page({
     const level = event.currentTarget.dataset.level || '';
     if (!level || this.data.importingBook) return;
     const sourceId = getBookSourceId(level);
+    this.startSourcePerf(sourceId);
     const book = normalizeBook((this.data.dictionaryBooks || []).find((item) => item.level === level) || { level });
     const cached = readSourceCache(sourceId);
     this.setData({
       sourceMode: 'library',
       mode: 'library',
       activeSourceId: sourceId,
-      activeSourceTitle: book.title || '词汇书',
+      activeSourceTitle: book.title || text('wordBook', '词汇书'),
       importingBook: book.imported ? '' : level,
       flashcardDebugLines: []
     });
@@ -860,7 +963,6 @@ Page({
         cardCount: (cached.library || []).length
       });
       this.setData({ flashcardDebugLines: shouldShowBookDebug(cachedLines) ? cachedLines : [] });
-      console.log(cachedLines.join('\n'));
       await this.loadCards();
     } else {
       this.setFlashcardLibrary([]);
@@ -880,7 +982,6 @@ Page({
         const localCards = bookData.cards || [];
         const debugLines = buildBookDebugLines('cloud-json', book, { rows, cards: localCards });
         this.setData({ flashcardDebugLines: shouldShowBookDebug(debugLines) ? debugLines : [] });
-        console.log(debugLines.join('\n'));
         const sourceSettings = readPlanSettings(sourceId, this.data.settings);
         const effectiveSettings = getEffectiveSettings(sourceSettings, localCards, sourceId);
         const limitOptions = buildLimitOptions(localCards.length);
@@ -919,29 +1020,40 @@ Page({
         };
         this.applyFlashcardData(nextData);
         writeSourceCache(sourceId, nextData);
+        this.markSourceReady({
+          cacheHit: false,
+          source: 'dictionary-cloud',
+          total: localCards.length
+        });
         ready = true;
-        store.getFlashcardReview().then((fresh) => {
+        const applyFreshBookProgress = (fresh) => {
           if (this.data.mode !== 'review' && (this.data.activeSourceId || '') === sourceId) {
             const freshData = this.buildFlashcardData(fresh, sourceId, { library: localCards });
             this.applyFlashcardData(freshData);
             writeSourceCache(sourceId, freshData);
+            this.markSourceCloudRefresh({ total: freshData.library.length });
           }
+        };
+        store.getFlashcardReview({ sourceId }, applyFreshBookProgress).then((fresh) => {
+          if (fresh && !fresh.__cacheHit) applyFreshBookProgress(fresh);
         }).catch(() => {});
       } catch (error) {
         const debugLines = buildBookDebugLines('error', book, { error });
         this.setData({ flashcardDebugLines: debugLines });
         console.warn(debugLines.join('\n'));
-        wx.showToast({ title: '词书读取失败', icon: 'none' });
+        wx.showToast({ title: text('loadFailed', '词书读取失败'), icon: 'none' });
       }
     }
     this.setData({ importingBook: '' });
   },
   useAllVocabulary() {
+    this.startSourcePerf('all');
     this.setData({
       sourceMode: 'library',
       mode: 'library',
       activeSourceId: '',
-      activeSourceTitle: '我的词库'
+      activeSourceTitle: text('myLibrary', '我的词库'),
+      loading: true
     });
     this.loadCards();
   },
@@ -992,7 +1104,7 @@ Page({
     this.setData({
       limitPickerVisible: true,
       limitPickerField: field,
-      limitPickerTitle: field === 'newLimit' ? '今日新学' : '今日复习',
+      limitPickerTitle: field === 'newLimit' ? text('newToday', '今日新学') : text('reviewToday', '今日复习'),
       selectedLimitIndex,
       limitScrollTop: selectedLimitIndex * getLimitItemHeightPx()
     });
@@ -1062,7 +1174,7 @@ Page({
         if (Date.now() < Number(this.silentAudioErrorUntil || 0)) {
           return;
         }
-        wx.showToast({ title: '播放失败，稍后再试', icon: 'none' });
+        wx.showToast({ title: text('playbackFailed', '播放失败，稍后再试'), icon: 'none' });
       });
     }
     if (options && options.silent) {
@@ -1075,14 +1187,11 @@ Page({
   },
   playCompletionSfx() {
     if (this.data.audioPlaying || this.data.audioLoading) return;
-    if (!this.completionSfxContext) {
-      this.completionSfxContext = wx.createInnerAudioContext();
-      this.completionSfxContext.obeyMuteSwitch = true;
-    }
-    this.completionSfxContext.stop();
-    this.completionSfxContext.src = COMPLETION_SFX_SRC;
-    this.completionSfxContext.play();
-    effects.playVoice('flashcardComplete', { delayMs: 450 });
+    effects.playComplete({
+      voiceKey: 'flashcardComplete',
+      voiceDelayMs: 1000,
+      onceKey: `flashcards:${this.data.today || effects.todayKey()}:${this.data.activeSourceId || 'daily-vocabulary'}`
+    });
   },
   scheduleAutoSpeakCurrent() {
     if (this.autoSpeakTimer) {
@@ -1184,7 +1293,7 @@ Page({
     if (!text) {
       this.setData({ audioCompleted: true });
       if (!silent) {
-        wx.showToast({ title: '暂无发音内容', icon: 'none' });
+        wx.showToast({ title: text('noAudio', '暂无发音内容'), icon: 'none' });
       }
       return;
     }
@@ -1268,7 +1377,7 @@ Page({
         });
       } else if (!silent) {
         this.setData({ audioCompleted: true });
-        wx.showToast({ title: '发音失败，稍后重试', icon: 'none' });
+        wx.showToast({ title: text('pronunciationFailed', '发音失败，稍后重试'), icon: 'none' });
       } else {
         this.setData({ audioCompleted: true });
       }
@@ -1300,7 +1409,6 @@ Page({
   persistActiveSourceState() {
     if (this.data.previewMode) return;
     const activeSourceId = this.data.activeSourceId || '';
-    if (!activeSourceId) return;
     writeSourceCache(activeSourceId, {
       library: this.getFlashcardLibrary(),
       libraryGroups: [],
@@ -1409,13 +1517,13 @@ Page({
     if (!stats.reviewed || (!force && stats.reviewed % 5 !== 0)) return;
     if (this.lastVocabularyCompletionSyncedReviewed === stats.reviewed) return;
     this.lastVocabularyCompletionSyncedReviewed = stats.reviewed;
-    const sourceTitle = this.data.activeSourceTitle || '词汇复习';
+    const sourceTitle = this.data.activeSourceTitle || text('navTitle', '词汇复习');
     store.recordStudyCompletion({
       type: 'vocabulary',
       targetId: this.data.activeSourceId || 'daily-vocabulary',
-      title: sourceTitle === '我的词库' ? '词汇复习' : sourceTitle,
-      meta: '词汇',
-      progressText: `复习 ${stats.reviewed} 张 · 不熟 ${stats.unfamiliar || 0} 张`,
+      title: sourceTitle === text('myLibrary', '我的词库') ? text('navTitle', '词汇复习') : sourceTitle,
+      meta: text('vocabulary', '词汇'),
+      progressText: `${text('reviewProgress', '复习')} ${stats.reviewed}${text('cardUnit', ' 张')} · ${text('unfamiliarProgress', '不熟')} ${stats.unfamiliar || 0}${text('cardUnit', ' 张')}`,
       latestAttempt: Object.assign({}, stats, {
         sourceId: this.data.activeSourceId || '',
         sourceTitle,

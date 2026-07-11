@@ -21,21 +21,25 @@
 - `A1/Unlock1/Unlock1 听口音频 Class Audio`
 - `A1/Super simple songs`
 - `A2/Unlock2/Class Audio`
+- `A2/unlock2 第三版/Audio`
 - `B1/Unlock3/Class Audio`
 - `B2/Unlock4/Class Audio`
+- `B2/unlock4 第三版/Audio`
 - `_transcripts/A1/peppa`
 - `_transcripts/A1/unlock1`
 - `_transcripts/A1/songs`
 - `_transcripts/A2/unlock2`
+- `_transcripts/A2/unlock2-third-edition`
 - `_transcripts/B1/unlock3`
 - `_transcripts/B2/unlock4`
+- `_transcripts/B2/unlock4-third-edition`
 
 要求：
 
 - `Peppa` 每季独立子目录
 - 音频 `.mp3` 与对应 `.pdf` 尽量放同目录
 - `Unlock1` 音频与脚本 PDF 当前放在 `Unlock1 听口音频 Class Audio` 子目录
-- `Unlock2/3/4` 只上传本地 `data/transcript-build/unlock-series/**/upload-audio-list.txt` 中列出的 `>= 60 秒` 音频
+- `Unlock2/3/4` 第二版只上传本地 `data/transcript-build/unlock-series/**/upload-audio-list.txt` 中列出的 `>= 60 秒` 音频；第三版按对应清洗任务要求执行，Unlock 2 和 Unlock 4 第三版均全量导入、不做时长过滤
 - `Song` 当前从 `A1/Super simple songs` 递归扫描，至少要有可识别音频
 - transcript 正式文件统一放在 `_transcripts/<level>/<series>/`
 
@@ -60,6 +64,13 @@
 3. 对旧 `_id` 做 diff 校验：除明确修复并记录原因外，旧记录不得变化。
 4. 校验上传后总数 `>=` 上传前总数，旧 `_id` 全部仍存在。
 5. 用 HTTPS 验证目标 JSON 返回 200，并抽查旧内容和新增内容都可读。
+
+每次内容上传后必须做页面性能验收：
+
+- 缓存首屏目标 `< 300ms`，冷启动云端返回目标 `< 1200ms`。
+- 目录首屏只返回标题、数量和可用状态；不得加载 transcript、学习包或全量任务详情。
+- 听力素材上传后必须验证 `getListeningPlanOverview` 不扫描云目录，只读静态 manifest 摘要；用户点进素材后才读任务和 transcript。
+- 运行相关结构回归测试和 `pageReadyMs/cacheHit/cloudRefreshMs` 埋点检查；不达标先修复再发布。
 
 禁止：
 
@@ -117,6 +128,7 @@
 - `run/output/peppa-word-tracks.json` -> `_transcripts/A1/peppa/bundle.json`
 - `data/transcript-build/unlock1-word-align/output/unlock1-word-tracks.json` -> `_transcripts/A1/unlock1/bundle.json`
 - `Super simple songs` 当前交付包 -> `_transcripts/A1/songs/bundle.json`
+- `data/transcript-build/unlock2-third-edition/A2/unlock2/bundle-draft.json` -> `_transcripts/A2/unlock2-third-edition/bundle-wordaligned-v1.json`
 
 说明：
 

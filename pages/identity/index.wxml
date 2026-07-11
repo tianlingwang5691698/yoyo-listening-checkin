@@ -1,66 +1,66 @@
-<view class="theme-{{theme}} page-shell identity-page">
+<view class="theme-{{theme}} language-{{language}} page-shell identity-page">
   <view wx:if="{{theme === 'library'}}" class="library-identity">
     <view class="library-pass-head">
       <view class="library-kicker">Reader Card</view>
-      <view class="library-title">绑定身份</view>
-      <view class="library-copy">用学号，把家长和同一份打卡记录连起来。</view>
+      <view class="library-title">{{texts.title}}</view>
+      <view class="library-copy">{{texts.subtitle}}</view>
     </view>
 
     <view class="library-role-tabs">
       <view class="library-role-tab {{role === 'parent' ? 'is-active' : ''}}" data-role="parent" bindtap="chooseRole">
-        <view class="role-title">我是家长</view>
-        <view class="role-copy">输入 6 位学号。</view>
+        <view class="role-title">{{texts.parentRole}}</view>
+        <view class="role-copy">{{texts.parentRoleCopy}}</view>
       </view>
       <view class="library-role-tab {{role === 'student' ? 'is-active' : ''}}" data-role="student" bindtap="chooseRole">
-        <view class="role-title">我是学生</view>
-        <view class="role-copy">查看自己的学号。</view>
+        <view class="role-title">{{texts.studentRole}}</view>
+        <view class="role-copy">{{texts.studentRoleCopy}}</view>
       </view>
     </view>
 
     <view class="reader-application" wx:if="{{role === 'parent'}}">
-      <view class="reader-card-label">代学生绑定</view>
-      <view class="reader-card-title">读者证申请表</view>
-      <input class="reader-code-input" type="number" maxlength="6" placeholder="输入 6 位数字" value="{{childCode}}" bindinput="handleChildCodeInput" />
-      <input class="reader-relation-input" placeholder="和孩子关系，例如 妈妈 / 爸爸 / 老师" value="{{displayName}}" bindinput="handleDisplayNameInput" />
-      <button class="library-primary full" bindtap="submitIdentity">绑定孩子记录</button>
+      <view class="reader-card-label">{{texts.bindForStudent}}</view>
+      <view class="reader-card-title">{{texts.applicationTitle}}</view>
+      <input class="reader-code-input" type="number" maxlength="6" placeholder="{{texts.enterSixDigits}}" value="{{childCode}}" bindinput="handleChildCodeInput" />
+      <input class="reader-relation-input" placeholder="{{texts.relationPlaceholder}}" value="{{displayName}}" bindinput="handleDisplayNameInput" />
+      <button class="library-primary full" bindtap="submitIdentity">{{texts.bindRecord}}</button>
     </view>
 
     <view class="reader-pass" wx:else>
-      <view class="reader-card-label">我的学号</view>
-      <view class="reader-number">{{child.childLoginCode || '未生成'}}</view>
-      <view class="library-copy">把这个数字给家长，家长即可加入记录。</view>
+      <view class="reader-card-label">{{texts.myStudentId}}</view>
+      <view class="reader-number">{{child.childLoginCode || texts.notGenerated}}</view>
+      <view class="library-copy">{{texts.shareIdCopy}}</view>
     </view>
   </view>
 
   <block wx:else>
     <view class="identity-hero product-hero">
-      <view class="product-title type-page-title">绑定身份</view>
-      <view class="product-copy">用学号，把家长和同一份打卡记录连起来。</view>
+      <view class="product-title type-page-title">{{texts.title}}</view>
+      <view class="product-copy">{{texts.subtitle}}</view>
     </view>
 
     <view class="role-switch section-panel">
       <view class="role-option {{role === 'parent' ? 'is-active' : ''}}" data-role="parent" bindtap="chooseRole">
-        <view class="role-title">我是家长</view>
-        <view class="role-copy">输入 6 位学号。</view>
+        <view class="role-title">{{texts.parentRole}}</view>
+        <view class="role-copy">{{texts.parentRoleCopy}}</view>
       </view>
       <view class="role-option {{role === 'student' ? 'is-active' : ''}}" data-role="student" bindtap="chooseRole">
-        <view class="role-title">我是学生</view>
-        <view class="role-copy">查看自己的学号。</view>
+        <view class="role-title">{{texts.studentRole}}</view>
+        <view class="role-copy">{{texts.studentRoleCopy}}</view>
       </view>
     </view>
 
     <view class="bind-card form-panel" wx:if="{{role === 'parent'}}">
-      <view class="section-title">学号</view>
-      <view class="section-copy">绑定后会显示为“你的昵称 · 关系”。</view>
-      <input class="form-input identity-input code-input" type="number" maxlength="6" placeholder="输入 6 位数字" value="{{childCode}}" bindinput="handleChildCodeInput" />
-      <input class="form-input identity-input" placeholder="和孩子关系，例如 妈妈 / 爸爸 / 老师" value="{{displayName}}" bindinput="handleDisplayNameInput" />
-      <button class="button-primary" bindtap="submitIdentity">绑定孩子记录</button>
+      <view class="section-title">{{texts.studentId}}</view>
+      <view class="section-copy">{{texts.bindingDisplayCopy}}</view>
+      <input class="form-input identity-input code-input" type="number" maxlength="6" placeholder="{{texts.enterSixDigits}}" value="{{childCode}}" bindinput="handleChildCodeInput" />
+      <input class="form-input identity-input" placeholder="{{texts.relationPlaceholder}}" value="{{displayName}}" bindinput="handleDisplayNameInput" />
+      <button class="button-primary" bindtap="submitIdentity">{{texts.bindRecord}}</button>
     </view>
 
     <view class="bind-card form-panel" wx:else>
-      <view class="section-title">我的学号</view>
-      <view class="section-copy">把这个数字给家长，家长即可加入记录。</view>
-      <view class="student-code">{{child.childLoginCode || '未生成'}}</view>
+      <view class="section-title">{{texts.myStudentId}}</view>
+      <view class="section-copy">{{texts.shareIdCopy}}</view>
+      <view class="student-code">{{child.childLoginCode || texts.notGenerated}}</view>
     </view>
   </block>
 </view>

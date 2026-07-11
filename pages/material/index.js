@@ -1,6 +1,9 @@
 const page = require('../../utils/page');
 const store = require('../../utils/store');
 const snapshotStore = require('../../utils/snapshot');
+const i18n = require('../../utils/i18n');
+
+const text = (key, fallback) => i18n.getPageText('material', key, undefined, fallback);
 
 const LISTENING_SET_SNAPSHOT_KEY = 'currentListeningSetV1';
 const WRITING_PROMPT_SNAPSHOT_KEY = 'currentWritingPromptV1';
@@ -14,23 +17,23 @@ function getMaterialHomeSnapshotKey(moduleId) {
 function buildMaterials(materialIndex) {
   return {
     writing: {
-      title: '写作',
-      eyebrow: '英语写作',
-      copy: '按学段和模考类型选择作文题。',
-      itemUnit: '题',
+      title: text('writingTitle', '写作'),
+      eyebrow: text('writingEyebrow', '英语写作'),
+      copy: text('writingCopy', '按学段和模考类型选择作文题。'),
+      itemUnit: text('questionUnit', '题'),
       exams: [
-        { examId: 'em2', exam: '二模', items: materialIndex.writingEm2 || [] },
-        { examId: 'em1', exam: '一模', items: materialIndex.writingEm1 || [] }
+        { examId: 'em2', exam: text('em2', '二模'), items: materialIndex.writingEm2 || [] },
+        { examId: 'em1', exam: text('em1', '一模'), items: materialIndex.writingEm1 || [] }
       ]
     },
     listening: {
-      title: '听力',
-      eyebrow: '英语听力',
-      copy: '按学段和模考类型选择听力音频。',
-      itemUnit: '套',
+      title: text('listeningTitle', '听力'),
+      eyebrow: text('listeningEyebrow', '英语听力'),
+      copy: text('listeningCopy', '按学段和模考类型选择听力音频。'),
+      itemUnit: text('setUnit', '套'),
       exams: [
-        { examId: 'em2', exam: '二模', items: materialIndex.listeningEm2 || [] },
-        { examId: 'em1', exam: '一模', items: materialIndex.listeningEm1 || [] }
+        { examId: 'em2', exam: text('em2', '二模'), items: materialIndex.listeningEm2 || [] },
+        { examId: 'em1', exam: text('em1', '一模'), items: materialIndex.listeningEm1 || [] }
       ]
     }
   };
@@ -39,7 +42,7 @@ function buildMaterials(materialIndex) {
 function groupByDistrict(items) {
   const map = {};
   (items || []).forEach((item) => {
-    const district = item.district || '其他';
+    const district = item.district || text('other', '其他');
     if (!map[district]) {
       map[district] = {
         district,
@@ -72,13 +75,13 @@ function buildStages(config) {
   return [
     {
       stageId: 'junior',
-      stage: '初中',
+      stage: text('junior', '初中'),
       count: juniorCount,
       exams
     },
     {
       stageId: 'senior',
-      stage: '高中',
+      stage: text('senior', '高中'),
       count: 0,
       exams: []
     }
@@ -145,10 +148,10 @@ function buildMaterialDebug(moduleId, materialIndex) {
 Page({
   data: page.createCloudPageData({
     moduleId: 'listening',
-    title: '听力',
-    eyebrow: '英语听力',
+    title: text('listeningTitle', '听力'),
+    eyebrow: text('listeningEyebrow', '英语听力'),
     copy: '',
-    itemUnit: '套',
+    itemUnit: text('setUnit', '套'),
     showCefrEntry: true,
     stages: [],
     selectedStageId: '',
@@ -203,6 +206,12 @@ Page({
         loading: true,
         pageReady: true
       });
+      await new Promise((resolve) => wx.nextTick(resolve));
+      this.materialPerf.ready('pageReady', {
+        source: 'fallback',
+        cacheHit: false,
+        items: 0
+      });
     }
     const hasSnapshot = !!firstMaterialIndex;
     const materialIndex = await store.getMaterialIndex({ moduleId }, (freshIndex) => {
@@ -229,7 +238,7 @@ Page({
       snapshotStore.write(getMaterialHomeSnapshotKey(moduleId), moduleId, { materialIndex }, { source: `material-${moduleId}` });
     }
     if (this.materialPerf && !firstMaterialIndex) {
-      this.materialPerf.ready('pageReady', {
+      this.materialPerf.mark('cloudRefresh', {
         source: materialIndex && materialIndex.__cacheHit ? 'cache' : (materialIndex && materialIndex.syncMode === 'cloud-error' ? 'error' : 'cloud'),
         cacheHit: !!(materialIndex && materialIndex.__cacheHit),
         items: countMaterialItems(moduleId, materialIndex)
@@ -243,10 +252,33 @@ Page({
   },
   onShow() {
     page.syncTheme(this);
+    const config = buildMaterials({})[this.data.moduleId] || buildMaterials({}).listening;
+    const stages = (this.data.stages || []).map((stage) => Object.assign({}, stage, {
+      stage: stage.stageId === 'senior' ? text('senior', '高中') : text('junior', '初中'),
+      exams: (stage.exams || []).map((exam) => Object.assign({}, exam, {
+        exam: exam.examId === 'em1' ? text('em1', '一模') : text('em2', '二模')
+      }))
+    }));
+    this.setData({
+      title: config.title,
+      eyebrow: config.eyebrow,
+      copy: config.copy,
+      itemUnit: config.itemUnit,
+      stages,
+      exams: (this.data.exams || []).map((exam) => Object.assign({}, exam, {
+        exam: exam.examId === 'em1' ? text('em1', '一模') : text('em2', '二模')
+      }))
+    });
   },
   openCefrListening() {
     wx.switchTab({
       url: '/pages/level/index'
+    });
+  },
+  openPracticeHistory() {
+    if (this.data.moduleId !== 'writing') return;
+    wx.navigateTo({
+      url: '/pages/practice-history/index?type=writing'
     });
   },
   selectStage(event) {

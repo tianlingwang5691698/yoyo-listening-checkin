@@ -1,4 +1,4 @@
-<view class="theme-{{theme}} page-shell library-material-page" wx:if="{{pageReady && theme === 'library' && moduleId === 'listening'}}">
+<view class="theme-{{theme}} language-{{language}} page-shell library-material-page" wx:if="{{pageReady && theme === 'library' && moduleId === 'listening'}}">
   <view class="library-catalog-hero">
     <view class="library-hero-copy">
       <view class="library-eyebrow">{{eyebrow}}</view>
@@ -19,8 +19,8 @@
   <view class="library-course-spine" wx:if="{{showCefrEntry && !selectedStageId}}" bindtap="openCefrListening">
     <view class="library-spine-mark">A1-C2</view>
     <view class="library-spine-main">
-      <view class="library-spine-title">A1-C2 听力内容</view>
-      <view class="library-spine-meta">课程音频库</view>
+      <view class="library-spine-title">{{texts.cefr}}</view>
+      <view class="library-spine-meta">{{texts.audioLibrary}}</view>
     </view>
     <view class="library-spine-arrow">›</view>
   </view>
@@ -28,31 +28,31 @@
   <view class="library-index-book">
     <view class="library-book-head" wx:if="{{!selectedStageId}}">
       <view>
-        <view class="library-book-label">{{showCefrEntry ? '考试听力索引册' : '学段'}}</view>
-        <view class="library-book-title">馆藏题录</view>
+        <view class="library-book-label">{{showCefrEntry ? texts.examIndex : texts.stage}}</view>
+        <view class="library-book-title">{{texts.catalogue}}</view>
       </view>
-      <view class="library-book-count">{{stages.length}} 类</view>
+      <view class="library-book-count">{{stages.length}}{{texts.categoryUnit}}</view>
     </view>
     <view class="library-book-head" wx:elif="{{selectedStageId && !selectedExamId}}">
       <view>
-        <view class="library-back" bindtap="backToStages">‹ 学段</view>
+        <view class="library-back" bindtap="backToStages">{{texts.backStage}}</view>
         <view class="library-book-title">{{selectedStage.stage}}</view>
       </view>
-      <view class="library-book-count">{{exams.length}} 项</view>
+      <view class="library-book-count">{{exams.length}}{{texts.itemUnit}}</view>
     </view>
     <view class="library-book-head" wx:elif="{{selectedExamId && !selectedDistrict}}">
       <view>
-        <view class="library-back" bindtap="backToExams">‹ 模考</view>
+        <view class="library-back" bindtap="backToExams">{{texts.backExam}}</view>
         <view class="library-book-title">{{selectedStage.stage}} · {{selectedExam.exam}}</view>
       </view>
-      <view class="library-book-count">{{districts.length}} 区</view>
+      <view class="library-book-count">{{districts.length}}{{texts.districtUnit}}</view>
     </view>
     <view class="library-book-head" wx:else>
       <view>
-        <view class="library-back" bindtap="backToDistricts">‹ 区县</view>
+        <view class="library-back" bindtap="backToDistricts">{{texts.backDistrict}}</view>
         <view class="library-book-title">{{selectedExam.exam}} · {{selectedDistrict}}</view>
       </view>
-      <view class="library-book-count">{{items.length}} 套</view>
+      <view class="library-book-count">{{items.length}}{{texts.setUnit}}</view>
     </view>
 
     <view class="library-skeleton" wx:if="{{loading && !stages.length}}">
@@ -71,7 +71,7 @@
         </view>
         <view class="library-row-arrow">›</view>
       </view>
-      <view class="library-empty-text" wx:if="{{!stages.length}}">暂无内容。</view>
+      <view class="library-empty-text" wx:if="{{!stages.length}}">{{texts.empty}}</view>
     </view>
 
     <view class="library-index-list" wx:elif="{{selectedStageId && !selectedExamId}}">
@@ -83,7 +83,7 @@
         </view>
         <view class="library-row-arrow">›</view>
       </view>
-      <view class="library-empty-text" wx:if="{{!exams.length}}">暂无内容。</view>
+      <view class="library-empty-text" wx:if="{{!exams.length}}">{{texts.empty}}</view>
     </view>
 
     <view class="library-index-list" wx:elif="{{selectedExamId && !selectedDistrict}}">
@@ -95,7 +95,7 @@
         </view>
         <view class="library-row-arrow">›</view>
       </view>
-      <view class="library-empty-text" wx:if="{{!districts.length}}">暂无内容。</view>
+      <view class="library-empty-text" wx:if="{{!districts.length}}">{{texts.empty}}</view>
     </view>
 
     <view class="library-index-list" wx:else>
@@ -105,18 +105,18 @@
           <view class="library-row-title">{{item.title}}</view>
           <view class="library-row-meta">{{item.year}} · {{item.district}} · {{item.examType}}</view>
           <view class="library-set-detail" wx:if="{{expandedItemId === item.materialItemId}}">
-            <view>音频已收录</view>
-            <view wx:if="{{item.transcript}}">文本：{{item.transcript}}</view>
+            <view>{{texts.audioReady}}</view>
+            <view wx:if="{{item.transcript}}">{{texts.transcript}}{{item.transcript}}</view>
           </view>
         </view>
-        <view class="library-practice-tag">练习</view>
+        <view class="library-practice-tag">{{texts.practice}}</view>
       </view>
-      <view class="library-empty-text" wx:if="{{!items.length}}">暂无内容。</view>
+      <view class="library-empty-text" wx:if="{{!items.length}}">{{texts.empty}}</view>
     </view>
   </view>
 </view>
 
-<view class="theme-{{theme}} page-shell material-page material-library-writing" wx:if="{{pageReady && theme === 'library' && moduleId === 'writing'}}">
+<view class="theme-{{theme}} language-{{language}} page-shell material-page material-library-writing" wx:if="{{pageReady && theme === 'library' && moduleId === 'writing'}}">
   <view class="library-writing-head">
     <view class="library-writing-head-copy">
       <view class="library-writing-eyebrow">{{eyebrow}}</view>
@@ -127,19 +127,24 @@
       <view class="library-index-clip"></view>
       <view class="library-index-line is-long"></view>
       <view class="library-index-line"></view>
-      <view class="library-index-stamp">稿件</view>
+      <view class="library-index-stamp">{{texts.manuscript}}</view>
     </view>
   </view>
 
+  <view class="writing-history-tabs is-library">
+    <view class="writing-history-tab is-active">{{texts.prompts}}</view>
+    <view class="writing-history-tab" bindtap="openPracticeHistory">{{texts.history}}</view>
+  </view>
+
   <view class="library-writing-debug" wx:if="{{debugLines.length}}">
-    <view class="library-debug-title">馆藏校验单</view>
+    <view class="library-debug-title">{{texts.catalogue}}</view>
     <view class="library-debug-line" wx:for="{{debugLines}}" wx:key="*this">{{item}}</view>
   </view>
 
   <view class="library-cabinet" wx:if="{{!selectedStageId}}">
     <view class="library-cabinet-label">
-      <text>作文档案柜</text>
-      <text>{{stages.length}} 类</text>
+      <text>{{texts.writingCabinet}}</text>
+      <text>{{stages.length}}{{texts.categoryUnit}}</text>
     </view>
     <view class="library-drawer-grid">
       <view class="library-stage-drawer" wx:for="{{stages}}" wx:key="stageId" data-stage-id="{{item.stageId}}" bindtap="selectStage">
@@ -153,7 +158,7 @@
   <view class="library-cabinet library-open-drawer" wx:elif="{{selectedStageId && !selectedExamId}}">
     <view class="library-cabinet-label">
       <text>{{selectedStage.stage}}</text>
-      <view class="library-back-tab" bindtap="backToStages">‹ 学段</view>
+      <view class="library-back-tab" bindtap="backToStages">{{texts.backStage}}</view>
     </view>
     <view class="library-folder-row">
       <view class="library-exam-folder" wx:for="{{exams}}" wx:key="examId" data-exam-id="{{item.examId}}" bindtap="selectExam">
@@ -161,13 +166,13 @@
         <view class="library-folder-count">{{item.count}} {{itemUnit}}</view>
       </view>
     </view>
-    <view class="library-empty-slip" wx:if="{{!exams.length}}">暂无内容。</view>
+    <view class="library-empty-slip" wx:if="{{!exams.length}}">{{texts.empty}}</view>
   </view>
 
   <view class="library-cabinet library-open-drawer" wx:elif="{{selectedExamId && !selectedDistrict}}">
     <view class="library-cabinet-label">
       <text>{{selectedStage.stage}} · {{selectedExam.exam}}</text>
-      <view class="library-back-tab" bindtap="backToExams">‹ 模考</view>
+      <view class="library-back-tab" bindtap="backToExams">{{texts.backExam}}</view>
     </view>
     <view class="library-district-tabs">
       <view class="library-district-tab" wx:for="{{districts}}" wx:key="district" data-district="{{item.district}}" bindtap="selectDistrict">
@@ -175,13 +180,13 @@
         <view class="library-district-count">{{item.count}} {{itemUnit}}</view>
       </view>
     </view>
-    <view class="library-empty-slip" wx:if="{{!districts.length}}">暂无内容。</view>
+    <view class="library-empty-slip" wx:if="{{!districts.length}}">{{texts.empty}}</view>
   </view>
 
   <view class="library-cabinet library-folder-case" wx:else>
     <view class="library-cabinet-label">
       <text>{{selectedExam.exam}} · {{selectedDistrict}}</text>
-      <view class="library-back-tab" bindtap="backToDistricts">‹ 区县</view>
+      <view class="library-back-tab" bindtap="backToDistricts">{{texts.backDistrict}}</view>
     </view>
     <view class="library-manuscript-list">
       <view class="library-manuscript-row" wx:for="{{items}}" wx:key="stableId" data-item-id="{{item.materialItemId}}" bindtap="openItem">
@@ -190,14 +195,14 @@
           <view class="library-manuscript-meta">{{item.year}} · {{item.district}} · {{item.examType}}</view>
           <view class="library-manuscript-prompt" wx:if="{{expandedItemId === item.materialItemId}}">{{item.prompt}}</view>
         </view>
-        <view class="library-proof-stamp">作文</view>
+        <view class="library-proof-stamp">{{texts.writing}}</view>
       </view>
     </view>
-    <view class="library-empty-slip" wx:if="{{!items.length}}">暂无内容。</view>
+    <view class="library-empty-slip" wx:if="{{!items.length}}">{{texts.empty}}</view>
   </view>
 </view>
 
-<view class="theme-{{theme}} page-shell material-page" wx:elif="{{pageReady && !(theme === 'library' && moduleId === 'listening')}}">
+<view class="theme-{{theme}} language-{{language}} page-shell material-page" wx:elif="{{pageReady && !(theme === 'library' && moduleId === 'listening')}}">
   <view class="material-hero card {{moduleId === 'writing' ? 'is-writing' : 'is-listening'}}">
     <view class="material-hero-copy">
       <view class="material-eyebrow">{{eyebrow}}</view>
@@ -220,17 +225,22 @@
     </view>
   </view>
 
+  <view class="writing-history-tabs" wx:if="{{moduleId === 'writing'}}">
+    <view class="writing-history-tab is-active">{{texts.prompts}}</view>
+    <view class="writing-history-tab" bindtap="openPracticeHistory">{{texts.history}}</view>
+  </view>
+
   <view class="material-card material-channel-card card" wx:if="{{showCefrEntry && !selectedStageId}}">
     <view class="material-card-top">
-      <view class="material-card-label">欧标听力</view>
+      <view class="material-card-label">{{texts.cefrListening}}</view>
       <view class="material-card-state">A1-C2</view>
     </view>
     <scroll-view class="channel-rail" scroll-x="{{true}}" enable-flex="{{true}}">
       <view class="directory-row channel-tile" bindtap="openCefrListening">
         <view class="directory-orb">A</view>
         <view class="directory-main">
-          <view class="directory-title">A1-C2 听力内容</view>
-          <view class="directory-meta">课程音频库</view>
+          <view class="directory-title">{{texts.cefr}}</view>
+          <view class="directory-meta">{{texts.audioLibrary}}</view>
         </view>
         <view class="directory-arrow">›</view>
       </view>
@@ -243,8 +253,8 @@
 
   <view class="material-card material-channel-card card" wx:if="{{!selectedStageId}}">
     <view class="material-card-top">
-      <view class="material-card-label">{{showCefrEntry ? '考试听力' : '学段'}}</view>
-      <view class="material-card-state" wx:if="{{stages.length}}">{{stages.length}} 类</view>
+      <view class="material-card-label">{{showCefrEntry ? texts.examListening : texts.stage}}</view>
+      <view class="material-card-state" wx:if="{{stages.length}}">{{stages.length}}{{texts.categoryUnit}}</view>
     </view>
     <scroll-view class="channel-rail" scroll-x="{{true}}" enable-flex="{{true}}">
       <view class="directory-row channel-tile stage-tile" wx:for="{{stages}}" wx:key="stageId" data-stage-id="{{item.stageId}}" bindtap="selectStage">
@@ -265,7 +275,7 @@
   <view class="material-card drawer-card card" wx:elif="{{selectedStageId && !selectedExamId}}">
     <view class="material-card-top">
       <view class="material-card-label">{{selectedStage.stage}}</view>
-      <view class="directory-back-icon" bindtap="backToStages">‹ 学段</view>
+      <view class="directory-back-icon" bindtap="backToStages">{{texts.backStage}}</view>
     </view>
     <view class="drawer-stack">
       <view class="directory-row drawer-row" wx:for="{{exams}}" wx:key="examId" data-exam-id="{{item.examId}}" bindtap="selectExam">
@@ -277,13 +287,13 @@
         <view class="directory-arrow">›</view>
       </view>
     </view>
-    <view class="empty-state" wx:if="{{!exams.length}}">暂无内容。</view>
+    <view class="empty-state" wx:if="{{!exams.length}}">{{texts.empty}}</view>
   </view>
 
   <view class="material-card drawer-card card" wx:elif="{{selectedExamId && !selectedDistrict}}">
     <view class="material-card-top">
       <view class="material-card-label">{{selectedStage.stage}} · {{selectedExam.exam}}</view>
-      <view class="directory-back-icon" bindtap="backToExams">‹ 模考</view>
+      <view class="directory-back-icon" bindtap="backToExams">{{texts.backExam}}</view>
     </view>
     <view class="drawer-stack">
       <view class="directory-row drawer-row" wx:for="{{districts}}" wx:key="district" data-district="{{item.district}}" bindtap="selectDistrict">
@@ -295,13 +305,13 @@
         <view class="directory-arrow">›</view>
       </view>
     </view>
-    <view class="empty-state" wx:if="{{!districts.length}}">暂无内容。</view>
+    <view class="empty-state" wx:if="{{!districts.length}}">{{texts.empty}}</view>
   </view>
 
   <view class="material-card program-card card" wx:else>
     <view class="material-card-top">
       <view class="material-card-label">{{selectedExam.exam}} · {{selectedDistrict}}</view>
-      <view class="directory-back-icon" bindtap="backToDistricts">‹ 区县</view>
+      <view class="directory-back-icon" bindtap="backToDistricts">{{texts.backDistrict}}</view>
     </view>
     <view class="program-stack">
       <view class="task-row program-drawer" wx:for="{{items}}" wx:key="stableId" data-item-id="{{item.materialItemId}}" bindtap="openItem">
@@ -316,12 +326,12 @@
           <view class="material-detail" wx:if="{{expandedItemId === item.materialItemId}}">
             <view wx:if="{{moduleId === 'writing'}}">{{item.prompt}}</view>
             <view wx:else>
-              <view>音频已收录</view>
-              <view wx:if="{{item.transcript}}">文本：{{item.transcript}}</view>
+              <view>{{texts.audioReady}}</view>
+              <view wx:if="{{item.transcript}}">{{texts.transcript}}{{item.transcript}}</view>
             </view>
           </view>
         </view>
-        <view class="task-state">{{moduleId === 'listening' ? '练习' : '作文'}}</view>
+        <view class="task-state">{{moduleId === 'listening' ? texts.practice : texts.writing}}</view>
       </view>
     </view>
   </view>

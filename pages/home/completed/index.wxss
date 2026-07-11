@@ -124,8 +124,8 @@
 .completed-gallery {
   margin-top: 30rpx;
   display: flex;
-  gap: 22rpx;
-  overflow-x: auto;
+  flex-direction: column;
+  gap: 18rpx;
   padding: 4rpx 2rpx 18rpx;
 }
 
@@ -135,7 +135,8 @@
 
 .completed-card {
   position: relative;
-  flex: 0 0 560rpx;
+  width: 100%;
+  box-sizing: border-box;
   min-height: 250rpx;
   padding: 26rpx;
   overflow: hidden;
@@ -354,8 +355,8 @@
   padding-top: 56rpx;
   padding-bottom: calc(128rpx + env(safe-area-inset-bottom));
   background:
-    linear-gradient(180deg, rgba(20, 40, 58, 0.9) 0, rgba(43, 33, 27, 0.74) 246rpx, rgba(250, 245, 234, 0) 540rpx),
-    linear-gradient(180deg, #ead8b8 0%, #faf5ea 54%, #f3e8d4 100%);
+    radial-gradient(circle at 78% 8%, rgba(210, 170, 108, 0.22), transparent 26%),
+    linear-gradient(180deg, #211712 0, #432e21 300rpx, #ead8b8 610rpx, #faf5ea 100%);
   color: var(--lib-return-wood);
 }
 
@@ -378,7 +379,7 @@
   justify-content: space-between;
   gap: 24rpx;
   background:
-    linear-gradient(90deg, rgba(20, 40, 58, 0.92) 0 22rpx, transparent 22rpx),
+    linear-gradient(90deg, rgba(74, 48, 31, 0.96) 0 22rpx, transparent 22rpx),
     linear-gradient(135deg, var(--lib-return-paper-muted), var(--lib-return-paper) 62%, #ead8b8);
   overflow: hidden;
 }

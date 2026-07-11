@@ -2,48 +2,53 @@ const store = require('../../utils/store');
 const page = require('../../utils/page');
 const labels = require('../../utils/labels');
 const snapshotStore = require('../../utils/snapshot');
+const i18n = require('../../utils/i18n');
 const LEVEL_STAGE_SNAPSHOT_KEY = 'levelStageSnapshotV1';
 const LESSON_TASK_SNAPSHOT_KEY = 'lessonTaskSnapshotV1';
 const LEVEL_STAGE_SNAPSHOT_MAX_AGE_MS = 24 * 60 * 60 * 1000;
 
+function t(key, variables) {
+  const template = i18n.getPageText('levelStage', key);
+  return Object.keys(variables || {}).reduce((text, name) => text.replace(new RegExp(`\\{${name}\\}`, 'g'), variables[name]), template);
+}
+
 const STAGES = {
   'round-1': {
     levelId: 'A1',
-    stageText: '阶段一',
-    title: '听力组合 A',
-    hint: '多种材料累积 A1 听力时长。'
+    stageText: t('phase1'), title: t('comboA'), hint: t('comboHint')
   },
   'round-2': {
     levelId: 'A1',
-    stageText: '阶段二',
-    title: '听力组合 B',
-    hint: '多种材料累积 A1 听力时长。'
+    stageText: t('phase2'), title: t('comboB'), hint: t('comboHint')
   },
   'round-3': {
     levelId: 'A1',
-    stageText: '阶段三',
-    title: '听力组合 C',
-    hint: '多种材料累积 A1 听力时长。'
+    stageText: t('phase3'), title: t('comboC'), hint: t('comboHint')
   },
   custom: {
-    levelId: '听力',
-    stageText: '今日',
-    title: '今日计划',
-    hint: '按你保存的素材顺序完成今天的听力。'
+    levelId: t('listening'), stageText: t('today'), title: t('todayPlan'), hint: t('todayHint')
   }
 };
 
+function getStage(phase) {
+  const key = STAGES[phase] ? phase : 'round-1';
+  if (key === 'custom') return { levelId: t('listening'), stageText: t('today'), title: t('todayPlan'), hint: t('todayHint') };
+  const suffix = key === 'round-2' ? '2' : key === 'round-3' ? '3' : '1';
+  const letter = suffix === '2' ? 'B' : suffix === '3' ? 'C' : 'A';
+  return { levelId: 'A1', stageText: t(`phase${suffix}`), title: t(`combo${letter}`), hint: t('comboHint') };
+}
+
 function getTextType(task) {
   if (!task || task.isPendingAsset) {
-    return '等待';
+    return t('waiting');
   }
   if (task.transcriptTrackId) {
-    return task.syncGranularity === 'line' ? '句级' : '逐词';
+    return task.syncGranularity === 'line' ? t('sentenceSync') : t('wordSync');
   }
   if (task.transcriptStatus === 'pending') {
-    return '暂无文本';
+    return t('noText');
   }
-  return '纯听力';
+  return t('listeningOnly');
 }
 
 function getTaskDurationSec(task, plannedDurationSec) {
@@ -62,9 +67,9 @@ function getDurationMinutes(durationSec) {
 
 function getTaskTitle(task) {
   if (!task || task.isPendingAsset) {
-    return '等待素材';
+    return t('waitingMaterial');
   }
-  return task.audioCompactTitle || task.displayTitle || task.title || '未命名任务';
+  return task.audioCompactTitle || task.displayTitle || task.title || t('unnamedTask');
 }
 
 function buildTaskRows(category) {
@@ -77,10 +82,10 @@ function buildTaskRows(category) {
     return {
       taskId: task.taskId || '',
       title: getTaskTitle(task),
-      meta: [getTextType(task), task.playStepText ? `进度 ${task.playStepText}` : ''].filter(Boolean).join(' · '),
+      meta: [getTextType(task), task.playStepText ? t('progress', { progress: task.playStepText }) : ''].filter(Boolean).join(' · '),
       orderText: task.planSlotIndex ? `${task.planSlotIndex}` : `${index + 1}`,
       completedToday: !!task.completedToday,
-      stateText: task.completedToday ? '完成' : '开始',
+      stateText: task.completedToday ? t('completed') : t('start'),
       taskSnapshot: task,
       disabled: !!task.isPendingAsset
     };
@@ -99,10 +104,10 @@ function buildTaskGroups(categories) {
       groupKey: category.category,
       category: category.category,
       categoryLabel: labels.getCategoryDisplayLabel(category.category, category.categoryLabel),
-      title: task.displayTitle || task.title || '等待素材',
-      taskCountText: taskCount ? `${taskCount} 个任务` : (tasks.length ? `${tasks.length} 个任务` : ''),
+      title: task.displayTitle || task.title || t('waitingMaterial'),
+      taskCountText: taskCount ? t('taskCount', { count: taskCount }) : (tasks.length ? t('taskCount', { count: tasks.length }) : ''),
       textType: getTextType(task),
-      minutesText: minutes ? `${minutes} 分钟` : '待生成',
+      minutesText: minutes ? t('minutes', { minutes }) : t('pending'),
       minutes,
       durationSec,
       taskId: task.taskId || '',
@@ -110,7 +115,7 @@ function buildTaskGroups(categories) {
       taskSnapshot: task,
       disabled,
       expanded: category.expanded !== false,
-      stateText: task.completedToday ? '完成' : disabled ? '未开放' : '›',
+      stateText: task.completedToday ? t('completed') : disabled ? t('unavailable') : '›',
       planRunType: category.planRunType || 'normal',
       planDayIndex: category.planDayIndex || 0
     };
@@ -150,12 +155,14 @@ Page({
   data: page.createCloudPageData({
     levelId: 'A1',
     phase: 'round-1',
-    stage: STAGES['round-1'],
+    stage: getStage('round-1'),
     taskGroups: [],
     expandedGroupKey: '',
-    totalMinutesText: '待生成',
+    totalMinutesText: t('pending'),
     hasTaskGroups: false,
-    hydrated: false
+    hydrated: false,
+    language: i18n.getLanguage(),
+    texts: i18n.getPageTexts('levelStage')
   }),
   applyOverview(data, phase, levelId, preferredExpandedGroupKey, snapshotId) {
     const categories = (data.categories || []).map(labels.normalizeCategory);
@@ -180,10 +187,10 @@ Page({
     const nextData = {
       levelId,
       phase: displayPhase,
-      stage: STAGES[displayPhase] || STAGES['round-1'],
+      stage: getStage(displayPhase),
       taskGroups,
       expandedGroupKey,
-      totalMinutesText: totalMinutes ? `${totalMinutes} 分钟` : '待生成',
+      totalMinutesText: totalMinutes ? t('minutes', { minutes: totalMinutes }) : t('pending'),
       hasTaskGroups,
       hydrated: true
     };
@@ -201,7 +208,7 @@ Page({
     this.setData(page.buildCloudPageData(this.data, {
       levelId,
       phase,
-      stage: STAGES[phase] || STAGES['round-1'],
+      stage: getStage(phase),
       expandedGroupKey: preferredExpandedGroupKey,
       hydrated: false
     }));
@@ -210,10 +217,10 @@ Page({
       this.setData(page.buildCloudPageData(this.data, {
         levelId,
         phase,
-        stage: STAGES[phase] || STAGES['round-1'],
+        stage: getStage(phase),
         taskGroups: normalizeStageTaskGroups(snapshot.taskGroups),
         expandedGroupKey: preferredExpandedGroupKey || snapshot.expandedGroupKey || '',
-        totalMinutesText: snapshot.totalMinutesText || '待生成',
+        totalMinutesText: snapshot.totalMinutesText || t('pending'),
         hasTaskGroups: true,
         hydrated: true
       }));
@@ -243,19 +250,27 @@ Page({
       }, 1200);
       return;
     }
-    const data = await refresh();
+    await new Promise((resolve) => wx.nextTick(resolve));
     this.levelStagePerf.ready('pageReady', {
+      source: 'fallback',
+      cacheHit: false,
+      phase,
+      groups: 0
+    });
+    const data = await refresh();
+    this.levelStagePerf.mark('cloudRefresh', {
       source: data && data.__cacheHit ? 'cache' : (data && data.syncMode === 'cloud-error' ? 'error' : 'cloud'),
       cacheHit: !!(data && data.__cacheHit),
       phase,
       groups: ((data && data.categories) || []).length
     });
-    if (data && !data.__cacheHit && data.syncMode !== 'cloud-error') {
-      this.levelStagePerf.mark('cloudRefresh', { phase, groups: (data.categories || []).length });
-    }
   },
   onShow() {
     page.syncTheme(this);
+    const language = i18n.getLanguage();
+    const texts = i18n.getPageTexts('levelStage', language);
+    wx.setNavigationBarTitle({ title: texts.navTitle });
+    this.setData({ language, texts, stage: getStage(this.data.phase) });
   },
   toggleTaskGroup(event) {
     const groupIndex = Number(event.currentTarget.dataset.groupIndex || 0);

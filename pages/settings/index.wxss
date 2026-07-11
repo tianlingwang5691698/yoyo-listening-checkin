@@ -1,0 +1,314 @@
+.settings-page {
+  min-height: 100vh;
+  padding: 42rpx 28rpx 96rpx;
+  box-sizing: border-box;
+}
+
+.settings-title {
+  font-size: 48rpx;
+  line-height: 1.16;
+  font-weight: 700;
+}
+
+.settings-section-label {
+  font-size: 22rpx;
+  line-height: 1.3;
+  font-weight: 600;
+  letter-spacing: 2rpx;
+}
+
+.settings-subtitle,
+.settings-row-description {
+  font-size: 24rpx;
+  line-height: 1.5;
+}
+
+.settings-section-label {
+  margin: 34rpx 10rpx 14rpx;
+}
+
+.settings-row {
+  min-height: 112rpx;
+  display: flex;
+  align-items: center;
+  gap: 20rpx;
+}
+
+.settings-row.is-static {
+  min-height: 98rpx;
+}
+
+.settings-row-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.settings-row-title {
+  font-size: 30rpx;
+  line-height: 1.3;
+  font-weight: 600;
+}
+
+.settings-row-description {
+  margin-top: 6rpx;
+}
+
+.settings-arrow {
+  flex-shrink: 0;
+  font-size: 38rpx;
+  line-height: 1;
+}
+
+.settings-choice-block {
+  padding-bottom: 24rpx;
+}
+
+.settings-choice-block.with-divider {
+  margin-top: 2rpx;
+  padding-top: 16rpx;
+}
+
+.settings-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12rpx;
+  margin-left: 96rpx;
+}
+
+.settings-option {
+  min-width: 0;
+  min-height: 64rpx;
+  padding: 0 12rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 23rpx;
+  line-height: 1.2;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* 雾蓝玻璃 */
+.theme-warm.settings-page {
+  background: #f6fbfd;
+  color: #17314f;
+}
+
+.warm-settings-hero {
+  min-height: 190rpx;
+  padding: 40rpx 34rpx;
+  border: 1rpx solid rgba(255, 255, 255, 0.88);
+  border-radius: 30rpx;
+  background: rgba(255, 255, 255, 0.56);
+  box-shadow: 0 18rpx 45rpx rgba(74, 111, 135, 0.12);
+  box-sizing: border-box;
+}
+
+.warm-settings-hero .settings-title {
+  margin-top: 4rpx;
+}
+
+.warm-settings-hero .settings-subtitle {
+  max-width: 430rpx;
+  margin-top: 16rpx;
+  color: #60758a;
+}
+
+.theme-warm .settings-section-label {
+  color: #71859a;
+}
+
+.warm-settings-card,
+.warm-admin-card {
+  padding: 8rpx 24rpx;
+  border: 1rpx solid rgba(255, 255, 255, 0.86);
+  border-radius: 28rpx;
+  background: rgba(255, 255, 255, 0.62);
+  box-shadow: 0 12rpx 32rpx rgba(74, 111, 135, 0.09);
+}
+
+.warm-settings-card .with-divider {
+  border-top: 1rpx solid rgba(127, 160, 181, 0.16);
+}
+
+.warm-row-icon {
+  flex-shrink: 0;
+  width: 66rpx;
+  height: 66rpx;
+  border-radius: 22rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(141, 183, 212, 0.17);
+  color: #52738a;
+  font-size: 24rpx;
+  font-weight: 700;
+}
+
+.family-icon view {
+  width: 28rpx;
+  height: 22rpx;
+  border: 3rpx solid #668da4;
+  border-radius: 14rpx 14rpx 8rpx 8rpx;
+}
+
+.appearance-icon view {
+  width: 27rpx;
+  height: 27rpx;
+  border: 4rpx solid #668da4;
+  border-radius: 50%;
+  box-shadow: 11rpx 9rpx 0 -3rpx #86aaa1;
+}
+
+.theme-warm .settings-row-description {
+  color: #71859a;
+}
+
+.theme-warm .settings-arrow {
+  color: #86aaa1;
+}
+
+.warm-options .settings-option {
+  border-radius: 999rpx;
+  background: rgba(141, 183, 212, 0.13);
+  color: #6d8295;
+}
+
+.warm-options .settings-option.is-active {
+  background: #17314f;
+  color: #f9fcfd;
+}
+
+.warm-admin-card {
+  min-height: 112rpx;
+  margin-top: 28rpx;
+  display: flex;
+  align-items: center;
+  gap: 20rpx;
+  border-color: rgba(134, 170, 161, 0.32);
+}
+
+.warm-admin-badge {
+  flex-shrink: 0;
+  padding: 10rpx 14rpx;
+  border-radius: 999rpx;
+  background: rgba(134, 170, 161, 0.18);
+  color: #52766d;
+  font-size: 20rpx;
+  font-weight: 700;
+}
+
+/* 图书馆静谧 */
+.theme-library.settings-page {
+  background: #f3e8d4;
+  color: #14283a;
+}
+
+.library-settings-hero {
+  min-height: 190rpx;
+  padding: 30rpx;
+  display: flex;
+  align-items: center;
+  gap: 28rpx;
+  border: 1rpx solid rgba(184, 149, 98, 0.52);
+  border-radius: 8px;
+  background: #faf5ea;
+  box-shadow: 0 10rpx 28rpx rgba(43, 33, 27, 0.16);
+  box-sizing: border-box;
+}
+
+.library-settings-hero .settings-title {
+  margin-top: 4rpx;
+  font-family: "Songti SC", serif;
+}
+
+.library-settings-hero .settings-subtitle {
+  margin-top: 14rpx;
+  color: #6f675f;
+}
+
+.theme-library .settings-section-label {
+  color: #6f675f;
+}
+
+.library-ledger,
+.library-admin-row {
+  padding: 8rpx 24rpx;
+  border: 1rpx solid rgba(184, 149, 98, 0.46);
+  border-radius: 8px;
+  background: #faf5ea;
+  box-shadow: 0 6rpx 18rpx rgba(43, 33, 27, 0.1);
+}
+
+.library-ledger .with-divider {
+  border-top: 1rpx solid rgba(184, 149, 98, 0.26);
+}
+
+.library-row-index {
+  flex-shrink: 0;
+  width: 54rpx;
+  color: #b89562;
+  font-family: Georgia, serif;
+  font-size: 22rpx;
+}
+
+.theme-library .settings-row-title {
+  font-family: "Songti SC", serif;
+}
+
+.theme-library .settings-row-description {
+  color: #6f675f;
+}
+
+.theme-library .settings-arrow {
+  color: #b89562;
+}
+
+.library-options .settings-option {
+  border: 1rpx solid rgba(184, 149, 98, 0.5);
+  border-radius: 8px;
+  background: #f3e8d4;
+  color: #6f675f;
+}
+
+.library-options .settings-option.is-active {
+  border-color: #2b211b;
+  background: #2b211b;
+  color: #faf5ea;
+}
+
+.library-admin-row {
+  min-height: 112rpx;
+  margin-top: 28rpx;
+  display: flex;
+  align-items: center;
+  gap: 20rpx;
+  background: #faf5ea;
+}
+
+.library-admin-stamp {
+  flex-shrink: 0;
+  min-width: 76rpx;
+  padding: 12rpx 10rpx;
+  border: 1rpx solid #8f6b3c;
+  color: #8f6b3c;
+  font-size: 19rpx;
+  line-height: 1;
+  text-align: center;
+  font-weight: 700;
+  transform: rotate(-2deg);
+  box-sizing: border-box;
+}
+
+@media (max-width: 350px) {
+  .settings-options {
+    margin-left: 0;
+  }
+
+  .warm-settings-hero .settings-subtitle {
+    max-width: 360rpx;
+  }
+}
+.language-en { word-break: normal; overflow-wrap: anywhere; }
+.language-en .settings-title, .language-en .settings-row-title { letter-spacing: 0; }
+.language-en .settings-option { font-size: 24rpx; }

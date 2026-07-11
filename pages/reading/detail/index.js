@@ -3,6 +3,9 @@ const page = require('../../../utils/page');
 const completed = require('../../../utils/completed');
 const snapshotStore = require('../../../utils/snapshot');
 const effects = require('../../../utils/effects');
+const i18n = require('../../../utils/i18n');
+
+const text = (key, fallback) => i18n.getPageText('readingDetail', key, undefined, fallback);
 
 const STUDY_PACK_STORAGE_PREFIX = 'readingStudyPack:';
 const READING_PASSAGE_SNAPSHOT_KEY = 'readingPassageSnapshotV1';
@@ -225,7 +228,7 @@ function termEntries(items, keys, options) {
     if (options && options.answer) {
       const raw = source.questionNumber || source.number || source.question || source.no || source.label || '';
       const match = String(raw).match(/\d+/);
-      label = `第${match ? match[0] : index + 1}题`;
+      label = `${text('questionPrefix', '第')}${match ? match[0] : index + 1}${text('questionSuffix', '题')}`;
     }
 
     return {
@@ -450,7 +453,7 @@ function withGroupIndexes(items) {
 function normalizeAnalysisText(text) {
   const value = String(text || '').trim();
   if (!value || value === '结合原文判断。' || value === '结合原文判断' || /^解析.*请稍等。$/.test(value)) {
-    return '生成解析中';
+    return '点击“查看 AI 解析”后按需加载';
   }
   return value;
 }
@@ -491,15 +494,15 @@ function buildScoreText(attempt) {
   const correctCount = Number(attempt.correctCount);
   const totalCount = Number(attempt.totalCount);
   if (Number.isFinite(correctCount) && Number.isFinite(totalCount) && totalCount > 0) {
-    return `${correctCount * 2} / ${totalCount * 2} 分`;
+    return `${correctCount * 2} / ${totalCount * 2}`;
   }
   const score = Number(attempt.score);
   const totalScore = Number(attempt.totalScore);
   if (Number.isFinite(score) && Number.isFinite(totalScore) && totalScore > 0) {
-    return `${score} / ${totalScore} 分`;
+    return `${score} / ${totalScore}`;
   }
   if (Number.isFinite(score)) {
-    return `${score} 分`;
+    return `${score}`;
   }
   return '';
 }
@@ -514,7 +517,7 @@ function buildReviewSummary(attempt) {
     return '';
   }
   const wrongCount = Math.max(0, totalCount - (Number.isFinite(correctCount) ? correctCount : 0));
-  return wrongCount ? `答对 ${correctCount} 题，错 ${wrongCount} 题。解析已展开。` : `全部答对，共 ${totalCount} 题。解析已展开。`;
+  return `${correctCount}/${totalCount}`;
 }
 
 function mergeStudyPackIntoReview(review, studyPack) {
@@ -524,7 +527,7 @@ function mergeStudyPackIntoReview(review, studyPack) {
   const existingAnswerSentences = base.answerSentences || [];
   const modelAnswerSentences = analyses.map((item) => item && item.answerSentence ? {
     number: item.number,
-    label: `第${item.number}题`,
+    label: `${text('questionPrefix', '第')}${item.number}${text('questionSuffix', '题')}`,
     text: item.answerSentence,
     translation: item.answerSentenceTranslation || ''
   } : null).filter(Boolean);
@@ -572,11 +575,11 @@ function isCompleteStudyPack(studyPack) {
 }
 
 function isQuestionStudyPack(studyPack) {
-  if (!studyPack || String(studyPack.source || '').indexOf('model:') !== 0) {
+  if (!studyPack) {
     return false;
   }
   const analyses = studyPack.questionAnalyses || studyPack.analysis || [];
-  return !!analyses.length && !analyses.some((item) => !item.answerSentence);
+  return !!analyses.length;
 }
 
 function isModelReview(review) {
@@ -597,10 +600,10 @@ function isCardStudyPack(studyPack) {
 }
 
 function getStudySectionLabel(section) {
-  if (section === 'vocabulary') return '生词';
-  if (section === 'phrases') return '短语';
-  if (section === 'patterns') return '句型';
-  return '学习卡';
+  if (section === 'vocabulary') return text('vocabulary', '生词');
+  if (section === 'phrases') return text('phrases', '短语');
+  if (section === 'patterns') return text('patterns', '句型');
+  return text('studyCard', '学习卡');
 }
 
 function recordReadingCompleted(passage, attempt) {
@@ -623,11 +626,11 @@ function recordReadingStudyCompleted(passage, section, studyPack) {
     id: `reading-study:${passage._id}:${section}`,
     type: 'reading-study',
     targetId: passage._id,
-    title: `${getStudySectionLabel(section)}学习`,
+    title: `${getStudySectionLabel(section)} ${text('studyCard', '学习')}`,
     meta: passage.title || '阅读学习包',
     passageId: passage._id,
     section,
-    progressText: `${getStudySectionLabel(section)}已生成`
+    progressText: `${getStudySectionLabel(section)} ${text('analysisReady', '已生成')}`
   };
   completed.addCompletedItem(item);
   store.recordStudyCompletion(item);
@@ -859,18 +862,18 @@ Page({
     review: null,
     activeReviewTab: 'vocabulary',
     reviewTabs: [
-      { key: 'vocabulary', label: '生词', tone: 'word' },
-      { key: 'phrases', label: '短语', tone: 'phrase' },
-      { key: 'patterns', label: '句型', tone: 'pattern' }
+      { key: 'vocabulary', label: text('vocabulary', '生词'), tone: 'word' },
+      { key: 'phrases', label: text('phrases', '短语'), tone: 'phrase' },
+      { key: 'patterns', label: text('patterns', '句型'), tone: 'pattern' }
     ],
     activeHighlight: 'none',
     highlightButtons: [
-      { key: 'none', label: '原文' },
-      { key: 'word', label: '生词' },
-      { key: 'phrase', label: '短语' },
-      { key: 'answer', label: '答案句' },
-      { key: 'pattern', label: '句型' },
-      { key: 'all', label: '全部' }
+      { key: 'none', label: text('original', '原文') },
+      { key: 'word', label: text('vocabulary', '生词') },
+      { key: 'phrase', label: text('phrases', '短语') },
+      { key: 'answer', label: text('answerSentence', '答案句') },
+      { key: 'pattern', label: text('patterns', '句型') },
+      { key: 'all', label: text('all', '全部') }
     ],
     passageSegments: [],
     wordCards: [],
@@ -886,6 +889,10 @@ Page({
     studyErrorText: '',
     failedStudySection: '',
     analysisErrorText: '',
+    questionAnalysisLoading: false,
+    questionAnalysisReady: false,
+    questionAnalysisMessage: '',
+    readingDebugLines: [],
     unfamiliarMap: {},
     scoreText: '',
     reviewSummary: '',
@@ -928,6 +935,14 @@ Page({
         cacheHit: true,
         passageId
       });
+    } else {
+      await new Promise((resolve) => wx.nextTick(resolve));
+      this.readingDetailPerf.ready('pageReady', {
+        source: 'fallback',
+        cacheHit: false,
+        passageId,
+        hasPassage: false
+      });
     }
     await this.loadPassage(passageId, !!snapshot);
   },
@@ -940,7 +955,7 @@ Page({
     });
     this.applyPassage(data && data.passage ? data : { passage: null, latestAttempt: null });
     if (this.readingDetailPerf && !hasSnapshot) {
-      this.readingDetailPerf.ready('pageReady', {
+      this.readingDetailPerf.mark('cloudRefresh', {
         source: data && data.__cacheHit ? 'cache' : (data && data.syncMode === 'cloud-error' ? 'error' : 'cloud'),
         cacheHit: !!(data && data.__cacheHit),
         passageId,
@@ -983,6 +998,7 @@ Page({
       reviewSummary: buildReviewSummary(latestAttempt),
       submitted,
       showReviewDetails: submitted,
+      questionAnalysisReady: !!(cachedPack && cachedPack.studyPack && isQuestionStudyPack(cachedPack.studyPack)),
       hasScore: !!latestAttempt && latestAttempt.score !== null && latestAttempt.score !== undefined
     }));
   },
@@ -1060,18 +1076,45 @@ Page({
       return;
     }
     this._questionAnalysisLoading = true;
+    this.setData({
+      questionAnalysisLoading: true,
+      questionAnalysisMessage: '',
+      readingDebugLines: []
+    });
     try {
       const result = await store.getReadingStudyPack({ passageId, section: 'questions', useCache: false });
+      if (result && result.syncMode === 'cloud-error') {
+        const target = store.getSelectedStudentTarget ? store.getSelectedStudentTarget() : {};
+        const syncDebug = result.syncDebug || {};
+        const cloudError = result.cloudError || {};
+        this.setData({
+          readingDebugLines: [
+            `DEBUG: pages/reading/detail.ensureQuestionAnalysis -> store.getReadingStudyPack -> cloud.getReadingStudyPack -> studyPack=${result.studyPack ? 'present' : 'missing'}`,
+            `DEBUG: pages/reading/detail.ensureQuestionAnalysis -> cloudError.message=${cloudError.message || 'missing'}, syncDebug.reason=${syncDebug.reason || 'missing'}, syncDebug.envId=${syncDebug.envId || 'missing'}`,
+            `DEBUG: pages/reading/detail.ensureQuestionAnalysis -> targetChildId=${target.targetChildId || 'self'}`
+          ]
+        });
+        throw new Error(cloudError.message || text('analysisFailed', '云端解析加载失败'));
+      }
       const studyPack = result && result.studyPack ? result.studyPack : null;
       if (studyPack && isQuestionStudyPack(studyPack)) {
         mergePhoneStudyPack(passageId, studyPack);
         this.applyReview(mergeStudyPackIntoReview(this.data.review, studyPack));
+        this.setData({
+          questionAnalysisReady: true,
+          questionAnalysisMessage: result.cached ? text('analysisReady', '已从云端加载 AI 解析') : text('analysisReady', 'AI 解析已生成并保存到云端')
+        });
       }
     } catch (error) {
-      // Keep the fast standard-answer review if model analysis is unavailable.
+      this.setData({ questionAnalysisMessage: text('analysisFailed', '解析加载失败，请稍后重试') });
     } finally {
       this._questionAnalysisLoading = false;
+      this.setData({ questionAnalysisLoading: false });
     }
+  },
+  requestQuestionAnalysis() {
+    if (this.data.questionAnalysisReady || this.data.questionAnalysisLoading) return;
+    this.ensureQuestionAnalysis(this.data.passage && this.data.passage._id);
   },
   async ensureStudySection(section) {
     const passageId = this.data.passage && this.data.passage._id;
@@ -1098,10 +1141,10 @@ Page({
       }
     } catch (error) {
       this.setData({
-        studyErrorText: `${getStudySectionLabel(section)}生成失败，可重试。`,
+        studyErrorText: `${getStudySectionLabel(section)} ${text('generateFailed', '生成失败，可重试。')}`,
         failedStudySection: section
       });
-      wx.showToast({ title: '生成失败，可重试', icon: 'none' });
+      wx.showToast({ title: text('generateFailed', '生成失败，可重试'), icon: 'none' });
     } finally {
       this._studyPackLoading = false;
       this.setData({ loadingStudySection: '', studyLoadingText: '' });
@@ -1181,21 +1224,21 @@ Page({
       });
       const translated = result && result.sentenceTranslation ? result.sentenceTranslation.translation : '';
       if (!translated) {
-        throw new Error('翻译失败');
+        throw new Error(text('translateFailed', '翻译失败'));
       }
       this._sentenceTranslations = Object.assign({}, this._sentenceTranslations || {}, { [sentence]: translated });
       this.setData({
         selectedSentenceTranslation: translated
       });
     } catch (error) {
-      wx.showToast({ title: error.message || '翻译失败', icon: 'none' });
+      wx.showToast({ title: error.message || text('translateFailed', '翻译失败'), icon: 'none' });
     } finally {
       this.setData({ sentenceTranslating: false });
     }
   },
   toggleWordUnfamiliar(event) {
     if (!canWriteStudyRecord()) {
-      wx.showToast({ title: '家长模式仅试做', icon: 'none' });
+      wx.showToast({ title: text('parentPreview', '家长模式仅试做'), icon: 'none' });
       return;
     }
     const word = String(event.currentTarget.dataset.word || '');
@@ -1205,11 +1248,11 @@ Page({
     const card = (this.data.wordCards || []).find((item) => item.word === word) || { word };
     addUnfamiliarCard(card, 'word');
     this.setData({ unfamiliarMap: getUnfamiliarMap() });
-    wx.showToast({ title: '已加入复习', icon: 'none' });
+    wx.showToast({ title: text('addedReview', '已加入复习'), icon: 'none' });
   },
   togglePhraseUnfamiliar(event) {
     if (!canWriteStudyRecord()) {
-      wx.showToast({ title: '家长模式仅试做', icon: 'none' });
+      wx.showToast({ title: text('parentPreview', '家长模式仅试做'), icon: 'none' });
       return;
     }
     const text = String(event.currentTarget.dataset.text || '');
@@ -1219,7 +1262,7 @@ Page({
     const card = (this.data.phraseCards || []).find((item) => item.text === text) || { text };
     addUnfamiliarCard(card, 'phrase');
     this.setData({ unfamiliarMap: getUnfamiliarMap() });
-    wx.showToast({ title: '已加入复习', icon: 'none' });
+    wx.showToast({ title: text('addedReview', '已加入复习'), icon: 'none' });
   },
   async lookupPassageWord(event) {
     const word = String(event.currentTarget.dataset.word || '').trim();
@@ -1250,7 +1293,7 @@ Page({
       this.setData({ dictionaryEntry: entry, dictionaryLoading: false });
     } catch (error) {
       this.setData({ dictionaryLoading: false });
-      wx.showToast({ title: '查词失败', icon: 'none' });
+      wx.showToast({ title: text('lookupFailed', '查词失败'), icon: 'none' });
     }
   },
   closeDictionary() {
@@ -1263,9 +1306,9 @@ Page({
     this.setData({ dictionaryAdding: true });
     try {
       await store.addDictionaryWord(Object.assign({}, entry, { word }));
-      wx.showToast({ title: '已加入词库', icon: 'none' });
+      wx.showToast({ title: text('addSuccess', '已加入词库'), icon: 'none' });
     } catch (error) {
-      wx.showToast({ title: '加入失败', icon: 'none' });
+      wx.showToast({ title: text('addFailed', '加入失败'), icon: 'none' });
     } finally {
       this.setData({ dictionaryAdding: false });
     }
@@ -1298,9 +1341,9 @@ Page({
       this.setData({
         studyDictionaryAddedMap: Object.assign({}, this.data.studyDictionaryAddedMap || {}, { [key]: true, [text]: true })
       });
-      wx.showToast({ title: '已加入词库', icon: 'none' });
+      wx.showToast({ title: text('addSuccess', '已加入词库'), icon: 'none' });
     } catch (error) {
-      wx.showToast({ title: '加入失败', icon: 'none' });
+      wx.showToast({ title: text('addFailed', '加入失败'), icon: 'none' });
     } finally {
       this.setData({ dictionaryAdding: false });
     }
@@ -1318,7 +1361,7 @@ Page({
         });
         this.dictionaryAudioContext.onError(() => {
           this.setData({ dictionaryAudioLoading: false });
-          wx.showToast({ title: '播放失败，稍后再试', icon: 'none' });
+          wx.showToast({ title: text('playbackFailed', '播放失败，稍后再试'), icon: 'none' });
         });
       }
       this.dictionaryAudioContext.stop();
@@ -1343,7 +1386,7 @@ Page({
       playUrl(url);
     } catch (error) {
       this.setData({ dictionaryAudioLoading: false });
-      wx.showToast({ title: '播放失败，稍后再试', icon: 'none' });
+      wx.showToast({ title: text('playbackFailed', '播放失败，稍后再试'), icon: 'none' });
     }
   },
   async speakStudyAudio(event) {
@@ -1398,7 +1441,7 @@ Page({
             } catch (fallbackError) {}
           }
           this.setData({ speakingWord: '' });
-          wx.showToast({ title: '播放失败，稍后再试', icon: 'none' });
+          wx.showToast({ title: text('playbackFailed', '播放失败，稍后再试'), icon: 'none' });
           console.warn('reading-study-audio-error', error);
         });
       }
@@ -1407,7 +1450,7 @@ Page({
       this.readingAudioContext.play();
     } catch (error) {
       this.setData({ speakingWord: '' });
-      wx.showToast({ title: '发音失败，稍后重试', icon: 'none' });
+      wx.showToast({ title: text('pronunciationFailed', '发音失败，稍后重试'), icon: 'none' });
     } finally {
       this._readingAudioLoading = false;
     }
@@ -1419,7 +1462,7 @@ Page({
     const questions = this.data.passage.questions || [];
     const hasUnanswered = questions.some((question) => !String((this.data.answers || {})[String(question.number)] || '').trim());
     if (hasUnanswered) {
-      wx.showToast({ title: '先完成题目', icon: 'none' });
+      wx.showToast({ title: text('finishFirst', '先完成题目'), icon: 'none' });
       return;
     }
     this.readingEffectPlayed = false;
@@ -1431,7 +1474,7 @@ Page({
         answers: this.data.answers
       });
       if (!result || result.syncMode === 'cloud-error' || !result.attempt || !result.review || !(result.review.analysis || []).length) {
-        throw new Error((result && result.cloudError && result.cloudError.message) || '解析生成失败');
+        throw new Error((result && result.cloudError && result.cloudError.message) || text('analysisFailed', '解析生成失败'));
       }
       this.setData({
         submitting: false,
@@ -1457,17 +1500,16 @@ Page({
           source: result.review.studyPackSource || 'submit'
         });
       }
-      wx.showToast({ title: result.studyWriteAllowed === false ? '试做完成' : '已提交', icon: 'success' });
+      wx.showToast({ title: result.studyWriteAllowed === false ? text('trialDone', '试做完成') : text('submitted', '已提交'), icon: 'success' });
       wx.nextTick(() => {
         wx.pageScrollTo({ selector: '.review-card', duration: 240 });
       });
-      this.ensureQuestionAnalysis(this.data.passage && this.data.passage._id);
     } catch (error) {
       this.setData({
         submitting: false,
-        analysisErrorText: '解析生成失败，可重试。'
+        analysisErrorText: text('analysisFailed', '解析生成失败，可重试。')
       });
-      wx.showToast({ title: '解析失败，可重试', icon: 'none' });
+      wx.showToast({ title: text('analysisFailed', '解析失败，可重试'), icon: 'none' });
     }
   },
   retrySubmit() {
@@ -1479,7 +1521,11 @@ Page({
     if (this.readingEffectTimer) {
       clearTimeout(this.readingEffectTimer);
     }
-    effects.playComplete({ voiceKey: 'readingComplete' });
+    const passageId = (this.data.passage && this.data.passage._id) || 'current';
+    effects.playComplete({
+      voiceKey: 'readingComplete',
+      onceKey: `reading:${effects.todayKey()}:${passageId}`
+    });
     this.setData({ readingCelebrating: true });
     this.readingEffectTimer = setTimeout(() => {
       this.readingEffectTimer = null;

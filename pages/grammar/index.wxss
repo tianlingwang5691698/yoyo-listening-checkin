@@ -1644,3 +1644,8 @@
     transform: translateY(0);
   }
 }
+.language-en button,
+.language-en view,
+.language-en text { overflow-wrap: break-word; word-break: normal; }
+.language-en .library-title,
+.language-en .grammar-title { font-size: 42rpx; line-height: 1.15; }

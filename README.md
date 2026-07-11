@@ -29,7 +29,7 @@
 - CloudBase 环境：`youshengenglish-6glk12rd6c6e719b`
 - 云存储桶：`796f-youshengenglish-6glk12rd6c6e719b-1419984942`
 - 云存储访问域名：`https://796f-youshengenglish-6glk12rd6c6e719b-1419984942.tcb.qcloud.la`
-- 正式配置源：[data/app-config.js](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/data/app-config.js)
+- 正式配置源：[app-config.js](/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/app-config.js)
 
 ## 仓库导航
 

@@ -1,37 +1,51 @@
 const store = require('../../utils/store');
 const page = require('../../utils/page');
+const i18n = require('../../utils/i18n');
+const accountCatalog = require('../../utils/i18n-catalog-account');
 
-function normalizeRows(rows) {
+function buildTexts() {
+  return Object.keys(accountCatalog.admin['zh-CN']).reduce((texts, key) => {
+    texts[key] = i18n.getPageText('admin', key);
+    return texts;
+  }, {});
+}
+
+function formatText(text, values) {
+  return Object.keys(values || {}).reduce((result, key) => result.replace(new RegExp(`\\{${key}\\}`, 'g'), values[key]), String(text || ''));
+}
+
+function normalizeRows(rows, texts) {
   return (rows || []).map((row) => Object.assign({}, row, {
+    childDisplayNickname: !String(row.childNickname || '').trim() || ['同学', '我'].includes(String(row.childNickname || '').trim()) ? texts.defaultNickname : row.childNickname,
     expanded: false,
-    activityText: buildActivityText(row),
+    activityText: buildActivityText(row, texts),
     memberCount: (row.members || []).length,
     members: (row.members || []).map((member) => Object.assign({}, member))
   })).map((row) => {
     const parentMembers = (row.members || []).filter((member) => member.isBindingParent);
     return Object.assign({}, row, {
       parentCount: parentMembers.length,
-      parentNames: parentMembers.map((member) => member.displayName || '未命名').join('、') || ''
+      parentNames: parentMembers.map((member) => member.displayName || texts.unnamed).join(', ') || ''
     });
   });
 }
 
-function formatDateText(value) {
+function formatDateText(value, texts) {
   const date = value ? new Date(value) : null;
-  if (!date || Number.isNaN(date.getTime())) return '未记录';
+  if (!date || Number.isNaN(date.getTime())) return texts.notRecorded;
   const month = `${date.getMonth() + 1}`.padStart(2, '0');
   const day = `${date.getDate()}`.padStart(2, '0');
   return `${month}-${day}`;
 }
 
-function buildActivityText(row) {
+function buildActivityText(row, texts) {
   const count = Number(row && row.loginCount || 0);
   const activityCount = Number(row && row.activityCount || 0);
   const latestTime = row && (row.lastSeenAt || row.lastActivityAt || row.lastLoginAt);
   if (activityCount > 0) {
-    return `登录 ${count} 次 · 学习 ${activityCount} 条 · 最近 ${formatDateText(latestTime)}`;
+    return formatText(texts.activitySummary, { count, activity: activityCount, date: formatDateText(latestTime, texts) });
   }
-  return `登录 ${count} 次 · 最近 ${formatDateText(latestTime)}`;
+  return formatText(texts.loginSummary, { count, date: formatDateText(latestTime, texts) });
 }
 
 function splitRows(rows) {
@@ -51,16 +65,21 @@ Page({
     listMode: 'active',
     activeTotal: 0,
     inactiveTotal: 0,
-    total: 0
+    total: 0,
+    texts: buildTexts(),
+    language: i18n.getLanguage()
   }),
   onShow() {
     this.adminPerf = page.startPagePerf('admin');
     page.syncTheme(this);
+    const texts = buildTexts();
+    this.setData({ texts, language: i18n.getLanguage() });
+    wx.setNavigationBarTitle({ title: texts.navTitle });
     this.loadAdminData();
   },
   applyAdminData(data) {
     if (!data || !data.isAdmin) return false;
-    const rows = normalizeRows(data.rows);
+    const rows = normalizeRows(data.rows, this.data.texts);
     const groups = splitRows(rows);
     this.setData(page.buildCloudPageData(this.data, {
       loading: false,
@@ -76,16 +95,33 @@ Page({
     return true;
   },
   async loadAdminData() {
+    this.setData({ loading: true, errorText: '', rows: [], visibleRows: [] });
+    await new Promise((resolve) => wx.nextTick(resolve));
+    if (this.adminPerf) {
+      this.adminPerf.ready('pageReady', { source: 'permission-shell', cacheHit: false, rows: 0 });
+    }
+    const status = await store.getAdminStatus({ forceRefresh: true });
+    if (this.adminPerf) {
+      this.adminPerf.mark('adminStatusRefresh', { isAdmin: !!(status && status.isAdmin) });
+    }
+    if (!status || status.isAdmin !== true) {
+      this.setData({
+        loading: false,
+        errorText: this.data.texts.noPermission
+      });
+      if (this.adminPerf) {
+        this.adminPerf.mark('permissionResolved', { source: 'forbidden', rows: 0 });
+      }
+      return;
+    }
     const cached = store.getCachedReadResult ? store.getCachedReadResult('getAdminFamilyList', {}) : null;
     const hasCached = this.applyAdminData(cached);
     if (hasCached && this.adminPerf) {
-      this.adminPerf.ready('pageReady', {
+      this.adminPerf.mark('cacheRendered', {
         source: 'cache',
         cacheHit: true,
         rows: (cached.rows || []).length
       });
-    } else {
-      this.setData({ loading: true, errorText: '' });
     }
     try {
       const data = await store.getAdminFamilyList((fresh) => {
@@ -98,16 +134,16 @@ Page({
         const cloudMessage = data && data.cloudError && data.cloudError.message;
         this.setData({
           loading: false,
-          errorText: cloudMessage || '当前微信没有后台权限，或云函数还没有部署最新版本。'
+          errorText: this.data.texts.permissionOrDeployError
         });
         if (this.adminPerf) {
-          this.adminPerf.ready('pageReady', { source: 'error', cacheHit: false, rows: 0 });
+          this.adminPerf.mark('cloudRefresh', { source: 'error', rows: 0 });
         }
         return;
       }
       this.applyAdminData(data);
       if (!hasCached && this.adminPerf) {
-        this.adminPerf.ready('pageReady', {
+        this.adminPerf.mark('cloudRefresh', {
           source: data.__cacheHit ? 'cache' : 'cloud',
           cacheHit: !!data.__cacheHit,
           rows: (data.rows || []).length
@@ -119,10 +155,10 @@ Page({
     } catch (error) {
       this.setData({
         loading: false,
-        errorText: (error && (error.message || error.errMsg)) || '后台数据加载失败，请重新部署 yoyo 云函数后再试。'
+        errorText: this.data.texts.loadFailed
       });
       if (this.adminPerf) {
-        this.adminPerf.ready('pageReady', { source: 'error', cacheHit: false, rows: 0 });
+        this.adminPerf.mark('cloudRefresh', { source: 'error', rows: 0 });
       }
     }
   },

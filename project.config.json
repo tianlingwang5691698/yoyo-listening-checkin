@@ -36,63 +36,7 @@
       },
       {
         "type": "folder",
-        "value": "data/transcript-build"
-      },
-      {
-        "type": "folder",
-        "value": "data/transcripts"
-      },
-      {
-        "type": "folder",
-        "value": "data/imports"
-      },
-      {
-        "type": "folder",
-        "value": "data/dictionary-import"
-      },
-      {
-        "type": "folder",
-        "value": "data/grammar"
-      },
-      {
-        "type": "folder",
-        "value": "data/reading"
-      },
-      {
-        "type": "folder",
-        "value": "data/listening-em2"
-      },
-      {
-        "type": "folder",
-        "value": "data/listening-em1"
-      },
-      {
-        "type": "folder",
-        "value": "data/grammar-em1-upload"
-      },
-      {
-        "type": "folder",
-        "value": "data/grammar-em1"
-      },
-      {
-        "type": "folder",
-        "value": "data/reading-em1"
-      },
-      {
-        "type": "folder",
-        "value": "data/writing-em1"
-      },
-      {
-        "type": "folder",
-        "value": "data/writing-em2"
-      },
-      {
-        "type": "file",
-        "value": "data/material-index.js"
-      },
-      {
-        "type": "file",
-        "value": "data/material-index.json"
+        "value": "data"
       },
       {
         "type": "folder",
@@ -119,28 +63,40 @@
         "value": "assets/README.md"
       },
       {
+        "type": "folder",
+        "value": "assets/audio/voice/tests"
+      },
+      {
+        "type": "file",
+        "value": "assets/library/home-library-study.png"
+      },
+      {
+        "type": "file",
+        "value": "assets/library/library-open-book.png"
+      },
+      {
+        "type": "file",
+        "value": "assets/library/library-reading-lamp-cropped.png"
+      },
+      {
+        "type": "file",
+        "value": "assets/library/library-reading-lamp.png"
+      },
+      {
+        "type": "file",
+        "value": "assets/library/library-desk-foreground.webp"
+      },
+      {
+        "type": "file",
+        "value": "assets/library/library-home-user-bg.webp"
+      },
+      {
         "type": "file",
         "value": "scripts/README.md"
       },
       {
         "type": "file",
         "value": "AGENTS.md"
-      },
-      {
-        "type": "file",
-        "value": "data/reading-passages.sample.js"
-      },
-      {
-        "type": "file",
-        "value": "data/reading-passages.sample.json"
-      },
-      {
-        "type": "file",
-        "value": "data/transcripts/peppa/track-peppa-s101.json"
-      },
-      {
-        "type": "file",
-        "value": "data/transcripts/peppa/track-peppa-s102.json"
       }
     ],
     "include": []

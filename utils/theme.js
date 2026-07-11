@@ -58,8 +58,12 @@ function getThemeOptions() {
   return THEMES.map((item) => Object.assign({}, item));
 }
 
-function applyWindowTheme(value) {
-  const colors = WINDOW_COLORS[normalizeTheme(value)] || WINDOW_COLORS.warm;
+function applyWindowTheme(value, overrides) {
+  const colors = Object.assign(
+    {},
+    WINDOW_COLORS[normalizeTheme(value)] || WINDOW_COLORS.warm,
+    overrides || {}
+  );
   wx.setNavigationBarColor({
     frontColor: colors.frontColor,
     backgroundColor: colors.backgroundColor

@@ -1,5 +1,6 @@
 const theme = require('./theme');
 const monitor = require('./monitor');
+const i18n = require('./i18n');
 
 const CLOUD_PAGE_DEFAULTS = {
   syncMode: 'cloud-error',
@@ -9,7 +10,9 @@ const CLOUD_PAGE_DEFAULTS = {
   theme: 'warm',
   themeClass: 'theme-warm',
   themeOptions: theme.getThemeOptions(),
-  currentThemeLabel: '雾蓝玻璃'
+  currentThemeLabel: '雾蓝玻璃',
+  language: i18n.getLanguage(),
+  texts: i18n.getCommonTexts()
 };
 const IDENTITY_CONFIRMED_KEY = 'yoyoIdentityConfirmedV1';
 const IDENTITY_CONFIRMED_V2_KEY = 'yoyoIdentityConfirmedV2';
@@ -31,17 +34,55 @@ function buildCloudPageData(defaults, data) {
   return Object.assign({}, createCloudPageData(defaults), normalizeCloudPageData(data), theme.buildThemeData());
 }
 
-function syncTheme(target) {
+function getChangedThemeData(target, themeData) {
+  const currentData = (target && target.data) || {};
+  return Object.keys(themeData).reduce((changed, key) => {
+    const currentValue = currentData[key];
+    const nextValue = themeData[key];
+    const equal = (currentValue === nextValue)
+      || (Array.isArray(currentValue) && Array.isArray(nextValue)
+        && JSON.stringify(currentValue) === JSON.stringify(nextValue))
+      || (currentValue && nextValue && typeof currentValue === 'object' && typeof nextValue === 'object'
+        && JSON.stringify(currentValue) === JSON.stringify(nextValue));
+    if (!equal) changed[key] = nextValue;
+    return changed;
+  }, {});
+}
+
+function syncTheme(target, options = {}) {
   const themeData = theme.buildThemeData();
-  theme.applyWindowTheme(themeData.theme);
+  const languageData = i18n.buildPageLanguageData(i18n.getPageScope(target));
+  const pageData = Object.assign({}, themeData, languageData);
+  const windowColors = typeof options.windowColors === 'function'
+    ? options.windowColors(themeData.theme)
+    : options.windowColors;
+  const windowThemeKey = JSON.stringify({ theme: themeData.theme, windowColors: windowColors || null });
+  if (target && target.__windowThemeKey !== windowThemeKey) {
+    theme.applyWindowTheme(themeData.theme, windowColors);
+    target.__windowThemeKey = windowThemeKey;
+  }
   if (target && target.setData) {
-    target.setData(themeData);
+    const changedPageData = getChangedThemeData(target, pageData);
+    if (Object.keys(changedPageData).length) {
+      target.setData(changedPageData);
+    }
+  }
+  const navTitle = languageData.texts && languageData.texts.navTitle;
+  if (navTitle && target && target.__i18nNavTitle !== navTitle) {
+    wx.setNavigationBarTitle({ title: navTitle });
+    target.__i18nNavTitle = navTitle;
   }
   const tabBar = target && target.getTabBar && target.getTabBar();
   if (tabBar && tabBar.setData) {
-    tabBar.setData(themeData);
+    const changedTabThemeData = getChangedThemeData(tabBar, themeData);
+    if (Object.keys(changedTabThemeData).length) {
+      tabBar.setData(changedTabThemeData);
+    }
+    if (typeof tabBar.syncState === 'function') {
+      tabBar.syncState();
+    }
   }
-  return themeData;
+  return pageData;
 }
 
 function setIdentityConfirmed(confirmed) {
@@ -104,7 +145,8 @@ function startPagePerf(scope) {
       const metricName = name || 'pageReady';
       const readyMeta = Object.assign({}, meta || {});
       if (metricName === 'pageReady') {
-        readyMeta.targetMs = readyMeta.cacheHit ? 300 : 1200;
+        readyMeta.preferredMs = readyMeta.cacheHit ? 200 : 600;
+        readyMeta.targetMs = readyMeta.cacheHit ? 200 : 800;
         readyMeta.withinTarget = durationMs < readyMeta.targetMs;
       }
       monitor.logPerf(scope, metricName, durationMs, readyMeta);

@@ -1,9 +1,9 @@
 const store = require('../../utils/store');
 const page = require('../../utils/page');
 const snapshotStore = require('../../utils/snapshot');
-const themeUtil = require('../../utils/theme');
+const i18n = require('../../utils/i18n');
+const accountCatalog = require('../../utils/i18n-catalog-account');
 
-const ADMIN_OPEN_IDS = ['om8JT3Zhqe1zeAiKUGGkU0ACjAWs'];
 const PROFILE_SNAPSHOT_KEY = 'profileHomeSnapshotV1';
 const PROFILE_SNAPSHOT_MAX_AGE_MS = 7 * 24 * 60 * 60 * 1000;
 
@@ -51,6 +51,13 @@ function getDailyEncouragement() {
   };
 }
 
+function buildTexts() {
+  return Object.keys(accountCatalog.profile['zh-CN']).reduce((texts, key) => {
+    texts[key] = i18n.getPageText('profile', key);
+    return texts;
+  }, i18n.getCommonTexts());
+}
+
 function buildProfilePresentation(data) {
   const child = (data && data.child) || {};
   const childLoginCode = String(child.childLoginCode || '');
@@ -58,8 +65,8 @@ function buildProfilePresentation(data) {
   const nickname = String(child.nickname || '').trim();
   return {
     childCodeReady,
-    childCodeText: childCodeReady ? childLoginCode : '未绑定',
-    nicknameRequired: !!child.nicknameRequired || !nickname || ['同学', '我'].includes(nickname) || (nickname === '佑佑' && childLoginCode !== '317613')
+    childCodeText: childCodeReady ? childLoginCode : i18n.getPageText('profile', 'unbound'),
+    profileNickname: (!nickname || ['同学', '我'].includes(nickname)) ? i18n.getPageText('profile', 'defaultNickname') : nickname
   };
 }
 
@@ -87,18 +94,6 @@ function hasDisplayableProfile(data) {
   return true;
 }
 
-function isAdminProfile(data) {
-  const user = (data && (data.currentUser || data.user)) || {};
-  const member = (data && data.currentMember) || {};
-  const ids = [
-    user.openId,
-    member.openId,
-    user.userId,
-    member.userId
-  ].map((item) => String(item || '').trim()).filter(Boolean);
-  return ADMIN_OPEN_IDS.some((openId) => ids.includes(openId) || ids.includes(`user-${openId}`));
-}
-
 Page({
   profileSnapshotData: null,
   markProfileCloudRefresh(data) {
@@ -119,39 +114,48 @@ Page({
     subscriptionPreference: {
       dailyReportEnabled: false
     },
-    childNicknameInput: '',
     dailyEncouragement: getDailyEncouragement(),
     childCodeReady: false,
-    childCodeText: '待同步',
-    nicknameRequired: false,
+    childCodeText: i18n.getPageText('profile', 'pendingSync'),
+    profileNickname: i18n.getPageText('profile', 'defaultNickname'),
     profileHydrated: false,
-    adminVisible: false
+    language: i18n.getLanguage(),
+    texts: buildTexts()
   }),
+  syncLanguage() {
+    const language = i18n.getLanguage();
+    const texts = buildTexts();
+    this.setData({ language, texts });
+    wx.setNavigationBarTitle({ title: texts.navTitle });
+  },
   applyProfileData(data) {
     const profileData = Object.assign({}, data || {});
+    delete profileData.isAdmin;
     this.profileSnapshotData = profileData;
     if (data && data.syncMode !== 'cloud-error') {
       snapshotStore.write(getCurrentProfileSnapshotKey(), buildCurrentProfileSnapshotId(), profileData, { source: 'profile-home' });
     }
     this.setData(page.buildCloudPageData(this.data, Object.assign({}, data, {
       profileHydrated: true,
-      childNicknameInput: (data.child && data.child.nickname) || '',
-      dailyEncouragement: getDailyEncouragement(),
-      adminVisible: !!(data && data.isAdmin)
-        || isAdminProfile(data)
-        || (data.currentMember && data.currentMember.studyRole === 'parent')
-        || !!this.data.adminVisible
+      dailyEncouragement: getDailyEncouragement()
     }, buildProfilePresentation(data))));
   },
   async onShow() {
     this.profilePerf = page.startPagePerf('profile');
     this.profileCloudRefreshLogged = false;
+    this.syncLanguage();
     page.syncTheme(this);
     const tabBar = this.getTabBar && this.getTabBar();
-    if (tabBar) {
+    if (tabBar && tabBar.data.selected !== 3) {
       tabBar.setData({ selected: 3 });
     }
     if (!page.requireIdentityConfirmed()) {
+      await new Promise((resolve) => wx.nextTick(resolve));
+      this.profilePerf.ready('pageReady', {
+        source: 'identity-blocked',
+        cacheHit: true,
+        hydrated: false
+      });
       return;
     }
     const snapshotId = buildCurrentProfileSnapshotId();
@@ -174,7 +178,6 @@ Page({
           this.applyProfileData(fresh);
           this.markProfileCloudRefresh(fresh);
         }).catch(() => {});
-        this.loadAdminStatus();
       }, 600);
       return;
     } else {
@@ -193,75 +196,28 @@ Page({
             this.applyProfileData(fresh);
             this.markProfileCloudRefresh(fresh);
           }).catch(() => {});
-          this.loadAdminStatus();
         }, 600);
         return;
       }
     }
+    await new Promise((resolve) => wx.nextTick(resolve));
+    this.profilePerf.ready('pageReady', {
+      source: 'fallback',
+      cacheHit: false,
+      hydrated: false
+    });
     const data = await store.getProfileData((fresh) => {
       this.applyProfileData(fresh);
       this.markProfileCloudRefresh(fresh);
     });
     this.applyProfileData(data);
-    this.profilePerf.ready('pageReady', {
+    this.profilePerf.mark('cloudRefresh', {
       source: data && data.__cacheHit ? 'cache' : (data && data.syncMode === 'cloud-error' ? 'error' : 'cloud'),
       cacheHit: !!(data && data.__cacheHit),
       hydrated: hasDisplayableProfile(data)
     });
     if (data && !data.__cacheHit && data.syncMode !== 'cloud-error') {
       this.markProfileCloudRefresh(data);
-    }
-    this.loadAdminStatus();
-  },
-  async loadAdminStatus() {
-    try {
-      const data = await store.getAdminStatus();
-      const adminVisible = !!(data && data.isAdmin) || this.data.adminVisible;
-      this.setData({ adminVisible });
-      const profileData = Object.assign({}, this.profileSnapshotData || {}, {
-        isAdmin: !!(data && data.isAdmin)
-      });
-      this.profileSnapshotData = profileData;
-      snapshotStore.write(getCurrentProfileSnapshotKey(), buildCurrentProfileSnapshotId(), profileData, { source: 'profile-admin' });
-    } catch (error) {
-      this.setData({ adminVisible: !!this.data.adminVisible });
-    }
-  },
-  handleChildNicknameInput(event) {
-    this.setData({
-      childNicknameInput: event.detail.value
-    });
-  },
-  async saveChildProfile() {
-    const nickname = String(this.data.childNicknameInput || '').trim();
-    if (!nickname) {
-      wx.showToast({
-        title: '请设置昵称',
-        icon: 'none'
-      });
-      return;
-    }
-    if (['同学', '我'].includes(nickname) || (nickname === '佑佑' && String((this.data.child && this.data.child.childLoginCode) || '').trim() !== '317613')) {
-      wx.showToast({
-        title: '请更换其他名字',
-        icon: 'none'
-      });
-      return;
-    }
-    try {
-      const data = await store.updateChildProfile(nickname);
-      this.applyProfileData(Object.assign({}, data, {
-        childNicknameInput: (data.child && data.child.nickname) || nickname
-      }));
-      wx.showToast({
-        title: '昵称已更新',
-        icon: 'none'
-      });
-    } catch (error) {
-      wx.showToast({
-        title: error.message || '更新失败',
-        icon: 'none'
-      });
     }
   },
   async switchStudyRole(event) {
@@ -272,12 +228,12 @@ Page({
       page.setIdentityConfirmed(true);
       wx.setStorageSync('lastStudyRole', role);
       wx.showToast({
-        title: role === 'student' ? '已切到学生' : '已切到家长',
+        title: role === 'student' ? this.data.texts.switchedStudent : this.data.texts.switchedParent,
         icon: 'none'
       });
     } catch (error) {
       wx.showToast({
-        title: '切换失败',
+        title: this.data.texts.switchFailed,
         icon: 'none'
       });
     }
@@ -287,17 +243,9 @@ Page({
       url: '/pages/parent/index'
     });
   },
-  openFamilyPage() {
+  openSettingsPage() {
     wx.navigateTo({
-      url: '/pages/family/index'
+      url: '/pages/settings/index'
     });
-  },
-  openAdminPage() {
-    wx.navigateTo({ url: '/pages/admin/index' });
-  },
-  switchTheme(event) {
-    const nextTheme = event.currentTarget.dataset.theme || 'warm';
-    themeUtil.setTheme(nextTheme);
-    page.syncTheme(this);
   }
 });

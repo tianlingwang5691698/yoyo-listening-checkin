@@ -1,19 +1,19 @@
-<view class="theme-{{theme}} page-shell parent-page">
+<view class="theme-{{theme}} language-{{language}} page-shell parent-page">
   <view wx:if="{{theme === 'library'}}" class="library-parent">
     <view class="library-letter-head">
       <view>
-        <view class="library-kicker">家庭观察</view>
-        <view class="library-title">日报</view>
+        <view class="library-kicker">{{texts.observation}}</view>
+        <view class="library-title">{{texts.dailyReport}}</view>
       </view>
-      <view class="letter-date">{{todayReport.dateLabel || '今日'}}</view>
+      <view class="letter-date">{{todayReport.dateLabel || texts.today}}</view>
     </view>
     <view class="letter-child-line">
       <view>
-        <view class="entry-title">{{child.nickname || '同学'}}</view>
-        <view class="entry-copy">学号：{{child.childLoginCode || '未绑定'}}</view>
+        <view class="entry-title">{{childDisplayNickname}}</view>
+        <view class="entry-copy">{{texts.studentIdPrefix}}{{child.childLoginCode || texts.unbound}}</view>
       </view>
       <picker wx:if="{{studentNames.length > 1}}" mode="selector" range="{{studentNames}}" value="{{selectedStudentIndex}}" bindchange="handleStudentChange">
-        <view class="library-bookmark">切换学生：{{studentNames[selectedStudentIndex]}}</view>
+        <view class="library-bookmark">{{texts.switchStudentPrefix}}{{studentNames[selectedStudentIndex]}}</view>
       </picker>
     </view>
     <view class="library-debug {{syncMode === 'cloud' ? 'is-cloud' : 'is-local'}}" wx:if="{{showCloudDebug && syncDebug && syncDebug.show}}">
@@ -21,22 +21,22 @@
     </view>
 
     <view class="library-letter">
-      <view class="library-kicker">今日结论</view>
+      <view class="library-kicker">{{texts.todayConclusion}}</view>
       <view class="letter-title">{{parentSummary.title}}</view>
       <view class="letter-copy">{{parentSummary.copy}}</view>
       <view class="letter-note">{{parentSummary.detail}}</view>
-      <view class="library-primary inline" data-date="{{todayReport.date}}" bindtap="openDailyDetail">查看学习档案</view>
+      <view class="library-primary inline" data-date="{{todayReport.date}}" bindtap="openDailyDetail">{{texts.viewLearningFile}}</view>
     </view>
 
     <view class="library-module-panel">
       <view class="library-card-head">
         <view>
-          <view class="library-title small">学习画像</view>
-          <view class="library-copy">{{todayReport.totalCompletedCount || 0}} 项 · {{todayReport.totalMinutes || 0}} 分钟</view>
+          <view class="library-title small">{{texts.todaySummary}}</view>
+          <view class="library-copy">{{todayReport.totalCompletedCount || 0}} {{texts.task}} · {{todayReport.totalMinutes || 0}} {{texts.minute}}</view>
         </view>
       </view>
-      <view class="library-module-grid">
-        <view class="library-module-ticket module-{{item.key}}" wx:for="{{moduleStats}}" wx:key="key">
+      <view class="library-module-ledger">
+        <view class="library-module-line module-{{item.key}}" wx:for="{{moduleStats}}" wx:key="key">
           <view class="ticket-label">{{item.label}}</view>
           <view class="ticket-value">{{item.value || item.count}}<text>{{item.unit}}</text></view>
           <view class="ticket-copy">{{item.displayCopy || item.copy}}</view>
@@ -47,25 +47,25 @@
     <view class="library-archive-link" data-date="{{todayReport.date}}" bindtap="openDailyDetail">
       <view class="archive-tab"></view>
       <view class="entry-main">
-        <view class="entry-title">今日明细</view>
-        <view class="entry-copy">{{todayReport.totalCompletedCount || 0}} 项完成内容，按学习动作整理。</view>
+        <view class="entry-title">{{texts.todayDetails}}</view>
+        <view class="entry-copy">{{todayReport.totalCompletedCount || 0}} {{texts.completedActionsLabel}}</view>
       </view>
-      <view class="entry-arrow">查看</view>
+      <view class="entry-arrow">{{texts.view}}</view>
     </view>
 
     <view class="library-module-panel">
       <view class="library-card-head">
         <view>
-          <view class="library-title small">最近 7 天</view>
-          <view class="library-copy">看节奏，不看压力。</view>
+          <view class="library-title small">{{texts.recentSevenDays}}</view>
+          <view class="library-copy">{{texts.rhythmCopy}}</view>
         </view>
-        <view class="library-link" bindtap="loadRecentReports">{{recentExpanded ? '收起' : '查看'}}</view>
+        <view class="library-link" bindtap="loadRecentReports">{{recentExpanded ? texts.collapse : texts.view}}</view>
       </view>
       <view class="library-date-stamps" wx:if="{{recentExpanded}}">
         <view class="date-stamp {{item.totalCompletedCount ? 'is-active' : ''}}" wx:for="{{recentReports}}" wx:key="reportId" data-date="{{item.date}}" bindtap="openDailyDetail">
           <view class="date-label">{{item.dateLabel}}</view>
-          <view class="date-copy">{{item.totalCompletedCount ? item.totalCompletedCount + ' 项' : '无记录'}}</view>
-          <view class="date-copy">{{item.totalMinutes || 0}} 分钟</view>
+          <view class="date-copy">{{item.totalCompletedCount ? item.totalCompletedCount + ' ' + texts.task : texts.noRecord}}</view>
+          <view class="date-copy">{{item.totalMinutes || 0}} {{texts.minute}}</view>
         </view>
       </view>
     </view>
@@ -75,8 +75,8 @@
   <view class="parent-hero">
     <view class="parent-identity">
       <view>
-        <view class="parent-kicker">家庭观察</view>
-        <view class="parent-title">日报</view>
+        <view class="parent-kicker">{{texts.observation}}</view>
+        <view class="parent-title">{{texts.dailyReport}}</view>
       </view>
       <view class="family-orbit">
         <text></text>
@@ -86,11 +86,11 @@
     </view>
     <view class="child-line">
       <view>
-        <view class="child-name">{{child.nickname || '同学'}}</view>
-        <view class="child-code">学号：{{child.childLoginCode || '未绑定'}}</view>
+        <view class="child-name">{{childDisplayNickname}}</view>
+        <view class="child-code">{{texts.studentIdPrefix}}{{child.childLoginCode || texts.unbound}}</view>
       </view>
       <picker wx:if="{{studentNames.length > 1}}" mode="selector" range="{{studentNames}}" value="{{selectedStudentIndex}}" bindchange="handleStudentChange">
-        <view class="student-switch">切换学生：{{studentNames[selectedStudentIndex]}}</view>
+        <view class="student-switch">{{texts.switchStudentPrefix}}{{studentNames[selectedStudentIndex]}}</view>
       </picker>
     </view>
     <view class="sync-debug {{syncMode === 'cloud' ? 'is-cloud' : 'is-local'}}" wx:if="{{showCloudDebug && syncDebug && syncDebug.show}}">
@@ -101,10 +101,10 @@
   <view class="daily-brief">
     <view class="brief-head">
       <view>
-        <view class="brief-kicker">今日结论</view>
+        <view class="brief-kicker">{{texts.todayConclusion}}</view>
         <view class="brief-title">{{parentSummary.title}}</view>
       </view>
-      <view class="brief-date">{{todayReport.dateLabel || '今日'}}</view>
+      <view class="brief-date">{{todayReport.dateLabel || texts.today}}</view>
     </view>
     <view class="brief-copy">{{parentSummary.copy}}</view>
     <view class="brief-note">{{parentSummary.detail}}</view>
@@ -115,14 +115,14 @@
       <view class="progress-line"></view>
       <view class="progress-node {{todayReport.totalMinutes ? 'is-active' : ''}}"></view>
     </view>
-    <view class="brief-action" data-date="{{todayReport.date}}" bindtap="openDailyDetail">查看学习档案</view>
+    <view class="brief-action" data-date="{{todayReport.date}}" bindtap="openDailyDetail">{{texts.viewLearningFile}}</view>
   </view>
 
   <view class="insight-panel">
     <view class="panel-head">
       <view>
-        <view class="section-title type-section-title">学习画像</view>
-        <view class="section-copy">{{todayReport.totalCompletedCount || 0}} 项 · {{todayReport.totalMinutes || 0}} 分钟</view>
+        <view class="section-title type-section-title">{{texts.learningProfile}}</view>
+        <view class="section-copy">{{todayReport.totalCompletedCount || 0}} {{texts.task}} · {{todayReport.totalMinutes || 0}} {{texts.minute}}</view>
       </view>
     </view>
     <view class="insight-map">
@@ -142,26 +142,26 @@
   <view class="today-archive" data-date="{{todayReport.date}}" bindtap="openDailyDetail">
     <view class="archive-ribbon"></view>
     <view>
-      <view class="archive-title">今日明细</view>
-      <view class="archive-copy">{{todayReport.totalCompletedCount || 0}} 项完成内容，按学习动作整理。</view>
+      <view class="archive-title">{{texts.todayDetails}}</view>
+      <view class="archive-copy">{{todayReport.totalCompletedCount || 0}} {{texts.completedActionsLabel}}</view>
     </view>
-    <view class="archive-link">查看</view>
+    <view class="archive-link">{{texts.view}}</view>
   </view>
 
   <view class="trend-card">
     <view class="trend-head">
       <view>
-        <view class="section-title type-section-title">最近 7 天</view>
-        <view class="section-copy">看节奏，不看压力。</view>
+        <view class="section-title type-section-title">{{texts.recentSevenDays}}</view>
+        <view class="section-copy">{{texts.rhythmCopy}}</view>
       </view>
-      <view class="detail-link" bindtap="loadRecentReports">{{recentExpanded ? '收起' : '查看'}}</view>
+      <view class="detail-link" bindtap="loadRecentReports">{{recentExpanded ? texts.collapse : texts.view}}</view>
     </view>
     <view class="rhythm-strip" wx:if="{{recentExpanded}}">
       <view class="rhythm-day {{item.totalCompletedCount ? 'is-active' : ''}}" wx:for="{{recentReports}}" wx:key="reportId" data-date="{{item.date}}" bindtap="openDailyDetail">
         <view class="rhythm-dot"></view>
         <view class="rhythm-date">{{item.dateLabel}}</view>
-        <view class="rhythm-copy">{{item.totalCompletedCount ? item.totalCompletedCount + ' 项' : '无记录'}}</view>
-        <view class="rhythm-minutes">{{item.totalMinutes || 0}} 分钟</view>
+        <view class="rhythm-copy">{{item.totalCompletedCount ? item.totalCompletedCount + ' ' + texts.task : texts.noRecord}}</view>
+        <view class="rhythm-minutes">{{item.totalMinutes || 0}} {{texts.minute}}</view>
       </view>
     </view>
   </view>

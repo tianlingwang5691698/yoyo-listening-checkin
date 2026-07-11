@@ -1,25 +1,25 @@
-<view class="theme-{{theme}} page-shell grammar-page">
+<view class="theme-{{theme}} language-{{language}} page-shell grammar-page">
   <block wx:if="{{theme === 'library'}}">
     <view class="library-grammar-shell">
       <view class="library-typecase {{selectedTopicId ? 'is-compact' : ''}}">
         <view class="library-typecase-copy">
-          <view class="library-eyebrow">英语语法</view>
-          <view class="library-title">把一句话讲明白</view>
-          <view class="library-copy">从主谓宾到从句，陪孩子看懂每个考点为什么这样选。</view>
+          <view class="library-eyebrow">{{texts.eyebrow}}</view>
+          <view class="library-title">{{texts.title}}</view>
+          <view class="library-copy">{{texts.copy}}</view>
         </view>
         <view class="library-syntax-plate">
           <view class="library-syntax-line"></view>
           <view class="library-syntax-cast">
             <view class="library-syntax-type">
-              <text>主语</text>
+              <text>{{texts.subject}}</text>
               <text>S</text>
             </view>
             <view class="library-syntax-type is-core">
-              <text>谓语</text>
+              <text>{{texts.predicate}}</text>
               <text>V</text>
             </view>
             <view class="library-syntax-type">
-              <text>宾语</text>
+              <text>{{texts.object}}</text>
               <text>O</text>
             </view>
           </view>
@@ -27,24 +27,24 @@
       </view>
 
       <view class="library-index-tabs">
-        <view class="library-index-tab {{mode === 'topics' ? 'is-active' : ''}}" bindtap="openTopicBook">考点分类</view>
-        <view class="library-index-tab {{mode === 'wrong' ? 'is-active' : ''}}" bindtap="openWrongBook">错题集</view>
+        <view class="library-index-tab {{mode === 'topics' ? 'is-active' : ''}}" bindtap="openTopicBook">{{texts.topics}}</view>
+        <view class="library-index-tab" bindtap="openPracticeHistory">{{texts.history}}</view>
       </view>
 
       <view class="library-directory-page" wx:if="{{!selectedStageId && !selectedExamId && !selectedCategoryId && !selectedTopicId}}">
         <view class="library-page-head">
           <view>
-            <view class="library-page-kicker">{{mode === 'wrong' ? '错题难度' : '语法难度'}}</view>
-            <view class="library-page-title">句法字模目录</view>
+            <view class="library-page-kicker">{{mode === 'wrong' ? texts.wrongDifficulty : texts.difficulty}}</view>
+            <view class="library-page-title">{{texts.title}}</view>
           </view>
-          <view class="library-page-count">{{stages.length}} 组</view>
+          <view class="library-page-count">{{stages.length}}{{texts.groupUnit}}</view>
         </view>
         <view class="library-directory-list" wx:if="{{stages.length}}">
           <view class="library-directory-row" wx:for="{{stages}}" wx:key="stageId" data-stage-id="{{item.stageId}}" bindtap="selectStage">
             <view class="library-row-code">SVO</view>
             <view class="library-row-main">
               <view class="library-row-title">{{item.stage}}</view>
-              <view class="library-row-meta">{{item.count}} 题</view>
+              <view class="library-row-meta">{{item.count}}{{texts.questionUnit}}</view>
             </view>
             <view class="library-row-arrow">›</view>
           </view>
@@ -54,43 +54,43 @@
           <view class="library-skeleton-row is-short"></view>
         </view>
         <view class="library-empty-proof" wx:else>
-          <view class="library-empty-stamp">校样</view>
-          <view class="library-empty-title">还没有错题</view>
-          <view class="library-empty-action" bindtap="openTopicBook">返回考点分类</view>
+          <view class="library-empty-stamp">{{texts.eyebrow}}</view>
+          <view class="library-empty-title">{{texts.noWrong}}</view>
+          <view class="library-empty-action" bindtap="openTopicBook">{{texts.backTopics}}</view>
         </view>
       </view>
 
       <view class="library-directory-page" wx:elif="{{selectedStageId && !selectedExamId && !selectedCategoryId && !selectedTopicId}}">
         <view class="library-page-head">
-          <view class="library-back-text" bindtap="backToTopics">‹ 难度</view>
+          <view class="library-back-text" bindtap="backToTopics">{{texts.backDifficulty}}</view>
           <view>
             <view class="library-page-kicker">{{selectedStage.stage}}</view>
-            <view class="library-page-title">模考卷宗</view>
+            <view class="library-page-title">{{texts.mock}}</view>
           </view>
         </view>
         <view class="library-directory-list" wx:if="{{exams.length}}">
           <view class="library-directory-row" wx:for="{{exams}}" wx:key="examId" data-exam-id="{{item.examId}}" bindtap="selectExam">
-            <view class="library-row-code">卷</view>
+            <view class="library-row-code">G</view>
             <view class="library-row-main">
               <view class="library-row-title">{{item.exam}}</view>
-              <view class="library-row-meta">{{item.count}} 题</view>
+              <view class="library-row-meta">{{item.count}}{{texts.questionUnit}}</view>
             </view>
             <view class="library-row-arrow">{{em1Loading && item.examId === 'em1' ? '·' : '›'}}</view>
           </view>
         </view>
         <view class="library-empty-proof" wx:else>
-          <view class="library-empty-stamp">空页</view>
-          <view class="library-empty-title">该阶段暂无语法练习</view>
-          <view class="library-empty-action" bindtap="backToTopics">返回难度</view>
+          <view class="library-empty-stamp">—</view>
+          <view class="library-empty-title">{{texts.emptyStage}}</view>
+          <view class="library-empty-action" bindtap="backToTopics">{{texts.backDifficultyText}}</view>
         </view>
       </view>
 
       <view class="library-directory-page" wx:elif="{{selectedExamId && !selectedCategoryId && !selectedTopicId}}">
         <view class="library-page-head">
-          <view class="library-back-text" bindtap="backToStageCategories">‹ 模考</view>
+          <view class="library-back-text" bindtap="backToStageCategories">{{texts.backMock}}</view>
           <view>
             <view class="library-page-kicker">{{selectedStage.stage}} · {{selectedExam.exam}}</view>
-            <view class="library-page-title">层级索引</view>
+            <view class="library-page-title">{{texts.category}}</view>
           </view>
         </view>
         <view class="library-topic-grid" wx:if="{{topics.length}}">
@@ -98,24 +98,24 @@
             <view class="library-topic-number">{{index + 1}}</view>
             <view class="library-row-main">
               <view class="library-row-title">{{item.topic}}</view>
-              <view class="library-row-meta">{{item.count}} 题</view>
+              <view class="library-row-meta">{{item.count}}{{texts.questionUnit}}</view>
             </view>
             <view class="library-row-arrow">›</view>
           </view>
         </view>
         <view class="library-empty-proof" wx:else>
-          <view class="library-empty-stamp">空页</view>
-          <view class="library-empty-title">该阶段暂无语法练习</view>
-          <view class="library-empty-action" bindtap="backToStageCategories">返回模考</view>
+          <view class="library-empty-stamp">—</view>
+          <view class="library-empty-title">{{texts.emptyStage}}</view>
+          <view class="library-empty-action" bindtap="backToStageCategories">{{texts.backMockText}}</view>
         </view>
       </view>
 
       <view class="library-directory-page library-drawer-page" wx:elif="{{selectedCategoryId && !selectedTopicId}}">
         <view class="library-page-head">
-          <view class="library-back-text" bindtap="backToExamCategories">‹ 大类</view>
+          <view class="library-back-text" bindtap="backToExamCategories">{{texts.backCategory}}</view>
           <view>
             <view class="library-page-kicker">{{selectedCategory.topic}}</view>
-            <view class="library-page-title">细分考点抽屉</view>
+            <view class="library-page-title">{{texts.subtopic}}</view>
           </view>
         </view>
         <view class="library-drawer-list" wx:if="{{selectedCategory.children.length}}">
@@ -123,38 +123,38 @@
             <view class="library-drawer-notch"></view>
             <view class="library-row-main">
               <view class="library-row-title">{{item.topic}}</view>
-              <view class="library-row-meta">{{item.count}} 题</view>
+              <view class="library-row-meta">{{item.count}}{{texts.questionUnit}}</view>
             </view>
             <view class="library-row-arrow">›</view>
           </view>
         </view>
         <view class="library-empty-proof" wx:else>
-          <view class="library-empty-stamp">空页</view>
-          <view class="library-empty-title">该分类暂无考点</view>
-          <view class="library-empty-action" bindtap="backToExamCategories">返回大类</view>
+          <view class="library-empty-stamp">—</view>
+          <view class="library-empty-title">{{texts.emptyCategory}}</view>
+          <view class="library-empty-action" bindtap="backToExamCategories">{{texts.backCategoryText}}</view>
         </view>
       </view>
 
       <view class="library-practice-page" wx:else>
         <view class="library-practice-head">
-          <view class="library-back-text" bindtap="backToCategory">‹ 细分</view>
+          <view class="library-back-text" bindtap="backToCategory">{{texts.backSubtopic}}</view>
           <view class="library-practice-title-wrap">
             <view class="library-page-kicker">{{selectedTopic.topic}}</view>
             <view class="library-practice-progress">{{answeredCount}} / {{selectedQuestions.length}}</view>
           </view>
         </view>
-        <view class="library-resume-note" wx:if="{{selectedTopicOffset > 0}}">已自动接着第 {{selectedTopicOffset + 1}} 题开始。</view>
+        <view class="library-resume-note" wx:if="{{selectedTopicOffset > 0}}">{{texts.resumePrefix}}{{selectedTopicOffset + 1}}{{texts.resumeSuffix}}</view>
 
         <view class="library-complete-proof" wx:if="{{selectedQuestions.length === 0}}">
           <view class="library-complete-clip"></view>
-          <view class="library-empty-stamp">完成</view>
-          <view class="library-empty-title">本考点已做完。</view>
-          <view class="library-empty-action" bindtap="backToCategory">返回细分</view>
+          <view class="library-empty-stamp">{{texts.topicDone}}</view>
+          <view class="library-empty-title">{{texts.topicDone}}</view>
+          <view class="library-empty-action" bindtap="backToCategory">{{texts.backSubtopicText}}</view>
         </view>
 
         <view class="library-proof-sheet" wx:else>
-          <view class="library-question-row" wx:for="{{selectedQuestions}}" wx:key="_id">
-            <view class="library-question-meta">第 {{item.sequenceNumber}} 题 · {{item.year}} · {{item.district}} · 原卷第 {{item.number}} 题</view>
+          <view id="grammar-question-{{index}}" class="library-question-row" wx:for="{{selectedQuestions}}" wx:key="_id">
+            <view class="library-question-meta">{{texts.questionNo}}{{item.sequenceNumber}} · {{item.year}} · {{item.district}} · {{texts.originalNo}}{{item.number}}</view>
             <view class="library-question-prompt" wx:if="{{!item.isAnswered}}">{{item.prompt}}</view>
             <view class="library-question-prompt library-token-line" wx:else>
               <text wx:for="{{item.promptTokens}}" wx:key="id" wx:for-item="token" class="{{token.word ? 'library-lookup-token' : ''}}" data-question-id="{{item._id}}" data-word="{{token.word}}" catchtap="openDictionaryWord">{{token.text}}</text>
@@ -171,11 +171,11 @@
               </view>
             </view>
             <view class="library-answer-line {{item.isCorrect ? 'is-correct' : 'is-wrong'}}" wx:if="{{item.isAnswered}}">
-              <text wx:if="{{item.answer}}">{{item.isCorrect ? '答对了' : '答错了'}} · 标准答案：{{item.answer}}</text>
-              <text wx:else>无标准答案。</text>
+              <text wx:if="{{item.answer}}">{{item.isCorrect ? texts.correct : texts.wrong}} · {{texts.standardAnswer}}{{item.answer}}</text>
+              <text wx:else>{{texts.noAnswer}}</text>
             </view>
             <view class="library-explain-actions" wx:if="{{item.isAnswered && !item.explanation && !item.explaining}}">
-              <view class="library-explain-action" data-question-id="{{item._id}}" bindtap="loadExplanation">看讲解</view>
+              <view class="library-explain-action" data-question-id="{{item._id}}" bindtap="loadExplanation">{{texts.explain}}</view>
             </view>
             <view class="library-analysis-loading" wx:if="{{item.explaining}}">
               <view></view>
@@ -185,12 +185,12 @@
             <view class="library-analysis" wx:if="{{item.explanation}}">
               <view class="library-analysis-head">
                 <text>{{item.explanation.topic}}</text>
-                <text class="library-analysis-answer">答案 {{item.explanation.answer}}</text>
+                <text class="library-analysis-answer">{{texts.answer}}{{item.explanation.answer}}</text>
               </view>
               <view class="library-analysis-text">{{item.explanation.explanation}}</view>
               <view class="library-analysis-text" wx:if="{{item.explanation.elimination}}">{{item.explanation.elimination}}</view>
               <view class="library-explain-actions">
-                <view class="library-explain-action is-secondary" data-question-id="{{item._id}}" bindtap="regenerateExplanation">重新讲</view>
+                <view class="library-explain-action is-secondary" data-question-id="{{item._id}}" bindtap="regenerateExplanation">{{texts.explainAgain}}</view>
               </view>
             </view>
           </view>
@@ -206,10 +206,10 @@
           </view>
           <button class="library-dictionary-audio {{dictionaryAudioLoading ? 'is-loading' : ''}}" disabled="{{dictionaryLoading || dictionaryAudioLoading}}" bindtap="playDictionaryWord">♪</button>
         </view>
-        <button class="library-dictionary-add" loading="{{dictionaryAdding}}" bindtap="addDictionaryWordToLibrary">加入词库</button>
+        <button class="library-dictionary-add" loading="{{dictionaryAdding}}" bindtap="addDictionaryWordToLibrary">{{texts.addLibrary}}</button>
         <block wx:if="{{!dictionaryLoading}}">
           <view class="library-dictionary-definition" wx:for="{{dictionaryEntry.definitions}}" wx:key="*this">· {{item}}</view>
-          <view class="library-dictionary-empty" wx:if="{{!dictionaryEntry.definitions || !dictionaryEntry.definitions.length}}">暂无释义。</view>
+          <view class="library-dictionary-empty" wx:if="{{!dictionaryEntry.definitions || !dictionaryEntry.definitions.length}}">{{texts.noDefinition}}</view>
         </block>
         <view class="library-dictionary-loading" wx:else>
           <view></view>
@@ -222,9 +222,9 @@
   <block wx:else>
   <view class="grammar-hero">
     <view class="grammar-hero-main">
-      <view class="grammar-eyebrow">英语语法</view>
-      <view class="grammar-title">把一句话讲明白</view>
-      <view class="grammar-copy">从主谓宾到从句，陪孩子看懂每个考点为什么这样选。</view>
+      <view class="grammar-eyebrow">{{texts.eyebrow}}</view>
+      <view class="grammar-title">{{texts.title}}</view>
+      <view class="grammar-copy">{{texts.copy}}</view>
     </view>
     <view class="grammar-hero-visual">
       <view class="grammar-board">
@@ -232,11 +232,11 @@
           <view></view><view></view><view></view>
         </view>
         <view class="syntax-track">
-          <view class="syntax-node">主语</view>
+          <view class="syntax-node">{{texts.subject}}</view>
           <view class="syntax-link"></view>
-          <view class="syntax-node is-core">谓语</view>
+          <view class="syntax-node is-core">{{texts.predicate}}</view>
           <view class="syntax-link"></view>
-          <view class="syntax-node">宾语</view>
+          <view class="syntax-node">{{texts.object}}</view>
         </view>
         <view class="grammar-tags">
           <view>Subject</view>
@@ -253,15 +253,15 @@
       </view>
     </view>
     <view class="grammar-actions">
-      <view class="grammar-action {{mode === 'topics' ? 'is-active' : ''}}" bindtap="openTopicBook">考点分类</view>
-      <view class="grammar-action {{mode === 'wrong' ? 'is-active' : ''}}" bindtap="openWrongBook">错题集</view>
+      <view class="grammar-action {{mode === 'topics' ? 'is-active' : ''}}" bindtap="openTopicBook">{{texts.topics}}</view>
+      <view class="grammar-action" bindtap="openPracticeHistory">{{texts.history}}</view>
     </view>
   </view>
 
   <view class="grammar-card directory-card" wx:if="{{!selectedStageId && !selectedExamId && !selectedCategoryId && !selectedTopicId}}">
     <view class="grammar-card-top">
-      <view class="grammar-card-label">{{mode === 'wrong' ? '错题难度' : '语法难度'}}</view>
-      <view class="grammar-card-state">{{stages.length}} 组</view>
+      <view class="grammar-card-label">{{mode === 'wrong' ? texts.wrongDifficulty : texts.difficulty}}</view>
+      <view class="grammar-card-state">{{stages.length}}{{texts.groupUnit}}</view>
     </view>
     <view class="directory-map">
       <view class="directory-row map-node" wx:for="{{stages}}" wx:key="stageId" data-stage-id="{{item.stageId}}" bindtap="selectStage">
@@ -271,7 +271,7 @@
         </view>
         <view class="directory-content">
           <view class="directory-title">{{item.stage}}</view>
-          <view class="directory-meta">{{item.count}} 题</view>
+          <view class="directory-meta">{{item.count}}{{texts.questionUnit}}</view>
         </view>
         <view class="directory-arrow">›</view>
       </view>
@@ -281,7 +281,7 @@
   <view class="grammar-card directory-card" wx:elif="{{selectedStageId && !selectedExamId && !selectedCategoryId && !selectedTopicId}}">
     <view class="grammar-card-top">
       <view class="grammar-card-label">{{selectedStage.stage}}</view>
-      <view class="directory-back-icon" bindtap="backToTopics">‹ 难度</view>
+      <view class="directory-back-icon" bindtap="backToTopics">{{texts.backDifficulty}}</view>
     </view>
     <view class="directory-map">
       <view class="directory-row map-node" wx:for="{{exams}}" wx:key="examId" data-exam-id="{{item.examId}}" bindtap="selectExam">
@@ -291,7 +291,7 @@
         </view>
         <view class="directory-content">
           <view class="directory-title">{{item.exam}}</view>
-          <view class="directory-meta">{{item.count}} 题</view>
+          <view class="directory-meta">{{item.count}}{{texts.questionUnit}}</view>
         </view>
         <view class="directory-arrow">›</view>
       </view>
@@ -301,7 +301,7 @@
   <view class="grammar-card directory-card" wx:elif="{{selectedExamId && !selectedCategoryId && !selectedTopicId}}">
     <view class="grammar-card-top">
       <view class="grammar-card-label">{{selectedStage.stage}} · {{selectedExam.exam}}</view>
-      <view class="directory-back-icon" bindtap="backToStageCategories">‹ 模考</view>
+      <view class="directory-back-icon" bindtap="backToStageCategories">{{texts.backMock}}</view>
     </view>
     <view class="directory-map">
       <view class="directory-row map-node" wx:for="{{topics}}" wx:key="topicId" data-topic-id="{{item.topicId}}" bindtap="selectTopic">
@@ -311,7 +311,7 @@
         </view>
         <view class="directory-content">
           <view class="directory-title">{{item.topic}}</view>
-          <view class="directory-meta">{{item.count}} 题</view>
+          <view class="directory-meta">{{item.count}}{{texts.questionUnit}}</view>
         </view>
         <view class="directory-arrow">›</view>
       </view>
@@ -321,7 +321,7 @@
   <view class="grammar-card directory-card" wx:elif="{{selectedCategoryId && !selectedTopicId}}">
     <view class="grammar-card-top">
       <view class="grammar-card-label">{{selectedCategory.topic}}</view>
-      <view class="directory-back-icon" bindtap="backToExamCategories">‹ 大类</view>
+      <view class="directory-back-icon" bindtap="backToExamCategories">{{texts.backCategory}}</view>
     </view>
     <view class="directory-map">
       <view class="directory-row map-node" wx:for="{{selectedCategory.children}}" wx:key="topicId" data-topic-id="{{item.topicId}}" bindtap="selectTopic">
@@ -331,7 +331,7 @@
         </view>
         <view class="directory-content">
           <view class="directory-title">{{item.topic}}</view>
-          <view class="directory-meta">{{item.count}} 题</view>
+          <view class="directory-meta">{{item.count}}{{texts.questionUnit}}</view>
         </view>
         <view class="directory-arrow">›</view>
       </view>
@@ -344,14 +344,14 @@
         <view class="grammar-card-label">{{selectedTopic.topic}}</view>
         <view class="practice-progress">{{answeredCount}} / {{selectedQuestions.length}}</view>
       </view>
-      <view class="directory-back-icon" bindtap="backToCategory">‹ 细分</view>
+      <view class="directory-back-icon" bindtap="backToCategory">{{texts.backSubtopic}}</view>
     </view>
-    <view class="directory-meta" wx:if="{{selectedTopicOffset > 0}}">已自动接着第 {{selectedTopicOffset + 1}} 题开始。</view>
-    <view class="directory-meta" wx:if="{{selectedQuestions.length === 0}}">本考点已做完。</view>
+    <view class="directory-meta" wx:if="{{selectedTopicOffset > 0}}">{{texts.resumePrefix}}{{selectedTopicOffset + 1}}{{texts.resumeSuffix}}</view>
+    <view class="directory-meta" wx:if="{{selectedQuestions.length === 0}}">{{texts.topicDone}}</view>
     <view class="question-list">
-      <view class="question-row" wx:for="{{selectedQuestions}}" wx:key="_id">
+      <view id="grammar-question-{{index}}" class="question-row" wx:for="{{selectedQuestions}}" wx:key="_id">
         <view class="diagnostic-head">
-          <view class="question-meta">第 {{item.sequenceNumber}} 题 · {{item.year}} · {{item.district}} · 原卷第 {{item.number}} 题</view>
+          <view class="question-meta">{{texts.questionNo}}{{item.sequenceNumber}} · {{item.year}} · {{item.district}} · {{texts.originalNo}}{{item.number}}</view>
           <view class="diagnostic-scale">
             <view></view><view></view><view></view><view></view><view></view>
           </view>
@@ -372,21 +372,21 @@
           </view>
         </view>
         <view class="answer-line {{item.isCorrect ? 'is-correct' : 'is-wrong'}}" wx:if="{{item.isAnswered}}">
-          <text wx:if="{{item.answer}}">{{item.isCorrect ? '答对了' : '答错了'}} · 标准答案：{{item.answer}}</text>
-          <text wx:else>无标准答案。</text>
+          <text wx:if="{{item.answer}}">{{item.isCorrect ? texts.correct : texts.wrong}} · {{texts.standardAnswer}}{{item.answer}}</text>
+          <text wx:else>{{texts.noAnswer}}</text>
         </view>
         <view class="grammar-explain-actions" wx:if="{{item.isAnswered && !item.explanation && !item.explaining}}">
-          <view class="grammar-explain-action" data-question-id="{{item._id}}" bindtap="loadExplanation">看讲解</view>
+          <view class="grammar-explain-action" data-question-id="{{item._id}}" bindtap="loadExplanation">{{texts.explain}}</view>
         </view>
         <view class="analysis-item inline-analysis" wx:if="{{item.explanation}}">
           <view class="analysis-head">
             <text>{{item.explanation.topic}}</text>
-            <text class="analysis-state is-correct">答案 {{item.explanation.answer}}</text>
+            <text class="analysis-state is-correct">{{texts.answer}}{{item.explanation.answer}}</text>
           </view>
           <view class="analysis-text">{{item.explanation.explanation}}</view>
           <view class="analysis-text" wx:if="{{item.explanation.elimination}}">{{item.explanation.elimination}}</view>
           <view class="grammar-explain-actions">
-            <view class="grammar-explain-action" data-question-id="{{item._id}}" bindtap="regenerateExplanation">重新讲</view>
+            <view class="grammar-explain-action" data-question-id="{{item._id}}" bindtap="regenerateExplanation">{{texts.explainAgain}}</view>
           </view>
         </view>
       </view>
@@ -401,10 +401,10 @@
       </view>
       <button class="dictionary-audio {{dictionaryAudioLoading ? 'is-loading' : ''}}" disabled="{{dictionaryLoading || dictionaryAudioLoading}}" bindtap="playDictionaryWord">♪</button>
     </view>
-    <button class="dictionary-add" loading="{{dictionaryAdding}}" bindtap="addDictionaryWordToLibrary">加入词库</button>
+    <button class="dictionary-add" loading="{{dictionaryAdding}}" bindtap="addDictionaryWordToLibrary">{{texts.addLibrary}}</button>
     <block wx:if="{{!dictionaryLoading}}">
       <view class="dictionary-definition" wx:for="{{dictionaryEntry.definitions}}" wx:key="*this">· {{item}}</view>
-      <view class="dictionary-empty" wx:if="{{!dictionaryEntry.definitions || !dictionaryEntry.definitions.length}}">暂无释义。</view>
+      <view class="dictionary-empty" wx:if="{{!dictionaryEntry.definitions || !dictionaryEntry.definitions.length}}">{{texts.noDefinition}}</view>
     </block>
   </view>
   </block>

@@ -1,5 +1,14 @@
 const store = require('../../utils/store');
 const page = require('../../utils/page');
+const i18n = require('../../utils/i18n');
+const accountCatalog = require('../../utils/i18n-catalog-account');
+
+function buildTexts() {
+  return Object.keys(accountCatalog.identity['zh-CN']).reduce((texts, key) => {
+    texts[key] = i18n.getPageText('identity', key);
+    return texts;
+  }, {});
+}
 
 Page({
   data: page.createCloudPageData({
@@ -7,7 +16,9 @@ Page({
     childCode: '',
     displayName: '',
     child: {},
-    currentMember: {}
+    currentMember: {},
+    texts: buildTexts(),
+    language: i18n.getLanguage()
   }),
   applyProfileData(data) {
     this.setData(page.buildCloudPageData(this.data, Object.assign({}, data, {
@@ -18,6 +29,9 @@ Page({
   async onShow() {
     this.identityPerf = page.startPagePerf('identity');
     page.syncTheme(this);
+    const texts = buildTexts();
+    this.setData({ texts, language: i18n.getLanguage() });
+    wx.setNavigationBarTitle({ title: texts.navTitle });
     this.identityPerf.ready('pageReady', {
       source: 'static',
       cacheHit: true,
@@ -59,7 +73,7 @@ Page({
     }
     if (!/^\d{6}$/.test(String(this.data.childCode || ''))) {
       wx.showToast({
-        title: '请输入 6 位学号',
+        title: this.data.texts.enterSixDigitId,
         icon: 'none'
       });
       return;
@@ -70,12 +84,12 @@ Page({
         childCode: ''
       })));
       wx.showToast({
-        title: '已加入孩子记录',
+        title: this.data.texts.joinedChildRecord,
         icon: 'none'
       });
     } catch (error) {
       wx.showToast({
-        title: error.message || '绑定失败',
+        title: this.data.texts.bindFailed,
         icon: 'none'
       });
     }

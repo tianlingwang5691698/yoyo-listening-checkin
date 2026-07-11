@@ -1,0 +1,119 @@
+<view class="theme-{{theme}} language-{{language}} page-shell settings-page">
+  <block wx:if="{{theme === 'library'}}">
+    <view class="library-settings-hero">
+      <view class="library-hero-copy">
+        <view class="settings-title">{{texts.title}}</view>
+        <view class="settings-subtitle">{{texts.subtitle}}</view>
+      </view>
+    </view>
+
+    <view class="settings-section-label">{{texts.accountSection}}</view>
+    <view class="library-ledger">
+      <view class="settings-row" bindtap="openFamilyPage">
+        <view class="library-row-index">01</view>
+        <view class="settings-row-main">
+          <view class="settings-row-title">{{texts.familyTitle}}</view>
+          <view class="settings-row-description">{{texts.familyDescription}}</view>
+        </view>
+        <view class="settings-arrow">›</view>
+      </view>
+    </view>
+
+    <view class="settings-section-label">{{texts.preferenceSection}}</view>
+    <view class="library-ledger">
+      <view class="settings-choice-block">
+        <view class="settings-row is-static">
+          <view class="library-row-index">02</view>
+          <view class="settings-row-main">
+            <view class="settings-row-title">{{texts.appearanceTitle}}</view>
+            <view class="settings-row-description">{{texts.appearanceDescription}}</view>
+          </view>
+        </view>
+        <view class="settings-options library-options">
+          <view class="settings-option {{theme === 'warm' ? 'is-active' : ''}}" data-theme="warm" bindtap="changeTheme">{{texts.warmTheme}}</view>
+          <view class="settings-option {{theme === 'library' ? 'is-active' : ''}}" data-theme="library" bindtap="changeTheme">{{texts.libraryTheme}}</view>
+        </view>
+      </view>
+      <view class="settings-choice-block with-divider">
+        <view class="settings-row is-static">
+          <view class="library-row-index">03</view>
+          <view class="settings-row-main">
+            <view class="settings-row-title">{{texts.languageTitle}}</view>
+            <view class="settings-row-description">{{texts.languageDescription}}</view>
+          </view>
+        </view>
+        <view class="settings-options library-options">
+          <view class="settings-option {{language === 'zh-CN' ? 'is-active' : ''}}" data-language="zh-CN" bindtap="changeLanguage">{{texts.zhHans}}</view>
+          <view class="settings-option {{language === 'en' ? 'is-active' : ''}}" data-language="en" bindtap="changeLanguage">{{texts.english}}</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="library-admin-row" wx:if="{{adminVisible}}" bindtap="openAdminPage">
+      <view class="library-admin-stamp">{{texts.adminBadge}}</view>
+      <view class="settings-row-main">
+        <view class="settings-row-title">{{texts.adminTitle}}</view>
+        <view class="settings-row-description">{{texts.adminDescription}}</view>
+      </view>
+      <view class="settings-arrow">›</view>
+    </view>
+  </block>
+
+  <block wx:else>
+    <view class="warm-settings-hero">
+      <view class="settings-title">{{texts.title}}</view>
+      <view class="settings-subtitle">{{texts.subtitle}}</view>
+    </view>
+
+    <view class="settings-section-label">{{texts.accountSection}}</view>
+    <view class="warm-settings-card">
+      <view class="settings-row" bindtap="openFamilyPage">
+        <view class="warm-row-icon family-icon"><view></view></view>
+        <view class="settings-row-main">
+          <view class="settings-row-title">{{texts.familyTitle}}</view>
+          <view class="settings-row-description">{{texts.familyDescription}}</view>
+        </view>
+        <view class="settings-arrow">›</view>
+      </view>
+    </view>
+
+    <view class="settings-section-label">{{texts.preferenceSection}}</view>
+    <view class="warm-settings-card">
+      <view class="settings-choice-block">
+        <view class="settings-row is-static">
+          <view class="warm-row-icon appearance-icon"><view></view></view>
+          <view class="settings-row-main">
+            <view class="settings-row-title">{{texts.appearanceTitle}}</view>
+            <view class="settings-row-description">{{texts.appearanceDescription}}</view>
+          </view>
+        </view>
+        <view class="settings-options warm-options">
+          <view class="settings-option {{theme === 'warm' ? 'is-active' : ''}}" data-theme="warm" bindtap="changeTheme">{{texts.warmTheme}}</view>
+          <view class="settings-option {{theme === 'library' ? 'is-active' : ''}}" data-theme="library" bindtap="changeTheme">{{texts.libraryTheme}}</view>
+        </view>
+      </view>
+      <view class="settings-choice-block with-divider">
+        <view class="settings-row is-static">
+          <view class="warm-row-icon language-icon">{{texts.languageIcon}}</view>
+          <view class="settings-row-main">
+            <view class="settings-row-title">{{texts.languageTitle}}</view>
+            <view class="settings-row-description">{{texts.languageDescription}}</view>
+          </view>
+        </view>
+        <view class="settings-options warm-options">
+          <view class="settings-option {{language === 'zh-CN' ? 'is-active' : ''}}" data-language="zh-CN" bindtap="changeLanguage">{{texts.zhHans}}</view>
+          <view class="settings-option {{language === 'en' ? 'is-active' : ''}}" data-language="en" bindtap="changeLanguage">{{texts.english}}</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="warm-admin-card" wx:if="{{adminVisible}}" bindtap="openAdminPage">
+      <view class="warm-admin-badge">{{texts.adminBadge}}</view>
+      <view class="settings-row-main">
+        <view class="settings-row-title">{{texts.adminTitle}}</view>
+        <view class="settings-row-description">{{texts.adminDescription}}</view>
+      </view>
+      <view class="settings-arrow">›</view>
+    </view>
+  </block>
+</view>

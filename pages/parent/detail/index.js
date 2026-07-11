@@ -1,10 +1,15 @@
 const store = require('../../../utils/store');
 const page = require('../../../utils/page');
 const labels = require('../../../utils/labels');
-const appConfig = require('../../../data/app-config');
+const appConfig = require('../../../app-config');
 const snapshotStore = require('../../../utils/snapshot');
+const i18n = require('../../../utils/i18n');
+const accountCatalog = require('../../../utils/i18n-catalog-account');
 const LESSON_TASK_SNAPSHOT_KEY = 'lessonTaskSnapshotV1';
 const LESSON_STUDY_PACK_SNAPSHOT_KEY = 'lessonStudyPackSnapshotV1';
+function tr(key) { return i18n.getPageText('parentDetail', key); }
+function buildTexts() { return Object.keys(accountCatalog.parentDetail['zh-CN']).reduce((texts, key) => { texts[key] = tr(key); return texts; }, {}); }
+function formatText(text, values) { return Object.keys(values || {}).reduce((result, key) => result.replace(new RegExp(`\\{${key}\\}`, 'g'), values[key]), String(text || '')); }
 
 function buildCloudFileId(cloudPath) {
   const normalizedPath = String(cloudPath || '').replace(/^\/+/, '');
@@ -27,7 +32,7 @@ function formatDateLabel(dateKey) {
   const parts = String(dateKey || '').split('-').map(Number);
   const month = parts[1] || 0;
   const day = parts[2] || 0;
-  return month && day ? `${month}月${day}日` : '日报详情';
+  return month && day ? formatText(tr('dateLabel'), { month, day }) : tr('detailTitle');
 }
 
 function formatClock(value) {
@@ -46,7 +51,7 @@ function buildTimeLines(item) {
   const lines = playMoments
     .map((value, index) => ({
       key: `${item.category}-${item.taskId || 'task'}-${index}`,
-      label: `第 ${index + 1} 遍`,
+      label: formatText(tr('passNumber'), { count: index + 1 }),
       timeText: formatClock(value)
     }))
     .filter((entry) => entry.timeText);
@@ -58,7 +63,7 @@ function buildTimeLines(item) {
     if (timeText) {
       return [{
         key: `${item.category}-${item.taskId || 'task'}-latest`,
-        label: '最近一次',
+        label: tr('latestAttempt'),
         timeText
       }];
     }
@@ -74,7 +79,7 @@ function getProgressPercent(playCount, repeatTarget) {
 
 function formatDuration(ms) {
   const seconds = Math.max(0, Math.round(Number(ms || 0) / 1000));
-  return seconds ? `${seconds}秒` : '';
+  return seconds ? formatText(tr('seconds'), { count: seconds }) : '';
 }
 
 function normalizeSpeakingAttempt(item, index) {
@@ -84,16 +89,16 @@ function normalizeSpeakingAttempt(item, index) {
   const contentScore = Number(safeItem.contentGrammarScore || 0);
   return {
     key: safeItem.attemptId || `${safeItem.taskId || 'task'}-${safeItem.attemptIndex || index}-${safeItem.createdAt || index}`,
-    title: safeItem.attemptType === 'unlock_sentence_repeat' ? '跟读录音' : '回答录音',
-    questionText: safeItem.questionText || '本次录音',
+    title: safeItem.attemptType === 'unlock_sentence_repeat' ? tr('followRecording') : tr('answerRecording'),
+    questionText: safeItem.questionText || tr('thisRecording'),
     studentTranscript: safeItem.studentTranscript || '',
     feedback: safeItem.feedback || '',
     score,
     pronunciationScore,
     contentScore,
     status: safeItem.status || '',
-    scoreText: safeItem.status === 'score-pending' ? '待评分' : (score ? `${score} 分` : '已保存'),
-    scoreDetailText: (pronunciationScore || contentScore) ? `发音 ${pronunciationScore || 0} · 内容 ${contentScore || 0}` : '',
+    scoreText: safeItem.status === 'score-pending' ? tr('scorePending') : (score ? formatText(tr('score'), { score }) : tr('saved')),
+    scoreDetailText: (pronunciationScore || contentScore) ? formatText(tr('pronunciationContent'), { pronunciation: pronunciationScore || 0, content: contentScore || 0 }) : '',
     answerDurationText: formatDuration(safeItem.answerDurationMs),
     createdTimeText: formatClock(safeItem.createdAt),
     answerAudioFileId: safeItem.answerAudioFileId || '',
@@ -114,11 +119,11 @@ function buildSpeakingSummary(attempts) {
 }
 
 function getCompletionTypeLabel(type) {
-  if (type === 'reading' || type === 'reading-study') return '阅读';
-  if (type === 'listening' || type === 'listening-study') return '听力';
-  if (type === 'grammar') return '语法';
-  if (type === 'writing') return '写作';
-  return '完成';
+  if (type === 'reading' || type === 'reading-study') return tr('reading');
+  if (type === 'listening' || type === 'listening-study') return tr('listening');
+  if (type === 'grammar') return tr('grammar');
+  if (type === 'writing') return tr('writing');
+  return tr('complete');
 }
 
 function isListeningStudyCompletion(item) {
@@ -149,9 +154,9 @@ function writeListeningStudySnapshot(item) {
   const task = Object.assign({}, source.taskSnapshot || {}, {
     category,
     taskId,
-    title: source.meta || source.title || source.targetId || '听力课程',
-    displayTitle: source.meta || source.title || source.targetId || '听力课程',
-    audioTitle: source.meta || source.title || source.targetId || '听力课程',
+    title: source.meta || source.title || source.targetId || tr('listeningCourse'),
+    displayTitle: source.meta || source.title || source.targetId || tr('listeningCourse'),
+    audioTitle: source.meta || source.title || source.targetId || tr('listeningCourse'),
     audioUrl: source.audioUrl || (source.taskSnapshot && source.taskSnapshot.audioUrl) || '',
     audioCloudPath: source.audioCloudPath || (source.taskSnapshot && source.taskSnapshot.audioCloudPath) || '',
     audioFileId: source.audioFileId || (source.taskSnapshot && source.taskSnapshot.audioFileId) || buildCloudFileId(source.audioCloudPath || (source.taskSnapshot && source.taskSnapshot.audioCloudPath) || ''),
@@ -206,7 +211,7 @@ async function writeListeningStudyPackSnapshot(item) {
       const result = await store.getListeningStudyPack({
         _id: cacheId,
         id: cacheId,
-        title: source.meta || source.title || source.targetId || '听力课程'
+        title: source.meta || source.title || source.targetId || tr('listeningCourse')
       }, { cacheOnly: true, useCache: false });
       const studyPack = result && result.studyPack;
       if (hasCompleteStudyPackCards(studyPack)) {
@@ -332,12 +337,12 @@ function normalizeCompletionItem(item, index) {
     isListeningStudyPack,
     category: safeItem.category || listeningTarget.category || '',
     taskId: safeItem.taskId || listeningTarget.taskId || '',
-    title: safeItem.title || safeItem.meta || '完成记录',
+    title: safeItem.title || safeItem.meta || tr('completionRecord'),
     meta: safeItem.meta || '',
-    progressText: safeItem.progressText || (totalScore ? `${score}/${totalScore} 分` : '完成'),
-    detailActionText: isListeningStudyPack ? '查看学习包' : '查看原题和分析',
-    scoreText: totalScore ? `${score}/${totalScore} 分` : '',
-    correctText: totalCount ? `${correctCount}/${totalCount} 题` : '',
+    progressText: safeItem.progressText || (totalScore ? formatText(tr('scoreFraction'), { score, total: totalScore }) : tr('complete')),
+    detailActionText: isListeningStudyPack ? tr('viewStudyPack') : tr('viewOriginalAnalysis'),
+    scoreText: totalScore ? formatText(tr('scoreFraction'), { score, total: totalScore }) : '',
+    correctText: totalCount ? formatText(tr('questionCount'), { correct: correctCount, total: totalCount }) : '',
     reviewSummary: review.summary || review.feedback || '',
     reviewContent: review.content || '',
     reviewLanguage: review.language || '',
@@ -396,7 +401,7 @@ async function listeningStudyHasCompletePack(item) {
       const result = await store.getListeningStudyPack({
         _id: cacheId,
         id: cacheId,
-        title: item.meta || item.title || item.targetId || '听力课程'
+        title: item.meta || item.title || item.targetId || tr('listeningCourse')
       }, { cacheOnly: true, useCache: false });
       if (hasCompleteStudyPackCards(result && result.studyPack)) return true;
     } catch (error) {}
@@ -422,7 +427,7 @@ async function hydrateReadingItems(items) {
     try {
       const [passageData, packData] = await Promise.all([
         store.getReadingPassage({ passageId: item.passageId }),
-        store.getReadingStudyPack({ passageId: item.passageId, section: 'questions', useCache: false })
+        store.getReadingStudyPack({ passageId: item.passageId, section: 'questions', cacheOnly: true, useCache: false })
       ]);
       const baseAttempt = item.latestAttempt || (passageData && passageData.latestAttempt) || {};
       const latestAttempt = packData && packData.studyPack
@@ -447,7 +452,7 @@ async function hydrateReadingStudyItems(items) {
     }
     try {
       const section = item.section || 'phrases';
-      const data = await store.getReadingStudyPack({ passageId: item.passageId, section, useCache: false });
+      const data = await store.getReadingStudyPack({ passageId: item.passageId, section, cacheOnly: true, useCache: false });
       const latestAttempt = mergeStudyPackIntoAttempt(item.latestAttempt || {}, data.studyPack || {});
       return normalizeCompletionItem(Object.assign({}, item, { latestAttempt }), 0);
     } catch (error) {
@@ -574,7 +579,9 @@ Page({
     pausedAttemptKey: '',
     loadingAttemptKey: '',
     completionItemsLoaded: false,
-    completionItemsLoading: false
+    completionItemsLoading: false,
+    texts: buildTexts(),
+    language: i18n.getLanguage()
   }),
   onLoad(options) {
     this.audioContext = wx.createInnerAudioContext();
@@ -604,7 +611,7 @@ Page({
     });
     this.audioContext.onError(() => {
       this.setData({ playingAttemptKey: '', pausedAttemptKey: '', loadingAttemptKey: '' });
-      wx.showToast({ title: '录音播放失败', icon: 'none' });
+      wx.showToast({ title: this.data.texts.recordingPlaybackFailed, icon: 'none' });
     });
     const date = String((options && options.date) || '').slice(0, 10) || getTodayKey();
     this.setData({ date });
@@ -632,7 +639,18 @@ Page({
   onShow() {
     this.parentDetailPerf = page.startPagePerf('parent-detail');
     page.syncTheme(this);
+    const texts = buildTexts();
+    this.setData({ texts, language: i18n.getLanguage() });
+    wx.setNavigationBarTitle({ title: this.data.date ? formatDateLabel(this.data.date) : texts.navTitle });
     if (!page.requireIdentityConfirmed()) {
+      wx.nextTick(() => {
+        if (!this.parentDetailPerf) return;
+        this.parentDetailPerf.ready('pageReady', {
+          source: 'identity-blocked',
+          cacheHit: true,
+          date: this.data.date
+        });
+      });
       return;
     }
     const target = store.getSelectedStudentTarget ? store.getSelectedStudentTarget() : {};
@@ -646,6 +664,15 @@ Page({
         cacheHit: true,
         date: this.data.date
       });
+    } else {
+      wx.nextTick(() => {
+        if (!this.parentDetailPerf) return;
+        this.parentDetailPerf.ready('pageReady', {
+          source: 'fallback',
+          cacheHit: false,
+          date: this.data.date
+        });
+      });
     }
     store.getDailyReportByDate(this.data.date, (fresh) => {
       this.applyReportData(fresh);
@@ -655,7 +682,7 @@ Page({
     }).then((reportData) => {
       this.applyReportData(reportData);
       if (!cached && this.parentDetailPerf) {
-        this.parentDetailPerf.ready('pageReady', {
+        this.parentDetailPerf.mark('cloudRefresh', {
           source: reportData && reportData.__cacheHit ? 'cache' : (reportData && reportData.syncMode === 'cloud-error' ? 'error' : 'cloud'),
           cacheHit: !!(reportData && reportData.__cacheHit),
           date: this.data.date
@@ -687,7 +714,7 @@ Page({
       await applyCompletionItems((data && data.items) || []);
     } catch (error) {
       this.setData({ completionItemsLoading: false });
-      wx.showToast({ title: '记录加载失败', icon: 'none' });
+      wx.showToast({ title: this.data.texts.recordLoadFailed, icon: 'none' });
     }
   },
   async toggleCompletionDetail(event) {
@@ -696,7 +723,7 @@ Page({
     const current = (this.data.report.completionItems || []).find((item) => item.key === key);
     if (current && current.isListeningStudyPack) {
       if (!current.category || !current.taskId) {
-        wx.showToast({ title: '学习包缺少任务定位', icon: 'none' });
+        wx.showToast({ title: this.data.texts.taskLocationMissing, icon: 'none' });
         return;
       }
       writeListeningStudySnapshot(current);
@@ -748,7 +775,7 @@ Page({
     }
     const fileId = String(attempt.answerAudioFileId || buildCloudFileId(attempt.answerCloudPath)).trim();
     if (!fileId) {
-      wx.showToast({ title: '录音暂不可播放', icon: 'none' });
+      wx.showToast({ title: this.data.texts.recordingUnavailable, icon: 'none' });
       return;
     }
     this.setData({ loadingAttemptKey: attempt.key, pausedAttemptKey: '' });
@@ -763,7 +790,7 @@ Page({
       this.audioContext.play();
     } catch (error) {
       this.setData({ playingAttemptKey: '', pausedAttemptKey: '', loadingAttemptKey: '' });
-      wx.showToast({ title: '录音加载失败', icon: 'none' });
+      wx.showToast({ title: this.data.texts.recordingLoadFailed, icon: 'none' });
     }
   }
 });

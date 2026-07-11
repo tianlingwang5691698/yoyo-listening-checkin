@@ -3,32 +3,37 @@ const page = require('../../utils/page');
 const labels = require('../../utils/labels');
 const contracts = require('../../utils/contracts');
 const snapshotStore = require('../../utils/snapshot');
+const i18n = require('../../utils/i18n');
+const accountCatalog = require('../../utils/i18n-catalog-account');
 
 const PARENT_DASHBOARD_SNAPSHOT_KEY = 'parentDashboardSnapshotV3';
 const PARENT_DASHBOARD_SNAPSHOT_MAX_AGE_MS = 10 * 60 * 1000;
 
-const MODULES = [
-  { key: 'listening', label: '听力时长', unit: '分钟', copy: '今日听力用时' },
-  { key: 'reading', label: '阅读完成', unit: '篇', copy: '完成阅读' },
-  { key: 'grammar', label: '语法练习', unit: '题', copy: '完成练习' },
-  { key: 'writing', label: '写作提交', unit: '篇', copy: '完成作文' },
-  { key: 'vocabulary', label: '单词背诵', unit: '个', copy: '背诵单词' },
-  { key: 'speaking', label: '口语练习', unit: '次', copy: '完成录音' }
-];
+function tr(key) { return i18n.getPageText('parent', key); }
+function buildTexts() { return Object.keys(accountCatalog.parent['zh-CN']).reduce((texts, key) => { texts[key] = tr(key); return texts; }, {}); }
+function formatText(text, values) { return Object.keys(values || {}).reduce((result, key) => result.replace(new RegExp(`\\{${key}\\}`, 'g'), values[key]), String(text || '')); }
+function getModules() { return [
+  { key: 'listening', label: tr('listeningDuration'), unit: tr('minute'), copy: tr('listeningTimeCopy') },
+  { key: 'reading', label: tr('readingCompleted'), unit: tr('article'), copy: tr('completeReading') },
+  { key: 'grammar', label: tr('grammarPractice'), unit: tr('questionUnit'), copy: tr('completePractice') },
+  { key: 'writing', label: tr('writingSubmitted'), unit: tr('article'), copy: tr('completeWriting') },
+  { key: 'vocabulary', label: tr('vocabularyReviewed'), unit: tr('wordUnit'), copy: tr('reviewWords') },
+  { key: 'speaking', label: tr('speakingPractice'), unit: tr('timeUnit'), copy: tr('completeRecording') }
+]; }
 function formatDateLabel(dateKey) {
   const parts = String(dateKey || '').split('-').map(Number);
   const month = parts[1] || 0;
   const day = parts[2] || 0;
-  return month && day ? `${month}月${day}日` : dateKey || '';
+  return month && day ? formatText(tr('dateLabel'), { month, day }) : dateKey || '';
 }
 
 function getTypeLabel(type) {
-  if (type === 'reading' || type === 'reading-study') return '阅读';
-  if (type === 'grammar') return '语法';
-  if (type === 'writing') return '写作';
-  if (type === 'vocabulary') return '词汇';
-  if (type === 'speaking') return '口语';
-  return '听力';
+  if (type === 'reading' || type === 'reading-study') return tr('reading');
+  if (type === 'grammar') return tr('grammar');
+  if (type === 'writing') return tr('writing');
+  if (type === 'vocabulary') return tr('vocabulary');
+  if (type === 'speaking') return tr('speaking');
+  return tr('listening');
 }
 
 function getModuleKey(type) {
@@ -38,7 +43,7 @@ function getModuleKey(type) {
 }
 
 function buildModuleStats(reports, completionItems) {
-  const stats = MODULES.map((item) => Object.assign({}, item, {
+  const stats = getModules().map((item) => Object.assign({}, item, {
     count: 0,
     value: 0,
     latestTitle: item.copy,
@@ -54,9 +59,7 @@ function buildModuleStats(reports, completionItems) {
       const incoming = summaryStats[key] || {};
       map[key].count += Number(incoming.value == null ? incoming.count : incoming.value) || 0;
       map[key].value = map[key].count;
-      map[key].unit = incoming.unit || map[key].unit;
-      map[key].label = incoming.label || map[key].label;
-      map[key].displayCopy = incoming.copy || incoming.latestTitle || map[key].displayCopy;
+      map[key].displayCopy = incoming.latestTitle || map[key].displayCopy;
       if (incoming.latestTitle && incoming.latestTitle !== '暂无记录') {
         map[key].latestTitle = summaryStats[key].latestTitle;
       }
@@ -90,7 +93,7 @@ function buildModuleStats(reports, completionItems) {
       if (map.speaking) {
         map.speaking.count += 1;
         map.speaking.value = map.speaking.count;
-        map.speaking.latestTitle = item.questionText || '录音评分';
+        map.speaking.latestTitle = item.questionText || tr('recordingScore');
         map.speaking.displayCopy = map.speaking.latestTitle;
       }
     });
@@ -104,7 +107,7 @@ function normalizeCompletionItems(items) {
   return (items || []).map((item) => Object.assign({}, item, {
     dateLabel: formatDateLabel(item.date),
     typeLabel: getTypeLabel(item.type),
-    title: item.title || item.meta || '完成记录'
+    title: item.title || item.meta || tr('completionRecord')
   }));
 }
 
@@ -130,11 +133,11 @@ function buildParentSummary(todayReport, moduleStats) {
     .map((item) => String(item.label || '').replace(/时长|完成|练习|提交|背诵/g, ''))
     .filter(Boolean)
     .slice(0, 3);
-  const title = completedCount > 0 ? '今天有稳定推进' : '今天还没有完成记录';
+  const title = completedCount > 0 ? tr('steadyProgress') : tr('noCompletedToday');
   const copy = completedCount > 0
-    ? `已完成 ${completedCount} 项${minutes ? `，学习约 ${minutes} 分钟` : ''}。`
-    : '晚一点完成后，这里会显示今日学习情况。';
-  const detail = activeModules.length ? `${activeModules.join('、')}有记录。` : '先关注今天的主线任务即可。';
+    ? formatText(tr('completedSummary'), { count: completedCount, minutes: minutes ? formatText(tr('learningMinutesSuffix'), { count: minutes }) : '' })
+    : tr('laterCopy');
+  const detail = activeModules.length ? formatText(tr('modulesHaveRecords'), { modules: activeModules.join(', ') }) : tr('focusMainTask');
   return { title, copy, detail };
 }
 
@@ -159,6 +162,7 @@ function normalizeParentData(data) {
   const todayReport = summarizeReport(data.todayReport);
   const moduleStats = data.todayLearningStats || data.moduleStats ? buildModuleStats([{ moduleStats: data.todayLearningStats || data.moduleStats }], []) : buildModuleStats(recentReports.slice(0, 1), completionItems);
   return Object.assign({}, data, {
+    childDisplayNickname: !String((data.child && data.child.nickname) || '').trim() || ['同学', '我'].includes(String((data.child && data.child.nickname) || '').trim()) ? tr('defaultNickname') : data.child.nickname,
     todayReport,
     recentReports,
     completionItems,
@@ -166,7 +170,7 @@ function normalizeParentData(data) {
     parentSummary: buildParentSummary(todayReport, moduleStats),
     studentLinks,
     selectedStudentIndex,
-    studentNames: studentLinks.map((item) => item.nickname || item.childLoginCode || '学生')
+    studentNames: studentLinks.map((item) => item.nickname || item.childLoginCode || tr('student'))
   });
 }
 
@@ -183,6 +187,7 @@ Page({
   data: page.createCloudPageData({
     family: {},
     child: contracts.createChildDefaults(),
+    childDisplayNickname: tr('defaultNickname'),
     todayReport: contracts.createReportDefaults(),
     parentSummary: buildParentSummary(contracts.createReportDefaults(), buildModuleStats([], [])),
     recentReports: [],
@@ -192,7 +197,9 @@ Page({
     studentNames: [],
     selectedStudentIndex: 0,
     recentExpanded: false,
-    recentLoading: false
+    recentLoading: false,
+    texts: buildTexts(),
+    language: i18n.getLanguage()
   }),
   parentDashboardLoadSeq: 0,
   applyParentData(data) {
@@ -220,6 +227,9 @@ Page({
   onShow() {
     this.parentPerf = page.startPagePerf('parent');
     page.syncTheme(this);
+    const texts = buildTexts();
+    this.setData({ texts, language: i18n.getLanguage() });
+    wx.setNavigationBarTitle({ title: texts.navTitle });
     this.loadParentData();
   },
   loadParentData() {
@@ -232,6 +242,15 @@ Page({
         source: 'snapshot',
         cacheHit: true,
         reports: (this.data.recentReports || []).length
+      });
+    } else if (this.parentPerf) {
+      wx.nextTick(() => {
+        if (!this.parentPerf) return;
+        this.parentPerf.ready('pageReady', {
+          source: 'fallback',
+          cacheHit: false,
+          reports: (this.data.recentReports || []).length
+        });
       });
     }
     store.getParentDashboard({ days: 1, summaryOnly: true, statsVersion: 'today-learning-v1' }, (fresh) => {
@@ -246,7 +265,7 @@ Page({
       this.saveParentSnapshot(snapshotId, data);
       this.applyParentData(data);
       if (!hasSnapshot && this.parentPerf) {
-        this.parentPerf.ready('pageReady', {
+        this.parentPerf.mark('cloudRefresh', {
           source: data && data.__cacheHit ? 'cache' : (data && data.syncMode === 'cloud-error' ? 'error' : 'cloud'),
           cacheHit: !!(data && data.__cacheHit),
           reports: ((data && data.recentReports) || []).length

@@ -36,6 +36,7 @@ const MUTATION_ACTIONS = {
   gradeWritingAttempt: true,
   addDictionaryWord: true,
   recordGrammarWrong: true,
+  addPracticeWrongQuestion: true,
   recordGrammarProgress: true,
   recordStudyCompletion: true,
   refreshInviteCode: true,
@@ -64,6 +65,7 @@ const READ_CACHE_CONFIG = {
   getDailyReportByDate: { persist: true, maxAgeMs: RECORD_CACHE_MAX_AGE_MS },
   getParentDashboard: { persist: true, maxAgeMs: RECORD_CACHE_MAX_AGE_MS },
   getStudyCompletions: { persist: true, maxAgeMs: RECORD_CACHE_MAX_AGE_MS },
+  getStudyCompletionDetail: { persist: false, maxAgeMs: RECORD_CACHE_MAX_AGE_MS },
   getFamilyPage: { persist: true },
   getReadingHome: { persist: true },
   getReadingPassage: { persist: true },
@@ -75,8 +77,11 @@ const READ_CACHE_CONFIG = {
   getGrammarHome: { persist: true },
   getGrammarTopic: { persist: true },
   getGrammarWrongBook: { persist: true },
+  getPracticeWrongQuestions: { persist: false, maxAgeMs: RECORD_CACHE_MAX_AGE_MS },
   getGrammarProgress: { persist: true },
   getWritingAttempts: { persist: true },
+  getWritingAttemptDetail: { persist: false, maxAgeMs: RECORD_CACHE_MAX_AGE_MS },
+  getAdminStatus: { persist: false, maxAgeMs: RECORD_CACHE_MAX_AGE_MS },
   getAdminFamilyList: { persist: true, maxAgeMs: RECORD_CACHE_MAX_AGE_MS },
   explainGrammarQuestion: { persist: false }
 };
@@ -597,8 +602,10 @@ async function getListeningStudyPack(item, options, onRefresh) {
   }, { onRefresh: refresh, useCache: opts.useCache !== false });
 }
 
-async function getFlashcardReview(onRefresh) {
-  const result = await callCloud('getFlashcardReview', withSelectedStudent({}), {
+async function getFlashcardReview(options, onRefresh) {
+  const payload = typeof options === 'function' ? {} : (options || {});
+  const refresh = typeof options === 'function' ? options : onRefresh;
+  const result = await callCloud('getFlashcardReview', withSelectedStudent(payload), {
     today: '',
     settings: { newLimit: 10, reviewLimit: 20 },
     library: [],
@@ -608,7 +615,7 @@ async function getFlashcardReview(onRefresh) {
     dueCount: 0,
     newDueCount: 0,
     reviewDueCount: 0
-  }, { onRefresh, useCache: false });
+  }, { onRefresh: refresh });
   if (result && result.syncMode === 'cloud') {
     try {
       wx.removeStorageSync(PENDING_FLASHCARDS_KEY);
@@ -913,9 +920,15 @@ async function gradeWritingAttempt(attemptId) {
 }
 
 async function getWritingAttempts(options, onRefresh) {
-  return callCloud('getWritingAttempts', Object.assign({}, options || {}), {
+  return callCloud('getWritingAttempts', withSelectedStudent(Object.assign({}, options || {})), {
     attempts: []
   }, { onRefresh });
+}
+
+async function getWritingAttemptDetail(attemptId) {
+  return callCloud('getWritingAttemptDetail', withSelectedStudent({ attemptId }), {
+    attempt: null
+  }, { useCache: false });
 }
 
 async function getGrammarHome(options, onRefresh) {
@@ -947,15 +960,30 @@ async function getGrammarWrongBook() {
   });
 }
 
-async function getGrammarProgress(topicId) {
-  return callCloud('getGrammarProgress', { topicId }, {
-    topicId,
-    nextIndex: 0
+async function addPracticeWrongQuestion(options) {
+  return callCloud('addPracticeWrongQuestion', withSelectedStudent(options || {}), {
+    saved: false,
+    reason: ''
+  }, { useCache: false });
+}
+
+async function getPracticeWrongQuestions(options) {
+  return callCloud('getPracticeWrongQuestions', withSelectedStudent(options || {}), {
+    type: String(options && options.type || ''),
+    items: []
   });
 }
 
-async function recordGrammarProgress(topicId, nextIndex) {
-  return callCloud('recordGrammarProgress', withSelectedStudent({ topicId, nextIndex }), { saved: false }, { useCache: false });
+async function getGrammarProgress(topicId) {
+  return callCloud('getGrammarProgress', withSelectedStudent({ topicId }), {
+    topicId,
+    nextIndex: 0,
+    answeredQuestions: []
+  });
+}
+
+async function recordGrammarProgress(topicId, nextIndex, answeredQuestions) {
+  return callCloud('recordGrammarProgress', withSelectedStudent({ topicId, nextIndex, answeredQuestions: answeredQuestions || [] }), { saved: false }, { useCache: false });
 }
 
 async function recordStudyCompletion(item) {
@@ -966,8 +994,12 @@ async function getStudyCompletions(options, onRefresh) {
   return callCloud('getStudyCompletions', withSelectedStudent(options || {}), { items: [] }, { onRefresh });
 }
 
+async function getStudyCompletionDetail(recordId) {
+  return callCloud('getStudyCompletionDetail', withSelectedStudent({ recordId }), { item: null }, { useCache: false });
+}
+
 async function explainGrammarQuestion(question, options = {}) {
-  return callCloud('explainGrammarQuestion', { question, force: Boolean(options.force) }, {
+  return callCloud('explainGrammarQuestion', { question, force: Boolean(options.force), cacheOnly: Boolean(options.cacheOnly) }, {
     explanation: null,
     source: ''
   }, { useCache: false });
@@ -1072,7 +1104,14 @@ async function getAdminFamilyList(onRefresh) {
   }, { onRefresh });
 }
 
-async function getAdminStatus() {
+async function getAdminStatus(options, onRefresh) {
+  let opts = Object.assign({}, options || {});
+  let refreshHandler = onRefresh;
+  if (typeof options === 'function') {
+    refreshHandler = options;
+    opts = {};
+  }
+  const forceRefresh = opts.forceRefresh === true;
   return callCloud('getAdminStatus', {}, {
     isAdmin: false,
     openId: '',
@@ -1082,7 +1121,7 @@ async function getAdminStatus() {
     envHit: false,
     envConfigured: false,
     envCount: 0
-  }, { useCache: false });
+  }, { useCache: !forceRefresh, onRefresh: refreshHandler });
 }
 
 module.exports = {
@@ -1129,14 +1168,18 @@ module.exports = {
   submitWritingAttempt,
   gradeWritingAttempt,
   getWritingAttempts,
+  getWritingAttemptDetail,
   getGrammarHome,
   getGrammarTopic,
   recordGrammarWrong,
   getGrammarWrongBook,
+  addPracticeWrongQuestion,
+  getPracticeWrongQuestions,
   getGrammarProgress,
   recordGrammarProgress,
   recordStudyCompletion,
   getStudyCompletions,
+  getStudyCompletionDetail,
   getCachedReadResult,
   getDeviceId,
   getDeviceStudyRole,

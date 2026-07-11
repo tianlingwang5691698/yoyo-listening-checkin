@@ -1,9 +1,15 @@
 const page = require('../../../utils/page');
 const store = require('../../../utils/store');
-const appConfig = require('../../../data/app-config');
+const appConfig = require('../../../app-config');
 const snapshotStore = require('../../../utils/snapshot');
+const i18n = require('../../../utils/i18n');
 const TODAY_COMPLETED_CACHE_KEY = 'todayCompletedItemsV1';
 const LESSON_TASK_SNAPSHOT_KEY = 'lessonTaskSnapshotV1';
+
+function t(key, variables) {
+  const template = i18n.getPageText('completed', key);
+  return Object.keys(variables || {}).reduce((text, name) => text.replace(new RegExp(`\\{${name}\\}`, 'g'), variables[name]), template);
+}
 
 function buildCloudFileId(cloudPath) {
   const normalizedPath = String(cloudPath || '').replace(/^\/+/, '');
@@ -24,8 +30,8 @@ function todayString() {
 function normalizeItems(items) {
   return (items || []).map((item, index) => {
     const attempts = (item.attempts || []).map((attempt, attemptIndex) => Object.assign({}, attempt, {
-      displayTitle: `第 ${attemptIndex + 1} 次回答`,
-      scoreText: attempt.status === 'score-pending' ? '待评分' : `${Number(attempt.score || 0)} 分`
+      displayTitle: t('attempt', { n: attemptIndex + 1 }),
+      scoreText: attempt.status === 'score-pending' ? t('pendingScore') : `${Number(attempt.score || 0)} ${t('points')}`
     }));
     const latestAttempt = attempts.length ? attempts[attempts.length - 1] : null;
     return Object.assign({}, item, {
@@ -41,25 +47,25 @@ function normalizeItems(items) {
 }
 
 function getTypeLabel(type) {
-  if (type === 'reading') return '阅读';
-  if (type === 'reading-study') return '阅读学习';
-  if (type === 'grammar') return '语法';
-  if (type === 'writing') return '写作';
-  if (type === 'speaking') return '回答';
-  if (type === 'listening-study') return '听力学习包';
-  if (type === 'vocabulary') return '词汇';
-  return '听力';
+  if (type === 'reading') return t('reading');
+  if (type === 'reading-study') return t('readingStudy');
+  if (type === 'grammar') return t('grammar');
+  if (type === 'writing') return t('writing');
+  if (type === 'speaking') return t('speaking');
+  if (type === 'listening-study') return t('listeningStudy');
+  if (type === 'vocabulary') return t('vocabulary');
+  return t('listening');
 }
 
 function getActionText(type) {
-  if (type === 'reading') return '查看解析';
-  if (type === 'reading-study') return '查看学习包';
-  if (type === 'grammar') return '查看语法';
-  if (type === 'writing') return '查看批改';
-  if (type === 'speaking') return '查看回答';
-  if (type === 'listening-study') return '查看学习包';
-  if (type === 'vocabulary') return '查看词汇';
-  return '查看任务';
+  if (type === 'reading') return t('viewAnalysis');
+  if (type === 'reading-study') return t('viewStudyPack');
+  if (type === 'grammar') return t('viewGrammar');
+  if (type === 'writing') return t('viewCorrection');
+  if (type === 'speaking') return t('viewAnswer');
+  if (type === 'listening-study') return t('viewStudyPack');
+  if (type === 'vocabulary') return t('viewVocabulary');
+  return t('viewTask');
 }
 
 function normalizeTarget(target) {
@@ -170,7 +176,8 @@ Page({
     date: '',
     target: {},
     scope: '',
-    debugLines: []
+    debugLines: [],
+    texts: i18n.getPageTexts('completed')
   }),
   onLoad(options = {}) {
     this.setData({
@@ -182,6 +189,9 @@ Page({
   async onShow() {
     this.completedPerf = page.startPagePerf('home-completed');
     page.syncTheme(this);
+    const texts = i18n.getPageTexts('completed');
+    wx.setNavigationBarTitle({ title: texts.navTitle });
+    this.setData({ texts, items: normalizeItems(this.data.items) });
     const date = this.data.date || todayString();
     const target = normalizeTarget(this.data.target || store.getSelectedStudentTarget());
     const scope = String(this.data.scope || '');
@@ -213,6 +223,13 @@ Page({
         cacheHit: true,
         items: cachedDisplayItems.length
       });
+    } else {
+      await new Promise((resolve) => wx.nextTick(resolve));
+      this.completedPerf.ready('pageReady', {
+        source: 'fallback',
+        cacheHit: false,
+        items: 0
+      });
     }
     try {
       const data = await store.getStudyCompletions(Object.assign({ date }, target), (fresh) => {
@@ -232,7 +249,7 @@ Page({
         items: normalizeItems(items),
         debugLines
       });
-      this.completedPerf.ready('pageReady', {
+      this.completedPerf.mark('cloudRefresh', {
         source: data && data.__cacheHit ? 'cache' : 'cloud',
         cacheHit: !!(data && data.__cacheHit),
         items: items.length
@@ -247,7 +264,7 @@ Page({
           debugLines
         });
       }
-      this.completedPerf.ready('pageReady', {
+      this.completedPerf.mark('cloudRefresh', {
         source: 'error',
         cacheHit: false,
         items: cachedDisplayItems.length
@@ -278,7 +295,7 @@ Page({
       });
       return;
     }
-    wx.showToast({ title: '暂无详情', icon: 'none' });
+    wx.showToast({ title: t('noDetails'), icon: 'none' });
   },
   async playAttempt(event) {
     const itemIndex = Number(event.currentTarget.dataset.itemIndex || 0);
@@ -291,7 +308,7 @@ Page({
       ? (attempt.feedbackAudioFileId || buildCloudFileId(attempt.feedbackAudioCloudPath))
       : (attempt.answerAudioFileId || buildCloudFileId(attempt.answerCloudPath));
     if (!fileId) {
-      wx.showToast({ title: audioType === 'feedback' ? '暂无建议语音' : '暂无录音', icon: 'none' });
+      wx.showToast({ title: audioType === 'feedback' ? t('noFeedbackAudio') : t('noRecording'), icon: 'none' });
       return;
     }
     try {
@@ -304,7 +321,7 @@ Page({
       this.audioContext.src = url;
       this.audioContext.play();
     } catch (error) {
-      wx.showToast({ title: '播放失败', icon: 'none' });
+      wx.showToast({ title: t('playFailed'), icon: 'none' });
     }
   }
 });

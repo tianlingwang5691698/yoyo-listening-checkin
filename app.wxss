@@ -1,2 +1,26 @@
 @import "./styles/theme-current.wxss";
 @import "./styles/base.wxss";
+
+page {
+  min-height: 100%;
+  background-color: #F6FBFD;
+}
+
+.language-en,
+.language-en view,
+.language-en text,
+.language-en button {
+  word-break: normal;
+  overflow-wrap: break-word;
+}
+
+.language-en button {
+  white-space: normal;
+  line-height: 1.2;
+}
+
+.language-en .type-page-title,
+.language-en .type-card-title,
+.language-en .type-section-title {
+  letter-spacing: 0;
+}

@@ -2,6 +2,9 @@ const page = require('../../utils/page');
 const store = require('../../utils/store');
 const completed = require('../../utils/completed');
 const snapshotStore = require('../../utils/snapshot');
+const i18n = require('../../utils/i18n');
+
+const text = (key, fallback) => i18n.getPageText('grammar', key, undefined, fallback);
 
 const GRAMMAR_TOPIC_SNAPSHOT_KEY = 'grammarTopicSnapshotV1';
 const GRAMMAR_HOME_SNAPSHOT_KEY = 'grammarHomeSnapshotV1';
@@ -64,13 +67,13 @@ function buildExams(em2Topics, em1Topics) {
   return [
     {
       examId: 'em2',
-      exam: '二模',
+      exam: text('em2', '二模'),
       count: em2Count,
       topics: em2Topics
     },
     {
       examId: 'em1',
-      exam: '一模',
+      exam: text('em1', '一模'),
       count: em1Count,
       topics: em1Topics
     }
@@ -84,13 +87,13 @@ function buildStages(em2Topics, em1Topics) {
   return [
     {
       stageId: 'junior',
-      stage: '初中',
+      stage: text('junior', '初中'),
       count: juniorCount,
       exams: buildExams(em2Topics, em1Topics)
     },
     {
       stageId: 'senior',
-      stage: '高中',
+      stage: text('senior', '高中'),
       count: 0,
       exams: []
     }
@@ -128,6 +131,43 @@ function tokenizeText(text) {
   }));
 }
 
+function serializeAnsweredQuestions(questions) {
+  return (questions || []).filter((question) => question.isAnswered).map((question) => ({
+    _id: question._id || '',
+    number: question.sequenceNumber || question.number || 0,
+    selectedAnswer: question.selectedAnswer || '',
+    answer: question.answer || '',
+    isCorrect: !!question.isCorrect,
+    explanation: question.explanation || null
+  }));
+}
+
+function restoreAnsweredQuestions(questions, savedQuestions) {
+  const savedById = (savedQuestions || []).reduce((map, question) => {
+    const key = String(question && question._id || '');
+    if (key) map[key] = question;
+    return map;
+  }, {});
+  return (questions || []).map((question) => {
+    const saved = savedById[String(question._id || '')];
+    if (!saved) return question;
+    const selectedAnswer = String(saved.selectedAnswer || '').toUpperCase();
+    const answer = String(saved.answer || question.answer || '').toUpperCase();
+    return Object.assign({}, question, {
+      selectedAnswer,
+      answer,
+      isAnswered: true,
+      isCorrect: saved.isCorrect === true || (!!selectedAnswer && selectedAnswer === answer),
+      explanation: saved.explanation || null,
+      optionsList: (question.optionsList || []).map((entry) => Object.assign({}, entry, {
+        selected: entry.key === selectedAnswer,
+        correct: entry.key === answer,
+        wrong: entry.key === selectedAnswer && selectedAnswer !== answer
+      }))
+    });
+  });
+}
+
 function recordGrammarCompleted(state, answeredCount) {
   const topic = state.selectedTopic || state.selectedCategory || state.selectedExam || {};
   const topicId = state.selectedTopicId || state.selectedCategoryId || state.selectedExamId || '';
@@ -146,10 +186,10 @@ function recordGrammarCompleted(state, answeredCount) {
     id: `grammar:${state.selectedExamId || 'grammar'}:${topicId}`,
     type: 'grammar',
     targetId: topicId,
-    title: `语法：${topic.topic || topic.exam || '练习'}`,
-    meta: state.selectedExam ? state.selectedExam.exam : '语法',
+    title: `${text('navTitle', '语法')}: ${topic.topic || topic.exam || text('topics', '练习')}`,
+    meta: state.selectedExam ? state.selectedExam.exam : text('navTitle', '语法'),
     topicId,
-    progressText: `今日已做 ${answeredCount || 1} 题`,
+    progressText: `${answeredCount || 1}${text('questionUnit', ' 题')}`,
     latestAttempt: {
       answeredCount: answeredCount || answeredQuestions.length,
       totalCount: (state.selectedQuestions || []).length,
@@ -191,6 +231,10 @@ Page({
     dictionaryEntry: null
   }),
   onUnload() {
+    if (this.grammarProgressTimer) {
+      clearTimeout(this.grammarProgressTimer);
+      this.grammarProgressTimer = null;
+    }
     this.flushGrammarCompletion();
     this.flushGrammarProgress();
     if (this.grammarAudioContext) {
@@ -203,17 +247,45 @@ Page({
     recordGrammarCompleted(this.data, this.data.answeredCount);
   },
   flushGrammarProgress() {
+    if (this.grammarProgressTimer) {
+      clearTimeout(this.grammarProgressTimer);
+      this.grammarProgressTimer = null;
+    }
     const progress = this.pendingGrammarProgress || null;
     if (!progress || !progress.topicId) return;
     this.pendingGrammarProgress = null;
-    store.recordGrammarProgress(progress.topicId, progress.nextIndex).catch(() => {});
+    store.recordGrammarProgress(progress.topicId, progress.nextIndex, progress.answeredQuestions).catch(() => {});
   },
-  queueGrammarProgress(topicId, nextIndex, answeredCount) {
+  queueGrammarProgress(topicId, nextIndex, answeredQuestions) {
     if (!topicId) return;
-    this.pendingGrammarProgress = { topicId, nextIndex };
-    if (answeredCount % 3 === 0) {
-      this.flushGrammarProgress();
-    }
+    this.pendingGrammarProgress = { topicId, nextIndex, answeredQuestions };
+    if (this.grammarProgressTimer) clearTimeout(this.grammarProgressTimer);
+    this.grammarProgressTimer = setTimeout(() => this.flushGrammarProgress(), 600);
+  },
+  queueCurrentGrammarProgress() {
+    if (this.data.mode === 'wrong') return;
+    const questions = this.data.selectedQuestions || [];
+    let lastAnsweredIndex = -1;
+    questions.forEach((question, index) => {
+      if (question.isAnswered) lastAnsweredIndex = index;
+    });
+    if (lastAnsweredIndex < 0) return;
+    const reference = questions[lastAnsweredIndex] || {};
+    this.queueGrammarProgress(
+      `${this.data.selectedExamId}:${reference.subtopicId || this.data.selectedTopicId}`,
+      lastAnsweredIndex + 1,
+      serializeAnsweredQuestions(questions)
+    );
+  },
+  scrollToResumeQuestion(index) {
+    if (!index || index < 0) return;
+    setTimeout(() => {
+      wx.pageScrollTo({
+        selector: `#grammar-question-${index}`,
+        offsetTop: -80,
+        duration: 280
+      });
+    }, 120);
   },
   async onLoad() {
     this.grammarPerf = page.startPagePerf('grammar');
@@ -267,6 +339,9 @@ Page({
         em1Loading: false
       });
       reportReady('snapshot');
+    } else {
+      await new Promise((resolve) => wx.nextTick(resolve));
+      reportReady('fallback');
     }
     Promise.all([
       store.getGrammarHome({ examId: 'em2' }, (fresh) => {
@@ -293,6 +368,21 @@ Page({
   },
   onShow() {
     page.syncTheme(this);
+    this.setData({
+      stages: (this.data.stages || []).map((item) => Object.assign({}, item, {
+        stage: item.stageId === 'senior' ? text('senior', '高中') : text('junior', '初中')
+      })),
+      stageCategories: (this.data.stageCategories || []).map((item) => Object.assign({}, item, {
+        exam: item.examId === 'em1' ? text('em1', '一模') : text('em2', '二模')
+      }))
+    });
+  },
+  openPracticeHistory() {
+    this.flushGrammarCompletion();
+    this.flushGrammarProgress();
+    wx.navigateTo({
+      url: '/pages/practice-history/index?type=grammar'
+    });
   },
   async openWrongBook() {
     let wrongTopics = [];
@@ -366,7 +456,7 @@ Page({
       });
     } catch (error) {
       this.setData({ em1Loading: false });
-      wx.showToast({ title: '一模语法加载失败', icon: 'none' });
+      wx.showToast({ title: text('em1Failed', '一模语法加载失败'), icon: 'none' });
     }
   },
   selectStage(event) {
@@ -465,19 +555,30 @@ Page({
     if (progressResult) {
       nextIndex = Math.min(Math.max(Number(progressResult.nextIndex || 0), 0), topicQuestions.length);
     }
-    const selectedQuestions = topicQuestions.slice(nextIndex).map((item, index) => buildQuestion(item, nextIndex + index));
+    const restoredQuestions = restoreAnsweredQuestions(
+      topicQuestions.map((item, index) => buildQuestion(item, index)),
+      (progressResult && progressResult.answeredQuestions) || []
+    );
+    const answeredCount = restoredQuestions.filter((question) => question.isAnswered).length;
+    const firstUnansweredIndex = restoredQuestions.findIndex((question) => !question.isAnswered);
+    const resumeCandidate = answeredCount > 0 && firstUnansweredIndex >= 0 ? firstUnansweredIndex : nextIndex;
+    const resumeIndex = resumeCandidate > 0 && resumeCandidate < restoredQuestions.length ? resumeCandidate : 0;
     this.setData({
       selectedTopicId: topicId,
       selectedTopic,
-      selectedQuestions,
-      selectedTopicOffset: nextIndex,
+      selectedQuestions: restoredQuestions,
+      selectedTopicOffset: resumeIndex,
       expandedQuestionId: '',
-      answeredCount: 0
+      answeredCount
+    }, () => {
+      if (resumeIndex > 0) this.scrollToResumeQuestion(resumeIndex);
     });
     topicPerf.ready('topicReady', {
       remote: !!topicResult,
       progress: !!progressResult,
-      questions: selectedQuestions.length
+      questions: restoredQuestions.length,
+      resumedAt: resumeIndex,
+      restoredAnswers: answeredCount
     });
   },
   backToTopics() {
@@ -551,30 +652,33 @@ Page({
       return;
     }
     const answeredCount = (this.data.selectedQuestions || []).filter((item) => item.isAnswered).length + 1;
+    const nextQuestions = (this.data.selectedQuestions || []).map((item) => Object.assign({}, item, {
+      selectedAnswer: item._id === questionId ? option : item.selectedAnswer,
+      isAnswered: item._id === questionId ? true : item.isAnswered,
+      isCorrect: item._id === questionId && item.answer ? option === item.answer : item.isCorrect,
+      explaining: item._id === questionId ? false : item.explaining,
+      optionsList: (item.optionsList || []).map((entry) => Object.assign({}, entry, {
+        selected: item._id === questionId ? entry.key === option : entry.selected,
+        correct: item._id === questionId ? entry.key === item.answer : entry.correct,
+        wrong: item._id === questionId ? entry.key === option && option !== item.answer : entry.wrong
+      }))
+    }));
     this.setData({
       expandedQuestionId: questionId,
-      selectedQuestions: (this.data.selectedQuestions || []).map((item) => Object.assign({}, item, {
-        selectedAnswer: item._id === questionId ? option : item.selectedAnswer,
-        isAnswered: item._id === questionId ? true : item.isAnswered,
-        isCorrect: item._id === questionId && item.answer ? option === item.answer : item.isCorrect,
-        explaining: item._id === questionId ? false : item.explaining,
-        optionsList: (item.optionsList || []).map((entry) => Object.assign({}, entry, {
-          selected: item._id === questionId ? entry.key === option : entry.selected,
-          correct: item._id === questionId ? entry.key === item.answer : entry.correct,
-          wrong: item._id === questionId ? entry.key === option && option !== item.answer : entry.wrong
-        }))
-      }))
+      selectedQuestions: nextQuestions
     }, () => {
       this.setData({ answeredCount });
-      if (answeredCount % 3 === 0) {
-        recordGrammarCompleted(this.data, answeredCount);
-      }
+      recordGrammarCompleted(this.data, answeredCount);
     });
     try {
-      const questionIndex = (this.data.selectedQuestions || []).findIndex((item) => item._id === questionId);
-      const nextIndex = Math.max(0, Number(this.data.selectedTopicOffset || 0)) + questionIndex + 1;
+      const questionIndex = nextQuestions.findIndex((item) => item._id === questionId);
+      const nextIndex = questionIndex + 1;
       if (this.data.mode !== 'wrong') {
-        this.queueGrammarProgress(`${this.data.selectedExamId}:${currentQuestion.subtopicId || this.data.selectedTopicId}`, nextIndex, answeredCount);
+        this.queueGrammarProgress(
+          `${this.data.selectedExamId}:${currentQuestion.subtopicId || this.data.selectedTopicId}`,
+          nextIndex,
+          serializeAnsweredQuestions(nextQuestions)
+        );
       }
       if (currentQuestion && currentQuestion.answer && option !== currentQuestion.answer) {
         store.recordGrammarWrong(currentQuestion, option);
@@ -586,7 +690,7 @@ Page({
           explanation: item._id === questionId ? {
             answer: currentQuestion.answer || '',
             topic: currentQuestion.topic || currentQuestion.subtopic || '语法',
-            explanation: '讲解暂不可用，请稍后再试。',
+            explanation: text('explainUnavailable', '讲解暂不可用，请稍后再试。'),
             elimination: ''
           } : item.explanation
         }))
@@ -610,7 +714,7 @@ Page({
       const explanation = result && result.explanation ? result.explanation : {
         answer: question.answer || '',
         topic: question.topic || question.subtopic || '语法',
-        explanation: result && result.cloudError ? `讲解暂不可用：${result.cloudError.message}` : '讲解暂不可用，请稍后再试。',
+        explanation: result && result.cloudError ? `${text('explainUnavailable', '讲解暂不可用，请稍后再试。')} ${result.cloudError.message}` : text('explainUnavailable', '讲解暂不可用，请稍后再试。'),
         elimination: ''
       };
       this.setData({
@@ -620,6 +724,7 @@ Page({
         }))
       }, () => {
         recordGrammarCompleted(this.data, this.data.answeredCount);
+        this.queueCurrentGrammarProgress();
       });
     } catch (error) {
       this.setData({
@@ -628,10 +733,13 @@ Page({
           explanation: item._id === questionId ? {
             answer: question.answer || '',
             topic: question.topic || question.subtopic || '语法',
-            explanation: '讲解暂不可用，请稍后再试。',
+            explanation: text('explainUnavailable', '讲解暂不可用，请稍后再试。'),
             elimination: ''
           } : item.explanation
         }))
+      }, () => {
+        recordGrammarCompleted(this.data, this.data.answeredCount);
+        this.queueCurrentGrammarProgress();
       });
     }
   },
@@ -654,6 +762,9 @@ Page({
           explaining: item._id === questionId ? false : item.explaining,
           explanation: item._id === questionId ? explanation : item.explanation
         }))
+      }, () => {
+        recordGrammarCompleted(this.data, this.data.answeredCount);
+        this.queueCurrentGrammarProgress();
       });
     } catch (error) {
       this.setData({
@@ -688,7 +799,7 @@ Page({
         dictionaryLoading: false,
         dictionaryEntry: { word, definitions: [] }
       });
-      wx.showToast({ title: '词典暂不可用', icon: 'none' });
+      wx.showToast({ title: text('dictionaryUnavailable', '词典暂不可用'), icon: 'none' });
     }
   },
   closeDictionary() {
@@ -701,9 +812,9 @@ Page({
     this.setData({ dictionaryAdding: true });
     try {
       await store.addDictionaryWord(Object.assign({}, entry, { word }));
-      wx.showToast({ title: '已加入词库', icon: 'none' });
+      wx.showToast({ title: text('addSuccess', '已加入词库'), icon: 'none' });
     } catch (error) {
-      wx.showToast({ title: '加入失败', icon: 'none' });
+      wx.showToast({ title: text('addFailed', '加入失败'), icon: 'none' });
     } finally {
       this.setData({ dictionaryAdding: false });
     }
@@ -721,7 +832,7 @@ Page({
         });
         this.grammarAudioContext.onError(() => {
           this.setData({ dictionaryAudioLoading: false });
-          wx.showToast({ title: '播放失败，稍后再试', icon: 'none' });
+          wx.showToast({ title: text('playbackFailed', '播放失败，稍后再试'), icon: 'none' });
         });
       }
       this.grammarAudioContext.stop();

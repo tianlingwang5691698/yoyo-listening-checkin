@@ -1,89 +1,122 @@
-<view wx:if="{{theme === 'library'}}" class="theme-library page-shell library-home-page">
-  <view class="library-home-shelf"></view>
-  <view class="library-home-header">
+<view wx:if="{{theme === 'library'}}" class="theme-library page-shell library-home-page language-{{language}}">
+  <image class="library-home-background" src="../../assets/library/library-home-user-bg.jpg" mode="widthFix" />
+  <view class="library-home-header" style="{{homeNavStyle}}">
     <view>
-      <view class="library-home-kicker">同学的英语小耳朵</view>
-      <view class="library-home-date">{{todayDisplay}} · Day {{planDayIndex}}</view>
+      <view class="library-home-greeting">{{greeting}}{{texts.greetingSeparator}}{{child.nickname || texts.classmate}}</view>
+      <view class="library-home-date">{{todayDisplay}} · {{planDayText}}</view>
     </view>
-    <view class="library-home-mark">藏</view>
   </view>
 
-  <view class="library-home-greeting">{{greeting}}，{{child.nickname || '同学'}}</view>
-
   <view class="library-status-slip" wx:if="{{!homeLoading && syncMode === 'cloud-error'}}">
-    <view>馆藏服务暂时不可用</view>
-    <text>{{(syncDebug && (syncDebug.publicReason || syncDebug.reason)) || '学习数据暂时没有同步成功，请稍后再试。'}}</text>
+    <view>{{texts.syncUnavailableTitle}}</view>
+    <text>{{(syncDebug && (syncDebug.publicReason || syncDebug.reason)) || texts.syncUnavailableDescription}}</text>
   </view>
 
   <view class="library-nickname-sheet" wx:if="{{nicknameRequired && !identityConfirmVisible && !entryPosterVisible}}">
-    <view class="library-sheet-title">请设置昵称</view>
-    <view class="library-sheet-copy">用一个常用昵称开始今天的学习。</view>
+    <view class="library-sheet-title">{{texts.nicknameRequiredTitle}}</view>
+    <view class="library-sheet-copy">{{texts.nicknameRequiredDescription}}</view>
     <view class="library-sheet-edit">
-      <input class="library-nickname-input" placeholder="输入昵称" value="{{nicknameInput}}" bindinput="handleNicknameInput" />
-      <view class="library-sheet-save" bindtap="saveRequiredNickname">保存</view>
+      <input class="library-nickname-input" placeholder="{{texts.nicknamePlaceholder}}" value="{{nicknameInput}}" bindinput="handleNicknameInput" />
+      <view class="library-sheet-save" bindtap="saveRequiredNickname">{{texts.save}}</view>
     </view>
   </view>
 
-  <view class="library-listening-sheet {{listeningTaskStatus.setupRequired ? 'is-empty' : ''}}" bindtap="openCompleted">
-    <view class="library-sheet-margin">今日卷</view>
+  <view class="library-listening-sheet {{homeDataReady ? (listeningTaskStatus.setupRequired ? 'is-empty' : '') : 'is-data-pending'}}" bindtap="openCompleted">
     <view class="library-listening-copy">
-      <view class="library-listening-title">今日听力</view>
-      <view class="library-listening-lead">先听懂一点，<br />再继续学习</view>
-      <view class="library-listening-action">{{listeningTaskStatus.action}} <text>›</text></view>
+      <view class="library-listening-title">{{texts.todayListening}}</view>
+      <view class="library-listening-lead">{{texts.listeningLead}}</view>
+      <view class="library-listening-action" wx:if="{{homeDataReady}}">{{listeningTaskStatus.action}} <text>›</text></view>
+      <view class="library-listening-action home-data-skeleton" wx:else></view>
     </view>
-    <view class="library-audio-notes">
-      <view class="library-audio-note"><text>01</text><view>It's a beautiful day to start learning.</view></view>
-      <view class="library-audio-note"><text>02</text><view>Let's listen carefully and understand.</view></view>
-      <view class="library-audio-note"><text>03</text><view>让我们认真倾听并理解。</view></view>
-    </view>
-    <view class="library-wave-rule">
-      <view wx:for="{{waveBars}}" wx:key="*this" class="library-wave-bar library-wave-{{item}}"></view>
+    <view class="library-timeline">
+      <view class="library-timeline-line"></view>
+      <view class="library-timeline-entry">
+        <view class="library-timeline-copy">Stillness makes room for every sound.</view>
+        <view class="library-timeline-time">00:18</view>
+      </view>
+      <view class="library-timeline-entry">
+        <view class="library-timeline-copy">Listen closely; meaning follows.</view>
+        <view class="library-timeline-time">00:32</view>
+      </view>
+      <view class="library-timeline-entry">
+        <view class="library-timeline-copy">A quiet mind hears more.</view>
+        <view class="library-timeline-time">00:48</view>
+      </view>
     </view>
     <view class="library-listening-goal">
-      <view class="library-goal-label">{{listeningTaskStatus.setupRequired ? '计划状态' : '今日目标'}}</view>
-      <view wx:if="{{listeningTaskStatus.setupRequired}}" class="library-goal-value">待设置</view>
-      <view wx:else class="library-goal-value">{{todayDoneMinutes}} / {{todayGoalMinutes}} 分钟</view>
+      <view>
+        <block wx:if="{{homeDataReady}}">
+          <view class="library-goal-label">{{listeningTaskStatus.setupRequired ? texts.planStatus : texts.todayGoal}}</view>
+          <view wx:if="{{listeningTaskStatus.setupRequired}}" class="library-goal-value">{{texts.pendingSetup}}</view>
+          <view wx:else class="library-goal-value">{{todayDoneMinutes}}<text> / {{todayGoalMinutes}} {{texts.minute}}</text></view>
+        </block>
+        <view class="home-goal-skeleton" wx:else></view>
+      </view>
+      <view class="library-goal-ring {{homeDataReady && listeningTaskStatus.setupRequired ? 'is-setup' : ''}} {{homeDataReady ? '' : 'is-pending'}}" style="{{homeDataReady && !listeningTaskStatus.setupRequired ? libraryProgressStyle : ''}}"></view>
     </view>
   </view>
-
-  <view class="library-section-heading">
-    <view>学习目录</view>
-    <text>六个入口</text>
-  </view>
-  <view class="library-module-index">
-    <view class="library-module-row is-listening" bindtap="openListening"><text class="library-module-number">01</text><view><view>听力</view><text>声音书签</text></view><text class="library-module-arrow">›</text></view>
-    <view class="library-module-row is-reading" bindtap="openReading"><text class="library-module-number">02</text><view><view>阅读</view><text>馆藏文章</text></view><text class="library-module-arrow">›</text></view>
-    <view class="library-module-row is-grammar" bindtap="openGrammar"><text class="library-module-number">03</text><view><view>语法</view><text>句法字模</text></view><text class="library-module-arrow">›</text></view>
-    <view class="library-module-row is-vocabulary" bindtap="openVocabulary"><text class="library-module-number">04</text><view><view>词汇</view><text>索引词库</text></view><text class="library-module-arrow">›</text></view>
-    <view class="library-module-row is-writing" bindtap="openWriting"><text class="library-module-number">05</text><view><view>写作</view><text>编辑稿纸</text></view><text class="library-module-arrow">›</text></view>
-    <view class="library-module-row is-speaking" bindtap="openSpeaking"><text class="library-module-number">06</text><view><view>口语</view><text>阅览室录音台</text></view><text class="library-module-arrow">›</text></view>
+  <view class="library-desk-reveal"></view>
+  <view class="library-module-grid">
+    <view class="library-module-tile tile-listening" bindtap="openListening"><view class="library-tile-icon icon-listening"><view></view></view><view>{{texts.listening}}</view></view>
+    <view class="library-module-tile tile-reading" bindtap="openReading"><view class="library-tile-icon icon-reading"><view></view></view><view>{{texts.reading}}</view></view>
+    <view class="library-module-tile tile-grammar" bindtap="openGrammar"><view class="library-tile-icon icon-grammar">A<text>≡</text></view><view>{{texts.grammar}}</view></view>
+    <view class="library-module-tile tile-vocabulary" bindtap="openVocabulary"><view class="library-tile-icon icon-vocabulary">W</view><view>{{texts.vocabulary}}</view></view>
+    <view class="library-module-tile tile-writing" bindtap="openWriting"><view class="library-tile-icon icon-writing"><view></view></view><view>{{texts.writing}}</view></view>
+    <view class="library-module-tile tile-speaking" bindtap="openSpeaking"><view class="library-tile-icon icon-speaking"><view></view></view><view>{{texts.speaking}}</view></view>
   </view>
 
-  <view class="library-empty-note" wx:if="{{!homeLoading && !hasGroupedTasks && syncMode !== 'cloud-error'}}">{{needsListeningPlanSetup ? '先设置听力计划。' : '暂无今日任务。'}}</view>
+  <view class="library-empty-note" wx:if="{{!homeLoading && !hasGroupedTasks && syncMode !== 'cloud-error'}}">{{needsListeningPlanSetup ? texts.setupPlanFirst : texts.noTasksToday}}</view>
 
-  <view class="library-identity-overlay" wx:if="{{entryPosterVisible}}">
-    <view class="library-poster-skip" bindtap="closeEntryPoster">跳过</view>
-    <view class="library-poster-spine">同学的英语小耳朵</view>
+  <view class="library-identity-overlay is-page-{{entryPosterPage}}" wx:if="{{entryPosterVisible}}">
+    <view class="library-poster-frame"></view>
+    <view class="library-poster-topline">
+      <view class="library-poster-spine">YOYO LISTENING ARCHIVE <text>· {{texts.posterBrandTag}}</text></view>
+      <view class="library-poster-skip" bindtap="closeEntryPoster">{{texts.posterSkip}}</view>
+    </view>
     <block wx:if="{{entryPosterPage === 0}}">
-      <view class="library-poster-title">先听见，<br />再理解。</view>
-      <view class="library-poster-copy">每天留一点安静时间，让声音慢慢变成听得懂的英语。</view>
+      <view class="library-poster-folio">VOLUME 01 <text>LISTENING FIRST</text></view>
+      <view class="library-poster-hero">
+        <view class="library-poster-eyebrow">THE QUIET BEGINNING</view>
+        <view class="library-poster-title"><text class="library-poster-title-line">{{texts.posterPhilosophyTitle1}}</text><text class="library-poster-title-line">{{texts.posterPhilosophyTitle2}}</text></view>
+        <view class="library-poster-copy">{{texts.posterPhilosophyCopy}}</view>
+      </view>
+      <view class="library-poster-seal">
+        <view class="library-poster-seal-core">
+          <view class="library-poster-wave"><text></text><text></text><text></text><text></text><text></text><text></text><text></text></view>
+        </view>
+        <view class="library-poster-needle"></view>
+        <view class="library-poster-seal-caption">LISTEN · NOTICE · UNDERSTAND</view>
+      </view>
+      <view class="library-poster-note"><text>DAILY RITUAL</text><view>{{texts.posterDailyRitualCopy}}</view></view>
     </block>
     <block wx:else>
-      <view class="library-poster-title is-guide">选择使用身份</view>
-      <view class="library-poster-copy">家长可绑定并查看学习档案；学生使用本机学号开始学习。</view>
+      <view class="library-poster-folio">VOLUME 02 <text>MEMBER ENTRY</text></view>
+      <view class="library-poster-hero is-guide">
+        <view class="library-poster-eyebrow">PRIVATE READING ROOM</view>
+        <view class="library-poster-title is-guide"><text class="library-poster-title-line">{{texts.posterIdentityTitle1}}</text><text class="library-poster-title-line">{{texts.posterIdentityTitle2}}</text></view>
+        <view class="library-poster-copy">{{texts.posterIdentityCopy}}</view>
+        <view class="library-poster-credit"><text>{{texts.posterCreditLabel}}</text><view>{{texts.posterCreditName}}</view></view>
+      </view>
+      <view class="library-poster-membership">
+        <view class="library-poster-membership-mark"><text>EX</text><text>LIBRIS</text></view>
+        <view><text>MEMBERSHIP</text><view>{{texts.posterMembershipCopy}}</view></view>
+      </view>
     </block>
     <view class="library-poster-dots"><view class="{{entryPosterPage === 0 ? 'is-active' : ''}}"></view><view class="{{entryPosterPage === 1 ? 'is-active' : ''}}"></view></view>
-    <view class="library-poster-next" wx:if="{{entryPosterPage === 0}}" bindtap="showNextEntryPosterPage">下一页</view>
-    <view class="library-poster-actions" wx:else><button data-role="parent" bindtap="confirmStudyIdentity">我是家长</button><button class="is-primary" data-role="student" bindtap="confirmStudyIdentity">我是学生</button></view>
+    <view class="library-poster-next" wx:if="{{entryPosterPage === 0}}" bindtap="showNextEntryPosterPage"><text>{{texts.posterContinue}}</text><text>→</text></view>
+    <view class="library-poster-actions" wx:else>
+      <button data-role="parent" bindtap="confirmStudyIdentity"><text class="library-role-index">01</text><view><text class="library-role-title">{{texts.identityIAmParent}}</text><text class="library-role-copy">{{texts.posterParentRoleCopy}}</text></view><text class="library-role-arrow">→</text></button>
+      <button class="is-primary" data-role="student" bindtap="confirmStudyIdentity"><text class="library-role-index">02</text><view><text class="library-role-title">{{texts.identityIAmStudent}}</text><text class="library-role-copy">{{texts.posterStudentRoleCopy}}</text></view><text class="library-role-arrow">→</text></button>
+    </view>
   </view>
 
   <view class="library-mode-sheet" wx:if="{{identityConfirmVisible && !entryPosterVisible}}">
-    <view>先选择这台手机的使用身份</view>
-    <view><button data-role="parent" bindtap="confirmStudyIdentity">我是家长</button><button class="is-primary" data-role="student" bindtap="confirmStudyIdentity">我是学生</button></view>
+    <view>{{texts.identityDevicePrompt}}</view>
+    <view><button data-role="parent" bindtap="confirmStudyIdentity">{{texts.identityIAmParent}}</button><button class="is-primary" data-role="student" bindtap="confirmStudyIdentity">{{texts.identityIAmStudent}}</button></view>
   </view>
 </view>
 
-<view wx:else class="theme-{{theme}} page-shell home-page">
+<view wx:else class="theme-{{theme}} page-shell home-page language-{{language}}">
   <view class="home-atmosphere">
     <view class="light-ray ray-one"></view>
     <view class="light-ray ray-two"></view>
@@ -91,9 +124,9 @@
     <view class="plant-line plant-two"></view>
   </view>
 
-  <view class="home-titlebar">
+  <view class="home-titlebar" style="{{homeNavStyle}}">
     <view class="home-heading">
-      <view class="home-brand type-brand">{{greeting}}，{{child.nickname || '同学'}}</view>
+      <view class="home-brand type-brand">{{greeting}}{{texts.greetingSeparator}}{{child.nickname || texts.classmate}}</view>
       <view class="home-subtitle type-caption">
         <view class="calendar-mark"></view>
         <text>{{todayDisplay}} · Day {{planDayIndex}}</text>
@@ -102,38 +135,39 @@
   </view>
 
   <view class="section-panel" wx:if="{{!homeLoading && syncMode === 'cloud-error'}}">
-    <view class="section-title">服务暂时不可用</view>
-    <view class="section-copy">{{(syncDebug && (syncDebug.publicReason || syncDebug.reason)) || '学习数据暂时没有同步成功，请稍后再试。'}}</view>
+    <view class="section-title">{{texts.syncUnavailableTitle}}</view>
+    <view class="section-copy">{{(syncDebug && (syncDebug.publicReason || syncDebug.reason)) || texts.syncUnavailableDescription}}</view>
   </view>
 
   <view class="mode-notice" wx:if="{{modeChangedNoticeVisible}}">
-    这台手机已切回家长模式
+    {{texts.parentModeRestored}}
   </view>
 
   <view class="nickname-required section-panel" wx:if="{{nicknameRequired && !identityConfirmVisible && !entryPosterVisible}}">
-    <view class="section-title type-section-title">请设置昵称</view>
-    <view class="section-copy">第一次使用前，请设置一个常用昵称。</view>
+    <view class="section-title type-section-title">{{texts.nicknameRequiredTitle}}</view>
+    <view class="section-copy">{{texts.nicknameRequiredDescription}}</view>
     <view class="nickname-edit-row">
-      <input class="nickname-input" placeholder="例如 佑佑123 / 小宇" value="{{nicknameInput}}" bindinput="handleNicknameInput" />
-      <view class="nickname-save" bindtap="saveRequiredNickname">保存</view>
+      <input class="nickname-input" placeholder="{{texts.nicknameExample}}" value="{{nicknameInput}}" bindinput="handleNicknameInput" />
+      <view class="nickname-save" bindtap="saveRequiredNickname">{{texts.save}}</view>
     </view>
   </view>
 
   <view class="mode-reminder" wx:if="{{identityConfirmVisible}}">
-    <view class="mode-reminder-copy">先选择这台手机的使用身份</view>
+    <view class="mode-reminder-copy">{{texts.identityDevicePrompt}}</view>
     <view class="mode-reminder-actions">
-      <button class="mode-reminder-action" data-role="parent" bindtap="confirmStudyIdentity">我是家长</button>
-      <button class="mode-reminder-action is-primary" data-role="student" bindtap="confirmStudyIdentity">我是学生</button>
+      <button class="mode-reminder-action" data-role="parent" bindtap="confirmStudyIdentity">{{texts.identityIAmParent}}</button>
+      <button class="mode-reminder-action is-primary" data-role="student" bindtap="confirmStudyIdentity">{{texts.identityIAmStudent}}</button>
     </view>
   </view>
 
-  <view class="daily-listening-card {{listeningTaskStatus.setupRequired ? 'is-plan-empty' : 'is-plan-ready'}}" bindtap="openCompleted">
+  <view class="daily-listening-card {{homeDataReady ? (listeningTaskStatus.setupRequired ? 'is-plan-empty' : 'is-plan-ready') : 'is-data-pending'}}" bindtap="openCompleted">
     <view class="daily-copy">
-      <view class="daily-title">今日听力</view>
-      <view class="daily-action">
+      <view class="daily-title">{{texts.todayListening}}</view>
+      <view class="daily-action" wx:if="{{homeDataReady}}">
         <text>{{listeningTaskStatus.action}}</text>
         <text class="daily-action-arrow">›</text>
       </view>
+      <view class="daily-action home-data-skeleton" wx:else></view>
     </view>
     <view class="floating-captions">
       <view class="caption-card caption-a">
@@ -144,7 +178,7 @@
         <view>Let's listen carefully</view>
         <view>and understand.<text>00:32</text></view>
       </view>
-      <view class="caption-card caption-c">让我们认真倾听并理解。<text>00:48</text></view>
+      <view class="caption-card caption-c">{{texts.captionExample}}<text>00:48</text></view>
     </view>
     <view class="waveform">
       <view wx:for="{{waveBars}}" wx:key="*this" class="wave-bar wave-{{item}}"></view>
@@ -155,11 +189,14 @@
     </view>
     <view class="goal-chip">
       <view>
-        <view class="goal-label">{{listeningTaskStatus.setupRequired ? '计划状态' : '今日目标'}}</view>
-        <view wx:if="{{listeningTaskStatus.setupRequired}}" class="goal-value is-text">待设置</view>
-        <view wx:else class="goal-value">{{todayDoneMinutes}}<text> / {{todayGoalMinutes}} 分钟</text></view>
+        <block wx:if="{{homeDataReady}}">
+          <view class="goal-label">{{listeningTaskStatus.setupRequired ? texts.planStatus : texts.todayGoal}}</view>
+          <view wx:if="{{listeningTaskStatus.setupRequired}}" class="goal-value is-text">{{texts.pendingSetup}}</view>
+          <view wx:else class="goal-value">{{todayDoneMinutes}}<text> / {{todayGoalMinutes}} {{texts.minute}}</text></view>
+        </block>
+        <view class="home-goal-skeleton" wx:else></view>
       </view>
-      <view class="goal-ring" style="{{todayProgressStyle}}"></view>
+      <view class="goal-ring {{homeDataReady ? '' : 'is-pending'}}" style="{{homeDataReady ? todayProgressStyle : ''}}"></view>
     </view>
   </view>
 
@@ -167,93 +204,93 @@
     <view class="study-module-card area-listening" bindtap="openListening">
       <view class="module-icon icon-headphones"><view></view></view>
       <view class="study-area-main">
-        <view class="study-area-title">听力</view>
+        <view class="study-area-title">{{texts.listening}}</view>
       </view>
     </view>
     <view class="study-module-card area-reading" bindtap="openReading">
       <view class="module-icon icon-book"><view></view></view>
       <view class="study-area-main">
-        <view class="study-area-title">阅读</view>
+        <view class="study-area-title">{{texts.reading}}</view>
       </view>
     </view>
     <view class="study-module-card area-grammar" bindtap="openGrammar">
       <view class="module-icon icon-grammar"><text>A</text><view></view></view>
       <view class="study-area-main">
-        <view class="study-area-title">语法</view>
+        <view class="study-area-title">{{texts.grammar}}</view>
       </view>
     </view>
     <view class="study-module-card area-vocabulary" bindtap="openVocabulary">
       <view class="module-icon icon-word">W</view>
       <view class="study-area-main">
-        <view class="study-area-title">词汇</view>
+        <view class="study-area-title">{{texts.vocabulary}}</view>
       </view>
     </view>
     <view class="study-module-card area-writing" bindtap="openWriting">
       <view class="module-icon icon-pencil"><view></view></view>
       <view class="study-area-main">
-        <view class="study-area-title">写作</view>
+        <view class="study-area-title">{{texts.writing}}</view>
       </view>
     </view>
     <view class="study-module-card area-speaking" bindtap="openSpeaking">
       <view class="module-icon icon-speech"><view></view></view>
       <view class="study-area-main">
-        <view class="study-area-title">口语</view>
+        <view class="study-area-title">{{texts.speaking}}</view>
       </view>
     </view>
   </view>
 
-  <view class="empty-state" wx:if="{{!homeLoading && !hasGroupedTasks && syncMode !== 'cloud-error'}}">{{needsListeningPlanSetup ? '先设置听力计划。' : '暂无今日任务。'}}</view>
+  <view class="empty-state" wx:if="{{!homeLoading && !hasGroupedTasks && syncMode !== 'cloud-error'}}">{{needsListeningPlanSetup ? texts.setupPlanFirst : texts.noTasksToday}}</view>
 
   <view class="entry-poster" wx:if="{{entryPosterVisible}}">
-    <view class="entry-poster-skip" bindtap="closeEntryPoster">跳过</view>
+    <view class="entry-poster-skip" bindtap="closeEntryPoster">{{texts.posterSkip}}</view>
     <view wx:if="{{entryPosterPage === 0}}">
       <view class="entry-poster-visual">
         <view class="sound-orbit orbit-one"></view>
         <view class="sound-orbit orbit-two"></view>
-        <view class="sound-core">听</view>
+        <view class="sound-core">{{texts.posterSoundMark}}</view>
         <view class="caption-line caption-one">Listen first.</view>
         <view class="caption-line caption-two">Understand more.</view>
         <view class="caption-line caption-three">Speak naturally.</view>
       </view>
       <view class="entry-poster-copy">
-        <view class="entry-poster-kicker">开始前想说的话</view>
-        <view class="entry-poster-title">听力先行</view>
-        <view class="entry-poster-lead">先把声音听懂，再让阅读、表达和写作自然长出来。</view>
-        <view class="entry-poster-text">一开始只是想给侄子佑佑做一个能坚持用的小工具。如果它也适合你家的孩子，也欢迎一起使用。英语学习不急着从题目开始，先让孩子每天听懂一点，有声音、有节奏、有感觉。</view>
+        <view class="entry-poster-kicker">{{texts.posterIntroKicker}}</view>
+        <view class="entry-poster-title">{{texts.posterIntroTitle}}</view>
+        <view class="entry-poster-lead">{{texts.posterIntroLead}}</view>
+        <view class="entry-poster-text">{{texts.posterStory}}</view>
         <view class="entry-poster-tags">
-          <view class="entry-poster-tag">听懂输入</view>
-          <view class="entry-poster-tag">持续节奏</view>
-          <view class="entry-poster-tag">自然表达</view>
+          <view class="entry-poster-tag">{{texts.posterTagInput}}</view>
+          <view class="entry-poster-tag">{{texts.posterTagRhythm}}</view>
+          <view class="entry-poster-tag">{{texts.posterTagExpression}}</view>
         </view>
       </view>
     </view>
     <view class="entry-message" wx:else>
       <view class="entry-guide-visual">
-        <view class="guide-card guide-parent">家长</view>
+        <view class="guide-card guide-parent">{{texts.posterParent}}</view>
         <view class="guide-link-line"></view>
-        <view class="guide-card guide-child">学号</view>
+        <view class="guide-card guide-child">{{texts.posterStudentId}}</view>
       </view>
       <view class="entry-message-card">
-        <view class="entry-message-kicker">小程序使用说明</view>
-        <view class="entry-message-title">先绑定学号</view>
-        <view class="entry-message-text">首次使用时，先在首页选择身份：家长选“我是家长”，孩子设备选“我是学生”。</view>
-        <view class="entry-message-text">家长进入“我的”，输入或复制学号完成绑定。绑定后，就能查看孩子的学习记录和每日完成情况。</view>
-        <view class="entry-message-text">孩子每天先完成“今日听力任务”，再进入阅读、语法、写作和词汇复习。</view>
+        <view class="entry-message-kicker">{{texts.posterGuideKicker}}</view>
+        <view class="entry-message-title">{{texts.posterGuideTitle}}</view>
+        <view class="entry-message-text">{{texts.posterGuideStep1}}</view>
+        <view class="entry-message-text">{{texts.posterGuideStep2}}</view>
+        <view class="entry-message-text">{{texts.posterGuideStep3}}</view>
         <view class="entry-message-sign">
-          <view class="entry-message-sign-label">设计与内容</view>
-          <view>王天龙</view>
+          <view class="entry-message-sign-label">{{texts.posterCreditLabel}}</view>
+          <view>{{texts.posterCreditName}}</view>
         </view>
       </view>
-      <view class="entry-message-back" bindtap="showPrevEntryPosterPage">返回理念</view>
+      <view class="entry-message-back" bindtap="showPrevEntryPosterPage">{{texts.posterBack}}</view>
     </view>
     <view class="entry-poster-dots">
       <view class="entry-poster-dot {{entryPosterPage === 0 ? 'is-active' : ''}}"></view>
       <view class="entry-poster-dot {{entryPosterPage === 1 ? 'is-active' : ''}}"></view>
     </view>
-    <view class="entry-poster-action" wx:if="{{entryPosterPage === 0}}" bindtap="showNextEntryPosterPage">下一页</view>
+    <view class="entry-poster-action" wx:if="{{entryPosterPage === 0}}" bindtap="showNextEntryPosterPage">{{texts.posterNext}}</view>
     <view class="entry-poster-actions" wx:else>
-      <view class="entry-poster-role-action" data-role="parent" bindtap="confirmStudyIdentity">我是家长</view>
-      <view class="entry-poster-role-action is-primary" data-role="student" bindtap="confirmStudyIdentity">我是学生</view>
+      <view class="entry-poster-role-action" data-role="parent" bindtap="confirmStudyIdentity">{{texts.identityIAmParent}}</view>
+      <view class="entry-poster-role-action is-primary" data-role="student" bindtap="confirmStudyIdentity">{{texts.identityIAmStudent}}</view>
     </view>
   </view>
 </view>

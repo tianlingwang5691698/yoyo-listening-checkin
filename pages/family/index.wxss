@@ -195,6 +195,11 @@
   background: rgba(191, 215, 232, 0.28);
 }
 
+.identity-strip .row-action {
+  align-self: center;
+  margin-top: 0;
+}
+
 .role-orb {
   flex-shrink: 0;
   width: 48rpx;
@@ -278,6 +283,25 @@
   opacity: 0.5;
 }
 
+.nickname-strip {
+  align-items: flex-start;
+}
+
+.is-required {
+  color: #b45e40;
+}
+
+.nickname-save-debug {
+  margin-top: 12rpx;
+  padding: 12rpx 14rpx;
+  border-radius: 12rpx;
+  background: rgba(180, 94, 64, 0.1);
+  color: #9a5f55;
+  font-size: 20rpx;
+  line-height: 1.45;
+  word-break: break-all;
+}
+
 .student-hint {
   margin-top: 14rpx;
   color: #728196;
@@ -291,6 +315,7 @@
 
 .student-card {
   align-items: center;
+  box-sizing: border-box;
 }
 
 .student-card.is-current {
@@ -318,7 +343,9 @@
   background: rgba(242, 161, 142, 0.18);
   color: #df7f68;
   font-size: 22rpx;
+  line-height: 1.2;
   font-weight: 600;
+  white-space: nowrap;
 }
 
 .care-actions {
@@ -494,6 +521,16 @@
   gap: 18rpx;
 }
 
+.library-card-head > view:first-child {
+  flex: 1;
+  min-width: 0;
+}
+
+.library-card-head .library-secondary {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
 .library-field-label {
   margin-top: 20rpx;
   color: #6f675f;
@@ -572,6 +609,15 @@
   border: none;
 }
 
+.library-primary.is-disabled {
+  opacity: 0.5;
+}
+
+.library-identity-field {
+  margin-top: 18rpx;
+  padding-top: 4rpx;
+}
+
 .borrower-card {
   min-height: 116rpx;
   margin-top: 16rpx;
@@ -625,4 +671,86 @@
 
 .member-index.is-current-device {
   background: rgba(127, 140, 120, 0.12);
+}
+.language-en { word-break: normal; overflow-wrap: anywhere; }
+.language-en .library-title, .language-en .section-title, .language-en .row-title { letter-spacing: 0; }
+.language-en button {
+  box-sizing: border-box;
+  font-size: 24rpx;
+  text-align: center;
+}
+.language-en .identity-strip,
+.language-en .nickname-strip,
+.language-en .binding-save-row,
+.language-en .join-code-row,
+.language-en .mini-panel .family-row {
+  flex-wrap: wrap;
+}
+.language-en .identity-strip .row-main {
+  width: calc(100% - 66rpx);
+  flex: none;
+}
+.language-en .nickname-strip .row-main,
+.language-en .binding-save-row .row-main,
+.language-en .join-code-row .row-main,
+.language-en .mini-panel .family-row .row-main {
+  width: 100%;
+  flex: none;
+}
+.language-en .identity-strip .row-action,
+.language-en .nickname-strip .row-action-wide,
+.language-en .binding-save-row .row-action-wide,
+.language-en .join-code-row .row-action,
+.language-en .mini-panel .family-row .row-action {
+  align-self: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-width: 100%;
+  height: 66rpx;
+  min-height: 66rpx;
+  margin: 16rpx 0 0;
+  padding: 0 22rpx;
+  line-height: 1.15;
+  white-space: nowrap;
+}
+.language-en .join-panel .row-action-ghost {
+  display: none;
+}
+.language-en .nickname-strip .row-action-wide {
+  margin-top: 18rpx;
+}
+.language-en .library-identity-head,
+.language-en .library-danger {
+  align-items: stretch;
+  flex-direction: column;
+}
+.language-en .library-identity-head .library-secondary,
+.language-en .library-primary.full,
+.language-en .library-danger .library-danger-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-width: 100%;
+  height: 66rpx;
+  margin-top: 18rpx;
+  line-height: 1.15;
+  white-space: nowrap;
+}
+.language-en .library-primary.full {
+  margin-top: 24rpx;
+}
+.language-en .library-stamp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+.language-en .borrower-card .entry-title,
+.language-en .student-card .row-title {
+  word-break: normal;
+  overflow-wrap: break-word;
 }

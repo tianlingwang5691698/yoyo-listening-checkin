@@ -1,0 +1,496 @@
+const page = require('../../utils/page');
+const store = require('../../utils/store');
+const i18n = require('../../utils/i18n');
+
+const text = (key, fallback) => i18n.getPageText('practiceHistory', key, undefined, fallback);
+
+const MODULES = {
+  reading: {
+    title: text('readingTitle', '阅读记录'),
+    eyebrow: text('readingEyebrow', '中考阅读'),
+    copy: text('readingCopy', '回看做过的文章和逐题解析。'),
+    empty: text('noReading', '还没有阅读记录')
+  },
+  grammar: {
+    title: text('grammarTitle', '语法记录'),
+    eyebrow: text('grammarEyebrow', '英语语法'),
+    copy: text('grammarCopy', '回看做过的考点和答案。'),
+    empty: text('noGrammar', '还没有语法记录')
+  },
+  writing: {
+    title: text('writingTitle', '写作记录'),
+    eyebrow: text('writingEyebrow', '英语写作'),
+    copy: text('writingCopy', '回看作文、批改和参考改写。'),
+    empty: text('noWriting', '还没有写作记录')
+  }
+};
+
+function cleanDate(value, fallback) {
+  const raw = String(value || fallback || '').trim();
+  const matched = raw.match(/\d{4}-\d{2}-\d{2}/);
+  return matched ? matched[0].replace(/-/g, '.') : text('unknownDate', '日期未知');
+}
+
+function buildOptions(options, selected, answer) {
+  const source = options && typeof options === 'object' ? options : {};
+  return Object.keys(source).map((key) => ({
+    key,
+    text: source[key],
+    isSelected: String(key) === String(selected || ''),
+    isAnswer: String(key) === String(answer || '')
+  }));
+}
+
+function normalizeReading(item, index) {
+  const attempt = item.latestAttempt || {};
+  const correctCount = Number(attempt.correctCount || 0);
+  const totalCount = Number(attempt.totalCount || (attempt.questionResults || []).length || 0);
+  return {
+    id: String(item.id || item.recordId || attempt._id || `reading-${index}`),
+    targetId: String(item.passageId || item.targetId || attempt.passageId || ''),
+    title: item.title || attempt.title || '阅读练习',
+    meta: item.meta || text('readingEyebrow', '阅读'),
+    dateLabel: cleanDate(item.date, attempt.createdAt),
+    summary: totalCount ? `${correctCount}/${totalCount}${text('questionSuffix', ' 题')}` : (item.progressText || text('completed', '已完成')),
+    attempt,
+    detailReady: false,
+    detailLoading: false,
+    passageText: '',
+    detailQuestions: [],
+    aiAnalysisLoaded: false,
+    aiAnalysisLoading: false,
+    aiAnalysisStatus: ''
+  };
+}
+
+function normalizeGrammar(item, index) {
+  const attempt = item.latestAttempt || {};
+  const questions = Array.isArray(attempt.questions) ? attempt.questions : [];
+  const correctCount = questions.length
+    ? questions.filter((question) => question.isCorrect).length
+    : Number(attempt.correctCount || 0);
+  return {
+    id: String(item.id || item.recordId || `grammar-${index}`),
+    targetId: String(item.topicId || item.targetId || ''),
+    title: String(item.title || '语法练习').replace(/^语法：/, ''),
+    meta: item.meta || text('grammarEyebrow', '语法'),
+    dateLabel: cleanDate(item.date, item.updatedAt),
+    summary: `${correctCount}/${questions.length || Number(attempt.answeredCount || 0)}${text('questionSuffix', ' 题')}`,
+    attempt,
+    detailReady: questions.length > 0,
+    detailLoading: false,
+    detailQuestions: buildGrammarDetailQuestions(questions, item)
+  };
+}
+
+function buildGrammarDetailQuestions(questions, item) {
+  return (questions || []).map((question, questionIndex) => {
+    const explanation = question.explanation || null;
+    const hasCloudExplanation = explanation && explanation.source !== 'fallback';
+    return {
+      questionId: String(question._id || `${item.targetId || item.topicId || 'grammar'}:${question.number || questionIndex + 1}`),
+      number: question.number || questionIndex + 1,
+      prompt: question.prompt || '',
+      options: question.options || {},
+      selected: question.selectedAnswer || '',
+      answer: question.answer || '',
+      correct: !!question.isCorrect,
+      optionsList: buildOptions(question.options, question.selectedAnswer, question.answer),
+      analysis: hasCloudExplanation && (explanation.explanation || explanation.elimination)
+        ? [explanation.explanation, explanation.elimination].filter(Boolean).join('\n')
+        : ''
+    };
+  });
+}
+
+function normalizeWrongItem(item, index) {
+  const question = item.question || item;
+  const selected = question.selectedAnswer || item.selectedAnswer || '';
+  const answer = question.answer || item.answer || '';
+  const questionId = String(item.questionId || question._id || `wrong-${index}`);
+  return {
+    id: `wrong:${item._id || questionId}`,
+    targetId: String(item.sourceTargetId || ''),
+    title: item.sourceTitle || question.subtopic || question.topic || (item.sourceType === 'reading' ? '阅读错题' : '语法错题'),
+    meta: item.sourceMeta || (item.sourceType === 'reading' ? text('readingEyebrow', '阅读') : text('grammarEyebrow', '语法')),
+    dateLabel: cleanDate(item.addedAt || item.wrongAt, item.updatedAt),
+    summary: `1${text('questionSuffix', ' 题')}`,
+    detailReady: true,
+    detailLoading: false,
+    detailQuestions: [{
+      questionId,
+      number: question.number || '',
+      prompt: question.prompt || '',
+      options: question.options || {},
+      selected,
+      answer,
+      correct: question.correct === true || (!!selected && selected === answer),
+      optionsList: buildOptions(question.options, selected, answer),
+      analysis: question.analysis || '',
+      inWrongBook: true
+    }]
+  };
+}
+
+function applyWrongStatus(records, wrongItems) {
+  const ids = new Set((wrongItems || []).map((item) => String(item.questionId || (item.question && item.question._id) || '')));
+  return (records || []).map((record) => Object.assign({}, record, {
+    detailQuestions: (record.detailQuestions || []).map((question) => Object.assign({}, question, {
+      inWrongBook: ids.has(String(question.questionId || ''))
+    }))
+  }));
+}
+
+function normalizeWriting(attempt, index) {
+  const review = attempt.review || {};
+  const totalScore = Number(attempt.totalScore || review.totalScore || 20);
+  const pending = attempt.status === 'grading-pending' || attempt.status === 'grading';
+  return {
+    id: String(attempt.attemptId || `writing-${index}`),
+    targetId: String(attempt.promptId || ''),
+    title: attempt.title || '写作练习',
+    meta: [attempt.promptMeta && attempt.promptMeta.year, attempt.promptMeta && attempt.promptMeta.district, attempt.promptMeta && attempt.promptMeta.examType].filter(Boolean).join(' · ') || text('writingEyebrow', '写作'),
+    dateLabel: cleanDate(attempt.date, attempt.createdAt),
+    summary: pending ? text('grading', '批改中') : `${Number(attempt.score || review.score || 0)}/${totalScore}`,
+    attempt: Object.assign({}, attempt, {
+      review: Object.assign({
+        problems: [],
+        suggestions: [],
+        grammarCorrections: []
+      }, review)
+    }),
+    detailReady: false,
+    detailLoading: false
+  };
+}
+
+function buildDebugLines(result, action) {
+  if (!result || result.syncMode !== 'cloud-error') return [];
+  const target = store.getSelectedStudentTarget ? store.getSelectedStudentTarget() : {};
+  const syncDebug = result.syncDebug || {};
+  const cloudError = result.cloudError || {};
+  return [
+    `DEBUG: pages/practice-history.loadHistory -> store.${action} -> cloud.${action} -> syncMode=${result.syncMode}`,
+    `DEBUG: pages/practice-history.loadHistory -> cloudError.message=${cloudError.message || 'missing'}, syncDebug.reason=${syncDebug.reason || 'missing'}, syncDebug.envId=${syncDebug.envId || 'missing'}`,
+    `DEBUG: pages/practice-history.loadHistory -> targetChildId=${target.targetChildId || 'self'}`
+  ];
+}
+
+Page({
+  data: page.createCloudPageData({
+    type: 'reading',
+    config: MODULES.reading,
+    loading: true,
+    records: [],
+    viewMode: 'history',
+    expandedId: '',
+    debugLines: []
+  }),
+  onLoad(options) {
+    this.historyPerf = page.startPagePerf('practice-history');
+    const type = MODULES[options && options.type] ? options.type : 'reading';
+    const config = MODULES[type];
+    this.setData({ type, config });
+    wx.setNavigationBarTitle({ title: config.title });
+    wx.nextTick(() => {
+      if (!this.historyPerf) return;
+      this.historyPerf.ready('pageReady', {
+        source: 'fallback',
+        cacheHit: false,
+        type,
+        records: (this.data.records || []).length
+      });
+    });
+    this.loadHistory();
+  },
+  onShow() {
+    page.syncTheme(this);
+    const type = this.data.type;
+    const config = type === 'grammar'
+      ? { title: text('grammarTitle'), eyebrow: text('grammarEyebrow'), copy: text('grammarCopy'), empty: text('noGrammar') }
+      : type === 'writing'
+        ? { title: text('writingTitle'), eyebrow: text('writingEyebrow'), copy: text('writingCopy'), empty: text('noWriting') }
+        : { title: text('readingTitle'), eyebrow: text('readingEyebrow'), copy: text('readingCopy'), empty: text('noReading') };
+    this.setData({ config });
+  },
+  async loadHistory() {
+    this.setData({ loading: true, debugLines: [] });
+    if (!page.requireIdentityConfirmed()) {
+      this.setData({ loading: false });
+      return;
+    }
+    if (this.data.type === 'writing') {
+      const result = await store.getWritingAttempts({ limit: 50, summaryOnly: true });
+      const debugLines = buildDebugLines(result, 'getWritingAttempts');
+      this.setData({
+        loading: false,
+        records: debugLines.length ? [] : (result.attempts || []).map(normalizeWriting),
+        debugLines
+      });
+      if (this.historyPerf) {
+        this.historyPerf.mark('cloudRefresh', { type: this.data.type, records: (this.data.records || []).length });
+      }
+      return;
+    }
+    const [result, wrongResult] = await Promise.all([
+      store.getStudyCompletions({ days: 3650, summaryOnly: true }),
+      store.getPracticeWrongQuestions({ type: this.data.type })
+    ]);
+    const debugLines = buildDebugLines(result, 'getStudyCompletions');
+    const normalize = this.data.type === 'grammar' ? normalizeGrammar : normalizeReading;
+    this.wrongItems = (wrongResult && wrongResult.items) || [];
+    this.setData({
+      loading: false,
+      records: debugLines.length
+        ? []
+        : applyWrongStatus((result.items || []).filter((item) => item.type === this.data.type).map(normalize), this.wrongItems),
+      debugLines
+    });
+    if (this.historyPerf) {
+      this.historyPerf.mark('cloudRefresh', { type: this.data.type, records: (this.data.records || []).length });
+    }
+  },
+  openHistory() {
+    if (this.data.viewMode === 'history') return;
+    this.setData({ viewMode: 'history', expandedId: '' });
+    this.loadHistory();
+  },
+  async openWrongBook() {
+    if (this.data.type === 'writing' || this.data.viewMode === 'wrong') return;
+    this.setData({ viewMode: 'wrong', loading: true, expandedId: '', debugLines: [] });
+    const result = await store.getPracticeWrongQuestions({ type: this.data.type });
+    const debugLines = buildDebugLines(result, 'getPracticeWrongQuestions');
+    this.wrongItems = (result && result.items) || [];
+    this.setData({
+      loading: false,
+      records: debugLines.length ? [] : this.wrongItems.map(normalizeWrongItem),
+      debugLines
+    });
+  },
+  toggleRecord(event) {
+    const id = String(event.currentTarget.dataset.id || '');
+    if (!id) return;
+    if (this.data.expandedId === id) {
+      this.setData({ expandedId: '' });
+      return;
+    }
+    this.setData({ expandedId: id });
+    const record = (this.data.records || []).find((item) => item.id === id);
+    if (this.data.type === 'reading' && record && !record.detailReady && !record.detailLoading) {
+      this.loadReadingDetail(record);
+    }
+    if (this.data.type === 'writing' && record && !record.detailReady && !record.detailLoading) {
+      this.loadWritingDetail(record);
+    }
+    if (this.data.type === 'grammar' && record && !record.detailReady && !record.detailLoading) {
+      this.loadGrammarDetail(record);
+    }
+  },
+  async loadReadingDetail(record) {
+    this.updateRecord(record.id, { detailLoading: true });
+    const [result, completionResult] = await Promise.all([
+      store.getReadingPassage({ passageId: record.targetId }),
+      store.getStudyCompletionDetail(record.id)
+    ]);
+    const passage = result && result.passage;
+    const attempt = (completionResult && completionResult.item && completionResult.item.latestAttempt) || record.attempt || {};
+    const questionResults = attempt.questionResults || [];
+    const analyses = (attempt.review && attempt.review.analysis) || [];
+    const sourceQuestions = passage && Array.isArray(passage.questions) && passage.questions.length
+      ? passage.questions
+      : questionResults;
+    const detailQuestions = sourceQuestions.map((question, index) => {
+      const number = question.number || index + 1;
+      const answerResult = questionResults.find((item) => String(item.number) === String(number)) || {};
+      const analysis = analyses.find((item) => String(item.number) === String(number)) || {};
+      const selected = answerResult.selected || analysis.selected || '';
+      const answer = answerResult.answer || analysis.answer || question.answer || '';
+      return {
+        questionId: String(question._id || `${record.targetId}:${number}`),
+        number,
+        prompt: question.prompt || answerResult.prompt || '',
+        options: question.options || {},
+        selected,
+        answer,
+        correct: answerResult.correct === undefined ? analysis.correct : answerResult.correct,
+        optionsList: buildOptions(question.options, selected, answer),
+        analysis: analysis.text || answerResult.analysis || question.analysis || ''
+      };
+    });
+    const wrongIds = new Set((this.wrongItems || []).map((item) => String(item.questionId || (item.question && item.question._id) || '')));
+    this.updateRecord(record.id, {
+      detailLoading: false,
+      detailReady: true,
+      passageText: (passage && passage.passage) || '',
+      detailQuestions: detailQuestions.map((question) => Object.assign({}, question, {
+        inWrongBook: wrongIds.has(question.questionId)
+      }))
+    });
+    if (result && result.syncMode === 'cloud-error') {
+      this.setData({ debugLines: buildDebugLines(result, 'getReadingPassage') });
+    } else if (completionResult && completionResult.syncMode === 'cloud-error') {
+      this.setData({ debugLines: buildDebugLines(completionResult, 'getStudyCompletionDetail') });
+    }
+  },
+  async loadGrammarDetail(record) {
+    this.updateRecord(record.id, { detailLoading: true });
+    const result = await store.getStudyCompletionDetail(record.id);
+    if (result && result.syncMode === 'cloud-error') {
+      this.updateRecord(record.id, { detailLoading: false });
+      this.setData({ debugLines: buildDebugLines(result, 'getStudyCompletionDetail') });
+      return;
+    }
+    const item = result && result.item;
+    const questions = (item && item.latestAttempt && item.latestAttempt.questions) || [];
+    const wrongIds = new Set((this.wrongItems || []).map((wrongItem) => String(wrongItem.questionId || (wrongItem.question && wrongItem.question._id) || '')));
+    this.updateRecord(record.id, {
+      detailLoading: false,
+      detailReady: true,
+      attempt: (item && item.latestAttempt) || record.attempt,
+      detailQuestions: buildGrammarDetailQuestions(questions, item || record).map((question) => Object.assign({}, question, {
+        inWrongBook: wrongIds.has(question.questionId)
+      }))
+    });
+  },
+  async addWrongQuestion(event) {
+    const recordId = String(event.currentTarget.dataset.recordId || '');
+    const questionId = String(event.currentTarget.dataset.questionId || '');
+    const record = (this.data.records || []).find((item) => item.id === recordId);
+    const question = record && (record.detailQuestions || []).find((item) => item.questionId === questionId);
+    if (!record || !question || question.inWrongBook || question.addingWrong) return;
+    this.updateQuestion(recordId, questionId, { addingWrong: true });
+    const result = await store.addPracticeWrongQuestion({
+      type: this.data.type,
+      targetId: record.targetId,
+      title: record.title,
+      meta: record.meta,
+      questionId,
+      question: {
+        _id: questionId,
+        number: question.number,
+        prompt: question.prompt,
+        options: question.options || {},
+        selectedAnswer: question.selected || '',
+        answer: question.answer || '',
+        correct: question.correct === true,
+        analysis: question.analysis || ''
+      }
+    });
+    if (result && result.saved) {
+      this.updateQuestion(recordId, questionId, { addingWrong: false, inWrongBook: true });
+      wx.showToast({ title: text('addSuccess', '已加入错题集'), icon: 'success' });
+      return;
+    }
+    this.updateQuestion(recordId, questionId, { addingWrong: false });
+    if (result && result.syncMode === 'cloud-error') {
+      this.setData({ debugLines: buildDebugLines(result, 'addPracticeWrongQuestion') });
+    }
+    wx.showToast({ title: result && result.reason === 'preview-role' ? text('previewNoRecord', '家长预览不记录') : text('addFailed', '加入失败'), icon: 'none' });
+  },
+  async loadReadingCachedAnalysis(event) {
+    const recordId = String(event.currentTarget.dataset.id || '');
+    const record = (this.data.records || []).find((item) => item.id === recordId);
+    if (!record || record.aiAnalysisLoading || record.aiAnalysisLoaded) return;
+    this.updateRecord(recordId, { aiAnalysisLoading: true, aiAnalysisStatus: '' });
+    const result = await store.getReadingStudyPack({
+      passageId: record.targetId,
+      section: 'questions',
+      cacheOnly: true,
+      useCache: false
+    });
+    if (result && result.syncMode === 'cloud-error') {
+      this.updateRecord(recordId, { aiAnalysisLoading: false, aiAnalysisStatus: text('analysisFailed', '云端解析加载失败') });
+      this.setData({ debugLines: buildDebugLines(result, 'getReadingStudyPack') });
+      return;
+    }
+    const studyPack = result && result.studyPack;
+    const analyses = (studyPack && (studyPack.questionAnalyses || studyPack.analysis)) || [];
+    if (!analyses.length) {
+      this.updateRecord(recordId, {
+        aiAnalysisLoading: false,
+        aiAnalysisStatus: text('noAnalysis', '这篇阅读尚未生成 AI 解析')
+      });
+      return;
+    }
+    this.updateRecord(recordId, {
+      aiAnalysisLoading: false,
+      aiAnalysisLoaded: true,
+      aiAnalysisStatus: text('analysisLoaded', '已从云端加载 AI 解析'),
+      detailQuestions: (record.detailQuestions || []).map((question) => {
+        const analysis = analyses.find((item) => String(item.number) === String(question.number)) || {};
+        return Object.assign({}, question, {
+          analysis: analysis.analysis || analysis.text || question.analysis || ''
+        });
+      })
+    });
+  },
+  async loadWritingDetail(record) {
+    this.updateRecord(record.id, { detailLoading: true });
+    const result = await store.getWritingAttemptDetail(record.id);
+    if (result && result.syncMode === 'cloud-error') {
+      this.updateRecord(record.id, { detailLoading: false });
+      this.setData({ debugLines: buildDebugLines(result, 'getWritingAttemptDetail') });
+      return;
+    }
+    if (!result || !result.attempt) {
+      this.updateRecord(record.id, { detailLoading: false });
+      return;
+    }
+    const normalized = normalizeWriting(result.attempt, 0);
+    this.updateRecord(record.id, {
+      detailLoading: false,
+      detailReady: true,
+      attempt: normalized.attempt
+    });
+  },
+  async loadGrammarExplanation(event) {
+    const recordId = String(event.currentTarget.dataset.recordId || '');
+    const questionId = String(event.currentTarget.dataset.questionId || '');
+    const record = (this.data.records || []).find((item) => item.id === recordId);
+    const question = record && (record.detailQuestions || []).find((item) => item.questionId === questionId);
+    if (!question || question.analysis || question.explaining) return;
+    this.updateQuestion(recordId, questionId, { explaining: true });
+    const result = await store.explainGrammarQuestion({
+      _id: questionId,
+      prompt: question.prompt,
+      options: question.options || {},
+      answer: question.answer || ''
+    }, { cacheOnly: true });
+    const explanation = result && result.explanation;
+    if (explanation && explanation.explanation) {
+      this.updateQuestion(recordId, questionId, {
+        explaining: false,
+        analysis: [explanation.explanation, explanation.elimination].filter(Boolean).join('\n')
+      });
+      return;
+    }
+    this.updateQuestion(recordId, questionId, {
+      explaining: false,
+      analysisStatus: result && result.cacheMiss ? text('noAnalysis', '这道题尚未生成 AI 讲解') : ''
+    });
+    if (result && result.syncMode === 'cloud-error') {
+      this.setData({ debugLines: buildDebugLines(result, 'explainGrammarQuestion') });
+    }
+    if (!(result && result.cacheMiss)) {
+      wx.showToast({ title: text('explanationFailed', '讲解加载失败'), icon: 'none' });
+    }
+  },
+  updateQuestion(recordId, questionId, patch) {
+    this.setData({
+      records: (this.data.records || []).map((record) => (
+        record.id !== recordId ? record : Object.assign({}, record, {
+          detailQuestions: (record.detailQuestions || []).map((question) => (
+            question.questionId === questionId ? Object.assign({}, question, patch) : question
+          ))
+        })
+      ))
+    });
+  },
+  updateRecord(id, patch) {
+    this.setData({
+      records: (this.data.records || []).map((item) => (
+        item.id === id ? Object.assign({}, item, patch) : item
+      ))
+    });
+  }
+});

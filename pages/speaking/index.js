@@ -1,38 +1,49 @@
 const page = require('../../utils/page');
 const store = require('../../utils/store');
 const effects = require('../../utils/effects');
+const i18n = require('../../utils/i18n');
+
+const text = (key, fallback) => i18n.getPageText('speaking', key, undefined, fallback);
 
 const EXERCISES = [
   {
     id: 'sentence-1',
-    title: '句子跟读',
-    meta: '10 秒以内',
+    title: text('repeat', '句子跟读'),
+    meta: text('under10', '10 秒以内'),
     prompt: 'I usually read English aloud after dinner.'
   },
   {
     id: 'sentence-2',
-    title: '校园表达',
-    meta: '适合初中',
+    title: text('campus', '校园表达'),
+    meta: text('junior', '适合初中'),
     prompt: 'Our school life is busy but interesting.'
   },
   {
     id: 'sentence-3',
-    title: '观点表达',
-    meta: '适合高中',
+    title: text('opinion', '观点表达'),
+    meta: text('senior', '适合高中'),
     prompt: 'I think practice is the best way to improve spoken English.'
   }
 ];
 
 function formatDuration(ms) {
   const seconds = Math.max(0, Math.round(Number(ms || 0) / 1000));
-  return seconds ? `${seconds}秒` : '';
+  return seconds ? `${seconds}${text('scoreUnit', ' 秒').replace('分', '秒').replace(' points', ' sec')}` : '';
+}
+
+function localizeExercises() {
+  const keys = [['repeat', 'under10'], ['campus', 'junior'], ['opinion', 'senior']];
+  return EXERCISES.map((item, index) => Object.assign({}, item, {
+    title: text(keys[index][0], item.title),
+    meta: text(keys[index][1], item.meta)
+  }));
 }
 
 Page({
   data: page.createCloudPageData({
-    exercises: EXERCISES,
+    exercises: localizeExercises(),
     activeId: EXERCISES[0].id,
-    activeExercise: EXERCISES[0],
+    activeExercise: localizeExercises()[0],
     recording: false,
     tempFilePath: '',
     recordStartedAt: 0,
@@ -49,6 +60,8 @@ Page({
   onLoad() {
     this.speakingPerf = page.startPagePerf('speaking');
     page.syncTheme(this);
+    const exercises = localizeExercises();
+    this.setData({ exercises, activeExercise: exercises[0] });
     this.recorderManager = wx.getRecorderManager();
     this.recorderManager.onStop((res) => {
       const durationMs = Number(res.duration || 0) || (this.data.recordStartedAt ? Date.now() - this.data.recordStartedAt : 0);
@@ -66,7 +79,7 @@ Page({
     this.recorderManager.onError(() => {
       this.setData({
         recording: false,
-        errorText: '录音没有成功，请重新录一次。'
+        errorText: text('recordFailed', '录音没有成功，请重新录一次。')
       });
     });
     this.questionAudioContext = wx.createInnerAudioContext();
@@ -84,7 +97,7 @@ Page({
       this.setData({
         questionPlaying: false,
         questionLoading: false,
-        errorText: '问题播放失败，请稍后再试。'
+        errorText: text('playFailed', '问题播放失败，请稍后再试。')
       });
     });
     this.speakingPerf.ready('pageReady', {
@@ -96,6 +109,12 @@ Page({
 
   onShow() {
     page.syncTheme(this);
+    const currentId = this.data.activeId;
+    const exercises = localizeExercises();
+    this.setData({
+      exercises,
+      activeExercise: exercises.find((item) => item.id === currentId) || exercises[0]
+    });
   },
 
   onUnload() {
@@ -154,7 +173,7 @@ Page({
       this.setData({
         questionLoading: false,
         questionPlaying: false,
-        errorText: '问题播放失败，请稍后再试。'
+        errorText: text('playFailed', '问题播放失败，请稍后再试。')
       });
     }
   },
@@ -232,7 +251,7 @@ Page({
       }
     } catch (error) {
       this.setData({
-        errorText: '评分暂时没有成功，请稍后再试。'
+        errorText: text('scoreFailed', '评分暂时没有成功，请稍后再试。')
       });
     } finally {
       this.setData({ submitting: false });
@@ -242,7 +261,9 @@ Page({
     if (this.resultEffectTimer) {
       clearTimeout(this.resultEffectTimer);
     }
-    effects.playComplete();
+    effects.playComplete({
+      onceKey: `speaking:${effects.todayKey()}:${this.data.activeId || 'current'}`
+    });
     this.setData({ resultCelebrating: true });
     this.resultEffectTimer = setTimeout(() => {
       this.resultEffectTimer = null;

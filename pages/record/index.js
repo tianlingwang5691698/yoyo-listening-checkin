@@ -3,21 +3,30 @@ const page = require('../../utils/page');
 const labels = require('../../utils/labels');
 const contracts = require('../../utils/contracts');
 const snapshotStore = require('../../utils/snapshot');
-const appConfig = require('../../data/app-config');
+const appConfig = require('../../app-config');
 const effects = require('../../utils/effects');
+const i18n = require('../../utils/i18n');
+const accountCatalog = require('../../utils/i18n-catalog-account');
 
-const WEEK_LABELS = ['日', '一', '二', '三', '四', '五', '六'];
+function tr(key) { return i18n.getPageText('record', key); }
+function buildTexts() {
+  return Object.keys(accountCatalog.record['zh-CN']).reduce((texts, key) => {
+    texts[key] = tr(key);
+    return texts;
+  }, {});
+}
+function formatText(text, values) {
+  return Object.keys(values || {}).reduce((result, key) => result.replace(new RegExp(`\\{${key}\\}`, 'g'), values[key]), String(text || ''));
+}
+function getWeekLabels() { return ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'].map(tr); }
 const LESSON_TASK_SNAPSHOT_KEY = 'lessonTaskSnapshotV1';
 const RECORD_HOME_SNAPSHOT_KEY = 'recordHomeSnapshotV1';
 const EMPTY_REPORT = {
   ...contracts.createReportDefaults()
 };
-const EMPTY_DAY_SUMMARY = {
-  completedCount: 0,
-  totalCount: 0,
-  statusText: '未完成',
-  minutesText: '0 分钟'
-};
+function getEmptyDaySummary() {
+  return { completedCount: 0, totalCount: 0, statusText: tr('notCompleted'), minutesText: tr('zeroMinutes') };
+}
 const STREAK_MILESTONES = [3, 7, 14, 30, 60, 100];
 
 function buildCloudFileId(cloudPath) {
@@ -69,7 +78,7 @@ function parseDateKey(dateKey) {
 
 function formatDateLabel(dateKey) {
   const date = parseDateKey(dateKey);
-  return `${date.getMonth() + 1}月${date.getDate()}日`;
+  return formatText(tr('monthDay'), { month: date.getMonth() + 1, day: date.getDate() });
 }
 
 function formatClock(value) {
@@ -88,7 +97,7 @@ function buildTimeLines(item) {
   return playMoments
     .map((value, index) => ({
       key: `${item.category}-${item.taskId || 'task'}-${index}`,
-      label: `第 ${index + 1} 遍`,
+      label: formatText(tr('passNumber'), { count: index + 1 }),
       timeText: formatClock(value)
     }))
     .filter((entry) => entry.timeText);
@@ -99,12 +108,12 @@ function buildMetric(stats, mode) {
   if (mode === 'total') {
     return {
       heroMetricValue: safeStats.completedDays || 0,
-      heroMetricLabel: '累计打卡'
+      heroMetricLabel: tr('totalCheckins')
     };
   }
   return {
     heroMetricValue: safeStats.streakDays || 0,
-    heroMetricLabel: '连续打卡'
+    heroMetricLabel: tr('streakCheckins')
   };
 }
 
@@ -151,17 +160,17 @@ function formatDuration(minutes) {
   const hours = Math.floor(totalMinutes / 60);
   const restMinutes = totalMinutes % 60;
   if (hours && restMinutes) {
-    return `${hours}小时${restMinutes}分钟`;
+    return formatText(tr('hoursMinutes'), { hours, minutes: restMinutes });
   }
   if (hours) {
-    return `${hours}小时`;
+    return formatText(tr('hours'), { hours });
   }
-  return `${restMinutes}分钟`;
+  return formatText(tr('minutes'), { minutes: restMinutes });
 }
 
 function formatStatsDuration(stats) {
   if (stats && stats.heatmapFallback && !Number(stats.totalMinutes || 0)) {
-    return '0分钟';
+    return tr('zeroMinutes').replace(' ', '');
   }
   return formatDuration((stats || {}).totalMinutes);
 }
@@ -191,29 +200,29 @@ function buildCatchupPresentation(catchupState) {
   const state = catchupState || {};
   if (state.canCatchup) {
     return {
-      catchupStatusLabel: '可追赶',
+      catchupStatusLabel: tr('available'),
       catchupStatusClass: '',
-      catchupCopy: `可点亮 ${state.missedDate || ''}`
+      catchupCopy: formatText(tr('availableCopy'), { date: state.missedDate || '' })
     };
   }
   if (state.reason === 'catchup-used-today') {
     return {
-      catchupStatusLabel: '今日已用',
+      catchupStatusLabel: tr('usedToday'),
       catchupStatusClass: 'is-warn',
-      catchupCopy: '明天继续'
+      catchupCopy: tr('tomorrow')
     };
   }
   if (state.reason === 'finish-current-plan-first') {
     return {
-      catchupStatusLabel: '先完成今日',
+      catchupStatusLabel: tr('finishTodayFirst'),
       catchupStatusClass: 'is-warn',
-      catchupCopy: '完成今日后可追赶'
+      catchupCopy: tr('finishTodayCopy')
     };
   }
   return {
-    catchupStatusLabel: '无需追赶',
+    catchupStatusLabel: tr('notNeeded'),
     catchupStatusClass: 'is-muted',
-    catchupCopy: '节奏正常'
+    catchupCopy: tr('normalRhythm')
   };
 }
 
@@ -274,8 +283,8 @@ function normalizeReport(report) {
         && (attempt.taskId === normalized.taskId || attempt.taskId === normalized.originalTaskId)
       ))
       .map((attempt, attemptIndex) => Object.assign({}, attempt, {
-        displayTitle: `第 ${attemptIndex + 1} 次回答`,
-        scoreText: attempt.status === 'score-pending' ? '待评分' : `${Number(attempt.score || 0)} 分`
+        displayTitle: formatText(tr('attemptNumber'), { count: attemptIndex + 1 }),
+        scoreText: attempt.status === 'score-pending' ? tr('scorePending') : formatText(tr('score'), { score: Number(attempt.score || 0) })
       }));
     return Object.assign({}, normalized, {
       timeLines: buildTimeLines(normalized),
@@ -297,17 +306,17 @@ function normalizeCompletionItem(item) {
   const safeItem = item || {};
   const type = String(safeItem.type || '');
   const typeLabels = {
-    vocabulary: '词汇',
-    reading: '阅读',
-    grammar: '语法',
-    writing: '写作'
+    vocabulary: tr('vocabulary'),
+    reading: tr('reading'),
+    grammar: tr('grammar'),
+    writing: tr('writing')
   };
   return {
     id: safeItem.id || safeItem.recordId || `${type}:${safeItem.targetId || ''}`,
     type,
-    categoryLabel: typeLabels[type] || safeItem.meta || '完成记录',
-    title: safeItem.title || typeLabels[type] || '完成记录',
-    progressText: safeItem.progressText || safeItem.meta || '已完成',
+    categoryLabel: typeLabels[type] || safeItem.meta || tr('completionRecord'),
+    title: safeItem.title || typeLabels[type] || tr('completionRecord'),
+    progressText: safeItem.progressText || safeItem.meta || tr('completed'),
     completedToday: safeItem.completedToday !== false,
     playCount: '',
     repeatTarget: '',
@@ -333,8 +342,8 @@ function buildDaySummary(report) {
   return {
     completedCount,
     totalCount,
-    statusText: completedCount ? '已完成' : (listenedCount ? '有记录' : '未完成'),
-    minutesText: `${safeReport.totalMinutes || 0} 分钟`
+    statusText: completedCount ? tr('completed') : (listenedCount ? tr('hasRecord') : tr('notCompleted')),
+    minutesText: formatText(tr('minutes'), { minutes: safeReport.totalMinutes || 0 })
   };
 }
 
@@ -343,14 +352,14 @@ function buildCalendarDaySummary(heatmap, date) {
   const count = Number(record.count || 0);
   const completed = !!record.completed || count > 0;
   if (!completed) {
-    return EMPTY_DAY_SUMMARY;
+    return getEmptyDaySummary();
   }
   const completedCount = Math.max(count, 1);
   return {
     completedCount,
     totalCount: completedCount,
-    statusText: '已完成',
-    minutesText: '待加载'
+    statusText: tr('completed'),
+    minutesText: tr('loading')
   };
 }
 
@@ -376,11 +385,11 @@ Page({
   data: page.createCloudPageData({
     child: contracts.createChildDefaults(),
     stats: contracts.createStatsDefaults(),
-    weekLabels: WEEK_LABELS,
+    weekLabels: getWeekLabels(),
     metricMode: 'streak',
     heroMetricValue: 0,
-    heroMetricLabel: '连续打卡',
-    totalDurationText: '0分钟',
+    heroMetricLabel: tr('streakCheckins'),
+    totalDurationText: tr('zeroMinutes').replace(' ', ''),
     planDayIndex: 1,
     calendarYear: new Date().getFullYear(),
     calendarMonth: new Date().getMonth() + 1,
@@ -390,33 +399,54 @@ Page({
     selectedDate: getDateKey(new Date()),
     selectedDateLabel: '',
     selectedDayReport: EMPTY_REPORT,
-    selectedDaySummary: EMPTY_DAY_SUMMARY,
+    selectedDaySummary: getEmptyDaySummary(),
     selectedDayLoaded: false,
     selectedDayLoading: false,
-    catchupStatusLabel: '无需追赶',
+    catchupStatusLabel: tr('notNeeded'),
     catchupStatusClass: 'is-muted',
-    catchupCopy: '节奏正常',
+    catchupCopy: tr('normalRhythm'),
     catchupState: contracts.createCatchupStateDefaults(),
     catchupTasks: [],
     catchupTasksLoaded: false,
     catchupTasksLoading: false,
     recordDebugLines: [],
     streakMilestoneVisible: false,
-    streakMilestoneLabel: ''
+    streakMilestoneLabel: '',
+    texts: buildTexts()
   }),
   async onShow() {
     this.recordPerf = page.startPagePerf('record');
     const loadSeq = (this.recordLoadSeq || 0) + 1;
     this.recordLoadSeq = loadSeq;
     page.syncTheme(this);
+    const texts = buildTexts();
+    this.setData(Object.assign({
+      texts,
+      language: i18n.getLanguage(),
+      weekLabels: getWeekLabels(),
+      calendarTitle: formatText(tr('calendarTitle'), { year: this.data.calendarYear, month: this.data.calendarMonth }),
+      selectedDateLabel: formatDateLabel(this.data.selectedDate),
+      totalDurationText: formatStatsDuration(this.data.stats),
+      selectedDaySummary: this.data.selectedDayLoaded ? buildDaySummary(this.data.selectedDayReport) : getEmptyDaySummary()
+    }, buildMetric(this.data.stats, this.data.metricMode), buildCatchupPresentation(this.data.catchupState)));
+    wx.setNavigationBarTitle({ title: texts.navTitle });
     const tabBar = this.getTabBar && this.getTabBar();
-    if (tabBar) {
+    if (tabBar && tabBar.data.selected !== 2) {
       tabBar.setData({ selected: 2 });
     }
     if (!page.requireIdentityConfirmed()) {
+      await new Promise((resolve) => wx.nextTick(resolve));
+      this.recordPerf.ready('pageReady', {
+        source: 'identity-blocked',
+        cacheHit: true,
+        cells: (this.data.monthCells || []).length
+      });
       return;
     }
     const refreshToken = page.getHeatmapRefreshToken();
+    const previousRefreshToken = Number(this.lastHeatmapRefreshToken || 0);
+    this.shouldCelebrateFreshCompletion = store.getDeviceStudyRole() === 'student'
+      && refreshToken > previousRefreshToken;
     if (refreshToken !== this.lastHeatmapRefreshToken) {
       this.monthCache = {};
       this.monthRequests = {};
@@ -467,17 +497,17 @@ Page({
       const emptyStats = contracts.createStatsDefaults();
       this.setData(page.buildCloudPageData(this.data, Object.assign({
         stats: emptyStats,
-        totalDurationText: '0分钟',
+        totalDurationText: tr('zeroMinutes').replace(' ', ''),
         calendarYear,
         calendarMonth,
-        calendarTitle: `${calendarYear}年${calendarMonth}月`,
+        calendarTitle: formatText(tr('calendarTitle'), { year: calendarYear, month: calendarMonth }),
         todayDate: getDateKey(today),
         selectedDate,
         selectedDateLabel: formatDateLabel(selectedDate),
         selectedDayLoaded: false,
         selectedDayLoading: false,
         selectedDayReport: EMPTY_REPORT,
-        selectedDaySummary: EMPTY_DAY_SUMMARY,
+        selectedDaySummary: getEmptyDaySummary(),
         monthCells: buildMonthCells(calendarYear, calendarMonth, [], selectedDate, contracts.createCatchupStateDefaults()),
         catchupState: contracts.createCatchupStateDefaults(),
         catchupTasks: [],
@@ -485,6 +515,12 @@ Page({
         catchupTasksLoading: false
       }, buildMetric(emptyStats, this.data.metricMode), buildCatchupPresentation(contracts.createCatchupStateDefaults()))));
     }
+    await new Promise((resolve) => wx.nextTick(resolve));
+    this.recordPerf.ready('pageReady', {
+      source: snapshot ? 'snapshot' : 'fallback',
+      cacheHit: !!snapshot,
+      cells: (this.data.monthCells || []).length
+    });
     const dashboardStartedAt = Date.now();
     const heatmapStartedAt = Date.now();
     this.clearRecordDebugTimer();
@@ -617,7 +653,7 @@ Page({
         recordDebugLines: debugLines,
         calendarYear,
         calendarMonth,
-        calendarTitle: `${calendarYear}年${calendarMonth}月`,
+        calendarTitle: formatText(tr('calendarTitle'), { year: calendarYear, month: calendarMonth }),
         todayDate: getDateKey(today),
         selectedDate,
         selectedDateLabel: formatDateLabel(selectedDate),
@@ -647,7 +683,7 @@ Page({
         { heatmapData, targetPart }
       ), { source: 'record-home' });
       if (this.recordPerf) {
-        this.recordPerf.ready('pageReady', {
+        this.recordPerf.mark('cloudRefresh', {
           cacheHit: !!dashboard.__cacheHit && !!heatmapData.__cacheHit,
           dashboardCacheHit: !!dashboard.__cacheHit,
           heatmapCacheHit: !!heatmapData.__cacheHit,
@@ -688,6 +724,8 @@ Page({
     }
   },
   showStreakMilestoneIfNeeded(stats) {
+    if (!this.shouldCelebrateFreshCompletion || store.getDeviceStudyRole() !== 'student') return;
+    this.shouldCelebrateFreshCompletion = false;
     const streak = Number((stats && stats.streakDays) || 0);
     if (!STREAK_MILESTONES.includes(streak)) return;
     const key = `streakMilestoneSfx:${getTargetSnapshotPart()}:${streak}`;
@@ -699,7 +737,7 @@ Page({
     effects.playComplete({ voiceKey: 'streakMilestone' });
     this.setData({
       streakMilestoneVisible: true,
-      streakMilestoneLabel: `连续 ${streak} 天`
+      streakMilestoneLabel: formatText(tr('streakDays'), { count: streak })
     });
     this.milestoneTimer = setTimeout(() => {
       this.milestoneTimer = null;
@@ -784,7 +822,7 @@ Page({
     this.setData(page.buildCloudPageData(this.data, Object.assign({
       calendarYear: year,
       calendarMonth: month,
-      calendarTitle: `${year}年${month}月`,
+      calendarTitle: formatText(tr('calendarTitle'), { year, month }),
       selectedDate,
       selectedDateLabel: formatDateLabel(selectedDate),
       selectedDayLoaded: false,
@@ -865,7 +903,7 @@ Page({
       applyData(heatmapData);
     } catch (error) {
       this.setData({ catchupTasksLoading: false });
-      wx.showToast({ title: '追赶任务加载失败', icon: 'none' });
+      wx.showToast({ title: this.data.texts.catchupLoadFailed, icon: 'none' });
     }
   },
   switchMetric(event) {
@@ -993,7 +1031,7 @@ Page({
       ? (attempt.feedbackAudioFileId || buildCloudFileId(attempt.feedbackAudioCloudPath))
       : (attempt.answerAudioFileId || buildCloudFileId(attempt.answerCloudPath));
     if (!fileId) {
-      wx.showToast({ title: audioType === 'feedback' ? '暂无建议语音' : '暂无录音', icon: 'none' });
+      wx.showToast({ title: audioType === 'feedback' ? this.data.texts.noSuggestionAudio : this.data.texts.noRecording, icon: 'none' });
       return;
     }
     try {
@@ -1006,7 +1044,7 @@ Page({
       this.audioContext.src = url;
       this.audioContext.play();
     } catch (error) {
-      wx.showToast({ title: '播放失败', icon: 'none' });
+      wx.showToast({ title: this.data.texts.playbackFailed, icon: 'none' });
     }
   }
 });

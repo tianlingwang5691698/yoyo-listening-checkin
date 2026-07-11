@@ -10,6 +10,7 @@
     "pages/material/index",
     "pages/material/detail/index",
     "pages/writing/detail/index",
+    "pages/practice-history/index",
     "pages/speaking/index",
     "pages/level/index",
     "pages/listening-plan/index",
@@ -18,6 +19,7 @@
     "pages/lesson/index",
     "pages/record/index",
     "pages/profile/index",
+    "pages/settings/index",
     "pages/identity/index",
     "pages/admin/index",
     "pages/parent/index",
@@ -25,7 +27,7 @@
     "pages/family/index"
   ],
   "window": {
-    "navigationBarTitleText": "佑佑听力打卡",
+    "navigationBarTitleText": " ",
     "navigationBarBackgroundColor": "#F6FBFD",
     "navigationBarTextStyle": "black",
     "backgroundColor": "#F6FBFD",

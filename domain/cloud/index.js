@@ -1,4 +1,4 @@
-const appConfig = require('../../data/app-config');
+const appConfig = require('../../app-config');
 const monitor = require('../../utils/monitor');
 
 let cloudInited = false;

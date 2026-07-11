@@ -3,6 +3,9 @@ const store = require('../../../utils/store');
 const completed = require('../../../utils/completed');
 const snapshotStore = require('../../../utils/snapshot');
 const effects = require('../../../utils/effects');
+const i18n = require('../../../utils/i18n');
+
+const text = (key, fallback) => i18n.getPageText('writing', key, undefined, fallback);
 
 const WRITING_PROMPT_SNAPSHOT_KEY = 'currentWritingPromptV1';
 
@@ -70,6 +73,15 @@ Page({
     } catch (error) {
       prompt = prompt || null;
     }
+    const initialPromptReady = !!(prompt && (!promptId || prompt._id === promptId) && prompt.prompt);
+    this.setData({ prompt: initialPromptReady ? prompt : null });
+    await new Promise((resolve) => wx.nextTick(resolve));
+    this.writingPerf.ready('pageReady', {
+      source: initialPromptReady ? source : 'fallback',
+      cacheHit: initialPromptReady,
+      promptId,
+      hasPrompt: initialPromptReady
+    });
     if (!prompt || (promptId && prompt._id !== promptId) || !prompt.prompt) {
       const result = await store.getMaterialItem({ moduleId: 'writing', itemId: promptId });
       prompt = (result && result.item) || null;
@@ -81,7 +93,7 @@ Page({
       source = materialIndex && materialIndex.__cacheHit ? 'cache' : 'cloud';
     }
     this.setData({ prompt });
-    this.writingPerf.ready('pageReady', {
+    this.writingPerf.mark('cloudRefresh', {
       source,
       cacheHit: source === 'snapshot' || source === 'storage' || source === 'cache',
       promptId,
@@ -113,13 +125,13 @@ Page({
     const prompt = this.data.prompt;
     const essay = String(this.data.essayText || '').trim();
     if (!prompt) {
-      this.setData({ errorText: '作文题加载失败。' });
-      wx.showToast({ title: '作文题加载失败', icon: 'none' });
+      this.setData({ errorText: text('loadFailed', '作文题加载失败。') });
+      wx.showToast({ title: text('loadFailed', '作文题加载失败'), icon: 'none' });
       return;
     }
     if (essay.length < 20) {
-      this.setData({ errorText: '先写完整一点再提交。' });
-      wx.showToast({ title: '先写完整一点', icon: 'none' });
+      this.setData({ errorText: text('tooShort', '先写完整一点再提交。') });
+      wx.showToast({ title: text('tooShort', '先写完整一点'), icon: 'none' });
       return;
     }
     const wordCount = countWords(essay);
@@ -128,7 +140,7 @@ Page({
     try {
       const result = await store.submitWritingAttempt({ prompt, promptId: prompt._id, essay });
       if (result && result.syncMode === 'cloud-error') {
-        throw new Error((result.cloudError && result.cloudError.message) || '批改失败');
+        throw new Error((result.cloudError && result.cloudError.message) || text('retryFailed', '批改失败'));
       }
       const attempt = result.attempt || null;
       const attemptId = (attempt && (attempt.attemptId || attempt._id)) || '';
@@ -138,13 +150,13 @@ Page({
         this.playWritingReviewEffect();
         return;
       }
-      this.setData({ grading: true, errorText: '作文已提交，正在批改。' });
+      this.setData({ grading: true, errorText: text('gradingStatus', '作文已提交，正在批改。') });
       if (!attemptId) {
         throw new Error('missing-writing-attempt-id');
       }
       store.gradeWritingAttempt(attemptId).then((graded) => {
         if (graded && graded.syncMode === 'cloud-error') {
-          throw new Error((graded.cloudError && graded.cloudError.message) || '批改失败');
+          throw new Error((graded.cloudError && graded.cloudError.message) || text('retryFailed', '批改失败'));
         }
         const review = normalizeReview(graded.review, prompt);
         this.setData({ review, grading: false, errorText: '' });
@@ -155,7 +167,7 @@ Page({
           targetId: prompt._id,
           title: prompt.title || '写作',
           meta: [prompt.year, prompt.district, prompt.examType].filter(Boolean).join(' · '),
-          progressText: `${review.score}/${review.totalScore} 分`,
+          progressText: `${review.score}/${review.totalScore}${text('scoreUnit', ' 分')}`,
           latestAttempt: graded.attempt || attempt,
           prompt
         };
@@ -163,7 +175,7 @@ Page({
       }).catch((error) => {
         this.setData({
           grading: false,
-          errorText: '批改失败，可以再点一次提交。',
+          errorText: text('gradingFailed', '批改失败，可以再点一次提交。'),
           writingDebugLines: [
             `DEBUG: pages/writing/detail.submitEssay -> store.gradeWritingAttempt -> cloud.gradeWritingAttempt -> review：missing`,
             `attemptId=${attemptId || 'missing'}；cloudError.message=${error && error.message ? error.message : String(error || '')}`
@@ -176,20 +188,20 @@ Page({
         targetId: prompt._id,
         title: prompt.title || '写作',
         meta: [prompt.year, prompt.district, prompt.examType].filter(Boolean).join(' · '),
-        progressText: '批改中',
+        progressText: text('grading', '批改中'),
         latestAttempt: attempt,
         prompt
       };
       completed.addCompletedItem(item);
     } catch (error) {
       this.setData({
-        errorText: '批改失败，可以再点一次提交。',
+        errorText: text('gradingFailed', '批改失败，可以再点一次提交。'),
         writingDebugLines: [
           `DEBUG: pages/writing/detail.submitEssay -> store.submitWritingAttempt -> cloud.submitWritingAttempt -> attempt：missing`,
           `cloudError.message=${error && error.message ? error.message : String(error || '')}`
         ]
       });
-      wx.showToast({ title: '批改失败，可重试', icon: 'none' });
+      wx.showToast({ title: text('retryFailed', '批改失败，可重试'), icon: 'none' });
     } finally {
       this.setData({ submitting: false });
     }
@@ -200,7 +212,11 @@ Page({
     if (this.reviewEffectTimer) {
       clearTimeout(this.reviewEffectTimer);
     }
-    effects.playComplete({ voiceKey: 'writingComplete' });
+    const promptId = (this.data.prompt && this.data.prompt._id) || 'current';
+    effects.playComplete({
+      voiceKey: 'writingComplete',
+      onceKey: `writing:${effects.todayKey()}:${promptId}`
+    });
     this.setData({ reviewCelebrating: true });
     this.reviewEffectTimer = setTimeout(() => {
       this.reviewEffectTimer = null;

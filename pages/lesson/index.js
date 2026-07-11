@@ -1,11 +1,13 @@
 const store = require('../../utils/store');
 const player = require('../../domain/player/index');
-const appConfig = require('../../data/app-config');
+const appConfig = require('../../app-config');
 const page = require('../../utils/page');
 const labels = require('../../utils/labels');
 const monitor = require('../../utils/monitor');
 const snapshotStore = require('../../utils/snapshot');
 const effects = require('../../utils/effects');
+const i18n = require('../../utils/i18n');
+const text = (key, fallback) => i18n.getPageText('lesson', key, undefined, fallback);
 const LESSON_TASK_SNAPSHOT_KEY = 'lessonTaskSnapshotV1';
 const LESSON_STUDY_PACK_SNAPSHOT_KEY = 'lessonStudyPackSnapshotV1';
 const LESSON_TASK_SNAPSHOT_MAX_AGE_MS = 24 * 60 * 60 * 1000;
@@ -256,7 +258,7 @@ function buildPreviewTask(task, progress) {
     textUnlocked: progress.textUnlocked,
     transcriptVisible: progress.transcriptVisible,
     completedToday: progress.completedToday,
-    note: progress.completedToday ? '预览已完成。' : `预览第 ${progress.currentPass} 遍。`
+    note: progress.completedToday ? text('previewDone', '预览已完成。') : `${text('previewPassPrefix', '预览第 ')}${progress.currentPass}${text('passSuffix', ' 遍。')}`
   });
 }
 
@@ -311,7 +313,7 @@ function canContinueAfterSpeaking(attempts) {
 
 function formatRecordDuration(ms) {
   const seconds = Math.max(0, Math.round(Number(ms || 0) / 1000));
-  return seconds ? `${seconds}秒` : '';
+  return seconds ? `${seconds}${i18n.getLanguage() === 'en' ? ' sec' : '秒'}` : '';
 }
 
 function formatAudioErrorText(code) {
@@ -320,15 +322,15 @@ function formatAudioErrorText(code) {
     return '';
   }
   if (value === 'playback-error') {
-    return '音频暂时不可用，请重新加载。';
+    return text('audioUnavailable', '音频暂时不可用，请重新加载。');
   }
   if (value === 'temp-url-failed') {
-    return '音频地址获取失败，请重新加载。';
+    return text('audioAddressFailed', '音频地址获取失败，请重新加载。');
   }
   if (value === 'missing-audio-url') {
-    return '当前音频还没有准备好。';
+    return text('audioNotReady', '当前音频还没有准备好。');
   }
-  return '云端音频暂时不可用，请稍后再试。';
+  return text('cloudAudioUnavailable', '云端音频暂时不可用，请稍后再试。');
 }
 
 function lessonStudyDoneKey(category, taskId) {
@@ -382,9 +384,9 @@ function recordLessonStudyPackSynced(task, category, taskId) {
     targetId,
     category: safeCategory,
     taskId: safeTaskId,
-    title: '听力学习包',
-    meta: target.displayTitle || target.title || target.audioTitle || '听力课程',
-    progressText: '学习包已生成',
+    title: text('packTitle', '听力学习包'),
+    meta: target.displayTitle || target.title || target.audioTitle || text('course', '听力课程'),
+    progressText: text('packReady', '学习包已生成'),
     audioUrl: target.audioUrl || '',
     audioCloudPath: target.audioCloudPath || '',
     audioFileId: target.audioFileId || '',
@@ -404,7 +406,7 @@ function buildLessonStudyItem(task, category, taskId, transcript) {
   const target = task || {};
   return {
     _id: `lesson-${target.category || category}-${target.taskId || taskId}`,
-    title: target.displayTitle || target.title || target.audioTitle || '听力课程',
+    title: target.displayTitle || target.title || target.audioTitle || text('course', '听力课程'),
     transcript: transcript || ''
   };
 }
@@ -419,9 +421,9 @@ function hasLessonStudyCards(studyPack) {
 function getLessonStudyError(result) {
   const message = result && result.cloudError && result.cloudError.message;
   if (message) {
-    return `生成超时，未拿到学习包，请稍后重试：${message}`;
+    return `${text('packTimeout', '生成超时，未拿到学习包，请稍后重试')}：${message}`;
   }
-  return '生成失败，稍后重试。';
+  return text('packFailed', '生成失败，稍后重试。');
 }
 
 function isLessonTrainingMode(member, planRunType, cloudStudyWriteAllowed) {
@@ -482,7 +484,7 @@ Page({
     audioPlaybackMode: 'idle',
     currentAudio: null,
     studyWriteAllowed: false,
-    studyModeLabel: '家长模式',
+    studyModeLabel: text('parentModeLabel', '家长模式'),
     isPreviewMode: false,
     checkinReady: false,
     transcriptPendingLoad: false,
@@ -524,9 +526,9 @@ Page({
     lessonStudyCompleted: false,
     lessonStudyTab: 'vocabulary',
     lessonStudyTabs: [
-      { key: 'vocabulary', label: '生词' },
-      { key: 'phrases', label: '短语' },
-      { key: 'patterns', label: '句型' }
+      { key: 'vocabulary', label: text('vocabulary', '生词') },
+      { key: 'phrases', label: text('phrases', '短语') },
+      { key: 'patterns', label: text('patterns', '句型') }
     ],
     lessonVocabularyCards: [],
     lessonPhraseCards: [],
@@ -656,13 +658,13 @@ Page({
       return;
     }
     wx.openPrivacyContract({
-      fail: () => wx.showToast({ title: '隐私指引暂不可打开', icon: 'none' })
+      fail: () => wx.showToast({ title: text('privacyUnavailable', '隐私指引暂不可打开'), icon: 'none' })
     });
   },
   handleAgreePrivacyAuthorization(event) {
     const errMsg = String(event && event.detail && event.detail.errMsg || '');
     if (errMsg && errMsg.indexOf(':ok') < 0) {
-      wx.showToast({ title: '请先同意录音用途', icon: 'none' });
+      wx.showToast({ title: text('agreeRecording', '请先同意录音用途'), icon: 'none' });
       return;
     }
     this.recorderPrivacyAuthorized = true;
@@ -708,8 +710,8 @@ Page({
       currentMember: localMember,
       studyWriteAllowed: isLessonTrainingMode(localMember, this.planRunType, true),
       studyModeLabel: this.planRunType === 'preview'
-        ? '预览模式'
-        : (localMember.studyRole === 'student' ? '学生设备' : '家长模式')
+        ? text('previewModeLabel', '预览模式')
+        : (localMember.studyRole === 'student' ? text('studentDevice', '学生设备') : text('parentModeLabel', '家长模式'))
     });
     this.markLessonRoute('onLoad');
     this.recorderManager = wx.getRecorderManager ? wx.getRecorderManager() : null;
@@ -739,7 +741,7 @@ Page({
         if (privacyBanned) {
           this.showRecorderPrivacyGuide();
         } else {
-          wx.showToast({ title: '录音失败，查看下方调试信息', icon: 'none' });
+          wx.showToast({ title: text('recordFailed', '录音失败，请重试'), icon: 'none' });
         }
       });
     }
@@ -762,7 +764,7 @@ Page({
     });
     this.speakingAudioContext.onError(() => {
       this.setData({ speakingPlayingAttemptKey: '', speakingPausedAttemptKey: '' });
-      wx.showToast({ title: '录音播放失败', icon: 'none' });
+      wx.showToast({ title: text('playbackFailed', '录音播放失败'), icon: 'none' });
     });
     this.innerAudioContext.onCanplay(() => {
       const durationFromContext = Number(this.innerAudioContext.duration || 0);
@@ -851,7 +853,7 @@ Page({
       this.scheduleAudioErrorText('playback-error');
       if (this.audioPlayRequested) {
         wx.showToast({
-          title: '云端音频加载失败',
+          title: text('cloudAudioFailed', '云端音频加载失败'),
           icon: 'none'
         });
       }
@@ -871,24 +873,35 @@ Page({
     page.syncTheme(this);
     if (!page.requireIdentityConfirmed()) {
       this.setData({ lessonLoading: false });
+      await new Promise((resolve) => wx.nextTick(resolve));
+      this.lessonPerf.ready('pageReady', {
+        source: 'identity-blocked',
+        cacheHit: true,
+        category: this.category,
+        taskId: this.taskId,
+        hasAudio: false
+      });
       return;
+    }
+    if (!this.data.task) {
+      await new Promise((resolve) => wx.nextTick(resolve));
+      this.lessonPerf.ready('pageReady', {
+        source: 'fallback',
+        cacheHit: false,
+        category: this.category,
+        taskId: this.taskId,
+        hasAudio: false
+      });
     }
     const detail = await this.refreshPage();
     if (this.lessonPerf) {
-      this.lessonPerf.ready('pageReady', {
+      this.lessonPerf.mark('cloudRefresh', {
         source: detail && detail.__cacheHit ? 'cache' : (detail && detail.syncMode === 'cloud-error' ? 'error' : 'cloud'),
         cacheHit: !!(detail && detail.__cacheHit),
         category: this.category,
         taskId: this.taskId,
         hasAudio: !!(detail && detail.task && hasTaskAudioSource(detail.task))
       });
-      if (detail && !detail.__cacheHit && detail.syncMode !== 'cloud-error') {
-        this.lessonPerf.mark('cloudRefresh', {
-          category: this.category,
-          taskId: this.taskId,
-          hasAudio: !!(detail.task && hasTaskAudioSource(detail.task))
-        });
-      }
     }
   },
   onHide() {
@@ -1157,7 +1170,7 @@ Page({
       currentMember: detail.currentMember,
       studyWriteAllowed,
       isPreviewMode: this.planRunType === 'preview',
-      studyModeLabel: this.planRunType === 'preview' ? '预览模式' : (detail.currentMember && detail.currentMember.studyRole === 'student' ? '学生设备' : '家长模式'),
+      studyModeLabel: this.planRunType === 'preview' ? text('previewModeLabel', '预览模式') : (detail.currentMember && detail.currentMember.studyRole === 'student' ? text('studentDevice', '学生设备') : text('parentModeLabel', '家长模式')),
       lessonStudyCompleted: studyCompleted
     }));
     this.prefetchTaskAudio(normalizedTask);
@@ -1231,7 +1244,7 @@ Page({
       currentMember: detail.currentMember,
       studyWriteAllowed,
       isPreviewMode: this.planRunType === 'preview',
-      studyModeLabel: this.planRunType === 'preview' ? '预览模式' : (detail.currentMember && detail.currentMember.studyRole === 'student' ? '学生设备' : '家长模式'),
+      studyModeLabel: this.planRunType === 'preview' ? text('previewModeLabel', '预览模式') : (detail.currentMember && detail.currentMember.studyRole === 'student' ? text('studentDevice', '学生设备') : text('parentModeLabel', '家长模式')),
       currentTimeMs: 0,
       currentTimeLabel: '00:00',
       progressPercent: 0,
@@ -1353,7 +1366,7 @@ Page({
     if (explicitQuestionMode && !(this.data.transcriptLines || []).length) {
       this.setData({
         passQuestionVisible: true,
-        passQuestionText: targetTask.questionText || targetTask.passQuestionText || '听完问题后录音回答'
+        passQuestionText: targetTask.questionText || targetTask.passQuestionText || text('answerRecordHint', '听完问题后录音回答')
       });
       return;
     }
@@ -1377,7 +1390,7 @@ Page({
     }
     this.setData({
       passQuestionVisible: true,
-      passQuestionText: questionText || '听完问题后录音回答'
+      passQuestionText: questionText || text('answerRecordHint', '听完问题后录音回答')
     });
   },
   async openSpeakingPanelForPass(passNumber) {
@@ -1433,7 +1446,7 @@ Page({
   },
   async startSpeakingRecord() {
     if (!this.recorderManager) {
-      wx.showToast({ title: '当前微信不支持录音', icon: 'none' });
+      wx.showToast({ title: text('recordUnsupported', '当前微信不支持录音'), icon: 'none' });
       return;
     }
     if (!this.recorderManager || this.data.speakingRecording) {
@@ -1485,7 +1498,7 @@ Page({
       if (privacyBanned) {
         this.showRecorderPrivacyGuide();
       } else {
-        wx.showToast({ title: '录音启动失败，查看下方调试信息', icon: 'none' });
+        wx.showToast({ title: text('recordFailed', '录音启动失败，请重试'), icon: 'none' });
       }
     }
   },
@@ -1496,11 +1509,11 @@ Page({
   },
   async submitSpeakingRecord() {
     if (this.data.speakingRecording) {
-      wx.showToast({ title: '请先停止录音', icon: 'none' });
+      wx.showToast({ title: text('stopFirst', '请先停止录音'), icon: 'none' });
       return;
     }
     if (!this.data.speakingTempFilePath || this.data.speakingSubmitting) {
-      wx.showToast({ title: '请先录音', icon: 'none' });
+      wx.showToast({ title: text('recordFirst', '请先录音'), icon: 'none' });
       return;
     }
     const task = this.data.task || {};
@@ -1589,10 +1602,10 @@ Page({
         speakingFailureDebugLines = resultDebugLines;
         if (!result || result.cloudError || !result.attempt) {
           this.setData({ speakingDebugLines: resultDebugLines });
-          if (await this.finishPendingListenAfterSpeakingFailure('评分失败，按听力完成')) {
+          if (await this.finishPendingListenAfterSpeakingFailure(text('speakingFallback', '评分失败，按听力完成'))) {
             return;
           }
-          wx.showToast({ title: '试做评分失败', icon: 'none' });
+          wx.showToast({ title: text('trialScoreFailed', '试做评分失败'), icon: 'none' });
           return;
         }
         const previewAttempt = Object.assign({}, normalizeSpeakingAttempts([result.attempt])[0] || result.attempt, {
@@ -1623,11 +1636,11 @@ Page({
               activeRepeatLine: (this.data.repeatLines || [])[nextIndex] || null
             });
           }
-          wx.showToast({ title: '云端试做评分完成', icon: 'none' });
+          wx.showToast({ title: text('trialScoreDone', '云端试做评分完成'), icon: 'none' });
           return;
         }
         this.setData({ speakingAttemptIndex: attemptIndex + 1 });
-        wx.showToast({ title: '云端评分完成，可重录', icon: 'none' });
+        wx.showToast({ title: text('scoreDoneRerecord', '云端评分完成，可重录'), icon: 'none' });
         return;
       }
       const upload = await store.createSpeakingUploadUrl({
@@ -1695,10 +1708,10 @@ Page({
       speakingFailureDebugLines = resultDebugLines;
       if (!result || result.cloudError || !result.attempt) {
         this.setData({ speakingDebugLines: resultDebugLines });
-        if (await this.finishPendingListenAfterSpeakingFailure('评分失败，按听力完成')) {
+        if (await this.finishPendingListenAfterSpeakingFailure(text('speakingFallback', '评分失败，按听力完成'))) {
           return;
         }
-        wx.showToast({ title: '评分失败，请看云函数日志', icon: 'none' });
+        wx.showToast({ title: text('scoreFailed', '评分失败，请重试'), icon: 'none' });
         return;
       }
       const normalizedAttempts = normalizeSpeakingAttempts(result.attempts || []);
@@ -1716,7 +1729,7 @@ Page({
       });
       if (normalizedAttempt && normalizedAttempt.status === 'score-pending') {
         wx.showToast({
-          title: normalizedAttempt.scoreErrorType === 'audio-download' ? '录音读取失败，请重录' : '录音已保存，稍后刷新评分',
+          title: normalizedAttempt.scoreErrorType === 'audio-download' ? text('recordReadFailed', '录音读取失败，请重录') : text('recordSaved', '录音已保存，稍后刷新评分'),
           icon: 'none'
         });
         await this.finishPendingListenAfterSpeaking();
@@ -1731,11 +1744,11 @@ Page({
             activeRepeatLine: (this.data.repeatLines || [])[nextIndex] || null
           });
         }
-        wx.showToast({ title: '本句已评分', icon: 'none' });
+        wx.showToast({ title: text('sentenceScored', '本句已评分'), icon: 'none' });
         return;
       }
       this.setData({ speakingAttemptIndex: attemptIndex + 1 });
-      wx.showToast({ title: '评分完成，已计入进度', icon: 'none' });
+      wx.showToast({ title: text('scoreProgressDone', '评分完成，已计入进度'), icon: 'none' });
       await this.finishPendingListenAfterSpeaking();
     } catch (error) {
       const errorMessage = (error && (error.errMsg || error.message)) || String(error || '');
@@ -1749,10 +1762,10 @@ Page({
           })
         ])
       });
-      if (await this.finishPendingListenAfterSpeakingFailure('提交失败，按听力完成')) {
+      if (await this.finishPendingListenAfterSpeakingFailure(text('speakingFallback', '提交失败，按听力完成'))) {
         return;
       }
-      wx.showToast({ title: '提交失败，请重试', icon: 'none' });
+      wx.showToast({ title: text('submitFailed', '提交失败，请重试'), icon: 'none' });
     } finally {
       this.setData({ speakingSubmitting: false });
     }
@@ -1765,11 +1778,11 @@ Page({
       speakingSubmitting: false,
       speakingRecording: false
     });
-    wx.showToast({ title: title || '口语失败，按听力完成', icon: 'none' });
+    wx.showToast({ title: title || text('speakingFallback', '口语失败，按听力完成'), icon: 'none' });
     try {
       await this.finishPendingListenAfterSpeaking();
     } catch (error) {
-      wx.showToast({ title: '听力进度同步失败', icon: 'none' });
+      wx.showToast({ title: text('progressSyncFailed', '听力进度同步失败'), icon: 'none' });
     }
     return true;
   },
@@ -1785,7 +1798,7 @@ Page({
   },
   async continueAfterSpeakingFeedback() {
     if (!this.data.speakingCanContinue) {
-      wx.showToast({ title: '录音保存后才能继续', icon: 'none' });
+      wx.showToast({ title: text('saveRecordFirst', '录音保存后才能继续'), icon: 'none' });
       return;
     }
     await this.finishPendingListenAfterSpeaking();
@@ -1819,7 +1832,7 @@ Page({
       }
     }
     if (!src) {
-      wx.showToast({ title: audioType === 'feedback' ? '建议语音暂不可播放' : '录音暂不可播放', icon: 'none' });
+      wx.showToast({ title: audioType === 'feedback' ? text('feedbackUnavailable', '建议语音暂不可播放') : text('recordUnavailable', '录音暂不可播放'), icon: 'none' });
       return;
     }
     if (this.innerAudioContext) {
@@ -1850,11 +1863,11 @@ Page({
         speakingCanContinue: canContinueAfterSpeaking(normalizedAttempts)
       });
       wx.showToast({
-        title: normalizedAttempt && normalizedAttempt.status === 'scored' ? '评分完成' : '仍需稍后重试',
+        title: normalizedAttempt && normalizedAttempt.status === 'scored' ? text('scoreDone', '评分完成') : text('retryNeeded', '仍需稍后重试'),
         icon: 'none'
       });
     } catch (error) {
-      wx.showToast({ title: '重新评分失败', icon: 'none' });
+      wx.showToast({ title: text('rescoreFailed', '重新评分失败'), icon: 'none' });
     } finally {
       this.setData({ speakingRescoringKey: '' });
     }
@@ -1862,7 +1875,7 @@ Page({
   async completeUnlockRepeat() {
     const total = (this.data.repeatLines || []).length;
     if (total && this.data.repeatCompletedCount < total) {
-      wx.showToast({ title: `还剩 ${total - this.data.repeatCompletedCount} 句`, icon: 'none' });
+      wx.showToast({ title: `${text('remainingPrefix', '还剩 ')}${total - this.data.repeatCompletedCount}${text('remainingSuffix', ' 句')}`, icon: 'none' });
       return;
     }
     await this.finishPendingListenAfterSpeaking();
@@ -2015,7 +2028,7 @@ Page({
     const currentTimeMs = Number(this.data.currentTimeMs || 0);
     if (line.startMs > currentTimeMs + 300) {
       wx.showToast({
-        title: '这里只能回退，不能快进',
+        title: text('rewindOnly', '这里只能回退，不能快进'),
         icon: 'none'
       });
       return;
@@ -2041,7 +2054,7 @@ Page({
     }
     if (!this.innerAudioContext.src) {
       wx.showToast({
-        title: '云端音频暂时不可用',
+        title: text('cloudAudioUnavailable', '云端音频暂时不可用'),
         icon: 'none'
       });
       return;
@@ -2139,7 +2152,7 @@ Page({
       const restored = await this.loadCachedLessonStudyPack(task);
       this.setData({ lessonStudyLoading: false });
       if (!restored) {
-        this.setData({ lessonStudyError: '学习包已生成，但本页没有命中缓存；不会重新生成，请稍后从日报再试。' });
+        this.setData({ lessonStudyError: text('packCacheMiss', '学习包已生成，但本页没有命中缓存；请稍后从日报再试。') });
       }
       return;
     }
@@ -2151,7 +2164,7 @@ Page({
     const transcript = buildTranscriptText(lines);
     if (!transcript) {
       this.setData({
-        lessonStudyError: '这条听力暂无文本，暂不能生成。'
+        lessonStudyError: text('noTextPack', '这条听力暂无文本，暂不能生成。')
       });
       return;
     }
@@ -2248,7 +2261,7 @@ Page({
             } catch (fallbackError) {}
           }
           this.setData({ speakingWord: '' });
-          wx.showToast({ title: '播放失败，稍后再试', icon: 'none' });
+          wx.showToast({ title: text('playbackFailed', '播放失败，稍后再试'), icon: 'none' });
         });
       }
       this.lessonStudyAudioContext.stop();
@@ -2256,7 +2269,7 @@ Page({
       this.lessonStudyAudioContext.play();
     } catch (error) {
       this.setData({ speakingWord: '' });
-      wx.showToast({ title: '发音失败，稍后重试', icon: 'none' });
+      wx.showToast({ title: text('pronunciationFailed', '发音失败，稍后重试'), icon: 'none' });
     } finally {
       this._lessonStudyAudioLoading = false;
     }
@@ -2290,7 +2303,7 @@ Page({
       this.setData({ dictionaryEntry: entry, dictionaryLoading: false });
     } catch (error) {
       this.setData({ dictionaryLoading: false });
-      wx.showToast({ title: '查词失败', icon: 'none' });
+      wx.showToast({ title: text('lookupFailed', '查词失败'), icon: 'none' });
     }
   },
   closeDictionary() {
@@ -2308,7 +2321,7 @@ Page({
         lessonDictionaryAddedMap: Object.assign({}, this.data.lessonDictionaryAddedMap || {}, { [key]: true, [word]: true }),
         flashcardAddDebugLines: []
       });
-      wx.showToast({ title: '已加入词库', icon: 'none' });
+      wx.showToast({ title: text('addSuccess', '已加入词库'), icon: 'none' });
     } catch (error) {
       this.setData({
         flashcardAddDebugLines: [
@@ -2316,7 +2329,7 @@ Page({
           `${getFlashcardTargetDebugText()}；cloudError.message=${error && error.message ? error.message : String(error)}`
         ]
       });
-      wx.showToast({ title: '加入失败', icon: 'none' });
+      wx.showToast({ title: text('addFailed', '加入失败'), icon: 'none' });
     } finally {
       this.setData({ dictionaryAdding: false });
     }
@@ -2347,7 +2360,7 @@ Page({
         lessonDictionaryAddedMap: Object.assign({}, this.data.lessonDictionaryAddedMap || {}, { [key]: true, [text]: true }),
         flashcardAddDebugLines: []
       });
-      wx.showToast({ title: '已加入词库', icon: 'none' });
+      wx.showToast({ title: text('addSuccess', '已加入词库'), icon: 'none' });
     } catch (error) {
       this.setData({
         flashcardAddDebugLines: [
@@ -2355,7 +2368,7 @@ Page({
           `${getFlashcardTargetDebugText()}；type=${type}；text=${text}；cloudError.message=${error && error.message ? error.message : String(error)}`
         ]
       });
-      wx.showToast({ title: '加入失败', icon: 'none' });
+      wx.showToast({ title: text('addFailed', '加入失败'), icon: 'none' });
     } finally {
       this.setData({ dictionaryAdding: false });
     }
@@ -2388,15 +2401,15 @@ Page({
                 return;
               }
               this.setData({ dictionaryAudioLoading: false });
-              wx.showToast({ title: '播放失败，稍后再试', icon: 'none' });
+              wx.showToast({ title: text('playbackFailed', '播放失败，稍后再试'), icon: 'none' });
             }).catch(() => {
               this.setData({ dictionaryAudioLoading: false });
-              wx.showToast({ title: '播放失败，稍后再试', icon: 'none' });
+              wx.showToast({ title: text('playbackFailed', '播放失败，稍后再试'), icon: 'none' });
             });
             return;
           }
           this.setData({ dictionaryAudioLoading: false });
-          wx.showToast({ title: '播放失败，稍后再试', icon: 'none' });
+          wx.showToast({ title: text('playbackFailed', '播放失败，稍后再试'), icon: 'none' });
         });
       }
       this.dictionaryAudioContext.stop();
@@ -2415,7 +2428,7 @@ Page({
       playUrl(this._dictionaryAudioFallbackUrls[0]);
     } catch (error) {
       this.setData({ dictionaryAudioLoading: false });
-      wx.showToast({ title: '播放失败，稍后再试', icon: 'none' });
+      wx.showToast({ title: text('playbackFailed', '播放失败，稍后再试'), icon: 'none' });
     }
   },
   async handleAudioEnded() {
@@ -2424,7 +2437,7 @@ Page({
     }
     if (this.planRunType !== 'preview' && !this.isStudyWriteAllowed()) {
       wx.showToast({
-        title: '试听完成',
+        title: text('previewComplete', '试听完成'),
         icon: 'none'
       });
       return;
@@ -2456,7 +2469,7 @@ Page({
     });
     if (detail && detail.syncMode === 'cloud-error') {
       wx.showToast({
-        title: '进度同步失败',
+        title: text('progressSyncFailed', '进度同步失败'),
         icon: 'none'
       });
       return;
@@ -2483,7 +2496,7 @@ Page({
       history: detail.history,
       currentMember: detail.currentMember,
       studyWriteAllowed,
-      studyModeLabel: detail.currentMember && detail.currentMember.studyRole === 'student' ? '学生设备' : '家长模式',
+      studyModeLabel: detail.currentMember && detail.currentMember.studyRole === 'student' ? text('studentDevice', '学生设备') : text('parentModeLabel', '家长模式'),
       checkinReady: !!detail.checkinReady,
       transcriptPendingLoad: !!detail.transcriptPendingLoad,
       transcriptLoadFailed: false,
@@ -2507,7 +2520,7 @@ Page({
       this.showLessonCompletionEffect();
     }
     wx.showToast({
-      title: detail.progress.completedToday ? `${normalizedTask.categoryLabel} 今天完成` : `已完成第 ${detail.progress.playCount} 遍`,
+      title: detail.progress.completedToday ? `${normalizedTask.categoryLabel} ${text('completeToday', '今天完成')}` : `${text('completedPassPrefix', '已完成第 ')}${detail.progress.playCount}${text('completedPassSuffix', ' 遍')}`,
       icon: 'none'
     });
     if (detail.checkinReady) {
@@ -2518,7 +2531,11 @@ Page({
     if (this.lessonCelebrateTimer) {
       clearTimeout(this.lessonCelebrateTimer);
     }
-    effects.playComplete({ voiceKey: 'listeningComplete' });
+    const childId = (this.data.child && this.data.child.childId) || 'self';
+    effects.playComplete({
+      voiceKey: 'listeningComplete',
+      onceKey: `listening:${this.targetDate || effects.todayKey()}:${childId}:${this.category || 'task'}:${this.taskId || 'current'}`
+    });
     this.setData({ lessonCelebrateVisible: true });
     this.lessonCelebrateTimer = setTimeout(() => {
       this.lessonCelebrateTimer = null;
@@ -2535,13 +2552,13 @@ Page({
       passSteps: buildPassSteps(nextProgress),
       studyWriteAllowed: false,
       isPreviewMode: true,
-      studyModeLabel: '预览模式',
+      studyModeLabel: text('previewModeLabel', '预览模式'),
       checkinReady: false,
       transcriptManualVisible: false
     }));
     await this.updatePassQuestion(nextTask, nextProgress);
     wx.showToast({
-      title: nextProgress.completedToday ? '预览流程完成' : `预览第 ${nextProgress.playCount} 遍完成`,
+      title: nextProgress.completedToday ? text('previewFlowDone', '预览流程完成') : `${text('previewPassPrefix', '预览第 ')}${nextProgress.playCount}${text('passSuffix', ' 遍完成')}`,
       icon: 'none'
     });
   },
@@ -2552,9 +2569,9 @@ Page({
     this.checkinConfirmShowing = true;
     const confirmed = await new Promise((resolve) => {
       wx.showModal({
-        title: '今天听完啦',
-        content: '点一下，完成今天打卡。',
-        confirmText: '完成打卡',
+        title: text('checkinTitle', '今天听完啦'),
+        content: text('checkinContent', '点一下，完成今天打卡。'),
+        confirmText: text('confirmCheckin', '完成打卡'),
         showCancel: false,
         success: (res) => resolve(!!res.confirm),
         fail: () => resolve(false)
@@ -2577,7 +2594,7 @@ Page({
       this.returnToTodayAfterCompletion();
     } catch (error) {
       wx.showToast({
-        title: error.message || '打卡失败',
+        title: error.message || text('checkinFailed', '打卡失败'),
         icon: 'none'
       });
     }

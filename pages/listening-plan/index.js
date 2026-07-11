@@ -1,21 +1,35 @@
 const store = require('../../utils/store');
 const page = require('../../utils/page');
 const snapshotStore = require('../../utils/snapshot');
+const i18n = require('../../utils/i18n');
 
 const OVERVIEW_SNAPSHOT_KEY = 'listeningPlanOverviewSnapshotV2';
 const SNAPSHOT_MAX_AGE_MS = 24 * 60 * 60 * 1000;
+
+function t(key, variables) {
+  const template = i18n.getPageText('listeningPlan', key);
+  return Object.keys(variables || {}).reduce((text, name) => text.replace(new RegExp(`\\{${name}\\}`, 'g'), variables[name]), template);
+}
+
+function localizeMaterialTitle(title) {
+  return String(title || '')
+    .replace(/听口练习册 第二版/g, t('listeningWorkbook2'))
+    .replace(/听口 第三版/g, t('listening3'))
+    .replace(/听口 第二版/g, t('listening2'))
+    .replace(/课本/g, t('textbook'));
+}
 
 const FALLBACK_LEVEL_TABS = ['Pre A1', 'A1', 'A2', 'B1', 'B2', 'C1', 'C2'].map((levelId) => ({
   levelId,
   enabled: levelId !== 'C1' && levelId !== 'C2',
   active: levelId === 'A1',
-  stateText: levelId === 'C1' || levelId === 'C2' ? '未开放' : ''
+  stateText: levelId === 'C1' || levelId === 'C2' ? t('unavailable') : ''
 }));
 const FALLBACK_MATERIALS = {
   'Pre A1': [{ category: 'song', title: 'Songs' }],
   A1: [
     { category: 'newconcept1', title: 'New Concept 1' },
-    { category: 'unlock1', title: 'Unlock 1 课本' },
+    { category: 'unlock1', title: 'Unlock 1 听口 第二版' },
     { category: 'peppa', title: 'Peppa' }
   ],
   A2: [
@@ -25,12 +39,14 @@ const FALLBACK_MATERIALS = {
   ],
   B1: [
     { category: 'newconcept3', title: 'New Concept 3' },
-    { category: 'unlock3textbook', title: 'Unlock 3 课本' },
-    { category: 'unlock3', title: 'Unlock 3 练习册' }
+    { category: 'unlock3textbook', title: 'Unlock3 听口 第二版' },
+    { category: 'unlock3thirdedition', title: 'Unlock3 听口 第三版' },
+    { category: 'unlock3', title: 'Unlock3 听口练习册 第二版' }
   ],
   B2: [
     { category: 'newconcept4', title: 'New Concept 4' },
-    { category: 'unlock4', title: 'Unlock 4 课本' }
+    { category: 'unlock4', title: 'Unlock 4 课本' },
+    { category: 'unlock4thirdedition', title: 'Unlock 4 听口 第三版' }
   ]
 };
 
@@ -47,22 +63,23 @@ function getPlanMaterial(activePlan, category) {
 function formatEstimatedDuration(seconds) {
   const value = Number(seconds || 0);
   if (value <= 0) {
-    return '时长待生成';
+    return t('durationPending');
   }
   const minutes = Math.max(1, Math.round(value / 60));
   if (minutes < 60) {
-    return `${minutes} 分钟`;
+    return `${minutes} ${t('minute')}`;
   }
   const hours = Math.floor(minutes / 60);
   const rest = minutes % 60;
-  return `${hours} 小时${rest ? `${rest} 分钟` : ''}`;
+  return `${hours} ${t('hour')}${rest ? ` ${rest} ${t('minute')}` : ''}`;
 }
 
 function buildMaterialRows(materials, activePlan) {
   return (materials || []).filter((item) => !getPlanMaterial(activePlan, item.category)).map((item) => {
     return Object.assign({}, item, {
-      countText: item.totalCount ? `${item.totalCount} 条` : '可进入',
-      stateText: item.enabled ? '添加' : '未开放',
+      title: localizeMaterialTitle(item.title),
+      countText: item.totalCount ? `${item.totalCount} ${t('items')}` : t('enterable'),
+      stateText: item.enabled ? t('add') : t('unavailable'),
       disabled: !item.enabled
     });
   });
@@ -72,8 +89,8 @@ function buildSelectedRows(activePlan) {
   return ((activePlan && activePlan.materials) || []).filter((item) => item && item.enabled !== false).map((item) => ({
     category: item.category || '',
     levelId: item.levelId || 'A1',
-    title: item.title || item.category || '听力素材',
-    meta: `${item.startNo || 1}-${item.endNo || item.totalCount || 1} · 每天 ${item.dailyCount || 1} 条 · ${item.repeatTarget || 3} 遍 · ${Number(item.estimatedDailyDurationSec || 0) > 0 ? `每日约 ${formatEstimatedDuration(item.estimatedDailyDurationSec)}` : '时长待生成'}`,
+    title: localizeMaterialTitle(item.title || item.category || t('listeningMaterial')),
+    meta: `${item.startNo || 1}-${item.endNo || item.totalCount || 1} · ${t('daily')} ${item.dailyCount || 1} ${t('items')} · ${item.repeatTarget || 3} ${t('times')} · ${Number(item.estimatedDailyDurationSec || 0) > 0 ? `${t('dailyApprox')} ${formatEstimatedDuration(item.estimatedDailyDurationSec)}` : t('durationPending')}`,
     estimatedDailyDurationSec: Number(item.estimatedDailyDurationSec || 0),
     dailyCount: Number(item.dailyCount || 1)
   }));
@@ -83,13 +100,13 @@ function buildPlanSummary(activePlan) {
   const selectedRows = buildSelectedRows(activePlan);
   const dailyTotal = selectedRows.reduce((sum, item) => sum + Number(item.dailyCount || 0), 0);
   const durationTotal = selectedRows.reduce((sum, item) => sum + Number(item.estimatedDailyDurationSec || 0), 0);
-  const durationText = durationTotal > 0 ? ` · 预计 ${formatEstimatedDuration(durationTotal)}` : (selectedRows.length ? ' · 时长待生成' : '');
+  const durationText = durationTotal > 0 ? ` · ${t('estimated')} ${formatEstimatedDuration(durationTotal)}` : (selectedRows.length ? ` · ${t('durationPending')}` : '');
   return {
     selectedRows,
     selectedCount: selectedRows.length,
     dailyTotal,
     durationTotal,
-    summaryText: selectedRows.length ? `已选 ${selectedRows.length} 个素材 · 每天 ${dailyTotal} 条${durationText}` : '还没有选择素材'
+    summaryText: selectedRows.length ? `${t('selectedMaterials', { count: selectedRows.length, daily: dailyTotal })}${durationText}` : t('noMaterialSelected')
   };
 }
 
@@ -128,12 +145,14 @@ Page({
     selectedRows: [],
     selectedCount: 0,
     dailyTotal: 0,
-    planSummaryText: '还没有选择素材',
+    planSummaryText: t('noMaterialSelected'),
     activePlan: null,
     isYoyoFixedPlan: false,
     fixedPlan: null,
     clearing: false,
-    levelLoading: false
+    levelLoading: false,
+    language: i18n.getLanguage(),
+    texts: i18n.getPageTexts('listeningPlan')
   }),
   hasActivePlanField(data) {
     return Object.prototype.hasOwnProperty.call(data || {}, 'activePlan');
@@ -242,7 +261,19 @@ Page({
   async onShow() {
     this.listeningPlanPerf = page.startPagePerf('listening-plan');
     page.syncTheme(this);
+    const language = i18n.getLanguage();
+    const texts = i18n.getPageTexts('listeningPlan', language);
+    wx.setNavigationBarTitle({ title: texts.navTitle });
+    this.setData({ language, texts });
+    if (this.data.materials.length || this.data.activePlan) this.applyOverview(this.data, this.data.selectedLevel);
     if (!page.requireIdentityConfirmed()) {
+      await new Promise((resolve) => wx.nextTick(resolve));
+      this.listeningPlanPerf.ready('pageReady', {
+        source: 'identity-blocked',
+        cacheHit: true,
+        levelId: this.data.selectedLevel || 'A1',
+        materials: (this.data.materials || []).length
+      });
       return;
     }
     const levelId = this.data.selectedLevel || 'A1';
@@ -260,25 +291,30 @@ Page({
         levelId,
         materials: (first.materials || []).length
       });
+    } else {
+      await new Promise((resolve) => wx.nextTick(resolve));
+      this.listeningPlanPerf.ready('pageReady', {
+        source: 'fallback',
+        cacheHit: false,
+        levelId,
+        materials: (this.data.materials || []).length
+      });
     }
     const data = await request;
     if (!memoryCached && !snapshot) {
-      this.listeningPlanPerf.ready('pageReady', {
+      this.listeningPlanPerf.mark('cloudRefresh', {
         source: data && data.__cacheHit ? 'cache' : (data && data.syncMode === 'cloud-error' ? 'fallback' : 'cloud'),
         cacheHit: !!(data && data.__cacheHit),
         levelId,
         materials: ((data && data.materials) || this.data.materials || []).length
       });
-      if (data && !data.__cacheHit && data.syncMode !== 'cloud-error') {
-        this.listeningPlanPerf.mark('cloudRefresh', { levelId, materials: (data.materials || []).length });
-      }
     }
   },
   async chooseLevel(event) {
     const enabled = event.currentTarget.dataset.enabled;
     const levelId = event.currentTarget.dataset.levelId || 'A1';
     if (enabled === false || enabled === 'false') {
-      wx.showToast({ title: '暂未开放', icon: 'none' });
+      wx.showToast({ title: t('temporarilyUnavailable'), icon: 'none' });
       return;
     }
     this.setData({
@@ -306,9 +342,9 @@ Page({
       return;
     }
     wx.showModal({
-      title: '清空计划',
-      content: '清空后今日听力计划会重新设置。',
-      confirmText: '清空',
+      title: t('clearModalTitle'),
+      content: t('clearModalContent'),
+      confirmText: t('clearConfirm'),
       confirmColor: '#C47A32',
       success: async (res) => {
         if (!res.confirm) {
@@ -319,13 +355,13 @@ Page({
           for (const item of this.data.selectedRows) {
             const result = await store.removeListeningPlanMaterial({ category: item.category });
             if (result && result.syncMode === 'cloud-error') {
-              throw new Error((result.cloudError && result.cloudError.message) || '清空失败');
+              throw new Error((result.cloudError && result.cloudError.message) || t('clearFailed'));
             }
           }
           await this.loadOverview(this.data.selectedLevel || 'A1');
-          wx.showToast({ title: '已清空', icon: 'none' });
+          wx.showToast({ title: t('cleared'), icon: 'none' });
         } catch (error) {
-          wx.showToast({ title: '清空失败', icon: 'none' });
+          wx.showToast({ title: t('clearFailed'), icon: 'none' });
           console.warn('[listening-plan-clear-error]', error && (error.message || error.errMsg) || error);
         } finally {
           this.setData({ clearing: false });

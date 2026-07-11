@@ -1,21 +1,21 @@
-<view class="theme-{{theme}} page-shell library-plan-page" wx:if="{{theme === 'library'}}">
+<view class="theme-{{theme}} page-shell library-plan-page language-{{language}}" wx:if="{{theme === 'library'}}">
   <view class="library-plan-header">
-    <view class="library-eyebrow">听力计划</view>
-    <view class="library-plan-title">设置计划</view>
-    <view class="library-muted">{{selectedLevel}} · 选择素材和范围</view>
+    <view class="library-eyebrow">{{texts.eyebrow}}</view>
+    <view class="library-plan-title">{{texts.title}}</view>
+    <view class="library-muted">{{selectedLevel}} · {{texts.subtitle}}</view>
   </view>
 
   <view class="library-fixed-slip" wx:if="{{isYoyoFixedPlan}}" bindtap="openFixedStage">
     <view>
-      <view class="library-row-title">佑佑当前计划</view>
-      <view class="library-muted">A1 · {{fixedPlan.planPhaseLabel || '阶段二'}} · 固定计划继续保留</view>
+      <view class="library-row-title">{{texts.currentPlan}}</view>
+      <view class="library-muted">A1 · {{fixedPlan.planPhaseLabel || texts.phase2}} · {{texts.fixedPlanKept}}</view>
     </view>
-    <view class="library-brass-state">查看</view>
+    <view class="library-brass-state">{{texts.view}}</view>
   </view>
 
   <view class="library-summary-sheet">
     <view class="library-summary-main">
-      <view class="library-row-title">今日计划尺</view>
+      <view class="library-row-title">{{texts.todayRuler}}</view>
       <view class="library-muted">{{planSummaryText}}</view>
     </view>
     <view class="library-daily-seal">{{dailyTotal}}</view>
@@ -28,16 +28,16 @@
         <view class="library-row-title">{{item.title}}</view>
         <view class="library-muted">{{item.meta}}</view>
       </view>
-      <view class="library-brass-state">编辑</view>
+      <view class="library-brass-state">{{texts.edit}}</view>
     </view>
   </view>
 
   <view class="library-empty-slip" wx:if="{{!selectedRows.length}}">
-    <view class="library-row-title">还没有听力计划</view>
-    <view class="library-muted">先从下面添加一个素材。</view>
+    <view class="library-row-title">{{texts.empty}}</view>
+    <view class="library-muted">{{texts.emptyHint}}</view>
   </view>
 
-  <view class="library-section-title">添加素材</view>
+  <view class="library-section-title">{{texts.addMaterial}}</view>
 
   <view class="library-level-tabs">
     <view class="library-level-tab {{item.active ? 'is-active' : ''}} {{item.enabled ? '' : 'is-disabled'}}" wx:for="{{levelTabs}}" wx:key="levelId" data-enabled="{{item.enabled}}" data-level-id="{{item.levelId}}" bindtap="chooseLevel">
@@ -57,35 +57,35 @@
   </view>
 
   <view class="library-empty-slip" wx:if="{{!levelLoading && !materials.length}}">
-    <view class="library-row-title">当前级别都已加入</view>
-    <view class="library-muted">可以切换级别继续添加。</view>
+    <view class="library-row-title">{{texts.allAdded}}</view>
+    <view class="library-muted">{{texts.allAddedHint}}</view>
   </view>
 
   <view class="library-plan-actions">
-    <view class="library-clear-action {{selectedRows.length ? '' : 'is-disabled'}}" bindtap="clearPlan">清空计划</view>
-    <view class="library-done-action" bindtap="finishPlan">完成</view>
+    <view class="library-clear-action {{selectedRows.length ? '' : 'is-disabled'}}" bindtap="clearPlan">{{texts.clear}}</view>
+    <view class="library-done-action" bindtap="finishPlan">{{texts.done}}</view>
   </view>
 </view>
 
-<view class="theme-{{theme}} page-shell listening-plan-page" wx:else>
+<view class="theme-{{theme}} page-shell listening-plan-page language-{{language}}" wx:else>
   <view class="plan-header">
-    <view class="type-caption">听力计划</view>
-    <view class="plan-title type-page-title">设置计划</view>
-    <view class="type-caption">{{selectedLevel}} · 选择素材和范围</view>
+    <view class="type-caption">{{texts.eyebrow}}</view>
+    <view class="plan-title type-page-title">{{texts.title}}</view>
+    <view class="type-caption">{{selectedLevel}} · {{texts.subtitle}}</view>
   </view>
 
   <view class="fixed-card" wx:if="{{isYoyoFixedPlan}}" bindtap="openFixedStage">
     <view>
-      <view class="stage-row-title">佑佑当前计划</view>
-      <view class="stage-row-meta type-caption">A1 · {{fixedPlan.planPhaseLabel || '阶段二'}} · 固定计划继续保留</view>
+      <view class="stage-row-title">{{texts.currentPlan}}</view>
+      <view class="stage-row-meta type-caption">A1 · {{fixedPlan.planPhaseLabel || texts.phase2}} · {{texts.fixedPlanKept}}</view>
     </view>
-    <view class="stage-row-state">查看</view>
+    <view class="stage-row-state">{{texts.view}}</view>
   </view>
 
   <view class="selected-card">
     <view class="plan-wave-mark"><text></text><text></text><text></text></view>
     <view>
-      <view class="selected-title">听力计划</view>
+      <view class="selected-title">{{texts.eyebrow}}</view>
       <view class="selected-copy type-caption">{{planSummaryText}}</view>
     </view>
     <view class="selected-total">{{dailyTotal}}</view>
@@ -98,17 +98,17 @@
           <view class="selected-row-title">{{item.title}}</view>
           <view class="selected-row-meta type-caption">{{item.meta}}</view>
         </view>
-        <view class="selected-row-action">编辑</view>
+        <view class="selected-row-action">{{texts.edit}}</view>
       </view>
     </block>
   </view>
 
   <view class="empty-plan" wx:if="{{!selectedRows.length}}">
-    <view class="empty-plan-title">还没有听力计划</view>
-    <view class="empty-plan-copy type-caption">先从下面添加一个素材。</view>
+    <view class="empty-plan-title">{{texts.empty}}</view>
+    <view class="empty-plan-copy type-caption">{{texts.emptyHint}}</view>
   </view>
 
-  <view class="section-label">添加素材</view>
+  <view class="section-label">{{texts.addMaterial}}</view>
 
   <view class="level-tabs">
     <block wx:for="{{levelTabs}}" wx:key="levelId">
@@ -131,12 +131,12 @@
   </view>
 
   <view class="empty-add" wx:if="{{!levelLoading && !materials.length}}">
-    <view class="empty-plan-title">当前级别都已加入</view>
-    <view class="empty-plan-copy type-caption">可以切换级别继续添加。</view>
+    <view class="empty-plan-title">{{texts.allAdded}}</view>
+    <view class="empty-plan-copy type-caption">{{texts.allAddedHint}}</view>
   </view>
 
   <view class="plan-actions">
-    <view class="plan-action clear {{selectedRows.length ? '' : 'is-disabled'}}" bindtap="clearPlan">清空计划</view>
-    <view class="plan-action done" bindtap="finishPlan">完成</view>
+    <view class="plan-action clear {{selectedRows.length ? '' : 'is-disabled'}}" bindtap="clearPlan">{{texts.clear}}</view>
+    <view class="plan-action done" bindtap="finishPlan">{{texts.done}}</view>
   </view>
 </view>

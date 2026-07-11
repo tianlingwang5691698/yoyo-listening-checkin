@@ -438,7 +438,9 @@
   border: 2rpx solid #b89562;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+  gap: 24rpx;
   text-align: center;
   color: #2b211b;
 }
@@ -452,11 +454,56 @@
   font-weight: 600;
 }
 
-.stamp-mark {
+.stamp-book-icon {
+  position: relative;
+  width: 76rpx;
+  height: 54rpx;
+  color: #8f6b3c;
+}
+
+.stamp-book-icon::before,
+.stamp-book-icon::after {
+  content: "";
+  position: absolute;
+  top: 4rpx;
+  width: 36rpx;
+  height: 44rpx;
+  border: 3rpx solid currentColor;
+  background: rgba(250, 245, 234, 0.42);
+}
+
+.stamp-book-icon::before {
+  left: 0;
+  border-radius: 8rpx 0 2rpx 5rpx;
+}
+
+.stamp-book-icon::after {
+  right: 0;
+  border-radius: 0 8rpx 5rpx 2rpx;
+}
+
+.stamp-book-icon view {
+  position: absolute;
+  z-index: 1;
+  top: 5rpx;
+  bottom: 3rpx;
+  left: 50%;
+  width: 3rpx;
+  margin-left: -1rpx;
+  background: currentColor;
+}
+
+.stamp-role {
+  min-width: 82rpx;
+  padding: 8rpx 12rpx;
+  border-top: 1rpx solid rgba(184, 149, 98, 0.72);
+  border-bottom: 1rpx solid rgba(184, 149, 98, 0.72);
+  color: #2b211b;
   font-family: "Songti SC", serif;
-  font-size: 68rpx;
+  font-size: 27rpx;
   line-height: 1;
-  color: #14283a;
+  letter-spacing: 4rpx;
+  box-sizing: border-box;
 }
 
 .bookplate-name {
@@ -679,3 +726,5 @@
   background: #17314f;
   color: #fffafa;
 }
+.language-en { word-break: normal; overflow-wrap: anywhere; }
+.language-en .bookplate-name, .language-en .entry-title, .language-en .row-title { letter-spacing: 0; }
