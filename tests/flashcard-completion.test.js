@@ -24,4 +24,12 @@ test('same-day repeat practice does not increase learning counters again', () =>
   assert.match(source, /if \(this\.data\.repeatMode\) \{[\s\S]*?advanceVisibleCards\(false\)/);
   assert.match(source, /if \(!this\.data\.repeatMode\) \{[\s\S]*?syncVocabularyCompletion\(true\)/);
   assert.equal((wxml.match(/bindtap="startTodayRepeat"/g) || []).length, 2);
+  assert.match(source, /return Math\.max\(1, Number\(total \|\| 0\)\)/);
+  assert.doesNotMatch(source, /Math\.min\(10, Math\.max\(1, Number\(total/);
+});
+
+test('same-day repeat page renders before audio prefetch', () => {
+  assert.match(source, /startPagePerf\('flashcards-repeat'\)/);
+  assert.match(source, /repeatPerf\.ready\('pageReady', \{[\s\S]*?cacheHit: true,[\s\S]*?source: 'memory'/);
+  assert.match(source, /repeatPerf\.ready\([\s\S]*?scheduleAutoSpeakCurrent\(\);[\s\S]*?scheduleAudioPrefetchAroundCurrent\(\)/);
 });

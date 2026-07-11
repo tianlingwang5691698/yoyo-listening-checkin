@@ -344,7 +344,7 @@ function buildTodayPracticeCards(library, today) {
 }
 
 function getDefaultRepeatLimit(total) {
-  return Math.min(10, Math.max(1, Number(total || 0)));
+  return Math.max(1, Number(total || 0));
 }
 
 function mergeCachedCardState(library, cachedLibrary) {
@@ -1688,6 +1688,7 @@ Page({
     this.setData({ repeatLimit: Math.max(1, Math.min(total, Number(this.data.repeatLimit || 1) + delta)) });
   },
   startTodayRepeat() {
+    const repeatPerf = page.startPagePerf('flashcards-repeat');
     const available = buildTodayPracticeCards(this.getFlashcardLibrary(), this.data.today);
     const limit = Math.max(1, Math.min(available.length, Number(this.data.repeatLimit || 1)));
     const cards = available.slice(0, limit);
@@ -1711,9 +1712,15 @@ Page({
       previousCardChoice: '',
       audioPlaying: false,
       audioCompleted: isAudioCompletedForCard(current)
+    }, () => {
+      repeatPerf.ready('pageReady', {
+        cacheHit: true,
+        source: 'memory',
+        total: cards.length
+      });
+      this.scheduleAutoSpeakCurrent();
+      this.scheduleAudioPrefetchAroundCurrent();
     });
-    this.scheduleAutoSpeakCurrent();
-    this.scheduleAudioPrefetchAroundCurrent();
   },
   async markRemembered() {
     if (!this.data.cardRevealed) {
