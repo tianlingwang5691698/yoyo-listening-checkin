@@ -144,6 +144,10 @@
           <view class="library-vocab-archive"><text></text><text></text><text></text></view>
           <view class="library-vocab-complete-stamp">{{texts.complete}}</view>
           <view class="library-vocab-complete-title">{{texts.completeTitle}}</view>
+          <view class="complete-summary library-vocab-complete-summary">
+            <view class="complete-summary-item"><text class="complete-summary-label">{{texts.completeNew}}</text><text class="complete-summary-value">{{newDueCount}}</text></view>
+            <view class="complete-summary-item"><text class="complete-summary-label">{{texts.completeReview}}</text><text class="complete-summary-value">{{reviewDueCount}}</text></view>
+          </view>
           <button class="library-vocab-complete-action" hover-class="is-pressed" hover-start-time="20" hover-stay-time="180" bindtap="exitReview">{{texts.returnLibrary}}</button>
         </view>
         <view class="library-vocab-card tone-{{current.type}} {{cardChoice === 'unfamiliar' ? 'is-unfamiliar' : ''}} {{cardChoice === 'easy' ? 'is-easy' : ''}}" wx:elif="{{current}}">
@@ -373,6 +377,10 @@
         <view class="complete-stack"><text></text><text></text><text></text></view>
         <view class="complete-badge">{{texts.complete}}</view>
         <view class="complete-title">{{texts.completeTitle}}</view>
+        <view class="complete-summary">
+          <view class="complete-summary-item"><text class="complete-summary-label">{{texts.completeNew}}</text><text class="complete-summary-value">{{newDueCount}}</text></view>
+          <view class="complete-summary-item"><text class="complete-summary-label">{{texts.completeReview}}</text><text class="complete-summary-value">{{reviewDueCount}}</text></view>
+        </view>
         <button class="complete-action" hover-class="is-pressed" hover-start-time="20" hover-stay-time="180" bindtap="exitReview">{{texts.returnLibrary}}</button>
       </view>
       <view class="study-card tone-{{current.type}} {{cardChoice === 'unfamiliar' ? 'is-unfamiliar' : ''}} {{cardChoice === 'easy' ? 'is-easy' : ''}}" wx:elif="{{current}}">
