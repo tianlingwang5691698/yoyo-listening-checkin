@@ -43,6 +43,7 @@ function setTheme(value) {
   if (app && app.globalData) {
     app.globalData.theme = currentTheme;
   }
+  applyWindowTheme(currentTheme);
   return currentTheme;
 }
 
@@ -59,15 +60,24 @@ function getThemeOptions() {
 }
 
 function applyWindowTheme(value, overrides) {
+  const currentTheme = normalizeTheme(value);
+  const pageColors = WINDOW_COLORS[currentTheme] || WINDOW_COLORS.warm;
   const colors = Object.assign(
     {},
-    WINDOW_COLORS[normalizeTheme(value)] || WINDOW_COLORS.warm,
+    pageColors,
     overrides || {}
   );
   wx.setNavigationBarColor({
     frontColor: colors.frontColor,
     backgroundColor: colors.backgroundColor
   });
+  if (wx.setBackgroundColor) {
+    wx.setBackgroundColor({
+      backgroundColor: pageColors.backgroundColor,
+      backgroundColorTop: pageColors.backgroundColor,
+      backgroundColorBottom: pageColors.backgroundColor
+    });
+  }
 }
 
 function buildThemeData(value) {
