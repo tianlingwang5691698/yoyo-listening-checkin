@@ -1,4 +1,4 @@
-const appConfig = require('./app-config');
+const appConfig = require('../app-config');
 const { peppaTranscriptTracks, peppaTranscriptBuildStatus } = require('./transcripts/peppa/index');
 const { unlockTranscriptTracks, unlockTranscriptBuildStatus } = require('./transcripts/unlock1/index');
 
