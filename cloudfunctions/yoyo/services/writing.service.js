@@ -226,16 +226,33 @@ async function submitWritingAttempt(event) {
     savedAttempt,
     '批改中'
   );
-  return {
-    prompt: {
-      _id: promptId,
-      title: prompt.title || '',
-      prompt: prompt.prompt || ''
-    },
-    attempt: savedAttempt,
-    review: null,
-    pending: true
-  };
+  try {
+    const graded = await gradeWritingAttempt(Object.assign({}, event, {
+      payload: Object.assign({}, payload, { attemptId })
+    }));
+    return Object.assign({
+      prompt: {
+        _id: promptId,
+        title: prompt.title || '',
+        prompt: prompt.prompt || ''
+      }
+    }, graded);
+  } catch (error) {
+    return {
+      prompt: {
+        _id: promptId,
+        title: prompt.title || '',
+        prompt: prompt.prompt || ''
+      },
+      attempt: Object.assign({}, savedAttempt, {
+        status: 'grading-failed',
+        gradeError: String(error && error.message || error || '')
+      }),
+      review: null,
+      pending: true,
+      resumable: true
+    };
+  }
 }
 
 async function gradeWritingAttempt(event) {
@@ -381,6 +398,23 @@ async function getWritingAttemptDetail(event) {
   const attempt = result && result.data;
   if (!attempt || attempt.familyId !== ctx.family.familyId || attempt.childId !== ctx.child.childId) {
     throw new Error('writing-attempt-not-found');
+  }
+  const gradingAgeMs = Date.now() - Date.parse(attempt.updatedAt || attempt.createdAt || 0);
+  const shouldResume = ['grading-pending', 'grading-failed'].includes(attempt.status)
+    || (attempt.status === 'grading' && (!Number.isFinite(gradingAgeMs) || gradingAgeMs > 170000));
+  if (shouldResume) {
+    try {
+      return await gradeWritingAttempt(Object.assign({}, event, {
+        payload: Object.assign({}, payload, { attemptId })
+      }));
+    } catch (error) {
+      return {
+        attempt: formatAttempt(Object.assign({}, attempt, { _id: attemptId })),
+        pending: true,
+        resumable: true,
+        gradeError: String(error && error.message || error || '')
+      };
+    }
   }
   return { attempt: formatAttempt(Object.assign({}, attempt, { _id: attemptId })) };
 }

@@ -43,12 +43,12 @@ test('阅读目录重进取最近提交且历史记录按 attemptId 精确读取
   assert.match(readingDetailSource, /getReadingPassage\(\{ passageId, attemptId \}/);
 });
 
-test('阅读练习记录自动补读云端解析并输出可定位 DEBUG', () => {
+test('阅读练习记录自动续接云端解析并输出可定位 DEBUG', () => {
   const detailBlock = practiceHistorySource.match(/async loadReadingDetail\(record\) \{[\s\S]*?\n  \},\n  async loadGrammarDetail/);
   assert.ok(detailBlock);
   assert.equal((detailBlock[0].match(/store\.getReadingStudyPack\(/g) || []).length, 1);
   assert.match(detailBlock[0], /store\.getReadingPassage\(\{ passageId: record\.targetId, attemptId \}\)/);
-  assert.match(detailBlock[0], /section: 'questions'[\s\S]*?cacheOnly: true/);
+  assert.match(detailBlock[0], /section: 'questions'[\s\S]*?cacheOnly: false[\s\S]*?attemptId/);
   assert.match(detailBlock[0], /isPendingReadingAnalysis\(analysisText\) \? '' : analysisText/);
   assert.match(practiceHistorySource, /stage=\$\{stage\}[\s\S]*?studyPack=\$\{studyPack \? 'present' : 'missing'\}[\s\S]*?targetChildId=/);
 });

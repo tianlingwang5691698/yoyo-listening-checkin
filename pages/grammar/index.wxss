@@ -237,7 +237,7 @@
   z-index: 1;
   margin-top: 28rpx;
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 12rpx;
   padding: 8rpx;
   border: 1rpx solid rgba(255, 255, 255, 0.72);
@@ -261,6 +261,81 @@
   color: var(--grammar-blue);
   box-shadow: 0 10rpx 24rpx rgba(88, 124, 148, 0.1);
 }
+
+.classroom-card,
+.library-classroom-card { margin-top: 26rpx; }
+.classroom-step { color: var(--grammar-soft); font-size: 22rpx; line-height: 1.4; }
+.classroom-title { margin-top: 10rpx; color: var(--grammar-blue); font-size: 36rpx; line-height: 1.3; font-weight: 600; }
+.classroom-copy { margin-top: 10rpx; color: var(--grammar-muted); font-size: 25rpx; line-height: 1.6; }
+.classroom-examples { margin-top: 24rpx; padding: 22rpx; border: 1rpx solid var(--grammar-line); border-radius: 20rpx; background: rgba(255, 255, 255, 0.68); color: var(--grammar-blue); font-size: 29rpx; line-height: 1.9; }
+.classroom-focus { padding: 2rpx 8rpx; border-radius: 8rpx; background: var(--grammar-coral-soft); color: #97584b; font-weight: 700; }
+.classroom-notice { margin-top: 18rpx; padding: 20rpx 22rpx; border-left: 5rpx solid var(--grammar-sage); border-radius: 0 16rpx 16rpx 0; background: var(--grammar-sage-soft); color: var(--grammar-blue); font-size: 26rpx; line-height: 1.65; }
+.classroom-notice-label { margin-bottom: 6rpx; color: #587970; font-size: 21rpx; font-weight: 600; }
+.classroom-question { margin-top: 28rpx; color: var(--grammar-blue); font-size: 29rpx; line-height: 1.55; font-weight: 600; }
+.classroom-options { margin-top: 16rpx; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14rpx; }
+.classroom-option { min-width: 0; padding: 20rpx; border: 1rpx solid var(--grammar-line-strong); border-radius: 18rpx; background: rgba(255, 255, 255, 0.72); color: var(--grammar-blue); font-size: 27rpx; text-align: center; }
+.classroom-option.is-correct { border-color: #438568; background: #dcefe4; color: #20583f; }
+.classroom-option.is-wrong { border-color: #bd6d60; background: #f5dcd7; color: #813f35; }
+.classroom-feedback { margin-top: 16rpx; padding: 18rpx 20rpx; border-radius: 16rpx; font-size: 24rpx; line-height: 1.55; }
+.classroom-feedback.correct { background: #dcefe4; color: #20583f; }
+.classroom-feedback.wrong { background: #f5dcd7; color: #813f35; }
+.classroom-retry { margin-top: 8rpx; text-decoration: underline; }
+.classroom-back { margin-bottom: 18rpx; color: var(--grammar-soft); font-size: 23rpx; }
+.classroom-topic-grid { margin-top: 24rpx; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14rpx; }
+.classroom-topic { position: relative; min-width: 0; padding: 22rpx 18rpx; border: 1rpx solid var(--grammar-line); border-radius: 18rpx; background: rgba(255, 255, 255, 0.48); opacity: 0.62; }
+.classroom-topic.is-ready { background: rgba(255, 255, 255, 0.82); opacity: 1; }
+.classroom-topic-title { color: var(--grammar-blue); font-size: 28rpx; line-height: 1.35; font-weight: 600; }
+.classroom-topic-meta { margin-top: 8rpx; color: var(--grammar-soft); font-size: 21rpx; line-height: 1.35; }
+.classroom-topic-arrow { position: absolute; right: 16rpx; top: 18rpx; color: var(--grammar-sage); font-size: 30rpx; }
+.verb-map-group { margin-top: 28rpx; }
+.verb-map-group-title { color: var(--grammar-soft); font-size: 22rpx; line-height: 1.4; font-weight: 600; }
+.verb-map-list { margin-top: 12rpx; display: flex; flex-direction: column; gap: 12rpx; }
+.verb-map-item { position: relative; padding: 20rpx 52rpx 20rpx 20rpx; border: 1rpx solid var(--grammar-line); border-radius: 18rpx; background: rgba(255, 255, 255, 0.5); opacity: 0.68; }
+.verb-map-item.is-ready { border-color: var(--grammar-line-strong); background: rgba(255, 255, 255, 0.86); opacity: 1; }
+.verb-map-item-title { color: var(--grammar-blue); font-size: 27rpx; line-height: 1.4; font-weight: 600; }
+.verb-map-item-copy { margin-top: 6rpx; color: var(--grammar-muted); font-size: 23rpx; line-height: 1.55; }
+.verb-map-item-arrow { position: absolute; right: 18rpx; top: 28rpx; color: var(--grammar-sage); font-size: 30rpx; }
+.micro-course-list { margin-top: 26rpx; display: flex; flex-direction: column; gap: 13rpx; }
+.micro-course-item { min-width: 0; padding: 20rpx 48rpx 20rpx 18rpx; display: flex; align-items: flex-start; gap: 16rpx; position: relative; border: 1rpx solid var(--grammar-line); border-radius: 18rpx; background: rgba(255, 255, 255, 0.76); }
+.micro-course-no { flex-shrink: 0; width: 50rpx; height: 50rpx; display: flex; align-items: center; justify-content: center; border-radius: 15rpx; background: var(--grammar-sage-soft); color: #587970; font-size: 21rpx; font-weight: 700; }
+.micro-course-main { min-width: 0; flex: 1; }
+.micro-course-title { color: var(--grammar-blue); font-size: 27rpx; line-height: 1.4; font-weight: 600; }
+.micro-course-meta { margin-top: 6rpx; color: var(--grammar-muted); font-size: 22rpx; line-height: 1.5; }
+.micro-course-arrow { position: absolute; right: 18rpx; top: 26rpx; color: var(--grammar-sage); font-size: 30rpx; }
+.classroom-rule + .classroom-rule { margin-top: 9rpx; }
+.sentence-analysis-list { margin-top: 24rpx; display: flex; flex-direction: column; gap: 14rpx; }
+.sentence-analysis { padding: 18rpx 16rpx; border: 1rpx solid var(--grammar-line); border-radius: 18rpx; background: rgba(255, 255, 255, 0.7); overflow: hidden; }
+.sentence-analysis-parts { display: flex; align-items: flex-start; flex-wrap: wrap; gap: 10rpx 8rpx; }
+.sentence-part { min-width: 0; padding: 8rpx 10rpx 7rpx; border-bottom: 5rpx solid transparent; border-radius: 10rpx 10rpx 4rpx 4rpx; }
+.sentence-part-text { color: var(--grammar-blue); font-size: 27rpx; line-height: 1.35; font-weight: 600; white-space: normal; }
+.sentence-part-label { margin-top: 6rpx; font-size: 18rpx; line-height: 1.2; white-space: normal; }
+.sentence-part.role-subject { border-color: #4d8fb0; background: rgba(77, 143, 176, 0.12); }
+.sentence-part.role-subject .sentence-part-label { color: #356d88; }
+.sentence-part.role-predicate { border-color: #d17661; background: rgba(209, 118, 97, 0.13); }
+.sentence-part.role-predicate .sentence-part-label { color: #9a4f3f; }
+.sentence-part.role-object { border-color: #769b75; background: rgba(118, 155, 117, 0.14); }
+.sentence-part.role-object .sentence-part-label { color: #527451; }
+.sentence-part.role-modifier { border-color: #9b82b5; background: rgba(155, 130, 181, 0.13); }
+.sentence-part.role-modifier .sentence-part-label { color: #715b88; }
+.sentence-part.role-helper { border-color: #b99247; background: rgba(185, 146, 71, 0.14); }
+.sentence-part.role-helper .sentence-part-label { color: #80632f; }
+.sentence-part.role-attribute { border-color: #9b82b5; background: rgba(155, 130, 181, 0.13); }
+.sentence-part.role-attribute .sentence-part-label { color: #715b88; }
+.sentence-part.role-adverbial { border-color: #6d91b8; background: rgba(109, 145, 184, 0.13); }
+.sentence-part.role-adverbial .sentence-part-label { color: #4b6d91; }
+.sentence-part.role-conjunction { border-color: #b07a9b; background: rgba(176, 122, 155, 0.13); }
+.sentence-part.role-conjunction .sentence-part-label { color: #80556f; }
+.sentence-translation { margin-top: 14rpx; padding-top: 12rpx; border-top: 1rpx dashed var(--grammar-line); color: var(--grammar-muted); font-size: 22rpx; line-height: 1.55; }
+.sentence-translation text { color: var(--grammar-blue); font-weight: 600; }
+.sentence-translation-tip { margin-top: 6rpx; color: var(--grammar-soft); }
+.classroom-example-with-note + .classroom-example-with-note { margin-top: 20rpx; padding-top: 18rpx; border-top: 1rpx solid var(--grammar-line); }
+.classroom-exercise-count { margin-top: 26rpx; color: var(--grammar-soft); font-size: 21rpx; line-height: 1.3; font-weight: 600; }
+.classroom-exercise-count + .classroom-question { margin-top: 8rpx; }
+.classroom-footer-actions { margin-top: 24rpx; display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: 12rpx; }
+.classroom-footer-button { min-width: 0; min-height: 76rpx; padding: 16rpx 14rpx; display: flex; align-items: center; justify-content: center; border-radius: 18rpx; font-size: 24rpx; line-height: 1.3; font-weight: 600; text-align: center; }
+.classroom-footer-button.is-back { border: 1rpx solid var(--grammar-line-strong); background: rgba(255, 255, 255, 0.66); color: var(--grammar-muted); }
+.classroom-footer-button.is-next { border: 1rpx solid rgba(134, 170, 161, 0.44); background: #315b70; color: #fff; }
+.classroom-footer-button.is-disabled { border-color: var(--grammar-line); background: rgba(191, 215, 232, 0.36); color: var(--grammar-soft); }
 
 .grammar-card {
   margin-top: 26rpx;
@@ -1020,16 +1095,59 @@
   margin: 22rpx 8rpx 0;
   display: flex;
   align-items: flex-end;
-  gap: 28rpx;
+  gap: 12rpx;
 }
+
+.library-classroom-card { position: relative; padding: 34rpx 30rpx; border: 1rpx solid var(--library-grammar-rule); border-radius: var(--library-grammar-radius); background: linear-gradient(180deg, var(--library-grammar-paper-light), var(--library-grammar-paper)); box-shadow: var(--library-grammar-shadow); }
+.theme-library .classroom-step { color: var(--library-grammar-brass); }
+.theme-library .classroom-title,
+.theme-library .classroom-question { color: var(--library-grammar-ink); }
+.theme-library .classroom-copy { color: var(--library-grammar-muted); }
+.theme-library .classroom-examples { border-color: var(--library-grammar-rule); border-radius: 8rpx; background: rgba(255, 253, 247, 0.76); color: var(--library-grammar-ink); }
+.theme-library .classroom-focus { background: rgba(184, 149, 98, 0.2); color: #765b37; }
+.theme-library .classroom-notice { border-left-color: var(--library-grammar-moss); background: rgba(127, 140, 120, 0.12); color: var(--library-grammar-ink); }
+.theme-library .classroom-notice-label { color: var(--library-grammar-moss); }
+.theme-library .classroom-back { color: var(--library-grammar-brass); }
+.theme-library .classroom-topic { border-color: var(--library-grammar-rule); border-radius: 8rpx; background: rgba(243, 232, 212, 0.52); }
+.theme-library .classroom-topic.is-ready { background: var(--library-grammar-paper-light); }
+.theme-library .classroom-topic-title { color: var(--library-grammar-ink); }
+.theme-library .classroom-topic-meta { color: var(--library-grammar-muted); }
+.theme-library .verb-map-group-title { color: var(--library-grammar-brass); }
+.theme-library .verb-map-item { border-color: var(--library-grammar-rule); border-radius: 8rpx; background: rgba(243, 232, 212, 0.62); }
+.theme-library .verb-map-item.is-ready { background: var(--library-grammar-paper-light); }
+.theme-library .verb-map-item-title { color: var(--library-grammar-ink); }
+.theme-library .verb-map-item-copy { color: var(--library-grammar-muted); }
+.theme-library .verb-map-item-arrow { color: var(--library-grammar-brass); }
+.theme-library .micro-course-item { border-color: var(--library-grammar-rule); border-radius: 8rpx; background: var(--library-grammar-paper-light); }
+.theme-library .micro-course-no { border-radius: 4rpx; background: rgba(184, 149, 98, 0.18); color: #765b37; }
+.theme-library .micro-course-title { color: var(--library-grammar-ink); }
+.theme-library .micro-course-meta { color: var(--library-grammar-muted); }
+.theme-library .micro-course-arrow { color: var(--library-grammar-brass); }
+.theme-library .sentence-analysis { border-color: var(--library-grammar-rule); border-radius: 8rpx; background: var(--library-grammar-paper-light); }
+.theme-library .sentence-part { border-radius: 4rpx; }
+.theme-library .sentence-part-text { color: var(--library-grammar-ink); }
+.theme-library .sentence-translation { border-top-color: var(--library-grammar-rule); color: var(--library-grammar-muted); }
+.theme-library .sentence-translation text { color: var(--library-grammar-ink); }
+.theme-library .sentence-translation-tip { color: var(--library-grammar-muted); }
+.theme-library .classroom-example-with-note + .classroom-example-with-note { border-top-color: var(--library-grammar-rule); }
+.theme-library .classroom-footer-button { border-radius: 8rpx; }
+.theme-library .classroom-footer-button.is-back { border-color: var(--library-grammar-rule); background: var(--library-grammar-paper-light); color: var(--library-grammar-muted); }
+.theme-library .classroom-footer-button.is-next { border-color: var(--library-grammar-desk); background: var(--library-grammar-desk); color: #FFFDF7; }
+.theme-library .classroom-footer-button.is-disabled { border-color: var(--library-grammar-rule); background: rgba(243, 232, 212, 0.7); color: var(--library-grammar-muted); }
+.theme-library .classroom-option { border-color: var(--library-grammar-rule); border-radius: 8rpx; background: var(--library-grammar-paper-light); color: var(--library-grammar-ink); }
+.theme-library .classroom-option.is-correct { border-color: #5f806c; background: #dce8dc; color: #294e39; }
+.theme-library .classroom-option.is-wrong { border-color: var(--library-grammar-error); background: #ecd9d3; color: #713f37; }
 
 .library-index-tab {
   position: relative;
+  flex: 1;
+  min-width: 0;
   padding: 14rpx 4rpx 16rpx;
   color: var(--library-grammar-muted);
   font-size: 26rpx;
   line-height: 1.2;
   font-weight: 600;
+  text-align: center;
 }
 
 .library-index-tab.is-active {

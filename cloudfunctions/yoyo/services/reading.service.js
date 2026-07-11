@@ -1703,7 +1703,7 @@ async function submitReadingAttempt(event) {
     throw new Error('reading-passage-not-found');
   }
   const grade = gradeAnswers(passage, payload.answers || {});
-  const review = keepQuestionReviewOnly(buildReview(passage, grade, null));
+  let review = keepQuestionReviewOnly(buildReview(passage, grade, null));
   const attempt = {
     passageId: passage._id,
     title: passage.title,
@@ -1744,6 +1744,36 @@ async function submitReadingAttempt(event) {
       });
     } catch (error) {
       attempt.completionWarning = '完成记录暂未同步，稍后会在记录页刷新。';
+    }
+    try {
+      const cached = await getCachedStudyPack(passage);
+      const generated = await getOrCreateStudyPack(passage, cached, false);
+      review = keepQuestionReviewOnly(buildReview(passage, grade, generated.studyPack));
+      attempt.review = review;
+      attempt.analysisStatus = 'ready';
+      attempt.updatedAt = new Date().toISOString();
+      if (attempt._id) {
+        const command = dbAdapter.getCommand();
+        await dbAdapter.collection('readingAttempts').doc(attempt._id).update({
+          data: {
+            review: command.set(review),
+            analysisStatus: 'ready',
+            updatedAt: attempt.updatedAt
+          }
+        });
+      }
+      await completion.upsertStudyCompletion(ctx, today, {
+        type: 'reading',
+        targetId: passage._id,
+        passageId: passage._id,
+        title: passage.title || '阅读练习',
+        meta: passage.year ? `${passage.year} · ${passage.district || ''}` : '阅读',
+        progressText: `${grade.score}/${grade.totalScore} 分`,
+        latestAttempt: attempt
+      });
+    } catch (error) {
+      attempt.analysisStatus = 'pending';
+      attempt.analysisError = String(error && error.message || error || '');
     }
   } else {
     attempt.status = 'preview';

@@ -29,9 +29,120 @@
       <view class="library-index-tabs">
         <view class="library-index-tab {{mode === 'topics' ? 'is-active' : ''}}" bindtap="openTopicBook">{{texts.topics}}</view>
         <view class="library-index-tab" bindtap="openPracticeHistory">{{texts.history}}</view>
+        <view class="library-index-tab {{mode === 'classroom' ? 'is-active' : ''}}" bindtap="openGrammarClassroom">{{classroom.tab}}</view>
       </view>
 
-      <view class="library-directory-page" wx:if="{{!selectedStageId && !selectedExamId && !selectedCategoryId && !selectedTopicId}}">
+      <view class="library-classroom-card" wx:if="{{mode === 'classroom'}}">
+        <block wx:if="{{!selectedClassroomCategory}}">
+          <view class="classroom-step">{{classroom.directory}}</view>
+          <view class="classroom-title">{{classroom.directoryCopy}}</view>
+          <view class="classroom-topic-grid">
+            <view class="classroom-topic is-ready" wx:for="{{classroom.categories}}" wx:key="id" data-category-id="{{item.id}}" bindtap="selectClassroomCategory">
+              <view class="classroom-topic-title">{{item.title}}</view>
+              <view class="classroom-topic-meta">{{item.meta}}</view>
+              <view class="classroom-topic-arrow">›</view>
+            </view>
+          </view>
+        </block>
+        <block wx:elif="{{!selectedClassroomTopic}}">
+          <view class="classroom-back" bindtap="backToClassroomCategories">{{classroom.back}}</view>
+          <view class="classroom-step">{{classroom.wordTitle}}</view>
+          <view class="classroom-title">{{classroom.wordCopy}}</view>
+          <view class="classroom-topic-grid">
+            <block wx:for="{{classroom.categories}}" wx:key="id">
+              <block wx:if="{{item.id === selectedClassroomCategory}}">
+                <view class="classroom-topic {{child.ready ? 'is-ready' : ''}}" wx:for="{{item.children}}" wx:for-item="child" wx:key="id" data-topic-id="{{child.id}}" bindtap="selectClassroomTopic">
+                  <view class="classroom-topic-title">{{child.title}}</view>
+                  <view class="classroom-topic-meta">{{child.meta}}</view>
+                  <view class="classroom-topic-arrow">{{child.ready ? '›' : '·'}}</view>
+                </view>
+              </block>
+            </block>
+          </view>
+        </block>
+        <block wx:else>
+        <block wx:if="{{!selectedVerbLesson}}">
+          <view class="classroom-back" bindtap="backToClassroomTopics">{{classroom.subBack}}</view>
+          <view class="classroom-step">{{classroom.verbMapTitle}}</view>
+          <view class="classroom-title">{{classroom.verbMapCopy}}</view>
+          <view class="verb-map-group" wx:for="{{classroom.verbGroups}}" wx:key="id">
+            <view class="verb-map-group-title">{{item.title}}</view>
+            <view class="verb-map-list">
+              <view class="verb-map-item {{lesson.ready ? 'is-ready' : ''}}" wx:for="{{item.items}}" wx:for-item="lesson" wx:key="id" data-lesson-id="{{lesson.id}}" bindtap="selectVerbLesson">
+                <view class="verb-map-item-title">{{lesson.title}}</view>
+                <view class="verb-map-item-copy">{{lesson.copy}}</view>
+                <view class="verb-map-item-arrow">{{lesson.ready ? '›' : '·'}}</view>
+              </view>
+            </view>
+          </view>
+        </block>
+        <block wx:else>
+        <block wx:if="{{!selectedThirdPersonLesson}}">
+          <view class="classroom-back" bindtap="backToVerbMap">{{classroom.courseBack}}</view>
+          <view class="classroom-step">{{classroom.thirdPersonTitle}}</view>
+          <view class="classroom-title">{{classroom.thirdPersonCopy}}</view>
+          <view class="micro-course-list">
+            <view class="micro-course-item" wx:for="{{classroom.thirdPersonCourse}}" wx:key="id" data-lesson-id="{{item.id}}" bindtap="selectThirdPersonLesson">
+              <view class="micro-course-no">{{item.no}}</view>
+              <view class="micro-course-main">
+                <view class="micro-course-title">{{item.title}}</view>
+                <view class="micro-course-meta">{{item.meta}}</view>
+              </view>
+              <view class="micro-course-arrow">›</view>
+            </view>
+          </view>
+        </block>
+        <block wx:else>
+          <view class="classroom-back" bindtap="backToThirdPersonCourse">{{classroom.lessonBack}}</view>
+          <view class="classroom-step">{{activeClassroomLesson.no}} / 06</view>
+          <view class="classroom-title">{{activeClassroomLesson.title}}</view>
+          <view class="classroom-copy">{{activeClassroomLesson.meta}}</view>
+          <view class="sentence-analysis-list" wx:if="{{activeClassroomLesson.analyses && activeClassroomLesson.analyses.length}}">
+            <view class="sentence-analysis" wx:for="{{activeClassroomLesson.analyses}}" wx:key="index" wx:for-item="sentence" wx:for-index="sentenceIndex">
+              <view class="sentence-analysis-parts">
+                <view class="sentence-part role-{{part.role}}" wx:for="{{sentence}}" wx:for-item="part" wx:key="text">
+                  <view class="sentence-part-text">{{part.text}}</view>
+                  <view class="sentence-part-label">{{part.label}}</view>
+                </view>
+              </view>
+              <view class="sentence-translation">
+                <view><text>{{classroom.translationLabel}}：</text>{{activeClassroomLesson.exampleNotes[sentenceIndex].translation}}</view>
+                <view class="sentence-translation-tip"><text>{{classroom.translationTipLabel}}：</text>{{activeClassroomLesson.exampleNotes[sentenceIndex].tip}}</view>
+              </view>
+            </view>
+          </view>
+          <view class="classroom-examples" wx:else>
+            <view class="classroom-example-with-note" wx:for="{{activeClassroomLesson.examples}}" wx:key="*this" wx:for-index="exampleIndex">
+              <view>{{item}}</view>
+              <view class="sentence-translation">
+                <view><text>{{classroom.translationLabel}}：</text>{{activeClassroomLesson.exampleNotes[exampleIndex].translation}}</view>
+                <view class="sentence-translation-tip"><text>{{classroom.translationTipLabel}}：</text>{{activeClassroomLesson.exampleNotes[exampleIndex].tip}}</view>
+              </view>
+            </view>
+          </view>
+          <view class="classroom-notice">
+            <view class="classroom-notice-label">{{classroom.coreLabel}}</view>
+            <view class="classroom-rule" wx:for="{{activeClassroomLesson.rules}}" wx:key="*this">{{index + 1}}. {{item}}</view>
+          </view>
+          <view class="classroom-exercise-count">{{activeClassroomExerciseIndex + 1}} / 3</view>
+          <view class="classroom-question">{{activeClassroomQuestion.question}}</view>
+          <view class="classroom-options">
+            <view class="classroom-option {{classroomAnswer && option.key === activeClassroomQuestion.answer ? 'is-correct' : ''}} {{classroomAnswer === option.key && classroomResult === 'wrong' ? 'is-wrong' : ''}}" wx:for="{{activeClassroomQuestion.options}}" wx:for-item="option" wx:key="key" data-answer="{{option.key}}" bindtap="selectClassroomAnswer">{{option.key}} · {{option.text}}</view>
+          </view>
+          <view class="classroom-feedback {{classroomResult}}" wx:if="{{classroomResult}}">
+            <view>{{classroomResult === 'correct' ? activeClassroomQuestion.correct : activeClassroomQuestion.wrong}}</view>
+            <view class="classroom-retry" wx:if="{{classroomResult === 'wrong'}}" bindtap="retryClassroomPractice">{{classroom.retry}}</view>
+          </view>
+          <view class="classroom-footer-actions">
+            <view class="classroom-footer-button is-back" bindtap="backToThirdPersonCourse">{{classroom.returnCourse}}</view>
+            <view class="classroom-footer-button is-next {{classroomResult === 'correct' ? '' : 'is-disabled'}}" bindtap="continueThirdPersonLesson">{{classroomResult === 'correct' ? (!isLastClassroomExercise ? classroom.nextExercise : (isLastClassroomLesson ? classroom.finishCourse : classroom.nextLesson)) : classroom.answerToContinue}}</view>
+          </view>
+        </block>
+        </block>
+        </block>
+      </view>
+
+      <view class="library-directory-page" wx:elif="{{!selectedStageId && !selectedExamId && !selectedCategoryId && !selectedTopicId}}">
         <view class="library-page-head">
           <view>
             <view class="library-page-kicker">{{mode === 'wrong' ? texts.wrongDifficulty : texts.difficulty}}</view>
@@ -259,10 +370,121 @@
     <view class="grammar-actions">
       <view class="grammar-action {{mode === 'topics' ? 'is-active' : ''}}" bindtap="openTopicBook">{{texts.topics}}</view>
       <view class="grammar-action" bindtap="openPracticeHistory">{{texts.history}}</view>
+      <view class="grammar-action {{mode === 'classroom' ? 'is-active' : ''}}" bindtap="openGrammarClassroom">{{classroom.tab}}</view>
     </view>
   </view>
 
-  <view class="grammar-card directory-card" wx:if="{{!selectedStageId && !selectedExamId && !selectedCategoryId && !selectedTopicId}}">
+  <view class="grammar-card classroom-card" wx:if="{{mode === 'classroom'}}">
+    <block wx:if="{{!selectedClassroomCategory}}">
+      <view class="classroom-step">{{classroom.directory}}</view>
+      <view class="classroom-title">{{classroom.directoryCopy}}</view>
+      <view class="classroom-topic-grid">
+        <view class="classroom-topic is-ready" wx:for="{{classroom.categories}}" wx:key="id" data-category-id="{{item.id}}" bindtap="selectClassroomCategory">
+          <view class="classroom-topic-title">{{item.title}}</view>
+          <view class="classroom-topic-meta">{{item.meta}}</view>
+          <view class="classroom-topic-arrow">›</view>
+        </view>
+      </view>
+    </block>
+    <block wx:elif="{{!selectedClassroomTopic}}">
+      <view class="classroom-back" bindtap="backToClassroomCategories">{{classroom.back}}</view>
+      <view class="classroom-step">{{classroom.wordTitle}}</view>
+      <view class="classroom-title">{{classroom.wordCopy}}</view>
+      <view class="classroom-topic-grid">
+        <block wx:for="{{classroom.categories}}" wx:key="id">
+          <block wx:if="{{item.id === selectedClassroomCategory}}">
+            <view class="classroom-topic {{child.ready ? 'is-ready' : ''}}" wx:for="{{item.children}}" wx:for-item="child" wx:key="id" data-topic-id="{{child.id}}" bindtap="selectClassroomTopic">
+              <view class="classroom-topic-title">{{child.title}}</view>
+              <view class="classroom-topic-meta">{{child.meta}}</view>
+              <view class="classroom-topic-arrow">{{child.ready ? '›' : '·'}}</view>
+            </view>
+          </block>
+        </block>
+      </view>
+    </block>
+    <block wx:else>
+    <block wx:if="{{!selectedVerbLesson}}">
+      <view class="classroom-back" bindtap="backToClassroomTopics">{{classroom.subBack}}</view>
+      <view class="classroom-step">{{classroom.verbMapTitle}}</view>
+      <view class="classroom-title">{{classroom.verbMapCopy}}</view>
+      <view class="verb-map-group" wx:for="{{classroom.verbGroups}}" wx:key="id">
+        <view class="verb-map-group-title">{{item.title}}</view>
+        <view class="verb-map-list">
+          <view class="verb-map-item {{lesson.ready ? 'is-ready' : ''}}" wx:for="{{item.items}}" wx:for-item="lesson" wx:key="id" data-lesson-id="{{lesson.id}}" bindtap="selectVerbLesson">
+            <view class="verb-map-item-title">{{lesson.title}}</view>
+            <view class="verb-map-item-copy">{{lesson.copy}}</view>
+            <view class="verb-map-item-arrow">{{lesson.ready ? '›' : '·'}}</view>
+          </view>
+        </view>
+      </view>
+    </block>
+    <block wx:else>
+    <block wx:if="{{!selectedThirdPersonLesson}}">
+      <view class="classroom-back" bindtap="backToVerbMap">{{classroom.courseBack}}</view>
+      <view class="classroom-step">{{classroom.thirdPersonTitle}}</view>
+      <view class="classroom-title">{{classroom.thirdPersonCopy}}</view>
+      <view class="micro-course-list">
+        <view class="micro-course-item" wx:for="{{classroom.thirdPersonCourse}}" wx:key="id" data-lesson-id="{{item.id}}" bindtap="selectThirdPersonLesson">
+          <view class="micro-course-no">{{item.no}}</view>
+          <view class="micro-course-main">
+            <view class="micro-course-title">{{item.title}}</view>
+            <view class="micro-course-meta">{{item.meta}}</view>
+          </view>
+          <view class="micro-course-arrow">›</view>
+        </view>
+      </view>
+    </block>
+    <block wx:else>
+      <view class="classroom-back" bindtap="backToThirdPersonCourse">{{classroom.lessonBack}}</view>
+      <view class="classroom-step">{{activeClassroomLesson.no}} / 06</view>
+      <view class="classroom-title">{{activeClassroomLesson.title}}</view>
+      <view class="classroom-copy">{{activeClassroomLesson.meta}}</view>
+      <view class="sentence-analysis-list" wx:if="{{activeClassroomLesson.analyses && activeClassroomLesson.analyses.length}}">
+        <view class="sentence-analysis" wx:for="{{activeClassroomLesson.analyses}}" wx:key="index" wx:for-item="sentence" wx:for-index="sentenceIndex">
+          <view class="sentence-analysis-parts">
+            <view class="sentence-part role-{{part.role}}" wx:for="{{sentence}}" wx:for-item="part" wx:key="text">
+              <view class="sentence-part-text">{{part.text}}</view>
+              <view class="sentence-part-label">{{part.label}}</view>
+            </view>
+          </view>
+          <view class="sentence-translation">
+            <view><text>{{classroom.translationLabel}}：</text>{{activeClassroomLesson.exampleNotes[sentenceIndex].translation}}</view>
+            <view class="sentence-translation-tip"><text>{{classroom.translationTipLabel}}：</text>{{activeClassroomLesson.exampleNotes[sentenceIndex].tip}}</view>
+          </view>
+        </view>
+      </view>
+      <view class="classroom-examples" wx:else>
+        <view class="classroom-example-with-note" wx:for="{{activeClassroomLesson.examples}}" wx:key="*this" wx:for-index="exampleIndex">
+          <view>{{item}}</view>
+          <view class="sentence-translation">
+            <view><text>{{classroom.translationLabel}}：</text>{{activeClassroomLesson.exampleNotes[exampleIndex].translation}}</view>
+            <view class="sentence-translation-tip"><text>{{classroom.translationTipLabel}}：</text>{{activeClassroomLesson.exampleNotes[exampleIndex].tip}}</view>
+          </view>
+        </view>
+      </view>
+      <view class="classroom-notice">
+        <view class="classroom-notice-label">{{classroom.coreLabel}}</view>
+        <view class="classroom-rule" wx:for="{{activeClassroomLesson.rules}}" wx:key="*this">{{index + 1}}. {{item}}</view>
+      </view>
+      <view class="classroom-exercise-count">{{activeClassroomExerciseIndex + 1}} / 3</view>
+      <view class="classroom-question">{{activeClassroomQuestion.question}}</view>
+      <view class="classroom-options">
+        <view class="classroom-option {{classroomAnswer && option.key === activeClassroomQuestion.answer ? 'is-correct' : ''}} {{classroomAnswer === option.key && classroomResult === 'wrong' ? 'is-wrong' : ''}}" wx:for="{{activeClassroomQuestion.options}}" wx:for-item="option" wx:key="key" data-answer="{{option.key}}" bindtap="selectClassroomAnswer">{{option.key}} · {{option.text}}</view>
+      </view>
+      <view class="classroom-feedback {{classroomResult}}" wx:if="{{classroomResult}}">
+        <view>{{classroomResult === 'correct' ? activeClassroomQuestion.correct : activeClassroomQuestion.wrong}}</view>
+        <view class="classroom-retry" wx:if="{{classroomResult === 'wrong'}}" bindtap="retryClassroomPractice">{{classroom.retry}}</view>
+      </view>
+      <view class="classroom-footer-actions">
+        <view class="classroom-footer-button is-back" bindtap="backToThirdPersonCourse">{{classroom.returnCourse}}</view>
+        <view class="classroom-footer-button is-next {{classroomResult === 'correct' ? '' : 'is-disabled'}}" bindtap="continueThirdPersonLesson">{{classroomResult === 'correct' ? (!isLastClassroomExercise ? classroom.nextExercise : (isLastClassroomLesson ? classroom.finishCourse : classroom.nextLesson)) : classroom.answerToContinue}}</view>
+      </view>
+    </block>
+    </block>
+    </block>
+  </view>
+
+  <view class="grammar-card directory-card" wx:elif="{{!selectedStageId && !selectedExamId && !selectedCategoryId && !selectedTopicId}}">
     <view class="grammar-card-top">
       <view class="grammar-card-label">{{mode === 'wrong' ? texts.wrongDifficulty : texts.difficulty}}</view>
       <view class="grammar-card-state">{{stages.length}}{{texts.groupUnit}}</view>

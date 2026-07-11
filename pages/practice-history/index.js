@@ -252,6 +252,8 @@ Page({
   onUnload() {
     Object.keys(this.readingDebugTimers || {}).forEach((key) => clearTimeout(this.readingDebugTimers[key]));
     this.readingDebugTimers = {};
+    Object.keys(this.writingResumeTimers || {}).forEach((key) => clearTimeout(this.writingResumeTimers[key]));
+    this.writingResumeTimers = {};
   },
   async loadHistory() {
     this.setData({ loading: true, debugLines: [] });
@@ -349,7 +351,8 @@ Page({
       store.getReadingStudyPack({
         passageId: record.targetId,
         section: 'questions',
-        cacheOnly: true,
+        cacheOnly: false,
+        attemptId,
         useCache: false
       })
     ]);
@@ -423,14 +426,48 @@ Page({
     const item = result && result.item;
     const questions = (item && item.latestAttempt && item.latestAttempt.questions) || [];
     const wrongIds = new Set((this.wrongItems || []).map((wrongItem) => String(wrongItem.questionId || (wrongItem.question && wrongItem.question._id) || '')));
+    const detailQuestions = buildGrammarDetailQuestions(questions, item || record).map((question) => Object.assign({}, question, {
+      inWrongBook: wrongIds.has(question.questionId)
+    }));
     this.updateRecord(record.id, {
       detailLoading: false,
       detailReady: true,
       attempt: (item && item.latestAttempt) || record.attempt,
-      detailQuestions: buildGrammarDetailQuestions(questions, item || record).map((question) => Object.assign({}, question, {
-        inWrongBook: wrongIds.has(question.questionId)
-      }))
+      detailQuestions
     });
+    this.resumeGrammarAnalyses(record.id, detailQuestions);
+  },
+  async resumeGrammarAnalyses(recordId, questions) {
+    const pending = (questions || []).filter((question) => !question.analysis && question.questionId);
+    if (!pending.length) return;
+    pending.forEach((question) => this.updateQuestion(recordId, question.questionId, {
+      explaining: true,
+      analysisStatus: text('explanationLoading', '正在读取云端讲解……')
+    }));
+    await Promise.all(pending.map(async (question) => {
+      const result = await store.explainGrammarQuestion({
+        _id: question.questionId,
+        prompt: question.prompt,
+        options: question.options || {},
+        answer: question.answer || ''
+      }, { cacheOnly: false });
+      const explanation = result && result.explanation;
+      if (explanation && explanation.explanation && String(result.source || '').indexOf('fallback') !== 0) {
+        this.updateQuestion(recordId, question.questionId, {
+          explaining: false,
+          analysisStatus: '',
+          analysis: [explanation.explanation, explanation.elimination].filter(Boolean).join('\n')
+        });
+        return;
+      }
+      this.updateQuestion(recordId, question.questionId, {
+        explaining: false,
+        analysisStatus: text('noAnalysis', '这道题尚未生成 AI 讲解')
+      });
+      if (result && result.syncMode === 'cloud-error') {
+        this.setData({ debugLines: buildDebugLines(result, 'explainGrammarQuestion') });
+      }
+    }));
   },
   async addWrongQuestion(event) {
     const recordId = String(event.currentTarget.dataset.recordId || '');
@@ -476,7 +513,8 @@ Page({
     const result = await store.getReadingStudyPack({
       passageId: record.targetId,
       section: 'questions',
-      cacheOnly: true,
+      cacheOnly: false,
+      attemptId: record.attempt && (record.attempt.attemptId || record.attempt._id) || '',
       useCache: false
     });
     if (result && result.syncMode === 'cloud-error') {
@@ -528,6 +566,15 @@ Page({
       detailReady: true,
       attempt: normalized.attempt
     });
+    if (['grading-pending', 'grading', 'grading-failed'].includes(normalized.attempt.status)) {
+      this.writingResumeTimers = this.writingResumeTimers || {};
+      clearTimeout(this.writingResumeTimers[record.id]);
+      this.writingResumeTimers[record.id] = setTimeout(() => {
+        const latest = (this.data.records || []).find((item) => item.id === record.id);
+        if (!latest || this.data.expandedId !== record.id) return;
+        this.loadWritingDetail(Object.assign({}, latest, { detailLoading: false }));
+      }, 3000);
+    }
   },
   async loadGrammarExplanation(event) {
     const recordId = String(event.currentTarget.dataset.recordId || '');
@@ -541,7 +588,7 @@ Page({
       prompt: question.prompt,
       options: question.options || {},
       answer: question.answer || ''
-    }, { cacheOnly: true });
+    }, { cacheOnly: false });
     const explanation = result && result.explanation;
     if (explanation && explanation.explanation) {
       this.updateQuestion(recordId, questionId, {

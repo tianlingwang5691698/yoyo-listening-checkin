@@ -439,7 +439,7 @@ async function hydrateReadingItems(items) {
       const attemptId = item.latestAttempt && (item.latestAttempt.attemptId || item.latestAttempt._id) || '';
       const [passageData, packData] = await Promise.all([
         store.getReadingPassage({ passageId: item.passageId, attemptId }),
-        store.getReadingStudyPack({ passageId: item.passageId, section: 'questions', cacheOnly: true, useCache: false })
+        store.getReadingStudyPack({ passageId: item.passageId, section: 'questions', cacheOnly: false, attemptId, useCache: false })
       ]);
       const baseAttempt = item.latestAttempt || (passageData && passageData.latestAttempt) || {};
       const latestAttempt = packData && packData.studyPack
@@ -476,26 +476,41 @@ async function hydrateReadingStudyItems(items) {
 
 async function hydrateGrammarItems(items) {
   const nextItems = await Promise.all((items || []).map(async (item) => {
-    if (item.type !== 'grammar' || (item.grammarQuestions && item.grammarQuestions.length) || !item.topicId) {
+    if (item.type !== 'grammar' || !item.topicId) {
       return item;
     }
     try {
-      const data = await store.getGrammarTopic(item.topicId);
-      const count = Number((item.latestAttempt && item.latestAttempt.answeredCount) || 3);
-      const questions = (data.questions || []).slice(0, count).map((question, index) => ({
-        _id: question._id || '',
-        number: question.number || index + 1,
-        prompt: question.prompt || '',
-        options: question.options || {},
-        selectedAnswer: '',
-        answer: question.answer || '',
-        isCorrect: false,
-        explanation: null
+      let questions = (item.latestAttempt && item.latestAttempt.questions) || [];
+      let totalCount = Number((item.latestAttempt && item.latestAttempt.totalCount) || questions.length);
+      if (!questions.length) {
+        const data = await store.getGrammarTopic(item.topicId);
+        const count = Number((item.latestAttempt && item.latestAttempt.answeredCount) || 3);
+        totalCount = (data.questions || []).length;
+        questions = (data.questions || []).slice(0, count).map((question, index) => ({
+          _id: question._id || '',
+          number: question.number || index + 1,
+          prompt: question.prompt || '',
+          options: question.options || {},
+          selectedAnswer: '',
+          answer: question.answer || '',
+          isCorrect: false,
+          explanation: null
+        }));
+      }
+      const hydratedQuestions = await Promise.all(questions.map(async (question) => {
+        if (question.explanation && question.explanation.explanation && question.explanation.source !== 'fallback') {
+          return question;
+        }
+        const result = await store.explainGrammarQuestion(question, { cacheOnly: false });
+        const explanation = result && result.explanation;
+        return explanation && explanation.explanation && String(result.source || '').indexOf('fallback') !== 0
+          ? Object.assign({}, question, { explanation })
+          : question;
       }));
       return normalizeCompletionItem(Object.assign({}, item, {
         latestAttempt: Object.assign({}, item.latestAttempt || {}, {
-          questions,
-          totalCount: data.questions ? data.questions.length : 0
+          questions: hydratedQuestions,
+          totalCount
         })
       }), 0);
     } catch (error) {
@@ -512,20 +527,23 @@ function findWritingPrompt(materialIndex, promptId) {
 
 async function hydrateWritingItems(items) {
   const needsPrompt = (items || []).some((item) => item.type === 'writing' && !item.writingPrompt && item.targetId);
-  if (!needsPrompt) {
-    return items;
-  }
   try {
-    const materialIndex = await store.getMaterialIndex({ moduleId: 'writing' });
-    return (items || []).map((item) => {
-      if (item.type !== 'writing' || item.writingPrompt || !item.targetId) {
+    const materialIndex = needsPrompt ? await store.getMaterialIndex({ moduleId: 'writing' }) : null;
+    return await Promise.all((items || []).map(async (item) => {
+      if (item.type !== 'writing') {
         return item;
       }
-      const prompt = findWritingPrompt(materialIndex, item.targetId);
+      const baseAttempt = item.latestAttempt || {};
+      const attemptId = baseAttempt.attemptId || baseAttempt._id || '';
+      const needsReview = attemptId && (!baseAttempt.review || !baseAttempt.review.summary
+        || ['grading-pending', 'grading', 'grading-failed'].includes(baseAttempt.status));
+      const detail = needsReview ? await store.getWritingAttemptDetail(attemptId) : null;
+      const latestAttempt = detail && detail.attempt ? detail.attempt : baseAttempt;
+      const prompt = item.writingPrompt || (materialIndex ? findWritingPrompt(materialIndex, item.targetId) : null);
       return normalizeCompletionItem(Object.assign({}, item, {
-        latestAttempt: Object.assign({}, item.latestAttempt || {}, { prompt })
+        latestAttempt: Object.assign({}, latestAttempt, { prompt: latestAttempt.prompt || prompt })
       }), 0);
-    });
+    }));
   } catch (error) {
     return items;
   }
@@ -535,8 +553,14 @@ function needsCompletionHydration(item) {
   if (!item) return false;
   if (item.type === 'reading' && item.passageId) return readingCompletionNeedsHydration(item);
   if (item.type === 'reading-study' && !(item.phraseCards && item.phraseCards.length) && item.passageId) return true;
-  if (item.type === 'grammar' && !(item.grammarQuestions && item.grammarQuestions.length) && item.topicId) return true;
-  if (item.type === 'writing' && !item.writingPrompt && item.targetId) return true;
+  if (item.type === 'grammar' && item.topicId) {
+    return !(item.grammarQuestions && item.grammarQuestions.length)
+      || item.grammarQuestions.some((question) => !question.explanation || !question.explanation.explanation || question.explanation.source === 'fallback');
+  }
+  if (item.type === 'writing' && item.targetId) {
+    return !item.writingPrompt || !item.latestAttempt || !item.latestAttempt.review || !item.latestAttempt.review.summary
+      || ['grading-pending', 'grading', 'grading-failed'].includes(item.latestAttempt.status);
+  }
   return false;
 }
 
