@@ -8,6 +8,14 @@ const READING_PASSAGE_SNAPSHOT_KEY = 'readingPassageSnapshotV1';
 const READING_HOME_SNAPSHOT_KEY = 'readingHomeSnapshotV1';
 const READING_HOME_SNAPSHOT_MAX_AGE_MS = 7 * 24 * 60 * 60 * 1000;
 
+function isCompletePassageSnapshot(passage) {
+  return !!(passage
+    && passage._id
+    && String(passage.passage || '').trim()
+    && Array.isArray(passage.questions)
+    && passage.questions.length);
+}
+
 function pickGroup(categoryTree, selectedExamType) {
   const root = categoryTree && categoryTree[0] ? categoryTree[0] : null;
   const groups = root && Array.isArray(root.groups) ? root.groups : [];
@@ -245,7 +253,7 @@ Page({
     }
     const passages = (this.data.selectedDistrictNode && this.data.selectedDistrictNode.passages) || this.data.passages || [];
     const passage = passages.find((item) => item && item._id === targetPassageId) || fallbackPassage;
-    if (passage && passage._id === targetPassageId) {
+    if (passage && passage._id === targetPassageId && isCompletePassageSnapshot(passage)) {
       snapshotStore.write(READING_PASSAGE_SNAPSHOT_KEY, targetPassageId, { passage }, { source: 'reading' });
     }
     wx.navigateTo({

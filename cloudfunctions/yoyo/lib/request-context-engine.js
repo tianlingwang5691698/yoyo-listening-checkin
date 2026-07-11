@@ -39,7 +39,7 @@ function resolveCatalogCategories(action, requestedCategory, payload = {}) {
   if (action === 'getTaskTranscript') {
     return [];
   }
-  if (['getFamilyPage', 'refreshInviteCode', 'joinFamily', 'joinFamilyByChildCode', 'updateBindingProfile', 'leaveFamily', 'updateChildProfile', 'setStudyRole', 'updateSubscription', 'bootstrap', 'getReadingHome', 'getReadingPassage', 'getReadingStudyPack', 'synthesizeReadingAudio', 'submitReadingAttempt', 'getFlashcardReview', 'getFlashcardDue', 'getDictionaryBook', 'submitWritingAttempt', 'gradeWritingAttempt', 'getWritingAttempts', 'getWritingAttemptDetail', 'recordStudyCompletion', 'getStudyCompletions', 'getStudyCompletionDetail', 'addPracticeWrongQuestion', 'getPracticeWrongQuestions'].includes(action)) {
+  if (['getFamilyPage', 'refreshInviteCode', 'joinFamily', 'joinFamilyByChildCode', 'updateBindingProfile', 'leaveFamily', 'updateChildProfile', 'setStudyRole', 'updateSubscription', 'bootstrap', 'getReadingHome', 'getReadingPassage', 'getReadingStudyPack', 'synthesizeReadingAudio', 'submitReadingAttempt', 'lookupWord', 'getFlashcardReview', 'getFlashcardDue', 'getDictionaryBook', 'submitWritingAttempt', 'gradeWritingAttempt', 'getWritingAttempts', 'getWritingAttemptDetail', 'recordStudyCompletion', 'getStudyCompletions', 'getStudyCompletionDetail', 'addPracticeWrongQuestion', 'getPracticeWrongQuestions'].includes(action)) {
     return [];
   }
   return catalogCategories;
@@ -49,7 +49,9 @@ async function prepareRequestContext(event, deps) {
   const action = String((event && event.action) || '').trim();
   const requestedCategory = String((event && event.payload && event.payload.category) || '').trim();
   const catalogCategories = resolveCatalogCategories(action, requestedCategory, (event && event.payload) || {});
-  await deps.refreshRuntimeCatalogs(false, catalogCategories);
+  if (catalogCategories.length) {
+    await deps.refreshRuntimeCatalogs(false, catalogCategories);
+  }
   const { OPENID } = deps.getWXContext();
   const payload = (event && event.payload) || {};
   const view = String(payload.view || '').trim();
@@ -65,6 +67,9 @@ async function prepareRequestContext(event, deps) {
     || action === 'getMonthHeatmap'
     || action === 'getFlashcardReview'
     || action === 'getDictionaryBook'
+    || action === 'getReadingHome'
+    || action === 'getReadingPassage'
+    || action === 'getReadingStudyPack'
   );
   const lightweightCtx = useLightweightContext && deps.getLightweightContext
     ? await deps.getLightweightContext(OPENID, target)

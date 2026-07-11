@@ -24,7 +24,6 @@ test('prepareRequestContext 按 action 选择 catalog 并返回上下文', async
   });
 
   assert.deepEqual(calls, [
-    ['refresh', false, []],
     ['bootstrap', 'open-1']
   ]);
   assert.deepEqual(result, {
@@ -57,7 +56,6 @@ test('prepareRequestContext 首页优先使用轻量上下文', async () => {
   });
 
   assert.deepEqual(calls, [
-    ['refresh', false, []],
     ['lightweight', 'open-1']
   ]);
   assert.deepEqual(result.ctx.child.childId, 'child-yoyo');
@@ -83,7 +81,6 @@ test('prepareRequestContext 听力素材首屏使用轻量上下文', async () =
   });
 
   assert.deepEqual(calls, [
-    ['refresh', false, []],
     ['lightweight', 'open-1']
   ]);
   assert.deepEqual(result.ctx.child.childId, 'child-yoyo');
@@ -263,6 +260,35 @@ test('resolveCatalogCategories 阅读学习包不刷新音频目录', () => {
   );
 });
 
+test('阅读首页、详情和学习包使用轻量上下文且不扫描音频目录', async () => {
+  for (const action of ['getReadingHome', 'getReadingPassage', 'getReadingStudyPack']) {
+    const calls = [];
+    const result = await requestContextEngine.prepareRequestContext({
+      action,
+      payload: { passageId: 'reading-1' }
+    }, {
+      refreshRuntimeCatalogs: async (force, categories) => calls.push(['refresh', force, categories]),
+      getWXContext: () => ({ OPENID: 'open-1' }),
+      getLightweightContext: async (openId) => {
+        calls.push(['lightweight', openId]);
+        return {
+          user: { openId },
+          family: { familyId: 'family-1' },
+          child: { childId: 'child-1' }
+        };
+      },
+      ensureBootstrap: async () => {
+        calls.push(['bootstrap']);
+        return {};
+      },
+      getTodayString: () => '2026-07-11'
+    });
+
+    assert.deepEqual(calls, [['lightweight', 'open-1']]);
+    assert.equal(result.ctx.child.childId, 'child-1');
+  }
+});
+
 test('词库读取使用轻量上下文且不刷新音频目录', async () => {
   const calls = [];
   const result = await requestContextEngine.prepareRequestContext({
@@ -283,7 +309,6 @@ test('词库读取使用轻量上下文且不刷新音频目录', async () => {
   });
 
   assert.deepEqual(calls, [
-    ['refresh', false, []],
     ['lightweight', 'open-1']
   ]);
   assert.equal(result.ctx.child.childId, 'child-yoyo');

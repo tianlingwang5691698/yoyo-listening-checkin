@@ -96,15 +96,22 @@ async function loadPassages() {
   }
   const cloudStoragePassages = [];
   try {
-    for (const path of [READING_EM1_CONTENT_PATH, READING_CONTENT_PATH]) {
-      try {
-        const content = await storageAdapter.downloadCloudJson(path);
+    const cloudContents = await Promise.all(
+      [READING_EM1_CONTENT_PATH, READING_CONTENT_PATH].map(async (path) => {
+        try {
+          return await storageAdapter.downloadCloudJson(path);
+        } catch (error) {
+          // One missing cloud file should not hide the other exam type.
+          return null;
+        }
+      })
+    );
+    cloudContents.forEach((content) => {
+      if (content) {
         const list = Array.isArray(content) ? content : (content.passages || content.items || []);
         cloudStoragePassages.push(...list);
-      } catch (error) {
-        // One missing cloud file should not hide the other exam type.
       }
-    }
+    });
     if (cloudStoragePassages.length) {
       const passages = cloudStoragePassages.map(normalizePassage).filter((item) => item._id && item.passage && hasUsableReadingQuestions(item));
       passageListCache = { savedAt: Date.now(), passages };

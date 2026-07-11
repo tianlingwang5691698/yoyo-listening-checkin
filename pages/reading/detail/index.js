@@ -579,7 +579,15 @@ function isQuestionStudyPack(studyPack) {
     return false;
   }
   const analyses = studyPack.questionAnalyses || studyPack.analysis || [];
-  return !!analyses.length;
+  return !!analyses.length && analyses.every((item) => {
+    const analysisText = String((item && (item.analysis || item.text)) || '').trim();
+    return !!analysisText
+      && analysisText !== '结合原文判断。'
+      && analysisText !== '结合原文判断'
+      && analysisText !== '生成解析中'
+      && !/^解析.*请稍等。?$/.test(analysisText)
+      && analysisText !== '点击“查看 AI 解析”后按需加载';
+  });
 }
 
 function isModelReview(review) {
@@ -700,7 +708,15 @@ function getPassageSnapshot(passageId) {
     maxAgeMs: 5 * 60 * 1000
   });
   const passage = snapshot && snapshot.passage;
-  return passage && passage._id === passageId ? passage : null;
+  return passage && passage._id === passageId && isCompletePassageSnapshot(passage) ? passage : null;
+}
+
+function isCompletePassageSnapshot(passage) {
+  return !!(passage
+    && passage._id
+    && String(passage.passage || '').trim()
+    && Array.isArray(passage.questions)
+    && passage.questions.length);
 }
 
 function getUnfamiliarMap() {
@@ -948,11 +964,17 @@ Page({
   },
   async loadPassage(passageId, hasSnapshot) {
     const data = await store.getReadingPassage({ passageId }, (fresh) => {
+      if (fresh && isCompletePassageSnapshot(fresh.passage)) {
+        snapshotStore.write(READING_PASSAGE_SNAPSHOT_KEY, passageId, { passage: fresh.passage }, { source: 'reading-detail' });
+      }
       this.applyPassage(fresh);
       if (this.readingDetailPerf) {
         this.readingDetailPerf.mark('cloudRefresh', { passageId, hasPassage: !!(fresh && fresh.passage) });
       }
     });
+    if (data && isCompletePassageSnapshot(data.passage)) {
+      snapshotStore.write(READING_PASSAGE_SNAPSHOT_KEY, passageId, { passage: data.passage }, { source: 'reading-detail' });
+    }
     this.applyPassage(data && data.passage ? data : { passage: null, latestAttempt: null });
     if (this.readingDetailPerf && !hasSnapshot) {
       this.readingDetailPerf.mark('cloudRefresh', {
@@ -981,6 +1003,7 @@ Page({
       : review;
     const passage = normalizePassage(data.passage, answers, submitted, mergedReview);
     const activeHighlight = submitted ? (this.data.activeHighlight === 'none' ? 'answer' : this.data.activeHighlight) : this.data.activeHighlight;
+    const questionAnalysisReady = !!(cachedPack && cachedPack.studyPack && isQuestionStudyPack(cachedPack.studyPack));
     this.setData(page.buildCloudPageData(this.data, {
       loading: false,
       passage,
@@ -998,9 +1021,12 @@ Page({
       reviewSummary: buildReviewSummary(latestAttempt),
       submitted,
       showReviewDetails: submitted,
-      questionAnalysisReady: !!(cachedPack && cachedPack.studyPack && isQuestionStudyPack(cachedPack.studyPack)),
+      questionAnalysisReady,
       hasScore: !!latestAttempt && latestAttempt.score !== null && latestAttempt.score !== undefined
     }));
+    if (submitted && !questionAnalysisReady) {
+      wx.nextTick(() => this.ensureQuestionAnalysis(passage && passage._id));
+    }
   },
   selectOption(event) {
     if (this.data.submitted || this.data.submitting) {
@@ -1073,6 +1099,15 @@ Page({
   },
   async ensureQuestionAnalysis(passageId) {
     if (!passageId || this._questionAnalysisLoading) {
+      return;
+    }
+    const cached = getPhoneStudyPack(passageId);
+    if (cached && cached.studyPack && isQuestionStudyPack(cached.studyPack)) {
+      this.applyReview(mergeStudyPackIntoReview(this.data.review, cached.studyPack));
+      this.setData({
+        questionAnalysisReady: true,
+        questionAnalysisMessage: text('analysisReady', '已从本机加载 AI 解析')
+      });
       return;
     }
     this._questionAnalysisLoading = true;
@@ -1504,6 +1539,7 @@ Page({
       wx.nextTick(() => {
         wx.pageScrollTo({ selector: '.review-card', duration: 240 });
       });
+      wx.nextTick(() => this.ensureQuestionAnalysis(this.data.passage && this.data.passage._id));
     } catch (error) {
       this.setData({
         submitting: false,
