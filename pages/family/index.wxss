@@ -672,7 +672,7 @@
 .member-index.is-current-device {
   background: rgba(127, 140, 120, 0.12);
 }
-.language-en { word-break: normal; overflow-wrap: anywhere; }
+.language-en { word-break: normal; overflow-wrap: normal; }
 .language-en .library-title, .language-en .section-title, .language-en .row-title { letter-spacing: 0; }
 .language-en button {
   box-sizing: border-box;
@@ -752,5 +752,5 @@
 .language-en .borrower-card .entry-title,
 .language-en .student-card .row-title {
   word-break: normal;
-  overflow-wrap: break-word;
+  overflow-wrap: normal;
 }

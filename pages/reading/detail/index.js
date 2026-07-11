@@ -1001,8 +1001,7 @@ Page({
     if (!data || !data.passage) {
       data = { passage: null, latestAttempt: null };
     }
-    const rawLatestAttempt = data.latestAttempt || null;
-    const latestAttempt = rawLatestAttempt && isModelReview(rawLatestAttempt.review) ? rawLatestAttempt : null;
+    const latestAttempt = data.latestAttempt || null;
     const answers = latestAttempt && latestAttempt.answers ? latestAttempt.answers : this.data.answers;
     const submitted = !!latestAttempt;
     const review = latestAttempt && latestAttempt.review ? normalizeReview(latestAttempt.review) : null;
@@ -1164,9 +1163,30 @@ Page({
             ? text('personalAnalysisReady', '个人解析已生成')
             : (result.cached ? text('analysisReady', '已从云端加载 AI 解析') : text('analysisReady', 'AI 解析已生成并保存到云端'))
         });
+      } else {
+        const target = store.getSelectedStudentTarget ? store.getSelectedStudentTarget() : {};
+        const analyses = studyPack && (studyPack.questionAnalyses || studyPack.analysis) || [];
+        this.setData({
+          readingDebugLines: [
+            `DEBUG: pages/reading/detail.ensureQuestionAnalysis -> store.getReadingStudyPack -> cloud.getReadingStudyPack -> studyPack=${studyPack ? 'present' : 'missing'}, valid=false`,
+            `DEBUG: pages/reading/detail.ensureQuestionAnalysis -> questionAnalyses=${analyses.length}, cached=${result && result.cached === true ? 'true' : 'false'}, source=${studyPack && studyPack.source || 'missing'}`,
+            `DEBUG: pages/reading/detail.ensureQuestionAnalysis -> targetChildId=${target.targetChildId || 'self'}`
+          ]
+        });
+        throw new Error('reading-question-analysis-invalid');
       }
     } catch (error) {
-      this.setData({ questionAnalysisMessage: text('analysisFailed', '解析加载失败，请稍后重试') });
+      const target = store.getSelectedStudentTarget ? store.getSelectedStudentTarget() : {};
+      const readingDebugLines = this.data.readingDebugLines && this.data.readingDebugLines.length
+        ? this.data.readingDebugLines
+        : [
+          `DEBUG: pages/reading/detail.ensureQuestionAnalysis -> store.getReadingStudyPack -> cloud.getReadingStudyPack -> error=${error && error.message || 'unknown'}`,
+          `DEBUG: pages/reading/detail.ensureQuestionAnalysis -> targetChildId=${target.targetChildId || 'self'}`
+        ];
+      this.setData({
+        questionAnalysisMessage: text('analysisFailed', '解析加载失败，请稍后重试'),
+        readingDebugLines
+      });
     } finally {
       this._questionAnalysisLoading = false;
       this.setData({ questionAnalysisLoading: false });

@@ -309,6 +309,6 @@
     max-width: 360rpx;
   }
 }
-.language-en { word-break: normal; overflow-wrap: anywhere; }
+.language-en { word-break: normal; overflow-wrap: normal; }
 .language-en .settings-title, .language-en .settings-row-title { letter-spacing: 0; }
 .language-en .settings-option { font-size: 24rpx; }

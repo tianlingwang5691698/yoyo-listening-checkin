@@ -27,3 +27,19 @@ test('阅读数据库未完整导入时保留云存储兼容回退', () => {
   assert.match(source, /passages\.length >= MIN_DATABASE_READING_PASSAGE_COUNT/);
   assert.match(source, /const passages = \(await loadPassages\(\)\)\.map/);
 });
+
+test('阅读题目解析只命中完整模型缓存，总请求时间不超过云函数上限', () => {
+  const readingService = require('../services/reading.service');
+  const passage = {
+    questions: [{ number: 1, answer: 'A' }]
+  };
+  assert.equal(readingService._test.isValidQuestionStudyPack({
+    source: 'submit',
+    questionAnalyses: [{ number: 1, analysis: '生成解析中', answerSentence: '' }]
+  }, passage), false);
+  assert.equal(readingService._test.isValidQuestionStudyPack({
+    source: 'model:gpt-5.5',
+    questionAnalyses: [{ number: 1, analysis: '完整解析', answerSentence: 'Evidence.' }]
+  }, passage), true);
+  assert.ok(readingService._test.READING_STUDY_MODEL_TIMEOUT_MS * 2 < 180000);
+});

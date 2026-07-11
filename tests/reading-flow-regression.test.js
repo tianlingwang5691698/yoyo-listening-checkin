@@ -34,3 +34,14 @@ test('阅读重新解析只保存当前学生且不覆盖公共学习包', () =>
   assert.match(serviceSource, /force && personalOnly[\s\S]*?buildStudyPackWithModel\(passage\)[\s\S]*?savePersonalQuestionStudyPack/);
   assert.match(serviceSource, /readingAttempts[\s\S]*?review: command\.set\(review\)/);
 });
+
+test('阅读旧提交记录即使只有占位解析也会续接 AI 生成', () => {
+  assert.match(readingDetailSource, /const latestAttempt = data\.latestAttempt \|\| null/);
+  assert.doesNotMatch(readingDetailSource, /rawLatestAttempt && isModelReview/);
+  assert.match(readingDetailSource, /if \(submitted && !questionAnalysisReady\)/);
+});
+
+test('阅读英文正确与作答标签保持小号单行', () => {
+  const wxss = fs.readFileSync(path.join(root, 'pages/reading/detail/index.wxss'), 'utf8');
+  assert.match(wxss, /\.language-en \.option-badge[\s\S]*?font-size: 16rpx[\s\S]*?white-space: nowrap/);
+});

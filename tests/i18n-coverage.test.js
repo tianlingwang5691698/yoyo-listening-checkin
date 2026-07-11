@@ -78,3 +78,28 @@ test('every WXML texts key exists in its page catalog', () => {
   });
   assert.deepEqual(failures, [], `Missing WXML i18n keys:\n${failures.join('\n')}`);
 });
+
+test('English page rules never split a single word', () => {
+  const files = [path.join(root, 'app.wxss')].concat(walk(path.join(root, 'pages'), '.wxss'));
+  const failures = files.flatMap((file) => {
+    const source = fs.readFileSync(file, 'utf8');
+    return [...source.matchAll(/([^{}]*\.language-en[^{}]*)\{([^{}]*)\}/g)].flatMap((match) => {
+      const body = match[2] || '';
+      return /overflow-wrap:\s*(?:break-word|anywhere)|word-break:\s*(?:break-all|break-word)/.test(body)
+        ? [`${path.relative(root, file)}: ${match[1].trim().replace(/\s+/g, ' ')}`]
+        : [];
+    });
+  });
+  assert.deepEqual(failures, [], `English rules can split words:\n${failures.join('\n')}`);
+});
+
+test('Reading toast messages stay short in English', () => {
+  const reading = require('../utils/i18n-catalog-learning').readingDetail.en;
+  const toastKeys = [
+    'generateFailed', 'translateFailed', 'parentPreview', 'addedReview', 'lookupFailed',
+    'addSuccess', 'addFailed', 'playbackFailed', 'pronunciationFailed', 'finishFirst',
+    'trialDone', 'submitted', 'analysisFailed'
+  ];
+  const failures = toastKeys.filter((key) => String(reading[key] || '').length > 18);
+  assert.deepEqual(failures, [], `Reading English toast text is too long: ${failures.join(', ')}`);
+});

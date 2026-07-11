@@ -653,6 +653,6 @@
   font-size: 24rpx;
   font-weight: 600;
 }
-.language-en { word-break: normal; overflow-wrap: anywhere; }
+.language-en { word-break: normal; overflow-wrap: normal; }
 .language-en .library-title, .language-en .parent-title, .language-en .section-title { letter-spacing: 0; }
 .language-en .module-label { font-size: 22rpx; }

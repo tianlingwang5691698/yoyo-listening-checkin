@@ -11,7 +11,7 @@ page {
 .language-en text,
 .language-en button {
   word-break: normal;
-  overflow-wrap: break-word;
+  overflow-wrap: normal;
 }
 
 .language-en button {

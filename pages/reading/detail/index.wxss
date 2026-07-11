@@ -1765,5 +1765,18 @@
 }
 .language-en button,
 .language-en view,
-.language-en text { overflow-wrap: break-word; word-break: normal; }
+.language-en text { overflow-wrap: normal; word-break: normal; }
 .language-en .desk-title { font-size: 40rpx; line-height: 1.16; }
+.language-en .option-row {
+  grid-template-columns: 72rpx minmax(0, 1fr);
+  column-gap: 12rpx;
+}
+.language-en .option-badge {
+  max-width: none;
+  padding: 5rpx 7rpx;
+  font-size: 16rpx;
+  line-height: 1;
+  white-space: nowrap;
+  overflow-wrap: normal;
+  word-break: keep-all;
+}

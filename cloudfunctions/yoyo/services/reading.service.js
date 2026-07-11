@@ -9,6 +9,7 @@ const DEFAULT_READING_DAILY_COUNT = 3;
 const MAX_READING_DAILY_COUNT = 20;
 const STUDY_PACK_COLLECTION = 'readingStudyPacks';
 const SENTENCE_TRANSLATION_COLLECTION = 'readingSentenceTranslations';
+const READING_STUDY_MODEL_TIMEOUT_MS = 50000;
 const READING_AUDIO_CACHE_COLLECTION = 'readingAudioCache';
 const studyPackBuildPromises = {};
 let passageListCache = null;
@@ -907,6 +908,15 @@ function validateQuestionStudyPack(studyPack, passage) {
   });
 }
 
+function isValidQuestionStudyPack(studyPack, passage) {
+  try {
+    validateQuestionStudyPack(studyPack, passage);
+    return true;
+  } catch (error) {
+    return false;
+  }
+}
+
 function validateLearningStudyPack(studyPack, section, passage) {
   if (!isModelStudyPack(studyPack)) {
     throw new Error('reading-study-pack-not-model');
@@ -993,7 +1003,7 @@ async function buildStudyPackWithModel(passage) {
         { role: 'user', content: prompt }
       ],
       temperature: 0.2
-    }, 110000);
+    }, READING_STUDY_MODEL_TIMEOUT_MS);
     return parseJsonText(extractMessageText(response)) || {};
   }
   async function requestModel(model) {
@@ -1232,7 +1242,7 @@ async function saveStudyPack(passage, studyPack, options) {
 async function getOrCreateStudyPack(passage, existingCached, force) {
   const cached = existingCached || await getCachedStudyPack(passage);
   const cachedPack = cached ? normalizeStudyPack(cached, passage) : null;
-  if (!force && cachedPack && (cachedPack.questionAnalyses || []).length) {
+  if (!force && cachedPack && isValidQuestionStudyPack(cachedPack, passage)) {
     return { studyPack: cachedPack, cached: true };
   }
   const promiseKey = String(passage && passage._id || '');
@@ -1591,7 +1601,7 @@ async function getReadingStudyPack(event) {
   const cached = await getCachedStudyPack(passage);
   if (section === 'questions') {
     const cachedPack = cached ? normalizeStudyPack(cached, passage) : null;
-    if (!force && cachedPack && (cachedPack.questionAnalyses || []).length) {
+    if (!force && cachedPack && isValidQuestionStudyPack(cachedPack, passage)) {
       return {
         passageId: passage._id,
         section,
@@ -1871,5 +1881,9 @@ module.exports = {
   getReadingStudyPack,
   synthesizeReadingAudio,
   submitReadingAttempt,
-  lookupWord
+  lookupWord,
+  _test: {
+    isValidQuestionStudyPack,
+    READING_STUDY_MODEL_TIMEOUT_MS
+  }
 };

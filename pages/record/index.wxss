@@ -1307,6 +1307,6 @@
   font-size: 24rpx;
   text-align: center;
 }
-.language-en { word-break: normal; overflow-wrap: anywhere; }
+.language-en { word-break: normal; overflow-wrap: normal; }
 .language-en .library-growth-title, .language-en .record-title, .language-en .type-section-title { letter-spacing: 0; }
 .language-en .summary-label, .language-en .library-stat-cell text { font-size: 20rpx; }

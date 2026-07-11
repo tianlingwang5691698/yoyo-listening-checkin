@@ -2533,6 +2533,6 @@
 }
 .language-en button,
 .language-en view,
-.language-en text { overflow-wrap: break-word; word-break: normal; }
+.language-en text { overflow-wrap: normal; word-break: normal; }
 .language-en .library-vocab-title,
 .language-en .progress-title { font-size: 38rpx; line-height: 1.16; }

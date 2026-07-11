@@ -726,5 +726,5 @@
   background: #17314f;
   color: #fffafa;
 }
-.language-en { word-break: normal; overflow-wrap: anywhere; }
+.language-en { word-break: normal; overflow-wrap: normal; }
 .language-en .bookplate-name, .language-en .entry-title, .language-en .row-title { letter-spacing: 0; }
