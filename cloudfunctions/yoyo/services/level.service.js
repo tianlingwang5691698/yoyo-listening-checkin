@@ -1,9 +1,9 @@
 const study = require('../facades/study.facade');
 
 const LEVEL_CATEGORY_GROUPS = {
-  A2: ['newconcept2', 'unlock2', 'unlock2workbook'],
-  B1: ['newconcept3', 'unlock3textbook', 'unlock3'],
-  B2: ['newconcept4', 'unlock4', 'unlock4workbook']
+  A2: ['newconcept2', 'unlock2', 'unlock2thirdedition', 'unlock2workbook'],
+  B1: ['newconcept3', 'unlock3textbook', 'unlock3thirdedition', 'unlock3'],
+  B2: ['newconcept4', 'unlock4', 'unlock4thirdedition', 'unlock4workbook']
 };
 
 const STANDALONE_CATEGORY_IDS = [].concat(LEVEL_CATEGORY_GROUPS.A2, LEVEL_CATEGORY_GROUPS.B1, LEVEL_CATEGORY_GROUPS.B2);
@@ -84,12 +84,15 @@ async function getLevelOverview(event) {
   const standaloneOverviews = isA1PhaseOverview ? {
     newconcept2: { directTasks: [], overview: [] },
     unlock2: { directTasks: [], overview: [] },
+    unlock2thirdedition: { directTasks: [], overview: [] },
     unlock2workbook: { directTasks: [], overview: [] },
     newconcept3: { directTasks: [], overview: [] },
     unlock3textbook: { directTasks: [], overview: [] },
+    unlock3thirdedition: { directTasks: [], overview: [] },
     unlock3: { directTasks: [], overview: [] },
     newconcept4: { directTasks: [], overview: [] },
     unlock4: { directTasks: [], overview: [] },
+    unlock4thirdedition: { directTasks: [], overview: [] },
     unlock4workbook: { directTasks: [], overview: [] }
   } : Object.fromEntries(await Promise.all(standaloneCategoryIds.map(async (categoryId) => {
     const directTasks = await study.resolveStandaloneCategoryTasks(categoryId, ctx.child.childId, today);
@@ -149,18 +152,24 @@ async function getLevelOverview(event) {
       newconcept2DirectCount: standaloneOverviews.newconcept2.directTasks.length,
       unlock2CatalogCount: study.getCatalog('unlock2').length,
       unlock2DirectCount: standaloneOverviews.unlock2.directTasks.length,
+      unlock2ThirdEditionCatalogCount: study.getCatalog('unlock2thirdedition').length,
+      unlock2ThirdEditionDirectCount: standaloneOverviews.unlock2thirdedition.directTasks.length,
       unlock2WorkbookCatalogCount: study.getCatalog('unlock2workbook').length,
       unlock2WorkbookDirectCount: standaloneOverviews.unlock2workbook.directTasks.length,
       newconcept3CatalogCount: study.getCatalog('newconcept3').length,
       newconcept3DirectCount: standaloneOverviews.newconcept3.directTasks.length,
       unlock3TextbookCatalogCount: study.getCatalog('unlock3textbook').length,
       unlock3TextbookDirectCount: standaloneOverviews.unlock3textbook.directTasks.length,
+      unlock3ThirdEditionCatalogCount: study.getCatalog('unlock3thirdedition').length,
+      unlock3ThirdEditionDirectCount: standaloneOverviews.unlock3thirdedition.directTasks.length,
       unlock3CatalogCount: study.getCatalog('unlock3').length,
       unlock3DirectCount: standaloneOverviews.unlock3.directTasks.length,
       newconcept4CatalogCount: study.getCatalog('newconcept4').length,
       newconcept4DirectCount: standaloneOverviews.newconcept4.directTasks.length,
       unlock4CatalogCount: study.getCatalog('unlock4').length,
       unlock4DirectCount: standaloneOverviews.unlock4.directTasks.length,
+      unlock4ThirdEditionCatalogCount: study.getCatalog('unlock4thirdedition').length,
+      unlock4ThirdEditionDirectCount: standaloneOverviews.unlock4thirdedition.directTasks.length,
       unlock4WorkbookCatalogCount: study.getCatalog('unlock4workbook').length,
       unlock4WorkbookDirectCount: standaloneOverviews.unlock4workbook.directTasks.length,
       resourceDebug: study.getResourceDebugSnapshot()

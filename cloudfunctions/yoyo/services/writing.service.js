@@ -312,9 +312,11 @@ function formatAttempt(record) {
   const item = record || {};
   const review = item.review || {};
   return {
-    attemptId: item._id || '',
+    attemptId: item._id || item.attemptId || '',
     promptId: item.promptId || '',
     title: item.title || '写作',
+    prompt: item.prompt || '',
+    promptMeta: item.promptMeta || {},
     date: item.date || '',
     essay: item.essay || '',
     wordCount: Number(item.wordCount || 0),
@@ -323,7 +325,9 @@ function formatAttempt(record) {
     review,
     status: item.status || (review && review.summary ? 'graded' : ''),
     gradeError: item.gradeError || '',
-    createdAt: item.createdAt || ''
+    createdAt: item.createdAt || '',
+    updatedAt: item.updatedAt || '',
+    gradedAt: item.gradedAt || ''
   };
 }
 
@@ -347,12 +351,43 @@ async function getWritingAttempts(event) {
     .limit(limit)
     .get();
   return {
-    attempts: (res.data || []).map(formatAttempt)
+    attempts: (res.data || []).map((item) => {
+      const attempt = formatAttempt(item);
+      if (!payload.summaryOnly) return attempt;
+      return {
+        attemptId: attempt.attemptId,
+        promptId: attempt.promptId,
+        title: attempt.title,
+        promptMeta: attempt.promptMeta,
+        date: attempt.date,
+        wordCount: attempt.wordCount,
+        score: attempt.score,
+        totalScore: attempt.totalScore,
+        status: attempt.status,
+        createdAt: attempt.createdAt
+      };
+    })
   };
+}
+
+async function getWritingAttemptDetail(event) {
+  const payload = (event && event.payload) || {};
+  const attemptId = String(payload.attemptId || '').trim();
+  const { ctx } = await study.prepareRequestContext(Object.assign({}, event, {
+    action: 'getWritingAttemptDetail'
+  }));
+  if (!attemptId) return { attempt: null };
+  const result = await dbAdapter.collection(COLLECTION).doc(attemptId).get();
+  const attempt = result && result.data;
+  if (!attempt || attempt.familyId !== ctx.family.familyId || attempt.childId !== ctx.child.childId) {
+    throw new Error('writing-attempt-not-found');
+  }
+  return { attempt: formatAttempt(Object.assign({}, attempt, { _id: attemptId })) };
 }
 
 module.exports = {
   submitWritingAttempt,
   gradeWritingAttempt,
-  getWritingAttempts
+  getWritingAttempts,
+  getWritingAttemptDetail
 };

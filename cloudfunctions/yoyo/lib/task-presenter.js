@@ -4,19 +4,23 @@ const CATEGORY_LABELS = {
   newconcept3: 'New Concept 3',
   newconcept4: 'New Concept 4',
   peppa: 'Peppa',
-  unlock1: 'Unlock 1 课本',
-  unlock1workbook: 'Unlock 1 练习册',
+  unlock1: 'Unlock 1 听口 第二版',
+  unlock1thirdedition: 'Unlock 1 听口 第三版',
+  unlock1workbook: 'Unlock 1 听口 练习册 第二版',
   unlock2: 'Unlock 2 课本',
+  unlock2thirdedition: 'Unlock 2 听口 第三版',
   unlock2workbook: 'Unlock 2 练习册',
-  unlock3textbook: 'Unlock 3 课本',
-  unlock3: 'Unlock 3 练习册',
+  unlock3textbook: 'Unlock3 听口 第二版',
+  unlock3thirdedition: 'Unlock3 听口 第三版',
+  unlock3: 'Unlock3 听口练习册 第二版',
   unlock4: 'Unlock 4 课本',
+  unlock4thirdedition: 'Unlock 4 听口 第三版',
   unlock4workbook: 'Unlock 4 练习册',
   song: 'Songs'
 };
 
 const NEW_CONCEPT_CATEGORIES = ['newconcept1', 'newconcept2', 'newconcept3', 'newconcept4'];
-const UNLOCK_CATEGORIES = ['unlock1', 'unlock1workbook', 'unlock2', 'unlock2workbook', 'unlock3textbook', 'unlock3', 'unlock4', 'unlock4workbook'];
+const UNLOCK_CATEGORIES = ['unlock1', 'unlock1thirdedition', 'unlock1workbook', 'unlock2', 'unlock2thirdedition', 'unlock2workbook', 'unlock3textbook', 'unlock3thirdedition', 'unlock3', 'unlock4', 'unlock4thirdedition', 'unlock4workbook'];
 const UNLOCK_WORKBOOK_CATEGORIES = ['unlock1workbook', 'unlock2workbook', 'unlock3', 'unlock4workbook'];
 
 function getCategoryLabel(category) {
@@ -48,12 +52,15 @@ function getTaskPresentation(task) {
     };
   }
   if (UNLOCK_CATEGORIES.includes(task.category)) {
-    const seriesNumber = task.category === 'unlock1workbook' ? '1' : task.category === 'unlock2workbook' ? '2' : task.category === 'unlock3textbook' ? '3' : task.category === 'unlock4workbook' ? '4' : (task.category.replace('unlock', '') || '1');
-    const levelLabel = (task.category === 'unlock1' || task.category === 'unlock1workbook') ? 'A1' : (task.category === 'unlock2' || task.category === 'unlock2workbook') ? 'A2' : (task.category === 'unlock3' || task.category === 'unlock3textbook') ? 'B1' : 'B2';
-    const materialType = UNLOCK_WORKBOOK_CATEGORIES.includes(task.category) ? '练习册' : '课本';
+    const seriesNumber = task.category === 'unlock1thirdedition' || task.category === 'unlock1workbook' ? '1' : task.category === 'unlock2thirdedition' || task.category === 'unlock2workbook' ? '2' : task.category === 'unlock3textbook' || task.category === 'unlock3thirdedition' ? '3' : task.category === 'unlock4thirdedition' || task.category === 'unlock4workbook' ? '4' : (task.category.replace('unlock', '') || '1');
+    const levelLabel = (task.category === 'unlock1' || task.category === 'unlock1thirdedition' || task.category === 'unlock1workbook') ? 'A1' : (task.category === 'unlock2' || task.category === 'unlock2thirdedition' || task.category === 'unlock2workbook') ? 'A2' : (task.category === 'unlock3' || task.category === 'unlock3textbook' || task.category === 'unlock3thirdedition') ? 'B1' : 'B2';
+    const materialType = task.category === 'unlock1thirdedition' || task.category === 'unlock2thirdedition' || task.category === 'unlock3thirdedition' || task.category === 'unlock4thirdedition' ? '听口 第三版' : task.category === 'unlock3textbook' ? '听口 第二版' : task.category === 'unlock3' ? '听口练习册 第二版' : task.category === 'unlock1' ? '听口 第二版' : task.category === 'unlock1workbook' ? '听口 练习册 第二版' : (UNLOCK_WORKBOOK_CATEGORIES.includes(task.category) ? '练习册' : '课本');
     const match = title.match(/(?:Unlock2e_|UL2v2_)?(?:A1|L1|L2|L3|L4|B2)[_-]*(?:TST_LS_)?(?:U)?(\d+\.\d+)/i);
+    const thirdEditionMatch = task.category === 'unlock1thirdedition' || task.category === 'unlock2thirdedition' || task.category === 'unlock3thirdedition' || task.category === 'unlock4thirdedition'
+      ? title.match(/_U0*(\d+).*_t0*(\d+)$/i)
+      : null;
     return {
-      displayTitle: match ? match[1] : title,
+      displayTitle: match ? match[1] : (thirdEditionMatch ? `${Number(thirdEditionMatch[1])}.${Number(thirdEditionMatch[2])}` : title),
       displaySubtitle: `${levelLabel} ${materialType}听力`,
       coverVariant: 'unlock',
       coverBadge: `Unlock ${seriesNumber} ${materialType}`

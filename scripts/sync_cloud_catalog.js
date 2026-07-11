@@ -4,7 +4,7 @@ const fs = require('fs');
 const https = require('https');
 const path = require('path');
 
-const appConfig = require('../data/app-config');
+const appConfig = require('../app-config');
 const { TRANSCRIPT_BUNDLE_PATHS } = require('../cloudfunctions/yoyo/lib/constants');
 
 let CloudBaseManager;

@@ -1,6 +1,4 @@
 const https = require('https');
-const storageAdapter = require('./adapters/storage.adapter');
-const speakingEnginePatch = require('./lib/speaking-engine');
 
 process.env.SPEAKING_CONTENT_SCORE_MODEL = process.env.SPEAKING_CONTENT_SCORE_MODEL
   || process.env.SPEAKING_CONTENT_SCORE_MODE
@@ -227,6 +225,7 @@ function fallbackSpeakingScore(payload, error) {
 }
 
 async function scoreSpeakingAttemptLegacy(payload) {
+  const storageAdapter = require('./adapters/storage.adapter');
   const endpoint = String(process.env.SPEAKING_SCORE_ENDPOINT || '').trim();
   const transcribeEndpoint = normalizeTranscribeEndpoint(process.env.SPEAKING_TRANSCRIBE_ENDPOINT || inferTranscribeEndpoint(endpoint));
   const apiKey = String(process.env.SPEAKING_SCORE_API_KEY || '').trim();
@@ -344,25 +343,32 @@ async function scoreSpeakingAttemptLegacy(payload) {
   }
 }
 
-const dashboardService = require('./services/dashboard.service');
-const levelService = require('./services/level.service');
-const taskService = require('./services/task.service');
-const familyService = require('./services/family.service');
-const reportService = require('./services/report.service');
-const identityService = require('./services/identity.service');
-const catalogService = require('./services/catalog.service');
-const speakingService = require('./services/speaking.service');
-const readingService = require('./services/reading.service');
-const listeningService = require('./services/listening.service');
-const listeningPlanService = require('./services/listening-plan.service');
-const grammarService = require('./services/grammar.service');
-const completionService = require('./services/completion.service');
-const writingService = require('./services/writing.service');
-const flashcardService = require('./services/flashcard.service');
-const adminService = require('./services/admin.service');
 const monitor = require('./lib/monitor');
 
-if (!taskService.__autoCheckinAfterListeningPatch) {
+const servicePaths = {
+  dashboard: './services/dashboard.service',
+  level: './services/level.service',
+  task: './services/task.service',
+  family: './services/family.service',
+  report: './services/report.service',
+  identity: './services/identity.service',
+  catalog: './services/catalog.service',
+  speaking: './services/speaking.service',
+  reading: './services/reading.service',
+  listening: './services/listening.service',
+  listeningPlan: './services/listening-plan.service',
+  grammar: './services/grammar.service',
+  completion: './services/completion.service',
+  writing: './services/writing.service',
+  flashcard: './services/flashcard.service',
+  admin: './services/admin.service'
+};
+const serviceCache = {};
+
+function patchTaskService(taskService) {
+  if (taskService.__autoCheckinAfterListeningPatch) {
+    return taskService;
+  }
   const originalMarkTaskListened = taskService.markTaskListened;
   taskService.markTaskListened = async function patchedMarkTaskListened(event, context) {
     const detail = await originalMarkTaskListened(event, context);
@@ -386,71 +392,88 @@ if (!taskService.__autoCheckinAfterListeningPatch) {
     }
   };
   taskService.__autoCheckinAfterListeningPatch = true;
+  return taskService;
+}
+
+function getService(name) {
+  if (!serviceCache[name]) {
+    const service = require(servicePaths[name]);
+    serviceCache[name] = name === 'task' ? patchTaskService(service) : service;
+  }
+  return serviceCache[name];
+}
+
+function serviceAction(serviceName, methodName) {
+  return (event, context) => getService(serviceName)[methodName](event, context);
 }
 
 const actionMap = {
-  bootstrap: identityService.bootstrap,
-  getMaterialIndex: catalogService.getMaterialIndex,
-  getMaterialItem: catalogService.getMaterialItem,
-  getDashboard: dashboardService.getDashboard,
-  getLevelOverview: levelService.getLevelOverview,
-  getListeningPlanOverview: listeningPlanService.getListeningPlanOverview,
-  getListeningMaterialDetail: listeningPlanService.getListeningMaterialDetail,
-  saveListeningPlanMaterial: listeningPlanService.saveListeningPlanMaterial,
-  removeListeningPlanMaterial: listeningPlanService.removeListeningPlanMaterial,
-  getTaskDetail: taskService.getTaskDetail,
-  getTaskTranscript: taskService.getTaskTranscript,
-  markTaskListened: taskService.markTaskListened,
-  createSpeakingUploadUrl: speakingService.createSpeakingUploadUrl,
-  submitSpeakingAttempt: speakingService.submitSpeakingAttempt,
-  evaluateSpeakingPronunciation: speakingService.evaluateSpeakingPronunciation,
-  rescoreSpeakingAttempt: speakingService.rescoreSpeakingAttempt,
-  getSpeakingAttempts: speakingService.getSpeakingAttempts,
-  completeTodayCheckin: taskService.completeTodayCheckin,
-  getProfileData: familyService.getProfileData,
-  getFamilyPage: familyService.getFamilyPage,
-  refreshInviteCode: familyService.refreshInviteCode,
-  joinFamily: familyService.joinFamily,
-  joinFamilyByChildCode: familyService.joinFamilyByChildCode,
-  updateBindingProfile: familyService.updateBindingProfile,
-  leaveFamily: familyService.leaveFamily,
-  updateChildProfile: familyService.updateChildProfile,
-  setStudyRole: identityService.setStudyRole,
-  undoLastListened: identityService.undoLastListened,
-  updateSubscription: familyService.updateSubscription,
-  getHeatmap: reportService.getHeatmap,
-  getMonthHeatmap: reportService.getMonthHeatmap,
-  getDailyReportByDate: reportService.getDailyReportByDate,
-  getParentDashboard: reportService.getParentDashboard,
-  getReadingHome: readingService.getReadingHome,
-  getReadingPassage: readingService.getReadingPassage,
-  getReadingStudyPack: readingService.getReadingStudyPack,
-  getListeningStudyPack: listeningService.getListeningStudyPack,
-  getFlashcardReview: flashcardService.getFlashcardReview,
-  getFlashcardDue: flashcardService.getFlashcardDue,
-  updateFlashcardReview: flashcardService.updateFlashcardReview,
-  saveFlashcardSettings: flashcardService.saveSettings,
-  saveFlashcardAudio: flashcardService.saveFlashcardAudio,
-  getDictionaryBook: flashcardService.getDictionaryBook,
-  addDictionaryBook: flashcardService.addDictionaryBook,
-  addDictionaryWord: flashcardService.addDictionaryWord,
-  synthesizeReadingAudio: readingService.synthesizeReadingAudio,
-  lookupWord: readingService.lookupWord,
-  submitReadingAttempt: readingService.submitReadingAttempt,
-  getGrammarHome: grammarService.getGrammarHome,
-  getGrammarTopic: grammarService.getGrammarTopic,
-  recordGrammarWrong: grammarService.recordGrammarWrong,
-  getGrammarWrongBook: grammarService.getGrammarWrongBook,
-  getGrammarProgress: grammarService.getGrammarProgress,
-  recordGrammarProgress: grammarService.recordGrammarProgress,
-  explainGrammarQuestion: grammarService.explainGrammarQuestion,
-  submitWritingAttempt: writingService.submitWritingAttempt,
-  gradeWritingAttempt: writingService.gradeWritingAttempt,
-  getWritingAttempts: writingService.getWritingAttempts,
-  recordStudyCompletion: completionService.recordStudyCompletion,
-  getStudyCompletions: completionService.getStudyCompletions,
-  getAdminStatus: adminService.getAdminStatus,
-  getAdminFamilyList: adminService.getAdminFamilyList
+  bootstrap: serviceAction('identity', 'bootstrap'),
+  getMaterialIndex: serviceAction('catalog', 'getMaterialIndex'),
+  getMaterialItem: serviceAction('catalog', 'getMaterialItem'),
+  getDashboard: serviceAction('dashboard', 'getDashboard'),
+  getLevelOverview: serviceAction('level', 'getLevelOverview'),
+  getListeningPlanOverview: serviceAction('listeningPlan', 'getListeningPlanOverview'),
+  getListeningMaterialDetail: serviceAction('listeningPlan', 'getListeningMaterialDetail'),
+  saveListeningPlanMaterial: serviceAction('listeningPlan', 'saveListeningPlanMaterial'),
+  removeListeningPlanMaterial: serviceAction('listeningPlan', 'removeListeningPlanMaterial'),
+  getTaskDetail: serviceAction('task', 'getTaskDetail'),
+  getTaskTranscript: serviceAction('task', 'getTaskTranscript'),
+  markTaskListened: serviceAction('task', 'markTaskListened'),
+  createSpeakingUploadUrl: serviceAction('speaking', 'createSpeakingUploadUrl'),
+  submitSpeakingAttempt: serviceAction('speaking', 'submitSpeakingAttempt'),
+  evaluateSpeakingPronunciation: serviceAction('speaking', 'evaluateSpeakingPronunciation'),
+  rescoreSpeakingAttempt: serviceAction('speaking', 'rescoreSpeakingAttempt'),
+  getSpeakingAttempts: serviceAction('speaking', 'getSpeakingAttempts'),
+  completeTodayCheckin: serviceAction('task', 'completeTodayCheckin'),
+  getProfileData: serviceAction('family', 'getProfileData'),
+  getFamilyPage: serviceAction('family', 'getFamilyPage'),
+  refreshInviteCode: serviceAction('family', 'refreshInviteCode'),
+  joinFamily: serviceAction('family', 'joinFamily'),
+  joinFamilyByChildCode: serviceAction('family', 'joinFamilyByChildCode'),
+  updateBindingProfile: serviceAction('family', 'updateBindingProfile'),
+  leaveFamily: serviceAction('family', 'leaveFamily'),
+  updateChildProfile: serviceAction('family', 'updateChildProfile'),
+  setStudyRole: serviceAction('identity', 'setStudyRole'),
+  undoLastListened: serviceAction('identity', 'undoLastListened'),
+  updateSubscription: serviceAction('family', 'updateSubscription'),
+  getHeatmap: serviceAction('report', 'getHeatmap'),
+  getMonthHeatmap: serviceAction('report', 'getMonthHeatmap'),
+  getDailyReportByDate: serviceAction('report', 'getDailyReportByDate'),
+  getParentDashboard: serviceAction('report', 'getParentDashboard'),
+  getReadingHome: serviceAction('reading', 'getReadingHome'),
+  getReadingPassage: serviceAction('reading', 'getReadingPassage'),
+  getReadingStudyPack: serviceAction('reading', 'getReadingStudyPack'),
+  getListeningStudyPack: serviceAction('listening', 'getListeningStudyPack'),
+  getFlashcardReview: serviceAction('flashcard', 'getFlashcardReview'),
+  getFlashcardDue: serviceAction('flashcard', 'getFlashcardDue'),
+  updateFlashcardReview: serviceAction('flashcard', 'updateFlashcardReview'),
+  saveFlashcardSettings: serviceAction('flashcard', 'saveSettings'),
+  saveFlashcardAudio: serviceAction('flashcard', 'saveFlashcardAudio'),
+  getDictionaryBook: serviceAction('flashcard', 'getDictionaryBook'),
+  addDictionaryBook: serviceAction('flashcard', 'addDictionaryBook'),
+  addDictionaryWord: serviceAction('flashcard', 'addDictionaryWord'),
+  synthesizeReadingAudio: serviceAction('reading', 'synthesizeReadingAudio'),
+  lookupWord: serviceAction('reading', 'lookupWord'),
+  submitReadingAttempt: serviceAction('reading', 'submitReadingAttempt'),
+  getGrammarHome: serviceAction('grammar', 'getGrammarHome'),
+  getGrammarTopic: serviceAction('grammar', 'getGrammarTopic'),
+  recordGrammarWrong: serviceAction('grammar', 'recordGrammarWrong'),
+  addPracticeWrongQuestion: serviceAction('grammar', 'addPracticeWrongQuestion'),
+  getPracticeWrongQuestions: serviceAction('grammar', 'getPracticeWrongQuestions'),
+  getGrammarWrongBook: serviceAction('grammar', 'getGrammarWrongBook'),
+  getGrammarProgress: serviceAction('grammar', 'getGrammarProgress'),
+  recordGrammarProgress: serviceAction('grammar', 'recordGrammarProgress'),
+  explainGrammarQuestion: serviceAction('grammar', 'explainGrammarQuestion'),
+  submitWritingAttempt: serviceAction('writing', 'submitWritingAttempt'),
+  gradeWritingAttempt: serviceAction('writing', 'gradeWritingAttempt'),
+  getWritingAttempts: serviceAction('writing', 'getWritingAttempts'),
+  getWritingAttemptDetail: serviceAction('writing', 'getWritingAttemptDetail'),
+  recordStudyCompletion: serviceAction('completion', 'recordStudyCompletion'),
+  getStudyCompletions: serviceAction('completion', 'getStudyCompletions'),
+  getStudyCompletionDetail: serviceAction('completion', 'getStudyCompletionDetail'),
+  getAdminStatus: serviceAction('admin', 'getAdminStatus'),
+  getAdminFamilyList: serviceAction('admin', 'getAdminFamilyList')
 };
 
 const MONITORED_ACTIONS = new Set([
@@ -497,6 +520,8 @@ const MONITORED_ACTIONS = new Set([
   'getGrammarHome',
   'getGrammarTopic',
   'recordGrammarWrong',
+  'addPracticeWrongQuestion',
+  'getPracticeWrongQuestions',
   'getGrammarWrongBook',
   'getGrammarProgress',
   'recordGrammarProgress',
@@ -504,8 +529,10 @@ const MONITORED_ACTIONS = new Set([
   'submitWritingAttempt',
   'gradeWritingAttempt',
   'getWritingAttempts',
+  'getWritingAttemptDetail',
   'recordStudyCompletion',
-  'getStudyCompletions'
+  'getStudyCompletions',
+  'getStudyCompletionDetail'
 ]);
 
 exports.main = async (event, context) => {
@@ -535,7 +562,7 @@ exports.main = async (event, context) => {
   }
 
   const finalResult = Object.assign({}, result, {
-    resourceDebug: result.resourceDebug || catalogService.getResourceDebugSnapshot()
+    resourceDebug: result.resourceDebug || getService('catalog').getResourceDebugSnapshot()
   });
   if (MONITORED_ACTIONS.has(action)) {
     const payloadSize = Buffer.byteLength(JSON.stringify(finalResult), 'utf8');

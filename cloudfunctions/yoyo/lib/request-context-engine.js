@@ -9,7 +9,7 @@ function hasTaskAudioSource(task) {
 
 function resolveCatalogCategories(action, requestedCategory, payload = {}) {
   let catalogCategories = ['newconcept1', 'song'];
-  const knownAudioCategories = ['newconcept1', 'newconcept2', 'unlock2', 'unlock2workbook', 'newconcept3', 'unlock3textbook', 'unlock3', 'newconcept4', 'unlock4', 'unlock4workbook', 'peppa', 'song', 'unlock1', 'unlock1workbook'];
+  const knownAudioCategories = ['newconcept1', 'newconcept2', 'unlock2', 'unlock2thirdedition', 'unlock2workbook', 'newconcept3', 'unlock3textbook', 'unlock3thirdedition', 'unlock3', 'newconcept4', 'unlock4', 'unlock4thirdedition', 'unlock4workbook', 'peppa', 'song', 'unlock1', 'unlock1thirdedition', 'unlock1workbook'];
   const view = String((payload && payload.view) || '').trim();
   if (action === 'getDashboard') {
     return [];
@@ -39,7 +39,7 @@ function resolveCatalogCategories(action, requestedCategory, payload = {}) {
   if (action === 'getTaskTranscript') {
     return [];
   }
-  if (['getFamilyPage', 'refreshInviteCode', 'joinFamily', 'joinFamilyByChildCode', 'updateBindingProfile', 'leaveFamily', 'updateChildProfile', 'setStudyRole', 'updateSubscription', 'bootstrap', 'getReadingHome', 'getReadingPassage', 'getReadingStudyPack', 'synthesizeReadingAudio', 'submitReadingAttempt', 'getFlashcardDue', 'submitWritingAttempt', 'gradeWritingAttempt', 'getWritingAttempts', 'recordStudyCompletion', 'getStudyCompletions'].includes(action)) {
+  if (['getFamilyPage', 'refreshInviteCode', 'joinFamily', 'joinFamilyByChildCode', 'updateBindingProfile', 'leaveFamily', 'updateChildProfile', 'setStudyRole', 'updateSubscription', 'bootstrap', 'getReadingHome', 'getReadingPassage', 'getReadingStudyPack', 'synthesizeReadingAudio', 'submitReadingAttempt', 'getFlashcardReview', 'getFlashcardDue', 'getDictionaryBook', 'submitWritingAttempt', 'gradeWritingAttempt', 'getWritingAttempts', 'getWritingAttemptDetail', 'recordStudyCompletion', 'getStudyCompletions', 'getStudyCompletionDetail', 'addPracticeWrongQuestion', 'getPracticeWrongQuestions'].includes(action)) {
     return [];
   }
   return catalogCategories;
@@ -61,7 +61,10 @@ async function prepareRequestContext(event, deps) {
   const useLightweightContext = (
     (action === 'getDashboard' && (view === 'home' || view === 'record'))
     || action === 'getListeningPlanOverview'
+    || action === 'getListeningMaterialDetail'
     || action === 'getMonthHeatmap'
+    || action === 'getFlashcardReview'
+    || action === 'getDictionaryBook'
   );
   const lightweightCtx = useLightweightContext && deps.getLightweightContext
     ? await deps.getLightweightContext(OPENID, target)

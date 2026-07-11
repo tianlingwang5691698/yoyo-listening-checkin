@@ -14,6 +14,30 @@ const DEFAULT_SETTINGS = { newLimit: 10, reviewLimit: 20 };
 const LIMIT_MIN = 5;
 const LIMIT_MAX = 500;
 const LIMIT_STEP = 5;
+const DICTIONARY_SOURCE_IDS = DICTIONARY_BOOKS.map((book) => `dictionary-book-${book.level}`);
+const CLIENT_CARD_FIELDS = {
+  flashcardKey: true,
+  sourceType: true,
+  sourceId: true,
+  sourceTitle: true,
+  type: true,
+  text: true,
+  word: true,
+  phrase: true,
+  pattern: true,
+  phonetic: true,
+  meaning: true,
+  example: true,
+  exampleMeaning: true,
+  status: true,
+  familiarLevel: true,
+  reviewStep: true,
+  nextReviewDate: true,
+  unfamiliarCount: true,
+  audioUrl: true,
+  audioFileId: true,
+  audioCloudPath: true
+};
 
 function normalizeText(value) {
   return String(value || '').replace(/\s+/g, ' ').trim();
@@ -253,13 +277,30 @@ function summarizeFlashcards(cards, logs, today, settings) {
   };
 }
 
+function buildFlashcardWhere(ctx, payload, command) {
+  const where = {
+    familyId: ctx.family.familyId,
+    childId: ctx.child.childId
+  };
+  if (normalizeText(payload && payload.sourceId)) {
+    where.sourceId = normalizeText(payload.sourceId);
+  } else if (payload && payload.scope === 'personal') {
+    where.sourceId = command.nin(DICTIONARY_SOURCE_IDS);
+  }
+  return where;
+}
+
 async function getFlashcardReview(event) {
+  const payload = (event && event.payload) || {};
   const { ctx, today } = await study.prepareRequestContext(Object.assign({}, event, { action: 'getFlashcardReview' }));
   const settings = await getSettings(ctx);
+  const command = dbAdapter.getCommand();
+  const where = buildFlashcardWhere(ctx, payload, command);
   const all = [];
   for (let skip = 0; skip < 5000; skip += 100) {
     const result = await dbAdapter.collection(COLLECTION)
-      .where({ familyId: ctx.family.familyId, childId: ctx.child.childId })
+      .where(where)
+      .field(CLIENT_CARD_FIELDS)
       .orderBy('nextReviewDate', 'asc')
       .skip(skip)
       .limit(100)
@@ -605,5 +646,11 @@ module.exports = {
   saveFlashcardAudio,
   addDictionaryBook,
   getDictionaryBook,
-  addDictionaryWord
+  addDictionaryWord,
+  _test: {
+    buildFlashcardWhere,
+    CLIENT_CARD_FIELDS,
+    DICTIONARY_SOURCE_IDS,
+    isPreviewWrite
+  }
 };

@@ -81,7 +81,7 @@ async function getStudyCompletions(event) {
     action: 'getStudyCompletions'
   }));
   const date = String(payload.date || today);
-  const days = Math.max(1, Math.min(Number(payload.days || 1), 90));
+  const days = Math.max(1, Math.min(Number(payload.days || 1), 3650));
   const command = dbAdapter.getCommand();
   const dateFilter = days > 1
     ? command.gte(study.addDays(date, 1 - days)).and(command.lte(date))
@@ -94,14 +94,45 @@ async function getStudyCompletions(event) {
   return {
     date,
     days,
-    items: (result && result.data ? result.data : []).map((item) => Object.assign({}, item, {
-      id: item.recordId || item._id || ''
-    }))
+    items: (result && result.data ? result.data : []).map((item) => {
+      const normalized = Object.assign({}, item, { id: item.recordId || item._id || '' });
+      if (!payload.summaryOnly) return normalized;
+      const attempt = item.latestAttempt || {};
+      const questions = Array.isArray(attempt.questions) ? attempt.questions : [];
+      normalized.latestAttempt = {
+        _id: attempt._id || '',
+        passageId: attempt.passageId || item.passageId || '',
+        correctCount: Number(attempt.correctCount || questions.filter((question) => question.isCorrect).length || 0),
+        totalCount: Number(attempt.totalCount || questions.length || attempt.answeredCount || 0),
+        answeredCount: Number(attempt.answeredCount || questions.length || 0),
+        score: attempt.score,
+        totalScore: attempt.totalScore,
+        status: attempt.status || ''
+      };
+      return normalized;
+    })
   };
+}
+
+async function getStudyCompletionDetail(event) {
+  const payload = (event && event.payload) || {};
+  const recordId = String(payload.recordId || '').trim();
+  const { ctx } = await study.prepareRequestContext(Object.assign({}, event, {
+    action: 'getStudyCompletionDetail'
+  }));
+  if (!recordId) return { item: null };
+  const result = await dbAdapter.collection(COLLECTION).where({
+    familyId: ctx.family.familyId,
+    childId: ctx.child.childId,
+    recordId
+  }).limit(1).get();
+  const item = result && result.data && result.data[0];
+  return { item: item ? Object.assign({}, item, { id: item.recordId || item._id || '' }) : null };
 }
 
 module.exports = {
   upsertStudyCompletion,
   recordStudyCompletion,
-  getStudyCompletions
+  getStudyCompletions,
+  getStudyCompletionDetail
 };

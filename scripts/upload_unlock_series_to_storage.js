@@ -3,7 +3,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const appConfig = require('../data/app-config');
+const appConfig = require('../app-config');
 const unlockSeriesManifests = require('../cloudfunctions/yoyo/data/unlock-series-manifests.json');
 
 let cloudbase;

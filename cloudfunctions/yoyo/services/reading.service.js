@@ -11,6 +11,7 @@ const MAX_READING_DAILY_COUNT = 20;
 const STUDY_PACK_COLLECTION = 'readingStudyPacks';
 const SENTENCE_TRANSLATION_COLLECTION = 'readingSentenceTranslations';
 const READING_AUDIO_CACHE_COLLECTION = 'readingAudioCache';
+const studyPackBuildPromises = {};
 let passageListCache = null;
 const PASSAGE_LIST_CACHE_MAX_AGE_MS = 10 * 60 * 1000;
 const WORD_DICTIONARY_COLLECTION = 'wordDictionary';
@@ -1041,13 +1042,13 @@ async function getCachedSentenceTranslation(ctx, passageId, sentence) {
     const item = result && result.data && result.data[0];
     return item && item.translation ? item : null;
   } catch (error) {
-    return null;
+    throw new Error(`reading-sentence-cache-read-failed:${error && error.message ? error.message : error}`);
   }
 }
 
 async function saveSentenceTranslation(ctx, passageId, sentenceTranslation) {
   if (!sentenceTranslation || !sentenceTranslation.sentence || !sentenceTranslation.translation) {
-    return;
+    return false;
   }
   const sentenceHash = sentenceTranslationHash(passageId, sentenceTranslation.sentence);
   const now = new Date().toISOString();
@@ -1072,10 +1073,14 @@ async function saveSentenceTranslation(ctx, passageId, sentenceTranslation) {
     const current = result && result.data && result.data[0];
     if (current && current._id) {
       await dbAdapter.collection(SENTENCE_TRANSLATION_COLLECTION).doc(current._id).update({ data });
-      return;
+      return true;
     }
     await dbAdapter.collection(SENTENCE_TRANSLATION_COLLECTION).add({ data: Object.assign({}, data, { createdAt: now }) });
-  } catch (error) {}
+    return true;
+  } catch (error) {
+    console.error('[reading-sentence] save failed', passageId, error && error.message ? error.message : error);
+    return false;
+  }
 }
 
 async function getCachedStudyPack(passageOrId) {
@@ -1096,16 +1101,16 @@ async function getCachedStudyPack(passageOrId) {
     }
     return rows.reverse().reduce((merged, row) => mergeStudyPacks(merged, row.studyPack, passage), null);
   } catch (error) {
-    return null;
+    throw new Error(`reading-study-pack-cache-read-failed:${error && error.message ? error.message : error}`);
   }
 }
 
-async function saveStudyPack(passage, studyPack) {
+async function saveStudyPack(passage, studyPack, options) {
   if (!passage || !passage._id || !studyPack) {
-    return;
+    return false;
   }
   try {
-    if ((studyPack.questionAnalyses || []).length) {
+    if (options && options.validateQuestions && (studyPack.questionAnalyses || []).length) {
       validateQuestionStudyPack(studyPack, passage);
     }
     await dbAdapter.collection(STUDY_PACK_COLLECTION).add({
@@ -1118,25 +1123,37 @@ async function saveStudyPack(passage, studyPack) {
         updatedAt: new Date().toISOString()
       }
     });
+    return true;
   } catch (error) {
-    // Missing collection should not block reading attempts.
+    console.error('[reading-study-pack] save failed', passage._id, error && error.message ? error.message : error);
+    return false;
   }
 }
 
-async function getOrCreateStudyPack(passage) {
-  const cached = await getCachedStudyPack(passage);
-  if (cached && isModelStudyPack(cached)) {
-    try {
-      const cachedPack = normalizeStudyPack(cached, passage);
-      validateQuestionStudyPack(cachedPack, passage);
-      return cachedPack;
-    } catch (error) {
-      // Old cached packs can miss newly required sections; rebuild below.
+async function getOrCreateStudyPack(passage, existingCached, force) {
+  const cached = existingCached || await getCachedStudyPack(passage);
+  const cachedPack = cached ? normalizeStudyPack(cached, passage) : null;
+  if (!force && cachedPack && (cachedPack.questionAnalyses || []).length) {
+    return { studyPack: cachedPack, cached: true };
+  }
+  const promiseKey = String(passage && passage._id || '');
+  if (!force && promiseKey && studyPackBuildPromises[promiseKey]) {
+    return studyPackBuildPromises[promiseKey];
+  }
+  const request = (async () => {
+    const studyPack = await buildStudyPackWithModel(passage);
+    const saved = await saveStudyPack(passage, studyPack, { validateQuestions: true });
+    if (!saved) throw new Error('reading-study-pack-save-failed');
+    return { studyPack, cached: false };
+  })();
+  if (promiseKey) studyPackBuildPromises[promiseKey] = request;
+  try {
+    return await request;
+  } finally {
+    if (promiseKey && studyPackBuildPromises[promiseKey] === request) {
+      delete studyPackBuildPromises[promiseKey];
     }
   }
-  const studyPack = await buildStudyPackWithModel(passage);
-  await saveStudyPack(passage, studyPack);
-  return studyPack;
 }
 
 function buildMemoryPlan(passages) {
@@ -1415,7 +1432,8 @@ async function getReadingStudyPack(event) {
       }
       : await translateReadingSentenceWithModel(sentence);
     if (!cached) {
-      await saveSentenceTranslation(ctx, passage._id, sentenceTranslation);
+      const saved = await saveSentenceTranslation(ctx, passage._id, sentenceTranslation);
+      if (!saved) throw new Error('reading-sentence-save-failed');
     }
     return {
       passageId: passage._id,
@@ -1424,13 +1442,34 @@ async function getReadingStudyPack(event) {
     };
   }
   const section = String(payload.section || 'cards');
+  const cacheOnly = !!payload.cacheOnly;
+  const force = !!payload.force;
   const cached = await getCachedStudyPack(passage);
   if (section === 'questions') {
-    const studyPack = await getOrCreateStudyPack(passage);
+    const cachedPack = cached ? normalizeStudyPack(cached, passage) : null;
+    if (!force && cachedPack && (cachedPack.questionAnalyses || []).length) {
+      return {
+        passageId: passage._id,
+        section,
+        studyPack: cachedPack,
+        cached: true
+      };
+    }
+    if (cacheOnly) {
+      return {
+        passageId: passage._id,
+        section,
+        studyPack: null,
+        cached: false,
+        cacheMiss: true
+      };
+    }
+    const result = await getOrCreateStudyPack(passage, cached, force);
     return {
       passageId: passage._id,
       section,
-      studyPack
+      studyPack: result.studyPack,
+      cached: result.cached
     };
   }
   if (cached && hasStudyPackSection(cached, section, passage)) {
@@ -1441,9 +1480,19 @@ async function getReadingStudyPack(event) {
       studyPack
     };
   }
+  if (cacheOnly) {
+    return {
+      passageId: passage._id,
+      section,
+      studyPack: null,
+      cached: false,
+      cacheMiss: true
+    };
+  }
   const generatedPack = await buildLearningPackWithModel(passage, section);
   const studyPack = mergeStudyPacks(cached, generatedPack, passage);
-  await saveStudyPack(passage, studyPack);
+  const saved = await saveStudyPack(passage, studyPack);
+  if (!saved) throw new Error('reading-study-pack-save-failed');
   return {
     passageId: passage._id,
     section,

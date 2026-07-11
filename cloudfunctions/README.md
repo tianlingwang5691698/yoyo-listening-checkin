@@ -54,7 +54,7 @@
    - `_transcripts/A1/songs`
 8. 在小程序订阅消息里申请模板
 9. 把模板 ID 填进：
-   - `/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/data/app-config.js`
+   - `/Users/wangtianlong/工作/工作流/微信小程序/佑佑听力打卡/app-config.js`
 
 ## 当前正式配置
 

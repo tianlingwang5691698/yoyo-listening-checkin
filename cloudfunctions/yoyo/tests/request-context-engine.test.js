@@ -89,6 +89,32 @@ test('prepareRequestContext 听力素材首屏使用轻量上下文', async () =
   assert.deepEqual(result.ctx.child.childId, 'child-yoyo');
 });
 
+test('prepareRequestContext 听力素材详情使用轻量上下文', async () => {
+  const calls = [];
+  const result = await requestContextEngine.prepareRequestContext({
+    action: 'getListeningMaterialDetail',
+    payload: { levelId: 'B1', category: 'unlock3thirdedition' }
+  }, {
+    refreshRuntimeCatalogs: async (force, categories) => calls.push(['refresh', force, categories]),
+    getWXContext: () => ({ OPENID: 'open-1' }),
+    getLightweightContext: async (openId) => {
+      calls.push(['lightweight', openId]);
+      return { user: { openId }, child: { childId: 'child-yoyo' } };
+    },
+    ensureBootstrap: async () => {
+      calls.push(['bootstrap']);
+      return {};
+    },
+    getTodayString: () => '2026-07-11'
+  });
+
+  assert.deepEqual(calls, [
+    ['refresh', false, ['unlock3thirdedition']],
+    ['lightweight', 'open-1']
+  ]);
+  assert.equal(result.ctx.child.childId, 'child-yoyo');
+});
+
 test('prepareRequestContext 会传递选中学生上下文', async () => {
   const calls = [];
   await requestContextEngine.prepareRequestContext({
@@ -208,6 +234,22 @@ test('resolveCatalogCategories 听力计划首屏不刷新素材目录', () => {
     requestContextEngine.resolveCatalogCategories('getListeningMaterialDetail', 'unlock4workbook', {}),
     ['unlock4workbook']
   );
+  assert.deepEqual(
+    requestContextEngine.resolveCatalogCategories('getListeningMaterialDetail', 'unlock4thirdedition', {}),
+    ['unlock4thirdedition']
+  );
+  assert.deepEqual(
+    requestContextEngine.resolveCatalogCategories('getListeningMaterialDetail', 'unlock1thirdedition', {}),
+    ['unlock1thirdedition']
+  );
+  assert.deepEqual(
+    requestContextEngine.resolveCatalogCategories('getListeningMaterialDetail', 'unlock2thirdedition', {}),
+    ['unlock2thirdedition']
+  );
+  assert.deepEqual(
+    requestContextEngine.resolveCatalogCategories('getListeningMaterialDetail', 'unlock3thirdedition', {}),
+    ['unlock3thirdedition']
+  );
 });
 
 test('resolveCatalogCategories 阅读学习包不刷新音频目录', () => {
@@ -219,4 +261,31 @@ test('resolveCatalogCategories 阅读学习包不刷新音频目录', () => {
     requestContextEngine.resolveCatalogCategories('synthesizeReadingAudio', '', {}),
     []
   );
+});
+
+test('词库读取使用轻量上下文且不刷新音频目录', async () => {
+  const calls = [];
+  const result = await requestContextEngine.prepareRequestContext({
+    action: 'getFlashcardReview',
+    payload: { scope: 'personal' }
+  }, {
+    refreshRuntimeCatalogs: async (force, categories) => calls.push(['refresh', force, categories]),
+    getWXContext: () => ({ OPENID: 'open-1' }),
+    getLightweightContext: async (openId) => {
+      calls.push(['lightweight', openId]);
+      return { user: { openId }, child: { childId: 'child-yoyo' } };
+    },
+    ensureBootstrap: async () => {
+      calls.push(['bootstrap']);
+      return {};
+    },
+    getTodayString: () => '2026-07-11'
+  });
+
+  assert.deepEqual(calls, [
+    ['refresh', false, []],
+    ['lightweight', 'open-1']
+  ]);
+  assert.equal(result.ctx.child.childId, 'child-yoyo');
+  assert.deepEqual(requestContextEngine.resolveCatalogCategories('getDictionaryBook', '', {}), []);
 });

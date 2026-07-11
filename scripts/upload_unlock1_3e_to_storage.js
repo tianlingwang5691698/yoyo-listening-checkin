@@ -5,7 +5,7 @@ const crypto = require('crypto');
 const https = require('https');
 const path = require('path');
 
-const appConfig = require('../data/app-config');
+const appConfig = require('../app-config');
 
 let cloudbase;
 try {

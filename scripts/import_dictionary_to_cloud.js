@@ -3,7 +3,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const appConfig = require('../data/app-config');
+const appConfig = require('../app-config');
 
 let cloudbase;
 try {

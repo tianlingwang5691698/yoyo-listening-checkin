@@ -134,6 +134,92 @@ async function recordGrammarWrong(event) {
   return { saved: true, updated: false };
 }
 
+async function addPracticeWrongQuestion(event) {
+  const payload = (event && event.payload) || {};
+  const sourceType = String(payload.type || '').trim();
+  const sourceQuestion = payload.question || {};
+  const questionId = String(payload.questionId || sourceQuestion._id || '').trim();
+  if (!['reading', 'grammar'].includes(sourceType) || !questionId || !sourceQuestion.prompt) {
+    return { saved: false, reason: 'missing-wrong-question' };
+  }
+  const { ctx } = await study.prepareRequestContext(Object.assign({}, event, {
+    action: 'addPracticeWrongQuestion'
+  }));
+  if (!study.isStudyWriteAllowed(ctx)) {
+    return { saved: false, reason: 'preview-role' };
+  }
+  const now = new Date().toISOString();
+  const baseScope = {
+    familyId: ctx.family.familyId,
+    childId: ctx.child.childId,
+    questionId
+  };
+  const existed = await dbAdapter.collection(WRONG_COLLECTION).where(baseScope).limit(10).get();
+  const current = ((existed && existed.data) || []).find((item) => (
+    sourceType === 'grammar'
+      ? !item.sourceType || item.sourceType === 'grammar'
+      : item.sourceType === sourceType
+  ));
+  const question = {
+    _id: questionId,
+    number: sourceQuestion.number || '',
+    prompt: sourceQuestion.prompt || '',
+    options: sourceQuestion.options || {},
+    answer: sourceQuestion.answer || '',
+    selectedAnswer: sourceQuestion.selectedAnswer || '',
+    analysis: sourceQuestion.analysis || '',
+    correct: sourceQuestion.correct === true
+  };
+  const data = Object.assign({}, baseScope, {
+    userId: ctx.user.userId,
+    sourceType,
+    sourceTargetId: String(payload.targetId || ''),
+    sourceTitle: String(payload.title || ''),
+    sourceMeta: String(payload.meta || ''),
+    question,
+    selectedAnswer: question.selectedAnswer,
+    answer: question.answer,
+    mastered: false,
+    addedAt: now,
+    wrongAt: now,
+    updatedAt: now
+  });
+  if (current && current._id) {
+    await dbAdapter.collection(WRONG_COLLECTION).doc(current._id).update({ data });
+    return { saved: true, updated: true, item: Object.assign({}, current, data) };
+  }
+  const created = await dbAdapter.collection(WRONG_COLLECTION).add({
+    data: Object.assign({}, data, { createdAt: now })
+  });
+  return {
+    saved: true,
+    updated: false,
+    item: Object.assign({}, data, { _id: created && created._id ? created._id : '' })
+  };
+}
+
+async function getPracticeWrongQuestions(event) {
+  const payload = (event && event.payload) || {};
+  const sourceType = String(payload.type || '').trim();
+  const { ctx } = await study.prepareRequestContext(Object.assign({}, event, {
+    action: 'getPracticeWrongQuestions'
+  }));
+  const result = await dbAdapter.collection(WRONG_COLLECTION)
+    .where({
+      familyId: ctx.family.familyId,
+      childId: ctx.child.childId,
+      mastered: false
+    })
+    .limit(500)
+    .get();
+  const items = ((result && result.data) || []).filter((item) => (
+    sourceType === 'grammar'
+      ? !item.sourceType || item.sourceType === 'grammar'
+      : item.sourceType === sourceType
+  )).sort((left, right) => String(right.addedAt || right.wrongAt || '').localeCompare(String(left.addedAt || left.wrongAt || '')));
+  return { type: sourceType, items };
+}
+
 async function getGrammarWrongBook(event) {
   const { ctx } = await study.prepareRequestContext(Object.assign({}, event, {
     action: 'getGrammarWrongBook'
@@ -147,7 +233,7 @@ async function getGrammarWrongBook(event) {
     .orderBy('wrongAt', 'desc')
     .limit(500)
     .get();
-  const questions = (result && result.data) || [];
+  const questions = ((result && result.data) || []).filter((item) => item.sourceType !== 'reading');
   const groups = {};
   questions.forEach((item) => {
     const categoryId = item.categoryId || 'unknown';
@@ -186,6 +272,58 @@ async function getGrammarWrongBook(event) {
   };
 }
 
+function normalizeProgressQuestion(question) {
+  const source = question || {};
+  const explanation = source.explanation && typeof source.explanation === 'object'
+    ? {
+      answer: source.explanation.answer || '',
+      topic: source.explanation.topic || '',
+      explanation: source.explanation.explanation || '',
+      elimination: source.explanation.elimination || '',
+      source: source.explanation.source || ''
+    }
+    : null;
+  return {
+    _id: String(source._id || ''),
+    number: source.number || 0,
+    selectedAnswer: String(source.selectedAnswer || '').trim().toUpperCase(),
+    answer: String(source.answer || '').trim().toUpperCase(),
+    isCorrect: source.isCorrect === true,
+    explanation
+  };
+}
+
+function mergeProgressQuestions(base, incoming) {
+  const map = {};
+  (base || []).concat(incoming || []).forEach((question) => {
+    const normalized = normalizeProgressQuestion(question);
+    if (normalized._id) map[normalized._id] = normalized;
+  });
+  return Object.values(map).slice(0, 500);
+}
+
+async function recoverGrammarProgressQuestions(ctx, topicId) {
+  try {
+    const plainTopicId = String(topicId || '').replace(/^(em1|em2):/, '');
+    const result = await dbAdapter.collection('studyCompletedItems')
+      .where({
+        familyId: ctx.family.familyId,
+        childId: ctx.child.childId
+      })
+      .limit(300)
+      .get();
+    const records = ((result && result.data) || []).filter((item) => (
+      item.type === 'grammar'
+      && [topicId, plainTopicId].includes(String(item.topicId || item.targetId || ''))
+    )).sort((left, right) => String(left.updatedAt || left.date || '').localeCompare(String(right.updatedAt || right.date || '')));
+    return records.reduce((answers, item) => (
+      mergeProgressQuestions(answers, item.latestAttempt && item.latestAttempt.questions)
+    ), []);
+  } catch (error) {
+    return [];
+  }
+}
+
 async function getGrammarProgress(event) {
   const payload = (event && event.payload) || {};
   const topicId = String(payload.topicId || '').trim();
@@ -204,9 +342,18 @@ async function getGrammarProgress(event) {
     .limit(1)
     .get();
   const item = result && result.data && result.data[0];
+  let answeredQuestions = mergeProgressQuestions([], (item && item.answeredQuestions) || []);
+  const nextIndex = Math.max(0, Number((item && item.nextIndex) || 0));
+  if (answeredQuestions.length < nextIndex) {
+    answeredQuestions = mergeProgressQuestions(
+      await recoverGrammarProgressQuestions(ctx, topicId),
+      answeredQuestions
+    );
+  }
   return {
     topicId,
-    nextIndex: Math.max(0, Number((item && item.nextIndex) || 0)),
+    nextIndex,
+    answeredQuestions,
     updatedAt: (item && item.updatedAt) || ''
   };
 }
@@ -215,6 +362,9 @@ async function recordGrammarProgress(event) {
   const payload = (event && event.payload) || {};
   const topicId = String(payload.topicId || '').trim();
   const nextIndex = Math.max(0, Number(payload.nextIndex || 0));
+  const answeredQuestions = Array.isArray(payload.answeredQuestions)
+    ? payload.answeredQuestions.map(normalizeProgressQuestion).filter((question) => question._id)
+    : [];
   if (!topicId) {
     return { saved: false };
   }
@@ -235,6 +385,7 @@ async function recordGrammarProgress(event) {
   const data = Object.assign({}, scope, {
     userId: ctx.user.userId,
     nextIndex: Math.max(nextIndex, Number((current && current.nextIndex) || 0)),
+    answeredQuestions: mergeProgressQuestions((current && current.answeredQuestions) || [], answeredQuestions),
     updatedAt: now
   });
   if (current && current._id) {
@@ -350,13 +501,13 @@ async function getCachedExplanation(questionId) {
       source: item.source || 'cache'
     } : null;
   } catch (error) {
-    return null;
+    throw new Error(`grammar-explain-cache-read-failed:${error && error.message ? error.message : error}`);
   }
 }
 
 async function saveExplanation(question, explanation, model) {
   if (!question._id || !explanation || !explanation.explanation) {
-    return;
+    return false;
   }
   const now = new Date().toISOString();
   const data = {
@@ -378,8 +529,10 @@ async function saveExplanation(question, explanation, model) {
     } else {
       await dbAdapter.collection(EXPLANATION_COLLECTION).add({ data: Object.assign({}, data, { createdAt: now }) });
     }
+    return true;
   } catch (error) {
-    // Explanation cache is optional.
+    console.error('[grammar-explain] save failed', question._id, error && error.message ? error.message : error);
+    return false;
   }
 }
 
@@ -387,14 +540,18 @@ async function explainGrammarQuestion(event) {
   const payload = (event && event.payload) || {};
   const question = payload.question || event.question || {};
   const force = Boolean(payload.force);
+  const cacheOnly = Boolean(payload.cacheOnly);
   if (!question._id) {
     return { explanation: null, source: 'skipped-no-question' };
   }
   if (!force) {
     const cached = await getCachedExplanation(question._id);
     if (cached) {
-      return { explanation: cached, source: 'cache' };
+      return { explanation: cached, source: 'cache', cached: true };
     }
+  }
+  if (cacheOnly) {
+    return { explanation: null, source: 'cache-miss', cached: false, cacheMiss: true };
   }
   const endpoint = process.env.GRAMMAR_EXPLAIN_ENDPOINT || process.env.READING_STUDY_ENDPOINT || process.env.SPEAKING_SCORE_ENDPOINT || '';
   const apiKey = process.env.GRAMMAR_EXPLAIN_API_KEY || process.env.READING_STUDY_API_KEY || process.env.SPEAKING_SCORE_API_KEY || '';
@@ -438,13 +595,19 @@ async function explainGrammarQuestion(event) {
       elimination: parsed.elimination || '',
       source: `model:${model}`
     };
-    await saveExplanation(question, explanation, model);
+    const saved = await saveExplanation(question, explanation, model);
+    if (!saved) throw new Error('grammar-explain-save-failed');
     return {
       explanation,
-      source: `model:${model}`
+      source: `model:${model}`,
+      cached: false,
+      persisted: true
     };
   } catch (error) {
     console.error('[grammar-explain] failed', error && error.message ? error.message : error);
+    if (String(error && error.message || '').includes('grammar-explain-save-failed')) {
+      throw error;
+    }
     return { explanation: fallbackExplanation(question, error.message), source: 'fallback', error: error.message };
   }
 }
@@ -453,6 +616,8 @@ module.exports = {
   getGrammarHome,
   getGrammarTopic,
   recordGrammarWrong,
+  addPracticeWrongQuestion,
+  getPracticeWrongQuestions,
   getGrammarWrongBook,
   getGrammarProgress,
   recordGrammarProgress,

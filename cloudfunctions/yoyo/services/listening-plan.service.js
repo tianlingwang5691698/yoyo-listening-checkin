@@ -51,8 +51,11 @@ async function getListeningMaterialDetail(event) {
   const payload = (event && event.payload) || {};
   const category = String(payload.category || '').trim();
   const levelId = listeningPlanEngine.normalizeLevelId(payload.levelId || 'A1');
-  const tasks = await study.resolveStandaloneCategoryTasks(category, ctx.child.childId, today);
-  const activePlan = decorateActivePlan(await study.getActiveListeningPlan(ctx));
+  const [tasks, activePlanRecord] = await Promise.all([
+    study.resolveStandaloneCategoryTasks(category, ctx.child.childId, today),
+    study.getActiveListeningPlan(ctx)
+  ]);
+  const activePlan = decorateActivePlan(activePlanRecord, { summaryOnly: true });
   const selectedMaterial = getPlanMaterial(activePlan, category);
   return {
     currentMember: ctx.member,

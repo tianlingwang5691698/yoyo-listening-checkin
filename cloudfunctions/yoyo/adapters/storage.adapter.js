@@ -1,4 +1,3 @@
-const CloudBaseManager = require('@cloudbase/manager-node');
 const https = require('https');
 const fs = require('fs');
 const { CLOUD_ASSET_BASE_URL, CLOUD_BUCKET } = require('../lib/constants');
@@ -41,6 +40,7 @@ function getStorageManager() {
   if (!envId || !secretId || !secretKey) {
     return null;
   }
+  const CloudBaseManager = require('@cloudbase/manager-node');
   storageManager = new CloudBaseManager({
     secretId,
     secretKey,
