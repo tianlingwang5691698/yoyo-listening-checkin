@@ -962,6 +962,86 @@
   font-size: 32rpx;
   font-weight: 600;
   box-shadow: 0 20rpx 42rpx rgba(86, 139, 151, 0.2);
+  animation: vocabCompletePop 0.88s cubic-bezier(0.2, 1.35, 0.28, 1) both;
+}
+
+.celebrate-burst {
+  position: absolute;
+  top: 118rpx;
+  left: 50%;
+  z-index: 1;
+  width: 260rpx;
+  height: 260rpx;
+  transform: translateX(-50%);
+  pointer-events: none;
+  animation: vocabBurstFade 1.5s ease-out both;
+}
+
+.celebrate-burst text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8rpx;
+  height: 82rpx;
+  border-radius: 999rpx;
+  background: rgba(239, 178, 103, 0.58);
+  transform-origin: 50% 100%;
+}
+
+.celebrate-burst text:nth-child(1) { transform: translate(-50%, -100%) rotate(0deg); }
+.celebrate-burst text:nth-child(2) { transform: translate(-50%, -100%) rotate(60deg); }
+.celebrate-burst text:nth-child(3) { transform: translate(-50%, -100%) rotate(120deg); }
+.celebrate-burst text:nth-child(4) { transform: translate(-50%, -100%) rotate(180deg); }
+.celebrate-burst text:nth-child(5) { transform: translate(-50%, -100%) rotate(240deg); }
+.celebrate-burst text:nth-child(6) { transform: translate(-50%, -100%) rotate(300deg); }
+
+.confetti-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.confetti {
+  position: absolute;
+  top: -36rpx;
+  width: 12rpx;
+  height: 30rpx;
+  border-radius: 4rpx;
+  opacity: 0;
+  animation: vocabConfettiFall 2.6s ease-in-out infinite;
+}
+
+.confetti-1 { left: 8%; background: #8db7d4; animation-delay: 0s; }
+.confetti-2 { left: 16%; background: #efb267; animation-delay: 0.18s; }
+.confetti-3 { left: 25%; background: #86aaa1; animation-delay: 0.34s; }
+.confetti-4 { left: 34%; background: #c57d2d; animation-delay: 0.08s; }
+.confetti-5 { left: 43%; background: #8db7d4; animation-delay: 0.5s; }
+.confetti-6 { left: 52%; background: #efb267; animation-delay: 0.26s; }
+.confetti-7 { left: 60%; background: #86aaa1; animation-delay: 0.62s; }
+.confetti-8 { left: 68%; background: #c57d2d; animation-delay: 0.42s; }
+.confetti-9 { left: 76%; background: #8db7d4; animation-delay: 0.12s; }
+.confetti-10 { left: 84%; background: #efb267; animation-delay: 0.56s; }
+.confetti-11 { left: 91%; background: #86aaa1; animation-delay: 0.3s; }
+.confetti-12 { left: 47%; background: #c57d2d; animation-delay: 0.72s; }
+
+@keyframes vocabCompletePop {
+  0% { opacity: 0; transform: scale(0.72); }
+  70% { opacity: 1; transform: scale(1.08); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes vocabBurstFade {
+  0% { opacity: 0; transform: translateX(-50%) scale(0.55) rotate(-12deg); }
+  35% { opacity: 1; }
+  100% { opacity: 0; transform: translateX(-50%) scale(1.28) rotate(8deg); }
+}
+
+@keyframes vocabConfettiFall {
+  0% { opacity: 0; transform: translate3d(0, -20rpx, 0) rotate(0deg); }
+  12%, 82% { opacity: 0.9; }
+  100% { opacity: 0; transform: translate3d(30rpx, 680rpx, 0) rotate(420deg); }
 }
 
 .complete-title {
@@ -2243,6 +2323,8 @@
   border-radius: 8rpx;
   background: #1E1713;
   box-shadow: inset 0 18rpx 0 rgba(184, 149, 98, 0.16);
+  z-index: 2;
+  animation: vocabCompletePop 0.88s cubic-bezier(0.2, 1.35, 0.28, 1) both;
 }
 
 .library-vocab-archive text {
@@ -2270,6 +2352,8 @@
 }
 
 .library-vocab-complete-stamp {
+  position: relative;
+  z-index: 2;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -2282,6 +2366,8 @@
 }
 
 .library-vocab-complete-title {
+  position: relative;
+  z-index: 2;
   margin-top: 28rpx;
   color: var(--lib-vocab-paper);
   font-family: "Songti SC", STSong, serif;
@@ -2290,6 +2376,8 @@
 }
 
 .library-vocab-complete-action {
+  position: relative;
+  z-index: 2;
   display: block;
   width: 260rpx;
   height: 88rpx;

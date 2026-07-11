@@ -258,6 +258,16 @@ function buildPlanSummary(library, settings) {
   };
 }
 
+function buildCompletionRewardKey(data) {
+  const current = data || {};
+  const settings = current.settings || {};
+  const date = current.today || effects.todayKey();
+  const sourceId = current.activeSourceId || 'daily-vocabulary';
+  const newLimit = Number(settings.newLimit || 0);
+  const reviewLimit = Number(settings.reviewLimit || 0);
+  return `flashcards:${date}:${sourceId}:new-${newLimit}:review-${reviewLimit}`;
+}
+
 function buildPhoneticPreview(library) {
   const first = (library || []).find((item) => item && (item.displayPhonetic || item.phoneticBody || item.phonetic));
   if (!first) return '';
@@ -1190,7 +1200,7 @@ Page({
     effects.playComplete({
       voiceKey: 'flashcardComplete',
       voiceDelayMs: 1000,
-      onceKey: `flashcards:${this.data.today || effects.todayKey()}:${this.data.activeSourceId || 'daily-vocabulary'}`
+      onceKey: buildCompletionRewardKey(this.data)
     });
   },
   scheduleAutoSpeakCurrent() {
