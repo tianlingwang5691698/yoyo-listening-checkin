@@ -8,7 +8,7 @@ const LEVEL_STAGE_SNAPSHOT_KEY = 'levelStageSnapshotV1';
 const LESSON_TASK_SNAPSHOT_KEY = 'lessonTaskSnapshotV1';
 const ENTRY_POSTER_DISMISSED_KEY = 'homeEntryPosterDismissedV1';
 const TODAY_COMPLETED_CACHE_KEY = 'todayCompletedItemsV1';
-const HOME_DASHBOARD_SNAPSHOT_KEY = 'homeDashboardSnapshotV1';
+const HOME_DASHBOARD_SNAPSHOT_KEY = 'homeDashboardSnapshotV2';
 const MATERIAL_HOME_SNAPSHOT_KEY = 'materialHomeSnapshotV1';
 const LISTENING_PLAN_OVERVIEW_SNAPSHOT_KEY = 'listeningPlanOverviewSnapshotV2';
 const PROFILE_SNAPSHOT_KEY = 'profileHomeSnapshotV1';
@@ -800,7 +800,7 @@ Page({
     if (!options.skipCache && cached && cached.child) {
       this.applyDashboard(cached);
     }
-    const data = await store.getDashboard({ view: 'home', forceRefresh: true }, (fresh) => {
+    const data = await store.getDashboard({ view: 'home', forceRefresh: true, requestNonce: Date.now() }, (fresh) => {
       const groups = this.applyDashboard(fresh);
       if (options.perf || this.homePerf) {
         (options.perf || this.homePerf).mark('cloudRefresh', {

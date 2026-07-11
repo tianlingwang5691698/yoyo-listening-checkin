@@ -47,3 +47,9 @@ test('成长页后台统计强制读取云端权威值，避免旧缓存覆盖�
   assert.equal(catalog['zh-CN'].syncingDuration, '同步中');
   assert.equal(catalog.en.syncingDuration, 'Syncing');
 });
+
+test('首页快照首显后使用唯一请求刷新当前计划', () => {
+  const source = fs.readFileSync(path.join(root, 'pages/home/index.js'), 'utf8');
+  assert.match(source, /HOME_DASHBOARD_SNAPSHOT_KEY = 'homeDashboardSnapshotV2'/);
+  assert.match(source, /getDashboard\(\{ view: 'home', forceRefresh: true, requestNonce: Date\.now\(\) \}/);
+});
