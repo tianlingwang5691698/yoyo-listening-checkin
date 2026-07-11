@@ -1,0 +1,528 @@
+{
+  "model": "medium",
+  "language": "en",
+  "text": "1.3 1 These agricultural products are already going abroad. 2 We grow many kinds of tea on this plantation. 3 The police regularly find illegal imports. 4 The company produced more crops overseas last year. 5 There's often a big difference between the taste of local food and food that's been imported. 6 Flying the crops causes air pollution. 7 The products pass through customs easily. 8 I want to know why these roots cost more.",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 1940,
+      "text": "1.3",
+      "words": [
+        {
+          "word": "1",
+          "start": 0.0,
+          "end": 0.54
+        },
+        {
+          "word": ".3",
+          "start": 0.54,
+          "end": 1.94
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 1940,
+      "endMs": 3040,
+      "text": "1",
+      "words": [
+        {
+          "word": "1",
+          "start": 1.94,
+          "end": 3.04
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 4000,
+      "endMs": 8020,
+      "text": "These agricultural products are already going abroad.",
+      "words": [
+        {
+          "word": "These",
+          "start": 4.0,
+          "end": 4.62
+        },
+        {
+          "word": "agricultural",
+          "start": 4.62,
+          "end": 5.62
+        },
+        {
+          "word": "products",
+          "start": 5.62,
+          "end": 6.2
+        },
+        {
+          "word": "are",
+          "start": 6.2,
+          "end": 6.58
+        },
+        {
+          "word": "already",
+          "start": 6.58,
+          "end": 7.02
+        },
+        {
+          "word": "going",
+          "start": 7.02,
+          "end": 7.4
+        },
+        {
+          "word": "abroad.",
+          "start": 7.4,
+          "end": 8.02
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 9260,
+      "endMs": 9920,
+      "text": "2",
+      "words": [
+        {
+          "word": "2",
+          "start": 9.26,
+          "end": 9.92
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 11000,
+      "endMs": 13940,
+      "text": "We grow many kinds of tea on this plantation.",
+      "words": [
+        {
+          "word": "We",
+          "start": 10.57,
+          "end": 11.18
+        },
+        {
+          "word": "grow",
+          "start": 11.18,
+          "end": 11.5
+        },
+        {
+          "word": "many",
+          "start": 11.5,
+          "end": 11.9
+        },
+        {
+          "word": "kinds",
+          "start": 11.9,
+          "end": 12.3
+        },
+        {
+          "word": "of",
+          "start": 12.3,
+          "end": 12.54
+        },
+        {
+          "word": "tea",
+          "start": 12.54,
+          "end": 12.76
+        },
+        {
+          "word": "on",
+          "start": 12.76,
+          "end": 13.04
+        },
+        {
+          "word": "this",
+          "start": 13.04,
+          "end": 13.3
+        },
+        {
+          "word": "plantation.",
+          "start": 13.3,
+          "end": 13.94
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "startMs": 15220,
+      "endMs": 16060,
+      "text": "3",
+      "words": [
+        {
+          "word": "3",
+          "start": 15.22,
+          "end": 16.06
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "startMs": 17000,
+      "endMs": 20160,
+      "text": "The police regularly find illegal imports.",
+      "words": [
+        {
+          "word": "The",
+          "start": 16.55,
+          "end": 17.16
+        },
+        {
+          "word": "police",
+          "start": 17.16,
+          "end": 17.64
+        },
+        {
+          "word": "regularly",
+          "start": 17.64,
+          "end": 18.42
+        },
+        {
+          "word": "find",
+          "start": 18.42,
+          "end": 18.86
+        },
+        {
+          "word": "illegal",
+          "start": 18.86,
+          "end": 19.54
+        },
+        {
+          "word": "imports.",
+          "start": 19.54,
+          "end": 20.16
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "startMs": 21560,
+      "endMs": 22440,
+      "text": "4",
+      "words": [
+        {
+          "word": "4",
+          "start": 21.56,
+          "end": 22.44
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "startMs": 23000,
+      "endMs": 27280,
+      "text": "The company produced more crops overseas last year.",
+      "words": [
+        {
+          "word": "The",
+          "start": 23.0,
+          "end": 23.7
+        },
+        {
+          "word": "company",
+          "start": 23.7,
+          "end": 24.14
+        },
+        {
+          "word": "produced",
+          "start": 24.14,
+          "end": 24.74
+        },
+        {
+          "word": "more",
+          "start": 24.74,
+          "end": 25.2
+        },
+        {
+          "word": "crops",
+          "start": 25.2,
+          "end": 25.66
+        },
+        {
+          "word": "overseas",
+          "start": 25.66,
+          "end": 26.36
+        },
+        {
+          "word": "last",
+          "start": 26.36,
+          "end": 26.88
+        },
+        {
+          "word": "year.",
+          "start": 26.88,
+          "end": 27.28
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "startMs": 28400,
+      "endMs": 29280,
+      "text": "5",
+      "words": [
+        {
+          "word": "5",
+          "start": 28.4,
+          "end": 29.28
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "startMs": 30280,
+      "endMs": 35900,
+      "text": "There's often a big difference between the taste of local food and food that's been imported.",
+      "words": [
+        {
+          "word": "There's",
+          "start": 30.139999999999997,
+          "end": 30.58
+        },
+        {
+          "word": "often",
+          "start": 30.58,
+          "end": 30.88
+        },
+        {
+          "word": "a",
+          "start": 30.88,
+          "end": 31.12
+        },
+        {
+          "word": "big",
+          "start": 31.12,
+          "end": 31.36
+        },
+        {
+          "word": "difference",
+          "start": 31.36,
+          "end": 31.94
+        },
+        {
+          "word": "between",
+          "start": 31.94,
+          "end": 32.4
+        },
+        {
+          "word": "the",
+          "start": 32.4,
+          "end": 32.7
+        },
+        {
+          "word": "taste",
+          "start": 32.7,
+          "end": 32.98
+        },
+        {
+          "word": "of",
+          "start": 32.98,
+          "end": 33.28
+        },
+        {
+          "word": "local",
+          "start": 33.28,
+          "end": 33.66
+        },
+        {
+          "word": "food",
+          "start": 33.66,
+          "end": 34.02
+        },
+        {
+          "word": "and",
+          "start": 34.02,
+          "end": 34.52
+        },
+        {
+          "word": "food",
+          "start": 34.52,
+          "end": 34.74
+        },
+        {
+          "word": "that's",
+          "start": 34.74,
+          "end": 35.04
+        },
+        {
+          "word": "been",
+          "start": 35.04,
+          "end": 35.34
+        },
+        {
+          "word": "imported.",
+          "start": 35.34,
+          "end": 35.9
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "startMs": 37540,
+      "endMs": 38420,
+      "text": "6",
+      "words": [
+        {
+          "word": "6",
+          "start": 37.54,
+          "end": 38.42
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "startMs": 39280,
+      "endMs": 42100,
+      "text": "Flying the crops causes air pollution.",
+      "words": [
+        {
+          "word": "Flying",
+          "start": 39.28,
+          "end": 39.82
+        },
+        {
+          "word": "the",
+          "start": 39.82,
+          "end": 40.18
+        },
+        {
+          "word": "crops",
+          "start": 40.18,
+          "end": 40.6
+        },
+        {
+          "word": "causes",
+          "start": 40.6,
+          "end": 41.2
+        },
+        {
+          "word": "air",
+          "start": 41.2,
+          "end": 41.56
+        },
+        {
+          "word": "pollution.",
+          "start": 41.56,
+          "end": 42.1
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "startMs": 43300,
+      "endMs": 44100,
+      "text": "7",
+      "words": [
+        {
+          "word": "7",
+          "start": 43.3,
+          "end": 44.1
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "startMs": 45280,
+      "endMs": 47960,
+      "text": "The products pass through customs easily.",
+      "words": [
+        {
+          "word": "The",
+          "start": 45.22,
+          "end": 45.66
+        },
+        {
+          "word": "products",
+          "start": 45.66,
+          "end": 46.14
+        },
+        {
+          "word": "pass",
+          "start": 46.14,
+          "end": 46.62
+        },
+        {
+          "word": "through",
+          "start": 46.62,
+          "end": 46.88
+        },
+        {
+          "word": "customs",
+          "start": 46.88,
+          "end": 47.36
+        },
+        {
+          "word": "easily.",
+          "start": 47.36,
+          "end": 47.96
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "startMs": 49100,
+      "endMs": 49880,
+      "text": "8",
+      "words": [
+        {
+          "word": "8",
+          "start": 49.1,
+          "end": 49.88
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "startMs": 49880,
+      "endMs": 53700,
+      "text": "I want to know why these roots cost more.",
+      "words": [
+        {
+          "word": "I",
+          "start": 49.88,
+          "end": 51.14
+        },
+        {
+          "word": "want",
+          "start": 51.14,
+          "end": 51.38
+        },
+        {
+          "word": "to",
+          "start": 51.38,
+          "end": 51.64
+        },
+        {
+          "word": "know",
+          "start": 51.64,
+          "end": 51.82
+        },
+        {
+          "word": "why",
+          "start": 51.82,
+          "end": 52.16
+        },
+        {
+          "word": "these",
+          "start": 52.16,
+          "end": 52.54
+        },
+        {
+          "word": "roots",
+          "start": 52.54,
+          "end": 52.84
+        },
+        {
+          "word": "cost",
+          "start": 52.84,
+          "end": 53.28
+        },
+        {
+          "word": "more.",
+          "start": 53.28,
+          "end": 53.7
+        }
+      ]
+    }
+  ]
+}

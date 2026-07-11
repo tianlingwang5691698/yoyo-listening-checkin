@@ -1,0 +1,37 @@
+{
+  "verifiedAt": "2026-07-11T00:36:00+08:00",
+  "display": {
+    "levelId": "A2",
+    "title": "Unlock 2 听口 第三版",
+    "trackCount": 63,
+    "verifiedInWechatDevtools": true
+  },
+  "performanceTargetsMs": {
+    "cachedFirstScreen": 300,
+    "coldCloudRefresh": 1200
+  },
+  "measurementsMs": {
+    "a2SnapshotRead": 1,
+    "levelComponentCachedPageReady": 34,
+    "levelComponentCloudRefresh": 641,
+    "materialHomeCachedPageReady": 4,
+    "materialHomeCloudRefresh": 585,
+    "staticManifestRefresh": 2
+  },
+  "performancePassed": true,
+  "overviewContract": {
+    "staticManifestOnly": true,
+    "cloudDirectoryScan": false,
+    "containsTranscript": false,
+    "containsTaskDetails": false
+  },
+  "upload": {
+    "audioUploaded": 63,
+    "transcriptUploaded": 1,
+    "headVerified": 64,
+    "transcriptHttpStatus": 200,
+    "oldUnlock2BundleUnchanged": true,
+    "oldUnlock2TrackCount": 43,
+    "oldUnlock2Sha1": "bd1b3c0eb617492dcac8f065e7f0551a2c7c3afd"
+  }
+}

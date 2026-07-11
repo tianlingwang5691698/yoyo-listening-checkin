@@ -1,0 +1,734 @@
+{
+  "model": "small",
+  "language": "en",
+  "text": "3.6 1 When people were asked difficult questions in the past Scientists believe they tried to think of the answer to the question However, because of modern technology the first thing people think about now is how to find the answer 2 For example, they think about what they might put into Google, but in the past they thought about the question itself 3 It seems that people now forget facts Especially if they know the information will be saved in a file On the other hand an advantage is they remember the location of the fact in other words Where to find it? 4 In conclusion, it seems that computers are not making us stupid, but they are making us lazy",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 1320,
+      "text": "3.6",
+      "words": [
+        {
+          "word": "3",
+          "start": 0.0,
+          "end": 0.52
+        },
+        {
+          "word": ".6",
+          "start": 0.52,
+          "end": 1.32
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 3140,
+      "endMs": 3840,
+      "text": "1",
+      "words": [
+        {
+          "word": "1",
+          "start": 3.1399999999999997,
+          "end": 3.84
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 4640,
+      "endMs": 8260,
+      "text": "When people were asked difficult questions in the past",
+      "words": [
+        {
+          "word": "When",
+          "start": 4.64,
+          "end": 5.34
+        },
+        {
+          "word": "people",
+          "start": 5.34,
+          "end": 5.7
+        },
+        {
+          "word": "were",
+          "start": 5.7,
+          "end": 5.98
+        },
+        {
+          "word": "asked",
+          "start": 5.98,
+          "end": 6.36
+        },
+        {
+          "word": "difficult",
+          "start": 6.36,
+          "end": 6.92
+        },
+        {
+          "word": "questions",
+          "start": 6.92,
+          "end": 7.48
+        },
+        {
+          "word": "in",
+          "start": 7.48,
+          "end": 7.74
+        },
+        {
+          "word": "the",
+          "start": 7.74,
+          "end": 7.82
+        },
+        {
+          "word": "past",
+          "start": 7.82,
+          "end": 8.26
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 9160,
+      "endMs": 12380,
+      "text": "Scientists believe they tried to think of the answer to the question",
+      "words": [
+        {
+          "word": "Scientists",
+          "start": 8.85,
+          "end": 9.2
+        },
+        {
+          "word": "believe",
+          "start": 9.2,
+          "end": 10.0
+        },
+        {
+          "word": "they",
+          "start": 10.0,
+          "end": 10.28
+        },
+        {
+          "word": "tried",
+          "start": 10.28,
+          "end": 10.58
+        },
+        {
+          "word": "to",
+          "start": 10.58,
+          "end": 10.78
+        },
+        {
+          "word": "think",
+          "start": 10.78,
+          "end": 10.96
+        },
+        {
+          "word": "of",
+          "start": 10.96,
+          "end": 11.08
+        },
+        {
+          "word": "the",
+          "start": 11.08,
+          "end": 11.2
+        },
+        {
+          "word": "answer",
+          "start": 11.2,
+          "end": 11.54
+        },
+        {
+          "word": "to",
+          "start": 11.54,
+          "end": 11.8
+        },
+        {
+          "word": "the",
+          "start": 11.8,
+          "end": 11.9
+        },
+        {
+          "word": "question",
+          "start": 11.9,
+          "end": 12.38
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 13200,
+      "endMs": 20200,
+      "text": "However, because of modern technology the first thing people think about now is how to find the answer",
+      "words": [
+        {
+          "word": "However,",
+          "start": 13.200000000000001,
+          "end": 13.68
+        },
+        {
+          "word": "because",
+          "start": 13.98,
+          "end": 14.4
+        },
+        {
+          "word": "of",
+          "start": 14.4,
+          "end": 14.64
+        },
+        {
+          "word": "modern",
+          "start": 14.64,
+          "end": 15.04
+        },
+        {
+          "word": "technology",
+          "start": 15.04,
+          "end": 15.82
+        },
+        {
+          "word": "the",
+          "start": 15.82,
+          "end": 16.52
+        },
+        {
+          "word": "first",
+          "start": 16.52,
+          "end": 16.74
+        },
+        {
+          "word": "thing",
+          "start": 16.74,
+          "end": 17.0
+        },
+        {
+          "word": "people",
+          "start": 17.0,
+          "end": 17.3
+        },
+        {
+          "word": "think",
+          "start": 17.3,
+          "end": 17.54
+        },
+        {
+          "word": "about",
+          "start": 17.54,
+          "end": 17.8
+        },
+        {
+          "word": "now",
+          "start": 17.8,
+          "end": 18.28
+        },
+        {
+          "word": "is",
+          "start": 18.28,
+          "end": 18.84
+        },
+        {
+          "word": "how",
+          "start": 18.84,
+          "end": 19.08
+        },
+        {
+          "word": "to",
+          "start": 19.08,
+          "end": 19.2
+        },
+        {
+          "word": "find",
+          "start": 19.2,
+          "end": 19.58
+        },
+        {
+          "word": "the",
+          "start": 19.58,
+          "end": 19.78
+        },
+        {
+          "word": "answer",
+          "start": 19.78,
+          "end": 20.2
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "startMs": 21960,
+      "endMs": 22660,
+      "text": "2",
+      "words": [
+        {
+          "word": "2",
+          "start": 21.96,
+          "end": 22.66
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "startMs": 23540,
+      "endMs": 31440,
+      "text": "For example, they think about what they might put into Google, but in the past they thought about the question itself",
+      "words": [
+        {
+          "word": "For",
+          "start": 23.54,
+          "end": 23.98
+        },
+        {
+          "word": "example,",
+          "start": 23.98,
+          "end": 24.48
+        },
+        {
+          "word": "they",
+          "start": 25.04,
+          "end": 25.24
+        },
+        {
+          "word": "think",
+          "start": 25.24,
+          "end": 25.56
+        },
+        {
+          "word": "about",
+          "start": 25.56,
+          "end": 25.82
+        },
+        {
+          "word": "what",
+          "start": 25.82,
+          "end": 26.08
+        },
+        {
+          "word": "they",
+          "start": 26.08,
+          "end": 26.32
+        },
+        {
+          "word": "might",
+          "start": 26.32,
+          "end": 26.52
+        },
+        {
+          "word": "put",
+          "start": 26.52,
+          "end": 26.82
+        },
+        {
+          "word": "into",
+          "start": 26.82,
+          "end": 27.1
+        },
+        {
+          "word": "Google,",
+          "start": 27.1,
+          "end": 27.46
+        },
+        {
+          "word": "but",
+          "start": 27.98,
+          "end": 28.4
+        },
+        {
+          "word": "in",
+          "start": 28.4,
+          "end": 28.52
+        },
+        {
+          "word": "the",
+          "start": 28.52,
+          "end": 28.62
+        },
+        {
+          "word": "past",
+          "start": 28.62,
+          "end": 29.12
+        },
+        {
+          "word": "they",
+          "start": 29.12,
+          "end": 29.64
+        },
+        {
+          "word": "thought",
+          "start": 29.64,
+          "end": 29.92
+        },
+        {
+          "word": "about",
+          "start": 29.92,
+          "end": 30.18
+        },
+        {
+          "word": "the",
+          "start": 30.18,
+          "end": 30.38
+        },
+        {
+          "word": "question",
+          "start": 30.38,
+          "end": 30.86
+        },
+        {
+          "word": "itself",
+          "start": 30.86,
+          "end": 31.44
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "startMs": 33500,
+      "endMs": 34180,
+      "text": "3",
+      "words": [
+        {
+          "word": "3",
+          "start": 33.5,
+          "end": 34.18
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "startMs": 34940,
+      "endMs": 37860,
+      "text": "It seems that people now forget facts",
+      "words": [
+        {
+          "word": "It",
+          "start": 34.94,
+          "end": 35.52
+        },
+        {
+          "word": "seems",
+          "start": 35.52,
+          "end": 35.82
+        },
+        {
+          "word": "that",
+          "start": 35.82,
+          "end": 36.06
+        },
+        {
+          "word": "people",
+          "start": 36.06,
+          "end": 36.32
+        },
+        {
+          "word": "now",
+          "start": 36.32,
+          "end": 36.68
+        },
+        {
+          "word": "forget",
+          "start": 36.68,
+          "end": 37.12
+        },
+        {
+          "word": "facts",
+          "start": 37.12,
+          "end": 37.86
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "startMs": 38580,
+      "endMs": 42200,
+      "text": "Especially if they know the information will be saved in a file",
+      "words": [
+        {
+          "word": "Especially",
+          "start": 38.42,
+          "end": 38.76
+        },
+        {
+          "word": "if",
+          "start": 38.76,
+          "end": 39.28
+        },
+        {
+          "word": "they",
+          "start": 39.28,
+          "end": 39.42
+        },
+        {
+          "word": "know",
+          "start": 39.42,
+          "end": 39.74
+        },
+        {
+          "word": "the",
+          "start": 39.74,
+          "end": 39.9
+        },
+        {
+          "word": "information",
+          "start": 39.9,
+          "end": 40.48
+        },
+        {
+          "word": "will",
+          "start": 40.48,
+          "end": 40.8
+        },
+        {
+          "word": "be",
+          "start": 40.8,
+          "end": 40.98
+        },
+        {
+          "word": "saved",
+          "start": 40.98,
+          "end": 41.46
+        },
+        {
+          "word": "in",
+          "start": 41.46,
+          "end": 41.72
+        },
+        {
+          "word": "a",
+          "start": 41.72,
+          "end": 41.8
+        },
+        {
+          "word": "file",
+          "start": 41.8,
+          "end": 42.2
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "startMs": 42200,
+      "endMs": 49380,
+      "text": "On the other hand an advantage is they remember the location of the fact in other words",
+      "words": [
+        {
+          "word": "On",
+          "start": 42.2,
+          "end": 43.3
+        },
+        {
+          "word": "the",
+          "start": 43.3,
+          "end": 43.44
+        },
+        {
+          "word": "other",
+          "start": 43.44,
+          "end": 43.62
+        },
+        {
+          "word": "hand",
+          "start": 43.62,
+          "end": 44.08
+        },
+        {
+          "word": "an",
+          "start": 44.08,
+          "end": 44.7
+        },
+        {
+          "word": "advantage",
+          "start": 44.7,
+          "end": 45.2
+        },
+        {
+          "word": "is",
+          "start": 45.2,
+          "end": 45.68
+        },
+        {
+          "word": "they",
+          "start": 45.68,
+          "end": 45.84
+        },
+        {
+          "word": "remember",
+          "start": 45.84,
+          "end": 46.22
+        },
+        {
+          "word": "the",
+          "start": 46.22,
+          "end": 46.58
+        },
+        {
+          "word": "location",
+          "start": 46.58,
+          "end": 47.14
+        },
+        {
+          "word": "of",
+          "start": 47.14,
+          "end": 47.48
+        },
+        {
+          "word": "the",
+          "start": 47.48,
+          "end": 47.6
+        },
+        {
+          "word": "fact",
+          "start": 47.6,
+          "end": 48.0
+        },
+        {
+          "word": "in",
+          "start": 48.0,
+          "end": 48.68
+        },
+        {
+          "word": "other",
+          "start": 48.68,
+          "end": 48.88
+        },
+        {
+          "word": "words",
+          "start": 48.88,
+          "end": 49.38
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "startMs": 49380,
+      "endMs": 51040,
+      "text": "Where to find it?",
+      "words": [
+        {
+          "word": "Where",
+          "start": 49.38,
+          "end": 50.2
+        },
+        {
+          "word": "to",
+          "start": 50.2,
+          "end": 50.48
+        },
+        {
+          "word": "find",
+          "start": 50.48,
+          "end": 50.78
+        },
+        {
+          "word": "it?",
+          "start": 50.78,
+          "end": 51.04
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "startMs": 52660,
+      "endMs": 53460,
+      "text": "4",
+      "words": [
+        {
+          "word": "4",
+          "start": 52.66,
+          "end": 53.46
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "startMs": 54440,
+      "endMs": 62320,
+      "text": "In conclusion, it seems that computers are not making us stupid, but they are making us lazy",
+      "words": [
+        {
+          "word": "In",
+          "start": 54.44,
+          "end": 54.94
+        },
+        {
+          "word": "conclusion,",
+          "start": 54.94,
+          "end": 55.4
+        },
+        {
+          "word": "it",
+          "start": 56.44,
+          "end": 56.52
+        },
+        {
+          "word": "seems",
+          "start": 56.52,
+          "end": 56.82
+        },
+        {
+          "word": "that",
+          "start": 56.82,
+          "end": 57.04
+        },
+        {
+          "word": "computers",
+          "start": 57.04,
+          "end": 57.52
+        },
+        {
+          "word": "are",
+          "start": 57.52,
+          "end": 57.82
+        },
+        {
+          "word": "not",
+          "start": 57.82,
+          "end": 58.08
+        },
+        {
+          "word": "making",
+          "start": 58.08,
+          "end": 58.48
+        },
+        {
+          "word": "us",
+          "start": 58.48,
+          "end": 58.72
+        },
+        {
+          "word": "stupid,",
+          "start": 58.72,
+          "end": 59.26
+        },
+        {
+          "word": "but",
+          "start": 59.74,
+          "end": 60.28
+        },
+        {
+          "word": "they",
+          "start": 60.28,
+          "end": 60.5
+        },
+        {
+          "word": "are",
+          "start": 60.5,
+          "end": 60.98
+        },
+        {
+          "word": "making",
+          "start": 60.98,
+          "end": 61.52
+        },
+        {
+          "word": "us",
+          "start": 61.52,
+          "end": 61.84
+        },
+        {
+          "word": "lazy",
+          "start": 61.84,
+          "end": 62.32
+        }
+      ]
+    }
+  ]
+}

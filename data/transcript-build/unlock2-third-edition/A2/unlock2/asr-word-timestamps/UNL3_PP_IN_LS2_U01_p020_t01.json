@@ -1,0 +1,87 @@
+{
+  "model": "medium",
+  "language": "en",
+  "text": "Unit 1, 1.1 place hot quick up",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 3000,
+      "text": "Unit 1, 1.1",
+      "words": [
+        {
+          "word": "Unit",
+          "start": 0.0,
+          "end": 0.6
+        },
+        {
+          "word": "1,",
+          "start": 0.6,
+          "end": 1.3
+        },
+        {
+          "word": "1",
+          "start": 1.54,
+          "end": 1.88
+        },
+        {
+          "word": ".1",
+          "start": 1.88,
+          "end": 3.0
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 4160,
+      "endMs": 5700,
+      "text": "place",
+      "words": [
+        {
+          "word": "place",
+          "start": 4.16,
+          "end": 5.7
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 7320,
+      "endMs": 8720,
+      "text": "hot",
+      "words": [
+        {
+          "word": "hot",
+          "start": 7.32,
+          "end": 8.72
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 10740,
+      "endMs": 12140,
+      "text": "quick",
+      "words": [
+        {
+          "word": "quick",
+          "start": 10.74,
+          "end": 12.14
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 14000,
+      "endMs": 14740,
+      "text": "up",
+      "words": [
+        {
+          "word": "up",
+          "start": 14.0,
+          "end": 14.74
+        }
+      ]
+    }
+  ]
+}

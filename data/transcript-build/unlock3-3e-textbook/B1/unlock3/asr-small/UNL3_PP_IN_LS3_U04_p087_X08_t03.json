@@ -1,0 +1,708 @@
+{
+  "model": "small",
+  "language": "en",
+  "text": "4.3 1 Anthropology, in a general sense, is the study of humanity. I know that's not very exact. That's why we have many types of anthropology, like linguistic anthropology and social anthropology. 2 Some traditions die out because our way of life changes. 3 Now, due to developments in technology, people spend more time interacting with other people over the Internet. 4 But now we don't have to work so hard. This is because we have modern kitchens and supermarket food. 5 In the United States, at Thanksgiving, which is one of the biggest celebrations, many families go to restaurants because they don't want to spend their holiday working in the kitchen.",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 1300,
+      "text": "4.3",
+      "words": [
+        {
+          "word": "4",
+          "start": 0.0,
+          "end": 0.44
+        },
+        {
+          "word": ".3",
+          "start": 0.44,
+          "end": 1.3
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 2040,
+      "endMs": 2760,
+      "text": "1",
+      "words": [
+        {
+          "word": "1",
+          "start": 2.0399999999999974,
+          "end": 2.76
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 4420,
+      "endMs": 8220,
+      "text": "Anthropology, in a general sense, is the study of humanity.",
+      "words": [
+        {
+          "word": "Anthropology,",
+          "start": 4.419999999999997,
+          "end": 5.14
+        },
+        {
+          "word": "in",
+          "start": 5.32,
+          "end": 5.6
+        },
+        {
+          "word": "a",
+          "start": 5.6,
+          "end": 5.74
+        },
+        {
+          "word": "general",
+          "start": 5.74,
+          "end": 5.98
+        },
+        {
+          "word": "sense,",
+          "start": 5.98,
+          "end": 6.46
+        },
+        {
+          "word": "is",
+          "start": 6.74,
+          "end": 6.94
+        },
+        {
+          "word": "the",
+          "start": 6.94,
+          "end": 7.1
+        },
+        {
+          "word": "study",
+          "start": 7.1,
+          "end": 7.42
+        },
+        {
+          "word": "of",
+          "start": 7.42,
+          "end": 7.64
+        },
+        {
+          "word": "humanity.",
+          "start": 7.64,
+          "end": 8.22
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 9060,
+      "endMs": 10660,
+      "text": "I know that's not very exact.",
+      "words": [
+        {
+          "word": "I",
+          "start": 9.06,
+          "end": 9.28
+        },
+        {
+          "word": "know",
+          "start": 9.28,
+          "end": 9.44
+        },
+        {
+          "word": "that's",
+          "start": 9.44,
+          "end": 9.76
+        },
+        {
+          "word": "not",
+          "start": 9.76,
+          "end": 9.88
+        },
+        {
+          "word": "very",
+          "start": 9.88,
+          "end": 10.18
+        },
+        {
+          "word": "exact.",
+          "start": 10.18,
+          "end": 10.66
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 11160,
+      "endMs": 13500,
+      "text": "That's why we have many types of anthropology,",
+      "words": [
+        {
+          "word": "That's",
+          "start": 11.16,
+          "end": 11.56
+        },
+        {
+          "word": "why",
+          "start": 11.56,
+          "end": 11.74
+        },
+        {
+          "word": "we",
+          "start": 11.74,
+          "end": 11.94
+        },
+        {
+          "word": "have",
+          "start": 11.94,
+          "end": 12.12
+        },
+        {
+          "word": "many",
+          "start": 12.12,
+          "end": 12.36
+        },
+        {
+          "word": "types",
+          "start": 12.36,
+          "end": 12.72
+        },
+        {
+          "word": "of",
+          "start": 12.72,
+          "end": 12.94
+        },
+        {
+          "word": "anthropology,",
+          "start": 12.94,
+          "end": 13.5
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "startMs": 14220,
+      "endMs": 17940,
+      "text": "like linguistic anthropology and social anthropology.",
+      "words": [
+        {
+          "word": "like",
+          "start": 14.22,
+          "end": 14.52
+        },
+        {
+          "word": "linguistic",
+          "start": 14.52,
+          "end": 15.04
+        },
+        {
+          "word": "anthropology",
+          "start": 15.04,
+          "end": 15.64
+        },
+        {
+          "word": "and",
+          "start": 15.64,
+          "end": 16.62
+        },
+        {
+          "word": "social",
+          "start": 16.62,
+          "end": 17.06
+        },
+        {
+          "word": "anthropology.",
+          "start": 17.06,
+          "end": 17.94
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "startMs": 20280,
+      "endMs": 21000,
+      "text": "2",
+      "words": [
+        {
+          "word": "2",
+          "start": 20.28,
+          "end": 21.0
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "startMs": 22080,
+      "endMs": 25920,
+      "text": "Some traditions die out because our way of life changes.",
+      "words": [
+        {
+          "word": "Some",
+          "start": 22.08,
+          "end": 22.8
+        },
+        {
+          "word": "traditions",
+          "start": 22.8,
+          "end": 23.22
+        },
+        {
+          "word": "die",
+          "start": 23.22,
+          "end": 23.76
+        },
+        {
+          "word": "out",
+          "start": 23.76,
+          "end": 24.14
+        },
+        {
+          "word": "because",
+          "start": 24.14,
+          "end": 24.42
+        },
+        {
+          "word": "our",
+          "start": 24.42,
+          "end": 24.7
+        },
+        {
+          "word": "way",
+          "start": 24.7,
+          "end": 24.96
+        },
+        {
+          "word": "of",
+          "start": 24.96,
+          "end": 25.1
+        },
+        {
+          "word": "life",
+          "start": 25.1,
+          "end": 25.36
+        },
+        {
+          "word": "changes.",
+          "start": 25.36,
+          "end": 25.92
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "startMs": 28200,
+      "endMs": 28920,
+      "text": "3",
+      "words": [
+        {
+          "word": "3",
+          "start": 28.200000000000003,
+          "end": 28.92
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "startMs": 30220,
+      "endMs": 33120,
+      "text": "Now, due to developments in technology,",
+      "words": [
+        {
+          "word": "Now,",
+          "start": 30.220000000000002,
+          "end": 30.94
+        },
+        {
+          "word": "due",
+          "start": 31.24,
+          "end": 31.46
+        },
+        {
+          "word": "to",
+          "start": 31.46,
+          "end": 31.66
+        },
+        {
+          "word": "developments",
+          "start": 31.66,
+          "end": 32.12
+        },
+        {
+          "word": "in",
+          "start": 32.12,
+          "end": 32.46
+        },
+        {
+          "word": "technology,",
+          "start": 32.46,
+          "end": 33.12
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "startMs": 33740,
+      "endMs": 37720,
+      "text": "people spend more time interacting with other people over the Internet.",
+      "words": [
+        {
+          "word": "people",
+          "start": 33.74,
+          "end": 34.02
+        },
+        {
+          "word": "spend",
+          "start": 34.02,
+          "end": 34.4
+        },
+        {
+          "word": "more",
+          "start": 34.4,
+          "end": 34.72
+        },
+        {
+          "word": "time",
+          "start": 34.72,
+          "end": 35.02
+        },
+        {
+          "word": "interacting",
+          "start": 35.02,
+          "end": 35.72
+        },
+        {
+          "word": "with",
+          "start": 35.72,
+          "end": 36.04
+        },
+        {
+          "word": "other",
+          "start": 36.04,
+          "end": 36.32
+        },
+        {
+          "word": "people",
+          "start": 36.32,
+          "end": 36.7
+        },
+        {
+          "word": "over",
+          "start": 36.7,
+          "end": 37.14
+        },
+        {
+          "word": "the",
+          "start": 37.14,
+          "end": 37.3
+        },
+        {
+          "word": "Internet.",
+          "start": 37.3,
+          "end": 37.72
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "startMs": 40160,
+      "endMs": 40880,
+      "text": "4",
+      "words": [
+        {
+          "word": "4",
+          "start": 40.160000000000004,
+          "end": 40.88
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "startMs": 41760,
+      "endMs": 44520,
+      "text": "But now we don't have to work so hard.",
+      "words": [
+        {
+          "word": "But",
+          "start": 41.76,
+          "end": 42.48
+        },
+        {
+          "word": "now",
+          "start": 42.48,
+          "end": 42.8
+        },
+        {
+          "word": "we",
+          "start": 42.8,
+          "end": 43.06
+        },
+        {
+          "word": "don't",
+          "start": 43.06,
+          "end": 43.26
+        },
+        {
+          "word": "have",
+          "start": 43.26,
+          "end": 43.46
+        },
+        {
+          "word": "to",
+          "start": 43.46,
+          "end": 43.58
+        },
+        {
+          "word": "work",
+          "start": 43.58,
+          "end": 43.82
+        },
+        {
+          "word": "so",
+          "start": 43.82,
+          "end": 44.08
+        },
+        {
+          "word": "hard.",
+          "start": 44.08,
+          "end": 44.52
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "startMs": 45200,
+      "endMs": 49220,
+      "text": "This is because we have modern kitchens and supermarket food.",
+      "words": [
+        {
+          "word": "This",
+          "start": 45.2,
+          "end": 45.52
+        },
+        {
+          "word": "is",
+          "start": 45.52,
+          "end": 45.66
+        },
+        {
+          "word": "because",
+          "start": 45.66,
+          "end": 45.94
+        },
+        {
+          "word": "we",
+          "start": 45.94,
+          "end": 46.22
+        },
+        {
+          "word": "have",
+          "start": 46.22,
+          "end": 46.48
+        },
+        {
+          "word": "modern",
+          "start": 46.48,
+          "end": 46.88
+        },
+        {
+          "word": "kitchens",
+          "start": 46.88,
+          "end": 47.54
+        },
+        {
+          "word": "and",
+          "start": 47.54,
+          "end": 48.08
+        },
+        {
+          "word": "supermarket",
+          "start": 48.08,
+          "end": 48.58
+        },
+        {
+          "word": "food.",
+          "start": 48.58,
+          "end": 49.22
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "startMs": 51800,
+      "endMs": 52520,
+      "text": "5",
+      "words": [
+        {
+          "word": "5",
+          "start": 51.800000000000004,
+          "end": 52.52
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "startMs": 53620,
+      "endMs": 58700,
+      "text": "In the United States, at Thanksgiving, which is one of the biggest celebrations,",
+      "words": [
+        {
+          "word": "In",
+          "start": 53.62,
+          "end": 54.18
+        },
+        {
+          "word": "the",
+          "start": 54.18,
+          "end": 54.28
+        },
+        {
+          "word": "United",
+          "start": 54.28,
+          "end": 54.5
+        },
+        {
+          "word": "States,",
+          "start": 54.5,
+          "end": 55.08
+        },
+        {
+          "word": "at",
+          "start": 55.34,
+          "end": 55.5
+        },
+        {
+          "word": "Thanksgiving,",
+          "start": 55.5,
+          "end": 56.02
+        },
+        {
+          "word": "which",
+          "start": 56.58,
+          "end": 56.86
+        },
+        {
+          "word": "is",
+          "start": 56.86,
+          "end": 57.04
+        },
+        {
+          "word": "one",
+          "start": 57.04,
+          "end": 57.24
+        },
+        {
+          "word": "of",
+          "start": 57.24,
+          "end": 57.38
+        },
+        {
+          "word": "the",
+          "start": 57.38,
+          "end": 57.48
+        },
+        {
+          "word": "biggest",
+          "start": 57.48,
+          "end": 57.76
+        },
+        {
+          "word": "celebrations,",
+          "start": 57.76,
+          "end": 58.7
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "startMs": 59520,
+      "endMs": 65520,
+      "text": "many families go to restaurants because they don't want to spend their holiday working in the kitchen.",
+      "words": [
+        {
+          "word": "many",
+          "start": 59.52,
+          "end": 59.8
+        },
+        {
+          "word": "families",
+          "start": 59.8,
+          "end": 60.32
+        },
+        {
+          "word": "go",
+          "start": 60.32,
+          "end": 60.66
+        },
+        {
+          "word": "to",
+          "start": 60.66,
+          "end": 60.8
+        },
+        {
+          "word": "restaurants",
+          "start": 60.8,
+          "end": 61.46
+        },
+        {
+          "word": "because",
+          "start": 61.46,
+          "end": 62.14
+        },
+        {
+          "word": "they",
+          "start": 62.14,
+          "end": 62.36
+        },
+        {
+          "word": "don't",
+          "start": 62.36,
+          "end": 62.66
+        },
+        {
+          "word": "want",
+          "start": 62.66,
+          "end": 62.86
+        },
+        {
+          "word": "to",
+          "start": 62.86,
+          "end": 63.04
+        },
+        {
+          "word": "spend",
+          "start": 63.04,
+          "end": 63.3
+        },
+        {
+          "word": "their",
+          "start": 63.3,
+          "end": 63.62
+        },
+        {
+          "word": "holiday",
+          "start": 63.62,
+          "end": 64.08
+        },
+        {
+          "word": "working",
+          "start": 64.08,
+          "end": 64.8
+        },
+        {
+          "word": "in",
+          "start": 64.8,
+          "end": 65.1
+        },
+        {
+          "word": "the",
+          "start": 65.1,
+          "end": 65.24
+        },
+        {
+          "word": "kitchen.",
+          "start": 65.24,
+          "end": 65.52
+        }
+      ]
+    }
+  ]
+}

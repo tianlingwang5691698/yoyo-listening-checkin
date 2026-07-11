@@ -1,0 +1,29 @@
+{
+  "mode": "apply",
+  "envId": "youshengenglish-6glk12rd6c6e719b",
+  "desiredCount": 69,
+  "uploadedThisRunCount": 69,
+  "alreadyPresentSameContentCount": 0,
+  "audioCount": 68,
+  "transcriptCount": 1,
+  "transcriptPath": "_transcripts/B1/unlock3-third-edition/bundle-wordaligned-v1.json",
+  "transcriptGetStatus": 200,
+  "cloudTrackCount": 68,
+  "headVerifiedCount": 69,
+  "protectedBundles": [
+    {
+      "label": "second-edition-textbook",
+      "cloudPath": "_transcripts/B1/unlock3-textbook/bundle.json",
+      "trackCount": 28,
+      "sha1": "5aab89b4b600224b23e01edc35523720fd0e5266",
+      "unchanged": true
+    },
+    {
+      "label": "second-edition-workbook",
+      "cloudPath": "_transcripts/B1/unlock3/bundle.json",
+      "trackCount": 12,
+      "sha1": "da93df3379380e4461c7cf76623c4dafc216777e",
+      "unchanged": true
+    }
+  ]
+}

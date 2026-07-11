@@ -1,0 +1,960 @@
+{
+  "model": "small",
+  "language": "en",
+  "text": "My presentation is about Thomas Edison. He was an American inventor and he was born in 1847. He is a remarkable person because he invented a lot of the things we know and use every day, such as the electric light bulb. Well, he wasn't the first to invent one, but he was the first person to invent one that could last a long time. This was in 1879, while he was working in his research lab in Menlo Park, New Jersey, in the US. It lasted 13.5 hours. Another important example of Edison's amazing inventions is the motion picture camera. We all know this today as the video camera. Edison and his team invented it in 1891 and they showed short six-minute films. Equally important was Edison's work with Henry Ford, who started the Ford Motor Company. Edison was worried about America's dependence on foreign rubber for tyres. So while he was working at a lab in Florida in 1927, he found a new source of rubber in local plants.",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 2960,
+      "endMs": 11740,
+      "text": "My presentation is about Thomas Edison. He was an American inventor and he was born",
+      "words": [
+        {
+          "word": "My",
+          "start": 2.959999999999999,
+          "end": 3.92
+        },
+        {
+          "word": "presentation",
+          "start": 3.92,
+          "end": 4.52
+        },
+        {
+          "word": "is",
+          "start": 4.52,
+          "end": 5.44
+        },
+        {
+          "word": "about",
+          "start": 5.44,
+          "end": 5.84
+        },
+        {
+          "word": "Thomas",
+          "start": 5.84,
+          "end": 6.34
+        },
+        {
+          "word": "Edison.",
+          "start": 6.34,
+          "end": 6.8
+        },
+        {
+          "word": "He",
+          "start": 7.72,
+          "end": 8.32
+        },
+        {
+          "word": "was",
+          "start": 8.32,
+          "end": 8.54
+        },
+        {
+          "word": "an",
+          "start": 8.54,
+          "end": 8.68
+        },
+        {
+          "word": "American",
+          "start": 8.68,
+          "end": 9.12
+        },
+        {
+          "word": "inventor",
+          "start": 9.12,
+          "end": 9.82
+        },
+        {
+          "word": "and",
+          "start": 9.82,
+          "end": 10.92
+        },
+        {
+          "word": "he",
+          "start": 10.92,
+          "end": 11.22
+        },
+        {
+          "word": "was",
+          "start": 11.22,
+          "end": 11.4
+        },
+        {
+          "word": "born",
+          "start": 11.4,
+          "end": 11.74
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 11740,
+      "endMs": 21680,
+      "text": "in 1847. He is a remarkable person because he invented a lot of the things we know and",
+      "words": [
+        {
+          "word": "in",
+          "start": 11.74,
+          "end": 12.24
+        },
+        {
+          "word": "1847.",
+          "start": 12.24,
+          "end": 13.56
+        },
+        {
+          "word": "He",
+          "start": 14.68,
+          "end": 15.34
+        },
+        {
+          "word": "is",
+          "start": 15.34,
+          "end": 15.5
+        },
+        {
+          "word": "a",
+          "start": 15.5,
+          "end": 15.62
+        },
+        {
+          "word": "remarkable",
+          "start": 15.62,
+          "end": 16.22
+        },
+        {
+          "word": "person",
+          "start": 16.22,
+          "end": 17.0
+        },
+        {
+          "word": "because",
+          "start": 17.0,
+          "end": 17.96
+        },
+        {
+          "word": "he",
+          "start": 17.96,
+          "end": 18.4
+        },
+        {
+          "word": "invented",
+          "start": 18.4,
+          "end": 18.98
+        },
+        {
+          "word": "a",
+          "start": 18.98,
+          "end": 19.36
+        },
+        {
+          "word": "lot",
+          "start": 19.36,
+          "end": 19.64
+        },
+        {
+          "word": "of",
+          "start": 19.64,
+          "end": 19.86
+        },
+        {
+          "word": "the",
+          "start": 19.86,
+          "end": 20.04
+        },
+        {
+          "word": "things",
+          "start": 20.04,
+          "end": 20.52
+        },
+        {
+          "word": "we",
+          "start": 20.52,
+          "end": 20.84
+        },
+        {
+          "word": "know",
+          "start": 20.84,
+          "end": 21.2
+        },
+        {
+          "word": "and",
+          "start": 21.2,
+          "end": 21.68
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 21680,
+      "endMs": 30100,
+      "text": "use every day, such as the electric light bulb. Well, he wasn't the first to invent one,",
+      "words": [
+        {
+          "word": "use",
+          "start": 21.68,
+          "end": 22.06
+        },
+        {
+          "word": "every",
+          "start": 22.06,
+          "end": 22.56
+        },
+        {
+          "word": "day,",
+          "start": 22.56,
+          "end": 23.02
+        },
+        {
+          "word": "such",
+          "start": 23.62,
+          "end": 24.06
+        },
+        {
+          "word": "as",
+          "start": 24.06,
+          "end": 24.38
+        },
+        {
+          "word": "the",
+          "start": 24.38,
+          "end": 24.68
+        },
+        {
+          "word": "electric",
+          "start": 24.68,
+          "end": 25.12
+        },
+        {
+          "word": "light",
+          "start": 25.12,
+          "end": 25.52
+        },
+        {
+          "word": "bulb.",
+          "start": 25.52,
+          "end": 25.88
+        },
+        {
+          "word": "Well,",
+          "start": 26.5,
+          "end": 26.96
+        },
+        {
+          "word": "he",
+          "start": 27.6,
+          "end": 27.82
+        },
+        {
+          "word": "wasn't",
+          "start": 27.82,
+          "end": 28.22
+        },
+        {
+          "word": "the",
+          "start": 28.22,
+          "end": 28.44
+        },
+        {
+          "word": "first",
+          "start": 28.44,
+          "end": 28.96
+        },
+        {
+          "word": "to",
+          "start": 28.96,
+          "end": 29.36
+        },
+        {
+          "word": "invent",
+          "start": 29.36,
+          "end": 29.7
+        },
+        {
+          "word": "one,",
+          "start": 29.7,
+          "end": 30.1
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 30660,
+      "endMs": 39920,
+      "text": "but he was the first person to invent one that could last a long time. This was in 1879,",
+      "words": [
+        {
+          "word": "but",
+          "start": 30.66,
+          "end": 30.98
+        },
+        {
+          "word": "he",
+          "start": 30.98,
+          "end": 31.26
+        },
+        {
+          "word": "was",
+          "start": 31.26,
+          "end": 31.6
+        },
+        {
+          "word": "the",
+          "start": 31.6,
+          "end": 31.88
+        },
+        {
+          "word": "first",
+          "start": 31.88,
+          "end": 32.28
+        },
+        {
+          "word": "person",
+          "start": 32.28,
+          "end": 32.92
+        },
+        {
+          "word": "to",
+          "start": 32.92,
+          "end": 33.3
+        },
+        {
+          "word": "invent",
+          "start": 33.3,
+          "end": 33.7
+        },
+        {
+          "word": "one",
+          "start": 33.7,
+          "end": 34.12
+        },
+        {
+          "word": "that",
+          "start": 34.12,
+          "end": 34.68
+        },
+        {
+          "word": "could",
+          "start": 34.68,
+          "end": 34.88
+        },
+        {
+          "word": "last",
+          "start": 34.88,
+          "end": 35.36
+        },
+        {
+          "word": "a",
+          "start": 35.36,
+          "end": 35.6
+        },
+        {
+          "word": "long",
+          "start": 35.6,
+          "end": 35.82
+        },
+        {
+          "word": "time.",
+          "start": 35.82,
+          "end": 36.3
+        },
+        {
+          "word": "This",
+          "start": 37.18,
+          "end": 37.74
+        },
+        {
+          "word": "was",
+          "start": 37.74,
+          "end": 38.02
+        },
+        {
+          "word": "in",
+          "start": 38.02,
+          "end": 38.4
+        },
+        {
+          "word": "1879,",
+          "start": 38.4,
+          "end": 39.92
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 39920,
+      "endMs": 52220,
+      "text": "while he was working in his research lab in Menlo Park, New Jersey, in the US. It lasted 13.5 hours.",
+      "words": [
+        {
+          "word": "while",
+          "start": 39.92,
+          "end": 40.36
+        },
+        {
+          "word": "he",
+          "start": 40.36,
+          "end": 41.2
+        },
+        {
+          "word": "was",
+          "start": 41.2,
+          "end": 41.42
+        },
+        {
+          "word": "working",
+          "start": 41.42,
+          "end": 41.94
+        },
+        {
+          "word": "in",
+          "start": 41.94,
+          "end": 42.4
+        },
+        {
+          "word": "his",
+          "start": 42.4,
+          "end": 42.62
+        },
+        {
+          "word": "research",
+          "start": 42.62,
+          "end": 43.24
+        },
+        {
+          "word": "lab",
+          "start": 43.24,
+          "end": 43.72
+        },
+        {
+          "word": "in",
+          "start": 43.72,
+          "end": 44.5
+        },
+        {
+          "word": "Menlo",
+          "start": 44.5,
+          "end": 45.06
+        },
+        {
+          "word": "Park,",
+          "start": 45.06,
+          "end": 45.72
+        },
+        {
+          "word": "New",
+          "start": 46.0,
+          "end": 46.22
+        },
+        {
+          "word": "Jersey,",
+          "start": 46.22,
+          "end": 46.7
+        },
+        {
+          "word": "in",
+          "start": 47.18,
+          "end": 47.24
+        },
+        {
+          "word": "the",
+          "start": 47.24,
+          "end": 47.4
+        },
+        {
+          "word": "US.",
+          "start": 47.4,
+          "end": 47.78
+        },
+        {
+          "word": "It",
+          "start": 48.94,
+          "end": 49.2
+        },
+        {
+          "word": "lasted",
+          "start": 49.2,
+          "end": 49.78
+        },
+        {
+          "word": "13",
+          "start": 49.78,
+          "end": 50.54
+        },
+        {
+          "word": ".5",
+          "start": 50.54,
+          "end": 51.64
+        },
+        {
+          "word": "hours.",
+          "start": 51.64,
+          "end": 52.22
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "startMs": 54240,
+      "endMs": 62080,
+      "text": "Another important example of Edison's amazing inventions is the motion picture camera.",
+      "words": [
+        {
+          "word": "Another",
+          "start": 54.059999999999995,
+          "end": 54.62
+        },
+        {
+          "word": "important",
+          "start": 54.62,
+          "end": 55.5
+        },
+        {
+          "word": "example",
+          "start": 55.5,
+          "end": 56.06
+        },
+        {
+          "word": "of",
+          "start": 56.06,
+          "end": 56.96
+        },
+        {
+          "word": "Edison's",
+          "start": 56.96,
+          "end": 57.66
+        },
+        {
+          "word": "amazing",
+          "start": 57.66,
+          "end": 58.26
+        },
+        {
+          "word": "inventions",
+          "start": 58.26,
+          "end": 58.98
+        },
+        {
+          "word": "is",
+          "start": 58.98,
+          "end": 60.24
+        },
+        {
+          "word": "the",
+          "start": 60.24,
+          "end": 60.54
+        },
+        {
+          "word": "motion",
+          "start": 60.54,
+          "end": 61.02
+        },
+        {
+          "word": "picture",
+          "start": 61.02,
+          "end": 61.58
+        },
+        {
+          "word": "camera.",
+          "start": 61.58,
+          "end": 62.08
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "startMs": 62080,
+      "endMs": 73360,
+      "text": "We all know this today as the video camera. Edison and his team invented it in 1891 and",
+      "words": [
+        {
+          "word": "We",
+          "start": 62.08,
+          "end": 63.64
+        },
+        {
+          "word": "all",
+          "start": 63.64,
+          "end": 64.04
+        },
+        {
+          "word": "know",
+          "start": 64.04,
+          "end": 64.3
+        },
+        {
+          "word": "this",
+          "start": 64.3,
+          "end": 64.66
+        },
+        {
+          "word": "today",
+          "start": 64.66,
+          "end": 65.16
+        },
+        {
+          "word": "as",
+          "start": 65.16,
+          "end": 66.06
+        },
+        {
+          "word": "the",
+          "start": 66.06,
+          "end": 66.34
+        },
+        {
+          "word": "video",
+          "start": 66.34,
+          "end": 66.76
+        },
+        {
+          "word": "camera.",
+          "start": 66.76,
+          "end": 67.3
+        },
+        {
+          "word": "Edison",
+          "start": 68.42,
+          "end": 68.98
+        },
+        {
+          "word": "and",
+          "start": 68.98,
+          "end": 69.54
+        },
+        {
+          "word": "his",
+          "start": 69.54,
+          "end": 69.76
+        },
+        {
+          "word": "team",
+          "start": 69.76,
+          "end": 70.12
+        },
+        {
+          "word": "invented",
+          "start": 70.12,
+          "end": 70.9
+        },
+        {
+          "word": "it",
+          "start": 70.9,
+          "end": 71.14
+        },
+        {
+          "word": "in",
+          "start": 71.14,
+          "end": 71.6
+        },
+        {
+          "word": "1891",
+          "start": 71.6,
+          "end": 72.88
+        },
+        {
+          "word": "and",
+          "start": 72.88,
+          "end": 73.42
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "startMs": 74260,
+      "endMs": 83460,
+      "text": "they showed short six-minute films. Equally important was Edison's work with Henry Ford,",
+      "words": [
+        {
+          "word": "they",
+          "start": 74.26,
+          "end": 74.48
+        },
+        {
+          "word": "showed",
+          "start": 74.48,
+          "end": 74.92
+        },
+        {
+          "word": "short",
+          "start": 74.92,
+          "end": 75.54
+        },
+        {
+          "word": "six",
+          "start": 75.54,
+          "end": 76.14
+        },
+        {
+          "word": "-minute",
+          "start": 76.14,
+          "end": 76.58
+        },
+        {
+          "word": "films.",
+          "start": 76.58,
+          "end": 77.28
+        },
+        {
+          "word": "Equally",
+          "start": 78.58,
+          "end": 79.34
+        },
+        {
+          "word": "important",
+          "start": 79.34,
+          "end": 80.0
+        },
+        {
+          "word": "was",
+          "start": 80.0,
+          "end": 80.92
+        },
+        {
+          "word": "Edison's",
+          "start": 80.92,
+          "end": 81.82
+        },
+        {
+          "word": "work",
+          "start": 81.82,
+          "end": 82.14
+        },
+        {
+          "word": "with",
+          "start": 82.14,
+          "end": 82.56
+        },
+        {
+          "word": "Henry",
+          "start": 82.56,
+          "end": 82.94
+        },
+        {
+          "word": "Ford,",
+          "start": 82.94,
+          "end": 83.46
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "startMs": 84020,
+      "endMs": 91680,
+      "text": "who started the Ford Motor Company. Edison was worried about America's dependence",
+      "words": [
+        {
+          "word": "who",
+          "start": 83.84,
+          "end": 84.34
+        },
+        {
+          "word": "started",
+          "start": 84.34,
+          "end": 84.86
+        },
+        {
+          "word": "the",
+          "start": 84.86,
+          "end": 85.3
+        },
+        {
+          "word": "Ford",
+          "start": 85.3,
+          "end": 85.7
+        },
+        {
+          "word": "Motor",
+          "start": 85.7,
+          "end": 86.24
+        },
+        {
+          "word": "Company.",
+          "start": 86.24,
+          "end": 86.76
+        },
+        {
+          "word": "Edison",
+          "start": 87.98,
+          "end": 88.4
+        },
+        {
+          "word": "was",
+          "start": 88.4,
+          "end": 88.84
+        },
+        {
+          "word": "worried",
+          "start": 88.84,
+          "end": 89.4
+        },
+        {
+          "word": "about",
+          "start": 89.4,
+          "end": 90.14
+        },
+        {
+          "word": "America's",
+          "start": 90.14,
+          "end": 91.12
+        },
+        {
+          "word": "dependence",
+          "start": 91.12,
+          "end": 91.68
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "startMs": 92260,
+      "endMs": 101480,
+      "text": "on foreign rubber for tyres. So while he was working at a lab in Florida in 1927,",
+      "words": [
+        {
+          "word": "on",
+          "start": 91.98,
+          "end": 92.48
+        },
+        {
+          "word": "foreign",
+          "start": 92.48,
+          "end": 93.0
+        },
+        {
+          "word": "rubber",
+          "start": 93.0,
+          "end": 93.48
+        },
+        {
+          "word": "for",
+          "start": 93.48,
+          "end": 93.86
+        },
+        {
+          "word": "tyres.",
+          "start": 93.86,
+          "end": 94.28
+        },
+        {
+          "word": "So",
+          "start": 95.44,
+          "end": 95.9
+        },
+        {
+          "word": "while",
+          "start": 95.9,
+          "end": 96.4
+        },
+        {
+          "word": "he",
+          "start": 96.4,
+          "end": 96.64
+        },
+        {
+          "word": "was",
+          "start": 96.64,
+          "end": 96.82
+        },
+        {
+          "word": "working",
+          "start": 96.82,
+          "end": 97.32
+        },
+        {
+          "word": "at",
+          "start": 97.32,
+          "end": 97.74
+        },
+        {
+          "word": "a",
+          "start": 97.74,
+          "end": 97.88
+        },
+        {
+          "word": "lab",
+          "start": 97.88,
+          "end": 98.2
+        },
+        {
+          "word": "in",
+          "start": 98.2,
+          "end": 98.56
+        },
+        {
+          "word": "Florida",
+          "start": 98.56,
+          "end": 99.08
+        },
+        {
+          "word": "in",
+          "start": 99.08,
+          "end": 100.1
+        },
+        {
+          "word": "1927,",
+          "start": 100.1,
+          "end": 101.48
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "startMs": 102120,
+      "endMs": 106660,
+      "text": "he found a new source of rubber in local plants.",
+      "words": [
+        {
+          "word": "he",
+          "start": 102.12,
+          "end": 102.64
+        },
+        {
+          "word": "found",
+          "start": 102.64,
+          "end": 102.98
+        },
+        {
+          "word": "a",
+          "start": 102.98,
+          "end": 103.22
+        },
+        {
+          "word": "new",
+          "start": 103.22,
+          "end": 103.54
+        },
+        {
+          "word": "source",
+          "start": 103.54,
+          "end": 104.0
+        },
+        {
+          "word": "of",
+          "start": 104.0,
+          "end": 104.3
+        },
+        {
+          "word": "rubber",
+          "start": 104.3,
+          "end": 104.64
+        },
+        {
+          "word": "in",
+          "start": 104.64,
+          "end": 105.38
+        },
+        {
+          "word": "local",
+          "start": 105.38,
+          "end": 105.86
+        },
+        {
+          "word": "plants.",
+          "start": 105.86,
+          "end": 106.66
+        }
+      ]
+    }
+  ]
+}

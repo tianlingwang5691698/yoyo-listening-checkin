@@ -1,0 +1,4061 @@
+{
+  "model": "small",
+  "language": "en",
+  "text": "Hi Sam, good to see you again. Hello Joe. So last time we met we talked about your business goals. Was it useful? Useful? Yeah, it was. You really made me think. But now I have a lot of stress about losing money. Oh yes? What is making you stressed about that? Well, I realised how many weaknesses a business can have. One careless mistake and I could lose a lot of money. Exactly. But there are things you think will cause you to lose money? Well, when we looked at the company's strengths and weaknesses we talked about the quality and happiness of my workers, the costs of running the business and reaching new customers to help grow the business. Each of these areas could be a way to help make money or a way to lose money if you don't have a good plan. Wow, that's great. Those are all important to think about. Is there anything else? And what else was there? Oh, of course, customers. Well, that gives us plenty to talk about today. So, let's think about what you can do for your employees. You said that your workers were unhappy and not working hard enough. Keeping your employees happy will make them more likely to work hard for the business. Try organising some social events once a month during work hours. That could be a good first step. Also, maybe you should paint the walls a brighter colour. The office is really dark and people feel like they're in a cave. Brighter colours can help make people happier and happier employees will also work harder. Oh, OK. Well, that's good to know. You also have to cut costs. You spend far too much money on electricity every month. Turn off the lights and computers at the end of the workday. You should also find some cheaper parts for your products, which are still well made. It's a tough job, but I can help you find them. I see. That would be great. If you spend less money, you can make a better profit. You have some excellent adverts. But you mentioned that you are having trouble reaching new customers and growing your number of customers is really important for a successful business. So, if I were you, I would try adding online sales to get more customers. Yeah, I like that idea. I have a website already, but it looks pretty old and messy. But there are things we can work on. If you want to sell online, you should start by making sure that the website doesn't look messy. If you don't have the skills to make it look neat, hire a professional web designer. You want a neat, clean website. It isn't something you want to be careless with. I see. Well, I would like to have a lot of black on the website. I think that colour is professional and serious looking. I understand, but I think if you want to make the website attractive, it needs more colour. More colour could help the design pop out a bit more and prevent customers from leaving the website before buying anything. Ah-ha! That's a good idea. I actually like blue, too. I think someone else told me about colours people prefer, but I forgot. Yes, it's easy to forget to think about something as simple as colour. The web designer you hire might have some good ideas about which colours to use. So for our next meeting, you should create your website design and bring a plan. You could think about how it looks as well as what it says. You don't want it to look... Well, you would want to be sure it looks well organised and the best it can be. It should also be really easy to use. Next time, we'll go over your design and see how to make it better. We will also think about hiring a good web designer to make your website look great and be easy to use. OK, great! I'll do that and bring it in next week.",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 2860,
+      "endMs": 5780,
+      "text": "Hi Sam, good to see you again.",
+      "words": [
+        {
+          "word": "Hi",
+          "start": 2.8600000000000003,
+          "end": 3.62
+        },
+        {
+          "word": "Sam,",
+          "start": 3.62,
+          "end": 3.98
+        },
+        {
+          "word": "good",
+          "start": 4.54,
+          "end": 4.84
+        },
+        {
+          "word": "to",
+          "start": 4.84,
+          "end": 5.02
+        },
+        {
+          "word": "see",
+          "start": 5.02,
+          "end": 5.24
+        },
+        {
+          "word": "you",
+          "start": 5.24,
+          "end": 5.44
+        },
+        {
+          "word": "again.",
+          "start": 5.44,
+          "end": 5.78
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 6140,
+      "endMs": 6620,
+      "text": "Hello Joe.",
+      "words": [
+        {
+          "word": "Hello",
+          "start": 6.14,
+          "end": 6.34
+        },
+        {
+          "word": "Joe.",
+          "start": 6.34,
+          "end": 6.62
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 7660,
+      "endMs": 12980,
+      "text": "So last time we met we talked about your business goals.",
+      "words": [
+        {
+          "word": "So",
+          "start": 7.66,
+          "end": 8.0
+        },
+        {
+          "word": "last",
+          "start": 8.0,
+          "end": 9.12
+        },
+        {
+          "word": "time",
+          "start": 9.12,
+          "end": 9.5
+        },
+        {
+          "word": "we",
+          "start": 9.5,
+          "end": 9.7
+        },
+        {
+          "word": "met",
+          "start": 9.7,
+          "end": 10.08
+        },
+        {
+          "word": "we",
+          "start": 10.08,
+          "end": 10.48
+        },
+        {
+          "word": "talked",
+          "start": 10.48,
+          "end": 10.86
+        },
+        {
+          "word": "about",
+          "start": 10.86,
+          "end": 11.3
+        },
+        {
+          "word": "your",
+          "start": 11.3,
+          "end": 11.74
+        },
+        {
+          "word": "business",
+          "start": 11.74,
+          "end": 12.32
+        },
+        {
+          "word": "goals.",
+          "start": 12.32,
+          "end": 12.98
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 13620,
+      "endMs": 14740,
+      "text": "Was it useful?",
+      "words": [
+        {
+          "word": "Was",
+          "start": 13.62,
+          "end": 14.06
+        },
+        {
+          "word": "it",
+          "start": 14.06,
+          "end": 14.32
+        },
+        {
+          "word": "useful?",
+          "start": 14.32,
+          "end": 14.74
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 15560,
+      "endMs": 16060,
+      "text": "Useful?",
+      "words": [
+        {
+          "word": "Useful?",
+          "start": 15.56,
+          "end": 16.06
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "startMs": 16600,
+      "endMs": 17720,
+      "text": "Yeah, it was.",
+      "words": [
+        {
+          "word": "Yeah,",
+          "start": 16.6,
+          "end": 17.1
+        },
+        {
+          "word": "it",
+          "start": 17.16,
+          "end": 17.36
+        },
+        {
+          "word": "was.",
+          "start": 17.36,
+          "end": 17.72
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "startMs": 18520,
+      "endMs": 20260,
+      "text": "You really made me think.",
+      "words": [
+        {
+          "word": "You",
+          "start": 18.52,
+          "end": 18.88
+        },
+        {
+          "word": "really",
+          "start": 18.88,
+          "end": 19.28
+        },
+        {
+          "word": "made",
+          "start": 19.28,
+          "end": 19.58
+        },
+        {
+          "word": "me",
+          "start": 19.58,
+          "end": 19.78
+        },
+        {
+          "word": "think.",
+          "start": 19.78,
+          "end": 20.26
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "startMs": 21060,
+      "endMs": 24880,
+      "text": "But now I have a lot of stress about losing money.",
+      "words": [
+        {
+          "word": "But",
+          "start": 21.06,
+          "end": 21.44
+        },
+        {
+          "word": "now",
+          "start": 21.44,
+          "end": 21.9
+        },
+        {
+          "word": "I",
+          "start": 21.9,
+          "end": 22.26
+        },
+        {
+          "word": "have",
+          "start": 22.26,
+          "end": 22.48
+        },
+        {
+          "word": "a",
+          "start": 22.48,
+          "end": 22.6
+        },
+        {
+          "word": "lot",
+          "start": 22.6,
+          "end": 22.82
+        },
+        {
+          "word": "of",
+          "start": 22.82,
+          "end": 22.98
+        },
+        {
+          "word": "stress",
+          "start": 22.98,
+          "end": 23.44
+        },
+        {
+          "word": "about",
+          "start": 23.44,
+          "end": 23.94
+        },
+        {
+          "word": "losing",
+          "start": 23.94,
+          "end": 24.42
+        },
+        {
+          "word": "money.",
+          "start": 24.42,
+          "end": 24.88
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "startMs": 25620,
+      "endMs": 26240,
+      "text": "Oh yes?",
+      "words": [
+        {
+          "word": "Oh",
+          "start": 25.62,
+          "end": 25.96
+        },
+        {
+          "word": "yes?",
+          "start": 25.96,
+          "end": 26.24
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "startMs": 26880,
+      "endMs": 29120,
+      "text": "What is making you stressed about that?",
+      "words": [
+        {
+          "word": "What",
+          "start": 26.88,
+          "end": 27.26
+        },
+        {
+          "word": "is",
+          "start": 27.26,
+          "end": 27.5
+        },
+        {
+          "word": "making",
+          "start": 27.5,
+          "end": 27.8
+        },
+        {
+          "word": "you",
+          "start": 27.8,
+          "end": 28.06
+        },
+        {
+          "word": "stressed",
+          "start": 28.06,
+          "end": 28.4
+        },
+        {
+          "word": "about",
+          "start": 28.4,
+          "end": 28.82
+        },
+        {
+          "word": "that?",
+          "start": 28.82,
+          "end": 29.12
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "startMs": 29120,
+      "endMs": 33960,
+      "text": "Well, I realised how many weaknesses a business can have.",
+      "words": [
+        {
+          "word": "Well,",
+          "start": 29.12,
+          "end": 29.84
+        },
+        {
+          "word": "I",
+          "start": 30.08,
+          "end": 30.4
+        },
+        {
+          "word": "realised",
+          "start": 30.4,
+          "end": 30.82
+        },
+        {
+          "word": "how",
+          "start": 30.82,
+          "end": 31.38
+        },
+        {
+          "word": "many",
+          "start": 31.38,
+          "end": 31.64
+        },
+        {
+          "word": "weaknesses",
+          "start": 31.64,
+          "end": 32.3
+        },
+        {
+          "word": "a",
+          "start": 32.3,
+          "end": 32.76
+        },
+        {
+          "word": "business",
+          "start": 32.76,
+          "end": 33.1
+        },
+        {
+          "word": "can",
+          "start": 33.1,
+          "end": 33.5
+        },
+        {
+          "word": "have.",
+          "start": 33.5,
+          "end": 33.96
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "startMs": 35120,
+      "endMs": 38520,
+      "text": "One careless mistake and I could lose a lot of money.",
+      "words": [
+        {
+          "word": "One",
+          "start": 34.800000000000004,
+          "end": 35.2
+        },
+        {
+          "word": "careless",
+          "start": 35.2,
+          "end": 35.74
+        },
+        {
+          "word": "mistake",
+          "start": 35.74,
+          "end": 36.32
+        },
+        {
+          "word": "and",
+          "start": 36.32,
+          "end": 36.96
+        },
+        {
+          "word": "I",
+          "start": 36.96,
+          "end": 37.14
+        },
+        {
+          "word": "could",
+          "start": 37.14,
+          "end": 37.34
+        },
+        {
+          "word": "lose",
+          "start": 37.34,
+          "end": 37.58
+        },
+        {
+          "word": "a",
+          "start": 37.58,
+          "end": 37.8
+        },
+        {
+          "word": "lot",
+          "start": 37.8,
+          "end": 38.02
+        },
+        {
+          "word": "of",
+          "start": 38.02,
+          "end": 38.18
+        },
+        {
+          "word": "money.",
+          "start": 38.18,
+          "end": 38.52
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "startMs": 39220,
+      "endMs": 39820,
+      "text": "Exactly.",
+      "words": [
+        {
+          "word": "Exactly.",
+          "start": 39.22,
+          "end": 39.82
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "startMs": 40740,
+      "endMs": 44500,
+      "text": "But there are things you think will cause you to lose money?",
+      "words": [
+        {
+          "word": "But",
+          "start": 40.74,
+          "end": 41.22
+        },
+        {
+          "word": "there",
+          "start": 41.22,
+          "end": 41.5
+        },
+        {
+          "word": "are",
+          "start": 41.5,
+          "end": 41.66
+        },
+        {
+          "word": "things",
+          "start": 41.66,
+          "end": 41.96
+        },
+        {
+          "word": "you",
+          "start": 41.96,
+          "end": 42.28
+        },
+        {
+          "word": "think",
+          "start": 42.28,
+          "end": 42.52
+        },
+        {
+          "word": "will",
+          "start": 42.52,
+          "end": 42.86
+        },
+        {
+          "word": "cause",
+          "start": 42.86,
+          "end": 43.32
+        },
+        {
+          "word": "you",
+          "start": 43.32,
+          "end": 43.6
+        },
+        {
+          "word": "to",
+          "start": 43.6,
+          "end": 43.8
+        },
+        {
+          "word": "lose",
+          "start": 43.8,
+          "end": 44.18
+        },
+        {
+          "word": "money?",
+          "start": 44.18,
+          "end": 44.5
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "startMs": 45200,
+      "endMs": 51820,
+      "text": "Well, when we looked at the company's strengths and weaknesses we talked about the quality",
+      "words": [
+        {
+          "word": "Well,",
+          "start": 45.2,
+          "end": 45.82
+        },
+        {
+          "word": "when",
+          "start": 46.26,
+          "end": 46.52
+        },
+        {
+          "word": "we",
+          "start": 46.52,
+          "end": 46.7
+        },
+        {
+          "word": "looked",
+          "start": 46.7,
+          "end": 46.96
+        },
+        {
+          "word": "at",
+          "start": 46.96,
+          "end": 47.22
+        },
+        {
+          "word": "the",
+          "start": 47.22,
+          "end": 47.34
+        },
+        {
+          "word": "company's",
+          "start": 47.34,
+          "end": 47.94
+        },
+        {
+          "word": "strengths",
+          "start": 47.94,
+          "end": 48.36
+        },
+        {
+          "word": "and",
+          "start": 48.36,
+          "end": 48.92
+        },
+        {
+          "word": "weaknesses",
+          "start": 48.92,
+          "end": 49.48
+        },
+        {
+          "word": "we",
+          "start": 49.48,
+          "end": 50.32
+        },
+        {
+          "word": "talked",
+          "start": 50.32,
+          "end": 50.66
+        },
+        {
+          "word": "about",
+          "start": 50.66,
+          "end": 51.08
+        },
+        {
+          "word": "the",
+          "start": 51.08,
+          "end": 51.3
+        },
+        {
+          "word": "quality",
+          "start": 51.3,
+          "end": 51.82
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "startMs": 51820,
+      "endMs": 58600,
+      "text": "and happiness of my workers, the costs of running the business and reaching new customers",
+      "words": [
+        {
+          "word": "and",
+          "start": 51.82,
+          "end": 52.28
+        },
+        {
+          "word": "happiness",
+          "start": 52.28,
+          "end": 52.68
+        },
+        {
+          "word": "of",
+          "start": 52.68,
+          "end": 53.12
+        },
+        {
+          "word": "my",
+          "start": 53.12,
+          "end": 53.38
+        },
+        {
+          "word": "workers,",
+          "start": 53.38,
+          "end": 53.86
+        },
+        {
+          "word": "the",
+          "start": 54.54,
+          "end": 54.7
+        },
+        {
+          "word": "costs",
+          "start": 54.7,
+          "end": 55.08
+        },
+        {
+          "word": "of",
+          "start": 55.08,
+          "end": 55.48
+        },
+        {
+          "word": "running",
+          "start": 55.48,
+          "end": 55.8
+        },
+        {
+          "word": "the",
+          "start": 55.8,
+          "end": 56.02
+        },
+        {
+          "word": "business",
+          "start": 56.02,
+          "end": 56.42
+        },
+        {
+          "word": "and",
+          "start": 56.42,
+          "end": 57.16
+        },
+        {
+          "word": "reaching",
+          "start": 57.16,
+          "end": 57.6
+        },
+        {
+          "word": "new",
+          "start": 57.6,
+          "end": 57.92
+        },
+        {
+          "word": "customers",
+          "start": 57.92,
+          "end": 58.6
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "startMs": 58600,
+      "endMs": 60360,
+      "text": "to help grow the business.",
+      "words": [
+        {
+          "word": "to",
+          "start": 58.6,
+          "end": 58.96
+        },
+        {
+          "word": "help",
+          "start": 58.96,
+          "end": 59.24
+        },
+        {
+          "word": "grow",
+          "start": 59.24,
+          "end": 59.74
+        },
+        {
+          "word": "the",
+          "start": 59.74,
+          "end": 59.96
+        },
+        {
+          "word": "business.",
+          "start": 59.96,
+          "end": 60.36
+        }
+      ]
+    },
+    {
+      "index": 18,
+      "startMs": 61380,
+      "endMs": 68800,
+      "text": "Each of these areas could be a way to help make money or a way to lose money if you don't",
+      "words": [
+        {
+          "word": "Each",
+          "start": 61.38,
+          "end": 61.7
+        },
+        {
+          "word": "of",
+          "start": 61.7,
+          "end": 61.88
+        },
+        {
+          "word": "these",
+          "start": 61.88,
+          "end": 62.12
+        },
+        {
+          "word": "areas",
+          "start": 62.12,
+          "end": 62.72
+        },
+        {
+          "word": "could",
+          "start": 62.72,
+          "end": 63.16
+        },
+        {
+          "word": "be",
+          "start": 63.16,
+          "end": 63.42
+        },
+        {
+          "word": "a",
+          "start": 63.42,
+          "end": 63.64
+        },
+        {
+          "word": "way",
+          "start": 63.64,
+          "end": 63.82
+        },
+        {
+          "word": "to",
+          "start": 63.82,
+          "end": 64.1
+        },
+        {
+          "word": "help",
+          "start": 64.1,
+          "end": 64.4
+        },
+        {
+          "word": "make",
+          "start": 64.4,
+          "end": 64.74
+        },
+        {
+          "word": "money",
+          "start": 64.74,
+          "end": 65.18
+        },
+        {
+          "word": "or",
+          "start": 65.18,
+          "end": 66.28
+        },
+        {
+          "word": "a",
+          "start": 66.28,
+          "end": 66.78
+        },
+        {
+          "word": "way",
+          "start": 66.78,
+          "end": 66.96
+        },
+        {
+          "word": "to",
+          "start": 66.96,
+          "end": 67.18
+        },
+        {
+          "word": "lose",
+          "start": 67.18,
+          "end": 67.56
+        },
+        {
+          "word": "money",
+          "start": 67.56,
+          "end": 67.98
+        },
+        {
+          "word": "if",
+          "start": 67.98,
+          "end": 68.46
+        },
+        {
+          "word": "you",
+          "start": 68.46,
+          "end": 68.58
+        },
+        {
+          "word": "don't",
+          "start": 68.58,
+          "end": 68.8
+        }
+      ]
+    },
+    {
+      "index": 19,
+      "startMs": 68800,
+      "endMs": 69760,
+      "text": "have a good plan.",
+      "words": [
+        {
+          "word": "have",
+          "start": 68.8,
+          "end": 68.98
+        },
+        {
+          "word": "a",
+          "start": 68.98,
+          "end": 69.08
+        },
+        {
+          "word": "good",
+          "start": 69.08,
+          "end": 69.28
+        },
+        {
+          "word": "plan.",
+          "start": 69.28,
+          "end": 69.76
+        }
+      ]
+    },
+    {
+      "index": 20,
+      "startMs": 70520,
+      "endMs": 72140,
+      "text": "Wow, that's great.",
+      "words": [
+        {
+          "word": "Wow,",
+          "start": 70.52,
+          "end": 70.9
+        },
+        {
+          "word": "that's",
+          "start": 71.42,
+          "end": 71.78
+        },
+        {
+          "word": "great.",
+          "start": 71.78,
+          "end": 72.14
+        }
+      ]
+    },
+    {
+      "index": 21,
+      "startMs": 72820,
+      "endMs": 75160,
+      "text": "Those are all important to think about.",
+      "words": [
+        {
+          "word": "Those",
+          "start": 72.82,
+          "end": 73.16
+        },
+        {
+          "word": "are",
+          "start": 73.16,
+          "end": 73.34
+        },
+        {
+          "word": "all",
+          "start": 73.34,
+          "end": 73.58
+        },
+        {
+          "word": "important",
+          "start": 73.58,
+          "end": 74.26
+        },
+        {
+          "word": "to",
+          "start": 74.26,
+          "end": 74.58
+        },
+        {
+          "word": "think",
+          "start": 74.58,
+          "end": 74.8
+        },
+        {
+          "word": "about.",
+          "start": 74.8,
+          "end": 75.16
+        }
+      ]
+    },
+    {
+      "index": 22,
+      "startMs": 76480,
+      "endMs": 77620,
+      "text": "Is there anything else?",
+      "words": [
+        {
+          "word": "Is",
+          "start": 76.24,
+          "end": 76.6
+        },
+        {
+          "word": "there",
+          "start": 76.6,
+          "end": 76.88
+        },
+        {
+          "word": "anything",
+          "start": 76.88,
+          "end": 77.24
+        },
+        {
+          "word": "else?",
+          "start": 77.24,
+          "end": 77.62
+        }
+      ]
+    },
+    {
+      "index": 23,
+      "startMs": 78420,
+      "endMs": 80260,
+      "text": "And what else was there?",
+      "words": [
+        {
+          "word": "And",
+          "start": 78.42,
+          "end": 78.78
+        },
+        {
+          "word": "what",
+          "start": 78.78,
+          "end": 79.06
+        },
+        {
+          "word": "else",
+          "start": 79.06,
+          "end": 79.38
+        },
+        {
+          "word": "was",
+          "start": 79.38,
+          "end": 79.8
+        },
+        {
+          "word": "there?",
+          "start": 79.8,
+          "end": 80.26
+        }
+      ]
+    },
+    {
+      "index": 24,
+      "startMs": 80700,
+      "endMs": 82880,
+      "text": "Oh, of course, customers.",
+      "words": [
+        {
+          "word": "Oh,",
+          "start": 80.7,
+          "end": 81.0
+        },
+        {
+          "word": "of",
+          "start": 81.26,
+          "end": 81.38
+        },
+        {
+          "word": "course,",
+          "start": 81.38,
+          "end": 81.7
+        },
+        {
+          "word": "customers.",
+          "start": 82.16,
+          "end": 82.88
+        }
+      ]
+    },
+    {
+      "index": 25,
+      "startMs": 83740,
+      "endMs": 87020,
+      "text": "Well, that gives us plenty to talk about today.",
+      "words": [
+        {
+          "word": "Well,",
+          "start": 83.74,
+          "end": 84.18
+        },
+        {
+          "word": "that",
+          "start": 84.52,
+          "end": 84.74
+        },
+        {
+          "word": "gives",
+          "start": 84.74,
+          "end": 84.98
+        },
+        {
+          "word": "us",
+          "start": 84.98,
+          "end": 85.2
+        },
+        {
+          "word": "plenty",
+          "start": 85.2,
+          "end": 85.62
+        },
+        {
+          "word": "to",
+          "start": 85.62,
+          "end": 85.98
+        },
+        {
+          "word": "talk",
+          "start": 85.98,
+          "end": 86.24
+        },
+        {
+          "word": "about",
+          "start": 86.24,
+          "end": 86.58
+        },
+        {
+          "word": "today.",
+          "start": 86.58,
+          "end": 87.02
+        }
+      ]
+    },
+    {
+      "index": 26,
+      "startMs": 88020,
+      "endMs": 92420,
+      "text": "So, let's think about what you can do for your employees.",
+      "words": [
+        {
+          "word": "So,",
+          "start": 87.71000000000001,
+          "end": 88.18
+        },
+        {
+          "word": "let's",
+          "start": 88.78,
+          "end": 89.44
+        },
+        {
+          "word": "think",
+          "start": 89.44,
+          "end": 89.68
+        },
+        {
+          "word": "about",
+          "start": 89.68,
+          "end": 90.04
+        },
+        {
+          "word": "what",
+          "start": 90.04,
+          "end": 90.44
+        },
+        {
+          "word": "you",
+          "start": 90.44,
+          "end": 90.7
+        },
+        {
+          "word": "can",
+          "start": 90.7,
+          "end": 90.94
+        },
+        {
+          "word": "do",
+          "start": 90.94,
+          "end": 91.24
+        },
+        {
+          "word": "for",
+          "start": 91.24,
+          "end": 91.54
+        },
+        {
+          "word": "your",
+          "start": 91.54,
+          "end": 91.76
+        },
+        {
+          "word": "employees.",
+          "start": 91.76,
+          "end": 92.42
+        }
+      ]
+    },
+    {
+      "index": 27,
+      "startMs": 94340,
+      "endMs": 99320,
+      "text": "You said that your workers were unhappy and not working hard enough.",
+      "words": [
+        {
+          "word": "You",
+          "start": 93.95,
+          "end": 94.42
+        },
+        {
+          "word": "said",
+          "start": 94.42,
+          "end": 94.72
+        },
+        {
+          "word": "that",
+          "start": 94.72,
+          "end": 94.92
+        },
+        {
+          "word": "your",
+          "start": 94.92,
+          "end": 95.16
+        },
+        {
+          "word": "workers",
+          "start": 95.16,
+          "end": 95.7
+        },
+        {
+          "word": "were",
+          "start": 95.7,
+          "end": 96.18
+        },
+        {
+          "word": "unhappy",
+          "start": 96.18,
+          "end": 96.92
+        },
+        {
+          "word": "and",
+          "start": 96.92,
+          "end": 97.62
+        },
+        {
+          "word": "not",
+          "start": 97.62,
+          "end": 98.02
+        },
+        {
+          "word": "working",
+          "start": 98.02,
+          "end": 98.58
+        },
+        {
+          "word": "hard",
+          "start": 98.58,
+          "end": 99.06
+        },
+        {
+          "word": "enough.",
+          "start": 99.06,
+          "end": 99.32
+        }
+      ]
+    },
+    {
+      "index": 28,
+      "startMs": 100520,
+      "endMs": 106840,
+      "text": "Keeping your employees happy will make them more likely to work hard for the business.",
+      "words": [
+        {
+          "word": "Keeping",
+          "start": 100.52,
+          "end": 101.02
+        },
+        {
+          "word": "your",
+          "start": 101.02,
+          "end": 101.36
+        },
+        {
+          "word": "employees",
+          "start": 101.36,
+          "end": 102.04
+        },
+        {
+          "word": "happy",
+          "start": 102.04,
+          "end": 102.7
+        },
+        {
+          "word": "will",
+          "start": 102.7,
+          "end": 103.6
+        },
+        {
+          "word": "make",
+          "start": 103.6,
+          "end": 103.86
+        },
+        {
+          "word": "them",
+          "start": 103.86,
+          "end": 104.08
+        },
+        {
+          "word": "more",
+          "start": 104.08,
+          "end": 104.38
+        },
+        {
+          "word": "likely",
+          "start": 104.38,
+          "end": 104.84
+        },
+        {
+          "word": "to",
+          "start": 104.84,
+          "end": 105.26
+        },
+        {
+          "word": "work",
+          "start": 105.26,
+          "end": 105.54
+        },
+        {
+          "word": "hard",
+          "start": 105.54,
+          "end": 106.08
+        },
+        {
+          "word": "for",
+          "start": 106.08,
+          "end": 106.34
+        },
+        {
+          "word": "the",
+          "start": 106.34,
+          "end": 106.46
+        },
+        {
+          "word": "business.",
+          "start": 106.46,
+          "end": 106.84
+        }
+      ]
+    },
+    {
+      "index": 29,
+      "startMs": 108020,
+      "endMs": 113580,
+      "text": "Try organising some social events once a month during work hours.",
+      "words": [
+        {
+          "word": "Try",
+          "start": 108.02,
+          "end": 108.54
+        },
+        {
+          "word": "organising",
+          "start": 108.54,
+          "end": 109.36
+        },
+        {
+          "word": "some",
+          "start": 109.36,
+          "end": 109.84
+        },
+        {
+          "word": "social",
+          "start": 109.84,
+          "end": 110.5
+        },
+        {
+          "word": "events",
+          "start": 110.5,
+          "end": 111.02
+        },
+        {
+          "word": "once",
+          "start": 111.02,
+          "end": 111.42
+        },
+        {
+          "word": "a",
+          "start": 111.42,
+          "end": 111.72
+        },
+        {
+          "word": "month",
+          "start": 111.72,
+          "end": 112.04
+        },
+        {
+          "word": "during",
+          "start": 112.04,
+          "end": 112.68
+        },
+        {
+          "word": "work",
+          "start": 112.68,
+          "end": 113.16
+        },
+        {
+          "word": "hours.",
+          "start": 113.16,
+          "end": 113.58
+        }
+      ]
+    },
+    {
+      "index": 30,
+      "startMs": 113580,
+      "endMs": 116260,
+      "text": "That could be a good first step.",
+      "words": [
+        {
+          "word": "That",
+          "start": 113.58,
+          "end": 114.48
+        },
+        {
+          "word": "could",
+          "start": 114.48,
+          "end": 114.86
+        },
+        {
+          "word": "be",
+          "start": 114.86,
+          "end": 115.1
+        },
+        {
+          "word": "a",
+          "start": 115.1,
+          "end": 115.26
+        },
+        {
+          "word": "good",
+          "start": 115.26,
+          "end": 115.48
+        },
+        {
+          "word": "first",
+          "start": 115.48,
+          "end": 115.84
+        },
+        {
+          "word": "step.",
+          "start": 115.84,
+          "end": 116.26
+        }
+      ]
+    },
+    {
+      "index": 31,
+      "startMs": 117160,
+      "endMs": 121920,
+      "text": "Also, maybe you should paint the walls a brighter colour.",
+      "words": [
+        {
+          "word": "Also,",
+          "start": 117.16,
+          "end": 118.0
+        },
+        {
+          "word": "maybe",
+          "start": 118.7,
+          "end": 119.12
+        },
+        {
+          "word": "you",
+          "start": 119.12,
+          "end": 119.42
+        },
+        {
+          "word": "should",
+          "start": 119.42,
+          "end": 119.64
+        },
+        {
+          "word": "paint",
+          "start": 119.64,
+          "end": 120.0
+        },
+        {
+          "word": "the",
+          "start": 120.0,
+          "end": 120.28
+        },
+        {
+          "word": "walls",
+          "start": 120.28,
+          "end": 120.78
+        },
+        {
+          "word": "a",
+          "start": 120.78,
+          "end": 121.08
+        },
+        {
+          "word": "brighter",
+          "start": 121.08,
+          "end": 121.42
+        },
+        {
+          "word": "colour.",
+          "start": 121.42,
+          "end": 121.92
+        }
+      ]
+    },
+    {
+      "index": 32,
+      "startMs": 122860,
+      "endMs": 127680,
+      "text": "The office is really dark and people feel like they're in a cave.",
+      "words": [
+        {
+          "word": "The",
+          "start": 122.86,
+          "end": 123.02
+        },
+        {
+          "word": "office",
+          "start": 123.02,
+          "end": 123.34
+        },
+        {
+          "word": "is",
+          "start": 123.34,
+          "end": 123.66
+        },
+        {
+          "word": "really",
+          "start": 123.66,
+          "end": 124.18
+        },
+        {
+          "word": "dark",
+          "start": 124.18,
+          "end": 124.7
+        },
+        {
+          "word": "and",
+          "start": 124.7,
+          "end": 125.52
+        },
+        {
+          "word": "people",
+          "start": 125.52,
+          "end": 125.92
+        },
+        {
+          "word": "feel",
+          "start": 125.92,
+          "end": 126.36
+        },
+        {
+          "word": "like",
+          "start": 126.36,
+          "end": 126.7
+        },
+        {
+          "word": "they're",
+          "start": 126.7,
+          "end": 126.96
+        },
+        {
+          "word": "in",
+          "start": 126.96,
+          "end": 127.1
+        },
+        {
+          "word": "a",
+          "start": 127.1,
+          "end": 127.22
+        },
+        {
+          "word": "cave.",
+          "start": 127.22,
+          "end": 127.68
+        }
+      ]
+    },
+    {
+      "index": 33,
+      "startMs": 129300,
+      "endMs": 137160,
+      "text": "Brighter colours can help make people happier and happier employees will also work harder.",
+      "words": [
+        {
+          "word": "Brighter",
+          "start": 129.04000000000002,
+          "end": 129.46
+        },
+        {
+          "word": "colours",
+          "start": 129.46,
+          "end": 129.8
+        },
+        {
+          "word": "can",
+          "start": 129.8,
+          "end": 130.4
+        },
+        {
+          "word": "help",
+          "start": 130.4,
+          "end": 130.82
+        },
+        {
+          "word": "make",
+          "start": 130.82,
+          "end": 131.24
+        },
+        {
+          "word": "people",
+          "start": 131.24,
+          "end": 131.7
+        },
+        {
+          "word": "happier",
+          "start": 131.7,
+          "end": 132.32
+        },
+        {
+          "word": "and",
+          "start": 132.32,
+          "end": 133.66
+        },
+        {
+          "word": "happier",
+          "start": 133.66,
+          "end": 134.22
+        },
+        {
+          "word": "employees",
+          "start": 134.22,
+          "end": 134.96
+        },
+        {
+          "word": "will",
+          "start": 134.96,
+          "end": 135.76
+        },
+        {
+          "word": "also",
+          "start": 135.76,
+          "end": 136.22
+        },
+        {
+          "word": "work",
+          "start": 136.22,
+          "end": 136.64
+        },
+        {
+          "word": "harder.",
+          "start": 136.64,
+          "end": 137.16
+        }
+      ]
+    },
+    {
+      "index": 34,
+      "startMs": 137580,
+      "endMs": 138680,
+      "text": "Oh, OK.",
+      "words": [
+        {
+          "word": "Oh,",
+          "start": 137.58,
+          "end": 137.96
+        },
+        {
+          "word": "OK.",
+          "start": 138.36,
+          "end": 138.68
+        }
+      ]
+    },
+    {
+      "index": 35,
+      "startMs": 139340,
+      "endMs": 140720,
+      "text": "Well, that's good to know.",
+      "words": [
+        {
+          "word": "Well,",
+          "start": 139.34,
+          "end": 139.6
+        },
+        {
+          "word": "that's",
+          "start": 139.72,
+          "end": 140.1
+        },
+        {
+          "word": "good",
+          "start": 140.1,
+          "end": 140.28
+        },
+        {
+          "word": "to",
+          "start": 140.28,
+          "end": 140.48
+        },
+        {
+          "word": "know.",
+          "start": 140.48,
+          "end": 140.72
+        }
+      ]
+    },
+    {
+      "index": 36,
+      "startMs": 141720,
+      "endMs": 144100,
+      "text": "You also have to cut costs.",
+      "words": [
+        {
+          "word": "You",
+          "start": 141.70000000000002,
+          "end": 142.08
+        },
+        {
+          "word": "also",
+          "start": 142.08,
+          "end": 142.56
+        },
+        {
+          "word": "have",
+          "start": 142.56,
+          "end": 143.0
+        },
+        {
+          "word": "to",
+          "start": 143.0,
+          "end": 143.2
+        },
+        {
+          "word": "cut",
+          "start": 143.2,
+          "end": 143.54
+        },
+        {
+          "word": "costs.",
+          "start": 143.54,
+          "end": 144.1
+        }
+      ]
+    },
+    {
+      "index": 37,
+      "startMs": 145020,
+      "endMs": 149300,
+      "text": "You spend far too much money on electricity every month.",
+      "words": [
+        {
+          "word": "You",
+          "start": 145.02,
+          "end": 145.24
+        },
+        {
+          "word": "spend",
+          "start": 145.24,
+          "end": 145.58
+        },
+        {
+          "word": "far",
+          "start": 145.58,
+          "end": 146.1
+        },
+        {
+          "word": "too",
+          "start": 146.1,
+          "end": 146.38
+        },
+        {
+          "word": "much",
+          "start": 146.38,
+          "end": 146.78
+        },
+        {
+          "word": "money",
+          "start": 146.78,
+          "end": 147.16
+        },
+        {
+          "word": "on",
+          "start": 147.16,
+          "end": 147.42
+        },
+        {
+          "word": "electricity",
+          "start": 147.42,
+          "end": 148.18
+        },
+        {
+          "word": "every",
+          "start": 148.18,
+          "end": 148.92
+        },
+        {
+          "word": "month.",
+          "start": 148.92,
+          "end": 149.3
+        }
+      ]
+    },
+    {
+      "index": 38,
+      "startMs": 150420,
+      "endMs": 154700,
+      "text": "Turn off the lights and computers at the end of the workday.",
+      "words": [
+        {
+          "word": "Turn",
+          "start": 150.42,
+          "end": 150.74
+        },
+        {
+          "word": "off",
+          "start": 150.74,
+          "end": 151.08
+        },
+        {
+          "word": "the",
+          "start": 151.08,
+          "end": 151.3
+        },
+        {
+          "word": "lights",
+          "start": 151.3,
+          "end": 151.72
+        },
+        {
+          "word": "and",
+          "start": 151.72,
+          "end": 152.08
+        },
+        {
+          "word": "computers",
+          "start": 152.08,
+          "end": 152.8
+        },
+        {
+          "word": "at",
+          "start": 152.8,
+          "end": 153.3
+        },
+        {
+          "word": "the",
+          "start": 153.3,
+          "end": 153.42
+        },
+        {
+          "word": "end",
+          "start": 153.42,
+          "end": 153.8
+        },
+        {
+          "word": "of",
+          "start": 153.8,
+          "end": 153.98
+        },
+        {
+          "word": "the",
+          "start": 153.98,
+          "end": 154.12
+        },
+        {
+          "word": "workday.",
+          "start": 154.12,
+          "end": 154.7
+        }
+      ]
+    },
+    {
+      "index": 39,
+      "startMs": 156320,
+      "endMs": 162460,
+      "text": "You should also find some cheaper parts for your products, which are still well made.",
+      "words": [
+        {
+          "word": "You",
+          "start": 156.08,
+          "end": 156.46
+        },
+        {
+          "word": "should",
+          "start": 156.46,
+          "end": 156.74
+        },
+        {
+          "word": "also",
+          "start": 156.74,
+          "end": 157.18
+        },
+        {
+          "word": "find",
+          "start": 157.18,
+          "end": 157.74
+        },
+        {
+          "word": "some",
+          "start": 157.74,
+          "end": 158.06
+        },
+        {
+          "word": "cheaper",
+          "start": 158.06,
+          "end": 158.58
+        },
+        {
+          "word": "parts",
+          "start": 158.58,
+          "end": 159.28
+        },
+        {
+          "word": "for",
+          "start": 159.28,
+          "end": 159.54
+        },
+        {
+          "word": "your",
+          "start": 159.54,
+          "end": 159.7
+        },
+        {
+          "word": "products,",
+          "start": 159.7,
+          "end": 160.2
+        },
+        {
+          "word": "which",
+          "start": 160.52,
+          "end": 160.92
+        },
+        {
+          "word": "are",
+          "start": 160.92,
+          "end": 161.3
+        },
+        {
+          "word": "still",
+          "start": 161.3,
+          "end": 161.68
+        },
+        {
+          "word": "well",
+          "start": 161.68,
+          "end": 162.06
+        },
+        {
+          "word": "made.",
+          "start": 162.06,
+          "end": 162.46
+        }
+      ]
+    },
+    {
+      "index": 40,
+      "startMs": 163960,
+      "endMs": 167340,
+      "text": "It's a tough job, but I can help you find them.",
+      "words": [
+        {
+          "word": "It's",
+          "start": 163.72,
+          "end": 164.1
+        },
+        {
+          "word": "a",
+          "start": 164.1,
+          "end": 164.2
+        },
+        {
+          "word": "tough",
+          "start": 164.2,
+          "end": 164.48
+        },
+        {
+          "word": "job,",
+          "start": 164.48,
+          "end": 164.9
+        },
+        {
+          "word": "but",
+          "start": 165.24,
+          "end": 165.7
+        },
+        {
+          "word": "I",
+          "start": 165.7,
+          "end": 165.98
+        },
+        {
+          "word": "can",
+          "start": 165.98,
+          "end": 166.22
+        },
+        {
+          "word": "help",
+          "start": 166.22,
+          "end": 166.52
+        },
+        {
+          "word": "you",
+          "start": 166.52,
+          "end": 166.78
+        },
+        {
+          "word": "find",
+          "start": 166.78,
+          "end": 167.06
+        },
+        {
+          "word": "them.",
+          "start": 167.06,
+          "end": 167.34
+        }
+      ]
+    },
+    {
+      "index": 41,
+      "startMs": 167760,
+      "endMs": 168280,
+      "text": "I see.",
+      "words": [
+        {
+          "word": "I",
+          "start": 167.76,
+          "end": 168.0
+        },
+        {
+          "word": "see.",
+          "start": 168.0,
+          "end": 168.28
+        }
+      ]
+    },
+    {
+      "index": 42,
+      "startMs": 168880,
+      "endMs": 169940,
+      "text": "That would be great.",
+      "words": [
+        {
+          "word": "That",
+          "start": 168.62,
+          "end": 169.04
+        },
+        {
+          "word": "would",
+          "start": 169.04,
+          "end": 169.32
+        },
+        {
+          "word": "be",
+          "start": 169.32,
+          "end": 169.54
+        },
+        {
+          "word": "great.",
+          "start": 169.54,
+          "end": 169.94
+        }
+      ]
+    },
+    {
+      "index": 43,
+      "startMs": 170580,
+      "endMs": 174240,
+      "text": "If you spend less money, you can make a better profit.",
+      "words": [
+        {
+          "word": "If",
+          "start": 170.58,
+          "end": 171.02
+        },
+        {
+          "word": "you",
+          "start": 171.02,
+          "end": 171.22
+        },
+        {
+          "word": "spend",
+          "start": 171.22,
+          "end": 171.56
+        },
+        {
+          "word": "less",
+          "start": 171.56,
+          "end": 171.94
+        },
+        {
+          "word": "money,",
+          "start": 171.94,
+          "end": 172.44
+        },
+        {
+          "word": "you",
+          "start": 172.66,
+          "end": 172.78
+        },
+        {
+          "word": "can",
+          "start": 172.78,
+          "end": 173.0
+        },
+        {
+          "word": "make",
+          "start": 173.0,
+          "end": 173.28
+        },
+        {
+          "word": "a",
+          "start": 173.28,
+          "end": 173.46
+        },
+        {
+          "word": "better",
+          "start": 173.46,
+          "end": 173.74
+        },
+        {
+          "word": "profit.",
+          "start": 173.74,
+          "end": 174.24
+        }
+      ]
+    },
+    {
+      "index": 44,
+      "startMs": 175760,
+      "endMs": 177960,
+      "text": "You have some excellent adverts.",
+      "words": [
+        {
+          "word": "You",
+          "start": 175.4,
+          "end": 175.82
+        },
+        {
+          "word": "have",
+          "start": 175.82,
+          "end": 176.08
+        },
+        {
+          "word": "some",
+          "start": 176.08,
+          "end": 176.38
+        },
+        {
+          "word": "excellent",
+          "start": 176.38,
+          "end": 177.18
+        },
+        {
+          "word": "adverts.",
+          "start": 177.18,
+          "end": 177.96
+        }
+      ]
+    },
+    {
+      "index": 45,
+      "startMs": 178980,
+      "endMs": 185940,
+      "text": "But you mentioned that you are having trouble reaching new customers and growing your number",
+      "words": [
+        {
+          "word": "But",
+          "start": 178.98,
+          "end": 179.4
+        },
+        {
+          "word": "you",
+          "start": 179.4,
+          "end": 179.62
+        },
+        {
+          "word": "mentioned",
+          "start": 179.62,
+          "end": 180.04
+        },
+        {
+          "word": "that",
+          "start": 180.04,
+          "end": 180.5
+        },
+        {
+          "word": "you",
+          "start": 180.5,
+          "end": 180.7
+        },
+        {
+          "word": "are",
+          "start": 180.7,
+          "end": 180.88
+        },
+        {
+          "word": "having",
+          "start": 180.88,
+          "end": 181.2
+        },
+        {
+          "word": "trouble",
+          "start": 181.2,
+          "end": 181.72
+        },
+        {
+          "word": "reaching",
+          "start": 181.72,
+          "end": 182.36
+        },
+        {
+          "word": "new",
+          "start": 182.36,
+          "end": 182.94
+        },
+        {
+          "word": "customers",
+          "start": 182.94,
+          "end": 183.62
+        },
+        {
+          "word": "and",
+          "start": 183.62,
+          "end": 184.7
+        },
+        {
+          "word": "growing",
+          "start": 184.7,
+          "end": 185.2
+        },
+        {
+          "word": "your",
+          "start": 185.2,
+          "end": 185.56
+        },
+        {
+          "word": "number",
+          "start": 185.56,
+          "end": 185.94
+        }
+      ]
+    },
+    {
+      "index": 46,
+      "startMs": 185940,
+      "endMs": 190040,
+      "text": "of customers is really important for a successful business.",
+      "words": [
+        {
+          "word": "of",
+          "start": 185.94,
+          "end": 186.18
+        },
+        {
+          "word": "customers",
+          "start": 186.18,
+          "end": 186.72
+        },
+        {
+          "word": "is",
+          "start": 186.72,
+          "end": 187.4
+        },
+        {
+          "word": "really",
+          "start": 187.4,
+          "end": 187.84
+        },
+        {
+          "word": "important",
+          "start": 187.84,
+          "end": 188.48
+        },
+        {
+          "word": "for",
+          "start": 188.48,
+          "end": 188.82
+        },
+        {
+          "word": "a",
+          "start": 188.82,
+          "end": 188.98
+        },
+        {
+          "word": "successful",
+          "start": 188.98,
+          "end": 189.48
+        },
+        {
+          "word": "business.",
+          "start": 189.48,
+          "end": 190.04
+        }
+      ]
+    },
+    {
+      "index": 47,
+      "startMs": 191040,
+      "endMs": 197920,
+      "text": "So, if I were you, I would try adding online sales to get more customers.",
+      "words": [
+        {
+          "word": "So,",
+          "start": 190.98000000000002,
+          "end": 191.34
+        },
+        {
+          "word": "if",
+          "start": 191.88,
+          "end": 192.16
+        },
+        {
+          "word": "I",
+          "start": 192.16,
+          "end": 192.4
+        },
+        {
+          "word": "were",
+          "start": 192.4,
+          "end": 192.62
+        },
+        {
+          "word": "you,",
+          "start": 192.62,
+          "end": 192.9
+        },
+        {
+          "word": "I",
+          "start": 193.58,
+          "end": 193.82
+        },
+        {
+          "word": "would",
+          "start": 193.82,
+          "end": 194.02
+        },
+        {
+          "word": "try",
+          "start": 194.02,
+          "end": 194.4
+        },
+        {
+          "word": "adding",
+          "start": 194.4,
+          "end": 194.9
+        },
+        {
+          "word": "online",
+          "start": 194.9,
+          "end": 195.62
+        },
+        {
+          "word": "sales",
+          "start": 195.62,
+          "end": 196.46
+        },
+        {
+          "word": "to",
+          "start": 196.46,
+          "end": 196.76
+        },
+        {
+          "word": "get",
+          "start": 196.76,
+          "end": 196.98
+        },
+        {
+          "word": "more",
+          "start": 196.98,
+          "end": 197.3
+        },
+        {
+          "word": "customers.",
+          "start": 197.3,
+          "end": 197.92
+        }
+      ]
+    },
+    {
+      "index": 48,
+      "startMs": 198400,
+      "endMs": 200460,
+      "text": "Yeah, I like that idea.",
+      "words": [
+        {
+          "word": "Yeah,",
+          "start": 198.4,
+          "end": 198.96
+        },
+        {
+          "word": "I",
+          "start": 199.14,
+          "end": 199.34
+        },
+        {
+          "word": "like",
+          "start": 199.34,
+          "end": 199.7
+        },
+        {
+          "word": "that",
+          "start": 199.7,
+          "end": 199.94
+        },
+        {
+          "word": "idea.",
+          "start": 199.94,
+          "end": 200.46
+        }
+      ]
+    },
+    {
+      "index": 49,
+      "startMs": 201120,
+      "endMs": 205880,
+      "text": "I have a website already, but it looks pretty old and messy.",
+      "words": [
+        {
+          "word": "I",
+          "start": 201.12,
+          "end": 201.54
+        },
+        {
+          "word": "have",
+          "start": 201.54,
+          "end": 201.8
+        },
+        {
+          "word": "a",
+          "start": 201.8,
+          "end": 201.92
+        },
+        {
+          "word": "website",
+          "start": 201.92,
+          "end": 202.48
+        },
+        {
+          "word": "already,",
+          "start": 202.48,
+          "end": 203.04
+        },
+        {
+          "word": "but",
+          "start": 203.42,
+          "end": 203.78
+        },
+        {
+          "word": "it",
+          "start": 203.78,
+          "end": 203.94
+        },
+        {
+          "word": "looks",
+          "start": 203.94,
+          "end": 204.22
+        },
+        {
+          "word": "pretty",
+          "start": 204.22,
+          "end": 204.68
+        },
+        {
+          "word": "old",
+          "start": 204.68,
+          "end": 205.18
+        },
+        {
+          "word": "and",
+          "start": 205.18,
+          "end": 205.44
+        },
+        {
+          "word": "messy.",
+          "start": 205.44,
+          "end": 205.88
+        }
+      ]
+    },
+    {
+      "index": 50,
+      "startMs": 206600,
+      "endMs": 209000,
+      "text": "But there are things we can work on.",
+      "words": [
+        {
+          "word": "But",
+          "start": 206.6,
+          "end": 207.06
+        },
+        {
+          "word": "there",
+          "start": 207.06,
+          "end": 207.32
+        },
+        {
+          "word": "are",
+          "start": 207.32,
+          "end": 207.52
+        },
+        {
+          "word": "things",
+          "start": 207.52,
+          "end": 207.84
+        },
+        {
+          "word": "we",
+          "start": 207.84,
+          "end": 208.16
+        },
+        {
+          "word": "can",
+          "start": 208.16,
+          "end": 208.4
+        },
+        {
+          "word": "work",
+          "start": 208.4,
+          "end": 208.7
+        },
+        {
+          "word": "on.",
+          "start": 208.7,
+          "end": 209.0
+        }
+      ]
+    },
+    {
+      "index": 51,
+      "startMs": 209880,
+      "endMs": 217020,
+      "text": "If you want to sell online, you should start by making sure that the website doesn't look",
+      "words": [
+        {
+          "word": "If",
+          "start": 209.88,
+          "end": 210.26
+        },
+        {
+          "word": "you",
+          "start": 210.26,
+          "end": 210.46
+        },
+        {
+          "word": "want",
+          "start": 210.46,
+          "end": 210.78
+        },
+        {
+          "word": "to",
+          "start": 210.78,
+          "end": 211.04
+        },
+        {
+          "word": "sell",
+          "start": 211.04,
+          "end": 211.3
+        },
+        {
+          "word": "online,",
+          "start": 211.3,
+          "end": 211.98
+        },
+        {
+          "word": "you",
+          "start": 212.54,
+          "end": 212.84
+        },
+        {
+          "word": "should",
+          "start": 212.84,
+          "end": 213.08
+        },
+        {
+          "word": "start",
+          "start": 213.08,
+          "end": 213.54
+        },
+        {
+          "word": "by",
+          "start": 213.54,
+          "end": 213.86
+        },
+        {
+          "word": "making",
+          "start": 213.86,
+          "end": 214.24
+        },
+        {
+          "word": "sure",
+          "start": 214.24,
+          "end": 214.82
+        },
+        {
+          "word": "that",
+          "start": 214.82,
+          "end": 215.18
+        },
+        {
+          "word": "the",
+          "start": 215.18,
+          "end": 215.34
+        },
+        {
+          "word": "website",
+          "start": 215.34,
+          "end": 215.96
+        },
+        {
+          "word": "doesn't",
+          "start": 215.96,
+          "end": 216.74
+        },
+        {
+          "word": "look",
+          "start": 216.74,
+          "end": 217.02
+        }
+      ]
+    },
+    {
+      "index": 52,
+      "startMs": 217020,
+      "endMs": 217500,
+      "text": "messy.",
+      "words": [
+        {
+          "word": "messy.",
+          "start": 217.02,
+          "end": 217.5
+        }
+      ]
+    },
+    {
+      "index": 53,
+      "startMs": 218500,
+      "endMs": 224900,
+      "text": "If you don't have the skills to make it look neat, hire a professional web designer.",
+      "words": [
+        {
+          "word": "If",
+          "start": 218.39,
+          "end": 218.76
+        },
+        {
+          "word": "you",
+          "start": 218.76,
+          "end": 219.28
+        },
+        {
+          "word": "don't",
+          "start": 219.28,
+          "end": 219.62
+        },
+        {
+          "word": "have",
+          "start": 219.62,
+          "end": 219.86
+        },
+        {
+          "word": "the",
+          "start": 219.86,
+          "end": 220.08
+        },
+        {
+          "word": "skills",
+          "start": 220.08,
+          "end": 220.52
+        },
+        {
+          "word": "to",
+          "start": 220.52,
+          "end": 220.84
+        },
+        {
+          "word": "make",
+          "start": 220.84,
+          "end": 221.08
+        },
+        {
+          "word": "it",
+          "start": 221.08,
+          "end": 221.28
+        },
+        {
+          "word": "look",
+          "start": 221.28,
+          "end": 221.52
+        },
+        {
+          "word": "neat,",
+          "start": 221.52,
+          "end": 221.9
+        },
+        {
+          "word": "hire",
+          "start": 222.42,
+          "end": 222.9
+        },
+        {
+          "word": "a",
+          "start": 222.9,
+          "end": 223.24
+        },
+        {
+          "word": "professional",
+          "start": 223.24,
+          "end": 223.86
+        },
+        {
+          "word": "web",
+          "start": 223.86,
+          "end": 224.4
+        },
+        {
+          "word": "designer.",
+          "start": 224.4,
+          "end": 224.9
+        }
+      ]
+    },
+    {
+      "index": 54,
+      "startMs": 226300,
+      "endMs": 228660,
+      "text": "You want a neat, clean website.",
+      "words": [
+        {
+          "word": "You",
+          "start": 225.99,
+          "end": 226.36
+        },
+        {
+          "word": "want",
+          "start": 226.36,
+          "end": 226.7
+        },
+        {
+          "word": "a",
+          "start": 226.7,
+          "end": 226.94
+        },
+        {
+          "word": "neat,",
+          "start": 226.94,
+          "end": 227.24
+        },
+        {
+          "word": "clean",
+          "start": 227.48,
+          "end": 227.94
+        },
+        {
+          "word": "website.",
+          "start": 227.94,
+          "end": 228.66
+        }
+      ]
+    },
+    {
+      "index": 55,
+      "startMs": 229340,
+      "endMs": 232280,
+      "text": "It isn't something you want to be careless with.",
+      "words": [
+        {
+          "word": "It",
+          "start": 229.34,
+          "end": 229.72
+        },
+        {
+          "word": "isn't",
+          "start": 229.72,
+          "end": 230.2
+        },
+        {
+          "word": "something",
+          "start": 230.2,
+          "end": 230.64
+        },
+        {
+          "word": "you",
+          "start": 230.64,
+          "end": 230.94
+        },
+        {
+          "word": "want",
+          "start": 230.94,
+          "end": 231.16
+        },
+        {
+          "word": "to",
+          "start": 231.16,
+          "end": 231.34
+        },
+        {
+          "word": "be",
+          "start": 231.34,
+          "end": 231.46
+        },
+        {
+          "word": "careless",
+          "start": 231.46,
+          "end": 231.86
+        },
+        {
+          "word": "with.",
+          "start": 231.86,
+          "end": 232.28
+        }
+      ]
+    },
+    {
+      "index": 56,
+      "startMs": 232640,
+      "endMs": 233160,
+      "text": "I see.",
+      "words": [
+        {
+          "word": "I",
+          "start": 232.64,
+          "end": 232.84
+        },
+        {
+          "word": "see.",
+          "start": 232.84,
+          "end": 233.16
+        }
+      ]
+    },
+    {
+      "index": 57,
+      "startMs": 233940,
+      "endMs": 238120,
+      "text": "Well, I would like to have a lot of black on the website.",
+      "words": [
+        {
+          "word": "Well,",
+          "start": 233.94,
+          "end": 234.44
+        },
+        {
+          "word": "I",
+          "start": 234.86,
+          "end": 235.1
+        },
+        {
+          "word": "would",
+          "start": 235.1,
+          "end": 235.28
+        },
+        {
+          "word": "like",
+          "start": 235.28,
+          "end": 235.48
+        },
+        {
+          "word": "to",
+          "start": 235.48,
+          "end": 235.7
+        },
+        {
+          "word": "have",
+          "start": 235.7,
+          "end": 235.92
+        },
+        {
+          "word": "a",
+          "start": 235.92,
+          "end": 236.1
+        },
+        {
+          "word": "lot",
+          "start": 236.1,
+          "end": 236.28
+        },
+        {
+          "word": "of",
+          "start": 236.28,
+          "end": 236.54
+        },
+        {
+          "word": "black",
+          "start": 236.54,
+          "end": 236.94
+        },
+        {
+          "word": "on",
+          "start": 236.94,
+          "end": 237.48
+        },
+        {
+          "word": "the",
+          "start": 237.48,
+          "end": 237.64
+        },
+        {
+          "word": "website.",
+          "start": 237.64,
+          "end": 238.12
+        }
+      ]
+    },
+    {
+      "index": 58,
+      "startMs": 238800,
+      "endMs": 242960,
+      "text": "I think that colour is professional and serious looking.",
+      "words": [
+        {
+          "word": "I",
+          "start": 238.8,
+          "end": 239.14
+        },
+        {
+          "word": "think",
+          "start": 239.14,
+          "end": 239.44
+        },
+        {
+          "word": "that",
+          "start": 239.44,
+          "end": 239.8
+        },
+        {
+          "word": "colour",
+          "start": 239.8,
+          "end": 240.22
+        },
+        {
+          "word": "is",
+          "start": 240.22,
+          "end": 240.52
+        },
+        {
+          "word": "professional",
+          "start": 240.52,
+          "end": 241.28
+        },
+        {
+          "word": "and",
+          "start": 241.28,
+          "end": 241.86
+        },
+        {
+          "word": "serious",
+          "start": 241.86,
+          "end": 242.5
+        },
+        {
+          "word": "looking.",
+          "start": 242.5,
+          "end": 242.96
+        }
+      ]
+    },
+    {
+      "index": 59,
+      "startMs": 243960,
+      "endMs": 250800,
+      "text": "I understand, but I think if you want to make the website attractive, it needs more",
+      "words": [
+        {
+          "word": "I",
+          "start": 243.70000000000002,
+          "end": 244.12
+        },
+        {
+          "word": "understand,",
+          "start": 244.12,
+          "end": 244.76
+        },
+        {
+          "word": "but",
+          "start": 245.52,
+          "end": 246.12
+        },
+        {
+          "word": "I",
+          "start": 246.12,
+          "end": 246.72
+        },
+        {
+          "word": "think",
+          "start": 246.72,
+          "end": 246.92
+        },
+        {
+          "word": "if",
+          "start": 246.92,
+          "end": 247.16
+        },
+        {
+          "word": "you",
+          "start": 247.16,
+          "end": 247.32
+        },
+        {
+          "word": "want",
+          "start": 247.32,
+          "end": 247.54
+        },
+        {
+          "word": "to",
+          "start": 247.54,
+          "end": 247.76
+        },
+        {
+          "word": "make",
+          "start": 247.76,
+          "end": 248.02
+        },
+        {
+          "word": "the",
+          "start": 248.02,
+          "end": 248.22
+        },
+        {
+          "word": "website",
+          "start": 248.22,
+          "end": 248.72
+        },
+        {
+          "word": "attractive,",
+          "start": 248.72,
+          "end": 249.42
+        },
+        {
+          "word": "it",
+          "start": 249.96,
+          "end": 250.12
+        },
+        {
+          "word": "needs",
+          "start": 250.12,
+          "end": 250.48
+        },
+        {
+          "word": "more",
+          "start": 250.48,
+          "end": 250.8
+        }
+      ]
+    },
+    {
+      "index": 60,
+      "startMs": 250800,
+      "endMs": 251280,
+      "text": "colour.",
+      "words": [
+        {
+          "word": "colour.",
+          "start": 250.8,
+          "end": 251.28
+        }
+      ]
+    },
+    {
+      "index": 61,
+      "startMs": 252380,
+      "endMs": 258880,
+      "text": "More colour could help the design pop out a bit more and prevent customers from leaving",
+      "words": [
+        {
+          "word": "More",
+          "start": 252.38,
+          "end": 252.78
+        },
+        {
+          "word": "colour",
+          "start": 252.78,
+          "end": 253.2
+        },
+        {
+          "word": "could",
+          "start": 253.2,
+          "end": 253.48
+        },
+        {
+          "word": "help",
+          "start": 253.48,
+          "end": 253.76
+        },
+        {
+          "word": "the",
+          "start": 253.76,
+          "end": 253.96
+        },
+        {
+          "word": "design",
+          "start": 253.96,
+          "end": 254.46
+        },
+        {
+          "word": "pop",
+          "start": 254.46,
+          "end": 254.9
+        },
+        {
+          "word": "out",
+          "start": 254.9,
+          "end": 255.28
+        },
+        {
+          "word": "a",
+          "start": 255.28,
+          "end": 255.5
+        },
+        {
+          "word": "bit",
+          "start": 255.5,
+          "end": 255.68
+        },
+        {
+          "word": "more",
+          "start": 255.68,
+          "end": 256.0
+        },
+        {
+          "word": "and",
+          "start": 256.0,
+          "end": 256.86
+        },
+        {
+          "word": "prevent",
+          "start": 256.86,
+          "end": 257.28
+        },
+        {
+          "word": "customers",
+          "start": 257.28,
+          "end": 258.02
+        },
+        {
+          "word": "from",
+          "start": 258.02,
+          "end": 258.42
+        },
+        {
+          "word": "leaving",
+          "start": 258.42,
+          "end": 258.88
+        }
+      ]
+    },
+    {
+      "index": 62,
+      "startMs": 258880,
+      "endMs": 261340,
+      "text": "the website before buying anything.",
+      "words": [
+        {
+          "word": "the",
+          "start": 258.88,
+          "end": 259.24
+        },
+        {
+          "word": "website",
+          "start": 259.24,
+          "end": 259.76
+        },
+        {
+          "word": "before",
+          "start": 259.76,
+          "end": 260.32
+        },
+        {
+          "word": "buying",
+          "start": 260.32,
+          "end": 260.9
+        },
+        {
+          "word": "anything.",
+          "start": 260.9,
+          "end": 261.34
+        }
+      ]
+    },
+    {
+      "index": 63,
+      "startMs": 261800,
+      "endMs": 262380,
+      "text": "Ah-ha!",
+      "words": [
+        {
+          "word": "Ah",
+          "start": 261.8,
+          "end": 262.16
+        },
+        {
+          "word": "-ha!",
+          "start": 262.16,
+          "end": 262.38
+        }
+      ]
+    },
+    {
+      "index": 64,
+      "startMs": 262680,
+      "endMs": 264000,
+      "text": "That's a good idea.",
+      "words": [
+        {
+          "word": "That's",
+          "start": 262.68,
+          "end": 263.04
+        },
+        {
+          "word": "a",
+          "start": 263.04,
+          "end": 263.12
+        },
+        {
+          "word": "good",
+          "start": 263.12,
+          "end": 263.44
+        },
+        {
+          "word": "idea.",
+          "start": 263.44,
+          "end": 264.0
+        }
+      ]
+    },
+    {
+      "index": 65,
+      "startMs": 264680,
+      "endMs": 266980,
+      "text": "I actually like blue, too.",
+      "words": [
+        {
+          "word": "I",
+          "start": 264.68,
+          "end": 265.1
+        },
+        {
+          "word": "actually",
+          "start": 265.1,
+          "end": 265.56
+        },
+        {
+          "word": "like",
+          "start": 265.56,
+          "end": 265.98
+        },
+        {
+          "word": "blue,",
+          "start": 265.98,
+          "end": 266.5
+        },
+        {
+          "word": "too.",
+          "start": 266.64,
+          "end": 266.98
+        }
+      ]
+    },
+    {
+      "index": 66,
+      "startMs": 267780,
+      "endMs": 273120,
+      "text": "I think someone else told me about colours people prefer, but I forgot.",
+      "words": [
+        {
+          "word": "I",
+          "start": 267.46000000000004,
+          "end": 267.86
+        },
+        {
+          "word": "think",
+          "start": 267.86,
+          "end": 268.06
+        },
+        {
+          "word": "someone",
+          "start": 268.06,
+          "end": 268.58
+        },
+        {
+          "word": "else",
+          "start": 268.58,
+          "end": 268.9
+        },
+        {
+          "word": "told",
+          "start": 268.9,
+          "end": 269.3
+        },
+        {
+          "word": "me",
+          "start": 269.3,
+          "end": 269.56
+        },
+        {
+          "word": "about",
+          "start": 269.56,
+          "end": 269.9
+        },
+        {
+          "word": "colours",
+          "start": 269.9,
+          "end": 270.38
+        },
+        {
+          "word": "people",
+          "start": 270.38,
+          "end": 270.92
+        },
+        {
+          "word": "prefer,",
+          "start": 270.92,
+          "end": 271.52
+        },
+        {
+          "word": "but",
+          "start": 271.8,
+          "end": 272.5
+        },
+        {
+          "word": "I",
+          "start": 272.5,
+          "end": 272.66
+        },
+        {
+          "word": "forgot.",
+          "start": 272.66,
+          "end": 273.12
+        }
+      ]
+    },
+    {
+      "index": 67,
+      "startMs": 273600,
+      "endMs": 278600,
+      "text": "Yes, it's easy to forget to think about something as simple as colour.",
+      "words": [
+        {
+          "word": "Yes,",
+          "start": 273.6,
+          "end": 274.02
+        },
+        {
+          "word": "it's",
+          "start": 274.46,
+          "end": 274.86
+        },
+        {
+          "word": "easy",
+          "start": 274.86,
+          "end": 275.24
+        },
+        {
+          "word": "to",
+          "start": 275.24,
+          "end": 275.52
+        },
+        {
+          "word": "forget",
+          "start": 275.52,
+          "end": 275.88
+        },
+        {
+          "word": "to",
+          "start": 275.88,
+          "end": 276.24
+        },
+        {
+          "word": "think",
+          "start": 276.24,
+          "end": 276.48
+        },
+        {
+          "word": "about",
+          "start": 276.48,
+          "end": 276.84
+        },
+        {
+          "word": "something",
+          "start": 276.84,
+          "end": 277.32
+        },
+        {
+          "word": "as",
+          "start": 277.32,
+          "end": 277.68
+        },
+        {
+          "word": "simple",
+          "start": 277.68,
+          "end": 278.02
+        },
+        {
+          "word": "as",
+          "start": 278.02,
+          "end": 278.28
+        },
+        {
+          "word": "colour.",
+          "start": 278.28,
+          "end": 278.6
+        }
+      ]
+    },
+    {
+      "index": 68,
+      "startMs": 280060,
+      "endMs": 285520,
+      "text": "The web designer you hire might have some good ideas about which colours to use.",
+      "words": [
+        {
+          "word": "The",
+          "start": 279.72,
+          "end": 280.12
+        },
+        {
+          "word": "web",
+          "start": 280.12,
+          "end": 280.46
+        },
+        {
+          "word": "designer",
+          "start": 280.46,
+          "end": 280.94
+        },
+        {
+          "word": "you",
+          "start": 280.94,
+          "end": 281.4
+        },
+        {
+          "word": "hire",
+          "start": 281.4,
+          "end": 281.76
+        },
+        {
+          "word": "might",
+          "start": 281.76,
+          "end": 282.16
+        },
+        {
+          "word": "have",
+          "start": 282.16,
+          "end": 282.5
+        },
+        {
+          "word": "some",
+          "start": 282.5,
+          "end": 282.78
+        },
+        {
+          "word": "good",
+          "start": 282.78,
+          "end": 283.08
+        },
+        {
+          "word": "ideas",
+          "start": 283.08,
+          "end": 283.62
+        },
+        {
+          "word": "about",
+          "start": 283.62,
+          "end": 284.06
+        },
+        {
+          "word": "which",
+          "start": 284.06,
+          "end": 284.52
+        },
+        {
+          "word": "colours",
+          "start": 284.52,
+          "end": 284.9
+        },
+        {
+          "word": "to",
+          "start": 284.9,
+          "end": 285.22
+        },
+        {
+          "word": "use.",
+          "start": 285.22,
+          "end": 285.52
+        }
+      ]
+    },
+    {
+      "index": 69,
+      "startMs": 287100,
+      "endMs": 294000,
+      "text": "So for our next meeting, you should create your website design and bring a plan.",
+      "words": [
+        {
+          "word": "So",
+          "start": 286.92,
+          "end": 287.32
+        },
+        {
+          "word": "for",
+          "start": 287.32,
+          "end": 288.12
+        },
+        {
+          "word": "our",
+          "start": 288.12,
+          "end": 288.36
+        },
+        {
+          "word": "next",
+          "start": 288.36,
+          "end": 288.84
+        },
+        {
+          "word": "meeting,",
+          "start": 288.84,
+          "end": 289.26
+        },
+        {
+          "word": "you",
+          "start": 289.92,
+          "end": 290.24
+        },
+        {
+          "word": "should",
+          "start": 290.24,
+          "end": 290.5
+        },
+        {
+          "word": "create",
+          "start": 290.5,
+          "end": 291.02
+        },
+        {
+          "word": "your",
+          "start": 291.02,
+          "end": 291.42
+        },
+        {
+          "word": "website",
+          "start": 291.42,
+          "end": 291.88
+        },
+        {
+          "word": "design",
+          "start": 291.88,
+          "end": 292.4
+        },
+        {
+          "word": "and",
+          "start": 292.4,
+          "end": 293.14
+        },
+        {
+          "word": "bring",
+          "start": 293.14,
+          "end": 293.44
+        },
+        {
+          "word": "a",
+          "start": 293.44,
+          "end": 293.62
+        },
+        {
+          "word": "plan.",
+          "start": 293.62,
+          "end": 294.0
+        }
+      ]
+    },
+    {
+      "index": 70,
+      "startMs": 294760,
+      "endMs": 298960,
+      "text": "You could think about how it looks as well as what it says.",
+      "words": [
+        {
+          "word": "You",
+          "start": 294.76,
+          "end": 295.44
+        },
+        {
+          "word": "could",
+          "start": 295.44,
+          "end": 295.68
+        },
+        {
+          "word": "think",
+          "start": 295.68,
+          "end": 295.96
+        },
+        {
+          "word": "about",
+          "start": 295.96,
+          "end": 296.32
+        },
+        {
+          "word": "how",
+          "start": 296.32,
+          "end": 296.68
+        },
+        {
+          "word": "it",
+          "start": 296.68,
+          "end": 296.82
+        },
+        {
+          "word": "looks",
+          "start": 296.82,
+          "end": 297.24
+        },
+        {
+          "word": "as",
+          "start": 297.24,
+          "end": 297.78
+        },
+        {
+          "word": "well",
+          "start": 297.78,
+          "end": 298.0
+        },
+        {
+          "word": "as",
+          "start": 298.0,
+          "end": 298.2
+        },
+        {
+          "word": "what",
+          "start": 298.2,
+          "end": 298.44
+        },
+        {
+          "word": "it",
+          "start": 298.44,
+          "end": 298.58
+        },
+        {
+          "word": "says.",
+          "start": 298.58,
+          "end": 298.96
+        }
+      ]
+    },
+    {
+      "index": 71,
+      "startMs": 299840,
+      "endMs": 302600,
+      "text": "You don't want it to look...",
+      "words": [
+        {
+          "word": "You",
+          "start": 299.84,
+          "end": 300.52
+        },
+        {
+          "word": "don't",
+          "start": 300.52,
+          "end": 300.82
+        },
+        {
+          "word": "want",
+          "start": 300.82,
+          "end": 301.08
+        },
+        {
+          "word": "it",
+          "start": 301.08,
+          "end": 301.3
+        },
+        {
+          "word": "to",
+          "start": 301.3,
+          "end": 301.5
+        },
+        {
+          "word": "look...",
+          "start": 301.5,
+          "end": 302.6
+        }
+      ]
+    },
+    {
+      "index": 72,
+      "startMs": 302600,
+      "endMs": 308620,
+      "text": "Well, you would want to be sure it looks well organised and the best it can be.",
+      "words": [
+        {
+          "word": "Well,",
+          "start": 302.6,
+          "end": 303.06
+        },
+        {
+          "word": "you",
+          "start": 303.64,
+          "end": 303.9
+        },
+        {
+          "word": "would",
+          "start": 303.9,
+          "end": 304.02
+        },
+        {
+          "word": "want",
+          "start": 304.02,
+          "end": 304.24
+        },
+        {
+          "word": "to",
+          "start": 304.24,
+          "end": 304.44
+        },
+        {
+          "word": "be",
+          "start": 304.44,
+          "end": 304.54
+        },
+        {
+          "word": "sure",
+          "start": 304.54,
+          "end": 304.88
+        },
+        {
+          "word": "it",
+          "start": 304.88,
+          "end": 305.18
+        },
+        {
+          "word": "looks",
+          "start": 305.18,
+          "end": 305.52
+        },
+        {
+          "word": "well",
+          "start": 305.52,
+          "end": 305.98
+        },
+        {
+          "word": "organised",
+          "start": 305.98,
+          "end": 306.58
+        },
+        {
+          "word": "and",
+          "start": 306.58,
+          "end": 307.36
+        },
+        {
+          "word": "the",
+          "start": 307.36,
+          "end": 307.58
+        },
+        {
+          "word": "best",
+          "start": 307.58,
+          "end": 307.92
+        },
+        {
+          "word": "it",
+          "start": 307.92,
+          "end": 308.12
+        },
+        {
+          "word": "can",
+          "start": 308.12,
+          "end": 308.32
+        },
+        {
+          "word": "be.",
+          "start": 308.32,
+          "end": 308.62
+        }
+      ]
+    },
+    {
+      "index": 73,
+      "startMs": 309420,
+      "endMs": 312560,
+      "text": "It should also be really easy to use.",
+      "words": [
+        {
+          "word": "It",
+          "start": 309.42,
+          "end": 309.9
+        },
+        {
+          "word": "should",
+          "start": 309.9,
+          "end": 310.06
+        },
+        {
+          "word": "also",
+          "start": 310.06,
+          "end": 310.54
+        },
+        {
+          "word": "be",
+          "start": 310.54,
+          "end": 310.94
+        },
+        {
+          "word": "really",
+          "start": 310.94,
+          "end": 311.38
+        },
+        {
+          "word": "easy",
+          "start": 311.38,
+          "end": 311.9
+        },
+        {
+          "word": "to",
+          "start": 311.9,
+          "end": 312.18
+        },
+        {
+          "word": "use.",
+          "start": 312.18,
+          "end": 312.56
+        }
+      ]
+    },
+    {
+      "index": 74,
+      "startMs": 313620,
+      "endMs": 318640,
+      "text": "Next time, we'll go over your design and see how to make it better.",
+      "words": [
+        {
+          "word": "Next",
+          "start": 313.62,
+          "end": 314.3
+        },
+        {
+          "word": "time,",
+          "start": 314.3,
+          "end": 314.74
+        },
+        {
+          "word": "we'll",
+          "start": 314.86,
+          "end": 315.08
+        },
+        {
+          "word": "go",
+          "start": 315.08,
+          "end": 315.28
+        },
+        {
+          "word": "over",
+          "start": 315.28,
+          "end": 315.72
+        },
+        {
+          "word": "your",
+          "start": 315.72,
+          "end": 315.9
+        },
+        {
+          "word": "design",
+          "start": 315.9,
+          "end": 316.32
+        },
+        {
+          "word": "and",
+          "start": 316.32,
+          "end": 317.08
+        },
+        {
+          "word": "see",
+          "start": 317.08,
+          "end": 317.38
+        },
+        {
+          "word": "how",
+          "start": 317.38,
+          "end": 317.72
+        },
+        {
+          "word": "to",
+          "start": 317.72,
+          "end": 317.9
+        },
+        {
+          "word": "make",
+          "start": 317.9,
+          "end": 318.14
+        },
+        {
+          "word": "it",
+          "start": 318.14,
+          "end": 318.3
+        },
+        {
+          "word": "better.",
+          "start": 318.3,
+          "end": 318.64
+        }
+      ]
+    },
+    {
+      "index": 75,
+      "startMs": 318640,
+      "endMs": 326680,
+      "text": "We will also think about hiring a good web designer to make your website look great and",
+      "words": [
+        {
+          "word": "We",
+          "start": 318.64,
+          "end": 319.18
+        },
+        {
+          "word": "will",
+          "start": 319.18,
+          "end": 320.28
+        },
+        {
+          "word": "also",
+          "start": 320.28,
+          "end": 320.66
+        },
+        {
+          "word": "think",
+          "start": 320.66,
+          "end": 321.04
+        },
+        {
+          "word": "about",
+          "start": 321.04,
+          "end": 321.4
+        },
+        {
+          "word": "hiring",
+          "start": 321.4,
+          "end": 321.96
+        },
+        {
+          "word": "a",
+          "start": 321.96,
+          "end": 322.22
+        },
+        {
+          "word": "good",
+          "start": 322.22,
+          "end": 322.5
+        },
+        {
+          "word": "web",
+          "start": 322.5,
+          "end": 322.84
+        },
+        {
+          "word": "designer",
+          "start": 322.84,
+          "end": 323.4
+        },
+        {
+          "word": "to",
+          "start": 323.4,
+          "end": 324.06
+        },
+        {
+          "word": "make",
+          "start": 324.06,
+          "end": 324.26
+        },
+        {
+          "word": "your",
+          "start": 324.26,
+          "end": 324.54
+        },
+        {
+          "word": "website",
+          "start": 324.54,
+          "end": 325.14
+        },
+        {
+          "word": "look",
+          "start": 325.14,
+          "end": 325.6
+        },
+        {
+          "word": "great",
+          "start": 325.6,
+          "end": 326.18
+        },
+        {
+          "word": "and",
+          "start": 326.18,
+          "end": 326.68
+        }
+      ]
+    },
+    {
+      "index": 76,
+      "startMs": 326680,
+      "endMs": 327800,
+      "text": "be easy to use.",
+      "words": [
+        {
+          "word": "be",
+          "start": 326.68,
+          "end": 326.92
+        },
+        {
+          "word": "easy",
+          "start": 326.92,
+          "end": 327.28
+        },
+        {
+          "word": "to",
+          "start": 327.28,
+          "end": 327.44
+        },
+        {
+          "word": "use.",
+          "start": 327.44,
+          "end": 327.8
+        }
+      ]
+    },
+    {
+      "index": 77,
+      "startMs": 328340,
+      "endMs": 329280,
+      "text": "OK, great!",
+      "words": [
+        {
+          "word": "OK,",
+          "start": 328.34,
+          "end": 328.72
+        },
+        {
+          "word": "great!",
+          "start": 329.0,
+          "end": 329.28
+        }
+      ]
+    },
+    {
+      "index": 78,
+      "startMs": 329980,
+      "endMs": 332480,
+      "text": "I'll do that and bring it in next week.",
+      "words": [
+        {
+          "word": "I'll",
+          "start": 329.98,
+          "end": 330.32
+        },
+        {
+          "word": "do",
+          "start": 330.32,
+          "end": 330.54
+        },
+        {
+          "word": "that",
+          "start": 330.54,
+          "end": 330.8
+        },
+        {
+          "word": "and",
+          "start": 330.8,
+          "end": 331.14
+        },
+        {
+          "word": "bring",
+          "start": 331.14,
+          "end": 331.46
+        },
+        {
+          "word": "it",
+          "start": 331.46,
+          "end": 331.66
+        },
+        {
+          "word": "in",
+          "start": 331.66,
+          "end": 331.84
+        },
+        {
+          "word": "next",
+          "start": 331.84,
+          "end": 332.2
+        },
+        {
+          "word": "week.",
+          "start": 332.2,
+          "end": 332.48
+        }
+      ]
+    }
+  ]
+}

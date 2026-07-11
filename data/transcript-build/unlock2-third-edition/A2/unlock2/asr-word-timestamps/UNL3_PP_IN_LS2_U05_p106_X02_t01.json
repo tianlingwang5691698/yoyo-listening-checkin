@@ -1,0 +1,385 @@
+{
+  "model": "small",
+  "language": "en",
+  "text": "Unit 5, 5.1 1 The teacher's name isn't Mr. Rosso, it's Mr. Rosson. 2 I had a golf lesson, not a tennis lesson. 3 The match is at 6 tonight, not 6.30, so don't be late. 4 Yasmin doesn't do drama classes, she does gymnastics classes. 5 The competition will be in Colombia, not in Brazil.",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 2900,
+      "text": "Unit 5, 5.1",
+      "words": [
+        {
+          "word": "Unit",
+          "start": 0.0,
+          "end": 0.48
+        },
+        {
+          "word": "5,",
+          "start": 0.48,
+          "end": 1.04
+        },
+        {
+          "word": "5",
+          "start": 1.78,
+          "end": 2.14
+        },
+        {
+          "word": ".1",
+          "start": 2.14,
+          "end": 2.9
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 5000,
+      "endMs": 5260,
+      "text": "1",
+      "words": [
+        {
+          "word": "1",
+          "start": 4.779999999999999,
+          "end": 5.26
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 6000,
+      "endMs": 11160,
+      "text": "The teacher's name isn't Mr. Rosso, it's Mr. Rosson.",
+      "words": [
+        {
+          "word": "The",
+          "start": 6.0,
+          "end": 6.88
+        },
+        {
+          "word": "teacher's",
+          "start": 6.88,
+          "end": 7.42
+        },
+        {
+          "word": "name",
+          "start": 7.42,
+          "end": 7.72
+        },
+        {
+          "word": "isn't",
+          "start": 7.72,
+          "end": 8.3
+        },
+        {
+          "word": "Mr.",
+          "start": 8.3,
+          "end": 8.64
+        },
+        {
+          "word": "Rosso,",
+          "start": 8.8,
+          "end": 9.26
+        },
+        {
+          "word": "it's",
+          "start": 9.78,
+          "end": 10.14
+        },
+        {
+          "word": "Mr.",
+          "start": 10.14,
+          "end": 10.5
+        },
+        {
+          "word": "Rosson.",
+          "start": 10.68,
+          "end": 11.16
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 13200,
+      "endMs": 14160,
+      "text": "2",
+      "words": [
+        {
+          "word": "2",
+          "start": 13.2,
+          "end": 14.16
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 15000,
+      "endMs": 18760,
+      "text": "I had a golf lesson, not a tennis lesson.",
+      "words": [
+        {
+          "word": "I",
+          "start": 15.0,
+          "end": 15.76
+        },
+        {
+          "word": "had",
+          "start": 15.76,
+          "end": 15.98
+        },
+        {
+          "word": "a",
+          "start": 15.98,
+          "end": 16.1
+        },
+        {
+          "word": "golf",
+          "start": 16.1,
+          "end": 16.46
+        },
+        {
+          "word": "lesson,",
+          "start": 16.46,
+          "end": 17.02
+        },
+        {
+          "word": "not",
+          "start": 17.5,
+          "end": 17.78
+        },
+        {
+          "word": "a",
+          "start": 17.78,
+          "end": 18.0
+        },
+        {
+          "word": "tennis",
+          "start": 18.0,
+          "end": 18.2
+        },
+        {
+          "word": "lesson.",
+          "start": 18.2,
+          "end": 18.76
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "startMs": 20960,
+      "endMs": 21920,
+      "text": "3",
+      "words": [
+        {
+          "word": "3",
+          "start": 20.96,
+          "end": 21.92
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "startMs": 21920,
+      "endMs": 28040,
+      "text": "The match is at 6 tonight, not 6.30, so don't be late.",
+      "words": [
+        {
+          "word": "The",
+          "start": 21.92,
+          "end": 23.42
+        },
+        {
+          "word": "match",
+          "start": 23.42,
+          "end": 23.74
+        },
+        {
+          "word": "is",
+          "start": 23.74,
+          "end": 23.94
+        },
+        {
+          "word": "at",
+          "start": 23.94,
+          "end": 24.1
+        },
+        {
+          "word": "6",
+          "start": 24.1,
+          "end": 24.5
+        },
+        {
+          "word": "tonight,",
+          "start": 24.5,
+          "end": 25.02
+        },
+        {
+          "word": "not",
+          "start": 25.46,
+          "end": 25.72
+        },
+        {
+          "word": "6",
+          "start": 25.72,
+          "end": 26.14
+        },
+        {
+          "word": ".30,",
+          "start": 26.14,
+          "end": 26.64
+        },
+        {
+          "word": "so",
+          "start": 27.06,
+          "end": 27.28
+        },
+        {
+          "word": "don't",
+          "start": 27.28,
+          "end": 27.54
+        },
+        {
+          "word": "be",
+          "start": 27.54,
+          "end": 27.66
+        },
+        {
+          "word": "late.",
+          "start": 27.66,
+          "end": 28.04
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "startMs": 30340,
+      "endMs": 31180,
+      "text": "4",
+      "words": [
+        {
+          "word": "4",
+          "start": 30.34,
+          "end": 31.18
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "startMs": 32340,
+      "endMs": 37380,
+      "text": "Yasmin doesn't do drama classes, she does gymnastics classes.",
+      "words": [
+        {
+          "word": "Yasmin",
+          "start": 32.34,
+          "end": 33.18
+        },
+        {
+          "word": "doesn't",
+          "start": 33.18,
+          "end": 33.64
+        },
+        {
+          "word": "do",
+          "start": 33.64,
+          "end": 33.8
+        },
+        {
+          "word": "drama",
+          "start": 33.8,
+          "end": 34.22
+        },
+        {
+          "word": "classes,",
+          "start": 34.22,
+          "end": 34.82
+        },
+        {
+          "word": "she",
+          "start": 35.58,
+          "end": 35.76
+        },
+        {
+          "word": "does",
+          "start": 35.76,
+          "end": 36.0
+        },
+        {
+          "word": "gymnastics",
+          "start": 36.0,
+          "end": 36.68
+        },
+        {
+          "word": "classes.",
+          "start": 36.68,
+          "end": 37.38
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "startMs": 40160,
+      "endMs": 41000,
+      "text": "5",
+      "words": [
+        {
+          "word": "5",
+          "start": 40.16,
+          "end": 41.0
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "startMs": 41000,
+      "endMs": 45880,
+      "text": "The competition will be in Colombia, not in Brazil.",
+      "words": [
+        {
+          "word": "The",
+          "start": 41.0,
+          "end": 42.46
+        },
+        {
+          "word": "competition",
+          "start": 42.46,
+          "end": 43.1
+        },
+        {
+          "word": "will",
+          "start": 43.1,
+          "end": 43.52
+        },
+        {
+          "word": "be",
+          "start": 43.52,
+          "end": 43.72
+        },
+        {
+          "word": "in",
+          "start": 43.72,
+          "end": 43.86
+        },
+        {
+          "word": "Colombia,",
+          "start": 43.86,
+          "end": 44.38
+        },
+        {
+          "word": "not",
+          "start": 45.06,
+          "end": 45.36
+        },
+        {
+          "word": "in",
+          "start": 45.36,
+          "end": 45.6
+        },
+        {
+          "word": "Brazil.",
+          "start": 45.6,
+          "end": 45.88
+        }
+      ]
+    }
+  ]
+}

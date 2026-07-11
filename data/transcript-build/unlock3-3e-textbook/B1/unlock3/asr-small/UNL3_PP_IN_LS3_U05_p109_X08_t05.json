@@ -1,0 +1,305 @@
+{
+  "model": "small",
+  "language": "en",
+  "text": "5.5 1 I think it's great news 2 Oh, that's great 3 What's wrong with being healthy? 4 So now we should all eat fast food and stop exercising? 5 I'd say that it's always better to have a healthy lifestyle",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 1260,
+      "text": "5.5",
+      "words": [
+        {
+          "word": "5",
+          "start": 0.0,
+          "end": 0.44
+        },
+        {
+          "word": ".5",
+          "start": 0.44,
+          "end": 1.26
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 2280,
+      "endMs": 2780,
+      "text": "1",
+      "words": [
+        {
+          "word": "1",
+          "start": 2.2800000000000002,
+          "end": 2.78
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 3780,
+      "endMs": 5340,
+      "text": "I think it's great news",
+      "words": [
+        {
+          "word": "I",
+          "start": 3.74,
+          "end": 4.2
+        },
+        {
+          "word": "think",
+          "start": 4.2,
+          "end": 4.42
+        },
+        {
+          "word": "it's",
+          "start": 4.42,
+          "end": 4.68
+        },
+        {
+          "word": "great",
+          "start": 4.68,
+          "end": 4.88
+        },
+        {
+          "word": "news",
+          "start": 4.88,
+          "end": 5.34
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 7100,
+      "endMs": 8020,
+      "text": "2",
+      "words": [
+        {
+          "word": "2",
+          "start": 7.1,
+          "end": 8.02
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 8940,
+      "endMs": 10180,
+      "text": "Oh, that's great",
+      "words": [
+        {
+          "word": "Oh,",
+          "start": 8.899999999999999,
+          "end": 9.36
+        },
+        {
+          "word": "that's",
+          "start": 9.36,
+          "end": 9.82
+        },
+        {
+          "word": "great",
+          "start": 9.82,
+          "end": 10.18
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "startMs": 12020,
+      "endMs": 12940,
+      "text": "3",
+      "words": [
+        {
+          "word": "3",
+          "start": 12.02,
+          "end": 12.94
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "startMs": 13980,
+      "endMs": 15760,
+      "text": "What's wrong with being healthy?",
+      "words": [
+        {
+          "word": "What's",
+          "start": 13.98,
+          "end": 14.56
+        },
+        {
+          "word": "wrong",
+          "start": 14.56,
+          "end": 14.82
+        },
+        {
+          "word": "with",
+          "start": 14.82,
+          "end": 15.04
+        },
+        {
+          "word": "being",
+          "start": 15.04,
+          "end": 15.28
+        },
+        {
+          "word": "healthy?",
+          "start": 15.28,
+          "end": 15.76
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "startMs": 17460,
+      "endMs": 18380,
+      "text": "4",
+      "words": [
+        {
+          "word": "4",
+          "start": 17.46,
+          "end": 18.38
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "startMs": 19240,
+      "endMs": 23920,
+      "text": "So now we should all eat fast food and stop exercising?",
+      "words": [
+        {
+          "word": "So",
+          "start": 19.240000000000002,
+          "end": 19.8
+        },
+        {
+          "word": "now",
+          "start": 19.8,
+          "end": 20.22
+        },
+        {
+          "word": "we",
+          "start": 20.22,
+          "end": 20.66
+        },
+        {
+          "word": "should",
+          "start": 20.66,
+          "end": 20.88
+        },
+        {
+          "word": "all",
+          "start": 20.88,
+          "end": 21.2
+        },
+        {
+          "word": "eat",
+          "start": 21.2,
+          "end": 21.5
+        },
+        {
+          "word": "fast",
+          "start": 21.5,
+          "end": 21.98
+        },
+        {
+          "word": "food",
+          "start": 21.98,
+          "end": 22.4
+        },
+        {
+          "word": "and",
+          "start": 22.4,
+          "end": 22.78
+        },
+        {
+          "word": "stop",
+          "start": 22.78,
+          "end": 23.14
+        },
+        {
+          "word": "exercising?",
+          "start": 23.14,
+          "end": 23.92
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "startMs": 25860,
+      "endMs": 26780,
+      "text": "5",
+      "words": [
+        {
+          "word": "5",
+          "start": 25.86,
+          "end": 26.78
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "startMs": 27820,
+      "endMs": 31040,
+      "text": "I'd say that it's always better to have a healthy lifestyle",
+      "words": [
+        {
+          "word": "I'd",
+          "start": 27.82,
+          "end": 28.3
+        },
+        {
+          "word": "say",
+          "start": 28.3,
+          "end": 28.48
+        },
+        {
+          "word": "that",
+          "start": 28.48,
+          "end": 28.68
+        },
+        {
+          "word": "it's",
+          "start": 28.68,
+          "end": 28.9
+        },
+        {
+          "word": "always",
+          "start": 28.9,
+          "end": 29.24
+        },
+        {
+          "word": "better",
+          "start": 29.24,
+          "end": 29.66
+        },
+        {
+          "word": "to",
+          "start": 29.66,
+          "end": 29.9
+        },
+        {
+          "word": "have",
+          "start": 29.9,
+          "end": 30.06
+        },
+        {
+          "word": "a",
+          "start": 30.06,
+          "end": 30.18
+        },
+        {
+          "word": "healthy",
+          "start": 30.18,
+          "end": 30.44
+        },
+        {
+          "word": "lifestyle",
+          "start": 30.44,
+          "end": 31.04
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,628 @@
+{
+  "model": "small",
+  "language": "en",
+  "text": "3.5 1 The course was a lot more challenging than I expected. 2 We can see that by far the most affordable form of transport is walking. 3 The risks of driving a car are considerably more significant than those of flying. 4 For me, flying is much more comfortable than travelling by train. 5 Taking a train is definitely more relaxing than driving. 6 Using the underground is a lot faster than travelling by bus at rush hour. 7 Driving is considerably more expensive than walking. 8 Cycling is absolutely the healthiest form of transport.",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 1340,
+      "text": "3.5",
+      "words": [
+        {
+          "word": "3",
+          "start": 0.0,
+          "end": 0.54
+        },
+        {
+          "word": ".5",
+          "start": 0.54,
+          "end": 1.34
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 2320,
+      "endMs": 2820,
+      "text": "1",
+      "words": [
+        {
+          "word": "1",
+          "start": 2.32,
+          "end": 2.82
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 4320,
+      "endMs": 7140,
+      "text": "The course was a lot more challenging than I expected.",
+      "words": [
+        {
+          "word": "The",
+          "start": 4.120000000000001,
+          "end": 4.5
+        },
+        {
+          "word": "course",
+          "start": 4.5,
+          "end": 4.86
+        },
+        {
+          "word": "was",
+          "start": 4.86,
+          "end": 5.12
+        },
+        {
+          "word": "a",
+          "start": 5.12,
+          "end": 5.26
+        },
+        {
+          "word": "lot",
+          "start": 5.26,
+          "end": 5.52
+        },
+        {
+          "word": "more",
+          "start": 5.52,
+          "end": 5.74
+        },
+        {
+          "word": "challenging",
+          "start": 5.74,
+          "end": 6.24
+        },
+        {
+          "word": "than",
+          "start": 6.24,
+          "end": 6.52
+        },
+        {
+          "word": "I",
+          "start": 6.52,
+          "end": 6.68
+        },
+        {
+          "word": "expected.",
+          "start": 6.68,
+          "end": 7.14
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 9580,
+      "endMs": 10340,
+      "text": "2",
+      "words": [
+        {
+          "word": "2",
+          "start": 9.580000000000002,
+          "end": 10.34
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 11300,
+      "endMs": 16140,
+      "text": "We can see that by far the most affordable form of transport is walking.",
+      "words": [
+        {
+          "word": "We",
+          "start": 11.300000000000002,
+          "end": 12.06
+        },
+        {
+          "word": "can",
+          "start": 12.06,
+          "end": 12.24
+        },
+        {
+          "word": "see",
+          "start": 12.24,
+          "end": 12.5
+        },
+        {
+          "word": "that",
+          "start": 12.5,
+          "end": 12.78
+        },
+        {
+          "word": "by",
+          "start": 12.78,
+          "end": 13.0
+        },
+        {
+          "word": "far",
+          "start": 13.0,
+          "end": 13.32
+        },
+        {
+          "word": "the",
+          "start": 13.32,
+          "end": 13.44
+        },
+        {
+          "word": "most",
+          "start": 13.44,
+          "end": 13.68
+        },
+        {
+          "word": "affordable",
+          "start": 13.68,
+          "end": 14.2
+        },
+        {
+          "word": "form",
+          "start": 14.2,
+          "end": 14.64
+        },
+        {
+          "word": "of",
+          "start": 14.64,
+          "end": 14.82
+        },
+        {
+          "word": "transport",
+          "start": 14.82,
+          "end": 15.3
+        },
+        {
+          "word": "is",
+          "start": 15.3,
+          "end": 15.78
+        },
+        {
+          "word": "walking.",
+          "start": 15.78,
+          "end": 16.14
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "startMs": 18640,
+      "endMs": 19400,
+      "text": "3",
+      "words": [
+        {
+          "word": "3",
+          "start": 18.64,
+          "end": 19.4
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "startMs": 20840,
+      "endMs": 26040,
+      "text": "The risks of driving a car are considerably more significant than those of flying.",
+      "words": [
+        {
+          "word": "The",
+          "start": 20.64,
+          "end": 21.02
+        },
+        {
+          "word": "risks",
+          "start": 21.02,
+          "end": 21.34
+        },
+        {
+          "word": "of",
+          "start": 21.34,
+          "end": 21.62
+        },
+        {
+          "word": "driving",
+          "start": 21.62,
+          "end": 22.0
+        },
+        {
+          "word": "a",
+          "start": 22.0,
+          "end": 22.22
+        },
+        {
+          "word": "car",
+          "start": 22.22,
+          "end": 22.58
+        },
+        {
+          "word": "are",
+          "start": 22.58,
+          "end": 23.14
+        },
+        {
+          "word": "considerably",
+          "start": 23.14,
+          "end": 23.7
+        },
+        {
+          "word": "more",
+          "start": 23.7,
+          "end": 24.12
+        },
+        {
+          "word": "significant",
+          "start": 24.12,
+          "end": 24.74
+        },
+        {
+          "word": "than",
+          "start": 24.74,
+          "end": 25.22
+        },
+        {
+          "word": "those",
+          "start": 25.22,
+          "end": 25.44
+        },
+        {
+          "word": "of",
+          "start": 25.44,
+          "end": 25.66
+        },
+        {
+          "word": "flying.",
+          "start": 25.66,
+          "end": 26.04
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "startMs": 28440,
+      "endMs": 29220,
+      "text": "4",
+      "words": [
+        {
+          "word": "4",
+          "start": 28.439999999999998,
+          "end": 29.22
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "startMs": 30260,
+      "endMs": 34960,
+      "text": "For me, flying is much more comfortable than travelling by train.",
+      "words": [
+        {
+          "word": "For",
+          "start": 30.259999999999998,
+          "end": 31.04
+        },
+        {
+          "word": "me,",
+          "start": 31.04,
+          "end": 31.3
+        },
+        {
+          "word": "flying",
+          "start": 31.8,
+          "end": 32.1
+        },
+        {
+          "word": "is",
+          "start": 32.1,
+          "end": 32.38
+        },
+        {
+          "word": "much",
+          "start": 32.38,
+          "end": 32.66
+        },
+        {
+          "word": "more",
+          "start": 32.66,
+          "end": 32.88
+        },
+        {
+          "word": "comfortable",
+          "start": 32.88,
+          "end": 33.36
+        },
+        {
+          "word": "than",
+          "start": 33.36,
+          "end": 33.76
+        },
+        {
+          "word": "travelling",
+          "start": 33.76,
+          "end": 34.14
+        },
+        {
+          "word": "by",
+          "start": 34.14,
+          "end": 34.52
+        },
+        {
+          "word": "train.",
+          "start": 34.52,
+          "end": 34.96
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "startMs": 37460,
+      "endMs": 38240,
+      "text": "5",
+      "words": [
+        {
+          "word": "5",
+          "start": 37.46,
+          "end": 38.24
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "startMs": 39240,
+      "endMs": 42940,
+      "text": "Taking a train is definitely more relaxing than driving.",
+      "words": [
+        {
+          "word": "Taking",
+          "start": 39.24,
+          "end": 40.02
+        },
+        {
+          "word": "a",
+          "start": 40.02,
+          "end": 40.3
+        },
+        {
+          "word": "train",
+          "start": 40.3,
+          "end": 40.6
+        },
+        {
+          "word": "is",
+          "start": 40.6,
+          "end": 40.84
+        },
+        {
+          "word": "definitely",
+          "start": 40.84,
+          "end": 41.36
+        },
+        {
+          "word": "more",
+          "start": 41.36,
+          "end": 41.7
+        },
+        {
+          "word": "relaxing",
+          "start": 41.7,
+          "end": 42.24
+        },
+        {
+          "word": "than",
+          "start": 42.24,
+          "end": 42.52
+        },
+        {
+          "word": "driving.",
+          "start": 42.52,
+          "end": 42.94
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "startMs": 45580,
+      "endMs": 46360,
+      "text": "6",
+      "words": [
+        {
+          "word": "6",
+          "start": 45.58,
+          "end": 46.36
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "startMs": 47320,
+      "endMs": 52340,
+      "text": "Using the underground is a lot faster than travelling by bus at rush hour.",
+      "words": [
+        {
+          "word": "Using",
+          "start": 47.32,
+          "end": 48.1
+        },
+        {
+          "word": "the",
+          "start": 48.1,
+          "end": 48.36
+        },
+        {
+          "word": "underground",
+          "start": 48.36,
+          "end": 48.92
+        },
+        {
+          "word": "is",
+          "start": 48.92,
+          "end": 49.22
+        },
+        {
+          "word": "a",
+          "start": 49.22,
+          "end": 49.38
+        },
+        {
+          "word": "lot",
+          "start": 49.38,
+          "end": 49.52
+        },
+        {
+          "word": "faster",
+          "start": 49.52,
+          "end": 50.06
+        },
+        {
+          "word": "than",
+          "start": 50.06,
+          "end": 50.3
+        },
+        {
+          "word": "travelling",
+          "start": 50.3,
+          "end": 50.7
+        },
+        {
+          "word": "by",
+          "start": 50.7,
+          "end": 51.12
+        },
+        {
+          "word": "bus",
+          "start": 51.12,
+          "end": 51.5
+        },
+        {
+          "word": "at",
+          "start": 51.5,
+          "end": 51.82
+        },
+        {
+          "word": "rush",
+          "start": 51.82,
+          "end": 52.06
+        },
+        {
+          "word": "hour.",
+          "start": 52.06,
+          "end": 52.34
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "startMs": 54680,
+      "endMs": 55460,
+      "text": "7",
+      "words": [
+        {
+          "word": "7",
+          "start": 54.68,
+          "end": 55.46
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "startMs": 55460,
+      "endMs": 60460,
+      "text": "Driving is considerably more expensive than walking.",
+      "words": [
+        {
+          "word": "Driving",
+          "start": 55.46,
+          "end": 57.22
+        },
+        {
+          "word": "is",
+          "start": 57.22,
+          "end": 57.6
+        },
+        {
+          "word": "considerably",
+          "start": 57.6,
+          "end": 58.26
+        },
+        {
+          "word": "more",
+          "start": 58.26,
+          "end": 58.6
+        },
+        {
+          "word": "expensive",
+          "start": 58.6,
+          "end": 59.22
+        },
+        {
+          "word": "than",
+          "start": 59.22,
+          "end": 59.54
+        },
+        {
+          "word": "walking.",
+          "start": 59.54,
+          "end": 60.46
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "startMs": 61940,
+      "endMs": 62460,
+      "text": "8",
+      "words": [
+        {
+          "word": "8",
+          "start": 61.94,
+          "end": 62.51
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "startMs": 64000,
+      "endMs": 67900,
+      "text": "Cycling is absolutely the healthiest form of transport.",
+      "words": [
+        {
+          "word": "Cycling",
+          "start": 64.0,
+          "end": 65.14
+        },
+        {
+          "word": "is",
+          "start": 65.14,
+          "end": 65.38
+        },
+        {
+          "word": "absolutely",
+          "start": 65.38,
+          "end": 65.9
+        },
+        {
+          "word": "the",
+          "start": 65.9,
+          "end": 66.3
+        },
+        {
+          "word": "healthiest",
+          "start": 66.3,
+          "end": 66.92
+        },
+        {
+          "word": "form",
+          "start": 66.92,
+          "end": 67.24
+        },
+        {
+          "word": "of",
+          "start": 67.24,
+          "end": 67.44
+        },
+        {
+          "word": "transport.",
+          "start": 67.44,
+          "end": 67.9
+        }
+      ]
+    }
+  ]
+}

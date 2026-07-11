@@ -1,0 +1,641 @@
+{
+  "model": "medium",
+  "language": "en",
+  "text": "1.6. But even Hollywood itself has become more multinational. In 1991, Hollywood made around 30% of its money from sales of international cinema tickets. However, in 2023, Mission Impossible Dead Reckoning Part 1 made around $235 million in its first five days, but only around 34% of ticket sales came from domestic audiences in the U.S. The remaining 66% came from people watching the movie in different markets worldwide. Around 10% of international sales during this opening week, worth an astonishing $25 million, came from China alone. This is not surprising, given that China accounted for over $136 million worth of sales for a previous Mission Impossible film.",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 1540,
+      "text": "1.6.",
+      "words": [
+        {
+          "word": "1",
+          "start": 0.0,
+          "end": 0.54
+        },
+        {
+          "word": ".6.",
+          "start": 0.54,
+          "end": 1.54
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 2400,
+      "endMs": 6520,
+      "text": "But even Hollywood itself has become more multinational.",
+      "words": [
+        {
+          "word": "But",
+          "start": 2.4,
+          "end": 2.78
+        },
+        {
+          "word": "even",
+          "start": 2.78,
+          "end": 3.26
+        },
+        {
+          "word": "Hollywood",
+          "start": 3.26,
+          "end": 3.74
+        },
+        {
+          "word": "itself",
+          "start": 3.74,
+          "end": 4.4
+        },
+        {
+          "word": "has",
+          "start": 4.4,
+          "end": 4.8
+        },
+        {
+          "word": "become",
+          "start": 4.8,
+          "end": 5.14
+        },
+        {
+          "word": "more",
+          "start": 5.14,
+          "end": 5.58
+        },
+        {
+          "word": "multinational.",
+          "start": 5.58,
+          "end": 6.52
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 7380,
+      "endMs": 15200,
+      "text": "In 1991, Hollywood made around 30% of its money from sales of international cinema tickets.",
+      "words": [
+        {
+          "word": "In",
+          "start": 7.38,
+          "end": 7.62
+        },
+        {
+          "word": "1991,",
+          "start": 7.62,
+          "end": 8.88
+        },
+        {
+          "word": "Hollywood",
+          "start": 9.64,
+          "end": 9.84
+        },
+        {
+          "word": "made",
+          "start": 9.84,
+          "end": 10.14
+        },
+        {
+          "word": "around",
+          "start": 10.14,
+          "end": 10.6
+        },
+        {
+          "word": "30",
+          "start": 10.6,
+          "end": 11.08
+        },
+        {
+          "word": "%",
+          "start": 11.08,
+          "end": 11.56
+        },
+        {
+          "word": "of",
+          "start": 11.56,
+          "end": 11.76
+        },
+        {
+          "word": "its",
+          "start": 11.76,
+          "end": 11.98
+        },
+        {
+          "word": "money",
+          "start": 11.98,
+          "end": 12.34
+        },
+        {
+          "word": "from",
+          "start": 12.34,
+          "end": 12.72
+        },
+        {
+          "word": "sales",
+          "start": 12.72,
+          "end": 13.14
+        },
+        {
+          "word": "of",
+          "start": 13.14,
+          "end": 13.52
+        },
+        {
+          "word": "international",
+          "start": 13.52,
+          "end": 14.32
+        },
+        {
+          "word": "cinema",
+          "start": 14.32,
+          "end": 14.74
+        },
+        {
+          "word": "tickets.",
+          "start": 14.74,
+          "end": 15.2
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 16020,
+      "endMs": 27020,
+      "text": "However, in 2023, Mission Impossible Dead Reckoning Part 1 made around $235 million in its first five days,",
+      "words": [
+        {
+          "word": "However,",
+          "start": 16.02,
+          "end": 16.5
+        },
+        {
+          "word": "in",
+          "start": 16.7,
+          "end": 17.0
+        },
+        {
+          "word": "2023,",
+          "start": 17.0,
+          "end": 18.0
+        },
+        {
+          "word": "Mission",
+          "start": 18.64,
+          "end": 18.78
+        },
+        {
+          "word": "Impossible",
+          "start": 18.78,
+          "end": 19.54
+        },
+        {
+          "word": "Dead",
+          "start": 19.54,
+          "end": 20.1
+        },
+        {
+          "word": "Reckoning",
+          "start": 20.1,
+          "end": 20.58
+        },
+        {
+          "word": "Part",
+          "start": 20.58,
+          "end": 21.0
+        },
+        {
+          "word": "1",
+          "start": 21.0,
+          "end": 21.34
+        },
+        {
+          "word": "made",
+          "start": 21.34,
+          "end": 21.9
+        },
+        {
+          "word": "around",
+          "start": 21.9,
+          "end": 22.54
+        },
+        {
+          "word": "$235",
+          "start": 22.54,
+          "end": 23.78
+        },
+        {
+          "word": "million",
+          "start": 23.78,
+          "end": 24.62
+        },
+        {
+          "word": "in",
+          "start": 24.62,
+          "end": 25.28
+        },
+        {
+          "word": "its",
+          "start": 25.28,
+          "end": 25.62
+        },
+        {
+          "word": "first",
+          "start": 25.62,
+          "end": 26.02
+        },
+        {
+          "word": "five",
+          "start": 26.02,
+          "end": 26.5
+        },
+        {
+          "word": "days,",
+          "start": 26.5,
+          "end": 27.02
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 27020,
+      "endMs": 34020,
+      "text": "but only around 34% of ticket sales came from domestic audiences in the U.S.",
+      "words": [
+        {
+          "word": "but",
+          "start": 27.02,
+          "end": 27.68
+        },
+        {
+          "word": "only",
+          "start": 27.68,
+          "end": 28.02
+        },
+        {
+          "word": "around",
+          "start": 28.02,
+          "end": 28.46
+        },
+        {
+          "word": "34",
+          "start": 28.46,
+          "end": 29.26
+        },
+        {
+          "word": "%",
+          "start": 29.26,
+          "end": 29.86
+        },
+        {
+          "word": "of",
+          "start": 29.86,
+          "end": 30.12
+        },
+        {
+          "word": "ticket",
+          "start": 30.12,
+          "end": 30.38
+        },
+        {
+          "word": "sales",
+          "start": 30.38,
+          "end": 30.8
+        },
+        {
+          "word": "came",
+          "start": 30.8,
+          "end": 31.22
+        },
+        {
+          "word": "from",
+          "start": 31.22,
+          "end": 31.5
+        },
+        {
+          "word": "domestic",
+          "start": 31.5,
+          "end": 32.18
+        },
+        {
+          "word": "audiences",
+          "start": 32.18,
+          "end": 32.86
+        },
+        {
+          "word": "in",
+          "start": 32.86,
+          "end": 33.18
+        },
+        {
+          "word": "the",
+          "start": 33.18,
+          "end": 33.38
+        },
+        {
+          "word": "U",
+          "start": 33.38,
+          "end": 33.68
+        },
+        {
+          "word": ".S.",
+          "start": 33.68,
+          "end": 34.02
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "startMs": 34660,
+      "endMs": 41700,
+      "text": "The remaining 66% came from people watching the movie in different markets worldwide.",
+      "words": [
+        {
+          "word": "The",
+          "start": 34.66,
+          "end": 34.94
+        },
+        {
+          "word": "remaining",
+          "start": 34.94,
+          "end": 35.64
+        },
+        {
+          "word": "66",
+          "start": 35.64,
+          "end": 36.54
+        },
+        {
+          "word": "%",
+          "start": 36.54,
+          "end": 37.46
+        },
+        {
+          "word": "came",
+          "start": 37.46,
+          "end": 37.78
+        },
+        {
+          "word": "from",
+          "start": 37.78,
+          "end": 38.06
+        },
+        {
+          "word": "people",
+          "start": 38.06,
+          "end": 38.44
+        },
+        {
+          "word": "watching",
+          "start": 38.44,
+          "end": 38.86
+        },
+        {
+          "word": "the",
+          "start": 38.86,
+          "end": 39.14
+        },
+        {
+          "word": "movie",
+          "start": 39.14,
+          "end": 39.48
+        },
+        {
+          "word": "in",
+          "start": 39.48,
+          "end": 39.88
+        },
+        {
+          "word": "different",
+          "start": 39.88,
+          "end": 40.28
+        },
+        {
+          "word": "markets",
+          "start": 40.28,
+          "end": 40.9
+        },
+        {
+          "word": "worldwide.",
+          "start": 40.9,
+          "end": 41.7
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "startMs": 42840,
+      "endMs": 52980,
+      "text": "Around 10% of international sales during this opening week, worth an astonishing $25 million, came from China alone.",
+      "words": [
+        {
+          "word": "Around",
+          "start": 42.84,
+          "end": 43.16
+        },
+        {
+          "word": "10",
+          "start": 43.16,
+          "end": 43.62
+        },
+        {
+          "word": "%",
+          "start": 43.62,
+          "end": 44.12
+        },
+        {
+          "word": "of",
+          "start": 44.12,
+          "end": 44.54
+        },
+        {
+          "word": "international",
+          "start": 44.54,
+          "end": 45.2
+        },
+        {
+          "word": "sales",
+          "start": 45.2,
+          "end": 45.68
+        },
+        {
+          "word": "during",
+          "start": 45.68,
+          "end": 46.04
+        },
+        {
+          "word": "this",
+          "start": 46.04,
+          "end": 46.4
+        },
+        {
+          "word": "opening",
+          "start": 46.4,
+          "end": 46.76
+        },
+        {
+          "word": "week,",
+          "start": 46.76,
+          "end": 47.08
+        },
+        {
+          "word": "worth",
+          "start": 47.64,
+          "end": 47.78
+        },
+        {
+          "word": "an",
+          "start": 47.78,
+          "end": 48.08
+        },
+        {
+          "word": "astonishing",
+          "start": 48.08,
+          "end": 48.74
+        },
+        {
+          "word": "$25",
+          "start": 48.74,
+          "end": 49.8
+        },
+        {
+          "word": "million,",
+          "start": 49.8,
+          "end": 50.38
+        },
+        {
+          "word": "came",
+          "start": 51.3,
+          "end": 51.6
+        },
+        {
+          "word": "from",
+          "start": 51.6,
+          "end": 51.92
+        },
+        {
+          "word": "China",
+          "start": 51.92,
+          "end": 52.36
+        },
+        {
+          "word": "alone.",
+          "start": 52.36,
+          "end": 52.98
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "startMs": 52980,
+      "endMs": 64540,
+      "text": "This is not surprising, given that China accounted for over $136 million worth of sales for a previous Mission Impossible film.",
+      "words": [
+        {
+          "word": "This",
+          "start": 52.98,
+          "end": 54.0
+        },
+        {
+          "word": "is",
+          "start": 54.0,
+          "end": 54.38
+        },
+        {
+          "word": "not",
+          "start": 54.38,
+          "end": 54.64
+        },
+        {
+          "word": "surprising,",
+          "start": 54.64,
+          "end": 55.36
+        },
+        {
+          "word": "given",
+          "start": 55.9,
+          "end": 56.12
+        },
+        {
+          "word": "that",
+          "start": 56.12,
+          "end": 56.46
+        },
+        {
+          "word": "China",
+          "start": 56.46,
+          "end": 56.82
+        },
+        {
+          "word": "accounted",
+          "start": 56.82,
+          "end": 57.4
+        },
+        {
+          "word": "for",
+          "start": 57.4,
+          "end": 57.74
+        },
+        {
+          "word": "over",
+          "start": 57.74,
+          "end": 58.4
+        },
+        {
+          "word": "$136",
+          "start": 58.4,
+          "end": 60.0
+        },
+        {
+          "word": "million",
+          "start": 60.0,
+          "end": 60.84
+        },
+        {
+          "word": "worth",
+          "start": 60.84,
+          "end": 61.22
+        },
+        {
+          "word": "of",
+          "start": 61.22,
+          "end": 61.52
+        },
+        {
+          "word": "sales",
+          "start": 61.52,
+          "end": 61.82
+        },
+        {
+          "word": "for",
+          "start": 61.82,
+          "end": 62.3
+        },
+        {
+          "word": "a",
+          "start": 62.3,
+          "end": 62.58
+        },
+        {
+          "word": "previous",
+          "start": 62.58,
+          "end": 63.02
+        },
+        {
+          "word": "Mission",
+          "start": 63.02,
+          "end": 63.48
+        },
+        {
+          "word": "Impossible",
+          "start": 63.48,
+          "end": 64.08
+        },
+        {
+          "word": "film.",
+          "start": 64.08,
+          "end": 64.54
+        }
+      ]
+    }
+  ]
+}

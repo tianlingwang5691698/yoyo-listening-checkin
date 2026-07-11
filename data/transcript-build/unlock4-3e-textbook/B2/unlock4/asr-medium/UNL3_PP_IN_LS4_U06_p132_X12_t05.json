@@ -1,0 +1,290 @@
+{
+  "model": "medium",
+  "language": "en",
+  "text": "6.5 1 It's a real challenge living here. 2 El héro is completely energy independent. 3 It must be difficult sometimes. 4 You can't drink salt water. 5 You're a long way from everything out here, aren't you?",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 2240,
+      "text": "6.5",
+      "words": [
+        {
+          "word": "6",
+          "start": 0.0,
+          "end": 0.56
+        },
+        {
+          "word": ".5",
+          "start": 0.56,
+          "end": 2.24
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 2240,
+      "endMs": 4260,
+      "text": "1",
+      "words": [
+        {
+          "word": "1",
+          "start": 2.24,
+          "end": 4.26
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 4260,
+      "endMs": 6260,
+      "text": "It's a real challenge living here.",
+      "words": [
+        {
+          "word": "It's",
+          "start": 4.26,
+          "end": 4.68
+        },
+        {
+          "word": "a",
+          "start": 4.68,
+          "end": 4.74
+        },
+        {
+          "word": "real",
+          "start": 4.74,
+          "end": 5.0
+        },
+        {
+          "word": "challenge",
+          "start": 5.0,
+          "end": 5.56
+        },
+        {
+          "word": "living",
+          "start": 5.56,
+          "end": 5.84
+        },
+        {
+          "word": "here.",
+          "start": 5.84,
+          "end": 6.420000000000001
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 9580,
+      "endMs": 10740,
+      "text": "2",
+      "words": [
+        {
+          "word": "2",
+          "start": 9.58,
+          "end": 10.74
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 10740,
+      "endMs": 13920,
+      "text": "El héro is completely energy independent.",
+      "words": [
+        {
+          "word": "El",
+          "start": 10.74,
+          "end": 11.2
+        },
+        {
+          "word": "héro",
+          "start": 11.2,
+          "end": 11.56
+        },
+        {
+          "word": "is",
+          "start": 11.56,
+          "end": 11.88
+        },
+        {
+          "word": "completely",
+          "start": 11.88,
+          "end": 12.64
+        },
+        {
+          "word": "energy",
+          "start": 12.64,
+          "end": 13.18
+        },
+        {
+          "word": "independent.",
+          "start": 13.18,
+          "end": 13.92
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "startMs": 16100,
+      "endMs": 17260,
+      "text": "3",
+      "words": [
+        {
+          "word": "3",
+          "start": 16.1,
+          "end": 17.26
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "startMs": 18160,
+      "endMs": 20680,
+      "text": "It must be difficult sometimes.",
+      "words": [
+        {
+          "word": "It",
+          "start": 18.16,
+          "end": 18.84
+        },
+        {
+          "word": "must",
+          "start": 18.84,
+          "end": 19.12
+        },
+        {
+          "word": "be",
+          "start": 19.12,
+          "end": 19.38
+        },
+        {
+          "word": "difficult",
+          "start": 19.38,
+          "end": 19.98
+        },
+        {
+          "word": "sometimes.",
+          "start": 19.98,
+          "end": 20.68
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "startMs": 22840,
+      "endMs": 24000,
+      "text": "4",
+      "words": [
+        {
+          "word": "4",
+          "start": 22.84,
+          "end": 24.0
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "startMs": 24880,
+      "endMs": 27000,
+      "text": "You can't drink salt water.",
+      "words": [
+        {
+          "word": "You",
+          "start": 24.88,
+          "end": 25.46
+        },
+        {
+          "word": "can't",
+          "start": 25.46,
+          "end": 25.82
+        },
+        {
+          "word": "drink",
+          "start": 25.82,
+          "end": 26.16
+        },
+        {
+          "word": "salt",
+          "start": 26.16,
+          "end": 26.5
+        },
+        {
+          "word": "water.",
+          "start": 26.5,
+          "end": 27.0
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "startMs": 29680,
+      "endMs": 30280,
+      "text": "5",
+      "words": [
+        {
+          "word": "5",
+          "start": 29.68,
+          "end": 30.28
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "startMs": 31380,
+      "endMs": 34480,
+      "text": "You're a long way from everything out here, aren't you?",
+      "words": [
+        {
+          "word": "You're",
+          "start": 31.380000000000003,
+          "end": 31.98
+        },
+        {
+          "word": "a",
+          "start": 31.98,
+          "end": 32.14
+        },
+        {
+          "word": "long",
+          "start": 32.14,
+          "end": 32.34
+        },
+        {
+          "word": "way",
+          "start": 32.34,
+          "end": 32.68
+        },
+        {
+          "word": "from",
+          "start": 32.68,
+          "end": 32.92
+        },
+        {
+          "word": "everything",
+          "start": 32.92,
+          "end": 33.34
+        },
+        {
+          "word": "out",
+          "start": 33.34,
+          "end": 33.64
+        },
+        {
+          "word": "here,",
+          "start": 33.64,
+          "end": 33.9
+        },
+        {
+          "word": "aren't",
+          "start": 33.98,
+          "end": 34.16
+        },
+        {
+          "word": "you?",
+          "start": 34.16,
+          "end": 34.48
+        }
+      ]
+    }
+  ]
+}

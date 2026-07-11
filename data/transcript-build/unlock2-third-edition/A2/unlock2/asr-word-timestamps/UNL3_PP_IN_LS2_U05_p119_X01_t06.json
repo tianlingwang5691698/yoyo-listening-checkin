@@ -1,0 +1,336 @@
+{
+  "model": "small",
+  "language": "en",
+  "text": "5.6 1 I think there is definitely more marketing and business in sport than ever before. 2 And actually, only about 5% of Olympic athletes get money from big companies to be in adverts. 3 4 And of course, the countries with lots of money can train their athletes very well.",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 1120,
+      "text": "5.6",
+      "words": [
+        {
+          "word": "5",
+          "start": 0.0,
+          "end": 0.26
+        },
+        {
+          "word": ".6",
+          "start": 0.26,
+          "end": 1.12
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 3440,
+      "endMs": 3740,
+      "text": "1",
+      "words": [
+        {
+          "word": "1",
+          "start": 3.26,
+          "end": 3.74
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 5040,
+      "endMs": 11240,
+      "text": "I think there is definitely more marketing and business in sport than ever before.",
+      "words": [
+        {
+          "word": "I",
+          "start": 5.0,
+          "end": 5.48
+        },
+        {
+          "word": "think",
+          "start": 5.48,
+          "end": 5.8
+        },
+        {
+          "word": "there",
+          "start": 5.8,
+          "end": 6.12
+        },
+        {
+          "word": "is",
+          "start": 6.12,
+          "end": 6.34
+        },
+        {
+          "word": "definitely",
+          "start": 6.34,
+          "end": 6.82
+        },
+        {
+          "word": "more",
+          "start": 6.82,
+          "end": 7.3
+        },
+        {
+          "word": "marketing",
+          "start": 7.3,
+          "end": 7.9
+        },
+        {
+          "word": "and",
+          "start": 7.9,
+          "end": 8.42
+        },
+        {
+          "word": "business",
+          "start": 8.42,
+          "end": 8.92
+        },
+        {
+          "word": "in",
+          "start": 8.92,
+          "end": 9.32
+        },
+        {
+          "word": "sport",
+          "start": 9.32,
+          "end": 9.82
+        },
+        {
+          "word": "than",
+          "start": 9.82,
+          "end": 10.36
+        },
+        {
+          "word": "ever",
+          "start": 10.36,
+          "end": 10.72
+        },
+        {
+          "word": "before.",
+          "start": 10.72,
+          "end": 11.24
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 13500,
+      "endMs": 14460,
+      "text": "2",
+      "words": [
+        {
+          "word": "2",
+          "start": 13.5,
+          "end": 14.46
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 15600,
+      "endMs": 22640,
+      "text": "And actually, only about 5% of Olympic athletes get money from big companies to be in adverts.",
+      "words": [
+        {
+          "word": "And",
+          "start": 15.48,
+          "end": 15.96
+        },
+        {
+          "word": "actually,",
+          "start": 15.96,
+          "end": 16.34
+        },
+        {
+          "word": "only",
+          "start": 16.84,
+          "end": 17.04
+        },
+        {
+          "word": "about",
+          "start": 17.04,
+          "end": 17.32
+        },
+        {
+          "word": "5",
+          "start": 17.32,
+          "end": 17.8
+        },
+        {
+          "word": "%",
+          "start": 17.8,
+          "end": 18.28
+        },
+        {
+          "word": "of",
+          "start": 18.28,
+          "end": 18.68
+        },
+        {
+          "word": "Olympic",
+          "start": 18.68,
+          "end": 18.98
+        },
+        {
+          "word": "athletes",
+          "start": 18.98,
+          "end": 19.54
+        },
+        {
+          "word": "get",
+          "start": 19.54,
+          "end": 19.96
+        },
+        {
+          "word": "money",
+          "start": 19.96,
+          "end": 20.28
+        },
+        {
+          "word": "from",
+          "start": 20.28,
+          "end": 20.54
+        },
+        {
+          "word": "big",
+          "start": 20.54,
+          "end": 20.8
+        },
+        {
+          "word": "companies",
+          "start": 20.8,
+          "end": 21.28
+        },
+        {
+          "word": "to",
+          "start": 21.28,
+          "end": 21.68
+        },
+        {
+          "word": "be",
+          "start": 21.68,
+          "end": 21.94
+        },
+        {
+          "word": "in",
+          "start": 21.94,
+          "end": 22.12
+        },
+        {
+          "word": "adverts.",
+          "start": 22.12,
+          "end": 22.64
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "startMs": 25360,
+      "endMs": 25700,
+      "text": "3",
+      "words": [
+        {
+          "word": "3",
+          "start": 25.22,
+          "end": 25.7
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "startMs": 25700,
+      "endMs": 26180,
+      "text": "4",
+      "words": [
+        {
+          "word": "4",
+          "start": 25.7,
+          "end": 26.18
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "startMs": 26820,
+      "endMs": 32200,
+      "text": "And of course, the countries with lots of money can train their athletes very well.",
+      "words": [
+        {
+          "word": "And",
+          "start": 26.82,
+          "end": 27.34
+        },
+        {
+          "word": "of",
+          "start": 27.34,
+          "end": 27.48
+        },
+        {
+          "word": "course,",
+          "start": 27.48,
+          "end": 27.8
+        },
+        {
+          "word": "the",
+          "start": 28.04,
+          "end": 28.12
+        },
+        {
+          "word": "countries",
+          "start": 28.12,
+          "end": 28.52
+        },
+        {
+          "word": "with",
+          "start": 28.52,
+          "end": 28.84
+        },
+        {
+          "word": "lots",
+          "start": 28.84,
+          "end": 29.1
+        },
+        {
+          "word": "of",
+          "start": 29.1,
+          "end": 29.34
+        },
+        {
+          "word": "money",
+          "start": 29.34,
+          "end": 29.66
+        },
+        {
+          "word": "can",
+          "start": 29.66,
+          "end": 30.34
+        },
+        {
+          "word": "train",
+          "start": 30.34,
+          "end": 30.68
+        },
+        {
+          "word": "their",
+          "start": 30.68,
+          "end": 30.9
+        },
+        {
+          "word": "athletes",
+          "start": 30.9,
+          "end": 31.36
+        },
+        {
+          "word": "very",
+          "start": 31.36,
+          "end": 31.8
+        },
+        {
+          "word": "well.",
+          "start": 31.8,
+          "end": 32.2
+        }
+      ]
+    }
+  ]
+}

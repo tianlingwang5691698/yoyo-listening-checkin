@@ -1,0 +1,874 @@
+{
+  "model": "medium",
+  "language": "en",
+  "text": "1.7 I'd like to talk about where your money goes when you buy a cup of coffee. There has been a lot of discussion in the media recently about fair prices for the people in countries that grow crops like coffee. Many people believe that it's not right that a cup of coffee can cost three pounds or more, of which the farmers only get a few pennies. However, others have pointed out that the coffee beans are only one part of the cost of supplying a cup of coffee. They say that the other ingredients, such as milk and sugar, are also a big part of the cost of a cup of coffee. However, I would like to show that in a typical coffee shop, the ingredients are only a small part of the overall cost. Let's look at some data. If you consider the information in this chart...",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 1480,
+      "text": "1.7",
+      "words": [
+        {
+          "word": "1",
+          "start": 0.0,
+          "end": 0.56
+        },
+        {
+          "word": ".7",
+          "start": 0.56,
+          "end": 1.48
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 2180,
+      "endMs": 6260,
+      "text": "I'd like to talk about where your money goes when you buy a cup of coffee.",
+      "words": [
+        {
+          "word": "I'd",
+          "start": 2.180000000000005,
+          "end": 2.74
+        },
+        {
+          "word": "like",
+          "start": 2.74,
+          "end": 2.88
+        },
+        {
+          "word": "to",
+          "start": 2.88,
+          "end": 3.08
+        },
+        {
+          "word": "talk",
+          "start": 3.08,
+          "end": 3.34
+        },
+        {
+          "word": "about",
+          "start": 3.34,
+          "end": 3.7
+        },
+        {
+          "word": "where",
+          "start": 3.7,
+          "end": 3.92
+        },
+        {
+          "word": "your",
+          "start": 3.92,
+          "end": 4.16
+        },
+        {
+          "word": "money",
+          "start": 4.16,
+          "end": 4.36
+        },
+        {
+          "word": "goes",
+          "start": 4.36,
+          "end": 4.7
+        },
+        {
+          "word": "when",
+          "start": 4.7,
+          "end": 4.88
+        },
+        {
+          "word": "you",
+          "start": 4.88,
+          "end": 5.08
+        },
+        {
+          "word": "buy",
+          "start": 5.08,
+          "end": 5.3
+        },
+        {
+          "word": "a",
+          "start": 5.3,
+          "end": 5.46
+        },
+        {
+          "word": "cup",
+          "start": 5.46,
+          "end": 5.62
+        },
+        {
+          "word": "of",
+          "start": 5.62,
+          "end": 5.92
+        },
+        {
+          "word": "coffee.",
+          "start": 5.92,
+          "end": 6.26
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 6980,
+      "endMs": 12360,
+      "text": "There has been a lot of discussion in the media recently about fair prices for the people",
+      "words": [
+        {
+          "word": "There",
+          "start": 6.98,
+          "end": 7.22
+        },
+        {
+          "word": "has",
+          "start": 7.22,
+          "end": 7.44
+        },
+        {
+          "word": "been",
+          "start": 7.44,
+          "end": 7.6
+        },
+        {
+          "word": "a",
+          "start": 7.6,
+          "end": 7.62
+        },
+        {
+          "word": "lot",
+          "start": 7.62,
+          "end": 7.82
+        },
+        {
+          "word": "of",
+          "start": 7.82,
+          "end": 8.06
+        },
+        {
+          "word": "discussion",
+          "start": 8.06,
+          "end": 8.44
+        },
+        {
+          "word": "in",
+          "start": 8.44,
+          "end": 8.66
+        },
+        {
+          "word": "the",
+          "start": 8.66,
+          "end": 8.88
+        },
+        {
+          "word": "media",
+          "start": 8.88,
+          "end": 9.22
+        },
+        {
+          "word": "recently",
+          "start": 9.22,
+          "end": 9.84
+        },
+        {
+          "word": "about",
+          "start": 9.84,
+          "end": 10.42
+        },
+        {
+          "word": "fair",
+          "start": 10.42,
+          "end": 10.84
+        },
+        {
+          "word": "prices",
+          "start": 10.84,
+          "end": 11.44
+        },
+        {
+          "word": "for",
+          "start": 11.44,
+          "end": 11.92
+        },
+        {
+          "word": "the",
+          "start": 11.92,
+          "end": 12.12
+        },
+        {
+          "word": "people",
+          "start": 12.12,
+          "end": 12.36
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 12360,
+      "endMs": 14700,
+      "text": "in countries that grow crops like coffee.",
+      "words": [
+        {
+          "word": "in",
+          "start": 12.36,
+          "end": 12.68
+        },
+        {
+          "word": "countries",
+          "start": 12.68,
+          "end": 13.06
+        },
+        {
+          "word": "that",
+          "start": 13.06,
+          "end": 13.42
+        },
+        {
+          "word": "grow",
+          "start": 13.42,
+          "end": 13.68
+        },
+        {
+          "word": "crops",
+          "start": 13.68,
+          "end": 13.98
+        },
+        {
+          "word": "like",
+          "start": 13.98,
+          "end": 14.26
+        },
+        {
+          "word": "coffee.",
+          "start": 14.26,
+          "end": 14.7
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 15740,
+      "endMs": 21000,
+      "text": "Many people believe that it's not right that a cup of coffee can cost three pounds or more,",
+      "words": [
+        {
+          "word": "Many",
+          "start": 15.74,
+          "end": 16.06
+        },
+        {
+          "word": "people",
+          "start": 16.06,
+          "end": 16.48
+        },
+        {
+          "word": "believe",
+          "start": 16.48,
+          "end": 16.9
+        },
+        {
+          "word": "that",
+          "start": 16.9,
+          "end": 17.12
+        },
+        {
+          "word": "it's",
+          "start": 17.12,
+          "end": 17.28
+        },
+        {
+          "word": "not",
+          "start": 17.28,
+          "end": 17.6
+        },
+        {
+          "word": "right",
+          "start": 17.6,
+          "end": 17.9
+        },
+        {
+          "word": "that",
+          "start": 17.9,
+          "end": 18.2
+        },
+        {
+          "word": "a",
+          "start": 18.2,
+          "end": 18.3
+        },
+        {
+          "word": "cup",
+          "start": 18.3,
+          "end": 18.46
+        },
+        {
+          "word": "of",
+          "start": 18.46,
+          "end": 18.74
+        },
+        {
+          "word": "coffee",
+          "start": 18.74,
+          "end": 18.96
+        },
+        {
+          "word": "can",
+          "start": 18.96,
+          "end": 19.24
+        },
+        {
+          "word": "cost",
+          "start": 19.24,
+          "end": 19.56
+        },
+        {
+          "word": "three",
+          "start": 19.56,
+          "end": 20.02
+        },
+        {
+          "word": "pounds",
+          "start": 20.02,
+          "end": 20.32
+        },
+        {
+          "word": "or",
+          "start": 20.32,
+          "end": 20.68
+        },
+        {
+          "word": "more,",
+          "start": 20.68,
+          "end": 21.0
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "startMs": 21040,
+      "endMs": 23940,
+      "text": "of which the farmers only get a few pennies.",
+      "words": [
+        {
+          "word": "of",
+          "start": 21.04,
+          "end": 21.24
+        },
+        {
+          "word": "which",
+          "start": 21.24,
+          "end": 21.46
+        },
+        {
+          "word": "the",
+          "start": 21.46,
+          "end": 21.74
+        },
+        {
+          "word": "farmers",
+          "start": 21.74,
+          "end": 22.08
+        },
+        {
+          "word": "only",
+          "start": 22.08,
+          "end": 22.42
+        },
+        {
+          "word": "get",
+          "start": 22.42,
+          "end": 22.64
+        },
+        {
+          "word": "a",
+          "start": 22.64,
+          "end": 22.8
+        },
+        {
+          "word": "few",
+          "start": 22.8,
+          "end": 22.98
+        },
+        {
+          "word": "pennies.",
+          "start": 22.98,
+          "end": 23.94
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "startMs": 24220,
+      "endMs": 28940,
+      "text": "However, others have pointed out that the coffee beans are only one part of the cost",
+      "words": [
+        {
+          "word": "However,",
+          "start": 24.22,
+          "end": 24.58
+        },
+        {
+          "word": "others",
+          "start": 24.6,
+          "end": 24.88
+        },
+        {
+          "word": "have",
+          "start": 24.88,
+          "end": 25.06
+        },
+        {
+          "word": "pointed",
+          "start": 25.06,
+          "end": 25.34
+        },
+        {
+          "word": "out",
+          "start": 25.34,
+          "end": 25.62
+        },
+        {
+          "word": "that",
+          "start": 25.62,
+          "end": 25.8
+        },
+        {
+          "word": "the",
+          "start": 25.8,
+          "end": 26.08
+        },
+        {
+          "word": "coffee",
+          "start": 26.08,
+          "end": 26.32
+        },
+        {
+          "word": "beans",
+          "start": 26.32,
+          "end": 26.82
+        },
+        {
+          "word": "are",
+          "start": 26.82,
+          "end": 27.3
+        },
+        {
+          "word": "only",
+          "start": 27.3,
+          "end": 27.6
+        },
+        {
+          "word": "one",
+          "start": 27.6,
+          "end": 27.98
+        },
+        {
+          "word": "part",
+          "start": 27.98,
+          "end": 28.28
+        },
+        {
+          "word": "of",
+          "start": 28.28,
+          "end": 28.5
+        },
+        {
+          "word": "the",
+          "start": 28.5,
+          "end": 28.7
+        },
+        {
+          "word": "cost",
+          "start": 28.7,
+          "end": 28.94
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "startMs": 28940,
+      "endMs": 30460,
+      "text": "of supplying a cup of coffee.",
+      "words": [
+        {
+          "word": "of",
+          "start": 28.94,
+          "end": 29.32
+        },
+        {
+          "word": "supplying",
+          "start": 29.32,
+          "end": 29.56
+        },
+        {
+          "word": "a",
+          "start": 29.56,
+          "end": 29.76
+        },
+        {
+          "word": "cup",
+          "start": 29.76,
+          "end": 29.9
+        },
+        {
+          "word": "of",
+          "start": 29.9,
+          "end": 30.14
+        },
+        {
+          "word": "coffee.",
+          "start": 30.14,
+          "end": 30.46
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "startMs": 31260,
+      "endMs": 37340,
+      "text": "They say that the other ingredients, such as milk and sugar, are also a big part of",
+      "words": [
+        {
+          "word": "They",
+          "start": 31.26,
+          "end": 31.56
+        },
+        {
+          "word": "say",
+          "start": 31.56,
+          "end": 31.84
+        },
+        {
+          "word": "that",
+          "start": 31.84,
+          "end": 32.08
+        },
+        {
+          "word": "the",
+          "start": 32.08,
+          "end": 32.28
+        },
+        {
+          "word": "other",
+          "start": 32.28,
+          "end": 32.48
+        },
+        {
+          "word": "ingredients,",
+          "start": 32.48,
+          "end": 33.2
+        },
+        {
+          "word": "such",
+          "start": 33.68,
+          "end": 33.88
+        },
+        {
+          "word": "as",
+          "start": 33.88,
+          "end": 34.18
+        },
+        {
+          "word": "milk",
+          "start": 34.18,
+          "end": 34.56
+        },
+        {
+          "word": "and",
+          "start": 34.56,
+          "end": 34.98
+        },
+        {
+          "word": "sugar,",
+          "start": 34.98,
+          "end": 35.36
+        },
+        {
+          "word": "are",
+          "start": 35.82,
+          "end": 36.0
+        },
+        {
+          "word": "also",
+          "start": 36.0,
+          "end": 36.32
+        },
+        {
+          "word": "a",
+          "start": 36.32,
+          "end": 36.52
+        },
+        {
+          "word": "big",
+          "start": 36.52,
+          "end": 36.76
+        },
+        {
+          "word": "part",
+          "start": 36.76,
+          "end": 37.1
+        },
+        {
+          "word": "of",
+          "start": 37.1,
+          "end": 37.34
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "startMs": 37340,
+      "endMs": 38740,
+      "text": "the cost of a cup of coffee.",
+      "words": [
+        {
+          "word": "the",
+          "start": 37.34,
+          "end": 37.5
+        },
+        {
+          "word": "cost",
+          "start": 37.5,
+          "end": 37.66
+        },
+        {
+          "word": "of",
+          "start": 37.66,
+          "end": 37.88
+        },
+        {
+          "word": "a",
+          "start": 37.88,
+          "end": 37.92
+        },
+        {
+          "word": "cup",
+          "start": 37.92,
+          "end": 38.12
+        },
+        {
+          "word": "of",
+          "start": 38.12,
+          "end": 38.4
+        },
+        {
+          "word": "coffee.",
+          "start": 38.4,
+          "end": 38.74
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "startMs": 39340,
+      "endMs": 45100,
+      "text": "However, I would like to show that in a typical coffee shop, the ingredients are only a small",
+      "words": [
+        {
+          "word": "However,",
+          "start": 39.34,
+          "end": 39.74
+        },
+        {
+          "word": "I",
+          "start": 40.14,
+          "end": 40.42
+        },
+        {
+          "word": "would",
+          "start": 40.42,
+          "end": 40.64
+        },
+        {
+          "word": "like",
+          "start": 40.64,
+          "end": 40.84
+        },
+        {
+          "word": "to",
+          "start": 40.84,
+          "end": 41.06
+        },
+        {
+          "word": "show",
+          "start": 41.06,
+          "end": 41.26
+        },
+        {
+          "word": "that",
+          "start": 41.26,
+          "end": 41.5
+        },
+        {
+          "word": "in",
+          "start": 41.5,
+          "end": 41.76
+        },
+        {
+          "word": "a",
+          "start": 41.76,
+          "end": 41.88
+        },
+        {
+          "word": "typical",
+          "start": 41.88,
+          "end": 42.3
+        },
+        {
+          "word": "coffee",
+          "start": 42.3,
+          "end": 42.68
+        },
+        {
+          "word": "shop,",
+          "start": 42.68,
+          "end": 42.98
+        },
+        {
+          "word": "the",
+          "start": 43.48,
+          "end": 43.66
+        },
+        {
+          "word": "ingredients",
+          "start": 43.66,
+          "end": 44.06
+        },
+        {
+          "word": "are",
+          "start": 44.06,
+          "end": 44.32
+        },
+        {
+          "word": "only",
+          "start": 44.32,
+          "end": 44.52
+        },
+        {
+          "word": "a",
+          "start": 44.52,
+          "end": 44.84
+        },
+        {
+          "word": "small",
+          "start": 44.84,
+          "end": 45.1
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "startMs": 45100,
+      "endMs": 46880,
+      "text": "part of the overall cost.",
+      "words": [
+        {
+          "word": "part",
+          "start": 45.1,
+          "end": 45.52
+        },
+        {
+          "word": "of",
+          "start": 45.52,
+          "end": 45.7
+        },
+        {
+          "word": "the",
+          "start": 45.7,
+          "end": 46.04
+        },
+        {
+          "word": "overall",
+          "start": 46.04,
+          "end": 46.42
+        },
+        {
+          "word": "cost.",
+          "start": 46.42,
+          "end": 46.88
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "startMs": 47800,
+      "endMs": 49160,
+      "text": "Let's look at some data.",
+      "words": [
+        {
+          "word": "Let's",
+          "start": 47.8,
+          "end": 48.24
+        },
+        {
+          "word": "look",
+          "start": 48.24,
+          "end": 48.44
+        },
+        {
+          "word": "at",
+          "start": 48.44,
+          "end": 48.58
+        },
+        {
+          "word": "some",
+          "start": 48.58,
+          "end": 48.76
+        },
+        {
+          "word": "data.",
+          "start": 48.76,
+          "end": 49.16
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "startMs": 49920,
+      "endMs": 52700,
+      "text": "If you consider the information in this chart...",
+      "words": [
+        {
+          "word": "If",
+          "start": 49.92,
+          "end": 50.2
+        },
+        {
+          "word": "you",
+          "start": 50.2,
+          "end": 50.46
+        },
+        {
+          "word": "consider",
+          "start": 50.46,
+          "end": 50.8
+        },
+        {
+          "word": "the",
+          "start": 50.8,
+          "end": 51.06
+        },
+        {
+          "word": "information",
+          "start": 51.06,
+          "end": 51.5
+        },
+        {
+          "word": "in",
+          "start": 51.5,
+          "end": 51.7
+        },
+        {
+          "word": "this",
+          "start": 51.7,
+          "end": 52.0
+        },
+        {
+          "word": "chart...",
+          "start": 52.0,
+          "end": 52.7
+        }
+      ]
+    }
+  ]
+}

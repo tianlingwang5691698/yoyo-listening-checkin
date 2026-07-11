@@ -1,0 +1,842 @@
+{
+  "model": "medium",
+  "language": "en",
+  "text": "2.6 1. Students need to be good at both writing and speaking. Yes, that sounds perfectly reasonable to me. 2. Hotel workers are important, but doctors save lives. Okay, I don't think I can argue against you there. 3. The number of Chinese speakers is growing and it's going to be the most important language. I take your point, even though I'm not sure I totally agree with you. Being a doctor is much more important than being a nurse. I think we'll have to agree to disagree about that. 5. Do we all agree that financial need is the most important factor? After all that debate, I think we've reached an agreement about that. 6. Can we agree that academic score is the most important factor? Yes, it seems like we've found an idea that everyone can accept.",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 2220,
+      "text": "2.6",
+      "words": [
+        {
+          "word": "2",
+          "start": 0.0,
+          "end": 0.44
+        },
+        {
+          "word": ".6",
+          "start": 0.44,
+          "end": 2.22
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 2220,
+      "endMs": 7520,
+      "text": "1. Students need to be good at both writing and speaking.",
+      "words": [
+        {
+          "word": "1.",
+          "start": 2.22,
+          "end": 3.04
+        },
+        {
+          "word": "Students",
+          "start": 4.08,
+          "end": 4.44
+        },
+        {
+          "word": "need",
+          "start": 4.44,
+          "end": 4.74
+        },
+        {
+          "word": "to",
+          "start": 4.74,
+          "end": 4.94
+        },
+        {
+          "word": "be",
+          "start": 4.94,
+          "end": 5.1
+        },
+        {
+          "word": "good",
+          "start": 5.1,
+          "end": 5.32
+        },
+        {
+          "word": "at",
+          "start": 5.32,
+          "end": 5.6
+        },
+        {
+          "word": "both",
+          "start": 5.6,
+          "end": 5.94
+        },
+        {
+          "word": "writing",
+          "start": 5.94,
+          "end": 6.36
+        },
+        {
+          "word": "and",
+          "start": 6.36,
+          "end": 6.9
+        },
+        {
+          "word": "speaking.",
+          "start": 6.9,
+          "end": 7.52
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 8600,
+      "endMs": 12220,
+      "text": "Yes, that sounds perfectly reasonable to me.",
+      "words": [
+        {
+          "word": "Yes,",
+          "start": 8.6,
+          "end": 8.9
+        },
+        {
+          "word": "that",
+          "start": 9.2,
+          "end": 9.58
+        },
+        {
+          "word": "sounds",
+          "start": 9.58,
+          "end": 9.96
+        },
+        {
+          "word": "perfectly",
+          "start": 9.96,
+          "end": 10.52
+        },
+        {
+          "word": "reasonable",
+          "start": 10.52,
+          "end": 11.16
+        },
+        {
+          "word": "to",
+          "start": 11.16,
+          "end": 11.48
+        },
+        {
+          "word": "me.",
+          "start": 11.48,
+          "end": 12.22
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 12840,
+      "endMs": 13620,
+      "text": "2.",
+      "words": [
+        {
+          "word": "2.",
+          "start": 12.84,
+          "end": 13.62
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 14800,
+      "endMs": 18880,
+      "text": "Hotel workers are important, but doctors save lives.",
+      "words": [
+        {
+          "word": "Hotel",
+          "start": 14.8,
+          "end": 15.04
+        },
+        {
+          "word": "workers",
+          "start": 15.04,
+          "end": 15.44
+        },
+        {
+          "word": "are",
+          "start": 15.44,
+          "end": 15.7
+        },
+        {
+          "word": "important,",
+          "start": 15.7,
+          "end": 16.32
+        },
+        {
+          "word": "but",
+          "start": 16.94,
+          "end": 17.14
+        },
+        {
+          "word": "doctors",
+          "start": 17.14,
+          "end": 17.66
+        },
+        {
+          "word": "save",
+          "start": 17.66,
+          "end": 18.14
+        },
+        {
+          "word": "lives.",
+          "start": 18.14,
+          "end": 18.88
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "startMs": 20040,
+      "endMs": 23400,
+      "text": "Okay, I don't think I can argue against you there.",
+      "words": [
+        {
+          "word": "Okay,",
+          "start": 20.04,
+          "end": 20.56
+        },
+        {
+          "word": "I",
+          "start": 21.1,
+          "end": 21.28
+        },
+        {
+          "word": "don't",
+          "start": 21.28,
+          "end": 21.62
+        },
+        {
+          "word": "think",
+          "start": 21.62,
+          "end": 21.78
+        },
+        {
+          "word": "I",
+          "start": 21.78,
+          "end": 21.92
+        },
+        {
+          "word": "can",
+          "start": 21.92,
+          "end": 22.18
+        },
+        {
+          "word": "argue",
+          "start": 22.18,
+          "end": 22.48
+        },
+        {
+          "word": "against",
+          "start": 22.48,
+          "end": 22.82
+        },
+        {
+          "word": "you",
+          "start": 22.82,
+          "end": 23.04
+        },
+        {
+          "word": "there.",
+          "start": 23.04,
+          "end": 23.4
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "startMs": 24560,
+      "endMs": 25380,
+      "text": "3.",
+      "words": [
+        {
+          "word": "3.",
+          "start": 24.56,
+          "end": 25.38
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "startMs": 25380,
+      "endMs": 32420,
+      "text": "The number of Chinese speakers is growing and it's going to be the most important language.",
+      "words": [
+        {
+          "word": "The",
+          "start": 25.38,
+          "end": 26.76
+        },
+        {
+          "word": "number",
+          "start": 26.76,
+          "end": 27.24
+        },
+        {
+          "word": "of",
+          "start": 27.24,
+          "end": 27.48
+        },
+        {
+          "word": "Chinese",
+          "start": 27.48,
+          "end": 27.92
+        },
+        {
+          "word": "speakers",
+          "start": 27.92,
+          "end": 28.36
+        },
+        {
+          "word": "is",
+          "start": 28.36,
+          "end": 28.76
+        },
+        {
+          "word": "growing",
+          "start": 28.76,
+          "end": 29.1
+        },
+        {
+          "word": "and",
+          "start": 29.1,
+          "end": 29.7
+        },
+        {
+          "word": "it's",
+          "start": 29.7,
+          "end": 30.0
+        },
+        {
+          "word": "going",
+          "start": 30.0,
+          "end": 30.18
+        },
+        {
+          "word": "to",
+          "start": 30.18,
+          "end": 30.36
+        },
+        {
+          "word": "be",
+          "start": 30.36,
+          "end": 30.5
+        },
+        {
+          "word": "the",
+          "start": 30.5,
+          "end": 30.64
+        },
+        {
+          "word": "most",
+          "start": 30.64,
+          "end": 31.04
+        },
+        {
+          "word": "important",
+          "start": 31.04,
+          "end": 31.68
+        },
+        {
+          "word": "language.",
+          "start": 31.68,
+          "end": 32.42
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "startMs": 33920,
+      "endMs": 39380,
+      "text": "I take your point, even though I'm not sure I totally agree with you.",
+      "words": [
+        {
+          "word": "take",
+          "start": 33.92,
+          "end": 34.38
+        },
+        {
+          "word": "your",
+          "start": 34.38,
+          "end": 34.72
+        },
+        {
+          "word": "point,",
+          "start": 34.72,
+          "end": 35.44
+        },
+        {
+          "word": "even",
+          "start": 35.76,
+          "end": 36.18
+        },
+        {
+          "word": "though",
+          "start": 36.18,
+          "end": 36.58
+        },
+        {
+          "word": "I'm",
+          "start": 36.58,
+          "end": 36.84
+        },
+        {
+          "word": "not",
+          "start": 36.84,
+          "end": 37.26
+        },
+        {
+          "word": "sure",
+          "start": 37.26,
+          "end": 37.56
+        },
+        {
+          "word": "I",
+          "start": 37.56,
+          "end": 37.88
+        },
+        {
+          "word": "totally",
+          "start": 37.88,
+          "end": 38.4
+        },
+        {
+          "word": "agree",
+          "start": 38.4,
+          "end": 38.82
+        },
+        {
+          "word": "with",
+          "start": 38.82,
+          "end": 39.1
+        },
+        {
+          "word": "you.",
+          "start": 39.1,
+          "end": 39.5
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "startMs": 42840,
+      "endMs": 46360,
+      "text": "Being a doctor is much more important than being a nurse.",
+      "words": [
+        {
+          "word": "Being",
+          "start": 42.84,
+          "end": 42.88
+        },
+        {
+          "word": "a",
+          "start": 42.88,
+          "end": 43.04
+        },
+        {
+          "word": "doctor",
+          "start": 43.04,
+          "end": 43.48
+        },
+        {
+          "word": "is",
+          "start": 43.48,
+          "end": 43.94
+        },
+        {
+          "word": "much",
+          "start": 43.94,
+          "end": 44.34
+        },
+        {
+          "word": "more",
+          "start": 44.34,
+          "end": 44.7
+        },
+        {
+          "word": "important",
+          "start": 44.7,
+          "end": 45.16
+        },
+        {
+          "word": "than",
+          "start": 45.16,
+          "end": 45.4
+        },
+        {
+          "word": "being",
+          "start": 45.4,
+          "end": 45.76
+        },
+        {
+          "word": "a",
+          "start": 45.76,
+          "end": 45.94
+        },
+        {
+          "word": "nurse.",
+          "start": 45.94,
+          "end": 46.36
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "startMs": 47580,
+      "endMs": 50480,
+      "text": "I think we'll have to agree to disagree about that.",
+      "words": [
+        {
+          "word": "I",
+          "start": 47.58,
+          "end": 47.72
+        },
+        {
+          "word": "think",
+          "start": 47.72,
+          "end": 47.96
+        },
+        {
+          "word": "we'll",
+          "start": 47.96,
+          "end": 48.22
+        },
+        {
+          "word": "have",
+          "start": 48.22,
+          "end": 48.42
+        },
+        {
+          "word": "to",
+          "start": 48.42,
+          "end": 48.64
+        },
+        {
+          "word": "agree",
+          "start": 48.64,
+          "end": 48.98
+        },
+        {
+          "word": "to",
+          "start": 48.98,
+          "end": 49.3
+        },
+        {
+          "word": "disagree",
+          "start": 49.3,
+          "end": 49.66
+        },
+        {
+          "word": "about",
+          "start": 49.66,
+          "end": 49.98
+        },
+        {
+          "word": "that.",
+          "start": 49.98,
+          "end": 50.48
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "startMs": 51700,
+      "endMs": 52500,
+      "text": "5.",
+      "words": [
+        {
+          "word": "5.",
+          "start": 51.7,
+          "end": 52.5
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "startMs": 52500,
+      "endMs": 57620,
+      "text": "Do we all agree that financial need is the most important factor?",
+      "words": [
+        {
+          "word": "Do",
+          "start": 52.5,
+          "end": 53.68
+        },
+        {
+          "word": "we",
+          "start": 53.68,
+          "end": 53.9
+        },
+        {
+          "word": "all",
+          "start": 53.9,
+          "end": 54.1
+        },
+        {
+          "word": "agree",
+          "start": 54.1,
+          "end": 54.5
+        },
+        {
+          "word": "that",
+          "start": 54.5,
+          "end": 54.86
+        },
+        {
+          "word": "financial",
+          "start": 54.86,
+          "end": 55.46
+        },
+        {
+          "word": "need",
+          "start": 55.46,
+          "end": 55.78
+        },
+        {
+          "word": "is",
+          "start": 55.78,
+          "end": 56.04
+        },
+        {
+          "word": "the",
+          "start": 56.04,
+          "end": 56.26
+        },
+        {
+          "word": "most",
+          "start": 56.26,
+          "end": 56.58
+        },
+        {
+          "word": "important",
+          "start": 56.58,
+          "end": 57.14
+        },
+        {
+          "word": "factor?",
+          "start": 57.14,
+          "end": 57.62
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "startMs": 58940,
+      "endMs": 64400,
+      "text": "After all that debate, I think we've reached an agreement about that.",
+      "words": [
+        {
+          "word": "After",
+          "start": 58.94,
+          "end": 59.3
+        },
+        {
+          "word": "all",
+          "start": 59.3,
+          "end": 59.76
+        },
+        {
+          "word": "that",
+          "start": 59.76,
+          "end": 60.14
+        },
+        {
+          "word": "debate,",
+          "start": 60.14,
+          "end": 60.82
+        },
+        {
+          "word": "I",
+          "start": 61.1,
+          "end": 61.58
+        },
+        {
+          "word": "think",
+          "start": 61.58,
+          "end": 61.9
+        },
+        {
+          "word": "we've",
+          "start": 61.9,
+          "end": 62.28
+        },
+        {
+          "word": "reached",
+          "start": 62.28,
+          "end": 62.56
+        },
+        {
+          "word": "an",
+          "start": 62.56,
+          "end": 62.86
+        },
+        {
+          "word": "agreement",
+          "start": 62.86,
+          "end": 63.2
+        },
+        {
+          "word": "about",
+          "start": 63.2,
+          "end": 63.58
+        },
+        {
+          "word": "that.",
+          "start": 63.58,
+          "end": 64.4
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "startMs": 65660,
+      "endMs": 66080,
+      "text": "6.",
+      "words": [
+        {
+          "word": "6.",
+          "start": 65.66,
+          "end": 66.08
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "startMs": 67400,
+      "endMs": 71080,
+      "text": "Can we agree that academic score is the most important factor?",
+      "words": [
+        {
+          "word": "Can",
+          "start": 67.4,
+          "end": 67.56
+        },
+        {
+          "word": "we",
+          "start": 67.56,
+          "end": 67.84
+        },
+        {
+          "word": "agree",
+          "start": 67.84,
+          "end": 68.08
+        },
+        {
+          "word": "that",
+          "start": 68.08,
+          "end": 68.5
+        },
+        {
+          "word": "academic",
+          "start": 68.5,
+          "end": 68.9
+        },
+        {
+          "word": "score",
+          "start": 68.9,
+          "end": 69.26
+        },
+        {
+          "word": "is",
+          "start": 69.26,
+          "end": 69.48
+        },
+        {
+          "word": "the",
+          "start": 69.48,
+          "end": 69.68
+        },
+        {
+          "word": "most",
+          "start": 69.68,
+          "end": 70.1
+        },
+        {
+          "word": "important",
+          "start": 70.1,
+          "end": 70.62
+        },
+        {
+          "word": "factor?",
+          "start": 70.62,
+          "end": 71.08
+        }
+      ]
+    },
+    {
+      "index": 18,
+      "startMs": 72620,
+      "endMs": 77980,
+      "text": "Yes, it seems like we've found an idea that everyone can accept.",
+      "words": [
+        {
+          "word": "Yes,",
+          "start": 72.62,
+          "end": 73.32
+        },
+        {
+          "word": "it",
+          "start": 73.84,
+          "end": 74.08
+        },
+        {
+          "word": "seems",
+          "start": 74.08,
+          "end": 74.62
+        },
+        {
+          "word": "like",
+          "start": 74.62,
+          "end": 74.92
+        },
+        {
+          "word": "we've",
+          "start": 74.92,
+          "end": 75.36
+        },
+        {
+          "word": "found",
+          "start": 75.36,
+          "end": 75.62
+        },
+        {
+          "word": "an",
+          "start": 75.62,
+          "end": 75.92
+        },
+        {
+          "word": "idea",
+          "start": 75.92,
+          "end": 76.24
+        },
+        {
+          "word": "that",
+          "start": 76.24,
+          "end": 76.74
+        },
+        {
+          "word": "everyone",
+          "start": 76.74,
+          "end": 77.12
+        },
+        {
+          "word": "can",
+          "start": 77.12,
+          "end": 77.5
+        },
+        {
+          "word": "accept.",
+          "start": 77.5,
+          "end": 77.98
+        }
+      ]
+    }
+  ],
+  "sanitization": {
+    "removedInvalidWordCount": 1,
+    "rule": "drop_word_when_end_lte_start_or_start_negative"
+  }
+}

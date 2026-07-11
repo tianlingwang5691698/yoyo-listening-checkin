@@ -1,0 +1,198 @@
+{
+  "model": "medium",
+  "language": "en",
+  "text": "1.2 1. Cheap food comes at a price. 2. A 51,500 km fruit salad. 3. What's the true environmental cost of such well-travelled food?",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 1720,
+      "text": "1.2",
+      "words": [
+        {
+          "word": "1",
+          "start": 0.0,
+          "end": 0.5
+        },
+        {
+          "word": ".2",
+          "start": 0.5,
+          "end": 1.72
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 1720,
+      "endMs": 3240,
+      "text": "1.",
+      "words": [
+        {
+          "word": "1.",
+          "start": 1.72,
+          "end": 3.24
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 4200,
+      "endMs": 6360,
+      "text": "Cheap food comes at a price.",
+      "words": [
+        {
+          "word": "Cheap",
+          "start": 4.2,
+          "end": 4.42
+        },
+        {
+          "word": "food",
+          "start": 4.42,
+          "end": 4.8
+        },
+        {
+          "word": "comes",
+          "start": 4.8,
+          "end": 5.28
+        },
+        {
+          "word": "at",
+          "start": 5.28,
+          "end": 5.6
+        },
+        {
+          "word": "a",
+          "start": 5.6,
+          "end": 5.82
+        },
+        {
+          "word": "price.",
+          "start": 5.82,
+          "end": 6.36
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 7480,
+      "endMs": 8180,
+      "text": "2.",
+      "words": [
+        {
+          "word": "2.",
+          "start": 7.48,
+          "end": 8.18
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 9340,
+      "endMs": 12680,
+      "text": "A 51,500 km fruit salad.",
+      "words": [
+        {
+          "word": "A",
+          "start": 9.34,
+          "end": 9.58
+        },
+        {
+          "word": "51",
+          "start": 9.58,
+          "end": 10.14
+        },
+        {
+          "word": ",500",
+          "start": 10.14,
+          "end": 11.16
+        },
+        {
+          "word": "km",
+          "start": 11.16,
+          "end": 11.82
+        },
+        {
+          "word": "fruit",
+          "start": 11.82,
+          "end": 12.22
+        },
+        {
+          "word": "salad.",
+          "start": 12.22,
+          "end": 12.68
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "startMs": 13960,
+      "endMs": 14000,
+      "text": "3.",
+      "words": [
+        {
+          "word": "3.",
+          "start": 13.96,
+          "end": 14.46
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "startMs": 15840,
+      "endMs": 19700,
+      "text": "What's the true environmental cost of such well-travelled food?",
+      "words": [
+        {
+          "word": "What's",
+          "start": 15.84,
+          "end": 16.22
+        },
+        {
+          "word": "the",
+          "start": 16.22,
+          "end": 16.44
+        },
+        {
+          "word": "true",
+          "start": 16.44,
+          "end": 16.82
+        },
+        {
+          "word": "environmental",
+          "start": 16.82,
+          "end": 17.58
+        },
+        {
+          "word": "cost",
+          "start": 17.58,
+          "end": 18.08
+        },
+        {
+          "word": "of",
+          "start": 18.08,
+          "end": 18.36
+        },
+        {
+          "word": "such",
+          "start": 18.36,
+          "end": 18.6
+        },
+        {
+          "word": "well",
+          "start": 18.6,
+          "end": 18.94
+        },
+        {
+          "word": "-travelled",
+          "start": 18.94,
+          "end": 19.34
+        },
+        {
+          "word": "food?",
+          "start": 19.34,
+          "end": 19.7
+        }
+      ]
+    }
+  ]
+}

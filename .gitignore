@@ -40,6 +40,10 @@ data/cloud-backups/
 data/grammar/gpt-classification-24-progress.json
 data/grammar-em1-upload/gpt-classification-24-progress.json
 data/transcript-build/**/cloud-backup/
+data/transcript-build/unlock3-textbook/B1/unlock3/bundle-merged-upload.json
+data/transcript-build/unlock3-textbook/post-upload-verify.json
+data/transcript-build/unlock3-textbook/split-upload-report.json
+data/transcript-build/unlock3-textbook/upload-report.json
 
 # Local source artwork excluded from the miniprogram package
 assets/library/library-desk-foreground.webp

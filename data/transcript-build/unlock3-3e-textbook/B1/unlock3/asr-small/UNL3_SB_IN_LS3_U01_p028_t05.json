@@ -1,0 +1,131 @@
+{
+  "model": "small",
+  "language": "en",
+  "text": "1.5 As we all know, there are many animals which are disappearing from our planet. Rhinos, orangutans, sea turtles.",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 1360,
+      "text": "1.5",
+      "words": [
+        {
+          "word": "1",
+          "start": 0.0,
+          "end": 0.4
+        },
+        {
+          "word": ".5",
+          "start": 0.4,
+          "end": 1.36
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 2000,
+      "endMs": 6760,
+      "text": "As we all know, there are many animals which are disappearing from our planet.",
+      "words": [
+        {
+          "word": "As",
+          "start": 2.0,
+          "end": 2.68
+        },
+        {
+          "word": "we",
+          "start": 2.68,
+          "end": 2.86
+        },
+        {
+          "word": "all",
+          "start": 2.86,
+          "end": 3.08
+        },
+        {
+          "word": "know,",
+          "start": 3.08,
+          "end": 3.36
+        },
+        {
+          "word": "there",
+          "start": 3.78,
+          "end": 3.92
+        },
+        {
+          "word": "are",
+          "start": 3.92,
+          "end": 4.06
+        },
+        {
+          "word": "many",
+          "start": 4.06,
+          "end": 4.32
+        },
+        {
+          "word": "animals",
+          "start": 4.32,
+          "end": 4.8
+        },
+        {
+          "word": "which",
+          "start": 4.8,
+          "end": 5.16
+        },
+        {
+          "word": "are",
+          "start": 5.16,
+          "end": 5.28
+        },
+        {
+          "word": "disappearing",
+          "start": 5.28,
+          "end": 5.72
+        },
+        {
+          "word": "from",
+          "start": 5.72,
+          "end": 6.2
+        },
+        {
+          "word": "our",
+          "start": 6.2,
+          "end": 6.38
+        },
+        {
+          "word": "planet.",
+          "start": 6.38,
+          "end": 6.76
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 7680,
+      "endMs": 12040,
+      "text": "Rhinos, orangutans, sea turtles.",
+      "words": [
+        {
+          "word": "Rhinos,",
+          "start": 7.68,
+          "end": 8.36
+        },
+        {
+          "word": "orangutans,",
+          "start": 9.36,
+          "end": 10.2
+        },
+        {
+          "word": "sea",
+          "start": 11.34,
+          "end": 11.66
+        },
+        {
+          "word": "turtles.",
+          "start": 11.66,
+          "end": 12.04
+        }
+      ]
+    }
+  ]
+}

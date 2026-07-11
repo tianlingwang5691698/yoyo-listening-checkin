@@ -1,0 +1,531 @@
+{
+  "model": "medium",
+  "language": "en",
+  "text": "6.9 1 Sorry, but could you hold that thought until Abdul has finished, please? 2 Sorry, but could you hold that thought until Abdul has finished, please? 3 So are you saying you're against using solar power? 4 Could I just clarify something here? Are we talking about solar power or wind power? 5 Do you mean this is completely new technology? 6 Could I just clarify something here? Could we even use a solar power system on the roof of the building?",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 1720,
+      "text": "6.9",
+      "words": [
+        {
+          "word": "6",
+          "start": 0.0,
+          "end": 0.62
+        },
+        {
+          "word": ".9",
+          "start": 0.62,
+          "end": 1.72
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 3740,
+      "endMs": 4500,
+      "text": "1",
+      "words": [
+        {
+          "word": "1",
+          "start": 3.740000000000002,
+          "end": 4.5
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 4500,
+      "endMs": 8480,
+      "text": "Sorry, but could you hold that thought until Abdul has finished, please?",
+      "words": [
+        {
+          "word": "Sorry,",
+          "start": 4.5,
+          "end": 4.92
+        },
+        {
+          "word": "but",
+          "start": 5.3,
+          "end": 5.5
+        },
+        {
+          "word": "could",
+          "start": 5.5,
+          "end": 5.7
+        },
+        {
+          "word": "you",
+          "start": 5.7,
+          "end": 5.86
+        },
+        {
+          "word": "hold",
+          "start": 5.86,
+          "end": 6.06
+        },
+        {
+          "word": "that",
+          "start": 6.06,
+          "end": 6.36
+        },
+        {
+          "word": "thought",
+          "start": 6.36,
+          "end": 6.5
+        },
+        {
+          "word": "until",
+          "start": 6.5,
+          "end": 6.8
+        },
+        {
+          "word": "Abdul",
+          "start": 6.8,
+          "end": 7.2
+        },
+        {
+          "word": "has",
+          "start": 7.2,
+          "end": 7.48
+        },
+        {
+          "word": "finished,",
+          "start": 7.48,
+          "end": 7.86
+        },
+        {
+          "word": "please?",
+          "start": 7.86,
+          "end": 8.48
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 11160,
+      "endMs": 11920,
+      "text": "2",
+      "words": [
+        {
+          "word": "2",
+          "start": 11.160000000000002,
+          "end": 11.92
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 12720,
+      "endMs": 17380,
+      "text": "Sorry, but could you hold that thought until Abdul has finished, please?",
+      "words": [
+        {
+          "word": "Sorry,",
+          "start": 12.72,
+          "end": 13.38
+        },
+        {
+          "word": "but",
+          "start": 14.02,
+          "end": 14.18
+        },
+        {
+          "word": "could",
+          "start": 14.18,
+          "end": 14.42
+        },
+        {
+          "word": "you",
+          "start": 14.42,
+          "end": 14.58
+        },
+        {
+          "word": "hold",
+          "start": 14.58,
+          "end": 14.82
+        },
+        {
+          "word": "that",
+          "start": 14.82,
+          "end": 15.14
+        },
+        {
+          "word": "thought",
+          "start": 15.14,
+          "end": 15.42
+        },
+        {
+          "word": "until",
+          "start": 15.42,
+          "end": 15.74
+        },
+        {
+          "word": "Abdul",
+          "start": 15.74,
+          "end": 16.14
+        },
+        {
+          "word": "has",
+          "start": 16.14,
+          "end": 16.44
+        },
+        {
+          "word": "finished,",
+          "start": 16.44,
+          "end": 16.76
+        },
+        {
+          "word": "please?",
+          "start": 17.06,
+          "end": 17.38
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "startMs": 19860,
+      "endMs": 20620,
+      "text": "3",
+      "words": [
+        {
+          "word": "3",
+          "start": 19.860000000000003,
+          "end": 20.62
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "startMs": 21520,
+      "endMs": 24940,
+      "text": "So are you saying you're against using solar power?",
+      "words": [
+        {
+          "word": "So",
+          "start": 21.52,
+          "end": 22.08
+        },
+        {
+          "word": "are",
+          "start": 22.08,
+          "end": 22.26
+        },
+        {
+          "word": "you",
+          "start": 22.26,
+          "end": 22.52
+        },
+        {
+          "word": "saying",
+          "start": 22.52,
+          "end": 22.76
+        },
+        {
+          "word": "you're",
+          "start": 22.76,
+          "end": 23.14
+        },
+        {
+          "word": "against",
+          "start": 23.14,
+          "end": 23.62
+        },
+        {
+          "word": "using",
+          "start": 23.62,
+          "end": 24.12
+        },
+        {
+          "word": "solar",
+          "start": 24.12,
+          "end": 24.5
+        },
+        {
+          "word": "power?",
+          "start": 24.5,
+          "end": 24.94
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "startMs": 27260,
+      "endMs": 28020,
+      "text": "4",
+      "words": [
+        {
+          "word": "4",
+          "start": 27.26,
+          "end": 28.02
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "startMs": 28880,
+      "endMs": 35740,
+      "text": "Could I just clarify something here? Are we talking about solar power or wind power?",
+      "words": [
+        {
+          "word": "Could",
+          "start": 28.88,
+          "end": 29.64
+        },
+        {
+          "word": "I",
+          "start": 29.64,
+          "end": 29.88
+        },
+        {
+          "word": "just",
+          "start": 29.88,
+          "end": 30.26
+        },
+        {
+          "word": "clarify",
+          "start": 30.26,
+          "end": 30.8
+        },
+        {
+          "word": "something",
+          "start": 30.8,
+          "end": 31.18
+        },
+        {
+          "word": "here?",
+          "start": 31.18,
+          "end": 31.6
+        },
+        {
+          "word": "Are",
+          "start": 32.18,
+          "end": 32.34
+        },
+        {
+          "word": "we",
+          "start": 32.34,
+          "end": 32.6
+        },
+        {
+          "word": "talking",
+          "start": 32.6,
+          "end": 32.84
+        },
+        {
+          "word": "about",
+          "start": 32.84,
+          "end": 33.36
+        },
+        {
+          "word": "solar",
+          "start": 33.36,
+          "end": 33.82
+        },
+        {
+          "word": "power",
+          "start": 33.82,
+          "end": 34.32
+        },
+        {
+          "word": "or",
+          "start": 34.32,
+          "end": 34.72
+        },
+        {
+          "word": "wind",
+          "start": 34.72,
+          "end": 35.16
+        },
+        {
+          "word": "power?",
+          "start": 35.16,
+          "end": 35.74
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "startMs": 38340,
+      "endMs": 39060,
+      "text": "5",
+      "words": [
+        {
+          "word": "5",
+          "start": 38.34,
+          "end": 39.06
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "startMs": 40020,
+      "endMs": 43400,
+      "text": "Do you mean this is completely new technology?",
+      "words": [
+        {
+          "word": "Do",
+          "start": 40.019999999999996,
+          "end": 40.58
+        },
+        {
+          "word": "you",
+          "start": 40.58,
+          "end": 40.8
+        },
+        {
+          "word": "mean",
+          "start": 40.8,
+          "end": 41.0
+        },
+        {
+          "word": "this",
+          "start": 41.0,
+          "end": 41.3
+        },
+        {
+          "word": "is",
+          "start": 41.3,
+          "end": 41.64
+        },
+        {
+          "word": "completely",
+          "start": 41.64,
+          "end": 42.22
+        },
+        {
+          "word": "new",
+          "start": 42.22,
+          "end": 42.66
+        },
+        {
+          "word": "technology?",
+          "start": 42.66,
+          "end": 43.4
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "startMs": 46020,
+      "endMs": 46780,
+      "text": "6",
+      "words": [
+        {
+          "word": "6",
+          "start": 46.02,
+          "end": 46.78
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "startMs": 47580,
+      "endMs": 54180,
+      "text": "Could I just clarify something here? Could we even use a solar power system on the roof of the building?",
+      "words": [
+        {
+          "word": "Could",
+          "start": 47.580000000000005,
+          "end": 48.34
+        },
+        {
+          "word": "I",
+          "start": 48.34,
+          "end": 48.58
+        },
+        {
+          "word": "just",
+          "start": 48.58,
+          "end": 48.78
+        },
+        {
+          "word": "clarify",
+          "start": 48.78,
+          "end": 49.22
+        },
+        {
+          "word": "something",
+          "start": 49.22,
+          "end": 49.58
+        },
+        {
+          "word": "here?",
+          "start": 49.58,
+          "end": 50.04
+        },
+        {
+          "word": "Could",
+          "start": 50.42,
+          "end": 50.62
+        },
+        {
+          "word": "we",
+          "start": 50.62,
+          "end": 50.84
+        },
+        {
+          "word": "even",
+          "start": 50.84,
+          "end": 51.26
+        },
+        {
+          "word": "use",
+          "start": 51.26,
+          "end": 51.68
+        },
+        {
+          "word": "a",
+          "start": 51.68,
+          "end": 51.98
+        },
+        {
+          "word": "solar",
+          "start": 51.98,
+          "end": 52.32
+        },
+        {
+          "word": "power",
+          "start": 52.32,
+          "end": 52.64
+        },
+        {
+          "word": "system",
+          "start": 52.64,
+          "end": 53.0
+        },
+        {
+          "word": "on",
+          "start": 53.0,
+          "end": 53.24
+        },
+        {
+          "word": "the",
+          "start": 53.24,
+          "end": 53.38
+        },
+        {
+          "word": "roof",
+          "start": 53.38,
+          "end": 53.56
+        },
+        {
+          "word": "of",
+          "start": 53.56,
+          "end": 53.76
+        },
+        {
+          "word": "the",
+          "start": 53.76,
+          "end": 53.9
+        },
+        {
+          "word": "building?",
+          "start": 53.9,
+          "end": 54.18
+        }
+      ]
+    }
+  ]
+}

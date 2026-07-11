@@ -1,0 +1,519 @@
+{
+  "model": "small",
+  "language": "en",
+  "text": "8.2 1. When the sun is out, we can't see the stars. 2. Another name for Mars is the red planet because of its colour. 3. Whether or not we like it, governments spend lots of money on space exploration. 4. People who first travelled in space ate dried food that they added water to. 5. When there are many bright lights at night, it's hard to see the stars. 6. It takes more than an hour for light from the sun to reach the planet Saturn.",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 1300,
+      "text": "8.2",
+      "words": [
+        {
+          "word": "8",
+          "start": 0.0,
+          "end": 0.4
+        },
+        {
+          "word": ".2",
+          "start": 0.4,
+          "end": 1.3
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 3020,
+      "endMs": 7700,
+      "text": "1. When the sun is out, we can't see the stars.",
+      "words": [
+        {
+          "word": "1.",
+          "start": 3.020000000000001,
+          "end": 3.78
+        },
+        {
+          "word": "When",
+          "start": 5.14,
+          "end": 5.14
+        },
+        {
+          "word": "the",
+          "start": 5.14,
+          "end": 5.32
+        },
+        {
+          "word": "sun",
+          "start": 5.32,
+          "end": 5.6
+        },
+        {
+          "word": "is",
+          "start": 5.6,
+          "end": 5.74
+        },
+        {
+          "word": "out,",
+          "start": 5.74,
+          "end": 6.06
+        },
+        {
+          "word": "we",
+          "start": 6.36,
+          "end": 6.48
+        },
+        {
+          "word": "can't",
+          "start": 6.48,
+          "end": 6.86
+        },
+        {
+          "word": "see",
+          "start": 6.86,
+          "end": 7.1
+        },
+        {
+          "word": "the",
+          "start": 7.1,
+          "end": 7.3
+        },
+        {
+          "word": "stars.",
+          "start": 7.3,
+          "end": 7.7
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 9620,
+      "endMs": 16300,
+      "text": "2. Another name for Mars is the red planet because of its colour.",
+      "words": [
+        {
+          "word": "2.",
+          "start": 9.620000000000001,
+          "end": 10.38
+        },
+        {
+          "word": "Another",
+          "start": 11.4,
+          "end": 11.76
+        },
+        {
+          "word": "name",
+          "start": 11.76,
+          "end": 12.3
+        },
+        {
+          "word": "for",
+          "start": 12.3,
+          "end": 12.68
+        },
+        {
+          "word": "Mars",
+          "start": 12.68,
+          "end": 13.08
+        },
+        {
+          "word": "is",
+          "start": 13.08,
+          "end": 13.78
+        },
+        {
+          "word": "the",
+          "start": 13.78,
+          "end": 13.96
+        },
+        {
+          "word": "red",
+          "start": 13.96,
+          "end": 14.24
+        },
+        {
+          "word": "planet",
+          "start": 14.24,
+          "end": 14.76
+        },
+        {
+          "word": "because",
+          "start": 14.76,
+          "end": 15.52
+        },
+        {
+          "word": "of",
+          "start": 15.52,
+          "end": 15.74
+        },
+        {
+          "word": "its",
+          "start": 15.74,
+          "end": 15.9
+        },
+        {
+          "word": "colour.",
+          "start": 15.9,
+          "end": 16.3
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 18240,
+      "endMs": 25440,
+      "text": "3. Whether or not we like it, governments spend lots of money on space exploration.",
+      "words": [
+        {
+          "word": "3.",
+          "start": 18.240000000000002,
+          "end": 19.0
+        },
+        {
+          "word": "Whether",
+          "start": 20.26,
+          "end": 20.4
+        },
+        {
+          "word": "or",
+          "start": 20.4,
+          "end": 20.66
+        },
+        {
+          "word": "not",
+          "start": 20.66,
+          "end": 20.8
+        },
+        {
+          "word": "we",
+          "start": 20.8,
+          "end": 21.06
+        },
+        {
+          "word": "like",
+          "start": 21.06,
+          "end": 21.34
+        },
+        {
+          "word": "it,",
+          "start": 21.34,
+          "end": 21.66
+        },
+        {
+          "word": "governments",
+          "start": 22.06,
+          "end": 22.42
+        },
+        {
+          "word": "spend",
+          "start": 22.42,
+          "end": 23.0
+        },
+        {
+          "word": "lots",
+          "start": 23.0,
+          "end": 23.34
+        },
+        {
+          "word": "of",
+          "start": 23.34,
+          "end": 23.6
+        },
+        {
+          "word": "money",
+          "start": 23.6,
+          "end": 23.88
+        },
+        {
+          "word": "on",
+          "start": 23.88,
+          "end": 24.36
+        },
+        {
+          "word": "space",
+          "start": 24.36,
+          "end": 24.74
+        },
+        {
+          "word": "exploration.",
+          "start": 24.74,
+          "end": 25.44
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 27420,
+      "endMs": 28180,
+      "text": "4.",
+      "words": [
+        {
+          "word": "4.",
+          "start": 27.42,
+          "end": 28.18
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "startMs": 29120,
+      "endMs": 35000,
+      "text": "People who first travelled in space ate dried food that they added water to.",
+      "words": [
+        {
+          "word": "People",
+          "start": 29.12,
+          "end": 29.78
+        },
+        {
+          "word": "who",
+          "start": 29.78,
+          "end": 30.04
+        },
+        {
+          "word": "first",
+          "start": 30.04,
+          "end": 30.48
+        },
+        {
+          "word": "travelled",
+          "start": 30.48,
+          "end": 30.88
+        },
+        {
+          "word": "in",
+          "start": 30.88,
+          "end": 31.16
+        },
+        {
+          "word": "space",
+          "start": 31.16,
+          "end": 31.48
+        },
+        {
+          "word": "ate",
+          "start": 31.48,
+          "end": 32.08
+        },
+        {
+          "word": "dried",
+          "start": 32.08,
+          "end": 32.44
+        },
+        {
+          "word": "food",
+          "start": 32.44,
+          "end": 32.94
+        },
+        {
+          "word": "that",
+          "start": 32.94,
+          "end": 33.58
+        },
+        {
+          "word": "they",
+          "start": 33.58,
+          "end": 33.72
+        },
+        {
+          "word": "added",
+          "start": 33.72,
+          "end": 34.04
+        },
+        {
+          "word": "water",
+          "start": 34.04,
+          "end": 34.42
+        },
+        {
+          "word": "to.",
+          "start": 34.42,
+          "end": 35.0
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "startMs": 36680,
+      "endMs": 42820,
+      "text": "5. When there are many bright lights at night, it's hard to see the stars.",
+      "words": [
+        {
+          "word": "5.",
+          "start": 36.68000000000001,
+          "end": 37.34
+        },
+        {
+          "word": "When",
+          "start": 38.82,
+          "end": 38.92
+        },
+        {
+          "word": "there",
+          "start": 38.92,
+          "end": 39.14
+        },
+        {
+          "word": "are",
+          "start": 39.14,
+          "end": 39.28
+        },
+        {
+          "word": "many",
+          "start": 39.28,
+          "end": 39.48
+        },
+        {
+          "word": "bright",
+          "start": 39.48,
+          "end": 39.8
+        },
+        {
+          "word": "lights",
+          "start": 39.8,
+          "end": 40.4
+        },
+        {
+          "word": "at",
+          "start": 40.4,
+          "end": 40.54
+        },
+        {
+          "word": "night,",
+          "start": 40.54,
+          "end": 40.88
+        },
+        {
+          "word": "it's",
+          "start": 41.46,
+          "end": 41.62
+        },
+        {
+          "word": "hard",
+          "start": 41.62,
+          "end": 41.84
+        },
+        {
+          "word": "to",
+          "start": 41.84,
+          "end": 42.02
+        },
+        {
+          "word": "see",
+          "start": 42.02,
+          "end": 42.24
+        },
+        {
+          "word": "the",
+          "start": 42.24,
+          "end": 42.4
+        },
+        {
+          "word": "stars.",
+          "start": 42.4,
+          "end": 42.82
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "startMs": 45020,
+      "endMs": 45680,
+      "text": "6.",
+      "words": [
+        {
+          "word": "6.",
+          "start": 45.02,
+          "end": 45.68
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "startMs": 46940,
+      "endMs": 51820,
+      "text": "It takes more than an hour for light from the sun to reach the planet Saturn.",
+      "words": [
+        {
+          "word": "It",
+          "start": 46.94,
+          "end": 47.08
+        },
+        {
+          "word": "takes",
+          "start": 47.08,
+          "end": 47.34
+        },
+        {
+          "word": "more",
+          "start": 47.34,
+          "end": 47.7
+        },
+        {
+          "word": "than",
+          "start": 47.7,
+          "end": 47.92
+        },
+        {
+          "word": "an",
+          "start": 47.92,
+          "end": 48.08
+        },
+        {
+          "word": "hour",
+          "start": 48.08,
+          "end": 48.5
+        },
+        {
+          "word": "for",
+          "start": 48.5,
+          "end": 48.92
+        },
+        {
+          "word": "light",
+          "start": 48.92,
+          "end": 49.2
+        },
+        {
+          "word": "from",
+          "start": 49.2,
+          "end": 49.52
+        },
+        {
+          "word": "the",
+          "start": 49.52,
+          "end": 49.66
+        },
+        {
+          "word": "sun",
+          "start": 49.66,
+          "end": 49.98
+        },
+        {
+          "word": "to",
+          "start": 49.98,
+          "end": 50.44
+        },
+        {
+          "word": "reach",
+          "start": 50.44,
+          "end": 50.66
+        },
+        {
+          "word": "the",
+          "start": 50.66,
+          "end": 50.9
+        },
+        {
+          "word": "planet",
+          "start": 50.9,
+          "end": 51.24
+        },
+        {
+          "word": "Saturn.",
+          "start": 51.24,
+          "end": 51.82
+        }
+      ]
+    }
+  ]
+}

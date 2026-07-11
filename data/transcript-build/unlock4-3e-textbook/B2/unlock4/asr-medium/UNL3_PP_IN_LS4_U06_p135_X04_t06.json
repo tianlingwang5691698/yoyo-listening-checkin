@@ -1,0 +1,503 @@
+{
+  "model": "medium",
+  "language": "en",
+  "text": "6.6 1 In certain countries fracking is banned due to its dangerous effects on the environment. 2 Humans, animals and the environment could all be threatened by the use of nuclear energy. 3 The community refuses to allow the power company to build a new plant by the river. Salt is removed from the water at the desalination plant. 5 We are a completely energy independent country. 6 I don't think we should use fossil fuels at all anymore.",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 2240,
+      "text": "6.6",
+      "words": [
+        {
+          "word": "6",
+          "start": 0.0,
+          "end": 0.64
+        },
+        {
+          "word": ".6",
+          "start": 0.64,
+          "end": 2.24
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 3540,
+      "endMs": 4500,
+      "text": "1",
+      "words": [
+        {
+          "word": "1",
+          "start": 3.540000000000001,
+          "end": 4.5
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 4500,
+      "endMs": 10340,
+      "text": "In certain countries fracking is banned due to its dangerous effects on the environment.",
+      "words": [
+        {
+          "word": "In",
+          "start": 4.5,
+          "end": 4.56
+        },
+        {
+          "word": "certain",
+          "start": 4.56,
+          "end": 5.06
+        },
+        {
+          "word": "countries",
+          "start": 5.06,
+          "end": 5.72
+        },
+        {
+          "word": "fracking",
+          "start": 5.72,
+          "end": 6.28
+        },
+        {
+          "word": "is",
+          "start": 6.28,
+          "end": 6.62
+        },
+        {
+          "word": "banned",
+          "start": 6.62,
+          "end": 7.1
+        },
+        {
+          "word": "due",
+          "start": 7.1,
+          "end": 7.76
+        },
+        {
+          "word": "to",
+          "start": 7.76,
+          "end": 7.96
+        },
+        {
+          "word": "its",
+          "start": 7.96,
+          "end": 8.18
+        },
+        {
+          "word": "dangerous",
+          "start": 8.18,
+          "end": 8.74
+        },
+        {
+          "word": "effects",
+          "start": 8.74,
+          "end": 9.24
+        },
+        {
+          "word": "on",
+          "start": 9.24,
+          "end": 9.44
+        },
+        {
+          "word": "the",
+          "start": 9.44,
+          "end": 9.7
+        },
+        {
+          "word": "environment.",
+          "start": 9.7,
+          "end": 10.34
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 13080,
+      "endMs": 14040,
+      "text": "2",
+      "words": [
+        {
+          "word": "2",
+          "start": 13.08,
+          "end": 14.04
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 14800,
+      "endMs": 20720,
+      "text": "Humans, animals and the environment could all be threatened by the use of nuclear energy.",
+      "words": [
+        {
+          "word": "Humans,",
+          "start": 14.8,
+          "end": 15.46
+        },
+        {
+          "word": "animals",
+          "start": 15.82,
+          "end": 16.24
+        },
+        {
+          "word": "and",
+          "start": 16.24,
+          "end": 16.52
+        },
+        {
+          "word": "the",
+          "start": 16.52,
+          "end": 16.76
+        },
+        {
+          "word": "environment",
+          "start": 16.76,
+          "end": 17.32
+        },
+        {
+          "word": "could",
+          "start": 17.32,
+          "end": 17.92
+        },
+        {
+          "word": "all",
+          "start": 17.92,
+          "end": 18.18
+        },
+        {
+          "word": "be",
+          "start": 18.18,
+          "end": 18.44
+        },
+        {
+          "word": "threatened",
+          "start": 18.44,
+          "end": 18.8
+        },
+        {
+          "word": "by",
+          "start": 18.8,
+          "end": 19.08
+        },
+        {
+          "word": "the",
+          "start": 19.08,
+          "end": 19.22
+        },
+        {
+          "word": "use",
+          "start": 19.22,
+          "end": 19.46
+        },
+        {
+          "word": "of",
+          "start": 19.46,
+          "end": 19.8
+        },
+        {
+          "word": "nuclear",
+          "start": 19.8,
+          "end": 20.12
+        },
+        {
+          "word": "energy.",
+          "start": 20.12,
+          "end": 20.72
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "startMs": 22900,
+      "endMs": 23860,
+      "text": "3",
+      "words": [
+        {
+          "word": "3",
+          "start": 22.9,
+          "end": 23.86
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "startMs": 24620,
+      "endMs": 30860,
+      "text": "The community refuses to allow the power company to build a new plant by the river.",
+      "words": [
+        {
+          "word": "The",
+          "start": 24.619999999999997,
+          "end": 25.36
+        },
+        {
+          "word": "community",
+          "start": 25.36,
+          "end": 26.04
+        },
+        {
+          "word": "refuses",
+          "start": 26.04,
+          "end": 26.74
+        },
+        {
+          "word": "to",
+          "start": 26.74,
+          "end": 27.06
+        },
+        {
+          "word": "allow",
+          "start": 27.06,
+          "end": 27.26
+        },
+        {
+          "word": "the",
+          "start": 27.26,
+          "end": 27.56
+        },
+        {
+          "word": "power",
+          "start": 27.56,
+          "end": 27.86
+        },
+        {
+          "word": "company",
+          "start": 27.86,
+          "end": 28.26
+        },
+        {
+          "word": "to",
+          "start": 28.26,
+          "end": 28.6
+        },
+        {
+          "word": "build",
+          "start": 28.6,
+          "end": 28.8
+        },
+        {
+          "word": "a",
+          "start": 28.8,
+          "end": 29.04
+        },
+        {
+          "word": "new",
+          "start": 29.04,
+          "end": 29.26
+        },
+        {
+          "word": "plant",
+          "start": 29.26,
+          "end": 29.6
+        },
+        {
+          "word": "by",
+          "start": 29.6,
+          "end": 29.86
+        },
+        {
+          "word": "the",
+          "start": 29.86,
+          "end": 30.02
+        },
+        {
+          "word": "river.",
+          "start": 30.02,
+          "end": 30.86
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "startMs": 34640,
+      "endMs": 38760,
+      "text": "Salt is removed from the water at the desalination plant.",
+      "words": [
+        {
+          "word": "Salt",
+          "start": 34.64,
+          "end": 35.38
+        },
+        {
+          "word": "is",
+          "start": 35.38,
+          "end": 35.64
+        },
+        {
+          "word": "removed",
+          "start": 35.64,
+          "end": 36.08
+        },
+        {
+          "word": "from",
+          "start": 36.08,
+          "end": 36.34
+        },
+        {
+          "word": "the",
+          "start": 36.34,
+          "end": 36.58
+        },
+        {
+          "word": "water",
+          "start": 36.58,
+          "end": 36.9
+        },
+        {
+          "word": "at",
+          "start": 36.9,
+          "end": 37.22
+        },
+        {
+          "word": "the",
+          "start": 37.22,
+          "end": 37.5
+        },
+        {
+          "word": "desalination",
+          "start": 37.5,
+          "end": 38.28
+        },
+        {
+          "word": "plant.",
+          "start": 38.28,
+          "end": 38.76
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "startMs": 41340,
+      "endMs": 42080,
+      "text": "5",
+      "words": [
+        {
+          "word": "5",
+          "start": 41.34,
+          "end": 42.08
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "startMs": 42860,
+      "endMs": 46620,
+      "text": "We are a completely energy independent country.",
+      "words": [
+        {
+          "word": "We",
+          "start": 42.86,
+          "end": 43.54
+        },
+        {
+          "word": "are",
+          "start": 43.54,
+          "end": 43.86
+        },
+        {
+          "word": "a",
+          "start": 43.86,
+          "end": 44.18
+        },
+        {
+          "word": "completely",
+          "start": 44.18,
+          "end": 44.6
+        },
+        {
+          "word": "energy",
+          "start": 44.6,
+          "end": 45.2
+        },
+        {
+          "word": "independent",
+          "start": 45.2,
+          "end": 45.96
+        },
+        {
+          "word": "country.",
+          "start": 45.96,
+          "end": 46.62
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "startMs": 49020,
+      "endMs": 49760,
+      "text": "6",
+      "words": [
+        {
+          "word": "6",
+          "start": 49.02,
+          "end": 49.76
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "startMs": 50760,
+      "endMs": 54340,
+      "text": "I don't think we should use fossil fuels at all anymore.",
+      "words": [
+        {
+          "word": "I",
+          "start": 50.760000000000005,
+          "end": 51.38
+        },
+        {
+          "word": "don't",
+          "start": 51.38,
+          "end": 51.64
+        },
+        {
+          "word": "think",
+          "start": 51.64,
+          "end": 51.82
+        },
+        {
+          "word": "we",
+          "start": 51.82,
+          "end": 52.02
+        },
+        {
+          "word": "should",
+          "start": 52.02,
+          "end": 52.24
+        },
+        {
+          "word": "use",
+          "start": 52.24,
+          "end": 52.54
+        },
+        {
+          "word": "fossil",
+          "start": 52.54,
+          "end": 53.0
+        },
+        {
+          "word": "fuels",
+          "start": 53.0,
+          "end": 53.46
+        },
+        {
+          "word": "at",
+          "start": 53.46,
+          "end": 53.78
+        },
+        {
+          "word": "all",
+          "start": 53.78,
+          "end": 53.98
+        },
+        {
+          "word": "anymore.",
+          "start": 53.98,
+          "end": 54.34
+        }
+      ]
+    }
+  ]
+}

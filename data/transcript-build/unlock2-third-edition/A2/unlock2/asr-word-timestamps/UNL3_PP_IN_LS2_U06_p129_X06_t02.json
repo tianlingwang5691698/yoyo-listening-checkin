@@ -1,0 +1,699 @@
+{
+  "model": "small",
+  "language": "en",
+  "text": "6.2 Hello Hi, Professor Gould. This is Alika. Could I make an appointment to see you? I wanted to talk about my research project. I'm not done yet Also, I'm not sure what I should write about for the business solution Yes, of course Can you tell me what you were able to finish? Well, I chose a problem Then I found and read lots of articles. I have notes on information from my research I met with my group for topic discussions, too. I see. Let's meet tomorrow then Please bring your research notes. Let's discuss some causes and effects of the problem you researched Can you meet at 10 a.m.? Student Union?",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 1280,
+      "text": "6.2",
+      "words": [
+        {
+          "word": "6",
+          "start": 0.0,
+          "end": 0.46
+        },
+        {
+          "word": ".2",
+          "start": 0.46,
+          "end": 1.28
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 3060,
+      "endMs": 3740,
+      "text": "Hello",
+      "words": [
+        {
+          "word": "Hello",
+          "start": 3.0600000000000005,
+          "end": 3.74
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 4460,
+      "endMs": 10760,
+      "text": "Hi, Professor Gould. This is Alika. Could I make an appointment to see you?",
+      "words": [
+        {
+          "word": "Hi,",
+          "start": 4.46,
+          "end": 5.04
+        },
+        {
+          "word": "Professor",
+          "start": 5.08,
+          "end": 5.52
+        },
+        {
+          "word": "Gould.",
+          "start": 5.52,
+          "end": 5.98
+        },
+        {
+          "word": "This",
+          "start": 6.34,
+          "end": 6.94
+        },
+        {
+          "word": "is",
+          "start": 6.94,
+          "end": 7.18
+        },
+        {
+          "word": "Alika.",
+          "start": 7.18,
+          "end": 7.64
+        },
+        {
+          "word": "Could",
+          "start": 8.2,
+          "end": 8.72
+        },
+        {
+          "word": "I",
+          "start": 8.72,
+          "end": 9.06
+        },
+        {
+          "word": "make",
+          "start": 9.06,
+          "end": 9.32
+        },
+        {
+          "word": "an",
+          "start": 9.32,
+          "end": 9.5
+        },
+        {
+          "word": "appointment",
+          "start": 9.5,
+          "end": 9.88
+        },
+        {
+          "word": "to",
+          "start": 9.88,
+          "end": 10.24
+        },
+        {
+          "word": "see",
+          "start": 10.24,
+          "end": 10.5
+        },
+        {
+          "word": "you?",
+          "start": 10.5,
+          "end": 10.76
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 11260,
+      "endMs": 16120,
+      "text": "I wanted to talk about my research project. I'm not done yet",
+      "words": [
+        {
+          "word": "I",
+          "start": 11.26,
+          "end": 11.62
+        },
+        {
+          "word": "wanted",
+          "start": 11.62,
+          "end": 11.98
+        },
+        {
+          "word": "to",
+          "start": 11.98,
+          "end": 12.24
+        },
+        {
+          "word": "talk",
+          "start": 12.24,
+          "end": 12.5
+        },
+        {
+          "word": "about",
+          "start": 12.5,
+          "end": 12.82
+        },
+        {
+          "word": "my",
+          "start": 12.82,
+          "end": 13.1
+        },
+        {
+          "word": "research",
+          "start": 13.1,
+          "end": 13.64
+        },
+        {
+          "word": "project.",
+          "start": 13.64,
+          "end": 14.34
+        },
+        {
+          "word": "I'm",
+          "start": 14.76,
+          "end": 15.22
+        },
+        {
+          "word": "not",
+          "start": 15.22,
+          "end": 15.46
+        },
+        {
+          "word": "done",
+          "start": 15.46,
+          "end": 15.78
+        },
+        {
+          "word": "yet",
+          "start": 15.78,
+          "end": 16.12
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 16920,
+      "endMs": 21760,
+      "text": "Also, I'm not sure what I should write about for the business solution",
+      "words": [
+        {
+          "word": "Also,",
+          "start": 16.92,
+          "end": 17.34
+        },
+        {
+          "word": "I'm",
+          "start": 17.52,
+          "end": 18.0
+        },
+        {
+          "word": "not",
+          "start": 18.0,
+          "end": 18.22
+        },
+        {
+          "word": "sure",
+          "start": 18.22,
+          "end": 18.62
+        },
+        {
+          "word": "what",
+          "start": 18.62,
+          "end": 18.94
+        },
+        {
+          "word": "I",
+          "start": 18.94,
+          "end": 19.1
+        },
+        {
+          "word": "should",
+          "start": 19.1,
+          "end": 19.3
+        },
+        {
+          "word": "write",
+          "start": 19.3,
+          "end": 19.62
+        },
+        {
+          "word": "about",
+          "start": 19.62,
+          "end": 20.0
+        },
+        {
+          "word": "for",
+          "start": 20.0,
+          "end": 20.38
+        },
+        {
+          "word": "the",
+          "start": 20.38,
+          "end": 20.56
+        },
+        {
+          "word": "business",
+          "start": 20.56,
+          "end": 21.0
+        },
+        {
+          "word": "solution",
+          "start": 21.0,
+          "end": 21.76
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "startMs": 22380,
+      "endMs": 23520,
+      "text": "Yes, of course",
+      "words": [
+        {
+          "word": "Yes,",
+          "start": 22.38,
+          "end": 22.9
+        },
+        {
+          "word": "of",
+          "start": 23.08,
+          "end": 23.22
+        },
+        {
+          "word": "course",
+          "start": 23.22,
+          "end": 23.52
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "startMs": 24060,
+      "endMs": 26160,
+      "text": "Can you tell me what you were able to finish?",
+      "words": [
+        {
+          "word": "Can",
+          "start": 24.060000000000002,
+          "end": 24.56
+        },
+        {
+          "word": "you",
+          "start": 24.56,
+          "end": 24.7
+        },
+        {
+          "word": "tell",
+          "start": 24.7,
+          "end": 24.88
+        },
+        {
+          "word": "me",
+          "start": 24.88,
+          "end": 25.02
+        },
+        {
+          "word": "what",
+          "start": 25.02,
+          "end": 25.2
+        },
+        {
+          "word": "you",
+          "start": 25.2,
+          "end": 25.36
+        },
+        {
+          "word": "were",
+          "start": 25.36,
+          "end": 25.48
+        },
+        {
+          "word": "able",
+          "start": 25.48,
+          "end": 25.68
+        },
+        {
+          "word": "to",
+          "start": 25.68,
+          "end": 25.86
+        },
+        {
+          "word": "finish?",
+          "start": 25.86,
+          "end": 26.16
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "startMs": 26960,
+      "endMs": 29540,
+      "text": "Well, I chose a problem",
+      "words": [
+        {
+          "word": "Well,",
+          "start": 26.96,
+          "end": 27.72
+        },
+        {
+          "word": "I",
+          "start": 28.1,
+          "end": 28.42
+        },
+        {
+          "word": "chose",
+          "start": 28.42,
+          "end": 28.82
+        },
+        {
+          "word": "a",
+          "start": 28.82,
+          "end": 29.06
+        },
+        {
+          "word": "problem",
+          "start": 29.06,
+          "end": 29.54
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "startMs": 30120,
+      "endMs": 36820,
+      "text": "Then I found and read lots of articles. I have notes on information from my research",
+      "words": [
+        {
+          "word": "Then",
+          "start": 30.12,
+          "end": 30.64
+        },
+        {
+          "word": "I",
+          "start": 30.64,
+          "end": 30.9
+        },
+        {
+          "word": "found",
+          "start": 30.9,
+          "end": 31.36
+        },
+        {
+          "word": "and",
+          "start": 31.36,
+          "end": 31.7
+        },
+        {
+          "word": "read",
+          "start": 31.7,
+          "end": 32.0
+        },
+        {
+          "word": "lots",
+          "start": 32.0,
+          "end": 32.38
+        },
+        {
+          "word": "of",
+          "start": 32.38,
+          "end": 32.54
+        },
+        {
+          "word": "articles.",
+          "start": 32.54,
+          "end": 33.08
+        },
+        {
+          "word": "I",
+          "start": 33.86,
+          "end": 33.9
+        },
+        {
+          "word": "have",
+          "start": 33.9,
+          "end": 34.12
+        },
+        {
+          "word": "notes",
+          "start": 34.12,
+          "end": 34.52
+        },
+        {
+          "word": "on",
+          "start": 34.52,
+          "end": 34.78
+        },
+        {
+          "word": "information",
+          "start": 34.78,
+          "end": 35.46
+        },
+        {
+          "word": "from",
+          "start": 35.46,
+          "end": 35.96
+        },
+        {
+          "word": "my",
+          "start": 35.96,
+          "end": 36.26
+        },
+        {
+          "word": "research",
+          "start": 36.26,
+          "end": 36.82
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "startMs": 36820,
+      "endMs": 40480,
+      "text": "I met with my group for topic discussions, too.",
+      "words": [
+        {
+          "word": "I",
+          "start": 36.82,
+          "end": 37.72
+        },
+        {
+          "word": "met",
+          "start": 37.72,
+          "end": 37.94
+        },
+        {
+          "word": "with",
+          "start": 37.94,
+          "end": 38.18
+        },
+        {
+          "word": "my",
+          "start": 38.18,
+          "end": 38.36
+        },
+        {
+          "word": "group",
+          "start": 38.36,
+          "end": 38.66
+        },
+        {
+          "word": "for",
+          "start": 38.66,
+          "end": 38.92
+        },
+        {
+          "word": "topic",
+          "start": 38.92,
+          "end": 39.3
+        },
+        {
+          "word": "discussions,",
+          "start": 39.3,
+          "end": 39.92
+        },
+        {
+          "word": "too.",
+          "start": 39.92,
+          "end": 40.48
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "startMs": 41300,
+      "endMs": 44280,
+      "text": "I see. Let's meet tomorrow then",
+      "words": [
+        {
+          "word": "I",
+          "start": 41.3,
+          "end": 41.8
+        },
+        {
+          "word": "see.",
+          "start": 41.8,
+          "end": 42.2
+        },
+        {
+          "word": "Let's",
+          "start": 42.9,
+          "end": 43.34
+        },
+        {
+          "word": "meet",
+          "start": 43.34,
+          "end": 43.5
+        },
+        {
+          "word": "tomorrow",
+          "start": 43.5,
+          "end": 43.92
+        },
+        {
+          "word": "then",
+          "start": 43.92,
+          "end": 44.28
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "startMs": 44960,
+      "endMs": 51020,
+      "text": "Please bring your research notes. Let's discuss some causes and effects of the problem you researched",
+      "words": [
+        {
+          "word": "Please",
+          "start": 44.96,
+          "end": 45.46
+        },
+        {
+          "word": "bring",
+          "start": 45.46,
+          "end": 45.74
+        },
+        {
+          "word": "your",
+          "start": 45.74,
+          "end": 45.92
+        },
+        {
+          "word": "research",
+          "start": 45.92,
+          "end": 46.28
+        },
+        {
+          "word": "notes.",
+          "start": 46.28,
+          "end": 46.78
+        },
+        {
+          "word": "Let's",
+          "start": 47.32,
+          "end": 47.84
+        },
+        {
+          "word": "discuss",
+          "start": 47.84,
+          "end": 48.18
+        },
+        {
+          "word": "some",
+          "start": 48.18,
+          "end": 48.56
+        },
+        {
+          "word": "causes",
+          "start": 48.56,
+          "end": 48.98
+        },
+        {
+          "word": "and",
+          "start": 48.98,
+          "end": 49.24
+        },
+        {
+          "word": "effects",
+          "start": 49.24,
+          "end": 49.52
+        },
+        {
+          "word": "of",
+          "start": 49.52,
+          "end": 49.84
+        },
+        {
+          "word": "the",
+          "start": 49.84,
+          "end": 49.96
+        },
+        {
+          "word": "problem",
+          "start": 49.96,
+          "end": 50.28
+        },
+        {
+          "word": "you",
+          "start": 50.28,
+          "end": 50.48
+        },
+        {
+          "word": "researched",
+          "start": 50.48,
+          "end": 51.02
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "startMs": 51660,
+      "endMs": 53720,
+      "text": "Can you meet at 10 a.m.?",
+      "words": [
+        {
+          "word": "Can",
+          "start": 51.66,
+          "end": 52.12
+        },
+        {
+          "word": "you",
+          "start": 52.12,
+          "end": 52.32
+        },
+        {
+          "word": "meet",
+          "start": 52.32,
+          "end": 52.58
+        },
+        {
+          "word": "at",
+          "start": 52.58,
+          "end": 52.78
+        },
+        {
+          "word": "10",
+          "start": 52.78,
+          "end": 53.02
+        },
+        {
+          "word": "a",
+          "start": 53.02,
+          "end": 53.18
+        },
+        {
+          "word": ".m.?",
+          "start": 53.18,
+          "end": 53.72
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "startMs": 53720,
+      "endMs": 54420,
+      "text": "Student Union?",
+      "words": [
+        {
+          "word": "Student",
+          "start": 53.72,
+          "end": 54.04
+        },
+        {
+          "word": "Union?",
+          "start": 54.04,
+          "end": 54.42
+        }
+      ]
+    }
+  ]
+}

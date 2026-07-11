@@ -1,0 +1,389 @@
+{
+  "model": "medium",
+  "language": "en",
+  "text": "7.3 1 decorate decoration 2 compose composition 3 communicate communication 4 create creation 4 5 exhibit exhibition 6 recommend recommendation 7 activity active 8 artist artistic 8 8 8",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 2260,
+      "text": "7.3",
+      "words": [
+        {
+          "word": "7",
+          "start": 0.0,
+          "end": 0.72
+        },
+        {
+          "word": ".3",
+          "start": 0.72,
+          "end": 2.26
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 2260,
+      "endMs": 4000,
+      "text": "1",
+      "words": [
+        {
+          "word": "1",
+          "start": 2.26,
+          "end": 4.0
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 4000,
+      "endMs": 5360,
+      "text": "decorate",
+      "words": [
+        {
+          "word": "decorate",
+          "start": 4.0,
+          "end": 5.36
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 6000,
+      "endMs": 7240,
+      "text": "decoration",
+      "words": [
+        {
+          "word": "decoration",
+          "start": 6.0,
+          "end": 7.24
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 9540,
+      "endMs": 10000,
+      "text": "2",
+      "words": [
+        {
+          "word": "2",
+          "start": 9.54,
+          "end": 10.239999999999998
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "startMs": 10940,
+      "endMs": 12000,
+      "text": "compose",
+      "words": [
+        {
+          "word": "compose",
+          "start": 10.94,
+          "end": 12.0
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "startMs": 12660,
+      "endMs": 14500,
+      "text": "composition",
+      "words": [
+        {
+          "word": "composition",
+          "start": 12.66,
+          "end": 14.5
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "startMs": 16480,
+      "endMs": 17880,
+      "text": "3",
+      "words": [
+        {
+          "word": "3",
+          "start": 16.48,
+          "end": 17.88
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "startMs": 17880,
+      "endMs": 18000,
+      "text": "communicate",
+      "words": [
+        {
+          "word": "communicate",
+          "start": 17.88,
+          "end": 18.58
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "startMs": 20620,
+      "endMs": 22020,
+      "text": "communication",
+      "words": [
+        {
+          "word": "communication",
+          "start": 20.62,
+          "end": 22.02
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "startMs": 24240,
+      "endMs": 25640,
+      "text": "4",
+      "words": [
+        {
+          "word": "4",
+          "start": 24.240000000000002,
+          "end": 25.64
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "startMs": 25640,
+      "endMs": 27300,
+      "text": "create",
+      "words": [
+        {
+          "word": "create",
+          "start": 25.64,
+          "end": 27.3
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "startMs": 27300,
+      "endMs": 28960,
+      "text": "creation",
+      "words": [
+        {
+          "word": "creation",
+          "start": 27.3,
+          "end": 28.96
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "startMs": 28960,
+      "endMs": 29980,
+      "text": "4",
+      "words": [
+        {
+          "word": "4",
+          "start": 28.96,
+          "end": 29.98
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "startMs": 29980,
+      "endMs": 32300,
+      "text": "5",
+      "words": [
+        {
+          "word": "5",
+          "start": 29.98,
+          "end": 32.3
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "startMs": 32300,
+      "endMs": 33980,
+      "text": "exhibit",
+      "words": [
+        {
+          "word": "exhibit",
+          "start": 32.3,
+          "end": 33.980000000000004
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "startMs": 35000,
+      "endMs": 35980,
+      "text": "exhibition",
+      "words": [
+        {
+          "word": "exhibition",
+          "start": 35.0,
+          "end": 35.980000000000004
+        }
+      ]
+    },
+    {
+      "index": 18,
+      "startMs": 39400,
+      "endMs": 39980,
+      "text": "6",
+      "words": [
+        {
+          "word": "6",
+          "start": 39.4,
+          "end": 40.1
+        }
+      ]
+    },
+    {
+      "index": 19,
+      "startMs": 40800,
+      "endMs": 42160,
+      "text": "recommend",
+      "words": [
+        {
+          "word": "recommend",
+          "start": 40.8,
+          "end": 42.16
+        }
+      ]
+    },
+    {
+      "index": 20,
+      "startMs": 42160,
+      "endMs": 44160,
+      "text": "recommendation",
+      "words": [
+        {
+          "word": "recommendation",
+          "start": 42.16,
+          "end": 44.16
+        }
+      ]
+    },
+    {
+      "index": 21,
+      "startMs": 46480,
+      "endMs": 47880,
+      "text": "7",
+      "words": [
+        {
+          "word": "7",
+          "start": 46.480000000000004,
+          "end": 47.88
+        }
+      ]
+    },
+    {
+      "index": 22,
+      "startMs": 47880,
+      "endMs": 49640,
+      "text": "activity",
+      "words": [
+        {
+          "word": "activity",
+          "start": 47.88,
+          "end": 49.64
+        }
+      ]
+    },
+    {
+      "index": 23,
+      "startMs": 49640,
+      "endMs": 51200,
+      "text": "active",
+      "words": [
+        {
+          "word": "active",
+          "start": 49.64,
+          "end": 51.2
+        }
+      ]
+    },
+    {
+      "index": 24,
+      "startMs": 53520,
+      "endMs": 53980,
+      "text": "8",
+      "words": [
+        {
+          "word": "8",
+          "start": 53.52,
+          "end": 54.220000000000006
+        }
+      ]
+    },
+    {
+      "index": 25,
+      "startMs": 54920,
+      "endMs": 56460,
+      "text": "artist",
+      "words": [
+        {
+          "word": "artist",
+          "start": 54.92,
+          "end": 56.46
+        }
+      ]
+    },
+    {
+      "index": 26,
+      "startMs": 56460,
+      "endMs": 58100,
+      "text": "artistic",
+      "words": [
+        {
+          "word": "artistic",
+          "start": 56.46,
+          "end": 58.1
+        }
+      ]
+    },
+    {
+      "index": 27,
+      "startMs": 58100,
+      "endMs": 58400,
+      "text": "8",
+      "words": [
+        {
+          "word": "8",
+          "start": 58.1,
+          "end": 58.4
+        }
+      ]
+    },
+    {
+      "index": 30,
+      "startMs": 58400,
+      "endMs": 58640,
+      "text": "8",
+      "words": [
+        {
+          "word": "8",
+          "start": 58.4,
+          "end": 58.64
+        }
+      ]
+    },
+    {
+      "index": 31,
+      "startMs": 59440,
+      "endMs": 60040,
+      "text": "8",
+      "words": [
+        {
+          "word": "8",
+          "start": 59.44,
+          "end": 60.04
+        }
+      ]
+    }
+  ]
+}

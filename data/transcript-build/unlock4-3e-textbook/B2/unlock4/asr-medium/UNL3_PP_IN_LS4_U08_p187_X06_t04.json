@@ -1,0 +1,530 @@
+{
+  "model": "medium",
+  "language": "en",
+  "text": "8.4 1 Today, the over 65s make up 2.5% of Country D's total population. This figure is smaller than the figure of 7% for Country E. 2 The population of Country E will be 77 million in 2050. This number is much larger than the figure of 1.4 million for Country D in 2050. 3 By 2050, Country D's population will rise to 1.78 million people. The population for Country E also peaks in 2050 with 9.2 million people. 4",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 1540,
+      "text": "8.4",
+      "words": [
+        {
+          "word": "8",
+          "start": 0.0,
+          "end": 0.56
+        },
+        {
+          "word": ".4",
+          "start": 0.56,
+          "end": 1.54
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 3100,
+      "endMs": 4100,
+      "text": "1",
+      "words": [
+        {
+          "word": "1",
+          "start": 3.0999999999999996,
+          "end": 4.1
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 4100,
+      "endMs": 11520,
+      "text": "Today, the over 65s make up 2.5% of Country D's total population.",
+      "words": [
+        {
+          "word": "Today,",
+          "start": 4.1,
+          "end": 4.66
+        },
+        {
+          "word": "the",
+          "start": 5.1,
+          "end": 5.36
+        },
+        {
+          "word": "over",
+          "start": 5.36,
+          "end": 5.64
+        },
+        {
+          "word": "65s",
+          "start": 5.64,
+          "end": 6.66
+        },
+        {
+          "word": "make",
+          "start": 6.66,
+          "end": 6.92
+        },
+        {
+          "word": "up",
+          "start": 6.92,
+          "end": 7.22
+        },
+        {
+          "word": "2",
+          "start": 7.22,
+          "end": 7.6
+        },
+        {
+          "word": ".5",
+          "start": 7.6,
+          "end": 8.24
+        },
+        {
+          "word": "%",
+          "start": 8.24,
+          "end": 8.76
+        },
+        {
+          "word": "of",
+          "start": 8.76,
+          "end": 9.3
+        },
+        {
+          "word": "Country",
+          "start": 9.3,
+          "end": 9.82
+        },
+        {
+          "word": "D's",
+          "start": 9.82,
+          "end": 10.34
+        },
+        {
+          "word": "total",
+          "start": 10.34,
+          "end": 10.68
+        },
+        {
+          "word": "population.",
+          "start": 10.68,
+          "end": 11.52
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 12420,
+      "endMs": 17580,
+      "text": "This figure is smaller than the figure of 7% for Country E.",
+      "words": [
+        {
+          "word": "This",
+          "start": 12.42,
+          "end": 12.68
+        },
+        {
+          "word": "figure",
+          "start": 12.68,
+          "end": 13.12
+        },
+        {
+          "word": "is",
+          "start": 13.12,
+          "end": 13.64
+        },
+        {
+          "word": "smaller",
+          "start": 13.64,
+          "end": 14.04
+        },
+        {
+          "word": "than",
+          "start": 14.04,
+          "end": 14.34
+        },
+        {
+          "word": "the",
+          "start": 14.34,
+          "end": 14.58
+        },
+        {
+          "word": "figure",
+          "start": 14.58,
+          "end": 14.78
+        },
+        {
+          "word": "of",
+          "start": 14.78,
+          "end": 15.04
+        },
+        {
+          "word": "7",
+          "start": 15.04,
+          "end": 15.4
+        },
+        {
+          "word": "%",
+          "start": 15.4,
+          "end": 16.14
+        },
+        {
+          "word": "for",
+          "start": 16.14,
+          "end": 16.36
+        },
+        {
+          "word": "Country",
+          "start": 16.36,
+          "end": 16.84
+        },
+        {
+          "word": "E.",
+          "start": 16.84,
+          "end": 17.58
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 19740,
+      "endMs": 20400,
+      "text": "2",
+      "words": [
+        {
+          "word": "2",
+          "start": 19.74,
+          "end": 20.4
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "startMs": 21000,
+      "endMs": 26940,
+      "text": "The population of Country E will be 77 million in 2050.",
+      "words": [
+        {
+          "word": "The",
+          "start": 21.0,
+          "end": 21.98
+        },
+        {
+          "word": "population",
+          "start": 21.98,
+          "end": 22.62
+        },
+        {
+          "word": "of",
+          "start": 22.62,
+          "end": 22.82
+        },
+        {
+          "word": "Country",
+          "start": 22.82,
+          "end": 23.3
+        },
+        {
+          "word": "E",
+          "start": 23.3,
+          "end": 23.68
+        },
+        {
+          "word": "will",
+          "start": 23.68,
+          "end": 23.94
+        },
+        {
+          "word": "be",
+          "start": 23.94,
+          "end": 24.28
+        },
+        {
+          "word": "77",
+          "start": 24.28,
+          "end": 25.04
+        },
+        {
+          "word": "million",
+          "start": 25.04,
+          "end": 25.8
+        },
+        {
+          "word": "in",
+          "start": 25.8,
+          "end": 26.22
+        },
+        {
+          "word": "2050.",
+          "start": 26.22,
+          "end": 26.94
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "startMs": 26940,
+      "endMs": 34800,
+      "text": "This number is much larger than the figure of 1.4 million for Country D in 2050.",
+      "words": [
+        {
+          "word": "This",
+          "start": 26.94,
+          "end": 28.42
+        },
+        {
+          "word": "number",
+          "start": 28.42,
+          "end": 28.8
+        },
+        {
+          "word": "is",
+          "start": 28.8,
+          "end": 29.12
+        },
+        {
+          "word": "much",
+          "start": 29.12,
+          "end": 29.48
+        },
+        {
+          "word": "larger",
+          "start": 29.48,
+          "end": 30.04
+        },
+        {
+          "word": "than",
+          "start": 30.04,
+          "end": 30.36
+        },
+        {
+          "word": "the",
+          "start": 30.36,
+          "end": 30.58
+        },
+        {
+          "word": "figure",
+          "start": 30.58,
+          "end": 30.8
+        },
+        {
+          "word": "of",
+          "start": 30.8,
+          "end": 31.14
+        },
+        {
+          "word": "1",
+          "start": 31.14,
+          "end": 31.38
+        },
+        {
+          "word": ".4",
+          "start": 31.38,
+          "end": 32.04
+        },
+        {
+          "word": "million",
+          "start": 32.04,
+          "end": 32.4
+        },
+        {
+          "word": "for",
+          "start": 32.4,
+          "end": 32.76
+        },
+        {
+          "word": "Country",
+          "start": 32.76,
+          "end": 33.22
+        },
+        {
+          "word": "D",
+          "start": 33.22,
+          "end": 33.64
+        },
+        {
+          "word": "in",
+          "start": 33.64,
+          "end": 33.96
+        },
+        {
+          "word": "2050.",
+          "start": 33.96,
+          "end": 34.8
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "startMs": 37480,
+      "endMs": 38040,
+      "text": "3",
+      "words": [
+        {
+          "word": "3",
+          "start": 37.48,
+          "end": 38.04
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "startMs": 38040,
+      "endMs": 46140,
+      "text": "By 2050, Country D's population will rise to 1.78 million people.",
+      "words": [
+        {
+          "word": "By",
+          "start": 38.04,
+          "end": 39.48
+        },
+        {
+          "word": "2050,",
+          "start": 39.48,
+          "end": 40.46
+        },
+        {
+          "word": "Country",
+          "start": 41.02,
+          "end": 41.48
+        },
+        {
+          "word": "D's",
+          "start": 41.48,
+          "end": 41.98
+        },
+        {
+          "word": "population",
+          "start": 41.98,
+          "end": 42.74
+        },
+        {
+          "word": "will",
+          "start": 42.74,
+          "end": 43.36
+        },
+        {
+          "word": "rise",
+          "start": 43.36,
+          "end": 43.66
+        },
+        {
+          "word": "to",
+          "start": 43.66,
+          "end": 43.94
+        },
+        {
+          "word": "1",
+          "start": 43.94,
+          "end": 44.22
+        },
+        {
+          "word": ".78",
+          "start": 44.22,
+          "end": 45.02
+        },
+        {
+          "word": "million",
+          "start": 45.02,
+          "end": 45.46
+        },
+        {
+          "word": "people.",
+          "start": 45.46,
+          "end": 46.14
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "startMs": 46940,
+      "endMs": 53560,
+      "text": "The population for Country E also peaks in 2050 with 9.2 million people.",
+      "words": [
+        {
+          "word": "The",
+          "start": 46.94,
+          "end": 47.14
+        },
+        {
+          "word": "population",
+          "start": 47.14,
+          "end": 47.78
+        },
+        {
+          "word": "for",
+          "start": 47.78,
+          "end": 48.04
+        },
+        {
+          "word": "Country",
+          "start": 48.04,
+          "end": 48.5
+        },
+        {
+          "word": "E",
+          "start": 48.5,
+          "end": 48.98
+        },
+        {
+          "word": "also",
+          "start": 48.98,
+          "end": 49.8
+        },
+        {
+          "word": "peaks",
+          "start": 49.8,
+          "end": 50.14
+        },
+        {
+          "word": "in",
+          "start": 50.14,
+          "end": 50.36
+        },
+        {
+          "word": "2050",
+          "start": 50.36,
+          "end": 51.12
+        },
+        {
+          "word": "with",
+          "start": 51.12,
+          "end": 51.84
+        },
+        {
+          "word": "9",
+          "start": 51.84,
+          "end": 52.18
+        },
+        {
+          "word": ".2",
+          "start": 52.18,
+          "end": 52.74
+        },
+        {
+          "word": "million",
+          "start": 52.74,
+          "end": 53.02
+        },
+        {
+          "word": "people.",
+          "start": 53.02,
+          "end": 53.56
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "startMs": 53560,
+      "endMs": 54060,
+      "text": "4",
+      "words": [
+        {
+          "word": "4",
+          "start": 53.56,
+          "end": 54.06
+        }
+      ]
+    }
+  ]
+}

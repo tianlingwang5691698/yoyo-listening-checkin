@@ -1,0 +1,5540 @@
+{
+  "model": "medium",
+  "language": "en",
+  "text": "Unit 6, 6.1 This is Andrew Thompson, reporting from the Spanish island of El Hierro, about 400 kilometres off the coast of Africa. It's pretty far from Madrid, which is about 2,000 kilometres away. Today, we're going to talk to two of the 11,000 people who live here to find out what is so special about the island. First, this is Pedro Rodriguez, who owns a seafood restaurant on the island. Hello, Pedro. Hello, Andrew. So, how long have you lived on El Hierro? I haven't lived here for very long. I came from Madrid about five years ago. You don't like it here, then? I love it here. I wish I had come a lot sooner than I did. I spent a lot of my life in Madrid. City life can be tough. I suppose island life is rather more relaxing? El Hierro is my home now. So, what's so great about El Hierro? In the city, everyone hurries everywhere. You are surrounded by traffic, but you never feel like you can really relax? What's more, my career was in banking, which is a particularly stressful job. I love the sound of the sea. I love the peace and quiet. And I feel free here. City life was never like that. When I was living in the city, I worked in banking, as I said. It paid well. And I was able to buy my restaurant. But I should have left the city when I was a much younger man. So, you love the quiet life on El Hierro. But is there anything else that makes El Hierro special? Well, another thing is El Hierro is completely energy independent. Energy independent? Yes. In the past, the power on the island was produced by oil. A lot of money was paid to ship 40,000 barrels of oil over from the mainland every year. It cost the island over 1.7 million euros a year. Now all our energy is created right here on the island. And for more about that, we'll now talk to engineer Sofia Martinez. Hello, Andrew. I wonder if you could tell us about the way you generate energy here on El Hierro. Well, if you've spent a day or two here, you may have noticed we have a lot of wind. Yes. In fact, it's blowing pretty hard outside right now. Well, for about 3,000 hours, or for about 35% of the year, the wind here blows hard enough to turn wind turbines which can provide electricity. Does El Hierro rely completely on wind to power the island? No. The island's wind turbines have a capacity of about 11 megawatts, about enough to power 3,500 homes. But it's only one element. The bigger problem is that the wind doesn't blow all the time, so the power source isn't consistent. So you need another energy source on windless days. That was the challenge. To create an energy generation system, or a network of systems, that could supply enough energy for the island all the time. And the solution was hydroelectric power. What is hydroelectric power exactly? Hydroelectric power is when energy is converted into another form, such as electricity. The initial source of this energy is from water. But doesn't hydroelectric power require a river and a dam? Isn't El Hierro too small for a river? A river with a dam is the usual way of producing hydroelectric power. But really, all you need is water that can move from a high place to a lower place to get energy from the water. OK. At the center of El Hierro is a dormant volcano, a volcano that is no longer active. In the middle of the volcano, we built a reservoir that holds over 500,000 cubic meters of water, at a height of 700 meters above sea level. So that's our water in a high place. But you don't get much rain here. What happens when all of the water runs out of the reservoir? Well, I mentioned the wind turbines. The wind power and the hydroelectric power are in a network together. When the wind is blowing, energy from the wind turbines pumps water up into the reservoir. So the wind turbines power the pumping station. Right. We also use the wind power for all of our electrical needs when it blows. Then, when the wind stops, we let water run out of the reservoir and through some turbines. The turbines turn generators and we have hydroelectric power we can access. So the water flows in a cycle. It's pumped up the hill by the wind power, then it's released when it's needed. Yes, that's right. What's more, the system also provides our drinking water and water for use in agriculture. But where does the water come from? We use seawater. But you can't drink salt water. We have a desalination plant to take the salt out of the seawater, so it can be used in agriculture and as drinking water. We're constantly adding new water and taking stored water out of the cycle as we need to use it. In fact, I've just come from the desalination plant where we're having some problems today. Something isn't working properly and the replacement parts haven't arrived yet. We're a long way from the mainland, so delivery of anything takes at least a few days. If they don't come soon, we may have to ask people to use less water for a few days. You're a long way from everything out here, aren't you? It must be difficult sometimes. Yes, it's a real challenge living here. On the other hand, we all love it. It can be a hard life, but I wouldn't live anywhere else.",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 3580,
+      "text": "Unit 6, 6.1",
+      "words": [
+        {
+          "word": "Unit",
+          "start": 0.0,
+          "end": 0.66
+        },
+        {
+          "word": "6,",
+          "start": 0.66,
+          "end": 1.44
+        },
+        {
+          "word": "6",
+          "start": 2.5,
+          "end": 2.74
+        },
+        {
+          "word": ".1",
+          "start": 2.74,
+          "end": 3.58
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 3580,
+      "endMs": 12260,
+      "text": "This is Andrew Thompson, reporting from the Spanish island of El Hierro, about 400 kilometres",
+      "words": [
+        {
+          "word": "This",
+          "start": 3.58,
+          "end": 4.84
+        },
+        {
+          "word": "is",
+          "start": 4.84,
+          "end": 5.3
+        },
+        {
+          "word": "Andrew",
+          "start": 5.3,
+          "end": 5.74
+        },
+        {
+          "word": "Thompson,",
+          "start": 5.74,
+          "end": 6.32
+        },
+        {
+          "word": "reporting",
+          "start": 7.0,
+          "end": 7.38
+        },
+        {
+          "word": "from",
+          "start": 7.38,
+          "end": 7.84
+        },
+        {
+          "word": "the",
+          "start": 7.84,
+          "end": 8.06
+        },
+        {
+          "word": "Spanish",
+          "start": 8.06,
+          "end": 8.52
+        },
+        {
+          "word": "island",
+          "start": 8.52,
+          "end": 8.9
+        },
+        {
+          "word": "of",
+          "start": 8.9,
+          "end": 9.26
+        },
+        {
+          "word": "El",
+          "start": 9.26,
+          "end": 9.52
+        },
+        {
+          "word": "Hierro,",
+          "start": 9.52,
+          "end": 10.14
+        },
+        {
+          "word": "about",
+          "start": 10.4,
+          "end": 10.82
+        },
+        {
+          "word": "400",
+          "start": 10.82,
+          "end": 11.52
+        },
+        {
+          "word": "kilometres",
+          "start": 11.52,
+          "end": 12.26
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 12260,
+      "endMs": 14480,
+      "text": "off the coast of Africa.",
+      "words": [
+        {
+          "word": "off",
+          "start": 12.26,
+          "end": 12.96
+        },
+        {
+          "word": "the",
+          "start": 12.96,
+          "end": 13.14
+        },
+        {
+          "word": "coast",
+          "start": 13.14,
+          "end": 13.52
+        },
+        {
+          "word": "of",
+          "start": 13.52,
+          "end": 13.86
+        },
+        {
+          "word": "Africa.",
+          "start": 13.86,
+          "end": 14.48
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 15460,
+      "endMs": 21480,
+      "text": "It's pretty far from Madrid, which is about 2,000 kilometres away.",
+      "words": [
+        {
+          "word": "It's",
+          "start": 15.46,
+          "end": 15.86
+        },
+        {
+          "word": "pretty",
+          "start": 15.86,
+          "end": 16.26
+        },
+        {
+          "word": "far",
+          "start": 16.26,
+          "end": 16.64
+        },
+        {
+          "word": "from",
+          "start": 16.64,
+          "end": 16.98
+        },
+        {
+          "word": "Madrid,",
+          "start": 16.98,
+          "end": 17.5
+        },
+        {
+          "word": "which",
+          "start": 18.0,
+          "end": 18.28
+        },
+        {
+          "word": "is",
+          "start": 18.28,
+          "end": 18.52
+        },
+        {
+          "word": "about",
+          "start": 18.52,
+          "end": 19.08
+        },
+        {
+          "word": "2",
+          "start": 19.08,
+          "end": 19.66
+        },
+        {
+          "word": ",000",
+          "start": 19.66,
+          "end": 20.24
+        },
+        {
+          "word": "kilometres",
+          "start": 20.24,
+          "end": 20.9
+        },
+        {
+          "word": "away.",
+          "start": 20.9,
+          "end": 21.48
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 22340,
+      "endMs": 29980,
+      "text": "Today, we're going to talk to two of the 11,000 people who live here to find out what",
+      "words": [
+        {
+          "word": "Today,",
+          "start": 22.34,
+          "end": 22.94
+        },
+        {
+          "word": "we're",
+          "start": 23.26,
+          "end": 23.56
+        },
+        {
+          "word": "going",
+          "start": 23.56,
+          "end": 23.86
+        },
+        {
+          "word": "to",
+          "start": 23.86,
+          "end": 24.14
+        },
+        {
+          "word": "talk",
+          "start": 24.14,
+          "end": 24.38
+        },
+        {
+          "word": "to",
+          "start": 24.38,
+          "end": 24.7
+        },
+        {
+          "word": "two",
+          "start": 24.7,
+          "end": 25.1
+        },
+        {
+          "word": "of",
+          "start": 25.1,
+          "end": 25.34
+        },
+        {
+          "word": "the",
+          "start": 25.34,
+          "end": 25.68
+        },
+        {
+          "word": "11",
+          "start": 25.68,
+          "end": 26.1
+        },
+        {
+          "word": ",000",
+          "start": 26.1,
+          "end": 26.54
+        },
+        {
+          "word": "people",
+          "start": 26.54,
+          "end": 27.04
+        },
+        {
+          "word": "who",
+          "start": 27.04,
+          "end": 27.38
+        },
+        {
+          "word": "live",
+          "start": 27.38,
+          "end": 27.52
+        },
+        {
+          "word": "here",
+          "start": 27.52,
+          "end": 27.94
+        },
+        {
+          "word": "to",
+          "start": 27.94,
+          "end": 28.54
+        },
+        {
+          "word": "find",
+          "start": 28.54,
+          "end": 28.9
+        },
+        {
+          "word": "out",
+          "start": 28.9,
+          "end": 29.44
+        },
+        {
+          "word": "what",
+          "start": 29.44,
+          "end": 29.98
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "startMs": 29980,
+      "endMs": 32000,
+      "text": "is so special about the island.",
+      "words": [
+        {
+          "word": "so",
+          "start": 29.98,
+          "end": 30.14
+        },
+        {
+          "word": "special",
+          "start": 30.14,
+          "end": 30.8
+        },
+        {
+          "word": "about",
+          "start": 30.8,
+          "end": 31.22
+        },
+        {
+          "word": "the",
+          "start": 31.22,
+          "end": 31.56
+        },
+        {
+          "word": "island.",
+          "start": 31.56,
+          "end": 32.0
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "startMs": 33020,
+      "endMs": 39060,
+      "text": "First, this is Pedro Rodriguez, who owns a seafood restaurant on the island.",
+      "words": [
+        {
+          "word": "First,",
+          "start": 33.02,
+          "end": 33.48
+        },
+        {
+          "word": "this",
+          "start": 33.98,
+          "end": 34.24
+        },
+        {
+          "word": "is",
+          "start": 34.24,
+          "end": 34.64
+        },
+        {
+          "word": "Pedro",
+          "start": 34.64,
+          "end": 35.16
+        },
+        {
+          "word": "Rodriguez,",
+          "start": 35.16,
+          "end": 35.9
+        },
+        {
+          "word": "who",
+          "start": 36.4,
+          "end": 36.54
+        },
+        {
+          "word": "owns",
+          "start": 36.54,
+          "end": 36.88
+        },
+        {
+          "word": "a",
+          "start": 36.88,
+          "end": 37.16
+        },
+        {
+          "word": "seafood",
+          "start": 37.16,
+          "end": 37.62
+        },
+        {
+          "word": "restaurant",
+          "start": 37.62,
+          "end": 38.16
+        },
+        {
+          "word": "on",
+          "start": 38.16,
+          "end": 38.44
+        },
+        {
+          "word": "the",
+          "start": 38.44,
+          "end": 38.64
+        },
+        {
+          "word": "island.",
+          "start": 38.64,
+          "end": 39.06
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "startMs": 39640,
+      "endMs": 40500,
+      "text": "Hello, Pedro.",
+      "words": [
+        {
+          "word": "Hello,",
+          "start": 39.64,
+          "end": 39.96
+        },
+        {
+          "word": "Pedro.",
+          "start": 39.98,
+          "end": 40.5
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "startMs": 41000,
+      "endMs": 42120,
+      "text": "Hello, Andrew.",
+      "words": [
+        {
+          "word": "Hello,",
+          "start": 41.0,
+          "end": 41.56
+        },
+        {
+          "word": "Andrew.",
+          "start": 41.78,
+          "end": 42.12
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "startMs": 42700,
+      "endMs": 46140,
+      "text": "So, how long have you lived on El Hierro?",
+      "words": [
+        {
+          "word": "So,",
+          "start": 42.7,
+          "end": 43.08
+        },
+        {
+          "word": "how",
+          "start": 43.52,
+          "end": 43.86
+        },
+        {
+          "word": "long",
+          "start": 43.86,
+          "end": 44.22
+        },
+        {
+          "word": "have",
+          "start": 44.22,
+          "end": 44.52
+        },
+        {
+          "word": "you",
+          "start": 44.52,
+          "end": 44.76
+        },
+        {
+          "word": "lived",
+          "start": 44.76,
+          "end": 45.0
+        },
+        {
+          "word": "on",
+          "start": 45.0,
+          "end": 45.42
+        },
+        {
+          "word": "El",
+          "start": 45.42,
+          "end": 45.66
+        },
+        {
+          "word": "Hierro?",
+          "start": 45.66,
+          "end": 46.14
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "startMs": 46800,
+      "endMs": 53400,
+      "text": "I haven't lived here for very long. I came from Madrid about five years ago.",
+      "words": [
+        {
+          "word": "I",
+          "start": 46.8,
+          "end": 47.36
+        },
+        {
+          "word": "haven't",
+          "start": 47.36,
+          "end": 47.74
+        },
+        {
+          "word": "lived",
+          "start": 47.74,
+          "end": 48.04
+        },
+        {
+          "word": "here",
+          "start": 48.04,
+          "end": 48.38
+        },
+        {
+          "word": "for",
+          "start": 48.38,
+          "end": 48.74
+        },
+        {
+          "word": "very",
+          "start": 48.74,
+          "end": 49.16
+        },
+        {
+          "word": "long.",
+          "start": 49.16,
+          "end": 49.6
+        },
+        {
+          "word": "I",
+          "start": 50.28,
+          "end": 50.54
+        },
+        {
+          "word": "came",
+          "start": 50.54,
+          "end": 50.82
+        },
+        {
+          "word": "from",
+          "start": 50.82,
+          "end": 51.16
+        },
+        {
+          "word": "Madrid",
+          "start": 51.16,
+          "end": 51.66
+        },
+        {
+          "word": "about",
+          "start": 51.66,
+          "end": 52.32
+        },
+        {
+          "word": "five",
+          "start": 52.32,
+          "end": 52.72
+        },
+        {
+          "word": "years",
+          "start": 52.72,
+          "end": 53.04
+        },
+        {
+          "word": "ago.",
+          "start": 53.04,
+          "end": 53.4
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "startMs": 53860,
+      "endMs": 56480,
+      "text": "You don't like it here, then?",
+      "words": [
+        {
+          "word": "You",
+          "start": 53.86,
+          "end": 54.48
+        },
+        {
+          "word": "don't",
+          "start": 54.48,
+          "end": 55.22
+        },
+        {
+          "word": "like",
+          "start": 55.22,
+          "end": 55.56
+        },
+        {
+          "word": "it",
+          "start": 55.56,
+          "end": 55.8
+        },
+        {
+          "word": "here,",
+          "start": 55.8,
+          "end": 56.04
+        },
+        {
+          "word": "then?",
+          "start": 56.04,
+          "end": 56.48
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "startMs": 56480,
+      "endMs": 61400,
+      "text": "I love it here. I wish I had come a lot sooner than I did.",
+      "words": [
+        {
+          "word": "I",
+          "start": 56.48,
+          "end": 57.38
+        },
+        {
+          "word": "love",
+          "start": 57.38,
+          "end": 57.58
+        },
+        {
+          "word": "it",
+          "start": 57.58,
+          "end": 57.86
+        },
+        {
+          "word": "here.",
+          "start": 57.86,
+          "end": 58.3
+        },
+        {
+          "word": "I",
+          "start": 58.66,
+          "end": 58.94
+        },
+        {
+          "word": "wish",
+          "start": 58.94,
+          "end": 59.18
+        },
+        {
+          "word": "I",
+          "start": 59.18,
+          "end": 59.4
+        },
+        {
+          "word": "had",
+          "start": 59.4,
+          "end": 59.62
+        },
+        {
+          "word": "come",
+          "start": 59.62,
+          "end": 59.84
+        },
+        {
+          "word": "a",
+          "start": 59.84,
+          "end": 59.92
+        },
+        {
+          "word": "lot",
+          "start": 59.92,
+          "end": 60.18
+        },
+        {
+          "word": "sooner",
+          "start": 60.18,
+          "end": 60.48
+        },
+        {
+          "word": "than",
+          "start": 60.48,
+          "end": 60.74
+        },
+        {
+          "word": "I",
+          "start": 60.74,
+          "end": 61.08
+        },
+        {
+          "word": "did.",
+          "start": 61.08,
+          "end": 61.4
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "startMs": 62460,
+      "endMs": 65260,
+      "text": "I spent a lot of my life in Madrid.",
+      "words": [
+        {
+          "word": "I",
+          "start": 62.46,
+          "end": 62.7
+        },
+        {
+          "word": "spent",
+          "start": 62.7,
+          "end": 63.06
+        },
+        {
+          "word": "a",
+          "start": 63.06,
+          "end": 63.26
+        },
+        {
+          "word": "lot",
+          "start": 63.26,
+          "end": 63.5
+        },
+        {
+          "word": "of",
+          "start": 63.5,
+          "end": 63.8
+        },
+        {
+          "word": "my",
+          "start": 63.8,
+          "end": 64.02
+        },
+        {
+          "word": "life",
+          "start": 64.02,
+          "end": 64.4
+        },
+        {
+          "word": "in",
+          "start": 64.4,
+          "end": 64.8
+        },
+        {
+          "word": "Madrid.",
+          "start": 64.8,
+          "end": 65.26
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "startMs": 66120,
+      "endMs": 72520,
+      "text": "City life can be tough. I suppose island life is rather more relaxing?",
+      "words": [
+        {
+          "word": "City",
+          "start": 66.12,
+          "end": 66.3
+        },
+        {
+          "word": "life",
+          "start": 66.3,
+          "end": 66.76
+        },
+        {
+          "word": "can",
+          "start": 66.76,
+          "end": 67.14
+        },
+        {
+          "word": "be",
+          "start": 67.14,
+          "end": 67.38
+        },
+        {
+          "word": "tough.",
+          "start": 67.38,
+          "end": 67.8
+        },
+        {
+          "word": "I",
+          "start": 68.64,
+          "end": 69.12
+        },
+        {
+          "word": "suppose",
+          "start": 69.12,
+          "end": 69.96
+        },
+        {
+          "word": "island",
+          "start": 69.96,
+          "end": 70.52
+        },
+        {
+          "word": "life",
+          "start": 70.52,
+          "end": 70.9
+        },
+        {
+          "word": "is",
+          "start": 70.9,
+          "end": 71.3
+        },
+        {
+          "word": "rather",
+          "start": 71.3,
+          "end": 71.62
+        },
+        {
+          "word": "more",
+          "start": 71.62,
+          "end": 72.04
+        },
+        {
+          "word": "relaxing?",
+          "start": 72.04,
+          "end": 72.52
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "startMs": 73520,
+      "endMs": 75480,
+      "text": "El Hierro is my home now.",
+      "words": [
+        {
+          "word": "El",
+          "start": 73.52,
+          "end": 73.76
+        },
+        {
+          "word": "Hierro",
+          "start": 73.76,
+          "end": 74.1
+        },
+        {
+          "word": "is",
+          "start": 74.1,
+          "end": 74.48
+        },
+        {
+          "word": "my",
+          "start": 74.48,
+          "end": 74.82
+        },
+        {
+          "word": "home",
+          "start": 74.82,
+          "end": 75.08
+        },
+        {
+          "word": "now.",
+          "start": 75.08,
+          "end": 75.48
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "startMs": 75780,
+      "endMs": 78960,
+      "text": "So, what's so great about El Hierro?",
+      "words": [
+        {
+          "word": "So,",
+          "start": 75.78,
+          "end": 76.16
+        },
+        {
+          "word": "what's",
+          "start": 76.74,
+          "end": 77.18
+        },
+        {
+          "word": "so",
+          "start": 77.18,
+          "end": 77.64
+        },
+        {
+          "word": "great",
+          "start": 77.64,
+          "end": 77.9
+        },
+        {
+          "word": "about",
+          "start": 77.9,
+          "end": 78.22
+        },
+        {
+          "word": "El",
+          "start": 78.22,
+          "end": 78.6
+        },
+        {
+          "word": "Hierro?",
+          "start": 78.6,
+          "end": 78.96
+        }
+      ]
+    },
+    {
+      "index": 18,
+      "startMs": 79720,
+      "endMs": 83460,
+      "text": "In the city, everyone hurries everywhere.",
+      "words": [
+        {
+          "word": "In",
+          "start": 79.72,
+          "end": 80.22
+        },
+        {
+          "word": "the",
+          "start": 80.22,
+          "end": 80.42
+        },
+        {
+          "word": "city,",
+          "start": 80.42,
+          "end": 80.86
+        },
+        {
+          "word": "everyone",
+          "start": 81.4,
+          "end": 82.02
+        },
+        {
+          "word": "hurries",
+          "start": 82.02,
+          "end": 82.72
+        },
+        {
+          "word": "everywhere.",
+          "start": 82.72,
+          "end": 83.46
+        }
+      ]
+    },
+    {
+      "index": 19,
+      "startMs": 84260,
+      "endMs": 90160,
+      "text": "You are surrounded by traffic, but you never feel like you can really relax?",
+      "words": [
+        {
+          "word": "You",
+          "start": 84.08,
+          "end": 84.46
+        },
+        {
+          "word": "are",
+          "start": 84.46,
+          "end": 84.7
+        },
+        {
+          "word": "surrounded",
+          "start": 84.7,
+          "end": 85.3
+        },
+        {
+          "word": "by",
+          "start": 85.3,
+          "end": 85.68
+        },
+        {
+          "word": "traffic,",
+          "start": 85.68,
+          "end": 86.46
+        },
+        {
+          "word": "but",
+          "start": 87.3,
+          "end": 87.4
+        },
+        {
+          "word": "you",
+          "start": 87.4,
+          "end": 87.56
+        },
+        {
+          "word": "never",
+          "start": 87.56,
+          "end": 87.8
+        },
+        {
+          "word": "feel",
+          "start": 87.8,
+          "end": 88.12
+        },
+        {
+          "word": "like",
+          "start": 88.12,
+          "end": 88.38
+        },
+        {
+          "word": "you",
+          "start": 88.38,
+          "end": 88.54
+        },
+        {
+          "word": "can",
+          "start": 88.54,
+          "end": 89.04
+        },
+        {
+          "word": "really",
+          "start": 89.04,
+          "end": 89.48
+        },
+        {
+          "word": "relax?",
+          "start": 89.48,
+          "end": 90.16
+        }
+      ]
+    },
+    {
+      "index": 20,
+      "startMs": 91220,
+      "endMs": 97280,
+      "text": "What's more, my career was in banking, which is a particularly stressful job.",
+      "words": [
+        {
+          "word": "What's",
+          "start": 91.22,
+          "end": 91.52
+        },
+        {
+          "word": "more,",
+          "start": 91.52,
+          "end": 91.84
+        },
+        {
+          "word": "my",
+          "start": 92.3,
+          "end": 92.56
+        },
+        {
+          "word": "career",
+          "start": 92.56,
+          "end": 92.94
+        },
+        {
+          "word": "was",
+          "start": 92.94,
+          "end": 93.38
+        },
+        {
+          "word": "in",
+          "start": 93.38,
+          "end": 93.66
+        },
+        {
+          "word": "banking,",
+          "start": 93.66,
+          "end": 94.06
+        },
+        {
+          "word": "which",
+          "start": 94.46,
+          "end": 94.78
+        },
+        {
+          "word": "is",
+          "start": 94.78,
+          "end": 95.36
+        },
+        {
+          "word": "a",
+          "start": 95.36,
+          "end": 95.62
+        },
+        {
+          "word": "particularly",
+          "start": 95.62,
+          "end": 96.2
+        },
+        {
+          "word": "stressful",
+          "start": 96.2,
+          "end": 96.76
+        },
+        {
+          "word": "job.",
+          "start": 96.76,
+          "end": 97.28
+        }
+      ]
+    },
+    {
+      "index": 21,
+      "startMs": 98420,
+      "endMs": 100340,
+      "text": "I love the sound of the sea.",
+      "words": [
+        {
+          "word": "I",
+          "start": 98.42,
+          "end": 98.8
+        },
+        {
+          "word": "love",
+          "start": 98.8,
+          "end": 99.08
+        },
+        {
+          "word": "the",
+          "start": 99.08,
+          "end": 99.34
+        },
+        {
+          "word": "sound",
+          "start": 99.34,
+          "end": 99.56
+        },
+        {
+          "word": "of",
+          "start": 99.56,
+          "end": 99.82
+        },
+        {
+          "word": "the",
+          "start": 99.82,
+          "end": 100.04
+        },
+        {
+          "word": "sea.",
+          "start": 100.04,
+          "end": 100.34
+        }
+      ]
+    },
+    {
+      "index": 22,
+      "startMs": 101360,
+      "endMs": 103140,
+      "text": "I love the peace and quiet.",
+      "words": [
+        {
+          "word": "I",
+          "start": 101.36,
+          "end": 101.58
+        },
+        {
+          "word": "love",
+          "start": 101.58,
+          "end": 101.86
+        },
+        {
+          "word": "the",
+          "start": 101.86,
+          "end": 102.16
+        },
+        {
+          "word": "peace",
+          "start": 102.16,
+          "end": 102.36
+        },
+        {
+          "word": "and",
+          "start": 102.36,
+          "end": 102.74
+        },
+        {
+          "word": "quiet.",
+          "start": 102.74,
+          "end": 103.14
+        }
+      ]
+    },
+    {
+      "index": 23,
+      "startMs": 103740,
+      "endMs": 105800,
+      "text": "And I feel free here.",
+      "words": [
+        {
+          "word": "And",
+          "start": 103.74,
+          "end": 104.22
+        },
+        {
+          "word": "I",
+          "start": 104.22,
+          "end": 104.56
+        },
+        {
+          "word": "feel",
+          "start": 104.56,
+          "end": 104.8
+        },
+        {
+          "word": "free",
+          "start": 104.8,
+          "end": 105.2
+        },
+        {
+          "word": "here.",
+          "start": 105.2,
+          "end": 105.8
+        }
+      ]
+    },
+    {
+      "index": 24,
+      "startMs": 107000,
+      "endMs": 109100,
+      "text": "City life was never like that.",
+      "words": [
+        {
+          "word": "City",
+          "start": 107.0,
+          "end": 107.24
+        },
+        {
+          "word": "life",
+          "start": 107.24,
+          "end": 107.62
+        },
+        {
+          "word": "was",
+          "start": 107.62,
+          "end": 108.08
+        },
+        {
+          "word": "never",
+          "start": 108.08,
+          "end": 108.42
+        },
+        {
+          "word": "like",
+          "start": 108.42,
+          "end": 108.78
+        },
+        {
+          "word": "that.",
+          "start": 108.78,
+          "end": 109.1
+        }
+      ]
+    },
+    {
+      "index": 25,
+      "startMs": 110000,
+      "endMs": 115140,
+      "text": "When I was living in the city, I worked in banking, as I said.",
+      "words": [
+        {
+          "word": "When",
+          "start": 110.0,
+          "end": 110.64
+        },
+        {
+          "word": "I",
+          "start": 110.64,
+          "end": 110.94
+        },
+        {
+          "word": "was",
+          "start": 110.94,
+          "end": 111.18
+        },
+        {
+          "word": "living",
+          "start": 111.18,
+          "end": 111.42
+        },
+        {
+          "word": "in",
+          "start": 111.42,
+          "end": 111.7
+        },
+        {
+          "word": "the",
+          "start": 111.7,
+          "end": 111.84
+        },
+        {
+          "word": "city,",
+          "start": 111.84,
+          "end": 112.12
+        },
+        {
+          "word": "I",
+          "start": 112.74,
+          "end": 113.0
+        },
+        {
+          "word": "worked",
+          "start": 113.0,
+          "end": 113.32
+        },
+        {
+          "word": "in",
+          "start": 113.32,
+          "end": 113.8
+        },
+        {
+          "word": "banking,",
+          "start": 113.8,
+          "end": 114.2
+        },
+        {
+          "word": "as",
+          "start": 114.2,
+          "end": 114.54
+        },
+        {
+          "word": "I",
+          "start": 114.54,
+          "end": 114.82
+        },
+        {
+          "word": "said.",
+          "start": 114.82,
+          "end": 115.14
+        }
+      ]
+    },
+    {
+      "index": 26,
+      "startMs": 116320,
+      "endMs": 120580,
+      "text": "It paid well. And I was able to buy my restaurant.",
+      "words": [
+        {
+          "word": "It",
+          "start": 116.32,
+          "end": 116.66
+        },
+        {
+          "word": "paid",
+          "start": 116.66,
+          "end": 116.94
+        },
+        {
+          "word": "well.",
+          "start": 116.94,
+          "end": 117.44
+        },
+        {
+          "word": "And",
+          "start": 117.92,
+          "end": 118.24
+        },
+        {
+          "word": "I",
+          "start": 118.24,
+          "end": 118.38
+        },
+        {
+          "word": "was",
+          "start": 118.38,
+          "end": 118.62
+        },
+        {
+          "word": "able",
+          "start": 118.62,
+          "end": 118.92
+        },
+        {
+          "word": "to",
+          "start": 118.92,
+          "end": 119.42
+        },
+        {
+          "word": "buy",
+          "start": 119.42,
+          "end": 119.7
+        },
+        {
+          "word": "my",
+          "start": 119.7,
+          "end": 120.02
+        },
+        {
+          "word": "restaurant.",
+          "start": 120.02,
+          "end": 120.58
+        }
+      ]
+    },
+    {
+      "index": 27,
+      "startMs": 121160,
+      "endMs": 125280,
+      "text": "But I should have left the city when I was a much younger man.",
+      "words": [
+        {
+          "word": "But",
+          "start": 121.16,
+          "end": 121.56
+        },
+        {
+          "word": "I",
+          "start": 121.56,
+          "end": 121.94
+        },
+        {
+          "word": "should",
+          "start": 121.94,
+          "end": 122.18
+        },
+        {
+          "word": "have",
+          "start": 122.18,
+          "end": 122.36
+        },
+        {
+          "word": "left",
+          "start": 122.36,
+          "end": 122.58
+        },
+        {
+          "word": "the",
+          "start": 122.58,
+          "end": 122.82
+        },
+        {
+          "word": "city",
+          "start": 122.82,
+          "end": 123.08
+        },
+        {
+          "word": "when",
+          "start": 123.08,
+          "end": 123.36
+        },
+        {
+          "word": "I",
+          "start": 123.36,
+          "end": 123.66
+        },
+        {
+          "word": "was",
+          "start": 123.66,
+          "end": 123.92
+        },
+        {
+          "word": "a",
+          "start": 123.92,
+          "end": 124.08
+        },
+        {
+          "word": "much",
+          "start": 124.08,
+          "end": 124.4
+        },
+        {
+          "word": "younger",
+          "start": 124.4,
+          "end": 124.78
+        },
+        {
+          "word": "man.",
+          "start": 124.78,
+          "end": 125.28
+        }
+      ]
+    },
+    {
+      "index": 28,
+      "startMs": 126220,
+      "endMs": 129740,
+      "text": "So, you love the quiet life on El Hierro.",
+      "words": [
+        {
+          "word": "So,",
+          "start": 126.22,
+          "end": 126.52
+        },
+        {
+          "word": "you",
+          "start": 126.9,
+          "end": 127.18
+        },
+        {
+          "word": "love",
+          "start": 127.18,
+          "end": 127.5
+        },
+        {
+          "word": "the",
+          "start": 127.5,
+          "end": 127.84
+        },
+        {
+          "word": "quiet",
+          "start": 127.84,
+          "end": 128.28
+        },
+        {
+          "word": "life",
+          "start": 128.28,
+          "end": 128.64
+        },
+        {
+          "word": "on",
+          "start": 128.64,
+          "end": 129.02
+        },
+        {
+          "word": "El",
+          "start": 129.02,
+          "end": 129.24
+        },
+        {
+          "word": "Hierro.",
+          "start": 129.24,
+          "end": 129.74
+        }
+      ]
+    },
+    {
+      "index": 29,
+      "startMs": 130420,
+      "endMs": 134060,
+      "text": "But is there anything else that makes El Hierro special?",
+      "words": [
+        {
+          "word": "But",
+          "start": 130.42,
+          "end": 130.82
+        },
+        {
+          "word": "is",
+          "start": 130.82,
+          "end": 131.06
+        },
+        {
+          "word": "there",
+          "start": 131.06,
+          "end": 131.32
+        },
+        {
+          "word": "anything",
+          "start": 131.32,
+          "end": 131.62
+        },
+        {
+          "word": "else",
+          "start": 131.62,
+          "end": 132.14
+        },
+        {
+          "word": "that",
+          "start": 132.14,
+          "end": 132.4
+        },
+        {
+          "word": "makes",
+          "start": 132.4,
+          "end": 132.76
+        },
+        {
+          "word": "El",
+          "start": 132.76,
+          "end": 133.14
+        },
+        {
+          "word": "Hierro",
+          "start": 133.14,
+          "end": 133.6
+        },
+        {
+          "word": "special?",
+          "start": 133.6,
+          "end": 134.06
+        }
+      ]
+    },
+    {
+      "index": 30,
+      "startMs": 134940,
+      "endMs": 141440,
+      "text": "Well, another thing is El Hierro is completely energy independent.",
+      "words": [
+        {
+          "word": "Well,",
+          "start": 134.94,
+          "end": 135.34
+        },
+        {
+          "word": "another",
+          "start": 135.92,
+          "end": 136.18
+        },
+        {
+          "word": "thing",
+          "start": 136.18,
+          "end": 136.74
+        },
+        {
+          "word": "is",
+          "start": 136.74,
+          "end": 137.48
+        },
+        {
+          "word": "El",
+          "start": 137.48,
+          "end": 137.86
+        },
+        {
+          "word": "Hierro",
+          "start": 137.86,
+          "end": 138.36
+        },
+        {
+          "word": "is",
+          "start": 138.36,
+          "end": 138.78
+        },
+        {
+          "word": "completely",
+          "start": 138.78,
+          "end": 139.8
+        },
+        {
+          "word": "energy",
+          "start": 139.8,
+          "end": 140.54
+        },
+        {
+          "word": "independent.",
+          "start": 140.54,
+          "end": 141.44
+        }
+      ]
+    },
+    {
+      "index": 31,
+      "startMs": 142240,
+      "endMs": 143480,
+      "text": "Energy independent?",
+      "words": [
+        {
+          "word": "Energy",
+          "start": 142.24,
+          "end": 142.74
+        },
+        {
+          "word": "independent?",
+          "start": 142.74,
+          "end": 143.48
+        }
+      ]
+    },
+    {
+      "index": 32,
+      "startMs": 144020,
+      "endMs": 149620,
+      "text": "Yes. In the past, the power on the island was produced by oil.",
+      "words": [
+        {
+          "word": "Yes.",
+          "start": 144.02,
+          "end": 144.56
+        },
+        {
+          "word": "In",
+          "start": 145.68,
+          "end": 145.86
+        },
+        {
+          "word": "the",
+          "start": 145.86,
+          "end": 146.06
+        },
+        {
+          "word": "past,",
+          "start": 146.06,
+          "end": 146.44
+        },
+        {
+          "word": "the",
+          "start": 146.68,
+          "end": 146.9
+        },
+        {
+          "word": "power",
+          "start": 146.9,
+          "end": 147.14
+        },
+        {
+          "word": "on",
+          "start": 147.14,
+          "end": 147.42
+        },
+        {
+          "word": "the",
+          "start": 147.42,
+          "end": 147.56
+        },
+        {
+          "word": "island",
+          "start": 147.56,
+          "end": 147.8
+        },
+        {
+          "word": "was",
+          "start": 147.8,
+          "end": 148.2
+        },
+        {
+          "word": "produced",
+          "start": 148.2,
+          "end": 148.82
+        },
+        {
+          "word": "by",
+          "start": 148.82,
+          "end": 149.2
+        },
+        {
+          "word": "oil.",
+          "start": 149.2,
+          "end": 149.62
+        }
+      ]
+    },
+    {
+      "index": 33,
+      "startMs": 150580,
+      "endMs": 157240,
+      "text": "A lot of money was paid to ship 40,000 barrels of oil over from the mainland every year.",
+      "words": [
+        {
+          "word": "A",
+          "start": 150.58,
+          "end": 150.7
+        },
+        {
+          "word": "lot",
+          "start": 150.7,
+          "end": 150.92
+        },
+        {
+          "word": "of",
+          "start": 150.92,
+          "end": 151.1
+        },
+        {
+          "word": "money",
+          "start": 151.1,
+          "end": 151.38
+        },
+        {
+          "word": "was",
+          "start": 151.38,
+          "end": 151.64
+        },
+        {
+          "word": "paid",
+          "start": 151.64,
+          "end": 152.02
+        },
+        {
+          "word": "to",
+          "start": 152.02,
+          "end": 152.38
+        },
+        {
+          "word": "ship",
+          "start": 152.38,
+          "end": 152.62
+        },
+        {
+          "word": "40",
+          "start": 152.62,
+          "end": 153.12
+        },
+        {
+          "word": ",000",
+          "start": 153.12,
+          "end": 153.62
+        },
+        {
+          "word": "barrels",
+          "start": 153.62,
+          "end": 154.04
+        },
+        {
+          "word": "of",
+          "start": 154.04,
+          "end": 154.3
+        },
+        {
+          "word": "oil",
+          "start": 154.3,
+          "end": 154.6
+        },
+        {
+          "word": "over",
+          "start": 154.6,
+          "end": 155.06
+        },
+        {
+          "word": "from",
+          "start": 155.06,
+          "end": 155.38
+        },
+        {
+          "word": "the",
+          "start": 155.38,
+          "end": 155.62
+        },
+        {
+          "word": "mainland",
+          "start": 155.62,
+          "end": 156.02
+        },
+        {
+          "word": "every",
+          "start": 156.02,
+          "end": 156.86
+        },
+        {
+          "word": "year.",
+          "start": 156.86,
+          "end": 157.24
+        }
+      ]
+    },
+    {
+      "index": 34,
+      "startMs": 158060,
+      "endMs": 162720,
+      "text": "It cost the island over 1.7 million euros a year.",
+      "words": [
+        {
+          "word": "It",
+          "start": 158.06,
+          "end": 158.36
+        },
+        {
+          "word": "cost",
+          "start": 158.36,
+          "end": 158.54
+        },
+        {
+          "word": "the",
+          "start": 158.54,
+          "end": 158.8
+        },
+        {
+          "word": "island",
+          "start": 158.8,
+          "end": 159.16
+        },
+        {
+          "word": "over",
+          "start": 159.16,
+          "end": 159.76
+        },
+        {
+          "word": "1",
+          "start": 159.76,
+          "end": 160.02
+        },
+        {
+          "word": ".7",
+          "start": 160.02,
+          "end": 160.74
+        },
+        {
+          "word": "million",
+          "start": 160.74,
+          "end": 161.34
+        },
+        {
+          "word": "euros",
+          "start": 161.34,
+          "end": 161.94
+        },
+        {
+          "word": "a",
+          "start": 161.94,
+          "end": 162.36
+        },
+        {
+          "word": "year.",
+          "start": 162.36,
+          "end": 162.72
+        }
+      ]
+    },
+    {
+      "index": 35,
+      "startMs": 163680,
+      "endMs": 168060,
+      "text": "Now all our energy is created right here on the island.",
+      "words": [
+        {
+          "word": "Now",
+          "start": 163.68,
+          "end": 164.04
+        },
+        {
+          "word": "all",
+          "start": 164.04,
+          "end": 164.84
+        },
+        {
+          "word": "our",
+          "start": 164.84,
+          "end": 165.16
+        },
+        {
+          "word": "energy",
+          "start": 165.16,
+          "end": 165.5
+        },
+        {
+          "word": "is",
+          "start": 165.5,
+          "end": 165.96
+        },
+        {
+          "word": "created",
+          "start": 165.96,
+          "end": 166.44
+        },
+        {
+          "word": "right",
+          "start": 166.44,
+          "end": 166.96
+        },
+        {
+          "word": "here",
+          "start": 166.96,
+          "end": 167.22
+        },
+        {
+          "word": "on",
+          "start": 167.22,
+          "end": 167.46
+        },
+        {
+          "word": "the",
+          "start": 167.46,
+          "end": 167.64
+        },
+        {
+          "word": "island.",
+          "start": 167.64,
+          "end": 168.06
+        }
+      ]
+    },
+    {
+      "index": 36,
+      "startMs": 169860,
+      "endMs": 175460,
+      "text": "And for more about that, we'll now talk to engineer Sofia Martinez.",
+      "words": [
+        {
+          "word": "And",
+          "start": 169.86,
+          "end": 169.92
+        },
+        {
+          "word": "for",
+          "start": 169.92,
+          "end": 170.24
+        },
+        {
+          "word": "more",
+          "start": 170.24,
+          "end": 170.54
+        },
+        {
+          "word": "about",
+          "start": 170.54,
+          "end": 170.9
+        },
+        {
+          "word": "that,",
+          "start": 170.9,
+          "end": 171.44
+        },
+        {
+          "word": "we'll",
+          "start": 171.84,
+          "end": 172.14
+        },
+        {
+          "word": "now",
+          "start": 172.14,
+          "end": 172.46
+        },
+        {
+          "word": "talk",
+          "start": 172.46,
+          "end": 172.76
+        },
+        {
+          "word": "to",
+          "start": 172.76,
+          "end": 173.12
+        },
+        {
+          "word": "engineer",
+          "start": 173.12,
+          "end": 174.0
+        },
+        {
+          "word": "Sofia",
+          "start": 174.0,
+          "end": 174.76
+        },
+        {
+          "word": "Martinez.",
+          "start": 174.76,
+          "end": 175.46
+        }
+      ]
+    },
+    {
+      "index": 37,
+      "startMs": 176220,
+      "endMs": 177120,
+      "text": "Hello, Andrew.",
+      "words": [
+        {
+          "word": "Hello,",
+          "start": 176.22,
+          "end": 176.62
+        },
+        {
+          "word": "Andrew.",
+          "start": 176.64,
+          "end": 177.12
+        }
+      ]
+    },
+    {
+      "index": 38,
+      "startMs": 177800,
+      "endMs": 183400,
+      "text": "I wonder if you could tell us about the way you generate energy here on El Hierro.",
+      "words": [
+        {
+          "word": "I",
+          "start": 177.8,
+          "end": 178.06
+        },
+        {
+          "word": "wonder",
+          "start": 178.06,
+          "end": 178.32
+        },
+        {
+          "word": "if",
+          "start": 178.32,
+          "end": 178.5
+        },
+        {
+          "word": "you",
+          "start": 178.5,
+          "end": 178.7
+        },
+        {
+          "word": "could",
+          "start": 178.7,
+          "end": 178.88
+        },
+        {
+          "word": "tell",
+          "start": 178.88,
+          "end": 179.14
+        },
+        {
+          "word": "us",
+          "start": 179.14,
+          "end": 179.38
+        },
+        {
+          "word": "about",
+          "start": 179.38,
+          "end": 179.66
+        },
+        {
+          "word": "the",
+          "start": 179.66,
+          "end": 179.84
+        },
+        {
+          "word": "way",
+          "start": 179.84,
+          "end": 180.08
+        },
+        {
+          "word": "you",
+          "start": 180.08,
+          "end": 180.48
+        },
+        {
+          "word": "generate",
+          "start": 180.48,
+          "end": 180.94
+        },
+        {
+          "word": "energy",
+          "start": 180.94,
+          "end": 181.5
+        },
+        {
+          "word": "here",
+          "start": 181.5,
+          "end": 182.28
+        },
+        {
+          "word": "on",
+          "start": 182.28,
+          "end": 182.62
+        },
+        {
+          "word": "El",
+          "start": 182.62,
+          "end": 182.92
+        },
+        {
+          "word": "Hierro.",
+          "start": 182.92,
+          "end": 183.4
+        }
+      ]
+    },
+    {
+      "index": 39,
+      "startMs": 184100,
+      "endMs": 190840,
+      "text": "Well, if you've spent a day or two here, you may have noticed we have a lot of wind.",
+      "words": [
+        {
+          "word": "Well,",
+          "start": 184.1,
+          "end": 184.66
+        },
+        {
+          "word": "if",
+          "start": 184.88,
+          "end": 185.22
+        },
+        {
+          "word": "you've",
+          "start": 185.22,
+          "end": 185.54
+        },
+        {
+          "word": "spent",
+          "start": 185.54,
+          "end": 185.82
+        },
+        {
+          "word": "a",
+          "start": 185.82,
+          "end": 186.0
+        },
+        {
+          "word": "day",
+          "start": 186.0,
+          "end": 186.26
+        },
+        {
+          "word": "or",
+          "start": 186.26,
+          "end": 186.5
+        },
+        {
+          "word": "two",
+          "start": 186.5,
+          "end": 186.72
+        },
+        {
+          "word": "here,",
+          "start": 186.72,
+          "end": 187.26
+        },
+        {
+          "word": "you",
+          "start": 187.7,
+          "end": 187.96
+        },
+        {
+          "word": "may",
+          "start": 187.96,
+          "end": 188.28
+        },
+        {
+          "word": "have",
+          "start": 188.28,
+          "end": 188.54
+        },
+        {
+          "word": "noticed",
+          "start": 188.54,
+          "end": 189.04
+        },
+        {
+          "word": "we",
+          "start": 189.04,
+          "end": 189.44
+        },
+        {
+          "word": "have",
+          "start": 189.44,
+          "end": 189.74
+        },
+        {
+          "word": "a",
+          "start": 189.74,
+          "end": 189.88
+        },
+        {
+          "word": "lot",
+          "start": 189.88,
+          "end": 190.14
+        },
+        {
+          "word": "of",
+          "start": 190.14,
+          "end": 190.5
+        },
+        {
+          "word": "wind.",
+          "start": 190.5,
+          "end": 190.84
+        }
+      ]
+    },
+    {
+      "index": 40,
+      "startMs": 191400,
+      "endMs": 196720,
+      "text": "Yes. In fact, it's blowing pretty hard outside right now.",
+      "words": [
+        {
+          "word": "Yes.",
+          "start": 191.4,
+          "end": 191.88
+        },
+        {
+          "word": "In",
+          "start": 192.58,
+          "end": 192.82
+        },
+        {
+          "word": "fact,",
+          "start": 192.82,
+          "end": 193.22
+        },
+        {
+          "word": "it's",
+          "start": 193.78,
+          "end": 194.02
+        },
+        {
+          "word": "blowing",
+          "start": 194.02,
+          "end": 194.38
+        },
+        {
+          "word": "pretty",
+          "start": 194.38,
+          "end": 194.98
+        },
+        {
+          "word": "hard",
+          "start": 194.98,
+          "end": 195.24
+        },
+        {
+          "word": "outside",
+          "start": 195.24,
+          "end": 195.82
+        },
+        {
+          "word": "right",
+          "start": 195.82,
+          "end": 196.24
+        },
+        {
+          "word": "now.",
+          "start": 196.24,
+          "end": 196.72
+        }
+      ]
+    },
+    {
+      "index": 41,
+      "startMs": 197420,
+      "endMs": 203840,
+      "text": "Well, for about 3,000 hours, or for about 35% of the year,",
+      "words": [
+        {
+          "word": "Well,",
+          "start": 197.42,
+          "end": 197.74
+        },
+        {
+          "word": "for",
+          "start": 197.78,
+          "end": 198.04
+        },
+        {
+          "word": "about",
+          "start": 198.04,
+          "end": 198.88
+        },
+        {
+          "word": "3",
+          "start": 198.88,
+          "end": 199.34
+        },
+        {
+          "word": ",000",
+          "start": 199.34,
+          "end": 199.74
+        },
+        {
+          "word": "hours,",
+          "start": 199.74,
+          "end": 200.4
+        },
+        {
+          "word": "or",
+          "start": 200.9,
+          "end": 201.28
+        },
+        {
+          "word": "for",
+          "start": 201.28,
+          "end": 201.52
+        },
+        {
+          "word": "about",
+          "start": 201.52,
+          "end": 201.92
+        },
+        {
+          "word": "35",
+          "start": 201.92,
+          "end": 202.66
+        },
+        {
+          "word": "%",
+          "start": 202.66,
+          "end": 203.12
+        },
+        {
+          "word": "of",
+          "start": 203.12,
+          "end": 203.28
+        },
+        {
+          "word": "the",
+          "start": 203.28,
+          "end": 203.5
+        },
+        {
+          "word": "year,",
+          "start": 203.5,
+          "end": 203.84
+        }
+      ]
+    },
+    {
+      "index": 42,
+      "startMs": 204560,
+      "endMs": 210220,
+      "text": "the wind here blows hard enough to turn wind turbines which can provide electricity.",
+      "words": [
+        {
+          "word": "the",
+          "start": 204.56,
+          "end": 204.76
+        },
+        {
+          "word": "wind",
+          "start": 204.76,
+          "end": 205.06
+        },
+        {
+          "word": "here",
+          "start": 205.06,
+          "end": 205.48
+        },
+        {
+          "word": "blows",
+          "start": 205.48,
+          "end": 205.84
+        },
+        {
+          "word": "hard",
+          "start": 205.84,
+          "end": 206.28
+        },
+        {
+          "word": "enough",
+          "start": 206.28,
+          "end": 206.62
+        },
+        {
+          "word": "to",
+          "start": 206.62,
+          "end": 206.84
+        },
+        {
+          "word": "turn",
+          "start": 206.84,
+          "end": 207.18
+        },
+        {
+          "word": "wind",
+          "start": 207.18,
+          "end": 207.68
+        },
+        {
+          "word": "turbines",
+          "start": 207.68,
+          "end": 208.24
+        },
+        {
+          "word": "which",
+          "start": 208.24,
+          "end": 208.56
+        },
+        {
+          "word": "can",
+          "start": 208.56,
+          "end": 208.88
+        },
+        {
+          "word": "provide",
+          "start": 208.88,
+          "end": 209.4
+        },
+        {
+          "word": "electricity.",
+          "start": 209.4,
+          "end": 210.22
+        }
+      ]
+    },
+    {
+      "index": 43,
+      "startMs": 210960,
+      "endMs": 215260,
+      "text": "Does El Hierro rely completely on wind to power the island?",
+      "words": [
+        {
+          "word": "Does",
+          "start": 210.96,
+          "end": 211.42
+        },
+        {
+          "word": "El",
+          "start": 211.42,
+          "end": 211.8
+        },
+        {
+          "word": "Hierro",
+          "start": 211.8,
+          "end": 212.18
+        },
+        {
+          "word": "rely",
+          "start": 212.18,
+          "end": 212.58
+        },
+        {
+          "word": "completely",
+          "start": 212.58,
+          "end": 213.3
+        },
+        {
+          "word": "on",
+          "start": 213.3,
+          "end": 213.82
+        },
+        {
+          "word": "wind",
+          "start": 213.82,
+          "end": 214.22
+        },
+        {
+          "word": "to",
+          "start": 214.22,
+          "end": 214.5
+        },
+        {
+          "word": "power",
+          "start": 214.5,
+          "end": 214.74
+        },
+        {
+          "word": "the",
+          "start": 214.74,
+          "end": 215.04
+        },
+        {
+          "word": "island?",
+          "start": 215.04,
+          "end": 215.26
+        }
+      ]
+    },
+    {
+      "index": 44,
+      "startMs": 215260,
+      "endMs": 222060,
+      "text": "No. The island's wind turbines have a capacity of about 11 megawatts,",
+      "words": [
+        {
+          "word": "No.",
+          "start": 215.26,
+          "end": 216.16
+        },
+        {
+          "word": "The",
+          "start": 216.98,
+          "end": 217.16
+        },
+        {
+          "word": "island's",
+          "start": 217.16,
+          "end": 217.82
+        },
+        {
+          "word": "wind",
+          "start": 217.82,
+          "end": 218.1
+        },
+        {
+          "word": "turbines",
+          "start": 218.1,
+          "end": 218.62
+        },
+        {
+          "word": "have",
+          "start": 218.62,
+          "end": 219.06
+        },
+        {
+          "word": "a",
+          "start": 219.06,
+          "end": 219.32
+        },
+        {
+          "word": "capacity",
+          "start": 219.32,
+          "end": 219.84
+        },
+        {
+          "word": "of",
+          "start": 219.84,
+          "end": 220.3
+        },
+        {
+          "word": "about",
+          "start": 220.3,
+          "end": 220.8
+        },
+        {
+          "word": "11",
+          "start": 220.8,
+          "end": 221.44
+        },
+        {
+          "word": "megawatts,",
+          "start": 221.44,
+          "end": 222.06
+        }
+      ]
+    },
+    {
+      "index": 45,
+      "startMs": 223040,
+      "endMs": 228980,
+      "text": "about enough to power 3,500 homes. But it's only one element.",
+      "words": [
+        {
+          "word": "about",
+          "start": 223.04,
+          "end": 223.32
+        },
+        {
+          "word": "enough",
+          "start": 223.32,
+          "end": 223.72
+        },
+        {
+          "word": "to",
+          "start": 223.72,
+          "end": 223.92
+        },
+        {
+          "word": "power",
+          "start": 223.92,
+          "end": 224.36
+        },
+        {
+          "word": "3",
+          "start": 224.36,
+          "end": 224.82
+        },
+        {
+          "word": ",500",
+          "start": 224.82,
+          "end": 225.96
+        },
+        {
+          "word": "homes.",
+          "start": 225.96,
+          "end": 226.54
+        },
+        {
+          "word": "But",
+          "start": 227.04,
+          "end": 227.38
+        },
+        {
+          "word": "it's",
+          "start": 227.38,
+          "end": 227.7
+        },
+        {
+          "word": "only",
+          "start": 227.7,
+          "end": 228.14
+        },
+        {
+          "word": "one",
+          "start": 228.14,
+          "end": 228.5
+        },
+        {
+          "word": "element.",
+          "start": 228.5,
+          "end": 228.98
+        }
+      ]
+    },
+    {
+      "index": 46,
+      "startMs": 229980,
+      "endMs": 237060,
+      "text": "The bigger problem is that the wind doesn't blow all the time, so the power source isn't consistent.",
+      "words": [
+        {
+          "word": "The",
+          "start": 229.98,
+          "end": 230.24
+        },
+        {
+          "word": "bigger",
+          "start": 230.24,
+          "end": 230.6
+        },
+        {
+          "word": "problem",
+          "start": 230.6,
+          "end": 231.18
+        },
+        {
+          "word": "is",
+          "start": 231.18,
+          "end": 231.52
+        },
+        {
+          "word": "that",
+          "start": 231.52,
+          "end": 231.78
+        },
+        {
+          "word": "the",
+          "start": 231.78,
+          "end": 232.0
+        },
+        {
+          "word": "wind",
+          "start": 232.0,
+          "end": 232.22
+        },
+        {
+          "word": "doesn't",
+          "start": 232.22,
+          "end": 232.68
+        },
+        {
+          "word": "blow",
+          "start": 232.68,
+          "end": 233.06
+        },
+        {
+          "word": "all",
+          "start": 233.06,
+          "end": 233.54
+        },
+        {
+          "word": "the",
+          "start": 233.54,
+          "end": 233.78
+        },
+        {
+          "word": "time,",
+          "start": 233.78,
+          "end": 234.18
+        },
+        {
+          "word": "so",
+          "start": 234.22,
+          "end": 234.58
+        },
+        {
+          "word": "the",
+          "start": 234.58,
+          "end": 234.86
+        },
+        {
+          "word": "power",
+          "start": 234.86,
+          "end": 235.3
+        },
+        {
+          "word": "source",
+          "start": 235.3,
+          "end": 235.74
+        },
+        {
+          "word": "isn't",
+          "start": 235.74,
+          "end": 236.26
+        },
+        {
+          "word": "consistent.",
+          "start": 236.26,
+          "end": 237.06
+        }
+      ]
+    },
+    {
+      "index": 47,
+      "startMs": 237600,
+      "endMs": 241760,
+      "text": "So you need another energy source on windless days.",
+      "words": [
+        {
+          "word": "So",
+          "start": 237.6,
+          "end": 238.0
+        },
+        {
+          "word": "you",
+          "start": 238.0,
+          "end": 238.44
+        },
+        {
+          "word": "need",
+          "start": 238.44,
+          "end": 238.74
+        },
+        {
+          "word": "another",
+          "start": 238.74,
+          "end": 239.24
+        },
+        {
+          "word": "energy",
+          "start": 239.24,
+          "end": 239.82
+        },
+        {
+          "word": "source",
+          "start": 239.82,
+          "end": 240.2
+        },
+        {
+          "word": "on",
+          "start": 240.2,
+          "end": 240.8
+        },
+        {
+          "word": "windless",
+          "start": 240.8,
+          "end": 241.32
+        },
+        {
+          "word": "days.",
+          "start": 241.32,
+          "end": 241.76
+        }
+      ]
+    },
+    {
+      "index": 48,
+      "startMs": 241760,
+      "endMs": 248880,
+      "text": "That was the challenge. To create an energy generation system, or a network of systems,",
+      "words": [
+        {
+          "word": "That",
+          "start": 241.76,
+          "end": 242.48
+        },
+        {
+          "word": "was",
+          "start": 242.48,
+          "end": 242.78
+        },
+        {
+          "word": "the",
+          "start": 242.78,
+          "end": 242.98
+        },
+        {
+          "word": "challenge.",
+          "start": 242.98,
+          "end": 243.44
+        },
+        {
+          "word": "To",
+          "start": 244.12,
+          "end": 244.24
+        },
+        {
+          "word": "create",
+          "start": 244.24,
+          "end": 244.7
+        },
+        {
+          "word": "an",
+          "start": 244.7,
+          "end": 245.14
+        },
+        {
+          "word": "energy",
+          "start": 245.14,
+          "end": 245.46
+        },
+        {
+          "word": "generation",
+          "start": 245.46,
+          "end": 246.14
+        },
+        {
+          "word": "system,",
+          "start": 246.14,
+          "end": 246.68
+        },
+        {
+          "word": "or",
+          "start": 247.12,
+          "end": 247.34
+        },
+        {
+          "word": "a",
+          "start": 247.34,
+          "end": 247.64
+        },
+        {
+          "word": "network",
+          "start": 247.64,
+          "end": 248.08
+        },
+        {
+          "word": "of",
+          "start": 248.08,
+          "end": 248.4
+        },
+        {
+          "word": "systems,",
+          "start": 248.4,
+          "end": 248.88
+        }
+      ]
+    },
+    {
+      "index": 49,
+      "startMs": 249420,
+      "endMs": 253560,
+      "text": "that could supply enough energy for the island all the time.",
+      "words": [
+        {
+          "word": "that",
+          "start": 249.42,
+          "end": 249.7
+        },
+        {
+          "word": "could",
+          "start": 249.7,
+          "end": 250.02
+        },
+        {
+          "word": "supply",
+          "start": 250.02,
+          "end": 250.58
+        },
+        {
+          "word": "enough",
+          "start": 250.58,
+          "end": 251.0
+        },
+        {
+          "word": "energy",
+          "start": 251.0,
+          "end": 251.5
+        },
+        {
+          "word": "for",
+          "start": 251.5,
+          "end": 251.82
+        },
+        {
+          "word": "the",
+          "start": 251.82,
+          "end": 252.02
+        },
+        {
+          "word": "island",
+          "start": 252.02,
+          "end": 252.42
+        },
+        {
+          "word": "all",
+          "start": 252.42,
+          "end": 252.94
+        },
+        {
+          "word": "the",
+          "start": 252.94,
+          "end": 253.16
+        },
+        {
+          "word": "time.",
+          "start": 253.16,
+          "end": 253.56
+        }
+      ]
+    },
+    {
+      "index": 50,
+      "startMs": 254180,
+      "endMs": 257460,
+      "text": "And the solution was hydroelectric power.",
+      "words": [
+        {
+          "word": "And",
+          "start": 254.18,
+          "end": 254.32
+        },
+        {
+          "word": "the",
+          "start": 254.32,
+          "end": 254.46
+        },
+        {
+          "word": "solution",
+          "start": 254.46,
+          "end": 255.04
+        },
+        {
+          "word": "was",
+          "start": 255.04,
+          "end": 255.84
+        },
+        {
+          "word": "hydroelectric",
+          "start": 255.84,
+          "end": 256.88
+        },
+        {
+          "word": "power.",
+          "start": 256.88,
+          "end": 257.46
+        }
+      ]
+    },
+    {
+      "index": 51,
+      "startMs": 258080,
+      "endMs": 260920,
+      "text": "What is hydroelectric power exactly?",
+      "words": [
+        {
+          "word": "What",
+          "start": 258.08,
+          "end": 258.22
+        },
+        {
+          "word": "is",
+          "start": 258.22,
+          "end": 258.78
+        },
+        {
+          "word": "hydroelectric",
+          "start": 258.78,
+          "end": 259.86
+        },
+        {
+          "word": "power",
+          "start": 259.86,
+          "end": 260.3
+        },
+        {
+          "word": "exactly?",
+          "start": 260.3,
+          "end": 260.92
+        }
+      ]
+    },
+    {
+      "index": 52,
+      "startMs": 261940,
+      "endMs": 268600,
+      "text": "Hydroelectric power is when energy is converted into another form, such as electricity.",
+      "words": [
+        {
+          "word": "Hydroelectric",
+          "start": 261.94,
+          "end": 262.84
+        },
+        {
+          "word": "power",
+          "start": 262.84,
+          "end": 263.38
+        },
+        {
+          "word": "is",
+          "start": 263.38,
+          "end": 263.82
+        },
+        {
+          "word": "when",
+          "start": 263.82,
+          "end": 264.24
+        },
+        {
+          "word": "energy",
+          "start": 264.24,
+          "end": 264.8
+        },
+        {
+          "word": "is",
+          "start": 264.8,
+          "end": 265.2
+        },
+        {
+          "word": "converted",
+          "start": 265.2,
+          "end": 265.76
+        },
+        {
+          "word": "into",
+          "start": 265.76,
+          "end": 266.24
+        },
+        {
+          "word": "another",
+          "start": 266.24,
+          "end": 266.62
+        },
+        {
+          "word": "form,",
+          "start": 266.62,
+          "end": 267.14
+        },
+        {
+          "word": "such",
+          "start": 267.32,
+          "end": 267.58
+        },
+        {
+          "word": "as",
+          "start": 267.58,
+          "end": 267.92
+        },
+        {
+          "word": "electricity.",
+          "start": 267.92,
+          "end": 268.6
+        }
+      ]
+    },
+    {
+      "index": 53,
+      "startMs": 269400,
+      "endMs": 273020,
+      "text": "The initial source of this energy is from water.",
+      "words": [
+        {
+          "word": "The",
+          "start": 269.40000000000003,
+          "end": 269.72
+        },
+        {
+          "word": "initial",
+          "start": 269.72,
+          "end": 270.24
+        },
+        {
+          "word": "source",
+          "start": 270.24,
+          "end": 270.72
+        },
+        {
+          "word": "of",
+          "start": 270.72,
+          "end": 271.02
+        },
+        {
+          "word": "this",
+          "start": 271.02,
+          "end": 271.28
+        },
+        {
+          "word": "energy",
+          "start": 271.28,
+          "end": 271.72
+        },
+        {
+          "word": "is",
+          "start": 271.72,
+          "end": 272.2
+        },
+        {
+          "word": "from",
+          "start": 272.2,
+          "end": 272.52
+        },
+        {
+          "word": "water.",
+          "start": 272.52,
+          "end": 273.02
+        }
+      ]
+    },
+    {
+      "index": 54,
+      "startMs": 273800,
+      "endMs": 281560,
+      "text": "But doesn't hydroelectric power require a river and a dam? Isn't El Hierro too small for a river?",
+      "words": [
+        {
+          "word": "But",
+          "start": 273.8,
+          "end": 273.96
+        },
+        {
+          "word": "doesn't",
+          "start": 273.96,
+          "end": 274.68
+        },
+        {
+          "word": "hydroelectric",
+          "start": 274.68,
+          "end": 275.68
+        },
+        {
+          "word": "power",
+          "start": 275.68,
+          "end": 276.14
+        },
+        {
+          "word": "require",
+          "start": 276.14,
+          "end": 276.76
+        },
+        {
+          "word": "a",
+          "start": 276.76,
+          "end": 277.08
+        },
+        {
+          "word": "river",
+          "start": 277.08,
+          "end": 277.42
+        },
+        {
+          "word": "and",
+          "start": 277.42,
+          "end": 277.76
+        },
+        {
+          "word": "a",
+          "start": 277.76,
+          "end": 278.0
+        },
+        {
+          "word": "dam?",
+          "start": 278.0,
+          "end": 278.32
+        },
+        {
+          "word": "Isn't",
+          "start": 279.12,
+          "end": 279.54
+        },
+        {
+          "word": "El",
+          "start": 279.54,
+          "end": 279.8
+        },
+        {
+          "word": "Hierro",
+          "start": 279.8,
+          "end": 280.18
+        },
+        {
+          "word": "too",
+          "start": 280.18,
+          "end": 280.44
+        },
+        {
+          "word": "small",
+          "start": 280.44,
+          "end": 280.84
+        },
+        {
+          "word": "for",
+          "start": 280.84,
+          "end": 281.1
+        },
+        {
+          "word": "a",
+          "start": 281.1,
+          "end": 281.24
+        },
+        {
+          "word": "river?",
+          "start": 281.24,
+          "end": 281.56
+        }
+      ]
+    },
+    {
+      "index": 55,
+      "startMs": 282240,
+      "endMs": 287240,
+      "text": "A river with a dam is the usual way of producing hydroelectric power.",
+      "words": [
+        {
+          "word": "A",
+          "start": 282.24,
+          "end": 282.5
+        },
+        {
+          "word": "river",
+          "start": 282.5,
+          "end": 282.84
+        },
+        {
+          "word": "with",
+          "start": 282.84,
+          "end": 283.12
+        },
+        {
+          "word": "a",
+          "start": 283.12,
+          "end": 283.28
+        },
+        {
+          "word": "dam",
+          "start": 283.28,
+          "end": 283.54
+        },
+        {
+          "word": "is",
+          "start": 283.54,
+          "end": 283.88
+        },
+        {
+          "word": "the",
+          "start": 283.88,
+          "end": 284.14
+        },
+        {
+          "word": "usual",
+          "start": 284.14,
+          "end": 284.6
+        },
+        {
+          "word": "way",
+          "start": 284.6,
+          "end": 284.9
+        },
+        {
+          "word": "of",
+          "start": 284.9,
+          "end": 285.18
+        },
+        {
+          "word": "producing",
+          "start": 285.18,
+          "end": 285.7
+        },
+        {
+          "word": "hydroelectric",
+          "start": 285.7,
+          "end": 286.68
+        },
+        {
+          "word": "power.",
+          "start": 286.68,
+          "end": 287.24
+        }
+      ]
+    },
+    {
+      "index": 56,
+      "startMs": 287660,
+      "endMs": 292800,
+      "text": "But really, all you need is water that can move from a high place",
+      "words": [
+        {
+          "word": "But",
+          "start": 287.66,
+          "end": 288.14
+        },
+        {
+          "word": "really,",
+          "start": 288.14,
+          "end": 288.86
+        },
+        {
+          "word": "all",
+          "start": 289.16,
+          "end": 289.4
+        },
+        {
+          "word": "you",
+          "start": 289.4,
+          "end": 289.68
+        },
+        {
+          "word": "need",
+          "start": 289.68,
+          "end": 289.94
+        },
+        {
+          "word": "is",
+          "start": 289.94,
+          "end": 290.22
+        },
+        {
+          "word": "water",
+          "start": 290.22,
+          "end": 290.7
+        },
+        {
+          "word": "that",
+          "start": 290.7,
+          "end": 290.98
+        },
+        {
+          "word": "can",
+          "start": 290.98,
+          "end": 291.26
+        },
+        {
+          "word": "move",
+          "start": 291.26,
+          "end": 291.6
+        },
+        {
+          "word": "from",
+          "start": 291.6,
+          "end": 291.86
+        },
+        {
+          "word": "a",
+          "start": 291.86,
+          "end": 292.08
+        },
+        {
+          "word": "high",
+          "start": 292.08,
+          "end": 292.36
+        },
+        {
+          "word": "place",
+          "start": 292.36,
+          "end": 292.8
+        }
+      ]
+    },
+    {
+      "index": 57,
+      "startMs": 292800,
+      "endMs": 296160,
+      "text": "to a lower place to get energy from the water.",
+      "words": [
+        {
+          "word": "to",
+          "start": 292.8,
+          "end": 293.22
+        },
+        {
+          "word": "a",
+          "start": 293.22,
+          "end": 293.4
+        },
+        {
+          "word": "lower",
+          "start": 293.4,
+          "end": 293.66
+        },
+        {
+          "word": "place",
+          "start": 293.66,
+          "end": 294.24
+        },
+        {
+          "word": "to",
+          "start": 294.24,
+          "end": 294.52
+        },
+        {
+          "word": "get",
+          "start": 294.52,
+          "end": 294.82
+        },
+        {
+          "word": "energy",
+          "start": 294.82,
+          "end": 295.26
+        },
+        {
+          "word": "from",
+          "start": 295.26,
+          "end": 295.56
+        },
+        {
+          "word": "the",
+          "start": 295.56,
+          "end": 295.78
+        },
+        {
+          "word": "water.",
+          "start": 295.78,
+          "end": 296.16
+        }
+      ]
+    },
+    {
+      "index": 58,
+      "startMs": 296160,
+      "endMs": 297080,
+      "text": "OK.",
+      "words": [
+        {
+          "word": "OK.",
+          "start": 296.16,
+          "end": 297.08
+        }
+      ]
+    },
+    {
+      "index": 59,
+      "startMs": 297640,
+      "endMs": 305420,
+      "text": "At the center of El Hierro is a dormant volcano, a volcano that is no longer active.",
+      "words": [
+        {
+          "word": "At",
+          "start": 297.64,
+          "end": 298.0
+        },
+        {
+          "word": "the",
+          "start": 298.0,
+          "end": 298.24
+        },
+        {
+          "word": "center",
+          "start": 298.24,
+          "end": 298.56
+        },
+        {
+          "word": "of",
+          "start": 298.56,
+          "end": 298.9
+        },
+        {
+          "word": "El",
+          "start": 298.9,
+          "end": 299.24
+        },
+        {
+          "word": "Hierro",
+          "start": 299.24,
+          "end": 299.7
+        },
+        {
+          "word": "is",
+          "start": 299.7,
+          "end": 300.66
+        },
+        {
+          "word": "a",
+          "start": 300.66,
+          "end": 300.96
+        },
+        {
+          "word": "dormant",
+          "start": 300.96,
+          "end": 301.38
+        },
+        {
+          "word": "volcano,",
+          "start": 301.38,
+          "end": 302.04
+        },
+        {
+          "word": "a",
+          "start": 303.06,
+          "end": 303.36
+        },
+        {
+          "word": "volcano",
+          "start": 303.36,
+          "end": 303.68
+        },
+        {
+          "word": "that",
+          "start": 303.68,
+          "end": 303.94
+        },
+        {
+          "word": "is",
+          "start": 303.94,
+          "end": 304.26
+        },
+        {
+          "word": "no",
+          "start": 304.26,
+          "end": 304.5
+        },
+        {
+          "word": "longer",
+          "start": 304.5,
+          "end": 304.82
+        },
+        {
+          "word": "active.",
+          "start": 304.82,
+          "end": 305.42
+        }
+      ]
+    },
+    {
+      "index": 60,
+      "startMs": 306400,
+      "endMs": 315500,
+      "text": "In the middle of the volcano, we built a reservoir that holds over 500,000 cubic meters of water,",
+      "words": [
+        {
+          "word": "In",
+          "start": 306.4,
+          "end": 306.76
+        },
+        {
+          "word": "the",
+          "start": 306.76,
+          "end": 306.96
+        },
+        {
+          "word": "middle",
+          "start": 306.96,
+          "end": 307.16
+        },
+        {
+          "word": "of",
+          "start": 307.16,
+          "end": 307.36
+        },
+        {
+          "word": "the",
+          "start": 307.36,
+          "end": 307.5
+        },
+        {
+          "word": "volcano,",
+          "start": 307.5,
+          "end": 308.16
+        },
+        {
+          "word": "we",
+          "start": 308.68,
+          "end": 308.82
+        },
+        {
+          "word": "built",
+          "start": 308.82,
+          "end": 309.18
+        },
+        {
+          "word": "a",
+          "start": 309.18,
+          "end": 309.54
+        },
+        {
+          "word": "reservoir",
+          "start": 309.54,
+          "end": 310.1
+        },
+        {
+          "word": "that",
+          "start": 310.1,
+          "end": 310.74
+        },
+        {
+          "word": "holds",
+          "start": 310.74,
+          "end": 311.2
+        },
+        {
+          "word": "over",
+          "start": 311.2,
+          "end": 311.88
+        },
+        {
+          "word": "500",
+          "start": 311.88,
+          "end": 312.72
+        },
+        {
+          "word": ",000",
+          "start": 312.72,
+          "end": 313.5
+        },
+        {
+          "word": "cubic",
+          "start": 313.5,
+          "end": 314.08
+        },
+        {
+          "word": "meters",
+          "start": 314.08,
+          "end": 314.68
+        },
+        {
+          "word": "of",
+          "start": 314.68,
+          "end": 315.02
+        },
+        {
+          "word": "water,",
+          "start": 315.02,
+          "end": 315.5
+        }
+      ]
+    },
+    {
+      "index": 61,
+      "startMs": 316160,
+      "endMs": 322900,
+      "text": "at a height of 700 meters above sea level. So that's our water in a high place.",
+      "words": [
+        {
+          "word": "at",
+          "start": 316.16,
+          "end": 316.38
+        },
+        {
+          "word": "a",
+          "start": 316.38,
+          "end": 316.54
+        },
+        {
+          "word": "height",
+          "start": 316.54,
+          "end": 316.78
+        },
+        {
+          "word": "of",
+          "start": 316.78,
+          "end": 317.2
+        },
+        {
+          "word": "700",
+          "start": 317.2,
+          "end": 317.74
+        },
+        {
+          "word": "meters",
+          "start": 317.74,
+          "end": 318.38
+        },
+        {
+          "word": "above",
+          "start": 318.38,
+          "end": 318.76
+        },
+        {
+          "word": "sea",
+          "start": 318.76,
+          "end": 319.1
+        },
+        {
+          "word": "level.",
+          "start": 319.1,
+          "end": 319.44
+        },
+        {
+          "word": "So",
+          "start": 320.08,
+          "end": 320.6
+        },
+        {
+          "word": "that's",
+          "start": 320.6,
+          "end": 321.04
+        },
+        {
+          "word": "our",
+          "start": 321.04,
+          "end": 321.36
+        },
+        {
+          "word": "water",
+          "start": 321.36,
+          "end": 321.78
+        },
+        {
+          "word": "in",
+          "start": 321.78,
+          "end": 322.12
+        },
+        {
+          "word": "a",
+          "start": 322.12,
+          "end": 322.26
+        },
+        {
+          "word": "high",
+          "start": 322.26,
+          "end": 322.48
+        },
+        {
+          "word": "place.",
+          "start": 322.48,
+          "end": 322.9
+        }
+      ]
+    },
+    {
+      "index": 62,
+      "startMs": 322900,
+      "endMs": 329940,
+      "text": "But you don't get much rain here. What happens when all of the water runs out of the reservoir?",
+      "words": [
+        {
+          "word": "But",
+          "start": 322.9,
+          "end": 323.6
+        },
+        {
+          "word": "you",
+          "start": 323.6,
+          "end": 324.06
+        },
+        {
+          "word": "don't",
+          "start": 324.06,
+          "end": 324.34
+        },
+        {
+          "word": "get",
+          "start": 324.34,
+          "end": 324.6
+        },
+        {
+          "word": "much",
+          "start": 324.6,
+          "end": 324.94
+        },
+        {
+          "word": "rain",
+          "start": 324.94,
+          "end": 325.32
+        },
+        {
+          "word": "here.",
+          "start": 325.32,
+          "end": 325.94
+        },
+        {
+          "word": "What",
+          "start": 326.46,
+          "end": 326.72
+        },
+        {
+          "word": "happens",
+          "start": 326.72,
+          "end": 327.18
+        },
+        {
+          "word": "when",
+          "start": 327.18,
+          "end": 327.52
+        },
+        {
+          "word": "all",
+          "start": 327.52,
+          "end": 327.88
+        },
+        {
+          "word": "of",
+          "start": 327.88,
+          "end": 328.0
+        },
+        {
+          "word": "the",
+          "start": 328.0,
+          "end": 328.18
+        },
+        {
+          "word": "water",
+          "start": 328.18,
+          "end": 328.52
+        },
+        {
+          "word": "runs",
+          "start": 328.52,
+          "end": 328.86
+        },
+        {
+          "word": "out",
+          "start": 328.86,
+          "end": 329.2
+        },
+        {
+          "word": "of",
+          "start": 329.2,
+          "end": 329.32
+        },
+        {
+          "word": "the",
+          "start": 329.32,
+          "end": 329.54
+        },
+        {
+          "word": "reservoir?",
+          "start": 329.54,
+          "end": 329.94
+        }
+      ]
+    },
+    {
+      "index": 63,
+      "startMs": 330520,
+      "endMs": 333080,
+      "text": "Well, I mentioned the wind turbines.",
+      "words": [
+        {
+          "word": "Well,",
+          "start": 330.52,
+          "end": 330.9
+        },
+        {
+          "word": "I",
+          "start": 331.28,
+          "end": 331.48
+        },
+        {
+          "word": "mentioned",
+          "start": 331.48,
+          "end": 332.0
+        },
+        {
+          "word": "the",
+          "start": 332.0,
+          "end": 332.28
+        },
+        {
+          "word": "wind",
+          "start": 332.28,
+          "end": 332.54
+        },
+        {
+          "word": "turbines.",
+          "start": 332.54,
+          "end": 333.08
+        }
+      ]
+    },
+    {
+      "index": 64,
+      "startMs": 333840,
+      "endMs": 338620,
+      "text": "The wind power and the hydroelectric power are in a network together.",
+      "words": [
+        {
+          "word": "The",
+          "start": 333.84,
+          "end": 334.04
+        },
+        {
+          "word": "wind",
+          "start": 334.04,
+          "end": 334.4
+        },
+        {
+          "word": "power",
+          "start": 334.4,
+          "end": 334.84
+        },
+        {
+          "word": "and",
+          "start": 334.84,
+          "end": 335.28
+        },
+        {
+          "word": "the",
+          "start": 335.28,
+          "end": 335.5
+        },
+        {
+          "word": "hydroelectric",
+          "start": 335.5,
+          "end": 336.3
+        },
+        {
+          "word": "power",
+          "start": 336.3,
+          "end": 336.82
+        },
+        {
+          "word": "are",
+          "start": 336.82,
+          "end": 337.16
+        },
+        {
+          "word": "in",
+          "start": 337.16,
+          "end": 337.38
+        },
+        {
+          "word": "a",
+          "start": 337.38,
+          "end": 337.5
+        },
+        {
+          "word": "network",
+          "start": 337.5,
+          "end": 337.96
+        },
+        {
+          "word": "together.",
+          "start": 337.96,
+          "end": 338.62
+        }
+      ]
+    },
+    {
+      "index": 65,
+      "startMs": 339400,
+      "endMs": 346440,
+      "text": "When the wind is blowing, energy from the wind turbines pumps water up into the reservoir.",
+      "words": [
+        {
+          "word": "When",
+          "start": 339.4,
+          "end": 339.7
+        },
+        {
+          "word": "the",
+          "start": 339.7,
+          "end": 339.94
+        },
+        {
+          "word": "wind",
+          "start": 339.94,
+          "end": 340.1
+        },
+        {
+          "word": "is",
+          "start": 340.1,
+          "end": 340.36
+        },
+        {
+          "word": "blowing,",
+          "start": 340.36,
+          "end": 340.86
+        },
+        {
+          "word": "energy",
+          "start": 341.72,
+          "end": 341.86
+        },
+        {
+          "word": "from",
+          "start": 341.86,
+          "end": 342.12
+        },
+        {
+          "word": "the",
+          "start": 342.12,
+          "end": 342.4
+        },
+        {
+          "word": "wind",
+          "start": 342.4,
+          "end": 342.72
+        },
+        {
+          "word": "turbines",
+          "start": 342.72,
+          "end": 343.38
+        },
+        {
+          "word": "pumps",
+          "start": 343.38,
+          "end": 344.02
+        },
+        {
+          "word": "water",
+          "start": 344.02,
+          "end": 344.74
+        },
+        {
+          "word": "up",
+          "start": 344.74,
+          "end": 345.26
+        },
+        {
+          "word": "into",
+          "start": 345.26,
+          "end": 345.66
+        },
+        {
+          "word": "the",
+          "start": 345.66,
+          "end": 345.94
+        },
+        {
+          "word": "reservoir.",
+          "start": 345.94,
+          "end": 346.44
+        }
+      ]
+    },
+    {
+      "index": 66,
+      "startMs": 347040,
+      "endMs": 350900,
+      "text": "So the wind turbines power the pumping station.",
+      "words": [
+        {
+          "word": "So",
+          "start": 347.04,
+          "end": 347.5
+        },
+        {
+          "word": "the",
+          "start": 347.5,
+          "end": 347.94
+        },
+        {
+          "word": "wind",
+          "start": 347.94,
+          "end": 348.4
+        },
+        {
+          "word": "turbines",
+          "start": 348.4,
+          "end": 349.12
+        },
+        {
+          "word": "power",
+          "start": 349.12,
+          "end": 349.7
+        },
+        {
+          "word": "the",
+          "start": 349.7,
+          "end": 349.96
+        },
+        {
+          "word": "pumping",
+          "start": 349.96,
+          "end": 350.34
+        },
+        {
+          "word": "station.",
+          "start": 350.34,
+          "end": 350.9
+        }
+      ]
+    },
+    {
+      "index": 67,
+      "startMs": 350900,
+      "endMs": 357560,
+      "text": "Right. We also use the wind power for all of our electrical needs when it blows.",
+      "words": [
+        {
+          "word": "Right.",
+          "start": 350.9,
+          "end": 351.58
+        },
+        {
+          "word": "We",
+          "start": 352.08,
+          "end": 352.64
+        },
+        {
+          "word": "also",
+          "start": 352.64,
+          "end": 353.12
+        },
+        {
+          "word": "use",
+          "start": 353.12,
+          "end": 353.42
+        },
+        {
+          "word": "the",
+          "start": 353.42,
+          "end": 353.66
+        },
+        {
+          "word": "wind",
+          "start": 353.66,
+          "end": 353.92
+        },
+        {
+          "word": "power",
+          "start": 353.92,
+          "end": 354.28
+        },
+        {
+          "word": "for",
+          "start": 354.28,
+          "end": 354.72
+        },
+        {
+          "word": "all",
+          "start": 354.72,
+          "end": 355.16
+        },
+        {
+          "word": "of",
+          "start": 355.16,
+          "end": 355.34
+        },
+        {
+          "word": "our",
+          "start": 355.34,
+          "end": 355.56
+        },
+        {
+          "word": "electrical",
+          "start": 355.56,
+          "end": 356.14
+        },
+        {
+          "word": "needs",
+          "start": 356.14,
+          "end": 356.6
+        },
+        {
+          "word": "when",
+          "start": 356.6,
+          "end": 356.86
+        },
+        {
+          "word": "it",
+          "start": 356.86,
+          "end": 357.12
+        },
+        {
+          "word": "blows.",
+          "start": 357.12,
+          "end": 357.56
+        }
+      ]
+    },
+    {
+      "index": 68,
+      "startMs": 358180,
+      "endMs": 364040,
+      "text": "Then, when the wind stops, we let water run out of the reservoir and through some turbines.",
+      "words": [
+        {
+          "word": "Then,",
+          "start": 358.18,
+          "end": 358.66
+        },
+        {
+          "word": "when",
+          "start": 358.66,
+          "end": 358.92
+        },
+        {
+          "word": "the",
+          "start": 358.92,
+          "end": 359.12
+        },
+        {
+          "word": "wind",
+          "start": 359.12,
+          "end": 359.28
+        },
+        {
+          "word": "stops,",
+          "start": 359.28,
+          "end": 359.86
+        },
+        {
+          "word": "we",
+          "start": 360.42,
+          "end": 360.54
+        },
+        {
+          "word": "let",
+          "start": 360.54,
+          "end": 360.82
+        },
+        {
+          "word": "water",
+          "start": 360.82,
+          "end": 361.26
+        },
+        {
+          "word": "run",
+          "start": 361.26,
+          "end": 361.54
+        },
+        {
+          "word": "out",
+          "start": 361.54,
+          "end": 361.76
+        },
+        {
+          "word": "of",
+          "start": 361.76,
+          "end": 361.86
+        },
+        {
+          "word": "the",
+          "start": 361.86,
+          "end": 362.06
+        },
+        {
+          "word": "reservoir",
+          "start": 362.06,
+          "end": 362.54
+        },
+        {
+          "word": "and",
+          "start": 362.54,
+          "end": 362.98
+        },
+        {
+          "word": "through",
+          "start": 362.98,
+          "end": 363.2
+        },
+        {
+          "word": "some",
+          "start": 363.2,
+          "end": 363.54
+        },
+        {
+          "word": "turbines.",
+          "start": 363.54,
+          "end": 364.04
+        }
+      ]
+    },
+    {
+      "index": 69,
+      "startMs": 365000,
+      "endMs": 370220,
+      "text": "The turbines turn generators and we have hydroelectric power we can access.",
+      "words": [
+        {
+          "word": "The",
+          "start": 365.0,
+          "end": 365.38
+        },
+        {
+          "word": "turbines",
+          "start": 365.38,
+          "end": 365.78
+        },
+        {
+          "word": "turn",
+          "start": 365.78,
+          "end": 366.24
+        },
+        {
+          "word": "generators",
+          "start": 366.24,
+          "end": 366.92
+        },
+        {
+          "word": "and",
+          "start": 366.92,
+          "end": 367.56
+        },
+        {
+          "word": "we",
+          "start": 367.56,
+          "end": 367.82
+        },
+        {
+          "word": "have",
+          "start": 367.82,
+          "end": 368.04
+        },
+        {
+          "word": "hydroelectric",
+          "start": 368.04,
+          "end": 368.86
+        },
+        {
+          "word": "power",
+          "start": 368.86,
+          "end": 369.3
+        },
+        {
+          "word": "we",
+          "start": 369.3,
+          "end": 369.52
+        },
+        {
+          "word": "can",
+          "start": 369.52,
+          "end": 369.76
+        },
+        {
+          "word": "access.",
+          "start": 369.76,
+          "end": 370.22
+        }
+      ]
+    },
+    {
+      "index": 70,
+      "startMs": 370560,
+      "endMs": 376320,
+      "text": "So the water flows in a cycle. It's pumped up the hill by the wind power,",
+      "words": [
+        {
+          "word": "So",
+          "start": 370.56,
+          "end": 370.86
+        },
+        {
+          "word": "the",
+          "start": 370.86,
+          "end": 371.1
+        },
+        {
+          "word": "water",
+          "start": 371.1,
+          "end": 371.5
+        },
+        {
+          "word": "flows",
+          "start": 371.5,
+          "end": 371.94
+        },
+        {
+          "word": "in",
+          "start": 371.94,
+          "end": 372.22
+        },
+        {
+          "word": "a",
+          "start": 372.22,
+          "end": 372.46
+        },
+        {
+          "word": "cycle.",
+          "start": 372.46,
+          "end": 372.96
+        },
+        {
+          "word": "It's",
+          "start": 373.48,
+          "end": 374.0
+        },
+        {
+          "word": "pumped",
+          "start": 374.0,
+          "end": 374.24
+        },
+        {
+          "word": "up",
+          "start": 374.24,
+          "end": 374.6
+        },
+        {
+          "word": "the",
+          "start": 374.6,
+          "end": 374.8
+        },
+        {
+          "word": "hill",
+          "start": 374.8,
+          "end": 375.06
+        },
+        {
+          "word": "by",
+          "start": 375.06,
+          "end": 375.36
+        },
+        {
+          "word": "the",
+          "start": 375.36,
+          "end": 375.6
+        },
+        {
+          "word": "wind",
+          "start": 375.6,
+          "end": 375.84
+        },
+        {
+          "word": "power,",
+          "start": 375.84,
+          "end": 376.32
+        }
+      ]
+    },
+    {
+      "index": 71,
+      "startMs": 376540,
+      "endMs": 378820,
+      "text": "then it's released when it's needed.",
+      "words": [
+        {
+          "word": "then",
+          "start": 376.54,
+          "end": 376.96
+        },
+        {
+          "word": "it's",
+          "start": 376.96,
+          "end": 377.38
+        },
+        {
+          "word": "released",
+          "start": 377.38,
+          "end": 377.86
+        },
+        {
+          "word": "when",
+          "start": 377.86,
+          "end": 378.22
+        },
+        {
+          "word": "it's",
+          "start": 378.22,
+          "end": 378.5
+        },
+        {
+          "word": "needed.",
+          "start": 378.5,
+          "end": 378.82
+        }
+      ]
+    },
+    {
+      "index": 72,
+      "startMs": 378820,
+      "endMs": 385540,
+      "text": "Yes, that's right. What's more, the system also provides our drinking water",
+      "words": [
+        {
+          "word": "Yes,",
+          "start": 378.82,
+          "end": 379.4
+        },
+        {
+          "word": "that's",
+          "start": 379.46,
+          "end": 379.86
+        },
+        {
+          "word": "right.",
+          "start": 379.86,
+          "end": 380.32
+        },
+        {
+          "word": "What's",
+          "start": 381.32,
+          "end": 381.8
+        },
+        {
+          "word": "more,",
+          "start": 381.8,
+          "end": 382.14
+        },
+        {
+          "word": "the",
+          "start": 382.62,
+          "end": 382.74
+        },
+        {
+          "word": "system",
+          "start": 382.74,
+          "end": 383.2
+        },
+        {
+          "word": "also",
+          "start": 383.2,
+          "end": 383.74
+        },
+        {
+          "word": "provides",
+          "start": 383.74,
+          "end": 384.2
+        },
+        {
+          "word": "our",
+          "start": 384.2,
+          "end": 384.64
+        },
+        {
+          "word": "drinking",
+          "start": 384.64,
+          "end": 385.04
+        },
+        {
+          "word": "water",
+          "start": 385.04,
+          "end": 385.54
+        }
+      ]
+    },
+    {
+      "index": 73,
+      "startMs": 385540,
+      "endMs": 388080,
+      "text": "and water for use in agriculture.",
+      "words": [
+        {
+          "word": "and",
+          "start": 385.54,
+          "end": 386.08
+        },
+        {
+          "word": "water",
+          "start": 386.08,
+          "end": 386.54
+        },
+        {
+          "word": "for",
+          "start": 386.54,
+          "end": 386.88
+        },
+        {
+          "word": "use",
+          "start": 386.88,
+          "end": 387.08
+        },
+        {
+          "word": "in",
+          "start": 387.08,
+          "end": 387.44
+        },
+        {
+          "word": "agriculture.",
+          "start": 387.44,
+          "end": 388.08
+        }
+      ]
+    },
+    {
+      "index": 74,
+      "startMs": 389260,
+      "endMs": 391680,
+      "text": "But where does the water come from?",
+      "words": [
+        {
+          "word": "But",
+          "start": 389.26,
+          "end": 389.68
+        },
+        {
+          "word": "where",
+          "start": 389.68,
+          "end": 390.1
+        },
+        {
+          "word": "does",
+          "start": 390.1,
+          "end": 390.32
+        },
+        {
+          "word": "the",
+          "start": 390.32,
+          "end": 390.56
+        },
+        {
+          "word": "water",
+          "start": 390.56,
+          "end": 390.92
+        },
+        {
+          "word": "come",
+          "start": 390.92,
+          "end": 391.28
+        },
+        {
+          "word": "from?",
+          "start": 391.28,
+          "end": 391.68
+        }
+      ]
+    },
+    {
+      "index": 75,
+      "startMs": 391860,
+      "endMs": 393560,
+      "text": "We use seawater.",
+      "words": [
+        {
+          "word": "We",
+          "start": 391.86,
+          "end": 392.26
+        },
+        {
+          "word": "use",
+          "start": 392.26,
+          "end": 392.58
+        },
+        {
+          "word": "seawater.",
+          "start": 392.58,
+          "end": 393.56
+        }
+      ]
+    },
+    {
+      "index": 76,
+      "startMs": 393820,
+      "endMs": 396140,
+      "text": "But you can't drink salt water.",
+      "words": [
+        {
+          "word": "But",
+          "start": 393.82,
+          "end": 394.04
+        },
+        {
+          "word": "you",
+          "start": 394.04,
+          "end": 394.26
+        },
+        {
+          "word": "can't",
+          "start": 394.26,
+          "end": 394.78
+        },
+        {
+          "word": "drink",
+          "start": 394.78,
+          "end": 395.34
+        },
+        {
+          "word": "salt",
+          "start": 395.34,
+          "end": 395.68
+        },
+        {
+          "word": "water.",
+          "start": 395.68,
+          "end": 396.14
+        }
+      ]
+    },
+    {
+      "index": 77,
+      "startMs": 397260,
+      "endMs": 402120,
+      "text": "We have a desalination plant to take the salt out of the seawater,",
+      "words": [
+        {
+          "word": "We",
+          "start": 397.26,
+          "end": 397.58
+        },
+        {
+          "word": "have",
+          "start": 397.58,
+          "end": 398.04
+        },
+        {
+          "word": "a",
+          "start": 398.04,
+          "end": 398.3
+        },
+        {
+          "word": "desalination",
+          "start": 398.3,
+          "end": 399.1
+        },
+        {
+          "word": "plant",
+          "start": 399.1,
+          "end": 399.66
+        },
+        {
+          "word": "to",
+          "start": 399.66,
+          "end": 400.02
+        },
+        {
+          "word": "take",
+          "start": 400.02,
+          "end": 400.24
+        },
+        {
+          "word": "the",
+          "start": 400.24,
+          "end": 400.56
+        },
+        {
+          "word": "salt",
+          "start": 400.56,
+          "end": 400.84
+        },
+        {
+          "word": "out",
+          "start": 400.84,
+          "end": 401.16
+        },
+        {
+          "word": "of",
+          "start": 401.16,
+          "end": 401.32
+        },
+        {
+          "word": "the",
+          "start": 401.32,
+          "end": 401.5
+        },
+        {
+          "word": "seawater,",
+          "start": 401.5,
+          "end": 402.12
+        }
+      ]
+    },
+    {
+      "index": 78,
+      "startMs": 402580,
+      "endMs": 406300,
+      "text": "so it can be used in agriculture and as drinking water.",
+      "words": [
+        {
+          "word": "so",
+          "start": 402.58,
+          "end": 402.72
+        },
+        {
+          "word": "it",
+          "start": 402.72,
+          "end": 402.9
+        },
+        {
+          "word": "can",
+          "start": 402.9,
+          "end": 403.12
+        },
+        {
+          "word": "be",
+          "start": 403.12,
+          "end": 403.38
+        },
+        {
+          "word": "used",
+          "start": 403.38,
+          "end": 403.58
+        },
+        {
+          "word": "in",
+          "start": 403.58,
+          "end": 403.96
+        },
+        {
+          "word": "agriculture",
+          "start": 403.96,
+          "end": 404.56
+        },
+        {
+          "word": "and",
+          "start": 404.56,
+          "end": 405.16
+        },
+        {
+          "word": "as",
+          "start": 405.16,
+          "end": 405.5
+        },
+        {
+          "word": "drinking",
+          "start": 405.5,
+          "end": 405.82
+        },
+        {
+          "word": "water.",
+          "start": 405.82,
+          "end": 406.3
+        }
+      ]
+    },
+    {
+      "index": 79,
+      "startMs": 406940,
+      "endMs": 413580,
+      "text": "We're constantly adding new water and taking stored water out of the cycle as we need to use it.",
+      "words": [
+        {
+          "word": "We're",
+          "start": 406.94,
+          "end": 407.44
+        },
+        {
+          "word": "constantly",
+          "start": 407.44,
+          "end": 408.06
+        },
+        {
+          "word": "adding",
+          "start": 408.06,
+          "end": 408.54
+        },
+        {
+          "word": "new",
+          "start": 408.54,
+          "end": 408.92
+        },
+        {
+          "word": "water",
+          "start": 408.92,
+          "end": 409.46
+        },
+        {
+          "word": "and",
+          "start": 409.46,
+          "end": 409.84
+        },
+        {
+          "word": "taking",
+          "start": 409.84,
+          "end": 410.26
+        },
+        {
+          "word": "stored",
+          "start": 410.26,
+          "end": 410.7
+        },
+        {
+          "word": "water",
+          "start": 410.7,
+          "end": 411.2
+        },
+        {
+          "word": "out",
+          "start": 411.2,
+          "end": 411.52
+        },
+        {
+          "word": "of",
+          "start": 411.52,
+          "end": 411.7
+        },
+        {
+          "word": "the",
+          "start": 411.7,
+          "end": 411.88
+        },
+        {
+          "word": "cycle",
+          "start": 411.88,
+          "end": 412.26
+        },
+        {
+          "word": "as",
+          "start": 412.26,
+          "end": 412.8
+        },
+        {
+          "word": "we",
+          "start": 412.8,
+          "end": 412.96
+        },
+        {
+          "word": "need",
+          "start": 412.96,
+          "end": 413.18
+        },
+        {
+          "word": "to",
+          "start": 413.18,
+          "end": 413.38
+        },
+        {
+          "word": "use",
+          "start": 413.38,
+          "end": 413.56
+        },
+        {
+          "word": "it.",
+          "start": 413.56,
+          "end": 413.94
+        }
+      ]
+    },
+    {
+      "index": 80,
+      "startMs": 414680,
+      "endMs": 420760,
+      "text": "In fact, I've just come from the desalination plant where we're having some problems today.",
+      "words": [
+        {
+          "word": "In",
+          "start": 414.68,
+          "end": 414.86
+        },
+        {
+          "word": "fact,",
+          "start": 414.86,
+          "end": 415.22
+        },
+        {
+          "word": "I've",
+          "start": 415.48,
+          "end": 415.84
+        },
+        {
+          "word": "just",
+          "start": 415.84,
+          "end": 416.22
+        },
+        {
+          "word": "come",
+          "start": 416.22,
+          "end": 416.44
+        },
+        {
+          "word": "from",
+          "start": 416.44,
+          "end": 416.6
+        },
+        {
+          "word": "the",
+          "start": 416.6,
+          "end": 416.84
+        },
+        {
+          "word": "desalination",
+          "start": 416.84,
+          "end": 417.58
+        },
+        {
+          "word": "plant",
+          "start": 417.58,
+          "end": 418.02
+        },
+        {
+          "word": "where",
+          "start": 418.02,
+          "end": 418.78
+        },
+        {
+          "word": "we're",
+          "start": 418.78,
+          "end": 419.06
+        },
+        {
+          "word": "having",
+          "start": 419.06,
+          "end": 419.32
+        },
+        {
+          "word": "some",
+          "start": 419.32,
+          "end": 419.68
+        },
+        {
+          "word": "problems",
+          "start": 419.68,
+          "end": 420.16
+        },
+        {
+          "word": "today.",
+          "start": 420.16,
+          "end": 420.76
+        }
+      ]
+    },
+    {
+      "index": 81,
+      "startMs": 421660,
+      "endMs": 426200,
+      "text": "Something isn't working properly and the replacement parts haven't arrived yet.",
+      "words": [
+        {
+          "word": "Something",
+          "start": 421.66,
+          "end": 422.06
+        },
+        {
+          "word": "isn't",
+          "start": 422.06,
+          "end": 422.42
+        },
+        {
+          "word": "working",
+          "start": 422.42,
+          "end": 422.86
+        },
+        {
+          "word": "properly",
+          "start": 422.86,
+          "end": 423.36
+        },
+        {
+          "word": "and",
+          "start": 423.36,
+          "end": 423.86
+        },
+        {
+          "word": "the",
+          "start": 423.86,
+          "end": 424.16
+        },
+        {
+          "word": "replacement",
+          "start": 424.16,
+          "end": 424.56
+        },
+        {
+          "word": "parts",
+          "start": 424.56,
+          "end": 425.04
+        },
+        {
+          "word": "haven't",
+          "start": 425.04,
+          "end": 425.5
+        },
+        {
+          "word": "arrived",
+          "start": 425.5,
+          "end": 425.86
+        },
+        {
+          "word": "yet.",
+          "start": 425.86,
+          "end": 426.2
+        }
+      ]
+    },
+    {
+      "index": 82,
+      "startMs": 426980,
+      "endMs": 432420,
+      "text": "We're a long way from the mainland, so delivery of anything takes at least a few days.",
+      "words": [
+        {
+          "word": "We're",
+          "start": 426.98,
+          "end": 427.46
+        },
+        {
+          "word": "a",
+          "start": 427.46,
+          "end": 427.6
+        },
+        {
+          "word": "long",
+          "start": 427.6,
+          "end": 427.82
+        },
+        {
+          "word": "way",
+          "start": 427.82,
+          "end": 428.12
+        },
+        {
+          "word": "from",
+          "start": 428.12,
+          "end": 428.3
+        },
+        {
+          "word": "the",
+          "start": 428.3,
+          "end": 428.52
+        },
+        {
+          "word": "mainland,",
+          "start": 428.52,
+          "end": 428.96
+        },
+        {
+          "word": "so",
+          "start": 429.38,
+          "end": 429.54
+        },
+        {
+          "word": "delivery",
+          "start": 429.54,
+          "end": 429.98
+        },
+        {
+          "word": "of",
+          "start": 429.98,
+          "end": 430.3
+        },
+        {
+          "word": "anything",
+          "start": 430.3,
+          "end": 430.6
+        },
+        {
+          "word": "takes",
+          "start": 430.6,
+          "end": 431.02
+        },
+        {
+          "word": "at",
+          "start": 431.02,
+          "end": 431.28
+        },
+        {
+          "word": "least",
+          "start": 431.28,
+          "end": 431.54
+        },
+        {
+          "word": "a",
+          "start": 431.54,
+          "end": 431.8
+        },
+        {
+          "word": "few",
+          "start": 431.8,
+          "end": 431.94
+        },
+        {
+          "word": "days.",
+          "start": 431.94,
+          "end": 432.42
+        }
+      ]
+    },
+    {
+      "index": 83,
+      "startMs": 432420,
+      "endMs": 438740,
+      "text": "If they don't come soon, we may have to ask people to use less water for a few days.",
+      "words": [
+        {
+          "word": "If",
+          "start": 432.42,
+          "end": 433.18
+        },
+        {
+          "word": "they",
+          "start": 433.18,
+          "end": 433.38
+        },
+        {
+          "word": "don't",
+          "start": 433.38,
+          "end": 433.58
+        },
+        {
+          "word": "come",
+          "start": 433.58,
+          "end": 433.84
+        },
+        {
+          "word": "soon,",
+          "start": 433.84,
+          "end": 434.3
+        },
+        {
+          "word": "we",
+          "start": 435.08,
+          "end": 435.24
+        },
+        {
+          "word": "may",
+          "start": 435.24,
+          "end": 435.52
+        },
+        {
+          "word": "have",
+          "start": 435.52,
+          "end": 435.74
+        },
+        {
+          "word": "to",
+          "start": 435.74,
+          "end": 435.94
+        },
+        {
+          "word": "ask",
+          "start": 435.94,
+          "end": 436.14
+        },
+        {
+          "word": "people",
+          "start": 436.14,
+          "end": 436.48
+        },
+        {
+          "word": "to",
+          "start": 436.48,
+          "end": 436.78
+        },
+        {
+          "word": "use",
+          "start": 436.78,
+          "end": 437.02
+        },
+        {
+          "word": "less",
+          "start": 437.02,
+          "end": 437.34
+        },
+        {
+          "word": "water",
+          "start": 437.34,
+          "end": 437.72
+        },
+        {
+          "word": "for",
+          "start": 437.72,
+          "end": 438.02
+        },
+        {
+          "word": "a",
+          "start": 438.02,
+          "end": 438.14
+        },
+        {
+          "word": "few",
+          "start": 438.14,
+          "end": 438.24
+        },
+        {
+          "word": "days.",
+          "start": 438.24,
+          "end": 438.74
+        }
+      ]
+    },
+    {
+      "index": 84,
+      "startMs": 439300,
+      "endMs": 442220,
+      "text": "You're a long way from everything out here, aren't you?",
+      "words": [
+        {
+          "word": "You're",
+          "start": 439.3,
+          "end": 439.6
+        },
+        {
+          "word": "a",
+          "start": 439.6,
+          "end": 439.86
+        },
+        {
+          "word": "long",
+          "start": 439.86,
+          "end": 440.04
+        },
+        {
+          "word": "way",
+          "start": 440.04,
+          "end": 440.42
+        },
+        {
+          "word": "from",
+          "start": 440.42,
+          "end": 440.68
+        },
+        {
+          "word": "everything",
+          "start": 440.68,
+          "end": 441.12
+        },
+        {
+          "word": "out",
+          "start": 441.12,
+          "end": 441.4
+        },
+        {
+          "word": "here,",
+          "start": 441.4,
+          "end": 441.64
+        },
+        {
+          "word": "aren't",
+          "start": 441.76,
+          "end": 441.88
+        },
+        {
+          "word": "you?",
+          "start": 441.88,
+          "end": 442.22
+        }
+      ]
+    },
+    {
+      "index": 85,
+      "startMs": 442680,
+      "endMs": 444500,
+      "text": "It must be difficult sometimes.",
+      "words": [
+        {
+          "word": "It",
+          "start": 442.68,
+          "end": 442.84
+        },
+        {
+          "word": "must",
+          "start": 442.84,
+          "end": 443.06
+        },
+        {
+          "word": "be",
+          "start": 443.06,
+          "end": 443.34
+        },
+        {
+          "word": "difficult",
+          "start": 443.34,
+          "end": 443.8
+        },
+        {
+          "word": "sometimes.",
+          "start": 443.8,
+          "end": 444.5
+        }
+      ]
+    },
+    {
+      "index": 86,
+      "startMs": 445060,
+      "endMs": 448240,
+      "text": "Yes, it's a real challenge living here.",
+      "words": [
+        {
+          "word": "Yes,",
+          "start": 445.06,
+          "end": 445.4
+        },
+        {
+          "word": "it's",
+          "start": 445.98,
+          "end": 446.44
+        },
+        {
+          "word": "a",
+          "start": 446.44,
+          "end": 446.5
+        },
+        {
+          "word": "real",
+          "start": 446.5,
+          "end": 446.76
+        },
+        {
+          "word": "challenge",
+          "start": 446.76,
+          "end": 447.4
+        },
+        {
+          "word": "living",
+          "start": 447.4,
+          "end": 447.7
+        },
+        {
+          "word": "here.",
+          "start": 447.7,
+          "end": 448.24
+        }
+      ]
+    },
+    {
+      "index": 87,
+      "startMs": 448880,
+      "endMs": 451000,
+      "text": "On the other hand, we all love it.",
+      "words": [
+        {
+          "word": "On",
+          "start": 448.88,
+          "end": 449.2
+        },
+        {
+          "word": "the",
+          "start": 449.2,
+          "end": 449.36
+        },
+        {
+          "word": "other",
+          "start": 449.36,
+          "end": 449.56
+        },
+        {
+          "word": "hand,",
+          "start": 449.56,
+          "end": 449.84
+        },
+        {
+          "word": "we",
+          "start": 450.0,
+          "end": 450.16
+        },
+        {
+          "word": "all",
+          "start": 450.16,
+          "end": 450.4
+        },
+        {
+          "word": "love",
+          "start": 450.4,
+          "end": 450.64
+        },
+        {
+          "word": "it.",
+          "start": 450.64,
+          "end": 451.0
+        }
+      ]
+    },
+    {
+      "index": 88,
+      "startMs": 451480,
+      "endMs": 455000,
+      "text": "It can be a hard life, but I wouldn't live anywhere else.",
+      "words": [
+        {
+          "word": "It",
+          "start": 451.48,
+          "end": 451.68
+        },
+        {
+          "word": "can",
+          "start": 451.68,
+          "end": 451.88
+        },
+        {
+          "word": "be",
+          "start": 451.88,
+          "end": 452.08
+        },
+        {
+          "word": "a",
+          "start": 452.08,
+          "end": 452.22
+        },
+        {
+          "word": "hard",
+          "start": 452.22,
+          "end": 452.42
+        },
+        {
+          "word": "life,",
+          "start": 452.42,
+          "end": 452.86
+        },
+        {
+          "word": "but",
+          "start": 452.98,
+          "end": 453.2
+        },
+        {
+          "word": "I",
+          "start": 453.2,
+          "end": 453.4
+        },
+        {
+          "word": "wouldn't",
+          "start": 453.4,
+          "end": 453.76
+        },
+        {
+          "word": "live",
+          "start": 453.76,
+          "end": 454.12
+        },
+        {
+          "word": "anywhere",
+          "start": 454.12,
+          "end": 454.56
+        },
+        {
+          "word": "else.",
+          "start": 454.56,
+          "end": 455.0
+        }
+      ]
+    }
+  ],
+  "sanitization": {
+    "removedInvalidWordCount": 1,
+    "rule": "drop_word_when_end_lte_start_or_start_negative"
+  }
+}

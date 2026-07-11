@@ -1,0 +1,199 @@
+{
+  "model": "small",
+  "language": "en",
+  "text": "4.10 I completely agree that holidays have become too commercial. I absolutely disagree that we should stop giving gifts on Mother's Day. I really think that we should give fewer gifts.",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 1160,
+      "text": "4.10",
+      "words": [
+        {
+          "word": "4",
+          "start": 0.0,
+          "end": 0.46
+        },
+        {
+          "word": ".10",
+          "start": 0.46,
+          "end": 1.16
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 2000,
+      "endMs": 6320,
+      "text": "I completely agree that holidays have become too commercial.",
+      "words": [
+        {
+          "word": "I",
+          "start": 2.0,
+          "end": 2.86
+        },
+        {
+          "word": "completely",
+          "start": 2.86,
+          "end": 3.34
+        },
+        {
+          "word": "agree",
+          "start": 3.34,
+          "end": 3.86
+        },
+        {
+          "word": "that",
+          "start": 3.86,
+          "end": 4.26
+        },
+        {
+          "word": "holidays",
+          "start": 4.26,
+          "end": 4.66
+        },
+        {
+          "word": "have",
+          "start": 4.66,
+          "end": 5.04
+        },
+        {
+          "word": "become",
+          "start": 5.04,
+          "end": 5.42
+        },
+        {
+          "word": "too",
+          "start": 5.42,
+          "end": 5.74
+        },
+        {
+          "word": "commercial.",
+          "start": 5.74,
+          "end": 6.32
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 8340,
+      "endMs": 13500,
+      "text": "I absolutely disagree that we should stop giving gifts on Mother's Day.",
+      "words": [
+        {
+          "word": "I",
+          "start": 8.340000000000005,
+          "end": 9.22
+        },
+        {
+          "word": "absolutely",
+          "start": 9.22,
+          "end": 9.92
+        },
+        {
+          "word": "disagree",
+          "start": 9.92,
+          "end": 10.46
+        },
+        {
+          "word": "that",
+          "start": 10.46,
+          "end": 11.04
+        },
+        {
+          "word": "we",
+          "start": 11.04,
+          "end": 11.22
+        },
+        {
+          "word": "should",
+          "start": 11.22,
+          "end": 11.44
+        },
+        {
+          "word": "stop",
+          "start": 11.44,
+          "end": 11.78
+        },
+        {
+          "word": "giving",
+          "start": 11.78,
+          "end": 12.1
+        },
+        {
+          "word": "gifts",
+          "start": 12.1,
+          "end": 12.52
+        },
+        {
+          "word": "on",
+          "start": 12.52,
+          "end": 12.78
+        },
+        {
+          "word": "Mother's",
+          "start": 12.78,
+          "end": 13.22
+        },
+        {
+          "word": "Day.",
+          "start": 13.22,
+          "end": 13.5
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 15520,
+      "endMs": 18820,
+      "text": "I really think that we should give fewer gifts.",
+      "words": [
+        {
+          "word": "I",
+          "start": 15.520000000000003,
+          "end": 16.4
+        },
+        {
+          "word": "really",
+          "start": 16.4,
+          "end": 16.84
+        },
+        {
+          "word": "think",
+          "start": 16.84,
+          "end": 17.2
+        },
+        {
+          "word": "that",
+          "start": 17.2,
+          "end": 17.38
+        },
+        {
+          "word": "we",
+          "start": 17.38,
+          "end": 17.52
+        },
+        {
+          "word": "should",
+          "start": 17.52,
+          "end": 17.7
+        },
+        {
+          "word": "give",
+          "start": 17.7,
+          "end": 17.94
+        },
+        {
+          "word": "fewer",
+          "start": 17.94,
+          "end": 18.38
+        },
+        {
+          "word": "gifts.",
+          "start": 18.38,
+          "end": 18.82
+        }
+      ]
+    }
+  ]
+}

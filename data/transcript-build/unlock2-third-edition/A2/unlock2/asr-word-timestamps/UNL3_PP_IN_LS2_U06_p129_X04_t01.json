@@ -1,0 +1,317 @@
+{
+  "model": "small",
+  "language": "en",
+  "text": "unit 6, 6.1 1 48% 2 a half one half 3 a fifth one fifth 4 31.5 5 103 103 6 1540 7 6001 8 0.01",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 2900,
+      "text": "unit 6, 6.1",
+      "words": [
+        {
+          "word": "unit",
+          "start": 0.0,
+          "end": 0.56
+        },
+        {
+          "word": "6,",
+          "start": 0.56,
+          "end": 1.16
+        },
+        {
+          "word": "6",
+          "start": 1.72,
+          "end": 2.1
+        },
+        {
+          "word": ".1",
+          "start": 2.1,
+          "end": 2.9
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 4720,
+      "endMs": 5260,
+      "text": "1",
+      "words": [
+        {
+          "word": "1",
+          "start": 4.56,
+          "end": 5.26
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 6400,
+      "endMs": 8500,
+      "text": "48%",
+      "words": [
+        {
+          "word": "48",
+          "start": 6.4,
+          "end": 7.22
+        },
+        {
+          "word": "%",
+          "start": 7.22,
+          "end": 8.5
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 11840,
+      "endMs": 12500,
+      "text": "2",
+      "words": [
+        {
+          "word": "2",
+          "start": 11.8,
+          "end": 12.5
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 13600,
+      "endMs": 14520,
+      "text": "a half",
+      "words": [
+        {
+          "word": "a",
+          "start": 13.3,
+          "end": 14.0
+        },
+        {
+          "word": "half",
+          "start": 14.0,
+          "end": 14.52
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "startMs": 17000,
+      "endMs": 18100,
+      "text": "one half",
+      "words": [
+        {
+          "word": "one",
+          "start": 16.8,
+          "end": 17.5
+        },
+        {
+          "word": "half",
+          "start": 17.5,
+          "end": 18.1
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "startMs": 20920,
+      "endMs": 21620,
+      "text": "3",
+      "words": [
+        {
+          "word": "3",
+          "start": 20.92,
+          "end": 21.62
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "startMs": 22720,
+      "endMs": 23700,
+      "text": "a fifth",
+      "words": [
+        {
+          "word": "a",
+          "start": 22.46,
+          "end": 23.16
+        },
+        {
+          "word": "fifth",
+          "start": 23.16,
+          "end": 23.7
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "startMs": 25260,
+      "endMs": 27100,
+      "text": "one fifth",
+      "words": [
+        {
+          "word": "one",
+          "start": 25.26,
+          "end": 26.66
+        },
+        {
+          "word": "fifth",
+          "start": 26.66,
+          "end": 27.1
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "startMs": 29260,
+      "endMs": 30660,
+      "text": "4",
+      "words": [
+        {
+          "word": "4",
+          "start": 29.26,
+          "end": 30.66
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "startMs": 30660,
+      "endMs": 33720,
+      "text": "31.5",
+      "words": [
+        {
+          "word": "31",
+          "start": 30.66,
+          "end": 32.74
+        },
+        {
+          "word": ".5",
+          "start": 32.74,
+          "end": 33.72
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "startMs": 35820,
+      "endMs": 37220,
+      "text": "5",
+      "words": [
+        {
+          "word": "5",
+          "start": 35.82,
+          "end": 37.22
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "startMs": 37220,
+      "endMs": 39780,
+      "text": "103",
+      "words": [
+        {
+          "word": "103",
+          "start": 37.22,
+          "end": 39.78
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "startMs": 42680,
+      "endMs": 44080,
+      "text": "103",
+      "words": [
+        {
+          "word": "103",
+          "start": 42.68,
+          "end": 44.08
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "startMs": 47220,
+      "endMs": 48620,
+      "text": "6",
+      "words": [
+        {
+          "word": "6",
+          "start": 47.22,
+          "end": 48.62
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "startMs": 50860,
+      "endMs": 52260,
+      "text": "1540",
+      "words": [
+        {
+          "word": "1540",
+          "start": 50.86,
+          "end": 52.26
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "startMs": 55380,
+      "endMs": 56780,
+      "text": "7",
+      "words": [
+        {
+          "word": "7",
+          "start": 55.38,
+          "end": 56.78
+        }
+      ]
+    },
+    {
+      "index": 18,
+      "startMs": 58440,
+      "endMs": 59840,
+      "text": "6001",
+      "words": [
+        {
+          "word": "6001",
+          "start": 58.440000000000005,
+          "end": 59.84
+        }
+      ]
+    },
+    {
+      "index": 19,
+      "startMs": 62780,
+      "endMs": 64180,
+      "text": "8",
+      "words": [
+        {
+          "word": "8",
+          "start": 62.78000000000001,
+          "end": 64.18
+        }
+      ]
+    },
+    {
+      "index": 20,
+      "startMs": 64860,
+      "endMs": 66780,
+      "text": "0.01",
+      "words": [
+        {
+          "word": "0",
+          "start": 64.86,
+          "end": 65.92
+        },
+        {
+          "word": ".01",
+          "start": 65.92,
+          "end": 66.78
+        }
+      ]
+    }
+  ]
+}

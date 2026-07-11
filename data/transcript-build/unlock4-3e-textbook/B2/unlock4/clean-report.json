@@ -1,0 +1,32 @@
+{
+  "trackCount": 49,
+  "sourceAudioCount": 49,
+  "expectedTrackCount": 49,
+  "durationFilterApplied": false,
+  "excludedShortAudioCount": 0,
+  "shortUnder60SecCount": 22,
+  "duplicateFileCountIncluded": 0,
+  "asrDevice": "mps",
+  "lineCount": 1423,
+  "officialScriptTrackCount": 49,
+  "asrDoneCount": 49,
+  "missingTextCount": 0,
+  "unmatchedOfficialTrackIds": [],
+  "lowCoverageLineTrackIds": [],
+  "alignmentReviewTrackIds": [],
+  "emptyTrackIds": [],
+  "emptyLineTrackIds": [],
+  "timingErrorTrackIds": [],
+  "lastEndMismatchTrackIds": [],
+  "trackLabelOverlapIds": [],
+  "asrWordTrackCount": 49,
+  "readyForUpload": true,
+  "outputs": {
+    "bundle": "data/transcript-build/unlock4-3e-textbook/B2/unlock4/bundle-draft.json",
+    "manifest": "data/transcript-build/unlock4-3e-textbook/B2/unlock4/manifest.json",
+    "report": "data/transcript-build/unlock4-3e-textbook/B2/unlock4/clean-report.json",
+    "alignmentAudit": "data/transcript-build/unlock4-3e-textbook/B2/unlock4/alignment-audit.json",
+    "alignmentDetails": "data/transcript-build/unlock4-3e-textbook/B2/unlock4/alignment-details.json",
+    "sampleCheck": "data/transcript-build/unlock4-3e-textbook/B2/unlock4/sample-check.json"
+  }
+}

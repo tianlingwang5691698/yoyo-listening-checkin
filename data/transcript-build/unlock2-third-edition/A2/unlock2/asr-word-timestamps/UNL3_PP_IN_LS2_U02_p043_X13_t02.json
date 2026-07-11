@@ -1,0 +1,65 @@
+{
+  "model": "small",
+  "language": "en",
+  "text": "2.2 I went to a lecture about the sea.",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 5500,
+      "text": "2.2 I went to a lecture about the sea.",
+      "words": [
+        {
+          "word": "2",
+          "start": 0.0,
+          "end": 0.38
+        },
+        {
+          "word": ".2",
+          "start": 0.38,
+          "end": 1.2
+        },
+        {
+          "word": "I",
+          "start": 1.2,
+          "end": 3.44
+        },
+        {
+          "word": "went",
+          "start": 3.44,
+          "end": 3.68
+        },
+        {
+          "word": "to",
+          "start": 3.68,
+          "end": 3.96
+        },
+        {
+          "word": "a",
+          "start": 3.96,
+          "end": 4.12
+        },
+        {
+          "word": "lecture",
+          "start": 4.12,
+          "end": 4.48
+        },
+        {
+          "word": "about",
+          "start": 4.48,
+          "end": 4.92
+        },
+        {
+          "word": "the",
+          "start": 4.92,
+          "end": 5.18
+        },
+        {
+          "word": "sea.",
+          "start": 5.18,
+          "end": 5.5
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,229 @@
+{
+  "model": "medium",
+  "language": "en",
+  "text": "6.4 1 You don't like it here then 2 You don't like it here then 3 You don't like it here then 4 You don't like it here then",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 1640,
+      "text": "6.4",
+      "words": [
+        {
+          "word": "6",
+          "start": 0.0,
+          "end": 0.64
+        },
+        {
+          "word": ".4",
+          "start": 0.64,
+          "end": 1.64
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 1640,
+      "endMs": 3040,
+      "text": "1",
+      "words": [
+        {
+          "word": "1",
+          "start": 1.64,
+          "end": 3.04
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 3900,
+      "endMs": 6300,
+      "text": "You don't like it here then",
+      "words": [
+        {
+          "word": "You",
+          "start": 3.9,
+          "end": 4.54
+        },
+        {
+          "word": "don't",
+          "start": 4.54,
+          "end": 4.9
+        },
+        {
+          "word": "like",
+          "start": 4.9,
+          "end": 5.2
+        },
+        {
+          "word": "it",
+          "start": 5.2,
+          "end": 5.44
+        },
+        {
+          "word": "here",
+          "start": 5.44,
+          "end": 5.66
+        },
+        {
+          "word": "then",
+          "start": 5.66,
+          "end": 6.3
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 8380,
+      "endMs": 9220,
+      "text": "2",
+      "words": [
+        {
+          "word": "2",
+          "start": 8.38,
+          "end": 9.22
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 10120,
+      "endMs": 12900,
+      "text": "You don't like it here then",
+      "words": [
+        {
+          "word": "You",
+          "start": 10.120000000000001,
+          "end": 10.96
+        },
+        {
+          "word": "don't",
+          "start": 10.96,
+          "end": 11.42
+        },
+        {
+          "word": "like",
+          "start": 11.42,
+          "end": 11.8
+        },
+        {
+          "word": "it",
+          "start": 11.8,
+          "end": 12.06
+        },
+        {
+          "word": "here",
+          "start": 12.06,
+          "end": 12.3
+        },
+        {
+          "word": "then",
+          "start": 12.3,
+          "end": 12.9
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "startMs": 15160,
+      "endMs": 16000,
+      "text": "3",
+      "words": [
+        {
+          "word": "3",
+          "start": 15.16,
+          "end": 16.0
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "startMs": 16880,
+      "endMs": 19080,
+      "text": "You don't like it here then",
+      "words": [
+        {
+          "word": "You",
+          "start": 16.88,
+          "end": 17.42
+        },
+        {
+          "word": "don't",
+          "start": 17.42,
+          "end": 17.72
+        },
+        {
+          "word": "like",
+          "start": 17.72,
+          "end": 18.04
+        },
+        {
+          "word": "it",
+          "start": 18.04,
+          "end": 18.22
+        },
+        {
+          "word": "here",
+          "start": 18.22,
+          "end": 18.4
+        },
+        {
+          "word": "then",
+          "start": 18.4,
+          "end": 19.08
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "startMs": 21200,
+      "endMs": 22040,
+      "text": "4",
+      "words": [
+        {
+          "word": "4",
+          "start": 21.2,
+          "end": 22.04
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "startMs": 22960,
+      "endMs": 24940,
+      "text": "You don't like it here then",
+      "words": [
+        {
+          "word": "You",
+          "start": 22.96,
+          "end": 23.52
+        },
+        {
+          "word": "don't",
+          "start": 23.52,
+          "end": 23.8
+        },
+        {
+          "word": "like",
+          "start": 23.8,
+          "end": 24.12
+        },
+        {
+          "word": "it",
+          "start": 24.12,
+          "end": 24.28
+        },
+        {
+          "word": "here",
+          "start": 24.28,
+          "end": 24.46
+        },
+        {
+          "word": "then",
+          "start": 24.46,
+          "end": 24.94
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,384 @@
+{
+  "model": "small",
+  "language": "en",
+  "text": "Unit 2. 2.1 1 Today I want to explain some alternative solutions. 2 As we all know, in order to grow plants we need water and sunlight. 3 I think that desert farms might be a very interesting way to farm in the future. 4 If you add the nutrients to water, you can grow fruit and vegetables in water.",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 3180,
+      "text": "Unit 2. 2.1",
+      "words": [
+        {
+          "word": "Unit",
+          "start": 0.0,
+          "end": 0.52
+        },
+        {
+          "word": "2.",
+          "start": 0.52,
+          "end": 1.18
+        },
+        {
+          "word": "2",
+          "start": 2.06,
+          "end": 2.46
+        },
+        {
+          "word": ".1",
+          "start": 2.46,
+          "end": 3.18
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 4160,
+      "endMs": 4600,
+      "text": "1",
+      "words": [
+        {
+          "word": "1",
+          "start": 4.16,
+          "end": 4.6
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 5580,
+      "endMs": 9480,
+      "text": "Today I want to explain some alternative solutions.",
+      "words": [
+        {
+          "word": "Today",
+          "start": 5.5799999999999965,
+          "end": 6.42
+        },
+        {
+          "word": "I",
+          "start": 6.42,
+          "end": 7.1
+        },
+        {
+          "word": "want",
+          "start": 7.1,
+          "end": 7.24
+        },
+        {
+          "word": "to",
+          "start": 7.24,
+          "end": 7.42
+        },
+        {
+          "word": "explain",
+          "start": 7.42,
+          "end": 7.84
+        },
+        {
+          "word": "some",
+          "start": 7.84,
+          "end": 8.22
+        },
+        {
+          "word": "alternative",
+          "start": 8.22,
+          "end": 8.76
+        },
+        {
+          "word": "solutions.",
+          "start": 8.76,
+          "end": 9.48
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 12180,
+      "endMs": 13020,
+      "text": "2",
+      "words": [
+        {
+          "word": "2",
+          "start": 12.18,
+          "end": 13.02
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 14400,
+      "endMs": 19120,
+      "text": "As we all know, in order to grow plants we need water and sunlight.",
+      "words": [
+        {
+          "word": "As",
+          "start": 14.319999999999999,
+          "end": 14.74
+        },
+        {
+          "word": "we",
+          "start": 14.74,
+          "end": 14.96
+        },
+        {
+          "word": "all",
+          "start": 14.96,
+          "end": 15.16
+        },
+        {
+          "word": "know,",
+          "start": 15.16,
+          "end": 15.5
+        },
+        {
+          "word": "in",
+          "start": 16.06,
+          "end": 16.24
+        },
+        {
+          "word": "order",
+          "start": 16.24,
+          "end": 16.48
+        },
+        {
+          "word": "to",
+          "start": 16.48,
+          "end": 16.68
+        },
+        {
+          "word": "grow",
+          "start": 16.68,
+          "end": 16.9
+        },
+        {
+          "word": "plants",
+          "start": 16.9,
+          "end": 17.38
+        },
+        {
+          "word": "we",
+          "start": 17.38,
+          "end": 17.64
+        },
+        {
+          "word": "need",
+          "start": 17.64,
+          "end": 17.9
+        },
+        {
+          "word": "water",
+          "start": 17.9,
+          "end": 18.3
+        },
+        {
+          "word": "and",
+          "start": 18.3,
+          "end": 18.7
+        },
+        {
+          "word": "sunlight.",
+          "start": 18.7,
+          "end": 19.12
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "startMs": 21680,
+      "endMs": 22520,
+      "text": "3",
+      "words": [
+        {
+          "word": "3",
+          "start": 21.68,
+          "end": 22.52
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "startMs": 23560,
+      "endMs": 28840,
+      "text": "I think that desert farms might be a very interesting way to farm in the future.",
+      "words": [
+        {
+          "word": "I",
+          "start": 23.56,
+          "end": 24.16
+        },
+        {
+          "word": "think",
+          "start": 24.16,
+          "end": 24.4
+        },
+        {
+          "word": "that",
+          "start": 24.4,
+          "end": 24.6
+        },
+        {
+          "word": "desert",
+          "start": 24.6,
+          "end": 25.04
+        },
+        {
+          "word": "farms",
+          "start": 25.04,
+          "end": 25.6
+        },
+        {
+          "word": "might",
+          "start": 25.6,
+          "end": 25.94
+        },
+        {
+          "word": "be",
+          "start": 25.94,
+          "end": 26.2
+        },
+        {
+          "word": "a",
+          "start": 26.2,
+          "end": 26.3
+        },
+        {
+          "word": "very",
+          "start": 26.3,
+          "end": 26.66
+        },
+        {
+          "word": "interesting",
+          "start": 26.66,
+          "end": 27.24
+        },
+        {
+          "word": "way",
+          "start": 27.24,
+          "end": 27.62
+        },
+        {
+          "word": "to",
+          "start": 27.62,
+          "end": 27.84
+        },
+        {
+          "word": "farm",
+          "start": 27.84,
+          "end": 28.18
+        },
+        {
+          "word": "in",
+          "start": 28.18,
+          "end": 28.34
+        },
+        {
+          "word": "the",
+          "start": 28.34,
+          "end": 28.44
+        },
+        {
+          "word": "future.",
+          "start": 28.44,
+          "end": 28.84
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "startMs": 31360,
+      "endMs": 31960,
+      "text": "4",
+      "words": [
+        {
+          "word": "4",
+          "start": 31.36,
+          "end": 31.96
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "startMs": 33180,
+      "endMs": 38180,
+      "text": "If you add the nutrients to water, you can grow fruit and vegetables in water.",
+      "words": [
+        {
+          "word": "If",
+          "start": 33.18,
+          "end": 33.78
+        },
+        {
+          "word": "you",
+          "start": 33.78,
+          "end": 33.94
+        },
+        {
+          "word": "add",
+          "start": 33.94,
+          "end": 34.14
+        },
+        {
+          "word": "the",
+          "start": 34.14,
+          "end": 34.3
+        },
+        {
+          "word": "nutrients",
+          "start": 34.3,
+          "end": 34.78
+        },
+        {
+          "word": "to",
+          "start": 34.78,
+          "end": 35.04
+        },
+        {
+          "word": "water,",
+          "start": 35.04,
+          "end": 35.32
+        },
+        {
+          "word": "you",
+          "start": 35.98,
+          "end": 36.1
+        },
+        {
+          "word": "can",
+          "start": 36.1,
+          "end": 36.3
+        },
+        {
+          "word": "grow",
+          "start": 36.3,
+          "end": 36.56
+        },
+        {
+          "word": "fruit",
+          "start": 36.56,
+          "end": 36.86
+        },
+        {
+          "word": "and",
+          "start": 36.86,
+          "end": 37.12
+        },
+        {
+          "word": "vegetables",
+          "start": 37.12,
+          "end": 37.6
+        },
+        {
+          "word": "in",
+          "start": 37.6,
+          "end": 37.9
+        },
+        {
+          "word": "water.",
+          "start": 37.9,
+          "end": 38.18
+        }
+      ]
+    }
+  ]
+}

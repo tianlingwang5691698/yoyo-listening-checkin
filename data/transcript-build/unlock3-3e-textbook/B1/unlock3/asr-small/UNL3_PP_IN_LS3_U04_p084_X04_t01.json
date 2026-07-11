@@ -1,0 +1,35 @@
+{
+  "model": "small",
+  "language": "en",
+  "text": "Unit 4, 4.1.",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 2840,
+      "text": "Unit 4, 4.1.",
+      "words": [
+        {
+          "word": "Unit",
+          "start": 0.0,
+          "end": 0.48
+        },
+        {
+          "word": "4,",
+          "start": 0.48,
+          "end": 1.02
+        },
+        {
+          "word": "4",
+          "start": 1.8,
+          "end": 2.16
+        },
+        {
+          "word": ".1.",
+          "start": 2.16,
+          "end": 2.84
+        }
+      ]
+    }
+  ]
+}

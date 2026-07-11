@@ -1,0 +1,400 @@
+{
+  "model": "medium",
+  "language": "en",
+  "text": "7.5 1 Personally, I'm not really sure. 2 I'm not an expert but... 3 All I know is... 4 For me? 5 You could say that, however actually... That's true in part, but I think... 7 You may be right, but I wonder if... 8 I see what you're saying, but... maybe...",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 2240,
+      "text": "7.5",
+      "words": [
+        {
+          "word": "7",
+          "start": 0.0,
+          "end": 0.6
+        },
+        {
+          "word": ".5",
+          "start": 0.6,
+          "end": 2.24
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 2240,
+      "endMs": 4000,
+      "text": "1",
+      "words": [
+        {
+          "word": "1",
+          "start": 2.24,
+          "end": 4.0
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 4580,
+      "endMs": 7300,
+      "text": "Personally, I'm not really sure.",
+      "words": [
+        {
+          "word": "Personally,",
+          "start": 4.58,
+          "end": 5.14
+        },
+        {
+          "word": "I'm",
+          "start": 5.62,
+          "end": 5.94
+        },
+        {
+          "word": "not",
+          "start": 5.94,
+          "end": 6.24
+        },
+        {
+          "word": "really",
+          "start": 6.24,
+          "end": 6.68
+        },
+        {
+          "word": "sure.",
+          "start": 6.68,
+          "end": 7.3
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 9720,
+      "endMs": 10600,
+      "text": "2",
+      "words": [
+        {
+          "word": "2",
+          "start": 9.72,
+          "end": 10.6
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 10600,
+      "endMs": 15000,
+      "text": "I'm not an expert but...",
+      "words": [
+        {
+          "word": "I'm",
+          "start": 10.6,
+          "end": 12.04
+        },
+        {
+          "word": "not",
+          "start": 12.04,
+          "end": 12.26
+        },
+        {
+          "word": "an",
+          "start": 12.26,
+          "end": 12.56
+        },
+        {
+          "word": "expert",
+          "start": 12.56,
+          "end": 13.06
+        },
+        {
+          "word": "but...",
+          "start": 13.06,
+          "end": 15.0
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "startMs": 15540,
+      "endMs": 16880,
+      "text": "3",
+      "words": [
+        {
+          "word": "3",
+          "start": 15.54,
+          "end": 16.88
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "startMs": 18000,
+      "endMs": 21280,
+      "text": "All I know is...",
+      "words": [
+        {
+          "word": "All",
+          "start": 17.740000000000002,
+          "end": 18.44
+        },
+        {
+          "word": "I",
+          "start": 18.44,
+          "end": 18.74
+        },
+        {
+          "word": "know",
+          "start": 18.74,
+          "end": 19.16
+        },
+        {
+          "word": "is...",
+          "start": 19.16,
+          "end": 21.28
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "startMs": 22000,
+      "endMs": 23160,
+      "text": "4",
+      "words": [
+        {
+          "word": "4",
+          "start": 22.0,
+          "end": 23.16
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "startMs": 24000,
+      "endMs": 25000,
+      "text": "For me?",
+      "words": [
+        {
+          "word": "For",
+          "start": 23.76,
+          "end": 24.46
+        },
+        {
+          "word": "me?",
+          "start": 24.46,
+          "end": 25.0
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "startMs": 26840,
+      "endMs": 28200,
+      "text": "5",
+      "words": [
+        {
+          "word": "5",
+          "start": 26.84,
+          "end": 28.2
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "startMs": 29280,
+      "endMs": 34200,
+      "text": "You could say that, however actually...",
+      "words": [
+        {
+          "word": "You",
+          "start": 29.28,
+          "end": 29.96
+        },
+        {
+          "word": "could",
+          "start": 29.96,
+          "end": 30.3
+        },
+        {
+          "word": "say",
+          "start": 30.3,
+          "end": 30.64
+        },
+        {
+          "word": "that,",
+          "start": 30.64,
+          "end": 31.14
+        },
+        {
+          "word": "however",
+          "start": 31.44,
+          "end": 31.94
+        },
+        {
+          "word": "actually...",
+          "start": 31.94,
+          "end": 34.2
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "startMs": 37160,
+      "endMs": 42160,
+      "text": "That's true in part, but I think...",
+      "words": [
+        {
+          "word": "That's",
+          "start": 37.160000000000004,
+          "end": 37.84
+        },
+        {
+          "word": "true",
+          "start": 37.84,
+          "end": 38.14
+        },
+        {
+          "word": "in",
+          "start": 38.14,
+          "end": 38.56
+        },
+        {
+          "word": "part,",
+          "start": 38.56,
+          "end": 38.98
+        },
+        {
+          "word": "but",
+          "start": 39.3,
+          "end": 39.56
+        },
+        {
+          "word": "I",
+          "start": 39.56,
+          "end": 39.86
+        },
+        {
+          "word": "think...",
+          "start": 39.86,
+          "end": 42.16
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "startMs": 42840,
+      "endMs": 43520,
+      "text": "7",
+      "words": [
+        {
+          "word": "7",
+          "start": 42.84,
+          "end": 43.52
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "startMs": 44420,
+      "endMs": 49220,
+      "text": "You may be right, but I wonder if...",
+      "words": [
+        {
+          "word": "You",
+          "start": 44.42,
+          "end": 45.1
+        },
+        {
+          "word": "may",
+          "start": 45.1,
+          "end": 45.42
+        },
+        {
+          "word": "be",
+          "start": 45.42,
+          "end": 45.7
+        },
+        {
+          "word": "right,",
+          "start": 45.7,
+          "end": 45.98
+        },
+        {
+          "word": "but",
+          "start": 46.3,
+          "end": 46.54
+        },
+        {
+          "word": "I",
+          "start": 46.54,
+          "end": 46.84
+        },
+        {
+          "word": "wonder",
+          "start": 46.84,
+          "end": 47.14
+        },
+        {
+          "word": "if...",
+          "start": 47.14,
+          "end": 49.22
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "startMs": 50100,
+      "endMs": 50780,
+      "text": "8",
+      "words": [
+        {
+          "word": "8",
+          "start": 50.1,
+          "end": 50.78
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "startMs": 51640,
+      "endMs": 55560,
+      "text": "I see what you're saying, but... maybe...",
+      "words": [
+        {
+          "word": "I",
+          "start": 51.64,
+          "end": 52.32
+        },
+        {
+          "word": "see",
+          "start": 52.32,
+          "end": 52.54
+        },
+        {
+          "word": "what",
+          "start": 52.54,
+          "end": 52.78
+        },
+        {
+          "word": "you're",
+          "start": 52.78,
+          "end": 53.02
+        },
+        {
+          "word": "saying,",
+          "start": 53.02,
+          "end": 53.5
+        },
+        {
+          "word": "but...",
+          "start": 53.7,
+          "end": 54.88
+        },
+        {
+          "word": "maybe...",
+          "start": 54.88,
+          "end": 55.56
+        }
+      ]
+    }
+  ]
+}

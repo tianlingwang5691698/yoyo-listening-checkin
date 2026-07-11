@@ -1,0 +1,177 @@
+{
+  "model": "small",
+  "language": "en",
+  "text": "3.4 1 You will hear the main ideas and some additional information. 2 You will hear the main ideas as well as some additional information.",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 1520,
+      "text": "3.4",
+      "words": [
+        {
+          "word": "3",
+          "start": 0.0,
+          "end": 0.6
+        },
+        {
+          "word": ".4",
+          "start": 0.6,
+          "end": 1.52
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 3500,
+      "endMs": 4020,
+      "text": "1",
+      "words": [
+        {
+          "word": "1",
+          "start": 3.46,
+          "end": 4.02
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 6000,
+      "endMs": 10400,
+      "text": "You will hear the main ideas and some additional information.",
+      "words": [
+        {
+          "word": "You",
+          "start": 5.94,
+          "end": 6.5
+        },
+        {
+          "word": "will",
+          "start": 6.5,
+          "end": 6.7
+        },
+        {
+          "word": "hear",
+          "start": 6.7,
+          "end": 6.92
+        },
+        {
+          "word": "the",
+          "start": 6.92,
+          "end": 7.06
+        },
+        {
+          "word": "main",
+          "start": 7.06,
+          "end": 7.42
+        },
+        {
+          "word": "ideas",
+          "start": 7.42,
+          "end": 7.98
+        },
+        {
+          "word": "and",
+          "start": 7.98,
+          "end": 8.66
+        },
+        {
+          "word": "some",
+          "start": 8.66,
+          "end": 9.06
+        },
+        {
+          "word": "additional",
+          "start": 9.06,
+          "end": 9.66
+        },
+        {
+          "word": "information.",
+          "start": 9.66,
+          "end": 10.4
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 12500,
+      "endMs": 12860,
+      "text": "2",
+      "words": [
+        {
+          "word": "2",
+          "start": 12.3,
+          "end": 12.86
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 14000,
+      "endMs": 18060,
+      "text": "You will hear the main ideas as well as some additional information.",
+      "words": [
+        {
+          "word": "You",
+          "start": 13.719999999999999,
+          "end": 14.28
+        },
+        {
+          "word": "will",
+          "start": 14.28,
+          "end": 14.46
+        },
+        {
+          "word": "hear",
+          "start": 14.46,
+          "end": 14.68
+        },
+        {
+          "word": "the",
+          "start": 14.68,
+          "end": 14.84
+        },
+        {
+          "word": "main",
+          "start": 14.84,
+          "end": 15.14
+        },
+        {
+          "word": "ideas",
+          "start": 15.14,
+          "end": 15.82
+        },
+        {
+          "word": "as",
+          "start": 15.82,
+          "end": 16.26
+        },
+        {
+          "word": "well",
+          "start": 16.26,
+          "end": 16.46
+        },
+        {
+          "word": "as",
+          "start": 16.46,
+          "end": 16.64
+        },
+        {
+          "word": "some",
+          "start": 16.64,
+          "end": 16.82
+        },
+        {
+          "word": "additional",
+          "start": 16.82,
+          "end": 17.38
+        },
+        {
+          "word": "information.",
+          "start": 17.38,
+          "end": 18.06
+        }
+      ]
+    }
+  ]
+}

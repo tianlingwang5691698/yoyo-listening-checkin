@@ -1,0 +1,1937 @@
+{
+  "model": "small",
+  "language": "en",
+  "text": "Hello everyone, thank you for being here today. Welcome to the first meeting of Wheels to Work. As you know, the goal of this group is to make our city more bicycle friendly. Specifically, we'd like to make it easier for people to cycle to work. Cycling to work is good for the environment and it provides great exercise. And personally, I think it's a lot of fun. I'm hoping that we can work together to solve the problems which can make it difficult for city residents to cycle to work. Today, I'm going to talk about a few of those problems and share some ideas for solving them. So, the biggest issue is safety. A lot of people would love to cycle to work, but they're scared. They feel that it's just too dangerous. This is because there's a lot of traffic during rush hour, when most people drive to or from work and there's very little space for cyclists. Many of the cycle lanes we have are too narrow and some of the busiest streets don't even have cycle lanes. What's more, many drivers don't have respect for cyclists. Cars sometimes even drive in the cycle lanes to pass other cars. Of course, if a car hits a bicycle, it's going to injure or even kill the cyclist. A second issue is storage. Many people don't have a safe place to put their bicycles while they're at work. They worry that if they leave their bicycle outside, it'll get stolen. Also, it'll get wet when it rains and might get damaged over time. A third problem is that for some people, cycling to work isn't convenient. Maybe they live far from their job or maybe they sometimes work late and don't want to cycle home in the dark. And a lot of people don't like to cycle in the rain. What if you cycle to work and then later, it starts raining? From my own experience, I can tell you that it's pretty terrible to ride home during a storm. So, those are three of the biggest issues. Safety, storage and convenience.",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 2040,
+      "endMs": 9340,
+      "text": "Hello everyone, thank you for being here today. Welcome to the first meeting of Wheels to Work.",
+      "words": [
+        {
+          "word": "Hello",
+          "start": 2.0400000000000005,
+          "end": 2.72
+        },
+        {
+          "word": "everyone,",
+          "start": 2.72,
+          "end": 3.16
+        },
+        {
+          "word": "thank",
+          "start": 3.84,
+          "end": 4.12
+        },
+        {
+          "word": "you",
+          "start": 4.12,
+          "end": 4.34
+        },
+        {
+          "word": "for",
+          "start": 4.34,
+          "end": 4.52
+        },
+        {
+          "word": "being",
+          "start": 4.52,
+          "end": 4.74
+        },
+        {
+          "word": "here",
+          "start": 4.74,
+          "end": 5.08
+        },
+        {
+          "word": "today.",
+          "start": 5.08,
+          "end": 5.46
+        },
+        {
+          "word": "Welcome",
+          "start": 6.2,
+          "end": 6.52
+        },
+        {
+          "word": "to",
+          "start": 6.52,
+          "end": 6.86
+        },
+        {
+          "word": "the",
+          "start": 6.86,
+          "end": 6.98
+        },
+        {
+          "word": "first",
+          "start": 6.98,
+          "end": 7.36
+        },
+        {
+          "word": "meeting",
+          "start": 7.36,
+          "end": 7.86
+        },
+        {
+          "word": "of",
+          "start": 7.86,
+          "end": 8.22
+        },
+        {
+          "word": "Wheels",
+          "start": 8.22,
+          "end": 8.7
+        },
+        {
+          "word": "to",
+          "start": 8.7,
+          "end": 9.02
+        },
+        {
+          "word": "Work.",
+          "start": 9.02,
+          "end": 9.34
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 10060,
+      "endMs": 16480,
+      "text": "As you know, the goal of this group is to make our city more bicycle friendly. Specifically,",
+      "words": [
+        {
+          "word": "As",
+          "start": 10.06,
+          "end": 10.42
+        },
+        {
+          "word": "you",
+          "start": 10.42,
+          "end": 10.58
+        },
+        {
+          "word": "know,",
+          "start": 10.58,
+          "end": 10.8
+        },
+        {
+          "word": "the",
+          "start": 11.14,
+          "end": 11.18
+        },
+        {
+          "word": "goal",
+          "start": 11.18,
+          "end": 11.46
+        },
+        {
+          "word": "of",
+          "start": 11.46,
+          "end": 11.66
+        },
+        {
+          "word": "this",
+          "start": 11.66,
+          "end": 11.84
+        },
+        {
+          "word": "group",
+          "start": 11.84,
+          "end": 12.14
+        },
+        {
+          "word": "is",
+          "start": 12.14,
+          "end": 12.54
+        },
+        {
+          "word": "to",
+          "start": 12.54,
+          "end": 12.7
+        },
+        {
+          "word": "make",
+          "start": 12.7,
+          "end": 12.92
+        },
+        {
+          "word": "our",
+          "start": 12.92,
+          "end": 13.22
+        },
+        {
+          "word": "city",
+          "start": 13.22,
+          "end": 13.56
+        },
+        {
+          "word": "more",
+          "start": 13.56,
+          "end": 14.1
+        },
+        {
+          "word": "bicycle",
+          "start": 14.1,
+          "end": 14.62
+        },
+        {
+          "word": "friendly.",
+          "start": 14.62,
+          "end": 15.16
+        },
+        {
+          "word": "Specifically,",
+          "start": 15.94,
+          "end": 16.48
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 17120,
+      "endMs": 23580,
+      "text": "we'd like to make it easier for people to cycle to work. Cycling to work is good for",
+      "words": [
+        {
+          "word": "we'd",
+          "start": 17.12,
+          "end": 17.42
+        },
+        {
+          "word": "like",
+          "start": 17.42,
+          "end": 17.58
+        },
+        {
+          "word": "to",
+          "start": 17.58,
+          "end": 17.84
+        },
+        {
+          "word": "make",
+          "start": 17.84,
+          "end": 18.02
+        },
+        {
+          "word": "it",
+          "start": 18.02,
+          "end": 18.2
+        },
+        {
+          "word": "easier",
+          "start": 18.2,
+          "end": 18.64
+        },
+        {
+          "word": "for",
+          "start": 18.64,
+          "end": 19.04
+        },
+        {
+          "word": "people",
+          "start": 19.04,
+          "end": 19.38
+        },
+        {
+          "word": "to",
+          "start": 19.38,
+          "end": 19.78
+        },
+        {
+          "word": "cycle",
+          "start": 19.78,
+          "end": 20.2
+        },
+        {
+          "word": "to",
+          "start": 20.2,
+          "end": 20.5
+        },
+        {
+          "word": "work.",
+          "start": 20.5,
+          "end": 20.84
+        },
+        {
+          "word": "Cycling",
+          "start": 21.72,
+          "end": 22.06
+        },
+        {
+          "word": "to",
+          "start": 22.06,
+          "end": 22.36
+        },
+        {
+          "word": "work",
+          "start": 22.36,
+          "end": 22.68
+        },
+        {
+          "word": "is",
+          "start": 22.68,
+          "end": 23.04
+        },
+        {
+          "word": "good",
+          "start": 23.04,
+          "end": 23.36
+        },
+        {
+          "word": "for",
+          "start": 23.36,
+          "end": 23.58
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 23580,
+      "endMs": 30360,
+      "text": "the environment and it provides great exercise. And personally, I think it's a lot of fun.",
+      "words": [
+        {
+          "word": "the",
+          "start": 23.58,
+          "end": 23.7
+        },
+        {
+          "word": "environment",
+          "start": 23.7,
+          "end": 24.18
+        },
+        {
+          "word": "and",
+          "start": 24.18,
+          "end": 25.08
+        },
+        {
+          "word": "it",
+          "start": 25.08,
+          "end": 25.26
+        },
+        {
+          "word": "provides",
+          "start": 25.26,
+          "end": 25.6
+        },
+        {
+          "word": "great",
+          "start": 25.6,
+          "end": 26.02
+        },
+        {
+          "word": "exercise.",
+          "start": 26.02,
+          "end": 26.7
+        },
+        {
+          "word": "And",
+          "start": 27.46,
+          "end": 27.88
+        },
+        {
+          "word": "personally,",
+          "start": 27.88,
+          "end": 28.54
+        },
+        {
+          "word": "I",
+          "start": 28.92,
+          "end": 29.18
+        },
+        {
+          "word": "think",
+          "start": 29.18,
+          "end": 29.38
+        },
+        {
+          "word": "it's",
+          "start": 29.38,
+          "end": 29.64
+        },
+        {
+          "word": "a",
+          "start": 29.64,
+          "end": 29.74
+        },
+        {
+          "word": "lot",
+          "start": 29.74,
+          "end": 29.86
+        },
+        {
+          "word": "of",
+          "start": 29.86,
+          "end": 30.0
+        },
+        {
+          "word": "fun.",
+          "start": 30.0,
+          "end": 30.36
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 31260,
+      "endMs": 36660,
+      "text": "I'm hoping that we can work together to solve the problems which can make it difficult for",
+      "words": [
+        {
+          "word": "I'm",
+          "start": 31.26,
+          "end": 31.54
+        },
+        {
+          "word": "hoping",
+          "start": 31.54,
+          "end": 31.88
+        },
+        {
+          "word": "that",
+          "start": 31.88,
+          "end": 32.22
+        },
+        {
+          "word": "we",
+          "start": 32.22,
+          "end": 32.38
+        },
+        {
+          "word": "can",
+          "start": 32.38,
+          "end": 32.56
+        },
+        {
+          "word": "work",
+          "start": 32.56,
+          "end": 32.8
+        },
+        {
+          "word": "together",
+          "start": 32.8,
+          "end": 33.28
+        },
+        {
+          "word": "to",
+          "start": 33.28,
+          "end": 33.64
+        },
+        {
+          "word": "solve",
+          "start": 33.64,
+          "end": 34.0
+        },
+        {
+          "word": "the",
+          "start": 34.0,
+          "end": 34.24
+        },
+        {
+          "word": "problems",
+          "start": 34.24,
+          "end": 34.66
+        },
+        {
+          "word": "which",
+          "start": 34.66,
+          "end": 34.98
+        },
+        {
+          "word": "can",
+          "start": 34.98,
+          "end": 35.34
+        },
+        {
+          "word": "make",
+          "start": 35.34,
+          "end": 35.58
+        },
+        {
+          "word": "it",
+          "start": 35.58,
+          "end": 35.74
+        },
+        {
+          "word": "difficult",
+          "start": 35.74,
+          "end": 36.26
+        },
+        {
+          "word": "for",
+          "start": 36.26,
+          "end": 36.66
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "startMs": 36660,
+      "endMs": 43980,
+      "text": "city residents to cycle to work. Today, I'm going to talk about a few of those problems and share",
+      "words": [
+        {
+          "word": "city",
+          "start": 36.66,
+          "end": 36.92
+        },
+        {
+          "word": "residents",
+          "start": 36.92,
+          "end": 37.46
+        },
+        {
+          "word": "to",
+          "start": 37.46,
+          "end": 37.8
+        },
+        {
+          "word": "cycle",
+          "start": 37.8,
+          "end": 38.2
+        },
+        {
+          "word": "to",
+          "start": 38.2,
+          "end": 38.46
+        },
+        {
+          "word": "work.",
+          "start": 38.46,
+          "end": 38.74
+        },
+        {
+          "word": "Today,",
+          "start": 39.66,
+          "end": 40.1
+        },
+        {
+          "word": "I'm",
+          "start": 40.34,
+          "end": 40.68
+        },
+        {
+          "word": "going",
+          "start": 40.68,
+          "end": 40.88
+        },
+        {
+          "word": "to",
+          "start": 40.88,
+          "end": 41.1
+        },
+        {
+          "word": "talk",
+          "start": 41.1,
+          "end": 41.36
+        },
+        {
+          "word": "about",
+          "start": 41.36,
+          "end": 41.74
+        },
+        {
+          "word": "a",
+          "start": 41.74,
+          "end": 42.0
+        },
+        {
+          "word": "few",
+          "start": 42.0,
+          "end": 42.16
+        },
+        {
+          "word": "of",
+          "start": 42.16,
+          "end": 42.32
+        },
+        {
+          "word": "those",
+          "start": 42.32,
+          "end": 42.5
+        },
+        {
+          "word": "problems",
+          "start": 42.5,
+          "end": 42.98
+        },
+        {
+          "word": "and",
+          "start": 42.98,
+          "end": 43.66
+        },
+        {
+          "word": "share",
+          "start": 43.66,
+          "end": 43.98
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "startMs": 43980,
+      "endMs": 51800,
+      "text": "some ideas for solving them. So, the biggest issue is safety. A lot of people would love",
+      "words": [
+        {
+          "word": "some",
+          "start": 43.98,
+          "end": 44.18
+        },
+        {
+          "word": "ideas",
+          "start": 44.18,
+          "end": 44.64
+        },
+        {
+          "word": "for",
+          "start": 44.64,
+          "end": 45.08
+        },
+        {
+          "word": "solving",
+          "start": 45.08,
+          "end": 45.38
+        },
+        {
+          "word": "them.",
+          "start": 45.38,
+          "end": 45.66
+        },
+        {
+          "word": "So,",
+          "start": 46.54,
+          "end": 47.06
+        },
+        {
+          "word": "the",
+          "start": 47.3,
+          "end": 47.46
+        },
+        {
+          "word": "biggest",
+          "start": 47.46,
+          "end": 47.72
+        },
+        {
+          "word": "issue",
+          "start": 47.72,
+          "end": 48.28
+        },
+        {
+          "word": "is",
+          "start": 48.28,
+          "end": 48.6
+        },
+        {
+          "word": "safety.",
+          "start": 48.6,
+          "end": 49.04
+        },
+        {
+          "word": "A",
+          "start": 50.0,
+          "end": 50.28
+        },
+        {
+          "word": "lot",
+          "start": 50.28,
+          "end": 50.5
+        },
+        {
+          "word": "of",
+          "start": 50.5,
+          "end": 50.72
+        },
+        {
+          "word": "people",
+          "start": 50.72,
+          "end": 51.04
+        },
+        {
+          "word": "would",
+          "start": 51.04,
+          "end": 51.4
+        },
+        {
+          "word": "love",
+          "start": 51.4,
+          "end": 51.8
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "startMs": 51800,
+      "endMs": 58720,
+      "text": "to cycle to work, but they're scared. They feel that it's just too dangerous. This is because",
+      "words": [
+        {
+          "word": "to",
+          "start": 51.8,
+          "end": 52.04
+        },
+        {
+          "word": "cycle",
+          "start": 52.04,
+          "end": 52.36
+        },
+        {
+          "word": "to",
+          "start": 52.36,
+          "end": 52.6
+        },
+        {
+          "word": "work,",
+          "start": 52.6,
+          "end": 52.9
+        },
+        {
+          "word": "but",
+          "start": 53.26,
+          "end": 53.48
+        },
+        {
+          "word": "they're",
+          "start": 53.48,
+          "end": 53.78
+        },
+        {
+          "word": "scared.",
+          "start": 53.78,
+          "end": 54.14
+        },
+        {
+          "word": "They",
+          "start": 54.82,
+          "end": 55.02
+        },
+        {
+          "word": "feel",
+          "start": 55.02,
+          "end": 55.4
+        },
+        {
+          "word": "that",
+          "start": 55.4,
+          "end": 55.64
+        },
+        {
+          "word": "it's",
+          "start": 55.64,
+          "end": 55.92
+        },
+        {
+          "word": "just",
+          "start": 55.92,
+          "end": 56.18
+        },
+        {
+          "word": "too",
+          "start": 56.18,
+          "end": 56.52
+        },
+        {
+          "word": "dangerous.",
+          "start": 56.52,
+          "end": 56.96
+        },
+        {
+          "word": "This",
+          "start": 57.96,
+          "end": 58.28
+        },
+        {
+          "word": "is",
+          "start": 58.28,
+          "end": 58.42
+        },
+        {
+          "word": "because",
+          "start": 58.42,
+          "end": 58.72
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "startMs": 58720,
+      "endMs": 65020,
+      "text": "there's a lot of traffic during rush hour, when most people drive to or from work and there's very",
+      "words": [
+        {
+          "word": "there's",
+          "start": 58.72,
+          "end": 59.16
+        },
+        {
+          "word": "a",
+          "start": 59.16,
+          "end": 59.24
+        },
+        {
+          "word": "lot",
+          "start": 59.24,
+          "end": 59.5
+        },
+        {
+          "word": "of",
+          "start": 59.5,
+          "end": 59.66
+        },
+        {
+          "word": "traffic",
+          "start": 59.66,
+          "end": 60.12
+        },
+        {
+          "word": "during",
+          "start": 60.12,
+          "end": 60.56
+        },
+        {
+          "word": "rush",
+          "start": 60.56,
+          "end": 60.92
+        },
+        {
+          "word": "hour,",
+          "start": 60.92,
+          "end": 61.26
+        },
+        {
+          "word": "when",
+          "start": 61.66,
+          "end": 61.98
+        },
+        {
+          "word": "most",
+          "start": 61.98,
+          "end": 62.24
+        },
+        {
+          "word": "people",
+          "start": 62.24,
+          "end": 62.54
+        },
+        {
+          "word": "drive",
+          "start": 62.54,
+          "end": 62.96
+        },
+        {
+          "word": "to",
+          "start": 62.96,
+          "end": 63.26
+        },
+        {
+          "word": "or",
+          "start": 63.26,
+          "end": 63.5
+        },
+        {
+          "word": "from",
+          "start": 63.5,
+          "end": 63.74
+        },
+        {
+          "word": "work",
+          "start": 63.74,
+          "end": 64.08
+        },
+        {
+          "word": "and",
+          "start": 64.08,
+          "end": 64.62
+        },
+        {
+          "word": "there's",
+          "start": 64.62,
+          "end": 64.82
+        },
+        {
+          "word": "very",
+          "start": 64.82,
+          "end": 65.02
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "startMs": 65020,
+      "endMs": 72180,
+      "text": "little space for cyclists. Many of the cycle lanes we have are too narrow and some of the busiest",
+      "words": [
+        {
+          "word": "little",
+          "start": 65.02,
+          "end": 65.28
+        },
+        {
+          "word": "space",
+          "start": 65.28,
+          "end": 65.78
+        },
+        {
+          "word": "for",
+          "start": 65.78,
+          "end": 66.12
+        },
+        {
+          "word": "cyclists.",
+          "start": 66.12,
+          "end": 66.8
+        },
+        {
+          "word": "Many",
+          "start": 67.6,
+          "end": 67.98
+        },
+        {
+          "word": "of",
+          "start": 67.98,
+          "end": 68.16
+        },
+        {
+          "word": "the",
+          "start": 68.16,
+          "end": 68.24
+        },
+        {
+          "word": "cycle",
+          "start": 68.24,
+          "end": 68.56
+        },
+        {
+          "word": "lanes",
+          "start": 68.56,
+          "end": 68.86
+        },
+        {
+          "word": "we",
+          "start": 68.86,
+          "end": 69.14
+        },
+        {
+          "word": "have",
+          "start": 69.14,
+          "end": 69.46
+        },
+        {
+          "word": "are",
+          "start": 69.46,
+          "end": 69.76
+        },
+        {
+          "word": "too",
+          "start": 69.76,
+          "end": 70.08
+        },
+        {
+          "word": "narrow",
+          "start": 70.08,
+          "end": 70.48
+        },
+        {
+          "word": "and",
+          "start": 70.48,
+          "end": 71.12
+        },
+        {
+          "word": "some",
+          "start": 71.12,
+          "end": 71.44
+        },
+        {
+          "word": "of",
+          "start": 71.44,
+          "end": 71.6
+        },
+        {
+          "word": "the",
+          "start": 71.6,
+          "end": 71.76
+        },
+        {
+          "word": "busiest",
+          "start": 71.76,
+          "end": 72.18
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "startMs": 72180,
+      "endMs": 80680,
+      "text": "streets don't even have cycle lanes. What's more, many drivers don't have respect for cyclists. Cars",
+      "words": [
+        {
+          "word": "streets",
+          "start": 72.18,
+          "end": 72.66
+        },
+        {
+          "word": "don't",
+          "start": 72.66,
+          "end": 73.32
+        },
+        {
+          "word": "even",
+          "start": 73.32,
+          "end": 73.54
+        },
+        {
+          "word": "have",
+          "start": 73.54,
+          "end": 73.82
+        },
+        {
+          "word": "cycle",
+          "start": 73.82,
+          "end": 74.2
+        },
+        {
+          "word": "lanes.",
+          "start": 74.2,
+          "end": 74.62
+        },
+        {
+          "word": "What's",
+          "start": 75.48,
+          "end": 76.12
+        },
+        {
+          "word": "more,",
+          "start": 76.12,
+          "end": 76.46
+        },
+        {
+          "word": "many",
+          "start": 76.88,
+          "end": 77.14
+        },
+        {
+          "word": "drivers",
+          "start": 77.14,
+          "end": 77.6
+        },
+        {
+          "word": "don't",
+          "start": 77.6,
+          "end": 78.1
+        },
+        {
+          "word": "have",
+          "start": 78.1,
+          "end": 78.26
+        },
+        {
+          "word": "respect",
+          "start": 78.26,
+          "end": 78.76
+        },
+        {
+          "word": "for",
+          "start": 78.76,
+          "end": 79.0
+        },
+        {
+          "word": "cyclists.",
+          "start": 79.0,
+          "end": 79.72
+        },
+        {
+          "word": "Cars",
+          "start": 80.3,
+          "end": 80.68
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "startMs": 80680,
+      "endMs": 87900,
+      "text": "sometimes even drive in the cycle lanes to pass other cars. Of course, if a car hits a bicycle,",
+      "words": [
+        {
+          "word": "sometimes",
+          "start": 80.68,
+          "end": 81.18
+        },
+        {
+          "word": "even",
+          "start": 81.18,
+          "end": 81.62
+        },
+        {
+          "word": "drive",
+          "start": 81.62,
+          "end": 82.06
+        },
+        {
+          "word": "in",
+          "start": 82.06,
+          "end": 82.3
+        },
+        {
+          "word": "the",
+          "start": 82.3,
+          "end": 82.42
+        },
+        {
+          "word": "cycle",
+          "start": 82.42,
+          "end": 82.72
+        },
+        {
+          "word": "lanes",
+          "start": 82.72,
+          "end": 83.14
+        },
+        {
+          "word": "to",
+          "start": 83.14,
+          "end": 83.38
+        },
+        {
+          "word": "pass",
+          "start": 83.38,
+          "end": 83.72
+        },
+        {
+          "word": "other",
+          "start": 83.72,
+          "end": 84.14
+        },
+        {
+          "word": "cars.",
+          "start": 84.14,
+          "end": 84.56
+        },
+        {
+          "word": "Of",
+          "start": 85.56,
+          "end": 85.74
+        },
+        {
+          "word": "course,",
+          "start": 85.74,
+          "end": 86.06
+        },
+        {
+          "word": "if",
+          "start": 86.28,
+          "end": 86.48
+        },
+        {
+          "word": "a",
+          "start": 86.48,
+          "end": 86.62
+        },
+        {
+          "word": "car",
+          "start": 86.62,
+          "end": 86.88
+        },
+        {
+          "word": "hits",
+          "start": 86.88,
+          "end": 87.28
+        },
+        {
+          "word": "a",
+          "start": 87.28,
+          "end": 87.54
+        },
+        {
+          "word": "bicycle,",
+          "start": 87.54,
+          "end": 87.9
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "startMs": 88340,
+      "endMs": 96120,
+      "text": "it's going to injure or even kill the cyclist. A second issue is storage. Many people don't have",
+      "words": [
+        {
+          "word": "it's",
+          "start": 88.34,
+          "end": 88.6
+        },
+        {
+          "word": "going",
+          "start": 88.6,
+          "end": 88.78
+        },
+        {
+          "word": "to",
+          "start": 88.78,
+          "end": 88.96
+        },
+        {
+          "word": "injure",
+          "start": 88.96,
+          "end": 89.5
+        },
+        {
+          "word": "or",
+          "start": 89.5,
+          "end": 89.82
+        },
+        {
+          "word": "even",
+          "start": 89.82,
+          "end": 90.22
+        },
+        {
+          "word": "kill",
+          "start": 90.22,
+          "end": 90.58
+        },
+        {
+          "word": "the",
+          "start": 90.58,
+          "end": 90.8
+        },
+        {
+          "word": "cyclist.",
+          "start": 90.8,
+          "end": 91.38
+        },
+        {
+          "word": "A",
+          "start": 91.92,
+          "end": 92.42
+        },
+        {
+          "word": "second",
+          "start": 92.42,
+          "end": 92.68
+        },
+        {
+          "word": "issue",
+          "start": 92.68,
+          "end": 93.12
+        },
+        {
+          "word": "is",
+          "start": 93.12,
+          "end": 93.42
+        },
+        {
+          "word": "storage.",
+          "start": 93.42,
+          "end": 93.94
+        },
+        {
+          "word": "Many",
+          "start": 94.74,
+          "end": 95.04
+        },
+        {
+          "word": "people",
+          "start": 95.04,
+          "end": 95.42
+        },
+        {
+          "word": "don't",
+          "start": 95.42,
+          "end": 95.82
+        },
+        {
+          "word": "have",
+          "start": 95.82,
+          "end": 96.12
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "startMs": 96120,
+      "endMs": 102340,
+      "text": "a safe place to put their bicycles while they're at work. They worry that if they leave their",
+      "words": [
+        {
+          "word": "a",
+          "start": 96.12,
+          "end": 96.32
+        },
+        {
+          "word": "safe",
+          "start": 96.32,
+          "end": 96.66
+        },
+        {
+          "word": "place",
+          "start": 96.66,
+          "end": 97.0
+        },
+        {
+          "word": "to",
+          "start": 97.0,
+          "end": 97.28
+        },
+        {
+          "word": "put",
+          "start": 97.28,
+          "end": 97.54
+        },
+        {
+          "word": "their",
+          "start": 97.54,
+          "end": 97.76
+        },
+        {
+          "word": "bicycles",
+          "start": 97.76,
+          "end": 98.28
+        },
+        {
+          "word": "while",
+          "start": 98.28,
+          "end": 98.78
+        },
+        {
+          "word": "they're",
+          "start": 98.78,
+          "end": 99.08
+        },
+        {
+          "word": "at",
+          "start": 99.08,
+          "end": 99.18
+        },
+        {
+          "word": "work.",
+          "start": 99.18,
+          "end": 99.58
+        },
+        {
+          "word": "They",
+          "start": 100.3,
+          "end": 100.74
+        },
+        {
+          "word": "worry",
+          "start": 100.74,
+          "end": 101.12
+        },
+        {
+          "word": "that",
+          "start": 101.12,
+          "end": 101.4
+        },
+        {
+          "word": "if",
+          "start": 101.4,
+          "end": 101.68
+        },
+        {
+          "word": "they",
+          "start": 101.68,
+          "end": 101.86
+        },
+        {
+          "word": "leave",
+          "start": 101.86,
+          "end": 102.12
+        },
+        {
+          "word": "their",
+          "start": 102.12,
+          "end": 102.34
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "startMs": 102340,
+      "endMs": 109840,
+      "text": "bicycle outside, it'll get stolen. Also, it'll get wet when it rains and might get damaged over",
+      "words": [
+        {
+          "word": "bicycle",
+          "start": 102.34,
+          "end": 102.8
+        },
+        {
+          "word": "outside,",
+          "start": 102.8,
+          "end": 103.6
+        },
+        {
+          "word": "it'll",
+          "start": 104.06,
+          "end": 104.26
+        },
+        {
+          "word": "get",
+          "start": 104.26,
+          "end": 104.4
+        },
+        {
+          "word": "stolen.",
+          "start": 104.4,
+          "end": 104.84
+        },
+        {
+          "word": "Also,",
+          "start": 105.58,
+          "end": 106.08
+        },
+        {
+          "word": "it'll",
+          "start": 106.3,
+          "end": 106.5
+        },
+        {
+          "word": "get",
+          "start": 106.5,
+          "end": 106.66
+        },
+        {
+          "word": "wet",
+          "start": 106.66,
+          "end": 107.04
+        },
+        {
+          "word": "when",
+          "start": 107.04,
+          "end": 107.38
+        },
+        {
+          "word": "it",
+          "start": 107.38,
+          "end": 107.54
+        },
+        {
+          "word": "rains",
+          "start": 107.54,
+          "end": 107.88
+        },
+        {
+          "word": "and",
+          "start": 107.88,
+          "end": 108.4
+        },
+        {
+          "word": "might",
+          "start": 108.4,
+          "end": 108.72
+        },
+        {
+          "word": "get",
+          "start": 108.72,
+          "end": 108.96
+        },
+        {
+          "word": "damaged",
+          "start": 108.96,
+          "end": 109.46
+        },
+        {
+          "word": "over",
+          "start": 109.46,
+          "end": 109.84
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "startMs": 109840,
+      "endMs": 118240,
+      "text": "time. A third problem is that for some people, cycling to work isn't convenient. Maybe they live",
+      "words": [
+        {
+          "word": "time.",
+          "start": 109.84,
+          "end": 110.22
+        },
+        {
+          "word": "A",
+          "start": 110.96,
+          "end": 111.56
+        },
+        {
+          "word": "third",
+          "start": 111.56,
+          "end": 111.86
+        },
+        {
+          "word": "problem",
+          "start": 111.86,
+          "end": 112.34
+        },
+        {
+          "word": "is",
+          "start": 112.34,
+          "end": 112.76
+        },
+        {
+          "word": "that",
+          "start": 112.76,
+          "end": 113.04
+        },
+        {
+          "word": "for",
+          "start": 113.04,
+          "end": 113.4
+        },
+        {
+          "word": "some",
+          "start": 113.4,
+          "end": 113.64
+        },
+        {
+          "word": "people,",
+          "start": 113.64,
+          "end": 114.02
+        },
+        {
+          "word": "cycling",
+          "start": 114.62,
+          "end": 114.88
+        },
+        {
+          "word": "to",
+          "start": 114.88,
+          "end": 115.2
+        },
+        {
+          "word": "work",
+          "start": 115.2,
+          "end": 115.46
+        },
+        {
+          "word": "isn't",
+          "start": 115.46,
+          "end": 116.1
+        },
+        {
+          "word": "convenient.",
+          "start": 116.1,
+          "end": 116.74
+        },
+        {
+          "word": "Maybe",
+          "start": 117.38,
+          "end": 117.74
+        },
+        {
+          "word": "they",
+          "start": 117.74,
+          "end": 117.98
+        },
+        {
+          "word": "live",
+          "start": 117.98,
+          "end": 118.24
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "startMs": 118240,
+      "endMs": 124620,
+      "text": "far from their job or maybe they sometimes work late and don't want to cycle home in the dark.",
+      "words": [
+        {
+          "word": "far",
+          "start": 118.24,
+          "end": 118.66
+        },
+        {
+          "word": "from",
+          "start": 118.66,
+          "end": 118.84
+        },
+        {
+          "word": "their",
+          "start": 118.84,
+          "end": 119.06
+        },
+        {
+          "word": "job",
+          "start": 119.06,
+          "end": 119.5
+        },
+        {
+          "word": "or",
+          "start": 119.5,
+          "end": 120.0
+        },
+        {
+          "word": "maybe",
+          "start": 120.0,
+          "end": 120.4
+        },
+        {
+          "word": "they",
+          "start": 120.4,
+          "end": 120.66
+        },
+        {
+          "word": "sometimes",
+          "start": 120.66,
+          "end": 121.12
+        },
+        {
+          "word": "work",
+          "start": 121.12,
+          "end": 121.58
+        },
+        {
+          "word": "late",
+          "start": 121.58,
+          "end": 122.06
+        },
+        {
+          "word": "and",
+          "start": 122.06,
+          "end": 122.52
+        },
+        {
+          "word": "don't",
+          "start": 122.52,
+          "end": 122.82
+        },
+        {
+          "word": "want",
+          "start": 122.82,
+          "end": 123.02
+        },
+        {
+          "word": "to",
+          "start": 123.02,
+          "end": 123.18
+        },
+        {
+          "word": "cycle",
+          "start": 123.18,
+          "end": 123.48
+        },
+        {
+          "word": "home",
+          "start": 123.48,
+          "end": 123.92
+        },
+        {
+          "word": "in",
+          "start": 123.92,
+          "end": 124.18
+        },
+        {
+          "word": "the",
+          "start": 124.18,
+          "end": 124.28
+        },
+        {
+          "word": "dark.",
+          "start": 124.28,
+          "end": 124.62
+        }
+      ]
+    },
+    {
+      "index": 18,
+      "startMs": 125380,
+      "endMs": 132560,
+      "text": "And a lot of people don't like to cycle in the rain. What if you cycle to work and then later,",
+      "words": [
+        {
+          "word": "And",
+          "start": 125.38,
+          "end": 125.88
+        },
+        {
+          "word": "a",
+          "start": 125.88,
+          "end": 126.1
+        },
+        {
+          "word": "lot",
+          "start": 126.1,
+          "end": 126.3
+        },
+        {
+          "word": "of",
+          "start": 126.3,
+          "end": 126.48
+        },
+        {
+          "word": "people",
+          "start": 126.48,
+          "end": 126.78
+        },
+        {
+          "word": "don't",
+          "start": 126.78,
+          "end": 127.28
+        },
+        {
+          "word": "like",
+          "start": 127.28,
+          "end": 127.5
+        },
+        {
+          "word": "to",
+          "start": 127.5,
+          "end": 127.72
+        },
+        {
+          "word": "cycle",
+          "start": 127.72,
+          "end": 128.14
+        },
+        {
+          "word": "in",
+          "start": 128.14,
+          "end": 128.48
+        },
+        {
+          "word": "the",
+          "start": 128.48,
+          "end": 128.62
+        },
+        {
+          "word": "rain.",
+          "start": 128.62,
+          "end": 129.04
+        },
+        {
+          "word": "What",
+          "start": 129.8,
+          "end": 130.2
+        },
+        {
+          "word": "if",
+          "start": 130.2,
+          "end": 130.36
+        },
+        {
+          "word": "you",
+          "start": 130.36,
+          "end": 130.52
+        },
+        {
+          "word": "cycle",
+          "start": 130.52,
+          "end": 130.88
+        },
+        {
+          "word": "to",
+          "start": 130.88,
+          "end": 131.1
+        },
+        {
+          "word": "work",
+          "start": 131.1,
+          "end": 131.44
+        },
+        {
+          "word": "and",
+          "start": 131.44,
+          "end": 131.84
+        },
+        {
+          "word": "then",
+          "start": 131.84,
+          "end": 132.04
+        },
+        {
+          "word": "later,",
+          "start": 132.04,
+          "end": 132.56
+        }
+      ]
+    },
+    {
+      "index": 19,
+      "startMs": 132820,
+      "endMs": 139380,
+      "text": "it starts raining? From my own experience, I can tell you that it's pretty terrible to ride home",
+      "words": [
+        {
+          "word": "it",
+          "start": 132.82,
+          "end": 132.94
+        },
+        {
+          "word": "starts",
+          "start": 132.94,
+          "end": 133.22
+        },
+        {
+          "word": "raining?",
+          "start": 133.22,
+          "end": 133.64
+        },
+        {
+          "word": "From",
+          "start": 134.62,
+          "end": 134.92
+        },
+        {
+          "word": "my",
+          "start": 134.92,
+          "end": 135.14
+        },
+        {
+          "word": "own",
+          "start": 135.14,
+          "end": 135.36
+        },
+        {
+          "word": "experience,",
+          "start": 135.36,
+          "end": 135.96
+        },
+        {
+          "word": "I",
+          "start": 136.38,
+          "end": 136.62
+        },
+        {
+          "word": "can",
+          "start": 136.62,
+          "end": 136.78
+        },
+        {
+          "word": "tell",
+          "start": 136.78,
+          "end": 137.06
+        },
+        {
+          "word": "you",
+          "start": 137.06,
+          "end": 137.24
+        },
+        {
+          "word": "that",
+          "start": 137.24,
+          "end": 137.42
+        },
+        {
+          "word": "it's",
+          "start": 137.42,
+          "end": 137.64
+        },
+        {
+          "word": "pretty",
+          "start": 137.64,
+          "end": 137.94
+        },
+        {
+          "word": "terrible",
+          "start": 137.94,
+          "end": 138.44
+        },
+        {
+          "word": "to",
+          "start": 138.44,
+          "end": 138.74
+        },
+        {
+          "word": "ride",
+          "start": 138.74,
+          "end": 139.02
+        },
+        {
+          "word": "home",
+          "start": 139.02,
+          "end": 139.38
+        }
+      ]
+    },
+    {
+      "index": 20,
+      "startMs": 139380,
+      "endMs": 147500,
+      "text": "during a storm. So, those are three of the biggest issues. Safety, storage and convenience.",
+      "words": [
+        {
+          "word": "during",
+          "start": 139.38,
+          "end": 139.7
+        },
+        {
+          "word": "a",
+          "start": 139.7,
+          "end": 139.92
+        },
+        {
+          "word": "storm.",
+          "start": 139.92,
+          "end": 140.3
+        },
+        {
+          "word": "So,",
+          "start": 141.16,
+          "end": 141.54
+        },
+        {
+          "word": "those",
+          "start": 142.08,
+          "end": 142.4
+        },
+        {
+          "word": "are",
+          "start": 142.4,
+          "end": 142.74
+        },
+        {
+          "word": "three",
+          "start": 142.74,
+          "end": 143.02
+        },
+        {
+          "word": "of",
+          "start": 143.02,
+          "end": 143.22
+        },
+        {
+          "word": "the",
+          "start": 143.22,
+          "end": 143.32
+        },
+        {
+          "word": "biggest",
+          "start": 143.32,
+          "end": 143.64
+        },
+        {
+          "word": "issues.",
+          "start": 143.64,
+          "end": 144.18
+        },
+        {
+          "word": "Safety,",
+          "start": 144.8,
+          "end": 145.16
+        },
+        {
+          "word": "storage",
+          "start": 145.76,
+          "end": 146.2
+        },
+        {
+          "word": "and",
+          "start": 146.2,
+          "end": 147.0
+        },
+        {
+          "word": "convenience.",
+          "start": 147.0,
+          "end": 147.5
+        }
+      ]
+    }
+  ]
+}

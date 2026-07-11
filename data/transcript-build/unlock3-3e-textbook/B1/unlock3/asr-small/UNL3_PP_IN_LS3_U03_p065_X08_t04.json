@@ -1,0 +1,2535 @@
+{
+  "model": "small",
+  "language": "en",
+  "text": "3.4 And how can we solve these problems? Let's think again about traffic lights. Because of improvements in technology, modern traffic signals can measure how quickly the vehicles are moving along the roads, or see whether there's been a crash, and send this information back to a control center. I've heard about this. It means that the traffic controllers, either human or computer, can check for changes in traffic throughout the day, and figure out the best way to organize the signals to keep everything moving. Yes, they don't have to follow the same fixed timings for the lights all day long, like signals used to do. And although it's expensive to put in these signals across a whole city, it's far better than doing nothing. Technology, where would we be without it? Exactly. Which reminds me of another way to reduce traffic. Businesses replacing their vehicles with drones. Okay, tell me more. Some tasks city governments need to do, such as checking electricity lines, don't necessarily need to be carried out by a single person arriving in a big vehicle. A drone with a camera could send this information to engineers, who only need to go out if there is a problem. Think of how many work vans this could take off the roads every day. And delivery vans. That's another good example. In some cities, businesses can use drones to deliver small parcels, which is fantastic. It means even fewer vehicles on the roads. What would you say to people who refuse to give up driving their cars ever? I honestly think people should try to avoid driving as much as possible. But if they can't, they should consider their behavior. It's not just bad parking that causes traffic issues. Everyone needs to be a lot more responsible as drivers. In what way? When people get behind the steering wheel, they often become less helpful than normal. Like when someone is turning into a side street, that often means driving across the other lane past vehicles going in the opposite direction. If no one slows down to let in the person who wants to turn, the traffic gets worse and worse behind them. Even more so if someone stops in traffic with their car across the side street that person wants to turn into. Ah, listeners, if that doesn't annoy you as well, you're a better person than me. Me too. Please, everyone stop and give people enough space to turn into side streets. Mark, thanks for joining me. Thank you.",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 1280,
+      "text": "3.4",
+      "words": [
+        {
+          "word": "3",
+          "start": 0.0,
+          "end": 0.52
+        },
+        {
+          "word": ".4",
+          "start": 0.52,
+          "end": 1.28
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 2000,
+      "endMs": 4740,
+      "text": "And how can we solve these problems?",
+      "words": [
+        {
+          "word": "And",
+          "start": 2.0,
+          "end": 2.64
+        },
+        {
+          "word": "how",
+          "start": 2.64,
+          "end": 3.24
+        },
+        {
+          "word": "can",
+          "start": 3.24,
+          "end": 3.5
+        },
+        {
+          "word": "we",
+          "start": 3.5,
+          "end": 3.66
+        },
+        {
+          "word": "solve",
+          "start": 3.66,
+          "end": 3.96
+        },
+        {
+          "word": "these",
+          "start": 3.96,
+          "end": 4.24
+        },
+        {
+          "word": "problems?",
+          "start": 4.24,
+          "end": 4.74
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 5560,
+      "endMs": 7600,
+      "text": "Let's think again about traffic lights.",
+      "words": [
+        {
+          "word": "Let's",
+          "start": 5.56,
+          "end": 5.92
+        },
+        {
+          "word": "think",
+          "start": 5.92,
+          "end": 6.1
+        },
+        {
+          "word": "again",
+          "start": 6.1,
+          "end": 6.46
+        },
+        {
+          "word": "about",
+          "start": 6.46,
+          "end": 6.78
+        },
+        {
+          "word": "traffic",
+          "start": 6.78,
+          "end": 7.18
+        },
+        {
+          "word": "lights.",
+          "start": 7.18,
+          "end": 7.6
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 8080,
+      "endMs": 10400,
+      "text": "Because of improvements in technology,",
+      "words": [
+        {
+          "word": "Because",
+          "start": 8.08,
+          "end": 8.76
+        },
+        {
+          "word": "of",
+          "start": 8.76,
+          "end": 8.98
+        },
+        {
+          "word": "improvements",
+          "start": 8.98,
+          "end": 9.42
+        },
+        {
+          "word": "in",
+          "start": 9.42,
+          "end": 9.82
+        },
+        {
+          "word": "technology,",
+          "start": 9.82,
+          "end": 10.4
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 10900,
+      "endMs": 15960,
+      "text": "modern traffic signals can measure how quickly the vehicles are moving along the roads,",
+      "words": [
+        {
+          "word": "modern",
+          "start": 10.9,
+          "end": 11.32
+        },
+        {
+          "word": "traffic",
+          "start": 11.32,
+          "end": 11.74
+        },
+        {
+          "word": "signals",
+          "start": 11.74,
+          "end": 12.26
+        },
+        {
+          "word": "can",
+          "start": 12.26,
+          "end": 12.54
+        },
+        {
+          "word": "measure",
+          "start": 12.54,
+          "end": 12.92
+        },
+        {
+          "word": "how",
+          "start": 12.92,
+          "end": 13.28
+        },
+        {
+          "word": "quickly",
+          "start": 13.28,
+          "end": 13.76
+        },
+        {
+          "word": "the",
+          "start": 13.76,
+          "end": 14.0
+        },
+        {
+          "word": "vehicles",
+          "start": 14.0,
+          "end": 14.4
+        },
+        {
+          "word": "are",
+          "start": 14.4,
+          "end": 14.7
+        },
+        {
+          "word": "moving",
+          "start": 14.7,
+          "end": 15.02
+        },
+        {
+          "word": "along",
+          "start": 15.02,
+          "end": 15.32
+        },
+        {
+          "word": "the",
+          "start": 15.32,
+          "end": 15.58
+        },
+        {
+          "word": "roads,",
+          "start": 15.58,
+          "end": 15.96
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "startMs": 16420,
+      "endMs": 18280,
+      "text": "or see whether there's been a crash,",
+      "words": [
+        {
+          "word": "or",
+          "start": 16.42,
+          "end": 16.82
+        },
+        {
+          "word": "see",
+          "start": 16.82,
+          "end": 17.1
+        },
+        {
+          "word": "whether",
+          "start": 17.1,
+          "end": 17.38
+        },
+        {
+          "word": "there's",
+          "start": 17.38,
+          "end": 17.72
+        },
+        {
+          "word": "been",
+          "start": 17.72,
+          "end": 17.86
+        },
+        {
+          "word": "a",
+          "start": 17.86,
+          "end": 17.96
+        },
+        {
+          "word": "crash,",
+          "start": 17.96,
+          "end": 18.28
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "startMs": 18760,
+      "endMs": 21820,
+      "text": "and send this information back to a control center.",
+      "words": [
+        {
+          "word": "and",
+          "start": 18.76,
+          "end": 19.02
+        },
+        {
+          "word": "send",
+          "start": 19.02,
+          "end": 19.36
+        },
+        {
+          "word": "this",
+          "start": 19.36,
+          "end": 19.7
+        },
+        {
+          "word": "information",
+          "start": 19.7,
+          "end": 20.4
+        },
+        {
+          "word": "back",
+          "start": 20.4,
+          "end": 20.88
+        },
+        {
+          "word": "to",
+          "start": 20.88,
+          "end": 21.06
+        },
+        {
+          "word": "a",
+          "start": 21.06,
+          "end": 21.16
+        },
+        {
+          "word": "control",
+          "start": 21.16,
+          "end": 21.42
+        },
+        {
+          "word": "center.",
+          "start": 21.42,
+          "end": 21.82
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "startMs": 22440,
+      "endMs": 23760,
+      "text": "I've heard about this.",
+      "words": [
+        {
+          "word": "I've",
+          "start": 22.44,
+          "end": 22.96
+        },
+        {
+          "word": "heard",
+          "start": 22.96,
+          "end": 23.16
+        },
+        {
+          "word": "about",
+          "start": 23.16,
+          "end": 23.4
+        },
+        {
+          "word": "this.",
+          "start": 23.4,
+          "end": 23.76
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "startMs": 24280,
+      "endMs": 26340,
+      "text": "It means that the traffic controllers,",
+      "words": [
+        {
+          "word": "It",
+          "start": 24.28,
+          "end": 24.58
+        },
+        {
+          "word": "means",
+          "start": 24.58,
+          "end": 24.9
+        },
+        {
+          "word": "that",
+          "start": 24.9,
+          "end": 25.2
+        },
+        {
+          "word": "the",
+          "start": 25.2,
+          "end": 25.36
+        },
+        {
+          "word": "traffic",
+          "start": 25.36,
+          "end": 25.72
+        },
+        {
+          "word": "controllers,",
+          "start": 25.72,
+          "end": 26.34
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "startMs": 26340,
+      "endMs": 28580,
+      "text": "either human or computer,",
+      "words": [
+        {
+          "word": "either",
+          "start": 26.34,
+          "end": 27.0
+        },
+        {
+          "word": "human",
+          "start": 27.0,
+          "end": 27.58
+        },
+        {
+          "word": "or",
+          "start": 27.58,
+          "end": 28.0
+        },
+        {
+          "word": "computer,",
+          "start": 28.0,
+          "end": 28.58
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "startMs": 28940,
+      "endMs": 32240,
+      "text": "can check for changes in traffic throughout the day,",
+      "words": [
+        {
+          "word": "can",
+          "start": 28.94,
+          "end": 29.22
+        },
+        {
+          "word": "check",
+          "start": 29.22,
+          "end": 29.62
+        },
+        {
+          "word": "for",
+          "start": 29.62,
+          "end": 29.88
+        },
+        {
+          "word": "changes",
+          "start": 29.88,
+          "end": 30.28
+        },
+        {
+          "word": "in",
+          "start": 30.28,
+          "end": 30.58
+        },
+        {
+          "word": "traffic",
+          "start": 30.58,
+          "end": 30.96
+        },
+        {
+          "word": "throughout",
+          "start": 30.96,
+          "end": 31.46
+        },
+        {
+          "word": "the",
+          "start": 31.46,
+          "end": 31.88
+        },
+        {
+          "word": "day,",
+          "start": 31.88,
+          "end": 32.24
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "startMs": 32460,
+      "endMs": 37300,
+      "text": "and figure out the best way to organize the signals to keep everything moving.",
+      "words": [
+        {
+          "word": "and",
+          "start": 32.46,
+          "end": 32.84
+        },
+        {
+          "word": "figure",
+          "start": 32.84,
+          "end": 33.2
+        },
+        {
+          "word": "out",
+          "start": 33.2,
+          "end": 33.44
+        },
+        {
+          "word": "the",
+          "start": 33.44,
+          "end": 33.6
+        },
+        {
+          "word": "best",
+          "start": 33.6,
+          "end": 34.04
+        },
+        {
+          "word": "way",
+          "start": 34.04,
+          "end": 34.34
+        },
+        {
+          "word": "to",
+          "start": 34.34,
+          "end": 34.56
+        },
+        {
+          "word": "organize",
+          "start": 34.56,
+          "end": 34.98
+        },
+        {
+          "word": "the",
+          "start": 34.98,
+          "end": 35.3
+        },
+        {
+          "word": "signals",
+          "start": 35.3,
+          "end": 35.74
+        },
+        {
+          "word": "to",
+          "start": 35.74,
+          "end": 36.04
+        },
+        {
+          "word": "keep",
+          "start": 36.04,
+          "end": 36.32
+        },
+        {
+          "word": "everything",
+          "start": 36.32,
+          "end": 36.84
+        },
+        {
+          "word": "moving.",
+          "start": 36.84,
+          "end": 37.3
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "startMs": 37960,
+      "endMs": 43680,
+      "text": "Yes, they don't have to follow the same fixed timings for the lights all day long,",
+      "words": [
+        {
+          "word": "Yes,",
+          "start": 37.96,
+          "end": 38.4
+        },
+        {
+          "word": "they",
+          "start": 39.18,
+          "end": 39.38
+        },
+        {
+          "word": "don't",
+          "start": 39.38,
+          "end": 39.6
+        },
+        {
+          "word": "have",
+          "start": 39.6,
+          "end": 39.76
+        },
+        {
+          "word": "to",
+          "start": 39.76,
+          "end": 39.9
+        },
+        {
+          "word": "follow",
+          "start": 39.9,
+          "end": 40.22
+        },
+        {
+          "word": "the",
+          "start": 40.22,
+          "end": 40.46
+        },
+        {
+          "word": "same",
+          "start": 40.46,
+          "end": 40.92
+        },
+        {
+          "word": "fixed",
+          "start": 40.92,
+          "end": 41.42
+        },
+        {
+          "word": "timings",
+          "start": 41.42,
+          "end": 42.16
+        },
+        {
+          "word": "for",
+          "start": 42.16,
+          "end": 42.38
+        },
+        {
+          "word": "the",
+          "start": 42.38,
+          "end": 42.52
+        },
+        {
+          "word": "lights",
+          "start": 42.52,
+          "end": 42.76
+        },
+        {
+          "word": "all",
+          "start": 42.76,
+          "end": 43.06
+        },
+        {
+          "word": "day",
+          "start": 43.06,
+          "end": 43.26
+        },
+        {
+          "word": "long,",
+          "start": 43.26,
+          "end": 43.68
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "startMs": 43880,
+      "endMs": 45160,
+      "text": "like signals used to do.",
+      "words": [
+        {
+          "word": "like",
+          "start": 43.88,
+          "end": 44.16
+        },
+        {
+          "word": "signals",
+          "start": 44.16,
+          "end": 44.52
+        },
+        {
+          "word": "used",
+          "start": 44.52,
+          "end": 44.82
+        },
+        {
+          "word": "to",
+          "start": 44.82,
+          "end": 44.98
+        },
+        {
+          "word": "do.",
+          "start": 44.98,
+          "end": 45.16
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "startMs": 45820,
+      "endMs": 49700,
+      "text": "And although it's expensive to put in these signals across a whole city,",
+      "words": [
+        {
+          "word": "And",
+          "start": 45.82,
+          "end": 46.18
+        },
+        {
+          "word": "although",
+          "start": 46.18,
+          "end": 46.74
+        },
+        {
+          "word": "it's",
+          "start": 46.74,
+          "end": 46.92
+        },
+        {
+          "word": "expensive",
+          "start": 46.92,
+          "end": 47.38
+        },
+        {
+          "word": "to",
+          "start": 47.38,
+          "end": 47.72
+        },
+        {
+          "word": "put",
+          "start": 47.72,
+          "end": 47.92
+        },
+        {
+          "word": "in",
+          "start": 47.92,
+          "end": 48.08
+        },
+        {
+          "word": "these",
+          "start": 48.08,
+          "end": 48.24
+        },
+        {
+          "word": "signals",
+          "start": 48.24,
+          "end": 48.68
+        },
+        {
+          "word": "across",
+          "start": 48.68,
+          "end": 48.98
+        },
+        {
+          "word": "a",
+          "start": 48.98,
+          "end": 49.22
+        },
+        {
+          "word": "whole",
+          "start": 49.22,
+          "end": 49.36
+        },
+        {
+          "word": "city,",
+          "start": 49.36,
+          "end": 49.7
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "startMs": 50320,
+      "endMs": 51920,
+      "text": "it's far better than doing nothing.",
+      "words": [
+        {
+          "word": "it's",
+          "start": 50.32,
+          "end": 50.58
+        },
+        {
+          "word": "far",
+          "start": 50.58,
+          "end": 50.8
+        },
+        {
+          "word": "better",
+          "start": 50.8,
+          "end": 51.12
+        },
+        {
+          "word": "than",
+          "start": 51.12,
+          "end": 51.32
+        },
+        {
+          "word": "doing",
+          "start": 51.32,
+          "end": 51.56
+        },
+        {
+          "word": "nothing.",
+          "start": 51.56,
+          "end": 51.92
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "startMs": 52780,
+      "endMs": 55320,
+      "text": "Technology, where would we be without it?",
+      "words": [
+        {
+          "word": "Technology,",
+          "start": 52.78,
+          "end": 53.4
+        },
+        {
+          "word": "where",
+          "start": 54.0,
+          "end": 54.26
+        },
+        {
+          "word": "would",
+          "start": 54.26,
+          "end": 54.46
+        },
+        {
+          "word": "we",
+          "start": 54.46,
+          "end": 54.6
+        },
+        {
+          "word": "be",
+          "start": 54.6,
+          "end": 54.76
+        },
+        {
+          "word": "without",
+          "start": 54.76,
+          "end": 55.06
+        },
+        {
+          "word": "it?",
+          "start": 55.06,
+          "end": 55.32
+        }
+      ]
+    },
+    {
+      "index": 18,
+      "startMs": 55320,
+      "endMs": 56580,
+      "text": "Exactly.",
+      "words": [
+        {
+          "word": "Exactly.",
+          "start": 55.32,
+          "end": 56.58
+        }
+      ]
+    },
+    {
+      "index": 19,
+      "startMs": 57860,
+      "endMs": 60700,
+      "text": "Which reminds me of another way to reduce traffic.",
+      "words": [
+        {
+          "word": "Which",
+          "start": 57.86,
+          "end": 58.08
+        },
+        {
+          "word": "reminds",
+          "start": 58.08,
+          "end": 58.46
+        },
+        {
+          "word": "me",
+          "start": 58.46,
+          "end": 58.74
+        },
+        {
+          "word": "of",
+          "start": 58.74,
+          "end": 58.94
+        },
+        {
+          "word": "another",
+          "start": 58.94,
+          "end": 59.34
+        },
+        {
+          "word": "way",
+          "start": 59.34,
+          "end": 59.7
+        },
+        {
+          "word": "to",
+          "start": 59.7,
+          "end": 59.92
+        },
+        {
+          "word": "reduce",
+          "start": 59.92,
+          "end": 60.24
+        },
+        {
+          "word": "traffic.",
+          "start": 60.24,
+          "end": 60.7
+        }
+      ]
+    },
+    {
+      "index": 20,
+      "startMs": 61640,
+      "endMs": 64200,
+      "text": "Businesses replacing their vehicles with drones.",
+      "words": [
+        {
+          "word": "Businesses",
+          "start": 61.64,
+          "end": 62.24
+        },
+        {
+          "word": "replacing",
+          "start": 62.24,
+          "end": 62.64
+        },
+        {
+          "word": "their",
+          "start": 62.64,
+          "end": 63.04
+        },
+        {
+          "word": "vehicles",
+          "start": 63.04,
+          "end": 63.54
+        },
+        {
+          "word": "with",
+          "start": 63.54,
+          "end": 63.9
+        },
+        {
+          "word": "drones.",
+          "start": 63.9,
+          "end": 64.2
+        }
+      ]
+    },
+    {
+      "index": 21,
+      "startMs": 64880,
+      "endMs": 66740,
+      "text": "Okay, tell me more.",
+      "words": [
+        {
+          "word": "Okay,",
+          "start": 64.88,
+          "end": 65.38
+        },
+        {
+          "word": "tell",
+          "start": 66.02,
+          "end": 66.28
+        },
+        {
+          "word": "me",
+          "start": 66.28,
+          "end": 66.46
+        },
+        {
+          "word": "more.",
+          "start": 66.46,
+          "end": 66.74
+        }
+      ]
+    },
+    {
+      "index": 22,
+      "startMs": 67340,
+      "endMs": 70040,
+      "text": "Some tasks city governments need to do,",
+      "words": [
+        {
+          "word": "Some",
+          "start": 67.34,
+          "end": 67.84
+        },
+        {
+          "word": "tasks",
+          "start": 67.84,
+          "end": 68.38
+        },
+        {
+          "word": "city",
+          "start": 68.38,
+          "end": 68.86
+        },
+        {
+          "word": "governments",
+          "start": 68.86,
+          "end": 69.24
+        },
+        {
+          "word": "need",
+          "start": 69.24,
+          "end": 69.6
+        },
+        {
+          "word": "to",
+          "start": 69.6,
+          "end": 69.76
+        },
+        {
+          "word": "do,",
+          "start": 69.76,
+          "end": 70.04
+        }
+      ]
+    },
+    {
+      "index": 23,
+      "startMs": 70380,
+      "endMs": 72420,
+      "text": "such as checking electricity lines,",
+      "words": [
+        {
+          "word": "such",
+          "start": 70.38,
+          "end": 70.64
+        },
+        {
+          "word": "as",
+          "start": 70.64,
+          "end": 70.94
+        },
+        {
+          "word": "checking",
+          "start": 70.94,
+          "end": 71.28
+        },
+        {
+          "word": "electricity",
+          "start": 71.28,
+          "end": 71.8
+        },
+        {
+          "word": "lines,",
+          "start": 71.8,
+          "end": 72.42
+        }
+      ]
+    },
+    {
+      "index": 24,
+      "startMs": 73000,
+      "endMs": 77940,
+      "text": "don't necessarily need to be carried out by a single person arriving in a big vehicle.",
+      "words": [
+        {
+          "word": "don't",
+          "start": 73.0,
+          "end": 73.42
+        },
+        {
+          "word": "necessarily",
+          "start": 73.42,
+          "end": 73.88
+        },
+        {
+          "word": "need",
+          "start": 73.88,
+          "end": 74.38
+        },
+        {
+          "word": "to",
+          "start": 74.38,
+          "end": 74.56
+        },
+        {
+          "word": "be",
+          "start": 74.56,
+          "end": 74.7
+        },
+        {
+          "word": "carried",
+          "start": 74.7,
+          "end": 74.98
+        },
+        {
+          "word": "out",
+          "start": 74.98,
+          "end": 75.32
+        },
+        {
+          "word": "by",
+          "start": 75.32,
+          "end": 75.6
+        },
+        {
+          "word": "a",
+          "start": 75.6,
+          "end": 75.74
+        },
+        {
+          "word": "single",
+          "start": 75.74,
+          "end": 76.08
+        },
+        {
+          "word": "person",
+          "start": 76.08,
+          "end": 76.56
+        },
+        {
+          "word": "arriving",
+          "start": 76.56,
+          "end": 77.02
+        },
+        {
+          "word": "in",
+          "start": 77.02,
+          "end": 77.24
+        },
+        {
+          "word": "a",
+          "start": 77.24,
+          "end": 77.36
+        },
+        {
+          "word": "big",
+          "start": 77.36,
+          "end": 77.5
+        },
+        {
+          "word": "vehicle.",
+          "start": 77.5,
+          "end": 77.94
+        }
+      ]
+    },
+    {
+      "index": 25,
+      "startMs": 78840,
+      "endMs": 82840,
+      "text": "A drone with a camera could send this information to engineers,",
+      "words": [
+        {
+          "word": "A",
+          "start": 78.84,
+          "end": 79.02
+        },
+        {
+          "word": "drone",
+          "start": 79.02,
+          "end": 79.44
+        },
+        {
+          "word": "with",
+          "start": 79.44,
+          "end": 79.72
+        },
+        {
+          "word": "a",
+          "start": 79.72,
+          "end": 79.86
+        },
+        {
+          "word": "camera",
+          "start": 79.86,
+          "end": 80.26
+        },
+        {
+          "word": "could",
+          "start": 80.26,
+          "end": 80.82
+        },
+        {
+          "word": "send",
+          "start": 80.82,
+          "end": 81.22
+        },
+        {
+          "word": "this",
+          "start": 81.22,
+          "end": 81.42
+        },
+        {
+          "word": "information",
+          "start": 81.42,
+          "end": 81.88
+        },
+        {
+          "word": "to",
+          "start": 81.88,
+          "end": 82.3
+        },
+        {
+          "word": "engineers,",
+          "start": 82.3,
+          "end": 82.84
+        }
+      ]
+    },
+    {
+      "index": 26,
+      "startMs": 82840,
+      "endMs": 85600,
+      "text": "who only need to go out if there is a problem.",
+      "words": [
+        {
+          "word": "who",
+          "start": 82.84,
+          "end": 83.14
+        },
+        {
+          "word": "only",
+          "start": 83.14,
+          "end": 83.84
+        },
+        {
+          "word": "need",
+          "start": 83.84,
+          "end": 84.06
+        },
+        {
+          "word": "to",
+          "start": 84.06,
+          "end": 84.22
+        },
+        {
+          "word": "go",
+          "start": 84.22,
+          "end": 84.38
+        },
+        {
+          "word": "out",
+          "start": 84.38,
+          "end": 84.68
+        },
+        {
+          "word": "if",
+          "start": 84.68,
+          "end": 84.88
+        },
+        {
+          "word": "there",
+          "start": 84.88,
+          "end": 85.02
+        },
+        {
+          "word": "is",
+          "start": 85.02,
+          "end": 85.14
+        },
+        {
+          "word": "a",
+          "start": 85.14,
+          "end": 85.24
+        },
+        {
+          "word": "problem.",
+          "start": 85.24,
+          "end": 85.6
+        }
+      ]
+    },
+    {
+      "index": 27,
+      "startMs": 86280,
+      "endMs": 90180,
+      "text": "Think of how many work vans this could take off the roads every day.",
+      "words": [
+        {
+          "word": "Think",
+          "start": 86.28,
+          "end": 86.76
+        },
+        {
+          "word": "of",
+          "start": 86.76,
+          "end": 86.92
+        },
+        {
+          "word": "how",
+          "start": 86.92,
+          "end": 87.1
+        },
+        {
+          "word": "many",
+          "start": 87.1,
+          "end": 87.3
+        },
+        {
+          "word": "work",
+          "start": 87.3,
+          "end": 87.62
+        },
+        {
+          "word": "vans",
+          "start": 87.62,
+          "end": 88.04
+        },
+        {
+          "word": "this",
+          "start": 88.04,
+          "end": 88.26
+        },
+        {
+          "word": "could",
+          "start": 88.26,
+          "end": 88.46
+        },
+        {
+          "word": "take",
+          "start": 88.46,
+          "end": 88.68
+        },
+        {
+          "word": "off",
+          "start": 88.68,
+          "end": 88.88
+        },
+        {
+          "word": "the",
+          "start": 88.88,
+          "end": 89.08
+        },
+        {
+          "word": "roads",
+          "start": 89.08,
+          "end": 89.4
+        },
+        {
+          "word": "every",
+          "start": 89.4,
+          "end": 89.82
+        },
+        {
+          "word": "day.",
+          "start": 89.82,
+          "end": 90.18
+        }
+      ]
+    },
+    {
+      "index": 28,
+      "startMs": 90580,
+      "endMs": 92180,
+      "text": "And delivery vans.",
+      "words": [
+        {
+          "word": "And",
+          "start": 90.58,
+          "end": 90.98
+        },
+        {
+          "word": "delivery",
+          "start": 90.98,
+          "end": 91.5
+        },
+        {
+          "word": "vans.",
+          "start": 91.5,
+          "end": 92.18
+        }
+      ]
+    },
+    {
+      "index": 29,
+      "startMs": 92880,
+      "endMs": 94560,
+      "text": "That's another good example.",
+      "words": [
+        {
+          "word": "That's",
+          "start": 92.88000000000001,
+          "end": 93.54
+        },
+        {
+          "word": "another",
+          "start": 93.54,
+          "end": 93.86
+        },
+        {
+          "word": "good",
+          "start": 93.86,
+          "end": 94.12
+        },
+        {
+          "word": "example.",
+          "start": 94.12,
+          "end": 94.56
+        }
+      ]
+    },
+    {
+      "index": 30,
+      "startMs": 95460,
+      "endMs": 99840,
+      "text": "In some cities, businesses can use drones to deliver small parcels,",
+      "words": [
+        {
+          "word": "In",
+          "start": 95.46,
+          "end": 95.66
+        },
+        {
+          "word": "some",
+          "start": 95.66,
+          "end": 96.0
+        },
+        {
+          "word": "cities,",
+          "start": 96.0,
+          "end": 96.4
+        },
+        {
+          "word": "businesses",
+          "start": 96.84,
+          "end": 97.2
+        },
+        {
+          "word": "can",
+          "start": 97.2,
+          "end": 97.66
+        },
+        {
+          "word": "use",
+          "start": 97.66,
+          "end": 97.92
+        },
+        {
+          "word": "drones",
+          "start": 97.92,
+          "end": 98.4
+        },
+        {
+          "word": "to",
+          "start": 98.4,
+          "end": 98.82
+        },
+        {
+          "word": "deliver",
+          "start": 98.82,
+          "end": 99.16
+        },
+        {
+          "word": "small",
+          "start": 99.16,
+          "end": 99.64
+        },
+        {
+          "word": "parcels,",
+          "start": 99.64,
+          "end": 99.97
+        }
+      ]
+    },
+    {
+      "index": 31,
+      "startMs": 100580,
+      "endMs": 101480,
+      "text": "which is fantastic.",
+      "words": [
+        {
+          "word": "which",
+          "start": 100.58,
+          "end": 100.86
+        },
+        {
+          "word": "is",
+          "start": 100.86,
+          "end": 101.02
+        },
+        {
+          "word": "fantastic.",
+          "start": 101.02,
+          "end": 101.48
+        }
+      ]
+    },
+    {
+      "index": 32,
+      "startMs": 102220,
+      "endMs": 104780,
+      "text": "It means even fewer vehicles on the roads.",
+      "words": [
+        {
+          "word": "It",
+          "start": 102.22,
+          "end": 102.46
+        },
+        {
+          "word": "means",
+          "start": 102.46,
+          "end": 102.72
+        },
+        {
+          "word": "even",
+          "start": 102.72,
+          "end": 103.12
+        },
+        {
+          "word": "fewer",
+          "start": 103.12,
+          "end": 103.56
+        },
+        {
+          "word": "vehicles",
+          "start": 103.56,
+          "end": 104.06
+        },
+        {
+          "word": "on",
+          "start": 104.06,
+          "end": 104.3
+        },
+        {
+          "word": "the",
+          "start": 104.3,
+          "end": 104.44
+        },
+        {
+          "word": "roads.",
+          "start": 104.44,
+          "end": 104.78
+        }
+      ]
+    },
+    {
+      "index": 33,
+      "startMs": 105380,
+      "endMs": 109860,
+      "text": "What would you say to people who refuse to give up driving their cars ever?",
+      "words": [
+        {
+          "word": "What",
+          "start": 105.38,
+          "end": 105.84
+        },
+        {
+          "word": "would",
+          "start": 105.84,
+          "end": 106.04
+        },
+        {
+          "word": "you",
+          "start": 106.04,
+          "end": 106.2
+        },
+        {
+          "word": "say",
+          "start": 106.2,
+          "end": 106.42
+        },
+        {
+          "word": "to",
+          "start": 106.42,
+          "end": 106.6
+        },
+        {
+          "word": "people",
+          "start": 106.6,
+          "end": 106.86
+        },
+        {
+          "word": "who",
+          "start": 106.86,
+          "end": 107.12
+        },
+        {
+          "word": "refuse",
+          "start": 107.12,
+          "end": 107.5
+        },
+        {
+          "word": "to",
+          "start": 107.5,
+          "end": 107.88
+        },
+        {
+          "word": "give",
+          "start": 107.88,
+          "end": 108.06
+        },
+        {
+          "word": "up",
+          "start": 108.06,
+          "end": 108.24
+        },
+        {
+          "word": "driving",
+          "start": 108.24,
+          "end": 108.62
+        },
+        {
+          "word": "their",
+          "start": 108.62,
+          "end": 108.94
+        },
+        {
+          "word": "cars",
+          "start": 108.94,
+          "end": 109.32
+        },
+        {
+          "word": "ever?",
+          "start": 109.32,
+          "end": 109.86
+        }
+      ]
+    },
+    {
+      "index": 34,
+      "startMs": 109860,
+      "endMs": 114620,
+      "text": "I honestly think people should try to avoid driving as much as possible.",
+      "words": [
+        {
+          "word": "I",
+          "start": 109.86,
+          "end": 110.14
+        },
+        {
+          "word": "honestly",
+          "start": 110.14,
+          "end": 111.1
+        },
+        {
+          "word": "think",
+          "start": 111.1,
+          "end": 111.48
+        },
+        {
+          "word": "people",
+          "start": 111.48,
+          "end": 111.84
+        },
+        {
+          "word": "should",
+          "start": 111.84,
+          "end": 112.02
+        },
+        {
+          "word": "try",
+          "start": 112.02,
+          "end": 112.34
+        },
+        {
+          "word": "to",
+          "start": 112.34,
+          "end": 112.5
+        },
+        {
+          "word": "avoid",
+          "start": 112.5,
+          "end": 112.8
+        },
+        {
+          "word": "driving",
+          "start": 112.8,
+          "end": 113.2
+        },
+        {
+          "word": "as",
+          "start": 113.2,
+          "end": 113.52
+        },
+        {
+          "word": "much",
+          "start": 113.52,
+          "end": 113.86
+        },
+        {
+          "word": "as",
+          "start": 113.86,
+          "end": 114.1
+        },
+        {
+          "word": "possible.",
+          "start": 114.1,
+          "end": 114.62
+        }
+      ]
+    },
+    {
+      "index": 35,
+      "startMs": 115380,
+      "endMs": 118480,
+      "text": "But if they can't, they should consider their behavior.",
+      "words": [
+        {
+          "word": "But",
+          "start": 115.38,
+          "end": 115.7
+        },
+        {
+          "word": "if",
+          "start": 115.7,
+          "end": 115.92
+        },
+        {
+          "word": "they",
+          "start": 115.92,
+          "end": 116.08
+        },
+        {
+          "word": "can't,",
+          "start": 116.08,
+          "end": 116.54
+        },
+        {
+          "word": "they",
+          "start": 116.94,
+          "end": 117.1
+        },
+        {
+          "word": "should",
+          "start": 117.1,
+          "end": 117.3
+        },
+        {
+          "word": "consider",
+          "start": 117.3,
+          "end": 117.82
+        },
+        {
+          "word": "their",
+          "start": 117.82,
+          "end": 118.02
+        },
+        {
+          "word": "behavior.",
+          "start": 118.02,
+          "end": 118.48
+        }
+      ]
+    },
+    {
+      "index": 36,
+      "startMs": 119300,
+      "endMs": 122220,
+      "text": "It's not just bad parking that causes traffic issues.",
+      "words": [
+        {
+          "word": "It's",
+          "start": 119.3,
+          "end": 119.54
+        },
+        {
+          "word": "not",
+          "start": 119.54,
+          "end": 119.7
+        },
+        {
+          "word": "just",
+          "start": 119.7,
+          "end": 119.94
+        },
+        {
+          "word": "bad",
+          "start": 119.94,
+          "end": 120.28
+        },
+        {
+          "word": "parking",
+          "start": 120.28,
+          "end": 120.78
+        },
+        {
+          "word": "that",
+          "start": 120.78,
+          "end": 121.04
+        },
+        {
+          "word": "causes",
+          "start": 121.04,
+          "end": 121.38
+        },
+        {
+          "word": "traffic",
+          "start": 121.38,
+          "end": 121.76
+        },
+        {
+          "word": "issues.",
+          "start": 121.76,
+          "end": 122.22
+        }
+      ]
+    },
+    {
+      "index": 37,
+      "startMs": 122860,
+      "endMs": 125640,
+      "text": "Everyone needs to be a lot more responsible as drivers.",
+      "words": [
+        {
+          "word": "Everyone",
+          "start": 122.86,
+          "end": 123.26
+        },
+        {
+          "word": "needs",
+          "start": 123.26,
+          "end": 123.6
+        },
+        {
+          "word": "to",
+          "start": 123.6,
+          "end": 123.78
+        },
+        {
+          "word": "be",
+          "start": 123.78,
+          "end": 123.88
+        },
+        {
+          "word": "a",
+          "start": 123.88,
+          "end": 123.98
+        },
+        {
+          "word": "lot",
+          "start": 123.98,
+          "end": 124.18
+        },
+        {
+          "word": "more",
+          "start": 124.18,
+          "end": 124.36
+        },
+        {
+          "word": "responsible",
+          "start": 124.36,
+          "end": 124.96
+        },
+        {
+          "word": "as",
+          "start": 124.96,
+          "end": 125.3
+        },
+        {
+          "word": "drivers.",
+          "start": 125.3,
+          "end": 125.64
+        }
+      ]
+    },
+    {
+      "index": 38,
+      "startMs": 126500,
+      "endMs": 127400,
+      "text": "In what way?",
+      "words": [
+        {
+          "word": "In",
+          "start": 126.5,
+          "end": 126.94
+        },
+        {
+          "word": "what",
+          "start": 126.94,
+          "end": 127.14
+        },
+        {
+          "word": "way?",
+          "start": 127.14,
+          "end": 127.4
+        }
+      ]
+    },
+    {
+      "index": 39,
+      "startMs": 128060,
+      "endMs": 130120,
+      "text": "When people get behind the steering wheel,",
+      "words": [
+        {
+          "word": "When",
+          "start": 128.06,
+          "end": 128.38
+        },
+        {
+          "word": "people",
+          "start": 128.38,
+          "end": 128.66
+        },
+        {
+          "word": "get",
+          "start": 128.66,
+          "end": 128.88
+        },
+        {
+          "word": "behind",
+          "start": 128.88,
+          "end": 129.16
+        },
+        {
+          "word": "the",
+          "start": 129.16,
+          "end": 129.42
+        },
+        {
+          "word": "steering",
+          "start": 129.42,
+          "end": 129.72
+        },
+        {
+          "word": "wheel,",
+          "start": 129.72,
+          "end": 130.12
+        }
+      ]
+    },
+    {
+      "index": 40,
+      "startMs": 130480,
+      "endMs": 132760,
+      "text": "they often become less helpful than normal.",
+      "words": [
+        {
+          "word": "they",
+          "start": 130.48,
+          "end": 130.72
+        },
+        {
+          "word": "often",
+          "start": 130.72,
+          "end": 131.02
+        },
+        {
+          "word": "become",
+          "start": 131.02,
+          "end": 131.36
+        },
+        {
+          "word": "less",
+          "start": 131.36,
+          "end": 131.7
+        },
+        {
+          "word": "helpful",
+          "start": 131.7,
+          "end": 132.2
+        },
+        {
+          "word": "than",
+          "start": 132.2,
+          "end": 132.46
+        },
+        {
+          "word": "normal.",
+          "start": 132.46,
+          "end": 132.76
+        }
+      ]
+    },
+    {
+      "index": 41,
+      "startMs": 133540,
+      "endMs": 136180,
+      "text": "Like when someone is turning into a side street,",
+      "words": [
+        {
+          "word": "Like",
+          "start": 133.54,
+          "end": 133.9
+        },
+        {
+          "word": "when",
+          "start": 133.9,
+          "end": 134.18
+        },
+        {
+          "word": "someone",
+          "start": 134.18,
+          "end": 134.5
+        },
+        {
+          "word": "is",
+          "start": 134.5,
+          "end": 134.7
+        },
+        {
+          "word": "turning",
+          "start": 134.7,
+          "end": 135.06
+        },
+        {
+          "word": "into",
+          "start": 135.06,
+          "end": 135.38
+        },
+        {
+          "word": "a",
+          "start": 135.38,
+          "end": 135.62
+        },
+        {
+          "word": "side",
+          "start": 135.62,
+          "end": 135.8
+        },
+        {
+          "word": "street,",
+          "start": 135.8,
+          "end": 136.18
+        }
+      ]
+    },
+    {
+      "index": 42,
+      "startMs": 136180,
+      "endMs": 142080,
+      "text": "that often means driving across the other lane past vehicles going in the opposite direction.",
+      "words": [
+        {
+          "word": "that",
+          "start": 136.18,
+          "end": 136.96
+        },
+        {
+          "word": "often",
+          "start": 136.96,
+          "end": 137.3
+        },
+        {
+          "word": "means",
+          "start": 137.3,
+          "end": 137.64
+        },
+        {
+          "word": "driving",
+          "start": 137.64,
+          "end": 138.1
+        },
+        {
+          "word": "across",
+          "start": 138.1,
+          "end": 138.56
+        },
+        {
+          "word": "the",
+          "start": 138.56,
+          "end": 138.92
+        },
+        {
+          "word": "other",
+          "start": 138.92,
+          "end": 139.08
+        },
+        {
+          "word": "lane",
+          "start": 139.08,
+          "end": 139.46
+        },
+        {
+          "word": "past",
+          "start": 139.46,
+          "end": 140.08
+        },
+        {
+          "word": "vehicles",
+          "start": 140.08,
+          "end": 140.54
+        },
+        {
+          "word": "going",
+          "start": 140.54,
+          "end": 140.94
+        },
+        {
+          "word": "in",
+          "start": 140.94,
+          "end": 141.14
+        },
+        {
+          "word": "the",
+          "start": 141.14,
+          "end": 141.24
+        },
+        {
+          "word": "opposite",
+          "start": 141.24,
+          "end": 141.54
+        },
+        {
+          "word": "direction.",
+          "start": 141.54,
+          "end": 142.08
+        }
+      ]
+    },
+    {
+      "index": 43,
+      "startMs": 142680,
+      "endMs": 146540,
+      "text": "If no one slows down to let in the person who wants to turn,",
+      "words": [
+        {
+          "word": "If",
+          "start": 142.68,
+          "end": 143.08
+        },
+        {
+          "word": "no",
+          "start": 143.08,
+          "end": 143.3
+        },
+        {
+          "word": "one",
+          "start": 143.3,
+          "end": 143.46
+        },
+        {
+          "word": "slows",
+          "start": 143.46,
+          "end": 143.74
+        },
+        {
+          "word": "down",
+          "start": 143.74,
+          "end": 144.32
+        },
+        {
+          "word": "to",
+          "start": 144.32,
+          "end": 144.6
+        },
+        {
+          "word": "let",
+          "start": 144.6,
+          "end": 144.9
+        },
+        {
+          "word": "in",
+          "start": 144.9,
+          "end": 145.18
+        },
+        {
+          "word": "the",
+          "start": 145.18,
+          "end": 145.34
+        },
+        {
+          "word": "person",
+          "start": 145.34,
+          "end": 145.64
+        },
+        {
+          "word": "who",
+          "start": 145.64,
+          "end": 145.84
+        },
+        {
+          "word": "wants",
+          "start": 145.84,
+          "end": 146.08
+        },
+        {
+          "word": "to",
+          "start": 146.08,
+          "end": 146.26
+        },
+        {
+          "word": "turn,",
+          "start": 146.26,
+          "end": 146.54
+        }
+      ]
+    },
+    {
+      "index": 44,
+      "startMs": 146980,
+      "endMs": 149500,
+      "text": "the traffic gets worse and worse behind them.",
+      "words": [
+        {
+          "word": "the",
+          "start": 146.98,
+          "end": 147.2
+        },
+        {
+          "word": "traffic",
+          "start": 147.2,
+          "end": 147.6
+        },
+        {
+          "word": "gets",
+          "start": 147.6,
+          "end": 147.9
+        },
+        {
+          "word": "worse",
+          "start": 147.9,
+          "end": 148.26
+        },
+        {
+          "word": "and",
+          "start": 148.26,
+          "end": 148.5
+        },
+        {
+          "word": "worse",
+          "start": 148.5,
+          "end": 148.8
+        },
+        {
+          "word": "behind",
+          "start": 148.8,
+          "end": 149.16
+        },
+        {
+          "word": "them.",
+          "start": 149.16,
+          "end": 149.5
+        }
+      ]
+    },
+    {
+      "index": 45,
+      "startMs": 149920,
+      "endMs": 155440,
+      "text": "Even more so if someone stops in traffic with their car across the side street",
+      "words": [
+        {
+          "word": "Even",
+          "start": 149.92,
+          "end": 150.36
+        },
+        {
+          "word": "more",
+          "start": 150.36,
+          "end": 150.7
+        },
+        {
+          "word": "so",
+          "start": 150.7,
+          "end": 151.02
+        },
+        {
+          "word": "if",
+          "start": 151.02,
+          "end": 151.28
+        },
+        {
+          "word": "someone",
+          "start": 151.28,
+          "end": 151.64
+        },
+        {
+          "word": "stops",
+          "start": 151.64,
+          "end": 152.06
+        },
+        {
+          "word": "in",
+          "start": 152.06,
+          "end": 152.42
+        },
+        {
+          "word": "traffic",
+          "start": 152.42,
+          "end": 152.88
+        },
+        {
+          "word": "with",
+          "start": 152.88,
+          "end": 153.16
+        },
+        {
+          "word": "their",
+          "start": 153.16,
+          "end": 153.4
+        },
+        {
+          "word": "car",
+          "start": 153.4,
+          "end": 153.84
+        },
+        {
+          "word": "across",
+          "start": 153.84,
+          "end": 154.42
+        },
+        {
+          "word": "the",
+          "start": 154.42,
+          "end": 154.8
+        },
+        {
+          "word": "side",
+          "start": 154.8,
+          "end": 155.06
+        },
+        {
+          "word": "street",
+          "start": 155.06,
+          "end": 155.44
+        }
+      ]
+    },
+    {
+      "index": 46,
+      "startMs": 155440,
+      "endMs": 157260,
+      "text": "that person wants to turn into.",
+      "words": [
+        {
+          "word": "that",
+          "start": 155.44,
+          "end": 155.9
+        },
+        {
+          "word": "person",
+          "start": 155.9,
+          "end": 156.28
+        },
+        {
+          "word": "wants",
+          "start": 156.28,
+          "end": 156.52
+        },
+        {
+          "word": "to",
+          "start": 156.52,
+          "end": 156.74
+        },
+        {
+          "word": "turn",
+          "start": 156.74,
+          "end": 156.92
+        },
+        {
+          "word": "into.",
+          "start": 156.92,
+          "end": 157.26
+        }
+      ]
+    },
+    {
+      "index": 47,
+      "startMs": 157720,
+      "endMs": 163240,
+      "text": "Ah, listeners, if that doesn't annoy you as well, you're a better person than me.",
+      "words": [
+        {
+          "word": "Ah,",
+          "start": 157.72,
+          "end": 158.24
+        },
+        {
+          "word": "listeners,",
+          "start": 158.72,
+          "end": 159.3
+        },
+        {
+          "word": "if",
+          "start": 159.76,
+          "end": 159.9
+        },
+        {
+          "word": "that",
+          "start": 159.9,
+          "end": 160.3
+        },
+        {
+          "word": "doesn't",
+          "start": 160.3,
+          "end": 160.68
+        },
+        {
+          "word": "annoy",
+          "start": 160.68,
+          "end": 160.98
+        },
+        {
+          "word": "you",
+          "start": 160.98,
+          "end": 161.22
+        },
+        {
+          "word": "as",
+          "start": 161.22,
+          "end": 161.4
+        },
+        {
+          "word": "well,",
+          "start": 161.4,
+          "end": 161.64
+        },
+        {
+          "word": "you're",
+          "start": 161.82,
+          "end": 162.02
+        },
+        {
+          "word": "a",
+          "start": 162.02,
+          "end": 162.12
+        },
+        {
+          "word": "better",
+          "start": 162.12,
+          "end": 162.32
+        },
+        {
+          "word": "person",
+          "start": 162.32,
+          "end": 162.74
+        },
+        {
+          "word": "than",
+          "start": 162.74,
+          "end": 163.0
+        },
+        {
+          "word": "me.",
+          "start": 163.0,
+          "end": 163.24
+        }
+      ]
+    },
+    {
+      "index": 48,
+      "startMs": 164120,
+      "endMs": 164880,
+      "text": "Me too.",
+      "words": [
+        {
+          "word": "Me",
+          "start": 164.12,
+          "end": 164.48
+        },
+        {
+          "word": "too.",
+          "start": 164.48,
+          "end": 164.88
+        }
+      ]
+    },
+    {
+      "index": 49,
+      "startMs": 164880,
+      "endMs": 170380,
+      "text": "Please, everyone stop and give people enough space to turn into side streets.",
+      "words": [
+        {
+          "word": "Please,",
+          "start": 164.88,
+          "end": 165.82
+        },
+        {
+          "word": "everyone",
+          "start": 166.18,
+          "end": 166.52
+        },
+        {
+          "word": "stop",
+          "start": 166.52,
+          "end": 167.02
+        },
+        {
+          "word": "and",
+          "start": 167.02,
+          "end": 167.34
+        },
+        {
+          "word": "give",
+          "start": 167.34,
+          "end": 167.58
+        },
+        {
+          "word": "people",
+          "start": 167.58,
+          "end": 167.98
+        },
+        {
+          "word": "enough",
+          "start": 167.98,
+          "end": 168.26
+        },
+        {
+          "word": "space",
+          "start": 168.26,
+          "end": 168.72
+        },
+        {
+          "word": "to",
+          "start": 168.72,
+          "end": 168.98
+        },
+        {
+          "word": "turn",
+          "start": 168.98,
+          "end": 169.3
+        },
+        {
+          "word": "into",
+          "start": 169.3,
+          "end": 169.5
+        },
+        {
+          "word": "side",
+          "start": 169.5,
+          "end": 169.9
+        },
+        {
+          "word": "streets.",
+          "start": 169.9,
+          "end": 170.38
+        }
+      ]
+    },
+    {
+      "index": 50,
+      "startMs": 170980,
+      "endMs": 172900,
+      "text": "Mark, thanks for joining me.",
+      "words": [
+        {
+          "word": "Mark,",
+          "start": 170.98,
+          "end": 171.42
+        },
+        {
+          "word": "thanks",
+          "start": 171.88,
+          "end": 172.16
+        },
+        {
+          "word": "for",
+          "start": 172.16,
+          "end": 172.36
+        },
+        {
+          "word": "joining",
+          "start": 172.36,
+          "end": 172.62
+        },
+        {
+          "word": "me.",
+          "start": 172.62,
+          "end": 172.9
+        }
+      ]
+    },
+    {
+      "index": 51,
+      "startMs": 173440,
+      "endMs": 174100,
+      "text": "Thank you.",
+      "words": [
+        {
+          "word": "Thank",
+          "start": 173.44,
+          "end": 173.76
+        },
+        {
+          "word": "you.",
+          "start": 173.76,
+          "end": 174.1
+        }
+      ]
+    }
+  ]
+}

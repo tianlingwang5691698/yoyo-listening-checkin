@@ -1,0 +1,83 @@
+{
+  "model": "small",
+  "language": "en",
+  "text": "1.7 First of all, let's look at some of the positives.",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 1140,
+      "text": "1.7",
+      "words": [
+        {
+          "word": "1",
+          "start": 0.0,
+          "end": 0.34
+        },
+        {
+          "word": ".7",
+          "start": 0.34,
+          "end": 1.14
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 3120,
+      "endMs": 6180,
+      "text": "First of all, let's look at some of the positives.",
+      "words": [
+        {
+          "word": "First",
+          "start": 3.12,
+          "end": 3.7
+        },
+        {
+          "word": "of",
+          "start": 3.7,
+          "end": 3.92
+        },
+        {
+          "word": "all,",
+          "start": 3.92,
+          "end": 4.18
+        },
+        {
+          "word": "let's",
+          "start": 4.5,
+          "end": 4.84
+        },
+        {
+          "word": "look",
+          "start": 4.84,
+          "end": 5.02
+        },
+        {
+          "word": "at",
+          "start": 5.02,
+          "end": 5.26
+        },
+        {
+          "word": "some",
+          "start": 5.26,
+          "end": 5.42
+        },
+        {
+          "word": "of",
+          "start": 5.42,
+          "end": 5.56
+        },
+        {
+          "word": "the",
+          "start": 5.56,
+          "end": 5.64
+        },
+        {
+          "word": "positives.",
+          "start": 5.64,
+          "end": 6.18
+        }
+      ]
+    }
+  ]
+}

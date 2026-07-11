@@ -1,0 +1,264 @@
+{
+  "model": "small",
+  "language": "en",
+  "text": "1.6 1. Large White Strong 2. Pandas Sea Turtles Chimpanzees Tigers 3. Poachers Loss of Habitat Human Contact 4. More Guards A ban on selling ivory Building Fences",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 1220,
+      "text": "1.6",
+      "words": [
+        {
+          "word": "1",
+          "start": 0.0,
+          "end": 0.4
+        },
+        {
+          "word": ".6",
+          "start": 0.4,
+          "end": 1.22
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 2000,
+      "endMs": 4420,
+      "text": "1. Large",
+      "words": [
+        {
+          "word": "1.",
+          "start": 2.0,
+          "end": 2.74
+        },
+        {
+          "word": "Large",
+          "start": 3.36,
+          "end": 4.42
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 5000,
+      "endMs": 5620,
+      "text": "White",
+      "words": [
+        {
+          "word": "White",
+          "start": 4.92,
+          "end": 5.62
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 5620,
+      "endMs": 7160,
+      "text": "Strong",
+      "words": [
+        {
+          "word": "Strong",
+          "start": 5.62,
+          "end": 7.16
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 8000,
+      "endMs": 11820,
+      "text": "2. Pandas",
+      "words": [
+        {
+          "word": "2.",
+          "start": 8.0,
+          "end": 9.74
+        },
+        {
+          "word": "Pandas",
+          "start": 10.94,
+          "end": 11.82
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "startMs": 11820,
+      "endMs": 13500,
+      "text": "Sea Turtles",
+      "words": [
+        {
+          "word": "Sea",
+          "start": 11.82,
+          "end": 12.8
+        },
+        {
+          "word": "Turtles",
+          "start": 12.8,
+          "end": 13.5
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "startMs": 13500,
+      "endMs": 15240,
+      "text": "Chimpanzees",
+      "words": [
+        {
+          "word": "Chimpanzees",
+          "start": 13.5,
+          "end": 15.24
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "startMs": 16000,
+      "endMs": 16420,
+      "text": "Tigers",
+      "words": [
+        {
+          "word": "Tigers",
+          "start": 15.720000000000002,
+          "end": 16.42
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "startMs": 18020,
+      "endMs": 21460,
+      "text": "3. Poachers",
+      "words": [
+        {
+          "word": "3.",
+          "start": 18.020000000000003,
+          "end": 19.42
+        },
+        {
+          "word": "Poachers",
+          "start": 20.84,
+          "end": 21.46
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "startMs": 22000,
+      "endMs": 23180,
+      "text": "Loss of Habitat",
+      "words": [
+        {
+          "word": "Loss",
+          "start": 21.76,
+          "end": 22.46
+        },
+        {
+          "word": "of",
+          "start": 22.46,
+          "end": 22.64
+        },
+        {
+          "word": "Habitat",
+          "start": 22.64,
+          "end": 23.18
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "startMs": 24000,
+      "endMs": 25280,
+      "text": "Human Contact",
+      "words": [
+        {
+          "word": "Human",
+          "start": 24.0,
+          "end": 24.78
+        },
+        {
+          "word": "Contact",
+          "start": 24.78,
+          "end": 25.28
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "startMs": 27000,
+      "endMs": 29980,
+      "text": "4. More Guards",
+      "words": [
+        {
+          "word": "4.",
+          "start": 27.0,
+          "end": 28.02
+        },
+        {
+          "word": "More",
+          "start": 29.28,
+          "end": 29.5
+        },
+        {
+          "word": "Guards",
+          "start": 29.5,
+          "end": 29.98
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "startMs": 29980,
+      "endMs": 32200,
+      "text": "A ban on selling ivory",
+      "words": [
+        {
+          "word": "A",
+          "start": 29.98,
+          "end": 30.88
+        },
+        {
+          "word": "ban",
+          "start": 30.88,
+          "end": 31.2
+        },
+        {
+          "word": "on",
+          "start": 31.2,
+          "end": 31.42
+        },
+        {
+          "word": "selling",
+          "start": 31.42,
+          "end": 31.72
+        },
+        {
+          "word": "ivory",
+          "start": 31.72,
+          "end": 32.2
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "startMs": 32200,
+      "endMs": 34100,
+      "text": "Building Fences",
+      "words": [
+        {
+          "word": "Building",
+          "start": 32.2,
+          "end": 33.64
+        },
+        {
+          "word": "Fences",
+          "start": 33.64,
+          "end": 34.1
+        }
+      ]
+    }
+  ]
+}

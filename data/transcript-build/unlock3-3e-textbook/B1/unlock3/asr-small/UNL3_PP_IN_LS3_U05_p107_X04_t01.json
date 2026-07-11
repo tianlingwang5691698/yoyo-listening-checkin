@@ -1,0 +1,586 @@
+{
+  "model": "small",
+  "language": "en",
+  "text": "Unit 5, 5.1 Today we're talking about the key to a long and happy life. Recent studies of people who lived to be a hundred years old have shown that a healthy diet and exercise may not be enough. In fact, many of the people who celebrate their hundredth birthday have not eaten a healthy diet and have never exercised regularly. This has led many people to believe that our lifestyles are not important. What's most important is that we have good genes. It seems that if you have the right genes, then you'll live for a long time, whatever you do.",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 3020,
+      "text": "Unit 5, 5.1",
+      "words": [
+        {
+          "word": "Unit",
+          "start": 0.0,
+          "end": 0.58
+        },
+        {
+          "word": "5,",
+          "start": 0.58,
+          "end": 1.14
+        },
+        {
+          "word": "5",
+          "start": 1.92,
+          "end": 2.32
+        },
+        {
+          "word": ".1",
+          "start": 2.32,
+          "end": 3.02
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 3980,
+      "endMs": 9860,
+      "text": "Today we're talking about the key to a long and happy life. Recent studies of people who",
+      "words": [
+        {
+          "word": "Today",
+          "start": 3.9799999999999986,
+          "end": 4.58
+        },
+        {
+          "word": "we're",
+          "start": 4.58,
+          "end": 5.0
+        },
+        {
+          "word": "talking",
+          "start": 5.0,
+          "end": 5.26
+        },
+        {
+          "word": "about",
+          "start": 5.26,
+          "end": 5.6
+        },
+        {
+          "word": "the",
+          "start": 5.6,
+          "end": 5.8
+        },
+        {
+          "word": "key",
+          "start": 5.8,
+          "end": 6.08
+        },
+        {
+          "word": "to",
+          "start": 6.08,
+          "end": 6.32
+        },
+        {
+          "word": "a",
+          "start": 6.32,
+          "end": 6.42
+        },
+        {
+          "word": "long",
+          "start": 6.42,
+          "end": 6.74
+        },
+        {
+          "word": "and",
+          "start": 6.74,
+          "end": 6.94
+        },
+        {
+          "word": "happy",
+          "start": 6.94,
+          "end": 7.24
+        },
+        {
+          "word": "life.",
+          "start": 7.24,
+          "end": 7.68
+        },
+        {
+          "word": "Recent",
+          "start": 8.24,
+          "end": 8.62
+        },
+        {
+          "word": "studies",
+          "start": 8.62,
+          "end": 8.98
+        },
+        {
+          "word": "of",
+          "start": 8.98,
+          "end": 9.28
+        },
+        {
+          "word": "people",
+          "start": 9.28,
+          "end": 9.58
+        },
+        {
+          "word": "who",
+          "start": 9.58,
+          "end": 9.86
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 9860,
+      "endMs": 15300,
+      "text": "lived to be a hundred years old have shown that a healthy diet and exercise may not",
+      "words": [
+        {
+          "word": "lived",
+          "start": 9.86,
+          "end": 10.06
+        },
+        {
+          "word": "to",
+          "start": 10.06,
+          "end": 10.24
+        },
+        {
+          "word": "be",
+          "start": 10.24,
+          "end": 10.4
+        },
+        {
+          "word": "a",
+          "start": 10.4,
+          "end": 10.6
+        },
+        {
+          "word": "hundred",
+          "start": 10.6,
+          "end": 10.84
+        },
+        {
+          "word": "years",
+          "start": 10.84,
+          "end": 11.14
+        },
+        {
+          "word": "old",
+          "start": 11.14,
+          "end": 11.58
+        },
+        {
+          "word": "have",
+          "start": 11.58,
+          "end": 12.1
+        },
+        {
+          "word": "shown",
+          "start": 12.1,
+          "end": 12.36
+        },
+        {
+          "word": "that",
+          "start": 12.36,
+          "end": 12.56
+        },
+        {
+          "word": "a",
+          "start": 12.56,
+          "end": 12.7
+        },
+        {
+          "word": "healthy",
+          "start": 12.7,
+          "end": 13.02
+        },
+        {
+          "word": "diet",
+          "start": 13.02,
+          "end": 13.46
+        },
+        {
+          "word": "and",
+          "start": 13.46,
+          "end": 13.78
+        },
+        {
+          "word": "exercise",
+          "start": 13.78,
+          "end": 14.38
+        },
+        {
+          "word": "may",
+          "start": 14.38,
+          "end": 15.08
+        },
+        {
+          "word": "not",
+          "start": 15.08,
+          "end": 15.3
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 15300,
+      "endMs": 20900,
+      "text": "be enough. In fact, many of the people who celebrate their hundredth birthday have not",
+      "words": [
+        {
+          "word": "be",
+          "start": 15.3,
+          "end": 15.48
+        },
+        {
+          "word": "enough.",
+          "start": 15.48,
+          "end": 15.78
+        },
+        {
+          "word": "In",
+          "start": 16.5,
+          "end": 16.68
+        },
+        {
+          "word": "fact,",
+          "start": 16.68,
+          "end": 16.92
+        },
+        {
+          "word": "many",
+          "start": 16.96,
+          "end": 17.22
+        },
+        {
+          "word": "of",
+          "start": 17.22,
+          "end": 17.44
+        },
+        {
+          "word": "the",
+          "start": 17.44,
+          "end": 17.54
+        },
+        {
+          "word": "people",
+          "start": 17.54,
+          "end": 17.8
+        },
+        {
+          "word": "who",
+          "start": 17.8,
+          "end": 18.08
+        },
+        {
+          "word": "celebrate",
+          "start": 18.08,
+          "end": 18.52
+        },
+        {
+          "word": "their",
+          "start": 18.52,
+          "end": 18.96
+        },
+        {
+          "word": "hundredth",
+          "start": 18.96,
+          "end": 19.58
+        },
+        {
+          "word": "birthday",
+          "start": 19.58,
+          "end": 20.04
+        },
+        {
+          "word": "have",
+          "start": 20.04,
+          "end": 20.66
+        },
+        {
+          "word": "not",
+          "start": 20.66,
+          "end": 20.9
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 20900,
+      "endMs": 27300,
+      "text": "eaten a healthy diet and have never exercised regularly. This has led many people to believe",
+      "words": [
+        {
+          "word": "eaten",
+          "start": 20.9,
+          "end": 21.16
+        },
+        {
+          "word": "a",
+          "start": 21.16,
+          "end": 21.34
+        },
+        {
+          "word": "healthy",
+          "start": 21.34,
+          "end": 21.6
+        },
+        {
+          "word": "diet",
+          "start": 21.6,
+          "end": 22.04
+        },
+        {
+          "word": "and",
+          "start": 22.04,
+          "end": 22.66
+        },
+        {
+          "word": "have",
+          "start": 22.66,
+          "end": 22.82
+        },
+        {
+          "word": "never",
+          "start": 22.82,
+          "end": 23.16
+        },
+        {
+          "word": "exercised",
+          "start": 23.16,
+          "end": 23.96
+        },
+        {
+          "word": "regularly.",
+          "start": 23.96,
+          "end": 24.48
+        },
+        {
+          "word": "This",
+          "start": 25.28,
+          "end": 25.62
+        },
+        {
+          "word": "has",
+          "start": 25.62,
+          "end": 25.82
+        },
+        {
+          "word": "led",
+          "start": 25.82,
+          "end": 26.0
+        },
+        {
+          "word": "many",
+          "start": 26.0,
+          "end": 26.3
+        },
+        {
+          "word": "people",
+          "start": 26.3,
+          "end": 26.68
+        },
+        {
+          "word": "to",
+          "start": 26.68,
+          "end": 26.94
+        },
+        {
+          "word": "believe",
+          "start": 26.94,
+          "end": 27.3
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "startMs": 27300,
+      "endMs": 33360,
+      "text": "that our lifestyles are not important. What's most important is that we have good genes.",
+      "words": [
+        {
+          "word": "that",
+          "start": 27.3,
+          "end": 27.6
+        },
+        {
+          "word": "our",
+          "start": 27.6,
+          "end": 27.88
+        },
+        {
+          "word": "lifestyles",
+          "start": 27.88,
+          "end": 28.76
+        },
+        {
+          "word": "are",
+          "start": 28.76,
+          "end": 29.04
+        },
+        {
+          "word": "not",
+          "start": 29.04,
+          "end": 29.18
+        },
+        {
+          "word": "important.",
+          "start": 29.18,
+          "end": 29.72
+        },
+        {
+          "word": "What's",
+          "start": 30.38,
+          "end": 30.88
+        },
+        {
+          "word": "most",
+          "start": 30.88,
+          "end": 31.04
+        },
+        {
+          "word": "important",
+          "start": 31.04,
+          "end": 31.58
+        },
+        {
+          "word": "is",
+          "start": 31.58,
+          "end": 32.1
+        },
+        {
+          "word": "that",
+          "start": 32.1,
+          "end": 32.22
+        },
+        {
+          "word": "we",
+          "start": 32.22,
+          "end": 32.38
+        },
+        {
+          "word": "have",
+          "start": 32.38,
+          "end": 32.66
+        },
+        {
+          "word": "good",
+          "start": 32.66,
+          "end": 32.96
+        },
+        {
+          "word": "genes.",
+          "start": 32.96,
+          "end": 33.36
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "startMs": 34180,
+      "endMs": 39240,
+      "text": "It seems that if you have the right genes, then you'll live for a long time, whatever",
+      "words": [
+        {
+          "word": "It",
+          "start": 34.18,
+          "end": 34.38
+        },
+        {
+          "word": "seems",
+          "start": 34.38,
+          "end": 34.7
+        },
+        {
+          "word": "that",
+          "start": 34.7,
+          "end": 35.04
+        },
+        {
+          "word": "if",
+          "start": 35.04,
+          "end": 35.28
+        },
+        {
+          "word": "you",
+          "start": 35.28,
+          "end": 35.4
+        },
+        {
+          "word": "have",
+          "start": 35.4,
+          "end": 35.64
+        },
+        {
+          "word": "the",
+          "start": 35.64,
+          "end": 35.8
+        },
+        {
+          "word": "right",
+          "start": 35.8,
+          "end": 35.98
+        },
+        {
+          "word": "genes,",
+          "start": 35.98,
+          "end": 36.5
+        },
+        {
+          "word": "then",
+          "start": 36.96,
+          "end": 37.16
+        },
+        {
+          "word": "you'll",
+          "start": 37.16,
+          "end": 37.38
+        },
+        {
+          "word": "live",
+          "start": 37.38,
+          "end": 37.56
+        },
+        {
+          "word": "for",
+          "start": 37.56,
+          "end": 37.78
+        },
+        {
+          "word": "a",
+          "start": 37.78,
+          "end": 37.9
+        },
+        {
+          "word": "long",
+          "start": 37.9,
+          "end": 38.12
+        },
+        {
+          "word": "time,",
+          "start": 38.12,
+          "end": 38.64
+        },
+        {
+          "word": "whatever",
+          "start": 38.96,
+          "end": 39.24
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "startMs": 39240,
+      "endMs": 39760,
+      "text": "you do.",
+      "words": [
+        {
+          "word": "you",
+          "start": 39.24,
+          "end": 39.52
+        },
+        {
+          "word": "do.",
+          "start": 39.52,
+          "end": 39.76
+        }
+      ]
+    }
+  ]
+}

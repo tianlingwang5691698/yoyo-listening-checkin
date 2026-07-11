@@ -1,0 +1,871 @@
+{
+  "model": "small",
+  "language": "en",
+  "text": "5.3 1 Now chess boxing is a new type of sport where the players do both activities. They start with boxing, sorry I mean chess, and then do some boxing and they continue doing each activity back and forth alternating. 2. Next I'd like to talk about the Moroccan Desert foot race which is also called the Marathon de Sable or the Sahara Marathon. This race is held every year over a week or rather over 6 days. 3. Finally I'd like to look at Sepak Takrao. This is a type of volleyball and is very popular in Southeast Asia. The players use a different kind of ball and they can use their feet to kick the ball or hit it with their knees, chest or head. The sport began in Indonesia and it, no not Indonesia, it began in Malaysia. Although it is also very popular in Thailand and Indonesia.",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 1300,
+      "text": "5.3",
+      "words": [
+        {
+          "word": "5",
+          "start": 0.0,
+          "end": 0.42
+        },
+        {
+          "word": ".3",
+          "start": 0.42,
+          "end": 1.3
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 2800,
+      "endMs": 3760,
+      "text": "1",
+      "words": [
+        {
+          "word": "1",
+          "start": 2.799999999999999,
+          "end": 3.76
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 5200,
+      "endMs": 12980,
+      "text": "Now chess boxing is a new type of sport where the players do both activities.",
+      "words": [
+        {
+          "word": "Now",
+          "start": 5.079999999999999,
+          "end": 5.56
+        },
+        {
+          "word": "chess",
+          "start": 5.56,
+          "end": 6.6
+        },
+        {
+          "word": "boxing",
+          "start": 6.6,
+          "end": 7.18
+        },
+        {
+          "word": "is",
+          "start": 7.18,
+          "end": 7.98
+        },
+        {
+          "word": "a",
+          "start": 7.98,
+          "end": 8.16
+        },
+        {
+          "word": "new",
+          "start": 8.16,
+          "end": 8.52
+        },
+        {
+          "word": "type",
+          "start": 8.52,
+          "end": 8.88
+        },
+        {
+          "word": "of",
+          "start": 8.88,
+          "end": 9.28
+        },
+        {
+          "word": "sport",
+          "start": 9.28,
+          "end": 9.7
+        },
+        {
+          "word": "where",
+          "start": 9.7,
+          "end": 10.5
+        },
+        {
+          "word": "the",
+          "start": 10.5,
+          "end": 10.68
+        },
+        {
+          "word": "players",
+          "start": 10.68,
+          "end": 11.2
+        },
+        {
+          "word": "do",
+          "start": 11.2,
+          "end": 11.56
+        },
+        {
+          "word": "both",
+          "start": 11.56,
+          "end": 12.14
+        },
+        {
+          "word": "activities.",
+          "start": 12.14,
+          "end": 12.98
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 13860,
+      "endMs": 26140,
+      "text": "They start with boxing, sorry I mean chess, and then do some boxing and they continue doing each activity back and forth alternating.",
+      "words": [
+        {
+          "word": "They",
+          "start": 13.86,
+          "end": 14.3
+        },
+        {
+          "word": "start",
+          "start": 14.3,
+          "end": 14.68
+        },
+        {
+          "word": "with",
+          "start": 14.68,
+          "end": 14.92
+        },
+        {
+          "word": "boxing,",
+          "start": 14.92,
+          "end": 15.34
+        },
+        {
+          "word": "sorry",
+          "start": 15.82,
+          "end": 16.22
+        },
+        {
+          "word": "I",
+          "start": 16.22,
+          "end": 16.94
+        },
+        {
+          "word": "mean",
+          "start": 16.94,
+          "end": 17.2
+        },
+        {
+          "word": "chess,",
+          "start": 17.2,
+          "end": 17.96
+        },
+        {
+          "word": "and",
+          "start": 18.56,
+          "end": 19.22
+        },
+        {
+          "word": "then",
+          "start": 19.22,
+          "end": 19.42
+        },
+        {
+          "word": "do",
+          "start": 19.42,
+          "end": 19.72
+        },
+        {
+          "word": "some",
+          "start": 19.72,
+          "end": 19.94
+        },
+        {
+          "word": "boxing",
+          "start": 19.94,
+          "end": 20.4
+        },
+        {
+          "word": "and",
+          "start": 20.4,
+          "end": 21.34
+        },
+        {
+          "word": "they",
+          "start": 21.34,
+          "end": 21.52
+        },
+        {
+          "word": "continue",
+          "start": 21.52,
+          "end": 22.0
+        },
+        {
+          "word": "doing",
+          "start": 22.0,
+          "end": 22.36
+        },
+        {
+          "word": "each",
+          "start": 22.36,
+          "end": 22.82
+        },
+        {
+          "word": "activity",
+          "start": 22.82,
+          "end": 23.52
+        },
+        {
+          "word": "back",
+          "start": 23.52,
+          "end": 24.16
+        },
+        {
+          "word": "and",
+          "start": 24.16,
+          "end": 24.64
+        },
+        {
+          "word": "forth",
+          "start": 24.64,
+          "end": 25.14
+        },
+        {
+          "word": "alternating.",
+          "start": 25.14,
+          "end": 26.14
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 28200,
+      "endMs": 29280,
+      "text": "2.",
+      "words": [
+        {
+          "word": "2.",
+          "start": 28.200000000000003,
+          "end": 29.28
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "startMs": 30380,
+      "endMs": 43000,
+      "text": "Next I'd like to talk about the Moroccan Desert foot race which is also called the Marathon de Sable or the Sahara Marathon.",
+      "words": [
+        {
+          "word": "Next",
+          "start": 30.38,
+          "end": 31.34
+        },
+        {
+          "word": "I'd",
+          "start": 31.34,
+          "end": 32.42
+        },
+        {
+          "word": "like",
+          "start": 32.42,
+          "end": 32.56
+        },
+        {
+          "word": "to",
+          "start": 32.56,
+          "end": 32.76
+        },
+        {
+          "word": "talk",
+          "start": 32.76,
+          "end": 32.94
+        },
+        {
+          "word": "about",
+          "start": 32.94,
+          "end": 33.36
+        },
+        {
+          "word": "the",
+          "start": 33.36,
+          "end": 33.82
+        },
+        {
+          "word": "Moroccan",
+          "start": 33.82,
+          "end": 34.36
+        },
+        {
+          "word": "Desert",
+          "start": 34.36,
+          "end": 34.64
+        },
+        {
+          "word": "foot",
+          "start": 34.64,
+          "end": 35.0
+        },
+        {
+          "word": "race",
+          "start": 35.0,
+          "end": 35.34
+        },
+        {
+          "word": "which",
+          "start": 35.34,
+          "end": 36.22
+        },
+        {
+          "word": "is",
+          "start": 36.22,
+          "end": 36.38
+        },
+        {
+          "word": "also",
+          "start": 36.38,
+          "end": 36.84
+        },
+        {
+          "word": "called",
+          "start": 36.84,
+          "end": 37.42
+        },
+        {
+          "word": "the",
+          "start": 37.42,
+          "end": 37.88
+        },
+        {
+          "word": "Marathon",
+          "start": 37.88,
+          "end": 38.6
+        },
+        {
+          "word": "de",
+          "start": 38.6,
+          "end": 39.14
+        },
+        {
+          "word": "Sable",
+          "start": 39.14,
+          "end": 39.64
+        },
+        {
+          "word": "or",
+          "start": 39.64,
+          "end": 40.82
+        },
+        {
+          "word": "the",
+          "start": 40.82,
+          "end": 41.44
+        },
+        {
+          "word": "Sahara",
+          "start": 41.44,
+          "end": 42.12
+        },
+        {
+          "word": "Marathon.",
+          "start": 42.12,
+          "end": 43.0
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "startMs": 43700,
+      "endMs": 50920,
+      "text": "This race is held every year over a week or rather over 6 days.",
+      "words": [
+        {
+          "word": "This",
+          "start": 43.7,
+          "end": 44.44
+        },
+        {
+          "word": "race",
+          "start": 44.44,
+          "end": 44.78
+        },
+        {
+          "word": "is",
+          "start": 44.78,
+          "end": 45.38
+        },
+        {
+          "word": "held",
+          "start": 45.38,
+          "end": 45.7
+        },
+        {
+          "word": "every",
+          "start": 45.7,
+          "end": 46.22
+        },
+        {
+          "word": "year",
+          "start": 46.22,
+          "end": 46.7
+        },
+        {
+          "word": "over",
+          "start": 46.7,
+          "end": 47.32
+        },
+        {
+          "word": "a",
+          "start": 47.32,
+          "end": 47.6
+        },
+        {
+          "word": "week",
+          "start": 47.6,
+          "end": 47.88
+        },
+        {
+          "word": "or",
+          "start": 47.88,
+          "end": 48.74
+        },
+        {
+          "word": "rather",
+          "start": 48.74,
+          "end": 49.18
+        },
+        {
+          "word": "over",
+          "start": 49.18,
+          "end": 50.02
+        },
+        {
+          "word": "6",
+          "start": 50.02,
+          "end": 50.4
+        },
+        {
+          "word": "days.",
+          "start": 50.4,
+          "end": 50.92
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "startMs": 53040,
+      "endMs": 54120,
+      "text": "3.",
+      "words": [
+        {
+          "word": "3.",
+          "start": 53.04,
+          "end": 54.12
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "startMs": 55820,
+      "endMs": 60160,
+      "text": "Finally I'd like to look at Sepak Takrao.",
+      "words": [
+        {
+          "word": "Finally",
+          "start": 55.82000000000001,
+          "end": 56.480000000000004
+        },
+        {
+          "word": "I'd",
+          "start": 56.480000000000004,
+          "end": 57.14
+        },
+        {
+          "word": "like",
+          "start": 57.14,
+          "end": 57.26
+        },
+        {
+          "word": "to",
+          "start": 57.26,
+          "end": 57.5
+        },
+        {
+          "word": "look",
+          "start": 57.5,
+          "end": 57.66
+        },
+        {
+          "word": "at",
+          "start": 57.66,
+          "end": 58.0
+        },
+        {
+          "word": "Sepak",
+          "start": 58.0,
+          "end": 59.2
+        },
+        {
+          "word": "Takrao.",
+          "start": 59.2,
+          "end": 60.16
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "startMs": 60820,
+      "endMs": 66780,
+      "text": "This is a type of volleyball and is very popular in Southeast Asia.",
+      "words": [
+        {
+          "word": "This",
+          "start": 60.82,
+          "end": 61.3
+        },
+        {
+          "word": "is",
+          "start": 61.3,
+          "end": 61.48
+        },
+        {
+          "word": "a",
+          "start": 61.48,
+          "end": 61.64
+        },
+        {
+          "word": "type",
+          "start": 61.64,
+          "end": 61.9
+        },
+        {
+          "word": "of",
+          "start": 61.9,
+          "end": 62.2
+        },
+        {
+          "word": "volleyball",
+          "start": 62.2,
+          "end": 62.64
+        },
+        {
+          "word": "and",
+          "start": 62.64,
+          "end": 63.44
+        },
+        {
+          "word": "is",
+          "start": 63.44,
+          "end": 63.66
+        },
+        {
+          "word": "very",
+          "start": 63.66,
+          "end": 64.22
+        },
+        {
+          "word": "popular",
+          "start": 64.22,
+          "end": 64.82
+        },
+        {
+          "word": "in",
+          "start": 64.82,
+          "end": 65.38
+        },
+        {
+          "word": "Southeast",
+          "start": 65.38,
+          "end": 66.04
+        },
+        {
+          "word": "Asia.",
+          "start": 66.04,
+          "end": 66.78
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "startMs": 67840,
+      "endMs": 77640,
+      "text": "The players use a different kind of ball and they can use their feet to kick the ball or hit it with their knees, chest or head.",
+      "words": [
+        {
+          "word": "The",
+          "start": 67.84,
+          "end": 68.1
+        },
+        {
+          "word": "players",
+          "start": 68.1,
+          "end": 68.62
+        },
+        {
+          "word": "use",
+          "start": 68.62,
+          "end": 69.14
+        },
+        {
+          "word": "a",
+          "start": 69.14,
+          "end": 69.34
+        },
+        {
+          "word": "different",
+          "start": 69.34,
+          "end": 69.62
+        },
+        {
+          "word": "kind",
+          "start": 69.62,
+          "end": 69.98
+        },
+        {
+          "word": "of",
+          "start": 69.98,
+          "end": 70.26
+        },
+        {
+          "word": "ball",
+          "start": 70.26,
+          "end": 70.62
+        },
+        {
+          "word": "and",
+          "start": 70.62,
+          "end": 71.76
+        },
+        {
+          "word": "they",
+          "start": 71.76,
+          "end": 71.92
+        },
+        {
+          "word": "can",
+          "start": 71.92,
+          "end": 72.18
+        },
+        {
+          "word": "use",
+          "start": 72.18,
+          "end": 72.38
+        },
+        {
+          "word": "their",
+          "start": 72.38,
+          "end": 72.58
+        },
+        {
+          "word": "feet",
+          "start": 72.58,
+          "end": 72.86
+        },
+        {
+          "word": "to",
+          "start": 72.86,
+          "end": 73.1
+        },
+        {
+          "word": "kick",
+          "start": 73.1,
+          "end": 73.3
+        },
+        {
+          "word": "the",
+          "start": 73.3,
+          "end": 73.5
+        },
+        {
+          "word": "ball",
+          "start": 73.5,
+          "end": 73.86
+        },
+        {
+          "word": "or",
+          "start": 73.86,
+          "end": 74.6
+        },
+        {
+          "word": "hit",
+          "start": 74.6,
+          "end": 75.14
+        },
+        {
+          "word": "it",
+          "start": 75.14,
+          "end": 75.32
+        },
+        {
+          "word": "with",
+          "start": 75.32,
+          "end": 75.52
+        },
+        {
+          "word": "their",
+          "start": 75.52,
+          "end": 75.74
+        },
+        {
+          "word": "knees,",
+          "start": 75.74,
+          "end": 76.06
+        },
+        {
+          "word": "chest",
+          "start": 76.5,
+          "end": 76.68
+        },
+        {
+          "word": "or",
+          "start": 76.68,
+          "end": 77.32
+        },
+        {
+          "word": "head.",
+          "start": 77.32,
+          "end": 77.64
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "startMs": 77640,
+      "endMs": 87340,
+      "text": "The sport began in Indonesia and it, no not Indonesia, it began in Malaysia.",
+      "words": [
+        {
+          "word": "The",
+          "start": 77.64,
+          "end": 79.0
+        },
+        {
+          "word": "sport",
+          "start": 79.0,
+          "end": 79.52
+        },
+        {
+          "word": "began",
+          "start": 79.52,
+          "end": 80.06
+        },
+        {
+          "word": "in",
+          "start": 80.06,
+          "end": 80.46
+        },
+        {
+          "word": "Indonesia",
+          "start": 80.46,
+          "end": 81.02
+        },
+        {
+          "word": "and",
+          "start": 81.02,
+          "end": 81.92
+        },
+        {
+          "word": "it,",
+          "start": 81.92,
+          "end": 82.16
+        },
+        {
+          "word": "no",
+          "start": 82.76,
+          "end": 83.24
+        },
+        {
+          "word": "not",
+          "start": 83.24,
+          "end": 84.02
+        },
+        {
+          "word": "Indonesia,",
+          "start": 84.02,
+          "end": 84.5
+        },
+        {
+          "word": "it",
+          "start": 85.1,
+          "end": 85.46
+        },
+        {
+          "word": "began",
+          "start": 85.46,
+          "end": 85.9
+        },
+        {
+          "word": "in",
+          "start": 85.9,
+          "end": 86.44
+        },
+        {
+          "word": "Malaysia.",
+          "start": 86.44,
+          "end": 87.34
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "startMs": 88100,
+      "endMs": 92780,
+      "text": "Although it is also very popular in Thailand and Indonesia.",
+      "words": [
+        {
+          "word": "Although",
+          "start": 88.1,
+          "end": 88.78
+        },
+        {
+          "word": "it",
+          "start": 88.78,
+          "end": 89.04
+        },
+        {
+          "word": "is",
+          "start": 89.04,
+          "end": 89.18
+        },
+        {
+          "word": "also",
+          "start": 89.18,
+          "end": 89.6
+        },
+        {
+          "word": "very",
+          "start": 89.6,
+          "end": 90.1
+        },
+        {
+          "word": "popular",
+          "start": 90.1,
+          "end": 90.54
+        },
+        {
+          "word": "in",
+          "start": 90.54,
+          "end": 91.06
+        },
+        {
+          "word": "Thailand",
+          "start": 91.06,
+          "end": 91.44
+        },
+        {
+          "word": "and",
+          "start": 91.44,
+          "end": 92.26
+        },
+        {
+          "word": "Indonesia.",
+          "start": 92.26,
+          "end": 92.78
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,336 @@
+{
+  "model": "small",
+  "language": "en",
+  "text": "1.8. 1. First of all, keeping animals in zoos helps protect them. 2. For example, many species such as the giant panda and the snow leopard are endangered in the wild. 3. Another point is that zoos have an important educational role. 4. To summarise, zoos help protect animals and educate us.",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 2000,
+      "text": "1.8. 1.",
+      "words": [
+        {
+          "word": "1",
+          "start": 0.0,
+          "end": 0.38
+        },
+        {
+          "word": ".8.",
+          "start": 0.38,
+          "end": 0.98
+        },
+        {
+          "word": "1.",
+          "start": 1.42,
+          "end": 2.0
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 3480,
+      "endMs": 7080,
+      "text": "First of all, keeping animals in zoos helps protect them.",
+      "words": [
+        {
+          "word": "First",
+          "start": 3.34,
+          "end": 3.76
+        },
+        {
+          "word": "of",
+          "start": 3.76,
+          "end": 3.98
+        },
+        {
+          "word": "all,",
+          "start": 3.98,
+          "end": 4.22
+        },
+        {
+          "word": "keeping",
+          "start": 4.64,
+          "end": 4.78
+        },
+        {
+          "word": "animals",
+          "start": 4.78,
+          "end": 5.22
+        },
+        {
+          "word": "in",
+          "start": 5.22,
+          "end": 5.52
+        },
+        {
+          "word": "zoos",
+          "start": 5.52,
+          "end": 5.98
+        },
+        {
+          "word": "helps",
+          "start": 5.98,
+          "end": 6.28
+        },
+        {
+          "word": "protect",
+          "start": 6.28,
+          "end": 6.7
+        },
+        {
+          "word": "them.",
+          "start": 6.7,
+          "end": 7.08
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 9220,
+      "endMs": 10060,
+      "text": "2.",
+      "words": [
+        {
+          "word": "2.",
+          "start": 9.22,
+          "end": 10.06
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 11640,
+      "endMs": 18400,
+      "text": "For example, many species such as the giant panda and the snow leopard are endangered in the wild.",
+      "words": [
+        {
+          "word": "For",
+          "start": 11.64,
+          "end": 11.78
+        },
+        {
+          "word": "example,",
+          "start": 11.78,
+          "end": 12.22
+        },
+        {
+          "word": "many",
+          "start": 12.98,
+          "end": 13.28
+        },
+        {
+          "word": "species",
+          "start": 13.28,
+          "end": 13.74
+        },
+        {
+          "word": "such",
+          "start": 13.74,
+          "end": 14.34
+        },
+        {
+          "word": "as",
+          "start": 14.34,
+          "end": 14.52
+        },
+        {
+          "word": "the",
+          "start": 14.52,
+          "end": 14.62
+        },
+        {
+          "word": "giant",
+          "start": 14.62,
+          "end": 14.9
+        },
+        {
+          "word": "panda",
+          "start": 14.9,
+          "end": 15.24
+        },
+        {
+          "word": "and",
+          "start": 15.24,
+          "end": 15.74
+        },
+        {
+          "word": "the",
+          "start": 15.74,
+          "end": 15.88
+        },
+        {
+          "word": "snow",
+          "start": 15.88,
+          "end": 16.16
+        },
+        {
+          "word": "leopard",
+          "start": 16.16,
+          "end": 16.54
+        },
+        {
+          "word": "are",
+          "start": 16.54,
+          "end": 17.04
+        },
+        {
+          "word": "endangered",
+          "start": 17.04,
+          "end": 17.66
+        },
+        {
+          "word": "in",
+          "start": 17.66,
+          "end": 18.0
+        },
+        {
+          "word": "the",
+          "start": 18.0,
+          "end": 18.1
+        },
+        {
+          "word": "wild.",
+          "start": 18.1,
+          "end": 18.4
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 20760,
+      "endMs": 21600,
+      "text": "3.",
+      "words": [
+        {
+          "word": "3.",
+          "start": 20.76,
+          "end": 21.6
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "startMs": 23120,
+      "endMs": 27220,
+      "text": "Another point is that zoos have an important educational role.",
+      "words": [
+        {
+          "word": "Another",
+          "start": 23.12,
+          "end": 23.38
+        },
+        {
+          "word": "point",
+          "start": 23.38,
+          "end": 23.78
+        },
+        {
+          "word": "is",
+          "start": 23.78,
+          "end": 24.18
+        },
+        {
+          "word": "that",
+          "start": 24.18,
+          "end": 24.44
+        },
+        {
+          "word": "zoos",
+          "start": 24.44,
+          "end": 24.92
+        },
+        {
+          "word": "have",
+          "start": 24.92,
+          "end": 25.32
+        },
+        {
+          "word": "an",
+          "start": 25.32,
+          "end": 25.44
+        },
+        {
+          "word": "important",
+          "start": 25.44,
+          "end": 25.94
+        },
+        {
+          "word": "educational",
+          "start": 25.94,
+          "end": 26.74
+        },
+        {
+          "word": "role.",
+          "start": 26.74,
+          "end": 27.22
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "startMs": 29380,
+      "endMs": 30260,
+      "text": "4.",
+      "words": [
+        {
+          "word": "4.",
+          "start": 29.380000000000003,
+          "end": 30.26
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "startMs": 32020,
+      "endMs": 35800,
+      "text": "To summarise, zoos help protect animals and educate us.",
+      "words": [
+        {
+          "word": "To",
+          "start": 32.02,
+          "end": 32.02
+        },
+        {
+          "word": "summarise,",
+          "start": 32.02,
+          "end": 32.7
+        },
+        {
+          "word": "zoos",
+          "start": 33.12,
+          "end": 33.42
+        },
+        {
+          "word": "help",
+          "start": 33.42,
+          "end": 33.6
+        },
+        {
+          "word": "protect",
+          "start": 33.6,
+          "end": 33.96
+        },
+        {
+          "word": "animals",
+          "start": 33.96,
+          "end": 34.42
+        },
+        {
+          "word": "and",
+          "start": 34.42,
+          "end": 34.96
+        },
+        {
+          "word": "educate",
+          "start": 34.96,
+          "end": 35.38
+        },
+        {
+          "word": "us.",
+          "start": 35.38,
+          "end": 35.8
+        }
+      ]
+    }
+  ]
+}

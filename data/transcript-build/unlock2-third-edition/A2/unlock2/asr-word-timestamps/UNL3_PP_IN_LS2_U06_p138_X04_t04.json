@@ -1,0 +1,974 @@
+{
+  "model": "small",
+  "language": "en",
+  "text": "6.4 Hi Sam, good to see you again. Hello Joe So last time we met we talked about your business goals Was it useful? Useful? Yeah, it was You really made me think But now I have a lot of stress about losing money. Oh, yes What is making you stressed about that? Well, I realized how many weaknesses a business can have One careless mistake and I could lose a lot of money Exactly But there are things you think will cause you to lose money Well, when we looked at the company's strengths and weaknesses We talked about the quality and happiness of my workers the costs of running the business and Reaching new customers to help grow the business Each of these areas could be a way to help make money Or a way to lose money if you don't have a good plan Wow, that's great. Those are all important to think about Is there anything else? You",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 1360,
+      "text": "6.4",
+      "words": [
+        {
+          "word": "6",
+          "start": 0.0,
+          "end": 0.5
+        },
+        {
+          "word": ".4",
+          "start": 0.5,
+          "end": 1.36
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 2920,
+      "endMs": 6780,
+      "text": "Hi Sam, good to see you again. Hello Joe",
+      "words": [
+        {
+          "word": "Hi",
+          "start": 2.92,
+          "end": 3.76
+        },
+        {
+          "word": "Sam,",
+          "start": 3.76,
+          "end": 4.14
+        },
+        {
+          "word": "good",
+          "start": 4.68,
+          "end": 4.98
+        },
+        {
+          "word": "to",
+          "start": 4.98,
+          "end": 5.16
+        },
+        {
+          "word": "see",
+          "start": 5.16,
+          "end": 5.38
+        },
+        {
+          "word": "you",
+          "start": 5.38,
+          "end": 5.58
+        },
+        {
+          "word": "again.",
+          "start": 5.58,
+          "end": 5.92
+        },
+        {
+          "word": "Hello",
+          "start": 6.26,
+          "end": 6.48
+        },
+        {
+          "word": "Joe",
+          "start": 6.48,
+          "end": 6.78
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 7520,
+      "endMs": 13140,
+      "text": "So last time we met we talked about your business goals",
+      "words": [
+        {
+          "word": "So",
+          "start": 7.5200000000000005,
+          "end": 8.08
+        },
+        {
+          "word": "last",
+          "start": 8.08,
+          "end": 9.26
+        },
+        {
+          "word": "time",
+          "start": 9.26,
+          "end": 9.62
+        },
+        {
+          "word": "we",
+          "start": 9.62,
+          "end": 9.84
+        },
+        {
+          "word": "met",
+          "start": 9.84,
+          "end": 10.26
+        },
+        {
+          "word": "we",
+          "start": 10.26,
+          "end": 10.64
+        },
+        {
+          "word": "talked",
+          "start": 10.64,
+          "end": 11.02
+        },
+        {
+          "word": "about",
+          "start": 11.02,
+          "end": 11.44
+        },
+        {
+          "word": "your",
+          "start": 11.44,
+          "end": 11.88
+        },
+        {
+          "word": "business",
+          "start": 11.88,
+          "end": 12.48
+        },
+        {
+          "word": "goals",
+          "start": 12.48,
+          "end": 13.14
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 13680,
+      "endMs": 14960,
+      "text": "Was it useful?",
+      "words": [
+        {
+          "word": "Was",
+          "start": 13.68,
+          "end": 14.2
+        },
+        {
+          "word": "it",
+          "start": 14.2,
+          "end": 14.46
+        },
+        {
+          "word": "useful?",
+          "start": 14.46,
+          "end": 14.96
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 15720,
+      "endMs": 17880,
+      "text": "Useful? Yeah, it was",
+      "words": [
+        {
+          "word": "Useful?",
+          "start": 15.72,
+          "end": 16.2
+        },
+        {
+          "word": "Yeah,",
+          "start": 16.7,
+          "end": 17.2
+        },
+        {
+          "word": "it",
+          "start": 17.26,
+          "end": 17.5
+        },
+        {
+          "word": "was",
+          "start": 17.5,
+          "end": 17.88
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "startMs": 18520,
+      "endMs": 20480,
+      "text": "You really made me think",
+      "words": [
+        {
+          "word": "You",
+          "start": 18.52,
+          "end": 19.0
+        },
+        {
+          "word": "really",
+          "start": 19.0,
+          "end": 19.42
+        },
+        {
+          "word": "made",
+          "start": 19.42,
+          "end": 19.72
+        },
+        {
+          "word": "me",
+          "start": 19.72,
+          "end": 19.92
+        },
+        {
+          "word": "think",
+          "start": 19.92,
+          "end": 20.48
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "startMs": 21000,
+      "endMs": 26460,
+      "text": "But now I have a lot of stress about losing money. Oh, yes",
+      "words": [
+        {
+          "word": "But",
+          "start": 21.0,
+          "end": 21.54
+        },
+        {
+          "word": "now",
+          "start": 21.54,
+          "end": 22.08
+        },
+        {
+          "word": "I",
+          "start": 22.08,
+          "end": 22.4
+        },
+        {
+          "word": "have",
+          "start": 22.4,
+          "end": 22.64
+        },
+        {
+          "word": "a",
+          "start": 22.64,
+          "end": 22.74
+        },
+        {
+          "word": "lot",
+          "start": 22.74,
+          "end": 22.96
+        },
+        {
+          "word": "of",
+          "start": 22.96,
+          "end": 23.12
+        },
+        {
+          "word": "stress",
+          "start": 23.12,
+          "end": 23.58
+        },
+        {
+          "word": "about",
+          "start": 23.58,
+          "end": 24.08
+        },
+        {
+          "word": "losing",
+          "start": 24.08,
+          "end": 24.56
+        },
+        {
+          "word": "money.",
+          "start": 24.56,
+          "end": 25.04
+        },
+        {
+          "word": "Oh,",
+          "start": 25.4,
+          "end": 26.1
+        },
+        {
+          "word": "yes",
+          "start": 26.1,
+          "end": 26.46
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "startMs": 26460,
+      "endMs": 34180,
+      "text": "What is making you stressed about that? Well, I realized how many weaknesses a business can have",
+      "words": [
+        {
+          "word": "What",
+          "start": 26.46,
+          "end": 27.34
+        },
+        {
+          "word": "is",
+          "start": 27.34,
+          "end": 27.64
+        },
+        {
+          "word": "making",
+          "start": 27.64,
+          "end": 27.94
+        },
+        {
+          "word": "you",
+          "start": 27.94,
+          "end": 28.22
+        },
+        {
+          "word": "stressed",
+          "start": 28.22,
+          "end": 28.52
+        },
+        {
+          "word": "about",
+          "start": 28.52,
+          "end": 28.96
+        },
+        {
+          "word": "that?",
+          "start": 28.96,
+          "end": 29.26
+        },
+        {
+          "word": "Well,",
+          "start": 29.82,
+          "end": 30.02
+        },
+        {
+          "word": "I",
+          "start": 30.32,
+          "end": 30.54
+        },
+        {
+          "word": "realized",
+          "start": 30.54,
+          "end": 30.96
+        },
+        {
+          "word": "how",
+          "start": 30.96,
+          "end": 31.52
+        },
+        {
+          "word": "many",
+          "start": 31.52,
+          "end": 31.78
+        },
+        {
+          "word": "weaknesses",
+          "start": 31.78,
+          "end": 32.44
+        },
+        {
+          "word": "a",
+          "start": 32.44,
+          "end": 32.88
+        },
+        {
+          "word": "business",
+          "start": 32.88,
+          "end": 33.24
+        },
+        {
+          "word": "can",
+          "start": 33.24,
+          "end": 33.64
+        },
+        {
+          "word": "have",
+          "start": 33.64,
+          "end": 34.18
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "startMs": 34700,
+      "endMs": 38720,
+      "text": "One careless mistake and I could lose a lot of money",
+      "words": [
+        {
+          "word": "One",
+          "start": 34.7,
+          "end": 35.26
+        },
+        {
+          "word": "careless",
+          "start": 35.26,
+          "end": 35.84
+        },
+        {
+          "word": "mistake",
+          "start": 35.84,
+          "end": 36.48
+        },
+        {
+          "word": "and",
+          "start": 36.48,
+          "end": 37.1
+        },
+        {
+          "word": "I",
+          "start": 37.1,
+          "end": 37.3
+        },
+        {
+          "word": "could",
+          "start": 37.3,
+          "end": 37.48
+        },
+        {
+          "word": "lose",
+          "start": 37.48,
+          "end": 37.74
+        },
+        {
+          "word": "a",
+          "start": 37.74,
+          "end": 37.94
+        },
+        {
+          "word": "lot",
+          "start": 37.94,
+          "end": 38.16
+        },
+        {
+          "word": "of",
+          "start": 38.16,
+          "end": 38.32
+        },
+        {
+          "word": "money",
+          "start": 38.32,
+          "end": 38.72
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "startMs": 39660,
+      "endMs": 39940,
+      "text": "Exactly",
+      "words": [
+        {
+          "word": "Exactly",
+          "start": 39.599999999999994,
+          "end": 39.94
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "startMs": 40660,
+      "endMs": 44660,
+      "text": "But there are things you think will cause you to lose money",
+      "words": [
+        {
+          "word": "But",
+          "start": 40.660000000000004,
+          "end": 41.34
+        },
+        {
+          "word": "there",
+          "start": 41.34,
+          "end": 41.64
+        },
+        {
+          "word": "are",
+          "start": 41.64,
+          "end": 41.8
+        },
+        {
+          "word": "things",
+          "start": 41.8,
+          "end": 42.12
+        },
+        {
+          "word": "you",
+          "start": 42.12,
+          "end": 42.42
+        },
+        {
+          "word": "think",
+          "start": 42.42,
+          "end": 42.66
+        },
+        {
+          "word": "will",
+          "start": 42.66,
+          "end": 43.0
+        },
+        {
+          "word": "cause",
+          "start": 43.0,
+          "end": 43.48
+        },
+        {
+          "word": "you",
+          "start": 43.48,
+          "end": 43.74
+        },
+        {
+          "word": "to",
+          "start": 43.74,
+          "end": 43.94
+        },
+        {
+          "word": "lose",
+          "start": 43.94,
+          "end": 44.28
+        },
+        {
+          "word": "money",
+          "start": 44.28,
+          "end": 44.66
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "startMs": 45260,
+      "endMs": 49620,
+      "text": "Well, when we looked at the company's strengths and weaknesses",
+      "words": [
+        {
+          "word": "Well,",
+          "start": 45.260000000000005,
+          "end": 45.92
+        },
+        {
+          "word": "when",
+          "start": 46.26,
+          "end": 46.66
+        },
+        {
+          "word": "we",
+          "start": 46.66,
+          "end": 46.84
+        },
+        {
+          "word": "looked",
+          "start": 46.84,
+          "end": 47.1
+        },
+        {
+          "word": "at",
+          "start": 47.1,
+          "end": 47.36
+        },
+        {
+          "word": "the",
+          "start": 47.36,
+          "end": 47.48
+        },
+        {
+          "word": "company's",
+          "start": 47.48,
+          "end": 48.1
+        },
+        {
+          "word": "strengths",
+          "start": 48.1,
+          "end": 48.52
+        },
+        {
+          "word": "and",
+          "start": 48.52,
+          "end": 49.06
+        },
+        {
+          "word": "weaknesses",
+          "start": 49.06,
+          "end": 49.62
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "startMs": 49620,
+      "endMs": 56780,
+      "text": "We talked about the quality and happiness of my workers the costs of running the business and",
+      "words": [
+        {
+          "word": "We",
+          "start": 49.62,
+          "end": 50.44
+        },
+        {
+          "word": "talked",
+          "start": 50.44,
+          "end": 50.8
+        },
+        {
+          "word": "about",
+          "start": 50.8,
+          "end": 51.22
+        },
+        {
+          "word": "the",
+          "start": 51.22,
+          "end": 51.44
+        },
+        {
+          "word": "quality",
+          "start": 51.44,
+          "end": 51.98
+        },
+        {
+          "word": "and",
+          "start": 51.98,
+          "end": 52.42
+        },
+        {
+          "word": "happiness",
+          "start": 52.42,
+          "end": 52.88
+        },
+        {
+          "word": "of",
+          "start": 52.88,
+          "end": 53.28
+        },
+        {
+          "word": "my",
+          "start": 53.28,
+          "end": 53.52
+        },
+        {
+          "word": "workers",
+          "start": 53.52,
+          "end": 54.02
+        },
+        {
+          "word": "the",
+          "start": 54.02,
+          "end": 54.82
+        },
+        {
+          "word": "costs",
+          "start": 54.82,
+          "end": 55.22
+        },
+        {
+          "word": "of",
+          "start": 55.22,
+          "end": 55.62
+        },
+        {
+          "word": "running",
+          "start": 55.62,
+          "end": 55.94
+        },
+        {
+          "word": "the",
+          "start": 55.94,
+          "end": 56.18
+        },
+        {
+          "word": "business",
+          "start": 56.18,
+          "end": 56.54
+        },
+        {
+          "word": "and",
+          "start": 56.54,
+          "end": 56.94
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "startMs": 57320,
+      "endMs": 60500,
+      "text": "Reaching new customers to help grow the business",
+      "words": [
+        {
+          "word": "Reaching",
+          "start": 57.32,
+          "end": 57.72
+        },
+        {
+          "word": "new",
+          "start": 57.72,
+          "end": 58.06
+        },
+        {
+          "word": "customers",
+          "start": 58.06,
+          "end": 58.64
+        },
+        {
+          "word": "to",
+          "start": 58.64,
+          "end": 59.1
+        },
+        {
+          "word": "help",
+          "start": 59.1,
+          "end": 59.42
+        },
+        {
+          "word": "grow",
+          "start": 59.42,
+          "end": 59.84
+        },
+        {
+          "word": "the",
+          "start": 59.84,
+          "end": 60.1
+        },
+        {
+          "word": "business",
+          "start": 60.1,
+          "end": 60.5
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "startMs": 61100,
+      "endMs": 65300,
+      "text": "Each of these areas could be a way to help make money",
+      "words": [
+        {
+          "word": "Each",
+          "start": 61.099999999999994,
+          "end": 61.8
+        },
+        {
+          "word": "of",
+          "start": 61.8,
+          "end": 62.02
+        },
+        {
+          "word": "these",
+          "start": 62.02,
+          "end": 62.24
+        },
+        {
+          "word": "areas",
+          "start": 62.24,
+          "end": 62.86
+        },
+        {
+          "word": "could",
+          "start": 62.86,
+          "end": 63.3
+        },
+        {
+          "word": "be",
+          "start": 63.3,
+          "end": 63.56
+        },
+        {
+          "word": "a",
+          "start": 63.56,
+          "end": 63.7
+        },
+        {
+          "word": "way",
+          "start": 63.7,
+          "end": 63.96
+        },
+        {
+          "word": "to",
+          "start": 63.96,
+          "end": 64.26
+        },
+        {
+          "word": "help",
+          "start": 64.26,
+          "end": 64.54
+        },
+        {
+          "word": "make",
+          "start": 64.54,
+          "end": 64.88
+        },
+        {
+          "word": "money",
+          "start": 64.88,
+          "end": 65.3
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "startMs": 65300,
+      "endMs": 69860,
+      "text": "Or a way to lose money if you don't have a good plan",
+      "words": [
+        {
+          "word": "Or",
+          "start": 65.3,
+          "end": 66.44
+        },
+        {
+          "word": "a",
+          "start": 66.44,
+          "end": 66.88
+        },
+        {
+          "word": "way",
+          "start": 66.88,
+          "end": 67.1
+        },
+        {
+          "word": "to",
+          "start": 67.1,
+          "end": 67.32
+        },
+        {
+          "word": "lose",
+          "start": 67.32,
+          "end": 67.66
+        },
+        {
+          "word": "money",
+          "start": 67.66,
+          "end": 68.1
+        },
+        {
+          "word": "if",
+          "start": 68.1,
+          "end": 68.6
+        },
+        {
+          "word": "you",
+          "start": 68.6,
+          "end": 68.72
+        },
+        {
+          "word": "don't",
+          "start": 68.72,
+          "end": 68.92
+        },
+        {
+          "word": "have",
+          "start": 68.92,
+          "end": 69.12
+        },
+        {
+          "word": "a",
+          "start": 69.12,
+          "end": 69.22
+        },
+        {
+          "word": "good",
+          "start": 69.22,
+          "end": 69.42
+        },
+        {
+          "word": "plan",
+          "start": 69.42,
+          "end": 69.86
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "startMs": 70380,
+      "endMs": 75320,
+      "text": "Wow, that's great. Those are all important to think about",
+      "words": [
+        {
+          "word": "Wow,",
+          "start": 70.38,
+          "end": 71.16
+        },
+        {
+          "word": "that's",
+          "start": 71.3,
+          "end": 71.92
+        },
+        {
+          "word": "great.",
+          "start": 71.92,
+          "end": 72.32
+        },
+        {
+          "word": "Those",
+          "start": 72.82,
+          "end": 73.28
+        },
+        {
+          "word": "are",
+          "start": 73.28,
+          "end": 73.48
+        },
+        {
+          "word": "all",
+          "start": 73.48,
+          "end": 73.74
+        },
+        {
+          "word": "important",
+          "start": 73.74,
+          "end": 74.4
+        },
+        {
+          "word": "to",
+          "start": 74.4,
+          "end": 74.74
+        },
+        {
+          "word": "think",
+          "start": 74.74,
+          "end": 74.92
+        },
+        {
+          "word": "about",
+          "start": 74.92,
+          "end": 75.32
+        }
+      ]
+    },
+    {
+      "index": 18,
+      "startMs": 75320,
+      "endMs": 77800,
+      "text": "Is there anything else?",
+      "words": [
+        {
+          "word": "Is",
+          "start": 75.32,
+          "end": 76.72
+        },
+        {
+          "word": "there",
+          "start": 76.72,
+          "end": 77.02
+        },
+        {
+          "word": "anything",
+          "start": 77.02,
+          "end": 77.34
+        },
+        {
+          "word": "else?",
+          "start": 77.34,
+          "end": 77.8
+        }
+      ]
+    },
+    {
+      "index": 19,
+      "startMs": 79620,
+      "endMs": 79700,
+      "text": "You",
+      "words": [
+        {
+          "word": "You",
+          "start": 79.62,
+          "end": 79.7
+        }
+      ]
+    }
+  ]
+}

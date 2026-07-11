@@ -1,0 +1,116 @@
+{
+  "model": "small",
+  "language": "en",
+  "text": "5.3 I'm really surprised about that. I'm really surprised about that. I'm really surprised about that.",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 4120,
+      "text": "5.3 I'm really surprised about that.",
+      "words": [
+        {
+          "word": "5",
+          "start": 0.0,
+          "end": 0.5
+        },
+        {
+          "word": ".3",
+          "start": 0.5,
+          "end": 1.3
+        },
+        {
+          "word": "I'm",
+          "start": 1.3,
+          "end": 2.72
+        },
+        {
+          "word": "really",
+          "start": 2.72,
+          "end": 2.94
+        },
+        {
+          "word": "surprised",
+          "start": 2.94,
+          "end": 3.38
+        },
+        {
+          "word": "about",
+          "start": 3.38,
+          "end": 3.78
+        },
+        {
+          "word": "that.",
+          "start": 3.78,
+          "end": 4.12
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 6500,
+      "endMs": 9200,
+      "text": "I'm really surprised about that.",
+      "words": [
+        {
+          "word": "I'm",
+          "start": 6.5,
+          "end": 7.44
+        },
+        {
+          "word": "really",
+          "start": 7.44,
+          "end": 7.66
+        },
+        {
+          "word": "surprised",
+          "start": 7.66,
+          "end": 8.24
+        },
+        {
+          "word": "about",
+          "start": 8.24,
+          "end": 8.8
+        },
+        {
+          "word": "that.",
+          "start": 8.8,
+          "end": 9.2
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 11600,
+      "endMs": 14060,
+      "text": "I'm really surprised about that.",
+      "words": [
+        {
+          "word": "I'm",
+          "start": 11.6,
+          "end": 12.54
+        },
+        {
+          "word": "really",
+          "start": 12.54,
+          "end": 12.76
+        },
+        {
+          "word": "surprised",
+          "start": 12.76,
+          "end": 13.16
+        },
+        {
+          "word": "about",
+          "start": 13.16,
+          "end": 13.72
+        },
+        {
+          "word": "that.",
+          "start": 13.72,
+          "end": 14.06
+        }
+      ]
+    }
+  ]
+}

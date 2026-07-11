@@ -1,0 +1,516 @@
+[
+  {
+    "trackId": "track-unlock4-3e-u01-t01",
+    "matchedTokenRatio": 0.983,
+    "matchedLineRatio": 1.0,
+    "unmatchedLineIndexes": [],
+    "mergedUnmatchedLineIndexes": [],
+    "mergedIntoLineIndexes": {},
+    "unmatchedTimingPolicy": "merge_with_adjacent_official_sentence_using_real_asr_word_boundaries",
+    "lowCoverageLineIndexes": []
+  },
+  {
+    "trackId": "track-unlock4-3e-u01-t02",
+    "matchedTokenRatio": 0.9545,
+    "matchedLineRatio": 1.0,
+    "unmatchedLineIndexes": [],
+    "mergedUnmatchedLineIndexes": [],
+    "mergedIntoLineIndexes": {},
+    "unmatchedTimingPolicy": "merge_with_adjacent_official_sentence_using_real_asr_word_boundaries",
+    "lowCoverageLineIndexes": []
+  },
+  {
+    "trackId": "track-unlock4-3e-u01-t03",
+    "matchedTokenRatio": 0.9851,
+    "matchedLineRatio": 1.0,
+    "unmatchedLineIndexes": [],
+    "mergedUnmatchedLineIndexes": [],
+    "mergedIntoLineIndexes": {},
+    "unmatchedTimingPolicy": "merge_with_adjacent_official_sentence_using_real_asr_word_boundaries",
+    "lowCoverageLineIndexes": []
+  },
+  {
+    "trackId": "track-unlock4-3e-u01-t04",
+    "matchedTokenRatio": 1.0,
+    "matchedLineRatio": 1.0,
+    "unmatchedLineIndexes": [],
+    "mergedUnmatchedLineIndexes": [],
+    "mergedIntoLineIndexes": {},
+    "unmatchedTimingPolicy": "merge_with_adjacent_official_sentence_using_real_asr_word_boundaries",
+    "lowCoverageLineIndexes": []
+  },
+  {
+    "trackId": "track-unlock4-3e-u01-t05",
+    "matchedTokenRatio": 0.9866,
+    "matchedLineRatio": 1.0,
+    "unmatchedLineIndexes": [],
+    "mergedUnmatchedLineIndexes": [],
+    "mergedIntoLineIndexes": {},
+    "unmatchedTimingPolicy": "merge_with_adjacent_official_sentence_using_real_asr_word_boundaries",
+    "lowCoverageLineIndexes": []
+  },
+  {
+    "trackId": "track-unlock4-3e-u01-t06",
+    "matchedTokenRatio": 0.9907,
+    "matchedLineRatio": 1.0,
+    "unmatchedLineIndexes": [],
+    "mergedUnmatchedLineIndexes": [],
+    "mergedIntoLineIndexes": {},
+    "unmatchedTimingPolicy": "merge_with_adjacent_official_sentence_using_real_asr_word_boundaries",
+    "lowCoverageLineIndexes": []
+  },
+  {
+    "trackId": "track-unlock4-3e-u01-t07",
+    "matchedTokenRatio": 0.9932,
+    "matchedLineRatio": 1.0,
+    "unmatchedLineIndexes": [],
+    "mergedUnmatchedLineIndexes": [],
+    "mergedIntoLineIndexes": {},
+    "unmatchedTimingPolicy": "merge_with_adjacent_official_sentence_using_real_asr_word_boundaries",
+    "lowCoverageLineIndexes": []
+  },
+  {
+    "trackId": "track-unlock4-3e-u01-t08",
+    "matchedTokenRatio": 1.0,
+    "matchedLineRatio": 1.0,
+    "unmatchedLineIndexes": [],
+    "mergedUnmatchedLineIndexes": [],
+    "mergedIntoLineIndexes": {},
+    "unmatchedTimingPolicy": "merge_with_adjacent_official_sentence_using_real_asr_word_boundaries",
+    "lowCoverageLineIndexes": []
+  },
+  {
+    "trackId": "track-unlock4-3e-u02-t01",
+    "matchedTokenRatio": 0.9841,
+    "matchedLineRatio": 1.0,
+    "unmatchedLineIndexes": [],
+    "mergedUnmatchedLineIndexes": [],
+    "mergedIntoLineIndexes": {},
+    "unmatchedTimingPolicy": "merge_with_adjacent_official_sentence_using_real_asr_word_boundaries",
+    "lowCoverageLineIndexes": []
+  },
+  {
+    "trackId": "track-unlock4-3e-u02-t02",
+    "matchedTokenRatio": 1.0,
+    "matchedLineRatio": 1.0,
+    "unmatchedLineIndexes": [],
+    "mergedUnmatchedLineIndexes": [],
+    "mergedIntoLineIndexes": {},
+    "unmatchedTimingPolicy": "merge_with_adjacent_official_sentence_using_real_asr_word_boundaries",
+    "lowCoverageLineIndexes": []
+  },
+  {
+    "trackId": "track-unlock4-3e-u02-t03",
+    "matchedTokenRatio": 1.0,
+    "matchedLineRatio": 1.0,
+    "unmatchedLineIndexes": [],
+    "mergedUnmatchedLineIndexes": [],
+    "mergedIntoLineIndexes": {},
+    "unmatchedTimingPolicy": "merge_with_adjacent_official_sentence_using_real_asr_word_boundaries",
+    "lowCoverageLineIndexes": []
+  },
+  {
+    "trackId": "track-unlock4-3e-u02-t04",
+    "matchedTokenRatio": 0.9418,
+    "matchedLineRatio": 0.9872,
+    "unmatchedLineIndexes": [],
+    "mergedUnmatchedLineIndexes": [
+      18
+    ],
+    "mergedIntoLineIndexes": {
+      "18": 17
+    },
+    "unmatchedTimingPolicy": "merge_with_adjacent_official_sentence_using_real_asr_word_boundaries",
+    "lowCoverageLineIndexes": []
+  },
+  {
+    "trackId": "track-unlock4-3e-u02-t05",
+    "matchedTokenRatio": 0.9157,
+    "matchedLineRatio": 1.0,
+    "unmatchedLineIndexes": [],
+    "mergedUnmatchedLineIndexes": [],
+    "mergedIntoLineIndexes": {},
+    "unmatchedTimingPolicy": "merge_with_adjacent_official_sentence_using_real_asr_word_boundaries",
+    "lowCoverageLineIndexes": []
+  },
+  {
+    "trackId": "track-unlock4-3e-u02-t06",
+    "matchedTokenRatio": 0.9103,
+    "matchedLineRatio": 1.0,
+    "unmatchedLineIndexes": [],
+    "mergedUnmatchedLineIndexes": [],
+    "mergedIntoLineIndexes": {},
+    "unmatchedTimingPolicy": "merge_with_adjacent_official_sentence_using_real_asr_word_boundaries",
+    "lowCoverageLineIndexes": []
+  },
+  {
+    "trackId": "track-unlock4-3e-u03-t01",
+    "matchedTokenRatio": 0.984,
+    "matchedLineRatio": 0.9853,
+    "unmatchedLineIndexes": [],
+    "mergedUnmatchedLineIndexes": [
+      17
+    ],
+    "mergedIntoLineIndexes": {
+      "17": 16
+    },
+    "unmatchedTimingPolicy": "merge_with_adjacent_official_sentence_using_real_asr_word_boundaries",
+    "lowCoverageLineIndexes": []
+  },
+  {
+    "trackId": "track-unlock4-3e-u03-t02",
+    "matchedTokenRatio": 0.9845,
+    "matchedLineRatio": 1.0,
+    "unmatchedLineIndexes": [],
+    "mergedUnmatchedLineIndexes": [],
+    "mergedIntoLineIndexes": {},
+    "unmatchedTimingPolicy": "merge_with_adjacent_official_sentence_using_real_asr_word_boundaries",
+    "lowCoverageLineIndexes": []
+  },
+  {
+    "trackId": "track-unlock4-3e-u03-t03",
+    "matchedTokenRatio": 1.0,
+    "matchedLineRatio": 1.0,
+    "unmatchedLineIndexes": [],
+    "mergedUnmatchedLineIndexes": [],
+    "mergedIntoLineIndexes": {},
+    "unmatchedTimingPolicy": "merge_with_adjacent_official_sentence_using_real_asr_word_boundaries",
+    "lowCoverageLineIndexes": []
+  },
+  {
+    "trackId": "track-unlock4-3e-u03-t04",
+    "matchedTokenRatio": 1.0,
+    "matchedLineRatio": 1.0,
+    "unmatchedLineIndexes": [],
+    "mergedUnmatchedLineIndexes": [],
+    "mergedIntoLineIndexes": {},
+    "unmatchedTimingPolicy": "merge_with_adjacent_official_sentence_using_real_asr_word_boundaries",
+    "lowCoverageLineIndexes": []
+  },
+  {
+    "trackId": "track-unlock4-3e-u03-t05",
+    "matchedTokenRatio": 0.9879,
+    "matchedLineRatio": 1.0,
+    "unmatchedLineIndexes": [],
+    "mergedUnmatchedLineIndexes": [],
+    "mergedIntoLineIndexes": {},
+    "unmatchedTimingPolicy": "merge_with_adjacent_official_sentence_using_real_asr_word_boundaries",
+    "lowCoverageLineIndexes": []
+  },
+  {
+    "trackId": "track-unlock4-3e-u03-t06",
+    "matchedTokenRatio": 0.9635,
+    "matchedLineRatio": 0.9851,
+    "unmatchedLineIndexes": [],
+    "mergedUnmatchedLineIndexes": [
+      3
+    ],
+    "mergedIntoLineIndexes": {
+      "3": 2
+    },
+    "unmatchedTimingPolicy": "merge_with_adjacent_official_sentence_using_real_asr_word_boundaries",
+    "lowCoverageLineIndexes": []
+  },
+  {
+    "trackId": "track-unlock4-3e-u04-t01",
+    "matchedTokenRatio": 0.997,
+    "matchedLineRatio": 1.0,
+    "unmatchedLineIndexes": [],
+    "mergedUnmatchedLineIndexes": [],
+    "mergedIntoLineIndexes": {},
+    "unmatchedTimingPolicy": "merge_with_adjacent_official_sentence_using_real_asr_word_boundaries",
+    "lowCoverageLineIndexes": []
+  },
+  {
+    "trackId": "track-unlock4-3e-u04-t02",
+    "matchedTokenRatio": 1.0,
+    "matchedLineRatio": 1.0,
+    "unmatchedLineIndexes": [],
+    "mergedUnmatchedLineIndexes": [],
+    "mergedIntoLineIndexes": {},
+    "unmatchedTimingPolicy": "merge_with_adjacent_official_sentence_using_real_asr_word_boundaries",
+    "lowCoverageLineIndexes": []
+  },
+  {
+    "trackId": "track-unlock4-3e-u04-t03",
+    "matchedTokenRatio": 1.0,
+    "matchedLineRatio": 1.0,
+    "unmatchedLineIndexes": [],
+    "mergedUnmatchedLineIndexes": [],
+    "mergedIntoLineIndexes": {},
+    "unmatchedTimingPolicy": "merge_with_adjacent_official_sentence_using_real_asr_word_boundaries",
+    "lowCoverageLineIndexes": []
+  },
+  {
+    "trackId": "track-unlock4-3e-u04-t04",
+    "matchedTokenRatio": 1.0,
+    "matchedLineRatio": 1.0,
+    "unmatchedLineIndexes": [],
+    "mergedUnmatchedLineIndexes": [],
+    "mergedIntoLineIndexes": {},
+    "unmatchedTimingPolicy": "merge_with_adjacent_official_sentence_using_real_asr_word_boundaries",
+    "lowCoverageLineIndexes": []
+  },
+  {
+    "trackId": "track-unlock4-3e-u04-t05",
+    "matchedTokenRatio": 1.0,
+    "matchedLineRatio": 1.0,
+    "unmatchedLineIndexes": [],
+    "mergedUnmatchedLineIndexes": [],
+    "mergedIntoLineIndexes": {},
+    "unmatchedTimingPolicy": "merge_with_adjacent_official_sentence_using_real_asr_word_boundaries",
+    "lowCoverageLineIndexes": []
+  },
+  {
+    "trackId": "track-unlock4-3e-u04-t06",
+    "matchedTokenRatio": 0.9955,
+    "matchedLineRatio": 1.0,
+    "unmatchedLineIndexes": [],
+    "mergedUnmatchedLineIndexes": [],
+    "mergedIntoLineIndexes": {},
+    "unmatchedTimingPolicy": "merge_with_adjacent_official_sentence_using_real_asr_word_boundaries",
+    "lowCoverageLineIndexes": []
+  },
+  {
+    "trackId": "track-unlock4-3e-u05-t01",
+    "matchedTokenRatio": 0.9875,
+    "matchedLineRatio": 1.0,
+    "unmatchedLineIndexes": [],
+    "mergedUnmatchedLineIndexes": [],
+    "mergedIntoLineIndexes": {},
+    "unmatchedTimingPolicy": "merge_with_adjacent_official_sentence_using_real_asr_word_boundaries",
+    "lowCoverageLineIndexes": []
+  },
+  {
+    "trackId": "track-unlock4-3e-u05-t02",
+    "matchedTokenRatio": 1.0,
+    "matchedLineRatio": 1.0,
+    "unmatchedLineIndexes": [],
+    "mergedUnmatchedLineIndexes": [],
+    "mergedIntoLineIndexes": {},
+    "unmatchedTimingPolicy": "merge_with_adjacent_official_sentence_using_real_asr_word_boundaries",
+    "lowCoverageLineIndexes": []
+  },
+  {
+    "trackId": "track-unlock4-3e-u05-t03",
+    "matchedTokenRatio": 0.9842,
+    "matchedLineRatio": 0.9872,
+    "unmatchedLineIndexes": [],
+    "mergedUnmatchedLineIndexes": [
+      45
+    ],
+    "mergedIntoLineIndexes": {
+      "45": 44
+    },
+    "unmatchedTimingPolicy": "merge_with_adjacent_official_sentence_using_real_asr_word_boundaries",
+    "lowCoverageLineIndexes": []
+  },
+  {
+    "trackId": "track-unlock4-3e-u05-t04",
+    "matchedTokenRatio": 0.9844,
+    "matchedLineRatio": 1.0,
+    "unmatchedLineIndexes": [],
+    "mergedUnmatchedLineIndexes": [],
+    "mergedIntoLineIndexes": {},
+    "unmatchedTimingPolicy": "merge_with_adjacent_official_sentence_using_real_asr_word_boundaries",
+    "lowCoverageLineIndexes": []
+  },
+  {
+    "trackId": "track-unlock4-3e-u05-t05",
+    "matchedTokenRatio": 1.0,
+    "matchedLineRatio": 1.0,
+    "unmatchedLineIndexes": [],
+    "mergedUnmatchedLineIndexes": [],
+    "mergedIntoLineIndexes": {},
+    "unmatchedTimingPolicy": "merge_with_adjacent_official_sentence_using_real_asr_word_boundaries",
+    "lowCoverageLineIndexes": []
+  },
+  {
+    "trackId": "track-unlock4-3e-u06-t01",
+    "matchedTokenRatio": 0.9948,
+    "matchedLineRatio": 1.0,
+    "unmatchedLineIndexes": [],
+    "mergedUnmatchedLineIndexes": [],
+    "mergedIntoLineIndexes": {},
+    "unmatchedTimingPolicy": "merge_with_adjacent_official_sentence_using_real_asr_word_boundaries",
+    "lowCoverageLineIndexes": []
+  },
+  {
+    "trackId": "track-unlock4-3e-u06-t02",
+    "matchedTokenRatio": 0.994,
+    "matchedLineRatio": 1.0,
+    "unmatchedLineIndexes": [],
+    "mergedUnmatchedLineIndexes": [],
+    "mergedIntoLineIndexes": {},
+    "unmatchedTimingPolicy": "merge_with_adjacent_official_sentence_using_real_asr_word_boundaries",
+    "lowCoverageLineIndexes": []
+  },
+  {
+    "trackId": "track-unlock4-3e-u06-t03",
+    "matchedTokenRatio": 0.9984,
+    "matchedLineRatio": 1.0,
+    "unmatchedLineIndexes": [],
+    "mergedUnmatchedLineIndexes": [],
+    "mergedIntoLineIndexes": {},
+    "unmatchedTimingPolicy": "merge_with_adjacent_official_sentence_using_real_asr_word_boundaries",
+    "lowCoverageLineIndexes": []
+  },
+  {
+    "trackId": "track-unlock4-3e-u06-t04",
+    "matchedTokenRatio": 1.0,
+    "matchedLineRatio": 1.0,
+    "unmatchedLineIndexes": [],
+    "mergedUnmatchedLineIndexes": [],
+    "mergedIntoLineIndexes": {},
+    "unmatchedTimingPolicy": "merge_with_adjacent_official_sentence_using_real_asr_word_boundaries",
+    "lowCoverageLineIndexes": []
+  },
+  {
+    "trackId": "track-unlock4-3e-u06-t05",
+    "matchedTokenRatio": 0.9355,
+    "matchedLineRatio": 1.0,
+    "unmatchedLineIndexes": [],
+    "mergedUnmatchedLineIndexes": [],
+    "mergedIntoLineIndexes": {},
+    "unmatchedTimingPolicy": "merge_with_adjacent_official_sentence_using_real_asr_word_boundaries",
+    "lowCoverageLineIndexes": []
+  },
+  {
+    "trackId": "track-unlock4-3e-u06-t06",
+    "matchedTokenRatio": 1.0,
+    "matchedLineRatio": 1.0,
+    "unmatchedLineIndexes": [],
+    "mergedUnmatchedLineIndexes": [],
+    "mergedIntoLineIndexes": {},
+    "unmatchedTimingPolicy": "merge_with_adjacent_official_sentence_using_real_asr_word_boundaries",
+    "lowCoverageLineIndexes": []
+  },
+  {
+    "trackId": "track-unlock4-3e-u06-t07",
+    "matchedTokenRatio": 0.9868,
+    "matchedLineRatio": 0.9647,
+    "unmatchedLineIndexes": [],
+    "mergedUnmatchedLineIndexes": [
+      8,
+      11,
+      75
+    ],
+    "mergedIntoLineIndexes": {
+      "8": 7,
+      "11": 10,
+      "75": 74
+    },
+    "unmatchedTimingPolicy": "merge_with_adjacent_official_sentence_using_real_asr_word_boundaries",
+    "lowCoverageLineIndexes": []
+  },
+  {
+    "trackId": "track-unlock4-3e-u06-t08",
+    "matchedTokenRatio": 0.9825,
+    "matchedLineRatio": 1.0,
+    "unmatchedLineIndexes": [],
+    "mergedUnmatchedLineIndexes": [],
+    "mergedIntoLineIndexes": {},
+    "unmatchedTimingPolicy": "merge_with_adjacent_official_sentence_using_real_asr_word_boundaries",
+    "lowCoverageLineIndexes": []
+  },
+  {
+    "trackId": "track-unlock4-3e-u06-t09",
+    "matchedTokenRatio": 1.0,
+    "matchedLineRatio": 1.0,
+    "unmatchedLineIndexes": [],
+    "mergedUnmatchedLineIndexes": [],
+    "mergedIntoLineIndexes": {},
+    "unmatchedTimingPolicy": "merge_with_adjacent_official_sentence_using_real_asr_word_boundaries",
+    "lowCoverageLineIndexes": []
+  },
+  {
+    "trackId": "track-unlock4-3e-u07-t01",
+    "matchedTokenRatio": 0.9686,
+    "matchedLineRatio": 1.0,
+    "unmatchedLineIndexes": [],
+    "mergedUnmatchedLineIndexes": [],
+    "mergedIntoLineIndexes": {},
+    "unmatchedTimingPolicy": "merge_with_adjacent_official_sentence_using_real_asr_word_boundaries",
+    "lowCoverageLineIndexes": []
+  },
+  {
+    "trackId": "track-unlock4-3e-u07-t02",
+    "matchedTokenRatio": 0.9606,
+    "matchedLineRatio": 1.0,
+    "unmatchedLineIndexes": [],
+    "mergedUnmatchedLineIndexes": [],
+    "mergedIntoLineIndexes": {},
+    "unmatchedTimingPolicy": "merge_with_adjacent_official_sentence_using_real_asr_word_boundaries",
+    "lowCoverageLineIndexes": []
+  },
+  {
+    "trackId": "track-unlock4-3e-u07-t03",
+    "matchedTokenRatio": 1.0,
+    "matchedLineRatio": 1.0,
+    "unmatchedLineIndexes": [],
+    "mergedUnmatchedLineIndexes": [],
+    "mergedIntoLineIndexes": {},
+    "unmatchedTimingPolicy": "merge_with_adjacent_official_sentence_using_real_asr_word_boundaries",
+    "lowCoverageLineIndexes": []
+  },
+  {
+    "trackId": "track-unlock4-3e-u07-t04",
+    "matchedTokenRatio": 0.9946,
+    "matchedLineRatio": 1.0,
+    "unmatchedLineIndexes": [],
+    "mergedUnmatchedLineIndexes": [],
+    "mergedIntoLineIndexes": {},
+    "unmatchedTimingPolicy": "merge_with_adjacent_official_sentence_using_real_asr_word_boundaries",
+    "lowCoverageLineIndexes": []
+  },
+  {
+    "trackId": "track-unlock4-3e-u07-t05",
+    "matchedTokenRatio": 1.0,
+    "matchedLineRatio": 1.0,
+    "unmatchedLineIndexes": [],
+    "mergedUnmatchedLineIndexes": [],
+    "mergedIntoLineIndexes": {},
+    "unmatchedTimingPolicy": "merge_with_adjacent_official_sentence_using_real_asr_word_boundaries",
+    "lowCoverageLineIndexes": []
+  },
+  {
+    "trackId": "track-unlock4-3e-u08-t01",
+    "matchedTokenRatio": 0.9845,
+    "matchedLineRatio": 1.0,
+    "unmatchedLineIndexes": [],
+    "mergedUnmatchedLineIndexes": [],
+    "mergedIntoLineIndexes": {},
+    "unmatchedTimingPolicy": "merge_with_adjacent_official_sentence_using_real_asr_word_boundaries",
+    "lowCoverageLineIndexes": []
+  },
+  {
+    "trackId": "track-unlock4-3e-u08-t02",
+    "matchedTokenRatio": 0.9794,
+    "matchedLineRatio": 1.0,
+    "unmatchedLineIndexes": [],
+    "mergedUnmatchedLineIndexes": [],
+    "mergedIntoLineIndexes": {},
+    "unmatchedTimingPolicy": "merge_with_adjacent_official_sentence_using_real_asr_word_boundaries",
+    "lowCoverageLineIndexes": []
+  },
+  {
+    "trackId": "track-unlock4-3e-u08-t03",
+    "matchedTokenRatio": 0.9904,
+    "matchedLineRatio": 1.0,
+    "unmatchedLineIndexes": [],
+    "mergedUnmatchedLineIndexes": [],
+    "mergedIntoLineIndexes": {},
+    "unmatchedTimingPolicy": "merge_with_adjacent_official_sentence_using_real_asr_word_boundaries",
+    "lowCoverageLineIndexes": []
+  },
+  {
+    "trackId": "track-unlock4-3e-u08-t04",
+    "matchedTokenRatio": 1.0,
+    "matchedLineRatio": 1.0,
+    "unmatchedLineIndexes": [],
+    "mergedUnmatchedLineIndexes": [],
+    "mergedIntoLineIndexes": {},
+    "unmatchedTimingPolicy": "merge_with_adjacent_official_sentence_using_real_asr_word_boundaries",
+    "lowCoverageLineIndexes": []
+  }
+]

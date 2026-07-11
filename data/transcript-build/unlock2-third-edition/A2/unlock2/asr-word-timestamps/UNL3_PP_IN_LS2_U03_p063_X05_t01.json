@@ -1,0 +1,256 @@
+{
+  "model": "small",
+  "language": "en",
+  "text": "unit 3, 3.1 1 sort 2 cheap 3 wash 4 see 5 sheet 8 6 chair 7 catch 8 shoes",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 3280,
+      "text": "unit 3, 3.1",
+      "words": [
+        {
+          "word": "unit",
+          "start": 0.0,
+          "end": 0.54
+        },
+        {
+          "word": "3,",
+          "start": 0.54,
+          "end": 1.12
+        },
+        {
+          "word": "3",
+          "start": 2.04,
+          "end": 2.48
+        },
+        {
+          "word": ".1",
+          "start": 2.48,
+          "end": 3.28
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 5000,
+      "endMs": 5740,
+      "text": "1",
+      "words": [
+        {
+          "word": "1",
+          "start": 5.0,
+          "end": 5.74
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 7000,
+      "endMs": 7360,
+      "text": "sort",
+      "words": [
+        {
+          "word": "sort",
+          "start": 6.66,
+          "end": 7.36
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 9000,
+      "endMs": 10080,
+      "text": "2",
+      "words": [
+        {
+          "word": "2",
+          "start": 9.0,
+          "end": 10.08
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 11000,
+      "endMs": 11620,
+      "text": "cheap",
+      "words": [
+        {
+          "word": "cheap",
+          "start": 10.92,
+          "end": 11.62
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "startMs": 14000,
+      "endMs": 14560,
+      "text": "3",
+      "words": [
+        {
+          "word": "3",
+          "start": 13.860000000000001,
+          "end": 14.56
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "startMs": 16000,
+      "endMs": 16140,
+      "text": "wash",
+      "words": [
+        {
+          "word": "wash",
+          "start": 15.440000000000001,
+          "end": 16.14
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "startMs": 18000,
+      "endMs": 18800,
+      "text": "4",
+      "words": [
+        {
+          "word": "4",
+          "start": 18.0,
+          "end": 18.8
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "startMs": 20000,
+      "endMs": 20520,
+      "text": "see",
+      "words": [
+        {
+          "word": "see",
+          "start": 19.82,
+          "end": 20.52
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "startMs": 21960,
+      "endMs": 23360,
+      "text": "5",
+      "words": [
+        {
+          "word": "5",
+          "start": 21.96,
+          "end": 23.36
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "startMs": 24000,
+      "endMs": 24960,
+      "text": "sheet",
+      "words": [
+        {
+          "word": "sheet",
+          "start": 24.0,
+          "end": 24.96
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "startMs": 24960,
+      "endMs": 25160,
+      "text": "8",
+      "words": [
+        {
+          "word": "8",
+          "start": 24.96,
+          "end": 25.16
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "startMs": 25160,
+      "endMs": 27900,
+      "text": "6",
+      "words": [
+        {
+          "word": "6",
+          "start": 25.16,
+          "end": 27.9
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "startMs": 27900,
+      "endMs": 29560,
+      "text": "chair",
+      "words": [
+        {
+          "word": "chair",
+          "start": 27.9,
+          "end": 29.56
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "startMs": 29560,
+      "endMs": 32120,
+      "text": "7",
+      "words": [
+        {
+          "word": "7",
+          "start": 29.56,
+          "end": 32.12
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "startMs": 32120,
+      "endMs": 33560,
+      "text": "catch",
+      "words": [
+        {
+          "word": "catch",
+          "start": 32.12,
+          "end": 33.56
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "startMs": 33560,
+      "endMs": 36340,
+      "text": "8",
+      "words": [
+        {
+          "word": "8",
+          "start": 33.56,
+          "end": 36.34
+        }
+      ]
+    },
+    {
+      "index": 18,
+      "startMs": 36340,
+      "endMs": 37980,
+      "text": "shoes",
+      "words": [
+        {
+          "word": "shoes",
+          "start": 36.34,
+          "end": 37.98
+        }
+      ]
+    }
+  ]
+}

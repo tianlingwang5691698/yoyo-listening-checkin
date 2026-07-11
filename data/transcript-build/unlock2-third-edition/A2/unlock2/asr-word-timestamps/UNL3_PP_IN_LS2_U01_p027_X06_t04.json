@@ -1,0 +1,576 @@
+{
+  "model": "small",
+  "language": "en",
+  "text": "1.4 1. Obviously Stanley Park is a large park. 2. In fact, because it is located in the city of Vancouver, it is the third largest urban park in North America. 3. As we know, lots of trees help clean the city air. 4. Finally, while I think these disadvantages might mean that some people would not want to visit Vancouver... 5. I personally feel that most people would enjoy Vancouver. 6. In my opinion, being close to nature and having a healthy city are worth paying a little more money for.",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 1260,
+      "text": "1.4",
+      "words": [
+        {
+          "word": "1",
+          "start": 0.0,
+          "end": 0.44
+        },
+        {
+          "word": ".4",
+          "start": 0.44,
+          "end": 1.26
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 2740,
+      "endMs": 3620,
+      "text": "1.",
+      "words": [
+        {
+          "word": "1.",
+          "start": 2.74,
+          "end": 3.62
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 5600,
+      "endMs": 8400,
+      "text": "Obviously Stanley Park is a large park.",
+      "words": [
+        {
+          "word": "Obviously",
+          "start": 5.6,
+          "end": 5.6
+        },
+        {
+          "word": "Stanley",
+          "start": 5.6,
+          "end": 6.4
+        },
+        {
+          "word": "Park",
+          "start": 6.4,
+          "end": 6.86
+        },
+        {
+          "word": "is",
+          "start": 6.86,
+          "end": 7.4
+        },
+        {
+          "word": "a",
+          "start": 7.4,
+          "end": 7.52
+        },
+        {
+          "word": "large",
+          "start": 7.52,
+          "end": 7.86
+        },
+        {
+          "word": "park.",
+          "start": 7.86,
+          "end": 8.4
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 10500,
+      "endMs": 11380,
+      "text": "2.",
+      "words": [
+        {
+          "word": "2.",
+          "start": 10.5,
+          "end": 11.38
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 12860,
+      "endMs": 20360,
+      "text": "In fact, because it is located in the city of Vancouver, it is the third largest urban park in North America.",
+      "words": [
+        {
+          "word": "In",
+          "start": 12.86,
+          "end": 13.06
+        },
+        {
+          "word": "fact,",
+          "start": 13.06,
+          "end": 13.44
+        },
+        {
+          "word": "because",
+          "start": 13.92,
+          "end": 14.2
+        },
+        {
+          "word": "it",
+          "start": 14.2,
+          "end": 14.4
+        },
+        {
+          "word": "is",
+          "start": 14.4,
+          "end": 14.54
+        },
+        {
+          "word": "located",
+          "start": 14.54,
+          "end": 14.96
+        },
+        {
+          "word": "in",
+          "start": 14.96,
+          "end": 15.32
+        },
+        {
+          "word": "the",
+          "start": 15.32,
+          "end": 15.42
+        },
+        {
+          "word": "city",
+          "start": 15.42,
+          "end": 15.74
+        },
+        {
+          "word": "of",
+          "start": 15.74,
+          "end": 15.98
+        },
+        {
+          "word": "Vancouver,",
+          "start": 15.98,
+          "end": 16.4
+        },
+        {
+          "word": "it",
+          "start": 17.04,
+          "end": 17.18
+        },
+        {
+          "word": "is",
+          "start": 17.18,
+          "end": 17.32
+        },
+        {
+          "word": "the",
+          "start": 17.32,
+          "end": 17.48
+        },
+        {
+          "word": "third",
+          "start": 17.48,
+          "end": 17.84
+        },
+        {
+          "word": "largest",
+          "start": 17.84,
+          "end": 18.38
+        },
+        {
+          "word": "urban",
+          "start": 18.38,
+          "end": 18.9
+        },
+        {
+          "word": "park",
+          "start": 18.9,
+          "end": 19.34
+        },
+        {
+          "word": "in",
+          "start": 19.34,
+          "end": 19.68
+        },
+        {
+          "word": "North",
+          "start": 19.68,
+          "end": 19.9
+        },
+        {
+          "word": "America.",
+          "start": 19.9,
+          "end": 20.36
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "startMs": 22580,
+      "endMs": 23460,
+      "text": "3.",
+      "words": [
+        {
+          "word": "3.",
+          "start": 22.580000000000002,
+          "end": 23.46
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "startMs": 24460,
+      "endMs": 29440,
+      "text": "As we know, lots of trees help clean the city air.",
+      "words": [
+        {
+          "word": "As",
+          "start": 24.46,
+          "end": 25.26
+        },
+        {
+          "word": "we",
+          "start": 25.26,
+          "end": 25.5
+        },
+        {
+          "word": "know,",
+          "start": 25.5,
+          "end": 25.84
+        },
+        {
+          "word": "lots",
+          "start": 26.42,
+          "end": 26.62
+        },
+        {
+          "word": "of",
+          "start": 26.62,
+          "end": 26.9
+        },
+        {
+          "word": "trees",
+          "start": 26.9,
+          "end": 27.3
+        },
+        {
+          "word": "help",
+          "start": 27.3,
+          "end": 27.78
+        },
+        {
+          "word": "clean",
+          "start": 27.78,
+          "end": 28.32
+        },
+        {
+          "word": "the",
+          "start": 28.32,
+          "end": 28.62
+        },
+        {
+          "word": "city",
+          "start": 28.62,
+          "end": 28.92
+        },
+        {
+          "word": "air.",
+          "start": 28.92,
+          "end": 29.44
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "startMs": 31660,
+      "endMs": 32460,
+      "text": "4.",
+      "words": [
+        {
+          "word": "4.",
+          "start": 31.66,
+          "end": 32.46
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "startMs": 33640,
+      "endMs": 41460,
+      "text": "Finally, while I think these disadvantages might mean that some people would not want to visit Vancouver...",
+      "words": [
+        {
+          "word": "Finally,",
+          "start": 33.64,
+          "end": 34.44
+        },
+        {
+          "word": "while",
+          "start": 35.1,
+          "end": 35.42
+        },
+        {
+          "word": "I",
+          "start": 35.42,
+          "end": 35.7
+        },
+        {
+          "word": "think",
+          "start": 35.7,
+          "end": 35.96
+        },
+        {
+          "word": "these",
+          "start": 35.96,
+          "end": 36.34
+        },
+        {
+          "word": "disadvantages",
+          "start": 36.34,
+          "end": 37.12
+        },
+        {
+          "word": "might",
+          "start": 37.12,
+          "end": 37.84
+        },
+        {
+          "word": "mean",
+          "start": 37.84,
+          "end": 38.22
+        },
+        {
+          "word": "that",
+          "start": 38.22,
+          "end": 38.48
+        },
+        {
+          "word": "some",
+          "start": 38.48,
+          "end": 38.7
+        },
+        {
+          "word": "people",
+          "start": 38.7,
+          "end": 39.1
+        },
+        {
+          "word": "would",
+          "start": 39.1,
+          "end": 39.48
+        },
+        {
+          "word": "not",
+          "start": 39.48,
+          "end": 39.7
+        },
+        {
+          "word": "want",
+          "start": 39.7,
+          "end": 40.04
+        },
+        {
+          "word": "to",
+          "start": 40.04,
+          "end": 40.24
+        },
+        {
+          "word": "visit",
+          "start": 40.24,
+          "end": 40.58
+        },
+        {
+          "word": "Vancouver...",
+          "start": 40.58,
+          "end": 41.46
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "startMs": 43780,
+      "endMs": 44580,
+      "text": "5.",
+      "words": [
+        {
+          "word": "5.",
+          "start": 43.78,
+          "end": 44.58
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "startMs": 45840,
+      "endMs": 50040,
+      "text": "I personally feel that most people would enjoy Vancouver.",
+      "words": [
+        {
+          "word": "I",
+          "start": 45.84,
+          "end": 46.2
+        },
+        {
+          "word": "personally",
+          "start": 46.2,
+          "end": 46.72
+        },
+        {
+          "word": "feel",
+          "start": 46.72,
+          "end": 47.26
+        },
+        {
+          "word": "that",
+          "start": 47.26,
+          "end": 47.8
+        },
+        {
+          "word": "most",
+          "start": 47.8,
+          "end": 48.12
+        },
+        {
+          "word": "people",
+          "start": 48.12,
+          "end": 48.6
+        },
+        {
+          "word": "would",
+          "start": 48.6,
+          "end": 49.0
+        },
+        {
+          "word": "enjoy",
+          "start": 49.0,
+          "end": 49.44
+        },
+        {
+          "word": "Vancouver.",
+          "start": 49.44,
+          "end": 50.04
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "startMs": 52520,
+      "endMs": 53240,
+      "text": "6.",
+      "words": [
+        {
+          "word": "6.",
+          "start": 52.52,
+          "end": 53.24
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "startMs": 54780,
+      "endMs": 62560,
+      "text": "In my opinion, being close to nature and having a healthy city are worth paying a little more money for.",
+      "words": [
+        {
+          "word": "In",
+          "start": 54.78,
+          "end": 55.02
+        },
+        {
+          "word": "my",
+          "start": 55.02,
+          "end": 55.28
+        },
+        {
+          "word": "opinion,",
+          "start": 55.28,
+          "end": 55.62
+        },
+        {
+          "word": "being",
+          "start": 56.34,
+          "end": 56.52
+        },
+        {
+          "word": "close",
+          "start": 56.52,
+          "end": 56.94
+        },
+        {
+          "word": "to",
+          "start": 56.94,
+          "end": 57.18
+        },
+        {
+          "word": "nature",
+          "start": 57.18,
+          "end": 57.5
+        },
+        {
+          "word": "and",
+          "start": 57.5,
+          "end": 58.2
+        },
+        {
+          "word": "having",
+          "start": 58.2,
+          "end": 58.52
+        },
+        {
+          "word": "a",
+          "start": 58.52,
+          "end": 58.7
+        },
+        {
+          "word": "healthy",
+          "start": 58.7,
+          "end": 59.08
+        },
+        {
+          "word": "city",
+          "start": 59.08,
+          "end": 59.6
+        },
+        {
+          "word": "are",
+          "start": 59.6,
+          "end": 60.22
+        },
+        {
+          "word": "worth",
+          "start": 60.22,
+          "end": 60.58
+        },
+        {
+          "word": "paying",
+          "start": 60.58,
+          "end": 61.0
+        },
+        {
+          "word": "a",
+          "start": 61.0,
+          "end": 61.36
+        },
+        {
+          "word": "little",
+          "start": 61.36,
+          "end": 61.58
+        },
+        {
+          "word": "more",
+          "start": 61.58,
+          "end": 61.94
+        },
+        {
+          "word": "money",
+          "start": 61.94,
+          "end": 62.26
+        },
+        {
+          "word": "for.",
+          "start": 62.26,
+          "end": 62.56
+        }
+      ]
+    }
+  ]
+}

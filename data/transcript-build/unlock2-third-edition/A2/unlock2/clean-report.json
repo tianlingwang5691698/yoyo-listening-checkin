@@ -1,0 +1,44 @@
+{
+  "trackCount": 63,
+  "bundleTrackCount": 63,
+  "uniqueAudioHashCount": 43,
+  "shortUnder60SecCount": 20,
+  "duplicateFileCount": 20,
+  "officialTextTrackCount": 0,
+  "officialScriptSectionCount": 86,
+  "officialTranscriptMissingCount": 63,
+  "officialScriptCompatibility": "practice_extra_docx_does_not_match_textbook_audio",
+  "asrTextTrackCount": 63,
+  "lineCount": 1819,
+  "asrDoneCount": 63,
+  "missingTextCount": 0,
+  "validationErrorCount": 0,
+  "validationErrors": [],
+  "manualReviewCount": 2,
+  "manualReviewItems": [
+    {
+      "trackId": "track-unlock2-third-unl3-pp-in-ls2-u01-p020-x07-t02-e338c42684",
+      "lineId": "track-unlock2-third-unl3-pp-in-ls2-u01-p020-x07-t02-e338c42684-line-70",
+      "text": "Thank you for watching.",
+      "reason": "possible_asr_outro_hallucination"
+    },
+    {
+      "trackId": "track-unlock2-third-unl3-pp-in-ls2-u01-p021-x08-t02-e338c42684",
+      "lineId": "track-unlock2-third-unl3-pp-in-ls2-u01-p021-x08-t02-e338c42684-line-70",
+      "text": "Thank you for watching.",
+      "reason": "possible_asr_outro_hallucination"
+    }
+  ],
+  "policy": {
+    "durationFilter": "disabled_by_user_full_import",
+    "duplicateFilter": "disabled_by_user_full_import",
+    "timing": "real_whisper_word_timestamps_only_no_equal_duration_allocation"
+  },
+  "outputs": {
+    "bundle": "data/transcript-build/unlock2-third-edition/A2/unlock2/bundle-draft.json",
+    "manifest": "data/transcript-build/unlock2-third-edition/A2/unlock2/manifest.json",
+    "transcriptDraft": "data/transcript-build/unlock2-third-edition/A2/unlock2/transcript-draft.json",
+    "report": "data/transcript-build/unlock2-third-edition/A2/unlock2/clean-report.json",
+    "validation": "data/transcript-build/unlock2-third-edition/A2/unlock2/validation-report.json"
+  }
+}

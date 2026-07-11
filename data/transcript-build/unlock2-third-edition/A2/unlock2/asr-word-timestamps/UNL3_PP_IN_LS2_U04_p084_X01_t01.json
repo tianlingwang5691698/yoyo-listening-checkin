@@ -1,0 +1,460 @@
+{
+  "model": "small",
+  "language": "en",
+  "text": "Unit 4, 4.1 1 Did you know the number of trees in the world is increasing? Is it? 2 I got a better job last week. Really? Congratulations! 3 The weather got really cold, didn't it? I suppose so. 4 Thanks for inviting me to your party. You're welcome. It'll be nice to see you. 5 Dinner was great. Good. Glad you liked it.",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 2720,
+      "text": "Unit 4, 4.1",
+      "words": [
+        {
+          "word": "Unit",
+          "start": 0.0,
+          "end": 0.5
+        },
+        {
+          "word": "4,",
+          "start": 0.5,
+          "end": 1.04
+        },
+        {
+          "word": "4",
+          "start": 1.6,
+          "end": 1.94
+        },
+        {
+          "word": ".1",
+          "start": 1.94,
+          "end": 2.72
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 4220,
+      "endMs": 5100,
+      "text": "1",
+      "words": [
+        {
+          "word": "1",
+          "start": 4.220000000000004,
+          "end": 5.1
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 6200,
+      "endMs": 9660,
+      "text": "Did you know the number of trees in the world is increasing?",
+      "words": [
+        {
+          "word": "Did",
+          "start": 6.140000000000002,
+          "end": 6.58
+        },
+        {
+          "word": "you",
+          "start": 6.58,
+          "end": 6.78
+        },
+        {
+          "word": "know",
+          "start": 6.78,
+          "end": 6.98
+        },
+        {
+          "word": "the",
+          "start": 6.98,
+          "end": 7.18
+        },
+        {
+          "word": "number",
+          "start": 7.18,
+          "end": 7.48
+        },
+        {
+          "word": "of",
+          "start": 7.48,
+          "end": 7.68
+        },
+        {
+          "word": "trees",
+          "start": 7.68,
+          "end": 8.08
+        },
+        {
+          "word": "in",
+          "start": 8.08,
+          "end": 8.38
+        },
+        {
+          "word": "the",
+          "start": 8.38,
+          "end": 8.5
+        },
+        {
+          "word": "world",
+          "start": 8.5,
+          "end": 8.8
+        },
+        {
+          "word": "is",
+          "start": 8.8,
+          "end": 9.04
+        },
+        {
+          "word": "increasing?",
+          "start": 9.04,
+          "end": 9.66
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 10220,
+      "endMs": 10940,
+      "text": "Is it?",
+      "words": [
+        {
+          "word": "Is",
+          "start": 10.22,
+          "end": 10.66
+        },
+        {
+          "word": "it?",
+          "start": 10.66,
+          "end": 10.94
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 12580,
+      "endMs": 13460,
+      "text": "2",
+      "words": [
+        {
+          "word": "2",
+          "start": 12.580000000000005,
+          "end": 13.46
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "startMs": 14560,
+      "endMs": 16820,
+      "text": "I got a better job last week.",
+      "words": [
+        {
+          "word": "I",
+          "start": 14.540000000000003,
+          "end": 14.98
+        },
+        {
+          "word": "got",
+          "start": 14.98,
+          "end": 15.14
+        },
+        {
+          "word": "a",
+          "start": 15.14,
+          "end": 15.3
+        },
+        {
+          "word": "better",
+          "start": 15.3,
+          "end": 15.5
+        },
+        {
+          "word": "job",
+          "start": 15.5,
+          "end": 15.88
+        },
+        {
+          "word": "last",
+          "start": 15.88,
+          "end": 16.32
+        },
+        {
+          "word": "week.",
+          "start": 16.32,
+          "end": 16.82
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "startMs": 17520,
+      "endMs": 19240,
+      "text": "Really? Congratulations!",
+      "words": [
+        {
+          "word": "Really?",
+          "start": 17.52,
+          "end": 18.22
+        },
+        {
+          "word": "Congratulations!",
+          "start": 18.78,
+          "end": 19.24
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "startMs": 21900,
+      "endMs": 22780,
+      "text": "3",
+      "words": [
+        {
+          "word": "3",
+          "start": 21.900000000000006,
+          "end": 22.78
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "startMs": 23680,
+      "endMs": 26260,
+      "text": "The weather got really cold, didn't it?",
+      "words": [
+        {
+          "word": "The",
+          "start": 23.62,
+          "end": 24.06
+        },
+        {
+          "word": "weather",
+          "start": 24.06,
+          "end": 24.28
+        },
+        {
+          "word": "got",
+          "start": 24.28,
+          "end": 24.58
+        },
+        {
+          "word": "really",
+          "start": 24.58,
+          "end": 24.98
+        },
+        {
+          "word": "cold,",
+          "start": 24.98,
+          "end": 25.54
+        },
+        {
+          "word": "didn't",
+          "start": 25.82,
+          "end": 25.94
+        },
+        {
+          "word": "it?",
+          "start": 25.94,
+          "end": 26.26
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "startMs": 27060,
+      "endMs": 28240,
+      "text": "I suppose so.",
+      "words": [
+        {
+          "word": "I",
+          "start": 27.06,
+          "end": 27.5
+        },
+        {
+          "word": "suppose",
+          "start": 27.5,
+          "end": 27.8
+        },
+        {
+          "word": "so.",
+          "start": 27.8,
+          "end": 28.24
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "startMs": 30140,
+      "endMs": 30860,
+      "text": "4",
+      "words": [
+        {
+          "word": "4",
+          "start": 30.14,
+          "end": 30.86
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "startMs": 31640,
+      "endMs": 34220,
+      "text": "Thanks for inviting me to your party.",
+      "words": [
+        {
+          "word": "Thanks",
+          "start": 31.64,
+          "end": 32.36
+        },
+        {
+          "word": "for",
+          "start": 32.36,
+          "end": 32.62
+        },
+        {
+          "word": "inviting",
+          "start": 32.62,
+          "end": 32.98
+        },
+        {
+          "word": "me",
+          "start": 32.98,
+          "end": 33.34
+        },
+        {
+          "word": "to",
+          "start": 33.34,
+          "end": 33.54
+        },
+        {
+          "word": "your",
+          "start": 33.54,
+          "end": 33.7
+        },
+        {
+          "word": "party.",
+          "start": 33.7,
+          "end": 34.22
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "startMs": 34900,
+      "endMs": 38300,
+      "text": "You're welcome. It'll be nice to see you.",
+      "words": [
+        {
+          "word": "You're",
+          "start": 34.9,
+          "end": 35.62
+        },
+        {
+          "word": "welcome.",
+          "start": 35.62,
+          "end": 36.08
+        },
+        {
+          "word": "It'll",
+          "start": 36.74,
+          "end": 36.98
+        },
+        {
+          "word": "be",
+          "start": 36.98,
+          "end": 37.14
+        },
+        {
+          "word": "nice",
+          "start": 37.14,
+          "end": 37.42
+        },
+        {
+          "word": "to",
+          "start": 37.42,
+          "end": 37.78
+        },
+        {
+          "word": "see",
+          "start": 37.78,
+          "end": 38.0
+        },
+        {
+          "word": "you.",
+          "start": 38.0,
+          "end": 38.3
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "startMs": 40080,
+      "endMs": 40800,
+      "text": "5",
+      "words": [
+        {
+          "word": "5",
+          "start": 40.08,
+          "end": 40.8
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "startMs": 41540,
+      "endMs": 42980,
+      "text": "Dinner was great.",
+      "words": [
+        {
+          "word": "Dinner",
+          "start": 41.54,
+          "end": 42.26
+        },
+        {
+          "word": "was",
+          "start": 42.26,
+          "end": 42.56
+        },
+        {
+          "word": "great.",
+          "start": 42.56,
+          "end": 42.98
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "startMs": 43980,
+      "endMs": 45760,
+      "text": "Good. Glad you liked it.",
+      "words": [
+        {
+          "word": "Good.",
+          "start": 43.98,
+          "end": 44.36
+        },
+        {
+          "word": "Glad",
+          "start": 44.78,
+          "end": 44.96
+        },
+        {
+          "word": "you",
+          "start": 44.96,
+          "end": 45.18
+        },
+        {
+          "word": "liked",
+          "start": 45.18,
+          "end": 45.48
+        },
+        {
+          "word": "it.",
+          "start": 45.48,
+          "end": 45.76
+        }
+      ]
+    }
+  ]
+}

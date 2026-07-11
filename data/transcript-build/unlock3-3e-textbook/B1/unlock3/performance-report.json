@@ -1,0 +1,47 @@
+{
+  "checkedAt": "2026-07-11T00:56:00+08:00",
+  "method": "bottom_code_and_production_function_read_only",
+  "uiAutomationUsed": false,
+  "rules": {
+    "cachedFirstScreenTargetMs": 300,
+    "coldCloudFirstScreenTargetMs": 1200,
+    "overviewSummaryOnly": true,
+    "transcriptDeferred": true
+  },
+  "local": {
+    "cloudFunctionColdRequireMs": 42,
+    "staticManifestRefreshMsObserved": [5, 13],
+    "testPassed": 83,
+    "testFailed": 0
+  },
+  "production": {
+    "postDeployColdDetailRoundTripMs": 846,
+    "overviewRoundTripMs": 513,
+    "warmDetailRoundTripMs": 436,
+    "overviewPayloadBytes": 2771,
+    "detailPayloadBytes": 142667,
+    "detailTaskCount": 68,
+    "overviewContainsTasks": false,
+    "overviewContainsTranscript": false,
+    "detailContainsTranscript": false,
+    "deferredTranscriptLineCountForFirstTrack": 57
+  },
+  "b1Display": [
+    {
+      "category": "unlock3textbook",
+      "title": "Unlock3 听口 第二版",
+      "count": 28
+    },
+    {
+      "category": "unlock3thirdedition",
+      "title": "Unlock3 听口 第三版",
+      "count": 68
+    },
+    {
+      "category": "unlock3",
+      "title": "Unlock3 听口练习册 第二版",
+      "count": 12
+    }
+  ],
+  "result": "pass"
+}

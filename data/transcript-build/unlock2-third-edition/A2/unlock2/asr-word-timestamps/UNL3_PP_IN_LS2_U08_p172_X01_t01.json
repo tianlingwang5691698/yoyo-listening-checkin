@@ -1,0 +1,369 @@
+{
+  "model": "small",
+  "language": "en",
+  "text": "unit 8, 8.1 1 weather, weather 2 hour, hour 3 sun, sun 4 red, red 5 there, there 6 cent, cent 7 8 8 8 mind, mind 9 4 4 10 2 2",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 2680,
+      "text": "unit 8, 8.1",
+      "words": [
+        {
+          "word": "unit",
+          "start": 0.0,
+          "end": 0.48
+        },
+        {
+          "word": "8,",
+          "start": 0.48,
+          "end": 1.0
+        },
+        {
+          "word": "8",
+          "start": 1.54,
+          "end": 1.9
+        },
+        {
+          "word": ".1",
+          "start": 1.9,
+          "end": 2.68
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 4540,
+      "endMs": 5120,
+      "text": "1",
+      "words": [
+        {
+          "word": "1",
+          "start": 4.42,
+          "end": 5.12
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 6080,
+      "endMs": 8580,
+      "text": "weather, weather",
+      "words": [
+        {
+          "word": "weather,",
+          "start": 6.04,
+          "end": 6.74
+        },
+        {
+          "word": "weather",
+          "start": 6.82,
+          "end": 8.58
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 9880,
+      "endMs": 10460,
+      "text": "2",
+      "words": [
+        {
+          "word": "2",
+          "start": 9.760000000000002,
+          "end": 10.46
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 11440,
+      "endMs": 13420,
+      "text": "hour, hour",
+      "words": [
+        {
+          "word": "hour,",
+          "start": 11.280000000000001,
+          "end": 11.98
+        },
+        {
+          "word": "hour",
+          "start": 12.56,
+          "end": 13.42
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "startMs": 15320,
+      "endMs": 16000,
+      "text": "3",
+      "words": [
+        {
+          "word": "3",
+          "start": 15.3,
+          "end": 16.0
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "startMs": 16980,
+      "endMs": 19000,
+      "text": "sun, sun",
+      "words": [
+        {
+          "word": "sun,",
+          "start": 16.88,
+          "end": 17.58
+        },
+        {
+          "word": "sun",
+          "start": 18.38,
+          "end": 19.0
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "startMs": 20880,
+      "endMs": 21580,
+      "text": "4",
+      "words": [
+        {
+          "word": "4",
+          "start": 20.88,
+          "end": 21.58
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "startMs": 22500,
+      "endMs": 24500,
+      "text": "red, red",
+      "words": [
+        {
+          "word": "red,",
+          "start": 22.38,
+          "end": 23.08
+        },
+        {
+          "word": "red",
+          "start": 23.2,
+          "end": 24.5
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "startMs": 26220,
+      "endMs": 26900,
+      "text": "5",
+      "words": [
+        {
+          "word": "5",
+          "start": 26.2,
+          "end": 26.9
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "startMs": 26900,
+      "endMs": 30140,
+      "text": "there, there",
+      "words": [
+        {
+          "word": "there,",
+          "start": 26.9,
+          "end": 28.66
+        },
+        {
+          "word": "there",
+          "start": 28.84,
+          "end": 30.14
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "startMs": 31620,
+      "endMs": 32560,
+      "text": "6",
+      "words": [
+        {
+          "word": "6",
+          "start": 31.619999999999997,
+          "end": 32.56
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "startMs": 33500,
+      "endMs": 36180,
+      "text": "cent, cent",
+      "words": [
+        {
+          "word": "cent,",
+          "start": 33.5,
+          "end": 34.38
+        },
+        {
+          "word": "cent",
+          "start": 34.46,
+          "end": 36.18
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "startMs": 37980,
+      "endMs": 38800,
+      "text": "7",
+      "words": [
+        {
+          "word": "7",
+          "start": 37.98,
+          "end": 38.8
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "startMs": 39480,
+      "endMs": 40340,
+      "text": "8",
+      "words": [
+        {
+          "word": "8",
+          "start": 39.48,
+          "end": 40.34
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "startMs": 40860,
+      "endMs": 41920,
+      "text": "8",
+      "words": [
+        {
+          "word": "8",
+          "start": 40.86,
+          "end": 41.92
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "startMs": 43360,
+      "endMs": 44060,
+      "text": "8",
+      "words": [
+        {
+          "word": "8",
+          "start": 43.36,
+          "end": 44.06
+        }
+      ]
+    },
+    {
+      "index": 18,
+      "startMs": 44900,
+      "endMs": 47460,
+      "text": "mind, mind",
+      "words": [
+        {
+          "word": "mind,",
+          "start": 44.9,
+          "end": 45.9
+        },
+        {
+          "word": "mind",
+          "start": 46.68,
+          "end": 47.46
+        }
+      ]
+    },
+    {
+      "index": 19,
+      "startMs": 49180,
+      "endMs": 50140,
+      "text": "9",
+      "words": [
+        {
+          "word": "9",
+          "start": 49.18,
+          "end": 50.14
+        }
+      ]
+    },
+    {
+      "index": 20,
+      "startMs": 50940,
+      "endMs": 51800,
+      "text": "4",
+      "words": [
+        {
+          "word": "4",
+          "start": 50.94,
+          "end": 51.8
+        }
+      ]
+    },
+    {
+      "index": 21,
+      "startMs": 52440,
+      "endMs": 53380,
+      "text": "4",
+      "words": [
+        {
+          "word": "4",
+          "start": 52.44,
+          "end": 53.38
+        }
+      ]
+    },
+    {
+      "index": 22,
+      "startMs": 53380,
+      "endMs": 55760,
+      "text": "10",
+      "words": [
+        {
+          "word": "10",
+          "start": 53.38,
+          "end": 55.76
+        }
+      ]
+    },
+    {
+      "index": 23,
+      "startMs": 56380,
+      "endMs": 57280,
+      "text": "2",
+      "words": [
+        {
+          "word": "2",
+          "start": 56.38,
+          "end": 57.28
+        }
+      ]
+    },
+    {
+      "index": 24,
+      "startMs": 58380,
+      "endMs": 58800,
+      "text": "2",
+      "words": [
+        {
+          "word": "2",
+          "start": 58.099999999999994,
+          "end": 58.8
+        }
+      ]
+    }
+  ]
+}

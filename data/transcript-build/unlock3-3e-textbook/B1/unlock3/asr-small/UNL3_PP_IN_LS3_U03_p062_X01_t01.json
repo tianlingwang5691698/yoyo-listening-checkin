@@ -1,0 +1,352 @@
+{
+  "model": "small",
+  "language": "en",
+  "text": "Unit 3 3.1 1 There has been a decrease in the number of bus passengers this year. 2 The traffic will decrease after they have finished repairing the road. 3 Most cities don't permit cyclists to ride on the pavement. 4 You need a special permit to park in the city centre.",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 1120,
+      "text": "Unit 3",
+      "words": [
+        {
+          "word": "Unit",
+          "start": 0.0,
+          "end": 0.52
+        },
+        {
+          "word": "3",
+          "start": 0.52,
+          "end": 1.12
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 2000,
+      "endMs": 3300,
+      "text": "3.1",
+      "words": [
+        {
+          "word": "3",
+          "start": 2.0,
+          "end": 2.52
+        },
+        {
+          "word": ".1",
+          "start": 2.52,
+          "end": 3.3
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 4000,
+      "endMs": 4820,
+      "text": "1",
+      "words": [
+        {
+          "word": "1",
+          "start": 4.0,
+          "end": 4.82
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 6000,
+      "endMs": 9820,
+      "text": "There has been a decrease in the number of bus passengers this year.",
+      "words": [
+        {
+          "word": "There",
+          "start": 5.819999999999999,
+          "end": 6.22
+        },
+        {
+          "word": "has",
+          "start": 6.22,
+          "end": 6.4
+        },
+        {
+          "word": "been",
+          "start": 6.4,
+          "end": 6.58
+        },
+        {
+          "word": "a",
+          "start": 6.58,
+          "end": 6.68
+        },
+        {
+          "word": "decrease",
+          "start": 6.68,
+          "end": 7.08
+        },
+        {
+          "word": "in",
+          "start": 7.08,
+          "end": 7.52
+        },
+        {
+          "word": "the",
+          "start": 7.52,
+          "end": 7.6
+        },
+        {
+          "word": "number",
+          "start": 7.6,
+          "end": 7.88
+        },
+        {
+          "word": "of",
+          "start": 7.88,
+          "end": 8.1
+        },
+        {
+          "word": "bus",
+          "start": 8.1,
+          "end": 8.44
+        },
+        {
+          "word": "passengers",
+          "start": 8.44,
+          "end": 8.98
+        },
+        {
+          "word": "this",
+          "start": 8.98,
+          "end": 9.44
+        },
+        {
+          "word": "year.",
+          "start": 9.44,
+          "end": 9.82
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 11480,
+      "endMs": 12280,
+      "text": "2",
+      "words": [
+        {
+          "word": "2",
+          "start": 11.48,
+          "end": 12.28
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "startMs": 13000,
+      "endMs": 17200,
+      "text": "The traffic will decrease after they have finished repairing the road.",
+      "words": [
+        {
+          "word": "The",
+          "start": 13.0,
+          "end": 13.52
+        },
+        {
+          "word": "traffic",
+          "start": 13.52,
+          "end": 13.78
+        },
+        {
+          "word": "will",
+          "start": 13.78,
+          "end": 14.12
+        },
+        {
+          "word": "decrease",
+          "start": 14.12,
+          "end": 14.66
+        },
+        {
+          "word": "after",
+          "start": 14.66,
+          "end": 15.34
+        },
+        {
+          "word": "they",
+          "start": 15.34,
+          "end": 15.54
+        },
+        {
+          "word": "have",
+          "start": 15.54,
+          "end": 15.66
+        },
+        {
+          "word": "finished",
+          "start": 15.66,
+          "end": 16.04
+        },
+        {
+          "word": "repairing",
+          "start": 16.04,
+          "end": 16.54
+        },
+        {
+          "word": "the",
+          "start": 16.54,
+          "end": 16.84
+        },
+        {
+          "word": "road.",
+          "start": 16.84,
+          "end": 17.2
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "startMs": 19320,
+      "endMs": 20120,
+      "text": "3",
+      "words": [
+        {
+          "word": "3",
+          "start": 19.32,
+          "end": 20.12
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "startMs": 21000,
+      "endMs": 24620,
+      "text": "Most cities don't permit cyclists to ride on the pavement.",
+      "words": [
+        {
+          "word": "Most",
+          "start": 21.0,
+          "end": 21.4
+        },
+        {
+          "word": "cities",
+          "start": 21.4,
+          "end": 21.76
+        },
+        {
+          "word": "don't",
+          "start": 21.76,
+          "end": 22.26
+        },
+        {
+          "word": "permit",
+          "start": 22.26,
+          "end": 22.62
+        },
+        {
+          "word": "cyclists",
+          "start": 22.62,
+          "end": 23.36
+        },
+        {
+          "word": "to",
+          "start": 23.36,
+          "end": 23.66
+        },
+        {
+          "word": "ride",
+          "start": 23.66,
+          "end": 23.94
+        },
+        {
+          "word": "on",
+          "start": 23.94,
+          "end": 24.2
+        },
+        {
+          "word": "the",
+          "start": 24.2,
+          "end": 24.3
+        },
+        {
+          "word": "pavement.",
+          "start": 24.3,
+          "end": 24.62
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "startMs": 26560,
+      "endMs": 27360,
+      "text": "4",
+      "words": [
+        {
+          "word": "4",
+          "start": 26.56,
+          "end": 27.36
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "startMs": 28180,
+      "endMs": 31680,
+      "text": "You need a special permit to park in the city centre.",
+      "words": [
+        {
+          "word": "You",
+          "start": 28.18,
+          "end": 28.82
+        },
+        {
+          "word": "need",
+          "start": 28.82,
+          "end": 29.06
+        },
+        {
+          "word": "a",
+          "start": 29.06,
+          "end": 29.2
+        },
+        {
+          "word": "special",
+          "start": 29.2,
+          "end": 29.56
+        },
+        {
+          "word": "permit",
+          "start": 29.56,
+          "end": 30.06
+        },
+        {
+          "word": "to",
+          "start": 30.06,
+          "end": 30.44
+        },
+        {
+          "word": "park",
+          "start": 30.44,
+          "end": 30.72
+        },
+        {
+          "word": "in",
+          "start": 30.72,
+          "end": 30.92
+        },
+        {
+          "word": "the",
+          "start": 30.92,
+          "end": 31.06
+        },
+        {
+          "word": "city",
+          "start": 31.06,
+          "end": 31.26
+        },
+        {
+          "word": "centre.",
+          "start": 31.26,
+          "end": 31.68
+        }
+      ]
+    }
+  ]
+}

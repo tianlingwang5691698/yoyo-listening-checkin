@@ -1,0 +1,370 @@
+{
+  "model": "small",
+  "language": "en",
+  "text": "5.4 1 I'm really happy about this new research 2 There's no question that happy people live longer 3 It's ridiculous to get too worried about healthy eating and exercise 4 He certainly never went to a gym 5 There's no doubt that bad health habits increase the chances of getting a serious illness",
+  "segments": [
+    {
+      "index": 1,
+      "startMs": 0,
+      "endMs": 1400,
+      "text": "5.4",
+      "words": [
+        {
+          "word": "5",
+          "start": 0.0,
+          "end": 0.54
+        },
+        {
+          "word": ".4",
+          "start": 0.54,
+          "end": 1.4
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 2240,
+      "endMs": 2720,
+      "text": "1",
+      "words": [
+        {
+          "word": "1",
+          "start": 2.24,
+          "end": 2.72
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 3880,
+      "endMs": 6420,
+      "text": "I'm really happy about this new research",
+      "words": [
+        {
+          "word": "I'm",
+          "start": 3.88,
+          "end": 4.46
+        },
+        {
+          "word": "really",
+          "start": 4.46,
+          "end": 4.66
+        },
+        {
+          "word": "happy",
+          "start": 4.66,
+          "end": 5.02
+        },
+        {
+          "word": "about",
+          "start": 5.02,
+          "end": 5.3
+        },
+        {
+          "word": "this",
+          "start": 5.3,
+          "end": 5.56
+        },
+        {
+          "word": "new",
+          "start": 5.56,
+          "end": 5.78
+        },
+        {
+          "word": "research",
+          "start": 5.78,
+          "end": 6.42
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 8580,
+      "endMs": 9480,
+      "text": "2",
+      "words": [
+        {
+          "word": "2",
+          "start": 8.58,
+          "end": 9.48
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "startMs": 10500,
+      "endMs": 14060,
+      "text": "There's no question that happy people live longer",
+      "words": [
+        {
+          "word": "There's",
+          "start": 10.5,
+          "end": 11.4
+        },
+        {
+          "word": "no",
+          "start": 11.4,
+          "end": 11.62
+        },
+        {
+          "word": "question",
+          "start": 11.62,
+          "end": 12.14
+        },
+        {
+          "word": "that",
+          "start": 12.14,
+          "end": 12.44
+        },
+        {
+          "word": "happy",
+          "start": 12.44,
+          "end": 12.82
+        },
+        {
+          "word": "people",
+          "start": 12.82,
+          "end": 13.26
+        },
+        {
+          "word": "live",
+          "start": 13.26,
+          "end": 13.6
+        },
+        {
+          "word": "longer",
+          "start": 13.6,
+          "end": 14.06
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "startMs": 16340,
+      "endMs": 17240,
+      "text": "3",
+      "words": [
+        {
+          "word": "3",
+          "start": 16.339999999999996,
+          "end": 17.24
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "startMs": 18240,
+      "endMs": 23320,
+      "text": "It's ridiculous to get too worried about healthy eating and exercise",
+      "words": [
+        {
+          "word": "It's",
+          "start": 18.240000000000002,
+          "end": 19.14
+        },
+        {
+          "word": "ridiculous",
+          "start": 19.14,
+          "end": 19.84
+        },
+        {
+          "word": "to",
+          "start": 19.84,
+          "end": 20.36
+        },
+        {
+          "word": "get",
+          "start": 20.36,
+          "end": 20.5
+        },
+        {
+          "word": "too",
+          "start": 20.5,
+          "end": 20.76
+        },
+        {
+          "word": "worried",
+          "start": 20.76,
+          "end": 21.14
+        },
+        {
+          "word": "about",
+          "start": 21.14,
+          "end": 21.46
+        },
+        {
+          "word": "healthy",
+          "start": 21.46,
+          "end": 21.98
+        },
+        {
+          "word": "eating",
+          "start": 21.98,
+          "end": 22.38
+        },
+        {
+          "word": "and",
+          "start": 22.38,
+          "end": 22.62
+        },
+        {
+          "word": "exercise",
+          "start": 22.62,
+          "end": 23.32
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "startMs": 25880,
+      "endMs": 26780,
+      "text": "4",
+      "words": [
+        {
+          "word": "4",
+          "start": 25.880000000000003,
+          "end": 26.78
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "startMs": 27900,
+      "endMs": 30860,
+      "text": "He certainly never went to a gym",
+      "words": [
+        {
+          "word": "He",
+          "start": 27.900000000000002,
+          "end": 28.580000000000002
+        },
+        {
+          "word": "certainly",
+          "start": 28.580000000000002,
+          "end": 29.26
+        },
+        {
+          "word": "never",
+          "start": 29.26,
+          "end": 29.76
+        },
+        {
+          "word": "went",
+          "start": 29.76,
+          "end": 30.06
+        },
+        {
+          "word": "to",
+          "start": 30.06,
+          "end": 30.3
+        },
+        {
+          "word": "a",
+          "start": 30.3,
+          "end": 30.42
+        },
+        {
+          "word": "gym",
+          "start": 30.42,
+          "end": 30.86
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "startMs": 33380,
+      "endMs": 34060,
+      "text": "5",
+      "words": [
+        {
+          "word": "5",
+          "start": 33.38,
+          "end": 34.06
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "startMs": 35320,
+      "endMs": 40080,
+      "text": "There's no doubt that bad health habits increase the chances of getting a serious illness",
+      "words": [
+        {
+          "word": "There's",
+          "start": 35.32,
+          "end": 36.0
+        },
+        {
+          "word": "no",
+          "start": 36.0,
+          "end": 36.2
+        },
+        {
+          "word": "doubt",
+          "start": 36.2,
+          "end": 36.56
+        },
+        {
+          "word": "that",
+          "start": 36.56,
+          "end": 36.72
+        },
+        {
+          "word": "bad",
+          "start": 36.72,
+          "end": 37.08
+        },
+        {
+          "word": "health",
+          "start": 37.08,
+          "end": 37.4
+        },
+        {
+          "word": "habits",
+          "start": 37.4,
+          "end": 37.74
+        },
+        {
+          "word": "increase",
+          "start": 37.74,
+          "end": 38.16
+        },
+        {
+          "word": "the",
+          "start": 38.16,
+          "end": 38.46
+        },
+        {
+          "word": "chances",
+          "start": 38.46,
+          "end": 38.84
+        },
+        {
+          "word": "of",
+          "start": 38.84,
+          "end": 39.02
+        },
+        {
+          "word": "getting",
+          "start": 39.02,
+          "end": 39.24
+        },
+        {
+          "word": "a",
+          "start": 39.24,
+          "end": 39.42
+        },
+        {
+          "word": "serious",
+          "start": 39.42,
+          "end": 39.74
+        },
+        {
+          "word": "illness",
+          "start": 39.74,
+          "end": 40.08
+        }
+      ]
+    }
+  ]
+}

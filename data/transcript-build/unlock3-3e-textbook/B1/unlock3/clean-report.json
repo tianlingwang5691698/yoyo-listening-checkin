@@ -1,0 +1,48 @@
+{
+  "trackCount": 68,
+  "sourceAudioCount": 68,
+  "durationFilterApplied": false,
+  "eligibleTrackCount": 68,
+  "excludedShortCount": 0,
+  "duplicateFileCountIncluded": 14,
+  "metadataPatchCount": 1,
+  "metadataPatches": [
+    {
+      "fileName": "UNL3_PP_IN_LS3_U08_p158_X06_t07.mp3",
+      "patches": [
+        {
+          "field": "unit",
+          "oldValue": 8,
+          "newValue": 7,
+          "source": "audio_spoken_label_7.7_and_page_158"
+        }
+      ]
+    }
+  ],
+  "lineCount": 1577,
+  "asrDoneCount": 68,
+  "missingAsrCount": 0,
+  "missingAsrFiles": [],
+  "officialTextStatus": "missing_official_audio_scripts_asr_candidate_only",
+  "labelOnlyTrackCount": 1,
+  "labelOnlyTrackIds": [
+    "track-unlock3-3e-u04-t01-2370ef6c"
+  ],
+  "nonLabelEmptyTrackIds": [],
+  "emptyTrackIds": [
+    "track-unlock3-3e-u04-t01-2370ef6c"
+  ],
+  "timingErrorTrackIds": [],
+  "lastEndMismatchTrackIds": [],
+  "trackLabelFirstLineIds": [],
+  "readyForLocalReview": true,
+  "readyForUpload": true,
+  "uploadPolicy": "new_third_edition_paths_asr_candidate_user_approved",
+  "processedThisRun": 0,
+  "outputs": {
+    "bundle": "data/transcript-build/unlock3-3e-textbook/B1/unlock3/bundle-draft.json",
+    "manifest": "data/transcript-build/unlock3-3e-textbook/B1/unlock3/manifest.json",
+    "sampleCheck": "data/transcript-build/unlock3-3e-textbook/B1/unlock3/sample-check.json",
+    "rejectedTracks": "data/transcript-build/unlock3-3e-textbook/B1/unlock3/rejected-tracks.json"
+  }
+}
