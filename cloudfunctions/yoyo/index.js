@@ -562,7 +562,13 @@ exports.main = async (event, context) => {
     return result;
   }
 
-  const skipResourceDebug = ['getReadingHome', 'getReadingPassage', 'getReadingStudyPack'].includes(action);
+  const skipResourceDebug = [
+    'getReadingHome',
+    'getReadingPassage',
+    'getReadingStudyPack',
+    'getMaterialIndex',
+    'getMaterialItem'
+  ].includes(action);
   const finalResult = skipResourceDebug
     ? result
     : Object.assign({}, result, {

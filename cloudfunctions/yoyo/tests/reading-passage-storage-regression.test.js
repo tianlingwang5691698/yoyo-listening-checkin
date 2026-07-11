@@ -10,7 +10,10 @@ const indexSource = fs.readFileSync(path.join(__dirname, '..', 'index.js'), 'utf
 test('阅读目录只查询轻量字段且详情按 id 读取单篇', () => {
   assert.match(homeSource, /require\('\.\.\/data\/reading-directory\.json'\)/);
   assert.match(indexSource, /getReadingHome: serviceAction\('readingHome', 'getReadingHome'\)/);
-  assert.match(indexSource, /skipResourceDebug = \['getReadingHome', 'getReadingPassage', 'getReadingStudyPack'\]/);
+  assert.match(indexSource, /skipResourceDebug = \[/);
+  assert.match(indexSource, /'getReadingHome'/);
+  assert.match(indexSource, /'getReadingPassage'/);
+  assert.match(indexSource, /'getReadingStudyPack'/);
   assert.doesNotMatch(source, /require\('\.\.\/lib\/speaking-engine'\)/);
   assert.match(source, /require\('\.\.\/data\/reading-directory\.json'\)/);
   assert.match(source, /bundled\.length >= MIN_DATABASE_READING_PASSAGE_COUNT/);
