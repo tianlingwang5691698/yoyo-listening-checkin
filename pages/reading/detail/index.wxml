@@ -167,7 +167,7 @@
         <button class="retry-button" loading="{{submitting}}" disabled="{{submitting}}" bindtap="retrySubmit">{{texts.retry}}</button>
       </view>
 
-      <view class="reading-ai-action {{questionAnalysisReady ? 'is-ready' : ''}}" wx:if="{{submitted}}" bindtap="requestQuestionAnalysis">{{questionAnalysisReady ? texts.analysisReady : (questionAnalysisLoading ? texts.loadingAnalysis : texts.viewAnalysis)}}</view>
+      <view class="reading-ai-action {{questionAnalysisReady ? 'is-ready' : ''}}" wx:if="{{submitted}}" bindtap="requestQuestionAnalysis">{{questionAnalysisLoading ? texts.loadingAnalysis : (questionAnalysisReady ? texts.regenerateAnalysis : texts.viewAnalysis)}}</view>
       <view class="reading-ai-message" wx:if="{{questionAnalysisMessage}}">{{questionAnalysisMessage}}</view>
       <view class="reading-analysis-debug" wx:if="{{readingDebugLines.length}}">
         <text selectable="{{true}}" wx:for="{{readingDebugLines}}" wx:key="*this">{{item}}</text>
@@ -438,7 +438,7 @@
         <button class="retry-button" loading="{{submitting}}" disabled="{{submitting}}" bindtap="retrySubmit">{{texts.retry}}</button>
       </view>
 
-      <view class="reading-ai-action {{questionAnalysisReady ? 'is-ready' : ''}}" wx:if="{{submitted}}" bindtap="requestQuestionAnalysis">{{questionAnalysisReady ? texts.analysisReady : (questionAnalysisLoading ? texts.loadingAnalysis : texts.viewAnalysis)}}</view>
+      <view class="reading-ai-action {{questionAnalysisReady ? 'is-ready' : ''}}" wx:if="{{submitted}}" bindtap="requestQuestionAnalysis">{{questionAnalysisLoading ? texts.loadingAnalysis : (questionAnalysisReady ? texts.regenerateAnalysis : texts.viewAnalysis)}}</view>
       <view class="reading-ai-message" wx:if="{{questionAnalysisMessage}}">{{questionAnalysisMessage}}</view>
       <view class="reading-analysis-debug" wx:if="{{readingDebugLines.length}}">
         <text selectable="{{true}}" wx:for="{{readingDebugLines}}" wx:key="*this">{{item}}</text>
