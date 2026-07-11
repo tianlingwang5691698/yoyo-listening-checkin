@@ -545,7 +545,9 @@
 }
 
 .start-review {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: auto;
   height: 104rpx;
   min-height: 104rpx;
@@ -1095,7 +1097,9 @@
 .complete-action {
   position: relative;
   z-index: 1;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 260rpx;
   height: 88rpx;
   min-height: 88rpx;
@@ -1361,6 +1365,9 @@
 }
 
 .choice-action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex: 1 1 0;
   width: 0;
   min-width: 0;
@@ -1894,7 +1901,9 @@
 }
 
 .library-vocab-start {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: auto;
   height: 96rpx;
   min-height: 96rpx;
@@ -2315,6 +2324,9 @@
 }
 
 .library-vocab-action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex: 1;
   min-width: 0;
   height: 88rpx;
@@ -2436,7 +2448,9 @@
 .library-vocab-complete-action {
   position: relative;
   z-index: 2;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 260rpx;
   height: 88rpx;
   min-height: 88rpx;

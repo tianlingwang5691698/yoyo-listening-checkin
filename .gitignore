@@ -34,3 +34,14 @@ data/dictionary-import/output/
 # Local Tencent CloudBase upload credentials/interface files
 SecretKey.csv
 腾讯cloudbase 上传文件和文件夹 接口/
+
+# Local generated checkpoints and backups
+data/cloud-backups/
+data/grammar/gpt-classification-24-progress.json
+data/grammar-em1-upload/gpt-classification-24-progress.json
+data/transcript-build/**/cloud-backup/
+
+# Local source artwork excluded from the miniprogram package
+assets/library/library-desk-foreground.webp
+assets/library/library-home-user-bg.webp
+assets/library/library-reading-lamp.png
