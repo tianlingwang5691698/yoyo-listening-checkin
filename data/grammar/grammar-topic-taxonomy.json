@@ -1,0 +1,119 @@
+[
+  {
+    "topicId": "verb",
+    "topic": "动词类",
+    "children": [
+      { "topicId": "verb:present-simple", "topic": "一般现在时" },
+      { "topicId": "verb:past-simple", "topic": "一般过去时" },
+      { "topicId": "verb:future-simple", "topic": "一般将来时" },
+      { "topicId": "verb:present-continuous", "topic": "现在进行时" },
+      { "topicId": "verb:past-continuous", "topic": "过去进行时" },
+      { "topicId": "verb:present-perfect", "topic": "现在完成时" },
+      { "topicId": "verb:past-perfect", "topic": "过去完成时" },
+      { "topicId": "verb:past-future", "topic": "过去将来时" },
+      { "topicId": "verb:passive-voice", "topic": "被动语态" },
+      { "topicId": "verb:modal-ability-permission", "topic": "情态动词-能力许可" },
+      { "topicId": "verb:modal-duty-advice", "topic": "情态动词-义务建议" },
+      { "topicId": "verb:modal-deduction", "topic": "情态动词-推测" },
+      { "topicId": "verb:nonfinite-to-do", "topic": "非谓语-to do" },
+      { "topicId": "verb:nonfinite-doing", "topic": "非谓语-doing" },
+      { "topicId": "verb:nonfinite-done", "topic": "非谓语-done" },
+      { "topicId": "verb:subject-verb-agreement", "topic": "主谓一致" }
+    ]
+  },
+  {
+    "topicId": "lexical",
+    "topic": "词法类",
+    "children": [
+      { "topicId": "lexical:noun-countability", "topic": "名词-可数不可数" },
+      { "topicId": "lexical:noun-possessive", "topic": "名词-所有格" },
+      { "topicId": "lexical:article-a-an", "topic": "冠词-不定冠词" },
+      { "topicId": "lexical:article-the", "topic": "冠词-定冠词" },
+      { "topicId": "lexical:article-zero", "topic": "冠词-零冠词" },
+      { "topicId": "lexical:pronoun-personal-possessive-reflexive", "topic": "代词-人称物主反身" },
+      { "topicId": "lexical:pronoun-indefinite", "topic": "代词-不定代词" },
+      { "topicId": "lexical:pronoun-demonstrative-interrogative", "topic": "代词-指示疑问关系" },
+      { "topicId": "lexical:adj-adv-comparative-superlative", "topic": "形容词副词-比较级最高级" },
+      { "topicId": "lexical:adj-adv-form-modifier", "topic": "形容词副词-词性与修饰" },
+      { "topicId": "lexical:adj-adv-meaning", "topic": "形容词副词-语义辨析" },
+      { "topicId": "lexical:preposition-time-place", "topic": "介词-时间地点" },
+      { "topicId": "lexical:preposition-means-reason", "topic": "介词-方式原因" },
+      { "topicId": "lexical:preposition-collocation", "topic": "介词-固定搭配" },
+      { "topicId": "lexical:numeral", "topic": "数词" },
+      { "topicId": "lexical:word-formation", "topic": "词形转换" },
+      { "topicId": "lexical:word-phrase", "topic": "词义与短语辨析" }
+    ]
+  },
+  {
+    "topicId": "clause",
+    "topic": "从句类",
+    "children": [
+      { "topicId": "clause:object-word-order", "topic": "宾语从句-语序" },
+      { "topicId": "clause:object-connector", "topic": "宾语从句-连接词" },
+      { "topicId": "clause:relative-pronoun", "topic": "定语从句-关系代词" },
+      { "topicId": "clause:relative-adverb", "topic": "定语从句-关系副词" },
+      { "topicId": "clause:adverbial-time-condition", "topic": "状语从句-时间条件" },
+      { "topicId": "clause:adverbial-cause-concession-result-purpose", "topic": "状语从句-原因让步结果目的" }
+    ]
+  },
+  {
+    "topicId": "sentence",
+    "topic": "句型结构类",
+    "children": [
+      { "topicId": "sentence:fixed-pattern", "topic": "固定句型" },
+      { "topicId": "sentence:exclamation", "topic": "感叹句" },
+      { "topicId": "sentence:tag-question", "topic": "反意疑问句" },
+      { "topicId": "sentence:inversion", "topic": "倒装" },
+      { "topicId": "sentence:there-be", "topic": "there be句型" },
+      { "topicId": "sentence:imperative", "topic": "祈使句" },
+      { "topicId": "sentence:question", "topic": "疑问句" }
+    ]
+  },
+  {
+    "topicId": "logic",
+    "topic": "连词逻辑类",
+    "children": [
+      { "topicId": "logic:coordination", "topic": "并列" },
+      { "topicId": "logic:contrast", "topic": "转折" },
+      { "topicId": "logic:cause-effect", "topic": "因果" },
+      { "topicId": "logic:condition", "topic": "条件" },
+      { "topicId": "logic:time", "topic": "时间" },
+      { "topicId": "logic:concession", "topic": "让步" },
+      { "topicId": "logic:purpose-result", "topic": "目的结果" }
+    ]
+  },
+  {
+    "topicId": "communicative",
+    "topic": "情景交际类",
+    "children": [
+      { "topicId": "communicative:request-suggestion", "topic": "请求建议" },
+      { "topicId": "communicative:thanks-apology-wish", "topic": "感谢道歉祝愿" },
+      { "topicId": "communicative:agreement-disagreement", "topic": "同意不同意" },
+      { "topicId": "communicative:praise-congratulation", "topic": "表扬祝贺回应" },
+      { "topicId": "communicative:daily-scenario", "topic": "电话购物问路等场景" }
+    ]
+  },
+  {
+    "topicId": "phonetics",
+    "topic": "语音类",
+    "children": [
+      { "topicId": "phonetics:underlined-pronunciation", "topic": "划线部分发音辨析" },
+      { "topicId": "phonetics:phonetic-symbol", "topic": "音标识别" },
+      { "topicId": "phonetics:intonation", "topic": "语调" }
+    ]
+  },
+  {
+    "topicId": "culture",
+    "topic": "文化常识类",
+    "children": [
+      { "topicId": "culture:common-knowledge", "topic": "英语文化常识" }
+    ]
+  },
+  {
+    "topicId": "other",
+    "topic": "待复核类",
+    "children": [
+      { "topicId": "other:manual-review", "topic": "综合辨析-需人工复核" }
+    ]
+  }
+]
