@@ -659,6 +659,7 @@ module.exports = {
   addDictionaryWord,
   _test: {
     buildFlashcardWhere,
+    summarizeFlashcards,
     CLIENT_CARD_FIELDS,
     DICTIONARY_SOURCE_IDS,
     isPreviewWrite

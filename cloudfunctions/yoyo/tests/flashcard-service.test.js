@@ -37,3 +37,20 @@ test('家长试背被识别为只读写入', () => {
   assert.equal(flashcardService._test.isPreviewWrite({ member: { studyRole: 'parent' } }), true);
   assert.equal(flashcardService._test.isPreviewWrite({ member: { studyRole: 'student' } }), false);
 });
+
+test('当日词汇额度按学生进度累计，加量后只补差额', () => {
+  const today = '2026-07-11';
+  const cards = [
+    { _id: 'new-done', status: 'reviewing', firstLearnedDate: today, lastReviewDate: today, nextReviewDate: today },
+    { _id: 'review-done', status: 'reviewing', firstLearnedDate: '2026-07-01', lastReviewDate: today, nextReviewDate: today },
+    { _id: 'new-next', status: 'new', nextReviewDate: today },
+    { _id: 'new-extra', status: 'new', nextReviewDate: today },
+    { _id: 'review-next', status: 'reviewing', firstLearnedDate: '2026-07-01', nextReviewDate: today }
+  ];
+
+  const completed = flashcardService._test.summarizeFlashcards(cards, [], today, { newLimit: 1, reviewLimit: 1 });
+  assert.deepEqual(completed.cards, []);
+
+  const increased = flashcardService._test.summarizeFlashcards(cards, [], today, { newLimit: 2, reviewLimit: 2 });
+  assert.deepEqual(increased.cards.map((item) => item._id), ['review-next', 'new-next']);
+});
