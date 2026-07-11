@@ -313,6 +313,8 @@ function normalizeCompletionItem(item) {
   };
   return {
     id: safeItem.id || safeItem.recordId || `${type}:${safeItem.targetId || ''}`,
+    targetId: safeItem.targetId || '',
+    passageId: safeItem.passageId || (type === 'reading' ? safeItem.targetId || '' : ''),
     type,
     categoryLabel: typeLabels[type] || safeItem.meta || tr('completionRecord'),
     title: safeItem.title || typeLabels[type] || tr('completionRecord'),
@@ -988,6 +990,13 @@ Page({
     const index = Number(event.currentTarget.dataset.index || 0);
     const item = (this.data.selectedDayReport.items || [])[index];
     if (!item) return;
+    if (item.isStudyCompletion && item.type === 'reading' && item.passageId) {
+      const attemptId = item.latestAttempt && (item.latestAttempt.attemptId || item.latestAttempt._id) || '';
+      wx.navigateTo({
+        url: `/pages/reading/detail/index?passageId=${encodeURIComponent(item.passageId)}&attemptId=${encodeURIComponent(attemptId)}`
+      });
+      return;
+    }
     if (item.type === 'speaking' && item.attempts && item.attempts.length) {
       const report = Object.assign({}, this.data.selectedDayReport);
       const items = (report.items || []).slice();

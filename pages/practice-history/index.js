@@ -117,6 +117,7 @@ function normalizeWrongItem(item, index) {
     summary: `1${text('questionSuffix', ' 题')}`,
     detailReady: true,
     detailLoading: false,
+    passageText: item.sourceType === 'reading' ? String(item.sourcePassage || '') : '',
     detailQuestions: [{
       questionId,
       number: question.number || '',
@@ -130,6 +131,24 @@ function normalizeWrongItem(item, index) {
       inWrongBook: true
     }]
   };
+}
+
+async function hydrateWrongReadingPassages(records) {
+  const missingIds = Array.from(new Set((records || [])
+    .filter((record) => !record.passageText && record.targetId)
+    .map((record) => record.targetId)));
+  if (!missingIds.length) return records;
+  const passages = await Promise.all(missingIds.map(async (passageId) => {
+    const result = await store.getReadingPassage({ passageId });
+    return [passageId, result && result.passage && result.passage.passage || ''];
+  }));
+  const passageById = passages.reduce((map, entry) => {
+    map[entry[0]] = entry[1];
+    return map;
+  }, {});
+  return (records || []).map((record) => Object.assign({}, record, {
+    passageText: record.passageText || passageById[record.targetId] || ''
+  }));
 }
 
 function applyWrongStatus(records, wrongItems) {
@@ -176,6 +195,23 @@ function buildDebugLines(result, action) {
   ];
 }
 
+function isPendingReadingAnalysis(value) {
+  const content = String(value || '').trim();
+  return !content || content.includes('生成解析中');
+}
+
+function buildReadingAnalysisDebugLines(record, result, stage, elapsedMs) {
+  const target = store.getSelectedStudentTarget ? store.getSelectedStudentTarget() : {};
+  const attempt = (record && record.attempt) || {};
+  const studyPack = result && result.studyPack;
+  const analyses = (studyPack && (studyPack.questionAnalyses || studyPack.analysis)) || [];
+  return [
+    `DEBUG: pages/practice-history.loadReadingDetail -> store.getReadingStudyPack -> cloud.getReadingStudyPack -> stage=${stage}`,
+    `DEBUG: pages/practice-history.loadReadingDetail -> passageId=${(record && record.targetId) || 'missing'}, attemptId=${attempt.attemptId || attempt._id || 'missing'}, studyPack=${studyPack ? 'present' : 'missing'}, analyses=${analyses.length}, cacheMiss=${!!(result && result.cacheMiss)}, elapsed=${elapsedMs || 0}ms`,
+    `DEBUG: pages/practice-history.loadReadingDetail -> targetChildId=${target.targetChildId || 'self'}, syncMode=${(result && result.syncMode) || 'pending'}`
+  ];
+}
+
 Page({
   data: page.createCloudPageData({
     type: 'reading',
@@ -212,6 +248,10 @@ Page({
         ? { title: text('writingTitle'), eyebrow: text('writingEyebrow'), copy: text('writingCopy'), empty: text('noWriting') }
         : { title: text('readingTitle'), eyebrow: text('readingEyebrow'), copy: text('readingCopy'), empty: text('noReading') };
     this.setData({ config });
+  },
+  onUnload() {
+    Object.keys(this.readingDebugTimers || {}).forEach((key) => clearTimeout(this.readingDebugTimers[key]));
+    this.readingDebugTimers = {};
   },
   async loadHistory() {
     this.setData({ loading: true, debugLines: [] });
@@ -261,9 +301,13 @@ Page({
     const result = await store.getPracticeWrongQuestions({ type: this.data.type });
     const debugLines = buildDebugLines(result, 'getPracticeWrongQuestions');
     this.wrongItems = (result && result.items) || [];
+    const normalizedRecords = this.wrongItems.map(normalizeWrongItem);
+    const records = this.data.type === 'reading'
+      ? await hydrateWrongReadingPassages(normalizedRecords)
+      : normalizedRecords;
     this.setData({
       loading: false,
-      records: debugLines.length ? [] : this.wrongItems.map(normalizeWrongItem),
+      records: debugLines.length ? [] : records,
       debugLines
     });
   },
@@ -287,24 +331,47 @@ Page({
     }
   },
   async loadReadingDetail(record) {
-    this.updateRecord(record.id, { detailLoading: true });
-    const [result, completionResult] = await Promise.all([
-      store.getReadingPassage({ passageId: record.targetId }),
-      store.getStudyCompletionDetail(record.id)
+    const startedAt = Date.now();
+    const attemptId = record.attempt && (record.attempt.attemptId || record.attempt._id) || '';
+    this.updateRecord(record.id, { detailLoading: true, aiAnalysisLoading: true, aiAnalysisStatus: '' });
+    this.readingDebugTimers = this.readingDebugTimers || {};
+    clearTimeout(this.readingDebugTimers[record.id]);
+    this.readingDebugTimers[record.id] = setTimeout(() => {
+      const latest = (this.data.records || []).find((item) => item.id === record.id);
+      if (!latest || !latest.detailLoading) return;
+      this.setData({
+        debugLines: buildReadingAnalysisDebugLines(record, null, 'pending-over-3s', Date.now() - startedAt)
+      });
+    }, 3000);
+    const [result, completionResult, packResult] = await Promise.all([
+      store.getReadingPassage({ passageId: record.targetId, attemptId }),
+      store.getStudyCompletionDetail(record.id),
+      store.getReadingStudyPack({
+        passageId: record.targetId,
+        section: 'questions',
+        cacheOnly: true,
+        useCache: false
+      })
     ]);
+    clearTimeout(this.readingDebugTimers[record.id]);
+    delete this.readingDebugTimers[record.id];
     const passage = result && result.passage;
     const attempt = (completionResult && completionResult.item && completionResult.item.latestAttempt) || record.attempt || {};
     const questionResults = attempt.questionResults || [];
-    const analyses = (attempt.review && attempt.review.analysis) || [];
+    const attemptAnalyses = (attempt.review && attempt.review.analysis) || [];
+    const studyPack = packResult && packResult.studyPack;
+    const packAnalyses = (studyPack && (studyPack.questionAnalyses || studyPack.analysis)) || [];
     const sourceQuestions = passage && Array.isArray(passage.questions) && passage.questions.length
       ? passage.questions
       : questionResults;
     const detailQuestions = sourceQuestions.map((question, index) => {
       const number = question.number || index + 1;
       const answerResult = questionResults.find((item) => String(item.number) === String(number)) || {};
-      const analysis = analyses.find((item) => String(item.number) === String(number)) || {};
-      const selected = answerResult.selected || analysis.selected || '';
-      const answer = answerResult.answer || analysis.answer || question.answer || '';
+      const savedAnalysis = attemptAnalyses.find((item) => String(item.number) === String(number)) || {};
+      const cachedAnalysis = packAnalyses.find((item) => String(item.number) === String(number)) || {};
+      const selected = answerResult.selected || savedAnalysis.selected || '';
+      const answer = answerResult.answer || savedAnalysis.answer || cachedAnalysis.answer || question.answer || '';
+      const analysisText = cachedAnalysis.analysis || cachedAnalysis.text || savedAnalysis.text || answerResult.analysis || question.analysis || '';
       return {
         questionId: String(question._id || `${record.targetId}:${number}`),
         number,
@@ -312,15 +379,20 @@ Page({
         options: question.options || {},
         selected,
         answer,
-        correct: answerResult.correct === undefined ? analysis.correct : answerResult.correct,
+        correct: answerResult.correct === undefined ? savedAnalysis.correct : answerResult.correct,
         optionsList: buildOptions(question.options, selected, answer),
-        analysis: analysis.text || answerResult.analysis || question.analysis || ''
+        analysis: isPendingReadingAnalysis(analysisText) ? '' : analysisText
       };
     });
+    const analysesReady = detailQuestions.length > 0
+      && detailQuestions.every((question) => !isPendingReadingAnalysis(question.analysis));
     const wrongIds = new Set((this.wrongItems || []).map((item) => String(item.questionId || (item.question && item.question._id) || '')));
     this.updateRecord(record.id, {
       detailLoading: false,
       detailReady: true,
+      aiAnalysisLoading: false,
+      aiAnalysisLoaded: analysesReady,
+      aiAnalysisStatus: analysesReady ? text('analysisLoaded', '已从云端加载 AI 解析') : text('noAnalysis', '这篇阅读尚未生成 AI 解析'),
       passageText: (passage && passage.passage) || '',
       detailQuestions: detailQuestions.map((question) => Object.assign({}, question, {
         inWrongBook: wrongIds.has(question.questionId)
@@ -330,6 +402,14 @@ Page({
       this.setData({ debugLines: buildDebugLines(result, 'getReadingPassage') });
     } else if (completionResult && completionResult.syncMode === 'cloud-error') {
       this.setData({ debugLines: buildDebugLines(completionResult, 'getStudyCompletionDetail') });
+    } else if (packResult && packResult.syncMode === 'cloud-error') {
+      this.setData({ debugLines: buildDebugLines(packResult, 'getReadingStudyPack') });
+    } else if (!analysesReady) {
+      this.setData({
+        debugLines: buildReadingAnalysisDebugLines(record, packResult, studyPack ? 'cached-pack-incomplete' : 'cache-miss', Date.now() - startedAt)
+      });
+    } else {
+      this.setData({ debugLines: [] });
     }
   },
   async loadGrammarDetail(record) {
@@ -364,6 +444,7 @@ Page({
       targetId: record.targetId,
       title: record.title,
       meta: record.meta,
+      passage: this.data.type === 'reading' ? record.passageText : '',
       questionId,
       question: {
         _id: questionId,
@@ -410,6 +491,9 @@ Page({
         aiAnalysisLoading: false,
         aiAnalysisStatus: text('noAnalysis', '这篇阅读尚未生成 AI 解析')
       });
+      this.setData({
+        debugLines: buildReadingAnalysisDebugLines(record, result, result && result.cacheMiss ? 'cache-miss' : 'cached-pack-incomplete', 0)
+      });
       return;
     }
     this.updateRecord(recordId, {
@@ -418,11 +502,13 @@ Page({
       aiAnalysisStatus: text('analysisLoaded', '已从云端加载 AI 解析'),
       detailQuestions: (record.detailQuestions || []).map((question) => {
         const analysis = analyses.find((item) => String(item.number) === String(question.number)) || {};
+        const analysisText = analysis.analysis || analysis.text || question.analysis || '';
         return Object.assign({}, question, {
-          analysis: analysis.analysis || analysis.text || question.analysis || ''
+          analysis: isPendingReadingAnalysis(analysisText) ? '' : analysisText
         });
       })
     });
+    this.setData({ debugLines: [] });
   },
   async loadWritingDetail(record) {
     this.updateRecord(record.id, { detailLoading: true });

@@ -176,6 +176,7 @@ async function addPracticeWrongQuestion(event) {
     sourceTargetId: String(payload.targetId || ''),
     sourceTitle: String(payload.title || ''),
     sourceMeta: String(payload.meta || ''),
+    sourcePassage: sourceType === 'reading' ? String(payload.passage || '') : '',
     question,
     selectedAnswer: question.selectedAnswer,
     answer: question.answer,

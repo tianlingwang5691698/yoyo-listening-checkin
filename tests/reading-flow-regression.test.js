@@ -6,6 +6,75 @@ const test = require('node:test');
 const root = path.resolve(__dirname, '..');
 const readingHomeSource = fs.readFileSync(path.join(root, 'pages/reading/index.js'), 'utf8');
 const readingDetailSource = fs.readFileSync(path.join(root, 'pages/reading/detail/index.js'), 'utf8');
+const recordSource = fs.readFileSync(path.join(root, 'pages/record/index.js'), 'utf8');
+const parentDetailSource = fs.readFileSync(path.join(root, 'pages/parent/detail/index.js'), 'utf8');
+const practiceHistorySource = fs.readFileSync(path.join(root, 'pages/practice-history/index.js'), 'utf8');
+const appConfig = JSON.parse(fs.readFileSync(path.join(root, 'app.json'), 'utf8'));
+
+test('阅读保持普通分包且详情路径参数安全传递', () => {
+  const readingPackage = (appConfig.subPackages || []).find((item) => item.root === 'pages/reading');
+  assert.ok(readingPackage, '阅读模块应保留在分包，避免主包超过 2MB');
+  assert.notEqual(readingPackage.independent, true, '阅读依赖主包公共模块，不能设为独立分包');
+  assert.deepEqual(readingPackage.pages, ['index', 'detail/index', 'flashcards/index']);
+  assert.match(readingHomeSource, /encodeURIComponent\(targetPassageId\)/);
+  assert.match(readingDetailSource, /decodeURIComponent\(passageId\)/);
+});
+
+test('阅读学习包术语解析不会覆盖翻译函数', () => {
+  assert.match(readingDetailSource, /function termEntries[\s\S]*?const termText = pickText/);
+  assert.doesNotMatch(readingDetailSource, /function termEntries[\s\S]*?const text = pickText/);
+  assert.match(readingDetailSource, /label = `\$\{text\('questionPrefix'/);
+});
+
+test('练习记录复用阅读详情并补全旧解析快照', () => {
+  assert.match(recordSource, /item\.isStudyCompletion && item\.type === 'reading' && item\.passageId[\s\S]*?pages\/reading\/detail\/index\?passageId=\$\{encodeURIComponent\(item\.passageId\)\}&attemptId=\$\{encodeURIComponent\(attemptId\)\}/);
+  assert.match(parentDetailSource, /function readingCompletionNeedsHydration[\s\S]*?!analysesReady[\s\S]*?item\.phraseCards/);
+  assert.match(parentDetailSource, /if \(!readingCompletionNeedsHydration\(item\) \|\| !item\.passageId\)/);
+  assert.match(parentDetailSource, /getReadingPassage\(\{ passageId: item\.passageId, attemptId \}\)/);
+  assert.match(parentDetailSource, /analysis: isPlaceholderAnalysis\(analysisText\) \? '' : analysisText/);
+});
+
+test('阅读目录重进取最近提交且历史记录按 attemptId 精确读取', () => {
+  const serviceSource = fs.readFileSync(path.join(root, 'cloudfunctions/yoyo/services/reading.service.js'), 'utf8');
+  const latestAttemptBlock = serviceSource.match(/async function getLatestAttempt\([\s\S]*?\n\}/);
+  assert.ok(latestAttemptBlock);
+  assert.doesNotMatch(latestAttemptBlock[0], /date:/);
+  assert.match(serviceSource, /async function getAttemptById[\s\S]*?attempt\.familyId !== ctx\.family\.familyId[\s\S]*?attempt\.childId !== ctx\.child\.childId/);
+  assert.match(readingDetailSource, /getReadingPassage\(\{ passageId, attemptId \}/);
+});
+
+test('阅读练习记录自动补读云端解析并输出可定位 DEBUG', () => {
+  const detailBlock = practiceHistorySource.match(/async loadReadingDetail\(record\) \{[\s\S]*?\n  \},\n  async loadGrammarDetail/);
+  assert.ok(detailBlock);
+  assert.equal((detailBlock[0].match(/store\.getReadingStudyPack\(/g) || []).length, 1);
+  assert.match(detailBlock[0], /store\.getReadingPassage\(\{ passageId: record\.targetId, attemptId \}\)/);
+  assert.match(detailBlock[0], /section: 'questions'[\s\S]*?cacheOnly: true/);
+  assert.match(detailBlock[0], /isPendingReadingAnalysis\(analysisText\) \? '' : analysisText/);
+  assert.match(practiceHistorySource, /stage=\$\{stage\}[\s\S]*?studyPack=\$\{studyPack \? 'present' : 'missing'\}[\s\S]*?targetChildId=/);
+});
+
+test('阅读练习记录使用面向学生的中英答案称呼', () => {
+  const catalog = require('../utils/i18n-catalog-learning').practiceHistory;
+  const lesson = require('../utils/i18n-catalog-learning').lesson;
+  assert.equal(catalog['zh-CN'].childAnswer, '你的');
+  assert.equal(catalog['zh-CN'].childAnswerLabel, '你的：');
+  assert.equal(catalog.en.childAnswer, 'Yours');
+  assert.equal(catalog.en.childAnswerLabel, 'Yours: ');
+  assert.equal(lesson['zh-CN'].studentAnswer, '你的：');
+  assert.equal(lesson.en.studentAnswer, 'Yours: ');
+  const parent = require('../utils/i18n-catalog-account').parentDetail;
+  assert.equal(parent['zh-CN'].childChoicePrefix, '孩子选择：');
+  assert.equal(parent.en.childChoicePrefix, 'Student choice: ');
+});
+
+test('阅读错题集同时保存并展示原文章', () => {
+  const grammarServiceSource = fs.readFileSync(path.join(root, 'cloudfunctions/yoyo/services/grammar.service.js'), 'utf8');
+  assert.match(practiceHistorySource, /passage: this\.data\.type === 'reading' \? record\.passageText : ''/);
+  assert.match(grammarServiceSource, /sourcePassage: sourceType === 'reading' \? String\(payload\.passage \|\| ''\) : ''/);
+  assert.match(practiceHistorySource, /passageText: item\.sourceType === 'reading' \? String\(item\.sourcePassage \|\| ''\) : ''/);
+  assert.match(practiceHistorySource, /async function hydrateWrongReadingPassages[\s\S]*?store\.getReadingPassage\(\{ passageId \}\)/);
+  assert.match(practiceHistorySource, /await hydrateWrongReadingPassages\(normalizedRecords\)/);
+});
 
 test('阅读目录摘要不会被写入或读取为完整文章快照', () => {
   assert.match(readingHomeSource, /function isCompletePassageSnapshot\(passage\)[\s\S]*?passage\.passage[\s\S]*?passage\.questions/);

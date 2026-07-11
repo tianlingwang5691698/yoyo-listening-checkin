@@ -216,10 +216,10 @@ function uniqueTerms(items, keys) {
 function termEntries(items, keys, options) {
   const seen = {};
   return (items || []).map((item, index) => {
-    const text = pickText(item, keys).trim();
+    const termText = pickText(item, keys).trim();
     const source = typeof item === 'string' ? {} : (item || {});
-    const key = text.toLowerCase();
-    if (!text || seen[key]) {
+    const key = termText.toLowerCase();
+    if (!termText || seen[key]) {
       return null;
     }
     seen[key] = true;
@@ -232,7 +232,7 @@ function termEntries(items, keys, options) {
     }
 
     return {
-      text,
+      text: termText,
       label,
       note: source.meaning || source.translation || source.cn || ''
     };
@@ -881,6 +881,7 @@ Page({
     loading: true,
     submitting: false,
     passageId: '',
+    attemptId: '',
     passage: null,
     answers: {},
     attempt: null,
@@ -950,8 +951,19 @@ Page({
   async onLoad(options) {
     this.readingDetailPerf = page.startPagePerf('reading-detail');
     page.syncTheme(this);
-    const passageId = options && options.passageId ? String(options.passageId) : '';
-    this.setData({ passageId });
+    let passageId = options && options.passageId ? String(options.passageId) : '';
+    try {
+      passageId = decodeURIComponent(passageId);
+    } catch (error) {
+      // 兼容旧链接或异常转义，继续使用原始 ID。
+    }
+    let attemptId = options && options.attemptId ? String(options.attemptId) : '';
+    try {
+      attemptId = decodeURIComponent(attemptId);
+    } catch (error) {
+      // 兼容旧链接或异常转义，继续使用原始 ID。
+    }
+    this.setData({ passageId, attemptId });
     const snapshot = getPassageSnapshot(passageId);
     if (snapshot) {
       this.applyPassage({ passage: snapshot, latestAttempt: null });
@@ -969,10 +981,10 @@ Page({
         hasPassage: false
       });
     }
-    await this.loadPassage(passageId, !!snapshot);
+    await this.loadPassage(passageId, !!snapshot, attemptId);
   },
-  async loadPassage(passageId, hasSnapshot) {
-    const data = await store.getReadingPassage({ passageId }, (fresh) => {
+  async loadPassage(passageId, hasSnapshot, attemptId) {
+    const data = await store.getReadingPassage({ passageId, attemptId }, (fresh) => {
       if (fresh && isCompletePassageSnapshot(fresh.passage)) {
         snapshotStore.write(READING_PASSAGE_SNAPSHOT_KEY, passageId, { passage: fresh.passage }, { source: 'reading-detail' });
       }

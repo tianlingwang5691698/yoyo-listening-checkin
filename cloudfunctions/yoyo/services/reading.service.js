@@ -1430,19 +1430,35 @@ async function getLatestAttemptsByPassageIds(ctx, passageIds, today) {
   }
 }
 
-async function getLatestAttempt(ctx, passageId, today) {
+async function getLatestAttempt(ctx, passageId) {
   try {
     const result = await dbAdapter.collection('readingAttempts')
       .where({
         familyId: ctx.family.familyId,
         childId: ctx.child.childId,
-        date: today,
         passageId
       })
       .orderBy('createdAt', 'desc')
       .limit(1)
       .get();
     return result && result.data && result.data[0] ? result.data[0] : null;
+  } catch (error) {
+    return null;
+  }
+}
+
+async function getAttemptById(ctx, passageId, attemptId) {
+  if (!attemptId) return null;
+  try {
+    const result = await dbAdapter.collection('readingAttempts').doc(attemptId).get();
+    const attempt = result && result.data ? result.data : null;
+    if (!attempt
+      || attempt.familyId !== ctx.family.familyId
+      || attempt.childId !== ctx.child.childId
+      || attempt.passageId !== passageId) {
+      return null;
+    }
+    return attempt;
   } catch (error) {
     return null;
   }
@@ -1508,6 +1524,7 @@ async function getReadingHome(event) {
 async function getReadingPassage(event) {
   const payload = (event && event.payload) || {};
   const passageId = String(payload.passageId || '');
+  const attemptId = String(payload.attemptId || '');
   const contextPromise = study.prepareRequestContext(Object.assign({}, event, {
     action: 'getReadingPassage'
   }));
@@ -1517,7 +1534,9 @@ async function getReadingPassage(event) {
   const passage = passageId
     ? await passagePromise
     : await pickPlannedPassage(ctx, passages, today);
-  const latestAttempt = passage ? await getLatestAttempt(ctx, passage._id, today) : null;
+  const latestAttempt = passage
+    ? (await getAttemptById(ctx, passage._id, attemptId) || await getLatestAttempt(ctx, passage._id))
+    : null;
   return {
     today,
     passage,

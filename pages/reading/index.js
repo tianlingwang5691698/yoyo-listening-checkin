@@ -257,7 +257,7 @@ Page({
       snapshotStore.write(READING_PASSAGE_SNAPSHOT_KEY, targetPassageId, { passage }, { source: 'reading' });
     }
     wx.navigateTo({
-      url: `/pages/reading/detail/index?passageId=${targetPassageId}`
+      url: `/pages/reading/detail/index?passageId=${encodeURIComponent(targetPassageId)}`
     });
   }
 });

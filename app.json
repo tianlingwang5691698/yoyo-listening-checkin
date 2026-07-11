@@ -3,9 +3,6 @@
   "pages": [
     "pages/home/index",
     "pages/home/completed/index",
-    "pages/reading/index",
-    "pages/reading/detail/index",
-    "pages/reading/flashcards/index",
     "pages/grammar/index",
     "pages/material/index",
     "pages/material/detail/index",
@@ -25,6 +22,16 @@
     "pages/parent/index",
     "pages/parent/detail/index",
     "pages/family/index"
+  ],
+  "subPackages": [
+    {
+      "root": "pages/reading",
+      "pages": [
+        "index",
+        "detail/index",
+        "flashcards/index"
+      ]
+    }
   ],
   "window": {
     "navigationBarTitleText": " ",

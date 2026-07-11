@@ -239,6 +239,16 @@ function isPlaceholderAnalysis(value) {
   return !String(value || '').trim() || String(value || '').includes('生成解析中');
 }
 
+function readingCompletionNeedsHydration(item) {
+  if (!item || item.type !== 'reading') return false;
+  const questions = Array.isArray(item.readingQuestions) ? item.readingQuestions : [];
+  const analysesReady = questions.length > 0
+    && questions.every((question) => !isPlaceholderAnalysis(question.analysis));
+  return !item.passage
+    || !analysesReady
+    || !(Array.isArray(item.phraseCards) && item.phraseCards.length);
+}
+
 function mergeStudyPackIntoAttempt(attempt, studyPack) {
   const nextAttempt = Object.assign({}, attempt || {});
   const review = Object.assign({}, nextAttempt.review || {});
@@ -316,6 +326,7 @@ function normalizeCompletionItem(item, index) {
     const number = question.number || questionIndex + 1;
     const result = readingResultByNumber[String(number)] || {};
     const analysis = readingAnalysisByNumber[String(number)] || result || {};
+    const analysisText = analysis.text || analysis.analysis || analysis.explanation || '';
     return {
       key: `${safeItem.id || safeItem.recordId || index}-reading-${number}`,
       number,
@@ -327,7 +338,7 @@ function normalizeCompletionItem(item, index) {
       selectedAnswer: result.selected || result.userAnswer || '',
       answer: result.answer || question.answer || '',
       correct: result.correct,
-      analysis: analysis.text || analysis.analysis || analysis.explanation || '',
+      analysis: isPlaceholderAnalysis(analysisText) ? '' : analysisText,
       answerSentence: analysis.answerSentence || null
     };
   });
@@ -421,12 +432,13 @@ async function filterVisibleCompletionItems(items) {
 
 async function hydrateReadingItems(items) {
   const nextItems = await Promise.all((items || []).map(async (item) => {
-    if (item.type !== 'reading' || item.passage || !item.passageId) {
+    if (!readingCompletionNeedsHydration(item) || !item.passageId) {
       return item;
     }
     try {
+      const attemptId = item.latestAttempt && (item.latestAttempt.attemptId || item.latestAttempt._id) || '';
       const [passageData, packData] = await Promise.all([
-        store.getReadingPassage({ passageId: item.passageId }),
+        store.getReadingPassage({ passageId: item.passageId, attemptId }),
         store.getReadingStudyPack({ passageId: item.passageId, section: 'questions', cacheOnly: true, useCache: false })
       ]);
       const baseAttempt = item.latestAttempt || (passageData && passageData.latestAttempt) || {};
@@ -521,7 +533,7 @@ async function hydrateWritingItems(items) {
 
 function needsCompletionHydration(item) {
   if (!item) return false;
-  if (item.type === 'reading' && !item.passage && item.passageId) return true;
+  if (item.type === 'reading' && item.passageId) return readingCompletionNeedsHydration(item);
   if (item.type === 'reading-study' && !(item.phraseCards && item.phraseCards.length) && item.passageId) return true;
   if (item.type === 'grammar' && !(item.grammarQuestions && item.grammarQuestions.length) && item.topicId) return true;
   if (item.type === 'writing' && !item.writingPrompt && item.targetId) return true;

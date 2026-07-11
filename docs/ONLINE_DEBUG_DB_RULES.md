@@ -86,6 +86,24 @@
 
 ## 已知案例
 
+### 2026-07-11 阅读练习记录长期显示生成解析中
+
+1. 现象：`pages/practice-history` 展开历史阅读后，原文和答案正常，但逐题一直显示“生成解析中”。
+2. 账号：不限账号，按当前 `targetChildId` 隔离。
+3. 查询：`pages/practice-history.loadReadingDetail -> store.getReadingStudyPack -> cloud.getReadingStudyPack`；记录 `passageId / attemptId / studyPack / analyses / cacheMiss / elapsed / targetChildId / syncMode`。
+4. 结论：历史页只读取 `studyCompletions.latestAttempt.review` 的提交瞬间占位快照，没有自动补读公共 `readingStudyPacks`。
+5. 修复：文章、完成记录、解析缓存三项并行读取；过滤占位文本；请求超过 3 秒或缓存缺失/不完整时显示链路 DEBUG，成功命中后清除。
+6. 是否需要发版：前端改动，需要重新编译/发布小程序；云函数无需再次修改。
+
+### 2026-07-11 阅读单篇白屏 / AI 解析报 text is not a function
+
+1. 现象：真机进入已有学习包的文章（如 2015 嘉定一模阅读 A）白屏；或答题正误可显示但 AI 解析失败，页面 debug 显示 `text is not a function`。
+2. 账号：不限账号。
+3. 查询：`pages/reading/detail/index.js termEntries`。
+4. 结论：局部题目文本变量 `text` 覆盖了页面翻译函数 `text()`。
+5. 修复：局部变量改名为 `termText`；详情跳转统一编码、解码 `passageId`；阅读继续使用依赖主包公共模块的普通分包，不改为独立分包。
+6. 是否需要发版：需重新发布小程序前端。
+
 ### 2026-07-11 学生阅读提交后解析一直生成中
 
 1. 现象：学生提交阅读后可看正误，但逐题解析长时间停在“生成解析中”；重新进入也不续接。

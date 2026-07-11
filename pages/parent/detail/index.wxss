@@ -553,6 +553,9 @@
 }
 
 .detail-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: 66rpx;
   margin: 18rpx 0 0;
