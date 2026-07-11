@@ -115,6 +115,20 @@ test('阅读英文正确与作答标签保持小号单行', () => {
   assert.match(wxss, /\.language-en \.option-badge[\s\S]*?font-size: 16rpx[\s\S]*?white-space: nowrap/);
 });
 
+test('阅读生词、短语、句型和答案句在两套主题使用独立颜色', () => {
+  const wxml = fs.readFileSync(path.join(root, 'pages/reading/detail/index.wxml'), 'utf8');
+  const wxss = fs.readFileSync(path.join(root, 'pages/reading/detail/index.wxss'), 'utf8');
+  assert.equal((wxml.match(/highlight-\{\{item\.key\}\}/g) || []).length, 2);
+  ['word', 'phrase', 'pattern', 'answer'].forEach((tone) => {
+    assert.match(wxss, new RegExp(`\\.reading-detail \\.highlight-${tone}`));
+    assert.match(wxss, new RegExp(`\\.library-reading-detail \\.highlight-${tone}`));
+  });
+  assert.match(wxss, /\.reading-detail \.word-card[\s\S]*?\.reading-detail \.phrase-card[\s\S]*?\.reading-detail \.pattern-card/);
+  assert.match(wxss, /\.library-reading-detail \.word-card[\s\S]*?\.library-reading-detail \.phrase-card[\s\S]*?\.library-reading-detail \.pattern-card/);
+  assert.match(wxss, /\.reading-detail \.answer-sentence,[\s\S]*?\.reading-detail \.cloze-evidence/);
+  assert.match(wxss, /\.library-reading-detail \.answer-sentence,[\s\S]*?\.library-reading-detail \.cloze-evidence/);
+});
+
 test('阅读学生每次成功提交都能看到并听到完成反馈', () => {
   const wxss = fs.readFileSync(path.join(root, 'pages/reading/detail/index.wxss'), 'utf8');
   assert.match(readingDetailSource, /playReadingCompleteEffect\(result\.studyWriteAllowed !== false\)/);

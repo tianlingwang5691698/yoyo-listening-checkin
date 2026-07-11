@@ -21,7 +21,7 @@
         <view class="article-page-corner"></view>
         <view class="article-page-number">READING</view>
         <view class="highlight-actions library-answer-index" wx:if="{{submitted && review}}">
-          <view class="highlight-button {{activeHighlight === item.key ? 'is-active' : ''}} {{loadingStudySection ? 'is-loading' : ''}}" wx:for="{{highlightButtons}}" wx:key="key" data-mode="{{item.key}}" bindtap="selectHighlight">
+          <view class="highlight-button highlight-{{item.key}} {{activeHighlight === item.key ? 'is-active' : ''}} {{loadingStudySection ? 'is-loading' : ''}}" wx:for="{{highlightButtons}}" wx:key="key" data-mode="{{item.key}}" bindtap="selectHighlight">
             <text>{{item.label}}</text>
             <text class="button-dot" wx:if="{{activeHighlight === item.key}}"></text>
           </view>
@@ -293,7 +293,7 @@
           <view class="passage-title">{{passage.title}}</view>
         </view>
         <view class="highlight-actions" wx:if="{{submitted && review}}">
-          <view class="highlight-button {{activeHighlight === item.key ? 'is-active' : ''}} {{loadingStudySection ? 'is-loading' : ''}}" wx:for="{{highlightButtons}}" wx:key="key" data-mode="{{item.key}}" bindtap="selectHighlight">
+          <view class="highlight-button highlight-{{item.key}} {{activeHighlight === item.key ? 'is-active' : ''}} {{loadingStudySection ? 'is-loading' : ''}}" wx:for="{{highlightButtons}}" wx:key="key" data-mode="{{item.key}}" bindtap="selectHighlight">
             <text>{{item.label}}</text>
             <text class="button-dot" wx:if="{{activeHighlight === item.key}}"></text>
           </view>
