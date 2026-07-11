@@ -27,3 +27,13 @@ test('语法重新讲只写当前学生进度，不覆盖公共解析', () => {
   assert.match(serviceSource, /personalOnly \? false : await saveExplanation/);
   assert.match(serviceSource, /persisted: !personalOnly/);
 });
+
+test('语法提交后只用颜色区分正确与错误，不显示文字线', () => {
+  const wxss = fs.readFileSync(path.join(root, 'pages/grammar/index.wxss'), 'utf8');
+  assert.match(wxss, /\.option-item\.is-correct \.option-text \{[\s\S]*?color: #2f7569;[\s\S]*?text-decoration: none/);
+  assert.match(wxss, /\.option-item\.is-wrong \.option-text \{[\s\S]*?color: #b44f3f;[\s\S]*?text-decoration: none/);
+  assert.match(wxss, /\.library-option\.is-correct \.library-option-text \{[\s\S]*?color: #3f6d3a;[\s\S]*?text-decoration: none/);
+  assert.match(wxss, /\.library-option\.is-wrong \.library-option-text \{[\s\S]*?color: #a34338;[\s\S]*?text-decoration: none/);
+  assert.match(wxss, /\.lookup-token \{[\s\S]*?border-bottom: 0;[\s\S]*?text-decoration: none/);
+  assert.match(wxss, /\.library-lookup-token \{[\s\S]*?border-bottom: 0;[\s\S]*?text-decoration: none/);
+});

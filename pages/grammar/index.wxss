@@ -597,25 +597,35 @@
 }
 
 .option-item.is-correct {
-  border-color: rgba(134, 170, 161, 0.48);
-  background: var(--grammar-sage-soft);
-  color: #416a63;
+  border-color: rgba(61, 132, 116, 0.62);
+  background: rgba(103, 176, 158, 0.2);
+  color: #2f7569;
 }
 
 .option-item.is-correct .option-key {
-  background: rgba(134, 170, 161, 0.22);
-  color: #416a63;
+  background: rgba(61, 132, 116, 0.22);
+  color: #2f7569;
+}
+
+.option-item.is-correct .option-text {
+  color: #2f7569;
+  text-decoration: none;
 }
 
 .option-item.is-wrong {
-  border-color: rgba(223, 127, 104, 0.42);
-  background: var(--grammar-coral-soft);
-  color: #9d6558;
+  border-color: rgba(190, 78, 61, 0.58);
+  background: rgba(232, 119, 96, 0.2);
+  color: #b44f3f;
 }
 
 .option-item.is-wrong .option-key {
-  background: rgba(223, 127, 104, 0.16);
-  color: #9d6558;
+  background: rgba(190, 78, 61, 0.18);
+  color: #b44f3f;
+}
+
+.option-item.is-wrong .option-text {
+  color: #b44f3f;
+  text-decoration: none;
 }
 
 .answer-line {
@@ -708,7 +718,8 @@
 
 .lookup-token {
   color: #477899;
-  border-bottom: 1rpx solid rgba(71, 120, 153, 0.28);
+  border-bottom: 0;
+  text-decoration: none;
 }
 
 .dictionary-mask {
@@ -1373,26 +1384,27 @@
 
 .library-option.is-selected .library-option-text {
   color: var(--library-grammar-error);
-  text-decoration: line-through;
-  text-decoration-thickness: 2rpx;
+  text-decoration: none;
 }
 
 .library-option.is-correct {
-  border-color: rgba(127, 140, 120, 0.72);
-  background: rgba(127, 140, 120, 0.12);
+  border-color: rgba(85, 122, 76, 0.76);
+  background: rgba(116, 153, 105, 0.2);
 }
 
 .library-option.is-correct .library-option-text {
-  color: #4F6548;
-  text-decoration: underline;
-  text-decoration-color: var(--library-grammar-moss);
-  text-decoration-thickness: 3rpx;
-  text-underline-offset: 6rpx;
+  color: #3f6d3a;
+  text-decoration: none;
 }
 
 .library-option.is-wrong {
-  border-color: rgba(154, 95, 84, 0.58);
-  background: rgba(154, 95, 84, 0.08);
+  border-color: rgba(163, 67, 56, 0.68);
+  background: rgba(181, 84, 70, 0.16);
+}
+
+.library-option.is-wrong .library-option-text {
+  color: #a34338;
+  text-decoration: none;
 }
 
 .library-answer-line {
@@ -1504,7 +1516,8 @@
 
 .library-lookup-token {
   color: var(--library-grammar-ink);
-  border-bottom: 2rpx dashed var(--library-grammar-brass);
+  border-bottom: 0;
+  text-decoration: none;
 }
 
 .library-complete-proof {
