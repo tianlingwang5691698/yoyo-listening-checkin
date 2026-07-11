@@ -168,7 +168,13 @@ function formatDuration(minutes) {
   return formatText(tr('minutes'), { minutes: restMinutes });
 }
 
-function formatStatsDuration(stats) {
+function formatStatsDuration(stats, options) {
+  const pending = !!(options && options.pending);
+  const hasActivity = Number((stats && stats.completedDays) || 0) > 0
+    || Number((stats && stats.completedTasks) || 0) > 0;
+  if (pending && hasActivity && !Number((stats && stats.totalMinutes) || 0)) {
+    return tr('syncingDuration');
+  }
   if (stats && stats.heatmapFallback && !Number(stats.totalMinutes || 0)) {
     return tr('zeroMinutes').replace(' ', '');
   }
@@ -428,7 +434,7 @@ Page({
       weekLabels: getWeekLabels(),
       calendarTitle: formatText(tr('calendarTitle'), { year: this.data.calendarYear, month: this.data.calendarMonth }),
       selectedDateLabel: formatDateLabel(this.data.selectedDate),
-      totalDurationText: formatStatsDuration(this.data.stats),
+      totalDurationText: formatStatsDuration(this.data.stats, { pending: true }),
       selectedDaySummary: this.data.selectedDayLoaded ? buildDaySummary(this.data.selectedDayReport) : getEmptyDaySummary()
     }, buildMetric(this.data.stats, this.data.metricMode), buildCatchupPresentation(this.data.catchupState)));
     wx.setNavigationBarTitle({ title: texts.navTitle });
@@ -479,9 +485,7 @@ Page({
       };
       const snapshotHeatmap = (snapshot.heatmapData && snapshot.heatmapData.heatmap) || [];
       this.setData(page.buildCloudPageData(this.data, Object.assign({}, snapshot, {
-        totalDurationText: snapshot.totalDurationText === '待同步'
-          ? formatStatsDuration(snapshot.stats)
-          : snapshot.totalDurationText,
+        totalDurationText: formatStatsDuration(snapshot.stats, { pending: true }),
         selectedDayLoaded: false,
         selectedDayLoading: false,
         selectedDayReport: EMPTY_REPORT,
@@ -542,7 +546,7 @@ Page({
         ]
       });
     }, 3000);
-    const dashboardPromise = store.getDashboard({ view: 'record', debug: true }, (fresh) => {
+    const dashboardPromise = store.getDashboard({ view: 'record', debug: true, forceRefresh: true }, (fresh) => {
         if (loadSeq !== this.recordLoadSeq) return;
         const cachedHeatmap = this.getCachedMonthData(calendarYear, calendarMonth);
         const nextStats = mergeStatsWithHeatmap(fresh.stats, cachedHeatmap && cachedHeatmap.heatmap);

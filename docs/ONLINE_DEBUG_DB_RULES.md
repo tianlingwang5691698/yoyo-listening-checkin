@@ -86,6 +86,15 @@
 
 ## 已知案例
 
+### 2026-07-11 成长页累计时长被旧缓存覆盖为 0
+
+1. 现象：云端 `getDashboard(view=record)` 已返回非零 `stats.totalMinutes`，成长页最终仍显示 0 分钟，同时天数和任务数来自月历兜底。
+2. 账号：不限账号，按当前 `targetChildId` 隔离。
+3. 查询：`pages/record.onShow -> store.getDashboard -> cloud.getDashboard`，对比 `stats.totalMinutes` 与后续 `getMonthHeatmap -> mergeStatsWithHeatmap` 的最终显示值。
+4. 结论：持久缓存先返回旧的零统计，云端刷新先写入真实值；较慢的月历请求随后又用旧 dashboard Promise 结果覆盖真实值。
+5. 修复：成长页保留本地快照首显，但后台 dashboard 使用 `forceRefresh=true`，Promise 合并只接受云端权威统计。
+6. 是否需要发版：前端改动，需要重新编译/发布小程序；云函数无需修改。
+
 ### 2026-07-11 阅读练习记录长期显示生成解析中
 
 1. 现象：`pages/practice-history` 展开历史阅读后，原文和答案正常，但逐题一直显示“生成解析中”。

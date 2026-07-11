@@ -24,3 +24,12 @@ test('pageReady uses the 200ms cache and 800ms cold hard limits', () => {
   assert.match(source, /readyMeta\.targetMs = readyMeta\.cacheHit \? 200 : 800/);
   assert.doesNotMatch(source, /300 : 1200/);
 });
+
+test('成长页后台统计强制读取云端权威值，避免旧缓存覆盖累计时长', () => {
+  const source = fs.readFileSync(path.join(root, 'pages/record/index.js'), 'utf8');
+  assert.match(source, /store\.getDashboard\(\{ view: 'record', debug: true, forceRefresh: true \}/);
+  assert.match(source, /pending && hasActivity[\s\S]*?tr\('syncingDuration'\)/);
+  const catalog = require('../utils/i18n-catalog-account').record;
+  assert.equal(catalog['zh-CN'].syncingDuration, '同步中');
+  assert.equal(catalog.en.syncingDuration, 'Syncing');
+});

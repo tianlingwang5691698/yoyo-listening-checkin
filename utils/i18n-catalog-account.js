@@ -192,3 +192,6 @@ module.exports = {
     }
   }
 };
+
+Object.assign(module.exports.record['zh-CN'], { syncingDuration: '同步中' });
+Object.assign(module.exports.record.en, { syncingDuration: 'Syncing' });
