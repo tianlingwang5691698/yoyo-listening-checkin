@@ -251,6 +251,52 @@ test('home view 任务分组保留播放字段但不返回大字段', async () =
   ].sort());
 });
 
+test('自定义计划晚于旧日报更新时首页使用当前任务时长', async () => {
+  const dashboard = await dashboardEngine.getDashboardData({
+    user: {}, member: { studyRole: 'student' }, family: {}, child: { childId: 'child-1' }
+  }, {
+    getTodayString: () => '2026-07-11',
+    getUserScope: () => ({ familyId: 'family-1', childId: 'child-1' }),
+    getHomeProgressRecords: async () => [],
+    getCheckins: async () => [],
+    getDailyReport: async () => ({
+      totalMinutes: 0,
+      planSource: 'fixed-yoyo',
+      listeningPlanId: '',
+      updatedAt: '2026-07-11T14:35:07.901Z',
+      items: [{ repeatTarget: 3, taskSnapshot: { durationSec: 760 } }]
+    }),
+    getActiveListeningPlan: async () => ({
+      _id: 'plan-1', active: true, updatedAt: '2026-07-11T14:36:59.865Z', materials: []
+    }),
+    getCustomPlanDayIndex: () => 1,
+    buildListeningPlanForDay: () => ({ dayIndex: 1, phase: { key: 'custom', label: '自定义' }, byCategory: {}, categoryOrder: ['newconcept1'] }),
+    decorateListeningPlanTasks: () => [{
+      category: 'newconcept1', taskId: 'newconcept1-1', durationSec: 72, repeatTarget: 1,
+      playCount: 0, completedToday: false, isPendingAsset: false
+    }],
+    getPlanCategoryOrder: () => ['newconcept1'],
+    buildStats: () => ({ streakDays: 0 }),
+    getCategoryLabel: () => 'New Concept 1'
+  }, {
+    includeDailyTasks: false,
+    includeHomeTaskGroups: true,
+    includeCategorySummaries: false,
+    includeCatchupState: false,
+    includePlanDebug: false,
+    includeTaskProgressSummary: true,
+    includeUser: false,
+    includeFamily: false,
+    includeStats: false,
+    includeTodayListeningMinutes: true,
+    progressScope: 'home',
+    reconcileCheckins: false
+  });
+
+  assert.equal(dashboard.todayListeningMinutes, 0);
+  assert.equal(dashboard.todayListeningGoalMinutes, 1);
+});
+
 test('缺失昨日打卡时，dashboard 先使用修复后的 checkins 再计算当天计划', async () => {
   const dashboard = await dashboardEngine.getDashboardData({
     user: {},

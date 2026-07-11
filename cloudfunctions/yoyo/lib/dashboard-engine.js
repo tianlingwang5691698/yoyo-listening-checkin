@@ -133,6 +133,25 @@ function getReportGoalMinutes(report) {
   return durations.length ? durations.reduce((sum, minutes) => sum + minutes, 0) : null;
 }
 
+function getTaskMinutes(tasks, completedOnly) {
+  const durationSec = (tasks || []).reduce((sum, task) => {
+    if (!task || task.isPendingAsset || (completedOnly && !task.completedToday)) return sum;
+    return sum + (Math.max(0, Number(task.durationSec || 0)) * Math.max(1, Number(task.repeatTarget || 1)));
+  }, 0);
+  return durationSec > 0 ? Math.max(1, Math.round(durationSec / 60)) : 0;
+}
+
+function isReportCurrentForPlan(report, activeListeningPlan, useCustomListeningPlan) {
+  if (!report) return false;
+  if (!useCustomListeningPlan) return true;
+  if (String(report.planSource || '') !== 'custom-listening') return false;
+  const planId = String((activeListeningPlan && (activeListeningPlan.planId || activeListeningPlan._id)) || '');
+  if (planId && String(report.listeningPlanId || '') !== planId) return false;
+  const planUpdatedAt = Date.parse((activeListeningPlan && activeListeningPlan.updatedAt) || '');
+  const reportUpdatedAt = Date.parse(report.updatedAt || '');
+  return !Number.isFinite(planUpdatedAt) || !Number.isFinite(reportUpdatedAt) || reportUpdatedAt >= planUpdatedAt;
+}
+
 async function getDashboardData(ctx, deps, options = {}) {
   const perfStartedAt = Date.now();
   const perfDebug = options.includePerfDebug ? {
@@ -344,8 +363,14 @@ async function getDashboardData(ctx, deps, options = {}) {
     isYoyoFixedPlan: useFixedYoyoPlan
   };
   if (includeTodayListeningMinutes) {
-    result.todayListeningMinutes = todayReport ? Number(todayReport.totalMinutes || 0) : null;
-    result.todayListeningGoalMinutes = getReportGoalMinutes(todayReport);
+    const reportIsCurrent = isReportCurrentForPlan(todayReport, activeListeningPlan, useCustomListeningPlan);
+    const reportGoalMinutes = reportIsCurrent ? getReportGoalMinutes(todayReport) : null;
+    result.todayListeningMinutes = reportIsCurrent
+      ? Number(todayReport.totalMinutes || 0)
+      : getTaskMinutes(dailyTasks, true);
+    result.todayListeningGoalMinutes = reportGoalMinutes !== null
+      ? reportGoalMinutes
+      : getTaskMinutes(dailyTasks, false);
   }
   if (includeUser) {
     result.user = ctx.user;
