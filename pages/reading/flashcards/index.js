@@ -658,7 +658,8 @@ Page({
     audioCompleted: true,
     navStyle: '',
     pageTopStyle: '',
-    flashcardDebugLines: []
+    flashcardDebugLines: [],
+    previewMode: store.getDeviceStudyRole() !== 'student'
   }),
   onUnload() {
     this.flushReviewQueue(true);
@@ -683,7 +684,9 @@ Page({
   onShow() {
     this.flashcardPerf = page.startPagePerf('flashcards');
     page.syncTheme(this);
-    this.setData(getNavLayout(), () => {
+    this.setData(Object.assign({}, getNavLayout(), {
+      previewMode: store.getDeviceStudyRole() !== 'student'
+    }), () => {
       if (this.flashcardPerf) {
         this.flashcardPerf.ready('pageReady', {
           cacheHit: this.data.mode === 'review',
@@ -1040,6 +1043,7 @@ Page({
       planSummary: buildPlanSummary(library, settings)
     }, planState);
     this.setData(nextData);
+    if (this.data.previewMode) return;
     writePlanSettings(this.data.activeSourceId || '', settings);
     if (!this.data.activeSourceId) {
       await store.saveFlashcardSettings(settings);
@@ -1294,6 +1298,7 @@ Page({
     this.persistActiveSourceState();
   },
   persistActiveSourceState() {
+    if (this.data.previewMode) return;
     const activeSourceId = this.data.activeSourceId || '';
     if (!activeSourceId) return;
     writeSourceCache(activeSourceId, {
@@ -1341,7 +1346,7 @@ Page({
     });
   },
   syncReviewToCloud(current, nextResult) {
-    if (!current || current.demo || !current.flashcardKey) return;
+    if (this.data.previewMode || !current || current.demo || !current.flashcardKey) return;
     this.pendingReviewQueue = this.pendingReviewQueue || [];
     this.pendingReviewQueue.push({
       flashcardKey: current.flashcardKey,
@@ -1353,6 +1358,11 @@ Page({
     }
   },
   flushReviewQueue(force) {
+    if (this.data.previewMode) {
+      this.pendingReviewQueue = [];
+      this.forceFlushReviewQueue = false;
+      return;
+    }
     if (this.reviewQueueFlushing) {
       if (force) this.forceFlushReviewQueue = true;
       return;
@@ -1394,6 +1404,7 @@ Page({
     }
   },
   syncVocabularyCompletion(force) {
+    if (this.data.previewMode) return;
     const stats = this.vocabularySessionStats || {};
     if (!stats.reviewed || (!force && stats.reviewed % 5 !== 0)) return;
     if (this.lastVocabularyCompletionSyncedReviewed === stats.reviewed) return;
@@ -1469,6 +1480,16 @@ Page({
   startReview() {
     const cards = buildReviewQueue(this.getFlashcardLibrary(), this.data.settings, this.data.today);
     const current = cards[0] || null;
+    const previewMode = store.getDeviceStudyRole() !== 'student';
+    if (previewMode) {
+      this.previewSourceSnapshot = {
+        library: this.getFlashcardLibrary().map((item) => Object.assign({}, item)),
+        settings: Object.assign({}, this.data.settings),
+        today: this.data.today,
+        logs: (this.data.logs || []).slice(),
+        dictionaryBooks: (this.data.dictionaryBooks || []).map((item) => Object.assign({}, item))
+      };
+    }
     this.setData({
       sourceMode: 'library',
       mode: 'review',
@@ -1486,7 +1507,8 @@ Page({
       cardChoice: '',
       previousCardChoice: '',
       audioPlaying: false,
-      audioCompleted: isAudioCompletedForCard(current)
+      audioCompleted: isAudioCompletedForCard(current),
+      previewMode
     });
     this.vocabularySessionStats = null;
     this.lastVocabularyCompletionSyncedReviewed = 0;
@@ -1496,6 +1518,16 @@ Page({
   exitReview() {
     this.syncVocabularyCompletion(true);
     this.flushReviewQueue(true);
+    if (this.data.previewMode && this.previewSourceSnapshot) {
+      const snapshot = this.previewSourceSnapshot;
+      this.previewSourceSnapshot = null;
+      const restored = this.buildFlashcardData(snapshot, this.data.activeSourceId || '', snapshot);
+      this.applyFlashcardData(Object.assign({}, restored, {
+        mode: 'library',
+        reviewCompleted: false
+      }));
+      return;
+    }
     this.setData({ mode: 'library', reviewCompleted: false });
   },
   async markRemembered() {
@@ -1530,18 +1562,20 @@ Page({
     if (!current || !current.flashcardKey) return;
     if (this.data.audioLoading || this.data.audioPlaying) return;
     const nextResult = typeof result === 'string' ? result : (this.data.cardChoice || 'remembered');
-    const checkinDays = writeVocabularyCheckinDay(this.data.today);
-    this.setData({
-      reviewDays: Object.keys(checkinDays).length,
-      vocabCheckinDays: Object.keys(checkinDays).length
-    });
+    if (!this.data.previewMode) {
+      const checkinDays = writeVocabularyCheckinDay(this.data.today);
+      this.setData({
+        reviewDays: Object.keys(checkinDays).length,
+        vocabCheckinDays: Object.keys(checkinDays).length
+      });
+    }
     if (nextResult === 'unfamiliar') {
       if (!current.demo) {
         this.recordVocabularyResult(nextResult, current);
         this.updateCurrentReviewState(current, nextResult);
         this.syncReviewToCloud(current, nextResult);
       }
-      this.repeatCurrentCard(!!this.data.activeSourceId);
+      this.repeatCurrentCard(!this.data.previewMode);
       return;
     }
     if (current.demo) {
@@ -1551,6 +1585,6 @@ Page({
     this.updateCurrentReviewState(current, nextResult);
     this.syncReviewToCloud(current, nextResult);
     this.recordVocabularyResult(nextResult, current);
-    this.advanceVisibleCards(!!this.data.activeSourceId);
+    this.advanceVisibleCards(!this.data.previewMode);
   }
 });

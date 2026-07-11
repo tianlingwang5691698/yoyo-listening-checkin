@@ -63,7 +63,9 @@
           </view>
         </view>
 
-        <button class="library-vocab-start {{empty || loading ? 'is-disabled' : ''}}" disabled="{{empty || loading}}" hover-class="is-pressed" hover-start-time="20" hover-stay-time="180" bindtap="startReview">开始背诵</button>
+        <view class="vocab-preview-notice" wx:if="{{previewMode}}">家长试背 · 不计入学生记录</view>
+
+        <button class="library-vocab-start {{empty || loading ? 'is-disabled' : ''}}" disabled="{{empty || loading}}" hover-class="is-pressed" hover-start-time="20" hover-stay-time="180" bindtap="startReview">{{previewMode ? '开始试背' : '开始背诵'}}</button>
         <view class="flashcard-debug library-vocab-debug" wx:if="{{flashcardDebugLines.length}}">
           <text selectable="{{true}}" wx:for="{{flashcardDebugLines}}" wx:key="*this">{{item}}</text>
         </view>
@@ -129,7 +131,7 @@
       <block wx:if="{{mode === 'review'}}">
         <view class="library-vocab-review-head">
           <view class="library-vocab-review-exit" bindtap="exitReview">词库</view>
-          <view class="library-vocab-review-progress">{{current ? reviewDone + 1 : reviewDone}} / {{reviewSessionTotal || total}}</view>
+          <view class="library-vocab-review-progress">{{previewMode ? '家长试背 · ' : ''}}{{current ? reviewDone + 1 : reviewDone}} / {{reviewSessionTotal || total}}</view>
           <view></view>
         </view>
         <view class="library-vocab-complete" wx:if="{{reviewCompleted}}">
@@ -269,7 +271,9 @@
         </view>
       </view>
 
-      <button class="start-review" bindtap="startReview">开始背诵</button>
+      <view class="vocab-preview-notice" wx:if="{{previewMode}}">家长试背 · 不计入学生记录</view>
+
+      <button class="start-review {{empty || loading ? 'is-disabled' : ''}}" disabled="{{empty || loading}}" bindtap="startReview">{{previewMode ? '开始试背' : '开始背诵'}}</button>
       <view class="flashcard-debug" wx:if="{{flashcardDebugLines.length}}">
         <text selectable="{{true}}" wx:for="{{flashcardDebugLines}}" wx:key="*this">{{item}}</text>
       </view>
@@ -345,7 +349,7 @@
     <block wx:if="{{mode === 'review'}}">
       <view class="review-full-head">
         <view class="review-exit" bindtap="exitReview">词库</view>
-        <view class="review-full-progress">{{current ? reviewDone + 1 : reviewDone}} / {{reviewSessionTotal || total}}</view>
+        <view class="review-full-progress">{{previewMode ? '家长试背 · ' : ''}}{{current ? reviewDone + 1 : reviewDone}} / {{reviewSessionTotal || total}}</view>
         <view class="review-head-spacer"></view>
       </view>
       <view class="review-metrics">

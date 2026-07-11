@@ -28,6 +28,10 @@ function flashcardKey(sourceType, type, text) {
   return [sourceType || 'study', normalizeType(type), normalizeText(text).toLowerCase()].join(':');
 }
 
+function isPreviewWrite(ctx) {
+  return !study.isStudyWriteAllowed(ctx);
+}
+
 function cardText(card, type) {
   if (type === 'word') return normalizeText(card.word || card.text);
   if (type === 'pattern') return normalizeText(card.pattern || card.text);
@@ -187,6 +191,9 @@ async function getSettings(ctx) {
 async function saveSettings(event) {
   const payload = (event && event.payload) || {};
   const { ctx } = await study.prepareRequestContext(Object.assign({}, event, { action: 'saveFlashcardSettings' }));
+  if (isPreviewWrite(ctx)) {
+    return { settings: normalizeSettings(payload), persisted: false, reason: 'preview-role' };
+  }
   const settings = {
     familyId: ctx.family.familyId,
     childId: ctx.child.childId,
@@ -326,6 +333,9 @@ async function getFlashcardDue(event) {
 async function addDictionaryBook(event) {
   const payload = (event && event.payload) || {};
   const { ctx, today } = await study.prepareRequestContext(Object.assign({}, event, { action: 'addDictionaryBook' }));
+  if (isPreviewWrite(ctx)) {
+    return { saved: false, reason: 'preview-role' };
+  }
   const level = normalizeText(payload.level).toLowerCase();
   const book = DICTIONARY_BOOKS.find((item) => item.level === level);
   if (!book) throw new Error('dictionary-book-invalid');
@@ -403,6 +413,9 @@ async function getDictionaryBook(event) {
 async function updateFlashcardReview(event) {
   const payload = (event && event.payload) || {};
   const { ctx, today } = await study.prepareRequestContext(Object.assign({}, event, { action: 'updateFlashcardReview' }));
+  if (isPreviewWrite(ctx)) {
+    return { saved: false, reason: 'preview-role' };
+  }
   const key = normalizeText(payload.flashcardKey);
   let result = await dbAdapter.collection(COLLECTION)
     .where({ familyId: ctx.family.familyId, childId: ctx.child.childId, flashcardKey: key })
@@ -529,6 +542,9 @@ async function saveFlashcardAudio(event) {
 async function addDictionaryWord(event) {
   const payload = (event && event.payload) || {};
   const { ctx, today } = await study.prepareRequestContext(Object.assign({}, event, { action: 'addDictionaryWord' }));
+  if (isPreviewWrite(ctx)) {
+    return { saved: false, reason: 'preview-role' };
+  }
   const type = normalizeType(payload.type || (payload.pattern ? 'pattern' : (payload.phrase ? 'phrase' : 'word')));
   const text = cardText(payload, type);
   if (!text) return { saved: false };
