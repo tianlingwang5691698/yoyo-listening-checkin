@@ -33,6 +33,8 @@ const CLIENT_CARD_FIELDS = {
   familiarLevel: true,
   reviewStep: true,
   nextReviewDate: true,
+  firstLearnedDate: true,
+  lastReviewDate: true,
   unfamiliarCount: true,
   audioUrl: true,
   audioFileId: true,
@@ -249,8 +251,12 @@ function isDue(item, today) {
 function summarizeFlashcards(cards, logs, today, settings) {
   const all = cards || [];
   const due = all.filter((item) => isDue(item, today));
-  const reviewCards = due.filter((item) => item.status !== 'new').slice(0, settings.reviewLimit);
-  const newCards = due.filter((item) => item.status === 'new').slice(0, settings.newLimit);
+  const newUsed = all.filter((item) => item.firstLearnedDate === today).length;
+  const reviewUsed = all.filter((item) => item.lastReviewDate === today && item.firstLearnedDate !== today).length;
+  const newRemaining = Math.max(0, Number(settings.newLimit || 0) - newUsed);
+  const reviewRemaining = Math.max(0, Number(settings.reviewLimit || 0) - reviewUsed);
+  const reviewCards = due.filter((item) => item.status !== 'new' && item.lastReviewDate !== today).slice(0, reviewRemaining);
+  const newCards = due.filter((item) => item.status === 'new').slice(0, newRemaining);
   const reviewDays = Object.keys((logs || []).reduce((days, item) => {
     if (item && item.date) {
       days[item.date] = true;
@@ -484,17 +490,21 @@ async function updateFlashcardReview(event) {
     if (!current || !current._id) return { saved: false };
   }
   const remembered = payload.result !== 'unfamiliar';
+  const reviewDates = {
+    firstLearnedDate: current.firstLearnedDate || (current.status === 'new' ? today : ''),
+    lastReviewDate: today
+  };
   const schedule = Array.isArray(current.reviewSchedule) && current.reviewSchedule.length
     ? current.reviewSchedule
     : makeSchedule(today);
   if (payload.result === 'easy') {
     await dbAdapter.collection(COLLECTION).doc(current._id).update({
-      data: {
+      data: Object.assign({}, reviewDates, {
         status: 'mastered',
         familiarLevel: 'easy',
         nextReviewDate: '',
         updatedAt: new Date().toISOString()
-      }
+      })
     });
     await dbAdapter.collection(LOG_COLLECTION).add({
       data: {
@@ -513,14 +523,14 @@ async function updateFlashcardReview(event) {
   if (!remembered) {
     const command = dbAdapter.getCommand();
     await dbAdapter.collection(COLLECTION).doc(current._id).update({
-      data: {
+      data: Object.assign({}, reviewDates, {
         status: 'reviewing',
         familiarLevel: 'unfamiliar',
         nextReviewDate: today,
         unfamiliarCount: command.inc(1),
         lastUnfamiliarDate: today,
         updatedAt: new Date().toISOString()
-      }
+      })
     });
     await dbAdapter.collection(LOG_COLLECTION).add({
       data: {
@@ -538,7 +548,7 @@ async function updateFlashcardReview(event) {
   }
   const nextData = buildRememberedScheduleData(current, schedule, today);
   await dbAdapter.collection(COLLECTION).doc(current._id).update({
-    data: Object.assign({}, nextData, { updatedAt: new Date().toISOString() })
+    data: Object.assign({}, nextData, reviewDates, { updatedAt: new Date().toISOString() })
   });
   await dbAdapter.collection(LOG_COLLECTION).add({
     data: {

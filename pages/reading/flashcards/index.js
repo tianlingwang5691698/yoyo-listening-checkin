@@ -210,10 +210,14 @@ function isCardDue(item, today) {
 
 function buildDueCards(library, settings, today) {
   const due = (library || []).filter((item) => isCardDue(item, today));
+  const newUsed = (library || []).filter((item) => item.firstLearnedDate === today).length;
+  const reviewUsed = (library || []).filter((item) => item.lastReviewDate === today && item.firstLearnedDate !== today).length;
+  const newRemaining = Math.max(0, Number(settings.newLimit || 0) - newUsed);
+  const reviewRemaining = Math.max(0, Number(settings.reviewLimit || 0) - reviewUsed);
   return due
-    .filter((item) => item.status !== 'new')
-    .slice(0, settings.reviewLimit)
-    .concat(due.filter((item) => item.status === 'new').slice(0, settings.newLimit));
+    .filter((item) => item.status !== 'new' && item.lastReviewDate !== today)
+    .slice(0, reviewRemaining)
+    .concat(due.filter((item) => item.status === 'new').slice(0, newRemaining));
 }
 
 function isBookSource(sourceId) {
@@ -286,6 +290,7 @@ function addDaysString(today, days) {
 
 function applyReviewState(card, result, today) {
   const base = Object.assign({}, card, {
+    firstLearnedDate: card.firstLearnedDate || (card.status === 'new' ? today : ''),
     lastReviewedAt: Date.now(),
     lastReviewDate: today || ''
   });
@@ -349,6 +354,7 @@ function mergeCachedCardState(library, cachedLibrary) {
       reviewStep: useCachedProgress && cached.reviewStep != null ? cached.reviewStep : item.reviewStep,
       lastReviewedAt: useCachedProgress ? (cached.lastReviewedAt || item.lastReviewedAt) : item.lastReviewedAt,
       lastReviewDate: useCachedProgress ? (cached.lastReviewDate || item.lastReviewDate) : item.lastReviewDate,
+      firstLearnedDate: useCachedProgress ? (cached.firstLearnedDate || item.firstLearnedDate) : item.firstLearnedDate,
       audioUrl: cached.audioUrl || item.audioUrl || '',
       audioFileId: cached.audioFileId || item.audioFileId || '',
       audioCloudPath: cached.audioCloudPath || item.audioCloudPath || '',
@@ -376,6 +382,7 @@ function mergeBookProgress(bookLibrary, progressLibrary) {
       unfamiliarCount: progress.unfamiliarCount || 0,
       lastReviewedAt: progress.lastReviewedAt || item.lastReviewedAt,
       lastReviewDate: progress.lastReviewDate || item.lastReviewDate,
+      firstLearnedDate: progress.firstLearnedDate || item.firstLearnedDate,
       audioUrl: progress.audioUrl || item.audioUrl || '',
       audioFileId: progress.audioFileId || item.audioFileId || '',
       audioCloudPath: progress.audioCloudPath || item.audioCloudPath || '',
