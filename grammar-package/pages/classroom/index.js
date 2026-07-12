@@ -7,7 +7,7 @@ function uiText(english) {
     ['pronoun', 'Pronouns', 'Person · Case · Reference', 9],
     ['numeral', 'Numerals', 'Cardinals · Ordinals · Fractions', 7],
     ['article', 'Articles', 'a/an · the · Zero article', 8],
-    ['verb', 'Verbs', 'Jobs · Forms · Tense · Voice', 10],
+    ['verb', 'Verbs', 'Jobs · Forms · Tense · Voice', 36],
     ['adjective', 'Adjectives', 'Position · Comparison · Order', 9],
     ['adverb', 'Adverbs', 'Types · Position · Comparison', 8],
     ['preposition', 'Prepositions', 'Time · Place · Direction', 8],
@@ -18,7 +18,7 @@ function uiText(english) {
     ['pronoun', '代词', '人称 · 格 · 指代', 9],
     ['numeral', '数词', '基数 · 序数 · 分数', 7],
     ['article', '冠词', 'a/an · the · 零冠词', 8],
-    ['verb', '动词', '作用 · 形式 · 时态 · 语态', 10],
+    ['verb', '动词', '作用 · 形式 · 时态 · 语态', 36],
     ['adjective', '形容词', '位置 · 比较级 · 顺序', 9],
     ['adverb', '副词', '种类 · 位置 · 比较级', 8],
     ['preposition', '介词', '时间 · 地点 · 方向', 8],
@@ -42,6 +42,7 @@ function uiText(english) {
     back: english ? 'Back' : '返回',
     backDirectory: english ? '‹ Parts of Speech' : '‹ 十大词性',
     backVerbMap: english ? '‹ Verb Map' : '‹ 动词地图',
+    backVerbCourse: english ? '‹ Complete verb course' : '‹ 动词完整课程',
     backCourse: english ? '‹ Course Map' : '‹ 课程地图',
     nextQuestion: english ? 'Next question' : '下一题',
     nextLesson: english ? 'Next lesson' : '继续下一小节',
@@ -55,7 +56,8 @@ function uiText(english) {
 
 function loaderFor(topic) {
   if (topic === 'noun' || topic === 'pronoun') return 'word';
-  if (topic === 'verb' || topic === 'third-person' || topic === 'numeral' || topic === 'article') return 'vna';
+  if (topic === 'third-person') return 'third-person';
+  if (topic === 'verb' || topic === 'numeral' || topic === 'article') return 'vna';
   if (topic === 'adjective' || topic === 'adverb') return 'modifier';
   return 'relation';
 }
@@ -130,10 +132,6 @@ Page({
   selectTopic(event) {
     const topic = String(event.currentTarget.dataset.topic || '');
     if (!topic) return;
-    if (topic === 'verb') {
-      this.setData({ screen: 'verb-map', selectedTopic: topic, debugMessage: '' });
-      return;
-    }
     this.loadCourse(topic);
   },
 
@@ -147,10 +145,12 @@ Page({
 
   loadCourse(topic) {
     this.loadStartedAt = Date.now();
+    const requestId = (this.loadRequestId || 0) + 1;
+    this.loadRequestId = requestId;
     if (this.loadTimer) clearTimeout(this.loadTimer);
     this.setData({ selectedTopic: topic, loaderKind: loaderFor(topic), debugMessage: '' });
     this.loadTimer = setTimeout(() => {
-      if (this.data.selectedTopic === topic && !this.data.course.length) {
+      if (this.loadRequestId === requestId && this.data.selectedTopic === topic && this.data.loaderKind) {
         this.setData({ debugMessage: `DEBUG: grammar-package/pages/classroom.loadCourse -> ${this.data.loaderKind}-loader.loaded -> bundle: missing; topic=${topic}` });
       }
     }, 1500);
@@ -162,11 +162,16 @@ Page({
     if (this.loadTimer) clearTimeout(this.loadTimer);
     const bundle = detail.bundle;
     const course = bundle.course || [];
-    const groups = bundle.groups && bundle.groups.length ? bundle.groups : [{ id: 'course', title: bundle.title || '', copy: bundle.copy || '', lessons: course }];
+    this.fullCourse = course;
+    const courseSummaries = course.map(({ id, no, level, title, meta }) => ({ id, no, level, title, meta }));
+    const summaryById = courseSummaries.reduce((map, lesson) => Object.assign(map, { [lesson.id]: lesson }), {});
+    const groups = bundle.groups && bundle.groups.length
+      ? bundle.groups.map((group) => Object.assign({}, group, { lessons: (group.lessons || []).map((lesson) => summaryById[lesson.id]).filter(Boolean) }))
+      : [{ id: 'course', title: bundle.title || '', copy: bundle.copy || '', lessons: courseSummaries }];
     this.setData({
       screen: 'course-map',
       loaderKind: '',
-      course,
+      course: courseSummaries,
       groups,
       courseTitle: bundle.title || '',
       courseCopy: bundle.copy || '',
@@ -191,8 +196,9 @@ Page({
 
   openLesson(event) {
     const id = String(event.currentTarget.dataset.lesson || '');
-    const index = this.data.course.findIndex((lesson) => lesson.id === id);
-    const lesson = index >= 0 ? this.data.course[index] : null;
+    const course = this.fullCourse || [];
+    const index = course.findIndex((lesson) => lesson.id === id);
+    const lesson = index >= 0 ? course[index] : null;
     if (!lesson || !lesson.questions || !lesson.questions.length) return;
     const startedAt = Date.now();
     this.setData({
@@ -240,7 +246,7 @@ Page({
       return;
     }
     const lessonIndex = this.data.lessonIndex + 1;
-    const nextLesson = this.data.course[lessonIndex];
+    const nextLesson = (this.fullCourse || [])[lessonIndex];
     this.setData({
       activeLesson: nextLesson,
       lessonIndex,
@@ -259,15 +265,13 @@ Page({
   },
 
   backFromCourseMap() {
-    if (this.data.selectedTopic === 'verb' || this.data.selectedTopic === 'third-person') {
-      this.setData({ screen: 'verb-map', course: [], groups: [], courseTitle: '', courseCopy: '', debugMessage: '' });
-    } else {
-      this.backToDirectory();
-    }
+    if (this.data.selectedTopic === 'third-person') return this.loadCourse('verb');
+    this.backToDirectory();
   },
 
   backToDirectory() {
     if (this.loadTimer) clearTimeout(this.loadTimer);
+    this.fullCourse = [];
     this.setData({ screen: 'directory', selectedTopic: '', loaderKind: '', course: [], groups: [], courseTitle: '', courseCopy: '', activeLesson: null, debugMessage: '' });
   },
 

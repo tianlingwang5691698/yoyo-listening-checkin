@@ -64,6 +64,10 @@ test('语法课堂首屏不构建完整课程，点击后按专题加载', () =>
     const source = fs.readFileSync(path.join(__dirname, `../grammar-package/components/${name}/index.js`), 'utf8');
     assert.match(source, /^const courses = require\('\.\.\/\.\.\/domain\/grammar-classroom\//);
   });
+  const vnaLoader = fs.readFileSync(path.join(__dirname, '../grammar-package/components/grammar-vna-loader/index.js'), 'utf8');
+  const thirdPersonLoader = fs.readFileSync(path.join(__dirname, '../grammar-package/components/grammar-third-person-loader/index.js'), 'utf8');
+  assert.doesNotMatch(vnaLoader, /third-person-course/);
+  assert.match(thirdPersonLoader, /third-person-course/);
   const grammarConfig = JSON.parse(fs.readFileSync(path.join(__dirname, '../grammar-package/pages/classroom/index.json'), 'utf8'));
   Object.values(grammarConfig.usingComponents).forEach((request) => {
     const base = path.resolve(__dirname, '../grammar-package/pages/classroom', request);
@@ -123,10 +127,44 @@ test('十大词性课程中英文内容、练习和两套主题完整', () => {
     }));
   });
   const wxml = fs.readFileSync(path.join(__dirname, '../grammar-package/pages/classroom/index.wxml'), 'utf8');
+  const classroomPage = fs.readFileSync(path.join(__dirname, '../grammar-package/pages/classroom/index.js'), 'utf8');
   const wxss = fs.readFileSync(path.join(__dirname, '../grammar-package/pages/classroom/index.wxss'), 'utf8');
   assert.match(wxml, /theme-\{\{theme\}\}/);
   assert.match(wxml, /language-\{\{language\}\}/);
   assert.match(wxss, /theme-library/);
   assert.match(wxml, /selectThirdPersonCourse/);
+  assert.doesNotMatch(classroomPage, /screen:\s*'verb-map'/);
+  assert.match(classroomPage, /selectedTopic === 'third-person'\) return this\.loadCourse\('verb'\)/);
+  assert.match(classroomPage, /this\.fullCourse = course/);
+  assert.match(classroomPage, /course: courseSummaries/);
   ['subject', 'predicate', 'object', 'attribute', 'adverbial', 'auxiliary', 'modal', 'conjunction', 'preposition', 'complement', 'interjection'].forEach((role) => assert.match(wxss, new RegExp(`role-${role}`)));
+});
+
+test('动词完整课程覆盖中学核心与进阶知识边界', () => {
+  const requiredLessonIds = [
+    'verb-jobs', 'five-sentence-patterns', 'transitivity', 'linking', 'double-object-complement',
+    'verb-five-forms', 'third-person-form', 'past-forms', 'ing-forms', 'subject-verb-agreement',
+    'auxiliary-system', 'modal-meanings', 'present-simple', 'past-simple', 'future-forms',
+    'present-progressive', 'past-progressive', 'perfect-vs-past', 'past-time-sequence',
+    'future-in-clauses', 'voice', 'passive-tenses', 'infinitive', 'gerund', 'participles',
+    'causative-perception', 'gerund-infinitive-meaning', 'nonfinite-advanced',
+    'agreement-complex', 'phrasal', 'special-verb-patterns', 'verb-complements'
+  ];
+  [false, true].forEach((english) => {
+    const bundle = sourceVnaCourses.buildVerbCourse(english);
+    const ids = bundle.course.map((lesson) => lesson.id);
+    assert.ok(bundle.course.length >= 36);
+    requiredLessonIds.forEach((id) => assert.ok(ids.includes(id), `missing verb lesson: ${id}`));
+    assert.equal(new Set(ids).size, ids.length);
+    assert.deepEqual(bundle.groups.flatMap((group) => group.lessons.map((lesson) => lesson.id)), ids);
+    assert.deepEqual(bundle.course.map((lesson) => lesson.no), bundle.course.map((_, index) => String(index + 1).padStart(2, '0')));
+    assert.ok(bundle.course.reduce((sum, lesson) => sum + lesson.rules.length, 0) >= 99);
+    assert.ok(bundle.course.reduce((sum, lesson) => sum + lesson.examples.length, 0) >= 109);
+    assert.ok(bundle.course.reduce((sum, lesson) => sum + lesson.questions.length, 0) >= 109);
+    const summaries = bundle.course.map(({ id, no, level, title, meta }) => ({ id, no, level, title, meta }));
+    assert.ok(Buffer.byteLength(JSON.stringify(summaries)) < 12000);
+  });
+  const classroomPage = fs.readFileSync(path.join(__dirname, '../grammar-package/pages/classroom/index.js'), 'utf8');
+  assert.match(classroomPage, /\['verb', 'Verbs',[^\n]+, 36\]/);
+  assert.match(classroomPage, /\['verb', '动词',[^\n]+, 36\]/);
 });
