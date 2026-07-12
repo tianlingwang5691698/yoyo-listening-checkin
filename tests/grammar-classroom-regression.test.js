@@ -774,7 +774,7 @@ test('语法课堂按体系分层并逐层返回', () => {
   assert.ok(page.data.ui.domainMaps.syntax.some((item) => item.id === 'special-structures' && item.ready && /28/.test(item.status)));
   assert.ok(page.data.ui.domainMaps.clauses.some((item) => item.id === 'coordination' && item.ready && /22/.test(item.status)));
   assert.ok(page.data.ui.domainMaps.clauses.some((item) => item.id === 'noun-clauses' && item.ready && /22/.test(item.status)));
-  assert.ok(page.data.ui.domainMaps.clauses.some((item) => item.id === 'relative-clauses' && item.ready && /20/.test(item.status)));
+  assert.ok(page.data.ui.domainMaps.clauses.some((item) => item.id === 'relative-clauses' && item.ready && /21/.test(item.status)));
   assert.ok(page.data.ui.domainMaps.clauses.some((item) => item.id === 'adverbial-clauses' && item.ready && /20/.test(item.status)));
   assert.ok(page.data.ui.domainMaps.clauses.some((item) => item.id === 'reported-speech' && item.ready && /20/.test(item.status)));
   assert.ok(page.data.ui.domainMaps.discourse.some((item) => item.id === 'cohesion-reference' && item.ready && /21/.test(item.status)));
@@ -927,7 +927,7 @@ test('并列句与名词性从句课程完整覆盖连接、标点、语序和�
     },
     {
       build: sourceNounClausesCourses.buildNounClausesCourse,
-      count: 22, groups: [14, 8], sections: [3, 4, 3, 4, 3, 4, 1], total: 72,
+      count: 22, groups: [16, 6], sections: [3, 4, 3, 4, 3, 4, 1], total: 74,
       required: ['clause-as-noun-slot','connector-system','declarative-order','subject-clauses','dummy-it-subject','object-clauses','dummy-it-object','predicative-clauses','appositive-clauses','preposition-noun-clauses','that-omission','whether-if-boundaries','connector-pronouns','connector-adverbs','what-vs-that','appositive-vs-relative','tense-sequence-facts','negative-raising','subject-clause-agreement','wh-ever-nominal','reported-speech-boundary','noun-clause-integration']
     }
   ];
@@ -940,8 +940,8 @@ test('并列句与名词性从句课程完整覆盖连接、标点、语序和�
     assert.equal(bundle.course.reduce((sum, lesson) => sum + lesson.rules.length, 0), spec.total);
     assert.equal(bundle.course.reduce((sum, lesson) => sum + lesson.examples.length, 0), spec.total);
     assert.equal(bundle.course.reduce((sum, lesson) => sum + lesson.questions.length, 0), spec.total);
-    if (spec.build === sourceCoordinationCourses.buildCoordinationCourse) {
-      assert.match(bundle.course[0].title, english ? /Definition and core/ : /定义与本质/);
+    if (spec.build === sourceCoordinationCourses.buildCoordinationCourse || spec.build === sourceNounClausesCourses.buildNounClausesCourse) {
+      assert.match(bundle.course[0].title, english ? /Definition.*core/ : /定义.*本质/);
     }
     bundle.course.forEach((lesson) => lesson.questions.forEach((question) => {
       assert.ok(question.options.some((option) => option.key === question.answer));
@@ -950,7 +950,7 @@ test('并列句与名词性从句课程完整覆盖连接、标点、语序和�
         question.options.forEach((option) => assert.doesNotMatch(option.text, /[\u4e00-\u9fff]/));
       }
     }));
-    if (spec.build === sourceCoordinationCourses.buildCoordinationCourse) {
+    if (spec.build === sourceCoordinationCourses.buildCoordinationCourse || spec.build === sourceNounClausesCourses.buildNounClausesCourse) {
       bundle.course.forEach((lesson) => {
         assert.equal(lesson.analyses.length, lesson.examples.length);
         assert.equal(lesson.exampleNotes.length, lesson.examples.length);
@@ -962,10 +962,17 @@ test('并列句与名词性从句课程完整覆盖连接、标点、语序和�
           coverage.questionIndexes.forEach((index) => assert.ok(index >= 0 && index < lesson.questions.length));
         });
       });
+      assert.deepEqual(bundle.sections.flatMap((section) => section.lessonIds), bundle.course.map((lesson) => lesson.id));
     }
   }));
   const coordination = sourceCoordinationCourses.buildCoordinationCourse(false);
   assert.ok(coordination.course.flatMap((lesson) => lesson.analyses).flat().some((part) => part.role === 'predicative'));
+  const nounClauses = sourceNounClausesCourses.buildNounClausesCourse(false);
+  assert.equal(nounClauses.course.find((lesson) => lesson.id === 'what-vs-that').level, 'core');
+  assert.equal(nounClauses.course.find((lesson) => lesson.id === 'subject-clause-agreement').level, 'core');
+  ['indirectObject','directObject','prepObject','dummySubject','dummyObject'].forEach((role) => {
+    assert.ok(nounClauses.course.flatMap((lesson) => lesson.analyses).flat().some((part) => part.role === role));
+  });
   const wxss = fs.readFileSync(path.join(__dirname, '../grammar-package/pages/classroom/index.wxss'), 'utf8');
   ['coordinand','nounClause','dummySubject','dummyObject'].forEach((role) => assert.match(wxss, new RegExp(`role-${role}`)));
 });
@@ -974,8 +981,8 @@ test('定语从句、状语从句与直接间接引语完整覆盖关系、逻�
   const specs = [
     {
       build: sourceRelativeClausesCourses.buildRelativeClausesCourse,
-      count: 20, groups: [15, 5], sections: [2, 5, 4, 3, 3, 3], total: 60,
-      required: ['relative-boundary','relative-internal-role','who-whom','whose','which','that-relative','object-relative-omission','relative-when','relative-where','relative-why','preposition-relative','restrictive-relative','nonrestrictive-relative','that-constraints','sentential-as-which','what-boundary','relative-agreement','reduced-relatives','relative-nesting-ambiguity','relative-integration']
+      count: 21, groups: [16, 5], sections: [2, 5, 5, 3, 3, 3], total: 66,
+      required: ['relative-boundary','relative-internal-role','who-whom','whose','which','that-relative','object-relative-omission','relative-when','relative-where','relative-why','preposition-relative','relative-way','restrictive-relative','nonrestrictive-relative','that-constraints','sentential-as-which','what-boundary','relative-agreement','reduced-relatives','relative-nesting-ambiguity','relative-integration']
     },
     {
       build: sourceAdverbialClausesCourses.buildAdverbialClausesCourse,
@@ -997,6 +1004,21 @@ test('定语从句、状语从句与直接间接引语完整覆盖关系、逻�
     assert.equal(bundle.course.reduce((sum, lesson) => sum + lesson.rules.length, 0), spec.total);
     assert.equal(bundle.course.reduce((sum, lesson) => sum + lesson.examples.length, 0), spec.total);
     assert.equal(bundle.course.reduce((sum, lesson) => sum + lesson.questions.length, 0), spec.total);
+    if (spec.build === sourceRelativeClausesCourses.buildRelativeClausesCourse) {
+      assert.match(bundle.course[0].title, english ? /Definition and core/ : /定义与本质/);
+      assert.deepEqual(bundle.sections.flatMap((section) => section.lessonIds), bundle.course.map((lesson) => lesson.id));
+      bundle.course.forEach((lesson) => {
+        assert.equal(lesson.analyses.length, lesson.examples.length);
+        assert.equal(lesson.exampleNotes.length, lesson.examples.length);
+        assert.ok(lesson.exampleNotes.every((note) => note.visible && (note.body || note.detail)));
+        assert.equal(lesson.ruleCoverage.length, lesson.rules.length);
+        lesson.ruleCoverage.forEach((coverage) => {
+          assert.ok(coverage.exampleIndexes.length && coverage.questionIndexes.length);
+          coverage.exampleIndexes.forEach((index) => assert.ok(index >= 0 && index < lesson.examples.length));
+          coverage.questionIndexes.forEach((index) => assert.ok(index >= 0 && index < lesson.questions.length));
+        });
+      });
+    }
     bundle.course.forEach((lesson) => lesson.questions.forEach((question) => {
       assert.ok(question.options.some((option) => option.key === question.answer));
       if (english) {
@@ -1005,6 +1027,10 @@ test('定语从句、状语从句与直接间接引语完整覆盖关系、逻�
       }
     }));
   }));
+  const relativeClauses = sourceRelativeClausesCourses.buildRelativeClausesCourse(false);
+  assert.equal(relativeClauses.course.find((lesson) => lesson.id === 'relative-way').level, 'core');
+  assert.ok(relativeClauses.course.flatMap((lesson) => lesson.analyses).flat().some((part) => part.outerRole === 'postmodifier'));
+  assert.ok(relativeClauses.course.flatMap((lesson) => lesson.analyses).flat().some((part) => /介词.*宾语/.test(part.relationRole || '')));
   const reported = sourceReportedSpeechCourses.buildReportedSpeechCourse(false);
   const suggestion = reported.course.find((lesson) => lesson.id === 'advice-suggestion');
   assert.ok(suggestion.rules.some((rule) => /suggest.+doing/.test(rule)));

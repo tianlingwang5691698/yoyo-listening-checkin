@@ -1,6 +1,6 @@
 const pick = (english, zh, en) => english ? en : zh;
 const INCLUDE_RULE_COVERAGE = typeof GRAMMAR_RUNTIME === 'undefined' || !GRAMMAR_RUNTIME;
-const roleLabels = { subject:['主语','Subject'], predicate:['谓语动词','Predicate verb'], object:['宾语','Object'], subjectComplement:['主语补语（表语）','Subject complement'], objectComplement:['宾语补语','Object complement'], attribute:['定语','Attribute'], adverbial:['状语','Adverbial'], conjunction:['连接词','Connector'], nounClause:['名词性从句','Noun clause'], dummySubject:['形式主语','Dummy subject'], dummyObject:['形式宾语','Dummy object'], preposition:['介词','Preposition'] };
+const roleLabels = { subject:['主语','Subject'], predicate:['完整谓语','Complete predicate'], auxiliary:['助动词','Auxiliary'], object:['宾语','Object'], directObject:['直接宾语','Direct object'], indirectObject:['间接宾语','Indirect object'], prepObject:['介词宾语','Prepositional object'], subjectComplement:['主语补语（表语）','Subject complement'], objectComplement:['宾语补语','Object complement'], attribute:['定语','Attribute'], adverbial:['状语','Adverbial'], conjunction:['连接词','Connector'], nounClause:['名词性从句','Noun clause'], dummySubject:['形式主语','Dummy subject'], dummyObject:['形式宾语','Dummy object'], preposition:['介词','Preposition'] };
 function analysis(english, chunks) { return chunks.map(([text, role, zh, en]) => ({ text, role, label: pick(english, zh || (roleLabels[role] || ['', ''])[0], en || (roleLabels[role] || ['', ''])[1]) })); }
 function note(english, mode, zh, en) {
   if (!mode) return { visible:false, mode:'', title:'', body:'', detail:'' };
@@ -17,21 +17,24 @@ function lesson(english, spec, index) {
 
 const specs = [
   {
-    id:'clause-as-noun-slot',level:'core',title:['名词性从句：整体槽位与内部骨架','Noun clauses: outer slots and inner skeletons'],meta:['先看整体作什么，再分析从句内部','Identify the outer role before analysing the inner clause'],
+    id:'clause-as-noun-slot',level:'core',title:['名词性从句的定义、本质与边界','Definition, core and boundary of noun clauses'],meta:['整个从句占一个名词槽位，内部另有主谓骨架','A whole clause fills one noun slot while keeping its own inner skeleton'],
     examples:[
-      [[['What she said','nounClause','主语从句整体作主语','Subject clause as a whole'],['surprised','predicate'],['me.','object']],'structure','外层骨架是“主语从句＋surprised＋me”；从句内部 what 作 said 的宾语。','The outer skeleton has a subject clause + surprised + me; inside, what is the object of said.'],
-      [[['I','subject'],['know','predicate'],['that she is honest.','nounClause','宾语从句整体作宾语','Object clause as a whole']],'structure','宾语从句整体承接 know；内部骨架是 she is honest。','The whole object clause complements know; internally the skeleton is she is honest.'],
-      [[['The question','subject'],['is','predicate'],['whether we should leave.','nounClause','表语从句整体作主语补语','Predicative clause as subject complement']],'structure','从句整体说明 question 的内容，内部仍有主语 we 和谓语 should leave。','The clause specifies the question; internally it has subject we and predicate should leave.']
+      [[['What','nounClause','主语从句整体为 What she said；what 作内部宾语','Whole subject clause: What she said; what as inner object'],['she','subject','从句内部主语','Inner subject'],['said','predicate','从句内部谓语','Inner predicate'],['surprised','predicate','主句谓语','Main-clause predicate'],['me.','object','主句宾语','Main-clause object']],'structure','外层骨架是“What she said＋surprised＋me”；从句内部还原为 she said what，what 作 said 的宾语。','The outer skeleton is What she said + surprised + me; internally it expands to she said what, with what as the object of said.'],
+      [[['I','subject'],['know','predicate'],['that','conjunction','引导整个作 know 宾语的从句；不作内部成分','Introduces the whole object clause of know; no inner role'],['she','subject','从句内部主语','Inner subject'],['is','predicate','从句内部谓语','Inner predicate'],['honest.','subjectComplement','从句内部主语补语','Inner subject complement']],'structure','外层的宾语是整个 that she is honest；内部是 she is honest，that 只标出内容从句的起点。','The outer object is the whole that she is honest; internally it is she is honest, while that only marks the start of the content clause.'],
+      [[['The question','subject'],['is','predicate'],['whether','conjunction','引导整个作主语补语的从句；表“是否”','Introduces the whole subject-complement clause; means whether'],['we','subject','从句内部主语','Inner subject'],['should leave.','predicate','从句内部谓语','Inner predicate']],'structure','整个 whether we should leave 说明 question 的内容；内部是 we should leave 的陈述语序。','The whole whether we should leave specifies the question; internally it keeps statement order we should leave.'],
+      [[['The fact','subject'],['that','conjunction','引导说明 fact 内容的同位语从句；不作内部成分','Introduces the appositive clause giving fact’s content; no inner role'],['the door','subject','从句内部主语','Inner subject'],['was unlocked','predicate','从句内部谓语','Inner predicate'],['worried','predicate','主句谓语','Main-clause predicate'],['us.','object','主句宾语','Main-clause object']],'structure','整个 that the door was unlocked 说明 fact 的具体内容；内部 the door was unlocked 是完整的陈述骨架。','The whole that the door was unlocked gives the content of fact; internally, the door was unlocked is a complete statement skeleton.']
     ],
     rules:[
-      ['名词性从句整体可占据名词短语能占据的主语、宾语、表语或同位语位置。','A noun clause as a whole can occupy subject, object, subject-complement or appositive positions.'],
-      ['分析时分两层：先标从句在主句中的整体功能，再标从句内部成分。','Analyse at two levels: first the clause’s role in the main clause, then its internal components.'],
-      ['从句内部必须有自己的谓语中心；连接词是否充当成分需另行判断。','A noun clause has its own predicate centre; whether its connector fills an internal role must be decided separately.']
+      ['名词性从句内部有主谓骨架，但整体可当一个名词单位作主句主语。','A noun clause has its own inner skeleton but can act as one nominal unit in the main-clause subject slot.'],
+      ['名词性从句可整体填入动词的内容宾语槽位；分析时再进入从句检查主谓和连接词。','A noun clause can fill a verb’s content-object slot as a whole; then inspect its own subject, predicate and connector internally.'],
+      ['名词性从句可位于系动词后作主语补语（表语），说明主语的具体内容。','A noun clause can follow a linking verb as subject complement and specify the subject’s content.']
+      ,['同位语从句不是主句的新槽位，而是说明前面抽象名词的具体内容。','An appositive clause does not open a new main-clause slot; it gives the content of the preceding abstract noun.']
     ],
     questions:[
       ['What she said surprised me. 中 What she said 整体作什么？','What role does “What she said” play as a whole?',[['主语','Subject'],['宾语','Object']],'A','整个从句占主语槽位。','The whole clause fills the subject slot.'],
       ['I know that she is honest. 中从句内部主语是谁？','Who is the internal subject of the clause?',['she','I'],'A','that 不作成分，she 是从句主语。','that has no internal role; she is the clause subject.'],
       ['The question is whether we should leave. 中从句整体作什么？','What role does the clause play?',[['主语补语（表语）','Subject complement'],['定语','Attribute']],'A','它说明 question 的内容。','It specifies the content of the question.']
+      ,['The fact that the door was unlocked worried us. 中 that 从句与 fact 是什么关系？','What is the relation between the that-clause and fact?',[['从句说明 fact 的内容','The clause gives the content of fact'],['从句作 worried 的宾语','The clause is the object of worried']],'A','它是同位说明；主句宾语是 us。','It is appositive content; the main-clause object is us.']
     ]
   },
   {
@@ -39,7 +42,7 @@ const specs = [
     examples:[
       [[['I','subject'],['believe','predicate'],['that he is right.','nounClause','that 引导的宾语从句','that-object clause']],'structure','that 只连接，不在从句中作成分，也没有实义疑问。','that only connects; it fills no internal role and carries no interrogative meaning.'],
       [[['We','subject'],['do not know','predicate'],['whether he will come.','nounClause','whether 引导的宾语从句','whether-object clause']],'structure','whether 表示“是否”，不充当 come 的主宾语。','whether means whether and is not a subject or object of come.'],
-      [[['Tell','predicate'],['me','object'],['what you need.','nounClause','what 引导的宾语从句','what-object clause']],'structure','what 既连接从句，又在从句中作 need 的宾语。','what both connects the clause and serves as the object of need.'],
+      [[['Tell','predicate'],['me','indirectObject'],['what you need.','directObject','what 从句整体作内容直接宾语','what-clause as content direct object']],'structure','外层 me 是接收信息的间接宾语，what you need 是 tell 的内容直接宾语；内部 what 又作 need 的宾语。','At the outer level, me is the recipient indirect object and what you need is tell’s content direct object; internally, what is also the object of need.'],
       [[['I','subject'],['remember','predicate'],['where we met.','nounClause','where 引导的宾语从句','where-object clause']],'structure','where 在从句中表示地点状语。','where functions as a place adverbial inside the clause.']
     ],
     rules:[
@@ -59,25 +62,28 @@ const specs = [
     id:'declarative-order',level:'core',title:['从句必须用陈述语序','Noun clauses use statement order'],meta:['疑问意义不等于疑问倒装','Interrogative meaning does not trigger question inversion'],
     examples:[
       [[['I','subject'],['wonder','predicate'],['where he lives.','nounClause','宾语从句：陈述语序','Object clause: statement order']],'order','从句用 he lives，不用 where does he live。','Use he lives inside the clause, not where does he live.'],
-      [[['Do you know','predicate'],['what she wants?','nounClause','宾语从句：陈述语序','Object clause: statement order']],'order','主句可以是疑问句，但从句仍用 she wants。','The main clause may be a question, but the embedded clause remains she wants.'],
+      [[['Do','auxiliary'],['you','subject'],['know','predicate'],['what she wants?','nounClause','宾语从句整体作 know 的宾语','Object clause as the object of know']],'order','主句用 Do you know 的疑问语序，但进入宾语从句后仍是 she wants；what 作 wants 的宾语。','The main clause uses question order Do you know, but the object clause keeps she wants; what is the object of wants.'],
       [[['The issue','subject'],['is','predicate'],['whether they are ready.','nounClause','表语从句：陈述语序','Predicative clause: statement order']],'order','whether 后是 they are ready，不倒装为 are they ready。','After whether use they are ready, not are they ready.']
+      ,[[['I','subject'],['know','predicate'],['who called.','nounClause','宾语从句整体作 know 的宾语；who 作内部主语','Object clause as object of know; who as inner subject']],'order','who 本身就是 called 的主语，所以直接用 who called，不再另加主语或 do。','who itself is the subject of called, so use who called directly without another subject or do.']
     ],
     rules:[
       ['名词性从句内部通常使用“连接词＋主语＋谓语”的陈述语序。','A noun clause normally uses connector + subject + predicate statement order.'],
       ['即使主句为疑问句，嵌入的名词性从句也不使用一般疑问句倒装。','Even when the main clause is a question, the embedded noun clause does not use question inversion.'],
       ['whether/if 从句同样使用陈述语序。','whether/if clauses likewise use statement order.']
+      ,['连接代词本身作从句主语时，直接接谓语，不再另加主语或助动词。','When the connector pronoun is the clause subject, it is followed directly by the predicate without another subject or auxiliary.']
     ],
     questions:[
       ['I wonder ___.','I wonder ___.',['where he lives','where does he live'],'A','宾语从句用陈述语序。','The object clause uses statement order.'],
       ['Do you know __?','Do you know __?',['what she wants','what does she want'],'A','主句疑问不改变从句语序。','A main question does not change embedded order.'],
       ['The issue is ___.','The issue is ___.',['whether they are ready','whether are they ready'],'A','whether 后仍是陈述语序。','whether is followed by statement order.']
+      ,['I know ___.','I know ___.',['who called','who did call'],'A','who 作主语时直接接 called。','Subject who is followed directly by called.']
     ]
   },
   {
     id:'subject-clauses',level:'core',title:['主语从句','Subject clauses'],meta:['整个从句充当句子主语','The whole clause functions as subject'],
     examples:[
-      [[['That he apologized','nounClause','that 主语从句','that-subject clause'],['surprised','predicate'],['everyone.','object']], '', '', ''],
-      [[['Whether we can finish today','nounClause','whether 主语从句','whether-subject clause'],['depends','predicate'],['on the weather.','adverbial']], '', '', ''],
+      [[['That he apologized','nounClause','that 主语从句整体作主语','that-subject clause as a whole'],['surprised','predicate'],['everyone.','object']],'structure','外层主语是整个 That he apologized；内部 he 作主语、apologized 作谓语，that 只连接。','The whole That he apologized is the outer subject; internally, he is subject, apologized is predicate, and that only links.'],
+      [[['Whether we can finish today','nounClause','whether 主语从句整体作主语','whether-subject clause as a whole'],['depends','predicate'],['on','preposition'],['the weather.','prepObject']],'structure','整个 whether 从句作 depends 的主语；内部是 we can finish today 的陈述语序。on 是介词，the weather 是它的宾语。','The whole whether-clause is the subject of depends and internally keeps statement order we can finish today. on is a preposition and the weather is its object.'],
       [[['What you said','nounClause','what 主语从句','what-subject clause'],['makes','predicate'],['sense.','object']], 'structure','what 在从句内部作 said 的宾语；整个从句作主句主语。','what is the object of said internally; the whole clause is the main subject.']
     ],
     rules:[
@@ -112,9 +118,9 @@ const specs = [
   {
     id:'object-clauses',level:'core',title:['宾语从句','Object clauses'],meta:['跟在动词后表达所知、所想、所问','Following a verb to express known, thought or questioned content'],
     examples:[
-      [[['She','subject'],['said','predicate'],['that she was tired.','nounClause','that 宾语从句','that-object clause']], '', '', ''],
-      [[['I','subject'],['wonder','predicate'],['whether he knows.','nounClause','whether 宾语从句','whether-object clause']], '', '', ''],
-      [[['Please tell','predicate'],['me','object'],['why the train is late.','nounClause','why 宾语从句','why-object clause']],'order','从句用 the train is late；why 在从句中作原因状语。','The clause uses the train is late; why is a reason adverbial internally.']
+      [[['She','subject'],['said','predicate'],['that she was tired.','nounClause','that 宾语从句整体作 said 的宾语','that-clause as the object of said']],'structure','外层 said 后的内容槽位由整个 that 从句填入；内部 she was tired 成分完整，that 不作成分。','The whole that-clause fills the content-object slot after said; internally, she was tired is complete and that fills no role.'],
+      [[['I','subject'],['wonder','predicate'],['whether he knows.','nounClause','whether 宾语从句整体作 wonder 的宾语','whether-clause as the object of wonder']],'structure','整个从句表示 wonder 的未知内容；内部用 he knows 的陈述语序，whether 不作主语或宾语。','The whole clause gives the unknown content of wonder; internally it uses statement order he knows, and whether is neither subject nor object.'],
+      [[['Please tell','predicate'],['me','indirectObject'],['why the train is late.','directObject','why 从句整体作内容直接宾语','why-clause as content direct object']],'order','外层 me 是间接宾语，why 从句是 tell 的内容直接宾语；内部用 the train is late，why 作原因状语。','At the outer level, me is indirect object and the why-clause is tell’s content direct object; internally use the train is late, with why as reason adverbial.']
     ],
     rules:[
       ['宾语从句整体作及物动词的内容宾语。','An object clause as a whole serves as the content object of a transitive verb.'],
@@ -148,8 +154,8 @@ const specs = [
   {
     id:'predicative-clauses',level:'core',title:['表语从句','Predicative clauses'],meta:['说明主语的内容、原因或结果','Specifying the subject’s content, reason or result'],
     examples:[
-      [[['The truth','subject'],['is','predicate'],['that nobody called.','nounClause','that 表语从句','that-predicative clause']], '', '', ''],
-      [[['The question','subject'],['is','predicate'],['whether we can afford it.','nounClause','whether 表语从句','whether-predicative clause']], '', '', ''],
+      [[['The truth','subject'],['is','predicate'],['that nobody called.','nounClause','that 表语从句整体作主语补语','that-clause as subject complement']],'structure','is 后的整个 that 从句说明 truth 的内容；内部 nobody called 完整，that 只连接。','The whole that-clause after is specifies the truth; internally, nobody called is complete and that only links.'],
+      [[['The question','subject'],['is','predicate'],['whether we can afford it.','nounClause','whether 表语从句整体作主语补语','whether-clause as subject complement']],'structure','整个 whether 从句说明 question 所问的内容；内部用 we can afford it，不用疑问倒装。','The whole whether-clause states what the question is; internally it uses we can afford it without question inversion.'],
       [[['This','subject'],['is','predicate'],['why I left.','nounClause','why 表语从句','why-predicative clause']],'structure','why 在从句内部作原因状语，整个从句说明 this 的内容。','why is a reason adverbial internally; the whole clause specifies this.']
     ],
     rules:[
@@ -184,9 +190,9 @@ const specs = [
   {
     id:'preposition-noun-clauses',level:'core',title:['介词后的名词性从句','Noun clauses after prepositions'],meta:['介词宾语可以是 wh- 或 whether 从句','A prepositional object can be a wh- or whether clause'],
     examples:[
-      [[['Everything','subject'],['depends','predicate'],['on whether we agree.','nounClause','介词 on 的宾语从句','Clause as object of on']], '', '', ''],
-      [[['We','subject'],['talked','predicate'],['about what happened.','nounClause','介词 about 的宾语从句','Clause as object of about']], 'structure','what 在从句内部作 happened 的主语。','what is the subject of happened internally.'],
-      [[['She','subject'],['is worried','predicate'],['about how he will react.','nounClause','介词 about 的宾语从句','Clause as object of about']], '', '', '']
+      [[['Everything','subject'],['depends','predicate'],['on','preposition'],['whether we agree.','nounClause','whether 从句整体作 on 的介词宾语','whether-clause as the object of on']],'structure','on 先建立 depends 与条件内容的关系，整个 whether we agree 作 on 的宾语；内部是 we agree 的陈述语序。','on relates depends to the condition, and the whole whether we agree is its object; internally, the clause uses statement order we agree.'],
+      [[['We','subject'],['talked','predicate'],['about','preposition'],['what happened.','nounClause','what 从句整体作 about 的介词宾语','what-clause as the object of about']],'structure','整个 what happened 作 about 的宾语；内部 what 本身作 happened 的主语，所以后面不再另加主语。','The whole what happened is the object of about; internally, what itself is the subject of happened, so no extra subject follows.'],
+      [[['She','subject'],['is worried','predicate'],['about','preposition'],['how he will react.','nounClause','how 从句整体作 about 的介词宾语','how-clause as the object of about']],'structure','整个 how 从句作 about 的宾语；内部 he will react 主谓完整，how 表示反应的方式。','The whole how-clause is the object of about; internally, he will react is complete and how gives the manner of the reaction.']
     ],
     rules:[
       ['介词后可接 whether 从句作介词宾语，标准表达通常不用 if。','A preposition can take a whether-clause as object; standard usage normally does not use if there.'],
@@ -220,7 +226,7 @@ const specs = [
   {
     id:'whether-if-boundaries',level:'core',title:['whether 与 if 的限制','Restrictions on whether and if'],meta:['哪些位置只能或优先使用 whether','Where whether is required or preferred'],
     examples:[
-      [[['I','subject'],['do not know','predicate'],['whether/if he will come.','nounClause','宾语从句','Object clause']], '', '', ''],
+      [[['I','subject'],['do not know','predicate'],['whether/if he will come.','nounClause','“是否”宾语从句整体作 know 的宾语','Embedded whether-question as the object of know']],'contrast','这个普通动词宾语槽位中，whether 和 if 都可表示“是否”；内部都用 he will come 的陈述语序。','In this ordinary object slot after a verb, both whether and if can mean whether; either is followed by statement order he will come.'],
       [[['Whether he will come','nounClause','句首主语从句','Initial subject clause'],['is','predicate'],['unclear.','subjectComplement']], 'boundary','句首主语从句使用 whether，不用 if。','Use whether, not if, in an initial subject clause.'],
       [[['We','subject'],['discussed','predicate'],['whether to wait.','nounClause','whether＋不定式作宾语','whether + infinitive as object']], 'boundary','whether 可直接接 to do；if 不能构成 if to do。','whether can be followed by to do; if cannot form if to do.'],
       [[['I','subject'],['wonder','predicate'],['whether or not she agrees.','nounClause','whether or not 宾语从句','whether-or-not object clause']], 'boundary','or not 紧跟连接词时使用 whether or not。','When or not immediately follows the connector, use whether or not.']
@@ -241,9 +247,9 @@ const specs = [
   {
     id:'connector-pronouns',level:'core',title:['连接代词：who、whom、whose、what、which','Connector pronouns: who, whom, whose, what and which'],meta:['连接同时承担主语、宾语或定语功能','Connecting while serving as subject, object or determiner'],
     examples:[
-      [[['I','subject'],['know','predicate'],['who called.','nounClause','who 作从句主语','who as clause subject']], '', '', ''],
+      [[['I','subject'],['know','predicate'],['who called.','nounClause','宾语从句整体作 know 的宾语；who 作内部主语','Object clause as object of know; who as inner subject']],'structure','外层 who called 整体作 know 的宾语；内部 who 就是 called 的主语，因此直接接 called。','The whole who called is the object of know; internally, who itself is the subject of called, so called follows directly.'],
       [[['She','subject'],['asked','predicate'],['whom we had invited.','nounClause','whom 作从句宾语','whom as clause object']],'structure','正式语体中 whom 可作宾语；日常英语常用 who。','whom can be an object in formal style; everyday English often uses who.'],
-      [[['Tell','predicate'],['me','object'],['whose bag this is.','nounClause','whose 作从句定语','whose as determiner']], 'order','whose 修饰 bag，从句仍用 this is 的陈述语序。','whose determines bag, and the clause still uses statement order.'],
+      [[['Tell','predicate'],['me','indirectObject'],['whose bag this is.','directObject','whose 从句整体作内容直接宾语；whose 作内部定语','whose-clause as content direct object; whose as inner determiner']],'order','外层 me 是间接宾语，whose 从句是直接宾语；内部 whose 修饰 bag，仍用 this is 的陈述语序。','At the outer level, me is indirect object and the whose-clause is direct object; internally, whose determines bag and the clause keeps statement order this is.'],
       [[['We','subject'],['must decide','predicate'],['which route is safer.','nounClause','which 作限定词','which as determiner']], 'structure','which 在限定范围中修饰 route。','which determines route within a limited choice.']
     ],
     rules:[
@@ -262,10 +268,10 @@ const specs = [
   {
     id:'connector-adverbs',level:'core',title:['连接副词：when、where、why、how','Connector adverbs: when, where, why and how'],meta:['分别充当时间、地点、原因和方式状语','Serving as time, place, reason and manner adverbials'],
     examples:[
-      [[['I','subject'],['remember','predicate'],['when we first met.','nounClause','when 作时间状语','when as time adverbial']], '', '', ''],
-      [[['Show','predicate'],['me','object'],['where the key is.','nounClause','where 作地点状语','where as place adverbial']], 'order','从句用 the key is，不用 where is the key。','Use the key is inside the clause, not where is the key.'],
-      [[['Nobody','subject'],['knows','predicate'],['why he left.','nounClause','why 作原因状语','why as reason adverbial']], '', '', ''],
-      [[['Please explain','predicate'],['how this machine works.','nounClause','how 作方式状语','how as manner adverbial']], '', '', '']
+      [[['I','subject'],['remember','predicate'],['when we first met.','nounClause','宾语从句整体作 remember 的宾语；when 作内部时间状语','Object clause as object of remember; when as inner time adverbial']],'structure','整个 when 从句作 remember 的宾语；内部 we met 主谓完整，when 只补充“何时”。','The whole when-clause is the object of remember; internally, we met is complete and when only supplies the time.'],
+      [[['Show','predicate'],['me','indirectObject'],['where the key is.','directObject','where 从句整体作内容直接宾语；where 作内部地点状语','where-clause as content direct object; where as inner place adverbial']],'order','外层 me 是间接宾语，where 从句是直接宾语；内部用 the key is，不用 where is the key。','At the outer level, me is indirect object and the where-clause is direct object; internally use the key is, not where is the key.'],
+      [[['Nobody','subject'],['knows','predicate'],['why he left.','nounClause','宾语从句整体作 knows 的宾语；why 作内部原因状语','Object clause as object of knows; why as inner reason adverbial']],'structure','整个 why 从句作 knows 的宾语；内部 he left 已完整，why 问的是 left 的原因，不再与 because 重复。','The whole why-clause is the object of knows; internally, he left is complete and why asks for the reason for leaving, so because is not repeated.'],
+      [[['Please explain','predicate'],['how this machine works.','nounClause','宾语从句整体作 explain 的宾语；how 作内部方式状语','Object clause as object of explain; how as inner manner adverbial']],'structure','整个 how 从句作 explain 的内容宾语；内部用 this machine works 的陈述语序，how 表示运作方式。','The whole how-clause is the content object of explain; internally it uses statement order this machine works, and how gives the manner of operation.']
     ],
     rules:[
       ['when 在从句中作时间状语，表示事情发生的时间。','when functions as time adverbial inside the clause.'],
@@ -281,7 +287,7 @@ const specs = [
     ]
   },
   {
-    id:'what-vs-that',level:'advanced',title:['what 与 that 辨析','Distinguishing what and that'],meta:['一个作成分，一个只连接','One fills a role; the other only connects'],
+    id:'what-vs-that',level:'core',title:['what 与 that 辨析','Distinguishing what and that'],meta:['一个作成分，一个只连接','One fills a role; the other only connects'],
     examples:[
       [[['I','subject'],['understand','predicate'],['what you mean.','nounClause','what 宾语从句','what-object clause']],'contrast','what 相当于 the thing that，在从句中作 mean 的宾语。','what means the thing that and is the object of mean.'],
       [[['I','subject'],['understand','predicate'],['that you are worried.','nounClause','that 宾语从句','that-object clause']],'contrast','that 只连接完整的 you are worried，不作成分。','that only connects the complete clause you are worried and fills no role.'],
@@ -321,7 +327,7 @@ const specs = [
     examples:[
       [[['She','subject'],['said','predicate'],['that she was tired.','nounClause','过去时宾语从句','Past-tense object clause']],'structure','疲倦与过去说话时间相关，常使用过去时呼应。','The tiredness relates to the past reporting time, so past tense is natural.'],
       [[['The teacher','subject'],['said','predicate'],['that the earth moves around the sun.','nounClause','客观事实宾语从句','Object clause stating a general truth']],'boundary','客观事实仍用一般现在时，不机械变为 moved。','A general truth remains in the present; do not mechanically change it to moved.'],
-      [[['He','subject'],['told','predicate'],['me','object'],['that he is living in Shanghai now.','nounClause','仍然成立的当前事实','Still-current fact']],'boundary','若信息在说话时仍成立并强调 now，可保留现在时；语境决定。','If the information remains true now and now is emphasized, present tense may remain; context decides.']
+      [[['He','subject'],['told','predicate'],['me','indirectObject'],['that he is living in Shanghai now.','directObject','that 从句整体作内容直接宾语','that-clause as content direct object']],'boundary','外层 me 是 told 的间接宾语，that 从句是内容直接宾语。若信息现在仍成立并强调 now，可保留现在时。','At the outer level, me is told’s indirect object and the that-clause is its content direct object. If the information is still true now and now is emphasized, present tense may remain.']
     ],
     rules:[
       ['主句报告动词为过去时时，从句叙述与过去相关的状态或事件常发生时态后移。','After a past reporting verb, an embedded state or event related to that past time commonly backshifts.'],
@@ -353,10 +359,10 @@ const specs = [
     ]
   },
   {
-    id:'subject-clause-agreement',level:'advanced',title:['主语从句与主谓一致','Subject-clause agreement'],meta:['一个事实通常按单数，多个并列内容看意义','One proposition is normally singular; coordinated contents depend on meaning'],
+    id:'subject-clause-agreement',level:'core',title:['主语从句与主谓一致','Subject-clause agreement'],meta:['一个事实通常按单数，多个并列内容看意义','One proposition is normally singular; coordinated contents depend on meaning'],
     examples:[
       [[['What he needs','nounClause','主语从句','Subject clause'],['is','predicate'],['more time.','subjectComplement']], 'structure','一个主语从句通常视为一个整体，谓语用单数。','One subject clause is normally treated as one unit and takes singular agreement.'],
-      [[['Whether she comes or not','nounClause','主语从句','Subject clause'],['does not matter','predicate']], '', '', ''],
+      [[['Whether she comes or not','nounClause','whether...or not 主语从句整体作主语','whether...or not subject clause as a whole'],['does not matter','predicate']],'structure','whether she comes or not 虽然提出两种可能，整体仍是“她来不来”这一个问题，因此用单数 does。','Although whether she comes or not presents two alternatives, the whole clause is one question, so it takes singular does.'],
       [[['What he says and what he does','nounClause','并列主语从句','Coordinated subject clauses'],['are','predicate'],['different.','subjectComplement']], 'structure','两个并列且分别指不同内容的主语从句使用复数谓语。','Two coordinated clauses referring to distinct things take plural agreement.']
     ],
     rules:[
@@ -394,7 +400,7 @@ const specs = [
   {
     id:'reported-speech-boundary',level:'advanced',title:['宾语从句与间接引语的交界','The boundary with reported speech'],meta:['只处理成为宾语从句时必要的转换','Only the changes needed when a quotation becomes an object clause'],
     examples:[
-      [[['Mia said,','predicate'],['“I am busy.”','object','直接引语','Direct quotation']], 'transformation','直接引语保留说话者原话和引号。','Direct speech preserves the speaker’s exact words and quotation marks.'],
+      [[['Mia','subject'],['said,','predicate'],['“I am busy.”','directObject','直接引语作内容直接宾语','Direct quotation as content direct object']],'transformation','主干是 Mia said，引号内原话整体作 said 的内容宾语，并保留说话者原来的 I。','The skeleton is Mia said; the quoted words as a whole are the content object of said and preserve the speaker’s original I.'],
       [[['Mia','subject'],['said','predicate'],['that she was busy.','nounClause','间接引语宾语从句','Reported object clause']], 'transformation','转为宾语从句后去掉引号，I 按报告者视角改为 she，并常发生时态后移。','As an object clause, quotation marks disappear, I shifts to she, and tense commonly backshifts.'],
       [[['Tom','subject'],['asked','predicate'],['where I lived.','nounClause','间接疑问宾语从句','Reported-question object clause']], 'transformation','原问句 Where do you live? 转述后使用陈述语序 I lived，不保留 do 倒装。','The original Where do you live? becomes statement order I lived without do-inversion.']
     ],
@@ -443,7 +449,8 @@ const sectionSpecs = [
 ];
 
 function buildNounClausesCourse(english) {
-  const course = specs.map((spec,index)=>lesson(english,spec,index));
+  const specById = new Map(specs.map((spec)=>[spec.id,spec]));
+  const course = sectionSpecs.flatMap((section)=>section[5]).map((id,index)=>lesson(english,specById.get(id),index));
   const ids=course.map(x=>x.id), assigned=sectionSpecs.flatMap(x=>x[5]);
   if(ids.length!==assigned.length||new Set(assigned).size!==assigned.length||ids.some(id=>!assigned.includes(id))||assigned.some(id=>!ids.includes(id))) throw new Error('Invalid noun-clause section coverage');
   const sections=sectionSpecs.map(x=>({id:x[0],title:pick(english,x[1],x[2]),copy:pick(english,x[3],x[4]),lessonIds:x[5].slice(),lessonCount:x[5].length}));

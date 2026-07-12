@@ -51,7 +51,7 @@ function uiText(english) {
     clauses: [
       ['coordination', 'Coordination', 'Coordinators, punctuation, logic and parallel clauses', '22 lessons', true],
       ['noun-clauses', 'Noun Clauses', 'Subject, object, predicative and appositive clauses', '22 lessons', true],
-      ['relative-clauses', 'Relative Clauses', 'Relative words, antecedents and clause structure', '20 lessons', true],
+      ['relative-clauses', 'Relative Clauses', 'Relative words, antecedents and clause structure', '21 lessons', true],
       ['adverbial-clauses', 'Adverbial Clauses', 'Time, condition, reason, purpose, result and concession', '20 lessons', true],
       ['reported-speech', 'Reported Speech', 'Tense, person, time and word-order changes', '20 lessons', true]
     ],
@@ -76,7 +76,7 @@ function uiText(english) {
     clauses: [
       ['coordination', '并列句', '连接词、标点、逻辑关系与平行分句', '22 节 · 已开放', true],
       ['noun-clauses', '名词性从句', '主语、宾语、表语与同位语从句', '22 节 · 已开放', true],
-      ['relative-clauses', '定语从句', '关系词、先行词与从句结构', '20 节 · 已开放', true],
+      ['relative-clauses', '定语从句', '关系词、先行词与从句结构', '21 节 · 已开放', true],
       ['adverbial-clauses', '状语从句', '时间、条件、原因、目的、结果与让步', '20 节 · 已开放', true],
       ['reported-speech', '直接引语与间接引语', '时态、人称、时间和语序变化', '20 节 · 已开放', true]
     ],
