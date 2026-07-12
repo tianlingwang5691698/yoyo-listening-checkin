@@ -37,12 +37,34 @@ function lesson(english, id, zhTitle, enTitle, zhMeta, enMeta, examples, rules, 
   const hasAnalysis = examples.every((item) => Array.isArray(item.analysis));
   return { id, title: pick(english, zhTitle, enTitle), meta: pick(english, zhMeta, enMeta), examples: examples.map((item) => item.text), analyses: hasAnalysis ? examples.map((item) => item.analysis) : [], exampleNotes: examples.map((item) => item.note), rules: rules.map((item) => pick(english, item[0], item[1])), ruleCoverage: INCLUDE_RULE_COVERAGE ? ruleCoverage(id, rules) : [], questions };
 }
+const sectionSpecs = {
+  Nouns: [
+    ['noun-foundation', '名词基础与数量', 'Noun foundations and number', '认识名词作用、可数性及规则和不规则复数。', 'Understand noun roles, countability, and regular and irregular plurals.', ['noun-job','countability','regular-plural','irregular-plural']],
+    ['noun-possession-modification', '所属与名词修饰', 'Possession and noun modification', '掌握所有格、名词作定语和复合名词中心词。', 'Master possessives, noun modifiers and heads in compounds.', ['possessive','noun-modifier']],
+    ['noun-types-agreement', '名词类别与一致', 'Noun types and agreement', '区分专有、物质、抽象与集体名词及其一致关系。', 'Distinguish proper, material, abstract and collective nouns and their agreement.', ['noun-types','collective-noun']],
+    ['noun-integration', '名词综合运用', 'Integrated noun use', '综合判断数量、所有关系和中心名词。', 'Integrate number, possession and head-noun decisions.', ['noun-boss']]
+  ],
+  Pronouns: [
+    ['pronoun-person-possession', '人称、所有与反身', 'Person, possession and reflexives', '建立主格、宾格、物主与反身代词的完整对应。', 'Connect subject, object, possessive and reflexive forms.', ['personal-pronoun','possessive-pronoun','reflexive']],
+    ['pronoun-point-question-indefinite', '指示、疑问与不定指代', 'Demonstrative, interrogative and indefinite reference', '根据远近、疑问目标和范围选择代词。', 'Choose pronouns by distance, question target and reference range.', ['demonstrative','interrogative','indefinite']],
+    ['pronoun-link-reciprocal', '连接与相互指代', 'Linking and reciprocal reference', '掌握关系代词和相互代词的连接与指代功能。', 'Master the linking and reference roles of relative and reciprocal pronouns.', ['relative-pronoun','reciprocal']],
+    ['pronoun-integration', '代词综合运用', 'Integrated pronoun use', '综合处理格、指代清晰和一致问题。', 'Integrate case, clear reference and agreement.', ['pronoun-boss']]
+  ]
+};
+function buildSections(english, enTitle, course) {
+  const specs = sectionSpecs[enTitle] || [];
+  const ids = course.map((lesson) => lesson.id);
+  const assigned = specs.flatMap((section) => section[5]);
+  if (assigned.length !== ids.length || new Set(assigned).size !== assigned.length || ids.some((id) => !assigned.includes(id)) || assigned.some((id) => !ids.includes(id))) throw new Error(`Invalid section coverage: ${enTitle}`);
+  return specs.map((section) => ({ id: section[0], title: pick(english, section[1], section[2]), copy: pick(english, section[3], section[4]), lessonIds: section[5].slice(), lessonCount: section[5].length }));
+}
 function groupCourse(english, lessons, zhTitle, enTitle, coreCount = 6) {
   const course = lessons.map((item, index) => Object.assign({}, item, { no: String(index + 1).padStart(2, '0'), level: index < coreCount ? 'core' : 'advanced' }));
   return {
     title: pick(english, `${zhTitle} · 9 节微课`, `${enTitle} · 9 lessons`),
     copy: pick(english, '先掌握核心规则，再处理复杂语境。', 'Master the core rules, then handle complex contexts.'),
     course,
+    sections: buildSections(english, enTitle, course),
     groups: [
       { id: 'core', title: pick(english, `核心必学 · ${coreCount} 节`, `Core · ${coreCount} essential lessons`), copy: pick(english, '所有学生必须掌握。', 'Complete these first.'), lessons: course.slice(0, coreCount) },
       { id: 'advanced', title: pick(english, `进阶挑战 · ${course.length - coreCount} 节`, `Advanced · ${course.length - coreCount} challenge lessons`), copy: pick(english, '复杂语境与综合辨析。', 'Complex contexts and mixed practice.'), lessons: course.slice(coreCount) }

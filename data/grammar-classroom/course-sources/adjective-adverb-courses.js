@@ -52,15 +52,30 @@ function lesson(english, id, zhTitle, enTitle, zhMeta, enMeta, examples, rules, 
     questions
   };
 }
-function groupCourse(english, lessons, zhTitle, enTitle, coreCount) {
+function groupCourse(english, lessons, zhTitle, enTitle, coreCount, sectionDefs) {
   const course = lessons.map((item, index) => Object.assign({}, item, {
     no: String(index + 1).padStart(2, '0'),
     level: index < coreCount ? 'core' : 'advanced'
   }));
+  const sections = (sectionDefs || []).map((item) => ({
+    id: item[0],
+    title: pick(english, item[1], item[2]),
+    copy: pick(english, item[3], item[4]),
+    lessonIds: item[5].slice(),
+    lessonCount: item[5].length
+  }));
+  const assignedIds = sections.reduce((ids, section) => ids.concat(section.lessonIds), []);
+  const courseIds = course.map((lesson) => lesson.id);
+  if (assignedIds.length !== courseIds.length
+    || new Set(assignedIds).size !== assignedIds.length
+    || courseIds.some((id) => !assignedIds.includes(id))) {
+    throw new Error(`${enTitle} sections must assign every lesson exactly once`);
+  }
   return {
     title: pick(english, `${zhTitle} · ${course.length} 节微课`, `${enTitle} · ${course.length} lessons`),
     copy: pick(english, '先掌握核心规则，再处理复杂语境。', 'Master the core rules, then handle complex contexts.'),
     course,
+    sections,
     groups: [
       { id: 'core', title: pick(english, `核心必学 · ${coreCount} 节`, `Core · ${coreCount} essential lessons`), copy: pick(english, '所有学生必须掌握。', 'Complete these first.'), lessons: course.slice(0, coreCount) },
       { id: 'advanced', title: pick(english, `进阶挑战 · ${course.length - coreCount} 节`, `Advanced · ${course.length - coreCount} challenge lessons`), copy: pick(english, '特殊结构与综合辨析。', 'Special structures and mixed practice.'), lessons: course.slice(coreCount) }
@@ -198,7 +213,11 @@ function buildAdjectiveCourse(english) {
       q('The river is 200 metres ___.', 'wide', 'widely', 'A', '数量短语后用形容词 wide 表尺寸。', 'Use the adjective wide after a measurement.'),
       q('The harder you work, the ___ you become.', 'stronger', 'strongest', 'A', '联动比较结构两部分都用比较级。', 'Both halves of the correlative structure use comparatives.')
     ])
-  ], '形容词', 'Adjectives', 7);
+  ], '形容词', 'Adjectives', 7, [
+    ['adjective-function', '作用与位置', 'Jobs and position', '先判断形容词修饰谁、在句中承担什么任务。', 'Identify what an adjective describes and the job it performs in the sentence.', ['adjective-jobs', 'adjective-position']],
+    ['adjective-comparison', '程度与比较', 'Degree and comparison', '从可分级性出发，掌握比较级、最高级的形式和结构。', 'Start with gradability, then master comparative and superlative forms and structures.', ['adjective-degree', 'adjective-comparative-form', 'adjective-comparison', 'adjective-superlative']],
+    ['adjective-advanced-forms', '形式辨析与特殊结构', 'Form choices and special structures', '处理分词形容词、多个形容词排序及名词化等特殊用法。', 'Handle participial adjectives, adjective order, nominal uses and other special structures.', ['participle-adjectives', 'adjective-order', 'adjective-nominal']]
+  ]);
 }
 
 function buildAdverbCourse(english) {
@@ -337,7 +356,11 @@ function buildAdverbCourse(english) {
       q('The shop was closed; ___, we went home.', 'therefore', 'because', 'A', 'therefore 是表示结果的连接副词。', 'therefore is a linking adverb marking a result.'),
       q('Choose the correctly punctuated contrast.', 'It was raining; however, we left.', 'It was raining, however we left.', 'A', '两个独立分句之间用分号，however 后用逗号。', 'Use a semicolon between the independent clauses and a comma after however.')
     ])
-  ], '副词', 'Adverbs', 6);
+  ], '副词', 'Adverbs', 6, [
+    ['adverb-function', '作用、类别与位置', 'Jobs, types and position', '先确定副词修饰范围，再按意义类别判断常见位置。', 'Identify an adverb’s scope, then use its meaning class to judge its usual position.', ['adverb-jobs', 'adverb-types', 'adverb-position']],
+    ['adverb-form-degree', '形副辨析与程度比较', 'Adjective–adverb form and degree', '辨清形容词与副词形式，掌握比较和程度结构。', 'Distinguish adjective and adverb forms, then master comparison and degree patterns.', ['adjective-or-adverb', 'adverb-comparison', 'degree-patterns']],
+    ['adverb-scope-linking', '范围、语义与连接', 'Scope, meaning and linking', '进阶处理聚焦范围、易混副词和连接副词。', 'Handle focus scope, easily confused adverbs and linking adverbs.', ['adverb-scope', 'adverb-traps']]
+  ]);
 }
 
 module.exports = { buildAdjectiveCourse, buildAdverbCourse };

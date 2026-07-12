@@ -19,7 +19,7 @@ page { background: #f4fafc; }
 .section-title { margin: 10rpx 0 26rpx; font-size: 28rpx; font-weight: 600; color: var(--ink); }
 .topic-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14rpx; }
 .domain-grid, .domain-course-list { display: flex; flex-direction: column; gap: 14rpx; }
-.domain-item, .domain-course-item, .topic-item, .verb-map-item, .lesson-row { display: flex; align-items: center; min-width: 0; border: 1rpx solid var(--line); background: rgba(255,255,255,.72); }
+.domain-item, .domain-course-item, .topic-item, .verb-map-item, .section-map-item, .lesson-row { display: flex; align-items: center; min-width: 0; border: 1rpx solid var(--line); background: rgba(255,255,255,.72); }
 .domain-item { min-height: 128rpx; padding: 20rpx; border-radius: 20rpx; }
 .domain-code { width: 62rpx; height: 62rpx; margin-right: 18rpx; display: flex; align-items: center; justify-content: center; flex: 0 0 auto; border-radius: 18rpx; background: var(--soft); color: var(--accent); font-size: 25rpx; font-weight: 800; }
 .domain-course-item { min-height: 116rpx; padding: 20rpx; border-radius: 18rpx; }
@@ -33,11 +33,18 @@ page { background: #f4fafc; }
 .inline-back { display: inline-flex; min-height: 58rpx; margin-bottom: 22rpx; padding: 0 18rpx; align-items: center; border: 1rpx solid var(--line); border-radius: 30rpx; background: rgba(255,255,255,.72); color: var(--accent); font-size: 24rpx; font-weight: 680; }
 .verb-map-item { padding: 22rpx; border-radius: 20rpx; }
 .verb-map-code { width: 64rpx; height: 64rpx; margin-right: 18rpx; display: flex; align-items: center; justify-content: center; border-radius: 18rpx; background: var(--soft); color: var(--accent); font-weight: 800; }
+.section-map-list { display: flex; flex-direction: column; gap: 14rpx; }
+.section-map-item { min-height: 136rpx; padding: 20rpx; border-radius: 20rpx; }
+.section-map-no { width: 66rpx; height: 66rpx; margin-right: 18rpx; display: flex; align-items: center; justify-content: center; flex: 0 0 auto; border-radius: 18rpx; background: var(--soft); color: var(--accent); font-size: 23rpx; font-weight: 800; }
+.section-map-meta { margin-top: 9rpx; color: var(--accent); font-size: 20rpx; font-weight: 650; }
 .course-group + .course-group { margin-top: 30rpx; }
 .course-group-title { font-size: 27rpx; font-weight: 750; }
 .course-group-copy { margin: 5rpx 0 14rpx; font-size: 22rpx; }
 .lesson-row { margin-top: 12rpx; padding: 18rpx; border-radius: 18rpx; }
 .lesson-no { width: 62rpx; color: var(--accent); font-size: 23rpx; font-weight: 750; }
+.lesson-level { display: inline-flex; margin-top: 9rpx; padding: 5rpx 12rpx; border-radius: 20rpx; font-size: 18rpx; font-weight: 720; }
+.level-core { color: #327064; background: #e6f2ee; }
+.level-advanced { color: #805f2c; background: #f7ecd7; }
 .lesson-card { padding-bottom: 26rpx; }
 .lesson-title { margin-top: 8rpx; font-size: 38rpx; line-height: 1.25; font-weight: 760; }
 .lesson-meta { margin-top: 9rpx; font-size: 24rpx; }
@@ -98,10 +105,11 @@ page { background: #f4fafc; }
 .theme-library .topic-item { min-height: 100rpx; margin-top: -1rpx; border-radius: 0; background: #fffaf0; }
 .theme-library .topic-item:first-child { border-radius: 6rpx 6rpx 0 0; }
 .theme-library .topic-item:last-child { border-radius: 0 0 6rpx 6rpx; }
-.theme-library .domain-item, .theme-library .domain-course-item, .theme-library .verb-map-item, .theme-library .lesson-row, .theme-library .sentence-card, .theme-library .option-item { border-radius: 6rpx; background: #fffaf0; }
+.theme-library .domain-item, .theme-library .domain-course-item, .theme-library .verb-map-item, .theme-library .section-map-item, .theme-library .lesson-row, .theme-library .sentence-card, .theme-library .option-item { border-radius: 6rpx; background: #fffaf0; }
 .theme-library .domain-code { border-right: 1rpx solid #c9b58f; border-radius: 0; background: transparent; color: #876a3c; }
 .theme-library .inline-back { border-radius: 3rpx; background: #fffaf0; }
 .theme-library .lesson-no, .theme-library .verb-map-code { border-right: 1rpx solid #c9b58f; border-radius: 0; background: transparent; color: #876a3c; }
+.theme-library .section-map-no { border-right: 1rpx solid #c9b58f; border-radius: 0; background: transparent; color: #876a3c; }
 .theme-library .rule-card { border-radius: 0; background: #f3ead8; }
 .theme-library .footer-actions { background: linear-gradient(to bottom, rgba(247,240,226,0), #f7f0e2 24%); }
 .theme-library .footer-button { border-radius: 5rpx; }

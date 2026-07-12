@@ -75,10 +75,27 @@
       </view>
     </view>
 
-    <view class="content-card" wx:elif="{{screen === 'course-map'}}">
-      <view class="inline-back" bindtap="backFromCourseMap">{{ui.backDirectory}}</view>
+    <view class="content-card" wx:elif="{{screen === 'section-map'}}">
+      <view class="inline-back" bindtap="backFromSectionMap">{{selectedTopic === 'word-formation' ? ui.backMorphology : ui.backDirectory}}</view>
       <view class="section-kicker">{{courseTitle}}</view>
       <view class="section-title">{{courseCopy}}</view>
+      <view class="section-map-list">
+        <view class="section-map-item" wx:for="{{sections}}" wx:key="id" data-section="{{item.id}}" bindtap="openSection">
+          <view class="section-map-no">{{item.no}}</view>
+          <view class="topic-main">
+            <view class="topic-title">{{item.title}}</view>
+            <view class="topic-meta">{{item.copy}}</view>
+            <view class="section-map-meta">{{item.countText}} · {{item.levelText}}</view>
+          </view>
+          <view class="row-arrow">›</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="content-card" wx:elif="{{screen === 'course-map'}}">
+      <view class="inline-back" bindtap="backFromCourseMap">{{hasSectionMap ? ui.backSections : (selectedTopic === 'word-formation' ? ui.backMorphology : ui.backDirectory)}}</view>
+      <view class="section-kicker">{{activeSectionTitle || courseTitle}}</view>
+      <view class="section-title">{{activeSectionCopy || courseCopy}}</view>
       <view class="course-group" wx:for="{{groups}}" wx:key="id" wx:for-item="group">
         <view class="course-group-title">{{group.title}}</view>
         <view class="course-group-copy">{{group.copy}}</view>
@@ -87,6 +104,7 @@
           <view class="topic-main">
             <view class="topic-title">{{lesson.title}}</view>
             <view class="topic-meta">{{lesson.meta}}</view>
+            <view class="lesson-level level-{{lesson.level}}">{{lesson.level === 'advanced' ? ui.advancedLevel : ui.coreLevel}}</view>
           </view>
           <view class="row-arrow">›</view>
         </view>
@@ -95,7 +113,7 @@
 
     <view class="content-card lesson-card" wx:elif="{{screen === 'lesson' && activeLesson}}">
       <view class="inline-back" bindtap="backToCourseMap">{{ui.backCourse}}</view>
-      <view class="lesson-progress">{{activeLesson.no}} / {{course.length}}</view>
+      <view class="lesson-progress">{{lessonPosition}} / {{course.length}}</view>
       <view class="lesson-title">{{activeLesson.title}}</view>
       <view class="lesson-meta">{{activeLesson.meta}}</view>
 

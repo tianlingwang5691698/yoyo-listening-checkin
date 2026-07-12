@@ -85,6 +85,36 @@ function lesson(en, id, zhTitle, enTitle, zhMeta, enMeta, examples, rules, quest
   const allAnalyzed = examples.every(x => Array.isArray(x.analysis));
   return { id, title: pick(en, zhTitle, enTitle), meta: pick(en, zhMeta, enMeta), examples: examples.map(x => x.text), analyses: allAnalyzed ? examples.map(x => x.analysis) : [], exampleNotes: examples.map(x => x.note), rules: rules.map(x => pick(en, x[0], x[1])), ruleCoverage: INCLUDE_RULE_COVERAGE ? ruleCoverage(id, rules) : [], questions };
 }
+const sectionSpecs = {
+  Verbs: [
+    { id: 'roles-patterns', zhTitle: '动词作用与基本句型', enTitle: 'Verb roles and basic patterns', zhCopy: '从动词任务判断及物性、系表关系和五大基本句型。', enCopy: 'Classify verb roles, transitivity, linking and the five basic patterns.', lessonIds: ['verb-jobs','transitivity','linking','double-object-complement','five-sentence-patterns'] },
+    { id: 'auxiliaries-modals', zhTitle: '助动词与情态动词', enTitle: 'Auxiliaries and modal verbs', zhCopy: '掌握 be、do、have 的结构功能和情态意义。', enCopy: 'Master structural uses of be, do and have and the modal meanings.', lessonIds: ['aux-modal','auxiliary-system','modal-meanings'] },
+    { id: 'forms-agreement', zhTitle: '词形变化与主谓一致', enTitle: 'Verb forms and agreement', zhCopy: '系统掌握五种形式、拼写变化和基础及复杂一致。', enCopy: 'Learn the principal forms, spelling changes and basic to complex agreement.', lessonIds: ['finite-forms','verb-five-forms','third-person-form','past-forms','ing-forms','subject-verb-agreement','agreement-complex'] },
+    { id: 'tense-aspect', zhTitle: '时态与体', enTitle: 'Tense and aspect', zhCopy: '按时间关系学习一般、进行、完成及主从句时态。', enCopy: 'Organize simple, progressive and perfect forms by time relation and clause use.', lessonIds: ['present-simple','present-progressive','past-simple','past-progressive','future-forms','perfect-vs-past','past-time-sequence','future-in-clauses','tense-aspect'] },
+    { id: 'voice-nonfinite', zhTitle: '语态与非谓语动词', enTitle: 'Voice and non-finite verbs', zhCopy: '区分主动被动，并分课掌握不定式、动名词和分词。', enCopy: 'Distinguish active and passive voice and master infinitives, gerunds and participles.', lessonIds: ['voice','passive-tenses','nonfinite','infinitive','gerund','participles','nonfinite-advanced'] },
+    { id: 'patterns-collocations', zhTitle: '动词搭配与特殊结构', enTitle: 'Verb patterns and special structures', zhCopy: '处理短语动词、感官使役、搭配选择和意义变化。', enCopy: 'Handle phrasal verbs, causative/perception patterns, complementation and meaning changes.', lessonIds: ['phrasal','causative-perception','gerund-infinitive-meaning','special-verb-patterns','verb-complements'] }
+  ],
+  Numerals: [
+    { id: 'number-forms', zhTitle: '数词形式与读写', enTitle: 'Number forms and reading', zhCopy: '掌握基数、序数和大数的构成与读写。', enCopy: 'Build and read cardinal, ordinal and large numbers.', lessonIds: ['cardinals','ordinals','large-numbers'] },
+    { id: 'quantity-expressions', zhTitle: '数量表达与一致', enTitle: 'Quantity expressions and agreement', zhCopy: '处理分数、小数、百分数、概数及其主谓一致。', enCopy: 'Handle fractions, decimals, percentages, approximations and agreement.', lessonIds: ['fractions-percent','approximate','number-agreement'] },
+    { id: 'time-labels', zhTitle: '日期时间与编号', enTitle: 'Dates, time and labels', zhCopy: '根据日期、时间和编号功能选择正确读法。', enCopy: 'Choose readings according to date, time and label functions.', lessonIds: ['date-time'] }
+  ],
+  Articles: [
+    { id: 'core-choice', zhTitle: '冠词基本选择', enTitle: 'Core article choices', zhCopy: '从发音、特指与泛指判断 a/an、the 和零冠词。', enCopy: 'Choose a/an, the or zero article by sound, specificity and general reference.', lessonIds: ['a-an','the-known','zero-basic'] },
+    { id: 'named-fixed-contexts', zhTitle: '特殊名称与固定场景', enTitle: 'Names and fixed contexts', zhCopy: '掌握唯一事物、场所功能和专有名称中的冠词。', enCopy: 'Master articles with unique things, institutional functions and proper names.', lessonIds: ['unique-superlative','institutions-meals','names-places'] },
+    { id: 'meaning-contrast', zhTitle: '泛指与意义辨析', enTitle: 'Generic reference and meaning contrasts', zhCopy: '比较三种泛指方式及冠词造成的意义变化。', enCopy: 'Compare generic-reference patterns and meaning changes caused by articles.', lessonIds: ['generic-contrast','article-meaning'] }
+  ]
+};
+function buildSections(en, enTitle, course) {
+  const specs = sectionSpecs[enTitle];
+  if (!specs) return [];
+  const courseIds = course.map(item => item.id);
+  const assignedIds = specs.flatMap(item => item.lessonIds);
+  if (assignedIds.length !== courseIds.length || new Set(assignedIds).size !== assignedIds.length || courseIds.some(id => !assignedIds.includes(id)) || assignedIds.some(id => !courseIds.includes(id))) {
+    throw new Error(`Invalid section coverage: ${enTitle}`);
+  }
+  return specs.map(item => ({ id: item.id, title: pick(en, item.zhTitle, item.enTitle), copy: pick(en, item.zhCopy, item.enCopy), lessonIds: item.lessonIds.slice(), lessonCount: item.lessonIds.length }));
+}
 function grouped(en, zhTitle, enTitle, lessons, coreCount) {
   const advancedIds = Array.isArray(coreCount) ? coreCount : null;
   const leveled = lessons.map((x, i) => Object.assign({}, x, { level: advancedIds ? (advancedIds.includes(x.id) ? 'advanced' : 'core') : (i < coreCount ? 'core' : 'advanced') }));
@@ -92,7 +122,7 @@ function grouped(en, zhTitle, enTitle, lessons, coreCount) {
   const course = ordered.map((x, i) => Object.assign({}, x, { no: String(i + 1).padStart(2, '0') }));
   const coreLessons = course.filter(x => x.level === 'core');
   const advancedLessons = course.filter(x => x.level === 'advanced');
-  return { title: pick(en, `${zhTitle} · ${course.length} 节微课`, `${enTitle} · ${course.length} lessons`), copy: pick(en, '核心规则优先，进阶处理特殊与综合语境。', 'Core rules first; advanced lessons handle special and mixed contexts.'), course, groups: [
+  return { title: pick(en, `${zhTitle} · ${course.length} 节微课`, `${enTitle} · ${course.length} lessons`), copy: pick(en, '核心规则优先，进阶处理特殊与综合语境。', 'Core rules first; advanced lessons handle special and mixed contexts.'), course, sections: buildSections(en, enTitle, course), groups: [
     { id: 'core', title: pick(en, `核心必学 · ${coreLessons.length} 节`, `Core · ${coreLessons.length} lessons`), copy: pick(en, '基础理解、高频使用与后续学习前提。', 'Essential foundations and high-frequency use.'), lessons: coreLessons },
     { id: 'advanced', title: pick(en, `进阶挑战 · ${advancedLessons.length} 节`, `Advanced · ${advancedLessons.length} lessons`), copy: pick(en, '特殊规则与综合辨析。', 'Special rules and integrated distinctions.'), lessons: advancedLessons }
   ] };

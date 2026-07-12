@@ -318,10 +318,22 @@ function buildWordFormationCourse(en) {
     no: String(index + 1).padStart(2, '0'),
     level: index < coreCount ? 'core' : 'advanced'
   }));
+  const sectionSpecs = [
+    ['formation-foundation', '构词原理与词性判断', 'Foundations and word-class choice', '理解词的组成、派生与屈折，并根据句法位置选择词形。', 'Understand word parts, derivation and inflection, then choose forms by syntactic slot.', ['word-parts','derivation-inflection','word-class-slots']],
+    ['formation-prefixes', '前缀系统', 'Prefix system', '按否定、时间、重复、错误和程度理解常用前缀及变体。', 'Organize common prefixes and variants by negation, time, repetition, error and degree.', ['negative-prefixes','meaning-prefixes','prefix-assimilation']],
+    ['formation-suffixes', '后缀与词性转换', 'Suffixes and word-class change', '系统掌握人物、名词、形容词、副词和动词后缀。', 'Master person, noun, adjective, adverb and verb suffixes.', ['person-noun-suffixes','abstract-noun-suffixes','adjective-suffixes','participial-adjectives','adverb-suffix','verb-suffixes']],
+    ['formation-conversion-compounds', '转化与合成', 'Conversion and compounding', '理解零派生、中心词、合成词拼写和复数规则。', 'Understand zero derivation, compound heads, spelling and plural formation.', ['conversion','compounds']],
+    ['formation-advanced-use', '拼写、发音与综合推断', 'Spelling, sound and integrated inference', '处理后缀拼写、重音、多层构词和生词推断边界。', 'Handle suffix spelling, stress, layered derivation and responsible word inference.', ['suffix-spelling','suffix-sound-stress','layered-derivation','word-inference']]
+  ];
+  const assignedIds = sectionSpecs.flatMap((section) => section[5]);
+  const courseIds = course.map((lesson) => lesson.id);
+  if (assignedIds.length !== courseIds.length || new Set(assignedIds).size !== assignedIds.length || courseIds.some((id) => !assignedIds.includes(id)) || assignedIds.some((id) => !courseIds.includes(id))) throw new Error('Invalid section coverage: Word Formation');
+  const sections = sectionSpecs.map((section) => ({ id: section[0], title: pick(en, section[1], section[2]), copy: pick(en, section[3], section[4]), lessonIds: section[5].slice(), lessonCount: section[5].length }));
   return {
     title: pick(en, `构词法 · ${course.length} 节微课`, `Word Formation · ${course.length} lessons`),
     copy: pick(en, '从词的零件和词族出发，学会判断词性、拼写变化并推断生词。', 'Start from word parts and families, then choose word class, manage spelling and infer new words.'),
     course,
+    sections,
     groups: [
       { id: 'core', title: pick(en, `核心必学 · ${coreCount} 节`, `Core · ${coreCount} lessons`), copy: pick(en, '中学词形转换和阅读推断必须掌握。', 'Essential for school word-form tasks and reading.'), lessons: course.slice(0, coreCount) },
       { id: 'advanced', title: pick(en, `进阶挑战 · ${course.length - coreCount} 节`, `Advanced · ${course.length - coreCount} lessons`), copy: pick(en, '处理拼写、读音、多层构词和推断边界。', 'Spelling, sound, layered derivation and inference limits.'), lessons: course.slice(coreCount) }

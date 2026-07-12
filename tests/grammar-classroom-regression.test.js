@@ -14,6 +14,7 @@ const sourceRelationCourses = require('../data/grammar-classroom/course-sources/
 const sourceThirdPersonCourse = require('../data/grammar-classroom/course-sources/third-person-course');
 const sourceWordFormationCourses = require('../data/grammar-classroom/course-sources/word-formation-courses');
 const allBuilders = Object.assign({}, sourceWordCourses, sourceVnaCourses, sourceModifierCourses, sourceRelationCourses);
+const allSectionBuilders = Object.assign({}, allBuilders, sourceWordFormationCourses);
 const withoutCoverage = (value) => JSON.parse(JSON.stringify(value, (key, item) => key === 'ruleCoverage' ? undefined : item));
 
 function loadBuilders(language = 'zh-CN') {
@@ -190,6 +191,34 @@ test('语法课堂按体系分层并逐层返回', () => {
   assert.match(wxml, /bindtap="backToDomainMap"/);
   assert.match(wxml, /bindtap="backFromCourseMap"/);
   assert.match(wxml, /bindtap="backToCourseMap"/);
+});
+
+test('课程按知识关系分层且核心进阶只作为难度标签', () => {
+  [false, true].forEach((english) => {
+    Object.values(allSectionBuilders).forEach((build) => {
+      const bundle = build(english);
+      const lessonIds = bundle.course.map((lesson) => lesson.id);
+      const sectionIds = bundle.sections.flatMap((section) => section.lessonIds);
+      assert.ok(bundle.sections.length > 0);
+      bundle.sections.forEach((section) => {
+        assert.ok(section.id && section.title && section.copy);
+        assert.equal(section.lessonCount, section.lessonIds.length);
+      });
+      assert.equal(new Set(sectionIds).size, sectionIds.length);
+      assert.deepEqual(new Set(sectionIds), new Set(lessonIds));
+    });
+  });
+  assert.equal(sourceVnaCourses.buildVerbCourse(false).sections.length, 6);
+  assert.equal(sourceWordFormationCourses.buildWordFormationCourse(false).sections.length, 5);
+  const page = fs.readFileSync(path.join(__dirname, '../grammar-package/pages/classroom/index.js'), 'utf8');
+  const wxml = fs.readFileSync(path.join(__dirname, '../grammar-package/pages/classroom/index.wxml'), 'utf8');
+  assert.match(page, /course\.length >= 12 && sections\.length > 1/);
+  assert.match(page, /course\.length <= 5/);
+  assert.match(wxml, /screen === 'section-map'/);
+  assert.match(wxml, /bindtap="openSection"/);
+  assert.match(wxml, /bindtap="backFromSectionMap"/);
+  assert.match(wxml, /level-\{\{lesson\.level\}\}/);
+  assert.match(wxml, /\{\{lessonPosition\}\} \/ \{\{course\.length\}\}/);
 });
 
 test('构词法课程系统覆盖且逐条闭环', () => {

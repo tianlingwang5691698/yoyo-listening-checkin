@@ -107,6 +107,7 @@ function uiText(english) {
     backSystem: english ? '‹ Grammar System' : '‹ 语法体系',
     backMorphology: english ? '‹ Word Grammar' : '‹ 词法',
     backDirectory: english ? '‹ Parts of Speech' : '‹ 十大词性',
+    backSections: english ? '‹ Category Map' : '‹ 类别地图',
     backVerbMap: english ? '‹ Verb Map' : '‹ 动词地图',
     backVerbCourse: english ? '‹ Complete verb course' : '‹ 动词完整课程',
     backCourse: english ? '‹ Course Map' : '‹ 课程地图',
@@ -116,6 +117,8 @@ function uiText(english) {
     answerFirst: english ? 'Answer correctly to continue' : '答对后继续',
     retry: english ? 'Try again' : '再试一次',
     lessonUnit: english ? 'lessons' : '节微课',
+    coreLevel: english ? 'Core' : '核心',
+    advancedLevel: english ? 'Advanced' : '进阶',
     loadError: english ? 'The course could not be opened. Return and try again.' : '课程暂时无法打开，请返回后重试。',
     planned: english ? 'Course in progress' : '课程正在建设'
   };
@@ -143,10 +146,16 @@ Page({
     loaderKind: '',
     course: [],
     groups: [],
+    sections: [],
+    hasSectionMap: false,
+    activeSectionId: '',
+    activeSectionTitle: '',
+    activeSectionCopy: '',
     courseTitle: '',
     courseCopy: '',
     activeLesson: null,
     lessonIndex: -1,
+    lessonPosition: 0,
     questionIndex: 0,
     activeQuestion: null,
     answer: '',
@@ -248,28 +257,82 @@ Page({
     if (!detail.bundle || detail.topic !== this.data.selectedTopic) return;
     if (this.loadTimer) clearTimeout(this.loadTimer);
     const bundle = detail.bundle;
-    const course = bundle.course || [];
+    const sourceCourse = bundle.course || [];
+    const sourceById = sourceCourse.reduce((map, lesson) => Object.assign(map, { [lesson.id]: lesson }), {});
+    const rawSections = Array.isArray(bundle.sections) ? bundle.sections : [];
+    const sectionOrder = rawSections.flatMap((section) => section.lessonIds || []);
+    const hasValidSections = sectionOrder.length === sourceCourse.length && new Set(sectionOrder).size === sourceCourse.length && sectionOrder.every((id) => sourceById[id]);
+    const course = (hasValidSections ? sectionOrder.map((id) => sourceById[id]) : sourceCourse).map((lesson, index) => Object.assign({}, lesson, { no: String(index + 1).padStart(2, '0') }));
     this.fullCourse = course;
+    this.activeCourse = course;
     const courseSummaries = course.map(({ id, no, level, title, meta }) => ({ id, no, level, title, meta }));
     const summaryById = courseSummaries.reduce((map, lesson) => Object.assign(map, { [lesson.id]: lesson }), {});
-    const groups = bundle.groups && bundle.groups.length
-      ? bundle.groups.map((group) => Object.assign({}, group, { lessons: (group.lessons || []).map((lesson) => summaryById[lesson.id]).filter(Boolean) }))
-      : [{ id: 'course', title: bundle.title || '', copy: bundle.copy || '', lessons: courseSummaries }];
+    const sections = (hasValidSections ? rawSections : []).map((section, index) => {
+      const lessons = (section.lessonIds || []).map((id) => summaryById[id]).filter(Boolean);
+      const coreCount = lessons.filter((lesson) => lesson.level === 'core').length;
+      const advancedCount = lessons.length - coreCount;
+      return {
+        id: section.id || `section-${index + 1}`,
+        no: String(index + 1).padStart(2, '0'),
+        title: section.title || '',
+        copy: section.copy || '',
+        lessonIds: lessons.map((lesson) => lesson.id),
+        lessonCount: lessons.length,
+        countText: `${lessons.length} ${this.data.ui.lessonUnit}`,
+        levelText: [coreCount ? `${this.data.ui.coreLevel} ${coreCount}` : '', advancedCount ? `${this.data.ui.advancedLevel} ${advancedCount}` : ''].filter(Boolean).join(' · ')
+      };
+    });
+    const hasSectionMap = course.length >= 12 && sections.length > 1;
+    const groups = course.length <= 5
+      ? [{ id: 'course', title: '', copy: '', lessons: courseSummaries }]
+      : sections.length
+        ? sections.map((section) => ({ id: section.id, title: section.title, copy: section.copy, lessons: section.lessonIds.map((id) => summaryById[id]).filter(Boolean) }))
+        : [{ id: 'course', title: '', copy: '', lessons: courseSummaries }];
+    this.courseSummaries = courseSummaries;
+    this.courseSummaryById = summaryById;
+    this.courseSections = sections;
     this.setData({
-      screen: 'course-map',
+      screen: hasSectionMap ? 'section-map' : 'course-map',
       loaderKind: '',
       course: courseSummaries,
-      groups,
+      groups: hasSectionMap ? [] : groups,
+      sections,
+      hasSectionMap,
+      activeSectionId: '',
+      activeSectionTitle: '',
+      activeSectionCopy: '',
       courseTitle: bundle.title || '',
       courseCopy: bundle.copy || '',
       activeLesson: null,
       lessonIndex: -1,
+      lessonPosition: 0,
       questionIndex: 0,
       activeQuestion: null,
       answer: '',
       result: '',
       debugMessage: ''
     }, () => this.reportPerformance(2102, Date.now() - (this.loadStartedAt || Date.now())));
+  },
+
+  openSection(event) {
+    const id = String(event.currentTarget.dataset.section || '');
+    const section = (this.courseSections || []).find((item) => item.id === id);
+    if (!section) return;
+    const course = section.lessonIds.map((lessonId) => (this.fullCourse || []).find((lesson) => lesson.id === lessonId)).filter(Boolean);
+    const summaries = section.lessonIds.map((lessonId) => this.courseSummaryById[lessonId]).filter(Boolean);
+    this.activeCourse = course;
+    this.setData({
+      screen: 'course-map',
+      course: summaries,
+      groups: [{ id: section.id, title: '', copy: '', lessons: summaries }],
+      activeSectionId: section.id,
+      activeSectionTitle: section.title,
+      activeSectionCopy: section.copy,
+      activeLesson: null,
+      lessonIndex: -1,
+      lessonPosition: 0
+    });
+    wx.pageScrollTo({ scrollTop: 0, duration: 0 });
   },
 
   onCourseLoadError(event) {
@@ -283,7 +346,7 @@ Page({
 
   openLesson(event) {
     const id = String(event.currentTarget.dataset.lesson || '');
-    const course = this.fullCourse || [];
+    const course = this.activeCourse || this.fullCourse || [];
     const index = course.findIndex((lesson) => lesson.id === id);
     const lesson = index >= 0 ? course[index] : null;
     if (!lesson || !lesson.questions || !lesson.questions.length) return;
@@ -292,12 +355,13 @@ Page({
       screen: 'lesson',
       activeLesson: lesson,
       lessonIndex: index,
+      lessonPosition: index + 1,
       questionIndex: 0,
       activeQuestion: lesson.questions[0],
       answer: '',
       result: '',
       isLastQuestion: lesson.questions.length === 1,
-      isLastLesson: index === this.data.course.length - 1
+      isLastLesson: index === course.length - 1
     }, () => {
       this.reportPerformance(2103, Date.now() - startedAt);
       wx.pageScrollTo({ scrollTop: 0, duration: 0 });
@@ -333,25 +397,51 @@ Page({
       return;
     }
     const lessonIndex = this.data.lessonIndex + 1;
-    const nextLesson = (this.fullCourse || [])[lessonIndex];
+    const activeCourse = this.activeCourse || this.fullCourse || [];
+    const nextLesson = activeCourse[lessonIndex];
     this.setData({
       activeLesson: nextLesson,
       lessonIndex,
+      lessonPosition: lessonIndex + 1,
       questionIndex: 0,
       activeQuestion: nextLesson.questions[0],
       answer: '',
       result: '',
       isLastQuestion: nextLesson.questions.length === 1,
-      isLastLesson: lessonIndex === this.data.course.length - 1
+      isLastLesson: lessonIndex === activeCourse.length - 1
     });
     wx.pageScrollTo({ scrollTop: 0, duration: 220 });
   },
 
   backToCourseMap() {
-    this.setData({ screen: 'course-map', activeLesson: null, lessonIndex: -1, activeQuestion: null, answer: '', result: '' });
+    this.setData({ screen: 'course-map', activeLesson: null, lessonIndex: -1, lessonPosition: 0, activeQuestion: null, answer: '', result: '' });
   },
 
   backFromCourseMap() {
+    if (this.data.hasSectionMap) return this.backToSectionMap();
+    if (this.data.selectedTopic === 'word-formation') return this.backToDomainMap();
+    this.backToDirectory();
+  },
+
+  backToSectionMap() {
+    this.activeCourse = this.fullCourse || [];
+    this.setData({
+      screen: 'section-map',
+      course: this.courseSummaries || [],
+      groups: [],
+      activeSectionId: '',
+      activeSectionTitle: '',
+      activeSectionCopy: '',
+      activeLesson: null,
+      lessonIndex: -1,
+      lessonPosition: 0,
+      activeQuestion: null,
+      answer: '',
+      result: ''
+    });
+  },
+
+  backFromSectionMap() {
     if (this.data.selectedTopic === 'word-formation') return this.backToDomainMap();
     this.backToDirectory();
   },
@@ -359,7 +449,8 @@ Page({
   backToDirectory() {
     if (this.loadTimer) clearTimeout(this.loadTimer);
     this.fullCourse = [];
-    this.setData({ screen: 'directory', selectedTopic: '', loaderKind: '', course: [], groups: [], courseTitle: '', courseCopy: '', activeLesson: null, debugMessage: '' });
+    this.activeCourse = [];
+    this.setData({ screen: 'directory', selectedTopic: '', loaderKind: '', course: [], groups: [], sections: [], hasSectionMap: false, activeSectionId: '', activeSectionTitle: '', activeSectionCopy: '', courseTitle: '', courseCopy: '', activeLesson: null, debugMessage: '' });
   },
 
   backToDomainMap() {
@@ -367,18 +458,21 @@ Page({
     const ui = this.data.ui;
     const selected = ui.domains.find((item) => item.id === domain) || ui.domains[0];
     this.fullCourse = [];
-    this.setData({ screen: 'domain-map', selectedDomain: selected.id, domainTitle: selected.title, domainCopy: selected.meta, domainItems: ui.domainMaps[selected.id] || [], selectedTopic: '', loaderKind: '', course: [], groups: [], activeLesson: null, debugMessage: '' });
+    this.activeCourse = [];
+    this.setData({ screen: 'domain-map', selectedDomain: selected.id, domainTitle: selected.title, domainCopy: selected.meta, domainItems: ui.domainMaps[selected.id] || [], selectedTopic: '', loaderKind: '', course: [], groups: [], sections: [], hasSectionMap: false, activeSectionId: '', activeSectionTitle: '', activeSectionCopy: '', activeLesson: null, debugMessage: '' });
   },
 
   backToSystem() {
     if (this.loadTimer) clearTimeout(this.loadTimer);
     this.fullCourse = [];
-    this.setData({ screen: 'system', selectedDomain: '', domainTitle: '', domainCopy: '', domainItems: [], selectedTopic: '', loaderKind: '', course: [], groups: [], activeLesson: null, debugMessage: '' });
+    this.activeCourse = [];
+    this.setData({ screen: 'system', selectedDomain: '', domainTitle: '', domainCopy: '', domainItems: [], selectedTopic: '', loaderKind: '', course: [], groups: [], sections: [], hasSectionMap: false, activeSectionId: '', activeSectionTitle: '', activeSectionCopy: '', activeLesson: null, debugMessage: '' });
   },
 
   handleTopBack() {
     if (this.data.screen === 'lesson') return this.backToCourseMap();
     if (this.data.screen === 'course-map') return this.backFromCourseMap();
+    if (this.data.screen === 'section-map') return this.backFromSectionMap();
     if (this.data.screen === 'directory') return this.backToDomainMap();
     if (this.data.screen === 'domain-map') return this.backToSystem();
     this.closePage();
