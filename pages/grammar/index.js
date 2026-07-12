@@ -297,12 +297,12 @@ function buildClassroomText() {
     originalById.boss
   ].map((lesson, index) => Object.assign({}, lesson, {
     no: String(index + 1).padStart(2, '0'),
-    level: index < 6 ? 'core' : 'advanced'
+    level: index < 7 ? 'core' : 'advanced'
   }));
   classroom.thirdPersonTitle = english ? 'Third-person singular · 9 lessons' : '第三人称单数 · 9 节微课';
   classroom.thirdPersonCourseGroups = [
-    { id: 'core', title: english ? 'Core · 6 essential lessons' : '核心必学 · 6 节', copy: english ? 'Complete these first.' : '第三人称单数必须掌握。', lessons: classroom.thirdPersonCourse.filter((lesson) => lesson.level === 'core') },
-    { id: 'advanced', title: english ? 'Advanced · 3 challenge lessons' : '进阶挑战 · 3 节', copy: english ? 'Special subjects, contexts and mixed use.' : '语境、特殊主语与综合运用。', lessons: classroom.thirdPersonCourse.filter((lesson) => lesson.level === 'advanced') }
+    { id: 'core', title: english ? 'Core · 7 essential lessons' : '核心必学 · 7 节', copy: english ? 'Complete these first.' : '规则和高频使用语境必须掌握。', lessons: classroom.thirdPersonCourse.filter((lesson) => lesson.level === 'core') },
+    { id: 'advanced', title: english ? 'Advanced · 2 challenge lessons' : '进阶挑战 · 2 节', copy: english ? 'Special subjects and mixed use.' : '特殊主语与综合运用。', lessons: classroom.thirdPersonCourse.filter((lesson) => lesson.level === 'advanced') }
   ];
   const noun = wordCourses.buildNounCourse(english);
   const pronoun = wordCourses.buildPronounCourse(english);

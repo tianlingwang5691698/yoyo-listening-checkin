@@ -11,15 +11,15 @@ function lesson(english, id, zhTitle, enTitle, zhMeta, enMeta, examples, rules, 
   const hasAnalysis = examples.every((item) => Array.isArray(item.analysis));
   return { id, title: pick(english, zhTitle, enTitle), meta: pick(english, zhMeta, enMeta), examples: examples.map((item) => item.text), analyses: hasAnalysis ? examples.map((item) => item.analysis) : [], exampleNotes: examples.map((item) => item.note), rules: rules.map((item) => pick(english, item[0], item[1])), questions };
 }
-function groupCourse(english, lessons, zhTitle, enTitle) {
-  const course = lessons.map((item, index) => Object.assign({}, item, { no: String(index + 1).padStart(2, '0'), level: index < 6 ? 'core' : 'advanced' }));
+function groupCourse(english, lessons, zhTitle, enTitle, coreCount = 6) {
+  const course = lessons.map((item, index) => Object.assign({}, item, { no: String(index + 1).padStart(2, '0'), level: index < coreCount ? 'core' : 'advanced' }));
   return {
     title: pick(english, `${zhTitle} · 9 节微课`, `${enTitle} · 9 lessons`),
     copy: pick(english, '先掌握核心规则，再处理复杂语境。', 'Master the core rules, then handle complex contexts.'),
     course,
     groups: [
-      { id: 'core', title: pick(english, '核心必学 · 6 节', 'Core · 6 essential lessons'), copy: pick(english, '所有学生必须掌握。', 'Complete these first.'), lessons: course.slice(0, 6) },
-      { id: 'advanced', title: pick(english, '进阶挑战 · 3 节', 'Advanced · 3 challenge lessons'), copy: pick(english, '复杂语境与综合辨析。', 'Complex contexts and mixed practice.'), lessons: course.slice(6) }
+      { id: 'core', title: pick(english, `核心必学 · ${coreCount} 节`, `Core · ${coreCount} essential lessons`), copy: pick(english, '所有学生必须掌握。', 'Complete these first.'), lessons: course.slice(0, coreCount) },
+      { id: 'advanced', title: pick(english, `进阶挑战 · ${course.length - coreCount} 节`, `Advanced · ${course.length - coreCount} challenge lessons`), copy: pick(english, '复杂语境与综合辨析。', 'Complex contexts and mixed practice.'), lessons: course.slice(coreCount) }
     ]
   };
 }
