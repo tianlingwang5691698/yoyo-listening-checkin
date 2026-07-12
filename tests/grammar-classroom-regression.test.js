@@ -29,13 +29,10 @@ test('语法课堂首屏不构建完整课程，点击后按专题加载', () =>
   assert.equal(wordCourses.buildPronounCourse(false).course.length, 9);
   assert.equal(getClassroomCourse(home, 'verb').course.length, 9);
 
-  const coursePage = fs.readFileSync(path.join(__dirname, '../pages/grammar-course/index.js'), 'utf8');
-  assert.match(coursePage, /startPagePerf\('grammar-course'\)/);
-  assert.match(coursePage, /\.ready\('pageReady'/);
-  assert.match(coursePage, /\.mark\('actionMs'/);
-  assert.match(coursePage, /courseDebug/);
-  assert.doesNotMatch(coursePage, /setData\([^)]*course:\s*bundle\.course/);
-  assert.match(coursePage, /group\.lessons\.map/);
+  const grammarPage = fs.readFileSync(path.join(__dirname, '../pages/grammar/index.js'), 'utf8');
+  assert.ok(grammarPage.indexOf('Page({') < grammarPage.indexOf("require('../../data/grammar-classroom/word-courses')"));
+  assert.match(grammarPage, /selectClassroomTopic[\s\S]*buildNounCourse/);
+  assert.match(grammarPage, /selectClassroomTopic[\s\S]*buildPronounCourse/);
 });
 
 test('名词与代词课程中英文内容、练习和两套主题完整', () => {
@@ -55,8 +52,8 @@ test('名词与代词课程中英文内容、练习和两套主题完整', () =>
       });
     });
   });
-  const wxml = fs.readFileSync(path.join(__dirname, '../pages/grammar-course/index.wxml'), 'utf8');
-  const wxss = fs.readFileSync(path.join(__dirname, '../pages/grammar-course/index.wxss'), 'utf8');
+  const wxml = fs.readFileSync(path.join(__dirname, '../pages/grammar/index.wxml'), 'utf8');
+  const wxss = fs.readFileSync(path.join(__dirname, '../pages/grammar/index.wxss'), 'utf8');
   assert.match(wxml, /theme-\{\{theme\}\}/);
   assert.match(wxml, /language-\{\{language\}\}/);
   assert.match(wxss, /theme-library/);
