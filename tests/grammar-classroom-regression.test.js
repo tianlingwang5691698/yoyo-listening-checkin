@@ -30,7 +30,8 @@ test('语法课堂首屏不构建完整课程，点击后按专题加载', () =>
   assert.equal(getClassroomCourse(home, 'verb').course.length, 9);
 
   const grammarPage = fs.readFileSync(path.join(__dirname, '../pages/grammar/index.js'), 'utf8');
-  assert.ok(grammarPage.indexOf('Page({') < grammarPage.indexOf("require('../../data/grammar-classroom/word-courses')"));
+  assert.ok(grammarPage.indexOf("require('../../data/grammar-classroom/word-courses')") < grammarPage.indexOf('Page({'));
+  assert.equal((grammarPage.match(/require\('\.\.\/\.\.\/data\/grammar-classroom\/word-courses'\)/g) || []).length, 1);
   assert.match(grammarPage, /selectClassroomTopic[\s\S]*buildNounCourse/);
   assert.match(grammarPage, /selectClassroomTopic[\s\S]*buildPronounCourse/);
 });

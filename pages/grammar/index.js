@@ -3,6 +3,7 @@ const store = require('../../utils/store');
 const completed = require('../../utils/completed');
 const snapshotStore = require('../../utils/snapshot');
 const i18n = require('../../utils/i18n');
+const wordCourses = require('../../data/grammar-classroom/word-courses');
 
 const text = (key, fallback) => i18n.getPageText('grammar', key, undefined, fallback);
 
@@ -797,7 +798,6 @@ Page({
     let bundle = { course: [], groups: [], title: '', copy: '' };
     if (topicId === 'noun' || topicId === 'pronoun') {
       try {
-        const wordCourses = require('../../data/grammar-classroom/word-courses');
         bundle = topicId === 'pronoun'
           ? wordCourses.buildPronounCourse(i18n.getLanguage() === 'en')
           : wordCourses.buildNounCourse(i18n.getLanguage() === 'en');
