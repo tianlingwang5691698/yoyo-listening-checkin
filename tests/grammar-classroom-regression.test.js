@@ -771,7 +771,7 @@ test('语法课堂按体系分层并逐层返回', () => {
   assert.ok(page.data.ui.domainMaps.syntax.some((item) => item.id === 'basic-patterns' && item.ready && /16/.test(item.status)));
   assert.ok(page.data.ui.domainMaps.syntax.some((item) => item.id === 'predicate-system' && item.ready && /20/.test(item.status)));
   assert.ok(page.data.ui.domainMaps.syntax.some((item) => item.id === 'nonfinite-system' && item.ready && /19/.test(item.status)));
-  assert.ok(page.data.ui.domainMaps.syntax.some((item) => item.id === 'special-structures' && item.ready && /27/.test(item.status)));
+  assert.ok(page.data.ui.domainMaps.syntax.some((item) => item.id === 'special-structures' && item.ready && /28/.test(item.status)));
   assert.ok(page.data.ui.domainMaps.clauses.some((item) => item.id === 'coordination' && item.ready && /22/.test(item.status)));
   assert.ok(page.data.ui.domainMaps.clauses.some((item) => item.id === 'noun-clauses' && item.ready && /22/.test(item.status)));
   assert.ok(page.data.ui.domainMaps.clauses.some((item) => item.id === 'relative-clauses' && item.ready && /20/.test(item.status)));
@@ -883,8 +883,9 @@ test('谓语、非谓语与特殊句式课程完整覆盖各自知识边界', ()
     },
     {
       build: sourceSpecialStructuresCourses.buildSpecialStructuresCourse,
-      count: 27, groups: [13, 14], sections: [3, 2, 5, 4, 4, 5, 3, 1], total: 81,
-      required: ['imperative-affirmative','imperative-negative','imperative-let','exclamation-what','exclamation-how','question-yes-no','question-wh','question-alternative','question-tag-basic','question-tag-special','inversion-foundation','inversion-negative','inversion-only-so-neither','inversion-full-locative','emphasis-do','emphasis-it-cleft','emphasis-wh-cleft','focus-fronting','ellipsis-coordination','ellipsis-adverbial','ellipsis-infinitive','substitution-one-ones','substitution-do-so-not','parentheticals','subjunctive-wish','subjunctive-suggestion','integrated-special-structures']
+      count: 28, groups: [14, 14], sections: [4, 2, 5, 4, 4, 5, 3, 1], total: 84,
+      titleZh: /定义与本质/, titleEn: /Definition and core/,
+      required: ['special-structure-essence','imperative-affirmative','imperative-negative','imperative-let','exclamation-what','exclamation-how','question-yes-no','question-wh','question-alternative','question-tag-basic','question-tag-special','inversion-foundation','inversion-negative','inversion-only-so-neither','inversion-full-locative','emphasis-do','emphasis-it-cleft','emphasis-wh-cleft','focus-fronting','ellipsis-coordination','ellipsis-adverbial','ellipsis-infinitive','substitution-one-ones','substitution-do-so-not','parentheticals','subjunctive-wish','subjunctive-suggestion','integrated-special-structures']
     }
   ];
   specs.forEach((spec) => [false, true].forEach((english) => {
@@ -939,6 +940,9 @@ test('并列句与名词性从句课程完整覆盖连接、标点、语序和�
     assert.equal(bundle.course.reduce((sum, lesson) => sum + lesson.rules.length, 0), spec.total);
     assert.equal(bundle.course.reduce((sum, lesson) => sum + lesson.examples.length, 0), spec.total);
     assert.equal(bundle.course.reduce((sum, lesson) => sum + lesson.questions.length, 0), spec.total);
+    if (spec.build === sourceCoordinationCourses.buildCoordinationCourse) {
+      assert.match(bundle.course[0].title, english ? /Definition and core/ : /定义与本质/);
+    }
     bundle.course.forEach((lesson) => lesson.questions.forEach((question) => {
       assert.ok(question.options.some((option) => option.key === question.answer));
       if (english) {
@@ -946,7 +950,22 @@ test('并列句与名词性从句课程完整覆盖连接、标点、语序和�
         question.options.forEach((option) => assert.doesNotMatch(option.text, /[\u4e00-\u9fff]/));
       }
     }));
+    if (spec.build === sourceCoordinationCourses.buildCoordinationCourse) {
+      bundle.course.forEach((lesson) => {
+        assert.equal(lesson.analyses.length, lesson.examples.length);
+        assert.equal(lesson.exampleNotes.length, lesson.examples.length);
+        assert.ok(lesson.exampleNotes.every((note) => note.visible && (note.body || note.detail)));
+        assert.equal(lesson.ruleCoverage.length, lesson.rules.length);
+        lesson.ruleCoverage.forEach((coverage) => {
+          assert.ok(coverage.exampleIndexes.length && coverage.questionIndexes.length);
+          coverage.exampleIndexes.forEach((index) => assert.ok(index >= 0 && index < lesson.examples.length));
+          coverage.questionIndexes.forEach((index) => assert.ok(index >= 0 && index < lesson.questions.length));
+        });
+      });
+    }
   }));
+  const coordination = sourceCoordinationCourses.buildCoordinationCourse(false);
+  assert.ok(coordination.course.flatMap((lesson) => lesson.analyses).flat().some((part) => part.role === 'predicative'));
   const wxss = fs.readFileSync(path.join(__dirname, '../grammar-package/pages/classroom/index.wxss'), 'utf8');
   ['coordinand','nounClause','dummySubject','dummyObject'].forEach((role) => assert.match(wxss, new RegExp(`role-${role}`)));
 });

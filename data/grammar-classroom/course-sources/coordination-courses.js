@@ -1,19 +1,19 @@
 const pick=(english,zh,en)=>english?en:zh;
 const INCLUDE_RULE_COVERAGE=typeof GRAMMAR_RUNTIME==='undefined'||!GRAMMAR_RUNTIME;
-const labels={subject:['主语','Subject'],predicate:['谓语动词','Predicate verb'],object:['宾语','Object'],complement:['补足语','Complement'],adverbial:['状语','Adverbial'],conjunction:['并列连词','Coordinator'],clause:['分句','Clause'],coordinand:['并列项','Coordinate'],punctuation:['标点边界','Punctuation boundary'],ellipsis:['省略成分','Elliptical element']};
-const p=(english,x)=>({text:x[0],role:x[1],label:pick(english,x[2]||(labels[x[1]]||[x[1],x[1]])[0],x[3]||(labels[x[1]]||[x[1],x[1]])[1])});
+const labels={subject:['主语','Subject'],predicate:['谓语动词','Predicate verb'],object:['宾语','Object'],predicative:['表语','Subject complement'],adverbial:['状语','Adverbial'],conjunction:['并列连词','Coordinator'],clause:['分句','Clause'],coordinand:['并列项','Coordinate'],punctuation:['标点边界','Punctuation boundary'],ellipsis:['省略成分','Elliptical element']};
+const p=(english,x)=>{const role=x[1]==='complement'?'predicative':x[1];return{text:x[0],role,label:pick(english,x[2]||(labels[role]||[role,role])[0],x[3]||(labels[role]||[role,role])[1])};};
 const hidden=()=>({visible:false,mode:'',title:'',body:'',detail:''});
-const note=(english,x)=>x?{visible:true,mode:'structure',title:pick(english,'结构观察','Structure focus'),body:pick(english,x[0],x[1]),detail:''}:hidden();
+const note=(english,x)=>x?{visible:true,mode:'structure',title:pick(english,'例句说明','Example focus'),body:pick(english,x[0],x[1]),detail:''}:hidden();
 const question=(english,x)=>({question:pick(english,x[0],x[1]),options:[{key:'A',text:pick(english,x[2],x[3])},{key:'B',text:pick(english,x[4],x[5])}],answer:x[6],correct:pick(english,x[7],x[8]),wrong:pick(english,`再看规则：${x[7]}`,`Check the rule: ${x[8]}`)});
 const A=(zh,en,parts,q,n)=>({zh,en,parts,q,n}); const Q=(...x)=>x; const N=(zh,en)=>[zh,en];
 function lesson(english,id,level,zhTitle,enTitle,zhMeta,enMeta,atoms){
   if(atoms.length<3)throw new Error(`Too few coordination atoms: ${id}`);
-  return{id,level,title:pick(english,zhTitle,enTitle),meta:pick(english,zhMeta,enMeta),examples:atoms.map(a=>a.parts.map(x=>x[0]).join(' ')),analyses:atoms.map(a=>a.parts.map(x=>p(english,x))),exampleNotes:atoms.map(a=>note(english,a.n)),rules:atoms.map(a=>pick(english,a.zh,a.en)),ruleCoverage:INCLUDE_RULE_COVERAGE?atoms.map((_,i)=>({exampleIndexes:[i],questionIndexes:[i]})):[],questions:atoms.map(a=>question(english,a.q))};
+  return{id,level,title:pick(english,zhTitle,enTitle),meta:pick(english,zhMeta,enMeta),examples:atoms.map(a=>a.parts.map(x=>x[0]).join(' ')),analyses:atoms.map(a=>a.parts.map(x=>p(english,x))),exampleNotes:atoms.map(a=>note(english,a.n||N(`${a.q[7]} ${a.zh}`,`${a.q[8]} ${a.en}`))),rules:atoms.map(a=>pick(english,a.zh,a.en)),ruleCoverage:INCLUDE_RULE_COVERAGE?atoms.map((_,i)=>({exampleIndexes:[i],questionIndexes:[i]})):[],questions:atoms.map(a=>question(english,a.q))};
 }
 function buildCoordinationCourse(english){
  const L=(...x)=>lesson(english,...x);
  const course=[
-  L('coordination-boundary','core','并列句与并列成分','Coordinated clauses and constituents','先判断连接单位的层级','Identify the level of the linked units',[
+  L('coordination-boundary','core','并列结构的定义与本质','Definition and core of coordination','把同一语法层级的单位连接起来','Joining units at the same grammatical level',[
    A('并列句连接两个或更多能够独立成句的分句，每个分句有自己的主谓核心。','Clause coordination joins two or more potentially independent clauses, each with its own subject-predicate core.',[['Mia smiled,','clause','并列分句一','First coordinate clause'],['and','conjunction'],['Tom laughed.','clause','并列分句二','Second coordinate clause']],Q('and 两边是什么层级？','What level is joined by and?','两个完整分句','Two full clauses','两个宾语','Two objects','A','两边各有主语和谓语。','Each side has its own subject and predicate.')),
    A('并列成分连接词、短语或从句内同一功能的单位，不自动形成并列句。','Constituent coordination joins words, phrases or same-function units inside a clause; it does not automatically form coordinated clauses.',[['Mia','subject'],['bought','predicate'],['tea','object'],['and','conjunction'],['coffee.','object']],Q('tea and coffee 是什么？','What is tea and coffee?','并列宾语','Coordinated objects','两个并列句','Two coordinate clauses','A','它们共享主语和谓语。','They share one subject and predicate.')),
    A('判断边界时先框出连词两侧的最大平行单位，再分析其内部成分。','To identify the boundary, bracket the largest parallel units on both sides before analysing their interiors.',[['She wants to sing','coordinand','并列谓语结构一','First predicate coordinate'],['and','conjunction'],['to dance.','coordinand','并列谓语结构二','Second predicate coordinate']],Q('and 最直接连接什么？','What does and most directly join?','to sing 与 to dance','to sing and to dance','She 与 dance','She and dance','A','两侧是不定式并列项。','The two infinitive phrases are coordinates.'))

@@ -46,7 +46,7 @@ function uiText(english) {
       ['basic-patterns', 'Basic Sentence Patterns', 'Five patterns, existential clauses and transformations', '16 lessons', true],
       ['predicate-system', 'Predicate System', 'Agreement, tense, voice, auxiliaries and modals', '20 lessons', true],
       ['nonfinite-system', 'Non-finite Structures', 'Infinitives, gerunds and participles', '19 lessons', true],
-      ['special-structures', 'Special Structures', 'Questions, inversion, emphasis, ellipsis and imperatives', '27 lessons', true]
+      ['special-structures', 'Special Structures', 'Questions, inversion, emphasis, ellipsis and imperatives', '28 lessons', true]
     ],
     clauses: [
       ['coordination', 'Coordination', 'Coordinators, punctuation, logic and parallel clauses', '22 lessons', true],
@@ -71,7 +71,7 @@ function uiText(english) {
       ['basic-patterns', '基本句型', '五大句型、存在句与结构转换', '16 节 · 已开放', true],
       ['predicate-system', '谓语系统', '主谓一致、时态、语态、助动词与情态动词', '20 节 · 已开放', true],
       ['nonfinite-system', '非谓语结构', '不定式、动名词和分词', '19 节 · 已开放', true],
-      ['special-structures', '特殊句式', '疑问、倒装、强调、省略与祈使句', '27 节 · 已开放', true]
+      ['special-structures', '特殊句式', '疑问、倒装、强调、省略与祈使句', '28 节 · 已开放', true]
     ],
     clauses: [
       ['coordination', '并列句', '连接词、标点、逻辑关系与平行分句', '22 节 · 已开放', true],
