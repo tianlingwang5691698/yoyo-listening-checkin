@@ -1,5 +1,6 @@
 const pick = (english, zh, en) => english ? en : zh;
 const INCLUDE_RULE_COVERAGE = typeof GRAMMAR_RUNTIME === 'undefined' || !GRAMMAR_RUNTIME;
+const BUILD_TARGET = typeof GRAMMAR_TARGET === 'undefined' ? 'all' : GRAMMAR_TARGET;
 const part = (english, text, role, zh, en) => ({ text, role, label: pick(english, zh, en) });
 const example = (english, parts, mode = '', zhNote = '', enNote = '') => ({
   text: parts.map((item) => item[0]).join(' '),
@@ -20,13 +21,19 @@ const question = (english, prompt, a, b, answer, zhWhy, enWhy) => ({
   wrong: pick(english, `再看规则：${zhWhy}`, `Check the rule: ${enWhy}`)
 });
 const RULE_COVERAGE = INCLUDE_RULE_COVERAGE ? {
+  'adjective-essence': [[[0], [0]], [[1], [1]], [[2], [2]]],
   'adjective-jobs': [[[0, 1, 2], [0, 1, 2]], [[0, 1, 2], [0, 1, 2]]],
   'adjective-position': [[[0], [0]], [[1], [1]], [[2], [2]]],
+  'adjective-restrictions': [[[0], [0]], [[1], [1]], [[2], [2]]],
+  'adjective-complements': [[[0], [0]], [[1], [1]], [[2], [2]]],
   'adjective-degree': [[[0, 2], [0, 2]], [[1], [1]]],
   'adjective-comparative-form': [[[0], [4]], [[3], [3]], [[1], [0]], [[2], [1]], [[4], [2]]],
   'adjective-comparison': [[[0], [0]], [[1], [1]], [[2], [2]], [[3], [3]]],
+  'comparative-modifiers': [[[0], [0]], [[1], [1]], [[2], [2]], [[3], [3]]],
   'adjective-superlative': [[[0, 1, 2], [0]], [[0, 1, 2], [1]], [[0, 1, 2], [0]], [[2], [2]]],
+  'comparison-boundaries': [[[0], [0]], [[1], [1]], [[2], [2]], [[3], [3]]],
   'participle-adjectives': [[[0, 2], [0]], [[1, 2], [1, 2]], [[0, 1, 2], [0, 1, 2]]],
+  'compound-adjectives': [[[0], [0]], [[1], [1]], [[2], [2]]],
   'adjective-order': [[[0, 1, 2, 3], [0, 1, 2, 3]], [[0, 1, 2, 3], [0, 1, 2, 3]]],
   'adjective-nominal': [[[0], [0]], [[1], [1]], [[2], [2]]],
   'adverb-jobs': [[[0], [0]], [[1], [1]], [[3], [3]], [[2], [2]]],
@@ -53,9 +60,10 @@ function lesson(english, id, zhTitle, enTitle, zhMeta, enMeta, examples, rules, 
   };
 }
 function groupCourse(english, lessons, zhTitle, enTitle, coreCount, sectionDefs) {
+  const advancedIds = Array.isArray(coreCount) ? coreCount : null;
   const course = lessons.map((item, index) => Object.assign({}, item, {
     no: String(index + 1).padStart(2, '0'),
-    level: index < coreCount ? 'core' : 'advanced'
+    level: advancedIds ? (advancedIds.includes(item.id) ? 'advanced' : 'core') : (index < coreCount ? 'core' : 'advanced')
   }));
   const sections = (sectionDefs || []).map((item) => ({
     id: item[0],
@@ -77,8 +85,8 @@ function groupCourse(english, lessons, zhTitle, enTitle, coreCount, sectionDefs)
     course,
     sections,
     groups: [
-      { id: 'core', title: pick(english, `核心必学 · ${coreCount} 节`, `Core · ${coreCount} essential lessons`), copy: pick(english, '所有学生必须掌握。', 'Complete these first.'), lessons: course.slice(0, coreCount) },
-      { id: 'advanced', title: pick(english, `进阶挑战 · ${course.length - coreCount} 节`, `Advanced · ${course.length - coreCount} challenge lessons`), copy: pick(english, '特殊结构与综合辨析。', 'Special structures and mixed practice.'), lessons: course.slice(coreCount) }
+      { id: 'core', title: pick(english, `核心必学 · ${course.filter(item => item.level === 'core').length} 节`, `Core · ${course.filter(item => item.level === 'core').length} essential lessons`), copy: pick(english, '所有学生必须掌握。', 'Complete these first.'), lessons: course.filter(item => item.level === 'core') },
+      { id: 'advanced', title: pick(english, `进阶挑战 · ${course.filter(item => item.level === 'advanced').length} 节`, `Advanced · ${course.filter(item => item.level === 'advanced').length} challenge lessons`), copy: pick(english, '特殊结构与综合辨析。', 'Special structures and mixed practice.'), lessons: course.filter(item => item.level === 'advanced') }
     ]
   };
 }
@@ -86,7 +94,20 @@ function groupCourse(english, lessons, zhTitle, enTitle, coreCount, sectionDefs)
 function buildAdjectiveCourse(english) {
   const e = (parts, mode = '', zh = '', en = '') => example(english, parts, mode, zh, en);
   const q = (...args) => question(english, ...args);
-  return groupCourse(english, [
+  const bundle = groupCourse(english, [
+    lesson(english, 'adjective-essence', '形容词的定义与本质', 'Definition and core of adjectives', '给人或事物添加性质与状态', 'Add qualities and states to people or things', [
+      e([['The', 'attribute', '限定词', 'Determiner'], ['red', 'attribute', '形容词作定语', 'Attributive adjective'], ['ball', 'subject', '主语中心词', 'Subject head'], ['rolled away.', 'predicate', '谓语动词', 'Predicate verb']], 'structure', 'red 给 ball 添加“红色”这一特征，帮助我们识别是哪一个球。', 'red adds the quality “red” to ball and helps identify it.'),
+      e([['The ball', 'subject', '主语', 'Subject'], ['is', 'predicate', '系动词', 'Linking verb'], ['red.', 'predicative', '形容词作表语', 'Adjective as subject complement']], 'structure', 'red 不再放在名词前，而是通过 is 说明 ball 处于什么性质或状态。', 'red follows is and describes the quality or state of the ball.'),
+      e([['They', 'subject', '主语', 'Subject'], ['painted', 'predicate', '谓语动词', 'Predicate verb'], ['the ball', 'object', '宾语', 'Object'], ['red.', 'objectComplement', '形容词作宾语补足语', 'Adjective as object complement']], 'structure', 'red 说明宾语 the ball 被刷成什么状态，和 ball 构成“球是红的”的关系。', 'red gives the resulting state of the ball: the ball is red.')
+    ], [
+      ['形容词的本质是给名词所指的人或事物添加性质、状态或类别特征。', 'An adjective adds a quality, state or classifying feature to what a noun refers to.'],
+      ['形容词既能放在名词短语中修饰名词，也能通过系动词说明主语。', 'An adjective can modify a noun inside a noun phrase or describe the subject through a linking verb.'],
+      ['形容词还可补充说明宾语形成的状态，此时作宾语补足语。', 'An adjective can also describe the resulting state of an object as an object complement.']
+    ], [
+      q(['red 在“the red ball”中说明什么？', 'What does red do in “the red ball”?'], 'It describes the ball.', 'It describes rolled.', 'A', 'red 给 ball 添加颜色特征。', 'red adds a color quality to ball.'),
+      q(['red 在“The ball is red.”中是什么成分？', 'What is red in “The ball is red”?'], 'a subject complement', 'an object', 'A', 'red 通过 is 说明主语 ball。', 'red describes the subject through is.'),
+      q(['red 在“They painted the ball red.”中说明谁？', 'What does red describe in “They painted the ball red”?'], 'the ball', 'They', 'A', 'red 说明宾语 ball 的结果状态。', 'red describes the resulting state of the object ball.')
+    ]),
     lesson(english, 'adjective-jobs', '形容词在句中做什么', 'What adjectives do', '定语 · 表语 · 宾语补足语', 'Attribute · complement · object complement', [
       e([['The', 'attribute', '限定词', 'Determiner'], ['kind', 'attribute', '前置定语', 'Attributive adjective'], ['teacher', 'subject', '主语', 'Subject'], ['helped', 'predicate', '谓语动词', 'Predicate verb'], ['us.', 'object', '宾语', 'Object']]),
       e([['The sky', 'subject', '主语', 'Subject'], ['looks', 'predicate', '系动词', 'Linking verb'], ['blue.', 'object', '形容词作表语', 'Adjective complement']]),
@@ -111,6 +132,32 @@ function buildAdjectiveCourse(english) {
       q('We saw a ___ bird.', 'small', 'smallly', 'A', '单个形容词 small 放在名词 bird 前。', 'small comes before the noun bird.'),
       q('Is there anything ___?', 'interesting', 'interestingly', 'A', '形容词修饰 anything 时放在其后。', 'An adjective follows anything.'),
       q('The people ___ must sign here.', 'present', 'presently', 'A', 'present 后置表示“在场的”。', 'postpositive present means “in attendance”.')
+    ]),
+    lesson(english, 'adjective-restrictions', '只作定语或只作表语的形容词', 'Attributive-only and predicative-only adjectives', '位置可能改变可用性或词义', 'Position can affect use and meaning', [
+      e([['The', 'attribute', '限定词', 'Determiner'], ['main', 'attribute', '只作定语的形容词', 'Attributive-only adjective'], ['reason', 'subject', '主语中心词', 'Subject head'], ['is cost.', 'predicate', '谓语部分', 'Predicate']], 'structure', 'main 用来限定“主要的原因”，通常只放在名词前，不说 the reason is main。', 'main classifies the reason and normally appears only before the noun.'),
+      e([['The child', 'subject', '主语', 'Subject'], ['is', 'predicate', '系动词', 'Linking verb'], ['asleep.', 'predicative', '只作表语的形容词', 'Predicative-only adjective']], 'structure', 'asleep 表示孩子处于睡着状态，通常放在系动词后，不直接放在名词前。', 'asleep describes the child’s state and normally follows a linking verb.'),
+      e([['The students', 'subject', '主语', 'Subject'], ['concerned', 'attribute', '后置定语：有关的', 'Postmodifier: involved'], ['looked', 'predicate', '系动词', 'Linking verb'], ['concerned.', 'predicative', '表语：担心的', 'Subject complement: worried']], 'structure', '前一个 concerned 后置表示“有关的学生”；后一个作表语表示“感到担心”。', 'The postpositive concerned means “involved”; the complement concerned means “worried”.')
+    ], [
+      ['main、mere、former 等通常只作前置定语。', 'main, mere and former are normally attributive only.'],
+      ['asleep、afraid、alive 等通常作表语；修饰名词时常换用 sleeping、frightened、living 等。', 'asleep, afraid and alive are normally predicative; noun modification often uses sleeping, frightened or living.'],
+      ['少数形容词因位置不同而改变意义，必须结合它修饰谁和所在位置判断。', 'Some adjectives change meaning with position; identify what they describe and where they occur.']
+    ], [
+      q(['选择自然表达。', 'Choose the natural expression.'], 'the main problem', 'the problem is main', 'A', 'main 通常只作前置定语。', 'main is normally attributive only.'),
+      q(['选择自然表达。', 'Choose the natural expression.'], 'The baby is asleep.', 'the asleep baby', 'A', 'asleep 通常放在系动词后作表语。', 'asleep normally follows a linking verb.'),
+      q(['“the people concerned”通常表示什么？', 'What does “the people concerned” normally mean?'], 'the people involved', 'the worried people only', 'A', 'concerned 后置时常表示“有关的”。', 'Postpositive concerned commonly means “involved”.')
+    ]),
+    lesson(english, 'adjective-complements', '形容词后面怎样补全意义', 'Complements after adjectives', '介词短语、不定式与从句', 'Prepositional phrase · infinitive · clause', [
+      e([['She', 'subject', '主语', 'Subject'], ['is', 'predicate', '系动词', 'Linking verb'], ['afraid', 'predicative', '形容词作表语', 'Adjective as subject complement'], ['of dogs.', 'complement', '介词短语补足形容词', 'Prepositional complement of adjective']], 'structure', 'afraid 只说“害怕”还没说明对象；of dogs 补出害怕什么。', 'afraid gives the feeling; of dogs completes it by naming the target.'),
+      e([['We', 'subject', '主语', 'Subject'], ['are', 'predicate', '系动词', 'Linking verb'], ['ready', 'predicative', '形容词作表语', 'Adjective as subject complement'], ['to leave.', 'complement', '不定式补足形容词', 'Infinitive complement of adjective']], 'structure', 'ready 表示准备状态，to leave 补充说明准备做什么。', 'ready gives the state, and to leave says what the preparation is for.'),
+      e([['I', 'subject', '主语', 'Subject'], ['am', 'predicate', '系动词', 'Linking verb'], ['sure', 'predicative', '形容词作表语', 'Adjective as subject complement'], ['that he is right.', 'complement', '从句补足形容词', 'Clause complement of adjective']], 'structure', 'sure 表示确信，that 从句补出确信的具体内容。', 'sure expresses certainty, and the that-clause supplies its content.')
+    ], [
+      ['有些形容词用介词短语补出对象或范围，介词由形容词的意义关系决定。', 'Some adjectives take a prepositional phrase to complete a target or domain relation.'],
+      ['ready、eager、likely 等可接不定式，补充动作内容。', 'ready, eager and likely can take an infinitive to supply an action.'],
+      ['sure、glad、aware 等可接从句，补充判断、感受或认知的内容。', 'sure, glad and aware can take a clause to supply the content of a judgment, feeling or awareness.']
+    ], [
+      q('She is afraid ___ spiders.', 'of', 'to', 'A', 'of spiders 补出 afraid 的对象。', 'of spiders supplies the target of afraid.'),
+      q('They are ready ___ start.', 'to', 'of', 'A', 'ready 后用不定式补充要做的动作。', 'ready takes an infinitive for the intended action.'),
+      q('I am sure ___ she knows.', 'that', 'than', 'A', 'that 从句补充 sure 的内容。', 'The that-clause completes the content of sure.')
     ]),
     lesson(english, 'adjective-degree', '形容词有程度差别吗', 'Can adjectives vary in degree?', '可分级与不可分级形容词', 'Gradable and non-gradable adjectives', [
       e([['The room', 'subject', '主语', 'Subject'], ['is', 'predicate', '系动词', 'Linking verb'], ['very', 'adverbial', '程度状语', 'Degree adverbial'], ['cold.', 'object', '可分级形容词作表语', 'Gradable adjective complement']]),
@@ -159,6 +206,22 @@ function buildAdjectiveCourse(english) {
       q('This plan is ___ expensive than that one.', 'less', 'least', 'A', 'less...than 表示程度较低。', 'less...than expresses a lower degree.'),
       q('Choose the logical comparison.', 'My bag is heavier than yours.', 'My bag is heavier than you.', 'A', 'bag 应与 bag 比较，yours 相当于 your bag。', 'A bag must be compared with a bag; yours means your bag.')
     ]),
+    lesson(english, 'comparative-modifiers', '比较差距怎样说清楚', 'Expressing the size of a difference', 'much、a little、具体数量与渐变', 'much · a little · exact amount · gradual change', [
+      e([['This room', 'subject', '主语', 'Subject'], ['is', 'predicate', '系动词', 'Linking verb'], ['much', 'adverbial', '比较级程度修饰语', 'Comparative degree modifier'], ['larger', 'predicative', '形容词比较级作表语', 'Comparative subject complement'], ['than mine.', 'adverbial', '比较对象', 'Comparison phrase']], 'structure', 'larger 说明更大，much 再说明“大得多”，不能用 very larger。', 'larger marks the comparison, and much shows that the difference is large.'),
+      e([['This route', 'subject', '主语', 'Subject'], ['is', 'predicate', '系动词', 'Linking verb'], ['a little', 'adverbial', '比较级程度修饰语', 'Comparative degree modifier'], ['shorter.', 'predicative', '形容词比较级作表语', 'Comparative subject complement']], 'structure', 'a little 把 shorter 的差距限定为“小一点”。', 'a little limits the difference expressed by shorter to a small amount.'),
+      e([['Tom', 'subject', '主语', 'Subject'], ['is', 'predicate', '系动词', 'Linking verb'], ['five centimetres', 'adverbial', '具体差值', 'Exact difference'], ['taller', 'predicative', '形容词比较级作表语', 'Comparative subject complement'], ['than Ben.', 'adverbial', '比较对象', 'Comparison phrase']], 'structure', 'five centimetres 放在 taller 前，直接说明两人的具体身高差。', 'five centimetres before taller gives the exact difference.'),
+      e([['The days', 'subject', '主语', 'Subject'], ['are getting', 'predicate', '系动词结构', 'Linking-verb phrase'], ['longer and longer.', 'predicative', '重复比较级作表语', 'Repeated comparative as complement']], 'structure', 'longer and longer 不是比较两个固定对象，而是说明同一事物持续变化。', 'longer and longer shows a continuing change in the same thing.')
+    ], [
+      ['much、far、a lot 可强调比较差距大；不用 very 直接修饰比较级。', 'much, far and a lot mark a large difference; very does not directly modify a comparative.'],
+      ['a little、a bit、slightly 表示比较差距小。', 'a little, a bit and slightly mark a small difference.'],
+      ['具体数量可放在比较级前，直接说明差值。', 'An exact measure can precede a comparative to state the difference.'],
+      ['比较级 + and + 比较级表示程度持续变化。', 'comparative + and + comparative expresses continuing change.']
+    ], [
+      q('This bag is ___ heavier than that one.', 'much', 'very', 'A', 'much 可以修饰比较级 heavier。', 'much can modify the comparative heavier.'),
+      q('The second task is ___ easier.', 'a little', 'the least', 'A', 'a little 表示差距较小。', 'a little marks a small difference.'),
+      q('Amy is ten centimetres ___ than Mia.', 'taller', 'tallest', 'A', '具体差值后接比较级。', 'An exact difference is followed by a comparative.'),
+      q('The weather is getting ___.', 'colder and colder', 'coldest and coldest', 'A', '重复比较级表示持续变化。', 'Repeated comparatives express continuing change.')
+    ]),
     lesson(english, 'adjective-superlative', '怎样在三者以上选最高', 'Choosing the highest degree', '最高级 · 范围 · 序数词', 'Superlative · range · ordinal', [
       e([['Mia', 'subject', '主语', 'Subject'], ['is', 'predicate', '系动词', 'Linking verb'], ['the tallest', 'object', '形容词最高级作表语', 'Superlative complement'], ['in her class.', 'adverbial', '比较范围', 'Comparison range']]),
       e([['This', 'subject', '主语', 'Subject'], ['is', 'predicate', '系动词', 'Linking verb'], ['the most exciting game', 'object', '最高级修饰表语中心词', 'Superlative modifying complement'], ['of the three.', 'adverbial', '比较范围', 'Comparison range']]),
@@ -173,6 +236,22 @@ function buildAdjectiveCourse(english) {
       q('This is the best ___ the four plans.', 'of', 'than', 'A', '有限个体范围通常用 of。', 'Use of for a defined set.'),
       q('It is the ___ largest city.', 'third', 'three', 'A', '排名使用序数词 third。', 'A ranking uses the ordinal third.')
     ]),
+    lesson(english, 'comparison-boundaries', '比较范围与特殊结构', 'Comparison ranges and special patterns', '两者选一、排除自身、倍数与最高级转述', 'Two-item choice · self-exclusion · multiples · paraphrase', [
+      e([['Leo', 'subject', '主语', 'Subject'], ['is', 'predicate', '系动词', 'Linking verb'], ['the taller', 'predicative', 'the + 比较级作表语', 'the + comparative as complement'], ['of the two.', 'adverbial', '两者范围', 'Two-item range']], 'structure', '范围只有两人，用比较级 taller；the 表示两者中确定的较高者。', 'With only two people, taller is comparative; the identifies the taller one.'),
+      e([['Shanghai', 'subject', '主语', 'Subject'], ['is', 'predicate', '系动词', 'Linking verb'], ['larger', 'predicative', '形容词比较级作表语', 'Comparative subject complement'], ['than any other city in China.', 'adverbial', '排除自身的比较范围', 'Comparison range excluding itself']], 'structure', 'Shanghai 属于中国城市，比较时用 any other 排除 Shanghai 自身。', 'Shanghai belongs to the set, so any other excludes Shanghai itself.'),
+      e([['This rope', 'subject', '主语', 'Subject'], ['is', 'predicate', '系动词', 'Linking verb'], ['twice as long', 'predicative', '倍数同级比较作表语', 'Multiple equality comparison'], ['as that one.', 'adverbial', '比较对象', 'Comparison phrase']], 'structure', 'twice 放在 as...as 前，表示长度是另一条绳子的两倍。', 'twice before as...as makes the length two times that of the other rope.'),
+      e([['No other runner', 'subject', '主语', 'Subject'], ['is', 'predicate', '系动词', 'Linking verb'], ['faster', 'predicative', '形容词比较级作表语', 'Comparative subject complement'], ['than Mia.', 'adverbial', '比较对象', 'Comparison phrase']], 'structure', '“没有其他人更快”与“Mia 最快”表达同一范围内的最高程度。', '“No other runner is faster” paraphrases Mia as the fastest in the set.')
+    ], [
+      ['两者中选较高者用 the + 比较级 + of the two。', 'Use the + comparative + of the two to choose the higher of two.'],
+      ['同一范围内比较时要排除主语自身，常用 any other + 单数名词。', 'In the same set, exclude the subject itself with any other + singular noun.'],
+      ['倍数 + as + 原级 + as 表示倍数关系。', 'multiple + as + base adjective + as expresses a multiple relation.'],
+      ['最高级可用 no other...comparative than 或 comparative than any other...转述。', 'A superlative can be paraphrased with no other...comparative than or comparative than any other.']
+    ], [
+      q('Of the two sisters, Amy is ___.', 'the taller', 'the tallest', 'A', '两者范围用 the + 比较级。', 'Use the + comparative for a two-item set.'),
+      q('Beijing is larger than ___ city in China.', 'any other', 'any', 'A', '同一范围比较要排除 Beijing 自身。', 'Exclude Beijing itself with any other.'),
+      q('This table is twice as ___ as that one.', 'wide', 'wider', 'A', 'as...as 中使用原级 wide。', 'Use the base adjective inside as...as.'),
+      q('No other student is ___ than Leo.', 'taller', 'tallest', 'A', 'no other 后用比较级转述最高级意义。', 'Use a comparative after no other for a superlative meaning.')
+    ]),
     lesson(english, 'participle-adjectives', '-ing 与 -ed 形容词', '-ing and -ed adjectives', '引起感受与产生感受', 'Cause and experience of feelings', [
       e([['The lesson', 'subject', '主语', 'Subject'], ['is', 'predicate', '系动词', 'Linking verb'], ['interesting.', 'object', '-ing 形容词作表语', '-ing adjective complement']]),
       e([['The students', 'subject', '主语', 'Subject'], ['are', 'predicate', '系动词', 'Linking verb'], ['interested', 'object', '-ed 形容词作表语', '-ed adjective complement'], ['in the lesson.', 'adverbial', '对象状语', 'Target phrase']]),
@@ -185,6 +264,19 @@ function buildAdjectiveCourse(english) {
       q('The film was ___.', 'exciting', 'excited', 'A', '电影带来兴奋感，用 exciting。', 'The film causes excitement, so use exciting.'),
       q('We were ___ by the result.', 'surprised', 'surprising', 'A', 'we 是感受者，用 surprised。', 'We experience the feeling, so use surprised.'),
       q('The ___ audience cheered loudly.', 'excited', 'exciting', 'A', '观众感到兴奋，用 excited。', 'The audience experiences excitement.')
+    ]),
+    lesson(english, 'compound-adjectives', '复合形容词怎样构成', 'Forming compound adjectives', '连字符、单位单数与整体修饰', 'Hyphens · singular units · one modifier', [
+      e([['She', 'subject', '主语', 'Subject'], ['has', 'predicate', '谓语动词', 'Predicate verb'], ['a ten-year-old son.', 'object', '含复合形容词的宾语', 'Object with compound adjective']], 'structure', 'ten-year-old 整体放在 son 前；year 保持单数，并用连字符连成一个修饰单位。', 'ten-year-old is one modifier before son; year stays singular and hyphens join the unit.'),
+      e([['This', 'subject', '主语', 'Subject'], ['is', 'predicate', '系动词', 'Linking verb'], ['a well-known story.', 'predicative', '含复合形容词的表语', 'Complement with compound adjective']], 'structure', 'well-known 由副词和过去分词构成，整体说明 story“广为人知”。', 'well-known combines an adverb and participle into one quality describing story.'),
+      e([['We', 'subject', '主语', 'Subject'], ['took', 'predicate', '谓语动词', 'Predicate verb'], ['a two-hour walk.', 'object', '含复合形容词的宾语', 'Object with compound adjective']], 'structure', 'two-hour 在名词前整体表示“两小时的”，hour 不加复数。', 'two-hour acts as one pre-noun modifier meaning “lasting two hours”; hour is singular.')
+    ], [
+      ['多个词在名词前共同表达一个特征时，常用连字符组成复合形容词。', 'Words that jointly express one pre-noun quality are often hyphenated as a compound adjective.'],
+      ['“数词 + 单位名词 + 形容词”作复合定语时，单位名词通常用单数。', 'In number + unit + adjective compounds, the unit noun is normally singular.'],
+      ['“数词 + 单位名词”作前置复合定语时，单位名词同样保持单数。', 'A number + unit compound before a noun likewise keeps the unit singular.']
+    ], [
+      q('She has a ___ daughter.', 'six-year-old', 'six-years-old', 'A', '复合定语中的 year 用单数。', 'The unit year is singular inside the compound.'),
+      q('Choose the adjective before story.', 'well-known', 'well knownly', 'A', 'well-known 整体作前置复合形容词。', 'well-known acts as one compound adjective.'),
+      q('We had a ___ meeting.', 'three-hour', 'three-hours', 'A', '单位名词 hour 在复合定语中用单数。', 'hour stays singular in the compound modifier.')
     ]),
     lesson(english, 'adjective-order', '多个形容词怎样排序', 'Ordering multiple adjectives', '限定、评价、大小、年龄、颜色、来源、材料、用途', 'Determiner · opinion · size · age · color · origin · material · purpose', [
       e([['She', 'subject', '主语', 'Subject'], ['bought', 'predicate', '谓语动词', 'Predicate verb'], ['a lovely small old house.', 'object', '宾语：评价 + 大小 + 年龄 + 名词', 'Object: opinion + size + age + noun']]),
@@ -213,11 +305,80 @@ function buildAdjectiveCourse(english) {
       q('The river is 200 metres ___.', 'wide', 'widely', 'A', '数量短语后用形容词 wide 表尺寸。', 'Use the adjective wide after a measurement.'),
       q('The harder you work, the ___ you become.', 'stronger', 'strongest', 'A', '联动比较结构两部分都用比较级。', 'Both halves of the correlative structure use comparatives.')
     ])
-  ], '形容词', 'Adjectives', 7, [
-    ['adjective-function', '作用与位置', 'Jobs and position', '先判断形容词修饰谁、在句中承担什么任务。', 'Identify what an adjective describes and the job it performs in the sentence.', ['adjective-jobs', 'adjective-position']],
-    ['adjective-comparison', '程度与比较', 'Degree and comparison', '从可分级性出发，掌握比较级、最高级的形式和结构。', 'Start with gradability, then master comparative and superlative forms and structures.', ['adjective-degree', 'adjective-comparative-form', 'adjective-comparison', 'adjective-superlative']],
-    ['adjective-advanced-forms', '形式辨析与特殊结构', 'Form choices and special structures', '处理分词形容词、多个形容词排序及名词化等特殊用法。', 'Handle participial adjectives, adjective order, nominal uses and other special structures.', ['participle-adjectives', 'adjective-order', 'adjective-nominal']]
+  ], '形容词', 'Adjectives', ['adjective-restrictions','comparison-boundaries','compound-adjectives','adjective-order','adjective-nominal'], [
+    ['adjective-foundation', '定义、本质与句中作用', 'Definition, core and sentence roles', '先看形容词给谁添加什么性质，再判断定语、表语或宾语补足语。', 'First identify what quality is added to what, then identify its sentence role.', ['adjective-essence','adjective-jobs']],
+    ['adjective-position-function', '位置、限制与后接成分', 'Position, restrictions and complements', '掌握前置、后置、表语限制以及形容词怎样补全意义。', 'Master prepositive, postpositive and predicative restrictions and adjective complementation.', ['adjective-position','adjective-restrictions','adjective-complements']],
+    ['adjective-degree-form', '程度与比较形式', 'Degree and comparison forms', '先判断能否分级，再选择比较级和最高级形式。', 'Decide gradability first, then choose comparative and superlative forms.', ['adjective-degree','adjective-comparative-form']],
+    ['adjective-comparison-system', '比较关系与范围', 'Comparison relations and ranges', '讲清同级、比较级、最高级、差距、倍数和比较范围。', 'Handle equality, comparatives, superlatives, differences, multiples and ranges.', ['adjective-comparison','comparative-modifiers','adjective-superlative','comparison-boundaries']],
+    ['adjective-formation-order', '意义形成与排列', 'Meaning, formation and order', '处理分词形容词、复合形容词和多个形容词的自然顺序。', 'Handle participial adjectives, compounds and natural adjective order.', ['participle-adjectives','compound-adjectives','adjective-order']],
+    ['adjective-special', '特殊结构', 'Special structures', '处理 the + 形容词、尺寸表达和联动比较。', 'Handle the + adjective, measurement expressions and linked comparison.', ['adjective-nominal']]
   ]);
+  const explanations = {
+    'adjective-jobs': [
+      ['kind 放在 teacher 前，直接说明老师具有“友善”这一特点。','kind precedes teacher and directly adds the quality of kindness.'],
+      ['blue 通过系动词 looks 说明主语 sky 的状态，是表语。','blue describes the sky through looks and is a subject complement.'],
+      ['happy 说明宾语 her 受到消息影响后的状态，是宾语补足语。','happy describes the resulting state of her and is an object complement.']
+    ],
+    'adjective-position': [
+      ['beautiful 放在 dress 前作定语，先给出特征，再出现中心名词。','beautiful comes before dress as an attribute, adding the quality before the head noun.'], null, null
+    ],
+    'adjective-degree': [
+      ['cold 有不同程度，very 把寒冷程度提高。','cold allows degrees, and very intensifies it.'],
+      ['correct 表示完整的正确状态，absolutely 用来强调这种绝对判断。','correct presents an absolute state, and absolutely emphasizes it.'],
+      ['difficult 可以有程度差别，slightly 表示只难一点。','difficult is gradable, and slightly marks a small degree.']
+    ],
+    'adjective-comparative-form': [
+      ['long 是普通单音节词，比较级直接加 -er 变为 longer。','long is a regular one-syllable adjective and adds -er.'],
+      ['happy 以辅音字母加 y 结尾，y 变 i 后加 -er。','happy ends in consonant + y, so y changes to i before -er.'],
+      ['useful 较长，最高级用 the most useful，不在词尾加 -est。','useful is longer, so it uses the most rather than -est.'],
+      ['big 是重读辅元辅结构，双写 g 后加 -er。','big has a stressed CVC ending, so g doubles before -er.'],
+      ['good 的比较级是不规则形式 better。','good has the irregular comparative better.']
+    ],
+    'adjective-comparison': [
+      ['taller 与 than 连用，表示 Leo 的身高超过 Max。','taller with than shows that Leo exceeds Max in height.'],
+      ['as heavy as 把两个箱子的重量放在同一程度上。','as heavy as places the two boxes at the same degree of weight.'],
+      ['less dangerous than 表示蓝色路线的危险程度更低。','less dangerous than marks the blue route as lower in danger.'],
+      ['yours 代替 your bag，让 bag 与 bag 比较，避免拿 bag 与人比较。','yours replaces your bag, keeping the compared items equivalent.']
+    ],
+    'adjective-superlative': [
+      ['the tallest 在 her class 的范围内选出身高最高者。','the tallest selects the highest degree within her class.'],
+      ['of the three 明确三场比赛的范围，因此用最高级 the most exciting。','of the three defines a three-item set, so the superlative is used.'],
+      ['the second longest 表示长度排名第二，不是普通的“第二条长河”。','the second longest gives the second-highest rank in length.']
+    ],
+    'participle-adjectives': [
+      ['lesson 引起兴趣，所以用 interesting 描述“令人感兴趣”。','The lesson causes interest, so interesting describes it.'],
+      ['students 是感受者，所以用 interested；in the lesson 补出兴趣对象。','The students experience the feeling, so interested is used; in the lesson gives its target.'],
+      ['noise 引起恐惧用 frightening；child 感到恐惧用 frightened。','The noise causes fear, so it is frightening; the child feels it, so is frightened.']
+    ],
+    'adjective-order': [
+      ['lovely 是评价，small 是大小，old 是年龄，按由主观看法到客观特征排列。','lovely is opinion, small size and old age, ordered from evaluation toward inherent detail.'],
+      ['new 表年龄，black 表颜色，Italian 表来源，来源更靠近 coat。','new gives age, black color and Italian origin, with origin closer to coat.'],
+      ['beautiful 是评价，round 是形状，wooden 是材料，材料最靠近 table。','beautiful is opinion, round shape and wooden material, with material closest to table.'],
+      ['wooden 是材料，dining 是用途；用途直接限定 table 的类型，因此最靠近名词。','wooden gives material and dining purpose; purpose stays closest to table.']
+    ],
+    'adjective-nominal': [
+      ['the rich 和 the poor 分别指一类人，整体具有复数意义。','the rich and the poor each refer to a class of people and have plural meaning.'],
+      ['two metres 先给出具体尺寸，high 再说明这是高度。','two metres gives the measure, and high identifies the dimension as height.'], null
+    ]
+  };
+  const byId = Object.fromEntries(bundle.course.map(item => [item.id, item]));
+  byId['adjective-restrictions'].analyses[0].splice(3, 1,
+    { text: 'is', role: 'predicate', label: pick(english, '系动词', 'Linking verb') },
+    { text: 'cost.', role: 'predicative', label: pick(english, '名词作表语', 'Noun as subject complement') }
+  );
+  bundle.course.forEach(item => {
+    item.analyses.forEach(analysis => analysis.forEach(unit => {
+      if (unit.role === 'object' && /表语|complement/i.test(unit.label)) unit.role = 'predicative';
+      if (unit.role === 'attribute' && /宾语补足语|object complement/i.test(unit.label)) unit.role = 'objectComplement';
+    }));
+    item.exampleNotes.forEach((note, index) => {
+      if (note.visible) return;
+      const pair = explanations[item.id] && explanations[item.id][index];
+      if (!pair) throw new Error(`Missing adjective example explanation: ${item.id}[${index}]`);
+      item.exampleNotes[index] = { visible: true, mode: 'structure', title: pick(english, '例句说明', 'Example focus'), body: pick(english, pair[0], pair[1]), detail: '' };
+    });
+  });
+  return bundle;
 }
 
 function buildAdverbCourse(english) {
@@ -363,4 +524,6 @@ function buildAdverbCourse(english) {
   ]);
 }
 
-module.exports = { buildAdjectiveCourse, buildAdverbCourse };
+module.exports = BUILD_TARGET === 'adjective' ? { buildAdjectiveCourse }
+  : BUILD_TARGET === 'adverb' ? { buildAdverbCourse }
+    : { buildAdjectiveCourse, buildAdverbCourse };

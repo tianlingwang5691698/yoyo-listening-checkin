@@ -8,7 +8,7 @@ function uiText(english) {
     ['numeral', 'Numerals', 'Quantity · Order · Proportion · Labels', 12],
     ['article', 'Articles', 'Reference · a/an · the · Zero article', 15],
     ['verb', 'Verbs', 'Jobs · Forms · Tense · Voice', 36],
-    ['adjective', 'Adjectives', 'Position · Comparison · Order', 9],
+    ['adjective', 'Adjectives', 'Core meaning · Complements · Comparison', 15],
     ['adverb', 'Adverbs', 'Types · Position · Comparison', 8],
     ['preposition', 'Prepositions', 'Definition · Relations · Syntax', 25],
     ['conjunction', 'Conjunctions', 'Coordination · Subordination', 8],
@@ -19,7 +19,7 @@ function uiText(english) {
     ['numeral', '数词', '数量 · 顺序 · 比例 · 编号', 12],
     ['article', '冠词', '指称本质 · a/an · the · 零冠词', 15],
     ['verb', '动词', '作用 · 形式 · 时态 · 语态', 36],
-    ['adjective', '形容词', '位置 · 比较级 · 顺序', 9],
+    ['adjective', '形容词', '本质 · 补足关系 · 比较系统', 15],
     ['adverb', '副词', '种类 · 位置 · 比较级', 8],
     ['preposition', '介词', '定义 · 关系 · 句法', 25],
     ['conjunction', '连词', '并列 · 从属 · 逻辑', 8],
@@ -129,7 +129,7 @@ function loaderFor(topic) {
   if (topic === 'pronoun') return 'pronoun';
   if (topic === 'word-formation') return 'word-formation';
   if (topic === 'verb' || topic === 'numeral' || topic === 'article') return topic;
-  if (topic === 'adjective' || topic === 'adverb') return 'modifier';
+  if (topic === 'adjective' || topic === 'adverb') return topic;
   if (topic === 'sentence-elements') return 'sentence-elements';
   if (topic === 'basic-patterns') return 'basic-patterns';
   if (topic === 'predicate-system') return 'predicate-system';

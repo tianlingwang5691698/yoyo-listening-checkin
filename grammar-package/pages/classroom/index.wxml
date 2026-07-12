@@ -5,7 +5,8 @@
   <grammar-verb-loader wx:if="{{loaderKind === 'verb'}}" language="{{language}}" bindloaded="onCourseLoaded" bindloaderror="onCourseLoadError" />
   <grammar-numeral-loader wx:if="{{loaderKind === 'numeral'}}" language="{{language}}" bindloaded="onCourseLoaded" bindloaderror="onCourseLoadError" />
   <grammar-article-loader wx:if="{{loaderKind === 'article'}}" language="{{language}}" bindloaded="onCourseLoaded" bindloaderror="onCourseLoadError" />
-  <grammar-modifier-loader wx:if="{{loaderKind === 'modifier'}}" topic="{{selectedTopic}}" language="{{language}}" bindloaded="onCourseLoaded" bindloaderror="onCourseLoadError" />
+  <grammar-adjective-loader wx:if="{{loaderKind === 'adjective'}}" topic="{{selectedTopic}}" language="{{language}}" bindloaded="onCourseLoaded" bindloaderror="onCourseLoadError" />
+  <grammar-adverb-loader wx:if="{{loaderKind === 'adverb'}}" topic="{{selectedTopic}}" language="{{language}}" bindloaded="onCourseLoaded" bindloaderror="onCourseLoadError" />
   <grammar-relation-loader wx:if="{{loaderKind === 'relation'}}" topic="{{selectedTopic}}" language="{{language}}" bindloaded="onCourseLoaded" bindloaderror="onCourseLoadError" />
   <grammar-sentence-elements-loader wx:if="{{loaderKind === 'sentence-elements'}}" topic="{{selectedTopic}}" language="{{language}}" bindloaded="onCourseLoaded" bindloaderror="onCourseLoadError" />
   <grammar-basic-patterns-loader wx:if="{{loaderKind === 'basic-patterns'}}" topic="{{selectedTopic}}" language="{{language}}" bindloaded="onCourseLoaded" bindloaderror="onCourseLoadError" />
