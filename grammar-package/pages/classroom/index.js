@@ -39,7 +39,7 @@ function uiText(english) {
   const domainMaps = english ? {
     morphology: [
       ['parts-of-speech', '10 Parts of Speech', 'Nouns, pronouns, verbs and the other word classes', '10 classes', true],
-      ['word-formation', 'Word Formation', 'Prefixes, suffixes, conversion and compounds', 'Planned', false]
+      ['word-formation', 'Word Formation', 'Prefixes, suffixes, conversion and compounds', '18 lessons', true]
     ],
     syntax: [
       ['sentence-elements', 'Sentence Elements', 'Subject, predicate, object, complement, attribute and adverbial', 'Planned', false],
@@ -64,7 +64,7 @@ function uiText(english) {
   } : {
     morphology: [
       ['parts-of-speech', '十大词性', '名词、代词、动词及其他词类的作用与变化', '10 类 · 已开放', true],
-      ['word-formation', '构词法', '前缀、后缀、转化与合成词', '规划中', false]
+      ['word-formation', '构词法', '前缀、后缀、转化与合成词', '18 节 · 已开放', true]
     ],
     syntax: [
       ['sentence-elements', '句子成分', '主语、谓语、宾语、表语、定语、状语与补语', '规划中', false],
@@ -125,6 +125,7 @@ function uiText(english) {
 
 function loaderFor(topic) {
   if (topic === 'noun' || topic === 'pronoun') return 'word';
+  if (topic === 'word-formation') return 'word-formation';
   if (topic === 'third-person') return 'third-person';
   if (topic === 'verb' || topic === 'numeral' || topic === 'article') return 'vna';
   if (topic === 'adjective' || topic === 'adverb') return 'modifier';
@@ -224,6 +225,7 @@ Page({
       wx.pageScrollTo({ scrollTop: 0, duration: 0 });
       return;
     }
+    if (item === 'word-formation') return this.loadCourse('word-formation');
     wx.showToast({ title: this.data.ui.planned, icon: 'none', duration: 2200 });
   },
 
@@ -358,6 +360,7 @@ Page({
 
   backFromCourseMap() {
     if (this.data.selectedTopic === 'third-person') return this.loadCourse('verb');
+    if (this.data.selectedTopic === 'word-formation') return this.backToDomainMap();
     this.backToDirectory();
   },
 

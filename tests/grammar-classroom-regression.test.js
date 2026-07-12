@@ -12,6 +12,7 @@ const sourceVnaCourses = require('../data/grammar-classroom/course-sources/verb-
 const sourceModifierCourses = require('../data/grammar-classroom/course-sources/adjective-adverb-courses');
 const sourceRelationCourses = require('../data/grammar-classroom/course-sources/preposition-conjunction-interjection-courses');
 const sourceThirdPersonCourse = require('../data/grammar-classroom/course-sources/third-person-course');
+const sourceWordFormationCourses = require('../data/grammar-classroom/course-sources/word-formation-courses');
 const allBuilders = Object.assign({}, sourceWordCourses, sourceVnaCourses, sourceModifierCourses, sourceRelationCourses);
 const withoutCoverage = (value) => JSON.parse(JSON.stringify(value, (key, item) => key === 'ruleCoverage' ? undefined : item));
 
@@ -83,7 +84,7 @@ test('语法课堂首屏不构建完整课程，点击后按专题加载', () =>
 });
 
 test('课程可读源文件与打包运行时文件保持一致', () => {
-  const files = ['word-courses', 'verb-numeral-article-courses', 'adjective-adverb-courses', 'preposition-conjunction-interjection-courses', 'third-person-course'];
+  const files = ['word-courses', 'word-formation-courses', 'verb-numeral-article-courses', 'adjective-adverb-courses', 'preposition-conjunction-interjection-courses', 'third-person-course'];
   files.forEach((file) => {
     const source = require(`../data/grammar-classroom/course-sources/${file}`);
     const runtime = require(`../grammar-package/domain/grammar-classroom/${file}`);
@@ -179,7 +180,7 @@ test('语法课堂按体系分层并逐层返回', () => {
   assert.deepEqual(Array.from(page.data.ui.domains, (item) => item.id), ['morphology', 'syntax', 'clauses', 'discourse']);
   assert.deepEqual(Array.from(context.englishUi.domains, (item) => item.id), ['morphology', 'syntax', 'clauses', 'discourse']);
   assert.ok(page.data.ui.domainMaps.morphology.some((item) => item.id === 'parts-of-speech' && item.ready));
-  assert.ok(page.data.ui.domainMaps.morphology.some((item) => item.id === 'word-formation'));
+  assert.ok(page.data.ui.domainMaps.morphology.some((item) => item.id === 'word-formation' && item.ready && /18/.test(item.status)));
   assert.match(source, /handleTopBack\(\)[\s\S]*screen === 'lesson'[\s\S]*screen === 'course-map'[\s\S]*screen === 'directory'[\s\S]*screen === 'domain-map'/);
   const wxml = fs.readFileSync(path.join(__dirname, '../grammar-package/pages/classroom/index.wxml'), 'utf8');
   assert.match(wxml, /bindtap="handleTopBack"/);
@@ -187,4 +188,44 @@ test('语法课堂按体系分层并逐层返回', () => {
   assert.match(wxml, /bindtap="backToDomainMap"/);
   assert.match(wxml, /bindtap="backFromCourseMap"/);
   assert.match(wxml, /bindtap="backToCourseMap"/);
+});
+
+test('构词法课程系统覆盖且逐条闭环', () => {
+  const requiredLessonIds = [
+    'word-parts', 'derivation-inflection', 'negative-prefixes', 'meaning-prefixes',
+    'person-noun-suffixes', 'abstract-noun-suffixes', 'adjective-suffixes',
+    'participial-adjectives', 'adverb-suffix', 'verb-suffixes', 'conversion', 'compounds',
+    'word-class-slots', 'prefix-assimilation', 'suffix-spelling', 'suffix-sound-stress',
+    'layered-derivation', 'word-inference'
+  ];
+  [false, true].forEach((english) => {
+    const bundle = sourceWordFormationCourses.buildWordFormationCourse(english);
+    const ids = bundle.course.map((lesson) => lesson.id);
+    assert.deepEqual(ids, requiredLessonIds);
+    assert.deepEqual(bundle.groups.map((group) => group.lessons.length), [13, 5]);
+    assert.deepEqual(bundle.groups.flatMap((group) => group.lessons.map((lesson) => lesson.id)), ids);
+    assert.equal(bundle.course.reduce((sum, lesson) => sum + lesson.rules.length, 0), 61);
+    assert.equal(bundle.course.reduce((sum, lesson) => sum + lesson.examples.length, 0), 61);
+    assert.equal(bundle.course.reduce((sum, lesson) => sum + lesson.questions.length, 0), 61);
+    bundle.course.forEach((lesson) => {
+      assert.equal(lesson.exampleNotes.length, lesson.examples.length);
+      assert.equal(lesson.ruleCoverage.length, lesson.rules.length);
+      lesson.ruleCoverage.forEach((coverage, index) => {
+        assert.deepEqual(coverage.exampleIndexes, [index]);
+        assert.deepEqual(coverage.questionIndexes, [index]);
+      });
+      lesson.questions.forEach((question) => {
+        assert.ok(question.options.some((option) => option.key === question.answer));
+        if (english) {
+          assert.doesNotMatch(question.question, /[\u4e00-\u9fff]/);
+          question.options.forEach((option) => assert.doesNotMatch(option.text, /[\u4e00-\u9fff]/));
+        }
+      });
+    });
+  });
+  const classroomPage = fs.readFileSync(path.join(__dirname, '../grammar-package/pages/classroom/index.js'), 'utf8');
+  const loader = fs.readFileSync(path.join(__dirname, '../grammar-package/components/grammar-word-formation-loader/index.js'), 'utf8');
+  assert.match(classroomPage, /item === 'word-formation'\) return this\.loadCourse\('word-formation'\)/);
+  assert.match(classroomPage, /selectedTopic === 'word-formation'\) return this\.backToDomainMap\(\)/);
+  assert.match(loader, /require\('\.\.\/\.\.\/domain\/grammar-classroom\/word-formation-courses'\)/);
 });

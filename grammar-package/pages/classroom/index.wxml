@@ -1,5 +1,6 @@
 <view class="theme-{{theme}} language-{{language}} classroom-page">
   <grammar-word-loader wx:if="{{loaderKind === 'word'}}" topic="{{selectedTopic}}" language="{{language}}" bindloaded="onCourseLoaded" bindloaderror="onCourseLoadError" />
+  <grammar-word-formation-loader wx:if="{{loaderKind === 'word-formation'}}" topic="{{selectedTopic}}" language="{{language}}" bindloaded="onCourseLoaded" bindloaderror="onCourseLoadError" />
   <grammar-vna-loader wx:if="{{loaderKind === 'vna'}}" topic="{{selectedTopic}}" language="{{language}}" bindloaded="onCourseLoaded" bindloaderror="onCourseLoadError" />
   <grammar-third-person-loader wx:if="{{loaderKind === 'third-person'}}" topic="{{selectedTopic}}" language="{{language}}" bindloaded="onCourseLoaded" bindloaderror="onCourseLoadError" />
   <grammar-modifier-loader wx:if="{{loaderKind === 'modifier'}}" topic="{{selectedTopic}}" language="{{language}}" bindloaded="onCourseLoaded" bindloaderror="onCourseLoadError" />
