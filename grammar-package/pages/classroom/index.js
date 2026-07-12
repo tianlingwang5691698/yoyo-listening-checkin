@@ -42,8 +42,8 @@ function uiText(english) {
       ['word-formation', 'Word Formation', 'Prefixes, suffixes, conversion and compounds', '18 lessons', true]
     ],
     syntax: [
-      ['sentence-elements', 'Sentence Elements', 'Subject, predicate, object, complement, attribute and adverbial', 'Planned', false],
-      ['basic-patterns', 'Basic Sentence Patterns', 'Five basic patterns and there-be structures', 'Planned', false],
+      ['sentence-elements', 'Sentence Elements', 'Subject, predicate, object, complement, attribute and adverbial', '23 lessons', true],
+      ['basic-patterns', 'Basic Sentence Patterns', 'Five patterns, existential clauses and transformations', '16 lessons', true],
       ['predicate-system', 'Predicate System', 'Agreement, tense, voice, auxiliaries and modals', 'Planned', false],
       ['nonfinite-system', 'Non-finite Structures', 'Infinitives, gerunds and participles', 'Planned', false],
       ['special-structures', 'Special Structures', 'Inversion, emphasis, ellipsis and imperatives', 'Planned', false]
@@ -67,8 +67,8 @@ function uiText(english) {
       ['word-formation', '构词法', '前缀、后缀、转化与合成词', '18 节 · 已开放', true]
     ],
     syntax: [
-      ['sentence-elements', '句子成分', '主语、谓语、宾语、表语、定语、状语与补语', '规划中', false],
-      ['basic-patterns', '基本句型', '五大基本句型与 there be 结构', '规划中', false],
+      ['sentence-elements', '句子成分', '主语、谓语、宾语、表语、定语、状语与补语', '23 节 · 已开放', true],
+      ['basic-patterns', '基本句型', '五大句型、存在句与结构转换', '16 节 · 已开放', true],
       ['predicate-system', '谓语系统', '主谓一致、时态、语态、助动词与情态动词', '规划中', false],
       ['nonfinite-system', '非谓语结构', '不定式、动名词和分词', '规划中', false],
       ['special-structures', '特殊句式', '倒装、强调、省略与祈使句', '规划中', false]
@@ -106,6 +106,7 @@ function uiText(english) {
     back: english ? 'Back' : '返回',
     backSystem: english ? '‹ Grammar System' : '‹ 语法体系',
     backMorphology: english ? '‹ Word Grammar' : '‹ 词法',
+    backSyntax: english ? '‹ Sentence Grammar' : '‹ 句法',
     backDirectory: english ? '‹ Parts of Speech' : '‹ 十大词性',
     backSections: english ? '‹ Category Map' : '‹ 类别地图',
     backVerbMap: english ? '‹ Verb Map' : '‹ 动词地图',
@@ -129,6 +130,8 @@ function loaderFor(topic) {
   if (topic === 'word-formation') return 'word-formation';
   if (topic === 'verb' || topic === 'numeral' || topic === 'article') return 'vna';
   if (topic === 'adjective' || topic === 'adverb') return 'modifier';
+  if (topic === 'sentence-elements') return 'sentence-elements';
+  if (topic === 'basic-patterns') return 'basic-patterns';
   return 'relation';
 }
 
@@ -231,7 +234,7 @@ Page({
       wx.pageScrollTo({ scrollTop: 0, duration: 0 });
       return;
     }
-    if (item === 'word-formation') return this.loadCourse('word-formation');
+    if (item === 'word-formation' || item === 'sentence-elements' || item === 'basic-patterns') return this.loadCourse(item);
     wx.showToast({ title: this.data.ui.planned, icon: 'none', duration: 2200 });
   },
 
@@ -417,7 +420,7 @@ Page({
 
   backFromCourseMap() {
     if (this.data.hasSectionMap) return this.backToSectionMap();
-    if (this.data.selectedTopic === 'word-formation') return this.backToDomainMap();
+    if (this.data.selectedTopic === 'word-formation' || this.data.selectedDomain !== 'morphology') return this.backToDomainMap();
     this.backToDirectory();
   },
 
@@ -440,7 +443,7 @@ Page({
   },
 
   backFromSectionMap() {
-    if (this.data.selectedTopic === 'word-formation') return this.backToDomainMap();
+    if (this.data.selectedTopic === 'word-formation' || this.data.selectedDomain !== 'morphology') return this.backToDomainMap();
     this.backToDirectory();
   },
 
