@@ -1,4 +1,5 @@
 <view class="theme-{{theme}} language-{{language}} page-shell grammar-page">
+  <view class="grammar-render-debug" wx:if="{{grammarRenderDebug}}">{{grammarRenderDebug}}</view>
   <block wx:if="{{theme === 'library'}}">
     <view class="library-grammar-shell">
       <view class="library-typecase {{selectedTopicId ? 'is-compact' : ''}}">

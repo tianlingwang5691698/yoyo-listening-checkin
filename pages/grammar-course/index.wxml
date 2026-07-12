@@ -1,0 +1,50 @@
+<view class="theme-{{theme}} language-{{language}} page-shell grammar-course-page">
+  <view class="grammar-render-debug" wx:if="{{courseDebug}}">{{courseDebug}}</view>
+  <view class="grammar-card classroom-card course-shell">
+    <block wx:if="{{!lesson}}">
+      <view class="classroom-back" bindtap="back">‹ {{ui.back}}</view>
+      <view class="classroom-step">{{ui.core}}</view>
+      <view class="classroom-title">{{title}}</view>
+      <view class="classroom-copy">{{copy}}</view>
+      <view class="micro-course-list">
+        <view class="micro-course-group" wx:for="{{groups}}" wx:key="id" wx:for-item="group">
+          <view class="micro-course-group-title">{{group.title}}</view>
+          <view class="micro-course-group-copy">{{group.copy}}</view>
+          <view class="micro-course-item" wx:for="{{group.lessons}}" wx:key="id" wx:for-item="item" data-id="{{item.id}}" bindtap="openLesson">
+            <view class="micro-course-no">{{item.no}}</view>
+            <view class="micro-course-main"><view class="micro-course-title">{{item.title}}</view><view class="micro-course-meta">{{item.meta}}</view></view>
+            <view class="micro-course-arrow">›</view>
+          </view>
+        </view>
+      </view>
+    </block>
+    <block wx:else>
+      <view class="classroom-back" bindtap="back">‹ {{ui.back}}</view>
+      <view class="classroom-step">{{lesson.no}} / {{course.length}}</view>
+      <view class="classroom-title">{{lesson.title}}</view>
+      <view class="classroom-copy">{{lesson.meta}}</view>
+      <view class="sentence-analysis-list" wx:if="{{lesson.analyses && lesson.analyses.length}}">
+        <view class="sentence-analysis" wx:for="{{lesson.analyses}}" wx:key="index" wx:for-item="sentence" wx:for-index="sentenceIndex">
+          <view class="sentence-analysis-parts">
+            <view class="sentence-part role-{{part.role}}" wx:for="{{sentence}}" wx:key="text" wx:for-item="part"><view class="sentence-part-text">{{part.text}}</view><view class="sentence-part-label">{{part.label}}</view></view>
+          </view>
+          <view class="sentence-translation mode-{{lesson.exampleNotes[sentenceIndex].mode}}" wx:if="{{lesson.exampleNotes[sentenceIndex].visible}}">
+            <view class="sentence-note-title">{{lesson.exampleNotes[sentenceIndex].title}}</view><view class="sentence-note-body">{{lesson.exampleNotes[sentenceIndex].body}}</view><view class="sentence-translation-tip" wx:if="{{lesson.exampleNotes[sentenceIndex].detail}}">{{lesson.exampleNotes[sentenceIndex].detail}}</view>
+          </view>
+        </view>
+      </view>
+      <view class="classroom-examples" wx:else>
+        <view class="classroom-example-with-note" wx:for="{{lesson.examples}}" wx:key="*this" wx:for-index="exampleIndex">
+          <view>{{item}}</view>
+          <view class="sentence-translation mode-{{lesson.exampleNotes[exampleIndex].mode}}" wx:if="{{lesson.exampleNotes[exampleIndex].visible}}"><view class="sentence-note-title">{{lesson.exampleNotes[exampleIndex].title}}</view><view class="sentence-note-body">{{lesson.exampleNotes[exampleIndex].body}}</view><view class="sentence-translation-tip" wx:if="{{lesson.exampleNotes[exampleIndex].detail}}">{{lesson.exampleNotes[exampleIndex].detail}}</view></view>
+        </view>
+      </view>
+      <view class="classroom-notice"><view class="classroom-notice-label">{{ui.rules}}</view><view class="classroom-rule" wx:for="{{lesson.rules}}" wx:key="*this">{{index + 1}}. {{item}}</view></view>
+      <view class="classroom-exercise-count">{{questionIndex + 1}} / {{lesson.questions.length}}</view>
+      <view class="classroom-question">{{question.question}}</view>
+      <view class="classroom-options"><view class="classroom-option {{answer && option.key === question.answer ? 'is-correct' : ''}} {{answer === option.key && result === 'wrong' ? 'is-wrong' : ''}}" wx:for="{{question.options}}" wx:key="key" wx:for-item="option" data-answer="{{option.key}}" bindtap="choose">{{option.key}} · {{option.text}}</view></view>
+      <view class="classroom-feedback {{result}}" wx:if="{{result}}"><view>{{result === 'correct' ? question.correct : question.wrong}}</view><view class="classroom-retry" wx:if="{{result === 'wrong'}}" bindtap="retry">{{ui.retry}}</view></view>
+      <view class="classroom-footer-actions"><view class="classroom-footer-button is-back" bindtap="back">{{ui.back}}</view><view class="classroom-footer-button is-next {{result === 'correct' ? '' : 'is-disabled'}}" bindtap="next">{{result === 'correct' ? (questionIndex < lesson.questions.length - 1 ? ui.nextQuestion : (lessonIndex < course.length - 1 ? ui.nextLesson : ui.finish)) : ui.answer}}</view></view>
+    </block>
+  </view>
+</view>

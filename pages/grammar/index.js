@@ -3,7 +3,6 @@ const store = require('../../utils/store');
 const completed = require('../../utils/completed');
 const snapshotStore = require('../../utils/snapshot');
 const i18n = require('../../utils/i18n');
-const wordCourses = require('../../data/grammar-classroom/word-courses');
 
 const text = (key, fallback) => i18n.getPageText('grammar', key, undefined, fallback);
 
@@ -167,14 +166,14 @@ function buildClassroomText(includeVerbCourse = false) {
       ] }
     ],
     thirdPersonTitle: 'Third-person singular · 6 lessons', thirdPersonCopy: 'Learn when it changes, how it changes, and when it returns to the base form.', courseBack: '‹ Verb Map', lessonBack: '‹ Course Map', coreLabel: 'The core idea', translationLabel: 'Chinese meaning', translationTipLabel: 'Translation order', returnCourse: 'Back', nextExercise: 'Next question', nextLesson: 'Continue', finishCourse: 'Finish', answerToContinue: 'Answer correctly to continue',
-    thirdPersonCourse: [
+    thirdPersonCourse: includeVerbCourse ? [
       { id: 'trigger', no: '01', title: 'When does the verb change?', meta: 'Present · Affirmative · One third person', examples: ['Tom likes football.', 'Tom and Jack like football.'], analyses: [[{ text: 'Tom', role: 'subject', label: 'Subject' }, { text: 'likes', role: 'predicate', label: 'Verb' }, { text: 'football', role: 'object', label: 'Object' }], [{ text: 'Tom and Jack', role: 'subject', label: 'Subject (plural)' }, { text: 'like', role: 'predicate', label: 'Verb' }, { text: 'football', role: 'object', label: 'Object' }]], rules: ['Use the change in the simple present affirmative.', 'The subject is he, she, it, one person or one thing.'], question: 'Mary ___ music every day.', options: [{ key: 'A', text: 'like' }, { key: 'B', text: 'likes' }], answer: 'B', correct: 'Mary is one third person, so likes is correct.', wrong: 'Check the subject: Mary means one third person.' },
       { id: 'subject', no: '02', title: 'Find the real subject', meta: 'Names · Singular nouns · Head words', examples: ['The boy plays football.', 'The boy with his friends plays football.'], analyses: [[{ text: 'The boy', role: 'subject', label: 'Subject' }, { text: 'plays', role: 'predicate', label: 'Verb' }, { text: 'football', role: 'object', label: 'Object' }], [{ text: 'The boy', role: 'subject', label: 'Head subject' }, { text: 'with his friends', role: 'modifier', label: 'Extra detail' }, { text: 'plays', role: 'predicate', label: 'Verb' }, { text: 'football', role: 'object', label: 'Object' }]], rules: ['A name, one person, one thing and an uncountable noun are singular.', 'Extra words after the head subject do not change its number.'], question: 'The girl with two dogs ___ near here.', options: [{ key: 'A', text: 'live' }, { key: 'B', text: 'lives' }], answer: 'B', correct: 'The head subject is the girl, so use lives.', wrong: 'Ignore with two dogs. The head subject is the girl.' },
       { id: 'spelling', no: '03', title: 'Four spelling patterns', meta: '-s · -es · y→ies · special forms', examples: ['play → plays　watch → watches', 'study → studies　have → has'], rules: ['Most verbs add -s.', 'After s, x, ch, sh or o, add -es.', 'Consonant + y changes to -ies; have becomes has.'], question: 'She ___ English after dinner.', options: [{ key: 'A', text: 'studys' }, { key: 'B', text: 'studies' }], answer: 'B', correct: 'study has consonant + y, so it becomes studies.', wrong: 'Consonant + y changes to ies.' },
       { id: 'sound', no: '04', title: 'Hear the ending', meta: '/s/ · /z/ · /ɪz/', examples: ['likes /s/　plays /z/', 'watches /ɪz/'], rules: ['The spelling is visible; the ending sound depends on the final sound before it.', '/ɪz/ adds a clear extra syllable after sibilant sounds.'], question: 'Which ending does watches use?', options: [{ key: 'A', text: '/z/' }, { key: 'B', text: '/ɪz/' }], answer: 'B', correct: 'watches ends with /ɪz/.', wrong: 'After the /tʃ/ sound, -es is pronounced /ɪz/.' },
       { id: 'does', no: '05', title: 'Why does the s disappear?', meta: 'does · does not · base verb', examples: ["She likes music.", "She doesn't like music."], analyses: [[{ text: 'She', role: 'subject', label: 'Subject' }, { text: 'likes', role: 'predicate', label: 'Verb carries -s' }, { text: 'music', role: 'object', label: 'Object' }], [{ text: 'She', role: 'subject', label: 'Subject' }, { text: "doesn't", role: 'helper', label: 'Carries the change' }, { text: 'like', role: 'predicate', label: 'Base verb' }, { text: 'music', role: 'object', label: 'Object' }]], rules: ['In negatives and questions, does carries the third-person change.', 'The main verb therefore returns to its base form.'], question: 'He ___ coffee.', options: [{ key: 'A', text: "doesn't likes" }, { key: 'B', text: "doesn't like" }], answer: 'B', correct: 'does already carries the change, so use like.', wrong: 'Only one verb carries the third-person marker: does.' },
-      { id: 'boss', no: '06', title: 'Context Boss', meta: 'Agreement · does · modal verbs', examples: ['My brother goes to school by bus.', 'He can play chess.'], analyses: [[{ text: 'My brother', role: 'subject', label: 'Subject' }, { text: 'goes', role: 'predicate', label: 'Verb' }, { text: 'to school by bus', role: 'modifier', label: 'Extra detail' }], [{ text: 'He', role: 'subject', label: 'Subject' }, { text: 'can', role: 'helper', label: 'Modal' }, { text: 'play', role: 'predicate', label: 'Base verb' }, { text: 'chess', role: 'object', label: 'Object' }]], rules: ['Modal verbs such as can, must and should never add -s.', 'Judge the subject and sentence structure before changing the main verb.'], question: 'My sister ___ early, but she can ___ late today.', options: [{ key: 'A', text: 'leaves · stay' }, { key: 'B', text: 'leave · stays' }], answer: 'A', correct: 'sister takes leaves; after can, stay stays in the base form.', wrong: 'The first verb follows sister; the verb after can uses its base form.' }
-    ],
+      { id: 'boss', no: '06', title: 'Context Boss', meta: 'Agreement · does · modal verbs', examples: ['My brother goes to school by bus.', 'He can play chess.'], analyses: [[{ text: 'My brother', role: 'subject', label: 'Subject' }, { text: 'goes', role: 'predicate', label: 'Verb' }, { text: 'to school by bus', role: 'modifier', label: 'Extra detail' }], [{ text: 'He', role: 'subject', label: 'Subject' }, { text: 'can', role: 'helper', label: 'Modal' }, { text: 'play', role: 'predicate', label: 'Base verb' }, { text: 'chess', role: 'object', label: 'Object' }]], rules: ['Modal verbs such as can, must and should never add -s.', 'Judge the subject and sentence structure before changing the main verb.'], question: 'My sister ___ early, but she can ___ late today.', options: [{ key: 'A', text: 'leaves · stay' }, { key: 'B', text: 'leave · stays' }], answer: 'A', correct: 'sister takes leaves; after can, stay stays in the base form.', wrong: 'The first verb follows sister; after can, stay stays in the base form.' }
+    ] : [],
     categories: [
       { id: 'word', title: 'Word Grammar', meta: 'How words work and change', children: [
         { id: 'noun', title: 'Nouns', meta: 'Countability · Plurals · Possessives', ready: false },
@@ -231,14 +230,14 @@ function buildClassroomText(includeVerbCourse = false) {
       ] }
     ],
     thirdPersonTitle: '第三人称单数 · 6 节微课', thirdPersonCopy: '从什么时候变化，到怎样变化，再到什么时候恢复原形。', courseBack: '‹ 动词地图', lessonBack: '‹ 课程地图', coreLabel: '语法本质', translationLabel: '中文翻译', translationTipLabel: '翻译顺序', returnCourse: '返回', nextExercise: '下一题', nextLesson: '继续下一小节', finishCourse: '完成并返回', answerToContinue: '答对后继续',
-    thirdPersonCourse: [
+    thirdPersonCourse: includeVerbCourse ? [
       { id: 'trigger', no: '01', title: '什么时候动词要变化？', meta: '一般现在时 · 肯定句 · 第三人称单数', examples: ['Tom likes football.', 'Tom and Jack like football.'], analyses: [[{ text: 'Tom', role: 'subject', label: '主语' }, { text: 'likes', role: 'predicate', label: '谓语' }, { text: 'football', role: 'object', label: '宾语' }], [{ text: 'Tom and Jack', role: 'subject', label: '主语（复数）' }, { text: 'like', role: 'predicate', label: '谓语' }, { text: 'football', role: 'object', label: '宾语' }]], rules: ['只在一般现在时的肯定句中考虑这个变化。', '主语是 he、she、it、一个人或一个事物。'], question: 'Mary ___ music every day.', options: [{ key: 'A', text: 'like' }, { key: 'B', text: 'likes' }], answer: 'B', correct: 'Mary 是一个第三人称，所以用 likes。', wrong: '先看主语：Mary 表示一个第三人称。' },
       { id: 'subject', no: '02', title: '找到真正的主语', meta: '人名 · 单数名词 · 中心词', examples: ['The boy plays football.', 'The boy with his friends plays football.'], analyses: [[{ text: 'The boy', role: 'subject', label: '主语' }, { text: 'plays', role: 'predicate', label: '谓语' }, { text: 'football', role: 'object', label: '宾语' }], [{ text: 'The boy', role: 'subject', label: '中心主语' }, { text: 'with his friends', role: 'modifier', label: '补充成分' }, { text: 'plays', role: 'predicate', label: '谓语' }, { text: 'football', role: 'object', label: '宾语' }]], rules: ['人名、单个人或物、不可数名词都按单数处理。', '主语后面的补充成分不会改变中心词的单复数。'], question: 'The girl with two dogs ___ near here.', options: [{ key: 'A', text: 'live' }, { key: 'B', text: 'lives' }], answer: 'B', correct: '中心主语是 the girl，所以用 lives。', wrong: '先忽略 with two dogs，真正的主语是 the girl。' },
       { id: 'spelling', no: '03', title: '四类拼写变化', meta: '加 s · 加 es · y 变 ies · 特殊变化', examples: ['play → plays　watch → watches', 'study → studies　have → has'], rules: ['大多数动词直接加 -s。', '以 s、x、ch、sh、o 结尾通常加 -es。', '辅音字母加 y 变 -ies；have 变 has。'], question: 'She ___ English after dinner.', options: [{ key: 'A', text: 'studys' }, { key: 'B', text: 'studies' }], answer: 'B', correct: 'study 是辅音字母加 y，所以变成 studies。', wrong: '辅音字母加 y，要把 y 变成 ies。' },
       { id: 'sound', no: '04', title: '听懂词尾发音', meta: '/s/ · /z/ · /ɪz/', examples: ['likes /s/　plays /z/', 'watches /ɪz/'], rules: ['拼写看得见，发音取决于动词原形最后一个音。', '咝音后面的 -es 会多出一个清楚的 /ɪz/ 音节。'], question: 'watches 的词尾读什么？', options: [{ key: 'A', text: '/z/' }, { key: 'B', text: '/ɪz/' }], answer: 'B', correct: 'watches 的词尾读 /ɪz/。', wrong: '/tʃ/ 后面的 -es 读 /ɪz/。' },
       { id: 'does', no: '05', title: '为什么 s 又消失了？', meta: 'does · does not · 动词原形', examples: ['She likes music.', "She doesn't like music."], analyses: [[{ text: 'She', role: 'subject', label: '主语' }, { text: 'likes', role: 'predicate', label: '谓语（带 s）' }, { text: 'music', role: 'object', label: '宾语' }], [{ text: 'She', role: 'subject', label: '主语' }, { text: "doesn't", role: 'helper', label: '承担变化' }, { text: 'like', role: 'predicate', label: '动词原形' }, { text: 'music', role: 'object', label: '宾语' }]], rules: ['否定句和疑问句里，does 已经承担了第三人称变化。', '后面的实义动词因此恢复原形。'], question: 'He ___ coffee.', options: [{ key: 'A', text: "doesn't likes" }, { key: 'B', text: "doesn't like" }], answer: 'B', correct: 'does 已经发生变化，后面使用动词原形 like。', wrong: '第三人称标记只出现一次，已经放在 does 上了。' },
-      { id: 'boss', no: '06', title: '情境 Boss 关', meta: '主谓一致 · does · 情态动词', examples: ['My brother goes to school by bus.', 'He can play chess.'], analyses: [[{ text: 'My brother', role: 'subject', label: '主语' }, { text: 'goes', role: 'predicate', label: '谓语' }, { text: 'to school by bus', role: 'modifier', label: '补充成分' }], [{ text: 'He', role: 'subject', label: '主语' }, { text: 'can', role: 'helper', label: '情态动词' }, { text: 'play', role: 'predicate', label: '动词原形' }, { text: 'chess', role: 'object', label: '宾语' }]], rules: ['can、must、should 等情态动词后永远用动词原形。', '先判断主语和句子结构，再决定动词是否变化。'], question: 'My sister ___ early, but she can ___ late today.', options: [{ key: 'A', text: 'leaves · stay' }, { key: 'B', text: 'leave · stays' }], answer: 'A', correct: 'sister 对应 leaves；can 后面使用原形 stay。', wrong: '第一个动词看 sister；can 后面的动词必须用原形。' }
-    ],
+      { id: 'boss', no: '06', title: '情境 Boss 关', meta: '主谓一致 · does · 情态动词', examples: ['My brother goes to school by bus.', 'He can play chess.'], analyses: [[{ text: 'My brother', role: 'subject', label: '主语' }, { text: 'goes', role: 'predicate', label: '谓语' }, { text: 'to school by bus', role: 'modifier', label: '补充成分' }], [{ text: 'He', role: 'subject', label: '主语' }, { text: 'can', role: 'helper', label: '情态动词' }, { text: 'play', role: 'predicate', label: '动词原形' }, { text: 'chess', role: 'object', label: '宾语' }]], rules: ['can、must、should 等情态动词后永远用动词原形。', '先判断主语和句子结构，再决定动词是否变化。'], question: 'My sister ___ early, but she can ___ late today.', options: [{ key: 'A', text: 'leaves · stay' }, { key: 'B', text: 'leave · stays' }], answer: 'A', correct: 'sister 对应 leaves；can 后面使用原形 stay。', wrong: '第一个动词看 sister；can 后面使用原形 stay。' }
+    ] : [],
     categories: [
       { id: 'word', title: '词法', meta: '词怎么用、怎么变化', children: [
         { id: 'noun', title: '名词', meta: '可数 · 单复数 · 所有格', ready: false },
@@ -265,6 +264,8 @@ function buildClassroomText(includeVerbCourse = false) {
       ] }
     ]
   };
+  classroom.thirdPersonCourseGroups = [];
+  if (includeVerbCourse) {
   const practice = buildThirdPersonPractice(english);
   const exampleNotes = buildExampleNotes(english);
   const originalCourse = classroom.thirdPersonCourse.map((lesson) => {
@@ -304,18 +305,14 @@ function buildClassroomText(includeVerbCourse = false) {
     { id: 'core', title: english ? 'Core · 7 essential lessons' : '核心必学 · 7 节', copy: english ? 'Complete these first.' : '规则和高频使用语境必须掌握。', lessons: classroom.thirdPersonCourse.filter((lesson) => lesson.level === 'core') },
     { id: 'advanced', title: english ? 'Advanced · 2 challenge lessons' : '进阶挑战 · 2 节', copy: english ? 'Special subjects and mixed use.' : '特殊主语与综合运用。', lessons: classroom.thirdPersonCourse.filter((lesson) => lesson.level === 'advanced') }
   ];
+  }
   const wordCategory = classroom.categories.find((item) => item.id === 'word');
   if (wordCategory) wordCategory.children = wordCategory.children.map((item) => ['noun', 'pronoun', 'verb'].includes(item.id) ? Object.assign({}, item, { ready: true, meta: item.id === 'verb' ? item.meta : (english ? '9 lessons' : '9 节微课') }) : item);
-  if (!includeVerbCourse) {
-    classroom.thirdPersonCourse = [];
-    classroom.thirdPersonCourseGroups = [];
-  }
   return classroom;
 }
 
 function getClassroomCourse(classroom, topicId) {
-  if (topicId === 'noun') return wordCourses.buildNounCourse(i18n.getLanguage() === 'en');
-  if (topicId === 'pronoun') return wordCourses.buildPronounCourse(i18n.getLanguage() === 'en');
+  if (topicId === 'noun' || topicId === 'pronoun') return { course: [], groups: [], title: '', copy: '' };
   const verbClassroom = classroom.thirdPersonCourse && classroom.thirdPersonCourse.length ? classroom : buildClassroomText(true);
   return { course: verbClassroom.thirdPersonCourse, groups: verbClassroom.thirdPersonCourseGroups, title: verbClassroom.thirdPersonTitle, copy: verbClassroom.thirdPersonCopy };
 }
@@ -513,6 +510,8 @@ function recordGrammarCompleted(state, answeredCount) {
 
 Page({
   data: page.createCloudPageData({
+    texts: i18n.getPageTexts('grammar'),
+    grammarRenderDebug: '',
     stages: [],
     topics: [],
     selectedStageId: '',
@@ -569,6 +568,18 @@ Page({
       this.grammarAudioContext.destroy();
       this.grammarAudioContext = null;
     }
+  },
+  onReady() {
+    const query = this.createSelectorQuery();
+    query.select('.grammar-page').boundingClientRect();
+    query.select(this.data.theme === 'library' ? '.library-typecase' : '.grammar-hero').boundingClientRect();
+    query.exec((results) => {
+      const root = results && results[0];
+      const content = results && results[1];
+      if (!root || !content) {
+        this.setData({ grammarRenderDebug: `DEBUG grammar-render root=${!!root} content=${!!content} theme=${this.data.theme} mode=${this.data.mode}` });
+      }
+    });
   },
   flushGrammarCompletion() {
     if (!this.data.selectedTopicId || !this.data.answeredCount) return;
@@ -781,6 +792,10 @@ Page({
     const category = (this.data.classroom.categories || []).find((item) => item.id === this.data.selectedClassroomCategory);
     const topic = ((category && category.children) || []).find((item) => item.id === topicId);
     if (!topic || !topic.ready) return;
+    if (topicId === 'noun' || topicId === 'pronoun') {
+      wx.navigateTo({ url: `/pages/grammar-course/index?topic=${topicId}` });
+      return;
+    }
     const bundle = topicId === 'verb'
       ? { course: [], groups: [], title: '', copy: '' }
       : getClassroomCourse(this.data.classroom, topicId);

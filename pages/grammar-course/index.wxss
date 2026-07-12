@@ -1,0 +1,6 @@
+@import "../grammar/index.wxss";
+
+.grammar-course-page { min-height: 100vh; padding: 30rpx 28rpx 70rpx; box-sizing: border-box; }
+.course-shell { padding: 30rpx; }
+.theme-library.grammar-course-page { background: #eee5d6; }
+.theme-library .course-shell { border: 1rpx solid var(--library-grammar-rule); border-radius: var(--library-grammar-radius); background: linear-gradient(180deg, var(--library-grammar-paper-light), var(--library-grammar-paper)); box-shadow: var(--library-grammar-shadow); }
