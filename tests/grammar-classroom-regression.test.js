@@ -173,6 +173,30 @@ test('动词完整课程覆盖中学核心与进阶知识边界', () => {
   assert.ok(thirdPersonLesson.rules.some((rule) => rule.includes('/ɪz/')));
 });
 
+test('介词系统课程覆盖形式、语义关系、句法功能与易混结构', () => {
+  const requiredLessonIds = [
+    'prep-forms', 'prep-object', 'prep-time', 'prep-time-deadline', 'prep-time-contrast',
+    'prep-place', 'prep-relative-place', 'prep-direction', 'prep-movement-path', 'prep-source-separation',
+    'prep-means', 'prep-medium-language', 'prep-cause-purpose', 'prep-material-comparison',
+    'prep-postmodifier', 'prep-collocation', 'prep-topic-content', 'prep-complements',
+    'prep-complex-objects', 'prep-form-contrast'
+  ];
+  [false, true].forEach((english) => {
+    const bundle = sourceRelationCourses.buildPrepositionCourse(english);
+    const ids = bundle.course.map((lesson) => lesson.id);
+    assert.equal(bundle.course.length, 20);
+    requiredLessonIds.forEach((id) => assert.ok(ids.includes(id), `missing preposition lesson: ${id}`));
+    assert.deepEqual(bundle.groups.map((group) => group.lessons.length), [16, 4]);
+    assert.deepEqual(bundle.sections.map((section) => section.lessonCount), [2, 3, 5, 5, 3, 2]);
+    assert.ok(bundle.course.reduce((sum, lesson) => sum + lesson.rules.length, 0) >= 66);
+    assert.ok(bundle.course.reduce((sum, lesson) => sum + lesson.examples.length, 0) >= 69);
+    assert.ok(bundle.course.reduce((sum, lesson) => sum + lesson.questions.length, 0) >= 69);
+  });
+  const page = fs.readFileSync(path.join(__dirname, '../grammar-package/pages/classroom/index.js'), 'utf8');
+  assert.match(page, /\['preposition', 'Prepositions',[^\n]+, 20\]/);
+  assert.match(page, /\['preposition', '介词',[^\n]+, 20\]/);
+});
+
 test('语法课堂按体系分层并逐层返回', () => {
   const source = fs.readFileSync(path.join(__dirname, '../grammar-package/pages/classroom/index.js'), 'utf8');
   const context = { captured: null, Page: (config) => { context.captured = config; }, wx: {}, setTimeout, clearTimeout };
