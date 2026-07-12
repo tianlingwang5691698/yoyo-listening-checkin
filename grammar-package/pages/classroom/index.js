@@ -49,8 +49,8 @@ function uiText(english) {
       ['special-structures', 'Special Structures', 'Questions, inversion, emphasis, ellipsis and imperatives', '27 lessons', true]
     ],
     clauses: [
-      ['coordination', 'Coordination', 'and, but, or, so and parallel clauses', 'Planned', false],
-      ['noun-clauses', 'Noun Clauses', 'Object, subject and predicative clauses', 'Planned', false],
+      ['coordination', 'Coordination', 'Coordinators, punctuation, logic and parallel clauses', '22 lessons', true],
+      ['noun-clauses', 'Noun Clauses', 'Subject, object, predicative and appositive clauses', '22 lessons', true],
       ['relative-clauses', 'Relative Clauses', 'Relative words, antecedents and clause structure', 'Planned', false],
       ['adverbial-clauses', 'Adverbial Clauses', 'Time, condition, reason, purpose, result and concession', 'Planned', false],
       ['reported-speech', 'Reported Speech', 'Tense, person, time and word-order changes', 'Planned', false]
@@ -74,8 +74,8 @@ function uiText(english) {
       ['special-structures', '特殊句式', '疑问、倒装、强调、省略与祈使句', '27 节 · 已开放', true]
     ],
     clauses: [
-      ['coordination', '并列句', 'and、but、or、so 与平行分句', '规划中', false],
-      ['noun-clauses', '名词性从句', '宾语从句、主语从句与表语从句', '规划中', false],
+      ['coordination', '并列句', '连接词、标点、逻辑关系与平行分句', '22 节 · 已开放', true],
+      ['noun-clauses', '名词性从句', '主语、宾语、表语与同位语从句', '22 节 · 已开放', true],
       ['relative-clauses', '定语从句', '关系词、先行词与从句结构', '规划中', false],
       ['adverbial-clauses', '状语从句', '时间、条件、原因、目的、结果与让步', '规划中', false],
       ['reported-speech', '直接引语与间接引语', '时态、人称、时间和语序变化', '规划中', false]
@@ -106,7 +106,6 @@ function uiText(english) {
     back: english ? 'Back' : '返回',
     backSystem: english ? '‹ Grammar System' : '‹ 语法体系',
     backMorphology: english ? '‹ Word Grammar' : '‹ 词法',
-    backSyntax: english ? '‹ Sentence Grammar' : '‹ 句法',
     backDirectory: english ? '‹ Parts of Speech' : '‹ 十大词性',
     backSections: english ? '‹ Category Map' : '‹ 类别地图',
     backVerbMap: english ? '‹ Verb Map' : '‹ 动词地图',
@@ -135,6 +134,8 @@ function loaderFor(topic) {
   if (topic === 'predicate-system') return 'predicate-system';
   if (topic === 'nonfinite-system') return 'nonfinite-system';
   if (topic === 'special-structures') return 'special-structures';
+  if (topic === 'coordination') return 'coordination';
+  if (topic === 'noun-clauses') return 'noun-clauses';
   return 'relation';
 }
 
@@ -147,6 +148,7 @@ Page({
     selectedDomain: '',
     domainTitle: '',
     domainCopy: '',
+    domainBackText: '',
     domainItems: [],
     selectedTopic: '',
     loaderKind: '',
@@ -226,7 +228,7 @@ Page({
     const ui = this.data.ui;
     const selected = ui.domains.find((item) => item.id === domain);
     if (!selected) return;
-    this.setData({ screen: 'domain-map', selectedDomain: domain, domainTitle: selected.title, domainCopy: selected.meta, domainItems: ui.domainMaps[domain] || [], debugMessage: '' });
+    this.setData({ screen: 'domain-map', selectedDomain: domain, domainTitle: selected.title, domainCopy: selected.meta, domainBackText: `‹ ${selected.title}`, domainItems: ui.domainMaps[domain] || [], debugMessage: '' });
     wx.pageScrollTo({ scrollTop: 0, duration: 0 });
   },
 
@@ -237,7 +239,7 @@ Page({
       wx.pageScrollTo({ scrollTop: 0, duration: 0 });
       return;
     }
-    if (item === 'word-formation' || item === 'sentence-elements' || item === 'basic-patterns' || item === 'predicate-system' || item === 'nonfinite-system' || item === 'special-structures') return this.loadCourse(item);
+    if (item === 'word-formation' || item === 'sentence-elements' || item === 'basic-patterns' || item === 'predicate-system' || item === 'nonfinite-system' || item === 'special-structures' || item === 'coordination' || item === 'noun-clauses') return this.loadCourse(item);
     wx.showToast({ title: this.data.ui.planned, icon: 'none', duration: 2200 });
   },
 
@@ -463,14 +465,14 @@ Page({
     const selected = ui.domains.find((item) => item.id === domain) || ui.domains[0];
     this.fullCourse = [];
     this.activeCourse = [];
-    this.setData({ screen: 'domain-map', selectedDomain: selected.id, domainTitle: selected.title, domainCopy: selected.meta, domainItems: ui.domainMaps[selected.id] || [], selectedTopic: '', loaderKind: '', course: [], groups: [], sections: [], hasSectionMap: false, activeSectionId: '', activeSectionTitle: '', activeSectionCopy: '', activeLesson: null, debugMessage: '' });
+    this.setData({ screen: 'domain-map', selectedDomain: selected.id, domainTitle: selected.title, domainCopy: selected.meta, domainBackText: `‹ ${selected.title}`, domainItems: ui.domainMaps[selected.id] || [], selectedTopic: '', loaderKind: '', course: [], groups: [], sections: [], hasSectionMap: false, activeSectionId: '', activeSectionTitle: '', activeSectionCopy: '', activeLesson: null, debugMessage: '' });
   },
 
   backToSystem() {
     if (this.loadTimer) clearTimeout(this.loadTimer);
     this.fullCourse = [];
     this.activeCourse = [];
-    this.setData({ screen: 'system', selectedDomain: '', domainTitle: '', domainCopy: '', domainItems: [], selectedTopic: '', loaderKind: '', course: [], groups: [], sections: [], hasSectionMap: false, activeSectionId: '', activeSectionTitle: '', activeSectionCopy: '', activeLesson: null, debugMessage: '' });
+    this.setData({ screen: 'system', selectedDomain: '', domainTitle: '', domainCopy: '', domainBackText: '', domainItems: [], selectedTopic: '', loaderKind: '', course: [], groups: [], sections: [], hasSectionMap: false, activeSectionId: '', activeSectionTitle: '', activeSectionCopy: '', activeLesson: null, debugMessage: '' });
   },
 
   handleTopBack() {

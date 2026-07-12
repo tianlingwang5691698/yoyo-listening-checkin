@@ -9,6 +9,8 @@
   <grammar-predicate-system-loader wx:if="{{loaderKind === 'predicate-system'}}" topic="{{selectedTopic}}" language="{{language}}" bindloaded="onCourseLoaded" bindloaderror="onCourseLoadError" />
   <grammar-nonfinite-system-loader wx:if="{{loaderKind === 'nonfinite-system'}}" topic="{{selectedTopic}}" language="{{language}}" bindloaded="onCourseLoaded" bindloaderror="onCourseLoadError" />
   <grammar-special-structures-loader wx:if="{{loaderKind === 'special-structures'}}" topic="{{selectedTopic}}" language="{{language}}" bindloaded="onCourseLoaded" bindloaderror="onCourseLoadError" />
+  <grammar-coordination-loader wx:if="{{loaderKind === 'coordination'}}" topic="{{selectedTopic}}" language="{{language}}" bindloaded="onCourseLoaded" bindloaderror="onCourseLoadError" />
+  <grammar-noun-clauses-loader wx:if="{{loaderKind === 'noun-clauses'}}" topic="{{selectedTopic}}" language="{{language}}" bindloaded="onCourseLoaded" bindloaderror="onCourseLoadError" />
 
   <view class="page-topbar">
     <view class="topbar-back" bindtap="handleTopBack"><text class="topbar-chevron">‹</text><text class="topbar-back-text">{{ui.back}}</text></view>
@@ -81,7 +83,7 @@
     </view>
 
     <view class="content-card" wx:elif="{{screen === 'section-map'}}">
-      <view class="inline-back" bindtap="backFromSectionMap">{{selectedDomain !== 'morphology' ? ui.backSyntax : (selectedTopic === 'word-formation' ? ui.backMorphology : ui.backDirectory)}}</view>
+      <view class="inline-back" bindtap="backFromSectionMap">{{selectedDomain !== 'morphology' ? domainBackText : (selectedTopic === 'word-formation' ? ui.backMorphology : ui.backDirectory)}}</view>
       <view class="section-kicker">{{courseTitle}}</view>
       <view class="section-title">{{courseCopy}}</view>
       <view class="section-map-list">
@@ -98,7 +100,7 @@
     </view>
 
     <view class="content-card" wx:elif="{{screen === 'course-map'}}">
-      <view class="inline-back" bindtap="backFromCourseMap">{{hasSectionMap ? ui.backSections : (selectedDomain !== 'morphology' ? ui.backSyntax : (selectedTopic === 'word-formation' ? ui.backMorphology : ui.backDirectory))}}</view>
+      <view class="inline-back" bindtap="backFromCourseMap">{{hasSectionMap ? ui.backSections : (selectedDomain !== 'morphology' ? domainBackText : (selectedTopic === 'word-formation' ? ui.backMorphology : ui.backDirectory))}}</view>
       <view class="section-kicker">{{activeSectionTitle || courseTitle}}</view>
       <view class="section-title">{{activeSectionCopy || courseCopy}}</view>
       <view class="course-group" wx:for="{{groups}}" wx:key="id" wx:for-item="group">
