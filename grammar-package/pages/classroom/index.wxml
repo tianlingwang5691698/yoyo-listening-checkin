@@ -14,6 +14,10 @@
   <grammar-relative-clauses-loader wx:if="{{loaderKind === 'relative-clauses'}}" topic="{{selectedTopic}}" language="{{language}}" bindloaded="onCourseLoaded" bindloaderror="onCourseLoadError" />
   <grammar-adverbial-clauses-loader wx:if="{{loaderKind === 'adverbial-clauses'}}" topic="{{selectedTopic}}" language="{{language}}" bindloaded="onCourseLoaded" bindloaderror="onCourseLoadError" />
   <grammar-reported-speech-loader wx:if="{{loaderKind === 'reported-speech'}}" topic="{{selectedTopic}}" language="{{language}}" bindloaded="onCourseLoaded" bindloaderror="onCourseLoadError" />
+  <grammar-cohesion-reference-loader wx:if="{{loaderKind === 'cohesion-reference'}}" topic="{{selectedTopic}}" language="{{language}}" bindloaded="onCourseLoaded" bindloaderror="onCourseLoadError" />
+  <grammar-information-order-loader wx:if="{{loaderKind === 'information-order'}}" topic="{{selectedTopic}}" language="{{language}}" bindloaded="onCourseLoaded" bindloaderror="onCourseLoadError" />
+  <grammar-punctuation-loader wx:if="{{loaderKind === 'punctuation'}}" topic="{{selectedTopic}}" language="{{language}}" bindloaded="onCourseLoaded" bindloaderror="onCourseLoadError" />
+  <grammar-common-expression-loader wx:if="{{loaderKind === 'common-expression'}}" topic="{{selectedTopic}}" language="{{language}}" bindloaded="onCourseLoaded" bindloaderror="onCourseLoadError" />
 
   <view class="page-topbar">
     <view class="topbar-back" bindtap="handleTopBack"><text class="topbar-chevron">‹</text><text class="topbar-back-text">{{ui.back}}</text></view>

@@ -56,10 +56,10 @@ function uiText(english) {
       ['reported-speech', 'Reported Speech', 'Tense, person, time and word-order changes', '20 lessons', true]
     ],
     discourse: [
-      ['cohesion-reference', 'Cohesion & Reference', 'Pronoun reference, substitution and logical links', 'Planned', false],
-      ['information-order', 'Information Order', 'English focus, end-weight and Chinese-English order differences', 'Planned', false],
-      ['punctuation', 'Punctuation & Capitals', 'Sentence boundaries, commas, apostrophes and capitals', 'Planned', false],
-      ['common-expression', 'Common Expression Differences', 'Frequent Chinese-to-English structural differences', 'Planned', false]
+      ['cohesion-reference', 'Cohesion & Reference', 'Pronoun reference, substitution and logical links', '21 lessons', true],
+      ['information-order', 'Information Order', 'English focus, end-weight and Chinese-English order differences', '20 lessons', true],
+      ['punctuation', 'Punctuation & Capitals', 'Sentence boundaries, commas, apostrophes and capitals', '20 lessons', true],
+      ['common-expression', 'Common Expression Differences', 'Frequent Chinese-to-English structural differences', '20 lessons', true]
     ]
   } : {
     morphology: [
@@ -81,10 +81,10 @@ function uiText(english) {
       ['reported-speech', '直接引语与间接引语', '时态、人称、时间和语序变化', '20 节 · 已开放', true]
     ],
     discourse: [
-      ['cohesion-reference', '衔接与指代', '代词指代、替代与逻辑连接', '规划中', false],
-      ['information-order', '信息顺序', '英语焦点、尾重原则与中英语序差异', '规划中', false],
-      ['punctuation', '标点与大小写', '句界、逗号、撇号和大写规则', '规划中', false],
-      ['common-expression', '中英表达差异', '常见中文思维到英文结构的转换', '规划中', false]
+      ['cohesion-reference', '衔接与指代', '代词指代、替代与逻辑连接', '21 节 · 已开放', true],
+      ['information-order', '信息顺序', '英语焦点、尾重原则与中英语序差异', '20 节 · 已开放', true],
+      ['punctuation', '标点与大小写', '句界、逗号、撇号和大写规则', '20 节 · 已开放', true],
+      ['common-expression', '中英表达差异', '常见中文思维到英文结构的转换', '20 节 · 已开放', true]
     ]
   };
   return {
@@ -139,6 +139,10 @@ function loaderFor(topic) {
   if (topic === 'relative-clauses') return 'relative-clauses';
   if (topic === 'adverbial-clauses') return 'adverbial-clauses';
   if (topic === 'reported-speech') return 'reported-speech';
+  if (topic === 'cohesion-reference') return 'cohesion-reference';
+  if (topic === 'information-order') return 'information-order';
+  if (topic === 'punctuation') return 'punctuation';
+  if (topic === 'common-expression') return 'common-expression';
   return 'relation';
 }
 
@@ -242,7 +246,7 @@ Page({
       wx.pageScrollTo({ scrollTop: 0, duration: 0 });
       return;
     }
-    if (item === 'word-formation' || item === 'sentence-elements' || item === 'basic-patterns' || item === 'predicate-system' || item === 'nonfinite-system' || item === 'special-structures' || item === 'coordination' || item === 'noun-clauses' || item === 'relative-clauses' || item === 'adverbial-clauses' || item === 'reported-speech') return this.loadCourse(item);
+    if (item === 'word-formation' || item === 'sentence-elements' || item === 'basic-patterns' || item === 'predicate-system' || item === 'nonfinite-system' || item === 'special-structures' || item === 'coordination' || item === 'noun-clauses' || item === 'relative-clauses' || item === 'adverbial-clauses' || item === 'reported-speech' || item === 'cohesion-reference' || item === 'information-order' || item === 'punctuation' || item === 'common-expression') return this.loadCourse(item);
     wx.showToast({ title: this.data.ui.planned, icon: 'none', duration: 2200 });
   },
 
