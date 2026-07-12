@@ -227,26 +227,39 @@ test('动词完整课程覆盖中学核心与进阶知识边界', () => {
 
 test('介词系统课程覆盖形式、语义关系、句法功能与易混结构', () => {
   const requiredLessonIds = [
-    'prep-forms', 'prep-object', 'prep-time', 'prep-time-deadline', 'prep-time-contrast',
+    'prep-essence', 'prep-forms', 'prep-object', 'prep-form-contrast',
+    'prep-time', 'prep-time-deadline', 'prep-time-contrast',
     'prep-place', 'prep-relative-place', 'prep-direction', 'prep-movement-path', 'prep-source-separation',
     'prep-means', 'prep-medium-language', 'prep-cause-purpose', 'prep-material-comparison',
-    'prep-postmodifier', 'prep-collocation', 'prep-topic-content', 'prep-complements',
-    'prep-complex-objects', 'prep-form-contrast'
+    'prep-topic-content', 'prep-adverbial-functions', 'prep-postmodifier', 'prep-predicative',
+    'prep-complements', 'prep-collocation', 'prep-collocation-meaning', 'prep-complex-objects', 'prep-integration'
   ];
   [false, true].forEach((english) => {
     const bundle = sourceRelationCourses.buildPrepositionCourse(english);
     const ids = bundle.course.map((lesson) => lesson.id);
-    assert.equal(bundle.course.length, 20);
+    assert.equal(bundle.course.length, 25);
+    assert.equal(ids[0], 'prep-essence');
     requiredLessonIds.forEach((id) => assert.ok(ids.includes(id), `missing preposition lesson: ${id}`));
-    assert.deepEqual(bundle.groups.map((group) => group.lessons.length), [16, 4]);
-    assert.deepEqual(bundle.sections.map((section) => section.lessonCount), [2, 3, 5, 5, 3, 2]);
-    assert.ok(bundle.course.reduce((sum, lesson) => sum + lesson.rules.length, 0) >= 66);
-    assert.ok(bundle.course.reduce((sum, lesson) => sum + lesson.examples.length, 0) >= 69);
-    assert.ok(bundle.course.reduce((sum, lesson) => sum + lesson.questions.length, 0) >= 69);
+    assert.deepEqual(bundle.groups.map((group) => group.lessons.length), [20, 5]);
+    assert.deepEqual(bundle.sections.map((section) => section.lessonCount), [4, 3, 5, 5, 4, 2, 2]);
+    assert.ok(bundle.course.reduce((sum, lesson) => sum + lesson.rules.length, 0) >= 81);
+    assert.ok(bundle.course.reduce((sum, lesson) => sum + lesson.examples.length, 0) >= 84);
+    assert.ok(bundle.course.reduce((sum, lesson) => sum + lesson.questions.length, 0) >= 84);
+    bundle.course.forEach((lesson) => {
+      assert.ok(lesson.rules.length > 0);
+      assert.equal(lesson.ruleCoverage.length, lesson.rules.length);
+      lesson.ruleCoverage.forEach((coverage) => {
+        assert.ok(coverage.exampleIndexes.length > 0);
+        assert.ok(coverage.questionIndexes.length > 0);
+        coverage.exampleIndexes.forEach((index) => assert.ok(index >= 0 && index < lesson.examples.length));
+        coverage.questionIndexes.forEach((index) => assert.ok(index >= 0 && index < lesson.questions.length));
+      });
+      lesson.questions.forEach((question) => assert.ok(question.options.some((option) => option.key === question.answer)));
+    });
   });
   const page = fs.readFileSync(path.join(__dirname, '../grammar-package/pages/classroom/index.js'), 'utf8');
-  assert.match(page, /\['preposition', 'Prepositions',[^\n]+, 20\]/);
-  assert.match(page, /\['preposition', '介词',[^\n]+, 20\]/);
+  assert.match(page, /\['preposition', 'Prepositions',[^\n]+, 25\]/);
+  assert.match(page, /\['preposition', '介词',[^\n]+, 25\]/);
 });
 
 test('语法课堂按体系分层并逐层返回', () => {

@@ -10,7 +10,7 @@ function uiText(english) {
     ['verb', 'Verbs', 'Jobs · Forms · Tense · Voice', 36],
     ['adjective', 'Adjectives', 'Position · Comparison · Order', 9],
     ['adverb', 'Adverbs', 'Types · Position · Comparison', 8],
-    ['preposition', 'Prepositions', 'Forms · Time · Space · Syntax', 20],
+    ['preposition', 'Prepositions', 'Definition · Relations · Syntax', 25],
     ['conjunction', 'Conjunctions', 'Coordination · Subordination', 8],
     ['interjection', 'Interjections', 'Emotion · Response · Punctuation', 5]
   ] : [
@@ -21,7 +21,7 @@ function uiText(english) {
     ['verb', '动词', '作用 · 形式 · 时态 · 语态', 36],
     ['adjective', '形容词', '位置 · 比较级 · 顺序', 9],
     ['adverb', '副词', '种类 · 位置 · 比较级', 8],
-    ['preposition', '介词', '形式 · 时间 · 空间 · 句法', 20],
+    ['preposition', '介词', '定义 · 关系 · 句法', 25],
     ['conjunction', '连词', '并列 · 从属 · 逻辑', 8],
     ['interjection', '感叹词', '情绪 · 应答 · 标点', 5]
   ];
