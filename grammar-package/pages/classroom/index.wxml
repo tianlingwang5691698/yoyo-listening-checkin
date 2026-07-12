@@ -6,18 +6,18 @@
   <grammar-relation-loader wx:if="{{loaderKind === 'relation'}}" topic="{{selectedTopic}}" language="{{language}}" bindloaded="onCourseLoaded" bindloaderror="onCourseLoadError" />
 
   <view class="page-topbar">
-    <view class="topbar-back" bindtap="closePage">‹</view>
+    <view class="topbar-back" bindtap="handleTopBack"><text class="topbar-chevron">‹</text><text class="topbar-back-text">{{ui.back}}</text></view>
     <view class="topbar-title">{{language === 'en' ? 'Grammar Classroom' : '语法课堂'}}</view>
     <view class="topbar-space"></view>
   </view>
 
   <view class="debug-card" wx:if="{{debugMessage}}">
     <view>{{debugMessage}}</view>
-    <view class="debug-back" bindtap="backToDirectory">{{ui.loadError}} · {{ui.back}}</view>
+    <view class="debug-back" bindtap="handleTopBack">{{ui.loadError}} · {{ui.back}}</view>
   </view>
 
   <view class="classroom-shell">
-    <view class="hero-card" wx:if="{{screen === 'directory'}}">
+    <view class="hero-card" wx:if="{{screen === 'system'}}">
       <view class="hero-eyebrow">{{ui.eyebrow}}</view>
       <view class="hero-title">{{ui.title}}</view>
       <view class="hero-copy">{{ui.copy}}</view>
@@ -28,7 +28,39 @@
       </view>
     </view>
 
-    <view class="content-card" wx:if="{{screen === 'directory'}}">
+    <view class="content-card" wx:if="{{screen === 'system'}}">
+      <view class="section-kicker">{{ui.systemTitle}}</view>
+      <view class="section-title">{{ui.systemCopy}}</view>
+      <view class="domain-grid">
+        <view class="domain-item" wx:for="{{ui.domains}}" wx:key="id" data-domain="{{item.id}}" bindtap="selectDomain">
+          <view class="domain-code">{{item.code}}</view>
+          <view class="topic-main">
+            <view class="topic-title">{{item.title}}</view>
+            <view class="topic-meta">{{item.meta}}</view>
+          </view>
+          <view class="row-arrow">›</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="content-card" wx:elif="{{screen === 'domain-map'}}">
+      <view class="inline-back" bindtap="backToSystem">{{ui.backSystem}}</view>
+      <view class="section-kicker">{{domainTitle}}</view>
+      <view class="section-title">{{domainCopy}}</view>
+      <view class="domain-course-list">
+        <view class="domain-course-item {{item.ready ? 'is-ready' : 'is-planned'}}" wx:for="{{domainItems}}" wx:key="id" data-item="{{item.id}}" bindtap="selectDomainItem">
+          <view class="topic-main">
+            <view class="topic-title">{{item.title}}</view>
+            <view class="topic-meta">{{item.meta}}</view>
+            <view class="topic-count">{{item.status}}</view>
+          </view>
+          <view class="row-arrow" wx:if="{{item.ready}}">›</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="content-card" wx:elif="{{screen === 'directory'}}">
+      <view class="inline-back" bindtap="backToDomainMap">{{ui.backMorphology}}</view>
       <view class="section-kicker">{{ui.directory}}</view>
       <view class="section-title">{{ui.directoryCopy}}</view>
       <view class="topic-grid">

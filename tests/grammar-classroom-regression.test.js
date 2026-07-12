@@ -168,3 +168,23 @@ test('动词完整课程覆盖中学核心与进阶知识边界', () => {
   assert.match(classroomPage, /\['verb', 'Verbs',[^\n]+, 36\]/);
   assert.match(classroomPage, /\['verb', '动词',[^\n]+, 36\]/);
 });
+
+test('语法课堂按体系分层并逐层返回', () => {
+  const source = fs.readFileSync(path.join(__dirname, '../grammar-package/pages/classroom/index.js'), 'utf8');
+  const context = { captured: null, Page: (config) => { context.captured = config; }, wx: {}, setTimeout, clearTimeout };
+  vm.createContext(context);
+  vm.runInContext(`${source};englishUi=uiText(true);`, context);
+  const page = context.captured;
+  assert.equal(page.data.screen, 'system');
+  assert.deepEqual(Array.from(page.data.ui.domains, (item) => item.id), ['morphology', 'syntax', 'clauses', 'discourse']);
+  assert.deepEqual(Array.from(context.englishUi.domains, (item) => item.id), ['morphology', 'syntax', 'clauses', 'discourse']);
+  assert.ok(page.data.ui.domainMaps.morphology.some((item) => item.id === 'parts-of-speech' && item.ready));
+  assert.ok(page.data.ui.domainMaps.morphology.some((item) => item.id === 'word-formation'));
+  assert.match(source, /handleTopBack\(\)[\s\S]*screen === 'lesson'[\s\S]*screen === 'course-map'[\s\S]*screen === 'directory'[\s\S]*screen === 'domain-map'/);
+  const wxml = fs.readFileSync(path.join(__dirname, '../grammar-package/pages/classroom/index.wxml'), 'utf8');
+  assert.match(wxml, /bindtap="handleTopBack"/);
+  assert.match(wxml, /bindtap="backToSystem"/);
+  assert.match(wxml, /bindtap="backToDomainMap"/);
+  assert.match(wxml, /bindtap="backFromCourseMap"/);
+  assert.match(wxml, /bindtap="backToCourseMap"/);
+});

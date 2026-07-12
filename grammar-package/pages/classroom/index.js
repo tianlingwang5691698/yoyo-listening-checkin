@@ -25,10 +25,76 @@ function uiText(english) {
     ['conjunction', '连词', '并列 · 从属 · 逻辑', 8],
     ['interjection', '感叹词', '情绪 · 应答 · 标点', 5]
   ];
+  const domains = english ? [
+    ['morphology', 'Word Grammar', 'Parts of speech, word forms and word building', 'M'],
+    ['syntax', 'Sentence Grammar', 'Sentence elements, patterns, predicates and special structures', 'S'],
+    ['clauses', 'Clauses & Complex Sentences', 'Coordination, noun, relative and adverbial clauses', 'C'],
+    ['discourse', 'Usage & Punctuation', 'Cohesion, information order, punctuation and expression', 'U']
+  ] : [
+    ['morphology', '词法', '词性、词形变化与构词规律', '词'],
+    ['syntax', '句法', '句子成分、基本句型、谓语系统与特殊结构', '句'],
+    ['clauses', '从句与复合句', '并列句、名词性从句、定语从句与状语从句', '从'],
+    ['discourse', '表达与标点', '衔接、信息顺序、标点与中英表达差异', '用']
+  ];
+  const domainMaps = english ? {
+    morphology: [
+      ['parts-of-speech', '10 Parts of Speech', 'Nouns, pronouns, verbs and the other word classes', '10 classes', true],
+      ['word-formation', 'Word Formation', 'Prefixes, suffixes, conversion and compounds', 'Planned', false]
+    ],
+    syntax: [
+      ['sentence-elements', 'Sentence Elements', 'Subject, predicate, object, complement, attribute and adverbial', 'Planned', false],
+      ['basic-patterns', 'Basic Sentence Patterns', 'Five basic patterns and there-be structures', 'Planned', false],
+      ['predicate-system', 'Predicate System', 'Agreement, tense, voice, auxiliaries and modals', 'Planned', false],
+      ['nonfinite-system', 'Non-finite Structures', 'Infinitives, gerunds and participles', 'Planned', false],
+      ['special-structures', 'Special Structures', 'Inversion, emphasis, ellipsis and imperatives', 'Planned', false]
+    ],
+    clauses: [
+      ['coordination', 'Coordination', 'and, but, or, so and parallel clauses', 'Planned', false],
+      ['noun-clauses', 'Noun Clauses', 'Object, subject and predicative clauses', 'Planned', false],
+      ['relative-clauses', 'Relative Clauses', 'Relative words, antecedents and clause structure', 'Planned', false],
+      ['adverbial-clauses', 'Adverbial Clauses', 'Time, condition, reason, purpose, result and concession', 'Planned', false],
+      ['reported-speech', 'Reported Speech', 'Tense, person, time and word-order changes', 'Planned', false]
+    ],
+    discourse: [
+      ['cohesion-reference', 'Cohesion & Reference', 'Pronoun reference, substitution and logical links', 'Planned', false],
+      ['information-order', 'Information Order', 'English focus, end-weight and Chinese-English order differences', 'Planned', false],
+      ['punctuation', 'Punctuation & Capitals', 'Sentence boundaries, commas, apostrophes and capitals', 'Planned', false],
+      ['common-expression', 'Common Expression Differences', 'Frequent Chinese-to-English structural differences', 'Planned', false]
+    ]
+  } : {
+    morphology: [
+      ['parts-of-speech', '十大词性', '名词、代词、动词及其他词类的作用与变化', '10 类 · 已开放', true],
+      ['word-formation', '构词法', '前缀、后缀、转化与合成词', '规划中', false]
+    ],
+    syntax: [
+      ['sentence-elements', '句子成分', '主语、谓语、宾语、表语、定语、状语与补语', '规划中', false],
+      ['basic-patterns', '基本句型', '五大基本句型与 there be 结构', '规划中', false],
+      ['predicate-system', '谓语系统', '主谓一致、时态、语态、助动词与情态动词', '规划中', false],
+      ['nonfinite-system', '非谓语结构', '不定式、动名词和分词', '规划中', false],
+      ['special-structures', '特殊句式', '倒装、强调、省略与祈使句', '规划中', false]
+    ],
+    clauses: [
+      ['coordination', '并列句', 'and、but、or、so 与平行分句', '规划中', false],
+      ['noun-clauses', '名词性从句', '宾语从句、主语从句与表语从句', '规划中', false],
+      ['relative-clauses', '定语从句', '关系词、先行词与从句结构', '规划中', false],
+      ['adverbial-clauses', '状语从句', '时间、条件、原因、目的、结果与让步', '规划中', false],
+      ['reported-speech', '直接引语与间接引语', '时态、人称、时间和语序变化', '规划中', false]
+    ],
+    discourse: [
+      ['cohesion-reference', '衔接与指代', '代词指代、替代与逻辑连接', '规划中', false],
+      ['information-order', '信息顺序', '英语焦点、尾重原则与中英语序差异', '规划中', false],
+      ['punctuation', '标点与大小写', '句界、逗号、撇号和大写规则', '规划中', false],
+      ['common-expression', '中英表达差异', '常见中文思维到英文结构的转换', '规划中', false]
+    ]
+  };
   return {
     eyebrow: english ? 'ENGLISH GRAMMAR' : '英语语法',
     title: english ? 'See how every sentence works' : '把一句话讲明白',
     copy: english ? 'Learn a rule from examples, then prove it with a short challenge.' : '从例句看清规则，再用小挑战真正掌握。',
+    systemTitle: english ? 'Grammar System' : '语法体系',
+    systemCopy: english ? 'Start from word grammar, sentence grammar, clauses or usage.' : '先选择词法、句法、从句或表达规则，再进入具体课程。',
+    domains: domains.map((item) => ({ id: item[0], title: item[1], meta: item[2], code: item[3] })),
+    domainMaps: Object.keys(domainMaps).reduce((result, key) => Object.assign(result, { [key]: domainMaps[key].map((item) => ({ id: item[0], title: item[1], meta: item[2], status: item[3], ready: item[4] })) }), {}),
     directory: english ? '10 Parts of Speech' : '十大词性',
     directoryCopy: english ? 'Choose one word class to begin.' : '选择一种词性开始学习。',
     topics: topics.map((item) => ({ id: item[0], title: item[1], meta: item[2], count: item[3], countText: english ? `${item[3]} lessons` : `${item[3]} 节微课` })),
@@ -40,6 +106,8 @@ function uiText(english) {
     thirdPersonCopy: english ? 'Subjects, spelling, negatives, questions and pronunciation' : '主语判断、拼写、否定、疑问与发音',
     core: english ? 'Core rules' : '语法本质',
     back: english ? 'Back' : '返回',
+    backSystem: english ? '‹ Grammar System' : '‹ 语法体系',
+    backMorphology: english ? '‹ Word Grammar' : '‹ 词法',
     backDirectory: english ? '‹ Parts of Speech' : '‹ 十大词性',
     backVerbMap: english ? '‹ Verb Map' : '‹ 动词地图',
     backVerbCourse: english ? '‹ Complete verb course' : '‹ 动词完整课程',
@@ -50,7 +118,8 @@ function uiText(english) {
     answerFirst: english ? 'Answer correctly to continue' : '答对后继续',
     retry: english ? 'Try again' : '再试一次',
     lessonUnit: english ? 'lessons' : '节微课',
-    loadError: english ? 'The course could not be opened. Return and try again.' : '课程暂时无法打开，请返回后重试。'
+    loadError: english ? 'The course could not be opened. Return and try again.' : '课程暂时无法打开，请返回后重试。',
+    planned: english ? 'Course in progress' : '课程正在建设'
   };
 }
 
@@ -67,7 +136,11 @@ Page({
     theme: 'warm',
     language: 'zh-CN',
     ui: uiText(false),
-    screen: 'directory',
+    screen: 'system',
+    selectedDomain: '',
+    domainTitle: '',
+    domainCopy: '',
+    domainItems: [],
     selectedTopic: '',
     loaderKind: '',
     course: [],
@@ -96,9 +169,9 @@ Page({
 
   onReady() {
     wx.nextTick(() => {
-      this.createSelectorQuery().select('.topic-item').boundingClientRect((rect) => {
+      this.createSelectorQuery().select('.domain-item').boundingClientRect((rect) => {
         if (!rect) {
-          this.setData({ debugMessage: 'DEBUG: grammar-package/pages/classroom.onReady -> directory.render -> .topic-item: missing' });
+          this.setData({ debugMessage: 'DEBUG: grammar-package/pages/classroom.onReady -> system.render -> .domain-item: missing' });
           return;
         }
         this.pageReadyReported = true;
@@ -116,9 +189,9 @@ Page({
     const storedLanguage = wx.getStorageSync(LANGUAGE_KEY);
     const theme = storedTheme === 'library' ? 'library' : 'warm';
     const language = storedLanguage === 'en' ? 'en' : 'zh-CN';
-    const languageChanged = this.data.language !== language && !!this.data.selectedTopic;
+    const languageChanged = this.data.language !== language && this.data.screen !== 'system';
     this.setData({ theme, language, ui: uiText(language === 'en') });
-    if (languageChanged) this.backToDirectory();
+    if (languageChanged) this.backToSystem();
     wx.setNavigationBarTitle({ title: language === 'en' ? 'Grammar Classroom' : '语法课堂' });
     wx.setNavigationBarColor({ frontColor: '#000000', backgroundColor: theme === 'library' ? '#FAF5EA' : '#F6FBFD' });
   },
@@ -133,6 +206,25 @@ Page({
     const topic = String(event.currentTarget.dataset.topic || '');
     if (!topic) return;
     this.loadCourse(topic);
+  },
+
+  selectDomain(event) {
+    const domain = String(event.currentTarget.dataset.domain || '');
+    const ui = this.data.ui;
+    const selected = ui.domains.find((item) => item.id === domain);
+    if (!selected) return;
+    this.setData({ screen: 'domain-map', selectedDomain: domain, domainTitle: selected.title, domainCopy: selected.meta, domainItems: ui.domainMaps[domain] || [], debugMessage: '' });
+    wx.pageScrollTo({ scrollTop: 0, duration: 0 });
+  },
+
+  selectDomainItem(event) {
+    const item = String(event.currentTarget.dataset.item || '');
+    if (item === 'parts-of-speech') {
+      this.setData({ screen: 'directory', debugMessage: '' });
+      wx.pageScrollTo({ scrollTop: 0, duration: 0 });
+      return;
+    }
+    wx.showToast({ title: this.data.ui.planned, icon: 'none', duration: 2200 });
   },
 
   selectVerbCourse() {
@@ -275,7 +367,29 @@ Page({
     this.setData({ screen: 'directory', selectedTopic: '', loaderKind: '', course: [], groups: [], courseTitle: '', courseCopy: '', activeLesson: null, debugMessage: '' });
   },
 
+  backToDomainMap() {
+    const domain = this.data.selectedDomain || 'morphology';
+    const ui = this.data.ui;
+    const selected = ui.domains.find((item) => item.id === domain) || ui.domains[0];
+    this.fullCourse = [];
+    this.setData({ screen: 'domain-map', selectedDomain: selected.id, domainTitle: selected.title, domainCopy: selected.meta, domainItems: ui.domainMaps[selected.id] || [], selectedTopic: '', loaderKind: '', course: [], groups: [], activeLesson: null, debugMessage: '' });
+  },
+
+  backToSystem() {
+    if (this.loadTimer) clearTimeout(this.loadTimer);
+    this.fullCourse = [];
+    this.setData({ screen: 'system', selectedDomain: '', domainTitle: '', domainCopy: '', domainItems: [], selectedTopic: '', loaderKind: '', course: [], groups: [], activeLesson: null, debugMessage: '' });
+  },
+
+  handleTopBack() {
+    if (this.data.screen === 'lesson') return this.backToCourseMap();
+    if (this.data.screen === 'course-map') return this.backFromCourseMap();
+    if (this.data.screen === 'directory') return this.backToDomainMap();
+    if (this.data.screen === 'domain-map') return this.backToSystem();
+    this.closePage();
+  },
+
   closePage() {
-    wx.navigateBack({ delta: 1, fail: () => this.backToDirectory() });
+    wx.navigateBack({ delta: 1, fail: () => this.backToSystem() });
   }
 });

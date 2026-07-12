@@ -1,8 +1,10 @@
 page { background: #f4fafc; }
 .classroom-page { --bg: #f4fafc; --card: rgba(255,255,255,.84); --line: #d8e8ef; --ink: #17344b; --muted: #6d8292; --accent: #2f6788; --soft: #edf6fa; min-height: 100vh; padding-bottom: 44rpx; background: var(--bg); color: var(--ink); box-sizing: border-box; }
 .page-topbar { height: 96rpx; padding: 0 28rpx; display: flex; align-items: center; justify-content: space-between; }
-.topbar-back, .topbar-space { width: 64rpx; }
-.topbar-back { font-size: 54rpx; line-height: 64rpx; }
+.topbar-back, .topbar-space { width: 128rpx; }
+.topbar-back { display: flex; align-items: center; color: var(--ink); }
+.topbar-chevron { font-size: 48rpx; line-height: 64rpx; }
+.topbar-back-text { margin-left: 4rpx; font-size: 23rpx; font-weight: 650; }
 .topbar-title { font-size: 29rpx; font-weight: 650; }
 .classroom-shell { padding: 12rpx 24rpx 40rpx; }
 .hero-card, .content-card { border: 1rpx solid var(--line); background: var(--card); box-shadow: 0 14rpx 40rpx rgba(54,92,113,.08); border-radius: 30rpx; }
@@ -16,14 +18,19 @@ page { background: #f4fafc; }
 .content-card { padding: 30rpx; }
 .section-title { margin: 10rpx 0 26rpx; font-size: 28rpx; font-weight: 600; color: var(--ink); }
 .topic-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14rpx; }
-.topic-item, .verb-map-item, .lesson-row { display: flex; align-items: center; min-width: 0; border: 1rpx solid var(--line); background: rgba(255,255,255,.72); }
+.domain-grid, .domain-course-list { display: flex; flex-direction: column; gap: 14rpx; }
+.domain-item, .domain-course-item, .topic-item, .verb-map-item, .lesson-row { display: flex; align-items: center; min-width: 0; border: 1rpx solid var(--line); background: rgba(255,255,255,.72); }
+.domain-item { min-height: 128rpx; padding: 20rpx; border-radius: 20rpx; }
+.domain-code { width: 62rpx; height: 62rpx; margin-right: 18rpx; display: flex; align-items: center; justify-content: center; flex: 0 0 auto; border-radius: 18rpx; background: var(--soft); color: var(--accent); font-size: 25rpx; font-weight: 800; }
+.domain-course-item { min-height: 116rpx; padding: 20rpx; border-radius: 18rpx; }
+.domain-course-item.is-planned { opacity: .68; }
 .topic-item { min-height: 146rpx; padding: 18rpx; border-radius: 20rpx; }
 .topic-main { min-width: 0; flex: 1; }
 .topic-title { font-size: 28rpx; line-height: 1.35; font-weight: 680; word-break: keep-all; overflow-wrap: break-word; }
 .topic-meta { margin-top: 6rpx; font-size: 21rpx; }
 .topic-count { margin-top: 8rpx; color: var(--accent); font-size: 20rpx; }
 .row-arrow { margin-left: 12rpx; color: #72a39d; font-size: 34rpx; }
-.inline-back { display: inline-block; margin-bottom: 22rpx; color: var(--muted); font-size: 24rpx; }
+.inline-back { display: inline-flex; min-height: 58rpx; margin-bottom: 22rpx; padding: 0 18rpx; align-items: center; border: 1rpx solid var(--line); border-radius: 30rpx; background: rgba(255,255,255,.72); color: var(--accent); font-size: 24rpx; font-weight: 680; }
 .verb-map-item { padding: 22rpx; border-radius: 20rpx; }
 .verb-map-code { width: 64rpx; height: 64rpx; margin-right: 18rpx; display: flex; align-items: center; justify-content: center; border-radius: 18rpx; background: var(--soft); color: var(--accent); font-weight: 800; }
 .course-group + .course-group { margin-top: 30rpx; }
@@ -91,7 +98,9 @@ page { background: #f4fafc; }
 .theme-library .topic-item { min-height: 100rpx; margin-top: -1rpx; border-radius: 0; background: #fffaf0; }
 .theme-library .topic-item:first-child { border-radius: 6rpx 6rpx 0 0; }
 .theme-library .topic-item:last-child { border-radius: 0 0 6rpx 6rpx; }
-.theme-library .verb-map-item, .theme-library .lesson-row, .theme-library .sentence-card, .theme-library .option-item { border-radius: 6rpx; background: #fffaf0; }
+.theme-library .domain-item, .theme-library .domain-course-item, .theme-library .verb-map-item, .theme-library .lesson-row, .theme-library .sentence-card, .theme-library .option-item { border-radius: 6rpx; background: #fffaf0; }
+.theme-library .domain-code { border-right: 1rpx solid #c9b58f; border-radius: 0; background: transparent; color: #876a3c; }
+.theme-library .inline-back { border-radius: 3rpx; background: #fffaf0; }
 .theme-library .lesson-no, .theme-library .verb-map-code { border-right: 1rpx solid #c9b58f; border-radius: 0; background: transparent; color: #876a3c; }
 .theme-library .rule-card { border-radius: 0; background: #f3ead8; }
 .theme-library .footer-actions { background: linear-gradient(to bottom, rgba(247,240,226,0), #f7f0e2 24%); }
