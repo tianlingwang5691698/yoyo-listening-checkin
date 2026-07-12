@@ -145,6 +145,7 @@ function buildClassroomText(includeVerbCourse = false) {
     verbMapTitle: 'Verb Map', verbMapCopy: 'A verb is the engine of a sentence. First identify its job, then learn its form.', verbLessonBack: '‹ Verb Map',
     verbGroups: [
       { id: 'job', title: '1 · By job in meaning', items: [
+        { id: 'complete-verb', title: 'Complete verb course', copy: 'Meaning, objects, forms, tense, voice and non-finite verbs', ready: true },
         { id: 'action', title: 'Main verbs', copy: 'Express an action or state: run, know, like', ready: false },
         { id: 'linking', title: 'Linking verbs', copy: 'Link the subject to a description: be, look, become', ready: false },
         { id: 'auxiliary', title: 'Auxiliary verbs', copy: 'Help build tense, questions or negatives: be, do, have', ready: false },
@@ -209,6 +210,7 @@ function buildClassroomText(includeVerbCourse = false) {
     verbMapTitle: '动词地图', verbMapCopy: '动词是句子的发动机。先看它负责什么，再看它怎样变化。', verbLessonBack: '‹ 动词地图',
     verbGroups: [
       { id: 'job', title: '一 · 按作用分类', items: [
+        { id: 'complete-verb', title: '动词完整课程', copy: '作用、宾语、形式、时态、语态与非谓语', ready: true },
         { id: 'action', title: '实义动词', copy: '自己表达动作或状态：run、know、like', ready: false },
         { id: 'linking', title: '系动词', copy: '连接主语和说明：be、look、become', ready: false },
         { id: 'auxiliary', title: '助动词', copy: '帮助构成时态、疑问和否定：be、do、have', ready: false },
@@ -307,7 +309,8 @@ function buildClassroomText(includeVerbCourse = false) {
   ];
   }
   const wordCategory = classroom.categories.find((item) => item.id === 'word');
-  if (wordCategory) wordCategory.children = wordCategory.children.map((item) => ['noun', 'pronoun', 'verb'].includes(item.id) ? Object.assign({}, item, { ready: true, meta: item.id === 'verb' ? item.meta : (english ? '9 lessons' : '9 节微课') }) : item);
+  const lessonCounts = { noun: 9, pronoun: 9, numeral: 7, article: 8, verb: 10, adjective: 9, adverb: 8, preposition: 8, conjunction: 8, interjection: 5 };
+  if (wordCategory) wordCategory.children = wordCategory.children.map((item) => Object.assign({}, item, { ready: true, meta: item.id === 'verb' ? (english ? 'Complete course · topic lessons' : '完整体系 · 专题课') : (english ? `${lessonCounts[item.id]} lessons` : `${lessonCounts[item.id]} 节微课`) }));
   return classroom;
 }
 
@@ -710,7 +713,7 @@ Page({
     const classroom = buildClassroomText();
     const shouldLoadActiveCourse = this.data.selectedClassroomTopic && (this.data.selectedClassroomTopic !== 'verb' || !!this.data.selectedVerbLesson);
     const activeBundle = shouldLoadActiveCourse
-      ? (['noun', 'pronoun'].includes(this.data.selectedClassroomTopic)
+      ? ((this.data.selectedClassroomTopic !== 'verb' || this.data.selectedVerbLesson === 'complete-verb')
         ? { course: this.data.activeClassroomCourse || [], groups: this.data.activeClassroomCourseGroups || [], title: this.data.activeClassroomCourseTitle || '', copy: this.data.activeClassroomCourseCopy || '' }
         : getClassroomCourse(classroom, this.data.selectedClassroomTopic))
       : { course: [], groups: [], title: '', copy: '' };
@@ -797,10 +800,11 @@ Page({
     let bundle = { course: [], groups: [], title: '', copy: '' };
     this.setData({ selectedClassroomTopic: topicId, selectedVerbLesson: topicId === 'verb' ? '' : 'word-course', selectedThirdPersonLesson: '', activeClassroomLesson: null, activeClassroomCourse: bundle.course, activeClassroomCourseGroups: bundle.groups, activeClassroomCourseTitle: bundle.title, activeClassroomCourseCopy: bundle.copy, classroomAnswer: '', classroomResult: '' });
     if (this.wordCourseLoadTimer) clearTimeout(this.wordCourseLoadTimer);
-    if (topicId === 'noun' || topicId === 'pronoun') {
+    if (topicId !== 'verb') {
+      this.wordCourseLoadStartedAt = Date.now();
       this.wordCourseLoadTimer = setTimeout(() => {
         if (this.data.selectedClassroomTopic === topicId && !(this.data.activeClassroomCourse || []).length) {
-          this.setData({ grammarRenderDebug: `DEBUG: pages/grammar.selectClassroomTopic -> grammar-word-loader.ready -> loaded event: missing; topic=${topicId}` });
+          this.setData({ grammarRenderDebug: `DEBUG: pages/grammar.selectClassroomTopic -> grammar-course-loader.ready -> loaded event: missing; topic=${topicId}` });
         }
       }, 1500);
     }
@@ -811,6 +815,8 @@ Page({
     if (this.wordCourseLoadTimer) clearTimeout(this.wordCourseLoadTimer);
     const bundle = detail.bundle;
     this.setData({ activeClassroomCourse: bundle.course || [], activeClassroomCourseGroups: bundle.groups || [], activeClassroomCourseTitle: bundle.title || '', activeClassroomCourseCopy: bundle.copy || '', grammarRenderDebug: '' });
+    if (this.grammarPerf && this.wordCourseLoadStartedAt) this.grammarPerf.mark('actionMs', { action: 'openCourseMap', topic: detail.topic, actionDurationMs: Date.now() - this.wordCourseLoadStartedAt });
+    this.wordCourseLoadStartedAt = 0;
   },
   onWordCourseLoadError(event) {
     if (this.wordCourseLoadTimer) clearTimeout(this.wordCourseLoadTimer);
@@ -828,6 +834,15 @@ Page({
   },
   selectVerbLesson(event) {
     const lessonId = String(event.currentTarget.dataset.lessonId || '');
+    if (lessonId === 'complete-verb') {
+      this.wordCourseLoadStartedAt = Date.now();
+      this.setData({ selectedVerbLesson: lessonId, selectedThirdPersonLesson: '', activeClassroomLesson: null, activeClassroomCourse: [], activeClassroomCourseGroups: [], activeClassroomCourseTitle: '', activeClassroomCourseCopy: '', classroomAnswer: '', classroomResult: '' });
+      if (this.wordCourseLoadTimer) clearTimeout(this.wordCourseLoadTimer);
+      this.wordCourseLoadTimer = setTimeout(() => {
+        if (this.data.selectedVerbLesson === lessonId && !(this.data.activeClassroomCourse || []).length) this.setData({ grammarRenderDebug: 'DEBUG: pages/grammar.selectVerbLesson -> grammar-vna-loader.ready -> loaded event: missing; topic=verb' });
+      }, 1500);
+      return;
+    }
     if (lessonId !== 'third-person') return;
     const bundle = getClassroomCourse(this.data.classroom, 'verb');
     this.setData({ selectedVerbLesson: lessonId, selectedThirdPersonLesson: '', activeClassroomLesson: null, activeClassroomCourse: bundle.course, activeClassroomCourseGroups: bundle.groups, activeClassroomCourseTitle: bundle.title, activeClassroomCourseCopy: bundle.copy, activeClassroomLessonIndex: -1, isLastClassroomLesson: false, activeClassroomExerciseIndex: 0, activeClassroomQuestion: null, isLastClassroomExercise: false, classroomAnswer: '', classroomResult: '' });
@@ -840,12 +855,14 @@ Page({
     else this.backToClassroomTopics();
   },
   selectThirdPersonLesson(event) {
+    const startedAt = Date.now();
     const lessonId = String(event.currentTarget.dataset.lessonId || '');
     const course = this.data.activeClassroomCourse || [];
     const lessonIndex = course.findIndex((item) => item.id === lessonId);
     const lesson = lessonIndex >= 0 ? course[lessonIndex] : null;
     if (!lesson) return;
     this.setData({ selectedThirdPersonLesson: lessonId, activeClassroomLesson: lesson, activeClassroomLessonIndex: lessonIndex, isLastClassroomLesson: lessonIndex === course.length - 1, activeClassroomExerciseIndex: 0, activeClassroomQuestion: lesson.questions[0], isLastClassroomExercise: lesson.questions.length === 1, classroomAnswer: '', classroomResult: '' });
+    if (this.grammarPerf) this.grammarPerf.mark('actionMs', { action: 'openClassroomLesson', topic: this.data.selectedClassroomTopic, lessonId, actionDurationMs: Date.now() - startedAt });
   },
   backToThirdPersonCourse() {
     this.setData({ selectedThirdPersonLesson: '', activeClassroomLesson: null, activeClassroomLessonIndex: -1, isLastClassroomLesson: false, activeClassroomExerciseIndex: 0, activeClassroomQuestion: null, isLastClassroomExercise: false, classroomAnswer: '', classroomResult: '' });

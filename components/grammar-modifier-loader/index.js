@@ -1,0 +1,3 @@
+const courses = require('../../domain/grammar-classroom/adjective-adverb-courses');
+const builders = { adjective: courses.buildAdjectiveCourse, adverb: courses.buildAdverbCourse };
+Component({properties:{topic:{type:String,value:''},language:{type:String,value:'zh-CN'}},observers:{'topic, language':function(t,l){if(this._ready)this.load(t,l)}},lifetimes:{ready(){this._ready=true;this.load(this.data.topic,this.data.language)}},methods:{load(topic,language){try{const build=builders[topic];if(!build)return;this.triggerEvent('loaded',{topic,bundle:build(language==='en')})}catch(error){this.triggerEvent('loaderror',{topic,message:error&&error.message||'unknown'})}}}});

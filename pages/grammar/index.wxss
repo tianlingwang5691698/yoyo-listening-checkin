@@ -325,12 +325,20 @@
 .sentence-part.role-modifier .sentence-part-label { color: #715b88; }
 .sentence-part.role-helper { border-color: #b99247; background: rgba(185, 146, 71, 0.14); }
 .sentence-part.role-helper .sentence-part-label { color: #80632f; }
+.sentence-part.role-auxiliary, .sentence-part.role-modal { border-color: #b99247; background: rgba(185, 146, 71, 0.14); }
+.sentence-part.role-auxiliary .sentence-part-label, .sentence-part.role-modal .sentence-part-label { color: #80632f; }
 .sentence-part.role-attribute { border-color: #9b82b5; background: rgba(155, 130, 181, 0.13); }
 .sentence-part.role-attribute .sentence-part-label { color: #715b88; }
 .sentence-part.role-adverbial { border-color: #6d91b8; background: rgba(109, 145, 184, 0.13); }
 .sentence-part.role-adverbial .sentence-part-label { color: #4b6d91; }
 .sentence-part.role-conjunction { border-color: #b07a9b; background: rgba(176, 122, 155, 0.13); }
 .sentence-part.role-conjunction .sentence-part-label { color: #80556f; }
+.sentence-part.role-preposition { border-color: #6d91b8; background: rgba(109, 145, 184, 0.13); }
+.sentence-part.role-preposition .sentence-part-label { color: #4b6d91; }
+.sentence-part.role-complement { border-color: #769b75; background: rgba(118, 155, 117, 0.14); }
+.sentence-part.role-complement .sentence-part-label { color: #527451; }
+.sentence-part.role-interjection { border-color: #b07a9b; background: rgba(176, 122, 155, 0.13); }
+.sentence-part.role-interjection .sentence-part-label { color: #80556f; }
 .sentence-translation { margin-top: 14rpx; padding-top: 12rpx; border-top: 1rpx dashed var(--grammar-line); color: var(--grammar-muted); font-size: 22rpx; line-height: 1.55; }
 .sentence-translation text { color: var(--grammar-blue); font-weight: 600; }
 .sentence-note-title { color: var(--grammar-blue); font-size: 20rpx; line-height: 1.3; font-weight: 700; }

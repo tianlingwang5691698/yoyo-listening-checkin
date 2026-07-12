@@ -1,5 +1,8 @@
 <view class="theme-{{theme}} language-{{language}} page-shell grammar-page">
   <grammar-word-loader wx:if="{{mode === 'classroom' && (selectedClassroomTopic === 'noun' || selectedClassroomTopic === 'pronoun')}}" topic="{{selectedClassroomTopic}}" language="{{language}}" bindloaded="onWordCourseLoaded" bindloaderror="onWordCourseLoadError" />
+  <grammar-vna-loader wx:if="{{mode === 'classroom' && (selectedClassroomTopic === 'numeral' || selectedClassroomTopic === 'article' || (selectedClassroomTopic === 'verb' && selectedVerbLesson === 'complete-verb'))}}" topic="{{selectedClassroomTopic}}" language="{{language}}" bindloaded="onWordCourseLoaded" bindloaderror="onWordCourseLoadError" />
+  <grammar-modifier-loader wx:if="{{mode === 'classroom' && (selectedClassroomTopic === 'adjective' || selectedClassroomTopic === 'adverb')}}" topic="{{selectedClassroomTopic}}" language="{{language}}" bindloaded="onWordCourseLoaded" bindloaderror="onWordCourseLoadError" />
+  <grammar-relation-loader wx:if="{{mode === 'classroom' && (selectedClassroomTopic === 'preposition' || selectedClassroomTopic === 'conjunction' || selectedClassroomTopic === 'interjection')}}" topic="{{selectedClassroomTopic}}" language="{{language}}" bindloaded="onWordCourseLoaded" bindloaderror="onWordCourseLoadError" />
   <view class="grammar-render-debug" wx:if="{{grammarRenderDebug}}">{{grammarRenderDebug}}</view>
   <block wx:if="{{theme === 'library'}}">
     <view class="library-grammar-shell">
