@@ -270,6 +270,26 @@ test('动词完整课程覆盖中学核心与进阶知识边界', () => {
     assert.ok(bundle.course.reduce((sum, lesson) => sum + lesson.rules.length, 0) >= 106);
     assert.ok(bundle.course.reduce((sum, lesson) => sum + lesson.examples.length, 0) >= 116);
     assert.ok(bundle.course.reduce((sum, lesson) => sum + lesson.questions.length, 0) >= 116);
+    assert.deepEqual(bundle.groups.map((group) => group.lessons.length), [25, 11]);
+    assert.deepEqual(bundle.sections.map((section) => section.lessonCount), [5, 3, 7, 9, 7, 5]);
+    assert.match(bundle.course[0].title, english ? /Definition and core/ : /定义与本质/);
+    bundle.course.forEach((lesson) => {
+      assert.equal(lesson.exampleNotes.length, lesson.examples.length);
+      assert.ok(lesson.exampleNotes.every((note) => note.visible && (note.body || note.detail)));
+      assert.equal(lesson.ruleCoverage.length, lesson.rules.length);
+      lesson.ruleCoverage.forEach((coverage) => {
+        assert.ok(coverage.exampleIndexes.length && coverage.questionIndexes.length);
+        coverage.exampleIndexes.forEach((index) => assert.ok(index >= 0 && index < lesson.examples.length));
+        coverage.questionIndexes.forEach((index) => assert.ok(index >= 0 && index < lesson.questions.length));
+      });
+      lesson.questions.forEach((question) => {
+        assert.ok(question.options.some((option) => option.key === question.answer));
+        if (english) {
+          assert.doesNotMatch(question.question, /[\u4e00-\u9fff]/);
+          question.options.forEach((option) => assert.doesNotMatch(option.text, /[\u4e00-\u9fff]/));
+        }
+      });
+    });
     const summaries = bundle.course.map(({ id, no, level, title, meta }) => ({ id, no, level, title, meta }));
     assert.ok(Buffer.byteLength(JSON.stringify(summaries)) < 12000);
   });
@@ -280,6 +300,11 @@ test('动词完整课程覆盖中学核心与进阶知识边界', () => {
   assert.ok(thirdPersonLesson.rules.some((rule) => rule.includes('/s/')));
   assert.ok(thirdPersonLesson.rules.some((rule) => rule.includes('/z/')));
   assert.ok(thirdPersonLesson.rules.some((rule) => rule.includes('/ɪz/')));
+  const verbBundle = sourceVnaCourses.buildVerbCourse(false);
+  const roles = verbBundle.course.flatMap((lesson) => lesson.analyses.flat()).map((part) => part.role);
+  ['predicative','directObject','indirectObject','preposition','prepositionalObject','objectComplement'].forEach((role) => assert.ok(roles.includes(role)));
+  assert.match(verbBundle.sections.at(-1).title, /补足关系/);
+  assert.ok(!verbBundle.course.find((lesson) => lesson.id === 'verb-complements').rules.some((rule) => rule.includes('固定搭配')));
 });
 
 test('名词课程从定义、句法功能到数量和关系完整闭环', () => {

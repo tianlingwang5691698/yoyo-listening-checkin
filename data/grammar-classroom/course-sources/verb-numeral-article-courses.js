@@ -3,7 +3,9 @@ const INCLUDE_RULE_COVERAGE = typeof GRAMMAR_RUNTIME === 'undefined' || !GRAMMAR
 const BUILD_TARGET = typeof GRAMMAR_TARGET === 'undefined' ? 'all' : GRAMMAR_TARGET;
 const labels = {
   subject: ['主语', 'Subject'], predicate: ['谓语动词', 'Predicate verb'], object: ['宾语', 'Object'],
-  complement: ['表语', 'Subject complement'], attribute: ['定语', 'Attribute'], adverbial: ['状语', 'Adverbial'],
+  complement: ['表语', 'Subject complement'], predicative: ['表语', 'Subject complement'], objectComplement: ['宾语补足语', 'Object complement'],
+  directObject: ['直接宾语', 'Direct object'], indirectObject: ['间接宾语', 'Indirect object'],
+  preposition: ['介词', 'Preposition'], prepositionalObject: ['介词宾语', 'Object of preposition'], attribute: ['定语', 'Attribute'], adverbial: ['状语', 'Adverbial'],
   auxiliary: ['助动词', 'Auxiliary'], modal: ['情态动词', 'Modal verb'], conjunction: ['连词', 'Conjunction']
 };
 const questionEnglish = Object.assign({}, BUILD_TARGET === 'all' || BUILD_TARGET === 'verb' ? {
@@ -115,7 +117,7 @@ const allSectionSpecs = {
     { id: 'forms-agreement', zhTitle: '词形变化与主谓一致', enTitle: 'Verb forms and agreement', zhCopy: '系统掌握五种形式、拼写变化和基础及复杂一致。', enCopy: 'Learn the principal forms, spelling changes and basic to complex agreement.', lessonIds: ['finite-forms','verb-five-forms','third-person-form','past-forms','ing-forms','subject-verb-agreement','agreement-complex'] },
     { id: 'tense-aspect', zhTitle: '动作的时间与状态', enTitle: 'Tense and aspect', zhCopy: '时态看动作发生的时间；体看动作处于一般、进行还是完成状态。', enCopy: 'Tense locates an action in time; aspect shows it as simple, progressive or perfect.', lessonIds: ['present-simple','present-progressive','past-simple','past-progressive','future-forms','perfect-vs-past','past-time-sequence','future-in-clauses','tense-aspect'] },
     { id: 'voice-nonfinite', zhTitle: '语态与非谓语动词', enTitle: 'Voice and non-finite verbs', zhCopy: '区分主动被动，并分课掌握不定式、动名词和分词。', enCopy: 'Distinguish active and passive voice and master infinitives, gerunds and participles.', lessonIds: ['voice','passive-tenses','nonfinite','infinitive','gerund','participles','nonfinite-advanced'] },
-    { id: 'patterns-collocations', zhTitle: '动词搭配与特殊结构', enTitle: 'Verb patterns and special structures', zhCopy: '处理短语动词、感官使役、搭配选择和意义变化。', enCopy: 'Handle phrasal verbs, causative/perception patterns, complementation and meaning changes.', lessonIds: ['phrasal','causative-perception','gerund-infinitive-meaning','special-verb-patterns','verb-complements'] }
+    { id: 'patterns-collocations', zhTitle: '动词补足关系与特殊结构', enTitle: 'Verb complementation and special structures', zhCopy: '理解动词怎样决定后接成分，并处理短语动词、感官使役和意义变化。', enCopy: 'Understand how verbs select what follows, then handle phrasal, causative, perception and meaning patterns.', lessonIds: ['phrasal','causative-perception','gerund-infinitive-meaning','special-verb-patterns','verb-complements'] }
   ],
   Numerals: [
     { id: 'number-meaning', zhTitle: '定义、本质与句中作用', enTitle: 'Meaning and sentence roles', zhCopy: '先判断数字表达数量、顺序还是编号，再看它在句中的作用。', enCopy: 'First decide whether a number gives quantity, order or a label, then identify its sentence role.', lessonIds: ['numeral-essence','numeral-functions'] },
@@ -161,15 +163,15 @@ function grouped(en, zhTitle, enTitle, lessons, coreCount) {
 function buildVerbCourse(en) {
   const s = (u, m, z, e) => analyzed(en, u, m, z, e), f = (t, m, z, e) => form(en, t, m, z, e), q = (...a) => question(en, ...a);
   const bq = (zp, ep, za, ea, zb, eb, answer, zh, english) => q(pick(en, zp, ep), pick(en, za, ea), pick(en, zb, eb), answer, zh, english);
-  return grouped(en, '动词', 'Verbs', [
-    lesson(en, 'verb-jobs', '动词承担什么任务', 'What verbs do', '动作、状态与系表关系', 'Actions · states · linking', [
-      s([['Birds','subject'],['fly.','predicate']]), s([['I','subject'],['know','predicate'],['the answer.','object']]), s([['The soup','subject'],['tastes','predicate'],['good.','complement']])
-    ], [['实义动词表示动作或状态；系动词连接主语与表语。','Lexical verbs express actions or states; linking verbs connect subjects to complements.'],['先找谓语，再判断它在句中的任务。','Find the predicate before classifying its job.']], [q('The flower smells sweet. smells 是？','系动词','及物动词','A','smells 连接 flower 和 sweet。','smells links flower and sweet.'),q('Birds fly. fly 表示？','动作','所属','A','fly 表示动作。','fly expresses an action.'),q('I understand you. understand 后面是？','宾语','表语','A','you 是 understand 的宾语。','you is the object of understand.')]),
+  const bundle = grouped(en, '动词', 'Verbs', [
+    lesson(en, 'verb-jobs', '动词的定义与本质', 'Definition and core of verbs', '句子的谓语核心', 'The core of the predicate', [
+      s([['Birds','subject'],['fly.','predicate']]), s([['I','subject'],['know','predicate'],['the answer.','object']]), s([['The soup','subject'],['tastes','predicate'],['good.','predicative']])
+    ], [['动词是谓语的核心，用来表达动作、状态或变化；系动词还把主语和表语连接起来。','A verb is the core of the predicate: it expresses an action, state or change; a linking verb connects the subject with its complement.'],['先找句中随时态或主语变化的谓语核心，再判断它后面需要宾语、表语还是其他成分。','First find the finite predicate core, then decide whether it requires an object, subject complement or another element.']], [q('The flower smells sweet. smells 是？','系动词','及物动词','A','smells 连接 flower 和 sweet。','smells links flower and sweet.'),q('Birds fly. fly 表示？','动作','所属','A','fly 表示动作。','fly expresses an action.'),q('I understand you. understand 后面是？','宾语','表语','A','you 是 understand 的宾语。','you is the object of understand.')]),
     lesson(en, 'transitivity', '及物与不及物', 'Transitive and intransitive verbs', '谓语后是否需要宾语', 'Whether an object is required', [
       s([['She','subject'],['opened','predicate'],['the window.','object']]), s([['The baby','subject'],['cried.','predicate']]), s([['We','subject'],['arrived','predicate'],['at noon.','adverbial','时间状语','Time adverbial']],'translation','at noon 是时间状语，不是宾语。','at noon is a time adverbial, not an object.')
     ], [['及物动词可直接带宾语；不及物动词不能直接带宾语。','Transitive verbs take direct objects; intransitive verbs do not.'],['介词短语不是直接宾语。','A prepositional phrase is not a direct object.']], [q('She bought ___.','a book','at','A','buy 是及物动词，需要宾语。','buy is transitive and takes an object.'),q('He arrived ___.','the station','at the station','B','arrive 后借助介词 at。','arrive needs at before the place.'),q('The child smiled. smiled 是？','不及物','及物','A','此处没有宾语，smile 不及物。','smile is intransitive here.')]),
     lesson(en, 'linking', '系动词与表语', 'Linking verbs and complements', 'be、感官与变化', 'Be · senses · changes', [
-      s([['She','subject'],['is','predicate'],['a doctor.','complement']]), s([['The music','subject'],['sounds','predicate'],['beautiful.','complement']]), s([['The leaves','subject'],['turned','predicate'],['yellow.','complement']])
+      s([['She','subject'],['is','predicate'],['a doctor.','predicative']]), s([['The music','subject'],['sounds','predicate'],['beautiful.','predicative']]), s([['The leaves','subject'],['turned','predicate'],['yellow.','predicative']])
     ], [['表语说明主语的身份、性质或状态，不是动作承受者。','A subject complement identifies or describes the subject; it is not an object.'],['常见系动词有 be、look、sound、feel、become、turn。','Common linking verbs include be, look, sound, feel, become and turn.']], [q('The cake tastes ___.','delicious','deliciously','A','系动词后用形容词作表语。','Use an adjective after a linking verb.'),q('He became ___.','a teacher','a teacher to','A','a teacher 作表语。','a teacher is the complement.'),q('The sky grew dark. dark 是？','表语','宾语','A','dark 描述 sky。','dark describes the sky.')]),
     lesson(en, 'aux-modal', '助动词与情态动词', 'Auxiliaries and modal verbs', '构成结构，不抢实义', 'Building grammatical structures', [
       s([['She','subject'],['does not','auxiliary'],['like','predicate'],['coffee.','object']]), s([['They','subject'],['are','auxiliary'],['working.','predicate']]), s([['You','subject'],['must','modal'],['finish','predicate'],['today.','adverbial','时间状语','Time adverbial']])
@@ -184,7 +186,7 @@ function buildVerbCourse(en) {
     lesson(en, 'nonfinite', '非谓语动词基础', 'Non-finite verb basics', 'to do、doing、done', 'to do · doing · done', [
       s([['She','subject'],['wants','predicate'],['to leave.','object','不定式作宾语','Infinitive as object']]), s([['Swimming','subject','动名词作主语','Gerund as subject'],['is','predicate'],['good exercise.','complement']]), s([['The broken window','subject','含过去分词前置定语的主语','Subject with participial attribute'],['needs','predicate'],['repair.','object']],'translation','broken 前置修饰 window，中文同样译为“破损的窗户”。','broken modifies window before the noun here.')
     ], [['非谓语动词不能独立充当句子的限定谓语。','A non-finite verb cannot serve alone as the finite predicate.'],['to do 常表目的或未发生，doing 有名词/进行意味，done 常有被动或完成意味。','to do often suggests purpose or prospect; doing has nominal/progressive force; done often suggests passive/completed meaning.']], [q('I hope ___ you.','to see','saw','A','hope 后常接 to do。','hope commonly takes to do.'),q('___ is fun.','Reading','Read yesterday','A','Reading 可作主语。','Reading can act as subject.'),q('the ___ door','closed','closing by someone','A','closed 作定语表示已关闭。','closed is a participial modifier.')]),
-    lesson(en,'double-object-complement','双宾语与宾语补足语','Two objects and object complements','谁收到什么；宾语变得怎样','Receiver + thing; object + description',[s([['Mum','subject'],['gave','predicate'],['me','object','间接宾语','Indirect object'],['a gift.','object','直接宾语','Direct object']]),s([['Mum','subject'],['gave','predicate'],['a gift to me.','object','直接宾语＋to 接收者','Direct object + to receiver']]),s([['They','subject'],['painted','predicate'],['the door red.','object','宾语＋宾语补足语','Object + object complement']])],[['双宾语按“间接宾语（人）＋直接宾语（物）”排列。','Two objects normally follow the order indirect receiver + direct thing.'],['give/send/show 等可改为“物＋to＋人”，buy/make 等常用 for。','give/send/show can use thing + to + person; buy/make often use for.'],['宾语补足语说明宾语的身份、状态或动作，和宾语构成逻辑主谓关系。','An object complement identifies, describes or predicates an action of the object.']],[bq('She sent ___。','She sent ...','我一封邮件','me an email','一封邮件我','an email me','A','双宾语是“人＋物”。','Use receiver + thing.'),bq('He bought a cake ___ me.','He bought a cake ___ me.','to','to','for','for','B','buy 的受益者常用 for。','Use for with the beneficiary of buy.'),bq('We found the task ___.','We found the task ...','困难的','difficult','困难地','difficultly','A','difficult 作宾语补足语。','difficult is the object complement.')]),
+    lesson(en,'double-object-complement','双宾语与宾语补足语','Two objects and object complements','谁收到什么；宾语变得怎样','Receiver + thing; object + description',[s([['Mum','subject'],['gave','predicate'],['me','indirectObject'],['a gift.','directObject']]),s([['Mum','subject'],['gave','predicate'],['a gift','directObject'],['to','preposition'],['me.','prepositionalObject']]),s([['They','subject'],['painted','predicate'],['the door','object'],['red.','objectComplement']])],[['双宾语按“间接宾语（人）＋直接宾语（物）”排列。','Two objects normally follow the order indirect receiver + direct thing.'],['give/send/show 等可改为“物＋to＋人”，buy/make 等常用 for。','give/send/show can use thing + to + person; buy/make often use for.'],['宾语补足语说明宾语的身份、状态或动作，和宾语构成逻辑主谓关系。','An object complement identifies, describes or predicates an action of the object.']],[bq('She sent ___。','She sent ...','我一封邮件','me an email','一封邮件给我','an email to me','A','双宾语是“人＋物”。','Use receiver + thing.'),bq('He bought a cake ___ me.','He bought a cake ___ me.','to','to','for','for','B','buy 的受益者常用 for。','Use for with the beneficiary of buy.'),bq('We found the task ___.','We found the task ...','困难的','difficult','困难地','difficultly','A','difficult 作宾语补足语。','difficult is the object complement.')]),
     lesson(en,'verb-five-forms','动词五种基本形式','The five principal forms','原形、三单、过去式、过去分词、-ing','Base · third singular · past · participle · -ing',[f('work · works · worked · worked · working','spelling','规则动词由原形按规则构成其余形式。','A regular verb forms the other principal forms regularly.'),f('go · goes · went · gone · going','spelling','不规则动词的过去式和过去分词要分别记忆。','For an irregular verb, learn past and past participle separately.'),f('write · writes · wrote · written · writing','spelling','过去式 wrote 与过去分词 written 不能混用。','Do not confuse past wrote with participle written.')],[['五种形式承担不同结构任务，不能只记中文词义。','The five forms serve different grammatical structures; meaning alone is insufficient.'],['规则动词的过去式和过去分词通常同形。','A regular verb normally has identical past and past-participle forms.'],['不规则动词的过去式和过去分词可能不同，必须成组记忆。','An irregular verb may have different past and participle forms and must be learned as a set.']],[bq('哪一项是 work 的 -ing 形式？','Which is the -ing form of work?','working','working','worked','worked','A','working 是 -ing 形式。','working is the -ing form.'),bq('规则动词 play 的过去分词是？','What is the past participle of regular play?','played','played','playing','playing','A','规则过去分词为 played。','The regular participle is played.'),bq('write 的过去分词是？','What is the past participle of write?','wrote','wrote','written','written','B','written 是过去分词。','written is the past participle.')]),
     lesson(en,'third-person-form','第三人称单数的拼写与发音','Third-person singular spelling and sound','-s、-es、y→ies · /s/、/z/、/ɪz/','-s · -es · y→ies · /s/ · /z/ · /ɪz/',[f('play → plays · run → runs','spelling','大多数动词直接加 -s。','Most verbs add -s.'),f('watch → watches · go → goes','spelling','s/x/ch/sh/o 结尾通常加 -es。','Verbs ending in s/x/ch/sh/o normally add -es.'),f('study → studies · have → has','spelling','辅音字母+y 变 ies；have 变 has。','Consonant+y changes to ies; have becomes has.'),f('likes /s/','sound','非咝音的清辅音后，词尾读 /s/。','After a voiceless non-sibilant sound, the ending is /s/.'),f('plays /z/ · runs /z/','sound','元音或非咝音的浊辅音后，词尾读 /z/。','After a vowel or voiced non-sibilant sound, the ending is /z/.'),f('watches /ɪz/ · washes /ɪz/','sound','咝音后，-es 构成额外的 /ɪz/ 音节。','After a sibilant, -es forms an extra /ɪz/ syllable.')],[['大多数动词第三人称单数直接加 -s。','Most verbs add -s in the third-person singular.'],['s、x、ch、sh、o 结尾通常加 -es。','Verbs ending in s, x, ch, sh or o normally add -es.'],['辅音字母+y 变 -ies；have、be 是高频特殊变化。','Consonant+y changes to -ies; have and be are common irregular forms.'],['非咝音的清辅音后，词尾读 /s/。','After a voiceless non-sibilant sound, the ending is /s/.'],['元音或非咝音的浊辅音后，词尾读 /z/。','After a vowel or voiced non-sibilant sound, the ending is /z/.'],['咝音后，-es 读 /ɪz/ 并增加一个音节。','After a sibilant, -es is /ɪz/ and adds a syllable.']],[bq('She ___ tennis.','She ___ tennis.','打 plays','plays','打 play','play','A','第三人称单数加 s。','The third-person singular adds s.'),bq('He ___ TV.','He ___ TV.','watches','watches','watchs','watchs','A','watch 加 es。','watch adds es.'),bq('Tom ___ hard.','Tom ___ hard.','studys','studys','studies','studies','B','study 变 studies。','study changes to studies.'),bq('likes 的词尾读什么？','How does the ending of likes sound?','/s/','/s/','/z/','/z/','A','likes 的词尾读 /s/。','likes ends in /s/.'),bq('plays 的词尾读什么？','How does the ending of plays sound?','/s/','/s/','/z/','/z/','B','plays 的词尾读 /z/。','plays ends in /z/.'),bq('watches 的词尾读什么？','How does the ending of watches sound?','/z/','/z/','/ɪz/','/ɪz/','B','watches 的词尾读 /ɪz/。','watches ends in /ɪz/.')]),
     lesson(en,'past-forms','过去式与过去分词拼写','Past and past-participle forms','规则变化与不规则变化','Regular and irregular formation',[f('work → worked · live → lived','spelling','一般加 -ed；已有 e 只加 -d。','Normally add -ed; after e add only -d.'),f('study → studied · stop → stopped','spelling','辅音+y 变 ied；重读闭音节双写末字母。','Consonant+y changes to ied; a final consonant doubles in the stressed CVC pattern.'),f('go → went → gone · see → saw → seen','spelling','不规则过去式和过去分词分别记忆。','Learn irregular past and participle forms separately.')],[['规则过去式一般加 -ed，词尾 e 后只加 -d。','Regular past forms add -ed, or only -d after final e.'],['辅音+y 变 -ied；符合条件的重读闭音节双写末辅音再加 -ed。','Consonant+y changes to -ied; eligible stressed CVC verbs double the final consonant.'],['不规则动词不能套 -ed，过去式与过去分词必须分别掌握。','Irregular verbs do not take -ed; learn past and participle separately.']],[bq('live 的过去式是？','What is the past form of live?','lived','lived','liveed','liveed','A','词尾 e 后加 d。','Add d after final e.'),bq('stop 的过去式是？','What is the past form of stop?','stoped','stoped','stopped','stopped','B','重读闭音节双写 p。','Double p in this stressed CVC verb.'),bq('go 的过去分词是？','What is the past participle of go?','went','went','gone','gone','B','gone 是过去分词。','gone is the past participle.')]),
@@ -202,7 +204,7 @@ function buildVerbCourse(en) {
     lesson(en,'future-in-clauses','主将从现','Present tense in future clauses','条件、时间与让步从句','Condition · time · concession',[s([['If it rains','adverbial','条件状语从句','Condition clause'],['we','subject'],['will stay','predicate'],['home.','adverbial','地点状语','Place adverbial']]),s([['I','subject'],['will call','predicate'],['you when I arrive.','adverbial','时间状语从句','Time clause']]),s([['Even if he is busy','adverbial','让步状语从句','Concession clause'],['he','subject'],['will help.','predicate']])],[['真实将来条件句中，if 从句用一般现在时。','In a real future condition, the if-clause uses present simple.'],['when/as soon as/until 等将来时间从句用一般现在时。','Future time clauses with when/as soon as/until use present simple.'],['even if 等将来让步从句通常不用 will。','Future concession clauses with even if normally avoid will.']],[bq('If it ___, we will leave.','If it ___, we will leave.','stops','stops','will stop','will stop','A','if 从句用一般现在时。','Use present simple.'),bq('I will tell her when she ___.','I will tell her when she ___.','comes','comes','will come','will come','A','when 从句用一般现在时。','Use present simple.'),bq('Even if he ___ busy, he will come.','Even if he ___ busy, he will come.','is','is','will be','will be','A','让步从句不用 will。','Avoid will in the concession clause.')]),
     lesson(en,'past-time-sequence','过去完成、过去将来与时态呼应','Past perfect, future-in-the-past and sequence','过去之前与过去视角','Earlier past and past viewpoint',[s([['The train','subject'],['had left','predicate'],['before we arrived.','adverbial','时间状语从句','Time clause']]),s([['He','subject'],['said','predicate'],['he would return.','object','宾语从句','Object clause']]),s([['She','subject'],['said','predicate'],['she was tired.','object','宾语从句','Object clause']])],[['过去完成时 had＋done 表示“过去的过去”。','Past perfect had + done expresses an earlier past.'],['would＋原形表示过去视角的将来。','would + base expresses future viewed from the past.'],['过去主句后的宾语从句通常按过去视角调整，客观真理除外。','An object clause after past reporting normally shifts to a past viewpoint; universal truths are excepted.']],[bq('By then the film ___.','By then the film ___.','had started','had started','will start','will start','A','先发生用过去完成时。','Use past perfect for the earlier event.'),bq('He said he ___ come.','He said he ___ come.','would','would','will','will','A','过去将来用 would。','Use would.'),bq('She said she ___ ill.','She said she ___ ill.','was','was','is yesterday','is yesterday','A','从句按过去视角调整。','Shift to the past viewpoint.')]),
     lesson(en,'infinitive','不定式 to do','The infinitive','名词功能、定语、状语','Nominal roles · attribute · adverbial',[s([['To learn English','subject','不定式作主语','Infinitive as subject'],['takes','predicate'],['time.','object']]),s([['I','subject'],['need','predicate'],['a pen to write with.','object','含不定式后置定语的宾语','Object with infinitive postmodifier']]),s([['She','subject'],['got up','predicate'],['early to catch the bus.','adverbial','目的状语','Purpose adverbial']])],[['不定式可作主语、宾语或表语。','An infinitive can be subject, object or complement.'],['不定式可后置修饰名词或代词。','An infinitive can postmodify a noun or pronoun.'],['不定式常作目的状语，也可表结果或原因。','An infinitive commonly marks purpose and can mark result or cause.']],[bq('___ a language takes time.','___ a language takes time.','To learn','To learn','Learned','Learned','A','不定式可作主语。','An infinitive can be subject.'),bq('I need something ___.','I need something ___.','to eat','to eat','ate','ate','A','不定式后置修饰 something。','The infinitive postmodifies something.'),bq('He went out ___ milk.','He went out ___ milk.','to buy','to buy','bought','bought','A','不定式表目的。','The infinitive marks purpose.')]),
-    lesson(en,'gerund','动名词 doing','The gerund','主语、动词宾语、介词宾语','Subject · verb object · preposition object',[s([['Reading','subject','动名词作主语','Gerund as subject'],['helps','predicate'],['us.','object']]),s([['She','subject'],['enjoys','predicate'],['dancing.','object','动名词作宾语','Gerund as object']]),s([['He','subject'],['left without','predicate'],['saying goodbye.','object','介词宾语','Object of preposition']])],[['动名词可作主语或表语。','A gerund can act as subject or complement.'],['enjoy、finish、mind、avoid、practice 等后接 doing。','enjoy, finish, mind, avoid and practice take doing.'],['介词后接 doing，不接 to do；介词 to 后也一样。','A preposition takes doing, not an infinitive; this includes prepositional to.']],[bq('___ is useful.','___ is useful.','Reading','Reading','Read yesterday','Read yesterday','A','动名词可作主语。','A gerund can be subject.'),bq('She enjoys ___.','She enjoys ___.','reading','reading','to read only','to read only','A','enjoy 后接 doing。','enjoy takes doing.'),bq('He left without ___.','He left without ___.','speaking','speaking','to speak','to speak','A','介词后接 doing。','Use doing after a preposition.')]),
+    lesson(en,'gerund','动名词 doing','The gerund','主语、动词宾语、介词宾语','Subject · verb object · preposition object',[s([['Reading','subject','动名词作主语','Gerund as subject'],['helps','predicate'],['us.','object']]),s([['She','subject'],['enjoys','predicate'],['dancing.','object','动名词作宾语','Gerund as object']]),s([['He','subject'],['left','predicate'],['without','preposition'],['saying goodbye.','prepositionalObject']])],[['动名词可作主语或表语。','A gerund can act as subject or complement.'],['enjoy、finish、mind、avoid、practice 等后接 doing。','enjoy, finish, mind, avoid and practice take doing.'],['介词后接 doing，不接 to do；介词 to 后也一样。','A preposition takes doing, not an infinitive; this includes prepositional to.']],[bq('___ is useful.','___ is useful.','Reading','Reading','To read','To read','A','动名词可作主语。','A gerund can be subject.'),bq('She enjoys ___.','She enjoys ___.','reading','reading','to read','to read','A','enjoy 后接 doing。','enjoy takes doing.'),bq('He left without ___.','He left without ___.','speaking','speaking','to speak','to speak','A','介词后接 doing。','Use doing after a preposition.')]),
     lesson(en,'participles','现在分词与过去分词','Present and past participles','主动进行与被动完成','Active/ongoing versus passive/completed',[s([['The crying baby','subject','现在分词作前置定语','Present-participle attribute'],['woke','predicate'],['me.','object']]),s([['The book written by Lu Xun','subject','过去分词短语作后置定语','Past-participle postmodifier'],['is','predicate'],['famous.','complement']],'translation','written by Lu Xun 后置修饰 book，中文前移。','The postmodifier moves before the noun in Chinese.'),s([['Walking home','adverbial','时间/伴随状语','Time/accompanying adverbial'],['she','subject'],['saw','predicate'],['Tom.','object']])],[['doing 分词通常含主动或进行意义。','An -ing participle normally carries active or ongoing meaning.'],['done 分词通常含被动或完成意义。','A past participle normally carries passive or completed meaning.'],['分词短语可作定语或状语，状语分词的逻辑主语通常与主句主语一致。','A participial phrase can modify a noun or clause; an adverbial participle normally shares the main subject.']],[bq('the ___ girl','the ___ girl','smiling','smiling','smiled by someone','smiled by someone','A','主动关系用 smiling。','Use smiling for the active relation.'),bq('the letter ___ yesterday','the letter ___ yesterday','written','written','writing itself','writing itself','A','被动完成关系用 written。','Use written for a passive completed relation.'),bq('___ home, I met Tom.','___ home, I met Tom.','Walking','Walking','Walked by me','Walked by me','A','Walking 的逻辑主语是 I。','I is the understood subject.')]),
     lesson(en,'causative-perception','使役与感官动词','Causative and perception verbs','宾语＋原形或 doing','Object + base or doing',[s([['The joke','subject'],['made','predicate'],['us laugh.','object','宾语＋原形宾补','Object + base complement']]),s([['I','subject'],['saw','predicate'],['him cross the road.','object','宾语＋原形宾补','Object + base complement']]),s([['I','subject'],['saw','predicate'],['him crossing the road.','object','宾语＋现在分词宾补','Object + -ing complement']])],[['make/let＋宾语＋原形；make 的被动结构恢复 to。','make/let take object + base; passive make restores to.'],['see/hear/watch＋宾语＋原形强调完整过程。','Perception verb + object + base emphasizes a complete event.'],['see/hear/watch＋宾语＋doing 强调动作正在进行。','Perception verb + object + doing emphasizes action in progress.']],[bq('The teacher made us ___.','The teacher made us ___.','wait','wait','to wait','to wait','A','主动 make 后用原形。','Active make takes a base verb.'),bq('I saw him ___ and leave.','I saw him ___ and leave.','enter','enter','entered','entered','A','完整过程用原形。','Use the base for the complete event.'),bq('I saw him ___ when I arrived.','I saw him ___ when I arrived.','crossing','crossing','crossed already','crossed already','A','正在进行用 doing。','Use doing for action in progress.')]),
     lesson(en,'gerund-infinitive-meaning','doing 与 to do 的意义变化','Meaning changes with doing and to do','remember、stop、try','remember · stop · try',[f('remember doing ↔ remember to do','structure','记得做过 ↔ 记得要做。','Recall a past action ↔ remember a duty.'),f('stop doing ↔ stop to do','structure','停止该动作 ↔ 停下来去做另一动作。','End the action ↔ pause to do another.'),f('try doing ↔ try to do','structure','试用办法 ↔ 努力完成。','Test a method ↔ make an effort.')],[['remember/forget doing 指已发生动作；to do 指未完成责任。','remember/forget doing recalls a past action; to do concerns a duty.'],['stop doing 停止该动作；stop to do 停下来做另一事。','stop doing ends the action; stop to do pauses for another.'],['try doing 试验方法；try to do 努力完成。','try doing tests a method; try to do makes an effort.']],[bq('记得关灯（还没关）','Remember the duty to turn off the light.','remember doing','remember doing','remember to do','remember to do','B','未完成责任用 to do。','Use to do for a duty.'),bq('他戒烟了。','He ended the activity of smoking.','stopped smoking','stopped smoking','stopped to smoke','stopped to smoke','A','停止该动作用 doing。','Use doing to end the activity.'),bq('试试重启电脑。','Test restarting as a method.','try restarting','try restarting','try to restart with effort','try to restart with effort','A','试用方法用 doing。','Use doing to test a method.')]),
@@ -220,6 +222,172 @@ function buildVerbCourse(en) {
       s([['She','subject'],['enjoys','predicate'],['reading.','object','动名词作宾语','Gerund as object']]), s([['He','subject'],['decided','predicate'],['to leave.','object','不定式作宾语','Infinitive as object']]), s([['Mum','subject'],['gave','predicate'],['me','object','间接宾语','Indirect object'],['a gift.','object','直接宾语','Direct object']])
     ], [['不同动词选择不同补足结构，必须连同搭配学习。','Different verbs select different complement patterns; learn the pattern with the verb.'],['双宾语结构通常是“人＋物”，也可改为“物＋to/for＋人”。','The double-object pattern is usually person + thing and may alternate with thing + to/for + person.']], [q('enjoy ___','reading','to read only','A','enjoy 后接 doing。','enjoy takes doing.'),q('decide ___','to go','going only','A','decide 后接 to do。','decide takes to do.'),q('She sent me a card. me 是？','间接宾语','状语','A','me 表示接收者。','me is the indirect object.')])
   ], ['tense-aspect','nonfinite','past-progressive','past-time-sequence','participles','causative-perception','gerund-infinitive-meaning','nonfinite-advanced','agreement-complex','special-verb-patterns','verb-complements']);
+  const explanations = {
+    'verb-jobs': [
+      ['fly 是谓语核心，直接说明 Birds 做什么。','fly is the predicate core and directly tells what Birds do.'],
+      ['know 是谓语核心，the answer 是它所指向的宾语。','know is the predicate core, and the answer is its object.'],
+      ['tastes 不表示“品尝”动作，而是连接 soup 和描述它的 good。','tastes does not mean an action of tasting here; it links soup with good.']
+    ],
+    transitivity: [
+      ['opened 后直接接 the window；window 承受“打开”这个动作。','opened directly takes the window, which receives the action.'],
+      ['cried 已能把动作说完整，后面不需要宾语。','cried completes the action without an object.'], null
+    ],
+    linking: [
+      ['is 把 She 和身份 a doctor 连接起来。','is links She with the identity a doctor.'],
+      ['sounds 把 music 和性质 beautiful 连接起来；beautiful 是表语。','sounds links the music with beautiful, which is the subject complement.'],
+      ['turned 表示状态变化：leaves 变成了 yellow。','turned marks a change of state: the leaves became yellow.']
+    ],
+    'aux-modal': [
+      ['does 帮助 like 构成否定；真正表达“喜欢”的仍是 like。','does helps like form the negative; like still carries the main meaning.'],
+      ['are 和 working 合在一起构成现在进行时，不能分成两个谓语。','are and working together form the present progressive, not two predicates.'],
+      ['must 表达“必须”，后面的 finish 保持原形。','must expresses obligation, and finish stays in the base form.']
+    ],
+    'double-object-complement': [
+      ['gave 后先说接收者 me，再说被给予的东西 a gift。','After gave, me names the receiver and a gift names the thing given.'],
+      ['a gift 仍是直接宾语；to me 用介词 to 引出接收者。','a gift remains the direct object; to introduces the receiver me.'],
+      ['red 说明 the door 被刷成什么状态，所以是宾语补足语。','red describes the resulting state of the door, so it is an object complement.']
+    ],
+    'subject-verb-agreement': [
+      ['中心主语 boy 是第三人称单数，所以谓语用 plays。','The head subject boy is third-person singular, so the verb is plays.'], null,
+      ['Tom and Jack 是两个并列主语，所以谓语用原形 play。','Tom and Jack form a plural coordinated subject, so the verb is play.']
+    ],
+    'present-simple': [
+      ['boils 表达不随眼前时刻改变的客观事实。','boils states a general fact, not an action limited to this moment.'],
+      ['every day 表明这是习惯；主语 She 使 walk 变为 walks。','every day marks a habit, and She changes walk to walks.'],
+      ['Does 承担疑问和三单标记，因此 like 恢复原形。','Does carries the question and agreement marking, so like returns to the base form.'],
+      ['leaves 用一般现在时表达列车时刻表中的固定安排。','leaves uses the present simple for a fixed timetable.']
+    ],
+    'present-progressive': [
+      ['is sleeping 表示婴儿此刻正在睡觉，now 明确当前时间。','is sleeping shows an action in progress now.'],
+      ['am staying 表示 this week 这一阶段的临时居住。','am staying describes a temporary situation during this week.'],
+      ['is getting 强调天气正处在逐渐变暖的变化过程中。','is getting highlights a change that is developing now.']
+    ],
+    'past-simple': [
+      ['visited 把参观放在已结束的 last year。','visited places the completed visit in last year.'],
+      ['did not 已标出过去和否定，see 因此使用原形。','did not marks past time and negation, so see stays in the base form.'],
+      ['Did 把过去时移到句首，finish 恢复原形。','Did carries past time at the front, so finish returns to the base form.']
+    ],
+    'future-forms': [
+      ['will call 表示说话时作出的承诺或决定。','will call expresses a promise or decision made at speaking time.'],
+      ['眼前的 clouds 是证据，所以用 is going to 预测下雨。','The clouds are present evidence, so is going to predicts rain.'],
+      ['are meeting 表示已经约好的近期安排。','are meeting expresses an arranged near-future event.']
+    ],
+    'auxiliary-system': [
+      ['are 不单独表示动作；它和 working 一起构成进行体。','are does not name the action; with working it forms the progressive.'],
+      ['Do 帮助 know 构成疑问，know 保持原形。','Do helps know form a question, and know stays in the base form.'],
+      ['has 和 finished 合起来表示任务已经完成并与现在相关。','has and finished together show a completed action relevant now.']
+    ],
+    'perfect-vs-past': [
+      ['have visited 说的是截至现在的两次经历，没有给出已结束的具体时间。','have visited counts experience up to now without a finished past time.'],
+      ['since 2020 把居住从过去连到现在，所以用 has lived。','since 2020 connects the living from the past to now, so has lived is used.'],
+      ['last year 是已结束的过去时间，所以用 visited。','last year is a finished past time, so visited is used.']
+    ],
+    'future-in-clauses': [
+      ['will stay 表示主句将来；if 从句用 rains 表示实现条件。','will stay marks the future result, while rains states the condition.'],
+      ['主句用 will call；when 从句虽然指将来，仍用 arrive。','The main clause uses will call; the future time clause still uses arrive.'],
+      ['even if 从句用 is 表示将来的让步条件，不再加 will。','The even if clause uses is for the future concession without will.']
+    ],
+    infinitive: [
+      ['To learn English 整体作主语，谓语 takes 仍用单数。','To learn English is one subject, so takes is singular.'],
+      ['to write with 后置说明 pen 的用途；with 的宾语就是前面的 pen。','to write with postmodifies pen; pen supplies the understood object of with.'],
+      ['to catch the bus 回答“为什么早起”，所以是不定式目的状语。','to catch the bus answers why she got up early, so it marks purpose.']
+    ],
+    gerund: [
+      ['Reading 把“阅读”当作一项活动，整个词作主语。','Reading treats the action as an activity and serves as subject.'],
+      ['enjoys 后需要宾语，dancing 用动名词形式填入这个位置。','enjoys needs an object, and the gerund dancing fills that position.'],
+      ['without 是介词，后面的 saying goodbye 用 doing 作介词宾语。','without is a preposition, so saying goodbye is its gerund object.']
+    ],
+    voice: [
+      ['主动句以动作执行者 Tom 为主语，the letter 是承受动作的宾语。','The active sentence makes the agent Tom subject and the letter object.'],
+      ['被动句把 the letter 提为主语，用 was written 表示它承受动作。','The passive makes the letter subject and uses was written to show it receives the action.'],
+      ['说话重点是 English 的使用范围，执行者不重要，所以省略 by 短语。','The focus is where English is spoken; the agent is unimportant and omitted.']
+    ],
+    'tense-aspect': [
+      ['study 配合 every day，把学习看作反复发生的习惯。','study with every day presents the action as a repeated habit.'],
+      ['am studying 配合 now，把动作放在当前进行的过程中。','am studying with now presents the action as in progress.'],
+      ['have finished 把过去的完成和现在“作业已完成”的结果连起来。','have finished links past completion with the present result.']
+    ],
+    nonfinite: [
+      ['wants 是限定谓语；to leave 受 wants 支配，不能单独作本句谓语。','wants is finite; to leave depends on it and is not another finite predicate.'],
+      ['Swimming 把动作名词化后作主语，is 才是限定谓语。','Swimming turns the action into a subject; is is the finite predicate.'], null
+    ],
+    'past-progressive': [
+      ['was reading 把阅读放在昨晚八点那个过去时刻的进行中。','was reading shows the action in progress at eight last night.'],
+      ['were playing 是持续背景，began 是插入其中的短动作。','were playing is the ongoing background; began is the shorter interrupting event.'],
+      ['while 连接两个同时持续的过去动作：做饭和打扫。','while links two continuing past actions happening at the same time.']
+    ],
+    'past-time-sequence': [
+      ['had left 早于 arrived：火车先离开，我们后到达。','had left occurred before arrived: the train left first.'],
+      ['said 在过去，would return 表示从那个过去时点看仍在未来。','said is past, and would return is future viewed from that past point.'],
+      ['was tired 把“累”的状态放到 said 所在的过去视角。','was tired shifts the state into the past viewpoint set by said.']
+    ],
+    participles: [
+      ['crying 表示 baby 主动发出哭声，并正在进行。','crying shows that the baby actively produces the ongoing action.'], null,
+      ['Walking home 的逻辑主语是 she，表示她回家途中看到 Tom。','she is the understood subject of Walking home; she saw Tom on the way home.']
+    ],
+    'causative-perception': [
+      ['us 是 made 的宾语，laugh 说明 us 做出的动作。','us is the object of made, and laugh predicates the action of us.'],
+      ['cross 用原形，把过马路看作看到的完整过程。','cross uses the base form to present the complete event seen.'],
+      ['crossing 用 doing，只聚焦看到时正在进行的片段。','crossing focuses on the action in progress at the moment of seeing.']
+    ],
+    'agreement-complex': [
+      ['离谓语最近的 friends 是复数，所以用 are coming。','The nearer subject friends is plural, so the predicate is are coming.'],
+      ['together with his friends 只是附加信息，中心主语 Tom 决定用 is。','together with his friends is added information; Tom controls singular is.'],
+      ['Everyone 形式上按单数处理，所以用 has。','Everyone takes singular agreement, so has is used.'],
+      ['Swimming 整体表示一项活动，所以谓语用 keeps。','Swimming names one activity, so the predicate is keeps.'],
+      ['To read every day 整体作一个主语，所以用 improves。','To read every day is one subject, so improves is singular.'],
+      ['What he says 是一个主语从句，整体按单数与 sounds 一致。','What he says is one subject clause and agrees with singular sounds.']
+    ],
+    'verb-complements': [
+      ['enjoys 选择 doing 作宾语，所以这里用 reading。','enjoys selects an -ing object, so reading is used.'],
+      ['decided 选择 to do 作宾语，所以这里用 to leave。','decided selects an infinitive object, so to leave is used.'],
+      ['gave 后的 me 是接收者，a gift 是被给予的东西。','After gave, me is the receiver and a gift is the thing given.']
+    ]
+  };
+  const byId = Object.fromEntries(bundle.course.map(item => [item.id, item]));
+  const relabel = (id, exampleIndex, unitIndex, role, zh, english) => Object.assign(byId[id].analyses[exampleIndex][unitIndex], { role, label: pick(en, zh, english) });
+  relabel('participles', 1, 2, 'predicative', '表语', 'Subject complement');
+  byId['causative-perception'].analyses.forEach((analysis, index) => {
+    const splitAt = index === 0 ? ['us', 'laugh.'] : index === 1 ? ['him', 'cross the road.'] : ['him', 'crossing the road.'];
+    analysis.splice(2, 1,
+      { text: splitAt[0], role: 'object', label: pick(en, '宾语', 'Object') },
+      { text: splitAt[1], role: 'objectComplement', label: pick(en, '宾语补足语', 'Object complement') }
+    );
+  });
+  byId['agreement-complex'].analyses[0].splice(1, 2, { text: 'are coming.', role: 'predicate', label: pick(en, '谓语动词', 'Predicate verb') });
+  relabel('agreement-complex', 1, 2, 'predicative', '地点表语', 'Locative complement');
+  byId['agreement-complex'].analyses[3].splice(2, 1,
+    { text: 'us', role: 'object', label: pick(en, '宾语', 'Object') },
+    { text: 'healthy.', role: 'objectComplement', label: pick(en, '宾语补足语', 'Object complement') }
+  );
+  relabel('agreement-complex', 5, 2, 'predicative', '表语', 'Subject complement');
+  byId['verb-complements'].title = pick(en, '动词后的补足结构', 'Complement patterns after verbs');
+  byId['verb-complements'].rules[0] = pick(en, '不同动词会选择不同的后接结构；判断时要看什么成分能补全该动词的意义。', 'Different verbs select different following structures; identify what completes each verb’s meaning.');
+  const optionFixes = {
+    'tense-aspect': [[0,1,'runs','runs'],[1,1,'lived','lived'],[2,1,'is boiling','is boiling']],
+    nonfinite: [[1,1,'To read','To read'],[2,1,'closing','closing']],
+    'third-person-form': [[0,0,'plays','plays'],[0,1,'play','play']],
+    'subject-verb-agreement': [[0,0,'runs','runs'],[0,1,'run','run']],
+    'past-progressive': [[0,1,'read','read'],[1,1,'was calling','was calling'],[2,1,'cleaned','cleaned']],
+    'perfect-vs-past': [[0,1,'visited','visited'],[1,1,'lived','lived'],[2,1,'have visited','have visited']],
+    'passive-tenses': [[2,1,'has finished','has finished']],
+    'past-time-sequence': [[2,1,'is','is']],
+    participles: [[0,1,'smiled','smiled'],[1,1,'writing','writing'],[2,1,'Walked','Walked']],
+    'causative-perception': [[2,1,'crossed','crossed']],
+    'gerund-infinitive-meaning': [[2,1,'try to restart','try to restart']],
+    'nonfinite-advanced': [[1,1,'to finish','to finish'],[2,1,'Finishing','Finishing']],
+    'verb-complements': [[0,1,'to read','to read'],[1,1,'going','going']]
+  };
+  Object.entries(optionFixes).forEach(([id, fixes]) => fixes.forEach(([questionIndex, optionIndex, zh, english]) => {
+    byId[id].questions[questionIndex].options[optionIndex].text = pick(en, zh, english);
+  }));
+  bundle.course.forEach(item => item.exampleNotes.forEach((note, index) => {
+    if (note.visible) return;
+    const pair = explanations[item.id] && explanations[item.id][index];
+    if (!pair) throw new Error(`Missing verb example explanation: ${item.id}[${index}]`);
+    item.exampleNotes[index] = { visible: true, mode: 'structure', title: pick(en, '例句说明', 'Example focus'), body: pick(en, pair[0], pair[1]), detail: '' };
+  }));
+  return bundle;
 }
 
 function buildNumeralCourse(en) {
