@@ -1,0 +1,138 @@
+{
+  "mode": "apply",
+  "books": 16,
+  "oldTotal": 357,
+  "addedTotal": 727,
+  "finalTotal": 1084,
+  "maxBytes": 44925,
+  "targets": [
+    {
+      "cloudPath": "dictionary_books/unlock-v2/level-4/unit-1/ls.json",
+      "old": 18,
+      "added": 34,
+      "final": 52,
+      "bytes": 29010,
+      "sha256": "ce1e6d0caea0917bffdbc234b6d51208c3b53eaf3410f39fab52f4e647c5d336"
+    },
+    {
+      "cloudPath": "dictionary_books/unlock-v2/level-4/unit-1/rw.json",
+      "old": 25,
+      "added": 50,
+      "final": 75,
+      "bytes": 40518,
+      "sha256": "d67a3b6a80bafcdcd895a3f94b76f462d7289a52c9ae0ad20436f96722a618ab"
+    },
+    {
+      "cloudPath": "dictionary_books/unlock-v2/level-4/unit-2/ls.json",
+      "old": 16,
+      "added": 37,
+      "final": 53,
+      "bytes": 28660,
+      "sha256": "f671e295b8eeee76b726fa28844500c9a4bcb5c2f1291260c0a354f507915162"
+    },
+    {
+      "cloudPath": "dictionary_books/unlock-v2/level-4/unit-2/rw.json",
+      "old": 36,
+      "added": 48,
+      "final": 84,
+      "bytes": 44925,
+      "sha256": "b8c967f91624125f020b9c95bae4b4d1f7dd38ade2667c084c3f87d88e36bcdb"
+    },
+    {
+      "cloudPath": "dictionary_books/unlock-v2/level-4/unit-3/ls.json",
+      "old": 21,
+      "added": 42,
+      "final": 63,
+      "bytes": 33883,
+      "sha256": "192837f9b1bada0150c4b1b5d3336f76821edd2401fc931e164fc3a2049ab2de"
+    },
+    {
+      "cloudPath": "dictionary_books/unlock-v2/level-4/unit-3/rw.json",
+      "old": 29,
+      "added": 46,
+      "final": 75,
+      "bytes": 40036,
+      "sha256": "226b897086078c70b2f3bcc4c28c82681d9d0357511fcfd1c29e6cdde6840043"
+    },
+    {
+      "cloudPath": "dictionary_books/unlock-v2/level-4/unit-4/ls.json",
+      "old": 20,
+      "added": 39,
+      "final": 59,
+      "bytes": 31240,
+      "sha256": "b10643283107d39fc2d1f71580c9444faa5f2f53f149b35082ff5d8598af0229"
+    },
+    {
+      "cloudPath": "dictionary_books/unlock-v2/level-4/unit-4/rw.json",
+      "old": 22,
+      "added": 54,
+      "final": 76,
+      "bytes": 41005,
+      "sha256": "3c6a4204005e5ab5f7e2048317d54881b8caba07058b305da617533a60de11ad"
+    },
+    {
+      "cloudPath": "dictionary_books/unlock-v2/level-4/unit-5/ls.json",
+      "old": 20,
+      "added": 50,
+      "final": 70,
+      "bytes": 37565,
+      "sha256": "341e9a966b5db84245a4892d09a2529072c72f3bf5c9d485895b468412cc748a"
+    },
+    {
+      "cloudPath": "dictionary_books/unlock-v2/level-4/unit-5/rw.json",
+      "old": 32,
+      "added": 42,
+      "final": 74,
+      "bytes": 39409,
+      "sha256": "bf7788af99d82e2c6d4a975c8b80678d63c9db980350fa54db1d9c4f8f2d0e31"
+    },
+    {
+      "cloudPath": "dictionary_books/unlock-v2/level-4/unit-6/ls.json",
+      "old": 21,
+      "added": 33,
+      "final": 54,
+      "bytes": 28913,
+      "sha256": "9430ba1da2d2e8d3a765005e76b6d39cf76843b8104c079e6fad698dc2f52c41"
+    },
+    {
+      "cloudPath": "dictionary_books/unlock-v2/level-4/unit-6/rw.json",
+      "old": 20,
+      "added": 50,
+      "final": 70,
+      "bytes": 37944,
+      "sha256": "5c432525fa54f6a294ab49ce1bb0658348519943ab8329d4c5cf7a846d72efc5"
+    },
+    {
+      "cloudPath": "dictionary_books/unlock-v2/level-4/unit-7/ls.json",
+      "old": 16,
+      "added": 53,
+      "final": 69,
+      "bytes": 36635,
+      "sha256": "629f005c40e07b276772306626dc7958ed68704874b8179469f7fc2a68534878"
+    },
+    {
+      "cloudPath": "dictionary_books/unlock-v2/level-4/unit-7/rw.json",
+      "old": 22,
+      "added": 46,
+      "final": 68,
+      "bytes": 36658,
+      "sha256": "34acf8d351b28e2b56f14215638c82f3c5561aee5a8946bf893675c097a2854d"
+    },
+    {
+      "cloudPath": "dictionary_books/unlock-v2/level-4/unit-8/ls.json",
+      "old": 18,
+      "added": 55,
+      "final": 73,
+      "bytes": 39453,
+      "sha256": "145290e760938ad03719e7681d242b47ab2bed2dc27999a49c0d9220f983d0eb"
+    },
+    {
+      "cloudPath": "dictionary_books/unlock-v2/level-4/unit-8/rw.json",
+      "old": 21,
+      "added": 48,
+      "final": 69,
+      "bytes": 36881,
+      "sha256": "54db39fb7f9f24fb29595b4afe6987ab3cc38017cc5c6f1233a449735c4264d4"
+    }
+  ]
+}

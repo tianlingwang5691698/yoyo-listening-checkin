@@ -1,0 +1,208 @@
+{
+  "passed": true,
+  "storageBooks": 16,
+  "storageRows": 1084,
+  "addedRows": 727,
+  "storageMaxBytes": 44925,
+  "storageMaxMs": 885,
+  "calls": [
+    {
+      "functionName": "dictionary-book",
+      "level": "unlock-4-u1-rw",
+      "wallMs": 753,
+      "functionMs": 225,
+      "total": 75,
+      "cacheHit": false
+    },
+    {
+      "functionName": "dictionary-book",
+      "level": "unlock-4-u2-ls",
+      "wallMs": 293,
+      "functionMs": 165,
+      "total": 53,
+      "cacheHit": false
+    },
+    {
+      "functionName": "dictionary-book",
+      "level": "unlock-4-u3-rw",
+      "wallMs": 260,
+      "functionMs": 147,
+      "total": 75,
+      "cacheHit": false
+    },
+    {
+      "functionName": "dictionary-book",
+      "level": "unlock-4-u4-ls",
+      "wallMs": 325,
+      "functionMs": 217,
+      "total": 59,
+      "cacheHit": false
+    },
+    {
+      "functionName": "dictionary-book",
+      "level": "unlock-4-u5-rw",
+      "wallMs": 395,
+      "functionMs": 216,
+      "total": 74,
+      "cacheHit": false
+    },
+    {
+      "functionName": "dictionary-book",
+      "level": "unlock-4-u6-ls",
+      "wallMs": 305,
+      "functionMs": 156,
+      "total": 54,
+      "cacheHit": false
+    },
+    {
+      "functionName": "dictionary-book",
+      "level": "unlock-4-u7-rw",
+      "wallMs": 254,
+      "functionMs": 161,
+      "total": 68,
+      "cacheHit": false
+    },
+    {
+      "functionName": "dictionary-book",
+      "level": "unlock-4-u8-ls",
+      "wallMs": 180,
+      "functionMs": 90,
+      "total": 73,
+      "cacheHit": false
+    },
+    {
+      "functionName": "dictionary-book",
+      "level": "unlock-4-u1-ls",
+      "wallMs": 222,
+      "functionMs": 115,
+      "total": 52,
+      "cacheHit": false
+    },
+    {
+      "functionName": "dictionary-book",
+      "level": "unlock-4-u1-ls",
+      "wallMs": 126,
+      "functionMs": 49,
+      "total": 52,
+      "cacheHit": false
+    },
+    {
+      "functionName": "dictionary-book",
+      "level": "unlock-4-u8-rw",
+      "wallMs": 211,
+      "functionMs": 140,
+      "total": 69,
+      "cacheHit": false
+    },
+    {
+      "functionName": "dictionary-book",
+      "level": "unlock-4-u8-rw",
+      "wallMs": 77,
+      "functionMs": 2,
+      "total": 69,
+      "cacheHit": true
+    },
+    {
+      "functionName": "yoyo",
+      "level": "unlock-4-u8-rw",
+      "wallMs": 115,
+      "functionMs": 2,
+      "total": 69,
+      "cacheHit": false
+    }
+  ],
+  "cacheMissCalls": [
+    {
+      "functionName": "dictionary-book",
+      "level": "unlock-4-u1-rw",
+      "wallMs": 753,
+      "functionMs": 225,
+      "total": 75,
+      "cacheHit": false
+    },
+    {
+      "functionName": "dictionary-book",
+      "level": "unlock-4-u2-ls",
+      "wallMs": 293,
+      "functionMs": 165,
+      "total": 53,
+      "cacheHit": false
+    },
+    {
+      "functionName": "dictionary-book",
+      "level": "unlock-4-u3-rw",
+      "wallMs": 260,
+      "functionMs": 147,
+      "total": 75,
+      "cacheHit": false
+    },
+    {
+      "functionName": "dictionary-book",
+      "level": "unlock-4-u4-ls",
+      "wallMs": 325,
+      "functionMs": 217,
+      "total": 59,
+      "cacheHit": false
+    },
+    {
+      "functionName": "dictionary-book",
+      "level": "unlock-4-u5-rw",
+      "wallMs": 395,
+      "functionMs": 216,
+      "total": 74,
+      "cacheHit": false
+    },
+    {
+      "functionName": "dictionary-book",
+      "level": "unlock-4-u6-ls",
+      "wallMs": 305,
+      "functionMs": 156,
+      "total": 54,
+      "cacheHit": false
+    },
+    {
+      "functionName": "dictionary-book",
+      "level": "unlock-4-u7-rw",
+      "wallMs": 254,
+      "functionMs": 161,
+      "total": 68,
+      "cacheHit": false
+    },
+    {
+      "functionName": "dictionary-book",
+      "level": "unlock-4-u8-ls",
+      "wallMs": 180,
+      "functionMs": 90,
+      "total": 73,
+      "cacheHit": false
+    },
+    {
+      "functionName": "dictionary-book",
+      "level": "unlock-4-u1-ls",
+      "wallMs": 222,
+      "functionMs": 115,
+      "total": 52,
+      "cacheHit": false
+    },
+    {
+      "functionName": "dictionary-book",
+      "level": "unlock-4-u1-ls",
+      "wallMs": 126,
+      "functionMs": 49,
+      "total": 52,
+      "cacheHit": false
+    },
+    {
+      "functionName": "dictionary-book",
+      "level": "unlock-4-u8-rw",
+      "wallMs": 211,
+      "functionMs": 140,
+      "total": 69,
+      "cacheHit": false
+    }
+  ],
+  "maxCacheMissWallMs": 753,
+  "maxLightWallMs": 753,
+  "target600msMet": false,
+  "hardThresholdMs": 1200
+}
