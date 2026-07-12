@@ -6,6 +6,9 @@
   <grammar-relation-loader wx:if="{{loaderKind === 'relation'}}" topic="{{selectedTopic}}" language="{{language}}" bindloaded="onCourseLoaded" bindloaderror="onCourseLoadError" />
   <grammar-sentence-elements-loader wx:if="{{loaderKind === 'sentence-elements'}}" topic="{{selectedTopic}}" language="{{language}}" bindloaded="onCourseLoaded" bindloaderror="onCourseLoadError" />
   <grammar-basic-patterns-loader wx:if="{{loaderKind === 'basic-patterns'}}" topic="{{selectedTopic}}" language="{{language}}" bindloaded="onCourseLoaded" bindloaderror="onCourseLoadError" />
+  <grammar-predicate-system-loader wx:if="{{loaderKind === 'predicate-system'}}" topic="{{selectedTopic}}" language="{{language}}" bindloaded="onCourseLoaded" bindloaderror="onCourseLoadError" />
+  <grammar-nonfinite-system-loader wx:if="{{loaderKind === 'nonfinite-system'}}" topic="{{selectedTopic}}" language="{{language}}" bindloaded="onCourseLoaded" bindloaderror="onCourseLoadError" />
+  <grammar-special-structures-loader wx:if="{{loaderKind === 'special-structures'}}" topic="{{selectedTopic}}" language="{{language}}" bindloaded="onCourseLoaded" bindloaderror="onCourseLoadError" />
 
   <view class="page-topbar">
     <view class="topbar-back" bindtap="handleTopBack"><text class="topbar-chevron">‹</text><text class="topbar-back-text">{{ui.back}}</text></view>

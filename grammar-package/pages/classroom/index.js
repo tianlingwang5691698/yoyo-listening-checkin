@@ -44,9 +44,9 @@ function uiText(english) {
     syntax: [
       ['sentence-elements', 'Sentence Elements', 'Subject, predicate, object, complement, attribute and adverbial', '23 lessons', true],
       ['basic-patterns', 'Basic Sentence Patterns', 'Five patterns, existential clauses and transformations', '16 lessons', true],
-      ['predicate-system', 'Predicate System', 'Agreement, tense, voice, auxiliaries and modals', 'Planned', false],
-      ['nonfinite-system', 'Non-finite Structures', 'Infinitives, gerunds and participles', 'Planned', false],
-      ['special-structures', 'Special Structures', 'Inversion, emphasis, ellipsis and imperatives', 'Planned', false]
+      ['predicate-system', 'Predicate System', 'Agreement, tense, voice, auxiliaries and modals', '20 lessons', true],
+      ['nonfinite-system', 'Non-finite Structures', 'Infinitives, gerunds and participles', '19 lessons', true],
+      ['special-structures', 'Special Structures', 'Questions, inversion, emphasis, ellipsis and imperatives', '27 lessons', true]
     ],
     clauses: [
       ['coordination', 'Coordination', 'and, but, or, so and parallel clauses', 'Planned', false],
@@ -69,9 +69,9 @@ function uiText(english) {
     syntax: [
       ['sentence-elements', '句子成分', '主语、谓语、宾语、表语、定语、状语与补语', '23 节 · 已开放', true],
       ['basic-patterns', '基本句型', '五大句型、存在句与结构转换', '16 节 · 已开放', true],
-      ['predicate-system', '谓语系统', '主谓一致、时态、语态、助动词与情态动词', '规划中', false],
-      ['nonfinite-system', '非谓语结构', '不定式、动名词和分词', '规划中', false],
-      ['special-structures', '特殊句式', '倒装、强调、省略与祈使句', '规划中', false]
+      ['predicate-system', '谓语系统', '主谓一致、时态、语态、助动词与情态动词', '20 节 · 已开放', true],
+      ['nonfinite-system', '非谓语结构', '不定式、动名词和分词', '19 节 · 已开放', true],
+      ['special-structures', '特殊句式', '疑问、倒装、强调、省略与祈使句', '27 节 · 已开放', true]
     ],
     clauses: [
       ['coordination', '并列句', 'and、but、or、so 与平行分句', '规划中', false],
@@ -132,6 +132,9 @@ function loaderFor(topic) {
   if (topic === 'adjective' || topic === 'adverb') return 'modifier';
   if (topic === 'sentence-elements') return 'sentence-elements';
   if (topic === 'basic-patterns') return 'basic-patterns';
+  if (topic === 'predicate-system') return 'predicate-system';
+  if (topic === 'nonfinite-system') return 'nonfinite-system';
+  if (topic === 'special-structures') return 'special-structures';
   return 'relation';
 }
 
@@ -234,7 +237,7 @@ Page({
       wx.pageScrollTo({ scrollTop: 0, duration: 0 });
       return;
     }
-    if (item === 'word-formation' || item === 'sentence-elements' || item === 'basic-patterns') return this.loadCourse(item);
+    if (item === 'word-formation' || item === 'sentence-elements' || item === 'basic-patterns' || item === 'predicate-system' || item === 'nonfinite-system' || item === 'special-structures') return this.loadCourse(item);
     wx.showToast({ title: this.data.ui.planned, icon: 'none', duration: 2200 });
   },
 
