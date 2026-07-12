@@ -796,14 +796,24 @@ Page({
     if (!topic || !topic.ready) return;
     let bundle = { course: [], groups: [], title: '', copy: '' };
     this.setData({ selectedClassroomTopic: topicId, selectedVerbLesson: topicId === 'verb' ? '' : 'word-course', selectedThirdPersonLesson: '', activeClassroomLesson: null, activeClassroomCourse: bundle.course, activeClassroomCourseGroups: bundle.groups, activeClassroomCourseTitle: bundle.title, activeClassroomCourseCopy: bundle.copy, classroomAnswer: '', classroomResult: '' });
+    if (this.wordCourseLoadTimer) clearTimeout(this.wordCourseLoadTimer);
+    if (topicId === 'noun' || topicId === 'pronoun') {
+      this.wordCourseLoadTimer = setTimeout(() => {
+        if (this.data.selectedClassroomTopic === topicId && !(this.data.activeClassroomCourse || []).length) {
+          this.setData({ grammarRenderDebug: `DEBUG: pages/grammar.selectClassroomTopic -> grammar-word-loader.ready -> loaded event: missing; topic=${topicId}` });
+        }
+      }, 1500);
+    }
   },
   onWordCourseLoaded(event) {
     const detail = event.detail || {};
     if (detail.topic !== this.data.selectedClassroomTopic || !detail.bundle) return;
+    if (this.wordCourseLoadTimer) clearTimeout(this.wordCourseLoadTimer);
     const bundle = detail.bundle;
     this.setData({ activeClassroomCourse: bundle.course || [], activeClassroomCourseGroups: bundle.groups || [], activeClassroomCourseTitle: bundle.title || '', activeClassroomCourseCopy: bundle.copy || '', grammarRenderDebug: '' });
   },
   onWordCourseLoadError(event) {
+    if (this.wordCourseLoadTimer) clearTimeout(this.wordCourseLoadTimer);
     const detail = event.detail || {};
     this.setData({ grammarRenderDebug: `DEBUG: components/grammar-word-loader.load -> wordCourses.${detail.topic || 'unknown'} -> course: ${detail.message || 'missing'}` });
   },

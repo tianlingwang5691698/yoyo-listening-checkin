@@ -6,7 +6,18 @@ Component({
     language: { type: String, value: 'zh-CN' }
   },
   observers: {
-    'topic, language': function loadWordCourse(topic, language) {
+    'topic, language': function onCoursePropertyChanged(topic, language) {
+      if (this._componentReady) this.loadWordCourse(topic, language);
+    }
+  },
+  lifetimes: {
+    ready() {
+      this._componentReady = true;
+      this.loadWordCourse(this.data.topic, this.data.language);
+    }
+  },
+  methods: {
+    loadWordCourse(topic, language) {
       if (topic !== 'noun' && topic !== 'pronoun') return;
       try {
         const english = language === 'en';

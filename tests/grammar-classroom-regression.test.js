@@ -34,6 +34,7 @@ test('语法课堂首屏不构建完整课程，点击后按专题加载', () =>
   assert.match(grammarPage, /onWordCourseLoaded/);
   const loader = fs.readFileSync(path.join(__dirname, '../components/grammar-word-loader/index.js'), 'utf8');
   assert.match(loader, /^const wordCourses = require\('\.\.\/\.\.\/data\/grammar-classroom\/word-courses'\)/);
+  assert.match(loader, /lifetimes:[\s\S]*ready\(\)[\s\S]*loadWordCourse/);
   const appConfig = JSON.parse(fs.readFileSync(path.join(__dirname, '../app.json'), 'utf8'));
   assert.equal(appConfig.lazyCodeLoading, 'requiredComponents');
 });
