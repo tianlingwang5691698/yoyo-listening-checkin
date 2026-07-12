@@ -269,7 +269,10 @@ function buildCompletionRewardKey(data) {
   const sourceId = current.activeSourceId || 'daily-vocabulary';
   const newLimit = Number(settings.newLimit || 0);
   const reviewLimit = Number(settings.reviewLimit || 0);
-  return `flashcards:${date}:${sourceId}:new-${newLimit}:review-${reviewLimit}`;
+  const sessionMode = current.repeatMode
+    ? `repeat-today-${current.repeatSessionId || 'session'}`
+    : 'daily-plan';
+  return `flashcards:${date}:${sourceId}:${sessionMode}:new-${newLimit}:review-${reviewLimit}`;
 }
 
 function buildPhoneticPreview(library) {
@@ -657,6 +660,7 @@ Page({
     total: 0,
     empty: false,
     repeatMode: false,
+    repeatSessionId: '',
     todayRepeatTotal: 0,
     repeatLimit: 1,
     stats: { all: 0, word: 0, phrase: 0, pattern: 0 },
@@ -1687,6 +1691,11 @@ Page({
     const delta = Number(event.currentTarget.dataset.delta || 0);
     this.setData({ repeatLimit: Math.max(1, Math.min(total, Number(this.data.repeatLimit || 1) + delta)) });
   },
+  handleRepeatSlider(event) {
+    const total = Math.max(1, Number(this.data.todayRepeatTotal || 1));
+    const value = Math.max(1, Math.min(total, Number(event.detail.value || 1)));
+    if (value !== this.data.repeatLimit) this.setData({ repeatLimit: value });
+  },
   startTodayRepeat() {
     const repeatPerf = page.startPagePerf('flashcards-repeat');
     const available = buildTodayPracticeCards(this.getFlashcardLibrary(), this.data.today);
@@ -1698,6 +1707,7 @@ Page({
       sourceMode: 'library',
       mode: 'review',
       repeatMode: true,
+      repeatSessionId: String(Date.now()),
       cards,
       currentIndex: 0,
       current,

@@ -664,6 +664,10 @@
   line-height: 1.2;
 }
 
+.today-repeat-slider {
+  margin: 14rpx -10rpx 0;
+}
+
 .today-repeat-action.start-review,
 .today-repeat-action.library-vocab-start {
   width: 100%;
@@ -1893,6 +1897,19 @@
   color: var(--lib-vocab-muted);
   font-size: 20rpx;
   line-height: 1;
+}
+
+.library-vocab-book.book-unlock .library-vocab-book-title {
+  color: #FFF8E8;
+}
+
+.library-vocab-book.book-unlock .library-vocab-book-meta {
+  color: rgba(255, 248, 232, 0.8);
+}
+
+.library-vocab-book.book-unlock .library-vocab-book-stamp {
+  border-color: rgba(255, 248, 232, 0.42);
+  color: #F1D39A;
 }
 
 .library-vocab-book-arrow {
