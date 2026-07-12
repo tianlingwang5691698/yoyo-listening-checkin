@@ -55,7 +55,7 @@ test('语法课堂首屏不构建完整课程，点击后按专题加载', () =>
   assert.ok(home.verbGroups.some((group) => group.items.some((item) => item.id === 'complete-verb' && item.ready)));
   assert.equal(getClassroomCourse(home, 'noun').course.length, 0);
   assert.equal(getClassroomCourse(home, 'pronoun').course.length, 0);
-  assert.equal(wordCourses.buildNounCourse(false).course.length, 9);
+  assert.equal(wordCourses.buildNounCourse(false).course.length, 10);
   assert.equal(wordCourses.buildPronounCourse(false).course.length, 9);
   assert.equal(getClassroomCourse(home, 'verb').course.length, 9);
   buildClassroomText(true).thirdPersonCourse.forEach((lesson) => {
@@ -223,6 +223,42 @@ test('动词完整课程覆盖中学核心与进阶知识边界', () => {
   assert.ok(thirdPersonLesson.rules.some((rule) => rule.includes('/s/')));
   assert.ok(thirdPersonLesson.rules.some((rule) => rule.includes('/z/')));
   assert.ok(thirdPersonLesson.rules.some((rule) => rule.includes('/ɪz/')));
+});
+
+test('名词课程从定义、句法功能到数量和关系完整闭环', () => {
+  const requiredIds = ['noun-job','noun-functions','countability','regular-plural','irregular-plural','possessive','noun-modifier','noun-types','collective-noun','noun-boss'];
+  [false, true].forEach((english) => {
+    const bundle = sourceWordCourses.buildNounCourse(english);
+    assert.deepEqual(bundle.course.map((lesson) => lesson.id), requiredIds);
+    assert.deepEqual(bundle.groups.map((group) => group.lessons.length), [7, 3]);
+    assert.deepEqual(bundle.sections.map((section) => section.lessonCount), [2, 3, 2, 2, 1]);
+    bundle.course.forEach((lesson) => {
+      assert.equal(lesson.exampleNotes.length, lesson.examples.length);
+      assert.ok(lesson.exampleNotes.every((note) => note.visible && (note.body || note.detail)));
+      assert.equal(lesson.ruleCoverage.length, lesson.rules.length);
+      lesson.ruleCoverage.forEach((coverage) => {
+        assert.ok(coverage.exampleIndexes.length && coverage.questionIndexes.length);
+        coverage.exampleIndexes.forEach((index) => assert.ok(index >= 0 && index < lesson.examples.length));
+        coverage.questionIndexes.forEach((index) => assert.ok(index >= 0 && index < lesson.questions.length));
+      });
+    });
+    if (english) bundle.course.forEach((lesson) => lesson.questions.forEach((question) => {
+      assert.doesNotMatch(question.question, /[\u4e00-\u9fff]/);
+      question.options.forEach((option) => assert.doesNotMatch(option.text, /[\u4e00-\u9fff]/));
+    }));
+  });
+  const nounFunctions = sourceWordCourses.buildNounCourse(false).course.find((lesson) => lesson.id === 'noun-functions');
+  const roles = nounFunctions.analyses.flat().map((part) => part.role);
+  ['predicative','indirectObject','directObject','objectComplement'].forEach((role) => assert.ok(roles.includes(role)));
+  const possessive = sourceWordCourses.buildNounCourse(false).course.find((lesson) => lesson.id === 'possessive');
+  assert.ok(possessive.rules.some((rule) => rule.includes('不是简单的“有生命/无生命”二分')));
+  const nounModifier = sourceWordCourses.buildNounCourse(false).course.find((lesson) => lesson.id === 'noun-modifier');
+  assert.ok(!nounModifier.rules.some((rule) => rule.includes('固定搭配')));
+  const collective = sourceWordCourses.buildNounCourse(false).course.find((lesson) => lesson.id === 'collective-noun');
+  assert.ok(collective.rules.some((rule) => rule.includes('英式英语')));
+  const page = fs.readFileSync(path.join(__dirname, '../grammar-package/pages/classroom/index.js'), 'utf8');
+  assert.match(page, /\['noun', 'Nouns',[^\n]+, 10\]/);
+  assert.match(page, /\['noun', '名词',[^\n]+, 10\]/);
 });
 
 test('介词系统课程覆盖形式、语义关系、句法功能与易混结构', () => {

@@ -3,7 +3,7 @@ const LANGUAGE_KEY = 'yoyoLanguageV1';
 
 function uiText(english) {
   const topics = english ? [
-    ['noun', 'Nouns', 'Countability · Plurals · Possessives', 9],
+    ['noun', 'Nouns', 'Definition · Number · Relations', 10],
     ['pronoun', 'Pronouns', 'Person · Case · Reference', 9],
     ['numeral', 'Numerals', 'Cardinals · Ordinals · Fractions', 7],
     ['article', 'Articles', 'a/an · the · Zero article', 8],
@@ -14,7 +14,7 @@ function uiText(english) {
     ['conjunction', 'Conjunctions', 'Coordination · Subordination', 8],
     ['interjection', 'Interjections', 'Emotion · Response · Punctuation', 5]
   ] : [
-    ['noun', '名词', '可数 · 单复数 · 所有格', 9],
+    ['noun', '名词', '定义 · 数量 · 关系', 10],
     ['pronoun', '代词', '人称 · 格 · 指代', 9],
     ['numeral', '数词', '基数 · 序数 · 分数', 7],
     ['article', '冠词', 'a/an · the · 零冠词', 8],
