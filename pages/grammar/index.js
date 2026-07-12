@@ -134,7 +134,7 @@ function buildAdditionalThirdPersonLessons(english) {
   };
 }
 
-function buildClassroomText() {
+function buildClassroomText(includeVerbCourse = false) {
   const english = i18n.getLanguage() === 'en';
   const classroom = english ? {
     tab: 'Classroom', demo: 'DEMO · LESSON 1', title: 'Why does a verb sometimes end in s?',
@@ -304,25 +304,20 @@ function buildClassroomText() {
     { id: 'core', title: english ? 'Core · 7 essential lessons' : '核心必学 · 7 节', copy: english ? 'Complete these first.' : '规则和高频使用语境必须掌握。', lessons: classroom.thirdPersonCourse.filter((lesson) => lesson.level === 'core') },
     { id: 'advanced', title: english ? 'Advanced · 2 challenge lessons' : '进阶挑战 · 2 节', copy: english ? 'Special subjects and mixed use.' : '特殊主语与综合运用。', lessons: classroom.thirdPersonCourse.filter((lesson) => lesson.level === 'advanced') }
   ];
-  const noun = wordCourses.buildNounCourse(english);
-  const pronoun = wordCourses.buildPronounCourse(english);
-  classroom.nounCourse = noun.course;
-  classroom.nounCourseGroups = noun.groups;
-  classroom.nounCourseTitle = noun.title;
-  classroom.nounCourseCopy = noun.copy;
-  classroom.pronounCourse = pronoun.course;
-  classroom.pronounCourseGroups = pronoun.groups;
-  classroom.pronounCourseTitle = pronoun.title;
-  classroom.pronounCourseCopy = pronoun.copy;
   const wordCategory = classroom.categories.find((item) => item.id === 'word');
   if (wordCategory) wordCategory.children = wordCategory.children.map((item) => ['noun', 'pronoun', 'verb'].includes(item.id) ? Object.assign({}, item, { ready: true, meta: item.id === 'verb' ? item.meta : (english ? '9 lessons' : '9 节微课') }) : item);
+  if (!includeVerbCourse) {
+    classroom.thirdPersonCourse = [];
+    classroom.thirdPersonCourseGroups = [];
+  }
   return classroom;
 }
 
 function getClassroomCourse(classroom, topicId) {
-  if (topicId === 'noun') return { course: classroom.nounCourse, groups: classroom.nounCourseGroups, title: classroom.nounCourseTitle, copy: classroom.nounCourseCopy };
-  if (topicId === 'pronoun') return { course: classroom.pronounCourse, groups: classroom.pronounCourseGroups, title: classroom.pronounCourseTitle, copy: classroom.pronounCourseCopy };
-  return { course: classroom.thirdPersonCourse, groups: classroom.thirdPersonCourseGroups, title: classroom.thirdPersonTitle, copy: classroom.thirdPersonCopy };
+  if (topicId === 'noun') return wordCourses.buildNounCourse(i18n.getLanguage() === 'en');
+  if (topicId === 'pronoun') return wordCourses.buildPronounCourse(i18n.getLanguage() === 'en');
+  const verbClassroom = classroom.thirdPersonCourse && classroom.thirdPersonCourse.length ? classroom : buildClassroomText(true);
+  return { course: verbClassroom.thirdPersonCourse, groups: verbClassroom.thirdPersonCourseGroups, title: verbClassroom.thirdPersonTitle, copy: verbClassroom.thirdPersonCopy };
 }
 
 function canUseDictionaryVoice(text) {
@@ -702,7 +697,10 @@ Page({
   onShow() {
     page.syncTheme(this);
     const classroom = buildClassroomText();
-    const activeBundle = getClassroomCourse(classroom, this.data.selectedClassroomTopic);
+    const shouldLoadActiveCourse = this.data.selectedClassroomTopic && (this.data.selectedClassroomTopic !== 'verb' || !!this.data.selectedVerbLesson);
+    const activeBundle = shouldLoadActiveCourse
+      ? getClassroomCourse(classroom, this.data.selectedClassroomTopic)
+      : { course: [], groups: [], title: '', copy: '' };
     const activeClassroomLessonIndex = this.data.selectedThirdPersonLesson
       ? activeBundle.course.findIndex((item) => item.id === this.data.selectedThirdPersonLesson)
       : -1;
@@ -783,7 +781,9 @@ Page({
     const category = (this.data.classroom.categories || []).find((item) => item.id === this.data.selectedClassroomCategory);
     const topic = ((category && category.children) || []).find((item) => item.id === topicId);
     if (!topic || !topic.ready) return;
-    const bundle = getClassroomCourse(this.data.classroom, topicId);
+    const bundle = topicId === 'verb'
+      ? { course: [], groups: [], title: '', copy: '' }
+      : getClassroomCourse(this.data.classroom, topicId);
     this.setData({ selectedClassroomTopic: topicId, selectedVerbLesson: topicId === 'verb' ? '' : 'word-course', selectedThirdPersonLesson: '', activeClassroomLesson: null, activeClassroomCourse: bundle.course, activeClassroomCourseGroups: bundle.groups, activeClassroomCourseTitle: bundle.title, activeClassroomCourseCopy: bundle.copy, classroomAnswer: '', classroomResult: '' });
   },
   selectClassroomCategory(event) {
