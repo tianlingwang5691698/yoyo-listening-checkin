@@ -1,0 +1,139 @@
+<view class="theme-{{theme}} language-{{language}} classroom-page">
+  <grammar-word-loader wx:if="{{loaderKind === 'word'}}" topic="{{selectedTopic}}" language="{{language}}" bindloaded="onCourseLoaded" bindloaderror="onCourseLoadError" />
+  <grammar-vna-loader wx:if="{{loaderKind === 'vna'}}" topic="{{selectedTopic}}" language="{{language}}" bindloaded="onCourseLoaded" bindloaderror="onCourseLoadError" />
+  <grammar-modifier-loader wx:if="{{loaderKind === 'modifier'}}" topic="{{selectedTopic}}" language="{{language}}" bindloaded="onCourseLoaded" bindloaderror="onCourseLoadError" />
+  <grammar-relation-loader wx:if="{{loaderKind === 'relation'}}" topic="{{selectedTopic}}" language="{{language}}" bindloaded="onCourseLoaded" bindloaderror="onCourseLoadError" />
+
+  <view class="page-topbar">
+    <view class="topbar-back" bindtap="closePage">‹</view>
+    <view class="topbar-title">{{language === 'en' ? 'Grammar Classroom' : '语法课堂'}}</view>
+    <view class="topbar-space"></view>
+  </view>
+
+  <view class="debug-card" wx:if="{{debugMessage}}">
+    <view>{{debugMessage}}</view>
+    <view class="debug-back" bindtap="backToDirectory">{{ui.loadError}} · {{ui.back}}</view>
+  </view>
+
+  <view class="classroom-shell">
+    <view class="hero-card" wx:if="{{screen === 'directory'}}">
+      <view class="hero-eyebrow">{{ui.eyebrow}}</view>
+      <view class="hero-title">{{ui.title}}</view>
+      <view class="hero-copy">{{ui.copy}}</view>
+      <view class="syntax-demo">
+        <view class="syntax-chip role-subject"><text>{{language === 'en' ? 'Subject' : '主语'}}</text><text>S</text></view>
+        <view class="syntax-chip role-predicate"><text>{{language === 'en' ? 'Verb' : '谓语'}}</text><text>V</text></view>
+        <view class="syntax-chip role-object"><text>{{language === 'en' ? 'Object' : '宾语'}}</text><text>O</text></view>
+      </view>
+    </view>
+
+    <view class="content-card" wx:if="{{screen === 'directory'}}">
+      <view class="section-kicker">{{ui.directory}}</view>
+      <view class="section-title">{{ui.directoryCopy}}</view>
+      <view class="topic-grid">
+        <view class="topic-item" wx:for="{{ui.topics}}" wx:key="id" data-topic="{{item.id}}" bindtap="selectTopic">
+          <view class="topic-main">
+            <view class="topic-title">{{item.title}}</view>
+            <view class="topic-meta">{{item.meta}}</view>
+            <view class="topic-count">{{item.countText}}</view>
+          </view>
+          <view class="row-arrow">›</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="content-card" wx:elif="{{screen === 'verb-map'}}">
+      <view class="inline-back" bindtap="backToDirectory">{{ui.backDirectory}}</view>
+      <view class="section-kicker">{{ui.verbMap}}</view>
+      <view class="section-title">{{ui.verbMapCopy}}</view>
+      <view class="verb-map-item" bindtap="selectVerbCourse">
+        <view class="verb-map-code">V</view>
+        <view class="topic-main">
+          <view class="topic-title">{{ui.completeVerb}}</view>
+          <view class="topic-meta">{{ui.completeVerbCopy}}</view>
+        </view>
+        <view class="row-arrow">›</view>
+      </view>
+      <view class="verb-map-item" bindtap="selectThirdPersonCourse">
+        <view class="verb-map-code">3S</view>
+        <view class="topic-main">
+          <view class="topic-title">{{ui.thirdPerson}}</view>
+          <view class="topic-meta">{{ui.thirdPersonCopy}}</view>
+        </view>
+        <view class="row-arrow">›</view>
+      </view>
+    </view>
+
+    <view class="content-card" wx:elif="{{screen === 'course-map'}}">
+      <view class="inline-back" bindtap="backFromCourseMap">{{selectedTopic === 'verb' || selectedTopic === 'third-person' ? ui.backVerbMap : ui.backDirectory}}</view>
+      <view class="section-kicker">{{courseTitle}}</view>
+      <view class="section-title">{{courseCopy}}</view>
+      <view class="course-group" wx:for="{{groups}}" wx:key="id" wx:for-item="group">
+        <view class="course-group-title">{{group.title}}</view>
+        <view class="course-group-copy">{{group.copy}}</view>
+        <view class="lesson-row" wx:for="{{group.lessons}}" wx:key="id" wx:for-item="lesson" data-lesson="{{lesson.id}}" bindtap="openLesson">
+          <view class="lesson-no">{{lesson.no}}</view>
+          <view class="topic-main">
+            <view class="topic-title">{{lesson.title}}</view>
+            <view class="topic-meta">{{lesson.meta}}</view>
+          </view>
+          <view class="row-arrow">›</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="content-card lesson-card" wx:elif="{{screen === 'lesson' && activeLesson}}">
+      <view class="inline-back" bindtap="backToCourseMap">{{ui.backCourse}}</view>
+      <view class="lesson-progress">{{activeLesson.no}} / {{course.length}}</view>
+      <view class="lesson-title">{{activeLesson.title}}</view>
+      <view class="lesson-meta">{{activeLesson.meta}}</view>
+
+      <view class="sentence-list" wx:if="{{activeLesson.analyses && activeLesson.analyses.length}}">
+        <view class="sentence-card" wx:for="{{activeLesson.analyses}}" wx:key="index" wx:for-item="sentence" wx:for-index="sentenceIndex">
+          <view class="sentence-parts">
+            <view class="sentence-part role-{{part.role}}" wx:for="{{sentence}}" wx:key="text" wx:for-item="part">
+              <view class="part-text">{{part.text}}</view>
+              <view class="part-label">{{part.label}}</view>
+            </view>
+          </view>
+          <view class="sentence-note mode-{{activeLesson.exampleNotes[sentenceIndex].mode}}" wx:if="{{activeLesson.exampleNotes && activeLesson.exampleNotes[sentenceIndex] && activeLesson.exampleNotes[sentenceIndex].visible}}">
+            <view class="note-title">{{activeLesson.exampleNotes[sentenceIndex].title}}</view>
+            <view class="note-body">{{activeLesson.exampleNotes[sentenceIndex].body}}</view>
+            <view class="note-detail" wx:if="{{activeLesson.exampleNotes[sentenceIndex].detail}}">{{activeLesson.exampleNotes[sentenceIndex].detail}}</view>
+          </view>
+        </view>
+      </view>
+      <view class="plain-example-list" wx:else>
+        <view class="sentence-card" wx:for="{{activeLesson.examples}}" wx:key="index" wx:for-index="exampleIndex">
+          <view class="plain-example">{{item}}</view>
+          <view class="sentence-note mode-{{activeLesson.exampleNotes[exampleIndex].mode}}" wx:if="{{activeLesson.exampleNotes && activeLesson.exampleNotes[exampleIndex] && activeLesson.exampleNotes[exampleIndex].visible}}">
+            <view class="note-title">{{activeLesson.exampleNotes[exampleIndex].title}}</view>
+            <view class="note-body">{{activeLesson.exampleNotes[exampleIndex].body}}</view>
+            <view class="note-detail" wx:if="{{activeLesson.exampleNotes[exampleIndex].detail}}">{{activeLesson.exampleNotes[exampleIndex].detail}}</view>
+          </view>
+        </view>
+      </view>
+
+      <view class="rule-card">
+        <view class="rule-label">{{ui.core}}</view>
+        <view class="rule-line" wx:for="{{activeLesson.rules}}" wx:key="index">{{index + 1}}. {{item}}</view>
+      </view>
+
+      <view class="exercise-count">{{questionIndex + 1}} / {{activeLesson.questions.length}}</view>
+      <view class="question-text">{{activeQuestion.question}}</view>
+      <view class="option-list">
+        <view class="option-item {{answer && option.key === activeQuestion.answer ? 'is-correct' : ''}} {{answer === option.key && result === 'wrong' ? 'is-wrong' : ''}}" wx:for="{{activeQuestion.options}}" wx:key="key" wx:for-item="option" data-answer="{{option.key}}" bindtap="chooseAnswer">
+          <text class="option-key">{{option.key}}</text><text>{{option.text}}</text>
+        </view>
+      </view>
+      <view class="feedback {{result}}" wx:if="{{result}}">
+        <view>{{result === 'correct' ? activeQuestion.correct : activeQuestion.wrong}}</view>
+        <view class="retry" wx:if="{{result === 'wrong'}}" bindtap="retry">{{ui.retry}}</view>
+      </view>
+      <view class="footer-actions">
+        <view class="footer-button back-button" bindtap="backToCourseMap">{{ui.back}}</view>
+        <view class="footer-button next-button {{result === 'correct' ? '' : 'is-disabled'}}" bindtap="continueLesson">{{result === 'correct' ? (!isLastQuestion ? ui.nextQuestion : (isLastLesson ? ui.finish : ui.nextLesson)) : ui.answerFirst}}</view>
+      </view>
+    </view>
+  </view>
+</view>
