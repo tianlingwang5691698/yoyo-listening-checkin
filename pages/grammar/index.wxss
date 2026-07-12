@@ -296,6 +296,10 @@
 .verb-map-item-copy { margin-top: 6rpx; color: var(--grammar-muted); font-size: 23rpx; line-height: 1.55; }
 .verb-map-item-arrow { position: absolute; right: 18rpx; top: 28rpx; color: var(--grammar-sage); font-size: 30rpx; }
 .micro-course-list { margin-top: 26rpx; display: flex; flex-direction: column; gap: 13rpx; }
+.micro-course-group + .micro-course-group { margin-top: 24rpx; padding-top: 22rpx; border-top: 1rpx solid var(--grammar-line); }
+.micro-course-group-title { color: var(--grammar-blue); font-size: 25rpx; line-height: 1.35; font-weight: 700; }
+.micro-course-group-copy { margin: 5rpx 0 12rpx; color: var(--grammar-soft); font-size: 21rpx; line-height: 1.45; }
+.micro-course-group .micro-course-item + .micro-course-item { margin-top: 12rpx; }
 .micro-course-item { min-width: 0; padding: 20rpx 48rpx 20rpx 18rpx; display: flex; align-items: flex-start; gap: 16rpx; position: relative; border: 1rpx solid var(--grammar-line); border-radius: 18rpx; background: rgba(255, 255, 255, 0.76); }
 .micro-course-no { flex-shrink: 0; width: 50rpx; height: 50rpx; display: flex; align-items: center; justify-content: center; border-radius: 15rpx; background: var(--grammar-sage-soft); color: #587970; font-size: 21rpx; font-weight: 700; }
 .micro-course-main { min-width: 0; flex: 1; }
@@ -327,7 +331,13 @@
 .sentence-part.role-conjunction .sentence-part-label { color: #80556f; }
 .sentence-translation { margin-top: 14rpx; padding-top: 12rpx; border-top: 1rpx dashed var(--grammar-line); color: var(--grammar-muted); font-size: 22rpx; line-height: 1.55; }
 .sentence-translation text { color: var(--grammar-blue); font-weight: 600; }
+.sentence-note-title { color: var(--grammar-blue); font-size: 20rpx; line-height: 1.3; font-weight: 700; }
+.sentence-note-body { margin-top: 5rpx; }
 .sentence-translation-tip { margin-top: 6rpx; color: var(--grammar-soft); }
+.sentence-translation.mode-translation { border-left: 4rpx solid #9b82b5; padding-left: 12rpx; }
+.sentence-translation.mode-spelling { border-left: 4rpx solid #769b75; padding-left: 12rpx; }
+.sentence-translation.mode-sound { border-left: 4rpx solid #4d8fb0; padding-left: 12rpx; }
+.sentence-translation.mode-structure { border-left: 4rpx solid #b99247; padding-left: 12rpx; }
 .classroom-example-with-note + .classroom-example-with-note { margin-top: 20rpx; padding-top: 18rpx; border-top: 1rpx solid var(--grammar-line); }
 .classroom-exercise-count { margin-top: 26rpx; color: var(--grammar-soft); font-size: 21rpx; line-height: 1.3; font-weight: 600; }
 .classroom-exercise-count + .classroom-question { margin-top: 8rpx; }
@@ -1119,6 +1129,9 @@
 .theme-library .verb-map-item-copy { color: var(--library-grammar-muted); }
 .theme-library .verb-map-item-arrow { color: var(--library-grammar-brass); }
 .theme-library .micro-course-item { border-color: var(--library-grammar-rule); border-radius: 8rpx; background: var(--library-grammar-paper-light); }
+.theme-library .micro-course-group + .micro-course-group { border-top-color: var(--library-grammar-rule); }
+.theme-library .micro-course-group-title { color: var(--library-grammar-ink); }
+.theme-library .micro-course-group-copy { color: var(--library-grammar-muted); }
 .theme-library .micro-course-no { border-radius: 4rpx; background: rgba(184, 149, 98, 0.18); color: #765b37; }
 .theme-library .micro-course-title { color: var(--library-grammar-ink); }
 .theme-library .micro-course-meta { color: var(--library-grammar-muted); }
@@ -1128,6 +1141,7 @@
 .theme-library .sentence-part-text { color: var(--library-grammar-ink); }
 .theme-library .sentence-translation { border-top-color: var(--library-grammar-rule); color: var(--library-grammar-muted); }
 .theme-library .sentence-translation text { color: var(--library-grammar-ink); }
+.theme-library .sentence-note-title { color: var(--library-grammar-ink); }
 .theme-library .sentence-translation-tip { color: var(--library-grammar-muted); }
 .theme-library .classroom-example-with-note + .classroom-example-with-note { border-top-color: var(--library-grammar-rule); }
 .theme-library .classroom-footer-button { border-radius: 8rpx; }

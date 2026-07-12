@@ -82,19 +82,23 @@
           <view class="classroom-step">{{classroom.thirdPersonTitle}}</view>
           <view class="classroom-title">{{classroom.thirdPersonCopy}}</view>
           <view class="micro-course-list">
-            <view class="micro-course-item" wx:for="{{classroom.thirdPersonCourse}}" wx:key="id" data-lesson-id="{{item.id}}" bindtap="selectThirdPersonLesson">
-              <view class="micro-course-no">{{item.no}}</view>
-              <view class="micro-course-main">
-                <view class="micro-course-title">{{item.title}}</view>
-                <view class="micro-course-meta">{{item.meta}}</view>
+            <view class="micro-course-group" wx:for="{{classroom.thirdPersonCourseGroups}}" wx:key="id" wx:for-item="group">
+              <view class="micro-course-group-title">{{group.title}}</view>
+              <view class="micro-course-group-copy">{{group.copy}}</view>
+              <view class="micro-course-item" wx:for="{{group.lessons}}" wx:for-item="lesson" wx:key="id" data-lesson-id="{{lesson.id}}" bindtap="selectThirdPersonLesson">
+                <view class="micro-course-no">{{lesson.no}}</view>
+                <view class="micro-course-main">
+                  <view class="micro-course-title">{{lesson.title}}</view>
+                  <view class="micro-course-meta">{{lesson.meta}}</view>
+                </view>
+                <view class="micro-course-arrow">›</view>
               </view>
-              <view class="micro-course-arrow">›</view>
             </view>
           </view>
         </block>
         <block wx:else>
           <view class="classroom-back" bindtap="backToThirdPersonCourse">{{classroom.lessonBack}}</view>
-          <view class="classroom-step">{{activeClassroomLesson.no}} / 06</view>
+          <view class="classroom-step">{{activeClassroomLesson.no}} / {{classroom.thirdPersonCourse.length}}</view>
           <view class="classroom-title">{{activeClassroomLesson.title}}</view>
           <view class="classroom-copy">{{activeClassroomLesson.meta}}</view>
           <view class="sentence-analysis-list" wx:if="{{activeClassroomLesson.analyses && activeClassroomLesson.analyses.length}}">
@@ -105,18 +109,20 @@
                   <view class="sentence-part-label">{{part.label}}</view>
                 </view>
               </view>
-              <view class="sentence-translation">
-                <view><text>{{classroom.translationLabel}}：</text>{{activeClassroomLesson.exampleNotes[sentenceIndex].translation}}</view>
-                <view class="sentence-translation-tip"><text>{{classroom.translationTipLabel}}：</text>{{activeClassroomLesson.exampleNotes[sentenceIndex].tip}}</view>
+              <view class="sentence-translation mode-{{activeClassroomLesson.exampleNotes[sentenceIndex].mode}}" wx:if="{{activeClassroomLesson.exampleNotes[sentenceIndex].visible}}">
+                <view class="sentence-note-title">{{activeClassroomLesson.exampleNotes[sentenceIndex].title}}</view>
+                <view class="sentence-note-body">{{activeClassroomLesson.exampleNotes[sentenceIndex].body}}</view>
+                <view class="sentence-translation-tip" wx:if="{{activeClassroomLesson.exampleNotes[sentenceIndex].detail}}">{{activeClassroomLesson.exampleNotes[sentenceIndex].detail}}</view>
               </view>
             </view>
           </view>
           <view class="classroom-examples" wx:else>
             <view class="classroom-example-with-note" wx:for="{{activeClassroomLesson.examples}}" wx:key="*this" wx:for-index="exampleIndex">
               <view>{{item}}</view>
-              <view class="sentence-translation">
-                <view><text>{{classroom.translationLabel}}：</text>{{activeClassroomLesson.exampleNotes[exampleIndex].translation}}</view>
-                <view class="sentence-translation-tip"><text>{{classroom.translationTipLabel}}：</text>{{activeClassroomLesson.exampleNotes[exampleIndex].tip}}</view>
+              <view class="sentence-translation mode-{{activeClassroomLesson.exampleNotes[exampleIndex].mode}}" wx:if="{{activeClassroomLesson.exampleNotes[exampleIndex].visible}}">
+                <view class="sentence-note-title">{{activeClassroomLesson.exampleNotes[exampleIndex].title}}</view>
+                <view class="sentence-note-body">{{activeClassroomLesson.exampleNotes[exampleIndex].body}}</view>
+                <view class="sentence-translation-tip" wx:if="{{activeClassroomLesson.exampleNotes[exampleIndex].detail}}">{{activeClassroomLesson.exampleNotes[exampleIndex].detail}}</view>
               </view>
             </view>
           </view>
@@ -124,7 +130,7 @@
             <view class="classroom-notice-label">{{classroom.coreLabel}}</view>
             <view class="classroom-rule" wx:for="{{activeClassroomLesson.rules}}" wx:key="*this">{{index + 1}}. {{item}}</view>
           </view>
-          <view class="classroom-exercise-count">{{activeClassroomExerciseIndex + 1}} / 3</view>
+          <view class="classroom-exercise-count">{{activeClassroomExerciseIndex + 1}} / {{activeClassroomLesson.questions.length}}</view>
           <view class="classroom-question">{{activeClassroomQuestion.question}}</view>
           <view class="classroom-options">
             <view class="classroom-option {{classroomAnswer && option.key === activeClassroomQuestion.answer ? 'is-correct' : ''}} {{classroomAnswer === option.key && classroomResult === 'wrong' ? 'is-wrong' : ''}}" wx:for="{{activeClassroomQuestion.options}}" wx:for-item="option" wx:key="key" data-answer="{{option.key}}" bindtap="selectClassroomAnswer">{{option.key}} · {{option.text}}</view>
@@ -424,19 +430,23 @@
       <view class="classroom-step">{{classroom.thirdPersonTitle}}</view>
       <view class="classroom-title">{{classroom.thirdPersonCopy}}</view>
       <view class="micro-course-list">
-        <view class="micro-course-item" wx:for="{{classroom.thirdPersonCourse}}" wx:key="id" data-lesson-id="{{item.id}}" bindtap="selectThirdPersonLesson">
-          <view class="micro-course-no">{{item.no}}</view>
-          <view class="micro-course-main">
-            <view class="micro-course-title">{{item.title}}</view>
-            <view class="micro-course-meta">{{item.meta}}</view>
+        <view class="micro-course-group" wx:for="{{classroom.thirdPersonCourseGroups}}" wx:key="id" wx:for-item="group">
+          <view class="micro-course-group-title">{{group.title}}</view>
+          <view class="micro-course-group-copy">{{group.copy}}</view>
+          <view class="micro-course-item" wx:for="{{group.lessons}}" wx:for-item="lesson" wx:key="id" data-lesson-id="{{lesson.id}}" bindtap="selectThirdPersonLesson">
+            <view class="micro-course-no">{{lesson.no}}</view>
+            <view class="micro-course-main">
+              <view class="micro-course-title">{{lesson.title}}</view>
+              <view class="micro-course-meta">{{lesson.meta}}</view>
+            </view>
+            <view class="micro-course-arrow">›</view>
           </view>
-          <view class="micro-course-arrow">›</view>
         </view>
       </view>
     </block>
     <block wx:else>
       <view class="classroom-back" bindtap="backToThirdPersonCourse">{{classroom.lessonBack}}</view>
-      <view class="classroom-step">{{activeClassroomLesson.no}} / 06</view>
+      <view class="classroom-step">{{activeClassroomLesson.no}} / {{classroom.thirdPersonCourse.length}}</view>
       <view class="classroom-title">{{activeClassroomLesson.title}}</view>
       <view class="classroom-copy">{{activeClassroomLesson.meta}}</view>
       <view class="sentence-analysis-list" wx:if="{{activeClassroomLesson.analyses && activeClassroomLesson.analyses.length}}">
@@ -447,18 +457,20 @@
               <view class="sentence-part-label">{{part.label}}</view>
             </view>
           </view>
-          <view class="sentence-translation">
-            <view><text>{{classroom.translationLabel}}：</text>{{activeClassroomLesson.exampleNotes[sentenceIndex].translation}}</view>
-            <view class="sentence-translation-tip"><text>{{classroom.translationTipLabel}}：</text>{{activeClassroomLesson.exampleNotes[sentenceIndex].tip}}</view>
+          <view class="sentence-translation mode-{{activeClassroomLesson.exampleNotes[sentenceIndex].mode}}" wx:if="{{activeClassroomLesson.exampleNotes[sentenceIndex].visible}}">
+            <view class="sentence-note-title">{{activeClassroomLesson.exampleNotes[sentenceIndex].title}}</view>
+            <view class="sentence-note-body">{{activeClassroomLesson.exampleNotes[sentenceIndex].body}}</view>
+            <view class="sentence-translation-tip" wx:if="{{activeClassroomLesson.exampleNotes[sentenceIndex].detail}}">{{activeClassroomLesson.exampleNotes[sentenceIndex].detail}}</view>
           </view>
         </view>
       </view>
       <view class="classroom-examples" wx:else>
         <view class="classroom-example-with-note" wx:for="{{activeClassroomLesson.examples}}" wx:key="*this" wx:for-index="exampleIndex">
           <view>{{item}}</view>
-          <view class="sentence-translation">
-            <view><text>{{classroom.translationLabel}}：</text>{{activeClassroomLesson.exampleNotes[exampleIndex].translation}}</view>
-            <view class="sentence-translation-tip"><text>{{classroom.translationTipLabel}}：</text>{{activeClassroomLesson.exampleNotes[exampleIndex].tip}}</view>
+          <view class="sentence-translation mode-{{activeClassroomLesson.exampleNotes[exampleIndex].mode}}" wx:if="{{activeClassroomLesson.exampleNotes[exampleIndex].visible}}">
+            <view class="sentence-note-title">{{activeClassroomLesson.exampleNotes[exampleIndex].title}}</view>
+            <view class="sentence-note-body">{{activeClassroomLesson.exampleNotes[exampleIndex].body}}</view>
+            <view class="sentence-translation-tip" wx:if="{{activeClassroomLesson.exampleNotes[exampleIndex].detail}}">{{activeClassroomLesson.exampleNotes[exampleIndex].detail}}</view>
           </view>
         </view>
       </view>
@@ -466,7 +478,7 @@
         <view class="classroom-notice-label">{{classroom.coreLabel}}</view>
         <view class="classroom-rule" wx:for="{{activeClassroomLesson.rules}}" wx:key="*this">{{index + 1}}. {{item}}</view>
       </view>
-      <view class="classroom-exercise-count">{{activeClassroomExerciseIndex + 1}} / 3</view>
+      <view class="classroom-exercise-count">{{activeClassroomExerciseIndex + 1}} / {{activeClassroomLesson.questions.length}}</view>
       <view class="classroom-question">{{activeClassroomQuestion.question}}</view>
       <view class="classroom-options">
         <view class="classroom-option {{classroomAnswer && option.key === activeClassroomQuestion.answer ? 'is-correct' : ''}} {{classroomAnswer === option.key && classroomResult === 'wrong' ? 'is-wrong' : ''}}" wx:for="{{activeClassroomQuestion.options}}" wx:for-item="option" wx:key="key" data-answer="{{option.key}}" bindtap="selectClassroomAnswer">{{option.key}} · {{option.text}}</view>

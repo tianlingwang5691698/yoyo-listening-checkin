@@ -83,6 +83,56 @@ function buildExampleNotes(english) {
   };
 }
 
+function adaptExampleNote(lessonId, index, note, english) {
+  const translationNeeded = (lessonId === 'trigger' && index === 2)
+    || (lessonId === 'subject' && index > 0)
+    || (lessonId === 'boss' && (index === 0 || index === 2));
+  if (translationNeeded) return {
+    visible: true,
+    mode: 'translation',
+    title: english ? 'Word-order translation' : '语序翻译',
+    body: note.translation,
+    detail: note.tip
+  };
+  if (lessonId === 'spelling') return {
+    visible: true,
+    mode: 'spelling',
+    title: english ? 'Spelling pattern' : '拼写观察',
+    body: note.tip,
+    detail: ''
+  };
+  if (lessonId === 'sound') return {
+    visible: true,
+    mode: 'sound',
+    title: english ? 'Sound pattern' : '发音观察',
+    body: note.tip,
+    detail: ''
+  };
+  if (lessonId === 'does' || (lessonId === 'boss' && index === 1)) return {
+    visible: true,
+    mode: 'structure',
+    title: english ? 'Structure change' : '结构变化',
+    body: note.tip,
+    detail: ''
+  };
+  return { visible: false, mode: '', title: '', body: '', detail: '' };
+}
+
+function buildAdditionalThirdPersonLessons(english) {
+  const q = (question, a, b, answer, correct, wrong) => ({ question, options: [{ key: 'A', text: a }, { key: 'B', text: b }], answer, correct, wrong });
+  const n = (mode, title, body, detail = '') => ({ visible: true, mode, title, body, detail });
+  if (english) return {
+    specialSubject: { id: 'special-subject', title: 'Special singular subjects', meta: 'Indefinite pronouns · -ing phrases · subject clauses', examples: ['Everyone likes music.', 'Swimming keeps us healthy.', 'What he says sounds true.'], analyses: [[{ text: 'Everyone', role: 'subject', label: 'Indefinite-pronoun subject' }, { text: 'likes', role: 'predicate', label: 'Predicate verb' }, { text: 'music', role: 'object', label: 'Object' }], [{ text: 'Swimming', role: 'subject', label: '-ing phrase as subject' }, { text: 'keeps', role: 'predicate', label: 'Predicate verb' }, { text: 'us', role: 'object', label: 'Object' }, { text: 'healthy', role: 'object', label: 'Object complement' }], [{ text: 'What he says', role: 'subject', label: 'Subject clause' }, { text: 'sounds', role: 'predicate', label: 'Linking verb' }, { text: 'true', role: 'object', label: 'Subject complement' }]], exampleNotes: [n('structure', 'Subject rule', 'everyone, someone, nobody and everything are grammatically singular.'), n('structure', 'Subject rule', 'An -ing phrase used as one activity takes a singular verb.'), n('structure', 'Subject rule', 'A whole subject clause is normally treated as one singular unit.')], rules: ['Indefinite pronouns ending in -one, -body or -thing normally take singular verbs.', '-ing phrases, infinitive phrases and subject clauses are normally treated as singular units.'], questions: [q('Everyone ___ ready.', 'is', 'are', 'A', 'Everyone is grammatically singular.', 'everyone takes a singular verb.'), q('Reading books ___ her relax.', 'help', 'helps', 'B', 'Reading books is one activity.', 'The -ing phrase is one subject.'), q('What he needs ___ more time.', 'is', 'are', 'A', 'The subject clause is treated as one unit.', 'A subject clause normally takes a singular verb.')] },
+    specialVerb: { id: 'special-verb', title: 'Special verbs and modal verbs', meta: 'be → is · have → has · do → does · modal + base verb', examples: ['He is happy.', 'She has a new bike.', 'Tom does his homework.', 'Amy can swim.'], analyses: [[{ text: 'He', role: 'subject', label: 'Subject' }, { text: 'is', role: 'predicate', label: 'Linking verb' }, { text: 'happy', role: 'object', label: 'Subject complement' }], [{ text: 'She', role: 'subject', label: 'Subject' }, { text: 'has', role: 'predicate', label: 'Predicate verb' }, { text: 'a new bike', role: 'object', label: 'Object' }], [{ text: 'Tom', role: 'subject', label: 'Subject' }, { text: 'does', role: 'predicate', label: 'Predicate verb' }, { text: 'his homework', role: 'object', label: 'Object' }], [{ text: 'Amy', role: 'subject', label: 'Subject' }, { text: 'can', role: 'helper', label: 'Modal verb' }, { text: 'swim', role: 'predicate', label: 'Base verb' }]], exampleNotes: [n('structure', 'Special form', 'be changes to is with a third-person singular subject.'), n('structure', 'Special form', 'have changes to has.'), n('structure', 'Special form', 'do changes to does when it is the main verb.'), n('structure', 'Modal rule', 'After can, must or should, the next verb always stays in the base form.')], rules: ['Remember the special forms is, has and does.', 'Modal verbs do not add -s; the verb after a modal stays in its base form.'], questions: [q('My father ___ busy.', 'is', 'be', 'A', 'be changes to is.', 'Use is with my father.'), q('Lucy ___ a piano.', 'has', 'haves', 'A', 'have changes to has.', 'The correct special form is has.'), q('Jack ___ his homework after dinner.', 'does', 'dos', 'A', 'do changes to does.', 'The correct special form is does.'), q('She can ___ fast.', 'runs', 'run', 'B', 'Use the base verb after can.', 'Modal + base verb.')] },
+    usage: { id: 'usage', title: 'Meaning and frequency', meta: 'Habits · Facts · Timetables · Frequency adverbs', examples: ['Lily often walks to school.', 'The sun rises in the east.', 'The train leaves at seven.'], analyses: [[{ text: 'Lily', role: 'subject', label: 'Subject' }, { text: 'often', role: 'adverbial', label: 'Frequency adverbial' }, { text: 'walks', role: 'predicate', label: 'Predicate verb' }, { text: 'to school', role: 'adverbial', label: 'Place adverbial' }], [{ text: 'The sun', role: 'subject', label: 'Subject' }, { text: 'rises', role: 'predicate', label: 'Predicate verb' }, { text: 'in the east', role: 'adverbial', label: 'Place adverbial' }], [{ text: 'The train', role: 'subject', label: 'Subject' }, { text: 'leaves', role: 'predicate', label: 'Predicate verb' }, { text: 'at seven', role: 'adverbial', label: 'Time adverbial' }]], exampleNotes: [n('structure', 'Habit and word order', 'often normally comes before a main verb; Chinese usually places “经常” there too.'), n('structure', 'General fact', 'Use the simple present for a fact that stays true.'), n('structure', 'Timetable', 'A fixed timetable can use the simple present for a future event.')], rules: ['The simple present describes habits, general facts and fixed timetables.', 'Frequency adverbs usually come before a main verb but after be.'], questions: [q('Ben usually ___ breakfast at home.', 'eats', 'eat', 'A', 'A habit with Ben uses eats.', 'Ben is third-person singular.'), q('Water ___ at 100°C.', 'boil', 'boils', 'B', 'A general fact with water uses boils.', 'Water is uncountable and singular.'), q('The film ___ at eight tonight.', 'starts', 'start', 'A', 'A fixed schedule with the film uses starts.', 'The film is singular.')] }
+  };
+  return {
+    specialSubject: { id: 'special-subject', title: '特殊单数主语', meta: '不定代词 · 动名词短语 · 主语从句', examples: ['Everyone likes music.', 'Swimming keeps us healthy.', 'What he says sounds true.'], analyses: [[{ text: 'Everyone', role: 'subject', label: '不定代词作主语' }, { text: 'likes', role: 'predicate', label: '谓语动词' }, { text: 'music', role: 'object', label: '宾语' }], [{ text: 'Swimming', role: 'subject', label: '动名词短语作主语' }, { text: 'keeps', role: 'predicate', label: '谓语动词' }, { text: 'us', role: 'object', label: '宾语' }, { text: 'healthy', role: 'object', label: '宾语补足语' }], [{ text: 'What he says', role: 'subject', label: '主语从句' }, { text: 'sounds', role: 'predicate', label: '系动词' }, { text: 'true', role: 'object', label: '表语' }]], exampleNotes: [n('structure', '主语判断', 'everyone、someone、nobody、everything 等在语法上按单数处理。'), n('structure', '主语判断', '一个动名词短语表示一件事，谓语按单数处理。'), n('structure', '主语判断', '一个主语从句整体视为一个单数单位。')], rules: ['-one、-body、-thing 结尾的不定代词通常使用单数谓语。', '动名词短语、不定式短语和主语从句通常整体按单数处理。'], questions: [q('Everyone ___ ready.', 'is', 'are', 'A', 'Everyone 在语法上按单数处理。', 'everyone 使用单数谓语。'), q('Reading books ___ her relax.', 'help', 'helps', 'B', 'Reading books 表示一项活动。', '动名词短语整体作一个主语。'), q('What he needs ___ more time.', 'is', 'are', 'A', '主语从句整体按单数处理。', '主语从句通常使用单数谓语。')] },
+    specialVerb: { id: 'special-verb', title: '特殊动词与情态例外', meta: 'be → is · have → has · do → does · 情态动词 + 原形', examples: ['He is happy.', 'She has a new bike.', 'Tom does his homework.', 'Amy can swim.'], analyses: [[{ text: 'He', role: 'subject', label: '主语' }, { text: 'is', role: 'predicate', label: '系动词' }, { text: 'happy', role: 'object', label: '表语' }], [{ text: 'She', role: 'subject', label: '主语' }, { text: 'has', role: 'predicate', label: '谓语动词' }, { text: 'a new bike', role: 'object', label: '宾语' }], [{ text: 'Tom', role: 'subject', label: '主语' }, { text: 'does', role: 'predicate', label: '谓语动词' }, { text: 'his homework', role: 'object', label: '宾语' }], [{ text: 'Amy', role: 'subject', label: '主语' }, { text: 'can', role: 'helper', label: '情态动词' }, { text: 'swim', role: 'predicate', label: '动词原形' }]], exampleNotes: [n('structure', '特殊变化', 'be 在第三人称单数主语后变为 is。'), n('structure', '特殊变化', 'have 变为 has。'), n('structure', '特殊变化', 'do 作实义动词时变为 does。'), n('structure', '情态规则', 'can、must、should 后面的动词始终使用原形。')], rules: ['记住 is、has、does 三个特殊形式。', '情态动词本身不加 s，情态动词后的实义动词使用原形。'], questions: [q('My father ___ busy.', 'is', 'be', 'A', 'be 应变为 is。', 'my father 后使用 is。'), q('Lucy ___ a piano.', 'has', 'haves', 'A', 'have 的特殊形式是 has。', '正确形式是 has。'), q('Jack ___ his homework after dinner.', 'does', 'dos', 'A', 'do 的特殊形式是 does。', '正确形式是 does。'), q('She can ___ fast.', 'runs', 'run', 'B', 'can 后面使用动词原形。', '情态动词后接原形。')] },
+    usage: { id: 'usage', title: '语境与频率副词', meta: '习惯 · 客观事实 · 时间表 · 频率位置', examples: ['Lily often walks to school.', 'The sun rises in the east.', 'The train leaves at seven.'], analyses: [[{ text: 'Lily', role: 'subject', label: '主语' }, { text: 'often', role: 'adverbial', label: '频率状语' }, { text: 'walks', role: 'predicate', label: '谓语动词' }, { text: 'to school', role: 'adverbial', label: '地点状语' }], [{ text: 'The sun', role: 'subject', label: '主语' }, { text: 'rises', role: 'predicate', label: '谓语动词' }, { text: 'in the east', role: 'adverbial', label: '地点状语' }], [{ text: 'The train', role: 'subject', label: '主语' }, { text: 'leaves', role: 'predicate', label: '谓语动词' }, { text: 'at seven', role: 'adverbial', label: '时间状语' }]], exampleNotes: [n('structure', '习惯与位置', 'often 通常放在实义动词前；中文“经常”一般也放在动作前。'), n('structure', '客观事实', '长期成立的客观事实使用一般现在时。'), n('structure', '固定时间表', '固定班次或时间表可以用一般现在时表达将来。')], rules: ['一般现在时用于习惯、客观事实和固定时间表。', '频率副词通常放在实义动词前、be 动词后。'], questions: [q('Ben usually ___ breakfast at home.', 'eats', 'eat', 'A', 'Ben 的习惯动作使用 eats。', 'Ben 是第三人称单数。'), q('Water ___ at 100°C.', 'boil', 'boils', 'B', '客观事实中 water 按单数使用 boils。', 'water 是不可数名词。'), q('The film ___ at eight tonight.', 'starts', 'start', 'A', '固定时间表中 the film 使用 starts。', 'the film 是单数主语。')] }
+  };
+}
+
 function buildClassroomText() {
   const english = i18n.getLanguage() === 'en';
   const classroom = english ? {
@@ -216,7 +266,7 @@ function buildClassroomText() {
   };
   const practice = buildThirdPersonPractice(english);
   const exampleNotes = buildExampleNotes(english);
-  classroom.thirdPersonCourse = classroom.thirdPersonCourse.map((lesson) => {
+  const originalCourse = classroom.thirdPersonCourse.map((lesson) => {
     const addition = practice[lesson.id] || {};
     const examples = (lesson.examples || []).concat(addition.extraExample ? [addition.extraExample] : []);
     const analyses = (lesson.analyses || []).concat(addition.extraAnalysis ? [addition.extraAnalysis] : [])
@@ -226,8 +276,33 @@ function buildClassroomText() {
         ? ['A name, one person, one thing and an uncountable noun are singular.', 'A postmodifier belongs inside the subject phrase; agreement follows the head noun.']
         : ['人名、单个人或物、不可数名词都按单数处理。', '后置定语属于主语短语内部；主谓一致由主语中心词决定。'])
       : lesson.rules;
-    return Object.assign({}, lesson, addition, { examples, analyses, exampleNotes: exampleNotes[lesson.id] || [], rules, questions: addition.questions || [] });
+    const adaptiveNotes = (exampleNotes[lesson.id] || []).map((note, index) => adaptExampleNote(lesson.id, index, note, english));
+    return Object.assign({}, lesson, addition, { examples, analyses, exampleNotes: adaptiveNotes, rules, questions: addition.questions || [] });
   });
+  const originalById = originalCourse.reduce((map, lesson) => {
+    map[lesson.id] = lesson;
+    return map;
+  }, {});
+  const additional = buildAdditionalThirdPersonLessons(english);
+  classroom.thirdPersonCourse = [
+    originalById.trigger,
+    originalById.subject,
+    originalById.spelling,
+    additional.specialVerb,
+    originalById.sound,
+    originalById.does,
+    additional.usage,
+    additional.specialSubject,
+    originalById.boss
+  ].map((lesson, index) => Object.assign({}, lesson, {
+    no: String(index + 1).padStart(2, '0'),
+    level: index < 6 ? 'core' : 'advanced'
+  }));
+  classroom.thirdPersonTitle = english ? 'Third-person singular · 9 lessons' : '第三人称单数 · 9 节微课';
+  classroom.thirdPersonCourseGroups = [
+    { id: 'core', title: english ? 'Core · 6 essential lessons' : '核心必学 · 6 节', copy: english ? 'Complete these first.' : '第三人称单数必须掌握。', lessons: classroom.thirdPersonCourse.filter((lesson) => lesson.level === 'core') },
+    { id: 'advanced', title: english ? 'Advanced · 3 challenge lessons' : '进阶挑战 · 3 节', copy: english ? 'Special subjects, contexts and mixed use.' : '语境、特殊主语与综合运用。', lessons: classroom.thirdPersonCourse.filter((lesson) => lesson.level === 'advanced') }
+  ];
   return classroom;
 }
 
