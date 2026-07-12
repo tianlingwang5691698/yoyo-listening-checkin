@@ -776,7 +776,7 @@ test('语法课堂按体系分层并逐层返回', () => {
   assert.ok(page.data.ui.domainMaps.clauses.some((item) => item.id === 'noun-clauses' && item.ready && /22/.test(item.status)));
   assert.ok(page.data.ui.domainMaps.clauses.some((item) => item.id === 'relative-clauses' && item.ready && /21/.test(item.status)));
   assert.ok(page.data.ui.domainMaps.clauses.some((item) => item.id === 'adverbial-clauses' && item.ready && /20/.test(item.status)));
-  assert.ok(page.data.ui.domainMaps.clauses.some((item) => item.id === 'reported-speech' && item.ready && /20/.test(item.status)));
+  assert.ok(page.data.ui.domainMaps.clauses.some((item) => item.id === 'reported-speech' && item.ready && /21/.test(item.status)));
   assert.ok(page.data.ui.domainMaps.discourse.some((item) => item.id === 'cohesion-reference' && item.ready && /21/.test(item.status)));
   assert.ok(page.data.ui.domainMaps.discourse.some((item) => item.id === 'information-order' && item.ready && /20/.test(item.status)));
   assert.ok(page.data.ui.domainMaps.discourse.some((item) => item.id === 'punctuation' && item.ready && /20/.test(item.status)));
@@ -986,13 +986,13 @@ test('定语从句、状语从句与直接间接引语完整覆盖关系、逻�
     },
     {
       build: sourceAdverbialClausesCourses.buildAdverbialClausesCourse,
-      count: 20, groups: [14, 6], sections: [5, 4, 2, 2, 2, 3, 2], total: 64,
+      count: 20, groups: [14, 6], sections: [1, 4, 1, 1, 1, 1, 2, 2, 1, 1, 3, 2], total: 68,
       required: ['adverbial-function-position','time-when-while-as','time-before-after','time-until-since','time-immediate-once','place-where-wherever','reason-because-since-as','purpose-clauses','result-so-such','condition-if','condition-unless-provided','concession-although-even','concession-while-no-matter','comparison-clauses','manner-as-as-if','future-present-rule','tense-relations','paired-conjunction-boundaries','ellipsis-participle','adverbial-integration']
     },
     {
       build: sourceReportedSpeechCourses.buildReportedSpeechCourse,
-      count: 20, groups: [15, 5], sections: [4, 5, 3, 1, 2, 2, 3], total: 61,
-      required: ['direct-form-punctuation','reported-form-foundation','statements-that','say-tell-verbs','yes-no-questions','wh-questions','commands-requests','advice-suggestion','exclamations-responses','backshift-present','backshift-past-future','modal-changes','no-backshift-boundaries','person-possessive','deictic-time-place','reporting-clause-position','indirect-to-direct','layered-reporting','ambiguity-boundaries','integrated-rewrite']
+      count: 21, groups: [16, 5], sections: [5, 5, 3, 1, 2, 2, 3], total: 65,
+      required: ['reported-speech-essence','direct-form-punctuation','reported-form-foundation','statements-that','say-tell-verbs','yes-no-questions','wh-questions','commands-requests','advice-suggestion','exclamations-responses','backshift-present','backshift-past-future','modal-changes','no-backshift-boundaries','person-possessive','deictic-time-place','reporting-clause-position','indirect-to-direct','layered-reporting','ambiguity-boundaries','integrated-rewrite']
     }
   ];
   specs.forEach((spec) => [false, true].forEach((english) => {
@@ -1004,21 +1004,19 @@ test('定语从句、状语从句与直接间接引语完整覆盖关系、逻�
     assert.equal(bundle.course.reduce((sum, lesson) => sum + lesson.rules.length, 0), spec.total);
     assert.equal(bundle.course.reduce((sum, lesson) => sum + lesson.examples.length, 0), spec.total);
     assert.equal(bundle.course.reduce((sum, lesson) => sum + lesson.questions.length, 0), spec.total);
-    if (spec.build === sourceRelativeClausesCourses.buildRelativeClausesCourse) {
-      assert.match(bundle.course[0].title, english ? /Definition and core/ : /定义与本质/);
-      assert.deepEqual(bundle.sections.flatMap((section) => section.lessonIds), bundle.course.map((lesson) => lesson.id));
-      bundle.course.forEach((lesson) => {
-        assert.equal(lesson.analyses.length, lesson.examples.length);
-        assert.equal(lesson.exampleNotes.length, lesson.examples.length);
-        assert.ok(lesson.exampleNotes.every((note) => note.visible && (note.body || note.detail)));
-        assert.equal(lesson.ruleCoverage.length, lesson.rules.length);
-        lesson.ruleCoverage.forEach((coverage) => {
-          assert.ok(coverage.exampleIndexes.length && coverage.questionIndexes.length);
-          coverage.exampleIndexes.forEach((index) => assert.ok(index >= 0 && index < lesson.examples.length));
-          coverage.questionIndexes.forEach((index) => assert.ok(index >= 0 && index < lesson.questions.length));
-        });
+    assert.match(bundle.course[0].title, english ? /Definition.*core/ : /定义.*本质/);
+    assert.deepEqual(bundle.sections.flatMap((section) => section.lessonIds), bundle.course.map((lesson) => lesson.id));
+    bundle.course.forEach((lesson) => {
+      assert.equal(lesson.analyses.length, lesson.examples.length);
+      assert.equal(lesson.exampleNotes.length, lesson.examples.length);
+      assert.ok(lesson.exampleNotes.every((note) => note.visible && (note.body || note.detail)));
+      assert.equal(lesson.ruleCoverage.length, lesson.rules.length);
+      lesson.ruleCoverage.forEach((coverage) => {
+        assert.ok(coverage.exampleIndexes.length && coverage.questionIndexes.length);
+        coverage.exampleIndexes.forEach((index) => assert.ok(index >= 0 && index < lesson.examples.length));
+        coverage.questionIndexes.forEach((index) => assert.ok(index >= 0 && index < lesson.questions.length));
       });
-    }
+    });
     bundle.course.forEach((lesson) => lesson.questions.forEach((question) => {
       assert.ok(question.options.some((option) => option.key === question.answer));
       if (english) {
@@ -1031,7 +1029,13 @@ test('定语从句、状语从句与直接间接引语完整覆盖关系、逻�
   assert.equal(relativeClauses.course.find((lesson) => lesson.id === 'relative-way').level, 'core');
   assert.ok(relativeClauses.course.flatMap((lesson) => lesson.analyses).flat().some((part) => part.outerRole === 'postmodifier'));
   assert.ok(relativeClauses.course.flatMap((lesson) => lesson.analyses).flat().some((part) => /介词.*宾语/.test(part.relationRole || '')));
+  const adverbialClauses = sourceAdverbialClausesCourses.buildAdverbialClausesCourse(false);
+  assert.deepEqual(new Set(adverbialClauses.course.flatMap((lesson) => lesson.questions.map((question) => question.answer))), new Set(['A','B']));
+  assert.ok(adverbialClauses.course.find((lesson) => lesson.id === 'concession-although-even').rules.some((rule) => /even though.+even if/.test(rule)));
+  assert.ok(adverbialClauses.course.find((lesson) => lesson.id === 'future-present-rule').rules.some((rule) => /will.+意愿/.test(rule)));
   const reported = sourceReportedSpeechCourses.buildReportedSpeechCourse(false);
+  assert.deepEqual(new Set(reported.course.flatMap((lesson) => lesson.questions.map((question) => question.answer))), new Set(['A','B']));
+  assert.ok(reported.course.every((lesson) => lesson.analyses.every((analysis) => analysis.every((part) => part.role !== 'complement' && part.label !== '补足成分'))));
   const suggestion = reported.course.find((lesson) => lesson.id === 'advice-suggestion');
   assert.ok(suggestion.rules.some((rule) => /suggest.+doing/.test(rule)));
   assert.ok(suggestion.rules.some((rule) => /suggest.+that/.test(rule)));

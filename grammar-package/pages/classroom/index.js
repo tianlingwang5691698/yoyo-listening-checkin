@@ -53,7 +53,7 @@ function uiText(english) {
       ['noun-clauses', 'Noun Clauses', 'Subject, object, predicative and appositive clauses', '22 lessons', true],
       ['relative-clauses', 'Relative Clauses', 'Relative words, antecedents and clause structure', '21 lessons', true],
       ['adverbial-clauses', 'Adverbial Clauses', 'Time, condition, reason, purpose, result and concession', '20 lessons', true],
-      ['reported-speech', 'Reported Speech', 'Tense, person, time and word-order changes', '20 lessons', true]
+      ['reported-speech', 'Reported Speech', 'Tense, person, time and word-order changes', '21 lessons', true]
     ],
     discourse: [
       ['cohesion-reference', 'Cohesion & Reference', 'Pronoun reference, substitution and logical links', '21 lessons', true],
@@ -78,7 +78,7 @@ function uiText(english) {
       ['noun-clauses', '名词性从句', '主语、宾语、表语与同位语从句', '22 节 · 已开放', true],
       ['relative-clauses', '定语从句', '关系词、先行词与从句结构', '21 节 · 已开放', true],
       ['adverbial-clauses', '状语从句', '时间、条件、原因、目的、结果与让步', '20 节 · 已开放', true],
-      ['reported-speech', '直接引语与间接引语', '时态、人称、时间和语序变化', '20 节 · 已开放', true]
+      ['reported-speech', '直接引语与间接引语', '时态、人称、时间和语序变化', '21 节 · 已开放', true]
     ],
     discourse: [
       ['cohesion-reference', '衔接与指代', '代词指代、替代与逻辑连接', '21 节 · 已开放', true],

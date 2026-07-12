@@ -1,25 +1,28 @@
 const pick=(english,zh,en)=>english?en:zh;
 const INCLUDE_RULE_COVERAGE=typeof GRAMMAR_RUNTIME==='undefined'||!GRAMMAR_RUNTIME;
-const roleLabels={subject:['主语','Subject'],predicate:['谓语动词','Predicate verb'],object:['宾语','Object'],subjectComplement:['主语补语（表语）','Subject complement'],adverbial:['状语','Adverbial'],adverbialClause:['状语从句','Adverbial clause'],clause:['分句','Clause'],conjunction:['连接词','Connector'],attribute:['定语','Attribute'],nonfinite:['非谓语动词','Non-finite verb'],existential:['存在句引导词','Existential there']};
+const roleLabels={subject:['主语','Subject'],predicate:['完整谓语','Complete predicate'],object:['宾语','Object'],subjectComplement:['主语补语（表语）','Subject complement'],adverbial:['状语','Adverbial'],adverbialClause:['状语从句','Adverbial clause'],clause:['分句','Clause'],conjunction:['连接词','Connector'],attribute:['定语','Attribute'],nonfinite:['非谓语动词','Non-finite verb'],existential:['存在句引导词','Existential there']};
 function analysis(english,chunks){return chunks.map(([text,role,zh,en])=>({text,role,label:pick(english,zh||(roleLabels[role]||['',''])[0],en||(roleLabels[role]||['',''])[1])}));}
 function note(english,mode,zh,en){if(!mode)return{visible:false,mode:'',title:'',body:'',detail:''};const t={logic:['逻辑关系','Logical relation'],order:['位置与标点','Position and punctuation'],contrast:['易混辨析','Contrast'],tense:['时态观察','Tense focus'],transformation:['结构转换','Transformation'],translation:['语序翻译','Word-order translation'],boundary:['边界提醒','Boundary note']};return{visible:true,mode,title:pick(english,...(t[mode]||t.logic)),body:pick(english,zh,en),detail:''};}
 const opt=(english,v)=>Array.isArray(v)?pick(english,v[0],v[1]):v;
-function question(english,x){return{question:pick(english,x[0],x[1]),options:x[2].map((v,i)=>({key:String.fromCharCode(65+i),text:opt(english,v)})),answer:x[3],correct:pick(english,x[4],x[5]),wrong:pick(english,`再看逻辑：${x[4]}`,`Check the logic: ${x[5]}`)};}
-function lesson(english,spec,index){if(spec.rules.length!==spec.examples.length||spec.rules.length!==spec.questions.length)throw new Error(`Adverbial-clause coverage mismatch: ${spec.id}`);const examples=spec.examples.map(x=>({text:x[0].map(c=>c[0]).join(' '),analysis:analysis(english,x[0]),note:note(english,x[1],x[2],x[3])}));return{id:spec.id,no:String(index+1).padStart(2,'0'),level:spec.level,title:pick(english,...spec.title),meta:pick(english,...spec.meta),examples:examples.map(x=>x.text),analyses:examples.map(x=>x.analysis),exampleNotes:examples.map(x=>x.note),rules:spec.rules.map(x=>pick(english,...x)),ruleCoverage:INCLUDE_RULE_COVERAGE?spec.rules.map((_,i)=>({exampleIndexes:[i],questionIndexes:[i]})):[],questions:spec.questions.map(x=>question(english,x))};}
+function question(english,x,index){const options=x[2].map((v,i)=>({key:String.fromCharCode(65+i),text:opt(english,v)}));let answer=x[3];if(index%2===1&&options.length===2){options.reverse();options.forEach((item,i)=>{item.key=String.fromCharCode(65+i);});answer=answer==='A'?'B':'A';}return{question:pick(english,x[0],x[1]),options,answer,correct:pick(english,x[4],x[5]),wrong:pick(english,`再看逻辑：${x[4]}`,`Check the logic: ${x[5]}`)};}
+function lesson(english,spec,index){if(spec.rules.length!==spec.examples.length||spec.rules.length!==spec.questions.length)throw new Error(`Adverbial-clause coverage mismatch: ${spec.id}`);const examples=spec.examples.map(x=>({text:x[0].map(c=>c[0]).join(' '),analysis:analysis(english,x[0]),note:note(english,x[1],x[2],x[3])}));return{id:spec.id,no:String(index+1).padStart(2,'0'),level:spec.level,title:pick(english,...spec.title),meta:pick(english,...spec.meta),examples:examples.map(x=>x.text),analyses:examples.map(x=>x.analysis),exampleNotes:examples.map(x=>x.note),rules:spec.rules.map(x=>pick(english,...x)),ruleCoverage:INCLUDE_RULE_COVERAGE?spec.rules.map((_,i)=>({exampleIndexes:[i],questionIndexes:[i]})):[],questions:spec.questions.map((x,i)=>question(english,x,i))};}
 
 const specs=[
-  {id:'adverbial-function-position',level:'core',title:['状语从句的整体功能、位置与标点','Function, position and punctuation of adverbial clauses'],meta:['从句整体修饰主句事件或判断','The whole clause modifies the main event or proposition'],examples:[
-    [[['When the bell rang,','adverbialClause','时间状语从句','Time adverbial clause'],['the students','subject'],['left.','predicate']],'order','状语从句在主句前，通常用逗号分隔。','An initial adverbial clause is normally followed by a comma.'],
-    [[['The students','subject'],['left','predicate'],['when the bell rang.','adverbialClause','时间状语从句','Time adverbial clause']],'order','状语从句在主句后且联系紧密时，通常不加逗号。','A closely integrated final adverbial clause normally has no comma.'],
-    [[['Although it was raining,','adverbialClause','让步状语从句','Concessive adverbial clause'],['we','subject'],['continued','predicate'],['the game.','object']],'logic','从句表达让步背景，主句表达仍然成立的结果。','The clause gives a concession; the main clause states the result that still holds.']
+  {id:'adverbial-function-position',level:'core',title:['状语从句的定义、本质与边界','Definition, core and boundary of adverbial clauses'],meta:['从句整体给主句加上时间、原因、条件等关系','The whole clause adds time, reason, condition and other relations to the main clause'],examples:[
+    [[['When the bell rang,','adverbialClause','时间状语从句：when 连接从句与主句','Time adverbial clause: when links it to the main clause'],['the students','subject','主句主语','Main-clause subject'],['left.','predicate','主句完整谓语','Main-clause complete predicate']],'logic','先看主干 the students left；When the bell rang 内部有 the bell＋rang，但整体只回答“学生什么时候离开”。','First find the main skeleton the students left. When the bell rang has its own the bell + rang skeleton, but as a whole it only answers when the students left.'],
+    [[['Because the road was closed,','adverbialClause','原因状语从句：because 标出理由','Reason adverbial clause: because marks the cause'],['we','subject','主句主语','Main-clause subject'],['turned back.','predicate','主句完整谓语','Main-clause complete predicate']],'logic','主干是 we turned back；Because the road was closed 不占主语或宾语位置，而是说明“为什么返回”。','The main skeleton is we turned back. Because the road was closed fills no subject or object slot; it explains why the turning back happened.'],
+    [[['The students','subject'],['left','predicate'],['when the bell rang.','adverbialClause','后置时间状语从句','Final time adverbial clause']],'order','时间从句后置且与 left 紧密结合，通常不用逗号；英中文都可按“离开时间”理解，无需机械调序。','The final time clause is tightly integrated with left, so it normally takes no comma. Both languages can understand it as the time of leaving without a mechanical reordering rule.'],
+    [[['Because of the rain,','adverbial','介词短语作原因状语，不是从句','Prepositional phrase as reason adverbial, not a clause'],['we','subject'],['stayed inside.','predicate']],'boundary','Because of the rain 也表原因，但 the rain 没有谓语，所以它是介词短语；状语从句必须有自己的主谓骨架。','Because of the rain also gives a reason, but the rain has no predicate, so it is a prepositional phrase. An adverbial clause must contain its own subject-predicate skeleton.']
   ],rules:[
-    ['状语从句整体修饰主句谓语或整句，表达时间、原因、条件、让步等逻辑。','An adverbial clause modifies the main predicate or proposition and expresses time, reason, condition, concession and other relations.'],
-    ['状语从句前置时通常在从句末加逗号。','An initial adverbial clause is normally followed by a comma.'],
-    ['后置状语从句与主句联系紧密时通常不用逗号；标点也可反映信息附加程度。','A closely integrated final adverbial clause normally takes no comma; punctuation may also reflect how supplementary it is.']
+    ['状语从句内部有自己的主谓骨架，外层则整体作状语，说明主句事件的时间、地点、原因等关系。','An adverbial clause has its own inner subject-predicate skeleton but functions as one outer adverbial, adding time, place, reason or another relation to the main event.'],
+    ['连接词不是只把两句话粘在一起；它要明确从句与主句之间的特定逻辑。','A connector does more than join two clauses: it identifies the specific logical relation between the subordinate and main clauses.'],
+    ['状语从句前置时通常用逗号与主句分隔；联系紧密的后置从句通常不用逗号。','An initial adverbial clause is normally separated by a comma; a tightly integrated final clause normally is not.'],
+    ['判断是否为从句，要查它内部是否有主谓骨架；because of 等介词短语虽然也作状语，但不是从句。','To identify a clause, check for an inner subject-predicate skeleton. A prepositional phrase such as because of may also be adverbial, but it is not a clause.']
   ],questions:[
-    ['When the bell rang, the students left. 中从句整体作什么？','What does the clause function as?',[['时间状语','Time adverbial'],['宾语','Object']],'A','它说明离开的时间。','It gives the time of leaving.'],
-    ['状语从句前置时通常如何标点？','How is an initial adverbial clause normally punctuated?',[['从句后加逗号','Comma after the clause'],['不允许逗号','No comma allowed']],'A','前置从句通常以逗号和主句分隔。','An initial clause is normally separated by a comma.'],
-    ['The students left when the bell rang. 通常是否需要逗号？','Does this final integrated clause normally need a comma?',[['不需要','No'],['必须有','Yes, always']],'A','紧密后置从句通常不用逗号。','A closely integrated final clause normally has no comma.']
+    ['When the bell rang, the students left. 中 When 从句整体作什么？','What does the When-clause function as a whole?',[['时间状语','Time adverbial'],['主句宾语','Main-clause object']],'A','它内部有主谓，外层说明 left 的时间。','It has an inner skeleton and externally gives the time of left.'],
+    ['Because the road was closed, we turned back. 中 because 标出什么？','What does because mark in this sentence?',[['返回的原因','The reason for turning back'],['返回的地点','The place of turning back']],'A','道路关闭解释了为什么返回。','The road closure explains why they turned back.'],
+    ['The students left when the bell rang. 中紧密后置从句通常如何标点？','How is the tightly integrated final clause normally punctuated?',[['不加逗号','No comma'],['必须加逗号','A comma is required']],'A','后置时间从句与 left 紧密结合。','The final time clause is tightly integrated with left.'],
+    ['Because of the rain 为什么不是状语从句？','Why is Because of the rain not an adverbial clause?',[['内部没有主谓骨架','It has no inner subject-predicate skeleton'],['它不能表原因','It cannot express a reason']],'A','the rain 是介词宾语，内部没有谓语。','the rain is the prepositional object and there is no inner predicate.']
   ]},
   {id:'time-when-while-as',level:'core',title:['时间：when、while、as','Time: when, while and as'],meta:['时间点、持续过程与同步变化','Point, duration and simultaneous development'],examples:[
     [[['When the phone rang,','adverbialClause','when 时间从句','when-time clause'],['I','subject'],['answered','predicate'],['it.','object']],'tense','when 可引出某个时间点发生的事件。','when can introduce an event at a particular point.'],
@@ -32,7 +35,7 @@ const specs=[
   ],questions:[
     ['___ the phone rang, I answered it.','___ the phone rang, I answered it.',['When','Unless'],'A','时间点事件用 when。','Use when for the point event.'],
     ['___ I was studying, my brother was sleeping.','___ I was studying, my brother was sleeping.',['While','Because of'],'A','两个持续动作重叠，用 while。','while shows overlapping durative actions.'],
-    ['___ the sun rose, the sky grew brighter. 强调同步变化。','___ the sun rose, the sky grew brighter, emphasizing simultaneous change.',['As','Until not'],'A','as 可表示“随着”。','as can mean as the process develops.']
+    ['___ the sun rose, the sky grew brighter. 强调同步变化。','___ the sun rose, the sky grew brighter, emphasizing simultaneous change.',['As','After'],'A','as 可表示“随着”。','as can mean as the process develops.']
   ]},
   {id:'time-before-after',level:'core',title:['时间：before 与 after','Time: before and after'],meta:['明确事件先后关系','Making event order explicit'],examples:[
     [[['Wash','predicate'],['your hands','object'],['before you eat.','adverbialClause','before 时间从句','before-time clause']],'logic','主句动作发生在从句动作之前。','The main action occurs before the subordinate action.'],
@@ -43,7 +46,7 @@ const specs=[
     ['after 从句表示其事件早于主句事件。','An after-clause presents an event earlier than the main event.'],
     ['before/after 已明确先后时，可根据强调和语境选择一般过去时或过去完成时。','When before/after makes order clear, simple past or past perfect may be chosen according to emphasis and context.']
   ],questions:[
-    ['Wash your hands ___ you eat.','Wash your hands ___ you eat.',['before','after only'],'A','洗手应先于吃饭。','Washing comes before eating.'],
+    ['Wash your hands ___ you eat.','Wash your hands ___ you eat.',['before','after'],'A','洗手应先于吃饭。','Washing comes before eating.'],
     ['___ she finished the report, she sent it.','___ she finished the report, she sent it.',['After','Until'],'A','完成报告后再发送。','Finishing precedes sending.'],
     ['After she ___ the report, she sent it. 哪项可突出先完成？','Which form emphasizes earlier completion?',['had finished','will finish'],'A','过去完成时突出先于 sent。','Past perfect emphasizes completion before sent.']
   ]},
@@ -57,7 +60,7 @@ const specs=[
     ['since 时间从句表示起点；主句常用完成时，从句常用一般过去时。','A since-clause marks a starting point; the main clause commonly uses a perfect tense and the since-clause simple past.']
   ],questions:[
     ['We waited ___ the bus arrived.','We waited ___ the bus arrived.',['until','because of'],'A','等待持续到公交到达。','The waiting lasts to the arrival.'],
-    ['She did not leave ___ the meeting ended.','She did not leave ___ the meeting ended.',['until','as soon as before'],'A','not until 表示会议结束才离开。','not until means she left only when it ended.'],
+    ['She did not leave ___ the meeting ended.','She did not leave ___ the meeting ended.',['until','since'],'A','not until 表示会议结束才离开。','not until means she left only when it ended.'],
     ['I ___ here since I graduated.','I ___ here since I graduated.',['have lived','will live'],'A','过去起点延续至今用现在完成时。','Use present perfect for continuation from a past point to now.']
   ]},
   {id:'time-immediate-once',level:'core',title:['时间：as soon as 与 once','Time: as soon as and once'],meta:['紧接发生与条件一旦成立','Immediate sequence and once a condition is met'],examples:[
@@ -102,15 +105,18 @@ const specs=[
   {id:'purpose-clauses',level:'core',title:['目的：so that 与 in order that','Purpose: so that and in order that'],meta:['为了让某事能够发生','So that an intended outcome can happen'],examples:[
     [[['Speak','predicate'],['slowly','adverbial'],['so that everyone can understand.','adverbialClause','目的状语从句','Purpose adverbial clause']],'logic','从句说明慢慢说的目的，常含 can/may。','The clause gives the purpose of speaking slowly and commonly contains can/may.'],
     [[['She','subject'],['left','predicate'],['early','adverbial'],['so that she could catch the bus.','adverbialClause','过去语境目的从句','Past-context purpose clause']],'tense','过去语境常用 could/might/would 表示预期目的。','Past contexts commonly use could/might/would for the intended result.'],
-    [[['In order that no one would notice,','adverbialClause','正式目的状语从句','Formal purpose clause'],['he','subject'],['entered','predicate'],['quietly.','adverbial']],'logic','in order that 较正式，常用于明确目的并可前置。','in order that is more formal, explicitly marks purpose and can be initial.']
+    [[['In order that no one would notice,','adverbialClause','正式目的状语从句','Formal purpose clause'],['he','subject'],['entered','predicate'],['quietly.','adverbial']],'logic','in order that 较正式，常用于明确目的并可前置。','in order that is more formal, explicitly marks purpose and can be initial.'],
+    [[['He','subject'],['spoke','predicate'],['so quietly','adverbial','程度方式状语','Degree and manner adverbial'],['that nobody heard him.','adverbialClause','结果状语从句','Result adverbial clause']],'contrast','这里是 so＋副词 quietly＋that，说明“实际导致无人听见”，不是 so that 直接引出的意图。','Here so + adverb quietly + that gives the actual result that nobody heard him; it is not purpose so that introducing an intention.']
   ],rules:[
     ['so that 引导目的从句时常与 can/could、may/might、will/would 等情态形式搭配。','Purpose so that commonly combines with can/could, may/might or will/would.'],
     ['主句为过去语境时，目的从句常使用 could、might 或 would。','With a past main context, a purpose clause commonly uses could, might or would.'],
-    ['in order that 比 so that 更正式、更明确地标示目的，并可前置。','in order that is more formal and explicit than so that and may be initial.']
+    ['in order that 比 so that 更正式、更明确地标示目的，并可前置。','in order that is more formal and explicit than so that and may be initial.'],
+    ['so that 目的从句说意图；so＋形容词/副词＋that 结果从句说某程度实际导致什么。','A purpose so that clause gives an intention; so + adjective/adverb + that gives the actual result of a degree.']
   ],questions:[
-    ['Speak slowly ___ everyone can understand.','Speak slowly ___ everyone can understand.',['so that','such that only'],'A','从句说明说慢的目的。','The clause gives the purpose.'],
-    ['She left early so that she ___ catch the bus.','She left early so that she ___ catch the bus.',['could','can yesterday'],'A','过去语境使用 could。','Use could in the past context.'],
-    ['哪一连接词更正式地表示目的？','Which connector marks purpose more formally?',['in order that','because'],'A','in order that 是正式目的连接语。','in order that is the formal purpose connector.']
+    ['Speak slowly ___ everyone can understand.','Speak slowly ___ everyone can understand.',['so that','because'],'A','从句说明说慢的目的。','The clause gives the purpose.'],
+    ['She left early so that she ___ catch the bus.','She left early so that she ___ catch the bus.',['could','can'],'A','过去语境使用 could。','Use could in the past context.'],
+    ['哪一连接词更正式地表示目的？','Which connector marks purpose more formally?',['in order that','because'],'A','in order that 是正式目的连接语。','in order that is the formal purpose connector.'],
+    ['He spoke so quietly that nobody heard him. 中 that 从句表什么？','What does the that-clause express in this sentence?',[['实际结果','Actual result'],['说话的目的','Purpose of speaking']],'A','so quietly 的程度导致了该结果。','The degree expressed by so quietly produced the result.']
   ]},
   {id:'result-so-such',level:'core',title:['结果：so...that 与 such...that','Result: so...that and such...that'],meta:['程度达到某种结果','A degree leading to a result'],examples:[
     [[['The box','subject'],['was','predicate'],['so heavy','subjectComplement'],['that I could not lift it.','adverbialClause','结果状语从句','Result adverbial clause']],'logic','so 修饰形容词 heavy，that 从句说明结果。','so modifies the adjective heavy and the that-clause gives the result.'],
@@ -135,8 +141,8 @@ const specs=[
     ['条件句主句不只可用 will，也可使用情态动词或祈使句。','The main clause of a condition need not use will; it may use another modal or an imperative.']
   ],questions:[
     ['If it ___ tomorrow, we will stay home.','If it ___ tomorrow, we will stay home.',['rains','will rain'],'A','将来条件从句用一般现在时。','Use present simple in the future condition.'],
-    ['If you heat ice, it ___.','If you heat ice, it ___.',['melts','will always melted'],'A','普遍事实两边可用一般现在时。','A general truth can use present simple in both clauses.'],
-    ['If you need help, ___ me.','If you need help, ___ me.',['call','will calling'],'A','主句可用祈使句。','The main clause can be imperative.']
+    ['If you heat ice, it ___.','If you heat ice, it ___.',['melts','melted'],'A','普遍事实两边可用一般现在时。','A general truth can use present simple in both clauses.'],
+    ['If you need help, ___ me.','If you need help, ___ me.',['call','called'],'A','主句可用祈使句。','The main clause can be imperative.']
   ]},
   {id:'condition-unless-provided',level:'core',title:['条件：unless、as long as、provided that','Condition: unless, as long as and provided that'],meta:['除非、只要与前提条件','Unless, as long as and provided that'],examples:[
     [[['Unless you hurry,','adverbialClause','unless 条件从句','unless-condition clause'],['you','subject'],['will miss','predicate'],['the bus.','object']],'logic','unless 相当于 if ... not；从句通常不再重复 not。','unless is equivalent to if ... not; the clause normally does not repeat not.'],
@@ -148,21 +154,24 @@ const specs=[
     ['provided/providing that 表示明确前提，语气较正式。','provided/providing that states an explicit condition and is relatively formal.']
   ],questions:[
     ['___ you hurry, you will miss the bus.','___ you hurry, you will miss the bus.',['Unless','Because'],'A','unless 表示 if you do not hurry。','unless means if you do not hurry.'],
-    ['You may stay ___ you are quiet.','You may stay ___ you are quiet.',['as long as','so that result'],'A','表示“只要保持安静”。','It means provided that you are quiet.'],
+    ['You may stay ___ you are quiet.','You may stay ___ you are quiet.',['as long as','although'],'A','表示“只要保持安静”。','It means provided that you are quiet.'],
     ['We will go ___ the weather is safe.','We will go ___ the weather is safe.',['provided that','although'],'A','provided that 表明确条件。','provided that states the condition.']
   ]},
   {id:'concession-although-even',level:'core',title:['让步：although、though、even though','Concession: although, though and even though'],meta:['尽管条件存在，主句结果仍成立','The main result holds despite the condition'],examples:[
     [[['Although it was cold,','adverbialClause','although 让步从句','although-concessive clause'],['we','subject'],['went','predicate'],['out.','adverbial']],'logic','寒冷本应阻碍外出，但主句结果仍发生。','The cold might prevent going out, yet the main result still occurs.'],
     [[['Though he was tired,','adverbialClause','though 让步从句','though-concessive clause'],['he','subject'],['kept working.','predicate']],'logic','though 通常比 although 稍口语，基本意义相近。','though is often slightly less formal than although, with similar basic meaning.'],
-    [[['Even though she knew the risk,','adverbialClause','even though 强让步从句','even-though concessive clause'],['she','subject'],['continued.','predicate']],'logic','even though 强调让步事实出乎预期。','even though emphasizes a particularly unexpected contrast.']
+    [[['Even though she knew the risk,','adverbialClause','even though 强让步从句','even-though concessive clause'],['she','subject'],['continued.','predicate']],'logic','even though 强调让步事实出乎预期。','even though emphasizes a particularly unexpected contrast.'],
+    [[['Even if it rains,','adverbialClause','even if 假设让步从句','even-if hypothetical concessive clause'],['we','subject'],['will go.','predicate']],'contrast','even if 把下雨当作尚未确定的情况；even though it is raining 则把下雨当作事实。','even if treats rain as an unresolved possibility; even though it is raining would present it as a fact.']
   ],rules:[
     ['although 引导事实性让步，表示主句结果与通常预期相反。','although introduces factual concession, with a main result contrary to expectation.'],
     ['though 与 although 基本意义相近，though 常更口语、位置更灵活。','though is close to although, often less formal and more positionally flexible.'],
-    ['even though 强调“即使事实如此仍然”，让步力度更强。','even though emphasizes that the main result holds despite a strong factual obstacle.']
+    ['even though 强调“即使事实如此仍然”，让步力度更强。','even though emphasizes that the main result holds despite a strong factual obstacle.'],
+    ['even though 引出已知事实，even if 引出假设或尚未确定的情况。','even though introduces an accepted fact, whereas even if introduces a hypothetical or unresolved possibility.']
   ],questions:[
     ['___ it was cold, we went out.','___ it was cold, we went out.',['Although','Because of'],'A','前后是让步关系。','The relation is concessive.'],
     ['哪一词通常比 although 稍口语？','Which word is often slightly less formal than although?',['though','until'],'A','though 基本意义相同但更口语。','though is similar but often less formal.'],
-    ['哪一项让步强调更强？','Which marks stronger concession?',['even though','after'],'A','even 增强出乎预期的对比。','even strengthens the unexpected contrast.']
+    ['哪一项让步强调更强？','Which marks stronger concession?',['even though','after'],'A','even 增强出乎预期的对比。','even strengthens the unexpected contrast.'],
+    ['下雨尚未确定，但无论如何都去：___ it rains, we will go.','Rain is uncertain, but we will go regardless: ___ it rains, we will go.',['Even if','Even though'],'A','未确定的假设用 even if。','Use even if for the unresolved possibility.']
   ]},
   {id:'concession-while-no-matter',level:'advanced',title:['让步：while、no matter 与 wh-ever','Concession: while, no matter and wh-ever'],meta:['对比让步与无条件让步','Contrastive and unconditional concession'],examples:[
     [[['While I understand your point,','adverbialClause','while 对比让步从句','while contrastive-concessive clause'],['I','subject'],['disagree.','predicate']],'logic','while 表“虽然/尽管”时突出两种看法的对比。','Concessive while highlights contrast between two positions.'],
@@ -181,15 +190,15 @@ const specs=[
     ['判断 wh-ever 从句类型应先看什么？','What should be checked first to classify a wh-ever clause?',[['整句中的功能','Its function in the whole sentence'],['只看词尾 ever','Only the ending ever']],'A','相同形式可承担不同从句功能。','The same form may serve different clause functions.']
   ]},
   {id:'comparison-clauses',level:'advanced',title:['比较：than 与 as...as','Comparison: than and as...as'],meta:['比较级差异与同等比较','Comparative difference and equality'],examples:[
-    [[['Mia','subject'],['runs','predicate'],['faster than I do.','adverbialClause','than 比较从句','than-comparison clause']],'logic','do 代替 runs，避免重复完整谓语。','do substitutes for runs to avoid repeating the predicate.'],
-    [[['This room','subject'],['is','predicate'],['as bright as that one is.','adverbialClause','as 比较从句','as-comparison clause']],'logic','as ... as 表同等程度，第二个 as 引出比较从句。','as ... as expresses equal degree; the second as introduces the comparison clause.'],
-    [[['She','subject'],['is','predicate'],['taller than me / than I am.','adverbialClause','正式度不同的比较表达','Comparison forms differing in formality']],'contrast','than me 在日常英语常见；than I am 明示从句结构，更正式。','than me is common in everyday English; than I am makes the clause explicit and is more formal.']
+    [[['Mia','subject'],['runs','predicate'],['faster','adverbial','程度方式状语','Degree and manner adverbial'],['than I do.','adverbialClause','than 比较从句','than-comparison clause']],'logic','than I do 只提供 faster 的比较基准；do 代替 runs，避免重复完整谓语。','than I do supplies the standard for faster; do substitutes for runs to avoid repeating the predicate.'],
+    [[['This room','subject'],['is','predicate'],['as bright','subjectComplement','主语补语：同等程度','Subject complement: equal degree'],['as that one is.','adverbialClause','as 比较从句','as-comparison clause']],'logic','bright 是 room 的表语；第二个 as 引出 that one is 作同等比较的基准。','bright is the complement of room; the second as introduces that one is as the standard of equality.'],
+    [[['She','subject'],['is','predicate'],['taller','subjectComplement'],['than me / than I am.','adverbial','比较基准：than me 为短语，than I am 为从句','Comparison standard: than me is a phrase; than I am is a clause']],'contrast','than me 在日常英语常见；than I am 明示主语和谓语，是完整比较从句，更正式。','than me is common in everyday English; than I am overtly contains a subject and predicate, making it a full comparison clause and more formal.']
   ],rules:[
     ['than 引导比较基准，从句中重复成分常用助动词替代或省略。','than introduces the comparison standard; repeated material is often replaced by an auxiliary or omitted.'],
     ['as + 形容词/副词 + as 表示同等程度，第二个 as 可引出比较从句。','as + adjective/adverb + as expresses equality, with the second as introducing a comparison clause.'],
     ['than 后代词在实际英语中有宾格短语和完整主格从句两种常见形式，正式度不同。','After than, both an object-form phrase and a full nominative clause occur, with different formality.']
   ],questions:[
-    ['Mia runs faster than I ___.','Mia runs faster than I ___.',['do','am running fastly'],'A','do 替代 runs。','do substitutes for runs.'],
+    ['Mia runs faster than I ___.','Mia runs faster than I ___.',['do','am'],'A','do 替代 runs。','do substitutes for runs.'],
     ['This room is ___ bright ___ that one is.','This room is ___ bright ___ that one is.',['as ... as','so ... that'],'A','同等比较使用 as ... as。','Use as ... as for equality.'],
     ['哪一项更明确地显示完整比较从句？','Which more clearly shows a full comparison clause?',['than I am','than me'],'A','than I am 明示主语和谓语。','than I am overtly contains subject and predicate.']
   ]},
@@ -210,17 +219,20 @@ const specs=[
     [[['When she arrives,','adverbialClause','将来时间从句用一般现在时','Future-time clause with present simple'],['we','subject'],['will start.','predicate']],'tense','arrives 表将来时间，但从句不用 will arrive。','arrives has future reference, but the clause does not use will arrive.'],
     [[['If he calls,','adverbialClause','将来条件从句用一般现在时','Future-condition clause with present simple'],['tell','predicate'],['me.','object']],'tense','if 从句表达未来可能条件，用 calls。','The if-clause expresses a future possible condition with calls.'],
     [[['Once you have finished,','adverbialClause','将来从句用现在完成时','Future clause with present perfect'],['you','subject'],['may leave.','predicate']],'tense','现在完成时可突出从句动作先完成，再发生主句动作。','Present perfect can emphasize completion before the main action.'],
-    [[['I','subject'],['do not know','predicate'],['whether he will come.','object','宾语从句','Object clause']],'boundary','这里 whether 引导宾语从句，不是条件状语从句，因此可用 will；不要把规则扩大到所有含 if/whether 的从句。','Here whether introduces an object clause, not a condition clause, so will is possible; do not overgeneralize the rule.']
+    [[['I','subject'],['do not know','predicate'],['whether he will come.','object','宾语从句','Object clause']],'boundary','这里 whether 引导宾语从句，不是条件状语从句，因此可用 will；不要把规则扩大到所有含 if/whether 的从句。','Here whether introduces an object clause, not a condition clause, so will is possible; do not overgeneralize the rule.'],
+    [[['If you will wait here,','adverbialClause','if 条件从句：will 表意愿','if-condition clause: will expresses willingness'],['I','subject'],['will check','predicate'],['the schedule.','object']],'boundary','从句里的 will 不是单纯预测将来，而是“如果你愿意等”；因此“条件从句不用 will”不是无例外口诀。','will here does not merely predict the future; it means if you are willing to wait. The no-will rule is therefore not exceptionless.']
   ],rules:[
     ['when、before、after、until、as soon as 等将来时间从句通常用一般现在时表达将来。','Future-time clauses with when, before, after, until or as soon as normally use present simple.'],
     ['真实将来条件 if/unless/as long as 从句通常用一般现在时表达将来。','Real future condition clauses with if, unless or as long as normally use present simple.'],
     ['现在完成时可在将来时间或条件从句中突出动作完成。','Present perfect may emphasize completion in a future time or condition clause.'],
-    ['“主将从现”只适用于相应时间/条件状语从句，不适用于所有宾语从句。','The present-in-subordinate rule applies to relevant time/condition adverbial clauses, not every object clause.']
+    ['“主将从现”只适用于相应时间/条件状语从句，不适用于所有宾语从句。','The present-in-subordinate rule applies to relevant time/condition adverbial clauses, not every object clause.'],
+    ['if 从句中的 will 若表示意愿、坚持或客气请求，而非单纯将来，可以使用。','will is possible in an if-clause when it expresses willingness, insistence or a polite request rather than plain futurity.']
   ],questions:[
     ['When she ___, we will start.','When she ___, we will start.',['arrives','will arrive'],'A','将来时间从句用一般现在时。','Use present simple in the future-time clause.'],
     ['If he ___, tell me.','If he ___, tell me.',['calls','will call'],'A','将来条件从句用一般现在时。','Use present simple in the future condition.'],
-    ['Once you ___, you may leave. 强调先完成。','Once you ___, you may leave, emphasizing prior completion.',['have finished','will have finish'],'A','从句可用现在完成时。','Present perfect is possible in the clause.'],
-    ['I do not know whether he ___ come.','I do not know whether he ___ come.',['will',['省略所有将来形式','omit every future form']],'A','这是宾语从句，可使用 will。','This is an object clause, so will is possible.']
+    ['Once you ___, you may leave. 强调先完成。','Once you ___, you may leave, emphasizing prior completion.',['have finished','finish'],'A','现在完成时额外突出从句动作已完成。','Present perfect adds emphasis that the subordinate action is complete.'],
+    ['I do not know whether he ___ come.','I do not know whether he ___ come.',['will','would'],'A','当前语境转述未来可使用 will。','will can express future time in this present reporting context.'],
+    ['If you ___ wait here, I will check the schedule. 表“如果你愿意”。','If you ___ wait here, I will check the schedule, meaning if you are willing.',['will','would'],'A','will 在此表意愿，不是单纯将来。','will expresses willingness here, not plain future time.']
   ]},
   {id:'tense-relations',level:'advanced',title:['时间从句的时态关系','Tense relations in time clauses'],meta:['同时、打断、先后与延续','Simultaneity, interruption, sequence and duration'],examples:[
     [[['While I was cooking,','adverbialClause','过去进行时背景从句','Past-progressive background clause'],['the phone','subject'],['rang.','predicate']],'tense','持续背景用过去进行时，短暂打断事件用一般过去时。','Past progressive gives the ongoing background; simple past gives the interrupting event.'],
@@ -231,9 +243,9 @@ const specs=[
     ['when 可定位一个时间点，与主句进行时搭配表达“当时正在”。','when can locate a point in time while a main progressive shows what was ongoing then.'],
     ['by the time 强调截止点，较早完成的过去动作常用过去完成时。','by the time emphasizes an endpoint; an earlier completed past action commonly uses past perfect.']
   ],questions:[
-    ['While I ___, the phone rang.','While I ___, the phone rang.',['was cooking','cooked once only'],'A','持续背景用过去进行时。','Use past progressive for the ongoing background.'],
-    ['When I arrived, they ___.','When I arrived, they ___.',['were eating','will eat yesterday'],'A','表示到达时正在吃。','It means eating was in progress at arrival.'],
-    ['By the time we arrived, the film ___.','By the time we arrived, the film ___.',['had started','starts tomorrow'],'A','电影开始早于到达。','The film started before arrival.']
+    ['While I ___, the phone rang.','While I ___, the phone rang.',['was cooking','cooked'],'A','持续背景用过去进行时。','Use past progressive for the ongoing background.'],
+    ['When I arrived, they ___.','When I arrived, they ___.',['were eating','ate'],'A','表示到达时正在吃。','It means eating was in progress at arrival.'],
+    ['By the time we arrived, the film ___.','By the time we arrived, the film ___.',['had started','started'],'A','过去完成时额外突出电影开始早于到达。','Past perfect explicitly marks the film’s start as earlier than arrival.']
   ]},
   {id:'paired-conjunction-boundaries',level:'core',title:['because–so 与 although–but 的边界','The because–so and although–but boundary'],meta:['英语从属连词与主句连接不重复','Do not duplicate subordination and coordination'],examples:[
     [[['Because it rained,','adverbialClause','原因状语从句','Reason adverbial clause'],['we','subject'],['stayed','predicate'],['home.','adverbial']],'boundary','标准句中 because 已连接原因从句，主句前不再加 so。','In a standard sentence, because already subordinates the reason clause, so the main clause does not add so.'],
@@ -245,7 +257,7 @@ const specs=[
     ['标准英语通常不用 although/though ... but ... 同时连接同一让步关系。','Standard English normally does not combine although/though ... but ... for the same concession.']
   ],questions:[
     ['Because it rained, ___ we stayed home.','Because it rained, ___ we stayed home.',[[ '不加 so','no so'],['必须加 so','must add so']],'A','because 已建立原因关系。','because already marks the relation.'],
-    ['It rained, ___ we stayed home.','It rained, ___ we stayed home.',['so','because so'],'A','不用 because 时可用 so 并列结果。','so can coordinate the result without because.'],
+    ['It rained, ___ we stayed home.','It rained, ___ we stayed home.',['so','but'],'A','前句是原因，后句是结果，用 so 并列。','The first clause is the cause and the second the result, so use coordinating so.'],
     ['Although she was tired, ___ she continued.','Although she was tired, ___ she continued.',[[ '不加 but','no but'],['必须加 but','must add but']],'A','although 已表达让步。','although already marks concession.']
   ]},
   {id:'ellipsis-participle',level:'advanced',title:['状语从句的省略与分词转换','Ellipsis and participle reduction in adverbial clauses'],meta:['主语一致、be 省略与主动被动关系','Same subject, omitted be, and active/passive relations'],examples:[
@@ -277,17 +289,22 @@ const specs=[
   ],questions:[
     ['道路关闭导致改道，应选择什么？','Which relation fits when road closure causes a route change?',['because','although'],'A','这是直接原因。','It is a direct reason.'],
     ['道路关闭但比赛仍继续，应选择什么？','Which relation fits when the road is closed but the race continues?',['although','so that'],'A','结果反预期，是让步。','The unexpected result calls for concession.'],
-    ['道路可能关闭，若关闭就改道，应选择什么？','Which relation fits a possible closure leading to a route change?',['if','since as known fact'],'A','这是未确定的条件。','It is an unresolved condition.'],
+    ['道路可能关闭，若关闭就改道，应选择什么？','Which relation fits a possible closure leading to a route change?',['if','since'],'A','这是未确定的条件。','It is an unresolved condition.'],
     ['每逢道路关闭，交通都变慢，应选择什么？','Which relation fits a recurring time pattern?',['when','in order that'],'A','when 表示反复发生的时间情境。','when expresses the recurring temporal situation.']
   ]}
 ];
 
 const sectionSpecs=[
-  ['foundation','功能、位置与时间基础','Function, position and time foundations','建立状语从句整体功能、标点和主要时间连接词。','Build overall function, punctuation and core time connectors.',['adverbial-function-position','time-when-while-as','time-before-after','time-until-since','time-immediate-once']],
-  ['place-reason-purpose-result','地点、原因、目的与结果','Place, reason, purpose and result','区分四类高频逻辑关系及结构。','Distinguish four high-frequency logical relations and structures.',['place-where-wherever','reason-because-since-as','purpose-clauses','result-so-such']],
+  ['foundation','定义、本质与边界','Definition, core and boundary','先分清主句骨架、从句内部骨架和整体状语功能。','Separate the main skeleton, the clause’s inner skeleton and its outer adverbial function.',['adverbial-function-position']],
+  ['time','时间状语从句','Time clauses','按时间点、重叠、先后、起止和紧接关系选择连接词。','Choose connectors for points, overlap, sequence, duration and immediate succession.',['time-when-while-as','time-before-after','time-until-since','time-immediate-once']],
+  ['place','地点状语从句','Place clauses','说明主句事件发生的地点或任意地点。','Locate the main event at a place or any place.',['place-where-wherever']],
+  ['reason','原因状语从句','Reason clauses','区分直接原因与已知背景。','Distinguish focused causes from shared background.',['reason-because-since-as']],
+  ['purpose','目的状语从句','Purpose clauses','说明主句动作想要达成的结果。','State the intended outcome of the main action.',['purpose-clauses']],
+  ['result','结果状语从句','Result clauses','说明程度实际导致的结果。','State the actual result produced by a degree.',['result-so-such']],
   ['condition','条件从句系统','Condition clauses','掌握 if、unless、as long as 和 provided that。','Master if, unless, as long as and provided that.',['condition-if','condition-unless-provided']],
   ['concession','让步从句系统','Concession clauses','覆盖事实让步、对比让步和无条件让步。','Cover factual, contrastive and unconditional concession.',['concession-although-even','concession-while-no-matter']],
-  ['comparison-manner','比较与方式','Comparison and manner','处理 than、as...as、as 和 as if。','Handle than, as...as, as and as if.',['comparison-clauses','manner-as-as-if']],
+  ['comparison','比较状语从句','Comparison clauses','用 than 和 as...as 建立比较基准。','Build comparison standards with than and as...as.',['comparison-clauses']],
+  ['manner','方式状语从句','Manner clauses','表达“按照何种方式”或“仿佛”。','Express the manner followed or an apparent as-if situation.',['manner-as-as-if']],
   ['tense-boundaries','时态与连接边界','Tense and connector boundaries','掌握将来从现、时态关系及中式重复连接错误。','Master future present forms, tense relations and duplicated connector errors.',['future-present-rule','tense-relations','paired-conjunction-boundaries']],
   ['reduction-integration','省略、转换与综合','Reduction, transformation and integration','在主语和逻辑一致前提下转换并综合辨析。','Reduce under valid subject/logic conditions and integrate all relations.',['ellipsis-participle','adverbial-integration']]
 ];
