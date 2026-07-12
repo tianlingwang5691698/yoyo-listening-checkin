@@ -83,14 +83,21 @@ async function getStudyCompletions(event) {
   const date = String(payload.date || today);
   const days = Math.max(1, Math.min(Number(payload.days || 1), 3650));
   const command = dbAdapter.getCommand();
+  const types = (Array.isArray(payload.types) ? payload.types : [payload.type])
+    .map((type) => String(type || '').trim())
+    .filter(Boolean)
+    .slice(0, 6);
   const dateFilter = days > 1
     ? command.gte(study.addDays(date, 1 - days)).and(command.lte(date))
     : date;
-  const result = await dbAdapter.collection(COLLECTION).where({
+  const where = {
     familyId: ctx.family.familyId,
     childId: ctx.child.childId,
     date: dateFilter
-  }).orderBy('date', 'desc').limit(300).get();
+  };
+  if (types.length === 1) where.type = types[0];
+  if (types.length > 1) where.type = command.in(types);
+  const result = await dbAdapter.collection(COLLECTION).where(where).orderBy('date', 'desc').limit(300).get();
   return {
     date,
     days,

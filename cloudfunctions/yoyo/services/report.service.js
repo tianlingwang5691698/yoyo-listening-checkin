@@ -192,13 +192,35 @@ async function getDailyReportByDate(event) {
   const payload = (event && event.payload) || {};
   const date = String(payload.date || today).slice(0, 10);
   const scope = study.getUserScope(ctx);
+  let report = null;
   if (date !== today && !payload.force) {
     const existing = await reportRepository.findByScopeAndDate(scope, date);
     if (existing && !needsCompletionRefresh(existing)) {
-      return { report: existing };
+      report = existing;
     }
   }
-  const report = await study.upsertDailyReport(scope, date);
+  if (!report) report = await study.upsertDailyReport(scope, date);
+  if (payload.summaryOnly) {
+    const completionItems = report.completionItems || [];
+    const speakingAttempts = report.speakingAttempts || [];
+    report = Object.assign({}, report, {
+      completionItemCount: completionItems.length,
+      completionItems: completionItems.map((item) => ({
+        id: item.id || item.recordId || item._id || '',
+        recordId: item.recordId || item._id || '',
+        type: item.type || '',
+        section: item.section || '',
+        title: item.title || '',
+        meta: item.meta || '',
+        targetId: item.targetId || ''
+      })),
+      speakingAttempts: speakingAttempts.map((item) => ({
+        attemptId: item.attemptId || '',
+        status: item.status || '',
+        score: Number(item.score || 0)
+      }))
+    });
+  }
   return { report };
 }
 

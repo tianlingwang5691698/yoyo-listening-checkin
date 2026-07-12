@@ -793,8 +793,8 @@ async function getMonthHeatmap(year, month, onRefresh) {
  * @param {string} date
  * @returns {Promise<{report: ReportData}>}
  */
-async function getDailyReportByDate(date, onRefresh) {
-  return callCloud('getDailyReportByDate', withSelectedStudent({ date }), {
+async function getDailyReportByDate(date, onRefresh, options) {
+  return callCloud('getDailyReportByDate', withSelectedStudent(Object.assign({ date }, options || {})), {
     report: contracts.createReportDefaults(date)
   }, { onRefresh });
 }

@@ -1,5 +1,13 @@
 # 小程序设计语言与改动记录
 
+### 2026-07-13 家长日报分层内容档案
+
+- 板块：家长日报、听力、口语、词汇、阅读、语法、写作
+- 文件：`pages/parent/detail/index.js`、`pages/parent/detail/index.wxml`、`cloudfunctions/yoyo/services/report.service.js`、`cloudfunctions/yoyo/services/completion.service.js`、`cloudfunctions/yoyo/services/speaking.service.js`、`utils/store.js`、`utils/i18n-catalog-account.js`、`tests/parent-detail-vocabulary.test.js`
+- 改动：日报内容档案首层只列出当天有记录的听力、口语、词汇、阅读、语法和写作模块；点击后按类型请求当天明细。词汇只保留“背诵/听写”子类型，使用“复习 N 词·不熟 N 词”和“正确 N/N·错词 N”；口语显示录音、评分、文本和反馈。
+- 设计记录：内容档案先回答“学了哪个模块”，再展开具体记录；中英文均不重复显示已在模块标题中出现的“词汇/阅读/语法”等泛化标签。
+- 验证：模块分组、口语展开、词汇单位、中英文去重和云端类型过滤测试通过；首屏改为摘要返回，性能测试确认不返回完整练习题和录音文本。
+
 ### 2026-07-12 代词课程系统重构
 
 - 板块：语法课堂

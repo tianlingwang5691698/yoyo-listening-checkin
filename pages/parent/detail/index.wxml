@@ -58,12 +58,34 @@
     <view class="library-dossier-panel">
       <view class="library-card-head">
         <view>
+          <view class="library-kicker">Learning Dossier</view>
+          <view class="library-title small">{{texts.contentArchive}}</view>
+        </view>
+        <view class="library-stamp">{{texts.onDemand}}</view>
+      </view>
+      <view wx:if="{{report.archiveModules.length}}">
+        <view class="library-archive-link" wx:for="{{report.archiveModules}}" wx:key="key" data-key="{{item.key}}" bindtap="loadArchiveModule">
+          <view class="archive-tab"></view>
+          <view class="entry-main">
+            <view class="entry-title">{{item.label}}</view>
+            <view class="entry-copy">{{item.countText}}</view>
+          </view>
+          <view class="entry-arrow">{{activeArchiveModule === item.key ? texts.collapseDetail : texts.open}}</view>
+        </view>
+      </view>
+      <view class="library-empty" wx:else>{{texts.noLearningContent}}</view>
+    </view>
+
+    <view wx:if="{{activeArchiveModule === 'speaking'}}" class="library-dossier-panel">
+      <view class="library-card-head">
+        <view>
           <view class="library-kicker">Voice Archive</view>
           <view class="library-title small">{{texts.voiceArchive}}</view>
         </view>
         <view class="library-stamp">{{report.speakingSummary.scoredCount || 0}} / {{report.speakingSummary.totalCount || 0}} {{texts.scoredLabel}}</view>
       </view>
-      <block wx:if="{{report.speakingAttempts.length}}">
+      <view class="library-empty" wx:if="{{archiveModuleLoading}}">{{texts.loadingDetail}}</view>
+      <block wx:elif="{{report.speakingAttempts.length}}">
         <view class="library-voice-summary">
           <view class="voice-score-stamp">
             <view>{{report.speakingSummary.averageScore || 0}}</view>
@@ -98,34 +120,27 @@
       <view class="library-empty" wx:else>{{texts.noRecording}}</view>
     </view>
 
-    <view class="library-dossier-panel">
+    <view wx:if="{{activeArchiveModule && activeArchiveModule !== 'speaking'}}" class="library-dossier-panel">
       <view class="library-card-head">
         <view>
           <view class="library-kicker">Learning Dossier</view>
-          <view class="library-title small">{{texts.contentArchive}}</view>
+          <view class="library-title small">{{activeArchiveModuleLabel}}</view>
         </view>
         <view class="library-stamp">{{texts.onDemand}}</view>
       </view>
-      <view class="library-archive-link" wx:if="{{!completionItemsLoaded}}" bindtap="loadCompletionItems">
-        <view class="archive-tab"></view>
-        <view class="entry-main">
-          <view class="entry-title">{{texts.openDossier}}</view>
-          <view class="entry-copy">{{texts.dossierCopy}}</view>
-        </view>
-        <view class="entry-arrow">{{texts.open}}</view>
-      </view>
+      <view class="library-empty" wx:if="{{archiveModuleLoading}}">{{texts.loadingDetail}}</view>
       <block wx:elif="{{report.completionItems.length}}">
         <view class="study-dossier library-study-dossier tone-{{item.type}}" wx:for="{{report.completionItems}}" wx:key="key">
           <view class="library-card-head">
             <view>
-              <view class="library-kicker">{{item.typeLabel}}</view>
+              <view class="library-kicker" wx:if="{{item.recordLabel}}">{{item.recordLabel}}</view>
               <view class="entry-title">{{item.title}}</view>
             </view>
             <view class="library-stamp">{{item.scoreText || item.progressText}}</view>
           </view>
-          <view class="entry-copy">{{item.meta}}</view>
+          <view class="entry-copy" wx:if="{{item.displayMeta}}">{{item.displayMeta}}</view>
           <view class="answer-chip" wx:if="{{item.correctText}}">{{texts.answerPrefix}}{{item.correctText}}</view>
-          <button class="detail-toggle library-detail-toggle" data-key="{{item.key}}" catchtap="toggleCompletionDetail">{{item.isListeningStudyPack ? item.detailActionText : (item.expanded ? texts.collapseDetail : item.detailActionText)}}</button>
+          <button wx:if="{{!item.isVocabulary}}" class="detail-toggle library-detail-toggle" data-key="{{item.key}}" catchtap="toggleCompletionDetail">{{item.isListeningStudyPack ? item.detailActionText : (item.expanded ? texts.collapseDetail : item.detailActionText)}}</button>
           <block wx:if="{{item.expanded}}">
             <view class="detail-loading" wx:if="{{item.detailLoading}}">{{texts.loadingDetail}}</view>
             <view class="detail-sheet" wx:if="{{item.passage && item.passage.passage}}">
@@ -285,7 +300,28 @@
     <view class="empty-state" wx:else>{{texts.noDayRecord}}</view>
   </view>
 
-  <view class="voice-panel">
+  <view class="content-panel">
+    <view class="panel-head">
+      <view>
+        <view class="section-kicker">Learning Dossier</view>
+        <view class="section-title type-section-title">{{texts.contentArchive}}</view>
+      </view>
+      <view class="panel-note">{{texts.onDemand}}</view>
+    </view>
+    <view wx:if="{{report.archiveModules.length}}">
+      <view class="load-dossier" wx:for="{{report.archiveModules}}" wx:key="key" data-key="{{item.key}}" bindtap="loadArchiveModule">
+        <view class="dossier-spine"></view>
+        <view>
+          <view class="node-title">{{item.label}}</view>
+          <view class="quiet-note">{{item.countText}}</view>
+        </view>
+        <view class="load-action">{{activeArchiveModule === item.key ? texts.collapseDetail : texts.open}}</view>
+      </view>
+    </view>
+    <view class="empty-state" wx:else>{{texts.noLearningContent}}</view>
+  </view>
+
+  <view wx:if="{{activeArchiveModule === 'speaking'}}" class="voice-panel">
     <view class="panel-head">
       <view>
         <view class="section-kicker">Voice Archive</view>
@@ -293,7 +329,8 @@
       </view>
       <view class="panel-note">{{report.speakingSummary.scoredCount || 0}} / {{report.speakingSummary.totalCount || 0}} {{texts.scoredLabel}}</view>
     </view>
-    <block wx:if="{{report.speakingAttempts.length}}">
+    <view class="empty-state" wx:if="{{archiveModuleLoading}}">{{texts.loadingDetail}}</view>
+    <block wx:elif="{{report.speakingAttempts.length}}">
       <view class="voice-summary">
         <view class="voice-ring">
           <view class="voice-score">{{report.speakingSummary.averageScore || 0}}</view>
@@ -337,35 +374,28 @@
     <view class="empty-state" wx:else>{{texts.noRecording}}</view>
   </view>
 
-  <view class="content-panel">
+  <view wx:if="{{activeArchiveModule && activeArchiveModule !== 'speaking'}}" class="content-panel">
     <view class="panel-head">
       <view>
         <view class="section-kicker">Learning Dossier</view>
-        <view class="section-title type-section-title">{{texts.contentArchive}}</view>
+        <view class="section-title type-section-title">{{activeArchiveModuleLabel}}</view>
       </view>
       <view class="panel-note">{{texts.onDemand}}</view>
     </view>
-    <view class="load-dossier" wx:if="{{!completionItemsLoaded}}" bindtap="loadCompletionItems">
-      <view class="dossier-spine"></view>
-      <view>
-        <view class="node-title">{{texts.openDossier}}</view>
-        <view class="quiet-note">{{texts.dossierCopy}}</view>
-      </view>
-      <view class="load-action">{{texts.open}}</view>
-    </view>
+    <view class="empty-state" wx:if="{{archiveModuleLoading}}">{{texts.loadingDetail}}</view>
     <block wx:elif="{{report.completionItems.length}}">
       <view class="dossier-grid">
         <view class="study-dossier tone-{{item.type}}" wx:for="{{report.completionItems}}" wx:key="key">
           <view class="dossier-head">
             <view>
-              <view class="node-label">{{item.typeLabel}}</view>
+              <view class="node-label" wx:if="{{item.recordLabel}}">{{item.recordLabel}}</view>
               <view class="node-title">{{item.title}}</view>
             </view>
             <view class="voice-badge">{{item.scoreText || item.progressText}}</view>
           </view>
-          <view class="quiet-note">{{item.meta}}</view>
+          <view class="quiet-note" wx:if="{{item.displayMeta}}">{{item.displayMeta}}</view>
           <view class="answer-chip" wx:if="{{item.correctText}}">{{texts.answerPrefix}}{{item.correctText}}</view>
-          <button class="detail-toggle" data-key="{{item.key}}" catchtap="toggleCompletionDetail">{{item.isListeningStudyPack ? item.detailActionText : (item.expanded ? texts.collapseDetail : item.detailActionText)}}</button>
+          <button wx:if="{{!item.isVocabulary}}" class="detail-toggle" data-key="{{item.key}}" catchtap="toggleCompletionDetail">{{item.isListeningStudyPack ? item.detailActionText : (item.expanded ? texts.collapseDetail : item.detailActionText)}}</button>
           <block wx:if="{{item.expanded}}">
             <view class="detail-loading" wx:if="{{item.detailLoading}}">{{texts.loadingDetail}}</view>
             <view class="detail-sheet" wx:if="{{item.passage && item.passage.passage}}">

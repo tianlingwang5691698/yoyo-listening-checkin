@@ -141,16 +141,17 @@
 
 - 顶部是“家庭观察日报”信封，保留 `report.dateLabel`、`completedCount`、`totalCount`、`totalMinutes`，但指标做成三枚小印章，不做仪表盘。
 - 学习节奏是纵向借阅时间线：`report.items` 每项显示标题、完成状态、进度条和 `timeLines`。
-- 声音档案是录音回执：平均分、最近得分、录音条目和唯一播放按钮。
-- 内容档案默认合上，使用现有按需入口“打开当天内容案卷”。
+- 内容档案首层只列出当天有记录的听力、口语、词汇、阅读、语法和写作模块。
+- 声音档案并入口语模块，点击后再显示平均分、最近得分、录音条目和播放按钮。
 
 ### 展开态
 
-- `completionItemsLoaded=false`：只显示一张合上的案卷，不提前展示阅读/语法/写作详情。
-- `loadCompletionItems` 后，阅读、语法、写作、听力学习包用不同纸件形态：
+- `activeArchiveModule` 只允许同时展开一个模块；非口语模块通过 `loadArchiveModule` 按类型读取当天记录。
+- 阅读、语法、写作、词汇和听力学习包使用对应纸件形态：
   - 阅读：原文页 + 题号索引签 + 答案句。
   - 语法：校样题纸 + 选项 + 孩子选择 + 分析。
   - 写作：作文题目、学生作文、内容/结构/语言/问题/建议、参考范文。
+  - 词汇：背诵显示复习/不熟数量；听写显示正确/总数和错词数。
   - 听力学习包：不在本页伪展开，沿用真实跳转到 `lesson` 聚焦学习包。
 
 ### 状态
@@ -208,6 +209,6 @@
 
 1. 只新增 `theme-library` 视觉分支；复用现有 `store.getProfileData/getFamilyPageData/getParentDashboard/getDailyReportByDate/getAdminFamilyList`。
 2. 快照优先规则不变：我的页、日报首页命中快照先展示；目标学生变化时不得沿用旧目标快照。
-3. 所有按钮保留真实事件：`saveChildProfile`、`joinFamilyByChildCode`、`toggleStudyRole`、`selectStudent`、`undoLastListened`、`leaveFamily`、`openDailyDetail`、`loadCompletionItems`、`toggleCompletionDetail`、`switchListMode`。
+3. 所有按钮保留真实事件：`saveChildProfile`、`joinFamilyByChildCode`、`toggleStudyRole`、`selectStudent`、`undoLastListened`、`leaveFamily`、`openDailyDetail`、`loadArchiveModule`、`toggleCompletionDetail`、`switchListMode`。
 4. 错误和调试信息遵循 `docs/ONLINE_DEBUG_DB_RULES.md`：测试阶段可显示链路点，修复确认后撤掉。
 5. 视觉板仅供评审，不进入小程序上传包。

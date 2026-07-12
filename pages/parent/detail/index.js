@@ -123,7 +123,13 @@ function getCompletionTypeLabel(type) {
   if (type === 'listening' || type === 'listening-study') return tr('listening');
   if (type === 'grammar') return tr('grammar');
   if (type === 'writing') return tr('writing');
+  if (type === 'vocabulary') return tr('vocabulary');
   return tr('complete');
+}
+
+function getArchiveModuleLabel(key) {
+  if (key === 'speaking') return tr('speaking');
+  return getCompletionTypeLabel(key);
 }
 
 function isListeningStudyCompletion(item) {
@@ -132,6 +138,40 @@ function isListeningStudyCompletion(item) {
   return source.type === 'listening-study'
     || id.indexOf('listening-study:') === 0
     || source.title === '听力学习包';
+}
+
+function getArchiveModuleKey(item) {
+  const type = String((item && item.type) || '');
+  if (isListeningStudyCompletion(item)) return 'listening';
+  if (type === 'reading' || type === 'reading-study') return 'reading';
+  if (['vocabulary', 'grammar', 'writing'].includes(type)) return type;
+  return '';
+}
+
+function getArchiveModuleTypes(key) {
+  if (key === 'listening') return ['listening', 'listening-study'];
+  if (key === 'reading') return ['reading', 'reading-study'];
+  return [key];
+}
+
+function buildArchiveModules(report) {
+  const safeReport = report || {};
+  const counts = {};
+  (safeReport.completionItems || []).forEach((item) => {
+    const key = getArchiveModuleKey(item);
+    if (key) counts[key] = (counts[key] || 0) + 1;
+  });
+  if ((safeReport.speakingAttempts || []).length) {
+    counts.speaking = safeReport.speakingAttempts.length;
+  }
+  return ['listening', 'speaking', 'vocabulary', 'reading', 'grammar', 'writing']
+    .filter((key) => counts[key] > 0)
+    .map((key) => ({
+      key,
+      label: getArchiveModuleLabel(key),
+      count: counts[key],
+      countText: formatText(tr('recordCount'), { count: counts[key] })
+    }));
 }
 
 function parseListeningStudyTarget(item) {
@@ -233,6 +273,50 @@ function normalizePhraseCards(cards) {
     example: card.example || '',
     exampleMeaning: card.exampleMeaning || card.exampleTranslation || ''
   }));
+}
+
+function normalizeArchiveTitle(item) {
+  const safeItem = item || {};
+  const title = String(safeItem.title || safeItem.meta || tr('completionRecord')).trim();
+  if (safeItem.type !== 'vocabulary') return title;
+  if (title === '词汇复习') return tr('dailyReview');
+  return title.replace(/\s*词汇表\s*$/, '').trim() || tr('dailyReview');
+}
+
+function getArchiveRecordLabel(item, isListeningStudyPack) {
+  const safeItem = item || {};
+  if (safeItem.type === 'vocabulary') {
+    return safeItem.section === 'dictation' ? tr('dictation') : tr('memorization');
+  }
+  if (isListeningStudyPack || safeItem.type === 'reading-study') return tr('studyPack');
+  return '';
+}
+
+function getArchiveMeta(item, recordLabel) {
+  const safeItem = item || {};
+  const meta = String(safeItem.meta || '').trim();
+  const generic = [
+    getCompletionTypeLabel(safeItem.type),
+    tr('vocabulary'),
+    '词汇听写',
+    recordLabel
+  ].filter(Boolean);
+  return generic.includes(meta) ? '' : meta;
+}
+
+function getVocabularyProgressText(item, latestAttempt) {
+  const safeItem = item || {};
+  const attempt = latestAttempt || {};
+  if (safeItem.section === 'dictation') {
+    const total = Number(attempt.totalCount || attempt.answeredCount || 0);
+    const correct = Number(attempt.correctCount || 0);
+    const wrong = Number(attempt.wrongCount || Math.max(0, total - correct));
+    return formatText(tr('dictationProgress'), { correct, total, wrong });
+  }
+  return formatText(tr('memorizationProgress'), {
+    reviewed: Number(attempt.reviewed || 0),
+    unfamiliar: Number(attempt.unfamiliar || 0)
+  });
 }
 
 function isPlaceholderAnalysis(value) {
@@ -342,18 +426,24 @@ function normalizeCompletionItem(item, index) {
       answerSentence: analysis.answerSentence || null
     };
   });
+  const isVocabulary = safeItem.type === 'vocabulary';
+  const recordLabel = getArchiveRecordLabel(safeItem, isListeningStudyPack);
   return Object.assign({}, safeItem, {
     key: safeItem.id || safeItem.recordId || `${safeItem.type || 'item'}-${index}`,
     typeLabel: getCompletionTypeLabel(safeItem.type),
+    recordLabel,
+    isVocabulary,
     isListeningStudyPack,
     category: safeItem.category || listeningTarget.category || '',
     taskId: safeItem.taskId || listeningTarget.taskId || '',
-    title: safeItem.title || safeItem.meta || tr('completionRecord'),
-    meta: safeItem.meta || '',
-    progressText: safeItem.progressText || (totalScore ? formatText(tr('scoreFraction'), { score, total: totalScore }) : tr('complete')),
+    title: normalizeArchiveTitle(safeItem),
+    displayMeta: getArchiveMeta(safeItem, recordLabel),
+    progressText: isVocabulary
+      ? getVocabularyProgressText(safeItem, latestAttempt)
+      : (safeItem.progressText || (totalScore ? formatText(tr('scoreFraction'), { score, total: totalScore }) : tr('complete'))),
     detailActionText: isListeningStudyPack ? tr('viewStudyPack') : tr('viewOriginalAnalysis'),
     scoreText: totalScore ? formatText(tr('scoreFraction'), { score, total: totalScore }) : '',
-    correctText: totalCount ? formatText(tr('questionCount'), { correct: correctCount, total: totalCount }) : '',
+    correctText: !isVocabulary && totalCount ? formatText(tr('questionCount'), { correct: correctCount, total: totalCount }) : '',
     reviewSummary: review.summary || review.feedback || '',
     reviewContent: review.content || '',
     reviewLanguage: review.language || '',
@@ -397,9 +487,8 @@ function normalizeCompletionItem(item, index) {
 
 function shouldShowCompletionItem(item) {
   const type = String((item && item.type) || '');
-  if (type === 'vocabulary') return false;
   if (isListeningStudyCompletion(item)) return itemHasCompleteStudyPack(item);
-  return ['reading', 'grammar', 'writing'].includes(type);
+  return ['reading', 'reading-study', 'grammar', 'writing', 'vocabulary'].includes(type);
 }
 
 async function listeningStudyHasCompletePack(item) {
@@ -579,15 +668,17 @@ function normalizeReport(report) {
   const speakingSummary = buildSpeakingSummary(speakingAttempts);
   const completedCount = items.filter((item) => item.completedToday).length;
   const completionItems = (safeReport.completionItems || []).filter(shouldShowCompletionItem).map(normalizeCompletionItem);
+  const completionItemCount = Number(safeReport.completionItemCount || completionItems.length);
   return {
     date: safeReport.date || '',
     dateLabel: formatDateLabel(safeReport.date),
     totalMinutes: safeReport.totalMinutes || 0,
-    completedCount: completedCount + completionItems.length,
-    totalCount: items.length + completionItems.length,
+    completedCount: completedCount + completionItemCount,
+    totalCount: items.length + completionItemCount,
     items,
     speakingAttempts,
     speakingSummary,
+    archiveModules: buildArchiveModules(safeReport),
     completionItems
   };
 }
@@ -609,13 +700,15 @@ Page({
         averageScore: 0,
         latestScore: 0
       },
+      archiveModules: [],
       completionItems: []
     },
     playingAttemptKey: '',
     pausedAttemptKey: '',
     loadingAttemptKey: '',
-    completionItemsLoaded: false,
-    completionItemsLoading: false,
+    activeArchiveModule: '',
+    activeArchiveModuleLabel: '',
+    archiveModuleLoading: false,
     texts: buildTexts(),
     language: i18n.getLanguage()
   }),
@@ -664,12 +757,15 @@ Page({
   applyReportData(reportData) {
     const report = normalizeReport(reportData && reportData.report);
     const currentCompletionItems = this.data.report.completionItems || [];
+    const currentSpeakingAttempts = this.data.report.speakingAttempts || [];
+    const currentSpeakingSummary = this.data.report.speakingSummary || {};
     this.setData(page.buildCloudPageData(this.data, {
       date: this.data.date,
       report: Object.assign({}, report, {
-        completionItems: this.data.completionItemsLoaded ? (report.completionItems.length ? report.completionItems : currentCompletionItems) : []
-      }),
-      completionItemsLoaded: this.data.completionItemsLoaded
+        speakingAttempts: this.data.activeArchiveModule === 'speaking' ? currentSpeakingAttempts : report.speakingAttempts,
+        speakingSummary: this.data.activeArchiveModule === 'speaking' ? currentSpeakingSummary : report.speakingSummary,
+        completionItems: this.data.activeArchiveModule && this.data.activeArchiveModule !== 'speaking' ? currentCompletionItems : []
+      })
     }));
   },
   onShow() {
@@ -691,7 +787,7 @@ Page({
     }
     const target = store.getSelectedStudentTarget ? store.getSelectedStudentTarget() : {};
     const cached = store.getCachedReadResult
-      ? store.getCachedReadResult('getDailyReportByDate', Object.assign({ date: this.data.date }, target))
+      ? store.getCachedReadResult('getDailyReportByDate', Object.assign({ date: this.data.date, summaryOnly: true }, target))
       : null;
     if (cached) {
       this.applyReportData(cached);
@@ -715,7 +811,7 @@ Page({
       if (this.parentDetailPerf) {
         this.parentDetailPerf.mark('cloudRefresh', { date: this.data.date });
       }
-    }).then((reportData) => {
+    }, { summaryOnly: true }).then((reportData) => {
       this.applyReportData(reportData);
       if (!cached && this.parentDetailPerf) {
         this.parentDetailPerf.mark('cloudRefresh', {
@@ -729,27 +825,70 @@ Page({
       }
     }).catch(() => {});
   },
-  async loadCompletionItems() {
-    if (this.data.completionItemsLoading) {
+  async loadArchiveModule(event) {
+    const key = String((event && event.currentTarget && event.currentTarget.dataset.key) || '');
+    if (!key) return;
+    if (this.data.activeArchiveModule === key) {
+      this.archiveModuleRequestKey = '';
+      this.setData({
+        activeArchiveModule: '',
+        activeArchiveModuleLabel: '',
+        archiveModuleLoading: false,
+        'report.completionItems': []
+      });
       return;
     }
-    this.setData({ completionItemsLoading: true });
+    const targetModule = (this.data.report.archiveModules || []).find((item) => item.key === key);
+    const label = targetModule ? targetModule.label : getArchiveModuleLabel(key);
+    this.setData({
+      activeArchiveModule: key,
+      activeArchiveModuleLabel: label,
+      archiveModuleLoading: true,
+      'report.completionItems': []
+    });
+    const requestKey = `${this.data.date}:${key}:${Date.now()}`;
+    this.archiveModuleRequestKey = requestKey;
+    if (key === 'speaking') {
+      const applySpeakingAttempts = (data) => {
+        if (this.archiveModuleRequestKey !== requestKey || this.data.activeArchiveModule !== key) return;
+        const speakingAttempts = ((data && data.attempts) || []).map(normalizeSpeakingAttempt);
+        this.setData({
+          archiveModuleLoading: false,
+          'report.speakingAttempts': speakingAttempts,
+          'report.speakingSummary': buildSpeakingSummary(speakingAttempts)
+        });
+      };
+      try {
+        const data = await store.getSpeakingAttempts({ targetDate: this.data.date }, applySpeakingAttempts);
+        applySpeakingAttempts(data);
+      } catch (error) {
+        if (this.archiveModuleRequestKey !== requestKey) return;
+        this.setData({ archiveModuleLoading: false });
+        wx.showToast({ title: this.data.texts.recordLoadFailed, icon: 'none' });
+      }
+      return;
+    }
     const applyCompletionItems = async (items) => {
-      const visibleItems = await filterVisibleCompletionItems(items || []);
+      const visibleItems = (await filterVisibleCompletionItems(items || []))
+        .filter((item) => getArchiveModuleKey(item) === key);
+      if (this.archiveModuleRequestKey !== requestKey || this.data.activeArchiveModule !== key) return;
       const report = this.data.report || {};
       this.setData(page.buildCloudPageData(this.data, {
-        completionItemsLoaded: true,
-        completionItemsLoading: false,
+        archiveModuleLoading: false,
         report: Object.assign({}, report, {
           completionItems: visibleItems.map(normalizeCompletionItem)
         })
       }));
     };
     try {
-      const data = await store.getStudyCompletions({ date: this.data.date }, (fresh) => applyCompletionItems(fresh.items || []));
+      const data = await store.getStudyCompletions({
+        date: this.data.date,
+        types: getArchiveModuleTypes(key)
+      }, (fresh) => applyCompletionItems(fresh.items || []));
       await applyCompletionItems((data && data.items) || []);
     } catch (error) {
-      this.setData({ completionItemsLoading: false });
+      if (this.archiveModuleRequestKey !== requestKey) return;
+      this.setData({ archiveModuleLoading: false });
       wx.showToast({ title: this.data.texts.recordLoadFailed, icon: 'none' });
     }
   },

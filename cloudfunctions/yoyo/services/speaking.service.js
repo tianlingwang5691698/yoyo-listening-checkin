@@ -229,12 +229,14 @@ async function getSpeakingAttempts(event) {
     targetDate: payload.targetDate || today
   }));
   const scope = study.getUserScope(ctx);
-  const attempts = await attemptRepository.findBestAndLatestByTask(scope, {
-    date: attempt.date || today,
-    category: attempt.category,
-    taskId: attempt.taskId,
-    attemptType: attempt.attemptType
-  });
+  const attempts = attempt.category && attempt.taskId
+    ? await attemptRepository.findBestAndLatestByTask(scope, {
+      date: attempt.date || today,
+      category: attempt.category,
+      taskId: attempt.taskId,
+      attemptType: attempt.attemptType
+    })
+    : await attemptRepository.findByDate(scope, attempt.date || today);
   return {
     attempts: attempts.map(formatAttemptForClient),
     summary: speakingEngine.summarizeAttempts(attempts)
