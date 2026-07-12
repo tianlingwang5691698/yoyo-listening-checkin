@@ -59,7 +59,7 @@ function uiText(english) {
       ['cohesion-reference', 'Cohesion & Reference', 'Pronoun reference, substitution and logical links', '22 lessons', true],
       ['information-order', 'Information Order', 'English focus, end-weight and Chinese-English order differences', '22 lessons', true],
       ['punctuation', 'Punctuation & Capitals', 'Sentence boundaries, commas, apostrophes and capitals', '21 lessons', true],
-      ['common-expression', 'Common Expression Differences', 'Frequent Chinese-to-English structural differences', '20 lessons', true]
+      ['common-expression', 'Common Expression Differences', 'Frequent Chinese-to-English structural differences', '21 lessons', true]
     ]
   } : {
     morphology: [
@@ -84,7 +84,7 @@ function uiText(english) {
       ['cohesion-reference', '衔接与指代', '代词指代、替代与逻辑连接', '22 节 · 已开放', true],
       ['information-order', '信息顺序', '英语焦点、尾重原则与中英语序差异', '22 节 · 已开放', true],
       ['punctuation', '标点与大小写', '句界、逗号、撇号和大写规则', '21 节 · 已开放', true],
-      ['common-expression', '中英表达差异', '常见中文思维到英文结构的转换', '20 节 · 已开放', true]
+      ['common-expression', '中英表达差异', '常见中文思维到英文结构的转换', '21 节 · 已开放', true]
     ]
   };
   return {

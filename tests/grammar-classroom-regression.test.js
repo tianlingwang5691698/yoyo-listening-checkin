@@ -780,7 +780,7 @@ test('语法课堂按体系分层并逐层返回', () => {
   assert.ok(page.data.ui.domainMaps.discourse.some((item) => item.id === 'cohesion-reference' && item.ready && /22/.test(item.status)));
   assert.ok(page.data.ui.domainMaps.discourse.some((item) => item.id === 'information-order' && item.ready && /22/.test(item.status)));
   assert.ok(page.data.ui.domainMaps.discourse.some((item) => item.id === 'punctuation' && item.ready && /21/.test(item.status)));
-  assert.ok(page.data.ui.domainMaps.discourse.some((item) => item.id === 'common-expression' && item.ready && /20/.test(item.status)));
+  assert.ok(page.data.ui.domainMaps.discourse.some((item) => item.id === 'common-expression' && item.ready && /21/.test(item.status)));
   assert.match(source, /handleTopBack\(\)[\s\S]*screen === 'lesson'[\s\S]*screen === 'course-map'[\s\S]*screen === 'directory'[\s\S]*screen === 'domain-map'/);
   const wxml = fs.readFileSync(path.join(__dirname, '../grammar-package/pages/classroom/index.wxml'), 'utf8');
   assert.match(wxml, /bindtap="handleTopBack"/);
@@ -1063,8 +1063,8 @@ test('表达与标点课程完整覆盖衔接、信息顺序、书写规范和�
     },
     {
       build: sourceCommonExpressionCourses.buildCommonExpressionCourse,
-      count: 20, groups: [17, 3], sections: [4, 4, 3, 2, 3, 4], total: 60,
-      required: ['explicit-subject','topic-to-subject','inanimate-subject','people-general-subject','be-not-shi','verb-centred-expression','light-verb-collocations','possession-existence','time-age-duration','quantity-countability','double-object-order','attribute-order-expression','adverbial-order-expression','cause-result-expression','contrast-concession-expression','negation-scope-expression','question-order-expression','active-passive-choice','nominalization-concision','integrated-expression']
+      count: 21, groups: [18, 3], sections: [5, 4, 3, 2, 3, 4], total: 63,
+      required: ['common-expression-essence','explicit-subject','topic-to-subject','inanimate-subject','people-general-subject','be-not-shi','verb-centred-expression','light-verb-collocations','possession-existence','time-age-duration','quantity-countability','double-object-order','attribute-order-expression','adverbial-order-expression','cause-result-expression','contrast-concession-expression','negation-scope-expression','question-order-expression','active-passive-choice','nominalization-concision','integrated-expression']
     }
   ];
   specs.forEach((spec) => [false, true].forEach((english) => {
@@ -1076,7 +1076,7 @@ test('表达与标点课程完整覆盖衔接、信息顺序、书写规范和�
     assert.equal(bundle.course.reduce((sum, lesson) => sum + lesson.rules.length, 0), spec.total);
     assert.equal(bundle.course.reduce((sum, lesson) => sum + lesson.examples.length, 0), spec.total);
     assert.equal(bundle.course.reduce((sum, lesson) => sum + lesson.questions.length, 0), spec.total);
-    if (spec.build === sourceCohesionReferenceCourses.buildCohesionReferenceCourse || spec.build === sourceInformationOrderCourses.buildInformationOrderCourse || spec.build === sourcePunctuationCourses.buildPunctuationCourse) {
+    if (spec.build === sourceCohesionReferenceCourses.buildCohesionReferenceCourse || spec.build === sourceInformationOrderCourses.buildInformationOrderCourse || spec.build === sourcePunctuationCourses.buildPunctuationCourse || spec.build === sourceCommonExpressionCourses.buildCommonExpressionCourse) {
       assert.match(bundle.course[0].title, english ? /Definition.*core/ : /定义.*本质/);
       assert.deepEqual(bundle.sections.flatMap((section) => section.lessonIds), bundle.course.map((lesson) => lesson.id));
       bundle.course.forEach((lesson) => {
@@ -1112,6 +1112,11 @@ test('表达与标点课程完整覆盖衔接、信息顺序、书写规范和�
   assert.ok(punctuation.course[0].rules.some((rule) => /句子边界、分句关系和信息层级/.test(rule)));
   assert.ok(punctuation.course.find((lesson) => lesson.id === 'quote-style-boundary').rules.some((rule) => /英式|美式/.test(rule)));
   assert.ok(punctuation.course.every((lesson) => lesson.title.indexOf('擇号') < 0 && lesson.rules.every((rule) => rule.indexOf('擇号') < 0)));
+  const commonExpression = sourceCommonExpressionCourses.buildCommonExpressionCourse(false);
+  ['dummySubject','indirectObject','directObject','preposition','prepObject','predicative'].forEach((role) => {
+    assert.ok(commonExpression.course.flatMap((lesson) => lesson.analyses).flat().some((part) => part.role === role));
+  });
+  assert.ok(commonExpression.course.find((lesson) => lesson.id === 'attribute-order-expression').exampleNotes.some((note) => note.mode === 'translation'));
   const wxss = fs.readFileSync(path.join(__dirname, '../grammar-package/pages/classroom/index.wxss'), 'utf8');
   ['reference','forward','given','new','connector','ellipsis','keyword','lexical','substitute','topic'].forEach((role) => assert.match(wxss, new RegExp(`role-${role}`)));
 });
