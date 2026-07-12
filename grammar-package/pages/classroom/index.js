@@ -9,7 +9,7 @@ function uiText(english) {
     ['article', 'Articles', 'Reference · a/an · the · Zero article', 15],
     ['verb', 'Verbs', 'Jobs · Forms · Tense · Voice', 36],
     ['adjective', 'Adjectives', 'Core meaning · Complements · Comparison', 15],
-    ['adverb', 'Adverbs', 'Types · Position · Comparison', 8],
+    ['adverb', 'Adverbs', 'Scope · Position · Linking', 16],
     ['preposition', 'Prepositions', 'Definition · Relations · Syntax', 25],
     ['conjunction', 'Conjunctions', 'Coordination · Subordination', 8],
     ['interjection', 'Interjections', 'Emotion · Response · Punctuation', 5]
@@ -20,7 +20,7 @@ function uiText(english) {
     ['article', '冠词', '指称本质 · a/an · the · 零冠词', 15],
     ['verb', '动词', '作用 · 形式 · 时态 · 语态', 36],
     ['adjective', '形容词', '本质 · 补足关系 · 比较系统', 15],
-    ['adverb', '副词', '种类 · 位置 · 比较级', 8],
+    ['adverb', '副词', '本质 · 范围 · 位置 · 连接', 16],
     ['preposition', '介词', '定义 · 关系 · 句法', 25],
     ['conjunction', '连词', '并列 · 从属 · 逻辑', 8],
     ['interjection', '感叹词', '情绪 · 应答 · 标点', 5]

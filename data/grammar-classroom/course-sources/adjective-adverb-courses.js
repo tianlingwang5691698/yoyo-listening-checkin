@@ -36,14 +36,22 @@ const RULE_COVERAGE = INCLUDE_RULE_COVERAGE ? {
   'compound-adjectives': [[[0], [0]], [[1], [1]], [[2], [2]]],
   'adjective-order': [[[0, 1, 2, 3], [0, 1, 2, 3]], [[0, 1, 2, 3], [0, 1, 2, 3]]],
   'adjective-nominal': [[[0], [0]], [[1], [1]], [[2], [2]]],
+  'adverb-essence': [[[0], [0]], [[1], [1]], [[2], [2]]],
   'adverb-jobs': [[[0], [0]], [[1], [1]], [[3], [3]], [[2], [2]]],
+  'adverbial-boundary': [[[0], [0]], [[1], [1]], [[2], [2]]],
   'adverb-types': [[[0], [3]], [[0], [0]], [[1], [4]], [[1], [1]], [[2], [2]], [[3], [5]]],
+  'adverb-formation': [[[0], [0]], [[1], [1]], [[2], [2]], [[3], [3]]],
   'adverb-position': [[[0], [0]], [[1], [1]], [[3], [3]], [[2], [2]], [[2], [4]]],
+  'multiple-adverb-order': [[[0], [0]], [[1], [1]], [[2], [2]]],
   'adjective-or-adverb': [[[0], [0]], [[1], [1]], [[2], [2]], [[3], [3]]],
   'adverb-comparison': [[[0, 2], [1]], [[1], [0]], [[3], [2]]],
   'degree-patterns': [[[0], [0]], [[1], [1]], [[3], [3]], [[2], [2]]],
   'adverb-scope': [[[0, 1], [0]], [[2], [1]], [[3], [3]], [[3], [2]]],
-  'adverb-traps': [[[0, 1], [0]], [[1], [1]], [[2, 3], [2, 3]], [[2, 3], [2, 3]]]
+  'sentence-adverbs': [[[0], [0]], [[1], [1]], [[2], [2]]],
+  'interrogative-relative-adverbs': [[[0], [0]], [[1], [1]], [[2], [2]]],
+  'negative-limiting-adverbs': [[[0], [0]], [[1], [1]], [[2], [2]]],
+  'adverb-traps': [[[0, 1], [0]], [[1], [1]]],
+  'conjunctive-adverbs': [[[0], [0]], [[1], [1]], [[2], [2]]]
 } : null;
 function lesson(english, id, zhTitle, enTitle, zhMeta, enMeta, examples, rules, questions) {
   const coverage = INCLUDE_RULE_COVERAGE ? RULE_COVERAGE[id] : null;
@@ -384,7 +392,20 @@ function buildAdjectiveCourse(english) {
 function buildAdverbCourse(english) {
   const e = (parts, mode = '', zh = '', en = '') => example(english, parts, mode, zh, en);
   const q = (...args) => question(english, ...args);
-  return groupCourse(english, [
+  const bundle = groupCourse(english, [
+    lesson(english, 'adverb-essence', '副词的定义与本质', 'Definition and core of adverbs', '给动作、性质或整句增加背景与范围', 'Add circumstances or scope to actions, qualities or clauses', [
+      e([['Mia', 'subject', '主语', 'Subject'], ['answered', 'predicate', '谓语动词', 'Predicate verb'], ['calmly.', 'adverbial', '方式副词：修饰 answered', 'Manner adverb modifying answered']], 'structure', 'calmly 不改变“回答”这件事，而是补充回答以什么方式发生。', 'calmly does not change the event of answering; it adds how the event happens.'),
+      e([['The water', 'subject', '主语', 'Subject'], ['is', 'predicate', '系动词', 'Linking verb'], ['very', 'adverbial', '程度副词：修饰 cold', 'Degree adverb modifying cold'], ['cold.', 'predicative', '形容词作表语', 'Adjective as subject complement']], 'structure', 'very 不直接说明 water，而是把形容词 cold 的程度提高。', 'very does not describe the water directly; it raises the degree of cold.'),
+      e([['Probably,', 'adverbial', '句子副词：限定全句', 'Sentence adverb scoping over clause'], ['the train', 'subject', '主语', 'Subject'], ['will arrive', 'predicate', '谓语动词', 'Predicate verb'], ['soon.', 'adverbial', '时间副词', 'Time adverb']], 'structure', 'Probably 不是修饰某一个词，而是表示说话人对整件事发生可能性的判断。', 'Probably does not modify one word; it marks the speaker’s judgment about the whole event.')
+    ], [
+      ['副词的本质是给动作、性质、另一个副词或整句话增加时间、地点、方式、程度、频率、态度或范围。', 'An adverb adds time, place, manner, degree, frequency, stance or scope to an action, quality, another adverb or clause.'],
+      ['判断副词不能只看 -ly；关键是看它在修饰谁、增加什么信息。', 'Do not identify an adverb by -ly alone; identify what it modifies and what information it adds.'],
+      ['副词的位置常提示作用范围：离哪个成分更近，通常更直接限定哪个成分。', 'Position often signals scope: an adverb normally relates most directly to the element it stands near.']
+    ], [
+      q(['calmly 在“Mia answered calmly.”中补充什么？', 'What does calmly add in “Mia answered calmly”?'], 'how she answered', 'what she answered', 'A', 'calmly 说明回答的方式。', 'calmly gives the manner of answering.'),
+      q(['very 在“very cold”中修饰什么？', 'What does very modify in “very cold”?'], 'cold', 'water', 'A', 'very 直接限定 cold 的程度。', 'very directly modifies the degree of cold.'),
+      q(['Probably 在句首通常限定什么？', 'What does initial Probably normally scope over?'], 'the whole clause', 'only the next noun', 'A', 'Probably 表示对整件事可能性的判断。', 'Probably marks probability for the whole clause.')
+    ]),
     lesson(english, 'adverb-jobs', '副词在句中做什么', 'What adverbs do', '修饰动词、形容词、副词或全句', 'Modify verbs, adjectives, adverbs or clauses', [
       e([['Mia', 'subject', '主语', 'Subject'], ['answered', 'predicate', '谓语动词', 'Predicate verb'], ['politely.', 'adverbial', '方式状语：修饰动词', 'Manner adverbial modifying verb']]),
       e([['The water', 'subject', '主语', 'Subject'], ['is', 'predicate', '系动词', 'Linking verb'], ['very', 'adverbial', '程度状语：修饰形容词', 'Degree adverbial modifying adjective'], ['cold.', 'object', '形容词作表语', 'Adjective complement']]),
@@ -400,6 +421,19 @@ function buildAdverbCourse(english) {
       q('The test is ___ easy.', 'quite', 'quiet', 'A', 'quite 是程度副词，修饰 easy。', 'quite is a degree adverb modifying easy.'),
       q('___, nobody was hurt.', 'Luckily', 'Lucky', 'A', 'Luckily 评价整个句子。', 'Luckily comments on the whole clause.'),
       q('She completed the work extremely ___.', 'carefully', 'careful', 'A', 'extremely 修饰副词 carefully；carefully 再修饰 completed。', 'extremely modifies the adverb carefully, which modifies completed.')
+    ]),
+    lesson(english, 'adverbial-boundary', '副词与状语有什么区别', 'Adverbs versus adverbials', '词类不等于句子成分', 'A word class is not a sentence role', [
+      e([['She', 'subject', '主语', 'Subject'], ['spoke', 'predicate', '谓语动词', 'Predicate verb'], ['softly.', 'adverbial', '副词作方式状语', 'Adverb as manner adverbial']], 'structure', 'softly 既是副词这一词类，在句中又承担方式状语这一功能。', 'softly is an adverb by word class and a manner adverbial by sentence function.'),
+      e([['She', 'subject', '主语', 'Subject'], ['spoke', 'predicate', '谓语动词', 'Predicate verb'], ['in a soft voice.', 'adverbial', '介词短语作方式状语', 'Prepositional phrase as manner adverbial']], 'structure', 'in a soft voice 整体是状语，但它是介词短语，不是一个副词。', 'in a soft voice is an adverbial, but its form is a prepositional phrase, not an adverb.'),
+      e([['She', 'subject', '主语', 'Subject'], ['spoke', 'predicate', '谓语动词', 'Predicate verb'], ['when the room became quiet.', 'adverbial', '时间状语从句', 'Time adverbial clause']], 'structure', 'when 从句说明说话时间，整体作状语；不能把整条从句叫作副词。', 'The when-clause gives the time and functions as an adverbial; the clause itself is not an adverb.')
+    ], [
+      ['副词是词类；状语是句子成分，二者不能画等号。', 'An adverb is a word class; an adverbial is a sentence function.'],
+      ['副词可以作状语，但介词短语、名词短语和非谓语短语也能作状语。', 'Adverbs can be adverbials, but prepositional, noun and non-finite phrases can also fill that function.'],
+      ['从句也能作状语，表示时间、原因、条件、让步等关系。', 'A clause can function as an adverbial of time, reason, condition, concession and more.']
+    ], [
+      q(['softly 是什么词类？', 'What word class is softly?'], 'an adverb', 'a prepositional phrase', 'A', 'softly 是副词，在句中可作状语。', 'softly is an adverb and can function as an adverbial.'),
+      q(['in the morning 是副词吗？', 'Is “in the morning” an adverb?'], 'No; it is a prepositional phrase.', 'Yes; every adverbial is an adverb.', 'A', '它能作状语，但形式是介词短语。', 'It functions as an adverbial but is a prepositional phrase in form.'),
+      q(['when he arrived 整体是什么？', 'What is “when he arrived” as a whole?'], 'an adverbial clause', 'one adverb', 'A', '它是从句，整体承担状语功能。', 'It is a clause functioning as an adverbial.')
     ]),
     lesson(english, 'adverb-types', '副词有哪些类别', 'Types of adverbs', '时间、地点、方式、频率、程度', 'Time · place · manner · frequency · degree', [
       e([['We', 'subject', '主语', 'Subject'], ['will meet', 'predicate', '谓语动词', 'Predicate verb'], ['outside', 'adverbial', '地点状语', 'Place adverbial'], ['tomorrow.', 'adverbial', '时间状语', 'Time adverbial']], 'translation', '英语常把地点放在时间前；中文更常说“明天在外面见”。', 'English commonly places place before time; Chinese more often puts the time expression before the place expression.'),
@@ -421,6 +455,22 @@ function buildAdverbCourse(english) {
       q('She answered ___.', 'politely', 'yesterday', 'A', 'politely 是方式副词。', 'politely is a manner adverb.'),
       q('___, the key was still there.', 'Luckily', 'Outside', 'A', 'Luckily 是评价全句的评注性副词。', 'Luckily is a comment adverb modifying the whole clause.')
     ]),
+    lesson(english, 'adverb-formation', '副词怎样构成', 'Forming adverbs', '-ly 拼写、同形副词与意义变化', '-ly spelling · flat adverbs · meaning changes', [
+      e([['quick', 'attribute', '形容词', 'Adjective'], ['→', 'conjunction', '形式变化', 'Form change'], ['quickly', 'adverbial', '方式副词', 'Manner adverb']], 'spelling', '大多数方式副词在形容词后加 -ly：quick 变 quickly。', 'Many manner adverbs add -ly to an adjective: quick becomes quickly.'),
+      e([['happy', 'attribute', '形容词', 'Adjective'], ['→', 'conjunction', '形式变化', 'Form change'], ['happily', 'adverbial', '方式副词', 'Manner adverb']], 'spelling', '辅音字母加 y 结尾时，通常把 y 变 i 再加 -ly。', 'After consonant + y, normally change y to i before adding -ly.'),
+      e([['true', 'attribute', '形容词', 'Adjective'], ['→', 'conjunction', '形式变化', 'Form change'], ['truly', 'adverbial', '副词', 'Adverb']], 'spelling', 'true 变 truly 时去掉 e；whole 变 wholly 也需单独注意。', 'true drops e in truly; whole to wholly is another spelling to note.'),
+      e([['He', 'subject', '主语', 'Subject'], ['runs', 'predicate', '谓语动词', 'Predicate verb'], ['fast.', 'adverbial', '同形副词', 'Flat adverb']], 'structure', 'fast 不加 -ly 也能作副词；不是所有副词都以 -ly 结尾。', 'fast functions as an adverb without -ly; not all adverbs end in -ly.')
+    ], [
+      ['许多方式副词由形容词加 -ly 构成。', 'Many manner adverbs are formed by adding -ly to adjectives.'],
+      ['辅音字母 + y 常变 y 为 i 再加 -ly。', 'Consonant + y normally changes y to i before -ly.'],
+      ['部分词有特殊拼写，如 true–truly、whole–wholly、full–fully。', 'Some forms have special spelling, such as true–truly, whole–wholly and full–fully.'],
+      ['fast、hard、late、early 等可直接作副词；加 -ly 后有时意义会改变。', 'fast, hard, late and early can be flat adverbs; an -ly form may have a different meaning.']
+    ], [
+      q(['careful 的副词是？', 'What is the adverb from careful?'], 'carefully', 'carefuly', 'A', 'careful 加 -ly 形成 carefully。', 'careful adds -ly to form carefully.'),
+      q(['happy 的副词是？', 'What is the adverb from happy?'], 'happily', 'happyly', 'A', 'y 变 i 再加 -ly。', 'Change y to i before -ly.'),
+      q(['true 的副词是？', 'What is the adverb from true?'], 'truly', 'truely', 'A', 'true 去 e 变 truly。', 'true drops e to form truly.'),
+      q('He works ___.', 'hard', 'hardly', 'A', 'hard 表示“努力地”；hardly 表示“几乎不”。', 'hard means “with effort”; hardly means “almost not”.')
+    ]),
     lesson(english, 'adverb-position', '副词放在哪里', 'Where adverbs go', '中位、句尾与句首', 'Mid, end and front positions', [
       e([['Lily', 'subject', '主语', 'Subject'], ['usually', 'adverbial', '频率状语：置于实义动词前', 'Frequency adverbial before main verb'], ['walks', 'predicate', '谓语动词', 'Predicate verb'], ['to school.', 'adverbial', '方向状语', 'Direction adverbial']]),
       e([['Lily', 'subject', '主语', 'Subject'], ['is', 'predicate', '系动词', 'Linking verb'], ['always', 'adverbial', '频率状语：置于 be 后', 'Frequency adverbial after be'], ['kind.', 'object', '形容词作表语', 'Adjective complement']]),
@@ -438,6 +488,19 @@ function buildAdverbCourse(english) {
       q('He completed the task ___.', 'carefully', 'careful', 'A', '方式副词 carefully 常放在宾语之后。', 'The manner adverb carefully naturally follows the object.'),
       q('She has ___ seen snow.', 'never', 'seen never', 'A', 'never 放在第一个助动词 has 后。', 'never follows the first auxiliary has.'),
       q('Choose the natural time-adverb position.', 'Yesterday, we stayed home.', 'We yesterday stayed home.', 'A', '时间副词可置于句首，并用逗号隔开。', 'A time adverb can be fronted and followed by a comma.')
+    ]),
+    lesson(english, 'multiple-adverb-order', '多个状语怎样排列', 'Ordering multiple adverbials', '方式、地点、时间与强调位置', 'Manner · place · time · emphasis', [
+      e([['She', 'subject', '主语', 'Subject'], ['sang', 'predicate', '谓语动词', 'Predicate verb'], ['beautifully', 'adverbial', '方式状语', 'Manner adverbial'], ['on stage', 'adverbial', '地点状语', 'Place adverbial'], ['last night.', 'adverbial', '时间状语', 'Time adverbial']], 'translation', '英语句尾常按“方式—地点—时间”排列；中文通常先交代时间和地点。', 'English end position often follows manner–place–time; Chinese commonly gives time and place earlier.'),
+      e([['Yesterday,', 'adverbial', '前置时间状语', 'Fronted time adverbial'], ['we', 'subject', '主语', 'Subject'], ['worked', 'predicate', '谓语动词', 'Predicate verb'], ['quietly', 'adverbial', '方式状语', 'Manner adverbial'], ['in the library.', 'adverbial', '地点状语', 'Place adverbial']], 'structure', '时间可移到句首作为背景；句尾仍让方式靠近动作、地点随后。', 'Time moves first as the setting; manner stays close to the action and place follows.'),
+      e([['She', 'subject', '主语', 'Subject'], ['carefully', 'adverbial', '强调的方式状语', 'Focused manner adverbial'], ['opened', 'predicate', '谓语动词', 'Predicate verb'], ['the box.', 'object', '宾语', 'Object']], 'structure', 'carefully 放在动词前可突出动作方式；放句尾也自然，但焦点较平。', 'carefully before the verb gives manner more focus; end position is also natural but less marked.')
+    ], [
+      ['多个句尾状语的常见顺序是方式—地点—时间，但语境和信息焦点可以调整。', 'A common end order is manner–place–time, though context and focus can change it.'],
+      ['时间或地点状语可前置建立背景，前置后通常与主句用逗号隔开。', 'A time or place adverbial can be fronted as a setting and is normally followed by a comma.'],
+      ['方式副词可放动词前或句尾；位置变化常改变强调重点，而非简单对错。', 'A manner adverb can occur before the verb or at the end; the position often changes focus rather than grammaticality.']
+    ], [
+      q('Choose the neutral end order.', 'She spoke softly at home yesterday.', 'She spoke yesterday softly at home.', 'A', '中性句尾常按方式—地点—时间。', 'Neutral end order commonly follows manner–place–time.'),
+      q('Choose the natural background setting.', 'Last week, we met in Shanghai.', 'We last week met in Shanghai.', 'A', '时间状语可置于句首建立背景。', 'A fronted time adverbial establishes the setting.'),
+      q(['哪一句更突出“仔细地”这一方式？', 'Which sentence gives more focus to carefully?'], 'She carefully checked the answer.', 'She checked the answer carefully.', 'A', '动词前位置更突出 carefully；两句都合语法。', 'Preverbal position gives carefully more focus; both are grammatical.')
     ]),
     lesson(english, 'adjective-or-adverb', '形容词还是副词', 'Adjective or adverb?', '系动词、行为动词与同形词', 'Linking verbs, action verbs and flat adverbs', [
       e([['The flowers', 'subject', '主语', 'Subject'], ['smell', 'predicate', '系动词', 'Linking verb'], ['sweet.', 'object', '形容词作表语', 'Adjective complement']]),
@@ -501,6 +564,58 @@ function buildAdverbCourse(english) {
       q('She ___ missed the bus; she arrived just in time.', 'almost', 'always', 'A', 'almost missed 表示“差点错过但没有”。', 'almost missed means it nearly happened but did not.'),
       q('___ Ben understood the difficult puzzle.', 'Even', 'Very', 'A', 'Even 聚焦 Ben，强调结果出乎预料。', 'Even focuses Ben and marks the result as unexpected.')
     ]),
+    lesson(english, 'sentence-adverbs', '句子副词表达什么态度', 'What sentence adverbs express', '把握程度、评价与说话方式', 'Certainty · evaluation · speaking stance', [
+      e([['Perhaps,', 'adverbial', '可能性句子副词', 'Possibility sentence adverb'], ['Mia', 'subject', '主语', 'Subject'], ['is', 'predicate', '系动词', 'Linking verb'], ['right.', 'predicative', '形容词作表语', 'Adjective as subject complement']], 'structure', 'Perhaps 限定整句的真实性，表示说话人不完全确定。', 'Perhaps scopes over the whole claim and shows uncertainty.'),
+      e([['Fortunately,', 'adverbial', '评价性句子副词', 'Evaluative sentence adverb'], ['nobody', 'subject', '主语', 'Subject'], ['was hurt.', 'predicate', '谓语动词', 'Predicate verb']], 'structure', 'Fortunately 不是说明“受伤得幸运”，而是评价“无人受伤”这件事是幸运的。', 'Fortunately does not describe how anyone was hurt; it evaluates the whole outcome as fortunate.'),
+      e([['Frankly,', 'adverbial', '说话方式句子副词', 'Speaking-stance adverb'], ['I', 'subject', '主语', 'Subject'], ['disagree.', 'predicate', '谓语动词', 'Predicate verb']], 'structure', 'Frankly 表示“坦率地说”，说明说话人以什么态度表达整句话。', 'Frankly means “speaking frankly” and frames the speaker’s stance toward the statement.')
+    ], [
+      ['perhaps、probably、certainly 等表示说话人对整句话真实性的把握程度。', 'perhaps, probably and certainly mark the speaker’s degree of certainty about a clause.'],
+      ['fortunately、surprisingly、sadly 等评价整件事。', 'fortunately, surprisingly and sadly evaluate the whole event.'],
+      ['frankly、honestly、briefly 等可说明说话方式或组织话语。', 'frankly, honestly and briefly can frame the manner of speaking or discourse organization.']
+    ], [
+      q('___, the train may be late.', 'Perhaps', 'Slowly', 'A', 'Perhaps 表示对整句的可能性判断。', 'Perhaps marks possibility for the whole clause.'),
+      q('___, everyone escaped safely.', 'Fortunately', 'Carefully', 'A', 'Fortunately 评价整件事的结果。', 'Fortunately evaluates the outcome.'),
+      q('___, I do not support the plan.', 'Frankly', 'Friendly', 'A', 'Frankly 表示“坦率地说”。', 'Frankly frames the statement as frank speech.')
+    ]),
+    lesson(english, 'interrogative-relative-adverbs', '疑问副词与关系副词', 'Interrogative and relative adverbs', '询问或连接时间、地点、原因与方式', 'Ask or link time, place, reason and manner', [
+      e([['Why', 'adverbial', '疑问原因副词', 'Interrogative reason adverb'], ['did', 'helper', '助动词', 'Auxiliary verb'], ['you', 'subject', '主语', 'Subject'], ['leave?', 'predicate', '谓语动词', 'Predicate verb']], 'structure', 'Why 在句中询问 leave 的原因，不代替主语或宾语。', 'Why asks for the reason for leaving; it does not replace a subject or object.'),
+      e([['This is', 'predicate', '主句谓语', 'Main predicate'], ['the place', 'predicative', '表语中心词', 'Complement head'], ['where we met.', 'attribute', '关系副词引导的定语从句', 'Relative clause introduced by adverb']], 'translation', 'where 在从句中表示“在这个地方”，连接 place 和 we met；中文通常译为“我们见面的地方”。', 'where means “at this place” in the clause and links it to place.'),
+      e([['Tell me', 'predicate', '谓语与宾语', 'Predicate and object'], ['how you solved it.', 'object', 'how 引导的宾语从句', 'Object clause introduced by how']], 'structure', 'how 在从句中询问 solved 的方式，整个 how 从句作 tell 的直接宾语。', 'how asks for the manner of solving; the whole how-clause is the direct object of tell.')
+    ], [
+      ['when、where、why、how 可作疑问副词，询问时间、地点、原因或方式。', 'when, where, why and how can be interrogative adverbs asking about time, place, reason or manner.'],
+      ['when、where、why 可作关系副词，在从句中承担状语功能并连接先行词。', 'when, where and why can be relative adverbs functioning adverbially while linking an antecedent.'],
+      ['疑问副词也可引导名词性从句；此时整个从句占主语、宾语或表语位置。', 'An interrogative adverb can introduce a nominal clause that fills a subject, object or complement slot.']
+    ], [
+      q('___ did the meeting end?', 'When', 'Which', 'A', 'When 询问结束时间。', 'When asks about the time of ending.'),
+      q('I remember the day ___ we met.', 'when', 'which place', 'A', 'when 在从句中作时间状语并连接 day。', 'when functions as a time adverb and links day.'),
+      q('Do you know ___ he left?', 'why', 'because', 'A', 'why 引导宾语从句并询问原因。', 'why introduces an object clause asking for the reason.')
+    ]),
+    lesson(english, 'negative-limiting-adverbs', '否定与限制副词', 'Negative and limiting adverbs', '否定强度、范围与倒装', 'Negative force · scope · inversion', [
+      e([['I', 'subject', '主语', 'Subject'], ['hardly', 'adverbial', '近乎否定副词', 'Near-negative adverb'], ['know', 'predicate', '谓语动词', 'Predicate verb'], ['him.', 'object', '宾语', 'Object']], 'structure', 'hardly 不是“努力地”，而是把 know 限定为“几乎不了解”，带近乎否定意义。', 'hardly does not mean “with effort”; it makes know nearly negative.'),
+      e([['She', 'subject', '主语', 'Subject'], ['rarely', 'adverbial', '低频近否定副词', 'Low-frequency near-negative adverb'], ['complains.', 'predicate', '谓语动词', 'Predicate verb']], 'structure', 'rarely 表示事情发生频率极低，语义接近否定，但句中不再加 not。', 'rarely gives an extremely low frequency and is near-negative, so no extra not is used.'),
+      e([['Never', 'adverbial', '前置否定副词', 'Fronted negative adverb'], ['have', 'helper', '助动词倒装', 'Inverted auxiliary'], ['I', 'subject', '主语', 'Subject'], ['seen', 'predicate', '谓语动词', 'Predicate verb'], ['such a view.', 'object', '宾语', 'Object']], 'structure', 'Never 前置加强否定后，助动词 have 移到主语 I 前形成部分倒装。', 'Fronted Never triggers partial inversion, moving have before I.')
+    ], [
+      ['hardly、scarcely、barely 表示“几乎不”，本身带近乎否定意义。', 'hardly, scarcely and barely mean “almost not” and carry near-negative force.'],
+      ['rarely、seldom 表示低频，通常不再与 not 重复否定。', 'rarely and seldom mark low frequency and normally do not combine with an extra not.'],
+      ['否定或限制副词置于句首时，正式语体中常触发助动词与主语部分倒装。', 'A fronted negative or limiting adverb often triggers subject–auxiliary inversion in formal style.']
+    ], [
+      q('I can ___ hear you.', 'hardly', 'hard', 'A', 'hardly 表示“几乎听不见”。', 'hardly means “can almost not hear”.'),
+      q('She ___ eats fast food.', 'rarely', 'not rarely', 'A', 'rarely 已表示低频近否定。', 'rarely already carries low-frequency negative meaning.'),
+      q('Never ___ such a view.', 'have I seen', 'I have seen', 'A', 'Never 前置触发助动词倒装。', 'Fronted Never triggers subject–auxiliary inversion.')
+    ]),
+    lesson(english, 'conjunctive-adverbs', '连接副词怎样连接分句', 'How conjunctive adverbs link clauses', '逻辑关系与标点边界', 'Logical relations and punctuation boundaries', [
+      e([['The road was closed;', 'predicate', '第一独立分句', 'First independent clause'], ['therefore,', 'adverbial', '结果连接副词', 'Result conjunctive adverb'], ['we took another route.', 'predicate', '第二独立分句', 'Second independent clause']], 'structure', 'therefore 表示前因后果，但不能像 so 一样只用逗号连接两个独立分句。', 'therefore marks result but cannot join two independent clauses with only a comma as so can.'),
+      e([['The task was difficult;', 'predicate', '第一独立分句', 'First independent clause'], ['however,', 'adverbial', '转折连接副词', 'Contrast conjunctive adverb'], ['we finished it.', 'predicate', '第二独立分句', 'Second independent clause']], 'structure', 'however 表示转折；前面用分号结束第一分句，后面用逗号隔开连接副词。', 'however marks contrast; a semicolon closes the first clause and a comma follows the adverb.'),
+      e([['First,', 'adverbial', '顺序连接副词', 'Sequence conjunctive adverb'], ['check the data;', 'predicate', '第一分句', 'First clause'], ['then,', 'adverbial', '顺序连接副词', 'Sequence conjunctive adverb'], ['write the report.', 'predicate', '第二分句', 'Second clause']], 'structure', 'First 和 then 组织步骤顺序，连接的是信息推进关系。', 'First and then organize the sequence and progression of information.')
+    ], [
+      ['therefore、thus、consequently 表示结果；however、nevertheless 表示转折。', 'therefore, thus and consequently mark result; however and nevertheless mark contrast.'],
+      ['连接副词不是并列连词；连接两个独立分句时，前面通常用分号或句号，后面常用逗号。', 'A conjunctive adverb is not a coordinator; between independent clauses it normally follows a semicolon or period and is followed by a comma.'],
+      ['first、then、meanwhile、finally 等可组织顺序和信息推进。', 'first, then, meanwhile and finally organize sequence and information flow.']
+    ], [
+      q('The shop was closed; ___, we went home.', 'therefore', 'because', 'A', 'therefore 表示前句原因带来的结果。', 'therefore marks the result of the first clause.'),
+      q('Choose the correct punctuation.', 'It rained; however, we left.', 'It rained, however we left.', 'A', '两个独立分句间用分号，however 后用逗号。', 'Use a semicolon between the clauses and a comma after however.'),
+      q('___, read the question; then answer it.', 'First', 'Hardly', 'A', 'First 和 then 组织步骤顺序。', 'First and then organize sequence.')
+    ]),
     lesson(english, 'adverb-traps', '易混副词与连接副词', 'Adverb traps and linking adverbs', 'hard/hardly · late/lately · however/therefore', 'hard/hardly · late/lately · however/therefore', [
       e([['He', 'subject', '主语', 'Subject'], ['works', 'predicate', '谓语动词', 'Predicate verb'], ['hard', 'adverbial', '方式状语：努力地', 'Manner adverb: with effort'], ['every day.', 'adverbial', '时间状语', 'Time adverbial']]),
       e([['I', 'subject', '主语', 'Subject'], ['have', 'helper', '助动词', 'Auxiliary verb'], ['hardly', 'adverbial', '近乎否定的频度状语', 'Near-negative frequency adverbial'], ['seen', 'predicate', '谓语动词', 'Predicate verb'], ['her', 'object', '宾语', 'Object'], ['lately.', 'adverbial', '时间状语：最近', 'Time adverb: recently']]),
@@ -517,11 +632,102 @@ function buildAdverbCourse(english) {
       q('The shop was closed; ___, we went home.', 'therefore', 'because', 'A', 'therefore 是表示结果的连接副词。', 'therefore is a linking adverb marking a result.'),
       q('Choose the correctly punctuated contrast.', 'It was raining; however, we left.', 'It was raining, however we left.', 'A', '两个独立分句之间用分号，however 后用逗号。', 'Use a semicolon between the independent clauses and a comma after however.')
     ])
-  ], '副词', 'Adverbs', 6, [
-    ['adverb-function', '作用、类别与位置', 'Jobs, types and position', '先确定副词修饰范围，再按意义类别判断常见位置。', 'Identify an adverb’s scope, then use its meaning class to judge its usual position.', ['adverb-jobs', 'adverb-types', 'adverb-position']],
-    ['adverb-form-degree', '形副辨析与程度比较', 'Adjective–adverb form and degree', '辨清形容词与副词形式，掌握比较和程度结构。', 'Distinguish adjective and adverb forms, then master comparison and degree patterns.', ['adjective-or-adverb', 'adverb-comparison', 'degree-patterns']],
-    ['adverb-scope-linking', '范围、语义与连接', 'Scope, meaning and linking', '进阶处理聚焦范围、易混副词和连接副词。', 'Handle focus scope, easily confused adverbs and linking adverbs.', ['adverb-scope', 'adverb-traps']]
+  ], '副词', 'Adverbs', ['multiple-adverb-order','sentence-adverbs','interrogative-relative-adverbs','negative-limiting-adverbs','conjunctive-adverbs'], [
+    ['adverb-foundation', '定义、本质与成分边界', 'Definition, core and functional boundary', '先看副词修饰谁，再区分副词词类与状语成分。', 'Identify what an adverb modifies, then distinguish word class from adverbial function.', ['adverb-essence','adverb-jobs','adverbial-boundary']],
+    ['adverb-types-forms', '意义类别与形式边界', 'Meaning types and form boundaries', '掌握主要意义类别、构词规则及形容词副词辨析。', 'Master meaning classes, formation and adjective–adverb boundaries.', ['adverb-types','adverb-formation','adjective-or-adverb']],
+    ['adverb-position-order', '位置与多个状语顺序', 'Position and adverbial order', '根据修饰对象、动词结构和信息焦点确定位置。', 'Choose position from the modified element, verb structure and information focus.', ['adverb-position','multiple-adverb-order']],
+    ['adverb-degree-comparison', '程度结构与比较', 'Degree patterns and comparison', '掌握副词比较级、最高级和 enough、too、so、such。', 'Master adverb comparison and enough, too, so and such patterns.', ['adverb-comparison','degree-patterns']],
+    ['adverb-scope-stance', '范围、态度与否定', 'Scope, stance and negation', '处理聚焦范围、说话者态度、近乎否定和倒装。', 'Handle focus scope, speaker stance, near-negation and inversion.', ['adverb-scope','sentence-adverbs','negative-limiting-adverbs']],
+    ['adverb-linking', '疑问、关系与语篇连接', 'Question, relation and discourse linking', '处理疑问关系副词、易混词义和连接副词标点。', 'Handle interrogative/relative adverbs, confusing meanings and conjunctive punctuation.', ['interrogative-relative-adverbs','adverb-traps','conjunctive-adverbs']]
   ]);
+  const byId = Object.fromEntries(bundle.course.map(item => [item.id, item]));
+  byId['adverb-formation'].analyses.forEach(analysis => {
+    if (analysis[1] && analysis[1].text === '→') Object.assign(analysis[1], { role: 'word', label: pick(english, '形式变化', 'Form change') });
+  });
+  byId['interrogative-relative-adverbs'].analyses[1] = [
+    { text: 'This', role: 'subject', label: pick(english, '主语', 'Subject') },
+    { text: 'is', role: 'predicate', label: pick(english, '系动词', 'Linking verb') },
+    { text: 'the place', role: 'predicative', label: pick(english, '表语中心词', 'Complement head') },
+    { text: 'where we met.', role: 'attribute', label: pick(english, '关系副词引导的定语从句', 'Relative clause introduced by adverb') }
+  ];
+  byId['interrogative-relative-adverbs'].analyses[2] = [
+    { text: 'Tell', role: 'predicate', label: pick(english, '谓语动词', 'Predicate verb') },
+    { text: 'me', role: 'indirectObject', label: pick(english, '间接宾语', 'Indirect object') },
+    { text: 'how you solved it.', role: 'directObject', label: pick(english, 'how 引导的宾语从句', 'Object clause introduced by how') }
+  ];
+  byId['conjunctive-adverbs'].analyses.slice(0, 2).forEach(analysis => {
+    analysis[0].role = 'independent';
+    analysis[2].role = 'independent';
+  });
+  const scope = byId['adverb-scope'];
+  scope.examples.splice(2, 1); scope.analyses.splice(2, 1); scope.exampleNotes.splice(2, 1);
+  scope.rules.splice(1, 1); scope.questions.splice(1, 1);
+  scope.ruleCoverage = INCLUDE_RULE_COVERAGE ? [
+    { exampleIndexes: [0, 1], questionIndexes: [0] },
+    { exampleIndexes: [2], questionIndexes: [2] },
+    { exampleIndexes: [2], questionIndexes: [1] }
+  ] : [];
+  const traps = byId['adverb-traps'];
+  traps.title = pick(english, '易混副词', 'Easily confused adverbs');
+  traps.meta = 'hard/hardly · late/lately';
+  traps.examples.splice(2); traps.analyses.splice(2); traps.exampleNotes.splice(2);
+  traps.rules.splice(2); traps.questions.splice(2); traps.ruleCoverage.splice(2);
+  const explanations = {
+    'adverb-jobs': [
+      ['politely 直接修饰 answered，说明回答采用什么方式。','politely directly modifies answered and gives the manner of answering.'],
+      ['very 修饰形容词 cold，只改变寒冷的程度。','very modifies the adjective cold and changes only its degree.'],
+      ['Fortunately 评价“所有人安全到达”整件事；safely 则说明 arrived 的方式。','Fortunately evaluates the whole event, while safely gives the manner of arriving.'],
+      ['remarkably 修饰 quickly，quickly 再修饰 finished，形成两层修饰关系。','remarkably modifies quickly, which in turn modifies finished.']
+    ],
+    'adverb-types': [null,
+      ['often 说明频率，quietly 说明方式，here 说明地点；三个副词各回答不同问题。','often gives frequency, quietly manner and here place; each answers a different question.'],
+      ['too 说明 heavy 的程度已经超过合适范围。','too marks the degree of heavy as beyond an acceptable limit.'],
+      ['Fortunately 评价整件事，soon 则说明 stopped 发生的时间。','Fortunately evaluates the event, while soon gives the time of stopping.']
+    ],
+    'adverb-position': [
+      ['usually 放在实义动词 walks 前，表示走路上学的通常频率。','usually precedes the main verb walks and gives its frequency.'],
+      ['be 动词 is 在前，频率副词 always 放在 is 后、表语 kind 前。','With be, always follows is and precedes the complement kind.'],
+      ['Yesterday 前置建立时间背景；quickly 放句尾说明完成工作的方式。','Yesterday sets the time first; quickly at the end gives the manner of finishing.'],
+      ['never 放在第一个助动词 has 后、主要动词 visited 前。','never follows the first auxiliary has and precedes the main verb visited.']
+    ],
+    'adjective-or-adverb': [
+      ['smell 是系动词，sweet 说明 flowers 的性质，所以用形容词。','smell is linking, so sweet describes the flowers as an adjective.'],
+      ['smelled 表示闻的动作，carefully 说明动作方式，所以用副词。','smelled is an action, and carefully gives its manner as an adverb.'],
+      ['fast 形式不变，但在这里修饰 moves，因此是副词。','fast keeps the same form but modifies moves here, so it is an adverb.'],
+      ['friendly 虽以 -ly 结尾，却说明 neighbour 的性质，是形容词表语。','friendly ends in -ly but describes neighbour, so it is an adjective complement.']
+    ],
+    'adverb-comparison': [
+      ['faster 比较 Amy 和 Sue 跑步的速度，修饰 runs。','faster compares the manner or speed of running and modifies runs.'],
+      ['carefully 是 -ly 副词，比较级在前面加 more。','carefully is an -ly adverb, so its comparative uses more.'],
+      ['of all the runners 给出三者以上范围，因此用副词最高级 the fastest。','of all the runners defines a group of three or more, so the adverb superlative is used.'],
+      ['better 是 well 的不规则比较级，说明表现比以前更好。','better is the irregular comparative of well and compares the performance with before.']
+    ],
+    'degree-patterns': [
+      ['enough 放在 warm 后，表示温暖程度达到婴儿所需标准。','enough follows warm and marks the degree as sufficient for the baby.'],
+      ['too 放在 heavy 前，表示重量超过“我能抬起”的限度。','too precedes heavy and marks a degree beyond what I can lift.'],
+      ['such 修饰整个名词短语 a difficult question，that 从句说明结果。','such modifies the noun phrase a difficult question, and the that-clause gives the result.'],
+      ['so 直接修饰形容词 difficult，that 从句说明困难造成的结果。','so directly modifies difficult, and the that-clause gives the result.']
+    ],
+    'adverb-scope': [null, null,
+      ['Even 聚焦 Ben，强调他能理解出乎意料；almost 修饰 missed，表示差点错过但实际没有。','Even focuses Ben as unexpected; almost modifies missed and means the event nearly happened.']
+    ],
+    'adverb-traps': [
+      ['hard 修饰 works，表示“努力地”，与 hardly“几乎不”不是程度变化。','hard modifies works meaning “with effort”; hardly means “almost not”.'],
+      ['hardly 表示几乎没见过；lately 表示最近，不能分别理解成 hard 和 late 的普通 -ly 形式。','hardly means almost never seen; lately means recently, not ordinary -ly forms of hard and late.']
+    ]
+  };
+  bundle.course.forEach(item => {
+    item.analyses.forEach(analysis => analysis.forEach(unit => {
+      if (unit.role === 'object' && /表语|complement/i.test(unit.label)) unit.role = 'predicative';
+    }));
+    item.exampleNotes.forEach((note, index) => {
+      if (note.visible) return;
+      const pair = explanations[item.id] && explanations[item.id][index];
+      if (!pair) throw new Error(`Missing adverb example explanation: ${item.id}[${index}]`);
+      item.exampleNotes[index] = { visible: true, mode: 'structure', title: pick(english, '例句说明', 'Example focus'), body: pick(english, pair[0], pair[1]), detail: '' };
+    });
+  });
+  return bundle;
 }
 
 module.exports = BUILD_TARGET === 'adjective' ? { buildAdjectiveCourse }

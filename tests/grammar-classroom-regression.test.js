@@ -218,6 +218,7 @@ test('形容词与副词使用独立运行时和独立懒加载组件', () => {
   assert.doesNotMatch(adjectiveRuntime, /adverb-jobs/);
   assert.match(adverbRuntime, /adverb-jobs/);
   assert.doesNotMatch(adverbRuntime, /adjective-essence/);
+  assert.ok(Buffer.byteLength(adverbRuntime) < 55000);
   assert.ok(!fs.existsSync(path.join(__dirname, '../grammar-package/domain/grammar-classroom/adjective-adverb-courses.js')));
   const wxml = fs.readFileSync(path.join(__dirname, '../grammar-package/pages/classroom/index.wxml'), 'utf8');
   assert.match(wxml, /grammar-adjective-loader wx:if="\{\{loaderKind === 'adjective'\}\}"/);
@@ -360,6 +361,40 @@ test('形容词课程从性质本质到比较范围与补足关系完整闭环',
   const page = fs.readFileSync(path.join(__dirname, '../grammar-package/pages/classroom/index.js'), 'utf8');
   assert.match(page, /\['adjective', '形容词',[^\n]+, 15\]/);
   assert.match(page, /\['adjective', 'Adjectives',[^\n]+, 15\]/);
+});
+
+test('副词课程从修饰本质到范围、位置、否定与连接完整闭环', () => {
+  const requiredIds = ['adverb-essence','adverb-jobs','adverbial-boundary','adverb-types','adverb-formation','adverb-position','multiple-adverb-order','adjective-or-adverb','adverb-comparison','degree-patterns','adverb-scope','sentence-adverbs','interrogative-relative-adverbs','negative-limiting-adverbs','conjunctive-adverbs','adverb-traps'];
+  [false, true].forEach((english) => {
+    const bundle = sourceModifierCourses.buildAdverbCourse(english);
+    assert.deepEqual(bundle.course.map((lesson) => lesson.id), requiredIds);
+    assert.deepEqual(bundle.groups.map((group) => group.lessons.length), [11, 5]);
+    assert.deepEqual(bundle.sections.map((section) => section.lessonCount), [3, 3, 2, 2, 3, 3]);
+    assert.match(bundle.course[0].title, english ? /Definition and core/ : /定义与本质/);
+    bundle.course.forEach((lesson) => {
+      assert.equal(lesson.exampleNotes.length, lesson.examples.length);
+      assert.ok(lesson.exampleNotes.every((note) => note.visible && (note.body || note.detail)));
+      assert.equal(lesson.ruleCoverage.length, lesson.rules.length);
+      lesson.ruleCoverage.forEach((coverage) => {
+        assert.ok(coverage.exampleIndexes.length && coverage.questionIndexes.length);
+        coverage.exampleIndexes.forEach((index) => assert.ok(index >= 0 && index < lesson.examples.length));
+        coverage.questionIndexes.forEach((index) => assert.ok(index >= 0 && index < lesson.questions.length));
+      });
+      if (english) lesson.questions.forEach((question) => {
+        assert.doesNotMatch(question.question, /[\u4e00-\u9fff]/);
+        question.options.forEach((option) => assert.doesNotMatch(option.text, /[\u4e00-\u9fff]/));
+      });
+    });
+  });
+  const bundle = sourceModifierCourses.buildAdverbCourse(false);
+  assert.match(bundle.course.find((lesson) => lesson.id === 'adverbial-boundary').rules[0], /副词是词类；状语是句子成分/);
+  assert.equal(bundle.course.find((lesson) => lesson.id === 'adverb-traps').examples.length, 2);
+  assert.ok(bundle.course.find((lesson) => lesson.id === 'conjunctive-adverbs').rules.some((rule) => rule.includes('不是并列连词')));
+  const relationRoles = bundle.course.find((lesson) => lesson.id === 'interrogative-relative-adverbs').analyses.flat().map((part) => part.role);
+  ['predicative','attribute','indirectObject','directObject'].forEach((role) => assert.ok(relationRoles.includes(role)));
+  const page = fs.readFileSync(path.join(__dirname, '../grammar-package/pages/classroom/index.js'), 'utf8');
+  assert.match(page, /\['adverb', '副词',[^\n]+, 16\]/);
+  assert.match(page, /\['adverb', 'Adverbs',[^\n]+, 16\]/);
 });
 
 test('名词课程从定义、句法功能到数量和关系完整闭环', () => {
