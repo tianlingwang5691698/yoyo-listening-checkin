@@ -114,7 +114,7 @@ test('背诵正常发音结束后继续，失败或超时则解锁', () => {
   assert.match(source, /onPlay\(\(\) => this\.clearCardAudioStartTimer\(\)\)/);
   assert.match(source, /startCardAudioStartTimer\(audioRequestId\)/);
   assert.match(source, /\}, 3000\);/);
-  assert.match(source, /if \(canUseDictionaryVoice\(audioText\)\)/);
+  assert.match(source, /if \(!canUseDictionaryVoice\(audioText\)\)/);
   assert.match(source, /buildDictionaryVoiceUrl\(audioText\)/);
   assert.match(source, /cancelCurrentAudio\(\)/);
   assert.match(source, /if \(this\.data\.audioLoading \|\| this\.data\.audioPlaying\) return;/);

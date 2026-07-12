@@ -38,11 +38,14 @@ test('例句只在单词边界换行', () => {
   assert.match(pageStyles, /\.library-vocab-example\s*\{[\s\S]*?font-size:\s*28rpx;[\s\S]*?overflow-wrap:\s*normal;[\s\S]*?word-break:\s*normal;/);
 });
 
-test('词库列表支持点击音符发音', () => {
+test('词汇发音只使用词典直连与词典专用缓存', () => {
   assert.match(pageTemplate, /catchtap="speakLibraryCard"/);
   assert.match(pageSource, /speakLibraryCard\(event\)/);
-  assert.match(pageSource, /synthesizeReadingAudio\(\{ text: audioText \}\)/);
-  assert.doesNotMatch(pageSource, /if \(canUseDictionaryVoice\(text\)\) \{\s*const url = buildDictionaryVoiceUrl\(text\);\s*this\.playAudioUrl/);
+  assert.doesNotMatch(pageSource, /synthesizeReadingAudio/);
+  assert.doesNotMatch(pageSource, /store\.getTempFileURL/);
+  assert.doesNotMatch(pageSource, /store\.saveFlashcardAudio/);
+  assert.match(pageSource, /FLASHCARD_AUDIO_CACHE_PREFIX = 'flashcard-dictionary-audio-v2-'/);
+  assert.match(pageSource, /buildDictionaryVoiceUrl\(audioText\)/);
   assert.match(pageTemplate, /libraryAudioKey === item\.flashcardKey/);
   assert.match(pageStyles, /@keyframes libraryNoteBounce/);
   assert.match(pageStyles, /\.library-vocab-row-speak\.is-active/);

@@ -77,7 +77,7 @@ const FLASHCARD_SOURCE_CACHE_VERSION_KEY = 'flashcardSourceCacheVersion';
 const FLASHCARD_SOURCE_CACHE_CONTENT_VERSION = 2026071302;
 const FLASHCARD_PLAN_SETTINGS_PREFIX = 'flashcardPlanSettings:';
 const FLASHCARD_CHECKIN_DAYS_KEY = 'flashcardCheckinDays';
-const FLASHCARD_AUDIO_CACHE_PREFIX = 'flashcard-audio-';
+const FLASHCARD_AUDIO_CACHE_PREFIX = 'flashcard-dictionary-audio-v2-';
 
 const LIMIT_MIN = 5;
 const LIMIT_DEFAULT_MAX = 500;
@@ -1412,52 +1412,20 @@ Page({
     if (localFileExists(localAudioPath)) return;
     this.prefetchingAudioKeys[card.flashcardKey] = true;
     try {
-      if (card.audioUrl) {
-        const path = await downloadAudioToLocal(card.audioUrl, card.flashcardKey);
-        if (path) this.updateCardAudioCache(card.flashcardKey, { audioLocalPath: path });
-        return;
-      }
-      if (card.audioFileId) {
-        const url = await store.getTempFileURL(card.audioFileId);
-        if (url) {
-          const path = await downloadAudioToLocal(url, card.flashcardKey);
-          if (path) this.updateCardAudioCache(card.flashcardKey, { audioUrl: url, audioLocalPath: path });
-          return;
-        }
-      }
-      const result = await store.synthesizeReadingAudio({ text });
-      let url = result && result.audioUrl ? result.audioUrl : '';
-      const audioFileId = result && result.fileId ? result.fileId : '';
-      const audioCloudPath = result && result.cloudPath ? result.cloudPath : '';
-      if (!url && audioFileId) {
-        url = await store.getTempFileURL(audioFileId);
-      }
-      if (!url) throw new Error('audio-url-empty');
-      if (audioFileId || audioCloudPath) {
-        store.saveFlashcardAudio({
-          flashcardKey: card.flashcardKey,
-          audioFileId,
-          audioCloudPath
-        }).catch(() => {});
-      }
+      if (!canUseDictionaryVoice(text)) return;
+      const url = buildDictionaryVoiceUrl(text);
       const path = await downloadAudioToLocal(url, card.flashcardKey);
-      this.updateCardAudioCache(card.flashcardKey, {
-        audioUrl: url,
-        audioFileId,
-        audioCloudPath,
-        audioLocalPath: path || ''
-      });
+      if (path) this.updateCardAudioCache(card.flashcardKey, { audioUrl: url, audioLocalPath: path });
     } catch (error) {
       // Prefetch failure does not block manual playback.
     } finally {
       delete this.prefetchingAudioKeys[card.flashcardKey];
     }
   },
-  async speakCurrent(options) {
+  speakCurrent(options) {
     const silent = !!(options && options.auto);
     const requestedCard = options && options.card ? options.card : null;
     const current = requestedCard || this.data.current || {};
-    if (this._flashcardAudioLoading) return;
     const audioRequestId = Number(this._flashcardAudioRequestId || 0) + 1;
     this._flashcardAudioRequestId = audioRequestId;
     if (!current.canSpeak) return;
@@ -1475,90 +1443,18 @@ Page({
       this.playAudioUrl(localAudioPath, { silent });
       return;
     }
-    if (canUseDictionaryVoice(audioText)) {
-      const url = buildDictionaryVoiceUrl(audioText);
-      this.playAudioUrl(url, { silent });
-      this.updateCardAudioCache(current.flashcardKey, { audioUrl: url });
-      downloadAudioToLocal(url, current.flashcardKey).then((path) => {
-        if (path) this.updateCardAudioCache(current.flashcardKey, { audioLocalPath: path });
-      });
+    if (!canUseDictionaryVoice(audioText)) {
+      this.clearCardAudioStartTimer();
+      this.setData({ audioLoading: false, audioPlaying: false, audioCompleted: true, libraryAudioKey: '' });
+      if (!silent) wx.showToast({ title: text('noAudio', '暂无发音内容'), icon: 'none' });
       return;
     }
-    if (current.audioUrl) {
-      this.playAudioUrl(current.audioUrl, { silent });
-      downloadAudioToLocal(current.audioUrl, current.flashcardKey).then((path) => {
-        if (path) this.updateCardAudioCache(current.flashcardKey, { audioLocalPath: path });
-      });
-      return;
-    }
-    if (current.audioFileId) {
-      try {
-        const url = await store.getTempFileURL(current.audioFileId);
-        if (this._flashcardAudioRequestId !== audioRequestId) return;
-        if (url) {
-          this.playAudioUrl(url, { silent });
-          downloadAudioToLocal(url, current.flashcardKey).then((path) => {
-            if (path) this.updateCardAudioCache(current.flashcardKey, { audioLocalPath: path });
-          });
-          return;
-        }
-      } catch (error) {
-        // Fall through to regenerate audio.
-      }
-    }
-    this._flashcardAudioLoading = true;
-    this.setData({ audioLoading: true });
-    try {
-      const result = await store.synthesizeReadingAudio({ text: audioText });
-      if (this._flashcardAudioRequestId !== audioRequestId) return;
-      let url = result && result.audioUrl ? result.audioUrl : '';
-      const audioFileId = result && result.fileId ? result.fileId : '';
-      const audioCloudPath = result && result.cloudPath ? result.cloudPath : '';
-      if (!url && result && result.fileId) {
-        url = await store.getTempFileURL(result.fileId);
-      }
-      if (!url) throw new Error('audio-url-empty');
-      if (current.flashcardKey && (audioFileId || audioCloudPath)) {
-        store.saveFlashcardAudio({
-          flashcardKey: current.flashcardKey,
-          audioFileId,
-          audioCloudPath
-        }).catch(() => {});
-      }
-      const cards = (this.data.cards || []).map((item) => (
-        item.flashcardKey === current.flashcardKey ? Object.assign({}, item, { audioUrl: url, audioFileId, audioCloudPath }) : item
-      ));
-      const library = this.getFlashcardLibrary().map((item) => (
-        item.flashcardKey === current.flashcardKey ? Object.assign({}, item, { audioUrl: url, audioFileId, audioCloudPath }) : item
-      ));
-      this.setFlashcardLibrary(library);
-      const nextState = {
-        cards,
-        library: [],
-        libraryGroups: this.getRenderedLibraryGroups(library)
-      };
-      if (!requestedCard) {
-        nextState.current = Object.assign({}, current, { audioUrl: url, audioFileId, audioCloudPath });
-      }
-      this.setData(nextState);
-      this.playAudioUrl(url, { silent });
-      downloadAudioToLocal(url, current.flashcardKey).then((path) => {
-        if (path) this.updateCardAudioCache(current.flashcardKey, { audioLocalPath: path });
-      });
-    } catch (error) {
-      if (this._flashcardAudioRequestId !== audioRequestId) return;
-      if (!silent) {
-        this.setData({ audioCompleted: true, libraryAudioKey: '' });
-        wx.showToast({ title: text('pronunciationFailed', '发音失败，稍后重试'), icon: 'none' });
-      } else {
-        this.setData({ audioCompleted: true });
-      }
-    } finally {
-      if (this._flashcardAudioRequestId === audioRequestId) {
-        this.setData({ audioLoading: false });
-        this._flashcardAudioLoading = false;
-      }
-    }
+    const url = buildDictionaryVoiceUrl(audioText);
+    this.playAudioUrl(url, { silent });
+    this.updateCardAudioCache(current.flashcardKey, { audioUrl: url });
+    downloadAudioToLocal(url, current.flashcardKey).then((path) => {
+      if (path) this.updateCardAudioCache(current.flashcardKey, { audioLocalPath: path });
+    });
   },
   speakLibraryCard(event) {
     const flashcardKey = String((event.currentTarget.dataset || {}).key || '');

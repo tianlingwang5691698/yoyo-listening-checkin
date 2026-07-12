@@ -4,8 +4,8 @@
 
 ## 当前版本
 
-- 稳定回退点：`rollback-point-20260711-v8.0.0`
-- 当前云函数版本：`cloudfunctions/yoyo/package.json -> 8.0.0`
+- 稳定回退点：`rollback-point-20260713-v8.2.0`
+- 当前云函数版本：`cloudfunctions/yoyo/package.json -> 8.2.0`
 
 ## 当前目标
 
