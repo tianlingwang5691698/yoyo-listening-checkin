@@ -779,7 +779,7 @@ test('语法课堂按体系分层并逐层返回', () => {
   assert.ok(page.data.ui.domainMaps.clauses.some((item) => item.id === 'reported-speech' && item.ready && /21/.test(item.status)));
   assert.ok(page.data.ui.domainMaps.discourse.some((item) => item.id === 'cohesion-reference' && item.ready && /22/.test(item.status)));
   assert.ok(page.data.ui.domainMaps.discourse.some((item) => item.id === 'information-order' && item.ready && /22/.test(item.status)));
-  assert.ok(page.data.ui.domainMaps.discourse.some((item) => item.id === 'punctuation' && item.ready && /20/.test(item.status)));
+  assert.ok(page.data.ui.domainMaps.discourse.some((item) => item.id === 'punctuation' && item.ready && /21/.test(item.status)));
   assert.ok(page.data.ui.domainMaps.discourse.some((item) => item.id === 'common-expression' && item.ready && /20/.test(item.status)));
   assert.match(source, /handleTopBack\(\)[\s\S]*screen === 'lesson'[\s\S]*screen === 'course-map'[\s\S]*screen === 'directory'[\s\S]*screen === 'domain-map'/);
   const wxml = fs.readFileSync(path.join(__dirname, '../grammar-package/pages/classroom/index.wxml'), 'utf8');
@@ -1058,8 +1058,8 @@ test('表达与标点课程完整覆盖衔接、信息顺序、书写规范和�
     },
     {
       build: sourcePunctuationCourses.buildPunctuationCourse,
-      count: 20, groups: [16, 4], sections: [3, 5, 3, 3, 2, 3, 1], total: 60,
-      required: ['terminal-marks','fragments','run-ons-comma-splices','comma-coordination','comma-adverbial','comma-nonrestrictive','comma-apposition-parenthetical','comma-lists','semicolon','colon','dash-parentheses','apostrophe-possession','apostrophe-contractions','quotation-punctuation','hyphens','capitalization-basics','capitalization-dates-titles','numbers-abbreviations','quote-style-boundary','integrated-proofreading']
+      count: 21, groups: [17, 4], sections: [4, 5, 3, 3, 2, 3, 1], total: 63,
+      required: ['punctuation-capitalization-essence','terminal-marks','fragments','run-ons-comma-splices','comma-coordination','comma-adverbial','comma-nonrestrictive','comma-apposition-parenthetical','comma-lists','semicolon','colon','dash-parentheses','apostrophe-possession','apostrophe-contractions','quotation-punctuation','hyphens','capitalization-basics','capitalization-dates-titles','numbers-abbreviations','quote-style-boundary','integrated-proofreading']
     },
     {
       build: sourceCommonExpressionCourses.buildCommonExpressionCourse,
@@ -1076,7 +1076,7 @@ test('表达与标点课程完整覆盖衔接、信息顺序、书写规范和�
     assert.equal(bundle.course.reduce((sum, lesson) => sum + lesson.rules.length, 0), spec.total);
     assert.equal(bundle.course.reduce((sum, lesson) => sum + lesson.examples.length, 0), spec.total);
     assert.equal(bundle.course.reduce((sum, lesson) => sum + lesson.questions.length, 0), spec.total);
-    if (spec.build === sourceCohesionReferenceCourses.buildCohesionReferenceCourse || spec.build === sourceInformationOrderCourses.buildInformationOrderCourse) {
+    if (spec.build === sourceCohesionReferenceCourses.buildCohesionReferenceCourse || spec.build === sourceInformationOrderCourses.buildInformationOrderCourse || spec.build === sourcePunctuationCourses.buildPunctuationCourse) {
       assert.match(bundle.course[0].title, english ? /Definition.*core/ : /定义.*本质/);
       assert.deepEqual(bundle.sections.flatMap((section) => section.lessonIds), bundle.course.map((lesson) => lesson.id));
       bundle.course.forEach((lesson) => {
@@ -1108,6 +1108,10 @@ test('表达与标点课程完整覆盖衔接、信息顺序、书写规范和�
   const informationOrder = sourceInformationOrderCourses.buildInformationOrderCourse(false);
   const conditionalInversion = informationOrder.course.find((lesson) => lesson.id === 'inversion-focus').analyses.flat();
   ['auxiliary','subject','predicate'].forEach((role) => assert.ok(conditionalInversion.some((part) => part.role === role)));
+  const punctuation = sourcePunctuationCourses.buildPunctuationCourse(false);
+  assert.ok(punctuation.course[0].rules.some((rule) => /句子边界、分句关系和信息层级/.test(rule)));
+  assert.ok(punctuation.course.find((lesson) => lesson.id === 'quote-style-boundary').rules.some((rule) => /英式|美式/.test(rule)));
+  assert.ok(punctuation.course.every((lesson) => lesson.title.indexOf('擇号') < 0 && lesson.rules.every((rule) => rule.indexOf('擇号') < 0)));
   const wxss = fs.readFileSync(path.join(__dirname, '../grammar-package/pages/classroom/index.wxss'), 'utf8');
   ['reference','forward','given','new','connector','ellipsis','keyword','lexical','substitute','topic'].forEach((role) => assert.match(wxss, new RegExp(`role-${role}`)));
 });
