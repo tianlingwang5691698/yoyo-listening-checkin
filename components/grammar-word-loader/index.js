@@ -1,4 +1,4 @@
-const wordCourses = require('../../data/grammar-classroom/word-courses');
+const wordCourses = require('../../domain/grammar-classroom/word-courses');
 
 Component({
   properties: {

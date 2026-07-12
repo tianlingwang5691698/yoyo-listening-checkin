@@ -3,7 +3,7 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
 const vm = require('node:vm');
-const wordCourses = require('../data/grammar-classroom/word-courses');
+const wordCourses = require('../domain/grammar-classroom/word-courses');
 
 function loadBuilders(language = 'zh-CN') {
   const source = fs.readFileSync('pages/grammar/index.js', 'utf8');
@@ -33,7 +33,10 @@ test('语法课堂首屏不构建完整课程，点击后按专题加载', () =>
   assert.doesNotMatch(grammarPage, /require\('\.\.\/\.\.\/data\/grammar-classroom\/word-courses'\)/);
   assert.match(grammarPage, /onWordCourseLoaded/);
   const loader = fs.readFileSync(path.join(__dirname, '../components/grammar-word-loader/index.js'), 'utf8');
-  assert.match(loader, /^const wordCourses = require\('\.\.\/\.\.\/data\/grammar-classroom\/word-courses'\)/);
+  assert.match(loader, /^const wordCourses = require\('\.\.\/\.\.\/domain\/grammar-classroom\/word-courses'\)/);
+  const projectConfig = JSON.parse(fs.readFileSync(path.join(__dirname, '../project.config.json'), 'utf8'));
+  const ignoredFolders = (projectConfig.packOptions && projectConfig.packOptions.ignore || []).filter((item) => item.type === 'folder').map((item) => item.value);
+  assert.ok(!ignoredFolders.some((folder) => 'domain/grammar-classroom'.startsWith(folder)));
   assert.match(loader, /lifetimes:[\s\S]*ready\(\)[\s\S]*loadWordCourse/);
   const appConfig = JSON.parse(fs.readFileSync(path.join(__dirname, '../app.json'), 'utf8'));
   assert.equal(appConfig.lazyCodeLoading, 'requiredComponents');
