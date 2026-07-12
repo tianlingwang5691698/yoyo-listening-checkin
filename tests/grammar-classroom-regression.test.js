@@ -66,9 +66,7 @@ test('语法课堂首屏不构建完整课程，点击后按专题加载', () =>
     assert.match(source, /^const courses = require\('\.\.\/\.\.\/domain\/grammar-classroom\//);
   });
   const vnaLoader = fs.readFileSync(path.join(__dirname, '../grammar-package/components/grammar-vna-loader/index.js'), 'utf8');
-  const thirdPersonLoader = fs.readFileSync(path.join(__dirname, '../grammar-package/components/grammar-third-person-loader/index.js'), 'utf8');
   assert.doesNotMatch(vnaLoader, /third-person-course/);
-  assert.match(thirdPersonLoader, /third-person-course/);
   const grammarConfig = JSON.parse(fs.readFileSync(path.join(__dirname, '../grammar-package/pages/classroom/index.json'), 'utf8'));
   Object.values(grammarConfig.usingComponents).forEach((request) => {
     const base = path.resolve(__dirname, '../grammar-package/pages/classroom', request);
@@ -84,7 +82,7 @@ test('语法课堂首屏不构建完整课程，点击后按专题加载', () =>
 });
 
 test('课程可读源文件与打包运行时文件保持一致', () => {
-  const files = ['word-courses', 'word-formation-courses', 'verb-numeral-article-courses', 'adjective-adverb-courses', 'preposition-conjunction-interjection-courses', 'third-person-course'];
+  const files = ['word-courses', 'word-formation-courses', 'verb-numeral-article-courses', 'adjective-adverb-courses', 'preposition-conjunction-interjection-courses'];
   files.forEach((file) => {
     const source = require(`../data/grammar-classroom/course-sources/${file}`);
     const runtime = require(`../grammar-package/domain/grammar-classroom/${file}`);
@@ -133,9 +131,9 @@ test('十大词性课程中英文内容、练习和两套主题完整', () => {
   assert.match(wxml, /theme-\{\{theme\}\}/);
   assert.match(wxml, /language-\{\{language\}\}/);
   assert.match(wxss, /theme-library/);
-  assert.match(wxml, /selectThirdPersonCourse/);
+  assert.doesNotMatch(wxml, /selectThirdPersonCourse|9 节专项课|9 lessons/);
   assert.doesNotMatch(classroomPage, /screen:\s*'verb-map'/);
-  assert.match(classroomPage, /selectedTopic === 'third-person'\) return this\.loadCourse\('verb'\)/);
+  assert.doesNotMatch(classroomPage, /third-person|thirdPerson|selectThirdPerson/);
   assert.match(classroomPage, /this\.fullCourse = course/);
   assert.match(classroomPage, /course: courseSummaries/);
   ['subject', 'predicate', 'object', 'attribute', 'adverbial', 'auxiliary', 'modal', 'conjunction', 'preposition', 'complement', 'interjection'].forEach((role) => assert.match(wxss, new RegExp(`role-${role}`)));
@@ -159,15 +157,19 @@ test('动词完整课程覆盖中学核心与进阶知识边界', () => {
     assert.equal(new Set(ids).size, ids.length);
     assert.deepEqual(bundle.groups.flatMap((group) => group.lessons.map((lesson) => lesson.id)), ids);
     assert.deepEqual(bundle.course.map((lesson) => lesson.no), bundle.course.map((_, index) => String(index + 1).padStart(2, '0')));
-    assert.ok(bundle.course.reduce((sum, lesson) => sum + lesson.rules.length, 0) >= 99);
-    assert.ok(bundle.course.reduce((sum, lesson) => sum + lesson.examples.length, 0) >= 109);
-    assert.ok(bundle.course.reduce((sum, lesson) => sum + lesson.questions.length, 0) >= 109);
+    assert.ok(bundle.course.reduce((sum, lesson) => sum + lesson.rules.length, 0) >= 106);
+    assert.ok(bundle.course.reduce((sum, lesson) => sum + lesson.examples.length, 0) >= 116);
+    assert.ok(bundle.course.reduce((sum, lesson) => sum + lesson.questions.length, 0) >= 116);
     const summaries = bundle.course.map(({ id, no, level, title, meta }) => ({ id, no, level, title, meta }));
     assert.ok(Buffer.byteLength(JSON.stringify(summaries)) < 12000);
   });
   const classroomPage = fs.readFileSync(path.join(__dirname, '../grammar-package/pages/classroom/index.js'), 'utf8');
   assert.match(classroomPage, /\['verb', 'Verbs',[^\n]+, 36\]/);
   assert.match(classroomPage, /\['verb', '动词',[^\n]+, 36\]/);
+  const thirdPersonLesson = sourceVnaCourses.buildVerbCourse(false).course.find((lesson) => lesson.id === 'third-person-form');
+  assert.ok(thirdPersonLesson.rules.some((rule) => rule.includes('/s/')));
+  assert.ok(thirdPersonLesson.rules.some((rule) => rule.includes('/z/')));
+  assert.ok(thirdPersonLesson.rules.some((rule) => rule.includes('/ɪz/')));
 });
 
 test('语法课堂按体系分层并逐层返回', () => {

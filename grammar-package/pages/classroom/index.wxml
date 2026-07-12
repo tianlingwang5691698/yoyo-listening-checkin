@@ -2,7 +2,6 @@
   <grammar-word-loader wx:if="{{loaderKind === 'word'}}" topic="{{selectedTopic}}" language="{{language}}" bindloaded="onCourseLoaded" bindloaderror="onCourseLoadError" />
   <grammar-word-formation-loader wx:if="{{loaderKind === 'word-formation'}}" topic="{{selectedTopic}}" language="{{language}}" bindloaded="onCourseLoaded" bindloaderror="onCourseLoadError" />
   <grammar-vna-loader wx:if="{{loaderKind === 'vna'}}" topic="{{selectedTopic}}" language="{{language}}" bindloaded="onCourseLoaded" bindloaderror="onCourseLoadError" />
-  <grammar-third-person-loader wx:if="{{loaderKind === 'third-person'}}" topic="{{selectedTopic}}" language="{{language}}" bindloaded="onCourseLoaded" bindloaderror="onCourseLoadError" />
   <grammar-modifier-loader wx:if="{{loaderKind === 'modifier'}}" topic="{{selectedTopic}}" language="{{language}}" bindloaded="onCourseLoaded" bindloaderror="onCourseLoadError" />
   <grammar-relation-loader wx:if="{{loaderKind === 'relation'}}" topic="{{selectedTopic}}" language="{{language}}" bindloaded="onCourseLoaded" bindloaderror="onCourseLoadError" />
 
@@ -77,17 +76,9 @@
     </view>
 
     <view class="content-card" wx:elif="{{screen === 'course-map'}}">
-      <view class="inline-back" bindtap="backFromCourseMap">{{selectedTopic === 'third-person' ? ui.backVerbCourse : ui.backDirectory}}</view>
+      <view class="inline-back" bindtap="backFromCourseMap">{{ui.backDirectory}}</view>
       <view class="section-kicker">{{courseTitle}}</view>
       <view class="section-title">{{courseCopy}}</view>
-      <view class="verb-map-item" wx:if="{{selectedTopic === 'verb'}}" bindtap="selectThirdPersonCourse">
-        <view class="verb-map-code">3S</view>
-        <view class="topic-main">
-          <view class="topic-title">{{ui.thirdPerson}}</view>
-          <view class="topic-meta">{{ui.thirdPersonCopy}} · {{language === 'en' ? '9 lessons' : '9 节专项课'}}</view>
-        </view>
-        <view class="row-arrow">›</view>
-      </view>
       <view class="course-group" wx:for="{{groups}}" wx:key="id" wx:for-item="group">
         <view class="course-group-title">{{group.title}}</view>
         <view class="course-group-copy">{{group.copy}}</view>

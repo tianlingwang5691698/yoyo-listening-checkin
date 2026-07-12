@@ -102,8 +102,6 @@ function uiText(english) {
     verbMapCopy: english ? 'First see the whole verb system, then enter its course map.' : '先看动词完整体系，再进入课程地图。',
     completeVerb: english ? 'Complete verb course' : '动词完整课程',
     completeVerbCopy: english ? 'Meaning, objects, forms, tense, voice and non-finite verbs' : '作用、宾语、形式、时态、语态与非谓语',
-    thirdPerson: english ? 'Third-person singular' : '第三人称单数',
-    thirdPersonCopy: english ? 'Subjects, spelling, negatives, questions and pronunciation' : '主语判断、拼写、否定、疑问与发音',
     core: english ? 'Core rules' : '语法本质',
     back: english ? 'Back' : '返回',
     backSystem: english ? '‹ Grammar System' : '‹ 语法体系',
@@ -126,7 +124,6 @@ function uiText(english) {
 function loaderFor(topic) {
   if (topic === 'noun' || topic === 'pronoun') return 'word';
   if (topic === 'word-formation') return 'word-formation';
-  if (topic === 'third-person') return 'third-person';
   if (topic === 'verb' || topic === 'numeral' || topic === 'article') return 'vna';
   if (topic === 'adjective' || topic === 'adverb') return 'modifier';
   return 'relation';
@@ -231,10 +228,6 @@ Page({
 
   selectVerbCourse() {
     this.loadCourse('verb');
-  },
-
-  selectThirdPersonCourse() {
-    this.loadCourse('third-person');
   },
 
   loadCourse(topic) {
@@ -359,7 +352,6 @@ Page({
   },
 
   backFromCourseMap() {
-    if (this.data.selectedTopic === 'third-person') return this.loadCourse('verb');
     if (this.data.selectedTopic === 'word-formation') return this.backToDomainMap();
     this.backToDirectory();
   },
