@@ -20,7 +20,7 @@
     </block>
     <block wx:else>
       <view class="classroom-back" bindtap="back">‹ {{ui.back}}</view>
-      <view class="classroom-step">{{lesson.no}} / {{course.length}}</view>
+      <view class="classroom-step">{{lesson.no}} / {{courseCount}}</view>
       <view class="classroom-title">{{lesson.title}}</view>
       <view class="classroom-copy">{{lesson.meta}}</view>
       <view class="sentence-analysis-list" wx:if="{{lesson.analyses && lesson.analyses.length}}">
@@ -44,7 +44,7 @@
       <view class="classroom-question">{{question.question}}</view>
       <view class="classroom-options"><view class="classroom-option {{answer && option.key === question.answer ? 'is-correct' : ''}} {{answer === option.key && result === 'wrong' ? 'is-wrong' : ''}}" wx:for="{{question.options}}" wx:key="key" wx:for-item="option" data-answer="{{option.key}}" bindtap="choose">{{option.key}} · {{option.text}}</view></view>
       <view class="classroom-feedback {{result}}" wx:if="{{result}}"><view>{{result === 'correct' ? question.correct : question.wrong}}</view><view class="classroom-retry" wx:if="{{result === 'wrong'}}" bindtap="retry">{{ui.retry}}</view></view>
-      <view class="classroom-footer-actions"><view class="classroom-footer-button is-back" bindtap="back">{{ui.back}}</view><view class="classroom-footer-button is-next {{result === 'correct' ? '' : 'is-disabled'}}" bindtap="next">{{result === 'correct' ? (questionIndex < lesson.questions.length - 1 ? ui.nextQuestion : (lessonIndex < course.length - 1 ? ui.nextLesson : ui.finish)) : ui.answer}}</view></view>
+      <view class="classroom-footer-actions"><view class="classroom-footer-button is-back" bindtap="back">{{ui.back}}</view><view class="classroom-footer-button is-next {{result === 'correct' ? '' : 'is-disabled'}}" bindtap="next">{{result === 'correct' ? (questionIndex < lesson.questions.length - 1 ? ui.nextQuestion : (lessonIndex < courseCount - 1 ? ui.nextLesson : ui.finish)) : ui.answer}}</view></view>
     </block>
   </view>
 </view>

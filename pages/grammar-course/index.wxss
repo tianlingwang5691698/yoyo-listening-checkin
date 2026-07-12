@@ -1,6 +1,7 @@
 @import "../grammar/index.wxss";
 
-.grammar-course-page { min-height: 100vh; padding: 30rpx 28rpx 70rpx; box-sizing: border-box; }
+.grammar-course-page { --grammar-blue: #17314f; --grammar-muted: #607087; --grammar-soft: #728196; --grammar-line: rgba(141, 183, 212, 0.26); --grammar-line-strong: rgba(141, 183, 212, 0.44); --grammar-sage: #86aaa1; --grammar-sage-soft: rgba(134, 170, 161, 0.16); min-height: 100vh; padding: 30rpx 28rpx 70rpx; box-sizing: border-box; background: linear-gradient(180deg, #f6fbfd, #edf6fa 55%, #f8fbfc); color: var(--grammar-blue); }
 .course-shell { padding: 30rpx; }
+.theme-warm .course-shell { border: 1rpx solid rgba(255,255,255,.82); border-radius: 28rpx; background: rgba(255,255,255,.82); box-shadow: 0 22rpx 56rpx rgba(88,124,148,.14); }
 .theme-library.grammar-course-page { background: #eee5d6; }
 .theme-library .course-shell { border: 1rpx solid var(--library-grammar-rule); border-radius: var(--library-grammar-radius); background: linear-gradient(180deg, var(--library-grammar-paper-light), var(--library-grammar-paper)); box-shadow: var(--library-grammar-shadow); }

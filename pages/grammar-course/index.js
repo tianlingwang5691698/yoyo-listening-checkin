@@ -9,7 +9,7 @@ function labels() {
 
 Page({
   data: page.createCloudPageData({
-    topic: '', title: '', copy: '', groups: [], course: [], lesson: null,
+    topic: '', title: '', copy: '', groups: [], courseCount: 0, lesson: null,
     lessonIndex: -1, question: null, questionIndex: 0, answer: '', result: '', ui: labels(), courseDebug: ''
   }),
   onLoad(options) {
@@ -19,7 +19,14 @@ Page({
       const bundle = topic === 'pronoun'
         ? wordCourses.buildPronounCourse(i18n.getLanguage() === 'en')
         : wordCourses.buildNounCourse(i18n.getLanguage() === 'en');
-      this.setData({ topic, title: bundle.title, copy: bundle.copy, groups: bundle.groups, course: bundle.course });
+      this.course = bundle.course;
+      const groups = bundle.groups.map((group) => ({
+        id: group.id,
+        title: group.title,
+        copy: group.copy,
+        lessons: group.lessons.map(({ id, no, title, meta }) => ({ id, no, title, meta }))
+      }));
+      this.setData({ topic, title: bundle.title, copy: bundle.copy, groups, courseCount: bundle.course.length });
       wx.setNavigationBarTitle({ title: bundle.title.replace(/\s*·.*$/, '') });
       wx.nextTick(() => this.coursePerf.ready('pageReady', { source: 'local-course', cacheHit: true, topic, lessons: bundle.course.length }));
     } catch (error) {
@@ -29,12 +36,16 @@ Page({
       wx.nextTick(() => this.coursePerf.ready('pageReady', { source: 'local-course-error', cacheHit: false, topic, lessons: 0 }));
     }
   },
-  onShow() { page.syncTheme(this); },
+  onShow() {
+    page.syncTheme(this);
+    if (this.data.title) wx.setNavigationBarTitle({ title: this.data.title.replace(/\s*·.*$/, '') });
+  },
   openLesson(event) {
     const startedAt = Date.now();
     const id = event.currentTarget.dataset.id;
-    const index = this.data.course.findIndex((item) => item.id === id);
-    const lesson = this.data.course[index];
+    const course = this.course || [];
+    const index = course.findIndex((item) => item.id === id);
+    const lesson = course[index];
     if (!lesson) return;
     this.setData({ lesson, lessonIndex: index, question: lesson.questions[0], questionIndex: 0, answer: '', result: '' });
     if (this.coursePerf) this.coursePerf.mark('actionMs', { action: 'openLesson', topic: this.data.topic, lessonId: id, actionDurationMs: Date.now() - startedAt });
@@ -57,9 +68,10 @@ Page({
       this.setData({ questionIndex, question: this.data.lesson.questions[questionIndex], answer: '', result: '' });
       return;
     }
-    if (this.data.lessonIndex >= this.data.course.length - 1) { this.back(); return; }
+    const course = this.course || [];
+    if (this.data.lessonIndex >= course.length - 1) { this.back(); return; }
     const lessonIndex = this.data.lessonIndex + 1;
-    const lesson = this.data.course[lessonIndex];
+    const lesson = course[lessonIndex];
     this.setData({ lessonIndex, lesson, questionIndex: 0, question: lesson.questions[0], answer: '', result: '' });
     wx.pageScrollTo({ scrollTop: 0, duration: 200 });
   }

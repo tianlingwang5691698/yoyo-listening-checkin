@@ -34,6 +34,8 @@ test('语法课堂首屏不构建完整课程，点击后按专题加载', () =>
   assert.match(coursePage, /\.ready\('pageReady'/);
   assert.match(coursePage, /\.mark\('actionMs'/);
   assert.match(coursePage, /courseDebug/);
+  assert.doesNotMatch(coursePage, /setData\([^)]*course:\s*bundle\.course/);
+  assert.match(coursePage, /group\.lessons\.map/);
 });
 
 test('名词与代词课程中英文内容、练习和两套主题完整', () => {
