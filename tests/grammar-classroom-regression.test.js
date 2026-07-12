@@ -777,8 +777,8 @@ test('语法课堂按体系分层并逐层返回', () => {
   assert.ok(page.data.ui.domainMaps.clauses.some((item) => item.id === 'relative-clauses' && item.ready && /21/.test(item.status)));
   assert.ok(page.data.ui.domainMaps.clauses.some((item) => item.id === 'adverbial-clauses' && item.ready && /20/.test(item.status)));
   assert.ok(page.data.ui.domainMaps.clauses.some((item) => item.id === 'reported-speech' && item.ready && /21/.test(item.status)));
-  assert.ok(page.data.ui.domainMaps.discourse.some((item) => item.id === 'cohesion-reference' && item.ready && /21/.test(item.status)));
-  assert.ok(page.data.ui.domainMaps.discourse.some((item) => item.id === 'information-order' && item.ready && /20/.test(item.status)));
+  assert.ok(page.data.ui.domainMaps.discourse.some((item) => item.id === 'cohesion-reference' && item.ready && /22/.test(item.status)));
+  assert.ok(page.data.ui.domainMaps.discourse.some((item) => item.id === 'information-order' && item.ready && /22/.test(item.status)));
   assert.ok(page.data.ui.domainMaps.discourse.some((item) => item.id === 'punctuation' && item.ready && /20/.test(item.status)));
   assert.ok(page.data.ui.domainMaps.discourse.some((item) => item.id === 'common-expression' && item.ready && /20/.test(item.status)));
   assert.match(source, /handleTopBack\(\)[\s\S]*screen === 'lesson'[\s\S]*screen === 'course-map'[\s\S]*screen === 'directory'[\s\S]*screen === 'domain-map'/);
@@ -1048,13 +1048,13 @@ test('表达与标点课程完整覆盖衔接、信息顺序、书写规范和�
   const specs = [
     {
       build: sourceCohesionReferenceCourses.buildCohesionReferenceCourse,
-      count: 21, groups: [16, 5], sections: [6, 2, 4, 2, 4, 2, 1], total: 63,
-      required: ['personal-reference-chain','possessive-reference','forward-reference','reference-agreement','reference-clarity','discourse-this-that','these-those-reference','one-ones-substitution','do-substitution','so-not-substitution','ellipsis-substitution-boundary','keyword-repetition','lexical-relations','basic-logical-connectors','conjunctive-adverb-punctuation','sequence-connectors','example-summary-connectors','articles-given-new','paragraph-topic-chain','reference-distance','cohesion-integration']
+      count: 22, groups: [19, 3], sections: [7, 2, 4, 2, 4, 2, 1], total: 66,
+      required: ['cohesion-reference-essence','personal-reference-chain','possessive-reference','forward-reference','reference-agreement','reference-clarity','discourse-this-that','these-those-reference','one-ones-substitution','do-substitution','so-not-substitution','ellipsis-substitution-boundary','keyword-repetition','lexical-relations','basic-logical-connectors','conjunctive-adverb-punctuation','sequence-connectors','example-summary-connectors','articles-given-new','paragraph-topic-chain','reference-distance','cohesion-integration']
     },
     {
       build: sourceInformationOrderCourses.buildInformationOrderCourse,
-      count: 20, groups: [14, 6], sections: [3, 3, 4, 2, 3, 2, 3], total: 63,
-      required: ['skeleton-vs-topic','given-new-flow','end-weight-short-long','dummy-subject','dummy-object','existential-new-information','basic-adverbial-position','frequency-adverbs','multiple-adverbials','modifier-order','double-object-order','passive-focus','fronting-boundary','inversion-focus','cleft-focus','focus-particles','negation-scope','paragraph-progression','avoid-chinglish','information-rewrite']
+      count: 22, groups: [17, 5], sections: [4, 3, 4, 2, 3, 3, 3], total: 70,
+      required: ['information-order-essence','skeleton-vs-topic','given-new-flow','end-weight-short-long','dummy-subject','dummy-object','existential-new-information','basic-adverbial-position','frequency-adverbs','multiple-adverbials','modifier-order','double-object-order','passive-focus','fronting-boundary','inversion-focus','cleft-focus','focus-particles','negation-scope','scope-ambiguity','paragraph-progression','avoid-chinglish','information-rewrite']
     },
     {
       build: sourcePunctuationCourses.buildPunctuationCourse,
@@ -1076,6 +1076,22 @@ test('表达与标点课程完整覆盖衔接、信息顺序、书写规范和�
     assert.equal(bundle.course.reduce((sum, lesson) => sum + lesson.rules.length, 0), spec.total);
     assert.equal(bundle.course.reduce((sum, lesson) => sum + lesson.examples.length, 0), spec.total);
     assert.equal(bundle.course.reduce((sum, lesson) => sum + lesson.questions.length, 0), spec.total);
+    if (spec.build === sourceCohesionReferenceCourses.buildCohesionReferenceCourse || spec.build === sourceInformationOrderCourses.buildInformationOrderCourse) {
+      assert.match(bundle.course[0].title, english ? /Definition.*core/ : /定义.*本质/);
+      assert.deepEqual(bundle.sections.flatMap((section) => section.lessonIds), bundle.course.map((lesson) => lesson.id));
+      bundle.course.forEach((lesson) => {
+        assert.equal(lesson.analyses.length, lesson.examples.length);
+        assert.equal(lesson.exampleNotes.length, lesson.examples.length);
+        assert.ok(lesson.exampleNotes.every((note) => note.visible && (note.body || note.detail)));
+        assert.equal(lesson.ruleCoverage.length, lesson.rules.length);
+        lesson.ruleCoverage.forEach((coverage) => {
+          assert.ok(coverage.exampleIndexes.length && coverage.questionIndexes.length);
+          coverage.exampleIndexes.forEach((index) => assert.ok(index >= 0 && index < lesson.examples.length));
+          coverage.questionIndexes.forEach((index) => assert.ok(index >= 0 && index < lesson.questions.length));
+        });
+      });
+      assert.deepEqual(new Set(bundle.course.flatMap((lesson) => lesson.questions.map((question) => question.answer))), new Set(['A','B']));
+    }
     bundle.course.forEach((lesson) => lesson.questions.forEach((question) => {
       assert.ok(question.options.some((option) => option.key === question.answer));
       if (english) {
@@ -1084,6 +1100,14 @@ test('表达与标点课程完整覆盖衔接、信息顺序、书写规范和�
       }
     }));
   }));
+  const cohesion = sourceCohesionReferenceCourses.buildCohesionReferenceCourse(false);
+  cohesion.course.forEach((lesson) => lesson.analyses.forEach((analysis) => {
+    assert.ok(analysis.some((part) => part.role === 'subject'));
+    assert.ok(analysis.some((part) => part.role === 'predicate'));
+  }));
+  const informationOrder = sourceInformationOrderCourses.buildInformationOrderCourse(false);
+  const conditionalInversion = informationOrder.course.find((lesson) => lesson.id === 'inversion-focus').analyses.flat();
+  ['auxiliary','subject','predicate'].forEach((role) => assert.ok(conditionalInversion.some((part) => part.role === role)));
   const wxss = fs.readFileSync(path.join(__dirname, '../grammar-package/pages/classroom/index.wxss'), 'utf8');
   ['reference','forward','given','new','connector','ellipsis','keyword','lexical','substitute','topic'].forEach((role) => assert.match(wxss, new RegExp(`role-${role}`)));
 });
