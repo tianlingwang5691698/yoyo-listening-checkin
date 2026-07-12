@@ -282,12 +282,10 @@ Page({
         levelText: [coreCount ? `${this.data.ui.coreLevel} ${coreCount}` : '', advancedCount ? `${this.data.ui.advancedLevel} ${advancedCount}` : ''].filter(Boolean).join(' · ')
       };
     });
-    const hasSectionMap = course.length >= 12 && sections.length > 1;
-    const groups = course.length <= 5
-      ? [{ id: 'course', title: '', copy: '', lessons: courseSummaries }]
-      : sections.length
-        ? sections.map((section) => ({ id: section.id, title: section.title, copy: section.copy, lessons: section.lessonIds.map((id) => summaryById[id]).filter(Boolean) }))
-        : [{ id: 'course', title: '', copy: '', lessons: courseSummaries }];
+    const hasSectionMap = sections.length > 1;
+    const groups = sections.length
+      ? sections.map((section) => ({ id: section.id, title: section.title, copy: section.copy, lessons: section.lessonIds.map((id) => summaryById[id]).filter(Boolean) }))
+      : [{ id: 'course', title: '', copy: '', lessons: courseSummaries }];
     this.courseSummaries = courseSummaries;
     this.courseSummaryById = summaryById;
     this.courseSections = sections;

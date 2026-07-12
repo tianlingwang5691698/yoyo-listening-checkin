@@ -212,13 +212,16 @@ test('课程按知识关系分层且核心进阶只作为难度标签', () => {
   assert.equal(sourceWordFormationCourses.buildWordFormationCourse(false).sections.length, 5);
   const page = fs.readFileSync(path.join(__dirname, '../grammar-package/pages/classroom/index.js'), 'utf8');
   const wxml = fs.readFileSync(path.join(__dirname, '../grammar-package/pages/classroom/index.wxml'), 'utf8');
-  assert.match(page, /course\.length >= 12 && sections\.length > 1/);
-  assert.match(page, /course\.length <= 5/);
+  assert.match(page, /const hasSectionMap = sections\.length > 1/);
+  assert.doesNotMatch(page, /course\.length <= 5/);
   assert.match(wxml, /screen === 'section-map'/);
   assert.match(wxml, /bindtap="openSection"/);
   assert.match(wxml, /bindtap="backFromSectionMap"/);
   assert.match(wxml, /level-\{\{lesson\.level\}\}/);
   assert.match(wxml, /\{\{lessonPosition\}\} \/ \{\{course\.length\}\}/);
+  const verbTenseSection = sourceVnaCourses.buildVerbCourse(false).sections.find((section) => section.id === 'tense-aspect');
+  assert.equal(verbTenseSection.title, '动作的时间与状态');
+  assert.match(verbTenseSection.copy, /时态看.+时间.+体看.+状态/);
 });
 
 test('构词法课程系统覆盖且逐条闭环', () => {
