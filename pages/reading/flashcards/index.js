@@ -2,6 +2,7 @@ const page = require('../../../utils/page');
 const store = require('../../../utils/store');
 const effects = require('../../../utils/effects');
 const i18n = require('../../../utils/i18n');
+const { formatVocabularyDefinitions, formatVocabularyMeaning } = require('../../../utils/vocabulary-definitions');
 
 const text = (key, fallback) => i18n.getPageText('flashcards', key, undefined, fallback);
 
@@ -128,12 +129,14 @@ function normalizeCard(item, index) {
   const displayText = item.text || item.word || item.phrase || item.pattern || '';
   const phoneticBody = getPhoneticBody(item.phonetic);
   const displayPhonetic = phoneticBody ? `/${phoneticBody}/` : '';
+  const isUnlockBook = /^dictionary-book-unlock-/.test(String(item.sourceId || ''));
   return Object.assign({}, item, {
     type,
     displayText,
     phonetic: formatPhonetic(item.phonetic),
     phoneticBody,
     displayPhonetic,
+    meaning: isUnlockBook ? formatVocabularyMeaning(item.meaning) : item.meaning,
     canSpeak: (type === 'word' || type === 'phrase') && canUseDictionaryVoice(item.word || item.phrase || displayText),
     typeLabel: TYPE_LABELS[type] || text('word', '生词'),
     index: index + 1
@@ -568,7 +571,7 @@ function buildBookCard(entry, book, index) {
     text: word,
     word,
     phonetic: entry.phonetic || '',
-    meaning: Array.isArray(entry.definitions) ? entry.definitions.join('；') : '',
+    meaning: formatVocabularyDefinitions(entry.definitions),
     example: entry.example || '',
     status: 'new',
     nextReviewDate: '',
