@@ -242,10 +242,11 @@ test('介词系统课程覆盖形式、语义关系、句法功能与易混结�
     requiredLessonIds.forEach((id) => assert.ok(ids.includes(id), `missing preposition lesson: ${id}`));
     assert.deepEqual(bundle.groups.map((group) => group.lessons.length), [20, 5]);
     assert.deepEqual(bundle.sections.map((section) => section.lessonCount), [4, 3, 5, 5, 4, 2, 2]);
-    assert.ok(bundle.course.reduce((sum, lesson) => sum + lesson.rules.length, 0) >= 81);
+    assert.equal(bundle.course.reduce((sum, lesson) => sum + lesson.rules.length, 0), 104);
     assert.ok(bundle.course.reduce((sum, lesson) => sum + lesson.examples.length, 0) >= 84);
     assert.ok(bundle.course.reduce((sum, lesson) => sum + lesson.questions.length, 0) >= 84);
     bundle.course.forEach((lesson) => {
+      assert.match(lesson.rules[0], english ? /^(In|Compare) / : /^(看|比较)/);
       assert.ok(lesson.rules.length > 0);
       assert.equal(lesson.ruleCoverage.length, lesson.rules.length);
       lesson.ruleCoverage.forEach((coverage) => {
@@ -260,6 +261,18 @@ test('介词系统课程覆盖形式、语义关系、句法功能与易混结�
   const page = fs.readFileSync(path.join(__dirname, '../grammar-package/pages/classroom/index.js'), 'utf8');
   assert.match(page, /\['preposition', 'Prepositions',[^\n]+, 25\]/);
   assert.match(page, /\['preposition', '介词',[^\n]+, 25\]/);
+  const zhEssence = sourceRelationCourses.buildPrepositionCourse(false).course.find((lesson) => lesson.id === 'prep-essence');
+  assert.deepEqual(zhEssence.exampleNotes.map((note) => note.visible), [true, false, true]);
+  assert.match(zhEssence.exampleNotes[2].body, /spoke.+her teacher/);
+  assert.ok(zhEssence.rules.length > 0);
+  assert.match(zhEssence.rules[0], /after.+met.+lunch/);
+  assert.ok(zhEssence.rules.some((rule) => rule.includes('参照对象')));
+  assert.ok(zhEssence.exampleNotes.filter((note) => note.visible).every((note) => note.title === ''));
+  assert.notEqual(zhEssence.hideRuleCard, true);
+  const enEssence = sourceRelationCourses.buildPrepositionCourse(true).course.find((lesson) => lesson.id === 'prep-essence');
+  assert.deepEqual(enEssence.exampleNotes.map((note) => note.visible), [true, false, true]);
+  const lessonTemplate = fs.readFileSync(path.join(__dirname, '../grammar-package/pages/classroom/index.wxml'), 'utf8');
+  assert.match(lessonTemplate, /wx:if="\{\{!activeLesson\.hideRuleCard\}\}"/);
 });
 
 test('语法课堂按体系分层并逐层返回', () => {

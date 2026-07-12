@@ -4,7 +4,7 @@ const part = (english, text, role, zh, en) => ({ text, role, label: pick(english
 const ex = (english, pieces, note) => ({
   text: pieces.map((x) => x[0]).join(' '),
   analysis: pieces.map((x) => part(english, x[0], x[1], x[2], x[3])),
-  note: note ? { visible: true, mode: note[0], title: pick(english, note[0] === 'translation' ? '语序翻译' : '规则观察', note[0] === 'translation' ? 'Word-order translation' : 'Rule focus'), body: pick(english, note[1], note[2]), detail: '' } : { visible: false, mode: '', title: '', body: '', detail: '' }
+  note: note ? { visible: true, mode: note[0], title: note.length > 3 ? pick(english, note[3], note[4]) : pick(english, note[0] === 'translation' ? '语序翻译' : '规则观察', note[0] === 'translation' ? 'Word-order translation' : 'Rule focus'), body: pick(english, note[1], note[2]), detail: '' } : { visible: false, mode: '', title: '', body: '', detail: '' }
 });
 const q = (english, zhPrompt, enPrompt, a, b, answer, zhWhy, enWhy) => ({
   question: pick(english, zhPrompt, enPrompt), options: [{ key: 'A', text: Array.isArray(a) ? pick(english, a[0], a[1]) : a }, { key: 'B', text: Array.isArray(b) ? pick(english, b[0], b[1]) : b }], answer,
@@ -60,10 +60,18 @@ function buildPrepositionCourse(english) {
     items.map((item) => [item[2], item[3]]),
     items.map((item) => Q(item[4], item[5], item[6], item[7], item[8], item[9], item[10])));
   const essence = F('prep-essence', '介词的定义与本质', 'Definition and core function', '用一个关系连接两个成分', 'Linking two elements through a relation', [
-    [[['The cup','subject','被说明对象','Entity being located'],['is','predicate','系动词','Linking verb'],['on','preposition','介词：表面关系','Preposition: surface relation'],['the table.','object','介词宾语：参照对象','Object: reference entity']], ['structure','on 不是单独等于“在……上”，而是建立 cup 与 table 的表面关系。','on does not merely equal one translation; it relates the cup to the table surface.'], '介词的本质是说明一个成分与介词宾语之间的关系。', 'A preposition expresses a relation between an element and its object.', 'on 在本句中建立什么关系？', 'What relation does on establish?', ['杯子与桌面的表面关系','A surface relation between the cup and table'], ['两个独立动作','Two separate actions'], 'A', 'on 把 cup 和 table 连接为表面位置关系。', 'on links cup and table in a surface relation.'],
-    [[['We','subject','主语','Subject'],['met','predicate','谓语动词','Predicate verb'],['after','preposition','介词：时间关系','Preposition: time relation'],['lunch.','object','介词宾语：时间参照','Object: time reference']], null, '介词宾语提供参照点，介词说明动作、事物或状态相对于该参照点的关系。', 'The object supplies a reference point, and the preposition locates an action, entity or state relative to it.', 'after lunch 中时间参照点是什么？', 'What is the time reference in “after lunch”?', 'lunch', 'after', 'A', 'lunch 是介词宾语和时间参照点。', 'lunch is the object and time reference.'],
-    [[['She','subject','主语','Subject'],['spoke','predicate','谓语动词','Predicate verb'],['with','preposition','介词：共同参与关系','Preposition: accompaniment relation'],['her teacher.','object','介词宾语','Object of preposition']], null, '同一个介词可能有多种具体译法，但应先判断它表达的关系类别。', 'A preposition may have several translations; identify its relation type first.', '选择介词时首先判断什么？', 'What should be identified first when choosing a preposition?', ['两个成分之间的关系','The relation between two elements'], ['最先想到的中文译法','The first Chinese translation that comes to mind'], 'A', '关系类别比孤立中文释义更可靠。', 'The relation type is more reliable than an isolated translation.']
+    [[['The cup','subject','被说明对象','Entity being located'],['is','predicate','系动词','Linking verb'],['on','preposition','介词：表面关系','Preposition: surface relation'],['the table.','object','介词宾语：参照对象','Object: reference entity']], ['structure','on 把 cup 和 the table 连起来：杯子接触桌面。','on does not merely equal one translation; it relates the cup to the table surface.','','Rule focus'], 'on 表示 cup 与 the table 的表面关系。', 'A preposition expresses a relation between an element and its object.', 'on 在本句中建立什么关系？', 'What relation does on establish?', ['杯子与桌面的表面关系','A surface relation between the cup and table'], ['两个独立动作','Two separate actions'], 'A', 'on 把 cup 和 table 连接为表面位置关系。', 'on links cup and table in a surface relation.'],
+    [[['We','subject','主语','Subject'],['met','predicate','谓语动词','Predicate verb'],['after','preposition','介词：时间关系','Preposition: time relation'],['lunch.','object','介词宾语：时间参照','Object: time reference']], null, 'after 表示 met 与 lunch 的时间先后关系。', 'The object supplies a reference point, and the preposition locates an action, entity or state relative to it.', 'after lunch 中时间参照点是什么？', 'What is the time reference in “after lunch”?', 'lunch', 'after', 'A', 'lunch 是介词宾语和时间参照点。', 'lunch is the object and time reference.'],
+    [[['She','subject','主语','Subject'],['spoke','predicate','谓语动词','Predicate verb'],['with','preposition','介词：共同参与关系','Preposition: accompaniment relation'],['her teacher.','object','介词宾语','Object of preposition']], ['structure','with 把 spoke 和 her teacher 连起来：老师参与了交谈。','with links spoke to her teacher: the teacher took part in the conversation.','',''], 'with 表示 spoke 与 her teacher 的共同参与关系。', 'A preposition may have several translations; identify its relation type first.', '选择介词时首先判断什么？', 'What should be identified first when choosing a preposition?', ['两个成分之间的关系','The relation between two elements'], ['最先想到的中文译法','The first Chinese translation that comes to mind'], 'A', '关系类别比孤立中文释义更可靠。', 'The relation type is more reliable than an isolated translation.']
   ]);
+  essence.rules = [
+    pick(english, '看 after：它连接 met 和 lunch，说明见面发生在午饭后。', 'In “We met after lunch,” after links the meeting to lunch and places it later in time.'),
+    pick(english, '由此可见，介词连接动作或事物与参照对象，说明它们之间的关系。', 'A preposition links an action or entity to a reference and expresses their relation.')
+  ];
+  essence.ruleCoverage = INCLUDE_RULE_COVERAGE ? [
+    { exampleIndexes: [1], questionIndexes: [1] },
+    { exampleIndexes: [0, 1, 2], questionIndexes: [0, 1, 2] }
+  ] : [];
   const adverbialFunctions = F('prep-adverbial-functions', '介词短语作状语', 'Prepositional phrases as adverbials', '修饰动作、状态或整句', 'Modifying an action, state or clause', [
     [[['We','subject','主语','Subject'],['will meet','predicate','谓语动词','Predicate verb'],['after class.','adverbial','时间状语','Time adverbial']], null, '介词短语说明动作发生时间时，整体作时间状语。', 'A prepositional phrase functions as a time adverbial when it locates the action in time.', 'after class 修饰什么？', 'What does after class modify?', ['will meet 的时间','The time of will meet'], ['主语 We 的种类','The type of subject We'], 'A', '它说明见面的时间。', 'It states when the meeting happens.'],
     [[['The children','subject','主语','Subject'],['played','predicate','谓语动词','Predicate verb'],['in the garden.','adverbial','地点状语','Place adverbial']], null, '介词短语说明动作发生地点时，整体作地点状语。', 'A prepositional phrase functions as a place adverbial when it locates the action in space.', 'in the garden 是什么成分？', 'What is in the garden?', ['地点状语','Place adverbial'], ['直接宾语','Direct object'], 'A', '它说明 played 的地点。', 'It states where the children played.'],
@@ -144,7 +152,7 @@ function buildPrepositionCourse(english) {
     [[['I','subject','主语','Subject'],['look forward','predicate','谓语动词','Predicate verb'],['to meeting you.','object','介词 to 及其动名词宾语','Prepositional to plus gerund object']], null, '介词 to 后接名词或动名词；不定式标记 to 后接动词原形。', 'Prepositional to takes a noun or gerund; infinitival to takes a base verb.', 'look forward to ___ you', 'look forward to ___ you', 'meet', 'meeting', 'B', '这里 to 是介词，后接动名词 meeting。', 'Here to is a preposition and takes the gerund meeting.'],
     [[['Please','adverbial','语气标记','Politeness marker'],['look up','predicate','短语动词','Phrasal verb'],['the word.','object','宾语','Object']], null, '短语动词中的 up 等常是小品词；有独立宾语并表达空间关系时才可能是介词。', 'Items such as up in a phrasal verb are particles; a preposition introduces its own object and relation.', 'look up the word 中 up 是什么？', 'What is up in “look up the word”?', ['短语动词小品词','a phrasal-verb particle'], ['带宾语的介词','a preposition with its object'], 'A', 'up 与 look 构成短语动词，the word 是 look up 的宾语。', 'up forms a phrasal verb with look; the word is the object of look up.']
   ]);
-  return grouped(english, [
+  const bundle = grouped(english, [
     essence,
     forms,
     lesson(english, 'prep-object', '介词和介词宾语', 'Prepositions and their objects', '介词不能单独完成关系', 'A preposition needs an object', [
@@ -230,6 +238,39 @@ function buildPrepositionCourse(english) {
     ['prep-collocation-system', '固定搭配与意义', 'Collocations and meaning', '整体记忆中心词与介词，并观察介词变化怎样改变搭配意义。', 'Learn heads with their prepositions and observe how a change of preposition changes meaning.', ['prep-collocation', 'prep-collocation-meaning']],
     ['prep-advanced-integration', '进阶结构与综合分析', 'Advanced structures and integration', '处理复杂介词宾语、介词后置，并用关系、边界、功能三步法综合判断。', 'Handle complex objects and stranded prepositions, then integrate relation, boundary and function.', ['prep-complex-objects', 'prep-integration']]
   ]);
+  const focuses = {
+    'prep-forms': [0, 0, '看 after lunch：after 是介词，lunch 是宾语，合在一起才构成完整介词短语。', 'In “after lunch,” after is the preposition and lunch is its object; together they form the full prepositional phrase.'],
+    'prep-object': [0, 0, '看 beside me：beside 负责建立位置关系，me 提供参照对象，所以代词要用宾格。', 'In “beside me,” beside sets up the place relation and me supplies the reference, so the pronoun uses object form.'],
+    'prep-form-contrast': [0, 0, '比较 before dinner 和 before we ate：后接名词短语时 before 是介词，后接完整分句时是连词。', 'Compare before dinner with before we ate: before is a preposition before a noun phrase and a conjunction before a full clause.'],
+    'prep-time': [0, 0, '看 at six：six 是一个明确时刻，at 把 starts 定位在这个时间点上。', 'In “The class starts at six,” at places the start at a precise time.'],
+    'prep-time-deadline': [0, 0, '看 by Friday：by 给 finish 划出最晚时间，意思是不迟于周五。', 'In “finish the work by Friday,” by sets the deadline: no later than Friday.'],
+    'prep-time-contrast': [0, 0, '看 in ten minutes：in 从现在开始向后计算，说明火车十分钟后开。', 'In “in ten minutes,” in counts forward from now and places the departure ten minutes later.'],
+    'prep-place': [3, 3, '看 on the table：on 把 cup 和 table 的表面联系起来，关键是接触。', 'In “on the table,” on relates the cup to the table surface; contact is the key idea.'],
+    'prep-relative-place': [0, 0, '看 between the school and the park：两个地点分别明确，所以用 between 表示两者之间。', 'In “between the school and the park,” the two places are distinct, so between marks the space separating them.'],
+    'prep-direction': [0, 0, '看 into the room：into 不只说明“在房间里”，还包含从外面进入里面的运动。', 'In “into the room,” into includes movement from outside to inside, not merely a position in the room.'],
+    'prep-movement-path': [0, 0, '看 along the river：along 把 walked 的路线贴着 river 延伸，表示沿河而行。', 'In “walked along the river,” along makes the river the line followed by the movement.'],
+    'prep-source-separation': [1, 1, '看 out of the cage：out of 以 cage 内部为起点，说明小鸟从里面飞到外面。', 'In “out of the cage,” out of uses the cage interior as the starting point and marks movement outside.'],
+    'prep-means': [1, 1, '看 with scissors：with 把 cut 和具体工具 scissors 联系起来，说明用什么完成动作。', 'In “with scissors,” with links cut to the actual instrument used to perform it.'],
+    'prep-medium-language': [2, 2, '看 in English：in 把 answered 和所用语言 English 联系起来，说明用英语作答。', 'In “in English,” in links answered to the language used for the answer.'],
+    'prep-cause-purpose': [0, 0, '看 because of the rain：because of 把 stopped 和原因 the rain 联系起来，后面接的是名词短语。', 'In “because of the rain,” because of links stopped to its reason and is followed by a noun phrase.'],
+    'prep-material-comparison': [0, 0, '看 made from wood：wood 变成纸后形态难以辨认，所以用 from 强调材料经过了变化。', 'In “made from wood,” from shows that the material has been transformed and is no longer readily recognizable.'],
+    'prep-topic-content': [1, 1, '看 a lecture on climate change：on climate change 放在 lecture 后，说明讲座的正式主题。', 'In “a lecture on climate change,” on climate change follows lecture and identifies its formal subject.'],
+    'prep-adverbial-functions': [0, 0, '看 after class：短语说明 will meet 发生在什么时候，所以整体作时间状语。', 'In “We will meet after class,” after class tells when the meeting happens, so the phrase is a time adverbial.'],
+    'prep-postmodifier': [0, 0, '看 the boy with a red cap：with a red cap 紧跟 boy，回答“哪个男孩”，所以作后置定语。', 'In “the boy with a red cap,” with a red cap follows boy and identifies which boy, so it is a postmodifier.'],
+    'prep-predicative': [0, 0, '看 The keys are on the desk：on the desk 位于系动词 are 后，直接说明 keys 的位置，所以作表语。', 'In “The keys are on the desk,” on the desk follows the linking verb are and locates the keys, so it is predicative.'],
+    'prep-complements': [0, 0, '看 depends on effort：depends 的意义需要 on effort 补完整，不能只把它看成可随意删除的地点信息。', 'In “depends on effort,” on effort is selected to complete the meaning of depends rather than add optional place information.'],
+    'prep-collocation': [0, 0, '看 listens to music：listen 选择 to，再由 to 引出 music；搭配要把 listen to 整体记住。', 'In “listens to music,” listen selects to and to introduces music, so learn listen to as a unit.'],
+    'prep-collocation-meaning': [0, 0, '看 agree with you：with 后接人，表示赞同某人；换成 on 或 to，搭配意义也会改变。', 'In “agree with you,” with introduces the person whose view is shared; on or to would create a different meaning.'],
+    'prep-complex-objects': [0, 0, '看 about what he said：what he said 整体作 about 的宾语，内部仍使用陈述语序。', 'In “about what he said,” the whole wh-clause is the object of about and keeps statement word order.'],
+    'prep-integration': [0, 0, '看 in the library：先把 in 和完整宾语 the library 划成一个介词短语，再判断它修饰 students。', 'In “in the library,” first group in with its full object the library, then identify that the phrase modifies students.']
+  };
+  bundle.course.forEach((item) => {
+    const focus = focuses[item.id];
+    if (!focus) return;
+    item.rules.unshift(pick(english, focus[2], focus[3]));
+    if (INCLUDE_RULE_COVERAGE) item.ruleCoverage.unshift({ exampleIndexes: [focus[0]], questionIndexes: [focus[1]] });
+  });
+  return bundle;
 }
 
 function buildConjunctionCourse(english) {

@@ -140,7 +140,7 @@
             </view>
           </view>
           <view class="sentence-note mode-{{activeLesson.exampleNotes[sentenceIndex].mode}}" wx:if="{{activeLesson.exampleNotes && activeLesson.exampleNotes[sentenceIndex] && activeLesson.exampleNotes[sentenceIndex].visible}}">
-            <view class="note-title">{{activeLesson.exampleNotes[sentenceIndex].title}}</view>
+            <view class="note-title" wx:if="{{activeLesson.exampleNotes[sentenceIndex].title}}">{{activeLesson.exampleNotes[sentenceIndex].title}}</view>
             <view class="note-body">{{activeLesson.exampleNotes[sentenceIndex].body}}</view>
             <view class="note-detail" wx:if="{{activeLesson.exampleNotes[sentenceIndex].detail}}">{{activeLesson.exampleNotes[sentenceIndex].detail}}</view>
           </view>
@@ -150,14 +150,14 @@
         <view class="sentence-card" wx:for="{{activeLesson.examples}}" wx:key="index" wx:for-index="exampleIndex">
           <view class="plain-example">{{item}}</view>
           <view class="sentence-note mode-{{activeLesson.exampleNotes[exampleIndex].mode}}" wx:if="{{activeLesson.exampleNotes && activeLesson.exampleNotes[exampleIndex] && activeLesson.exampleNotes[exampleIndex].visible}}">
-            <view class="note-title">{{activeLesson.exampleNotes[exampleIndex].title}}</view>
+            <view class="note-title" wx:if="{{activeLesson.exampleNotes[exampleIndex].title}}">{{activeLesson.exampleNotes[exampleIndex].title}}</view>
             <view class="note-body">{{activeLesson.exampleNotes[exampleIndex].body}}</view>
             <view class="note-detail" wx:if="{{activeLesson.exampleNotes[exampleIndex].detail}}">{{activeLesson.exampleNotes[exampleIndex].detail}}</view>
           </view>
         </view>
       </view>
 
-      <view class="rule-card">
+      <view class="rule-card" wx:if="{{!activeLesson.hideRuleCard}}">
         <view class="rule-label">{{ui.core}}</view>
         <view class="rule-line" wx:for="{{activeLesson.rules}}" wx:key="index">{{index + 1}}. {{item}}</view>
       </view>
