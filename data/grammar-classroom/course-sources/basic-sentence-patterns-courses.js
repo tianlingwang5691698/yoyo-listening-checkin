@@ -13,6 +13,7 @@ const ROLE_LABELS = {
   adverbial: ['状语', 'Adverbial'],
   attribute: ['定语', 'Attribute'],
   auxiliary: ['助动词', 'Auxiliary verb'],
+  modal: ['情态动词', 'Modal verb'],
   conjunction: ['连词', 'Conjunction'],
   existential: ['存在句引导词', 'Existential there']
 };
@@ -89,15 +90,15 @@ function makeLesson(english, spec, index) {
 const lessonSpecs = [
   {
     id: 'find-predicate-skeleton', level: 'core',
-    title: ['先找谓语，再看骨架', 'Find the predicate, then the skeleton'],
-    meta: ['一个分句的核心从限定谓语开始', 'A clause skeleton starts with its finite predicate'],
+    title: ['基本句型的本质：分句骨架', 'The core of basic patterns: clause skeletons'],
+    meta: ['先找限定谓语，再看它需要哪些核心成分', 'Find the finite predicate, then the core elements it requires'],
     examples: [
       [[['Birds','subject'],['fly.','predicate']], 'structure', 'fly 是限定谓语；Birds 是它的主语。', 'fly is the finite predicate and Birds is its subject.'],
-      [[['She','subject'],['can sing.','predicate','情态动词＋谓语动词','Modal + predicate verb']], 'structure', 'can sing 合起来构成谓语，不把 sing 单独误判成第二个谓语。', 'can sing forms one predicate; sing is not a second predicate.'],
-      [[['The boy in blue','subject','带后置定语的主语','Subject with postmodifier'],['is running.','predicate']], 'structure', '先跳过修饰语 in blue，找到核心主语 boy 和谓语 is running。', 'Set aside in blue and find the head subject boy with is running.']
+      [[['She','subject'],['can','modal'],['sing.','predicate']], 'structure', 'can 和 sing 共同组成一个完整谓语；can 承担限定作用，sing 表示具体动作。', 'can and sing form one full predicate: can is finite and sing carries the lexical meaning.'],
+      [[['The boy','subject'],['in blue','attribute','介词短语作后置定语','Prepositional phrase as postmodifier'],['is','auxiliary'],['running.','predicate']], 'structure', 'in blue 在主语短语内部修饰 boy；is 和 running 组成完整谓语，主干是 The boy is running。', 'in blue modifies boy inside the subject phrase; is and running form the full predicate in The boy is running.']
     ],
     rules: [
-      ['判断句型先找每个分句的限定谓语，再找与它搭配的主语。','To identify a pattern, first find each clause’s finite predicate and its subject.'],
+      ['基本句型是一个分句的核心骨架；先找限定谓语，再找与它搭配的主语。','A basic pattern is the core skeleton of one clause; first find its finite predicate and subject.'],
       ['助动词、情态动词与主要动词共同构成一个谓语动词组。','Auxiliaries or modals and the main verb form one predicate verb phrase.'],
       ['定语和状语可以很长，但不属于基本骨架的核心槽位。','Attributes and adverbials may be long, but they are not core skeleton slots.']
     ],
@@ -110,7 +111,7 @@ const lessonSpecs = [
   {
     id: 'pattern-sv', level: 'core', title: ['主谓：SV', 'Subject–verb: SV'], meta: ['动作本身已经完整', 'The action is complete without an object'],
     examples: [
-      [[['The baby','subject'],['cried.','predicate']], '', '', ''],
+      [[['The baby','subject'],['cried.','predicate']], 'structure', 'cried 后不需要宾语或补语，The baby cried 已经表达完整，骨架是 SV。', 'cried needs no object or complement; The baby cried is complete, so the skeleton is SV.'],
       [[['The train','subject'],['arrived','predicate'],['at noon.','adverbial','时间状语','Time adverbial']], 'structure', 'at noon 说明时间；去掉后 The train arrived 仍完整。', 'at noon adds time; The train arrived remains complete.'],
       [[['My grandparents','subject'],['live','predicate'],['in Suzhou.','adverbial','地点状语','Place adverbial']], 'structure', 'live 在这里不带宾语；in Suzhou 是地点状语。', 'live takes no object here; in Suzhou is a place adverbial.']
     ],
@@ -128,14 +129,14 @@ const lessonSpecs = [
   {
     id: 'pattern-svc', level: 'core', title: ['主系表：SVC', 'Subject–linking verb–complement: SVC'], meta: ['表语说明主语是谁或怎么样', 'The complement identifies or describes the subject'],
     examples: [
-      [[['Mia','subject'],['is','linking'],['a doctor.','subjectComplement']], '', '', ''],
+      [[['Mia','subject'],['is','linking'],['a doctor.','subjectComplement']], 'structure', 'is 不把动作传给 a doctor，而是把 Mia 和她的身份 a doctor 连接起来。', 'is transfers no action to a doctor; it links Mia with the identity a doctor.'],
       [[['The soup','subject'],['tastes','linking'],['delicious.','subjectComplement']], 'structure', 'tastes 不表示“品尝某物”，而是连接 soup 与 delicious。', 'tastes links soup to delicious rather than taking an object.'],
       [[['The leaves','subject'],['turned','linking'],['yellow.','subjectComplement']], 'structure', 'turned 表示状态变化，yellow 描述主语。', 'turned marks a change of state and yellow describes the subject.']
     ],
     rules: [
-      ['SVC 中系动词连接主语与主语补语（传统教学常称表语）。','In SVC, a linking verb connects the subject with a subject complement.'],
-      ['主语补语可以是名词性成分，说明主语的身份。','A noun phrase can be a subject complement identifying the subject.'],
-      ['感官或变化动词作系动词时，后接描述主语状态的补语。','Sense or change-of-state linking verbs take a complement describing the subject.']
+      ['名词性主语补语说明主语的身份，系动词把二者连接起来。','A nominal subject complement identifies the subject, and the linking verb connects them.'],
+      ['感官动词作系动词时，后面的主语补语描述主语呈现的状态。','A sense verb used as a linking verb takes a subject complement describing the subject.'],
+      ['变化动词作系动词时，主语补语说明主语变化后的状态。','A change-of-state linking verb takes a complement showing the subject’s resulting state.']
     ],
     questions: [
       ['Mia is a doctor. 中 a doctor 是什么？','What is “a doctor” in “Mia is a doctor”?',['宾语','主语补语（表语）'],'B','a doctor 说明 Mia 的身份。','a doctor identifies Mia.'],
@@ -146,14 +147,14 @@ const lessonSpecs = [
   {
     id: 'pattern-svo', level: 'core', title: ['主谓宾：SVO', 'Subject–verb–object: SVO'], meta: ['动作指向一个宾语', 'The action is directed at one object'],
     examples: [
-      [[['Leo','subject'],['opened','predicate'],['the window.','object']], '', '', ''],
-      [[['We','subject'],['enjoy','predicate'],['music.','object']], '', '', ''],
+      [[['Leo','subject'],['opened','predicate'],['the window.','object']], 'structure', 'opened 把动作指向 the window；the window 是直接宾语，骨架是 SVO。', 'opened directs the action at the window; the window is the direct object, giving SVO.'],
+      [[['We','subject'],['enjoy','predicate'],['music.','object']], 'structure', 'music 不是具体承受动作的物体，但它是 enjoy 所涉及的内容，仍然是宾语。', 'music is not physically affected, but it is the content involved in enjoy and is still the object.'],
       [[['She','subject'],['understood','predicate'],['the question.','object']], 'structure', 'understood 是及物动词，the question 是它的直接宾语。', 'understood is transitive and the question is its direct object.']
     ],
     rules: [
       ['SVO 的及物谓语后需要一个宾语承受或涉及动作。','In SVO, a transitive predicate takes one object affected or involved in the action.'],
       ['宾语可以表示具体事物，也可以表示抽象内容。','An object may denote a concrete thing or abstract content.'],
-      ['宾语可以由名词、代词、非谓语结构或宾语从句等名词性成分充当。','An object may be a noun phrase, pronoun, non-finite structure or object clause.']
+      ['判断 SVO 要确认谓语是及物用法，后面的名词性成分直接受它支配。','To identify SVO, confirm that the verb is transitive and directly governs the following nominal element.']
     ],
     questions: [
       ['Leo opened the window. 的宾语是什么？','What is the object in “Leo opened the window”?',['Leo','the window'],'B','window 承受 opened 的动作。','the window receives the action of opened.'],
@@ -165,7 +166,7 @@ const lessonSpecs = [
     id: 'pattern-svoo', level: 'core', title: ['主谓双宾：SVOO', 'Subject–verb–indirect object–direct object: SVOO'], meta: ['“给谁”加“什么”', 'A recipient plus a thing'],
     examples: [
       [[['Dad','subject'],['gave','predicate'],['me','indirectObject'],['a camera.','directObject']], 'structure', 'me 是接受者，a camera 是被给予的事物。', 'me is the recipient and a camera is the thing transferred.'],
-      [[['She','subject'],['taught','predicate'],['us','indirectObject'],['English.','directObject']], '', '', ''],
+      [[['She','subject'],['taught','predicate'],['us','indirectObject'],['English.','directObject']], 'structure', 'teach 可以直接接“学习者＋所教内容”：us 是间接宾语，English 是直接宾语。', 'teach can take learner plus content directly: us is the indirect object and English the direct object.'],
       [[['I','subject'],['bought','predicate'],['a gift','directObject'],['for my mother.','adverbial','受益者介词短语','Beneficiary prepositional phrase']], 'structure', 'for my mother 是介词短语，不是无介词的间接宾语；可转换为 I bought my mother a gift。', 'for my mother is a prepositional phrase; compare I bought my mother a gift.']
     ],
     rules: [
@@ -200,8 +201,8 @@ const lessonSpecs = [
   {
     id: 'existential-there-be', level: 'core', title: ['存在句：there be', 'Existential there be'], meta: ['引出“某处有某人或某物”', 'Introducing the existence of someone or something'],
     examples: [
-      [[['There','existential'],['is','predicate'],['a book','subject','实义主语','Notional subject'],['on the desk.','adverbial','地点状语','Place adverbial']], 'translation', '英语用 there 先引出存在，中文通常按“地点＋有＋事物”翻译。', 'English uses there to introduce existence; Chinese commonly uses place + 有 + thing.'],
-      [[['There','existential'],['are','predicate'],['two students','subject','实义主语','Notional subject'],['outside.','adverbial','地点状语','Place adverbial']], '', '', ''],
+      [[['There','existential'],['is','predicate'],['a book','subject','实义主语','Notional subject'],['on the desk.','adverbial','地点状语','Place adverbial']], 'translation', 'there 只负责引出“存在”，真正被引出的主语是 a book；中文通常按“地点＋有＋事物”表达。', 'there introduces existence, while a book is the notional subject; Chinese commonly puts the place before an existential verb and the thing.'],
+      [[['There','existential'],['are','predicate'],['two students','subject','实义主语','Notional subject'],['outside.','adverbial','地点状语','Place adverbial']], 'structure', '真正被引出的主语 two students 是复数，所以谓语用 are；outside 只说明地点。', 'The notional subject two students is plural, so the verb is are; outside only gives the location.'],
       [[['There','existential'],['seems to be','predicate'],['a problem.','subject','实义主语','Notional subject']], 'structure', '存在句不只限于 is/are，也可用 seem to be 等表达。', 'Existential clauses can also use expressions such as seem to be.']
     ],
     rules: [
@@ -223,8 +224,8 @@ const lessonSpecs = [
       [[['He','subject'],['lives','predicate'],['in Shanghai.','adverbial','语境必要的地点状语','Contextually required place adverbial']], 'structure', '在强调居住地点的语境中，地点信息承担必要补足作用。', 'When residence location is the point, the place information completes the message.']
     ],
     rules: [
-      ['部分结构除主语、谓语、宾语外，还要求地点、方向或时长等必要状语。','Some patterns require a place, direction or duration adverbial in addition to subject, verb and object.'],
-      ['“必要状语”仍是状语，不应误标为宾语补语。','An obligatory adverbial is still an adverbial, not an object complement.'],
+      ['put 表示“把某物放到某处”时，除宾语外还要求地点或方向状语。','When put means placing something somewhere, it requires a place or direction adverbial after the object.'],
+      ['时长介词短语补足持续意义时仍是状语，不是直接宾语。','A duration prepositional phrase that completes a durative meaning is still an adverbial, not a direct object.'],
       ['必要性既受动词配价影响，也可能受当前语境表达目标影响。','Obligatoriness may depend on verb valency and on what the context needs to express.']
     ],
     questions: [
@@ -272,9 +273,9 @@ const lessonSpecs = [
   {
     id: 'modifiers-preserve-skeleton', level: 'core', title: ['定语、状语不改变骨架', 'Modifiers do not change the skeleton'], meta: ['先暂时移开修饰语，再判核心句型', 'Temporarily set modifiers aside before classifying'],
     examples: [
-      [[['The girl with a red bag','subject','含介词短语后置定语的主语','Subject with postmodifier'],['smiled','predicate'],['warmly.','adverbial','方式状语','Manner adverbial']], 'translation', 'with a red bag 后置修饰 girl，中文通常前移为“背红包的女孩”；骨架仍是 The girl smiled。', 'with a red bag follows girl but moves before 女孩 in Chinese; the skeleton remains The girl smiled.'],
-      [[['The book that you lent me','subject','含定语从句的主语','Subject with relative clause'],['is','linking'],['useful.','subjectComplement']], 'translation', 'that you lent me 后置修饰 book，中文译为“你借给我的书”；主句骨架是 The book is useful。', 'that you lent me postmodifies book; the main skeleton is The book is useful.'],
-      [[['Yesterday,','adverbial','时间状语','Time adverbial'],['Tom','subject'],['quickly finished','predicate','含方式状语的谓语','Predicate with manner adverbial'],['his homework.','object']], 'structure', 'Yesterday 和 quickly 都是状语；去掉后骨架是 Tom finished his homework。', 'Yesterday and quickly are adverbials; remove them to reveal Tom finished his homework.']
+      [[['The girl','subject'],['with a red bag','attribute','介词短语作后置定语','Prepositional phrase as postmodifier'],['smiled','predicate'],['warmly.','adverbial','方式状语','Manner adverbial']], 'translation', 'with a red bag 后置修饰 girl，中文通常前移为“背红包的女孩”；warmly 说明微笑方式，骨架仍是 The girl smiled。', 'with a red bag postmodifies girl and warmly gives manner; neither changes the skeleton The girl smiled.'],
+      [[['The book','subject'],['that you lent me','attribute','定语从句','Relative clause'],['is','linking'],['useful.','subjectComplement']], 'translation', 'that you lent me 整体后置修饰 book，内部有 you—lent—me 的骨架；主句仍是 The book is useful。', 'that you lent me as a whole postmodifies book and has its own internal skeleton; the main clause remains The book is useful.'],
+      [[['Yesterday,','adverbial','时间状语','Time adverbial'],['Tom','subject'],['quickly','adverbial','方式状语','Manner adverbial'],['finished','predicate'],['his homework.','object']], 'structure', 'Yesterday 和 quickly 分别说明时间和方式；移开它们，SVO 骨架 Tom finished his homework 不变。', 'Yesterday and quickly add time and manner; removing them leaves the SVO skeleton Tom finished his homework.']
     ],
     rules: [
       ['介词短语后置定语属于名词短语内部，不增加主句核心成分。','A postmodifying prepositional phrase belongs inside a noun phrase and adds no main-clause core slot.'],
@@ -290,9 +291,9 @@ const lessonSpecs = [
   {
     id: 'transformations-skeleton', level: 'advanced', title: ['否定、疑问、被动与骨架', 'Negatives, questions, passives and the skeleton'], meta: ['形式会变，论元关系仍可追踪', 'The form changes, but participant relations can still be traced'],
     examples: [
-      [[['She','subject'],['does not like','predicate','助动词＋否定＋谓语','Auxiliary + negation + predicate'],['coffee.','object']], 'transformation', '否定加入 does not，核心关系仍是 she—like—coffee。', 'Negation adds does not; the relation she–like–coffee remains.'],
+      [[['She','subject'],['does','auxiliary'],['not','adverbial','否定词','Negative marker'],['like','predicate'],['coffee.','object']], 'transformation', 'does 承担限定作用，not 构成否定，实义动词 like 仍支配宾语 coffee。', 'does carries finiteness, not marks negation, and the lexical verb like still governs coffee.'],
       [[['Did','auxiliary'],['Tom','subject'],['open','predicate'],['the door?','object']], 'transformation', '疑问句发生助动词倒装，恢复陈述顺序可看出 Tom opened the door。', 'Auxiliary inversion forms the question; restore statement order to see Tom opened the door.'],
-      [[['The door','subject'],['was opened','predicate','被动谓语','Passive predicate'],['by Tom.','adverbial','施事介词短语','Agent phrase']], 'transformation', '主动句宾语 the door 在被动句中升为主语，by Tom 表示施事。', 'The active object the door becomes the passive subject; by Tom marks the agent.']
+      [[['The door','subject'],['was','auxiliary'],['opened','predicate','过去分词','Past participle'],['by Tom.','adverbial','施事介词短语','Agent phrase']], 'transformation', 'was 和 opened 组成被动谓语；主动句宾语 the door 变为当前句主语，by Tom 表示施事。', 'was and opened form the passive predicate; the active object becomes the current subject and by Tom marks the agent.']
     ],
     rules: [
       ['否定式在谓语中加入否定成分，不会把宾语变成补语。','Negation adds a negative element to the predicate; it does not turn an object into a complement.'],
@@ -313,9 +314,9 @@ const lessonSpecs = [
       [[['The idea','subject'],['sounds','linking'],['reasonable.','subjectComplement']], 'structure', 'sound 在此作系动词，构成 SVC。', 'sound is linking here, forming SVC.']
     ],
     rules: [
-      ['同一动词可因意义和搭配不同进入不同句型。','The same verb may enter different patterns because of meaning and complementation.'],
-      ['及物性是动词在具体用法中的属性，不能只查一个中文词义判断。','Transitivity belongs to a verb’s specific use and cannot be decided from one Chinese gloss.'],
-      ['判型要观察动词后的真实成分及其关系，而不是背“某动词＝某句型”。','Classify by the actual following elements and their relations, not by memorising verb-to-pattern labels.']
+      ['ring 不带宾语、表示“铃响”时是不及物用法，形成 SV。','ring is intransitive and forms SV when it means that a bell sounds with no object.'],
+      ['ring 直接支配宾语、表示“按响某物”时是及物用法，形成 SVO。','ring is transitive and forms SVO when it directly governs the thing caused to ring.'],
+      ['sound 后接描述主语的成分时作系动词，形成 SVC。','sound is a linking verb and forms SVC when followed by an element describing the subject.']
     ],
     questions: [
       ['The bell rang. 属于什么句型？','What is the pattern of “The bell rang”?',['SV','SVO'],'A','rang 在此不带宾语。','rang takes no object here.'],
@@ -350,7 +351,7 @@ const lessonSpecs = [
     ],
     rules: [
       ['先确定谓语是动作动词还是系动词，再判断后项功能。','First decide whether the predicate is an action verb or linking verb, then identify what follows.'],
-      ['只把动词意义和结构要求的成分放入骨架，修饰性成分另标。','Include only elements required by the verb’s meaning and structure in the skeleton; label modifiers separately.'],
+      ['两个动词后成分若是“接受者＋事物”，就构成间接宾语和直接宾语。','When two postverbal elements mean recipient plus thing, they form indirect and direct objects.'],
       ['用“描述主语、承受动作、接受事物、说明宾语”等关系交叉验证。','Cross-check with relations such as describing the subject, receiving an action, receiving a thing or describing the object.']
     ],
     questions: [
@@ -364,7 +365,7 @@ const lessonSpecs = [
     examples: [
       [[['I','subject'],['know','predicate'],['that she is right.','object','宾语从句','Object clause']], 'boundary', '主句骨架是 SVO；that she is right 是占据宾语位置的从句，其内部另有 SVC 骨架。', 'The main clause is SVO; the object clause has its own internal SVC skeleton.'],
       [[['What he said','subject','主语从句','Subject clause'],['surprised','predicate'],['me.','object']], 'boundary', '主语从句整体占主语位置；主句骨架仍是 SVO。', 'The subject clause occupies the subject slot as a whole; the main skeleton is still SVO.'],
-      [[['The girl who won','subject','含定语从句的主语','Subject containing a relative clause'],['is','linking'],['my sister.','subjectComplement']], 'boundary', 'who won 修饰 girl；它是定语从句，不是第六种基本句型。', 'who won modifies girl; it is a relative clause, not a sixth basic pattern.']
+      [[['The girl','subject'],['who won','attribute','定语从句','Relative clause'],['is','linking'],['my sister.','subjectComplement']], 'boundary', 'who won 内部是 SV 骨架，整体只后置修饰 girl；主句骨架是 The girl is my sister。', 'who won has an internal SV skeleton but as a whole only postmodifies girl; the main skeleton is The girl is my sister.']
     ],
     rules: [
       ['基本句型描述一个分句的核心成分排列，不等同于简单句、并列句或复合句分类。','A basic pattern describes the core arrangement within a clause; it is not the same as simple, compound or complex sentence classification.'],

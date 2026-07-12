@@ -813,10 +813,19 @@ test('句子成分课程完整覆盖成分边界、核心成分、修饰语和�
     assert.deepEqual(bundle.groups.map((group) => group.lessons.length), [17, 6]);
     assert.deepEqual(bundle.sections.map((section) => section.lessonCount), [3, 5, 5, 4, 1, 2, 3]);
     assert.equal(bundle.course.reduce((sum, lesson) => sum + lesson.rules.length, 0), 69);
+    assert.match(bundle.course[0].title, english ? /Definition and core/ : /定义与本质/);
     bundle.course.forEach((lesson) => {
       assert.equal(lesson.rules.length, lesson.examples.length);
       assert.equal(lesson.rules.length, lesson.questions.length);
       assert.equal(lesson.analyses.length, lesson.examples.length);
+      assert.equal(lesson.exampleNotes.length, lesson.examples.length);
+      assert.ok(lesson.exampleNotes.every((note) => note.visible && (note.body || note.detail)));
+      assert.equal(lesson.ruleCoverage.length, lesson.rules.length);
+      lesson.ruleCoverage.forEach((coverage) => {
+        assert.ok(coverage.exampleIndexes.length && coverage.questionIndexes.length);
+        coverage.exampleIndexes.forEach((index) => assert.ok(index >= 0 && index < lesson.examples.length));
+        coverage.questionIndexes.forEach((index) => assert.ok(index >= 0 && index < lesson.questions.length));
+      });
       if (english) lesson.questions.forEach((question) => {
         assert.doesNotMatch(question.question, /[\u4e00-\u9fff]/);
         question.options.forEach((option) => assert.doesNotMatch(option.text, /[\u4e00-\u9fff]/));
@@ -833,10 +842,19 @@ test('基本句型课程完整覆盖五大句型、存在句、转换和判型�
     assert.deepEqual(bundle.groups.map((group) => group.lessons.length), [11, 5]);
     assert.deepEqual(bundle.sections.map((section) => section.lessonCount), [2, 5, 2, 2, 3, 2]);
     assert.equal(bundle.course.reduce((sum, lesson) => sum + lesson.rules.length, 0), 48);
+    assert.match(bundle.course[0].title, english ? /core of basic patterns/ : /基本句型的本质/);
     bundle.course.forEach((lesson) => {
       assert.equal(lesson.rules.length, lesson.examples.length);
       assert.equal(lesson.rules.length, lesson.questions.length);
       assert.equal(lesson.analyses.length, lesson.examples.length);
+      assert.equal(lesson.exampleNotes.length, lesson.examples.length);
+      assert.ok(lesson.exampleNotes.every((note) => note.visible && (note.body || note.detail)));
+      assert.equal(lesson.ruleCoverage.length, lesson.rules.length);
+      lesson.ruleCoverage.forEach((coverage) => {
+        assert.ok(coverage.exampleIndexes.length && coverage.questionIndexes.length);
+        coverage.exampleIndexes.forEach((index) => assert.ok(index >= 0 && index < lesson.examples.length));
+        coverage.questionIndexes.forEach((index) => assert.ok(index >= 0 && index < lesson.questions.length));
+      });
       if (english) lesson.questions.forEach((question) => {
         assert.doesNotMatch(question.question, /[\u4e00-\u9fff]/);
         question.options.forEach((option) => assert.doesNotMatch(option.text, /[\u4e00-\u9fff]/));
