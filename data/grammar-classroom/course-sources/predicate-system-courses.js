@@ -2,12 +2,13 @@ const pick = (english, zh, en) => english ? en : zh;
 const INCLUDE_RULE_COVERAGE = typeof GRAMMAR_RUNTIME === 'undefined' || !GRAMMAR_RUNTIME;
 const labels = {
   subject: ['主语','Subject'], auxiliary: ['助动词','Auxiliary'], modal: ['情态动词','Modal'], predicate: ['谓语动词','Predicate verb'],
-  nonfinite: ['非谓语动词','Non-finite verb'], object: ['宾语','Object'], complement: ['补足语','Complement'], adverbial: ['状语','Adverbial'],
+  nonfinite: ['非谓语动词','Non-finite verb'], object: ['宾语','Object'], predicative: ['表语','Subject complement'],
+  attribute: ['定语','Attribute'], clause: ['分句','Clause'], substitute: ['谓语替代','Predicate substitute'], ellipsis: ['省略成分','Ellipsis'], adverbial: ['状语','Adverbial'],
   conjunction: ['连词','Conjunction'], operator: ['操作词','Operator'], negator: ['否定词','Negator']
 };
 const part = (english, item) => ({ text: item[0], role: item[1], label: pick(english, item[2] || (labels[item[1]] || [item[1],item[1]])[0], item[3] || (labels[item[1]] || [item[1],item[1]])[1]) });
 const hidden = () => ({ visible:false, mode:'', title:'', body:'', detail:'' });
-const note = (english, data) => data ? ({ visible:true, mode:data[0], title:pick(english,'结构转换','Structure transformation'), body:pick(english,data[1],data[2]), detail:'' }) : hidden();
+const note = (english, data) => data ? ({ visible:true, mode:data[0], title:pick(english,'例句说明','Example explained'), body:pick(english,data[1],data[2]), detail:'' }) : hidden();
 const q = (english, data) => ({
   question:pick(english,data[0],data[1]), options:[{key:'A',text:pick(english,data[2],data[3])},{key:'B',text:pick(english,data[4],data[5])}], answer:data[6],
   correct:pick(english,data[7],data[8]), wrong:pick(english,`再看规则：${data[7]}`,`Check the rule: ${data[8]}`)
@@ -15,17 +16,122 @@ const q = (english, data) => ({
 const A = (zhRule,enRule,parts,question,noteData) => ({ zhRule,enRule,parts,question,noteData });
 const Q = (...args) => args;
 const X = (zh,en) => ['structure',zh,en];
+
+const EXPLANATIONS = {
+  'finite-boundary': [
+    ['works 是本分句唯一带现在时、并随 Mia 使用三单形式的动词，所以它是限定谓语。','works is the only verb marked for present tense and agreement with Mia, so it is the finite predicate.'],
+    ['wants 带现在时，是限定谓语；to leave 没有时态，只整体填入 wants 后的宾语位置。','wants carries present tense and is finite; to leave has no tense and fills the object slot after wants.'],
+    ['外层先看 I know，know 是主句限定谓语；that 从句内部另有 she agrees，不能把 agrees 算进主句谓语。','At the outer level, know is the main-clause finite predicate; she agrees has its own predicate inside the that-clause.']
+  ],
+  'auxiliary-chain': [
+    ['may 承担限定性和情态，begin 用原形；may begin 合起来才是完整谓语。','may carries finiteness and modality, while begin stays in the base form; together may begin is the complete predicate.'],
+    ['may 是限定情态词，have 建立完成，been waiting 建立进行；四个词按“情态—完成—进行—实义动词”组成一个完整谓语。','may is the finite modal, have builds the perfect, and been waiting builds the progressive; all four words form one complete predicate.'],
+    ['may 表可能，have 表完成，been repaired 表被动；它们不是三个谓语，而是一条“情态—完成—被动”助动词链。','may marks possibility, have marks perfect aspect, and been repaired marks passive voice; they form one auxiliary chain, not three predicates.']
+  ],
+  'operator': [
+    ['陈述句中的第一个助动词 has 移到主语 she 前，承担疑问操作；has finished 仍共同表达完成体。','The first auxiliary has moves before she to carry the question operation; has finished still forms the perfect predicate.'],
+    ['has 是助动词链中第一个词，因此 not 紧跟 has；has not finished 合起来是否定的完整谓语。','has is first in the auxiliary chain, so not follows it; has not finished is the complete negative predicate.'],
+    ['原句 likes 没有助动词，疑问时加入 Does；三单标记转移到 Does，like 恢复原形。','The original likes has no auxiliary, so Does is inserted; agreement moves to Does and like returns to the base form.']
+  ],
+  'agreement-basic': [
+    ['主语中心 boy 是第三人称单数，限定谓语 plays 用 -s 与它一致。','The subject head boy is third-person singular, so finite plays carries -s for agreement.'],
+    ['主语 I 在现在时与 be 对应为 am；ready 是描述 I 的表语，不参与一致。','Present-tense be agrees with I as am; ready is the subject complement and does not control agreement.'],
+    ['Tom 和 Mia 是两个独立的人，and 把它们组成复数主语，因此限定系动词用 are。','Tom and Mia are two separate people joined as a plural subject, so finite linking be is are.']
+  ],
+  'agreement-head': [
+    ['完整主语是 The box of books，中心词是单数 box；of books 只是后置修饰语，所以用 is。','The full subject is The box of books, but its head is singular box; of books only postmodifies it, so the verb is is.'],
+    ['together with her friends 是附加说明，没有像 and 那样增加主语核心；限定谓语仍与 Mia 一致，用 is。','together with her friends is an added modifier, not an and-coordinate subject; the finite verb still agrees with Mia as is.'],
+    ['外层主干是 She is one of the students；who 在定语从句中指复数 students，所以从句限定谓语用 work。','The outer core is She is one of the students; inside the relative clause, who refers to plural students, so its finite verb is work.']
+  ],
+  'agreement-proximity-meaning': [
+    ['either...or 连接两个主语时看靠近谓语的一项；boys 离 are 最近且为复数，所以用 are。','With either...or subjects, agreement follows the nearer item; plural boys is nearest, so the verb is are.'],
+    ['Ten minutes 形式上有复数 -s，但这里表示一个整体时长，所以限定系动词用单数 is。','Ten minutes is plural in form but denotes one duration here, so finite linking be is singular is.'],
+    ['Half of 本身不决定单复数；of 后的 water 是不可数名词，所以限定谓语用 is。','Half of does not decide number by itself; water after of is uncountable, so the finite verb is is.']
+  ],
+  'tense-viewpoint': [
+    ['lives 的一般现在时把观察点放在现在，说明居住状态当前成立；now 只是帮助确认语境。','Present-tense lives locates the viewpoint now and presents the residence as currently true; now only confirms the context.'],
+    ['is 承担现在时，reading 展示正在展开的过程；is reading 合起来是一个现在进行体谓语。','is carries present tense and reading presents an unfolding process; together is reading is one present-progressive predicate.'],
+    ['have 承担现在时，read 表示先前完成；have read 把读书这件事与现在的结果或经验连接起来。','have carries present tense and read presents a prior event; have read links that event to a result or experience relevant now.']
+  ],
+  'simple-progressive': [
+    ['boils 用一般现在时把“水在 100°C 沸腾”作为普遍规律，而不是某一刻正在发生的过程。','boils uses the present simple to present a general truth, not a process unfolding at one moment.'],
+    ['is 承担现在时，staying 展示临时持续；this week 限定了这次暂住的时间范围。','is carries present tense and staying presents a temporary ongoing situation; this week sets its limited time frame.'],
+    ['understand 在这里表示认知状态，直接用一般现在时；通常不把这种稳定状态写成正在进行。','understand denotes a cognitive state here, so the present simple is natural rather than a progressive process.']
+  ],
+  'perfect-system': [
+    ['has lost 不只是报告过去“丢过”，还把结果连到现在：她现在没有钥匙或仍受影响。','has lost does more than report a past event; it links the loss to the present result that she lacks the key or is still affected.'],
+    ['have lived 把居住状态从过去延续到现在，for five years 给出这段延续的总时长。','have lived extends the residence from the past to now, and for five years gives its duration.'],
+    ['has 承担现在时，been 建立完成，raining 建立进行；整条谓语突出雨从较早时间持续到现在。','has carries present tense, been builds the perfect, and raining builds the progressive; the whole predicate highlights a process continuing to now.']
+  ],
+  'past-sequence': [
+    ['rang 用一般过去时，把八点响铃作为过去时间线上的主要事件。','rang uses the past simple to place the bell event on the past timeline at eight.'],
+    ['arrived 是过去参照点，had left 把火车离开定位在这个参照点之前。','arrived supplies the past reference point, and had left places the departure before it.'],
+    ['was cooking 是当时正在展开的背景过程，called 是插入这个背景的较短事件。','was cooking is the unfolding background process, while called is the shorter event that occurs within it.']
+  ],
+  'future-system': [
+    ['will 是限定情态助动词，answer 用原形；will answer 表示说话当下作出的即时决定。','will is the finite modal auxiliary and answer stays in the base form; will answer expresses a decision made at speaking time.'],
+    ['are 承担现在时，meeting 用进行体呈现已安排好的见面，tomorrow 把安排指向未来。','are carries present tense, meeting presents an arranged meeting, and tomorrow locates that arrangement in the future.'],
+    ['条件从句用 rains 表达未来条件，主句用 will stay 表达条件成立后的结果；两个分句各有自己的限定谓语。','The condition clause uses rains for the future condition, while the main clause uses will stay for its result; each clause has its own finite predicate.']
+  ],
+  'voice-focus': [
+    ['主动句把原因来源 The storm 放在主语位置，damaged 直接指向承受影响的宾语 the roof。','The active clause puts the cause The storm in subject position, and damaged points to the affected object the roof.'],
+    ['被动句把承受影响的 roof 提到主语位置；was 承担过去时，damaged 用过去分词表达被动，by 短语补充施事来源。','The passive promotes affected roof to subject; was carries past tense, damaged marks passive voice, and the by-phrase adds the agent.'],
+    ['was stolen 已说明 bike 承受偷窃；不知道偷车者且他不是信息重点，因此无需添加空泛的 by someone。','was stolen already presents bike as affected; the thief is unknown and not the focus, so a vague by someone adds nothing.']
+  ],
+  'passive-chain': [
+    ['is 承担现在时并与 room 一致，cleaned 是过去分词；二者合成一般现在时被动谓语。','is carries present tense and agrees with room, while cleaned is the past participle; together they form a present-simple passive.'],
+    ['is 承担现在时，being 建立进行，被动 be 再要求 repaired 用过去分词；整条链表示“正在被修”。','is carries present tense, being builds the progressive, and passive be selects past-participle repaired; the chain means “currently being repaired.”'],
+    ['has 承担现在时，been 是被动 be 在完成助动词后的形式，finished 用过去分词；整条链表达已完成的被动结果。','has carries present tense, been is passive be after perfect have, and finished is the past participle; the chain presents a completed passive result.']
+  ],
+  'modal-system': [
+    ['can 是本分句的限定情态词，承担可能/能力意义；swim 必须用原形，二者合成完整谓语。','can is the finite modal expressing ability or possibility; swim stays in the base form, and together they form the complete predicate.'],
+    ['must 把说话者的强制立场加到 wear a seat belt 上；wear 用原形，must wear 是完整谓语核心。','must adds strong obligation to wear a seat belt; wear is base form, and must wear forms the complete predicate core.'],
+    ['may 表示不确定推测，have missed 把推测指向较早发生的“错过”；整条链判断的是过去事件。','may marks uncertain inference, while have missed directs it to the earlier event of missing the train; the chain evaluates a past event.']
+  ],
+  'semi-modal-system': [
+    ['have to 像实义结构一样需要 Do 来形成一般现在时疑问；限定标记在 Do 上，have 和 leave 都用原形。','have to behaves lexically and needs Do for a present question; finiteness is on Do, while have and leave stay in base form.'],
+    ['has 是限定完成助动词，been 是 be 的过去分词，able to solve 是其表语内容；不要把 able 当成助动词。','has is the finite perfect auxiliary, been is the participle of be, and able to solve is its subject complement; able is not an auxiliary.'],
+    ['used to 本来表示过去习惯；变疑问后过去标记由 Did 承担，因此 used 恢复为 use。','used to expresses a past habit; once Did carries past tense in the question, used returns to base-form use.']
+  ],
+  'negation-questions': [
+    ['系动词 is 本身是限定操作词，not 直接跟在它后面；ready 是表语，因此不需要 does not be。','Linking is is itself the finite operator, so not follows it directly; ready is the subject complement, and do-support is unnecessary.'],
+    ['原句 arrived 没有助动词，疑问时加入 Did 并前移；过去标记转到 Did，arrive 恢复原形。','The original arrived has no auxiliary, so Did is inserted and moved forward; past tense shifts to Did and arrive returns to base form.'],
+    ['Who 本身占主语位置，called 仍是一般过去时限定谓语；没有另一个主语需要和操作词倒装。','Who itself fills the subject slot and called remains the finite past predicate; there is no separate subject to invert with an operator.']
+  ],
+  'emphatic-do': [
+    ['肯定句加入 do，不改变“理解”的事件，只加强“我确实理解”的确认或反驳语气。','Adding do to the affirmative does not change the event of understanding; it strengthens confirmation or correction.'],
+    ['does 同时承担强调、现在时和三单一致，所以后面的实义动词必须是原形 want。','does carries emphasis, present tense and third-person agreement, so the lexical verb must be base-form want.'],
+    ['did 同时承担强调和过去时，所以 call 不再使用过去式；did call 合起来表示“昨天确实打了”。','did carries both emphasis and past tense, so call is not past-marked again; did call means that he really called yesterday.']
+  ],
+  'short-answers-substitution': [
+    ['原问句的第一个助动词是 Has，短答保留同一个操作词，并把主语 Mia 换成 she：Yes, she has。','The question’s first auxiliary is Has, so the short answer retains that operator and replaces Mia with she: Yes, she has.'],
+    ['than 分句中的 does 保留现在时和与 Tom 的一致，同时替代前文完整谓语 sings，避免重复。','In the than-clause, does carries present tense and agreement with Tom while substituting for sings to avoid repetition.'],
+    ['前句完整谓语是 can swim，so can Tom 保留相同情态操作词 can，并省去重复的 swim。','The preceding complete predicate is can swim; so can Tom retains modal operator can and omits repeated swim.']
+  ],
+  'predicate-sharing-ellipsis': [
+    ['has 同时管 finished 和 sent，可还原为 has finished... and has sent...；两个实义动词并列，共享一个完成助动词。','has scopes over both finished and sent, expandable as has finished... and has sent...; the coordinated lexical verbs share one perfect auxiliary.'],
+    ['第二分句保留 can 来表示同样的情态和时态关系，play the piano 可从前句准确恢复，所以省略。','The second clause retains can to preserve the same modal and tense relation; play the piano is omitted because it is fully recoverable.'],
+    ['others were not 保留被动操作词 were 和否定 not，accepted 可从前一分句恢复；省略后语态关系仍清楚。','others were not retains passive operator were and negator not; accepted is recoverable from the first clause, so passive meaning remains clear.']
+  ],
+  'predicate-integration': [
+    ['may 是唯一限定操作词，have 建立完成，been closed 建立被动；从左到右是一条完整谓语链。','may is the sole finite operator, have builds the perfect, and been closed builds the passive; from left to right they form one complete predicate chain.'],
+    ['must 表说话者判断，have 把事件放在较早时间，been completed 表被动；主语 work 是完成动作的承受者。','must marks the speaker’s judgment, have places the event earlier, and been completed marks passive voice; work receives the action.'],
+    ['Does 已承担现在时和三单一致，seem 必须恢复原形；reasonable 是 seem 后说明 plan 状态的表语。','Does already carries present tense and third-person agreement, so seem returns to the base form; reasonable is the subject complement describing plan.']
+  ]
+};
 function lesson(english,id,level,zhTitle,enTitle,zhMeta,enMeta,atoms) {
   if (atoms.length < 3) throw new Error(`Too few predicate atoms: ${id}`);
+  const explanations = EXPLANATIONS[id];
+  if (!explanations || explanations.length !== atoms.length) throw new Error(`Missing predicate explanations: ${id}`);
   return { id,level,title:pick(english,zhTitle,enTitle),meta:pick(english,zhMeta,enMeta),
-    examples:atoms.map(a=>a.parts.map(p=>p[0]).join(' ')), analyses:atoms.map(a=>a.parts.map(p=>part(english,p))), exampleNotes:atoms.map(a=>note(english,a.noteData)),
+    examples:atoms.map(a=>a.parts.map(p=>p[0]).join(' ')), analyses:atoms.map(a=>a.parts.map(p=>part(english,p))), exampleNotes:atoms.map((a,i)=>note(english,a.noteData||['structure',explanations[i][0],explanations[i][1]])),
     rules:atoms.map(a=>pick(english,a.zhRule,a.enRule)), ruleCoverage:INCLUDE_RULE_COVERAGE?atoms.map((_,i)=>({exampleIndexes:[i],questionIndexes:[i]})):[], questions:atoms.map(a=>q(english,a.question)) };
 }
 
 function buildPredicateSystemCourse(english) {
   const L = (...args) => lesson(english,...args);
   const course = [
-    L('finite-boundary','core','限定谓语的边界','The finite-predicate boundary','一个分句先找一个带时态或情态的谓语核心','Find one tense- or modal-bearing core per clause',[
+    L('finite-boundary','core','谓语的定义与限定核心','Definition and finite core of predicates','一个分句先找带时态或情态的谓语核心','Find the tense- or modal-bearing core of each clause',[
       A('限定谓语体现时态或情态，并与主语建立句法关系。','A finite predicate carries tense or modality and has a syntactic relation with its subject.',[['Mia','subject'],['works','predicate'],['here.','adverbial']],Q('哪个词是限定谓语？','Which word is the finite predicate?','works','works','here','here','A','works 带一般现在时并与 Mia 一致。','works carries present tense and agrees with Mia.')),
       A('非谓语形式不能单独构成独立分句的限定谓语。','A non-finite form cannot alone form the finite predicate of an independent clause.',[['Mia','subject'],['wants','predicate'],['to leave.','nonfinite','不定式作宾语','Infinitive as object']],Q('本句限定谓语是什么？','What is the finite predicate?','wants','wants','to leave','to leave','A','to leave 不带时态，限定谓语是 wants。','to leave has no tense; wants is finite.')),
       A('复合句的每个分句各有自己的限定谓语，不能把从句谓语并入主句谓语。','Each clause in a complex sentence has its own finite predicate; do not merge a subordinate predicate into the main predicate.',[['I','subject'],['know','predicate','主句谓语','Main predicate'],['that she agrees.','complement','宾语从句；agrees 为从句谓语','Object clause; agrees is its predicate']],Q('主句谓语是什么？','What is the main-clause predicate?','know','know','agrees','agrees','A','agrees 属于 that 从句，外层谓语是 know。','agrees belongs inside the that-clause; know is the outer predicate.'))
@@ -126,6 +232,30 @@ function buildPredicateSystemCourse(english) {
       A('最终检查主语一致和操作规则：限定标记只出现一次，后续动词形式由前一助动词决定。','Finally check agreement and operations: finite marking appears once, and each following verb form is selected by the preceding auxiliary.',[['Does','operator'],['the plan','subject'],['seem','predicate'],['reasonable?','complement']],Q('为什么不能说 Does the plan seems...?','Why is Does the plan seems... incorrect?','三单限定标记已在 Does 上','Third-person finiteness is already on Does','plan 是复数','plan is plural','A','同一分句不能在 Does 和 seems 上重复三单标记。','The clause cannot mark third-person agreement on both Does and seems.'),X('检查顺序：主语 → 限定操作词 → 助动词链 → 实义动词 → 补足成分。','Check in order: subject → finite operator → auxiliary chain → lexical verb → complements.'))
     ])
   ].map((item,index)=>Object.assign({},item,{no:String(index+1).padStart(2,'0')}));
+
+  const byId=Object.fromEntries(course.map(item=>[item.id,item]));
+  const relabel=(id,exampleIndex,unitIndex,role,zh,en)=>Object.assign(byId[id].analyses[exampleIndex][unitIndex],{role,label:pick(english,zh,en)});
+  relabel('finite-boundary',2,2,'clause','宾语从句','Object clause');
+  relabel('agreement-basic',1,2,'predicative','表语','Subject complement');
+  relabel('agreement-basic',2,2,'predicative','表语','Subject complement');
+  relabel('agreement-head',0,1,'attribute','主语内部后置定语','Postmodifier inside subject');
+  relabel('agreement-head',0,3,'predicative','表语','Subject complement');
+  relabel('agreement-head',2,0,'clause','主句','Main clause');
+  relabel('agreement-proximity-meaning',0,2,'nonfinite','现在分词（与 are 构成谓语）','Present participle in the predicate');
+  relabel('agreement-proximity-meaning',1,2,'predicative','表语','Subject complement');
+  relabel('agreement-proximity-meaning',2,2,'predicative','表语','Subject complement');
+  relabel('negation-questions',0,3,'predicative','表语','Subject complement');
+  relabel('emphatic-do',1,3,'nonfinite','不定式作宾语','Infinitive as object');
+  relabel('short-answers-substitution',0,3,'substitute','短答中的谓语替代','Predicate substitute in short answer');
+  relabel('short-answers-substitution',1,0,'clause','主比较分句','Main comparison clause');
+  relabel('short-answers-substitution',1,1,'substitute','does 替代 sings','does substitutes for sings');
+  relabel('short-answers-substitution',2,0,'clause','前一分句','Preceding clause');
+  relabel('short-answers-substitution',2,1,'substitute','can 替代 can swim','can substitutes for can swim');
+  relabel('predicate-sharing-ellipsis',1,0,'clause','完整分句','Complete clause');
+  relabel('predicate-sharing-ellipsis',1,1,'ellipsis','省略 play the piano 的分句','Clause omitting play the piano');
+  relabel('predicate-sharing-ellipsis',2,0,'clause','完整分句','Complete clause');
+  relabel('predicate-sharing-ellipsis',2,1,'ellipsis','省略 accepted 的分句','Clause omitting accepted');
+  relabel('predicate-integration',2,3,'predicative','表语','Subject complement');
 
   const specs = [
     ['predicate-architecture','限定谓语与助动词架构','Finite predicates and auxiliary architecture','建立限定/非谓语边界、固定助动词链和操作词概念。','Build the finite/non-finite boundary, fixed auxiliary order and operator system.',['finite-boundary','auxiliary-chain','operator']],

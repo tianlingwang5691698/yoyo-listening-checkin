@@ -5,7 +5,8 @@ const labels = {
   complement: ['补语','Complement'], subjectComplement: ['主语补语（表语）','Subject complement'], objectComplement: ['宾语补语','Object complement'],
   attribute: ['定语','Attribute'], adverbial: ['状语','Adverbial'], nonfinite: ['非谓语动词','Non-finite verb'],
   infinitive: ['不定式','Infinitive'], gerund: ['动名词','Gerund'], presentParticiple: ['现在分词','Present participle'],
-  pastParticiple: ['过去分词','Past participle'], conjunction: ['连词','Conjunction'], auxiliary: ['助动词','Auxiliary']
+  pastParticiple: ['过去分词','Past participle'], conjunction: ['连词','Conjunction'], auxiliary: ['助动词','Auxiliary'],
+  preposition: ['介词','Preposition'], prepositionalObject: ['介词宾语','Object of preposition']
 };
 function a(english, chunks) {
   return chunks.map(([text, role, zh, en]) => ({ text, role, label: pick(english, zh || (labels[role] || ['', ''])[0], en || (labels[role] || ['', ''])[1]) }));
@@ -27,7 +28,7 @@ function makeLesson(english, spec, index) {
 
 const specs = [
   {
-    id: 'finite-nonfinite-boundary', level: 'core', title: ['限定谓语与非谓语的边界','Finite and non-finite verb boundaries'], meta: ['先找真正承担时态和一致的谓语','Find the verb that carries tense and agreement'],
+    id: 'finite-nonfinite-boundary', level: 'core', title: ['非谓语的定义与本质','Definition and core of non-finite verbs'], meta: ['自身不承担限定性，但能保留动作意义并进入不同句子位置','They lack finiteness but retain verbal meaning in different sentence slots'],
     examples: [
       [[['She','subject'],['wants','predicate'],['to leave.','infinitive']], 'structure', 'wants 承担一般现在时和第三人称单数；to leave 不承担。', 'wants carries present tense and third-person agreement; to leave does not.'],
       [[['Reading books','gerund','动名词短语作主语','Gerund phrase as subject'],['helps','predicate'],['me.','object']], 'structure', 'Reading 是非谓语；helps 才是全句限定谓语。', 'Reading is non-finite; helps is the finite predicate.'],
@@ -68,9 +69,9 @@ const specs = [
   {
     id: 'infinitive-subject-predicative', level: 'core', title: ['不定式作主语和表语','Infinitives as subjects and subject complements'], meta: ['表达计划、目标或具体行为','Expressing plans, purposes or specific actions'],
     examples: [
-      [[['To learn a language','infinitive','不定式短语作主语','Infinitive phrase as subject'],['takes','predicate'],['time.','object']], '', '', ''],
+      [[['To learn a language','infinitive','不定式短语作主语','Infinitive phrase as subject'],['takes','predicate'],['time.','object']], 'structure', 'To learn a language 整体是 takes 的主语；to learn 虽表示动作，却不承担全句的时态。', 'To learn a language is the whole subject of takes; to learn expresses an action but does not carry the clause tense.'],
       [[['It','subject','形式主语','Dummy subject'],['is','predicate'],['important','subjectComplement'],['to practise daily.','infinitive','真正主语','Notional subject']], 'structure', 'it 先占主语位置，真正内容由句末不定式表达。', 'it occupies the subject position and the final infinitive supplies the notional subject.'],
-      [[['Her goal','subject'],['is','predicate'],['to become a doctor.','infinitive','不定式作主语补语','Infinitive as subject complement']], '', '', '']
+      [[['Her goal','subject'],['is','predicate'],['to become a doctor.','infinitive','不定式作主语补语','Infinitive as subject complement']], 'structure', 'is 是限定谓语；to become a doctor 放在表语槽位，说明 goal 的具体内容。', 'is is the finite predicate; to become a doctor fills the subject-complement slot and specifies the goal.']
     ],
     rules: [
       ['不定式短语可直接作主语，常表示具体、将来或目的性较强的行为。','An infinitive phrase can be a subject, often presenting a specific, future-oriented or purposeful action.'],
@@ -86,9 +87,9 @@ const specs = [
   {
     id: 'infinitive-object-attribute-complement', level: 'core', title: ['不定式作宾语、定语和宾补','Infinitives as objects, attributes and object complements'], meta: ['识别不定式在句中的槽位','Identify the slot filled by the infinitive'],
     examples: [
-      [[['We','subject'],['hope','predicate'],['to win.','infinitive','不定式作宾语','Infinitive as object']], '', '', ''],
+      [[['We','subject'],['hope','predicate'],['to win.','infinitive','不定式作宾语','Infinitive as object']], 'structure', 'hope 承担时态；to win 回答“希望什么”，整体填入 hope 的宾语槽位。', 'hope carries tense; to win answers what is hoped for and fills the object slot of hope.'],
       [[['I','subject'],['have','predicate'],['some work','object'],['to finish.','infinitive','不定式短语作后置定语','Infinitive phrase as postmodifier']], 'translation', 'to finish 后置修饰 work，中文通常前移为“要完成的工作”。', 'to finish follows work in English but normally moves before 工作 in Chinese.'],
-      [[['The teacher','subject'],['asked','predicate'],['us','object'],['to revise.','infinitive','不定式作宾语补语','Infinitive as object complement']], '', '', '']
+      [[['The teacher','subject'],['asked','predicate'],['us','object'],['to revise.','infinitive','不定式作宾语补语','Infinitive as object complement']], 'structure', 'us 是 asked 的宾语，to revise 补充说明 us 要做的事，两者构成逻辑上的“us revise”。', 'us is the object of asked; to revise tells what us is to do, forming the logical relation us revise.']
     ],
     rules: [
       ['部分动词直接以不定式短语作宾语，如 hope、decide、plan。','Some verbs take an infinitive phrase as object, such as hope, decide and plan.'],
@@ -120,7 +121,7 @@ const specs = [
     ]
   },
   {
-    id: 'bare-infinitive', level: 'core', title: ['省略 to 的不定式','Bare infinitives'], meta: ['情态动词、使役感官及固定结构','Modals, causatives, perception verbs and fixed patterns'],
+    id: 'bare-infinitive', level: 'core', title: ['不带 to 的不定式','Bare infinitives'], meta: ['看前面的助动或补足结构是否要求动词原形','Check whether the preceding auxiliary or complement pattern requires the base form'],
     examples: [
       [[['You','subject'],['must finish','predicate','情态动词＋动词原形','Modal + bare infinitive'],['today.','adverbial']], 'structure', '情态动词 must 后用动词原形 finish。', 'A modal such as must is followed by the bare infinitive finish.'],
       [[['They','subject'],['made','predicate'],['him','object'],['apologize.','infinitive','省略 to 的宾语补语','Bare infinitive as object complement']], 'structure', '主动 make 后的宾补省略 to。', 'Active make takes a bare infinitive object complement.'],
@@ -161,14 +162,14 @@ const specs = [
   {
     id: 'gerund-functions', level: 'core', title: ['动名词的句法功能','Syntactic functions of gerunds'], meta: ['作主语、宾语、表语和介词宾语','As subject, object, subject complement and prepositional object'],
     examples: [
-      [[['Swimming every day','gerund','动名词短语作主语','Gerund phrase as subject'],['keeps','predicate'],['her healthy.','objectComplement','宾语＋宾补','Object + complement']], '', '', ''],
-      [[['He','subject'],['enjoys','predicate'],['reading.','gerund','动名词作宾语','Gerund as object']], '', '', ''],
-      [[['Her hobby','subject'],['is','predicate'],['painting.','gerund','动名词作主语补语','Gerund as subject complement']], '', '', ''],
-      [[['She','subject'],['is interested','predicate'],['in learning languages.','gerund','介词宾语','Object of preposition']], 'structure', '介词 in 后接动名词短语，不接 to do。', 'The preposition in takes a gerund phrase, not a to-infinitive.']
+      [[['Swimming every day','gerund','动名词短语作主语','Gerund phrase as subject'],['keeps','predicate'],['her','object'],['healthy.','objectComplement']], 'structure', 'Swimming every day 把“每天游泳”当作一项活动，整体作主语；keeps 才承担时态。', 'Swimming every day treats the activity as a whole subject; keeps, not swimming, carries the clause tense.'],
+      [[['He','subject'],['enjoys','predicate'],['reading.','gerund','动名词作宾语','Gerund as object']], 'structure', 'enjoys 承担时态；reading 指被享受的活动，整体作 enjoys 的宾语。', 'enjoys carries tense; reading names the enjoyed activity and functions as its object.'],
+      [[['Her hobby','subject'],['is','predicate'],['painting.','gerund','动名词作主语补语','Gerund as subject complement']], 'structure', 'is 连接 hobby 和 painting；painting 不是第二个谓语，而是说明爱好的内容。', 'is links hobby to painting; painting is not a second predicate but a subject complement naming the activity.'],
+      [[['She','subject'],['is','predicate'],['interested','subjectComplement'],['in','preposition'],['learning languages.','gerund','动名词短语作介词宾语','Gerund phrase as object of preposition']], 'structure', 'in 是介词，learning languages 整体作 in 的宾语；learning 不能独立承担限定谓语。', 'in is a preposition and learning languages is its whole object; learning cannot serve as a finite predicate by itself.']
     ],
     rules: [
       ['动名词短语可作主语，把一个活动作为概念来谈论。','A gerund phrase can be subject, treating an activity as a concept.'],
-      ['部分动词要求动名词作宾语，如 enjoy、avoid、finish、mind。','Some verbs require a gerund object, such as enjoy, avoid, finish and mind.'],
+      ['enjoy、avoid、finish、mind 等动词把后续内容当作活动来表达，因此选择动名词宾语。','Verbs such as enjoy, avoid, finish and mind present the following content as an activity and therefore select a gerund object.'],
       ['动名词可作主语补语，说明主语所指的活动内容。','A gerund can be a subject complement specifying an activity.'],
       ['介词后需要动词意义时，通常使用动名词。','When a verb meaning follows a preposition, the gerund is normally used.']
     ],
@@ -205,7 +206,7 @@ const specs = [
     examples: [
       [[['The girl','subject'],['wearing glasses','presentParticiple','现在分词短语作后置定语','Present-participle phrase as postmodifier'],['is','predicate'],['my cousin.','subjectComplement']], 'translation', 'wearing glasses 后置修饰 girl，中文通常译为“戴眼镜的女孩”。', 'wearing glasses follows girl but normally moves before 女孩 in Chinese.'],
       [[['The letters','subject'],['written by Amy','pastParticiple','过去分词短语作后置定语','Past-participle phrase as postmodifier'],['are','predicate'],['here.','adverbial']], 'translation', 'letters 承受 write；中文通常译为“艾米写的信”。', 'letters receives write; Chinese normally places the modifier before 信.'],
-      [[['The film','subject'],['is','predicate'],['exciting.','presentParticiple','现在分词形容词作表语','Present-participial adjective as complement']], '', '', ''],
+      [[['The film','subject'],['is','predicate'],['exciting.','presentParticiple','-ing 分词形容词作主语补语','-ing participial adjective as subject complement']], 'meaning', 'exciting 放在 is 后说明 film 具有“令人兴奋”的特征，不是进行时。', 'exciting follows is and describes the film as causing excitement; it is not part of a progressive verb phrase.'],
       [[['The audience','subject'],['was','predicate'],['excited.','pastParticiple','过去分词形容词作表语','Past-participial adjective as complement']], 'meaning', 'exciting 表示引发感受的特征；excited 表示感受到的状态。', 'exciting describes the cause; excited describes the experiencer’s state.']
     ],
     rules: [
@@ -261,10 +262,10 @@ const specs = [
     ]
   },
   {
-    id: 'verb-complement-patterns', level: 'core', title: ['动词后的 doing 与 to do 搭配','Verb complementation with doing and to do'], meta: ['固定选择、两者皆可与宾语后不定式','Fixed choices, dual choices and object-plus-infinitive'],
+    id: 'verb-complement-patterns', level: 'core', title: ['动词后的补足结构','Complement patterns after verbs'], meta: ['中心动词决定后面接 doing、to do 还是宾语＋to do','The head verb selects doing, to do, or object + to do'],
     examples: [
-      [[['She','subject'],['avoided','predicate'],['answering the question.','gerund','动名词作宾语','Gerund as object']], '', '', ''],
-      [[['They','subject'],['agreed','predicate'],['to leave early.','infinitive','不定式作宾语','Infinitive as object']], '', '', ''],
+      [[['She','subject'],['avoided','predicate'],['answering the question.','gerund','动名词作宾语','Gerund as object']], 'structure', 'avoided 把后面的内容看作要避开的行为，因此 answering the question 用 doing 形式作宾语。', 'avoided presents its complement as the activity being avoided, so answering the question is a gerund object.'],
+      [[['They','subject'],['agreed','predicate'],['to leave early.','infinitive','不定式作宾语','Infinitive as object']], 'structure', 'agreed 后的 to leave early 表示同意去实现的行动，整体作 agreed 的内容宾语。', 'to leave early presents the action agreed upon and functions as the content object of agreed.'],
       [[['We','subject'],['started','predicate'],['to work / working.','object','不定式或动名词作宾语','Infinitive or gerund as object']], 'meaning', 'start 在通常语境中两种形式都可，意义差别很小。', 'With start, both forms are normally possible with little difference in meaning.'],
       [[['She','subject'],['reminded','predicate'],['me','object'],['to call Dad.','infinitive','不定式作宾补','Infinitive as object complement']], 'structure', 'remind 不直接接 to do 表示同一主语行动，常用 remind somebody to do。', 'remind normally uses remind somebody to do, with the infinitive complementing the object.']
     ],
@@ -276,7 +277,7 @@ const specs = [
     ],
     questions: [
       ['She avoided ___ the question.','She avoided ___ the question.',['answering','to answer'],'A','avoid 后接 doing。','avoid takes doing.'],
-      ['They agreed ___ early.','They agreed ___ early.',['to leave','leaving only'],'A','agree 后接 to do。','agree takes to do.'],
+      ['They agreed ___ early.','They agreed ___ early.',['to leave','leaving'],'A','agree 后选择 to do 作内容宾语。','agree selects to do as its content complement.'],
       ['We started ___. 哪项符合通常用法？','Which is normally possible after “We started”?',[['to work / working 都可以','Both to work and working'],['只能 to working','Only to working']],'A','start 可接两种形式。','start allows both forms.'],
       ['She reminded ___ Dad.','She reminded ___ Dad.',['me to call','to call me'],'A','使用 remind somebody to do。','Use remind somebody to do.']
     ]
@@ -298,8 +299,8 @@ const specs = [
     questions: [
       ['I remember ___ the door. 表示“记得已经锁过”。','I remember ___ the door, meaning I recall the completed action.',['locking','to lock'],'A','回顾已发生动作使用 doing。','Use doing to recall a past action.'],
       ['He stopped ___. 表示“戒烟”。','He stopped ___, meaning he quit the habit.',['smoking','to smoke'],'A','stop doing 表示停止该行为。','stop doing ends the activity.'],
-      ['Try ___ the computer. 表示“试试这种办法”。','Try ___ the computer, meaning test this method.',['restarting','to restart with effort'],'A','试用办法使用 try doing。','Use try doing for testing a method.'],
-      ['This change means ___ longer hours.','This change means ___ longer hours.',['working','to work intentionally'],'A','mean doing 表示“意味着”。','mean doing means entail.']
+      ['Try ___ the computer. 表示“试试重启这种办法”。','Try ___ the computer, meaning test restarting as a method.',['restarting','to restart'],'A','试用一种办法用 try doing；try to do 表示努力完成。','Use try doing to test a method; try to do means making an effort.'],
+      ['This change means ___ longer hours.','This change means ___ longer hours.',['working','to work'],'A','这里 mean 表示“意味着”，选 doing；mean to do 才表示“打算”。','Here mean means entail, so use doing; mean to do means intend.']
     ]
   },
   {
@@ -317,7 +318,7 @@ const specs = [
       ['make/let/have＋宾语＋do 表示使、允许或安排宾语执行动作。','make/let/have + object + do expresses causing, allowing or arranging for the object to act.']
     ],
     questions: [
-      ['I saw him ___ the road. 强调整个过程。','I saw him ___ the road, viewing the event as a whole.',['cross','crossing only'],'A','完整事件常用 do。','Use do for the event as a whole.'],
+      ['I saw him ___ the road. 把过马路看作完整事件。','I saw him ___ the road, viewing the crossing as a whole event.',['cross','crossing'],'A','完整事件用 do；doing 突出动作正在进行的片段。','Use do for the whole event; doing highlights an action in progress.'],
       ['I saw him ___ the road. 强调当时正在进行。','I saw him ___ the road, emphasizing action in progress.',['crossing','crossed'],'A','进行中的片段用 doing。','Use doing for action in progress.'],
       ['We heard our names ___.','We heard our names ___.',['called','calling'],'A','names 承受 call。','our names receives the action.'],
       ['The joke made everyone ___.','The joke made everyone ___.',['laugh','to laugh'],'A','主动 make 后使用省略 to 的不定式。','Active make takes the bare infinitive.']
@@ -341,7 +342,7 @@ const specs = [
       ['The weather being fine, we went out. 中 being 的逻辑主语是什么？','What is the logical subject of being?',['the weather','we'],'A','独立主格自带逻辑主语 weather。','The absolute construction has weather as its own subject.'],
       ['All the work ___, they went home.','All the work ___, they went home.',['finished','finishing'],'A','work 承受 finish。','The work receives the action.'],
       ['She sat with her eyes ___.','She sat with her eyes ___.',['closed','closing'],'A','eyes 处于被闭合的结果状态。','The eyes are in the resulting closed state.'],
-      ['He left with the lights ___.','He left with the lights ___.',['burning','burned by him'],'A','lights 主动持续亮着。','The lights remain actively burning.']
+      ['He left with the lights ___.','He left with the lights ___.',['burning','burned'],'A','lights 与 burn 是主动、持续关系，用 doing。','lights has an active ongoing relation with burn, so use doing.']
     ]
   },
   {
@@ -379,7 +380,7 @@ const specs = [
     questions: [
       ['the man who is talking to Mia 可压缩为什么？','How can “the man who is talking to Mia” be reduced?',['the man talking to Mia','the man talked to Mia'],'A','主动同时关系用 doing。','Use doing for active simultaneous meaning.'],
       ['the bridge which was built last year 可压缩为什么？','How can “the bridge which was built last year” be reduced?',['the bridge built last year','the bridge building last year'],'A','bridge 承受 build，用 done。','The bridge receives build, so use done.'],
-      ['After she had finished her work, she went home. 可压缩为什么？','How can this clause be reduced?',['Having finished her work, she went home.','Finishing by someone else, she went home.'],'A','同主语且先发生，用 having done。','Use having done for same subject and earlier action.'],
+      ['After she had finished her work, she went home. 可压缩为什么？','How can this clause be reduced?',['Having finished her work, she went home.','Finishing her work, she went home.'],'A','同主语且明确先发生，用 having done 保留时间关系。','Use having done to preserve the same-subject, earlier-time relation.'],
       ['Because the weather was fine, we went out. 哪种压缩正确？','Which reduction is correct?',['The weather being fine, we went out.','Being fine, we went out.'],'A','主语不同，要保留 weather 构成独立主格。','Different subjects require weather in an absolute construction.']
     ]
   },

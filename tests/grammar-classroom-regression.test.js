@@ -872,11 +872,13 @@ test('谓语、非谓语与特殊句式课程完整覆盖各自知识边界', ()
     {
       build: sourcePredicateSystemCourses.buildPredicateSystemCourse,
       count: 20, groups: [15, 5], sections: [3, 3, 5, 4, 3, 2], total: 60,
+      titleZh: /定义与限定核心/, titleEn: /Definition and finite core/,
       required: ['finite-boundary','auxiliary-chain','operator','agreement-basic','agreement-head','agreement-proximity-meaning','tense-viewpoint','simple-progressive','perfect-system','past-sequence','future-system','voice-focus','passive-chain','modal-system','semi-modal-system','negation-questions','emphatic-do','short-answers-substitution','predicate-sharing-ellipsis','predicate-integration']
     },
     {
       build: sourceNonfiniteSystemCourses.buildNonfiniteSystemCourse,
       count: 19, groups: [13, 6], sections: [4, 4, 4, 3, 2, 2], total: 69,
+      titleZh: /定义与本质/, titleEn: /Definition and core/,
       required: ['finite-nonfinite-boundary','infinitive-forms','infinitive-subject-predicative','infinitive-object-attribute-complement','infinitive-adverbials','bare-infinitive','gerund-form-logical-subject','gerund-functions','participle-voice-time','participle-attribute-predicative','participle-adverbials','participle-object-complements','verb-complement-patterns','doing-to-do-meaning','perception-causative','absolute-with-construction','dangling-modifiers','nonfinite-clause-conversion','nonfinite-integrated']
     },
     {
@@ -894,9 +896,17 @@ test('谓语、非谓语与特殊句式课程完整覆盖各自知识边界', ()
     assert.equal(bundle.course.reduce((sum, lesson) => sum + lesson.rules.length, 0), spec.total);
     assert.equal(bundle.course.reduce((sum, lesson) => sum + lesson.examples.length, 0), spec.total);
     assert.equal(bundle.course.reduce((sum, lesson) => sum + lesson.questions.length, 0), spec.total);
+    if (spec.titleZh) assert.match(bundle.course[0].title, english ? spec.titleEn : spec.titleZh);
     bundle.course.forEach((lesson) => {
       assert.equal(lesson.analyses.length, lesson.examples.length);
+      assert.equal(lesson.exampleNotes.length, lesson.examples.length);
+      assert.ok(lesson.exampleNotes.every((note) => note.visible && (note.body || note.detail)));
       assert.equal(lesson.ruleCoverage.length, lesson.rules.length);
+      lesson.ruleCoverage.forEach((coverage) => {
+        assert.ok(coverage.exampleIndexes.length && coverage.questionIndexes.length);
+        coverage.exampleIndexes.forEach((index) => assert.ok(index >= 0 && index < lesson.examples.length));
+        coverage.questionIndexes.forEach((index) => assert.ok(index >= 0 && index < lesson.questions.length));
+      });
       if (english) lesson.questions.forEach((question) => {
         assert.doesNotMatch(question.question, /[\u4e00-\u9fff]/);
         question.options.forEach((option) => assert.doesNotMatch(option.text, /[\u4e00-\u9fff]/));
