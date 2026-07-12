@@ -1,5 +1,6 @@
 const pick = (english, zh, en) => english ? en : zh;
 const INCLUDE_RULE_COVERAGE = typeof GRAMMAR_RUNTIME === 'undefined' || !GRAMMAR_RUNTIME;
+const BUILD_TARGET = typeof GRAMMAR_TARGET === 'undefined' ? 'preposition' : GRAMMAR_TARGET;
 const part = (english, text, role, zh, en) => ({ text, role, label: pick(english, zh, en) });
 const ex = (english, pieces, note) => ({
   text: pieces.map((x) => x[0]).join(' '),
@@ -290,4 +291,7 @@ function buildInterjectionCourse(english) {
   ]);
 }
 
-module.exports = { buildPrepositionCourse, buildConjunctionCourse, buildInterjectionCourse };
+module.exports = BUILD_TARGET === 'preposition' ? { buildPrepositionCourse }
+  : BUILD_TARGET === 'conjunction' ? { buildConjunctionCourse }
+    : BUILD_TARGET === 'interjection' ? { buildInterjectionCourse }
+      : { buildPrepositionCourse };

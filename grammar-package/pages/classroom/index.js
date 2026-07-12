@@ -11,8 +11,8 @@ function uiText(english) {
     ['adjective', 'Adjectives', 'Core meaning · Complements · Comparison', 15],
     ['adverb', 'Adverbs', 'Scope · Position · Linking', 16],
     ['preposition', 'Prepositions', 'Definition · Relations · Syntax', 25],
-    ['conjunction', 'Conjunctions', 'Coordination · Subordination', 8],
-    ['interjection', 'Interjections', 'Emotion · Response · Punctuation', 5]
+    ['conjunction', 'Conjunctions', 'Core meaning · Logic · Boundaries', 14],
+    ['interjection', 'Interjections', 'Core meaning · Context · Register', 10]
   ] : [
     ['noun', '名词', '定义 · 数量 · 关系', 10],
     ['pronoun', '代词', '人称 · 格 · 指代', 15],
@@ -22,8 +22,8 @@ function uiText(english) {
     ['adjective', '形容词', '本质 · 补足关系 · 比较系统', 15],
     ['adverb', '副词', '本质 · 范围 · 位置 · 连接', 16],
     ['preposition', '介词', '定义 · 关系 · 句法', 25],
-    ['conjunction', '连词', '并列 · 从属 · 逻辑', 8],
-    ['interjection', '感叹词', '情绪 · 应答 · 标点', 5]
+    ['conjunction', '连词', '本质 · 并列 · 从属 · 边界', 14],
+    ['interjection', '感叹词', '本质 · 语境 · 交际 · 语体', 10]
   ];
   const domains = english ? [
     ['morphology', 'Word Grammar', 'Parts of speech, word forms and word building', 'M'],
@@ -130,6 +130,7 @@ function loaderFor(topic) {
   if (topic === 'word-formation') return 'word-formation';
   if (topic === 'verb' || topic === 'numeral' || topic === 'article') return topic;
   if (topic === 'adjective' || topic === 'adverb') return topic;
+  if (topic === 'preposition' || topic === 'conjunction' || topic === 'interjection') return topic;
   if (topic === 'sentence-elements') return 'sentence-elements';
   if (topic === 'basic-patterns') return 'basic-patterns';
   if (topic === 'predicate-system') return 'predicate-system';

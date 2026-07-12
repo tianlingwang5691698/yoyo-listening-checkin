@@ -13,11 +13,17 @@ const vnaCourses = Object.assign({}, verbCourses, numeralCourses, articleCourses
 const adjectiveCourses = require('../grammar-package/domain/grammar-classroom/adjective-courses');
 const adverbCourses = require('../grammar-package/domain/grammar-classroom/adverb-courses');
 const modifierCourses = Object.assign({}, adjectiveCourses, adverbCourses);
-const relationCourses = require('../grammar-package/domain/grammar-classroom/preposition-conjunction-interjection-courses');
+const prepositionCourses = require('../grammar-package/domain/grammar-classroom/preposition-courses');
+const conjunctionCourses = require('../grammar-package/domain/grammar-classroom/conjunction-courses');
+const interjectionCourses = require('../grammar-package/domain/grammar-classroom/interjection-courses');
+const relationCourses = Object.assign({}, prepositionCourses, conjunctionCourses, interjectionCourses);
 const sourceWordCourses = require('../data/grammar-classroom/course-sources/word-courses');
 const sourceVnaCourses = require('../data/grammar-classroom/course-sources/verb-numeral-article-courses');
 const sourceModifierCourses = require('../data/grammar-classroom/course-sources/adjective-adverb-courses');
-const sourceRelationCourses = require('../data/grammar-classroom/course-sources/preposition-conjunction-interjection-courses');
+const sourcePrepositionCourses = require('../data/grammar-classroom/course-sources/preposition-conjunction-interjection-courses');
+const sourceConjunctionCourses = require('../data/grammar-classroom/course-sources/conjunction-courses');
+const sourceInterjectionCourses = require('../data/grammar-classroom/course-sources/interjection-courses');
+const sourceRelationCourses = Object.assign({}, sourcePrepositionCourses, sourceConjunctionCourses, sourceInterjectionCourses);
 const sourceThirdPersonCourse = require('../data/grammar-classroom/course-sources/third-person-course');
 const sourceWordFormationCourses = require('../data/grammar-classroom/course-sources/word-formation-courses');
 const sourceSentenceElementsCourses = require('../data/grammar-classroom/course-sources/sentence-elements-courses');
@@ -87,7 +93,7 @@ test('语法课堂首屏不构建完整课程，点击后按专题加载', () =>
   const ignoredFolders = (projectConfig.packOptions && projectConfig.packOptions.ignore || []).filter((item) => item.type === 'folder').map((item) => item.value);
   assert.ok(!ignoredFolders.some((folder) => 'domain/grammar-classroom'.startsWith(folder)));
   assert.match(loader, /lifetimes:[\s\S]*ready\(\)[\s\S]*loadWordCourse/);
-  ['grammar-verb-loader', 'grammar-numeral-loader', 'grammar-article-loader', 'grammar-relation-loader'].forEach((name) => {
+  ['grammar-verb-loader', 'grammar-numeral-loader', 'grammar-article-loader'].forEach((name) => {
     const source = fs.readFileSync(path.join(__dirname, `../grammar-package/components/${name}/index.js`), 'utf8');
     assert.match(source, /^const courses = require\('\.\.\/\.\.\/domain\/grammar-classroom\//);
   });
@@ -97,6 +103,10 @@ test('语法课堂首屏不构建完整课程，点击后按专题加载', () =>
   assert.doesNotMatch(adjectiveLoader, /adverb-courses|buildAdverbCourse/);
   assert.match(adverbLoader, /adverb-courses/);
   assert.doesNotMatch(adverbLoader, /adjective-courses|buildAdjectiveCourse/);
+  [['grammar-preposition-loader','preposition-courses'],['grammar-conjunction-loader','conjunction-courses'],['grammar-interjection-loader','interjection-courses']].forEach(([name,file]) => {
+    const source = fs.readFileSync(path.join(__dirname, `../grammar-package/components/${name}/index.js`), 'utf8');
+    assert.match(source, new RegExp(file));
+  });
   const sentenceElementsLoader = fs.readFileSync(path.join(__dirname, '../grammar-package/components/grammar-sentence-elements-loader/index.js'), 'utf8');
   const basicPatternsLoader = fs.readFileSync(path.join(__dirname, '../grammar-package/components/grammar-basic-patterns-loader/index.js'), 'utf8');
   assert.match(sentenceElementsLoader, /require\('\.\.\/\.\.\/domain\/grammar-classroom\/sentence-elements-courses'\)/);
@@ -158,7 +168,8 @@ test('课程可读源文件与打包运行时文件保持一致', () => {
   });
   Object.keys(sourceVnaCourses).forEach((name) => [false, true].forEach((english) => assert.deepEqual(withoutCoverage(vnaCourses[name](english)), withoutCoverage(sourceVnaCourses[name](english)))));
   Object.keys(sourceModifierCourses).forEach((name) => [false, true].forEach((english) => assert.deepEqual(withoutCoverage(modifierCourses[name](english)), withoutCoverage(sourceModifierCourses[name](english)))));
-  const files = ['word-formation-courses', 'preposition-conjunction-interjection-courses', 'sentence-elements-courses', 'basic-sentence-patterns-courses', 'predicate-system-courses', 'nonfinite-system-courses', 'special-structures-courses', 'coordination-courses', 'noun-clauses-courses', 'relative-clauses-courses', 'adverbial-clauses-courses', 'reported-speech-courses', 'cohesion-reference-courses', 'information-order-courses', 'punctuation-courses', 'common-expression-courses'];
+  Object.keys(sourceRelationCourses).forEach((name) => [false, true].forEach((english) => assert.deepEqual(withoutCoverage(relationCourses[name](english)), withoutCoverage(sourceRelationCourses[name](english)))));
+  const files = ['word-formation-courses', 'sentence-elements-courses', 'basic-sentence-patterns-courses', 'predicate-system-courses', 'nonfinite-system-courses', 'special-structures-courses', 'coordination-courses', 'noun-clauses-courses', 'relative-clauses-courses', 'adverbial-clauses-courses', 'reported-speech-courses', 'cohesion-reference-courses', 'information-order-courses', 'punctuation-courses', 'common-expression-courses'];
   files.forEach((file) => {
     const source = require(`../data/grammar-classroom/course-sources/${file}`);
     const runtime = require(`../grammar-package/domain/grammar-classroom/${file}`);
@@ -223,6 +234,22 @@ test('形容词与副词使用独立运行时和独立懒加载组件', () => {
   const wxml = fs.readFileSync(path.join(__dirname, '../grammar-package/pages/classroom/index.wxml'), 'utf8');
   assert.match(wxml, /grammar-adjective-loader wx:if="\{\{loaderKind === 'adjective'\}\}"/);
   assert.match(wxml, /grammar-adverb-loader wx:if="\{\{loaderKind === 'adverb'\}\}"/);
+});
+
+test('介词、连词与感叹词使用独立运行时和独立懒加载组件', () => {
+  const runtimes = Object.fromEntries(['preposition','conjunction','interjection'].map((topic) => [topic, fs.readFileSync(path.join(__dirname, `../grammar-package/domain/grammar-classroom/${topic}-courses.js`), 'utf8')]));
+  assert.deepEqual(Object.keys(prepositionCourses), ['buildPrepositionCourse']);
+  assert.deepEqual(Object.keys(conjunctionCourses), ['buildConjunctionCourse']);
+  assert.deepEqual(Object.keys(interjectionCourses), ['buildInterjectionCourse']);
+  assert.match(runtimes.preposition, /prep-essence/);
+  assert.doesNotMatch(runtimes.preposition, /conj-essence|interj-essence/);
+  assert.match(runtimes.conjunction, /conj-essence/);
+  assert.doesNotMatch(runtimes.conjunction, /prep-essence|interj-essence/);
+  assert.match(runtimes.interjection, /interj-essence/);
+  assert.doesNotMatch(runtimes.interjection, /prep-essence|conj-essence/);
+  assert.ok(!fs.existsSync(path.join(__dirname, '../grammar-package/domain/grammar-classroom/preposition-conjunction-interjection-courses.js')));
+  const wxml = fs.readFileSync(path.join(__dirname, '../grammar-package/pages/classroom/index.wxml'), 'utf8');
+  ['preposition','conjunction','interjection'].forEach((topic) => assert.match(wxml, new RegExp(`grammar-${topic}-loader wx:if="\\{\\{loaderKind === '${topic}'\\}\\}"`)));
 });
 
 test('十大词性课程中英文内容、练习和两套主题完整', () => {
@@ -615,6 +642,58 @@ test('冠词课程从指称本质到零冠词与意义变化完整闭环', () =>
   const page = fs.readFileSync(path.join(__dirname, '../grammar-package/pages/classroom/index.js'), 'utf8');
   assert.match(page, /\['article', 'Articles',[^\n]+, 15\]/);
   assert.match(page, /\['article', '冠词',[^\n]+, 15\]/);
+});
+
+test('连词课程从连接本质到并列、从属、边界与平行结构完整闭环', () => {
+  const requiredIds = ['conj-essence','conj-and-or','conj-but-so','conj-for-nor-yet','conj-time','conj-reason-condition','conj-concession-purpose','conj-place-manner-comparison','conj-correlative','conj-near-agreement','conj-boundary','conj-punctuation','conj-parallel','conj-integration'];
+  [false, true].forEach((english) => {
+    const bundle = sourceConjunctionCourses.buildConjunctionCourse(english);
+    assert.deepEqual(bundle.course.map((lesson) => lesson.id), requiredIds);
+    assert.deepEqual(bundle.groups.map((group) => group.lessons.length), [9, 5]);
+    assert.deepEqual(bundle.sections.map((section) => section.lessonCount), [4, 4, 2, 4]);
+    bundle.course.forEach((lesson) => {
+      assert.equal(lesson.exampleNotes.length, lesson.examples.length);
+      assert.ok(lesson.exampleNotes.every((note) => note.visible && (note.body || note.detail)));
+      assert.equal(lesson.ruleCoverage.length, lesson.rules.length);
+      lesson.ruleCoverage.forEach((coverage) => {
+        coverage.exampleIndexes.forEach((index) => assert.ok(index >= 0 && index < lesson.examples.length));
+        coverage.questionIndexes.forEach((index) => assert.ok(index >= 0 && index < lesson.questions.length));
+      });
+      if (english) lesson.questions.forEach((question) => {
+        assert.doesNotMatch(question.question, /[\u4e00-\u9fff]/);
+        question.options.forEach((option) => assert.doesNotMatch(option.text, /[\u4e00-\u9fff]/));
+      });
+    });
+  });
+  const page = fs.readFileSync(path.join(__dirname, '../grammar-package/pages/classroom/index.js'), 'utf8');
+  assert.match(page, /\['conjunction', '连词',[^\n]+, 14\]/);
+  assert.match(page, /\['conjunction', 'Conjunctions',[^\n]+, 14\]/);
+});
+
+test('感叹词课程从即时反应本质到语境、语体与词类边界完整闭环', () => {
+  const requiredIds = ['interj-essence','interj-independence-position','interj-vs-exclamative','interj-emotions','interj-context-tone','interj-interaction','interj-discourse-markers','interj-punctuation','interj-register-politeness','interj-wordclass-sounds'];
+  [false, true].forEach((english) => {
+    const bundle = sourceInterjectionCourses.buildInterjectionCourse(english);
+    assert.deepEqual(bundle.course.map((lesson) => lesson.id), requiredIds);
+    assert.deepEqual(bundle.groups.map((group) => group.lessons.length), [8, 2]);
+    assert.deepEqual(bundle.sections.map((section) => section.lessonCount), [3, 2, 2, 2, 1]);
+    bundle.course.forEach((lesson) => {
+      assert.equal(lesson.exampleNotes.length, lesson.examples.length);
+      assert.ok(lesson.exampleNotes.every((note) => note.visible && (note.body || note.detail)));
+      assert.equal(lesson.ruleCoverage.length, lesson.rules.length);
+      lesson.ruleCoverage.forEach((coverage) => {
+        coverage.exampleIndexes.forEach((index) => assert.ok(index >= 0 && index < lesson.examples.length));
+        coverage.questionIndexes.forEach((index) => assert.ok(index >= 0 && index < lesson.questions.length));
+      });
+      if (english) lesson.questions.forEach((question) => {
+        assert.doesNotMatch(question.question, /[\u4e00-\u9fff]/);
+        question.options.forEach((option) => assert.doesNotMatch(option.text, /[\u4e00-\u9fff]/));
+      });
+    });
+  });
+  const page = fs.readFileSync(path.join(__dirname, '../grammar-package/pages/classroom/index.js'), 'utf8');
+  assert.match(page, /\['interjection', '感叹词',[^\n]+, 10\]/);
+  assert.match(page, /\['interjection', 'Interjections',[^\n]+, 10\]/);
 });
 
 test('介词系统课程覆盖形式、语义关系、句法功能与易混结构', () => {
