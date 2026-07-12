@@ -4,9 +4,9 @@ const LANGUAGE_KEY = 'yoyoLanguageV1';
 function uiText(english) {
   const topics = english ? [
     ['noun', 'Nouns', 'Definition · Number · Relations', 10],
-    ['pronoun', 'Pronouns', 'Person · Case · Reference', 9],
-    ['numeral', 'Numerals', 'Cardinals · Ordinals · Fractions', 7],
-    ['article', 'Articles', 'a/an · the · Zero article', 8],
+    ['pronoun', 'Pronouns', 'Person · Case · Reference', 15],
+    ['numeral', 'Numerals', 'Quantity · Order · Proportion · Labels', 12],
+    ['article', 'Articles', 'Reference · a/an · the · Zero article', 15],
     ['verb', 'Verbs', 'Jobs · Forms · Tense · Voice', 36],
     ['adjective', 'Adjectives', 'Position · Comparison · Order', 9],
     ['adverb', 'Adverbs', 'Types · Position · Comparison', 8],
@@ -15,9 +15,9 @@ function uiText(english) {
     ['interjection', 'Interjections', 'Emotion · Response · Punctuation', 5]
   ] : [
     ['noun', '名词', '定义 · 数量 · 关系', 10],
-    ['pronoun', '代词', '人称 · 格 · 指代', 9],
-    ['numeral', '数词', '基数 · 序数 · 分数', 7],
-    ['article', '冠词', 'a/an · the · 零冠词', 8],
+    ['pronoun', '代词', '人称 · 格 · 指代', 15],
+    ['numeral', '数词', '数量 · 顺序 · 比例 · 编号', 12],
+    ['article', '冠词', '指称本质 · a/an · the · 零冠词', 15],
     ['verb', '动词', '作用 · 形式 · 时态 · 语态', 36],
     ['adjective', '形容词', '位置 · 比较级 · 顺序', 9],
     ['adverb', '副词', '种类 · 位置 · 比较级', 8],
@@ -125,9 +125,10 @@ function uiText(english) {
 }
 
 function loaderFor(topic) {
-  if (topic === 'noun' || topic === 'pronoun') return 'word';
+  if (topic === 'noun') return 'word';
+  if (topic === 'pronoun') return 'pronoun';
   if (topic === 'word-formation') return 'word-formation';
-  if (topic === 'verb' || topic === 'numeral' || topic === 'article') return 'vna';
+  if (topic === 'verb' || topic === 'numeral' || topic === 'article') return topic;
   if (topic === 'adjective' || topic === 'adverb') return 'modifier';
   if (topic === 'sentence-elements') return 'sentence-elements';
   if (topic === 'basic-patterns') return 'basic-patterns';

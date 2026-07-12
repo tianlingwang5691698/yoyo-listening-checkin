@@ -3,8 +3,13 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
 const vm = require('node:vm');
-const wordCourses = require('../grammar-package/domain/grammar-classroom/word-courses');
-const vnaCourses = require('../grammar-package/domain/grammar-classroom/verb-numeral-article-courses');
+const nounCourses = require('../grammar-package/domain/grammar-classroom/noun-courses');
+const pronounCourses = require('../grammar-package/domain/grammar-classroom/pronoun-courses');
+const wordCourses = Object.assign({}, nounCourses, pronounCourses);
+const verbCourses = require('../grammar-package/domain/grammar-classroom/verb-courses');
+const numeralCourses = require('../grammar-package/domain/grammar-classroom/numeral-courses');
+const articleCourses = require('../grammar-package/domain/grammar-classroom/article-courses');
+const vnaCourses = Object.assign({}, verbCourses, numeralCourses, articleCourses);
 const modifierCourses = require('../grammar-package/domain/grammar-classroom/adjective-adverb-courses');
 const relationCourses = require('../grammar-package/domain/grammar-classroom/preposition-conjunction-interjection-courses');
 const sourceWordCourses = require('../data/grammar-classroom/course-sources/word-courses');
@@ -56,7 +61,7 @@ test('语法课堂首屏不构建完整课程，点击后按专题加载', () =>
   assert.equal(getClassroomCourse(home, 'noun').course.length, 0);
   assert.equal(getClassroomCourse(home, 'pronoun').course.length, 0);
   assert.equal(wordCourses.buildNounCourse(false).course.length, 10);
-  assert.equal(wordCourses.buildPronounCourse(false).course.length, 9);
+  assert.equal(wordCourses.buildPronounCourse(false).course.length, 15);
   assert.equal(getClassroomCourse(home, 'verb').course.length, 9);
   buildClassroomText(true).thirdPersonCourse.forEach((lesson) => {
     assert.equal(lesson.ruleCoverage.length, lesson.rules.length);
@@ -71,12 +76,16 @@ test('语法课堂首屏不构建完整课程，点击后按专题加载', () =>
   assert.doesNotMatch(grammarPage, /require\('\.\.\/\.\.\/data\/grammar-classroom\/word-courses'\)/);
   assert.match(grammarPage, /onWordCourseLoaded/);
   const loader = fs.readFileSync(path.join(__dirname, '../grammar-package/components/grammar-word-loader/index.js'), 'utf8');
-  assert.match(loader, /^const wordCourses = require\('\.\.\/\.\.\/domain\/grammar-classroom\/word-courses'\)/);
+  const pronounLoader = fs.readFileSync(path.join(__dirname, '../grammar-package/components/grammar-pronoun-loader/index.js'), 'utf8');
+  assert.match(loader, /^const nounCourses = require\('\.\.\/\.\.\/domain\/grammar-classroom\/noun-courses'\)/);
+  assert.doesNotMatch(loader, /pronoun-courses|buildPronounCourse/);
+  assert.match(pronounLoader, /^const pronounCourses = require\('\.\.\/\.\.\/domain\/grammar-classroom\/pronoun-courses'\)/);
+  assert.doesNotMatch(pronounLoader, /domain\/grammar-classroom\/noun-courses|buildNounCourse/);
   const projectConfig = JSON.parse(fs.readFileSync(path.join(__dirname, '../project.config.json'), 'utf8'));
   const ignoredFolders = (projectConfig.packOptions && projectConfig.packOptions.ignore || []).filter((item) => item.type === 'folder').map((item) => item.value);
   assert.ok(!ignoredFolders.some((folder) => 'domain/grammar-classroom'.startsWith(folder)));
   assert.match(loader, /lifetimes:[\s\S]*ready\(\)[\s\S]*loadWordCourse/);
-  ['grammar-vna-loader', 'grammar-modifier-loader', 'grammar-relation-loader'].forEach((name) => {
+  ['grammar-verb-loader', 'grammar-numeral-loader', 'grammar-article-loader', 'grammar-modifier-loader', 'grammar-relation-loader'].forEach((name) => {
     const source = fs.readFileSync(path.join(__dirname, `../grammar-package/components/${name}/index.js`), 'utf8');
     assert.match(source, /^const courses = require\('\.\.\/\.\.\/domain\/grammar-classroom\//);
   });
@@ -118,8 +127,8 @@ test('语法课堂首屏不构建完整课程，点击后按专题加载', () =>
     const source = fs.readFileSync(path.join(__dirname, `../grammar-package/components/${loaderName}/index.js`), 'utf8');
     assert.match(source, new RegExp(`require\\('\\.\\.\\/\\.\\.\\/domain\\/grammar-classroom\\/${courseName}'\\)`));
   });
-  const vnaLoader = fs.readFileSync(path.join(__dirname, '../grammar-package/components/grammar-vna-loader/index.js'), 'utf8');
-  assert.doesNotMatch(vnaLoader, /third-person-course/);
+  const verbLoader = fs.readFileSync(path.join(__dirname, '../grammar-package/components/grammar-verb-loader/index.js'), 'utf8');
+  assert.doesNotMatch(verbLoader, /third-person-course|numeral-courses|article-courses/);
   const grammarConfig = JSON.parse(fs.readFileSync(path.join(__dirname, '../grammar-package/pages/classroom/index.json'), 'utf8'));
   Object.values(grammarConfig.usingComponents).forEach((request) => {
     const base = path.resolve(__dirname, '../grammar-package/pages/classroom', request);
@@ -135,12 +144,60 @@ test('语法课堂首屏不构建完整课程，点击后按专题加载', () =>
 });
 
 test('课程可读源文件与打包运行时文件保持一致', () => {
-  const files = ['word-courses', 'word-formation-courses', 'verb-numeral-article-courses', 'adjective-adverb-courses', 'preposition-conjunction-interjection-courses', 'sentence-elements-courses', 'basic-sentence-patterns-courses', 'predicate-system-courses', 'nonfinite-system-courses', 'special-structures-courses', 'coordination-courses', 'noun-clauses-courses', 'relative-clauses-courses', 'adverbial-clauses-courses', 'reported-speech-courses', 'cohesion-reference-courses', 'information-order-courses', 'punctuation-courses', 'common-expression-courses'];
+  [false, true].forEach((english) => {
+    assert.deepEqual(withoutCoverage(nounCourses.buildNounCourse(english)), withoutCoverage(sourceWordCourses.buildNounCourse(english)));
+    assert.deepEqual(withoutCoverage(pronounCourses.buildPronounCourse(english)), withoutCoverage(sourceWordCourses.buildPronounCourse(english)));
+  });
+  Object.keys(sourceVnaCourses).forEach((name) => [false, true].forEach((english) => assert.deepEqual(withoutCoverage(vnaCourses[name](english)), withoutCoverage(sourceVnaCourses[name](english)))));
+  const files = ['word-formation-courses', 'adjective-adverb-courses', 'preposition-conjunction-interjection-courses', 'sentence-elements-courses', 'basic-sentence-patterns-courses', 'predicate-system-courses', 'nonfinite-system-courses', 'special-structures-courses', 'coordination-courses', 'noun-clauses-courses', 'relative-clauses-courses', 'adverbial-clauses-courses', 'reported-speech-courses', 'cohesion-reference-courses', 'information-order-courses', 'punctuation-courses', 'common-expression-courses'];
   files.forEach((file) => {
     const source = require(`../data/grammar-classroom/course-sources/${file}`);
     const runtime = require(`../grammar-package/domain/grammar-classroom/${file}`);
     Object.keys(source).forEach((name) => [false, true].forEach((english) => assert.deepEqual(withoutCoverage(runtime[name](english)), withoutCoverage(source[name](english)))));
   });
+});
+
+test('名词与代词使用独立运行时和独立懒加载组件', () => {
+  assert.equal(fs.existsSync(path.join(__dirname, '../grammar-package/domain/grammar-classroom/word-courses.js')), false);
+  const nounRuntimePath = path.join(__dirname, '../grammar-package/domain/grammar-classroom/noun-courses.js');
+  const pronounRuntimePath = path.join(__dirname, '../grammar-package/domain/grammar-classroom/pronoun-courses.js');
+  const nounRuntime = fs.readFileSync(nounRuntimePath, 'utf8');
+  const pronounRuntime = fs.readFileSync(pronounRuntimePath, 'utf8');
+  assert.deepEqual(Object.keys(nounCourses), ['buildNounCourse']);
+  assert.deepEqual(Object.keys(pronounCourses), ['buildPronounCourse']);
+  assert.doesNotMatch(nounRuntime, /代词的定义与本质|pronoun-essence/);
+  assert.doesNotMatch(pronounRuntime, /名词的定义与本质|noun-job/);
+  assert.ok(Buffer.byteLength(nounRuntime) < 30000);
+  assert.ok(Buffer.byteLength(pronounRuntime) < 60000);
+  const page = fs.readFileSync(path.join(__dirname, '../grammar-package/pages/classroom/index.js'), 'utf8');
+  const wxml = fs.readFileSync(path.join(__dirname, '../grammar-package/pages/classroom/index.wxml'), 'utf8');
+  assert.match(page, /topic === 'noun'\) return 'word'/);
+  assert.match(page, /topic === 'pronoun'\) return 'pronoun'/);
+  assert.match(wxml, /grammar-word-loader wx:if="\{\{loaderKind === 'word'\}\}"/);
+  assert.match(wxml, /grammar-pronoun-loader wx:if="\{\{loaderKind === 'pronoun'\}\}"/);
+});
+
+test('动词、数词与冠词使用独立运行时和独立懒加载组件', () => {
+  const runtimes = {
+    verb: fs.readFileSync(path.join(__dirname, '../grammar-package/domain/grammar-classroom/verb-courses.js'), 'utf8'),
+    numeral: fs.readFileSync(path.join(__dirname, '../grammar-package/domain/grammar-classroom/numeral-courses.js'), 'utf8'),
+    article: fs.readFileSync(path.join(__dirname, '../grammar-package/domain/grammar-classroom/article-courses.js'), 'utf8')
+  };
+  assert.deepEqual(Object.keys(verbCourses), ['buildVerbCourse']);
+  assert.deepEqual(Object.keys(numeralCourses), ['buildNumeralCourse']);
+  assert.deepEqual(Object.keys(articleCourses), ['buildArticleCourse']);
+  assert.match(runtimes.verb, /verb-jobs/);
+  assert.doesNotMatch(runtimes.verb, /numeral-essence|article-essence/);
+  assert.match(runtimes.numeral, /numeral-essence/);
+  assert.doesNotMatch(runtimes.numeral, /verb-jobs|article-essence/);
+  assert.match(runtimes.article, /article-essence/);
+  assert.doesNotMatch(runtimes.article, /verb-jobs|numeral-essence/);
+  assert.ok(!fs.existsSync(path.join(__dirname, '../grammar-package/domain/grammar-classroom/verb-numeral-article-courses.js')));
+  assert.ok(!fs.existsSync(path.join(__dirname, '../grammar-package/components/grammar-vna-loader/index.js')));
+  const page = fs.readFileSync(path.join(__dirname, '../grammar-package/pages/classroom/index.js'), 'utf8');
+  const wxml = fs.readFileSync(path.join(__dirname, '../grammar-package/pages/classroom/index.wxml'), 'utf8');
+  assert.match(page, /topic === 'verb' \|\| topic === 'numeral' \|\| topic === 'article'\) return topic/);
+  ['verb','numeral','article'].forEach((topic) => assert.match(wxml, new RegExp(`grammar-${topic}-loader wx:if="\\{\\{loaderKind === '${topic}'\\}\\}"`)));
 });
 
 test('十大词性课程中英文内容、练习和两套主题完整', () => {
@@ -259,6 +316,190 @@ test('名词课程从定义、句法功能到数量和关系完整闭环', () =>
   const page = fs.readFileSync(path.join(__dirname, '../grammar-package/pages/classroom/index.js'), 'utf8');
   assert.match(page, /\['noun', 'Nouns',[^\n]+, 10\]/);
   assert.match(page, /\['noun', '名词',[^\n]+, 10\]/);
+});
+
+test('代词课程从指代本质到一致与歧义完整闭环', () => {
+  const requiredIds = ['pronoun-essence','personal-pronoun','possessive-pronoun','reflexive','demonstrative','interrogative','indefinite-some-any','indefinite-quantity','it-reference','relative-pronoun','reciprocal','substitute-pronoun','pronoun-agreement','pronoun-ambiguity','pronoun-boss'];
+  [false, true].forEach((english) => {
+    const bundle = sourceWordCourses.buildPronounCourse(english);
+    assert.deepEqual(bundle.course.map((lesson) => lesson.id), requiredIds);
+    assert.deepEqual(bundle.groups.map((group) => group.lessons.length), [13, 2]);
+    assert.deepEqual(bundle.sections.map((section) => section.lessonCount), [1, 3, 4, 2, 2, 2, 1]);
+    bundle.course.forEach((lesson) => {
+      assert.equal(lesson.exampleNotes.length, lesson.examples.length);
+      assert.ok(lesson.exampleNotes.every((note) => note.visible && (note.body || note.detail)));
+      assert.equal(lesson.ruleCoverage.length, lesson.rules.length);
+      lesson.ruleCoverage.forEach((coverage) => {
+        assert.ok(coverage.exampleIndexes.length && coverage.questionIndexes.length);
+        coverage.exampleIndexes.forEach((index) => assert.ok(index >= 0 && index < lesson.examples.length));
+        coverage.questionIndexes.forEach((index) => assert.ok(index >= 0 && index < lesson.questions.length));
+      });
+      if (english) lesson.questions.forEach((question) => {
+        assert.doesNotMatch(question.question, /[\u4e00-\u9fff]/);
+        question.options.forEach((option) => assert.doesNotMatch(option.text, /[\u4e00-\u9fff]/));
+      });
+    });
+  });
+  const essence = sourceWordCourses.buildPronounCourse(false).course[0];
+  assert.equal(essence.id, 'pronoun-essence');
+  assert.ok(essence.rules.some((rule) => rule.includes('指向语境')));
+  assert.ok(essence.rules.some((rule) => rule.includes('限定词')));
+  assert.ok(essence.analyses[1].some((part) => part.text === 'I' && part.role === 'subject'));
+  assert.ok(essence.analyses[1].some((part) => part.text === 'saw' && part.role === 'predicate'));
+  assert.deepEqual(essence.ruleCoverage[1], { exampleIndexes: [0, 1], questionIndexes: [0, 1] });
+  const personal = sourceWordCourses.buildPronounCourse(false).course.find((lesson) => lesson.id === 'personal-pronoun');
+  assert.ok(personal.analyses[1].some((part) => part.text === 'to' && part.role === 'preposition'));
+  assert.ok(personal.analyses[1].some((part) => part.text === 'him.' && part.role === 'object'));
+  const reflexive = sourceWordCourses.buildPronounCourse(false).course.find((lesson) => lesson.id === 'reflexive');
+  const emphasisExample = reflexive.analyses.find((analysis) => analysis.some((part) => part.text === 'myself.'));
+  assert.ok(emphasisExample.some((part) => part.text === 'the cake' && part.role === 'object'));
+  assert.ok(emphasisExample.some((part) => part.text === 'myself.' && part.role === 'emphasis'));
+  const relative = sourceWordCourses.buildPronounCourse(false).course.find((lesson) => lesson.id === 'relative-pronoun');
+  assert.ok(relative.rules.some((rule) => rule.includes('关系副词')));
+  const interrogative = sourceWordCourses.buildPronounCourse(false).course.find((lesson) => lesson.id === 'interrogative');
+  assert.ok(interrogative.analyses[2].some((part) => part.text === 'Whose bag' && part.role === 'predicative'));
+  assert.ok(interrogative.analyses[2].some((part) => part.text === 'this?' && part.role === 'subject'));
+  const agreement = sourceWordCourses.buildPronounCourse(false).course.find((lesson) => lesson.id === 'pronoun-agreement');
+  assert.ok(agreement.rules.some((rule) => rule.includes('单数 they')));
+  assert.equal(agreement.level, 'core');
+  const quantity = sourceWordCourses.buildPronounCourse(false).course.find((lesson) => lesson.id === 'indefinite-quantity');
+  assert.equal(quantity.rules.length, 6);
+  assert.equal(quantity.examples.length, 8);
+  assert.equal(quantity.questions.length, 8);
+  assert.deepEqual(quantity.ruleCoverage, [
+    { exampleIndexes: [0], questionIndexes: [0] },
+    { exampleIndexes: [1], questionIndexes: [1] },
+    { exampleIndexes: [2], questionIndexes: [2] },
+    { exampleIndexes: [3], questionIndexes: [3] },
+    { exampleIndexes: [4, 5], questionIndexes: [4, 5] },
+    { exampleIndexes: [6, 7], questionIndexes: [6, 7] }
+  ]);
+  quantity.ruleCoverage.forEach((coverage) => {
+    assert.ok(coverage.exampleIndexes.length > 0);
+    assert.ok(coverage.questionIndexes.length > 0);
+  });
+  const itReference = sourceWordCourses.buildPronounCourse(false).course.find((lesson) => lesson.id === 'it-reference');
+  assert.deepEqual(itReference.ruleCoverage[1], { exampleIndexes: [1, 2, 3], questionIndexes: [1, 2, 3] });
+  assert.deepEqual(itReference.ruleCoverage[2], { exampleIndexes: [4, 5], questionIndexes: [4, 5] });
+  const reciprocal = sourceWordCourses.buildPronounCourse(false).course.find((lesson) => lesson.id === 'reciprocal');
+  assert.equal(reciprocal.title, '相互代词');
+  assert.ok(!reciprocal.examples.some((example) => /new one|Give me another/.test(example)));
+  const page = fs.readFileSync(path.join(__dirname, '../grammar-package/pages/classroom/index.js'), 'utf8');
+  assert.match(page, /\['pronoun', 'Pronouns',[^\n]+, 15\]/);
+  assert.match(page, /\['pronoun', '代词',[^\n]+, 15\]/);
+});
+
+test('数词课程从数量本质到功能读法与一致完整闭环', () => {
+  const requiredIds = [
+    'numeral-essence', 'numeral-functions', 'cardinals', 'ordinals', 'large-numbers',
+    'fractions', 'decimals-percent', 'date-time', 'labels-years', 'approximate',
+    'multiples-ratios', 'number-agreement'
+  ];
+  [false, true].forEach((english) => {
+    const bundle = sourceVnaCourses.buildNumeralCourse(english);
+    assert.deepEqual(bundle.course.map((lesson) => lesson.id), requiredIds);
+    assert.deepEqual(bundle.groups.map((group) => group.lessons.length), [10, 2]);
+    assert.deepEqual(bundle.sections.map((section) => section.lessonCount), [2, 3, 2, 2, 2, 1]);
+    assert.ok(bundle.course.reduce((sum, lesson) => sum + lesson.rules.length, 0) >= 35);
+    assert.ok(bundle.course.reduce((sum, lesson) => sum + lesson.examples.length, 0) >= 36);
+    assert.ok(bundle.course.reduce((sum, lesson) => sum + lesson.questions.length, 0) >= 36);
+    bundle.course.forEach((lesson) => {
+      assert.equal(lesson.exampleNotes.length, lesson.examples.length);
+      assert.ok(lesson.exampleNotes.every((note) => note.visible && (note.body || note.detail)));
+      assert.equal(lesson.ruleCoverage.length, lesson.rules.length);
+      lesson.ruleCoverage.forEach((coverage) => {
+        assert.ok(coverage.exampleIndexes.length && coverage.questionIndexes.length);
+        coverage.exampleIndexes.forEach((index) => assert.ok(index >= 0 && index < lesson.examples.length));
+        coverage.questionIndexes.forEach((index) => assert.ok(index >= 0 && index < lesson.questions.length));
+      });
+      lesson.questions.forEach((question) => assert.ok(question.options.some((option) => option.key === question.answer)));
+    });
+    if (english) bundle.course.forEach((lesson) => lesson.questions.forEach((question) => {
+      assert.doesNotMatch(question.question, /[\u4e00-\u9fff]/);
+      question.options.forEach((option) => assert.doesNotMatch(option.text, /[\u4e00-\u9fff]/));
+    }));
+  });
+  const essence = sourceVnaCourses.buildNumeralCourse(false).course.find((lesson) => lesson.id === 'numeral-essence');
+  assert.ok(essence.rules.some((rule) => rule.includes('数量关系')));
+  assert.ok(essence.exampleNotes.some((note) => note.body.includes('公交线路命名')));
+  const numeralZh = sourceVnaCourses.buildNumeralCourse(false);
+  const functions = numeralZh.course.find((lesson) => lesson.id === 'numeral-functions');
+  assert.ok(functions.examples.some((example) => example.includes('The first chapter')));
+  const ordinals = numeralZh.course.find((lesson) => lesson.id === 'ordinals');
+  assert.ok(ordinals.examples.some((example) => example.includes('The third runner')));
+  const largeNumbers = numeralZh.course.find((lesson) => lesson.id === 'large-numbers');
+  assert.ok(largeNumbers.examples.some((example) => example.includes('(BrE)') && example.includes('(AmE)')));
+  const dateTime = numeralZh.course.find((lesson) => lesson.id === 'date-time');
+  assert.equal(dateTime.rules.length, 4);
+  assert.ok(dateTime.rules.some((rule) => rule.startsWith('past')));
+  assert.ok(dateTime.rules.some((rule) => rule.startsWith('to')));
+  const page = fs.readFileSync(path.join(__dirname, '../grammar-package/pages/classroom/index.js'), 'utf8');
+  assert.match(page, /\['numeral', 'Numerals',[^\n]+, 12\]/);
+  assert.match(page, /\['numeral', '数词',[^\n]+, 12\]/);
+});
+
+test('冠词课程从指称本质到零冠词与意义变化完整闭环', () => {
+  const requiredIds = [
+    'article-essence', 'article-determiner-boundary', 'indefinite-reference', 'a-an',
+    'the-known', 'the-context-chain', 'unique-superlative', 'zero-basic',
+    'institutions-meals', 'activity-conventions', 'names-places', 'generic-contrast',
+    'article-countability-shift', 'article-meaning', 'article-groups'
+  ];
+  [false, true].forEach((english) => {
+    const bundle = sourceVnaCourses.buildArticleCourse(english);
+    assert.deepEqual(bundle.course.map((lesson) => lesson.id), requiredIds);
+    assert.deepEqual(bundle.groups.map((group) => group.lessons.length), [12, 3]);
+    assert.deepEqual(bundle.sections.map((section) => section.lessonCount), [3, 1, 3, 4, 1, 3]);
+    assert.equal(bundle.course.reduce((sum, lesson) => sum + lesson.rules.length, 0), 48);
+    assert.equal(bundle.course.reduce((sum, lesson) => sum + lesson.examples.length, 0), 59);
+    assert.equal(bundle.course.reduce((sum, lesson) => sum + lesson.questions.length, 0), 59);
+    bundle.course.forEach((lesson) => {
+      assert.equal(lesson.exampleNotes.length, lesson.examples.length);
+      assert.ok(lesson.exampleNotes.every((note) => note.visible && (note.body || note.detail)));
+      assert.equal(lesson.ruleCoverage.length, lesson.rules.length);
+      lesson.ruleCoverage.forEach((coverage) => {
+        assert.ok(coverage.exampleIndexes.length && coverage.questionIndexes.length);
+        coverage.exampleIndexes.forEach((index) => assert.ok(index >= 0 && index < lesson.examples.length));
+        coverage.questionIndexes.forEach((index) => assert.ok(index >= 0 && index < lesson.questions.length));
+      });
+      lesson.questions.forEach((question) => assert.ok(question.options.some((option) => option.key === question.answer)));
+      if (english) lesson.questions.forEach((question) => {
+        assert.doesNotMatch(question.question, /[\u4e00-\u9fff]/);
+        question.options.forEach((option) => assert.doesNotMatch(option.text, /[\u4e00-\u9fff]/));
+      });
+    });
+  });
+  const zh = sourceVnaCourses.buildArticleCourse(false);
+  const essence = zh.course.find((lesson) => lesson.id === 'article-essence');
+  assert.ok(essence.rules.some((rule) => rule.includes('听者')));
+  const sound = zh.course.find((lesson) => lesson.id === 'a-an');
+  ['an hour','a university','an MBA student','a one-year course','a useful book'].forEach((text) => assert.ok(sound.examples.some((example) => example.includes(text))));
+  const context = zh.course.find((lesson) => lesson.id === 'the-context-chain');
+  assert.ok(context.rules.some((rule) => rule.includes('未必能锁定')));
+  const institution = zh.course.find((lesson) => lesson.id === 'institutions-meals');
+  assert.ok(institution.rules.some((rule) => rule.includes('英美差异')));
+  assert.ok(institution.analyses[0].some((part) => part.text === 'at school.' && part.role === 'predicative'));
+  assert.ok(institution.analyses[2].some((part) => part.text === 'in bed.' && part.role === 'predicative'));
+  const known = zh.course.find((lesson) => lesson.id === 'the-known');
+  assert.ok(known.analyses[1].some((part) => part.text === 'is waiting' && part.role === 'predicate'));
+  assert.ok(known.analyses[1].some((part) => part.text === 'outside.' && part.role === 'adverbial'));
+  const zero = zh.course.find((lesson) => lesson.id === 'zero-basic');
+  assert.ok(zero.analyses[0].some((part) => part.text === 'us' && part.role === 'indirectObject'));
+  assert.ok(zero.analyses[0].some((part) => part.text === 'a lot.' && part.role === 'directObject'));
+  assert.ok(zero.analyses[2].some((part) => part.text === 'to' && part.role === 'preposition'));
+  assert.ok(zero.analyses[2].some((part) => part.text === 'Mia.' && part.role === 'prepObject'));
+  const countShift = zh.course.find((lesson) => lesson.id === 'article-countability-shift');
+  assert.ok(countShift.analyses[0].some((part) => part.text === 'me' && part.role === 'object'));
+  assert.ok(countShift.analyses[0].some((part) => part.text === 'awake.' && part.role === 'objectComplement'));
+  const articleQuestionText = zh.course.flatMap((lesson) => lesson.questions.flatMap((question) => question.options.map((option) => option.text))).join(' | ');
+  ['in a hospital building only','play piano only','coffee only','The whales is a mammal.'].forEach((bad) => assert.doesNotMatch(articleQuestionText, new RegExp(bad.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'))));
+  const names = zh.course.find((lesson) => lesson.id === 'names-places');
+  assert.ok(names.rules.some((rule) => rule.includes('错误规则')));
+  const generic = zh.course.find((lesson) => lesson.id === 'generic-contrast');
+  assert.ok(generic.rules.some((rule) => rule.includes('默认选择')));
+  const page = fs.readFileSync(path.join(__dirname, '../grammar-package/pages/classroom/index.js'), 'utf8');
+  assert.match(page, /\['article', 'Articles',[^\n]+, 15\]/);
+  assert.match(page, /\['article', '冠词',[^\n]+, 15\]/);
 });
 
 test('介词系统课程覆盖形式、语义关系、句法功能与易混结构', () => {

@@ -1,0 +1,2 @@
+const courses = require('../../domain/grammar-classroom/verb-courses');
+Component({properties:{language:{type:String,value:'zh-CN'}},observers:{language:function(l){if(this._ready)this.load(l)}},lifetimes:{ready(){this._ready=true;this.load(this.data.language)}},methods:{load(language){try{this.triggerEvent('loaded',{topic:'verb',bundle:courses.buildVerbCourse(language==='en')})}catch(error){this.triggerEvent('loaderror',{topic:'verb',message:error&&error.message||'unknown'})}}}});

@@ -1,5 +1,22 @@
 # 小程序设计语言与改动记录
 
+### 2026-07-12 代词课程系统重构
+
+- 板块：语法课堂
+- 文件：`data/grammar-classroom/course-sources/word-courses.js`、`grammar-package/domain/grammar-classroom/noun-courses.js`、`grammar-package/domain/grammar-classroom/pronoun-courses.js`、`grammar-package/components/grammar-word-loader/index.js`、`grammar-package/components/grammar-pronoun-loader/index.js`、`grammar-package/pages/classroom/index.js`、`tests/grammar-classroom-regression.test.js`、`docs/GRAMMAR_CLASSROOM_RULES.md`
+- 改动：代词由 9 节重构为 15 节，按定义本质、人称系统、指代范围、特殊指代、相互与替代、指代清晰和综合应用分 7 类；核心 13 节、进阶 2 节。
+- 设计记录：每个例句保留成分分析与独立中英文说明；底部规则只归纳本节规律。物主限定词/物主代词、相互代词/替代词分开，补齐 it、单数 they 和指代歧义。
+- 验证：检查 15 节顺序、7 类覆盖、规则映射、中英文、两套主题与懒加载入口数量。
+- 性能补充：名词与代词改为两个独立压缩运行时和两个独立懒加载组件；名词入口不含代词正文，代词入口不含名词正文，并以运行时导出、关键词与文件大小测试锁定。
+
+### 2026-07-12 数词完整课程重构
+
+- 板块：语法课堂 · 词法 · 数词
+- 文件：`data/grammar-classroom/course-sources/verb-numeral-article-courses.js`、`grammar-package/pages/classroom/index.js`、`tests/grammar-classroom-regression.test.js`
+- 改动：数词由 7 节重构为 12 节，按 6 类地图组织；核心 10 节、进阶 2 节。新增定义本质、句中作用、编号与数量辨析、倍数比例等内容。
+- 教学记录：每个例句独立解释当前数量关系，底部规则归纳通用规律；分数、百分数、日期时间和编号按表达功能讲解，不使用机械口诀代替意义。
+- 验证：中英文目录与内容对等、两套主题复用、规则—例句—练习映射及类别覆盖回归。
+
 ### 2026-07-11 首页 Day 与听力计划解耦
 
 - 文件：`pages/home/index.js`、`pages/home/index.wxml`、`cloudfunctions/yoyo/lib/dashboard-engine.js`、`cloudfunctions/yoyo/services/shared.service.js`
@@ -4054,3 +4071,11 @@
 - 标点课程分 7 类，覆盖句界、逗号、强分隔符、撇号、引号、连字符、大小写与综合校对。
 - 中英表达差异分 6 类，覆盖主语话题、动词关系、时间数量、宾语与修饰语顺序、逻辑范围和综合改写。
 - 四个专题各用独立懒加载组件；新增指代、已知/新信息、连接、替代、省略、关键词和段落主题结构色。
+
+### 2026-07-12 冠词课程指称本质重构
+
+- 冠词由 8 节扩展为 15 节，核心 12 节、进阶 3 节；类别地图按定义边界、a/an 发音、the 可识别性、零冠词系统、泛指和意义变化分为 6 类。
+- 所有 59 个例句均保留中英文独立说明；例句解释当前名词为何使用该冠词，底部语法本质只归纳整节指称规律。
+- 两套主题共用课程数据与交互，继续保持各自材质；入口摘要更新为“指称本质 · a/an · the · 零冠词”，返回与继续链路不变。
+- 冠词成分分析补齐进行时谓语与地点状语、双宾语、介词与介词宾语、介词短语表语、宾语与宾补；后置限定短语继续独立标为后置定语。
+- 动词、数词、冠词拆为三个独立运行时和三个独立懒加载组件，点击任一入口不再解析另外两个专题；课程显示和返回链路不变。

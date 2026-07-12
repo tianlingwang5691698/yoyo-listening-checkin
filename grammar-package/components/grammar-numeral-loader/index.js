@@ -1,0 +1,2 @@
+const courses = require('../../domain/grammar-classroom/numeral-courses');
+Component({properties:{language:{type:String,value:'zh-CN'}},observers:{language:function(l){if(this._ready)this.load(l)}},lifetimes:{ready(){this._ready=true;this.load(this.data.language)}},methods:{load(language){try{this.triggerEvent('loaded',{topic:'numeral',bundle:courses.buildNumeralCourse(language==='en')})}catch(error){this.triggerEvent('loaderror',{topic:'numeral',message:error&&error.message||'unknown'})}}}});

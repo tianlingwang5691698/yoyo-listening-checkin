@@ -1,0 +1,2 @@
+const courses = require('../../domain/grammar-classroom/article-courses');
+Component({properties:{language:{type:String,value:'zh-CN'}},observers:{language:function(l){if(this._ready)this.load(l)}},lifetimes:{ready(){this._ready=true;this.load(this.data.language)}},methods:{load(language){try{this.triggerEvent('loaded',{topic:'article',bundle:courses.buildArticleCourse(language==='en')})}catch(error){this.triggerEvent('loaderror',{topic:'article',message:error&&error.message||'unknown'})}}}});

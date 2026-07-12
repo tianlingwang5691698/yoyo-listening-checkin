@@ -1,11 +1,12 @@
 const pick = (en, zh, english) => en ? english : zh;
 const INCLUDE_RULE_COVERAGE = typeof GRAMMAR_RUNTIME === 'undefined' || !GRAMMAR_RUNTIME;
+const BUILD_TARGET = typeof GRAMMAR_TARGET === 'undefined' ? 'all' : GRAMMAR_TARGET;
 const labels = {
   subject: ['主语', 'Subject'], predicate: ['谓语动词', 'Predicate verb'], object: ['宾语', 'Object'],
   complement: ['表语', 'Subject complement'], attribute: ['定语', 'Attribute'], adverbial: ['状语', 'Adverbial'],
   auxiliary: ['助动词', 'Auxiliary'], modal: ['情态动词', 'Modal verb'], conjunction: ['连词', 'Conjunction']
 };
-const questionEnglish = {
+const questionEnglish = Object.assign({}, BUILD_TARGET === 'all' || BUILD_TARGET === 'verb' ? {
   'The flower smells sweet. smells 是？': 'In “The flower smells sweet,” what is “smells”?',
   '系动词': 'a linking verb', '及物动词': 'a transitive verb',
   'Birds fly. fly 表示？': 'In “Birds fly,” what does “fly” express?', '动作': 'an action', '所属': 'possession',
@@ -16,15 +17,17 @@ const questionEnglish = {
   'pick up the box 的正确改写是？': 'Which correctly replaces “the box” with a pronoun?',
   'People speak English. 被动为？': 'What is the passive form of “People speak English”?',
   'The window was broken. 这是？': 'What structure is used in “The window was broken”?', '被动结构': 'the passive voice', '现在进行时': 'the present progressive',
-  'She sent me a card. me 是？': 'In “She sent me a card,” “me” is ...', '间接宾语': 'the indirect object', '状语': 'an adverbial',
+  'She sent me a card. me 是？': 'In “She sent me a card,” “me” is ...', '间接宾语': 'the indirect object', '状语': 'an adverbial'
+} : {}, BUILD_TARGET === 'all' || BUILD_TARGET === 'numeral' ? {
   '40 的正确拼写': 'Which is the correct spelling of 40?', '第十二': 'the twelfth', '第20': 'the twentieth',
   '数百万': 'millions (an indefinite quantity)', '3.14 中的小数点读': 'How is the decimal point in 3.14 read?',
-  'Bus 106 常读': 'Bus 106 is normally read as ...', '数百名学生': 'hundreds of students', '大约30': 'about 30', '两打鸡蛋': 'two dozen eggs',
+  'Bus 106 常读': 'Bus 106 is normally read as ...', '数百名学生': 'hundreds of students', '大约30': 'about 30', '两打鸡蛋': 'two dozen eggs'
+} : {}, BUILD_TARGET === 'all' || BUILD_TARGET === 'article' ? {
   '不填': '(no article)',
   '泛指“猫是独立的动物”最自然：': 'Which sentence most naturally refers to cats in general?',
   '“还有一点希望”': 'Which phrase means “there is still some hope”?',
   '“几乎没有朋友”': 'Which phrase means “almost no friends”?'
-};
+} : {});
 const localizeQuestionText = (en, text) => en && questionEnglish[text] ? questionEnglish[text] : text;
 const analyzed = (en, units, mode = '', zh = '', english = '') => ({
   text: units.map(x => x[0]).join(' '),
@@ -39,7 +42,7 @@ const ruleCoverageByLesson = INCLUDE_RULE_COVERAGE ? {
   'aux-modal': [[[0,1,2],[1,2]],[[2],[0]]], 'finite-forms': [[[0,1,2],[0,1]],[[2],[2]],[[3],[3]]],
   'tense-aspect': [[[0,1,2],[0,1,2]],[[0,1,2],[0,1,2]]], nonfinite: [[[0,1,2],[0,1,2]],[[0,1,2],[0,1,2]]],
   phrasal: [[[0,1,2],[0,1,2]],[[1],[0,2]]], voice: [[[0,1,2],[0,1,2]],[[2],[0,1]]],
-  'verb-complements': [[[0,1],[0,1]],[[2],[2]]], cardinals: [[[0,2],[0]],[[1],[2]],[[1],[1]]],
+  'verb-complements': [[[0,1],[0,1]],[[2],[2]]],
   'double-object-complement': [[[0],[0]],[[1],[1]],[[2],[2]]],
   'verb-five-forms': [[[0],[0]],[[1],[1]],[[2],[2]]],
   'third-person-form': [[[0],[0]],[[1],[1]],[[2],[2]],[[3],[3]],[[4],[4]],[[5],[5]]],
@@ -68,13 +71,33 @@ const ruleCoverageByLesson = INCLUDE_RULE_COVERAGE ? {
   'past-time-sequence': [[[0],[0]],[[1],[1]],[[2],[2]]],
   'nonfinite-advanced': [[[0],[0]],[[1],[1]],[[2],[2]]],
   'gerund-infinitive-meaning': [[[0],[0]],[[1],[1]],[[2],[2]]],
-  ordinals: [[[0,1,2],[0,1]],[[1],[2]]], 'large-numbers': [[[1,2],[0,1]],[[0],[2]]],
-  'fractions-percent': [[[0],[0]],[[1],[1]],[[2],[2]],[[3],[3]]], 'date-time': [[[0],[0]],[[1],[1]],[[2],[2]],[[3],[3]]],
-  approximate: [[[0,1],[0,1]],[[2],[2]]], 'number-agreement': [[[0],[0]],[[1,2],[1,2]]],
-  'a-an': [[[0,1,2],[0,1,2]],[[0,1,2],[0,1,2]]], 'the-known': [[[0,1,2],[0,1,2]],[[2],[2]],[[3],[3]]],
-  'zero-basic': [[[0,1],[0,2]],[[2],[1]],[[3],[3]]], 'unique-superlative': [[[0],[0]],[[1,2],[1,2]]],
-  'institutions-meals': [[[0,1],[0,1]],[[0,2],[2]]], 'names-places': [[[0,1,2],[0,1,2]],[[0,1,2],[0,1,2]]],
-  'generic-contrast': [[[0,1,2],[0,1,2]],[[0],[1]],[[3],[3]]], 'article-meaning': [[[0,1,2],[0,1,2]],[[0,1,2],[0,1,2]]]
+  'numeral-essence': [[[0,1,2],[0,1,2]],[[0,1,2],[0,1,2]]],
+  'numeral-functions': [[[0,1],[0,1]],[[2],[2]],[[3],[3]]],
+  cardinals: [[[0],[0]],[[1],[1]],[[1],[2]],[[2],[3]]],
+  ordinals: [[[2],[0]],[[0,1],[1,2]],[[3],[3]]],
+  'large-numbers': [[[0],[0]],[[1,2],[1,2]],[[0],[3]]],
+  fractions: [[[0],[1]],[[1],[0]],[[2],[2]]],
+  'decimals-percent': [[[0],[0]],[[1],[1]],[[2],[2]]],
+  'date-time': [[[0],[0]],[[1],[1]],[[2],[2]],[[3],[3]]],
+  'labels-years': [[[0],[0]],[[1],[1]],[[2],[2]]],
+  approximate: [[[0],[0]],[[1],[1]],[[2],[2]]],
+  'multiples-ratios': [[[0],[0]],[[1],[1]],[[2],[2]]],
+  'number-agreement': [[[0],[0]],[[1],[1]],[[2],[2]]],
+  'article-essence': [[[0],[0]],[[1],[1]],[[2],[2]]],
+  'article-determiner-boundary': [[[0],[0]],[[1],[1]],[[2],[2]]],
+  'indefinite-reference': [[[0],[0]],[[1],[1]],[[2],[2]]],
+  'a-an': [[[0],[0]],[[1],[1]],[[2],[2]],[[3],[3]],[[4],[4]]],
+  'the-known': [[[0],[0]],[[1],[1]],[[2],[2]]],
+  'the-context-chain': [[[0],[0]],[[1],[1]],[[2,3],[2,3]]],
+  'unique-superlative': [[[0],[0]],[[1],[1]],[[2,3],[2,3]]],
+  'zero-basic': [[[0,1],[0,1]],[[2,3],[2,3]]],
+  'institutions-meals': [[[0,1],[0,1]],[[2],[2]],[[3],[3]]],
+  'activity-conventions': [[[0,1],[0,1]],[[2,3],[2,3]],[[4,5],[4,5]]],
+  'names-places': [[[0,1],[0,1]],[[2],[2]],[[3],[3]],[[4],[4]]],
+  'generic-contrast': [[[0],[0]],[[1],[1]],[[2],[2]],[[3],[3]]],
+  'article-countability-shift': [[[0],[0]],[[1],[1]],[[2],[2]]],
+  'article-meaning': [[[0,1],[0,1]],[[2,3],[2,3]],[[4],[4]]],
+  'article-groups': [[[0],[0]],[[1],[1]],[[2],[2]]]
 } : null;
 const ruleCoverage = (id, rules) => {
   const mapping = ruleCoverageByLesson[id];
@@ -85,7 +108,7 @@ function lesson(en, id, zhTitle, enTitle, zhMeta, enMeta, examples, rules, quest
   const allAnalyzed = examples.every(x => Array.isArray(x.analysis));
   return { id, title: pick(en, zhTitle, enTitle), meta: pick(en, zhMeta, enMeta), examples: examples.map(x => x.text), analyses: allAnalyzed ? examples.map(x => x.analysis) : [], exampleNotes: examples.map(x => x.note), rules: rules.map(x => pick(en, x[0], x[1])), ruleCoverage: INCLUDE_RULE_COVERAGE ? ruleCoverage(id, rules) : [], questions };
 }
-const sectionSpecs = {
+const allSectionSpecs = {
   Verbs: [
     { id: 'roles-patterns', zhTitle: '动词作用与基本句型', enTitle: 'Verb roles and basic patterns', zhCopy: '从动词任务判断及物性、系表关系和五大基本句型。', enCopy: 'Classify verb roles, transitivity, linking and the five basic patterns.', lessonIds: ['verb-jobs','transitivity','linking','double-object-complement','five-sentence-patterns'] },
     { id: 'auxiliaries-modals', zhTitle: '助动词与情态动词', enTitle: 'Auxiliaries and modal verbs', zhCopy: '掌握 be、do、have 的结构功能和情态意义。', enCopy: 'Master structural uses of be, do and have and the modal meanings.', lessonIds: ['aux-modal','auxiliary-system','modal-meanings'] },
@@ -95,16 +118,23 @@ const sectionSpecs = {
     { id: 'patterns-collocations', zhTitle: '动词搭配与特殊结构', enTitle: 'Verb patterns and special structures', zhCopy: '处理短语动词、感官使役、搭配选择和意义变化。', enCopy: 'Handle phrasal verbs, causative/perception patterns, complementation and meaning changes.', lessonIds: ['phrasal','causative-perception','gerund-infinitive-meaning','special-verb-patterns','verb-complements'] }
   ],
   Numerals: [
-    { id: 'number-forms', zhTitle: '数词形式与读写', enTitle: 'Number forms and reading', zhCopy: '掌握基数、序数和大数的构成与读写。', enCopy: 'Build and read cardinal, ordinal and large numbers.', lessonIds: ['cardinals','ordinals','large-numbers'] },
-    { id: 'quantity-expressions', zhTitle: '数量表达与一致', enTitle: 'Quantity expressions and agreement', zhCopy: '处理分数、小数、百分数、概数及其主谓一致。', enCopy: 'Handle fractions, decimals, percentages, approximations and agreement.', lessonIds: ['fractions-percent','approximate','number-agreement'] },
-    { id: 'time-labels', zhTitle: '日期时间与编号', enTitle: 'Dates, time and labels', zhCopy: '根据日期、时间和编号功能选择正确读法。', enCopy: 'Choose readings according to date, time and label functions.', lessonIds: ['date-time'] }
+    { id: 'number-meaning', zhTitle: '定义、本质与句中作用', enTitle: 'Meaning and sentence roles', zhCopy: '先判断数字表达数量、顺序还是编号，再看它在句中的作用。', enCopy: 'First decide whether a number gives quantity, order or a label, then identify its sentence role.', lessonIds: ['numeral-essence','numeral-functions'] },
+    { id: 'number-forms', zhTitle: '基数、序数与大数', enTitle: 'Cardinals, ordinals and large numbers', zhCopy: '掌握基本数词的构成、拼写和分级读写。', enCopy: 'Build, spell and read basic and large numbers accurately.', lessonIds: ['cardinals','ordinals','large-numbers'] },
+    { id: 'parts-measures', zhTitle: '部分与比例表达', enTitle: 'Parts and proportions', zhCopy: '用分数、小数和百分数表达整体中的部分。', enCopy: 'Use fractions, decimals and percentages to express parts of a whole.', lessonIds: ['fractions','decimals-percent'] },
+    { id: 'functional-reading', zhTitle: '日期、时间、年份与编号', enTitle: 'Dates, time, years and labels', zhCopy: '同一数字因承担的功能不同而采用不同读法。', enCopy: 'Read the same digits differently according to their function.', lessonIds: ['date-time','labels-years'] },
+    { id: 'quantity-relations', zhTitle: '概数、倍数与数量关系', enTitle: 'Approximation and quantity relations', zhCopy: '表达不精确数量、倍数、比例及其结构关系。', enCopy: 'Express approximate quantities, multiples and ratios structurally.', lessonIds: ['approximate','multiples-ratios'] },
+    { id: 'agreement-integration', zhTitle: '数量短语与主谓一致', enTitle: 'Quantity phrases and agreement', zhCopy: '根据数量短语表示整体还是部分选择谓语。', enCopy: 'Choose agreement by whether a quantity phrase denotes one unit or a proportion.', lessonIds: ['number-agreement'] }
   ],
   Articles: [
-    { id: 'core-choice', zhTitle: '冠词基本选择', enTitle: 'Core article choices', zhCopy: '从发音、特指与泛指判断 a/an、the 和零冠词。', enCopy: 'Choose a/an, the or zero article by sound, specificity and general reference.', lessonIds: ['a-an','the-known','zero-basic'] },
-    { id: 'named-fixed-contexts', zhTitle: '特殊名称与固定场景', enTitle: 'Names and fixed contexts', zhCopy: '掌握唯一事物、场所功能和专有名称中的冠词。', enCopy: 'Master articles with unique things, institutional functions and proper names.', lessonIds: ['unique-superlative','institutions-meals','names-places'] },
-    { id: 'meaning-contrast', zhTitle: '泛指与意义辨析', enTitle: 'Generic reference and meaning contrasts', zhCopy: '比较三种泛指方式及冠词造成的意义变化。', enCopy: 'Compare generic-reference patterns and meaning changes caused by articles.', lessonIds: ['generic-contrast','article-meaning'] }
+    { id: 'article-foundation', zhTitle: '定义、本质与边界', enTitle: 'Meaning and determiner boundaries', zhCopy: '先判断名词怎样被识别，再区分冠词与其他限定词。', enCopy: 'First decide how a noun is identified, then distinguish articles from other determiners.', lessonIds: ['article-essence','article-determiner-boundary','indefinite-reference'] },
+    { id: 'indefinite-form', zhTitle: 'a/an 的形式选择', enTitle: 'Choosing a or an', zhCopy: '根据紧随成分的首个音素选择 a 或 an。', enCopy: 'Choose a or an by the first sound of the following expression.', lessonIds: ['a-an'] },
+    { id: 'definite-reference', zhTitle: 'the 与可识别对象', enTitle: 'The and identifiable reference', zhCopy: '从现场、前文、关联、限定和唯一性判断听者能否识别对象。', enCopy: 'Use situation, discourse, association, modification and uniqueness to judge identifiability.', lessonIds: ['the-known','the-context-chain','unique-superlative'] },
+    { id: 'zero-and-conventions', zhTitle: '零冠词与约定系统', enTitle: 'Zero article and conventional systems', zhCopy: '区分泛指零冠词、制度功能、活动名称和专有名称。', enCopy: 'Distinguish generic zero article, institutional function, activity names and proper names.', lessonIds: ['zero-basic','institutions-meals','activity-conventions','names-places'] },
+    { id: 'generic-reference', zhTitle: '泛指一类事物', enTitle: 'Generic reference', zhCopy: '比较复数零冠词、a/an 单数和 the 单数的适用范围。', enCopy: 'Compare zero-article plurals, a/an singulars and the singular for general reference.', lessonIds: ['generic-contrast'] },
+    { id: 'advanced-meaning', zhTitle: '进阶意义变化', enTitle: 'Advanced meaning shifts', zhCopy: '处理可数化、制度与具体对象以及群体指称。', enCopy: 'Handle count shifts, function-versus-object readings and group reference.', lessonIds: ['article-countability-shift','article-meaning','article-groups'] }
   ]
 };
+const sectionSpecs = BUILD_TARGET === 'verb' ? { Verbs: allSectionSpecs.Verbs } : BUILD_TARGET === 'numeral' ? { Numerals: allSectionSpecs.Numerals } : BUILD_TARGET === 'article' ? { Articles: allSectionSpecs.Articles } : allSectionSpecs;
 function buildSections(en, enTitle, course) {
   const specs = sectionSpecs[enTitle];
   if (!specs) return [];
@@ -194,29 +224,309 @@ function buildVerbCourse(en) {
 
 function buildNumeralCourse(en) {
   const s = (u,m,z,e) => analyzed(en,u,m,z,e), f=(t,m,z,e)=>form(en,t,m,z,e), q=(...a)=>question(en,...a);
+  const bq = (...args) => {
+    if (args.length === 7) {
+      const [zp,ep,a,b,answer,zh,english] = args;
+      return q(pick(en,zp,ep),a,b,answer,zh,english);
+    }
+    const [zp,ep,za,ea,zb,eb,answer,zh,english] = args;
+    return q(pick(en,zp,ep),pick(en,za,ea),pick(en,zb,eb),answer,zh,english);
+  };
   return grouped(en, '数词', 'Numerals', [
-    lesson(en,'cardinals','基数词表示数量','Cardinal numbers','准确回答“多少”','Answering “how many”',[f('one · twelve · forty','spelling','注意 twelve、forty 等特殊拼写。','Note irregular spellings such as twelve and forty.'),f('twenty-one · ninety-nine · three hundred','spelling','21—99 非整十数用连字符；具体数字后 hundred 不加 s。','Hyphenate non-round numbers from 21 to 99; hundred stays singular after an exact number.'),s([['There are','predicate'],['thirty students','subject'],['in the class.','adverbial']])],[['基数词表示数量，放在可数名词前时名词按数量变化。','Cardinals express quantity; count nouns agree in number.'],['21—99 的非整十数用连字符连接十位和个位。','Hyphenate tens and units in non-round numbers from 21 to 99.'],['hundred、thousand 前有具体数字时通常不加 s。','hundred and thousand normally stay singular after an exact number.']],[q('40 的正确拼写','forty','fourty','A','40 拼作 forty。','40 is spelled forty.'),q('three ___ students','hundred','hundreds','A','具体数字后用 hundred。','Use hundred after an exact number.'),q('21','twenty-one','twenty one','A','21 用连字符。','21 is hyphenated.')]),
-    lesson(en,'ordinals','序数词表示顺序','Ordinal numbers','第几与日期','Order and dates',[f('one → first · two → second · three → third','spelling','前三个序数词是不规则形式。','The first three ordinals are irregular.'),f('five → fifth · twelve → twelfth · twenty → twentieth','spelling','注意特殊拼写；整十的 y 变 ie 再加 th。','Note irregular spelling; in round tens, y changes to ie before th.'),s([['She','subject'],['won','predicate'],['first prize.','object']])],[['序数词前通常用 the；物主限定词出现时不再用 the。','Ordinals normally take the; omit it after a possessive determiner.'],['整十变序数词时 y→ie 再加 th：twenty→twentieth。','For round tens, change y to ie before th.']],[q('第十二','twelfth','twelveth','A','正确形式是 twelfth。','The correct form is twelfth.'),q('my ___ birthday','the tenth','tenth','B','my 已限定名词，不加 the。','my replaces the article.'),q('第20','twentieth','twentyth','A','y 变 ie 再加 th。','Change y to ie before th.')]),
-    lesson(en,'large-numbers','读写大数','Reading large numbers','分级、and 与单位词','Grouping · and · scale words',[f('3,506 → three thousand five hundred and six','structure','从右向左三位一组；英式表达百位后常加 and。','Group digits in threes; British usage often adds and after hundreds.'),f('2,000,000 → two million','structure','具体数字后 million 不加 s。','million stays singular after an exact number.'),f('millions of stars','structure','概数用 millions of。','Use millions of for an indefinite large quantity.')],[['精确数：数字＋hundred/thousand/million；概数：复数＋of。','Exact number + scale word; indefinite plural scale word + of.'],['读数时按 million、thousand、hundred 分级。','Read by million, thousand and hundred groups.']],[q('5,000','five thousands','five thousand','B','精确数字后 thousand 不加 s。','thousand stays singular after five.'),q('数百万','millions of','million of','A','概数用复数＋of。','Use plural + of.'),q('1,208','one thousand two hundred and eight','one thousands two hundreds eight','A','单位词不加复数。','Scale words remain singular.')]),
-    lesson(en,'fractions-percent','分数、小数与百分数','Fractions, decimals and percentages','分子基数、分母序数','Cardinal numerator, ordinal denominator',[f('1/3 → one third · 2/3 → two thirds','structure','分子大于1时分母用复数。','Pluralize the denominator when the numerator is above one.'),f('0.75 → zero point seven five','structure','小数点后数字逐个读。','Read digits individually after the decimal point.'),f('25% → twenty-five percent','structure','percent 通常不加 s。','percent normally has no plural s.'),f('1/2 → one half · 1/4 → one quarter','structure','二分之一和四分之一常用 half、quarter。','One half and one quarter use the common special forms half and quarter.')],[['分数用基数词作分子、序数词作分母。','Fractions use a cardinal numerator and ordinal denominator.'],['小数点读 point，点后数字逐个读。','Read the decimal point as point and each following digit separately.'],['百分数用基数词加 percent，percent 不加 s。','Use a cardinal plus percent; percent has no plural s.'],['half、quarter 是二分之一和四分之一的高频特殊表达。','half and quarter are common special forms for one half and one quarter.']],[q('2/5','two fifths','second five','A','分母 fifth 用复数。','Use plural fifths.'),q('3.14 中的小数点读','point','dot only','A','数学小数点读 point。','A decimal point is read point.'),q('50%','fifty percent','fifty percents','A','percent 不加 s。','percent remains unchanged.'),q('1/4','one quarter','one fourths','A','四分之一常读 one quarter。','One quarter is the common form.')]),
-    lesson(en,'date-time','日期、时间与编号','Dates, time and labels','读法取决于功能','Reading follows function',[f('May 5 → May the fifth / May fifth','structure','日期中的日通常读序数词。','The day in a date is normally ordinal.'),f('7:30 → seven thirty / half past seven','structure','时间可直接读或用 past/to。','Time can be read directly or with past/to.'),f('Room 205 → Room two oh five','structure','房间、电话等编号常逐位读。','Room and phone numbers are often read digit by digit.'),f('1998 → nineteen ninety-eight · 2008 → two thousand and eight','structure','年份常分两段读；2000 年以后也常读作完整数。','Years are often read in two pairs; post-2000 years may also be read as full numbers.')],[['日期中的“日”通常读序数词。','The day in a date is normally read as an ordinal.'],['时间可以直接读，也可以用 past/to 表达。','Time may be read directly or expressed with past/to.'],['房间、公交和电话号码等编号通常逐位读。','Room, bus and phone labels are normally read digit by digit.'],['年份常分两段读，2000 年以后也常读作完整数。','Years are often read in two pairs; post-2000 forms also allow full-number readings.']],[q('July 1','July first','July one','A','日期用序数词。','Use an ordinal for the date.'),q('8:15','a quarter past eight','a quarter to eight','A','15 分是 past。','15 minutes after is past.'),q('Bus 106 常读','one oh six','one hundred and sixth','A','编号通常逐位读。','Labels are often read digit by digit.'),q('1998 is commonly read as ...','nineteen ninety-eight','one nine nine eighth','A','年份 1998 常分两段读。','The year 1998 is commonly read in two pairs.')]),
-    lesson(en,'approximate','概数与约数','Approximate quantities','hundreds of、about、dozen','hundreds of · about · dozen',[s([['Hundreds of visitors','subject'],['came','predicate'],['today.','adverbial']]),s([['About fifty people','subject'],['joined','predicate'],['the event.','object']]),s([['She','subject'],['bought','predicate'],['two dozen eggs.','object']])],[['hundreds of 表不精确的大量；about/around 放在数字前表示约数。','hundreds of is indefinite; about/around before a number marks approximation.'],['dozen 前有具体数字时通常不加 s、不接 of。','dozen normally stays singular and omits of after an exact number.']],[q('数百名学生','hundreds of students','hundred of students','A','概数用 hundreds of。','Use hundreds of.'),q('大约30','about thirty','thirty about','A','about 放数字前。','about precedes the number.'),q('两打鸡蛋','two dozen eggs','two dozens of eggs','A','精确数量用 two dozen。','Use two dozen for an exact quantity.')]),
-    lesson(en,'number-agreement','数词与主谓一致综合','Number and agreement challenge','数量短语看整体意义','Agreement follows meaning',[s([['Two hours','subject'],['is','predicate'],['enough.','complement']]),s([['Two thirds of the students','subject'],['are','predicate'],['present.','complement']]),s([['Thirty percent of the water','subject'],['is','predicate'],['gone.','complement']])],[['时间、金钱、距离作为一个整体时常用单数谓语。','Time, money and distance as one unit often take singular agreement.'],['分数/百分数＋of 的谓语通常与 of 后名词一致。','Agreement after a fraction/percentage + of normally follows the of-noun.']],[q('Ten dollars ___ enough.','is','are','A','金额作为整体用单数。','The sum is one unit.'),q('Half of the books ___ new.','are','is','A','books 是复数。','Agreement follows plural books.'),q('Half of the milk ___ gone.','is','are','A','milk 不可数，用单数。','Agreement follows uncountable milk.')])
-  ], 5);
+    lesson(en,'numeral-essence','数词是什么','What numerals express','数量、顺序还是编号','Quantity · order · label',[
+      s([['Three students','subject','主语（three 限定数量）','Subject (three gives quantity)'],['arrived.','predicate']],'structure','three 回答“有多少名学生”，它直接限定 students 的数量。','three answers “how many students” and directly limits the quantity of students.'),
+      s([['Mia','subject'],['came','predicate'],['second.','complement','主语补足语（名次）','Subject complement (finishing place)']],'structure','second 不说明人数，而是在 came 后补充 Mia 到达时的名次。','second does not count people; after came, it completes the clause by giving Mia’s finishing place.'),
+      s([['Take','predicate'],['Bus 18.','object','宾语（18 是编号）','Object (18 is a label)']],'structure','18 在这里不是“十八辆公交车”，而是给一条公交线路命名。','18 does not mean eighteen buses here; it identifies one route.')
+    ],[['数词的核心是给事物建立可计算或可识别的数量关系：多少、次序或编号。','Numerals place things in a countable or identifiable relation: quantity, order or label.'],['先看数字在句中回答什么问题；同一数字表达的功能不同，读法和结构也可能不同。','First ask what the number answers; a different function may require a different reading or structure.']],[
+      bq('“four books”中的 four 表示什么？','What does four express in “four books”?','数量','quantity','编号','a label','A','four 回答书有多少本。','four answers how many books there are.'),
+      bq('“the fourth book”中的 fourth 表示什么？','What does fourth express in “the fourth book”?','顺序','order','总量','total quantity','A','fourth 指这本书所处的次序。','fourth places the book in an order.'),
+      bq('“Room 4”中的 4 主要表示什么？','What does 4 mainly express in “Room 4”?','房间编号','a room label','四个房间','four rooms','A','4 用来识别具体房间。','4 identifies a particular room.')
+    ]),
+    lesson(en,'numeral-functions','数词在句中做什么','Sentence roles of numerals','限定名词，也可独立使用','Modifying nouns or standing alone',[
+      s([['Two books','subject','主语（two 作数量限定）','Subject (two as quantity modifier)'],['are','predicate'],['missing.','complement']],'structure','two 放在 books 前，限定整个名词短语的数量。','two comes before books and limits the quantity of the whole noun phrase.'),
+      s([['The first chapter','subject','主语（first 作顺序限定）','Subject (first as order modifier)'],['is','predicate'],['short.','complement']],'structure','first 放在 chapter 前，限定它在全书中的顺序。','first comes before chapter and limits its position in the book’s order.'),
+      s([['I','subject'],['need','predicate'],['two.','object','宾语（two 代替数量已知的事物）','Object (two replaces understood items)']],'structure','上下文知道所指事物时，two 可以独立作宾语，不必重复名词。','When the item is understood, two can stand alone as the object without repeating the noun.'),
+      s([['Leo','subject'],['was','predicate'],['the first to answer.','complement','表语','Subject complement']],'structure','the first 位于系动词 was 后，说明 Leo 的顺序，整个短语作表语。','the first follows was, identifies Leo’s order and functions as the subject complement.')
+    ],[['数词最常放在名词前限定数量或顺序。','Numerals most often come before nouns to limit quantity or order.'],['名词已明确时，数词可以独立承担名词短语的作用。','When the noun is understood, a numeral can stand in for a noun phrase.'],['判断句法作用要看整个数词短语在句中的位置，不能把“数词”直接等同于某个句子成分。','Identify the role of the whole numeral phrase; numeral is a word class, not one fixed sentence element.']],[
+      bq('“Five players stayed.”中 Five 的作用是？','What does Five do in “Five players stayed”?','限定 players 的数量','limits the quantity of players','独立作谓语','forms the predicate','A','Five 和 players 共同组成主语。','Five and players form the subject together.'),
+      bq('“the second lesson”中 second 的作用是？','What does second do in “the second lesson”?','限定 lesson 的顺序','limits the order of lesson','表示两节课的数量','counts two lessons','A','second 放在名词前说明顺序。','second comes before the noun and gives order.'),
+      bq('“I chose the second.”中 the second 作什么成分？','What is the role of the second in “I chose the second”?','宾语','object','谓语','predicate','A','the second 独立指代第二个对象，作宾语。','the second stands for the second item and acts as object.'),
+      bq('“She is the third.”中 the third 作什么成分？','What is the role of the third in “She is the third”?','表语','subject complement','主语','subject','A','the third 在 is 后说明主语的顺序。','the third follows is and identifies the subject’s order.')
+    ]),
+    lesson(en,'cardinals','基数词表示数量','Cardinal numbers','回答“多少”','Answering “how many”',[
+      f('one book · two books','structure','one 后接单数；大于一的基数词通常接复数可数名词。','one takes a singular noun; cardinals above one normally take plural count nouns.'),
+      f('twenty-one · forty · ninety-nine','spelling','21—99 非整十数用连字符；forty 不含字母 u。','Hyphenate non-round numbers from 21 to 99; forty has no u.'),
+      f('three hundred students','structure','具体数字直接限定 hundred，hundred 不变复数，也不接 of。','An exact number directly limits hundred, so hundred takes neither plural s nor of.')
+    ],[['基数词直接给出数量，名词单复数要与数量相配。','Cardinals give quantity directly, and noun number must match that quantity.'],['forty 等高频基数词有特殊拼写，不能只按 four 机械拼接。','Common cardinals such as forty have special spellings and cannot be built mechanically from four.'],['21—99 的非整十数用连字符连接十位和个位。','Hyphenate tens and units in non-round numbers from 21 to 99.'],['具体数字＋hundred/thousand/million 表精确数量，单位词保持单数。','An exact number + hundred/thousand/million gives a precise quantity, with a singular scale word.']],[
+      bq('哪一项正确？','Which is correct?','two books','two book','A','two 后用复数 books。','Use plural books after two.'),
+      bq('40 的正确拼写是？','Which spelling of 40 is correct?','forty','fourty','A','40 拼作 forty。','40 is spelled forty.'),
+      bq('21 的正确拼写是？','Which spelling of 21 is correct?','twenty-one','twenty one','A','十位和个位之间使用连字符。','Use a hyphen between the tens and units.'),
+      bq('300 名学生','300 students','three hundred students','three hundreds of students','A','精确数字后用 hundred students。','Use hundred students after an exact number.')
+    ]),
+    lesson(en,'ordinals','序数词表示顺序','Ordinal numbers','回答“第几”','Answering “which in order”',[
+      f('one → first · two → second · three → third','spelling','first、second、third 不是直接加 -th，需要单独掌握。','first, second and third are irregular rather than simple -th forms.'),
+      f('five → fifth · twelve → twelfth · twenty → twentieth','spelling','注意 fifth、twelfth；整十词尾 y 变 ie 再加 -th。','Note fifth and twelfth; change final y to ie before -th in round tens.'),
+      s([['The third runner','subject','主语（third 作顺序限定）','Subject (third as order modifier)'],['crossed','predicate'],['the line.','object']],'structure','third 把 runner 放在明确比赛顺序的第三位；the 指向这个序列中的唯一第三名。','third places the runner third in a defined race order; the identifies the unique third position in that sequence.'),
+      s([['This','subject'],['is','predicate'],['my second visit.','complement','表语（second 表顺序）','Subject complement (second gives order)']],'structure','second 排列 visit 的次序；my 已经限定 visit，因此前面不再加 the。','second orders the visits; my already determines visit, so the is not added.')
+    ],[['序数词把人或事物放入一个次序，通常与 the 连用。','Ordinals place a person or thing in an order and normally occur with the.'],['first、second、third 及 fifth、ninth、twelfth 等有特殊拼写。','first, second, third, fifth, ninth and twelfth have special spellings.'],['物主限定词、指示限定词已占据限定位置时，不再叠加 the。','Do not add the when a possessive or demonstrative already fills the determiner position.']],[
+      bq('明确序列中的“第三位选手”应说？','How do we refer to the runner in the unique third position?','the third runner','a third runner','A','明确序列中的序数词通常与 the 连用。','An ordinal in a defined sequence normally takes the.'),
+      bq('“第十二”的正确形式是？','Which form means “twelfth”?','twelfth','twelveth','A','正确拼写是 twelfth。','The correct spelling is twelfth.'),
+      bq('“第20”怎样写？','How is “20th” written?','twentieth','twentyth','A','twenty 的 y 变 ie，再加 -th。','Change y in twenty to ie before -th.'),
+      bq('哪一项正确？','Which is correct?','my tenth birthday','my the tenth birthday','A','my 已限定 birthday，不再加 the。','my already determines birthday, so the is not used.')
+    ]),
+    lesson(en,'large-numbers','读写大数','Reading large numbers','三位分级，单位定位','Groups of three and scale words',[
+      f('3,506 → three thousand five hundred and six (BrE) / three thousand five hundred six (AmE)','structure','从右向左每三位一组；英式读法通常保留 and，美式读法常省略。','Group digits in threes; British usage commonly keeps and, while American usage often omits it.'),
+      f('2,000,000 → two million','structure','two 给出精确数量，因此 million 保持单数。','two gives an exact quantity, so million stays singular.'),
+      f('millions of stars','structure','没有精确数字时，millions of 表示“数百万的”，是范围很大的概数。','Without an exact number, millions of expresses an indefinite quantity in the millions.')
+    ],[['大数按 thousand、million、billion 等位级从高到低读取。','Read large numbers from higher to lower scales such as million and thousand.'],['精确数前有具体数字，单位词不加 s；不精确的大量可用复数单位词＋of。','With an exact number, the scale word has no s; indefinite large quantities use plural scale word + of.'],['英式英语常保留 and，美式英语常省略；两种读法都应结合语境识别。','British English often keeps and while American English often omits it; recognize both by context.']],[
+      bq('3,506 应按什么位级读取？','How should 3,506 be grouped and read?','three thousand five hundred and six','thirty-five hundred six only','A','先读 thousand 位级，再读 hundred 和余数。','Read the thousand group first, then the hundreds and remainder.'),
+      bq('5,000 怎样表达？','How is 5,000 expressed?','five thousand','five thousands','A','精确数字后 thousand 保持单数。','thousand stays singular after an exact number.'),
+      bq('“数百万颗星星”怎样表达？','How do we say “an indefinite number of stars in the millions”?','millions of stars','million of stars','A','不精确概数用 millions of。','Use millions of for an indefinite quantity.'),
+      bq('1,208 的英式与美式读法，哪项正确？','Which statement about British and American readings of 1,208 is correct?','有 and 和无 and 的读法都可出现','Both readings, with and without and, occur','只有带 and 的读法成立','Only the version with and is possible','A','英式常保留 and，美式常省略。','British English often keeps and; American English often omits it.')
+    ]),
+    lesson(en,'fractions','分数表示整体中的部分','Fractions as parts of a whole','分子计数，分母分份','Counting parts of a divided whole',[
+      f('1/3 → one third','structure','one 表示取一份，third 表示整体被等分成三份。','one counts the part taken; third shows that the whole is divided into three equal parts.'),
+      f('2/3 → two thirds','structure','取出的份数大于一，表示分份的 thirds 用复数。','Because more than one part is taken, thirds is plural.'),
+      f('1/2 → one half · 1/4 → one quarter','structure','half 和 quarter 是二分之一、四分之一的常用表达；one fourth 也可表示四分之一。','half and quarter are common forms for one half and one fourth; one fourth is also possible.')
+    ],[['普通分数用基数词作分子、序数词作分母。','Ordinary fractions use a cardinal numerator and an ordinal denominator.'],['分子大于一时，分母通常用复数。','The denominator is normally plural when the numerator is above one.'],['half 和 quarter 是高频特殊分母形式。','half and quarter are common special denominator forms.']],[
+      bq('2/5 怎样读？','How is 2/5 read?','two fifths','two fifth','A','取两份，所以 fifth 用复数。','Two parts are taken, so fifth is plural.'),
+      bq('1/6 怎样读？','How is 1/6 read?','one sixth','first six','A','分子用 one，分母用 sixth。','Use one for the numerator and sixth for the denominator.'),
+      bq('1/4 的常用表达是？','What is a common expression for 1/4?','one quarter','one quarters','A','四分之一常说 one quarter。','One quarter is a common form.')
+    ]),
+    lesson(en,'decimals-percent','小数与百分数','Decimals and percentages','一个逐位读，一个表示每百份','Digits after a point · parts per hundred',[
+      f('0.75 → zero point seven five','structure','point 标出小数点；点后的 7 和 5 逐位读，不读成 seventy-five。','point marks the decimal; read 7 and 5 separately, not as seventy-five.'),
+      f('25% → twenty-five percent','structure','percent 表示“每一百份中有多少份”，前面用基数词。','percent means a number of parts in every hundred and follows a cardinal.'),
+      s([['The tank','subject'],['is','predicate'],['thirty percent full.','complement']],'structure','thirty percent 修饰 full，表示水箱容量完成到百分之三十；它给出比例，不是数三十个物体。','thirty percent modifies full and places the tank at 30% of its capacity; it gives a proportion, not a count of thirty objects.')
+    ],[['小数点读 point，点后数字逐个读。','Read a decimal point as point and each following digit separately.'],['百分数由基数词＋percent 构成，percent 本身不加复数 s。','A percentage uses a cardinal + percent, and percent has no plural s.'],['百分数强调部分占整体的比例；需要实际人数时还要知道整体数量。','A percentage gives a part-to-whole proportion; the total is needed to calculate an actual count.']],[
+      bq('3.14 中的小数点读什么？','How is the decimal point in 3.14 read?','point','dot only','A','数学小数点通常读 point。','A mathematical decimal point is normally read point.'),
+      bq('50% 怎样表达？','How is 50% expressed?','fifty percent','fifty percents','A','percent 不加复数 s。','percent has no plural s.'),
+      bq('20% 表示什么关系？','What relation does 20% express?','每一百份中占二十份','twenty parts in every hundred','总共有二十个','a total count of twenty','A','百分数表达部分与整体的比例。','A percentage expresses a part-to-whole proportion.')
+    ]),
+    lesson(en,'date-time','日期与时间','Dates and time','数字进入时间坐标','Numbers on a time scale',[
+      f('May 5 → May fifth / the fifth of May','structure','日期中的“日”表示月内顺序，所以读序数词。','The day gives its order within a month, so it is read as an ordinal.'),
+      f('7:30 → seven thirty','structure','直接读法按“小时＋分钟”读取，不必换算与整点的距离。','Direct reading gives hour + minutes without calculating a relation to the hour.'),
+      f('8:15 → a quarter past eight','structure','past 从当前整点向后数；8:15 是八点已经过去一刻钟。','past counts after the current hour; 8:15 is a quarter after eight.'),
+      f('8:45 → a quarter to nine','structure','to 向下一个整点数；8:45 是距离九点还差一刻钟。','to counts toward the next hour; 8:45 is a quarter before nine.')
+    ],[['日期中的日表示顺序，通常用序数词读取。','A day in a date gives order and is normally read as an ordinal.'],['直接读法按“小时＋分钟”读取。','Direct time reading gives the hour followed by the minutes.'],['past 指已过当前整点多久。','past counts how long after the current hour.'],['to 指距离下一个整点还有多久。','to counts how long before the next hour.']],[
+      bq('July 1 怎样读？','How is July 1 read?','July first','July one','A','日期中的 1 读序数词 first。','Read 1 as the ordinal first in a date.'),
+      bq('7:30 的直接读法是？','What is the direct reading of 7:30?','seven thirty','half to eight','A','直接按小时 seven 和分钟 thirty 读取。','Read the hour seven followed by the minutes thirty.'),
+      bq('8:15 可以怎样表达？','How can 8:15 be expressed?','a quarter past eight','a quarter to eight','A','8:15 是八点过一刻。','8:15 is a quarter after eight.'),
+      bq('9:50 可以怎样表达？','How can 9:50 be expressed?','ten to ten','ten past ten','A','9:50 距十点还有十分钟。','9:50 is ten minutes before ten.')
+    ]),
+    lesson(en,'labels-years','编号与年份','Labels and years','数字用于识别，不一定表示数量','Identification rather than quantity',[
+      f('Room 205 → Room two oh five','structure','房间号用于识别房间，常逐位读；0 常读 oh。','A room number identifies a room and is often read digit by digit; 0 is often oh.'),
+      f('Bus 106 → Bus one oh six','structure','线路编号是名称的一部分，不读成序数词，也不表示一百零六辆公交车。','A route number is part of a label; it is not ordinal and does not mean 106 buses.'),
+      f('1998 → nineteen ninety-eight · 2008 → two thousand and eight / twenty oh eight','structure','年份常分成两段读；2000 年后的年份存在多种自然读法。','Years are often split into two parts; post-2000 years allow more than one natural reading.')
+    ],[['编号的任务是识别对象，常逐位读，不能机械套用大数读法。','A label identifies an object and is often read digit by digit rather than as a large quantity.'],['0 在编号中常读 oh，在数学数量中通常读 zero。','In labels, 0 is often oh; in mathematical quantities it is normally zero.'],['年份按语言习惯分段读取，不表示对应数量。','Years follow conventional grouped readings rather than denoting that quantity.']],[
+      bq('Bus 106 常读作什么？','How is Bus 106 commonly read?','Bus one oh six','Bus one hundred and sixth','A','线路编号通常逐位读。','A route label is commonly read digit by digit.'),
+      bq('编号中的 0 常读什么？','How is 0 often read in a label?','oh','hundred','A','编号中的 0 常读 oh。','0 in a label is often read oh.'),
+      bq('1998 的常见年份读法是？','What is a common year reading of 1998?','nineteen ninety-eight','one thousand nine hundred and ninety-eighth','A','年份常分两段读。','Years are often read in two parts.')
+    ]),
+    lesson(en,'approximate','概数与计量单位','Approximate quantities and counting units','精确数量与范围数量','Exact quantities and broad ranges',[
+      s([['Hundreds of visitors','subject'],['came','predicate'],['today.','adverbial','时间状语','Time adverbial']],'structure','没有给出具体数字，hundreds of 只表示数量达到数百的范围。','No exact number is given; hundreds of only places the quantity in the hundreds.'),
+      s([['About fifty people','subject'],['joined','predicate'],['the event.','object']],'structure','about 放在 fifty 前，把精确的 50 放宽为“50 左右”。','about comes before fifty and changes exact 50 into an approximate range around 50.'),
+      s([['She','subject'],['bought','predicate'],['two dozen eggs.','object']],'structure','dozen 是“十二个”为一组；two dozen 表示两个十二，即 24 个。','dozen is a unit of twelve; two dozen means two groups of twelve, or 24.')
+    ],[['复数单位词＋of 表示不精确的大量，如 hundreds of、thousands of。','Plural scale word + of gives an indefinite large quantity, as in hundreds of.'],['about、around、nearly、more than 等词改变数字的范围边界。','Words such as about, around, nearly and more than change the boundary around a number.'],['dozen 前有具体数字时通常保持单数并直接接名词。','dozen normally stays singular and directly precedes a noun after an exact number.']],[
+      bq('“数百名学生”怎样表达？','How do we express an indefinite number of students in the hundreds?','hundreds of students','hundred of students','A','概数用 hundreds of。','Use hundreds of for an indefinite quantity.'),
+      bq('“大约30”怎样表达？','How do we express approximately 30?','about thirty','thirty about','A','about 放在数字前。','about comes before the number.'),
+      bq('“两打鸡蛋”怎样表达？','How do we express two dozen eggs?','two dozen eggs','two dozens of eggs','A','精确数量后 dozen 保持单数。','dozen stays singular after an exact number.')
+    ]),
+    lesson(en,'multiples-ratios','倍数、比例与算式','Multiples, ratios and calculations','比较两个数量之间的关系','Relating two quantities',[
+      s([['This box','subject'],['is','predicate'],['twice as heavy as that one.','complement']],'structure','twice 修饰 as...as 比较结构，表示这个箱子的重量是另一个的两倍。','twice modifies the as...as comparison and makes this box two times the other one’s weight.'),
+      f('a ratio of 2 to 3 → two to three','structure','to 连接比例的两端：每 2 份对应 3 份。','to links the two sides of a ratio: two parts correspond to three parts.'),
+      f('6 + 4 = 10 → six plus four equals ten','structure','算式中的符号读作 plus、minus、times、divided by 和 equals。','Read calculation signs as plus, minus, times, divided by and equals.')
+    ],[['倍数比较常用 once/twice/three times＋as...as，倍数放在比较结构前。','Multiplicative comparison commonly uses once/twice/three times + as...as, with the multiplier first.'],['比例用 A to B 表示两类数量的对应关系。','A ratio uses A to B to relate two quantities.'],['算式中的数词仍表示数量，运算词说明数量如何发生关系。','Numerals in calculations still give quantities; operation words show how those quantities relate.']],[
+      bq('“两倍重”应放在哪个结构中？','Which structure expresses “twice as heavy”?','twice as heavy as','as twice heavy as','A','倍数 twice 放在 as...as 前。','Place twice before the as...as pattern.'),
+      bq('比例 2:3 怎样读？','How is the ratio 2:3 read?','two to three','second and third','A','比例符号读作 to。','Read the ratio sign as to.'),
+      bq('“6 + 4 = 10”怎样读？','How is “6 + 4 = 10” read?','six plus four equals ten','six with four ten','A','加号读 plus，等号读 equals。','Read + as plus and = as equals.')
+    ]),
+    lesson(en,'number-agreement','数量短语与主谓一致','Quantity phrases and agreement','看整体还是看 of 后对象','One unit or the noun after of',[
+      s([['Two hours','subject'],['is','predicate'],['enough.','complement']],'structure','虽然 hours 是复数形式，这里把两小时看成一段完整时长，所以谓语用 is。','Although hours is plural in form, the sentence treats two hours as one duration, so it uses is.'),
+      s([['Two thirds of the students','subject'],['are','predicate'],['present.','complement']],'structure','分数取的是 students 中的一部分；students 可数且为复数，所以用 are。','The fraction selects part of the students; students is plural countable, so are is used.'),
+      s([['Thirty percent of the water','subject'],['is','predicate'],['gone.','complement']],'structure','百分数取的是 water 的一部分；water 不可数，所以用 is。','The percentage selects part of the water; water is uncountable, so is is used.')
+    ],[['时间、金钱、距离等数量被看作一个整体时，通常用单数谓语。','A quantity of time, money or distance normally takes singular agreement when viewed as one unit.'],['分数＋of 的谓语通常根据 of 后名词的数和可数性选择。','Agreement after a fraction + of normally follows the number and countability of the of-noun.'],['百分数＋of 与分数相同：先找到被取出一定比例的对象，再判断谓语。','Percentage + of follows the same principle: identify the measured noun, then choose agreement.']],[
+      bq('Ten dollars ___ enough.','Ten dollars ___ enough.','is','is','are','are','A','十美元被看作一个金额整体。','Ten dollars is viewed as one sum.'),
+      bq('Half of the books ___ new.','Half of the books ___ new.','are','are','is','is','A','谓语随复数 books 用 are。','Agreement follows plural books, so use are.'),
+      bq('Thirty percent of the milk ___ gone.','Thirty percent of the milk ___ gone.','is','is','are','are','A','百分数取不可数 milk 的一部分，谓语用 is。','The percentage selects part of uncountable milk, so use is.')
+    ])
+  ], ['multiples-ratios','number-agreement']);
 }
 
 function buildArticleCourse(en) {
   const s=(u,m,z,e)=>analyzed(en,u,m,z,e), f=(t,m,z,e)=>form(en,t,m,z,e), q=(...a)=>question(en,...a);
+  const bq = (...args) => {
+    if (args.length === 7) {
+      const [zp,ep,a,b,answer,zh,english] = args;
+      return q(pick(en,zp,ep),a,b,answer,zh,english);
+    }
+    const [zp,ep,za,ea,zb,eb,answer,zh,english] = args;
+    return q(pick(en,zp,ep),pick(en,za,ea),pick(en,zb,eb),answer,zh,english);
+  };
   return grouped(en, '冠词', 'Articles', [
-    lesson(en,'a-an','a 还是 an','Choosing a or an','看发音，不只看字母','Follow sound, not spelling',[f('a book · a university','sound','a 用在辅音音素前；university 以 /j/ 开头。','Use a before a consonant sound; university begins with /j/.'),f('an apple · an hour','sound','an 用在元音音素前；hour 的 h 不发音。','Use an before a vowel sound; h is silent in hour.'),s([['She','subject'],['is','predicate'],['an honest student.','complement']])],[['a/an 只用于单数可数名词，表示非特指的一个。','a/an is used with a singular countable noun for one non-specific member.'],['选择 a/an 取决于紧随其后的发音。','Choose a/an by the following sound.']],[q('___ hour','an','a','A','hour 以元音音素开头。','hour begins with a vowel sound.'),q('___ European country','a','an','A','European 以 /j/ 开头。','European begins with /j/.'),q('She bought ___ pen.','a','an','A','pen 以辅音音素开头。','pen begins with a consonant sound.')]),
-    lesson(en,'the-known','the 表示特指','The for specific reference','双方知道是哪一个','Both sides know which one',[s([['Please close','predicate'],['the door.','object']]),s([['I','subject'],['saw','predicate'],['a dog.','object']], 'structure','首次提及用 a；再次提及时改用 the dog。','Use a on first mention, then the dog.'),s([['The book on the desk','subject'],['is','predicate'],['mine.','complement']],'translation','on the desk 后置限定 book，中文前移为“桌上的书”。','on the desk follows book in English but moves before 书 in Chinese.'),f('the book · the books · the water in the bottle','structure','the 本身不标记数量，可用于单数、复数和不可数名词。','the does not mark number and can introduce singular, plural and uncountable nouns.')],[['the 用于语境中唯一、已提及或被修饰语明确限定的对象。','Use the for a unique, previously mentioned or clearly specified referent.'],['名词后的修饰语可以把对象限定为特指。','A modifier after a noun can identify a specific referent.'],['the 不表示数量，单数、复数和不可数名词都可使用。','the does not mark number and works with singular, plural and uncountable nouns.']],[q('I saw a film. ___ film was great.','The','A','A','再次提及用 the。','Use the on second mention.'),q('Open ___ window, please.','the','an','A','语境指向具体窗户。','The context identifies the window.'),q('___ water in this bottle','The','A','A','后置短语限定具体的水。','The phrase specifies the water.'),q('Which can follow “the”?','books and water','only a singular noun','A','the 可用于复数和不可数名词。','the can introduce plural and uncountable nouns.')]),
-    lesson(en,'zero-basic','零冠词的核心场景','Core zero-article uses','复数泛指与不可数泛指','Plural and uncountable general reference',[s([['Books','subject'],['can teach','predicate'],['us a lot.','object']]),s([['Water','subject'],['is','predicate'],['essential.','complement']]),s([['She','subject'],['speaks','predicate'],['English.','object']]),s([['They','subject'],['play','predicate'],['football after school.','object']])],[['复数可数名词和不可数名词泛指类别时通常不用冠词。','Plural count nouns and mass nouns normally take no article for general reference.'],['语言和学科名称前通常用零冠词。','Languages and school subjects normally take zero article.'],['球类运动名称前通常用零冠词。','Ball-game names normally take zero article.']],[q('___ Milk is good for children.','不填','The','A','milk 泛指。','milk is used generally.'),q('We study ___ maths.','不填','the','A','学科前用零冠词。','School subjects take zero article.'),q('___ Dogs are friendly animals.','不填','The','A','复数名词泛指类别。','Plural dogs refers to the class generally.'),q('They play ___ basketball.','不填','the','A','球类运动前通常用零冠词。','Ball games normally take zero article.')]),
-    lesson(en,'unique-superlative','唯一事物、最高级与序数词','Unique things, superlatives and ordinals','默认指向唯一对象','Default unique reference',[s([['The sun','subject'],['rises','predicate'],['in the east.','adverbial']]),s([['She','subject'],['is','predicate'],['the tallest girl in the class.','complement']]),s([['This','subject'],['is','predicate'],['the first lesson.','complement']])],[['独一无二的事物通常用 the。','Unique entities normally take the.'],['形容词最高级和序数词前通常用 the；有物主限定词时不用。','Superlatives and ordinals normally take the, unless a possessive determiner is present.']],[q('___ moon','the','a','A','语境中的月亮是唯一对象。','The moon is unique in context.'),q('the ___ building','highest','higher','A','最高级前用 the。','the introduces the superlative.'),q('her ___ try','the second','second','B','her 已作限定词。','her replaces the article.')]),
-    lesson(en,'institutions-meals','场所功能、三餐与交通','Institutions, meals and transport','看功能还是具体建筑','Function or specific place',[s([['The children','subject'],['go','predicate'],['to school by bus.','adverbial']]),s([['Their parents','subject'],['went','predicate'],['to the school for a meeting.','adverbial']]),s([['We','subject'],['had','predicate'],['breakfast at home.','object']])],[['school、bed、hospital 等表示其正常功能时常用零冠词；指具体建筑时用 the。','school, bed and hospital often take zero article for their normal function, but the for the specific place.'],['三餐和 by＋交通工具通常用零冠词。','Meals and by + transport normally take zero article.']],[q('Students are at ___ school.','不填','the','A','表示上学这一功能。','It refers to the institution’s function.'),q('Meet me at ___ school gate.','the','不填','A','指具体校门。','It specifies the school gate.'),q('by ___ train','不填','the','A','by＋交通工具用零冠词。','Use zero article after by for transport.')]),
-    lesson(en,'names-places','专有名称中的冠词','Articles in proper names','名称结构决定用法','Name structure decides usage',[f('China · Asia · Mount Tai','structure','多数国家、洲、单座山峰用零冠词。','Most countries, continents and single mountains take zero article.'),f('the United States · the Netherlands','structure','复数或含 common noun 的国家名常用 the。','Plural country names or those containing a common noun often take the.'),f('the Yangtze River · the Pacific Ocean · the Alps','structure','江河、海洋、群岛和山脉通常用 the。','Rivers, oceans, island groups and mountain ranges normally take the.')],[['专有名词冠词规则应按名称类别记忆，不能只按“专有名词不加冠词”。','Learn article use by type of proper name; “proper names take no article” is too broad.'],['城市、街道、湖泊通常零冠词；江河海洋、山脉群岛通常用 the。','Cities, streets and lakes normally take zero article; rivers, oceans, ranges and island groups take the.']],[q('___ Pacific Ocean','the','不填','A','海洋名称用 the。','Ocean names take the.'),q('___ Lake Baikal','不填','the','A','单个湖泊名称通常零冠词。','Single lake names normally take zero article.'),q('___ United Kingdom','the','不填','A','含 Kingdom 的名称用 the。','This country name takes the.')]),
-    lesson(en,'generic-contrast','三种泛指方式','Three ways to generalize','a、the 与复数','a · the · plural',[s([['A tiger','subject'],['is','predicate'],['a dangerous animal.','complement']]),s([['The tiger','subject'],['is','predicate'],['endangered.','complement']]),s([['Tigers','subject'],['need','predicate'],['protection.','object']]),f('books ✓ · water ✓ · a books ✗ · a water ✗','structure','a/an 不能直接放在复数或不可数名词前。','a/an cannot directly introduce a plural or uncountable noun.')],[['a/an＋单数表示类别中的任一成员；the＋单数可代表整个物种；复数零冠词最自然地泛指一类。','a/an + singular means any member; the + singular may represent a species; zero-article plurals most naturally generalize.'],['a/an 只能放在单数可数名词前。','a/an can only introduce a singular countable noun.'],['不能用 a/an 直接修饰复数或不可数名词。','a/an cannot directly modify plurals or mass nouns.']],[q('泛指“猫是独立的动物”最自然：','Cats are independent animals.','The cats are independent animals.','A','复数零冠词自然泛指类别。','A zero-article plural naturally generalizes.'),q('___ computer is a useful tool.','A','An','A','computer 以辅音音素开头。','computer begins with a consonant sound.'),q('___ whale is the largest mammal.','The','A the','A','the＋单数可代表物种。','the + singular can represent a species.'),q('Which is grammatically possible?','books','a books','A','复数 books 前不能用 a。','a cannot introduce plural books.')]),
-    lesson(en,'article-meaning','冠词改变意义','Meaning contrasts with articles','固定搭配不能机械背','Articles create lexical contrasts',[f('go to school ↔ go to the school','structure','前者表示上学，后者表示去那所学校。','The first means attend school; the second means visit the building.'),f('in hospital ↔ in the hospital','structure','英式英语中前者表示住院，后者指在医院建筑内。','In British English, the first means receiving treatment; the second locates someone in the building.'),f('a few ↔ few · a little ↔ little','structure','有 a 表示“有一些”，无 a 常表示“几乎没有”。','With a, the phrase means some; without a, it often means almost none.')],[['冠词可能参与固定搭配并改变整体意义。','An article may be part of an idiom and change the whole meaning.'],['先判断名词在语境中是类别、特指、功能还是固定表达。','Decide whether the noun is generic, specific, functional or idiomatic.']],[q('“还有一点希望”','a little hope','little hope','A','a little 表肯定的“一点”。','a little has a positive “some” meaning.'),q('“几乎没有朋友”','few friends','a few friends','A','few 表否定含义。','few has a negative meaning.'),q('The parent went to ___ school to see the teacher.','the','不填','A','家长去具体学校，不是去上学。','The parent visits the specific school.')])
-  ], 5);
+    lesson(en,'article-essence','冠词是什么','What articles do','帮助听者识别名词','Helping the listener identify a noun',[
+      s([['I','subject'],['saw','predicate'],['a dog.','object']],'structure','a dog 先从“狗”这一类中引入一只；听者还不知道具体是哪一只。','a dog introduces one member of the class “dogs”; the listener does not yet know which dog.'),
+      s([['The dog','subject'],['followed','predicate'],['me.','object']],'structure','the dog 表示前文或现场已经让双方能认出这只狗，不再是任意一只。','the dog shows that the discourse or situation now lets both people identify the dog.'),
+      s([['Dogs','subject'],['need','predicate'],['care.','object']],'structure','Dogs 不锁定某几只狗，而是谈狗这一类，所以复数名词前用零冠词。','Dogs does not identify particular dogs; it refers to the class generally, so the plural takes zero article.')
+    ],[['a/an 像 a dog 一样先引入一个未锁定的单数成员。','a/an, as in a dog, introduces one not-yet-identified singular member.'],['the 像 the dog 一样提示听者：现在可以认出所说对象。','the, as in the dog, signals that the listener can now identify the referent.'],['零冠词像 Dogs 一样可把复数或不可数名词作为一类来谈。','Zero article, as in Dogs, can present a plural or mass noun as a class.']],[
+      bq('第一次提到一只不确定的狗，应说什么？','How do we first mention one unidentified dog?','a dog','the dog','A','第一次引入一个未锁定成员用 a dog。','Use a dog to introduce one unidentified member.'),
+      bq('双方已经知道是哪只狗，应说什么？','What do we say when both sides know which dog?','the dog','a dog','A','对象已可识别，用 the dog。','Use the dog when the referent is identifiable.'),
+      bq('泛指狗这一类，最自然的是？','What is the most natural general reference to the class of dogs?','Dogs','The dogs','A','复数零冠词 Dogs 自然泛指一类。','The zero-article plural Dogs naturally refers to the class.')
+    ]),
+    lesson(en,'article-determiner-boundary','冠词与其他限定词','Articles and other determiners','限定位置不能机械叠加','Do not stack central determiners',[
+      f('the book · my book · this book','structure','the、my、this 都帮助锁定 book；它们通常占同一个中心限定位置，因此不能说 the my book。','the, my and this all determine book and normally fill the same central determiner slot, so the my book is not possible.'),
+      f('a book · one book','structure','a 强调“某一个未锁定成员”，one 强调数量恰好为一；两者意义接近但焦点不同。','a highlights an unidentified member; one highlights the exact quantity of one. Their meanings overlap, but their focus differs.'),
+      f('all the books · both my hands','structure','all、both 可以放在中心限定词之前，所以“限定词不能共现”不能讲成绝对规则。','all and both can precede a central determiner, so “determiners never combine” is not an absolute rule.')
+    ],[['the 与 my、this 等通常竞争同一个中心限定位置。','the normally competes with my, this and similar words for the central determiner slot.'],['a/an 主要建立不定指称，one 主要强调数量一。','a/an mainly establishes indefinite reference, while one mainly stresses the number one.'],['all/both 等前位限定词可以出现在 the、my 之前。','Predeterminers such as all and both can occur before the or my.']],[
+      bq('哪一项正确？','Which is correct?','my book','the my book','A','my 已占据中心限定位置，不再加 the。','my already fills the central determiner slot, so the is not added.'),
+      bq('强调“正好一本书”更适合用？','Which better stresses “exactly one book”?','one book','a book','A','one 直接强调数量一。','one directly stresses the quantity one.'),
+      bq('哪一项可以成立？','Which expression is possible?','all the books','the all books','A','all 位于 the 前。','all comes before the.')
+    ]),
+    lesson(en,'indefinite-reference','a/an 的指称本质','Indefinite reference with a/an','从一类中引入一个','Introducing one member of a class',[
+      s([['I','subject'],['need','predicate'],['a pen.','object']],'structure','说话人需要“笔”这一类中的一支，目前没有指定必须是哪一支。','The speaker needs one member of the class “pens” and has not specified which pen.'),
+      s([['Mia','subject'],['is','predicate'],['a doctor.','complement']],'structure','a doctor 把 Mia 归入“医生”这一职业类别，不是在指某位双方已知的医生。','a doctor classifies Mia as a member of the profession; it does not identify a known doctor.'),
+      s([['A child','subject'],['needs','predicate'],['love.','object']],'structure','A child 用任意一个儿童代表这一类成员，说明适用于每个普通儿童的道理。','A child uses any representative member of the class to state something true of an ordinary child.')
+    ],[['a/an 只能直接限定单数可数名词，因为它从可数类别中取出一个成员。','a/an directly determines only a singular count noun because it selects one member of a countable class.'],['在职业或身份表语中，a/an 表示主语属于哪一类。','In profession or identity complements, a/an classifies the subject as a member of a group.'],['a/an＋单数也可让任一成员代表该类，但只适合能落到普通个体上的概括。','a/an + singular can let any member represent a class, but only for generalizations that apply to an ordinary individual.']],[
+      bq('“我需要一支笔，哪支都可以”应填？','Complete “I need ___ pen; any pen will do.”','a','the','A','没有锁定具体笔，用 a。','No particular pen is identified, so use a.'),
+      bq('She is ___ engineer.','She is ___ engineer.','an','the','A','职业分类用 an engineer。','Use an engineer to classify her profession.'),
+      bq('表示“孩子需要安全感”这一普遍道理，可说？','Which can state a general truth that a child needs security?','A child needs security.','The child needs security.','A','A child 用任一成员代表儿童这一类。','A child uses any representative member of the class.')
+    ]),
+    lesson(en,'a-an','a 还是 an','Choosing a or an','看紧随成分的首个音素','Follow the first sound of what follows',[
+      f('an hour','sound','hour 的 h 不发音，开头是元音音素 /aʊ/，所以用 an。','The h in hour is silent, so the word begins with the vowel sound /aʊ/ and takes an.'),
+      f('a university','sound','university 虽以元音字母 u 开头，读音却以辅音音素 /j/ 开头，所以用 a。','Although university begins with the vowel letter u, it begins with the consonant sound /j/, so it takes a.'),
+      f('an MBA student','sound','MBA 的第一个字母 M 读 /em/，首音是元音音素，所以用 an。','The first letter of MBA is pronounced /em/, beginning with a vowel sound, so it takes an.'),
+      f('a one-year course','sound','one 开头读 /w/，是辅音音素，所以用 a。','one begins with the consonant sound /w/, so it takes a.'),
+      f('an interesting book · a useful book','sound','冠词看紧随其后的修饰词：interesting 以元音音素开头，useful 以 /j/ 开头。','The article follows the sound of the next modifier: interesting begins with a vowel sound, while useful begins with /j/.')
+    ],[['an hour 说明 a/an 看发音，不看首字母。','an hour shows that a/an follows sound, not the first written letter.'],['a university 说明元音字母开头也可能因 /j/ 等辅音音素而用 a。','a university shows that a vowel letter may still take a when its first sound is consonantal, such as /j/.'],['缩写按实际读法选择；MBA 读 /em.../，因此是 an MBA。','Choose by the spoken form of an abbreviation; MBA begins /em.../, so it is an MBA.'],['a one-year course 说明数字或单词的实际首音仍是判断依据。','a one-year course shows that the actual first sound of a number or word remains decisive.'],['名词前有修饰词时，看紧随冠词的修饰词首音。','When a modifier comes before the noun, use the first sound of that modifier.']],[
+      bq('___ hour','___ hour','an','an','a','a','A','hour 以元音音素开头。','hour begins with a vowel sound.'),
+      bq('___ university','___ university','a','a','an','an','A','university 以 /j/ 开头。','university begins with /j/.'),
+      bq('___ MBA student','___ MBA student','an','an','a','a','A','M 读 /em/，首音是元音音素。','M is pronounced /em/, which begins with a vowel sound.'),
+      bq('___ one-year plan','___ one-year plan','a','a','an','an','A','one 以 /w/ 开头。','one begins with /w/.'),
+      bq('___ useful idea','___ useful idea','a','a','an','an','A','useful 以 /j/ 开头。','useful begins with /j/.')
+    ]),
+    lesson(en,'the-known','the：现场与共享知识','The in shared situations','听者能认出是哪一个','The listener can identify the referent',[
+      s([['Please close','predicate'],['the door.','object']],'structure','当前房间的现场让双方能确认要关哪扇门，所以用 the；并不是所有 door 前都用 the。','The current room lets both people identify the intended door, so the is used; door does not always take the.'),
+      s([['The teacher','subject'],['is waiting','predicate'],['outside.','adverbial','地点状语','Place adverbial']],'structure','在当前班级或谈话场景中，双方知道 teacher 指哪位老师，因此可以直接用 the。','Within the current class or conversation, both sides know which teacher is meant, so the is possible.'),
+      s([['The sun','subject'],['provides','predicate'],['light.','object']],'structure','在日常地球语境中，sun 是双方通过常识能识别的对象，所以用 the。','In ordinary Earth-based discourse, shared knowledge lets both sides identify the sun, so it takes the.')
+    ],[['the door 表明现场信息足以让听者认出对象；the 的核心是“可识别”，不只是中文“这个”。','the door shows that the situation can identify the referent; the means “identifiable,” not merely Chinese “this.”'],['the teacher 的唯一性来自当前班级或谈话范围，不一定是世界上唯一。','the teacher is unique within the current class or discourse, not necessarily in the whole world.'],['the sun 依靠双方共享的世界知识建立可识别性。','the sun relies on shared world knowledge for identifiability.']],[
+      bq('在房间里让对方关双方都看到的门，应说？','In a room, how do you ask someone to close the mutually visible door?','Close the door.','Close a door.','A','现场已经锁定那扇门。','The situation already identifies the door.'),
+      bq('当前班级都知道在等哪位老师，可说？','If the class knows which teacher is waiting, what can we say?','The teacher is waiting.','A teacher is waiting.','A','共享场景让 teacher 可识别。','The shared context makes teacher identifiable.'),
+      bq('___ sun gives us light.','___ sun gives us light.','The','The','A','A','A','共享常识让 sun 可识别。','Shared knowledge makes the sun identifiable.')
+    ]),
+    lesson(en,'the-context-chain','the：前文、关联与限定','The in discourse and identification','信息逐步锁定对象','Information identifies the referent',[
+      s([['I','subject'],['saw','predicate'],['a dog.','object'],['The dog','subject'],['followed','predicate'],['me.','object']],'structure','第一句用 a dog 引入一只狗；第二句用 the dog 回指刚出现的同一只狗。','The first sentence introduces a dog; the second uses the dog to refer back to that same dog.'),
+      s([['We','subject'],['bought','predicate'],['a house.','object'],['The kitchen','subject'],['is','predicate'],['small.','complement']],'structure','前文虽没提 kitchen，但提到 house 后，听者可通过“房子通常有厨房”的关联认出所指厨房。','Although kitchen was not mentioned, a house normally has one, so the listener can identify the associated kitchen.'),
+      s([['The book','subject'],['on the desk','attribute','介词短语作后置定语','Prepositional phrase as postmodifier'],['is','predicate'],['mine.','complement']],'translation','on the desk 把 book 锁定为桌上那本；英语放在名词后，中文通常前移为“桌上的书”。','on the desk identifies the book on that desk; English places it after the noun, while Chinese normally moves it before the noun.'),
+      s([['I','subject'],['need','predicate'],['a book','object'],['about birds.','attribute','介词短语作后置定语','Prepositional phrase as postmodifier']],'translation','about birds 只说明书的主题，并没有锁定唯一一本，所以仍用 a；中文通常说“一本关于鸟的书”。','about birds gives the topic but does not identify one unique book, so a remains; Chinese normally places the modifier before the noun.')
+    ],[['a dog → the dog 说明前文首次提及可以让后文对象变得可识别。','a dog → the dog shows how first mention can make a later referent identifiable.'],['a house → the kitchen 说明关联信息也能让听者识别对象，不要求逐字重复。','a house → the kitchen shows that an associated part can be identifiable without exact repetition.'],['修饰语只有在足以锁定对象时才支持 the；the book on the desk 能锁定，a book about birds 未必能锁定。','A modifier supports the only when it identifies the referent: the book on the desk can do so, while a book about birds may not.']],[
+      bq('I saw a film. ___ film was excellent.','I saw a film. ___ film was excellent.','The','The','A','A','A','第二次提及同一部电影用 the。','Use the on the second mention of the same film.'),
+      bq('We entered a house. ___ living room was bright.','We entered a house. ___ living room was bright.','The','The','A','A','A','house 与 living room 的关联让对象可识别。','The association between house and living room makes the referent identifiable.'),
+      bq('双方只知道“关于鸟的一本书”，但没锁定哪本，应说？','If no particular book is identified, what should we say?','a book about birds','the book about birds','A','修饰语没有锁定唯一对象，仍用 a。','The modifier does not identify a unique referent, so use a.'),
+      bq('双方都知道桌上只有一本书，应说？','If both sides know there is one book on the desk, what should we say?','the book on the desk','a book on the desk','A','限定信息足以锁定对象，用 the。','The identifying information is sufficient, so use the.')
+    ]),
+    lesson(en,'unique-superlative','唯一性、最高级与序数词','Uniqueness, superlatives and ordinals','唯一性来自当前范围','Uniqueness comes from the current domain',[
+      s([['Mia','subject'],['is','predicate'],['the tallest student','complement'],['in her class.','attribute','介词短语作后置定语','Prepositional phrase as postmodifier']],'structure','in her class 把比较范围限定为她的班级；这个范围内只有一个“最高”，所以用 the。','in her class sets the comparison domain; one member ranks highest in that domain, so the is used.'),
+      s([['This','subject'],['is','predicate'],['the first lesson','complement'],['in the book.','attribute','介词短语作后置定语','Prepositional phrase as postmodifier']],'structure','in the book 给出明确序列，first 指向该序列中的唯一第一节。','in the book supplies a clear sequence, and first identifies its unique first lesson.'),
+      s([['Leo','subject'],['is','predicate'],['my best friend.','complement']],'structure','my 已经说明 friend 与说话人的关系，占据限定位置，因此不再加 the。','my already identifies the relation to the speaker and fills the determiner slot, so the is not added.'),
+      s([['We','subject'],['need','predicate'],['a second chance.','object']],'structure','a second chance 表示“再一次机会”，并没有锁定某个序列中唯一的第二次机会。','a second chance means one additional chance; it does not identify the unique second item in a fixed sequence.')
+    ],[['the tallest student 依靠明确比较范围形成唯一性；唯一性常是语境内的，不是世界范围的。','the tallest student becomes unique within a stated comparison domain; uniqueness is often contextual, not global.'],['the first lesson 指向明确序列中的唯一位置。','the first lesson identifies one unique position in a defined sequence.'],['最高级或序数词前已有 my/this 等限定词时不用 the；意义改成“又一个”时还可用 a。','Do not add the when my/this already determines a superlative or ordinal phrase; use a when the meaning is “another.”']],[
+      bq('“她班里最高的学生”应说？','How do we say “the tallest student in her class”?','the tallest student in her class','a tallest student in her class','A','明确范围内的最高者可识别，用 the。','The highest member in a defined domain is identifiable, so use the.'),
+      bq('书中第一章应说？','How do we refer to the first chapter in a book?','the first chapter','a first chapter','A','明确序列中的第一项用 the。','Use the for the unique first item in a sequence.'),
+      bq('哪一项正确？','Which is correct?','my best friend','my the best friend','A','my 已占限定位置。','my already fills the determiner slot.'),
+      bq('“我们需要再试一次”中的“一次”可表达为？','Which phrase can mean “one more attempt”?','a second try','the second try','A','a second 表“再一个”。','a second means “one more.”')
+    ]),
+    lesson(en,'zero-basic','零冠词表示泛指','Zero article for general reference','谈一类，不锁定对象','Referring to a class, not identified items',[
+      s([['Books','subject'],['can teach','predicate'],['us','indirectObject','间接宾语','Indirect object'],['a lot.','directObject','直接宾语','Direct object']],'structure','Books 指书这一类，不是某几本已知的书，所以复数名词前用零冠词。','Books refers to books as a class, not to identified books, so the plural takes zero article.'),
+      s([['Water','subject'],['is','predicate'],['essential.','complement']],'structure','Water 指水这种物质整体，不是某一部分已识别的水，所以用零冠词。','Water refers to the substance generally, not to an identified portion, so it takes zero article.'),
+      s([['The books','subject'],['on this shelf','attribute','介词短语作后置定语','Prepositional phrase as postmodifier'],['belong','predicate'],['to','preposition','介词','Preposition'],['Mia.','prepObject','介词宾语','Object of preposition']],'structure','on this shelf 把 books 锁定为这个书架上的那些书，因此改用 the。','on this shelf identifies a particular set of books, so the is used.'),
+      s([['The water','subject'],['in this bottle','attribute','介词短语作后置定语','Prepositional phrase as postmodifier'],['is','predicate'],['cold.','complement']],'structure','in this bottle 把 water 限定为瓶中的这部分水，因此用 the。','in this bottle identifies a particular portion of water, so the is used.')
+    ],[['Books 和 Water 说明：复数可数名词与不可数名词泛指类别时通常用零冠词。','Books and Water show that plural count nouns and mass nouns normally take zero article in general reference.'],['the books / the water 说明一旦语境锁定具体集合或具体部分，就改用 the。','the books / the water show that an identified set or portion takes the.']],[
+      bq('泛指“书能带来知识”，应填？','For books in general, what should we use?','Books','The books','A','泛指复数类别用零冠词。','Use a zero-article plural for general reference.'),
+      bq('泛指“空气很重要”，应填？','For air as a substance in general, what should we use?','Air','The air','A','泛指不可数物质用零冠词。','Use zero article for a mass noun in general reference.'),
+      bq('特指桌上的那些书，应说？','How do we refer to the identified books on the desk?','the books on the desk','books on the desk','A','限定信息锁定具体集合，用 the。','The modifier identifies a particular set, so use the.'),
+      bq('特指杯子里的水，应说？','How do we refer to the water in a particular cup?','the water in the cup','water in the cup','A','具体部分已被锁定，用 the。','The particular portion is identified, so use the.')
+    ]),
+    lesson(en,'institutions-meals','机构功能与具体地点','Institutional function and physical place','看人在使用制度还是指向地点','Function versus physical place',[
+      s([['The children','subject'],['are','predicate'],['at school.','predicative','表语（介词短语）','Predicative prepositional phrase']],'structure','at school 表示孩子处于“上学”这一制度活动中，school 不作为一座具体建筑来识别。','at school presents the children as participating in schooling; school is not identified as a particular building.'),
+      s([['Their parents','subject'],['are waiting','predicate'],['at the school.','adverbial','地点状语','Place adverbial']],'structure','父母不是去上学，而是在那所具体学校建筑处等候，所以用 the school。','The parents are not attending school; they are waiting at the particular school building, so the school is used.'),
+      s([['The baby','subject'],['is','predicate'],['in bed.','predicative','表语（介词短语）','Predicative prepositional phrase']],'structure','in bed 表示在床上睡觉或休息这一正常功能；若说东西在某张床上，通常用 on the bed。','in bed means using bed for its normal purpose of sleeping or resting; an object located on a bed normally takes on the bed.'),
+      s([['Eva','subject'],['is','predicate'],['in hospital.','predicative','表语（介词短语，英式）','Predicative prepositional phrase (British)']],'structure','英式英语 in hospital 常表示住院；美式英语通常说 in the hospital。两种变体都不能脱离地区语境判断。','British English commonly uses in hospital for receiving treatment; American English normally uses in the hospital. Judge the form by variety.')
+    ],[['at school / at the school 的差别不只是有没有冠词，而是“参与制度功能”与“指向具体地点”的差别。','at school / at the school contrasts participation in an institution with reference to a physical place.'],['in bed 把 bed 作为睡觉或休息的正常功能状态，因此使用零冠词。','in bed presents bed as the normal state of sleeping or resting and therefore takes zero article.'],['hospital 的制度用法存在英美差异，不能把一个地区的形式判成全球唯一规则。','Institutional hospital usage differs between British and American English, so one variety must not be taught as the only correct form.']],[
+      bq('学生正在上学，应说？','How do we say that students are attending school?','at school','at the school','A','这里表达上学这一制度功能。','This expresses participation in schooling.'),
+      bq('家长在那所学校建筑外等候，应说？','How do we locate a parent at a particular school building?','at the school','at school','A','这里指具体学校地点。','This refers to a particular school location.'),
+      bq('“孩子已经上床睡觉”应说？','How do we say that a child has gone to sleep?','in bed','in the bed','A','这里使用床的正常功能。','This presents the normal function of bed.'),
+      bq('英式英语中，哪项突出“住院治疗”这一制度状态？','In British English, which form foregrounds the institutional state of receiving treatment?','in hospital','in the hospital','A','英式制度用法用 in hospital；in the hospital 指向具体医院地点。','British institutional usage has in hospital; in the hospital identifies the hospital location.')
+    ]),
+    lesson(en,'activity-conventions','活动与日常名称的冠词','Articles in activities and daily names','先看名称系统，再看具体限定','Convention first, then specific reference',[
+      s([['She','subject'],['speaks','predicate'],['English.','object']],'structure','English 是语言名称，按英语命名约定通常用零冠词。','English is the name of a language and normally takes zero article by naming convention.'),
+      s([['We','subject'],['study','predicate'],['maths.','object']],'structure','maths 是学科名称，表示课程领域时通常用零冠词。','maths is a school-subject name and normally takes zero article when naming the field.'),
+      s([['They','subject'],['play','predicate'],['football.','object']],'structure','football 作为球类运动名称通常用零冠词。','football as the name of a ball game normally takes zero article.'),
+      s([['Mia','subject'],['plays','predicate'],['the piano.','object']],'structure','传统乐器演奏表达常用 the piano；这属于英语活动名称系统，不能推成所有活动都加 the。','Traditional instrument-playing expressions commonly use the piano; this is a convention of the activity system, not a rule that all activities take the.'),
+      s([['We','subject'],['had','predicate'],['a wonderful breakfast.','object']],'structure','breakfast 单说一日三餐通常零冠词；这里把它看成一次有特征的餐，并由 wonderful 描写，所以用 a。','Meal names normally take zero article, but here breakfast is one characterized meal modified by wonderful, so it takes a.'),
+      s([['Leo','subject'],['came','predicate'],['by bus.','adverbial','方式状语','Manner adverbial']],'structure','by bus 表示交通方式，用零冠词；on the bus 则把 bus 作为正在乘坐的具体交通工具。','by bus names a means of transport and takes zero article; on the bus refers to an identifiable vehicle being used.')
+    ],[['English 和 maths 表明语言、学科作为名称时通常用零冠词。','English and maths show that language and subject names normally take zero article.'],['play football 与 play the piano 反映两套活动名称约定，不能用一条“运动/乐器口诀”扩张到所有名词。','play football and play the piano reflect conventional activity patterns that should not be overextended to every sport or instrument noun.'],['a wonderful breakfast 把餐计作一次并加以描写；by bus 只说明交通方式，两者展示零冠词约定发生变化或保持的条件。','a wonderful breakfast counts and characterizes one meal, while by bus only names a means of transport; together they show when zero-article conventions change or remain.']],[
+      bq('表示学习英语这门语言，应说？','How do we name the language being studied?','study English','study the English','A','语言名称通常用零冠词。','Language names normally take zero article.'),
+      bq('表示学习数学这门学科，应说？','How do we name mathematics as a school subject?','study maths','study the maths','A','学科名称通常用零冠词。','School-subject names normally take zero article.'),
+      bq('踢足球应说？','How do we say “play football”?','play football','play the football','A','球类运动名称通常用零冠词。','Ball-game names normally take zero article.'),
+      bq('把钢琴作为所演奏的乐器，常见表达是？','What is the conventional expression when piano names the instrument being played?','play the piano','play a piano','A','活动名称系统通常用 play the piano；play a piano 指向任意一架具体钢琴。','The activity convention normally has play the piano; play a piano refers to one non-specific instrument.'),
+      bq('“一顿丰盛的早餐”应说？','How do we say “one substantial breakfast”?','a big breakfast','big breakfast','A','一次被描述的餐可用 a。','One characterized meal can take a.'),
+      bq('表示交通方式“乘公交”应说？','How do we express bus as a means of transport?','by bus','by the bus','A','by＋交通方式通常用零冠词。','by + means of transport normally takes zero article.')
+    ]),
+    lesson(en,'names-places','专有名称中的冠词','Articles in proper names','按名称类别与实际惯用法判断','Follow name type and established usage',[
+      f('China · Asia · Shanghai','structure','多数单数国家名、洲名和城市名用零冠词。','Most singular country names, continent names and city names take zero article.'),
+      f('Mount Tai · Lake Baikal','structure','单座山峰和“Lake＋名称”通常用零冠词。','Single mountains and Lake + name normally take zero article.'),
+      f('the Yangtze River · the Pacific Ocean · the Alps','structure','江河、海洋和山脉名称通常用 the。','Names of rivers, oceans and mountain ranges normally take the.'),
+      f('the United States · the United Kingdom · the Netherlands','structure','复数国家名以及这些约定名称用 the；应记实际名称，不能只看某个普通名词。','Plural country names and these established names take the; learn the actual name rather than relying on one common noun.'),
+      f('Oxford University · Buckingham Palace','structure','名称中出现 University 或 Palace 并不自动触发 the，说明“含普通名词就加 the”不成立。','University or Palace inside a name does not automatically trigger the, showing that “a common noun means the” is false.')
+    ],[['China、Asia、Shanghai 与 Mount Tai、Lake Baikal 展示常见零冠词名称类别。','China, Asia, Shanghai, Mount Tai and Lake Baikal illustrate common zero-article name types.'],['the Yangtze River、the Pacific Ocean、the Alps 展示江河、海洋和山脉通常用 the。','the Yangtze River, the Pacific Ocean and the Alps show that rivers, oceans and ranges normally take the.'],['the United States 等国家名按实际惯用形式使用 the，不能只靠表面单词推断。','Country names such as the United States take the by established usage, not by a superficial word test.'],['Oxford University 与 Buckingham Palace 证明“含普通名词一律加 the”是错误规则。','Oxford University and Buckingham Palace show that a common noun inside a name does not automatically require the.']],[
+      bq('___ China','___ China','China','China','the China','the China','A','单数国家名 China 用零冠词。','The singular country name China takes zero article.'),
+      bq('___ Lake Baikal','___ Lake Baikal','Lake Baikal','Lake Baikal','the Lake Baikal','the Lake Baikal','A','Lake＋名称通常用零冠词。','Lake + name normally takes zero article.'),
+      bq('___ Pacific Ocean','___ Pacific Ocean','the Pacific Ocean','the Pacific Ocean','Pacific Ocean','Pacific Ocean','A','海洋名称通常用 the。','Ocean names normally take the.'),
+      bq('___ United States','___ United States','the United States','the United States','United States','United States','A','该国家名的惯用形式带 the。','The established form of this country name takes the.'),
+      bq('哪一项正确？','Which is correct?','Oxford University','the Oxford University','A','名称含 University 不等于自动加 the。','University inside a name does not automatically require the.')
+    ]),
+    lesson(en,'generic-contrast','三种泛指方式','Three ways to generalize','形式相近，适用范围不同','Similar forms, different ranges',[
+      s([['Tigers','subject'],['need','predicate'],['protection.','object']],'structure','复数零冠词直接谈老虎这一类，是日常泛指类别最自然、适用面最广的形式。','The zero-article plural refers directly to tigers as a class and is the most natural, broadly useful form for everyday general reference.'),
+      s([['A tiger','subject'],['is','predicate'],['a powerful animal.','complement']],'structure','A tiger 用任意一只普通老虎代表这一类；句中性质能够落到每个普通成员身上。','A tiger uses any ordinary member to represent the class; the property can apply to an individual member.'),
+      s([['The tiger','subject'],['is disappearing','predicate'],['from some regions.','adverbial','地点状语','Place adverbial']],'structure','the tiger 把整个物种作为一个可识别类别来谈，常见于物种、发明或较正式的分类表达。','the tiger treats the species as one identifiable class, a pattern common with species, inventions and more formal classification.'),
+      s([['The tigers','subject'],['in this zoo','attribute','介词短语作后置定语','Prepositional phrase as postmodifier'],['need','predicate'],['more space.','object']],'structure','这里 the tigers 不是泛指所有老虎；in this zoo 锁定了动物园里的具体一群。','Here the tigers does not mean all tigers; in this zoo identifies a particular group.')
+    ],[['Tigers 说明复数零冠词是日常泛指类别的默认选择。','Tigers shows that a zero-article plural is the default everyday choice for a class in general.'],['A tiger 用任一成员代表类别，只适合可落到普通个体的概括。','A tiger uses any representative member and suits generalizations applicable to an ordinary individual.'],['The tiger 可把物种或发明作为整体类别来谈，但语体和适用范围比复数零冠词窄。','The tiger can denote a species or invention as a whole, but its range and register are narrower than the zero-article plural.'],['the＋复数常常是特指集合；要看后文是否用修饰语锁定对象。','the + plural often identifies a specific set; check whether later information restricts the referent.']],[
+      bq('日常泛指“猫是独立的动物”最自然的是？','Which most naturally refers to cats in general in everyday English?','Cats are independent animals.','The cats are independent animals.','A','复数零冠词最自然地泛指类别。','A zero-article plural most naturally refers to the class.'),
+      bq('哪项用任一成员说明“鲸属于哺乳动物”？','Which sentence uses one representative member to classify whales as mammals?','A whale is a mammal.','A whale is mammal.','A','单数可数表语 mammal 也需要限定词 a。','The singular count complement mammal also requires the determiner a.'),
+      bq('哪项使用“the＋单数”把电话这种发明作为整体类别？','Which uses “the + singular” to present the telephone as an invention class?','The telephone changed communication.','A telephone changed communication.','A','the telephone 把这一发明作为整体类别。','the telephone presents the invention as one whole class.'),
+      bq('“这个动物园里的老虎”属于？','What does “the tigers in this zoo” refer to?','具体一群老虎','a particular group of tigers','所有老虎','all tigers everywhere','A','后置短语锁定了具体集合。','The postmodifier identifies a particular set.')
+    ]),
+    lesson(en,'article-countability-shift','冠词与可数性变化','Articles and count shifts','同一名词可换观察单位','The same noun can be packaged differently',[
+      s([['Coffee','subject'],['keeps','predicate'],['me','object','宾语','Object'],['awake.','objectComplement','宾语补足语','Object complement']],'structure','Coffee 指咖啡这种物质或饮品类别，没有分成一杯一杯，所以用零冠词。','Coffee refers to the substance or drink generally, without packaging it into servings, so it takes zero article.'),
+      s([['I','subject'],['ordered','predicate'],['a coffee.','object']],'structure','a coffee 把咖啡理解成“一份/一杯咖啡”，当前语境给了它可数单位。','a coffee packages coffee as one serving or cup, giving it a countable unit in this context.'),
+      s([['The coffee','subject'],['on my desk','attribute','介词短语作后置定语','Prepositional phrase as postmodifier'],['is','predicate'],['cold.','complement']],'structure','on my desk 锁定了具体那杯或那份咖啡，所以用 the。','on my desk identifies the particular coffee or serving, so the is used.')
+    ],[['Coffee 表物质或饮品类别，不划分具体份数，因此使用零冠词。','Coffee denotes the substance or drink generally without dividing it into servings, so it takes zero article.'],['a coffee 表一份咖啡；a/an 只有在语境提供“一份、一次或一种”等自然单位时才能使用。','a coffee means one serving; a/an works only when context supplies a natural unit such as a serving, event or type.'],['the coffee 不负责把 coffee 变成可数，而是让听者识别具体那部分咖啡。','the coffee does not make coffee countable; it identifies a particular portion.']],[
+      bq('泛指咖啡这种饮品，应说？','How do we refer to coffee as a drink in general?','Coffee','A coffee','A','物质类别用零冠词。','Use zero article for the substance generally.'),
+      bq('在咖啡店首次点一杯未指定的咖啡，可说？','How do we first order one non-specific serving in a café?','a coffee','the coffee','A','a coffee 引入一份未锁定的咖啡；the coffee 要求听者已能识别。','a coffee introduces one unidentified serving; the coffee requires an identifiable one.'),
+      bq('特指桌上的咖啡，应说？','How do we refer to the identified coffee on the desk?','the coffee on the desk','coffee on the desk','A','限定信息锁定具体部分，用 the。','The modifier identifies a particular portion, so use the.')
+    ]),
+    lesson(en,'article-meaning','有无冠词怎样改变意义','How article choice changes meaning','功能、地点与具体对象','Function, location and identified objects',[
+      f('go to school ↔ go to the school','structure','go to school 表示去上学；go to the school 指前往那所具体学校。冠词改变的是名词在句中的观察方式。','go to school means attend school; go to the school means go to a particular school. The article changes how the noun is construed.'),
+      f('go to bed ↔ sit on the bed','structure','go to bed 表示进入睡觉状态；the bed 把床当作可识别的具体物体。','go to bed means enter the normal sleeping state; the bed treats the bed as an identifiable physical object.'),
+      f('have breakfast ↔ have a big breakfast','structure','breakfast 表日常餐名时用零冠词；a big breakfast 把它看成一次被描述的餐。','breakfast as a routine meal name takes zero article; a big breakfast presents one characterized meal.'),
+      f('by bus ↔ on the bus','structure','by bus 只说明交通方式；on the bus 把正在乘坐的公交车作为具体地点。','by bus only gives the means of transport; on the bus treats the vehicle being used as an identifiable location.'),
+      f('few friends ↔ a few friends · little time ↔ a little time','structure','这里 a 属于数量限定表达：a few/a little 表“有一些”，few/little 表“几乎没有”。应整体理解，但不把它当作所有冠词用法的本质。','Here a is part of a quantity expression: a few/a little means some, while few/little means almost none. Learn the contrast without treating it as the essence of all article use.')
+    ],[['school 与 the school、bed 与 the bed 说明：零冠词可突出制度或正常功能，the 指向具体对象。','school versus the school and bed versus the bed show that zero article can foreground institutional function, while the identifies a physical object.'],['breakfast / a big breakfast 与 by bus / on the bus 说明：活动名称在被计次、描写或具体定位后，冠词会随观察方式变化。','breakfast / a big breakfast and by bus / on the bus show that article choice changes when an activity is counted, characterized or physically located.'],['a few/a little 是数量限定表达的局部意义对比，不能拿来概括冠词系统。','a few/a little is a local contrast inside quantity determiners and must not be used to summarize the whole article system.']],[
+      bq('学生去上学，应说？','How do we say that a student attends school?','go to school','go to the school','A','这里突出学校的制度功能。','This foregrounds the institutional function of school.'),
+      bq('家长去那所学校开会，应说？','How do we say that a parent goes to a particular school for a meeting?','go to the school','go to school','A','这里指具体学校地点。','This refers to a particular school location.'),
+      bq('“一顿丰盛的早餐”应说？','How do we express one substantial breakfast?','a big breakfast','big breakfast','A','一次被描写的餐用 a。','One characterized meal takes a.'),
+      bq('表示正在那辆公交车上，应说？','How do we say that someone is on the particular bus?','on the bus','by bus','A','这里把公交车作为具体地点。','This treats the bus as an identifiable location.'),
+      bq('“还有几个朋友”应说？','Which means “there are still some friends”?','a few friends','few friends','A','a few 表肯定的“有一些”。','a few has the positive meaning “some.”')
+    ]),
+    lesson(en,'article-groups','the 表示一类人','The for groups of people','形容词、民族名与姓氏复数','Adjectives, nationality names and family names',[
+      s([['The rich','subject','主语（群体）','Subject (group)'],['are','predicate'],['not always happy.','complement']],'structure','the rich 表示“富人这一群体”，不是某一个富有的人，因此通常配复数谓语。','the rich refers to rich people as a group, not one rich person, so it normally takes plural agreement.'),
+      s([['The French','subject','主语（民族群体）','Subject (national group)'],['are known','predicate'],['for their cuisine.','adverbial','原因/方面状语','Reason/aspect adverbial']],'structure','the French 在这里表示法国人这一民族群体；语言名称 French 单独使用时仍是零冠词。','the French here refers to French people as a national group; the language name French alone still takes zero article.'),
+      s([['The Smiths','subject','主语（Smith 一家）','Subject (the Smith family)'],['live','predicate'],['next door.','adverbial','地点状语','Place adverbial']],'structure','姓氏加复数 -s，再加 the，表示这一姓氏的一家人。','A pluralized surname with the refers to the family bearing that surname.')
+    ],[['the rich 把形容词整体名词化为一类人，通常使用复数谓语。','the rich turns an adjective into a group of people and normally takes plural agreement.'],['the French 表民族群体；French 表语言，两种结构的冠词和意义不同。','the French denotes a national group, while French denotes the language; their article use and meaning differ.'],['the Smiths 用 the＋姓氏复数表示一家人，不指一个叫 Smith 的人。','the Smiths uses the + plural surname for a family, not one person named Smith.']],[
+      bq('“富人这一群体”应说？','How do we refer to rich people as a group?','the rich','a rich','A','the＋形容词可表示一类人。','the + adjective can denote a group of people.'),
+      bq('表示法语这门语言，应说？','How do we name the French language?','French','the French','A','语言名 French 用零冠词。','The language name French takes zero article.'),
+      bq('表示 Smith 一家，应说？','How do we refer to the Smith family?','the Smiths','the Smith','A','the＋姓氏复数表示一家人。','the + plural surname denotes a family.')
+    ])
+  ], ['article-countability-shift','article-meaning','article-groups']);
 }
 
-module.exports = { buildVerbCourse, buildNumeralCourse, buildArticleCourse };
+module.exports = BUILD_TARGET === 'verb' ? { buildVerbCourse } : BUILD_TARGET === 'numeral' ? { buildNumeralCourse } : BUILD_TARGET === 'article' ? { buildArticleCourse } : { buildVerbCourse, buildNumeralCourse, buildArticleCourse };

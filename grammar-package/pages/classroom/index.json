@@ -2,8 +2,11 @@
   "navigationBarTitleText": "语法课堂",
   "usingComponents": {
     "grammar-word-loader": "../../components/grammar-word-loader/index",
+    "grammar-pronoun-loader": "../../components/grammar-pronoun-loader/index",
     "grammar-word-formation-loader": "../../components/grammar-word-formation-loader/index",
-    "grammar-vna-loader": "../../components/grammar-vna-loader/index",
+    "grammar-verb-loader": "../../components/grammar-verb-loader/index",
+    "grammar-numeral-loader": "../../components/grammar-numeral-loader/index",
+    "grammar-article-loader": "../../components/grammar-article-loader/index",
     "grammar-modifier-loader": "../../components/grammar-modifier-loader/index",
     "grammar-relation-loader": "../../components/grammar-relation-loader/index",
     "grammar-sentence-elements-loader": "../../components/grammar-sentence-elements-loader/index",

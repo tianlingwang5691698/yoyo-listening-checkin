@@ -1,4 +1,4 @@
-const nounCourses = require('../../domain/grammar-classroom/noun-courses');
+const pronounCourses = require('../../domain/grammar-classroom/pronoun-courses');
 
 Component({
   properties: {
@@ -7,22 +7,20 @@ Component({
   },
   observers: {
     'topic, language': function onCoursePropertyChanged(topic, language) {
-      if (this._componentReady) this.loadWordCourse(topic, language);
+      if (this._componentReady) this.loadPronounCourse(topic, language);
     }
   },
   lifetimes: {
     ready() {
       this._componentReady = true;
-      this.loadWordCourse(this.data.topic, this.data.language);
+      this.loadPronounCourse(this.data.topic, this.data.language);
     }
   },
   methods: {
-    loadWordCourse(topic, language) {
-      if (topic !== 'noun') return;
+    loadPronounCourse(topic, language) {
+      if (topic !== 'pronoun') return;
       try {
-        const english = language === 'en';
-        const bundle = nounCourses.buildNounCourse(english);
-        this.triggerEvent('loaded', { topic, bundle });
+        this.triggerEvent('loaded', { topic, bundle: pronounCourses.buildPronounCourse(language === 'en') });
       } catch (error) {
         this.triggerEvent('loaderror', { topic, message: error && error.message ? error.message : 'unknown' });
       }
