@@ -1,3 +1,6 @@
 {
-  "navigationBarTitleText": " "
+  "navigationBarTitleText": " ",
+  "usingComponents": {
+    "grammar-word-loader": "/components/grammar-word-loader/index"
+  }
 }

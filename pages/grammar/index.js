@@ -3,7 +3,6 @@ const store = require('../../utils/store');
 const completed = require('../../utils/completed');
 const snapshotStore = require('../../utils/snapshot');
 const i18n = require('../../utils/i18n');
-const wordCourses = require('../../data/grammar-classroom/word-courses');
 
 const text = (key, fallback) => i18n.getPageText('grammar', key, undefined, fallback);
 
@@ -796,19 +795,17 @@ Page({
     const topic = ((category && category.children) || []).find((item) => item.id === topicId);
     if (!topic || !topic.ready) return;
     let bundle = { course: [], groups: [], title: '', copy: '' };
-    if (topicId === 'noun' || topicId === 'pronoun') {
-      try {
-        bundle = topicId === 'pronoun'
-          ? wordCourses.buildPronounCourse(i18n.getLanguage() === 'en')
-          : wordCourses.buildNounCourse(i18n.getLanguage() === 'en');
-      } catch (error) {
-        const grammarRenderDebug = `DEBUG: pages/grammar.selectClassroomTopic -> wordCourses.${topicId} -> course: ${error && error.message ? error.message : 'missing'}`;
-        console.error(grammarRenderDebug, error);
-        this.setData({ grammarRenderDebug });
-        return;
-      }
-    }
     this.setData({ selectedClassroomTopic: topicId, selectedVerbLesson: topicId === 'verb' ? '' : 'word-course', selectedThirdPersonLesson: '', activeClassroomLesson: null, activeClassroomCourse: bundle.course, activeClassroomCourseGroups: bundle.groups, activeClassroomCourseTitle: bundle.title, activeClassroomCourseCopy: bundle.copy, classroomAnswer: '', classroomResult: '' });
+  },
+  onWordCourseLoaded(event) {
+    const detail = event.detail || {};
+    if (detail.topic !== this.data.selectedClassroomTopic || !detail.bundle) return;
+    const bundle = detail.bundle;
+    this.setData({ activeClassroomCourse: bundle.course || [], activeClassroomCourseGroups: bundle.groups || [], activeClassroomCourseTitle: bundle.title || '', activeClassroomCourseCopy: bundle.copy || '', grammarRenderDebug: '' });
+  },
+  onWordCourseLoadError(event) {
+    const detail = event.detail || {};
+    this.setData({ grammarRenderDebug: `DEBUG: components/grammar-word-loader.load -> wordCourses.${detail.topic || 'unknown'} -> course: ${detail.message || 'missing'}` });
   },
   selectClassroomCategory(event) {
     this.setData({ selectedClassroomCategory: String(event.currentTarget.dataset.categoryId || '') });

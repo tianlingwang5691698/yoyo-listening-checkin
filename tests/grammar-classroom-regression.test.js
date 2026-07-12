@@ -30,10 +30,12 @@ test('语法课堂首屏不构建完整课程，点击后按专题加载', () =>
   assert.equal(getClassroomCourse(home, 'verb').course.length, 9);
 
   const grammarPage = fs.readFileSync(path.join(__dirname, '../pages/grammar/index.js'), 'utf8');
-  assert.ok(grammarPage.indexOf("require('../../data/grammar-classroom/word-courses')") < grammarPage.indexOf('Page({'));
-  assert.equal((grammarPage.match(/require\('\.\.\/\.\.\/data\/grammar-classroom\/word-courses'\)/g) || []).length, 1);
-  assert.match(grammarPage, /selectClassroomTopic[\s\S]*buildNounCourse/);
-  assert.match(grammarPage, /selectClassroomTopic[\s\S]*buildPronounCourse/);
+  assert.doesNotMatch(grammarPage, /require\('\.\.\/\.\.\/data\/grammar-classroom\/word-courses'\)/);
+  assert.match(grammarPage, /onWordCourseLoaded/);
+  const loader = fs.readFileSync(path.join(__dirname, '../components/grammar-word-loader/index.js'), 'utf8');
+  assert.match(loader, /^const wordCourses = require\('\.\.\/\.\.\/data\/grammar-classroom\/word-courses'\)/);
+  const appConfig = JSON.parse(fs.readFileSync(path.join(__dirname, '../app.json'), 'utf8'));
+  assert.equal(appConfig.lazyCodeLoading, 'requiredComponents');
 });
 
 test('名词与代词课程中英文内容、练习和两套主题完整', () => {
