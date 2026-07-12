@@ -242,7 +242,7 @@ test('介词系统课程覆盖形式、语义关系、句法功能与易混结�
     requiredLessonIds.forEach((id) => assert.ok(ids.includes(id), `missing preposition lesson: ${id}`));
     assert.deepEqual(bundle.groups.map((group) => group.lessons.length), [20, 5]);
     assert.deepEqual(bundle.sections.map((section) => section.lessonCount), [4, 3, 5, 5, 4, 2, 2]);
-    assert.equal(bundle.course.reduce((sum, lesson) => sum + lesson.rules.length, 0), 80);
+    assert.equal(bundle.course.reduce((sum, lesson) => sum + lesson.rules.length, 0), 82);
     assert.ok(bundle.course.reduce((sum, lesson) => sum + lesson.examples.length, 0) >= 84);
     assert.ok(bundle.course.reduce((sum, lesson) => sum + lesson.questions.length, 0) >= 84);
     bundle.course.forEach((lesson) => {
@@ -276,6 +276,11 @@ test('介词系统课程覆盖形式、语义关系、句法功能与易混结�
   assert.notEqual(zhEssence.hideRuleCard, true);
   const enEssence = sourceRelationCourses.buildPrepositionCourse(true).course.find((lesson) => lesson.id === 'prep-essence');
   assert.deepEqual(enEssence.exampleNotes.map((note) => note.visible), [true, true, true]);
+  const zhRelationChoice = sourceRelationCourses.buildPrepositionCourse(false).course.find((lesson) => lesson.id === 'prep-collocation');
+  assert.ok(zhRelationChoice.rules.some((rule) => rule.includes('to 常把动作或事物指向目标')));
+  assert.ok(zhRelationChoice.rules.some((rule) => rule.includes('语言习惯')));
+  assert.ok(`${zhRelationChoice.exampleNotes[2].body} ${zhRelationChoice.exampleNotes[2].detail}`.includes('指向并对应'));
+  assert.ok(!zhRelationChoice.rules.some((rule) => rule.includes('固定搭配')));
   const lessonTemplate = fs.readFileSync(path.join(__dirname, '../grammar-package/pages/classroom/index.wxml'), 'utf8');
   assert.match(lessonTemplate, /wx:if="\{\{!activeLesson\.hideRuleCard\}\}"/);
 });
