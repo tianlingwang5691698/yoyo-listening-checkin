@@ -6,6 +6,13 @@ const listeningPlanEngine = require('../lib/listening-plan-engine');
 const taskPresenter = require('../lib/task-presenter');
 const labels = require('../../../utils/labels');
 
+test('Peppa 时长按云端 128kbps MP3 文件大小还原', () => {
+  assert.equal(catalogEngine.inferPeppaDurationFromFileSize(4976408), 311);
+  assert.equal(catalogEngine.inferPeppaDurationFromFileSize(10145727), 634);
+  assert.equal(catalogEngine.inferPeppaDurationFromFileSize(4879441), 305);
+  assert.equal(catalogEngine.inferPeppaDurationFromFileSize(0), 0);
+});
+
 test('Unlock 练习册听力排序将 mid term 放在 unit4 和 unit5 之间，end term 放最后', () => {
   ['unlock3', 'unlock4workbook'].forEach((category) => {
     const files = [

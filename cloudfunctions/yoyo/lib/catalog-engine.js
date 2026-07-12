@@ -118,6 +118,15 @@ const peppaDurationOverrides = {
   'S101 Muddy Puddles': 311
 };
 
+function inferPeppaDurationFromFileSize(size) {
+  const byteSize = Number(size || 0);
+  if (!Number.isFinite(byteSize) || byteSize <= 1024) {
+    return 0;
+  }
+  // 线上 Peppa MP3 均为 128kbps CBR；扣除文件头后可得到真实播放秒数。
+  return Math.max(1, Math.round((byteSize - 1024) / 16000));
+}
+
 const peppaTasks = peppaTranscriptBuildStatus.map((item, index) => ({
   taskId: item.taskId || `peppa-${index + 1}`,
   category: 'peppa',
@@ -999,6 +1008,7 @@ async function buildCloudCatalogFromRoot(category, rootPath, staticItems, option
       : ((inferredSongTask && inferredSongTask.transcriptTrackId) || (inferredPeppaTask && inferredPeppaTask.transcriptTrackId) || (inferredNewConceptTask && inferredNewConceptTask.transcriptTrackId));
     const transcriptTrackCandidates = (inferredPeppaTask && inferredPeppaTask.transcriptTrackCandidates) || (inferredNewConceptTask && inferredNewConceptTask.transcriptTrackCandidates) || undefined;
     const transcriptDurationSec = getDurationFromLookup(durationLookup, transcriptTrackId, transcriptTrackCandidates);
+    const peppaFileDurationSec = category === 'peppa' ? inferPeppaDurationFromFileSize(file.size) : 0;
     const syncGranularity = matchedStatic
       ? String(matchedStatic.syncGranularity || 'word')
       : ((inferredSongTask && inferredSongTask.syncGranularity) || (inferredPeppaTask && inferredPeppaTask.syncGranularity) || (inferredNewConceptTask && inferredNewConceptTask.syncGranularity) || 'word');
@@ -1010,7 +1020,7 @@ async function buildCloudCatalogFromRoot(category, rootPath, staticItems, option
       title,
       subtitle,
       repeatTarget: matchedStatic ? matchedStatic.repeatTarget : 3,
-      durationSec: trainingRecord ? trainingRecord.durationSec : (transcriptDurationSec || (matchedStatic ? matchedStatic.durationSec : 180)),
+      durationSec: trainingRecord ? trainingRecord.durationSec : (transcriptDurationSec || peppaFileDurationSec || (matchedStatic ? matchedStatic.durationSec : 180)),
       coverTone: matchedStatic ? matchedStatic.coverTone : ((inferredPeppaTask && inferredPeppaTask.coverTone) || (inferredNewConceptTask && inferredNewConceptTask.coverTone) || (category === 'song' ? 'mint' : 'sunrise')),
       transcriptTrackId,
       transcriptStatus: matchedStatic ? matchedStatic.transcriptStatus : (transcriptTrackId ? 'ready' : (folderPdf ? 'pending' : 'none')),
@@ -1404,6 +1414,7 @@ module.exports = {
   listDirectoryFiles,
   sortFilesByPath,
   inferNewConceptTaskMeta,
+  inferPeppaDurationFromFileSize,
   buildCloudTask,
   getStaticCatalogMap,
   refreshRuntimeCatalogs,
