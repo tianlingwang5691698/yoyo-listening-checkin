@@ -3,6 +3,7 @@ const store = require('../../utils/store');
 const completed = require('../../utils/completed');
 const snapshotStore = require('../../utils/snapshot');
 const i18n = require('../../utils/i18n');
+const wordCourses = require('../../data/grammar-classroom/word-courses');
 
 const text = (key, fallback) => i18n.getPageText('grammar', key, undefined, fallback);
 
@@ -303,7 +304,25 @@ function buildClassroomText() {
     { id: 'core', title: english ? 'Core · 6 essential lessons' : '核心必学 · 6 节', copy: english ? 'Complete these first.' : '第三人称单数必须掌握。', lessons: classroom.thirdPersonCourse.filter((lesson) => lesson.level === 'core') },
     { id: 'advanced', title: english ? 'Advanced · 3 challenge lessons' : '进阶挑战 · 3 节', copy: english ? 'Special subjects, contexts and mixed use.' : '语境、特殊主语与综合运用。', lessons: classroom.thirdPersonCourse.filter((lesson) => lesson.level === 'advanced') }
   ];
+  const noun = wordCourses.buildNounCourse(english);
+  const pronoun = wordCourses.buildPronounCourse(english);
+  classroom.nounCourse = noun.course;
+  classroom.nounCourseGroups = noun.groups;
+  classroom.nounCourseTitle = noun.title;
+  classroom.nounCourseCopy = noun.copy;
+  classroom.pronounCourse = pronoun.course;
+  classroom.pronounCourseGroups = pronoun.groups;
+  classroom.pronounCourseTitle = pronoun.title;
+  classroom.pronounCourseCopy = pronoun.copy;
+  const wordCategory = classroom.categories.find((item) => item.id === 'word');
+  if (wordCategory) wordCategory.children = wordCategory.children.map((item) => ['noun', 'pronoun', 'verb'].includes(item.id) ? Object.assign({}, item, { ready: true, meta: item.id === 'verb' ? item.meta : (english ? '9 lessons' : '9 节微课') }) : item);
   return classroom;
+}
+
+function getClassroomCourse(classroom, topicId) {
+  if (topicId === 'noun') return { course: classroom.nounCourse, groups: classroom.nounCourseGroups, title: classroom.nounCourseTitle, copy: classroom.nounCourseCopy };
+  if (topicId === 'pronoun') return { course: classroom.pronounCourse, groups: classroom.pronounCourseGroups, title: classroom.pronounCourseTitle, copy: classroom.pronounCourseCopy };
+  return { course: classroom.thirdPersonCourse, groups: classroom.thirdPersonCourseGroups, title: classroom.thirdPersonTitle, copy: classroom.thirdPersonCopy };
 }
 
 function canUseDictionaryVoice(text) {
@@ -530,6 +549,10 @@ Page({
     activeClassroomExerciseIndex: 0,
     activeClassroomQuestion: null,
     isLastClassroomExercise: false,
+    activeClassroomCourse: [],
+    activeClassroomCourseGroups: [],
+    activeClassroomCourseTitle: '',
+    activeClassroomCourseCopy: '',
     classroom: buildClassroomText(),
     expandedQuestionId: '',
     answeredCount: 0,
@@ -679,10 +702,11 @@ Page({
   onShow() {
     page.syncTheme(this);
     const classroom = buildClassroomText();
+    const activeBundle = getClassroomCourse(classroom, this.data.selectedClassroomTopic);
     const activeClassroomLessonIndex = this.data.selectedThirdPersonLesson
-      ? classroom.thirdPersonCourse.findIndex((item) => item.id === this.data.selectedThirdPersonLesson)
+      ? activeBundle.course.findIndex((item) => item.id === this.data.selectedThirdPersonLesson)
       : -1;
-    const activeClassroomLesson = activeClassroomLessonIndex >= 0 ? classroom.thirdPersonCourse[activeClassroomLessonIndex] : null;
+    const activeClassroomLesson = activeClassroomLessonIndex >= 0 ? activeBundle.course[activeClassroomLessonIndex] : null;
     const activeClassroomExerciseIndex = activeClassroomLesson
       ? Math.min(this.data.activeClassroomExerciseIndex || 0, activeClassroomLesson.questions.length - 1)
       : 0;
@@ -691,7 +715,11 @@ Page({
       classroom,
       activeClassroomLesson,
       activeClassroomLessonIndex,
-      isLastClassroomLesson: activeClassroomLessonIndex === classroom.thirdPersonCourse.length - 1,
+      isLastClassroomLesson: activeClassroomLessonIndex === activeBundle.course.length - 1,
+      activeClassroomCourse: activeBundle.course,
+      activeClassroomCourseGroups: activeBundle.groups,
+      activeClassroomCourseTitle: activeBundle.title,
+      activeClassroomCourseCopy: activeBundle.copy,
       activeClassroomExerciseIndex,
       activeClassroomQuestion,
       isLastClassroomExercise: !!activeClassroomLesson && activeClassroomExerciseIndex === activeClassroomLesson.questions.length - 1,
@@ -755,7 +783,8 @@ Page({
     const category = (this.data.classroom.categories || []).find((item) => item.id === this.data.selectedClassroomCategory);
     const topic = ((category && category.children) || []).find((item) => item.id === topicId);
     if (!topic || !topic.ready) return;
-    this.setData({ selectedClassroomTopic: topicId, selectedVerbLesson: '', selectedThirdPersonLesson: '', activeClassroomLesson: null, classroomAnswer: '', classroomResult: '' });
+    const bundle = getClassroomCourse(this.data.classroom, topicId);
+    this.setData({ selectedClassroomTopic: topicId, selectedVerbLesson: topicId === 'verb' ? '' : 'word-course', selectedThirdPersonLesson: '', activeClassroomLesson: null, activeClassroomCourse: bundle.course, activeClassroomCourseGroups: bundle.groups, activeClassroomCourseTitle: bundle.title, activeClassroomCourseCopy: bundle.copy, classroomAnswer: '', classroomResult: '' });
   },
   selectClassroomCategory(event) {
     this.setData({ selectedClassroomCategory: String(event.currentTarget.dataset.categoryId || '') });
@@ -769,14 +798,19 @@ Page({
   selectVerbLesson(event) {
     const lessonId = String(event.currentTarget.dataset.lessonId || '');
     if (lessonId !== 'third-person') return;
-    this.setData({ selectedVerbLesson: lessonId, selectedThirdPersonLesson: '', activeClassroomLesson: null, activeClassroomLessonIndex: -1, isLastClassroomLesson: false, activeClassroomExerciseIndex: 0, activeClassroomQuestion: null, isLastClassroomExercise: false, classroomAnswer: '', classroomResult: '' });
+    const bundle = getClassroomCourse(this.data.classroom, 'verb');
+    this.setData({ selectedVerbLesson: lessonId, selectedThirdPersonLesson: '', activeClassroomLesson: null, activeClassroomCourse: bundle.course, activeClassroomCourseGroups: bundle.groups, activeClassroomCourseTitle: bundle.title, activeClassroomCourseCopy: bundle.copy, activeClassroomLessonIndex: -1, isLastClassroomLesson: false, activeClassroomExerciseIndex: 0, activeClassroomQuestion: null, isLastClassroomExercise: false, classroomAnswer: '', classroomResult: '' });
   },
   backToVerbMap() {
     this.setData({ selectedVerbLesson: '', selectedThirdPersonLesson: '', activeClassroomLesson: null, activeClassroomLessonIndex: -1, isLastClassroomLesson: false, classroomAnswer: '', classroomResult: '' });
   },
+  backToActiveCourseParent() {
+    if (this.data.selectedClassroomTopic === 'verb') this.backToVerbMap();
+    else this.backToClassroomTopics();
+  },
   selectThirdPersonLesson(event) {
     const lessonId = String(event.currentTarget.dataset.lessonId || '');
-    const course = this.data.classroom.thirdPersonCourse || [];
+    const course = this.data.activeClassroomCourse || [];
     const lessonIndex = course.findIndex((item) => item.id === lessonId);
     const lesson = lessonIndex >= 0 ? course[lessonIndex] : null;
     if (!lesson) return;
@@ -797,7 +831,7 @@ Page({
       this.backToThirdPersonCourse();
       return;
     }
-    const course = this.data.classroom.thirdPersonCourse || [];
+    const course = this.data.activeClassroomCourse || [];
     const lessonIndex = this.data.activeClassroomLessonIndex + 1;
     const lesson = course[lessonIndex];
     if (!lesson) return;

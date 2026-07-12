@@ -78,11 +78,11 @@
         </block>
         <block wx:else>
         <block wx:if="{{!selectedThirdPersonLesson}}">
-          <view class="classroom-back" bindtap="backToVerbMap">{{classroom.courseBack}}</view>
-          <view class="classroom-step">{{classroom.thirdPersonTitle}}</view>
-          <view class="classroom-title">{{classroom.thirdPersonCopy}}</view>
+          <view class="classroom-back" bindtap="backToActiveCourseParent">{{classroom.returnCourse}}</view>
+          <view class="classroom-step">{{activeClassroomCourseTitle}}</view>
+          <view class="classroom-title">{{activeClassroomCourseCopy}}</view>
           <view class="micro-course-list">
-            <view class="micro-course-group" wx:for="{{classroom.thirdPersonCourseGroups}}" wx:key="id" wx:for-item="group">
+            <view class="micro-course-group" wx:for="{{activeClassroomCourseGroups}}" wx:key="id" wx:for-item="group">
               <view class="micro-course-group-title">{{group.title}}</view>
               <view class="micro-course-group-copy">{{group.copy}}</view>
               <view class="micro-course-item" wx:for="{{group.lessons}}" wx:for-item="lesson" wx:key="id" data-lesson-id="{{lesson.id}}" bindtap="selectThirdPersonLesson">
@@ -98,7 +98,7 @@
         </block>
         <block wx:else>
           <view class="classroom-back" bindtap="backToThirdPersonCourse">{{classroom.lessonBack}}</view>
-          <view class="classroom-step">{{activeClassroomLesson.no}} / {{classroom.thirdPersonCourse.length}}</view>
+          <view class="classroom-step">{{activeClassroomLesson.no}} / {{activeClassroomCourse.length}}</view>
           <view class="classroom-title">{{activeClassroomLesson.title}}</view>
           <view class="classroom-copy">{{activeClassroomLesson.meta}}</view>
           <view class="sentence-analysis-list" wx:if="{{activeClassroomLesson.analyses && activeClassroomLesson.analyses.length}}">
@@ -426,11 +426,11 @@
     </block>
     <block wx:else>
     <block wx:if="{{!selectedThirdPersonLesson}}">
-      <view class="classroom-back" bindtap="backToVerbMap">{{classroom.courseBack}}</view>
-      <view class="classroom-step">{{classroom.thirdPersonTitle}}</view>
-      <view class="classroom-title">{{classroom.thirdPersonCopy}}</view>
+      <view class="classroom-back" bindtap="backToActiveCourseParent">{{classroom.returnCourse}}</view>
+      <view class="classroom-step">{{activeClassroomCourseTitle}}</view>
+      <view class="classroom-title">{{activeClassroomCourseCopy}}</view>
       <view class="micro-course-list">
-        <view class="micro-course-group" wx:for="{{classroom.thirdPersonCourseGroups}}" wx:key="id" wx:for-item="group">
+        <view class="micro-course-group" wx:for="{{activeClassroomCourseGroups}}" wx:key="id" wx:for-item="group">
           <view class="micro-course-group-title">{{group.title}}</view>
           <view class="micro-course-group-copy">{{group.copy}}</view>
           <view class="micro-course-item" wx:for="{{group.lessons}}" wx:for-item="lesson" wx:key="id" data-lesson-id="{{lesson.id}}" bindtap="selectThirdPersonLesson">
@@ -446,7 +446,7 @@
     </block>
     <block wx:else>
       <view class="classroom-back" bindtap="backToThirdPersonCourse">{{classroom.lessonBack}}</view>
-      <view class="classroom-step">{{activeClassroomLesson.no}} / {{classroom.thirdPersonCourse.length}}</view>
+      <view class="classroom-step">{{activeClassroomLesson.no}} / {{activeClassroomCourse.length}}</view>
       <view class="classroom-title">{{activeClassroomLesson.title}}</view>
       <view class="classroom-copy">{{activeClassroomLesson.meta}}</view>
       <view class="sentence-analysis-list" wx:if="{{activeClassroomLesson.analyses && activeClassroomLesson.analyses.length}}">
