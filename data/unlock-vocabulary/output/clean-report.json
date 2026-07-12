@@ -1,0 +1,149 @@
+{
+  "books": [
+    {
+      "level": 1,
+      "section": "LS",
+      "rawCount": 421,
+      "count": 349,
+      "unitCounts": {
+        "U1": 50,
+        "U2": 50,
+        "U3": 61,
+        "U4": 59,
+        "U5": 50,
+        "U6": 50,
+        "U7": 50,
+        "U8": 50
+      },
+      "source": "/Users/wangtianlong/工作/01_教学与备考/unlock 第二版/Unlock1/Unlock1 配套词汇/Unlock1_LS_wordlist.xlsx",
+      "output": "data/unlock-vocabulary/output/unlock-1-ls.json"
+    },
+    {
+      "level": 1,
+      "section": "RW",
+      "rawCount": 417,
+      "count": 401,
+      "unitCounts": {
+        "U1": 56,
+        "U2": 60,
+        "U3": 57,
+        "U4": 52,
+        "U5": 52,
+        "U6": 51,
+        "U7": 44,
+        "U8": 45
+      },
+      "source": "/Users/wangtianlong/工作/01_教学与备考/unlock 第二版/Unlock1/Unlock1 配套词汇/Unlock1_RW_wordlist.xlsx",
+      "output": "data/unlock-vocabulary/output/unlock-1-rw.json"
+    },
+    {
+      "level": 2,
+      "section": "LS",
+      "rawCount": 835,
+      "count": 669,
+      "unitCounts": {
+        "U1": 112,
+        "U2": 80,
+        "U3": 105,
+        "U4": 94,
+        "U5": 63,
+        "U6": 103,
+        "U7": 155,
+        "U8": 121
+      },
+      "source": "/Users/wangtianlong/工作/01_教学与备考/unlock 第二版/Unlock2/unlock2配套词汇/Unlock2_LS_wordlist.xlsx",
+      "output": "data/unlock-vocabulary/output/unlock-2-ls.json"
+    },
+    {
+      "level": 2,
+      "section": "RW",
+      "rawCount": 484,
+      "count": 465,
+      "unitCounts": {
+        "U1": 56,
+        "U2": 63,
+        "U3": 66,
+        "U4": 60,
+        "U5": 57,
+        "U6": 66,
+        "U7": 57,
+        "U8": 59
+      },
+      "source": "/Users/wangtianlong/工作/01_教学与备考/unlock 第二版/Unlock2/unlock2配套词汇/Unlock2_RW_wordlist.xlsx",
+      "output": "data/unlock-vocabulary/output/unlock-2-rw.json"
+    },
+    {
+      "level": 3,
+      "section": "LS",
+      "rawCount": 430,
+      "count": 394,
+      "unitCounts": {
+        "U1": 38,
+        "U2": 59,
+        "U3": 61,
+        "U4": 56,
+        "U5": 59,
+        "U6": 55,
+        "U7": 51,
+        "U8": 50
+      },
+      "source": "/Users/wangtianlong/工作/01_教学与备考/unlock 第二版/L3/Unlock3 配套词汇/Unlock3_LS_wordlist.xlsx",
+      "output": "data/unlock-vocabulary/output/unlock-3-ls.json"
+    },
+    {
+      "level": 3,
+      "section": "RW",
+      "rawCount": 479,
+      "count": 470,
+      "unitCounts": {
+        "U1": 63,
+        "U2": 61,
+        "U3": 61,
+        "U4": 62,
+        "U5": 57,
+        "U6": 58,
+        "U7": 59,
+        "U8": 58
+      },
+      "source": "/Users/wangtianlong/工作/01_教学与备考/unlock 第二版/L3/Unlock3 配套词汇/Unlock3_RW_wordlist.xlsx",
+      "output": "data/unlock-vocabulary/output/unlock-3-rw.json"
+    },
+    {
+      "level": 4,
+      "section": "LS",
+      "rawCount": 151,
+      "count": 144,
+      "unitCounts": {
+        "U1": 18,
+        "U2": 16,
+        "U3": 21,
+        "U4": 20,
+        "U5": 20,
+        "U6": 21,
+        "U7": 16,
+        "U8": 18
+      },
+      "source": "/Users/wangtianlong/工作/01_教学与备考/unlock 第二版/L4/Unlock4 配套词汇和quiz/LS/Vocab list",
+      "output": "data/unlock-vocabulary/output/unlock-4-ls.json"
+    },
+    {
+      "level": 4,
+      "section": "RW",
+      "rawCount": 207,
+      "count": 205,
+      "unitCounts": {
+        "U1": 25,
+        "U2": 36,
+        "U3": 29,
+        "U4": 22,
+        "U5": 32,
+        "U6": 20,
+        "U7": 22,
+        "U8": 21
+      },
+      "source": "/Users/wangtianlong/工作/01_教学与备考/unlock 第二版/L4/Unlock4 配套词汇和quiz/RW/Vocab list",
+      "output": "data/unlock-vocabulary/output/unlock-4-rw.json"
+    }
+  ],
+  "total": 3097
+}

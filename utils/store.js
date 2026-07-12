@@ -39,6 +39,7 @@ const MUTATION_ACTIONS = {
   addPracticeWrongQuestion: true,
   recordGrammarProgress: true,
   recordStudyCompletion: true,
+  saveVocabularyDictationAttempt: true,
   refreshInviteCode: true,
   joinFamily: true,
   joinFamilyByChildCode: true,
@@ -74,6 +75,11 @@ const READ_CACHE_CONFIG = {
   getFlashcardDue: { persist: true },
   getFlashcardReview: { persist: true },
   getDictionaryBook: { persist: false },
+  getVocabularyDictationData: { persist: false, maxAgeMs: RECORD_CACHE_MAX_AGE_MS },
+  getVocabularyDictationHistory: { persist: false, maxAgeMs: RECORD_CACHE_MAX_AGE_MS },
+  getVocabularyDictationSourceCounts: { persist: false, maxAgeMs: RECORD_CACHE_MAX_AGE_MS },
+  getVocabularyDictationSourceWords: { persist: false, maxAgeMs: RECORD_CACHE_MAX_AGE_MS },
+  getVocabularyDictationAttemptDetail: { persist: false, maxAgeMs: RECORD_CACHE_MAX_AGE_MS },
   getGrammarHome: { persist: true },
   getGrammarTopic: { persist: true },
   getGrammarWrongBook: { persist: true },
@@ -663,6 +669,30 @@ async function getDictionaryBook(level) {
   });
 }
 
+async function saveVocabularyDictationAttempt(options) {
+  return callCloud('saveVocabularyDictationAttempt', withSelectedStudent(options || {}), { saved: false }, { useCache: false });
+}
+
+async function getVocabularyDictationData(sourceId) {
+  return callCloud('getVocabularyDictationData', withSelectedStudent({ sourceId }), { today: '', attempts: [], wrongWords: [] }, { useCache: false });
+}
+
+async function getVocabularyDictationHistory() {
+  return callCloud('getVocabularyDictationHistory', withSelectedStudent({}), { attempts: [] }, { useCache: false });
+}
+
+async function getVocabularyDictationSourceCounts() {
+  return callCloud('getVocabularyDictationSourceCounts', withSelectedStudent({}), { counts: {}, total: 0 }, { useCache: false });
+}
+
+async function getVocabularyDictationSourceWords(sourceId) {
+  return callCloud('getVocabularyDictationSourceWords', withSelectedStudent({ sourceId }), { sourceId, rows: [], total: 0 });
+}
+
+async function getVocabularyDictationAttemptDetail(recordId) {
+  return callCloud('getVocabularyDictationAttemptDetail', withSelectedStudent({ recordId }), { attempt: null }, { useCache: false });
+}
+
 async function saveFlashcardAudio(options) {
   return callCloud('saveFlashcardAudio', withSelectedStudent(options || {}), { saved: false }, { useCache: false });
 }
@@ -1152,6 +1182,12 @@ module.exports = {
   saveFlashcardSettings,
   addDictionaryBook,
   getDictionaryBook,
+  saveVocabularyDictationAttempt,
+  getVocabularyDictationData,
+  getVocabularyDictationHistory,
+  getVocabularyDictationSourceCounts,
+  getVocabularyDictationSourceWords,
+  getVocabularyDictationAttemptDetail,
   saveFlashcardAudio,
   getTempFileURL,
   markTaskListened,

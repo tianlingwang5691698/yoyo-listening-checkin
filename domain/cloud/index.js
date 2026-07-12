@@ -114,8 +114,9 @@ async function callYoyo(action, payload) {
     } else if (action === 'synthesizeReadingAudio' || action === 'getGrammarTopic' || action === 'addDictionaryBook' || action === 'getDictionaryBook') {
       timeoutMs = 30000;
     }
+    const functionName = action === 'getDictionaryBook' ? 'dictionary-book' : 'yoyo';
     response = await withTimeout(wx.cloud.callFunction({
-      name: 'yoyo',
+      name: functionName,
       data: {
         action,
         payload: payload || {}

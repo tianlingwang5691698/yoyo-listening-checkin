@@ -86,6 +86,15 @@
 
 ## 已知案例
 
+### 2026-07-13 初中/高中词汇书被轻量云函数拒绝
+
+1. 现象：初中、高中词汇书读取失败，页面 DEBUG 显示 `dictionary-book-invalid`，Unlock 词汇书可正常读取。
+2. 账号：不限账号。
+3. 查询：`pages/reading/flashcards.importDictionaryBook -> store.getDictionaryBook -> cloud.dictionary-book.resolveBook`；参数分别为 `junior / senior`。
+4. 结论：独立轻量 `dictionary-book` 云函数只识别 Unlock level，遗漏初中和高中词书映射。
+5. 修复：轻量云函数补充 `junior / senior` 到现有云存储 JSON 的映射，并保持 Unlock 路径不变。
+6. 是否需要发版：部署 `dictionary-book` 云函数后立即生效；前端无需发布。
+
 ### 2026-07-11 成长页累计时长被旧缓存覆盖为 0
 
 1. 现象：云端 `getDashboard(view=record)` 已返回非零 `stats.totalMinutes`，成长页最终仍显示 0 分钟，同时天数和任务数来自月历兜底。

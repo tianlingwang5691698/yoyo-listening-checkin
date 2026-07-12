@@ -1,0 +1,68 @@
+{
+  "storageBooks": 64,
+  "storageRows": 3419,
+  "storageMaxMs": 2511,
+  "storageMaxBytes": 63531,
+  "cloudCalls": [
+    {
+      "level": "unlock-1-u3-ls",
+      "wallMs": 767,
+      "functionMs": 204,
+      "bytes": 18302,
+      "total": 61
+    },
+    {
+      "level": "unlock-1-u3-ls",
+      "wallMs": 199,
+      "functionMs": 48,
+      "bytes": 18302,
+      "total": 61
+    },
+    {
+      "level": "unlock-2-u7-ls",
+      "wallMs": 265,
+      "functionMs": 140,
+      "bytes": 46980,
+      "total": 155
+    },
+    {
+      "level": "unlock-2-u7-ls",
+      "wallMs": 158,
+      "functionMs": 46,
+      "bytes": 46980,
+      "total": 155
+    },
+    {
+      "level": "unlock-3-u1-rw",
+      "wallMs": 275,
+      "functionMs": 167,
+      "bytes": 19908,
+      "total": 63
+    },
+    {
+      "level": "unlock-3-u1-rw",
+      "wallMs": 194,
+      "functionMs": 80,
+      "bytes": 19887,
+      "total": 63
+    },
+    {
+      "level": "unlock-4-u8-rw",
+      "wallMs": 433,
+      "functionMs": 273,
+      "bytes": 7543,
+      "total": 21
+    },
+    {
+      "level": "unlock-4-u8-rw",
+      "wallMs": 106,
+      "functionMs": 31,
+      "bytes": 7543,
+      "total": 21
+    }
+  ],
+  "maxWallMs": 767,
+  "maxFunctionMs": 273,
+  "thresholdMs": 1200,
+  "passed": true
+}

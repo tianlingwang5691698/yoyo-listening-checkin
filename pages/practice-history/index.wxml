@@ -4,12 +4,12 @@
     <view class="history-title">{{config.title}}</view>
     <view class="history-copy">{{config.copy}}</view>
     <view class="history-archive-mark" wx:if="{{theme === 'library'}}">
-      <view class="history-archive-number">{{type === 'reading' ? 'R' : (type === 'grammar' ? 'G' : 'W')}}</view>
+      <view class="history-archive-number">{{type === 'reading' ? 'R' : (type === 'grammar' ? 'G' : (type === 'vocabulary' ? 'V' : 'W'))}}</view>
       <text>ARCHIVE</text>
     </view>
   </view>
 
-  <view class="history-tabs" wx:if="{{type !== 'writing'}}">
+  <view class="history-tabs" wx:if="{{type === 'reading' || type === 'grammar'}}">
     <view class="history-tab {{viewMode === 'history' ? 'is-active' : ''}}" bindtap="openHistory">{{texts.history}}</view>
     <view class="history-tab {{viewMode === 'wrong' ? 'is-active' : ''}}" bindtap="openWrongBook">{{texts.wrongBook}}</view>
   </view>
@@ -21,7 +21,7 @@
   <view class="history-list" wx:if="{{records.length}}">
     <view class="history-record {{expandedId === item.id ? 'is-expanded' : ''}}" wx:for="{{records}}" wx:key="id">
       <view class="history-summary" data-id="{{item.id}}" bindtap="toggleRecord">
-        <view class="history-record-stamp" wx:if="{{theme === 'library'}}">{{type === 'reading' ? 'R' : (type === 'grammar' ? 'G' : 'W')}}</view>
+        <view class="history-record-stamp" wx:if="{{theme === 'library'}}">{{type === 'reading' ? 'R' : (type === 'grammar' ? 'G' : (type === 'vocabulary' ? 'V' : 'W'))}}</view>
         <view class="history-summary-main">
           <view class="history-record-title">{{item.title}}</view>
           <view class="history-record-meta">{{item.dateLabel}} · {{item.meta}}</view>
@@ -111,6 +111,13 @@
           <view class="history-section" wx:if="{{item.attempt.review.polishedVersion}}">
             <view class="history-section-title">{{texts.rewrite}}</view>
             <view class="history-writing-text">{{item.attempt.review.polishedVersion}}</view>
+          </view>
+        </block>
+        <block wx:if="{{type === 'vocabulary' && item.detailReady}}">
+          <view class="history-question" wx:for="{{item.detailQuestions}}" wx:key="number" wx:for-item="question">
+            <view class="history-question-no">{{question.number}}. {{question.word}}</view>
+            <view class="history-answer {{question.correct ? 'is-correct' : 'is-wrong'}}"><text>{{texts.childAnswerLabel}}{{question.input || texts.unanswered}}</text><text wx:if="{{!question.correct}}">{{texts.correctAnswer}}{{question.word}}</text></view>
+            <view class="history-analysis" wx:if="{{question.phonetic || question.meaning}}">{{question.phonetic}} {{question.meaning}}</view>
           </view>
         </block>
       </view>

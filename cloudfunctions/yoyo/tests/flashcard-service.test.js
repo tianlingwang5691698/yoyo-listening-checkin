@@ -18,7 +18,7 @@ test('词库请求按个人词库和词书来源拆分', () => {
 
   assert.deepEqual(personal.sourceId, {
     operator: 'nin',
-    values: ['dictionary-book-junior', 'dictionary-book-senior']
+    values: flashcardService._test.DICTIONARY_SOURCE_IDS
   });
   assert.equal(junior.sourceId, 'dictionary-book-junior');
 });
@@ -53,4 +53,30 @@ test('当日词汇额度按学生进度累计，加量后只补差额', () => {
 
   const increased = flashcardService._test.summarizeFlashcards(cards, [], today, { newLimit: 2, reviewLimit: 2 });
   assert.deepEqual(increased.cards.map((item) => item._id), ['review-next', 'new-next']);
+});
+
+test('听写拼写兼容大小写、多空格和备选词', () => {
+  const helpers = flashcardService._test;
+  assert.equal(helpers.normalizeSpelling('  New   York  '), 'new york');
+  assert.deepEqual(helpers.acceptedSpellings('autumn / fall'), ['autumn', 'fall']);
+  assert.equal(helpers.normalizeDictationQuestion({ word: 'autumn / fall', input: 'Fall' }).correct, true);
+  assert.equal(helpers.normalizeDictationQuestion({ word: 'environment', input: 'enviroment' }).correct, false);
+});
+
+test('听写词源只包含已进入复习或已掌握的单词', () => {
+  const isLearned = flashcardService._test.isLearnedFlashcard;
+  assert.equal(isLearned({ status: 'reviewing' }), true);
+  assert.equal(isLearned({ status: 'mastered' }), true);
+  assert.equal(isLearned({ status: 'new', firstLearnedDate: '2026-07-12' }), false);
+  assert.equal(isLearned({ firstLearnedDate: '2026-07-12' }), false);
+});
+
+test('听写专用词源只返回拼写必需字段', () => {
+  const fields = flashcardService._test.DICTATION_CARD_FIELDS;
+  assert.equal(fields.word, true);
+  assert.equal(fields.phonetic, true);
+  assert.equal(fields.meaning, true);
+  assert.equal(fields.status, true);
+  assert.equal(fields.reviewSchedule, undefined);
+  assert.equal(fields.example, undefined);
 });

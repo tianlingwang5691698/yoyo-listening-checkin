@@ -324,6 +324,14 @@
     linear-gradient(135deg, rgba(96, 112, 135, 0.82), rgba(190, 215, 232, 0.9));
 }
 
+.book-unlock .book-cover {
+  background: linear-gradient(145deg, #506f83, #294858);
+}
+
+.book-unlock .book-symbol {
+  color: #f3ead7;
+}
+
 .book-spine {
   position: absolute;
   left: 0;
@@ -916,6 +924,59 @@
   min-width: 0;
 }
 
+.vocab-word-main.is-speakable,
+.library-vocab-row-main.is-speakable {
+  transition: opacity 120ms ease;
+}
+
+.vocab-word-main.is-speakable:active,
+.library-vocab-row-main.is-speakable:active {
+  opacity: 0.68;
+}
+
+.vocab-row-speak,
+.library-vocab-row-speak {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 52rpx;
+  height: 52rpx;
+  border-radius: 999rpx;
+  background: rgba(191, 215, 232, 0.52);
+  color: #577f9d;
+  font-size: 27rpx;
+  line-height: 1;
+}
+
+.library-vocab-row-speak {
+  margin-left: auto;
+  border: 1rpx solid var(--lib-vocab-paper-rule);
+  border-radius: 6rpx;
+  background: rgba(184, 149, 98, 0.14);
+  color: var(--lib-vocab-ink);
+}
+
+.vocab-row-speak.is-active,
+.library-vocab-row-speak.is-active {
+  animation: libraryNoteBounce 0.56s ease-in-out infinite;
+  box-shadow: 0 0 0 8rpx rgba(141, 183, 212, 0.16);
+}
+
+.library-vocab-row-speak.is-active {
+  box-shadow: 0 0 0 7rpx rgba(184, 149, 98, 0.16);
+}
+
+@keyframes libraryNoteBounce {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+
+  50% {
+    transform: translateY(-8rpx) scale(1.1);
+  }
+}
+
 .vocab-light-tag {
   flex-shrink: 0;
   max-width: 132rpx;
@@ -951,6 +1012,11 @@
   color: #607087;
   font-size: 27rpx;
   line-height: 1.48;
+}
+
+.vocab-example-meaning {
+  margin-top: 6rpx;
+  color: #455f79;
 }
 
 .vocab-example {
@@ -1325,7 +1391,9 @@
   font-size: 66rpx;
   font-weight: 600;
   line-height: 1.12;
-  overflow-wrap: break-word;
+  overflow-wrap: normal;
+  word-break: keep-all;
+  white-space: normal;
 }
 
 .study-card.tone-phrase .study-word {
@@ -1338,6 +1406,9 @@
   line-height: 1.28;
 }
 
+.study-card .study-word.is-word-long { font-size: 42rpx; line-height: 1.18; }
+.study-card .study-word.is-word-extra-long { font-size: 34rpx; line-height: 1.2; }
+
 .study-card.tone-phrase .study-word-row,
 .study-card.tone-pattern .study-word-row {
   margin-top: 26rpx;
@@ -1345,16 +1416,17 @@
 
 .study-speak {
   grid-column: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   justify-self: end;
   width: 58rpx;
   height: 58rpx;
   border-radius: 999rpx;
   background: rgba(191, 215, 232, 0.52);
-  color: #17314f;
-  text-align: center;
-  font-size: 28rpx;
-  font-weight: 600;
-  line-height: 58rpx;
+  color: #577f9d;
+  font-size: 30rpx;
+  line-height: 1;
 }
 
 .study-speak.is-loading {
@@ -1434,13 +1506,14 @@
   min-width: 0;
   box-sizing: border-box;
   margin: 10rpx 0 0;
-  color: #607087;
-  font-size: 25rpx;
-  line-height: 1.42;
+  color: #51677d;
+  font-size: 28rpx;
+  font-weight: 500;
+  line-height: 1.5;
   text-align: left;
   white-space: normal;
-  overflow-wrap: anywhere;
-  word-break: break-all;
+  overflow-wrap: normal;
+  word-break: normal;
   display: -webkit-box;
   overflow: hidden;
   -webkit-box-orient: vertical;
@@ -1680,6 +1753,61 @@
   color: var(--lib-vocab-ink);
 }
 
+.vocab-practice-head {
+  box-sizing: border-box;
+  margin-top: 22rpx;
+  padding: 34rpx 30rpx;
+  border: 1rpx solid rgba(255, 255, 255, 0.82);
+  border-radius: 28rpx;
+  background: rgba(255, 255, 255, 0.68);
+  box-shadow: 0 18rpx 42rpx rgba(71, 112, 138, 0.1);
+}
+
+.vocab-practice-kicker { color: #7895a7; font-size: 19rpx; letter-spacing: 2.6rpx; line-height: 1.2; }
+.vocab-practice-title { margin-top: 12rpx; color: #17314f; font-size: 42rpx; font-weight: 700; line-height: 1.2; }
+.vocab-practice-copy { margin-top: 10rpx; color: #6c8494; font-size: 25rpx; line-height: 1.45; }
+.vocab-practice-list { display: flex; flex-direction: column; gap: 22rpx; margin-top: 28rpx; }
+.vocab-practice-card { display: flex; align-items: center; box-sizing: border-box; width: 100%; min-height: 174rpx; padding: 24rpx 24rpx; border: 1rpx solid rgba(255, 255, 255, 0.86); border-radius: 26rpx; background: rgba(255, 255, 255, 0.8); box-shadow: 0 16rpx 36rpx rgba(71, 112, 138, 0.11); }
+.vocab-practice-card:active { transform: scale(0.992); opacity: 0.94; }
+.vocab-practice-main { min-width: 0; flex: 1; margin-left: 24rpx; }
+.vocab-practice-card-title { color: #17314f; font-size: 32rpx; font-weight: 700; line-height: 1.25; }
+.vocab-practice-card-copy { margin-top: 10rpx; color: #718a9a; font-size: 24rpx; line-height: 1.45; }
+.vocab-practice-arrow { flex: none; margin-left: 18rpx; color: #7894a4; font-size: 52rpx; line-height: 1; }
+.vocab-practice-icon { position: relative; flex: none; box-sizing: border-box; width: 104rpx; height: 104rpx; }
+
+.folder-symbol { border-radius: 22rpx; background: linear-gradient(145deg, #dbeaf1, #aacbd9); box-shadow: inset 0 1rpx 0 rgba(255,255,255,.72); }
+.folder-tab { position: absolute; left: 18rpx; top: 18rpx; width: 42rpx; height: 18rpx; border-radius: 8rpx 8rpx 0 0; background: #5d8fa7; }
+.folder-body { position: absolute; left: 14rpx; right: 14rpx; top: 32rpx; bottom: 16rpx; border-radius: 9rpx; background: linear-gradient(160deg, #6f9fb7, #416f86); box-shadow: 0 8rpx 14rpx rgba(54, 97, 119, 0.18); }
+.folder-body text { position: absolute; bottom: 10rpx; width: 20rpx; height: 34rpx; border: 2rpx solid rgba(255,255,255,.66); border-radius: 3rpx; }
+.folder-body text:nth-child(1) { left: 10rpx; transform: rotate(-5deg); }
+.folder-body text:nth-child(2) { left: 27rpx; height: 42rpx; }
+.folder-body text:nth-child(3) { right: 9rpx; height: 30rpx; transform: rotate(6deg); }
+
+.listen-spell-symbol { border: 1rpx solid rgba(74, 119, 141, 0.18); border-radius: 50%; background: radial-gradient(circle at 50% 46%, #f8fcfd 0 32%, #d8e9f0 33% 62%, #b8d4df 63%); box-shadow: 0 10rpx 24rpx rgba(65, 111, 134, 0.16); }
+.headphone-band { position: absolute; left: 26rpx; top: 22rpx; width: 48rpx; height: 48rpx; border: 7rpx solid #416f86; border-bottom: 0; border-radius: 32rpx 32rpx 0 0; }
+.headphone-ear { position: absolute; top: 58rpx; width: 12rpx; height: 24rpx; border-radius: 8rpx; background: #416f86; }
+.headphone-ear.left { left: 22rpx; }.headphone-ear.right { right: 22rpx; }
+.spell-wave { position: absolute; left: 38rpx; top: 52rpx; display: flex; align-items: center; gap: 5rpx; height: 28rpx; }
+.spell-wave text { display: block; width: 5rpx; border-radius: 5rpx; background: #6f9fb7; }
+.spell-wave text:nth-child(1) { height: 12rpx; }.spell-wave text:nth-child(2) { height: 26rpx; }.spell-wave text:nth-child(3) { height: 17rpx; }
+.dictation-practice { border-color: rgba(122, 170, 191, 0.28); background: linear-gradient(135deg, rgba(244,250,252,.92), rgba(226,240,246,.88)); }
+
+.theme-library .vocab-practice-head { border-color: var(--lib-vocab-rule); border-radius: 12rpx; background: linear-gradient(90deg, rgba(43,33,27,.96), rgba(20,40,58,.94)); box-shadow: var(--lib-vocab-shadow); }
+.theme-library .vocab-practice-kicker { color: var(--lib-vocab-brass); }
+.theme-library .vocab-practice-title { color: var(--lib-vocab-paper); font-family: "Songti SC", STSong, serif; }
+.theme-library .vocab-practice-copy { color: rgba(243,232,212,.76); }
+.theme-library .vocab-practice-card { border-color: rgba(43,33,27,.18); border-radius: 10rpx 4rpx 4rpx 10rpx; background: var(--lib-vocab-paper); box-shadow: 0 10rpx 22rpx rgba(43,33,27,.14); }
+.theme-library .vocab-practice-card-title { color: var(--lib-vocab-ink); font-family: "Songti SC", STSong, serif; }
+.theme-library .vocab-practice-card-copy { color: var(--lib-vocab-muted); }
+.theme-library .vocab-practice-arrow { color: var(--lib-vocab-brass); }
+.theme-library .folder-symbol { border: 1rpx solid rgba(115,88,55,.22); border-radius: 6rpx; background: #e4d5bb; }
+.theme-library .folder-tab { background: #7a624b; }
+.theme-library .folder-body { border-radius: 3rpx; background: #4b6571; }
+.theme-library .listen-spell-symbol { border-color: rgba(115,88,55,.24); border-radius: 6rpx; background: #eadfcd; box-shadow: none; }
+.theme-library .dictation-practice { background: #f3e8d4; }
+.language-en .vocab-practice-card-title { font-size: 29rpx; }
+.language-en .vocab-practice-card-copy { font-size: 22rpx; }
+
 .library-vocab-shelf-head,
 .library-vocab-drawer,
 .library-vocab-plan,
@@ -1848,6 +1976,11 @@
   background:
     linear-gradient(90deg, rgba(20, 40, 58, 0.18), rgba(20, 40, 58, 0) 42rpx),
     #D9D1BE;
+}
+
+.library-vocab-book.book-unlock {
+  background: linear-gradient(135deg, rgba(73, 106, 124, 0.96), rgba(39, 69, 84, 0.98));
+  color: #f6f0e3;
 }
 
 .library-vocab-book.is-loading {
@@ -2188,6 +2321,11 @@
   line-height: 1.46;
 }
 
+.library-vocab-row-example-meaning {
+  margin-top: 6rpx;
+  color: var(--lib-vocab-ink);
+}
+
 .library-vocab-debug {
   border: 1rpx solid rgba(154, 94, 82, 0.36);
   border-radius: 8rpx;
@@ -2296,7 +2434,9 @@
   font-size: 64rpx;
   font-weight: 600;
   line-height: 1.12;
-  overflow-wrap: break-word;
+  overflow-wrap: normal;
+  word-break: keep-all;
+  white-space: normal;
 }
 
 .library-vocab-card.tone-phrase .library-vocab-study-word {
@@ -2309,18 +2449,23 @@
   line-height: 1.28;
 }
 
+.library-vocab-card .library-vocab-study-word.is-word-long { font-size: 42rpx; line-height: 1.18; }
+.library-vocab-card .library-vocab-study-word.is-word-extra-long { font-size: 34rpx; line-height: 1.2; }
+
 .library-vocab-study-speak {
   grid-column: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   justify-self: end;
   width: 58rpx;
   height: 58rpx;
   border: 1rpx solid var(--lib-vocab-rule);
   border-radius: 6rpx;
-  color: var(--lib-vocab-ink);
-  font-size: 26rpx;
-  font-weight: 600;
-  line-height: 58rpx;
-  text-align: center;
+  background: var(--lib-vocab-paper);
+  color: var(--lib-vocab-brass);
+  font-size: 30rpx;
+  line-height: 1;
 }
 
 .library-vocab-study-speak.is-loading {
@@ -2410,12 +2555,13 @@
   min-width: 0;
   box-sizing: border-box;
   margin-top: 10rpx;
-  color: var(--lib-vocab-muted);
-  font-size: 25rpx;
-  line-height: 1.42;
+  color: var(--lib-vocab-ink);
+  font-size: 28rpx;
+  font-weight: 500;
+  line-height: 1.5;
   white-space: normal;
-  overflow-wrap: anywhere;
-  word-break: break-all;
+  overflow-wrap: normal;
+  word-break: normal;
   display: -webkit-box;
   overflow: hidden;
   -webkit-box-orient: vertical;
@@ -2560,6 +2706,73 @@
   white-space: nowrap;
 }
 
+.dictation-jump-mask {
+  position: fixed;
+  inset: 0;
+  z-index: 220;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 40rpx;
+  background: rgba(20, 40, 58, 0.38);
+  backdrop-filter: blur(12rpx);
+}
+
+.dictation-jump-dialog {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 620rpx;
+  padding: 42rpx 34rpx 32rpx;
+  border: 1rpx solid rgba(255, 255, 255, 0.86);
+  border-radius: 30rpx;
+  background: rgba(248, 252, 254, 0.96);
+  color: #17314f;
+  text-align: center;
+  box-shadow: 0 34rpx 80rpx rgba(31, 66, 89, 0.24);
+  animation: dictationPromptIn 0.34s cubic-bezier(0.2, 1.12, 0.34, 1) both;
+}
+
+.dictation-jump-mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 76rpx;
+  height: 76rpx;
+  margin: 0 auto 20rpx;
+  border-radius: 22rpx;
+  background: linear-gradient(145deg, #79a8bd, #406f86);
+  color: #fff;
+  font-size: 30rpx;
+  font-weight: 700;
+}
+
+.dictation-jump-title { font-size: 36rpx; font-weight: 700; line-height: 1.3; }
+.dictation-jump-source { margin-top: 14rpx; color: #416d84; font-size: 25rpx; font-weight: 600; line-height: 1.45; }
+.dictation-jump-copy { margin-top: 16rpx; color: #6f8492; font-size: 25rpx; line-height: 1.65; }
+.dictation-jump-actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16rpx; width: 100%; margin-top: 30rpx; }
+.dictation-jump-actions button { display: flex; align-items: center; justify-content: center; box-sizing: border-box; width: 100%; min-width: 0; height: 84rpx; margin: 0; padding: 0 12rpx; border: 0; border-radius: 18rpx; font-size: 25rpx; line-height: 1.2; text-align: center; white-space: normal; }
+.dictation-jump-actions button::after { border: 0; }
+.dictation-jump-later { background: #e7f0f4; color: #537386; }
+.dictation-jump-go { background: #315d73; color: #fff; }
+.dictation-jump-actions button[disabled] { opacity: 0.58; }
+.complete-action[disabled], .library-vocab-complete-action[disabled] { opacity: 0.48; pointer-events: none; }
+
+.theme-library.dictation-jump-mask { background: rgba(39, 31, 25, 0.46); }
+.theme-library .dictation-jump-dialog { border-color: rgba(115, 88, 55, 0.24); border-radius: 10rpx; background: #f6eddd; color: #342b24; box-shadow: 0 30rpx 70rpx rgba(42, 31, 23, 0.3); }
+.theme-library .dictation-jump-mark { border-radius: 5rpx; background: #496b7a; font-family: "Songti SC", STSong, serif; }
+.theme-library .dictation-jump-title { font-family: "Songti SC", STSong, serif; }
+.theme-library .dictation-jump-source { color: #6b5744; }
+.theme-library .dictation-jump-copy { color: #786b5e; }
+.theme-library .dictation-jump-later { border: 1rpx solid rgba(115, 88, 55, 0.18); background: #eadfcd; color: #655748; }
+.theme-library .dictation-jump-go { background: #4b6571; color: #fffdf7; }
+.language-en .dictation-jump-actions button { font-size: 23rpx; }
+
+@keyframes dictationPromptIn {
+  0% { opacity: 0; transform: translateY(24rpx) scale(0.94); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
 .library-vocab-complete-action {
   position: relative;
   z-index: 2;
@@ -2651,3 +2864,24 @@
 .language-en text { overflow-wrap: normal; word-break: normal; }
 .language-en .library-vocab-title,
 .language-en .progress-title { font-size: 38rpx; line-height: 1.16; }
+
+.book-dictation .book-cover {
+  background:
+    linear-gradient(150deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 38%),
+    linear-gradient(135deg, #6f9fb7, #416f86);
+}
+
+.book-dictation .book-symbol {
+  color: #f5fbfd;
+}
+
+.library-vocab-book.book-dictation {
+  background:
+    linear-gradient(90deg, rgba(20, 40, 58, 0.2), rgba(20, 40, 58, 0) 42rpx),
+    #c9dce2;
+}
+
+.sublevel-actions,
+.library-vocab-handles {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}

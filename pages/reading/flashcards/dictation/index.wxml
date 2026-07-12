@@ -1,0 +1,38 @@
+<view class="dictation-nav theme-{{theme}}" style="{{navStyle}}"><view class="dictation-back" bindtap="backToMenu">‹</view><view class="dictation-nav-title">{{texts.title}}</view></view>
+<view class="theme-{{theme}} language-{{language}} dictation-page" style="{{pageTopStyle}}">
+  <view class="dictation-preview" wx:if="{{previewMode}}">{{texts.parentPreview}}</view>
+  <view class="dictation-debug" wx:if="{{debugLines.length}}"><text selectable="{{true}}" wx:for="{{debugLines}}" wx:key="*this">{{item}}</text></view>
+  <view class="dictation-hero"><view class="dictation-kicker">VOCABULARY DICTATION</view><view class="dictation-title">{{sourceTitle}}</view></view>
+
+  <view class="dictation-menu" wx:if="{{mode === 'menu'}}">
+    <view class="dictation-today"><view><text>{{texts.today}}</text><text wx:if="{{todayTotal}}">{{todayCorrect}} / {{todayTotal}}</text><text wx:else>{{texts.noToday}}</text></view><view class="dictation-today-bar"><view style="width:{{todayTotal ? todayCorrect * 100 / todayTotal : 0}}%"></view></view></view>
+    <view class="dictation-count-picker">
+      <view class="dictation-count-head"><text>{{texts.learnedWords}}</text><text class="dictation-count-total">{{availableCount}} {{texts.wordUnit}}</text></view>
+      <view class="dictation-count-controls"><button disabled="{{practiceCount <= 1}}" data-delta="-1" bindtap="changePracticeCount">−</button><view><text>{{practiceCount}}</text><text>{{texts.thisPractice}}</text></view><button disabled="{{practiceCount >= availableCount}}" data-delta="1" bindtap="changePracticeCount">+</button></view>
+      <slider class="dictation-count-slider" min="1" max="{{availableCount || 1}}" step="1" value="{{practiceCount || 1}}" disabled="{{!availableCount}}" activeColor="{{theme === 'library' ? '#6f5741' : '#315d73'}}" backgroundColor="{{theme === 'library' ? '#d7c8ad' : '#c9dce5'}}" block-color="{{theme === 'library' ? '#f7f0e3' : '#ffffff'}}" block-size="22" bindchanging="handlePracticeSlider" bindchange="handlePracticeSlider" />
+      <view class="dictation-count-hint">{{texts.slideHint}}</view>
+    </view>
+    <button class="dictation-action primary" disabled="{{loading || !availableCount}}" bindtap="startAllDictation">{{texts.startAll}}</button>
+    <view class="dictation-wrong-actions"><button disabled="{{!wrongWords.length}}" bindtap="startWrongStudy">{{texts.wrongStudy}} · {{wrongWords.length}}</button><button disabled="{{!wrongWords.length}}" bindtap="startWrongDictation">{{texts.wrongDictation}}</button></view>
+    <button class="dictation-history" bindtap="openHistory">{{texts.history}}</button>
+  </view>
+
+  <view class="dictation-card" wx:if="{{mode === 'dictation' && current}}">
+    <view class="dictation-progress">{{currentIndex + 1}} / {{cards.length}}</view>
+    <button class="dictation-play" bindtap="playCurrent">{{revealed ? texts.replay : texts.play}}</button>
+    <view class="dictation-audio-hint" wx:if="{{audioFailed && !revealed}}"><text>{{texts.audioFailedHint}}</text><text>{{current.meaning}}</text></view>
+    <input class="dictation-input {{revealed ? (current.correct ? 'is-correct' : 'is-wrong') : ''}}" value="{{inputValue}}" disabled="{{revealed}}" focus="{{!revealed}}" placeholder="{{texts.placeholder}}" bindinput="handleInput" bindconfirm="submitCurrent" />
+    <view class="dictation-answer" wx:if="{{revealed}}"><view class="dictation-result {{current.correct ? 'is-correct' : 'is-wrong'}}">{{current.correct ? texts.correct : texts.wrong}}</view><view><text>{{texts.answer}}</text><text class="dictation-answer-word">{{current.word}}</text></view><view wx:if="{{!current.correct}}"><text>{{texts.yours}}</text><text class="dictation-answer-word">{{current.input}}</text></view><view class="dictation-meaning">{{current.phonetic}} {{current.meaning}}</view></view>
+    <button class="dictation-action primary" wx:if="{{!revealed}}" bindtap="submitCurrent">{{texts.submit}}</button><button class="dictation-action primary" wx:else bindtap="nextCard">{{currentIndex + 1 >= cards.length ? texts.finish : texts.next}}</button>
+  </view>
+
+  <view class="dictation-card study" wx:if="{{mode === 'wrong-study' && current}}"><view class="dictation-progress">{{currentIndex + 1}} / {{cards.length}}</view><view class="study-word" bindtap="playCurrent">{{current.word}}</view><view class="study-phonetic">{{current.phonetic}}</view><view class="study-meaning">{{current.meaning}}</view><view class="study-wrong" wx:if="{{current.lastInput}}">{{texts.yours}}：{{current.lastInput}}</view><button class="dictation-play" bindtap="playCurrent">{{texts.play}}</button><button class="dictation-action primary" bindtap="nextStudyCard">{{currentIndex + 1 >= cards.length ? texts.studyDone : texts.studyNext}}</button></view>
+
+  <view class="dictation-complete" wx:if="{{mode === 'complete'}}">
+    <view class="confetti-layer"><text wx:for="{{['1','2','3','4','5','6','7','8','9','10','11','12']}}" wx:key="*this" class="confetti confetti-{{item}}"></text></view>
+    <view class="celebrate-burst"><text></text><text></text><text></text><text></text><text></text><text></text></view>
+    <view class="complete-mark">✓</view><view class="complete-title">{{texts.completeTitle}}</view>
+    <view class="complete-numbers"><view><text>{{totalCount}}</text><text>{{texts.total}}</text></view><view><text>{{correctCount}}</text><text>{{texts.correct}}</text></view><view><text>{{wrongCount}}</text><text>{{texts.wrong}}</text></view><view><text>{{accuracy}}%</text><text>{{texts.accuracy}}</text></view></view>
+    <button class="dictation-action primary" disabled="{{saving}}" bindtap="backToMenu">{{texts.back}}</button>
+  </view>
+</view>

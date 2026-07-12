@@ -1,13 +1,20 @@
 const study = require('../facades/study.facade');
 const dbAdapter = require('../adapters/db.adapter');
 const storageAdapter = require('../adapters/storage.adapter');
+const completionService = require('./completion.service');
 
 const COLLECTION = 'studyFlashcards';
 const SETTINGS_COLLECTION = 'studyFlashcardSettings';
 const LOG_COLLECTION = 'studyFlashcardReviewLogs';
+const DICTATION_COLLECTION = 'vocabularyDictationAttempts';
 const DICTIONARY_BOOKS = [
   { level: 'junior', title: '新东方 初中英语词汇词根+联想记忆法：乱序版', cloudPath: 'dictionary_books/word-dictionary-junior.json' },
-  { level: 'senior', title: '高中英语词汇 乱序', cloudPath: 'dictionary_books/word-dictionary-senior.json' }
+  { level: 'senior', title: '高中英语词汇 乱序', cloudPath: 'dictionary_books/word-dictionary-senior.json' },
+  ...[1, 2, 3, 4].flatMap((unlockLevel) => [1, 2, 3, 4, 5, 6, 7, 8].flatMap((unit) => ['ls', 'rw'].map((section) => ({
+    level: `unlock-${unlockLevel}-u${unit}-${section}`,
+    title: `Unlock ${unlockLevel} Unit ${unit} ${section.toUpperCase()} 词汇表`,
+    cloudPath: `dictionary_books/unlock-v2/level-${unlockLevel}/unit-${unit}/${section}.json`
+  }))))
 ];
 const REVIEW_DAYS = [0, 1, 2, 4, 7, 15, 30];
 const DEFAULT_SETTINGS = { newLimit: 10, reviewLimit: 20 };
@@ -36,6 +43,16 @@ const CLIENT_CARD_FIELDS = {
   firstLearnedDate: true,
   lastReviewDate: true,
   unfamiliarCount: true,
+  audioUrl: true,
+  audioFileId: true,
+  audioCloudPath: true
+};
+const DICTATION_CARD_FIELDS = {
+  sourceId: true,
+  word: true,
+  phonetic: true,
+  meaning: true,
+  status: true,
   audioUrl: true,
   audioFileId: true,
   audioCloudPath: true
@@ -647,6 +664,257 @@ async function addDictionaryWord(event) {
   return { saved: true, existed: false, flashcardKey: record.flashcardKey };
 }
 
+function normalizeSpelling(value) {
+  return normalizeText(value)
+    .toLowerCase()
+    .replace(/[‘’]/g, "'")
+    .replace(/\s*([/-])\s*/g, '$1');
+}
+
+function acceptedSpellings(word) {
+  const raw = normalizeText(word);
+  const values = raw.split(/\s+\/\s+|\s+or\s+/i).map(normalizeSpelling).filter(Boolean);
+  return values.length ? values : [normalizeSpelling(raw)];
+}
+
+function normalizeDictationQuestion(item) {
+  const word = normalizeText(item && item.word);
+  const input = normalizeText(item && item.input);
+  return {
+    word,
+    phonetic: normalizeText(item && item.phonetic),
+    meaning: normalizeText(item && item.meaning),
+    input,
+    correct: acceptedSpellings(word).includes(normalizeSpelling(input))
+  };
+}
+
+function isLearnedFlashcard(item) {
+  return !!item && (item.status === 'reviewing' || item.status === 'mastered');
+}
+
+function dictationSummary(item) {
+  const questions = Array.isArray(item && item.questions) ? item.questions : [];
+  return {
+    id: item.recordId || item._id || '',
+    recordId: item.recordId || '',
+    attemptId: item.attemptId || '',
+    date: item.date || '',
+    sourceId: item.sourceId || '',
+    sourceTitle: item.sourceTitle || '',
+    practiceMode: item.practiceMode || 'dictation',
+    totalCount: Number(item.totalCount || questions.length || 0),
+    answeredCount: Number(item.answeredCount || questions.length || 0),
+    correctCount: Number(item.correctCount || questions.filter((question) => question.correct).length || 0),
+    wrongCount: Number(item.wrongCount || questions.filter((question) => !question.correct).length || 0),
+    wrongWords: questions.filter((question) => !question.correct).map((question) => question.word).slice(0, 30),
+    status: item.status || 'completed',
+    startedAt: item.startedAt || '',
+    completedAt: item.completedAt || '',
+    updatedAt: item.updatedAt || ''
+  };
+}
+
+async function listDictationAttempts(ctx, sourceId, maxRows = 500) {
+  const where = { familyId: ctx.family.familyId, childId: ctx.child.childId, recordType: 'attempt' };
+  if (sourceId) where.sourceId = sourceId;
+  const rows = [];
+  for (let offset = 0; offset < maxRows; offset += 100) {
+    const result = await dbAdapter.collection(DICTATION_COLLECTION).where(where).skip(offset).limit(100).get();
+    const batch = result && result.data || [];
+    rows.push(...batch);
+    if (batch.length < 100) break;
+  }
+  return rows;
+}
+
+async function saveVocabularyDictationAttempt(event) {
+  const payload = (event && event.payload) || {};
+  const { ctx, today } = await study.prepareRequestContext(Object.assign({}, event, { action: 'saveVocabularyDictationAttempt' }));
+  if (isPreviewWrite(ctx)) return { saved: false, reason: 'preview-role' };
+  const sourceId = normalizeText(payload.sourceId);
+  const sourceTitle = normalizeText(payload.sourceTitle);
+  const startedAt = normalizeText(payload.startedAt) || new Date().toISOString();
+  const questions = (Array.isArray(payload.questions) ? payload.questions : []).slice(0, 200).map(normalizeDictationQuestion).filter((item) => item.word);
+  if (!sourceId || !questions.length) return { saved: false, reason: 'missing-content' };
+  const correctCount = questions.filter((item) => item.correct).length;
+  const wrongCount = questions.length - correctCount;
+  const attemptId = normalizeText(payload.attemptId) || `${sourceId}:${startedAt}`;
+  const recordId = [ctx.family.familyId, ctx.child.childId, today, 'dictation', attemptId].join('_');
+  const now = new Date().toISOString();
+  const record = {
+    recordType: 'attempt',
+    recordId,
+    attemptId,
+    familyId: ctx.family.familyId,
+    childId: ctx.child.childId,
+    userId: ctx.user.userId,
+    memberId: ctx.member.memberId,
+    date: today,
+    sourceId,
+    sourceTitle,
+    practiceMode: normalizeText(payload.practiceMode) || 'dictation',
+    totalCount: questions.length,
+    answeredCount: questions.length,
+    correctCount,
+    wrongCount,
+    questions,
+    status: 'completed',
+    startedAt,
+    completedAt: now,
+    updatedAt: now
+  };
+  const attemptResult = await dbAdapter.collection(DICTATION_COLLECTION).where({
+    familyId: record.familyId,
+    childId: record.childId,
+    recordId
+  }).limit(1).get();
+  const currentAttempt = attemptResult && attemptResult.data && attemptResult.data[0];
+  if (currentAttempt && currentAttempt._id) {
+    await dbAdapter.collection(DICTATION_COLLECTION).doc(currentAttempt._id).update({ data: record });
+  } else {
+    await dbAdapter.collection(DICTATION_COLLECTION).add({ data: Object.assign({}, record, { createdAt: now }) });
+  }
+
+  const wrongRecordId = [ctx.family.familyId, ctx.child.childId, 'dictation-wrong', sourceId].join('_');
+  const wrongResult = await dbAdapter.collection(DICTATION_COLLECTION).where({
+    familyId: record.familyId,
+    childId: record.childId,
+    recordId: wrongRecordId
+  }).limit(1).get();
+  const currentWrong = wrongResult && wrongResult.data && wrongResult.data[0];
+  const wrongMap = (currentWrong && Array.isArray(currentWrong.wrongWords) ? currentWrong.wrongWords : []).reduce((map, item) => {
+    const key = normalizeSpelling(item.word);
+    if (key) map[key] = Object.assign({}, item);
+    return map;
+  }, {});
+  questions.forEach((question) => {
+    const key = normalizeSpelling(question.word);
+    const current = wrongMap[key];
+    if (question.correct) {
+      if (!current) return;
+      const correctStreak = Number(current.correctStreak || 0) + 1;
+      if (correctStreak >= 2) delete wrongMap[key];
+      else wrongMap[key] = Object.assign({}, current, { correctStreak, lastCorrectAt: now });
+      return;
+    }
+    wrongMap[key] = Object.assign({}, current || {}, {
+      word: question.word,
+      phonetic: question.phonetic,
+      meaning: question.meaning,
+      wrongCount: Number(current && current.wrongCount || 0) + 1,
+      correctStreak: 0,
+      lastInput: question.input,
+      lastWrongAt: now
+    });
+  });
+  const wrongRecord = {
+    recordType: 'wrongBook',
+    recordId: wrongRecordId,
+    familyId: record.familyId,
+    childId: record.childId,
+    sourceId,
+    sourceTitle,
+    wrongWords: Object.values(wrongMap).sort((a, b) => Number(b.wrongCount || 0) - Number(a.wrongCount || 0)).slice(0, 500),
+    updatedAt: now
+  };
+  if (currentWrong && currentWrong._id) {
+    await dbAdapter.collection(DICTATION_COLLECTION).doc(currentWrong._id).update({ data: wrongRecord });
+  } else {
+    await dbAdapter.collection(DICTATION_COLLECTION).add({ data: Object.assign({}, wrongRecord, { createdAt: now }) });
+  }
+
+  await completionService.upsertStudyCompletion(ctx, today, {
+    type: 'vocabulary',
+    targetId: sourceId,
+    section: 'dictation',
+    title: sourceTitle || '听音写词',
+    meta: '词汇听写',
+    progressText: `听写 ${correctCount}/${questions.length} · 错词 ${wrongCount}`,
+    latestAttempt: Object.assign(dictationSummary(record), { wrongBookCount: wrongRecord.wrongWords.length })
+  });
+  return { saved: true, attempt: dictationSummary(record), wrongWords: wrongRecord.wrongWords };
+}
+
+async function getVocabularyDictationData(event) {
+  const payload = (event && event.payload) || {};
+  const { ctx, today } = await study.prepareRequestContext(Object.assign({}, event, { action: 'getVocabularyDictationData' }));
+  const sourceId = normalizeText(payload.sourceId);
+  if (!sourceId) return { today, attempts: [], wrongWords: [] };
+  const [attemptRows, wrongResult] = await Promise.all([
+    listDictationAttempts(ctx, sourceId),
+    dbAdapter.collection(DICTATION_COLLECTION).where({ familyId: ctx.family.familyId, childId: ctx.child.childId, sourceId, recordType: 'wrongBook' }).limit(1).get()
+  ]);
+  const attempts = attemptRows.filter((item) => item.date === today).map(dictationSummary).sort((a, b) => String(b.updatedAt).localeCompare(String(a.updatedAt)));
+  const wrongBook = wrongResult && wrongResult.data && wrongResult.data[0];
+  return { today, attempts, wrongWords: wrongBook && Array.isArray(wrongBook.wrongWords) ? wrongBook.wrongWords : [] };
+}
+
+async function getVocabularyDictationHistory(event) {
+  const { ctx } = await study.prepareRequestContext(Object.assign({}, event, { action: 'getVocabularyDictationHistory' }));
+  const rows = await listDictationAttempts(ctx);
+  return { attempts: rows.map(dictationSummary).sort((a, b) => String(b.updatedAt).localeCompare(String(a.updatedAt))).slice(0, 100) };
+}
+
+async function getVocabularyDictationSourceCounts(event) {
+  const { ctx } = await study.prepareRequestContext(Object.assign({}, event, { action: 'getVocabularyDictationSourceCounts' }));
+  const rows = [];
+  for (let offset = 0; offset < 5000; offset += 100) {
+    const result = await dbAdapter.collection(COLLECTION)
+      .where({ familyId: ctx.family.familyId, childId: ctx.child.childId })
+      .field({ sourceId: true, status: true, firstLearnedDate: true })
+      .skip(offset)
+      .limit(100)
+      .get();
+    const batch = result && result.data || [];
+    rows.push(...batch);
+    if (batch.length < 100) break;
+  }
+  const counts = rows.reduce((map, item) => {
+    const sourceId = normalizeText(item && item.sourceId);
+    if (!sourceId.startsWith('dictionary-book-')) return map;
+    if (!isLearnedFlashcard(item)) return map;
+    map[sourceId] = Number(map[sourceId] || 0) + 1;
+    return map;
+  }, {});
+  return { counts, total: Object.keys(counts).reduce((sum, key) => sum + Number(counts[key] || 0), 0) };
+}
+
+async function getVocabularyDictationSourceWords(event) {
+  const payload = (event && event.payload) || {};
+  const sourceId = normalizeText(payload.sourceId);
+  const { ctx } = await study.prepareRequestContext(Object.assign({}, event, { action: 'getVocabularyDictationSourceWords' }));
+  if (!sourceId.startsWith('dictionary-book-')) return { sourceId, rows: [], total: 0 };
+  const loadStatus = async (status) => {
+    const rows = [];
+    for (let offset = 0; offset < 5000; offset += 100) {
+      const result = await dbAdapter.collection(COLLECTION)
+        .where({ familyId: ctx.family.familyId, childId: ctx.child.childId, sourceId, status })
+        .field(DICTATION_CARD_FIELDS)
+        .skip(offset)
+        .limit(100)
+        .get();
+      const batch = result && result.data || [];
+      rows.push(...batch);
+      if (batch.length < 100) break;
+    }
+    return rows;
+  };
+  const groups = await Promise.all(['reviewing', 'mastered'].map(loadStatus));
+  const rows = groups.flat();
+  return { sourceId, rows, total: rows.length };
+}
+
+async function getVocabularyDictationAttemptDetail(event) {
+  const payload = (event && event.payload) || {};
+  const recordId = normalizeText(payload.recordId);
+  const { ctx } = await study.prepareRequestContext(Object.assign({}, event, { action: 'getVocabularyDictationAttemptDetail' }));
+  if (!recordId) return { attempt: null };
+  const result = await dbAdapter.collection(DICTATION_COLLECTION).where({ familyId: ctx.family.familyId, childId: ctx.child.childId, recordId, recordType: 'attempt' }).limit(1).get();
+  const item = result && result.data && result.data[0];
+  return { attempt: item ? Object.assign(dictationSummary(item), { questions: item.questions || [] }) : null };
+}
+
 module.exports = {
   upsertStudyPackFlashcards,
   getFlashcardReview,
@@ -657,11 +925,22 @@ module.exports = {
   addDictionaryBook,
   getDictionaryBook,
   addDictionaryWord,
+  saveVocabularyDictationAttempt,
+  getVocabularyDictationData,
+  getVocabularyDictationHistory,
+  getVocabularyDictationSourceCounts,
+  getVocabularyDictationSourceWords,
+  getVocabularyDictationAttemptDetail,
   _test: {
     buildFlashcardWhere,
     summarizeFlashcards,
     CLIENT_CARD_FIELDS,
+    DICTATION_CARD_FIELDS,
     DICTIONARY_SOURCE_IDS,
-    isPreviewWrite
+    isPreviewWrite,
+    normalizeSpelling,
+    acceptedSpellings,
+    normalizeDictationQuestion,
+    isLearnedFlashcard
   }
 };

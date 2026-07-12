@@ -1,0 +1,19 @@
+{
+  "level": 1,
+  "sourceFiles": 16,
+  "sourceCount": 837,
+  "outputCount": 837,
+  "emptyTranslations": 0,
+  "duplicateKeys": 0,
+  "sourceMismatches": 0,
+  "auditChanged": 59,
+  "model": "gpt-5.5",
+  "stages": [
+    "translate",
+    "semantic-audit",
+    "structural-validation"
+  ],
+  "validationErrors": [],
+  "startedAt": "2026-07-12T17:30:29.631Z",
+  "completedAt": "2026-07-12T17:35:55.905Z"
+}

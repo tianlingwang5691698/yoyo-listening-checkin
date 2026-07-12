@@ -52,11 +52,29 @@ const DEMO_FLASHCARDS = [
 
 const DEFAULT_DICTIONARY_BOOKS = [
   { level: 'junior', title: text('juniorBook', '初中英语词汇 乱序'), coverMark: text('juniorMark', '初'), imported: 0, cloudPath: 'dictionary_books/word-dictionary-junior.json' },
-  { level: 'senior', title: text('seniorBook', '高中英语词汇 乱序'), coverMark: text('seniorMark', '高'), imported: 0, cloudPath: 'dictionary_books/word-dictionary-senior.json' }
+  { level: 'senior', title: text('seniorBook', '高中英语词汇 乱序'), coverMark: text('seniorMark', '高'), imported: 0, cloudPath: 'dictionary_books/word-dictionary-senior.json' },
+  ...[1, 2, 3, 4].flatMap((unlockLevel) => [1, 2, 3, 4, 5, 6, 7, 8].flatMap((unit) => ['ls', 'rw'].map((section) => ({
+    level: `unlock-${unlockLevel}-u${unit}-${section}`,
+    unlockLevel,
+    unit,
+    section,
+    title: `Unlock ${unlockLevel} Unit ${unit} ${section.toUpperCase()} 词汇表`,
+    coverMark: section.toUpperCase(),
+    imported: 0,
+    cloudPath: `dictionary_books/unlock-v2/level-${unlockLevel}/unit-${unit}/${section}.json`
+  }))))
 ];
+const STANDARD_DICTIONARY_BOOKS = DEFAULT_DICTIONARY_BOOKS.filter((book) => !book.unlockLevel);
+const UNLOCK_LEVELS = [1, 2, 3, 4].map((level) => ({
+  level,
+  title: `Unlock ${level}`,
+  coverMark: String(level),
+  units: [1, 2, 3, 4, 5, 6, 7, 8].map((unit) => ({ unit, title: `Unit ${unit}`, coverMark: `U${unit}` }))
+}));
 const FLASHCARD_SOURCE_CACHE_PREFIX = 'flashcardSourceCache:';
 const FLASHCARD_SOURCE_CACHE_TTL = 7 * 24 * 60 * 60 * 1000;
 const FLASHCARD_SOURCE_CACHE_VERSION_KEY = 'flashcardSourceCacheVersion';
+const FLASHCARD_SOURCE_CACHE_CONTENT_VERSION = 2026071302;
 const FLASHCARD_PLAN_SETTINGS_PREFIX = 'flashcardPlanSettings:';
 const FLASHCARD_CHECKIN_DAYS_KEY = 'flashcardCheckinDays';
 const FLASHCARD_AUDIO_CACHE_PREFIX = 'flashcard-audio-';
@@ -127,12 +145,17 @@ function getPhoneticBody(value) {
 function normalizeCard(item, index) {
   const type = item.type || (item.pattern ? 'pattern' : (item.phrase ? 'phrase' : 'word'));
   const displayText = item.text || item.word || item.phrase || item.pattern || '';
+  const longestTokenLength = String(displayText).split(/\s+/).reduce((max, token) => Math.max(max, token.length), 0);
+  const displaySizeClass = longestTokenLength >= 18
+    ? 'is-word-extra-long'
+    : ((longestTokenLength >= 12 || String(displayText).length >= 28) ? 'is-word-long' : '');
   const phoneticBody = getPhoneticBody(item.phonetic);
   const displayPhonetic = phoneticBody ? `/${phoneticBody}/` : '';
   const isUnlockBook = /^dictionary-book-unlock-/.test(String(item.sourceId || ''));
   return Object.assign({}, item, {
     type,
     displayText,
+    displaySizeClass,
     phonetic: formatPhonetic(item.phonetic),
     phoneticBody,
     displayPhonetic,
@@ -225,6 +248,15 @@ function buildDueCards(library, settings, today) {
 
 function isBookSource(sourceId) {
   return String(sourceId || '').indexOf('dictionary-book-') === 0;
+}
+
+function getDictationSourceTitle(sourceId, fallback) {
+  const level = String(sourceId || '').replace(/^dictionary-book-/, '');
+  if (level === 'junior') return text('juniorBook', '初中英语词汇 乱序');
+  if (level === 'senior') return text('seniorBook', '高中英语词汇 乱序');
+  const match = level.match(/^unlock-(\d+)-u(\d+)-(ls|rw)$/i);
+  if (match) return `Unlock ${match[1]} · Unit ${match[2]} · ${match[3].toUpperCase()}`;
+  return fallback || text('dictationShelf', '听音拼写');
 }
 
 function getEffectiveSettings(settings, library, sourceId) {
@@ -500,9 +532,12 @@ function getSourceCacheFilePath(sourceId) {
 
 function getFlashcardSourceCacheVersion() {
   try {
-    return Number(wx.getStorageSync(FLASHCARD_SOURCE_CACHE_VERSION_KEY) || 0);
+    return Math.max(
+      FLASHCARD_SOURCE_CACHE_CONTENT_VERSION,
+      Number(wx.getStorageSync(FLASHCARD_SOURCE_CACHE_VERSION_KEY) || 0)
+    );
   } catch (error) {
-    return 0;
+    return FLASHCARD_SOURCE_CACHE_CONTENT_VERSION;
   }
 }
 
@@ -573,6 +608,7 @@ function buildBookCard(entry, book, index) {
     phonetic: entry.phonetic || '',
     meaning: formatVocabularyDefinitions(entry.definitions),
     example: entry.example || '',
+    exampleMeaning: entry.exampleMeaning || '',
     status: 'new',
     nextReviewDate: '',
     localBook: true
@@ -653,7 +689,7 @@ function buildDictionaryVoiceUrl(text) {
 
 Page({
   data: page.createCloudPageData({
-    sourceMode: 'bookshelf',
+    sourceMode: 'practice-home',
     mode: 'library',
     library: [],
     libraryGroups: [],
@@ -671,6 +707,12 @@ Page({
     planSummary: { total: 0, learned: 0, learnedPercent: 0, boatPercent: 4, mastered: 0, reviewing: 0, fresh: 0, todayPlan: 0 },
     logs: [],
     dictionaryBooks: DEFAULT_DICTIONARY_BOOKS,
+    standardDictionaryBooks: STANDARD_DICTIONARY_BOOKS,
+    unlockLevels: UNLOCK_LEVELS,
+    activeUnlockLevel: 0,
+    activeUnlockUnit: 0,
+    activeUnlockUnits: [],
+    activeUnlockSections: [],
     importingBook: '',
     activeSourceId: '',
     activeSourceTitle: text('myLibrary', '我的词库'),
@@ -695,6 +737,10 @@ Page({
     reviewDone: 0,
     reviewSessionTotal: 0,
     reviewCompleted: false,
+    dictationPromptVisible: false,
+    dictationPromptPending: false,
+    dictationJumping: false,
+    dictationPromptSourceTitle: '',
     cardRevealed: false,
     cardChoice: '',
     previousCardChoice: '',
@@ -703,6 +749,7 @@ Page({
     loading: false,
     audioLoading: false,
     audioPlaying: false,
+    libraryAudioKey: '',
     audioCompleted: true,
     navStyle: '',
     pageTopStyle: '',
@@ -724,6 +771,10 @@ Page({
       clearTimeout(this.sourcePrefetchTimer);
       this.sourcePrefetchTimer = null;
     }
+    if (this.dictationPromptTimer) {
+      clearTimeout(this.dictationPromptTimer);
+      this.dictationPromptTimer = null;
+    }
     if (this.flashcardAudioContext) {
       this.flashcardAudioContext.destroy();
       this.flashcardAudioContext = null;
@@ -735,8 +786,8 @@ Page({
     this.setData(Object.assign({}, getNavLayout(), {
       previewMode: store.getDeviceStudyRole() !== 'student',
       dictionaryBooks: (this.data.dictionaryBooks || DEFAULT_DICTIONARY_BOOKS).map((book) => Object.assign({}, book, {
-        title: book.level === 'senior' ? text('seniorBook', book.title) : text('juniorBook', book.title),
-        coverMark: book.level === 'senior' ? text('seniorMark', book.coverMark) : text('juniorMark', book.coverMark)
+        title: book.level === 'senior' ? text('seniorBook', book.title) : (book.level === 'junior' ? text('juniorBook', book.title) : book.title),
+        coverMark: book.level === 'senior' ? text('seniorMark', book.coverMark) : (book.level === 'junior' ? text('juniorMark', book.coverMark) : book.coverMark)
       })),
       activeSourceTitle: this.data.activeSourceId ? this.data.activeSourceTitle : text('myLibrary', '我的词库')
     }), () => {
@@ -749,6 +800,7 @@ Page({
       }
     });
     if (this.data.mode === 'review') return;
+    if (this.data.sourceMode === 'practice-home') return;
     if (this.data.sourceMode === 'bookshelf') {
       this.prefetchVocabularySources();
       return;
@@ -796,7 +848,7 @@ Page({
       const currentTargetPart = `${currentTarget.targetFamilyId || 'self'}:${currentTarget.targetChildId || 'self'}`;
       if (!data || data.syncMode === 'cloud-error' || currentTargetPart !== targetPart) return;
       writeSourceCache('', this.buildFlashcardData(data, '', readSourceCache('')));
-      DEFAULT_DICTIONARY_BOOKS.forEach((sourceBook) => {
+      STANDARD_DICTIONARY_BOOKS.forEach((sourceBook) => {
         const sourceId = getBookSourceId(sourceBook.level);
         const cachedBook = readSourceCache(sourceId);
         if (cachedBook && (cachedBook.library || []).length) {
@@ -809,8 +861,8 @@ Page({
     if (this.sourcePrefetchTimer) clearTimeout(this.sourcePrefetchTimer);
     this.sourcePrefetchTimer = setTimeout(async () => {
       this.sourcePrefetchTimer = null;
-      for (let index = 0; index < DEFAULT_DICTIONARY_BOOKS.length; index += 1) {
-        const book = normalizeBook(DEFAULT_DICTIONARY_BOOKS[index]);
+      for (let index = 0; index < STANDARD_DICTIONARY_BOOKS.length; index += 1) {
+        const book = normalizeBook(STANDARD_DICTIONARY_BOOKS[index]);
         const sourceId = getBookSourceId(book.level);
         if (readSourceCache(sourceId)) continue;
         try {
@@ -1098,7 +1150,52 @@ Page({
     });
     this.loadCards();
   },
+  openDictationShelf() {
+    wx.navigateTo({ url: '/pages/reading/flashcards/dictation/library/index' });
+  },
+  openReviewFolder() {
+    this.setData({ sourceMode: 'bookshelf', mode: 'library' });
+    this.prefetchVocabularySources();
+  },
+  openUnlockBooks() {
+    this.setData({ sourceMode: 'unlock-levels', activeUnlockLevel: 0, activeUnlockUnit: 0, activeUnlockUnits: [], activeUnlockSections: [] });
+  },
+  chooseUnlockLevel(event) {
+    const level = Number(event.currentTarget.dataset.level || 0);
+    const group = UNLOCK_LEVELS.find((item) => item.level === level);
+    if (!group) return;
+    this.setData({
+      sourceMode: 'unlock-units',
+      activeUnlockLevel: level,
+      activeUnlockUnits: group.units
+    });
+  },
+  chooseUnlockUnit(event) {
+    const unit = Number(event.currentTarget.dataset.unit || 0);
+    if (!unit || !this.data.activeUnlockLevel) return;
+    this.setData({
+      sourceMode: 'unlock-sections',
+      activeUnlockUnit: unit,
+      activeUnlockSections: DEFAULT_DICTIONARY_BOOKS.filter((book) => book.unlockLevel === this.data.activeUnlockLevel && book.unit === unit)
+    });
+  },
   backToBookshelf() {
+    if (this.data.sourceMode === 'library' && /^dictionary-book-unlock-/.test(this.data.activeSourceId || '')) {
+      this.setData({ sourceMode: 'unlock-sections', mode: 'library', planSettingsVisible: false, libraryVisible: false });
+      return;
+    }
+    if (this.data.sourceMode === 'unlock-sections') {
+      this.setData({ sourceMode: 'unlock-units', activeUnlockUnit: 0, activeUnlockSections: [] });
+      return;
+    }
+    if (this.data.sourceMode === 'unlock-units') {
+      this.setData({ sourceMode: 'unlock-levels', activeUnlockLevel: 0, activeUnlockUnits: [] });
+      return;
+    }
+    if (this.data.sourceMode === 'unlock-levels') {
+      this.setData({ sourceMode: 'bookshelf' });
+      return;
+    }
     this.setData({
       sourceMode: 'bookshelf',
       mode: 'library',
@@ -1110,11 +1207,16 @@ Page({
     });
   },
   handlePageBack() {
+    if (this.data.dictationPromptPending || this.data.dictationPromptVisible) return;
     if (this.data.mode === 'review') {
       this.exitReview();
       return;
     }
-    if (this.data.sourceMode !== 'bookshelf') {
+    if (this.data.sourceMode === 'bookshelf') {
+      this.setData({ sourceMode: 'practice-home' });
+      return;
+    }
+    if (this.data.sourceMode !== 'practice-home') {
       this.backToBookshelf();
       return;
     }
@@ -1207,11 +1309,14 @@ Page({
     if (!this.flashcardAudioContext) {
       this.flashcardAudioContext = wx.createInnerAudioContext();
       this.flashcardAudioContext.obeyMuteSwitch = false;
+      this.flashcardAudioContext.onPlay(() => this.clearCardAudioStartTimer());
       this.flashcardAudioContext.onEnded(() => {
-        this.setData({ audioPlaying: false, audioCompleted: true });
+        this.clearCardAudioStartTimer();
+        this.setData({ audioPlaying: false, audioCompleted: true, libraryAudioKey: '' });
       });
       this.flashcardAudioContext.onError(() => {
-        this.setData({ audioPlaying: false, audioCompleted: true });
+        this.clearCardAudioStartTimer();
+        this.setData({ audioPlaying: false, audioCompleted: true, libraryAudioKey: '' });
         if (Date.now() < Number(this.silentAudioErrorUntil || 0)) {
           return;
         }
@@ -1225,6 +1330,38 @@ Page({
     this.flashcardAudioContext.src = url;
     this.setData({ audioPlaying: true, audioCompleted: false });
     this.flashcardAudioContext.play();
+  },
+  cancelCurrentAudio() {
+    this.clearCardAudioStartTimer();
+    this._flashcardAudioRequestId = Number(this._flashcardAudioRequestId || 0) + 1;
+    this._flashcardAudioLoading = false;
+    if (this.flashcardAudioContext) {
+      try {
+        this.flashcardAudioContext.stop();
+      } catch (error) {}
+    }
+    this.setData({ audioLoading: false, audioPlaying: false, audioCompleted: true, libraryAudioKey: '' });
+  },
+  clearCardAudioStartTimer() {
+    if (!this.cardAudioStartTimer) return;
+    clearTimeout(this.cardAudioStartTimer);
+    this.cardAudioStartTimer = null;
+  },
+  startCardAudioStartTimer(audioRequestId) {
+    this.clearCardAudioStartTimer();
+    this.cardAudioStartTimer = setTimeout(() => {
+      this.cardAudioStartTimer = null;
+      if (this._flashcardAudioRequestId !== audioRequestId) return;
+      this._flashcardAudioRequestId += 1;
+      this._flashcardAudioLoading = false;
+      this.silentAudioErrorUntil = Date.now() + 1000;
+      if (this.flashcardAudioContext) {
+        try {
+          this.flashcardAudioContext.stop();
+        } catch (error) {}
+      }
+      this.setData({ audioLoading: false, audioPlaying: false, audioCompleted: true, libraryAudioKey: '' });
+    }, 3000);
   },
   playCompletionSfx() {
     if (this.data.audioPlaying || this.data.audioLoading) return;
@@ -1275,12 +1412,6 @@ Page({
     if (localFileExists(localAudioPath)) return;
     this.prefetchingAudioKeys[card.flashcardKey] = true;
     try {
-      if (canUseDictionaryVoice(text)) {
-        const url = buildDictionaryVoiceUrl(text);
-        const path = await downloadAudioToLocal(url, card.flashcardKey);
-        this.updateCardAudioCache(card.flashcardKey, { audioUrl: url, audioLocalPath: path || '' });
-        return;
-      }
       if (card.audioUrl) {
         const path = await downloadAudioToLocal(card.audioUrl, card.flashcardKey);
         if (path) this.updateCardAudioCache(card.flashcardKey, { audioLocalPath: path });
@@ -1317,34 +1448,35 @@ Page({
         audioLocalPath: path || ''
       });
     } catch (error) {
-      if (canUseDictionaryVoice(text)) {
-        const url = buildDictionaryVoiceUrl(text);
-        const path = await downloadAudioToLocal(url, card.flashcardKey);
-        if (path) this.updateCardAudioCache(card.flashcardKey, { audioUrl: url, audioLocalPath: path });
-      }
+      // Prefetch failure does not block manual playback.
     } finally {
       delete this.prefetchingAudioKeys[card.flashcardKey];
     }
   },
   async speakCurrent(options) {
     const silent = !!(options && options.auto);
-    const current = this.data.current || {};
+    const requestedCard = options && options.card ? options.card : null;
+    const current = requestedCard || this.data.current || {};
+    if (this._flashcardAudioLoading) return;
+    const audioRequestId = Number(this._flashcardAudioRequestId || 0) + 1;
+    this._flashcardAudioRequestId = audioRequestId;
     if (!current.canSpeak) return;
-    const text = current.word || current.phrase || current.displayText || '';
-    if (!text) {
+    const audioText = current.word || current.phrase || current.displayText || '';
+    if (!audioText) {
       this.setData({ audioCompleted: true });
       if (!silent) {
         wx.showToast({ title: text('noAudio', '暂无发音内容'), icon: 'none' });
       }
       return;
     }
+    this.startCardAudioStartTimer(audioRequestId);
     const localAudioPath = current.audioLocalPath || getLocalAudioPath(current.flashcardKey);
     if (localFileExists(localAudioPath)) {
       this.playAudioUrl(localAudioPath, { silent });
       return;
     }
-    if (canUseDictionaryVoice(text)) {
-      const url = buildDictionaryVoiceUrl(text);
+    if (canUseDictionaryVoice(audioText)) {
+      const url = buildDictionaryVoiceUrl(audioText);
       this.playAudioUrl(url, { silent });
       this.updateCardAudioCache(current.flashcardKey, { audioUrl: url });
       downloadAudioToLocal(url, current.flashcardKey).then((path) => {
@@ -1362,6 +1494,7 @@ Page({
     if (current.audioFileId) {
       try {
         const url = await store.getTempFileURL(current.audioFileId);
+        if (this._flashcardAudioRequestId !== audioRequestId) return;
         if (url) {
           this.playAudioUrl(url, { silent });
           downloadAudioToLocal(url, current.flashcardKey).then((path) => {
@@ -1373,11 +1506,11 @@ Page({
         // Fall through to regenerate audio.
       }
     }
-    if (this._flashcardAudioLoading) return;
     this._flashcardAudioLoading = true;
     this.setData({ audioLoading: true });
     try {
-      const result = await store.synthesizeReadingAudio({ text });
+      const result = await store.synthesizeReadingAudio({ text: audioText });
+      if (this._flashcardAudioRequestId !== audioRequestId) return;
       let url = result && result.audioUrl ? result.audioUrl : '';
       const audioFileId = result && result.fileId ? result.fileId : '';
       const audioCloudPath = result && result.cloudPath ? result.cloudPath : '';
@@ -1399,33 +1532,40 @@ Page({
         item.flashcardKey === current.flashcardKey ? Object.assign({}, item, { audioUrl: url, audioFileId, audioCloudPath }) : item
       ));
       this.setFlashcardLibrary(library);
-      this.setData({
+      const nextState = {
         cards,
         library: [],
-        libraryGroups: this.getRenderedLibraryGroups(library),
-        current: Object.assign({}, current, { audioUrl: url, audioFileId, audioCloudPath })
-      });
+        libraryGroups: this.getRenderedLibraryGroups(library)
+      };
+      if (!requestedCard) {
+        nextState.current = Object.assign({}, current, { audioUrl: url, audioFileId, audioCloudPath });
+      }
+      this.setData(nextState);
       this.playAudioUrl(url, { silent });
       downloadAudioToLocal(url, current.flashcardKey).then((path) => {
         if (path) this.updateCardAudioCache(current.flashcardKey, { audioLocalPath: path });
       });
     } catch (error) {
-      if (canUseDictionaryVoice(text)) {
-        const url = buildDictionaryVoiceUrl(text);
-        this.playAudioUrl(url, { silent });
-        downloadAudioToLocal(url, current.flashcardKey).then((path) => {
-          if (path) this.updateCardAudioCache(current.flashcardKey, { audioUrl: url, audioLocalPath: path });
-        });
-      } else if (!silent) {
-        this.setData({ audioCompleted: true });
+      if (this._flashcardAudioRequestId !== audioRequestId) return;
+      if (!silent) {
+        this.setData({ audioCompleted: true, libraryAudioKey: '' });
         wx.showToast({ title: text('pronunciationFailed', '发音失败，稍后重试'), icon: 'none' });
       } else {
         this.setData({ audioCompleted: true });
       }
     } finally {
-      this.setData({ audioLoading: false });
-      this._flashcardAudioLoading = false;
+      if (this._flashcardAudioRequestId === audioRequestId) {
+        this.setData({ audioLoading: false });
+        this._flashcardAudioLoading = false;
+      }
     }
+  },
+  speakLibraryCard(event) {
+    const flashcardKey = String((event.currentTarget.dataset || {}).key || '');
+    const card = this.getFlashcardLibrary().find((item) => item && item.flashcardKey === flashcardKey);
+    if (!card || !card.canSpeak) return;
+    this.setData({ libraryAudioKey: flashcardKey });
+    this.speakCurrent({ card });
   },
   updateCardAudioCache(flashcardKey, patch) {
     if (!flashcardKey || !patch) return;
@@ -1605,10 +1745,55 @@ Page({
         this.flushReviewQueue(true);
       }
       this.playCompletionSfx();
+      this.scheduleDictationPrompt();
       return;
     }
     this.scheduleAutoSpeakCurrent();
     this.scheduleAudioPrefetchAroundCurrent();
+  },
+  scheduleDictationPrompt() {
+    if (this.data.previewMode || !isBookSource(this.data.activeSourceId)) return;
+    if (this.dictationPromptTimer) clearTimeout(this.dictationPromptTimer);
+    this.setData({ dictationPromptPending: true });
+    this.dictationPromptTimer = setTimeout(() => {
+      this.dictationPromptTimer = null;
+      if (this.data.reviewCompleted && isBookSource(this.data.activeSourceId)) {
+        this.setData({
+          dictationPromptVisible: true,
+          dictationPromptPending: false,
+          dictationJumping: false,
+          dictationPromptSourceTitle: getDictationSourceTitle(this.data.activeSourceId, this.data.activeSourceTitle)
+        });
+      }
+    }, 900);
+  },
+  dismissDictationPrompt() {
+    if (this.data.dictationJumping) return;
+    this.setData({ dictationPromptVisible: false, dictationPromptPending: false });
+  },
+  waitForReviewSync() {
+    this.flushReviewQueue(true);
+    const startedAt = Date.now();
+    return new Promise((resolve) => {
+      const check = () => {
+        const pending = this.pendingReviewQueue && this.pendingReviewQueue.length;
+        if ((!this.reviewQueueFlushing && !pending) || Date.now() - startedAt >= 5000) {
+          resolve();
+          return;
+        }
+        setTimeout(check, 80);
+      };
+      check();
+    });
+  },
+  async openCompletedDictation() {
+    if (this.data.dictationJumping || !isBookSource(this.data.activeSourceId)) return;
+    this.setData({ dictationJumping: true });
+    await this.waitForReviewSync();
+    const level = String(this.data.activeSourceId || '').replace(/^dictionary-book-/, '');
+    const title = this.data.dictationPromptSourceTitle || getDictationSourceTitle(this.data.activeSourceId, this.data.activeSourceTitle);
+    this.setData({ dictationPromptVisible: false, dictationPromptPending: false, dictationJumping: false });
+    wx.navigateTo({ url: `/pages/reading/flashcards/dictation/index?level=${encodeURIComponent(level)}&title=${encodeURIComponent(title)}` });
   },
   repeatCurrentCard(shouldPersist) {
     const cards = this.data.cards.slice();
@@ -1673,6 +1858,11 @@ Page({
     this.scheduleAudioPrefetchAroundCurrent();
   },
   exitReview() {
+    if (this.data.dictationPromptPending || this.data.dictationPromptVisible) return;
+    if (this.dictationPromptTimer) {
+      clearTimeout(this.dictationPromptTimer);
+      this.dictationPromptTimer = null;
+    }
     if (!this.data.repeatMode) {
       this.syncVocabularyCompletion(true);
       this.flushReviewQueue(true);
@@ -1687,7 +1877,7 @@ Page({
       }));
       return;
     }
-    this.setData({ mode: 'library', reviewCompleted: false, repeatMode: false });
+    this.setData({ mode: 'library', reviewCompleted: false, repeatMode: false, dictationPromptVisible: false, dictationPromptPending: false, dictationJumping: false });
   },
   changeRepeatLimit(event) {
     const total = Math.max(1, Number(this.data.todayRepeatTotal || 1));
@@ -1766,6 +1956,7 @@ Page({
     const current = this.data.current;
     if (!current || !current.flashcardKey) return;
     if (this.data.audioLoading || this.data.audioPlaying) return;
+    this.cancelCurrentAudio();
     const nextResult = typeof result === 'string' ? result : (this.data.cardChoice || 'remembered');
     if (this.data.repeatMode) {
       if (nextResult === 'unfamiliar') {

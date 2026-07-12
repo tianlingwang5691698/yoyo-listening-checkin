@@ -5,7 +5,27 @@
   </view>
 
   <view class="theme-{{theme}} language-{{language}} page-shell flashcard-page library-vocab-page {{mode === 'review' ? 'is-review' : ''}}" style="{{pageTopStyle}}">
-    <block wx:if="{{sourceMode === 'bookshelf'}}">
+    <block wx:if="{{sourceMode === 'practice-home'}}">
+      <view class="vocab-practice-head">
+        <view class="vocab-practice-kicker">VOCABULARY PRACTICE</view>
+        <view class="vocab-practice-title">{{texts.practiceHomeTitle}}</view>
+        <view class="vocab-practice-copy">{{texts.practiceHomeCopy}}</view>
+      </view>
+      <view class="vocab-practice-list">
+        <view class="vocab-practice-card review-folder" bindtap="openReviewFolder">
+          <view class="vocab-practice-icon folder-symbol"><view class="folder-tab"></view><view class="folder-body"><text></text><text></text><text></text></view></view>
+          <view class="vocab-practice-main"><view class="vocab-practice-card-title">{{texts.reviewFolderTitle}}</view><view class="vocab-practice-card-copy">{{texts.reviewFolderCopy}}</view></view>
+          <view class="vocab-practice-arrow">›</view>
+        </view>
+        <view class="vocab-practice-card dictation-practice" bindtap="openDictationShelf">
+          <view class="vocab-practice-icon listen-spell-symbol"><view class="headphone-band"></view><view class="headphone-ear left"></view><view class="headphone-ear right"></view><view class="spell-wave"><text></text><text></text><text></text></view></view>
+          <view class="vocab-practice-main"><view class="vocab-practice-card-title">{{texts.dictationPracticeTitle}}</view><view class="vocab-practice-card-copy">{{texts.dictationPracticeCopy}}</view></view>
+          <view class="vocab-practice-arrow">›</view>
+        </view>
+      </view>
+    </block>
+
+    <block wx:elif="{{sourceMode === 'bookshelf'}}">
       <view class="library-vocab-shelf-head">
         <view class="library-vocab-head-copy">
           <view class="library-vocab-title">{{texts.libraryTitle}}</view>
@@ -29,7 +49,12 @@
           <view class="library-vocab-book-stamp">{{texts.memory}}</view>
           <view class="library-vocab-book-arrow"></view>
         </view>
-        <view class="library-vocab-book book-{{item.level}} {{importingBook === item.level ? 'is-loading' : ''}}" wx:for="{{dictionaryBooks}}" wx:key="level" bindtap="importDictionaryBook" data-level="{{item.level}}">
+        <view class="library-vocab-book book-unlock" bindtap="openUnlockBooks">
+          <view class="library-vocab-spine-mark">U</view>
+          <view class="library-vocab-book-body"><view class="library-vocab-book-title">{{texts.unlockBook}}</view><view class="library-vocab-book-meta">{{texts.unlockMeta}}</view></view>
+          <view class="library-vocab-book-stamp">{{texts.cardSet}}</view><view class="library-vocab-book-arrow"></view>
+        </view>
+        <view class="library-vocab-book book-{{item.level}} {{importingBook === item.level ? 'is-loading' : ''}}" wx:for="{{standardDictionaryBooks}}" wx:key="level" bindtap="importDictionaryBook" data-level="{{item.level}}">
           <view class="library-vocab-spine-mark">{{item.coverMark}}</view>
           <view class="library-vocab-book-body">
             <view class="library-vocab-book-title">{{item.title}}</view>
@@ -39,6 +64,27 @@
           <view class="library-vocab-book-stamp">{{texts.cardSet}}</view>
           <view class="library-vocab-book-arrow"></view>
         </view>
+      </view>
+    </block>
+
+    <block wx:elif="{{sourceMode === 'unlock-levels'}}">
+      <view class="library-vocab-shelf-head"><view class="library-vocab-head-copy"><view class="library-vocab-title">{{texts.unlockBook}}</view><view class="library-vocab-subtitle">{{texts.selectLevel}}</view></view></view>
+      <view class="library-vocab-bookwall">
+        <view class="library-vocab-book book-unlock" wx:for="{{unlockLevels}}" wx:key="level" bindtap="chooseUnlockLevel" data-level="{{item.level}}"><view class="library-vocab-spine-mark">{{item.coverMark}}</view><view class="library-vocab-book-body"><view class="library-vocab-book-title">{{item.title}}</view><view class="library-vocab-book-meta">{{texts.levelLists}}</view></view><view class="library-vocab-book-arrow"></view></view>
+      </view>
+    </block>
+
+    <block wx:elif="{{sourceMode === 'unlock-units'}}">
+      <view class="library-vocab-shelf-head"><view class="library-vocab-head-copy"><view class="library-vocab-title">Unlock {{activeUnlockLevel}}</view><view class="library-vocab-subtitle">{{texts.selectUnit}}</view></view></view>
+      <view class="library-vocab-bookwall">
+        <view class="library-vocab-book book-unlock" wx:for="{{activeUnlockUnits}}" wx:key="unit" bindtap="chooseUnlockUnit" data-unit="{{item.unit}}"><view class="library-vocab-spine-mark">{{item.coverMark}}</view><view class="library-vocab-book-body"><view class="library-vocab-book-title">{{item.title}}</view><view class="library-vocab-book-meta">{{texts.unitLists}}</view></view><view class="library-vocab-book-arrow"></view></view>
+      </view>
+    </block>
+
+    <block wx:elif="{{sourceMode === 'unlock-sections'}}">
+      <view class="library-vocab-shelf-head"><view class="library-vocab-head-copy"><view class="library-vocab-title">Unlock {{activeUnlockLevel}} · Unit {{activeUnlockUnit}}</view><view class="library-vocab-subtitle">{{texts.selectList}}</view></view></view>
+      <view class="library-vocab-bookwall">
+        <view class="library-vocab-book book-unlock {{importingBook === item.level ? 'is-loading' : ''}}" wx:for="{{activeUnlockSections}}" wx:key="level" bindtap="importDictionaryBook" data-level="{{item.level}}"><view class="library-vocab-spine-mark">{{item.coverMark}}</view><view class="library-vocab-book-body"><view class="library-vocab-book-title">{{item.section === 'ls' ? texts.lsList : texts.rwList}}</view><view class="library-vocab-book-meta">{{item.title}}</view></view><view class="library-vocab-book-arrow"></view></view>
       </view>
     </block>
 
@@ -130,12 +176,20 @@
                 <text>{{group.count}}</text>
               </view>
               <view class="library-vocab-row" wx:for="{{group.items}}" wx:key="flashcardKey" wx:for-item="item">
-                <view class="library-vocab-row-main">
+                <view class="library-vocab-row-main is-speakable" wx:if="{{item.canSpeak}}" role="button" aria-label="{{texts.listen}}" data-key="{{item.flashcardKey}}" bindtap="speakLibraryCard">
+                  <view class="library-vocab-row-word">{{item.displayText}}</view>
+                  <view class="library-vocab-row-phonetic" wx:if="{{item.displayPhonetic}}">{{item.displayPhonetic}}</view>
+                  <view class="library-vocab-row-speak {{libraryAudioKey === item.flashcardKey && (audioLoading || audioPlaying) ? 'is-active' : ''}}" wx:if="{{item.canSpeak}}" role="button" aria-label="{{texts.listen}}" data-key="{{item.flashcardKey}}" catchtap="speakLibraryCard">♪</view>
+                </view>
+                <view class="library-vocab-row-main" wx:else>
                   <view class="library-vocab-row-word">{{item.displayText}}</view>
                   <view class="library-vocab-row-phonetic" wx:if="{{item.displayPhonetic}}">{{item.displayPhonetic}}</view>
                 </view>
                 <view class="library-vocab-row-meaning">{{item.meaning || item.translation || texts.noDefinition}}</view>
-                <view class="library-vocab-row-example" wx:if="{{item.example}}">{{item.example}}</view>
+                <view class="library-vocab-row-example" wx:if="{{item.example}}">
+                  <view>{{item.example}}</view>
+                  <view class="library-vocab-row-example-meaning" wx:if="{{item.exampleMeaning}}">{{item.exampleMeaning}}</view>
+                </view>
               </view>
             </view>
           </view>
@@ -161,14 +215,14 @@
             <view class="complete-summary-item"><text class="complete-summary-label">{{texts.completeNew}}</text><text class="complete-summary-value">{{newDueCount}}</text></view>
             <view class="complete-summary-item"><text class="complete-summary-label">{{texts.completeReview}}</text><text class="complete-summary-value">{{reviewDueCount}}</text></view>
           </view>
-          <button class="library-vocab-complete-action" hover-class="is-pressed" hover-start-time="20" hover-stay-time="180" bindtap="exitReview">{{texts.returnLibrary}}</button>
+          <button class="library-vocab-complete-action" disabled="{{dictationPromptPending || dictationPromptVisible}}" hover-class="is-pressed" hover-start-time="20" hover-stay-time="180" bindtap="exitReview">{{texts.returnLibrary}}</button>
         </view>
         <view class="library-vocab-card tone-{{current.type}} {{cardChoice === 'unfamiliar' ? 'is-unfamiliar' : ''}} {{cardChoice === 'easy' ? 'is-easy' : ''}}" wx:elif="{{current}}">
           <view class="library-vocab-card-tag">{{current.typeLabel}}</view>
           <view class="library-vocab-card-face">
             <view class="library-vocab-word-wrap">
-              <view class="library-vocab-study-word" bindtap="speakCurrent">{{current.displayText}}</view>
-              <view class="library-vocab-study-speak {{audioLoading ? 'is-loading' : ''}}" wx:if="{{current.canSpeak}}" bindtap="speakCurrent">{{texts.listen}}</view>
+              <view class="library-vocab-study-word {{current.displaySizeClass}}" bindtap="speakCurrent">{{current.displayText}}</view>
+              <view class="library-vocab-study-speak {{audioLoading ? 'is-loading' : ''}}" wx:if="{{current.canSpeak}}" role="button" aria-label="{{texts.listen}}" bindtap="speakCurrent">♪</view>
             </view>
             <view class="library-vocab-study-phonetic" wx:if="{{current.displayPhonetic}}">{{current.displayPhonetic}}</view>
           </view>
@@ -225,7 +279,27 @@
 </view>
 
 <view class="theme-{{theme}} language-{{language}} page-shell flashcard-page {{mode === 'review' ? 'is-review' : ''}}" style="{{pageTopStyle}}">
-  <block wx:if="{{sourceMode === 'bookshelf'}}">
+  <block wx:if="{{sourceMode === 'practice-home'}}">
+    <view class="vocab-practice-head">
+      <view class="vocab-practice-kicker">VOCABULARY PRACTICE</view>
+      <view class="vocab-practice-title">{{texts.practiceHomeTitle}}</view>
+      <view class="vocab-practice-copy">{{texts.practiceHomeCopy}}</view>
+    </view>
+    <view class="vocab-practice-list">
+      <view class="vocab-practice-card review-folder" bindtap="openReviewFolder">
+        <view class="vocab-practice-icon folder-symbol"><view class="folder-tab"></view><view class="folder-body"><text></text><text></text><text></text></view></view>
+        <view class="vocab-practice-main"><view class="vocab-practice-card-title">{{texts.reviewFolderTitle}}</view><view class="vocab-practice-card-copy">{{texts.reviewFolderCopy}}</view></view>
+        <view class="vocab-practice-arrow">›</view>
+      </view>
+      <view class="vocab-practice-card dictation-practice" bindtap="openDictationShelf">
+        <view class="vocab-practice-icon listen-spell-symbol"><view class="headphone-band"></view><view class="headphone-ear left"></view><view class="headphone-ear right"></view><view class="spell-wave"><text></text><text></text><text></text></view></view>
+        <view class="vocab-practice-main"><view class="vocab-practice-card-title">{{texts.dictationPracticeTitle}}</view><view class="vocab-practice-card-copy">{{texts.dictationPracticeCopy}}</view></view>
+        <view class="vocab-practice-arrow">›</view>
+      </view>
+    </view>
+  </block>
+
+  <block wx:elif="{{sourceMode === 'bookshelf'}}">
     <view class="bookshelf-head">
       <view class="bookshelf-copy">
         <view class="progress-title">{{texts.libraryTitle}}</view>
@@ -253,7 +327,8 @@
         <view class="book-tag">{{texts.memory}}</view>
         <view class="book-action">{{texts.enter}}</view>
       </view>
-      <view class="book-card book-{{item.level}}" wx:for="{{dictionaryBooks}}" wx:key="level" bindtap="importDictionaryBook" data-level="{{item.level}}">
+      <view class="book-card book-unlock" bindtap="openUnlockBooks"><view class="book-depth"></view><view class="book-cover"><view class="book-spine"></view><view class="book-symbol">U</view><view class="book-lines"><text></text><text></text><text></text></view></view><view class="book-main"><view class="book-title">{{texts.unlockBook}}</view><view class="book-meta">{{texts.unlockMeta}}</view></view><view class="book-tag">{{texts.cardSet}}</view><view class="book-action">{{texts.enter}}</view></view>
+      <view class="book-card book-{{item.level}}" wx:for="{{standardDictionaryBooks}}" wx:key="level" bindtap="importDictionaryBook" data-level="{{item.level}}">
         <view class="book-depth"></view>
         <view class="book-cover">
           <view class="book-spine"></view>
@@ -268,6 +343,21 @@
         <view class="book-action {{importingBook === item.level ? 'is-loading' : ''}}">{{texts.enter}}</view>
       </view>
     </view>
+  </block>
+
+  <block wx:elif="{{sourceMode === 'unlock-levels'}}">
+    <view class="bookshelf-head"><view class="bookshelf-copy"><view class="progress-title">{{texts.unlockBook}}</view><view class="progress-copy">{{texts.selectLevel}}</view></view></view>
+    <view class="book-list shelf-board"><view class="book-card book-unlock" wx:for="{{unlockLevels}}" wx:key="level" bindtap="chooseUnlockLevel" data-level="{{item.level}}"><view class="book-depth"></view><view class="book-cover"><view class="book-spine"></view><view class="book-symbol">{{item.coverMark}}</view></view><view class="book-main"><view class="book-title">{{item.title}}</view><view class="book-meta">{{texts.levelLists}}</view></view><view class="book-action">{{texts.enter}}</view></view></view>
+  </block>
+
+  <block wx:elif="{{sourceMode === 'unlock-units'}}">
+    <view class="bookshelf-head"><view class="bookshelf-copy"><view class="progress-title">Unlock {{activeUnlockLevel}}</view><view class="progress-copy">{{texts.selectUnit}}</view></view></view>
+    <view class="book-list shelf-board"><view class="book-card book-unlock" wx:for="{{activeUnlockUnits}}" wx:key="unit" bindtap="chooseUnlockUnit" data-unit="{{item.unit}}"><view class="book-depth"></view><view class="book-cover"><view class="book-spine"></view><view class="book-symbol">{{item.coverMark}}</view></view><view class="book-main"><view class="book-title">{{item.title}}</view><view class="book-meta">{{texts.unitLists}}</view></view><view class="book-action">{{texts.enter}}</view></view></view>
+  </block>
+
+  <block wx:elif="{{sourceMode === 'unlock-sections'}}">
+    <view class="bookshelf-head"><view class="bookshelf-copy"><view class="progress-title">Unlock {{activeUnlockLevel}} · Unit {{activeUnlockUnit}}</view><view class="progress-copy">{{texts.selectList}}</view></view></view>
+    <view class="book-list shelf-board"><view class="book-card book-unlock" wx:for="{{activeUnlockSections}}" wx:key="level" bindtap="importDictionaryBook" data-level="{{item.level}}"><view class="book-depth"></view><view class="book-cover"><view class="book-spine"></view><view class="book-symbol">{{item.coverMark}}</view></view><view class="book-main"><view class="book-title">{{item.section === 'ls' ? texts.lsList : texts.rwList}}</view><view class="book-meta">{{item.title}}</view></view><view class="book-action {{importingBook === item.level ? 'is-loading' : ''}}">{{texts.enter}}</view></view></view>
   </block>
 
   <block wx:else>
@@ -369,14 +459,22 @@
             <view class="vocab-item" wx:for="{{group.items}}" wx:key="flashcardKey" wx:for-item="item">
               <view class="vocab-card-top">
                 <view class="vocab-card-index"></view>
-                <view class="vocab-word-main">
+                <view class="vocab-word-main is-speakable" wx:if="{{item.canSpeak}}" role="button" aria-label="{{texts.listen}}" data-key="{{item.flashcardKey}}" bindtap="speakLibraryCard">
                   <view class="vocab-text">{{item.displayText}}</view>
                   <view class="vocab-phonetic" wx:if="{{item.displayPhonetic}}">{{item.displayPhonetic}}</view>
                 </view>
+                <view class="vocab-word-main" wx:else>
+                  <view class="vocab-text">{{item.displayText}}</view>
+                  <view class="vocab-phonetic" wx:if="{{item.displayPhonetic}}">{{item.displayPhonetic}}</view>
+                </view>
+                <view class="vocab-row-speak {{libraryAudioKey === item.flashcardKey && (audioLoading || audioPlaying) ? 'is-active' : ''}}" wx:if="{{item.canSpeak}}" role="button" aria-label="{{texts.listen}}" data-key="{{item.flashcardKey}}" catchtap="speakLibraryCard">♪</view>
                 <view class="vocab-light-tag">{{group.label}}</view>
               </view>
               <view class="vocab-meaning">{{item.meaning || item.translation || texts.noDefinition}}</view>
-              <view class="vocab-example" wx:if="{{item.example}}">{{item.example}}</view>
+              <view class="vocab-example" wx:if="{{item.example}}">
+                <view>{{item.example}}</view>
+                <view class="vocab-example-meaning" wx:if="{{item.exampleMeaning}}">{{item.exampleMeaning}}</view>
+              </view>
             </view>
           </view>
         </view>
@@ -407,15 +505,15 @@
           <view class="complete-summary-item"><text class="complete-summary-label">{{texts.completeNew}}</text><text class="complete-summary-value">{{newDueCount}}</text></view>
           <view class="complete-summary-item"><text class="complete-summary-label">{{texts.completeReview}}</text><text class="complete-summary-value">{{reviewDueCount}}</text></view>
         </view>
-        <button class="complete-action" hover-class="is-pressed" hover-start-time="20" hover-stay-time="180" bindtap="exitReview">{{texts.returnLibrary}}</button>
+        <button class="complete-action" disabled="{{dictationPromptPending || dictationPromptVisible}}" hover-class="is-pressed" hover-start-time="20" hover-stay-time="180" bindtap="exitReview">{{texts.returnLibrary}}</button>
       </view>
       <view class="study-card tone-{{current.type}} {{cardChoice === 'unfamiliar' ? 'is-unfamiliar' : ''}} {{cardChoice === 'easy' ? 'is-easy' : ''}}" wx:elif="{{current}}">
         <view class="memory-stack-mark"><text></text><text></text><text></text></view>
         <view class="study-card-head">
           <view class="study-age">{{current.typeLabel}}</view>
           <view class="study-word-row">
-            <view class="study-word" bindtap="speakCurrent">{{current.displayText}}</view>
-            <view class="study-speak {{audioLoading ? 'is-loading' : ''}}" wx:if="{{current.canSpeak}}" bindtap="speakCurrent">{{texts.listen}}</view>
+            <view class="study-word {{current.displaySizeClass}}" bindtap="speakCurrent">{{current.displayText}}</view>
+            <view class="study-speak {{audioLoading ? 'is-loading' : ''}}" wx:if="{{current.canSpeak}}" role="button" aria-label="{{texts.listen}}" bindtap="speakCurrent">♪</view>
           </view>
           <view class="study-pron">
             <view class="study-phonetic" wx:if="{{current.displayPhonetic}}">{{current.displayPhonetic}}</view>
@@ -466,3 +564,16 @@
   </view>
 </view>
 </block>
+
+<view class="dictation-jump-mask theme-{{theme}} language-{{language}}" wx:if="{{dictationPromptVisible}}" catchtap="dismissDictationPrompt">
+  <view class="dictation-jump-dialog" catchtap="noop">
+    <view class="dictation-jump-mark">D</view>
+    <view class="dictation-jump-title">{{texts.dictationPromptTitle}}</view>
+    <view class="dictation-jump-source">{{dictationPromptSourceTitle}}</view>
+    <view class="dictation-jump-copy">{{repeatMode ? texts.dictationPromptRepeatCopy : texts.dictationPromptPlanCopy}}</view>
+    <view class="dictation-jump-actions">
+      <button class="dictation-jump-later" disabled="{{dictationJumping}}" bindtap="dismissDictationPrompt">{{texts.notNow}}</button>
+      <button class="dictation-jump-go" disabled="{{dictationJumping}}" bindtap="openCompletedDictation">{{dictationJumping ? texts.openingDictation : texts.goDictation}}</button>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,13 @@
+{
+  "functionName": "dictionary-book",
+  "runtime": "Nodejs16.13",
+  "memorySize": 512,
+  "largestSample": "unlock-2-u7-ls",
+  "total": 155,
+  "coldWallMs": [273, 260, 241],
+  "coldFunctionMs": [74, 65, 67],
+  "warmWallMs": [141, 89, 120, 101],
+  "targetMs": 600,
+  "examplesVisibleInResponse": true,
+  "passed": true
+}

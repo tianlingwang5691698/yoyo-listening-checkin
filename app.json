@@ -4,9 +4,6 @@
   "pages": [
     "pages/home/index",
     "pages/home/completed/index",
-    "pages/grammar/index",
-    "pages/material/index",
-    "pages/material/detail/index",
     "pages/writing/detail/index",
     "pages/practice-history/index",
     "pages/speaking/index",
@@ -14,14 +11,11 @@
     "pages/listening-plan/index",
     "pages/listening-material/index",
     "pages/level-stage/index",
-    "pages/lesson/index",
     "pages/record/index",
     "pages/profile/index",
     "pages/settings/index",
     "pages/identity/index",
     "pages/admin/index",
-    "pages/parent/index",
-    "pages/parent/detail/index",
     "pages/family/index"
   ],
   "subPackages": [
@@ -30,13 +24,41 @@
       "pages": [
         "index",
         "detail/index",
-        "flashcards/index"
+        "flashcards/index",
+        "flashcards/dictation/index",
+        "flashcards/dictation/library/index"
       ]
     },
     {
       "root": "grammar-package",
       "pages": [
         "pages/classroom/index"
+      ]
+    },
+    {
+      "root": "pages/grammar",
+      "pages": [
+        "index"
+      ]
+    },
+    {
+      "root": "pages/material",
+      "pages": [
+        "index",
+        "detail/index"
+      ]
+    },
+    {
+      "root": "pages/lesson",
+      "pages": [
+        "index"
+      ]
+    },
+    {
+      "root": "pages/parent",
+      "pages": [
+        "index",
+        "detail/index"
       ]
     }
   ],

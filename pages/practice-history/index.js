@@ -22,6 +22,12 @@ const MODULES = {
     eyebrow: text('writingEyebrow', '英语写作'),
     copy: text('writingCopy', '回看作文、批改和参考改写。'),
     empty: text('noWriting', '还没有写作记录')
+  },
+  vocabulary: {
+    title: text('vocabularyTitle', '词汇听写记录'),
+    eyebrow: text('vocabularyEyebrow', '听音写词'),
+    copy: text('vocabularyCopy', '回看每次听写、错词和订正结果。'),
+    empty: text('noVocabulary', '还没有词汇听写记录')
   }
 };
 
@@ -80,6 +86,22 @@ function normalizeGrammar(item, index) {
     detailReady: questions.length > 0,
     detailLoading: false,
     detailQuestions: buildGrammarDetailQuestions(questions, item)
+  };
+}
+
+function normalizeVocabulary(item, index) {
+  const totalCount = Number(item.totalCount || 0);
+  const correctCount = Number(item.correctCount || 0);
+  return {
+    id: String(item.recordId || item.id || `vocabulary-${index}`),
+    title: item.sourceTitle || text('vocabularyTitle', '词汇听写'),
+    meta: item.practiceMode === 'wrong-dictation' ? text('wrongDictation', '错词听写') : text('vocabularyEyebrow', '听音写词'),
+    dateLabel: cleanDate(item.date, item.updatedAt),
+    summary: `${correctCount}/${totalCount}${text('wordUnit', ' 词')}`,
+    attempt: item,
+    detailReady: false,
+    detailLoading: false,
+    detailQuestions: []
   };
 }
 
@@ -246,6 +268,8 @@ Page({
       ? { title: text('grammarTitle'), eyebrow: text('grammarEyebrow'), copy: text('grammarCopy'), empty: text('noGrammar') }
       : type === 'writing'
         ? { title: text('writingTitle'), eyebrow: text('writingEyebrow'), copy: text('writingCopy'), empty: text('noWriting') }
+        : type === 'vocabulary'
+          ? { title: text('vocabularyTitle'), eyebrow: text('vocabularyEyebrow'), copy: text('vocabularyCopy'), empty: text('noVocabulary') }
         : { title: text('readingTitle'), eyebrow: text('readingEyebrow'), copy: text('readingCopy'), empty: text('noReading') };
     this.setData({ config });
   },
@@ -272,6 +296,13 @@ Page({
       if (this.historyPerf) {
         this.historyPerf.mark('cloudRefresh', { type: this.data.type, records: (this.data.records || []).length });
       }
+      return;
+    }
+    if (this.data.type === 'vocabulary') {
+      const result = await store.getVocabularyDictationHistory();
+      const debugLines = buildDebugLines(result, 'getVocabularyDictationHistory');
+      this.setData({ loading: false, records: debugLines.length ? [] : (result.attempts || []).map(normalizeVocabulary), debugLines });
+      if (this.historyPerf) this.historyPerf.mark('cloudRefresh', { type: this.data.type, records: (this.data.records || []).length });
       return;
     }
     const [result, wrongResult] = await Promise.all([
@@ -331,6 +362,26 @@ Page({
     if (this.data.type === 'grammar' && record && !record.detailReady && !record.detailLoading) {
       this.loadGrammarDetail(record);
     }
+    if (this.data.type === 'vocabulary' && record && !record.detailReady && !record.detailLoading) {
+      this.loadVocabularyDetail(record);
+    }
+  },
+  async loadVocabularyDetail(record) {
+    this.updateRecord(record.id, { detailLoading: true });
+    const result = await store.getVocabularyDictationAttemptDetail(record.id);
+    const attempt = result && result.attempt;
+    this.updateRecord(record.id, {
+      detailLoading: false,
+      detailReady: !!attempt,
+      detailQuestions: (attempt && attempt.questions || []).map((item, index) => ({
+        number: index + 1,
+        word: item.word || '',
+        input: item.input || '',
+        meaning: item.meaning || '',
+        phonetic: item.phonetic || '',
+        correct: !!item.correct
+      }))
+    });
   },
   async loadReadingDetail(record) {
     const startedAt = Date.now();

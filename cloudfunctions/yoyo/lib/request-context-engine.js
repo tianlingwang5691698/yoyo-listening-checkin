@@ -39,7 +39,7 @@ function resolveCatalogCategories(action, requestedCategory, payload = {}) {
   if (action === 'getTaskTranscript') {
     return [];
   }
-  if (['getFamilyPage', 'refreshInviteCode', 'joinFamily', 'joinFamilyByChildCode', 'updateBindingProfile', 'leaveFamily', 'updateChildProfile', 'setStudyRole', 'updateSubscription', 'bootstrap', 'getReadingHome', 'getReadingPassage', 'getReadingStudyPack', 'synthesizeReadingAudio', 'submitReadingAttempt', 'lookupWord', 'getFlashcardReview', 'getFlashcardDue', 'getDictionaryBook', 'submitWritingAttempt', 'gradeWritingAttempt', 'getWritingAttempts', 'getWritingAttemptDetail', 'recordStudyCompletion', 'getStudyCompletions', 'getStudyCompletionDetail', 'addPracticeWrongQuestion', 'getPracticeWrongQuestions'].includes(action)) {
+  if (['getFamilyPage', 'refreshInviteCode', 'joinFamily', 'joinFamilyByChildCode', 'updateBindingProfile', 'leaveFamily', 'updateChildProfile', 'setStudyRole', 'updateSubscription', 'bootstrap', 'getReadingHome', 'getReadingPassage', 'getReadingStudyPack', 'synthesizeReadingAudio', 'submitReadingAttempt', 'lookupWord', 'getFlashcardReview', 'getFlashcardDue', 'getDictionaryBook', 'saveVocabularyDictationAttempt', 'getVocabularyDictationData', 'getVocabularyDictationHistory', 'getVocabularyDictationSourceCounts', 'getVocabularyDictationSourceWords', 'getVocabularyDictationAttemptDetail', 'submitWritingAttempt', 'gradeWritingAttempt', 'getWritingAttempts', 'getWritingAttemptDetail', 'recordStudyCompletion', 'getStudyCompletions', 'getStudyCompletionDetail', 'addPracticeWrongQuestion', 'getPracticeWrongQuestions'].includes(action)) {
     return [];
   }
   return catalogCategories;
@@ -67,6 +67,11 @@ async function prepareRequestContext(event, deps) {
     || action === 'getMonthHeatmap'
     || action === 'getFlashcardReview'
     || action === 'getDictionaryBook'
+    || action === 'getVocabularyDictationData'
+    || action === 'getVocabularyDictationHistory'
+    || action === 'getVocabularyDictationSourceCounts'
+    || action === 'getVocabularyDictationSourceWords'
+    || action === 'getVocabularyDictationAttemptDetail'
     || action === 'getReadingHome'
     || action === 'getReadingPassage'
     || action === 'getReadingStudyPack'

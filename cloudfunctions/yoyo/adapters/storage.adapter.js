@@ -205,7 +205,7 @@ async function uploadCloudFileBuffer(cloudPath, buffer) {
   fs.writeFileSync(localPath, Buffer.isBuffer(buffer) ? buffer : Buffer.from(buffer));
   await cloud.uploadFile({
     cloudPath: normalizedPath,
-    filePath: localPath
+    fileContent: fs.createReadStream(localPath)
   });
   return {
     cloudPath: normalizedPath,

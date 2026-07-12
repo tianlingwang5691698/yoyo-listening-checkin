@@ -1,0 +1,30 @@
+{
+  "level": 2,
+  "model": "gpt-5.5",
+  "sourceBooks": 16,
+  "sourceRows": 1317,
+  "outputRows": 1317,
+  "uniqueExamples": 1014,
+  "auditedUniqueExamples": 1014,
+  "emptyTranslations": 0,
+  "countsByBook": {
+    "unit-1/ls": 112,
+    "unit-1/rw": 56,
+    "unit-2/ls": 80,
+    "unit-2/rw": 63,
+    "unit-3/ls": 105,
+    "unit-3/rw": 66,
+    "unit-4/ls": 94,
+    "unit-4/rw": 60,
+    "unit-5/ls": 63,
+    "unit-5/rw": 57,
+    "unit-6/ls": 103,
+    "unit-6/rw": 66,
+    "unit-7/ls": 155,
+    "unit-7/rw": 57,
+    "unit-8/ls": 121,
+    "unit-8/rw": 59
+  },
+  "validation": "passed",
+  "generatedAt": "2026-07-12T17:41:12.392Z"
+}
