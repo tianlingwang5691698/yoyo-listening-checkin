@@ -10,7 +10,7 @@ const ENTRY_POSTER_DISMISSED_KEY = 'homeEntryPosterDismissedV1';
 const TODAY_COMPLETED_CACHE_KEY = 'todayCompletedItemsV1';
 const HOME_DASHBOARD_SNAPSHOT_KEY = 'homeDashboardSnapshotV2';
 const MATERIAL_HOME_SNAPSHOT_KEY = 'materialHomeSnapshotV1';
-const LISTENING_PLAN_OVERVIEW_SNAPSHOT_KEY = 'listeningPlanOverviewSnapshotV2';
+const LISTENING_PLAN_OVERVIEW_SNAPSHOT_KEY = 'listeningPlanOverviewSnapshotV4';
 const PROFILE_SNAPSHOT_KEY = 'profileHomeSnapshotV1';
 
 const VOCABULARY_ITEM_KEYS = [

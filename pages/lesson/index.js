@@ -467,6 +467,7 @@ Page({
     transcriptPendingLoad: false,
     transcriptLoadFailed: false,
     transcriptManualVisible: false,
+    transcriptExpanded: false,
     passSteps: [],
     completionCardVisible: false,
     speakingPanelVisible: false,
@@ -498,6 +499,7 @@ Page({
     speakingPausedAttemptKey: '',
     lessonLoading: true,
     lessonStudyPack: null,
+    lessonStudyExpanded: false,
     lessonStudyLoading: false,
     lessonStudyError: '',
     lessonStudyCompleted: false,
@@ -847,10 +849,6 @@ Page({
     const snapshotTask = this.readLessonTaskSnapshot();
     if (snapshotTask) {
       this.applyTaskSnapshot(snapshotTask);
-      if (this.focus === 'study') {
-        this.applyLessonStudyPackSnapshot();
-        this.loadCachedLessonStudyPack(snapshotTask).catch(() => {});
-      }
     } else {
       this.markLessonRoute('snapshotMiss');
     }
@@ -1200,6 +1198,7 @@ Page({
       progress: detail.progress,
       passSteps: buildPassSteps(detail.progress),
       transcriptManualVisible: false,
+      transcriptExpanded: false,
       currentMember: detail.currentMember,
       studyWriteAllowed,
       isPreviewMode: this.planRunType === 'preview',
@@ -1274,6 +1273,7 @@ Page({
       transcriptPendingLoad: !!detail.transcriptPendingLoad,
       transcriptLoadFailed: false,
       transcriptManualVisible: false,
+      transcriptExpanded: false,
       transcriptSyncGranularity: 'word',
       currentMember: detail.currentMember,
       studyWriteAllowed,
@@ -1302,6 +1302,7 @@ Page({
       audioErrorDetail: '',
       audioPlaybackMode: 'idle',
       lessonStudyPack: null,
+      lessonStudyExpanded: false,
       lessonStudyLoading: false,
       lessonStudyError: '',
       lessonStudyCompleted: studyCompleted,
@@ -1327,7 +1328,6 @@ Page({
   async loadLessonSecondaryData(task, progress) {
     const startedAt = Date.now();
     await Promise.allSettled([
-      this.loadCachedLessonStudyPack(task),
       this.refreshSpeakingAttempts(task),
       this.updatePassQuestion(task, progress)
     ]);
@@ -1412,7 +1412,9 @@ Page({
       transcriptLines: [],
       transcriptPendingLoad: false,
       transcriptManualVisible: false,
+      transcriptExpanded: false,
       lessonStudyPack: null,
+      lessonStudyExpanded: false,
       lessonStudyLoading: false,
       lessonStudyError: '',
       lessonStudyCompleted: false,
@@ -1603,8 +1605,17 @@ Page({
     await this.openSpeakingPanelForPass(passNumber);
   },
   async showTranscriptOnDemand() {
-    await this.ensureTranscriptLoadedForSpeaking();
-    this.setData({ transcriptManualVisible: true });
+    await this.toggleTranscript();
+  },
+  async toggleTranscript() {
+    if (this.data.transcriptExpanded) {
+      this.setData({ transcriptExpanded: false, transcriptManualVisible: false });
+      return;
+    }
+    if (!this.data.transcriptLines.length && this.data.transcriptPendingLoad) {
+      await this.loadTranscript();
+    }
+    this.setData({ transcriptExpanded: true, transcriptManualVisible: true });
   },
   async startSpeakingRecord() {
     if (!this.recorderManager) {
@@ -2272,6 +2283,10 @@ Page({
   selectLessonStudyTab(event) {
     this.setData({ lessonStudyTab: event.currentTarget.dataset.tab || 'vocabulary' });
   },
+  toggleLessonStudyPack() {
+    if (!this.data.lessonStudyPack) return;
+    this.setData({ lessonStudyExpanded: !this.data.lessonStudyExpanded });
+  },
   scrollToLessonStudy() {
     if (!wx.pageScrollTo) return;
     setTimeout(() => {
@@ -2285,6 +2300,7 @@ Page({
     const pack = studyPack || {};
     this.setData({
       lessonStudyPack: pack,
+      lessonStudyExpanded: true,
       lessonVocabularyCards: normalizeLessonStudyCards(pack.vocabularyCards || [], 'word'),
       lessonPhraseCards: normalizeLessonStudyCards(pack.phraseCards || [], 'phrase'),
       lessonPatternCards: normalizeLessonStudyCards(pack.sentencePatternCards || [], 'pattern')
@@ -2396,9 +2412,6 @@ Page({
   async lookupLessonStudyWord(event) {
     const word = String(event.currentTarget.dataset.word || event.currentTarget.dataset.text || '').trim();
     if (!word || this.data.dictionaryLoading) return;
-    if (wx.vibrateShort) {
-      wx.vibrateShort({ type: 'light' });
-    }
     this.setData({
       dictionaryVisible: true,
       dictionaryLoading: true,
@@ -2456,7 +2469,9 @@ Page({
   async addLessonStudyWordToLibrary(event) {
     const type = String(event.currentTarget.dataset.type || 'word');
     const text = String(event.currentTarget.dataset.text || event.currentTarget.dataset.word || '').trim();
-    if (!text || this.data.dictionaryAdding) return;
+    const flashcardKey = String(event.currentTarget.dataset.key || '').trim();
+    const addedMap = this.data.lessonDictionaryAddedMap || {};
+    if (!text || this.data.dictionaryAdding || addedMap[text] || (flashcardKey && addedMap[flashcardKey])) return;
     const cards = type === 'phrase'
       ? this.data.lessonPhraseCards
       : (type === 'pattern' ? this.data.lessonPatternCards : this.data.lessonVocabularyCards);
@@ -2593,10 +2608,12 @@ Page({
       transcriptPendingLoad: !!detail.transcriptPendingLoad,
       transcriptLoadFailed: false,
       transcriptManualVisible: false,
+      transcriptExpanded: false,
       audioSource: normalizedTask && normalizedTask.audioSource ? normalizedTask.audioSource : 'none',
       playbackRate: 1,
       playbackRateText: '1.0',
       lessonStudyPack: null,
+      lessonStudyExpanded: false,
       lessonStudyLoading: false,
       lessonStudyError: '',
       lessonStudyCompleted: studyCompleted,
@@ -2605,7 +2622,6 @@ Page({
       lessonPhraseCards: [],
       lessonPatternCards: []
     }));
-    await this.loadCachedLessonStudyPack(normalizedTask);
     await this.updatePassQuestion(normalizedTask, detail.progress);
     await this.syncPlayer(normalizedTask);
     wx.showToast({
@@ -2654,7 +2670,8 @@ Page({
       isPreviewMode: true,
       studyModeLabel: text('previewModeLabel', '预览模式'),
       checkinReady: false,
-      transcriptManualVisible: false
+      transcriptManualVisible: false,
+      transcriptExpanded: false
     }));
     await this.updatePassQuestion(nextTask, nextProgress);
     wx.showToast({

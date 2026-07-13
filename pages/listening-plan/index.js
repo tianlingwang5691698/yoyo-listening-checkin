@@ -3,7 +3,7 @@ const page = require('../../utils/page');
 const snapshotStore = require('../../utils/snapshot');
 const i18n = require('../../utils/i18n');
 
-const OVERVIEW_SNAPSHOT_KEY = 'listeningPlanOverviewSnapshotV2';
+const OVERVIEW_SNAPSHOT_KEY = 'listeningPlanOverviewSnapshotV4';
 const SNAPSHOT_MAX_AGE_MS = 24 * 60 * 60 * 1000;
 
 function t(key, variables) {
@@ -26,14 +26,15 @@ const FALLBACK_LEVEL_TABS = ['Pre A1', 'A1', 'A2', 'B1', 'B2', 'C1', 'C2'].map((
   stateText: levelId === 'C1' || levelId === 'C2' ? t('unavailable') : ''
 }));
 const FALLBACK_MATERIALS = {
-  'Pre A1': [{ category: 'song', title: 'Songs' }],
+  'Pre A1': [
+    { category: 'song', title: 'Songs' }
+  ],
   A1: [
     { category: 'newconcept1', title: 'New Concept 1' },
     { category: 'unlock1', title: 'Unlock 1 听口 第二版' },
     { category: 'peppa', title: 'Peppa' }
   ],
   A2: [
-    { category: 'peppa', title: 'Peppa' },
     { category: 'newconcept2', title: 'New Concept 2' },
     { category: 'petethecat', title: 'Pete the Cat' },
     { category: 'unlock2', title: 'Unlock 2 课本' }

@@ -2,11 +2,11 @@ const LEVEL_TABS = ['Pre A1', 'A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
 
 const MATERIALS = [
   { category: 'song', levelIds: ['Pre A1'], title: 'Songs' },
+  { category: 'peppa', levelIds: ['A1'], title: 'Peppa' },
   { category: 'newconcept1', levelIds: ['A1'], title: 'New Concept 1' },
   { category: 'unlock1', levelIds: ['A1'], title: 'Unlock 1 听口 第二版' },
   { category: 'unlock1thirdedition', levelIds: ['A1'], title: 'Unlock 1 听口 第三版' },
   { category: 'unlock1workbook', levelIds: ['A1'], title: 'Unlock 1 听口 练习册 第二版' },
-  { category: 'peppa', levelIds: ['A1', 'A2'], title: 'Peppa' },
   { category: 'newconcept2', levelIds: ['A2'], title: 'New Concept 2' },
   { category: 'petethecat', levelIds: ['A2'], title: 'Pete the Cat' },
   { category: 'unlock2', levelIds: ['A2'], title: 'Unlock 2 课本' },
