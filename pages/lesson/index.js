@@ -9,6 +9,7 @@ const effects = require('../../utils/effects');
 const i18n = require('../../utils/i18n');
 const { canUseDictionaryVoice, normalizeDictionaryVoiceText } = require('../../utils/dictionary-voice');
 const { createDictionaryVoicePlayer } = require('../../utils/dictionary-voice-player');
+const { getTaskAudioDisplayTitle } = require('../../utils/audio-title');
 const text = (key, fallback) => i18n.getPageText('lesson', key, undefined, fallback);
 const LESSON_TASK_SNAPSHOT_KEY = 'lessonTaskSnapshotV1';
 const LESSON_STUDY_PACK_SNAPSHOT_KEY = 'lessonStudyPackSnapshotV1';
@@ -134,12 +135,6 @@ function hasTaskAudioSource(task) {
   ));
 }
 
-function getDisplayNameFromPath(path) {
-  const normalizedPath = String(path || '').split('?')[0];
-  const fileName = normalizedPath.split('/').filter(Boolean).pop() || '';
-  return labels.decodeHtmlEntities(decodeURIComponent(fileName).replace(/\.[^.]+$/i, ''));
-}
-
 function normalizePlayableUrl(url) {
   const raw = String(url || '').trim();
   if (!/^https?:\/\//i.test(raw)) {
@@ -168,13 +163,7 @@ function buildCurrentAudio(task, playableUrl, playbackMode) {
   const cloudPath = String(task.audioCloudPath || '').trim();
   const fileID = String(task.audioFileId || buildCloudFileId(cloudPath)).trim();
   const src = normalizePlayableUrl(String(playableUrl || task.audioUrl || '').trim());
-  const title = String(
-    labels.decodeHtmlEntities(task.audioTitle)
-    || getDisplayNameFromPath(cloudPath || src)
-    || labels.decodeHtmlEntities(task.title)
-    || labels.decodeHtmlEntities(task.displayTitle)
-    || ''
-  ).trim();
+  const title = getTaskAudioDisplayTitle(task, cloudPath || src);
   return {
     title,
     fileID,

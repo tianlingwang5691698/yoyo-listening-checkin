@@ -48,7 +48,6 @@
     <view class="audio-record-stage {{isPlaying ? 'is-playing' : ''}} {{task.isPendingAsset ? 'is-pending' : ''}}">
       <view class="audio-record-disc"></view>
       <view class="audio-record-center">
-        <view class="audio-record-title" wx:if="{{currentAudio && currentAudio.title}}">{{currentAudio.title}}</view>
       </view>
       <view class="audio-pass-ring">
         <block wx:for="{{passSteps}}" wx:key="key">
@@ -328,7 +327,6 @@
         <view class="player-info-block">
           <view class="player-info-top">
             <view>
-              <view class="media-title" wx:if="{{currentAudio && currentAudio.title}}">{{currentAudio.title}}</view>
               <view class="player-status">{{isPlaying ? texts.playing : (audioReady ? texts.paused : texts.waiting)}}</view>
             </view>
           </view>

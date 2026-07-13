@@ -46,17 +46,20 @@ function formatEstimatedDuration(seconds) {
 }
 
 function buildRows(tasks) {
-  return (tasks || []).map((task) => ({
-    itemNo: task.itemNo,
-    category: task.category,
-    taskId: task.taskId,
-    title: labels.decodeHtmlEntities(task.displayTitle || task.title || t('itemNo', { n: task.itemNo })),
-    subtitle: labels.decodeHtmlEntities(task.audioCompactTitle || task.subtitle || ''),
-    durationSec: Number(task.durationSec || 0),
-    durationText: formatDuration(task.durationSec),
-    exactDurationText: formatExactDuration(task.durationSec),
-    taskSnapshot: task
-  }));
+  return (tasks || []).map((source) => {
+    const task = labels.normalizeTask(source);
+    return {
+      itemNo: task.itemNo,
+      category: task.category,
+      taskId: task.taskId,
+      title: task.displayTitle || t('itemNo', { n: task.itemNo }),
+      subtitle: task.displaySubtitle || task.subtitle || '',
+      durationSec: Number(task.durationSec || 0),
+      durationText: formatDuration(task.durationSec),
+      exactDurationText: formatExactDuration(task.durationSec),
+      taskSnapshot: task
+    };
+  });
 }
 
 function hasAudioFields(task) {

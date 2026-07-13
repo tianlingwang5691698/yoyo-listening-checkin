@@ -11,7 +11,7 @@ function buildReportItems(state, childId, date) {
     return {
       category,
       categoryLabel: tasks.getCategoryLabel(category),
-      title: task.audioCompactTitle || task.displayTitle || task.title,
+      title: task.displayTitle || task.audioTitle || task.title,
       playCount: record ? record.playCount : 0,
       repeatTarget: task.repeatTarget,
       completedToday: record ? record.completedToday : false

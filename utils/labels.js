@@ -1,3 +1,5 @@
+const { cleanAudioTitle, getTaskAudioDisplayTitle } = require('./audio-title');
+
 function decodeHtmlEntities(value) {
   return String(value || '')
     .replace(/&#39;|&apos;|&#x27;/gi, '\'')
@@ -72,13 +74,20 @@ function normalizeTask(task) {
     return task;
   }
   const categoryLabel = getCategoryDisplayLabel(task.category, task.categoryLabel);
+  const displayTitle = getTaskAudioDisplayTitle({
+    displayTitle: decodeHtmlEntities(task.displayTitle),
+    audioTitle: decodeHtmlEntities(task.audioTitle),
+    title: decodeHtmlEntities(task.title),
+    audioCloudPath: task.audioCloudPath,
+    audioUrl: task.audioUrl
+  });
   const nextTask = Object.assign({}, task, {
     categoryLabel,
     displayCategoryLabel: categoryLabel,
     title: decodeHtmlEntities(task.title),
-    displayTitle: decodeHtmlEntities(task.displayTitle),
+    displayTitle,
     displaySubtitle: decodeHtmlEntities(task.displaySubtitle),
-    audioTitle: decodeHtmlEntities(task.audioTitle),
+    audioTitle: cleanAudioTitle(decodeHtmlEntities(task.audioTitle)),
     audioCompactTitle: decodeHtmlEntities(task.audioCompactTitle),
     note: decodeHtmlEntities(task.note),
     rewardTitle: decodeHtmlEntities(task.rewardTitle),

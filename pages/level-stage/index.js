@@ -69,7 +69,7 @@ function getTaskTitle(task) {
   if (!task || task.isPendingAsset) {
     return t('waitingMaterial');
   }
-  return task.audioCompactTitle || task.displayTitle || task.title || t('unnamedTask');
+  return task.displayTitle || task.audioTitle || task.title || t('unnamedTask');
 }
 
 function buildTaskRows(category) {
