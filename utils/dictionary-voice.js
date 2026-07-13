@@ -24,6 +24,7 @@ function normalizeDictionaryVoiceText(value) {
     .replace(/~/g, ' something ')
     .replace(/&|\+/g, ' and ')
     .replace(/[→⇒]/g, ' to ')
+    .replace(/\s+-\s+/g, ' and ')
     .replace(/[()[\]{}]/g, ' ')
     .replace(/[,.!?;:，。！？；："“”]+/g, ' ')
     .replace(/\s+/g, ' ')

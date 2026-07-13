@@ -34,3 +34,14 @@ test('我的词库长结构清洗为有道可接收的朗读副本', () => {
   assert.equal(voice.canUseDictionaryVoice(cleaned), true);
   assert.equal(voice.buildDictionaryVoiceSegments(cleaned).length, 13);
 });
+
+test('Unlock 单复数对照词清洗后显示发音入口', () => {
+  for (const [raw, cleaned] of [
+    ['man - men', 'man and men'],
+    ['woman - women', 'woman and women'],
+    ['person - people', 'person and people']
+  ]) {
+    assert.equal(voice.normalizeDictionaryVoiceText(raw), cleaned);
+    assert.equal(voice.canUseDictionaryVoice(raw), true);
+  }
+});
