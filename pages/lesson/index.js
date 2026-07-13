@@ -702,6 +702,9 @@ Page({
     this.targetDate = query.targetDate || '';
     this.planDayIndex = query.planDayIndex || '';
     this.pendingAutoPlay = false;
+    this.songAudioDownloadKey = '';
+    this.songAudioDownloadPromise = null;
+    this.songAudioLocalPath = '';
     this.checkinConfirmShowing = false;
     this.audioPlayRequested = false;
     this.pendingSpeakingAfterListen = null;
@@ -1042,6 +1045,40 @@ Page({
       });
     });
   },
+  async preparePlayableAudio(task) {
+    const remoteUrl = normalizePlayableUrl(task && task.audioUrl);
+    if (!remoteUrl || !task || task.category !== 'song') {
+      return remoteUrl;
+    }
+    const downloadKey = `${task.category}:${task.taskId || remoteUrl}`;
+    if (this.songAudioDownloadKey === downloadKey && this.songAudioLocalPath) {
+      return this.songAudioLocalPath;
+    }
+    if (this.songAudioDownloadKey !== downloadKey || !this.songAudioDownloadPromise) {
+      this.songAudioDownloadKey = downloadKey;
+      this.songAudioLocalPath = '';
+      const startedAt = Date.now();
+      this.songAudioDownloadPromise = this.downloadAudio(remoteUrl)
+        .then((tempFilePath) => {
+          if (this.songAudioDownloadKey === downloadKey) {
+            this.songAudioLocalPath = tempFilePath;
+          }
+          monitor.logPerf('lesson', 'prepareSongAudio', Date.now() - startedAt, {
+            taskId: task.taskId,
+            mode: 'downloaded'
+          });
+          return tempFilePath;
+        })
+        .catch((error) => {
+          monitor.logError('lesson', 'prepareSongAudio', error, {
+            taskId: task.taskId,
+            mode: 'remote-fallback'
+          });
+          return remoteUrl;
+        });
+    }
+    return this.songAudioDownloadPromise;
+  },
   async syncPlayer(task) {
     const initialState = player.getInitialPlayerState((task && task.durationSec) || 0);
     const resolvedTask = await this.resolveTaskAudio(task);
@@ -1063,7 +1100,7 @@ Page({
       this.scheduleAudioErrorText(resolvedTask && resolvedTask.audioResolveError ? resolvedTask.audioResolveError : 'missing-audio-url');
       return;
     }
-    let playableUrl = normalizePlayableUrl(resolvedTask.audioUrl);
+    let playableUrl = await this.preparePlayableAudio(resolvedTask);
     let playbackMode = resolvedTask.audioSource === 'temp-url'
       ? 'temp-url'
       : (resolvedTask.audioResolveError ? 'static-fallback' : 'static-cloud-url');
@@ -1113,7 +1150,7 @@ Page({
         this.audioPrefetchKey = '';
         return;
       }
-      const playableUrl = normalizePlayableUrl(resolvedTask.audioUrl);
+      const playableUrl = await this.preparePlayableAudio(resolvedTask);
       const playbackMode = resolvedTask.audioSource === 'temp-url'
         ? 'temp-url'
         : (resolvedTask.audioResolveError ? 'static-fallback' : 'static-cloud-url');
