@@ -222,7 +222,7 @@
           <view class="library-vocab-card-face">
             <view class="library-vocab-word-wrap">
               <view class="library-vocab-study-word {{current.displaySizeClass}}" bindtap="speakCurrent">{{current.displayText}}</view>
-              <view class="library-vocab-study-speak {{audioLoading ? 'is-loading' : ''}}" wx:if="{{current.canSpeak}}" role="button" aria-label="{{texts.listen}}" bindtap="speakCurrent">♪</view>
+              <view class="library-vocab-study-speak {{audioLoading ? 'is-loading' : ''}} {{audioPlaying ? 'is-active' : ''}}" wx:if="{{current.canSpeak}}" role="button" aria-label="{{texts.listen}}" bindtap="speakCurrent">♪</view>
             </view>
             <view class="library-vocab-study-phonetic" wx:if="{{current.displayPhonetic}}">{{current.displayPhonetic}}</view>
           </view>
@@ -513,7 +513,7 @@
           <view class="study-age">{{current.typeLabel}}</view>
           <view class="study-word-row">
             <view class="study-word {{current.displaySizeClass}}" bindtap="speakCurrent">{{current.displayText}}</view>
-            <view class="study-speak {{audioLoading ? 'is-loading' : ''}}" wx:if="{{current.canSpeak}}" role="button" aria-label="{{texts.listen}}" bindtap="speakCurrent">♪</view>
+            <view class="study-speak {{audioLoading ? 'is-loading' : ''}} {{audioPlaying ? 'is-active' : ''}}" wx:if="{{current.canSpeak}}" role="button" aria-label="{{texts.listen}}" bindtap="speakCurrent">♪</view>
           </view>
           <view class="study-pron">
             <view class="study-phonetic" wx:if="{{current.displayPhonetic}}">{{current.displayPhonetic}}</view>

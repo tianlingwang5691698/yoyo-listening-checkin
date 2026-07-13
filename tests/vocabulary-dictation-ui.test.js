@@ -101,6 +101,9 @@ test('背词卡与词库列表发音入口统一为小音符', () => {
   assert.match(styles, /\.library-vocab-study-speak[^}]*display: flex[^}]*align-items: center[^}]*justify-content: center/);
   assert.match(styles, /\.vocab-row-speak/);
   assert.match(styles, /\.library-vocab-row-speak/);
+  assert.equal((template.match(/\{\{audioPlaying \? 'is-active' : ''\}\}/g) || []).length, 2);
+  assert.match(styles, /\.study-speak\.is-active/);
+  assert.match(styles, /\.library-vocab-study-speak\.is-active/);
 });
 
 test('听写记录入口在双语下使用较大字号且不换行', () => {

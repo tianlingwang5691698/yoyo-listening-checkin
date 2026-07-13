@@ -958,12 +958,15 @@
 }
 
 .vocab-row-speak.is-active,
-.library-vocab-row-speak.is-active {
+.library-vocab-row-speak.is-active,
+.study-speak.is-active,
+.library-vocab-study-speak.is-active {
   animation: libraryNoteBounce 0.56s ease-in-out infinite;
   box-shadow: 0 0 0 8rpx rgba(141, 183, 212, 0.16);
 }
 
-.library-vocab-row-speak.is-active {
+.library-vocab-row-speak.is-active,
+.library-vocab-study-speak.is-active {
   box-shadow: 0 0 0 7rpx rgba(184, 149, 98, 0.16);
 }
 
