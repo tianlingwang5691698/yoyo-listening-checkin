@@ -13,6 +13,26 @@ test('Peppa 时长按云端 128kbps MP3 文件大小还原', () => {
   assert.equal(catalogEngine.inferPeppaDurationFromFileSize(0), 0);
 });
 
+test('Peppa 三季使用完整静态 manifest 并保留真实时长', async () => {
+  const startedAt = Date.now();
+  await catalogEngine.refreshRuntimeCatalogs(true, ['peppa']);
+  const elapsedMs = Date.now() - startedAt;
+  const tasks = catalogEngine.getCatalog('peppa');
+  const seasonCounts = tasks.reduce((counts, task) => {
+    const season = Number((String(task.title).match(/^S(\d)/) || [])[1] || 0);
+    counts[season] = (counts[season] || 0) + 1;
+    return counts;
+  }, {});
+
+  assert.equal(tasks.length, 157);
+  assert.deepEqual(seasonCounts, { 1: 52, 2: 53, 3: 52 });
+  assert.equal(tasks.find((task) => task.title.startsWith('S213 ')).durationSec, 634);
+  assert.equal(tasks.find((task) => task.title.startsWith('S301 ')).durationSec, 305);
+  assert.ok(new Set(tasks.map((task) => task.durationSec)).size >= 9);
+  assert.equal(tasks.filter((task) => task.durationSec === 300).length, 0);
+  assert.ok(elapsedMs < 100, `Peppa manifest 加载耗时 ${elapsedMs}ms`);
+});
+
 test('Unlock 练习册听力排序将 mid term 放在 unit4 和 unit5 之间，end term 放最后', () => {
   ['unlock3', 'unlock4workbook'].forEach((category) => {
     const files = [

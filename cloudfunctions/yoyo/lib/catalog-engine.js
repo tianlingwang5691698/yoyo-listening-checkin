@@ -2,6 +2,8 @@ const { peppaTranscriptBuildStatus } = require('../transcripts/peppa_build_statu
 const { TRANSCRIPT_BUNDLE_PATHS } = require('./constants');
 const unlockSeriesManifests = require('../data/unlock-series-manifests.json');
 const staticCatalogManifests = require('../data/static-catalog-manifests.json');
+const peppaSeason1Sizes = require('../data/peppa-season-1-sizes');
+const peppaSeason23Manifest = require('../data/peppa-season-2-3-manifest');
 const trainingPoolRepository = require('../repositories/training-pool.repository');
 const storageAdapter = require('../adapters/storage.adapter');
 const transcriptAdapter = require('../adapters/transcript.adapter');
@@ -138,7 +140,7 @@ const peppaTasks = peppaTranscriptBuildStatus.map((item, index) => ({
   audioFileId: buildCloudFileId(`A1/Peppa/第1季/${item.fileName}.mp3`),
   audioSource: 'static-cloud-url',
   repeatTarget: 3,
-  durationSec: peppaDurationOverrides[item.fileName] || 300,
+  durationSec: inferPeppaDurationFromFileSize(peppaSeason1Sizes[item.fileName]) || peppaDurationOverrides[item.fileName] || 300,
   coverTone: 'sunrise',
   transcriptTrackId: item.trackId || null,
   textSource: {
@@ -147,6 +149,35 @@ const peppaTasks = peppaTranscriptBuildStatus.map((item, index) => ({
     filePath: buildCloudAssetUrl('A1/Peppa/第1季/PeppaPig第1季英文剧本台词.pdf')
   }
 }));
+
+const peppaSeason23Tasks = peppaSeason23Manifest.map((item) => {
+  const season = Number(item.season);
+  const codeMatch = String(item.fileName || '').match(/^S(\d)(\d{2})/i);
+  const episode = codeMatch ? Number(codeMatch[2]) : 0;
+  const audioCloudPath = `A1/Peppa/第${season}季/${item.fileName}.mp3`;
+  return {
+    taskId: `peppa-s${season}-${episode}`,
+    category: 'peppa',
+    title: item.fileName,
+    subtitle: `Peppa Pig Season ${season}`,
+    audioUrl: buildCloudAssetUrl(audioCloudPath),
+    audioCloudPath,
+    audioFileId: buildCloudFileId(audioCloudPath),
+    audioSource: 'static-cloud-url',
+    repeatTarget: 3,
+    durationSec: inferPeppaDurationFromFileSize(item.size),
+    coverTone: 'mint',
+    transcriptTrackId: `track-peppa-s${season}${String(episode).padStart(2, '0')}`,
+    transcriptStatus: season === 2 ? 'ready' : 'pending',
+    transcriptBatch: season,
+    syncGranularity: 'word',
+    textSource: {
+      sourceType: 'transcript-bundle',
+      title: `Peppa Pig Season ${season} Script`,
+      filePath: ''
+    }
+  };
+});
 
 const unlockAudioFiles = [
   ['Unlock2e_A1_1.2', 85], ['Unlock2e_A1_1.5', 145], ['Unlock2e_A1_2.2', 120], ['Unlock2e_A1_2.3', 65],
@@ -242,7 +273,7 @@ const STANDALONE_LEVEL_CATEGORIES = ['unlock1thirdedition', 'unlock1workbook', '
 const NEW_CONCEPT_CATEGORIES = ['newconcept1', 'newconcept2', 'newconcept3', 'newconcept4'];
 const UNLOCK_SERIES_CATEGORIES = ['unlock1', 'unlock1thirdedition', 'unlock1workbook', 'unlock2', 'unlock2thirdedition', 'unlock2workbook', 'unlock3textbook', 'unlock3thirdedition', 'unlock3', 'unlock4', 'unlock4thirdedition', 'unlock4workbook'];
 const UNLOCK_WORKBOOK_CATEGORIES = ['unlock1workbook', 'unlock2workbook', 'unlock3', 'unlock4workbook'];
-const MANIFEST_ONLY_CATEGORIES = ['unlock1thirdedition', 'unlock2thirdedition', 'unlock3thirdedition', 'unlock4thirdedition', 'song'];
+const MANIFEST_ONLY_CATEGORIES = ['peppa', 'unlock1thirdedition', 'unlock2thirdedition', 'unlock3thirdedition', 'unlock4thirdedition', 'song'];
 
 function slugifyTrackIdPart(value) {
   return String(value || '')
@@ -437,7 +468,9 @@ function inferPeppaTaskMeta(audioBaseName, cloudPath, index) {
   const folderText = String(cloudPath || '');
   const season = match
     ? Number(match[1])
-    : (folderText.includes('第2季') || /season\s*2/i.test(folderText) ? 2 : 1);
+    : (folderText.includes('第3季') || /season\s*3/i.test(folderText)
+      ? 3
+      : (folderText.includes('第2季') || /season\s*2/i.test(folderText) ? 2 : 1));
   const episode = match ? Number(match[2]) : (index + 1);
   if (!Number.isFinite(season) || !Number.isFinite(episode) || season < 1 || episode < 1) {
     return null;
@@ -545,7 +578,7 @@ function getStaticCatalogMap() {
     newconcept2: [],
     newconcept3: [],
     newconcept4: [],
-    peppa: peppaTasks,
+    peppa: peppaTasks.concat(peppaSeason23Tasks),
     unlock1: unlockTasks,
     unlock1thirdedition: buildUnlockSeriesTasks('unlock1thirdedition'),
     unlock1workbook: buildUnlockSeriesTasks('unlock1workbook'),
