@@ -78,6 +78,7 @@ const FLASHCARD_SOURCE_CACHE_CONTENT_VERSION = 2026071302;
 const FLASHCARD_PLAN_SETTINGS_PREFIX = 'flashcardPlanSettings:';
 const FLASHCARD_CHECKIN_DAYS_KEY = 'flashcardCheckinDays';
 const FLASHCARD_AUDIO_CACHE_PREFIX = 'flashcard-dictionary-audio-v3-';
+const FLASHCARD_AUDIO_TOTAL_TIMEOUT_MS = 5000;
 
 const LIMIT_MIN = 5;
 const LIMIT_DEFAULT_MAX = 500;
@@ -1347,6 +1348,7 @@ Page({
       this.flashcardAudioContext.onEnded(() => {
         this.clearCardAudioStartTimer();
         this._flashcardAudioFallbackUrls = [];
+        this._flashcardAudioDeadlineAt = 0;
         this.setData({ audioPlaying: false, audioCompleted: true, libraryAudioKey: '' });
       });
       this.flashcardAudioContext.onError(() => {
@@ -1354,6 +1356,7 @@ Page({
         const failedUrl = String(this._flashcardActiveAudioUrl || '');
         if (failedUrl && !/^https:\/\//.test(failedUrl)) removeLocalAudioFile(failedUrl);
         if (this.tryNextDictionaryVoiceFallback()) return;
+        this._flashcardAudioDeadlineAt = 0;
         this.setData({ audioPlaying: false, audioCompleted: true, libraryAudioKey: '' });
         if (Date.now() < Number(this.silentAudioErrorUntil || 0)) {
           return;
@@ -1374,7 +1377,7 @@ Page({
     const fallbackUrls = this._flashcardAudioFallbackUrls || [];
     const currentIndex = Number(this._flashcardAudioFallbackIndex);
     const nextIndex = (Number.isFinite(currentIndex) ? currentIndex : -1) + 1;
-    if (!this.flashcardAudioContext || nextIndex >= fallbackUrls.length) return false;
+    if (!this.flashcardAudioContext || nextIndex >= fallbackUrls.length || Date.now() >= Number(this._flashcardAudioDeadlineAt || 0)) return false;
     this._flashcardAudioFallbackIndex = nextIndex;
     this.startCardAudioStartTimer(this._flashcardAudioRequestId);
     this._flashcardActiveAudioUrl = fallbackUrls[nextIndex];
@@ -1387,6 +1390,7 @@ Page({
     this._flashcardAudioRequestId = Number(this._flashcardAudioRequestId || 0) + 1;
     this._flashcardAudioLoading = false;
     this._flashcardAudioFallbackUrls = [];
+    this._flashcardAudioDeadlineAt = 0;
     if (this.flashcardAudioContext) {
       try {
         this.flashcardAudioContext.stop();
@@ -1401,13 +1405,20 @@ Page({
   },
   startCardAudioStartTimer(audioRequestId) {
     this.clearCardAudioStartTimer();
+    const deadlineAt = Number(this._flashcardAudioDeadlineAt || 0);
+    const remainingMs = Math.max(0, deadlineAt - Date.now());
+    const currentIndex = Number(this._flashcardAudioFallbackIndex);
+    const fallbackCount = (this._flashcardAudioFallbackUrls || []).length;
+    const attemptsRemaining = Math.max(1, fallbackCount - (Number.isFinite(currentIndex) ? currentIndex : -1));
+    const attemptTimeoutMs = Math.max(250, Math.floor(remainingMs / attemptsRemaining));
     this.cardAudioStartTimer = setTimeout(() => {
       this.cardAudioStartTimer = null;
       if (this._flashcardAudioRequestId !== audioRequestId) return;
-      if (this.tryNextDictionaryVoiceFallback()) return;
+      if (Date.now() < Number(this._flashcardAudioDeadlineAt || 0) && this.tryNextDictionaryVoiceFallback()) return;
       this._flashcardAudioRequestId += 1;
       this._flashcardAudioLoading = false;
       this._flashcardAudioFallbackUrls = [];
+      this._flashcardAudioDeadlineAt = 0;
       this.silentAudioErrorUntil = Date.now() + 1000;
       if (this.flashcardAudioContext) {
         try {
@@ -1415,7 +1426,7 @@ Page({
         } catch (error) {}
       }
       this.setData({ audioLoading: false, audioPlaying: false, audioCompleted: true, libraryAudioKey: '' });
-    }, 6000);
+    }, attemptTimeoutMs);
   },
   playCompletionSfx() {
     if (this.data.audioPlaying || this.data.audioLoading) return;
@@ -1496,24 +1507,28 @@ Page({
       }
       return;
     }
-    this.startCardAudioStartTimer(audioRequestId);
     const fallbackUrls = buildDictionaryVoiceUrls(audioText);
     this._flashcardAudioFallbackUrls = fallbackUrls;
     this._flashcardActiveKey = current.flashcardKey || '';
+    this._flashcardAudioDeadlineAt = Date.now() + FLASHCARD_AUDIO_TOTAL_TIMEOUT_MS;
     const localAudioPath = current.audioLocalPath || getLocalAudioPath(current.flashcardKey);
     if (localFileExists(localAudioPath)) {
       this._flashcardAudioFallbackIndex = -1;
+      this.startCardAudioStartTimer(audioRequestId);
       this.playAudioUrl(localAudioPath, { silent });
       return;
     }
     if (!canUseDictionaryVoice(audioText)) {
       this.clearCardAudioStartTimer();
+      this._flashcardAudioFallbackUrls = [];
+      this._flashcardAudioDeadlineAt = 0;
       this.setData({ audioLoading: false, audioPlaying: false, audioCompleted: true, libraryAudioKey: '' });
       if (!silent) wx.showToast({ title: text('noAudio', '暂无发音内容'), icon: 'none' });
       return;
     }
     const url = fallbackUrls[0];
     this._flashcardAudioFallbackIndex = 0;
+    this.startCardAudioStartTimer(audioRequestId);
     this.playAudioUrl(url, { silent });
     this.updateCardAudioCache(current.flashcardKey, { audioUrl: url });
   },

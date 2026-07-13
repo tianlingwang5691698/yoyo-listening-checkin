@@ -113,7 +113,9 @@ test('背诵正常发音结束后继续，失败或超时则解锁', () => {
   assert.equal((template.match(/disabled="\{\{audioLoading \|\| audioPlaying\}\}"/g) || []).length, 2);
   assert.match(source, /onPlay\(\(\) => \{[\s\S]*this\.clearCardAudioStartTimer\(\)/);
   assert.match(source, /startCardAudioStartTimer\(audioRequestId\)/);
-  assert.match(source, /\}, 6000\);/);
+  assert.match(source, /FLASHCARD_AUDIO_TOTAL_TIMEOUT_MS = 5000/);
+  assert.match(source, /_flashcardAudioDeadlineAt/);
+  assert.match(source, /attemptTimeoutMs/);
   assert.match(source, /if \(!canUseDictionaryVoice\(audioText\)\)/);
   assert.match(source, /buildDictionaryVoiceUrls\(audioText\)/);
   assert.match(source, /_flashcardAudioFallbackUrls/);
@@ -122,16 +124,20 @@ test('背诵正常发音结束后继续，失败或超时则解锁', () => {
   assert.match(source, /if \(this\.data\.audioLoading \|\| this\.data\.audioPlaying\) return;/);
 });
 
-test('听写发音失败立即显示词义提示', () => {
+test('听写美英音总计 5 秒失败后显示词义提示', () => {
   const source = read('pages/reading/flashcards/dictation/index.js');
   const template = read('pages/reading/flashcards/dictation/index.wxml');
   const styles = read('pages/reading/flashcards/dictation/index.wxss');
   const catalog = require('../utils/i18n-catalog-learning').vocabularyDictation;
-  assert.match(source, /onError\(\(\) => \{[\s\S]*audioFailed: true/);
-  assert.match(source, /setTimeout\(\(\) => \{[\s\S]*audioFailed: true[\s\S]*\}, 3000\)/);
+  assert.match(source, /DICTATION_AUDIO_TOTAL_TIMEOUT_MS = 5000/);
+  assert.match(source, /type=2[\s\S]*type=1/);
+  assert.match(source, /tryNextDictationAudioFallback\(\)/);
+  assert.match(source, /markDictationAudioFailed\(\)/);
   assert.match(source, /onPlay\(\(\) => this\.clearAudioStartTimer\(\)\)/);
   assert.match(template, /audioFailed && !revealed/);
   assert.match(template, /current\.meaning/);
+  assert.match(template, /disabled="\{\{revealed\}\}"/);
+  assert.doesNotMatch(template, /disabled="\{\{audioFailed/);
   assert.match(styles, /\.dictation-audio-hint/);
   assert.ok(catalog['zh-CN'].audioFailedHint);
   assert.ok(catalog.en.audioFailedHint);

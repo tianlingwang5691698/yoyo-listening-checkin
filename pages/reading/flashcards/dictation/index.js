@@ -6,6 +6,23 @@ const { formatVocabularyDefinitions, formatVocabularyMeaning } = require('../../
 
 const text = (key, fallback) => i18n.getPageText('vocabularyDictation', key, undefined, fallback);
 const SESSION_LIMIT = 20;
+const DICTATION_AUDIO_TOTAL_TIMEOUT_MS = 5000;
+
+function normalizeDictionaryVoiceText(value) {
+  return String(value || '')
+    .replace(/\bsb(?:'s)?\.?(?![A-Za-z])/gi, (word) => (/('s)/i.test(word) ? "somebody's" : 'somebody'))
+    .replace(/\bsth\.?(?![A-Za-z])/gi, 'something')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function buildDictionaryVoiceUrls(value) {
+  const encoded = encodeURIComponent(normalizeDictionaryVoiceText(value));
+  return [
+    `https://dict.youdao.com/dictvoice?audio=${encoded}&type=2`,
+    `https://dict.youdao.com/dictvoice?audio=${encoded}&type=1`
+  ];
+}
 
 function defaultPracticeCount(total) {
   const available = Math.max(0, Number(total || 0));
@@ -266,24 +283,63 @@ Page({
     this.audioPlayToken = playToken;
     this.clearAudioStartTimer();
     this.setData({ audioFailed: false });
+    this.dictationAudioFallbackUrls = buildDictionaryVoiceUrls(word);
+    this.dictationAudioFallbackIndex = 0;
+    this.dictationAudioDeadlineAt = Date.now() + DICTATION_AUDIO_TOTAL_TIMEOUT_MS;
     if (!this.audioContext) {
       this.audioContext = wx.createInnerAudioContext();
       this.audioContext.obeyMuteSwitch = false;
       this.audioContext.onPlay(() => this.clearAudioStartTimer());
+      this.audioContext.onEnded(() => {
+        this.clearAudioStartTimer();
+        this.dictationAudioFallbackUrls = [];
+        this.dictationAudioDeadlineAt = 0;
+      });
       this.audioContext.onError(() => {
         this.clearAudioStartTimer();
-        const currentWord = this.data.current && this.data.current.word;
-        if (currentWord && currentWord === this.playingWord) this.setData({ audioFailed: true });
+        if (this.tryNextDictationAudioFallback()) return;
+        this.markDictationAudioFailed();
       });
     }
     this.audioContext.stop();
-    this.audioContext.src = `https://dict.youdao.com/dictvoice?audio=${encodeURIComponent(word)}&type=2`;
+    this.audioContext.src = this.dictationAudioFallbackUrls[0];
+    this.startDictationAudioAttemptTimer(word, playToken);
+    this.audioContext.play();
+  },
+  tryNextDictationAudioFallback() {
+    const urls = this.dictationAudioFallbackUrls || [];
+    const nextIndex = Number(this.dictationAudioFallbackIndex || 0) + 1;
+    if (!this.audioContext || nextIndex >= urls.length || Date.now() >= Number(this.dictationAudioDeadlineAt || 0)) return false;
+    this.dictationAudioFallbackIndex = nextIndex;
+    this.audioContext.src = urls[nextIndex];
+    this.startDictationAudioAttemptTimer(this.playingWord, this.audioPlayToken);
+    this.audioContext.play();
+    return true;
+  },
+  startDictationAudioAttemptTimer(word, playToken) {
+    this.clearAudioStartTimer();
+    const remainingMs = Math.max(0, Number(this.dictationAudioDeadlineAt || 0) - Date.now());
+    const attemptsRemaining = Math.max(1, (this.dictationAudioFallbackUrls || []).length - Number(this.dictationAudioFallbackIndex || 0));
+    const attemptTimeoutMs = Math.max(250, Math.floor(remainingMs / attemptsRemaining));
     this.audioStartTimer = setTimeout(() => {
       this.audioStartTimer = null;
       const currentWord = this.data.current && this.data.current.word;
-      if (this.audioPlayToken === playToken && currentWord === word) this.setData({ audioFailed: true });
-    }, 3000);
-    this.audioContext.play();
+      if (this.audioPlayToken !== playToken || currentWord !== word) return;
+      if (Date.now() < Number(this.dictationAudioDeadlineAt || 0) && this.tryNextDictationAudioFallback()) return;
+      this.markDictationAudioFailed();
+    }, attemptTimeoutMs);
+  },
+  markDictationAudioFailed() {
+    const currentWord = this.data.current && this.data.current.word;
+    if (!currentWord || currentWord !== this.playingWord) return;
+    this.dictationAudioFallbackUrls = [];
+    this.dictationAudioDeadlineAt = 0;
+    if (this.audioContext) {
+      try {
+        this.audioContext.stop();
+      } catch (error) {}
+    }
+    this.setData({ audioFailed: true });
   },
   clearAudioStartTimer() {
     if (!this.audioStartTimer) return;
