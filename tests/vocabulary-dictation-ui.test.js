@@ -111,11 +111,13 @@ test('背诵正常发音结束后继续，失败或超时则解锁', () => {
   const source = read('pages/reading/flashcards/index.js');
   const template = read('pages/reading/flashcards/index.wxml');
   assert.equal((template.match(/disabled="\{\{audioLoading \|\| audioPlaying\}\}"/g) || []).length, 2);
-  assert.match(source, /onPlay\(\(\) => this\.clearCardAudioStartTimer\(\)\)/);
+  assert.match(source, /onPlay\(\(\) => \{[\s\S]*this\.clearCardAudioStartTimer\(\)/);
   assert.match(source, /startCardAudioStartTimer\(audioRequestId\)/);
-  assert.match(source, /\}, 3000\);/);
+  assert.match(source, /\}, 6000\);/);
   assert.match(source, /if \(!canUseDictionaryVoice\(audioText\)\)/);
-  assert.match(source, /buildDictionaryVoiceUrl\(audioText\)/);
+  assert.match(source, /buildDictionaryVoiceUrls\(audioText\)/);
+  assert.match(source, /_flashcardAudioFallbackUrls/);
+  assert.match(source, /tryNextDictionaryVoiceFallback\(\)/);
   assert.match(source, /cancelCurrentAudio\(\)/);
   assert.match(source, /if \(this\.data\.audioLoading \|\| this\.data\.audioPlaying\) return;/);
 });

@@ -44,8 +44,11 @@ test('词汇发音只使用词典直连与词典专用缓存', () => {
   assert.doesNotMatch(pageSource, /synthesizeReadingAudio/);
   assert.doesNotMatch(pageSource, /store\.getTempFileURL/);
   assert.doesNotMatch(pageSource, /store\.saveFlashcardAudio/);
-  assert.match(pageSource, /FLASHCARD_AUDIO_CACHE_PREFIX = 'flashcard-dictionary-audio-v2-'/);
-  assert.match(pageSource, /buildDictionaryVoiceUrl\(audioText\)/);
+  assert.match(pageSource, /FLASHCARD_AUDIO_CACHE_PREFIX = 'flashcard-dictionary-audio-v3-'/);
+  assert.match(pageSource, /buildDictionaryVoiceUrls\(audioText\)/);
+  assert.match(pageSource, /type=2[\s\S]*type=1/);
+  assert.match(pageSource, /normalizeDictionaryVoiceText/);
+  assert.match(pageSource, /removeLocalAudioFile\(filePath\)/);
   assert.match(pageTemplate, /libraryAudioKey === item\.flashcardKey/);
   assert.match(pageStyles, /@keyframes libraryNoteBounce/);
   assert.match(pageStyles, /\.library-vocab-row-speak\.is-active/);
