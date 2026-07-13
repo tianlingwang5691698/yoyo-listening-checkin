@@ -19,6 +19,17 @@ const EM1_CONTENT_PATHS = {
 const WRONG_COLLECTION = 'grammarWrongQuestions';
 const PROGRESS_COLLECTION = 'grammarTopicProgress';
 const EXPLANATION_COLLECTION = 'grammarQuestionExplanations';
+const NARRATION_AUDIO_COLLECTION = 'grammarLessonNarrationAudios';
+const NARRATION_JOB_STALE_MS = 4 * 60 * 1000;
+const NARRATION_HASHES = {
+  'preposition:prep-essence:v1:zh-CN': '18e438f2df994dbe73bc048cd2d926401ae92aaf007df233f036f773b3a14792',
+  'preposition:prep-essence:v2:zh-CN': '566b67c46c72910e8b679307cc234c5b83145b223be268ada98981bbba36c18a',
+  'preposition:prep-essence:v3:zh-CN': '5b9548bef9b62f64838d0ef9e5dd91caae3a797cc427d715501861404619eba2',
+  'preposition:prep-essence:v4:zh-CN': 'ad55bc1889020d139e8355348e5deff8e7cdd556ba988453db2ee72a9041ed58',
+  'preposition:prep-essence:v5:zh-CN': '2e69f034eb6c4722a10844586aa4b90ce4b40c48d1b7e16f17ba4d91bbf202c8',
+  'preposition:prep-essence:v6:zh-CN': '20ea797dd0980665800ff6fae80bc82924b7ae41cc7674966fd274a335fc99aa',
+  'preposition:prep-essence:v1:en': '7742c616aaf5bd88bb8d2df644226a9e63e85f40321f3122944388dfa511655f'
+};
 
 function topicFileName(topicId) {
   return `${crypto.createHash('sha1').update(String(topicId || '')).digest('hex')}.json`;
@@ -425,7 +436,7 @@ function parseJsonText(text) {
   }
 }
 
-function postJson(url, apiKey, body) {
+function postJson(url, apiKey, body, timeoutMs = 60000) {
   return new Promise((resolve, reject) => {
     let target;
     try {
@@ -446,7 +457,7 @@ function postJson(url, apiKey, body) {
         'Content-Type': 'application/json',
         'Content-Length': Buffer.byteLength(payload)
       },
-      timeout: 60000
+      timeout: timeoutMs
     }, (response) => {
       let text = '';
       response.setEncoding('utf8');
@@ -468,6 +479,201 @@ function postJson(url, apiKey, body) {
     request.write(payload);
     request.end();
   });
+}
+
+function narrationHash(text) {
+  return crypto.createHash('sha256').update(String(text || '')).digest('hex');
+}
+
+function decodeNarrationAudio(response) {
+  const raw = String(response && response.data && response.data.audio || response && response.audio || '').trim();
+  if (!raw) throw new Error('grammar-narration-audio-empty');
+  const buffer = /^[0-9a-f]+$/i.test(raw) && raw.length % 2 === 0
+    ? Buffer.from(raw, 'hex')
+    : Buffer.from(raw, 'base64');
+  if (buffer.length < 512) throw new Error('grammar-narration-audio-invalid');
+  return buffer;
+}
+
+function isMissingDocumentError(error) {
+  const message = String(error && (error.errMsg || error.message || error) || '');
+  return message.includes('-502005') || /document.*not exist|not found/i.test(message);
+}
+
+async function getNarrationDocument(cacheKey) {
+  try {
+    const result = await dbAdapter.collection(NARRATION_AUDIO_COLLECTION).doc(cacheKey).get();
+    return result && result.data ? result.data : null;
+  } catch (error) {
+    if (isMissingDocumentError(error)) return null;
+    throw error;
+  }
+}
+
+async function resolveNarrationAudio(item) {
+  if (!item || !item.active || !item.audioFileId && !item.audioCloudPath) return null;
+  const audioUrl = await storageAdapter.getTempFileURL(item.audioFileId, item.audioCloudPath);
+  return audioUrl ? Object.assign({}, item, { audioUrl }) : null;
+}
+
+async function getCachedNarrationAudio(cacheKey) {
+  const direct = await resolveNarrationAudio(await getNarrationDocument(cacheKey));
+  if (direct) return direct;
+  const result = await dbAdapter.collection(NARRATION_AUDIO_COLLECTION)
+    .where({ cacheKey, active: true })
+    .limit(5)
+    .get();
+  const items = ((result && result.data) || []).sort((left, right) => String(right.createdAt || '').localeCompare(String(left.createdAt || '')));
+  for (let index = 0; index < items.length; index += 1) {
+    const item = items[index];
+    const resolved = await resolveNarrationAudio(item);
+    if (resolved) return resolved;
+  }
+  return null;
+}
+
+async function acquireNarrationJob(cacheKey, metadata) {
+  const now = new Date().toISOString();
+  return dbAdapter.db.runTransaction(async (transaction) => {
+    const reference = transaction.collection(NARRATION_AUDIO_COLLECTION).doc(cacheKey);
+    let current = null;
+    try {
+      const result = await reference.get();
+      current = result && result.data ? result.data : null;
+    } catch (error) {
+      if (!isMissingDocumentError(error)) throw error;
+    }
+    if (current && current.active && (current.audioFileId || current.audioCloudPath)) {
+      return { state: 'ready', item: current };
+    }
+    const startedAt = Date.parse(current && current.generationStartedAt || '');
+    if (current && current.status === 'generating' && Number.isFinite(startedAt) && Date.now() - startedAt < NARRATION_JOB_STALE_MS) {
+      return { state: 'generating' };
+    }
+    await reference.set({
+      data: Object.assign({}, metadata, {
+        cacheKey,
+        status: 'generating',
+        active: false,
+        generationStartedAt: now,
+        createdAt: current && current.createdAt || now,
+        updatedAt: now
+      })
+    });
+    return { state: 'acquired' };
+  });
+}
+
+async function markNarrationJobFailed(cacheKey, error) {
+  try {
+    await dbAdapter.collection(NARRATION_AUDIO_COLLECTION).doc(cacheKey).update({
+      data: {
+        status: 'failed',
+        active: false,
+        lastError: String(error && error.message || error || 'unknown').slice(0, 240),
+        updatedAt: new Date().toISOString()
+      }
+    });
+  } catch (updateError) {}
+}
+
+async function getGrammarNarrationAudio(event) {
+  const payload = (event && event.payload) || {};
+  const narrationId = String(payload.narrationId || '').trim();
+  const version = String(payload.version || '').trim();
+  const language = String(payload.language || '') === 'en' ? 'en' : 'zh-CN';
+  const text = String(payload.text || '').trim();
+  const approvalKey = `${narrationId}:${version}:${language}`;
+  const textHash = narrationHash(text);
+  if (!narrationId || !version || !text || NARRATION_HASHES[approvalKey] !== textHash) {
+    throw new Error('grammar-narration-not-approved');
+  }
+
+  const endpoint = String(process.env.GRAMMAR_TTS_ENDPOINT || '').trim();
+  const apiKey = String(process.env.GRAMMAR_TTS_API_KEY || '').trim();
+  const model = String(process.env.GRAMMAR_TTS_MODEL || 'speech-2.8-turbo').trim();
+  const voice = String(process.env.GRAMMAR_TTS_VOICE || 'male-qn-jingying').trim();
+  const emotion = String(process.env.GRAMMAR_TTS_EMOTION || 'calm').trim();
+  const speedValue = Number(process.env.GRAMMAR_TTS_SPEED || 0.9);
+  const speed = Number.isFinite(speedValue) ? Math.min(2, Math.max(0.5, speedValue)) : 0.9;
+  if (!endpoint || !apiKey) throw new Error('grammar-narration-missing-env');
+
+  const cacheKey = narrationHash([approvalKey, textHash, model, voice, speed, emotion, 'mp3'].join('|')).slice(0, 40);
+  const cached = await getCachedNarrationAudio(cacheKey);
+  if (cached) {
+    return {
+      audioUrl: cached.audioUrl,
+      audioFileId: cached.audioFileId || '',
+      audioCloudPath: cached.audioCloudPath || '',
+      cacheKey,
+      cached: true,
+      model,
+      voice
+    };
+  }
+
+  const metadata = { narrationId, version, language, textHash, model, voice, emotion, speed };
+  const job = await acquireNarrationJob(cacheKey, metadata);
+  if (job.state === 'generating') {
+    return { audioUrl: '', cacheKey, cached: false, generating: true, retryAfterMs: 3000, model, voice };
+  }
+  if (job.state === 'ready') {
+    const ready = await resolveNarrationAudio(job.item);
+    if (ready) {
+      return { audioUrl: ready.audioUrl, audioFileId: ready.audioFileId || '', audioCloudPath: ready.audioCloudPath || '', cacheKey, cached: true, generating: false, model, voice };
+    }
+  }
+
+  try {
+    const response = await postJson(endpoint, apiKey, {
+    model,
+    text,
+    stream: false,
+    voice_setting: {
+      voice_id: voice,
+      speed,
+      vol: 1,
+      pitch: 0,
+      emotion
+    },
+    audio_setting: {
+      sample_rate: 32000,
+      bitrate: 128000,
+      format: 'mp3',
+      channel: 1
+    },
+      subtitle_enable: false
+    }, 150000);
+    if (response && response.base_resp && Number(response.base_resp.status_code || 0) !== 0) {
+      throw new Error(`grammar-narration-provider:${response.base_resp.status_msg || response.base_resp.status_code}`);
+    }
+    const audioBuffer = decodeNarrationAudio(response);
+    const safeNarrationId = narrationId.replace(/[^a-z0-9-]+/gi, '-');
+    const uniqueSuffix = `${Date.now()}-${crypto.randomBytes(3).toString('hex')}`;
+    const audioCloudPath = `_grammar_audio/${safeNarrationId}/${version}/${cacheKey}-${uniqueSuffix}.mp3`;
+    const uploaded = await storageAdapter.uploadCloudFileBuffer(audioCloudPath, audioBuffer);
+    const audioFileId = uploaded && uploaded.fileId ? uploaded.fileId : '';
+    const audioUrl = await storageAdapter.getTempFileURL(audioFileId, audioCloudPath);
+    if (!audioFileId || !audioUrl) throw new Error('grammar-narration-upload-failed');
+
+    const now = new Date().toISOString();
+    await dbAdapter.collection(NARRATION_AUDIO_COLLECTION).doc(cacheKey).set({
+      data: Object.assign({}, metadata, {
+        cacheKey,
+        status: 'ready',
+        audioFileId,
+        audioCloudPath,
+        active: true,
+        generationFinishedAt: now,
+        createdAt: now,
+        updatedAt: now
+      })
+    });
+    return { audioUrl, audioFileId, audioCloudPath, cacheKey, cached: false, generating: false, model, voice };
+  } catch (error) {
+    await markNarrationJobFailed(cacheKey, error);
+    throw error;
+  }
 }
 
 function fallbackExplanation(question, reason) {
@@ -624,5 +830,6 @@ module.exports = {
   getGrammarWrongBook,
   getGrammarProgress,
   recordGrammarProgress,
+  getGrammarNarrationAudio,
   explainGrammarQuestion
 };

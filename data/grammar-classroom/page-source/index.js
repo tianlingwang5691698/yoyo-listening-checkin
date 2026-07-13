@@ -293,7 +293,7 @@ function auditThirdPersonCourse(course, english) {
 function buildClassroomText(includeVerbCourse = false) {
   const english = i18n.getLanguage() === 'en';
   const classroom = english ? {
-    tab: 'Classroom', demo: 'DEMO · LESSON 1', title: 'Why does a verb sometimes end in s?',
+    tab: 'Micro-Lessons', demo: 'DEMO · LESSON 1', title: 'Why does a verb sometimes end in s?',
     lead: 'Compare the two sentences and spot what changes.', coreLabel: 'The core idea',
     core: 'When one person does something, English often changes the verb with -s to show who is acting.',
     question: 'Your turn: Mary ___ music.', correct: 'Correct! Mary is one person, so we use likes.',
@@ -358,7 +358,7 @@ function buildClassroomText(includeVerbCourse = false) {
       ] }
     ]
   } : {
-    tab: '语法课堂', demo: 'DEMO · 第 1 课', title: '动词为什么有时多一个 s？',
+    tab: '语法微课堂', demo: 'DEMO · 第 1 课', title: '动词为什么有时多一个 s？',
     lead: '先观察两句话，看看谁发生了变化。', coreLabel: '语法本质',
     core: '一个人做事时，英语会让动词发生变化，用 -s 提醒我们“是谁在做”。',
     question: '轮到你：Mary ___ music.', correct: '答对了！Mary 是一个人，所以用 likes。',

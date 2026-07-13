@@ -1,3 +1,5 @@
+const store = require('../../../utils/store');
+
 const THEME_KEY = 'uiTheme';
 const LANGUAGE_KEY = 'yoyoLanguageV1';
 
@@ -120,7 +122,16 @@ function uiText(english) {
     coreLevel: english ? 'Core' : '核心',
     advancedLevel: english ? 'Advanced' : '进阶',
     loadError: english ? 'The course could not be opened. Return and try again.' : '课程暂时无法打开，请返回后重试。',
-    planned: english ? 'Course in progress' : '课程正在建设'
+    planned: english ? 'Course in progress' : '课程正在建设',
+    listenNarration: english ? 'Play' : '播放讲解',
+    resumeNarration: english ? 'Resume' : '继续播放',
+    loadingNarration: english ? 'Preparing…' : '准备中…',
+    pauseNarration: english ? 'Pause' : '暂停',
+    replayNarration: english ? 'Replay' : '重新播放',
+    restartNarration: english ? 'Play from start' : '从头播放',
+    rewindNarration: '-15s',
+    forwardNarration: '+15s',
+    narrationUnavailable: english ? 'Audio is temporarily unavailable.' : '讲解语音暂时不可用'
   };
 }
 
@@ -179,6 +190,14 @@ Page({
     result: '',
     isLastQuestion: false,
     isLastLesson: false,
+    narrationLoading: false,
+    narrationPlaying: false,
+    narrationReady: false,
+    narrationEnded: false,
+    narrationProgress: 0,
+    narrationCurrentTime: 0,
+    narrationDuration: 0,
+    narrationTimeText: '00:00 / 00:00',
     debugMessage: ''
   },
 
@@ -206,6 +225,12 @@ Page({
 
   onUnload() {
     if (this.loadTimer) clearTimeout(this.loadTimer);
+    if (this.narrationPollTimer) clearTimeout(this.narrationPollTimer);
+    this.narrationRequestKey = '';
+    if (this.narrationAudioContext) {
+      this.narrationAudioContext.destroy();
+      this.narrationAudioContext = null;
+    }
   },
 
   syncPreferences() {
@@ -216,7 +241,7 @@ Page({
     const languageChanged = this.data.language !== language && this.data.screen !== 'system';
     this.setData({ theme, language, ui: uiText(language === 'en') });
     if (languageChanged) this.backToSystem();
-    wx.setNavigationBarTitle({ title: language === 'en' ? 'Grammar Classroom' : '语法课堂' });
+    wx.setNavigationBarTitle({ title: language === 'en' ? 'Grammar Micro-Lessons' : '语法微课堂' });
     wx.setNavigationBarColor({ frontColor: '#000000', backgroundColor: theme === 'library' ? '#FAF5EA' : '#F6FBFD' });
   },
 
@@ -359,12 +384,201 @@ Page({
     });
   },
 
+  stopNarrationAudio(cancelRequest = true) {
+    if (cancelRequest) this.narrationRequestKey = '';
+    if (this.narrationPollTimer) {
+      clearTimeout(this.narrationPollTimer);
+      this.narrationPollTimer = null;
+    }
+    if (this.narrationAudioContext) {
+      try { this.narrationAudioContext.stop(); } catch (error) {}
+    }
+    this.narrationLoadedKey = '';
+    this.narrationSeeking = false;
+    this.setData({
+      narrationLoading: false,
+      narrationPlaying: false,
+      narrationReady: false,
+      narrationEnded: false,
+      narrationProgress: 0,
+      narrationCurrentTime: 0,
+      narrationDuration: 0,
+      narrationTimeText: '00:00 / 00:00'
+    });
+  },
+
+  formatNarrationTime(value) {
+    const total = Math.max(0, Math.floor(Number(value) || 0));
+    const minutes = Math.floor(total / 60);
+    const seconds = total % 60;
+    return `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+  },
+
+  syncNarrationTime(currentTime, duration) {
+    const safeDuration = Math.max(0, Number(duration) || 0);
+    const safeCurrent = Math.min(safeDuration || Infinity, Math.max(0, Number(currentTime) || 0));
+    this.setData({
+      narrationCurrentTime: safeCurrent,
+      narrationDuration: safeDuration,
+      narrationProgress: safeDuration ? Math.min(100, safeCurrent / safeDuration * 100) : 0,
+      narrationTimeText: `${this.formatNarrationTime(safeCurrent)} / ${this.formatNarrationTime(safeDuration)}`
+    });
+  },
+
+  ensureNarrationAudioContext() {
+    if (this.narrationAudioContext) return this.narrationAudioContext;
+    const context = wx.createInnerAudioContext();
+    context.obeyMuteSwitch = false;
+    context.onCanplay(() => {
+      const duration = Number(context.duration) || this.data.narrationDuration;
+      this.setData({ narrationReady: true });
+      this.syncNarrationTime(Number(context.currentTime) || 0, duration);
+    });
+    context.onTimeUpdate(() => {
+      if (this.narrationSeeking) return;
+      this.syncNarrationTime(context.currentTime, context.duration);
+    });
+    context.onPlay(() => this.setData({ narrationLoading: false, narrationPlaying: true, narrationReady: true, narrationEnded: false }));
+    context.onPause(() => this.setData({ narrationPlaying: false }));
+    context.onStop(() => this.setData({ narrationPlaying: false }));
+    context.onEnded(() => {
+      const duration = Number(context.duration) || this.data.narrationDuration;
+      this.syncNarrationTime(duration, duration);
+      this.setData({ narrationPlaying: false, narrationEnded: true });
+    });
+    context.onError((error) => {
+      if (this.data.screen !== 'lesson') return;
+      this.narrationLoadedKey = '';
+      this.setData({
+        narrationLoading: false,
+        narrationPlaying: false,
+        narrationReady: false,
+        debugMessage: `DEBUG: grammar-package/pages/classroom.playNarration -> InnerAudioContext.play -> audioUrl: ${error && (error.errMsg || error.errCode) || 'failed'}`
+      });
+    });
+    this.narrationAudioContext = context;
+    return context;
+  },
+
+  async playNarration() {
+    const narration = this.data.activeLesson && this.data.activeLesson.narration;
+    if (!narration || this.data.narrationLoading) return;
+    if (this.data.narrationPlaying) {
+      if (this.narrationAudioContext) this.narrationAudioContext.pause();
+      return;
+    }
+    const language = this.data.language === 'en' ? 'en' : 'zh-CN';
+    const requestKey = `${narration.id}:${narration.version}:${language}`;
+    this.narrationRequestKey = requestKey;
+    this.narrationAudioCache = this.narrationAudioCache || {};
+    const playUrl = (url) => {
+      const context = this.ensureNarrationAudioContext();
+      if (this.narrationLoadedKey !== requestKey) {
+        this.narrationLoadedKey = requestKey;
+        context.src = url;
+        this.syncNarrationTime(0, 0);
+        this.setData({ narrationReady: false, narrationEnded: false });
+      } else if (this.data.narrationEnded) {
+        context.seek(0);
+        this.syncNarrationTime(0, this.data.narrationDuration);
+      }
+      context.play();
+    };
+    if (this.narrationLoadedKey === requestKey && this.narrationAudioContext) {
+      playUrl(this.narrationAudioCache[requestKey] || '');
+      return;
+    }
+    if (this.narrationAudioCache[requestKey]) {
+      playUrl(this.narrationAudioCache[requestKey]);
+      return;
+    }
+    this.setData({ narrationLoading: true, narrationPlaying: false, debugMessage: '' });
+    const requestAudio = async () => {
+      try {
+        const result = await store.getGrammarNarrationAudio({
+          narrationId: narration.id,
+          version: narration.version,
+          language,
+          text: narration.text
+        });
+        if (this.narrationRequestKey !== requestKey) return;
+        if (result && result.generating) {
+          const retryAfterMs = Math.min(10000, Math.max(1500, Number(result.retryAfterMs) || 3000));
+          this.setData({ narrationLoading: true, narrationPlaying: false, debugMessage: '' });
+          if (this.narrationPollTimer) clearTimeout(this.narrationPollTimer);
+          this.narrationPollTimer = setTimeout(requestAudio, retryAfterMs);
+          return;
+        }
+        const audioUrl = String(result && result.audioUrl || '').trim();
+        if (!audioUrl) {
+          const reason = result && (result.error || result.cloudError && result.cloudError.message) || 'audioUrl missing';
+          throw new Error(reason);
+        }
+        if (this.narrationPollTimer) clearTimeout(this.narrationPollTimer);
+        this.narrationPollTimer = null;
+        this.narrationAudioCache[requestKey] = audioUrl;
+        this.setData({ narrationLoading: false });
+        playUrl(audioUrl);
+      } catch (error) {
+        if (this.narrationRequestKey !== requestKey) return;
+        if (this.narrationPollTimer) clearTimeout(this.narrationPollTimer);
+        this.narrationPollTimer = null;
+        this.setData({
+          narrationLoading: false,
+          narrationPlaying: false,
+          debugMessage: `DEBUG: grammar-package/pages/classroom.playNarration -> store.getGrammarNarrationAudio -> result.audioUrl: ${error && error.message || 'missing'}`
+        });
+        wx.showToast({ title: this.data.ui.narrationUnavailable, icon: 'none', duration: 2200 });
+      }
+    };
+    await requestAudio();
+  },
+
+  seekNarrationTo(seconds) {
+    const context = this.narrationAudioContext;
+    const duration = Number(context && context.duration) || this.data.narrationDuration;
+    if (!context || !this.data.narrationReady || !duration) return;
+    const target = Math.min(duration, Math.max(0, Number(seconds) || 0));
+    context.seek(target);
+    this.syncNarrationTime(target, duration);
+    this.setData({ narrationEnded: target >= duration - 0.1 });
+  },
+
+  rewindNarration() {
+    this.seekNarrationTo(this.data.narrationCurrentTime - 15);
+  },
+
+  forwardNarration() {
+    this.seekNarrationTo(this.data.narrationCurrentTime + 15);
+  },
+
+  replayNarration() {
+    if (!this.narrationAudioContext || !this.data.narrationReady) return;
+    this.seekNarrationTo(0);
+    this.narrationAudioContext.play();
+  },
+
+  previewNarrationSeek(event) {
+    const duration = this.data.narrationDuration;
+    if (!duration) return;
+    this.narrationSeeking = true;
+    this.syncNarrationTime(duration * Number(event.detail.value || 0) / 100, duration);
+  },
+
+  seekNarration(event) {
+    const duration = this.data.narrationDuration;
+    this.narrationSeeking = false;
+    if (!duration) return;
+    this.seekNarrationTo(duration * Number(event.detail.value || 0) / 100);
+  },
+
   openLesson(event) {
     const id = String(event.currentTarget.dataset.lesson || '');
     const course = this.activeCourse || this.fullCourse || [];
     const index = course.findIndex((lesson) => lesson.id === id);
     const lesson = index >= 0 ? course[index] : null;
     if (!lesson || !lesson.questions || !lesson.questions.length) return;
+    this.stopNarrationAudio();
     const startedAt = Date.now();
     this.setData({
       screen: 'lesson',
@@ -375,6 +589,8 @@ Page({
       activeQuestion: lesson.questions[0],
       answer: '',
       result: '',
+      narrationLoading: false,
+      narrationPlaying: false,
       isLastQuestion: lesson.questions.length === 1,
       isLastLesson: index === course.length - 1
     }, () => {
@@ -414,6 +630,7 @@ Page({
     const lessonIndex = this.data.lessonIndex + 1;
     const activeCourse = this.activeCourse || this.fullCourse || [];
     const nextLesson = activeCourse[lessonIndex];
+    this.stopNarrationAudio();
     this.setData({
       activeLesson: nextLesson,
       lessonIndex,
@@ -429,7 +646,8 @@ Page({
   },
 
   backToCourseMap() {
-    this.setData({ screen: 'course-map', activeLesson: null, lessonIndex: -1, lessonPosition: 0, activeQuestion: null, answer: '', result: '' });
+    this.stopNarrationAudio();
+    this.setData({ screen: 'course-map', activeLesson: null, lessonIndex: -1, lessonPosition: 0, activeQuestion: null, answer: '', result: '', narrationLoading: false, narrationPlaying: false });
   },
 
   backFromCourseMap() {
@@ -463,6 +681,7 @@ Page({
 
   backToDirectory() {
     if (this.loadTimer) clearTimeout(this.loadTimer);
+    this.stopNarrationAudio();
     this.fullCourse = [];
     this.activeCourse = [];
     this.setData({ screen: 'directory', selectedTopic: '', loaderKind: '', course: [], groups: [], sections: [], hasSectionMap: false, activeSectionId: '', activeSectionTitle: '', activeSectionCopy: '', courseTitle: '', courseCopy: '', activeLesson: null, debugMessage: '' });
@@ -472,6 +691,7 @@ Page({
     const domain = this.data.selectedDomain || 'morphology';
     const ui = this.data.ui;
     const selected = ui.domains.find((item) => item.id === domain) || ui.domains[0];
+    this.stopNarrationAudio();
     this.fullCourse = [];
     this.activeCourse = [];
     this.setData({ screen: 'domain-map', selectedDomain: selected.id, domainTitle: selected.title, domainCopy: selected.meta, domainBackText: `‹ ${selected.title}`, domainItems: ui.domainMaps[selected.id] || [], selectedTopic: '', loaderKind: '', course: [], groups: [], sections: [], hasSectionMap: false, activeSectionId: '', activeSectionTitle: '', activeSectionCopy: '', activeLesson: null, debugMessage: '' });
@@ -479,6 +699,7 @@ Page({
 
   backToSystem() {
     if (this.loadTimer) clearTimeout(this.loadTimer);
+    this.stopNarrationAudio();
     this.fullCourse = [];
     this.activeCourse = [];
     this.setData({ screen: 'system', selectedDomain: '', domainTitle: '', domainCopy: '', domainBackText: '', domainItems: [], selectedTopic: '', loaderKind: '', course: [], groups: [], sections: [], hasSectionMap: false, activeSectionId: '', activeSectionTitle: '', activeSectionCopy: '', activeLesson: null, debugMessage: '' });

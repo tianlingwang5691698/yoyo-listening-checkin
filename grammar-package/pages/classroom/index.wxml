@@ -27,7 +27,7 @@
 
   <view class="page-topbar">
     <view class="topbar-back" bindtap="handleTopBack"><text class="topbar-chevron">‹</text><text class="topbar-back-text">{{ui.back}}</text></view>
-    <view class="topbar-title">{{language === 'en' ? 'Grammar Classroom' : '语法课堂'}}</view>
+    <view class="topbar-title">{{language === 'en' ? 'Grammar Micro-Lessons' : '语法微课堂'}}</view>
     <view class="topbar-space"></view>
   </view>
 
@@ -136,6 +136,23 @@
       <view class="lesson-progress">{{lessonPosition}} / {{course.length}}</view>
       <view class="lesson-title">{{activeLesson.title}}</view>
       <view class="lesson-meta">{{activeLesson.meta}}</view>
+
+      <view class="narration-card" wx:if="{{activeLesson.narration}}">
+        <view class="narration-top">
+          <view class="narration-meta">{{activeLesson.narration.lengthText}}</view>
+          <view class="narration-time">{{narrationTimeText}}</view>
+        </view>
+        <slider class="narration-slider" min="0" max="100" value="{{narrationProgress}}" disabled="{{!narrationReady}}" block-size="14" activeColor="{{theme === 'library' ? '#876a3c' : '#2f6788'}}" backgroundColor="{{theme === 'library' ? '#d4c29e' : '#cbdde6'}}" bindchanging="previewNarrationSeek" bindchange="seekNarration" />
+        <view class="narration-controls">
+          <view class="narration-control {{!narrationReady ? 'is-disabled' : ''}}" bindtap="rewindNarration" hover-class="narration-tapped" hover-stay-time="80"><text class="narration-seek-sign">-</text><text class="narration-seek-value">15</text><text class="narration-seek-unit">s</text></view>
+          <view class="narration-button {{narrationPlaying ? 'is-playing' : ''}} {{narrationLoading ? 'is-loading' : ''}}" bindtap="playNarration" hover-class="narration-tapped" hover-stay-time="80">
+            <text wx:if="{{!narrationLoading}}">{{narrationPlaying ? 'Ⅱ' : '▶'}}</text>
+            <text>{{narrationLoading ? ui.loadingNarration : (narrationPlaying ? ui.pauseNarration : (narrationEnded ? ui.replayNarration : (narrationCurrentTime > 0 ? ui.resumeNarration : ui.listenNarration)))}}</text>
+          </view>
+          <view class="narration-control {{!narrationReady ? 'is-disabled' : ''}}" bindtap="forwardNarration" hover-class="narration-tapped" hover-stay-time="80"><text class="narration-seek-sign">+</text><text class="narration-seek-value">15</text><text class="narration-seek-unit">s</text></view>
+          <view class="narration-control narration-replay" wx:if="{{narrationReady && !narrationEnded}}" bindtap="replayNarration" hover-class="narration-tapped" hover-stay-time="80">{{ui.restartNarration}}</view>
+        </view>
+      </view>
 
       <view class="sentence-list" wx:if="{{activeLesson.analyses && activeLesson.analyses.length}}">
         <view class="sentence-card" wx:for="{{activeLesson.analyses}}" wx:key="index" wx:for-item="sentence" wx:for-index="sentenceIndex">

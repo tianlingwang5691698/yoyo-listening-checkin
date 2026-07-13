@@ -54,9 +54,11 @@ function loadBuilders(language = 'zh-CN') {
   return context.result;
 }
 
-test('语法课堂首屏不构建完整课程，点击后按专题加载', () => {
+test('语法微课堂首屏不构建完整课程，点击后按专题加载', () => {
   const { buildClassroomText, getClassroomCourse } = loadBuilders();
   const home = buildClassroomText();
+  assert.equal(home.tab, '语法微课堂');
+  assert.equal(loadBuilders('en').buildClassroomText().tab, 'Micro-Lessons');
   assert.equal(home.thirdPersonCourse.length, 0);
   assert.equal(home.thirdPersonCourseGroups.length, 0);
   assert.equal(home.nounCourse, undefined);
@@ -148,6 +150,10 @@ test('语法课堂首屏不构建完整课程，点击后按专题加载', () =>
   const verbLoader = fs.readFileSync(path.join(__dirname, '../grammar-package/components/grammar-verb-loader/index.js'), 'utf8');
   assert.doesNotMatch(verbLoader, /third-person-course|numeral-courses|article-courses/);
   const grammarConfig = JSON.parse(fs.readFileSync(path.join(__dirname, '../grammar-package/pages/classroom/index.json'), 'utf8'));
+  assert.equal(grammarConfig.navigationBarTitleText, '语法微课堂');
+  const classroomWxml = fs.readFileSync(path.join(__dirname, '../grammar-package/pages/classroom/index.wxml'), 'utf8');
+  assert.match(classroomWxml, /Grammar Micro-Lessons/);
+  assert.match(classroomWxml, /语法微课堂/);
   Object.values(grammarConfig.usingComponents).forEach((request) => {
     const base = path.resolve(__dirname, '../grammar-package/pages/classroom', request);
     ['.js', '.json', '.wxml', '.wxss'].forEach((extension) => assert.ok(fs.existsSync(`${base}${extension}`)));
@@ -747,6 +753,17 @@ test('介词系统课程覆盖形式、语义关系、句法功能与易混结�
   assert.notEqual(zhEssence.hideRuleCard, true);
   const enEssence = sourceRelationCourses.buildPrepositionCourse(true).course.find((lesson) => lesson.id === 'prep-essence');
   assert.deepEqual(enEssence.exampleNotes.map((note) => note.visible), [true, true, true]);
+  assert.deepEqual(sourceRelationCourses.buildPrepositionCourse(false).course.filter((lesson) => lesson.narration).map((lesson) => lesson.id), ['prep-essence']);
+  assert.equal(zhEssence.narration.id, 'preposition:prep-essence');
+  assert.equal(zhEssence.narration.version, 'v6');
+  assert.equal(enEssence.narration.version, 'v1');
+  assert.equal(Array.from(zhEssence.narration.text.replace(/\s/g, '')).length, 500);
+  assert.doesNotMatch(zhEssence.narration.text, /同学们|这节课|先看第一句|再看第二句/);
+  assert.equal((zhEssence.narration.text.match(/<#0\.[78]#>/g) || []).length, 4);
+  assert.match(zhEssence.narration.text, /主干是 She spoke，也就是“她说话”。<#0\.6#>介词是 with/);
+  assert.doesNotMatch(zhEssence.narration.text, /在……上|在……之后|和……一起/);
+  assert.equal(enEssence.narration.text.trim().split(/\s+/).length, 264);
+  assert.equal(prepositionCourses.buildPrepositionCourse(false).course[0].narration.text, zhEssence.narration.text);
   const zhRelationChoice = sourceRelationCourses.buildPrepositionCourse(false).course.find((lesson) => lesson.id === 'prep-collocation');
   assert.ok(zhRelationChoice.rules.some((rule) => rule.includes('to 常把动作或事物指向目标')));
   assert.ok(zhRelationChoice.rules.some((rule) => rule.includes('语言习惯')));
@@ -754,11 +771,37 @@ test('介词系统课程覆盖形式、语义关系、句法功能与易混结�
   assert.ok(!zhRelationChoice.rules.some((rule) => rule.includes('固定搭配')));
   const lessonTemplate = fs.readFileSync(path.join(__dirname, '../grammar-package/pages/classroom/index.wxml'), 'utf8');
   assert.match(lessonTemplate, /wx:if="\{\{!activeLesson\.hideRuleCard\}\}"/);
+  assert.match(lessonTemplate, /bindtap="rewindNarration"/);
+  assert.match(lessonTemplate, /bindtap="forwardNarration"/);
+  assert.equal((lessonTemplate.match(/narration-seek-value">15/g) || []).length, 2);
+  assert.doesNotMatch(lessonTemplate, /10s|↶|↷/);
+  assert.match(lessonTemplate, /bindtap="replayNarration"/);
+  assert.match(lessonTemplate, /bindchange="seekNarration"/);
+  assert.doesNotMatch(lessonTemplate, /<button class="narration-/);
+  assert.match(lessonTemplate, /<view class="narration-button/);
+  const classroomStyle = fs.readFileSync(path.join(__dirname, '../grammar-package/pages/classroom/index.wxss'), 'utf8');
+  assert.match(classroomStyle, /\.narration-controls \{[^}]*display: grid;[^}]*grid-template-columns: 124rpx minmax\(0, 1fr\) 124rpx/);
+  assert.match(classroomStyle, /\.narration-replay \{[^}]*grid-column: 1 \/ 4/);
+  assert.match(page, /narrationPlaying\)[\s\S]*\.pause\(\)[\s\S]*return/);
+  ['seekNarrationTo', 'rewindNarration', 'forwardNarration', 'replayNarration', 'previewNarrationSeek'].forEach((method) => assert.match(page, new RegExp(`${method}\\(`)));
+  const storeSource = fs.readFileSync(path.join(__dirname, '../utils/store.js'), 'utf8');
+  const cloudIndex = fs.readFileSync(path.join(__dirname, '../cloudfunctions/yoyo/index.js'), 'utf8');
+  const cloudClient = fs.readFileSync(path.join(__dirname, '../domain/cloud/index.js'), 'utf8');
+  const grammarService = fs.readFileSync(path.join(__dirname, '../cloudfunctions/yoyo/services/grammar.service.js'), 'utf8');
+  assert.match(storeSource, /getGrammarNarrationAudio/);
+  assert.match(cloudIndex, /getGrammarNarrationAudio/);
+  assert.match(cloudClient, /gradeWritingAttempt' \|\| action === 'getGrammarNarrationAudio'\)[\s\S]*timeoutMs = 180000/);
+  assert.match(grammarService, /grammarLessonNarrationAudios/);
+  assert.match(grammarService, /getCachedNarrationAudio/);
+  assert.match(grammarService, /runTransaction/);
+  assert.match(grammarService, /status: 'generating'/);
+  assert.match(grammarService, /status: 'ready'/);
+  assert.match(page, /result && result\.generating[\s\S]*setTimeout\(requestAudio, retryAfterMs\)/);
 });
 
-test('语法课堂按体系分层并逐层返回', () => {
+test('语法微课堂按体系分层并逐层返回', () => {
   const source = fs.readFileSync(path.join(__dirname, '../grammar-package/pages/classroom/index.js'), 'utf8');
-  const context = { captured: null, Page: (config) => { context.captured = config; }, wx: {}, setTimeout, clearTimeout };
+  const context = { captured: null, Page: (config) => { context.captured = config; }, wx: {}, require: () => ({}), setTimeout, clearTimeout };
   vm.createContext(context);
   vm.runInContext(`${source};englishUi=uiText(true);`, context);
   const page = context.captured;

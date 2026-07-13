@@ -38,6 +38,7 @@ const MUTATION_ACTIONS = {
   recordGrammarWrong: true,
   addPracticeWrongQuestion: true,
   recordGrammarProgress: true,
+  getGrammarNarrationAudio: true,
   recordStudyCompletion: true,
   saveVocabularyDictationAttempt: true,
   refreshInviteCode: true,
@@ -1016,6 +1017,20 @@ async function recordGrammarProgress(topicId, nextIndex, answeredQuestions) {
   return callCloud('recordGrammarProgress', withSelectedStudent({ topicId, nextIndex, answeredQuestions: answeredQuestions || [] }), { saved: false }, { useCache: false });
 }
 
+async function getGrammarNarrationAudio(options) {
+  return callCloud('getGrammarNarrationAudio', Object.assign({}, options || {}), {
+    audioUrl: '',
+    audioFileId: '',
+    audioCloudPath: '',
+    cacheKey: '',
+    cached: false,
+    generating: false,
+    retryAfterMs: 0,
+    model: '',
+    voice: ''
+  }, { useCache: false });
+}
+
 async function recordStudyCompletion(item) {
   return callCloud('recordStudyCompletion', withSelectedStudent(item || {}), { saved: false }, { useCache: false });
 }
@@ -1218,6 +1233,7 @@ module.exports = {
   getPracticeWrongQuestions,
   getGrammarProgress,
   recordGrammarProgress,
+  getGrammarNarrationAudio,
   recordStudyCompletion,
   getStudyCompletions,
   getStudyCompletionDetail,
