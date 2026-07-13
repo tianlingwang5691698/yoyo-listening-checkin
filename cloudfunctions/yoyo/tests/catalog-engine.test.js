@@ -101,6 +101,28 @@ test('New Concept 2-4 摘要有兜底数量', () => {
   });
 });
 
+test('Pre A1 Songs 与其他 Level 使用同一静态目录加载', async () => {
+  const startedAt = Date.now();
+  await catalogEngine.refreshRuntimeCatalogs(true, ['song']);
+  const songs = catalogEngine.getStaticCatalogMap().song;
+  const materials = listeningPlanEngine.buildMaterialEntries('Pre A1', {
+    getCatalogSummary: catalogEngine.getCatalogSummary
+  });
+  const material = materials.find((item) => item.category === 'song');
+
+  assert.equal(songs.length, 103);
+  assert.equal(songs.filter((item) => item.transcriptStatus === 'ready').length, 101);
+  assert.deepEqual(material, {
+    levelId: 'Pre A1',
+    category: 'song',
+    title: 'Songs',
+    totalCount: 103,
+    enabled: true
+  });
+  assert.equal(Object.prototype.hasOwnProperty.call(material, 'tasks'), false);
+  assert.ok(Date.now() - startedAt < 100, 'Songs 静态目录不应触发云存储扫描');
+});
+
 test('Unlock 1 听口 第三版使用静态 manifest 快速目录', async () => {
   const startedAt = Date.now();
   await catalogEngine.refreshRuntimeCatalogs(true, ['unlock1thirdedition']);

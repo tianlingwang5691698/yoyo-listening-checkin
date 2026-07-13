@@ -4,6 +4,8 @@ const completed = require('../../../utils/completed');
 const snapshotStore = require('../../../utils/snapshot');
 const effects = require('../../../utils/effects');
 const i18n = require('../../../utils/i18n');
+const { canUseDictionaryVoice, normalizeDictionaryVoiceText } = require('../../../utils/dictionary-voice');
+const { createDictionaryVoicePlayer } = require('../../../utils/dictionary-voice-player');
 
 const text = (key, fallback) => i18n.getPageText('readingDetail', key, undefined, fallback);
 
@@ -33,31 +35,6 @@ function normalizeAnswerText(value) {
 function formatAnswerDisplay(value) {
   const text = String(value || '').trim();
   return /^[A-D]$/.test(text) ? text.toLowerCase() : text;
-}
-
-function isSingleWord(text) {
-  return /^[A-Za-z][A-Za-z'-]{0,40}$/.test(String(text || '').trim());
-}
-
-function canUseDictionaryVoice(text) {
-  const value = String(text || '').replace(/\s+/g, ' ').trim();
-  if (!value || value.length > 60 || /[.!?;:]/.test(value)) return false;
-  const words = value.split(' ').filter(Boolean);
-  return words.length >= 1
-    && words.length <= 6
-    && words.every((word) => /^[A-Za-z][A-Za-z'-]{0,30}$/.test(word));
-}
-
-function buildDictionaryVoiceUrl(text) {
-  return `https://dict.youdao.com/dictvoice?audio=${encodeURIComponent(text)}&type=2`;
-}
-
-function buildDictionaryVoiceUrls(text) {
-  const encoded = encodeURIComponent(text);
-  return [
-    `https://dict.youdao.com/dictvoice?audio=${encoded}&type=2`,
-    `https://dict.youdao.com/dictvoice?audio=${encoded}&type=1`
-  ];
 }
 
 function findClozeBlanks(text) {
@@ -947,6 +924,10 @@ Page({
       this.dictionaryAudioContext.destroy();
       this.dictionaryAudioContext = null;
     }
+    if (this.dictionaryVoicePlayer) {
+      this.dictionaryVoicePlayer.destroy();
+      this.dictionaryVoicePlayer = null;
+    }
   },
   async onLoad(options) {
     this.readingDetailPerf = page.startPagePerf('reading-detail');
@@ -1446,38 +1427,19 @@ Page({
     const entry = this.data.dictionaryEntry || {};
     const word = entry.word || this.data.dictionaryWord || '';
     if (!word || this.data.dictionaryAudioLoading) return;
-    const playUrl = (url) => {
-      if (!this.dictionaryAudioContext) {
-        this.dictionaryAudioContext = wx.createInnerAudioContext();
-        this.dictionaryAudioContext.obeyMuteSwitch = false;
-        this.dictionaryAudioContext.onEnded(() => {
-          this.setData({ dictionaryAudioLoading: false });
-        });
-        this.dictionaryAudioContext.onError(() => {
+    try {
+      const preferredUrls = [entry.audioUrl || ''];
+      if (entry.audioFileId) preferredUrls.push(await store.getTempFileURL(entry.audioFileId));
+      if (!this.dictionaryVoicePlayer) this.dictionaryVoicePlayer = createDictionaryVoicePlayer();
+      this.dictionaryVoicePlayer.play(word, {
+        preferredUrls,
+        onStart: () => this.setData({ dictionaryAudioLoading: true }),
+        onDone: () => this.setData({ dictionaryAudioLoading: false }),
+        onFailed: () => {
           this.setData({ dictionaryAudioLoading: false });
           wx.showToast({ title: text('playbackFailed', '播放失败，稍后再试'), icon: 'none' });
-        });
-      }
-      this.dictionaryAudioContext.stop();
-      this.dictionaryAudioContext.src = url;
-      this.setData({ dictionaryAudioLoading: true });
-      this.dictionaryAudioContext.play();
-    };
-    try {
-      let url = canUseDictionaryVoice(word) ? buildDictionaryVoiceUrl(word) : '';
-      if (!url) {
-        url = entry.audioUrl || '';
-      }
-      if (!url && entry.audioFileId) {
-        url = await store.getTempFileURL(entry.audioFileId);
-        if (url) {
-          this.setData({ dictionaryEntry: Object.assign({}, entry, { audioUrl: url }) });
         }
-      }
-      if (!url) {
-        url = `https://dict.youdao.com/dictvoice?audio=${encodeURIComponent(word)}&type=2`;
-      }
-      playUrl(url);
+      });
     } catch (error) {
       this.setData({ dictionaryAudioLoading: false });
       wx.showToast({ title: text('playbackFailed', '播放失败，稍后再试'), icon: 'none' });
@@ -1485,63 +1447,26 @@ Page({
   },
   async speakStudyAudio(event) {
     const type = String(event.currentTarget.dataset.type || 'word');
-    const text = String(event.currentTarget.dataset.text || '').replace(/\s+/g, ' ').trim();
-    const audioKey = `${type}:${text}`;
-    if (!text || this._readingAudioLoading || !canUseDictionaryVoice(text)) return;
+    const rawText = String(event.currentTarget.dataset.text || '');
+    const audioText = normalizeDictionaryVoiceText(rawText);
+    const audioKey = `${type}:${rawText}`;
+    if (!audioText || this._readingAudioLoading || !canUseDictionaryVoice(audioText)) return;
     const cards = type === 'phrase' ? this.data.phraseCards : this.data.wordCards;
-    const card = (cards || []).find((item) => (item.word || item.text || item.phrase) === text) || {};
+    const card = (cards || []).find((item) => (item.word || item.text || item.phrase) === rawText) || {};
     this._readingAudioLoading = true;
-    this.setData({ speakingWord: audioKey });
     try {
-      let url = card.audioUrl || (this._wordAudioUrls && this._wordAudioUrls[text]);
-      if (!url && card.audioFileId) {
-        url = await store.getTempFileURL(card.audioFileId);
-      }
-      this._readingAudioFallbackUrls = [];
-      this._readingAudioFallbackIndex = 0;
-      this._readingAudioDictionaryFallbackTried = false;
-      this._readingAudioText = text;
-      if (!url) {
-        this._readingAudioFallbackUrls = buildDictionaryVoiceUrls(text);
-        url = this._readingAudioFallbackUrls[0];
-      }
-      this._wordAudioUrls = Object.assign({}, this._wordAudioUrls || {}, { [text]: url });
-      if (!this.readingAudioContext) {
-        this.readingAudioContext = wx.createInnerAudioContext();
-        this.readingAudioContext.obeyMuteSwitch = false;
-        this.readingAudioContext.onEnded(() => {
-          this.setData({ speakingWord: '' });
-        });
-        this.readingAudioContext.onError(async (error) => {
-          const urls = this._readingAudioFallbackUrls || [];
-          this._readingAudioFallbackIndex = Number(this._readingAudioFallbackIndex || 0) + 1;
-          if (this._readingAudioFallbackIndex < urls.length) {
-            this.readingAudioContext.src = urls[this._readingAudioFallbackIndex];
-            this.readingAudioContext.play();
-            return;
-          }
-          if (!this._readingAudioDictionaryFallbackTried && isSingleWord(this._readingAudioText)) {
-            this._readingAudioDictionaryFallbackTried = true;
-            try {
-              const audioResult = await store.synthesizeReadingAudio({
-                text: this._readingAudioText,
-                skipYoudao: true
-              });
-              if (audioResult && audioResult.audioUrl) {
-                this.readingAudioContext.src = audioResult.audioUrl;
-                this.readingAudioContext.play();
-                return;
-              }
-            } catch (fallbackError) {}
-          }
+      const preferredUrls = [card.audioUrl || (this._wordAudioUrls && this._wordAudioUrls[rawText]) || ''];
+      if (card.audioFileId) preferredUrls.push(await store.getTempFileURL(card.audioFileId));
+      if (!this.dictionaryVoicePlayer) this.dictionaryVoicePlayer = createDictionaryVoicePlayer();
+      this.dictionaryVoicePlayer.play(audioText, {
+        preferredUrls,
+        onStart: () => this.setData({ speakingWord: audioKey }),
+        onDone: () => this.setData({ speakingWord: '' }),
+        onFailed: () => {
           this.setData({ speakingWord: '' });
           wx.showToast({ title: text('playbackFailed', '播放失败，稍后再试'), icon: 'none' });
-          console.warn('reading-study-audio-error', error);
-        });
-      }
-      this.readingAudioContext.stop();
-      this.readingAudioContext.src = url;
-      this.readingAudioContext.play();
+        }
+      });
     } catch (error) {
       this.setData({ speakingWord: '' });
       wx.showToast({ title: text('pronunciationFailed', '发音失败，稍后重试'), icon: 'none' });

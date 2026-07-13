@@ -3,6 +3,13 @@ const store = require('../../../utils/store');
 const effects = require('../../../utils/effects');
 const i18n = require('../../../utils/i18n');
 const { formatVocabularyDefinitions, formatVocabularyMeaning } = require('../../../utils/vocabulary-definitions');
+const {
+  canUseDictionaryVoice,
+  buildDictionaryVoiceUrls,
+  buildDictionaryVoiceSegments,
+  buildDictionaryVoiceSegmentUrls,
+  normalizeDictionaryVoiceText
+} = require('../../../utils/dictionary-voice');
 
 const text = (key, fallback) => i18n.getPageText('flashcards', key, undefined, fallback);
 
@@ -77,7 +84,7 @@ const FLASHCARD_SOURCE_CACHE_VERSION_KEY = 'flashcardSourceCacheVersion';
 const FLASHCARD_SOURCE_CACHE_CONTENT_VERSION = 2026071302;
 const FLASHCARD_PLAN_SETTINGS_PREFIX = 'flashcardPlanSettings:';
 const FLASHCARD_CHECKIN_DAYS_KEY = 'flashcardCheckinDays';
-const FLASHCARD_AUDIO_CACHE_PREFIX = 'flashcard-dictionary-audio-v3-';
+const FLASHCARD_AUDIO_CACHE_PREFIX = 'flashcard-dictionary-audio-v4-';
 const FLASHCARD_AUDIO_TOTAL_TIMEOUT_MS = 5000;
 
 const LIMIT_MIN = 5;
@@ -153,6 +160,7 @@ function normalizeCard(item, index) {
   const phoneticBody = getPhoneticBody(item.phonetic);
   const displayPhonetic = phoneticBody ? `/${phoneticBody}/` : '';
   const isUnlockBook = /^dictionary-book-unlock-/.test(String(item.sourceId || ''));
+  const audioText = normalizeDictionaryVoiceText(item.word || item.phrase || item.pattern || displayText);
   return Object.assign({}, item, {
     type,
     displayText,
@@ -161,7 +169,8 @@ function normalizeCard(item, index) {
     phoneticBody,
     displayPhonetic,
     meaning: isUnlockBook ? formatVocabularyMeaning(item.meaning) : item.meaning,
-    canSpeak: (type === 'word' || type === 'phrase') && canUseDictionaryVoice(item.word || item.phrase || displayText),
+    audioText,
+    canSpeak: canUseDictionaryVoice(audioText),
     typeLabel: TYPE_LABELS[type] || text('word', '生词'),
     index: index + 1
   });
@@ -685,31 +694,6 @@ function buildLibraryDebugLines(data, activeSourceId, library) {
     `DEBUG: reading/flashcards.loadCards -> store.getFlashcardReview -> cloud.getFlashcardReview.library：${(library || []).length}`,
     `${target}；syncMode=${syncMode}；cloudError.message=${cloudError.message || syncDebug.reason || 'unknown'}；envId=${syncDebug.envId || 'unknown'}`,
     'DEBUG: Cloud vocabulary failed. Check store.getFlashcardReview and cloud.getFlashcardReview.'
-  ];
-}
-
-function normalizeDictionaryVoiceText(text) {
-  return String(text || '')
-    .replace(/\bsb(?:'s)?\.?(?![A-Za-z])/gi, (value) => (/('s)/i.test(value) ? "somebody's" : 'somebody'))
-    .replace(/\bsth\.?(?![A-Za-z])/gi, 'something')
-    .replace(/\s+/g, ' ')
-    .trim();
-}
-
-function canUseDictionaryVoice(text) {
-  const value = normalizeDictionaryVoiceText(text);
-  if (!value || value.length > 60 || /[.!?;:]/.test(value)) return false;
-  const words = value.split(' ').filter(Boolean);
-  return words.length >= 1
-    && words.length <= 6
-    && words.every((word) => /^[A-Za-z][A-Za-z'-]{0,30}$/.test(word));
-}
-
-function buildDictionaryVoiceUrls(text) {
-  const encoded = encodeURIComponent(normalizeDictionaryVoiceText(text));
-  return [
-    `https://dict.youdao.com/dictvoice?audio=${encoded}&type=2`,
-    `https://dict.youdao.com/dictvoice?audio=${encoded}&type=1`
   ];
 }
 
@@ -1339,7 +1323,7 @@ Page({
         this.clearCardAudioStartTimer();
         const activeUrl = String(this._flashcardActiveAudioUrl || '');
         const flashcardKey = String(this._flashcardActiveKey || '');
-        if (/^https:\/\//.test(activeUrl) && flashcardKey) {
+        if (!this._flashcardUsingSegments && /^https:\/\//.test(activeUrl) && flashcardKey) {
           downloadAudioToLocal(activeUrl, flashcardKey).then((path) => {
             if (path) this.updateCardAudioCache(flashcardKey, { audioUrl: activeUrl, audioLocalPath: path });
           });
@@ -1347,7 +1331,10 @@ Page({
       });
       this.flashcardAudioContext.onEnded(() => {
         this.clearCardAudioStartTimer();
+        if (this.playNextDictionaryVoiceSegment()) return;
         this._flashcardAudioFallbackUrls = [];
+        this._flashcardUsingSegments = false;
+        this._flashcardAudioSegments = [];
         this._flashcardAudioDeadlineAt = 0;
         this.setData({ audioPlaying: false, audioCompleted: true, libraryAudioKey: '' });
       });
@@ -1356,6 +1343,10 @@ Page({
         const failedUrl = String(this._flashcardActiveAudioUrl || '');
         if (failedUrl && !/^https:\/\//.test(failedUrl)) removeLocalAudioFile(failedUrl);
         if (this.tryNextDictionaryVoiceFallback()) return;
+        if (this.startDictionaryVoiceSegmentFallback()) return;
+        if (this.playNextDictionaryVoiceSegment()) return;
+        this._flashcardUsingSegments = false;
+        this._flashcardAudioSegments = [];
         this._flashcardAudioDeadlineAt = 0;
         this.setData({ audioPlaying: false, audioCompleted: true, libraryAudioKey: '' });
         if (Date.now() < Number(this.silentAudioErrorUntil || 0)) {
@@ -1385,11 +1376,36 @@ Page({
     this.flashcardAudioContext.play();
     return true;
   },
+  startDictionaryVoiceSegmentFallback() {
+    if (this._flashcardUsingSegments) return false;
+    const segments = this._flashcardAudioSegments || [];
+    if (segments.length < 2 || Date.now() >= Number(this._flashcardAudioDeadlineAt || 0)) return false;
+    this._flashcardUsingSegments = true;
+    this._flashcardAudioSegmentIndex = -1;
+    return this.playNextDictionaryVoiceSegment(false);
+  },
+  playNextDictionaryVoiceSegment(resetDeadline = true) {
+    if (!this._flashcardUsingSegments || !this.flashcardAudioContext) return false;
+    const segments = this._flashcardAudioSegments || [];
+    const nextIndex = Number(this._flashcardAudioSegmentIndex || 0) + 1;
+    if (nextIndex >= segments.length) return false;
+    this._flashcardAudioSegmentIndex = nextIndex;
+    this._flashcardAudioFallbackUrls = buildDictionaryVoiceSegmentUrls(segments[nextIndex]);
+    this._flashcardAudioFallbackIndex = 0;
+    if (resetDeadline) this._flashcardAudioDeadlineAt = Date.now() + 2000;
+    this._flashcardActiveAudioUrl = this._flashcardAudioFallbackUrls[0];
+    this.startCardAudioStartTimer(this._flashcardAudioRequestId);
+    this.flashcardAudioContext.src = this._flashcardActiveAudioUrl;
+    this.flashcardAudioContext.play();
+    return true;
+  },
   cancelCurrentAudio() {
     this.clearCardAudioStartTimer();
     this._flashcardAudioRequestId = Number(this._flashcardAudioRequestId || 0) + 1;
     this._flashcardAudioLoading = false;
     this._flashcardAudioFallbackUrls = [];
+    this._flashcardUsingSegments = false;
+    this._flashcardAudioSegments = [];
     this._flashcardAudioDeadlineAt = 0;
     if (this.flashcardAudioContext) {
       try {
@@ -1415,9 +1431,13 @@ Page({
       this.cardAudioStartTimer = null;
       if (this._flashcardAudioRequestId !== audioRequestId) return;
       if (Date.now() < Number(this._flashcardAudioDeadlineAt || 0) && this.tryNextDictionaryVoiceFallback()) return;
+      if (this.startDictionaryVoiceSegmentFallback()) return;
+      if (this.playNextDictionaryVoiceSegment()) return;
       this._flashcardAudioRequestId += 1;
       this._flashcardAudioLoading = false;
       this._flashcardAudioFallbackUrls = [];
+      this._flashcardUsingSegments = false;
+      this._flashcardAudioSegments = [];
       this._flashcardAudioDeadlineAt = 0;
       this.silentAudioErrorUntil = Date.now() + 1000;
       if (this.flashcardAudioContext) {
@@ -1471,7 +1491,7 @@ Page({
     if (!card || !card.canSpeak || !card.flashcardKey) return;
     this.prefetchingAudioKeys = this.prefetchingAudioKeys || {};
     if (this.prefetchingAudioKeys[card.flashcardKey]) return;
-    const text = card.word || card.phrase || card.displayText || '';
+    const text = card.audioText || card.word || card.phrase || card.pattern || card.displayText || '';
     if (!text) return;
     const localAudioPath = card.audioLocalPath || getLocalAudioPath(card.flashcardKey);
     if (localFileExists(localAudioPath)) return;
@@ -1499,7 +1519,7 @@ Page({
     const audioRequestId = Number(this._flashcardAudioRequestId || 0) + 1;
     this._flashcardAudioRequestId = audioRequestId;
     if (!current.canSpeak) return;
-    const audioText = current.word || current.phrase || current.displayText || '';
+    const audioText = current.audioText || current.word || current.phrase || current.pattern || current.displayText || '';
     if (!audioText) {
       this.setData({ audioCompleted: true });
       if (!silent) {
@@ -1509,6 +1529,8 @@ Page({
     }
     const fallbackUrls = buildDictionaryVoiceUrls(audioText);
     this._flashcardAudioFallbackUrls = fallbackUrls;
+    this._flashcardUsingSegments = false;
+    this._flashcardAudioSegments = buildDictionaryVoiceSegments(audioText);
     this._flashcardActiveKey = current.flashcardKey || '';
     this._flashcardAudioDeadlineAt = Date.now() + FLASHCARD_AUDIO_TOTAL_TIMEOUT_MS;
     const localAudioPath = current.audioLocalPath || getLocalAudioPath(current.flashcardKey);

@@ -38,20 +38,33 @@ test('例句只在单词边界换行', () => {
   assert.match(pageStyles, /\.library-vocab-example\s*\{[\s\S]*?font-size:\s*28rpx;[\s\S]*?overflow-wrap:\s*normal;[\s\S]*?word-break:\s*normal;/);
 });
 
-test('词汇发音只使用词典直连与词典专用缓存', () => {
+test('词汇发音只使用统一词典候选与词典专用缓存', () => {
+  const voiceSource = fs.readFileSync(path.join(root, 'utils/dictionary-voice.js'), 'utf8');
   assert.match(pageTemplate, /catchtap="speakLibraryCard"/);
   assert.match(pageSource, /speakLibraryCard\(event\)/);
   assert.doesNotMatch(pageSource, /synthesizeReadingAudio/);
   assert.doesNotMatch(pageSource, /store\.getTempFileURL/);
   assert.doesNotMatch(pageSource, /store\.saveFlashcardAudio/);
-  assert.match(pageSource, /FLASHCARD_AUDIO_CACHE_PREFIX = 'flashcard-dictionary-audio-v3-'/);
+  assert.match(pageSource, /FLASHCARD_AUDIO_CACHE_PREFIX = 'flashcard-dictionary-audio-v4-'/);
   assert.match(pageSource, /buildDictionaryVoiceUrls\(audioText\)/);
-  assert.match(pageSource, /type=2[\s\S]*type=1/);
-  assert.match(pageSource, /normalizeDictionaryVoiceText/);
+  assert.match(pageSource, /\n\s*audioText,\n/);
+  assert.match(pageSource, /canSpeak:\s*canUseDictionaryVoice\(audioText\)/);
+  assert.match(voiceSource, /\[2, 1, 0\]/);
+  assert.match(voiceSource, /normalizeDictionaryVoiceText/);
   assert.match(pageSource, /removeLocalAudioFile\(filePath\)/);
   assert.match(pageTemplate, /libraryAudioKey === item\.flashcardKey/);
   assert.match(pageStyles, /@keyframes libraryNoteBounce/);
   assert.match(pageStyles, /\.library-vocab-row-speak\.is-active/);
   assert.match(pageTemplate, /class="library-vocab-row-main is-speakable"[^>]*bindtap="speakLibraryCard"/);
   assert.match(pageTemplate, /class="vocab-word-main is-speakable"[^>]*bindtap="speakLibraryCard"/);
+});
+
+test('阅读、听力课程和语法查词共用统一词典播放器', () => {
+  const reading = fs.readFileSync(path.join(root, 'pages/reading/detail/index.js'), 'utf8');
+  const lesson = fs.readFileSync(path.join(root, 'pages/lesson/index.js'), 'utf8');
+  const grammar = fs.readFileSync(path.join(root, 'pages/grammar/index.js'), 'utf8');
+  [reading, lesson, grammar].forEach((source) => assert.match(source, /createDictionaryVoicePlayer/));
+  assert.doesNotMatch(reading, /dict\.youdao\.com\/dictvoice/);
+  assert.doesNotMatch(lesson, /dict\.youdao\.com\/dictvoice/);
+  assert.doesNotMatch(grammar, /dict\.youdao\.com\/dictvoice/);
 });

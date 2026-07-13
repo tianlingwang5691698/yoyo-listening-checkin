@@ -86,6 +86,15 @@
 
 ## 已知案例
 
+### 2026-07-13 Pre A1 Songs 同时显示可进入和未开放
+
+1. 现象：音频页 Pre A1 的 Songs 左侧显示“可进入”，右侧显示“未开放”，点击不能进入。
+2. 账号：不限账号。
+3. 查询：`pages/level.loadOverview -> store.getListeningPlanOverview -> cloud.getListeningPlanOverview.materials[song]` 返回 `totalCount=0 / enabled=false`；线上 `A1/Super simple songs` 实有 103 个 MP3。
+4. 结论：轻量 Overview 按性能要求不扫描目录，但 Songs 缺少与其他 Level 一致的静态目录摘要，冷启动把空静态目录误判为未开放；前端又把零数量统一显示为“可进入”。
+5. 修复：生成通用静态目录 manifest，Songs 与其他 Level 共用摘要和详情链路；空且禁用时前端统一显示“未开放”。
+6. 是否需要发版：需部署 `yoyo` 云函数使线上目录立即可用；前端状态文案修复需重新发布小程序。
+
 ### 2026-07-13 初中/高中词汇书被轻量云函数拒绝
 
 1. 现象：初中、高中词汇书读取失败，页面 DEBUG 显示 `dictionary-book-invalid`，Unlock 词汇书可正常读取。

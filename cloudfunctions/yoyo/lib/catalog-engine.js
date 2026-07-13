@@ -1,6 +1,7 @@
 const { peppaTranscriptBuildStatus } = require('../transcripts/peppa_build_status');
 const { TRANSCRIPT_BUNDLE_PATHS } = require('./constants');
 const unlockSeriesManifests = require('../data/unlock-series-manifests.json');
+const staticCatalogManifests = require('../data/static-catalog-manifests.json');
 const trainingPoolRepository = require('../repositories/training-pool.repository');
 const storageAdapter = require('../adapters/storage.adapter');
 const transcriptAdapter = require('../adapters/transcript.adapter');
@@ -209,7 +210,17 @@ const unlockTasks = unlockAudioFiles.map((item, index) => {
   };
 });
 
-const songTasks = [];
+function buildStaticManifestTasks(category) {
+  const rows = staticCatalogManifests && staticCatalogManifests.categories && staticCatalogManifests.categories[category];
+  return (Array.isArray(rows) ? rows : []).map((item) => Object.assign({}, item, {
+    category,
+    audioUrl: buildCloudAssetUrl(item.audioCloudPath),
+    audioFileId: buildCloudFileId(item.audioCloudPath),
+    audioSource: item.audioSource || 'static-cloud-url'
+  }));
+}
+
+const songTasks = buildStaticManifestTasks('song');
 const songPlaceholder = {
   taskId: 'song-pending',
   category: 'song',
@@ -231,7 +242,7 @@ const STANDALONE_LEVEL_CATEGORIES = ['unlock1thirdedition', 'unlock1workbook', '
 const NEW_CONCEPT_CATEGORIES = ['newconcept1', 'newconcept2', 'newconcept3', 'newconcept4'];
 const UNLOCK_SERIES_CATEGORIES = ['unlock1', 'unlock1thirdedition', 'unlock1workbook', 'unlock2', 'unlock2thirdedition', 'unlock2workbook', 'unlock3textbook', 'unlock3thirdedition', 'unlock3', 'unlock4', 'unlock4thirdedition', 'unlock4workbook'];
 const UNLOCK_WORKBOOK_CATEGORIES = ['unlock1workbook', 'unlock2workbook', 'unlock3', 'unlock4workbook'];
-const MANIFEST_ONLY_CATEGORIES = ['unlock1thirdedition', 'unlock2thirdedition', 'unlock3thirdedition', 'unlock4thirdedition'];
+const MANIFEST_ONLY_CATEGORIES = ['unlock1thirdedition', 'unlock2thirdedition', 'unlock3thirdedition', 'unlock4thirdedition', 'song'];
 
 function slugifyTrackIdPart(value) {
   return String(value || '')
@@ -1320,7 +1331,11 @@ async function refreshRuntimeCatalogs(force, categories) {
     } else if (NEW_CONCEPT_CATEGORIES.includes(category)) {
       nextCatalogs[category] = result.tasks.length ? result.tasks : (nextCatalogs[category] || staticMap[category] || []);
     } else {
-      nextCatalogs[category] = result.tasks;
+      const currentCatalog = nextCatalogs[category];
+      const fallbackCatalog = Array.isArray(currentCatalog) && currentCatalog.length
+        ? currentCatalog
+        : (staticMap[category] || []);
+      nextCatalogs[category] = result.tasks.length ? result.tasks : fallbackCatalog;
     }
     nextDebug[category] = result.debug;
   });

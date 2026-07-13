@@ -82,7 +82,7 @@ function buildMaterialRows(materials, activePlan) {
     const selected = !!(getPlanMaterial(activePlan, item.category) || item.selected);
     return Object.assign({}, item, {
       title: localizeMaterialTitle(item.title),
-      countText: item.totalCount ? `${item.totalCount} ${t('items')}` : t('enterable'),
+      countText: item.totalCount ? `${item.totalCount} ${t('items')}` : (item.enabled ? t('enterable') : t('unavailable')),
       stateText: selected ? t('selected') : (item.enabled ? '›' : t('unavailable')),
       selected,
       disabled: !item.enabled

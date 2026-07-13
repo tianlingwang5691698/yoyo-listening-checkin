@@ -7,6 +7,8 @@ const monitor = require('../../utils/monitor');
 const snapshotStore = require('../../utils/snapshot');
 const effects = require('../../utils/effects');
 const i18n = require('../../utils/i18n');
+const { canUseDictionaryVoice, normalizeDictionaryVoiceText } = require('../../utils/dictionary-voice');
+const { createDictionaryVoicePlayer } = require('../../utils/dictionary-voice-player');
 const text = (key, fallback) => i18n.getPageText('lesson', key, undefined, fallback);
 const LESSON_TASK_SNAPSHOT_KEY = 'lessonTaskSnapshotV1';
 const LESSON_STUDY_PACK_SNAPSHOT_KEY = 'lessonStudyPackSnapshotV1';
@@ -335,27 +337,6 @@ function formatAudioErrorText(code) {
 
 function lessonStudyDoneKey(category, taskId) {
   return `lessonListeningStudyDoneV1:${category || ''}:${taskId || ''}`;
-}
-
-function isSingleWord(text) {
-  return /^[A-Za-z][A-Za-z'-]{0,40}$/.test(String(text || '').trim());
-}
-
-function canUseDictionaryVoice(text) {
-  const value = String(text || '').replace(/\s+/g, ' ').trim();
-  if (!value || value.length > 60 || /[.!?;:]/.test(value)) return false;
-  const words = value.split(' ').filter(Boolean);
-  return words.length >= 1
-    && words.length <= 6
-    && words.every((word) => /^[A-Za-z][A-Za-z'-]{0,30}$/.test(word));
-}
-
-function buildDictionaryVoiceUrls(text) {
-  const encoded = encodeURIComponent(text);
-  return [
-    `https://dict.youdao.com/dictvoice?audio=${encoded}&type=2`,
-    `https://dict.youdao.com/dictvoice?audio=${encoded}&type=1`
-  ];
 }
 
 function normalizeLessonStudyCards(cards, type) {
@@ -945,6 +926,10 @@ Page({
     if (this.dictionaryAudioContext) {
       this.dictionaryAudioContext.destroy();
       this.dictionaryAudioContext = null;
+    }
+    if (this.dictionaryVoicePlayer) {
+      this.dictionaryVoicePlayer.destroy();
+      this.dictionaryVoicePlayer = null;
     }
   },
   formatTime(totalSeconds) {
@@ -2236,74 +2221,26 @@ Page({
   },
   async speakLessonStudyAudio(event) {
     const type = String(event.currentTarget.dataset.type || 'word');
-    const text = String(event.currentTarget.dataset.text || '').replace(/\s+/g, ' ').trim();
-    const audioKey = `${type}:${text}`;
-    if (!text || this._lessonStudyAudioLoading || !canUseDictionaryVoice(text)) return;
+    const rawText = String(event.currentTarget.dataset.text || '');
+    const audioText = normalizeDictionaryVoiceText(rawText);
+    const audioKey = `${type}:${rawText}`;
+    if (!audioText || this._lessonStudyAudioLoading || !canUseDictionaryVoice(audioText)) return;
     const cards = type === 'phrase' ? this.data.lessonPhraseCards : this.data.lessonVocabularyCards;
-    const card = (cards || []).find((item) => (item.word || item.text || item.phrase) === text) || {};
+    const card = (cards || []).find((item) => (item.word || item.text || item.phrase) === rawText) || {};
     this._lessonStudyAudioLoading = true;
-    this.setData({ speakingWord: audioKey });
     try {
-      const localUrls = [];
-      const cachedUrl = this._lessonStudyAudioUrls && this._lessonStudyAudioUrls[text];
-      if (cachedUrl) localUrls.push(cachedUrl);
-      if (card.audioUrl && card.audioUrl !== cachedUrl) localUrls.push(card.audioUrl);
-      this._lessonStudyAudioFallbackUrls = [];
-      this._lessonStudyAudioFallbackIndex = 0;
-      this._lessonStudyAudioDictionaryFallbackTried = false;
-      this._lessonStudyAudioFileFallbackTried = false;
-      this._lessonStudyAudioFileId = card.audioFileId || '';
-      this._lessonStudyAudioText = text;
-      this._lessonStudyAudioFallbackUrls = localUrls.concat(buildDictionaryVoiceUrls(text));
-      const url = this._lessonStudyAudioFallbackUrls[0];
-      this._lessonStudyAudioUrls = Object.assign({}, this._lessonStudyAudioUrls || {}, { [text]: url });
-      if (!this.lessonStudyAudioContext) {
-        this.lessonStudyAudioContext = wx.createInnerAudioContext();
-        this.lessonStudyAudioContext.obeyMuteSwitch = false;
-        this.lessonStudyAudioContext.onEnded(() => {
-          this.setData({ speakingWord: '' });
-        });
-        this.lessonStudyAudioContext.onError(async () => {
-          const urls = this._lessonStudyAudioFallbackUrls || [];
-          this._lessonStudyAudioFallbackIndex = Number(this._lessonStudyAudioFallbackIndex || 0) + 1;
-          if (this._lessonStudyAudioFallbackIndex < urls.length) {
-            this.lessonStudyAudioContext.src = urls[this._lessonStudyAudioFallbackIndex];
-            this.lessonStudyAudioContext.play();
-            return;
-          }
-          if (!this._lessonStudyAudioFileFallbackTried && this._lessonStudyAudioFileId) {
-            this._lessonStudyAudioFileFallbackTried = true;
-            try {
-              const fileUrl = await store.getTempFileURL(this._lessonStudyAudioFileId);
-              if (fileUrl) {
-                this._lessonStudyAudioUrls = Object.assign({}, this._lessonStudyAudioUrls || {}, { [this._lessonStudyAudioText]: fileUrl });
-                this.lessonStudyAudioContext.src = fileUrl;
-                this.lessonStudyAudioContext.play();
-                return;
-              }
-            } catch (fileError) {}
-          }
-          if (!this._lessonStudyAudioDictionaryFallbackTried && isSingleWord(this._lessonStudyAudioText)) {
-            this._lessonStudyAudioDictionaryFallbackTried = true;
-            try {
-              const audioResult = await store.synthesizeReadingAudio({
-                text: this._lessonStudyAudioText,
-                skipYoudao: true
-              });
-              if (audioResult && audioResult.audioUrl) {
-                this.lessonStudyAudioContext.src = audioResult.audioUrl;
-                this.lessonStudyAudioContext.play();
-                return;
-              }
-            } catch (fallbackError) {}
-          }
+      const preferredUrls = [this._lessonStudyAudioUrls && this._lessonStudyAudioUrls[rawText], card.audioUrl].filter(Boolean);
+      if (card.audioFileId) preferredUrls.push(await store.getTempFileURL(card.audioFileId));
+      if (!this.dictionaryVoicePlayer) this.dictionaryVoicePlayer = createDictionaryVoicePlayer();
+      this.dictionaryVoicePlayer.play(audioText, {
+        preferredUrls,
+        onStart: () => this.setData({ speakingWord: audioKey }),
+        onDone: () => this.setData({ speakingWord: '' }),
+        onFailed: () => {
           this.setData({ speakingWord: '' });
           wx.showToast({ title: text('playbackFailed', '播放失败，稍后再试'), icon: 'none' });
-        });
-      }
-      this.lessonStudyAudioContext.stop();
-      this.lessonStudyAudioContext.src = url;
-      this.lessonStudyAudioContext.play();
+        }
+      });
     } catch (error) {
       this.setData({ speakingWord: '' });
       wx.showToast({ title: text('pronunciationFailed', '发音失败，稍后重试'), icon: 'none' });
@@ -2414,55 +2351,19 @@ Page({
     const entry = this.data.dictionaryEntry || {};
     const word = entry.word || this.data.dictionaryWord || '';
     if (!word || this.data.dictionaryAudioLoading) return;
-    const playUrl = (url) => {
-      if (!this.dictionaryAudioContext) {
-        this.dictionaryAudioContext = wx.createInnerAudioContext();
-        this.dictionaryAudioContext.obeyMuteSwitch = false;
-        this.dictionaryAudioContext.onEnded(() => {
-          this.setData({ dictionaryAudioLoading: false });
-        });
-        this.dictionaryAudioContext.onError(() => {
-          const urls = this._dictionaryAudioFallbackUrls || [];
-          this._dictionaryAudioFallbackIndex = Number(this._dictionaryAudioFallbackIndex || 0) + 1;
-          if (this._dictionaryAudioFallbackIndex < urls.length) {
-            this.dictionaryAudioContext.src = urls[this._dictionaryAudioFallbackIndex];
-            this.dictionaryAudioContext.play();
-            return;
-          }
-          if (!this._dictionaryAudioFileFallbackTried && this._dictionaryAudioFileId) {
-            this._dictionaryAudioFileFallbackTried = true;
-            store.getTempFileURL(this._dictionaryAudioFileId).then((fileUrl) => {
-              if (fileUrl) {
-                this.dictionaryAudioContext.src = fileUrl;
-                this.dictionaryAudioContext.play();
-                return;
-              }
-              this.setData({ dictionaryAudioLoading: false });
-              wx.showToast({ title: text('playbackFailed', '播放失败，稍后再试'), icon: 'none' });
-            }).catch(() => {
-              this.setData({ dictionaryAudioLoading: false });
-              wx.showToast({ title: text('playbackFailed', '播放失败，稍后再试'), icon: 'none' });
-            });
-            return;
-          }
+    try {
+      const preferredUrls = [entry.audioUrl || ''];
+      if (entry.audioFileId) preferredUrls.push(await store.getTempFileURL(entry.audioFileId));
+      if (!this.dictionaryVoicePlayer) this.dictionaryVoicePlayer = createDictionaryVoicePlayer();
+      this.dictionaryVoicePlayer.play(word, {
+        preferredUrls,
+        onStart: () => this.setData({ dictionaryAudioLoading: true }),
+        onDone: () => this.setData({ dictionaryAudioLoading: false }),
+        onFailed: () => {
           this.setData({ dictionaryAudioLoading: false });
           wx.showToast({ title: text('playbackFailed', '播放失败，稍后再试'), icon: 'none' });
-        });
-      }
-      this.dictionaryAudioContext.stop();
-      this.dictionaryAudioContext.src = url;
-      this.setData({ dictionaryAudioLoading: true });
-      this.dictionaryAudioContext.play();
-    };
-    try {
-      const urls = [];
-      if (entry.audioUrl) urls.push(entry.audioUrl);
-      if (canUseDictionaryVoice(word)) urls.push(...buildDictionaryVoiceUrls(word));
-      this._dictionaryAudioFileId = entry.audioFileId || '';
-      this._dictionaryAudioFileFallbackTried = false;
-      this._dictionaryAudioFallbackUrls = urls.length ? urls : buildDictionaryVoiceUrls(word);
-      this._dictionaryAudioFallbackIndex = 0;
-      playUrl(this._dictionaryAudioFallbackUrls[0]);
+        }
+      });
     } catch (error) {
       this.setData({ dictionaryAudioLoading: false });
       wx.showToast({ title: text('playbackFailed', '播放失败，稍后再试'), icon: 'none' });

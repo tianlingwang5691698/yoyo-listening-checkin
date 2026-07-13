@@ -3,26 +3,15 @@ const store = require('../../../../utils/store');
 const effects = require('../../../../utils/effects');
 const i18n = require('../../../../utils/i18n');
 const { formatVocabularyDefinitions, formatVocabularyMeaning } = require('../../../../utils/vocabulary-definitions');
+const {
+  buildDictionaryVoiceUrls,
+  buildDictionaryVoiceSegments,
+  buildDictionaryVoiceSegmentUrls
+} = require('../../../../utils/dictionary-voice');
 
 const text = (key, fallback) => i18n.getPageText('vocabularyDictation', key, undefined, fallback);
 const SESSION_LIMIT = 20;
 const DICTATION_AUDIO_TOTAL_TIMEOUT_MS = 5000;
-
-function normalizeDictionaryVoiceText(value) {
-  return String(value || '')
-    .replace(/\bsb(?:'s)?\.?(?![A-Za-z])/gi, (word) => (/('s)/i.test(word) ? "somebody's" : 'somebody'))
-    .replace(/\bsth\.?(?![A-Za-z])/gi, 'something')
-    .replace(/\s+/g, ' ')
-    .trim();
-}
-
-function buildDictionaryVoiceUrls(value) {
-  const encoded = encodeURIComponent(normalizeDictionaryVoiceText(value));
-  return [
-    `https://dict.youdao.com/dictvoice?audio=${encoded}&type=2`,
-    `https://dict.youdao.com/dictvoice?audio=${encoded}&type=1`
-  ];
-}
 
 function defaultPracticeCount(total) {
   const available = Math.max(0, Number(total || 0));
@@ -284,6 +273,8 @@ Page({
     this.clearAudioStartTimer();
     this.setData({ audioFailed: false });
     this.dictationAudioFallbackUrls = buildDictionaryVoiceUrls(word);
+    this.dictationAudioSegments = buildDictionaryVoiceSegments(word);
+    this.dictationUsingSegments = false;
     this.dictationAudioFallbackIndex = 0;
     this.dictationAudioDeadlineAt = Date.now() + DICTATION_AUDIO_TOTAL_TIMEOUT_MS;
     if (!this.audioContext) {
@@ -292,12 +283,17 @@ Page({
       this.audioContext.onPlay(() => this.clearAudioStartTimer());
       this.audioContext.onEnded(() => {
         this.clearAudioStartTimer();
+        if (this.playNextDictationAudioSegment()) return;
         this.dictationAudioFallbackUrls = [];
+        this.dictationAudioSegments = [];
+        this.dictationUsingSegments = false;
         this.dictationAudioDeadlineAt = 0;
       });
       this.audioContext.onError(() => {
         this.clearAudioStartTimer();
         if (this.tryNextDictationAudioFallback()) return;
+        if (this.startDictationAudioSegmentFallback()) return;
+        if (this.playNextDictationAudioSegment()) return;
         this.markDictationAudioFailed();
       });
     }
@@ -316,6 +312,28 @@ Page({
     this.audioContext.play();
     return true;
   },
+  startDictationAudioSegmentFallback() {
+    if (this.dictationUsingSegments) return false;
+    const segments = this.dictationAudioSegments || [];
+    if (segments.length < 2 || Date.now() >= Number(this.dictationAudioDeadlineAt || 0)) return false;
+    this.dictationUsingSegments = true;
+    this.dictationAudioSegmentIndex = -1;
+    return this.playNextDictationAudioSegment(false);
+  },
+  playNextDictationAudioSegment(resetDeadline = true) {
+    if (!this.dictationUsingSegments || !this.audioContext) return false;
+    const segments = this.dictationAudioSegments || [];
+    const nextIndex = Number(this.dictationAudioSegmentIndex || 0) + 1;
+    if (nextIndex >= segments.length) return false;
+    this.dictationAudioSegmentIndex = nextIndex;
+    this.dictationAudioFallbackUrls = buildDictionaryVoiceSegmentUrls(segments[nextIndex]);
+    this.dictationAudioFallbackIndex = 0;
+    if (resetDeadline) this.dictationAudioDeadlineAt = Date.now() + 2000;
+    this.audioContext.src = this.dictationAudioFallbackUrls[0];
+    this.startDictationAudioAttemptTimer(this.playingWord, this.audioPlayToken);
+    this.audioContext.play();
+    return true;
+  },
   startDictationAudioAttemptTimer(word, playToken) {
     this.clearAudioStartTimer();
     const remainingMs = Math.max(0, Number(this.dictationAudioDeadlineAt || 0) - Date.now());
@@ -326,6 +344,8 @@ Page({
       const currentWord = this.data.current && this.data.current.word;
       if (this.audioPlayToken !== playToken || currentWord !== word) return;
       if (Date.now() < Number(this.dictationAudioDeadlineAt || 0) && this.tryNextDictationAudioFallback()) return;
+      if (this.startDictationAudioSegmentFallback()) return;
+      if (this.playNextDictationAudioSegment()) return;
       this.markDictationAudioFailed();
     }, attemptTimeoutMs);
   },
@@ -333,6 +353,8 @@ Page({
     const currentWord = this.data.current && this.data.current.word;
     if (!currentWord || currentWord !== this.playingWord) return;
     this.dictationAudioFallbackUrls = [];
+    this.dictationAudioSegments = [];
+    this.dictationUsingSegments = false;
     this.dictationAudioDeadlineAt = 0;
     if (this.audioContext) {
       try {

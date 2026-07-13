@@ -120,18 +120,23 @@ test('背诵正常发音结束后继续，失败或超时则解锁', () => {
   assert.match(source, /buildDictionaryVoiceUrls\(audioText\)/);
   assert.match(source, /_flashcardAudioFallbackUrls/);
   assert.match(source, /tryNextDictionaryVoiceFallback\(\)/);
+  assert.match(source, /startDictionaryVoiceSegmentFallback\(\)/);
+  assert.match(source, /playNextDictionaryVoiceSegment\(\)/);
   assert.match(source, /cancelCurrentAudio\(\)/);
   assert.match(source, /if \(this\.data\.audioLoading \|\| this\.data\.audioPlaying\) return;/);
 });
 
 test('听写美英音总计 5 秒失败后显示词义提示', () => {
   const source = read('pages/reading/flashcards/dictation/index.js');
+  const voiceSource = read('utils/dictionary-voice.js');
   const template = read('pages/reading/flashcards/dictation/index.wxml');
   const styles = read('pages/reading/flashcards/dictation/index.wxss');
   const catalog = require('../utils/i18n-catalog-learning').vocabularyDictation;
   assert.match(source, /DICTATION_AUDIO_TOTAL_TIMEOUT_MS = 5000/);
-  assert.match(source, /type=2[\s\S]*type=1/);
+  assert.match(voiceSource, /\[2, 1, 0\]/);
   assert.match(source, /tryNextDictationAudioFallback\(\)/);
+  assert.match(source, /startDictationAudioSegmentFallback\(\)/);
+  assert.match(source, /playNextDictationAudioSegment\(\)/);
   assert.match(source, /markDictationAudioFailed\(\)/);
   assert.match(source, /onPlay\(\(\) => this\.clearAudioStartTimer\(\)\)/);
   assert.match(template, /audioFailed && !revealed/);
