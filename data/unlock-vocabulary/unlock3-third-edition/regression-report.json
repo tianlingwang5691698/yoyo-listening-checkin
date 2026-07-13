@@ -1,0 +1,124 @@
+{
+  "generatedAt": "2026-07-13T06:38:31.491Z",
+  "books": [
+    {
+      "unit": 1,
+      "section": "LS",
+      "rows": 55,
+      "bytes": 32745
+    },
+    {
+      "unit": 1,
+      "section": "RW",
+      "rows": 65,
+      "bytes": 35924
+    },
+    {
+      "unit": 2,
+      "section": "LS",
+      "rows": 54,
+      "bytes": 29621
+    },
+    {
+      "unit": 2,
+      "section": "RW",
+      "rows": 63,
+      "bytes": 35334
+    },
+    {
+      "unit": 3,
+      "section": "LS",
+      "rows": 48,
+      "bytes": 30386
+    },
+    {
+      "unit": 3,
+      "section": "RW",
+      "rows": 68,
+      "bytes": 40300
+    },
+    {
+      "unit": 4,
+      "section": "LS",
+      "rows": 42,
+      "bytes": 24156
+    },
+    {
+      "unit": 4,
+      "section": "RW",
+      "rows": 72,
+      "bytes": 41142
+    },
+    {
+      "unit": 5,
+      "section": "LS",
+      "rows": 59,
+      "bytes": 34025
+    },
+    {
+      "unit": 5,
+      "section": "RW",
+      "rows": 64,
+      "bytes": 37277
+    },
+    {
+      "unit": 6,
+      "section": "LS",
+      "rows": 64,
+      "bytes": 35168
+    },
+    {
+      "unit": 6,
+      "section": "RW",
+      "rows": 62,
+      "bytes": 38127
+    },
+    {
+      "unit": 7,
+      "section": "LS",
+      "rows": 57,
+      "bytes": 31300
+    },
+    {
+      "unit": 7,
+      "section": "RW",
+      "rows": 65,
+      "bytes": 40276
+    },
+    {
+      "unit": 8,
+      "section": "LS",
+      "rows": 48,
+      "bytes": 29690
+    },
+    {
+      "unit": 8,
+      "section": "RW",
+      "rows": 62,
+      "bytes": 37513
+    }
+  ],
+  "bookCount": 16,
+  "rawNumberedRows": 954,
+  "allNumberedRowsComplete": true,
+  "uniqueThirdEditionRows": 948,
+  "onlineOldRows": 908,
+  "newCandidateRows": 334,
+  "examplesComplete": true,
+  "purePosPhoneticCount": 0,
+  "canShowVoiceIcon": 948,
+  "noIconCount": 0,
+  "phraseRows": 202,
+  "uniquePhraseAudioTexts": 196,
+  "wholePlayablePhrases": 169,
+  "finalPlayablePhrases": 196,
+  "wordFallbackPhrases": 27,
+  "failedPhraseCount": 0,
+  "largestBookBytes": 41142,
+  "purePosPhonetics": [],
+  "noIconRows": [],
+  "missingCandidateFields": [],
+  "corruptPhonetics": [],
+  "failedPhrases": [],
+  "ready": true
+}

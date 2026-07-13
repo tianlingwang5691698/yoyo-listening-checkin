@@ -22,11 +22,12 @@ test('轻量云函数支持初中、高中和 Unlock 词书', () => {
   assert.equal(resolveBook('junior').cloudPath, 'dictionary_books/word-dictionary-junior.json');
   assert.equal(resolveBook('senior').cloudPath, 'dictionary_books/word-dictionary-senior.json');
   assert.equal(resolveBook('unlock-3-u2-ls').cloudPath, 'dictionary_books/unlock-v2/level-3/unit-2/ls.json');
+  assert.equal(resolveBook('unlock-v3-3-u2-ls').cloudPath, 'dictionary_books/unlock-v3/level-3/unit-2/ls.json');
   assert.equal(resolveBook('unknown'), null);
 });
 
 test('Unlock 例句缓存升级并保留页面展示', () => {
-  assert.match(pageSource, /FLASHCARD_SOURCE_CACHE_CONTENT_VERSION = 2026071302/);
+  assert.match(pageSource, /FLASHCARD_SOURCE_CACHE_CONTENT_VERSION = 2026071303/);
   assert.match(pageTemplate, /current\.example/);
   assert.match(pageTemplate, /item\.example/);
   assert.match(pageTemplate, /item\.exampleMeaning/);

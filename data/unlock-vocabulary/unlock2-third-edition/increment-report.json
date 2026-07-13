@@ -1,0 +1,138 @@
+{
+  "books": [
+    {
+      "unit": 1,
+      "section": "LS",
+      "online": 112,
+      "thirdEditionDeduped": 112,
+      "overlap": 106,
+      "new": 6
+    },
+    {
+      "unit": 1,
+      "section": "RW",
+      "online": 56,
+      "thirdEditionDeduped": 56,
+      "overlap": 56,
+      "new": 0
+    },
+    {
+      "unit": 2,
+      "section": "LS",
+      "online": 80,
+      "thirdEditionDeduped": 60,
+      "overlap": 48,
+      "new": 12
+    },
+    {
+      "unit": 2,
+      "section": "RW",
+      "online": 63,
+      "thirdEditionDeduped": 37,
+      "overlap": 36,
+      "new": 1
+    },
+    {
+      "unit": 3,
+      "section": "LS",
+      "online": 105,
+      "thirdEditionDeduped": 90,
+      "overlap": 78,
+      "new": 12
+    },
+    {
+      "unit": 3,
+      "section": "RW",
+      "online": 66,
+      "thirdEditionDeduped": 64,
+      "overlap": 39,
+      "new": 25
+    },
+    {
+      "unit": 4,
+      "section": "LS",
+      "online": 94,
+      "thirdEditionDeduped": 94,
+      "overlap": 94,
+      "new": 0
+    },
+    {
+      "unit": 4,
+      "section": "RW",
+      "online": 60,
+      "thirdEditionDeduped": 58,
+      "overlap": 35,
+      "new": 23
+    },
+    {
+      "unit": 5,
+      "section": "LS",
+      "online": 63,
+      "thirdEditionDeduped": 63,
+      "overlap": 63,
+      "new": 0
+    },
+    {
+      "unit": 5,
+      "section": "RW",
+      "online": 57,
+      "thirdEditionDeduped": 57,
+      "overlap": 57,
+      "new": 0
+    },
+    {
+      "unit": 6,
+      "section": "LS",
+      "online": 103,
+      "thirdEditionDeduped": 89,
+      "overlap": 73,
+      "new": 16
+    },
+    {
+      "unit": 6,
+      "section": "RW",
+      "online": 66,
+      "thirdEditionDeduped": 72,
+      "overlap": 32,
+      "new": 40
+    },
+    {
+      "unit": 7,
+      "section": "LS",
+      "online": 155,
+      "thirdEditionDeduped": 104,
+      "overlap": 104,
+      "new": 0
+    },
+    {
+      "unit": 7,
+      "section": "RW",
+      "online": 57,
+      "thirdEditionDeduped": 57,
+      "overlap": 57,
+      "new": 0
+    },
+    {
+      "unit": 8,
+      "section": "LS",
+      "online": 121,
+      "thirdEditionDeduped": 66,
+      "overlap": 51,
+      "new": 15
+    },
+    {
+      "unit": 8,
+      "section": "RW",
+      "online": 59,
+      "thirdEditionDeduped": 76,
+      "overlap": 51,
+      "new": 25
+    }
+  ],
+  "onlineTotal": 1317,
+  "thirdEditionDedupedTotal": 1155,
+  "overlapTotal": 980,
+  "newTotal": 175,
+  "reusedOrAuthoredExamples": 175,
+  "missingExamples": 0
+}

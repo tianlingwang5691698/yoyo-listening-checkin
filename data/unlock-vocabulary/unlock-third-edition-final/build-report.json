@@ -1,0 +1,285 @@
+{
+  "generatedAt": "2026-07-13T06:56:37.578Z",
+  "levels": [
+    {
+      "level": 1,
+      "rows": 946
+    },
+    {
+      "level": 3,
+      "rows": 948
+    }
+  ],
+  "books": 32,
+  "rows": 1894,
+  "maxBookBytes": 46726,
+  "requiredFieldsComplete": true,
+  "corruptPhoneticCount": 0,
+  "internalFieldCount": 0,
+  "phraseRows": 312,
+  "uniquePhraseAudioTexts": 296,
+  "wholePlayablePhrases": 258,
+  "finalPlayablePhrases": 296,
+  "wordFallbackPhrases": 38,
+  "failedPhraseCount": 0,
+  "failedPhrases": [],
+  "files": [
+    {
+      "level": 1,
+      "unit": 1,
+      "section": "ls",
+      "rows": 50,
+      "bytes": 25238,
+      "file": "data/unlock-vocabulary/unlock-third-edition-final/level-1/unit-1/ls.json"
+    },
+    {
+      "level": 1,
+      "unit": 1,
+      "section": "rw",
+      "rows": 56,
+      "bytes": 29294,
+      "file": "data/unlock-vocabulary/unlock-third-edition-final/level-1/unit-1/rw.json"
+    },
+    {
+      "level": 1,
+      "unit": 2,
+      "section": "ls",
+      "rows": 50,
+      "bytes": 24395,
+      "file": "data/unlock-vocabulary/unlock-third-edition-final/level-1/unit-2/ls.json"
+    },
+    {
+      "level": 1,
+      "unit": 2,
+      "section": "rw",
+      "rows": 56,
+      "bytes": 29171,
+      "file": "data/unlock-vocabulary/unlock-third-edition-final/level-1/unit-2/rw.json"
+    },
+    {
+      "level": 1,
+      "unit": 3,
+      "section": "ls",
+      "rows": 61,
+      "bytes": 30888,
+      "file": "data/unlock-vocabulary/unlock-third-edition-final/level-1/unit-3/ls.json"
+    },
+    {
+      "level": 1,
+      "unit": 3,
+      "section": "rw",
+      "rows": 52,
+      "bytes": 27446,
+      "file": "data/unlock-vocabulary/unlock-third-edition-final/level-1/unit-3/rw.json"
+    },
+    {
+      "level": 1,
+      "unit": 4,
+      "section": "ls",
+      "rows": 91,
+      "bytes": 46726,
+      "file": "data/unlock-vocabulary/unlock-third-edition-final/level-1/unit-4/ls.json"
+    },
+    {
+      "level": 1,
+      "unit": 4,
+      "section": "rw",
+      "rows": 49,
+      "bytes": 25235,
+      "file": "data/unlock-vocabulary/unlock-third-edition-final/level-1/unit-4/rw.json"
+    },
+    {
+      "level": 1,
+      "unit": 5,
+      "section": "ls",
+      "rows": 86,
+      "bytes": 44610,
+      "file": "data/unlock-vocabulary/unlock-third-edition-final/level-1/unit-5/ls.json"
+    },
+    {
+      "level": 1,
+      "unit": 5,
+      "section": "rw",
+      "rows": 54,
+      "bytes": 28696,
+      "file": "data/unlock-vocabulary/unlock-third-edition-final/level-1/unit-5/rw.json"
+    },
+    {
+      "level": 1,
+      "unit": 6,
+      "section": "ls",
+      "rows": 50,
+      "bytes": 25336,
+      "file": "data/unlock-vocabulary/unlock-third-edition-final/level-1/unit-6/ls.json"
+    },
+    {
+      "level": 1,
+      "unit": 6,
+      "section": "rw",
+      "rows": 59,
+      "bytes": 30895,
+      "file": "data/unlock-vocabulary/unlock-third-edition-final/level-1/unit-6/rw.json"
+    },
+    {
+      "level": 1,
+      "unit": 7,
+      "section": "ls",
+      "rows": 50,
+      "bytes": 24983,
+      "file": "data/unlock-vocabulary/unlock-third-edition-final/level-1/unit-7/ls.json"
+    },
+    {
+      "level": 1,
+      "unit": 7,
+      "section": "rw",
+      "rows": 53,
+      "bytes": 27707,
+      "file": "data/unlock-vocabulary/unlock-third-edition-final/level-1/unit-7/rw.json"
+    },
+    {
+      "level": 1,
+      "unit": 8,
+      "section": "ls",
+      "rows": 86,
+      "bytes": 44675,
+      "file": "data/unlock-vocabulary/unlock-third-edition-final/level-1/unit-8/ls.json"
+    },
+    {
+      "level": 1,
+      "unit": 8,
+      "section": "rw",
+      "rows": 43,
+      "bytes": 22780,
+      "file": "data/unlock-vocabulary/unlock-third-edition-final/level-1/unit-8/rw.json"
+    },
+    {
+      "level": 3,
+      "unit": 1,
+      "section": "ls",
+      "rows": 55,
+      "bytes": 29041,
+      "file": "data/unlock-vocabulary/unlock-third-edition-final/level-3/unit-1/ls.json"
+    },
+    {
+      "level": 3,
+      "unit": 1,
+      "section": "rw",
+      "rows": 65,
+      "bytes": 34293,
+      "file": "data/unlock-vocabulary/unlock-third-edition-final/level-3/unit-1/rw.json"
+    },
+    {
+      "level": 3,
+      "unit": 2,
+      "section": "ls",
+      "rows": 54,
+      "bytes": 28208,
+      "file": "data/unlock-vocabulary/unlock-third-edition-final/level-3/unit-2/ls.json"
+    },
+    {
+      "level": 3,
+      "unit": 2,
+      "section": "rw",
+      "rows": 63,
+      "bytes": 33572,
+      "file": "data/unlock-vocabulary/unlock-third-edition-final/level-3/unit-2/rw.json"
+    },
+    {
+      "level": 3,
+      "unit": 3,
+      "section": "ls",
+      "rows": 48,
+      "bytes": 25681,
+      "file": "data/unlock-vocabulary/unlock-third-edition-final/level-3/unit-3/ls.json"
+    },
+    {
+      "level": 3,
+      "unit": 3,
+      "section": "rw",
+      "rows": 68,
+      "bytes": 36785,
+      "file": "data/unlock-vocabulary/unlock-third-edition-final/level-3/unit-3/rw.json"
+    },
+    {
+      "level": 3,
+      "unit": 4,
+      "section": "ls",
+      "rows": 42,
+      "bytes": 22638,
+      "file": "data/unlock-vocabulary/unlock-third-edition-final/level-3/unit-4/ls.json"
+    },
+    {
+      "level": 3,
+      "unit": 4,
+      "section": "rw",
+      "rows": 72,
+      "bytes": 38849,
+      "file": "data/unlock-vocabulary/unlock-third-edition-final/level-3/unit-4/rw.json"
+    },
+    {
+      "level": 3,
+      "unit": 5,
+      "section": "ls",
+      "rows": 59,
+      "bytes": 31353,
+      "file": "data/unlock-vocabulary/unlock-third-edition-final/level-3/unit-5/ls.json"
+    },
+    {
+      "level": 3,
+      "unit": 5,
+      "section": "rw",
+      "rows": 64,
+      "bytes": 34625,
+      "file": "data/unlock-vocabulary/unlock-third-edition-final/level-3/unit-5/rw.json"
+    },
+    {
+      "level": 3,
+      "unit": 6,
+      "section": "ls",
+      "rows": 64,
+      "bytes": 33757,
+      "file": "data/unlock-vocabulary/unlock-third-edition-final/level-3/unit-6/ls.json"
+    },
+    {
+      "level": 3,
+      "unit": 6,
+      "section": "rw",
+      "rows": 62,
+      "bytes": 33897,
+      "file": "data/unlock-vocabulary/unlock-third-edition-final/level-3/unit-6/rw.json"
+    },
+    {
+      "level": 3,
+      "unit": 7,
+      "section": "ls",
+      "rows": 57,
+      "bytes": 30256,
+      "file": "data/unlock-vocabulary/unlock-third-edition-final/level-3/unit-7/ls.json"
+    },
+    {
+      "level": 3,
+      "unit": 7,
+      "section": "rw",
+      "rows": 65,
+      "bytes": 35544,
+      "file": "data/unlock-vocabulary/unlock-third-edition-final/level-3/unit-7/rw.json"
+    },
+    {
+      "level": 3,
+      "unit": 8,
+      "section": "ls",
+      "rows": 48,
+      "bytes": 25814,
+      "file": "data/unlock-vocabulary/unlock-third-edition-final/level-3/unit-8/ls.json"
+    },
+    {
+      "level": 3,
+      "unit": 8,
+      "section": "rw",
+      "rows": 62,
+      "bytes": 33759,
+      "file": "data/unlock-vocabulary/unlock-third-edition-final/level-3/unit-8/rw.json"
+    }
+  ],
+  "ready": true
+}

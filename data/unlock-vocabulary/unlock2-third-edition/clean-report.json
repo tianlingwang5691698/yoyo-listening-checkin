@@ -1,0 +1,997 @@
+{
+  "source": "unlock2词汇册_4.23已转曲.pdf",
+  "sections": [
+    {
+      "unit": 1,
+      "section": "LS",
+      "pages": [
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "expectedNumberedRows": 112,
+      "rawCount": 112,
+      "dedupedCount": 112,
+      "missingNumbers": [],
+      "sequenceMismatches": [],
+      "expectedSourceRanges": [
+        {
+          "page": 4,
+          "first": 1,
+          "last": 23
+        },
+        {
+          "page": 5,
+          "first": 24,
+          "last": 50
+        },
+        {
+          "page": 6,
+          "first": 51,
+          "last": 77
+        },
+        {
+          "page": 7,
+          "first": 78,
+          "last": 104
+        },
+        {
+          "page": 8,
+          "first": 105,
+          "last": 112
+        }
+      ],
+      "file": "data/unlock-vocabulary/unlock2-third-edition/unit-1-ls.json"
+    },
+    {
+      "unit": 1,
+      "section": "RW",
+      "pages": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "expectedNumberedRows": 56,
+      "rawCount": 56,
+      "dedupedCount": 56,
+      "missingNumbers": [],
+      "sequenceMismatches": [],
+      "expectedSourceRanges": [
+        {
+          "page": 8,
+          "first": 1,
+          "last": 10
+        },
+        {
+          "page": 9,
+          "first": 11,
+          "last": 37
+        },
+        {
+          "page": 10,
+          "first": 38,
+          "last": 56
+        }
+      ],
+      "file": "data/unlock-vocabulary/unlock2-third-edition/unit-1-rw.json"
+    },
+    {
+      "unit": 2,
+      "section": "LS",
+      "pages": [
+        11,
+        12,
+        13
+      ],
+      "expectedNumberedRows": 60,
+      "rawCount": 60,
+      "dedupedCount": 60,
+      "missingNumbers": [],
+      "sequenceMismatches": [],
+      "expectedSourceRanges": [
+        {
+          "page": 11,
+          "first": 1,
+          "last": 23
+        },
+        {
+          "page": 12,
+          "first": 24,
+          "last": 50
+        },
+        {
+          "page": 13,
+          "first": 51,
+          "last": 60
+        }
+      ],
+      "file": "data/unlock-vocabulary/unlock2-third-edition/unit-2-ls.json"
+    },
+    {
+      "unit": 2,
+      "section": "RW",
+      "pages": [
+        13,
+        14,
+        15,
+        16
+      ],
+      "expectedNumberedRows": 63,
+      "rawCount": 63,
+      "dedupedCount": 37,
+      "missingNumbers": [],
+      "sequenceMismatches": [],
+      "expectedSourceRanges": [
+        {
+          "page": 13,
+          "first": 1,
+          "last": 9
+        },
+        {
+          "page": 14,
+          "first": 10,
+          "last": 36
+        },
+        {
+          "page": 15,
+          "first": 37,
+          "last": 63
+        }
+      ],
+      "file": "data/unlock-vocabulary/unlock2-third-edition/unit-2-rw.json"
+    },
+    {
+      "unit": 3,
+      "section": "LS",
+      "pages": [
+        16,
+        17,
+        18,
+        19
+      ],
+      "expectedNumberedRows": 90,
+      "rawCount": 90,
+      "dedupedCount": 90,
+      "missingNumbers": [],
+      "sequenceMismatches": [],
+      "expectedSourceRanges": [
+        {
+          "page": 16,
+          "first": 1,
+          "last": 23
+        },
+        {
+          "page": 17,
+          "first": 24,
+          "last": 50
+        },
+        {
+          "page": 18,
+          "first": 51,
+          "last": 77
+        },
+        {
+          "page": 19,
+          "first": 78,
+          "last": 90
+        }
+      ],
+      "file": "data/unlock-vocabulary/unlock2-third-edition/unit-3-ls.json"
+    },
+    {
+      "unit": 3,
+      "section": "RW",
+      "pages": [
+        19,
+        20,
+        21,
+        22
+      ],
+      "expectedNumberedRows": 64,
+      "rawCount": 64,
+      "dedupedCount": 64,
+      "missingNumbers": [],
+      "sequenceMismatches": [],
+      "expectedSourceRanges": [
+        {
+          "page": 19,
+          "first": 1,
+          "last": 5
+        },
+        {
+          "page": 20,
+          "first": 6,
+          "last": 32
+        },
+        {
+          "page": 21,
+          "first": 33,
+          "last": 59
+        },
+        {
+          "page": 22,
+          "first": 60,
+          "last": 64
+        }
+      ],
+      "file": "data/unlock-vocabulary/unlock2-third-edition/unit-3-rw.json"
+    },
+    {
+      "unit": 4,
+      "section": "LS",
+      "pages": [
+        22,
+        23,
+        24,
+        25,
+        26
+      ],
+      "expectedNumberedRows": 94,
+      "rawCount": 94,
+      "dedupedCount": 94,
+      "missingNumbers": [],
+      "sequenceMismatches": [],
+      "expectedSourceRanges": [
+        {
+          "page": 22,
+          "first": 1,
+          "last": 13
+        },
+        {
+          "page": 23,
+          "first": 14,
+          "last": 40
+        },
+        {
+          "page": 24,
+          "first": 41,
+          "last": 67
+        },
+        {
+          "page": 25,
+          "first": 68,
+          "last": 94
+        }
+      ],
+      "file": "data/unlock-vocabulary/unlock2-third-edition/unit-4-ls.json"
+    },
+    {
+      "unit": 4,
+      "section": "RW",
+      "pages": [
+        26,
+        27,
+        28
+      ],
+      "expectedNumberedRows": 59,
+      "rawCount": 59,
+      "dedupedCount": 58,
+      "missingNumbers": [],
+      "sequenceMismatches": [],
+      "expectedSourceRanges": [
+        {
+          "page": 26,
+          "first": 1,
+          "last": 23
+        },
+        {
+          "page": 27,
+          "first": 24,
+          "last": 50
+        },
+        {
+          "page": 28,
+          "first": 51,
+          "last": 59
+        }
+      ],
+      "file": "data/unlock-vocabulary/unlock2-third-edition/unit-4-rw.json"
+    },
+    {
+      "unit": 5,
+      "section": "LS",
+      "pages": [
+        28,
+        29,
+        30,
+        31
+      ],
+      "expectedNumberedRows": 63,
+      "rawCount": 63,
+      "dedupedCount": 63,
+      "missingNumbers": [],
+      "sequenceMismatches": [],
+      "expectedSourceRanges": [
+        {
+          "page": 28,
+          "first": 1,
+          "last": 10
+        },
+        {
+          "page": 29,
+          "first": 11,
+          "last": 38
+        },
+        {
+          "page": 30,
+          "first": 39,
+          "last": 63
+        }
+      ],
+      "file": "data/unlock-vocabulary/unlock2-third-edition/unit-5-ls.json"
+    },
+    {
+      "unit": 5,
+      "section": "RW",
+      "pages": [
+        31,
+        32,
+        33
+      ],
+      "expectedNumberedRows": 57,
+      "rawCount": 57,
+      "dedupedCount": 57,
+      "missingNumbers": [],
+      "sequenceMismatches": [],
+      "expectedSourceRanges": [
+        {
+          "page": 31,
+          "first": 1,
+          "last": 23
+        },
+        {
+          "page": 32,
+          "first": 24,
+          "last": 50
+        },
+        {
+          "page": 33,
+          "first": 51,
+          "last": 57
+        }
+      ],
+      "file": "data/unlock-vocabulary/unlock2-third-edition/unit-5-rw.json"
+    },
+    {
+      "unit": 6,
+      "section": "LS",
+      "pages": [
+        33,
+        34,
+        35,
+        36,
+        37
+      ],
+      "expectedNumberedRows": 90,
+      "rawCount": 90,
+      "dedupedCount": 89,
+      "missingNumbers": [],
+      "sequenceMismatches": [],
+      "expectedSourceRanges": [
+        {
+          "page": 33,
+          "first": 1,
+          "last": 10
+        },
+        {
+          "page": 34,
+          "first": 11,
+          "last": 37
+        },
+        {
+          "page": 35,
+          "first": 38,
+          "last": 64
+        },
+        {
+          "page": 36,
+          "first": 65,
+          "last": 90
+        }
+      ],
+      "file": "data/unlock-vocabulary/unlock2-third-edition/unit-6-ls.json"
+    },
+    {
+      "unit": 6,
+      "section": "RW",
+      "pages": [
+        37,
+        38,
+        39,
+        40
+      ],
+      "expectedNumberedRows": 74,
+      "rawCount": 74,
+      "dedupedCount": 72,
+      "missingNumbers": [],
+      "sequenceMismatches": [],
+      "expectedSourceRanges": [
+        {
+          "page": 37,
+          "first": 1,
+          "last": 23
+        },
+        {
+          "page": 38,
+          "first": 24,
+          "last": 50
+        },
+        {
+          "page": 39,
+          "first": 51,
+          "last": 74
+        }
+      ],
+      "file": "data/unlock-vocabulary/unlock2-third-edition/unit-6-rw.json"
+    },
+    {
+      "unit": 7,
+      "section": "LS",
+      "pages": [
+        40,
+        41,
+        42,
+        43,
+        44,
+        45
+      ],
+      "expectedNumberedRows": 132,
+      "rawCount": 132,
+      "dedupedCount": 104,
+      "missingNumbers": [],
+      "sequenceMismatches": [],
+      "expectedSourceRanges": [
+        {
+          "page": 40,
+          "first": 1,
+          "last": 23
+        },
+        {
+          "page": 41,
+          "first": 24,
+          "last": 51
+        },
+        {
+          "page": 42,
+          "first": 52,
+          "last": 63
+        },
+        {
+          "page": 42,
+          "first": 36,
+          "last": 51
+        },
+        {
+          "page": 43,
+          "first": 52,
+          "last": 79
+        },
+        {
+          "page": 44,
+          "first": 80,
+          "last": 104
+        }
+      ],
+      "file": "data/unlock-vocabulary/unlock2-third-edition/unit-7-ls.json"
+    },
+    {
+      "unit": 7,
+      "section": "RW",
+      "pages": [
+        45,
+        46,
+        47
+      ],
+      "expectedNumberedRows": 57,
+      "rawCount": 57,
+      "dedupedCount": 57,
+      "missingNumbers": [],
+      "sequenceMismatches": [],
+      "expectedSourceRanges": [
+        {
+          "page": 45,
+          "first": 1,
+          "last": 23
+        },
+        {
+          "page": 46,
+          "first": 24,
+          "last": 51
+        },
+        {
+          "page": 47,
+          "first": 52,
+          "last": 57
+        }
+      ],
+      "file": "data/unlock-vocabulary/unlock2-third-edition/unit-7-rw.json"
+    },
+    {
+      "unit": 8,
+      "section": "LS",
+      "pages": [
+        47,
+        48,
+        49,
+        50
+      ],
+      "expectedNumberedRows": 66,
+      "rawCount": 66,
+      "dedupedCount": 66,
+      "missingNumbers": [],
+      "sequenceMismatches": [],
+      "expectedSourceRanges": [
+        {
+          "page": 47,
+          "first": 1,
+          "last": 12
+        },
+        {
+          "page": 48,
+          "first": 13,
+          "last": 39
+        },
+        {
+          "page": 49,
+          "first": 40,
+          "last": 66
+        }
+      ],
+      "file": "data/unlock-vocabulary/unlock2-third-edition/unit-8-ls.json"
+    },
+    {
+      "unit": 8,
+      "section": "RW",
+      "pages": [
+        50,
+        51,
+        52
+      ],
+      "expectedNumberedRows": 77,
+      "rawCount": 77,
+      "dedupedCount": 76,
+      "missingNumbers": [],
+      "sequenceMismatches": [],
+      "expectedSourceRanges": [
+        {
+          "page": 50,
+          "first": 1,
+          "last": 23
+        },
+        {
+          "page": 51,
+          "first": 24,
+          "last": 50
+        },
+        {
+          "page": 52,
+          "first": 51,
+          "last": 77
+        }
+      ],
+      "file": "data/unlock-vocabulary/unlock2-third-edition/unit-8-rw.json"
+    }
+  ],
+  "total": 1155,
+  "rejected": [
+    {
+      "reason": "duplicate-merged",
+      "unit": 2,
+      "section": "RW",
+      "word": "Edinburgh",
+      "sourcePage": 15
+    },
+    {
+      "reason": "duplicate-merged",
+      "unit": 2,
+      "section": "RW",
+      "word": "Scotland",
+      "sourcePage": 15
+    },
+    {
+      "reason": "duplicate-merged",
+      "unit": 2,
+      "section": "RW",
+      "word": "last",
+      "sourcePage": 15
+    },
+    {
+      "reason": "duplicate-merged",
+      "unit": 2,
+      "section": "RW",
+      "word": "backwards",
+      "sourcePage": 15
+    },
+    {
+      "reason": "duplicate-merged",
+      "unit": 2,
+      "section": "RW",
+      "word": "forwards",
+      "sourcePage": 15
+    },
+    {
+      "reason": "duplicate-merged",
+      "unit": 2,
+      "section": "RW",
+      "word": "River Thames",
+      "sourcePage": 15
+    },
+    {
+      "reason": "duplicate-merged",
+      "unit": 2,
+      "section": "RW",
+      "word": "celebrate",
+      "sourcePage": 15
+    },
+    {
+      "reason": "duplicate-merged",
+      "unit": 2,
+      "section": "RW",
+      "word": "culture",
+      "sourcePage": 15
+    },
+    {
+      "reason": "duplicate-merged",
+      "unit": 2,
+      "section": "RW",
+      "word": "gift",
+      "sourcePage": 15
+    },
+    {
+      "reason": "duplicate-merged",
+      "unit": 2,
+      "section": "RW",
+      "word": "present",
+      "sourcePage": 15
+    },
+    {
+      "reason": "duplicate-merged",
+      "unit": 2,
+      "section": "RW",
+      "word": "unlucky",
+      "sourcePage": 15
+    },
+    {
+      "reason": "duplicate-merged",
+      "unit": 2,
+      "section": "RW",
+      "word": "tradition",
+      "sourcePage": 15
+    },
+    {
+      "reason": "duplicate-merged",
+      "unit": 2,
+      "section": "RW",
+      "word": "traditional",
+      "sourcePage": 15
+    },
+    {
+      "reason": "duplicate-merged",
+      "unit": 2,
+      "section": "RW",
+      "word": "wedding",
+      "sourcePage": 15
+    },
+    {
+      "reason": "duplicate-merged",
+      "unit": 2,
+      "section": "RW",
+      "word": "hang",
+      "sourcePage": 15
+    },
+    {
+      "reason": "duplicate-merged",
+      "unit": 2,
+      "section": "RW",
+      "word": "fall out",
+      "sourcePage": 15
+    },
+    {
+      "reason": "duplicate-merged",
+      "unit": 2,
+      "section": "RW",
+      "word": "stick",
+      "sourcePage": 15
+    },
+    {
+      "reason": "duplicate-merged",
+      "unit": 2,
+      "section": "RW",
+      "word": "honour",
+      "sourcePage": 15
+    },
+    {
+      "reason": "duplicate-merged",
+      "unit": 2,
+      "section": "RW",
+      "word": "surprise",
+      "sourcePage": 15
+    },
+    {
+      "reason": "duplicate-merged",
+      "unit": 2,
+      "section": "RW",
+      "word": "jewel",
+      "sourcePage": 15
+    },
+    {
+      "reason": "duplicate-merged",
+      "unit": 2,
+      "section": "RW",
+      "word": "jewellery",
+      "sourcePage": 15
+    },
+    {
+      "reason": "duplicate-merged",
+      "unit": 2,
+      "section": "RW",
+      "word": "chime",
+      "sourcePage": 15
+    },
+    {
+      "reason": "duplicate-merged",
+      "unit": 2,
+      "section": "RW",
+      "word": "congratulate",
+      "sourcePage": 15
+    },
+    {
+      "reason": "duplicate-merged",
+      "unit": 2,
+      "section": "RW",
+      "word": "current",
+      "sourcePage": 15
+    },
+    {
+      "reason": "duplicate-merged",
+      "unit": 2,
+      "section": "RW",
+      "word": "adult",
+      "sourcePage": 15
+    },
+    {
+      "reason": "duplicate-merged",
+      "unit": 2,
+      "section": "RW",
+      "word": "take on",
+      "sourcePage": 15
+    },
+    {
+      "reason": "duplicate-merged",
+      "unit": 4,
+      "section": "RW",
+      "word": "rise",
+      "sourcePage": 27
+    },
+    {
+      "reason": "duplicate-merged",
+      "unit": 6,
+      "section": "LS",
+      "word": "organize",
+      "sourcePage": 36
+    },
+    {
+      "reason": "duplicate-merged",
+      "unit": 6,
+      "section": "RW",
+      "word": "company",
+      "sourcePage": 39
+    },
+    {
+      "reason": "duplicate-merged",
+      "unit": 6,
+      "section": "RW",
+      "word": "make money",
+      "sourcePage": 39
+    },
+    {
+      "reason": "duplicate-merged",
+      "unit": 7,
+      "section": "LS",
+      "word": "relaxing",
+      "sourcePage": 42
+    },
+    {
+      "reason": "duplicate-merged",
+      "unit": 7,
+      "section": "LS",
+      "word": "famous",
+      "sourcePage": 42
+    },
+    {
+      "reason": "duplicate-merged",
+      "unit": 7,
+      "section": "LS",
+      "word": "modern",
+      "sourcePage": 42
+    },
+    {
+      "reason": "duplicate-merged",
+      "unit": 7,
+      "section": "LS",
+      "word": "purpose",
+      "sourcePage": 42
+    },
+    {
+      "reason": "duplicate-merged",
+      "unit": 7,
+      "section": "LS",
+      "word": "serve",
+      "sourcePage": 42
+    },
+    {
+      "reason": "duplicate-merged",
+      "unit": 7,
+      "section": "LS",
+      "word": "inventor",
+      "sourcePage": 42
+    },
+    {
+      "reason": "duplicate-merged",
+      "unit": 7,
+      "section": "LS",
+      "word": "vacuum cleaner",
+      "sourcePage": 42
+    },
+    {
+      "reason": "duplicate-merged",
+      "unit": 7,
+      "section": "LS",
+      "word": "improve",
+      "sourcePage": 42
+    },
+    {
+      "reason": "duplicate-merged",
+      "unit": 7,
+      "section": "LS",
+      "word": "wheel",
+      "sourcePage": 42
+    },
+    {
+      "reason": "duplicate-merged",
+      "unit": 7,
+      "section": "LS",
+      "word": "rough",
+      "sourcePage": 42
+    },
+    {
+      "reason": "duplicate-merged",
+      "unit": 7,
+      "section": "LS",
+      "word": "subject",
+      "sourcePage": 42
+    },
+    {
+      "reason": "duplicate-merged",
+      "unit": 7,
+      "section": "LS",
+      "word": "waterfall",
+      "sourcePage": 42
+    },
+    {
+      "reason": "duplicate-merged",
+      "unit": 7,
+      "section": "LS",
+      "word": "fall down",
+      "sourcePage": 42
+    },
+    {
+      "reason": "duplicate-merged",
+      "unit": 7,
+      "section": "LS",
+      "word": "surprising",
+      "sourcePage": 42
+    },
+    {
+      "reason": "duplicate-merged",
+      "unit": 7,
+      "section": "LS",
+      "word": "trick",
+      "sourcePage": 42
+    },
+    {
+      "reason": "duplicate-merged",
+      "unit": 7,
+      "section": "LS",
+      "word": "support",
+      "sourcePage": 42
+    },
+    {
+      "reason": "duplicate-merged",
+      "unit": 7,
+      "section": "LS",
+      "word": "education",
+      "sourcePage": 43
+    },
+    {
+      "reason": "duplicate-merged",
+      "unit": 7,
+      "section": "LS",
+      "word": "donate",
+      "sourcePage": 43
+    },
+    {
+      "reason": "duplicate-merged",
+      "unit": 7,
+      "section": "LS",
+      "word": "research",
+      "sourcePage": 43
+    },
+    {
+      "reason": "duplicate-merged",
+      "unit": 7,
+      "section": "LS",
+      "word": "focus",
+      "sourcePage": 43
+    },
+    {
+      "reason": "duplicate-merged",
+      "unit": 7,
+      "section": "LS",
+      "word": "technology",
+      "sourcePage": 43
+    },
+    {
+      "reason": "duplicate-merged",
+      "unit": 7,
+      "section": "LS",
+      "word": "special",
+      "sourcePage": 43
+    },
+    {
+      "reason": "duplicate-merged",
+      "unit": 7,
+      "section": "LS",
+      "word": "responsible",
+      "sourcePage": 43
+    },
+    {
+      "reason": "duplicate-merged",
+      "unit": 7,
+      "section": "LS",
+      "word": "product",
+      "sourcePage": 43
+    },
+    {
+      "reason": "duplicate-merged",
+      "unit": 7,
+      "section": "LS",
+      "word": "slim",
+      "sourcePage": 43
+    },
+    {
+      "reason": "duplicate-merged",
+      "unit": 7,
+      "section": "LS",
+      "word": "award",
+      "sourcePage": 43
+    },
+    {
+      "reason": "duplicate-merged",
+      "unit": 7,
+      "section": "LS",
+      "word": "knight",
+      "sourcePage": 43
+    },
+    {
+      "reason": "duplicate-merged",
+      "unit": 7,
+      "section": "LS",
+      "word": "commander",
+      "sourcePage": 43
+    },
+    {
+      "reason": "duplicate-merged",
+      "unit": 8,
+      "section": "RW",
+      "word": "planet",
+      "sourcePage": 52
+    }
+  ],
+  "expectedNumberedTotal": 1214,
+  "rawTotal": 1214,
+  "dedupedTotal": 1155
+}

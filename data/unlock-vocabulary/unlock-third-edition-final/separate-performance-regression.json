@@ -1,0 +1,120 @@
+{
+  "passed": true,
+  "storageFiles": 128,
+  "secondRows": 3419,
+  "thirdRows": 3976,
+  "storageMaxBytes": 74311,
+  "storageMaxWallMs": 1198,
+  "coldCalls": [
+    {
+      "functionName": "dictionary-book",
+      "level": "unlock-1-u1-ls",
+      "total": 50,
+      "wallMs": 1114,
+      "functionMs": 180,
+      "cacheHit": false
+    },
+    {
+      "functionName": "dictionary-book",
+      "level": "unlock-2-u4-rw",
+      "total": 60,
+      "wallMs": 275,
+      "functionMs": 133,
+      "cacheHit": false
+    },
+    {
+      "functionName": "dictionary-book",
+      "level": "unlock-4-u8-ls",
+      "total": 18,
+      "wallMs": 301,
+      "functionMs": 188,
+      "cacheHit": false
+    },
+    {
+      "functionName": "dictionary-book",
+      "level": "unlock-v3-1-u1-ls",
+      "total": 50,
+      "wallMs": 194,
+      "functionMs": 95,
+      "cacheHit": false
+    },
+    {
+      "functionName": "dictionary-book",
+      "level": "unlock-v3-2-u4-rw",
+      "total": 58,
+      "wallMs": 362,
+      "functionMs": 240,
+      "cacheHit": false
+    },
+    {
+      "functionName": "dictionary-book",
+      "level": "unlock-v3-4-u8-ls",
+      "total": 67,
+      "wallMs": 193,
+      "functionMs": 103,
+      "cacheHit": false
+    }
+  ],
+  "warmCalls": [
+    {
+      "functionName": "dictionary-book",
+      "level": "unlock-1-u1-ls",
+      "total": 50,
+      "wallMs": 80,
+      "functionMs": 1,
+      "cacheHit": true
+    },
+    {
+      "functionName": "dictionary-book",
+      "level": "unlock-2-u4-rw",
+      "total": 60,
+      "wallMs": 83,
+      "functionMs": 1,
+      "cacheHit": true
+    },
+    {
+      "functionName": "dictionary-book",
+      "level": "unlock-4-u8-ls",
+      "total": 18,
+      "wallMs": 142,
+      "functionMs": 1,
+      "cacheHit": true
+    },
+    {
+      "functionName": "dictionary-book",
+      "level": "unlock-v3-1-u1-ls",
+      "total": 50,
+      "wallMs": 82,
+      "functionMs": 1,
+      "cacheHit": true
+    },
+    {
+      "functionName": "dictionary-book",
+      "level": "unlock-v3-2-u4-rw",
+      "total": 58,
+      "wallMs": 79,
+      "functionMs": 1,
+      "cacheHit": true
+    },
+    {
+      "functionName": "dictionary-book",
+      "level": "unlock-v3-4-u8-ls",
+      "total": 67,
+      "wallMs": 73,
+      "functionMs": 1,
+      "cacheHit": true
+    }
+  ],
+  "yoyoCall": {
+    "functionName": "yoyo",
+    "level": "unlock-v3-3-u8-rw",
+    "total": 62,
+    "wallMs": 3648,
+    "functionMs": 2649,
+    "cacheHit": false
+  },
+  "maxColdWallMs": 1114,
+  "maxWarmWallMs": 142,
+  "target600msMet": false,
+  "hardThresholdMs": 1200
+}

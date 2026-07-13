@@ -45,3 +45,9 @@ test('Unlock 单复数对照词清洗后显示发音入口', () => {
     assert.equal(voice.canUseDictionaryVoice(raw), true);
   }
 });
+
+test('Unlock 重音符号与连字词清洗为有道可读文本', () => {
+  assert.equal(voice.normalizeDictionaryVoiceText('café'), 'cafe');
+  assert.equal(voice.normalizeDictionaryVoiceText('bicycle-sharing scheme'), 'bicycle sharing scheme');
+  assert.equal(voice.canUseDictionaryVoice('café'), true);
+});

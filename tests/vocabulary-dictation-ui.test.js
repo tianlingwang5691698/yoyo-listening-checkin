@@ -67,6 +67,18 @@ test('词汇首页只保留单词背诵和听音拼写两个同级入口', () =>
   assert.doesNotMatch(template, /class="library-vocab-book book-dictation"/);
 });
 
+test('Unlock 第二版和第三版使用独立词书入口及进度键', () => {
+  const source = read('pages/reading/flashcards/index.js');
+  const template = read('pages/reading/flashcards/index.wxml');
+  const dictation = read('pages/reading/flashcards/dictation/library/index.js');
+  assert.match(source, /unlockSecondBook/);
+  assert.match(source, /unlockThirdBook/);
+  assert.match(source, /unlock-v3-\$\{unlockLevel\}-u\$\{unit\}-\$\{section\}/);
+  assert.equal((template.match(/wx:for="\{\{unlockEditions\}\}"/g) || []).length, 2);
+  assert.match(dictation, /dictionary-book-unlock-v3-/);
+  assert.match(dictation, /dictionary-book-unlock-\[1-4\]-/);
+});
+
 test('单词背诵文件夹和听写图标在两套主题中独立设计', () => {
   const styles = read('pages/reading/flashcards/index.wxss');
   const catalog = require('../utils/i18n-catalog-learning').flashcards;

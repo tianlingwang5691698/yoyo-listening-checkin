@@ -17,7 +17,7 @@ function expandPronunciationPlaceholders(value) {
 }
 
 function normalizeDictionaryVoiceText(value) {
-  return expandPronunciationPlaceholders(value)
+  return expandPronunciationPlaceholders(String(value || '').normalize('NFD').replace(/[\u0300-\u036f]/g, ''))
     .replace(/\bon the outskir\b/gi, 'on the outskirts')
     .replace(/\.{2,}|…+/g, ' something ')
     .replace(/_+/g, ' something ')
@@ -26,6 +26,7 @@ function normalizeDictionaryVoiceText(value) {
     .replace(/[→⇒]/g, ' to ')
     .replace(/\s+-\s+/g, ' and ')
     .replace(/[()[\]{}]/g, ' ')
+    .replace(/([A-Za-z])[-‐-―]([A-Za-z])/g, '$1 $2')
     .replace(/[,.!?;:，。！？；："“”]+/g, ' ')
     .replace(/\s+/g, ' ')
     .trim();

@@ -57,19 +57,35 @@ const DEMO_FLASHCARDS = [
   }
 ];
 
+const UNLOCK_EDITIONS = [
+  { key: 'v2', edition: 2, title: text('unlockSecondBook', 'Unlock 第二版词汇书'), coverMark: 'U2', meta: text('unlockMeta', 'Level 1–4 · Unit 1–8') },
+  { key: 'v3', edition: 3, title: text('unlockThirdBook', 'Unlock 第三版词汇书'), coverMark: 'U3', meta: text('unlockMeta', 'Level 1–4 · Unit 1–8') }
+];
+
+function getUnlockBookLevel(edition, unlockLevel, unit, section) {
+  return Number(edition) === 3
+    ? `unlock-v3-${unlockLevel}-u${unit}-${section}`
+    : `unlock-${unlockLevel}-u${unit}-${section}`;
+}
+
+function getUnlockCloudPath(edition, unlockLevel, unit, section) {
+  return `dictionary_books/unlock-v${Number(edition) === 3 ? 3 : 2}/level-${unlockLevel}/unit-${unit}/${section}.json`;
+}
+
 const DEFAULT_DICTIONARY_BOOKS = [
   { level: 'junior', title: text('juniorBook', '初中英语词汇 乱序'), coverMark: text('juniorMark', '初'), imported: 0, cloudPath: 'dictionary_books/word-dictionary-junior.json' },
   { level: 'senior', title: text('seniorBook', '高中英语词汇 乱序'), coverMark: text('seniorMark', '高'), imported: 0, cloudPath: 'dictionary_books/word-dictionary-senior.json' },
-  ...[1, 2, 3, 4].flatMap((unlockLevel) => [1, 2, 3, 4, 5, 6, 7, 8].flatMap((unit) => ['ls', 'rw'].map((section) => ({
-    level: `unlock-${unlockLevel}-u${unit}-${section}`,
+  ...[2, 3].flatMap((unlockEdition) => [1, 2, 3, 4].flatMap((unlockLevel) => [1, 2, 3, 4, 5, 6, 7, 8].flatMap((unit) => ['ls', 'rw'].map((section) => ({
+    level: getUnlockBookLevel(unlockEdition, unlockLevel, unit, section),
+    unlockEdition,
     unlockLevel,
     unit,
     section,
-    title: `Unlock ${unlockLevel} Unit ${unit} ${section.toUpperCase()} 词汇表`,
+    title: `Unlock ${unlockLevel} ${unlockEdition === 3 ? '第三版' : '第二版'} Unit ${unit} ${section.toUpperCase()} 词汇表`,
     coverMark: section.toUpperCase(),
     imported: 0,
-    cloudPath: `dictionary_books/unlock-v2/level-${unlockLevel}/unit-${unit}/${section}.json`
-  }))))
+    cloudPath: getUnlockCloudPath(unlockEdition, unlockLevel, unit, section)
+  })))))
 ];
 const STANDARD_DICTIONARY_BOOKS = DEFAULT_DICTIONARY_BOOKS.filter((book) => !book.unlockLevel);
 const UNLOCK_LEVELS = [1, 2, 3, 4].map((level) => ({
@@ -81,7 +97,7 @@ const UNLOCK_LEVELS = [1, 2, 3, 4].map((level) => ({
 const FLASHCARD_SOURCE_CACHE_PREFIX = 'flashcardSourceCache:';
 const FLASHCARD_SOURCE_CACHE_TTL = 7 * 24 * 60 * 60 * 1000;
 const FLASHCARD_SOURCE_CACHE_VERSION_KEY = 'flashcardSourceCacheVersion';
-const FLASHCARD_SOURCE_CACHE_CONTENT_VERSION = 2026071302;
+const FLASHCARD_SOURCE_CACHE_CONTENT_VERSION = 2026071303;
 const FLASHCARD_PLAN_SETTINGS_PREFIX = 'flashcardPlanSettings:';
 const FLASHCARD_CHECKIN_DAYS_KEY = 'flashcardCheckinDays';
 const FLASHCARD_AUDIO_CACHE_PREFIX = 'flashcard-dictionary-audio-v4-';
@@ -264,8 +280,8 @@ function getDictationSourceTitle(sourceId, fallback) {
   const level = String(sourceId || '').replace(/^dictionary-book-/, '');
   if (level === 'junior') return text('juniorBook', '初中英语词汇 乱序');
   if (level === 'senior') return text('seniorBook', '高中英语词汇 乱序');
-  const match = level.match(/^unlock-(\d+)-u(\d+)-(ls|rw)$/i);
-  if (match) return `Unlock ${match[1]} · Unit ${match[2]} · ${match[3].toUpperCase()}`;
+  const match = level.match(/^unlock-(?:(v3)-)?(\d+)-u(\d+)-(ls|rw)$/i);
+  if (match) return `Unlock ${match[2]} ${match[1] ? '第三版' : '第二版'} · Unit ${match[3]} · ${match[4].toUpperCase()}`;
   return fallback || text('dictationShelf', '听音拼写');
 }
 
@@ -525,6 +541,11 @@ function normalizeBook(book) {
   });
 }
 
+function mergeDictionaryBooks(books) {
+  const remote = new Map((books || []).map((book) => [book.level, book]));
+  return DEFAULT_DICTIONARY_BOOKS.map((fallback) => normalizeBook(Object.assign({}, fallback, remote.get(fallback.level) || {})));
+}
+
 async function loadBookCardsFromStorage(book) {
   const response = await store.getDictionaryBook(book.level);
   if (response && response.syncMode === 'cloud-error') {
@@ -718,7 +739,10 @@ Page({
     logs: [],
     dictionaryBooks: DEFAULT_DICTIONARY_BOOKS,
     standardDictionaryBooks: STANDARD_DICTIONARY_BOOKS,
+    unlockEditions: UNLOCK_EDITIONS,
     unlockLevels: UNLOCK_LEVELS,
+    activeUnlockEdition: 0,
+    activeUnlockEditionTitle: '',
     activeUnlockLevel: 0,
     activeUnlockUnit: 0,
     activeUnlockUnits: [],
@@ -793,9 +817,16 @@ Page({
   onShow() {
     this.flashcardPerf = page.startPagePerf('flashcards');
     page.syncTheme(this);
+    const unlockEditions = UNLOCK_EDITIONS.map((item) => Object.assign({}, item, {
+      title: item.edition === 3 ? text('unlockThirdBook', item.title) : text('unlockSecondBook', item.title),
+      meta: text('unlockMeta', item.meta)
+    }));
+    const activeUnlockEdition = unlockEditions.find((item) => item.edition === this.data.activeUnlockEdition);
     this.setData(Object.assign({}, getNavLayout(), {
       previewMode: store.getDeviceStudyRole() !== 'student',
-      dictionaryBooks: (this.data.dictionaryBooks || DEFAULT_DICTIONARY_BOOKS).map((book) => Object.assign({}, book, {
+      unlockEditions,
+      activeUnlockEditionTitle: activeUnlockEdition ? activeUnlockEdition.title : this.data.activeUnlockEditionTitle,
+      dictionaryBooks: mergeDictionaryBooks(this.data.dictionaryBooks).map((book) => Object.assign({}, book, {
         title: book.level === 'senior' ? text('seniorBook', book.title) : (book.level === 'junior' ? text('juniorBook', book.title) : book.title),
         coverMark: book.level === 'senior' ? text('seniorMark', book.coverMark) : (book.level === 'junior' ? text('juniorMark', book.coverMark) : book.coverMark)
       })),
@@ -955,7 +986,7 @@ Page({
       reviewDays: countVocabularyCheckinDays(data.logs || []),
       vocabCheckinDays: countVocabularyCheckinDays(data.logs || []),
       logs: data.logs || [],
-      dictionaryBooks: (data.dictionaryBooks && data.dictionaryBooks.length ? data.dictionaryBooks : DEFAULT_DICTIONARY_BOOKS).map(normalizeBook),
+      dictionaryBooks: mergeDictionaryBooks(data.dictionaryBooks),
       demoMode,
       flashcardDebugLines: buildLibraryDebugLines(data, activeSourceId, library),
       loading: false
@@ -1167,8 +1198,19 @@ Page({
     this.setData({ sourceMode: 'bookshelf', mode: 'library' });
     this.prefetchVocabularySources();
   },
-  openUnlockBooks() {
-    this.setData({ sourceMode: 'unlock-levels', activeUnlockLevel: 0, activeUnlockUnit: 0, activeUnlockUnits: [], activeUnlockSections: [] });
+  openUnlockEdition(event) {
+    const edition = Number(event.currentTarget.dataset.edition || 0);
+    const group = (this.data.unlockEditions || UNLOCK_EDITIONS).find((item) => item.edition === edition);
+    if (!group) return;
+    this.setData({
+      sourceMode: 'unlock-levels',
+      activeUnlockEdition: edition,
+      activeUnlockEditionTitle: group.title,
+      activeUnlockLevel: 0,
+      activeUnlockUnit: 0,
+      activeUnlockUnits: [],
+      activeUnlockSections: []
+    });
   },
   chooseUnlockLevel(event) {
     const level = Number(event.currentTarget.dataset.level || 0);
@@ -1186,7 +1228,7 @@ Page({
     this.setData({
       sourceMode: 'unlock-sections',
       activeUnlockUnit: unit,
-      activeUnlockSections: DEFAULT_DICTIONARY_BOOKS.filter((book) => book.unlockLevel === this.data.activeUnlockLevel && book.unit === unit)
+      activeUnlockSections: DEFAULT_DICTIONARY_BOOKS.filter((book) => book.unlockEdition === this.data.activeUnlockEdition && book.unlockLevel === this.data.activeUnlockLevel && book.unit === unit)
     });
   },
   backToBookshelf() {
@@ -1203,7 +1245,7 @@ Page({
       return;
     }
     if (this.data.sourceMode === 'unlock-levels') {
-      this.setData({ sourceMode: 'bookshelf' });
+      this.setData({ sourceMode: 'bookshelf', activeUnlockEdition: 0, activeUnlockEditionTitle: '' });
       return;
     }
     this.setData({

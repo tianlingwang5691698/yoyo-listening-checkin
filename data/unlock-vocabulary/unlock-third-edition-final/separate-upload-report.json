@@ -1,0 +1,675 @@
+{
+  "mode": "apply",
+  "booksPerEdition": 64,
+  "secondTotal": 3419,
+  "thirdTotal": 3976,
+  "maxSecondBytes": 74311,
+  "maxThirdBytes": 55367,
+  "levels": [
+    {
+      "level": 1,
+      "second": 837,
+      "third": 946
+    },
+    {
+      "level": 2,
+      "second": 1317,
+      "third": 1155
+    },
+    {
+      "level": 3,
+      "second": 908,
+      "third": 948
+    },
+    {
+      "level": 4,
+      "second": 357,
+      "third": 927
+    }
+  ],
+  "targets": [
+    {
+      "secondCloudPath": "dictionary_books/unlock-v2/level-1/unit-1/ls.json",
+      "thirdCloudPath": "dictionary_books/unlock-v3/level-1/unit-1/ls.json",
+      "secondCount": 50,
+      "thirdCount": 50,
+      "secondBytes": 22967,
+      "thirdBytes": 25238,
+      "secondSha256": "27fed7c223dca1ce89acdc3d5270aea5decc9d2c7c0de152b07d7b804af89e30",
+      "thirdSha256": "7ff4336016ebd9d39f830bffed8fbd566b7f52fa6faec6ae9b834d3bee454758"
+    },
+    {
+      "secondCloudPath": "dictionary_books/unlock-v2/level-1/unit-1/rw.json",
+      "thirdCloudPath": "dictionary_books/unlock-v3/level-1/unit-1/rw.json",
+      "secondCount": 56,
+      "thirdCount": 56,
+      "secondBytes": 26773,
+      "thirdBytes": 29294,
+      "secondSha256": "15dc5fb332348ba37a31e6b33687a28117d902391c3dec468a653f4db8a59278",
+      "thirdSha256": "0b6fb1e18841628d07a28cef65206ae1adf5db3ce3eedf5e439b09364d240aaf"
+    },
+    {
+      "secondCloudPath": "dictionary_books/unlock-v2/level-1/unit-2/ls.json",
+      "thirdCloudPath": "dictionary_books/unlock-v3/level-1/unit-2/ls.json",
+      "secondCount": 50,
+      "thirdCount": 50,
+      "secondBytes": 22040,
+      "thirdBytes": 24395,
+      "secondSha256": "ffbbc40c8383660bf6e1d43c6b3ab9e6ff32d07555e0513d332fc26d63d53c80",
+      "thirdSha256": "4fb8011330863ca2baf64e8e983da008c010173a2c8a2ab848842d3ec321fb1d"
+    },
+    {
+      "secondCloudPath": "dictionary_books/unlock-v2/level-1/unit-2/rw.json",
+      "thirdCloudPath": "dictionary_books/unlock-v3/level-1/unit-2/rw.json",
+      "secondCount": 60,
+      "thirdCount": 56,
+      "secondBytes": 28105,
+      "thirdBytes": 29171,
+      "secondSha256": "7b989ebf598e0769925528ac246fa6c0210910b4377d05ac8ca70736d06ba676",
+      "thirdSha256": "8674ea5df4a92910f2c0cb873ba6b9158306fee9391178e2d7a3edd07f5c4424"
+    },
+    {
+      "secondCloudPath": "dictionary_books/unlock-v2/level-1/unit-3/ls.json",
+      "thirdCloudPath": "dictionary_books/unlock-v3/level-1/unit-3/ls.json",
+      "secondCount": 61,
+      "thirdCount": 61,
+      "secondBytes": 28229,
+      "thirdBytes": 30888,
+      "secondSha256": "34896706e81a76271f8fc7d3669b9bd3f06551fe1c447f5521ffc1aac8858e4c",
+      "thirdSha256": "ba79578abeb22b199ed0372d7e8c0f9c866814b3cc667baadd7e2d9ac000e239"
+    },
+    {
+      "secondCloudPath": "dictionary_books/unlock-v2/level-1/unit-3/rw.json",
+      "thirdCloudPath": "dictionary_books/unlock-v3/level-1/unit-3/rw.json",
+      "secondCount": 57,
+      "thirdCount": 52,
+      "secondBytes": 26867,
+      "thirdBytes": 27446,
+      "secondSha256": "c7afdeedf700889c70caadba26f9234cf9384614860abfea5f9bca453c47248d",
+      "thirdSha256": "5d7118c8afc355c309cead7e0e536620f17ea64f3aafa11c09212ede00e389ea"
+    },
+    {
+      "secondCloudPath": "dictionary_books/unlock-v2/level-1/unit-4/ls.json",
+      "thirdCloudPath": "dictionary_books/unlock-v3/level-1/unit-4/ls.json",
+      "secondCount": 59,
+      "thirdCount": 91,
+      "secondBytes": 27021,
+      "thirdBytes": 46726,
+      "secondSha256": "9f243ff4183ef01fee8a5cdb0a7986b4a16cc381d3e8e7993f3a0a63777ca56b",
+      "thirdSha256": "43a9ffa5999a3ce63d9ea96986f41606d9b415a42b909e578c648fe11e700582"
+    },
+    {
+      "secondCloudPath": "dictionary_books/unlock-v2/level-1/unit-4/rw.json",
+      "thirdCloudPath": "dictionary_books/unlock-v3/level-1/unit-4/rw.json",
+      "secondCount": 52,
+      "thirdCount": 49,
+      "secondBytes": 24590,
+      "thirdBytes": 25235,
+      "secondSha256": "5966e8e886de4ceb19e01392cfe38df4f5137f9ef987a4a1734e9dc7ed82f013",
+      "thirdSha256": "5a8f5df003b2e10cb8c7d6078db0dfa5cb25b2c81226ac85fdc843862e7b9c24"
+    },
+    {
+      "secondCloudPath": "dictionary_books/unlock-v2/level-1/unit-5/ls.json",
+      "thirdCloudPath": "dictionary_books/unlock-v3/level-1/unit-5/ls.json",
+      "secondCount": 50,
+      "thirdCount": 86,
+      "secondBytes": 22897,
+      "thirdBytes": 44610,
+      "secondSha256": "018fa1785efcdd687686ce311b6abdf005ea5991baee0201b8914b4300033fcf",
+      "thirdSha256": "66eb88d48a8a19e0b21c4f7995fb75e071641a13ca87e47239f25e10044b5b43"
+    },
+    {
+      "secondCloudPath": "dictionary_books/unlock-v2/level-1/unit-5/rw.json",
+      "thirdCloudPath": "dictionary_books/unlock-v3/level-1/unit-5/rw.json",
+      "secondCount": 52,
+      "thirdCount": 54,
+      "secondBytes": 25182,
+      "thirdBytes": 28696,
+      "secondSha256": "551da5daa9be73c8822abab091765c74ca0b40543a8aaf9fa455d8db42837a1b",
+      "thirdSha256": "93096a30b0490782976f99eecda16ad1eb9809fc817a868d16e57ce2a9aa5d5d"
+    },
+    {
+      "secondCloudPath": "dictionary_books/unlock-v2/level-1/unit-6/ls.json",
+      "thirdCloudPath": "dictionary_books/unlock-v3/level-1/unit-6/ls.json",
+      "secondCount": 50,
+      "thirdCount": 50,
+      "secondBytes": 23059,
+      "thirdBytes": 25336,
+      "secondSha256": "b792bd0fa1a660c3f7b19cb11a42ae506826875a8a2cd61a5ad695530c7f5933",
+      "thirdSha256": "a27245dee1d56a74c86d6c684acbd778e3531488983166df23c4ae5f560c2a85"
+    },
+    {
+      "secondCloudPath": "dictionary_books/unlock-v2/level-1/unit-6/rw.json",
+      "thirdCloudPath": "dictionary_books/unlock-v3/level-1/unit-6/rw.json",
+      "secondCount": 51,
+      "thirdCount": 59,
+      "secondBytes": 24232,
+      "thirdBytes": 30895,
+      "secondSha256": "093970d182aab97a02f7c9a5b841650709c102afa0211ab182382edbe1c4472d",
+      "thirdSha256": "1022a8fc3462b0c862c2571f0353be9bbe8600f57f4b0871a3d9fa66f1b297a1"
+    },
+    {
+      "secondCloudPath": "dictionary_books/unlock-v2/level-1/unit-7/ls.json",
+      "thirdCloudPath": "dictionary_books/unlock-v3/level-1/unit-7/ls.json",
+      "secondCount": 50,
+      "thirdCount": 50,
+      "secondBytes": 22643,
+      "thirdBytes": 24983,
+      "secondSha256": "53cd5ed6ef240166bf6e23cde1c5b56c3df25c5b76d1891602a51cdc66640d28",
+      "thirdSha256": "7e1715c55e39b17825e546816199bd2fdc7fdb452bff7578be2f4f8244e7324c"
+    },
+    {
+      "secondCloudPath": "dictionary_books/unlock-v2/level-1/unit-7/rw.json",
+      "thirdCloudPath": "dictionary_books/unlock-v3/level-1/unit-7/rw.json",
+      "secondCount": 44,
+      "thirdCount": 53,
+      "secondBytes": 20863,
+      "thirdBytes": 27707,
+      "secondSha256": "c6c801a890c3772f6d5377681fff363549581b5652623306ccd7099dcfa14a9f",
+      "thirdSha256": "215b38dee3c862666017c75de5d4d1f25cb6456e44620d066f445ff3f6caba2f"
+    },
+    {
+      "secondCloudPath": "dictionary_books/unlock-v2/level-1/unit-8/ls.json",
+      "thirdCloudPath": "dictionary_books/unlock-v3/level-1/unit-8/ls.json",
+      "secondCount": 50,
+      "thirdCount": 86,
+      "secondBytes": 22923,
+      "thirdBytes": 44675,
+      "secondSha256": "662d3f5e52dff399b737f51bb9b56d505fb7e01eecdfd7efcfdb5d0acc26a51f",
+      "thirdSha256": "050a54e83c47b3b7eacda51f078d10cc5745b188ba9595ca2a750be317d78339"
+    },
+    {
+      "secondCloudPath": "dictionary_books/unlock-v2/level-1/unit-8/rw.json",
+      "thirdCloudPath": "dictionary_books/unlock-v3/level-1/unit-8/rw.json",
+      "secondCount": 45,
+      "thirdCount": 43,
+      "secondBytes": 21645,
+      "thirdBytes": 22780,
+      "secondSha256": "310d04fc869e555f1975f27b884c0ad99046d521dcf89f54c122b83dd31a8e37",
+      "thirdSha256": "c45a9cabac671c5580a6a4fd306327dace9fe736c679c317af85f7bb64c37e60"
+    },
+    {
+      "secondCloudPath": "dictionary_books/unlock-v2/level-2/unit-1/ls.json",
+      "thirdCloudPath": "dictionary_books/unlock-v3/level-2/unit-1/ls.json",
+      "secondCount": 112,
+      "thirdCount": 112,
+      "secondBytes": 53089,
+      "thirdBytes": 55367,
+      "secondSha256": "cd6f12f7d7334d1b39b44c78a2eff3f9717e0548215ff86debd97b4c351f90ef",
+      "thirdSha256": "55e4eee2023e9b41eb0d51732c32b8d9338684378f09105a44a4bacf6c663d07"
+    },
+    {
+      "secondCloudPath": "dictionary_books/unlock-v2/level-2/unit-1/rw.json",
+      "thirdCloudPath": "dictionary_books/unlock-v3/level-2/unit-1/rw.json",
+      "secondCount": 56,
+      "thirdCount": 56,
+      "secondBytes": 27624,
+      "thirdBytes": 28871,
+      "secondSha256": "333ed78c04fc866737c1bcfe2eaeba35bd604bef8535d55cef318d39bd572a80",
+      "thirdSha256": "c67d6c8f9ca6683d04c8d7c7f33718447ab5978db67b7cb8c1a9cece95fb9d29"
+    },
+    {
+      "secondCloudPath": "dictionary_books/unlock-v2/level-2/unit-2/ls.json",
+      "thirdCloudPath": "dictionary_books/unlock-v3/level-2/unit-2/ls.json",
+      "secondCount": 80,
+      "thirdCount": 60,
+      "secondBytes": 37805,
+      "thirdBytes": 29904,
+      "secondSha256": "46443792e5ad4fab983f1d2169c6add36f3b2363d8894542a618966da405bbe9",
+      "thirdSha256": "30db984d17600925fb3048b6e2ef560e5307c087a799b8e39bb56a8d15dab9cc"
+    },
+    {
+      "secondCloudPath": "dictionary_books/unlock-v2/level-2/unit-2/rw.json",
+      "thirdCloudPath": "dictionary_books/unlock-v3/level-2/unit-2/rw.json",
+      "secondCount": 63,
+      "thirdCount": 37,
+      "secondBytes": 30805,
+      "thirdBytes": 18890,
+      "secondSha256": "6800d9813efce40c2b27f2a4ead9a6b13fc0294203193ca73f3d9255c91f3a8d",
+      "thirdSha256": "332a610c23288c26b9f67723e8b64bc81fb3ed498aa625412e9a07f4856805ff"
+    },
+    {
+      "secondCloudPath": "dictionary_books/unlock-v2/level-2/unit-3/ls.json",
+      "thirdCloudPath": "dictionary_books/unlock-v3/level-2/unit-3/ls.json",
+      "secondCount": 105,
+      "thirdCount": 90,
+      "secondBytes": 50431,
+      "thirdBytes": 45184,
+      "secondSha256": "d127d4c62206e7f10ff5ee5a6ea1e29bd8e3831fa751cc91bea3c28793ed241b",
+      "thirdSha256": "5539ac536c62ec7d5b06d5eda93eb1f28dc89f41750f788ecffd5833d0c4ecbf"
+    },
+    {
+      "secondCloudPath": "dictionary_books/unlock-v2/level-2/unit-3/rw.json",
+      "thirdCloudPath": "dictionary_books/unlock-v3/level-2/unit-3/rw.json",
+      "secondCount": 66,
+      "thirdCount": 64,
+      "secondBytes": 33069,
+      "thirdBytes": 33685,
+      "secondSha256": "2d76c3c86bbfa972fe760d78aee709a13f533cf0852591aa5907b9d120c553c6",
+      "thirdSha256": "456047a3cb5a8908161d8269087d32048ae54d9bcbf3a68b54be614963a7105e"
+    },
+    {
+      "secondCloudPath": "dictionary_books/unlock-v2/level-2/unit-4/ls.json",
+      "thirdCloudPath": "dictionary_books/unlock-v3/level-2/unit-4/ls.json",
+      "secondCount": 94,
+      "thirdCount": 94,
+      "secondBytes": 45546,
+      "thirdBytes": 47563,
+      "secondSha256": "868524ca01d046ad37c7b02a26dd2199445532163076332f68310029b19de5f8",
+      "thirdSha256": "2d77853d44a4d78f58f1b30e8896920ba68a64193bb4c99f226130a67cd1a530"
+    },
+    {
+      "secondCloudPath": "dictionary_books/unlock-v2/level-2/unit-4/rw.json",
+      "thirdCloudPath": "dictionary_books/unlock-v3/level-2/unit-4/rw.json",
+      "secondCount": 60,
+      "thirdCount": 58,
+      "secondBytes": 29168,
+      "thirdBytes": 29622,
+      "secondSha256": "5c76cdc52936bb72cf032f6eac39b4aa4879828cb1754d80c304baa90ea1099f",
+      "thirdSha256": "5951d1ecab1c69025119d71cb29b3dc7a1116421d222917702e2766487e0409a"
+    },
+    {
+      "secondCloudPath": "dictionary_books/unlock-v2/level-2/unit-5/ls.json",
+      "thirdCloudPath": "dictionary_books/unlock-v3/level-2/unit-5/ls.json",
+      "secondCount": 63,
+      "thirdCount": 63,
+      "secondBytes": 29847,
+      "thirdBytes": 31150,
+      "secondSha256": "6149e6ee1cbf7f2f3a757a21f790032af49d2f8fae1d9f5500d711dd2a190870",
+      "thirdSha256": "6c97bb87ae07b010abce80a1c8833918b39fd5458c6d8344d9e42844f2d267ca"
+    },
+    {
+      "secondCloudPath": "dictionary_books/unlock-v2/level-2/unit-5/rw.json",
+      "thirdCloudPath": "dictionary_books/unlock-v3/level-2/unit-5/rw.json",
+      "secondCount": 57,
+      "thirdCount": 57,
+      "secondBytes": 27985,
+      "thirdBytes": 29474,
+      "secondSha256": "1a34029c217a9f1effc31e8f137a013416abf6c5eba9232cb6d4359e3257d149",
+      "thirdSha256": "a7a215da10b899c81cf39b13a32a2e426e6ac048806e4a764923ce6e4a6e4290"
+    },
+    {
+      "secondCloudPath": "dictionary_books/unlock-v2/level-2/unit-6/ls.json",
+      "thirdCloudPath": "dictionary_books/unlock-v3/level-2/unit-6/ls.json",
+      "secondCount": 103,
+      "thirdCount": 89,
+      "secondBytes": 49448,
+      "thirdBytes": 44723,
+      "secondSha256": "e46cf6c74cea7ff816b59353a320863434929acf7705b326d436eadb5784fdef",
+      "thirdSha256": "42eed59dcc1b9a88e101fbe6d003eb2202a06c4ab6f7c766dc7b937779c82d5f"
+    },
+    {
+      "secondCloudPath": "dictionary_books/unlock-v2/level-2/unit-6/rw.json",
+      "thirdCloudPath": "dictionary_books/unlock-v3/level-2/unit-6/rw.json",
+      "secondCount": 66,
+      "thirdCount": 72,
+      "secondBytes": 32911,
+      "thirdBytes": 37355,
+      "secondSha256": "2cf25dedbb938a33f48463ce157e7f9a8c219789f6e31f61e633c1ac56d0acd4",
+      "thirdSha256": "decabe75c96f640fd62d37e4b885d3556eed9a091b017cbfb07cabe2085c346b"
+    },
+    {
+      "secondCloudPath": "dictionary_books/unlock-v2/level-2/unit-7/ls.json",
+      "thirdCloudPath": "dictionary_books/unlock-v3/level-2/unit-7/ls.json",
+      "secondCount": 155,
+      "thirdCount": 104,
+      "secondBytes": 74311,
+      "thirdBytes": 52664,
+      "secondSha256": "25249cf098281a840c2d2026cc1c39e12ca7c04985858d1850faf466c58ac340",
+      "thirdSha256": "82184502d105b6e917b3d4e85aaa4f372de6c57594719b7f8efa97e428c2fddc"
+    },
+    {
+      "secondCloudPath": "dictionary_books/unlock-v2/level-2/unit-7/rw.json",
+      "thirdCloudPath": "dictionary_books/unlock-v3/level-2/unit-7/rw.json",
+      "secondCount": 57,
+      "thirdCount": 57,
+      "secondBytes": 27842,
+      "thirdBytes": 29380,
+      "secondSha256": "9e6b9c79b011b3d8f8afad447897e2f6462e85b02482ba4aa23fcd028f604970",
+      "thirdSha256": "5ccd25301b84e76197a68a737c38e41d4e01fd74407fb468eab999df76014960"
+    },
+    {
+      "secondCloudPath": "dictionary_books/unlock-v2/level-2/unit-8/ls.json",
+      "thirdCloudPath": "dictionary_books/unlock-v3/level-2/unit-8/ls.json",
+      "secondCount": 121,
+      "thirdCount": 66,
+      "secondBytes": 58498,
+      "thirdBytes": 33833,
+      "secondSha256": "ceedf871d23addbc0c2b9a1f15023cb51acbe5682979a1034114ae0a546c335a",
+      "thirdSha256": "47027cc239d6d2a6d23d7d838f00a3f04c635a9b3675ec1d0566764bdc57ce1a"
+    },
+    {
+      "secondCloudPath": "dictionary_books/unlock-v2/level-2/unit-8/rw.json",
+      "thirdCloudPath": "dictionary_books/unlock-v3/level-2/unit-8/rw.json",
+      "secondCount": 59,
+      "thirdCount": 76,
+      "secondBytes": 29561,
+      "thirdBytes": 39281,
+      "secondSha256": "f817951e6b9297a85ce01f1a9f6b22707659e0392e652a677da9bee5a7fd3fc8",
+      "thirdSha256": "c460d938f0a305cf0f421a8a22d809eff1f26e591e258f5961bb8da79f4d8efb"
+    },
+    {
+      "secondCloudPath": "dictionary_books/unlock-v2/level-3/unit-1/ls.json",
+      "thirdCloudPath": "dictionary_books/unlock-v3/level-3/unit-1/ls.json",
+      "secondCount": 38,
+      "thirdCount": 55,
+      "secondBytes": 17919,
+      "thirdBytes": 29041,
+      "secondSha256": "9283af3788aef053cf96f407c5c3c8bf85bd2e91f14ef6827d08e8bd3ccfd88f",
+      "thirdSha256": "97b528221b8b198eb0ab75c5fb20f073da1d03c5d149ff53c72312d8b7e93b17"
+    },
+    {
+      "secondCloudPath": "dictionary_books/unlock-v2/level-3/unit-1/rw.json",
+      "thirdCloudPath": "dictionary_books/unlock-v3/level-3/unit-1/rw.json",
+      "secondCount": 63,
+      "thirdCount": 65,
+      "secondBytes": 30064,
+      "thirdBytes": 34293,
+      "secondSha256": "e31fea8eaafcd5ab0a9d7e686d063f251f6d77a18db277877ebfac7384860663",
+      "thirdSha256": "c5e61c9fa77e2a66fc081e24e45e9aaf05c62c0e7ed3ab72205d549810eb759a"
+    },
+    {
+      "secondCloudPath": "dictionary_books/unlock-v2/level-3/unit-2/ls.json",
+      "thirdCloudPath": "dictionary_books/unlock-v3/level-3/unit-2/ls.json",
+      "secondCount": 59,
+      "thirdCount": 54,
+      "secondBytes": 28110,
+      "thirdBytes": 28208,
+      "secondSha256": "77fa141e87b13eb214ef8715542c93216c4f192afa71845aad110042d3183681",
+      "thirdSha256": "3c89ff099d7a209f8230ebe1ad55e5d6b504e1ae3a60362cee6ee8e64c80e22e"
+    },
+    {
+      "secondCloudPath": "dictionary_books/unlock-v2/level-3/unit-2/rw.json",
+      "thirdCloudPath": "dictionary_books/unlock-v3/level-3/unit-2/rw.json",
+      "secondCount": 61,
+      "thirdCount": 63,
+      "secondBytes": 29210,
+      "thirdBytes": 33572,
+      "secondSha256": "5d1d09f11a1dc9e8564429b8912e4a930c11cd1d42ca52dc175233ed6ed193c6",
+      "thirdSha256": "149723aa64e677b88321caf406c98776dbabb8b00471ef7379638b219b34463e"
+    },
+    {
+      "secondCloudPath": "dictionary_books/unlock-v2/level-3/unit-3/ls.json",
+      "thirdCloudPath": "dictionary_books/unlock-v3/level-3/unit-3/ls.json",
+      "secondCount": 61,
+      "thirdCount": 48,
+      "secondBytes": 28784,
+      "thirdBytes": 25681,
+      "secondSha256": "ae33d509000a4f0889a2c960df9911c3c426a48f21fb071d9376feb12594b8ae",
+      "thirdSha256": "918ec4c45402e1d505945cde99d77b36c73f42b075235c7bff30b89312216b96"
+    },
+    {
+      "secondCloudPath": "dictionary_books/unlock-v2/level-3/unit-3/rw.json",
+      "thirdCloudPath": "dictionary_books/unlock-v3/level-3/unit-3/rw.json",
+      "secondCount": 61,
+      "thirdCount": 68,
+      "secondBytes": 29411,
+      "thirdBytes": 36785,
+      "secondSha256": "2c57863b16c79be39e790ce865fe63e0df2550ecc95667b2f2aa179d435f90f0",
+      "thirdSha256": "c4fe41150559392ee6f6d9ba07f872067268d1ddb714ec0b90ef4d03521ad03c"
+    },
+    {
+      "secondCloudPath": "dictionary_books/unlock-v2/level-3/unit-4/ls.json",
+      "thirdCloudPath": "dictionary_books/unlock-v3/level-3/unit-4/ls.json",
+      "secondCount": 56,
+      "thirdCount": 42,
+      "secondBytes": 26642,
+      "thirdBytes": 22638,
+      "secondSha256": "e5fdf0e2f91242189dbe927b6ff8aee4e7f85f70729a2fe2c665b4fb0e9f9281",
+      "thirdSha256": "a4368f77d5f1d35da5382669c6015b3eab62d5a8f03912eaaa1d59d211510666"
+    },
+    {
+      "secondCloudPath": "dictionary_books/unlock-v2/level-3/unit-4/rw.json",
+      "thirdCloudPath": "dictionary_books/unlock-v3/level-3/unit-4/rw.json",
+      "secondCount": 62,
+      "thirdCount": 72,
+      "secondBytes": 30256,
+      "thirdBytes": 38849,
+      "secondSha256": "0e65ff85b24c5f14f5ae2004a14855c5fd79bcbbbe5592e4ecc5f458868febff",
+      "thirdSha256": "39b5849d175429419d4add8fd1ad86640c708730b7f027983220910c5a74e293"
+    },
+    {
+      "secondCloudPath": "dictionary_books/unlock-v2/level-3/unit-5/ls.json",
+      "thirdCloudPath": "dictionary_books/unlock-v3/level-3/unit-5/ls.json",
+      "secondCount": 59,
+      "thirdCount": 59,
+      "secondBytes": 27871,
+      "thirdBytes": 31353,
+      "secondSha256": "d79983ed372d3b85d4f759fe58c2fc980b2720f904ebba3027e022edfa154a8b",
+      "thirdSha256": "da2d3935c729f5808555c57c4b2945763fe5ee7e5e224b8e76068c36080b3617"
+    },
+    {
+      "secondCloudPath": "dictionary_books/unlock-v2/level-3/unit-5/rw.json",
+      "thirdCloudPath": "dictionary_books/unlock-v3/level-3/unit-5/rw.json",
+      "secondCount": 57,
+      "thirdCount": 64,
+      "secondBytes": 27807,
+      "thirdBytes": 34625,
+      "secondSha256": "eaa7eb9acf364e9bd327a4250e4f7b1e47caf36c4da7edfc4ab6791e8adeee45",
+      "thirdSha256": "475e9f93e86ec93ca3eed048d6e46f12cc5a6f13a8e66b98513a2d74e4ff13d3"
+    },
+    {
+      "secondCloudPath": "dictionary_books/unlock-v2/level-3/unit-6/ls.json",
+      "thirdCloudPath": "dictionary_books/unlock-v3/level-3/unit-6/ls.json",
+      "secondCount": 55,
+      "thirdCount": 64,
+      "secondBytes": 25798,
+      "thirdBytes": 33757,
+      "secondSha256": "b34397ea24253cd6fda6fa2e763884fdd12c6a1ba42f549132b88a47099270d4",
+      "thirdSha256": "f1308473846cb8b790556f6ac803f4c3b5e37efcacfd48fc8fc09f8471956613"
+    },
+    {
+      "secondCloudPath": "dictionary_books/unlock-v2/level-3/unit-6/rw.json",
+      "thirdCloudPath": "dictionary_books/unlock-v3/level-3/unit-6/rw.json",
+      "secondCount": 58,
+      "thirdCount": 62,
+      "secondBytes": 27944,
+      "thirdBytes": 33897,
+      "secondSha256": "e26fef225ddcfef810e3370bee7a8d8371147bdb479c00e6f9b344cc6e2601db",
+      "thirdSha256": "a1a70a199c0ef68fbd16d9ce1d94ecfabf6a821b91f5439d3e9923676cbca4d5"
+    },
+    {
+      "secondCloudPath": "dictionary_books/unlock-v2/level-3/unit-7/ls.json",
+      "thirdCloudPath": "dictionary_books/unlock-v3/level-3/unit-7/ls.json",
+      "secondCount": 51,
+      "thirdCount": 57,
+      "secondBytes": 24608,
+      "thirdBytes": 30256,
+      "secondSha256": "4fc26fd449bafb473fb2d57662e504370c16fe35778cba8efb68056c31f0bb6f",
+      "thirdSha256": "055c4deb8d30bb58960cc32ca1fd28a7da9e5da5f35f0393fdad0561018b2936"
+    },
+    {
+      "secondCloudPath": "dictionary_books/unlock-v2/level-3/unit-7/rw.json",
+      "thirdCloudPath": "dictionary_books/unlock-v3/level-3/unit-7/rw.json",
+      "secondCount": 59,
+      "thirdCount": 65,
+      "secondBytes": 28331,
+      "thirdBytes": 35544,
+      "secondSha256": "5dc2be7dd8a2e6119f29aa564b9c8d70db4f23a8877cecde2b3a2fefbcf4838d",
+      "thirdSha256": "ec4fcec3e3ef13620b2446059847573aaffcf08dc046b4e1773dc144bd6c01eb"
+    },
+    {
+      "secondCloudPath": "dictionary_books/unlock-v2/level-3/unit-8/ls.json",
+      "thirdCloudPath": "dictionary_books/unlock-v3/level-3/unit-8/ls.json",
+      "secondCount": 50,
+      "thirdCount": 48,
+      "secondBytes": 24377,
+      "thirdBytes": 25814,
+      "secondSha256": "fce701f2b160ba27992e0463b2422d81741cae09a7ff9b4480b23242347472cb",
+      "thirdSha256": "85befcacf5471ababd27a4a1c53ddeac6a6fa317ad960c90174ef29048187b32"
+    },
+    {
+      "secondCloudPath": "dictionary_books/unlock-v2/level-3/unit-8/rw.json",
+      "thirdCloudPath": "dictionary_books/unlock-v3/level-3/unit-8/rw.json",
+      "secondCount": 58,
+      "thirdCount": 62,
+      "secondBytes": 27799,
+      "thirdBytes": 33759,
+      "secondSha256": "8090f14235acfac42daf574488f5c1ebad6bf9c594855d55b0224053319e7e67",
+      "thirdSha256": "7dfe7704f258cc7ac0542c4fd49823962cc3d27ad1c989cdc265eb9ee1228ec1"
+    },
+    {
+      "secondCloudPath": "dictionary_books/unlock-v2/level-4/unit-1/ls.json",
+      "thirdCloudPath": "dictionary_books/unlock-v3/level-4/unit-1/ls.json",
+      "secondCount": 18,
+      "thirdCount": 44,
+      "secondBytes": 9057,
+      "thirdBytes": 23631,
+      "secondSha256": "2ed19d566e610e76a6f8da3d7192b599ba94d8ead3a3acf09e64e941626b4a43",
+      "thirdSha256": "c63604626f6cb4eb186aca9a4c75d982063eb69e0d26318ee4b16be4780f88e8"
+    },
+    {
+      "secondCloudPath": "dictionary_books/unlock-v2/level-4/unit-1/rw.json",
+      "thirdCloudPath": "dictionary_books/unlock-v3/level-4/unit-1/rw.json",
+      "secondCount": 25,
+      "thirdCount": 71,
+      "secondBytes": 12163,
+      "thirdBytes": 37339,
+      "secondSha256": "3d098bede21d5cb6f498f8e06f24d5b87df1acde1524408777b3b329a28d14fe",
+      "thirdSha256": "97220928f32134ccebb7d67813a5b56126c8addceecffb1fb9af1b107b31a9e5"
+    },
+    {
+      "secondCloudPath": "dictionary_books/unlock-v2/level-4/unit-2/ls.json",
+      "thirdCloudPath": "dictionary_books/unlock-v3/level-4/unit-2/ls.json",
+      "secondCount": 16,
+      "thirdCount": 47,
+      "secondBytes": 7822,
+      "thirdBytes": 25079,
+      "secondSha256": "c49d93c7ae796b8c19b6ccaeca0beffc3520144653b5de3354ce46730b65e179",
+      "thirdSha256": "98517afabbbc5bb3901426ed35a84f77d01db581f6649c35ae3d5cb7f5828df1"
+    },
+    {
+      "secondCloudPath": "dictionary_books/unlock-v2/level-4/unit-2/rw.json",
+      "thirdCloudPath": "dictionary_books/unlock-v3/level-4/unit-2/rw.json",
+      "secondCount": 36,
+      "thirdCount": 63,
+      "secondBytes": 17865,
+      "thirdBytes": 33394,
+      "secondSha256": "ef7587de15b7a941e31b8412e6cd977286eb0784df190c0c1c2f1faafad2b8ce",
+      "thirdSha256": "f518396daa8756adedc66f1c35fa383b11423f1ed550eafe1934377922f8544a"
+    },
+    {
+      "secondCloudPath": "dictionary_books/unlock-v2/level-4/unit-3/ls.json",
+      "thirdCloudPath": "dictionary_books/unlock-v3/level-4/unit-3/ls.json",
+      "secondCount": 21,
+      "thirdCount": 53,
+      "secondBytes": 10160,
+      "thirdBytes": 28237,
+      "secondSha256": "59e4ade1650b23bd73013f04d00b31cecd1a79cfbe786a338177bc590c6a4d56",
+      "thirdSha256": "8aaea29cd8595c24233e2c014ccef46222ec104451296336dba54e789ebc69d3"
+    },
+    {
+      "secondCloudPath": "dictionary_books/unlock-v2/level-4/unit-3/rw.json",
+      "thirdCloudPath": "dictionary_books/unlock-v3/level-4/unit-3/rw.json",
+      "secondCount": 29,
+      "thirdCount": 65,
+      "secondBytes": 14250,
+      "thirdBytes": 34124,
+      "secondSha256": "2b7965df05cc5636a8347607996fea23969a0804f74e1ed3b29455e25fa4ad21",
+      "thirdSha256": "492aa754932c7ba7e41460d3819294516ce6c18da39f0e5b5ec1bad95ca35fb6"
+    },
+    {
+      "secondCloudPath": "dictionary_books/unlock-v2/level-4/unit-4/ls.json",
+      "thirdCloudPath": "dictionary_books/unlock-v3/level-4/unit-4/ls.json",
+      "secondCount": 20,
+      "thirdCount": 49,
+      "secondBytes": 9620,
+      "thirdBytes": 25575,
+      "secondSha256": "d2fcdca5a4a655d9eba47be1636f13ec693cb06c8e9bd09f432c54224369d401",
+      "thirdSha256": "7e9fbd30bd80c02435059d54e5c1c6c79b1ef256f367aed87a8f90f2d91f7159"
+    },
+    {
+      "secondCloudPath": "dictionary_books/unlock-v2/level-4/unit-4/rw.json",
+      "thirdCloudPath": "dictionary_books/unlock-v3/level-4/unit-4/rw.json",
+      "secondCount": 22,
+      "thirdCount": 62,
+      "secondBytes": 10868,
+      "thirdBytes": 32943,
+      "secondSha256": "3389d0c9219ad1a5e3b6788adbae7d8223447bee39680479eb5eaa403db06631",
+      "thirdSha256": "3c2254ad34bc1e947e82183eddd340d2e4e7629c976e87799a7554bbe5bdb981"
+    },
+    {
+      "secondCloudPath": "dictionary_books/unlock-v2/level-4/unit-5/ls.json",
+      "thirdCloudPath": "dictionary_books/unlock-v3/level-4/unit-5/ls.json",
+      "secondCount": 20,
+      "thirdCount": 62,
+      "secondBytes": 9809,
+      "thirdBytes": 32489,
+      "secondSha256": "f14490668282d986a60738565e4b19a63a094ab9e753814de6990802457e37cc",
+      "thirdSha256": "6da2d53ae70c729b38e7e6311f73c84526432ab5a59fbea14bf1f676c27df98e"
+    },
+    {
+      "secondCloudPath": "dictionary_books/unlock-v2/level-4/unit-5/rw.json",
+      "thirdCloudPath": "dictionary_books/unlock-v3/level-4/unit-5/rw.json",
+      "secondCount": 32,
+      "thirdCount": 53,
+      "secondBytes": 16001,
+      "thirdBytes": 27878,
+      "secondSha256": "0e726f66cc7ba88f374a1b21226f5c44bdce98657382c08185b6a65712289015",
+      "thirdSha256": "477a2f83dcf0374ec5df278fd50355ced13f8d7bb6e357af662e2634dbc908b5"
+    },
+    {
+      "secondCloudPath": "dictionary_books/unlock-v2/level-4/unit-6/ls.json",
+      "thirdCloudPath": "dictionary_books/unlock-v3/level-4/unit-6/ls.json",
+      "secondCount": 21,
+      "thirdCount": 50,
+      "secondBytes": 10264,
+      "thirdBytes": 26162,
+      "secondSha256": "f26e17ff4de25c458c869a5a62f6187563715347aeb0012882e5a94d3f4baa38",
+      "thirdSha256": "269a1fe3d0fae17cfcd22be905513a7732974e2cf14c51702a1a464672273a31"
+    },
+    {
+      "secondCloudPath": "dictionary_books/unlock-v2/level-4/unit-6/rw.json",
+      "thirdCloudPath": "dictionary_books/unlock-v3/level-4/unit-6/rw.json",
+      "secondCount": 20,
+      "thirdCount": 60,
+      "secondBytes": 9786,
+      "thirdBytes": 31673,
+      "secondSha256": "7fe9ad6cbfd712ab293b349fcf1396021823c249874bd449d352011f93deb122",
+      "thirdSha256": "734d81fd1b706d41871d8e28c91c01e0497c3bc19b206002aab2498422fcca63"
+    },
+    {
+      "secondCloudPath": "dictionary_books/unlock-v2/level-4/unit-7/ls.json",
+      "thirdCloudPath": "dictionary_books/unlock-v3/level-4/unit-7/ls.json",
+      "secondCount": 16,
+      "thirdCount": 67,
+      "secondBytes": 7573,
+      "thirdBytes": 34548,
+      "secondSha256": "59c674e02e0db46dc91bef93f0e7d8e6c79efa6e5961aab2aaf553e91822987d",
+      "thirdSha256": "1c0f32044ac613956874bb406ecbc2801cdf62e2826090563aa286d020da6f19"
+    },
+    {
+      "secondCloudPath": "dictionary_books/unlock-v2/level-4/unit-7/rw.json",
+      "thirdCloudPath": "dictionary_books/unlock-v3/level-4/unit-7/rw.json",
+      "secondCount": 22,
+      "thirdCount": 57,
+      "secondBytes": 11064,
+      "thirdBytes": 30082,
+      "secondSha256": "e1026a6d0364fcc20177a9fd577ccd7a26b937a106d95c4582c7bc31fbfc6fd7",
+      "thirdSha256": "3609c45bfe5cd78756bc8a46d766b55d56c75ca95a55f5076385aaf17342306d"
+    },
+    {
+      "secondCloudPath": "dictionary_books/unlock-v2/level-4/unit-8/ls.json",
+      "thirdCloudPath": "dictionary_books/unlock-v3/level-4/unit-8/ls.json",
+      "secondCount": 18,
+      "thirdCount": 67,
+      "secondBytes": 8874,
+      "thirdBytes": 35367,
+      "secondSha256": "0fb27ce210eac6ae41be37e6d9706194f5aa5b613df017ecfa514c34eb6730c0",
+      "thirdSha256": "a0ff52767e8ded5d4621ef733a48ad20bcfe15dde5d4d359f624f64d6ba01154"
+    },
+    {
+      "secondCloudPath": "dictionary_books/unlock-v2/level-4/unit-8/rw.json",
+      "thirdCloudPath": "dictionary_books/unlock-v3/level-4/unit-8/rw.json",
+      "secondCount": 21,
+      "thirdCount": 57,
+      "secondBytes": 10533,
+      "thirdBytes": 29708,
+      "secondSha256": "9953c87efdcd155dbc8052bfaa39fb5a4a2d019ac267b8d3dfe86b14a8735ef6",
+      "thirdSha256": "2b7dceb605ead1b4e6307c4509ca2987345c1e082970e8f1b3146083a7437ee3"
+    }
+  ],
+  "uploadedThird": 64,
+  "restoredSecond": 64,
+  "verified": 128
+}

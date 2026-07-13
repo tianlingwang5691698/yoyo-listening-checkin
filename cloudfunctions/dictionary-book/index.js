@@ -25,15 +25,16 @@ function normalize(value) {
 function resolveBook(level) {
   const normalizedLevel = normalize(level);
   if (STANDARD_BOOKS[normalizedLevel]) return STANDARD_BOOKS[normalizedLevel];
-  const match = normalizedLevel.match(/^unlock-([1-4])-u([1-8])-(ls|rw)$/);
+  const match = normalizedLevel.match(/^unlock-(?:(v3)-)?([1-4])-u([1-8])-(ls|rw)$/);
   if (!match) return null;
-  const unlockLevel = Number(match[1]);
-  const unit = Number(match[2]);
-  const section = match[3];
+  const edition = match[1] ? 3 : 2;
+  const unlockLevel = Number(match[2]);
+  const unit = Number(match[3]);
+  const section = match[4];
   return {
-    level: `unlock-${unlockLevel}-u${unit}-${section}`,
-    title: `Unlock ${unlockLevel} Unit ${unit} ${section.toUpperCase()} 词汇表`,
-    cloudPath: `dictionary_books/unlock-v2/level-${unlockLevel}/unit-${unit}/${section}.json`
+    level: edition === 3 ? `unlock-v3-${unlockLevel}-u${unit}-${section}` : `unlock-${unlockLevel}-u${unit}-${section}`,
+    title: `Unlock ${unlockLevel} ${edition === 3 ? '第三版' : '第二版'} Unit ${unit} ${section.toUpperCase()} 词汇表`,
+    cloudPath: `dictionary_books/unlock-v${edition}/level-${unlockLevel}/unit-${unit}/${section}.json`
   };
 }
 

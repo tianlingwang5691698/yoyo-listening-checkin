@@ -23,8 +23,18 @@ function sourceItems(texts) {
   return [
     { key: 'junior', mark: texts.juniorMark || '初', title: texts.juniorBookShort, meta: texts.randomWords },
     { key: 'senior', mark: texts.seniorMark || '高', title: texts.seniorBookShort, meta: texts.randomWords },
-    { key: 'unlock', mark: 'U', title: texts.unlockBookShort, meta: 'Level 1–4 · Unit 1–8' }
+    { key: 'unlock-v2', mark: 'U2', title: texts.unlockSecondBook || 'Unlock 第二版词汇书', meta: 'Level 1–4 · Unit 1–8' },
+    { key: 'unlock-v3', mark: 'U3', title: texts.unlockThirdBook || 'Unlock 第三版词汇书', meta: 'Level 1–4 · Unit 1–8' }
   ];
+}
+
+function unlockLevelKey(edition, level, unit, section) {
+  return edition === 'v3' ? `unlock-v3-${level}-u${unit}-${section}` : `unlock-${level}-u${unit}-${section}`;
+}
+
+function unlockCountPrefix(edition, level, unit) {
+  const base = edition === 'v3' ? 'dictionary-book-unlock-v3-' : 'dictionary-book-unlock-';
+  return `${base}${level == null ? '' : `${level}-`}${unit == null ? '' : `u${unit}-`}`;
 }
 
 function levelItems() {
@@ -38,6 +48,7 @@ function unitItems() {
 Page({
   data: page.createCloudPageData({
     stage: 'sources',
+    unlockEdition: 'v2',
     unlockLevel: 0,
     unlockUnit: 0,
     title: '',
@@ -53,7 +64,7 @@ Page({
     this.perf = page.startPagePerf('vocabulary-dictation-library');
     page.syncTheme(this);
     const texts = getTexts();
-    this.setData(Object.assign({}, getNavLayout(), { title: texts.shelfTitle, subtitle: texts.shelfCopy, items: sourceItems(texts) }), () => this.perf.ready('pageReady', { stage: 'sources', total: 3, cacheHit: true }));
+    this.setData(Object.assign({}, getNavLayout(), { title: texts.shelfTitle, subtitle: texts.shelfCopy, items: sourceItems(texts) }), () => this.perf.ready('pageReady', { stage: 'sources', total: 4, cacheHit: true }));
     this.loadCounts();
   },
   onShow() {
@@ -79,7 +90,7 @@ Page({
   chooseItem(event) {
     const key = String(event.currentTarget.dataset.key || '');
     if (this.data.stage === 'sources') {
-      if (key === 'unlock') this.showLevels();
+      if (key === 'unlock-v2' || key === 'unlock-v3') this.showLevels(key === 'unlock-v3' ? 'v3' : 'v2');
       else this.openBook(key, key === 'junior' ? getTexts().juniorBookShort : getTexts().seniorBookShort);
       return;
     }
@@ -91,8 +102,8 @@ Page({
       this.showSections(this.data.unlockLevel, Number(key));
       return;
     }
-    const level = `unlock-${this.data.unlockLevel}-u${this.data.unlockUnit}-${key}`;
-    this.openBook(level, `Unlock ${this.data.unlockLevel} · Unit ${this.data.unlockUnit} · ${key.toUpperCase()}`);
+    const level = unlockLevelKey(this.data.unlockEdition, this.data.unlockLevel, this.data.unlockUnit, key);
+    this.openBook(level, `Unlock ${this.data.unlockLevel} ${this.data.unlockEdition === 'v3' ? '第三版' : '第二版'} · Unit ${this.data.unlockUnit} · ${key.toUpperCase()}`);
   },
   async loadCounts() {
     const result = await store.getVocabularyDictationSourceCounts();
@@ -113,27 +124,30 @@ Page({
     return (items || []).map((item) => {
       let learnedCount = 0;
       if (stage === 'sources') {
-        learnedCount = item.key === 'unlock' ? sumPrefix('dictionary-book-unlock-') : Number(counts[`dictionary-book-${item.key}`] || 0);
+        if (item.key === 'unlock-v2') learnedCount = Object.keys(counts).filter((key) => /^dictionary-book-unlock-[1-4]-/.test(key)).reduce((sum, key) => sum + Number(counts[key] || 0), 0);
+        else if (item.key === 'unlock-v3') learnedCount = sumPrefix('dictionary-book-unlock-v3-');
+        else learnedCount = Number(counts[`dictionary-book-${item.key}`] || 0);
       } else if (stage === 'levels') {
-        learnedCount = sumPrefix(`dictionary-book-unlock-${item.key}-`);
+        learnedCount = sumPrefix(unlockCountPrefix(this.data.unlockEdition, item.key));
       } else if (stage === 'units') {
-        learnedCount = sumPrefix(`dictionary-book-unlock-${this.data.unlockLevel}-u${item.key}-`);
+        learnedCount = sumPrefix(unlockCountPrefix(this.data.unlockEdition, this.data.unlockLevel, item.key));
       } else if (stage === 'sections') {
-        learnedCount = Number(counts[`dictionary-book-unlock-${this.data.unlockLevel}-u${this.data.unlockUnit}-${item.key}`] || 0);
+        learnedCount = Number(counts[`dictionary-book-${unlockLevelKey(this.data.unlockEdition, this.data.unlockLevel, this.data.unlockUnit, item.key)}`] || 0);
       }
       return Object.assign({}, item, { learnedCount });
     });
   },
   showSources() {
     const texts = getTexts();
-    this.setData({ stage: 'sources', title: texts.shelfTitle, subtitle: texts.shelfCopy, unlockLevel: 0, unlockUnit: 0, items: this.withCounts(sourceItems(texts), 'sources') });
+    this.setData({ stage: 'sources', title: texts.shelfTitle, subtitle: texts.shelfCopy, unlockEdition: 'v2', unlockLevel: 0, unlockUnit: 0, items: this.withCounts(sourceItems(texts), 'sources') });
   },
-  showLevels() {
+  showLevels(edition) {
     const texts = getTexts();
-    this.setData({ stage: 'levels', title: texts.unlockBookShort, subtitle: texts.chooseLevel, unlockLevel: 0, unlockUnit: 0, items: this.withCounts(levelItems(), 'levels') });
+    const unlockEdition = edition || this.data.unlockEdition || 'v2';
+    this.setData({ stage: 'levels', title: unlockEdition === 'v3' ? (texts.unlockThirdBook || 'Unlock 第三版词汇书') : (texts.unlockSecondBook || 'Unlock 第二版词汇书'), subtitle: texts.chooseLevel, unlockEdition, unlockLevel: 0, unlockUnit: 0 }, () => this.setData({ items: this.withCounts(levelItems(), 'levels') }));
   },
   showUnits(level) {
-    this.setData({ stage: 'units', title: `Unlock ${level}`, subtitle: getTexts().chooseUnit, unlockLevel: level, unlockUnit: 0 }, () => this.setData({ items: this.withCounts(unitItems(), 'units') }));
+    this.setData({ stage: 'units', title: `Unlock ${level} ${this.data.unlockEdition === 'v3' ? '第三版' : '第二版'}`, subtitle: getTexts().chooseUnit, unlockLevel: level, unlockUnit: 0 }, () => this.setData({ items: this.withCounts(unitItems(), 'units') }));
   },
   showSections(level, unit) {
     const texts = getTexts();
@@ -141,10 +155,10 @@ Page({
       { key: 'ls', mark: 'LS', title: texts.lsList, meta: `Unlock ${level} Unit ${unit}` },
       { key: 'rw', mark: 'RW', title: texts.rwList, meta: `Unlock ${level} Unit ${unit}` }
     ];
-    this.setData({ stage: 'sections', title: `Unlock ${level} · Unit ${unit}`, subtitle: texts.chooseList, unlockLevel: level, unlockUnit: unit }, () => this.setData({ items: this.withCounts(items, 'sections') }));
+    this.setData({ stage: 'sections', title: `Unlock ${level} ${this.data.unlockEdition === 'v3' ? '第三版' : '第二版'} · Unit ${unit}`, subtitle: texts.chooseList, unlockLevel: level, unlockUnit: unit }, () => this.setData({ items: this.withCounts(items, 'sections') }));
   },
   localizeCurrentStage() {
-    if (this.data.stage === 'levels') this.showLevels();
+    if (this.data.stage === 'levels') this.showLevels(this.data.unlockEdition);
     else if (this.data.stage === 'units') this.showUnits(this.data.unlockLevel);
     else if (this.data.stage === 'sections') this.showSections(this.data.unlockLevel, this.data.unlockUnit);
     else this.showSources();

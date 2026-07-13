@@ -1,0 +1,161 @@
+{
+  "books": 16,
+  "rows": 946,
+  "maxBookBytes": 55579,
+  "maxFinalBookBytes": 72636,
+  "oldRowsUnchanged": true,
+  "finalInvalidRows": 0,
+  "invalidRows": 0,
+  "noIconRows": 0,
+  "phrases": 105,
+  "wholePlayable": 96,
+  "finalPlayable": 105,
+  "noAudio": [],
+  "normalizationMsPerRow": 0.00128723335,
+  "booksDetail": [
+    {
+      "unit": 1,
+      "section": "ls",
+      "rows": 50,
+      "bytes": 26876,
+      "oldRows": 50,
+      "finalRows": 53,
+      "finalBytes": 24938
+    },
+    {
+      "unit": 1,
+      "section": "rw",
+      "rows": 56,
+      "bytes": 31009,
+      "oldRows": 56,
+      "finalRows": 58,
+      "finalBytes": 28179
+    },
+    {
+      "unit": 2,
+      "section": "ls",
+      "rows": 50,
+      "bytes": 25505,
+      "oldRows": 50,
+      "finalRows": 50,
+      "finalBytes": 22040
+    },
+    {
+      "unit": 2,
+      "section": "rw",
+      "rows": 56,
+      "bytes": 32241,
+      "oldRows": 60,
+      "finalRows": 73,
+      "finalBytes": 36887
+    },
+    {
+      "unit": 3,
+      "section": "ls",
+      "rows": 61,
+      "bytes": 32349,
+      "oldRows": 61,
+      "finalRows": 62,
+      "finalBytes": 28899
+    },
+    {
+      "unit": 3,
+      "section": "rw",
+      "rows": 52,
+      "bytes": 31376,
+      "oldRows": 57,
+      "finalRows": 79,
+      "finalBytes": 41670
+    },
+    {
+      "unit": 4,
+      "section": "ls",
+      "rows": 91,
+      "bytes": 55579,
+      "oldRows": 59,
+      "finalRows": 131,
+      "finalBytes": 72636
+    },
+    {
+      "unit": 4,
+      "section": "rw",
+      "rows": 49,
+      "bytes": 27937,
+      "oldRows": 52,
+      "finalRows": 67,
+      "finalBytes": 34232
+    },
+    {
+      "unit": 5,
+      "section": "ls",
+      "rows": 86,
+      "bytes": 52521,
+      "oldRows": 50,
+      "finalRows": 113,
+      "finalBytes": 63142
+    },
+    {
+      "unit": 5,
+      "section": "rw",
+      "rows": 54,
+      "bytes": 30318,
+      "oldRows": 52,
+      "finalRows": 54,
+      "finalBytes": 26580
+    },
+    {
+      "unit": 6,
+      "section": "ls",
+      "rows": 50,
+      "bytes": 26428,
+      "oldRows": 50,
+      "finalRows": 50,
+      "finalBytes": 23059
+    },
+    {
+      "unit": 6,
+      "section": "rw",
+      "rows": 59,
+      "bytes": 33796,
+      "oldRows": 51,
+      "finalRows": 68,
+      "finalBytes": 34947
+    },
+    {
+      "unit": 7,
+      "section": "ls",
+      "rows": 50,
+      "bytes": 26018,
+      "oldRows": 50,
+      "finalRows": 50,
+      "finalBytes": 22643
+    },
+    {
+      "unit": 7,
+      "section": "rw",
+      "rows": 53,
+      "bytes": 30486,
+      "oldRows": 44,
+      "finalRows": 59,
+      "finalBytes": 30455
+    },
+    {
+      "unit": 8,
+      "section": "ls",
+      "rows": 86,
+      "bytes": 51807,
+      "oldRows": 50,
+      "finalRows": 102,
+      "finalBytes": 56218
+    },
+    {
+      "unit": 8,
+      "section": "rw",
+      "rows": 43,
+      "bytes": 24587,
+      "oldRows": 45,
+      "finalRows": 53,
+      "finalBytes": 26861
+    }
+  ]
+}

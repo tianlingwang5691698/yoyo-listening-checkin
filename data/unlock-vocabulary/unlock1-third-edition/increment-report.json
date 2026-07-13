@@ -1,0 +1,139 @@
+{
+  "books": [
+    {
+      "unit": 1,
+      "section": "LS",
+      "old": 50,
+      "thirdEditionUnique": 50,
+      "overlap": 47,
+      "new": 3
+    },
+    {
+      "unit": 1,
+      "section": "RW",
+      "old": 56,
+      "thirdEditionUnique": 56,
+      "overlap": 54,
+      "new": 2
+    },
+    {
+      "unit": 2,
+      "section": "LS",
+      "old": 50,
+      "thirdEditionUnique": 50,
+      "overlap": 50,
+      "new": 0
+    },
+    {
+      "unit": 2,
+      "section": "RW",
+      "old": 60,
+      "thirdEditionUnique": 56,
+      "overlap": 43,
+      "new": 13
+    },
+    {
+      "unit": 3,
+      "section": "LS",
+      "old": 61,
+      "thirdEditionUnique": 61,
+      "overlap": 60,
+      "new": 1
+    },
+    {
+      "unit": 3,
+      "section": "RW",
+      "old": 57,
+      "thirdEditionUnique": 52,
+      "overlap": 30,
+      "new": 22
+    },
+    {
+      "unit": 4,
+      "section": "LS",
+      "old": 59,
+      "thirdEditionUnique": 91,
+      "overlap": 19,
+      "new": 72
+    },
+    {
+      "unit": 4,
+      "section": "RW",
+      "old": 52,
+      "thirdEditionUnique": 49,
+      "overlap": 34,
+      "new": 15
+    },
+    {
+      "unit": 5,
+      "section": "LS",
+      "old": 50,
+      "thirdEditionUnique": 86,
+      "overlap": 23,
+      "new": 63
+    },
+    {
+      "unit": 5,
+      "section": "RW",
+      "old": 52,
+      "thirdEditionUnique": 54,
+      "overlap": 52,
+      "new": 2
+    },
+    {
+      "unit": 6,
+      "section": "LS",
+      "old": 50,
+      "thirdEditionUnique": 50,
+      "overlap": 50,
+      "new": 0
+    },
+    {
+      "unit": 6,
+      "section": "RW",
+      "old": 51,
+      "thirdEditionUnique": 59,
+      "overlap": 42,
+      "new": 17
+    },
+    {
+      "unit": 7,
+      "section": "LS",
+      "old": 50,
+      "thirdEditionUnique": 50,
+      "overlap": 50,
+      "new": 0
+    },
+    {
+      "unit": 7,
+      "section": "RW",
+      "old": 44,
+      "thirdEditionUnique": 53,
+      "overlap": 38,
+      "new": 15
+    },
+    {
+      "unit": 8,
+      "section": "LS",
+      "old": 50,
+      "thirdEditionUnique": 86,
+      "overlap": 34,
+      "new": 52
+    },
+    {
+      "unit": 8,
+      "section": "RW",
+      "old": 45,
+      "thirdEditionUnique": 43,
+      "overlap": 35,
+      "new": 8
+    }
+  ],
+  "oldTotal": 837,
+  "thirdEditionRawUnique": 946,
+  "overlapTotal": 661,
+  "newTotal": 285,
+  "reusedExamples": 158,
+  "generatedExamples": 127,
+  "missingExamples": 0
+}

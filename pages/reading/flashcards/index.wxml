@@ -49,9 +49,9 @@
           <view class="library-vocab-book-stamp">{{texts.memory}}</view>
           <view class="library-vocab-book-arrow"></view>
         </view>
-        <view class="library-vocab-book book-unlock" bindtap="openUnlockBooks">
-          <view class="library-vocab-spine-mark">U</view>
-          <view class="library-vocab-book-body"><view class="library-vocab-book-title">{{texts.unlockBook}}</view><view class="library-vocab-book-meta">{{texts.unlockMeta}}</view></view>
+        <view class="library-vocab-book book-unlock" wx:for="{{unlockEditions}}" wx:key="edition" bindtap="openUnlockEdition" data-edition="{{item.edition}}">
+          <view class="library-vocab-spine-mark">{{item.coverMark}}</view>
+          <view class="library-vocab-book-body"><view class="library-vocab-book-title">{{item.title}}</view><view class="library-vocab-book-meta">{{item.meta}}</view></view>
           <view class="library-vocab-book-stamp">{{texts.cardSet}}</view><view class="library-vocab-book-arrow"></view>
         </view>
         <view class="library-vocab-book book-{{item.level}} {{importingBook === item.level ? 'is-loading' : ''}}" wx:for="{{standardDictionaryBooks}}" wx:key="level" bindtap="importDictionaryBook" data-level="{{item.level}}">
@@ -68,21 +68,21 @@
     </block>
 
     <block wx:elif="{{sourceMode === 'unlock-levels'}}">
-      <view class="library-vocab-shelf-head"><view class="library-vocab-head-copy"><view class="library-vocab-title">{{texts.unlockBook}}</view><view class="library-vocab-subtitle">{{texts.selectLevel}}</view></view></view>
+      <view class="library-vocab-shelf-head"><view class="library-vocab-head-copy"><view class="library-vocab-title">{{activeUnlockEditionTitle}}</view><view class="library-vocab-subtitle">{{texts.selectLevel}}</view></view></view>
       <view class="library-vocab-bookwall">
         <view class="library-vocab-book book-unlock" wx:for="{{unlockLevels}}" wx:key="level" bindtap="chooseUnlockLevel" data-level="{{item.level}}"><view class="library-vocab-spine-mark">{{item.coverMark}}</view><view class="library-vocab-book-body"><view class="library-vocab-book-title">{{item.title}}</view><view class="library-vocab-book-meta">{{texts.levelLists}}</view></view><view class="library-vocab-book-arrow"></view></view>
       </view>
     </block>
 
     <block wx:elif="{{sourceMode === 'unlock-units'}}">
-      <view class="library-vocab-shelf-head"><view class="library-vocab-head-copy"><view class="library-vocab-title">Unlock {{activeUnlockLevel}}</view><view class="library-vocab-subtitle">{{texts.selectUnit}}</view></view></view>
+      <view class="library-vocab-shelf-head"><view class="library-vocab-head-copy"><view class="library-vocab-title">{{activeUnlockEditionTitle}} · Unlock {{activeUnlockLevel}}</view><view class="library-vocab-subtitle">{{texts.selectUnit}}</view></view></view>
       <view class="library-vocab-bookwall">
         <view class="library-vocab-book book-unlock" wx:for="{{activeUnlockUnits}}" wx:key="unit" bindtap="chooseUnlockUnit" data-unit="{{item.unit}}"><view class="library-vocab-spine-mark">{{item.coverMark}}</view><view class="library-vocab-book-body"><view class="library-vocab-book-title">{{item.title}}</view><view class="library-vocab-book-meta">{{texts.unitLists}}</view></view><view class="library-vocab-book-arrow"></view></view>
       </view>
     </block>
 
     <block wx:elif="{{sourceMode === 'unlock-sections'}}">
-      <view class="library-vocab-shelf-head"><view class="library-vocab-head-copy"><view class="library-vocab-title">Unlock {{activeUnlockLevel}} · Unit {{activeUnlockUnit}}</view><view class="library-vocab-subtitle">{{texts.selectList}}</view></view></view>
+      <view class="library-vocab-shelf-head"><view class="library-vocab-head-copy"><view class="library-vocab-title">{{activeUnlockEditionTitle}} · Unlock {{activeUnlockLevel}} · Unit {{activeUnlockUnit}}</view><view class="library-vocab-subtitle">{{texts.selectList}}</view></view></view>
       <view class="library-vocab-bookwall">
         <view class="library-vocab-book book-unlock {{importingBook === item.level ? 'is-loading' : ''}}" wx:for="{{activeUnlockSections}}" wx:key="level" bindtap="importDictionaryBook" data-level="{{item.level}}"><view class="library-vocab-spine-mark">{{item.coverMark}}</view><view class="library-vocab-book-body"><view class="library-vocab-book-title">{{item.section === 'ls' ? texts.lsList : texts.rwList}}</view><view class="library-vocab-book-meta">{{item.title}}</view></view><view class="library-vocab-book-arrow"></view></view>
       </view>
@@ -327,7 +327,7 @@
         <view class="book-tag">{{texts.memory}}</view>
         <view class="book-action">{{texts.enter}}</view>
       </view>
-      <view class="book-card book-unlock" bindtap="openUnlockBooks"><view class="book-depth"></view><view class="book-cover"><view class="book-spine"></view><view class="book-symbol">U</view><view class="book-lines"><text></text><text></text><text></text></view></view><view class="book-main"><view class="book-title">{{texts.unlockBook}}</view><view class="book-meta">{{texts.unlockMeta}}</view></view><view class="book-tag">{{texts.cardSet}}</view><view class="book-action">{{texts.enter}}</view></view>
+      <view class="book-card book-unlock" wx:for="{{unlockEditions}}" wx:key="edition" bindtap="openUnlockEdition" data-edition="{{item.edition}}"><view class="book-depth"></view><view class="book-cover"><view class="book-spine"></view><view class="book-symbol">{{item.coverMark}}</view><view class="book-lines"><text></text><text></text><text></text></view></view><view class="book-main"><view class="book-title">{{item.title}}</view><view class="book-meta">{{item.meta}}</view></view><view class="book-tag">{{texts.cardSet}}</view><view class="book-action">{{texts.enter}}</view></view>
       <view class="book-card book-{{item.level}}" wx:for="{{standardDictionaryBooks}}" wx:key="level" bindtap="importDictionaryBook" data-level="{{item.level}}">
         <view class="book-depth"></view>
         <view class="book-cover">
@@ -346,17 +346,17 @@
   </block>
 
   <block wx:elif="{{sourceMode === 'unlock-levels'}}">
-    <view class="bookshelf-head"><view class="bookshelf-copy"><view class="progress-title">{{texts.unlockBook}}</view><view class="progress-copy">{{texts.selectLevel}}</view></view></view>
+    <view class="bookshelf-head"><view class="bookshelf-copy"><view class="progress-title">{{activeUnlockEditionTitle}}</view><view class="progress-copy">{{texts.selectLevel}}</view></view></view>
     <view class="book-list shelf-board"><view class="book-card book-unlock" wx:for="{{unlockLevels}}" wx:key="level" bindtap="chooseUnlockLevel" data-level="{{item.level}}"><view class="book-depth"></view><view class="book-cover"><view class="book-spine"></view><view class="book-symbol">{{item.coverMark}}</view></view><view class="book-main"><view class="book-title">{{item.title}}</view><view class="book-meta">{{texts.levelLists}}</view></view><view class="book-action">{{texts.enter}}</view></view></view>
   </block>
 
   <block wx:elif="{{sourceMode === 'unlock-units'}}">
-    <view class="bookshelf-head"><view class="bookshelf-copy"><view class="progress-title">Unlock {{activeUnlockLevel}}</view><view class="progress-copy">{{texts.selectUnit}}</view></view></view>
+    <view class="bookshelf-head"><view class="bookshelf-copy"><view class="progress-title">{{activeUnlockEditionTitle}} · Unlock {{activeUnlockLevel}}</view><view class="progress-copy">{{texts.selectUnit}}</view></view></view>
     <view class="book-list shelf-board"><view class="book-card book-unlock" wx:for="{{activeUnlockUnits}}" wx:key="unit" bindtap="chooseUnlockUnit" data-unit="{{item.unit}}"><view class="book-depth"></view><view class="book-cover"><view class="book-spine"></view><view class="book-symbol">{{item.coverMark}}</view></view><view class="book-main"><view class="book-title">{{item.title}}</view><view class="book-meta">{{texts.unitLists}}</view></view><view class="book-action">{{texts.enter}}</view></view></view>
   </block>
 
   <block wx:elif="{{sourceMode === 'unlock-sections'}}">
-    <view class="bookshelf-head"><view class="bookshelf-copy"><view class="progress-title">Unlock {{activeUnlockLevel}} · Unit {{activeUnlockUnit}}</view><view class="progress-copy">{{texts.selectList}}</view></view></view>
+    <view class="bookshelf-head"><view class="bookshelf-copy"><view class="progress-title">{{activeUnlockEditionTitle}} · Unlock {{activeUnlockLevel}} · Unit {{activeUnlockUnit}}</view><view class="progress-copy">{{texts.selectList}}</view></view></view>
     <view class="book-list shelf-board"><view class="book-card book-unlock" wx:for="{{activeUnlockSections}}" wx:key="level" bindtap="importDictionaryBook" data-level="{{item.level}}"><view class="book-depth"></view><view class="book-cover"><view class="book-spine"></view><view class="book-symbol">{{item.coverMark}}</view></view><view class="book-main"><view class="book-title">{{item.section === 'ls' ? texts.lsList : texts.rwList}}</view><view class="book-meta">{{item.title}}</view></view><view class="book-action {{importingBook === item.level ? 'is-loading' : ''}}">{{texts.enter}}</view></view></view>
   </block>
 
