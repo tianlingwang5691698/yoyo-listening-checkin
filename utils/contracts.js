@@ -240,6 +240,7 @@ function createTaskDetailDefaults() {
     task: null,
     progress: createTaskProgressDefaults(),
     categoryTasks: [],
+    dailyQueueTasks: [],
     categoryTaskCount: 0,
     categoryCompletedCount: 0,
     planDayIndex: 1,

@@ -124,6 +124,7 @@ test('契约工厂返回完整默认结构', () => {
       completedToday: false
     },
     categoryTasks: [],
+    dailyQueueTasks: [],
     categoryTaskCount: 0,
     categoryCompletedCount: 0,
     planDayIndex: 1,

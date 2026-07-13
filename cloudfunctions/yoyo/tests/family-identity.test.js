@@ -570,5 +570,6 @@ test('getTaskDetail lesson view 不返回首屏不用的大字段', async (t) =>
   assert.equal(result.stats, undefined);
   assert.deepEqual(result.history, []);
   assert.equal(result.task.taskId, 'peppa-1');
+  assert.deepEqual(result.dailyQueueTasks.map((item) => item.taskId), ['peppa-1']);
   assert.equal(result.currentMember.memberId, 'member-1');
 });

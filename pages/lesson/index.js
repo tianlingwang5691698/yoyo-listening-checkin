@@ -10,6 +10,13 @@ const i18n = require('../../utils/i18n');
 const { canUseDictionaryVoice, normalizeDictionaryVoiceText } = require('../../utils/dictionary-voice');
 const { createDictionaryVoicePlayer } = require('../../utils/dictionary-voice-player');
 const { getTaskAudioDisplayTitle } = require('../../utils/audio-title');
+const {
+  getTaskQueueKey,
+  buildListeningQueue,
+  mergeListeningQueue,
+  getNextQueueTask,
+  getInitialQueuePass
+} = require('../../utils/listening-queue');
 const text = (key, fallback) => i18n.getPageText('lesson', key, undefined, fallback);
 const LESSON_TASK_SNAPSHOT_KEY = 'lessonTaskSnapshotV1';
 const LESSON_STUDY_PACK_SNAPSHOT_KEY = 'lessonStudyPackSnapshotV1';
@@ -672,6 +679,10 @@ Page({
     this.targetDate = query.targetDate || '';
     this.planDayIndex = query.planDayIndex || '';
     this.pendingAutoPlay = false;
+    this.continuousPlaybackActive = false;
+    this.dailyListeningQueue = [];
+    this.queueSessionPassMap = {};
+    this.completionResumeToken = 0;
     this.songAudioDownloadKey = '';
     this.songAudioDownloadPromise = null;
     this.songAudioLocalPath = '';
@@ -786,6 +797,7 @@ Page({
       this.markLessonRoute('audioPlay');
     });
     this.innerAudioContext.onPause(() => {
+      this.continuousPlaybackActive = false;
       this.setData({ isPlaying: false });
     });
     this.innerAudioContext.onStop(() => {
@@ -814,6 +826,7 @@ Page({
     });
     this.innerAudioContext.onError((error) => {
       this.pendingAutoPlay = false;
+      this.continuousPlaybackActive = false;
       this.setData({
         isPlaying: false,
         audioReady: false,
@@ -878,6 +891,8 @@ Page({
     }
   },
   onHide() {
+    this.continuousPlaybackActive = false;
+    this.completionResumeToken += 1;
     if (this.innerAudioContext) {
       this.innerAudioContext.pause();
     }
@@ -888,6 +903,8 @@ Page({
     this.clearTranscriptState();
   },
   onUnload() {
+    this.continuousPlaybackActive = false;
+    this.completionResumeToken += 1;
     if (this.completionCardTimer) {
       clearTimeout(this.completionCardTimer);
       this.completionCardTimer = null;
@@ -895,6 +912,10 @@ Page({
     if (this.lessonCelebrateTimer) {
       clearTimeout(this.lessonCelebrateTimer);
       this.lessonCelebrateTimer = null;
+    }
+    if (this.lessonCelebrateResolve) {
+      this.lessonCelebrateResolve();
+      this.lessonCelebrateResolve = null;
     }
     if (this.audioErrorTimer) {
       clearTimeout(this.audioErrorTimer);
@@ -1165,6 +1186,7 @@ Page({
     this.targetDate = detail.targetDate || this.targetDate;
     this.planDayIndex = detail.planDayIndex ? String(detail.planDayIndex) : this.planDayIndex;
     const normalizedTask = labels.normalizeTask(detail.task);
+    this.updateDailyListeningQueue(detail.dailyQueueTasks || detail.categoryTasks, normalizedTask);
     const studyCompleted = normalizedTask ? this.isLessonStudyCompletedForTask(normalizedTask) : false;
     const studyWriteAllowed = isLessonTrainingMode(detail.currentMember, this.planRunType, detail.studyWriteAllowed);
     this.setData(page.buildCloudPageData(this.data, {
@@ -1231,6 +1253,7 @@ Page({
     this.targetDate = detail && detail.targetDate ? detail.targetDate : this.targetDate;
     this.planDayIndex = detail && detail.planDayIndex ? String(detail.planDayIndex) : this.planDayIndex;
     const normalizedTask = labels.normalizeTask(detail.task);
+    this.updateDailyListeningQueue(detail.dailyQueueTasks || detail.categoryTasks, normalizedTask);
     const previewAudio = buildCurrentAudio(normalizedTask, '', 'idle');
     const studyCompleted = normalizedTask ? this.isLessonStudyCompletedForTask(normalizedTask) : false;
     const studyWriteAllowed = isLessonTrainingMode(detail.currentMember, this.planRunType, detail.studyWriteAllowed);
@@ -1313,6 +1336,134 @@ Page({
       taskId: this.taskId
     });
     this.markLessonRoute('secondaryLoaded');
+  },
+  updateDailyListeningQueue(tasks, currentTask, preserveOrder = false) {
+    const normalizedTasks = (tasks || []).map((task) => labels.normalizeTask(task)).filter(Boolean);
+    this.dailyListeningQueue = preserveOrder && this.dailyListeningQueue.length
+      ? mergeListeningQueue(this.dailyListeningQueue, normalizedTasks, currentTask)
+      : buildListeningQueue(normalizedTasks, currentTask);
+  },
+  isDailyListeningQueueCompleted() {
+    return !!this.dailyListeningQueue.length
+      && this.dailyListeningQueue.every((task) => !!task.completedToday);
+  },
+  ensureCurrentQueuePass() {
+    const task = this.data.task;
+    if (!task) return 0;
+    const key = getTaskQueueKey(task);
+    if (!Object.prototype.hasOwnProperty.call(this.queueSessionPassMap, key)) {
+      this.queueSessionPassMap[key] = getInitialQueuePass(task);
+    }
+    return Number(this.queueSessionPassMap[key] || 0);
+  },
+  applyContinuousTaskProgress(task, progress, detail) {
+    if (!task) return;
+    this.category = task.category || this.category;
+    this.taskId = task.taskId || this.taskId;
+    this.setData(page.buildCloudPageData(this.data, {
+      child: detail.child || this.data.child,
+      task,
+      progress,
+      passSteps: buildPassSteps(progress),
+      todayRecord: detail.todayRecord || this.data.todayRecord,
+      currentMember: detail.currentMember || this.data.currentMember,
+      studyWriteAllowed: detail.studyWriteAllowed !== undefined ? detail.studyWriteAllowed : this.data.studyWriteAllowed,
+      checkinReady: !!detail.checkinReady,
+      playbackRate: 1,
+      playbackRateText: '1.0'
+    }));
+  },
+  replayCurrentQueueTask() {
+    if (!this.continuousPlaybackActive || !this.innerAudioContext) return;
+    this.setData({
+      currentTimeMs: 0,
+      currentTimeLabel: '00:00',
+      progressPercent: 0,
+      canRewind: false
+    });
+    this.innerAudioContext.seek(0);
+    this.innerAudioContext.playbackRate = 1;
+    this.innerAudioContext.play();
+  },
+  async switchContinuousQueueTask(nextTask) {
+    const normalizedTask = labels.normalizeTask(nextTask);
+    if (!normalizedTask || !this.continuousPlaybackActive) return;
+    this.category = normalizedTask.category || this.category;
+    this.taskId = normalizedTask.taskId || this.taskId;
+    const nextKey = getTaskQueueKey(normalizedTask);
+    if (!Object.prototype.hasOwnProperty.call(this.queueSessionPassMap, nextKey)) {
+      this.queueSessionPassMap[nextKey] = getInitialQueuePass(normalizedTask);
+    }
+    const progress = {
+      playCount: Number(normalizedTask.playCount || 0),
+      playStepText: normalizedTask.playStepText || `${Number(normalizedTask.playCount || 0)}/${Number(normalizedTask.repeatTarget || 1)}`,
+      currentPass: Number(normalizedTask.currentPass || 1),
+      repeatTarget: Number(normalizedTask.repeatTarget || 1),
+      textUnlocked: !!normalizedTask.textUnlocked,
+      transcriptVisible: !!normalizedTask.transcriptVisible,
+      completedToday: !!normalizedTask.completedToday
+    };
+    this.setData(page.buildCloudPageData(this.data, {
+      task: normalizedTask,
+      progress,
+      passSteps: buildPassSteps(progress),
+      scriptSource: null,
+      transcriptTrack: null,
+      transcriptLines: [],
+      transcriptPendingLoad: false,
+      transcriptManualVisible: false,
+      lessonStudyPack: null,
+      lessonStudyLoading: false,
+      lessonStudyError: '',
+      lessonStudyCompleted: false,
+      speakingPanelVisible: false,
+      passQuestionVisible: false,
+      playbackRate: 1,
+      playbackRateText: '1.0'
+    }));
+    this.pendingAutoPlay = true;
+    await this.syncPlayer(normalizedTask);
+    if (this.continuousPlaybackActive && this.innerAudioContext && this.innerAudioContext.src) {
+      this.pendingAutoPlay = false;
+      this.innerAudioContext.play();
+    }
+  },
+  async handleContinuousAudioEnded() {
+    const taskBeforeSave = this.data.task;
+    if (!taskBeforeSave) return;
+    if (!this.dailyListeningQueue.length) {
+      this.updateDailyListeningQueue([taskBeforeSave], taskBeforeSave);
+    }
+    const key = getTaskQueueKey(taskBeforeSave);
+    const finishedPass = this.ensureCurrentQueuePass() + 1;
+    this.queueSessionPassMap[key] = finishedPass;
+    const wasDailyPlanCompleted = this.isDailyListeningQueueCompleted();
+    if (!taskBeforeSave.completedToday) {
+      const detail = await this.markCurrentTaskListened({ continuousQueue: true });
+      if (!detail || !this.continuousPlaybackActive) {
+        this.continuousPlaybackActive = false;
+        return;
+      }
+    }
+    if (!wasDailyPlanCompleted && this.isDailyListeningQueueCompleted()) {
+      const resumeToken = ++this.completionResumeToken;
+      await this.showLessonCompletionEffect();
+      if (!this.continuousPlaybackActive || resumeToken !== this.completionResumeToken) return;
+      await new Promise((resolve) => setTimeout(resolve, 3000));
+      if (!this.continuousPlaybackActive || resumeToken !== this.completionResumeToken) return;
+    }
+    const repeatTarget = Math.max(1, Number(taskBeforeSave.repeatTarget || 1));
+    if (finishedPass < repeatTarget) {
+      this.replayCurrentQueueTask();
+      return;
+    }
+    this.queueSessionPassMap[key] = 0;
+    const nextTask = getNextQueueTask(this.dailyListeningQueue, taskBeforeSave);
+    if (!nextTask || getTaskQueueKey(nextTask) === key) {
+      this.replayCurrentQueueTask();
+      return;
+    }
+    await this.switchContinuousQueueTask(nextTask);
   },
   getQuestionFromLines(lines, options = {}) {
     const items = lines || [];
@@ -2053,6 +2204,7 @@ Page({
     if (!this.data.task || this.data.task.isPendingAsset || !this.innerAudioContext) {
       return;
     }
+    this.completionResumeToken += 1;
     this.pendingAutoPlay = false;
     this.audioPlayRequested = true;
     this.markLessonRoute('playTap', {
@@ -2071,8 +2223,12 @@ Page({
       return;
     }
     if (this.data.isPlaying) {
+      this.continuousPlaybackActive = false;
+      this.completionResumeToken += 1;
       this.innerAudioContext.pause();
     } else {
+      this.continuousPlaybackActive = ['normal', 'catchup'].includes(this.planRunType) && this.isStudyWriteAllowed();
+      this.ensureCurrentQueuePass();
       if (this.data.audioReady) {
         this.audioPlayRequested = true;
         this.innerAudioContext.play();
@@ -2369,6 +2525,10 @@ Page({
       });
       return;
     }
+    if (this.continuousPlaybackActive) {
+      await this.handleContinuousAudioEnded();
+      return;
+    }
     const passNumber = Number((this.data.progress && this.data.progress.currentPass) || (this.data.task && this.data.task.currentPass) || 1);
     if (this.data.task && this.data.task.speakingMode) {
       const shouldOpen = this.data.task.speakingMode === 'nce-question-answer'
@@ -2379,12 +2539,11 @@ Page({
     }
     await this.markCurrentTaskListened();
   },
-  async markCurrentTaskListened() {
+  async markCurrentTaskListened(options = {}) {
     if (this.planRunType === 'preview') {
       await this.markPreviewTaskListened();
       return;
     }
-    const wasCompleted = !!(this.data.progress && this.data.progress.completedToday);
     const detail = await store.markTaskListened({
       childId: this.data.child.childId,
       category: this.category,
@@ -2392,7 +2551,8 @@ Page({
       planRunType: this.planRunType,
       targetDate: this.targetDate,
       planDayIndex: this.planDayIndex,
-      completeOnListen: true
+      completeOnListen: options.continuousQueue ? false : true,
+      continuousQueueV1: !!options.continuousQueue
     });
     if (detail && detail.syncMode === 'cloud-error') {
       wx.showToast({
@@ -2406,6 +2566,11 @@ Page({
     this.targetDate = detail && detail.targetDate ? detail.targetDate : this.targetDate;
     this.planDayIndex = detail && detail.planDayIndex ? String(detail.planDayIndex) : this.planDayIndex;
     const normalizedTask = labels.normalizeTask(detail.task);
+    if (options.continuousQueue) {
+      this.updateDailyListeningQueue(detail.dailyQueueTasks || detail.categoryTasks, normalizedTask, true);
+      this.applyContinuousTaskProgress(normalizedTask, detail.progress, detail);
+      return detail;
+    }
     const studyCompleted = normalizedTask ? this.isLessonStudyCompletedForTask(normalizedTask) : false;
     const transcriptLines = detail.transcriptTrack ? detail.transcriptTrack.lines : [];
     const studyWriteAllowed = isLessonTrainingMode(detail.currentMember, this.planRunType, detail.studyWriteAllowed);
@@ -2443,9 +2608,6 @@ Page({
     await this.loadCachedLessonStudyPack(normalizedTask);
     await this.updatePassQuestion(normalizedTask, detail.progress);
     await this.syncPlayer(normalizedTask);
-    if (!wasCompleted && detail.progress && detail.progress.completedToday) {
-      this.showLessonCompletionEffect();
-    }
     wx.showToast({
       title: detail.progress.completedToday ? `${normalizedTask.categoryLabel} ${text('completeToday', '今天完成')}` : `${text('completedPassPrefix', '已完成第 ')}${detail.progress.playCount}${text('completedPassSuffix', ' 遍')}`,
       icon: 'none'
@@ -2454,20 +2616,31 @@ Page({
       this.promptCompleteTodayCheckin();
     }
   },
-  showLessonCompletionEffect() {
+  async showLessonCompletionEffect() {
     if (this.lessonCelebrateTimer) {
       clearTimeout(this.lessonCelebrateTimer);
+      this.lessonCelebrateTimer = null;
+    }
+    if (this.lessonCelebrateResolve) {
+      this.lessonCelebrateResolve();
+      this.lessonCelebrateResolve = null;
     }
     const childId = (this.data.child && this.data.child.childId) || 'self';
-    effects.playComplete({
+    const soundDone = effects.playCompleteAndWait({
       voiceKey: 'listeningComplete',
-      onceKey: `listening:${this.targetDate || effects.todayKey()}:${childId}:${this.category || 'task'}:${this.taskId || 'current'}`
+      onceKey: `listening-checkin:${this.targetDate || effects.todayKey()}:${childId}`
     });
     this.setData({ lessonCelebrateVisible: true });
-    this.lessonCelebrateTimer = setTimeout(() => {
-      this.lessonCelebrateTimer = null;
-      this.setData({ lessonCelebrateVisible: false });
-    }, 1800);
+    const visualDone = new Promise((resolve) => {
+      this.lessonCelebrateResolve = resolve;
+      this.lessonCelebrateTimer = setTimeout(() => {
+        this.lessonCelebrateTimer = null;
+        this.lessonCelebrateResolve = null;
+        this.setData({ lessonCelebrateVisible: false });
+        resolve();
+      }, 1800);
+    });
+    await Promise.all([soundDone, visualDone]);
   },
   async markPreviewTaskListened() {
     const currentProgress = this.data.progress || {};

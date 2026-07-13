@@ -125,6 +125,57 @@ function playComplete(options) {
   return true;
 }
 
+function playAudioAndWait(audio, src, fallbackMs) {
+  if (!audio || !src) return Promise.resolve(false);
+  return new Promise((resolve) => {
+    let settled = false;
+    let timer = null;
+    const finish = (played) => {
+      if (settled) return;
+      settled = true;
+      if (timer) clearTimeout(timer);
+      if (audio.offEnded) audio.offEnded(onEnded);
+      if (audio.offError) audio.offError(onError);
+      resolve(played);
+    };
+    const onEnded = () => finish(true);
+    const onError = () => finish(false);
+    if (audio.onEnded) audio.onEnded(onEnded);
+    if (audio.onError) audio.onError(onError);
+    timer = setTimeout(() => finish(false), Math.max(1000, Number(fallbackMs || 8000)));
+    try {
+      audio.stop();
+      audio.src = src;
+      audio.play();
+    } catch (error) {
+      finish(false);
+    }
+  });
+}
+
+async function playCompleteAndWait(options) {
+  if (!canPlayReward(options)) return false;
+  const audio = getCompleteAudioContext();
+  if (!audio) return false;
+  const variant = pickCompleteVariant();
+  clearVoiceTimer();
+  const waits = [playAudioAndWait(audio, variant.src, 8000)];
+  if (!variant.includesVoice && options && options.voiceKey) {
+    const voiceSrc = VOICE_SRC_MAP[options.voiceKey];
+    if (voiceSrc) {
+      const delayMs = Math.max(0, Number(options.voiceDelayMs || 1000));
+      waits.push(new Promise((resolve) => {
+        voiceTimer = setTimeout(async () => {
+          voiceTimer = null;
+          resolve(await playAudioAndWait(getVoiceAudioContext(), voiceSrc, 8000));
+        }, delayMs);
+      }));
+    }
+  }
+  await Promise.all(waits);
+  return true;
+}
+
 function playVoice(voiceKey, options) {
   const src = VOICE_SRC_MAP[voiceKey];
   if (!src || !canPlayReward(options)) return false;
@@ -161,6 +212,7 @@ function destroy() {
 
 module.exports = {
   playComplete,
+  playCompleteAndWait,
   playVoice,
   todayKey,
   destroy

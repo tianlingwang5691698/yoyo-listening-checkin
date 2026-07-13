@@ -83,6 +83,7 @@ async function getTaskDetail(event) {
   const snapshotTask = isLessonView ? normalizeTaskSnapshot(payload.taskSnapshot, payload) : null;
   if (snapshotTask && hasTaskAudioSource(snapshotTask)) {
     let hydratedTask = snapshotTask;
+    let dailyQueueTasks = [hydratedTask];
     let planDayIndex = Number(payload.planDayIndex || snapshotTask.planDayIndex || 0);
     let hydrationDebug = null;
     if (planRunType === 'normal' && String(payload.source || '') !== 'catalog') {
@@ -103,6 +104,7 @@ async function getTaskDetail(event) {
         ));
         if (canonicalTask && hasTaskAudioSource(canonicalTask)) {
           hydratedTask = canonicalTask;
+          dailyQueueTasks = dashboard.dailyTasks || [canonicalTask];
           planDayIndex = Number(dashboard.planDayIndex || canonicalTask.planDayIndex || planDayIndex || 0);
         } else {
           hydrationDebug = buildSnapshotHydrationDebug('canonical-task-missing', {
@@ -128,6 +130,7 @@ async function getTaskDetail(event) {
       task: hydratedTask,
       progress: buildProgressFromTask(hydratedTask),
       categoryTasks: [hydratedTask],
+      dailyQueueTasks,
       categoryTaskCount: 1,
       categoryCompletedCount: hydratedTask.completedToday ? 1 : 0,
       planDayIndex,
@@ -226,6 +229,9 @@ async function getTaskDetail(event) {
       completedToday: task.completedToday
     },
     categoryTasks,
+    dailyQueueTasks: planRunType === 'normal' && Array.isArray(dashboard.dailyTasks) && dashboard.dailyTasks.length
+      ? dashboard.dailyTasks
+      : categoryTasks,
     categoryTaskCount: categoryTasks.length,
     categoryCompletedCount: categoryTasks.filter((item) => item.completedToday).length,
     planDayIndex: targetPlanDayIndex,
@@ -389,11 +395,12 @@ async function markTaskListened(event, context) {
     updatedAt: now
   };
   await study.saveProgressRecord(record);
+  let nextProgressRecords = null;
   if ((planRunType === 'normal' || planRunType === 'catchup') && study.normalizeStudyRole(ctx.member) === 'student') {
     await study.upsertDailyReport(scope, targetDate);
   }
   if ((planRunType === 'normal' || planRunType === 'catchup') && study.normalizeStudyRole(ctx.member) === 'student') {
-    const nextProgressRecords = await study.getChildProgressRecords(scope);
+    nextProgressRecords = await study.getChildProgressRecords(scope);
     await study.maybeCreateCheckin(scope, nextProgressRecords, targetDate, {
       planRunType,
       planDayIndex: todayPlan.dayIndex,
@@ -402,7 +409,53 @@ async function markTaskListened(event, context) {
       listeningPlanId: useCustomListeningPlan ? (activeListeningPlan.planId || activeListeningPlan._id || '') : ''
     });
   }
-  return getTaskDetail({ payload: { category, planRunType, targetDate, planDayIndex: todayPlan.dayIndex } });
+  if (payload.continuousQueueV1 === true) {
+    nextProgressRecords = nextProgressRecords || await study.getChildProgressRecords(scope);
+    const dailyQueueTasks = useCustomListeningPlan
+      ? study.decorateListeningPlanTasks(nextProgressRecords, ctx.child.childId, targetDate, todayPlan, {
+        planRunType,
+        targetDate,
+        listeningPlanId: activeListeningPlan.planId || activeListeningPlan._id || ''
+      })
+      : study.decoratePlanTasks(nextProgressRecords, ctx.child.childId, targetDate, todayPlan, {
+        planRunType,
+        targetDate
+      });
+    const updatedTask = dailyQueueTasks.find((item) => item.category === category && item.taskId === task.taskId)
+      || Object.assign({}, task, record);
+    const updatedCategoryTasks = dailyQueueTasks.filter((item) => item.category === category);
+    const nextCheckins = await study.getCheckins(scope);
+    return {
+      currentMember: ctx.member,
+      child: ctx.child,
+      task: updatedTask,
+      progress: buildProgressFromTask(updatedTask),
+      categoryTasks: updatedCategoryTasks,
+      dailyQueueTasks,
+      categoryTaskCount: updatedCategoryTasks.length,
+      categoryCompletedCount: updatedCategoryTasks.filter((item) => item.completedToday).length,
+      planDayIndex: todayPlan.dayIndex,
+      planPhaseLabel: todayPlan.phase ? todayPlan.phase.label || '' : '',
+      planRunType,
+      targetDate,
+      scriptSource: updatedTask.textSource || null,
+      transcriptTrack: null,
+      transcriptLines: [],
+      transcriptPendingLoad: true,
+      todayRecord: nextCheckins.find((item) => item.date === targetDate) || null,
+      history: [],
+      studyWriteAllowed: study.isStudyWriteAllowed(ctx),
+      studyWriteMessage: '',
+      checkinReady: false
+    };
+  }
+  return getTaskDetail({ payload: {
+    category,
+    taskId: '',
+    planRunType,
+    targetDate,
+    planDayIndex: todayPlan.dayIndex
+  } });
 }
 
 async function completeTodayCheckin(event, context) {
