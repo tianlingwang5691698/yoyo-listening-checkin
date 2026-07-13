@@ -45,3 +45,12 @@ test('静谧图书馆听力学习包限制三栏和单按钮宽度', () => {
   assert.equal((wxml.match(/\? '播放' : '发音'/g) || []).length, 2);
   assert.doesNotMatch(js.match(/async loadLessonSecondaryData[\s\S]*?\n  },/)[0], /loadCachedLessonStudyPack/);
 });
+
+test('听力计划数量单位使用集与每集遍数', () => {
+  const catalog = read('utils/i18n-catalog-home.js');
+
+  assert.match(catalog, /dailyCount: '每天几集'/);
+  assert.match(catalog, /repeatCount: '每集几遍'/);
+  assert.match(catalog, /dailyItems: '每天 \{count\} 集'/);
+  assert.doesNotMatch(catalog, /dailyCount: '每天几条'|repeatCount: '每条几遍'/);
+});
